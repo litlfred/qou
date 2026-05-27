@@ -2031,6 +2031,22 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/wenzl-bridge-applicability-qou.lean:23: unexpected token ')'; expected term | content/quantum-observable-universe/mass-application/wenzl-bridge-applicability-qou.lean:24: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/mass-application/wenzl-bridge-applicability-qou.lean:26: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/mass-application/wenzl-bridge-applicability-qou.lean:28: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/mass-application/wenzl-bridge-applicability-qou.lean:39: unexpected token ')'; expected term"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "69498b3d9c2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

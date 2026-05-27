@@ -118,7 +118,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md:1: > **⚠️ TOP-OF-FILE SUPERSEDED-$\\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**"
+        "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md:1: > **\u26a0\ufe0f TOP-OF-FILE SUPERSEDED-$\\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**"
       },
       {
         "field_hash": {
@@ -330,7 +330,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md:1: > **⚠️ TOP-OF-FILE SUPERSEDED-$\\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**"
+        "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md:1: > **\u26a0\ufe0f TOP-OF-FILE SUPERSEDED-$\\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**"
       },
       {
         "field_hash": {
@@ -2653,6 +2653,69 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "9e2425732e18"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 1,
+            "category": "P2",
+            "text": "> **TOP-OF-FILE SUPERSEDED-$\\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**"
+          },
+          {
+            "line": 1,
+            "category": "P4",
+            "text": "> **TOP-OF-FILE SUPERSEDED-$\\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**"
+          },
+          {
+            "line": 10,
+            "category": "P4",
+            "text": "> (resolution 2026-05-17, lines 133-150). Full purge tracking:"
+          },
+          {
+            "line": 11,
+            "category": "P4",
+            "text": "> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md)."
+          },
+          {
+            "line": 55,
+            "category": "P4",
+            "text": "(authored 2026-05-20 as the Stage-1 unblock)."
+          },
+          {
+            "line": 95,
+            "category": "P4",
+            "text": "**Kashaev-integration-identity audit (added 2026-05-03).**"
+          },
+          {
+            "line": 148,
+            "category": "P4",
+            "text": "**Resolution (added 2026-05-17).** *The corrected canonical form of"
+          },
+          {
+            "line": 167,
+            "category": "P4",
+            "text": "**Trace-vs-evaluation note (added 2026-05-03).**"
+          },
+          {
+            "line": 223,
+            "category": "P4",
+            "text": "**Note (2026-05-03).**"
+          }
+        ]
       }
     ]
   },

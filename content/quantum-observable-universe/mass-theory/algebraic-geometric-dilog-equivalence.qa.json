@@ -118,7 +118,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/algebraic-geometric-dilog-equivalence.md:1: > **⚠️ SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
+        "evidence": "quantum-observable-universe/braids-and-knots/algebraic-geometric-dilog-equivalence.md:1: > **\u26a0\ufe0f SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
       },
       {
         "field_hash": {
@@ -330,7 +330,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/algebraic-geometric-dilog-equivalence.md:1: > **⚠️ SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
+        "evidence": "quantum-observable-universe/braids-and-knots/algebraic-geometric-dilog-equivalence.md:1: > **\u26a0\ufe0f SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
       },
       {
         "field_hash": {
@@ -2015,7 +2015,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation — structural match."
+        "notes": "Conjecture with class axiomatisation \u2014 structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -2038,6 +2038,39 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:19: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "ff49701d43fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 1,
+            "category": "P2",
+            "text": "> **SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
+          },
+          {
+            "line": 1,
+            "category": "P4",
+            "text": "> **SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
+          },
+          {
+            "line": 7,
+            "category": "P4",
+            "text": "> Full purge tracking: [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md)."
+          }
+        ]
       }
     ]
   },

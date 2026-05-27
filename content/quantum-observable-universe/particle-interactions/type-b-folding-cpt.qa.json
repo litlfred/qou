@@ -84,7 +84,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/type-b-folding-cpt.md:111: 3. **D22 → ✅** requires the Lean class `TypeBFoldingCPT` inhabited"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/type-b-folding-cpt.md:111: 3. **D22 \u2192 \u2705** requires the Lean class `TypeBFoldingCPT` inhabited"
       },
       {
         "field_hash": {
@@ -245,7 +245,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/type-b-folding-cpt.md:54: structure rather than from explicit σᵢ ↔ σᵢ⁻¹ braid manipulation. | content/quantum-observable-universe/braids-and-knots/type-b-folding-cpt.md:61: | D6/D7/D8 (combinatorial) | explicit σᵢ ↔ σᵢ⁻¹ + q ↔ q⁻¹ on Hecke generators | | content/quantum-observable-universe/braids-and-knots/type-b-folding-cpt.md:107: 2. **Identify stable-matter crystal fixed points** for ²H, ⁴He | content/quantum-observable-universe/braids-and-knots/type-b-folding-cpt.md:111: 3. **D22 → ✅** requires the Lean class `TypeBFoldingCPT` inhabited"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/type-b-folding-cpt.md:54: structure rather than from explicit \u03c3\u1d62 \u2194 \u03c3\u1d62\u207b\u00b9 braid manipulation. | content/quantum-observable-universe/braids-and-knots/type-b-folding-cpt.md:61: | D6/D7/D8 (combinatorial) | explicit \u03c3\u1d62 \u2194 \u03c3\u1d62\u207b\u00b9 + q \u2194 q\u207b\u00b9 on Hecke generators | | content/quantum-observable-universe/braids-and-knots/type-b-folding-cpt.md:107: 2. **Identify stable-matter crystal fixed points** for \u00b2H, \u2074He | content/quantum-observable-universe/braids-and-knots/type-b-folding-cpt.md:111: 3. **D22 \u2192 \u2705** requires the Lean class `TypeBFoldingCPT` inhabited"
       },
       {
         "field_hash": {
@@ -1705,7 +1705,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation — structural match."
+        "notes": "Conjecture with class axiomatisation \u2014 structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -1726,6 +1726,22 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "0af7e84b23be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

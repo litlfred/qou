@@ -1319,7 +1319,30 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:u-coordinate-discharges' → expected 'u_coordinate_discharges'; Lean declares: uCoord, hoefsmit_b_sq_in_u, dimQ_V21_sq_in_u, hecke_root_sum_times_q, sigma_eigval_V3_sq_eq_u.... Structural match via content."
+        "notes": "Label 'rem:u-coordinate-discharges' \u2192 expected 'u_coordinate_discharges'; Lean declares: uCoord, hoefsmit_b_sq_in_u, dimQ_V21_sq_in_u, hecke_root_sum_times_q, sigma_eigval_V3_sq_eq_u.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "5d966fb2750e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 49,
+            "category": "P3",
+            "text": "by `field_simp + ring` proofs. This addresses Gemini's repeated"
+          }
+        ]
       }
     ]
   },

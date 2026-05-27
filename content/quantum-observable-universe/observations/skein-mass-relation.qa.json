@@ -118,7 +118,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "major",
-        "evidence": "quantum-observable-universe/observations/skein-mass-relation.md:3: > **⚠️ Substrate-density (ρ_q) ansatz purge in progress (2026-05-24, PR #1127).**"
+        "evidence": "quantum-observable-universe/observations/skein-mass-relation.md:3: > **\u26a0\ufe0f Substrate-density (\u03c1_q) ansatz purge in progress (2026-05-24, PR #1127).**"
       },
       {
         "field_hash": {
@@ -330,7 +330,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/observations/skein-mass-relation.md:3: > **⚠️ Substrate-density (ρ_q) ansatz purge in progress (2026-05-24, PR #1127).**"
+        "evidence": "quantum-observable-universe/observations/skein-mass-relation.md:3: > **\u26a0\ufe0f Substrate-density (\u03c1_q) ansatz purge in progress (2026-05-24, PR #1127).**"
       },
       {
         "field_hash": {
@@ -1909,7 +1909,45 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:skein-mass-relation' → expected 'skein_mass_relation'; Lean declares: SkeinMassRelation, LeptonMassRatio, hbar_q_pos_of_gt_one, predicted_ratio_pos. Structural match via content."
+        "notes": "Label 'rem:skein-mass-relation' \u2192 expected 'skein_mass_relation'; Lean declares: SkeinMassRelation, LeptonMassRatio, hbar_q_pos_of_gt_one, predicted_ratio_pos. Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "42c3f4821a05"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 3,
+            "category": "P2",
+            "text": "> **Substrate-density (\u03c1_q) ansatz purge in progress (2026-05-24, PR #1127).**"
+          },
+          {
+            "line": 3,
+            "category": "P4",
+            "text": "> **Substrate-density (\u03c1_q) ansatz purge in progress (2026-05-24, PR #1127).**"
+          },
+          {
+            "line": 16,
+            "category": "P4",
+            "text": "> [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)"
+          },
+          {
+            "line": 21,
+            "category": "P4",
+            "text": "> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md)."
+          }
+        ]
       }
     ]
   },

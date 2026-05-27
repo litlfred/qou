@@ -2007,7 +2007,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:curvature-rank-gb-stratification' → expected 'curvature_rank_gb_stratification'; Lean declares: FilteredAlgebra, mem_J_zero, mem_J_of_le, curvatureRank, curvatureRank_nonneg.... Structural match via content."
+        "notes": "Label 'prop:curvature-rank-gb-stratification' \u2192 expected 'curvature_rank_gb_stratification'; Lean declares: FilteredAlgebra, mem_J_zero, mem_J_of_le, curvatureRank, curvatureRank_nonneg.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2030,6 +2030,22 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/curvature-rank-gb-stratification.lean:29: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "eeccfbfafccd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

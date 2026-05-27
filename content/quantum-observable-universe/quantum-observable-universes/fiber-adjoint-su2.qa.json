@@ -1283,7 +1283,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'ex:fiber-adjoint-su2' → expected 'fiber_adjoint_su2'; Lean declares: SU2FiberAdjointData, su2FiberAdjoint, su2_fiber_adj_dim. Structural match via content."
+        "notes": "Label 'ex:fiber-adjoint-su2' \u2192 expected 'fiber_adjoint_su2'; Lean declares: SU2FiberAdjointData, su2FiberAdjoint, su2_fiber_adj_dim. Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "8bc204961fd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

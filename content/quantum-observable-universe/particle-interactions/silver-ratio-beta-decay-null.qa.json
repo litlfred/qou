@@ -2007,7 +2007,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:silver-ratio-beta-decay-null' → expected 'silver_ratio_beta_decay_null'; Lean declares: heckeSkein, deltaNet, silver_ratio_polynomial_root, beta_decay_null_iff_h_zero_or_two, hecke_quadratic_silver_ratio_self_referential.... Structural match via content."
+        "notes": "Label 'prop:silver-ratio-beta-decay-null' \u2192 expected 'silver_ratio_beta_decay_null'; Lean declares: heckeSkein, deltaNet, silver_ratio_polynomial_root, beta_decay_null_iff_h_zero_or_two, hecke_quadratic_silver_ratio_self_referential.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2030,6 +2030,29 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:14: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "50ef953b517f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 125,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-19-c-k-comprehensive-reference.md`](../../../docs/audits/2026-05-19-c-k-comprehensive-reference.md)."
+          }
+        ]
       }
     ]
   },

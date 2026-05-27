@@ -1319,7 +1319,35 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:chi-v111-via-sign-substitution' → expected 'chi_v111_via_sign_substitution'; Lean declares: chi_V111_beta_p, chi_V111_beta_n, chi_V111_difference_factored, chi_V111_difference_eq_factored, chi_V3_closed_form_local.... Structural match via content."
+        "notes": "Label 'rem:chi-v111-via-sign-substitution' \u2192 expected 'chi_v111_via_sign_substitution'; Lean declares: chi_V111_beta_p, chi_V111_beta_n, chi_V111_difference_factored, chi_V111_difference_eq_factored, chi_V3_closed_form_local.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "882d2b8a513f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 5,
+            "category": "P2",
+            "text": "Per the closure gap analysis (item 2 of PR #672), V_(1,1,1) is the"
+          },
+          {
+            "line": 58,
+            "category": "P2",
+            "text": "**V_(1,1,1) FULLY DERIVED IN LEAN** (item 2 of PR #672 closure)."
+          }
+        ]
       }
     ]
   },

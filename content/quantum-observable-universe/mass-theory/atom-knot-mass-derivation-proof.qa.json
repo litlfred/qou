@@ -1283,7 +1283,30 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prf:atom-knot-mass-derivation' → expected 'prf:atom_knot_mass_derivation'; Lean declares: categorical_leg_to_markov_trace, archimedean_realization_to_mev, post_archimedean_naming_borrowed, atom_knot_mass_derivation_proof. Structural match via content."
+        "notes": "Label 'prf:atom-knot-mass-derivation' \u2192 expected 'prf:atom_knot_mass_derivation'; Lean declares: categorical_leg_to_markov_trace, archimedean_realization_to_mev, post_archimedean_naming_borrowed, atom_knot_mass_derivation_proof. Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "0a84322fd379"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 55,
+            "category": "P4",
+            "text": "Wedderburn decomposition (renamed from $\\rho$ in 2026-05-17 to"
+          }
+        ]
       }
     ]
   },

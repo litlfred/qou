@@ -1319,7 +1319,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:clausen-function-mathlib-filler' → expected 'clausen_function_mathlib_filler'; Lean declares: Cl_2, Catalan_constant, Vol_figure_8, Vol_Borromean, catalan_constant_eq_cl_2_pi_over_2.... Structural match via content."
+        "notes": "Label 'rem:clausen-function-mathlib-filler' \u2192 expected 'clausen_function_mathlib_filler'; Lean declares: Cl_2, Catalan_constant, Vol_figure_8, Vol_Borromean, catalan_constant_eq_cl_2_pi_over_2.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "45b6802abc3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

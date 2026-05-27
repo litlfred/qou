@@ -2007,7 +2007,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:nuclear-spin-parity' → expected 'nuclear_spin_parity'; Lean declares: SpinParity, nuclearSpinParity, nuclear_spin_parity_even, nuclear_spin_parity_odd, beta_decay_preserves_spin_parity. Structural match via content."
+        "notes": "Label 'prop:nuclear-spin-parity' \u2192 expected 'nuclear_spin_parity'; Lean declares: SpinParity, nuclearSpinParity, nuclear_spin_parity_even, nuclear_spin_parity_odd, beta_decay_preserves_spin_parity. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2030,6 +2030,22 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/predicted-spectra/nuclear-spin-parity.lean:15: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "00f147dfbf7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -1319,7 +1319,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:mass-tower-open-problems-classes' → expected 'mass_tower_open_problems_classes'; Lean declares: alpha5_value, Term7ShellCorrectionClass, term7_structural, term7ShellCorrectionInstance, term7_structural_unconditional.... Structural match via content."
+        "notes": "Label 'rem:mass-tower-open-problems-classes' \u2192 expected 'mass_tower_open_problems_classes'; Lean declares: alpha5_value, Term7ShellCorrectionClass, term7_structural, term7ShellCorrectionInstance, term7_structural_unconditional.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "c1ca259d65e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

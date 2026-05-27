@@ -2031,6 +2031,29 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-recursive-reducer.lean:61: Type mismatch | content/quantum-observable-universe/mass-theory/markov-trace-recursive-reducer.lean:70: Type mismatch | content/quantum-observable-universe/mass-theory/markov-trace-recursive-reducer.lean:94: Function expected at | content/quantum-observable-universe/mass-theory/markov-trace-recursive-reducer.lean:165: failed to synthesize"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "69bbfc17fd52"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 160,
+            "category": "P2",
+            "text": "([PR #545](https://github.com/litlfred/qou/pull/545)), which"
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

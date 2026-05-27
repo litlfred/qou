@@ -1319,7 +1319,35 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:per-wedderburn-block-c5-c6' → expected 'per_wedderburn_block_c5_c6'; Lean declares: chiV3_eps5_coefficient, chiV21_eps5_coefficient, chiV111_eps5_coefficient, chiV3_eps6_coefficient, chiV21_eps6_coefficient.... Structural match via content."
+        "notes": "Label 'rem:per-wedderburn-block-c5-c6' \u2192 expected 'per_wedderburn_block_c5_c6'; Lean declares: chiV3_eps5_coefficient, chiV21_eps5_coefficient, chiV111_eps5_coefficient, chiV3_eps6_coefficient, chiV21_eps6_coefficient.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "a076bd9ffbbb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 13,
+            "category": "P4",
+            "text": "direction. The 2026-05-19 audit ([`per-block-ck-extraction-rule.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-per-block-ck-ext"
+          },
+          {
+            "line": 31,
+            "category": "P4",
+            "text": "[`2026-05-19-qbeta-ladder-closure-path.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-qbeta-ladder-closure-path.md)),"
+          }
+        ]
       }
     ]
   },

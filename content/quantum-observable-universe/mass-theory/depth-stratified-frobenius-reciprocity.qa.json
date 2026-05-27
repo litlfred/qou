@@ -1776,6 +1776,79 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "a0a515624e9c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 19,
+            "category": "P2",
+            "text": "$k = 3$ (per [PR #826](https://github.com/litlfred/qou/pull/826), with"
+          },
+          {
+            "line": 85,
+            "category": "P2",
+            "text": "| Uniform $\\tilde w_\\lambda$ (baseline) | no restriction | $1.82\\times$ | (the current PR #801 result) |"
+          },
+          {
+            "line": 127,
+            "category": "P2",
+            "text": "If true, the FR refinement (FR) closes the variance on PR #801 to"
+          },
+          {
+            "line": 131,
+            "category": "P2",
+            "text": "- $k = 3$ ($K_3^* = 4_1$, empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826)):"
+          },
+          {
+            "line": 150,
+            "category": "P2",
+            "text": "$k = 3$ this is $4_1$ (empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826),"
+          },
+          {
+            "line": 155,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnos"
+          },
+          {
+            "line": 170,
+            "category": "P2",
+            "text": "by [PR #826](https://github.com/litlfred/qou/pull/826): with corrected"
+          },
+          {
+            "line": 196,
+            "category": "P2",
+            "text": "(from PR #826) carries this end-to-end with KnotInfo cross-validation."
+          },
+          {
+            "line": 211,
+            "category": "P2",
+            "text": "Per the structural narrative on PR #801 and"
+          },
+          {
+            "line": 212,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnos"
+          },
+          {
+            "line": 240,
+            "category": "P2",
+            "text": "resolved per [PR #826](https://github.com/litlfred/qou/pull/826))."
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

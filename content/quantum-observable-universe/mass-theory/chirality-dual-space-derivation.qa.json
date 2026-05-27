@@ -2031,6 +2031,22 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/chirality-dual-space-derivation.lean:1: object file '/home/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Basic.olean' of module Mathlib.Algebra.BigOperators.Basic does not exist"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "611fa4aa0ad1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

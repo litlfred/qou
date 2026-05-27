@@ -84,7 +84,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:58: 3. D19 → ✅ requires Lean class instance for the Langlands functor"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:58: 3. D19 \u2192 \u2705 requires Lean class instance for the Langlands functor"
       },
       {
         "field_hash": {
@@ -245,7 +245,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:17: - *For non-simply-laced types (Type B, C, D, G₂, F₄), gives a | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:18: genuinely-distinct dual algebra (Type B ↔ Type C, etc.) — this | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:32: (where Langlands genuinely flips Type B ↔ Type C). | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:34: antisymmetric mass-tower decomposition: matter ↔ Langlands-dual | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:47: Langlands × bar action might be the relevant duality for the"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:17: - *For non-simply-laced types (Type B, C, D, G\u2082, F\u2084), gives a | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:18: genuinely-distinct dual algebra (Type B \u2194 Type C, etc.) \u2014 this | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:32: (where Langlands genuinely flips Type B \u2194 Type C). | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:34: antisymmetric mass-tower decomposition: matter \u2194 Langlands-dual | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:47: Langlands \u00d7 bar action might be the relevant duality for the"
       },
       {
         "field_hash": {
@@ -1707,7 +1707,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation — structural match."
+        "notes": "Conjecture with class axiomatisation \u2014 structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -1728,6 +1728,22 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "9e5f2dd2c527"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

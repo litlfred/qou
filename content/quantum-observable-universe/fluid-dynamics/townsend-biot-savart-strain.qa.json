@@ -1319,7 +1319,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:townsend-biot-savart-strain' → expected 'townsend_biot_savart_strain'; Lean declares: V1, V1', V2, V2', V1_satisfies_ODE.... Structural match via content."
+        "notes": "Label 'rem:townsend-biot-savart-strain' \u2192 expected 'townsend_biot_savart_strain'; Lean declares: V1, V1', V2, V2', V1_satisfies_ODE.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "e7a286167614"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

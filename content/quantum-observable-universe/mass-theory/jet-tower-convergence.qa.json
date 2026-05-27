@@ -2007,7 +2007,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:jet-tower-convergence' → expected 'jet_tower_convergence'; Lean declares: abs_term_le_geom, summable_tower_terms, geometric_tail_bound, jet_tower_tail_bound, jet_levels_for_precision. Structural match via content."
+        "notes": "Label 'prop:jet-tower-convergence' \u2192 expected 'jet_tower_convergence'; Lean declares: abs_term_le_geom, summable_tower_terms, geometric_tail_bound, jet_tower_tail_bound, jet_levels_for_precision. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2030,6 +2030,22 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/particle-interactions/jet-tower-convergence.lean:37: Invalid field `nat_add`: The environment does not contain `Exists.nat_add` | content/quantum-observable-universe/particle-interactions/jet-tower-convergence.lean:62: No goals to be solved | content/quantum-observable-universe/particle-interactions/jet-tower-convergence.lean:115: No goals to be solved | content/quantum-observable-universe/particle-interactions/jet-tower-convergence.lean:120: No goals to be solved | content/quantum-observable-universe/particle-interactions/jet-tower-convergence.lean:134: Invalid field `norm`: The environment does not contain `Exists.norm`"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "3eb41a4ea7e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

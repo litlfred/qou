@@ -1319,7 +1319,30 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:chi-v21-hoefsmit-matrix-derivation' → expected 'chi_v21_hoefsmit_matrix_derivation'; Lean declares: hoefsmit_v21_d1, hoefsmit_v21_d2, hoefsmit_v21_b_sq, hoefsmit_v21_sigma0_trace, hoefsmit_v21_sigma1_trace.... Structural match via content."
+        "notes": "Label 'rem:chi-v21-hoefsmit-matrix-derivation' \u2192 expected 'chi_v21_hoefsmit_matrix_derivation'; Lean declares: hoefsmit_v21_d1, hoefsmit_v21_d2, hoefsmit_v21_b_sq, hoefsmit_v21_sigma0_trace, hoefsmit_v21_sigma1_trace.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "8603e4934e51"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 3,
+            "category": "P2",
+            "text": "**V_(2,1) Hoefsmit 2$\\times$2 matrix derivation \u2014 partial closure (item 1 of PR #672).**"
+          }
+        ]
       }
     ]
   },

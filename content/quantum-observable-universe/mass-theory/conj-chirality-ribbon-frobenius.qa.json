@@ -1391,7 +1391,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'conj:chirality-ribbon-frobenius' → expected 'chirality_ribbon_frobenius'; Lean declares: ChiralityRibbonFrobenius. Structural match via content."
+        "notes": "Label 'conj:chirality-ribbon-frobenius' \u2192 expected 'chirality_ribbon_frobenius'; Lean declares: ChiralityRibbonFrobenius. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1414,6 +1414,54 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/conj-chirality-ribbon-frobenius.lean:27: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "4c0017ede3e3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 42,
+            "category": "P3",
+            "text": "pattern (per Copilot review #r3213373225, made consistent with the"
+          },
+          {
+            "line": 95,
+            "category": "P4",
+            "text": "- **Amphichiral case (verified, 2026-05-09).** Writhe is a property"
+          },
+          {
+            "line": 113,
+            "category": "P4",
+            "text": "- **Chiral case (closed-form formula identified, 2026-05-09).** For"
+          },
+          {
+            "line": 182,
+            "category": "P4",
+            "text": "**Both interpretations (i) and (ii) refuted (2026-05-09).**  The"
+          },
+          {
+            "line": 232,
+            "category": "P4",
+            "text": "2. **Mean-content identity (amphichiral).**  *Discharged 2026-05-09"
+          },
+          {
+            "line": 239,
+            "category": "P4",
+            "text": "3. **Mean-content identity (chiral, partially discharged 2026-05-09).**"
+          }
+        ]
       }
     ]
   },

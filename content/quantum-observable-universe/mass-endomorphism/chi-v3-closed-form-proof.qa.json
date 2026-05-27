@@ -1319,7 +1319,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:chi-v3-closed-form-proof' → expected 'chi_v3_closed_form_proof'; Lean declares: chi_V3_beta_p, chi_V3_beta_n, chi_V3_difference_factored, chi_V3_difference_polynomial, chi_V3_difference_eq_factored.... Structural match via content."
+        "notes": "Label 'rem:chi-v3-closed-form-proof' \u2192 expected 'chi_v3_closed_form_proof'; Lean declares: chi_V3_beta_p, chi_V3_beta_n, chi_V3_difference_factored, chi_V3_difference_polynomial, chi_V3_difference_eq_factored.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "bd09c24c88e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

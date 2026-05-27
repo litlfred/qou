@@ -1319,7 +1319,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:w-boson-mass-discrepancy' → expected 'w_boson_mass_discrepancy'; Lean declares: q₀, q₀_gt_one, q₀_pos, q₀_minus_one, q₀_minus_one_val.... Structural match via content."
+        "notes": "Label 'rem:w-boson-mass-discrepancy' \u2192 expected 'w_boson_mass_discrepancy'; Lean declares: q\u2080, q\u2080_gt_one, q\u2080_pos, q\u2080_minus_one, q\u2080_minus_one_val.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "49d3019268bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

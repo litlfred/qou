@@ -2029,7 +2029,40 @@
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:37: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier | content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:38: unexpected identifier; expected 'lemma' | content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:46: unexpected token 'λ'; expected '_' or identifier | content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:49: unexpected token 'λ'; expected '_' or identifier | content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:59: unexpected token 'λ'; expected '_' or identifier"
+        "evidence": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:37: unexpected token '\u03bb'; expected '(', '[', '_', '{', '\u2983' or identifier | content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:38: unexpected identifier; expected 'lemma' | content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:46: unexpected token '\u03bb'; expected '_' or identifier | content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:49: unexpected token '\u03bb'; expected '_' or identifier | content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:59: unexpected token '\u03bb'; expected '_' or identifier"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "fa4932b4f83e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 283,
+            "category": "P2",
+            "text": "| $6$ | $11$ | $5$ | $1$ ((3,2,1)) | `hecke_n6_frobenius_codim` | ${}^{4}$He (H_{12} block; PR #621) |"
+          },
+          {
+            "line": 284,
+            "category": "P2",
+            "text": "| $7$ | $15$ | $7$ | $1$ ((4,2,1)) | `hecke_n7_frobenius_codim` | A $\\ge$ 5 nuclei (PR #621) |"
+          },
+          {
+            "line": 285,
+            "category": "P2",
+            "text": "| $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | `hecke_n8_frobenius_codim` | ${}^4$He / ${}^{16}$O / ${}^{20}$Ne (PR #631) |"
+          }
+        ]
       }
     ]
   },

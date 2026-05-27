@@ -2154,6 +2154,69 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/kashiwara-jones-c4-categorical.lean:32: object file '/home/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Rat/Basic.olean' of module Mathlib.Data.Rat.Basic does not exist"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "01c017da8184"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 3,
+            "category": "P4",
+            "text": "> **Errata banner (2026-05-19) \u2014 this proposition's claimed"
+          },
+          {
+            "line": 4,
+            "category": "P4",
+            "text": "> closed form $c_4 = b^2 + 1/2$ is superseded.** The 2026-05-19"
+          },
+          {
+            "line": 5,
+            "category": "P2",
+            "text": "> SDP-$T_\\beta$ derivation (PR #777) showed the empirical $c_4$ is"
+          },
+          {
+            "line": 12,
+            "category": "P4",
+            "text": "> Audit: [`docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-qbeta-all-c"
+          },
+          {
+            "line": 18,
+            "category": "P4",
+            "text": "> 2026-05-19 audit."
+          },
+          {
+            "line": 37,
+            "category": "P2",
+            "text": "- $c_2 = b^2$ (PR #661, V_(2,1) Hoefsmit alone)"
+          },
+          {
+            "line": 106,
+            "category": "P2",
+            "text": "4. Comparison with PR #655's empirical $c_4$ extraction (which"
+          },
+          {
+            "line": 118,
+            "category": "P2",
+            "text": "- $c_2 = b^2$ (PR #661)"
+          },
+          {
+            "line": 119,
+            "category": "P2",
+            "text": "- $c_3 = -2$ (PR #664)"
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

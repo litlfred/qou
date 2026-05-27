@@ -1532,6 +1532,34 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/canonical-braid-interface-composition.lean:15: invalid 'import' command, it must be used in the beginning of the file"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "b72c0d40cb26"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 48,
+            "category": "P2",
+            "text": "The \u0394_coupling residual fit (PR #656 v6) localised the ${}^{3}$He"
+          },
+          {
+            "line": 68,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md`](../../docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md)"
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

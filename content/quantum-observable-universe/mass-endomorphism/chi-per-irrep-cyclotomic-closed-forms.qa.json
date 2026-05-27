@@ -1319,7 +1319,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:chi-per-irrep-cyclotomic-closed-forms' → expected 'chi_per_irrep_cyclotomic_closed_forms'; Lean declares: chi_V3_diff_closed, chi_V21_diff_closed, chi_V111_diff_closed, chi_V3_diff_polynomial_form, chi_V21_diff_polynomial_form.... Structural match via content."
+        "notes": "Label 'rem:chi-per-irrep-cyclotomic-closed-forms' \u2192 expected 'chi_per_irrep_cyclotomic_closed_forms'; Lean declares: chi_V3_diff_closed, chi_V21_diff_closed, chi_V111_diff_closed, chi_V3_diff_polynomial_form, chi_V21_diff_polynomial_form.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "62cc6af3a46b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

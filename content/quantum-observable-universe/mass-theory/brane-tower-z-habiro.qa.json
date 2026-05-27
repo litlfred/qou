@@ -1395,7 +1395,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation — structural match."
+        "notes": "Conjecture with class axiomatisation \u2014 structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -1418,6 +1418,79 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/brane-tower-z-habiro.lean:27: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "54f0a0c067f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 116,
+            "category": "P4",
+            "text": "**Empirical observation (uniform-$k$ sweep, 2026-04-29).** A"
+          },
+          {
+            "line": 181,
+            "category": "P4",
+            "text": "## Closure (2026-05-11): scalar-eigenvalue form of $n_\\star$ is refuted"
+          },
+          {
+            "line": 232,
+            "category": "P4",
+            "text": "## Operator-valued probe (2026-05-11): per-eigenvalue form also refuted"
+          },
+          {
+            "line": 344,
+            "category": "P4",
+            "text": "- Scalar-eigenvalue family (\u00a7\"Closure (2026-05-11)\"): **refuted**."
+          },
+          {
+            "line": 361,
+            "category": "P4",
+            "text": "### Multiplicity / Type-B-fold probe (2026-05-11): also refuted"
+          },
+          {
+            "line": 426,
+            "category": "P4",
+            "text": "## Pair-knot magic-shell probe (2026-05-11): partial closure with LP dual confirmation"
+          },
+          {
+            "line": 525,
+            "category": "P4",
+            "text": "## Pair-knot Markov-trace refinement (2026-05-11): also refuted, $Z\\leftrightarrow N$ symmetry restored"
+          },
+          {
+            "line": 596,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/docs/audit"
+          },
+          {
+            "line": 598,
+            "category": "P4",
+            "text": "## Multiplicity / Type-B-fold probe (2026-05-11): also refuted"
+          },
+          {
+            "line": 628,
+            "category": "P2",
+            "text": "## Per-partition $k_\\lambda$ refinement (sibling PR #639)"
+          },
+          {
+            "line": 630,
+            "category": "P2",
+            "text": "[PR #639's `per-partition-k-lambda-rule.md`](https://github.com/litlfred/qou/pull/639)"
+          }
+        ]
       }
     ]
   },

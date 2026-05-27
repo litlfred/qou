@@ -1319,7 +1319,30 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:delta-skein-substrate-identity' → expected 'delta_skein_substrate_identity'; Lean declares: volBorromean, hbarQ, hbarQSq, deltaMassOverMe, delta_skein_eq_mass_splitting.... Structural match via content."
+        "notes": "Label 'rem:delta-skein-substrate-identity' \u2192 expected 'delta_skein_substrate_identity'; Lean declares: volBorromean, hbarQ, hbarQSq, deltaMassOverMe, delta_skein_eq_mass_splitting.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "fc972494b090"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 131,
+            "category": "P4",
+            "text": "[docs/agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/do"
+          }
+        ]
       }
     ]
   },

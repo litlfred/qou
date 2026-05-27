@@ -1989,7 +1989,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:wedderburn-weight-canonical' → expected 'wedderburn_weight_canonical'; Lean declares: Partition, WedderburnWeightCanonical, WedderburnWeightCanonical.y_self_conjugate, WedderburnWeightCanonical.beta_over_C. Structural match via content."
+        "notes": "Label 'prop:wedderburn-weight-canonical' \u2192 expected 'wedderburn_weight_canonical'; Lean declares: Partition, WedderburnWeightCanonical, WedderburnWeightCanonical.y_self_conjugate, WedderburnWeightCanonical.beta_over_C. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2011,7 +2011,35 @@
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-application/wedderburn-weight-canonical.lean:88: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier | content/quantum-observable-universe/mass-application/wedderburn-weight-canonical.lean:89: unexpected identifier; expected 'lemma' | content/quantum-observable-universe/mass-application/wedderburn-weight-canonical.lean:93: unexpected identifier; expected 'lemma' | content/quantum-observable-universe/mass-application/wedderburn-weight-canonical.lean:100: unexpected token 'λ'; expected '_' or identifier | content/quantum-observable-universe/mass-application/wedderburn-weight-canonical.lean:107: unexpected token 'λ'; expected '_' or identifier"
+        "evidence": "content/quantum-observable-universe/mass-application/wedderburn-weight-canonical.lean:88: unexpected token '\u03bb'; expected '(', '[', '_', '{', '\u2983' or identifier | content/quantum-observable-universe/mass-application/wedderburn-weight-canonical.lean:89: unexpected identifier; expected 'lemma' | content/quantum-observable-universe/mass-application/wedderburn-weight-canonical.lean:93: unexpected identifier; expected 'lemma' | content/quantum-observable-universe/mass-application/wedderburn-weight-canonical.lean:100: unexpected token '\u03bb'; expected '_' or identifier | content/quantum-observable-universe/mass-application/wedderburn-weight-canonical.lean:107: unexpected token '\u03bb'; expected '_' or identifier"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "f7156bb86454"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 52,
+            "category": "P4",
+            "text": "([witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json))."
+          },
+          {
+            "line": 187,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/audits/2026"
+          }
+        ]
       }
     ]
   },

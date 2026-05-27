@@ -84,7 +84,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/conj-im-q-physical-role.md:18: > **⚠️ Status — open conjecture (2026-05-25, PR #1127).** Direct"
+        "evidence": "quantum-observable-universe/braids-and-knots/conj-im-q-physical-role.md:18: > **\u26a0\ufe0f Status \u2014 open conjecture (2026-05-25, PR #1127).** Direct"
       },
       {
         "field_hash": {
@@ -245,7 +245,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/conj-im-q-physical-role.md:18: > **⚠️ Status — open conjecture (2026-05-25, PR #1127).** Direct"
+        "evidence": "quantum-observable-universe/braids-and-knots/conj-im-q-physical-role.md:18: > **\u26a0\ufe0f Status \u2014 open conjecture (2026-05-25, PR #1127).** Direct"
       },
       {
         "field_hash": {
@@ -353,7 +353,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "minor",
-        "evidence": "quantum-observable-universe/braids-and-knots/conj-im-q-physical-role.ts:9: title \"Physical role of $\\\\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU obse\" — first-person aside in the title"
+        "evidence": "quantum-observable-universe/braids-and-knots/conj-im-q-physical-role.ts:9: title \"Physical role of $\\\\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU obse\" \u2014 first-person aside in the title"
       },
       {
         "field_hash": {
@@ -1638,7 +1638,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'conj:im-q-physical-role' → expected 'im_q_physical_role'; Lean declares: default_q_real, mass_observable_conj_invariance, ImQCandidateRole, im_q_observable_pairing. Structural match via content."
+        "notes": "Label 'conj:im-q-physical-role' \u2192 expected 'im_q_physical_role'; Lean declares: default_q_real, mass_observable_conj_invariance, ImQCandidateRole, im_q_observable_pairing. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1661,6 +1661,54 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/conj-im-q-physical-role.lean:16: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "f0acc61747b2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 18,
+            "category": "P1",
+            "text": "> **Status \u2014 open conjecture (2026-05-25, PR #1127).** Direct"
+          },
+          {
+            "line": 18,
+            "category": "P2",
+            "text": "> **Status \u2014 open conjecture (2026-05-25, PR #1127).** Direct"
+          },
+          {
+            "line": 18,
+            "category": "P4",
+            "text": "> **Status \u2014 open conjecture (2026-05-25, PR #1127).** Direct"
+          },
+          {
+            "line": 123,
+            "category": "P4",
+            "text": "- Audit: [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md) \u2014 P"
+          },
+          {
+            "line": 124,
+            "category": "P4",
+            "text": "- Audit: [`docs/audits/2026-05-24-complex-q-historical-trajectory.md`](../../../docs/audits/2026-05-24-complex-q-historical-trajectory.md) \u2014 historica"
+          },
+          {
+            "line": 125,
+            "category": "P4",
+            "text": "- Audit: [`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md) \u00a7Q3 \u2014 A"
+          }
+        ]
       }
     ]
   },

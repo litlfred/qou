@@ -67,7 +67,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'conj:psd-trace-orthogonality' → expected 'psd_trace_orthogonality'; Lean declares: data, Partition, Partition.numRows, Partition.maxRow, Partition.isLongString.... Structural match via content."
+        "notes": "Label 'conj:psd-trace-orthogonality' \u2192 expected 'psd_trace_orthogonality'; Lean declares: data, Partition, Partition.numRows, Partition.maxRow, Partition.isLongString.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -90,6 +90,34 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/conj-psd-trace-orthogonality.lean:41: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "5b0fdf74df26"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 62,
+            "category": "P4",
+            "text": "Per Probe (1) and Probe (1b) in [`docs/audits/2026-05-25-dominant-partition-nucleon-structure.md`](../../../docs/audits/2026-05-25-dominant-partition-"
+          },
+          {
+            "line": 72,
+            "category": "P4",
+            "text": "- It does NOT predict the *specific* PSD-dominant shape at each $A$. At $A=4$ the dominant is the (A,A,A) rectangle; at $A=6$ it is the multi-step (3,"
+          }
+        ]
       }
     ]
   },

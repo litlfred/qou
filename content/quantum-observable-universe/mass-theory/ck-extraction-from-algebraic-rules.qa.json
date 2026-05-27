@@ -1319,7 +1319,40 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:ck-extraction-from-algebraic-rules' → expected 'ck_extraction_from_algebraic_rules'; Lean declares: hoefsmitB_local, jonesHopfLocal, YangBaxterRule, QYoungSymmetrizers, HeckeQuadraticAllGenerators.... Structural match via content."
+        "notes": "Label 'rem:ck-extraction-from-algebraic-rules' \u2192 expected 'ck_extraction_from_algebraic_rules'; Lean declares: hoefsmitB_local, jonesHopfLocal, YangBaxterRule, QYoungSymmetrizers, HeckeQuadraticAllGenerators.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "376d4f9c17e2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 5,
+            "category": "P4",
+            "text": "> **Errata banner (2026-05-19) \u2014 $c_4$ closed form has shifted.**"
+          },
+          {
+            "line": 7,
+            "category": "P2",
+            "text": "> $c_4 = c_3 \\cdot b^4 = -2 b^4$ (per PR #777's SDP-$T_\\beta$"
+          },
+          {
+            "line": 12,
+            "category": "P4",
+            "text": "> Audit: [`docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-qbeta-all-c"
+          }
+        ]
       }
     ]
   },

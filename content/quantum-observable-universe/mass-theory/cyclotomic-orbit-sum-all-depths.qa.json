@@ -2007,7 +2007,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:cyclotomic-orbit-sum-all-depths' → expected 'cyclotomic_orbit_sum_all_depths'; Lean declares: orbit_sum_all_depths. Structural match via content."
+        "notes": "Label 'prop:cyclotomic-orbit-sum-all-depths' \u2192 expected 'cyclotomic_orbit_sum_all_depths'; Lean declares: orbit_sum_all_depths. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2028,6 +2028,34 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "2ced0b727ac8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 70,
+            "category": "P2",
+            "text": "### Generalises Theorem B (PR #635 round 3)"
+          },
+          {
+            "line": 83,
+            "category": "P2",
+            "text": "The depth-3 case (round 3 + round 4 of PR #635) gave $(K - 3)/2$."
+          }
+        ]
       }
     ]
   },

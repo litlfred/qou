@@ -2007,7 +2007,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:cyclotomic-depth3-dimension-synthesis' → expected 'cyclotomic_depth3_dimension_synthesis'; Lean declares: dimension_synthesis_upper_bound. Structural match via content."
+        "notes": "Label 'prop:cyclotomic-depth3-dimension-synthesis' \u2192 expected 'cyclotomic_depth3_dimension_synthesis'; Lean declares: dimension_synthesis_upper_bound. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2028,6 +2028,34 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "61ecdad42e84"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 182,
+            "category": "P2",
+            "text": "(round 13 of PR #635)**, the framework's depth-3 picture has a"
+          },
+          {
+            "line": 192,
+            "category": "P2",
+            "text": "- $K = 5$ baseline (PR #634): [`prop:cl3-zeta5-pslq-independence`](#prop:cl3-zeta5-pslq-independence)"
+          }
+        ]
       }
     ]
   },

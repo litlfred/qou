@@ -2031,6 +2031,22 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.lean:26: unexpected token 'section'; expected 'lemma' | content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.lean:28: failed to compile definition, compiler IR check failed at `QOU.q_param._closed_1`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking definition as 'no | content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.lean:29: failed to compile definition, compiler IR check failed at `QOU.q_inv_param._closed_2`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking definition as | content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.lean:70: Unexpected name `QOU` after `end`: The current section is unnamed"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "0bb6d1422082"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

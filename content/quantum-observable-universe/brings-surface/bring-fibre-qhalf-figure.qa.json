@@ -328,7 +328,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/bring-fibre-qhalf-figure.ts:5: title \"Bring chiral fibre at $q = \\\\tfrac{1}{2}$: real segment with well-separated sheets\" — first-person aside in the title"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/bring-fibre-qhalf-figure.ts:5: title \"Bring chiral fibre at $q = \\\\tfrac{1}{2}$: real segment with well-separated sheets\" \u2014 first-person aside in the title"
       },
       {
         "field_hash": {
@@ -1540,6 +1540,29 @@
         },
         "reviewed_at": "2026-05-26T00:25:01.306Z",
         "reviewed_sha": "5f4d47cab579818c6ea3ac43dc97df48b7cda1b1"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "0f5ed308cb23"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 27,
+            "category": "P4",
+            "text": "Formal math-book style per author directive 2026-05-24."
+          }
+        ]
       }
     ]
   },

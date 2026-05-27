@@ -1319,7 +1319,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:multi-link-jones-q1-extension' → expected 'multi_link_jones_q1_extension'; Lean declares: jonesHopfTimesBorromean, jonesHopfTimesBorromean_eq_sixteen, jonesBorromeanFlipped, jonesBorromeanFlipped_eq_eight, jonesDoubleHopfValue.... Structural match via content."
+        "notes": "Label 'rem:multi-link-jones-q1-extension' \u2192 expected 'multi_link_jones_q1_extension'; Lean declares: jonesHopfTimesBorromean, jonesHopfTimesBorromean_eq_sixteen, jonesBorromeanFlipped, jonesBorromeanFlipped_eq_eight, jonesDoubleHopfValue.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "fb6eb832d9f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

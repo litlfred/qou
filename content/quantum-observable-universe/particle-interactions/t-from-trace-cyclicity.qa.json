@@ -84,7 +84,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.md:99: 2. **D8 → ✅** requires Lean instance proving the trace-cyclicity"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.md:99: 2. **D8 \u2192 \u2705** requires Lean instance proving the trace-cyclicity"
       },
       {
         "field_hash": {
@@ -245,7 +245,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.md:85: becomes a corollary of CPT = C · P · T once D6 / D7 / D8 close. | content/quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.md:99: 2. **D8 → ✅** requires Lean instance proving the trace-cyclicity | content/quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.md:100: compatibility + bar = P · C · T factorisation. | content/quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.md:105: + §2 Cluster A (CPT decomposition D5 → D6 + D7 + D8)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.md:85: becomes a corollary of CPT = C \u00b7 P \u00b7 T once D6 / D7 / D8 close. | content/quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.md:99: 2. **D8 \u2192 \u2705** requires Lean instance proving the trace-cyclicity | content/quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.md:100: compatibility + bar = P \u00b7 C \u00b7 T factorisation. | content/quantum-observable-universe/braids-and-knots/t-from-trace-cyclicity.md:105: + \u00a72 Cluster A (CPT decomposition D5 \u2192 D6 + D7 + D8)"
       },
       {
         "field_hash": {
@@ -1705,7 +1705,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation — structural match."
+        "notes": "Conjecture with class axiomatisation \u2014 structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -1726,6 +1726,22 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "e1d0cf428ffd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

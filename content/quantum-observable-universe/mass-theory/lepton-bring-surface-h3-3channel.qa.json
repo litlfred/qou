@@ -84,7 +84,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:33: > **⚠️ T6 status — gap (a) RESOLVED; gap (c) IMPLICATED.** This"
+        "evidence": "quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:33: > **\u26a0\ufe0f T6 status \u2014 gap (a) RESOLVED; gap (c) IMPLICATED.** This"
       },
       {
         "field_hash": {
@@ -245,7 +245,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:33: > **⚠️ T6 status — gap (a) RESOLVED; gap (c) IMPLICATED.** This | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:38: > equals **(3/2) × (1/ℏ_q²)**, structurally identical to the | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:63: fixes the 3-CAL ↔ 3-channel mapping. | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:131: ### Lepton ↔ channel mapping (conjectural) | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:135: - sym (highest weight, $+q$ only) ↔ CAL-2 $q_0$ (substrate deformation)"
+        "evidence": "quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:33: > **\u26a0\ufe0f T6 status \u2014 gap (a) RESOLVED; gap (c) IMPLICATED.** This | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:38: > equals **(3/2) \u00d7 (1/\u210f_q\u00b2)**, structurally identical to the | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:63: fixes the 3-CAL \u2194 3-channel mapping. | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:131: ### Lepton \u2194 channel mapping (conjectural) | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:135: - sym (highest weight, $+q$ only) \u2194 CAL-2 $q_0$ (substrate deformation)"
       },
       {
         "field_hash": {
@@ -2202,7 +2202,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:lepton-bring-surface-h3-3channel' → expected 'lepton_bring_surface_h3_3channel'; Lean declares: W_1D_irrep, W_STD, hecke_ab, hecke_ab_correct, lepton_V_hat_h3_3channel.... Structural match via content."
+        "notes": "Label 'prop:lepton-bring-surface-h3-3channel' \u2192 expected 'lepton_bring_surface_h3_3channel'; Lean declares: W_1D_irrep, W_STD, hecke_ab, hecke_ab_correct, lepton_V_hat_h3_3channel.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2225,6 +2225,39 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/lepton-bring-surface-h3-3channel.lean:20: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "3bb52993492e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 40,
+            "category": "P4",
+            "text": "> [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-conventio"
+          },
+          {
+            "line": 182,
+            "category": "P4",
+            "text": "- Audit: [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-co"
+          },
+          {
+            "line": 183,
+            "category": "P4",
+            "text": "- SUPERSEDED \u03c1_q purge (now understood as incomplete): [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded"
+          }
+        ]
       }
     ]
   },

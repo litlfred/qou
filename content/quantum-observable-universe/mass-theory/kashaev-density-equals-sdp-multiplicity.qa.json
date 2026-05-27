@@ -243,7 +243,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:34: | ²H (D)  | knot $6_2$        | 1 | 1 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:35: | ³H (T)  | knot $8_{11}$     | 2 | 2 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:36: | ³He     | link $L_{6a4}$    | 2 | 2 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:38: The ⁴He case uses the magic $A \\cdot 8G$ closure rule rather than a | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:64: extrapolated to ⁴He with explicit caveat. The Lean class axiomatises"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:34: | \u00b2H (D)  | knot $6_2$        | 1 | 1 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:35: | \u00b3H (T)  | knot $8_{11}$     | 2 | 2 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:36: | \u00b3He     | link $L_{6a4}$    | 2 | 2 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:38: The \u2074He case uses the magic $A \\cdot 8G$ closure rule rather than a | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:64: extrapolated to \u2074He with explicit caveat. The Lean class axiomatises"
       },
       {
         "field_hash": {
@@ -1709,7 +1709,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation — structural match."
+        "notes": "Conjecture with class axiomatisation \u2014 structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -1730,6 +1730,84 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "9c3e3c9807d5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 1,
+            "category": "P4",
+            "text": "**Conjecture (Rule 14 conditional adoption \u2014 owner authorised 2026-05-24).**"
+          },
+          {
+            "line": 47,
+            "category": "P4",
+            "text": "([`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md))."
+          },
+          {
+            "line": 84,
+            "category": "P4",
+            "text": "Pre-2026-05-24 the"
+          },
+          {
+            "line": 100,
+            "category": "P4",
+            "text": "2026-05-24, in response to"
+          },
+          {
+            "line": 101,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-rule14-kashaev-density.md`](../../docs/audits/2026-05-24-rule14-kashaev-density.md)"
+          },
+          {
+            "line": 136,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md`](../../docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md)"
+          },
+          {
+            "line": 139,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-rule14-atom-knot-census.md`](../../docs/audits/2026-05-24-rule14-atom-knot-census.md)"
+          },
+          {
+            "line": 140,
+            "category": "P4",
+            "text": "recommends waiting for R5-full SDP (owner-decided 2026-05-24)."
+          },
+          {
+            "line": 149,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-rule14-kashaev-density.md`](../../docs/audits/2026-05-24-rule14-kashaev-density.md)"
+          },
+          {
+            "line": 151,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-rule14-atom-knot-census.md`](../../docs/audits/2026-05-24-rule14-atom-knot-census.md)"
+          },
+          {
+            "line": 153,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md)"
+          },
+          {
+            "line": 155,
+            "category": "P4",
+            "text": "[`docs/coordination/2026-05-24-post-1089-followups-ledger.md`](../../docs/coordination/2026-05-24-post-1089-followups-ledger.md)"
+          }
+        ]
       }
     ]
   },

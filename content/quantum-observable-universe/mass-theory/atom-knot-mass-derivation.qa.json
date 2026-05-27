@@ -2011,7 +2011,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:atom-knot-mass-derivation' → expected 'atom_knot_mass_derivation'; Lean declares: DerivationMethodology, MassDerivationCertificate, YekutieliFiniteSliceMultiplicativeTrace, gbSpectralCollapsePage, GbSpectralSequenceCollapseAtE2.... Structural match via content."
+        "notes": "Label 'prop:atom-knot-mass-derivation' \u2192 expected 'atom_knot_mass_derivation'; Lean declares: DerivationMethodology, MassDerivationCertificate, YekutieliFiniteSliceMultiplicativeTrace, gbSpectralCollapsePage, GbSpectralSequenceCollapseAtE2.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2034,6 +2034,54 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/atom-knot-mass-derivation.lean:242: unsolved goals | content/quantum-observable-universe/mass-application/atom-knot-mass-derivation.lean:244: unsolved goals | content/quantum-observable-universe/mass-application/atom-knot-mass-derivation.lean:253: unsolved goals | content/quantum-observable-universe/mass-application/atom-knot-mass-derivation.lean:255: unsolved goals | content/quantum-observable-universe/mass-application/atom-knot-mass-derivation.lean:264: unsolved goals"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "d258492d429c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 1,
+            "category": "P4",
+            "text": "**Notation (2026-05-17).** The prefactor previously written"
+          },
+          {
+            "line": 12,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-17-rho-notation-fix-recommendation.md`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/docs/audits/"
+          },
+          {
+            "line": 42,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md)"
+          },
+          {
+            "line": 49,
+            "category": "P4",
+            "text": "[Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)"
+          },
+          {
+            "line": 50,
+            "category": "P4",
+            "text": "and the [m_p chain closure gap](../../../docs/audits/2026-05-17-m-p-chain-closure-gap-analysis.md)."
+          },
+          {
+            "line": 379,
+            "category": "P4",
+            "text": "**Status (2026-05-09, issue #604 deliverable 1).** A first-pass"
+          }
+        ]
       }
     ]
   },

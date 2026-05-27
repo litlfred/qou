@@ -300,7 +300,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:61: color-sheet pair weight from the S₅/SO(3) fiber action, **normalised | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:141: The class is *inhabited* by the S₅/SO(3) fiber data once | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:167: CPT symmetry on the color sheets, or from a finer S₅ orbit | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:169: 3. **⁴He magic-shell saturation.** Does the color-tube weighting | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:183: - ⁴He magic-shell color-tube reading:"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:61: color-sheet pair weight from the S\u2085/SO(3) fiber action, **normalised | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:141: The class is *inhabited* by the S\u2085/SO(3) fiber data once | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:167: CPT symmetry on the color sheets, or from a finer S\u2085 orbit | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:169: 3. **\u2074He magic-shell saturation.** Does the color-tube weighting | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:183: - \u2074He magic-shell color-tube reading:"
       },
       {
         "field_hash": {
@@ -1777,7 +1777,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation — structural match."
+        "notes": "Conjecture with class axiomatisation \u2014 structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -1798,6 +1798,49 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "1abb25c55648"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 95,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md)"
+          },
+          {
+            "line": 173,
+            "category": "P4",
+            "text": "See [`docs/audits/2026-05-24-4he-magic-shell-color-tube-audit.md`](../../docs/audits/2026-05-24-4he-magic-shell-color-tube-audit.md)."
+          },
+          {
+            "line": 177,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-rule14-kashaev-density.md`](../../docs/audits/2026-05-24-rule14-kashaev-density.md)."
+          },
+          {
+            "line": 182,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-sign-flip-interpretation.md`](../../docs/audits/2026-05-24-sign-flip-interpretation.md)"
+          },
+          {
+            "line": 184,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-4he-magic-shell-color-tube-audit.md`](../../docs/audits/2026-05-24-4he-magic-shell-color-tube-audit.md)"
+          }
+        ]
       }
     ]
   },

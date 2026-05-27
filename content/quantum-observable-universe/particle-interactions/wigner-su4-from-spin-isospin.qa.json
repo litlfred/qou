@@ -88,7 +88,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:153: D9  (isospin SU(2)_I)  ⏳ scaffold | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:154: D10 (spin SU(2)_S)     ⏳ scaffold | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:155: D11 (Wigner SU(4))     ⏳ scaffold  ← this conjecture | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:158: All three rows are now ⏳ scaffold.  Promoting any of them to ✅ | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:159: requires the underlying Lean class instance.  D11 ⏳ → ✅ requires"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:153: D9  (isospin SU(2)_I)  \u23f3 scaffold | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:154: D10 (spin SU(2)_S)     \u23f3 scaffold | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:155: D11 (Wigner SU(4))     \u23f3 scaffold  \u2190 this conjecture | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:158: All three rows are now \u23f3 scaffold.  Promoting any of them to \u2705 | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:159: requires the underlying Lean class instance.  D11 \u23f3 \u2192 \u2705 requires"
       },
       {
         "field_hash": {
@@ -249,7 +249,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:25: Then the **combined symmetry** SU(2)_S × SU(2)_I = SU(4) acts on | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:26: the **4-dimensional internal space** of each nucleon (spin × isospin | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:48: the magic A·8G closure as the SU(4) supermultiplet structure**: | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:55: | **4** | $\\mathbf{4}^{\\otimes 4} \\supset \\mathbf{1}$ (first totally-antisym) | **magic A·8G** closure | | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:60: The conjectural identification: the **magic A·8G constant** equals"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:25: Then the **combined symmetry** SU(2)_S \u00d7 SU(2)_I = SU(4) acts on | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:26: the **4-dimensional internal space** of each nucleon (spin \u00d7 isospin | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:48: the magic A\u00b78G closure as the SU(4) supermultiplet structure**: | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:55: | **4** | $\\mathbf{4}^{\\otimes 4} \\supset \\mathbf{1}$ (first totally-antisym) | **magic A\u00b78G** closure | | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:60: The conjectural identification: the **magic A\u00b78G constant** equals"
       },
       {
         "field_hash": {
@@ -1743,7 +1743,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation — structural match."
+        "notes": "Conjecture with class axiomatisation \u2014 structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -1764,6 +1764,34 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "b48bc23b8c08"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 44,
+            "category": "P4",
+            "text": "Per [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md),"
+          },
+          {
+            "line": 189,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md)"
+          }
+        ]
       }
     ]
   },

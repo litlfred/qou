@@ -2031,6 +2031,22 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/categorical-chain-convergence-mechanisms.lean:21: invalid 'import' command, it must be used in the beginning of the file"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "94b4eaa729e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

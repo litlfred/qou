@@ -228,7 +228,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/crossed-module-euler-characteristic.md:44: | **Algebraic** (Q₈ crossed module) | $-12$ | $\\dim(V) \\cdot \\chi(\\Sigma_4)$ |"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/crossed-module-euler-characteristic.md:44: | **Algebraic** (Q\u2088 crossed module) | $-12$ | $\\dim(V) \\cdot \\chi(\\Sigma_4)$ |"
       },
       {
         "field_hash": {
@@ -1162,7 +1162,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/crossed-module-euler-characteristic.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/crossed-module-euler-characteristic.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       },
       {
         "field_hash": {
@@ -1180,7 +1180,7 @@
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/crossed-module-euler-characteristic.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/crossed-module-euler-characteristic.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1200,7 +1200,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/crossed-module-euler-characteristic.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/crossed-module-euler-characteristic.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       },
       {
         "field_hash": {
@@ -1218,7 +1218,7 @@
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/crossed-module-euler-characteristic.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/crossed-module-euler-characteristic.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1899,6 +1899,22 @@
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "notes": "block has no .lean sibling"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "c9e690df8bcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

@@ -2029,6 +2029,49 @@
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "cd2ee72de463"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 5,
+            "category": "P4",
+            "text": "([`docs/audits/2026-05-03-w3-habiro-unblocked.md`](../../docs/audits/2026-05-03-w3-habiro-unblocked.md))"
+          },
+          {
+            "line": 76,
+            "category": "P4",
+            "text": "#### Path A categorical verification (proton + deuteron, 2026-05-09)"
+          },
+          {
+            "line": 117,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`](../../docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md)"
+          },
+          {
+            "line": 126,
+            "category": "P4",
+            "text": "([`docs/audits/2026-05-04-per-nucleon-shift-derivation.md`](../../docs/audits/2026-05-04-per-nucleon-shift-derivation.md))."
+          },
+          {
+            "line": 137,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](../../docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md)"
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

@@ -1573,6 +1573,29 @@
         "reviewed_at": "2026-05-26T00:25:01.306Z",
         "reviewed_sha": "5f4d47cab579818c6ea3ac43dc97df48b7cda1b1"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "54afb5c0df10"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 37,
+            "category": "P4",
+            "text": "[`structural-diagnosis-operator-valued`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-17-structural-diagnosis-operator-valued.md)"
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-26T14:26:49.037Z"

@@ -84,7 +84,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md:19: > **⚠️ Status — open conjecture (2026-05-24, PR #1127 Phase 3).**"
+        "evidence": "quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md:19: > **\u26a0\ufe0f Status \u2014 open conjecture (2026-05-24, PR #1127 Phase 3).**"
       },
       {
         "field_hash": {
@@ -245,7 +245,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md:19: > **⚠️ Status — open conjecture (2026-05-24, PR #1127 Phase 3).** | quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md:58: 1. **Hyperbolic volume Vol(4_1) ≈ 2.0299** — the **Kashaev $q \\to 1$"
+        "evidence": "quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md:19: > **\u26a0\ufe0f Status \u2014 open conjecture (2026-05-24, PR #1127 Phase 3).** | quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md:58: 1. **Hyperbolic volume Vol(4_1) \u2248 2.0299** \u2014 the **Kashaev $q \\to 1$"
       },
       {
         "field_hash": {
@@ -565,7 +565,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.lean:139: bare `sorry` at line 139 — no `-- Ref: [key]` citation on the same line, within the enclosing declaration, or in the 5 lines preceding its opening"
+        "evidence": "quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.lean:139: bare `sorry` at line 139 \u2014 no `-- Ref: [key]` citation on the same line, within the enclosing declaration, or in the 5 lines preceding its opening"
       },
       {
         "field_hash": {
@@ -584,7 +584,7 @@
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-application/lepton-mass-tower-canonical.lean:139: bare `sorry` at line 139 — no `-- Ref: [key]` citation on the same line, within the enclosing declaration, or in the 5 lines preceding its opening"
+        "evidence": "content/quantum-observable-universe/mass-application/lepton-mass-tower-canonical.lean:139: bare `sorry` at line 139 \u2014 no `-- Ref: [key]` citation on the same line, within the enclosing declaration, or in the 5 lines preceding its opening"
       },
       {
         "field_hash": {
@@ -1692,7 +1692,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'conj:lepton-mass-tower-canonical' → expected 'lepton_mass_tower_canonical'; Lean declares: LeptonType, lepton_mass_ratio, lepton_mass_ratio_electron_eq_one, heckeH, trefoil_reduction.... Structural match via content."
+        "notes": "Label 'conj:lepton-mass-tower-canonical' \u2192 expected 'lepton_mass_tower_canonical'; Lean declares: LeptonType, lepton_mass_ratio, lepton_mass_ratio_electron_eq_one, heckeH, trefoil_reduction.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1715,6 +1715,74 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/lepton-mass-tower-canonical.lean:31: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "64674c42be31"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 19,
+            "category": "P1",
+            "text": "> **Status \u2014 open conjecture (2026-05-24, PR #1127 Phase 3).**"
+          },
+          {
+            "line": 19,
+            "category": "P2",
+            "text": "> **Status \u2014 open conjecture (2026-05-24, PR #1127 Phase 3).**"
+          },
+          {
+            "line": 19,
+            "category": "P4",
+            "text": "> **Status \u2014 open conjecture (2026-05-24, PR #1127 Phase 3).**"
+          },
+          {
+            "line": 23,
+            "category": "P4",
+            "text": "> [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md)."
+          },
+          {
+            "line": 69,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md),"
+          },
+          {
+            "line": 172,
+            "category": "P4",
+            "text": "- [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md) \u2014 Phase 3 "
+          },
+          {
+            "line": 173,
+            "category": "P4",
+            "text": "- [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md) \u2014 the SUPERSEDED \u03c1_q purge that moti"
+          },
+          {
+            "line": 174,
+            "category": "P4",
+            "text": "- [`docs/audits/2026-05-24-muon-knot-id-conflict.md`](../../../docs/audits/2026-05-24-muon-knot-id-conflict.md) \u2014 muon = $4_1$ canonical"
+          },
+          {
+            "line": 180,
+            "category": "P2",
+            "text": "- Sibling PR #1196 \u2014 `BarSymmetricBarAntiSymmetricIdentities.lean` (bar-decomp infrastructure)"
+          },
+          {
+            "line": 181,
+            "category": "P2",
+            "text": "- Sibling PR #1153 \u2014 `Q_m` torus-knot sinh identity (related P_skew framework)"
+          }
+        ]
       }
     ]
   },

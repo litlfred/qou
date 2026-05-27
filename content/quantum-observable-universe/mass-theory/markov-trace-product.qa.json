@@ -2031,6 +2031,34 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/markov-trace-product.lean:25: invalid 'import' command, it must be used in the beginning of the file"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "7f748a050a3e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 68,
+            "category": "P4",
+            "text": "[Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-trm5-markov-bug.md))."
+          },
+          {
+            "line": 72,
+            "category": "P4",
+            "text": "fixed 2026-05-19.)"
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

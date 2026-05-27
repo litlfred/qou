@@ -1532,6 +1532,22 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/observations/double-slit-q-phase.lean:17: invalid 'import' command, it must be used in the beginning of the file"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "5d5fb78d29d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

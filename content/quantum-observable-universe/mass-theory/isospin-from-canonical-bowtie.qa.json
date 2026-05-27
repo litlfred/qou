@@ -84,7 +84,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:214: tracker will move D9 from ⏳ partial (crystal-only) to ✅ formalised"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:214: tracker will move D9 from \u23f3 partial (crystal-only) to \u2705 formalised"
       },
       {
         "field_hash": {
@@ -245,7 +245,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:3: > **That was wrong.** Bar involution (q ↔ q⁻¹ AND σᵢ ↔ σᵢ⁻¹) is | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:4: > **distinct** from the isospin Z/2 swap (σᵢ ↔ σᵢ⁻¹ with q FIXED). | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:175: is **mixed** under bar (verified at q₀ by | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:180: **Under the isospin Z/2 swap** (σᵢ ↔ σᵢ⁻¹ at q FIXED), the | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:181: residue IS anti-symmetric (the swap exchanges proton ↔ neutron,"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:3: > **That was wrong.** Bar involution (q \u2194 q\u207b\u00b9 AND \u03c3\u1d62 \u2194 \u03c3\u1d62\u207b\u00b9) is | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:4: > **distinct** from the isospin Z/2 swap (\u03c3\u1d62 \u2194 \u03c3\u1d62\u207b\u00b9 with q FIXED). | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:175: is **mixed** under bar (verified at q\u2080 by | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:180: **Under the isospin Z/2 swap** (\u03c3\u1d62 \u2194 \u03c3\u1d62\u207b\u00b9 at q FIXED), the | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:181: residue IS anti-symmetric (the swap exchanges proton \u2194 neutron,"
       },
       {
         "field_hash": {
@@ -1707,7 +1707,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation — structural match."
+        "notes": "Conjecture with class axiomatisation \u2014 structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -1728,6 +1728,59 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "b6bba52c26ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 1,
+            "category": "P4",
+            "text": "> **CORRECTION NOTE (2026-05-24, surfaced by `verify_isospin_bar_anomaly.py`):**"
+          },
+          {
+            "line": 12,
+            "category": "P4",
+            "text": "> [`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md)."
+          },
+          {
+            "line": 162,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-isospin-categorical-source.md`](../../docs/audits/2026-05-24-isospin-categorical-source.md)"
+          },
+          {
+            "line": 187,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md)."
+          },
+          {
+            "line": 298,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md))"
+          },
+          {
+            "line": 307,
+            "category": "P4",
+            "text": "- [`docs/audits/2026-05-24-isospin-categorical-source.md`](../../docs/audits/2026-05-24-isospin-categorical-source.md)"
+          },
+          {
+            "line": 316,
+            "category": "P2",
+            "text": "(PR #690)"
+          }
+        ]
       }
     ]
   },

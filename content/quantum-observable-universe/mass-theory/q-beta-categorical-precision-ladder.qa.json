@@ -2031,6 +2031,49 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/q-beta-categorical-precision-ladder.lean:20: invalid 'import' command, it must be used in the beginning of the file"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "b4ddc9a69acc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 1,
+            "category": "P2",
+            "text": "> **SUPERSEDED by Habiro-ring identification (2026-05-27, PR #1311).**"
+          },
+          {
+            "line": 1,
+            "category": "P4",
+            "text": "> **SUPERSEDED by Habiro-ring identification (2026-05-27, PR #1311).**"
+          },
+          {
+            "line": 60,
+            "category": "P4",
+            "text": "The doc's earlier $c_4 = b^2 + 1/2$ form is superseded; the 2026-05-19 audit shows it was 9.5% off the empirical value, while $c_3 \\cdot b^4$ matches "
+          },
+          {
+            "line": 103,
+            "category": "P4",
+            "text": "The 2026-05-19 audit ([`2026-05-19-qbeta-all-ck-categorical-extension.md`](../../../docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md))"
+          },
+          {
+            "line": 112,
+            "category": "P4",
+            "text": "[`2026-05-18-qbeta-n5-cohomological-breakdown.md`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md)."
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

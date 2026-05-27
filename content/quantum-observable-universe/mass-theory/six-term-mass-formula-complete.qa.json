@@ -2029,6 +2029,49 @@
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "5d9b52214df9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 62,
+            "category": "P2",
+            "text": "- *Numerical pathology at $q_0$ (documented PR #524):"
+          },
+          {
+            "line": 144,
+            "category": "P2",
+            "text": "- *Audit (PR #526, `term5_aK_audit.py`): the closed-form vs the"
+          },
+          {
+            "line": 190,
+            "category": "P4",
+            "text": "**Trace-invariance directive (2026-05-03).**"
+          },
+          {
+            "line": 196,
+            "category": "P2",
+            "text": "production within $2.2\\%$ on the proton; see PR #526"
+          },
+          {
+            "line": 223,
+            "category": "P2",
+            "text": "itself a Markov trace.  See `kahler_lift.py` (PR #526's recursion"
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

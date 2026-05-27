@@ -1706,6 +1706,22 @@
         "reviewed_at": "2026-05-26T14:13:35.262Z",
         "reviewed_sha": "4a658d3efc0c0d264260d3e94d4447f8ab875f22"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "6afad786d8fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
     ]
   },
   "updated_at": "2026-05-26T14:26:49.037Z"

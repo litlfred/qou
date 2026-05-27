@@ -2007,7 +2007,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:skein-finiteness-bound' → expected 'skein_finiteness_bound'; Lean declares: IsStable, qInt, qFactorial, A_max_diverges_classical, A_max_vanishes_strong_deformation.... Structural match via content."
+        "notes": "Label 'prop:skein-finiteness-bound' \u2192 expected 'skein_finiteness_bound'; Lean declares: IsStable, qInt, qFactorial, A_max_diverges_classical, A_max_vanishes_strong_deformation.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2030,6 +2030,22 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean:23: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

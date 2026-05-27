@@ -142,7 +142,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/calibration-inputs.md:30: > **⚠️ SUPERSEDED-$\\rho_q$ caveat (2026-05-24, PR #1127).**"
+        "evidence": "quantum-observable-universe/braids-and-knots/calibration-inputs.md:30: > **\u26a0\ufe0f SUPERSEDED-$\\rho_q$ caveat (2026-05-24, PR #1127).**"
       },
       {
         "field_hash": {
@@ -438,7 +438,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/calibration-inputs.md:30: > **⚠️ SUPERSEDED-$\\rho_q$ caveat (2026-05-24, PR #1127).**"
+        "evidence": "quantum-observable-universe/braids-and-knots/calibration-inputs.md:30: > **\u26a0\ufe0f SUPERSEDED-$\\rho_q$ caveat (2026-05-24, PR #1127).**"
       },
       {
         "field_hash": {
@@ -2522,6 +2522,64 @@
         },
         "reviewed_at": "2026-05-26T14:00:47.809Z",
         "reviewed_sha": "2e0035ce006b616f2ec9d00adc9657fe9ba9cbfb"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "c14085ca1cc6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 30,
+            "category": "P2",
+            "text": "> **SUPERSEDED-$\\rho_q$ caveat (2026-05-24, PR #1127).**"
+          },
+          {
+            "line": 30,
+            "category": "P4",
+            "text": "> **SUPERSEDED-$\\rho_q$ caveat (2026-05-24, PR #1127).**"
+          },
+          {
+            "line": 40,
+            "category": "P4",
+            "text": "> [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)"
+          },
+          {
+            "line": 44,
+            "category": "P4",
+            "text": "> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md)."
+          },
+          {
+            "line": 101,
+            "category": "P4",
+            "text": "finding in the [tower-MeV calibration audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-finding.md)"
+          },
+          {
+            "line": 108,
+            "category": "P2",
+            "text": "**Deeper fitting concern (2026-05-24, PR #1127).** Above the"
+          },
+          {
+            "line": 108,
+            "category": "P4",
+            "text": "**Deeper fitting concern (2026-05-24, PR #1127).** Above the"
+          },
+          {
+            "line": 122,
+            "category": "P4",
+            "text": "[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-24-q-beta-net-ansatz-fit"
+          }
+        ]
       }
     ]
   },

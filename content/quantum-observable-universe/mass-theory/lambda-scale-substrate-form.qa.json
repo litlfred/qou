@@ -28,7 +28,7 @@
         },
         "reviewed_at": "2026-05-24T02:12:10.098Z",
         "reviewed_sha": "7bb10a5c67ca38faa3f30765e9675c20a5b3112d",
-        "notes": "False positive: 'PSLQ-style numerical coincidence' — explicitly classifying a near-match as coincidence per the CAL-4 discipline."
+        "notes": "False positive: 'PSLQ-style numerical coincidence' \u2014 explicitly classifying a near-match as coincidence per the CAL-4 discipline."
       },
       {
         "field_hash": {
@@ -153,7 +153,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md:3: > ⚠️ **Status (revised 2026-05-24 — λ_scale ABSORBED INTO `Geom_full`).**"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md:3: > \u26a0\ufe0f **Status (revised 2026-05-24 \u2014 \u03bb_scale ABSORBED INTO `Geom_full`).**"
       },
       {
         "field_hash": {
@@ -318,7 +318,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md:3: > ⚠️ **Status (revised 2026-05-24 — λ_scale ABSORBED INTO `Geom_full`).**"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md:3: > \u26a0\ufe0f **Status (revised 2026-05-24 \u2014 \u03bb_scale ABSORBED INTO `Geom_full`).**"
       },
       {
         "field_hash": {
@@ -1726,7 +1726,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Per §3b, conjectures should use class axiomatisation pattern."
+        "notes": "Per \u00a73b, conjectures should use class axiomatisation pattern."
       }
     ],
     "proof-lean-compiles": [
@@ -1749,6 +1749,109 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/particle-interactions/lambda-scale-substrate-form.lean:32: invalid 'import' command, it must be used in the beginning of the file"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "53914c229986"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 3,
+            "category": "P1",
+            "text": "> **Status \u2014 $\\lambda_{\\mathrm{scale}}$ ABSORBED INTO `Geom_full`.**"
+          },
+          {
+            "line": 6,
+            "category": "P2",
+            "text": "> (canonical framing, see PR #1080),"
+          },
+          {
+            "line": 25,
+            "category": "P2",
+            "text": ">   PR #895/#942)."
+          },
+          {
+            "line": 30,
+            "category": "P4",
+            "text": ">   was **structurally falsified** 2026-05-18 (PSLQ coincidence;"
+          },
+          {
+            "line": 32,
+            "category": "P4",
+            "text": ">   [`docs/audits/2026-05-18-conjecture-falsification.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-conjecture-falsification.m"
+          },
+          {
+            "line": 34,
+            "category": "P4",
+            "text": ">   calibration anchor\") is **purged 2026-05-24** (commit"
+          },
+          {
+            "line": 43,
+            "category": "P4",
+            "text": ">   $5/2 + (3/4 - G) h^2$ was also purged 2026-05-24 as"
+          },
+          {
+            "line": 44,
+            "category": "P2",
+            "text": ">   non-canonical (PR #985 bijection NEGATIVE)."
+          },
+          {
+            "line": 108,
+            "category": "P2",
+            "text": "6. **Q-locality (PR #951, 2026-05-23):** at the substrate window"
+          },
+          {
+            "line": 108,
+            "category": "P4",
+            "text": "6. **Q-locality (PR #951, 2026-05-23):** at the substrate window"
+          },
+          {
+            "line": 119,
+            "category": "P2",
+            "text": "7. **Reframing (PR #957, 2026-05-23):** $\\lambda_p(q) = (m_p/m_e)"
+          },
+          {
+            "line": 119,
+            "category": "P4",
+            "text": "7. **Reframing (PR #957, 2026-05-23):** $\\lambda_p(q) = (m_p/m_e)"
+          },
+          {
+            "line": 138,
+            "category": "P2",
+            "text": "8. **Strategy J (PR #969, 2026-05-23):** no natural ratio of"
+          },
+          {
+            "line": 138,
+            "category": "P4",
+            "text": "8. **Strategy J (PR #969, 2026-05-23):** no natural ratio of"
+          },
+          {
+            "line": 143,
+            "category": "P4",
+            "text": "**Therefore (post-2026-05-23 acknowledged-CAL-4 status):** after"
+          },
+          {
+            "line": 260,
+            "category": "P4",
+            "text": "([2026-05-18 \u03bb-scale derivation search \u00a713](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-lambda-scale-derivation-search.md)):"
+          },
+          {
+            "line": 323,
+            "category": "P4",
+            "text": "- [`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md)"
+          }
+        ]
       }
     ]
   },

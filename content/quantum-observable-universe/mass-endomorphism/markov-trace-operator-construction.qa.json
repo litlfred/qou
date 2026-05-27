@@ -1319,7 +1319,35 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:markov-trace-operator-construction' → expected 'markov_trace_operator_construction'; Lean declares: HnHilbertRep, HnInductiveEmbedding, MarkovTraceVNFactor. Structural match via content."
+        "notes": "Label 'rem:markov-trace-operator-construction' \u2192 expected 'markov_trace_operator_construction'; Lean declares: HnHilbertRep, HnInductiveEmbedding, MarkovTraceVNFactor. Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "ca5084b48ed9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 20,
+            "category": "P2",
+            "text": "per the Gemini reviews on PR #665/#672."
+          },
+          {
+            "line": 20,
+            "category": "P3",
+            "text": "per the Gemini reviews on PR #665/#672."
+          }
+        ]
       }
     ]
   },

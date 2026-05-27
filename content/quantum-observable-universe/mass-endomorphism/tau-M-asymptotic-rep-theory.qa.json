@@ -2031,6 +2031,49 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.lean:25: invalid 'import' command, it must be used in the beginning of the file"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "310819efaeac"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 29,
+            "category": "P2",
+            "text": "The empirical instances proved at single-wrap by PR #655 and follow-ups:"
+          },
+          {
+            "line": 34,
+            "category": "P2",
+            "text": "| $k = 1$ | $V_{(2,1)}$ | $c_1(b) = b$ | $74$ ppm at $q_0$ (PR #655 N=1) |"
+          },
+          {
+            "line": 35,
+            "category": "P2",
+            "text": "| $k = 2$ | $V_{(2,1)}$ | $c_2(b) \\approx 1$ geometric | $-22$ ppm (PR #655 N=2) |"
+          },
+          {
+            "line": 131,
+            "category": "P2",
+            "text": "3. [`probe_q_beta_operator_valued_N1.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N1.py) \u2014 Kashiwara $\\tilde f_1$ at N=1 (PR #"
+          },
+          {
+            "line": 147,
+            "category": "P2",
+            "text": "PR #655's N=1 result + N=2 partial result together establish that"
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

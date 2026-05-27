@@ -2007,7 +2007,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:jucys-murphy-central-elements-qou' → expected 'jucys_murphy_central_elements_qou'; Lean declares: HeckeJMSpectrum, cellContent, jm_central_scalar_eq_esymm_qcontent, level_ell_correction_via_esymm. Structural match via content."
+        "notes": "Label 'prop:jucys-murphy-central-elements-qou' \u2192 expected 'jucys_murphy_central_elements_qou'; Lean declares: HeckeJMSpectrum, cellContent, jm_central_scalar_eq_esymm_qcontent, level_ell_correction_via_esymm. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2030,6 +2030,22 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/jucys-murphy-central-elements-qou.lean:39: unexpected token ')'; expected term | content/quantum-observable-universe/mass-application/jucys-murphy-central-elements-qou.lean:41: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/mass-application/jucys-murphy-central-elements-qou.lean:43: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/mass-application/jucys-murphy-central-elements-qou.lean:45: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/mass-application/jucys-murphy-central-elements-qou.lean:50: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "421c9fc25d12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

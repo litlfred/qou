@@ -2007,7 +2007,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:rho-k-graded-expansion' → expected 'rho_k_graded_expansion'; Lean declares: GradedRhoKExpansion, rhoKGradedExpansion, rhoK, rhoK_LO_when_no_binding. Structural match via content."
+        "notes": "Label 'prop:rho-k-graded-expansion' \u2192 expected 'rho_k_graded_expansion'; Lean declares: GradedRhoKExpansion, rhoKGradedExpansion, rhoK, rhoK_LO_when_no_binding. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -2030,6 +2030,22 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/rho-k-graded-expansion.lean:51: failed to synthesize | content/quantum-observable-universe/mass-theory/rho-k-graded-expansion.lean:73: failed to synthesize | content/quantum-observable-universe/mass-theory/rho-k-graded-expansion.lean:79: Function expected at | content/quantum-observable-universe/mass-theory/rho-k-graded-expansion.lean:80: Invalid argument name `A` for function | content/quantum-observable-universe/mass-theory/rho-k-graded-expansion.lean:81: Invalid argument name `A` for function"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "dc5ecd208520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

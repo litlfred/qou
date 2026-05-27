@@ -2031,6 +2031,44 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-antipode-polynomial-symmetry.lean:76: unexpected token '/--'; expected 'lemma'"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "252a8fa23c47"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 17,
+            "category": "P2",
+            "text": "*derived in [PR #546](https://github.com/litlfred/qou/pull/546) via*"
+          },
+          {
+            "line": 95,
+            "category": "P4",
+            "text": "([`docs/audits/2026-05-03-w3-habiro-unblocked.md`](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)),"
+          },
+          {
+            "line": 99,
+            "category": "P2",
+            "text": "This conjecture is testable via [PR #546](https://github.com/litlfred/qou/pull/546)'s"
+          },
+          {
+            "line": 114,
+            "category": "P2",
+            "text": "- [PR #546](https://github.com/litlfred/qou/pull/546) \u2014 symbolic closed form for $\\operatorname{tr}_M(\\mathrm{proton})$."
+          }
+        ]
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

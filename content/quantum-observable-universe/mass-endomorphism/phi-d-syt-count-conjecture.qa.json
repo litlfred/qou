@@ -1319,7 +1319,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:phi-d-syt-count-conjecture' → expected 'phi_d_syt_count_conjecture'; Lean declares: cyclotomic_Phi4, cyclotomic_Phi8, syt_count_3, syt_count_21, syt_count_111.... Structural match via content."
+        "notes": "Label 'rem:phi-d-syt-count-conjecture' \u2192 expected 'phi_d_syt_count_conjecture'; Lean declares: cyclotomic_Phi4, cyclotomic_Phi8, syt_count_3, syt_count_21, syt_count_111.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "aa19f1cddb27"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },

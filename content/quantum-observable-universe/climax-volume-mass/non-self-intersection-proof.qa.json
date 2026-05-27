@@ -1283,7 +1283,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prf:non-self-intersection' → expected 'prf:non_self_intersection'; Lean declares: R_q, q_param, q_inv_param, hbar_q, quantumTwo.... Structural match via content."
+        "notes": "Label 'prf:non-self-intersection' \u2192 expected 'prf:non_self_intersection'; Lean declares: R_q, q_param, q_inv_param, hbar_q, quantumTwo.... Structural match via content."
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "e6e94bce4d9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
       }
     ]
   },
