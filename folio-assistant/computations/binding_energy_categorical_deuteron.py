@@ -25,45 +25,16 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder
-from _precision import set_compute_dps, fmt
-from q_parameter import Q_50_DIGIT_STR
-from experimental_constants import M_E_MEV
-
-
-def partition_n(lam: tuple[int, ...]) -> int:
-    """n(λ) = Σ_i (i-1)·λ_i = Σ_{(i,j)∈λ} (i-1)."""
-    return sum((i) * lam_i for i, lam_i in enumerate(lam))
-
-
-def hook_length_dim(lam: tuple[int, ...]) -> int:
-    """f^λ = n! / Π hook-lengths (Frame-Robinson-Thrall)."""
-    n = sum(lam)
-    # Compute hook lengths
-    conj = []
-    for j in range(lam[0] if lam else 0):
-        conj.append(sum(1 for row in lam if row > j))
-
-    hooks = []
-    for i, row_len in enumerate(lam):
-        for j in range(row_len):
-            arm = row_len - j - 1
-            leg = conj[j] - i - 1
-            hooks.append(arm + leg + 1)
-
-    from math import factorial
-    product = 1
-    for h in hooks:
-        product *= h
-    return factorial(n) // product
+from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from experimental_constants import M_E_MEV  # noqa: E402
 
 
 def main():
     set_compute_dps()
-    t0 = time.time()
+    t0 = time.perf_counter()
     mp.mp.dps = 50
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
     m_e = mp.mpf(M_E_MEV)
 
     print("=" * 70)
@@ -71,22 +42,7 @@ def main():
     print("=" * 70)
     print()
 
-    # ── Load Wenzl y_λ for H_6 (deuteron: 3×2 = 6 strands) ─────
-    # Check if we have the H_6 Wenzl weights
-    h6_witness_path = HERE / "wenzl-y-lambda-H6-deuteron.witness.json"
-    if not h6_witness_path.exists():
-        # Try loading from the multi-atom probe
-        multi_path = HERE / "delta-lambda-multi-atom-crosscheck.witness.json"
-        if multi_path.exists():
-            multi = json.loads(multi_path.read_text())
-            print("Loading y_λ from multi-atom crosscheck witness...")
-        else:
-            print("ERROR: No H_6 Wenzl y_λ witness found.")
-            print("Need: wenzl-y-lambda-H6-deuteron.witness.json")
-            print("  or: delta-lambda-multi-atom-crosscheck.witness.json")
-            sys.exit(1)
-
-    # ── For now, use the interface-closure witness directly ──────
+    # ── Load precomputed sums from interface-closure witness ────
     closure_path = HERE / "deuteron-binding-interface-closure.witness.json"
     if closure_path.exists():
         closure = json.loads(closure_path.read_text())

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T23:55:31.877545+00:00",
-  "commitSha": "730cba4bc3a14af580efed4dd4101fa48f7c2e04",
+  "computedAt": "2026-05-27T00:35:59.451610+00:00",
+  "commitSha": "1c2ec13810f6d83bf289cb4861d12d1c19c084e3",
   "assertions": [
     {
       "name": "B_D_pred_within_C_knot",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": -1779839264213,
+  "durationMs": 10,
   "computation": "binding-energy-categorical-deuteron",
   "scriptFile": "binding_energy_categorical_deuteron.py",
-  "scriptHash": "751d7910ac13",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4c66da33d8bd",
+  "scriptCommitSha": "fc9515ea4f7735e65e80d98a51f8f36b62f80de4",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
