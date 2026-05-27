@@ -28,6 +28,7 @@ export default chapter({
       title: "The Mass Endomorphism",
       label: "sec:mass-endomorphism-opener",
       blocks: [
+        "mass-endomorphism-opener-intro",
         "mass-endomorphism-conjecture",
         "mass-identity",
         "mass-identity-exists",

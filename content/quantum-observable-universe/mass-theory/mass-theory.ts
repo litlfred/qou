@@ -94,7 +94,8 @@ export default chapter({
       title: "Algebraic face: transfer matrices, Skein mass, and Markov corrections",
       label: "sec:mass-algebraic-consolidated",
       blocks: [
-        "transfer-matrix-operator",
+                "mass-algebraic-consolidated-intro",
+"transfer-matrix-operator",
         "transfer-matrix-identities",
         "skein-polynomial-transfer-matrix",
         "beta-decay-transfer-matrix",
@@ -327,7 +328,8 @@ export default chapter({
       title: "Geometric face: mass-volume factorisation and crossing expansion",
       label: "sec:mass-geometric-face",
       blocks: [
-        "thurston-volume-additivity",
+                "mass-geometric-face-intro",
+"thurston-volume-additivity",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",
@@ -714,7 +716,8 @@ export default chapter({
       title: "Physical face: mass formulas and predictions",
       label: "sec:mass-physical-face",
       blocks: [
-        "neutron-proton-splitting",
+                "mass-physical-face-intro",
+"neutron-proton-splitting",
         "borromean-baryon-mass-formula",
         "borromean-baryon-interpretation",
         "q-integer-mass-formula",
@@ -737,7 +740,8 @@ export default chapter({
       title: "Open problems: mass-tower structure and crystal basis",
       label: "sec:mass-open-problems",
       blocks: [
-        "terminal-resolution",
+                "mass-open-problems-intro",
+"terminal-resolution",
         "mass-from-generators",
         "volume-tower-decomposition",
         "mass-tower-open-problems-classes",
