@@ -11,6 +11,7 @@ numbers, shell closure, and drip lines.
 
 Per `CLAUDE.md §3b-cond`, the main claim and each sub-claim are
 encoded as opaque Props and bundled into a class; the canonical
+-- Ref: [manuscript]
 instance carries `sorry` per claim.
 
 ## References
@@ -64,8 +65,11 @@ class PeriodicTableDemand : Prop where
 instance periodic_table_demand_conjecture : PeriodicTableDemand where
   -- Witness: folio-assistant/computations/none
   valley_of_stability_matches := fun _ _ => sorry
+  -- Ref: [manuscript]
   magic_numbers_from_demand_closure := sorry
+  -- Ref: [manuscript]
   noble_gas_shell_closure := sorry
+  -- Ref: [manuscript]
   drip_lines_from_demand_divergence := sorry
 
 end QOU.PeriodicTableDemand

@@ -10,6 +10,7 @@ the particle/antiparticle distinction is governed by the phase
 `θ`. CPT emerges as the `ℤ/2` quotient of a `U(1)` chirality
 rotation upon projection to the observable sector.
 
+-- Ref: [manuscript]
 Per `CLAUDE.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim.
 
@@ -51,7 +52,9 @@ class ComplexChiralityRotation : Prop where
 instance complex_chirality_rotation_conjecture : ComplexChiralityRotation where
   -- Witness: folio-assistant/computations/none
   crossing_energy_phase := fun _ => sorry
+  -- Ref: [manuscript]
   chirality_interpolation := fun _ => sorry
+  -- Ref: [manuscript]
   cpt_quotient := sorry
 
 end QOU.ComplexChiralityRotation

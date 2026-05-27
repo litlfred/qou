@@ -27,6 +27,7 @@ The conjecture has four sub-claims:
    compresses to `O(c)` factors.
 
 Per `CLAUDE.md §3b-cond`, each sub-claim is encoded as a class
+-- Ref: [freedman2003]
 field whose body is `sorry` — each `sorry` IS the conjecture's
 corresponding part, not missing proof.
 
@@ -93,9 +94,13 @@ class QuantumComputationalUniversality : Prop where
 instance quantum_computational_universality_conjecture :
     QuantumComputationalUniversality where
   -- Witness: folio-assistant/computations/none
+  -- Ref: [freedman2003]
   quadratic_level := fun _ => sorry
+  -- Ref: [freedman2003]
   universality := fun _ _ _ => sorry
+  -- Ref: [freedman2003]
   descent_decomposition := fun _ => sorry
+  -- Ref: [freedman2003]
   information_content := fun _ => sorry
 
 end QOU.QuantumComputationalUniversality

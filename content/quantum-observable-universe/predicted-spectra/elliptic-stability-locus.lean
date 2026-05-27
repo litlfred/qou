@@ -8,6 +8,7 @@ Bring's surface. The Coulomb and pairing terms in the
 liquid-drop ansatz reduce to a Weierstrass elliptic curve whose
 integer points trace the valley.
 
+-- Ref: [manuscript]
 Per `CLAUDE.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim. Algebraic tier only — the numerical match
 to the observed stable-isotope set belongs to a future
@@ -42,6 +43,7 @@ class EllipticStabilityLocus : Prop where
 instance elliptic_stability_locus_conjecture : EllipticStabilityLocus where
   -- Witness: folio-assistant/computations/none
   weierstrass_form := sorry
+  -- Ref: [manuscript]
   integer_point_identification := sorry
 
 end QOU.EllipticStabilityLocus
