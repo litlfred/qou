@@ -81,9 +81,10 @@ export default paper({
     // (spin-from-so3-fiber, type-b-folding-cpt, weinberg-angle-categorical,
     // wigner-su4-from-spin-isospin). Pauli/spin-stats content remains a
     // future authoring goal — will create a new chapter when content exists.
+    chapterRef({ dir: "mass-endomorphism" }),                   // The Mass Endomorphism: categorical opener + algebraic core (~80 blocks). Generic Yekutieli path — before particles.
     chapterRef({ dir: "particle-interactions" }),              // Particles: GB, LP, nuclear structure, SDP-as-thimble + skein/hadron/atom-shell
-    chapterRef({ dir: "climax-volume-mass" }),                 // q-Hyperbolic → Vol → Mass: geometric bridge (moved after Particles, before Mass — 2026-05-27; -8 fwd refs)
-    chapterRef({ dir: "mass-theory" }),                        // Mass: unified chapter. Opens with conj:mass-endomorphism, then Cat→Alg→Geom→Arch→Phys decomposition.
+    chapterRef({ dir: "climax-volume-mass" }),                 // q-Hyperbolic Geometry: Möbius energy, crossing energy, Lagrange resolvents, braiding relations (42 blocks)
+    chapterRef({ dir: "mass-theory" }),                        // Mass Analysis: geometric face, archimedean face, physical predictions, compute (~470 blocks). Consumes particles + q-hyperbolic geometry.
     // mass-application merged into mass-theory (2026-05-27)
     chapterRef({ dir: "gravity-spacetime" }),                  // Gravity emergence: contact geometry + geodesic Madelung
 
