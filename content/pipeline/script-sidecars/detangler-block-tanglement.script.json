@@ -1,0 +1,20 @@
+{
+  "criterion": "detangler-block-tanglement",
+  "description": "Per-block tanglement score: counts forward references emitted by this block's uses[] to later chapters, and forward references received from earlier chapters. High scores indicate the block is misplaced or tightly coupled to content in a different chapter.",
+  "metrics": {
+    "fwd_emitted": "Forward refs this block emits (uses[] targets in later chapters)",
+    "fwd_received": "Forward refs this block receives (blocks in earlier chapters that uses[] this block)",
+    "tanglement_score": "fwd_emitted + fwd_received (higher = more tangled)",
+    "worst_pair": "The chapter pair with the most forward refs involving this block"
+  },
+  "severity": "info",
+  "automated": true,
+  "script": "content/pipeline/qa-checkers-extended.ts",
+  "function": "checkDetanglerBlockTanglement",
+  "added": "2026-05-27",
+  "thresholds": {
+    "pass": "tanglement_score == 0",
+    "warn": "tanglement_score 1-3",
+    "fail": "tanglement_score >= 4"
+  }
+}

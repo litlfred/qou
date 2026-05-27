@@ -716,6 +716,42 @@ function extractLeanDocstrings(
   return out;
 }
 
+// ── voice-author-notes-pollution ──────────────────────────────────
+// Detects author-tracking content that belongs in .ts authorNotes
+// (per CLAUDE.md §4d), not in scholarly .md prose.
+// P1: Status banners  P2: PR/commit refs  P3: Agent names
+// P4: ISO dates  P5: Deprecation markers
+
+const AUTHOR_NOTES_STATUS_RE =
+  /^>\s*\*\*(?:Status|Caveat|Note|Refined-framing|DEPRECATED|Honest status|Phase \d)/im;
+const AUTHOR_NOTES_PR_REF_RE =
+  /(?:PR\s*#\s*\d{3,}|commit\s+[a-f0-9]{7,40}|merged\s+(?:to|into|on)\s+main|cherry-pick(?:ed)?|rebas(?:e|ed|ing)\s+(?:onto|clean))/i;
+const AUTHOR_NOTES_AGENT_RE =
+  /\b(?:Claude|Copilot|Gemini|GPT-4|claude-opus|claude-sonnet|claude-haiku)\b/;
+const AUTHOR_NOTES_DATE_RE =
+  /\b20(?:25|26)-(?:0[1-9]|1[0-2])-(?:[0-2]\d|3[01])\b/;
+
+export function checkAuthorNotesPollution(mdPath: string): CheckerResult {
+  const { lines } = readSource(mdPath);
+  const hits: CheckerHit[] = [];
+  let inFence = false;
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    if (/^```/.test(l.trim())) { inFence = !inFence; continue; }
+    if (inFence) continue;
+    const stripped = l.replace(/`[^`]+`/g, "");
+    if (AUTHOR_NOTES_STATUS_RE.test(stripped))
+      hits.push({ file: mdPath, line: i + 1, text: `P1:status-banner: ${l.trim().slice(0, 200)}` });
+    if (AUTHOR_NOTES_PR_REF_RE.test(stripped) && !/^--\s*Ref:/.test(stripped))
+      hits.push({ file: mdPath, line: i + 1, text: `P2:pr-commit-ref: ${l.trim().slice(0, 200)}` });
+    if (AUTHOR_NOTES_AGENT_RE.test(stripped))
+      hits.push({ file: mdPath, line: i + 1, text: `P3:agent-name: ${l.trim().slice(0, 200)}` });
+    if (AUTHOR_NOTES_DATE_RE.test(stripped) && !/^\$/.test(stripped) && !/Ref:/.test(stripped))
+      hits.push({ file: mdPath, line: i + 1, text: `P4:date-ref: ${l.trim().slice(0, 200)}` });
+  }
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
 // ── Dispatch table ──────────────────────────────────────────────
 
 export const AUTOMATED_CHECKERS: Record<
@@ -734,6 +770,8 @@ export const AUTOMATED_CHECKERS: Record<
     p.md ? checkUnicodeCrash(p.md) : { result: "pass", hits: [] },
   "voice-editorializing": (p) =>
     p.md ? checkEditorializing(p.md) : { result: "pass", hits: [] },
+  "voice-author-notes-pollution": (p) =>
+    p.md ? checkAuthorNotesPollution(p.md) : { result: "pass", hits: [] },
   "voice-ai-slop": (p) =>
     p.md ? checkAiSlop(p.md) : { result: "pass", hits: [] },
   "voice-scholarly-default": (p) =>
