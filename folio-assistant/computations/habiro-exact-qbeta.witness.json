@@ -1,0 +1,42 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-27T02:18:33.467211+00:00",
+  "commitSha": "0b3a08b9dd3238fc39a58ab134903930ef56fb9e",
+  "assertions": [
+    {
+      "name": "habiro_tr_M_proton_matches_direct",
+      "computed": 127.72966374492657,
+      "expected": 127.72966374492657,
+      "passed": true,
+      "tolerance": 0.01
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 69,
+  "computation": "habiro-exact-qbeta",
+  "scriptFile": "habiro_exact_qbeta.py",
+  "scriptHash": "0721e6290c7d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "data": {
+    "q_0": "1.10997859555418057528159407960950937799328227995870",
+    "tr_M_proton_habiro_sum": "136.0712063634817616514048508169837773395",
+    "tr_M_neutron_habiro_sum": "117.2593849613040823042164663805721013514",
+    "tr_M_proton_direct": "1.065306228592389300000000000000000000000",
+    "tr_M_neutron_direct": "0.9232332971695838000000000000000000000000",
+    "Q_A_MeV": "0.7836458028449499633475726866056511552691",
+    "Q_N5_MeV": "0.7836448302437748948783590399886630681437",
+    "Q_beta_codata_MeV": "0.7823334100000000000000000000000000000000",
+    "err_Q_A_ppb": "1677536.4930",
+    "err_Q_N5_ppb": "1676293.2875",
+    "chi_diff_exact": "-0.1068144700089974292306370969026870560495",
+    "method": "Habiro-exact: integer a_m ∈ ℤ[u], series terminates at M=8",
+    "supersedes": "precision-ladder c_k approach (deprecated in PR #1314)"
+  }
+}
