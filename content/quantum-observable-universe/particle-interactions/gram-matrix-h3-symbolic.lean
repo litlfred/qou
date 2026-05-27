@@ -364,10 +364,10 @@ theorem gramMatrix_det_eq_factorization (u : ℝ) :
         * (detFactor3 u)^5 * (detFactor4 u)^5
         * detFactor5 u * detFactor6 u)
       / (u^10 * (u^2 + 1)^12) := by
-  -- Ref: [manuscript] — full Matrix.det expansion (720-term permutation
-  -- sum) is routine but substantial; deferred to Phase 1b-3 follow-up.
-  -- Witness: `gram-h3-det-factorization.witness.json` — sympy-verified
-  -- identity at 50-dps mpmath precision.
+  -- PROOF STRATEGY (sympy-verified at 50 dps):
+  -- 1. unfold gramMatrix gramEntry Matrix.of + all detFactor defs
+  -- 2. simp [Matrix.det_fin_succ] to expand 6×6 det recursively
+  -- 3. field_simp + ring (may need set_option maxHeartbeats 800000)
   sorry
 
 /-- **THEOREM (FULL DISCHARGE of `gramMatrix_det_ne_zero`).**
