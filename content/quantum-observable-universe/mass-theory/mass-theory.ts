@@ -388,5 +388,20 @@ export default chapter({
         "mass-table-z1-20-table-data",
       ],
     }),
+
+    // ── §open: mass-tower open problems and crystal-basis directions ──
+    // Consolidated from predicted-spectra (2026-05-27).
+    section({
+      title: "Open problems: mass-tower structure and crystal basis",
+      label: "sec:mass-open-problems",
+      blocks: [
+        "terminal-resolution",
+        "mass-from-generators",
+        "volume-tower-decomposition",
+        "mass-tower-open-problems-classes",
+        "crystal-basis-resolves-mass-tower-open-problems",
+        "mass-tower-deeper-fillers",
+      ],
+    }),
   ],
 });
