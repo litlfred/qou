@@ -48,4 +48,4 @@ This figure is generated programmatically by
 with the parameters and verified sample values recorded in
 [`affine-light-cone-figure.witness.json`](../../../folio-assistant/computations/affine-light-cone-figure.witness.json).
 Formal math-book style (black ink on white, line styles only, no
-gradient or decorative color) per author directive 2026-05-24.
+gradient or decorative color)

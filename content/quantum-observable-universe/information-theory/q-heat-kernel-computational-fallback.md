@@ -28,7 +28,7 @@ partition data, cf.\ the content-Casimir formula).
 
 **Equivalence to Perron--Frobenius.**  This is exactly the
 Perron--Frobenius dominant-eigenvalue approximation used in the
-`nf-transition` branch (commit `9c1e73c`):
+`nf-transition` branch:
 
 $$
   \ln\bigl|\mathrm{Tr}\,M_\lambda(\text{step})\bigr|

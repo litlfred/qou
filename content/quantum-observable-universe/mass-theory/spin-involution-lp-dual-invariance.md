@@ -172,7 +172,7 @@ verifies $y_0^*(T) = y_0^*({}^3\mathrm{He})$ to machine
 precision (= 570.6762 at $q_0$, = 26.8242 in ht=6 stratum, and
 exactly equal across the entire $q$-sweep).
 
-**Corollary (pair-knot operator $Z \leftrightarrow N$ symmetry, 2026-05-11).**
+**Corollary (pair-knot operator $Z \leftrightarrow N$ symmetry).**
 *For $A = H_n(R, q)$ as above, let $\sigma_{pp} = \sigma_{i_1}
 \sigma_{i_2} \sigma_{i_3} \sigma_{i_4}$ be the proton-pair sub-braid
 at the $Z=2$ closed proton shell of $({}^3\mathrm{He}, {}^4\mathrm{He})$

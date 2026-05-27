@@ -193,7 +193,7 @@ A concrete computation requires:
  ([`compute_atom_chi_rust.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/compute_atom_chi_rust.py))
  or the symbolic Hoefsmit pipeline. The script
  [`fr_pullback_k3_test.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/fr_pullback_k3_test.py)
- (from PR #826) carries this end-to-end with KnotInfo cross-validation.
+ () carries this end-to-end with KnotInfo cross-validation.
 
 ### Lean formalisation
 

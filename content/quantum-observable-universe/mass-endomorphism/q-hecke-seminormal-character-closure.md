@@ -46,7 +46,7 @@ appeared in two layers (audit log
 2. **Character layer:** `specht_character_atomic` returned the
    q = 1 limit of the Hecke character.
 
-Both are now fixed (PR #572):
+Both are now fixed:
 
 - The weight is `y_\lambda(q)` via Wenzl Schur principal
   specialization. Audit + module:
@@ -84,7 +84,7 @@ $1.4 \times 10^{-16}$ on the deuteron (commit
 | Path | Module | Use case |
 |---|---|---|
 | Recursive Markov-axiom | [`markov_trace_recursive.markov_trace_of_word`](../../../folio-assistant/computations/markov_trace_recursive.py) | Production $\mathrm{tr}_M$ for mass-table predictions |
-| Symbolic partition-sum (50-dps mpmath) | [`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py) (PR #564) | Per-block $\rho_K$ binding-fraction $\Delta_\lambda$ analysis |
+| Symbolic partition-sum (50-dps mpmath) | [`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py) | Per-block $\rho_K$ binding-fraction $\Delta_\lambda$ analysis |
 | Float64 partition-sum | [`wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal`](../../../folio-assistant/computations/wedderburn_jones_markov.py) | Fast cross-check + reusable API |
 
 All three agree at the precision floor of their respective layers.

@@ -187,13 +187,13 @@ conjecture (earlier framing) is now **superseded**.*
 
 See [Table](#tbl:six-term-mass-formula-complete-table-data).
 
-**Trace-invariance directive (2026-05-03).**
+**Trace-invariance directive.**
 Every term in the formula must be a Markov-invariant trace.  Terms 1,
 4, 6 satisfy this directly.  Term 5 also satisfies this in production
 form: $a_K \cdot \mathcal{C}_K = \mathrm{tr}_M(\beta \cdot \beta^{*\,-1})$
 is a Markov pairing of $\beta$ with its mirror inverse (this matches
 the closed-form $a_K = \prod_{pn}(1+\mathrm{sign}\cdot h)$ in
-production within $2.2\%$ on the proton; see PR #526
+production within $2.2\%$ on the proton
 `term5_aK_audit.py`).  Terms 2 and 3 satisfy it only in the R-side
 algebraic form (each $\mathrm{Vol}_q^{(S)}$ is a Markov trace over
 the chain supported on $S$); the archimedean Kashaev specialisation

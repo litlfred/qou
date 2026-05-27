@@ -195,7 +195,7 @@ algorithmic: computations and proofs do not change, but their
 ambient ring becomes a single named object instead of an ad-hoc
 complexification.
 
-**Caveat (updated 2026-05-09).** The structural form of the
+**Caveat ().** The structural form of the
 per-nucleon scaling between $A = 2$ and $A = 3$ is now categorically
 derived: the **Path A pipeline** (commits `f9f25b5f`, `23e447dc`,
 [`per_irrep_pole_atom.py`](../../../folio-assistant/computations/per_irrep_pole_atom.py))

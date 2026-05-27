@@ -40,7 +40,7 @@ yet been identified.
 
 **Three independent audit results foreclose obvious paths:**
 
-1. [**PR #701**](https://github.com/litlfred/qou/pull/701) (2026-05-18) —
+1. [**PR #701**](https://github.com/litlfred/qou/pull/701) —
    falsified the Wedderburn-sum incarnation of $\tfrac{5}{2} - G h^2$
    across 5 structural routes (Wedderburn / Frobenius / Demazure
    / LP-Plancherel / LP-Frobenius).

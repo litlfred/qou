@@ -2,7 +2,7 @@
 
 **$c_k$ extraction from four algebraic reduction rules on the typed-$\mathbf{B}_3$ word.**
 
-> **Errata banner (2026-05-19) — $c_4$ closed form has shifted.**
+> **Errata banner — $c_4$ closed form has shifted.**
 > The original $c_4 = b^2 + 1/2$ form below is superseded by
 > $c_4 = c_3 \cdot b^4 = -2 b^4$ (per PR #777's SDP-$T_\beta$
 > derivation and [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)).

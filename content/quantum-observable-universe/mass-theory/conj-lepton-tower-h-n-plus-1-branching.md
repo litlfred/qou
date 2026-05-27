@@ -13,10 +13,10 @@ symmetric q-integer. The triple $(2m-1, m, 2m)$ is symmetric in
 $h = q - q^{-1}$ — bar-anti-symmetric upper jet, middle index,
 bar-symmetric closing trace.*
 
-> **Status — unifying formula (2026-05-25, PR #1253 amphichiral discharge).**
+> **Status — unifying formula.**
 > Numerical match: muon $m=2$ $\to$ $[3]_q \cdot [2]_q / [4]_q$ to +0.001 %;
 > tau $m=3$ $\to$ $[5]_q \cdot [3]_q / [6]_q$ to +0.79 % (via $\mathrm{Vol}(10_{43})/\hbar_q^2$);
-> see the **Resolution (PR #1253) — unifying formula** section below for the table.
+> see the **Resolution — unifying formula** section below for the table.
 > Algebraic cores Lean-proved (`field_simp; ring`, generic `[Field R]`)
 > in [`three-halves-structural-factor.lean`](three-halves-structural-factor.lean)
 > + [`conj-lepton-tower-h-n-plus-1-branching.lean`](conj-lepton-tower-h-n-plus-1-branching.lean).
@@ -26,14 +26,14 @@ bar-symmetric closing trace.*
 
 ### Earlier framing (superseded by PR #1253 unifying formula)
 
-> **SUPERSEDED (2026-05-25, PR #1253).** The earlier conjecture
+> **SUPERSEDED.** The earlier conjecture
 > $\xi_m = d_q((n,1)) \cdot [2]_q / [n+1]_q$ (with $n = 2m+1$, then
 > revised to $n = m+1$) matched muon but **falsified at tau**
 > ($\xi_3 = [4]_q \cdot [2]_q / [5]_q$ predicted $\approx$ 1.59 vs required
 > $\approx$ 2.47, off by 35 %). The PR #1253 amphichiral filter identified
 > the actual closure $\xi_3 = [5]_q \cdot [3]_q / [6]_q$ and the
 > unifying form above. The earlier framing is preserved below for
-> pedagogical trajectory; the "Resolution (PR #1253)" section is
+> pedagogical trajectory; the "Resolution" section is
 > the current authoritative statement.
 
 ## Derivation sketch (open)
@@ -128,7 +128,7 @@ All three readings are consistent with the muon (m=2) numerical
 match; distinguishing them requires the derivation work that's
 currently open.
 
-## Resolution (PR #1253) — unifying formula
+## Resolution — unifying formula
 
 The "simple extension" pattern `[m+1]_q · [2]_q / [m+2]_q` is FALSIFIED for tau (predicted ξ_3 = `[4]_q · [2]_q / [5]_q` $\approx$ 1.59 vs required $\approx$ 2.47, off by 35 %).
 

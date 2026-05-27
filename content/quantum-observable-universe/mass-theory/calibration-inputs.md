@@ -27,7 +27,7 @@ $\hbar_q = (q-1)/q$.  No units are involved.  The precision
 is limited by the muon mass ($2.2 \times 10^{-8}$), not
 the electron ($2.9 \times 10^{-10}$).
 
-> **SUPERSEDED-$\rho_q$ caveat (2026-05-24, PR #1127).**
+> **SUPERSEDED-$\rho_q$ caveat.**
 > The dimensional factor $1/\hbar_q^2$ in the formula above is the
 > SUPERSEDED scalar substrate density (see
 > [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md)
@@ -105,7 +105,7 @@ silent absorber of the tower correction; the residual is
 explicit and the direction puzzle is on the books for the
 categorical-derivation review (Workplan 2 Phase 2).
 
-**Deeper fitting concern (2026-05-24, PR #1127).** Above the
+**Deeper fitting concern.** Above the
 tower-direction puzzle sits a more fundamental gap: the relation
 $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$ used to
 derive the framework's $Q_\beta$ prediction is itself an **ansatz**,

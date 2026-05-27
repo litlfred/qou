@@ -101,10 +101,10 @@ both live entirely in the pre-archimedean substrate ring
 $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. The additive
 correction $2/(3\pi)$ imports the archimedean transcendental $\pi$
 via sphere-volume / Hodge data on Bring's surface — *not* an
-object of $R$. An earlier audit (May 2026) flagged this as a
+object of $R$. An earlier audit flagged this as a
 structural cost requiring repair.
 
-**Resolution (May 2026):** The repair route comes from
+**Resolution:** The repair route comes from
 [`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness).
 The substrate's pentagon-coherence (built into the cosimplicial /
 Yekutieli triple structure) factors the QOU mass-formula state

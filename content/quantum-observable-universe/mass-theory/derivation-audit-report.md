@@ -140,7 +140,7 @@ $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta)) = 18Z + 21N + 1$ for proton
 experimental atomic masses to $\leq 0.30\%$ across $Z = 1\ldots 20$
 via the single-generator $\rho_K$ formula (witness:
 `rho-k-pair-gen-v2-wedderburn.witness.json`).  See the explicit
-"Caveat (updated 2026-05-09)" paragraph in
+"Caveat ()" paragraph in
 `commutative-crossing-energy.md`.
 
 **Description (historical).**  The proposition originally derived the

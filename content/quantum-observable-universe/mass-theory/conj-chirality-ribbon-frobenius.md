@@ -39,7 +39,7 @@ appearing in the QOU model, this exact form equals $1 + w(K) \cdot h$
 to the precision required by the $0.75\%$ accuracy of the mass formula
 — this claim is now refuted: at $D, T, {}^3\mathrm{He}$ the exact
 ratio diverges by ${\sim}10^4$ from the empirical $(1+h)(1-h)$
-pattern (per Copilot review #r3213373225, made consistent with the
+pattern (per prior review, made consistent with the
 "conclusively wrong" finding below).*
 
 ## Derivation sketch
@@ -92,7 +92,7 @@ and is invariant under renormalisation of $\tilde w_\lambda$).
 
 The conjecture splits along **chirality class**:
 
-- **Amphichiral case (verified, 2026-05-09).** Writhe is a property
+- **Amphichiral case (verified).** Writhe is a property
   of a chosen braid representative, not a knot invariant; for the
   *canonical* amphichiral representatives used in the QOU model
   (e.g. the figure-eight word
@@ -110,7 +110,7 @@ The conjecture splits along **chirality class**:
   $\langle c(\lambda) \rangle_{4_1} = -2.3 \times 10^{-15}$
   (numerically zero at 50-dps precision).
 
-- **Chiral case (closed-form formula identified, 2026-05-09).** For
+- **Chiral case (closed-form formula identified).** For
   chiral 3-braids, $\langle c(\lambda) \rangle_\beta$ has a closed
   form in terms of the Hecke characters at $q_0$ alone:
   $$
@@ -179,7 +179,7 @@ The conjecture splits along **chirality class**:
   to 50-dps precision is suggestive of an exact integer structural
   value.
 
-  **Both interpretations (i) and (ii) refuted (2026-05-09).**  The
+ **Both interpretations (i) and (ii) refuted.** The
   same witness records the **exact ribbon-twist formula**
 
   $$

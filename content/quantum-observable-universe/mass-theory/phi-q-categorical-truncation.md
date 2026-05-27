@@ -71,7 +71,7 @@ defined above:*
 strand-size filtration on partitions, but they **can differ** when a
 small-$k$ partition $\lambda$ sits at large GB-depth or vice versa.
 
-**Computed for tritium (2026-04-29).** A direct YSN/Hoefsmit
+**Computed for tritium.** A direct YSN/Hoefsmit
 character computation
 ([`probe_tritium_k_star.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/folio-assistant/computations/probe_tritium_k_star.py))
 gives $\chi_\lambda(\rho(\mathrm{T_w})) \neq 0$ for **every**

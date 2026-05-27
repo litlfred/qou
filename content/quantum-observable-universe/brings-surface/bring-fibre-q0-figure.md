@@ -32,4 +32,4 @@ with the parameters and verified sample values recorded in
 [`bring-chiral-fibre-figure.witness.json`](../../../folio-assistant/computations/bring-chiral-fibre-figure.witness.json).
 Formal math-book style (black ink on white, line styles only —
 color reserved for cases where line styles cannot disambiguate)
-per author directive 2026-05-24.
+

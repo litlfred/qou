@@ -73,7 +73,7 @@ increments are:
 - **per-new-neutron:** pole $+10.5$ (cancellation $= 1.5$,
   half-integer), shift $= 2 \cdot 10.5 = 21$.
 
-#### Path A categorical verification (proton + deuteron, 2026-05-09)
+#### Path A categorical verification (proton + deuteron)
 
 Both the per-proton coefficient $18$ and the multi-nucleon
 combination $18 + 21 + 1 = 40$ are verified by direct symbolic

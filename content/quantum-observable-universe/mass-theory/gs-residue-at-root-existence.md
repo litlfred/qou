@@ -35,7 +35,7 @@ residue : Fin levelBound → ℝ
 ```
 
 *on `GBResidueSpectralSum`, with the convenience accessor
-`residueAt S ℓ`.  Per the P2.6 refactor (2026-05-02), the previous
+`residueAt S ℓ`. Per the P2.6 refactor, the previous
 `noncomputable opaque residueAtRoot ℓ ζ q` global has been removed;
 the value is supplied by each instance.  A fully constructive `def`
 would require:*

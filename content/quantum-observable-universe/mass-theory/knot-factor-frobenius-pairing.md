@@ -118,7 +118,7 @@ self-conjugate stratum (cf.
 [`hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition));
 the Markov trace remains the universal categorical quantity.
 
-*Historical note (2026-05-18):* an earlier formulation of this
+*Historical note:* an earlier formulation of this
 step proposed
 $a(N) = \lvert\mathrm{tr}_M(W_{\mathrm{atom}})\rvert / \lvert\mathrm{tr}_M(W_{\mathrm{free}})\rvert$
 as the ratio form. Empirical verification at 50dps

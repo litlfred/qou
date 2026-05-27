@@ -68,7 +68,7 @@ already records this scope correctly: "tower formula remains
 correct as an *infinite series*; the closed form is a
 convenience". This section spells out the distinction in the
 conjecture's own prose, in line with the user's clarifying
-question (2026-05-02).
+question.
 
 ## Statement
 

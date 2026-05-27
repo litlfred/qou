@@ -11,7 +11,7 @@ Write $h = q - q^{-1}$ and $z = 1/(q^{1/2} + q^{-1/2})$.
 
 See [Table 1](#tbl:frobenius-gram-matrix-table1-data).
 
-> **Errata (2026-05-19).** Earlier versions of this block asserted
+> **Errata.** Earlier versions of this block asserted
 > $\mathrm{tr}_M(e^-) = z^3$ and offered a "peel-from-the-right"
 > derivation. This was incorrect: $\sigma_1\sigma_0$ is **not** in
 > the sub-algebra $H_2 = \langle \sigma_0 \rangle$ (the Markov axiom
@@ -45,7 +45,7 @@ $z^3 \approx 0.1245$ was off by a factor of 4.4).
 
 ## Gram matrix (symbolic in $q$)
 
-> **Errata banner (2026-05-19) — symbolic Gram entries below
+> **Errata banner — symbolic Gram entries below
 > require recomputation.** The proposition's matrix and $g_{ij}$
 > formulas were derived assuming $\mathrm{tr}_M(e^-) = z^3$
 > (now known to be incorrect — see errata above). The entries

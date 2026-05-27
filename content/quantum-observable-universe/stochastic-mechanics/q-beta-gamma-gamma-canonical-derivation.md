@@ -6,7 +6,7 @@ ambiguity flagged in [`probe_q_beta_high_precision_ck.py`](../../folio-assistant
 
 ## The chain
 
-Following the user's direction (PR #657): the canonical $c_k$ values
+Following the user's direction: the canonical $c_k$ values
 are determined by tracing through
 
 $$

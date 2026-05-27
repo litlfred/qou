@@ -162,7 +162,7 @@ representation-theoretic parameterisation; in particular, it
 bypasses [`PR #546`](https://github.com/litlfred/qou/pull/546)'s
 seminormal `IndexError` failure on $\sigma_2$ acting on shape $(3)$.
 
-The contrast with the Plancherel-trace closed form (PR #546) is
+The contrast with the Plancherel-trace closed form is
 notable: that form was *anti-self-reciprocal* under $q \leftrightarrow 1/q$
 ([`prop:markov-trace-antipode-polynomial-symmetry`](#prop:markov-trace-antipode-polynomial-symmetry)),
 whereas this Markov-trace closed form is **not** anti-self-reciprocal —

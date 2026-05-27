@@ -46,7 +46,7 @@ identity provable by `field_simp + ring`.
 ## Status
 
 **All theorems sorry-free.** Six concrete scalar identities backed
-by `field_simp + ring` proofs. This addresses Gemini's repeated
+by `field_simp + ring` proofs. This addresses prior review's repeated
 "vacuous True / concrete mathematical statement" critiques at the
 **scalar-invariant** level. The full matrix-level proofs (Yang-Baxter
 cubic on the V_(2,1) Hoefsmit matrices, etc.) remain open R&D, but

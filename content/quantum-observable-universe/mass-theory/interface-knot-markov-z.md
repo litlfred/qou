@@ -142,5 +142,5 @@ $$
 
 - Script: [`folio-assistant/computations/delta_lambda_fr_identity_phase5c.py`](../../../folio-assistant/computations/delta_lambda_fr_identity_phase5c.py)
 - Witness: `folio-assistant/computations/delta-lambda-fr-identity-phase5c.witness.json` (2 assertions; **Markov-axiom interface identity passes to $10^{-15}$ rel. err.**)
-- Cross-reference (PR #801): [`def:ew-interface-knot`](#def:ew-interface-knot) (the canonical interface-knot definition).
-- Cross-reference (PR #819): Phase 5c.1 audit doc covers the empirical extraction; this proposition is the categorical resolution.
+- Cross-reference: [`def:ew-interface-knot`](#def:ew-interface-knot) (the canonical interface-knot definition).
+- Cross-reference: Phase 5c.1 audit doc covers the empirical extraction; this proposition is the categorical resolution.

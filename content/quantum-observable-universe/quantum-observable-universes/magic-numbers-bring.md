@@ -90,7 +90,7 @@ positive** (closing the shell under condensation per
 
 ## Connection to the conjectural-propagation chain
 
-Per the algebraic-refactor Phase 1 (commit `0e86a151`), the magic
+Per the algebraic-refactor Phase 1, the magic
 numbers are downstream of two conjectures:
 
 * [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)

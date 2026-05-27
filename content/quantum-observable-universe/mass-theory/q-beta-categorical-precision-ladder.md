@@ -1,4 +1,4 @@
-> **SUPERSEDED by Habiro-ring identification (2026-05-27, PR #1311).**
+> **SUPERSEDED by Habiro-ring identification.**
 > The per-rung c_k coefficients below are the Taylor expansion of the
 > EXACT, FINITE Habiro sum `Σ_{m=0}^{M} a_m(u) · (u;u)_m` with
 > `a_m ∈ ℤ[u]` and `M = 8` (proton/neutron). The precision ladder was

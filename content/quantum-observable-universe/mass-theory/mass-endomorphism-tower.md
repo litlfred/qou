@@ -92,7 +92,7 @@ Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
 the non-perturbative quantum dilogarithm
 ([quantum Bloch group](#def\:quantum-bloch-group)).
 
-**Kashaev-integration-identity audit (added 2026-05-03).**
+**Kashaev-integration-identity audit ().**
 *The proof step claims*
 
 $$
@@ -145,7 +145,7 @@ but not the literal integration evaluation.  The dilogarithm form
 $-\mathrm{Li}_2^q(-|V|)$ is the actual integration result and may be
 the correct specialisation; this needs paper-side verification.*
 
-**Resolution (added 2026-05-17).** *The corrected canonical form of
+**Resolution ().** *The corrected canonical form of
 the mass-endomorphism tower uses $-\mathrm{Li}_2^q(-|\hat V_i|)$ in
 place of $\Phi_q(|\hat V_i|)$; see the proposition statement below.
 The production compute pipeline at
@@ -164,7 +164,7 @@ The Lean stub
 axiomatises both functions and their distinct definitions to
 prevent regression.*
 
-**Trace-vs-evaluation note (added 2026-05-03).**
+**Trace-vs-evaluation note ().**
 The R-side algebraic form of the tower above expresses each
 $\mathrm{Vol}_q^{(S)}(\beta)$ as a Markov trace over the chain on $S$
 — each term is therefore Markov-invariant.  The archimedean
@@ -220,7 +220,7 @@ $\mathrm{Li}_2^q$ is the symmetric q-dilogarithm
 $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$ with
 $[n]_q = (q^n - q^{-n})/(q - q^{-1})$.*
 
-**Note (2026-05-03).**
+**Note.**
 *The previous version of this proposition wrote
 $\Phi_q(\lvert\hat V_i\rvert)$ (Faddeev quantum dilogarithm) where this
 revision uses $-\mathrm{Li}_2^q(-\lvert\hat V_i\rvert)$ (symmetric

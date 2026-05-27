@@ -67,7 +67,7 @@ Quantitative consequences differ between the two mechanisms:
      **(b) is ruled out under the current ansatz** (residual is
      positive everywhere on the Apollonius circle).
    - **(a) is open** — accessible via the explicit Q_m P_skew
-     content from PR #1153.
+ content.
 
 2. **Resolving the canonical lepton-mass formula** $F_\ell(q)$
    ([`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md)):

@@ -111,7 +111,7 @@ The EW-sector instance of this proposition draws its supply
 matrix from the Wedderburn-block-decomposed pair amplitude
 $|V_i V_j|_{\rm Wedderburn}$ defined in
 [`wedderburn_pair_volumes.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wedderburn_pair_volumes.py)
-(integrated 2026-05-06 from PR #534 commit `06305f30c`):
+:
 
 $$
   |V_i V_j|_{\rm Wedd}

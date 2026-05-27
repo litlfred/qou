@@ -74,4 +74,4 @@ interior.  Combined with
 [six canonical knot operators](#prop:six-canonical-knot-operators),
 this gives the explicit dictionary
 $\text{Reeb trajectory} \longmapsto \text{boundary Galois permutation}$
-that the user's Gemini-style discussion proposed.
+that the user's prior discussion proposed.

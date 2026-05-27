@@ -15,7 +15,7 @@ PR #564, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K
    per-`n` cache.  Module:
    [`wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal`](../../../folio-assistant/computations/wedderburn_jones_markov.py);
    driver: [`tr_m_q_hecke_seminormal.py`](../../../folio-assistant/computations/tr_m_q_hecke_seminormal.py).
-3. **Symbolic partition-sum** (PR #564) — full 50-dps mpmath via
+3. **Symbolic partition-sum** — full 50-dps mpmath via
    [`rho_k_h3a_refinement.py`](../../../folio-assistant/computations/rho_k_h3a_refinement.py),
    the production path for binding-fraction $\Delta_\lambda$ analysis.
 
@@ -221,7 +221,7 @@ with per-`n` cache) is the **recommended default** for
 partition-sum consumers needing better than $10^{-5}$ agreement
 without the overhead of full 50-dps mpmath.
 
-## Path A categorical verification of `18` (proton, 2026-05-09)
+## Path A categorical verification of `18` (proton)
 
 The atomic-shift exponent $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_K)$
 that controls the $u$-power in the $D(u)$ denominator
@@ -243,7 +243,7 @@ $$
 independently reports `shift_proton_h3 = 19` — two independent
 symbolic methods agree exactly on the per-proton u-pole.
 
-**Multi-nucleon verification (deuteron, 2026-05-09):**
+**Multi-nucleon verification (deuteron):**
 [`per_irrep_pole_deuteron_h6.py`](../../../folio-assistant/computations/per_irrep_pole_deuteron_h6.py)
 (witness:
 [`per-irrep-pole-deuteron-h6.witness.json`](../../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json))
