@@ -1,3 +1,15 @@
+> **SUPERSEDED by Habiro-ring identification (2026-05-27, PR #1311).**
+> The per-rung c_k coefficients below are the Taylor expansion of the
+> EXACT, FINITE Habiro sum `Σ_{m=0}^{M} a_m(u) · (u;u)_m` with
+> `a_m ∈ ℤ[u]` and `M = 8` (proton/neutron). The precision ladder was
+> useful when the closed form was unknown; now that the Habiro
+> identification is established, production uses the exact evaluation
+> (no rung-by-rung truncation). See
+> [`prop:habiro-precision-ladder-equivalence`](../../braids-and-knots/habiro-precision-ladder-equivalence.md).
+>
+> The content below is retained for HISTORICAL reference and for the
+> derivation narrative (it shows how the pattern was discovered).
+
 **$Q_\beta$ categorical-derivation precision ladder** — the closed-form
 prediction of free-neutron $\beta$-decay Q-value $Q_\beta$ at the
 substrate $q_0$ via a four-rung categorical recursion ending at $-0.0066$
