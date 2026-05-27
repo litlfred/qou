@@ -9,7 +9,7 @@ uses **$\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$** throughout. The
 old symbol $\rho$ is reserved (i) for the Hoefsmit irrep
 representation $\rho_\lambda \colon H_n(q) \to \mathrm{GL}_{d_\lambda}$
 and (ii) for $\rho_K$ in `prop:atomic-mass-gb-nf`. See
-[`docs/audits/2026-05-17-rho-notation-fix-recommendation.md`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/docs/audits/2026-05-17-rho-notation-fix-recommendation.md)
+[`docs/audits/-rho-notation-fix-recommendation.md`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/docs/audits/-rho-notation-fix-recommendation.md)
 for the full notation audit.
 
 **Caveat (structural form).** The multi-term formula below is the
@@ -39,15 +39,15 @@ substrate form**
 at $\lambda_{\mathrm{scale}} \approx 5/2 - h^2 G$ matching CODATA
 to ~5.4 ppm; ${}^1\mathrm{H}$ lifts to `derived` once the Borromean
 tower wiring lands. Per
-[`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md)
+[`docs/audits/-lambda-scale-derivation-search.md`](../../../docs/audits/-lambda-scale-derivation-search.md)
 §13, the current state is **justification** (5.4 ppm structural match)
 rather than full derivation. This proposition is therefore a Class-A
 opt-out (conditional on the substrate forms above) per the
 [three-calibration discipline](three-calibration-inputs.md); the
 structural form (this block) is correct and independent of the open
 pieces. Tracked under
-[Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)
-and the [m_p chain closure gap](../../../docs/audits/2026-05-17-m-p-chain-closure-gap-analysis.md).
+[Workplan 0b](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)
+and the [m_p chain closure gap](../../../docs/audits/-m-p-chain-closure-gap-analysis.md).
 $\rho_K$ closure; only its numerical instantiation is currently
 empirical.
 
@@ -76,7 +76,7 @@ $q$-Murnaghan–Nakayama character $\chi_\lambda$),
 $\mathrm{tower}(T_w) = \sum_i \mathrm{Li}_2^q(-|\hat{V}_i|) + z^2 \sum_{i<j} \mathrm{Li}_2^q(-|\hat{V}_i \hat{V}_j|)$
 is the brane tower built from per-generator additive-Wedderburn
 volumes $\hat{V}_i$ (symmetric $q$-dilogarithm
-$\mathrm{Li}_2^q$ per the 2026-05-03 paper canon,
+$\mathrm{Li}_2^q$ per the paper canon,
 [mass endomorphism tower](#prop:mass-endomorphism-tower)).
 Per [`prop:li2q-phiq-bar-symmetrization`](li2q-phiq-bar-symmetrization.md),
 $\mathrm{Li}_2^q$ is the **pre-Archimedean (categorical, $R$-side)**
@@ -376,7 +376,7 @@ Markov-trace computation) and the production-scale Rust port
  `JointTowerSdpCertificate` schema. Once R5-full lands, the
  deprecated `li-atom-knot-search` is fully retirable.
 
- **Status (2026-05-09, issue #604 deliverable 1).** A first-pass
+ **Status ( issue #604 deliverable 1).** A first-pass
  Python R5-full prototype landed at
  [`folio-assistant/computations/r5_full_canonical_knot_solver.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/r5_full_canonical_knot_solver.py)
  with witness

@@ -60,7 +60,7 @@ but this uses:
 ## Phase 3 finding
 
 Per audit
-[`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md),
+[`docs/audits/-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/-m-mu-over-m-e-operator-rederivation.md),
 the direct operator-level ratio at the substrate $q_0 \approx 1.10998$
 is:
 
@@ -163,13 +163,13 @@ end QOU.BraidKnot.LeptonMassTowerCanonical
 
 ## Cross-references
 
-- [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md) — Phase 3 finding (the audit this conjecture answers)
-- [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md) — the SUPERSEDED ρ_q purge that motivates the lepton re-derivation
-- [`docs/audits/2026-05-24-muon-knot-id-conflict.md`](../../../docs/audits/2026-05-24-muon-knot-id-conflict.md) — muon = $4_1$ canonical
+- [`docs/audits/-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/-m-mu-over-m-e-operator-rederivation.md) — Phase 3 finding (the audit this conjecture answers)
+- [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md) — the SUPERSEDED ρ_q purge that motivates the lepton re-derivation
+- [`docs/audits/-muon-knot-id-conflict.md`](../../../docs/audits/-muon-knot-id-conflict.md) — muon = $4_1$ canonical
 - [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) — atomic canonical form (parallel structure)
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — operator-level mass formula
 - [`prop:categorical-mass-markov`](categorical-mass-markov.md) — $\|\cdot\|$ modulus projection
 - [`bar-involution.md`](bar-involution.md) — $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projection
 - [`prop:skein-mass-relation`](../../observations/skein-mass-relation.md) — operative LO formula (SUPERSEDED-$\rho_q$-bannered)
-- Sibling PR #1196 — `BarSymmetricBarAntiSymmetricIdentities.lean` (bar-decomp infrastructure)
-- Sibling PR #1153 — `Q_m` torus-knot sinh identity (related P_skew framework)
+- Sibling  — `BarSymmetricBarAntiSymmetricIdentities.lean` (bar-decomp infrastructure)
+- Sibling  — `Q_m` torus-knot sinh identity (related P_skew framework)

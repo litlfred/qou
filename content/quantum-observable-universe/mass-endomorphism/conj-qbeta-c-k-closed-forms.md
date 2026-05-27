@@ -4,7 +4,7 @@ The framework PROVES $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ via the
 2-strand sub-braid argument (Fact 3 of
 [`prop:q-beta-c3-hopf-three-fold-markov`](#prop:q-beta-c3-hopf-three-fold-markov)).
 The higher-rung coefficients $c_4, c_5, c_6, c_7$ have **empirical
-closed forms** extracted from the SDP-$T_\beta$ framework (PR #777,
+closed forms** extracted from the SDP-$T_\beta$ framework (
 [`folio-assistant/computations/qbeta_decay_sdp_full_ck.py`](../../folio-assistant/computations/qbeta_decay_sdp_full_ck.py))
 with sub-percent residuals, but **no first-principles categorical
 derivation is yet known**.
@@ -35,7 +35,7 @@ $10^{-4}$ ppb), so the actual numerical value is under-determined.
 ## Open research-grade derivation paths
 
 Three concrete routes (from
-[`docs/audits/2026-05-19-qbeta-ladder-closure-path.md`](../../../docs/audits/2026-05-19-qbeta-ladder-closure-path.md)):
+[`docs/audits/-qbeta-ladder-closure-path.md`](../../../docs/audits/-qbeta-ladder-closure-path.md)):
 
 1. **Khovanov-Rozansky polynomial at finite $q$**: compute
    $\mathrm{Kh}(L)(q, t)$ of the typed-$\mathbf{B}_3$ Markov-closure
@@ -46,7 +46,7 @@ Three concrete routes (from
    \varepsilon^{12}$ — the framework has scaffolding (Hecke-KLR bridge in
    [`prop:kazhdan-lusztig-classical-limit`](#prop:kazhdan-lusztig-classical-limit)),
    open piece is the explicit per-block trace formula.
-3. **Spectral-sequence stratification** (declined by ledger 2026-05-19;
+3. **Spectral-sequence stratification** (declined by ledger;
    no good candidate spectral sequence in framework's content).
 
 ## Why these aren't decoration
@@ -67,7 +67,7 @@ conjectures must be marked as such. Promoting them to a single
 ## Evidence
 
 Direct SDP-$T_\beta$ extraction at 50dps (post-TR_M[5] bug fix from
-PR #777) reproduces all four c_k EXACTLY:
+) reproduces all four c_k EXACTLY:
 
 ```
 c_2 extracted = -1.0171   (vs framework -1, 1.7% match)

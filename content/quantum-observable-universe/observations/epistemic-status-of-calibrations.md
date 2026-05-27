@@ -34,7 +34,7 @@ fundamental constant.
 
 CAL-2 fixes $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.
 Per the audit
-[`2026-05-25-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md):
+[`-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/-cal-2-cohomological-vs-calibration-critique.md):
 
 - $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.0299$ is **pure
   cohomology** (Bloch-Wigner motivic period at the primitive 6th
@@ -54,7 +54,7 @@ equation hold, so it holds. The Lean cross-check
 by construction."*
 
 The substrate-$q_0$ derivation was declined as out-of-scope on
-2026-05-08 (coordination ledger) and **re-opened on 2026-05-25** in
+ (coordination ledger) and **re-opened on** in
 response to the same owner question that produced this remark. The
 research-grade workplan tracks candidate derivation paths
 (spectral collapse, K-theoretic period, Bring $\chi = -6$
@@ -64,8 +64,8 @@ fixed-point, categorical endomorphism fixed-point).
 
 CAL-3 fixes the hadronic energy scale $\mathfrak{E}_0$ via
 $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
-PR #1127 and audit
-[`2026-05-24-q-beta-net-ansatz-fitting-finding`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md):
+ and audit
+[`-q-beta-net-ansatz-fitting-finding`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md):
 
 - The relation $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$
   is **postulated**, not derived from the canonical per-braid mass
@@ -79,7 +79,7 @@ PR #1127 and audit
 - Higher-order corrections are being recast cohomologically as
   traces over **Khovanov-Rozansky strata** of the link projection
   (audit
-  [`2026-05-18-qbeta-n5-cohomological-breakdown`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md)),
+  [`-qbeta-n5-cohomological-breakdown`](../../../docs/audits/-qbeta-n5-cohomological-breakdown.md)),
   with the $N=3$ rung $= J_{\mathrm{Hopf}}(q=1) = -2$ already
   beating the L2 100$\times$ target by ~24%.
 
@@ -88,7 +88,7 @@ PR #1127 and audit
 | CAL | Pinned quantity | Cohomological derivation candidate | Status |
 |---|---|---|---|
 | CAL-1 | $m_e$ in MeV | $\mathrm{Li}_2(q^{-2}) / \hbar_q^2$ for the natural-units value | **unit-choice + derived**; the unit choice itself is real |
-| CAL-2 | $q_0$ via $m_\mu/m_e$ | $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3)$ on the cohomology side; $q_0$ un-derived | **open** (re-opened 2026-05-25, weeks-of-research workplan) |
+| CAL-2 | $q_0$ via $m_\mu/m_e$ | $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3)$ on the cohomology side; $q_0$ un-derived | **open** (re-opened, weeks-of-research workplan) |
 | CAL-3 | $\mathfrak{E}_0$ via $Q_\beta$ | Khovanov-Rozansky cohomology strata of the link projection | **open**) |
 
 ## What this remark does NOT do
@@ -121,8 +121,8 @@ redefinition of the discipline.
 - [`prop:three-calibration-discipline`](#prop:three-calibration-discipline) — the proposition this remark interprets
 - [`prop:three-parameters-wedderburn`](#prop:three-parameters-wedderburn) — categorical 3-parameter count
 - Audit
-  [`2026-05-25-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md)
+  [`-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/-cal-2-cohomological-vs-calibration-critique.md)
 - Audit
-  [`2026-05-24-q-beta-net-ansatz-fitting-finding`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md) (sibling)
+  [`-q-beta-net-ansatz-fitting-finding`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md) (sibling)
 - Audit
-  [`2026-05-18-qbeta-n5-cohomological-breakdown`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md)
+  [`-qbeta-n5-cohomological-breakdown`](../../../docs/audits/-qbeta-n5-cohomological-breakdown.md)

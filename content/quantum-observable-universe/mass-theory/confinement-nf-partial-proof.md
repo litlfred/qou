@@ -22,12 +22,12 @@ decompose as follows.*
    and $\Delta_{\mathrm{resid}} = 0$ by $T_3$.
    **Reduced to Sub-lemma 2.1** (Hecke-branching block-decomposition
    of $\rho_\lambda(I)$ — scalar form proved in
-   [scalar audit](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md);
+   [scalar audit](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md);
    operator-valued form closed conditional on
    [`prop:crystal-graph-realization`](crystal-graph-realization.md)
    via the combinatorial $R$-matrix on $B_\mu \otimes B_\nu$ at
    $q \to 0$ — see
-   [crystal audit](../../../docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md)).
+   [crystal audit](../../../docs/audits/-crystal-r-matrix-sublemma-2-1.md)).
 
 3. *(Strong duality, $T_3$.)*
    $\mathrm{duality\_gap}(\beta) = 0$.
@@ -87,7 +87,7 @@ $\alpha_{\mathrm{shift}}(I)$ term per
 **Sub-lemma 2.1 (now categorically proved).** The pole-order contribution of
 $\rho_\lambda(I)$ in the $(\mu, \nu)$-isotypic block is bounded by
 the Hoefsmit-derived block-decomposition formula.  See
-[full categorical proof](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md).
+[full categorical proof](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md).
 
 Combining the per-component pole orders (proved via Sub-lemma 2.1)
 with the LR multiplicities and the interface $\alpha$-shift
@@ -117,7 +117,7 @@ matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} 
 
 ## Status of remaining work
 
-- **Sub-lemma 2.1** is established categorically in [`docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md`](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md). The block decomposition of $\rho_\lambda(I)$ uses standard branching (Macdonald §I.5) + Hoefsmit seminormal form, with off-diagonal Case-B contributions shown to vanish in the trace.
+- **Sub-lemma 2.1** is established categorically in [`docs/audits/-sub-lemma-2-1-categorical-proof.md`](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md). The block decomposition of $\rho_\lambda(I)$ uses standard branching (Macdonald §I.5) + Hoefsmit seminormal form, with off-diagonal Case-B contributions shown to vanish in the trace.
 - **Lean formalisation of $T_1$ and $T_3$**: see [`confinement-nf-partial-proof.lean`](#) — currently `sorry`-stubs against an LP-duality library; routine integration with Mathlib's LP infrastructure once it lands.
 - The atomic n-context shifts $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_p) = 18$ and $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_n) = 21$ are derived in commit [`2f186ebc9`](https://github.com/litlfred/qou/commit/2f186ebc9) on `claude/improve-charge-precision-AXKIA`. The coefficients emerge as **per-NEW-nucleon additive contributions**:
 
@@ -136,4 +136,4 @@ matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} 
 | $(1 + u^2)^{3A-1}$ | **Fully proved** (Markov $z^{n-1}$, this branch) |
 | $u^{18Z + 21N + 1}$ | **Categorically proved** (Sub-lemma 2.1 is now established categorically in the audit doc above; combined with the AXKIA-derived per-new-nucleon (18, 21, 1) decomposition and the LP duality of Theorems $T_1$ and $T_3$, all factors are categorically grounded.  Lean formalisation of $T_1$, $T_3$ remains as routine integration with Mathlib's LP-duality library — three `sorry`s in [`confinement-nf-partial-proof.lean`](#)) |
 
-The W-3 D(u) closed-form proof is now categorically complete (3/3 factors derived).  Sub-lemma 2.1 — the previously-open Hecke-rep-theory step — is established in the [audit doc](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md), and the per-new-nucleon (18, 21, 1) decomposition is independently derived on the AXKIA branch.  What remains is purely the Lean formalisation: three `sorry`s in [`confinement-nf-partial-proof.lean`](#) are routine integration with Mathlib's LP-duality library.
+The W-3 D(u) closed-form proof is now categorically complete (3/3 factors derived).  Sub-lemma 2.1 — the previously-open Hecke-rep-theory step — is established in the [audit doc](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md), and the per-new-nucleon (18, 21, 1) decomposition is independently derived on the AXKIA branch.  What remains is purely the Lean formalisation: three `sorry`s in [`confinement-nf-partial-proof.lean`](#) are routine integration with Mathlib's LP-duality library.

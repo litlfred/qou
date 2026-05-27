@@ -82,7 +82,7 @@ tested two simple empirical forms of "ideal restriction at low $k$" —
 
 | Form tested | Hypothesis | max/min variance | Verdict |
 |---|---|---:|---|
-| Uniform $\tilde w_\lambda$ (baseline) | no restriction | $1.82\times$ | (the current PR #801 result) |
+| Uniform $\tilde w_\lambda$ (baseline) | no restriction | $1.82\times$ | (the current  result) |
 | $\tilde w_\lambda \cdot \|\chi^\lambda\|^\beta$ ($\beta > 0$) | concentrate on Markov-significant | $2.30$–$3.00\times$ | **falsified** |
 | $\tilde w_\lambda$ on self-conjugate partitions only | Wenzl-bridge stratum | $5.94\times$ | **falsified** |
 
@@ -124,7 +124,7 @@ This is the categorical content of:
 
 ### Significance: closing the 1.82$\times$ variance
 
-If true, the FR refinement (FR) closes the variance on PR #801 to
+If true, the FR refinement (FR) closes the variance on  to
 $\le 1.05\times$ (universal categorical constant) by enhancing the
 low-$k$ contributions through the per-knot ideal restriction:
 
@@ -152,7 +152,7 @@ must exist:
  [`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing));
  at $k = 1, 2$ this is the open question. Candidates and selection
  criteria are recorded in
- [`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnosis.md).
+ [`docs/audits/-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-variance-per-depth-diagnosis.md).
 
 2. **Central projector $e_{K_k^*} \in Z(H_n)$**: the Hecke-ideal
  central projector for $K_k^*$. For $K_k^*$ a knot on $m$ strands,
@@ -193,7 +193,7 @@ A concrete computation requires:
  ([`compute_atom_chi_rust.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/compute_atom_chi_rust.py))
  or the symbolic Hoefsmit pipeline. The script
  [`fr_pullback_k3_test.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/fr_pullback_k3_test.py)
- (from PR #826) carries this end-to-end with KnotInfo cross-validation.
+ (from ) carries this end-to-end with KnotInfo cross-validation.
 
 ### Lean formalisation
 
@@ -208,8 +208,8 @@ provable in Mathlib via `Representation.induced` and
 
 ### Why this is "the final key"
 
-Per the structural narrative on PR #801 and
-[`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnosis.md):
+Per the structural narrative on  and
+[`docs/audits/-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-variance-per-depth-diagnosis.md):
 
 - The unified mass formula is established
  ([`prop:unified-curvature-rank-mass-formula`](#prop:unified-curvature-rank-mass-formula))

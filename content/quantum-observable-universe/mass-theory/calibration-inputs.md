@@ -27,7 +27,7 @@ $\hbar_q = (q-1)/q$.  No units are involved.  The precision
 is limited by the muon mass ($2.2 \times 10^{-8}$), not
 the electron ($2.9 \times 10^{-10}$).
 
-> **SUPERSEDED-$\rho_q$ caveat (2026-05-24, PR #1127).**
+> **SUPERSEDED-$\rho_q$ caveat .**
 > The dimensional factor $1/\hbar_q^2$ in the formula above is the
 > SUPERSEDED scalar substrate density (see
 > [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md)
@@ -37,11 +37,11 @@ the electron ($2.9 \times 10^{-10}$).
 > Numerically the Skein formula closes $m_\mu/m_e = 206.77$ at
 > lepton level because operator-valued corrections are small for
 > leptons; the +0.17% Q_β residual flagged in
-> [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)
+> [`-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
 > is consistent with operator corrections becoming non-negligible
 > for hadronic observables. Re-derivation of $m_\mu/m_e$ from
 > the canonical (graded-expansion) form is queued in
-> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md).
+> [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
 The second input sets the **leptonic mass scale** — the
 conversion from dimensionless natural units to MeV.  The
@@ -98,14 +98,14 @@ the framework-derived value overshoots the calibrated value by
 **$+1.75\%$** (was $+0.75\%$ with the single-tick form). The
 geometric series direction therefore does *not* close the
 CAL-3 residual — it widens it. This is recorded as an open
-finding in the [tower-MeV calibration audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-finding.md)
+finding in the [tower-MeV calibration audit](https://github.com/litlfred/qou/blob/main/docs/audits/-tower-mev-calibration-finding.md)
 (which independently flags $\Phi_q$ $\to$ $\mathrm{Li}_2^q$ as the
 likely correct tower function). CAL-3 thereby ceases to be a
 silent absorber of the tower correction; the residual is
 explicit and the direction puzzle is on the books for the
 categorical-derivation review (Workplan 2 Phase 2).
 
-**Deeper fitting concern (2026-05-24, PR #1127).** Above the
+**Deeper fitting concern .** Above the
 tower-direction puzzle sits a more fundamental gap: the relation
 $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$ used to
 derive the framework's $Q_\beta$ prediction is itself an **ansatz**,
@@ -119,7 +119,7 @@ wrong leading-order operator. Until this is resolved by direct
 per-braid computation or a theoretical derivation, **CAL-3 must
 remain an input** and claims of "Q_β derivable from CAL-1 + CAL-2"
 are conditional on the unproved ansatz. Full audit:
-[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md).
+[`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-q-beta-net-ansatz-fitting-finding.md).
 
 ## Why exactly three
 
