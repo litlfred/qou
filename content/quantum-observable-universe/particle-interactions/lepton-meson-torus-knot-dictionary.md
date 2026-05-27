@@ -43,9 +43,10 @@ between the two sectors:
 
 | Feature | Lepton ($H_2$) | Meson ($H_3$) |
 |---|---|---|
-| Braid type | $\sigma^n$ (all positive) | $(\sigma\sigma^{-1})^k \cdot \sigma$ (mixed) |
-| Hecke eigenvalue | $q$ only (highest weight) | both $q$ and $-q^{-1}$ (full spectrum) |
-| Mass formula input | $\mathrm{Vol}(4_1)/\hbar_q^2$ (hyperbolic volume limit) | $\mathrm{tr}_M(\mathfrak{M}, q_0)$ (Markov trace at substrate) |
+| Braid type | $\sigma^n$ (all positive) | $\mathfrak{M}_+ = (\sigma_0\sigma_1)^2\sigma_1\sigma_0$ (all positive) |
+| Hecke eigenvalue | $q$ only (highest weight) | $q$ dominates: symmetric partition $(3)$ carries $62\%$ of the Markov trace at $6$ crossings, rising to $100\%$ as crossing count $\to \infty$ |
+| SDP selection | trivial (1-dim $H_2$) | symmetric-channel-dominated (all-positive crossings force eigenvalue $q > \lvert{-q^{-1}}\rvert$ at every crossing) |
+| Mass formula input | $\mathrm{Vol}(4_1)/\hbar_q^2$ (hyperbolic volume) | $\mathrm{tr}_M(\mathfrak{M}, q_0)$ (Markov trace at substrate) |
 | Calibration | CAL-2: $m_\mu/m_\mathfrak{e}$ (exact, Lean-proved modulo CAL-2) | CAL-3: $m_\pi$ (genuinely independent of $m_\mathfrak{e}$, $q_0$) |
 | Role of $4_1$ | transition knot $T(2,3) \to T(2,5)$ giving mass ratio | same transition, different evaluation (dual volume?) |
 
