@@ -1,0 +1,41 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-27T00:00:49.024181+00:00",
+  "commitSha": "ef053da3ddf3bdb67599d91189351838ba5c6a3a",
+  "assertions": [
+    {
+      "name": "character_ratios_exact",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Per-partition ratios q², 1/(h²+1), q⁻² verified to machine precision"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "meson-mass-string-breaking-derivation",
+  "scriptFile": "meson_mass_string_breaking_derivation.py",
+  "scriptHash": "3b39a6798f4c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Derives meson mass structure from string-breaking (σ²=hσ+1) and exact Hecke characters. Key: the per-partition character ratios χ(K)/χ(π) are q^{±2} for 1-dim reps and 1/(h²+1) for the standard rep — all derivable from representation theory. The trace ratio tr_K/tr_π is fully determined by these ratios.",
+  "contentBlock": "prop:lepton-meson-torus-knot-dictionary",
+  "data": {
+    "character_ratios_derived": {
+      "trivial_3": "q²",
+      "standard_21": "1/(h²+1) = −1/χ₂₁(π)",
+      "sign_111": "q⁻²"
+    },
+    "trace_ratio": {
+      "tr_K_over_tr_pi": "1.38372894980392",
+      "pdg_mK_over_mpi": "3.537118439"
+    }
+  }
+}
