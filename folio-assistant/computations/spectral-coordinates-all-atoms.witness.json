@@ -231,6 +231,8 @@
         }
       }
     },
-    "finding": "Li₂^q blow-up tower DIVERGES for A≥2 (max V̂ > 1 for deuteron+). The binding energy formula B = m_e × C_knot × |sum| uses the interface operator, NOT the Li₂^q blow-up expansion. C_knot = 35/6 + 2ℏ² (0.015%) is an empirical identification; its derivation requires the interface operator's eigenvalue structure, not the Li₂^q convergent series."
+    "finding": "RETRACTED \u2014 Li\u2082^q CONVERGES at correct V\u0302_i^full < 1 for A\u22652 (max V\u0302 > 1 for deuteron+). The binding energy formula B = m_e \u00d7 C_knot \u00d7 |sum| uses the interface operator, NOT the Li\u2082^q blow-up expansion. C_knot = 35/6 + 2\u210f\u00b2 (0.015%) is an empirical identification; its derivation requires the interface operator's eigenvalue structure, not the Li\u2082^q convergent series.",
+    "RETRACTED": true,
+    "retraction_reason": "V\u0302 values computed here are Hoefsmit matrix-product eigenvalues (grow > 1 with crossing count), NOT the additive Wedderburn traced volumes V\u0302_i^full (bounded < 1) used in the mass-endomorphism tower. Li\u2082^q CONVERGES at the correct V\u0302_i^full values. Retracted 2026-05-27. See session discussion."
   }
 }

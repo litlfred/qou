@@ -164,6 +164,16 @@ The Lean stub
 axiomatises both functions and their distinct definitions to
 prevent regression.*
 
+**Li₂^q convergence confirmed (added 2026-05-27).** The symmetric
+q-dilogarithm $\mathrm{Li}_2^q(-|\hat V_i|)$ CONVERGES at the
+substrate $q_0$ for all atoms: the additive Wedderburn traced volumes
+$\hat V_i^{\mathrm{full}} < 1$ (proton: $\hat V_0 \approx 0.989$,
+$\hat V_1 \approx 0.971$). An earlier analysis (PR #1351) incorrectly
+claimed divergence by using Hoefsmit matrix-product eigenvalues (which
+grow $> 1$ with crossing count) instead of the normalised $\hat V_i^{\mathrm{full}}$.
+The mass-endomorphism tower formula is correct as written.
+
+
 **Trace-vs-evaluation note (added 2026-05-03).**
 The R-side algebraic form of the tower above expresses each
 $\mathrm{Vol}_q^{(S)}(\beta)$ as a Markov trace over the chain on $S$
