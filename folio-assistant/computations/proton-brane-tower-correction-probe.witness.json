@@ -1,0 +1,46 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-27T13:26:42.487237+00:00",
+  "commitSha": "81875b2bcd4bf18b7974c58d16231b312594377b",
+  "assertions": [
+    {
+      "name": "correction_is_small",
+      "computed": 2.421942187771728e-07,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0001
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "proton-brane-tower-correction-probe",
+  "scriptFile": "proton_brane_tower_correction_probe.py",
+  "scriptHash": "721d21365208",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "data": {
+    "q_0": "1.10997859555418057528159407960950937799328227995870",
+    "mp_over_me_N0": "1836.152228719804088275049805371611190941",
+    "mp_over_me_codata": "1836.152673425258679032728311109209068569",
+    "correction_ratio": "1.000000242194218777172809483063610013757",
+    "correction_R_minus_1": "2.4219421877717280948e-7",
+    "u_parameter": "0.0085172363400439581071",
+    "err_N0_ppb": "242.1942",
+    "tower_coefficients": {
+      "d_1": "0.0000284358",
+      "d_2": "0.0033386153",
+      "d_3": "0.3919834013",
+      "d_4": "46.0223698903",
+      "d_5": "5403.4393379410",
+      "d_6": "634412.2814270882",
+      "d_7": "74485696.5450619310"
+    },
+    "finding": "The 242 ppb m_p gap = correction ratio R-1 ≈ 2.42e-7. This matches u³ ≈ 6.2e-7 at d₃ ≈ 0.39 (order-1 coefficient). The proton correction tower starts at k=3 (same order as Q_β's c₃ = J = -2). The coefficient d₃ needs categorical identification."
+  }
+}
