@@ -76,7 +76,7 @@ $m_\mu / m_\mathfrak{e} = \mathrm{Vol}(4_1) / \hbar_q^2$
 encodes the muon decay $\mu \to \mathfrak{e} + \nu + \bar\nu$:
 the cinquefoil $T(2,5)$ unwinds through the figure-eight
 transition knot $4_1$ back to the trefoil $T(2,3)$.  The
-decay width $\mathfrak{D}_\mu \propto m_\mu^5$ is determined
+decay width $\mathfrak{D}_\mu \propto \mathfrak{m}_\mu^5$ is determined
 by the $h^2$ jet order of the deformation parameter.
 
 **CAL-3 as meson decay.** The pion mass enters through the
@@ -91,11 +91,22 @@ contribution).
 
 **Why no $H^1$ calibration.** The bar involution $q \mapsto q^{-1}$
 forces all Markov traces of writhe-zero braids to be **even
-functions of $h$**.  The $h^1$ jet order is identically zero —
-there is no observable at odd-parity first order.  Physically:
-CPT symmetry (implemented by the bar involution) cancels any
-linear-in-$h$ contribution.  The calibration degrees $0, 2, 3$
-are exactly the non-vanishing jet orders of the $h$-expansion.
+functions of $h$**: $\mathrm{tr}_M(\beta, q) = \mathrm{tr}_M(\beta, q^{-1})$
+for any writhe-zero $\beta$.  This kills $h^1$ (and all odd powers
+of $h$) in any single-braid Markov trace.
+
+**Why $h^3$ survives despite bar evenness.** The flavor split
+$X = (q-1)^2(1-q^{-4})/3 = h^3/6 + \cdots$ is NOT a single-braid
+Markov trace — it is the **skein difference** between the proton
+and neutron braids, involving $\sigma - \sigma^{-1} = h$.  The
+skein relation is inherently odd in $h$ (it measures the difference
+between positive and negative crossings).  Each individual Markov
+trace $\mathrm{tr}_M(\text{proton})$ and $\mathrm{tr}_M(\text{neutron})$
+is even in $h$, but their RATIO $(m_n - m_p)/M_N$ extracts the
+odd-$h$ skein content.  The $h^3$ jet order is the first
+non-vanishing odd order because $h^1$ in the skein difference is
+further suppressed by the 3-quark baryon structure (the factor
+$1/3$ from the 3-strand average).
 
 **Jet order ↔ filtration level.** The GS filtration on
 $H_n(q)$ grades the Hecke algebra by braid-word length.  The
