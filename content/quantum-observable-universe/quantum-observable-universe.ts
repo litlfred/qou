@@ -83,8 +83,8 @@ export default paper({
     // wigner-su4-from-spin-isospin). Pauli/spin-stats content remains a
     // future authoring goal — will create a new chapter when content exists.
     chapterRef({ dir: "particle-interactions" }),              // Ch 9 Particles: GB, LP, nuclear structure, SDP-as-thimble + skein/hadron/atom-shell content migrated from braids-and-knots
-    chapterRef({ dir: "mass-theory" }),                        // [NEW Ch 10 — Phase 4] Mass — Theory (light): Wedderburn, Frobenius pairing, transfer matrix, categorical mass foundations
-    chapterRef({ dir: "mass-application" }),                   // [NEW Ch 11 — Phase 4] Mass — Application (heavy): Hoefsmit construction, Wenzl, Markov-peel, GS reductions, LP/SDP, φ_q convergence
+    chapterRef({ dir: "mass-theory" }),                        // Ch 10 Mass: unified mass endomorphism chapter (merged theory+application 2026-05-27). Opens with conj:mass-endomorphism, then Cat→Alg→Geom→Arch→Phys decomposition.
+    // mass-application merged into mass-theory (2026-05-27)
     chapterRef({ dir: "gravity-spacetime" }),                  // [NEW Ch 12 — Phase 6 scaffold] Gravity emergence: contact geometry + geodesic Madelung
 
     // ── Part III: Physical Realization ────────────────────────────────
