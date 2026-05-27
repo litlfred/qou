@@ -1,0 +1,35 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-27T15:05:33.220923+00:00",
+  "commitSha": "650c12a5cec59c9a50a6293ded78ce2ea26aa65d",
+  "assertions": [
+    {
+      "name": "C_knot_match",
+      "computed": 5.852967710360291,
+      "expected": 5.852086,
+      "passed": true,
+      "tolerance": 0.01
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "c-knot-categorical-identification",
+  "scriptFile": "c_knot_categorical_identification.py",
+  "scriptHash": "aec7027af457",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "data": {
+    "C_knot_empirical": "5.852086000",
+    "C_knot_formula": "5.852967710",
+    "formula": "(|S_3|^2 - 1)/|S_3| + 2*hbar_q^2 = 35/6 + 2*hbar_q^2",
+    "leading_term": "35/6 = (36-1)/6 = (dim(reg rep) - dim(triv)) / |S_3|",
+    "correction": "2*hbar_q^2 = substrate Planck correction",
+    "match_pct": "0.0151"
+  }
+}
