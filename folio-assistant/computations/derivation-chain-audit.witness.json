@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T13:43:55.941779+00:00",
-  "commitSha": "73b4dc112004b48a8a9d3a1c1d155d05e608bab7",
+  "computedAt": "2026-05-27T14:11:46.508493+00:00",
+  "commitSha": "d9b388dcdf4f90fbb1905bd077a8305c79570e0f",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
     "compute_dps": 50,
     "output_dps": 40,
@@ -2461,6 +2461,7 @@
         "higgs-categorical-mass-formula-attempt.witness.json",
         "higgs-h6-correction-probe.witness.json",
         "higher-n-wedderburn-h2-drift-probe.witness.json",
+        "hoefsmit-b-squared-reconciliation.witness.json",
         "hoefsmit-h3-std-matrices.witness.json",
         "hoefsmit-seminormal-form-probe.witness.json",
         "homflypt-engine-selftest.witness.json",
@@ -2578,8 +2579,10 @@
         "meson-character-shortcut-l1.witness.json",
         "meson-eigenvalue-analysis.witness.json",
         "meson-geom-full.witness.json",
+        "meson-kaon-pion-derivation.witness.json",
         "meson-lepton-knot-dictionary-probe.witness.json",
         "meson-mass-from-hecke.witness.json",
+        "meson-sector-1ppq-crosscheck.witness.json",
         "meson-spectral-analysis.witness.json",
         "meson-spectrum-predictions.witness.json",
         "meson-symmetry-bar-involution.witness.json",
@@ -2717,6 +2720,7 @@
         "q-pinning-50-digit.witness.json",
         "q-pochhammer-seed.witness.json",
         "q-values-derived.witness.json",
+        "q0-figure-eight-phase-derivation.witness.json",
         "qbeta-1ppq-achieved.witness.json",
         "qbeta-decay-sdp-extended-ck.witness.json",
         "qbeta-decay-sdp-full-ck-derivation.witness.json",

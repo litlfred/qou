@@ -30,8 +30,8 @@ from mpmath import mpc, mpf
 
 mp.mp.dps = 50
 
-# Constants
-M_E_MEV = mpf("0.510998950")
+# Constants — m_e from canonical source (CAL-1)
+from codata_constants import M_E_MEV  # noqa: E402
 M_W_MEV = mpf("80379.0")
 M_Z_MEV = mpf("91187.6")
 M_H_MEV = mpf("125100.0")
