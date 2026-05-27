@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T00:15:44.174640+00:00",
-  "commitSha": "3827f34906c2ec721426697caa1d395e930e9c8c",
+  "computedAt": "2026-05-27T03:00:02.973225+00:00",
+  "commitSha": "518f2852c914d248d0eec067c1d8a248f22b862e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 142,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -19,7 +19,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 686,
+    "files_scanned": 690,
     "patterns": [
       "P15",
       "P16",
@@ -32,7 +32,7 @@
     "by_pattern_count": {
       "P15": 114,
       "P16": 177,
-      "P21": 23,
+      "P21": 24,
       "P30": 142,
       "P31": 55
     },
@@ -2400,6 +2400,13 @@
         "line": 68,
         "snippet": "CODATA literal \"206.7682830\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P21",
+        "file": "meson_symmetry_and_bar_involution.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
         "pattern": "P30",
