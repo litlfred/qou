@@ -227,8 +227,8 @@ theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
       - chi_v21_on_word q beta_p_word_v21
       = chi_V21_difference_factored q := by
   -- Symbolic matrix-product trace evaluation; backed empirically by
-  -- the sympy verification in the probe.
-  -- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"witness"
+  -- PROOF STRATEGY: unfold chi_v21_on_word, foldl 11 matrices,
+  -- take trace, use sigma1_v21_param (sqrt-free), field_simp + ring.
   -- Ref: folio-assistant/computations/probe_per_wedderburn_block_ck.py
   sorry
 
