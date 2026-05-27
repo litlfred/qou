@@ -104,6 +104,22 @@
         },
         "reviewed_at": "2026-05-27"
       }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "canonical-audit-batch",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/canonical-watcher"
+        },
+        "reviewed_at": "2026-05-27"
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

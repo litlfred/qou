@@ -902,37 +902,17 @@
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "21b5e5e3bc88",
-          "ts": "420246cdb9a2",
-          "lean": "fcd38700b432"
+          "md": "35f1c615078a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
+          "kind": "agent",
+          "id": "canonical-audit-batch",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/canonical-watcher"
         },
-        "reviewed_at": "2026-05-25T23:14:29.450Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "26d303e6bdf0",
-          "ts": "420246cdb9a2",
-          "lean": "fcd38700b432"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+        "reviewed_at": "2026-05-27"
       }
     ],
     "canonical-cal4-acknowledged": [

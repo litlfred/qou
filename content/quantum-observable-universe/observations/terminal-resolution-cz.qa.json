@@ -522,37 +522,27 @@
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "288860f7343a",
-          "ts": "14e5a8dc1bf8",
-          "lean": "dae88385430d"
+          "md": "288860f7343a"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
+          "kind": "agent",
+          "id": "canonical-audit-batch",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/canonical-watcher"
         },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "288860f7343a",
-          "ts": "14e5a8dc1bf8",
-          "lean": "dae88385430d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+        "reviewed_at": "2026-05-27",
+        "evidence": [
+          {
+            "line": 31,
+            "text": "| Proton | $Q(q_0) \\mathrm{Vol}(\\mathcal{L}_{\\mathrm{Hopf}})_{uud}$ | 938.272 MeV | 938.272 MeV |"
+          },
+          {
+            "line": 32,
+            "text": "| Neutron | $Q(q_0) \\mathrm{Vol}(\\mathcal{L}_{\\mathrm{Hopf}})_{udd}$ | 939.565 MeV | 939.565 MeV |"
+          }
+        ]
       }
     ],
     "compute-witness-exists": [
