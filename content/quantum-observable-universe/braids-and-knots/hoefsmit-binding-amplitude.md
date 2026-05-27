@@ -56,18 +56,15 @@ $1 - b^2 = 1/[2]_q^2$ of the pion's rest energy as
 de-entanglement energy:
 
 $$
-  E_{\mathrm{bind}} = \frac{m_\pi}{[2]_q^2}
-  \approx 34.5\,\mathrm{MeV}.
+  E_{\mathrm{bind}} = \frac{m_\pi}{[2]_q^2}.
 $$
 
-The remaining energy $m_\pi - E_{\mathrm{bind}} = m_\pi \cdot b^2
-= m_\pi \cdot [3]_q / [2]_q^2 \approx 105.1\,\mathrm{MeV}$
-is within **0.6%** of the muon mass $m_\mu = 105.66\,\mathrm{MeV}$.
-
-This near-match is the Frobenius bridge at work: the de-entangled
-lepton channel (the $V_{(2)}$ component of $V_{(2,1)}\!\downarrow_{H_2}$)
-carries energy $\approx m_\mu$, consistent with the
-dominant pion decay mode $\pi^+ \to \mu^+ + \nu_\mu$.
+The remaining energy is $m_\pi \cdot b^2
+= m_\pi \cdot [3]_q / [2]_q^2$.  By the Frobenius bridge,
+this residual energy flows into the de-entangled lepton channel
+(the $V_{(2)}$ component of $V_{(2,1)}\!\downarrow_{H_2}$),
+consistent with the dominant pion decay mode
+$\pi^+ \to \mu^+ + \nu_\mu$.
 
 ## The $q$-integer structure
 
