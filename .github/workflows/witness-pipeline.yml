@@ -81,6 +81,9 @@ on:
       - ".github/workflows/witness-pipeline.yml"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
