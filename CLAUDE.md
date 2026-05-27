@@ -218,7 +218,16 @@ ephemeral.
    moving fast): `git push -u origin <branch>`. This is what makes
    the PR + CI visible to siblings.
 
-7. **Default merge method: "Rebase and merge".** When a PR is
+7. **ALWAYS `/prepare-merge` before merging.** Never call
+   `mcp__github__merge_pull_request` directly — always run the
+   `/prepare-merge` skill first (rebase, integrate, one-voice
+   review, Lean check, request Gemini + Copilot reviews). Only
+   merge after `/prepare-merge` completes AND the author gives
+   **explicit** merge permission. Interpret that permission
+   **strictly**: "looks good" is NOT merge permission; "merge it"
+   or "ship it" IS. When in doubt, ask.
+
+8. **Default merge method: "Rebase and merge".** When a PR is
    ready and the user authorizes the merge, use
    `mcp__github__merge_pull_request` with `merge_method: "rebase"`
    (equivalently the "Rebase and merge" button in the GitHub UI).
