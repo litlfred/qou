@@ -13,4 +13,4 @@ shadow prices, and verifies that the active demand channels
 receptive sub-braids.  The closing blocks tabulate the
 Jucys–Murphy spectra for small $n$ and connect the active-set
 identification to the binding-energy substrate formula from the
-particle-interactions chapter.
+Particles chapter.

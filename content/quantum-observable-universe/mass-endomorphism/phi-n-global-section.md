@@ -73,6 +73,6 @@ constraint". The reframing makes the magic-number ladder a
 This remark interprets `conj:mass-endomorphism` only — it makes no
 new logical claim. The mathematical content is in the
 [saturated-shell](#conj\:categorical-neutrality-saturated-shells)
-and [shell-condensation](../lifting-and-descent/homological-shell-condensation.md)
+and [shell-condensation](./homological-shell-condensation.md)
 conjectures, which are themselves conditional on the algebraic
 refactor.

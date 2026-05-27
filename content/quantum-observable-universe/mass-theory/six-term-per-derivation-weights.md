@@ -61,7 +61,7 @@ the per-derivation reading above:
   reads $T_1$ in cat units.  The binding contribution is the
   bound–free differential.
 - *$T_2 + T_3$ binding (brane tower):* per
-  the *atomic-braid mass formula* in the particle-interactions chapter, the binding
+  the *atomic-braid mass formula* in the Particles chapter, the binding
   correction is $\alpha \cdot \sum_i \ln\lvert \hat V_i \rvert$
   where $\alpha = m_e \cdot 8G$ is the
   [Borromean–Catalan binding scale](#prop:binding-scale-catalan)
@@ -106,7 +106,7 @@ See [Table 3](#tbl:six-term-per-derivation-weights-table3-data).
 max $= 0.525\%$ (${}^{4}$He).**
 
 This matches the standalone
-the *atomic-braid mass formula* in the particle-interactions chapter formula's empirical
+the *atomic-braid mass formula* in the Particles chapter formula's empirical
 fit (0.13–0.16% mean across the same spectrum) and **76$\times$ improves**
 on the proton-fitted single-$E_0$ assembly (14.7% mean) — the
 improvement is entirely from honouring the per-term derivation

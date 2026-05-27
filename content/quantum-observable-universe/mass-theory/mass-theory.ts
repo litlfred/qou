@@ -309,6 +309,7 @@ export default chapter({
       title: "Geometric face: mass-bridge orphan blocks",
       label: "sec:mass-bridge-orphan-reconnect",
       blocks: [
+        "mass-bridge-orphan-reconnect-intro",
         "categorical-linking-operation",
         "crossed-module-euler-characteristic",
         "dim-master-pentagon",
@@ -756,6 +757,7 @@ export default chapter({
       title: "Reconnected orphan blocks (Phase 7)",
       label: "sec:mass-theory-orphan-reconnect",
       blocks: [
+        "mass-theory-orphan-reconnect-intro",
         "borromean-bloch-group-element",
         "categorical-higgs-mechanism",
         "interface-knot-markov-z",
@@ -772,6 +774,7 @@ export default chapter({
       title: "Reconnected orphan blocks (Phase 7)",
       label: "sec:mass-application-orphan-reconnect",
       blocks: [
+        "mass-application-orphan-reconnect-intro",
         "alpha-5-jm-central-empirical-findings-table1-data",
         "alpha-5-jm-central-empirical-findings-table2-data",
         "block-multiplicativity-v-free",

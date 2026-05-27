@@ -80,7 +80,7 @@ calibration tautology, not a prediction quality.
 
 ### FULL Q_β prediction (framework, no CODATA mass injection)
 
-Per [`prop:neutron-qvalue-symbolic`](../../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md)
+Per [`prop:neutron-qvalue-symbolic`](../particle-interactions/neutron-qvalue-symbolic.md)
 the framework predicts the β-decay Q-value using only CAL-1 ($m_e$)
 and CAL-2 ($q_0$) — no CAL-3 ($Q_\beta$) input, no CODATA $m_p$ or
 $m_n$ injection. CAL-3 becomes the **output**, not an input.
@@ -109,7 +109,7 @@ $\gamma + \sigma_0 + \sigma_1$ channels:
 See [Table 3](#tbl:recomputed-low-isotope-mass-table-table3-data).
 
 The $+0.168\%$ / $+1.31$ keV residual is the **brane-tower
-truncation correction** ([`neutron-qvalue-symbolic.md:110-114`](../../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md)):
+truncation correction** ([`neutron-qvalue-symbolic.md:110-114`](../particle-interactions/neutron-qvalue-symbolic.md)):
 the derived $E_0 = m_e/(q_0(q_0-1))$ is the single-level
 (Planck-tick) approximation; the exact tower-summed $E_0$ would
 absorb this $0.17\%$. Closure path: Workplan 2 Phase 2 50-dps
@@ -118,7 +118,7 @@ $m_e^{\mathrm{Hecke}}$ lift.
 #### Why "single-wrap symbolic" beats the typed-crossings 6-term form
 
 An earlier draft used the typed-crossings 6-term decomposition
-([`beta-decay-energy-scale.md`](../../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md))
+([`beta-decay-energy-scale.md`](../particle-interactions/beta-decay-energy-scale.md))
 with $|\Delta(\mathrm{net})| = 0.18829$ from the witness, giving
 $Q_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The
 single-wrap form is **4.46$\times$ tighter** because the $L_\pm$ and
