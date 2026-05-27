@@ -28,14 +28,14 @@ theorem hecke_times_qInteger (n : ℕ) (hh : q - q⁻¹ ≠ 0) :
   field_simp
 
 /-- [2]_q = q + q⁻¹. -/
-theorem qInteger_two (hh : q - q⁻¹ ≠ 0) :
+theorem qInteger_two (hq : q ≠ 0) (hh : q - q⁻¹ ≠ 0) :
     qInteger q 2 = q + q⁻¹ := by
   unfold qInteger
   field_simp
   ring
 
 /-- [3]_q = q² + 1 + q⁻². -/
-theorem qInteger_three (hh : q - q⁻¹ ≠ 0) :
+theorem qInteger_three (hq : q ≠ 0) (hh : q - q⁻¹ ≠ 0) :
     qInteger q 3 = q^2 + 1 + q⁻¹^2 := by
   unfold qInteger
   field_simp

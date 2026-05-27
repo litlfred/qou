@@ -68,21 +68,14 @@ def main():
     # Let me just use the ratio directly
 
     def q_int(n):
-        return (q**n - q**(-n)) / (q - 1/q)
+        return (q**n - q**(-n)) / h
 
     # Known Seifert volume ratios (from torus-knot geometry)
     # V(T(2,n))/V(T(2,3)) for n = 3,5,7:
     seifert_ratios = {
         3: mp.mpf(1),           # V/V = 1
-        5: mp.mpf(9)/5,         # from #1344
-        7: mp.mpf(25)/7,        # extrapolation: (n²-4n+8)/(n-2)?
+        5: mp.mpf(9)/5,         # from #1344: V(T(2,5))/V(T(2,3)) = 9/5
     }
-    # Check: 9/5 for n=5 and 25/7 for n=7
-    # Pattern: for n=3: 1, n=5: 9/5, n=7: 25/7
-    # = (n-2)²/(n-2) = n-2? No, 9/5 ≠ 3, 25/7 ≠ 5
-    # Let's check: if ratio = (n²-n+c)/(n₁²-n₁+c) for some c...
-    # n=5: 9/5 → 9 = 5·(9/5), 3²=9 ✓. So V(5)/V(3) = 3²/5 = 9/5
-    # n=7: extrapolate as 5²/7 = 25/7?
 
     # PDG masses for comparison
     pdg = {
@@ -155,7 +148,7 @@ def main():
         "binding amplitude, and Seifert volume ratios. Kaon mass "
         "at 290 ppm from CAL-3 + derived identities."
     )
-    w.set_content_block("prop:pion-half-figure-eight")
+    w.set_audit_only("docs/audits/2026-05-27-unified-meson-mass-formula.md")
     w.add_data("m_K_pred_MeV", str(mp.nstr(m_K_pred, 15)))
     w.add_data("m_K_miss_ppm", str(mp.nstr((m_K_pred - pdg["K±"])/pdg["K±"] * 1e6, 8)))
     w.add_assertion("kaon_within_500ppm",
