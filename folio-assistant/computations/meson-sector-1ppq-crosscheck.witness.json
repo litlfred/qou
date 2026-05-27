@@ -1,0 +1,34 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-27T13:51:40.590550+00:00",
+  "commitSha": "276eb554bf6b7668a5200e56d8904c5669b6e1c4",
+  "assertions": [
+    {
+      "name": "all_l1_pass",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "All 4 meson algebraic identities at 10⁻⁴⁰"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "meson-sector-1ppq-crosscheck",
+  "scriptFile": "meson_sector_1ppq_crosscheck.py",
+  "scriptHash": "4fca052e29d3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "L1 (1 ppQ) cross-checks for the meson sector. Verifies 4 algebraic identities at 50 dps: q⁵−q⁻⁵=h·[5]_q, b²=[3]_q/[2]_q², 1-b²=1/[2]_q², and the pion discriminant.",
+  "contentBlock": "prop:pion-half-figure-eight",
+  "data": {
+    "identities_verified": 4,
+    "all_below_1e-40": true
+  }
+}
