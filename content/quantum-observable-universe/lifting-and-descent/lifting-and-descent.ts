@@ -134,20 +134,13 @@ export default chapter({
         // prop:gb-spectral-sequence moved here from
         // braids-and-knots/sec:spectral-sequence-chirality-confinement
         // per detangler P29 (2026-05-22). 12 H1 fwd-refs cleared.
-        // New H2 to prop:graded-trace-residue-split +
-        // thm:knot-mass-formula-unified @ braids-and-knots
-        // (accepted §5).
         "gb-spectral-sequence",
         "gb-spectral-sequence-table-data",
-        "mass-noncommutative-drag",
+        // mass-identity, mass-noncommutative-drag, topological-mass
+        // and their proof trees moved to mass-theory (2026-05-27)
+        // per mass-endomorphism restructuring.
         "euler-char-stability",
         "euler-char-stability-proof",
-        "mass-identity",
-        "mass-identity-exists",
-        "mass-identity-exists-proof",
-        "mass-identity-unique",
-        "mass-identity-unique-proof",
-        "mass-identity-su2",
         "homological-shell-condensation",
       ],
     }),
@@ -234,9 +227,8 @@ export default chapter({
         "jet-prolongation-C-proof",
         "yekutieli-archimedean-band",
         "qu-to-qou-proof",
-        "mass-identity-C",
-        "mass-identity-C-proof",
-        "mass-geometric-drag",
+        // mass-identity-C, mass-identity-C-proof, mass-geometric-drag
+        // moved to mass-theory (2026-05-27).
         "euler-char-stability-C",
         "brane-boundary-structure-proof",
       ],
@@ -248,28 +240,17 @@ export default chapter({
         "archimedean-lifting-topological-mass-formula-intro",
         "quantum-dilogarithm",
         "quantum-dilogarithm-proof",
-        // thm:topological-mass — the theorem statement, moved here
-        // from braids-and-knots/sec:categorical-mass-foundations
-        // per detangler P30 (2026-05-22).
-        "topological-mass",
-        "topological-mass-conjecture",
+        // topological-mass + topological-mass-conjecture moved to
+        // mass-theory (2026-05-27).
       ],
     }),
     section({
       title: "Archimedean specialisations: topological-mass variants",
       label: "sec:archimedean-lifting-topological-mass-variants",
       blocks: [
+        // topological-mass variants (eigenspace, holonomy, transient,
+        // dilogarithm, proof, su2) moved to mass-theory (2026-05-27).
         "archimedean-lifting-topological-mass-variants-intro",
-        "topological-mass-eigenspace-decomp",
-        "topological-mass-eigenspace-decomp-proof",
-        "topological-mass-holonomy",
-        "topological-mass-holonomy-proof",
-        "topological-mass-transient-localisation",
-        "topological-mass-transient-localisation-proof",
-        "topological-mass-dilogarithm",
-        "topological-mass-dilogarithm-proof",
-        "topological-mass-proof",
-        "topological-mass-su2",
         "outro-lifting-and-descent",
       ],
     }),
