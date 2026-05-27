@@ -48,6 +48,7 @@ export default chapter({
       blocks: [
         "categorical-braiding-hecke-eigenbasis-intro",
         "jones-markov-trace",
+        "markov-disambiguation",
         "trm-hopf-sigma1-sq-closed-form",
         "trm-hopf-sigma1-sq-closed-form-table2-data",
         "trm-hopf-sigma1-sq-closed-form-table1-data",
