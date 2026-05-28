@@ -7,7 +7,6 @@ export default proposition({
   uses: [
     "def:categorical-meson",
     "prop:hoefsmit-binding-amplitude",
-    "conj:meson-volume-conjecture",
   ],
   cites: [
     "jones1987",
