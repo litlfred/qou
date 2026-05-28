@@ -15,7 +15,6 @@ export default remark({
   },
   uses: [
     "prop:three-calibration-inputs",
-    "def:quantum-planck-constant",
     "rem:figure-8-archimedean-illustration",
     "prop:borromean-baryon-mass-formula",
   ],

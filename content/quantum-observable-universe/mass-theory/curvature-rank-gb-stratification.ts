@@ -7,8 +7,5 @@ export default proposition({
     ref: "qou:QOU.WedderburnMass.curvature_rank_gb_stratification",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-spectral-sequence",
-    "prop:frobenius-s-classification",
-  ],
+  uses: ["prop:frobenius-s-classification"],
 });

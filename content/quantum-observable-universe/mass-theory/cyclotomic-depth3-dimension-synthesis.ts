@@ -15,15 +15,7 @@ export default proposition({
       "folio-assistant/computations/cyclotomic-depth3-dimension-pslq.witness.json",
     status: "verified",
   },
-  uses: [
-    "prop:cyclotomic-trilog-imaginary-closed-form",
-    "prop:cyclotomic-cl3-orbit-sum-general",
-    "prop:two-filtration-bridge-general",
-    "prop:borel-partial-resolution",
-    "prop:cl3-zeta5-pslq-independence",
-    "rem:transcendental-accounting",
-    "rem:b1-current-status",
-  ],
+  uses: ["prop:two-filtration-bridge-general"],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "cyclotomic",

@@ -17,8 +17,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Archimedean.quantum_dilogarithm_volume",
     validation: "not_checked",
   },
-  uses: [
-    "thm:markov-trace-factorization",
-    "cor:quantum-dilogarithm",
-  ],
+  uses: ["thm:markov-trace-factorization"],
 });

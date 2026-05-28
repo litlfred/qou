@@ -4,11 +4,7 @@ export default proposition({
   label: "prop:ground-state-ordering",
   lean: { ref: "qou:QOU.ParticleInteractions.ground_state_ordering", validation: "not_started" },
   title: "Ground-state ordering from transfer matrix eigenvalues",
-  uses: [
-    "prop:beta-decay-transfer-matrix",
-    "def:typed-crossing-operator",
-    "prop:frobenius-gram-matrix",
-  ],
+  uses: ["def:typed-crossing-operator"],
   tags: [
     "ground-state",
     "transfer-matrix",

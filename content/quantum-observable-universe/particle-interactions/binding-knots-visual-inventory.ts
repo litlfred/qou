@@ -16,10 +16,4 @@ export default remark({
     "borromean",
     "braid-word",
   ],
-  uses: [
-    "rem:knot-particle-dictionary",
-    "def:localized-knot",
-    "def:atomic-braid",
-    "def:borromean-baryon",
-  ],
 });

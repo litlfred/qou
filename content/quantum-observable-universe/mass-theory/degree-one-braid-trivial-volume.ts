@@ -8,11 +8,6 @@ export default lemma({
     ref: "qou:QOU.Photon.geom_degree_one_zero",
     validation: "not_checked",
   },
-  uses: [
-    "thm:jones-markov-trace",
-    "def:archimedean-realization-functor",
-    "def:algebraic-quantum-volume",
-  ],
   cites: ["jones1987", "kashaev1997"],
   tags: [
     "photon",

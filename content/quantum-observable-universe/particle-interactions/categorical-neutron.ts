@@ -7,5 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.Torsion.CategoricalNeutron",
     validation: "not_checked",
   },
-  uses: ["def:categorical-proton", "def:knot-operator-energy"],
+  uses: ["def:categorical-proton"],
 });

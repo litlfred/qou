@@ -199,7 +199,7 @@ Candidate refinements:
 
 These extensions are flagged for follow-up under the
 <<<<<<< HEAD
-`prop:alpha-k-categorical-closure` proposal (PR #675, pending merge).
+`prop:alpha-k-categorical-closure` proposal (the prior work, pending merge).
 =======
 `conj:alpha-k-categorical-closure` proposal.
 >>>>>>> 66010816 (drain(voice): strip parenthetical PR refs, dates, and PR links from prose)

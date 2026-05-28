@@ -7,7 +7,6 @@ export default remark({
   interprets: "thm:em-spectral-completeness",
   uses: [
     "cor:gauge-coupling-uniqueness",
-    "prop:em-coupling-projection",
     "prop:confinement-categorical",
   ],
   tags: [

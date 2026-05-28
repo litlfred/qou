@@ -6,7 +6,6 @@ export default proposition({
   chapter: "braids-and-knots",
   cites: ["wenzl1988", "jones1987"],
   uses: [
-    "def:hecke-mass-element",
     "prop:y-lambda-recipe-from-partition",
     "prop:atom-knot-mass-derivation",
   ],

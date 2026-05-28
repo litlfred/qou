@@ -8,11 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.phi_q_tower_algebraic_stratification",
     validation: "not_checked",
   },
-  uses: [
-    "def:phi-q-piece",
-    "prop:graded-markov-trace-from-gs-filtration",
-    "prop:gb-spectral-sequence",
-  ],
+  uses: ["def:phi-q-piece"],
   cites: ["bokut1978", "shirshov1962", "jones1987"],
   tags: [
     "phi-q",

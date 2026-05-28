@@ -8,13 +8,7 @@ export default proposition({
     ref: "qou:QOU.AlgebraicSubstrate.JointGaloisBraidFigure8.figure_8_joint_action",
     validation: "not_checked",
   },
-  uses: [
-    "prop:joint-galois-braid-action",
-    "def:hq-bi-filtration",
-    "rem:chirality-period-pairing",
-    "prop:b1-figure-8-row-theorem",
-    "prop:two-filtration-bridge-small-cases",
-  ],
+  uses: ["prop:two-filtration-bridge-small-cases"],
   cites: [],
   tags: [
     "joint-action",

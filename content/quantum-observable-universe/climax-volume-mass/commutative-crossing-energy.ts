@@ -18,7 +18,6 @@ export default remark({
     "mass-tower",
   ],
   uses: [
-    "def:crossing-energy",
     "rem:u1-phase-tube",
     "rem:sqrt-q-ribbon-structure",
     "rem:archimedean-realisations",

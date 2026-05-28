@@ -15,7 +15,6 @@ export default remark({
   ],
   uses: [
     "prop:spectral-chart-correspondence",
-    "def:quantum-gauge-group",
     "rem:i-as-braiding-orientation",
     "rem:braiding-unit-circle-convention",
   ],

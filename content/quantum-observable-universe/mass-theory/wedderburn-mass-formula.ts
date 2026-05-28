@@ -6,10 +6,4 @@ export default theorem({
   lean: { ref: "qou:QOU.WedderburnMass.atomicMass",
     validation: "not_checked",
   },
-  uses: [
-    "prop:atomic-mass-gb-nf",
-    "prop:three-parameters-wedderburn",
-    "prop:binding-scale-catalan",
-    "def:atomic-braid",
-  ],
 });

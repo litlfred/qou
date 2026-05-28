@@ -15,12 +15,7 @@ export default simulator({
     "skein-relation",
     "interactive",
   ],
-  uses: [
-    "def:transfer-matrix-operator",
-    "def:categorical-proton",
-    "def:categorical-neutron",
-    "rem:force-knot-identification",
-  ],
+  uses: ["def:categorical-neutron"],
   html: "folio-assistant/simulators/beta_decay_braid.html",
   defaultView: {
     name: "default",

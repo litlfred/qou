@@ -2,7 +2,7 @@
 |----|----------|-------------|--------|--------------------|
 <<<<<<< HEAD
 | GAP-A-1 | GAP-A | Canonical knot ID ($^2$H/$^3$H/$^3$He) from SDP | Open | [prop:canonical-knot-id-sdp](#prop:canonical-knot-id-sdp) |
-| GAP-A-2 | GAP-A | Chirality formula $a_K = 1 + wh$ exactness | **Refined 2026-05-09** — coefficient $\langle c\rangle_\beta$ falsified on deuteron; structural form reduced to crystal-graph via Type-B folding. Detail in [`derivation-audit-report.md`](derivation-audit-report.md) §GAP-A-2. | [prop:chirality-ribbon-frobenius](#prop:chirality-ribbon-frobenius) |
+| GAP-A-2 | GAP-A | Chirality formula $a_K = 1 + wh$ exactness | **Refined** — coefficient $\langle c\rangle_\beta$ falsified on deuteron; structural form reduced to crystal-graph via Type-B folding. Detail in [`derivation-audit-report.md`](derivation-audit-report.md) §GAP-A-2. | [prop:chirality-ribbon-frobenius](#prop:chirality-ribbon-frobenius) |
 =======
 | GAP-A-1 | GAP-A | Canonical knot ID ($^2$H/$^3$H/$^3$He) from SDP | Open | [conj:canonical-knot-id-sdp](#conj:canonical-knot-id-sdp) |
 | GAP-A-2 | GAP-A | Chirality formula $a_K = 1 + wh$ exactness | **Refined** — coefficient $\langle c\rangle_\beta$ falsified on deuteron; structural form reduced to crystal-graph via Type-B folding. Detail in [`derivation-audit-report.md`](derivation-audit-report.md) §GAP-A-2. | [conj:chirality-ribbon-frobenius](#conj:chirality-ribbon-frobenius) |

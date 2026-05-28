@@ -8,15 +8,7 @@ export default proposition({
     ref: "qou:QOU.AppendixSurreals.Depth2IdentificationBlochSuslin.depth_2_identification",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-depth-period-correspondence",
-    "rem:k-theory-period-rosetta",
-    "prop:borel-partial-resolution",
-    "def:frobenius-hopf-substrate",
-    "prop:categorical-laplace-unique",
-    "prop:bring-figure-eight-depth-2-witness",
-    "rem:transcendental-accounting",
-  ],
+  uses: ["prop:borel-partial-resolution"],
   cites: ["bloch2000", "suslin1991"],
   tags: [
     "bloch-suslin",

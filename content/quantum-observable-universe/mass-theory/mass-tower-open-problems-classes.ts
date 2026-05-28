@@ -19,10 +19,6 @@ export default remark({
     "higher-bloch",
     "polylogarithm",
   ],
-  uses: [
-    "prop:em-coupling-bring-zero-mode",
-    "prop:archimedean-functor-uniqueness",
-    "prop:bring-hyperbolic-knot-bloch-decomposition",
-  ],
+  uses: ["prop:em-coupling-bring-zero-mode"],
   cites: ["borel1974", "bloch2000", "suslin1991", "kashaev1997"],
 });

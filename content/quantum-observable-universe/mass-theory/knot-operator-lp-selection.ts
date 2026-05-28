@@ -9,10 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:frobenius-gram-matrix",
     "rem:gram-matrix-spectral-connection",
-    "thm:frobenius-codim-universal",
-    "prop:operator-selection-lp",
     "prop:weak-spectral-completeness",
   ],
   computation: {

@@ -15,11 +15,7 @@ export default proposition({
     status: "verified",
     requires: ["sympy"],
   },
-  uses: [
-    "prop:macdonald-hook-telescope",
-    "prop:y-lambda-closed-form-wenzl-bridge",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["prop:macdonald-hook-telescope"],
   cites: ["kashiwara1991", "lecouvey2007"],
   tags: [
     "demazure",

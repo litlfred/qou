@@ -38,7 +38,6 @@ export default proposition({
   uses: [
     "prop:mass-categorical-descent",
     "prop:wigner-coefficient-derivation",
-    "prop:wedderburn-weight-canonical",
   ],
   tags: [
     "mass-formula",

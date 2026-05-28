@@ -4,10 +4,7 @@ export default proposition({
   label: "prop:lepton-meson-torus-knot-dictionary",
   title:
     "Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$",
-  uses: [
-    "def:categorical-meson",
-    "conj:meson-volume-conjecture",
-  ],
+  uses: ["conj:meson-volume-conjecture"],
   cites: [
     "jones1987",
     "kashaev1997",

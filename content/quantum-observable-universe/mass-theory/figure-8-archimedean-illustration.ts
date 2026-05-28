@@ -22,12 +22,7 @@ export default remark({
     "clausen",
     "illustration",
   ],
-  uses: [
-    "prop:archimedean-functor-uniqueness",
-    "def:archimedean-realization-functor",
-    "def:algebraic-quantum-volume",
-    "conj:kashaev-volume-conjecture",
-  ],
+  uses: ["prop:archimedean-functor-uniqueness"],
   cites: [
     "thurston1978",
     "suslin1991",

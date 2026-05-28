@@ -90,10 +90,7 @@ export default proposition({
     "$c_3 = J_{\\mathrm{Hopf}}(q{=}1) = -2$ from Schur-Weyl branching of $V_{(2,1)}^{\\otimes 2}$ + Markov-Frobenius selection — Story B closure at $c_3$",
   uses: [
     "prop:q-beta-categorical-precision-ladder",
-    "prop:hoefsmit-V21-cos-symmetrization",
-    "prop:schur-weyl-mass-decomposition",
     "prop:markov-trace-frobenius-selection",
-    "thm:jones-markov-trace",
   ],
   cites: [
     "jones1985",

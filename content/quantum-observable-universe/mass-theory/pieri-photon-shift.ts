@@ -8,11 +8,7 @@ export default proposition({
     ref: "qou:QOU.Photon.pieri_one_box_shift",
     validation: "not_checked",
   },
-  uses: [
-    "prop:wedderburn-as-noncomm-fourier",
-    "lem:degree-one-braid-trivial-volume",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["lem:degree-one-braid-trivial-volume"],
   cites: ["fulton1997", "kassel1995"],
   tags: [
     "pieri-rule",

@@ -8,5 +8,5 @@ export default proposition({
   },
   title: "Closed form for the canonical Markov trace of σ_1² (Hopf+ braid)",
   tags: ["hecke-algebra", "markov-trace", "closed-form", "hopf-braid", "binomial-series"],
-  uses: ["thm:jones-markov-trace", "prop:braid-action-tensor"],
+  uses: ["thm:jones-markov-trace"],
 });

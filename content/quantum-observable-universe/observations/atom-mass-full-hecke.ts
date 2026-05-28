@@ -18,7 +18,6 @@ export default remark({
   uses: [
     "rem:mass-comparison-table",
     "rem:hecke-charge-mass-duality",
-    "def:transfer-matrix-operator",
   ],
   cites: [
     "jones1985",

@@ -9,9 +9,6 @@ export default proposition({
   },
   uses: [
     "thm:six-term-mass-formula-complete",
-    "prop:categorical-mass-markov",
-    "prop:binding-scale-catalan",
-    "thm:frobenius-codim-universal",
     "prop:chirality-dual-space-derivation",
     "prop:full-pole-structure-mass-trace",
   ],

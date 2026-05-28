@@ -10,7 +10,6 @@ export default proposition({
   uses: [
     "rem:kashaev-volume-density",
     "rem:photon-channel-wedderburn-chain",
-    "cor:quantum-dilogarithm",
   ],
   computation: {
     engine: "mpmath",

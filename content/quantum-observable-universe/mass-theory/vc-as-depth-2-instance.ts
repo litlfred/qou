@@ -7,7 +7,6 @@ export default remark({
   interprets: "conj:kashaev-volume-conjecture",
   uses: [
     "prop:gb-depth-period-correspondence",
-    "conj:kashaev-volume-conjecture",
     "prop:q-dilogarithm-exists",
     "prop:categorical-laplace-unique",
     "rem:algebraic-core-survives",

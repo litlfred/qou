@@ -17,9 +17,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:descartes-elliptic-curve",
     "rem:t-duality-elliptic",
-    "prop:golden-skew-dual-node",
     "prop:bar-self-dual-confinement-band",
   ],
 });

@@ -6,9 +6,6 @@ export default prose({
   uses: [
     "prop:atom-knot-mass-derivation",
     "prop:chirality-writhe-ribbon-derivation",
-    "prop:chirality-from-frobenius-self-pairing",
-    "prop:alpha-k-derivation-procedure",
-    "rem:calibration-inputs",
     "prop:brane-tower-z-habiro",
     "prop:canonical-knot-id-sdp",
     "prop:chirality-ribbon-frobenius",

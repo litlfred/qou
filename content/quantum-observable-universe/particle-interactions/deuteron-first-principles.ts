@@ -14,8 +14,5 @@ export default remark({
     "witness",
     "numerical",
   ],
-  uses: [
-    "rem:q-character-closes-parity-gap",
-    "thm:knot-mass-formula-unified",
-  ],
+  uses: ["rem:q-character-closes-parity-gap"],
 });

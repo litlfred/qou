@@ -6,7 +6,6 @@ export default remark({
   interprets: "prop:antiparticle-crossing-reversal",
   uses: [
     "rem:cosmological-chirality-flip",
-    "prop:reidemeister-mass-invariance",
     "rem:cmb-q-torsion",
   ],
   tags: [

@@ -4,10 +4,7 @@ export default proposition({
   label: "prop:c-equals-bar-iff-all-1dim",
   title:
     "Charge conjugation equals bar involution iff all irreps are one-dimensional",
-  uses: [
-    "def:categorical-meson",
-    "prop:lepton-meson-torus-knot-dictionary",
-  ],
+  uses: ["prop:lepton-meson-torus-knot-dictionary"],
   cites: [
     "jones1987",
     "wenzl1988hecke",

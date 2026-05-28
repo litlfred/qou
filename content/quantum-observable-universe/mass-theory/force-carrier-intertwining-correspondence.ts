@@ -30,9 +30,6 @@ export default proposition({
   title:
     "Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\\lambda = (p, 1^{n-p})$",
   uses: [
-    "def:delta-q-decoration",
-    "prop:force-carrier-bring-uniqueness",
-    "prop:em-coupling-projection",
     "prop:h2-lp-dual-binding",
     "prop:e-hartree-categorical-derivation",
   ],

@@ -7,9 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.QDilogarithm",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-logarithm",
-    "def:habiro-ring",
-    "prop:tannaka-krein-reconstruction",
-  ],
+  uses: ["def:q-logarithm"],
 });

@@ -15,8 +15,6 @@ export default proposition({
     "consolidation",
   ],
   uses: [
-    "thm:wedderburn-mass-formula",
-    "thm:jones-markov-trace",
     "prop:wedderburn-as-noncomm-fourier",
     "prop:plancherel-weight-boundedness",
   ],

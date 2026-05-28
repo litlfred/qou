@@ -15,12 +15,7 @@ export default proposition({
       "folio-assistant/computations/cyclotomic-trilog-imaginary.witness.json",
     status: "verified",
   },
-  uses: [
-    "prop:bring-trilog-imaginary-tate-rational",
-    "prop:borel-partial-resolution",
-    "rem:transcendental-accounting",
-    "prop:cl3-zeta5-geometric-realization",
-  ],
+  uses: ["prop:bring-trilog-imaginary-tate-rational"],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "kummer-reflection",

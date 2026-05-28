@@ -9,8 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:weak-spectral-completeness",
-    // broken-ref removed (Phase 7): conj:electroweak-higgs-torus-link-triplet
     "prop:gram-determinant-plancherel-ratio",
     "prop:knot-operator-lp-selection",
   ],

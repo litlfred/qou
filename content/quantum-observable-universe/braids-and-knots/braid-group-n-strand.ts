@@ -6,11 +6,8 @@ export default remark({
   title:
     "$n$-strand braid group, Markov closure, and Hecke quadratic quotient: axiomatic scaffolding generalising the 2-strand $\\mathbf{B}_2$ foundation and 3-strand typed-$\\mathbf{B}_3$ infrastructure",
   uses: [
-    "rem:braid-link-types",
     "rem:markov-axioms-primitive",
-    "rem:markov-closure-map-axiomatic",
     "rem:typed-b3-sub-braid-extraction",
-    "prop:hoefsmit-V21-cos-symmetrization",
   ],
   cites: [
     "jones1985",

@@ -5,11 +5,7 @@ export default remark({
   title:
     "Simple $\\mathrm{Vol}(K_\\tau)/\\hbar_q^{k_\\tau}$ pattern for $m_\\tau/m_e$ — falsified at 1\\% (negative result)",
   interprets: "rem:calibration-inputs",
-  uses: [
-    "rem:calibration-inputs",
-    "rem:epistemic-status-of-calibrations",
-    "prop:three-calibration-discipline",
-  ],
+  uses: ["rem:epistemic-status-of-calibrations"],
   cites: ["codata2022"],
   tags: [
     "calibration",

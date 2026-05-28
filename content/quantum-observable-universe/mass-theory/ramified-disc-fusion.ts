@@ -16,9 +16,7 @@ export default proposition({
   ],
   uses: [
     "def:reeb-bundle",
-    "def:exceptional-divisor",
     "def:coral-sector-coords",
-    "prop:lagrange-resolvent-transform",
     "rem:rho-s3-holonomy-exposition",
   ],
 });

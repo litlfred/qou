@@ -9,12 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:atomic-mass-gb-nf",
     "prop:hoefsmit-scattering-pipeline",
     "prop:y-lambda-closed-form-wenzl-bridge",
-    "prop:wedderburn-as-noncomm-fourier",
-    "prop:schur-weyl-mass-decomposition",
-    // broken-ref removed (Phase 7): prop:six-term-mass-formula-complete
   ],
   cites: ["wenzl1988", "hoefsmit1974", "kassel1995"],
   tags: [

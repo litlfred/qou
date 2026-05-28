@@ -14,7 +14,6 @@ export default remark({
   ],
   uses: [
     "thm:qu-to-qou",
-    "def:motivic-substrate",
     "def:adelic-substrate",
   ],
 });

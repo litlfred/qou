@@ -17,8 +17,6 @@ export default proposition({
     "markov-trace",
   ],
   uses: [
-    "def:reeb-bundle",
-    "prop:vertex-is-exceptional-divisor",
     "prop:six-canonical-knot-operators",
     "prop:thurston-volume-additivity",
     "prop:mass-volume-factorization",

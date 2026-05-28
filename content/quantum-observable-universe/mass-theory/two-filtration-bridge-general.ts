@@ -8,16 +8,7 @@ export default proposition({
     ref: "qou:QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral.bridge_map_general",
     validation: "not_checked",
   },
-  uses: [
-    "prop:two-filtration-bridge",
-    "prop:two-filtration-bridge-small-cases",
-    "rem:chirality-period-pairing",
-    "prop:joint-galois-braid-discharged",
-    "prop:hecke-baer-star-generic",
-    "prop:explicit-central-idempotent",
-    "prop:cyclotomic-cl3-orbit-sum-general",
-    "prop:cyclotomic-trilog-imaginary-closed-form",
-  ],
+  uses: ["prop:cyclotomic-cl3-orbit-sum-general"],
   cites: ["bloch2000"],
   tags: [
     "two-filtration-bridge",

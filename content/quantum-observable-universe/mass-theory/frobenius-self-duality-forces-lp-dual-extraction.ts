@@ -32,12 +32,6 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction",
     validation: "not_checked",
   },
-  uses: [
-    "prop:mass-coefficient-shadow-price",
-    "prop:operator-selection-lp",
-    "prop:wedderburn-trace-identity",
-    "thm:jones-markov-trace",
-  ],
   tags: [
     "frobenius-self-duality",
     "lp-duality",

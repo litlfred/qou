@@ -15,9 +15,6 @@ export default proposition({
     "magic-shell-correction",
   ],
   uses: [
-    "prop:gb-spectral-sequence",
-    "rem:mass-endomorphism-jet-tower",
-    "thm:markov-trace-factorization",
     "prop:wigner-np-pairing",
     "prop:categorical-neutrality-saturated-shells",
   ],

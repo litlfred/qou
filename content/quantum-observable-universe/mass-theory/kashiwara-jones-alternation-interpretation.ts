@@ -8,8 +8,6 @@ export default remark({
   uses: [
     "prop:q-beta-categorical-precision-ladder",
     "prop:markov-trace-frobenius-selection",
-    "prop:hoefsmit-V21-cos-symmetrization",
-    "prop:tau-M-asymptotic-rep-theory",
     "rem:borromean-baryon-interpretation",
   ],
   cites: [

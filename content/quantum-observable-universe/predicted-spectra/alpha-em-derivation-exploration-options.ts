@@ -7,16 +7,8 @@ export default remark({
   interprets: "prop:em-coupling-bring-zero-mode",
   uses: [
     "prop:em-coupling-bring-zero-mode",
-    "def:reeb-bundle",
     "rem:q-chromaticity",
-    "prop:spectral-sequence-collapse",
-    "prop:gb-spectral-sequence",
-    "prop:curvature-rank-gb-stratification",
-    "prop:unified-curvature-rank-mass-formula",
     "prop:y-lambda-closed-form-wenzl-bridge",
-    "prop:force-carrier-bring-uniqueness",
-    "def:exceptional-divisor",
-    "def:confinement-level",
   ],
   tags: [
     "alpha-em",

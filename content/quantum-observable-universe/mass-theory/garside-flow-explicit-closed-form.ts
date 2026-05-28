@@ -12,10 +12,5 @@ export default remark({
     "coral-sectors",
     "compound-flow",
   ],
-  uses: [
-    "prop:six-canonical-knot-operators",
-    "rem:garside-as-compound-flow",
-    "def:q-reeb-flow-on-coral-coords",
-    "def:coral-sector-coords",
-  ],
+  uses: ["rem:garside-as-compound-flow"],
 });

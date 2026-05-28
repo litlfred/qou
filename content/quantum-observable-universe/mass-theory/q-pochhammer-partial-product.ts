@@ -7,11 +7,7 @@ export default definition({
     ref: "qou:QOU.QPochhammer.partialProduct",
     validation: "not_checked",
   },
-  uses: [
-    "prop:quantum-dilogarithm-stratified",
-    "cor:quantum-dilogarithm",
-    "def:hecke-normal-form",
-  ],
+  uses: ["prop:quantum-dilogarithm-stratified"],
   cites: ["faddeev1994", "kashaev1997"],
   tags: [
     "q-pochhammer",

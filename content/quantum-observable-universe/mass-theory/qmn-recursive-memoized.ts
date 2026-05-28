@@ -8,11 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.qmn_recursive_memoized",
     validation: "not_checked",
   },
-  uses: [
-    "prop:wenzl-qmn-synergy",
-    "prop:y-lambda-closed-form-wenzl-bridge",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["prop:wenzl-qmn-synergy"],
   cites: ["halverson-ram-1995", "ram1991", "macdonald1995"],
   tags: [
     "q-murnaghan-nakayama",

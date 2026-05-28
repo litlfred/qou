@@ -13,10 +13,5 @@ export default proposition({
     "knot-operator",
     "motivic-shadows",
   ],
-  uses: [
-    "prop:confinement-lp",
-    "def:habiro-ring",
-    "def:motivic-substrate",
-    "def:archimedean-realization-functor",
-  ],
+  uses: ["prop:confinement-lp"],
 });

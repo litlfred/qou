@@ -19,7 +19,6 @@ export default proposition({
   uses: [
     "rem:quantum-bloch-group",
     "lem:vhat-pair-commutation-trace",
-    "rem:mass-endomorphism-jet-tower",
     "prop:jet-tower-convergence",
     "prop:descended-level-zero",
   ],

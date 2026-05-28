@@ -14,10 +14,7 @@ export default diagram({
     "figure",
     "phase-1-pr-1075",
   ],
-  uses: [
-    "fig:bring-fibre-q0",
-    "rem:brings-curve",
-  ],
+  uses: ["fig:bring-fibre-q0"],
   meta: {
     file: "figures/bring-fibre-qhalf.pdf",
     altFile: "figures/bring-fibre-qhalf.svg",

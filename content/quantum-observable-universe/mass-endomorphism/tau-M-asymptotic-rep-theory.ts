@@ -9,11 +9,8 @@ export default proposition({
   title:
     "$\\tau_M^{V_\\lambda}(\\beta) = \\mathrm{Tr}\\,\\rho_\\lambda(\\beta) \\cdot \\exp(-\\frac{1}{2} \\sum_k c_k^{(\\lambda)}(b_\\lambda) \\hbar_q^{2k})$: representation-theoretic asymptotic expansion of the Markov-traced character",
   uses: [
-    "prop:hecke-1d-irrep-closed-form-character",
-    "prop:q-beta-cos-resummation",
     "prop:hoefsmit-V21-cos-symmetrization",
     "prop:habiro-residue-sum-equivalence",
-    "prop:beta-decay-transfer-matrix",
   ],
   cites: [
     "kashiwara1990",

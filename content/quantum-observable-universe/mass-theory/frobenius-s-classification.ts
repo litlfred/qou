@@ -7,8 +7,5 @@ export default proposition({
     ref: "qou:QOU.WedderburnMass.frobenius_s_classification",
     validation: "not_checked",
   },
-  uses: [
-    "thm:wedderburn-mass-formula",
-    "prop:confined-knot-binding",
-  ],
+  uses: ["prop:confined-knot-binding"],
 });

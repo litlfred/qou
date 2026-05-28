@@ -5,11 +5,7 @@ export default remark({
   title:
     "Option E ($c_\\lambda$ Kashiwara crystal weight) and the $T = {}^3\\mathrm{He}$ isospin invariance",
   interprets: "prop:crystal-isospin-degeneracy",
-  uses: [
-    "prop:crystal-isospin-degeneracy",
-    "prop:spin-involution-lp-dual-invariance",
-    "rem:isospin-mass-split-em-localisation",
-  ],
+  uses: ["rem:isospin-mass-split-em-localisation"],
   tags: [
     "kashiwara-crystal",
     "option-e",

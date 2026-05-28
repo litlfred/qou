@@ -8,15 +8,7 @@ export default proposition({
     ref: "qou:QOU.AppendixSurreals.B1TorusKnotRowsTheorem.b1_torus_knot_rows",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-depth-period-correspondence",
-    "prop:depth-2-identification-bloch-suslin",
-    "prop:borel-partial-resolution",
-    "rem:bring-embeddable-knots",
-    "prop:b1-figure-8-row-theorem",
-    "prop:b1-soft-sharpness-theorem",
-    "rem:transcendental-accounting",
-  ],
+  uses: ["prop:b1-figure-8-row-theorem"],
   cites: ["bloch2000", "suslin1991"],
   tags: [
     "B1-discharge",

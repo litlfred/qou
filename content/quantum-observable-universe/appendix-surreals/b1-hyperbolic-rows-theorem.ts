@@ -8,15 +8,7 @@ export default proposition({
     ref: "qou:QOU.AppendixSurreals.B1HyperbolicRowsTheorem.b1_hyperbolic_rows",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-depth-period-correspondence",
-    "prop:depth-2-identification-bloch-suslin",
-    "prop:borel-partial-resolution",
-    "prop:b1-figure-8-row-theorem",
-    "prop:b1-torus-knot-rows-theorem",
-    "prop:b1-soft-sharpness-theorem",
-    "rem:bring-embeddable-knots",
-  ],
+  uses: ["prop:b1-torus-knot-rows-theorem"],
   cites: [
     "murakami-murakami2001",
     "bloch2000",

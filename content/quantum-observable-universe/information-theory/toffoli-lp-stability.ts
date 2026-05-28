@@ -20,7 +20,6 @@ export default proposition({
   uses: [
     "prop:toffoli-transfer-matrix",
     "prop:lp-dual-stability",
-    "def:hecke-mass-element",
   ],
   computation: {
     engine: "python",

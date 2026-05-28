@@ -12,7 +12,6 @@ export default remark({
     "prop:genus-filtration-ideal",
     "prop:vertex-algebra-jet-relations",
     "prop:shell-structure-eigenvalues",
-    "prop:shell-transition-knot",
     "prop:x5-bring-weight-identification",
     "thm:hyperelliptic-z5-classification",
   ],

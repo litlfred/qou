@@ -25,10 +25,6 @@ export default proposition({
     "conditional-class",
   ],
   uses: [
-    "def:archimedean-realization-functor",
-    "def:algebraic-quantum-volume",
-    "def:motivic-mass-measure",
-    "def:motivic-substrate",
     "prop:quantum-dilogarithm-volume",
     "prop:dilogarithm-archimedean-limit",
     "conj:kashaev-volume-conjecture",

@@ -9,9 +9,6 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:frobenius-hopf-substrate",
-    "prop:gb-depth-period-correspondence",
-    "prop:explicit-central-idempotent",
     "rem:bring-embeddable-knots",
     "rem:chirality-period-pairing",
   ],

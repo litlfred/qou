@@ -8,7 +8,6 @@ export default remark({
   uses: [
     "rem:markov-trace-inductive-limit",
     "rem:hecke-algebra-type-scaffold",
-    "rem:markov-axioms-primitive",
   ],
   cites: [
     "jones1985",

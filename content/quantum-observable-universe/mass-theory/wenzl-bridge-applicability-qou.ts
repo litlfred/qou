@@ -9,10 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:rigid-monoidal-category",
     "prop:fibre-functor-atlas",
-    "prop:tannaka-krein-reconstruction",
-    "thm:jones-markov-trace",
     "prop:y-lambda-closed-form-wenzl-bridge",
   ],
   cites: ["chlouveraki2016", "wenzl1988", "juyumaya2004"],

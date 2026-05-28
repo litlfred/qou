@@ -10,9 +10,7 @@ export default proposition({
     "Lepton Bring-surface representation: 3-sheet H_3 Wedderburn channels (analog of nucleon 3-quark color tubes); V̂_ℓ for any torus-knot lepton σ_1^k is computed via the H_3 3-channel Plancherel-weighted character sum with Markov-traced std-channel; verifies V̂_e ≈ 0.594 against `mass-endomorphism-tower.md` paper convention",
   uses: [
     "def:bar-involution",
-    "prop:three-parameters-wedderburn",
     "prop:per-braid-mass-tower",
-    "rem:calibration-inputs",
   ],
   authorNotes: [
     {

@@ -5,11 +5,7 @@ export default remark({
   label: "rem:townsend-biot-savart-strain",
   title:
     "Townsend evolution under Biot--Savart strain: the first-order flattening $\\kappa \\to 0$",
-  uses: [
-    "prop:levi-degeneracy",
-    "prop:core-levi-form",
-    "rem:hyperbolic-overlap-saturation",
-  ],
+  uses: ["rem:hyperbolic-overlap-saturation"],
   cites: ["townsend1951", "saffman1992", "moffatt1994"],
   tags: [
     "townsend",
