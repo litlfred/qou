@@ -95,7 +95,8 @@ export default chapter({
       label: "sec:mass-algebraic-consolidated",
       blocks: [
                 "mass-algebraic-consolidated-intro",
-"transfer-matrix-operator",
+"pentagon-uv-commutation",
+        "transfer-matrix-operator",
         "transfer-matrix-identities",
         "skein-polynomial-transfer-matrix",
         "beta-decay-transfer-matrix",
