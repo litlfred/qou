@@ -1,12 +1,12 @@
 {
-  "engine": "snappy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T05:04:51.137121+00:00",
-  "commitSha": "8a160cc9208b82af2f60f2dc8f084e8949200193",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-28T05:24:43.884734+00:00",
+  "commitSha": "f8a6ecf6aa031336382a236f0fc1fd58a8ae49f1",
   "assertions": [
     {
       "name": "L6a4_is_borromean",
-      "computed": 1.775212043682812e-11,
+      "computed": 1.6735476382573946e-66,
       "expected": 0,
       "passed": true,
       "tolerance": 1e-06,
@@ -14,7 +14,7 @@
     },
     {
       "name": "deuteron_endomorphism_holds",
-      "computed": 0.18801312630349312,
+      "computed": 0.1926255943534224,
       "expected": 0,
       "passed": true,
       "tolerance": 1,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 293,
   "computation": "binding-link-volumes",
   "scriptFile": "binding_link_volumes.py",
-  "scriptHash": "40b25d3fe7b8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "cf7831b89258",
+  "scriptCommitSha": "95de3b13a93f799824799723c5800a0165629598",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -47,25 +47,25 @@
         "link": "Hopf (L2a1)",
         "vol": "0.0",
         "vol_eff": "7.327724753417752",
-        "B_pred_MeV": "2.2287023895972466",
-        "B_AME_MeV": "2.22452",
-        "err_pct": 0.18801312630349312
+        "B_pred_MeV": "2.228851083479284",
+        "B_AME_MeV": "2.224566",
+        "err_pct": 0.1926255943534224
       },
       "3H": {
         "link": "8_11",
-        "vol": "8.2863168178",
-        "vol_eff": "8.2863168178",
-        "B_pred_MeV": "3.4043765559804826",
-        "B_AME_MeV": "8.48182",
-        "err_pct": -59.862664428383496
+        "vol": "8.286316817806593",
+        "vol_eff": "8.286316817806593",
+        "B_pred_MeV": "3.404258000305003",
+        "B_AME_MeV": "8.481798",
+        "err_pct": -59.86395808642221
       },
       "3He": {
         "link": "L6a4",
-        "vol": "7.3277247534",
-        "vol_eff": "7.3277247534",
-        "B_pred_MeV": "3.1498394659352518",
-        "B_AME_MeV": "7.71804",
-        "err_pct": -59.18860920732139
+        "vol": "7.327724753417752",
+        "vol_eff": "7.327724753417752",
+        "B_pred_MeV": "3.1498982877321806",
+        "B_AME_MeV": "7.718043",
+        "err_pct": -59.18786293711786
       }
     }
   }

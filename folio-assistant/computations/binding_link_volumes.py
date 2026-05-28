@@ -46,27 +46,53 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+)
+# Canonical knot volumes — single source of truth (knot_volumes.py),
+# 50-dps mpmath from SnapPy-HP literature; no runtime SnapPy needed.
+from knot_volumes import VOL_8_11_MPF, VOL_BORROMEAN_MPF  # noqa: E402
+
+
+def _delta_tr(Z: int, N: int) -> mpf:
+    """Full-precision Δtr = |tr_free| − |tr_atom| from binding_canonical
+    (Wenzl-bridge closed form) — same convention as the deuteron
+    endomorphism result."""
+    from binding_canonical import binding_canonical
+    from codata_constants import Q_BETA_MEV
+    r = binding_canonical(Z, N, Q_beta_n_mev=float(Q_BETA_MEV),
+                          use_closed_form=True, verbose=False)
+    tr_free = mpf(str(r["tr_M_free"]))
+    tr_atom = mpf(str(r["tr_M_atom"]))
+    return fabs(tr_free) - fabs(tr_atom)
 
 
 def main():
     set_compute_dps()
-    wb = WitnessBuilder("binding-link-volumes", engine="snappy+mpmath")
+    wb = WitnessBuilder("binding-link-volumes", engine="mpmath")
 
     m_e = mpf(str(M_E_MEV))
     VOL_B3 = 8 * catalan
 
-    # SnapPy-computed binding-link volumes (literature-stable values).
-    # Recomputed here as literals to avoid a hard SnapPy dependency in
-    # the witness pipeline; provenance is the SnapPy census manifolds
-    # L2a1 (Hopf), 8_11, L6a4.
+    # Binding links (SDP registry) with CANONICAL volumes from
+    # knot_volumes.py. L6a4 = Borromean rings ⇒ VOL_BORROMEAN_MPF.
+    # Hopf is Seifert-fibred (Vol = 0).
     vols = {
-        "2H":  {"link": "Hopf (L2a1)", "vol": mpf("0"),                "hyperbolic": False},
-        "3H":  {"link": "8_11",        "vol": mpf("8.2863168178"),     "hyperbolic": True},
-        "3He": {"link": "L6a4",        "vol": mpf("7.3277247534"),     "hyperbolic": True},
+        "2H":  {"link": "Hopf (L2a1)", "vol": mpf("0"),          "hyperbolic": False},
+        "3H":  {"link": "8_11",        "vol": VOL_8_11_MPF,      "hyperbolic": True},
+        "3He": {"link": "L6a4",        "vol": VOL_BORROMEAN_MPF, "hyperbolic": True},
     }
-    dtr = {"2H": mpf("0.5952"), "3H": mpf("0.8040"), "3He": mpf("0.8412")}
-    AME = {"2H": mpf("2.22452"), "3H": mpf("8.48182"), "3He": mpf("7.71804")}
+    # Full-precision trace defects (binding_canonical, Wenzl bridge).
+    dtr = {"2H": _delta_tr(1, 1), "3H": _delta_tr(1, 2), "3He": _delta_tr(2, 1)}
+    # AME 2020 binding energies from the canonical validation witness.
+    AME = {
+        "2H": mpf(str(AME_B_DEUTERON_MEV_VALIDATION)),
+        "3H": mpf(str(AME_B_TRITIUM_MEV_VALIDATION)),
+        "3He": mpf(str(AME_B_HE3_MEV_VALIDATION)),
+    }
 
     print("=" * 70)
     print("BINDING-LINK HYPERBOLIC VOLUMES (SDP registry + SnapPy)")
