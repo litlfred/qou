@@ -34,53 +34,56 @@ The correct approach: Δ_λ lives at the **categorical** level (sign × dim,
 q-independent), and the geometric correction lives inside χ^λ(β_K) via
 the interface operator — already computed, not a separate parameter.
 
-## Per-knot binding results (2026-05-28, PRs #1361, #1383)
+## Binding status (2026-05-28, post-retraction)
 
 The binding energy scale is E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV.
-Per-knot formula: B(A) = E₀ × q⁻ᴬ × δ_tr × A(A−1)/2.
+The **deuteron** binds at +0.91% via E₀×q⁻¹ (single-isotope scale,
+PR #1367). This is the only honestly-closed light nucleus.
 
-| Atom | H_n | B_pred (MeV) | B_AME (MeV) | Error | Status |
-|------|-----|-------------|-------------|-------|--------|
-| D | H_6 | 2.24 | 2.22 | +0.74% | **CLOSED** (PR #1361) |
-| T | H_9 | — | 8.48 | — | wired (needs recompute) |
-| ³He | H_9 | 7.71 | 7.72 | **−0.1%** | **CLOSED** (PR #1383) |
-| ⁴He | H_12 | 27.99 | 28.30 | −1.1% | **CLOSED** (PR #1383) |
+> **RETRACTED (PR #1386).** The per-knot extension to ³He/⁴He
+> reported in PR #1383 (³He −0.1%, ⁴He −1.1%, and the ratio
+> B(⁴He)/B(D) = [4]_q!/2) was **backhanded fitting**. The formula
+> B(A) = E₀ × q⁻ᴬ × δ_tr × A(A−1)/2 multiplied the trace difference
+> by a hand-chosen pair-count A(A−1)/2 and a q-power q⁻ᴬ — a
+> multi-parameter fit disguised as a derivation. The actual
+> trace-difference ratio Δtr(⁴He)/Δtr(D) is 0.67, not the 12.7 the
+> q-factorial implied. Per CLAUDE.md, coefficient fits to AME/PDG
+> data are forbidden as framework claims. Do **not** re-introduce
+> the q-factorial ratio.
 
-Structural finding: B(⁴He)/B(D) = [2]_q·[3]_q·[4]_q / 2 = [4]_q!/2
-(q-factorial ratio, categorical — PR #1383).
+| Atom | H_n | Status |
+|------|-----|--------|
+| D | H_6 | **+0.91%** via E₀×q⁻¹ (PR #1367) |
+| T | H_9 | not derived (retracted fit removed) |
+| ³He | H_9 | not derived (retracted fit removed) |
+| ⁴He | H_12 | not derived (retracted fit removed) |
+| ⁶Li+ | H_15+ | not derived |
 
-## Remaining gaps
-
-| Atom | H_n | χ^λ (chi-cache) | Interface branching | Status |
-|------|-----|-----------------|---------------------|--------|
-| D | H_6 | on disk | on disk (deuteron branching) | **CLOSED** (+0.74%) |
-| T | H_9 | on disk | on disk (H_9 tritium branching) | needs recompute |
-| ³He | H_9 | on disk | on disk (H_9 branching) | **CLOSED** (−0.1%) |
-| ⁴He | H_12 | on disk | on disk (H_12 branching) | **CLOSED** (−1.1%) |
-| ⁶Li+ | H_15+ | on disk | feasible | not yet wired |
+The **real** binding derivation (per PR #1386) must come from the
+SDP solutions + iterative knot building at H_{3A}, not from
+rescaling the trace difference by hand-chosen factors.
 
 ## References
 
 - PR #1305 (merged): sign rule + dim weight proofs
 - PR #1296 (merged): 4-atom cross-validation, Wenzl y_λ for H_9/H_12
 - PR #1292 (merged): CAL-3 = m_π, meson/lepton dictionary
-- PR #1361 (merged): deuteron binding at +0.74% via E₀×(1−ℏ_q)
-- PR #1383 (merged): per-knot binding — ³He −0.1%, ⁴He/D = [4]_q!/2
-- PR #1367 (merged): meson tower R=1+4u² closes m_K/m_π to 0.56 ppm
+- PR #1367 (merged): deuteron binding at +0.91% via E₀×q⁻¹; meson tower
 - PR #1372 (merged): Habiro correction product 9495→7.8 ppm
 - PR #1378 (merged): m_p at 0.39 ppQ (d₇=J³=−8), 6/6 beat 100×
+- PR #1386 (merged): **retraction** of per-knot q-factorial fitting
 - `sublemma-2-1-deuteron-branching.witness.json`: interface ratios
 - `deuteron-binding-interface-closure.witness.json`: zero-parameter result
 
 ## Honest status (2026-05-28, updated)
 
-### Best per-knot results (E₀-based formula, PRs #1361/#1383)
+### Deuteron (only honestly-closed light nucleus)
 
 | Atom | B_pred (MeV) | B_AME (MeV) | Error | Source |
 |------|-------------|-------------|-------|--------|
-| D    | 2.24        | 2.22        | +0.74% | #1361: E₀×δ_tr×q⁻¹ |
-| ³He  | 7.71        | 7.72        | **−0.1%** | #1383: per-knot q⁻ᴬ |
-| ⁴He  | 27.99       | 28.30       | −1.1% | #1383: [4]_q!/2 ratio |
+| D    | 2.24        | 2.22        | +0.91% | #1367: E₀×q⁻¹ (single scale) |
+
+³He/⁴He per-knot results RETRACTED (#1386, see banner above).
 
 ### Using 242-ppb production nucleon masses (constituent difference)
 
@@ -98,7 +101,9 @@ Structural finding: B(⁴He)/B(D) = [2]_q·[3]_q·[4]_q / 2 = [4]_q!/2
 
 Uses CODATA M_atom (experimental atom masses). The 3-6% errors for
 A≥4 come from the 242 ppb nucleon systematic amplified by M/B.
-SUPERSEDED by the per-knot formula above for D, ³He, ⁴He.
+These are constituent-difference estimates, not a derived binding
+formula. The per-knot q-factorial attempt to improve them was
+retracted as fitting (#1386).
 
 ### Using sgn×f^λ categorical ansatz (proved but wrong magnitude)
 
@@ -122,13 +127,12 @@ with a per-knot Δ value (not the uniform sgn×f^λ weight).
 - (σ−h/2)² = 1+h²/4 (SCALAR) — interface quadratic identity
 - a₀(A) = 2×8^A — Habiro leading coefficient exact
 - Δ derivable from Habiro constituent difference (no fitting)
-- E₀ = m_e/(q₀(q₀−1)) as binding energy scale (PR #1361)
-- B(⁴He)/B(D) = [4]_q!/2 (q-factorial ratio, PR #1383)
+- E₀ = m_e/(q₀(q₀−1)) as deuteron binding energy scale (PR #1367)
 - Habiro correction product structure: Π(1+ℏ²)(1−ℏ²/p(n)) (PR #1372)
 
 **What is NOT yet first-principles:**
 - M_atom from the framework (needs atom knot identification)
 - The constituent-difference approach uses CODATA M_atom
 - For first-principles: need GB-NF atom braid → knot → Vol → Geom
-- T (tritium) needs recomputation under the q⁻ᴬ model
-- ⁶Li+ needs H_15+ interface branching (feasible, not yet run)
+- B(A) for A≥3: needs SDP + iterative knot building at H_{3A}
+  (the q-factorial per-knot fit was retracted as fitting, #1386)
