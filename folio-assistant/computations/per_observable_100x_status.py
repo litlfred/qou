@@ -239,7 +239,7 @@ def main() -> dict:
             hbar_q_val = (q0_val - 1) / q0_val
             b_val = ((q0_val**4 + q0_val**2 + 1) / (q0_val**2 + 1)**2) ** mpf("0.5")
             u_val = b_val * hbar_q_val**2
-            habiro_ratio = (1 + 46 * u_val**4) * (1 + 4 * u_val**5) * (1 - 29 * u_val**6)
+            habiro_ratio = (1 + 46 * u_val**4) * (1 + 4 * u_val**5) * (1 - 29 * u_val**6) * (1 - 8 * u_val**7)
             m_p_sub = m_p_raw * habiro_ratio
             rows.append(_row_for("m_p", m_p_sub,
                 sub_source + " (× Habiro brane-tower ratio)"))
