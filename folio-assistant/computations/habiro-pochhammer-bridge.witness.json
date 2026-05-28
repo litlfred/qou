@@ -1,0 +1,39 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-28T00:28:53.024762+00:00",
+  "commitSha": "c53d5c134854f8a6234085e756b21410ff48ffa5",
+  "assertions": [
+    {
+      "name": "bridge_at_7_8ppm",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bridge ≈ Plancherel × Vol/ℏ² × (1+ℏ²)(1−ℏ²/30) at <10 ppm"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 198,
+  "computation": "habiro-pochhammer-bridge",
+  "scriptFile": "habiro_pochhammer_bridge.py",
+  "scriptHash": "5729d0d21ba0",
+  "scriptCommitSha": "4b9dbee4235fd67be886007b35459e9fd244e800",
+  "precisionMetadata": {
+    "compute_dps": 50,
+    "output_dps": 40,
+    "guard_digits": 10,
+    "truncation_bound": "1e-40"
+  },
+  "description": "Habiro Pochhammer bridge: the 136.07/1.065 ratio comes from (q;q)_m vs (u;u)_m convention difference, where (1−q^k) = (1−u^k)(1+u^k). The bridge = denom × <Π(1+u^k)>_Habiro ≈ Plancherel × Vol/ℏ² × (1+ℏ²)(1−ℏ²/30) at 7.8 ppm.",
+  "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
+  "data": {
+    "hab_A_qq_convention": "136.07120636348175767",
+    "hab_B_uu_convention": "24.227089630043797869",
+    "tr_M": "1.0653062285923892552",
+    "bridge_ratio": "127.729663744927",
+    "avg_1_plus_uk": "5.61648998874141",
+    "residual_ppm": 7.818080505951988,
+    "key_identity": "(1-q^k) = (1-u^k)(1+u^k), u=√q"
+  }
+}
