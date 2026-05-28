@@ -66,9 +66,17 @@ from typing import Any
 from mpmath import mp, mpf
 
 # ── Defaults ────────────────────────────────────────────────────
-PRECISION_GUARD_DEFAULT: int = 15
-OUTPUT_DPS_DEFAULT: int = 50
-COMPUTE_DPS_DEFAULT: int = OUTPUT_DPS_DEFAULT + PRECISION_GUARD_DEFAULT  # 65
+# Held at the bit-stable baseline 50/40/10. Serialized digits beyond
+# ~40 are compute noise that differs across mpmath versions and CPU
+# microarchitectures, breaking the witness-pipeline drift gate. 40
+# output digits already give 10⁻⁴⁰ relative ≈ 10⁻³¹ ppQ for O(1)
+# observables — 16 orders of magnitude past the 1 ppQ (10⁻¹⁵)
+# program goal, so raising COMPUTE/OUTPUT buys no physics and costs
+# CI reproducibility (see the reverted PR #1379 bump to 65/50/15,
+# which drifted every validate-job witness).
+PRECISION_GUARD_DEFAULT: int = 10
+OUTPUT_DPS_DEFAULT: int = 40
+COMPUTE_DPS_DEFAULT: int = OUTPUT_DPS_DEFAULT + PRECISION_GUARD_DEFAULT  # 50
 
 # ── Environment overrides ───────────────────────────────────────
 def _env_int(key: str, default: int, minimum: int = 1) -> int:
