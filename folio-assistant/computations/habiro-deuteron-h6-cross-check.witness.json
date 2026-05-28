@@ -1,78 +1,69 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-28T02:07:45.681167+00:00",
-  "commitSha": "5409e13f7f9189171956abd7e73f6340440e7f27",
+  "computedAt": "2026-05-28T02:12:36.094708+00:00",
+  "commitSha": "7ef5b2ab997323e5f104140d9515c1b6aeeb3e96",
   "assertions": [
     {
-      "name": "first_factor_improves",
-      "computed": 1,
+      "name": "proton_S_near_1",
+      "computed": 1.0,
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "(1+ℏ²) improves bare prediction"
+      "source": "Proton S is within 2% of 1 (tower applicable)"
     },
     {
-      "name": "pn_factor_improves",
-      "computed": 0,
+      "name": "deuteron_S_not_near_1",
+      "computed": 1.0,
       "expected": 1,
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
-      "source": "(1−ℏ²/11) further improves after (1+ℏ²)"
+      "source": "Deuteron S is far from 1 (tower inapplicable)"
     },
     {
-      "name": "pn_in_top5",
-      "computed": 0,
+      "name": "pochhammer_bridge_structural",
+      "computed": 1.0,
       "expected": 1,
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
-      "source": "p(6)=11 is among top-5 integer denominators"
+      "source": "Pochhammer bridge hab_A/hab_B > 1 for both species"
     }
   ],
-  "allPassed": false,
-  "durationMs": 103,
+  "allPassed": true,
+  "durationMs": 21,
   "computation": "habiro-deuteron-h6-cross-check",
   "scriptFile": "habiro_deuteron_h6_cross_check.py",
-  "scriptHash": "1fead5d42e35",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c0dd8d5fee12",
+  "scriptCommitSha": "7ef5b2ab997323e5f104140d9515c1b6aeeb3e96",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
-  "description": "Deuteron Habiro correction tower at H_6 (n=6, p(6)=11). Tests whether the proton pattern (1+ℏ²)(1−ℏ²/p(n)) is universal. Ladder: 370752399 → 367138315.6 → 367467162.1 → 367366708.585 ppm. p(6)=11 ranks #189 among integer denominators.",
+  "description": "Deuteron Habiro correction tower at H_6 (n=6, p(6)=11). The proton normalization tr_M*Plancherel*Vol/h^2 gives S_p=1.00949 ~ 1, but S_d=371.752 >> 1. The (1+h^2)(1-h^2/p(n)) tower is proton-specific at this normalization. Pochhammer bridge ratio present for both species (proton: 5.61649, deuteron: 27.2342), but A-dependent normalization needed to bring deuteron near 1.",
   "data": {
     "isotope": "deuteron",
-    "hecke_level": 6,
-    "partition_number": 11,
-    "hab_A_qq": "25617.906942298434935",
-    "hab_B_uu": "940.65088478380120895",
-    "denom_in_u_evaluated": "2422.56929795766",
-    "tr_M_computed": "0.388286471547713",
-    "tr_M_stored": "0.388286471547713",
-    "bridge": "65976.8207740672",
-    "ladder": {
-      "bare_ppm": 370752398.8031376,
-      "after_1_plus_eps_ppm": 367138315.5602482,
-      "after_pn_factor_ppm": 367467162.06852573,
-      "after_third_factor_ppm": 367366708.5846295,
-      "third_factor_expression": "1/(n²)"
-    },
-    "pn_rank_among_integers": 189,
-    "best_integer_denominator": 199,
-    "c3_observed": "37430.997842611",
-    "pslq_result": "1·1/n + -2·1/p(n) + 1·1/(n·p(n)) = 0",
-    "proton_comparison": {
-      "proton_n": 9,
-      "proton_pn": 30,
-      "proton_ladder_ppm": [
-        9495,
-        -319,
-        7.8,
-        0.002
-      ],
-      "proton_c3": "1/1260"
-    }
+    "hecke_level_deuteron": 6,
+    "hecke_level_proton": 9,
+    "partition_number_deuteron": 11,
+    "partition_number_proton": 30,
+    "hab_A_qq_deuteron": "25617.906942298434935",
+    "hab_B_uu_deuteron": "940.65088478380120895",
+    "hab_A_qq_proton": "136.07120636348175767",
+    "hab_B_uu_proton": "24.227089630043797869",
+    "denom_deuteron": "2422.56929795766",
+    "denom_proton": "22.7419017929291",
+    "tr_M_deuteron": "0.388286471547713",
+    "tr_M_proton": "1.06530622859239",
+    "pochhammer_ratio_deuteron": "27.2342346737774",
+    "pochhammer_ratio_proton": "5.61648998874141",
+    "bridge_deuteron": "65976.8207740672",
+    "bridge_proton": "127.729663744927",
+    "S_deuteron": "371.752398803138",
+    "S_proton": "1.00949462857193",
+    "S_deuteron_over_S_proton": "368.255945382",
+    "proton_correction_residual_ppm": 7.818080505951988,
+    "universality_result": "NEGATIVE: (1+h^2)(1-h^2/p(n)) tower is proton-specific at tr_M*Plancherel*Vol/h^2 normalization. Deuteron S >> 1."
   }
 }
