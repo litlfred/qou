@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T05:14:02.701189+00:00",
-  "commitSha": "b234009b9c07da66d64fd69cdaf1a4ccb3a30652",
+  "computedAt": "2026-05-28T05:14:32.482993+00:00",
+  "commitSha": "10c1ecab77d0ee7a9c4916fef4a47cc6343c79d8",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2370,6 +2370,7 @@
         "f-ell-derivation-via-per-braid-mass-tower.witness.json",
         "family-a-per-partition-h-decomposition-50dps.witness.json",
         "finite-q-volume-conjecture-probe.witness.json",
+        "fitted-labelled-canonical-audit.witness.json",
         "float64-leak-audit.witness.json",
         "four-unwired-theorems-regression.witness.json",
         "fr-pullback-cosh-h.witness.json",
