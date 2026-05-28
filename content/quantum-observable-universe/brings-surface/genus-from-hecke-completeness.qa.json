@@ -1873,6 +1873,22 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'lem:genus-from-hecke-completeness' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "2e95c2b9aab2",
+          "ts": "8b81dda9e63f",
+          "lean": "7a77a36e730d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T18:29:30.189Z",
+        "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
+        "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
       }
     ],
     "proof-lean-compiles": [
@@ -1933,5 +1949,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-05-28T18:29:30.189Z"
 }

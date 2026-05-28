@@ -1873,6 +1873,22 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:q-plancherel-asymptotic-skeleton' → expected 'q_plancherel_asymptotic_skeleton'; Lean declares: QPlancherelAsymptoticSkeleton. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "a91dba0100ab",
+          "lean": "437342490fa3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T18:29:30.189Z",
+        "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
+        "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
       }
     ],
     "proof-lean-compiles": [
@@ -1933,5 +1949,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-05-28T18:29:30.189Z"
 }

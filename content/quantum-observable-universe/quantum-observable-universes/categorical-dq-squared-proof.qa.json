@@ -1189,6 +1189,22 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prf:categorical-dq-squared' → expected 'prf:categorical_dq_squared'; Lean declares: categorical_dq_squared. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "7ecbdd68b89d",
+          "lean": "3ce4edc0ee31"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T18:29:30.189Z",
+        "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
+        "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1245,5 +1261,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-05-28T18:29:30.189Z"
 }

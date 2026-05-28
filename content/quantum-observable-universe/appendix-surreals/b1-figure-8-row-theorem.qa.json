@@ -1873,6 +1873,22 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:b1-figure-8-row-theorem' → expected 'b1_figure_8_row_theorem'; Lean declares: b1_figure_8_row. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "31353719f75d",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T18:29:30.189Z",
+        "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
+        "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
       }
     ],
     "proof-lean-compiles": [
@@ -1933,5 +1949,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-05-28T18:29:30.189Z"
 }

@@ -1875,6 +1875,22 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:six-term-per-derivation-weights' → expected 'six_term_per_derivation_weights'; Lean declares: binding_assembly. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "77bcd7566727",
+          "ts": "419ad7645f1e",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T18:29:30.189Z",
+        "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
+        "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
       }
     ],
     "proof-lean-compiles": [
@@ -1935,5 +1951,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-05-28T18:29:30.189Z"
 }

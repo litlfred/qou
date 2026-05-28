@@ -170,6 +170,32 @@ function isSiblingStub(leanText: string): boolean {
   return nonStubLines.length === 0;
 }
 
+/** Detect whether every declaration in the file is a trivial stub
+ *  (`theorem|lemma|def X : True := trivial`). This is the Lean idiom
+ *  for "manuscript-only / formalisation pending" stubs. When the
+ *  file has nothing but trivial stubs, it should be treated like a
+ *  sibling stub (n/a) rather than scored against kind discipline. */
+function hasOnlyTrivialStubDecls(leanText: string): boolean {
+  const cleaned = leanText
+    .replace(/\/-[\!]?[\s\S]*?-\//g, "")
+    .replace(/--[^\n]*/g, "");
+  // Match each top-level declaration head.
+  const declRe = /^\s*(?:private\s+|protected\s+|partial\s+|noncomputable\s+)*(theorem|lemma|def|instance|class|structure|inductive|abbrev|axiom)\s+([a-zA-Z_][a-zA-Z0-9_'.]*)([\s\S]*?)(?=^\s*(?:private\s+|protected\s+|partial\s+|noncomputable\s+)*(?:theorem|lemma|def|instance|class|structure|inductive|abbrev|axiom)\s+|^end\s+|\Z)/gm;
+  let m: RegExpExecArray | null;
+  let saw = 0;
+  // `: True := trivial` (allowing whitespace, optional `by trivial`).
+  const stubBody = /:\s*True\s*:=\s*(?:trivial|by\s+trivial)\s*$/m;
+  while ((m = declRe.exec(cleaned)) !== null) {
+    saw++;
+    const kind = m[1];
+    // Only theorem/lemma/def can be a `True := trivial` stub; any
+    // structure/class/inductive/instance/abbrev/axiom signals real content.
+    if (!["theorem", "lemma", "def"].includes(kind)) return false;
+    if (!stubBody.test(m[3])) return false;
+  }
+  return saw > 0;
+}
+
 /** Check structural equivalence between md and lean. */
 function checkEquivalence(
   mdText: string,
@@ -198,6 +224,23 @@ function checkEquivalence(
       result: "warn",
       evidence: "Lean file exists but contains no declarations (theorem/def/class/etc).",
       notes: "Lean file may be empty or only contain comments.",
+    };
+  }
+
+  // Stub-only Lean file: declarations exist but every one is a
+  // `: True := trivial` stub (the Lean idiom for "manuscript-only /
+  // formalisation pending"). Treat the same as a no-declaration
+  // sibling stub: audited by lean-compile-audit, not by kind
+  // discipline. Note: we deliberately do NOT short-circuit on
+  // `isSiblingStub(leanText)` alone here — sibling-stub prose
+  // combined with a real `class`/`structure`/`def` declaration is
+  // the normal §3b conjectural pattern, which already passes the
+  // kind-discipline check below.
+  if (hasOnlyTrivialStubDecls(leanText)) {
+    return {
+      result: "n/a",
+      notes:
+        "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit.",
     };
   }
 
