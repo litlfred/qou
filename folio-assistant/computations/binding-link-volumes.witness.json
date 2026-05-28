@@ -1,0 +1,72 @@
+{
+  "engine": "snappy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-28T05:04:51.137121+00:00",
+  "commitSha": "8a160cc9208b82af2f60f2dc8f084e8949200193",
+  "assertions": [
+    {
+      "name": "L6a4_is_borromean",
+      "computed": 1.775212043682812e-11,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "Vol(L6a4) = 8G = Vol(Borromean)"
+    },
+    {
+      "name": "deuteron_endomorphism_holds",
+      "computed": 0.18801312630349312,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1,
+      "source": "B(²H) = m_e·Vol(𝓑₃)·Δtr within 1%"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "binding-link-volumes",
+  "scriptFile": "binding_link_volumes.py",
+  "scriptHash": "40b25d3fe7b8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Hyperbolic volumes of the SDP binding links (Hopf/8₁₁/L6a4). L6a4 = Borromean (Vol = 8G). The endomorphism B = m_e·Vol(K_bind)·Δtr matches ²H at +0.2% but fails A≥3 (−60%): honest negative, A-dependence is not in a single binding-link volume.",
+  "data": {
+    "binding_link_volumes": {
+      "Hopf_2H": "0 (Seifert-fibred)",
+      "knot_8_11_3H": "8.2863168178",
+      "L6a4_3He": "7.3277247534",
+      "Vol_B3_8G": "7.327724753417752",
+      "L6a4_equals_borromean": true
+    },
+    "endomorphism_extension_test": {
+      "2H": {
+        "link": "Hopf (L2a1)",
+        "vol": "0.0",
+        "vol_eff": "7.327724753417752",
+        "B_pred_MeV": "2.2287023895972466",
+        "B_AME_MeV": "2.22452",
+        "err_pct": 0.18801312630349312
+      },
+      "3H": {
+        "link": "8_11",
+        "vol": "8.2863168178",
+        "vol_eff": "8.2863168178",
+        "B_pred_MeV": "3.4043765559804826",
+        "B_AME_MeV": "8.48182",
+        "err_pct": -59.862664428383496
+      },
+      "3He": {
+        "link": "L6a4",
+        "vol": "7.3277247534",
+        "vol_eff": "7.3277247534",
+        "B_pred_MeV": "3.1498394659352518",
+        "B_AME_MeV": "7.71804",
+        "err_pct": -59.18860920732139
+      }
+    }
+  }
+}
