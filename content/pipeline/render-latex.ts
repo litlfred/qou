@@ -580,8 +580,43 @@ export function renderBlock(
     case "diagram": {
       const figFile = block.meta?.file as string | undefined;
       if (figFile) {
-        // Image-based figure: meta.file points to an image asset
-        const figPath = sourceDir ? join(sourceDir, figFile) : figFile;
+        // Image-based figure: meta.file points to an image asset.
+        // Resolve to a path that will exist when latexmk runs from the
+        // repo root.  Two conventions are supported:
+        //   (a) chapter-local figures at `content/<sourceDir>/<figFile>`
+        //       (e.g. bach2013-double-slit/.../figures/foo.png)
+        //   (b) repo-root figures at `<figFile>` itself
+        //       (e.g. quantum-observable-universe figures live at
+        //        the top-level `figures/` directory per the PR #1075
+        //        workplan and the witness JSON svg_path/pdf_path)
+        // Prefer (a) when it exists on disk; otherwise fall back to
+        // (b) when that file exists; otherwise emit the chapter-local
+        // path so the missing-file error points at the conventional
+        // location.  The cwd at build time may be either the repo root
+        // or `content/`, so probe both layouts when checking existence.
+        let figPath: string;
+        if (sourceDir) {
+          const chapterLocal = join("content", sourceDir, figFile);
+          const cwd = process.cwd();
+          const chapterLocalExists =
+            existsSync(chapterLocal) ||
+            existsSync(join(cwd, chapterLocal)) ||
+            existsSync(join(cwd, "..", chapterLocal)) ||
+            existsSync(join(cwd, sourceDir, figFile));
+          const repoRootExists =
+            existsSync(figFile) ||
+            existsSync(join(cwd, figFile)) ||
+            existsSync(join(cwd, "..", figFile));
+          if (chapterLocalExists) {
+            figPath = chapterLocal;
+          } else if (repoRootExists) {
+            figPath = figFile;
+          } else {
+            figPath = chapterLocal;
+          }
+        } else {
+          figPath = figFile;
+        }
         lines.push("\\begin{figure}[htbp]");
         lines.push("  \\centering");
         lines.push(`  \\includegraphics[width=\\textwidth]{${figPath}}`);
