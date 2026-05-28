@@ -17,7 +17,6 @@ export default proposition({
     "def:brings-coordinate-ring",
     "rem:figure-8-archimedean-illustration",
     "prop:q-dilogarithm-exists",
-    "prop:kashaev-volume-conjecture",
   ],
   cites: [
     "thurston1978",

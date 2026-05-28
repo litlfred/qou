@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:kashaev-volume-conjecture",
     "prop:borromean-bloch-group-element",
     "rem:vol-as-motivic-period",
     "def:borromean-baryon",

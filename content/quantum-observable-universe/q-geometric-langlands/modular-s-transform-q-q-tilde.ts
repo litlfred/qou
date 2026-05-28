@@ -11,7 +11,6 @@ export default proposition({
   uses: [
     "def:bar-involution",
     "def:hecke-normal-form",
-    "prop:kashaev-volume-conjecture",
     "rem:vol-as-motivic-period",
   ],
   cites: [

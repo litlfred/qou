@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:kashaev-volume-conjecture",
     "def:substrate-parameter",
   ],
   cites: [],

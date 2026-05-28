@@ -13,7 +13,6 @@ export default proposition({
     "cor:quantum-dilogarithm",
     "def:archimedean-realization-functor",
     "rem:kashaev-as-archimedean-realization",
-    "prop:kashaev-volume-conjecture",
   ],
   cites: ["faddeev1994", "kashaev1997", "zagier1986"],
   tags: [
