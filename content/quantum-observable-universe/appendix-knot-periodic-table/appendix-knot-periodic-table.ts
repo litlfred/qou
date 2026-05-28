@@ -32,6 +32,7 @@ export default chapter({
       title: "Knot-centric periodic table",
       label: "sec:knot-centric-table",
       blocks: [
+        "knot-centric-table-intro",
         "knot-centric-table",
 
         "knot-centric-table-table1-data",
