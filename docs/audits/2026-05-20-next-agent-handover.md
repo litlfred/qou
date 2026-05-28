@@ -412,7 +412,7 @@ timeout 7200 python3 -u canonical_mass_table_extended.py \
 | Rule | Consequence of violating |
 |------|--------------------------|
 | **No f64 in production paths** (L1: 50-dps compute) | review-rejected; ⁴He wall regression to ~10s |
-| **Three-calibration discipline** (CAL-1 = m_e, CAL-2 = m_μ/m_e, CAL-3 = Q_β) | any fourth-cal violation auto-rejected |
+| **Three-calibration discipline** (CAL-1 = m_e, CAL-2 = 𝔇_β, CAL-3 = 𝔇_π) | any fourth-cal violation auto-rejected |
 | **No fitting / numerology** | review-rejected (PR #843 / #852 audit) |
 | **Combine related PRs** | 1.A + 1.C together; 1.B separate |
 | **Structured branch names** `claude/<theme>-<utc-ymd>` | naming convention; coordinate.md relies on it |

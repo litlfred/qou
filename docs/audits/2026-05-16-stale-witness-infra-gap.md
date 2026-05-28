@@ -5,7 +5,7 @@
 **Trigger**: Owner noticed `low-isotope-mass-table.witness.json` reports
 ¹H as `row_derivation_status: "derived"` with `M_pred = 938.2725 MeV`,
 which violates the three-calibration discipline (`prop:three-calibration-inputs`:
-CAL-1 = m_e, CAL-2 = q₀, CAL-3 = Q_β; m_p and m_n are predictions,
+CAL-1 = m_e, CAL-2 = 𝔇_β, CAL-3 = 𝔇_π; m_p and m_n are predictions,
 never inputs).
 
 ## What happened
