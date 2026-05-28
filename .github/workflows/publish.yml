@@ -136,11 +136,12 @@ jobs:
       - name: Validate content objects
         run: cd content && bun run validate
 
-      - name: Build content objects (chapters .tex)
+      - name: Build content objects (chapters .tex + main.tex)
         # Pre-existing cross-reference warnings produce exit code 1
         # but chapters/*.tex are still generated successfully.
         run: |
-          cd content && bun run build 2>&1 | tail -10 || \
+          cd content && bun run check-witnesses && bun run render-atlas:write && \
+            bun run pipeline/build.ts --generate-main --main-out ../main.tex 2>&1 | tail -10 || \
             echo "::warning::Content build reported issues (chapters still generated)"
 
       - name: Compute output filename base
@@ -155,6 +156,7 @@ jobs:
           name: content-pipeline-${{ steps.filename.outputs.base }}
           path: |
             chapters/
+            main.tex
             papers.json
             folio-assistant/computations/*.witness.json
           retention-days: 1
