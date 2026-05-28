@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:meson-volume-conjecture`](../mass-theory/meson-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition ($C = \mathrm{bar}$ iff all irreps are one-dimensional).**
 *On the Iwahori–Hecke algebra $H_n(q)$, charge conjugation
 $C\colon \sigma_i \mapsto \sigma_i^{-1}$ and the bar involution

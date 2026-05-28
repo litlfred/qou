@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:meson-volume-conjecture`](../mass-theory/meson-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (Hoefsmit binding amplitude).**
 *The off-diagonal element $b$ of the Hoefsmit seminormal matrix
 for the standard representation $(2,1)$ of $H_3(q)$ satisfies*

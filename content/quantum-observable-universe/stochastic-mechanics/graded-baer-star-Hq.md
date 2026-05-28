@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](../mass-theory/kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Conjecture (graded Baer-* on $\mathcal{H}_q$ across the depth filtration).**
 
 *Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra

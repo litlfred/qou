@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Conjecture (two-filtration bridge: iterated-integral depth $\leftrightarrow$
 partition-cellular GB-depth via central idempotents).**
 

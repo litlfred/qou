@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (cyclotomic depth-3 dimension synthesis: at each
 prime $K \geq 5$, the genuinely-new depth-3 content over
 $\mathbb{Q}(\zeta_K)$ has Borel-saturated dimension $(K - 3)/2$).**

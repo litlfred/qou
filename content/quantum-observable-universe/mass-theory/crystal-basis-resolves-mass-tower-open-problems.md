@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (crystal-basis reduction of three mass-tower open problems).**
 *Under the Brundan-Kleshchev isomorphism
 $H_n(R, q) \cong R^\Lambda_\alpha$ (cyclotomic KLR algebra)

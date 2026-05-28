@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](../mass-theory/kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (depth-2 identification of $G^{(2)}(\mathcal{H}_q)$
 with the Bloch group $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ —
 provable via Bloch–Suslin).**

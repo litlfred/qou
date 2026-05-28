@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](../mass-theory/kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (B1 at additional hyperbolic-knot rows is theorem-level —
 Borromean rings, Whitehead link, twist knots — combining Bloch–Suslin
 with published Volume Conjecture results).**

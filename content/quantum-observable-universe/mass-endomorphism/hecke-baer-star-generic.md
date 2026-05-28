@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](../mass-theory/kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (Iwahori–Hecke algebra is Baer-* at generic $q$).**
 
 *Let $R$ be a field of characteristic 0 and $q \in R$ generic

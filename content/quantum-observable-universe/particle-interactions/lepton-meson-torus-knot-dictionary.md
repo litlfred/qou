@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:meson-volume-conjecture`](../mass-theory/meson-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (torus-knot dictionary).**
 *The lepton and meson mass towers are both indexed by torus knots
 $T(2, n)$ for $n = 3, 5, 7, \ldots$ (odd primes), with the following

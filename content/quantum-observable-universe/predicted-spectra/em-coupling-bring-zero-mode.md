@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](../mass-theory/kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (additive Bring-surface zero-mode form for
 $1/\alpha_{EM}$, conditional on
 [`prop:dilogarithm-archimedean-limit`](#prop:dilogarithm-archimedean-limit)

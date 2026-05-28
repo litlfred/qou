@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:meson-volume-conjecture`](meson-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (kaon-to-pion mass ratio from Hecke characters and Seifert
 volumes).**
 *The kaon-to-pion mass ratio decomposes into an algebraic factor from the

@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:meson-volume-conjecture`](../mass-theory/meson-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (figure-eight knot operator is unitary on $V_{(2,1)}$).**
 *The knot operator $M_{4_1} = (\sigma_1\sigma_2^{-1})^2$ of the
 figure-eight knot, acting on the standard representation $V_{(2,1)}$

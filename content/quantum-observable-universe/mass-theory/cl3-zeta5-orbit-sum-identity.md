@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (Cl_3 orbit-sum identity reduces depth-3 Bring trilog
 content to a 1-dim antisymmetric generator).**
 

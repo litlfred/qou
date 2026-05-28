@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:meson-volume-conjecture`](../mass-theory/meson-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (Frobenius lepton–meson bridge).**
 *The standard representation $V_{(2,1)}$ of $H_3(q)$ restricts to
 $H_2(q)$ as the direct sum of the two lepton irreps:*

@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (the imaginary part of the Bring trilog at $\zeta_5$
 is Tate-rational — $\mathrm{Im}\,\mathrm{Li}_3(\zeta_5) = 4\pi^3/125$,
 verified at 50 dps via Kummer reflection).**

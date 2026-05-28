@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:kashaev-volume-conjecture`](../mass-theory/kashaev-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Conjecture (Bloch-group decomposition of $2/(3\pi)$).**
 *There exists a finite multi-set
 $\{(K_1, n_1), \ldots, (K_m, n_m)\}$ of hyperbolic knots

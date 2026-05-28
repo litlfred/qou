@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:meson-volume-conjecture`](../mass-theory/meson-volume-conjecture.md)).** The statement below is conditional on the volume-conjecture class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (pion = half-figure-eight on $V_{(2,1)}$).**
 *The pion braid $\mathfrak{M}_+ = (\sigma_1\sigma_2)^2\sigma_2\sigma_1$
 and the half-figure-eight braid $\sigma_1\sigma_2^{-1}$ have
