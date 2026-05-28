@@ -159,8 +159,12 @@ The analogy is recorded as a structural correspondence between the
 two endomorphism shapes. -/
 class BindingEndomorphismAnalogy where
   m_e : ℝ
-  /-- Borromean volume Vol(𝓑_3) = 8G. -/
+  /-- Borromean volume Vol(𝓑_3) = 8G (mass side — nucleons are Borromean). -/
   Vol_B3 : ℝ
+  /-- Binding-link volume Vol(K_bind) (binding side — atom-specific:
+      Hopf for ²H, 8₁₁-class for ³H, L6a4 for ³He). For the deuteron
+      this equals Vol(𝓑_3); for A≥3 it differs. -/
+  Vol_Kbind : ℝ
   /-- Substrate ℏ_q² appearing in the mass formula denominator. -/
   hbar_q_sq : ℝ
   /-- Mass linking weight lw(K, q_0). -/
@@ -169,30 +173,42 @@ class BindingEndomorphismAnalogy where
   delta_tr : ℝ
   /-- Predicted nucleon mass. -/
   m_pred : ℝ
-  /-- Predicted deuteron binding. -/
+  /-- Predicted binding energy. -/
   B_pred : ℝ
   hbar_q_sq_ne : hbar_q_sq ≠ 0
   lw_ne : lw ≠ 0
   delta_tr_ne : delta_tr ≠ 0
-  /-- Mass endomorphism shape. -/
+  /-- Mass endomorphism shape (always Borromean Vol_B3). -/
   mass_shape : m_pred = m_e * (Vol_B3 / hbar_q_sq) * lw
-  /-- Binding endomorphism shape (same m_e and Vol_B3 factors;
-      Δtr replaces lw/ℏ_q²). -/
-  binding_shape : B_pred = m_e * Vol_B3 * delta_tr
+  /-- Binding endomorphism shape (general binding-link volume). -/
+  binding_shape : B_pred = m_e * Vol_Kbind * delta_tr
 
-/-- The mass and binding endomorphisms share the `m_e · Vol(𝓑_3)`
-    prefactor: stripping the structural factor (lw/ℏ_q² for mass,
-    Δtr for binding) from each prediction leaves the SAME quantity
-    `m_e · Vol(𝓑_3)`. This is the precise sense in which binding is
-    the endomorphism analogue of mass. -/
+/-- The mass and binding endomorphisms share the same structural
+    template: stripping the structural factor (lw/ℏ_q² for mass,
+    Δtr for binding) leaves `m_e · Vol(·)` — the Borromean volume on
+    the mass side, the binding-link volume on the binding side.
+
+    For the **deuteron** these coincide (Vol(K_bind) = Vol(𝓑_3) = 8G,
+    the Hopf inter-nucleon link being Seifert-fibred), so both
+    prefactors equal `m_e · Vol(𝓑_3)`; for A≥3 they differ by the
+    binding-link volume ratio. -/
 -- Ref: [manuscript] docs/audits/2026-05-28-binding-endomorphism-analogy.md
 theorem mass_binding_share_prefactor [a : BindingEndomorphismAnalogy] :
     a.m_pred / (a.lw / a.hbar_q_sq) = a.m_e * a.Vol_B3
-    ∧ a.B_pred / a.delta_tr = a.m_e * a.Vol_B3 := by
+    ∧ a.B_pred / a.delta_tr = a.m_e * a.Vol_Kbind := by
   refine ⟨?_, ?_⟩
   · rw [a.mass_shape]
     field_simp [a.hbar_q_sq_ne, a.lw_ne] <;> ring
   · rw [a.binding_shape]
     field_simp [a.delta_tr_ne] <;> ring
+
+/-- Deuteron specialization: when the binding link has Borromean
+    volume (Vol(K_bind) = Vol(𝓑_3)), the two endomorphisms share the
+    identical `m_e · Vol(𝓑_3)` prefactor. -/
+-- Ref: [manuscript] docs/audits/2026-05-28-binding-endomorphism-analogy.md
+theorem mass_binding_prefactor_deuteron [a : BindingEndomorphismAnalogy]
+    (h : a.Vol_Kbind = a.Vol_B3) :
+    a.m_pred / (a.lw / a.hbar_q_sq) = a.B_pred / a.delta_tr := by
+  rw [(mass_binding_share_prefactor).1, (mass_binding_share_prefactor).2, h]
 
 end QOU.ParticleInteractions
