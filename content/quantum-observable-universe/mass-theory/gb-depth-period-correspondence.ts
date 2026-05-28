@@ -9,12 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:frobenius-hopf-substrate",
-    "def:archimedean-realization-functor",
-    "prop:archimedean-functor-uniqueness",
     "prop:q-dilogarithm-exists",
-    "prop:quantum-dilogarithm-stratified",
-    "prop:curvature-rank-gb-stratification",
     "prop:categorical-laplace-unique",
     "def:q-resolvent",
     "lem:surreal-squeeze",
