@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "40b474a40cb3",
     "ts": "cf7113d6a47d",
-    "lean": "0a758e47e4c1"
+    "lean": "6b36e06e35e6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:substrate-radial-coordinate' \u2192 expected 'substrate_radial_coordinate'; Lean declares: SubstrateRadialCoordinate, hbar_q_pos, deep_quantum_limit_hbar, classical_limit_hbar. Structural match via content."
+        "notes": "Label 'prop:substrate-radial-coordinate' → expected 'substrate_radial_coordinate'; Lean declares: SubstrateRadialCoordinate, hbar_q_pos, deep_quantum_limit_hbar, classical_limit_hbar. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "40b474a40cb3",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:substrate-radial-coordinate' → expected 'substrate_radial_coordinate'; Lean declares: SubstrateRadialCoordinate, hbar_q_pos, deep_quantum_limit_hbar, classical_limit_hbar. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

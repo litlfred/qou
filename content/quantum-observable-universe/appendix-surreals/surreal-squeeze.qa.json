@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean"
   },
   "source_hashes": {
-    "md": "f4b32f63fb0f",
+    "md": "00716d14b5a9",
     "ts": "55c14e0bbbd9",
     "lean": "176e2ebf3658"
   },
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'lem:surreal-squeeze' \u2192 expected 'surreal_squeeze'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
+        "notes": "Label 'lem:surreal-squeeze' → expected 'surreal_squeeze'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "00716d14b5a9",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'lem:surreal-squeeze' → expected 'surreal_squeeze'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1885,5 +1901,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

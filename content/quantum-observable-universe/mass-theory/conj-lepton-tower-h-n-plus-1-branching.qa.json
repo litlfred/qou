@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-application/conj-lepton-tower-h-n-plus-1-branching.lean"
   },
   "source_hashes": {
-    "md": "ac73b5594853",
-    "ts": "c229c46f9415",
-    "lean": "9069911c238e"
+    "md": "7dca3107cee8",
+    "ts": "e54cc7b2f5f1",
+    "lean": "cc981c0b9bef"
   },
   "criteria": {
     "voice-status-leak": [
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md:17: > Numerical match: muon $m=2$ \u2192 $[3]_q \\cdot [2]_q / [4]_q$ to +0.001 %; | quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md:18: > tau $m=3$ \u2192 $[5]_q \\cdot [3]_q / [6]_q$ to +0.79 % (via $\\mathrm{Vol}(10_{43})/\\hbar_q^2$); | quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md:29: > **\u26a0\ufe0f SUPERSEDED (2026-05-25, PR #1253).** The earlier conjecture | quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md:32: > ($\\xi_3 = [4]_q \\cdot [2]_q / [5]_q$ predicted \u2248 1.59 vs required | quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md:33: > \u2248 2.47, off by 35 %). The PR #1253 amphichiral filter identified"
+        "evidence": "quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md:17: > Numerical match: muon $m=2$ → $[3]_q \\cdot [2]_q / [4]_q$ to +0.001 %; | quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md:18: > tau $m=3$ → $[5]_q \\cdot [3]_q / [6]_q$ to +0.79 % (via $\\mathrm{Vol}(10_{43})/\\hbar_q^2$); | quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md:29: > **⚠️ SUPERSEDED (2026-05-25, PR #1253).** The earlier conjecture | quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md:32: > ($\\xi_3 = [4]_q \\cdot [2]_q / [5]_q$ predicted ≈ 1.59 vs required | quantum-observable-universe/braids-and-knots/conj-lepton-tower-h-n-plus-1-branching.md:33: > ≈ 2.47, off by 35 %). The PR #1253 amphichiral filter identified"
       },
       {
         "field_hash": {
@@ -1352,7 +1352,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'conj:lepton-tower-h-n-plus-1-branching' \u2192 expected 'lepton_tower_h_n_plus_1_branching'; Lean declares: LeptonIndex, heckeH, br2, br3, br4.... Structural match via content."
+        "notes": "Label 'conj:lepton-tower-h-n-plus-1-branching' → expected 'lepton_tower_h_n_plus_1_branching'; Lean declares: LeptonIndex, heckeH, br2, br3, br4.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "7dca3107cee8",
+          "ts": "e54cc7b2f5f1",
+          "lean": "cc981c0b9bef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:lepton-tower-h-n-plus-1-branching' → expected 'lepton_tower_h_n_plus_1_branching'; Lean declares: LeptonIndex, heckeH, br2, br3, br4.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1415,5 +1431,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

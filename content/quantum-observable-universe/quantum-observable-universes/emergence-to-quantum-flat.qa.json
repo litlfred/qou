@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "d11ae98c75ee",
     "ts": "c67ca1abdaa8",
-    "lean": "f97ea16b6fd7"
+    "lean": "2225267f15e6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:emergence-to-quantum-flat' \u2192 expected 'emergence_to_quantum_flat'; Lean declares: QuantumFlatnessEmergence, instanton_of_quantum_flat, self_dual_eq_b_field. Structural match via content."
+        "notes": "Label 'prop:emergence-to-quantum-flat' → expected 'emergence_to_quantum_flat'; Lean declares: QuantumFlatnessEmergence, instanton_of_quantum_flat, self_dual_eq_b_field. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "d11ae98c75ee",
+          "ts": "c67ca1abdaa8",
+          "lean": "2225267f15e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:emergence-to-quantum-flat' → expected 'emergence_to_quantum_flat'; Lean declares: QuantumFlatnessEmergence, instanton_of_quantum_flat, self_dual_eq_b_field. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "5f6849f127ee",
     "ts": "c35dd9ae8aa0",
-    "lean": "976475ff2efa"
+    "lean": "abced5af177d"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:confinement-level-unique' \u2192 expected 'confinement_level_unique'; Lean declares: ConfinementLevel.unique. Structural match via content."
+        "notes": "Label 'prop:confinement-level-unique' → expected 'confinement_level_unique'; Lean declares: ConfinementLevel.unique. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "5f6849f127ee",
+          "ts": "c35dd9ae8aa0",
+          "lean": "abced5af177d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:confinement-level-unique' → expected 'confinement_level_unique'; Lean declares: ConfinementLevel.level_canonical, ConfinementLevel.unique. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

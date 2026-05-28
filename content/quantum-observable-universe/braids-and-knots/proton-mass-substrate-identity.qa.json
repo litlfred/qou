@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.lean"
   },
   "source_hashes": {
-    "md": "fee15efe1b30",
-    "ts": "5d5dd8dd7f86",
-    "lean": "1baec01f2673"
+    "md": "28ce23ab7cf8",
+    "ts": "4a37a1ffdfa4",
+    "lean": "926b5e6e395b"
   },
   "criteria": {
     "proof-no-bare-sorries": [
@@ -229,7 +229,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:proton-mass-substrate-identity' \u2192 expected 'proton_mass_substrate_identity'; Lean declares: trM_borromean_abs, qFact_three, F_Bor, ProtonMassSubstrateIdentity, proton_mass_substrate_identity_empirical.... Structural match via content."
+        "notes": "Label 'prop:proton-mass-substrate-identity' → expected 'proton_mass_substrate_identity'; Lean declares: trM_borromean_abs, qFact_three, F_Bor, ProtonMassSubstrateIdentity, proton_mass_substrate_identity_empirical.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "28ce23ab7cf8",
+          "ts": "4a37a1ffdfa4",
+          "lean": "926b5e6e395b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:proton-mass-substrate-identity' → expected 'proton_mass_substrate_identity'; Lean declares: trM_borromean_abs, qFact_three, F_Bor, ProtonMassSubstrateIdentity, proton_mass_substrate_identity_empirical.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -436,5 +452,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

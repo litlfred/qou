@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/q-energy.lean"
   },
   "source_hashes": {
-    "md": "09f933ca0389",
+    "md": "d02075c2fcbe",
     "ts": "0e5ae0b177a0",
-    "lean": "cf8320b29c0f"
+    "lean": "01cb482e34d9"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1325,7 +1325,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'def:q-energy' \u2192 expected 'q_energy'; Lean declares: R_q, q_param, q_inv_param, hbar_q, q_number.... Structural match via content."
+        "notes": "Label 'def:q-energy' → expected 'q_energy'; Lean declares: R_q, q_param, q_inv_param, hbar_q, q_number.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "d02075c2fcbe",
+          "ts": "0e5ae0b177a0",
+          "lean": "01cb482e34d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'def:q-energy' → expected 'q_energy'; Lean declares: R_q, q_param, q_inv_param, hbar_q, q_number.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1388,5 +1404,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

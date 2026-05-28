@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/borromean-bloch-group-element.lean"
   },
   "source_hashes": {
-    "md": "1301a2b7a0d1",
-    "ts": "c12af5fe31cf",
+    "md": "420aaf46ebcd",
+    "ts": "44b3ddf65a2d",
     "lean": "32ebd544e772"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:67: ## The conjectural content \u2014 h\u2074 as the next-order regulator term | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:160: 2. **D16 \u2192 \u2705** requires the Lean class instance + the"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:67: ## The conjectural content — h⁴ as the next-order regulator term | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:160: 2. **D16 → ✅** requires the Lean class instance + the"
       },
       {
         "field_hash": {
@@ -520,7 +520,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:70: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:74: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:130: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:158: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:70: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:74: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:130: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:158: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q)"
       },
       {
         "field_hash": {
@@ -539,7 +539,7 @@
         "reviewed_at": "2026-05-25T23:14:29.450Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:70: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:74: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:130: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:158: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:70: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:74: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:130: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:158: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q)"
       },
       {
         "field_hash": {
@@ -558,7 +558,7 @@
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:70: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:74: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:130: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:158: \u03a6_q (Faddeev) in binding-context block \u2014 bar-symmetry violation (use Li_2^q)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:70: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:74: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:130: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q) | content/quantum-observable-universe/braids-and-knots/borromean-bloch-group-element.md:158: Φ_q (Faddeev) in binding-context block — bar-symmetry violation (use Li_2^q)"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1427,7 +1427,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "420aaf46ebcd",
+          "ts": "44b3ddf65a2d",
+          "lean": "32ebd544e772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:borromean-bloch-group-element' → expected 'borromean_bloch_group_element'; Lean declares: BorromeanBlochGroupElement. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1488,5 +1504,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

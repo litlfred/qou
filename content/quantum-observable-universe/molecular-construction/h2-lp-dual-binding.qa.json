@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.lean"
   },
   "source_hashes": {
-    "md": "6f51103fb73c",
+    "md": "9713fae7a1b2",
     "ts": "a8347ff39d5c",
     "lean": "d1df219927a1"
   },
@@ -1807,6 +1807,22 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:h2-lp-dual-binding' aligns with Lean declaration. Has sorry (cited)."
+      },
+      {
+        "field_hash": {
+          "md": "9713fae7a1b2",
+          "ts": "a8347ff39d5c",
+          "lean": "d1df219927a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:h2-lp-dual-binding' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-lean-compiles": [
@@ -1867,5 +1883,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.lean"
   },
   "source_hashes": {
-    "md": "bc314b6db581",
-    "ts": "02fb46a80d61",
-    "lean": "77e420b0f061"
+    "md": "5ba007ecef78",
+    "ts": "928cb3dfa956",
+    "lean": "1fdb32b5a3d7"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1228,7 +1228,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "5ba007ecef78",
+          "ts": "928cb3dfa956",
+          "lean": "1fdb32b5a3d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:homological-shell-condensation' → expected 'homological_shell_condensation'; Lean declares: magicSet, Saturated, BBSpectralSequence, HomologicalConjecture, strict_positive_collapse_unique.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1291,5 +1307,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

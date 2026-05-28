@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/statistics-symmetrisation/spin-from-so3-fiber.lean"
   },
   "source_hashes": {
-    "md": "260d459dfc55",
-    "ts": "2b0ace8642dc",
+    "md": "96fb3a1c4e86",
+    "ts": "d605d26eae41",
     "lean": "235f1d742205"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/spin-from-so3-fiber.md:131: 2. **D10 \u2192 \u2705** requires the Lean class instance + the | content/quantum-observable-universe/braids-and-knots/spin-from-so3-fiber.md:135: 3. **Connect to PR #1125's W/Z \u2248 cos \u03b8_W within 1%** binomial | content/quantum-observable-universe/braids-and-knots/spin-from-so3-fiber.md:143: + \u00a72 Cluster B (D9 \u2192 D10 \u2192 D11 nuclear physics)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/spin-from-so3-fiber.md:131: 2. **D10 → ✅** requires the Lean class instance + the | content/quantum-observable-universe/braids-and-knots/spin-from-so3-fiber.md:135: 3. **Connect to PR #1125's W/Z ≈ cos θ_W within 1%** binomial | content/quantum-observable-universe/braids-and-knots/spin-from-so3-fiber.md:143: + §2 Cluster B (D9 → D10 → D11 nuclear physics)"
       },
       {
         "field_hash": {
@@ -1421,7 +1421,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "96fb3a1c4e86",
+          "ts": "d605d26eae41",
+          "lean": "235f1d742205"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:spin-from-so3-fiber' → expected 'spin_from_so3_fiber'; Lean declares: SpinFromSo3Fiber. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1482,5 +1498,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

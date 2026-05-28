@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a5688e4549ce",
     "ts": "249d7fd976e4",
-    "lean": "24aa5bbce3f0"
+    "lean": "a806d004dcbc"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:weak-equiv-invariance' \u2192 expected 'weak_equiv_invariance'; Lean declares: WeakEquivalence, VacuumState, WeakEquivInvariance, weak_equiv_transitive. Structural match via content."
+        "notes": "Label 'prop:weak-equiv-invariance' → expected 'weak_equiv_invariance'; Lean declares: WeakEquivalence, VacuumState, WeakEquivInvariance, weak_equiv_transitive. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:weak-equiv-invariance' → expected 'weak_equiv_invariance'; Lean declares: WeakEquivalence, VacuumState, WeakEquivInvariance, weak_equiv_transitive. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

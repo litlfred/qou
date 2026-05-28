@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "e05785ace224",
     "ts": "e728f9fc32e1",
-    "lean": "2db536a8c0f4"
+    "lean": "04a422ad3fc4"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'thm:topological-mass' \u2192 expected 'topological_mass'; Lean declares: categoricalMass, MassDecomposition, mass_upper_bound, norm_additivity_of_nonneg_traces, mass_decomposition_exact.... Structural match via content."
+        "notes": "Label 'thm:topological-mass' → expected 'topological_mass'; Lean declares: categoricalMass, MassDecomposition, mass_upper_bound, norm_additivity_of_nonneg_traces, mass_decomposition_exact.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "e728f9fc32e1",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'thm:topological-mass' → expected 'topological_mass'; Lean declares: categoricalMass, MassDecomposition, mass_upper_bound, norm_additivity_of_nonneg_traces, mass_decomposition_exact.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean"
   },
   "source_hashes": {
-    "md": "acf9c37dbd24",
+    "md": "0fdd6f7e5951",
     "ts": "5747d5dddeab",
     "lean": "6f0c7c632422"
   },
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:orbital-fourier-decomposition' \u2192 expected 'orbital_fourier_decomposition'; Lean declares: modeSpaceDim, orbital_dim_eq_square, total_states_eq, QN, magnetic_count.... Structural match via content."
+        "notes": "Label 'prop:orbital-fourier-decomposition' → expected 'orbital_fourier_decomposition'; Lean declares: modeSpaceDim, orbital_dim_eq_square, total_states_eq, QN, magnetic_count.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "0fdd6f7e5951",
+          "ts": "5747d5dddeab",
+          "lean": "6f0c7c632422"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:orbital-fourier-decomposition' → expected 'orbital_fourier_decomposition'; Lean declares: modeSpaceDim, orbital_dim_eq_square, total_states_eq, QN, magnetic_count.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

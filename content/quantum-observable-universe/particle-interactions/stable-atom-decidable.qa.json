@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "af920c4ff089",
     "ts": "a834a728b15a",
-    "lean": "4749a85180dd"
+    "lean": "4552777843b1"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:stable-atom-decidable' \u2192 expected 'stable_atom_decidable'; Lean declares: StableAtom.decidable. Structural match via content."
+        "notes": "Label 'prop:stable-atom-decidable' → expected 'stable_atom_decidable'; Lean declares: StableAtom.decidable. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "af920c4ff089",
+          "ts": "a834a728b15a",
+          "lean": "4552777843b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:stable-atom-decidable' → expected 'stable_atom_decidable'; Lean declares: StableAtom.decidable. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

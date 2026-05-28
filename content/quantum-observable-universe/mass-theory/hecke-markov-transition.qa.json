@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "c2c6deeb18c9",
     "ts": "b855dbb17005",
-    "lean": "b24e6dca92a1"
+    "lean": "c0667808783a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:hecke-markov-transition' \u2192 expected 'hecke_markov_transition'; Lean declares: SpectralIdempotentData, SpectralIdempotentData.gap, SpectralIdempotentData.gap_pos, SpectralIdempotentData.gap_ne_zero, SpectralIdempotentData.p_plus.... Structural match via content."
+        "notes": "Label 'prop:hecke-markov-transition' → expected 'hecke_markov_transition'; Lean declares: SpectralIdempotentData, SpectralIdempotentData.gap, SpectralIdempotentData.gap_pos, SpectralIdempotentData.gap_ne_zero, SpectralIdempotentData.p_plus.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "b855dbb17005",
+          "lean": "c0667808783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:hecke-markov-transition' → expected 'hecke_markov_transition'; Lean declares: SpectralIdempotentData, SpectralIdempotentData.gap, SpectralIdempotentData.gap_pos, SpectralIdempotentData.gap_ne_zero, SpectralIdempotentData.p_plus.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "ed832c0f88c5",
     "ts": "6beed0e93789",
-    "lean": "890382b22e7a"
+    "lean": "6b2dd5950c72"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:chirality-residue-mass-term' \u2192 expected 'chirality_residue_mass_term'; Lean declares: signed_content, is_chirality, mass_tower_split_by_predicate, chirality_residue. Structural match via content."
+        "notes": "Label 'prop:chirality-residue-mass-term' → expected 'chirality_residue_mass_term'; Lean declares: signed_content, is_chirality, mass_tower_split_by_predicate, chirality_residue. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "ed832c0f88c5",
+          "ts": "6beed0e93789",
+          "lean": "6b2dd5950c72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:chirality-residue-mass-term' → expected 'chirality_residue_mass_term'; Lean declares: signed_content, is_chirality, mass_tower_split_by_predicate, chirality_residue. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

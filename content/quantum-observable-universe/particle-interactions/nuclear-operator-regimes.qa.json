@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:nuclear-operator-regimes' \u2192 expected 'nuclear_operator_regimes'; Lean declares: nuclearOperatorRegimes. Structural match via content."
+        "notes": "Label 'prop:nuclear-operator-regimes' → expected 'nuclear_operator_regimes'; Lean declares: nuclearOperatorRegimes. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "742f0bf17983",
+          "lean": "7fb7a0936387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:nuclear-operator-regimes' → expected 'nuclear_operator_regimes'; Lean declares: nuclearOperatorRegimes. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1885,5 +1901,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

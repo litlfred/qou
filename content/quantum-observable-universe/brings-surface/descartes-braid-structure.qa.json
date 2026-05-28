@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "ea787c7b2ac7",
     "ts": "c6a6d553fde7",
-    "lean": "c223044b2872"
+    "lean": "77b9c31a7c27"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'cor:descartes-braid-structure' \u2192 expected 'descartes_braid_structure'; Lean declares: DescartesBraidStructure, dic3_order, s3_order, s5_order, colour_sector_count.... Structural match via content."
+        "notes": "Label 'cor:descartes-braid-structure' → expected 'descartes_braid_structure'; Lean declares: DescartesBraidStructure, dic3_order, s3_order, s5_order, colour_sector_count.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "ea787c7b2ac7",
+          "ts": "c6a6d553fde7",
+          "lean": "77b9c31a7c27"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'cor:descartes-braid-structure' → expected 'descartes_braid_structure'; Lean declares: DescartesBraidStructure, dic3_order, s3_order, s5_order, colour_sector_count.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

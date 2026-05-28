@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "928e04cdead4",
     "ts": "80d6e7e03e5a",
-    "lean": "349505090c34"
+    "lean": "b5fe35a69a01"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1140,7 +1140,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prf:main-commutative-diagram' \u2192 expected 'prf:main_commutative_diagram'; Lean declares: main_commutative_diagram, MainCommutativeDiagram. Structural match via content."
+        "notes": "Label 'prf:main-commutative-diagram' → expected 'prf:main_commutative_diagram'; Lean declares: main_commutative_diagram, MainCommutativeDiagram. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "928e04cdead4",
+          "ts": "80d6e7e03e5a",
+          "lean": "b5fe35a69a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prf:main-commutative-diagram' → expected 'prf:main_commutative_diagram'; Lean declares: main_commutative_diagram, MainCommutativeDiagram. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1197,5 +1213,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

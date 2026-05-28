@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean"
   },
   "source_hashes": {
-    "md": "6aedcbbf7ef4",
-    "ts": "74f2b3ce32b6",
-    "lean": "a291017b7482"
+    "md": "dbb23b05a611",
+    "ts": "72f252396ef4",
+    "lean": "dacb6c33dd66"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1228,7 +1228,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "dbb23b05a611",
+          "ts": "72f252396ef4",
+          "lean": "dacb6c33dd66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:diagrammatic-double-magic-lr-fusion' → expected 'diagrammatic_double_magic_lr_fusion'; Lean declares: magicSet, DoubleMagic, LRFusionData, DoubleMagicConjecture, lr_concentrated.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1291,5 +1307,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

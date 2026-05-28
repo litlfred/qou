@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "8d178e42f258",
     "ts": "c50d12b2c47f",
-    "lean": "dde459c0b979"
+    "lean": "f2e050968e34"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1325,7 +1325,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'def:q-heat-equation' \u2192 expected 'q_heat_equation'; Lean declares: R_q, QHeatEquation, QHeatEquation.classicalLimit. Structural match via content."
+        "notes": "Label 'def:q-heat-equation' → expected 'q_heat_equation'; Lean declares: R_q, QHeatEquation, QHeatEquation.classicalLimit. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "8d178e42f258",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'def:q-heat-equation' → expected 'q_heat_equation'; Lean declares: R_q, QHeatEquation, QHeatEquation.classicalLimit. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1388,5 +1404,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

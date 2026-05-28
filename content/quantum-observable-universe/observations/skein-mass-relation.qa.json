@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/observations/skein-mass-relation.lean"
   },
   "source_hashes": {
-    "md": "42c3f4821a05",
+    "md": "67c7aee7b4c7",
     "ts": "fb2b576fa9ee",
-    "lean": "b1eab66e48ee"
+    "lean": "5216589859bd"
   },
   "criteria": {
     "voice-status-leak": [
@@ -112,7 +112,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/observations/skein-mass-relation.md:3: > **\u26a0\ufe0f Substrate-density (\u03c1_q) ansatz purge in progress (2026-05-24, PR #1127).**"
+        "evidence": "quantum-observable-universe/observations/skein-mass-relation.md:3: > **⚠️ Substrate-density (ρ_q) ansatz purge in progress (2026-05-24, PR #1127).**"
       },
       {
         "field_hash": {
@@ -1526,7 +1526,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:skein-mass-relation' \u2192 expected 'skein_mass_relation'; Lean declares: SkeinMassRelation, LeptonMassRatio, hbar_q_pos_of_gt_one, predicted_ratio_pos. Structural match via content."
+        "notes": "Label 'rem:skein-mass-relation' → expected 'skein_mass_relation'; Lean declares: SkeinMassRelation, LeptonMassRatio, hbar_q_pos_of_gt_one, predicted_ratio_pos. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "67c7aee7b4c7",
+          "ts": "fb2b576fa9ee",
+          "lean": "5216589859bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:skein-mass-relation' → expected 'skein_mass_relation'; Lean declares: SkeinMassRelation, LeptonMassRatio, hbar_q_pos_of_gt_one, predicted_ratio_pos. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1583,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

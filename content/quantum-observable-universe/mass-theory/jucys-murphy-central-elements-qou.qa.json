@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "421c9fc25d12",
-    "ts": "bca32c4fc9f8",
+    "ts": "76ea596e2f63",
     "lean": "7c178c0beb0f"
   },
   "criteria": {
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:jucys-murphy-central-elements-qou' \u2192 expected 'jucys_murphy_central_elements_qou'; Lean declares: HeckeJMSpectrum, cellContent, jm_central_scalar_eq_esymm_qcontent, level_ell_correction_via_esymm. Structural match via content."
+        "notes": "Label 'prop:jucys-murphy-central-elements-qou' → expected 'jucys_murphy_central_elements_qou'; Lean declares: HeckeJMSpectrum, cellContent, jm_central_scalar_eq_esymm_qcontent, level_ell_correction_via_esymm. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "421c9fc25d12",
+          "ts": "76ea596e2f63",
+          "lean": "7c178c0beb0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:jucys-murphy-central-elements-qou' → expected 'jucys_murphy_central_elements_qou'; Lean declares: HeckeJMSpectrum, cellContent, jm_central_scalar_eq_esymm_qcontent, level_ell_correction_via_esymm. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

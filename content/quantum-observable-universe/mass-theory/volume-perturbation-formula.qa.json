@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "eeaa512f7f51",
-    "ts": "b1c3a37723c0",
+    "ts": "303461daba02",
     "lean": "6e5f9118589d"
   },
   "criteria": {
@@ -1826,6 +1826,23 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
+      },
+      {
+        "field_hash": {
+          "md": "eeaa512f7f51",
+          "ts": "303461daba02",
+          "lean": "6e5f9118589d"
+        },
+        "result": "warn",
+        "evidence": "Block kind is 'proposition' but Lean has only def/noncomputable def, no theorem/lemma. Decls: volumePerturbation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
       }
     ],
     "proof-lean-compiles": [
@@ -1888,5 +1905,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

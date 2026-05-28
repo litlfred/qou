@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.lean"
   },
   "source_hashes": {
-    "md": "863ddd358633",
-    "ts": "3d534ff5b570",
-    "lean": "07040fd56029"
+    "md": "2776f842cbfb",
+    "ts": "1915d66b3b3e",
+    "lean": "506c9fda464c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:em-coupling-bring-zero-mode' \u2192 expected 'em_coupling_bring_zero_mode'; Lean declares: bringZeroModeValue, hodgeRatio, hodgeRatio_at_g4, BringZeroModeBlochClass, bring_zero_mode_additive_form. Structural match via content."
+        "notes": "Label 'prop:em-coupling-bring-zero-mode' → expected 'em_coupling_bring_zero_mode'; Lean declares: bringZeroModeValue, hodgeRatio, hodgeRatio_at_g4, BringZeroModeBlochClass, bring_zero_mode_additive_form. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "2776f842cbfb",
+          "ts": "1915d66b3b3e",
+          "lean": "506c9fda464c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:em-coupling-bring-zero-mode' → expected 'em_coupling_bring_zero_mode'; Lean declares: bringZeroModeValue, hodgeRatio, hodgeRatio_at_g4, BringZeroModeBlochClass, bring_zero_mode_additive_form. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

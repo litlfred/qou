@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.lean"
   },
   "source_hashes": {
-    "md": "84399eb689c6",
-    "ts": "11bd70b90d64",
-    "lean": "00f87a6d63d3"
+    "md": "4f3c443eea9b",
+    "ts": "aea980010dcd",
+    "lean": "da4cdc8e6e5f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1228,7 +1228,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "4f3c443eea9b",
+          "ts": "aea980010dcd",
+          "lean": "da4cdc8e6e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:shared-denominator-cusp-holonomy' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-lean-compiles": [
@@ -1291,5 +1307,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

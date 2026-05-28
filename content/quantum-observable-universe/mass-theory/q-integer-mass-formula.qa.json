@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/particle-interactions/q-integer-mass-formula.lean"
   },
   "source_hashes": {
-    "md": "6d96d7d479e9",
-    "ts": "650a541ff25a",
+    "md": "c8d5c2d0e588",
+    "ts": "6886cc98c498",
     "lean": "5af611a80943"
   },
   "criteria": {
@@ -1228,7 +1228,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "c8d5c2d0e588",
+          "ts": "6886cc98c498",
+          "lean": "5af611a80943"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:q-integer-mass-formula' → expected 'q_integer_mass_formula'; Lean declares: q_int, lambda_V, lambda_S, lambda_C, a_asym.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1291,5 +1307,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

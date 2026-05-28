@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-theory/interface-knot-markov-z.lean"
   },
   "source_hashes": {
-    "md": "5a3d0f970010",
+    "md": "9fb618864a10",
     "ts": "7a5deb5b0067",
     "lean": "6fb367832eb1"
   },
@@ -1877,6 +1877,22 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:interface-knot-markov-z' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "9fb618864a10",
+          "ts": "7a5deb5b0067",
+          "lean": "6fb367832eb1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:interface-knot-markov-z' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-lean-compiles": [
@@ -1937,5 +1953,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

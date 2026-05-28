@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "43ba6984b17e",
     "ts": "4920941480fb",
-    "lean": "ca25f2de8bd2"
+    "lean": "5722cd7378c0"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1140,7 +1140,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'ex:reeb-su2' \u2192 expected 'reeb_su2'; Lean declares: SU2ReebData, su2Reeb, su2_horizontal_forms. Structural match via content."
+        "notes": "Label 'ex:reeb-su2' → expected 'reeb_su2'; Lean declares: SU2ReebData, su2Reeb, su2_horizontal_forms. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "43ba6984b17e",
+          "ts": "4920941480fb",
+          "lean": "5722cd7378c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'ex:reeb-su2' → expected 'reeb_su2'; Lean declares: SU2ReebData, su2Reeb, su2_horizontal_forms. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1197,5 +1213,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "39997327e74c",
     "ts": "8862abd3b536",
-    "lean": "b5353781efca"
+    "lean": "e6c48146648e"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:neutron-proton-mass-splitting' \u2192 expected 'neutron_proton_mass_splitting'; Lean declares: quarkPhi, massSplitting, splitting_value, same_scale_both_levels. Structural match via content."
+        "notes": "Label 'prop:neutron-proton-mass-splitting' → expected 'neutron_proton_mass_splitting'; Lean declares: quarkPhi, massSplitting, splitting_value, same_scale_both_levels. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "39997327e74c",
+          "ts": "8862abd3b536",
+          "lean": "e6c48146648e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:neutron-proton-mass-splitting' → expected 'neutron_proton_mass_splitting'; Lean declares: quarkPhi, massSplitting, splitting_value, same_scale_both_levels. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

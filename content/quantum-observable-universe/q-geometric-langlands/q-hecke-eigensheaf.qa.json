@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "0f9b1e14e867",
     "ts": "7983440fbb3d",
-    "lean": "532facd922f0"
+    "lean": "f9a83574d0d0"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1325,7 +1325,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'def:q-hecke-eigensheaf' \u2192 expected 'q_hecke_eigensheaf'; Lean declares: QHeckeEigensheaf. Structural match via content."
+        "notes": "Label 'def:q-hecke-eigensheaf' → expected 'q_hecke_eigensheaf'; Lean declares: QHeckeEigensheaf. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "0f9b1e14e867",
+          "ts": "7983440fbb3d",
+          "lean": "f9a83574d0d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'def:q-hecke-eigensheaf' → expected 'q_hecke_eigensheaf'; Lean declares: QHeckeEigensheaf. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1388,5 +1404,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

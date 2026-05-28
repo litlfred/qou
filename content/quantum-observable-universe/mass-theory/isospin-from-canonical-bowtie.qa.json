@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean"
   },
   "source_hashes": {
-    "md": "b6bba52c26ea",
-    "ts": "9deb0bbb7d53",
+    "md": "3b314d59a8c0",
+    "ts": "f2cc93318888",
     "lean": "32ca33503fe7"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:3: > **That was wrong.** Bar involution (q \u2194 q\u207b\u00b9 AND \u03c3\u1d62 \u2194 \u03c3\u1d62\u207b\u00b9) is | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:4: > **distinct** from the isospin Z/2 swap (\u03c3\u1d62 \u2194 \u03c3\u1d62\u207b\u00b9 with q FIXED). | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:175: is **mixed** under bar (verified at q\u2080 by | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:180: **Under the isospin Z/2 swap** (\u03c3\u1d62 \u2194 \u03c3\u1d62\u207b\u00b9 at q FIXED), the | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:181: residue IS anti-symmetric (the swap exchanges proton \u2194 neutron,"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:3: > **That was wrong.** Bar involution (q ↔ q⁻¹ AND σᵢ ↔ σᵢ⁻¹) is | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:4: > **distinct** from the isospin Z/2 swap (σᵢ ↔ σᵢ⁻¹ with q FIXED). | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:175: is **mixed** under bar (verified at q₀ by | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:180: **Under the isospin Z/2 swap** (σᵢ ↔ σᵢ⁻¹ at q FIXED), the | content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:181: residue IS anti-symmetric (the swap exchanges proton ↔ neutron,"
       },
       {
         "field_hash": {
@@ -1421,7 +1421,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "3b314d59a8c0",
+          "ts": "f2cc93318888",
+          "lean": "32ca33503fe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:isospin-from-canonical-bowtie' → expected 'isospin_from_canonical_bowtie'; Lean declares: IsospinFromCanonicalBowtie. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1482,5 +1498,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

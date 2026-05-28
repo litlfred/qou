@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/commutative-crossing-energy.lean"
   },
   "source_hashes": {
-    "md": "4474241c58fc",
-    "ts": "2a6037009e7a",
-    "lean": "c62533fbbb46"
+    "md": "e07ae28842b1",
+    "ts": "f2ddadd3567d",
+    "lean": "631f0ebbdfdf"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1176,7 +1176,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:commutative-crossing-energy' \u2192 expected 'commutative_crossing_energy'; Lean declares: ord_u_zero_proton, ord_u_zero_deuteron, ord_u_zero_tritium, ord_u_zero_helium3, ord_u_zero_neutron_coefficient_larger. Structural match via content."
+        "notes": "Label 'rem:commutative-crossing-energy' → expected 'commutative_crossing_energy'; Lean declares: ord_u_zero_proton, ord_u_zero_deuteron, ord_u_zero_tritium, ord_u_zero_helium3, ord_u_zero_neutron_coefficient_larger. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "e07ae28842b1",
+          "ts": "f2ddadd3567d",
+          "lean": "631f0ebbdfdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:commutative-crossing-energy' → expected 'commutative_crossing_energy'; Lean declares: ord_u_zero_trM, ord_u_zero_trM_eq, ord_u_zero_proton, ord_u_zero_deuteron, ord_u_zero_tritium.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1249,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

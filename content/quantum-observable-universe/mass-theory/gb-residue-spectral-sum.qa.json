@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-application/gb-residue-spectral-sum.lean"
   },
   "source_hashes": {
-    "md": "c7902e98b343",
-    "ts": "b7309592906f",
+    "md": "b7d2981999ef",
+    "ts": "00cd9d803fd8",
     "lean": "e1c0f8408e33"
   },
   "criteria": {
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:gb-residue-spectral-sum' \u2192 expected 'gb_residue_spectral_sum'; Lean declares: data, RootOfUnity, GBResidueSpectralSum, residueAt, gradedMarkovTrace.... Structural match via content."
+        "notes": "Label 'prop:gb-residue-spectral-sum' → expected 'gb_residue_spectral_sum'; Lean declares: data, RootOfUnity, GBResidueSpectralSum, residueAt, gradedMarkovTrace.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "b7d2981999ef",
+          "ts": "00cd9d803fd8",
+          "lean": "e1c0f8408e33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:gb-residue-spectral-sum' → expected 'gb_residue_spectral_sum'; Lean declares: RootOfUnity, GBResidueSpectralSum, residueAt, gradedMarkovTrace, classical_limit_descended.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

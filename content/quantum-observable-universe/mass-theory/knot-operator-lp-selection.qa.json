@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-application/knot-operator-lp-selection.lean"
   },
   "source_hashes": {
-    "md": "b2c495cdda3c",
-    "ts": "c36feb67d654",
+    "md": "77dadeb7e965",
+    "ts": "288eb7598d29",
     "lean": "f7efd6a3d218"
   },
   "criteria": {
@@ -1807,6 +1807,22 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:knot-operator-lp-selection' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "77dadeb7e965",
+          "ts": "288eb7598d29",
+          "lean": "f7efd6a3d218"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:knot-operator-lp-selection' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-lean-compiles": [
@@ -1869,5 +1885,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

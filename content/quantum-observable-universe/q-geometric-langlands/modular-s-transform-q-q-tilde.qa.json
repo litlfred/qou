@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean"
   },
   "source_hashes": {
-    "md": "c3f8c1852ee7",
-    "ts": "e8e3ad0197f4",
+    "md": "178345be9ee6",
+    "ts": "4b3e0d6c16a3",
     "lean": "8f0cafc601f2"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/modular-s-transform-q-q-tilde.md:14: the $S$-transform realises the \"small-$q$ \u2194 large-$q$\" duality of | content/quantum-observable-universe/braids-and-knots/modular-s-transform-q-q-tilde.md:47: small-$q_0$ \u2194 root-of-unity duality flagged in the 13-driver menu | content/quantum-observable-universe/braids-and-knots/modular-s-transform-q-q-tilde.md:101: 4. **D14 \u2192 \u2705** requires Lean class `ModularSTransformQQTilde`"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/modular-s-transform-q-q-tilde.md:14: the $S$-transform realises the \"small-$q$ ↔ large-$q$\" duality of | content/quantum-observable-universe/braids-and-knots/modular-s-transform-q-q-tilde.md:47: small-$q_0$ ↔ root-of-unity duality flagged in the 13-driver menu | content/quantum-observable-universe/braids-and-knots/modular-s-transform-q-q-tilde.md:101: 4. **D14 → ✅** requires Lean class `ModularSTransformQQTilde`"
       },
       {
         "field_hash": {
@@ -1421,7 +1421,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "178345be9ee6",
+          "ts": "4b3e0d6c16a3",
+          "lean": "8f0cafc601f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:modular-s-transform-q-q-tilde' → expected 'modular_s_transform_q_q_tilde'; Lean declares: ModularSTransformQQTilde. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1482,5 +1498,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

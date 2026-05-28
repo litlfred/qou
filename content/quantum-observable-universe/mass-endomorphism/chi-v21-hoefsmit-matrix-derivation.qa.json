@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/chi-v21-hoefsmit-matrix-derivation.lean"
   },
   "source_hashes": {
-    "md": "8603e4934e51",
-    "ts": "fff326b413c3",
-    "lean": "6e948c973e92"
+    "md": "54c0130ae712",
+    "ts": "e039b868071e",
+    "lean": "9c9fe55136c1"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1176,7 +1176,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:chi-v21-hoefsmit-matrix-derivation' \u2192 expected 'chi_v21_hoefsmit_matrix_derivation'; Lean declares: hoefsmit_v21_d1, hoefsmit_v21_d2, hoefsmit_v21_b_sq, hoefsmit_v21_sigma0_trace, hoefsmit_v21_sigma1_trace.... Structural match via content."
+        "notes": "Label 'rem:chi-v21-hoefsmit-matrix-derivation' → expected 'chi_v21_hoefsmit_matrix_derivation'; Lean declares: hoefsmit_v21_d1, hoefsmit_v21_d2, hoefsmit_v21_b_sq, hoefsmit_v21_sigma0_trace, hoefsmit_v21_sigma1_trace.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "54c0130ae712",
+          "ts": "e039b868071e",
+          "lean": "9c9fe55136c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:chi-v21-hoefsmit-matrix-derivation' → expected 'chi_v21_hoefsmit_matrix_derivation'; Lean declares: hoefsmit_v21_d1, hoefsmit_v21_d2, hoefsmit_v21_b_sq, hoefsmit_v21_sigma0_trace, hoefsmit_v21_sigma1_trace.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1249,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

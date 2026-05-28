@@ -9,8 +9,8 @@
   },
   "source_hashes": {
     "md": "c30fffea882d",
-    "ts": "2346b5783531",
-    "lean": "0764d0afd90e"
+    "ts": "c85cf9a3961c",
+    "lean": "ac5442526424"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1176,7 +1176,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:bloch-wigner-mathlib-filler' \u2192 expected 'bloch_wigner_mathlib_filler'; Lean declares: BlochWigner_unit_circle, BlochWigner_figure_8_per_tetrahedron, BlochWigner_Borromean_per_octahedron, Vol_figure_8_eq_two_BW_tetrahedron, Vol_Borromean_eq_two_BW_octahedron. Structural match via content."
+        "notes": "Label 'rem:bloch-wigner-mathlib-filler' → expected 'bloch_wigner_mathlib_filler'; Lean declares: BlochWigner_unit_circle, BlochWigner_figure_8_per_tetrahedron, BlochWigner_Borromean_per_octahedron, Vol_figure_8_eq_two_BW_tetrahedron, Vol_Borromean_eq_two_BW_octahedron. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "c30fffea882d",
+          "ts": "c85cf9a3961c",
+          "lean": "ac5442526424"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:bloch-wigner-mathlib-filler' → expected 'bloch_wigner_mathlib_filler'; Lean declares: BlochWigner_unit_circle, BlochWigner_figure_8_per_tetrahedron, BlochWigner_Borromean_per_octahedron, Vol_figure_8_eq_two_BW_tetrahedron, Vol_Borromean_eq_two_BW_octahedron. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1249,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

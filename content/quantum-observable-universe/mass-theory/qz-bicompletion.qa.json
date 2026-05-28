@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/qz-bicompletion.lean"
   },
   "source_hashes": {
-    "md": "06fafa3ee38e",
-    "ts": "1dc3a7c6654d",
-    "lean": "5144a9227ddb"
+    "md": "9e07b99d518e",
+    "ts": "46fcede5a33a",
+    "lean": "52b3607193a6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1325,7 +1325,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'def:qz-bicompletion' \u2192 expected 'qz_bicompletion'; Lean declares: qPochhammerProduct, qzBigradedIdealGen, QZBicompletionEquiv, QZBicompletionElement, projectToQHabiro.... Structural match via content."
+        "notes": "Label 'def:qz-bicompletion' → expected 'qz_bicompletion'; Lean declares: qPochhammerProduct, qzBigradedIdealGen, QZBicompletionEquiv, QZBicompletionElement, projectToQHabiro.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "9e07b99d518e",
+          "ts": "46fcede5a33a",
+          "lean": "52b3607193a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'def:qz-bicompletion' → expected 'qz_bicompletion'; Lean declares: qPochhammerProduct, qzBigradedIdealGen, QZBicompletionEquiv, QZBicompletionElement, projectToQHabiro.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1388,5 +1404,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

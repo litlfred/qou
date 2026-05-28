@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/information-theory/composite-crossing-parity.lean"
   },
   "source_hashes": {
-    "md": "aad49335d404",
+    "md": "a3aedfce3249",
     "ts": "11160cd421fc",
     "lean": "8092604c1978"
   },
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:composite-crossing-parity' \u2192 expected 'composite_crossing_parity'; Lean declares: compositeCrossingNumber, crossingBudget, crossing_parity_eq_Z, even_Z_even_crossing, odd_Z_odd_crossing.... Structural match via content."
+        "notes": "Label 'prop:composite-crossing-parity' → expected 'composite_crossing_parity'; Lean declares: compositeCrossingNumber, crossingBudget, crossing_parity_eq_Z, even_Z_even_crossing, odd_Z_odd_crossing.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a3aedfce3249",
+          "ts": "11160cd421fc",
+          "lean": "8092604c1978"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:composite-crossing-parity' → expected 'composite_crossing_parity'; Lean declares: compositeCrossingNumber, crossingBudget, crossing_parity_eq_Z, even_Z_even_crossing, odd_Z_odd_crossing.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

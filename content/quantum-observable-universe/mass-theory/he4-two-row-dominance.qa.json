@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "d6f12b0cff16",
-    "ts": "96d026bf6bdd",
+    "ts": "b657830f53dd",
     "lean": "05199691ddda"
   },
   "criteria": {
@@ -1931,6 +1931,22 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Block kind 'undefined' has no provable Lean content expected."
+      },
+      {
+        "field_hash": {
+          "md": "d6f12b0cff16",
+          "ts": "b657830f53dd",
+          "lean": "05199691ddda"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Block kind 'undefined' has no provable Lean content expected."
       }
     ],
     "proof-lean-compiles": [
@@ -1993,5 +2009,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

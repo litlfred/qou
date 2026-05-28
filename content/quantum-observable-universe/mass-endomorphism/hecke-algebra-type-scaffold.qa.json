@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/hecke-algebra-type-scaffold.lean"
   },
   "source_hashes": {
-    "md": "5606b4dac5ab",
-    "ts": "609cbdcea6c2",
-    "lean": "3b9fe882592e"
+    "md": "596f9eaec479",
+    "ts": "2f7c997f7384",
+    "lean": "f9e629c88d2b"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1176,7 +1176,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:hecke-algebra-type-scaffold' \u2192 expected 'hecke_algebra_type_scaffold'; Lean declares: HeckeGen, HeckeWord, HeckeRelations, HeckeWedderburn. Structural match via content."
+        "notes": "Label 'rem:hecke-algebra-type-scaffold' → expected 'hecke_algebra_type_scaffold'; Lean declares: HeckeGen, HeckeWord, HeckeRelations, HeckeWedderburn. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "596f9eaec479",
+          "ts": "2f7c997f7384",
+          "lean": "f9e629c88d2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:hecke-algebra-type-scaffold' → expected 'hecke_algebra_type_scaffold'; Lean declares: HeckeGen, HeckeWord, HeckeRelations, HeckeWedderburn. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1249,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

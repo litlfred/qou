@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'lem:mobius-energy-frobenius-kernel' \u2192 expected 'mobius_energy_frobenius_kernel'; Lean declares: mobius_frobenius_kernel. Structural match via content."
+        "notes": "Label 'lem:mobius-energy-frobenius-kernel' → expected 'mobius_energy_frobenius_kernel'; Lean declares: mobius_frobenius_kernel. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df",
+          "lean": "0825a96e98f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'lem:mobius-energy-frobenius-kernel' → expected 'mobius_energy_frobenius_kernel'; Lean declares: mobius_frobenius_kernel. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1885,5 +1901,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

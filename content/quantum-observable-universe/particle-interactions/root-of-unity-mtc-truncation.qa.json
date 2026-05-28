@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/particle-interactions/root-of-unity-mtc-truncation.lean"
   },
   "source_hashes": {
-    "md": "1bda54085fb4",
-    "ts": "a299a92d6efb",
+    "md": "5b4a99536631",
+    "ts": "06770a74d0ed",
     "lean": "2b1065f9791d"
   },
   "criteria": {
@@ -1228,7 +1228,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "5b4a99536631",
+          "ts": "06770a74d0ed",
+          "lean": "2b1065f9791d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:root-of-unity-mtc-truncation' → expected 'root_of_unity_mtc_truncation'; Lean declares: RootOfUnityMtcTruncation. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1289,5 +1305,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "e886ad18d7fa",
     "ts": "b9a6912ee340",
-    "lean": "efe3959c69d9"
+    "lean": "10334a661ee0"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:vertex-algebra-relations' \u2192 expected 'vertex_algebra_relations'; Lean declares: R_q, q_param, q_inv_param, descartes_genus. Structural match via content."
+        "notes": "Label 'prop:vertex-algebra-relations' → expected 'vertex_algebra_relations'; Lean declares: R_q, q_param, q_inv_param, descartes_genus. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "e886ad18d7fa",
+          "ts": "b9a6912ee340",
+          "lean": "10334a661ee0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:vertex-algebra-relations' → expected 'vertex_algebra_relations'; Lean declares: R_q, q_param, q_inv_param, MarkovTrace, AlgElement.embed_succ.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

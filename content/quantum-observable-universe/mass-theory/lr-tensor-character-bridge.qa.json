@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "13121d06f6ff",
-    "ts": "0b1022083a88",
+    "ts": "83bcf365cbd0",
     "lean": "5a68c13342b2"
   },
   "criteria": {
@@ -1825,6 +1825,22 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:lr-tensor-character-bridge' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "13121d06f6ff",
+          "ts": "83bcf365cbd0",
+          "lean": "5a68c13342b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:lr-tensor-character-bridge' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-lean-compiles": [
@@ -1846,7 +1862,7 @@
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-application/lr-tensor-character-bridge.lean:57: unexpected token '\u03bb'; expected '_' or identifier | content/quantum-observable-universe/mass-application/lr-tensor-character-bridge.lean:69: unexpected token '\u03bb'; expected ')' | content/quantum-observable-universe/mass-application/lr-tensor-character-bridge.lean:79: unexpected token ']'; expected '[', '{', '|', '\u2983' or term"
+        "evidence": "content/quantum-observable-universe/mass-application/lr-tensor-character-bridge.lean:57: unexpected token 'λ'; expected '_' or identifier | content/quantum-observable-universe/mass-application/lr-tensor-character-bridge.lean:69: unexpected token 'λ'; expected ')' | content/quantum-observable-universe/mass-application/lr-tensor-character-bridge.lean:79: unexpected token ']'; expected '[', '{', '|', '⦃' or term"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

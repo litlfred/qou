@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "2a1b6160554e",
     "ts": "81b5947fae0f",
-    "lean": "f3604a53f06f"
+    "lean": "532c7423266c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:compound-beta-shell-calibration' \u2192 expected 'compound_beta_shell_calibration'; Lean declares: CompoundBetaChain, compound_beta_y_target_extraction, single_calibration_framework. Structural match via content."
+        "notes": "Label 'prop:compound-beta-shell-calibration' → expected 'compound_beta_shell_calibration'; Lean declares: CompoundBetaChain, compound_beta_y_target_extraction, single_calibration_framework. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "2a1b6160554e",
+          "ts": "81b5947fae0f",
+          "lean": "532c7423266c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:compound-beta-shell-calibration' → expected 'compound_beta_shell_calibration'; Lean declares: CompoundBetaChain, compound_beta_y_target_extraction, single_calibration_framework. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

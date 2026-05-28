@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-application/bring-trilog-imaginary-tate-rational.lean"
   },
   "source_hashes": {
-    "md": "356154afab36",
-    "ts": "761657c4c1d1",
+    "md": "7dcb26c527ff",
+    "ts": "917b23a84046",
     "lean": "317f1cbb31b5"
   },
   "criteria": {
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:bring-trilog-imaginary-tate-rational' \u2192 expected 'bring_trilog_imaginary_tate_rational'; Lean declares: im_li3_zeta5_closed_form. Structural match via content."
+        "notes": "Label 'prop:bring-trilog-imaginary-tate-rational' → expected 'bring_trilog_imaginary_tate_rational'; Lean declares: im_li3_zeta5_closed_form. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "7dcb26c527ff",
+          "ts": "917b23a84046",
+          "lean": "317f1cbb31b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:bring-trilog-imaginary-tate-rational' → expected 'bring_trilog_imaginary_tate_rational'; Lean declares: im_li3_zeta5_closed_form. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1885,5 +1901,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

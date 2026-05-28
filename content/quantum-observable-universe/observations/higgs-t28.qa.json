@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/observations/higgs-t28.lean"
   },
   "source_hashes": {
-    "md": "382fa2bff5a3",
-    "ts": "e38cab2218ba",
-    "lean": "8a4d9c286f65"
+    "md": "d2886e853b37",
+    "ts": "db20d74f6645",
+    "lean": "1f4ea609e53b"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1228,7 +1228,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "d2886e853b37",
+          "ts": "db20d74f6645",
+          "lean": "1f4ea609e53b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -1289,5 +1305,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

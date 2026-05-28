@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "23df63665d6b",
-    "ts": "3efdf5b87ac0",
+    "ts": "314830978782",
     "lean": "edb8e4cd3624"
   },
   "criteria": {
@@ -231,7 +231,25 @@
         },
         "reviewed_at": "2026-05-27"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "314830978782",
+          "lean": "edb8e4cd3624"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:frobenius-lepton-meson-bridge' → expected 'frobenius_lepton_meson_bridge'; Lean declares: h2_artin_wedderburn, h3_artin_wedderburn, h4_artin_wedderburn, two_unique_sum_of_squares, branchingH3H2.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

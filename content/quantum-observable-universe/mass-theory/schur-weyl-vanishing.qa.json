@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "03d6759b8b94",
-    "ts": "292a6537f36b",
+    "ts": "1d1418c4e9c6",
     "lean": "4375a38e25a0"
   },
   "criteria": {
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:schur-weyl-vanishing' \u2192 expected 'schur_weyl_vanishing'; Lean declares: Partition, Partition.height, schur_2var, q_hook_product, schur_weyl_weight.... Structural match via content."
+        "notes": "Label 'prop:schur-weyl-vanishing' → expected 'schur_weyl_vanishing'; Lean declares: Partition, Partition.height, schur_2var, q_hook_product, schur_weyl_weight.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "03d6759b8b94",
+          "ts": "1d1418c4e9c6",
+          "lean": "4375a38e25a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:schur-weyl-vanishing' → expected 'schur_weyl_vanishing'; Lean declares: Partition, Partition.height, schur_2var, q_hook_product, schur_weyl_weight.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

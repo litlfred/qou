@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean"
   },
   "source_hashes": {
-    "md": "3bb5ffe179d4",
+    "md": "3dc0b1110bb7",
     "ts": "b115e5193de7",
-    "lean": "72848b2298f0"
+    "lean": "45c20088ab4f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1825,6 +1825,22 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:hydrogen-shell-writhe' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "3dc0b1110bb7",
+          "ts": "b115e5193de7",
+          "lean": "45c20088ab4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:hydrogen-shell-writhe' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

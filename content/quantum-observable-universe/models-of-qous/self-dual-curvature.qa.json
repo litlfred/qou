@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "3a3213e8c26f",
     "ts": "c54e1ba3ab8e",
-    "lean": "4a5cbd0c2361"
+    "lean": "8556f828205e"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1141,6 +1141,22 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'ex:self-dual-curvature' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "3a3213e8c26f",
+          "ts": "c54e1ba3ab8e",
+          "lean": "8556f828205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'ex:self-dual-curvature' aligns with Lean declaration. Sorry-free."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1197,5 +1213,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

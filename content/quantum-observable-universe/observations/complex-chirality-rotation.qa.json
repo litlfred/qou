@@ -9,8 +9,8 @@
   },
   "source_hashes": {
     "md": "7245ed8770ad",
-    "ts": "d5e9005e7993",
-    "lean": "a1716b984a89"
+    "ts": "7f0ae9644dcd",
+    "lean": "d386697fbe5b"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1228,7 +1228,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "7245ed8770ad",
+          "ts": "7f0ae9644dcd",
+          "lean": "d386697fbe5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:complex-chirality-rotation' → expected 'complex_chirality_rotation'; Lean declares: ComplexChiralityRotation, complex_chirality_rotation_conjecture. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1291,5 +1307,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

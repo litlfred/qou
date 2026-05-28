@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "bd91e8fefaee",
     "ts": "4921fc30d1e6",
-    "lean": "a92bad48c802"
+    "lean": "921c6453f2ec"
   },
   "criteria": {
     "voice-status-leak": [
@@ -147,7 +147,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "minor",
-        "evidence": "quantum-observable-universe/braids-and-knots/q-zero-complex-extension.ts:9: title \"The pre-Archimedean substrate is polymorphic in its base ring: specializing to $R = \\\\mathbb{C}$ wit\" \u2014 first-person aside in the title"
+        "evidence": "quantum-observable-universe/braids-and-knots/q-zero-complex-extension.ts:9: title \"The pre-Archimedean substrate is polymorphic in its base ring: specializing to $R = \\\\mathbb{C}$ wit\" — first-person aside in the title"
       },
       {
         "field_hash": {
@@ -961,7 +961,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/q-zero-complex-extension.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner \u2014 demote to conjecture or add CAL-4 banner"
+        "evidence": "quantum-observable-universe/braids-and-knots/q-zero-complex-extension.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner — demote to conjecture or add CAL-4 banner"
       },
       {
         "field_hash": {
@@ -980,7 +980,7 @@
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/q-zero-complex-extension.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner \u2014 demote to conjecture or add CAL-4 banner"
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/q-zero-complex-extension.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner — demote to conjecture or add CAL-4 banner"
       }
     ],
     "compute-prop-has-probe": [
@@ -1709,7 +1709,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:q-zero-complex-extension' \u2192 expected 'q_zero_complex_extension'; Lean declares: complex_q_is_unit, complex_q_ne_zero. Structural match via content."
+        "notes": "Label 'prop:q-zero-complex-extension' → expected 'q_zero_complex_extension'; Lean declares: complex_q_is_unit, complex_q_ne_zero. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "bd91e8fefaee",
+          "ts": "4921fc30d1e6",
+          "lean": "921c6453f2ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:q-zero-complex-extension' → expected 'q_zero_complex_extension'; Lean declares: complex_q_is_unit, complex_q_ne_zero. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1772,5 +1788,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

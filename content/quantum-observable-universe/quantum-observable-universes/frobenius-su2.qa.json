@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "85b0c4bca98f",
     "ts": "50d470b5c468",
-    "lean": "f46381117c08"
+    "lean": "d6a3200d3b66"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1140,7 +1140,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'ex:frobenius-su2' \u2192 expected 'frobenius_su2'; Lean declares: SU2FrobeniusData, su2Frobenius. Structural match via content."
+        "notes": "Label 'ex:frobenius-su2' → expected 'frobenius_su2'; Lean declares: SU2FrobeniusData, su2Frobenius. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'ex:frobenius-su2' → expected 'frobenius_su2'; Lean declares: SU2FrobeniusData, su2Frobenius. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1197,5 +1213,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

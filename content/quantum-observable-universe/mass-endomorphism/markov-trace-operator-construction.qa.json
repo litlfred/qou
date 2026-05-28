@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/markov-trace-operator-construction.lean"
   },
   "source_hashes": {
-    "md": "ca5084b48ed9",
-    "ts": "690967efc662",
-    "lean": "12838040ff63"
+    "md": "d477537f8d17",
+    "ts": "6ad389d00a3f",
+    "lean": "d210f24ba2a7"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1176,7 +1176,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:markov-trace-operator-construction' \u2192 expected 'markov_trace_operator_construction'; Lean declares: HnHilbertRep, HnInductiveEmbedding, MarkovTraceVNFactor. Structural match via content."
+        "notes": "Label 'rem:markov-trace-operator-construction' → expected 'markov_trace_operator_construction'; Lean declares: HnHilbertRep, HnInductiveEmbedding, MarkovTraceVNFactor. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "d477537f8d17",
+          "ts": "6ad389d00a3f",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:markov-trace-operator-construction' → expected 'markov_trace_operator_construction'; Lean declares: HnHilbertRep, HnInductiveEmbedding, MarkovTraceVNFactor. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1249,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

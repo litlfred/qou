@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "9f209e3b6a4d",
     "ts": "35e9fb23b3ac",
-    "lean": "28d766d84e9e"
+    "lean": "209b88fdb7cc"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:categorical-lagrangian-unique' \u2192 expected 'categorical_lagrangian_unique'; Lean declares: CategoricalLagrangian.unique. Structural match via content."
+        "notes": "Label 'prop:categorical-lagrangian-unique' → expected 'categorical_lagrangian_unique'; Lean declares: CategoricalLagrangian.unique. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "9f209e3b6a4d",
+          "ts": "35e9fb23b3ac",
+          "lean": "209b88fdb7cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:categorical-lagrangian-unique' → expected 'categorical_lagrangian_unique'; Lean declares: CategoricalLagrangian.unique_axiom, CategoricalLagrangian.unique. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

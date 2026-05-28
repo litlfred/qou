@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/kashaev-density-equals-sdp-multiplicity.lean"
   },
   "source_hashes": {
-    "md": "9c3e3c9807d5",
-    "ts": "86dcb6844461",
+    "md": "82902b0518c9",
+    "ts": "9100c42e304a",
     "lean": "2f93c5f03be4"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:34: | \u00b2H (D)  | knot $6_2$        | 1 | 1 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:35: | \u00b3H (T)  | knot $8_{11}$     | 2 | 2 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:36: | \u00b3He     | link $L_{6a4}$    | 2 | 2 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:38: The \u2074He case uses the magic $A \\cdot 8G$ closure rule rather than a | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:64: extrapolated to \u2074He with explicit caveat. The Lean class axiomatises"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:34: | ²H (D)  | knot $6_2$        | 1 | 1 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:35: | ³H (T)  | knot $8_{11}$     | 2 | 2 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:36: | ³He     | link $L_{6a4}$    | 2 | 2 | | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:38: The ⁴He case uses the magic $A \\cdot 8G$ closure rule rather than a | content/quantum-observable-universe/braids-and-knots/kashaev-density-equals-sdp-multiplicity.md:64: extrapolated to ⁴He with explicit caveat. The Lean class axiomatises"
       },
       {
         "field_hash": {
@@ -1427,7 +1427,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "82902b0518c9",
+          "ts": "9100c42e304a",
+          "lean": "2f93c5f03be4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:kashaev-density-equals-sdp-multiplicity' → expected 'kashaev_density_equals_sdp_multiplicity'; Lean declares: KashaevDensityEqualsSdpMultiplicity. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1488,5 +1504,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

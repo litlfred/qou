@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "232407ffbc20",
     "ts": "eb93ca5a463f",
-    "lean": "a2cf56a44e70"
+    "lean": "18a4f40bd6e6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1140,7 +1140,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'ex:quantum-universe-su2' \u2192 expected 'quantum_universe_su2'; Lean declares: SU2QuantumUniverseData, su2_tannaka_faithful, su2QuantumUniverse, HaarFrobeniusData, su2HaarFrobenius.... Structural match via content."
+        "notes": "Label 'ex:quantum-universe-su2' → expected 'quantum_universe_su2'; Lean declares: SU2QuantumUniverseData, su2_tannaka_faithful, su2QuantumUniverse, HaarFrobeniusData, su2HaarFrobenius.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "232407ffbc20",
+          "ts": "eb93ca5a463f",
+          "lean": "18a4f40bd6e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'ex:quantum-universe-su2' → expected 'quantum_universe_su2'; Lean declares: SU2QuantumUniverseData, su2_tannaka_faithful, su2QuantumUniverse, HaarFrobeniusData, su2HaarFrobenius.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1197,5 +1213,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

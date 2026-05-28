@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/kashaev-volume-conjecture.lean"
   },
   "source_hashes": {
-    "md": "d820e6a05ec3",
-    "ts": "bc4004bd6449",
-    "lean": "44b618692790"
+    "md": "9b18409335dd",
+    "ts": "5813a7ce9223",
+    "lean": "c840fbbf5330"
   },
   "criteria": {
     "voice-status-leak": [
@@ -112,7 +112,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.md:1: > **\u26a0\ufe0f SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
+        "evidence": "quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.md:1: > **⚠️ SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
       },
       {
         "field_hash": {
@@ -1612,7 +1612,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "9b18409335dd",
+          "ts": "5813a7ce9223",
+          "lean": "c840fbbf5330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
       }
     ],
     "proof-lean-compiles": [
@@ -1675,5 +1691,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-application/lepton-bring-surface-h3-3channel.lean"
   },
   "source_hashes": {
-    "md": "3bb52993492e",
-    "ts": "e5fadc371edd",
-    "lean": "bd54685a420b"
+    "md": "42da748c2888",
+    "ts": "23ff083377cf",
+    "lean": "07fa854bfc76"
   },
   "criteria": {
     "voice-status-leak": [
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:33: > **\u26a0\ufe0f T6 status \u2014 gap (a) RESOLVED; gap (c) IMPLICATED.** This | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:38: > equals **(3/2) \u00d7 (1/\u210f_q\u00b2)**, structurally identical to the | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:63: fixes the 3-CAL \u2194 3-channel mapping. | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:131: ### Lepton \u2194 channel mapping (conjectural) | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:135: - sym (highest weight, $+q$ only) \u2194 CAL-2 $q_0$ (substrate deformation)"
+        "evidence": "quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:33: > **⚠️ T6 status — gap (a) RESOLVED; gap (c) IMPLICATED.** This | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:38: > equals **(3/2) × (1/ℏ_q²)**, structurally identical to the | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:63: fixes the 3-CAL ↔ 3-channel mapping. | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:131: ### Lepton ↔ channel mapping (conjectural) | quantum-observable-universe/braids-and-knots/lepton-bring-surface-h3-3channel.md:135: - sym (highest weight, $+q$ only) ↔ CAL-2 $q_0$ (substrate deformation)"
       },
       {
         "field_hash": {
@@ -1902,7 +1902,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:lepton-bring-surface-h3-3channel' \u2192 expected 'lepton_bring_surface_h3_3channel'; Lean declares: W_1D_irrep, W_STD, hecke_ab, hecke_ab_correct, lepton_V_hat_h3_3channel.... Structural match via content."
+        "notes": "Label 'prop:lepton-bring-surface-h3-3channel' → expected 'lepton_bring_surface_h3_3channel'; Lean declares: W_1D_irrep, W_STD, hecke_ab, hecke_ab_correct, lepton_V_hat_h3_3channel.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "42da748c2888",
+          "ts": "23ff083377cf",
+          "lean": "07fa854bfc76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:lepton-bring-surface-h3-3channel' → expected 'lepton_bring_surface_h3_3channel'; Lean declares: W_1D_irrep, W_STD, hecke_ab, hecke_ab_correct, lepton_V_hat_h3_3channel.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1965,5 +1981,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

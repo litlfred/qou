@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "776e3bc70196",
     "ts": "a8d802909243",
-    "lean": "523c97f35efe"
+    "lean": "4efff3d5fc0f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1826,6 +1826,23 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
+      },
+      {
+        "field_hash": {
+          "md": "776e3bc70196",
+          "ts": "a8d802909243",
+          "lean": "4efff3d5fc0f"
+        },
+        "result": "warn",
+        "evidence": "Block kind is 'theorem' but Lean has only def/noncomputable def, no theorem/lemma. Decls: CategoricalReeb.fromWeightDecomposition, categorical_reeb_exists",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
       }
     ],
     "proof-lean-compiles": [
@@ -1888,5 +1905,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

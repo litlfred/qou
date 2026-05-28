@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean"
   },
   "source_hashes": {
-    "md": "a4b541644061",
-    "ts": "e943c0523fae",
-    "lean": "baa97c01a97d"
+    "md": "1ec4c89a7c40",
+    "ts": "f5b2d9c4578c",
+    "lean": "6aa8e5f741bf"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1317,7 +1317,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "1ec4c89a7c40",
+          "ts": "f5b2d9c4578c",
+          "lean": "6aa8e5f741bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:rho-prefactor-structural' → expected 'rho_prefactor_structural'; Lean declares: RhoPrefactorStructural, hook_length_5_1, hook_length_8_1, hook_length_6_3, q_int_placeholder.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1380,5 +1396,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

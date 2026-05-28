@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "e5b798df757c",
-    "ts": "f09c54daa031",
+    "ts": "f202aedeb001",
     "lean": "93add55a58f1"
   },
   "criteria": {
@@ -231,7 +231,25 @@
         },
         "reviewed_at": "2026-05-27"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e5b798df757c",
+          "ts": "f202aedeb001",
+          "lean": "93add55a58f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:lepton-meson-torus-knot-dictionary' → expected 'lepton_meson_torus_knot_dictionary'; Lean declares: leptonTorusKnotIndex, mesonCrossingCount, lepton_meson_crossing_match, meson_crossing_is_sum. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

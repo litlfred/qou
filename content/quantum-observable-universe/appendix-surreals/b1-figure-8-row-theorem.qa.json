@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.lean"
   },
   "source_hashes": {
-    "md": "6f58b6f42111",
-    "ts": "9e57553f55fb",
+    "md": "31353719f75d",
+    "ts": "bbb5148740be",
     "lean": "b8579c75ae95"
   },
   "criteria": {
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:b1-figure-8-row-theorem' \u2192 expected 'b1_figure_8_row_theorem'; Lean declares: b1_figure_8_row. Structural match via content."
+        "notes": "Label 'prop:b1-figure-8-row-theorem' → expected 'b1_figure_8_row_theorem'; Lean declares: b1_figure_8_row. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "31353719f75d",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:b1-figure-8-row-theorem' → expected 'b1_figure_8_row_theorem'; Lean declares: b1_figure_8_row. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1885,5 +1901,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

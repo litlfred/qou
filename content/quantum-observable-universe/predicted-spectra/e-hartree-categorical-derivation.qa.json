@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean"
   },
   "source_hashes": {
-    "md": "68792ab7c0c4",
-    "ts": "2a5d58739ac8",
-    "lean": "9c5e81ae9ac0"
+    "md": "4b51be189f2c",
+    "ts": "645458479801",
+    "lean": "16317b916710"
   },
   "criteria": {
     "compute-lp-dual-present": [
@@ -164,7 +164,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.md:1: > **\u26a0\ufe0f SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
+        "evidence": "quantum-observable-universe/archimedean-universe/e-hartree-categorical-derivation.md:1: > **⚠️ SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
       },
       {
         "field_hash": {
@@ -1634,7 +1634,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "4b51be189f2c",
+          "ts": "645458479801",
+          "lean": "16317b916710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:e-hartree-categorical-derivation' → expected 'e_hartree_categorical_derivation'; Lean declares: R_q, EHartreeCategoricalDerivation, bohr_radius_from_hartree, force_carrier_from_hartree, hartree_dimensional_consistency. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1697,5 +1713,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

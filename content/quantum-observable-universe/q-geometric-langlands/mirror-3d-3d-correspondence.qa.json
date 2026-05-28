@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean"
   },
   "source_hashes": {
-    "md": "6a43b912c151",
-    "ts": "e56e1efb89ef",
+    "md": "2b305515ce6c",
+    "ts": "bad83d5644e9",
     "lean": "aace1955ae79"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/mirror-3d-3d-correspondence.md:48: 3. D18 \u2192 \u2705 is a very long horizon \u2014 requires significant"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/mirror-3d-3d-correspondence.md:48: 3. D18 → ✅ is a very long horizon — requires significant"
       },
       {
         "field_hash": {
@@ -1421,7 +1421,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "2b305515ce6c",
+          "ts": "bad83d5644e9",
+          "lean": "aace1955ae79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:mirror-3d-3d-correspondence' → expected 'mirror_3d_3d_correspondence'; Lean declares: Mirror3d3dCorrespondence. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1482,5 +1498,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

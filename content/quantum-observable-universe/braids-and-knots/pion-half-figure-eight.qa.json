@@ -1,0 +1,36 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:pion-half-figure-eight",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/pion-half-figure-eight.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/pion-half-figure-eight.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/pion-half-figure-eight.lean"
+  },
+  "source_hashes": {
+    "md": "c33e84f16221",
+    "ts": "b233f5d6e158",
+    "lean": "22bddd4dc956"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c33e84f16221",
+          "ts": "b233f5d6e158",
+          "lean": "22bddd4dc956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:pion-half-figure-eight' → expected 'pion_half_figure_eight'; Lean declares: pion_eq_half_figure_eight_phase, figure_eight_is_square_of_half, pion_det_one, half_41_det_one. Structural match via content."
+      }
+    ]
+  },
+  "updated_at": "2026-05-28T15:41:31.003Z"
+}

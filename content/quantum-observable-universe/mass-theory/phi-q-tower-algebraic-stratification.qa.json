@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/phi-q-tower-algebraic-stratification.lean"
   },
   "source_hashes": {
-    "md": "4db2cac2f0ac",
-    "ts": "f18382b09b7a",
+    "md": "1b594a1be1ab",
+    "ts": "f02e1210c1da",
     "lean": "d982c0fe0f12"
   },
   "criteria": {
@@ -112,7 +112,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.md:1: > **\u26a0\ufe0f SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
+        "evidence": "quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.md:1: > **⚠️ SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
       },
       {
         "field_hash": {
@@ -2209,6 +2209,22 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:phi-q-tower-algebraic-stratification' aligns with Lean declaration. Has sorry (cited)."
+      },
+      {
+        "field_hash": {
+          "md": "1b594a1be1ab",
+          "ts": "f02e1210c1da",
+          "lean": "d982c0fe0f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:phi-q-tower-algebraic-stratification' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-lean-compiles": [
@@ -2269,5 +2285,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

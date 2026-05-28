@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/q-geometric-langlands/quantum-langlands-dual.lean"
   },
   "source_hashes": {
-    "md": "9e5f2dd2c527",
-    "ts": "38f106f090b4",
+    "md": "704cd6b7a962",
+    "ts": "f261b496fcb8",
     "lean": "6af70afd4228"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:17: - *For non-simply-laced types (Type B, C, D, G\u2082, F\u2084), gives a | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:18: genuinely-distinct dual algebra (Type B \u2194 Type C, etc.) \u2014 this | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:32: (where Langlands genuinely flips Type B \u2194 Type C). | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:34: antisymmetric mass-tower decomposition: matter \u2194 Langlands-dual | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:47: Langlands \u00d7 bar action might be the relevant duality for the"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:17: - *For non-simply-laced types (Type B, C, D, G₂, F₄), gives a | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:18: genuinely-distinct dual algebra (Type B ↔ Type C, etc.) — this | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:32: (where Langlands genuinely flips Type B ↔ Type C). | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:34: antisymmetric mass-tower decomposition: matter ↔ Langlands-dual | content/quantum-observable-universe/braids-and-knots/quantum-langlands-dual.md:47: Langlands × bar action might be the relevant duality for the"
       },
       {
         "field_hash": {
@@ -1421,7 +1421,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "704cd6b7a962",
+          "ts": "f261b496fcb8",
+          "lean": "6af70afd4228"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:quantum-langlands-dual' → expected 'quantum_langlands_dual'; Lean declares: QuantumLanglandsDual. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1482,5 +1498,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

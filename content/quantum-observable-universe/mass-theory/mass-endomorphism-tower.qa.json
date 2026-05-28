@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-application/mass-endomorphism-tower.lean"
   },
   "source_hashes": {
-    "md": "9e2425732e18",
-    "ts": "2dc33456752b",
+    "md": "44c198c050ee",
+    "ts": "3d74b88a54df",
     "lean": "8721a857cf8b"
   },
   "criteria": {
@@ -112,7 +112,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md:1: > **\u26a0\ufe0f TOP-OF-FILE SUPERSEDED-$\\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**"
+        "evidence": "quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md:1: > **⚠️ TOP-OF-FILE SUPERSEDED-$\\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**"
       },
       {
         "field_hash": {
@@ -2210,6 +2210,23 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
+      },
+      {
+        "field_hash": {
+          "md": "44c198c050ee",
+          "ts": "3d74b88a54df",
+          "lean": "8721a857cf8b"
+        },
+        "result": "warn",
+        "evidence": "Block kind is 'proposition' but Lean has only def/noncomputable def, no theorem/lemma. Decls: quantumDilogPoly, markovParamPoly, massPoly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
       }
     ],
     "proof-lean-compiles": [
@@ -2270,5 +2287,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

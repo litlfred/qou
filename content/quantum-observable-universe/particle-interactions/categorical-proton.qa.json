@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/categorical-proton.lean"
   },
   "source_hashes": {
-    "md": "232e6dd58508",
+    "md": "effbb52fa63c",
     "ts": "140f65c15204",
-    "lean": "7da2a4223c98"
+    "lean": "5ba09130ec16"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1325,7 +1325,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'def:categorical-proton' \u2192 expected 'categorical_proton'; Lean declares: CategoricalProton, q\u2080, q\u2080_gt_one, proton_mass, proton_mass_from_substrate. Structural match via content."
+        "notes": "Label 'def:categorical-proton' → expected 'categorical_proton'; Lean declares: CategoricalProton, q₀, q₀_gt_one, proton_mass, proton_mass_from_substrate. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "effbb52fa63c",
+          "ts": "140f65c15204",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'def:categorical-proton' → expected 'categorical_proton'; Lean declares: CategoricalProton, q, q, proton_mass, proton_mass_from_substrate_axiom.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1388,5 +1404,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

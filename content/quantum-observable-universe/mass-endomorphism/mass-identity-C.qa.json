@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "24072c0f8b25",
     "ts": "b2a2095094eb",
-    "lean": "3e49c56c1e57"
+    "lean": "0e68c60f859f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'cor:mass-identity-C' \u2192 expected 'mass_identity_C'; Lean declares: ArchimedeanMassData, mass_is_holonomy. Structural match via content."
+        "notes": "Label 'cor:mass-identity-C' → expected 'mass_identity_C'; Lean declares: ArchimedeanMassData, mass_is_holonomy. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'cor:mass-identity-C' → expected 'mass_identity_C'; Lean declares: ArchimedeanMassData, nonabelian_stokes, categorical_equals_multiplicative_integral, mass_is_holonomy. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

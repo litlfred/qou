@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a4b4926f0b70",
     "ts": "843795500e26",
-    "lean": "204ed14ec224"
+    "lean": "d0d362200bb9"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:genus-maximal-descent' \u2192 expected 'genus_maximal_descent'; Lean declares: GenusMaximalDescent, genus_eq_four, hurwitz_bound_genus_four, s5_within_hurwitz, genus_unique. Structural match via content."
+        "notes": "Label 'prop:genus-maximal-descent' → expected 'genus_maximal_descent'; Lean declares: GenusMaximalDescent, genus_eq_four, hurwitz_bound_genus_four, s5_within_hurwitz, genus_unique. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a4b4926f0b70",
+          "ts": "843795500e26",
+          "lean": "d0d362200bb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:genus-maximal-descent' → expected 'genus_maximal_descent'; Lean declares: GenusMaximalDescent, genus_eq_four, hurwitz_bound_genus_four, s5_within_hurwitz, genus_unique. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

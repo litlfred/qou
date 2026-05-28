@@ -1082,7 +1082,7 @@
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
+        "evidence": "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1103,7 +1103,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/partition-sum-proton-residual.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/partition-sum-proton-residual.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       },
       {
         "field_hash": {
@@ -1122,7 +1122,7 @@
         "reviewed_at": "2026-05-25T23:28:35.242Z",
         "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
+        "evidence": "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1830,7 +1830,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:partition-sum-proton-residual' \u2192 expected 'partition_sum_proton_residual'; Lean declares: invDimPartitionSum, protonTowerMass, protonCodata, electronMass, qSubstrate.... Structural match via content."
+        "notes": "Label 'prop:partition-sum-proton-residual' → expected 'partition_sum_proton_residual'; Lean declares: invDimPartitionSum, protonTowerMass, protonCodata, electronMass, qSubstrate.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "30268cfcb1ee",
+          "ts": "e56ac6a9a22d",
+          "lean": "728ce54385a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:partition-sum-proton-residual' → expected 'partition_sum_proton_residual'; Lean declares: invDimPartitionSum, protonTowerMass, protonCodata, electronMass, qSubstrate.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1893,5 +1909,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

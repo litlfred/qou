@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-application/atom-knot-mass-derivation-proof.lean"
   },
   "source_hashes": {
-    "md": "0a84322fd379",
-    "ts": "f1929d2638b2",
+    "md": "f210848891ae",
+    "ts": "106ca55e0be6",
     "lean": "e6a07a88c8ce"
   },
   "criteria": {
@@ -1140,7 +1140,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prf:atom-knot-mass-derivation' \u2192 expected 'prf:atom_knot_mass_derivation'; Lean declares: categorical_leg_to_markov_trace, archimedean_realization_to_mev, post_archimedean_naming_borrowed, atom_knot_mass_derivation_proof. Structural match via content."
+        "notes": "Label 'prf:atom-knot-mass-derivation' → expected 'prf:atom_knot_mass_derivation'; Lean declares: categorical_leg_to_markov_trace, archimedean_realization_to_mev, post_archimedean_naming_borrowed, atom_knot_mass_derivation_proof. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "f210848891ae",
+          "ts": "106ca55e0be6",
+          "lean": "e6a07a88c8ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prf:atom-knot-mass-derivation' → expected 'prf:atom_knot_mass_derivation'; Lean declares: categorical_leg_to_markov_trace, archimedean_realization_to_mev, post_archimedean_naming_borrowed, atom_knot_mass_derivation_proof. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1197,5 +1213,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

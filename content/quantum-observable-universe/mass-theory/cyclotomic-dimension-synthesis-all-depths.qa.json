@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-application/cyclotomic-dimension-synthesis-all-depths.lean"
   },
   "source_hashes": {
-    "md": "12c54e44394c",
-    "ts": "0bcccaff8983",
+    "md": "4e76f4347021",
+    "ts": "c7d34067c0e3",
     "lean": "dbbcfe40d1e6"
   },
   "criteria": {
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:cyclotomic-dimension-synthesis-all-depths' \u2192 expected 'cyclotomic_dimension_synthesis_all_depths'; Lean declares: dimension_synthesis_all_depths. Structural match via content."
+        "notes": "Label 'prop:cyclotomic-dimension-synthesis-all-depths' → expected 'cyclotomic_dimension_synthesis_all_depths'; Lean declares: dimension_synthesis_all_depths. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "4e76f4347021",
+          "ts": "c7d34067c0e3",
+          "lean": "dbbcfe40d1e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:cyclotomic-dimension-synthesis-all-depths' → expected 'cyclotomic_dimension_synthesis_all_depths'; Lean declares: dimension_synthesis_all_depths. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1885,5 +1901,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

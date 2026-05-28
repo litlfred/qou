@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.lean"
   },
   "source_hashes": {
-    "md": "2089cf44a15a",
-    "ts": "09be3efc459b",
+    "md": "94a2980a7746",
+    "ts": "58676280f2a3",
     "lean": "4bac409f7a4e"
   },
   "criteria": {
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:two-filtration-bridge-small-cases' \u2192 expected 'two_filtration_bridge_small_cases'; Lean declares: bridge_small_cases. Structural match via content."
+        "notes": "Label 'prop:two-filtration-bridge-small-cases' → expected 'two_filtration_bridge_small_cases'; Lean declares: bridge_small_cases. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "94a2980a7746",
+          "ts": "58676280f2a3",
+          "lean": "4bac409f7a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:two-filtration-bridge-small-cases' → expected 'two_filtration_bridge_small_cases'; Lean declares: bridge_small_cases. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1885,5 +1901,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

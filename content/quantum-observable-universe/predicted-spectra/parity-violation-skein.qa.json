@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "9da3e2a02cb6",
     "ts": "c65dce94a49d",
-    "lean": "b8a14d6a3696"
+    "lean": "bb2dbdee56ac"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:parity-violation-skein' \u2192 expected 'parity_violation_skein'; Lean declares: R_q, q_param, q_inv_param, SkeinCoefficients, SkeinCoefficients.parityInvariant.... Structural match via content."
+        "notes": "Label 'prop:parity-violation-skein' → expected 'parity_violation_skein'; Lean declares: R_q, q_param, q_inv_param, SkeinCoefficients, SkeinCoefficients.parityInvariant.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "9da3e2a02cb6",
+          "ts": "c65dce94a49d",
+          "lean": "bb2dbdee56ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:parity-violation-skein' → expected 'parity_violation_skein'; Lean declares: R_q, q_param, q_inv_param, SkeinCoefficients, SkeinCoefficients.parityInvariant.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

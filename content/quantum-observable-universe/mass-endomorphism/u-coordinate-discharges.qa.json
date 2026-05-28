@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/u-coordinate-discharges.lean"
   },
   "source_hashes": {
-    "md": "5d966fb2750e",
-    "ts": "58973cb79503",
-    "lean": "a23da0006ab9"
+    "md": "f901d25db474",
+    "ts": "5f3854e81e12",
+    "lean": "c7b59057b7cf"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1176,7 +1176,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:u-coordinate-discharges' \u2192 expected 'u_coordinate_discharges'; Lean declares: uCoord, hoefsmit_b_sq_in_u, dimQ_V21_sq_in_u, hecke_root_sum_times_q, sigma_eigval_V3_sq_eq_u.... Structural match via content."
+        "notes": "Label 'rem:u-coordinate-discharges' → expected 'u_coordinate_discharges'; Lean declares: uCoord, hoefsmit_b_sq_in_u, dimQ_V21_sq_in_u, hecke_root_sum_times_q, sigma_eigval_V3_sq_eq_u.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "f901d25db474",
+          "ts": "5f3854e81e12",
+          "lean": "c7b59057b7cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:u-coordinate-discharges' → expected 'u_coordinate_discharges'; Lean declares: uCoord, hoefsmit_b_sq_in_u, dimQ_V21_sq_in_u, hecke_root_sum_times_q, sigma_eigval_V3_sq_eq_u.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1249,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

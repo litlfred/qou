@@ -13,7 +13,7 @@
  */
 
 import { readFileSync, existsSync } from "fs";
-import { resolve, dirname, basename, relative } from "path";
+import { resolve, dirname, basename, relative as pathRelative } from "path";
 import { fileURLToPath } from "url";
 import {
   hashBlockFiles,
@@ -275,15 +275,15 @@ async function main() {
   let skipped_no_lean = 0;
 
   for (const block of walkBlocks(rootPath)) {
-    if (!block.lean || !existsSync(resolve(REPO_ROOT, "content", block.lean))) {
+    if (!block.lean || !existsSync(block.lean)) {
       skipped_no_lean++;
       continue;
     }
 
-    const mdPath = block.md ? resolve(REPO_ROOT, "content", block.md) : undefined;
-    const tsPath = resolve(REPO_ROOT, "content", block.ts);
-    const leanPath = resolve(REPO_ROOT, "content", block.lean);
-    const qaPath = resolve(REPO_ROOT, "content", block.qa);
+    const mdPath = block.md;
+    const tsPath = block.ts;
+    const leanPath = block.lean;
+    const qaPath = block.root + ".qa.json";
 
     if (!mdPath || !existsSync(mdPath)) {
       skipped_no_lean++;
@@ -334,9 +334,9 @@ async function main() {
         label,
         kind,
         paths: {
-          ts: block.ts,
-          ...(block.md ? { md: block.md } : {}),
-          ...(block.lean ? { lean: block.lean } : {}),
+          ts: pathRelative(REPO_ROOT, tsPath),
+          ...(mdPath ? { md: pathRelative(REPO_ROOT, mdPath) } : {}),
+          ...(leanPath ? { lean: pathRelative(REPO_ROOT, leanPath) } : {}),
         },
         source_hashes: currentHashes,
         criteria: {},
@@ -357,7 +357,7 @@ async function main() {
       result: check.result,
       notes: check.notes,
       evidence: check.evidence,
-      qa_path: block.qa,
+      qa_path: pathRelative(REPO_ROOT, qaPath),
     });
     written++;
   }

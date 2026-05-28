@@ -225,7 +225,25 @@
         "severity": "critical",
         "evidence": "content/unital-groebner-bases/unital-groebner-bases-chapter/monomial-basis.lean:25: invalid 'import' command, it must be used in the beginning of the file"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "ff7e39018eae",
+          "ts": "7b0af54fcf7d",
+          "lean": "20c6e51474d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:35.986Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'def:monomial-basis' → expected 'monomial_basis'; Lean declares: Monomial, AlgElement, AlgElement.zero, AlgElement.isZero. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:35.986Z"
 }

@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/clausen-function-mathlib-filler.lean"
   },
   "source_hashes": {
-    "md": "45b6802abc3b",
-    "ts": "827fe91b4e3e",
-    "lean": "f54b003a2556"
+    "md": "b2b98f69ac1f",
+    "ts": "a08ae386fcdc",
+    "lean": "4640f68b5b49"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1176,7 +1176,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:clausen-function-mathlib-filler' \u2192 expected 'clausen_function_mathlib_filler'; Lean declares: Cl_2, Catalan_constant, Vol_figure_8, Vol_Borromean, catalan_constant_eq_cl_2_pi_over_2.... Structural match via content."
+        "notes": "Label 'rem:clausen-function-mathlib-filler' → expected 'clausen_function_mathlib_filler'; Lean declares: Cl_2, Catalan_constant, Vol_figure_8, Vol_Borromean, catalan_constant_eq_cl_2_pi_over_2.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "b2b98f69ac1f",
+          "ts": "a08ae386fcdc",
+          "lean": "4640f68b5b49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:clausen-function-mathlib-filler' → expected 'clausen_function_mathlib_filler'; Lean declares: Cl_2, Catalan_constant, Vol_figure_8, Vol_Borromean, catalan_constant_eq_cl_2_pi_over_2.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1249,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

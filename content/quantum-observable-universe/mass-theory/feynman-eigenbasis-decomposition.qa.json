@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'lem:feynman-eigenbasis-decomposition' \u2192 expected 'feynman_eigenbasis_decomposition'; Lean declares: eigenbasis_decomposition. Structural match via content."
+        "notes": "Label 'lem:feynman-eigenbasis-decomposition' → expected 'feynman_eigenbasis_decomposition'; Lean declares: eigenbasis_decomposition. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "72b143aa4e84",
+          "ts": "48339defe7d8",
+          "lean": "9a535e920808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'lem:feynman-eigenbasis-decomposition' → expected 'feynman_eigenbasis_decomposition'; Lean declares: eigenbasis_decomposition. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1885,5 +1901,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }

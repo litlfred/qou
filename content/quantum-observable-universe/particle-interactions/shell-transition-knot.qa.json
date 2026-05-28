@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean"
   },
   "source_hashes": {
-    "md": "6f3bc2d7ed51",
+    "md": "2056a50a0272",
     "ts": "407d9a2c1f01",
     "lean": "0f6ef372d8ec"
   },
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:shell-transition-knot' \u2192 expected 'shell_transition_knot'; Lean declares: hoShellSize, hoCumulative, hoCumulative_eq_sum, ho_closures, shellTransitionStates.... Structural match via content."
+        "notes": "Label 'prop:shell-transition-knot' → expected 'shell_transition_knot'; Lean declares: hoShellSize, hoCumulative, hoCumulative_eq_sum, ho_closures, shellTransitionStates.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "2056a50a0272",
+          "ts": "407d9a2c1f01",
+          "lean": "0f6ef372d8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:shell-transition-knot' → expected 'shell_transition_knot'; Lean declares: hoShellSize, hoCumulative, hoCumulative_eq_sum, ho_closures, shellTransitionStates.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:40:01.326Z"
 }

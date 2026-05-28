@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.lean"
   },
   "source_hashes": {
-    "md": "6c110c2670db",
-    "ts": "3e70febdc002",
+    "md": "0b65867943d8",
+    "ts": "ca5998a552c5",
     "lean": "4db2dd86d19f"
   },
   "criteria": {
@@ -1824,7 +1824,23 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:geom-yekutieli-alignment' \u2192 expected 'geom_yekutieli_alignment'; Lean declares: geomInvariant, geomTorus, frobenius_self_pairing_unitary, geom_yekutieli_alignment_conditional, HyperbolicVolumeIndependence.... Structural match via content."
+        "notes": "Label 'prop:geom-yekutieli-alignment' → expected 'geom_yekutieli_alignment'; Lean declares: geomInvariant, geomTorus, frobenius_self_pairing_unitary, geom_yekutieli_alignment_conditional, HyperbolicVolumeIndependence.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "0b65867943d8",
+          "ts": "ca5998a552c5",
+          "lean": "4db2dd86d19f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:geom-yekutieli-alignment' → expected 'geom_yekutieli_alignment'; Lean declares: geomInvariant, geomTorus, frobenius_self_pairing_unitary, geom_yekutieli_alignment_conditional, HyperbolicVolumeIndependence.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1903,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:41:31.003Z"
 }
