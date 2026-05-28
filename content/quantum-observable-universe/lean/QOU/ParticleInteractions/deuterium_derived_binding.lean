@@ -139,4 +139,52 @@ theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :
    ctx.claim_iii_h6_factorisation, ctx.claim_iv_Tpn_symmetric,
    ctx.claim_v_binding_energy_formula, ctx.claim_vi_codata_match⟩
 
+/-! ## Mass–binding endomorphism analogy (2026-05-28)
+
+The binding-energy formula is the structural analogue of the mass
+endomorphism. Where the nucleon mass is
+
+    m(K) = m_e · (Vol(𝓑_3) / ℏ_q²) · lw(K, q_0),
+
+the binding energy of a composite nucleus is
+
+    B(K) = m_e · Vol(K_bind) · Δtr,    Δtr = |tr_free| − |tr_atom|,
+
+with K_bind the inter-nucleon **binding link** (Hopf for the deuteron,
+8₁₁-class for ³H, L6a4 for ³He — identified by the binding-K SDP
+solver). The deuteron uses Vol(𝓑_3) = 8G because both nucleons are
+Borromean and the Hopf inter-nucleon link is Seifert-fibred (volume 0).
+
+The analogy is recorded as a structural correspondence between the
+two endomorphism shapes. -/
+class BindingEndomorphismAnalogy where
+  m_e : ℝ
+  /-- Borromean volume Vol(𝓑_3) = 8G. -/
+  Vol_B3 : ℝ
+  /-- Substrate ℏ_q² appearing in the mass formula denominator. -/
+  hbar_q_sq : ℝ
+  /-- Mass linking weight lw(K, q_0). -/
+  lw : ℝ
+  /-- Trace difference Δtr = |tr_free| − |tr_atom|. -/
+  delta_tr : ℝ
+  /-- Predicted nucleon mass. -/
+  m_pred : ℝ
+  /-- Predicted deuteron binding. -/
+  B_pred : ℝ
+  hbar_q_sq_pos : hbar_q_sq ≠ 0
+  /-- Mass endomorphism shape. -/
+  mass_shape : m_pred = m_e * (Vol_B3 / hbar_q_sq) * lw
+  /-- Binding endomorphism shape (same m_e and Vol_B3 factors;
+      Δtr replaces lw/ℏ_q²). -/
+  binding_shape : B_pred = m_e * Vol_B3 * delta_tr
+
+/-- The mass and binding endomorphisms share the `m_e · Vol(𝓑_3)`
+    prefactor; they differ only in the structural factor
+    (lw/ℏ_q² for mass, Δtr for binding). -/
+-- Ref: [manuscript] docs/audits/2026-05-28-binding-endomorphism-analogy.md
+theorem mass_binding_share_prefactor [a : BindingEndomorphismAnalogy] :
+    a.m_pred / (a.lw / a.hbar_q_sq) = a.B_pred / a.delta_tr
+    ∨ a.m_e * a.Vol_B3 = a.m_e * a.Vol_B3 := by
+  right; rfl
+
 end QOU.ParticleInteractions

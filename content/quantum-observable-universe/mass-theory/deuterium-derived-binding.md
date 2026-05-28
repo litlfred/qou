@@ -121,3 +121,27 @@ term, and $(N-Z)^2/A$ asymmetry term all emerge as continuum
 approximations of the exact pair sums grouped by type (pp, nn, pn).
 
 **Witness**: `deuterium-derived.witness.json`.
+
+## Mass–binding endomorphism analogy
+
+The formula is the binding-energy analogue of the mass endomorphism.
+The nucleon mass is $m(K) = m_e \cdot \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2
+\cdot \mathrm{lw}(K, q_0)$; binding replaces the $\mathrm{lw}/\hbar_q^2$
+structural factor with the Wedderburn trace difference
+$\Delta\mathrm{tr} = |\mathrm{tr}_M(\text{free})| -
+|\mathrm{tr}_M(\text{atom})|$, keeping the common
+$m_e \cdot \mathrm{Vol}(\mathcal{B}_3)$ prefactor:
+
+$$
+  B(K) = m_e \cdot \mathrm{Vol}(K_{\mathrm{bind}}) \cdot \Delta\mathrm{tr}.
+$$
+
+The binding link $K_{\mathrm{bind}}$ is atom-specific — the
+[binding-K SDP solver](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/binding-k-solver.witness.json)
+identifies it as the Hopf link for the deuteron, the $8_{11}$-class
+link for $^3\mathrm{H}$, and L6a4 for $^3\mathrm{He}$.  For the deuteron
+$\mathrm{Vol}(K_{\mathrm{bind}}) = \mathrm{Vol}(\mathcal{B}_3) = 8G$
+(the Hopf inter-nucleon link is Seifert-fibred, so the Borromean scale
+dominates), giving $B(d) = 2.229$ MeV at $+0.19\%$ before the QED
+correction.  See
+[`docs/audits/2026-05-28-binding-endomorphism-analogy.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-28-binding-endomorphism-analogy.md).
