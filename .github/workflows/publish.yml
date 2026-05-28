@@ -149,12 +149,31 @@ jobs:
       - name: Validate content objects
         run: cd content && bun run validate
 
-      - name: Build content objects (chapters .tex)
+      - name: Build content objects (chapters .tex + main.tex)
         # Pre-existing cross-reference warnings produce exit code 1
-        # but chapters/*.tex are still generated successfully.
+        # but chapters/*.tex and main.tex are still generated successfully.
+        # `bun run build` (package.json) does NOT pass --generate-main, so
+        # we invoke pipeline/build.ts directly with the flags needed to emit
+        # main.tex at the repo root — mirroring blueprint.yml / lean-build.yml
+        # / lean_ci.yml. Without this, the downstream paper-pdf job fails with
+        # "latexmk: Could not find file 'main.tex'".
         run: |
-          cd content && bun run build 2>&1 | tail -10 || \
-            echo "::warning::Content build reported issues (chapters still generated)"
+          cd content
+          # Pre-build hooks from the npm `build` script (witness staleness +
+          # atlas render). Keep them best-effort, exit code intentionally
+          # masked to match the existing behaviour.
+          bun run check-witnesses || true
+          bun run render-atlas:write || true
+          bun run pipeline/build.ts \
+            quantum-observable-universe/quantum-observable-universe.ts \
+            --out-dir ../chapters/ \
+            --generate-main \
+            --main-out ../main.tex \
+            --preamble ../latex/preamble.tex 2>&1 | tail -20 || \
+            echo "::warning::Content build reported issues (chapters/main.tex still generated)"
+          echo "── Generated artefacts ──"
+          ls -la ../main.tex ../chapters/*.tex 2>/dev/null | head -20 || \
+            { echo "::error::main.tex was not generated"; exit 1; }
 
       - name: Compute output filename base
         id: filename
