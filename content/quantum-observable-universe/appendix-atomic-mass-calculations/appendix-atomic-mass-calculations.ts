@@ -39,6 +39,7 @@ export default chapter({
       title: "Summary and percentage deviations",
       label: "sec:amc-summary",
       blocks: [
+        "amc-summary-intro",
         "amc-summary",
         "amc-natural-elements-table",
         // Detangler R3 (2026-05-22): 92-row data table extracted
