@@ -154,6 +154,7 @@ jobs:
         with:
           name: content-pipeline-${{ steps.filename.outputs.base }}
           path: |
+            main.tex
             chapters/
             papers.json
             folio-assistant/computations/*.witness.json
