@@ -23,7 +23,7 @@
   "scriptFile": "delta_n2_lp_dual_extraction.py",
   "scriptHash": "083d49ea13b9",
   "scriptCommitSha": "1a80d45498af849377b2376ed3bd7fcc49ac5402",
-  "description": "Item 4b PROPER (LP-dual) — Δ_n² discharge via per-particle shadow-price extraction.  Computes u^{(Δ_n²)*}(β) = Σ_λ y_λ(q) · q^{c(λ)} · χ^λ(β) for the proton via the closed-form Markov-trace chain (Phase 1.6 / option_b_proton_mass_full_chain.py).  Verifies that Δ_n² is PARTICLE-DEPENDENT, not a uniform scalar — Phase 1.11's simplified discharge missed this.  Per term7-alpha5's prop:mass-formula-iterative-lp-dual, the proper formulation is m = Σ_l u^{(l)*}, where each u^{(l)*} carries the per-braid information.  Δ_n² is the saturated-shell limit at ℓ = n.  Confirms Item 2 (m_n via difference formula) is the framework-consistent closure.",
+  "description": "Item 4b PROPER (LP-dual) \u2014 \u0394_n\u00b2 discharge via per-particle shadow-price extraction.  Computes u^{(\u0394_n\u00b2)*}(\u03b2) = \u03a3_\u03bb y_\u03bb(q) \u00b7 q^{c(\u03bb)} \u00b7 \u03c7^\u03bb(\u03b2) for the proton via the closed-form Markov-trace chain (Phase 1.6 / option_b_proton_mass_full_chain.py).  Verifies that \u0394_n\u00b2 is PARTICLE-DEPENDENT, not a uniform scalar \u2014 Phase 1.11's simplified discharge missed this.  Per term7-alpha5's prop:mass-formula-iterative-lp-dual, the proper formulation is m = \u03a3_l u^{(l)*}, where each u^{(l)*} carries the per-braid information.  \u0394_n\u00b2 is the saturated-shell limit at \u2113 = n.  Confirms Item 2 (m_n via difference formula) is the framework-consistent closure.",
   "contentBlock": "conj:categorical-neutrality-saturated-shells",
   "parameters": {
     "q_0": 1.1099785955541805
@@ -47,6 +47,15 @@
     "tr_M_proton_at_q0": 1.6331535640480814,
     "tr_M_delta_n2_proton_at_q0": 2.1111109197975844,
     "delta_n2_shadow_price_ratio_proton": 1.2926591633947726,
-    "interpretation": "u^{(Δ_n²)*}(β) is particle-dependent. The simplified Phase 1.11 discharge (uniform dim²-weighted ⟨q^{c(λ)}⟩ = 1.0165) made the neutron error 0.09 pp worse. The proper LP-dual extraction per term7-alpha5's formalism gives ratio_Δ_n²(p) ≠ ratio_Δ_n²(n), so a single scalar discharge cannot capture Δ_n²'s effect on p−n splitting. The neutron extraction requires a separate closed-form chain for the σ⁻¹-rich neutron braid word, which is naturally subsumed by Item 2's difference formula."
-  }
+    "interpretation": "u^{(\u0394_n\u00b2)*}(\u03b2) is particle-dependent. The simplified Phase 1.11 discharge (uniform dim\u00b2-weighted \u27e8q^{c(\u03bb)}\u27e9 = 1.0165) made the neutron error 0.09 pp worse. The proper LP-dual extraction per term7-alpha5's formalism gives ratio_\u0394_n\u00b2(p) \u2260 ratio_\u0394_n\u00b2(n), so a single scalar discharge cannot capture \u0394_n\u00b2's effect on p\u2212n splitting. The neutron extraction requires a separate closed-form chain for the \u03c3\u207b\u00b9-rich neutron braid word, which is naturally subsumed by Item 2's difference formula."
+  },
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "dual_obj": null,
+  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "duality_gap": null,
+  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "y_star": null,
+  "active_set": null,
+  "primal_obj": null
 }

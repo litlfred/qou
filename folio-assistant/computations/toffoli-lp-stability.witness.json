@@ -1,7 +1,7 @@
 {
   "computedAt": "2026-04-17T20:18:13.317138+00:00",
   "computation": "toffoli-lp-stability",
-  "description": "LP-dual stability of the q-Toffoli braid: P_{7,7}(q), Φ(q), Gram spectrum on a q-grid spanning the golden-ratio threshold q⋆ = 1/φ².",
+  "description": "LP-dual stability of the q-Toffoli braid: P_{7,7}(q), \u03a6(q), Gram spectrum on a q-grid spanning the golden-ratio threshold q\u22c6 = 1/\u03c6\u00b2.",
   "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
   "label": "prop:toffoli-lp-stability",
   "git_sha": "555b846893b01c6615bd15f68fef04b585a27eb7",
@@ -18,12 +18,12 @@
     "Phi_vanishes_at_q_star": false
   },
   "nf_basis": [
-    "γ",
-    "σ₀",
-    "σ₁",
-    "L₊",
-    "L₋",
-    "e⁻"
+    "\u03b3",
+    "\u03c3\u2080",
+    "\u03c3\u2081",
+    "L\u208a",
+    "L\u208b",
+    "e\u207b"
   ],
   "gram_matrix_at_q0": [
     [
@@ -330,17 +330,26 @@
     }
   ],
   "conclusions": {
-    "stable_regime": "q > q⋆ ≈ 0.381966",
+    "stable_regime": "q > q\u22c6 \u2248 0.381966",
     "physical_q0_stable": true,
     "classical_limit_q_equals_1": {
       "P_77": 0.5,
       "Phi": 0,
-      "note": "Φ(1) = 0 by construction (classical reversible Toffoli trivialises q-AND)"
+      "note": "\u03a6(1) = 0 by construction (classical reversible Toffoli trivialises q-AND)"
     }
   },
   "precision": "f64_numeric_fallback",
   "truncation_eps": 0,
   "engine": "python",
   "scriptFile": "toffoli-lp-stability.py",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "dual_obj": null,
+  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "duality_gap": null,
+  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "y_star": null,
+  "active_set": null,
+  "primal_obj": null
 }

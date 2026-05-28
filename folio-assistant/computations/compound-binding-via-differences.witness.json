@@ -29,7 +29,7 @@
   "scriptFile": "compound_binding_via_differences.py",
   "scriptHash": "9715ae351d66",
   "scriptCommitSha": "621cbb9207942e0a9db11c2f336e2da439e42bca",
-  "description": "Item 3 from Phase 1.8 actionable path: compound binding energies B(Z, N) via LP-dual differences per term7-alpha5's prop:mass-formula-iterative-lp-dual.  Re-expresses the Strategy-3 six-term decomposition in the difference frame (B = Σ_l (u^{(l)*}[atom] − u^{(l)*}[free])) per the audit 2026-05-05-categorical-chain-gamma-to-six-term.md.  Numerical predictions identical to Strategy-3 by construction (same components); structural framing now framework-consistent. Remaining errors (24-54% on D, T, ³He, ⁴He) localised to the component values: canonical_a_k(jet-knot) at A≥3 and the disjoint-product t1_free approximation.",
+  "description": "Item 3 from Phase 1.8 actionable path: compound binding energies B(Z, N) via LP-dual differences per term7-alpha5's prop:mass-formula-iterative-lp-dual.  Re-expresses the Strategy-3 six-term decomposition in the difference frame (B = \u03a3_l (u^{(l)*}[atom] \u2212 u^{(l)*}[free])) per the audit 2026-05-05-categorical-chain-gamma-to-six-term.md.  Numerical predictions identical to Strategy-3 by construction (same components); structural framing now framework-consistent. Remaining errors (24-54% on D, T, \u00b3He, \u2074He) localised to the component values: canonical_a_k(jet-knot) at A\u22653 and the disjoint-product t1_free approximation.",
   "contentBlock": "prop:atomic-mass-gb-nf",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587",
@@ -131,6 +131,15 @@
         }
       }
     },
-    "structural_framing": "Each component reported in difference form (atom − free) per term7-alpha5's iterative LP-dual. Framework-consistent with fresh_derivation_pn_true_sdp.py's claim that 'only differences are observables'. The total prediction equals Strategy-3's by construction (same numerical components); the difference is in the audit-trail attribution."
-  }
+    "structural_framing": "Each component reported in difference form (atom \u2212 free) per term7-alpha5's iterative LP-dual. Framework-consistent with fresh_derivation_pn_true_sdp.py's claim that 'only differences are observables'. The total prediction equals Strategy-3's by construction (same numerical components); the difference is in the audit-trail attribution."
+  },
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "dual_obj": null,
+  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "duality_gap": null,
+  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "y_star": null,
+  "active_set": null,
+  "primal_obj": null
 }
