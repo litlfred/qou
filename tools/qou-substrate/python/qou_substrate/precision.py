@@ -66,9 +66,9 @@ from typing import Any
 from mpmath import mp, mpf
 
 # ── Defaults ────────────────────────────────────────────────────
-PRECISION_GUARD_DEFAULT: int = 10
-OUTPUT_DPS_DEFAULT: int = 40
-COMPUTE_DPS_DEFAULT: int = OUTPUT_DPS_DEFAULT + PRECISION_GUARD_DEFAULT  # 50
+PRECISION_GUARD_DEFAULT: int = 15
+OUTPUT_DPS_DEFAULT: int = 50
+COMPUTE_DPS_DEFAULT: int = OUTPUT_DPS_DEFAULT + PRECISION_GUARD_DEFAULT  # 65
 
 # ── Environment overrides ───────────────────────────────────────
 def _env_int(key: str, default: int, minimum: int = 1) -> int:
