@@ -243,7 +243,12 @@ def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     vol_b3 = 8 * mp.catalan  # Adams 1985 (NOT Lean-formalized — see docstring)
     geom_leading = vol_b3 / hbar_q ** 2
     linking_weight = linking_weight_family_a(q, qi)
-    return geom_leading * linking_weight
+    # Apply the top-down spectral-phase correction (2026-05-28): the
+    # Borromean braid's rotation angle on V_(2,1) per ideal octahedron.
+    # Takes the bare Vol/ℏ²·lw_A from +2.96 % to 130 ppm on m_p — fully
+    # derived, no free parameter. See spectral_correction_borromean and
+    # docs/audits/2026-05-28-spectral-phase-correction-derived.md.
+    return geom_leading * linking_weight * spectral_correction_borromean(q, qi)
 
 
 def spectral_correction_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
@@ -282,18 +287,13 @@ def spectral_correction_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
 
 
 def geom_full_borromean_spectral(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """Geom_full(𝓑₃) with the top-down spectral-phase correction applied.
-
-        Geom_full_spectral = Vol/ℏ² × lw_A × θ/(8ℏ²)
-                           = m_e⁻¹ × m_p   (938.15 MeV, 130 ppm)
-
-    This is the fully-derived (no-fit) Borromean Geom evaluation, replacing
-    the +2.89 % leading-order `geom_full_borromean`.  Kept as a distinct
-    function (not an in-place change) because the leading-order form has
-    many consumers; migrate them deliberately, not implicitly.
+    """Deprecated alias: `geom_full_borromean` now applies the spectral
+    correction by default (wired 2026-05-28), so this is identical to it.
+    Retained so existing imports keep resolving; prefer
+    `geom_full_borromean` directly.
     """
     qi = mpf(1) / q if q_inv is None else q_inv
-    return geom_full_borromean(q, qi) * spectral_correction_borromean(q, qi)
+    return geom_full_borromean(q, qi)
 
 
 def yekutieli_correction_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
