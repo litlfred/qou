@@ -96,6 +96,7 @@ export default chapter({
       blocks: [
                 "mass-algebraic-consolidated-intro",
 "pentagon-uv-commutation",
+        "pentagon-uv-commutation",
         "transfer-matrix-operator",
         "transfer-matrix-identities",
         "skein-polynomial-transfer-matrix",
