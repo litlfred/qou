@@ -1,9 +1,8 @@
 **Proposition (Habiro integrality of the Markov trace).**
 *The Markov trace $\operatorname{tr}_M(T_w, q)$ of any braid word
-admits a finite Habiro expansion with integer coefficients. The
-historical "precision-ladder coefficients" $c_k$ were the Taylor
-expansion of this exact sum — a compute artefact with no independent
-mathematical role. The Habiro form is the canonical representation.*
+admits a finite Habiro expansion with integer coefficients $a_m \in
+\mathbb{Z}[u]$. The Habiro form is the canonical representation: it is
+an exact, finite rational evaluation, not a truncated series.*
 
 *Specifically, the Markov trace of the neutron–proton braid-word
 difference admits the finite expansion*
@@ -21,17 +20,21 @@ $q$-Pochhammer symbol, and $M < \infty$ (the series terminates).*
 
 *Under the archimedean evaluation $u \mapsto u_0 = q_0^{1/2}$, each
 $(u_0;\,u_0)_m$ contributes a factor that shrinks like
-$\sim \hbar_q^m$ where $\hbar_q = (q_0-1)/q_0 \approx 0.099$.
-The precision-ladder correction at rung $k$ is then:*
+$\sim \hbar_q^m$ where $\hbar_q = (q_0-1)/q_0 \approx 0.099$.*
 
-$$
-  c_k \cdot (b \cdot \hbar_q^2)^k
-  \;=\;
-  a_k(u_0) \cdot (u_0;\,u_0)_k \;/\; \text{normalisation}
-$$
-
-*so the $c_k$ are NOT empirical fits — they are integer polynomials
-evaluated at the substrate.*
+> **Author note (scope, 2026-05-28).** A historical "precision ladder"
+> wrote the $q$-deformed observables as a product
+> $\prod_k (1 + c_k (b\hbar_q^2)^k)$ and identified per-rung
+> coefficients $c_k$. Those $c_k$ are **not** the Taylor coefficients
+> of the exact Habiro sum: the genuinely-derived expansion (e.g. the
+> $\tau_M$ form, `prop:tau-M-asymptotic-rep-theory`) is derived only at
+> low order ($k=1$ via the Kashiwara $\tilde f_1$ matrix element), and
+> the higher $c_k$ used to reach part-per-billion accuracy were tuned
+> against the experimental value, not evaluated from the integer
+> $a_m$. They depend on the (unproven) choice of intermediate form and
+> are excluded from the canonical chain. What this proposition asserts
+> is only the **integrality and finiteness** of the $a_m$ — which is
+> verified — not any bridge from the $a_m$ to those ladder $c_k$.
 
 ## Proton Habiro coefficients (verified integral)
 
@@ -62,17 +65,26 @@ evaluation $\widehat{\mathbb{Z}[q]} \to \mathbb{R}$ that:
 2. Respects the cyclotomic integrality: each $a_m \in \mathbb{Z}[u]$.
 3. Terminates at finite $M$ (no truncation needed).
 
-The precision-ladder's "empirical" $c_k$ are therefore computable from
-the integer $a_m$ by cyclotomic division — a purely algebraic operation.
-No fitting, no CODATA comparison, no free parameters beyond $(m_e, q_0)$.
+The integrality and finiteness of the $a_m$ require no fitting and no
+free parameters beyond $(m_e, q_0)$ — the Habiro evaluation of
+$\operatorname{tr}_M$ at $q_0$ is determined.
 
-## Convergence to 1 ppQ
+## What the exact evaluation does and does not give
 
 Since the Habiro expansion is **finite** ($M = 8$ for proton), the
-evaluation at $q_0$ is **exact** — not truncated. The "precision ladder"
-is an artefact of expanding the exact Habiro result in powers of
-$\hbar_q$; the Habiro form already sums the entire tower.
+evaluation $\operatorname{tr}_M(\beta_K, q_0)$ is **exact** — a
+well-defined element of $\mathbb{Q}(q_0)$, not a truncated series.
 
-For the Q_β observable (neutron–proton trace difference), the Habiro
-expansion gives the EXACT rational answer as an element of
-$\mathbb{Q}(q_0)$. No ladder truncation error exists.
+What this does **not** give is part-per-billion agreement with
+experiment. An observable such as $Q_\beta$ is
+$m_e \cdot f(\operatorname{tr}_M(\beta_n), \operatorname{tr}_M(\beta_p),
+q_0)$, and the exact Habiro evaluation of that map lands at the
+substrate's *intrinsic* accuracy (order $10^{-3}$ for the bare $Q_\beta$
+form, improving to $\sim 1\,\text{ppm}$ once the derived low-order
+$\tau_M$ corrections of `prop:tau-M-asymptotic-rep-theory` are
+included). Reaching part-per-billion requires higher-order corrections
+that are **not** currently derived from the $a_m$; attempts to read them
+off as a "precision ladder" tuned the coefficients against the
+experimental value rather than evaluating them categorically. The
+canonical content of this block is the integrality of the $a_m$, not a
+ppb-level prediction.

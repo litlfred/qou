@@ -18,9 +18,13 @@ where (u;u)_m = Π_{k=1}^{m}(1 - u^{2k}) is the q-Pochhammer symbol
 and u = q^{1/2}. Under archimedean evaluation u → u₀ = q₀^{1/2},
 each (u₀;u₀)_m shrinks like ~ℏ_q^m, giving the precision ladder.
 
-The c_k are therefore NOT empirical fits — they are integer
-polynomials evaluated at the substrate. The expansion terminates
-at finite M (no truncation error).
+The integer coefficients a_m are determined and the expansion
+terminates at finite M (no truncation error). NOTE: the historical
+"precision-ladder c_k" are NOT in general the Taylor coefficients of
+this exact sum — the genuinely-derived expansion is low-order only,
+and the higher c_k used for ppb-level fits were tuned against
+experiment (see prop:tau-M-asymptotic-rep-theory §Status). Only the
+a_m integrality is claimed here.
 
 Ref: [habiro2000] Habiro, "On the quantum sl_2 invariants of knots
      and integral homology spheres" (2000)
@@ -84,20 +88,26 @@ theorem habiro_integral (h : HabiroExpansion) :
   -- Witness: habiro-expansion-atomic-probe.witness.json (all_integral: true)
   trivial
 
-/-- **PROPOSITION.** The precision-ladder correction at rung k equals
-    the Habiro coefficient a_k evaluated at u₀ = q₀^{1/2}, times the
-    q-Pochhammer factor (u₀;u₀)_k, divided by normalisation.
+/-- **PROPOSITION.** The Habiro evaluation of tr_M at the substrate q₀
+    is determined: Σ_{m=0}^{M} a_m(u₀)·(u₀;u₀)_m with a_m ∈ ℤ[u],
+    M < ∞, is an exact element of ℚ(q₀) requiring no truncation and
+    no free parameter beyond q₀.
 
-    This identifies c_k as an INTEGER POLYNOMIAL EVALUATION, not an
-    empirical fit. -/
--- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
-theorem precision_ladder_is_habiro_eval : True := by
-  -- The identification is definitional: expanding Σ a_m(u₀)·(u₀;u₀)_m
-  -- in powers of ℏ_q gives the c_k · (b·ℏ²)^k series by definition
-  -- of Taylor expansion. No new mathematical content — just algebra.
-  -- The Habiro sum TERMINATES (M=8 for proton), so the Taylor expansion
-  -- is exact (finite polynomial, not truncated series).
-  -- Ref: [habiro2000] + [manuscript] prop:habiro-precision-ladder-equivalence
+    NOTE (2026-05-28): an earlier statement here asserted that the
+    historical "precision-ladder c_k" equal these a_m evaluations.
+    That claim was REMOVED — it is false in general: the genuinely
+    derived expansion is low-order only, and the ppb-level c_k were
+    tuned against experiment, not evaluated from the a_m (see
+    prop:tau-M-asymptotic-rep-theory §Status, and the audit
+    docs/audits/2026-05-28-mu-p-tension-substrate-floor.md). Only the
+    integrality/finiteness of the a_m (habiro_integral, above) is
+    claimed. -/
+-- Ref: [habiro2000] Corollary 1.2
+theorem habiro_evaluation_determined : True := by
+  -- Determinacy is immediate once a_m ∈ ℤ[u] and M < ∞: the finite
+  -- sum Σ a_m(u₀)·(u₀;u₀)_m is a fixed element of ℚ(q₀). The content
+  -- is the integrality (habiro_integral); this records that no
+  -- truncation or free parameter enters the evaluation.
   trivial
 
 end QOU.BraidKnot

@@ -273,23 +273,24 @@ def main() -> dict:
     qb_n3 = load_witness("q-beta-operator-valued-N3.witness.json")
     qb_n3_data = qb_n3.get("data", {})
     if qb_n3_data.get("Q_N2") is not None:
-        # The N=3 witness stores the Habiro-evaluated Q_β at 50 dps.
-        # Apply the remaining N=4,N=5 multiplicative corrections
-        # (these are EXACT — from the Habiro integer coefficients,
-        # not empirical fits).
+        # Report the genuinely-DERIVED value, not a CODATA-fitted one.
+        # The τ_M expansion (prop:tau-M-asymptotic-rep-theory) is derived
+        # at k=1 (Kashiwara f̃₁ matrix element → 74 ppm) and approximately
+        # at k=2 (geometric, → Q_N2 ≈ 1.24 ppm). The previously-applied
+        # k≥3 rungs (c₃=J, c₄=J·b⁴, c₅=3J²+b) were CODATA FITS that
+        # overshoot the exact Habiro value (1677 ppm) toward CODATA to
+        # reach 5.7 ppb — the proposition's own Status section calls k≥3
+        # "open R&D", and the c_k value swings with the (unproven) c₂ form
+        # (−2.01 vs −60.7), so they cannot be pinned. Dropped from
+        # production per the canonical-derivation discipline.
+        # See docs/audits/2026-05-28-mu-p-tension-substrate-floor.md.
         Q_N2 = mpf(str(qb_n3_data["Q_N2"]))
-        b_hoef = mpf(str(qb_n3_data["hoefsmit_b"]))
-        hbar_sq = mpf(str(qb_n3_data["hbar_q_sq"]))
-        # Habiro-derived corrections (integer a_m give these exactly):
-        J = mpf(-2)  # a_3 leading coefficient = J_Hopf(q=1)
-        Q_N3 = Q_N2 * (1 + J * (b_hoef ** 3) * (hbar_sq ** 3))
-        Q_N4 = Q_N3 * (1 + J * b_hoef**4 * (b_hoef ** 4) * (hbar_sq ** 4))
-        Q_N5 = Q_N4 * (1 + (J**2 * 3 + b_hoef) * (b_hoef ** 5) * (hbar_sq ** 5))
-        Q_beta_best = Q_N5
+        Q_beta_best = Q_N2
         rows.append(_row_for(
-            "Q_beta", Q_N5,
-            "q-beta-operator-valued-N3.witness.json (Habiro-exact, "
-            "integer a_m evaluated at q₀; series terminates at M=8)",
+            "Q_beta", Q_N2,
+            "q-beta-operator-valued-N3.witness.json::Q_N2 "
+            "(τ_M derived to k=2: Kashiwara f̃₁ + geometric; k≥3 fitted "
+            "rungs dropped as non-canonical)",
         ))
     else:
         Q_beta_best = None
