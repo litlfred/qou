@@ -93,3 +93,34 @@ hand-chosen rescaling — must supply the $A$-dependence.
 
 The deuteron scale $3.74 = m_e \cdot \mathrm{Vol}(\mathcal{B}_3)$. The
 heavier scales (10.55, 9.17, 31.03) await their binding-link volumes.
+
+## Caveat: the deuteron result is trace-convention-specific
+
+The $\Delta\mathrm{tr}(d) = 0.5952$ above comes from `binding_canonical`
+(the Wenzl-bridge closed form). The independent $H_{3A}$-direct
+Wedderburn sum (`binding_per_bond_decomposition.py`, same
+`atom_braid_word_3A` + normalized-Plancherel weights used everywhere
+else) instead gives $\Delta\mathrm{tr}(d) = 0.4241$ — a **29 % gap**,
+which turns the $+0.19\%$ match into $-28.6\%$. So the clean deuteron
+result is **specific to the Wenzl-bridge convention** and is *not*
+reproduced by the $H_{3A}$ Wedderburn trace.
+
+**Reconciling the two binding-trace conventions is the prerequisite
+for the A≥3 problem** — before any per-bond / per-pair sum or
+binding-link volume can be trusted, the two production paths must be
+shown to compute the same $\Delta\mathrm{tr}$. Witness:
+[`binding-per-bond-decomposition.witness.json`](../../folio-assistant/computations/binding-per-bond-decomposition.witness.json).
+
+## Binding-link volumes (SnapPy, PR #1397)
+
+| Atom | Link | Vol | Note |
+|------|------|-----|------|
+| ²H | Hopf (L2a1) | 0 | Seifert-fibred |
+| ³H | $8_{11}$ | 8.2863 | hyperbolic |
+| ³He | L6a4 | 7.3277 | **= 8G = Vol(Borromean)** |
+
+The ³He binding link L6a4 *is* the Borromean rings. The single-link
+endomorphism $B = m_e \cdot \mathrm{Vol}(K_{\mathrm{bind}}) \cdot
+\Delta\mathrm{tr}$ matches ²H (via Hopf→$\mathrm{Vol}(\mathcal{B}_3)$)
+but gives $-60\%$ for ³H/³He: the A-dependence is not carried by a
+single binding-link volume.
