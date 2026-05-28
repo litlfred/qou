@@ -118,7 +118,7 @@ $$
   \operatorname{tr}_M(\sigma_1^7\sigma_2^4)(q_0) \;\approx\; 1.63315\,357\ldots
 $$
 
-The `char_fast` cross-check (PR #545's `markov_chars` function,
+The `char_fast` cross-check (the `markov_chars` function,
 computed via Hoefsmit seminormal ascent) gives $\approx 1.6334$,
 matching to $4$ significant digits. The minor discrepancy reflects
 floating-point roundoff in the seminormal eigenvalue route; the
@@ -159,7 +159,7 @@ atomic-braid representative of the proton's GB-filtration normal
 form ([`prop:atomic-mass-gb-nf`](#prop:atomic-mass-gb-nf)). The
 axiomatic derivation makes the construction independent of any
 representation-theoretic parameterisation; in particular, it
-bypasses [`PR #546`](https://github.com/litlfred/qou/pull/546)'s
+bypasses [`the prior work`](https://github.com/litlfred/qou/pull/546)'s
 seminormal `IndexError` failure on $\sigma_2$ acting on shape $(3)$.
 
 The contrast with the Plancherel-trace closed form is

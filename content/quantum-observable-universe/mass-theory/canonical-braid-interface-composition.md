@@ -45,7 +45,7 @@ utility module's `interface_composition(ordering)` function.
 
 ### Role in substrate derivation
 
-The Δ_coupling residual fit (PR #656 v6) localised the ${}^{3}$He
+The Δ_coupling residual fit (the prior work v6) localised the ${}^{3}$He
 proton-heavy anomaly to the **pp interface asymmetry**: ${}^{3}$He has
 $n_{pp} = 1$ (excess $\sigma$) while T has $n_{nn} = 1$ (excess $\sigma^{-1}$), and
 the pp/nn interfaces contribute non-equivalently through the

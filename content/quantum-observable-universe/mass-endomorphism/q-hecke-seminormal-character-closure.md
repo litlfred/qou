@@ -73,7 +73,7 @@ $10^{-3}$ and $10^{-6}$):
 
 The numerical agreement is at **machine epsilon** for all five
 atoms (hybrid precision: 30-dps sympy `Float` for $y_\lambda$ +
-float64 for $\chi^\lambda_q$). PR #564's
+float64 for $\chi^\lambda_q$). the prior work's
 [`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py)
 implements the same closure with **mpmath at 50 dps**, achieving
 $1.4 \times 10^{-16}$ on the deuteron (commit

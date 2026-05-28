@@ -47,7 +47,7 @@ This gives the framework an **explicit categorical handle** on the
 small-$q_0$ $\leftrightarrow$ root-of-unity duality flagged in the 13-driver menu
 under driver (viii) Modular $S$-transform.
 
-## Relationship to PR #1127's complex-q lift
+## Relationship to the complex-q lift
 
 The complex-q extension landed in PR [#1127](https://github.com/litlfred/qou/pull/1127)
 ([`prop:q-zero-complex-extension`](#prop:q-zero-complex-extension)

@@ -60,10 +60,10 @@ identified, not *how much* per-cell curvature it carries. $\square$
 > Yekutieli per-cell additive form
 > $\lambda_{\text{scale}}^{\text{Yekutieli}} = \tfrac{5}{2} + (\tfrac{3}{4} - G)\,h^2$.
 > That form was **purged from production** on 2026-05-24 (commit
-> `71d674da1`) as non-canonical: PR #985 found the natural-reading
+> `71d674da1`) as non-canonical: the prior work found the natural-reading
 > bijection gives the per-cell curvature $\kappa = +0.5$, not $-G$,
 > and no categorical derivation supplies a $-G \cdot h^2$ term.
-> Per [PR #1080](https://github.com/litlfred/qou/pull/1080), the
+> Per the prior analysis, the
 > canonical mass formula is
 > $$m(K) = m_e \cdot \mathrm{Geom_{full}}(K, q_0),$$
 > with no separate $\lambda_{\text{scale}}$ constant.
@@ -85,7 +85,7 @@ $\mathrm{Geom_{full}}(\mathcal{B}_3)$ value at the framework's
 current categorical-exactness order; refining that exactness at
 higher $h^2$ orders is the open frontier (see the Family A gap
 audit [`docs/audits/2026-05-24-family-a-gap-audit.md`](https://github.com/litlfred/qou/blob/claude/family-a-gap-audit-2026-05-24/docs/audits/2026-05-24-family-a-gap-audit.md),
-currently in [PR #1063](https://github.com/litlfred/qou/pull/1063);
+currently in the prior analysis;
 relative path resolves once that PR merges).
 This bijection is one of two structural inputs needed for the
 refinement (the other being the $S_5 \leftrightarrow SO(3)$ fiber

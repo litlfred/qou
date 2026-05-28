@@ -34,7 +34,7 @@ plus the GB-jet-order half-shift from Markov-symmetrization.
 
 This is the **Story B closure at $c_4$**, continuing the
 alternation pattern proven categorically at:
-- $c_2 = b^2$ (PR #661, V_(2,1) Hoefsmit alone)
+- $c_2 = b^2$ (the prior work, V_(2,1) Hoefsmit alone)
 - $c_3 = J_{\mathrm{Hopf}}(q{=}1) = -2$ ([`prop:hopf-jones-c3-categorical`](#prop:hopf-jones-c3-categorical),
   V_(2,1) self-fusion + Markov-Frobenius selection)
 
@@ -103,7 +103,7 @@ computes:
    V_(2,1) Hoefsmit cos-tower at $q = q_0$ and $q = 1$.
 2. The GB-jet half-shift trace of $\mathrm{Symm}_M$ on V_(2,1).
 3. The sum $b^2 + 1/2$ at $q = q_0$.
-4. Comparison with PR #655's empirical $c_4$ extraction (which
+4. Comparison with the empirical $c_4$ extraction (which
    gives $c_4 = b^2 + 1/2$ via the N=4 chain fit).
 
 If the categorical value (steps 1–3) matches the empirical extraction

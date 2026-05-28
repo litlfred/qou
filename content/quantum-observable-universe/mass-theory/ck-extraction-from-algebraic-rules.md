@@ -4,7 +4,7 @@
 
 > **Errata banner — $c_4$ closed form has shifted.**
 > The original $c_4 = b^2 + 1/2$ form below is superseded by
-> $c_4 = c_3 \cdot b^4 = -2 b^4$ (per PR #777's SDP-$T_\beta$
+> $c_4 = c_3 \cdot b^4 = -2 b^4$ (Per the SDP-$T_\beta$
 > derivation and [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)).
 > The $b^2 + 1/2$ shape is now attributed to $c_5$ (with sign
 > flip: $c_5 = -(b^2 + 1/2)$). The four-rule reframing remains

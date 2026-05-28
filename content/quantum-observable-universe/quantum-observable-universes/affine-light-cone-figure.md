@@ -2,7 +2,7 @@
 
 *Single-panel illustration of the affine light-cone wedge over the
 brane locus in the spacetime affine chart $z = x_0/x_1 \in \mathbb{CP}^1$,
-re-derived from natural Bring coordinates per the PR #31 redo workplan
+re-derived from natural Bring coordinates per the the prior work redo workplan
 (Phase 2).*
 
 **Brane curve.** The thick black curve is the locus

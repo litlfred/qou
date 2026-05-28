@@ -74,7 +74,7 @@ genuinely independent of $(m_\mathfrak{e}, q_0)$: the Hopf link
 complement has $\mathrm{Vol} = 0$ (no hyperbolic invariant to
 set the meson scale from the substrate).  See
 [`prop:meson-scale-independence`](../../particle-interactions/meson-scale-independence.md). Per sibling
-PR #1127 and audit
+the prior work and audit
 [`2026-05-24-q-beta-net-ansatz-fitting-finding`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md):
 
 - The relation $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$

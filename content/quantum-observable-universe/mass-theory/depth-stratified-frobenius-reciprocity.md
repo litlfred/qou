@@ -82,7 +82,7 @@ tested two simple empirical forms of "ideal restriction at low $k$" —
 
 | Form tested | Hypothesis | max/min variance | Verdict |
 |---|---|---:|---|
-| Uniform $\tilde w_\lambda$ (baseline) | no restriction | $1.82\times$ | (the current PR #801 result) |
+| Uniform $\tilde w_\lambda$ (baseline) | no restriction | $1.82\times$ | (the current the prior work result) |
 | $\tilde w_\lambda \cdot \|\chi^\lambda\|^\beta$ ($\beta > 0$) | concentrate on Markov-significant | $2.30$–$3.00\times$ | **falsified** |
 | $\tilde w_\lambda$ on self-conjugate partitions only | Wenzl-bridge stratum | $5.94\times$ | **falsified** |
 
@@ -124,11 +124,11 @@ This is the categorical content of:
 
 ### Significance: closing the 1.82$\times$ variance
 
-If true, the FR refinement (FR) closes the variance on PR #801 to
+If true, the FR refinement (FR) closes the variance on the prior work to
 $\le 1.05\times$ (universal categorical constant) by enhancing the
 low-$k$ contributions through the per-knot ideal restriction:
 
-- $k = 3$ ($K_3^* = 4_1$, empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826)):
+- $k = 3$ ($K_3^* = 4_1$, empirically resolved per the prior analysis):
  chirality channel, full FR pullback computable from the $4_1$
  central projector in $H_n$. Empirically reduces variance to
  $1.551\times$ (+14.8% vs the $1.82\times$ uniform-Plancherel
@@ -167,7 +167,7 @@ must exist:
 ### Falsification path
 
 The conjecture was **directly falsified for the originally-asserted $K_3^* = 6_1$**
-by [PR #826](https://github.com/litlfred/qou/pull/826): with corrected
+by the prior analysis: with corrected
 canonical braid words (verified against KnotInfo via hyperbolic
 volume) and proper $S_{\text{uniform},k}$-preserving weight
 normalization, Stevedore $6_1$ regresses the variance to $1.878\times$
@@ -208,7 +208,7 @@ provable in Mathlib via `Representation.induced` and
 
 ### Why this is "the final key"
 
-Per the structural narrative on PR #801 and
+Per the structural narrative on the prior work and
 [`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnosis.md):
 
 - The unified mass formula is established
@@ -237,7 +237,7 @@ If true, this conjecture **closes the unified mass formula** to
 universal precision — all atomic binding energies follow from
 $(m_e, q_0, Q_\beta)$ + the three distinguished knots
 $\{K_1^*, K_2^*, K_3^* = 4_1\}$ (with $K_3^* = 4_1$ empirically
-resolved per [PR #826](https://github.com/litlfred/qou/pull/826)).
+resolved per the prior analysis).
 
 ### Status
 

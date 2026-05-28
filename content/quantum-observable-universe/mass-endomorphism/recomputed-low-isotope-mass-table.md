@@ -1,8 +1,8 @@
 **Remark (recomputed low-isotope mass table after q-Hecke
-character gap closure).** *After PR #572's q-Hecke character
+character gap closure).** *After the q-Hecke character
 closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-character-closure))
 and the cherry-picked* $\rho_K$ *refinement infrastructure from
-PR #564, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
+the prior work, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
 *at* $q = q_0$ *now agree to machine epsilon across* $\{p, n, D, T, ^{3}\mathrm{He}\}$:
 
 1. **Canonical Markov-axiom reducer** —
@@ -204,7 +204,7 @@ from CODATA) is the territory of:
 - $\rho_K^{\text{full}}(Z, N) = \rho_K^{\mathrm{LO}}(Z, N) + (1/|\mathrm{tr}_M|)
   \cdot \sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda(K)$
   ([`rho_k_h3a_refinement.py`](../../../folio-assistant/computations/rho_k_h3a_refinement.py)
-  on PR #564 deuteron-only proof-of-concept; closure error
+  on the prior work deuteron-only proof-of-concept; closure error
   $2.7 \times 10^{-48}$ MeV by construction).
 - The per-block binding fractions $\Delta_\lambda(K)$ — currently
   determined by Occam's-razor minimal-perturbation selection

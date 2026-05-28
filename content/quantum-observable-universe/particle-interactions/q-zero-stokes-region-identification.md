@@ -104,8 +104,8 @@ The Lean `sorry` count is EXACTLY ONE per OPEN GAP — not per missing tactic.
 
 ## §7. Cross-references
 
-- [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) — Φ_q / Li_2^q $\leftrightarrow$ AJ machinery (PR #1242)
-- [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — q_0 may not be real (PR #1127)
+- [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) — Φ_q / Li_2^q $\leftrightarrow$ AJ machinery (the prior work)
+- [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — q_0 may not be real (the prior work)
 - [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — distinguishing the involutions
 - [`borromean-markov-trace-closed-form.md`](borromean-markov-trace-closed-form.md) — the closed form whose categorical derivation is the rescoped Path B
 - [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md) §§11-13 — origin of this conjecture

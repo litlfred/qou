@@ -169,7 +169,7 @@ fast in GB depth $N$, which is why the single-wrap symbolic form
 
 ## Provenance
 
-This proposition was derived during the cycle-6/7 audit on PR #637
+This proposition was derived during the cycle-6/7 audit on the prior work
 ([`docs/audits/2026-05-11-q-beta-form-A-vs-form-B-canonical-choice.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-11-q-beta-form-A-vs-form-B-canonical-choice.md))
 and verified numerically at 50 dps via
 [`q_beta_spectral_bridge_witness.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q_beta_spectral_bridge_witness.py)

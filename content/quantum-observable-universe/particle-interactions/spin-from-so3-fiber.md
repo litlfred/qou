@@ -132,7 +132,7 @@ class SpinFromSO3Fiber
    `ell_two_yields_h4_coefficient` proof (with `sorry` for the
    regulator of the divergent series at higher $\ell$, per CLAUDE.md
    §3b "class is inhabited").
-3. **Connect to PR #1125's W/Z $\approx$ cos θ_W within 1%** binomial
+3. **Connect to the W/Z $\approx$ cos θ_W within 1%** binomial
    pattern — the unified $T(2, 2m)$ torus-knot Markov-trace
    closed form may have a spherical-harmonic reading at the
    $\mathrm{SO}(3)$-fiber level.

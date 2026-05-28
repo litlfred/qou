@@ -625,9 +625,9 @@ witness data (`witness_refutes_scalar_uniform_k_form`,
 `BraneTowerZHabiro` is kept for downstream conditional results that
 ride on the surviving algebraic claim.
 
-## Per-partition $k_\lambda$ refinement (sibling PR #639)
+## Per-partition $k_\lambda$ refinement (the companion analysis)
 
-[PR #639's `per-partition-k-lambda-rule.md`](https://github.com/litlfred/qou/pull/639)
+[the `per-partition-k-lambda-rule.md`](https://github.com/litlfred/qou/pull/639)
 sharpens the closure direction beyond the multiplicity-refined
 scalar form: the failure of uniform-$k$ in the per-eigenvalue
 operator form is dominated by **one specific partition per atom**:

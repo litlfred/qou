@@ -11,14 +11,14 @@ following structural form. The progression of refutations
 
 | Form of $n_\star$ | Verdict | Witness |
 |:---|:---:|:---|
-| Scalar-eigenvalue family (uniform $k$, GB grade, additive $\ell n_0 + k$) | **refuted** | PR #638 §"Closure (2026-05-11): scalar-eigenvalue form$\ldots$" |
-| Per-eigenvalue operator-valued ($\Phi_q$ per $\mu_a^{(\lambda)}$, signed) | **refuted** at uniform $k$ | PR #638 §"Operator-valued probe" |
+| Scalar-eigenvalue family (uniform $k$, GB grade, additive $\ell n_0 + k$) | **refuted** | the prior work §"Closure (2026-05-11): scalar-eigenvalue form$\ldots$" |
+| Per-eigenvalue operator-valued ($\Phi_q$ per $\mu_a^{(\lambda)}$, signed) | **refuted** at uniform $k$ | the prior work §"Operator-valued probe" |
 | Type-B-folded-crystal depth ($\#\{\lambda \vdash 3A : \lambda = \lambda^T\}$) | **partial** — fits $D$ and $T$, fails ${}^3\mathrm{He}$ | [probe-phiq-type-b-fold-depth.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-type-b-fold-depth.witness.json) |
 | Type-B + scalar near-pole multiplicity $m$ (4 two-input rules) | **refuted** | [probe-phiq-multiplicity-refinement.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-multiplicity-refinement.witness.json) |
 
 ## Sharpened open form: per-partition $k_\lambda$
 
-PR #639's analysis of #638's per-eigenvalue spectra showed that the
+the analysis of #638's per-eigenvalue spectra showed that the
 **failure at uniform $k = 2$ is dominated by ONE partition per atom**:
 
 | Atom | dominant $\lambda$ | $\dim V_\lambda$ | $\text{contrib}_\lambda(k=2)$ | $\text{contrib}_\lambda(k=1)$ |
@@ -236,7 +236,7 @@ Candidate routes (all $(q, \beta)$-aware):
  (the SDP inputs), and **already infrastructure-supported**: the SDP
  emits the required dual fields per the LP / SDP first-class-infra
  contract (`y_star`, `active_set`, `duality_gap`). Testable directly
- against PR #639's empirical dominants $\{[2,2,1,1], [6,3], [5,4]\}$
+ against the empirical dominants $\{[2,2,1,1], [6,3], [5,4]\}$
  by running the SDP at each atom's braid word and reading off the
  argmax of $y_\lambda^\star$.
 
@@ -272,7 +272,7 @@ that conjecture's "Status of $n_\star$" section.
 
 ## Paper-canonical $\sigma_w$ basis (cycle 7)
 
-PR #639 cycle 6 established that the SDP shadow-price hypothesis
+the prior work cycle 6 established that the SDP shadow-price hypothesis
 **cannot** be tested in the per-partition basis: by Wedderburn
 orthogonality, the off-diagonal Gram entries are identically zero
 ([probe-off-diagonal-gram-wedderburn.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-off-diagonal-gram-wedderburn.witness.json) —
@@ -390,7 +390,7 @@ measure different things:
 | Observable | Quantity | Probe |
 |---|---|---|
 | Per-cell matrix entries | $\lvert\langle v_S, \rho_\lambda(\beta) v_T\rangle\rvert$ | this Murphy probe |
-| Per-partition $\Phi_q$ contribution | $\lvert y_\lambda \sum_a \Phi_q^{[\leq k]}(\mu_a^{(\lambda)})\rvert$ | PR #639 cycle 5b |
+| Per-partition $\Phi_q$ contribution | $\lvert y_\lambda \sum_a \Phi_q^{[\leq k]}(\mu_a^{(\lambda)})\rvert$ | the prior work cycle 5b |
 
 The first is the bilinear-pairing observable (basis-expression
 strength). The second is the spectral observable (eigenvalue

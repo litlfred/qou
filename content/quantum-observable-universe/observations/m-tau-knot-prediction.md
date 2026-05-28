@@ -144,7 +144,7 @@ its honest outcome.
 - Audit
   [`2026-05-25-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md)
   §F5 — driver question
-- Companion PR #1249 — substrate-q_0 derivation workplan
+- Companion the prior work — substrate-q_0 derivation workplan
 - Compute script + witness:
   [`m_tau_knot_prediction.py`](../../../folio-assistant/computations/m_tau_knot_prediction.py),
   [`m-tau-knot-prediction.witness.json`](../../../folio-assistant/computations/m-tau-knot-prediction.witness.json)

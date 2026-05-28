@@ -47,4 +47,4 @@ hypotheses, and the per-n discharges plug in when ready.
 
 **Scaffolding-tier Lean infrastructure.** No `sorry`s introduced
 (all class fields use the explicit-residual pattern from
-PR #665's prior review batch); per-$n$ instances remain follow-up.
+the prior review batch); per-$n$ instances remain follow-up.

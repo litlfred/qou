@@ -54,7 +54,7 @@ element:*
 ## Numerical verification
 
 From [`per-wedderburn-block-ck.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/per-wedderburn-block-ck.witness.json)
-(PR #672 merge, per-Wedderburn-block probe at $q = 1 + \varepsilon$
+(the prior work merge, per-Wedderburn-block probe at $q = 1 + \varepsilon$
 to order $\varepsilon^{12}$):
 
 | $k$ | $c_k^{(3)}$ | $c_k^{(2,1)}$ | $c_k^{(1,1,1)}$ | $S_k^{(w_0)}$ | empirical $c_k$ | sign agreement |
@@ -198,12 +198,12 @@ Candidate refinements:
    the Wenzl-bridge inductive ascent.
 
 These extensions are flagged for follow-up under the
-`prop:alpha-k-categorical-closure` proposal (PR #675, pending merge).
+`prop:alpha-k-categorical-closure` proposal (the prior work, pending merge).
 
 ## Status
 
 **Sign-character weighting formalized as a proposition** (this
 block) — the qualitative pattern (1, 0, −1) is now a theorem
-backed by the per-irrep closed forms from PR #672 and the
+backed by the per-irrep closed forms and the
 explicit $S_3$ character values. **Magnitude closure remains
 open** and is the natural next research question.

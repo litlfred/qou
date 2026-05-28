@@ -4,7 +4,7 @@ The framework PROVES $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ via the
 2-strand sub-braid argument (Fact 3 of
 [`prop:q-beta-c3-hopf-three-fold-markov`](#prop:q-beta-c3-hopf-three-fold-markov)).
 The higher-rung coefficients $c_4, c_5, c_6, c_7$ have **empirical
-closed forms** extracted from the SDP-$T_\beta$ framework (PR #777,
+closed forms** extracted from the SDP-$T_\beta$ framework (the prior work,
 [`folio-assistant/computations/qbeta_decay_sdp_full_ck.py`](../../folio-assistant/computations/qbeta_decay_sdp_full_ck.py))
 with sub-percent residuals, but **no first-principles categorical
 derivation is yet known**.
@@ -67,7 +67,7 @@ conjectures must be marked as such. Promoting them to a single
 ## Evidence
 
 Direct SDP-$T_\beta$ extraction at 50dps (post-TR_M[5] bug fix from
-PR #777) reproduces all four c_k EXACTLY:
+the prior work) reproduces all four c_k EXACTLY:
 
 ```
 c_2 extracted = -1.0171   (vs framework -1, 1.7% match)

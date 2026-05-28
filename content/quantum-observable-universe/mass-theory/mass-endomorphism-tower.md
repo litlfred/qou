@@ -1,4 +1,4 @@
-> **TOP-OF-FILE SUPERSEDED-$\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**
+> **TOP-OF-FILE SUPERSEDED-$\rho_q$ BANNER (promoted 2026-05-24, the prior work).**
 > The substrate density $\rho_q = 1/\hbar_q^2$ used in the algebraic
 > form below is **STRUCTURALLY WRONG** per the inline SUPERSEDED
 > note (lines 28-51). The correct dimensional factor is the

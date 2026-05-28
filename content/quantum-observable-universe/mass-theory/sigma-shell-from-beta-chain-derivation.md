@@ -57,7 +57,7 @@ $y_{\mathrm{target}}(A=2) \approx 270$, **off by a factor of
 $2.3 \times 10^{7}$** from the benchmark
 ($\approx 0.0012$). The root cause, identified in the §5
 escalation comment on
-[PR #564](https://github.com/litlfred/qou/pull/564#issuecomment-4409038238),
+the prior analysis,
 is structural: the deuteron has **no**
 non-shell-crossing predecessors along the $\beta$-stability
 valley — the chain $\{n \to p\}$ produces the bound state

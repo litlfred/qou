@@ -258,6 +258,6 @@ LP-dual spin-invariance. The QOU paper inherits it because
 $(H_n(R, q), \tau_{\mathrm{Markov}}, S, P_\ell, \Sigma)$
 satisfies all four. Particle physics gets isospin because
 nucleons are realised as a 2-row Wedderburn stratum (per
-[PR #619](https://github.com/litlfred/qou/pull/619) empirics)
+the prior analysis empirics)
 inside this same algebra; the Wigner-energy phenomenology is
 the LP-dual shadow of the categorical $\mathbb{Z}/2$ grading.

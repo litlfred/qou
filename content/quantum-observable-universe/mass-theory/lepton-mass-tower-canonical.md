@@ -177,5 +177,5 @@ end QOU.BraidKnot.LeptonMassTowerCanonical
 - [`prop:categorical-mass-markov`](categorical-mass-markov.md) — $\|\cdot\|$ modulus projection
 - [`bar-involution.md`](bar-involution.md) — $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projection
 - [`prop:skein-mass-relation`](../../observations/skein-mass-relation.md) — operative LO formula (SUPERSEDED-$\rho_q$-bannered)
-- Sibling PR #1196 — `BarSymmetricBarAntiSymmetricIdentities.lean` (bar-decomp infrastructure)
-- Sibling PR #1153 — `Q_m` torus-knot sinh identity (related P_skew framework)
+- Sibling the prior work — `BarSymmetricBarAntiSymmetricIdentities.lean` (bar-decomp infrastructure)
+- Sibling the prior work — `Q_m` torus-knot sinh identity (related P_skew framework)

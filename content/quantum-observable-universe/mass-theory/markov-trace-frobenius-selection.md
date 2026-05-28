@@ -152,7 +152,7 @@ correctly implements $\tau_M$ via the Markov axioms and
 reproduces the Wenzl-bridge $y_\lambda$ values bit-exactly for D,
 T, ${}^{3}$He.
 
-The PR #472 `prop:habiro-residue-sum-equivalence` claims agreement
+The the prior work `prop:habiro-residue-sum-equivalence` claims agreement
 between two pipelines (polynomial path and residue path) — this
 agreement is between two computations of the *same* $\tau_{\mathrm{SW}}$
 quantity via different methods, NOT a confirmation of the

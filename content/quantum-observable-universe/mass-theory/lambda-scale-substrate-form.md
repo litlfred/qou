@@ -3,7 +3,7 @@
 > **Status — $\lambda_{\mathrm{scale}}$ ABSORBED INTO `Geom_full`.**
 >
 > Per [`docs/lambda-scale-absorbed-into-geom-full.md`](../../../docs/lambda-scale-absorbed-into-geom-full.md)
-> (canonical framing, see PR #1080),
+> (canonical framing, see the prior work),
 > **`λ_scale` is no longer a separate object** in the framework.
 > The canonical mass formula is
 >
@@ -22,7 +22,7 @@
 >     = 5/2 + (3/4) h^2$
 >   IS the current production value of `linking_weight(𝓑_3, q)`
 >   inside `Geom_full(𝓑_3, q)`. It is PROVED (Wenzl bridge,
->   PR #895/#942).
+>   the prior work/#942).
 >
 > **What is OBSOLETE in this block:**
 > - The original substrate-form claim
@@ -41,7 +41,7 @@
 >   [`bring_bloch_tier5_search_m_p.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_bloch_tier5_search_m_p.py)).
 > - The Yekutieli per-cell ADD form
 > $5/2 + (3/4 - G) h^2$ was also purged as
->   non-canonical (PR #985 bijection NEGATIVE).
+>   non-canonical (the prior work bijection NEGATIVE).
 >
 > **Current research direction**: refine `Geom_full(𝓑_3)`'s
 > categorical exactness at higher $h^2$ orders, NOT derive
@@ -105,7 +105,7 @@ $$
    hyperbolic 3-manifold has $\mathrm{Vol} = 18.03$ within 0.28%
    (closest: $9 \cdot \mathrm{Vol}(4_1)$ at $+1.35\%$).
 
-6. **Q-locality (PR #951):** at the substrate window
+6. **Q-locality (the prior work):** at the substrate window
    $q \in [q_0 - 0.05, q_0 + 0.05]$, the residual
    $(\frac{5}{2} - h^2 \cdot G) - \lambda_p(q)$ has slope
    $\sim -1.7 \times 10^7$ ppm/q and curvature $\sim 4.4 \times 10^4$
@@ -116,7 +116,7 @@ $$
    known $h_q$-axis near-matches ($\frac{5}{2}-h^2 G$,
    $1/(1 - h_q \cdot q_0^{10})$, V$_7$, Strategy G).
 
-7. **Reframing (PR #957):** $\lambda_p(q) = (m_p/m_e)
+7. **Reframing (the prior work):** $\lambda_p(q) = (m_p/m_e)
    \cdot \hbar_q^2 / (8 G) = C \cdot \hbar_q^2$ exactly, with
    $\hbar_q := (q - 1) / q$ and $C = (m_p/m_e) / (8 G) \approx
    250.576$. This is a degree-0 polynomial in $q$ over
@@ -135,7 +135,7 @@ $$
    so a $\mathbb{Z}$-relation expressing one as a knot-volume sum
    immediately gives the other), and was negative.
 
-8. **Strategy J (PR #969):** no natural ratio of
+8. **Strategy J (the prior work):** no natural ratio of
    $\{\operatorname{tr}_M(\beta_p), \operatorname{tr}_M(\beta_n), \hbar_q, h_q, q_0, G\}$
    structurally predicts $m_n / m_p$ either. Best pure-substrate
    match at 0.45% --- 4,500 times worse than 1 ppb.

@@ -15,7 +15,7 @@ $$
 \frac{3 + h^2}{2 + h^2} = \frac{[3]_q \cdot [2]_q}{[4]_q}
 $$
 
-**Tau set** *(canonical for amphichiral $10_{43}$ candidate per PR #1253, used by `prop:lepton-tower-h-n-plus-1-branching` at $m = 3$):*
+**Tau set** *(canonical for amphichiral $10_{43}$ candidate, used by `prop:lepton-tower-h-n-plus-1-branching` at $m = 3$):*
 
 $$
 [6]_q = [2]_q \cdot [3]_q \cdot (1 + h^2)

@@ -74,10 +74,10 @@ Under Type-B folding:
   $N = 2$ shells (the LP-dual finding from PR #638 family 5).
 
 This is the unified rigid monoidal framework under which the
-three load-bearing findings of the PR #638 closure are
+three load-bearing findings of the the prior work closure are
 consequences of a single structural fact.
 
-## Unification of findings (1)–(3) from PR #638 closure
+## Unification of findings (1)–(3) closure
 
 | Finding | Categorical content |
 |:---|:---|

@@ -57,7 +57,7 @@ The categorical primitives are **two**:
 - $c_4$: multiplicative Jones $\times$ Kashiwara mixing ($c_3 \cdot b^4$).
 - $c_5$: additive Jones$^2 \cdot$ integer + Kashiwara mixing ($c_3^2 \cdot 3 + b$).
 
-The doc's earlier $c_4 = b^2 + 1/2$ form is superseded; the 2026-05-19 audit shows it was 9.5% off the empirical value, while $c_3 \cdot b^4$ matches to 0.9%.
+The doc's earlier $c_4 = b^2 + 1/2$ form is superseded; the audit shows it was 9.5% off the empirical value, while $c_3 \cdot b^4$ matches to 0.9%.
 
 The KL decategorification (CLAUDE.md §7b) governs the appearance of
 classical-limit Jones values: the mass observable lives in the KL

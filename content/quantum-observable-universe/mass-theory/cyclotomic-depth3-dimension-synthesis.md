@@ -179,7 +179,7 @@ Concretely:
    new content — PSLQ-saturated at $K = 5, 7$.
 4. **Combined with
    [`prop:two-filtration-bridge-general`](#prop:two-filtration-bridge-general)
-   (round 13 of PR #635)**, the framework's depth-3 picture has a
+   (round 13 of the prior work)**, the framework's depth-3 picture has a
    fully general theorem for any cyclotomic field at any chiral
    pair of partition cells.
 
