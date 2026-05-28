@@ -1,18 +1,35 @@
 {
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-05-28T03:52:20.891714+00:00",
+  "commitSha": "2b463b07bde2b8ffd5246f561733d623736d0c73",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "gram-matrix-dual",
+  "scriptFile": "gram-matrix-dual.py",
+  "scriptHash": "b14bf6bdce09",
+  "scriptCommitSha": "8a00323ca156fd987bf98fefc66fb8083e11e269",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "name": "gram-matrix-dual",
-  "timestamp": "2026-05-28T02:00:16.582670+00:00",
+  "timestamp": "2026-05-28T03:52:20.578054+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "HA": 0.20906032198987945,
     "z": 0.4993203340335982
   },
   "markov_trace_basis": {
-    "\u03b3": 1.0,
-    "\u03c3\u2080": 0.4993203340335982,
-    "\u03c3\u2081": 0.4993203340335982,
-    "L\u208a": 0.2493207959794241,
-    "L\u208b": 0.2493207959794241,
-    "e\u207b": 0.5514434199198297
+    "γ": 1.0,
+    "σ₀": 0.4993203340335982,
+    "σ₁": 0.4993203340335982,
+    "L₊": 0.2493207959794241,
+    "L₋": 0.2493207959794241,
+    "e⁻": 0.5514434199198297
   },
   "gram_matrix": [
     [
