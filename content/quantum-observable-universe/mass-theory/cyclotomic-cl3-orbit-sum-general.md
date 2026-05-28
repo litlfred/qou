@@ -130,7 +130,7 @@ contribution $\mathrm{Cl}_3(0) = \zeta(3)$.
 
 ### Significance
 
-**Generalises round 11 of PR #634** from "$\zeta_5$ only" to "every
+**Generalises round 11 of ** from "$\zeta_5$ only" to "every
 $N \geq 2$". Concretely:
 
 1. **For every cyclotomic field $\mathbb{Q}(\zeta_N)$**, the real-part
@@ -148,7 +148,7 @@ $N \geq 2$". Concretely:
 
 ### Cross-references
 
-- Special case $N = 5$ (round 11 of PR #634):
+- Special case $N = 5$ (round 11 of ):
   [`prop:cl3-zeta5-orbit-sum-identity`](#prop:cl3-zeta5-orbit-sum-identity)
 - Companion imaginary-part theorem:
   [`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form)

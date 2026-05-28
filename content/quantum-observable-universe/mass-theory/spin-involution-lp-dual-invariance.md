@@ -172,7 +172,7 @@ verifies $y_0^*(T) = y_0^*({}^3\mathrm{He})$ to machine
 precision (= 570.6762 at $q_0$, = 26.8242 in ht=6 stratum, and
 exactly equal across the entire $q$-sweep).
 
-**Corollary (pair-knot operator $Z \leftrightarrow N$ symmetry, 2026-05-11).**
+**Corollary (pair-knot operator $Z \leftrightarrow N$ symmetry).**
 *For $A = H_n(R, q)$ as above, let $\sigma_{pp} = \sigma_{i_1}
 \sigma_{i_2} \sigma_{i_3} \sigma_{i_4}$ be the proton-pair sub-braid
 at the $Z=2$ closed proton shell of $({}^3\mathrm{He}, {}^4\mathrm{He})$
@@ -258,6 +258,6 @@ LP-dual spin-invariance. The QOU paper inherits it because
 $(H_n(R, q), \tau_{\mathrm{Markov}}, S, P_\ell, \Sigma)$
 satisfies all four. Particle physics gets isospin because
 nucleons are realised as a 2-row Wedderburn stratum (per
-[PR #619](https://github.com/litlfred/qou/pull/619) empirics)
+empirics)
 inside this same algebra; the Wigner-energy phenomenology is
 the LP-dual shadow of the categorical $\mathbb{Z}/2$ grading.

@@ -92,7 +92,7 @@ weight $W_{c_1 c_2}$ would encode.
 The empirical match between the (now-purged) $\lambda_{\mathrm{scale}}$
 literal $2.4599527869$ and the color-tube Faddeev resummation
 $1/(1 - h_q \cdot q_0^{10}) \approx 2.450$ (per
-[`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md)
+[`docs/audits/-lambda-scale-canonical-unification.md`](../../docs/audits/-lambda-scale-canonical-unification.md)
 §"How canonical includes Yekutieli + Bring together") is independent
 evidence that 10-fold color-tube averaging (9 color pairs + 1 diagonal)
 is the categorical structure behind the historical numerology.
@@ -170,18 +170,18 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
    saturate at $A = 4$ (filled-shell analogue), producing the
    $A \cdot 8G$ closure observed in
    [`isotope_record_schema.py:186`](../../folio-assistant/computations/isotope_record_schema.py)?
-   See [`docs/audits/2026-05-24-4he-magic-shell-color-tube-audit.md`](../../docs/audits/2026-05-24-4he-magic-shell-color-tube-audit.md).
+   See [`docs/audits/-4he-magic-shell-color-tube-audit.md`](../../docs/audits/-4he-magic-shell-color-tube-audit.md).
 4. **Cross-check $\rho_F$ density rule.** Does color-tube weighting
    give a categorical reading of the Kashaev density factor
    $\rho_F \in \{m_e, 2 m_e\}$? See
-   [`docs/audits/2026-05-24-rule14-kashaev-density.md`](../../docs/audits/2026-05-24-rule14-kashaev-density.md).
+   [`docs/audits/-rule14-kashaev-density.md`](../../docs/audits/-rule14-kashaev-density.md).
 
 ## Cross-references
 
 - Parent sign-flip audit:
-  [`docs/audits/2026-05-24-sign-flip-interpretation.md`](../../docs/audits/2026-05-24-sign-flip-interpretation.md)
+  [`docs/audits/-sign-flip-interpretation.md`](../../docs/audits/-sign-flip-interpretation.md)
 - ${}^{4}\mathrm{He}$ magic-shell color-tube reading:
-  [`docs/audits/2026-05-24-4he-magic-shell-color-tube-audit.md`](../../docs/audits/2026-05-24-4he-magic-shell-color-tube-audit.md)
+  [`docs/audits/-4he-magic-shell-color-tube-audit.md`](../../docs/audits/-4he-magic-shell-color-tube-audit.md)
 - Bring color-tube weighted averaging cheat-sheet entry:
   [`docs/canonical-derivation-cheat-sheet.md` §"Bring color-tube weighted averaging"](../../docs/canonical-derivation-cheat-sheet.md)
 - Existing color-tube infrastructure:

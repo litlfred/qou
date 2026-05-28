@@ -32,7 +32,7 @@ $$
   \;=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) - 2\,\Delta_\mathrm{cat}({}^3\mathrm{He})
   \;=\; 13.197\,\mathrm{MeV}
 $$
-(the doubly-magic anchor from PR #645).
+(the doubly-magic anchor from ).
 
 ## Solution
 

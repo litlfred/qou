@@ -154,7 +154,7 @@ the real ordering (Hoefsmit seminormal orthogonality,
 specialization $\mathrm{Im}(q_0) = 0$ is one valid choice; complex
 $q_0$ with $\lvert q_0 \rvert > 1$ and $\mathrm{Im}(q_0) \neq 0$ is
 structurally admissible but currently uninstantiated
-(audit: [`2026-05-24-q-zero-reality-audit.md`](../../../docs/audits/2026-05-24-q-zero-reality-audit.md)).
+(audit: [`-q-zero-reality-audit.md`](../../../docs/audits/-q-zero-reality-audit.md)).
 
 **Decay width $\mathfrak{D}$ vs lifetime $\tau$ vs sheaf sections $\Gamma$.**
 Three standard physics/math symbols collide in this paper:

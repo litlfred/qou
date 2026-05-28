@@ -41,7 +41,7 @@ has eigenvalue $c(T(k); q)$. Together with
 [`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou)
 this gives a complete explicit construction of $Z(H_n(q))$.*
 
-> **Scope correction note (2026-05-19).** Earlier versions of this
+> **Scope correction note.** Earlier versions of this
 > proposition ranged the inner Lagrange product over cells of $\lambda$
 > only (i.e., $\square \in \lambda$).  With that scope, the off-block
 > projection does NOT vanish: the JM eigenvalue $q^{2c(T'(k))}$ for

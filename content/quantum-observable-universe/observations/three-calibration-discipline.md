@@ -72,9 +72,9 @@ elsewhere in the paper:
 ## Proof sketch
 
 Induction along the 19-link derivation chain (compiled in
-[derivation-audit-2026-04-20](../../../docs/derivation-audit-2026-04-20.md)
+[derivation-audit-](../../../docs/derivation-audit-.md)
 and refreshed in
-[2026-05-01-math-framework-deep-audit](../../../docs/audits/2026-05-01-math-framework-deep-audit.md)).
+[-math-framework-deep-audit](../../../docs/audits/-math-framework-deep-audit.md)).
 At each step:
 
 * **Base.** The categorical action $\mathcal{S} = \mathrm{tr}(\Phi)$
@@ -126,7 +126,7 @@ homogeneity, and any future closure of the chain inherits this.
 
 This proposition serves as the **calibration-discipline hook** for
 audits. Companion task **P1.5** in the
-[2026-05-01 math-framework workplan](../../../docs/audits/2026-05-01-math-framework-workplan.md)
+[ math-framework workplan](../../../docs/audits/-math-framework-workplan.md)
 sweeps the paper for blocks that violate this discipline (e.g.
 compound-shell calibration, atlas base cases). Companion task
 **P0.1** sweeps proof blocks for Archimedean-side derivation

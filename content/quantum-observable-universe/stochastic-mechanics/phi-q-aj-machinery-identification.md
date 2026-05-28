@@ -52,4 +52,4 @@ Both theorems are **fully verified by Lean** modulo the three class instances. T
 
 For 𝓑_3 specifically, the algebraic side is in literature (Champanerkar-Kofman-Mullen 2008 for classical A-polynomial; Hikami for related quantum work). What's open: explicit verification that the framework's $\Phi_q$ / $\mathrm{Li}_2^q$ choices align with the AJ machinery's saddles.
 
-**Cross-reference:** [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md) §9 (AJ conjecture crosses archimedean wall) for full background.
+**Cross-reference:** [`docs/audits/-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/-q0-into-character-variety-minimal-archimedean.md) §9 (AJ conjecture crosses archimedean wall) for full background.

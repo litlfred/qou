@@ -11,7 +11,7 @@ Gröbner-Shirshov normal form, the basis elements are:
 
 | $k$ | Name | Word | Permutation | $\operatorname{tr}_M$ at $q_0$ |
 |---|---|---|---|---|
-| 0 | $\gamma$ (identity) | $()$ | $e$ | $1.000$ |
+| 0 | $\gamma$ (identity) | $$ | $e$ | $1.000$ |
 | 1 | $\sigma_0$ | $(0)$ | $(1\;2)$ | $0.499$ |
 | 2 | $\sigma_1$ | $(1)$ | $(2\;3)$ | $0.499$ |
 | 3 | $L_+$ | $(0, 1)$ | $(1\;2\;3)$ | $0.249$ |

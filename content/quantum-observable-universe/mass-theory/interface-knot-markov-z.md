@@ -85,7 +85,7 @@ $\bowtie_K$ via $p_+(K)$ and $p_-(K)$ counts — these are determined
 structurally by the canonical-braid construction, not phenomenologically
 fit.
 
-This locks PR #801's interface-knot factorisation as
+This locks 's interface-knot factorisation as
 *derivation-grade*: each interface in the canonical atomic braid
 contributes a Markov-trace factor that is either $z$ or $z - h$,
 determined by the crossing sign. No empirical-fit parameter remains
@@ -142,5 +142,5 @@ $$
 
 - Script: [`folio-assistant/computations/delta_lambda_fr_identity_phase5c.py`](../../../folio-assistant/computations/delta_lambda_fr_identity_phase5c.py)
 - Witness: `folio-assistant/computations/delta-lambda-fr-identity-phase5c.witness.json` (2 assertions; **Markov-axiom interface identity passes to $10^{-15}$ rel. err.**)
-- Cross-reference (PR #801): [`def:ew-interface-knot`](#def:ew-interface-knot) (the canonical interface-knot definition).
-- Cross-reference (PR #819): Phase 5c.1 audit doc covers the empirical extraction; this proposition is the categorical resolution.
+- Cross-reference: [`def:ew-interface-knot`](#def:ew-interface-knot) (the canonical interface-knot definition).
+- Cross-reference: Phase 5c.1 audit doc covers the empirical extraction; this proposition is the categorical resolution.

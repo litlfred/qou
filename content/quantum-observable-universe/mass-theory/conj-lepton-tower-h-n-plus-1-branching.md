@@ -1,4 +1,4 @@
-**Conjecture (lepton-tower closure factor — unifying form, PR #1253).** *Let
+**Conjecture (lepton-tower closure factor — unifying form).** *Let
 $K_\ell$ be the canonical knot for the lepton at tower-index $m$
 (electron $m=1$ trefoil / muon $m=2$ figure-eight / tau $m=3$
 amphichiral $10_{43}$ candidate). The canonical operator-level
@@ -13,33 +13,22 @@ symmetric q-integer. The triple $(2m-1, m, 2m)$ is symmetric in
 $h = q - q^{-1}$ — bar-anti-symmetric upper jet, middle index,
 bar-symmetric closing trace.*
 
-> **Status — unifying formula (2026-05-25, PR #1253 amphichiral discharge).**
-> Numerical match: muon $m=2$ $\to$ $[3]_q \cdot [2]_q / [4]_q$ to +0.001 %;
-> tau $m=3$ $\to$ $[5]_q \cdot [3]_q / [6]_q$ to +0.79 % (via $\mathrm{Vol}(10_{43})/\hbar_q^2$);
-> see the **Resolution (PR #1253) — unifying formula** section below for the table.
-> Algebraic cores Lean-proved (`field_simp; ring`, generic `[Field R]`)
-> in [`three-halves-structural-factor.lean`](three-halves-structural-factor.lean)
-> + [`conj-lepton-tower-h-n-plus-1-branching.lean`](conj-lepton-tower-h-n-plus-1-branching.lean).
-> Categorical derivation (why this specific $h$-graded triple arises
-> from the per-braid mass tower) remains open — see "Resolution" section
-> for the open work plan.
+### Earlier framing (superseded by  unifying formula)
 
-### Earlier framing (superseded by PR #1253 unifying formula)
-
-> **SUPERSEDED (2026-05-25, PR #1253).** The earlier conjecture
+> **SUPERSEDED .** The earlier conjecture
 > $\xi_m = d_q((n,1)) \cdot [2]_q / [n+1]_q$ (with $n = 2m+1$, then
 > revised to $n = m+1$) matched muon but **falsified at tau**
 > ($\xi_3 = [4]_q \cdot [2]_q / [5]_q$ predicted $\approx$ 1.59 vs required
-> $\approx$ 2.47, off by 35 %). The PR #1253 amphichiral filter identified
+> $\approx$ 2.47, off by 35 %). The  amphichiral filter identified
 > the actual closure $\xi_3 = [5]_q \cdot [3]_q / [6]_q$ and the
 > unifying form above. The earlier framing is preserved below for
-> pedagogical trajectory; the "Resolution (PR #1253)" section is
+> pedagogical trajectory; the "Resolution" section is
 > the current authoritative statement.
 
 ## Derivation sketch (open)
 
 The factor $[3]_q \cdot [2]_q / [4]_q$ was numerically identified
-in [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md)
+in [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md)
 + [`folio-assistant/computations/t6_three_halves_factor_probes.py`](../../../folio-assistant/computations/t6_three_halves_factor_probes.py)
 as the closed-form fit (matching 28 candidate ratios to 0.034%, the
 best by 20$\times$ over the next best).
@@ -128,11 +117,11 @@ All three readings are consistent with the muon (m=2) numerical
 match; distinguishing them requires the derivation work that's
 currently open.
 
-## Resolution (PR #1253) — unifying formula
+## Resolution — unifying formula
 
 The "simple extension" pattern `[m+1]_q · [2]_q / [m+2]_q` is FALSIFIED for tau (predicted ξ_3 = `[4]_q · [2]_q / [5]_q` $\approx$ 1.59 vs required $\approx$ 2.47, off by 35 %).
 
-The **correct unifying formula** (PR #1253 amphichiral probe + Lean discharge):
+The **correct unifying formula**:
 
 $$
 \boxed{\;\xi_m \;=\; \frac{[2m-1]_q \cdot [m]_q}{[2m]_q} \cdot \frac{1}{\hbar_q^2}\;}
@@ -152,7 +141,7 @@ The triple $(2m-1, m, 2m)$ is **symmetric in $h = q - q^{-1}$** at every step:
 - $m$ $\to$ middle index (symmetric / anti-symmetric depending on parity)
 - $2m$ even $\to$ bar-symmetric q-bracket from the closing trace
 
-This pattern is precisely what the lepton's amphichirality should produce — the upper and lower indices are reflections of each other across the middle, consistent with the **knot-operator = symmetry equivalence** in the owner's PR #1253 directive.
+This pattern is precisely what the lepton's amphichirality should produce — the upper and lower indices are reflections of each other across the middle, consistent with the **knot-operator = symmetry equivalence** in the owner's  directive.
 
 ## Lean status
 
@@ -172,14 +161,14 @@ The unifying formula's algebraic content is **Lean-proved** in two places:
 
 All proofs are `field_simp; ring` over generic `[Field R]` per CLAUDE.md §7c.
 
-The categorical derivation (why $\xi_m = [2m-1]_q \cdot [m]_q / [2m]_q$ specifically — i.e., how the q-bracket triple $(2m-1, m, 2m)$ falls out of the per-braid mass tower's operator-valued $A^\lambda_{\mu, \nu}(I)$ branching at the lepton's H_{2m+1}-substrate amphichiral knot) remains open work for Option E (Kashiwara crystal, PR #1252).
+The categorical derivation (why $\xi_m = [2m-1]_q \cdot [m]_q / [2m]_q$ specifically — i.e., how the q-bracket triple $(2m-1, m, 2m)$ falls out of the per-braid mass tower's operator-valued $A^\lambda_{\mu, \nu}(I)$ branching at the lepton's H_{2m+1}-substrate amphichiral knot) remains open work for Option E (Kashiwara crystal).
 
 ## Cross-references
 
-- [`docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md) — T6 gap (c) full diagnosis (muon side)
-- [`docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md`](../../../docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md) — T6/F_ℓ workplan + PR #1253 tau followup section
-- [`folio-assistant/computations/t6_three_halves_factor_probes.py`](../../../folio-assistant/computations/t6_three_halves_factor_probes.py) — muon empirical probe (PR #1127)
-- [`folio-assistant/computations/tau_amphichiral_sdp_probe.py`](../../../folio-assistant/computations/tau_amphichiral_sdp_probe.py) — tau amphichiral q-bracket probe (PR #1253)
+- [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md) — T6 gap (c) full diagnosis (muon side)
+- [`docs/audits/-t6-f-ell-derivation-attempt.md`](../../../docs/audits/-t6-f-ell-derivation-attempt.md) — T6/F_ℓ workplan +  tau followup section
+- [`folio-assistant/computations/t6_three_halves_factor_probes.py`](../../../folio-assistant/computations/t6_three_halves_factor_probes.py) — muon empirical probe
+- [`folio-assistant/computations/tau_amphichiral_sdp_probe.py`](../../../folio-assistant/computations/tau_amphichiral_sdp_probe.py) — tau amphichiral q-bracket probe
 - [`prop:three-halves-structural-factor`](three-halves-structural-factor.md) — Lean-proved structural identities (muon + tau)
 - [`prop:lepton-bring-surface-h3-3channel`](lepton-bring-surface-h3-3channel.md) — V̂_e convention (calibration check)
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula

@@ -111,7 +111,7 @@ The EW-sector instance of this proposition draws its supply
 matrix from the Wedderburn-block-decomposed pair amplitude
 $|V_i V_j|_{\rm Wedderburn}$ defined in
 [`wedderburn_pair_volumes.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wedderburn_pair_volumes.py)
-(integrated 2026-05-06 from PR #534 commit `06305f30c`):
+(integrated from  commit `06305f30c`):
 
 $$
   |V_i V_j|_{\rm Wedd}
@@ -170,7 +170,7 @@ promote to `proposition`:
 discontinuity in the **FROB-FILTER** flag (the
 Frobenius-positivity activation threshold between $A = 3$ and
 $A = 6$ in
-[`docs/audits/2026-05-02-nv-frob-filter-conjectures.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-02-nv-frob-filter-conjectures.md)):
+[`docs/audits/-nv-frob-filter-conjectures.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-nv-frob-filter-conjectures.md)):
 the activation rule becomes a **derived consequence** of
 LP/SDP duality, not an empirical fit per atomic mass.*
 
@@ -180,4 +180,4 @@ LP/SDP duality, not an empirical fit per atomic mass.*
 [`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table-h2.witness.json),
 [`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement-operator-selection.witness.json).
 
-**Audit doc.** [`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refinement.md).
+**Audit doc.** [`docs/audits/-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-path-alpha-bring-refinement.md).

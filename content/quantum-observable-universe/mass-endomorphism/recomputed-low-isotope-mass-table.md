@@ -1,8 +1,8 @@
 **Remark (recomputed low-isotope mass table after q-Hecke
-character gap closure).** *After PR #572's q-Hecke character
+character gap closure).** *After 's q-Hecke character
 closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-character-closure))
 and the cherry-picked* $\rho_K$ *refinement infrastructure from
-PR #564, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
+, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
 *at* $q = q_0$ *now agree to machine epsilon across* $\{p, n, D, T, ^{3}\mathrm{He}\}$:
 
 1. **Canonical Markov-axiom reducer** —
@@ -15,7 +15,7 @@ PR #564, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K
    per-`n` cache.  Module:
    [`wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal`](../../../folio-assistant/computations/wedderburn_jones_markov.py);
    driver: [`tr_m_q_hecke_seminormal.py`](../../../folio-assistant/computations/tr_m_q_hecke_seminormal.py).
-3. **Symbolic partition-sum** (PR #564) — full 50-dps mpmath via
+3. **Symbolic partition-sum** — full 50-dps mpmath via
    [`rho_k_h3a_refinement.py`](../../../folio-assistant/computations/rho_k_h3a_refinement.py),
    the production path for binding-fraction $\Delta_\lambda$ analysis.
 
@@ -66,7 +66,7 @@ consumes CODATA $m_p$ and $m_n$ as upstream inputs. Per the
 [three-calibration discipline](three-calibration-inputs.md), this
 violates CAL-1/2/3 by injecting $m_p$ and $m_n$ as 4th and 5th
 calibration constants (tracked under
-[Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)).
+[Workplan 0b](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)).
 The proton and neutron rows are **tautological** by construction.
 
 Witness:
@@ -142,7 +142,7 @@ absent from the single-wrap closed form.
 
 Witness:
 [`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json)
-(2026-05-10, derived via
+( derived via
 [`derived_masses.q_beta_predicted_mev`](../../../folio-assistant/computations/derived_masses.py)).
 3 assertions pass: residual $<0.5\%$, residual $<2$ keV,
 single-wrap residual $<$ typed-crossings residual.
@@ -158,7 +158,7 @@ Strategy-3 multi-term implementation in
 [`atomic_braid_mass_table.py`](../../../folio-assistant/computations/atomic_braid_mass_table.py)
 has a known structural bug (multiplicative T1 base instead of
 additive LP active-set, per its own deprecation banner lines 24-46).
-Per owner directive 2026-05-10, neither is the FULL framework
+Per owner directive, neither is the FULL framework
 prediction — both should be replaced by the unified knot mass
 formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| +
 \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$ once the LP-dual
@@ -187,7 +187,7 @@ $m_p = |\mathrm{tr}_M(p, q_0)| \cdot E_0$ and
 $m_n = m_p + Q_\beta + m_e$ per the 3-input convention recommended
 in [`neutron-gap-probes-round3.witness.json`](../../../folio-assistant/computations/neutron-gap-probes-round3.witness.json).
 The script-side migration is tracked as Workplan 0b
-(see [`docs/audits/2026-05-10-1ppb-workplan-update.md`](../../../docs/audits/2026-05-10-1ppb-workplan-update.md));
+(see [`docs/audits/-1ppb-workplan-update.md`](../../../docs/audits/-1ppb-workplan-update.md));
 until it lands, the $0.000\%$ rows above are tautologies and the
 $D / T / {}^{3}\mathrm{He}$ residuals understate the true binding
 prediction error by the n/p split scale ($\sim 0.14\%$).
@@ -204,7 +204,7 @@ from CODATA) is the territory of:
 - $\rho_K^{\text{full}}(Z, N) = \rho_K^{\mathrm{LO}}(Z, N) + (1/|\mathrm{tr}_M|)
   \cdot \sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda(K)$
   ([`rho_k_h3a_refinement.py`](../../../folio-assistant/computations/rho_k_h3a_refinement.py)
-  on PR #564 deuteron-only proof-of-concept; closure error
+  on  deuteron-only proof-of-concept; closure error
   $2.7 \times 10^{-48}$ MeV by construction).
 - The per-block binding fractions $\Delta_\lambda(K)$ — currently
   determined by Occam's-razor minimal-perturbation selection
@@ -221,7 +221,7 @@ with per-`n` cache) is the **recommended default** for
 partition-sum consumers needing better than $10^{-5}$ agreement
 without the overhead of full 50-dps mpmath.
 
-## Path A categorical verification of `18` (proton, 2026-05-09)
+## Path A categorical verification of `18` (proton)
 
 The atomic-shift exponent $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_K)$
 that controls the $u$-power in the $D(u)$ denominator
@@ -243,7 +243,7 @@ $$
 independently reports `shift_proton_h3 = 19` — two independent
 symbolic methods agree exactly on the per-proton u-pole.
 
-**Multi-nucleon verification (deuteron, 2026-05-09):**
+**Multi-nucleon verification (deuteron):**
 [`per_irrep_pole_deuteron_h6.py`](../../../folio-assistant/computations/per_irrep_pole_deuteron_h6.py)
 (witness:
 [`per-irrep-pole-deuteron-h6.witness.json`](../../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json))
@@ -276,9 +276,9 @@ is $11$ at $\lambda = (2, 1)$).
   — the operator-valued LR-block formula behind the partition sum.
 - [`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md)
   — Path A categorical verification of the per-proton coefficient.
-- [`docs/audits/2026-05-08-q-hecke-character-gap-closure.md`](../../../docs/audits/2026-05-08-q-hecke-character-gap-closure.md)
+- [`docs/audits/-q-hecke-character-gap-closure.md`](../../../docs/audits/-q-hecke-character-gap-closure.md)
   — full audit of the closure with three-path comparison.
-- [`docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`](../../../docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md)
+- [`docs/audits/-per-irrep-pole-18-21-research-note.md`](../../../docs/audits/-per-irrep-pole-18-21-research-note.md)
   — Path A audit doc with reading correction.
-- [`docs/audits/2026-05-08-rho-k-mass-table-audit.md`](../../../docs/audits/2026-05-08-rho-k-mass-table-audit.md)
+- [`docs/audits/-rho-k-mass-table-audit.md`](../../../docs/audits/-rho-k-mass-table-audit.md)
   — pre-q-Hecke audit of the ρ_K mass table at 0.23 % MAE.

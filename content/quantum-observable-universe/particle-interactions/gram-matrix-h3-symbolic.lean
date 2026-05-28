@@ -193,6 +193,7 @@ theorem gramMatrix_top_left (u : ℝ) : gramMatrix u 0 0 = 1 := by
     - `det(gramMatrix u_0) ≈ −0.189` at `u_0 ≈ 1.054`
     - `rank(gramMatrix u_0) = 6`                 (full rank at substrate)
 
+    -- Ref: [manuscript]
     The `sorry` is conjectural-conditional per CLAUDE.md §3b-cond;
     discharging it requires lifting the symbolic factorisation into
     Lean. Witness sidecar:
@@ -370,6 +371,7 @@ theorem gramMatrix_det_eq_factorization (u : ℝ) :
   -- 1. unfold gramMatrix gramEntry Matrix.of + all detFactor defs
   -- 2. simp [Matrix.det_fin_succ] to expand 6×6 det recursively
   -- 3. field_simp + ring (may need set_option maxHeartbeats 800000)
+  -- Ref: [manuscript]
   sorry
 
 /-- **THEOREM (FULL DISCHARGE of `gramMatrix_det_ne_zero`).**
@@ -379,6 +381,7 @@ theorem gramMatrix_det_eq_factorization (u : ℝ) :
 
     Status: the conditional logic is FULLY PROVED here (6 positivity
     lemmas + denominator positivity → product non-zero); the
+    -- Ref: [manuscript]
     remaining `sorry` lives in `gramMatrix_det_eq_factorization`
     (the symbolic-determinant identity itself). -/
 theorem gramMatrix_det_ne_zero (u : ℝ) (hu_gt_one : 1 < u) :

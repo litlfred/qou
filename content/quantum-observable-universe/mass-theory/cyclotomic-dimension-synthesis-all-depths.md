@@ -114,7 +114,7 @@ Beilinson-conditional:
 | 11 | 4 | 5 | 4 |
 | 13 | 5 | 6 | 5 |
 
-### Generalises Theorem D (PR #635 round 4)
+### Generalises Theorem D
 
 Theorem D ([`prop:cyclotomic-depth3-dimension-synthesis`](#prop:cyclotomic-depth3-dimension-synthesis))
 gave $(K - 3)/2$ at $n = 3$.  This proposition extends to:
@@ -134,7 +134,7 @@ $n \geq 2$ and every prime $K \geq 3$.**
 Combined with prior framework:
 
 - [`prop:two-filtration-bridge-general`](#prop:two-filtration-bridge-general):
-  bridge map at every partition (PR #635 round 3).
+  bridge map at every partition.
 - This proposition: dimension at every $(n, K)$ pair.
 - B1 keystone status: theorem-level at $n = 2$ (Bloch–Suslin),
   Beilinson-conditional at $n \geq 3$.
@@ -144,7 +144,7 @@ The framework's cyclotomic depth structure is **fully characterised**.
 ### Cross-references
 
 - Special case $n = 3$: [`prop:cyclotomic-depth3-dimension-synthesis`](#prop:cyclotomic-depth3-dimension-synthesis)
-- Special case $n = 5$, $K = 5$: round-12 PR #634 [`prop:cl3-zeta5-pslq-independence`](#prop:cl3-zeta5-pslq-independence)
+- Special case $n = 5$, $K = 5$: round-12  [`prop:cl3-zeta5-pslq-independence`](#prop:cl3-zeta5-pslq-independence)
 - Tate-rationality (Step 2): [`prop:jonquiere-cyclotomic-tate-rationality`](#prop:jonquiere-cyclotomic-tate-rationality)
 - Orbit-sum (Step 3): [`prop:cyclotomic-orbit-sum-all-depths`](#prop:cyclotomic-orbit-sum-all-depths)
 - Borel rank: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)

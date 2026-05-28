@@ -79,7 +79,7 @@ too large to be a small-correction residual.
 The naive "next hyperbolic knot at minimal $H_n$" reading of the
 cohomological lepton-generation hierarchy (as proposed in the
 companion audit
-[`2026-05-25-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md)
+[`-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/-cal-2-cohomological-vs-calibration-critique.md)
 §F5) is falsified for the bare $\mathrm{Vol}(K_\tau)/\hbar_q^{k_\tau}$
 form. Specifically:
 
@@ -109,7 +109,7 @@ extensions, queued for future work:
    geometric decomposition.
 4. **Multi-stratum sum.** Parallel to the $Q_\beta$ Khovanov--Rozansky
    strata work (audit
-   [`2026-05-18-qbeta-n5-cohomological-breakdown`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md)),
+   [`-qbeta-n5-cohomological-breakdown`](../../../docs/audits/-qbeta-n5-cohomological-breakdown.md)),
    $m_\tau$ may need a sum over cohomological strata rather than a
    single knot. Candidate: trace over Khovanov--Rozansky homology of
    a $\tau$-distinguished link projection.
@@ -142,9 +142,9 @@ its honest outcome.
 - [`rem:epistemic-status-of-calibrations`](#rem:epistemic-status-of-calibrations) — unified epistemic accounting
 - [`prop:three-calibration-discipline`](#prop:three-calibration-discipline) — $H^{0}$/$H^{1}$/$H^{2}$ mapping
 - Audit
-  [`2026-05-25-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/2026-05-25-cal-2-cohomological-vs-calibration-critique.md)
+  [`-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/-cal-2-cohomological-vs-calibration-critique.md)
   §F5 — driver question
-- Companion PR #1249 — substrate-q_0 derivation workplan
+- Companion  — substrate-q_0 derivation workplan
 - Compute script + witness:
   [`m_tau_knot_prediction.py`](../../../folio-assistant/computations/m_tau_knot_prediction.py),
   [`m-tau-knot-prediction.witness.json`](../../../folio-assistant/computations/m-tau-knot-prediction.witness.json)

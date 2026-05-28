@@ -58,7 +58,7 @@ The witness emits the required CLAUDE.md §LP/SDP-duals fields
   ($G_{\lambda\mu} = \delta_{\lambda\mu} \dim V_\lambda$),
   reflecting the orthogonality of irreducible Markov channels.
   A non-trivial inner product would change the active set; see
-  [`docs/audits/2026-05-04-nh-knots-confinement-shift.md`](../../docs/audits/2026-05-04-nh-knots-confinement-shift.md).
+  [`docs/audits/-nh-knots-confinement-shift.md`](../../docs/audits/-nh-knots-confinement-shift.md).
 - The bench is small (6 compounds, $n \leq 4$). Scaling to $n \geq 5$
   requires a numerical / interval-arithmetic switch in the symbolic
   Hoefsmit pipeline.

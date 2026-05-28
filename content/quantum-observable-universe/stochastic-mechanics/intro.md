@@ -11,7 +11,7 @@ Nelson-style stochastic mechanics that underlies the wave-particle
 duality and the Madelung representation of the brane fluid.
 
 The chapter is being assembled in the chapter-restructure migration
-(see `docs/chapter-restructure-2026-05-25.md`). Phase 6 created this
+(see `docs/chapter-restructure-.md`). Phase 6 created this
 scaffold; subsequent phases will migrate the ~250 blocks of stochastic /
 Markov-dynamics / diffusion content from braids-and-knots into the
 sections below.

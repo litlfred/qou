@@ -179,7 +179,7 @@ Concretely:
    new content — PSLQ-saturated at $K = 5, 7$.
 4. **Combined with
    [`prop:two-filtration-bridge-general`](#prop:two-filtration-bridge-general)
-   (round 13 of PR #635)**, the framework's depth-3 picture has a
+   (round 13 of )**, the framework's depth-3 picture has a
    fully general theorem for any cyclotomic field at any chiral
    pair of partition cells.
 
@@ -189,6 +189,6 @@ Concretely:
 - Theorem B: [`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general)
 - Theorem C: [`prop:two-filtration-bridge-general`](#prop:two-filtration-bridge-general)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
-- $K = 5$ baseline (PR #634): [`prop:cl3-zeta5-pslq-independence`](#prop:cl3-zeta5-pslq-independence)
+- $K = 5$ baseline: [`prop:cl3-zeta5-pslq-independence`](#prop:cl3-zeta5-pslq-independence)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)
 - B1 current-status synthesis: [`rem:b1-current-status`](#rem:b1-current-status)

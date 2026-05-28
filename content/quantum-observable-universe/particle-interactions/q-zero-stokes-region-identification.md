@@ -1,4 +1,4 @@
-**Conjecture (conditional on [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) + [`prop:q-zero-complex-extension`](q-zero-complex-extension.md)).**
+**Conjecture (conditional on [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) + [`conj:q-zero-complex-extension`](q-zero-complex-extension.md)).**
 
 *The substrate parameter $q_0$ admits a CANONICAL identification with a specific point on the geometric component of the character variety $X(\mathcal{B}_3)$, REALIZED VIA TWO DUAL PERSPECTIVES that coincide by the AJ-conjecture machinery:*
 
@@ -22,7 +22,7 @@ The following can be stated as theorems over $\mathbb{Z}[q, q^{\pm 1}]$:
 
 ## §2. What's CONJECTURED (the gap)
 
-The **specific algebraic identification** of $q_0$ as a particular invariant of $[\rho_{\mathrm{DF}}]$. Three candidate refinements (per [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md) §11):
+The **specific algebraic identification** of $q_0$ as a particular invariant of $[\rho_{\mathrm{DF}}]$. Three candidate refinements (per [`docs/audits/-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/-q0-into-character-variety-minimal-archimedean.md) §11):
 
 (a) **Dehn-deformed representation**: $q_0$ corresponds to an INCOMPLETE hyperbolic structure (Dehn-filled at specific coefficients), where the meridian becomes hyperbolic and $\mathrm{tr}(\rho(\mu)) \ne \pm 2$. The cusp coordinates $(M, L)$ on the A-polynomial curve $A_{\mathcal{B}_3}(L, M) = 0$ trace this deformation.
 
@@ -42,7 +42,7 @@ where $\mathbf{C}$ is the framework's brane-tower category, $\iota$ is the archi
 
 ## §3. Universal base: everything over $\mathbb{Z}[q, q^{\pm 1}]$
 
-Per author directive 2026-05-25: *"I want all to work over $\mathbb{Z}[q, q^{-1}]$"*.
+Per author directive: *"I want all to work over $\mathbb{Z}[q, q^{-1}]$"*.
 
 The Iwahori-Hecke algebra $H_n(q)$ is naturally an algebra over $\mathbb{Z}[q, q^{\pm 1}]$ (the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ has integer-Laurent coefficients). All structural identities — Wedderburn weights, Markov trace, P_m/Q_m, AJ recurrence, Φ_q/Li_2^q dilog — can be stated over this universal base.
 
@@ -52,7 +52,7 @@ The Iwahori-Hecke algebra $H_n(q)$ is naturally an algebra over $\mathbb{Z}[q, q
 
 ## §4. The duality (Stokes $\leftrightarrow$ Hom-functor)
 
-The two candidate identifications (Option 4 Hom + Option 6 Stokes from [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md) §12) are **DUAL VIEWS of the SAME structure** via QOU duality:
+The two candidate identifications (Option 4 Hom + Option 6 Stokes from [`docs/audits/-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/-q0-into-character-variety-minimal-archimedean.md) §12) are **DUAL VIEWS of the SAME structure** via QOU duality:
 
 | Side | Object | What's evaluated |
 |---|---|---|
@@ -104,12 +104,12 @@ The Lean `sorry` count is EXACTLY ONE per OPEN GAP — not per missing tactic.
 
 ## §7. Cross-references
 
-- [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) — Φ_q / Li_2^q $\leftrightarrow$ AJ machinery (PR #1242)
-- [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — q_0 may not be real (PR #1127)
+- [`prop:phi-q-aj-machinery-identification`](phi-q-aj-machinery-identification.md) — Φ_q / Li_2^q $\leftrightarrow$ AJ machinery
+- [`conj:q-zero-complex-extension`](q-zero-complex-extension.md) — q_0 may not be real
 - [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — distinguishing the involutions
 - [`borromean-markov-trace-closed-form.md`](borromean-markov-trace-closed-form.md) — the closed form whose categorical derivation is the rescoped Path B
-- [`docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/2026-05-25-q0-into-character-variety-minimal-archimedean.md) §§11-13 — origin of this conjecture
-- [`docs/coordination/2026-05-25-post-1231-wire-up-ledger.md`](../../../docs/coordination/2026-05-25-post-1231-wire-up-ledger.md) — session ledger
+- [`docs/audits/-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/-q0-into-character-variety-minimal-archimedean.md) §§11-13 — origin of this conjecture
+- [`docs/coordination/-post-1231-wire-up-ledger.md`](../../../docs/coordination/-post-1231-wire-up-ledger.md) — session ledger
 
 ## §8. Honest status
 

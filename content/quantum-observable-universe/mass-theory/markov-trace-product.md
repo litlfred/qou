@@ -65,11 +65,11 @@ with adjacent generators $\sigma_0$ and $\sigma_1$: the naïve
 vertex volume product gives $z^3$, but the **correct Markov
 trace** (Ocneanu--Wenzl recursion) is $hz^2 + z$
 ([corrected Markov trace](#prop:corrected-markov-trace);
-[Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-trm5-markov-bug.md)).
+[Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/-trm5-markov-bug.md)).
 Numerically at $q_0$: vertex-product $z^3 \approx 0.1245$
 vs canonical $hz^2 + z \approx 0.5514$ (4.4$\times$ off).
 (Earlier versions of this block had these two values swapped;
-fixed 2026-05-19.)
+fixed.)
 
 The product formula remains valid for the **nuclear
 Garside element** (where generators are distant) and for

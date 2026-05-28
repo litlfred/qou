@@ -20,7 +20,7 @@
 > correction, lives on `main` in
 > [`pentagon_reduction_li2q.py`](../../../folio-assistant/computations/pentagon_reduction_li2q.py)
 > with audit doc
-> [`2026-05-19-pentagon-reduction-li2q.md`](../../../docs/audits/2026-05-19-pentagon-reduction-li2q.md).
+> [`-pentagon-reduction-li2q.md`](../../../docs/audits/-pentagon-reduction-li2q.md).
 > Cross-link: the *Pentagon coherence layer* of $c_5$'s
 > decomposition (one of the three layers in
 > [`prop:bar-symmetric-three-layer-synthesis`](#prop:bar-symmetric-three-layer-synthesis))

@@ -131,7 +131,7 @@ Verified at $n \in \{2, 3, 4, 5\}$ and $K \in \{3, 4, 5, 6, 7\}$ —
 
 ### Significance — generalises Theorem A to every depth
 
-**Generalises round 3's Theorem A** (PR #635 commit `5e865af8`) from
+**Generalises round 3's Theorem A** from
 $n = 3$ to all $n \geq 2$. The depth-3 closed form
 $(n - 1)(n - 2)\pi^3 / (3 n^3)$ becomes a Bernoulli-polynomial
 specialisation of the general inversion formula at $z = \zeta_K$, with
@@ -158,7 +158,7 @@ This is the structural reason why the depth-2 case (Bloch–Wigner $D$
 ### Cross-references
 
 - Special case $n = 3$: [`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form)
-- Special case $n = 5$, $K = 5$: round-10 result of PR #634,
+- Special case $n = 5$, $K = 5$: round-10 result of ,
   [`prop:bring-trilog-imaginary-tate-rational`](#prop:bring-trilog-imaginary-tate-rational)
 - Companion orbit-sum theorem: [`prop:cyclotomic-orbit-sum-all-depths`](#prop:cyclotomic-orbit-sum-all-depths)
 - Dimension synthesis: [`prop:cyclotomic-dimension-synthesis-all-depths`](#prop:cyclotomic-dimension-synthesis-all-depths)

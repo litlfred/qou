@@ -93,13 +93,13 @@ $e_X^\pm$ in $H_2(q)$.
 
 **Step 3 — Cell-content trace, not Plancherel weight.**
 
-> **Demoted 2026-05-05.** Earlier drafts of this proof used
+> **Demoted.** Earlier drafts of this proof used
 > Plancherel weights $w_X = 1/[2]_q$ as a "uniform completeness
 > signature." That uniform-weight expression was a degenerate
 > artifact of the dimensionally-collapsed $H_2(q)$-only
 > formulation (six rank-1 projectors cannot fit in a 2-dim
 > algebra; see audit
-> [`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refinement.md)
+> [`docs/audits/-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-path-alpha-bring-refinement.md)
 > §"Plancherel weight is degenerate special case"). The Hoefsmit
 > $n=6$ formulation supersedes it.
 
@@ -163,7 +163,7 @@ is **superseded**.
 
 **Open.** Requires two prerequisite conjectures (U2 + U4)
 plus authoring of $\mathcal{N}_{\rm sym}(q)$; see
-`docs/audits/2026-05-05-path-alpha-bring-refinement.md` for the
+`docs/audits/-path-alpha-bring-refinement.md` for the
 prioritization plan.
 
 **To promote to `proposition`:**

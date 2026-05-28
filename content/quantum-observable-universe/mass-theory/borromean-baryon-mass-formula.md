@@ -87,7 +87,7 @@ This conjecture has two parts:
    None of these has yet been carried through to a closed form
    matching $2.4599\ldots$ at the required precision; the open
    programme is documented in
-   [docs/agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md).
+   [docs/agent-briefs/-lambda-scale-borromean-baryon-derivation.md](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/agent-briefs/-lambda-scale-borromean-baryon-derivation.md).
 
 Until part 2 is resolved, $\lambda_{\mathrm{scale}}$ is a
 **conjectural common scale**, not a free fit parameter:

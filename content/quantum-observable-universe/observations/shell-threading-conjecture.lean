@@ -7,6 +7,7 @@ Skein smoothing `L_0` at the beta-decay vertex — the threading
 link that interpolates between the parent `N(Z, N)` and daughter
 `N(p+1, n-1)` nuclear configurations.
 
+-- Ref: [manuscript]
 Per `CLAUDE.md §3b-cond`, opaque Prop + class field + sorry
 instance.
 

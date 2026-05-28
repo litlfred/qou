@@ -1,4 +1,4 @@
-**Conjecture (Rule 14 conditional adoption — owner authorised 2026-05-24).**
+**Conjecture (Rule 14 conditional adoption — owner authorised).**
 Under the Kashaev volume conjecture
 ([`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture))
 applied to an atomic Hecke element $T_w$ with `Markov closure` knot/link
@@ -44,7 +44,7 @@ SDP solver to confirm $\nu_{\mathrm{SDP}}(⁴\mathrm{He}) = 2$.
 
 This identity falls under driver (x) **MacMahon-style
 partition-algebra identities** of the canonical-derivation menu
-([`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md)).
+([`docs/audits/-lambda-scale-canonical-unification.md`](../../docs/audits/-lambda-scale-canonical-unification.md)).
 The Wedderburn multiplicity of $T_w$'s SDP solution is a
 partition-algebra count: it is the dimension of the saturating
 projection in the irreducible-block decomposition
@@ -81,7 +81,7 @@ produces certified $\nu_{\mathrm{SDP}}$ values.
 
 ## Why this resolves the Rule-14 escalation
 
-Pre-2026-05-24 the
+Pre- the
 [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)
 script self-declared the density rule $\rho_F \in \{1, 2\}$ as
 *"pending formal justification"* (line 23) — an open Rule-14
@@ -97,8 +97,8 @@ conjecture-conditional adoption, $\rho_F$ is:
    with an auditable conjecture-conditional dependency.
 
 Owner authorised this adoption per Rule-14 procedure
-2026-05-24, in response to
-[`docs/audits/2026-05-24-rule14-kashaev-density.md`](../../docs/audits/2026-05-24-rule14-kashaev-density.md)
+, in response to
+[`docs/audits/-rule14-kashaev-density.md`](../../docs/audits/-rule14-kashaev-density.md)
 §Recommendation.
 
 ## Notation hazard resolved
@@ -121,7 +121,7 @@ removing the third unnamed $\rho$.
 - [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)
   — ATOM_ASSIGN.`nu_sdp` field (renamed from `rho_factor` in the same
   PR that introduces this block)
-- [`predict()`](../../folio-assistant/computations/mass_table_ppb.py)
+- [`predict`](../../folio-assistant/computations/mass_table_ppb.py)
   — reads `nu_sdp` and emits `B_pred = nu_sdp · m_e · Vol(K)`
 - [`atom-knot-mass-derivation`](#def:atom-knot-mass-derivation)
   §Algorithm step 3 — supplies $\nu_{\mathrm{SDP}}$ via joint-tower SDP
@@ -133,11 +133,11 @@ removing the third unnamed $\rho$.
    extrapolated from D/T/${}^{3}\mathrm{He}$ pattern).
 2. **Extend joint-tower SDP to ${}^{5}\mathrm{Li}$, ${}^{6}\mathrm{Li}$, ${}^{7}\mathrm{Li}$** — the A$\in${5,6,7} gap
    per
-   [`docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md`](../../docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md)
+   [`docs/audits/-a5-a7-isotope-wiring-gap.md`](../../docs/audits/-a5-a7-isotope-wiring-gap.md)
    needs $\nu_{\mathrm{SDP}}$ values; the wider atom$\to$knot census Rule-14
    escalation per
-   [`docs/audits/2026-05-24-rule14-atom-knot-census.md`](../../docs/audits/2026-05-24-rule14-atom-knot-census.md)
-   recommends waiting for R5-full SDP (owner-decided 2026-05-24).
+   [`docs/audits/-rule14-atom-knot-census.md`](../../docs/audits/-rule14-atom-knot-census.md)
+   recommends waiting for R5-full SDP (owner-decided).
 3. **Extend joint-tower SDP to α-cluster atoms (${}^{8}\mathrm{Be}$ and up)** — the
    α-cluster rule inherits $\rho_F = 2$ from ${}^{4}\mathrm{He}$; verifying
    $\nu_{\mathrm{SDP}} = 2$ across the α-cluster recursion would close
@@ -146,13 +146,13 @@ removing the third unnamed $\rho$.
 ## Cross-references
 
 - Rule-14 escalation:
-  [`docs/audits/2026-05-24-rule14-kashaev-density.md`](../../docs/audits/2026-05-24-rule14-kashaev-density.md)
+  [`docs/audits/-rule14-kashaev-density.md`](../../docs/audits/-rule14-kashaev-density.md)
 - Sibling Rule-14 escalation (deferred to R5-full SDP):
-  [`docs/audits/2026-05-24-rule14-atom-knot-census.md`](../../docs/audits/2026-05-24-rule14-atom-knot-census.md)
+  [`docs/audits/-rule14-atom-knot-census.md`](../../docs/audits/-rule14-atom-knot-census.md)
 - 13-driver menu (driver x — MacMahon partition algebra):
-  [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](../../docs/audits/2026-05-23-lambda-scale-canonical-unification.md)
+  [`docs/audits/-lambda-scale-canonical-unification.md`](../../docs/audits/-lambda-scale-canonical-unification.md)
 - Coordination ledger:
-  [`docs/coordination/2026-05-24-post-1089-followups-ledger.md`](../../docs/coordination/2026-05-24-post-1089-followups-ledger.md)
+  [`docs/coordination/-post-1089-followups-ledger.md`](../../docs/coordination/-post-1089-followups-ledger.md)
 - Underlying Kashaev volume conjecture:
   [`kashaev-volume-conjecture`](kashaev-volume-conjecture.md)
 - $\nu_{\mathrm{SDP}}$ algorithmic definition:

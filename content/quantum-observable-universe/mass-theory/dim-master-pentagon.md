@@ -33,7 +33,7 @@ single master Pentagon** in the DIM algebra. If true:
   [`borromean-markov-trace-closed-form`](#prop:borromean-markov-trace-closed-form))
   has a single categorical source rather than the four independent
   routes catalogued in
-  [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](../../docs/audits/2026-05-24-pentagon-identity-broad-context.md) §3
+  [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md) §3
 - The "10" appearing in Bring color-tube weighted averaging (per
   cheat sheet §Bring) gets a DIM-algebra reading via the
   5-vertex $\times$ 2-edge orientation of the master Pentagon
@@ -63,7 +63,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) D17
   + §2 Cluster C (Pentagon validation D15–D18)
-- [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](../../docs/audits/2026-05-24-pentagon-identity-broad-context.md)
+- [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
   — 8-literature Pentagon catalogue
 - D15 [`prop:pachner-pentagon-borromean`](pachner-pentagon-borromean.md),
   D16 [`prop:borromean-bloch-group-element`](borromean-bloch-group-element.md)

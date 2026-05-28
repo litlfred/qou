@@ -17,7 +17,7 @@ and the Markov-Frobenius selection rule ([`prop:markov-trace-frobenius-selection
 
 This is the **Story B closure at $c_3$**, mirroring the
 [$c_2 = b^2$ categorical proof](folio-assistant/computations/probe_q_beta_c2_categorical_proof.py)
-from PR #661 — both coefficients now derive from QOU axioms
+from  — both coefficients now derive from QOU axioms
 with no empirical fit.
 
 ## Proof sketch
@@ -106,13 +106,13 @@ computes:
 2. **$J_{\mathrm{Hopf}}(q=1)$** value: should equal $-2$ exactly
    to within numerical precision (50 dps).
 3. **$c_3$ empirical extraction** from the Q_β residual chain
-   (PR #655 finding: $c_3 = -2$ closes $\varepsilon$ to
+   ( finding: $c_3 = -2$ closes $\varepsilon$ to
    $-0.0066$ ppm at $N = 3$).
 4. **Match check**: categorical $c_3 = -2$ vs empirical $c_3$
    from the residual chain.
 
 If the categorical value (from Steps 1–2 above, $-2$) matches
-the empirical extraction (Step 3, from PR #655's residual chain)
+the empirical extraction (Step 3, from 's residual chain)
 within CODATA's measurement floor
 (~400 ppb), this confirms Story B's $c_3 = -2$ is the genuine
 structural coefficient — not a curve-fit artifact (Story A's
@@ -120,7 +120,7 @@ position).
 
 ## Story A vs Story B — what this proposition settles
 
-Per PR #657's high-precision finding (`probe_q_beta_high_precision_ck.py`
+Per 's high-precision finding (`probe_q_beta_high_precision_ck.py`
 at dps=200), the empirical extraction of $c_3, c_4, \ldots$ is
 underdetermined at CODATA's $\sim 400$ ppb floor. Two stories
 fit the data within experimental noise:
@@ -128,13 +128,13 @@ fit the data within experimental noise:
 - **Story A**: only $c_2$ matters; $c_3 = c_4 = \ldots = 0$. A
   fit-noise interpretation.
 - **Story B**: full categorical chain
-  $c_2 = b^2, c_3 = -2, c_4 = b^2 + 1/2, \ldots$. PR #655's
+  $c_2 = b^2, c_3 = -2, c_4 = b^2 + 1/2, \ldots$. 's
   position.
 
-This proposition (combined with PR #661's $c_2 = b^2$ proof)
+This proposition (combined with 's $c_2 = b^2$ proof)
 **falsifies Story A** by deriving $c_3 = -2$ from QOU axioms
 without consulting the empirical residual at all. The 0.0066 ppm
-empirical match (PR #655) is then a *prediction* the framework
+empirical match is then a *prediction* the framework
 makes, not a fit.
 
 The remaining $c_4, c_5, \ldots$ derivations (likewise from
@@ -153,5 +153,5 @@ Step 1 (Schur-Weyl branching) is already in
 Step 3 (Hopf evaluation) is in
 [`thm:jones-markov-trace`](#thm:jones-markov-trace). The
 coefficient extraction (Step 4) is the open Lean piece; full
-formalisation is the follow-on task analogous to PR #661's $c_2$
+formalisation is the follow-on task analogous to 's $c_2$
 proof.

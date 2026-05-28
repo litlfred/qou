@@ -174,7 +174,7 @@ geometrically by the jet-tower tail bound
 
 This proposition is the derivational justification for the
 HIGH-#1 fix in the infrastructure audit
-(`docs/infrastructure-audit-2026-04-20.md`):
+(`docs/infrastructure-audit-.md`):
 
 > Strip the desc term from `tower_mass_level` calls inside the
 > level loop; compute desc once at level 0 and treat levels 1+

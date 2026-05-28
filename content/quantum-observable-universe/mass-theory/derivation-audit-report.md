@@ -35,7 +35,7 @@ has been created:
 
 ---
 
-## GAP-A-2 — Chirality formula $a_K = 1 + w \cdot h$ (chiral case) *(refined 2026-05-09)*
+## GAP-A-2 — Chirality formula $a_K = 1 + w \cdot h$ (chiral case) *(refined)*
 
 **Source:** [`chirality-writhe-ribbon-derivation.md`](chirality-writhe-ribbon-derivation.md) §Caveat and §Numerical test at $H_6(R, q)$ (satellite $D$).
 
@@ -127,7 +127,7 @@ this is flagged as an open sub-problem (see `recursive-atom-knot-atlas` block).
 
 ---
 
-## GAP-B-1 — Per-nucleon scaling between $A = 2$ and $A = 3$ *(closed 2026-05-09)*
+## GAP-B-1 — Per-nucleon scaling between $A = 2$ and $A = 3$ *(closed)*
 
 **Source:** `commutative-crossing-energy.md` §Caveat.
 
@@ -140,7 +140,7 @@ $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta)) = 18Z + 21N + 1$ for proton
 experimental atomic masses to $\leq 0.30\%$ across $Z = 1\ldots 20$
 via the single-generator $\rho_K$ formula (witness:
 `rho-k-pair-gen-v2-wedderburn.witness.json`).  See the explicit
-"Caveat (updated 2026-05-09)" paragraph in
+"Caveat (updated)" paragraph in
 `commutative-crossing-energy.md`.
 
 **Description (historical).**  The proposition originally derived the

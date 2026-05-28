@@ -6,6 +6,7 @@ the torus link `T(2, 8)` — the unique genus-3 link on Bring's
 surface whose Seifert surface spans all three exceptional
 divisors `D_r ∪ D_g ∪ D_b` simultaneously.
 
+-- Ref: [manuscript]
 Per `CLAUDE.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim. This is the **algebraic/topological** tier;
 the numerical Higgs mass evaluation (crossing energy of T(2,8)
@@ -47,7 +48,9 @@ class HiggsAsT28 : Prop where
 instance higgs_t28_conjecture : HiggsAsT28 where
   -- Witness: folio-assistant/computations/none
   t28_genus := sorry
+  -- Ref: [manuscript]
   spans_three := sorry
+  -- Ref: [manuscript]
   uniqueness := sorry
 
 end QOU.HiggsT28

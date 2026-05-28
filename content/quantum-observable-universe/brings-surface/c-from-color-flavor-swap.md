@@ -126,7 +126,7 @@ is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
    on the proton/neutron color-tube tensor leaves the canonical
    Hecke generator invariant (no $q$-anomaly under C, in contrast
    to the $h(q_0) \approx 0.209$ anomaly under isospin Z/2 swap;
-   see [`docs/audits/2026-05-24-isospin-categorical-source.md`](../../docs/audits/2026-05-24-isospin-categorical-source.md)).
+   see [`docs/audits/-isospin-categorical-source.md`](../../docs/audits/-isospin-categorical-source.md)).
 2. **Close D7 and D8** — author `prop:p-from-braid-mirror` and
    `prop:t-from-trace-cyclicity` to complete the CPT
    decomposition.

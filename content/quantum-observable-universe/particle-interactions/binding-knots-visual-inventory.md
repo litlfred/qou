@@ -160,4 +160,4 @@ These are flagged `census-assigned` in
 [`mass-table-ppb.witness.json`](../../../folio-assistant/computations/mass-table-ppb.witness.json),
 indicating the assignment was selected by census search to
 match AME binding energies rather than derived from first
-principles ([Workplan 0b §4 derivation status](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)).
+principles ([Workplan 0b §4 derivation status](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)).

@@ -71,6 +71,6 @@ a single, structural condition (conjugacy of $\beta_K^*$ to
 $\beta_K$ in $H_n$) that $4_1$ in fact satisfies, and gives the
 clean sum-of-positive-squares formula.  See the resolution
 discussion in
-[`docs/coordination/i1-probe-author-queue-2026-05-19.md`](../../../../docs/coordination/i1-probe-author-queue-2026-05-19.md)
+[`docs/coordination/i1-probe-author-queue-.md`](../../../../docs/coordination/i1-probe-author-queue-.md)
 and the computational verification in
 [`folio-assistant/computations/knot_factor_amphicheiral_BD_probe.py`](../../../../folio-assistant/computations/knot_factor_amphicheiral_BD_probe.py).

@@ -624,6 +624,37 @@ Children fill **Slot C** with a table of `Specialist | When to run |
 What it checks`. Launch all applicable specialists in a single
 response with multiple `Agent` tool calls (NOT sequentially).
 
+**Sidecar-aware dispatch (2026-05-27).** Before dispatching a
+specialist on a block, check the block's `.qa.json` sidecar for
+the relevant criterion:
+
+1. Read `<block>.qa.json` → `criteria[<criterion>]` entries.
+2. If an entry exists with `result: "pass"` and its `field_hash`
+   matches the current file hash → **skip** (block already audited
+   and passes; the specialist would produce the same result).
+3. If the entry is stale (hash mismatch) or `result: "fail"` →
+   **re-audit** (the block changed or previously failed).
+4. If no entry exists → **audit** (first time this criterion has
+   been evaluated on this block).
+
+This avoids re-auditing the ~1500 blocks that already pass on each
+incoming commit. Only changed blocks and previously-failing blocks
+get dispatched.
+
+**Recording results.** After each specialist completes, update the
+sidecar with:
+- `result`: pass/warn/fail
+- `field_hash`: current file hashes
+- `reviewer`: `{ kind: "agent", agent_model: "<model>",
+  agent_date: "<ISO>", agent_skill: "<skill>" }`
+- `evidence`: hits array (on fail/warn)
+- `reviewed_at`: ISO date
+
+Multiple reviewer entries per criterion are allowed. The most
+recent entry whose `field_hash` matches current sources is the
+authoritative one. Older entries with mismatched hashes are stale
+but preserved for audit trail.
+
 Cap each agent's report at ~400 words.
 
 ### 4c. Synthesize findings

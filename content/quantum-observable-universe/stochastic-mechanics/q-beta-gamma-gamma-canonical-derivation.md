@@ -6,7 +6,7 @@ ambiguity flagged in [`probe_q_beta_high_precision_ck.py`](../../folio-assistant
 
 ## The chain
 
-Following the user's direction (PR #657): the canonical $c_k$ values
+Following the user's direction: the canonical $c_k$ values
 are determined by tracing through
 
 $$
@@ -136,13 +136,13 @@ This is a **derivation summary**, documenting the conclusion of the
 
 ## Track-C open question
 
-The remaining open question (Track C per PR #657 plan): **can the
+The remaining open question (Track C per  plan): **can the
 $c_3 = -2$ Hopf assignment be PROVED rigorously**, not just identified
 empirically? The current state is "Story B is empirically observable
 above CODATA noise and structurally suggestive"; a Lean-level proof
 would require formalising the 3-fold Markov closure $\to$ Hopf-link
 substructure identification at the categorical level — substantial
-follow-up work tracking through PR #487's selection theorem +
+follow-up work tracking through 's selection theorem +
 Hoefsmit machinery.
 
 ## Track-B open question

@@ -122,7 +122,7 @@ in the same direction for both.
 **Open conjecture.** All three sub-claims (existence, selection,
 direction) require categorical derivation. The closure proposal
 is the recommended **first follow-up** after the E_0 disentanglement
-([`PR #673`](https://github.com/litlfred/qou/pull/673)) and is
+([``](https://github.com/litlfred/qou/pull/673)) and is
 listed as item 6 in the post-PR-#665 R&D inventory
 ([`rem:post-pr665-open-rd-inventory`](#rem:post-pr665-open-rd-inventory)).
 The required input infrastructure (per-irrep $\chi_\lambda$ closed

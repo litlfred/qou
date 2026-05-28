@@ -83,7 +83,7 @@ performing H_{3A}-character sums at high A:
  $\bowtie_K$ is a non-disjoint Hecke element), and requires
  direct character computation (e.g. via the Rust kernel
  [`pyhecke_native.chi_q_atomic`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/tools/pyhecke-native/src/lib.rs)
- cherry-picked from PR #761).
+ ..
 
 The CONVOLUTION structure $\mathcal{B}_K = T_{\text{constit}}^K *_q \bowtie_K$
 ([`def:ew-interface-knot`](#def:ew-interface-knot)) is preserved

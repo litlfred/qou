@@ -34,6 +34,203 @@
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:16: failed to synthesize | content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:16: failed to synthesize | content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:16: failed to synthesize | content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:19: failed to synthesize | content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:22: failed to synthesize"
       }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "da4db810a167"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-author-notes-pollution-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "ts": "f40eb6642756"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "detangler-block-tanglement-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/detangler-integration-watcher"
+        },
+        "reviewed_at": "2026-05-27",
+        "metrics": {
+          "fwd_emitted": 1,
+          "fwd_received": 0,
+          "tanglement_score": 1
+        }
+      }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "lean": "dada8d0401fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-audit-batch",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "ts": "f40eb6642756"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "compute-audit-batch",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/compute-integration-watcher"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "da4db810a167"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "canonical-audit-batch",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/canonical-watcher"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "da4db810a167"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-status-leak-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "da4db810a167"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "voice-time-stamped-audit",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "da4db810a167"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-emoji-content-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "da4db810a167"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-first-person-work-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "da4db810a167"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-editorializing-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "da4db810a167"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-ai-slop-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "da4db810a167"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-scholarly-default-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"

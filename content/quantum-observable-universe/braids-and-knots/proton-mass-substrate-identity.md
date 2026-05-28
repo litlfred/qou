@@ -205,7 +205,7 @@ The two structural integers in the identity:
 
 ## See also
 
-- [`docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md`](../../../docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md)
+- [`docs/audits/-proton-mass-identity-12-me-ocneanu.md`](../../../docs/audits/-proton-mass-identity-12-me-ocneanu.md)
   — full audit writeup
 - [`thm:borromean-markov-trace-closed-form`](borromean-markov-trace-closed-form.md)
   — Lean-proved $|\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)|$
@@ -213,7 +213,7 @@ The two structural integers in the identity:
   — Lean-proved q-Schur y_λ closed form (this PR)
 - [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md)
   — canonical Hecke-skein $\Delta m / M_N$ derivation
-- [`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](../../../docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md)
+- [`docs/audits/-ocneanu-cancellation-numerical-verification.md`](../../../docs/audits/-ocneanu-cancellation-numerical-verification.md)
   — the universal $-1/12$ leading-pole coefficient (200-dps verified)
 - [`m_p_substrate_identity_50dps.py`](../../../folio-assistant/computations/m_p_substrate_identity_50dps.py)
   — production-grade compute script (50-dps MPFR)

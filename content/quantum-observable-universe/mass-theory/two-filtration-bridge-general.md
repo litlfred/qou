@@ -102,7 +102,7 @@ $n$ into distinct odd parts — a classical result.)
 
 ### Consequences
 
-**Generalises round 9 (PR #634)**: the small-cases bridge verification
+**Generalises round 9**: the small-cases bridge verification
 at $n \leq 4$ extends to all $n$ via the bar-eigenspace argument.
 
 **Consequence for B1**:

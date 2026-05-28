@@ -59,7 +59,7 @@ The negative-$y_\lambda$ sign on the deepest PSD-dominant partitions at A=6 is t
 
 ## Implications for the binding-energy Gap
 
-Per Probe (1) and Probe (1b) in [`docs/audits/2026-05-25-dominant-partition-nucleon-structure.md`](../../../docs/audits/2026-05-25-dominant-partition-nucleon-structure.md):
+Per Probe (1) and Probe (1b) in [`docs/audits/-dominant-partition-nucleon-structure.md`](../../../docs/audits/-dominant-partition-nucleon-structure.md):
 
 The binding-energy gap $|B_{\mathrm{pred}}(K) - B_{\mathrm{AME}}(K)|$ lives in the **trace-dominant family** (the 1/2-row long-string partitions), NOT in the PSD-dominant family. Therefore:
 
@@ -69,7 +69,7 @@ The binding-energy gap $|B_{\mathrm{pred}}(K) - B_{\mathrm{AME}}(K)|$ lives in t
 
 ## What this conjecture does NOT claim
 
-- It does NOT predict the *specific* PSD-dominant shape at each $A$. At $A=4$ the dominant is the (A,A,A) rectangle; at $A=6$ it is the multi-step (3,3,3,3,2,2,2) (the rectangular-form conjecture was [empirically falsified at A=6](../../../docs/audits/2026-05-25-dominant-partition-nucleon-structure.md#gap-narrowing-probe-4c)).
+- It does NOT predict the *specific* PSD-dominant shape at each $A$. At $A=4$ the dominant is the (A,A,A) rectangle; at $A=6$ it is the multi-step (3,3,3,3,2,2,2) (the rectangular-form conjecture was [empirically falsified at A=6](../../../docs/audits/-dominant-partition-nucleon-structure.md#gap-narrowing-probe-4c)).
 - It does NOT claim a categorical proof — only an empirical pattern across A=4 and A=6 supported by Lanczos LinearOperator probes.
 - It does NOT identify the bar-involution as the categorical mechanism — though the negative-$y_\lambda$ sign pattern is suggestive.
 

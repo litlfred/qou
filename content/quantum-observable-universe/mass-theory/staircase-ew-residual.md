@@ -37,7 +37,7 @@ $h_{\mathrm{corner}}(\rho_k) = 2k - 1$ is
   witness
   [`close-321-weinberg-gap.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/close-321-weinberg-gap.witness.json),
   audit
-  [`docs/audits/2026-05-06-close-321-weinberg-gap.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-06-close-321-weinberg-gap.md).
+  [`docs/audits/-close-321-weinberg-gap.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-close-321-weinberg-gap.md).
 * $k = 4$ (dim $f^{\rho_4} = 768$): the top eigenvalue is
   *degenerate* (multiplicity $\geq 2$, ratio $1.0$) because every
   Hecke generator has $\det \rho_{\rho_4}(\sigma_i) = +1$ on the
@@ -47,7 +47,7 @@ $h_{\mathrm{corner}}(\rho_k) = 2k - 1$ is
   (relative error $0.14\%$) — see
   [`staircase_ew_residual_conjecture.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/staircase_ew_residual_conjecture.py),
   audit
-  [`docs/audits/2026-05-06-staircase-ew-residual-conjecture.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-06-staircase-ew-residual-conjecture.md).
+  [`docs/audits/-staircase-ew-residual-conjecture.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-staircase-ew-residual-conjecture.md).
 * $k = 2$ (dim $f^{\rho_2} = 2$): currently untestable — the
   $\beta_{\mathrm{EW}}$ word at $n = 3$ collapses to a length-$0$
   word under the construction, leaving no matrix multiplication

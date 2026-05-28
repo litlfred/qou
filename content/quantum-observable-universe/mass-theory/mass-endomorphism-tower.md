@@ -1,4 +1,4 @@
-> **TOP-OF-FILE SUPERSEDED-$\rho_q$ BANNER (promoted 2026-05-24, PR #1127).**
+> **TOP-OF-FILE SUPERSEDED-$\rho_q$ BANNER (promoted).**
 > The substrate density $\rho_q = 1/\hbar_q^2$ used in the algebraic
 > form below is **STRUCTURALLY WRONG** per the inline SUPERSEDED
 > note (lines 28-51). The correct dimensional factor is the
@@ -7,8 +7,8 @@
 > the corrected graded expansion is [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
 > The corrected canonical form of the mass tower uses
 > $-\mathrm{Li}_2^q(-|\hat V_i|)$ in place of $\Phi_q(|\hat V_i|)$
-> (resolution 2026-05-17, lines 133-150). Full purge tracking:
-> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md).
+> (resolution, lines 133-150). Full purge tracking:
+> [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 > The substrate-density $\rho_q$ display in this file is retained
 > for historical readability of the brane-tower spectral structure
 > only; do **NOT** use it for production computations.
@@ -52,7 +52,7 @@ which depends on the specific braid through its LR-block decomposition.
 The iterated $(Z+N)$-factor extension to atomic braids — explicitly
 replacing the scalar Wedderburn-volume tower with the operator-trace
 form — is stated in [`prop:mass-tower-operator-valued`](mass-tower-operator-valued.md)
-(authored 2026-05-20 as the Stage-1 unblock).
+(authored as the Stage-1 unblock).
 The graded expansion
 $\mathcal{M}(K)/(m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)|) = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$
 ([prop:rho-k-graded-expansion](#prop\:rho-k-graded-expansion))
@@ -92,7 +92,7 @@ Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
 the non-perturbative quantum dilogarithm
 ([quantum Bloch group](#def\:quantum-bloch-group)).
 
-**Kashaev-integration-identity audit (added 2026-05-03).**
+**Kashaev-integration-identity audit (added).**
 *The proof step claims*
 
 $$
@@ -145,7 +145,7 @@ but not the literal integration evaluation.  The dilogarithm form
 $-\mathrm{Li}_2^q(-|V|)$ is the actual integration result and may be
 the correct specialisation; this needs paper-side verification.*
 
-**Resolution (added 2026-05-17).** *The corrected canonical form of
+**Resolution (added).** *The corrected canonical form of
 the mass-endomorphism tower uses $-\mathrm{Li}_2^q(-|\hat V_i|)$ in
 place of $\Phi_q(|\hat V_i|)$; see the proposition statement below.
 The production compute pipeline at
@@ -164,17 +164,7 @@ The Lean stub
 axiomatises both functions and their distinct definitions to
 prevent regression.*
 
-**Li₂^q convergence confirmed (added 2026-05-27).** The symmetric
-q-dilogarithm $\mathrm{Li}_2^q(-|\hat V_i|)$ CONVERGES at the
-substrate $q_0$ for all atoms: the additive Wedderburn traced volumes
-$\hat V_i^{\mathrm{full}} < 1$ (proton: $\hat V_0 \approx 0.989$,
-$\hat V_1 \approx 0.971$). An earlier analysis (PR #1351) incorrectly
-claimed divergence by using Hoefsmit matrix-product eigenvalues (which
-grow $> 1$ with crossing count) instead of the normalised $\hat V_i^{\mathrm{full}}$.
-The mass-endomorphism tower formula is correct as written.
-
-
-**Trace-vs-evaluation note (added 2026-05-03).**
+**Trace-vs-evaluation note (added).**
 The R-side algebraic form of the tower above expresses each
 $\mathrm{Vol}_q^{(S)}(\beta)$ as a Markov trace over the chain on $S$
 — each term is therefore Markov-invariant.  The archimedean
@@ -230,7 +220,7 @@ $\mathrm{Li}_2^q$ is the symmetric q-dilogarithm
 $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$ with
 $[n]_q = (q^n - q^{-n})/(q - q^{-1})$.*
 
-**Note (2026-05-03).**
+**Note.**
 *The previous version of this proposition wrote
 $\Phi_q(\lvert\hat V_i\rvert)$ (Faddeev quantum dilogarithm) where this
 revision uses $-\mathrm{Li}_2^q(-\lvert\hat V_i\rvert)$ (symmetric

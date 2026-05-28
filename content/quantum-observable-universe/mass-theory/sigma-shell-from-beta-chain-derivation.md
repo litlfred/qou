@@ -57,7 +57,7 @@ $y_{\mathrm{target}}(A=2) \approx 270$, **off by a factor of
 $2.3 \times 10^{7}$** from the benchmark
 ($\approx 0.0012$). The root cause, identified in the §5
 escalation comment on
-[PR #564](https://github.com/litlfred/qou/pull/564#issuecomment-4409038238),
+,
 is structural: the deuteron has **no**
 non-shell-crossing predecessors along the $\beta$-stability
 valley — the chain $\{n \to p\}$ produces the bound state
@@ -79,7 +79,7 @@ The shell magnitude $y_{\mathrm{target}}$ is therefore a
 3. *the Hoefsmit character $\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)$ of the atom braid,*
 4. *the canonical Markov trace $|\mathrm{tr}_M(\mathcal{B}_K)|$.*
 
-*Crucially, **no $Q_\beta$ or AME chain Q-values appear**. The
+**No $Q_\beta$ or AME chain Q-values appear**. The
 calibration anchors stay at the $\rho_K$ assembly level
 ($m_e$, $m_p$, $m_n$); the shell magnitude is a purely
 algebraic / categorical consequence of the staircase Wedderburn

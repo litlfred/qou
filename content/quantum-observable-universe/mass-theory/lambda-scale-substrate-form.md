@@ -1,66 +1,5 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-> **Status — $\lambda_{\mathrm{scale}}$ ABSORBED INTO `Geom_full`.**
->
-> Per [`docs/lambda-scale-absorbed-into-geom-full.md`](../../../docs/lambda-scale-absorbed-into-geom-full.md)
-> (canonical framing, see PR #1080),
-> **`λ_scale` is no longer a separate object** in the framework.
-> The canonical mass formula is
->
-> $$m(K) = m_e \cdot \mathrm{Geom_{full}}(K, q_0)$$
->
-> — a single Geom-functor evaluation per knot. What older docs
-> called `λ_scale(K, q)` is the **ratio**
-> $\mathrm{Geom_{full}}(K, q) / \mathrm{Geom_{leading}}(K, q)$,
-> i.e., what Geom assigns to multi-component links above their
-> bare hyperbolic volume. There is nothing to "derive from
-> substrate" — the value is *output* of Geom, not input.
->
-> **What remains canonical in this block:**
-> - The Family A theorem
->   $\lambda_A(q) = (1/4) \sum_{\lambda \vdash 4} \dim_q V_\lambda
->     = 5/2 + (3/4) h^2$
->   IS the current production value of `linking_weight(𝓑_3, q)`
->   inside `Geom_full(𝓑_3, q)`. It is PROVED (Wenzl bridge,
->   PR #895/#942).
->
-> **What is OBSOLETE in this block:**
-> - The original substrate-form claim
->   $\lambda_{\mathrm{scale}}^{(u, d)} = 5/2 - h^2 \cdot G + O(h^4)$
->   was **structurally falsified** 2026-05-18 (PSLQ coincidence;
->   no Wedderburn derivation gives $-G \cdot h^2$). See
->   [`docs/audits/2026-05-18-conjecture-falsification.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-conjecture-falsification.md).
-> - The CAL-4 framing ($\lambda_{\mathrm{scale}}$ as a "4th
->   calibration anchor") is **purged 2026-05-24** (commit
->   `71d674da1`). The production literal
->   `LAMBDA_PROTON_FITTED_FROM_CODATA` was removed from
->   `m_p_borromean_verification_50dps.py`; production now uses
->   Family A directly.
-> - The "Bring-Bloch identity" research direction was closed at
->   PSLQ tier 5 (see
->   [`bring_bloch_tier5_search_m_p.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_bloch_tier5_search_m_p.py)).
-> - The Yekutieli per-cell ADD form
->   $5/2 + (3/4 - G) h^2$ was also purged 2026-05-24 as
->   non-canonical (PR #985 bijection NEGATIVE).
->
-> **Current research direction**: refine `Geom_full(𝓑_3)`'s
-> categorical exactness at higher $h^2$ orders, NOT derive
-> $\lambda_{\mathrm{scale}}$ from substrate. The +2.89 % gap is
-> a `Geom_full` refinement question; the structural Markov-trace
-> finding (`tr_M(\beta_{\mathrm{Bor}}) = 1 + 0 \cdot h^2 - (3/4)h^4 + \cdots`)
-> brings it to +1.948 % with zero free parameters
-> (see [`folio-assistant/computations/geom_full_borromean_h4_probe.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/geom_full_borromean_h4_probe.py)).
->
-> **Block-conservation rationale**: the label
-> `prop:lambda-scale-substrate-form` is retained for graph-stability
-> across already-cited references; the §Family A theorem section
-> below is canonical-preserving content. Sections covering the
-> falsified / purged forms are kept as **historical record** so
-> future agents see what was tried, why it was rejected, and where
-> to find the post-purge canonical framing. Do not propose
-> reviving the falsified $5/2 - h^2 \cdot G$ form, the Yekutieli
-> ADD form, or the Bring-Bloch identity as production candidates.
-
 What IS proved (Family A theorem):*
 
 $$
@@ -78,7 +17,7 @@ than the original conjecture. Proved in*
 
 **Original conjecture (now classified as empirical only):**
 *The Borromean baryon $\lambda_{\mathrm{scale}}$ in*
-([prop:borromean-baryon-mass-formula](#prop:borromean-baryon-mass-formula))
+([conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula))
 *was hypothesised to equal $5/2 - h^2 \cdot G + O(h^4)$ where
 $G = \mathrm{Vol}(\mathcal{B}_3)/8$ is Catalan's constant. This
 empirical match is recorded for historical reference:*
@@ -105,7 +44,7 @@ $$
    hyperbolic 3-manifold has $\mathrm{Vol} = 18.03$ within 0.28%
    (closest: $9 \cdot \mathrm{Vol}(4_1)$ at $+1.35\%$).
 
-6. **Q-locality (PR #951, 2026-05-23):** at the substrate window
+6. **Q-locality:** at the substrate window
    $q \in [q_0 - 0.05, q_0 + 0.05]$, the residual
    $(\frac{5}{2} - h^2 \cdot G) - \lambda_p(q)$ has slope
    $\sim -1.7 \times 10^7$ ppm/q and curvature $\sim 4.4 \times 10^4$
@@ -116,7 +55,7 @@ $$
    known $h_q$-axis near-matches ($\frac{5}{2}-h^2 G$,
    $1/(1 - h_q \cdot q_0^{10})$, V$_7$, Strategy G).
 
-7. **Reframing (PR #957, 2026-05-23):** $\lambda_p(q) = (m_p/m_e)
+7. **Reframing:** $\lambda_p(q) = (m_p/m_e)
    \cdot \hbar_q^2 / (8 G) = C \cdot \hbar_q^2$ exactly, with
    $\hbar_q := (q - 1) / q$ and $C = (m_p/m_e) / (8 G) \approx
    250.576$. This is a degree-0 polynomial in $q$ over
@@ -135,12 +74,12 @@ $$
    so a $\mathbb{Z}$-relation expressing one as a knot-volume sum
    immediately gives the other), and was negative.
 
-8. **Strategy J (PR #969, 2026-05-23):** no natural ratio of
+8. **Strategy J:** no natural ratio of
    $\{\operatorname{tr}_M(\beta_p), \operatorname{tr}_M(\beta_n), \hbar_q, h_q, q_0, G\}$
    structurally predicts $m_n / m_p$ either. Best pure-substrate
    match at 0.45% --- 4,500 times worse than 1 ppb.
 
-**Therefore (post-2026-05-23 acknowledged-CAL-4 status):** after
+**Therefore (post- acknowledged-CAL-4 status):** after
 **eight independent structural searches** across every tested axis
 (Tier 5 PSLQ; q-dilog substrate-natural; V̂$_S$ + $\mathbb{Q}(\zeta_{60})$;
 commutative + operator-theoretic Φ$_q$; q-locality; reframing;
@@ -227,7 +166,7 @@ The neutron is **structurally consistent** under the same
 common-substrate hypothesis: $\lambda_n = \lambda_p$ shared, with
 $\Delta m_{pn} = 1.293\;\mathrm{MeV}$ arising entirely from the
 Skein contribution $S(n) - S(p)$
-([prop:borromean-baryon-mass-formula](#prop:borromean-baryon-mass-formula)
+([conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula)
 common-scale hypothesis).
 
 ## Comparison with the FSC derivation pattern
@@ -257,7 +196,7 @@ $$
 ## Status: justification, not derivation
 
 Per the audit
-([2026-05-18 λ-scale derivation search §13](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-lambda-scale-derivation-search.md)):
+([ λ-scale derivation search §13](https://github.com/litlfred/qou/blob/main/docs/audits/-lambda-scale-derivation-search.md)):
 
 - $\mathrm{Vol}(\mathcal{B}_3) = 8G$ is **derived** (standard topology).
 - The numerical match $\lambda_p = 5/2 - h^2 G$ at 5.6 ppm is **justified**
@@ -320,4 +259,4 @@ To upgrade from justification to derivation, the proof must establish:
 - [`folio-assistant/computations/lambda_scale_substrate_probe.py`](../../folio-assistant/computations/lambda_scale_substrate_probe.py)
 - [`folio-assistant/computations/lambda_scale_derivation_probes_123.py`](../../folio-assistant/computations/lambda_scale_derivation_probes_123.py)
 - [`folio-assistant/computations/m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
-- [`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md)
+- [`docs/audits/-lambda-scale-derivation-search.md`](../../../docs/audits/-lambda-scale-derivation-search.md)

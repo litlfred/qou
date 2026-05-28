@@ -156,7 +156,7 @@ must now route through
 [`prop:topological-mass-formula-algebraic`](#prop:topological-mass-formula-algebraic),
 not [`prop:topological-mass-formula`](#prop:topological-mass-formula).
 The two real-violation proofs identified by the **P0.1 sweep**
-([`docs/audits/2026-05-02-p0-1-wall-violation-sweep.md`](../../../docs/audits/2026-05-02-p0-1-wall-violation-sweep.md)) —
+([`docs/audits/-p0-1-wall-violation-sweep.md`](../../../docs/audits/-p0-1-wall-violation-sweep.md)) —
 [`local-substrate-q-proof.md`](../observations/local-substrate-q-proof.md)
 and
 [`skein-mass-relation-proof.md`](../observations/skein-mass-relation-proof.md) —

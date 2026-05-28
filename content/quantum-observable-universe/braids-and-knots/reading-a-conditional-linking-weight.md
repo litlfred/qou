@@ -40,11 +40,11 @@ yet been identified.
 
 **Three independent audit results foreclose obvious paths:**
 
-1. [**PR #701**](https://github.com/litlfred/qou/pull/701) (2026-05-18) —
+1. [****](https://github.com/litlfred/qou/pull/701) —
    falsified the Wedderburn-sum incarnation of $\tfrac{5}{2} - G h^2$
    across 5 structural routes (Wedderburn / Frobenius / Demazure
    / LP-Plancherel / LP-Frobenius).
-2. [**Audit 2026-05-23**](../../../docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md) —
+2. [**Audit**](../../../docs/audits/-yekutieli-bijection-natural-reading-negative.md) —
    the natural half-symmetric projection at $H_4$ gives $+0.5$, not
    $-G$. The Yekutieli per-cell bijection conjecture (Reading-B)
    is also NEGATIVE under the natural reading.
@@ -107,7 +107,7 @@ theorem (proved), one would need to:
    evaluation, derive the $-G$ coefficient.
 
 The audit
-[2026-05-25 Path C](../../../docs/audits/2026-05-25-path-c-categorical-principle-hunt.md)
+[ Path C](../../../docs/audits/-path-c-categorical-principle-hunt.md)
 enumerates 7 candidate categorical principles; **C3 (KLR /
 Kashiwara crystal $h^2$ correction)** is the highest-value remaining
 direction but is multi-session research.
@@ -125,7 +125,7 @@ direction but is multi-session research.
 ## References
 
 - [Family A theorem](lambda-scale-substrate-form.md) — proved $h^2$ = +3/4
-- [PR #1287](https://github.com/litlfred/qou/pull/1287) — Reading-A residual probes
-- [Path C audit (2026-05-25)](../../../docs/audits/2026-05-25-path-c-categorical-principle-hunt.md)
-- [Yekutieli per-cell (2026-05-22)](../../../docs/audits/2026-05-22-yekutieli-percell-conjecture-formalized.md)
-- [Yekutieli bijection negative (2026-05-23)](../../../docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md)
+- — Reading-A residual probes
+- [Path C audit](../../../docs/audits/-path-c-categorical-principle-hunt.md)
+- [Yekutieli per-cell](../../../docs/audits/-yekutieli-percell-conjecture-formalized.md)
+- [Yekutieli bijection negative](../../../docs/audits/-yekutieli-bijection-natural-reading-negative.md)

@@ -59,7 +59,7 @@ archimedean specialisation at $q_0$**.*
   reduced words for the same braid give different per-generator
   amplitudes but the same Markov trace.  The specialisation is
   therefore a basis-dependent expansion, not itself a trace.*
-- *Numerical pathology at $q_0$ (documented PR #524):
+- *Numerical pathology at $q_0$ (documented ):
   $\Phi_q(0.99) \approx 6.7 \times 10^5$.  Per-generator amplitudes
   $|\hat V_i^{\mathrm{full}}|$ for atomic braids are typically
   0.85–0.99, so each summand contributes $\sim 10^5$ Hecke units.
@@ -141,7 +141,7 @@ non-invariance as Term 2.*
   $\tau_{\mathrm{sym}}(\sigma) - \tau_{\mathrm{sym}}(\sigma^{-1}) = h$.
   Reproduces paper's $\{1+h, 1-h^2, (1-h^2)^2\}$ exactly on standard
   test braids.*
-- *Audit (PR #526, `term5_aK_audit.py`): the closed-form vs the
+- *Audit: the closed-form vs the
   Gram-matrix definition $\mathrm{tr}_M(\beta \cdot \beta^{*\,-1})$
   agree to within $2.2\%$ on the proton.  The discrepancy is being
   reconciled across four candidate $\beta^*$ conventions (V1
@@ -187,13 +187,13 @@ conjecture (earlier framing) is now **superseded**.*
 
 See [Table](#tbl:six-term-mass-formula-complete-table-data).
 
-**Trace-invariance directive (2026-05-03).**
+**Trace-invariance directive.**
 Every term in the formula must be a Markov-invariant trace.  Terms 1,
 4, 6 satisfy this directly.  Term 5 also satisfies this in production
 form: $a_K \cdot \mathcal{C}_K = \mathrm{tr}_M(\beta \cdot \beta^{*\,-1})$
 is a Markov pairing of $\beta$ with its mirror inverse (this matches
 the closed-form $a_K = \prod_{pn}(1+\mathrm{sign}\cdot h)$ in
-production within $2.2\%$ on the proton; see PR #526
+production within $2.2\%$ on the proton; see 
 `term5_aK_audit.py`).  Terms 2 and 3 satisfy it only in the R-side
 algebraic form (each $\mathrm{Vol}_q^{(S)}$ is a Markov trace over
 the chain supported on $S$); the archimedean Kashaev specialisation
@@ -220,7 +220,7 @@ invariance:
    $\ln_q(1+t)/t$ in `prop:mass-endomorphism-tower`'s proof
    identifies $\Phi_q$ with $\partial/\partial q$ applied to a base
    Markov trace; the Kähler lift of the per-generator volume is
-   itself a Markov trace.  See `kahler_lift.py` (PR #526's recursion
+   itself a Markov trace.  See `kahler_lift.py` ('s recursion
    fix).
 
 Both expansions express T2/T3 as Markov traces — ongoing work on PR

@@ -15,11 +15,6 @@ testable against a specific observable class. Identifying
 which (if any) is the correct physical interpretation is open
 work.*
 
-> **Status — open conjecture (2026-05-25, PR #1127).** Direct
-> answer to the question "what IS Im(q)?". The framework currently
-> gives Im(q) no physical interpretation; this conjecture is a
-> map of candidate roles.
-
 ## What Im(q) is NOT
 
 Per [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
@@ -120,6 +115,6 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 - [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — involution split for complex q
 - [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md) — the distinction from P_skew
 - [`prop:categorical-mass-markov`](categorical-mass-markov.md) — modulus projection
-- Audit: [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md) — Phase 3 finding
-- Audit: [`docs/audits/2026-05-24-complex-q-historical-trajectory.md`](../../../docs/audits/2026-05-24-complex-q-historical-trajectory.md) — historical context
-- Audit: [`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md) §Q3 — Apollonius parametrization
+- Audit: [`docs/audits/-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/-m-mu-over-m-e-operator-rederivation.md) — Phase 3 finding
+- Audit: [`docs/audits/-complex-q-historical-trajectory.md`](../../../docs/audits/-complex-q-historical-trajectory.md) — historical context
+- Audit: [`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md) §Q3 — Apollonius parametrization

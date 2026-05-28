@@ -113,7 +113,7 @@ $\mathfrak{H}$, (ii) reproduce the empirical $B(\mathfrak{H})$ across
 atoms when fed into $\pi_{n_\star}^{(z)}$, and (iii) be derivable from
 the QOU substrate without external calibration.
 
-**Empirical observation (uniform-$k$ sweep, 2026-04-29).** A
+**Empirical observation (uniform-$k$ sweep).** A
 uniform-depth probe
 ([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/folio-assistant/computations/probe_phiq_uniform_k.py))
 sweeping $k \in \{1, 2, 3, 4, 5, 6, 8, 10\}$ uniformly across
@@ -178,7 +178,7 @@ $n_\star$ has been correctly identified. A rule that requires
 per-atom retuning is structurally equivalent to Yekutieli's $k_{\max}$
 and does not constitute progress.
 
-## Closure (2026-05-11): scalar-eigenvalue form of $n_\star$ is refuted
+## Closure: scalar-eigenvalue form of $n_\star$ is refuted
 
 **Scope of this section.** "Scalar-eigenvalue" means **both** that
 the candidate $n_\star$ is a function of scalar substrate invariants
@@ -229,7 +229,7 @@ empirical-confirmation threshold. $\square$
 By the conjecture's own criterion, the **scalar-eigenvalue form** of
 the $n_\star$ existence claim is therefore **refuted**.
 
-## Operator-valued probe (2026-05-11): per-eigenvalue form also refuted
+## Operator-valued probe: per-eigenvalue form also refuted
 
 A natural objection to the closure above is: **the scalar form
 collapses $\Phi_q$ onto 1-D eigenvalues**. Hecke irreps $V_\lambda$
@@ -341,7 +341,7 @@ The conjecture has two independent claims:
 
 2. **$n_\star$ existence claim** — refuted across every empirically
    probed form:
-   - Scalar-eigenvalue family (§"Closure (2026-05-11)"): **refuted**.
+   - Scalar-eigenvalue family (§"Closure"): **refuted**.
    - Operator-valued per-eigenvalue family (§"Operator-valued
      probe"): **refuted**. The canonical convolution-aware
      promotion fails the falsifiability criterion at every uniform
@@ -358,7 +358,7 @@ audit purposes but superseded by the per-eigenvalue probe; its
 witness is
 [`probe-phiq-avg-chi-over-classical-dim.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-avg-chi-over-classical-dim.witness.json).
 
-### Multiplicity / Type-B-fold probe (2026-05-11): also refuted
+### Multiplicity / Type-B-fold probe: also refuted
 
 The (D, T) per-atom sweet spots under the operator-valued form
 ($k = 1$ for D, $k = 2$ for T) and the ${}^3\mathrm{He}$ holdout at
@@ -423,7 +423,7 @@ The Lean form
 records the refutation at the falsifiability threshold using the
 best-rule max error ($56.0\%$ on R2-op).
 
-## Pair-knot magic-shell probe (2026-05-11): partial closure with LP dual confirmation
+## Pair-knot magic-shell probe: partial closure with LP dual confirmation
 
 The (D, T) per-atom sweet spots and ${}^{3}$He holdout under the
 operator-valued form (§"Operator-valued probe") plus the refuted
@@ -522,7 +522,7 @@ records the refutation of this specific (simplest) pair-knot
 convention; the structural finding (LP-dual selection of pair-knot
 operators) is recorded as `def lpDualActiveSetIncludesPairKnotAtMagicShells` for downstream use.
 
-## Pair-knot Markov-trace refinement (2026-05-11): also refuted, $Z\leftrightarrow N$ symmetry restored
+## Pair-knot Markov-trace refinement: also refuted, $Z\leftrightarrow N$ symmetry restored
 
 The LP-dual evidence from the product-volume probe pointed at the
 canonical refinement: replace
@@ -593,9 +593,9 @@ now covers **six** probed families:
 6. Pair-knot Markov-trace + full Gram + SDP
 
 Full consolidation in
-[`docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md).
+[`docs/audits/-brane-tower-n_star-closure-audit.md`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/docs/audits/-brane-tower-n_star-closure-audit.md).
 
-## Multiplicity / Type-B-fold probe (2026-05-11): also refuted
+## Multiplicity / Type-B-fold probe: also refuted
 
 The empirical support for promoting $\mathbf{m}$ to a first-class
 input comes from two converging signals:
@@ -625,9 +625,9 @@ witness data (`witness_refutes_scalar_uniform_k_form`,
 `BraneTowerZHabiro` is kept for downstream conditional results that
 ride on the surviving algebraic claim.
 
-## Per-partition $k_\lambda$ refinement (sibling PR #639)
+## Per-partition $k_\lambda$ refinement (sibling )
 
-[PR #639's `per-partition-k-lambda-rule.md`](https://github.com/litlfred/qou/pull/639)
+['s `per-partition-k-lambda-rule.md`](https://github.com/litlfred/qou/pull/639)
 sharpens the closure direction beyond the multiplicity-refined
 scalar form: the failure of uniform-$k$ in the per-eigenvalue
 operator form is dominated by **one specific partition per atom**:

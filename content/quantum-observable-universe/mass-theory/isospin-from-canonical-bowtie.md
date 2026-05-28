@@ -1,4 +1,4 @@
-> **CORRECTION NOTE (2026-05-24, surfaced by `verify_isospin_bar_anomaly.py`):**
+> **CORRECTION NOTE ( surfaced by `verify_isospin_bar_anomaly.py`):**
 > The original draft classified the 305 ppm residue as "bar-anti-symmetric."
 > **That was wrong.** Bar involution (q $\leftrightarrow$ $q^{-1}$ AND $\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$) is
 > **distinct** from the isospin Z/2 swap ($\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$ with q FIXED).
@@ -9,7 +9,7 @@
 > original meant the canonical isospin swap; references to specific
 > quantities like `h = q − q⁻¹` that ARE bar-anti-symmetric retain
 > that label. Full correction:
-> [`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md).
+> [`docs/audits/-d9-bar-parity-correction.md`](../../docs/audits/-d9-bar-parity-correction.md).
 
 **Conjecture (D9 isospin closure, conditional on
 [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy)
@@ -159,7 +159,7 @@ $\mathrm{SU}(2)_I$ anomaly.
 ## Bar-symmetry parity decomposition
 
 Per
-[`docs/audits/2026-05-24-isospin-categorical-source.md`](../../docs/audits/2026-05-24-isospin-categorical-source.md)
+[`docs/audits/-isospin-categorical-source.md`](../../docs/audits/-isospin-categorical-source.md)
 §3 and the canonical-watcher §Slot J discipline, the four factors of
 $\Delta m / M_N$ classify as:
 
@@ -184,7 +184,7 @@ $q = q_0$, the formula's value is bar-odd in a sign-of-$h$ sense
 (scales with the bar-odd $h$), but the formula AS A FUNCTION OF $q$
 lacks a uniform bar-classification.  This is the audit-correction
 finding from
-[`docs/audits/2026-05-24-d9-bar-parity-correction.md`](../../docs/audits/2026-05-24-d9-bar-parity-correction.md).
+[`docs/audits/-d9-bar-parity-correction.md`](../../docs/audits/-d9-bar-parity-correction.md).
 
 The bar-symmetric subleading contribution
 $\hbar_q^2 \cdot h \cdot [2]_q \cdot \hbar_q^3$
@@ -295,7 +295,7 @@ ultimately lives in the upstream-conjecture class instances.
    identification holds for T, ${}^{3}\mathrm{He}$, ${}^{4}\mathrm{He}$ — these have multiple
    inter-nucleon arcs and the residue is a sum over arcs.  The
    ${}^{4}\mathrm{He}$ magic-shell case (per
-   [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md))
+   [`docs/audits/-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/-magic-shell-gs-filtration-exploitation.md))
    is where the Wigner SU(4) supermultiplet structure should
    manifest.
 
@@ -304,7 +304,7 @@ ultimately lives in the upstream-conjecture class instances.
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D9
   (this conjecture is the closure path) + §2 Cluster B (D9 $\to$
   D10 $\to$ D11 nuclear physics)
-- [`docs/audits/2026-05-24-isospin-categorical-source.md`](../../docs/audits/2026-05-24-isospin-categorical-source.md)
+- [`docs/audits/-isospin-categorical-source.md`](../../docs/audits/-isospin-categorical-source.md)
   — the audit that proposed this closure
 - Upstream restricted result:
   [`prop:crystal-isospin-degeneracy`](crystal-isospin-degeneracy.md)
@@ -313,7 +313,7 @@ ultimately lives in the upstream-conjecture class instances.
   (PR [#1111](https://github.com/litlfred/qou/pull/1111))
 - The 305 ppm closed form:
   [`prop:flavor-split-substrate`](flavor-split-substrate.md)
-  (PR #690)
+
 - The compute consumer:
   [`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
 - D6 (charge conjugation): [`prop:c-from-color-flavor-swap`](c-from-color-flavor-swap.md)

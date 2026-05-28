@@ -5,6 +5,7 @@ import QOU.QGeometricLanglands
 # QOU.QGeometricLanglandsConjecture
 
 The q-Geometric Langlands conjecture, axiomatized as a class.
+-- Ref: [manuscript]
 sorry = conjecture (not missing proof).
 
 Downstream theorems (q_gl_fiber_functor, q_oper_hecke) depend on

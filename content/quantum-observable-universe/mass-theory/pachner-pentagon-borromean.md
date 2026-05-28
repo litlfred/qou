@@ -85,7 +85,7 @@ trace cyclicity and 10 sum to $-3/4$.  (The "10" matches the
 ## Why this is a high-value $h^{4}$ cross-validation route
 
 Per
-[`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](../../docs/audits/2026-05-24-pentagon-identity-broad-context.md)
+[`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
 §3, the Pentagon literature spans 8 disciplines.  Four candidate
 routes for deriving $h^4 = -3/4$ categorically are flagged:
 
@@ -152,7 +152,7 @@ class PachnerPentagonBorromean
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D15
   + §2 Cluster C (Pentagon validation D15-D18)
-- [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](../../docs/audits/2026-05-24-pentagon-identity-broad-context.md)
+- [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
   — 8-literature Pentagon catalogue, 4 candidate routes
 - Sibling Cluster C item:
   [`prop:borromean-bloch-group-element`](borromean-bloch-group-element.md) (D16)

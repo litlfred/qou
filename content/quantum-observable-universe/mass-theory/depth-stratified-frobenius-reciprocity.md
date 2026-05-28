@@ -16,7 +16,7 @@ $Z(H_3) \hookrightarrow Z(H_n)$ through the depth-$k$ knot-ideal projector.*
 
 *Concretely: for each low curvature-rank $k \in \{1, 2, 3\}$ there is
 a distinguished hyperbolic knot $K_k^*$. Empirical resolution at
-$k = 3$ (per [PR #826](https://github.com/litlfred/qou/pull/826), with
+$k = 3$ (per , with
 canonical braid words cross-verified against KnotInfo via hyperbolic
 volume): $K_3^* = 4_1$ (figure-eight knot) gives the best variance
 reduction at 1.551$\times$ (+14.8% vs 1.82$\times$ baseline), consistent with the
@@ -82,7 +82,7 @@ tested two simple empirical forms of "ideal restriction at low $k$" —
 
 | Form tested | Hypothesis | max/min variance | Verdict |
 |---|---|---:|---|
-| Uniform $\tilde w_\lambda$ (baseline) | no restriction | $1.82\times$ | (the current PR #801 result) |
+| Uniform $\tilde w_\lambda$ (baseline) | no restriction | $1.82\times$ | (the current  result) |
 | $\tilde w_\lambda \cdot \|\chi^\lambda\|^\beta$ ($\beta > 0$) | concentrate on Markov-significant | $2.30$–$3.00\times$ | **falsified** |
 | $\tilde w_\lambda$ on self-conjugate partitions only | Wenzl-bridge stratum | $5.94\times$ | **falsified** |
 
@@ -124,11 +124,11 @@ This is the categorical content of:
 
 ### Significance: closing the 1.82$\times$ variance
 
-If true, the FR refinement (FR) closes the variance on PR #801 to
+If true, the FR refinement (FR) closes the variance on  to
 $\le 1.05\times$ (universal categorical constant) by enhancing the
 low-$k$ contributions through the per-knot ideal restriction:
 
-- $k = 3$ ($K_3^* = 4_1$, empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826)):
+- $k = 3$ ($K_3^* = 4_1$, empirically resolved per ):
  chirality channel, full FR pullback computable from the $4_1$
  central projector in $H_n$. Empirically reduces variance to
  $1.551\times$ (+14.8% vs the $1.82\times$ uniform-Plancherel
@@ -147,12 +147,12 @@ For the conjecture to be well-defined, three structural ingredients
 must exist:
 
 1. **Distinguished knot $K_k^*$ at each $k \in \{1, 2, 3\}$**: at
- $k = 3$ this is $4_1$ (empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826),
+ $k = 3$ this is $4_1$ (empirically resolved per ,
  consistent with the Fricke-trace derivation in
  [`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing));
  at $k = 1, 2$ this is the open question. Candidates and selection
  criteria are recorded in
- [`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnosis.md).
+ [`docs/audits/-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-variance-per-depth-diagnosis.md).
 
 2. **Central projector $e_{K_k^*} \in Z(H_n)$**: the Hecke-ideal
  central projector for $K_k^*$. For $K_k^*$ a knot on $m$ strands,
@@ -167,7 +167,7 @@ must exist:
 ### Falsification path
 
 The conjecture was **directly falsified for the originally-asserted $K_3^* = 6_1$**
-by [PR #826](https://github.com/litlfred/qou/pull/826): with corrected
+by : with corrected
 canonical braid words (verified against KnotInfo via hyperbolic
 volume) and proper $S_{\text{uniform},k}$-preserving weight
 normalization, Stevedore $6_1$ regresses the variance to $1.878\times$
@@ -193,7 +193,7 @@ A concrete computation requires:
  ([`compute_atom_chi_rust.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/compute_atom_chi_rust.py))
  or the symbolic Hoefsmit pipeline. The script
  [`fr_pullback_k3_test.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/fr_pullback_k3_test.py)
- (from PR #826) carries this end-to-end with KnotInfo cross-validation.
+ (from ) carries this end-to-end with KnotInfo cross-validation.
 
 ### Lean formalisation
 
@@ -208,8 +208,8 @@ provable in Mathlib via `Representation.induced` and
 
 ### Why this is "the final key"
 
-Per the structural narrative on PR #801 and
-[`docs/audits/2026-05-19-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-variance-per-depth-diagnosis.md):
+Per the structural narrative on  and
+[`docs/audits/-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-variance-per-depth-diagnosis.md):
 
 - The unified mass formula is established
  ([`prop:unified-curvature-rank-mass-formula`](#prop:unified-curvature-rank-mass-formula))
@@ -237,7 +237,7 @@ If true, this conjecture **closes the unified mass formula** to
 universal precision — all atomic binding energies follow from
 $(m_e, q_0, Q_\beta)$ + the three distinguished knots
 $\{K_1^*, K_2^*, K_3^* = 4_1\}$ (with $K_3^* = 4_1$ empirically
-resolved per [PR #826](https://github.com/litlfred/qou/pull/826)).
+resolved per ).
 
 ### Status
 

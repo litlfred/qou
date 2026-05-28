@@ -8,7 +8,7 @@ $$
 $$
 
 at each jet level $n$. The audit
-[`derivation-audit-2026-04-20.md` line 114](../../../docs/audits/derivation-audit-2026-04-20.md)
+[`derivation-audit-.md` line 114](../../../docs/audits/derivation-audit-.md)
 flagged this as an **upper bound** (because the original
 heuristic was the pentagon-ascension argument, which gives only
 an inequality), with **sharpness open**. This block closes
@@ -139,7 +139,7 @@ states the lemma in the abstract form `tr_M(prod over P_n) = z^2 * (sum
 of dilogs)` and reduces to those upstream lemmas.
 
 This block closes audit GAP 17b
-([line 114 of `derivation-audit-2026-04-20.md`](../../../docs/audits/derivation-audit-2026-04-20.md))
+([line 114 of `derivation-audit-.md`](../../../docs/audits/derivation-audit-.md))
 and the corresponding ":refterm[Descent]{#descent} involution on pairs / pentagon
 sharpness" subconjecture: the level-$n$ pair formula is an exact
 equality. The empirical residual to CODATA at light atoms reflects

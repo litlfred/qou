@@ -2,7 +2,7 @@
 *The atomic Markov-trace denominator
 $D(u) = 2^{2A+1} \cdot u^{\mathrm{shift}} \cdot (1 + u^{2})^{3A-1}$
 of canonical pppnnn ordering
-([`docs/audits/2026-05-03-w3-habiro-unblocked.md`](../../docs/audits/2026-05-03-w3-habiro-unblocked.md))
+([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md))
 has shift exponent satisfying the additive-linearity recurrence:*
 
 $$
@@ -73,7 +73,7 @@ increments are:
 - **per-new-neutron:** pole $+10.5$ (cancellation $= 1.5$,
   half-integer), shift $= 2 \cdot 10.5 = 21$.
 
-#### Path A categorical verification (proton + deuteron, 2026-05-09)
+#### Path A categorical verification (proton + deuteron)
 
 Both the per-proton coefficient $18$ and the multi-nucleon
 combination $18 + 21 + 1 = 40$ are verified by direct symbolic
@@ -114,7 +114,7 @@ Hoefsmit pole-order analysis:
 per-proton additive coefficient of the **full summed** $u$-pole
 order of $\mathrm{tr}_M$, NOT the q-pole order of any single
 per-irrep $\chi^\lambda_q$. See
-[`docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`](../../docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md)
+[`docs/audits/-per-irrep-pole-18-21-research-note.md`](../../docs/audits/-per-irrep-pole-18-21-research-note.md)
 for the reading correction and the optimisation strategy that
 makes multi-nucleon Path A tractable.
 
@@ -123,7 +123,7 @@ The cancellation count enumerates the $\sigma^2$-relation reductions
 nucleon's intrinsic $\sigma^{\pm 1}$-adjacencies plus its incoming
 interface contribution. Detailed $\sigma^2$-adjacency analysis is given in
 the audit doc
-([`docs/audits/2026-05-04-per-nucleon-shift-derivation.md`](../../docs/audits/2026-05-04-per-nucleon-shift-derivation.md)).
+([`docs/audits/-per-nucleon-shift-derivation.md`](../../docs/audits/-per-nucleon-shift-derivation.md)).
 
 ### Companion remark — leading-coefficient identity
 
@@ -134,7 +134,7 @@ $D(u)^{-1} \cdot \mathrm{tr}_M(\beta)$ at $u = 0$) is
 $-\tfrac{1}{12}$ for neutron standalone (precision-limited at
 high-$A$ atoms in the existing float-precision Hoefsmit pipeline).
 See
-[`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](../../docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md)
+[`docs/audits/-ocneanu-cancellation-numerical-verification.md`](../../docs/audits/-ocneanu-cancellation-numerical-verification.md)
 for the high-precision (200 dps) verification.
 
 The simple rational $-\tfrac{1}{12}$ is strong evidence that the

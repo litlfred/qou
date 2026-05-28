@@ -28,7 +28,7 @@ graded piece $J^\ell / J^{\ell+1}$ vanishes above $\ell(K, q_0)$,
 hence so does $\mathrm{tr}_{M, \ell}(T_w)$ and a fortiori the residue.*
 
 **Status (current Lean encoding).**
-*In `gb-residue-spectral-sum.lean`, the P2.6 refactor (2026-05-02)
+*In `gb-residue-spectral-sum.lean`, the P2.6 refactor
 recasts the previous `sorry` as a tautology over `Fin levelBound`:*
 
 ```

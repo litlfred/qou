@@ -25,7 +25,7 @@ braid words.
 ## Scope: convenience target, not load-bearing
 
 A note on what this conjecture **is** and **is not** about, added
-2026-05-02 after the P3.1 conjectural-propagation audit:
+ after the P3.1 conjectural-propagation audit:
 
 - **Load-bearing claim** (already proved, *not* part of this
  conjecture): the categorical mass equals the infinite-series sum
@@ -68,7 +68,7 @@ already records this scope correctly: "tower formula remains
 correct as an *infinite series*; the closed form is a
 convenience". This section spells out the distinction in the
 conjecture's own prose, in line with the user's clarifying
-question (2026-05-02).
+question.
 
 ## Statement
 
@@ -225,7 +225,7 @@ $N \to \infty$ tower limit is then a question at the level of the
 **Habiro completion** $\widehat{\mathbb{Z}[q]}$. Both senses are
 algebraic.
 
-**Two distinct convergence problems (clarification, 2026-04-28f).**
+**Two distinct convergence problems (clarificationf).**
 *The Habiro completion above resolves the* $N \to \infty$ *tower-limit
 problem (number of summands) in the* $((q;q)_n)$*-adic topology on* $q$.
 *This is well-defined and at* $q_0 \approx 1.11$ *(real,* $|q| > 1$,
@@ -278,13 +278,13 @@ closes the gap:*
  level-selection rule $n_\star(\mathfrak{H})$ derivable from
  substrate data.*
 
-**Status (2026-05-11, PR [#638](https://github.com/litlfred/qou/pull/638)):**
+**Status ( PR [#638](https://github.com/litlfred/qou/pull/638)):**
 Claim (b) is **refuted across six probed families** — scalar
 uniform-$k$, scalar $\ell n_0 + k$, per-eigenvalue operator-valued,
 multiplicity / Type-B-folded-crystal, pair-knot product-volume, and
 pair-knot Markov-trace + full Frobenius Gram + LP/SDP duals — by
 the conjecture's own $\sim 5\%$ falsifiability criterion. See
-[`docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md`](../../../docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md)
+[`docs/audits/-brane-tower-n_star-closure-audit.md`](../../../docs/audits/-brane-tower-n_star-closure-audit.md)
 for the consolidated landscape. Claim (a) (algebraic Cauchy-limit)
 is **untouched** by the refutation; partial progress in
 [`PhiQConvergence.lean`](../lean/QOU/MassEndomorphism/PhiQConvergence.lean)

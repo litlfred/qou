@@ -6,6 +6,7 @@ corrections to the nuclear binding energy arise from the
 Skein-polynomial factorization of the multi-nucleon link into
 closed sub-links (one per closed shell).
 
+-- Ref: [manuscript]
 Per `CLAUDE.md §3b-cond`, opaque Prop + class field + sorry
 instance. Algebraic tier only — the numerical match to observed
 shell-correction energies belongs to a future Archimedean tier

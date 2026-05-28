@@ -1,6 +1,6 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-> **Substrate-density (ρ_q) ansatz purge in progress (2026-05-24, PR #1127).**
+> **Substrate-density (ρ_q) ansatz purge in progress .**
 > The relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ below uses the
 > **SUPERSEDED** substrate density $\rho_q = 1/\hbar_q^2$ as the
 > dimensional factor. Per [`mass-endomorphism-tower.md` §SUPERSEDED](../braids-and-knots/mass-endomorphism-tower.md)
@@ -13,12 +13,12 @@
 > The numerical match to $m_\mu/m_e = 206.77$ holds at lepton level
 > because operator-valued corrections are small for leptons; the
 > +0.17% Q_β residual flagged in
-> [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)
+> [`-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
 > is consistent with operator corrections becoming non-negligible
 > for hadronic observables. The literal $\rho_q = 1/\hbar_q^2$
 > interpretation is **deprecated**; re-derivation of $m_\mu/m_e$
 > in canonical (graded-expansion) form is open work, tracked at
-> [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md).
+> [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
 The mass functional $\mathcal{M}(\mathfrak{H})$ for a composite hadron $\mathfrak{H}$ is not additive but obeys the quantum Skein relation at every crossing in the color-exchange space:
 

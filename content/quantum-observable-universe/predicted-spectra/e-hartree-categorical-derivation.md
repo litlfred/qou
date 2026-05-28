@@ -1,10 +1,10 @@
-> **SUPERSEDED-$\rho_q$ note (2026-05-24, PR #1127).** Any use of the
+> **SUPERSEDED-$\rho_q$ note .** Any use of the
 > scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
 > structurally-wrong leading-order ansatz per
 > [`mass-endomorphism-tower.md` §SUPERSEDED](../braids-and-knots/mass-endomorphism-tower.md);
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
 > graded expansion [`prop:rho-k-graded-expansion`](../braids-and-knots/rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md).
+> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
 ### Status update: open after thirteen rounds of investigation
 
@@ -466,7 +466,7 @@ candidate mechanism (rounds 1–3, 9, 10, 13).
 
 **The single tractable path forward** is the q-dimension decoration
 $\delta_q : \{b_i\} \to R$ identified in round 11 — building this
-new layer of QOU's formalism would unlock the full categorical
+new layer of QOU's formalism would expose the full categorical
 derivation, but is significant infrastructure work outside this
 investigation's scope.
 
@@ -980,7 +980,7 @@ mechanisms below have an explicit, identifiable gap.
  which exposes the same combinatorial primitive — pole order at
  $q = 0$ of a seminormal Hecke trace — that controls the
  atomic-shift framework
- ([w3 Habiro audit](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)).
+ ([w3 Habiro audit](../../docs/audits/-w3-habiro-unblocked.md)).
  This converts the previous transport sketch through
  $\alpha_{EM}$ into a categorically-proved leg.
 

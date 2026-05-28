@@ -54,6 +54,7 @@ noncomputable def alphaEmInvCorrected (q : ℝ) (hq : q > 1) : ℝ :=
 
 /-- The conjectural gluon-octet identity, axiomatised as a class.
 
+    -- Ref: [manuscript]
     Was a `theorem` with `sorry`; demoted to class after audit
     (only `45` of four factors has a structural derivation).
     Downstream results may take this class as an explicit
@@ -86,6 +87,7 @@ class ChernSimonsCorrectionConjecture (q : ℝ) (hq : q > 1) : Prop where
 instance chern_simons_correction_conjecture (q : ℝ) (hq : q > 1) :
     ChernSimonsCorrectionConjecture q hq where
   -- Witness: folio-assistant/computations/none
+  -- Ref: [manuscript]
   identity_holds := sorry
 
 end QOU.ArchimedeanUniverse

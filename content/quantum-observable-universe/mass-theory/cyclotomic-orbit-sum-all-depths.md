@@ -67,7 +67,7 @@ $\mathrm{Cl}_n$ values are bar-anti-symmetric (Glaisher convention),
 They pair-cancel. No reduction occurs — all $(N - 1)/2$ distinct
 $\mathrm{Cl}_n$ magnitudes are independent (modulo Beilinson).
 
-### Generalises Theorem B (PR #635 round 3)
+### Generalises Theorem B
 
 Theorem B ([`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general))
 is the $n = 3$ case. This proposition extends the pattern to all $n$
@@ -80,7 +80,7 @@ Combined with
 
 See [Table 2](#tbl:cyclotomic-orbit-sum-all-depths-table2-data).
 
-The depth-3 case (round 3 + round 4 of PR #635) gave $(K - 3)/2$.
+The depth-3 case (round 3 + round 4 of ) gave $(K - 3)/2$.
 The general formula here is parity-dependent: $(K - 3)/2$ for $n$
 odd, $(K - 1)/2$ for $n$ even.
 

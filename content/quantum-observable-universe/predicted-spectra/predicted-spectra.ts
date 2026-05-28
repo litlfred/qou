@@ -64,9 +64,7 @@ export default chapter({
       label: "sec:mesons-nucleons",
       blocks: [
         "intro-mesons-nucleons",
-        "categorical-meson",
         "meson-formation-chain",
-        "categorical-proton",
         "categorical-proton-table3-data",
         "categorical-proton-table2-data",
         "categorical-proton-table1-data",
@@ -82,7 +80,6 @@ export default chapter({
         "mesons-nucleons-categorical-proton-unique-intro",
         "categorical-proton-unique-proof",
         "meson-to-proton-via-borromean",
-        "categorical-neutron",
         "categorical-neutron-table-data",
         "categorical-neutron-table-data",
         "categorical-neutron-exists",
