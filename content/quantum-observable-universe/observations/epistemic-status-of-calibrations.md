@@ -58,8 +58,8 @@ equation hold, so it holds. The Lean cross-check
 `figure-8-muon-mass-cross-check.lean:42` says explicitly *"equality
 by construction."*
 
-The substrate-$q_0$ derivation was declined as out-of-scope on
-2026-05-08 (coordination ledger) and **re-opened** in
+The substrate-$q_0$ derivation was declined as out-of-scope
+(coordination ledger) and **re-opened** in
 response to the same owner question that produced this remark. The
 research-grade workplan tracks candidate derivation paths
 (spectral collapse, K-theoretic period, Bring $\chi = -6$

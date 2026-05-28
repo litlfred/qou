@@ -103,4 +103,16 @@ export default proposition({
     "1ppb-roadmap",
     "half-shift",
   ],
+  authorNotes: [
+    {
+      kind: "deprecated",
+      body:
+        "**Superseded.** The claimed $c_4 = b^2 + 1/2$ is wrong — the SDP " +
+        "derivation shows empirical $c_4 \\approx -1.144$ (sign-flipped, 9.5% off). " +
+        "Canonical form is $c_4 = c_3 \\cdot b^4 = -2b^4$ (0.9% match). The old " +
+        "$b^2 + 1/2$ is now attributed to $c_5$ (rung misattribution). Block retained " +
+        "as historical record of the derivation path.",
+      see: "docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md",
+    },
+  ],
 });

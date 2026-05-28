@@ -96,8 +96,8 @@ conjecture-conditional adoption, $\rho_F$ is:
    inhabit — replacing the open-ended "pending formal justification"
    with an auditable conjecture-conditional dependency.
 
-Owner authorised this adoption per Rule-14 procedure
-2026-05-24, in response to
+Owner authorised this adoption per Rule-14 procedure,
+in response to
 [`docs/audits/2026-05-24-rule14-kashaev-density.md`](../../docs/audits/2026-05-24-rule14-kashaev-density.md)
 §Recommendation.
 
