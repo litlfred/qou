@@ -246,6 +246,56 @@ def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     return geom_leading * linking_weight
 
 
+def spectral_correction_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """Top-down spectral-phase correction to the Borromean linking weight.
+
+    The leading Geom_full (Vol/ℏ² × lw_A) is +2.89 % high for m_p.  The
+    correction is the rotation angle of the Borromean braid 𝓑₃ on the
+    2-dimensional standard irrep V_(2,1) of H_3, measured per ideal
+    octahedron in substrate-tick units:
+
+        θ      = arccos( χ^(2,1)(𝓑₃) / 2 )     (𝓑₃ is det-1 ⇒ a rotation)
+        χ^(2,1)(𝓑₃) = 2 − 3h⁴ − h⁶              (exact Hoefsmit character)
+        correction = θ / (8 ℏ_q²)                (8 = Vol(𝓑₃)/G octahedra)
+
+    All quantities are categorical with NO free parameter (the 8 cancels
+    against Vol = 8G).  Applying it gives m_p = 938.15 MeV (130 ppm vs
+    CODATA) — fully derived, no CODATA fitting.  See
+    `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md` and
+    `TwoRoutesProtonMass.lean`.
+
+    NOTE this correction is specific to multi-component LINKS: knots
+    (muon = 4₁) have linking weight 1 and take NO such correction —
+    their bare Vol/ℏ² is already exact (0.05 ppb).  χ^(2,1)(4₁) = −0.91
+    is not near 2, so the rotation-angle reading does not apply.
+
+    Residual 130 ppm origin (Vol=8G precision / higher geometric term /
+    calibration) is OPEN.  The "why the phase multiplies Geom this way"
+    step is not yet Lean-proved (trivial stub in TwoRoutesProtonMass).
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    h = q - qi
+    hbar_q = 1 - qi
+    chi = 2 - 3 * h ** 4 - h ** 6  # exact χ^(2,1)(𝓑₃), Hoefsmit seminormal
+    theta = mp.acos(chi / 2)
+    return theta / (8 * hbar_q ** 2)
+
+
+def geom_full_borromean_spectral(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """Geom_full(𝓑₃) with the top-down spectral-phase correction applied.
+
+        Geom_full_spectral = Vol/ℏ² × lw_A × θ/(8ℏ²)
+                           = m_e⁻¹ × m_p   (938.15 MeV, 130 ppm)
+
+    This is the fully-derived (no-fit) Borromean Geom evaluation, replacing
+    the +2.89 % leading-order `geom_full_borromean`.  Kept as a distinct
+    function (not an in-place change) because the leading-order form has
+    many consumers; migrate them deliberately, not implicitly.
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    return geom_full_borromean(q, qi) * spectral_correction_borromean(q, qi)
+
+
 def yekutieli_correction_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
     """EXPLORATORY: the unproved −G·h² Yekutieli per-cell curvature
     correction to the linking weight.

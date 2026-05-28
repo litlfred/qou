@@ -33,8 +33,12 @@ def spectral_coordinates(Z, N):
     d2 = -1 / q / (q**2 + 1)
     b = float(((q**4 + q**2 + 1) / (q**2 + 1)**2) ** 0.5)
 
+    # Hoefsmit seminormal V_(2,1) of H_3. The off-diagonal generator must
+    # use diagonal entries (d2, d1) — NOT (d1, d2) — to satisfy the braid
+    # relation σ₀σ₁σ₀ = σ₁σ₀σ₁ (verified symbolically; the swapped form
+    # fails it). The (d1, d2) ordering was a latent bug.
     sigma0 = np.array([[q, 0], [0, -1 / q]])
-    sigma1 = np.array([[d1, b], [b, d2]])
+    sigma1 = np.array([[d2, b], [b, d1]])
 
     crossings = atom_canonical_crossings(Z, N)
 
