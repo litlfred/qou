@@ -67,6 +67,13 @@ on:
         required: false
         default: 'gh-pages'
         type: string
+      skip_witnesses:
+        description: >
+          Skip the witness regeneration step (saves ~36 min).
+          Use for fast iteration when only testing LaTeX/content changes.
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: publish-${{ github.event.pull_request.head.ref || github.ref_name }}
@@ -125,13 +132,19 @@ jobs:
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
       - name: Regenerate stale witnesses
+        if: inputs.skip_witnesses != true
         continue-on-error: true
         run: |
           set -o pipefail
           cd folio-assistant/computations
           python3 hecke_startup_cache.py 2>/dev/null || true
-          python3 run_pipeline.py --content-only --timeout 120 2>&1 | tail -20 \
+          python3 run_pipeline.py --content-only --timeout 120 2>&1 \
+            | tee /tmp/witness-pipeline.log \
+            | grep -E '^\[|^Done:|FAILED|TIMEOUT|OK' \
             || echo "::warning::Some witness computations failed"
+          echo ""
+          echo "── Summary ──"
+          tail -3 /tmp/witness-pipeline.log
 
       - name: Validate content objects
         run: cd content && bun run validate
