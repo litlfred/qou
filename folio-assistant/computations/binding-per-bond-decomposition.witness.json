@@ -1,0 +1,75 @@
+{
+  "engine": "numpy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-28T05:14:44.373813+00:00",
+  "commitSha": "3c07aa856544de83de150276c17d94061b1d1a29",
+  "assertions": [
+    {
+      "name": "method_discrepancy_recorded",
+      "computed": 28.754606831943537,
+      "expected": 28.754606831943537,
+      "passed": true,
+      "tolerance": 1,
+      "source": "Diagnostic: records the binding_canonical vs H_{3A} Δtr gap"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 470,
+  "computation": "binding-per-bond-decomposition",
+  "scriptFile": "binding_per_bond_decomposition.py",
+  "scriptHash": "958b374af415",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Per-inter-nucleon-bond decomposition of the H_{3A} binding trace for ²H/³H/³He. FINDING: the H_{3A}-direct Wedderburn trace disagrees with binding_canonical (Wenzl bridge) by 29% on the deuteron Δtr — the +0.19% endomorphism result is convention-specific. Reconciling the two conventions is the prerequisite for the open A≥3 binding problem.",
+  "data": {
+    "per_bond": {
+      "2H": {
+        "A": 2,
+        "n_bonds": 1,
+        "tr_free": "0.42950150941569837",
+        "tr_bound": "0.005448929279426335",
+        "delta_tr": "0.42405258013627206",
+        "delta_tr_per_bond": "0.42405258013627206",
+        "B_single_link_MeV": "1.5878477800144277",
+        "B_AME_MeV": "2.22452",
+        "single_link_err_pct": -28.620656140901062,
+        "scale_needed_per_bond_MeV": "2.22452"
+      },
+      "3H": {
+        "A": 3,
+        "n_bonds": 2,
+        "tr_free": "0.2593576245312328",
+        "tr_bound": "0.0003744228579538937",
+        "delta_tr": "0.25898320167327893",
+        "delta_tr_per_bond": "0.12949160083663946",
+        "B_single_link_MeV": "0.9697521512681154",
+        "B_AME_MeV": "8.48182",
+        "single_link_err_pct": -88.56669734481379,
+        "scale_needed_per_bond_MeV": "4.24091"
+      },
+      "3He": {
+        "A": 3,
+        "n_bonds": 2,
+        "tr_free": "0.30540526622028763",
+        "tr_bound": "0.00035680895630268446",
+        "delta_tr": "0.30504845726398494",
+        "delta_tr_per_bond": "0.15252422863199247",
+        "B_single_link_MeV": "1.142241642552414",
+        "B_AME_MeV": "7.71804",
+        "single_link_err_pct": -85.20036638120023,
+        "scale_needed_per_bond_MeV": "3.85902"
+      }
+    },
+    "method_discrepancy_2H": {
+      "delta_tr_binding_canonical": "0.5952",
+      "delta_tr_h3a_direct": "0.42405258013627206",
+      "gap_pct": 28.754606831943537,
+      "note": "Two production trace conventions disagree; reconcile before A≥3."
+    }
+  }
+}

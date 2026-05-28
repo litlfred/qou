@@ -723,7 +723,6 @@ export default chapter({
         "borromean-baryon-interpretation",
         "q-integer-mass-formula",
         "lambda-scale-substrate-form",
-        "meson-volume-conjecture",
         "topological-mass-trefoil",
         "tower-binding-energy",
         "tower-binding-energy-table-data",

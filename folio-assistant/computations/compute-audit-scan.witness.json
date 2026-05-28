@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T01:49:09.376495+00:00",
-  "commitSha": "d2dcd93ebf5bd49bcc46ca8a6d544de40101cfd3",
+  "computedAt": "2026-05-28T05:14:02.216364+00:00",
+  "commitSha": "b234009b9c07da66d64fd69cdaf1a4ccb3a30652",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -19,7 +19,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 725,
+    "files_scanned": 731,
     "patterns": [
       "P15",
       "P16",
@@ -33,7 +33,7 @@
       "P15": 114,
       "P16": 181,
       "P21": 30,
-      "P30": 143,
+      "P30": 142,
       "P31": 58
     },
     "top_files": [
@@ -1301,13 +1301,6 @@
         "line": 59,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
-        "pattern": "P30",
-        "file": "gram-matrix-dual.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P15",

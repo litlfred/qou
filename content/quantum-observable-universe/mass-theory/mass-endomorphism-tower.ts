@@ -14,10 +14,7 @@ export default proposition({
   computation: {
     engine: "mpmath",
     script: "folio-assistant/computations/habiro_exact_mass_endomorphism.py",
-    witness: [
-      "folio-assistant/computations/brane-tower-finite-laurent.witness.json",
-      "folio-assistant/computations/habiro-exact-mass-endomorphism.witness.json",
-    ],
+    witness: "folio-assistant/computations/habiro-exact-mass-endomorphism.witness.json",
     status: "experimental",
   },
 });

@@ -67,6 +67,13 @@ on:
         required: false
         default: 'gh-pages'
         type: string
+      skip_witnesses:
+        description: >
+          Skip the witness regeneration step (saves ~36 min).
+          Use for fast iteration when only testing LaTeX/content changes.
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: publish-${{ github.event.pull_request.head.ref || github.ref_name }}
@@ -125,24 +132,55 @@ jobs:
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
       - name: Regenerate stale witnesses
+        if: inputs.skip_witnesses != true
         continue-on-error: true
         run: |
           set -o pipefail
           cd folio-assistant/computations
           python3 hecke_startup_cache.py 2>/dev/null || true
-          python3 run_pipeline.py --content-only --timeout 120 2>&1 | tail -20 \
+          python3 run_pipeline.py --content-only --timeout 120 2>&1 \
+            | tee /tmp/witness-pipeline.log \
+            | grep -E '^\[|^Done:|FAILED|TIMEOUT|OK' \
             || echo "::warning::Some witness computations failed"
+          echo ""
+          echo "── Summary ──"
+          tail -3 /tmp/witness-pipeline.log
 
       - name: Validate content objects
         run: cd content && bun run validate
 
       - name: Build content objects (chapters .tex + main.tex)
         # Pre-existing cross-reference warnings produce exit code 1
-        # but chapters/*.tex are still generated successfully.
+        # but chapters/*.tex and main.tex are still generated successfully.
+        # `bun run build` (package.json) does NOT pass --generate-main, so
+        # we invoke pipeline/build.ts directly with the flags needed to emit
+        # main.tex at the repo root — mirroring blueprint.yml / lean-build.yml
+        # / lean_ci.yml. Without this, the downstream paper-pdf job fails with
+        # "latexmk: Could not find file 'main.tex'".
         run: |
-          cd content && bun run check-witnesses && bun run render-atlas:write && \
-            bun run pipeline/build.ts --generate-main --main-out ../main.tex 2>&1 | tail -10 || \
-            echo "::warning::Content build reported issues (chapters still generated)"
+          cd content
+          # Pre-build hooks from the npm `build` script (witness staleness +
+          # atlas render). Keep them best-effort, exit code intentionally
+          # masked to match the existing behaviour.
+          bun run check-witnesses || true
+          bun run render-atlas:write || true
+          bun run pipeline/build.ts \
+            quantum-observable-universe/quantum-observable-universe.ts \
+            --out-dir ../chapters/ \
+            --generate-main \
+            --main-out ../main.tex \
+            --preamble ../latex/preamble.tex 2>&1 | tail -20 || \
+            echo "::warning::Content build reported issues (chapters/main.tex still generated)"
+          echo "── Generated artefacts ──"
+          ls -la ../main.tex ../chapters/*.tex 2>/dev/null | head -20 || \
+            { echo "::error::main.tex was not generated"; exit 1; }
+
+      - name: Generate main.tex from paper manifest
+        run: |
+          cd content && bun run pipeline/build.ts \
+            --generate-main \
+            --main-out ../main.tex \
+            --preamble ../latex/preamble.tex
 
       - name: Compute output filename base
         id: filename
@@ -155,8 +193,9 @@ jobs:
         with:
           name: content-pipeline-${{ steps.filename.outputs.base }}
           path: |
-            chapters/
             main.tex
+            chapters/
+            standalone-*.tex
             papers.json
             folio-assistant/computations/*.witness.json
           retention-days: 1

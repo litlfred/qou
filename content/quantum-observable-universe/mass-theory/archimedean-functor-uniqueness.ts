@@ -27,7 +27,6 @@ export default proposition({
   uses: [
     "prop:quantum-dilogarithm-volume",
     "prop:dilogarithm-archimedean-limit",
-    "conj:kashaev-volume-conjecture",
     "prop:mass-endomorphism",
     "prop:cosimplicial-crossed-groupoid",
   ],

@@ -22,7 +22,7 @@ export default proposition({
     witness: [
       "folio-assistant/computations/habiro-interpolate-cross-validation.witness.json",
       "folio-assistant/computations/markov-substrate-realization.witness.json",
-      "folio-assistant/computations/neutron-gap-probes-round2.witness.json",
+      "folio-assistant/computations/d-from-scratch.witness.json",
       "folio-assistant/computations/proton-mass-codata-50dps.witness.json",
     ],
     status: "experimental",
