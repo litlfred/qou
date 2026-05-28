@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T04:25:56.219651+00:00",
-  "commitSha": "5bbfb04330e783c30383ff39944b4adc5838e413",
+  "computedAt": "2026-05-28T05:13:57.414453+00:00",
+  "commitSha": "50ea5aa47aeca49c2386d1277daeb680683e3032",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptCommitSha": "8a00323ca156fd987bf98fefc66fb8083e11e269",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -2370,7 +2370,6 @@
         "f-ell-derivation-via-per-braid-mass-tower.witness.json",
         "family-a-per-partition-h-decomposition-50dps.witness.json",
         "finite-q-volume-conjecture-probe.witness.json",
-        "fitted-labelled-canonical-audit.witness.json",
         "float64-leak-audit.witness.json",
         "four-unwired-theorems-regression.witness.json",
         "fr-pullback-cosh-h.witness.json",
@@ -2393,6 +2392,7 @@
         "graded-hecke-energy-probe.witness.json",
         "gram-h3-det-factorization.witness.json",
         "gram-h3-symbolic-regression.witness.json",
+        "gram-matrix-dual.witness.json",
         "gt-matrix-pslq-probe.witness.json",
         "guarded-off-audit.witness.json",
         "h-3a-vs-h-3-divergence.witness.json",
