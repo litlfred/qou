@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T00:45:26.517110+00:00",
-  "commitSha": "aeb3b26142a6800e5d29e0e11ec3fe218d06f0de",
+  "computedAt": "2026-05-28T04:50:50.875313+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "habiro_sum_nonzero",
@@ -17,12 +17,12 @@
   "computation": "habiro-to-precision-ladder-verification",
   "scriptFile": "habiro_to_precision_ladder_verification.py",
   "scriptHash": "edab12a35349",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4ef25bdded22d777a5b7a650302991f3dcc1f330",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "data": {
     "q_0": "1.10997859555418057528159407960950937799328227995870",

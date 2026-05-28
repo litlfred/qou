@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-25T15:07:23.190495+00:00",
-  "commitSha": "e48f68d41b80bccf6c19ce3dba44ee7468678f2f",
+  "computedAt": "2026-05-28T04:49:53.151360+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "skein_bar_antisymmetry_bar_h_eq_neg_h",
@@ -62,16 +62,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "four-unwired-theorems-regression",
   "scriptFile": "four_unwired_theorems_regression.py",
   "scriptHash": "d6339ef571d2",
-  "scriptCommitSha": "e48f68d41b80bccf6c19ce3dba44ee7468678f2f",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Bundled numerical regression for 4 Lean-proved theorems that lacked production compute witnesses (per the proven-but-unwired audit, PR #1255): skein-bar-antisymmetry, exterior-square-borromean, lusztig-vs-hermitian-bar (precondition only), polynomial-bar-involution. Each identity is verified at q_0 to ≤ 1e-40 (50 dps) using VIOLATION variables (|computed − expected|) so the tolerance actually binds through the WitnessBuilder float cast.",
   "contentBlock": "prop:proven-unwired-regression-2026-05-25",

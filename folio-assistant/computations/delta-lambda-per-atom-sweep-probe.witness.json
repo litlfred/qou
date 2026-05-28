@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T04:35:17.761007+00:00",
-  "commitSha": "7f6554cb4949a8da1d0f58b1a4d410582db1332b",
+  "computedAt": "2026-05-28T04:49:52.154573+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "D: per-atom min-norm Δ_λ(K) satisfies target equation",
@@ -38,12 +38,12 @@
   "computation": "delta-lambda-per-atom-sweep-probe",
   "scriptFile": "delta_lambda_per_atom_sweep_probe.py",
   "scriptHash": "3ec06398bb6f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "parameters": {
     "atoms": [

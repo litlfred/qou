@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T00:32:06.591878+00:00",
-  "commitSha": "908ace6b0b6ecf30907e29084c7ca06e81fba29a",
+  "computedAt": "2026-05-28T04:51:10.184756+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 9,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "e2720642d29d",
-  "scriptCommitSha": "52f99b3b1a648cf651843acfded842a80a9c0cdc",
+  "scriptCommitSha": "0f37d5e2967b5ff1c6f220e9e6227a86e16e6713",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "data": {
@@ -42,8 +42,8 @@
         "beats_100x_experimental": true,
         "source_witness": "m-p-substrate-identity-50dps.witness.json (× Habiro brane-tower ratio)",
         "sigma_source": "codata_constants.M_P_MEV_VALIDATION",
-        "compute_truncation_ppb": "1.066e-34",
-        "compute_output_dps": 40
+        "compute_truncation_ppb": "1.066e-44",
+        "compute_output_dps": 50
       },
       {
         "obs": "m_mu",
@@ -51,16 +51,16 @@
         "pred_MeV": "105.658375649",
         "codata_MeV": "105.658375649",
         "sigma_exp_MeV": "2.30000e-6",
-        "err_ppb": "0.0",
+        "err_ppb": "3.448e-43",
         "sigma_exp_ppb": "21.77",
         "target_100x_ppb": "0.2177",
-        "miss_factor": "0.0",
+        "miss_factor": "1.584e-42",
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
-        "sigma_source": "m_e × (m_μ/m_e)_CODATA = 0.51099895069 × 206.768283 (ratio-derived; independently-quoted 105.6583755(23) MeV)",
-        "compute_truncation_ppb": "9.464e-34",
-        "compute_output_dps": 40
+        "sigma_source": "m_e × (m_μ/m_e)_CODATA = 0.51099895069000000000000000000000000000000000000000056544347190005 × 206.76828299999999999999999999999999999999999999999984248529449449 (ratio-derived; independently-quoted 105.6583755(23) MeV)",
+        "compute_truncation_ppb": "9.464e-44",
+        "compute_output_dps": 50
       },
       {
         "obs": "Q_beta",
@@ -76,8 +76,8 @@
         "beats_100x_experimental": true,
         "source_witness": "q-beta-operator-valued-N3.witness.json (Habiro-exact, integer a_m evaluated at q₀; series terminates at M=8)",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)",
-        "compute_truncation_ppb": "1.278e-31",
-        "compute_output_dps": 40
+        "compute_truncation_ppb": "1.278e-41",
+        "compute_output_dps": 50
       },
       {
         "obs": "m_n",
@@ -93,8 +93,8 @@
         "beats_100x_experimental": true,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
-        "compute_truncation_ppb": "1.064e-34",
-        "compute_output_dps": 40
+        "compute_truncation_ppb": "1.064e-44",
+        "compute_output_dps": 50
       },
       {
         "obs": "Delta_pn",
@@ -110,8 +110,8 @@
         "beats_100x_experimental": true,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
-        "compute_truncation_ppb": "7.732e-32",
-        "compute_output_dps": 40
+        "compute_truncation_ppb": "7.732e-42",
+        "compute_output_dps": 50
       },
       {
         "obs": "m_e",
@@ -143,8 +143,8 @@
         "beats_100x_experimental": false,
         "source_witness": "meson-kaon-pion-derivation.witness.json (Hecke character χ_{(2,1)}(σ₁⁵) × (9/5)²)",
         "sigma_source": "PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature",
-        "compute_truncation_ppb": "2.828e-32",
-        "compute_output_dps": 40
+        "compute_truncation_ppb": "2.828e-42",
+        "compute_output_dps": 50
       }
     ],
     "summary": {
@@ -155,11 +155,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "37258f8659e415fb4f08d5f24a064c1b892eae72c57ebeadb299fbfcc3864e7e",
-        "size_bytes": 3261,
-        "commitSha": "d8d9ba88d56b52483f5e8681fc54ec193b0964c2",
-        "scriptCommitSha": "e2aa29aea92e47311c6f27b07d2adbbf2fc3b2c3",
-        "computedAt": "2026-05-26T15:07:59.219954+00:00"
+        "sha256": "c3ceaccdfee521ea0316571b422aa79751a23d6c718584b50c6d41914da5d228",
+        "size_bytes": 3262,
+        "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
+        "scriptCommitSha": "db220b15c21b1a5f282c6c6cecad2d68672a0d69",
+        "computedAt": "2026-05-28T04:51:06.640411+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
@@ -195,11 +195,11 @@
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",
-        "sha256": "aeed505790d064b28dfd7d4147267d6142714c4726ebb4096126d53e10d269cd",
-        "size_bytes": 3922,
-        "commitSha": "d434c6ad78ac5f0ba276998daad25e1cb45942da",
-        "scriptCommitSha": "4d559b94bcf5fd15ac6078876bcfc80cb7a6d7cb",
-        "computedAt": "2026-05-27T14:55:45.942706+00:00"
+        "sha256": "e49023dcf567789c5dab038f93c995cafba7ac7cfb99877cc43929160fda7fa6",
+        "size_bytes": 3957,
+        "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
+        "scriptCommitSha": "5f89ad40b41fc495ebe8b1443abc4ee474a38317",
+        "computedAt": "2026-05-28T04:51:08.762962+00:00"
       }
     ]
   }

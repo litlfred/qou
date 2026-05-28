@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:38:15.521159+00:00",
-  "commitSha": "5a6801138de2775f08d37516cec8fe41c450755b",
+  "computedAt": "2026-05-28T04:57:21.031056+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "prescreen_completed",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 33,
   "computation": "q-dirac-linking-weight-h4-50dps",
   "scriptFile": "q_dirac_linking_weight_probe_50dps.py",
   "scriptHash": "94104afdb266",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Tests ~9 q-Dirac-derived linking-weight candidates at H_4 (mp.mpf 50 dps). Per author 'is there a PDE/ODE from Dirac?' direction — explores whether the q-Dirac operator D_q²(λ) = [c_λ]_q² acting on Z(H_n(q)) can produce h² ≈ -G (Reading-A) via natural combinations of dim_q V_λ and D_q²(λ).",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",

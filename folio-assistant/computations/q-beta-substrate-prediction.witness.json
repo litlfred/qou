@@ -1,20 +1,20 @@
 {
   "engine": "q_beta_substrate_prediction.py",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T19:14:51.996648+00:00",
-  "commitSha": "c09f7db4be46797e45ae85089159fac87da56bbd",
+  "computedAt": "2026-05-28T04:57:20.403268+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "q-beta-substrate-prediction",
   "scriptFile": "q_beta_substrate_prediction.py",
   "scriptHash": "65d7ed3c49c3",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Substrate-only prediction of Q_β(n) from CAL-1 (m_e) and CAL-2 (q_0), via the single-wrap closed form Q_β = m_e · |q_0² - 2 q_0 - 1| · (q_0 + 1) / (2 q_0³). This is a PREDICTION witness (companion to the CAL-3 calibration witness cal-3-q-beta.witness.json); the substrate value is NOT yet wired as a CAL replacement. Per the cohomological audit (docs/audits/2026-05-24-q-beta-droppability-cohomology.md), the framework can in principle drop CAL-3 once the tower-summation closure lands (Workplan 2 Phase 2); until then the +0.18% residual vs CODATA is recorded here for L2 dashboard visibility and audit-trail purposes.",
   "contentBlock": "prop:three-calibration-inputs",

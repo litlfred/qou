@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T21:28:52.448996+00:00",
-  "commitSha": "45d888906451874da0889a3b84c941f0b248263e",
+  "computedAt": "2026-05-28T04:57:25.405898+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "sinh_bar_antisymmetric_partner_verified",
@@ -15,21 +15,21 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1611,
+  "durationMs": 1485,
   "computation": "sinh-bar-antisymmetric-partner",
   "scriptFile": "sinh_bar_antisymmetric_partner.py",
   "scriptHash": "4860161db4ed",
-  "scriptCommitSha": "45d888906451874da0889a3b84c941f0b248263e",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Bar-ANTI-symmetric partner Q_m(h) = (q^{2m+1} - q^{-(2m+1)}) / (2 [2]_q) of the bar-symmetric P_m from PR #1125/#1129.  At substrate Q_m(h_0) = sinh((2m+1) η_0) / (2 cosh η_0).  Verified symbolically (sympy-exact across m=1..9) that P_m is bar-symmetric, Q_m is bar-anti-symmetric, and P_m ± Q_m = q^{±(2m+1)}/[2]_q.  Verified numerically (50-dps mpmath) that the sinh form matches the direct evaluation at substrate.  Documents the role of Q as the Coulomb / EM / charge-distinguishing channel that the canonical P_avg projection discards (per bar-involution.md + crossing-energy-interpretation.md).  EXPLORATORY: structural characterization, NOT a derivation of Δm_{n-p}.",
   "auditOnly": "docs/audits/2026-05-24-sinh-bar-antisymmetric-partner-probe.md",
   "parameters": {
-    "dps": 50,
+    "dps": 65,
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
     "q_0_source": "qou_substrate.constants.Q_50_DIGIT_STR",
     "m_range_sympy": [
@@ -235,7 +235,7 @@
         "k_torus": 0,
         "Q_m_at_q0_sinh_form": 0.05198186073100939,
         "Q_m_at_q0_direct": 0.05198186073100939,
-        "agreement_delta": 1.6704779438076223e-52,
+        "agreement_delta": 7.418412301374843e-68,
         "P_m_at_q0_for_comparison": 0.5,
         "Q_over_P_ratio": 0.10396372146201878
       },
@@ -244,7 +244,7 @@
         "k_torus": 2,
         "Q_m_at_q0_sinh_form": 0.15821751274216575,
         "Q_m_at_q0_direct": 0.15821751274216575,
-        "agreement_delta": 0.0,
+        "agreement_delta": 2.967364920549937e-67,
         "P_m_at_q0_for_comparison": 0.5218531091152561,
         "Q_over_P_ratio": 0.3031839994407736
       },
@@ -253,7 +253,7 @@
         "k_torus": 4,
         "Q_m_at_q0_sinh_form": 0.27136825389312,
         "Q_m_at_q0_direct": 0.27136825389312,
-        "agreement_delta": 6.681911775230489e-52,
+        "agreement_delta": 5.934729841099874e-67,
         "P_m_at_q0_for_comparison": 0.5665144441017747,
         "Q_over_P_ratio": 0.4790138304829674
       },
@@ -262,7 +262,7 @@
         "k_torus": 6,
         "Q_m_at_q0_sinh_form": 0.39637947516956,
         "Q_m_at_q0_direct": 0.39637947516956,
-        "agreement_delta": 1.3363823550460978e-51,
+        "agreement_delta": 5.934729841099874e-67,
         "P_m_at_q0_for_comparison": 0.6359359830129427,
         "Q_over_P_ratio": 0.623300907257347
       },
@@ -280,7 +280,7 @@
         "k_torus": 10,
         "Q_m_at_q0_sinh_form": 0.7045956063293239,
         "Q_m_at_q0_direct": 0.7045956063293239,
-        "agreement_delta": 1.3363823550460978e-51,
+        "agreement_delta": 0.0,
         "P_m_at_q0_for_comparison": 0.8624110705536714,
         "Q_over_P_ratio": 0.8170066809056274
       },
@@ -289,7 +289,7 @@
         "k_torus": 12,
         "Q_m_at_q0_sinh_form": 0.9012714777032805,
         "Q_m_at_q0_direct": 0.9012714777032805,
-        "agreement_delta": 0.0,
+        "agreement_delta": 1.1869459682199748e-66,
         "P_m_at_q0_for_comparison": 1.0293629887830613,
         "Q_over_P_ratio": 0.8755623502344748
       }

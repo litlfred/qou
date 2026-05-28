@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T14:40:45.555813+00:00",
-  "commitSha": "f4dd9f71013f512939bbb1df1c57a6ac0e017d5b",
+  "computedAt": "2026-05-28T04:51:06.415891+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
@@ -19,12 +19,12 @@
   "computation": "low-isotope-sign-flip-diagnostic",
   "scriptFile": "low_isotope_sign_flip_diagnostic.py",
   "scriptHash": "ef1be5d263ca",
-  "scriptCommitSha": "4480eeca12ecd81902a9ad4863f614dec791af8a",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Per-isotope diagnostic correlating B_E (or mass) error against inter-nucleon channel counts (pp / pn / nn) and the signed h-weight sum.  Tests whether the +2.89 % residual is uniform (PR #1063 single-knot Geom_full refinement framing) or whether channel-assignment effects drive sign-flips across the low-isotope sequence.  KLR-positivity (observables ≥ 0) is checked separately; sign-flips in PREDICTION error are not a KLR violation per se (the underlying tr_M values remain positive) but they DO indicate weighting miscalibration.",
   "parameters": {

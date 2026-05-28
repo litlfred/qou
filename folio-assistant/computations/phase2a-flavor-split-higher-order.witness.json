@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-26T15:09:11.221373+00:00",
-  "commitSha": "df49d949cd03ec2e2fc817efed7369eabec5b1ec",
+  "computedAt": "2026-05-28T04:52:46.015006+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "residual_identified",
@@ -18,12 +18,12 @@
   "computation": "phase2a-flavor-split-higher-order",
   "scriptFile": "phase2a_flavor_split_higher_order_probe.py",
   "scriptHash": "1ff974551bfb",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "14aadfdfc968e351dd521246485c4eb38b35fe82",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Probes higher-order corrections to the flavor-split X formula. At 50 dps, the residual δX = X_current − X_target is analyzed for rational structure in the h-variable. Identifies the leading correction order and coefficient.",
   "contentBlock": "prop:flavor-split-substrate",

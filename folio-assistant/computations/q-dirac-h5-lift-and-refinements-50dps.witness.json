@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:50:41.807055+00:00",
-  "commitSha": "b0d8a0e860f7730ae0a6143c9e3ed077ce7631f4",
+  "computedAt": "2026-05-28T04:57:20.611553+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "probe_completed",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 117,
+  "durationMs": 92,
   "computation": "q-dirac-h5-lift-and-refinements-50dps",
   "scriptFile": "q_dirac_h5_lift_and_refinements_50dps.py",
   "scriptHash": "072c4283d3d9",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Q-Dirac probe Part 3: lifts (1+D_q²)/ΣW scheme to H_5 and tests refined variants at H_4 to close the 3.5% gap to -G. Includes alpha-tuned and cosh-based variants.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",

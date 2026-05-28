@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T20:44:21.624909+00:00",
-  "commitSha": "cd38c69bb13c5831ae1d58d5affff564ef1e5cfd",
+  "computedAt": "2026-05-28T04:57:20.013137+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "atoms_processed_match_table",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "prototype-gs-nf-shell-binding",
   "scriptFile": "prototype_gs_nf_shell_binding.py",
   "scriptHash": "364fab2a8420",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Prototype shell-binding correction ΔE_GS(Z, N) per shell-closure-normal-form.md.  Not production-grade — ε_shell values are conceptual estimates derived from AME residuals, not the full sequential-Hopf-linking GS-NF reduction energy.  Demonstrates the L3 wiring path; production-quality requires pyhecke GS-NF infrastructure (deferred until R5-full SDP solver lands per the parent Rule-14 audit doc 2026-05-24-rule14-atom-knot-census.md).",
   "parameters": {

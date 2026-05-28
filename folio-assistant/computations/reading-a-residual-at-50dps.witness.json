@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T21:50:35.814273+00:00",
-  "commitSha": "57dc60fc0764565b1e205a28815f62c9dcaac0f6",
+  "computedAt": "2026-05-28T04:57:22.014541+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "reading_a_closes_gap_below_1e_minus_4",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 10,
   "computation": "reading-a-residual-at-50dps",
   "scriptFile": "reading_a_residual_at_50dps.py",
   "scriptHash": "fb84703dbd1a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "mp.mpf 50-dps measurement of Reading-A (5/2 − G·h²) residual against the m_p-anchored target linking_weight. Finds residual ≈ 1.38e-5 (≈ 0.3 ppm in m_p) — closes 99.98% of the Family A gap, vs PR #1272's claim of 92%. Reconciles with PR #1272 by noting their 'via_jones' is a DIFFERENT mathematical object from target_lw.",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",

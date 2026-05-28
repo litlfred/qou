@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-26T13:26:46.552106+00:00",
-  "commitSha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0",
+  "computedAt": "2026-05-28T04:51:12.038515+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "all_5_computed",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 18,
   "computation": "phase1a-per-partition-h-expansion",
   "scriptFile": "phase1a_symbolic_trace_dominant_h_expansion.py",
-  "scriptHash": "3008a9e71415",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "978654abf5b6",
+  "scriptCommitSha": "bd204ac77189534ff2db97be0a14a92467787a52",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Per-partition h-expansion of y_λ·χ^λ(T_w_⁴He) for the 5 trace-dominant 2-row partitions. Extracts per-partition h² coefficient via multi-point Vandermonde solve at 80 dps. Identifies which partition(s) carry the Reading-A residual gap.",
   "contentBlock": "conj:psd-trace-orthogonality",
@@ -36,7 +36,7 @@
           1
         ],
         "d_lambda": 11,
-        "wall_time_s": 0.28,
+        "wall_time_s": 0.08,
         "y_at_q0": "0.00076701222844699520741",
         "chi_at_q0": "7.3902009663309335963",
         "product_at_q0": "0.0056683745118566267768",
@@ -56,7 +56,7 @@
           2
         ],
         "d_lambda": 54,
-        "wall_time_s": 0.04,
+        "wall_time_s": 0.03,
         "y_at_q0": "0.00071212911770182742808",
         "chi_at_q0": "10.461121094404168375",
         "product_at_q0": "0.0074496689351300157782",
@@ -76,7 +76,7 @@
           3
         ],
         "d_lambda": 154,
-        "wall_time_s": 0.24,
+        "wall_time_s": 0.17,
         "y_at_q0": "0.00058705379360594834455",
         "chi_at_q0": "27.331191373309557946",
         "product_at_q0": "0.016044879579471545123",
@@ -96,7 +96,7 @@
           4
         ],
         "d_lambda": 275,
-        "wall_time_s": 0.83,
+        "wall_time_s": 0.54,
         "y_at_q0": "0.00043096777104569074154",
         "chi_at_q0": "30.262869451455777892",
         "product_at_q0": "0.01304232139294062225",
@@ -116,7 +116,7 @@
           5
         ],
         "d_lambda": 297,
-        "wall_time_s": 0.93,
+        "wall_time_s": 0.65,
         "y_at_q0": "0.00026178320382065805146",
         "chi_at_q0": "21.77334510189142236",
         "product_at_q0": "0.0056998960386659688685",

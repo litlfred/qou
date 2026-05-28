@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-24T16:35:10.676658+00:00",
-  "commitSha": "c41704f77f989b77fcd70b144eaebd854d604d36",
+  "computedAt": "2026-05-28T04:57:36.425803+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "torus_knot_h_expansion_unified_binomial_pattern_proved",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9737,
+  "durationMs": 10256,
   "computation": "torus-knot-h-expansion-pattern",
   "scriptFile": "torus_knot_h_expansion_pattern.py",
   "scriptHash": "9919b404e6cc",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Closed-form unified binomial pattern for h-expansion coefficients of the Markov trace on T(2, 2m) torus links in H_2(q).  Symbolically proves the UNIFIED formula c_{2j}(T(2, 2m)) = C(m+j, 2j) / 2 across m=1..9, j=0..5 (54 cells).  The previously-reported triangular (c_2 = m(m+1)/4) and tetrahedral (c_4 = C(m+2, 4)/2) patterns are the j=1, j=2 slices.  Odd h-coefficients c_{2j+1} vanish identically for even k.  For odd k = 2m+1, c_2 = (m+1)/4 (only c_2 derived here).  Extends q3 (torus_knot_markov_trace_closed_form.py).  Electroweak triplet (H=T(2,8), Z=T(2,6), W±=T(2,4)) c_2 ratio is 10:6:3 — does NOT match CODATA m² ratios; torus-knot mass needs the RT chain (q2 probe), not c_n alone.",
   "auditOnly": "docs/audits/2026-05-24-torus-knot-h-expansion-pattern.md",

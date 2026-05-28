@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-26T13:43:29.769572+00:00",
-  "commitSha": "5a1a1fde3b276e0cfe3ab1d11e2ded6bce159f36",
+  "computedAt": "2026-05-28T04:52:43.737965+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "tr_M_h2_is_zero",
@@ -22,16 +22,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 15,
   "computation": "phase1d-f-bor-exact-h-expansion",
   "scriptFile": "phase1d_f_bor_exact_h_expansion.py",
   "scriptHash": "e648bb8d965a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bd204ac77189534ff2db97be0a14a92467787a52",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Exact h-expansion of F_Bor(q) = |tr_M(β_Bor)|·[3]_q!/q³ — the categorical observable in the proton substrate identity m_p = 2·m_μ·F_Bor − 12·m_e. All coefficients are exact rationals. Phase 1c proved h²(tr_M) = 0; this shows F_Bor's h² = 19/2 comes entirely from [3]_q! (11/4) and q³ (9/8) via division.",
   "contentBlock": "prop:proton-mass-substrate-identity",

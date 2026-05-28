@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T00:18:43.978227+00:00",
-  "commitSha": "842383714424dd006d3a47902fc5041456721828",
+  "computedAt": "2026-05-28T04:55:49.079052+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "tall_narrow_systematically_deeper",
@@ -18,12 +18,12 @@
   "computation": "probe-4e-transpose-pair-asymmetry",
   "scriptFile": "probe_4e_transpose_pair_asymmetry.py",
   "scriptHash": "effd4abfe4d1",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Quantifies the bar-involution transpose-pair asymmetry: for each pair (λ, λ^T), the *tall-narrow* shape's min_eig is consistently more negative than the *wide-short* shape's. The bar acts as a swap of shapes but the obstruction depth is NOT preserved — a non-trivial structural fact the categorical derivation must explain.",
   "contentBlock": "conj:psd-trace-orthogonality",
@@ -42,13 +42,13 @@
           2,
           2
         ],
-        "tall_min_eig": -78.70305219136964,
+        "tall_min_eig": -78.7030521913594,
         "wide_short": [
           9,
           9
         ],
-        "wide_min_eig": -60.48766159582328,
-        "asymmetry": 18.215390595546353,
+        "wide_min_eig": -60.48766159582395,
+        "asymmetry": 18.215390595535453,
         "tall_n_rows": 9,
         "wide_n_rows": 2
       },
@@ -61,14 +61,14 @@
           3,
           3
         ],
-        "tall_min_eig": -96.51993019552548,
+        "tall_min_eig": -96.51993019552724,
         "wide_short": [
           6,
           6,
           6
         ],
-        "wide_min_eig": -95.71991947064697,
-        "asymmetry": 0.8000107248785042,
+        "wide_min_eig": -95.7199194706472,
+        "asymmetry": 0.800010724880039,
         "tall_n_rows": 6,
         "wide_n_rows": 3
       },
@@ -98,8 +98,8 @@
       "n_tall_narrow_deeper": 2,
       "n_wide_short_deeper": 1,
       "frac_tall_narrow_deeper": 0.6666666666666666,
-      "mean_asymmetry": 6.173906643223963,
-      "max_asymmetry": 18.215390595546353,
+      "mean_asymmetry": 6.173906643220842,
+      "max_asymmetry": 18.215390595535453,
       "min_asymmetry": -0.49368139075296824
     }
   }

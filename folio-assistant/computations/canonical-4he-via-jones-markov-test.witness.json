@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T02:50:05.386169+00:00",
-  "commitSha": "0367a5bd625fb973eb8ef8422ce3d1cf314268a2",
+  "computedAt": "2026-05-28T04:49:51.434112+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "production_over_predicts",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 9,
   "computation": "canonical-4he-via-jones-markov-test",
   "scriptFile": "canonical_4he_via_jones_markov_test.py",
   "scriptHash": "c8019652fbaa",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Tests Jones-Markov + H_{3A} hypothesis for canonical B(⁴He). Uses closed-form tr_M(β_𝓑_3) = (4 + h² − 3h⁴ − h⁶) / (h² + 4) + Markov multiplicativity on 4 disjoint Borromean copies. Combined with framework's linking_weight calibration, computes various candidate B(⁴He) formulas. NEGATIVE result for simple multiplicative correction (B_C still +5.21% off, similar to production +5.87%) — confirms the H_3-vs-H_{3A} legacy bug (sibling commit c70707397) is the real structural issue.",
   "parameters": {

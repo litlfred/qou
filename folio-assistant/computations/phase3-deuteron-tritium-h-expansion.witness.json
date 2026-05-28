@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-26T13:57:27.309597+00:00",
-  "commitSha": "4b4bd353d3d97be59f40bba73e59cd4ec3d17f64",
+  "computedAt": "2026-05-28T04:52:50.289668+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "h2_cancellation_extends",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3516,
+  "durationMs": 2669,
   "computation": "phase3-deuteron-tritium-h-expansion",
   "scriptFile": "phase3_deuteron_tritium_h_expansion.py",
   "scriptHash": "a2f44ef6a7be",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "22a39d7206127865d9c5d52e3ca5295f51de8381",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Per-partition h-expansion for deuteron (H₆), tritium (H₉), and ³He (H₉). Tests whether the h²=0 cancellation proved at H₃ (proton) extends to heavier isotopes. Complete partition enumeration (not just trace-dominant).",
   "contentBlock": "prop:proton-mass-substrate-identity",

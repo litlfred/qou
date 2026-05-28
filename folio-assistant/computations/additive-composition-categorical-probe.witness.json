@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-25T18:20:31.724212+00:00",
-  "commitSha": "1c45a7c2558b23a04c6b31df56954a1e2eb648f7",
+  "computedAt": "2026-05-28T04:48:50.841232+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "additive_composition_supported_by_all_4_hypotheses",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 17,
   "computation": "additive-composition-categorical-probe",
   "scriptFile": "additive_composition_categorical_probe.py",
   "scriptHash": "7a959bff7c02",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "1a49d588f3fd22e20ee53a990f8f6ad57e1bb4ce",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Probe of the categorical origin of the ADDITIVE composition rule for the two Faddeev factors in the Bring + Faddeev h⁴ candidate linking_weight. Tests 4 hypotheses (H_4 Wedderburn direct sum, S_4 ↓ S_3 restriction, half-symmetric Frobenius reciprocity, KLR positivity / Kashiwara crystal). All four converge on ADDITIVE as the canonical composition: the Family A linking_weight (1/4)·Σ_{λ ⊢ 4} dim_q V_λ has inherent sum-over-partitions structure; Bring color-tube and Faddeev h⁴ both decompose as KLR canonical-basis sums with positive integer coefficients; Frobenius reciprocity + KLR positivity force the additive composition. Empirical match (additive 108 ppm vs multiplicative 1243 ppm at q_0) is consistent with the categorical prediction.",
   "contentBlock": "conj:borromean-baryon-mass-formula",

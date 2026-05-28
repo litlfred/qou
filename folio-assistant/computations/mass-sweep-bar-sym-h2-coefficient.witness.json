@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T23:53:14.271415+00:00",
-  "commitSha": "2b785a46dcc7c7963f55a79ab6d3d8cd76ff5190",
+  "computedAt": "2026-05-28T04:51:06.821423+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "single_coefficient_hypothesis",
@@ -19,12 +19,12 @@
   "computation": "mass-sweep-bar-sym-h2-coefficient",
   "scriptFile": "mass_sweep_bar_sym_h2_coefficient_hunt.py",
   "scriptHash": "3d9780ed651d",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Bug-hunt: derive the bar-symmetric h² correction coefficient per KLR-violating atom in the mass-table sweep. Tests whether a SINGLE c (canonical structural correction) reproduces AME for all atoms, or whether c varies (α-cluster recursion wrong). Uses paper-side identity Q_borromean(h)=0 (PR #1211) + ⋈_K bar-symmetric (commit 68e51f80e) to argue any h² correction must be a single canonical factor.",
   "parameters": {

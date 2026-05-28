@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-25T23:14:04.203405+00:00",
-  "commitSha": "98dbf083bc6eeb6eb5aabd3a9429a7cdab3f8f76",
+  "computedAt": "2026-05-28T04:57:19.888834+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "T4_algebraic_sign_partition_dominant",
@@ -22,16 +22,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 10,
   "computation": "proton-wedderburn-block-diagnostic",
   "scriptFile": "proton_wedderburn_block_diagnostic.py",
   "scriptHash": "61bc8257c650",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Per-Wedderburn-block decomposition of proton 6-term mass formula. T4 is dominated by sign partition (1,1,1) at 82% (ALGEBRAIC, crystal-visible — confirms PR #1289 rectangular λ* conjecture for A=1).  T1 is spread (33%/49%/18% across (3)/(2,1)/(1,1,1)).  ρ_K ≈ 1724 factor matches GEOMETRIC scaling Vol(𝓑₃)/ℏ_q² × linking_weight. Mixed structure: algebraic + geometric layers.",
   "parameters": {

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-27T15:31:26.399929+00:00",
-  "commitSha": "2191707003c4be56d6bea00be950dfb8f0686c11",
+  "computedAt": "2026-05-28T04:51:06.183929+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
@@ -11,10 +11,10 @@
   "scriptHash": "64be69537e0e",
   "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Schur-Weyl + Frobenius binding predictions for light isotopes (D, T, ³He, ⁴He) with β-decay calibration at A=1. Tests three Frobenius-scaling hypotheses: per-vortex (universal, +1·Frob), per-bond (+(A-1)·Frob), per-nucleon (+A·Frob). Per-vortex is the universal interpretation from thm:frobenius-codim-universal; the others are candidate scalings to test empirically.",
   "convention": "plancherel",
@@ -65,7 +65,7 @@
       "best_frob_scaling": "per-vortex (+1·Frob)",
       "best_value": 4.382185961998799,
       "best_err_pct": 96.99024809283586,
-      "walltime_sec": 0.003961324691772461
+      "walltime_sec": 0.0032470226287841797
     },
     {
       "iso": "T",
@@ -94,7 +94,7 @@
       "best_frob_scaling": "per-nucleon (+A·Frob)",
       "best_value": 5.954709723881637,
       "best_err_pct": -29.79426862362191,
-      "walltime_sec": 0.2171769142150879
+      "walltime_sec": 0.19882750511169434
     },
     {
       "iso": "3He",
@@ -123,7 +123,7 @@
       "best_frob_scaling": "per-nucleon (+A·Frob)",
       "best_value": 6.332926656400444,
       "best_err_pct": -17.94665166634564,
-      "walltime_sec": 0.19541287422180176
+      "walltime_sec": 0.22092151641845703
     },
     {
       "iso": "4He",
@@ -152,7 +152,7 @@
       "best_frob_scaling": "per-nucleon (+A·Frob)",
       "best_value": 7.171846152498002,
       "best_err_pct": -74.65392732074037,
-      "walltime_sec": 10.765191793441772
+      "walltime_sec": 10.810043334960938
     }
   ]
 }

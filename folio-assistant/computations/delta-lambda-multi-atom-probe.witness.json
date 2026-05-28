@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T03:55:05.491832+00:00",
-  "commitSha": "31b92984b00535a98125bd680c342b338db91d21",
+  "computedAt": "2026-05-28T04:49:52.026406+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "variant A (joint, no bar-invariance) satisfies all 3 target equations",
@@ -20,16 +20,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "delta-lambda-multi-atom-probe",
   "scriptFile": "delta_lambda_multi_atom_probe.py",
   "scriptHash": "c8fd19effff5",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "parameters": {
     "partition_count_n6": 11,

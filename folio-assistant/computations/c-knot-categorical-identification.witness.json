@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T15:05:33.220923+00:00",
-  "commitSha": "650c12a5cec59c9a50a6293ded78ce2ea26aa65d",
+  "computedAt": "2026-05-28T04:49:51.193802+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "C_knot_match",
@@ -17,12 +17,12 @@
   "computation": "c-knot-categorical-identification",
   "scriptFile": "c_knot_categorical_identification.py",
   "scriptHash": "aec7027af457",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "c3c77cd068fd5964c66b1a2760c301f359f45628",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "data": {
     "C_knot_empirical": "5.852086000",

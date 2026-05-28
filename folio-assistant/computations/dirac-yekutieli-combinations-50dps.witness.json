@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:58:27.836526+00:00",
-  "commitSha": "fd4d48f8c49ca622e596910425cd2e96b89e1caf",
+  "computedAt": "2026-05-28T04:49:52.590823+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "probe_completed",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 260,
+  "durationMs": 190,
   "computation": "dirac-yekutieli-combinations-50dps",
   "scriptFile": "dirac_yekutieli_combinations_50dps.py",
   "scriptHash": "6327dc25290e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Combines Dirac-weighted linking-weight candidates with Yekutieli per-cell additive structure to test for natural combinations matching Reading-A's -G·h² coefficient.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",

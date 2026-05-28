@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:17:08.806326+00:00",
-  "commitSha": "b0abd866f9926c8c27dc2948ae049572da28c3db",
+  "computedAt": "2026-05-28T04:51:10.028550+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "ktheory_prediction_ruled_out",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 10,
   "computation": "path-c3-klr-prescreen-50dps",
   "scriptFile": "path_c3_klr_prescreen_50dps.py",
   "scriptHash": "001141a8555c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Path C3 KLR / Kashiwara crystal-graph pre-screen at 50 dps. Tests the K-theory regulator prediction c_4 = -3/4 against the empirical c_4 implied by Reading-A's h⁴ residual. K-theory prediction is ~100× larger than empirical — DECISIVE NEGATIVE for direct K-theory c_4 hypothesis. Demazure sub-crystal at H_5+ remains open as research direction.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",

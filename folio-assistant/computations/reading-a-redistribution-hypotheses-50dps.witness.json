@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T21:43:52.343879+00:00",
-  "commitSha": "fcaf6603d8d03a9cd060e4d7e394243151b7dff7",
+  "computedAt": "2026-05-28T04:57:21.890803+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "all_hypotheses_preserve_total_h2_minus_G",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "reading-a-redistribution-hypotheses-50dps",
   "scriptFile": "reading_a_redistribution_hypotheses_50dps.py",
   "scriptHash": "4955b928b2bf",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Comparison of 3 redistribution hypotheses for Reading-A's h² coefficient (−G) across (3,1), (2,2), (2,1,1) Wedderburn channels at H_4. All hypotheses preserve total h² = −G; they differ in per-channel split, distinguishable only by per-channel h⁴+ data.",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",

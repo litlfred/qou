@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-27T02:08:57.304580+00:00",
-  "commitSha": "50b055263fe9d5788cbd2c8c5da09363d3d81eb6",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-28T04:51:08.355461+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "trace_ratio_computed",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 10,
   "computation": "meson-eigenvalue-analysis",
   "scriptFile": "meson_eigenvalue_analysis.py",
   "scriptHash": "d271fa24ca16",
-  "scriptCommitSha": "3e11b0795f9eab59bb14f92436005d8b42e3c784",
+  "scriptCommitSha": "bf1a1587451ba2381ef52107a4cd3f4957e32e16",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Apply baryon eigenvalue structure (b*hbar^2, b^2=(h^2+3)/(h^2+4)) to mesons. Eigenvalue carries over (same H_3(q)), but trace ratio misses m_K/m_pi by 2.4x. Meson SDP selects different Wedderburn blocks than baryon (all-positive crossings → symmetric dominance).",
   "data": {

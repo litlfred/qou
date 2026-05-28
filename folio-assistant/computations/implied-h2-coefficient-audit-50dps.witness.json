@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T22:26:43.385948+00:00",
-  "commitSha": "c63457c87d10ed654324d82166e8e6f079e2ba3e",
+  "computedAt": "2026-05-28T04:50:52.115189+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "reading_a_is_near_miss_not_exact",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "implied-h2-coefficient-audit-50dps",
   "scriptFile": "implied_h2_coefficient_audit_50dps.py",
   "scriptHash": "b15f563753ad",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "mp.mpf 50-dps audit of the ACTUAL implied h² coefficient of linking_weight at q_0 (assuming h²-only truncation). Finds c_implied ≈ −0.91628, distinct from Reading-A's −G (off by 3.2e-4) and −11/12 (off by 3.8e-4). The Reading-A 5.6 ppm m_p match is a near-miss, not a structural identity.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",

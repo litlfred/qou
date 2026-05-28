@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:58:32.740151+00:00",
-  "commitSha": "6224eee4a327361a4369173eb08a9cfdc068dec6",
+  "computedAt": "2026-05-28T04:52:51.084745+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "orthogonality_holds_at_a6_with_8plus_order_separation",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "probe-1b-li6-orthogonality",
   "scriptFile": "probe_1b_li6_orthogonality.py",
   "scriptHash": "579a1beb1922",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Tests PSD-dominance vs trace-dominance orthogonality at A=6. Mirrors Probe (1) at A=4 which found PSD-dominant blocks contribute <0.03% of |tr_M|. At A=6 the magnitude separation between trace-dominant (y ~ 10^-6) and PSD-dominant (y ~ 10^-15) is 9 orders of magnitude, confirming orthogonality holds even more strongly at A=6.",
   "contentBlock": "conj:atom-braid-exterior-algebra",

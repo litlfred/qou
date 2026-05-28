@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-27T02:08:57.006549+00:00",
-  "commitSha": "50b055263fe9d5788cbd2c8c5da09363d3d81eb6",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-28T04:57:21.619678+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "c2_is_minus_one",
@@ -23,7 +23,7 @@
     },
     {
       "name": "level1_cos_match",
-      "computed": 8.346885329700574e-43,
+      "computed": 1.5249454775541048e-42,
       "expected": 0,
       "passed": true,
       "tolerance": 1,
@@ -32,16 +32,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 53,
+  "durationMs": 11,
   "computation": "qbeta-transfer-eigenvalue-proof",
   "scriptFile": "qbeta_transfer_eigenvalue_proof.py",
   "scriptHash": "85eaa0df73fe",
-  "scriptCommitSha": "0c3fff1eadf3373660891b1d0836f6d4669e9159",
+  "scriptCommitSha": "bf1a1587451ba2381ef52107a4cd3f4957e32e16",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "PROOF: Q_beta ladder has eigenvalue b*hbar_q^2 with topologically-modulated coefficients. c_2 = -1 EXACTLY (proved). c_3 = J - hbar^2 at 0.004% (hypothesis).",
   "data": {
@@ -53,7 +53,7 @@
     "coefficients": {
       "c2_empirical": "-1.0",
       "c2_exact": "-1",
-      "c2_error_ppm": "8.41960975149693e-41",
+      "c2_error_ppm": "9.625666118844149e-41",
       "c3_empirical": "-2.0097397609790155",
       "c3_model_J_minus_hbar_sq": "-2.0098171885134786",
       "c3_error_pct": "0.0038526149487923783"
@@ -61,7 +61,7 @@
     "level_1_cos": {
       "r1_actual": "-0.0016010551268637564",
       "r1_from_cos": "-0.0016010551268637564",
-      "match_ppm": "8.346885329700574e-43"
+      "match_ppm": "1.5249454775541048e-42"
     }
   }
 }

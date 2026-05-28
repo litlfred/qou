@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T21:37:00.172979+00:00",
-  "commitSha": "48dc079144ebfc08444e415aa30e666b8b523745",
+  "computedAt": "2026-05-28T04:49:52.890561+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "family_a_per_partition_sum_matches_closed_form",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "family-a-per-partition-h-decomposition-50dps",
   "scriptFile": "family_a_per_partition_h_decomposition_50dps.py",
   "scriptHash": "1318643e53a3",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Per-partition decomposition of `linking_weight_family_a = (1/4)·Σ_{λ⊢4} dim_q V_λ` at H_4. Identifies the categorical channels (5 Wedderburn blocks) and shows h⁰ and h² contributions per channel at mp.mpf 50 dps. Addresses the prerequisite to PR #1276's 'partition-channel assignment' open question (which partitions carry Bring color-tube vs Faddeev h⁴).",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T13:54:40.659270+00:00",
-  "commitSha": "5a05156dd7472b8baf9d017fb0ff27def8d11714",
+  "computedAt": "2026-05-28T04:52:45.641364+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "m_n_residual_within_5ppm",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 15,
   "computation": "phase1e-neutron-cross-isotope-h-expansion",
   "scriptFile": "phase1e_neutron_and_cross_isotope_h_expansion.py",
   "scriptHash": "87c38e08ef75",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "a2c1f1236bc595a3d93d363ade8985bb69b04903",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Extend Phase 1 h-expansion to neutron, Q_β, and cross-isotope map. Derives exact h-series for the flavor-split X = (q−1)²(1−q⁻⁴)/3 and the neutron ratio R = 1 + X/(1−X/2). Identifies that the m_n 2.0 ppm residual decomposes as 0.24 ppm (F_Bor) + 1.76 ppm (X), and Q_β's 2113 ppm is dominated by X.",
   "contentBlock": "prop:proton-mass-substrate-identity",

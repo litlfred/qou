@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-26T15:13:55.919586+00:00",
-  "commitSha": "250e3c071f1d673d1bbf1abf044c8c7fe467a35d",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-28T04:57:20.273199+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "gap_exists",
@@ -22,26 +22,26 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 9,
   "computation": "q-beta-consistency-gap-diagnostic",
   "scriptFile": "q_beta_consistency_gap_diagnostic.py",
   "scriptHash": "9cebd0007426",
-  "scriptCommitSha": "8d538dae49d593171c81fce55ec83864f2a6527b",
+  "scriptCommitSha": "6bb321886968b2855906eac26a4ebe7f153804d4",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Decompose the gap between mass-derived Q_beta (Path A: flavor-split) and N=3 categorical Q_beta (Path B: precision ladder). Test Path C: m_n via categorical Q_beta.",
   "data": {
     "path_A_mass_derived": {
-      "m_p_pred_MeV": "938.27186092496234943409067909601627229232354607326",
-      "m_n_pred_MeV": "939.56354056857942041680555652675397700458827491508",
-      "Q_beta_MeV": "0.78068069361707103089393817168705791544218092921784",
-      "Q_beta_ppm_vs_codata": "-2112.5473638266543970581820126517070282144962400957",
-      "flavor_split_X": "0.001375711249867512216725087899537173398853688341329",
-      "flavor_split_X_codata": "0.0013774699397810305325677301562633093883972785231479",
+      "m_p_pred_MeV": "938.27186092496234943409067909601627229232354607325691224053663201",
+      "m_n_pred_MeV": "939.5635405685794204168055565267539770045882749150726737671930956",
+      "Q_beta_MeV": "0.78068069361707103089393817168705791544218092921810527665646358688",
+      "Q_beta_ppm_vs_codata": "-2112.5473638266543970581820126517070282144962397566114242088411923",
+      "flavor_split_X": "0.0013757112498675122167250878995371733988536883413290029633446616365",
+      "flavor_split_X_codata": "0.0013774699397810305325677301562633093883972785231478706796551282952",
       "flavor_split_X_residual_pct": "-0.12767537517355085"
     },
     "path_B_categorical": {
@@ -49,7 +49,7 @@
       "Q_beta_ppb_vs_codata": "5.112909596945373"
     },
     "path_C_m_n_via_categorical_Q_beta": {
-      "m_n_pred_MeV": "939.56519328896234943409067909601627229232354607326",
+      "m_n_pred_MeV": "939.56519328896234943409067909601627229232354607325712849053663201",
       "m_n_ppm_vs_codata": "-0.24184695678221693",
       "improvement_over_pathA": "8.27330385856248"
     },

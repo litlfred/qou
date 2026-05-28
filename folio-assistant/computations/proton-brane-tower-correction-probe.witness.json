@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T13:26:42.487237+00:00",
-  "commitSha": "81875b2bcd4bf18b7974c58d16231b312594377b",
+  "computedAt": "2026-05-28T04:57:19.371844+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "correction_is_small",
@@ -13,16 +13,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "proton-brane-tower-correction-probe",
   "scriptFile": "proton_brane_tower_correction_probe.py",
   "scriptHash": "721d21365208",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "48905e8345ad68225134a19265176c1ed56f59d2",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "data": {
     "q_0": "1.10997859555418057528159407960950937799328227995870",

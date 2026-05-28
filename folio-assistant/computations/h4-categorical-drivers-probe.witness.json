@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T18:03:18.539900+00:00",
-  "commitSha": "747cddad4e027931aac423d5ca8e0b86ac058483",
+  "computedAt": "2026-05-28T04:50:43.557245+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "h4_categorical_driver_search_completed",
@@ -17,12 +17,12 @@
   "computation": "h4-categorical-drivers-probe",
   "scriptFile": "h4_categorical_drivers_probe.py",
   "scriptHash": "bf0f8174835f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "1a49d588f3fd22e20ee53a990f8f6ad57e1bb4ce",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Probe of which of the 13 canonical drivers (per `docs/audits/2026-05-23-lambda-scale-canonical-unification.md`) reproduces the empirical α ≈ 1.011 h⁴ residual identified by `lambda_scale_refinement_h4_correction_bring.py`. The h² concrete test established that Bring color-tube and canonical+Yekutieli are categorically distinct (h² coefficients 6 vs 3/4 − G), so the +α·h⁴ correction is additive to the Bring base. This probe tests 7 candidate drivers (Faddeev iterated, Φ_q power series, Rogers Li_2^q, 6j Biedenharn-Elliott, MacMahon partition algebra, Lobachevsky-Catalan G², KLR crystal-graph positivity) without empirical fitting.",
   "contentBlock": "conj:borromean-baryon-mass-formula",

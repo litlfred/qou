@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:25:17.796156+00:00",
-  "commitSha": "e84339ede4c9f1d6bc379bf45076b25440771725",
+  "computedAt": "2026-05-28T04:53:21.653707+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "li6_rectangle_min_eig_substantially_negative",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29883,
+  "durationMs": 28829,
   "computation": "probe-4-li6-rectangular-python-targeted",
   "scriptFile": "probe_4_li6_rectangular_python.py",
   "scriptHash": "34d94c2b8cdb",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Targeted Lanczos eigval computation of the symmetric part of ρ_λ(T_w_⁶Li) for λ = (6,6,6) and (3,3,3,3,3,3) — the predicted dominant pair under the rectangular-form conjecture at A=6. Bypasses the d_λ=87,516 dense-matrix infeasibility of the full Rust solver by using a LinearOperator wrapper that applies the 71-crossing braid chain on-the-fly via sparse mat-vec.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
@@ -44,19 +44,19 @@
           6
         ],
         "dim": 87516,
-        "min_eig_lanczos": -95.71991947064697,
-        "max_eig_lanczos": 105.98002836139364,
+        "min_eig_lanczos": -95.7199194706472,
+        "max_eig_lanczos": 105.98002836139385,
         "top_eigs_LA": [
-          105.98002836139364,
-          95.04231172324212
+          105.98002836139385,
+          95.04231172333077
         ],
         "bot_eigs_SA": [
-          -95.71991947064697,
-          -86.21695634629621
+          -95.7199194706472,
+          -86.21695634629384
         ],
-        "build_time_s": 7.911550045013428,
-        "max_eig_time_s": 3.3907809257507324,
-        "min_eig_time_s": 4.0398476123809814
+        "build_time_s": 7.90122389793396,
+        "max_eig_time_s": 3.3328871726989746,
+        "min_eig_time_s": 4.206590890884399
       },
       "[3, 3, 3, 3, 3, 3]": {
         "shape": [
@@ -68,19 +68,19 @@
           3
         ],
         "dim": 87516,
-        "min_eig_lanczos": -96.51993019552548,
-        "max_eig_lanczos": 120.08863828331096,
+        "min_eig_lanczos": -96.51993019552724,
+        "max_eig_lanczos": 120.08863828331077,
         "top_eigs_LA": [
-          120.08863828331096,
-          105.13389581593461
+          120.08863828331077,
+          105.13389581584762
         ],
         "bot_eigs_SA": [
-          -96.51993019552548,
-          -95.97520761366273
+          -96.51993019552724,
+          -95.97520761371617
         ],
-        "build_time_s": 7.450665473937988,
-        "max_eig_time_s": 2.52962589263916,
-        "min_eig_time_s": 4.505873203277588
+        "build_time_s": 7.317093372344971,
+        "max_eig_time_s": 1.8036243915557861,
+        "min_eig_time_s": 4.215808629989624
       }
     }
   },

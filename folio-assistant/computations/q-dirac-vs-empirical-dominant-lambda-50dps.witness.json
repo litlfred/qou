@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T00:15:31.700936+00:00",
-  "commitSha": "0ac246fbfd7f62f92478f7588ed96536f72bb8fe",
+  "computedAt": "2026-05-28T04:57:21.159414+00:00",
+  "commitSha": "d085aff3efbbffb5f8e34790cad6f39746c1240a",
   "assertions": [
     {
       "name": "probe_completed",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 15,
   "computation": "q-dirac-vs-empirical-dominant-lambda-50dps",
   "scriptFile": "q_dirac_vs_empirical_dominant_lambda.py",
   "scriptHash": "a14a34cc7318",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Tests whether q-Dirac eigenvalue D_q²(λ) = [c_λ]_q² predicts the empirically Δ_λ-dominant partition λ*(K) per atom K from PR #1229 / #1288 / Option E audit (Δ_λ closure). Single-session structural input to Option E's ρ_w(K) investigation.",
   "auditOnly": "docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md",

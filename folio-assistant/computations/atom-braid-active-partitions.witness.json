@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-25T19:09:05.516389+00:00",
-  "commitSha": "32b5d86c51893cca6cbca69a9588a1c5d8d14a89",
+  "computedAt": "2026-05-28T04:49:49.741707+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "all_atoms_satisfy_exterior_algebra_bound",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 81475,
+  "durationMs": 58109,
   "computation": "atom-braid-active-partitions",
   "scriptFile": "atom_braid_active_partitions.py",
   "scriptHash": "16e62a1ddb74",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Identifies the ACTIVE partition set for the canonical atom-braid T_w(Z, N) = atom_braid_word_3A(Z, N) on B_{3A}. Per conj:atom-braid-exterior-algebra, the predicted active set size is n* + 1 = 3A − Z + 1 (one per Pascal-row position). This probe computes χ_λ(T_w) for every λ ⊢ 3A and reports the threshold-above active set, cross-checking the conjecture's prediction.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
@@ -45,7 +45,7 @@
         "match_prediction": false,
         "n_avg_crossings": 5,
         "n_branches": 32,
-        "elapsed_seconds": 0.28440332412719727,
+        "elapsed_seconds": 0.21205472946166992,
         "top_active_partitions": [
           {
             "lambda": [
@@ -150,7 +150,7 @@
         "match_prediction": false,
         "n_avg_crossings": 7,
         "n_branches": 128,
-        "elapsed_seconds": 41.11993932723999,
+        "elapsed_seconds": 28.97794222831726,
         "top_active_partitions": [
           {
             "lambda": [
@@ -297,7 +297,7 @@
         "match_prediction": false,
         "n_avg_crossings": 7,
         "n_branches": 128,
-        "elapsed_seconds": 40.0600950717926,
+        "elapsed_seconds": 28.91207790374756,
         "top_active_partitions": [
           {
             "lambda": [

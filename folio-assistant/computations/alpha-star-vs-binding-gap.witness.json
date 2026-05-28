@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T21:37:32.820120+00:00",
-  "commitSha": "c374e0917038b5c383f78df9749ba6398349029e",
+  "computedAt": "2026-05-28T04:48:51.286795+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "dominant_partition_obstruction_tracks_binding_gap",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "alpha-star-vs-binding-gap",
   "scriptFile": "alpha_star_vs_binding_gap.py",
   "scriptHash": "61e1f4aafcff",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Tests whether the PSD-cone obstruction depth (1 − α*) per canonical atom-braid correlates with the fractional binding-energy gap |B_pred − B_AME| / B_AME. If yes, the residual binding-energy gap is concentrated in the dominant Wedderburn block λ* identified in alpha_star_dominant_partitions.py. If no, the dominant-partition obstruction is structurally distinct from the binding-energy gap and Probes (1)/(2) are likely weak.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
