@@ -109,7 +109,7 @@ why ATLAS, CMS, and LHCb all measure
 $m_W \approx m_W^{\mathrm{SM}}$ while CDF sees a $77$ MeV
 excess.
 
-Crucially, CDF has the **weakest** detector magnetic field
+CDF has the **weakest** detector magnetic field
 ($B \approx 1.4$ T, vs.\ $3.8$ T at CMS), ruling out the detector
 $B$-field as the cause.  The signal is in the **production
 vertex**, not the detection environment.

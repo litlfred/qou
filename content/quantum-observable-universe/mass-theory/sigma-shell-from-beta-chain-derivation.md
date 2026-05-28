@@ -79,7 +79,7 @@ The shell magnitude $y_{\mathrm{target}}$ is therefore a
 3. *the Hoefsmit character $\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)$ of the atom braid,*
 4. *the canonical Markov trace $|\mathrm{tr}_M(\mathcal{B}_K)|$.*
 
-*Crucially, **no $Q_\beta$ or AME chain Q-values appear**. The
+**No $Q_\beta$ or AME chain Q-values appear**. The
 calibration anchors stay at the $\rho_K$ assembly level
 ($m_e$, $m_p$, $m_n$); the shell magnitude is a purely
 algebraic / categorical consequence of the staircase Wedderburn

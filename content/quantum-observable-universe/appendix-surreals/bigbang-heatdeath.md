@@ -42,7 +42,7 @@ conjecture is:
 1. **Big Bang as named-surreal evaluation**: there is a
    well-defined "Big Bang functor" $\mathbf{BigBang} :=
    \mathbf{BigBang}_{1 + \varepsilon}\big|_{\varepsilon \to 0^+}$.
-   Crucially, this is not a topological limit but a *named-surreal
+   This is not a topological limit but a *named-surreal
    evaluation*: $\varepsilon \to 0^+$ in $\mathbf{No}$ is reached
    by replacing $\varepsilon$ with smaller and smaller infinitesimals
    $\varepsilon^2, \varepsilon^3, \ldots, \varepsilon^\omega$. The

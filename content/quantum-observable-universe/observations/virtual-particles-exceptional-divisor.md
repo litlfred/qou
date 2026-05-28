@@ -89,7 +89,7 @@ $$
 
 For an excitation that borrows energy $\Delta E$ from the vacuum
 at the exceptional divisor, this is the maximum time before the
-excitation must be reabsorbed.  Crucially, the excitation's
+excitation must be reabsorbed.  The excitation's
 "worldline" stays within the tower: it is created at $\mathcal{S}_p$,
 propagates through $A_1, A_2, \ldots$, and returns to $\mathcal{S}_p$
 without ever descending to $A_0$.

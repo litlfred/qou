@@ -32,109 +32,33 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "03e73bf42f4e",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "ee2291234de0",
-          "script_commit_sha": "71d674da186600ad04a5754792acbf59838f4dad"
-        },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md:214: tracker will move D9 from \u23f3 partial (crystal-only) to \u2705 formalised"
-      },
-      {
-        "field_hash": {
-          "md": "85fdf16f05ec",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
+          "md": "1444e4109195"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "ee2291234de0",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-emoji-content-audit"
         },
-        "reviewed_at": "2026-05-25T23:12:32.859Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "85fdf16f05ec",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "42dd0ca1189d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:25:42.087Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+        "reviewed_at": "2026-05-27"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "03e73bf42f4e",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
+          "md": "1444e4109195"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "ee2291234de0",
-          "script_commit_sha": "71d674da186600ad04a5754792acbf59838f4dad"
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-first-person-work-audit"
         },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "85fdf16f05ec",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "ee2291234de0",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:14:29.450Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "85fdf16f05ec",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "42dd0ca1189d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+        "reviewed_at": "2026-05-27"
       }
     ],
     "voice-time-stamped-notes": [
@@ -211,54 +135,17 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "03e73bf42f4e",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
+          "md": "1444e4109195"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "ee2291234de0",
-          "script_commit_sha": "71d674da186600ad04a5754792acbf59838f4dad"
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-scholarly-default-audit"
         },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "85fdf16f05ec",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "ee2291234de0",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:14:29.450Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "85fdf16f05ec",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "42dd0ca1189d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+        "reviewed_at": "2026-05-27"
       }
     ],
     "voice-title-scholarly": [
@@ -300,54 +187,17 @@
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "03e73bf42f4e",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
+          "md": "1444e4109195"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "ee2291234de0",
-          "script_commit_sha": "71d674da186600ad04a5754792acbf59838f4dad"
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-ai-slop-audit"
         },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "85fdf16f05ec",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "ee2291234de0",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:14:29.450Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "85fdf16f05ec",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "42dd0ca1189d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
+        "reviewed_at": "2026-05-27"
       }
     ],
     "framework-canonical": [
@@ -1524,22 +1374,17 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "85fdf16f05ec",
-          "ts": "9deb0bbb7d53",
-          "lean": "3ff2d29fa21d"
+          "md": "1444e4109195"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "245d146ff0df",
-          "script_commit_sha": "13d4ad7cf37fdb9c03ffb1d4d3103c69eaaeaf11"
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-editorializing-audit"
         },
-        "reviewed_at": "2026-05-26T00:16:27.063Z",
-        "reviewed_sha": "031716cf883c283268785373280ec18d18f66e4b",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.md:185: is not cleanly bar-classifiable.  This is the audit-correction"
+        "reviewed_at": "2026-05-27"
       }
     ],
     "canonical-witness-pinned": [

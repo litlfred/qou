@@ -17,7 +17,7 @@ number theorem with optimal error term). The implication
 $(2) \Leftrightarrow (3)$ follows from the spectral coordinate
 mapping and the explicit formula.
 
-**Crucially**, the $q$-scale analog of statement (1) --- namely,
+The $q$-scale analog of statement (1) --- namely,
 $\psi_q(X) = X + O(X^{1/2})$ --- is an **unconditional theorem**,
 guaranteed by the Hasse--Weil bound (Theorem, §4). The obstacle to
 extending this to the macroscopic scale is that the classical limit

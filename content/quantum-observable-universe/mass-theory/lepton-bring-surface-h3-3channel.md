@@ -113,7 +113,7 @@ in the T(2, 2m+1) family, or higher-tower terms regulate the divergence
 ## Lowest/highest weight structure (6-dim NF diamond)
 
 The framework's NF basis of $H_3(q)$ has dimension $6 = 1^2 + 2^2 + 1^2$
-(sym + std + alt). **Crucially, sym and alt are the 1-dimensional
+(sym + std + alt). **The sym and alt are the 1-dimensional
 highest-weight and lowest-weight irreps** of the symmetric group $S_3$
 (equivalently the classical limit of $H_3(q)$):
 

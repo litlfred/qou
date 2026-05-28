@@ -466,7 +466,7 @@ candidate mechanism (rounds 1–3, 9, 10, 13).
 
 **The single tractable path forward** is the q-dimension decoration
 $\delta_q : \{b_i\} \to R$ identified in round 11 — building this
-new layer of QOU's formalism would unlock the full categorical
+new layer of QOU's formalism would expose the full categorical
 derivation, but is significant infrastructure work outside this
 investigation's scope.
 

@@ -151,6 +151,86 @@
         },
         "reviewed_at": "2026-05-27"
       }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "e5b798df757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-emoji-content-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "e5b798df757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-first-person-work-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "e5b798df757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-editorializing-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "e5b798df757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-ai-slop-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "e5b798df757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "agent_model": "claude-opus-4-7",
+          "agent_date": "2026-05-27",
+          "agent_skill": "local/one-voice-audit",
+          "id": "voice-scholarly-default-audit"
+        },
+        "reviewed_at": "2026-05-27"
+      }
     ]
   },
   "updated_at": "2026-05-27T08:55:11.920Z"
