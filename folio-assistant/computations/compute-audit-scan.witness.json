@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T04:25:54.284301+00:00",
-  "commitSha": "5bbfb04330e783c30383ff39944b4adc5838e413",
+  "computedAt": "2026-05-28T04:48:24.921846+00:00",
+  "commitSha": "d6549946884337f9342b865b674fb0f75c3a2c9f",
   "assertions": [],
   "allPassed": true,
   "durationMs": 11,
@@ -30,11 +30,11 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 117,
+      "P15": 114,
       "P16": 181,
       "P21": 30,
       "P30": 143,
-      "P31": 59
+      "P31": 58
     },
     "top_files": [
       {
@@ -1378,34 +1378,6 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P15",
-        "file": "habiro_derivation_vs_fit.py",
-        "line": 104,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "habiro_derivation_vs_fit.py",
-        "line": 130,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "habiro_derivation_vs_fit.py",
-        "line": 216,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P31",
-        "file": "habiro_derivation_vs_fit.py",
-        "line": 189,
-        "snippet": "CODATA literal \"206.768283\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P30",
