@@ -464,8 +464,12 @@ witness = {
     },
 }
 
-out_path = Path(__file__).with_suffix(".witness.json")
-out_path.write_text(json.dumps(witness, indent=2, default=float))
+from witness_base import WitnessBuilder  # noqa: E402
+
+out_path = WitnessBuilder.wrap_legacy(
+    "gram-matrix-dual", json.loads(json.dumps(witness, default=float)),
+    script_path=__file__, engine="numpy",
+).save()
 print(f"\n  Witness written to {out_path.name}")
 
 

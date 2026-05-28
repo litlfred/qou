@@ -1,20 +1,20 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-24T16:45:25.816919+00:00",
-  "commitSha": "e4c8806de78a9b72754746bba7e82f8ce588a9c6",
+  "computedAt": "2026-05-28T04:03:51.020526+00:00",
+  "commitSha": "f3fee3058339fdc0edf1df4892612c529a1b9c13",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "markov-trace-recursive",
   "scriptFile": "markov_trace_recursive.py",
   "scriptHash": "fd23a103fd71",
-  "scriptCommitSha": "342ce62e42540ac00e235ff1da6fc2cef0b1ca24",
+  "scriptCommitSha": "8a00323ca156fd987bf98fefc66fb8083e11e269",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Recursive symbolic Markov-trace computer for arbitrary H_n(q) words. Uses gb_filtration_jet_tracker.HeckeElement (symbolic in q via sympy) to expand braids into the Hecke basis, then applies recursive Markov-axiom descent for each basis element with LRU memoisation on (perm, n). Tested up to H_6 for representative atomic-braid words (proton, neutron-like, deuteron disjoint cluster).",
   "reference_blocks": [
