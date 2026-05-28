@@ -34,12 +34,6 @@ export default proposition({
     script: "folio-assistant/computations/d_from_scratch.py",
     witness: [
       "folio-assistant/computations/d-from-scratch.witness.json",
-      "folio-assistant/computations/neutron-gap-probes-round3.witness.json",
-      "folio-assistant/computations/neutron-gap-probes-round4.witness.json",
-      "folio-assistant/computations/neutron-gap-probes-round5.witness.json",
-      "folio-assistant/computations/neutron-gap-probes-round6-canonical.witness.json",
-      "folio-assistant/computations/neutron-gap-probes-round6.witness.json",
-      "folio-assistant/computations/neutron-gap-probes-round7.witness.json",
       "folio-assistant/computations/unified-low-isotope-predictor.witness.json",
     ],
     status: "not_run",
