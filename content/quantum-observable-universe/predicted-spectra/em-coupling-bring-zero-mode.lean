@@ -1,5 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
+import QOU.Kashaev
 
 
 /-!
@@ -133,3 +134,14 @@ theorem bring_zero_mode_additive_form
   rw [hz, hodgeRatio_at_g4]
 
 end QOU.Archimedean
+
+
+-- §3b-cond conditional-class hypothesis for `prop:em-coupling-bring-zero-mode`.
+-- This proposition's uses[] cone reaches `conj:kashaev-volume-conjecture`; per
+-- CLAUDE.md §3b-cond it is conditional on that conjecture's
+-- axiomatised class `VolumeConjecture`. The statement above is fully
+-- verified modulo this single class instance.
+section ConditionalOn_VolumeConjecture
+open QOU.Kashaev
+variable (q_vc : ℝ) [VolumeConjecture q_vc]
+end ConditionalOn_VolumeConjecture

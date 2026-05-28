@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:meson-volume-conjecture`](../mass-theory/meson-volume-conjecture.md)).** The statement below is conditional on the meson dual-volume class (§3b-cond); it is fully verified modulo that single axiomatised input.
+
 **Proposition (unit-modulus eigenvalues and the Borromean fixed point).**
 *For any braid word $\beta$ of even length in $H_3(q)$, the
 eigenvalues of the standard representation $\rho_{(2,1)}(\beta)$

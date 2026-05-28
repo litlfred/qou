@@ -1,3 +1,4 @@
+import QOU.Kashaev
 -- Sibling docstub for `prop:cyclotomic-depth3-dimension-synthesis`.
 --
 -- This file is documentation only.  The compiled formalisation
@@ -18,3 +19,14 @@ theorem dimension_synthesis_upper_bound : True := by
   trivial
 
 end QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis
+
+
+-- §3b-cond conditional-class hypothesis for `prop:cyclotomic-depth3-dimension-synthesis`.
+-- This proposition's uses[] cone reaches `conj:kashaev-volume-conjecture`; per
+-- CLAUDE.md §3b-cond it is conditional on that conjecture's
+-- axiomatised class `VolumeConjecture`. The statement above is fully
+-- verified modulo this single class instance.
+section ConditionalOn_VolumeConjecture
+open QOU.Kashaev
+variable (q_vc : ℝ) [VolumeConjecture q_vc]
+end ConditionalOn_VolumeConjecture

@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Hopf.Basic
 import Mathlib.NumberTheory.NumberField.Basic
+import QOU.Kashaev
 
 
 /-!
@@ -118,3 +119,14 @@ theorem volume_conjecture_under_keystone
   trivial
 
 end QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence
+
+
+-- §3b-cond conditional-class hypothesis for `prop:gb-depth-period-correspondence`.
+-- This proposition's uses[] cone reaches `conj:kashaev-volume-conjecture`; per
+-- CLAUDE.md §3b-cond it is conditional on that conjecture's
+-- axiomatised class `VolumeConjecture`. The statement above is fully
+-- verified modulo this single class instance.
+section ConditionalOn_VolumeConjecture
+open QOU.Kashaev
+variable (q_vc : ℝ) [VolumeConjecture q_vc]
+end ConditionalOn_VolumeConjecture

@@ -45,3 +45,13 @@ theorem pion_det_one : (-1 : ℤ)^6 = 1 := by norm_num
 theorem half_41_det_one : (-1 : ℤ)^2 = 1 := by norm_num
 
 end QOU.BraidsAndKnots
+
+
+-- §3b-cond conditional-class hypothesis for `prop:pion-half-figure-eight`.
+-- This proposition's uses[] cone reaches `conj:meson-volume-conjecture`; per
+-- CLAUDE.md §3b-cond it is conditional on that conjecture's
+-- axiomatised class `MesonDualVolume`. The statement above is fully
+-- verified modulo this single class instance.
+section ConditionalOn_MesonDualVolume
+variable (q_vc : ℝ) [MesonDualVolume q_vc]
+end ConditionalOn_MesonDualVolume

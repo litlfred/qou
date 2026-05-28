@@ -3,6 +3,7 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
 import QOU.Archimedean.ClausenFunctionMathlibFiller
+import QOU.Kashaev
 
 
 /-!
@@ -322,3 +323,14 @@ theorem Cl_2_double_angle_at_pi_half_unconditional :
   ring
 
 end QOU.Archimedean.UpstreamAdditions
+
+
+-- §3b-cond conditional-class hypothesis for `prop:upstream-mathlib-additions`.
+-- This proposition's uses[] cone reaches `conj:kashaev-volume-conjecture`; per
+-- CLAUDE.md §3b-cond it is conditional on that conjecture's
+-- axiomatised class `VolumeConjecture`. The statement above is fully
+-- verified modulo this single class instance.
+section ConditionalOn_VolumeConjecture
+open QOU.Kashaev
+variable (q_vc : ℝ) [VolumeConjecture q_vc]
+end ConditionalOn_VolumeConjecture

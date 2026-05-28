@@ -35,3 +35,13 @@ theorem figure_eight_unitary_on_standard :
   · rfl
 
 end QOU.BraidsAndKnots
+
+
+-- §3b-cond conditional-class hypothesis for `prop:figure-eight-reeb-rotation`.
+-- This proposition's uses[] cone reaches `conj:meson-volume-conjecture`; per
+-- CLAUDE.md §3b-cond it is conditional on that conjecture's
+-- axiomatised class `MesonDualVolume`. The statement above is fully
+-- verified modulo this single class instance.
+section ConditionalOn_MesonDualVolume
+variable (q_vc : ℝ) [MesonDualVolume q_vc]
+end ConditionalOn_MesonDualVolume

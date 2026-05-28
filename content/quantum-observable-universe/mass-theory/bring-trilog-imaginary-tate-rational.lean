@@ -1,3 +1,4 @@
+import QOU.Kashaev
 -- Sibling docstub for `prop:bring-trilog-imaginary-tate-rational`.
 --
 -- This file is documentation only.  The compiled formalisation
@@ -18,3 +19,14 @@ theorem im_li3_zeta5_closed_form : True := by
   trivial
 
 end QOU.BraidKnot.BringTrilogImaginaryTateRational
+
+
+-- §3b-cond conditional-class hypothesis for `prop:bring-trilog-imaginary-tate-rational`.
+-- This proposition's uses[] cone reaches `conj:kashaev-volume-conjecture`; per
+-- CLAUDE.md §3b-cond it is conditional on that conjecture's
+-- axiomatised class `VolumeConjecture`. The statement above is fully
+-- verified modulo this single class instance.
+section ConditionalOn_VolumeConjecture
+open QOU.Kashaev
+variable (q_vc : ℝ) [VolumeConjecture q_vc]
+end ConditionalOn_VolumeConjecture

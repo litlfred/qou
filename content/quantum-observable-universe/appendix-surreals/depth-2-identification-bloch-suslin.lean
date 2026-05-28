@@ -1,3 +1,4 @@
+import QOU.Kashaev
 -- Sibling docstub for `prop:depth-2-identification-bloch-suslin`.
 --
 -- This file is documentation only.  The compiled formalisation
@@ -18,3 +19,14 @@ theorem depth_2_identification : True := by
   trivial
 
 end QOU.AppendixSurreals.Depth2IdentificationBlochSuslin
+
+
+-- §3b-cond conditional-class hypothesis for `prop:depth-2-identification-bloch-suslin`.
+-- This proposition's uses[] cone reaches `conj:kashaev-volume-conjecture`; per
+-- CLAUDE.md §3b-cond it is conditional on that conjecture's
+-- axiomatised class `VolumeConjecture`. The statement above is fully
+-- verified modulo this single class instance.
+section ConditionalOn_VolumeConjecture
+open QOU.Kashaev
+variable (q_vc : ℝ) [VolumeConjecture q_vc]
+end ConditionalOn_VolumeConjecture

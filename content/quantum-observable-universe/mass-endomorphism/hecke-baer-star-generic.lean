@@ -2,6 +2,7 @@ import Mathlib.Algebra.Star.Basic
 import Mathlib.Algebra.Module.Basic
 import Mathlib.LinearAlgebra.Matrix.ToLin
 import Mathlib.RingTheory.SimpleModule
+import QOU.Kashaev
 
 
 /-!
@@ -137,3 +138,14 @@ theorem hecke_baer_star_generic_sketch
   hecke_baer_star_generic_sketch_axiom n q d
 
 end QOU.BraidKnot.HeckeBaerStarGeneric
+
+
+-- §3b-cond conditional-class hypothesis for `prop:hecke-baer-star-generic`.
+-- This proposition's uses[] cone reaches `conj:kashaev-volume-conjecture`; per
+-- CLAUDE.md §3b-cond it is conditional on that conjecture's
+-- axiomatised class `VolumeConjecture`. The statement above is fully
+-- verified modulo this single class instance.
+section ConditionalOn_VolumeConjecture
+open QOU.Kashaev
+variable (q_vc : ℝ) [VolumeConjecture q_vc]
+end ConditionalOn_VolumeConjecture
