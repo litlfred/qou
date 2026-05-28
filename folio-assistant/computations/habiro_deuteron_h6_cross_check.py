@@ -68,7 +68,6 @@ def eval_poly_u(expr_str, u_val):
 def main():
     _t0 = time.perf_counter()
     set_compute_dps()
-    mp.mp.dps = 50
 
     q = mp.mpf(Q_50_DIGIT_STR)
     u = mp.sqrt(q)
@@ -80,7 +79,7 @@ def main():
     n_prot = 9       # Hecke level for proton
     p_prot = 30      # p(9) = number of partitions of 9
 
-    vol = vol_4_1_at(50)
+    vol = vol_4_1_at(mp.mp.dps)
     vol_over_hsq = vol / eps
 
     # ------------------------------------------------------------------
@@ -322,8 +321,7 @@ def main():
     # ------------------------------------------------------------------
     # Witness
     # ------------------------------------------------------------------
-    w = WitnessBuilder("habiro-deuteron-h6-cross-check", engine="mpmath")
-    w._start_time = _t0
+    w = WitnessBuilder("habiro-deuteron-h6-cross-check", engine="mpmath", start_time=_t0)
     w.set_description(
         f"Deuteron Habiro correction tower at H_{n_deut} (n={n_deut}, p({n_deut})={p_deut}). "
         f"The proton normalization tr_M*Plancherel*Vol/h^2 gives S_p={mp.nstr(S_p, 6)} ~ 1, "

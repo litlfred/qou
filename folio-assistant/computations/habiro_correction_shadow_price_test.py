@@ -40,7 +40,6 @@ except ImportError:
 def main():
     _t0 = time.perf_counter()
     set_compute_dps()
-    mp.mp.dps = 50
     q = mp.mpf(Q_50_DIGIT_STR)
     hbar_q = (q - 1) / q
     eps = hbar_q**2
@@ -184,8 +183,8 @@ def main():
     print()
 
     # Build witness with FULL LP dual fields (per CLAUDE.md LP/SDP rule)
-    w = WitnessBuilder("habiro-correction-shadow-price-test", engine="python")
-    w._start_time = _t0
+    w = WitnessBuilder("habiro-correction-shadow-price-test", engine="python",
+                       start_time=_t0)
     w.set_description(
         "Tests whether the proton Habiro correction coefficients (1/30, "
         "1/1260) are LP/SDP shadow prices. Operator-selection LP at H₉ "

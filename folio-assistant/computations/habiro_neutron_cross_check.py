@@ -66,7 +66,6 @@ def poch_uu(m, u):
 def main():
     _t0 = time.perf_counter()
     set_compute_dps()
-    mp.mp.dps = 50
     q = mp.mpf(Q_50_DIGIT_STR)
     u = mp.sqrt(q)
     hbar_q = (q - 1) / q
@@ -74,7 +73,7 @@ def main():
     n = 9
     p_n = 30  # p(9) = 30
 
-    vol = vol_4_1_at(50)
+    vol = vol_4_1_at(mp.mp.dps)
 
     # ------------------------------------------------------------------
     # Load coefficients
@@ -424,8 +423,7 @@ def main():
     # ------------------------------------------------------------------
     # Witness
     # ------------------------------------------------------------------
-    w = WitnessBuilder("habiro-neutron-cross-check", engine="mpmath")
-    w._start_time = _t0
+    w = WitnessBuilder("habiro-neutron-cross-check", engine="mpmath", start_time=_t0)
     w.set_description(
         f"Neutron Habiro bridge cross-check. Neutron hab_A = {mp.nstr(n_hab_A, 15)}, "
         f"tr_M = {mp.nstr(n_tr_M, 15)}. "

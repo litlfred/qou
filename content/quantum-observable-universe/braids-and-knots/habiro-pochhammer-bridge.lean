@@ -9,8 +9,8 @@ factorisation `(q;q)_m = (u;u)_m · Π(1 + u^k)`.
 -- Ref: [habiro2000] https://doi.org/10.2140/gt.2000.4.227
 -/
 
+import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
 
 namespace QOU.BraidKnot
 

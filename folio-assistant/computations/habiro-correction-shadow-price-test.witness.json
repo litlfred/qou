@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T04:19:11.470126+00:00",
-  "commitSha": "45f31fd6d37eb3f830e773f106f32b544a7c535b",
+  "computedAt": "2026-05-28T04:41:01.905745+00:00",
+  "commitSha": "bc44957b45c651c81245f367871ed18da68f5d13",
   "assertions": [
     {
       "name": "strong_duality",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 408,
+  "durationMs": 432,
   "computation": "habiro-correction-shadow-price-test",
   "scriptFile": "habiro_correction_shadow_price_test.py",
-  "scriptHash": "0ec3205b69e4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "609d632e3fe6",
+  "scriptCommitSha": "5bbfb04330e783c30383ff39944b4adc5838e413",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

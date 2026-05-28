@@ -53,7 +53,6 @@ from q_parameter import Q_50_DIGIT_STR, vol_4_1_at  # noqa: E402
 
 def main():
     set_compute_dps()
-    mp.mp.dps = 50
 
     q = mp.mpf(Q_50_DIGIT_STR)
     qi = 1 / q
@@ -93,7 +92,7 @@ def main():
     print("Torus knots T(2,k) are satellite knots, not hyperbolic.")
     print("Their complement is a Seifert-fibered space with Vol = 0.")
     print("The figure-eight 4_1 IS hyperbolic:")
-    vol_41 = vol_4_1_at(50)
+    vol_41 = vol_4_1_at(mp.mp.dps)
     print(f"  Vol(4_1) = {mp.nstr(vol_41, 20)}")
     print()
     print("For mesons, the mass formula uses CHARACTER RATIOS")

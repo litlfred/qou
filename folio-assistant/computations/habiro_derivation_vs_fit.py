@@ -99,11 +99,14 @@ def main():
     # have different Π(1+u^k) products. So hab_A / hab_B is genuinely
     # a rational function.
 
-    # Let's compute it as a ratio:
+    # Build as a single fraction. sp.together (not sp.cancel — P15) is
+    # enough here: hab_A and hab_B are already expanded polynomials, so
+    # the reported degrees are pre-cancellation upper bounds. Numerical
+    # evaluation via .subs is exact regardless of cancellation.
     print("Computing bridge ratio hab_A/hab_B...")
-    ratio_sym = sp.cancel(sp.Rational(1, 1) * hab_A / hab_B)
+    ratio_sym = sp.together(hab_A / hab_B)
     numer, denom_ratio = sp.fraction(ratio_sym)
-    print(f"  Ratio = P(u)/Q(u)")
+    print(f"  Ratio = P(u)/Q(u)  (pre-cancellation degrees)")
     print(f"  deg(P) = {sp.degree(numer, u)}")
     print(f"  deg(Q) = {sp.degree(denom_ratio, u)}")
     print()
@@ -112,10 +115,9 @@ def main():
     # Evaluate at q₀ to get numerical bridge
     # ---------------------------------------------------------------
     set_compute_dps()
-    mp.mp.dps = 50
     q0 = mp.mpf(Q_50_DIGIT_STR)
     u0 = mp.sqrt(q0)
-    vol = vol_4_1_at(50)
+    vol = vol_4_1_at(mp.mp.dps)
     hbar_q = (q0 - 1) / q0
     eps = hbar_q**2
     n = 9
@@ -127,7 +129,7 @@ def main():
 
     # The FULL bridge including denom:
     # full_bridge = hab_A × denom / hab_B = bridge × denom
-    full_bridge_sym = sp.cancel(hab_A * (4*u**21 + 4*u**19) / hab_B)
+    full_bridge_sym = sp.together(hab_A * (4*u**21 + 4*u**19) / hab_B)
     full_bridge_num = float(full_bridge_sym.subs(u, float(u0)))
     print(f"  Full bridge (×denom) at q₀: {full_bridge_num:.10f}")
     print(f"  Expected: 127.73")
@@ -186,7 +188,8 @@ def main():
 
     # ---------------------------------------------------------------
     # HOWEVER: the Markov trace identity says m_μ/m_e = Vol/ℏ².
-    # So Vol/ℏ² is FIXED by CAL-2 to be exactly m_μ/m_e = 206.768283.
+    # So Vol/ℏ² is FIXED by CAL-2 to be the muon-electron mass ratio
+    # (CODATA; carried via the registry, not hard-coded here).
     # The correction S is then:
     #   S = R(q₀) / (m_μ/m_e)
     # where R(q₀) is the algebraic bridge/Plancherel evaluated at q₀.
@@ -213,10 +216,10 @@ def main():
     # ℏ² = (q-1)²/q² = (u²-1)²/u⁴
 
     hsq_sym = (u**2 - 1)**2 / u**4
-    R_hsq_sym = sp.cancel(full_bridge_sym * hsq_sym / plancherel_sym)
+    R_hsq_sym = sp.together(full_bridge_sym * hsq_sym / plancherel_sym)
     R_hsq_numer, R_hsq_denom = sp.fraction(R_hsq_sym)
 
-    print("  R_alg × ℏ² = algebraic function of u")
+    print("  R_alg × ℏ² = algebraic function of u (pre-cancellation degrees)")
     print(f"  deg(numer) = {sp.degree(R_hsq_numer, u)}")
     print(f"  deg(denom) = {sp.degree(R_hsq_denom, u)}")
 
@@ -272,18 +275,19 @@ def main():
 
     elapsed = time.perf_counter() - _t0
 
-    w = WitnessBuilder("habiro-derivation-vs-fit-analysis", engine="sympy")
-    w._start_time = _t0
+    w = WitnessBuilder("habiro-derivation-vs-fit-analysis", engine="sympy",
+                       start_time=_t0)
     w.set_description(
         "Symbolic analysis of Habiro correction: the bridge R_alg(q) is "
-        "algebraic but S = R_alg/(Vol/ℏ²) is transcendental. "
-        "Coefficients 29/30 and 1/1260 are numerical, not algebraic."
+        "algebraic but S = R_alg/(Vol/ℏ²) is transcendental. The third-"
+        "factor coefficient is fitted: tightest numerical fit 1/1256, "
+        "structural near-match 1/1260 = 1/(C(9,4)·10). Neither is derived."
     )
     w.set_audit_only("docs/audits/2026-05-28-habiro-product-correction-7ppm.md")
     w.add_data("R_alg_deg_numer", int(sp.degree(R_hsq_numer, u)))
     w.add_data("R_alg_deg_denom", int(sp.degree(R_hsq_denom, u)))
     w.add_data("derived", ["Pochhammer factorisation", "bridge = ⟨Π(1+u^k)⟩", "R_alg(q) exact"])
-    w.add_data("fitted", ["S correction", "c₂=29/30", "c₃=1/1260"])
+    w.add_data("fitted", ["S correction", "c₂=29/30", "c₃ tightest=1/1256", "c₃ structural=1/1260"])
     w.add_data("reason", "Vol(4₁) is transcendental; S = R_alg/(Vol/ℏ²) inherits it")
 
     w.add_assertion("R_alg_is_algebraic",

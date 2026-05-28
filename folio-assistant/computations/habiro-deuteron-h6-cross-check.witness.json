@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-28T02:12:36.094708+00:00",
-  "commitSha": "7ef5b2ab997323e5f104140d9515c1b6aeeb3e96",
+  "computedAt": "2026-05-28T04:41:48.070487+00:00",
+  "commitSha": "bc44957b45c651c81245f367871ed18da68f5d13",
   "assertions": [
     {
       "name": "proton_S_near_1",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 29,
   "computation": "habiro-deuteron-h6-cross-check",
   "scriptFile": "habiro_deuteron_h6_cross_check.py",
-  "scriptHash": "c0dd8d5fee12",
-  "scriptCommitSha": "7ef5b2ab997323e5f104140d9515c1b6aeeb3e96",
+  "scriptHash": "79d9ec5f816e",
+  "scriptCommitSha": "df7f67704bda635a53523d1ac831bab92bc5e30d",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

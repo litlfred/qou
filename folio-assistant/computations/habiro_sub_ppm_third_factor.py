@@ -4,8 +4,9 @@
 After (1+ℏ²)(1−ℏ²/30), the residual is 7.8 ppm.
 The third correction factor c₃ ≈ 0.000796.
 
-This script does an exhaustive algebraic scan to find c₃ exactly,
-then verifies the 3-factor product closes below 1 ppm.
+This script does an exhaustive numerical scan for the best c₃ fit,
+verifying the 3-factor product closes below 1 ppm. The coefficients
+are FITTED (see habiro_derivation_vs_fit.py), not derived.
 """
 from __future__ import annotations
 import sys
@@ -39,14 +40,13 @@ def q_integer(k, q):
 def main():
     _t0 = time.perf_counter()
     set_compute_dps()
-    mp.mp.dps = 50
     q = mp.mpf(Q_50_DIGIT_STR)
     hbar_q = (q - 1) / q
     eps = hbar_q**2
     n = 9
     p_n = 30
 
-    vol = vol_4_1_at(50)
+    vol = vol_4_1_at(mp.mp.dps)
 
     hab_sum = mp.mpf("136.0712063634817616514048508169837773395")
     tr_M = mp.mpf("1.065306228592389300000000000000000000000")
@@ -87,7 +87,9 @@ def main():
                 if ppm < 5:
                     candidates.append((f"({a}n+{b})/{c_denom}", val, ppm, resid))
 
-    # Also try expressions involving p(n), n², [k]_q
+    # Also try expressions involving p(n), n², [k]_q. All entries are
+    # bare coefficients c such that the factor is (1 + c·ℏ²); the named
+    # "1/12", "1/30" are coefficients, NOT prescaled by ℏ².
     special_vals = [
         ("1/p(n)²", mp.mpf(1) / p_n**2),
         ("1/(2·p(n)²)", mp.mpf(1) / (2 * p_n**2)),
@@ -95,16 +97,15 @@ def main():
         ("(n-1)/(n·p(n)²)", mp.mpf(n - 1) / (n * p_n**2)),
         ("1/(n²·p(n))", mp.mpf(1) / (n**2 * p_n)),
         ("1/(n³)", mp.mpf(1) / n**3),
-        ("ℏ²/12", eps / 12),
-        ("ℏ²/30", eps / 30),
+        ("1/12", mp.mpf(1) / 12),
+        ("1/30", mp.mpf(1) / 30),
         ("1/(2·n·p(n))", mp.mpf(1) / (2 * n * p_n)),
         ("(n+1)/(n·p(n)²)", mp.mpf(n + 1) / (n * p_n**2)),
         ("1/[9]_q²", 1 / q_integer(9, q)**2),
         ("n/(p(n)² × 2)", mp.mpf(n) / (2 * p_n**2)),
-        ("1/1260", mp.mpf(1) / 1260),
+        ("1/1260 = 1/(C(9,4)·10)", mp.mpf(1) / 1260),
         ("1/1200", mp.mpf(1) / 1200),
         ("1/1350", mp.mpf(1) / 1350),
-        ("1/1260", mp.mpf(1) / 1260),
         ("1/1255", mp.mpf(1) / 1255),
         ("1/1256", mp.mpf(1) / 1256),
     ]
@@ -117,18 +118,25 @@ def main():
     # Sort by residual
     candidates.sort(key=lambda x: x[2])
 
-    print(f"  {'Expression':<25s} {'Value':>14s} {'Residual':>10s}")
-    print(f"  {'─'*25} {'─'*14} {'─'*10}")
+    print(f"  {'Expression':<25s} {'Value':>14s} {'Residual':>12s}")
+    print(f"  {'─'*25} {'─'*14} {'─'*12}")
     for name, val, ppm, resid in candidates[:20]:
         sign = "+" if float(resid) > 0 else "−"
-        print(f"  {name:<25s} {mp.nstr(val, 8):>14s} {sign}{ppm:>8.2f} ppm")
+        print(f"  {name:<25s} {mp.nstr(val, 8):>14s} {sign}{ppm:>9.4g} ppm")
 
     print()
 
+    # The numerically-tightest fit and the structural candidate
+    # 1/1260 = 1/(C(9,4)·10). Both are FITS (not derived) — report both.
+    struct_val = mp.mpf(1) / 1260
+    struct_pred = pred_2 * (1 + struct_val * eps)
+    struct_ppm = abs(float(hab_sum / struct_pred - 1) * 1e6)
+
     if candidates:
         best_name, best_val, best_ppm, best_resid = candidates[0]
-        print(f"  Best: {best_name} = {mp.nstr(best_val, 12)}")
-        print(f"  Residual: {best_ppm:.2f} ppm")
+        print(f"  Tightest fit:        {best_name} = {mp.nstr(best_val, 12)}  ({best_ppm:.4g} ppm)")
+        print(f"  Structural near-match: 1/1260 = 1/(C(9,4)·10)  ({struct_ppm:.4g} ppm)")
+        print(f"  Both are numerical fits — neither is derived.")
         print()
 
     # PSLQ on c₃
@@ -218,32 +226,36 @@ def main():
 
     for name, pred in stages:
         r = hab_sum / pred - 1
-        print(f"  {name:<40s} → {float(r)*1e6:>8.2f} ppm")
+        print(f"  {name:<40s} → {float(r)*1e6:>10.4g} ppm")
     print()
 
-    # Witness
-    w = WitnessBuilder("habiro-sub-ppm-third-factor", engine="mpmath")
-    w._start_time = _t0
+    # Witness — start_time passed to constructor (public API).
+    w = WitnessBuilder("habiro-sub-ppm-third-factor", engine="mpmath",
+                       start_time=_t0)
     w.set_description(
-        "Third correction factor search for Habiro bridge. "
-        f"Best candidate: c₃ = {best_name} at {best_ppm:.2f} ppm. "
-        f"Ladder: 9495 → 319 → 7.8 → {best_ppm:.2f} ppm."
+        "Third correction factor search for Habiro bridge (FITTED, not "
+        f"derived). Tightest fit c₃ = {best_name} at {best_ppm:.4g} ppm; "
+        f"structural near-match 1/1260 = 1/(C(9,4)·10) at {struct_ppm:.4g} ppm. "
+        f"Ladder: 9495 → 319 → 7.8 → {best_ppm:.4g} ppm."
     )
     w.set_audit_only("docs/audits/2026-05-28-habiro-product-correction-7ppm.md")
     w.add_data("c3_observed", str(mp.nstr(c3, 15)))
-    w.add_data("best_candidate", best_name)
-    w.add_data("best_residual_ppm", best_ppm)
+    w.add_data("tightest_fit_candidate", best_name)
+    w.add_data("tightest_fit_residual_ppm", best_ppm)
+    w.add_data("structural_candidate", "1/1260 = 1/(C(9,4)·10)")
+    w.add_data("structural_residual_ppm", struct_ppm)
     w.add_data("ladder", {
         "level_0_ppm": float((hab_sum / pred_0 - 1) * 1e6),
         "level_1_ppm": float((hab_sum / (pred_0 * (1 + eps)) - 1) * 1e6),
         "level_2_ppm": float((S2 - 1) * 1e6),
-        "level_3_ppm": best_ppm,
+        "level_3_tightest_ppm": best_ppm,
+        "level_3_structural_1260_ppm": struct_ppm,
     })
 
-    w.add_assertion("sub_5ppm",
-                    computed=1 if best_ppm < 5 else 0,
+    w.add_assertion("sub_ppm",
+                    computed=1 if best_ppm < 1 else 0,
                     expected=1, tolerance=0,
-                    source="Third factor closes to < 5 ppm")
+                    source="Third factor closes to < 1 ppm (sub-ppm milestone)")
 
     print(f"  Witness: {w.save()}")
 
