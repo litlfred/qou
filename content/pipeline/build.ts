@@ -251,8 +251,12 @@ export async function buildPaper(
 if (import.meta.main) {
   const args = process.argv.slice(2);
   const defaultPaper = join(import.meta.dir, "../quantum-observable-universe/quantum-observable-universe.ts");
-  // Resolve relative paths against cwd so `bun run pipeline/build.ts rel/path` works
-  const paperPath = resolve(args[0] || defaultPaper);
+  // Resolve relative paths against cwd so `bun run pipeline/build.ts rel/path` works.
+  // Only treat args[0] as a paper path if it's a positional argument (not a --flag);
+  // otherwise fall back to the default paper. This allows invocations like
+  // `bun run pipeline/build.ts --generate-main --main-out main.tex` without a path.
+  const firstPositional = args[0] && !args[0].startsWith("--") ? args[0] : undefined;
+  const paperPath = resolve(firstPositional || defaultPaper);
   const outDirIdx = args.indexOf("--out-dir");
   const outDir = resolve(outDirIdx >= 0 ? args[outDirIdx + 1] : join(import.meta.dir, "../../chapters"));
 

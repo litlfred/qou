@@ -29,7 +29,10 @@ function getArgValue(args: string[], flag: string, fallback: string): string {
 
 const args = process.argv.slice(2);
 const defaultPaper = join(contentDir, "quantum-observable-universe/quantum-observable-universe.ts");
-const paperPath = resolve(args[0] || defaultPaper);
+// Only treat args[0] as a paper path if it's a positional argument (not a --flag).
+// Allows `npx tsx run-build.ts --generate-main --main-out main.tex` with no path.
+const firstPositional = args[0] && !args[0].startsWith("--") ? args[0] : undefined;
+const paperPath = resolve(firstPositional || defaultPaper);
 const outDir = resolve(getArgValue(args, "--out-dir", join(contentDir, "../chapters")));
 const printMode = getArgValue(args, "--print-mode", "compact") as "formal" | "compact";
 const noInlineRefs = args.includes("--no-inline-refs");
