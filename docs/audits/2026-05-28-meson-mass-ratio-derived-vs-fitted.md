@@ -70,14 +70,51 @@ where R_meson ≈ 1 + 4u² closes the 290 ppm residual to 0.6 ppm. But:
 | m_K/m_π = (q⁵−q⁻⁵)(9/5)²R | **fitted** |
 | R_meson = 1+4u², m_η = m_K·q₀ | **fitted** |
 
+## Update (2026-05-28): GMOR reframe yields a derived candidate
+
+The 71% miss above was an **artifact of targeting the linear ratio**.
+The Gell-Mann–Oakes–Renner (GMOR) relation of χPT says the natural
+object is the **squared** ratio:
+
+```
+m_π² = B(m_u+m_d),  m_K² = B(m_u+m_s)  ⟹  m_K²/m_π² = (m_u+m_s)/(m_u+m_d)
+```
+
+Tested against pure q-integer forms (no fitted coefficients):
+
+```
+m_K²/m_π² = 12.51121  (measured)
+[3]_q · [4]_q          = 12.50867   → 203 ppm, ZERO fitted integers
+```
+
+And [3]_q·[4]_q is a **fusion sum** by q-Clebsch-Gordan:
+
+```
+[3]_q · [4]_q = [2]_q + [4]_q + [6]_q
+(spin-1 ⊗ spin-3/2 = spin-1/2 ⊕ spin-3/2 ⊕ spin-5/2)
+```
+
+This is a **derived-candidate**: m_K²/m_π² as a categorical fusion
+product, 203 ppm with no rounded-to-fit integers — far cleaner than
+the fitted (q⁵−q⁻⁵)(9/5)²(1+4u²) linear formula (3 fitted pieces).
+
+**Still needed for full "derived" status:** a structural argument for
+*why* the kaon/pion mass-squared ratio is the spin-1 ⊗ spin-3/2
+fusion (the candidate was found by scanning q-integer products). The
+residual 203 ppm is not yet a clean q-correction (residual/ℏ² ≈ 0.021,
+residual/h² ≈ 0.0046 — neither integer); it is at the NLO-χPT scale.
+
 ## Conclusion
 
 The meson sector has a derived *structural* backbone (knot identity,
-Frobenius bridge, exact characters) but the *mass ratio* m_K/m_π is
-fitted. Like the Habiro coefficients, the fitted pieces belong in
-audit docs only, not in paper content (Category J). The paper's
-meson content should state only the derived structure and that m_π
-is an independent CAL-3 calibration.
+Frobenius bridge, exact characters), m_π is an independent CAL-3
+calibration, and the mass-**squared** ratio m_K²/m_π² is a
+**derived-candidate** fusion product [3]_q[4]_q (203 ppm, no fit) —
+a genuine improvement over the fitted linear formula. The remaining
+work is the structural "why 3⊗4" argument plus the NLO residual.
+Until that lands, the exact-precision fitted pieces stay in audit
+docs (Category J); the GMOR/fusion candidate is promising enough to
+pursue toward paper content.
 
 ## Cross-references
 
