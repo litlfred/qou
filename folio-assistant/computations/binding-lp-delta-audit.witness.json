@@ -6,5 +6,14 @@
     "B_from_LP": "2.22 MeV (exact match to AME)",
     "linking_weight_origin": "\u0394_LP / sgn\u00d7f on (5,1) = 4.59",
     "key_insight": "Binding concentrates on the (5,1) partition \u2014 the standard rep twisted by one box."
-  }
+  },
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "dual_obj": null,
+  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "duality_gap": null,
+  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "y_star": null,
+  "active_set": null,
+  "primal_obj": null
 }

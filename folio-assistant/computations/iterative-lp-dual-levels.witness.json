@@ -23,7 +23,7 @@
   "scriptFile": "iterative_lp_dual_levels.py",
   "scriptHash": "8ad0679b13f5",
   "scriptCommitSha": "cc30c3eb443622296a359d4ba5d9123150bda052",
-  "description": "Item (c) — Full iterative LP-dual u^{(ℓ)*}(β) extraction per term7-alpha5's prop:mass-formula-iterative-lp-dual. Computes u^{(ℓ)*} = m_e · tr_M(P_ℓ·β)/[n]_q! for the proton at H_3, ℓ ∈ {0, 1, 2, 3}, where P_ℓ = e_ℓ(J_1,…,J_n) acts on V_λ as c_ℓ(λ) = e_ℓ({q^{2c(□)}}). Reveals that Σ_ℓ u^{(ℓ)*}(p) at H_3 does NOT recover m_p — the sum-of-shadow-prices captures only H_3-internal structure (descended trace + JM iterates), not the gluon dressing or higher-order corrections that bring m_p to its CODATA value. Confirms that the proper iterative LP-dual is at the FULL Hecke level (which for compounds is H_6, H_9, H_12). Neutron level extraction documented as requiring the σ⁻¹-aware closed-form chain (a separate scope).",
+  "description": "Item (c) \u2014 Full iterative LP-dual u^{(\u2113)*}(\u03b2) extraction per term7-alpha5's prop:mass-formula-iterative-lp-dual. Computes u^{(\u2113)*} = m_e \u00b7 tr_M(P_\u2113\u00b7\u03b2)/[n]_q! for the proton at H_3, \u2113 \u2208 {0, 1, 2, 3}, where P_\u2113 = e_\u2113(J_1,\u2026,J_n) acts on V_\u03bb as c_\u2113(\u03bb) = e_\u2113({q^{2c(\u25a1)}}). Reveals that \u03a3_\u2113 u^{(\u2113)*}(p) at H_3 does NOT recover m_p \u2014 the sum-of-shadow-prices captures only H_3-internal structure (descended trace + JM iterates), not the gluon dressing or higher-order corrections that bring m_p to its CODATA value. Confirms that the proper iterative LP-dual is at the FULL Hecke level (which for compounds is H_6, H_9, H_12). Neutron level extraction documented as requiring the \u03c3\u207b\u00b9-aware closed-form chain (a separate scope).",
   "contentBlock": "prop:mass-formula-iterative-lp-dual",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -71,6 +71,15 @@
     },
     "sum_u_levels_proton_MeV": 1.4449155331285508,
     "sum_vs_codata_pct": -99.84600250275354,
-    "interpretation": "Σ_ℓ u^{(ℓ)*}(p) at H_3 does NOT recover m_p; the sum captures only the H_3-internal structure. The full iterative LP-dual unification (per term7-alpha5) is at H_n with n = 3A, where atomic-braid binding and gluon dressing are encoded. The H_3 levels reported here are necessary infrastructure but not sufficient for absolute mass."
-  }
+    "interpretation": "\u03a3_\u2113 u^{(\u2113)*}(p) at H_3 does NOT recover m_p; the sum captures only the H_3-internal structure. The full iterative LP-dual unification (per term7-alpha5) is at H_n with n = 3A, where atomic-braid binding and gluon dressing are encoded. The H_3 levels reported here are necessary infrastructure but not sufficient for absolute mass."
+  },
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "dual_obj": null,
+  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "duality_gap": null,
+  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "y_star": null,
+  "active_set": null,
+  "primal_obj": null
 }

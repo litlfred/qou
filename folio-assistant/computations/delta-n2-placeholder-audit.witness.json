@@ -24,7 +24,7 @@
   "scriptFile": "delta_n2_placeholder_audit.py",
   "scriptHash": "31c800a4611f",
   "scriptCommitSha": "unknown",
-  "description": "Item 4b from Phase 1.8 actionable path: audit the Δ_n² placeholder in atomic_braid_mass_table.full_twist_scalar (currently returns 1.0 for all A).  The genuine action q^{c(λ)} per Wedderburn block IS computed in full-twist-delta-n2-verification.witness.json but NOT consumed by the mass-table assembly.  Per-particle discharge requires tr_M(Δ_n²·β) = Σ_λ y_λ · q^{c(λ)} · χ^λ(β) computed for each braid β; a simplified dim²-weighted ⟨q^{c(λ)}⟩ scalar gives a small (~2pp) improvement to Strategy-3's neutron error but does NOT close the 8.3% gap. Proper discharge subsumed by term7-alpha5's iterative LP-dual unification (prop:mass-formula-iterative-lp-dual).",
+  "description": "Item 4b from Phase 1.8 actionable path: audit the \u0394_n\u00b2 placeholder in atomic_braid_mass_table.full_twist_scalar (currently returns 1.0 for all A).  The genuine action q^{c(\u03bb)} per Wedderburn block IS computed in full-twist-delta-n2-verification.witness.json but NOT consumed by the mass-table assembly.  Per-particle discharge requires tr_M(\u0394_n\u00b2\u00b7\u03b2) = \u03a3_\u03bb y_\u03bb \u00b7 q^{c(\u03bb)} \u00b7 \u03c7^\u03bb(\u03b2) computed for each braid \u03b2; a simplified dim\u00b2-weighted \u27e8q^{c(\u03bb)}\u27e9 scalar gives a small (~2pp) improvement to Strategy-3's neutron error but does NOT close the 8.3% gap. Proper discharge subsumed by term7-alpha5's iterative LP-dual unification (prop:mass-formula-iterative-lp-dual).",
   "contentBlock": "conj:categorical-neutrality-saturated-shells",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587"
@@ -33,7 +33,7 @@
     "per_n_summary": {
       "1": {
         "n": 1,
-        "A_atom": "—",
+        "A_atom": "\u2014",
         "is_magic": false,
         "n_partitions": 1,
         "weighted_q_c_avg": 1.0,
@@ -42,7 +42,7 @@
       },
       "2": {
         "n": 2,
-        "A_atom": "—",
+        "A_atom": "\u2014",
         "is_magic": true,
         "n_partitions": 2,
         "weighted_q_c_avg": 1.005448434559241,
@@ -60,7 +60,7 @@
       },
       "4": {
         "n": 4,
-        "A_atom": "—",
+        "A_atom": "\u2014",
         "is_magic": false,
         "n_partitions": 5,
         "weighted_q_c_avg": 1.0332607007626684,
@@ -69,7 +69,7 @@
       },
       "5": {
         "n": 5,
-        "A_atom": "—",
+        "A_atom": "\u2014",
         "is_magic": false,
         "n_partitions": 7,
         "weighted_q_c_avg": 1.0561520771414645,
@@ -87,7 +87,7 @@
       },
       "7": {
         "n": 7,
-        "A_atom": "—",
+        "A_atom": "\u2014",
         "is_magic": false,
         "n_partitions": 15,
         "weighted_q_c_avg": 1.1220451055705154,
@@ -96,7 +96,7 @@
       },
       "8": {
         "n": 8,
-        "A_atom": "—",
+        "A_atom": "\u2014",
         "is_magic": true,
         "n_partitions": 22,
         "weighted_q_c_avg": 1.166287625604903,
@@ -114,7 +114,7 @@
       },
       "10": {
         "n": 10,
-        "A_atom": "—",
+        "A_atom": "\u2014",
         "is_magic": false,
         "n_partitions": 42,
         "weighted_q_c_avg": 1.281668742237819,
@@ -123,7 +123,7 @@
       },
       "11": {
         "n": 11,
-        "A_atom": "—",
+        "A_atom": "\u2014",
         "is_magic": false,
         "n_partitions": 56,
         "weighted_q_c_avg": 1.3551290240910188,
@@ -152,6 +152,15 @@
       "err_pct": -8.412541431454326
     },
     "improvement_pct_pts": -0.08737249744564493,
-    "conclusion": "Δ_n² discharge is a small structural improvement (~2 percentage points on neutron err) but does NOT fix the 8.3% gap. The neutron error is rooted in σ↔σ⁻¹ trace asymmetry (T1), which a uniform multiplicative Δ_n² scalar cannot fix (it scales p and n by the same factor). Item 2 (m_n via difference formula) is the right path; Δ_n² discharge is naturally subsumed by term7-alpha5's iterative LP-dual at saturated jet order ℓ."
-  }
+    "conclusion": "\u0394_n\u00b2 discharge is a small structural improvement (~2 percentage points on neutron err) but does NOT fix the 8.3% gap. The neutron error is rooted in \u03c3\u2194\u03c3\u207b\u00b9 trace asymmetry (T1), which a uniform multiplicative \u0394_n\u00b2 scalar cannot fix (it scales p and n by the same factor). Item 2 (m_n via difference formula) is the right path; \u0394_n\u00b2 discharge is naturally subsumed by term7-alpha5's iterative LP-dual at saturated jet order \u2113."
+  },
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "dual_obj": null,
+  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "duality_gap": null,
+  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "y_star": null,
+  "active_set": null,
+  "primal_obj": null
 }

@@ -1,11 +1,11 @@
 {
   "computedAt": "2026-04-27T21:20:43.384482+00:00",
   "computation": "paper-six-term-shadow-price-sweep",
-  "description": "BW shadow-price decomposition B = Σ_λ C_λ · S_λ for each isotope.  Markov-invariant by construction: C_λ depends only on partition (no braid-word ordering); S_λ depends only on (Z, N, A, content_sum).  Replaces the non-Markov-invariant per-generator V̂_i sum of paper_six_term_isotope_sweep.py.",
+  "description": "BW shadow-price decomposition B = \u03a3_\u03bb C_\u03bb \u00b7 S_\u03bb for each isotope.  Markov-invariant by construction: C_\u03bb depends only on partition (no braid-word ordering); S_\u03bb depends only on (Z, N, A, content_sum).  Replaces the non-Markov-invariant per-generator V\u0302_i sum of paper_six_term_isotope_sweep.py.",
   "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
   "parameters": {
     "q_0": 1.1099785955541805,
-    "tau_lambda_implementation": "Wigner-2 closed form (h/2) for self-conjugate λ; approximate q^{c̄} − q^{−c̄} for non-self-conjugate (coarse — exact via Hoefsmit available in pyhecke)."
+    "tau_lambda_implementation": "Wigner-2 closed form (h/2) for self-conjugate \u03bb; approximate q^{c\u0304} \u2212 q^{\u2212c\u0304} for non-self-conjugate (coarse \u2014 exact via Hoefsmit available in pyhecke)."
   },
   "reference_blocks": [
     "thm:knot-mass-formula-unified",
@@ -207,7 +207,7 @@
       ],
       "walltime_sec": 0.011742830276489258
     },
-    "³He (Z=2, N=1)": {
+    "\u00b3He (Z=2, N=1)": {
       "Z": 2,
       "N": 1,
       "B_shadow": 0.01145613885170324,
@@ -287,7 +287,7 @@
       ],
       "walltime_sec": 0.011924982070922852
     },
-    "⁴He (Z=2, N=2)": {
+    "\u2074He (Z=2, N=2)": {
       "Z": 2,
       "N": 2,
       "B_shadow": 0.094617772880196,
@@ -373,5 +373,14 @@
   },
   "engine": "python",
   "scriptFile": "paper_six_term_shadow_price_sweep.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "dual_obj": null,
+  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "duality_gap": null,
+  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "y_star": null,
+  "active_set": null,
+  "primal_obj": null
 }

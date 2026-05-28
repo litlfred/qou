@@ -10,7 +10,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "c_λ ≠ c_{λᵀ} for non-self-conjugate λ ⇒ W_c not Hopf-antipode invariant; see rem:option-e-isospin-test"
+      "source": "c_\u03bb \u2260 c_{\u03bb\u1d40} for non-self-conjugate \u03bb \u21d2 W_c not Hopf-antipode invariant; see rem:option-e-isospin-test"
     }
   ],
   "allPassed": true,
@@ -19,7 +19,7 @@
   "scriptFile": "option_e_isospin_probe.py",
   "scriptHash": "456abc2ecdf8",
   "scriptCommitSha": "47c6ee8f72ca87fc9d5c9156d850e6a79979731b",
-  "description": "H follow-up to PR #619: tests whether the Option E Kashiwara crystal weight c_λ(q) (per rho_k_h3a_crystal) preserves the T = ³He isospin invariance established for the LP-dual shadow price (PR #622 Hopf-antipode) under the canonical Δ_I-coupled atomic braid words. Probes W_c(K) := Σ_λ c_λ(q_0)·χ^λ(β_K)(q_0) for K ∈ {D, T, ³He}.",
+  "description": "H follow-up to PR #619: tests whether the Option E Kashiwara crystal weight c_\u03bb(q) (per rho_k_h3a_crystal) preserves the T = \u00b3He isospin invariance established for the LP-dual shadow price (PR #622 Hopf-antipode) under the canonical \u0394_I-coupled atomic braid words. Probes W_c(K) := \u03a3_\u03bb c_\u03bb(q_0)\u00b7\u03c7^\u03bb(\u03b2_K)(q_0) for K \u2208 {D, T, \u00b3He}.",
   "contentBlock": "rem:option-e-isospin-test",
   "parameters": {
     "mp_dps": "50"
@@ -31,9 +31,9 @@
     ],
     "q_0": "1.1099785955541805752815940796095093779932822799587",
     "inputs": {
-      "atom_braid_words": "mass_at_3A_proper.atom_braid_word_3A (canonical Δ_I-coupled (c, d, gen_idx) triples)",
+      "atom_braid_words": "mass_at_3A_proper.atom_braid_word_3A (canonical \u0394_I-coupled (c, d, gen_idx) triples)",
       "c_lambda_q": "rho_k_h3a_crystal.c_lambda_q (mpmath at mp_dps; Macdonald hook-content)",
-      "chi_lambda": "hoefsmit_matrices_numeric (mpmath seminormal matrices) → chi_numeric_float (numpy float64 trace of the canonical-word product)"
+      "chi_lambda": "hoefsmit_matrices_numeric (mpmath seminormal matrices) \u2192 chi_numeric_float (numpy float64 trace of the canonical-word product)"
     },
     "atoms": [
       {
@@ -177,7 +177,7 @@
         ]
       },
       {
-        "atom": "³He",
+        "atom": "\u00b3He",
         "Z": 2,
         "N": 1,
         "A": 3,
@@ -249,5 +249,14 @@
       }
     ],
     "isospin_split_T_minus_3He": "277977894.92705040858231061843390439584927906596139"
-  }
+  },
+  "y0_star": null,
+  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "dual_obj": null,
+  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "duality_gap": null,
+  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
+  "y_star": null,
+  "active_set": null,
+  "primal_obj": null
 }
