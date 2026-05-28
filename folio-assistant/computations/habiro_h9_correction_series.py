@@ -255,44 +255,6 @@ def main():
     print("-" * 70)
     print()
 
-    # We can't re-evaluate Habiro at different q (it's braid-specific),
-    # but we CAN evaluate the prediction side at different q and see
-    # how S moves. Actually we need the Habiro sum at different q too...
-    # which we have from the Habiro coefficient file.
-
-    # Load Habiro coefficients
-    hab_coeff_file = HERE / "habiro-coefficients-atomic.witness.json"
-    if hab_coeff_file.exists():
-        with open(hab_coeff_file) as f:
-            hab_data = json.load(f)
-        print(f"  Loaded Habiro coefficients: {list(hab_data.get('data', {}).keys())[:5]}")
-
-        # The Habiro sum is Σ_m a_m · (u;u)_m where u = q² = q₀²
-        # We can recompute at different q values!
-        if "proton_coefficients" in hab_data.get("data", {}):
-            am_list = hab_data["data"]["proton_coefficients"]
-            print(f"  Found {len(am_list)} Habiro coefficients for proton")
-
-            def habiro_sum_at(q_val, am):
-                u = q_val**2
-                result = mp.mpf(0)
-                poch = mp.mpf(1)
-                for m, a_m in enumerate(am):
-                    if m > 0:
-                        poch *= (1 - u**m)
-                    result += mp.mpf(str(a_m)) * poch
-                return result
-
-            # Evaluate at q₀ as sanity check
-            hab_check = habiro_sum_at(q, am_list)
-            print(f"  Habiro(q₀) recomputed = {mp.nstr(hab_check, 15)}")
-            print(f"  Habiro(q₀) stored     = {mp.nstr(hab_sum, 15)}")
-            print(f"  Match: {mp.nstr(hab_check - hab_sum, 10)}")
-    else:
-        print("  (Habiro coefficient file not found — skipping multi-point)")
-
-    print()
-
     # ---------------------------------------------------------------
     # Test the most promising candidate: c₂=1, c₄=−n(n−1)/12=−6
     # and check what c₆ would need to be

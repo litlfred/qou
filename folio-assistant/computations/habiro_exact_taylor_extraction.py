@@ -348,7 +348,7 @@ def main():
         print(f"  The Habiro expansion is a DIFFERENT invariant from tr_M.")
 
     # Build witness
-    w = WitnessBuilder("habiro-taylor-extraction", engine="mpmath+sympy")
+    w = WitnessBuilder("habiro-taylor-extraction", engine="mpmath")
     w.set_description(
         "Exact Taylor extraction of Habiro correction series. "
         "Verifies the Habiro cyclotomic expansion equals tr_M as a rational "
