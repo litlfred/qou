@@ -171,7 +171,9 @@ class BindingEndomorphismAnalogy where
   m_pred : ℝ
   /-- Predicted deuteron binding. -/
   B_pred : ℝ
-  hbar_q_sq_pos : hbar_q_sq ≠ 0
+  hbar_q_sq_ne : hbar_q_sq ≠ 0
+  lw_ne : lw ≠ 0
+  delta_tr_ne : delta_tr ≠ 0
   /-- Mass endomorphism shape. -/
   mass_shape : m_pred = m_e * (Vol_B3 / hbar_q_sq) * lw
   /-- Binding endomorphism shape (same m_e and Vol_B3 factors;
@@ -179,12 +181,18 @@ class BindingEndomorphismAnalogy where
   binding_shape : B_pred = m_e * Vol_B3 * delta_tr
 
 /-- The mass and binding endomorphisms share the `m_e · Vol(𝓑_3)`
-    prefactor; they differ only in the structural factor
-    (lw/ℏ_q² for mass, Δtr for binding). -/
+    prefactor: stripping the structural factor (lw/ℏ_q² for mass,
+    Δtr for binding) from each prediction leaves the SAME quantity
+    `m_e · Vol(𝓑_3)`. This is the precise sense in which binding is
+    the endomorphism analogue of mass. -/
 -- Ref: [manuscript] docs/audits/2026-05-28-binding-endomorphism-analogy.md
 theorem mass_binding_share_prefactor [a : BindingEndomorphismAnalogy] :
-    a.m_pred / (a.lw / a.hbar_q_sq) = a.B_pred / a.delta_tr
-    ∨ a.m_e * a.Vol_B3 = a.m_e * a.Vol_B3 := by
-  right; rfl
+    a.m_pred / (a.lw / a.hbar_q_sq) = a.m_e * a.Vol_B3
+    ∧ a.B_pred / a.delta_tr = a.m_e * a.Vol_B3 := by
+  refine ⟨?_, ?_⟩
+  · rw [a.mass_shape]
+    field_simp [a.hbar_q_sq_ne, a.lw_ne] <;> ring
+  · rw [a.binding_shape]
+    field_simp [a.delta_tr_ne] <;> ring
 
 end QOU.ParticleInteractions
