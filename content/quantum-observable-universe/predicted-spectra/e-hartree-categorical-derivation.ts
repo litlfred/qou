@@ -49,7 +49,6 @@ export default proposition({
     "prop:bohr-radius-categorical",
     "prop:force-carrier-bring-uniqueness",
     "prop:phi-q-tower-algebraic-stratification",
-    "prop:phi-q-tower-jsj-bridge",
   ],
   computation: {
     engine: "sympy",

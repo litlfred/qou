@@ -12,7 +12,6 @@ export default proposition({
     "rem:quantum-bloch-group",
     "prop:kashiwara-jones-c4-categorical",
     "rem:kashaev-volume-density",
-    "prop:kashaev-volume-conjecture",
     "prop:vol-through-tau",
     "rem:vol-as-motivic-period",
     "prop:binding-scale-catalan",

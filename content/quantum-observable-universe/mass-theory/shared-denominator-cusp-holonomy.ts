@@ -12,7 +12,6 @@ export default proposition({
     "def:q-pochhammer-partial-product",
     "prop:algebraic-geometric-dilog-equivalence",
     "prop:dilogarithm-archimedean-limit",
-    "prop:kashaev-volume-conjecture",
     "rem:kashaev-as-archimedean-realization",
   ],
   cites: [

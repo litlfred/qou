@@ -11,7 +11,6 @@ export default proposition({
   uses: [
     "def:q-pochhammer-partial-product",
     "prop:dilogarithm-archimedean-limit",
-    "prop:kashaev-volume-conjecture",
     "rem:kashaev-as-archimedean-realization",
     "rem:quantum-bloch-group",
     "def:archimedean-realization-functor",

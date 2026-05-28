@@ -16,7 +16,6 @@ export default proposition({
   },
   uses: [
     // The underlying Kashaev volume conjecture this refines:
-    "prop:kashaev-volume-conjecture",
     "rem:kashaev-volume-density",
     "rem:kashaev-as-archimedean-realization",
     // The Wedderburn / joint-tower SDP infrastructure:

@@ -9,7 +9,6 @@ export default proposition({
     "prop:em-coupling-bring-zero-mode",
     "rem:figure-8-archimedean-illustration",
     "def:archimedean-realization-functor",
-    "prop:kashaev-volume-conjecture",
   ],
   cites: [
     "suslin1991",
