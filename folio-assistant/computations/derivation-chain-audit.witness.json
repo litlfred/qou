@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T01:49:10.502212+00:00",
-  "commitSha": "d2dcd93ebf5bd49bcc46ca8a6d544de40101cfd3",
+  "computedAt": "2026-05-28T04:47:51.084535+00:00",
+  "commitSha": "5c1e2244aafa7fd9ca398fb2cda672fb755cb805",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "8a00323ca156fd987bf98fefc66fb8083e11e269",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -2097,13 +2097,13 @@
         "binding-depth-stratified-rust.witness.json",
         "binding-depth-stratified-selfconj.witness.json",
         "binding-depth-stratified.witness.json",
+        "binding-endomorphism-deuteron.witness.json",
         "binding-energy-categorical-deuteron.witness.json",
         "binding-energy-scale-probe.witness.json",
         "binding-k-enumerator.witness.json",
         "binding-k-solver.witness.json",
         "binding-ladder-catalog.witness.json",
         "binding-lp-delta-audit.witness.json",
-        "binding-per-knot-scaling.witness.json",
         "binding-q-target-sweep.witness.json",
         "binding-via-interface-knot.witness.json",
         "binomial-pattern-chebyshev-derivation.witness.json",

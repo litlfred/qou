@@ -459,7 +459,7 @@ jobs:
           drift=$(git diff --diff-filter=ACMR -- $PATHSPECS | \
                   grep -E "^[+-]" | \
                   grep -vE "^\+\+\+|^---" | \
-                  grep -vE '"([a-zA-Z_]*_)?(computedAt|timestamp|durationMs|trace_time_sec|time_sec|elapsed_sec|elapsed_ms|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version|description|sha256|size_bytes|q_0|chi_cache_witness|timeout_per_atom_sec|method|precision|dps)":' || true)
+                  grep -vE '"([a-zA-Z_]*_)?(computedAt|timestamp|durationMs|trace_time_sec|time_sec|elapsed_sec|elapsed_ms|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version|description|sha256|size_bytes|q_0|chi_cache_witness|timeout_per_atom_sec|method|precision|dps|guard_digits|truncation_bound)":' || true)
           if [ -z "$drift" ]; then
             echo "Only environment / timestamp drift — OK."
             exit 0
