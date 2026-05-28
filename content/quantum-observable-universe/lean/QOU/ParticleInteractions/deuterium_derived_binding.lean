@@ -139,4 +139,76 @@ theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :
    ctx.claim_iii_h6_factorisation, ctx.claim_iv_Tpn_symmetric,
    ctx.claim_v_binding_energy_formula, ctx.claim_vi_codata_match⟩
 
+/-! ## Mass–binding endomorphism analogy (2026-05-28)
+
+The binding-energy formula is the structural analogue of the mass
+endomorphism. Where the nucleon mass is
+
+    m(K) = m_e · (Vol(𝓑_3) / ℏ_q²) · lw(K, q_0),
+
+the binding energy of a composite nucleus is
+
+    B(K) = m_e · Vol(K_bind) · Δtr,    Δtr = |tr_free| − |tr_atom|,
+
+with K_bind the inter-nucleon **binding link** (Hopf for the deuteron,
+8₁₁-class for ³H, L6a4 for ³He — identified by the binding-K SDP
+solver). The deuteron uses Vol(𝓑_3) = 8G because both nucleons are
+Borromean and the Hopf inter-nucleon link is Seifert-fibred (volume 0).
+
+The analogy is recorded as a structural correspondence between the
+two endomorphism shapes. -/
+class BindingEndomorphismAnalogy where
+  m_e : ℝ
+  /-- Borromean volume Vol(𝓑_3) = 8G (mass side — nucleons are Borromean). -/
+  Vol_B3 : ℝ
+  /-- Binding-link volume Vol(K_bind) (binding side — atom-specific:
+      Hopf for ²H, 8₁₁-class for ³H, L6a4 for ³He). For the deuteron
+      this equals Vol(𝓑_3); for A≥3 it differs. -/
+  Vol_Kbind : ℝ
+  /-- Substrate ℏ_q² appearing in the mass formula denominator. -/
+  hbar_q_sq : ℝ
+  /-- Mass linking weight lw(K, q_0). -/
+  lw : ℝ
+  /-- Trace difference Δtr = |tr_free| − |tr_atom|. -/
+  delta_tr : ℝ
+  /-- Predicted nucleon mass. -/
+  m_pred : ℝ
+  /-- Predicted binding energy. -/
+  B_pred : ℝ
+  hbar_q_sq_ne : hbar_q_sq ≠ 0
+  lw_ne : lw ≠ 0
+  delta_tr_ne : delta_tr ≠ 0
+  /-- Mass endomorphism shape (always Borromean Vol_B3). -/
+  mass_shape : m_pred = m_e * (Vol_B3 / hbar_q_sq) * lw
+  /-- Binding endomorphism shape (general binding-link volume). -/
+  binding_shape : B_pred = m_e * Vol_Kbind * delta_tr
+
+/-- The mass and binding endomorphisms share the same structural
+    template: stripping the structural factor (lw/ℏ_q² for mass,
+    Δtr for binding) leaves `m_e · Vol(·)` — the Borromean volume on
+    the mass side, the binding-link volume on the binding side.
+
+    For the **deuteron** these coincide (Vol(K_bind) = Vol(𝓑_3) = 8G,
+    the Hopf inter-nucleon link being Seifert-fibred), so both
+    prefactors equal `m_e · Vol(𝓑_3)`; for A≥3 they differ by the
+    binding-link volume ratio. -/
+-- Ref: [manuscript] docs/audits/2026-05-28-binding-endomorphism-analogy.md
+theorem mass_binding_share_prefactor [a : BindingEndomorphismAnalogy] :
+    a.m_pred / (a.lw / a.hbar_q_sq) = a.m_e * a.Vol_B3
+    ∧ a.B_pred / a.delta_tr = a.m_e * a.Vol_Kbind := by
+  refine ⟨?_, ?_⟩
+  · rw [a.mass_shape]
+    field_simp [a.hbar_q_sq_ne, a.lw_ne] <;> ring
+  · rw [a.binding_shape]
+    field_simp [a.delta_tr_ne] <;> ring
+
+/-- Deuteron specialization: when the binding link has Borromean
+    volume (Vol(K_bind) = Vol(𝓑_3)), the two endomorphisms share the
+    identical `m_e · Vol(𝓑_3)` prefactor. -/
+-- Ref: [manuscript] docs/audits/2026-05-28-binding-endomorphism-analogy.md
+theorem mass_binding_prefactor_deuteron [a : BindingEndomorphismAnalogy]
+    (h : a.Vol_Kbind = a.Vol_B3) :
+    a.m_pred / (a.lw / a.hbar_q_sq) = a.B_pred / a.delta_tr := by
+  rw [(mass_binding_share_prefactor).1, (mass_binding_share_prefactor).2, h]
+
 end QOU.ParticleInteractions

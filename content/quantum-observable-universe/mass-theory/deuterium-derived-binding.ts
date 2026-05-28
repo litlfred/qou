@@ -10,6 +10,7 @@ export default proposition({
     witness: [
       "folio-assistant/computations/q-pinning-50-digit.witness.json",
       "folio-assistant/computations/gram-matrix-dual.witness.json",
+      "folio-assistant/computations/binding-endomorphism-deuteron.witness.json",
     ],
     status: "verified",
   },
