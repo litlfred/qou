@@ -248,6 +248,7 @@ export default chapter({
       title: "Reconnected orphan blocks (Phase 7)",
       label: "sec:brings-surface-orphan-reconnect",
       blocks: [
+        "brings-surface-orphan-reconnect-intro",
         "bring-fibre-q0-figure",
         "bring-fibre-qhalf-figure",
         "c-from-color-flavor-swap",
