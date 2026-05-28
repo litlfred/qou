@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T01:49:10.502212+00:00",
-  "commitSha": "d2dcd93ebf5bd49bcc46ca8a6d544de40101cfd3",
+  "computedAt": "2026-05-28T01:58:56.706310+00:00",
+  "commitSha": "072110f731a940b7ac9634e619c5a2b73c24a374",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "8a00323ca156fd987bf98fefc66fb8083e11e269",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -2308,7 +2308,6 @@
         "constit-factor-residual-phase5k.witness.json",
         "constit-factor-varying-q-phase5k2.witness.json",
         "content-block-label-audit.witness.json",
-        "cross-check-trM-1ppb.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
@@ -2370,7 +2369,6 @@
         "f-ell-derivation-via-per-braid-mass-tower.witness.json",
         "family-a-per-partition-h-decomposition-50dps.witness.json",
         "finite-q-volume-conjecture-probe.witness.json",
-        "fitted-labelled-canonical-audit.witness.json",
         "float64-leak-audit.witness.json",
         "four-unwired-theorems-regression.witness.json",
         "fr-pullback-cosh-h.witness.json",
@@ -2408,6 +2406,7 @@
         "habiro-coefficients-interpolate.witness.json",
         "habiro-correction-product.witness.json",
         "habiro-correction-series.witness.json",
+        "habiro-derivation-vs-fit-analysis.witness.json",
         "habiro-exact-mass-endomorphism.witness.json",
         "habiro-exact-qbeta.witness.json",
         "habiro-expansion-atomic-probe.witness.json",
@@ -2417,6 +2416,7 @@
         "habiro-normalization-bridge.witness.json",
         "habiro-pochhammer-bridge.witness.json",
         "habiro-product-taylor-algebraic.witness.json",
+        "habiro-sub-ppm-third-factor.witness.json",
         "habiro-tail-in-ideal-validation.witness.json",
         "habiro-taylor-extraction.witness.json",
         "habiro-to-1ppq-chain.witness.json",
