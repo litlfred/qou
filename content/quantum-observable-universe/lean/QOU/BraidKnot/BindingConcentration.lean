@@ -84,41 +84,18 @@ theorem interface_asymmetry_maximal (n k : ℕ) (hk : k ≤ n) :
   trivial
 
 -- ═══════════════════════════════════════════════════════════════
---  PER-KNOT BINDING FORMULA (PRs #1361, #1383)
+--  DEUTERON BINDING SCALE (PR #1367)
 -- ═══════════════════════════════════════════════════════════════
 
 /-- The binding energy scale E₀ = m_e / (q₀(q₀−1)).
-    This is the single-Planck-tick energy scale from CAL-1 + CAL-2. -/
+    This is the single-Planck-tick energy scale from CAL-1 + CAL-2.
+    The deuteron binds at +0.91% via E₀ × q⁻¹ (PR #1367).
+
+    NOTE: the per-knot extension to A≥3 (B = E₀×q⁻ᴬ×δ_tr×A(A−1)/2,
+    PR #1383) was RETRACTED as backhanded fitting (PR #1386): the
+    pair-count A(A−1)/2 and q-power q⁻ᴬ were hand-chosen to match
+    AME data. The real A≥3 binding must come from the SDP solutions
+    and iterative knot building at H_{3A}. -/
 noncomputable def E₀ (m_e q : ℝ) : ℝ := m_e / (q * (q - 1))
-
-/-- The q-number [n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹). -/
-noncomputable def qNum (q : ℝ) (n : ℕ) : ℝ :=
-  (q ^ n - q⁻¹ ^ n) / (q - q⁻¹)
-
-/-- The q-factorial [n]_q! = [1]_q × [2]_q × ... × [n]_q. -/
-noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
-  | 0 => 1
-  | n + 1 => qFactorial q n * qNum q (n + 1)
-
-/-- Per-knot binding formula:
-    B(A) = E₀ × q⁻ᴬ × δ_tr × A(A−1)/2
-    where δ_tr is the Markov trace difference (interface contribution). -/
-noncomputable def bindingPerKnot (m_e q : ℝ) (A : ℕ) (delta_tr : ℝ) : ℝ :=
-  E₀ m_e q * q⁻¹ ^ A * delta_tr * (A * (A - 1) / 2 : ℝ)
-
-/-- KEY STRUCTURAL RESULT (PR #1383):
-    The binding ratio B(⁴He)/B(D) equals [4]_q!/2.
-    This is a q-factorial — categorical, not fitted. -/
--- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
-theorem helium4_deuteron_ratio_is_qfactorial (q : ℝ) (hq : 1 < q)
-    (B_He4 B_D : ℝ) (hBD : B_D ≠ 0)
-    (hHe4 : B_He4 = bindingPerKnot 1 q 4 1)
-    (hD : B_D = bindingPerKnot 1 q 2 1) :
-    B_He4 / B_D = qFactorial q 4 / 2 := by
-  sorry
-  -- The ratio B(4)/B(2) with unit delta_tr cancels E₀ and gives
-  -- q⁻⁴/q⁻² × (4×3/2)/(2×1/2) = q⁻² × 6 = [4]_q!/2 at q₀.
-  -- Full proof requires the per-knot delta_tr values from the
-  -- interface branching computation.
 
 end QOU.BraidKnot.BindingConcentration

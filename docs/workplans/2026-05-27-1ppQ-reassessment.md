@@ -56,12 +56,12 @@ PR #1312 proved c₂ = −1 and c₃ = J−ℏ² for the Q_β ladder.
 m_p at 0.39 ppQ, m_n at 0.55 ppb. Both beat 100× targets.
 Phases 1-3 of the original roadmap are complete.
 
-### Binding energies: 3/4 light nuclei closed
-- D at +0.74% (PR #1361: E₀×δ_tr×q⁻¹)
-- ³He at −0.1% (PR #1383: per-knot q⁻ᴬ formula)
-- ⁴He at −1.1% (PR #1383: B(⁴He)/B(D) = [4]_q!/2)
-- T needs recomputation under the q⁻ᴬ model
-- ⁶Li+ needs H_15+ interface branching
+### Binding energies: only deuteron honestly closed
+- D at +0.91% (PR #1367: E₀×q⁻¹ single-isotope scale)
+- ³He/⁴He per-knot results RETRACTED (#1386: backhanded fitting —
+  pair-count A(A−1)/2 × q⁻ᴬ disguised as derivation)
+- A≥3 binding needs SDP + iterative knot building at H_{3A}
+- NOT on the 1 ppQ critical path (binding targets weaker: ~780 ppb)
 
 ### Meson m_K/m_π: closed to 0.56 ppm
 - Meson tower R = 1+4u² (PR #1367)
@@ -80,17 +80,17 @@ Phases 1-3 of the original roadmap are complete.
 | #1276 | **closed** (data cherry-picked as #1382) | Bring+Faddeev probes |
 | #1224 | **closed** (superseded) | Δ_λ closure — superseded by #1305 |
 | #1244 | **closed** (stale) | — |
-| #1361 | merged | deuteron binding +0.74% |
-| #1367 | merged | meson tower, m_K/m_π 0.56 ppm |
+| #1367 | merged | deuteron +0.91%; meson tower m_K/m_π 0.56 ppm |
 | #1372 | merged | Habiro correction product |
 | #1378 | merged | m_p at 0.39 ppQ |
-| #1383 | merged | ³He −0.1%, ⁴He/D = [4]_q!/2 |
+| #1383 | merged | per-knot binding probe (later retracted) |
 | #1384 | merged | audit-drain residual |
+| #1386 | merged | **retraction** of per-knot q-factorial fitting |
 
 ## Next priorities (ranked)
 
-1. **Tritium recomputation** under the q⁻ᴬ model (T is the last light nucleus)
+1. **Real A≥3 binding** via SDP + iterative knot building at H_{3A}
+   (replaces the retracted per-knot fit)
 2. **Prove c=4 for meson tower** (currently 3.992, 0.19% off J²)
-3. **Wire ⁶Li+ binding** via H_15+ interface branching
-4. **Lean: verify remaining 3 real sorrys** (PR #1369 drained 87)
-5. **Paper content: integrate binding/meson results** into chapters
+3. **Lean: verify remaining 3 real sorrys** (PR #1369 drained 87)
+4. **Paper content: integrate deuteron/meson results** into chapters
