@@ -22,6 +22,30 @@ Usage:
     # Parallel execution (independent scripts run concurrently)
     python3 run_pipeline.py --jobs 4
 
+Persistence:
+    The CI side of this runner is split in two:
+
+    - `.github/workflows/publish.yml` regenerates stale witnesses for
+      every PR build but produces only an ephemeral artifact (1-day
+      retention) — nothing is pushed back to git, so a fresh PR sees
+      the same scripts as stale and re-pays the cost.
+    - `.github/workflows/witness-refresh.yml` runs the *same* command
+      on `push` to `main` (and nightly / on workflow_dispatch) and
+      commits the refreshed `*.witness.json` files back to `main` as
+      `github-actions[bot]`. Subsequent CI passes then see the
+      regenerated witnesses as current and skip the rerun.
+
+    Treat commits authored by `github-actions[bot]` with the message
+    prefix `chore(witnesses): refresh ...` as machine-generated drift;
+    do not hand-edit them.
+
+Legacy cleanup:
+    `cleanup_legacy_witnesses.py` codifies the heuristic from
+    `_deprecated/README.md` (no contentBlock, no live importer, no
+    audit-md citation, not auditOnly, not referenced by full filename
+    from CI/scripts/pipeline) and moves matching scripts + their
+    `*.witness.json` sidecars into `_deprecated/`.
+
 Architecture:
     1. Scan *.py for `from X import` / `import X` to build DAG
     2. Check each *.witness.json for staleness (scriptHash mismatch)

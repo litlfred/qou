@@ -54,3 +54,28 @@ To bring a deprecated witness back into the audit:
    - point a content block's `computation.witness` (or a `content/values/registry.ts` `witnessFile:`) at it.
 
 Bulk deletion of this directory is owner-only.
+
+## 2026-05-28 pass — orphan re-sweep
+
+Added `folio-assistant/computations/cleanup_legacy_witnesses.py` which
+codifies the same four heuristics from the original sweep plus two
+guards added after the first dry-run produced false positives:
+
+1. No top-level `contentBlock` self-claim on the witness JSON.
+2. Not marked `auditOnly`.
+3. Not imported by any live (non-`_deprecated/`) python file.
+4. Not cited by name in any markdown under `_audits/` or `docs/audits/`.
+5. Not referenced by **full filename** (with extension) from any CI
+   workflow, shell script, content-pipeline TS file, or other live
+   python file under `computations/`.
+6. Script name does not end in `_audit`, `_scan`, `_compliance`,
+   `_dashboard`, or `_validator` (I14 infra convention — these are
+   always live regardless of contentBlock).
+
+This pass moved **9 orphan scripts** + their `*.witness.json` sidecars
+into `_deprecated/`. Re-run the helper any time the orphan list
+appears to grow:
+
+    python3 folio-assistant/computations/cleanup_legacy_witnesses.py            # dry run
+    python3 folio-assistant/computations/cleanup_legacy_witnesses.py --apply --git
+
