@@ -1825,6 +1825,38 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Label 'prop:vertex-is-exceptional-divisor' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "0bb6d1422082",
+          "ts": "b5e8f28052e5",
+          "lean": "baf3032b02e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:vertex-is-exceptional-divisor' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "0bb6d1422082",
+          "ts": "b5e8f28052e5",
+          "lean": "baf3032b02e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:vertex-is-exceptional-divisor' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1919,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

@@ -248,8 +248,40 @@
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
         "notes": "Label 'prop:hoefsmit-binding-amplitude' → expected 'hoefsmit_binding_amplitude'; Lean declares: hecke_h, qInt2, qInt3, qInt2_sq_eq_h_sq_plus_4, qInt3_eq_qInt2_sq_minus_one.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "da4db810a167",
+          "ts": "91181c250000",
+          "lean": "dada8d0401fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:hoefsmit-binding-amplitude' → expected 'hoefsmit_binding_amplitude'; Lean declares: hecke_h, qInt2, qInt3, qInt2_sq_eq_h_sq_plus_4, qInt3_eq_qInt2_sq_minus_one.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "da4db810a167",
+          "ts": "91181c250000",
+          "lean": "dada8d0401fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:hoefsmit-binding-amplitude' → expected 'hoefsmit_binding_amplitude'; Lean declares: hecke_h, qInt2, qInt3, qInt2_sq_eq_h_sq_plus_4, qInt3_eq_qInt2_sq_minus_one.... Structural match via content."
       }
     ]
   },
-  "updated_at": "2026-05-28T15:40:01.326Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

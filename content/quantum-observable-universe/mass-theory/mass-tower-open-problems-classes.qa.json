@@ -1193,6 +1193,38 @@
         "reviewed_at": "2026-05-28T15:41:31.003Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
         "notes": "Label 'rem:mass-tower-open-problems-classes' → expected 'mass_tower_open_problems_classes'; Lean declares: alpha5_value, Term7ShellCorrectionClass, term7_structural, term7ShellCorrectionInstance, term7_structural_unconditional.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "617ddd75cebf",
+          "ts": "6aa5c3694302",
+          "lean": "870bbea3cea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:mass-tower-open-problems-classes' → expected 'mass_tower_open_problems_classes'; Lean declares: alpha5_value, Term7ShellCorrectionClass, term7_structural, term7ShellCorrectionInstance, term7_structural_unconditional.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "617ddd75cebf",
+          "ts": "6aa5c3694302",
+          "lean": "870bbea3cea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:mass-tower-open-problems-classes' → expected 'mass_tower_open_problems_classes'; Lean declares: alpha5_value, Term7ShellCorrectionClass, term7_structural, term7ShellCorrectionInstance, term7_structural_unconditional.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1249,5 +1281,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-28T15:41:31.003Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

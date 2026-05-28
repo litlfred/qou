@@ -1841,6 +1841,38 @@
         "reviewed_at": "2026-05-28T15:41:31.003Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
         "notes": "Label 'prop:hoefsmit-scattering-pipeline' → expected 'hoefsmit_scattering_pipeline'; Lean declares: scatteringAmplitudeForward, pipeline_functoriality, pipeline_truncation_well_defined, hoefsmit_pipeline_conditional, HyperbolicVolumeIndependence.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "3eadace7f207",
+          "ts": "d6ea60cb2e4e",
+          "lean": "2c216ed3e2c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:hoefsmit-scattering-pipeline' → expected 'hoefsmit_scattering_pipeline'; Lean declares: scatteringAmplitudeForward, pipeline_functoriality, pipeline_truncation_well_defined, hoefsmit_pipeline_conditional, HyperbolicVolumeIndependence.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "3eadace7f207",
+          "ts": "d6ea60cb2e4e",
+          "lean": "2c216ed3e2c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:hoefsmit-scattering-pipeline' → expected 'hoefsmit_scattering_pipeline'; Lean declares: scatteringAmplitudeForward, pipeline_functoriality, pipeline_truncation_well_defined, hoefsmit_pipeline_conditional, HyperbolicVolumeIndependence.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1903,5 +1935,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-28T15:41:31.003Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

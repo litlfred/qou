@@ -1824,7 +1824,39 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:hoefsmit-seminormal-form' \u2192 expected 'hoefsmit_seminormal_form'; Lean declares: hoefsmitEntry, HoefsmitOffDiag, hoefsmit_block_det, hoefsmit_block_trace, hoefsmit_product_rho2.... Structural match via content."
+        "notes": "Label 'prop:hoefsmit-seminormal-form' → expected 'hoefsmit_seminormal_form'; Lean declares: hoefsmitEntry, HoefsmitOffDiag, hoefsmit_block_det, hoefsmit_block_trace, hoefsmit_product_rho2.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "8e2e4cbe3e9b",
+          "ts": "d0c3ede83271",
+          "lean": "4f42cd6853f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:hoefsmit-seminormal-form' → expected 'hoefsmit_seminormal_form'; Lean declares: hoefsmitEntry, HoefsmitOffDiag, hoefsmit_zpow_ne_one, hoefsmit_self_le_pow, hoefsmit_zpow_diff_sq_ge.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "8e2e4cbe3e9b",
+          "ts": "d0c3ede83271",
+          "lean": "4f42cd6853f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:hoefsmit-seminormal-form' → expected 'hoefsmit_seminormal_form'; Lean declares: hoefsmitEntry, HoefsmitOffDiag, hoefsmit_zpow_ne_one, hoefsmit_self_le_pow, hoefsmit_zpow_diff_sq_ge.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1846,7 +1878,7 @@
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.lean:77: Tactic `rcases` failed: `x\u271d : ?m.58` is not an inductive datatype | content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.lean:127: Application type mismatch: The argument | content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.lean:128: Application type mismatch: The argument | content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.lean:129: Function expected at | content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.lean:162: Function expected at"
+        "evidence": "content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.lean:77: Tactic `rcases` failed: `x✝ : ?m.58` is not an inductive datatype | content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.lean:127: Application type mismatch: The argument | content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.lean:128: Application type mismatch: The argument | content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.lean:129: Function expected at | content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.lean:162: Function expected at"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1887,5 +1919,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

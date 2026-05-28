@@ -317,8 +317,24 @@
         "reviewed_at": "2026-05-28T15:41:35.986Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
         "notes": "Lean file may be empty or only contain comments."
+      },
+      {
+        "field_hash": {
+          "md": "b9d6ea02fc71",
+          "ts": "4109678f0439",
+          "lean": "2ee3de14ca1c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:23.399Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit."
       }
     ]
   },
-  "updated_at": "2026-05-28T15:41:35.986Z"
+  "updated_at": "2026-05-28T15:43:23.399Z"
 }

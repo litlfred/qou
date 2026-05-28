@@ -1140,7 +1140,39 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'ex:hydrogen-partition-function' \u2192 expected 'hydrogen_partition_function'; Lean declares: qAngularMomentum, qAngularMomentum_zero, qDegeneracy, qDegeneracy_zero, sq_ne_one_of_gt_one.... Structural match via content."
+        "notes": "Label 'ex:hydrogen-partition-function' → expected 'hydrogen_partition_function'; Lean declares: qAngularMomentum, qAngularMomentum_zero, qDegeneracy, qDegeneracy_zero, sq_ne_one_of_gt_one.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "17b91751e022",
+          "ts": "a4ff41e1e795",
+          "lean": "6d606b77055b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'ex:hydrogen-partition-function' → expected 'hydrogen_partition_function'; Lean declares: qAngularMomentum, qAngularMomentum_zero, qDegeneracy, qDegeneracy_zero, sq_ne_one_of_gt_one.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "17b91751e022",
+          "ts": "a4ff41e1e795",
+          "lean": "6d606b77055b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'ex:hydrogen-partition-function' → expected 'hydrogen_partition_function'; Lean declares: qAngularMomentum, qAngularMomentum_zero, qDegeneracy, qDegeneracy_zero, sq_ne_one_of_gt_one.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1197,5 +1229,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

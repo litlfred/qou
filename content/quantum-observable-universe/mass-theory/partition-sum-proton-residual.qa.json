@@ -1847,6 +1847,38 @@
         "reviewed_at": "2026-05-28T15:41:31.003Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
         "notes": "Label 'prop:partition-sum-proton-residual' → expected 'partition_sum_proton_residual'; Lean declares: invDimPartitionSum, protonTowerMass, protonCodata, electronMass, qSubstrate.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "30268cfcb1ee",
+          "ts": "e56ac6a9a22d",
+          "lean": "728ce54385a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:partition-sum-proton-residual' → expected 'partition_sum_proton_residual'; Lean declares: invDimPartitionSum, protonTowerMass, protonCodata, electronMass, qSubstrate.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "30268cfcb1ee",
+          "ts": "e56ac6a9a22d",
+          "lean": "728ce54385a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:partition-sum-proton-residual' → expected 'partition_sum_proton_residual'; Lean declares: invDimPartitionSum, protonTowerMass, protonCodata, electronMass, qSubstrate.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1909,5 +1941,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-28T15:41:31.003Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

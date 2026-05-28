@@ -1193,6 +1193,38 @@
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
         "notes": "Label 'rem:chi-v3-closed-form-proof' → expected 'chi_v3_closed_form_proof'; Lean declares: chi_V3_beta_p, chi_V3_beta_n, chi_V3_difference_factored, chi_V3_difference_polynomial, chi_V3_difference_eq_factored.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "bd09c24c88e9",
+          "ts": "9f871b9849b6",
+          "lean": "7bd8fa33f9cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:chi-v3-closed-form-proof' → expected 'chi_v3_closed_form_proof'; Lean declares: chi_V3_beta_p, chi_V3_beta_n, chi_V3_difference_factored, chi_V3_difference_polynomial, chi_V3_difference_eq_factored.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "bd09c24c88e9",
+          "ts": "9f871b9849b6",
+          "lean": "7bd8fa33f9cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:chi-v3-closed-form-proof' → expected 'chi_v3_closed_form_proof'; Lean declares: chi_V3_beta_p, chi_V3_beta_n, chi_V3_difference_factored, chi_V3_difference_polynomial, chi_V3_difference_eq_factored.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1249,5 +1281,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-28T15:40:01.326Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

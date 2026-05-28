@@ -1841,6 +1841,38 @@
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
         "notes": "Label 'prop:antiparticle-crossing-reversal' → expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "0e45a91f4d0d",
+          "ts": "a14b03082474",
+          "lean": "46dd44d0df68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:antiparticle-crossing-reversal' → expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "0e45a91f4d0d",
+          "ts": "a14b03082474",
+          "lean": "46dd44d0df68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:antiparticle-crossing-reversal' → expected 'antiparticle_crossing_reversal'; Lean declares: R_q, q_param, q_inv_param, KnotComposite, KnotComposite.crossingEnergy.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1903,5 +1935,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-28T15:40:01.326Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }
