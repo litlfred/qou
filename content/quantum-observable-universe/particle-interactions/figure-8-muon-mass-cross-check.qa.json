@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.lean"
   },
   "source_hashes": {
-    "md": "4a967b2773f0",
-    "ts": "e78490069579",
+    "md": "25c2ee210e42",
+    "ts": "427c0350cc7b",
     "lean": "2929a16d580c"
   },
   "criteria": {
@@ -1176,7 +1176,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:figure-8-muon-mass-cross-check' \u2192 expected 'figure_8_muon_mass_cross_check'; Lean declares: vol_4_1, hbarQ, hbarQSq, muonRatioFromVol, cal2_identity_pinned.... Structural match via content."
+        "notes": "Label 'rem:figure-8-muon-mass-cross-check' → expected 'figure_8_muon_mass_cross_check'; Lean declares: vol_4_1, hbarQ, hbarQSq, muonRatioFromVol, cal2_identity_pinned.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "25c2ee210e42",
+          "ts": "427c0350cc7b",
+          "lean": "2929a16d580c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:figure-8-muon-mass-cross-check' → expected 'figure_8_muon_mass_cross_check'; Lean declares: vol_4_1, hbarQ, hbarQSq, muonRatioFromVol, cal2_identity_pinned.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "25c2ee210e42",
+          "ts": "427c0350cc7b",
+          "lean": "2929a16d580c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:figure-8-muon-mass-cross-check' → expected 'figure_8_muon_mass_cross_check'; Lean declares: vol_4_1, hbarQ, hbarQSq, muonRatioFromVol, cal2_identity_pinned.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "25c2ee210e42",
+          "ts": "427c0350cc7b",
+          "lean": "2929a16d580c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:figure-8-muon-mass-cross-check' → expected 'figure_8_muon_mass_cross_check'; Lean declares: vol_4_1, hbarQ, hbarQSq, muonRatioFromVol, cal2_identity_pinned.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1281,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

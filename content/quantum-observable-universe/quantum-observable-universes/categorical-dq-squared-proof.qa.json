@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "1058965cf373",
     "ts": "7ecbdd68b89d",
-    "lean": "edc63aabd153"
+    "lean": "3ce4edc0ee31"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1140,7 +1140,71 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prf:categorical-dq-squared' \u2192 expected 'prf:categorical_dq_squared'; Lean declares: categorical_dq_squared. Structural match via content."
+        "notes": "Label 'prf:categorical-dq-squared' → expected 'prf:categorical_dq_squared'; Lean declares: categorical_dq_squared. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "7ecbdd68b89d",
+          "lean": "3ce4edc0ee31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prf:categorical-dq-squared' → expected 'prf:categorical_dq_squared'; Lean declares: categorical_dq_squared. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "7ecbdd68b89d",
+          "lean": "3ce4edc0ee31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prf:categorical-dq-squared' → expected 'prf:categorical_dq_squared'; Lean declares: categorical_dq_squared. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "7ecbdd68b89d",
+          "lean": "3ce4edc0ee31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prf:categorical-dq-squared' → expected 'prf:categorical_dq_squared'; Lean declares: categorical_dq_squared. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1058965cf373",
+          "ts": "7ecbdd68b89d",
+          "lean": "3ce4edc0ee31"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T18:29:30.189Z",
+        "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
+        "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1197,5 +1261,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T18:29:30.189Z"
 }

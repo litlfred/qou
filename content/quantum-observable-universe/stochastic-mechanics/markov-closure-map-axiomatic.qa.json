@@ -9,8 +9,8 @@
   },
   "source_hashes": {
     "md": "1a777af9406f",
-    "ts": "b4f36f979dc1",
-    "lean": "17965e3b1c62"
+    "ts": "5b2b8500c567",
+    "lean": "8f37230a39e6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1176,7 +1176,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:markov-closure-map-axiomatic' \u2192 expected 'markov_closure_map_axiomatic'; Lean declares: MarkovClosureMap2Strand, can, TrackCReducedAxiom, track_C_c_3_eq_neg_two. Structural match via content."
+        "notes": "Label 'rem:markov-closure-map-axiomatic' → expected 'markov_closure_map_axiomatic'; Lean declares: MarkovClosureMap2Strand, can, TrackCReducedAxiom, track_C_c_3_eq_neg_two. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1a777af9406f",
+          "ts": "5b2b8500c567",
+          "lean": "8f37230a39e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:markov-closure-map-axiomatic' → expected 'markov_closure_map_axiomatic'; Lean declares: MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1a777af9406f",
+          "ts": "5b2b8500c567",
+          "lean": "8f37230a39e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:markov-closure-map-axiomatic' → expected 'markov_closure_map_axiomatic'; Lean declares: MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1a777af9406f",
+          "ts": "5b2b8500c567",
+          "lean": "8f37230a39e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:markov-closure-map-axiomatic' → expected 'markov_closure_map_axiomatic'; Lean declares: MarkovClosureMap2Strand, TrackCReducedAxiom, track_C_c_3_eq_neg_two. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1281,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

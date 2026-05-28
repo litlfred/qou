@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean"
   },
   "source_hashes": {
-    "md": "9bda98632fac",
-    "ts": "101b5af056e9",
+    "md": "69a75de8208b",
+    "ts": "f90302a59513",
     "lean": "65f267d14ff0"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.md:31: | $q = q_0$ (substrate \u2248 1.11) | full Hecke algebra | (production, all rows) | | content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.md:64: 1. Explicit Kashiwara \u2192 Lusztig decategorification functor in Lean. | content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.md:67: 3. D24 \u2192 \u2705 requires Lean class for the decategorification functor;"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.md:31: | $q = q_0$ (substrate ≈ 1.11) | full Hecke algebra | (production, all rows) | | content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.md:64: 1. Explicit Kashiwara → Lusztig decategorification functor in Lean. | content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.md:67: 3. D24 → ✅ requires Lean class for the decategorification functor;"
       },
       {
         "field_hash": {
@@ -1421,7 +1421,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "69a75de8208b",
+          "ts": "f90302a59513",
+          "lean": "65f267d14ff0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:lusztig-canonical-basis-q-eq-1' → expected 'lusztig_canonical_basis_q_eq_1'; Lean declares: LusztigCanonicalBasisQEq1. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "69a75de8208b",
+          "ts": "f90302a59513",
+          "lean": "65f267d14ff0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:lusztig-canonical-basis-q-eq-1' → expected 'lusztig_canonical_basis_q_eq_1'; Lean declares: LusztigCanonicalBasisQEq1. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "69a75de8208b",
+          "ts": "f90302a59513",
+          "lean": "65f267d14ff0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:lusztig-canonical-basis-q-eq-1' → expected 'lusztig_canonical_basis_q_eq_1'; Lean declares: LusztigCanonicalBasisQEq1. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1482,5 +1530,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

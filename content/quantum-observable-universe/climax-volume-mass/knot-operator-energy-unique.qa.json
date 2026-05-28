@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "d581fb990da6",
     "ts": "7128b5f3b99f",
-    "lean": "2a9c7cfe79b9"
+    "lean": "2d886dc9fa63"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:knot-operator-energy-unique' \u2192 expected 'knot_operator_energy_unique'; Lean declares: KnotOperatorEnergy.shadowPrice_unique. Structural match via content."
+        "notes": "Label 'prop:knot-operator-energy-unique' → expected 'knot_operator_energy_unique'; Lean declares: KnotOperatorEnergy.shadowPrice_unique. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "d581fb990da6",
+          "ts": "7128b5f3b99f",
+          "lean": "2d886dc9fa63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:knot-operator-energy-unique' → expected 'knot_operator_energy_unique'; Lean declares: KnotOperatorEnergy.shadowPrice_canonical, KnotOperatorEnergy.shadowPrice_unique. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "d581fb990da6",
+          "ts": "7128b5f3b99f",
+          "lean": "2d886dc9fa63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:knot-operator-energy-unique' → expected 'knot_operator_energy_unique'; Lean declares: KnotOperatorEnergy.shadowPrice_canonical, KnotOperatorEnergy.shadowPrice_unique. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "d581fb990da6",
+          "ts": "7128b5f3b99f",
+          "lean": "2d886dc9fa63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:knot-operator-energy-unique' → expected 'knot_operator_energy_unique'; Lean declares: KnotOperatorEnergy.shadowPrice_canonical, KnotOperatorEnergy.shadowPrice_unique. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1935,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

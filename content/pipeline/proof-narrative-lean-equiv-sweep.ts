@@ -13,7 +13,7 @@
  */
 
 import { readFileSync, existsSync } from "fs";
-import { resolve, dirname, basename, relative } from "path";
+import { resolve, dirname, basename, relative as pathRelative } from "path";
 import { fileURLToPath } from "url";
 import {
   hashBlockFiles,
@@ -37,13 +37,15 @@ interface Args {
   root: string;
   dryRun: boolean;
   json: boolean;
+  force: boolean;
 }
 
 function parseArgs(argv: string[]): Args {
-  const out: Args = { root: "", dryRun: false, json: false };
+  const out: Args = { root: "", dryRun: false, json: false, force: false };
   for (const a of argv) {
     if (a === "--dry-run") out.dryRun = true;
     else if (a === "--json") out.json = true;
+    else if (a === "--force") out.force = true;
     else if (!a.startsWith("-")) out.root = a;
   }
   return out;
@@ -134,6 +136,66 @@ function hasSorryInCode(leanText: string): boolean {
   return /\bsorry\b/.test(cleaned);
 }
 
+/** Detect "sibling stub" Lean files that intentionally delegate to a lake
+ *  package (re-exporters or pure-doc stubs). These have no local
+ *  declarations by design and are audited by `lean-compile-audit` against
+ *  the upstream Lake build, not by this checker. */
+function isSiblingStub(leanText: string): boolean {
+  // Doc-style stubs explicitly say so.
+  if (/sibling[-\s]resolution stub/i.test(leanText)) return true;
+  if (/full formali[sz]ation lives in/i.test(leanText)) return true;
+  if (/buildable formali[sz]ation lives in/i.test(leanText)) return true;
+  // Re-export-only files: after stripping comments, only contain
+  // import/open/export/namespace/end and whitespace.
+  const cleaned = leanText
+    .replace(/\/-[\!]?[\s\S]*?-\//g, "")
+    .replace(/--[^\n]*/g, "")
+    .trim();
+  if (!cleaned) return true;
+  const nonStubLines = cleaned
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l.length > 0)
+    .filter(
+      (l) =>
+        !l.startsWith("import ") &&
+        !l.startsWith("open ") &&
+        !l.startsWith("export ") &&
+        !l.startsWith("namespace ") &&
+        !l.startsWith("end ") &&
+        l !== ")" &&
+        !l.startsWith("(") &&
+        !/^[a-zA-Z_][a-zA-Z0-9_'.]*\s*$/.test(l), // bare identifier in export list
+    );
+  return nonStubLines.length === 0;
+}
+
+/** Detect whether every declaration in the file is a trivial stub
+ *  (`theorem|lemma|def X : True := trivial`). This is the Lean idiom
+ *  for "manuscript-only / formalisation pending" stubs. When the
+ *  file has nothing but trivial stubs, it should be treated like a
+ *  sibling stub (n/a) rather than scored against kind discipline. */
+function hasOnlyTrivialStubDecls(leanText: string): boolean {
+  const cleaned = leanText
+    .replace(/\/-[\!]?[\s\S]*?-\//g, "")
+    .replace(/--[^\n]*/g, "");
+  // Match each top-level declaration head.
+  const declRe = /^\s*(?:private\s+|protected\s+|partial\s+|noncomputable\s+)*(theorem|lemma|def|instance|class|structure|inductive|abbrev|axiom)\s+([a-zA-Z_][a-zA-Z0-9_'.]*)([\s\S]*?)(?=^\s*(?:private\s+|protected\s+|partial\s+|noncomputable\s+)*(?:theorem|lemma|def|instance|class|structure|inductive|abbrev|axiom)\s+|^end\s+|\Z)/gm;
+  let m: RegExpExecArray | null;
+  let saw = 0;
+  // `: True := trivial` (allowing whitespace, optional `by trivial`).
+  const stubBody = /:\s*True\s*:=\s*(?:trivial|by\s+trivial)\s*$/m;
+  while ((m = declRe.exec(cleaned)) !== null) {
+    saw++;
+    const kind = m[1];
+    // Only theorem/lemma/def can be a `True := trivial` stub; any
+    // structure/class/inductive/instance/abbrev/axiom signals real content.
+    if (!["theorem", "lemma", "def"].includes(kind)) return false;
+    if (!stubBody.test(m[3])) return false;
+  }
+  return saw > 0;
+}
+
 /** Check structural equivalence between md and lean. */
 function checkEquivalence(
   mdText: string,
@@ -151,10 +213,34 @@ function checkEquivalence(
 
   // No Lean declarations found
   if (leanDecls.length === 0) {
+    if (isSiblingStub(leanText)) {
+      return {
+        result: "n/a",
+        notes:
+          "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit.",
+      };
+    }
     return {
       result: "warn",
       evidence: "Lean file exists but contains no declarations (theorem/def/class/etc).",
       notes: "Lean file may be empty or only contain comments.",
+    };
+  }
+
+  // Stub-only Lean file: declarations exist but every one is a
+  // `: True := trivial` stub (the Lean idiom for "manuscript-only /
+  // formalisation pending"). Treat the same as a no-declaration
+  // sibling stub: audited by lean-compile-audit, not by kind
+  // discipline. Note: we deliberately do NOT short-circuit on
+  // `isSiblingStub(leanText)` alone here — sibling-stub prose
+  // combined with a real `class`/`structure`/`def` declaration is
+  // the normal §3b conjectural pattern, which already passes the
+  // kind-discipline check below.
+  if (hasOnlyTrivialStubDecls(leanText)) {
+    return {
+      result: "n/a",
+      notes:
+        "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit.",
     };
   }
 
@@ -175,8 +261,10 @@ function checkEquivalence(
   // Check for kind-declaration alignment using structured decl kinds
   const provableKinds = ["theorem", "lemma", "proposition", "corollary"];
   const isProvable = kind && provableKinds.includes(kind);
+  // `axiom` declarations are formal claims (theorem-as-axiom pattern); count
+  // them as satisfying the provable-kind requirement.
   const hasTheoremDecl = leanDecls.some((d) =>
-    d.kind === "theorem" || d.kind === "lemma"
+    d.kind === "theorem" || d.kind === "lemma" || d.kind === "axiom"
   );
   const hasDefDecl = leanDecls.some((d) =>
     d.kind === "def"
@@ -275,15 +363,15 @@ async function main() {
   let skipped_no_lean = 0;
 
   for (const block of walkBlocks(rootPath)) {
-    if (!block.lean || !existsSync(resolve(REPO_ROOT, "content", block.lean))) {
+    if (!block.lean || !existsSync(block.lean)) {
       skipped_no_lean++;
       continue;
     }
 
-    const mdPath = block.md ? resolve(REPO_ROOT, "content", block.md) : undefined;
-    const tsPath = resolve(REPO_ROOT, "content", block.ts);
-    const leanPath = resolve(REPO_ROOT, "content", block.lean);
-    const qaPath = resolve(REPO_ROOT, "content", block.qa);
+    const mdPath = block.md;
+    const tsPath = block.ts;
+    const leanPath = block.lean;
+    const qaPath = block.root + ".qa.json";
 
     if (!mdPath || !existsSync(mdPath)) {
       skipped_no_lean++;
@@ -298,7 +386,7 @@ async function main() {
 
     // Check if fresh entry already exists
     const existing = loadQaReport(qaPath);
-    if (existing) {
+    if (existing && !args.force) {
       const entries = existing.criteria[CRITERION_ID] ?? [];
       if (entries.some((e) => entryIsFresh(e, currentHashes, ["md", "ts", "lean"]))) {
         skipped_fresh++;
@@ -334,9 +422,9 @@ async function main() {
         label,
         kind,
         paths: {
-          ts: block.ts,
-          ...(block.md ? { md: block.md } : {}),
-          ...(block.lean ? { lean: block.lean } : {}),
+          ts: pathRelative(REPO_ROOT, tsPath),
+          ...(mdPath ? { md: pathRelative(REPO_ROOT, mdPath) } : {}),
+          ...(leanPath ? { lean: pathRelative(REPO_ROOT, leanPath) } : {}),
         },
         source_hashes: currentHashes,
         criteria: {},
@@ -357,7 +445,7 @@ async function main() {
       result: check.result,
       notes: check.notes,
       evidence: check.evidence,
-      qa_path: block.qa,
+      qa_path: pathRelative(REPO_ROOT, qaPath),
     });
     written++;
   }

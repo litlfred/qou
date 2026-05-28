@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/particle-interactions/lambda-scale-substrate-form.lean"
   },
   "source_hashes": {
-    "md": "53914c229986",
-    "ts": "4471cade298e",
-    "lean": "8440271bb951"
+    "md": "ac4f7eca887c",
+    "ts": "77ca08f6f95e",
+    "lean": "0d43967d00bf"
   },
   "criteria": {
     "canonical-no-numerology": [
@@ -28,7 +28,7 @@
         },
         "reviewed_at": "2026-05-24T02:12:10.098Z",
         "reviewed_sha": "7bb10a5c67ca38faa3f30765e9675c20a5b3112d",
-        "notes": "False positive: 'PSLQ-style numerical coincidence' \u2014 explicitly classifying a near-match as coincidence per the CAL-4 discipline."
+        "notes": "False positive: 'PSLQ-style numerical coincidence' — explicitly classifying a near-match as coincidence per the CAL-4 discipline."
       },
       {
         "field_hash": {
@@ -164,7 +164,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md:3: > \u26a0\ufe0f **Status (revised 2026-05-24 \u2014 \u03bb_scale ABSORBED INTO `Geom_full`).**"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md:3: > ⚠️ **Status (revised 2026-05-24 — λ_scale ABSORBED INTO `Geom_full`).**"
       },
       {
         "field_hash": {
@@ -1438,7 +1438,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Per \u00a73b, conjectures should use class axiomatisation pattern."
+        "notes": "Per §3b, conjectures should use class axiomatisation pattern."
+      },
+      {
+        "field_hash": {
+          "md": "ac4f7eca887c",
+          "ts": "77ca08f6f95e",
+          "lean": "0d43967d00bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:lambda-scale-substrate-form' → expected 'lambda_scale_substrate_form'; Lean declares: heckeDeformation, lambdaA_qForm, lambdaA_hForm, lambdaA_qForm_eq_hForm, lambdaA_c0.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "ac4f7eca887c",
+          "ts": "77ca08f6f95e",
+          "lean": "0d43967d00bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:lambda-scale-substrate-form' → expected 'lambda_scale_substrate_form'; Lean declares: heckeDeformation, lambdaA_qForm, lambdaA_hForm, lambdaA_qForm_eq_hForm, lambdaA_c0.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "ac4f7eca887c",
+          "ts": "77ca08f6f95e",
+          "lean": "0d43967d00bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:lambda-scale-substrate-form' → expected 'lambda_scale_substrate_form'; Lean declares: heckeDeformation, lambdaA_qForm, lambdaA_hForm, lambdaA_qForm_eq_hForm, lambdaA_c0.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1501,5 +1549,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

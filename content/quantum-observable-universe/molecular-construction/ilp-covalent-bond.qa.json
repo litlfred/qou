@@ -1824,7 +1824,39 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:ilp-covalent-bond' \u2192 expected 'ilp_covalent_bond'; Lean declares: inverse_trefoil, covalent_bond_is_ilp_optimal. Structural match via content."
+        "notes": "Label 'prop:ilp-covalent-bond' → expected 'ilp_covalent_bond'; Lean declares: inverse_trefoil, covalent_bond_is_ilp_optimal. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "aca2e0059589",
+          "ts": "bedb5dbbb62d",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:ilp-covalent-bond' → expected 'ilp_covalent_bond'; Lean declares: inverse_trefoil, covalent_bond_is_ilp_optimal, h2_binding_energy. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "aca2e0059589",
+          "ts": "bedb5dbbb62d",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:ilp-covalent-bond' → expected 'ilp_covalent_bond'; Lean declares: inverse_trefoil, covalent_bond_is_ilp_optimal, h2_binding_energy. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1919,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

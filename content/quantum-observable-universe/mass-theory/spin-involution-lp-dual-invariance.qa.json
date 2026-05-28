@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-application/spin-involution-lp-dual-invariance.lean"
   },
   "source_hashes": {
-    "md": "1d196b3b0d1b",
-    "ts": "782ecdf0011c",
+    "md": "9d067f19545d",
+    "ts": "878a609aa150",
     "lean": "e7dc364583e7"
   },
   "criteria": {
@@ -1825,6 +1825,54 @@
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
         "notes": "Block kind 'undefined' has no provable Lean content expected."
+      },
+      {
+        "field_hash": {
+          "md": "9d067f19545d",
+          "ts": "878a609aa150",
+          "lean": "e7dc364583e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Block kind 'undefined' has no provable Lean content expected."
+      },
+      {
+        "field_hash": {
+          "md": "9d067f19545d",
+          "ts": "878a609aa150",
+          "lean": "e7dc364583e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Block kind 'undefined' has no provable Lean content expected."
+      },
+      {
+        "field_hash": {
+          "md": "9d067f19545d",
+          "ts": "878a609aa150",
+          "lean": "e7dc364583e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Block kind 'undefined' has no provable Lean content expected."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1935,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

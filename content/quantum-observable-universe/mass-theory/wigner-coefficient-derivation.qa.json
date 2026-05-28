@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-application/wigner-coefficient-derivation.lean"
   },
   "source_hashes": {
-    "md": "b5d0f6c62b4a",
-    "ts": "cc4517bed248",
+    "md": "894d9f278f62",
+    "ts": "b0ceb4547e7d",
     "lean": "92b56b018afc"
   },
   "criteria": {
@@ -1824,7 +1824,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:wigner-coefficient-derivation' \u2192 expected 'wigner_coefficient_derivation'; Lean declares: qFactorial, wignerCoefficient, wigner_coefficient, QIntegerMassFormula, wigner_coefficient_conditional. Structural match via content."
+        "notes": "Label 'prop:wigner-coefficient-derivation' → expected 'wigner_coefficient_derivation'; Lean declares: qFactorial, wignerCoefficient, wigner_coefficient, QIntegerMassFormula, wigner_coefficient_conditional. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "894d9f278f62",
+          "ts": "b0ceb4547e7d",
+          "lean": "92b56b018afc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:wigner-coefficient-derivation' → expected 'wigner_coefficient_derivation'; Lean declares: qFactorial, wignerCoefficient, wigner_coefficient_axiom, wigner_coefficient, QIntegerMassFormula.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "894d9f278f62",
+          "ts": "b0ceb4547e7d",
+          "lean": "92b56b018afc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:wigner-coefficient-derivation' → expected 'wigner_coefficient_derivation'; Lean declares: qFactorial, wignerCoefficient, wigner_coefficient_axiom, wigner_coefficient, QIntegerMassFormula.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "894d9f278f62",
+          "ts": "b0ceb4547e7d",
+          "lean": "92b56b018afc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:wigner-coefficient-derivation' → expected 'wigner_coefficient_derivation'; Lean declares: qFactorial, wignerCoefficient, wigner_coefficient_axiom, wigner_coefficient, QIntegerMassFormula.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1935,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "c68489859203",
-    "ts": "e71be028c046",
+    "ts": "38671efc8dea",
     "lean": "b1bcae848e7f"
   },
   "criteria": {
@@ -1325,7 +1325,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'def:two-row-stratum' \u2192 expected 'two_row_stratum'; Lean declares: IsTwoRow, (parts, isTwoRow_nil, isTwoRow_singleton, isTwoRow_pair.... Structural match via content."
+        "notes": "Label 'def:two-row-stratum' → expected 'two_row_stratum'; Lean declares: IsTwoRow, (parts, isTwoRow_nil, isTwoRow_singleton, isTwoRow_pair.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "c68489859203",
+          "ts": "38671efc8dea",
+          "lean": "b1bcae848e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'def:two-row-stratum' → expected 'two_row_stratum'; Lean declares: IsTwoRow, isTwoRow_nil, isTwoRow_singleton, isTwoRow_pair, not_isTwoRow_triple.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "c68489859203",
+          "ts": "38671efc8dea",
+          "lean": "b1bcae848e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'def:two-row-stratum' → expected 'two_row_stratum'; Lean declares: IsTwoRow, isTwoRow_nil, isTwoRow_singleton, isTwoRow_pair, not_isTwoRow_triple.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "c68489859203",
+          "ts": "38671efc8dea",
+          "lean": "b1bcae848e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'def:two-row-stratum' → expected 'two_row_stratum'; Lean declares: IsTwoRow, isTwoRow_nil, isTwoRow_singleton, isTwoRow_pair, not_isTwoRow_triple.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1388,5 +1436,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

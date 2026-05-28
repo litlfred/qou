@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.lean"
   },
   "source_hashes": {
-    "md": "1abb25c55648",
-    "ts": "15a058e494a4",
+    "md": "655f557a2a4c",
+    "ts": "8ba99445e5e2",
     "lean": "171c83f9bf15"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:61: color-sheet pair weight from the S\u2085/SO(3) fiber action, **normalised | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:141: The class is *inhabited* by the S\u2085/SO(3) fiber data once | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:167: CPT symmetry on the color sheets, or from a finer S\u2085 orbit | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:169: 3. **\u2074He magic-shell saturation.** Does the color-tube weighting | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:183: - \u2074He magic-shell color-tube reading:"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:61: color-sheet pair weight from the S₅/SO(3) fiber action, **normalised | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:141: The class is *inhabited* by the S₅/SO(3) fiber data once | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:167: CPT symmetry on the color sheets, or from a finer S₅ orbit | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:169: 3. **⁴He magic-shell saturation.** Does the color-tube weighting | content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md:183: - ⁴He magic-shell color-tube reading:"
       },
       {
         "field_hash": {
@@ -1438,7 +1438,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "655f557a2a4c",
+          "ts": "8ba99445e5e2",
+          "lean": "171c83f9bf15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:inter-nucleon-channel-color-tube' → expected 'inter_nucleon_channel_color_tube'; Lean declares: InterNucleonChannelColorTube. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "655f557a2a4c",
+          "ts": "8ba99445e5e2",
+          "lean": "171c83f9bf15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:inter-nucleon-channel-color-tube' → expected 'inter_nucleon_channel_color_tube'; Lean declares: InterNucleonChannelColorTube. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "655f557a2a4c",
+          "ts": "8ba99445e5e2",
+          "lean": "171c83f9bf15"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:inter-nucleon-channel-color-tube' → expected 'inter_nucleon_channel_color_tube'; Lean declares: InterNucleonChannelColorTube. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1499,5 +1547,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

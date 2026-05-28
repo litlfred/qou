@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/statistics-symmetrisation/wigner-su4-from-spin-isospin.lean"
   },
   "source_hashes": {
-    "md": "b48bc23b8c08",
-    "ts": "cece97a0bc70",
+    "md": "7853ef9e047b",
+    "ts": "ed1dc18b1022",
     "lean": "3d58dbac08ad"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:25: Then the **combined symmetry** SU(2)_S \u00d7 SU(2)_I = SU(4) acts on | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:26: the **4-dimensional internal space** of each nucleon (spin \u00d7 isospin | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:48: the magic A\u00b78G closure as the SU(4) supermultiplet structure**: | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:55: | **4** | $\\mathbf{4}^{\\otimes 4} \\supset \\mathbf{1}$ (first totally-antisym) | **magic A\u00b78G** closure | | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:60: The conjectural identification: the **magic A\u00b78G constant** equals"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:25: Then the **combined symmetry** SU(2)_S × SU(2)_I = SU(4) acts on | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:26: the **4-dimensional internal space** of each nucleon (spin × isospin | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:48: the magic A·8G closure as the SU(4) supermultiplet structure**: | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:55: | **4** | $\\mathbf{4}^{\\otimes 4} \\supset \\mathbf{1}$ (first totally-antisym) | **magic A·8G** closure | | content/quantum-observable-universe/braids-and-knots/wigner-su4-from-spin-isospin.md:60: The conjectural identification: the **magic A·8G constant** equals"
       },
       {
         "field_hash": {
@@ -1455,7 +1455,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "7853ef9e047b",
+          "ts": "ed1dc18b1022",
+          "lean": "3d58dbac08ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:wigner-su4-from-spin-isospin' → expected 'wigner_su4_from_spin_isospin'; Lean declares: WignerSu4FromSpinIsospin. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "7853ef9e047b",
+          "ts": "ed1dc18b1022",
+          "lean": "3d58dbac08ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:wigner-su4-from-spin-isospin' → expected 'wigner_su4_from_spin_isospin'; Lean declares: WignerSu4FromSpinIsospin. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "7853ef9e047b",
+          "ts": "ed1dc18b1022",
+          "lean": "3d58dbac08ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:wigner-su4-from-spin-isospin' → expected 'wigner_su4_from_spin_isospin'; Lean declares: WignerSu4FromSpinIsospin. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1516,5 +1564,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/p-from-braid-mirror.lean"
   },
   "source_hashes": {
-    "md": "8e83aa58addb",
-    "ts": "599beccd411f",
+    "md": "5bb4ad1cd170",
+    "ts": "58e07f34a967",
     "lean": "baed9d814c54"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/p-from-braid-mirror.md:113: 2. **D7 \u2192 \u2705** requires the Lean class instance + a `prop:` block | content/quantum-observable-universe/braids-and-knots/p-from-braid-mirror.md:114: stating bar = P \u00b7 C \u00b7 T as a derivable identity. | content/quantum-observable-universe/braids-and-knots/p-from-braid-mirror.md:119: + \u00a72 Cluster A (CPT decomposition D5 \u2192 D6 + D7 + D8)"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/p-from-braid-mirror.md:113: 2. **D7 → ✅** requires the Lean class instance + a `prop:` block | content/quantum-observable-universe/braids-and-knots/p-from-braid-mirror.md:114: stating bar = P · C · T as a derivable identity. | content/quantum-observable-universe/braids-and-knots/p-from-braid-mirror.md:119: + §2 Cluster A (CPT decomposition D5 → D6 + D7 + D8)"
       },
       {
         "field_hash": {
@@ -1455,7 +1455,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "5bb4ad1cd170",
+          "ts": "58e07f34a967",
+          "lean": "baed9d814c54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:p-from-braid-mirror' → expected 'p_from_braid_mirror'; Lean declares: PFromBraidMirror. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "5bb4ad1cd170",
+          "ts": "58e07f34a967",
+          "lean": "baed9d814c54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:p-from-braid-mirror' → expected 'p_from_braid_mirror'; Lean declares: PFromBraidMirror. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "5bb4ad1cd170",
+          "ts": "58e07f34a967",
+          "lean": "baed9d814c54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:p-from-braid-mirror' → expected 'p_from_braid_mirror'; Lean declares: PFromBraidMirror. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1516,5 +1564,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

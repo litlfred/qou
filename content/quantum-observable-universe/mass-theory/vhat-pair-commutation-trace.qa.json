@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-application/vhat-pair-commutation-trace.lean"
   },
   "source_hashes": {
-    "md": "67a6f4b3d859",
-    "ts": "2980e0b08981",
-    "lean": "d2d0f5b8b343"
+    "md": "c97e1c31e578",
+    "ts": "8d39a8ee5429",
+    "lean": "40685aaac9bb"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'lem:vhat-pair-commutation-trace' \u2192 expected 'vhat_pair_commutation_trace'; Lean declares: VhatPairCommutationTrace, trace_symmetric. Structural match via content."
+        "notes": "Label 'lem:vhat-pair-commutation-trace' → expected 'vhat_pair_commutation_trace'; Lean declares: VhatPairCommutationTrace, trace_symmetric. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "c97e1c31e578",
+          "ts": "8d39a8ee5429",
+          "lean": "40685aaac9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'lem:vhat-pair-commutation-trace' → expected 'vhat_pair_commutation_trace'; Lean declares: VhatPairCommutationTrace, trace_symmetric. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "c97e1c31e578",
+          "ts": "8d39a8ee5429",
+          "lean": "40685aaac9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'lem:vhat-pair-commutation-trace' → expected 'vhat_pair_commutation_trace'; Lean declares: VhatPairCommutationTrace, trace_symmetric. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "c97e1c31e578",
+          "ts": "8d39a8ee5429",
+          "lean": "40685aaac9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'lem:vhat-pair-commutation-trace' → expected 'vhat_pair_commutation_trace'; Lean declares: VhatPairCommutationTrace, trace_symmetric. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1935,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

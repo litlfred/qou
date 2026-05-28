@@ -1176,7 +1176,39 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:glossary-quantum-flatness' \u2192 expected 'glossary_quantum_flatness'; Lean declares: QuantumFlatness. Structural match via content."
+        "notes": "Label 'rem:glossary-quantum-flatness' → expected 'glossary_quantum_flatness'; Lean declares: QuantumFlatness. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1a986a1a880d",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:glossary-quantum-flatness' → expected 'glossary_quantum_flatness'; Lean declares: QuantumFlatness. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1a986a1a880d",
+          "ts": "b4e10f9532d7",
+          "lean": "22773c80d61c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:glossary-quantum-flatness' → expected 'glossary_quantum_flatness'; Lean declares: QuantumFlatness. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1265,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "26f01cb8be60",
-    "ts": "0b2c89112c60",
+    "ts": "8abf689a15d3",
     "lean": "d3174b3fdae4"
   },
   "criteria": {
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.md:4: group $\\widehat{\\mathbb{Z}/2} \\cong \\mathbb{Z}/2$ \u2014 characters \u2194 | content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.md:35: Kashiwara crystal q \u2192 0 / q \u2192 \u221e\" as a research direction. This | content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.md:52: D20 \u2192 \u2705 would require formalising the abelianisation map and the"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.md:4: group $\\widehat{\\mathbb{Z}/2} \\cong \\mathbb{Z}/2$ — characters ↔ | content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.md:35: Kashiwara crystal q → 0 / q → ∞\" as a research direction. This | content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.md:52: D20 → ✅ would require formalising the abelianisation map and the"
       },
       {
         "field_hash": {
@@ -1421,7 +1421,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "26f01cb8be60",
+          "ts": "8abf689a15d3",
+          "lean": "d3174b3fdae4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:pontryagin-dual-coxeter-character' → expected 'pontryagin_dual_coxeter_character'; Lean declares: PontryaginDualCoxeterCharacter. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "26f01cb8be60",
+          "ts": "8abf689a15d3",
+          "lean": "d3174b3fdae4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:pontryagin-dual-coxeter-character' → expected 'pontryagin_dual_coxeter_character'; Lean declares: PontryaginDualCoxeterCharacter. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "26f01cb8be60",
+          "ts": "8abf689a15d3",
+          "lean": "d3174b3fdae4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:pontryagin-dual-coxeter-character' → expected 'pontryagin_dual_coxeter_character'; Lean declares: PontryaginDualCoxeterCharacter. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1482,5 +1530,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean"
   },
   "source_hashes": {
-    "md": "f8f6419a0990",
-    "ts": "8dcb8c947c30",
-    "lean": "d0707e89c8bc"
+    "md": "7f073fa99fc1",
+    "ts": "fec542798a15",
+    "lean": "08f15df4355c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -112,7 +112,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md:1: > **\u26a0\ufe0f SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
+        "evidence": "quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md:1: > **⚠️ SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
       },
       {
         "field_hash": {
@@ -1612,7 +1612,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "7f073fa99fc1",
+          "ts": "fec542798a15",
+          "lean": "08f15df4355c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:phi-q-tower-jsj-bridge' → expected 'phi_q_tower_jsj_bridge'; Lean declares: rho, rho_pos, TowerSummandRealization, PerPieceBridge, bridge.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "7f073fa99fc1",
+          "ts": "fec542798a15",
+          "lean": "08f15df4355c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:phi-q-tower-jsj-bridge' → expected 'phi_q_tower_jsj_bridge'; Lean declares: rho, rho_pos, TowerSummandRealization, PerPieceBridge, bridge.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "7f073fa99fc1",
+          "ts": "fec542798a15",
+          "lean": "08f15df4355c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:phi-q-tower-jsj-bridge' → expected 'phi_q_tower_jsj_bridge'; Lean declares: rho, rho_pos, TowerSummandRealization, PerPieceBridge, bridge.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1675,5 +1723,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

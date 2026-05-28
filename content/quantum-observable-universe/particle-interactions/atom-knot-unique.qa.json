@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "b9c5dbfe8bdd",
     "ts": "9959e9bff925",
-    "lean": "c4c2886e3764"
+    "lean": "11e3b2569183"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:atom-knot-unique' \u2192 expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
+        "notes": "Label 'prop:atom-knot-unique' → expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:atom-knot-unique' → expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:atom-knot-unique' → expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:atom-knot-unique' → expected 'atom_knot_unique'; Lean declares: AtomKnot.unique_up_to_markov. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1935,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

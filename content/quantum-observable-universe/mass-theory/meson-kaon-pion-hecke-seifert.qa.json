@@ -1,0 +1,68 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:meson-kaon-pion-hecke-seifert",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.ts",
+    "md": "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.md",
+    "lean": "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.lean"
+  },
+  "source_hashes": {
+    "md": "3afb8c88d82e",
+    "ts": "c32346ca48d5",
+    "lean": "11711756de38"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "3afb8c88d82e",
+          "ts": "c32346ca48d5",
+          "lean": "11711756de38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:meson-kaon-pion-hecke-seifert' → expected 'meson_kaon_pion_hecke_seifert'; Lean declares: seifertEuler, seifert_ratio_T25_T23, chi_21, chi_21_odd, mesonMassRatio.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "3afb8c88d82e",
+          "ts": "c32346ca48d5",
+          "lean": "11711756de38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:meson-kaon-pion-hecke-seifert' → expected 'meson_kaon_pion_hecke_seifert'; Lean declares: seifertEuler, seifert_ratio_T25_T23, chi_21, chi_21_odd, mesonMassRatio.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "3afb8c88d82e",
+          "ts": "c32346ca48d5",
+          "lean": "11711756de38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:meson-kaon-pion-hecke-seifert' → expected 'meson_kaon_pion_hecke_seifert'; Lean declares: seifertEuler, seifert_ratio_T25_T23, chi_21, chi_21_odd, mesonMassRatio.... Structural match via content."
+      }
+    ]
+  },
+  "updated_at": "2026-05-28T15:44:09.524Z"
+}

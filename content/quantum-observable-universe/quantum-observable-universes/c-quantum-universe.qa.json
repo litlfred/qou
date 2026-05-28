@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "81bfeb11fc5b",
     "ts": "62f71e47d0e4",
-    "lean": "e5bfeff4c169"
+    "lean": "91536f1676aa"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1140,7 +1140,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'ex:c-quantum-universe' \u2192 expected 'c_quantum_universe'; Lean declares: R_q, q_param, q_inv_param, CRManifoldData. Structural match via content."
+        "notes": "Label 'ex:c-quantum-universe' → expected 'c_quantum_universe'; Lean declares: R_q, q_param, q_inv_param, CRManifoldData. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "81bfeb11fc5b",
+          "ts": "62f71e47d0e4",
+          "lean": "91536f1676aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'ex:c-quantum-universe' → expected 'c_quantum_universe'; Lean declares: R_q, q_param, q_inv_param, CRManifoldData. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "81bfeb11fc5b",
+          "ts": "62f71e47d0e4",
+          "lean": "91536f1676aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'ex:c-quantum-universe' → expected 'c_quantum_universe'; Lean declares: R_q, q_param, q_inv_param, CRManifoldData. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "81bfeb11fc5b",
+          "ts": "62f71e47d0e4",
+          "lean": "91536f1676aa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'ex:c-quantum-universe' → expected 'c_quantum_universe'; Lean declares: R_q, q_param, q_inv_param, CRManifoldData. Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1197,5 +1245,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

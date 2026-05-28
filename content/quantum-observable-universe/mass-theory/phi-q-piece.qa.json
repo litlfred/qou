@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "ccf6449f8389",
-    "ts": "bd2dfa403cd2",
+    "ts": "eaf252c778a2",
     "lean": "1b5fbdf4cc5f"
   },
   "criteria": {
@@ -1325,7 +1325,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'def:phi-q-piece' \u2192 expected 'phi_q_piece'; Lean declares: Braid, SubLink, subLink, subLink_empty. Structural match via content."
+        "notes": "Label 'def:phi-q-piece' → expected 'phi_q_piece'; Lean declares: Braid, SubLink, subLink, subLink_empty. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "ccf6449f8389",
+          "ts": "eaf252c778a2",
+          "lean": "1b5fbdf4cc5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'def:phi-q-piece' → expected 'phi_q_piece'; Lean declares: Braid, SubLink, subLink, subLink_empty. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "ccf6449f8389",
+          "ts": "eaf252c778a2",
+          "lean": "1b5fbdf4cc5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'def:phi-q-piece' → expected 'phi_q_piece'; Lean declares: Braid, SubLink, subLink, subLink_empty. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "ccf6449f8389",
+          "ts": "eaf252c778a2",
+          "lean": "1b5fbdf4cc5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'def:phi-q-piece' → expected 'phi_q_piece'; Lean declares: Braid, SubLink, subLink, subLink_empty. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1388,5 +1436,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

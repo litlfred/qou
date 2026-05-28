@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "0c0491ea572a",
     "ts": "f2dffc419b9a",
-    "lean": "a79928e85692"
+    "lean": "6c65f701e0cb"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1325,7 +1325,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'def:unstable-atom' \u2192 expected 'unstable_atom'; Lean declares: UnstableAtom. Structural match via content."
+        "notes": "Label 'def:unstable-atom' → expected 'unstable_atom'; Lean declares: UnstableAtom. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "0c0491ea572a",
+          "ts": "f2dffc419b9a",
+          "lean": "6c65f701e0cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'def:unstable-atom' → expected 'unstable_atom'; Lean declares: UnstableAtom. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "0c0491ea572a",
+          "ts": "f2dffc419b9a",
+          "lean": "6c65f701e0cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'def:unstable-atom' → expected 'unstable_atom'; Lean declares: UnstableAtom. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "0c0491ea572a",
+          "ts": "f2dffc419b9a",
+          "lean": "6c65f701e0cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'def:unstable-atom' → expected 'unstable_atom'; Lean declares: UnstableAtom. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1388,5 +1436,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

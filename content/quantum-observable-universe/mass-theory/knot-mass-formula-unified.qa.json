@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean"
   },
   "source_hashes": {
-    "md": "e5dd5488e4bb",
-    "ts": "2d5a51c83d7f",
+    "md": "5f473f9c55d0",
+    "ts": "d5e8a0954324",
     "lean": "616081475856"
   },
   "criteria": {
@@ -1824,7 +1824,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'thm:knot-mass-formula-unified' \u2192 expected 'knot_mass_formula_unified'; Lean declares: descendedMarkov, braneTower, electronMass, frobeniusCoCasimirTraceFallback, frobeniusCoCasimirTrace.... Structural match via content."
+        "notes": "Label 'thm:knot-mass-formula-unified' → expected 'knot_mass_formula_unified'; Lean declares: descendedMarkov, braneTower, electronMass, frobeniusCoCasimirTraceFallback, frobeniusCoCasimirTrace.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "5f473f9c55d0",
+          "ts": "d5e8a0954324",
+          "lean": "616081475856"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'thm:knot-mass-formula-unified' → expected 'knot_mass_formula_unified'; Lean declares: descendedMarkov, braneTower, electronMass, frobeniusCoCasimirTraceFallback, frobeniusCoCasimirTrace.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "5f473f9c55d0",
+          "ts": "d5e8a0954324",
+          "lean": "616081475856"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'thm:knot-mass-formula-unified' → expected 'knot_mass_formula_unified'; Lean declares: descendedMarkov, braneTower, electronMass, frobeniusCoCasimirTraceFallback, frobeniusCoCasimirTrace.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "5f473f9c55d0",
+          "ts": "d5e8a0954324",
+          "lean": "616081475856"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'thm:knot-mass-formula-unified' → expected 'knot_mass_formula_unified'; Lean declares: descendedMarkov, braneTower, electronMass, frobeniusCoCasimirTraceFallback, frobeniusCoCasimirTrace.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1935,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

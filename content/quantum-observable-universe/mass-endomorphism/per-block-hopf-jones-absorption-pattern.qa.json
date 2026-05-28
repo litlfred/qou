@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "b1c2c6974e3a",
-    "ts": "bf2d1d8f1ba3",
+    "ts": "8022bbf81b7f",
     "lean": "842b0edd4ff6"
   },
   "criteria": {
@@ -1176,7 +1176,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'rem:per-block-hopf-jones-absorption-pattern' \u2192 expected 'per_block_hopf_jones_absorption_pattern'; Lean declares: chi_V3_diff, chi_V21_diff, chi_V111_diff, jones_hopf_at_q1, chi_V3_diff_value_at_1.... Structural match via content."
+        "notes": "Label 'rem:per-block-hopf-jones-absorption-pattern' → expected 'per_block_hopf_jones_absorption_pattern'; Lean declares: chi_V3_diff, chi_V21_diff, chi_V111_diff, jones_hopf_at_q1, chi_V3_diff_value_at_1.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "b1c2c6974e3a",
+          "ts": "8022bbf81b7f",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'rem:per-block-hopf-jones-absorption-pattern' → expected 'per_block_hopf_jones_absorption_pattern'; Lean declares: chi_V3_diff, chi_V21_diff, chi_V111_diff, jones_hopf_at_q1, chi_V3_diff_value_at_1.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "b1c2c6974e3a",
+          "ts": "8022bbf81b7f",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:per-block-hopf-jones-absorption-pattern' → expected 'per_block_hopf_jones_absorption_pattern'; Lean declares: chi_V3_diff, chi_V21_diff, chi_V111_diff, jones_hopf_at_q1, chi_V3_diff_value_at_1.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "b1c2c6974e3a",
+          "ts": "8022bbf81b7f",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'rem:per-block-hopf-jones-absorption-pattern' → expected 'per_block_hopf_jones_absorption_pattern'; Lean declares: chi_V3_diff, chi_V21_diff, chi_V111_diff, jones_hopf_at_q1, chi_V3_diff_value_at_1.... Structural match via content."
       }
     ],
     "voice-author-notes-pollution": [
@@ -1233,5 +1281,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-26T14:25:22.698Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

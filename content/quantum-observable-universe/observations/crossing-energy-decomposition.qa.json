@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a81d1c5c56f7",
     "ts": "75e497190ca9",
-    "lean": "def455f428a5"
+    "lean": "59c2ceee07b9"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1824,7 +1824,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:crossing-energy-decomposition' \u2192 expected 'crossing_energy_decomposition'; Lean declares: symmetricWeight, antisymmetricWeight, q_decomposition, q_inv_decomposition, emStrongRatio.... Structural match via content."
+        "notes": "Label 'prop:crossing-energy-decomposition' → expected 'crossing_energy_decomposition'; Lean declares: symmetricWeight, antisymmetricWeight, q_decomposition, q_inv_decomposition, emStrongRatio.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a81d1c5c56f7",
+          "ts": "75e497190ca9",
+          "lean": "59c2ceee07b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:crossing-energy-decomposition' → expected 'crossing_energy_decomposition'; Lean declares: symmetricWeight, antisymmetricWeight, q_decomposition, q_inv_decomposition, emStrongRatio.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a81d1c5c56f7",
+          "ts": "75e497190ca9",
+          "lean": "59c2ceee07b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:crossing-energy-decomposition' → expected 'crossing_energy_decomposition'; Lean declares: symmetricWeight, antisymmetricWeight, q_decomposition, q_inv_decomposition, emStrongRatio.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a81d1c5c56f7",
+          "ts": "75e497190ca9",
+          "lean": "59c2ceee07b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:crossing-energy-decomposition' → expected 'crossing_energy_decomposition'; Lean declares: symmetricWeight, antisymmetricWeight, q_decomposition, q_inv_decomposition, emStrongRatio.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1887,5 +1935,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

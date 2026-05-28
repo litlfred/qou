@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean"
   },
   "source_hashes": {
-    "md": "4581ea5e4012",
-    "ts": "2de7d10a7660",
+    "md": "964c5e92f653",
+    "ts": "946a2b3cc729",
     "lean": "7bcb0fe78f87"
   },
   "criteria": {
@@ -1228,7 +1228,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "964c5e92f653",
+          "ts": "946a2b3cc729",
+          "lean": "7bcb0fe78f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:n-v-tower-depth-ninety' → expected 'n_v_tower_depth_ninety'; Lean declares: BraneTowerLevel, tower_depth, level_m_e, level_v, tower_depth_m_e_to_v_is_ninety. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "964c5e92f653",
+          "ts": "946a2b3cc729",
+          "lean": "7bcb0fe78f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:n-v-tower-depth-ninety' → expected 'n_v_tower_depth_ninety'; Lean declares: BraneTowerLevel, tower_depth, level_m_e, level_v, tower_depth_m_e_to_v_is_ninety. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "964c5e92f653",
+          "ts": "946a2b3cc729",
+          "lean": "7bcb0fe78f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:n-v-tower-depth-ninety' → expected 'n_v_tower_depth_ninety'; Lean declares: BraneTowerLevel, tower_depth, level_m_e, level_v, tower_depth_m_e_to_v_is_ninety. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1250,7 +1298,7 @@
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean:28: unexpected token '\u03a3'; expected '_' or identifier | content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean:35: failed to synthesize | content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean:39: failed to synthesize | content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean:77: Function expected at"
+        "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean:28: unexpected token 'Σ'; expected '_' or identifier | content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean:35: failed to synthesize | content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean:39: failed to synthesize | content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean:77: Function expected at"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1291,5 +1339,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

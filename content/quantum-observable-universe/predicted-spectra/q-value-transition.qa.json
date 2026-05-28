@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/q-value-transition.lean"
   },
   "source_hashes": {
-    "md": "14fee84df671",
+    "md": "2421fc5884e5",
     "ts": "d5b18ba28af8",
-    "lean": "683f29e5fc48"
+    "lean": "33c6b70ec1e6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1325,7 +1325,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'def:Q-value-transition' \u2192 expected 'Q_value_transition'; Lean declares: QqValue, QqValue.value, QAnomaly, hbar_q', delta_q_eff.... Structural match via content."
+        "notes": "Label 'def:Q-value-transition' → expected 'Q_value_transition'; Lean declares: QqValue, QqValue.value, QAnomaly, hbar_q', delta_q_eff.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "2421fc5884e5",
+          "ts": "d5b18ba28af8",
+          "lean": "33c6b70ec1e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:40:01.326Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'def:Q-value-transition' → expected 'Q_value_transition'; Lean declares: QqValue, QqValue.value, QAnomaly, hbar_q', delta_q_eff.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "2421fc5884e5",
+          "ts": "d5b18ba28af8",
+          "lean": "33c6b70ec1e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'def:Q-value-transition' → expected 'Q_value_transition'; Lean declares: QqValue, QqValue.value, QAnomaly, hbar_q', delta_q_eff.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "2421fc5884e5",
+          "ts": "d5b18ba28af8",
+          "lean": "33c6b70ec1e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'def:Q-value-transition' → expected 'Q_value_transition'; Lean declares: QqValue, QqValue.value, QAnomaly, hbar_q', delta_q_eff.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1388,5 +1436,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

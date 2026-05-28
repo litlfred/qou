@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean"
   },
   "source_hashes": {
-    "md": "546954fbe409",
-    "ts": "9770bf45270b",
+    "md": "a6ec8934f18d",
+    "ts": "c8ce2c513e93",
     "lean": "9006458d3fcc"
   },
   "criteria": {
@@ -28,7 +28,7 @@
         },
         "reviewed_at": "2026-05-24T02:12:10.098Z",
         "reviewed_sha": "7bb10a5c67ca38faa3f30765e9675c20a5b3112d",
-        "notes": "False positive: 'numerical coincidence is open' \u2014 honestly flagging an unresolved near-match as potentially coincidental."
+        "notes": "False positive: 'numerical coincidence is open' — honestly flagging an unresolved near-match as potentially coincidental."
       },
       {
         "field_hash": {
@@ -1244,7 +1244,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Conjecture with class axiomatisation \u2014 structural match."
+        "notes": "Conjecture with class axiomatisation — structural match."
+      },
+      {
+        "field_hash": {
+          "md": "a6ec8934f18d",
+          "ts": "c8ce2c513e93",
+          "lean": "9006458d3fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:n-v-leading-order-derivation' → expected 'n_v_leading_order_derivation'; Lean declares: q_0_real, m_e_real, v_ew_real, N_v, v_over_m_e_bridge.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a6ec8934f18d",
+          "ts": "c8ce2c513e93",
+          "lean": "9006458d3fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:n-v-leading-order-derivation' → expected 'n_v_leading_order_derivation'; Lean declares: q_0_real, m_e_real, v_ew_real, N_v, v_over_m_e_bridge.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a6ec8934f18d",
+          "ts": "c8ce2c513e93",
+          "lean": "9006458d3fcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:n-v-leading-order-derivation' → expected 'n_v_leading_order_derivation'; Lean declares: q_0_real, m_e_real, v_ew_real, N_v, v_over_m_e_bridge.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1307,5 +1355,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }

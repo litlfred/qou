@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-application/lepton-mass-tower-canonical.lean"
   },
   "source_hashes": {
-    "md": "64674c42be31",
-    "ts": "b2153ad67e2e",
-    "lean": "43077a72f4af"
+    "md": "70ee0dbe8317",
+    "ts": "04ea6c3962d3",
+    "lean": "3dc61ef1fe9a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md:19: > **\u26a0\ufe0f Status \u2014 open conjecture (2026-05-24, PR #1127 Phase 3).** | quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md:58: 1. **Hyperbolic volume Vol(4_1) \u2248 2.0299** \u2014 the **Kashaev $q \\to 1$"
+        "evidence": "quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md:19: > **⚠️ Status — open conjecture (2026-05-24, PR #1127 Phase 3).** | quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md:58: 1. **Hyperbolic volume Vol(4_1) ≈ 2.0299** — the **Kashaev $q \\to 1$"
       },
       {
         "field_hash": {
@@ -1387,7 +1387,55 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'conj:lepton-mass-tower-canonical' \u2192 expected 'lepton_mass_tower_canonical'; Lean declares: LeptonType, lepton_mass_ratio, lepton_mass_ratio_electron_eq_one, heckeH, trefoil_reduction.... Structural match via content."
+        "notes": "Label 'conj:lepton-mass-tower-canonical' → expected 'lepton_mass_tower_canonical'; Lean declares: LeptonType, lepton_mass_ratio, lepton_mass_ratio_electron_eq_one, heckeH, trefoil_reduction.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "70ee0dbe8317",
+          "ts": "04ea6c3962d3",
+          "lean": "3dc61ef1fe9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:41:31.003Z",
+        "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
+        "notes": "Label 'prop:lepton-mass-tower-canonical' → expected 'lepton_mass_tower_canonical'; Lean declares: LeptonType, lepton_mass_ratio, lepton_mass_ratio_electron_eq_one, heckeH, trefoil_reduction.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "70ee0dbe8317",
+          "ts": "04ea6c3962d3",
+          "lean": "3dc61ef1fe9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:43:22.741Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:lepton-mass-tower-canonical' → expected 'lepton_mass_tower_canonical'; Lean declares: LeptonType, lepton_mass_ratio, lepton_mass_ratio_electron_eq_one, heckeH, trefoil_reduction.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "70ee0dbe8317",
+          "ts": "04ea6c3962d3",
+          "lean": "3dc61ef1fe9a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
+        "notes": "Label 'prop:lepton-mass-tower-canonical' → expected 'lepton_mass_tower_canonical'; Lean declares: LeptonType, lepton_mass_ratio, lepton_mass_ratio_electron_eq_one, heckeH, trefoil_reduction.... Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1450,5 +1498,5 @@
       }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-05-28T15:44:09.524Z"
 }
