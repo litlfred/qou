@@ -16,7 +16,7 @@ $Z(H_3) \hookrightarrow Z(H_n)$ through the depth-$k$ knot-ideal projector.*
 
 *Concretely: for each low curvature-rank $k \in \{1, 2, 3\}$ there is
 a distinguished hyperbolic knot $K_k^*$. Empirical resolution at
-$k = 3$ (per [PR #826](https://github.com/litlfred/qou/pull/826), with
+$k = 3$ (with
 canonical braid words cross-verified against KnotInfo via hyperbolic
 volume): $K_3^* = 4_1$ (figure-eight knot) gives the best variance
 reduction at 1.551$\times$ (+14.8% vs 1.82$\times$ baseline), consistent with the
@@ -147,7 +147,7 @@ For the conjecture to be well-defined, three structural ingredients
 must exist:
 
 1. **Distinguished knot $K_k^*$ at each $k \in \{1, 2, 3\}$**: at
- $k = 3$ this is $4_1$ (empirically resolved per [PR #826](https://github.com/litlfred/qou/pull/826),
+ $k = 3$ this is $4_1$ (empirically resolved,
  consistent with the Fricke-trace derivation in
  [`prop:chirality-from-frobenius-self-pairing`](#prop:chirality-from-frobenius-self-pairing));
  at $k = 1, 2$ this is the open question. Candidates and selection

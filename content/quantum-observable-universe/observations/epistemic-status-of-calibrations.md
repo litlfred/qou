@@ -59,7 +59,7 @@ equation hold, so it holds. The Lean cross-check
 by construction."*
 
 The substrate-$q_0$ derivation was declined as out-of-scope on
-2026-05-08 (coordination ledger) and **re-opened on 2026-05-25** in
+2026-05-08 (coordination ledger) and **re-opened** in
 response to the same owner question that produced this remark. The
 research-grade workplan tracks candidate derivation paths
 (spectral collapse, K-theoretic period, Bring $\chi = -6$
@@ -98,7 +98,7 @@ the prior work and audit
 | CAL | Observable | Measurement | Jet order | Status |
 |---|---|---|---|---|
 | CAL-1 | $m_\mathfrak{e}$ | electron mass (Penning trap) | $h^0$ | **unit-choice + derived** |
-| CAL-2 | $\mathfrak{D}_\beta$ | neutron $\beta$-decay width ($\tau_n$) | $h^2$ | **open** (re-opened 2026-05-25) |
+| CAL-2 | $\mathfrak{D}_\beta$ | neutron $\beta$-decay width ($\tau_n$) | $h^2$ | **open** (re-opened) |
 | CAL-3 | $\mathfrak{D}_\pi$ | pion decay width ($\tau_\pi$) | $h^3$ | **independent** (SDP-validated) |
 
 ## What this remark does NOT do

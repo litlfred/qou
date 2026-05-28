@@ -23,13 +23,6 @@ $$
 are the Wedderburn-traced per-generator volumes and $z = 1/(q^{1/2} + q^{-1/2})$
 is the Markov parameter.*
 
-> **Status — open conjecture.**
-> Promotes the "pair-gen piece (open)" section of
-> [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) to
-> an explicit conjecture block per CLAUDE.md §3b. The closed form
-> of $f_2$ is **not derived** in the current framework; the empirical
-> witness `rho-k-pair-gen-extension.witness.json` documents that the
-> naive log-additive form **degrades** accuracy.
 
 ## Empirical evidence (current state)
 

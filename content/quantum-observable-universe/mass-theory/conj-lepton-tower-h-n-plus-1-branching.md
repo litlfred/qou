@@ -13,16 +13,6 @@ symmetric q-integer. The triple $(2m-1, m, 2m)$ is symmetric in
 $h = q - q^{-1}$ — bar-anti-symmetric upper jet, middle index,
 bar-symmetric closing trace.*
 
-> **Status — unifying formula.**
-> Numerical match: muon $m=2$ $\to$ $[3]_q \cdot [2]_q / [4]_q$ to +0.001 %;
-> tau $m=3$ $\to$ $[5]_q \cdot [3]_q / [6]_q$ to +0.79 % (via $\mathrm{Vol}(10_{43})/\hbar_q^2$);
-> see the **Resolution — unifying formula** section below for the table.
-> Algebraic cores Lean-proved (`field_simp; ring`, generic `[Field R]`)
-> in [`three-halves-structural-factor.lean`](three-halves-structural-factor.lean)
-> + [`conj-lepton-tower-h-n-plus-1-branching.lean`](conj-lepton-tower-h-n-plus-1-branching.lean).
-> Categorical derivation (why this specific $h$-graded triple arises
-> from the per-braid mass tower) remains open — see "Resolution" section
-> for the open work plan.
 
 ### Earlier framing (superseded by the prior work unifying formula)
 

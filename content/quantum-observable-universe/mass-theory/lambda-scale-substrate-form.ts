@@ -69,4 +69,20 @@ export default proposition({
     "acknowledged-cal-4",
     "non-smooth-in-q",
   ],
+  authorNotes: [
+    {
+      kind: "deprecated",
+      date: "2026-05-24",
+      body:
+        "**$\\lambda_{\\text{scale}}$ ABSORBED INTO `Geom_full`.** " +
+        "The canonical mass formula is $m(K) = m_e \\cdot \\mathrm{Geom_{full}}(K, q_0)$ " +
+        "— a single Geom-functor evaluation per knot. What older docs called " +
+        "`λ_scale` is the ratio $\\mathrm{Geom_{full}} / \\mathrm{Geom_{leading}}$. " +
+        "The falsified $5/2 - h^2 \\cdot G$ form, the Yekutieli ADD form, and the " +
+        "Bring-Bloch identity are all purged as production candidates. Current " +
+        "research direction: refine `Geom_full(𝓑₃)` categorical exactness at " +
+        "higher $h^2$ orders. Block retained for graph stability.",
+      see: "docs/lambda-scale-absorbed-into-geom-full.md",
+    },
+  ],
 });

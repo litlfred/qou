@@ -376,7 +376,7 @@ Markov-trace computation) and the production-scale Rust port
  `JointTowerSdpCertificate` schema. Once R5-full lands, the
  deprecated `li-atom-knot-search` is fully retirable.
 
- **Status (2026-05-09, issue #604 deliverable 1).** A first-pass
+ **Status (issue #604 deliverable 1).** A first-pass
  Python R5-full prototype landed at
  [`folio-assistant/computations/r5_full_canonical_knot_solver.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/r5_full_canonical_knot_solver.py)
  with witness

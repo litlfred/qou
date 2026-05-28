@@ -16,12 +16,6 @@ canonical [`per-braid mass tower`](per-braid-mass-tower.md), WITHOUT
 invoking the SUPERSEDED scalar substrate density $\rho_q = 1/\hbar_q^2$
 as a dimensional factor.*
 
-> **Status — open conjecture.**
-> The explicit form of $\mathcal{F}_\ell(q)$ for leptons has **not been
-> derived** in the current framework. See the discussion below + the
-> companion audit
-> [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md).
-
 ## Motivation
 
 The atomic graded expansion

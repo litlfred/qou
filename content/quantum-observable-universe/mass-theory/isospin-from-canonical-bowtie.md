@@ -1,4 +1,4 @@
-> **CORRECTION NOTE (2026-05-24, surfaced by `verify_isospin_bar_anomaly.py`):**
+> **CORRECTION NOTE (surfaced by `verify_isospin_bar_anomaly.py`):**
 > The original draft classified the 305 ppm residue as "bar-anti-symmetric."
 > **That was wrong.** Bar involution (q $\leftrightarrow$ $q^{-1}$ AND $\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$) is
 > **distinct** from the isospin Z/2 swap ($\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$ with q FIXED).

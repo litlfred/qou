@@ -42,7 +42,7 @@ where $\mathbf{C}$ is the framework's brane-tower category, $\iota$ is the archi
 
 ## §3. Universal base: everything over $\mathbb{Z}[q, q^{\pm 1}]$
 
-Per author directive 2026-05-25: *"I want all to work over $\mathbb{Z}[q, q^{-1}]$"*.
+Per author directive: *"I want all to work over $\mathbb{Z}[q, q^{-1}]$"*.
 
 The Iwahori-Hecke algebra $H_n(q)$ is naturally an algebra over $\mathbb{Z}[q, q^{\pm 1}]$ (the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ has integer-Laurent coefficients). All structural identities — Wedderburn weights, Markov trace, P_m/Q_m, AJ recurrence, Φ_q/Li_2^q dilog — can be stated over this universal base.
 

@@ -71,7 +71,7 @@ Under Type-B folding:
   in the Lean sibling).
 - **Operator-selection LP** dual y_0* is S-invariant; magic-shell
   composite operators are in the active set EXACTLY at $Z = 2$ /
-  $N = 2$ shells (the LP-dual finding from PR #638 family 5).
+  $N = 2$ shells (the LP-dual finding, family 5).
 
 This is the unified rigid monoidal framework under which the
 three load-bearing findings of the the prior work closure are

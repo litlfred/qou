@@ -29,7 +29,7 @@ to six significant figures with $q = q_0$.
 The proton and neutron rows currently come from the **LO ρ_K
 assembly** which consumes $m_p$ and $m_n$ as CODATA inputs (per
 [`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json)).
-Per owner directive 2026-05-10 ("do not use LO — use full"), this
+Per owner directive ("do not use LO — use full"), this
 is tautological by construction (the $|\mathrm{tr}_M|$ factor
 cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$,
 reducing $\mathcal{M}_\text{pred}$ to $Z m_p + N m_n$). The FULL

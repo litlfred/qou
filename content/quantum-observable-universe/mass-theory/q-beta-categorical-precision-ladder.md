@@ -100,7 +100,7 @@ CAL-2 substrate data alone.
 
 ## Open
 
-The 2026-05-19 audit ([`2026-05-19-qbeta-all-ck-categorical-extension.md`](../../../docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md))
+the audit ([`2026-05-19-qbeta-all-ck-categorical-extension.md`](../../../docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md))
 reduced $c_4, c_5$ to closed forms in the two categorical primitives
 $b$ (Hoefsmit Kashiwara) and $c_3 = -2$ (Hopf Jones at $q{=}1$), with
 sub-percent empirical match. The remaining open questions:

@@ -81,7 +81,7 @@ produces certified $\nu_{\mathrm{SDP}}$ values.
 
 ## Why this resolves the Rule-14 escalation
 
-Pre-2026-05-24 the
+Previously the
 [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)
 script self-declared the density rule $\rho_F \in \{1, 2\}$ as
 *"pending formal justification"* (line 23) — an open Rule-14

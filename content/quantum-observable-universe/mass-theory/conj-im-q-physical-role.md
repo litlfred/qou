@@ -15,11 +15,6 @@ testable against a specific observable class. Identifying
 which (if any) is the correct physical interpretation is open
 work.*
 
-> **Status — open conjecture.** Direct
-> answer to the question "what IS Im(q)?". The framework currently
-> gives Im(q) no physical interpretation; this conjecture is a
-> map of candidate roles.
-
 ## What Im(q) is NOT
 
 Per [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:

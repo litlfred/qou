@@ -56,10 +56,10 @@ identified, not *how much* per-cell curvature it carries. $\square$
 
 ## Structural role in $\mathrm{Geom_{full}}(\mathcal{B}_3)$ refinement
 
-> **2026-05-24 reframing.** This section originally proposed a
+> **reframing.** This section originally proposed a
 > Yekutieli per-cell additive form
 > $\lambda_{\text{scale}}^{\text{Yekutieli}} = \tfrac{5}{2} + (\tfrac{3}{4} - G)\,h^2$.
-> That form was **purged from production** on 2026-05-24 (commit
+> That form was **purged from production** (commit
 > `71d674da1`) as non-canonical: the prior work found the natural-reading
 > bijection gives the per-cell curvature $\kappa = +0.5$, not $-G$,
 > and no categorical derivation supplies a $-G \cdot h^2$ term.

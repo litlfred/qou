@@ -10,7 +10,7 @@ candidate (see
 ## Status: open R&D — no known non-trivial per-block decomposition rule
 
 The $\dim_q^2$ weighting hypothesis below was the original scaffolding
-direction. The 2026-05-19 audit ([`per-block-ck-extraction-rule.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-per-block-ck-extraction-rule.md))
+direction. the audit ([`per-block-ck-extraction-rule.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-per-block-ck-extraction-rule.md))
 showed it is **falsified** at $c_3 = -2$: $\sum_\lambda \dim_q^2 \cdot c_3^{(\lambda)}$
 under the per-block LO $\varepsilon^1$ pattern $(-2, -1, -2)$ gives
 $-8$, not $-2$. A $y_\lambda$-weighted uniform-rule alternative ALSO

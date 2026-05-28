@@ -128,8 +128,7 @@ fit the data within experimental noise:
 - **Story A**: only $c_2$ matters; $c_3 = c_4 = \ldots = 0$. A
   fit-noise interpretation.
 - **Story B**: full categorical chain
-  $c_2 = b^2, c_3 = -2, c_4 = b^2 + 1/2, \ldots$. PR #655's
-  position.
+  $c_2 = b^2, c_3 = -2, c_4 = b^2 + 1/2, \ldots$.
 
 This proposition (combined with the $c_2 = b^2$ proof)
 **falsifies Story A** by deriving $c_3 = -2$ from QOU axioms

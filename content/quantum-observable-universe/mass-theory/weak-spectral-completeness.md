@@ -93,7 +93,7 @@ $e_X^\pm$ in $H_2(q)$.
 
 **Step 3 — Cell-content trace, not Plancherel weight.**
 
-> **Demoted 2026-05-05.** Earlier drafts of this proof used
+> **Demoted.** Earlier drafts of this proof used
 > Plancherel weights $w_X = 1/[2]_q$ as a "uniform completeness
 > signature." That uniform-weight expression was a degenerate
 > artifact of the dimensionally-collapsed $H_2(q)$-only

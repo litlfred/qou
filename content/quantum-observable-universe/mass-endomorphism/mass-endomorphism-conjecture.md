@@ -25,7 +25,7 @@ braid words.
 ## Scope: convenience target, not load-bearing
 
 A note on what this conjecture **is** and **is not** about, added
-2026-05-02 after the P3.1 conjectural-propagation audit:
+after the P3.1 conjectural-propagation audit:
 
 - **Load-bearing claim** (already proved, *not* part of this
  conjecture): the categorical mass equals the infinite-series sum
@@ -278,7 +278,7 @@ closes the gap:*
  level-selection rule $n_\star(\mathfrak{H})$ derivable from
  substrate data.*
 
-**Status (2026-05-11, PR [#638](https://github.com/litlfred/qou/pull/638)):**
+**Status (PR [#638](https://github.com/litlfred/qou/pull/638)):**
 Claim (b) is **refuted across six probed families** — scalar
 uniform-$k$, scalar $\ell n_0 + k$, per-eigenvalue operator-valued,
 multiplicity / Type-B-folded-crystal, pair-knot product-volume, and

@@ -1,8 +1,8 @@
 **Remark (recomputed low-isotope mass table after q-Hecke
 character gap closure).** *After the q-Hecke character
 closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-character-closure))
-and the cherry-picked* $\rho_K$ *refinement infrastructure from
-the prior work, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
+and the* $\rho_K$ *refinement infrastructure,
+**three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
 *at* $q = q_0$ *now agree to machine epsilon across* $\{p, n, D, T, ^{3}\mathrm{He}\}$:
 
 1. **Canonical Markov-axiom reducer** —
@@ -142,7 +142,7 @@ absent from the single-wrap closed form.
 
 Witness:
 [`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json)
-(2026-05-10, derived via
+(derived via
 [`derived_masses.q_beta_predicted_mev`](../../../folio-assistant/computations/derived_masses.py)).
 3 assertions pass: residual $<0.5\%$, residual $<2$ keV,
 single-wrap residual $<$ typed-crossings residual.
@@ -158,7 +158,7 @@ Strategy-3 multi-term implementation in
 [`atomic_braid_mass_table.py`](../../../folio-assistant/computations/atomic_braid_mass_table.py)
 has a known structural bug (multiplicative T1 base instead of
 additive LP active-set, per its own deprecation banner lines 24-46).
-Per owner directive 2026-05-10, neither is the FULL framework
+Per owner directive, neither is the FULL framework
 prediction — both should be replaced by the unified knot mass
 formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| +
 \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$ once the LP-dual

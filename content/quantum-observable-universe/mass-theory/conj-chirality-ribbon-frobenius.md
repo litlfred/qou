@@ -229,7 +229,7 @@ The conjecture splits along **chirality class**:
    structure used in the QOU model (not the quantum-group normalization,
    which may differ by a global phase).
 
-2. **Mean-content identity (amphichiral).**  *Discharged 2026-05-09
+2. **Mean-content identity (amphichiral).**  *Discharged
    for the figure-eight $4_1$ via direct $H_3(R, q_0)$ computation*
    (`chirality-avg-content.witness.json`).  Generalisation to all
    amphichiral knots follows from the bar-involution symmetry
