@@ -5,14 +5,7 @@ export default remark({
   title:
     "Story B selected as canonical $Q_\\beta$ interpretation by tracing the cat-action → Frobenius → Wedderburn → Wenzl bridge chain on canonical typed-$B_3$ braids; the $c_3 = -2$ Hopf-Jones identification is empirically observable at 112× residual reduction vs CODATA $Q_\\beta$ floor",
   interprets: "prop:q-beta-categorical-precision-ladder",
-  uses: [
-    "prop:q-beta-categorical-precision-ladder",
-    "prop:hoefsmit-V21-cos-symmetrization",
-    "prop:markov-trace-frobenius-selection",
-    "prop:hecke-1d-irrep-closed-form-character",
-    "prop:tau-M-asymptotic-rep-theory",
-    "rem:kashiwara-jones-alternation-interpretation",
-  ],
+  uses: ["rem:kashiwara-jones-alternation-interpretation"],
   cites: [
     "wenzl1988",
     "jones1985",

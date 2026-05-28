@@ -4,11 +4,7 @@ export default proposition({
   label: "prop:cl2-pentagon-and-faddeev-partial",
   title:
     "Partial closures: $\\mathrm{Cl}_2$ pentagon at boundary + Faddeev-Kashaev limit at boundary (closes parts of substantive Mathlib gaps 2+3)",
-  uses: [
-    "rem:three-substantive-mathlib-fillers",
-    "rem:clausen-function-mathlib-filler",
-    "prop:dilogarithm-archimedean-limit",
-  ],
+  uses: ["rem:three-substantive-mathlib-fillers"],
   cites: ["zagier1986", "faddeev1994", "kashaev1997"],
   tags: [
     "mathlib-filler",

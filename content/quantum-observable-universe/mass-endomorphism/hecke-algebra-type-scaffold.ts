@@ -5,11 +5,7 @@ export default remark({
   interprets: "rem:braid-group-n-strand",
   title:
     "Iwahori-Hecke algebra $H_n(R, q)$ type scaffold: `HeckeGen n`, `HeckeWord n`, plus `HeckeRelations n q` (quadratic + far-commute + braid cubic via explicit-residual) and `HeckeWedderburn n q` (Plancherel completeness)",
-  uses: [
-    "rem:braid-group-n-strand",
-    "rem:h3-hecke-idempotents",
-    "prop:hoefsmit-V21-cos-symmetrization",
-  ],
+  uses: ["rem:h3-hecke-idempotents"],
   cites: [
     "kassel1995",
     "wenzl1988",

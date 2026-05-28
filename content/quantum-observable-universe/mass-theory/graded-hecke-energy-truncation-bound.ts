@@ -10,8 +10,6 @@ export default proposition({
   },
   uses: [
     "rem:mass-spectrum-generating-function",
-    "prop:graded-markov-trace-from-gs-filtration",
-    "def:confinement-level",
     "prop:gs-graded-markov-trace-existence",
   ],
   cites: ["khovanovlauda2009", "brundankleshchev2009"],

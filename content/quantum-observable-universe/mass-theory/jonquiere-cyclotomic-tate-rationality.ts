@@ -15,13 +15,6 @@ export default proposition({
       "folio-assistant/computations/jonquiere-cyclotomic-general.witness.json",
     status: "verified",
   },
-  uses: [
-    "prop:cyclotomic-trilog-imaginary-closed-form",
-    "prop:bring-trilog-imaginary-tate-rational",
-    "prop:cyclotomic-orbit-sum-all-depths",
-    "prop:cyclotomic-dimension-synthesis-all-depths",
-    "rem:transcendental-accounting",
-  ],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "jonquiere-inversion",

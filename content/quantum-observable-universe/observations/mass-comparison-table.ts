@@ -19,8 +19,5 @@ export default remark({
     "knot",
     "experimental",
   ],
-  uses: [
-    "rem:knot-formula-table",
-    "rem:mass-from-generators",
-  ],
+  uses: ["rem:mass-from-generators"],
 });

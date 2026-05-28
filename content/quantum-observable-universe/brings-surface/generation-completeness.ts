@@ -16,8 +16,4 @@ export default theorem({
   lean: { ref: "qou:QOU.Archimedean.generation_completeness",
     validation: "not_checked",
   },
-  uses: [
-    "prop:torus-embeddable-complete",
-    "rem:knot-formula-table",
-  ],
 });

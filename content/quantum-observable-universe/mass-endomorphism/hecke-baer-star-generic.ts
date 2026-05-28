@@ -9,12 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:wedderburn-weight-canonical",
-    "prop:hoefsmit-seminormal-form",
-    "prop:frobenius-gram-matrix",
     "prop:explicit-central-idempotent",
-    "prop:gb-depth-period-correspondence",
-    "conj:kashaev-volume-conjecture",
     "rem:vc-as-depth-2-instance",
   ],
   cites: [],

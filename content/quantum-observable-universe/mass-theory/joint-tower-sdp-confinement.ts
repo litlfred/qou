@@ -8,15 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.joint_tower_sdp_confinement",
     validation: "not_checked",
   },
-  uses: [
-    "def:confined-particle",
-    "prop:confinement-sdp",
-    "prop:atom-knot-mass-derivation",
-    "prop:gb-spectral-sequence",
-    "prop:spectral-sequence-collapse",
-    "prop:wedderburn-trace-identity",
-    "prop:alpha-k-derivation-procedure",
-  ],
+  uses: ["prop:atom-knot-mass-derivation"],
   tags: [
     "sdp",
     "confinement",

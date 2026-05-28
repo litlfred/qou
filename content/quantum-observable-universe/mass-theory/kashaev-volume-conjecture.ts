@@ -8,10 +8,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "rem:kashaev-volume-density",
     "rem:kashaev-as-archimedean-realization",
-    "def:archimedean-realization-functor",
-    "def:algebraic-quantum-volume",
     "rem:quantum-bloch-group",
   ],
   cites: ["kashaev1997", "murakami-murakami2001", "zagier1986", "neumann-zagier1985"],

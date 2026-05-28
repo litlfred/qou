@@ -76,11 +76,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.SpinInvolutionLPDualInvariance",
     validation: "not_checked",
   },
-  uses: [
-    "prop:frobenius-self-duality-forces-lp-dual-extraction",
-    "prop:jucys-murphy-central-elements-qou",
-    "prop:antiparticle-crossing-reversal",
-  ],
+  uses: ["prop:jucys-murphy-central-elements-qou"],
   cites: ["kassel1995", "murphy1992"],
   tags: [
     "lp-duality",

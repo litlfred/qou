@@ -65,12 +65,7 @@ export default proposition({
   label: "prop:he4-two-row-dominance",
   title:
     "Two-row stratum carries $\\ge 80\\%$ of $\\mathrm{tr}_M(\\beta_{^4\\mathrm{He}})$ at $q_0$ (86.6\\% empirically)",
-  uses: [
-    "def:two-row-stratum",
-    "def:atomic-braid",
-    "prop:wedderburn-weight-canonical",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["def:two-row-stratum"],
   computation: {
     engine: "scipy",
     script: "folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py",

@@ -20,8 +20,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Archimedean.em_coupling_projection",
     validation: "not_checked",
   },
-  uses: [
-    "thm:em-spectral-completeness",
-    "prop:force-carrier-bring-uniqueness",
-  ],
+  uses: ["thm:em-spectral-completeness"],
 });

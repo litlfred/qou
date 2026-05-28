@@ -9,12 +9,7 @@ export default remark({
   interprets: "rem:chi-per-irrep-cyclotomic-closed-forms",
   title:
     "Leading-order $\\varepsilon^1$ pattern in the per-Wedderburn-block character differences: $V_{(3)}, V_{(1,1,1)}$ absorb the **full** Hopf-Jones value $-2$; $V_{(2,1)}$ absorbs **half** ($-1$). Dimension-scaled Hopf absorption.",
-  uses: [
-    "rem:chi-per-irrep-cyclotomic-closed-forms",
-    "rem:chi-v3-closed-form-proof",
-    "prop:q-beta-c3-hopf-three-fold-markov",
-    "prop:hoefsmit-V21-cos-symmetrization",
-  ],
+  uses: ["rem:chi-per-irrep-cyclotomic-closed-forms"],
   cites: [
     "jones1985",
     "wenzl1988",

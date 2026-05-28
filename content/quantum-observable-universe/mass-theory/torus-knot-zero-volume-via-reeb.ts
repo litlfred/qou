@@ -12,9 +12,5 @@ export default remark({
     "3-cycle",
     "reeb-flow",
   ],
-  uses: [
-    "prop:six-canonical-knot-operators",
-    "prop:reeb-bundle-complement-equals-volume",
-    "prop:thurston-volume-additivity",
-  ],
+  uses: ["prop:reeb-bundle-complement-equals-volume"],
 });

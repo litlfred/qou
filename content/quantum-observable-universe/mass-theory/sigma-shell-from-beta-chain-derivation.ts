@@ -10,9 +10,7 @@ export default proposition({
   },
   uses: [
     "prop:compound-beta-shell-calibration",
-    "prop:shell-schur-weyl-self-duality",
     "prop:rho-k-h3a-refinement",
-    "prop:atomic-mass-gb-nf",
   ],
   cites: ["wenzl1988", "kassel1995"],
   tags: [

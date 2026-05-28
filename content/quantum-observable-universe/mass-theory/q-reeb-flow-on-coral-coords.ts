@@ -17,6 +17,5 @@ export default definition({
     "def:coral-sector-coords",
     "def:reeb-bundle",
     "ex:q-reeb-flow",
-    "def:substrate-parameter",
   ],
 });

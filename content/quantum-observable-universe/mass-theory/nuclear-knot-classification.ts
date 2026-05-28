@@ -7,13 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.nuclear_knot_classification",
     validation: "not_checked",
   },
-  uses: [
-    "def:atomic-braid",
-    "thm:topological-mass",
-    "prop:topological-mass-formula",
-    "def:hecke-mass-element",
-    "prop:hook-weight-derivation",
-  ],
+  uses: ["def:hecke-mass-element"],
   tags: [
     "knot-classification",
     "hyperbolic",

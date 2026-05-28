@@ -15,12 +15,6 @@ export default proposition({
       "folio-assistant/computations/jonquiere-cyclotomic-general.witness.json",
     status: "verified",
   },
-  uses: [
-    "prop:cyclotomic-cl3-orbit-sum-general",
-    "prop:jonquiere-cyclotomic-tate-rationality",
-    "prop:cyclotomic-dimension-synthesis-all-depths",
-    "rem:transcendental-accounting",
-  ],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "multiplication-formula",

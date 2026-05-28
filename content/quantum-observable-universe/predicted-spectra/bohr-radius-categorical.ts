@@ -23,12 +23,6 @@ export default proposition({
   lean: { ref: "qou:QOU.Archimedean.bohr_radius_categorical", validation: "not_started" },
   title:
     "Categorical Bohr radius $a_0^{\\mathrm{cat}} = \\hbar/(m_e c\\,\\alpha_{EM})$ (transported from QED virial-balance; categorical derivation open)",
-  uses: [
-    "prop:em-coupling-projection",
-    "prop:operator-selection-lp",
-    "def:electron-shell-braid-capacity",
-    "prop:e-hartree-categorical-derivation",
-  ],
   tags: [
     "bohr-radius",
     "virial-theorem",

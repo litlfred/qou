@@ -40,10 +40,7 @@ export default proposition({
   label: "prop:alpha-shift-torus-knot",
   title:
     "Pole order at $q=0$ of the torus-knot character: $\\alpha_{\\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$",
-  uses: [
-    "def:delta-q-decoration",
-    "prop:force-carrier-intertwining-correspondence",
-  ],
+  uses: ["prop:force-carrier-intertwining-correspondence"],
   computation: {
     engine: "sympy",
     script: "folio-assistant/computations/alpha_shift_torus.py",

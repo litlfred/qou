@@ -16,8 +16,5 @@ export default proposition({
     ref: "qou:QOU.Archimedean.golden_skew_dual_node",
     validation: "not_checked",
   },
-  uses: [
-    "rem:golden-ratio-degeneration",
-    "prop:descartes-elliptic-curve",
-  ],
+  uses: ["rem:golden-ratio-degeneration"],
 });

@@ -8,15 +8,7 @@ export default proposition({
     ref: "qou:QOU.AlgebraicSubstrate.JointGaloisBraidDischarged.joint_action_discharged",
     validation: "not_checked",
   },
-  uses: [
-    "prop:joint-galois-braid-action",
-    "def:hq-bi-filtration",
-    "prop:explicit-central-idempotent",
-    "prop:hecke-baer-star-generic",
-    "prop:joint-galois-braid-figure-8-verified",
-    "prop:two-filtration-bridge",
-    "prop:two-filtration-bridge-small-cases",
-  ],
+  uses: ["prop:joint-galois-braid-figure-8-verified"],
   cites: [],
   tags: [
     "joint-action",

@@ -8,7 +8,6 @@ export default remark({
   uses: [
     "prop:per-nucleon-shift-additive-linearity",
     "prop:crystal-isospin-degeneracy",
-    "prop:crystal-graph-realization",
   ],
   tags: [
     "crystal-bases",

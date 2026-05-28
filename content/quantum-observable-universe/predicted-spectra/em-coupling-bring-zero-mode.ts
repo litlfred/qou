@@ -5,12 +5,8 @@ export default proposition({
   title:
     "Additive Bring zero-mode form $1/\\alpha_{EM} = q\\cdot[9]_q\\cdot[10]_q + 2g/(4\\pi(g-1))$ (conditional)",
   uses: [
-    "prop:em-coupling-projection",
-    "prop:force-carrier-bring-uniqueness",
     "prop:exterior-square-borromean",
-    "prop:archimedean-functor-uniqueness",
     "rem:figure-8-archimedean-illustration",
-    "prop:dilogarithm-archimedean-limit",
     "prop:bring-hyperbolic-knot-bloch-decomposition",
   ],
   cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000"],

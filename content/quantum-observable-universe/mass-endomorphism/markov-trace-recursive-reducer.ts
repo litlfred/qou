@@ -39,9 +39,7 @@ export default proposition({
     "Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property",
   uses: [
     "prop:markov-trace-axiomatic-closed-form",
-    "prop:categorical-mass-markov",
     "def:markov-axiom-recursive-ascent",
-    "prop:hecke-markov-transition",
   ],
   cites: ["jones1987", "kassel1995", "wenzl1988"],
   computation: {

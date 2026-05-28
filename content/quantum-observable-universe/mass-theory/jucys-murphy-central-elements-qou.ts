@@ -35,11 +35,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.JucysMurphyCentralElementsQOU",
     validation: "not_checked",
   },
-  uses: [
-    "prop:wedderburn-trace-identity",
-    "prop:frobenius-self-duality-forces-lp-dual-extraction",
-    "rem:hecke-algebra-from-braiding",
-  ],
+  uses: ["prop:frobenius-self-duality-forces-lp-dual-extraction"],
   cites: ["murphy1992", "jucys1974", "kassel1995"],
   tags: [
     "jucys-murphy",

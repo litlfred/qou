@@ -16,11 +16,8 @@ export default proposition({
   // validation error). Phase 5n preserves the .md narrative refs
   // and accepts the warning-level cross-ref notice.
   uses: [
-    "rem:hecke-algebra-from-braiding",
-    "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:wenzl-bridge-applicability-qou",
     "def:canonical-braid-interface-composition",
-    "def:atomic-braid",
   ],
   cites: ["wenzl1988", "macdonald1995", "geck-pfeiffer2000", "ram1991"],
 });

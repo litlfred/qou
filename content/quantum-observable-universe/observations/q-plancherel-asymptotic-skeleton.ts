@@ -8,10 +8,6 @@ export default proposition({
     ref: "qou:QOU.Observations.QPlancherelAsymptoticSkeleton",
     validation: "not_checked",
   },
-  uses: [
-    "prop:wedderburn-weight-canonical",
-    "prop:plancherel-term-7-formulation",
-  ],
   cites: [
     "kerov1981",
     "biane1998",

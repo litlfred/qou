@@ -8,12 +8,7 @@ export default proposition({
   },
   title:
     "Categorical derivation of $c_3 = J_{\\mathrm{Hopf}}(q=1) = -2$ in the $Q_\\beta$ precision ladder via 3-fold Markov closure → 2-strand sub-braid Hopf-link substructure → KL classical-limit decategorification",
-  uses: [
-    "prop:q-beta-categorical-precision-ladder",
-    "prop:hoefsmit-V21-cos-symmetrization",
-    "prop:markov-trace-frobenius-selection",
-    "rem:q-beta-gamma-gamma-canonical-derivation",
-  ],
+  uses: ["rem:q-beta-gamma-gamma-canonical-derivation"],
   cites: [
     "jones1985",
     "kashiwara1990",

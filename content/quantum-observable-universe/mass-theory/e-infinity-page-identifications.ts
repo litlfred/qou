@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:gb-spectral-sequence",
     "prop:jet-prefix-gb-filtration",
     "prop:chirality-from-frobenius-self-pairing",
   ],

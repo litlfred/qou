@@ -6,7 +6,6 @@ export default remark({
     "The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules",
   interprets: "prop:markov-trace-axiomatic-closed-form",
   uses: [
-    "prop:markov-trace-axiomatic-closed-form",
     "rem:operator-valued-magnitude-budget",
     "rem:archimedean-image-table",
   ],

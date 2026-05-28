@@ -15,14 +15,7 @@ export default proposition({
       "folio-assistant/computations/cl3-zeta5-orbit-sum.witness.json",
     status: "verified",
   },
-  uses: [
-    "prop:bring-trilog-depth-3-witness",
-    "prop:bring-trilog-imaginary-tate-rational",
-    "prop:borel-partial-resolution",
-    "prop:qou-infra-discharges-goncharov-zeta5",
-    "rem:transcendental-accounting",
-    "prop:cl3-zeta5-geometric-realization",
-  ],
+  uses: ["prop:bring-trilog-imaginary-tate-rational"],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "orbit-sum",

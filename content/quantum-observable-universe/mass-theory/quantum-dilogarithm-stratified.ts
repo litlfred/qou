@@ -7,13 +7,6 @@ export default proposition({
     ref: "qou:QOU.WedderburnMass.phi_q_frobenius_truncation",
     validation: "not_checked",
   },
-  uses: [
-    "cor:quantum-dilogarithm",
-    "prop:curvature-rank-gb-stratification",
-    "prop:spectral-sequence-collapse",
-    "def:hecke-normal-form",
-    "def:q-pochhammer-partial-product",
-  ],
   proofs: ["prf:quantum-dilogarithm-stratified"],
   tags: [
     "quantum-dilogarithm",

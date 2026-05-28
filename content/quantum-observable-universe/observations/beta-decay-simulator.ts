@@ -13,10 +13,7 @@ export default simulator({
   label: "sim:beta-decay-halflife",
   title: "Beta-Decay Half-Life Simulator",
   html: "folio-assistant/simulators/beta_decay_halflife.html",
-  uses: [
-    "cor:spectral-decomposition-qvalue",
-    "def:transfer-matrix-operator",
-  ],
+  uses: ["cor:spectral-decomposition-qvalue"],
   tags: [
     "beta-decay",
     "half-life",

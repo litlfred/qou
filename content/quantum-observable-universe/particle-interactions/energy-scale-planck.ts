@@ -7,7 +7,6 @@ export default remark({
   uses: [
     "rem:beta-decay-energy-scale",
     "def:information-speed-of-light",
-    "rem:calibration-inputs",
   ],
   tags: [
     "energy-scale",

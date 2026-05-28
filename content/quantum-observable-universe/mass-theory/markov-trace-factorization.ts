@@ -17,5 +17,5 @@ export default theorem({
   lean: { ref: "qou:QOU.Archimedean.markov_trace_factorization",
     validation: "not_checked",
   },
-  uses: ["prop:generator-volume-decomposition", "thm:markov-trace-product"],
+  uses: ["prop:generator-volume-decomposition"],
 });

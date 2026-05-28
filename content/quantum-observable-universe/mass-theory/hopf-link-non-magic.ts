@@ -5,11 +5,7 @@ export default remark({
   title:
     "Hopf link as the canonical non-magic knot operator (lowest cohomological degree)",
   interprets: "prop:knot-operator-selection",
-  uses: [
-    "prop:knot-operator-selection",
-    "prop:torus-knot-shell-binding",
-    "def:brings-surface",
-  ],
+  uses: ["prop:torus-knot-shell-binding"],
   tags: [
     "hopf-link",
     "knot-operator",

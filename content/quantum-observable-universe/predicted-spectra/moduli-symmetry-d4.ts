@@ -18,9 +18,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:golden-skew-dual-node",
     "prop:golden-quartet-galois",
-    "prop:bar-self-dual-confinement-band",
     "prop:bar-t-duality-substrate",
   ],
 });

@@ -74,10 +74,7 @@ export default proposition({
   title:
     "$c_4 = b^2 + 1/2$ from Kashiwara cos-tower at $\\hbar_q^8$ + GB-jet-order half-shift — Story B closure at $c_4$",
   uses: [
-    "prop:q-beta-categorical-precision-ladder",
     "prop:hopf-jones-c3-categorical",
-    "prop:hoefsmit-V21-cos-symmetrization",
-    "prop:markov-trace-frobenius-selection",
     "rem:kashiwara-jones-alternation-interpretation",
   ],
   cites: [

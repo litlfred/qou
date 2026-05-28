@@ -7,11 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.eigenvalue_product_expansion",
     validation: "not_checked",
   },
-  uses: [
-    "prop:hoefsmit-seminormal-form",
-    "prop:hoefsmit-scattering-pipeline",
-    "prop:universal-braid-branching",
-  ],
+  uses: ["prop:universal-braid-branching"],
   tags: [
     "eigenvalue-product",
     "markov-trace",

@@ -15,9 +15,5 @@ export default proposition({
     ref: "qou:QOU.Archimedean.BarApplyTransfer.bar_apply_transfer",
     validation: "not_checked",
   },
-  uses: [
-    "prop:bar-self-dual-confinement-band",
-    "prop:bar-t-duality-substrate",
-    "prop:golden-skew-dual-node",
-  ],
+  uses: ["prop:bar-t-duality-substrate"],
 });

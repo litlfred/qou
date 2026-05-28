@@ -9,7 +9,6 @@ export default proposition({
   },
   uses: [
     "prop:unified-iterative-correction",
-    "prop:wigner-2-coefficient",
     "prop:q-heat-kernel-peter-weyl",
   ],
   tags: [

@@ -8,7 +8,6 @@ export default remark({
     "rem:borromean-baryon-interpretation",
     "prop:chirality-residue-mass-term",
     "cor:gauge-coupling-uniqueness",
-    "prop:force-carrier-bring-uniqueness",
     "prop:cp-violation-spectral-form",
   ],
 });

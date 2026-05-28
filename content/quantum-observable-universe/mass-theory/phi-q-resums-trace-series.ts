@@ -4,9 +4,6 @@ export default remark({
   label: "rem:phi-q-resums-trace-series",
   title:
     "$\\Phi_q$ resums an infinite series of Markov traces",
-  uses: [
-    "thm:topological-mass",
-    "thm:six-term-mass-formula-complete",
-  ],
+  uses: ["thm:six-term-mass-formula-complete"],
   tags: ["mass-tower", "markov-trace", "audit", "exposition"],
 });

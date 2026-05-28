@@ -7,10 +7,7 @@ export default corollary({
     ref: "qou:QOU.WedderburnMass.commutative_chirality_vanishes",
     validation: "not_checked",
   },
-  uses: [
-    "prop:frobenius-s-classification",
-    "rem:commutative-crossing-energy",
-  ],
+  uses: ["rem:commutative-crossing-energy"],
   computation: {
     engine: "mpmath",
     script: "folio-assistant/computations/commutative_chirality_vanishes_probe.py",

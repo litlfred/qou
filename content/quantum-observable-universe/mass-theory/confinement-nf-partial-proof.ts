@@ -29,8 +29,6 @@ export default proposition({
   title:
     "Partial formal proof of $\\mathrm{conj}:\\mathrm{confinement\\text{-}nf\\text{-}structure\\text{-}forcing}$: $T_1$ and $T_3$ from standard LP duality; $T_2$ reduces to Sub-lemma 2.1",
   uses: [
-    "prop:operator-selection-lp",
-    "prop:alpha-shift-torus-knot",
     "prop:crystal-graph-realization",
     "def:lp-duality-hypothesis-class",
   ],

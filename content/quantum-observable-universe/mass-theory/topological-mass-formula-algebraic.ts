@@ -8,13 +8,7 @@ export default proposition({
     ref: "qou:QOU.Torsion.AlgebraicMassFormula",
     validation: "not_checked",
   },
-  uses: [
-    "thm:topological-mass",
-    "def:algebraic-quantum-volume",
-    "def:quantum-planck-constant",
-    "thm:markov-trace-factorization",
-    "lem:tower-pair-equality-fixed-level",
-  ],
+  uses: ["lem:tower-pair-equality-fixed-level"],
   cites: [
     "kassel1995",
     "habiro2002",

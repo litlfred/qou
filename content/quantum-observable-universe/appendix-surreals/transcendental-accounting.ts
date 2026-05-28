@@ -6,16 +6,8 @@ export default remark({
     "Transcendental-accounting ledger: every period in the paper, indexed by Goncharov depth",
   interprets: "rem:algebraic-core-survives",
   uses: [
-    "rem:algebraic-core-survives",
-    "prop:gb-depth-period-correspondence",
-    "rem:figure-8-archimedean-illustration",
-    "prop:bring-figure-eight-depth-2-witness",
-    "prop:bring-trilog-depth-3-witness",
     "rem:chirality-period-pairing",
-    "prop:explicit-central-idempotent",
     "rem:bring-embeddable-knots",
-    "rem:knot-exhaustiveness",
-    "prop:quantum-dilogarithm-stratified",
     "prop:vol-through-tau",
   ],
   cites: [

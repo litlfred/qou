@@ -6,7 +6,6 @@ export default proposition({
     "The figure-eight knot operator acts unitarily on $V_{(2,1)}$",
   lean: { ref: "qou:QOU.BraidsAndKnots.figure_eight_unitary_on_standard" },
   uses: [
-    "prop:frobenius-lepton-meson-bridge",
     "prop:hoefsmit-binding-amplitude",
     "def:categorical-q-reeb-flow",
   ],

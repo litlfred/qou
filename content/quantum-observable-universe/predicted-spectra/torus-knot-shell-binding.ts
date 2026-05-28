@@ -17,10 +17,6 @@ export default proposition({
   lean: { ref: "qou:QOU.Archimedean.torus_knot_shell_binding",
     validation: "not_checked",
   },
-  uses: [
-    "def:transfer-matrix-operator",
-    "prop:skein-finiteness-bound",
-  ],
   examples: [
     "rem:shell-construction-rules",
   ],

@@ -14,8 +14,4 @@ export default definition({
   // *interprets* the denominator structure of this definition, not
   // the other way round. See `docs/audits/conjecture-cones.md`
   // "Methodology" footnote (case (2) cleanup).
-  uses: [
-    "thm:wedderburn-mass-formula",
-    "def:q-pochhammer-partial-product",
-  ],
 });

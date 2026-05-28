@@ -9,11 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:hoefsmit-seminormal-form",
-    "prop:wedderburn-weight-canonical",
     "prop:jucys-murphy-central-elements-qou",
     "prop:hecke-baer-star-generic",
-    "prop:gb-depth-period-correspondence",
     "prop:bring-figure-eight-depth-2-witness",
   ],
   cites: [],

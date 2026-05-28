@@ -15,7 +15,7 @@ export default remark({
     "topological-photonics",
     "literature",
   ],
-  uses: ["def:exceptional-divisor", "rem:breit-wheeler-vertex"],
+  uses: ["rem:breit-wheeler-vertex"],
   cites: [
     "bilsonthompson2005",
     "bilsonthompson2007",

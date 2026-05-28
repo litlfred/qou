@@ -5,7 +5,6 @@ export default proof({
   title: "Proof: Hecke generators satisfy Blitvić's pair-partition hypothesis",
   uses: [
     "prop:hecke-satisfies-blitvic-hypothesis",
-    "thm:jones-markov-trace",
     "prop:trace-locality-meets-gs-non-locality",
   ],
 });

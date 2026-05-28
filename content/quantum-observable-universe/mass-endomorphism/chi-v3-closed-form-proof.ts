@@ -4,10 +4,7 @@ export default remark({
   label: "rem:chi-v3-closed-form-proof",
   title:
     "Formal proof of the V_(3) per-irrep character difference closed form: $\\chi_{(3)}(\\beta_n) - \\chi_{(3)}(\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\varepsilon^k$ pattern via polynomial + geometric decomposition",
-  uses: [
-    "rem:typed-b3-sub-braid-extraction",
-    "prop:hoefsmit-V21-cos-symmetrization",
-  ],
+  uses: ["rem:typed-b3-sub-braid-extraction"],
   cites: [
     "jones1985",
     "wenzl1988",

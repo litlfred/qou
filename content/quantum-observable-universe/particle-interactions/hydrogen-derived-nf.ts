@@ -5,8 +5,5 @@ export default example({
   title: "Hydrogen: full normal form from pair production",
   interprets: "prop:four-term-pair-nucleon",
   tags: ["hydrogen", "atom", "normal-form", "derived", "hopf-link"],
-  uses: [
-    "prop:frobenius-gram-matrix",
-    "ex:hydrogen-knot-structure",
-  ],
+  uses: ["prop:frobenius-gram-matrix"],
 });

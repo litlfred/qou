@@ -42,12 +42,6 @@ export default proposition({
   label: "prop:alpha-em-shift-multiplicative-chain",
   title:
     "Multiplicative-chain form: $\\alpha_{EM}^{-1} = q \\cdot [\\alpha_{\\mathrm{shift}}(T_{2,9})]_q \\cdot [\\alpha_{\\mathrm{shift}}(T_{3,5})]_q$",
-  uses: [
-    "prop:em-coupling-projection",
-    "prop:alpha-shift-torus-knot",
-    "prop:force-carrier-bring-uniqueness",
-    "def:delta-q-decoration",
-  ],
   computation: {
     engine: "mpmath",
     script: "folio-assistant/computations/alpha_em_shift_chain.py",

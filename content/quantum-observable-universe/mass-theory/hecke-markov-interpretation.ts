@@ -23,7 +23,6 @@ export default remark({
   ],
   uses: [
     "prop:hecke-markov-transition",
-    "prop:hoefsmit-seminormal-form",
     "def:information-theoretic-time",
     "rem:markov-trace-product-interpretation",
   ],

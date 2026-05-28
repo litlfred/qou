@@ -5,9 +5,6 @@ export default remark({
   interprets: "def:archimedean-realization-functor",
   title: "Kashaev limit as the archimedean realization functor",
   tags: ["kashaev", "volume-conjecture", "realization-functor", "knot-volume", "archimedean"],
-  uses: [
-    "def:archimedean-realization-functor",
-    "rem:kashaev-volume-density",
-  ],
+  uses: ["rem:kashaev-volume-density"],
   cites: ["kashaev1997", "murakami-murakami2001"],
 });

@@ -7,12 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.geom_universality",
     validation: "not_checked",
   },
-  uses: [
-    "prop:geom-yekutieli-alignment",
-    "prop:topological-mass-formula",
-    "thm:topological-mass",
-    "def:yekutieli-lifting-condition",
-  ],
+  uses: ["prop:geom-yekutieli-alignment"],
   cites: ["yekutieli2015", "neumann-zagier1985"],
   tags: [
     "universality",

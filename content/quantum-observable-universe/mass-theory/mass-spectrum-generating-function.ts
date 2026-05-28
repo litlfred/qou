@@ -8,10 +8,6 @@ export default remark({
   uses: [
     "rem:two-tier-scaling-pq",
     "rem:categorical-mass-positivity",
-    "def:mass-identity",
-    "def:confinement-level",
-    "def:observation",
-    "prop:three-calibration-inputs",
     "prop:graded-hecke-energy-truncation-bound",
   ],
   cites: [

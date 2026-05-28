@@ -19,8 +19,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Archimedean.shell_structure_eigenvalues",
     validation: "not_checked",
   },
-  uses: [
-    "def:transfer-matrix-operator",
-    "rem:hydrogen-orbitals",
-  ],
+  uses: ["def:transfer-matrix-operator"],
 });

@@ -9,7 +9,6 @@ export default proposition({
   },
   uses: [
     "prop:topological-mass-formula",
-    "def:yekutieli-lifting-condition",
     "prop:yekutieli-lifting",
     "prop:hyperbolic-volume-transcendence",
   ],

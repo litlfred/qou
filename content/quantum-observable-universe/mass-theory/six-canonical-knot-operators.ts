@@ -18,9 +18,7 @@ export default proposition({
   ],
   uses: [
     "def:q-reeb-flow-on-coral-coords",
-    "def:coral-sector-coords",
     "rem:rho-s3-holonomy-exposition",
-    "prop:lagrange-resolvent-transform",
     "prop:vertex-is-exceptional-divisor",
   ],
   computation: {

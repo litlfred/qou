@@ -8,11 +8,6 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.three_calibration_inputs",
     validation: "not_checked",
   },
-  uses: [
-    "rem:calibration-inputs",
-    "prop:three-parameters-wedderburn",
-    "prop:categorical-mass-markov",
-  ],
   cites: ["codata2022"],
   tags: [
     "calibration",

@@ -10,7 +10,6 @@ export default proposition({
   },
   uses: [
     "prop:confinement-level-unique",
-    "prop:graded-markov-trace-from-gs-filtration",
     "prop:residue-at-root",
   ],
   tags: [

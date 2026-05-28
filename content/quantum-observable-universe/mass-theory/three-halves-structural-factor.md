@@ -16,7 +16,7 @@ $$
 $$
 
 <<<<<<< HEAD
-**Tau set** *(canonical for amphichiral $10_{43}$ candidate per PR #1253, used by `prop:lepton-tower-h-n-plus-1-branching` at $m = 3$):*
+**Tau set** *(canonical for amphichiral $10_{43}$ candidate, used by `prop:lepton-tower-h-n-plus-1-branching` at $m = 3$):*
 =======
 **Tau set** *(canonical for amphichiral $10_{43}$ candidate per , used by `conj:lepton-tower-h-n-plus-1-branching` at $m = 3$):*
 >>>>>>> ce4b916a (drain(voice): sweep remaining 135 files for inline PR refs + dates)

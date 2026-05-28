@@ -6,11 +6,8 @@ export default remark({
   title:
     "The Frobenius–Hopf contact structure is a universal computer",
   uses: [
-    "def:categorical-reeb-derivation",
-    "def:frobenius-hopf-substrate",
     "rem:reeb-flow-bridge",
     "rem:reeb-turing-completeness",
-    "rem:skein-turing-machine",
   ],
   cites: ["cardona2021"],
   tags: [

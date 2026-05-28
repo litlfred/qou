@@ -16,9 +16,6 @@ export default proposition({
     status: "verified",
   },
   uses: [
-    "prop:bring-trilog-depth-3-witness",
-    "rem:transcendental-accounting",
-    "prop:cl3-zeta5-geometric-realization",
     "prop:borel-partial-resolution",
     "prop:qou-infra-discharges-goncharov-zeta5",
   ],

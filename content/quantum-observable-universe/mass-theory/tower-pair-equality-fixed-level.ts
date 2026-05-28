@@ -8,12 +8,7 @@ export default lemma({
     ref: "qou:QOU.BraidKnot.TowerPairEqualityFixedLevel",
     validation: "not_checked",
   },
-  uses: [
-    "prop:markov-pair-z2",
-    "lem:vhat-pair-commutation-trace",
-    "thm:markov-trace-factorization",
-    "def:algebraic-quantum-volume",
-  ],
+  uses: ["lem:vhat-pair-commutation-trace"],
   cites: [
     "kassel1995",
     "geckpfeiffer2000",

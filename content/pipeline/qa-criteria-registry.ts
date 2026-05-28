@@ -160,6 +160,19 @@ const VOICE: QaCriterionDefinition[] = [
     depends_on: ["md"],
     automated: true,
   },
+  {
+    id: "voice-author-notes-pollution",
+    domain: "voice",
+    description:
+      "No author-tracking content in scholarly .md prose (per CLAUDE.md §4d). " +
+      "P1: status banners (> **Status:…**), P2: PR/commit refs (PR #NNN, " +
+      "commit abc1234), P3: agent names (Claude, Copilot, Gemini), " +
+      "P4: ISO dates (2026-05-NN), P5: deprecation markers. " +
+      "These belong in the .ts `authorNotes` field, not in prose.",
+    default_severity: "major",
+    depends_on: ["md"],
+    automated: true,
+  },
 ];
 
 // ── Domain: fit ─────────────────────────────────────────────────
@@ -627,6 +640,18 @@ const DETANGLER: QaCriterionDefinition[] = [
       "per-chapter placement.",
     default_severity: "major",
     depends_on: ["ts", "lean"],
+    automated: true,
+  },
+  {
+    id: "detangler-block-tanglement",
+    domain: "detangler",
+    description:
+      "Per-block tanglement score: measures dependency fan-out (|uses[]|), " +
+      "forward-ref fraction, and cross-chapter ref count. High tanglement " +
+      "signals a block that should be split, relocated, or have its " +
+      "dependency edges pruned.",
+    default_severity: "major",
+    depends_on: ["ts"],
     automated: true,
   },
 ];

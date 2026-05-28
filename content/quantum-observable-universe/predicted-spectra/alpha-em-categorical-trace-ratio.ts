@@ -31,13 +31,6 @@ export default proposition({
   label: "prop:alpha-em-categorical-trace-ratio",
   title:
     "Algebraic identity: $\\alpha_{EM} = h^2 / [q \\cdot \\delta_q(T_{2,9}) \\cdot \\delta_q(T_{3,5})]$",
-  uses: [
-    "def:delta-q-decoration",
-    "prop:em-coupling-projection",
-    "prop:force-carrier-bring-uniqueness",
-    "prop:force-carrier-intertwining-correspondence",
-    "prop:e-hartree-categorical-derivation",
-  ],
   lean: { ref: "qou:QOU.ArchimedeanUniverse.alpha_em_categorical_trace_ratio" },
   tags: [
     "alpha-em",

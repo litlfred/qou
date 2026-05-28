@@ -8,12 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.y_lambda_cyclotomic_factorization",
     validation: "not_checked",
   },
-  uses: [
-    "prop:y-lambda-closed-form-wenzl-bridge",
-    "prop:explicit-alpha-k-h3",
-    "prop:alpha-k-derivation-procedure",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["prop:y-lambda-closed-form-wenzl-bridge"],
   cites: ["wenzl1988", "macdonald1995"],
   tags: [
     "y-lambda",

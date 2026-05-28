@@ -13,9 +13,7 @@ export default remark({
     "exceptional-divisor",
   ],
   uses: [
-    "prop:vertex-is-exceptional-divisor",
     "prop:six-canonical-knot-operators",
-    "def:q-reeb-flow-on-coral-coords",
     "prop:ramified-disc-fusion",
   ],
 });

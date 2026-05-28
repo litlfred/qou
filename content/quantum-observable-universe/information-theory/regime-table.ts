@@ -10,8 +10,5 @@ export default remark({
     "reference",
   ],
   interprets: "def:substrate-parameter",
-  uses: [
-    "def:quantum-planck-constant",
-    "def:information-speed-of-light",
-      ],
+  uses: ["def:information-speed-of-light"],
 });
