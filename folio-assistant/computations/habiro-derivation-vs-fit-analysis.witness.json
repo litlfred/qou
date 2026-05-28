@@ -1,0 +1,45 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-28T01:53:05.515661+00:00",
+  "commitSha": "aa5857f3d5bb1e985a6537c5b89f1c2fef6f233b",
+  "assertions": [
+    {
+      "name": "R_alg_is_algebraic",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "R_alg(q) computed as exact polynomial ratio in u"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1053,
+  "computation": "habiro-derivation-vs-fit-analysis",
+  "scriptFile": "habiro_derivation_vs_fit.py",
+  "scriptHash": "6023cb30b6e3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Symbolic analysis of Habiro correction: the bridge R_alg(q) is algebraic but S = R_alg/(Vol/ℏ²) is transcendental. Coefficients 29/30 and 1/1260 are numerical, not algebraic.",
+  "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
+  "data": {
+    "R_alg_deg_numer": 226,
+    "R_alg_deg_denom": 97,
+    "derived": [
+      "Pochhammer factorisation",
+      "bridge = ⟨Π(1+u^k)⟩",
+      "R_alg(q) exact"
+    ],
+    "fitted": [
+      "S correction",
+      "c₂=29/30",
+      "c₃=1/1260"
+    ],
+    "reason": "Vol(4₁) is transcendental; S = R_alg/(Vol/ℏ²) inherits it"
+  }
+}

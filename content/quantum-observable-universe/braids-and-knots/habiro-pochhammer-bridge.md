@@ -56,9 +56,10 @@ At the substrate $q_0 \approx 1.1100$, $u_0 = \sqrt{q_0} \approx 1.0536$:
 | $\langle\prod(1+u^k)\rangle_{\mathrm{Hab}}$ | $5.616$ |
 | Ratio check | $136.071 / 24.227 = 5.616$ ✓ |
 
-The Habiro–Markov bridge
-$\mathrm{bridge} = \mathrm{denom} \times \langle\prod(1+u^k)\rangle$
-matches
-$n!/[n]_{q}! \times \mathrm{Vol}(4_1)/\hbar_q^2 \times (1 + \hbar_q^2)(1 - \hbar_q^2/p(n))$
-to $7.8\;\mathrm{ppm}$, where $p(9) = 30$ is the number of
-partitions.
+The full bridge
+$R_{\mathrm{alg}}(q) = \mathrm{bridge}(q) / (n!/[n]_q!)$
+is an exact rational function of $q$ (degree $226/97$ in $u$).
+The correction $S = R_{\mathrm{alg}} / (\mathrm{Vol}(4_1)/\hbar_q^2)$
+inherits transcendental dependence on $\mathrm{Vol}(4_1)$ and
+cannot be expressed as a closed-form rational function of $\hbar_q^2$
+from representation theory alone.
