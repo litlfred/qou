@@ -195,7 +195,6 @@ jobs:
           path: |
             main.tex
             chapters/
-            main.tex
             standalone-*.tex
             papers.json
             folio-assistant/computations/*.witness.json
