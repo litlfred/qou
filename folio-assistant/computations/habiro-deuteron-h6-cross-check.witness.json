@@ -1,0 +1,78 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-28T02:07:45.681167+00:00",
+  "commitSha": "5409e13f7f9189171956abd7e73f6340440e7f27",
+  "assertions": [
+    {
+      "name": "first_factor_improves",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "(1+ℏ²) improves bare prediction"
+    },
+    {
+      "name": "pn_factor_improves",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "tolerance": 0,
+      "source": "(1−ℏ²/11) further improves after (1+ℏ²)"
+    },
+    {
+      "name": "pn_in_top5",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "tolerance": 0,
+      "source": "p(6)=11 is among top-5 integer denominators"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 103,
+  "computation": "habiro-deuteron-h6-cross-check",
+  "scriptFile": "habiro_deuteron_h6_cross_check.py",
+  "scriptHash": "1fead5d42e35",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Deuteron Habiro correction tower at H_6 (n=6, p(6)=11). Tests whether the proton pattern (1+ℏ²)(1−ℏ²/p(n)) is universal. Ladder: 370752399 → 367138315.6 → 367467162.1 → 367366708.585 ppm. p(6)=11 ranks #189 among integer denominators.",
+  "data": {
+    "isotope": "deuteron",
+    "hecke_level": 6,
+    "partition_number": 11,
+    "hab_A_qq": "25617.906942298434935",
+    "hab_B_uu": "940.65088478380120895",
+    "denom_in_u_evaluated": "2422.56929795766",
+    "tr_M_computed": "0.388286471547713",
+    "tr_M_stored": "0.388286471547713",
+    "bridge": "65976.8207740672",
+    "ladder": {
+      "bare_ppm": 370752398.8031376,
+      "after_1_plus_eps_ppm": 367138315.5602482,
+      "after_pn_factor_ppm": 367467162.06852573,
+      "after_third_factor_ppm": 367366708.5846295,
+      "third_factor_expression": "1/(n²)"
+    },
+    "pn_rank_among_integers": 189,
+    "best_integer_denominator": 199,
+    "c3_observed": "37430.997842611",
+    "pslq_result": "1·1/n + -2·1/p(n) + 1·1/(n·p(n)) = 0",
+    "proton_comparison": {
+      "proton_n": 9,
+      "proton_pn": 30,
+      "proton_ladder_ppm": [
+        9495,
+        -319,
+        7.8,
+        0.002
+      ],
+      "proton_c3": "1/1260"
+    }
+  }
+}
