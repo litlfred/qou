@@ -383,7 +383,6 @@ export default chapter({
         "deuteron-first-principles-table2-data",
         "deuteron-first-principles-table3-data",
         "deuteron-first-principles-table4-data",
-        "pentagon-uv-commutation",
         "energy-scale-planck",
         "skein-binding-lagrangian",
         "beta-stability",
