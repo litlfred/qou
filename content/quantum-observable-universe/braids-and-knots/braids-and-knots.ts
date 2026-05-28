@@ -157,6 +157,7 @@ export default chapter({
       title: "Leptons, mesons, and the Frobenius bridge",
       label: "sec:lepton-meson-parallel",
       blocks: [
+        "lepton-meson-parallel-intro",
         "frobenius-lepton-meson-bridge",
         "hoefsmit-binding-amplitude",
         "figure-eight-reeb-rotation",
