@@ -58,13 +58,13 @@ equations.
 Assume
 ([algebraic-geometric dilog equivalence](#prop:algebraic-geometric-dilog-equivalence))
 and
-([Archimedean limit](#prop:dilogarithm-archimedean-limit)).
+([Archimedean limit](#conj:dilogarithm-archimedean-limit)).
 
 1. **Algebraic side** ([q-Pochhammer partial product §interpretation](#def:q-pochhammer-partial-product)).
    The denominator $(x; q)_n$ has $n$ simple zeros at $x = q^{-k}$
    for $k = 0, \dots, n-1$. Each is a simple pole of $\Phi_n(x; q)$.
 
-2. **Archimedean side** ([Archimedean limit](#prop:dilogarithm-archimedean-limit)).
+2. **Archimedean side** ([Archimedean limit](#conj:dilogarithm-archimedean-limit)).
    Under Faddeev's scaling, $(1 - q) \log \Phi_n(x; q) \to
    \mathrm{Li}_2(x)$. The poles of $\Phi_n$ map to the logarithmic
    branch point of $\mathrm{Li}_2$ at $t = 1$ in the integrand
@@ -138,7 +138,7 @@ locus.
 Stated conditional on
 ([algebraic-geometric dilog equivalence](#prop:algebraic-geometric-dilog-equivalence))
 and
-([Archimedean limit](#prop:dilogarithm-archimedean-limit)). The Lean
+([Archimedean limit](#conj:dilogarithm-archimedean-limit)). The Lean
 formulation
 `QOU.QPochhammer.shared_denominator_cusp_holonomy` is therefore a
 class instance, not a closed theorem.

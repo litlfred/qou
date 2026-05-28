@@ -12,10 +12,10 @@ composite CPT operator
 decomposes naturally as a tensor of:*
 
 - *C from color-sheet flavor conjugation
-  ([`prop:c-from-color-flavor-swap`](#prop:c-from-color-flavor-swap), D6)*
+  ([`prop:c-from-color-flavor-swap`](#conj:c-from-color-flavor-swap), D6)*
 - *P from Type-B Cartan folding* (this conjecture)
 - *T from Markov-trace cyclicity
-  ([`prop:t-from-trace-cyclicity`](#prop:t-from-trace-cyclicity), D8)*
+  ([`prop:t-from-trace-cyclicity`](#conj:t-from-trace-cyclicity), D8)*
 
 ## The CLAUDE.md §7b authoring shortcut
 

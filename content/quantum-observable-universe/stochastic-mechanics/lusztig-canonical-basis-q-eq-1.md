@@ -1,5 +1,5 @@
 **Conjecture (D24 Lusztig canonical basis closure, conditional on
-[`prop:kazhdan-lusztig-classical-limit`](#prop:kazhdan-lusztig-classical-limit)).**
+[`prop:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)).**
 *At the classical limit $q = 1$, the Kashiwara crystal of $H_n(q)$
 ([`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy),
 D12 at $q \to 0$) **decategorifies** to the Lusztig canonical basis
@@ -78,5 +78,5 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 - D9 (isospin classical limit):
   [`prop:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md)
 - Upstream conjecture:
-  [`prop:kazhdan-lusztig-classical-limit`](#prop:kazhdan-lusztig-classical-limit)
+  [`prop:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)
 - [Kazhdan–Lusztig 1979; Lusztig 1990; Kashiwara 1991]

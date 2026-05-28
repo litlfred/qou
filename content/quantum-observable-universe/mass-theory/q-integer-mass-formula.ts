@@ -10,8 +10,8 @@ import { conjecture } from "../../schema/builders";
  * representation theory and the shell closure / palindromicity
  * conjectures.
  */
-export default proposition({
-  label: "prop:q-integer-mass-formula",
+export default conjecture({
+  label: "conj:q-integer-mass-formula",
   title: "Seven-term atomic mass formula with $q$-integer coefficients",
   lean: {
     ref: "qou:QOU.Interactions.QIntegerMassFormula",
@@ -20,7 +20,7 @@ export default proposition({
   uses: [
     "thm:wedderburn-mass-formula",
     "prop:operator-selection-lp",
-    "prop:palindromicity-orbital-type",
+    "conj:palindromicity-orbital-type",
   ],
   tags: [
     "mass-formula",

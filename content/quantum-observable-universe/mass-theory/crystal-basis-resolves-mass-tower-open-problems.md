@@ -3,7 +3,7 @@
 $H_n(R, q) \cong R^\Lambda_\alpha$ (cyclotomic KLR algebra)
 [`brundankleshchev2009`] and the Lecouvey GS-irreducible /
 crystal-highest-weight bijection [`lecouvey2007`]
-([`prop:crystal-graph-realization`](#prop:crystal-graph-realization)),
+([`prop:crystal-graph-realization`](#conj:crystal-graph-realization)),
 three of the four remaining mass-tower open problems reduce to
 finite-graph combinatorics on Kashiwara crystals
 $\mathrm{Cryst}(\mathfrak{sl}_n)$ [`kashiwara1991`]:*
@@ -14,7 +14,7 @@ $\mathrm{Cryst}(\mathfrak{sl}_n)$ [`kashiwara1991`]:*
  **height-6 crystal-vertex count**;*
 - *the brane-tower $|V|\to 1$ divergence is regularised by the
  Kazhdan-Lusztig classical-limit functor
- ([`prop:kazhdan-lusztig-classical-limit`](#prop:kazhdan-lusztig-classical-limit)),
+ ([`prop:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)),
  whose action collapses $H_n(R, q)$ to $\mathbb{Z}[S_n]$ via
  integer KL coefficients.*
 
@@ -102,7 +102,7 @@ $z = q_0 \approx 1.11$, the first pole of $\Phi_q$. The summand
 $\Phi_q(z)$ is enormous and the analytic series diverges.
 
 The Kazhdan-Lusztig classical-limit functor
-[`prop:kazhdan-lusztig-classical-limit`](#prop:kazhdan-lusztig-classical-limit)
+[`prop:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)
 sends each KLR canonical basis element $b_w$ to its $q \to 1$
 specialisation $C_w \in \mathbb{Z}[S_n]$ — a **specific integer
 $\pm 1$ permutation sign**. Under this functor the divergent
@@ -127,7 +127,7 @@ multiplied by classical character values, both bounded.
 ## The fourth open problem
 
 The K-theoretic identification
-[`prop:bring-hyperbolic-knot-bloch-decomposition`](#prop:bring-hyperbolic-knot-bloch-decomposition)
+[`prop:bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition)
 asks whether $2/(3\pi)$ lies in the rank-8 Bloch group image of
 $B(\mathbb{Q}(\zeta_{60}))\otimes\mathbb{Q}$. Crystal bases do *not*
 directly resolve this: Bloch-Wigner values $D[Z_K]$ are

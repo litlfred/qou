@@ -56,6 +56,6 @@ particles.
 If $\mathcal{S}_0$ is also the future boundary of a preceding
 aeon $\mathcal{A}'$, then $\mathrm{CMB}(\mathcal{S}_0)$ is
 inherited from the terminal horizon of $\mathcal{A}'$
-([aeon boundary generates chart](#rem:aeon-boundary-generates-chart)):
+([aeon boundary generates chart](#conj:aeon-boundary-generates-chart)):
 the CMB of one aeon is the thermal remnant of the previous
 aeon's final state.

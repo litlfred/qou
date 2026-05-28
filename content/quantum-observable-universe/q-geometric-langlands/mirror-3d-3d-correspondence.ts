@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:mirror-3d-3d-correspondence",
+export default conjecture({
+  label: "conj:mirror-3d-3d-correspondence",
   title:
     "3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\mathcal{N}{=}2$ gauge theories",
   lean: {
@@ -9,8 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:kashaev-volume-conjecture",
-    "prop:borromean-bloch-group-element",
+    "conj:kashaev-volume-conjecture",
+    "conj:borromean-bloch-group-element",
     "rem:vol-as-motivic-period",
     "def:borromean-baryon",
   ],

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:weak-spectral-completeness",
+export default conjecture({
+  label: "conj:weak-spectral-completeness",
   title:
     "Plancherel completeness for the EW/Higgs $\\{T(2,4), T(2,6), T(2,8)\\}$ idempotent decomposition",
   uses: [

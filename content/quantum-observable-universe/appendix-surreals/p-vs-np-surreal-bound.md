@@ -1,5 +1,5 @@
 This remark expresses the Reeb-period complexity argument of
-[P vs NP in the QOU](#prop:p-vs-np-qou) as a literal surreal
+[P vs NP in the QOU](#conj:p-vs-np-qou) as a literal surreal
 inequality.
 
 **Setup.** Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb
@@ -41,7 +41,7 @@ collapses the transfinite advantage of the $q$-algorithm: under
 $\mathrm{st}_{\varepsilon \to 0}$, the $2^n$-fold Reeb speed-up is
 lost.  Therefore the classical complexity classes $\mathbf{P}$ and
 $\mathbf{NP}$ cannot be identified via the standard-part functor,
-which is the content of [P vs NP in the QOU](#prop:p-vs-np-qou).
+which is the content of [P vs NP in the QOU](#conj:p-vs-np-qou).
 
 **Interpretation.** The remark does not prove $\mathbf{P} \neq \mathbf{NP}$
 classically; it shows that the QOU framework, assuming
@@ -57,7 +57,7 @@ Cook--Levin reduction classically.  Combined with the surreal
 squeeze above, the separation $\mathbf{P} \neq \mathbf{NP}$ follows
 from the strict inclusion at positive $\varepsilon$ and the
 non-compressibility witness of
-[P vs NP in the QOU](#prop:p-vs-np-qou).
+[P vs NP in the QOU](#conj:p-vs-np-qou).
 
 **Caveat.** Unlike the RH, NS, and Collatz bounds, the P-vs-NP
 squeeze is conditional on an independent conjecture

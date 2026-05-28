@@ -133,7 +133,7 @@ $n \geq 2$ and every prime $K \geq 3$.**
 
 Combined with prior framework:
 
-- [`prop:two-filtration-bridge-general`](#prop:two-filtration-bridge-general):
+- [`prop:two-filtration-bridge-general`](#conj:two-filtration-bridge-general):
   bridge map at every partition.
 - This proposition: dimension at every $(n, K)$ pair.
 - B1 keystone status: theorem-level at $n = 2$ (Bloch–Suslin),

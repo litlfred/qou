@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "rem:frobenius-packing-density",
-    "prop:symmetric-crystal-pair-production",
+    "conj:symmetric-crystal-pair-production",
   ],
   cites: [
     "kashiwara1991",

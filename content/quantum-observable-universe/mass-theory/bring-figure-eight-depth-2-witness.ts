@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:bring-figure-eight-depth-2-witness",
+export default conjecture({
+  label: "conj:bring-figure-eight-depth-2-witness",
   title:
     "Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness)",
   lean: { ref: "qou:QOU.BraidKnot.BringFigureEightDepth2Witness", validation: "stub" },
@@ -13,11 +13,11 @@ export default proposition({
     status: "verified",
   },
   uses: [
-    "prop:gb-depth-period-correspondence",
+    "conj:gb-depth-period-correspondence",
     "def:brings-coordinate-ring",
     "rem:figure-8-archimedean-illustration",
     "prop:q-dilogarithm-exists",
-    "prop:kashaev-volume-conjecture",
+    "conj:kashaev-volume-conjecture",
   ],
   cites: [
     "thurston1978",

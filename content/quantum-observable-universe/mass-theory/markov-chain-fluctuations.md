@@ -22,7 +22,7 @@ $$
 $$
 
 with explicit constants worked out in
-[jet convergence](#prop:jet-convergence-classical-limit).
+[jet convergence](#conj:jet-convergence-classical-limit).
 This is the standard Gaussian CLT rate transported to the
 $q$-deformed Plancherel measure.
 

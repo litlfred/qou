@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:c-from-color-flavor-swap",
+export default conjecture({
+  label: "conj:c-from-color-flavor-swap",
   title:
     "Charge conjugation $C$ as the color-sheet flavor-swap $u \\leftrightarrow \\bar u$, $d \\leftrightarrow \\bar d$",
   lean: {
@@ -12,7 +12,7 @@ export default proposition({
     // The just-merged color-tube channel-assignment conjecture
     // (PR #1111) supplies the framework for flavor-content on color
     // sheets:
-    "prop:inter-nucleon-channel-color-tube",
+    "conj:inter-nucleon-channel-color-tube",
     // The existing color-tube infrastructure on Bring's surface:
     "def:color-tube-coordinates",
     "def:color-tube-fibers",

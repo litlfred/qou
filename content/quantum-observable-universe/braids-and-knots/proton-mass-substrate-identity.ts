@@ -56,7 +56,7 @@ export default proposition({
     "thm:borromean-markov-trace-closed-form",
     "thm:q-schur-y-lambda-closed-form",
     "prop:flavor-split-substrate",
-    "prop:rho-k-pair-gen-canonical-form",
+    "conj:rho-k-pair-gen-canonical-form",
   ],
   cites: [
     "adams1985hyperbolic",

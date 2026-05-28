@@ -8,16 +8,16 @@
 | **B1 Borromean row** | **theorem** | [`prop:b1-hyperbolic-rows-theorem`](#prop:b1-hyperbolic-rows-theorem) (+ van der Veen 2008) |
 | **B1 Whitehead row** | **theorem** | [`prop:b1-hyperbolic-rows-theorem`](#prop:b1-hyperbolic-rows-theorem) (+ Murakami 2002) |
 | **Hecke-Baer-* at generic $q$** | **theorem** | [`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic) (+ exact failure locus) |
-| **Bridge map at $n \leq 4$** | **theorem** | [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases) |
+| **Bridge map at $n \leq 4$** | **theorem** | [`prop:two-filtration-bridge-small-cases`](#conj:two-filtration-bridge-small-cases) |
 | **Joint Galois $\times$ braid action, all cells** | **theorem** | [`prop:joint-galois-braid-discharged`](#prop:joint-galois-braid-discharged) (round 11) |
 | **$\mathrm{Im}\,\mathrm{Li}_3(\zeta_5) = 4\pi^{3}/125$** | **theorem** | [`prop:bring-trilog-imaginary-tate-rational`](#prop:bring-trilog-imaginary-tate-rational) (round 10) |
 | **$\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5) = -(12/25)\zeta(3)$** | **theorem** | [`prop:cl3-zeta5-orbit-sum-identity`](#prop:cl3-zeta5-orbit-sum-identity) (round 11) |
 | **Jones-faithfulness $\le$ 10 crossings** | **theorem** | [`rem:jones-faithfulness-crossing-8`](#rem:jones-faithfulness-crossing-8) (HTW 1998) |
 | **B1 chiral hyperbolic rows** ($5_2, 6_2, 6_3$, $\ldots$) | **conditional theorem** modulo per-knot VC | open knot-by-knot |
 | **Cl_3(2π/5) − Cl_3(4π/5) closed form** | **open** — single real number $\approx$ 0.955 | reflection + multiplication formulas exhausted |
-| **Strong sharpness, depth 3 over $\mathbb{Q}(\zeta_5)$** | **conditional** on Goncharov $\zeta_5$ sub-case | [`prop:qou-infra-discharges-goncharov-zeta5`](#prop:qou-infra-discharges-goncharov-zeta5) (Avenue A or B, ~1-2 weeks) |
+| **Strong sharpness, depth 3 over $\mathbb{Q}(\zeta_5)$** | **conditional** on Goncharov $\zeta_5$ sub-case | [`prop:qou-infra-discharges-goncharov-zeta5`](#conj:qou-infra-discharges-goncharov-zeta5) (Avenue A or B, ~1-2 weeks) |
 | **Strong sharpness, depth $\ge$ 3 over arbitrary $F$** | **conjectural** | Beilinson + Goncharov (external) |
 | **Strong sharpness, depth $\ge$ 4** | **conjectural** | Beilinson + Goncharov (external) |
-| **Geometric realisation of Cl_3(2π/5)** | **open**, 3 candidates | [`prop:cl3-zeta5-geometric-realization`](#prop:cl3-zeta5-geometric-realization) |
+| **Geometric realisation of Cl_3(2π/5)** | **open**, 3 candidates | [`prop:cl3-zeta5-geometric-realization`](#conj:cl3-zeta5-geometric-realization) |
 | **Bridge map at $n \geq 5$ partitions** | **open** | extends the bar-class argument |
 | **Lean substantive proofs** | **partial** (sorry pending Mathlib's IwahoriHecke API) | scaffolding in `qou:` namespace |

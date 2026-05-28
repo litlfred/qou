@@ -1,13 +1,13 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:kazhdan-lusztig-classical-limit",
+export default conjecture({
+  label: "conj:kazhdan-lusztig-classical-limit",
   title:
     "As $q \\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics",
   lean: { ref: "qou:QOU.BraidKnot.KazhdanLusztigClassicalLimit", validation: "stub" },
   uses: [
-    "prop:hecke-anyonic-substrate",
-    "prop:crystal-graph-realization",
+    "conj:hecke-anyonic-substrate",
+    "conj:crystal-graph-realization",
     "def:observation",
   ],
   cites: [

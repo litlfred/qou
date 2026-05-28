@@ -4,7 +4,7 @@
 ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)),
 filtered by iterated-integral depth
 $G^{(0)} \subseteq G^{(1)} \subseteq \cdots$
-([keystone correspondence](#prop:gb-depth-period-correspondence)).
+([keystone correspondence](#conj:gb-depth-period-correspondence)).
 For each Bring-embeddable knot/link $K$ ([Bring-embeddable
 knots](#rem:bring-embeddable-knots)) with dominant cell
 $\lambda_K \vdash n_K$ and central primitive idempotent
@@ -27,7 +27,7 @@ $K$ (Hecke cell side).*
 ### Axes and refinements
 
 **Depth axis $n$ (horizontal).** Inherited from
-[`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence):
+[`prop:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence):
 $G^{(0)}$ contains $\exp_q$ and scalars; $G^{(n)}$ adjoins the
 grouplikes $\log_q, \mathrm{Li}_2^q, \ldots, \mathrm{Li}_n^q$.
 Compatible with $\tau_{\mathrm{arch}}$ via
@@ -68,7 +68,7 @@ This block is the **definition layer** for the framework the
 keystone implies but does not name. Three downstream conjectures
 populate it:
 
-- [`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action)
+- [`prop:joint-galois-braid-action`](#conj:joint-galois-braid-action)
   — the symmetry group acting on $\mathcal{H}_q^{(n, K)}$.
 - [`prop:knot-indexed-convolution-grid`](#prop:knot-indexed-convolution-grid)
   — placement of paper's existing knot-indexed convolutions
@@ -83,6 +83,6 @@ populate it:
 **Definition block.** Provides the framework symbol; downstream
 blocks make claims about its structure. No proof obligations here
 beyond well-definedness, which follows from the
-existence of the depth filtration ([keystone](#prop:gb-depth-period-correspondence))
+existence of the depth filtration ([keystone](#conj:gb-depth-period-correspondence))
 and the explicit central idempotents
 ([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)).

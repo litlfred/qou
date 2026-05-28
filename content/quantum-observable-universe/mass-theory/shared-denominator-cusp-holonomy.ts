@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:shared-denominator-cusp-holonomy",
+export default conjecture({
+  label: "conj:shared-denominator-cusp-holonomy",
   title:
     "Shared-denominator cusp holonomy: roots of $(x; q)_n$ enforce Thurston completeness",
   lean: {
@@ -11,8 +11,8 @@ export default proposition({
   uses: [
     "def:q-pochhammer-partial-product",
     "prop:algebraic-geometric-dilog-equivalence",
-    "prop:dilogarithm-archimedean-limit",
-    "prop:kashaev-volume-conjecture",
+    "conj:dilogarithm-archimedean-limit",
+    "conj:kashaev-volume-conjecture",
     "rem:kashaev-as-archimedean-realization",
   ],
   cites: [

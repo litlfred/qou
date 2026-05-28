@@ -25,4 +25,4 @@ are equivalently the highest-weight vertices of a finite component
 of the Kashiwara crystal $\mathrm{Cryst}(\mathfrak{sl}_n)$; the
 engine may compute $T_w$ by directed crystal traversal rather than
 by S-polynomial overlap analysis.  See
-[crystal-graph realisation](#prop:crystal-graph-realization).*
+[crystal-graph realisation](#conj:crystal-graph-realization).*

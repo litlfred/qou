@@ -8,4 +8,4 @@
 | $q$-shuffle convolution $*_q$ | [`def:frobenius-hopf-substrate`](#def:frobenius-hopf-substrate) | preserves $n$ | preserves $K$ (or merges) | $\mathcal{H}_q^{(n_1 + n_2, K \cdot K')}$ |
 | Volume functor $\mathrm{Vol}$ | [`prop:vol-through-tau`](#prop:vol-through-tau) | **2** | hyperbolic knot | $\mathcal{P}_2 / \mathcal{P}_1$ (real) |
 | Chern–Simons $\mathrm{CS}$ | (open in paper) | **3** | hyperbolic knot | $\mathcal{P}_3 / \mathcal{P}_2$ (Tate-twisted) |
-| Trilog at $\zeta_5$ orbit | [`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness) | **3** | $S_5$-Bring orbit | weight-3 cyclotomic period |
+| Trilog at $\zeta_5$ orbit | [`prop:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness) | **3** | $S_5$-Bring orbit | weight-3 cyclotomic period |

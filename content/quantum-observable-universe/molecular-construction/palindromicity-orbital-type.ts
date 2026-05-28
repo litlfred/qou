@@ -3,8 +3,8 @@ import { conjecture } from "../../schema/builders";
 /**
  * Palindromicity of the NF histogram characterises orbital type.
  */
-export default proposition({
-  label: "prop:palindromicity-orbital-type",
+export default conjecture({
+  label: "conj:palindromicity-orbital-type",
   title: "Palindromicity and orbital type",
   lean: { ref: "qou:QOU.Molecular.PalindromicityOrbitalType",
     validation: "not_checked",

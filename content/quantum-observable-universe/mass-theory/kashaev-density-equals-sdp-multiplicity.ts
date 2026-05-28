@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:kashaev-density-equals-sdp-multiplicity",
+export default conjecture({
+  label: "conj:kashaev-density-equals-sdp-multiplicity",
   title:
     "Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\rho_F = \\nu_{\\mathrm{SDP}}$)",
   lean: {
@@ -16,7 +16,7 @@ export default proposition({
   },
   uses: [
     // The underlying Kashaev volume conjecture this refines:
-    "prop:kashaev-volume-conjecture",
+    "conj:kashaev-volume-conjecture",
     "rem:kashaev-volume-density",
     "rem:kashaev-as-archimedean-realization",
     // The Wedderburn / joint-tower SDP infrastructure:

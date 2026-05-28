@@ -178,7 +178,7 @@ Concretely:
 3. Real parts modulo orbit-sum + $\zeta(3)$-line give the genuinely-
    new content — PSLQ-saturated at $K = 5, 7$.
 4. **Combined with
-   [`prop:two-filtration-bridge-general`](#prop:two-filtration-bridge-general)
+   [`prop:two-filtration-bridge-general`](#conj:two-filtration-bridge-general)
    (round 13 of )**, the framework's depth-3 picture has a
    fully general theorem for any cyclotomic field at any chiral
    pair of partition cells.
@@ -187,7 +187,7 @@ Concretely:
 
 - Theorem A: [`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form)
 - Theorem B: [`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general)
-- Theorem C: [`prop:two-filtration-bridge-general`](#prop:two-filtration-bridge-general)
+- Theorem C: [`prop:two-filtration-bridge-general`](#conj:two-filtration-bridge-general)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
 - $K = 5$ baseline: [`prop:cl3-zeta5-pslq-independence`](#prop:cl3-zeta5-pslq-independence)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)

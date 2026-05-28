@@ -8,8 +8,8 @@ export default remark({
   uses: [
     "rem:transcendental-accounting",
     "def:hq-bi-filtration",
-    "prop:joint-galois-braid-action",
-    "prop:cl3-zeta5-geometric-realization",
+    "conj:joint-galois-braid-action",
+    "conj:cl3-zeta5-geometric-realization",
   ],
   cites: ["bloch2000", "kontsevich1995", "zagier1986"],
   tags: [

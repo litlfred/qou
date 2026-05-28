@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:dilogarithm-archimedean-limit",
+export default conjecture({
+  label: "conj:dilogarithm-archimedean-limit",
   title:
     "$(1{-}q)\\,\\log\\Phi_n(x; q) \\to \\mathrm{Li}_2(x)$ under $\\tau_{\\mathrm{arch}}$",
   lean: {
@@ -13,7 +13,7 @@ export default proposition({
     "cor:quantum-dilogarithm",
     "def:archimedean-realization-functor",
     "rem:kashaev-as-archimedean-realization",
-    "prop:kashaev-volume-conjecture",
+    "conj:kashaev-volume-conjecture",
   ],
   cites: ["faddeev1994", "kashaev1997", "zagier1986"],
   tags: [

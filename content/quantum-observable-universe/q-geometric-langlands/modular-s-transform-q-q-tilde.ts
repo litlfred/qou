@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:modular-s-transform-q-q-tilde",
+export default conjecture({
+  label: "conj:modular-s-transform-q-q-tilde",
   title:
     "Modular $S$-transform $q \\leftrightarrow \\tilde q = \\exp(2\\pi i / \\tau)$ for Hecke parameter analytic continuation",
   lean: {
@@ -11,7 +11,7 @@ export default proposition({
   uses: [
     "def:bar-involution",
     "def:hecke-normal-form",
-    "prop:kashaev-volume-conjecture",
+    "conj:kashaev-volume-conjecture",
     "rem:vol-as-motivic-period",
   ],
   cites: [

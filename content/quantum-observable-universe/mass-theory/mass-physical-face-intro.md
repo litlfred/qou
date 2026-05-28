@@ -3,10 +3,10 @@ specialise to physical predictions.  The neutron--proton mass
 splitting ([n--p splitting](#prop:neutron-proton-splitting))
 follows from the crossing asymmetry of the trefoil braid; the
 Borromean baryon mass formula
-([baryon mass](#prop:borromean-baryon-mass-formula)) gives the
+([baryon mass](#conj:borromean-baryon-mass-formula)) gives the
 proton and neutron masses from a single common scale; and the
 seven-term atomic mass formula
-([q-integer mass](#prop:q-integer-mass-formula)) extends the
+([q-integer mass](#conj:q-integer-mass-formula)) extends the
 prediction to nuclei with $q$-integer coefficients.
 
 Binding energies derive from the three-channel brane tower

@@ -1,5 +1,5 @@
 **Conjecture (D6 charge-conjugation closure, conditional on
-[`prop:inter-nucleon-channel-color-tube`](#prop:inter-nucleon-channel-color-tube)).**
+[`prop:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)).**
 *Within the QOU framework, charge conjugation $C$ acts as the
 **flavor swap on color sheets** that exchanges each quark flavor
 with its antimatter-conjugate:*
@@ -19,7 +19,7 @@ the neutron flavor triple $(u, d, d)$ maps to $(\bar u, \bar d,
 \bar d)$ (the antineutron).  $C$ is an involution
 ($C^2 = \mathrm{id}$) and commutes with the color-tube weighted
 averaging of
-[`prop:inter-nucleon-channel-color-tube`](#prop:inter-nucleon-channel-color-tube).*
+[`prop:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube).*
 
 ## Why this disentangles D6 from CPT
 
@@ -48,7 +48,7 @@ reversal).
 
 The proposition is conditional on the color-sheet flavor structure
 established in
-[`prop:inter-nucleon-channel-color-tube`](#prop:inter-nucleon-channel-color-tube).
+[`prop:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube).
 Specifically:
 
 1. **C is well-defined.** The flavor-content map
@@ -102,7 +102,7 @@ class CFromColorFlavorSwap
 ```
 
 The class is inhabited by the color-tube data once
-[`prop:inter-nucleon-channel-color-tube`](#prop:inter-nucleon-channel-color-tube)
+[`prop:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)
 is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
 `sorry` lives in the upstream class instance.
 
@@ -131,7 +131,7 @@ is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
    `prop:t-from-trace-cyclicity` to complete the CPT
    decomposition.
 3. **Promote to proposition** once
-   [`prop:inter-nucleon-channel-color-tube`](#prop:inter-nucleon-channel-color-tube)
+   [`prop:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)
    and the $S_{5}$$\leftrightarrow$SO(3) fiber-action class (PR
    [#1081](https://github.com/litlfred/qou/pull/1081) supplier)
    are both proved.
@@ -141,7 +141,7 @@ is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md)
   §1 D6 (this conjecture) + §2 Cluster A (CPT decomposition D5 $\to$
   D6 + D7 + D8)
-- Upstream class: [`prop:inter-nucleon-channel-color-tube`](#prop:inter-nucleon-channel-color-tube)
+- Upstream class: [`prop:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)
   (PR [#1111](https://github.com/litlfred/qou/pull/1111) merged)
 - [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
   (CPT composite already formalised)

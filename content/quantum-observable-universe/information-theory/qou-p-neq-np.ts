@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:qou-p-neq-np",
+export default conjecture({
+  label: "conj:qou-p-neq-np",
   title:
     "$\\mathrm{P} \\neq \\mathrm{NP}$ at non-torsion $q \\in \\mathbb{G}_m$",
   lean: { ref: "qou:QOU.Information.QouPNeqNp", validation: "stub" },

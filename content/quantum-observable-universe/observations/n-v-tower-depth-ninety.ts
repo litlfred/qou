@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:n-v-tower-depth-ninety",
+export default conjecture({
+  label: "conj:n-v-tower-depth-ninety",
   title: "Brane-tower depth from m_e to v equals 90",
   cites: [],
   uses: [

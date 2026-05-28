@@ -9,10 +9,10 @@ an involution ($P^2 = \mathrm{id}$) and is **distinct from**:*
 - *the bar-involution [`def:bar-involution`](#def:bar-involution),
   which acts as $q \mapsto q^{-1}$ AND $\sigma_i \mapsto \sigma_i^{-1}$
   simultaneously (= composite CPT);*
-- *charge conjugation [`prop:c-from-color-flavor-swap`](#prop:c-from-color-flavor-swap)
+- *charge conjugation [`prop:c-from-color-flavor-swap`](#conj:c-from-color-flavor-swap)
   (D6), which acts on color-sheet flavor labels with no Hecke-
   generator action;*
-- *time-reversal [`prop:t-from-trace-cyclicity`](#prop:t-from-trace-cyclicity)
+- *time-reversal [`prop:t-from-trace-cyclicity`](#conj:t-from-trace-cyclicity)
   (D8), which reverses the braid word at the Markov-trace level.*
 
 ## The action

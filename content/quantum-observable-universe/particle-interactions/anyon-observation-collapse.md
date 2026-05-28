@@ -4,15 +4,15 @@ indexed by the deformation parameter $q$:*
 
 | $q$ regime | Substrate state | Observation image |
 |---|---|---|
-| Generic $q$ ([anyonic substrate](#prop:hecke-anyonic-substrate)) | Abelian anyons in $H_n(R, q)$ | Topological braiding matrices |
-| $q = e^{2\pi i / k}$ ([MTC truncation](#prop:root-of-unity-mtc-truncation)) | Non-abelian anyons in $\mathrm{MTC}_k$ | Finite fusion / $F$- and $R$-matrices |
-| $q \to 1$ ([KL classical limit](#prop:kazhdan-lusztig-classical-limit)) | Symmetric-group representations | Pauli ($\pm 1$) statistics |
+| Generic $q$ ([anyonic substrate](#conj:hecke-anyonic-substrate)) | Abelian anyons in $H_n(R, q)$ | Topological braiding matrices |
+| $q = e^{2\pi i / k}$ ([MTC truncation](#conj:root-of-unity-mtc-truncation)) | Non-abelian anyons in $\mathrm{MTC}_k$ | Finite fusion / $F$- and $R$-matrices |
+| $q \to 1$ ([KL classical limit](#conj:kazhdan-lusztig-classical-limit)) | Symmetric-group representations | Pauli ($\pm 1$) statistics |
 
 *Reading the ladder downwards is the
 [observation functor](#def:observation) $\tau$ acting on a cooling
 substrate: anyonic braiding loses information at each step but never
 abandons the categorical algebraic substrate.  The
-[Kashiwara crystal traversals](#prop:crystal-graph-realization) used
+[Kashiwara crystal traversals](#conj:crystal-graph-realization) used
 elsewhere in the chapter to compute pair production and stable
 masses are mapping the fusion rules of the appropriate rung — the
 generic Hecke fluid for high-energy interactions, $\mathrm{MTC}_k$

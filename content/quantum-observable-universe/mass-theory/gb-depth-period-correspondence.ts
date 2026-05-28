@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:gb-depth-period-correspondence",
+export default conjecture({
+  label: "conj:gb-depth-period-correspondence",
   title:
     "GS-depth $\\leftrightarrow$ Goncharov period-depth correspondence",
   lean: {

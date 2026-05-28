@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:z-eq-n-rho-correction",
@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:kashaev-volume-conjecture",
+    "conj:kashaev-volume-conjecture",
     "def:substrate-parameter",
   ],
   cites: [],

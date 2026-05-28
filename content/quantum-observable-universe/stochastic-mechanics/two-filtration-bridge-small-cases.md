@@ -2,7 +2,7 @@
 self-conjugate / chiral-pair partitions).**
 
 The two-filtration bridge conjecture
-([`prop:two-filtration-bridge`](#prop:two-filtration-bridge))
+([`prop:two-filtration-bridge`](#conj:two-filtration-bridge))
 predicts an iterated-integral depth $d_{\mathrm{II}}(\lambda)$ for
 each partition $\lambda$:
 
@@ -92,7 +92,7 @@ verification proceeds by case analysis on partition bar-class
 classical knot theory.
 
 This **partially discharges** the two-filtration bridge conjecture
-([`prop:two-filtration-bridge`](#prop:two-filtration-bridge)) at
+([`prop:two-filtration-bridge`](#conj:two-filtration-bridge)) at
 small $n$. The general statement at $n \geq 5$ is open.
 
 ### What's still open
@@ -105,12 +105,12 @@ small $n$. The general statement at $n \geq 5$ is open.
 - **Mixed cells**: partitions whose Hecke action is a mixture of
   self-conj. and chiral parts — currently the bridge formula
   predicts $\min(\mathrm{depth}_{\mathrm{GB}}, 2 \lceil n/2 \rceil)$
-  in this case ([`prop:two-filtration-bridge`](#prop:two-filtration-bridge)).
+  in this case ([`prop:two-filtration-bridge`](#conj:two-filtration-bridge)).
   Verification at small $n$ is open.
 
 ### Cross-references
 
-- Bridge conjecture: [`prop:two-filtration-bridge`](#prop:two-filtration-bridge)
+- Bridge conjecture: [`prop:two-filtration-bridge`](#conj:two-filtration-bridge)
 - Chirality structure: [`rem:chirality-period-pairing`](#rem:chirality-period-pairing)
 - Figure-8 row theorem: [`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem)
 - Torus-knot rows theorem: [`prop:b1-torus-knot-rows-theorem`](#prop:b1-torus-knot-rows-theorem)

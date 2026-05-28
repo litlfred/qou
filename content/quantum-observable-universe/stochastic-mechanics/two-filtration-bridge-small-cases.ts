@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:two-filtration-bridge",
+    "conj:two-filtration-bridge",
     "prop:b1-torus-knot-rows-theorem",
   ],
   cites: ["thurston1978"],

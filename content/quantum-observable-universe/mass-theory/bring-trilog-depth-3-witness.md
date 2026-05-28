@@ -113,8 +113,8 @@ identifications, in order of plausibility:
 ### Significance for B1
 
 This is the **first depth-3 numerical witness** for
-[`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence).
-Combined with [`prop:bring-figure-eight-depth-2-witness`](#prop:bring-figure-eight-depth-2-witness)
+[`prop:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence).
+Combined with [`prop:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)
 (depth 2), B1 is now **falsifiability-tested at depths 2 and 3**.
 
 The functional-equation cross-validation provides genuine 50-digit

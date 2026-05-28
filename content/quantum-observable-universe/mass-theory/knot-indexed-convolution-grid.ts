@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "def:hq-bi-filtration",
-    "prop:joint-galois-braid-action",
+    "conj:joint-galois-braid-action",
     "prop:vol-through-tau",
   ],
   cites: [],

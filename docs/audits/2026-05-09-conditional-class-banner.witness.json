@@ -1,22 +1,206 @@
 {
   "audit": "§3b-cond conditional-class banner (CLAUDE.md §3b-cond #2 + #3)",
-  "generated": "2026-05-25T18:32:46.371Z",
-  "total_blocks": 1799,
-  "conditional_on_class": 21,
-  "fully_compliant": 21,
-  "missing_lean_class_hypothesis": 0,
-  "missing_md_conditional_banner": 0,
+  "generated": "2026-05-28T05:11:44.936Z",
+  "total_blocks": 1831,
+  "conditional_on_class": 128,
+  "fully_compliant": 5,
+  "missing_lean_class_hypothesis": 123,
+  "missing_md_conditional_banner": 114,
   "findings": [
     {
-      "label": "lem:surreal-squeeze",
-      "kind": "lemma",
+      "label": "cor:knot-factor-amphicheiral",
+      "kind": "corollary",
       "conj_cone": [
-        "conj:q-aubin-lions"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
       ],
-      "has_lean_class_hypothesis": true,
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/knot-factor-amphicheiral.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/knot-factor-amphicheiral.md"
+    },
+    {
+      "label": "cor:knot-factor-borromean-composite",
+      "kind": "corollary",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.md"
+    },
+    {
+      "label": "cor:knot-factor-shell-closed",
+      "kind": "corollary",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/knot-factor-shell-closed.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/knot-factor-shell-closed.md"
+    },
+    {
+      "label": "prop:algebraic-geometric-dilog-equivalence",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:dilogarithm-archimedean-limit"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md"
+    },
+    {
+      "label": "prop:alpha-k-categorical-closure",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/alpha-k-categorical-closure.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/alpha-k-categorical-closure.md"
+    },
+    {
+      "label": "prop:alpha-k-derivation-procedure",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/alpha-k-derivation-procedure.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/alpha-k-derivation-procedure.md"
+    },
+    {
+      "label": "prop:alpha-shift-torus-knot",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean",
-      "md_file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.md"
+      "lean_file": "content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.md"
+    },
+    {
+      "label": "prop:archimedean-functor-uniqueness",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.md"
+    },
+    {
+      "label": "prop:atom-knot-mass-derivation",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.md"
+    },
+    {
+      "label": "prop:atomic-mass-gb-nf",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md"
+    },
+    {
+      "label": "prop:b1-figure-8-row-theorem",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.lean",
+      "md_file": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md"
+    },
+    {
+      "label": "prop:b1-hyperbolic-rows-theorem",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.lean",
+      "md_file": "content/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md"
+    },
+    {
+      "label": "prop:b1-soft-sharpness-theorem",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.lean",
+      "md_file": "content/quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.md"
+    },
+    {
+      "label": "prop:b1-torus-knot-rows-theorem",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/appendix-surreals/b1-torus-knot-rows-theorem.lean",
+      "md_file": "content/quantum-observable-universe/appendix-surreals/b1-torus-knot-rows-theorem.md"
     },
     {
       "label": "prop:bar-involution-invariance",
@@ -30,37 +214,340 @@
       "md_file": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.md"
     },
     {
-      "label": "prop:collatz-contact-boundary",
+      "label": "prop:baryon-product-from-alt",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.lean",
-      "md_file": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/predicted-spectra/baryon-product-from-alt.lean",
+      "md_file": "content/quantum-observable-universe/predicted-spectra/baryon-product-from-alt.md"
     },
     {
-      "label": "prop:collatz-no-cycles",
+      "label": "prop:benzene-threading-emergence",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions"
+        "conj:q-integer-mass-formula"
       ],
-      "has_lean_class_hypothesis": true,
+      "has_lean_class_hypothesis": false,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/appendix-surreals/collatz-no-cycles.lean",
-      "md_file": "content/quantum-observable-universe/appendix-surreals/collatz-no-cycles.md"
+      "lean_file": "content/quantum-observable-universe/molecular-construction/benzene-threading-emergence.lean",
+      "md_file": "content/quantum-observable-universe/molecular-construction/benzene-threading-emergence.md"
     },
     {
-      "label": "prop:core-levi-form",
+      "label": "prop:bloch-group-quotient-construction",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions"
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:kazhdan-lusztig-classical-limit",
+        "conj:hecke-anyonic-substrate"
       ],
-      "has_lean_class_hypothesis": true,
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/predicted-spectra/bloch-group-quotient-construction.lean",
+      "md_file": "content/quantum-observable-universe/predicted-spectra/bloch-group-quotient-construction.md"
+    },
+    {
+      "label": "prop:borel-partial-resolution",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.lean",
+      "md_file": "content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.md"
+    },
+    {
+      "label": "prop:brane-tower-z-habiro",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.md"
+    },
+    {
+      "label": "prop:bring-trilog-imaginary-tate-rational",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:qou-infra-discharges-goncharov-zeta5",
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/bring-trilog-imaginary-tate-rational.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/bring-trilog-imaginary-tate-rational.md"
+    },
+    {
+      "label": "prop:c-equals-bar-iff-all-1dim",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:meson-volume-conjecture"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean",
+      "md_file": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.md"
+    },
+    {
+      "label": "prop:c5-involution-leibniz-decomposition",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition.lean",
+      "md_file": "content/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition.md"
+    },
+    {
+      "label": "prop:canonical-knot-id-sdp",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md"
+    },
+    {
+      "label": "prop:categorical-chain-convergence-mechanisms",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/categorical-chain-convergence-mechanisms.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/categorical-chain-convergence-mechanisms.md"
+    },
+    {
+      "label": "prop:categorical-neutrality-saturated-shells",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.md"
+    },
+    {
+      "label": "prop:ch4-lp-dual-binding",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean",
-      "md_file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.md"
+      "lean_file": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.lean",
+      "md_file": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.md"
+    },
+    {
+      "label": "prop:chi-lambda-w0-sign-weighting",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.md"
+    },
+    {
+      "label": "prop:chirality-dual-space-derivation",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/chirality-dual-space-derivation.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/chirality-dual-space-derivation.md"
+    },
+    {
+      "label": "prop:chirality-from-frobenius-self-pairing",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.md"
+    },
+    {
+      "label": "prop:chirality-residue-mass-term",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/chirality-residue-mass-term.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/chirality-residue-mass-term.md"
+    },
+    {
+      "label": "prop:chirality-ribbon-frobenius",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/conj-chirality-ribbon-frobenius.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/conj-chirality-ribbon-frobenius.md"
+    },
+    {
+      "label": "prop:chirality-writhe-ribbon-derivation",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/chirality-writhe-ribbon-derivation.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/chirality-writhe-ribbon-derivation.md"
+    },
+    {
+      "label": "prop:cl2-pentagon-and-faddeev-partial",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:kazhdan-lusztig-classical-limit",
+        "conj:hecke-anyonic-substrate"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean",
+      "md_file": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.md"
+    },
+    {
+      "label": "prop:cl3-zeta5-orbit-sum-identity",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:qou-infra-discharges-goncharov-zeta5",
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/cl3-zeta5-orbit-sum-identity.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/cl3-zeta5-orbit-sum-identity.md"
+    },
+    {
+      "label": "prop:cl3-zeta5-pslq-independence",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:joint-galois-braid-action",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:qou-infra-discharges-goncharov-zeta5",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:two-filtration-bridge"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/cl3-zeta5-pslq-independence.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/cl3-zeta5-pslq-independence.md"
+    },
+    {
+      "label": "prop:co-lp-dual-binding",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/molecular-construction/co-lp-dual-binding.lean",
+      "md_file": "content/quantum-observable-universe/molecular-construction/co-lp-dual-binding.md"
+    },
+    {
+      "label": "prop:co2-lp-dual-binding",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.lean",
+      "md_file": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md"
+    },
+    {
+      "label": "prop:confinement-nf-partial-proof",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:crystal-graph-realization"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.md"
+    },
+    {
+      "label": "prop:confinement-nf-structure-forcing",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/confinement-nf-structure-forcing.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/confinement-nf-structure-forcing.md"
     },
     {
       "label": "prop:cpt-orbit-closure-density",
@@ -74,103 +561,815 @@
       "md_file": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md"
     },
     {
-      "label": "prop:geom-universality",
+      "label": "prop:crystal-basis-resolves-mass-tower-open-problems",
       "kind": "proposition",
       "conj_cone": [
-        "conj:hyperbolic-volume-transcendence"
+        "conj:crystal-graph-realization",
+        "conj:kazhdan-lusztig-classical-limit",
+        "conj:hecke-anyonic-substrate",
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/geom-universality.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/geom-universality.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.md"
     },
     {
-      "label": "prop:geom-yekutieli-alignment",
+      "label": "prop:crystal-isospin-degeneracy",
       "kind": "proposition",
       "conj_cone": [
-        "conj:hyperbolic-volume-transcendence"
+        "conj:crystal-graph-realization"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.md"
     },
     {
-      "label": "prop:hoefsmit-scattering-pipeline",
+      "label": "prop:crystal-r-matrix-sub-lemma",
       "kind": "proposition",
       "conj_cone": [
-        "conj:hyperbolic-volume-transcendence"
+        "conj:crystal-graph-realization",
+        "conj:q-integer-mass-formula"
       ],
-      "has_lean_class_hypothesis": true,
+      "has_lean_class_hypothesis": false,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md"
+      "lean_file": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.md"
     },
     {
-      "label": "prop:hydrogen-shell-writhe",
+      "label": "prop:cyclotomic-cl3-orbit-sum-general",
       "kind": "proposition",
       "conj_cone": [
-        "conj:borromean-quark"
+        "conj:joint-galois-braid-action",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:qou-infra-discharges-goncharov-zeta5",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:two-filtration-bridge"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/archimedean-universe/hydrogen-shell-writhe.lean",
-      "md_file": "content/quantum-observable-universe/archimedean-universe/hydrogen-shell-writhe.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/cyclotomic-cl3-orbit-sum-general.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/cyclotomic-cl3-orbit-sum-general.md"
     },
     {
-      "label": "prop:ns-obstruction-tower",
+      "label": "prop:cyclotomic-depth3-dimension-synthesis",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions"
+        "conj:joint-galois-braid-action",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:qou-infra-discharges-goncharov-zeta5",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:two-filtration-bridge"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean",
-      "md_file": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.md"
     },
     {
-      "label": "prop:orbital-fourier-decomposition",
+      "label": "prop:cyclotomic-dimension-synthesis-all-depths",
       "kind": "proposition",
       "conj_cone": [
-        "conj:borromean-quark"
+        "conj:joint-galois-braid-action",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:qou-infra-discharges-goncharov-zeta5",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:two-filtration-bridge"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.lean",
-      "md_file": "content/quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.md"
     },
     {
-      "label": "prop:orbital-space-normal-bundle",
+      "label": "prop:cyclotomic-trilog-imaginary-closed-form",
       "kind": "proposition",
       "conj_cone": [
-        "conj:borromean-quark"
+        "conj:qou-infra-discharges-goncharov-zeta5",
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/archimedean-universe/orbital-space-normal-bundle.lean",
-      "md_file": "content/quantum-observable-universe/archimedean-universe/orbital-space-normal-bundle.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/cyclotomic-trilog-imaginary-closed-form.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/cyclotomic-trilog-imaginary-closed-form.md"
     },
     {
-      "label": "prop:reidemeister-mass-invariance",
+      "label": "prop:demazure-fiber-markov-trace",
       "kind": "proposition",
       "conj_cone": [
-        "conj:borromean-quark"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.md"
     },
     {
-      "label": "prop:root-of-unity-truncation",
+      "label": "prop:depth-2-identification-bloch-suslin",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions"
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
       ],
-      "has_lean_class_hypothesis": true,
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.lean",
+      "md_file": "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md"
+    },
+    {
+      "label": "prop:diagrammatic-double-magic-lr-fusion",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
+      "md_file": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md"
+    },
+    {
+      "label": "prop:double-magic-delta-i-bound",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.lean",
+      "md_file": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.md"
+    },
+    {
+      "label": "prop:e-hartree-categorical-derivation",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean",
+      "md_file": "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.md"
+    },
+    {
+      "label": "prop:e-infinity-page-identifications",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/e-infinity-page-identifications.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/e-infinity-page-identifications.md"
+    },
+    {
+      "label": "prop:em-coupling-bring-zero-mode",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.lean",
+      "md_file": "content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md"
+    },
+    {
+      "label": "prop:explicit-alpha-k-h3",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/explicit-alpha-k-h3.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/explicit-alpha-k-h3.md"
+    },
+    {
+      "label": "prop:explicit-alpha-k-h4",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/explicit-alpha-k-h4.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/explicit-alpha-k-h4.md"
+    },
+    {
+      "label": "prop:explicit-central-idempotent",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.md"
+    },
+    {
+      "label": "prop:figure-eight-reeb-rotation",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:meson-volume-conjecture"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.md"
+    },
+    {
+      "label": "prop:force-carrier-intertwining-correspondence",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.md"
+    },
+    {
+      "label": "prop:free-config-chi-lr-equivalence",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:block-multiplicativity-v-free",
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/lean/QOU/BraidKnot/FreeConfigChiLrEquivalence.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/free-config-chi-lr-equivalence.md"
+    },
+    {
+      "label": "prop:frobenius-lepton-meson-bridge",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:meson-volume-conjecture"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/frobenius-lepton-meson-bridge.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/frobenius-lepton-meson-bridge.md"
+    },
+    {
+      "label": "prop:graded-hecke-energy-truncation-bound",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:gs-graded-markov-trace-existence",
+        "conj:crystal-graph-realization",
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/graded-hecke-energy-truncation-bound.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/graded-hecke-energy-truncation-bound.md"
+    },
+    {
+      "label": "prop:gram-determinant-plancherel-ratio",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.md"
+    },
+    {
+      "label": "prop:h2-lp-dual-binding",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean",
-      "md_file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md"
+      "lean_file": "content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.lean",
+      "md_file": "content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md"
+    },
+    {
+      "label": "prop:hecke-baer-star-generic",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:bring-figure-eight-depth-2-witness"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.md"
+    },
+    {
+      "label": "prop:hoefsmit-binding-amplitude",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:meson-volume-conjecture"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md"
+    },
+    {
+      "label": "prop:homological-shell-condensation",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.md"
+    },
+    {
+      "label": "prop:hopf-jones-c3-categorical",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/hopf-jones-c3-categorical.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/hopf-jones-c3-categorical.md"
+    },
+    {
+      "label": "prop:isospin-from-canonical-bowtie",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:inter-nucleon-channel-color-tube",
+        "conj:crystal-graph-realization"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.md"
+    },
+    {
+      "label": "prop:jet-prefix-gb-filtration",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:confinement-grading-correspondence",
+        "conj:knot-factor-frobenius-pairing"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md"
+    },
+    {
+      "label": "prop:joint-galois-braid-discharged",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:two-filtration-bridge",
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.lean",
+      "md_file": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.md"
+    },
+    {
+      "label": "prop:joint-galois-braid-figure-8-verified",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:two-filtration-bridge",
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.lean",
+      "md_file": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.md"
+    },
+    {
+      "label": "prop:joint-tower-sdp-confinement",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/joint-tower-sdp-confinement.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/joint-tower-sdp-confinement.md"
+    },
+    {
+      "label": "prop:kashiwara-jones-c4-categorical",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/kashiwara-jones-c4-categorical.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/kashiwara-jones-c4-categorical.md"
+    },
+    {
+      "label": "prop:knot-factor-spectral-form",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md"
+    },
+    {
+      "label": "prop:knot-indexed-convolution-grid",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:joint-galois-braid-action",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid.md"
+    },
+    {
+      "label": "prop:knot-operator-lp-selection",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:weak-spectral-completeness",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md"
+    },
+    {
+      "label": "prop:lambda-scale-substrate-form",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:borromean-baryon-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.md"
+    },
+    {
+      "label": "prop:lepton-meson-torus-knot-dictionary",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:meson-volume-conjecture"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean",
+      "md_file": "content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md"
+    },
+    {
+      "label": "prop:lr-tensor-character-bridge",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:crystal-graph-realization",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.md"
+    },
+    {
+      "label": "prop:macdonald-hook-telescope",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/macdonald-hook-telescope.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/macdonald-hook-telescope.md"
+    },
+    {
+      "label": "prop:magic-numbers-bring",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/quantum-observable-universes/magic-numbers-bring.lean",
+      "md_file": "content/quantum-observable-universe/quantum-observable-universes/magic-numbers-bring.md"
+    },
+    {
+      "label": "prop:markov-trace-antipode-polynomial-symmetry",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.md"
+    },
+    {
+      "label": "prop:markov-trace-axiomatic-closed-form",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.md"
+    },
+    {
+      "label": "prop:markov-trace-frobenius-selection",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md"
+    },
+    {
+      "label": "prop:markov-trace-ratio-exact",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/markov-trace-ratio-exact.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/markov-trace-ratio-exact.md"
+    },
+    {
+      "label": "prop:markov-trace-recursive-reducer",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-integer-mass-formula"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.md"
+    },
+    {
+      "label": "prop:mass-element-nf",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/mass-element-nf.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/mass-element-nf.md"
+    },
+    {
+      "label": "prop:mass-endomorphism",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.md"
+    },
+    {
+      "label": "prop:mass-formula-regime-switching",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.md"
+    },
+    {
+      "label": "prop:mass-tower-coefficient-stratification",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/mass-tower-coefficient-stratification.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/mass-tower-coefficient-stratification.md"
+    },
+    {
+      "label": "prop:meson-kaon-pion-hecke-seifert",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:meson-volume-conjecture"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.md"
+    },
+    {
+      "label": "prop:meson-scale-independence",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:meson-volume-conjecture"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.md"
+    },
+    {
+      "label": "prop:pauli-factor-wedderburn",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/pauli-factor-wedderburn.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/pauli-factor-wedderburn.md"
+    },
+    {
+      "label": "prop:phi-q-aj-machinery-identification",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:quantum-langlands-dual",
+        "conj:dim-master-pentagon"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean",
+      "md_file": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md"
+    },
+    {
+      "label": "prop:pion-half-figure-eight",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:meson-volume-conjecture"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/pion-half-figure-eight.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/pion-half-figure-eight.md"
+    },
+    {
+      "label": "prop:q-beta-c3-hopf-three-fold-markov",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md"
+    },
+    {
+      "label": "prop:qbeta-c-k-closed-forms",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean",
+      "md_file": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.md"
+    },
+    {
+      "label": "prop:qmn-recursive-memoized",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/qmn-recursive-memoized.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/qmn-recursive-memoized.md"
+    },
+    {
+      "label": "prop:rho-k-h3a-refinement",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.md"
+    },
+    {
+      "label": "prop:rho-prefactor-structural",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.md"
+    },
+    {
+      "label": "prop:rigid-monoidal-structural-gap-invariance",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.md"
     },
     {
       "label": "prop:s4-s3-half-symmetric-projection",
@@ -181,52 +1380,275 @@
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
       "lean_file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S4S3HalfSymmetricProjection.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md"
+      "md_file": "content/quantum-observable-universe/mass-theory/s4-s3-half-symmetric-projection.md"
     },
     {
-      "label": "prop:shell-transition-knot",
+      "label": "prop:schur-weyl-vanishing",
       "kind": "proposition",
       "conj_cone": [
-        "conj:borromean-quark"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/schur-weyl-vanishing.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/schur-weyl-vanishing.md"
+    },
+    {
+      "label": "prop:sigma-shell-from-beta-chain-derivation",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation.md"
+    },
+    {
+      "label": "prop:silver-ratio-beta-decay-null",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean",
+      "md_file": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.md"
+    },
+    {
+      "label": "prop:six-term-per-derivation-weights",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/six-term-per-derivation-weights.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md"
+    },
+    {
+      "label": "prop:spectral-sequence-h3-explicit",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/spectral-sequence-h3-explicit.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/spectral-sequence-h3-explicit.md"
+    },
+    {
+      "label": "prop:term6-binding-density",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/term6-binding-density.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/term6-binding-density.md"
+    },
+    {
+      "label": "prop:terms-2-6-higher-operations",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/terms-2-6-higher-operations.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/terms-2-6-higher-operations.md"
+    },
+    {
+      "label": "prop:transfer-matrix-level-independence",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:crystal-graph-realization"
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/shell-transition-knot.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/shell-transition-knot.md"
+      "lean_file": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.md"
     },
     {
-      "label": "prop:surreal-rate-calculus",
+      "label": "prop:two-filtration-bridge-general",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions"
+        "conj:joint-galois-braid-action",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:qou-infra-discharges-goncharov-zeta5",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:two-filtration-bridge"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
-      "md_file": "content/quantum-observable-universe/appendix-surreals/surreal-rate-calculus.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/two-filtration-bridge-general.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/two-filtration-bridge-general.md"
     },
     {
-      "label": "prop:universality",
+      "label": "prop:two-filtration-bridge-small-cases",
       "kind": "proposition",
       "conj_cone": [
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli"
+        "conj:two-filtration-bridge",
+        "conj:joint-galois-braid-action",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/fluid-dynamics/p4-universality.lean",
-      "md_file": "content/quantum-observable-universe/fluid-dynamics/p4-universality.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.lean",
+      "md_file": "content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.md"
     },
     {
-      "label": "prop:vorticity-lower-bound",
+      "label": "prop:type-b-folded-crystal-combinatorics",
       "kind": "proposition",
       "conj_cone": [
-        "conj:q-aubin-lions"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:kazhdan-lusztig-classical-limit",
+        "conj:hecke-anyonic-substrate",
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture"
       ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean",
-      "md_file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.md"
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.lean",
+      "md_file": "content/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.md"
+    },
+    {
+      "label": "prop:unit-modulus-eigenvalue",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:meson-volume-conjecture"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/braids-and-knots/unit-modulus-eigenvalue.md"
+    },
+    {
+      "label": "prop:upstream-mathlib-additions",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:kazhdan-lusztig-classical-limit",
+        "conj:hecke-anyonic-substrate"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean",
+      "md_file": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.md"
+    },
+    {
+      "label": "prop:weak-symmetric-normalization",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:weak-spectral-completeness",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md"
+    },
+    {
+      "label": "prop:wedderburn-bratteli-recursion",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.md"
+    },
+    {
+      "label": "prop:wenzl-bridge-applicability-qou",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.md"
+    },
+    {
+      "label": "prop:wenzl-qmn-synergy",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/wenzl-qmn-synergy.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/wenzl-qmn-synergy.md"
+    },
+    {
+      "label": "prop:y-lambda-closed-form-wenzl-bridge",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.md"
+    },
+    {
+      "label": "prop:y-lambda-cyclotomic-factorization",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/y-lambda-cyclotomic-factorization.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/y-lambda-cyclotomic-factorization.md"
+    },
+    {
+      "label": "prop:y-lambda-recipe-from-partition",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.md"
     },
     {
       "label": "thm:confinement-grading-correspondence-conditional",
@@ -237,8 +1659,43 @@
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.md"
+      "lean_file": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean",
+      "md_file": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.md"
+    },
+    {
+      "label": "thm:frobenius-antipode-unifies-chirality-and-tower",
+      "kind": "theorem",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/frobenius-antipode-unifies-chirality-and-tower.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/frobenius-antipode-unifies-chirality-and-tower.md"
+    },
+    {
+      "label": "thm:knot-mass-formula-unified",
+      "kind": "theorem",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.md"
+    },
+    {
+      "label": "thm:six-term-mass-formula-complete",
+      "kind": "theorem",
+      "conj_cone": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/six-term-mass-formula-complete.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md"
     }
   ]
 }

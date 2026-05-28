@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:lusztig-canonical-basis-q-eq-1",
+export default conjecture({
+  label: "conj:lusztig-canonical-basis-q-eq-1",
   title:
     "Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials",
   lean: {
@@ -12,8 +12,8 @@ export default proposition({
     "def:bar-involution",
     "def:hecke-normal-form",
     "prop:crystal-isospin-degeneracy",
-    "prop:reverse-limit-q-to-infinity",
-    "prop:kazhdan-lusztig-classical-limit",
+    "conj:reverse-limit-q-to-infinity",
+    "conj:kazhdan-lusztig-classical-limit",
   ],
   cites: [
     "kazhdan-lusztig1979",

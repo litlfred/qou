@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:hecke-anyonic-substrate",
+export default conjecture({
+  label: "conj:hecke-anyonic-substrate",
   title:
     "Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation",
   lean: { ref: "qou:QOU.BraidKnot.HeckeAnyonicSubstrate", validation: "stub" },

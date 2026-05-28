@@ -1,13 +1,13 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:crystal-graph-realization",
+  interprets: "conj:crystal-graph-realization",
   label: "rem:ontological-agnosticism",
   title:
     "Crystal-limit observables transport flatly to the generic fibre",
   uses: [
-    "prop:crystal-graph-realization",
-    "prop:confinement-grading-correspondence",
+    "conj:crystal-graph-realization",
+    "conj:confinement-grading-correspondence",
     "prop:gb-spectral-sequence",
     "def:cemetery-group",
   ],

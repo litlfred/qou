@@ -51,7 +51,7 @@ cross-pipeline witness.*
 **Why a conjecture and not a theorem.**
 *A Lean proof reduces to (and requires):*
 
-1. *[Spectral decomposition existence](#prop:gs-spectral-decomposition-existence)
+1. *[Spectral decomposition existence](#conj:gs-spectral-decomposition-existence)
    — the closed-form expression of $\mathfrak{m}_{\mathrm{GB}}$ as
    $|\mathrm{descended}| + \sum_\ell \mathrm{residue}(\ell)$.*
 2. *The polynomial-side `tail_in_ideal` axiom of the Habiro completion

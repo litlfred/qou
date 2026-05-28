@@ -6,7 +6,7 @@ export default proposition({
     "Half-symmetric $H_4$ projection extracts one octahedral cell via $S_4 \\downarrow S_3$ branching",
   lean: { ref: "qou:QOU.BraidsAndKnots.s4_s3_half_symmetric_projection" },
   uses: [
-    "prop:borromean-baryon-mass-formula",
+    "conj:borromean-baryon-mass-formula",
     "def:frobenius-hopf-substrate",
   ],
   cites: [

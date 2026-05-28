@@ -1,7 +1,7 @@
 **Proposition (two-filtration bridge map in full generality —
 bar-class determines iterated-integral depth).**
 
-[`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
+[`prop:two-filtration-bridge-small-cases`](#conj:two-filtration-bridge-small-cases)
 verified the bridge map $d_{\mathrm{II}}$ at all partitions of $n \leq 4$.
 *This proposition extends the verification to **all** partitions of
 any $n$ via a structural bar-eigenspace argument.*
@@ -10,7 +10,7 @@ any $n$ via a structural bar-eigenspace argument.*
 
 For every partition $\lambda$ (of any $n \geq 1$), the iterated-
 integral depth predicted by the two-filtration bridge conjecture
-([`prop:two-filtration-bridge`](#prop:two-filtration-bridge))
+([`prop:two-filtration-bridge`](#conj:two-filtration-bridge))
 depends only on the **bar-class** of $\lambda$:
 
 $$
@@ -122,8 +122,8 @@ $H_n(q)$.
 
 ### Cross-references
 
-- Bridge conjecture: [`prop:two-filtration-bridge`](#prop:two-filtration-bridge)
-- Small-cases verification: [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
+- Bridge conjecture: [`prop:two-filtration-bridge`](#conj:two-filtration-bridge)
+- Small-cases verification: [`prop:two-filtration-bridge-small-cases`](#conj:two-filtration-bridge-small-cases)
 - Chirality structure: [`rem:chirality-period-pairing`](#rem:chirality-period-pairing)
 - Joint action discharge: [`prop:joint-galois-braid-discharged`](#prop:joint-galois-braid-discharged)
 - Hecke-Baer-* and bar action on $e_\lambda$:

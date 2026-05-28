@@ -26,7 +26,7 @@ Under the Archimedean realization $\tau_{\mathrm{arch}}$
 
 2. *(**Asymptotic Bloch–Wigner.**) The asymptotic of the partial
    product under Faddeev's scaling
-   ([Archimedean limit](#prop:dilogarithm-archimedean-limit))
+   ([Archimedean limit](#conj:dilogarithm-archimedean-limit))
    recovers the Bloch–Wigner dilogarithm $D(z)$ at the matched shape
    parameter, so*
 
@@ -75,7 +75,7 @@ denominator**:
 | Geometric ($\mathbf{Hyp}_3$) | ideal tetrahedron $\Delta_z$ | cusp at vertex $v_k$ |
 
 The bijection between the rows is the content of
-([shared-denominator cusp holonomy](#prop:shared-denominator-cusp-holonomy)).
+([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
 Under that bijection, the algebraic state sum and the hyperbolic
 volume are not two competing engines: they are the same regulator
 $\Phi_n(x; q_0) \mapsto D(z(x))$ evaluated through two convergence
@@ -85,7 +85,7 @@ schemes.
 
 This block is downstream of
 ([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)) and
-([Archimedean limit](#prop:dilogarithm-archimedean-limit)), so it is
+([Archimedean limit](#conj:dilogarithm-archimedean-limit)), so it is
 necessarily a **conjecture** — propagation of conjectural backing
 forbids promotion to `proposition`/`theorem`.
 

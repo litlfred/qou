@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:borromean-baryon-mass-formula",
+export default conjecture({
+  label: "conj:borromean-baryon-mass-formula",
   title:
     "Borromean baryon mass formula with common scale $\\lambda_{\\mathrm{scale}}$",
   lean: {

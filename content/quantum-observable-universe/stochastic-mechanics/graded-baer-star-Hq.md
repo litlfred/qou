@@ -3,7 +3,7 @@
 *Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra
 ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)),
 filtered by iterated-integral depth
-([keystone correspondence](#prop:gb-depth-period-correspondence)):*
+([keystone correspondence](#conj:gb-depth-period-correspondence)):*
 
 $$
   G^{(0)}(\mathcal{H}_q) \;\subseteq\; G^{(1)}(\mathcal{H}_q)
@@ -37,7 +37,7 @@ Three free consequences if discharged:
    $\mathcal{M}_q^{(n)}$ is itself Baer-*, with its "delta at depth
    $n$" $= 1/\omega^n$ on the surreal envelope corresponding to a
    specific projection. The graded Titchmarsh question
-   ([keystone §discharge targets](#prop:gb-depth-period-correspondence))
+   ([keystone §discharge targets](#conj:gb-depth-period-correspondence))
    gets a clean handle: zero divisors at depth $n$ are detected by
    non-trivial $p_n^{(i)} \cdot p_n^{(j)}$ for $i \neq j$.
 3. **Bar-involution-equivariant period theory.** Self-adjoint
@@ -69,12 +69,12 @@ lifted to $\mathcal{H}_q$ via Schur–Weyl duality.
 At depth $\geq 3$: open. The depth-3 case requires identifying
 projections compatible with the trilog grouplike $\mathrm{Li}_3^q$
 — see the depth-3 witness
-([`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness)).
+([`prop:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)).
 
 ### Status
 
 **Open at depth $\geq 3$**, conditional on
-[`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence).
+[`prop:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence).
 The depth-2 case follows from
 [`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic)
 and the Schur–Weyl identification of $\mathrm{Li}_2^q$ values

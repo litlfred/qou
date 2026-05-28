@@ -5,7 +5,7 @@ The Kashaev–Murakami–Murakami volume conjecture
 ([`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture))
 admits a clean structural reading inside the graded-Mikusiński
 framework
-([`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)):
+([`prop:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)):
 *it is the depth-2 case.*
 
 ### One-line statement
@@ -75,6 +75,6 @@ Garoufalidis–Lê for torus knots; many others).
 
 For an explicit depth-2 numerical witness on the figure-8 knot
 embedded in Bring's genus-4 surface, see
-[`prop:bring-figure-eight-depth-2-witness`](#prop:bring-figure-eight-depth-2-witness).
+[`prop:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
 The 50-digit value $2\,\mathrm{Cl}_2(\pi/3) \approx :val[vol_4_1_decimal_50]{precision=6, witness=folio-assistant/computations/hyperbolic-volumes.witness.json}\ldots$
 is the Bloch regulator class incarnated as a hyperbolic volume.

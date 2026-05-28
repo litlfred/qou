@@ -100,7 +100,7 @@ non-trivial and the Frobenius pairing is non-degenerate.
 The aeon boundary is where the theory reaches its
 expressive limit --- where the G\"{o}delian sentences
 live.  Crossing an aeon boundary
-([aeon recycling](#rem:aeon-boundary-generates-chart))
+([aeon recycling](#conj:aeon-boundary-generates-chart))
 is passing to a **stronger theory**: the degree $\geq 1$
 data from the dying aeon seeds the axioms of the next,
 just as adding a G\"{o}del sentence to a theory produces

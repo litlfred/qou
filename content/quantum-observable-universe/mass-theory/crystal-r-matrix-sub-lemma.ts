@@ -29,7 +29,7 @@ export default proposition({
     "Crystal R-matrix Sub-lemma 2.1 (operator-valued): " +
     "$\\mathrm{pole}(A^\\lambda_{\\mu\\nu}(\\sigma_i), T) = \\mathbf{1}[\\rho_T(i) \\le -1]$",
   uses: [
-    "prop:crystal-graph-realization",
+    "conj:crystal-graph-realization",
     "prop:alpha-shift-torus-knot",
   ],
   cites: [

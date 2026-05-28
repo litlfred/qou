@@ -20,7 +20,7 @@ and the denominator of the halving step $n/2$.
 
 In the QOU, the integer $2$ lifts to the quantum integer
 $[2]_q = q + 1$ (combinatorial convention;
-see [q-Collatz conjecture](#prop:q-collatz)).
+see [q-Collatz conjecture](#conj:q-collatz)).
 The $[2]_q$-divisor is the locus where $[2]_q = 0$,
 i.e. $q = -1$:
 
@@ -74,7 +74,7 @@ before hitting an odd number.
 ### Why the orbit needs to touch the divisor
 
 The Skein-Collatz map
-([prop:q-collatz](#prop:q-collatz)) has two branches:
+([prop:q-collatz](#conj:q-collatz)) has two branches:
 
 - **Even branch** ($P/[2]_q$): each application
   **decreases** $\log|P|$ by $\log [2]_q$.  This is a
@@ -204,7 +204,7 @@ by the tripling factor — clean and algebraic.
 ### The conjecture as contact condition
 
 The $q$-Collatz conjecture
-([prop:q-collatz](#prop:q-collatz)) is equivalent to:
+([prop:q-collatz](#conj:q-collatz)) is equivalent to:
 
 $$
   \boxed{

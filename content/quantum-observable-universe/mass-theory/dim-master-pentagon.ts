@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:dim-master-pentagon",
+export default conjecture({
+  label: "conj:dim-master-pentagon",
   title:
     "Ding–Iohara–Miki master Pentagon as unified ancestor of Macdonald + $q$-dilog Pentagons",
   lean: {
@@ -12,8 +12,8 @@ export default proposition({
     "prop:pentagon-uv-commutation",
     "prop:q-rogers-pentagon-archimedean",
     "prop:macdonald-hook-telescope",
-    "prop:pachner-pentagon-borromean",
-    "prop:borromean-bloch-group-element",
+    "conj:pachner-pentagon-borromean",
+    "conj:borromean-bloch-group-element",
   ],
   cites: [
     "ding-iohara1997",

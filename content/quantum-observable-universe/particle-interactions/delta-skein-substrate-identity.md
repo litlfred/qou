@@ -1,7 +1,7 @@
 **Remark (substrate identity for the proton–neutron Skein
 difference, conditional on common-scale conjecture).**
 *Under the common-scale Borromean baryon mass formula
-([prop:borromean-baryon-mass-formula](#prop:borromean-baryon-mass-formula)),
+([prop:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula)),
 the proton–neutron Skein difference is a* **derived** *quantity in
 the three calibration inputs:*
 
@@ -126,6 +126,6 @@ invariant. The proton–neutron mass splitting is not a fit.
 — a single $\mathbb{Q}(q_0)$ number with empirical target $\approx
 2.46$ — has not been derived. Its absolute value is required for
 $m_p$ and $m_n$ individually (see
-[prop:borromean-baryon-mass-formula](#prop:borromean-baryon-mass-formula)).
+[prop:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula)).
 Open programme:
 [docs/agent-briefs/-lambda-scale-borromean-baryon-derivation.md](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/agent-briefs/-lambda-scale-borromean-baryon-derivation.md).

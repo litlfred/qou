@@ -12,7 +12,7 @@ duality:*
   generators; bar acts on the **generator action** at fixed root
   data.*
 - *Coincides with the reverse-limit $q \to \infty$
-  ([`prop:reverse-limit-q-to-infinity`](#prop:reverse-limit-q-to-infinity), D13)
+  ([`prop:reverse-limit-q-to-infinity`](#conj:reverse-limit-q-to-infinity), D13)
   for non-classical specialisations.*
 - *For non-simply-laced types (Type B, C, D, $G_{2}$, $F_{4}$), gives a
   genuinely-distinct dual algebra (Type B $\leftrightarrow$ Type C, etc.) — this

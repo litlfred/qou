@@ -3,7 +3,7 @@ sharpness target — explicit dimensions for Bring-natural number
 fields).**
 
 The keystone conjecture
-([`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence))
+([`prop:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
 asserts both an *inclusion* and a *sharpness* condition. Via the
 K-theory translation
 ([`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta))
@@ -74,7 +74,7 @@ Borel's theorem says $\dim_\mathbb{Q} K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5))
 $\mathbb{Q}$-space to $\mathcal{P}_3 / \mathcal{P}_2$.
 
 The Bring trilog witness
-([`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness))
+([`prop:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness))
 provides 4 grouplike values $\{\mathrm{Li}_3(\zeta_5^k) : k = 1,2,3,4\}$.
 Modulo the orbit-sum relation
 $\sum_k \mathrm{Li}_3(\zeta_5^k) = -\frac{24}{25}\zeta(3)$, these
@@ -126,8 +126,8 @@ paper-internal one.**
 
 ### Cross-references
 
-- Keystone: [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+- Keystone: [`prop:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 - K-theory bridge: [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)
-- Depth-2 witness: [`prop:bring-figure-eight-depth-2-witness`](#prop:bring-figure-eight-depth-2-witness)
-- Depth-3 witness: [`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness)
+- Depth-2 witness: [`prop:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)
+- Depth-3 witness: [`prop:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)

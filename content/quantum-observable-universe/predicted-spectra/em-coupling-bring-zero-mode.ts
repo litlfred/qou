@@ -7,7 +7,7 @@ export default proposition({
   uses: [
     "prop:exterior-square-borromean",
     "rem:figure-8-archimedean-illustration",
-    "prop:bring-hyperbolic-knot-bloch-decomposition",
+    "conj:bring-hyperbolic-knot-bloch-decomposition",
   ],
   cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000"],
   computation: {

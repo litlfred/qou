@@ -1,11 +1,11 @@
-**Proposition (conditional on [`prop:symmetric-crystal-pair-production`](#prop:symmetric-crystal-pair-production) and [`prop:crystal-graph-realization`](#prop:crystal-graph-realization)).**
+**Proposition (conditional on [`prop:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production) and [`prop:crystal-graph-realization`](#conj:crystal-graph-realization)).**
 
 *CPT-saturation = Type-B fold-orbit closure.*
 *Let $\sigma \colon \mathrm{Part}(n) \to \mathrm{Part}(n)$ be the
 transpose involution $\lambda \mapsto \lambda^{T}$ — the Dynkin
 involution on the $A_{n-1}$ crystal that, after folding to type
 $B$, becomes the bar-involution / chirality-reversal operator
-([`prop:symmetric-crystal-pair-production`](#prop:symmetric-crystal-pair-production)).
+([`prop:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production)).
 For an atomic link $\mathcal{K}$ with populated Wedderburn blocks
 $\Lambda(\mathcal{K}) \subseteq \mathrm{Part}(n)$, define*
 
@@ -99,7 +99,7 @@ of $H_n(R, q)$ is bar-invariant under $q \mapsto q^{-1}$
 \cite{brundankleshchev2009, khovanovlauda2009}, and the bar
 involution sends the Wedderburn block of $\lambda$ to that of
 $\lambda^T$ — exactly the chirality-reversal predicted by
-[`prop:symmetric-crystal-pair-production`](#prop:symmetric-crystal-pair-production).
+[`prop:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production).
 
 So $\sigma$ is not a chosen-by-fiat $\mathbb{Z}/2\mathbb{Z}$
 action but the *intrinsic* fold whose existence is guaranteed by

@@ -15,9 +15,9 @@ so:*
 1. *the relevant component of the Kashiwara crystal
    $\mathrm{Cryst}(\mathfrak{sl}_n)$ \cite{kashiwara1991} is
    shallow and few $\tilde e_i, \tilde f_i$ paths are available
-   (cf.\ [crystal-graph realisation](#prop:crystal-graph-realization));*
+   (cf.\ [crystal-graph realisation](#conj:crystal-graph-realization));*
 2. *by the
-   [confinement–grading correspondence](#prop:confinement-grading-correspondence),
+   [confinement–grading correspondence](#conj:confinement-grading-correspondence),
    the maximal admissible KLR grading shift, and hence the
    crossing complexity the channel can support, is bounded above
    by the available strand count;*

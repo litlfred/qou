@@ -6,4 +6,4 @@
 | GB stratification (depth grading) | filters Hecke centre by max-hook; depth-$k$ projector $\mathrm{proj}_{Z^{(k)}(A)}$ extracts depth-$k$ component |
 | JM-element + Lagrange-interpolation $e_\lambda$ | explicit central idempotents — concrete generators of period classes per [`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent) |
 | Bring's $S_5$-cyclotomic structure | natural action on $\{\zeta_5^k : k \in (\mathbb{Z}/5)^\times\}$ |
-| Joint Galois $\times$ braid action ([`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action)) | structures the period-class permutations |
+| Joint Galois $\times$ braid action ([`prop:joint-galois-braid-action`](#conj:joint-galois-braid-action)) | structures the period-class permutations |

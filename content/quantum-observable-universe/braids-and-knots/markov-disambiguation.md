@@ -17,8 +17,8 @@ Cat$\to$Alg$\to$Geom$\to$Arch$\to$Phys arc.
    $p_{w \to w'} = |\mathrm{tr}_M(\rho(w'))|^2 /
    \sum |\mathrm{tr}_M(\rho(w''))|^2$.  This is the **stochastic**
    object that gives error bounds on the mass formula via
-   Perron--Frobenius dominant-eigenvalue convergence.  See
-   Chapter :refterm[Stochastic Mechanics]{#stochastic-mechanics}.
+   Perron--Frobenius dominant-eigenvalue convergence.  See the
+   Stochastic Mechanics chapter.
 
 3. **Markov moves** (topological equivalence).  Stabilisation
    $\beta \mapsto \beta\sigma_n^{\pm 1}$ and conjugation

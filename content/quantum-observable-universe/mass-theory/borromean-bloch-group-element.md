@@ -68,7 +68,7 @@ with regulator $r_2[\mathcal{B}_3] = 8 \cdot \Lambda(\pi/3) =
 
 The Beilinson regulator extends to higher orders via the formal
 $q$-expansion of $\Phi_q$ around $q = 1$ (the archimedean limit per
-[`prop:dilogarithm-archimedean-limit`](#prop:dilogarithm-archimedean-limit)):
+[`prop:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)):
 
 $$
   \log \Phi_q(z)
@@ -182,6 +182,6 @@ class BorromeanBlochGroupElement
   [`prop:vol-through-tau`](#prop:vol-through-tau),
   [`prop:binding-scale-catalan`](#prop:binding-scale-catalan)
 - The archimedean dilog limit:
-  [`prop:dilogarithm-archimedean-limit`](#prop:dilogarithm-archimedean-limit)
+  [`prop:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)
 - The Kashaev volume conjecture (upstream):
   [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)

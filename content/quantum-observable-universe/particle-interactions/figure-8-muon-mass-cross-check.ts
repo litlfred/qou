@@ -16,7 +16,7 @@ export default remark({
   uses: [
     "prop:three-calibration-inputs",
     "rem:figure-8-archimedean-illustration",
-    "prop:borromean-baryon-mass-formula",
+    "conj:borromean-baryon-mass-formula",
   ],
   cites: ["codata2022", "thurston1978"],
   tags: [

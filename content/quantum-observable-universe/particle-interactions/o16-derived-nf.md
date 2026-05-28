@@ -70,7 +70,7 @@ Hecke engine.
 ## Doubly magic prediction
 
 The periodic table demand conjecture
-([demand conjecture](#rem:periodic-table-demand))
+([demand conjecture](#conj:periodic-table-demand))
 predicts that $\mathcal{A}(8, 8)$ minimizes
 $|\mathrm{dem}|$ among all $A = 16$ isotopes.
 This requires computing $\mathcal{A}(Z, 16 - Z)$ for all

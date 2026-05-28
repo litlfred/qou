@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:classical-riemann-hypothesis",
+export default conjecture({
+  label: "conj:classical-riemann-hypothesis",
   title: "The Riemann hypothesis",
   lean: { ref: "qou:QOU.BraidKnot.ClassicalRiemannHypothesis", validation: "stub" },
   uses: ["def:classical-riemann-zeta"],

@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:im-q-physical-role",
+export default conjecture({
+  label: "conj:im-q-physical-role",
   lean: {
     ref: "qou:QOU.BraidKnot.ImQPhysicalRole.im_q_observable_pairing",
     validation: "not_checked",

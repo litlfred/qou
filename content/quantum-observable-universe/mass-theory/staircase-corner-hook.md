@@ -19,7 +19,7 @@ Adding the corner cell itself gives
 $h_{\mathrm{corner}}(\rho_k) = (k-1) + (k-1) + 1 = 2k - 1$. $\square$*
 
 This combinatorial identity is the **arithmetic anchor** for the
-[staircase EW-residual conjecture](#prop:staircase-ew-residual):
+[staircase EW-residual conjecture](#conj:staircase-ew-residual):
 the empirically observed pairwise eigenvalue ratio
 $q^{1/h_{\mathrm{corner}}(\rho_k)}$ in the spectrum of
 $\beta_{\mathrm{EW}} \, \bowtie_K^{\mathrm{minimal}}$ on

@@ -1,5 +1,5 @@
 **Theorem (conditional on
-[`prop:crystal-graph-realization`](#prop:crystal-graph-realization)
+[`prop:crystal-graph-realization`](#conj:crystal-graph-realization)
 and the Brundan–Kleshchev isomorphism
 \cite{brundankleshchev2009}).**
 *Let $\mathsf{C}$ denote the upstream conjectural class
@@ -30,7 +30,7 @@ violation. This block invokes the **conditional-class exception**
 (§3b-cond):
 
 1. **Class axiomatisation.** The upstream conjecture
-   [`prop:crystal-graph-realization`](#prop:crystal-graph-realization)
+   [`prop:crystal-graph-realization`](#conj:crystal-graph-realization)
    is axiomatised in
    [`confinement-grading-correspondence-conditional.lean`](confinement-grading-correspondence-conditional.lean)
    as the Lean class `CrystalGraphRealization n`.  Its single field
@@ -44,10 +44,10 @@ violation. This block invokes the **conditional-class exception**
    with no `sorry` inside the proof body.
 3. **Conditional banner.** The proposition statement above is
    prefixed with "**Theorem (conditional on
-   [`prop:crystal-graph-realization`](#prop:crystal-graph-realization))**".
+   [`prop:crystal-graph-realization`](#conj:crystal-graph-realization))**".
 4. **`uses[]` includes the conjecture.** The block's manifest
    lists both `prop:crystal-graph-realization` and the original
-   unconditional [`prop:confinement-grading-correspondence`](#prop:confinement-grading-correspondence).
+   unconditional [`prop:confinement-grading-correspondence`](#conj:confinement-grading-correspondence).
 
 By §3b-cond this block represents a *rigorous conditional result*:
 fully verified by Lean modulo a single, named, class-axiomatised
@@ -63,7 +63,7 @@ identification of the QOU LP/SDP **shadow-price ordering** on
 knot-operator energies (`def:knot-operator-energy`) with the KLR
 $\mathbb{Z}$-grading on the *cyclotomic quotient* relevant to
 confinement.  This identification is precisely the content of
-[`prop:crystal-graph-realization`](#prop:crystal-graph-realization);
+[`prop:crystal-graph-realization`](#conj:crystal-graph-realization);
 the class-axiomatisation packages the corresponding compatibility
 data into a single field.
 
@@ -89,7 +89,7 @@ Witnesses:
 [`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement-operator-selection.witness.json).
 
 These are *empirical evidence* for the upstream conjecture
-[`prop:crystal-graph-realization`](#prop:crystal-graph-realization),
+[`prop:crystal-graph-realization`](#conj:crystal-graph-realization),
 not a proof of this conditional theorem.  Once the upstream
 conjecture is settled (e.g. by an explicit construction of the
 KLR-grading on the QOU cyclotomic quotient), the conditional
@@ -102,7 +102,7 @@ The conditional theorem licenses the existing engine optimisation:
 the KLR grading bound is enforced before any crystal step. Given a
 target confinement level $\ell$, the engine restricts crystal
 traversal of
-[`prop:crystal-graph-realization`](#prop:crystal-graph-realization)
+[`prop:crystal-graph-realization`](#conj:crystal-graph-realization)
 to the subgraph spanned by KLR-modules of degree $\leq \ell$. Any
 application of $\tilde f_i$ that would push a state into degree
 $\ell + 1$ is geometrically forbidden — the heuristic confinement

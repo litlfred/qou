@@ -28,7 +28,7 @@ chain, replacing the previous opaque-or-cited references with
 explicit Lean carriers. Downstream blocks
 [`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode),
 [`figure-8-archimedean-illustration`](../braids-and-knots/figure-8-archimedean-illustration.md),
-[`bring-hyperbolic-knot-bloch-decomposition`](#prop:bring-hyperbolic-knot-bloch-decomposition),
+[`bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition),
 and
 [`binding-scale-catalan`](../braids-and-knots/binding-scale-catalan.md)
 can now reference $\mathrm{Cl}_2$, $\mathrm{Vol}(4_1)$, and

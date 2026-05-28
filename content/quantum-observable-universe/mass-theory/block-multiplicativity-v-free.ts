@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default remark({
-  label: "rem:block-multiplicativity-v-free",
+export default conjecture({
+  label: "conj:block-multiplicativity-v-free",
   title:
     "Block-multiplicativity of per-generator V̂ on the disjoint Hecke product",
   lean: {

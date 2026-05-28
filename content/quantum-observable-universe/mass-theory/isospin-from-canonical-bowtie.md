@@ -13,7 +13,7 @@
 
 **Conjecture (D9 isospin closure, conditional on
 [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy)
-+ [`prop:inter-nucleon-channel-color-tube`](#prop:inter-nucleon-channel-color-tube)).**
++ [`prop:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)).**
 *For each atomic braid $\beta_A \in B_{3A}$ written in the canonical
 operator-valued interface convention*
 

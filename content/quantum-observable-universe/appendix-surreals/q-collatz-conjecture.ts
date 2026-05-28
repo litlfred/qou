@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:q-collatz",
+export default conjecture({
+  label: "conj:q-collatz",
   title:
     "The $q$-Collatz conjecture: Skein-module crossing resolution",
   lean: { ref: "qou:QOU.AppendixSurreals.QCollatz", validation: "stub" },

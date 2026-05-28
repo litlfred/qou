@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:t-from-trace-cyclicity",
+export default conjecture({
+  label: "conj:t-from-trace-cyclicity",
   title:
     "Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)",
   lean: {

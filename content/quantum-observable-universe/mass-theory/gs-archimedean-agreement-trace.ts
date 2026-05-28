@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:gs-archimedean-agreement-trace",
+export default conjecture({
+  label: "conj:gs-archimedean-agreement-trace",
   title:
     "Archimedean agreement: Habiro polynomial trace evaluates to GB mass",
   lean: {
@@ -15,7 +15,7 @@ export default proposition({
     "prop:full-pole-structure-mass-trace",
     "def:habiro-ring",
     "def:archimedean-realization-functor",
-    "prop:gs-spectral-decomposition-existence",
+    "conj:gs-spectral-decomposition-existence",
   ],
   cites: ["habiro2004"],
   tags: [

@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:algebraic-geometric-dilog-equivalence",
@@ -10,8 +10,8 @@ export default proposition({
   },
   uses: [
     "def:q-pochhammer-partial-product",
-    "prop:dilogarithm-archimedean-limit",
-    "prop:kashaev-volume-conjecture",
+    "conj:dilogarithm-archimedean-limit",
+    "conj:kashaev-volume-conjecture",
     "rem:kashaev-as-archimedean-realization",
     "rem:quantum-bloch-group",
     "def:archimedean-realization-functor",

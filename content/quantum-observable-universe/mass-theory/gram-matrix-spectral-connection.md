@@ -20,7 +20,7 @@ algebraic object that encodes:*
    the stratum — so $E_\infty^{p, *}(T_w) \to R$ is really
    $T_w \mapsto G_{T_w, *}$ projected to the stratum.*
 4. *The **knot-factor Frobenius pairing**
-   ([knot factor Frobenius pairing](#prop:knot-factor-frobenius-pairing))
+   ([knot factor Frobenius pairing](#conj:knot-factor-frobenius-pairing))
    computes $G_{\beta, \beta^*}$ for braid-mirror pairs — the
    chirality factor $a_K$ of Term 5 is a normalised Gram-matrix
    entry.*

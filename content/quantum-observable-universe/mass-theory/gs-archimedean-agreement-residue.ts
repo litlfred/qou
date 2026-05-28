@@ -1,7 +1,7 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:gs-archimedean-agreement-residue",
+export default conjecture({
+  label: "conj:gs-archimedean-agreement-residue",
   title:
     "Archimedean agreement (proton instance): degree-48 Habiro trace at $u_0$",
   lean: {
@@ -12,8 +12,8 @@ export default proposition({
   uses: [
     "prop:gb-spectral-sequence",
     "prop:habiro-residue-sum-equivalence",
-    "prop:gs-archimedean-agreement-trace",
-    "prop:gs-spectral-decomposition-existence",
+    "conj:gs-archimedean-agreement-trace",
+    "conj:gs-spectral-decomposition-existence",
   ],
   cites: ["habiro2004"],
   computation: {

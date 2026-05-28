@@ -6,7 +6,7 @@ export default remark({
     "Surreal-bound family as graded-Mikusiński std-collapse instances",
   interprets: "lem:surreal-squeeze",
   uses: [
-    "prop:gb-depth-period-correspondence",
+    "conj:gb-depth-period-correspondence",
     "rem:bsd-surreal-bound",
     "rem:rh-surreal-bound",
     "rem:p-vs-np-surreal-bound",

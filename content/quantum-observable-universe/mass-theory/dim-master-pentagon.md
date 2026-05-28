@@ -14,10 +14,10 @@ used elsewhere in the QOU framework:*
   ([`prop:macdonald-hook-telescope`](#prop:macdonald-hook-telescope))
   under restriction to the symmetric-function representation*
 - *Pachner–Pentagon TV/RT state-sum invariance
-  ([`prop:pachner-pentagon-borromean`](#prop:pachner-pentagon-borromean), D15)
+  ([`prop:pachner-pentagon-borromean`](#conj:pachner-pentagon-borromean), D15)
   under restriction to the Borromean ideal-tetrahedron triangulation*
 - *Bloch-group 5-term relation
-  ([`prop:borromean-bloch-group-element`](#prop:borromean-bloch-group-element), D16)
+  ([`prop:borromean-bloch-group-element`](#conj:borromean-bloch-group-element), D16)
   under decategorification through the regulator*
 
 *The DIM master Pentagon is therefore the **unified algebraic

@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:elliptic-stability-locus",

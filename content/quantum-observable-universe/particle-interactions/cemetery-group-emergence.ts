@@ -1,15 +1,15 @@
 import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:cemetery-group-emergence",
+export default conjecture({
+  label: "conj:cemetery-group-emergence",
   title:
     "Cemetery group as the kernel of the observation functor",
   lean: { ref: "qou:QOU.BraidKnot.CemeteryGroupEmergence", validation: "stub" },
   uses: [
     "def:cemetery-group",
     "def:observation",
-    "prop:crystal-graph-realization",
-    "prop:gs-spectral-sum-finite",
+    "conj:crystal-graph-realization",
+    "conj:gs-spectral-sum-finite",
   ],
   cites: [
     "khovanovlauda2009",

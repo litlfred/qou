@@ -2,7 +2,7 @@
 combining Bloch–Suslin with Garoufalidis–Lê's proof of the Volume
 Conjecture for torus knots).**
 
-*Every torus-knot row of [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+*Every torus-knot row of [`prop:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 ("B1") is **theorem-level**, requiring no part of Goncharov's or
 Beilinson's conjectures.*
 
@@ -94,7 +94,7 @@ asymptotic.
 
 ### Cross-references
 
-- Keystone B1: [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+- Keystone B1: [`prop:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 - Figure-8 row: [`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem)
 - Bring-embeddable atlas: [`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots)
 - Soft sharpness: [`prop:b1-soft-sharpness-theorem`](#prop:b1-soft-sharpness-theorem)

@@ -17,7 +17,7 @@ export default proposition({
   },
   uses: [
     "prop:borel-partial-resolution",
-    "prop:qou-infra-discharges-goncharov-zeta5",
+    "conj:qou-infra-discharges-goncharov-zeta5",
   ],
   cites: ["bloch2000", "zagier1986"],
   tags: [
