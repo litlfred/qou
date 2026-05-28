@@ -66,14 +66,15 @@ from typing import Any
 from mpmath import mp, mpf
 
 # ── Defaults ────────────────────────────────────────────────────
-# Held at the bit-stable baseline 50/40/10. Serialized digits beyond
-# ~40 are compute noise that differs across mpmath versions and CPU
-# microarchitectures, breaking the witness-pipeline drift gate. 40
-# output digits already give 10⁻⁴⁰ relative ≈ 10⁻³¹ ppQ for O(1)
-# observables — 16 orders of magnitude past the 1 ppQ (10⁻¹⁵)
-# program goal, so raising COMPUTE/OUTPUT buys no physics and costs
-# CI reproducibility (see the reverted PR #1379 bump to 65/50/15,
-# which drifted every validate-job witness).
+# COMPUTE/OUTPUT/GUARD = 65/50/15 (PR #1379 "increase precision").
+# 50 output digits give 10⁻⁵⁰ relative ≈ 10⁻⁴¹ ppQ for O(1)
+# observables — far past the 1 ppQ (10⁻¹⁵) program goal. The raise
+# requires every committed witness to be regenerated at this precision
+# (otherwise the witness-pipeline drift gate flags the metadata as
+# stale); the precision metadata fields compute_dps / output_dps /
+# guard_digits / truncation_bound are themselves filtered out of the
+# bit-stability comparison (they describe HOW a witness was produced,
+# not its numerical result).
 PRECISION_GUARD_DEFAULT: int = 15
 OUTPUT_DPS_DEFAULT: int = 50
 COMPUTE_DPS_DEFAULT: int = OUTPUT_DPS_DEFAULT + PRECISION_GUARD_DEFAULT  # 65
