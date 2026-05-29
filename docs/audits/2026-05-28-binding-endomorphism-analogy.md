@@ -94,21 +94,37 @@ hand-chosen rescaling — must supply the $A$-dependence.
 The deuteron scale $3.74 = m_e \cdot \mathrm{Vol}(\mathcal{B}_3)$. The
 heavier scales (10.55, 9.17, 31.03) await their binding-link volumes.
 
-## Caveat: the deuteron result is trace-convention-specific
+## RESOLVED: the trace-convention gap was a weight-scheme error
 
-The $\Delta\mathrm{tr}(d) = 0.5952$ above comes from `binding_canonical`
-(the Wenzl-bridge closed form). The independent $H_{3A}$-direct
-Wedderburn sum (`binding_per_bond_decomposition.py`, same
-`atom_braid_word_3A` + normalized-Plancherel weights used everywhere
-else) instead gives $\Delta\mathrm{tr}(d) = 0.4241$ — a **29 % gap**,
-which turns the $+0.19\%$ match into $-28.6\%$. So the clean deuteron
-result is **specific to the Wenzl-bridge convention** and is *not*
-reproduced by the $H_{3A}$ Wedderburn trace.
+An earlier note here flagged a 29 % gap between `binding_canonical`'s
+$\Delta\mathrm{tr}(d) = 0.5952$ and an $H_{3A}$-direct value $0.4241$,
+calling it an unresolved inconsistency. **This is now resolved**
+([`trace_convention_reconciliation.py`](../../folio-assistant/computations/trace_convention_reconciliation.py)):
+the gap is purely a **$y_\lambda$ weight-scheme difference**, not a
+framework inconsistency.
 
-**Reconciling the two binding-trace conventions is the prerequisite
-for the A≥3 problem** — before any per-bond / per-pair sum or
-binding-link volume can be trusted, the two production paths must be
-shown to compute the same $\Delta\mathrm{tr}$. Witness:
+Both paths evaluate $\mathrm{tr}_M = \sum_\lambda y_\lambda \cdot
+\chi_\lambda(W)$ on the *same* joint $H_6$ braid word with the *same*
+characters $\chi_\lambda$. They differ only in $y_\lambda$:
+
+| Convention | $y_\lambda$ | $\Delta\mathrm{tr}(d)$ |
+|------------|-------------|------------------------|
+| **Wenzl Jones–Markov** (`binding_canonical`) | $z = 1/(\sqrt q + 1/\sqrt q)$ per Markov move | **0.59524** |
+| normalized-Plancherel (q-Schur) | $\dim_q(\lambda)^2 / [n]_q!$ | 0.42405 |
+
+The Wenzl-bridge value on the joint word matches `binding_canonical`'s
+factorized closed form to 11 digits ($3\times10^{-12}$, full mpf — no
+float64), so `binding_canonical` *is* the Wenzl convention. Per CLAUDE.md,
+**the mass/binding chain uses Wenzl JM** (the Plancherel scheme is for
+the torus-knot lepton tower). The `binding_per_bond_decomposition.py`
+probe erroneously used Plancherel weights — that was the source of the
+apparent gap, not a real disagreement.
+
+**Consequence:** the deuteron $+0.19\%$ endomorphism result (Wenzl JM)
+is correct and stands. The A≥3 $-60\%$ failure of the single-link
+volume **persists in the correct Wenzl convention** — so it is the
+genuine open problem, not a convention artifact. Witnesses:
+[`trace-convention-reconciliation.witness.json`](../../folio-assistant/computations/trace-convention-reconciliation.witness.json),
 [`binding-per-bond-decomposition.witness.json`](../../folio-assistant/computations/binding-per-bond-decomposition.witness.json).
 
 ## Binding-link volumes (SnapPy, PR #1397)
