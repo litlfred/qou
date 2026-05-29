@@ -93,7 +93,7 @@ classical fluids:
  ([complex substrate interpretation](#rem:complex-substrate-interpretation)),
  the chirality operator $\mathcal{X}_\varphi$ rotates the phase
  of $q$ continuously. The
- [chirality rotation conjecture](#rem:complex-chirality-rotation)
+ [chirality rotation conjecture](#conj:complex-chirality-rotation)
  proposes that the discrete flip $T_{2,3} \leftrightarrow
    T_{2,3}^{\sigma}$ is the $\mathbb{Z}_2$ shadow of a continuous
  $\mathrm{U}(1)$ rotation in the $\theta$-direction. After
