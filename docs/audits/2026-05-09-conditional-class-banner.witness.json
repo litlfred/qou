@@ -1,11 +1,11 @@
 {
   "audit": "§3b-cond conditional-class banner (CLAUDE.md §3b-cond #2 + #3)",
-  "generated": "2026-05-28T05:11:44.936Z",
-  "total_blocks": 1831,
-  "conditional_on_class": 128,
+  "generated": "2026-05-29T05:02:23.845Z",
+  "total_blocks": 1851,
+  "conditional_on_class": 129,
   "fully_compliant": 5,
-  "missing_lean_class_hypothesis": 123,
-  "missing_md_conditional_banner": 114,
+  "missing_lean_class_hypothesis": 124,
+  "missing_md_conditional_banner": 115,
   "findings": [
     {
       "label": "cor:knot-factor-amphicheiral",
@@ -47,7 +47,8 @@
       "label": "prop:algebraic-geometric-dilog-equivalence",
       "kind": "proposition",
       "conj_cone": [
-        "conj:dilogarithm-archimedean-limit"
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture"
       ],
       "has_lean_class_hypothesis": false,
       "has_md_conditional_banner": false,
@@ -82,6 +83,7 @@
       "label": "prop:alpha-shift-torus-knot",
       "kind": "proposition",
       "conj_cone": [
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -119,6 +121,7 @@
       "label": "prop:atomic-mass-gb-nf",
       "kind": "proposition",
       "conj_cone": [
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -542,6 +545,7 @@
       "label": "prop:confinement-nf-structure-forcing",
       "kind": "proposition",
       "conj_cone": [
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -594,6 +598,7 @@
       "kind": "proposition",
       "conj_cone": [
         "conj:crystal-graph-realization",
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -743,6 +748,7 @@
       "label": "prop:e-hartree-categorical-derivation",
       "kind": "proposition",
       "conj_cone": [
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -832,6 +838,7 @@
       "label": "prop:force-carrier-intertwining-correspondence",
       "kind": "proposition",
       "conj_cone": [
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -844,6 +851,7 @@
       "kind": "proposition",
       "conj_cone": [
         "conj:block-multiplicativity-v-free",
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -868,6 +876,7 @@
       "conj_cone": [
         "conj:gs-graded-markov-trace-existence",
         "conj:crystal-graph-realization",
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -1143,6 +1152,7 @@
       "label": "prop:markov-trace-antipode-polynomial-symmetry",
       "kind": "proposition",
       "conj_cone": [
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -1154,6 +1164,7 @@
       "label": "prop:markov-trace-axiomatic-closed-form",
       "kind": "proposition",
       "conj_cone": [
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -1177,6 +1188,7 @@
       "label": "prop:markov-trace-ratio-exact",
       "kind": "proposition",
       "conj_cone": [
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -1188,6 +1200,7 @@
       "label": "prop:markov-trace-recursive-reducer",
       "kind": "proposition",
       "conj_cone": [
+        "conj:kashaev-volume-conjecture",
         "conj:q-integer-mass-formula"
       ],
       "has_lean_class_hypothesis": false,
@@ -1649,6 +1662,17 @@
       "has_md_conditional_banner": false,
       "lean_file": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.lean",
       "md_file": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.md"
+    },
+    {
+      "label": "prop:z-eq-n-rho-correction",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:kashaev-volume-conjecture"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": false,
+      "lean_file": "content/quantum-observable-universe/mass-theory/z-eq-n-rho-correction.lean",
+      "md_file": "content/quantum-observable-universe/mass-theory/z-eq-n-rho-correction.md"
     },
     {
       "label": "thm:confinement-grading-correspondence-conditional",
