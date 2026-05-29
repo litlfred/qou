@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
 /**
  * Shell closure is detectable from NF term count in the quotient atom model.

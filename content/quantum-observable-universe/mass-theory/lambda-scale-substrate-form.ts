@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
 /**
  * The Borromean baryon λ_scale has an empirical near-form
