@@ -113,7 +113,7 @@ const VERBATIM_TRANSLIT: Record<string, string> = {
   "ᘁ": "", "‾": "-", "−": "-", "⁄": "/",
   // more subscripts/superscripts
   "₅": "_5", "₆": "_6", "₇": "_7", "₈": "_8", "₉": "_9",
-  "⁷": "^7", "⁸": "^8", "⁹": "_9",
+  "⁷": "^7", "⁸": "^8", "⁹": "^9",
   // script/blackboard letters + big operators
   "ℏ": "hbar", "ℓ": "l", "℘": "P", "∏": "prod", "∑": "Sum", "∐": "coprod",
   // dashes / ellipsis (T1 may render, but ASCII is always safe in code)
