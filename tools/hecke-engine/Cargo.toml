@@ -51,6 +51,13 @@ name = "clarabel-h3-exact-lp"
 path = "src/bin/clarabel_h3_exact_lp.rs"
 required-features = ["clarabel-bigrational"]
 
+# Operator-selection LP (prop:operator-selection-lp) — MPFR JSON CLI.
+# Replaces the scipy HiGHS f64 path in pyhecke.lp_dual_solver at 50 dps.
+[[bin]]
+name = "clarabel-operator-selection-lp"
+path = "src/bin/clarabel_operator_selection_lp.rs"
+required-features = ["clarabel-mpfr"]
+
 # §S9.4 — Peyrl-Parrilo dual-certificate CLI: f64 IPM → rationalise dual
 # → Sturm-chain PSD verify
 [[bin]]
