@@ -15,7 +15,6 @@ export default proposition({
     "def:color-tube-fibers",
     "def:hecke-normal-form",
     "prop:atom-knot-exists",
-    "def:categorical-neutron",
   ],
   cites: [
     "kashaev1997",

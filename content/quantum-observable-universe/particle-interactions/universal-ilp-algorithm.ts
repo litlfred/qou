@@ -13,7 +13,6 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:molecular-braid",
   ],
   tags: [
     "ILP",

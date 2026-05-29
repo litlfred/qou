@@ -6,7 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.AlgebraicSubstrate.ClassicalRiemannZeta",
     validation: "not_checked",
   },
-  uses: ["def:local-q-zeta-function", "def:classical-limit-functor"],
+  uses: ["def:classical-limit-functor"],
   tags: [
     "riemann-zeta",
     "adelic",

@@ -7,7 +7,6 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.CrystalGraphRealization", validation: "stub" },
   uses: [
     "def:hecke-normal-form",
-    "def:knot-operator-energy",
   ],
   cites: [
     "brundankleshchev2009",

@@ -8,7 +8,6 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.HabiroPrecisionLadderEquivalence",
   },
   uses: [
-    "prop:habiro-residue-sum-equivalence",
     "thm:jones-markov-trace",
     "prop:q-schur-y-lambda-closed-form",
     "prop:mass-endomorphism-tower",

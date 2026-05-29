@@ -8,7 +8,6 @@ export default theorem({
     validation: "not_checked",
   },
   uses: [
-    "cor:spectral-half-line",
     "thm:quantum-gap-collapse",
   ],
   tags: [

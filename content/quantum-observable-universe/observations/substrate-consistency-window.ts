@@ -15,7 +15,6 @@ export default proposition({
   ],
   uses: [
     "rem:fine-structure-observation",
-    "thm:mass-energy-equivalence",
     "prop:crossing-energy-decomposition",
   ],
 });
