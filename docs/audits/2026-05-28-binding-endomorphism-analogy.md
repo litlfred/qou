@@ -234,3 +234,120 @@ saturates. A correct extensive binding observable must be built from
 $\log(\mathrm{tr})$, not $\Delta\mathrm{tr}$. Recalibrating the scale
 for the log observable is deferred (it changes the deuteron
 calibration and must be done without back-fitting AME).
+
+## A≥3 derivation campaign + shell/magic review (2026-05-29)
+
+Follow-up to the "log observable" direction above — a systematic
+derive-or-refute campaign (all probes evaluate substrate-derived
+quantities only, **no AME fitting**), plus a consolidated review of how
+the paper treats nuclear shells / magic numbers. PR #1417.
+
+### Overclaim retracted
+
+The Δ_λ gating doc's "Update (2026-05-26): Δ_λ CLOSURE ACHIEVED, zero
+free parameters" was **overclaimed** and is retracted. The per-λ formula
+$B = m_e\,|\sum_\lambda y_\lambda\chi^\lambda\,\mathrm{sgn}(w_0)\,f^\lambda|$
+undershoots **every** light isotope
+([`delta-lambda-binding-full-evaluation.witness.json`](../../folio-assistant/computations/delta-lambda-binding-full-evaluation.witness.json):
+D −83 / T −78 / ³He −70 / ⁴He −89 %); `binding_energy_categorical_deuteron.py`
+reached AME only via `C_knot = 5.852 = B_AME/(m_e·|sum|)` — fitted. Also
+retracted: `mass-volume-factorization.md`'s "≤6.2% zero free parameters"
+(per-isotope (link, ρ∈{m_e,2m_e}) fit; companion
+[`rho-f-volume-binding-gap.witness.json`](../../folio-assistant/computations/rho-f-volume-binding-gap.witness.json)
+shows `matches_within_10pct: []`).
+
+### The linear-truncation diagnosis (root cause)
+
+Per [`kashaev-as-archimedean-realization.md`](../../content/quantum-observable-universe/mass-theory/kashaev-as-archimedean-realization.md),
+$\mathrm{Vol}(K) = 2\pi\lim_{N\to\infty}\log|J_N|/N$, so the trace is the
+**exponential of a volume**: $\mathrm{tr}\sim e^{\mathrm{Vol}}$. The
+endomorphism's $\Delta\mathrm{tr}$ is the **linearisation**
+$e^{\mathrm{Vol}}\approx 1+\mathrm{Vol}$ — exact for the deuteron (small
+Vol), saturating for A≥3. Confirmed truncation loci:
+`conj-chirality-ribbon-frobenius.md:73` (chirality factor to first order
+$1+2wc\log q+O(h^2)$); `rem-im-q-vs-p-skew.md` ($\sinh(\log q)$ Coulomb
+channel "discarded by the canonical projection");
+`atom-knot-mass-derivation.md:385` ("the Hecke quadratic relation **is**
+the curvature 2-form $[F,F]$" — identified but unused in binding).
+
+### Volume-difference: triple refutation at real q₀
+
+[`binding_volume_difference_probe.py`](../../folio-assistant/computations/binding_volume_difference_probe.py)
+tests $B=\rho\,[\mathrm{Vol}(\text{atom})-\mathrm{Vol}(\text{free})]$ with
+**derived** volumes (no census-knot fit): (A) $\log|\mathrm{tr}_M|$ — no
+derived ρ closes it; (B) cosh-inversion — all $|\mathrm{tr}_M|<2$
+(elliptic); (C) SnapPy on the derived braid closure — non-hyperbolic
+(Vol≈0). A genuine hyperbolic volume needs **complex-q** (Kashaev
+$N\to\infty$), absent at real q₀.
+
+### Complex-q / q-Reeb rotation — the extensive observable
+
+The cosh-inversion "degeneracy" ($|\mathrm{tr}_M|<2$) is the **elliptic /
+rotation** regime — the complex-q sector. Per
+[`unit-modulus-eigenvalue.md`](../../content/quantum-observable-universe/braids-and-knots/unit-modulus-eigenvalue.md)
+and [`figure-eight-reeb-rotation.md`](../../content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.md),
+behaviour is **representation-dependent**: the (2,1) standard rep has
+unit-modulus eigenvalues $e^{\pm i\theta}$ (q-Reeb phase
+$\theta=\arccos(\chi_{(2,1)}/2)$, Kashaev limit = Vol(4₁) = the muon); the
+(n)/(1ⁿ) outer channels carry $q^{\pm\text{writhe}}$ growth. The scalar
+$\Delta\mathrm{tr}$ collapses this split and the *difference* cancels the
+common growth — why every scalar observable refuted.
+
+[`binding_reeb_phase_decomposition.py`](../../folio-assistant/computations/binding_reeb_phase_decomposition.py)
+keeps the per-rep split and finds the **first extensive observable**: the
+free growth-channel mass grows 16.5→93→153→1504 (D/T/³He/⁴He), collapsing
+to ~2 when bound; the q-Reeb phase shift $\Sigma|\Delta\theta|$ is also
+extensive.
+
+**The rotation-phase lead** ([`binding_rotation_phase_lead.py`](../../folio-assistant/computations/binding_rotation_phase_lead.py)):
+the **Markov-weighted** phase
+$\rho_{\text{need}} = B_{\text{AME}}/\sum_\lambda y_\lambda\dim_\lambda|\Delta\theta_\lambda|$:
+
+| atom | ρ_need (MeV/rad) |
+|------|------------------|
+| D | 14.7 |
+| T (³H) | 18.3 |
+| ³He | 18.7 |
+| ⁴He | 54.8 |
+
+The **A=3 mirror pair (³H, ³He) agrees to 2% with no fit** — the strong
+binding scale is p/n-symmetric under the Markov-weighted Reeb phase. D
+(true 2-body) and ⁴He (doubly-magic + 2-proton Coulomb = the
+$\sinh(\log q)$ channel) are the expected special cases. Tightest derived
+binding observable to date — a genuine lead, **not** closure.
+
+**Lean (this branch):** `crossing-energy-decomposition.lean` now proves
+$(q\pm q^{-1})/2=\cosh/\sinh(\log q)$ and $q=\cosh(\log q)+\sinh(\log q)$
+— the $\sinh$ Coulomb channel is a **derived identity, not fitted**
+(build-verify deferred to CI; no `lake` in the authoring container).
+
+### How the paper treats shells / magic (review)
+
+Shell structure is **per-λ Wedderburn**, extractable from the canonical
+braid-word witnesses
+([`atom-chi-rust-*`](../../folio-assistant/computations/atom-chi-rust-d.witness.json),
+[`chi-lambda-he4-full-partition-table`](../../folio-assistant/computations/chi-lambda-he4-full-partition-table.witness.json)):
+
+| Mechanism | Block | Statement |
+|-----------|-------|-----------|
+| Binding formula is per-λ | `prop:rho-k-h3a-refinement` | $B=m_e\sum_\lambda y_\lambda\chi^\lambda\Delta_\lambda$ |
+| Magic = self-conjugate | [`categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.md), [`homological-shell-condensation`](../../content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.md) | content-sum-0 ⇒ full-twist-fixed at $n\in\{2,8,20,28,50,82,126\}$ |
+| Inter-shell gap | [`torus-knot-shell-binding`](../../content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.md) | shell closes → $T_{2,n_s}$, gap $q^{2n_s}$ |
+| Doubly-magic compat. | [`double-magic-delta-i-bound`](../../content/quantum-observable-universe/observations/double-magic-delta-i-bound.md) | Δi≤1 LR-fusion; ⁴He=(2,2) self-conjugate |
+| Staircase shell partition | [`sigma-shell-from-beta-chain-derivation`](../../content/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation.md) | $\lambda_{\mathrm{shell}}$ = staircase (self-conjugate) |
+| Magic-shell coupling | [`magic-shell-coupling-kappa`](../../content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.md) | $\kappa=-E_0\log(1/h)/([2]_q[3]_q)\approx-1.07$ MeV (derived, 0.03%) |
+| ⁴He knot factor | [`knot-factor-shell-closed`](../../content/quantum-observable-universe/mass-theory/knot-factor-shell-closed.md) | $a_K=1$ exact (Markov equilibrium, Z=N even-even) |
+
+The shell structure is **not missing** — the scalar $\Delta\mathrm{tr}$
+collapsed it. The campaign shows the extensive A-dependence lives in the
+**per-rep q-Reeb phase** + **growth-channel** content, which the per-λ
+shell data carries.
+
+### Witnesses + coordination
+
+`binding-log-scale-investigation`, `binding-shell-enhancement-derivation`,
+`binding-volume-difference-probe`, `binding-reeb-phase-decomposition`,
+`binding-rotation-phase-lead`. Ledger:
+[`2026-05-29-binding-a3-honesty.md`](../coordination/2026-05-29-binding-a3-honesty.md).
+PR #1417; complementary scalar-scale lane #1416; converges with #1421
+(no derived atom→knot rule) and #1420 (EM/Coulomb = sinh channel).

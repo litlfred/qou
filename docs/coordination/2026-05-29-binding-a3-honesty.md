@@ -50,10 +50,30 @@ response).
   (07efba0e2) — literal `mp.mpc(s)` ValueErrors on `a±bj`; used a
   float64-free real-part parse. Thread resolved.
 
-## Next concrete (non-overlapping) task
-- Await #1416 / owner decision on fold-vs-sibling.
-- The genuine open problem (Δ_λ gate / A≥3 per-λ + inter-shell scale) is
-  **#1416's scalar-scale lane** — do not duplicate. If asked to push the
-  per-λ angle further: the honest direction is whether the torus-knot
-  inter-shell q^{2n_s} gap (per-λ, derived) supplies the A-dependence —
-  derive-or-refute, **no AME fitting** (CLAUDE.md Δ_λ gate: no 7th ansatz).
+## Update (2026-05-29 PM) — sibling state + derivation result
+
+**Sibling state.** #1416 **confirmed the scope split** (keep separate, no
+file overlap; my finding corroborates its de-fit). New overlapping siblings,
+intent posted: **#1420** (meson 290 ppm → "EM is the lead"; ruled out
+`R=1+4u²` as a fit, c=4.03≠4 — I heed this, won't wire it) and **#1421**
+(low-mass sweep → D/T/³He census-knots = AME fit + "no derived atom→knot
+rule" — same root cause as my `mass-volume-factorization` caveat). #1422
+(q₀ re-pin −11.5 ppb) negligible for my %-level binding numbers.
+
+**Derivation result (the open problem, advanced).** The A≥3 deficit is the
+**linear truncation** `tr ~ exp(Vol)` ⇒ `Δtr` is the linearisation. The
+extensive structure is the **complex-q / q-Reeb rotation** (per-rep:
+rotation on (2,1), growth on outer). The **Markov-weighted q-Reeb phase**
+closes the **A=3 mirror pair (³H, ³He) to 2% with no fit** (ρ≈18.5
+MeV/rad); D (2-body) and ⁴He (doubly-magic + Coulomb=sinh channel) are the
+special cases. Full write-up in
+[`2026-05-28-binding-endomorphism-analogy.md`](../audits/2026-05-28-binding-endomorphism-analogy.md)
+§"A≥3 derivation campaign".
+
+## Next concrete task
+- `/prepare-merge` #1417 in progress (rebased onto main, witness drift
+  refreshed, docs added). Then reviews + merge per owner.
+- Open lead (derive-or-refute, no fit): tighten the rotation-phase ρ by
+  isolating the (2,1)-only Reeb phase and removing the ⁴He Coulomb (sinh)
+  term; check whether D's 2-body case unifies. **#1416's scalar-scale lane
+  is complementary — do not duplicate.**
