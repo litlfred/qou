@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T00:18:43.978227+00:00",
-  "commitSha": "842383714424dd006d3a47902fc5041456721828",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:16:08.464649+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [
     {
       "name": "tall_narrow_systematically_deeper",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "durationMs": 11,
   "computation": "probe-4e-transpose-pair-asymmetry",
   "scriptFile": "probe_4e_transpose_pair_asymmetry.py",
   "scriptHash": "effd4abfe4d1",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "fe8ecae3d56262be495e90a81733fc7f4d3df1be",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Quantifies the bar-involution transpose-pair asymmetry: for each pair (λ, λ^T), the *tall-narrow* shape's min_eig is consistently more negative than the *wide-short* shape's. The bar acts as a swap of shapes but the obstruction depth is NOT preserved — a non-trivial structural fact the categorical derivation must explain.",
   "contentBlock": "conj:psd-trace-orthogonality",

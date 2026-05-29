@@ -1,15 +1,21 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-06T01:11:21.476201+00:00",
-  "commitSha": "57a6f2f7ecaf74c135bbadc87fd10e0094524bd6",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:27:28.752499+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 22,
   "computation": "full-twist-root-of-unity-probe",
   "scriptFile": "full_twist_root_of_unity_probe.py",
   "scriptHash": "becb0dfbbdf1",
-  "scriptCommitSha": "839cdf73cf9d719083ae92fa0625547ef7762092",
+  "scriptCommitSha": "dbaf2aa9c0a5b5d8deb69644685e51708f11bb54",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Probe of category-(a) for the full_twist_delta_n2_verification structural finding: at q = ζ_ℓ, the Δ_n²-invariant subspace of H_n(q) is the span of V_λ with c(λ) ≡ 0 (mod ℓ).  Sweeps small ℓ at magic n in range; identifies which ℓ make the categorical-neutrality predicate realisable at magic n = 2.",
   "contentBlock": "conj:categorical-neutrality-saturated-shells",
   "parameters": {

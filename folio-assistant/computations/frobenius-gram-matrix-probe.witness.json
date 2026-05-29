@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T18:10:43.445555+00:00",
-  "commitSha": "ef3b364fc7414ca88912eb4ac750290d89833c5d",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:19:54.595254+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [
     {
       "name": "single_element_traces_match_closed_forms",
@@ -42,11 +42,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 854,
+  "durationMs": 1071,
   "computation": "frobenius-gram-matrix-probe",
   "scriptFile": "frobenius_gram_matrix_probe.py",
   "scriptHash": "3e050aee2643",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6ddb5f8bef53fed344fe0dcfec7234eeb1697b57",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "I1 probe for prop:frobenius-gram-matrix.  Verifies the 6×6 Markov-trace Gram matrix G_{ij} = tr_M(b_i · b_j) over the NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} of H_3(R, q): (1) the six single-element traces match the corrected closed forms (1, z, z, z², z², hz² + z) at q_0; (2) G is symmetric to ~1e-40; (3) det G ≠ 0 (non-degenerate); (4) signature is indefinite (G has both positive and negative eigenvalues).  Reproduces the corrected Gram-matrix structure after the Markov-bug fix in audit 2026-05-19-trm5-markov-bug (stale `tr_M(e^-) = z³` replaced by `hz² + z`).",
   "contentBlock": "prop:frobenius-gram-matrix",
   "parameters": {

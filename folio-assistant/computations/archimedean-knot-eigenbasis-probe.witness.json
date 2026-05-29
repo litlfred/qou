@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-19T07:04:17.463505+00:00",
-  "commitSha": "2b859a46865c8339a0eeae6200a4ebc823b051fd",
+  "computedAt": "2026-05-29T15:03:34.028640+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [
     {
       "name": "braiding_quadratic_matches_c_sq_minus_h_c_minus_1",
@@ -33,13 +33,19 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 24,
   "computation": "archimedean-knot-eigenbasis-probe",
   "scriptFile": "archimedean_knot_eigenbasis_probe.py",
-  "scriptHash": "b1f08fbca335",
-  "scriptCommitSha": "unknown",
-  "description": "I1 probe for cor:descartes-knot-eigenbasis.  Verifies the two concrete algebraic claims of the corollary: (1) the R-matrix braiding eigenvalues `q` and `-q⁻¹` satisfy the quadratic `(c − q)(c + q⁻¹) = 0`, expanding to `c² − (q − q⁻¹)·c − 1 = 0`; (2) V^⊗n's Schur–Weyl decomposition has exactly ⌊n/2⌋ + 1 two-part partitions for n ∈ {2, …, 8}.  The Markov-trace-detection (claim 3) and combining-theorem completeness (claim 4) are structural assertions about an infinite limit and require Lean formalisation — not a concrete probe.",
-  "contentBlock": "cor:descartes-knot-eigenbasis",
+  "scriptHash": "b07749377364",
+  "scriptCommitSha": "4a72073dc5c464825e7afb190a5b3b963865cfff",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "I1 probe for cor:archimedean-knot-eigenbasis.  Verifies the two concrete algebraic claims of the corollary: (1) the R-matrix braiding eigenvalues `q` and `-q⁻¹` satisfy the quadratic `(c − q)(c + q⁻¹) = 0`, expanding to `c² − (q − q⁻¹)·c − 1 = 0`; (2) V^⊗n's Schur–Weyl decomposition has exactly ⌊n/2⌋ + 1 two-part partitions for n ∈ {2, …, 8}.  The Markov-trace-detection (claim 3) and combining-theorem completeness (claim 4) are structural assertions about an infinite limit and require Lean formalisation — not a concrete probe.",
+  "contentBlock": "cor:archimedean-knot-eigenbasis",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779930000000000",
     "eigenvalue_plus_at_q_0": 1.1099785955541805,

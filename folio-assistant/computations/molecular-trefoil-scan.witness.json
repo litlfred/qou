@@ -1,11 +1,11 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-13T21:30:01.975644+00:00",
-  "commitSha": "789d28a5c1de15887bfe98cc987627dd3c85d1db",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:11:33.836409+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [
     {
-      "name": "H\u2082",
+      "name": "H₂",
       "computed": 4.5,
       "expected": 4.478,
       "passed": true,
@@ -14,22 +14,22 @@
     },
     {
       "name": "CO",
-      "computed": 10.6,
+      "computed": 10.5,
       "expected": 11.09,
       "passed": true,
       "tolerance": 3.327,
       "unit": "eV"
     },
     {
-      "name": "CO\u2082",
-      "computed": 14.1,
+      "name": "CO₂",
+      "computed": 14.0,
       "expected": 16.56,
       "passed": true,
       "tolerance": 4.967999999999999,
       "unit": "eV"
     },
     {
-      "name": "CH\u2084",
+      "name": "CH₄",
       "computed": 16.9,
       "expected": 17.9,
       "passed": true,
@@ -37,8 +37,8 @@
       "unit": "eV"
     },
     {
-      "name": "C\u2086H\u2086",
-      "computed": 57.1,
+      "name": "C₆H₆",
+      "computed": 56.9,
       "expected": 57.4,
       "passed": true,
       "tolerance": 17.22,
@@ -46,66 +46,70 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "molecular-trefoil-scan",
   "scriptFile": "molecular-trefoil-scan.py",
-  "scriptHash": "372ee79a6e83",
-  "scriptCommitSha": "",
+  "scriptHash": "96d23dfe6183",
+  "scriptCommitSha": "80524246187e0165f7dbe816cb5b16ccadfbcfd7",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Integer LP: scan inverse trefoil count per bond until marginal gain exhausts. Uses 3-channel vertex volumes.",
   "contentBlock": "def:molecular-braid",
   "parameters": {
     "q": 1.1099785955541805,
-    "E_mol_eV": 6.750278523641413
+    "E_mol_eV": 6.729337493682183
   },
   "data": {
     "bond_HH": {
       "k_trefoils": 1,
-      "E_eV": 4.483351450017505
+      "E_eV": 4.469442987321669
     },
     "bond_CH": {
       "k_trefoils": 6,
-      "E_eV": 4.224029768807166
+      "E_eV": 4.210925785967426
     },
     "bond_CC": {
       "k_trefoils": 5,
-      "E_eV": 3.521649670694491
+      "E_eV": 3.5107246442675604
     },
     "bond_CO": {
       "k_trefoils": 5,
-      "E_eV": 3.5216453881049623
+      "E_eV": 3.5107203749636815
     },
     "bond_OH": {
       "k_trefoils": 7,
-      "E_eV": 4.93002721976578
+      "E_eV": 4.914733058591932
     },
     "molecules": [
       {
-        "name": "H\u2082",
-        "pred_eV": 4.483351450017505,
+        "name": "H₂",
+        "pred_eV": "4.46944298732167",
         "obs_eV": 4.478
       },
       {
         "name": "CO",
-        "pred_eV": 10.564935314832548,
+        "pred_eV": "10.532160278044",
         "obs_eV": 11.09
       },
       {
-        "name": "CO\u2082",
-        "pred_eV": 14.086580027486491,
+        "name": "CO₂",
+        "pred_eV": "14.0428799796521",
         "obs_eV": 16.56
       },
       {
-        "name": "CH\u2084",
-        "pred_eV": 16.90350310279815,
+        "name": "CH₄",
+        "pred_eV": "16.8510642643633",
         "obs_eV": 17.9
       },
       {
-        "name": "C\u2086H\u2086",
-        "pred_eV": 57.05064911127017,
+        "name": "C₆H₆",
+        "pred_eV": "56.873663917541",
         "obs_eV": 57.4
       }
     ]
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }

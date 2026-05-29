@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.5",
-  "computedAt": "2026-05-18T17:30:26.352028+00:00",
-  "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-05-29T15:20:30.659338+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [
     {
       "name": "kron_factorization_runs",
@@ -13,11 +13,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 9,
   "computation": "A-operator-extract-kron",
   "scriptFile": "A_operator_extract_kron.py",
   "scriptHash": "5e3ef8d1f14b",
-  "scriptCommitSha": "2ff3b812a26577708431196f4c37f8adfe4455ed",
+  "scriptCommitSha": "f33f5c97f7bce950c88bd973d970f983b33bda6b",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Kronecker-factorized A^λ_{μν}(I) extraction.  For λ with single-(μ, ν) support and c^λ_{μν} = 1, the supply matrix factors as M = X ⊗ Y where X[i, :] = vec(ρ_μ(β_1_i).T) and Y[j, :] = vec(ρ_ν(β_2_j).T).  Solving via two smaller lstsq's reduces the per-block compute by O((d_μ d_ν)² / (d_μ² + d_ν²)).  Multi-block / multi-multiplicity λ's are deferred to the dense path; full A=3, A=4 closure requires extending the factorization to those cases (item 4 + item 1).",
   "contentBlock": "operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",

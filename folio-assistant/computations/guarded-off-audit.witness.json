@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T19:15:21.227475+00:00",
-  "commitSha": "4d731059e7353030b08eba055b2d7b4598053977",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:05:45.940496+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [
     {
       "name": "no_guarded_off_candidates",
@@ -15,11 +15,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 11,
   "computation": "guarded-off-audit",
   "scriptFile": "guarded_off_audit.py",
   "scriptHash": "3f3f9bcf888f",
-  "scriptCommitSha": "3722eb85327a07e3899a0f75b2db382e096c38d1",
+  "scriptCommitSha": "48c4d805bfe3a20c894bdd7f4eed14b81246db56",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "I3 audit per local/compute-integration-watcher: scripts that contain `if False:` / `if 0:` blocks, env-var-defaulting-to-off gates, or explicit `# DEAD`/`# DISABLED`/`# LEGACY` markers where a canonical-witness consumer may have been disabled.  Candidates only — review the per-line context to confirm the block actually wraps a canonical-path call (vs being a debug toggle / leftover scaffolding).",
   "contentBlock": "I3 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {

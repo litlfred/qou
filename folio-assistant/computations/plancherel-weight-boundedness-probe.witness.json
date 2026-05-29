@@ -1,8 +1,8 @@
 {
   "engine": "python (Fraction)",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T18:00:23.039747+00:00",
-  "commitSha": "5bd9f205d35c9863c2299ba7f748f2e11dbb2497",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:29:14.754188+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [
     {
       "name": "all_plancherel_weights_in_unit_interval",
@@ -24,11 +24,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 29,
   "computation": "plancherel-weight-boundedness-probe",
   "scriptFile": "plancherel_weight_boundedness_probe.py",
   "scriptHash": "39856d40659b",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4aac739bd4b97e95fb3cb60c4216158b865267f5",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "I1 probe for prop:plancherel-weight-boundedness.  Verifies (1) w_λ = (dim V_λ)² / n! ∈ [0, 1] and (2) Σ_{λ ⊢ n} w_λ = 1 exactly in ℚ for n = 1…8.  Uses integer/Fraction arithmetic on |SYT(λ)| counts; the identity Σ_λ f_λ² = n! is the classical Frobenius/Young dimension formula, lifted to H_n(q) via the Wedderburn-Artin decomposition (q-independent on the classical dimension).",
   "contentBlock": "prop:plancherel-weight-boundedness",
   "parameters": {

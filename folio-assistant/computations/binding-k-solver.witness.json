@@ -1,16 +1,22 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T13:54:07.740371+00:00",
-  "commitSha": "0cfd02a5d587a21cff1a53515385ced8dfc5b5ef",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:18:49.835194+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 2556,
+  "durationMs": 3706,
   "computation": "binding-k-solver",
   "scriptFile": "binding_k_solver.py",
-  "scriptHash": "4f46ab90c96e",
-  "scriptCommitSha": "unknown",
-  "description": "Binding-K SDP solver — operator-selection LP / shadow-price / primal-dual / lp-duality search for the binding operator K(𝔥) ∈ H_{3·A}(q_0) factor of the canonical T_w(𝔥) under the decomposition T_w(𝔥) = K(𝔥) · ⊗_i T_w(nucleon_i) per the deliverable-4 binding-K finding (PR #610). Issue #604 items 1-5: extends the H_3-only rho-prefactor verifier to the atomic strand count n_0 = 3·A using the existing build_seminormal_matrices (general-n Hoefsmit was already in hecke_characters.py — no new combinatorial code needed). Computes K's per-Wedderburn-block PSD eigenvalues, dominant λ* ⊢ 3·A by |y_λ · χ_λ(K)|, and tests the four candidate ρ rules against observed ρ for ²H (n_0=6), ³H (n_0=9, embedded 8_11), ³He (n_0=9, embedded L6a4). The natural Wedderburn-PSD constraint at the atomic strand count becomes ρ_λ(K) ⪰ 0 — the 'binding stability' certificate; per-atom witnesses include LP primal/dual (y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap) per CLAUDE.md 'LP/SDP duals — first-class infra'.",
+  "scriptHash": "458d63930a15",
+  "scriptCommitSha": "b1205d9491386c1bc2152ed980bcecddac0f6671",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Binding-K factorisation EVALUATOR (operator-selection LP / shadow-price / primal-dual / lp-duality fields emitted from the per-atom factorisation; NOT a search/optimisation step — the factorisation is computed deterministically from the presupposed T_w(𝔥) historical braid via braid-word concatenation `K_word = atom_word ++ cp_inv_word`, then evaluated per Wedderburn block at H_{3·A}(q_0); the actual search for K from substrate alone is in binding_k_enumerator.py).  Per the deliverable-4 binding-K factorisation finding (PR #610): T_w(𝔥) = K(𝔥) · ⊗_i T_w(nucleon_i) at H_{3·A}(q_0).  Issue #604 items 1-5: extends the H_3-only rho-prefactor verifier to the atomic strand count n_0 = 3·A using `build_seminormal_matrices` (general-n Hoefsmit, wired through syt_prefix_cache.BlockCache to amortise the SYT-prefix construction overhead).  Computes K's per-Wedderburn-block PSD eigenvalues, dominant λ* ⊢ 3·A by |y_λ · χ_λ(K)|, and tests the four candidate ρ rules against observed ρ for ²H (n_0=6), ³H (n_0=9, embedded 8_11), ³He (n_0=9, embedded L6a4).  The natural Wedderburn-PSD constraint at the atomic strand count becomes ρ_λ(K) ⪰ 0 — the 'binding stability' certificate; per-atom witnesses include LP primal/dual (y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap) per CLAUDE.md 'LP/SDP duals — first-class infra' rule.",
   "contentBlock": "conj:rho-prefactor-structural",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -147,8 +153,8 @@
           2,
           -1
         ],
-        "K_alpha_gap": 0.918044358434081,
-        "K_min_eig_overall": -0.918044358434081,
+        "K_alpha_gap": 0.9180443584340806,
+        "K_min_eig_overall": -0.9180443584340806,
         "K_per_block": {
           "(6,)": {
             "chi": 1.2320524825884407,
@@ -163,21 +169,21 @@
             "psd_within_tol": false
           },
           "(4, 2)": {
-            "chi": 0.6948082506300295,
+            "chi": 0.6948082506300294,
             "det": 1.8701981561774517,
-            "min_eig_sym": -0.918044358434081,
+            "min_eig_sym": -0.9180443584340806,
             "psd_within_tol": false
           },
           "(4, 1, 1)": {
             "chi": 1.50646198627211,
-            "det": 1.5179533198523665,
-            "min_eig_sym": -0.9180443584340806,
+            "det": 1.517953319852366,
+            "min_eig_sym": -0.9180443584340805,
             "psd_within_tol": false
           },
           "(3, 3)": {
             "chi": -0.7621333277927758,
             "det": 1.23205248258845,
-            "min_eig_sym": -0.9180443584340802,
+            "min_eig_sym": -0.9180443584340803,
             "psd_within_tol": false
           },
           "(3, 2, 1)": {
@@ -189,7 +195,7 @@
           "(3, 1, 1, 1)": {
             "chi": 0.6681087704096457,
             "det": 0.6587817865817571,
-            "min_eig_sym": -0.9180443584340804,
+            "min_eig_sym": -0.9180443584340806,
             "psd_within_tol": false
           },
           "(2, 2, 2)": {
@@ -201,7 +207,7 @@
           "(2, 2, 1, 1)": {
             "chi": -0.5639437121787927,
             "det": 0.534702698052042,
-            "min_eig_sym": -0.9180443584340798,
+            "min_eig_sym": -0.9180443584340795,
             "psd_within_tol": false
           },
           "(2, 1, 1, 1, 1)": {
@@ -246,9 +252,9 @@
                 2
               ],
               "is_hook": false,
-              "chi_K": 0.6948082506300295,
+              "chi_K": 0.6948082506300294,
               "y_wenzl": 0.04028438696593522,
-              "y_times_chi_abs": 0.02798992443550461,
+              "y_times_chi_abs": 0.027989924435504607,
               "dim_q": 9.669048397124518
             },
             {
@@ -489,7 +495,7 @@
           "channel_t_costs": [
             -0.1585449221216854,
             -0.07292237358499565,
-            -0.02798992443550461,
+            -0.027989924435504607,
             -0.015265677540084096,
             -0.0139990445166142,
             -0.01076198869675432,
@@ -499,7 +505,7 @@
             -0.00014107275333269024,
             -1.0095338591559098e-05
           ],
-          "interpretation": "argmin t = dominant Wedderburn block λ*(K) of the binding operator K ∈ H_{n_0}(q_0); the LP dual y_star marks the saturating block.  Per conj:rho-prefactor-structural, ρ(𝔥) = round(dim_q(λ*(K)))."
+          "interpretation": "PRIMAL: argmin_i (t_i) = -|y_λ · χ_λ(K)| picks the channel with maximum |y_λ · χ_λ| ⇒ the dominant Wedderburn block λ*(K) of the binding operator K ∈ H_{n_0}(q_0) (this is where x_i^* > 0).  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 marks channels where the x_i ≥ 0 constraint is TIGHT at the optimum (i.e., x_i^* = 0 — channels NOT selected).  The DOMINANT channel is therefore the one with x_i^* > 0 and y_star[i] = 0 — NOT in the active_set; the active_set complementary identifies it.  Per conj:rho-prefactor-structural, ρ(𝔥) = round(dim_q(λ*(K)))."
         },
         "explicit_binding_k_heuristic": {
           "available": true,
@@ -509,7 +515,7 @@
           ],
           "binding_interpretation": "σ_3^2 — Hopf link crossing strand 3 of proton with strand 4 of neutron in B_6.  Standard Hopf representation.",
           "K_alpha_gap_explicit": 0.0,
-          "K_min_eig_overall_explicit": 0.8116537356420808,
+          "K_min_eig_overall_explicit": 0.8116537356420802,
           "dominant_lambda_K_explicit": [
             4,
             2
@@ -634,153 +640,153 @@
             "psd_within_tol": false
           },
           "(7, 2)": {
-            "chi": 0.547732563944492,
-            "det": 0.0019103975614494302,
-            "min_eig_sym": -1.048257216219351,
+            "chi": 0.5477325639444919,
+            "det": 0.001910397561449432,
+            "min_eig_sym": -1.0482572162193529,
             "psd_within_tol": false
           },
           "(7, 1, 1)": {
-            "chi": 1.2829859054242856,
-            "det": 0.002899894320639933,
-            "min_eig_sym": -1.1534314977008964,
+            "chi": 1.2829859054242851,
+            "det": 0.0028998943206399305,
+            "min_eig_sym": -1.1534314977008955,
             "psd_within_tol": false
           },
           "(6, 3)": {
             "chi": -1.8859639085313349,
             "det": 0.00023704547720329215,
-            "min_eig_sym": -1.0482572162193518,
+            "min_eig_sym": -1.0482572162193513,
             "psd_within_tol": false
           },
           "(6, 2, 1)": {
-            "chi": -0.8320557208324999,
+            "chi": -0.8320557208324997,
             "det": 4.528511016018172e-07,
-            "min_eig_sym": -1.345376628902321,
+            "min_eig_sym": -1.3453766289023212,
             "psd_within_tol": false
           },
           "(6, 1, 1, 1)": {
             "chi": 0.3691227236201504,
-            "det": 0.002899894320640175,
-            "min_eig_sym": -1.3051829082802777,
+            "det": 0.00289989432064017,
+            "min_eig_sym": -1.3051829082802815,
             "psd_within_tol": false
           },
           "(5, 4)": {
             "chi": -1.905317177861983,
             "det": 0.002899894320639946,
-            "min_eig_sym": -1.0307408754399647,
+            "min_eig_sym": -1.0307408754399656,
             "psd_within_tol": false
           },
           "(5, 3, 1)": {
-            "chi": -0.9972688326432695,
+            "chi": -0.9972688326432699,
             "det": 2.983300577687797e-07,
-            "min_eig_sym": -1.3723846320029292,
+            "min_eig_sym": -1.372384632002937,
             "psd_within_tol": false
           },
           "(5, 2, 2)": {
             "chi": 0.1390405391151115,
-            "det": 0.00023704547720334015,
-            "min_eig_sym": -1.3852586218927856,
+            "det": 0.0002370454772033393,
+            "min_eig_sym": -1.3852586218927863,
             "psd_within_tol": false
           },
           "(5, 2, 1, 1)": {
             "chi": -0.08819089038569561,
             "det": 0.0001561612429731656,
-            "min_eig_sym": -1.3723846320029323,
+            "min_eig_sym": -1.3723846320029303,
             "psd_within_tol": false
           },
           "(5, 1, 1, 1, 1)": {
             "chi": 1.108004535006733,
             "det": 1.000000000000248,
-            "min_eig_sym": -1.327306428635687,
+            "min_eig_sym": -1.3273064286356866,
             "psd_within_tol": false
           },
           "(4, 4, 1)": {
-            "chi": 0.4589910070317617,
-            "det": 0.0028998943206402653,
-            "min_eig_sym": -1.372384632002933,
+            "chi": 0.45899100703176243,
+            "det": 0.0028998943206402783,
+            "min_eig_sym": -1.3723846320029367,
             "psd_within_tol": false
           },
           "(4, 3, 2)": {
             "chi": 2.989787886892076,
-            "det": 0.00289989432064068,
-            "min_eig_sym": -1.4116865236020053,
+            "det": 0.0028998943206406747,
+            "min_eig_sym": -1.4116865236020033,
             "psd_within_tol": false
           },
           "(4, 3, 1, 1)": {
             "chi": 2.0088491547513,
-            "det": 0.081742798527604,
-            "min_eig_sym": -1.378701538479074,
+            "det": 0.08174279852760384,
+            "min_eig_sym": -1.3787015384790726,
             "psd_within_tol": false
           },
           "(4, 2, 2, 1)": {
             "chi": -1.1359663518258274,
             "det": 12.233493567796259,
-            "min_eig_sym": -1.411686523602007,
+            "min_eig_sym": -1.411686523602006,
             "psd_within_tol": false
           },
           "(4, 2, 1, 1, 1)": {
             "chi": 0.7839373353654429,
-            "det": 6403.637554120456,
-            "min_eig_sym": -1.378701538479069,
+            "det": 6403.637554120445,
+            "min_eig_sym": -1.3787015384790715,
             "psd_within_tol": false
           },
           "(4, 1, 1, 1, 1, 1)": {
             "chi": 3.7533068209660088,
-            "det": 344.84015258172116,
-            "min_eig_sym": -1.3424367981483503,
+            "det": 344.8401525817217,
+            "min_eig_sym": -1.3424367981483514,
             "psd_within_tol": false
           },
           "(3, 3, 3)": {
-            "chi": 1.2965350670810494,
+            "chi": 1.2965350670810496,
             "det": 1.0000000000001161,
-            "min_eig_sym": -1.3852586218927836,
+            "min_eig_sym": -1.3852586218927827,
             "psd_within_tol": false
           },
           "(3, 3, 2, 1)": {
             "chi": -0.24777792954247646,
-            "det": 344.8401525817824,
-            "min_eig_sym": -1.4116865236020026,
+            "det": 344.8401525817827,
+            "min_eig_sym": -1.4116865236020029,
             "psd_within_tol": false
           },
           "(3, 3, 1, 1, 1)": {
             "chi": 0.11242083012940962,
             "det": 4218.5997885247325,
-            "min_eig_sym": -1.3787015384790713,
+            "min_eig_sym": -1.3787015384790675,
             "psd_within_tol": false
           },
           "(3, 2, 2, 2)": {
             "chi": -4.338708837869509,
-            "det": 344.84015258173247,
-            "min_eig_sym": -1.411686523602005,
+            "det": 344.84015258173275,
+            "min_eig_sym": -1.411686523602007,
             "psd_within_tol": false
           },
           "(3, 2, 2, 1, 1)": {
             "chi": -5.791848771659192,
             "det": 3351992.1106170355,
-            "min_eig_sym": -1.4116865236020009,
+            "min_eig_sym": -1.411686523602002,
             "psd_within_tol": false
           },
           "(3, 2, 1, 1, 1, 1)": {
             "chi": 3.3828348559972397,
-            "det": 2208231.351240059,
-            "min_eig_sym": -1.3787015384790677,
+            "det": 2208231.351240063,
+            "min_eig_sym": -1.3787015384790688,
             "psd_within_tol": false
           },
           "(3, 1, 1, 1, 1, 1, 1)": {
             "chi": 6.353928109639238,
             "det": 344.8401525816905,
-            "min_eig_sym": -1.342436798148353,
+            "min_eig_sym": -1.3424367981483505,
             "psd_within_tol": false
           },
           "(2, 2, 2, 2, 1)": {
             "chi": -5.1352617956850075,
-            "det": 344.8401525816948,
-            "min_eig_sym": -1.4116865236020049,
+            "det": 344.84015258169416,
+            "min_eig_sym": -1.4116865236020062,
             "psd_within_tol": false
           },
           "(2, 2, 2, 1, 1, 1)": {
             "chi": -1.8460149233379974,
-            "det": 4218.599788523856,
-            "min_eig_sym": -1.3852586218927836,
+            "det": 4218.599788523863,
+            "min_eig_sym": -1.3852586218927854,
             "psd_within_tol": false
           },
           "(2, 2, 1, 1, 1, 1, 1)": {
@@ -792,7 +798,7 @@
           "(2, 1, 1, 1, 1, 1, 1, 1)": {
             "chi": 5.098617910445727,
             "det": 12.233493567790015,
-            "min_eig_sym": -1.3200627227156094,
+            "min_eig_sym": -1.320062722715609,
             "psd_within_tol": false
           },
           "(1, 1, 1, 1, 1, 1, 1, 1, 1)": {
@@ -853,9 +859,9 @@
                 2
               ],
               "is_hook": false,
-              "chi_K": 0.547732563944492,
+              "chi_K": 0.5477325639444919,
               "y_wenzl": 0.0062689450192913556,
-              "y_times_chi_abs": 0.003433705328643507,
+              "y_times_chi_abs": 0.003433705328643506,
               "dim_q": 32.92215114695502
             },
             {
@@ -865,9 +871,9 @@
                 1
               ],
               "is_hook": true,
-              "chi_K": 1.2829859054242856,
+              "chi_K": 1.2829859054242851,
               "y_wenzl": 0.0014725458916080333,
-              "y_times_chi_abs": 0.0018892556240235445,
+              "y_times_chi_abs": 0.0018892556240235438,
               "dim_q": 33.92215114695502
             },
             {
@@ -877,9 +883,9 @@
                 1
               ],
               "is_hook": false,
-              "chi_K": -0.8320557208324999,
+              "chi_K": -0.8320557208324997,
               "y_wenzl": 0.0015797911023262441,
-              "y_times_chi_abs": 0.0013144742244108327,
+              "y_times_chi_abs": 0.0013144742244108323,
               "dim_q": 135.54110634323266
             },
             {
@@ -889,9 +895,9 @@
                 1
               ],
               "is_hook": false,
-              "chi_K": -0.9972688326432695,
+              "chi_K": -0.9972688326432699,
               "y_wenzl": 0.0011123786705123588,
-              "y_times_chi_abs": 0.0011093405781991321,
+              "y_times_chi_abs": 0.0011093405781991326,
               "dim_q": 218.12051661384479
             },
             {
@@ -913,9 +919,9 @@
                 1
               ],
               "is_hook": false,
-              "chi_K": 0.4589910070317617,
+              "chi_K": 0.45899100703176243,
               "y_wenzl": 0.0003945429694289097,
-              "y_times_chi_abs": 0.00018109167485547684,
+              "y_times_chi_abs": 0.00018109167485547712,
               "dim_q": 115.50156141756709
             },
             {
@@ -976,9 +982,9 @@
                 3
               ],
               "is_hook": false,
-              "chi_K": 1.2965350670810494,
+              "chi_K": 1.2965350670810496,
               "y_wenzl": 3.0103763766488354e-05,
-              "y_times_chi_abs": 3.9030585374376045e-05,
+              "y_times_chi_abs": 3.903058537437605e-05,
               "dim_q": 58.985825257811726
             },
             {
@@ -1271,9 +1277,9 @@
             0.004020452870689049,
             0.008051268780048047,
             0.008107064805164278,
-            0.00899143655123451,
+            0.008991436551234511,
             0.010535886255854473,
-            0.011110667655467183,
+            0.011110667655467185,
             0.011315801301678884,
             0.011627385743706538,
             0.01224405020502254,
@@ -1528,17 +1534,17 @@
             -0.008404689009188967,
             -0.004373873099829969,
             -0.004318077074713739,
-            -0.003433705328643507,
-            -0.0018892556240235445,
-            -0.0013144742244108327,
-            -0.0011093405781991321,
+            -0.003433705328643506,
+            -0.0018892556240235438,
+            -0.0013144742244108323,
+            -0.0011093405781991326,
             -0.0007977561361714788,
-            -0.00018109167485547684,
+            -0.00018109167485547712,
             -0.00016943795549863495,
             -4.997444398445617e-05,
             -4.6629237424806415e-05,
             -4.17854450679721e-05,
-            -3.9030585374376045e-05,
+            -3.903058537437605e-05,
             -3.743781713114509e-05,
             -2.967370203293705e-05,
             -2.690722038017172e-05,
@@ -1555,7 +1561,7 @@
             -1.0798300117329572e-06,
             -1.319657008158563e-07
           ],
-          "interpretation": "argmin t = dominant Wedderburn block λ*(K) of the binding operator K ∈ H_{n_0}(q_0); the LP dual y_star marks the saturating block.  Per conj:rho-prefactor-structural, ρ(𝔥) = round(dim_q(λ*(K)))."
+          "interpretation": "PRIMAL: argmin_i (t_i) = -|y_λ · χ_λ(K)| picks the channel with maximum |y_λ · χ_λ| ⇒ the dominant Wedderburn block λ*(K) of the binding operator K ∈ H_{n_0}(q_0) (this is where x_i^* > 0).  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 marks channels where the x_i ≥ 0 constraint is TIGHT at the optimum (i.e., x_i^* = 0 — channels NOT selected).  The DOMINANT channel is therefore the one with x_i^* > 0 and y_star[i] = 0 — NOT in the active_set; the active_set complementary identifies it.  Per conj:rho-prefactor-structural, ρ(𝔥) = round(dim_q(λ*(K)))."
         },
         "explicit_binding_k_heuristic": {
           "available": true,
@@ -1566,8 +1572,8 @@
             7
           ],
           "binding_interpretation": "σ_3 σ_4 σ_6 σ_7 — heuristic; the true 8_11-class binding link in B_9 involves more crossings.  Diagnostic only.",
-          "K_alpha_gap_explicit": 0.7448128856534013,
-          "K_min_eig_overall_explicit": -0.7448128856534013,
+          "K_alpha_gap_explicit": 0.7448128856534022,
+          "K_min_eig_overall_explicit": -0.7448128856534022,
           "dominant_lambda_K_explicit": [
             8,
             1
@@ -1661,7 +1667,7 @@
           -1
         ],
         "K_alpha_gap": 0.0,
-        "K_min_eig_overall": 0.9305974898717431,
+        "K_min_eig_overall": 0.9305974898717435,
         "K_per_block": {
           "(9,)": {
             "chi": 1.0000000000000104,
@@ -1677,158 +1683,158 @@
           },
           "(7, 2)": {
             "chi": 26.93661944462259,
-            "det": 1.0000000000001672,
-            "min_eig_sym": 0.9493664103558773,
+            "det": 1.0000000000001674,
+            "min_eig_sym": 0.9493664103558772,
             "psd_within_tol": true
           },
           "(7, 1, 1)": {
             "chi": 27.936619444622586,
-            "det": 1.0000000000001665,
-            "min_eig_sym": 0.9493664103558775,
+            "det": 1.000000000000167,
+            "min_eig_sym": 0.9493664103558774,
             "psd_within_tol": true
           },
           "(6, 3)": {
             "chi": 47.85214784452499,
-            "det": 1.0000000000002323,
-            "min_eig_sym": 0.9305974898717455,
+            "det": 1.000000000000232,
+            "min_eig_sym": 0.9305974898717465,
             "psd_within_tol": true
           },
           "(6, 2, 1)": {
             "chi": 104.6831616830189,
-            "det": 1.0000000000004492,
-            "min_eig_sym": 0.9305974898717456,
+            "det": 1.00000000000045,
+            "min_eig_sym": 0.9305974898717458,
             "psd_within_tol": true
           },
           "(6, 1, 1, 1)": {
             "chi": 55.841580841509455,
             "det": 1.0000000000002378,
-            "min_eig_sym": 0.9305974898717461,
+            "min_eig_sym": 0.9305974898717465,
             "psd_within_tol": true
           },
           "(5, 4)": {
             "chi": 41.85216934312025,
-            "det": 1.000000000000171,
+            "det": 1.0000000000001703,
             "min_eig_sym": 0.9305974898717453,
             "psd_within_tol": true
           },
           "(5, 3, 1)": {
             "chi": 161.4297683813213,
-            "det": 1.000000000000517,
-            "min_eig_sym": 0.9305974898717446,
+            "det": 1.0000000000005165,
+            "min_eig_sym": 0.9305974898717438,
             "psd_within_tol": true
           },
           "(5, 2, 2)": {
             "chi": 119.5775990382011,
-            "det": 1.000000000000403,
-            "min_eig_sym": 0.9305974898717453,
+            "det": 1.0000000000004032,
+            "min_eig_sym": 0.9305974898717455,
             "psd_within_tol": true
           },
           "(5, 2, 1, 1)": {
             "chi": 188.36638782594372,
-            "det": 1.0000000000005287,
-            "min_eig_sym": 0.9305974898717448,
+            "det": 1.000000000000529,
+            "min_eig_sym": 0.9305974898717444,
             "psd_within_tol": true
           },
           "(5, 1, 1, 1, 1)": {
             "chi": 69.7887887877427,
-            "det": 1.000000000000202,
-            "min_eig_sym": 0.9305974898717457,
+            "det": 1.0000000000002025,
+            "min_eig_sym": 0.9305974898717453,
             "psd_within_tol": true
           },
           "(4, 4, 1)": {
             "chi": 83.68322614292502,
-            "det": 1.0000000000002698,
-            "min_eig_sym": 0.9305974898717443,
+            "det": 1.00000000000027,
+            "min_eig_sym": 0.9305974898717444,
             "psd_within_tol": true
           },
           "(4, 3, 2)": {
             "chi": 167.35588528283432,
-            "det": 1.0000000000003648,
-            "min_eig_sym": 0.9305974898717431,
+            "det": 1.0000000000003653,
+            "min_eig_sym": 0.930597489871744,
             "psd_within_tol": true
           },
           "(4, 3, 1, 1)": {
             "chi": 215.2080331273592,
-            "det": 1.0000000000004634,
-            "min_eig_sym": 0.9305974898717431,
+            "det": 1.0000000000004654,
+            "min_eig_sym": 0.9305974898717436,
             "psd_within_tol": true
           },
           "(4, 2, 2, 1)": {
             "chi": 215.20803312735916,
-            "det": 1.000000000000407,
+            "det": 1.0000000000004055,
             "min_eig_sym": 0.9305974898717437,
             "psd_within_tol": true
           },
           "(4, 2, 1, 1, 1)": {
             "chi": 188.3663878259435,
-            "det": 1.0000000000003195,
-            "min_eig_sym": 0.9305974898717443,
+            "det": 1.0000000000003186,
+            "min_eig_sym": 0.9305974898717438,
             "psd_within_tol": true
           },
           "(4, 1, 1, 1, 1, 1)": {
             "chi": 55.84158084150933,
-            "det": 1.0000000000001024,
-            "min_eig_sym": 0.9305974898717451,
+            "det": 1.000000000000103,
+            "min_eig_sym": 0.9305974898717444,
             "psd_within_tol": true
           },
           "(3, 3, 3)": {
             "chi": 41.83105679980478,
-            "det": 1.0000000000000944,
-            "min_eig_sym": 0.9305974898717442,
+            "det": 1.0000000000000948,
+            "min_eig_sym": 0.930597489871745,
             "psd_within_tol": true
           },
           "(3, 3, 2, 1)": {
             "chi": 167.3558852828342,
-            "det": 1.000000000000231,
-            "min_eig_sym": 0.9305974898717433,
+            "det": 1.00000000000023,
+            "min_eig_sym": 0.9305974898717438,
             "psd_within_tol": true
           },
           "(3, 3, 1, 1, 1)": {
             "chi": 119.5775990382009,
-            "det": 1.0000000000002078,
-            "min_eig_sym": 0.9305974898717446,
+            "det": 1.0000000000002083,
+            "min_eig_sym": 0.9305974898717435,
             "psd_within_tol": true
           },
           "(3, 2, 2, 2)": {
             "chi": 83.68322614292488,
-            "det": 1.000000000000131,
-            "min_eig_sym": 0.9305974898717444,
+            "det": 1.0000000000001303,
+            "min_eig_sym": 0.9305974898717445,
             "psd_within_tol": true
           },
           "(3, 2, 2, 1, 1)": {
             "chi": 161.4297683813209,
-            "det": 1.000000000000171,
-            "min_eig_sym": 0.9305974898717434,
+            "det": 1.0000000000001703,
+            "min_eig_sym": 0.9305974898717437,
             "psd_within_tol": true
           },
           "(3, 2, 1, 1, 1, 1)": {
             "chi": 104.68316168301854,
-            "det": 1.0000000000001077,
-            "min_eig_sym": 0.9305974898717436,
+            "det": 1.0000000000001072,
+            "min_eig_sym": 0.930597489871744,
             "psd_within_tol": true
           },
           "(3, 1, 1, 1, 1, 1, 1)": {
             "chi": 27.936619444622448,
             "det": 1.0000000000000284,
-            "min_eig_sym": 0.9493664103558745,
+            "min_eig_sym": 0.9493664103558744,
             "psd_within_tol": true
           },
           "(2, 2, 2, 2, 1)": {
             "chi": 41.8521693431201,
-            "det": 1.000000000000036,
-            "min_eig_sym": 0.9305974898717446,
+            "det": 1.0000000000000357,
+            "min_eig_sym": 0.9305974898717441,
             "psd_within_tol": true
           },
           "(2, 2, 2, 1, 1, 1)": {
             "chi": 47.8521478445248,
-            "det": 1.0000000000000375,
-            "min_eig_sym": 0.9305974898717443,
+            "det": 1.0000000000000366,
+            "min_eig_sym": 0.9305974898717441,
             "psd_within_tol": true
           },
           "(2, 2, 1, 1, 1, 1, 1)": {
             "chi": 26.936619444622437,
-            "det": 1.0000000000000178,
-            "min_eig_sym": 0.9493664103558741,
+            "det": 1.000000000000018,
+            "min_eig_sym": 0.949366410355874,
             "psd_within_tol": true
           },
           "(2, 1, 1, 1, 1, 1, 1, 1)": {
@@ -2597,7 +2603,7 @@
             -4.02310890960524e-06,
             -8.693660015098183e-08
           ],
-          "interpretation": "argmin t = dominant Wedderburn block λ*(K) of the binding operator K ∈ H_{n_0}(q_0); the LP dual y_star marks the saturating block.  Per conj:rho-prefactor-structural, ρ(𝔥) = round(dim_q(λ*(K)))."
+          "interpretation": "PRIMAL: argmin_i (t_i) = -|y_λ · χ_λ(K)| picks the channel with maximum |y_λ · χ_λ| ⇒ the dominant Wedderburn block λ*(K) of the binding operator K ∈ H_{n_0}(q_0) (this is where x_i^* > 0).  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 marks channels where the x_i ≥ 0 constraint is TIGHT at the optimum (i.e., x_i^* = 0 — channels NOT selected).  The DOMINANT channel is therefore the one with x_i^* > 0 and y_star[i] = 0 — NOT in the active_set; the active_set complementary identifies it.  Per conj:rho-prefactor-structural, ρ(𝔥) = round(dim_q(λ*(K)))."
         },
         "explicit_binding_k_heuristic": {
           "available": true,
@@ -2606,8 +2612,8 @@
             6
           ],
           "binding_interpretation": "σ_3 σ_6 — heuristic: two Hopf-like crossings binding strand 3 of nucleon 1 to strand 4 of nucleon 2, AND strand 6 of nucleon 2 to strand 7 of nucleon 3 in B_9. The true L6a4 link has 3 components and a richer braid representation; this is a single-crossing surrogate for diagnostic comparison only.",
-          "K_alpha_gap_explicit": 1.0000000000000024,
-          "K_min_eig_overall_explicit": -1.0000000000000024,
+          "K_alpha_gap_explicit": 1.0000000000000027,
+          "K_min_eig_overall_explicit": -1.0000000000000027,
           "dominant_lambda_K_explicit": [
             7,
             2

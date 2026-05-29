@@ -1,12 +1,12 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-14T00:56:54.535802+00:00",
-  "commitSha": "be666f2e261119a79073319ec10c2ee3e4b719e4",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:19:50.666044+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [
     {
       "name": "H2",
-      "computed": 5.23,
+      "computed": 5.21,
       "expected": 4.478,
       "passed": true,
       "tolerance": 2.239,
@@ -14,7 +14,7 @@
     },
     {
       "name": "H2O",
-      "computed": 10.45,
+      "computed": 10.42,
       "expected": 9.51,
       "passed": true,
       "tolerance": 4.755,
@@ -22,7 +22,7 @@
     },
     {
       "name": "NH3",
-      "computed": 15.68,
+      "computed": 15.63,
       "expected": 11.6,
       "passed": true,
       "tolerance": 5.8,
@@ -30,7 +30,7 @@
     },
     {
       "name": "CH4",
-      "computed": 20.9,
+      "computed": 20.84,
       "expected": 17.4,
       "passed": true,
       "tolerance": 8.7,
@@ -38,7 +38,7 @@
     },
     {
       "name": "C2H6",
-      "computed": 36.58,
+      "computed": 36.46,
       "expected": 29.7,
       "passed": true,
       "tolerance": 14.85,
@@ -46,7 +46,7 @@
     },
     {
       "name": "C2H4",
-      "computed": 26.13,
+      "computed": 26.05,
       "expected": 23.1,
       "passed": true,
       "tolerance": 11.55,
@@ -54,7 +54,7 @@
     },
     {
       "name": "CO",
-      "computed": 15.68,
+      "computed": 15.63,
       "expected": 11.09,
       "passed": true,
       "tolerance": 5.545,
@@ -62,7 +62,7 @@
     },
     {
       "name": "CO2",
-      "computed": 20.9,
+      "computed": 20.84,
       "expected": 16.56,
       "passed": true,
       "tolerance": 8.28,
@@ -70,7 +70,7 @@
     },
     {
       "name": "C6H6",
-      "computed": 62.7,
+      "computed": 62.51,
       "expected": 57.4,
       "passed": true,
       "tolerance": 28.7,
@@ -78,7 +78,7 @@
     },
     {
       "name": "C3H8",
-      "computed": 52.25,
+      "computed": 52.09,
       "expected": 42.0,
       "passed": true,
       "tolerance": 21.0,
@@ -86,11 +86,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 15,
   "computation": "unified-mass-molecular",
   "scriptFile": "unified-mass-molecular.py",
-  "scriptHash": "45dc98dfacd8",
-  "scriptCommitSha": "be666f2e261119a79073319ec10c2ee3e4b719e4",
+  "scriptHash": "6dcb2b74602f",
+  "scriptCommitSha": "c29f383d5b70d65b8315eefcec88a7c3d4849bfa",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Unified atomic mass + molecular binding. Per-generator 3-channel Wedderburn on H_{A+Z}(q) with electrons. Bond: inverse crossings at boundary. Gluon: LP-derived.",
   "contentBlock": "def:molecular-braid",
   "parameters": {
@@ -98,12 +104,12 @@
     "w_s": 0.16546138476810043,
     "w_d": 0.669077230463799,
     "w_a": 0.16546138476810043,
-    "E_mol_eV": 6.750278523641413,
+    "E_mol_eV": 6.729337493682183,
     "kappa_MeV": 0.51099895
   },
   "data": {
     "mass_mae_pct": 0.7661526259838264,
-    "molecular_mae_pct": 21.933117012094147,
+    "molecular_mae_pct": 21.55485038984593,
     "mass_H": {
       "Z": 1,
       "N": 0,
@@ -266,35 +272,33 @@
     },
     "bond_HH": {
       "k": 7,
-      "E": 5.225377765724353,
+      "E": 5.209167354263983,
       "obs": 4.478
     },
     "bond_CH": {
       "k": 7,
-      "E": 5.225377765724356,
+      "E": 5.209167354263986,
       "obs": 4.33
     },
     "bond_CC": {
       "k": 7,
-      "E": 5.225377765724332,
+      "E": 5.209167354263962,
       "obs": 3.6
     },
     "bond_CO": {
       "k": 7,
-      "E": 5.225377765724332,
+      "E": 5.209167354263962,
       "obs": 3.71
     },
     "bond_OH": {
       "k": 7,
-      "E": 5.225377765724356,
+      "E": 5.209167354263986,
       "obs": 4.82
     },
     "bond_NH": {
       "k": 7,
-      "E": 5.225377765724353,
+      "E": 5.209167354263983,
       "obs": 3.87
     }
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }

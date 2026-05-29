@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.5",
-  "computedAt": "2026-05-18T17:32:49.648484+00:00",
-  "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-05-29T15:23:04.511038+00:00",
+  "commitSha": "af1b4e2881a89bbf05437634feaf09ce4dc5aae0",
   "assertions": [
     {
       "name": "all_drops_are_exact_zeros",
@@ -13,11 +13,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 12,
   "computation": "A-operator-rank-probe",
   "scriptFile": "A_operator_rank_probe.py",
   "scriptHash": "41e1724da585",
-  "scriptCommitSha": "d9370b31353c1ab9d4e614917cf9be3883eefdb2",
+  "scriptCommitSha": "f33f5c97f7bce950c88bd973d970f983b33bda6b",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Structural rank probe of the A^λ_{μν}(I) supply matrix at A=3 (split 3+6).  For each λ, builds the full M matrix from the test panel and computes the SVD spectrum.  Rank is the count of singular values above the relative threshold 1e-12 · sv[0]; the drop ratio between sv[rank-1] and sv[rank] establishes whether the null directions are EXACT zeros (drop ≫ 1e6) or panel-limited approximations.  Empirical finding: rank is structurally less than ambient n_unknowns for all multi-block λ — establishing item 4 (symmetry reductions) is required for full A=4 closure.",
   "contentBlock": "operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
@@ -54,10 +60,10 @@
         "n_equations": 2442,
         "true_rank": 86,
         "ambient_to_rank_ratio": 0.4075829383886256,
-        "largest_sv": 116.8728689539585,
-        "smallest_nonzero_sv": 3.39449961483057,
-        "next_sv_after_drop": 8.994813404916625e-14,
-        "drop_ratio": 37738410593099.29,
+        "largest_sv": 116.87286895395852,
+        "smallest_nonzero_sv": 3.394499614830569,
+        "next_sv_after_drop": 9.230090105032624e-14,
+        "drop_ratio": 36776451542761.734,
         "status": "rank_determined"
       },
       "[7, 1, 1]": {
@@ -66,9 +72,9 @@
         "true_rank": 91,
         "ambient_to_rank_ratio": 0.39565217391304347,
         "largest_sv": 95.23125585959248,
-        "smallest_nonzero_sv": 3.394499614830569,
-        "next_sv_after_drop": 5.5914674308497975e-14,
-        "drop_ratio": 60708564555023.6,
+        "smallest_nonzero_sv": 3.394499614830571,
+        "next_sv_after_drop": 5.992147715075965e-14,
+        "drop_ratio": 56649131100192.47,
         "status": "rank_determined"
       },
       "[6, 3]": {
@@ -76,10 +82,10 @@
         "n_equations": 2442,
         "true_rank": 110,
         "ambient_to_rank_ratio": 0.19784172661870503,
-        "largest_sv": 125.4660379015342,
-        "smallest_nonzero_sv": 8.017726404993406,
-        "next_sv_after_drop": 1.0958186066156398e-13,
-        "drop_ratio": 73166547424811.48,
+        "largest_sv": 125.46603790153428,
+        "smallest_nonzero_sv": 8.017726404993399,
+        "next_sv_after_drop": 1.138907957790914e-13,
+        "drop_ratio": 70398370211979.23,
         "status": "rank_determined"
       },
       "[6, 2, 1]": {
@@ -88,9 +94,9 @@
         "true_rank": 146,
         "ambient_to_rank_ratio": 0.11102661596958174,
         "largest_sv": 142.97816109988602,
-        "smallest_nonzero_sv": 3.9379532991456534,
-        "next_sv_after_drop": 1.3414518766915206e-13,
-        "drop_ratio": 29355904356837.562,
+        "smallest_nonzero_sv": 3.9379532991456485,
+        "next_sv_after_drop": 1.2622711562677763e-13,
+        "drop_ratio": 31197364208092.996,
         "status": "rank_determined"
       },
       "[6, 1, 1, 1]": {
@@ -98,10 +104,10 @@
         "n_equations": 2442,
         "true_rank": 146,
         "ambient_to_rank_ratio": 0.20110192837465565,
-        "largest_sv": 94.50177070526841,
+        "largest_sv": 94.50177070526851,
         "smallest_nonzero_sv": 4.684258862988273,
-        "next_sv_after_drop": 6.909383290193706e-14,
-        "drop_ratio": 67795614546909.125,
+        "next_sv_after_drop": 6.340681694733595e-14,
+        "drop_ratio": 73876265810329.12,
         "status": "rank_determined"
       },
       "[5, 4]": {
@@ -109,10 +115,10 @@
         "n_equations": 2442,
         "true_rank": 110,
         "ambient_to_rank_ratio": 0.20754716981132076,
-        "largest_sv": 102.54052035611404,
-        "smallest_nonzero_sv": 11.172073605009123,
-        "next_sv_after_drop": 6.942513977146286e-14,
-        "drop_ratio": 160922594348184.44,
+        "largest_sv": 102.54052035611403,
+        "smallest_nonzero_sv": 11.17207360500912,
+        "next_sv_after_drop": 5.9427229137819e-14,
+        "drop_ratio": 187995869353082.5,
         "status": "rank_determined"
       },
       "[5, 3, 1]": {
@@ -126,9 +132,9 @@
         "true_rank": 156,
         "ambient_to_rank_ratio": 0.06753246753246753,
         "largest_sv": 110.90059059101038,
-        "smallest_nonzero_sv": 5.899473125192742,
-        "next_sv_after_drop": 1.1406973067837408e-13,
-        "drop_ratio": 51718129692325.06,
+        "smallest_nonzero_sv": 5.899473125192743,
+        "next_sv_after_drop": 1.1239000458751556e-13,
+        "drop_ratio": 52491083587410.625,
         "status": "rank_determined"
       },
       "[5, 2, 1, 1]": {
@@ -141,10 +147,10 @@
         "n_equations": 2442,
         "true_rank": 156,
         "ambient_to_rank_ratio": 0.14857142857142858,
-        "largest_sv": 83.11787427647646,
-        "smallest_nonzero_sv": 6.839424970489349,
-        "next_sv_after_drop": 8.521918303789808e-14,
-        "drop_ratio": 80256870890768.42,
+        "largest_sv": 83.11787427647653,
+        "smallest_nonzero_sv": 6.839424970489347,
+        "next_sv_after_drop": 1.0408392856269398e-13,
+        "drop_ratio": 65710672770865.71,
         "status": "rank_determined"
       },
       "[4, 4, 1]": {
@@ -152,10 +158,10 @@
         "n_equations": 2442,
         "true_rank": 149,
         "ambient_to_rank_ratio": 0.09008464328899637,
-        "largest_sv": 97.21956803898858,
-        "smallest_nonzero_sv": 2.693673278142079,
-        "next_sv_after_drop": 1.0847279017541605e-13,
-        "drop_ratio": 24832709417597.016,
+        "largest_sv": 97.21956803898873,
+        "smallest_nonzero_sv": 2.6936732781420796,
+        "next_sv_after_drop": 1.173564519856605e-13,
+        "drop_ratio": 22952920206476.7,
         "status": "rank_determined"
       },
       "[4, 3, 2]": {
@@ -183,10 +189,10 @@
         "n_equations": 2442,
         "true_rank": 146,
         "ambient_to_rank_ratio": 0.20110192837465565,
-        "largest_sv": 82.20280315706981,
-        "smallest_nonzero_sv": 5.716470062116384,
-        "next_sv_after_drop": 4.853933622050023e-14,
-        "drop_ratio": 117769844155843.14,
+        "largest_sv": 82.20280315706985,
+        "smallest_nonzero_sv": 5.716470062116387,
+        "next_sv_after_drop": 4.87487765259766e-14,
+        "drop_ratio": 117263867311013.86,
         "status": "rank_determined"
       },
       "[3, 3, 3]": {
@@ -194,10 +200,10 @@
         "n_equations": 2442,
         "true_rank": 142,
         "ambient_to_rank_ratio": 0.13221601489757914,
-        "largest_sv": 57.13605363759645,
-        "smallest_nonzero_sv": 2.355245226606706,
-        "next_sv_after_drop": 5.555761264423271e-14,
-        "drop_ratio": 42392844373797.94,
+        "largest_sv": 57.13605363759634,
+        "smallest_nonzero_sv": 2.3552452266067063,
+        "next_sv_after_drop": 5.0836926783715474e-14,
+        "drop_ratio": 46329417917551.2,
         "status": "rank_determined"
       },
       "[3, 3, 2, 1]": {
@@ -210,10 +216,10 @@
         "n_equations": 2442,
         "true_rank": 156,
         "ambient_to_rank_ratio": 0.06753246753246753,
-        "largest_sv": 92.14262857052829,
-        "smallest_nonzero_sv": 8.954193419994679,
-        "next_sv_after_drop": 9.864663220949648e-14,
-        "drop_ratio": 90770391441023.56,
+        "largest_sv": 92.14262857052826,
+        "smallest_nonzero_sv": 8.95419341999468,
+        "next_sv_after_drop": 9.169151724099516e-14,
+        "drop_ratio": 97655635869348.14,
         "status": "rank_determined"
       },
       "[3, 2, 2, 2]": {
@@ -221,10 +227,10 @@
         "n_equations": 2442,
         "true_rank": 149,
         "ambient_to_rank_ratio": 0.09008464328899637,
-        "largest_sv": 77.62023095253035,
-        "smallest_nonzero_sv": 2.6794327839994696,
-        "next_sv_after_drop": 5.765264824270035e-14,
-        "drop_ratio": 46475450229447.59,
+        "largest_sv": 77.6202309525303,
+        "smallest_nonzero_sv": 2.679432783999468,
+        "next_sv_after_drop": 6.630324518587781e-14,
+        "drop_ratio": 40411789445415.72,
         "status": "rank_determined"
       },
       "[3, 2, 2, 1, 1]": {
@@ -237,10 +243,10 @@
         "n_equations": 2442,
         "true_rank": 146,
         "ambient_to_rank_ratio": 0.11102661596958174,
-        "largest_sv": 114.3034069880951,
-        "smallest_nonzero_sv": 5.352371808650829,
-        "next_sv_after_drop": 1.2493948462810712e-13,
-        "drop_ratio": 42839714159079.6,
+        "largest_sv": 114.30340698809512,
+        "smallest_nonzero_sv": 5.352371808650835,
+        "next_sv_after_drop": 1.0804289892373684e-13,
+        "drop_ratio": 49539320602910.33,
         "status": "rank_determined"
       },
       "[3, 1, 1, 1, 1, 1, 1]": {
@@ -248,10 +254,10 @@
         "n_equations": 2442,
         "true_rank": 91,
         "ambient_to_rank_ratio": 0.39565217391304347,
-        "largest_sv": 70.56063276527325,
-        "smallest_nonzero_sv": 3.4763227093919067,
-        "next_sv_after_drop": 2.905829475512145e-14,
-        "drop_ratio": 119632715501284.31,
+        "largest_sv": 70.56063276527328,
+        "smallest_nonzero_sv": 3.4763227093919085,
+        "next_sv_after_drop": 2.754046685748041e-14,
+        "drop_ratio": 126225990553522.02,
         "status": "rank_determined"
       },
       "[2, 2, 2, 2, 1]": {
@@ -260,9 +266,9 @@
         "true_rank": 110,
         "ambient_to_rank_ratio": 0.20754716981132076,
         "largest_sv": 76.27105564063581,
-        "smallest_nonzero_sv": 8.259381937534618,
-        "next_sv_after_drop": 4.956037190654523e-14,
-        "drop_ratio": 166652945080983.88,
+        "smallest_nonzero_sv": 8.259381937534622,
+        "next_sv_after_drop": 5.003813157178739e-14,
+        "drop_ratio": 165061757465609.38,
         "status": "rank_determined"
       },
       "[2, 2, 2, 1, 1, 1]": {
@@ -270,10 +276,10 @@
         "n_equations": 2442,
         "true_rank": 110,
         "ambient_to_rank_ratio": 0.19784172661870503,
-        "largest_sv": 93.9771605960351,
-        "smallest_nonzero_sv": 8.092717978086096,
-        "next_sv_after_drop": 4.579014691159817e-14,
-        "drop_ratio": 176734920586950.44,
+        "largest_sv": 93.97716059603508,
+        "smallest_nonzero_sv": 8.092717978086098,
+        "next_sv_after_drop": 5.5930874762588784e-14,
+        "drop_ratio": 144691425128562.1,
         "status": "rank_determined"
       },
       "[2, 2, 1, 1, 1, 1, 1]": {
@@ -281,10 +287,10 @@
         "n_equations": 2442,
         "true_rank": 86,
         "ambient_to_rank_ratio": 0.4075829383886256,
-        "largest_sv": 87.21078173109014,
-        "smallest_nonzero_sv": 3.4763227093919102,
-        "next_sv_after_drop": 2.5591028455375103e-14,
-        "drop_ratio": 135841461606508.77,
+        "largest_sv": 87.21078173109012,
+        "smallest_nonzero_sv": 3.4763227093919076,
+        "next_sv_after_drop": 2.566001141437741e-14,
+        "drop_ratio": 135476272915611.8,
         "status": "rank_determined"
       },
       "[2, 1, 1, 1, 1, 1, 1, 1]": {
