@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:mass-endomorphism",
+export default conjecture({
+  label: "conj:mass-endomorphism",
   title: "Mass endomorphism conjecture",
   lean: {
     ref: "qou:QOU.MassEndomorphism.MassEndomorphism",

@@ -200,7 +200,7 @@ $$
 
 *and is already part of the paper's framework via
 [Kashaev volume density](#rem:kashaev-volume-density) and
-[mass endomorphism conjecture](#prop:mass-endomorphism).*
+[mass endomorphism conjecture](#conj:mass-endomorphism).*
 
 *For our purposes: the **infinite-$N$ limit of colored Jones**
 gives the $\Phi_q$ expansion. Each colored-Jones evaluation at
@@ -212,7 +212,7 @@ brane-tower Φ_q-kernel.*
 
 *Term 2 is derivable from the algebraically-established colored
 Jones / Habiro framework. The paper's
-[mass endomorphism conjecture](#prop:mass-endomorphism) and
+[mass endomorphism conjecture](#conj:mass-endomorphism) and
 [algebraic quantum volume](#def:algebraic-quantum-volume)
 explicitly use these structures for the volume-conjecture side;
 the same machinery gives Term 2's Cauchy kernel.*

@@ -1,15 +1,378 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-05-29T16:32:37.019Z",
+  "generated": "2026-05-29T19:53:21.143Z",
   "total_blocks": 1851,
   "class_axiomatised_conjectures": [
     "conj:complex-chirality-rotation",
+    "conj:cp-violation-spectral-form",
     "conj:depth-stratified-frobenius-reciprocity",
     "conj:higgs-t28",
     "conj:kashaev-volume-conjecture",
+    "conj:mass-endomorphism",
     "conj:quantum-computational-universality"
   ],
-  "provable_blocks_touching_conjecture": 0,
+  "provable_blocks_touching_conjecture": 45,
   "violators": [],
-  "conditional_on_class": []
+  "conditional_on_class": [
+    {
+      "label": "prop:archimedean-functor-uniqueness",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts"
+    },
+    {
+      "label": "prop:b1-figure-8-row-theorem",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.ts"
+    },
+    {
+      "label": "prop:b1-hyperbolic-rows-theorem",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.ts"
+    },
+    {
+      "label": "prop:b1-soft-sharpness-theorem",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.ts"
+    },
+    {
+      "label": "prop:b1-torus-knot-rows-theorem",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/appendix-surreals/b1-torus-knot-rows-theorem.ts"
+    },
+    {
+      "label": "prop:bloch-group-quotient-construction",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/bloch-group-quotient-construction.ts"
+    },
+    {
+      "label": "prop:borel-partial-resolution",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.ts"
+    },
+    {
+      "label": "prop:bring-figure-eight-depth-2-witness",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/bring-figure-eight-depth-2-witness.ts"
+    },
+    {
+      "label": "prop:bring-hyperbolic-knot-bloch-decomposition",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.ts"
+    },
+    {
+      "label": "prop:bring-trilog-depth-3-witness",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.ts"
+    },
+    {
+      "label": "prop:bring-trilog-imaginary-tate-rational",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/bring-trilog-imaginary-tate-rational.ts"
+    },
+    {
+      "label": "prop:categorical-neutrality-saturated-shells",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.ts"
+    },
+    {
+      "label": "prop:cl2-pentagon-and-faddeev-partial",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.ts"
+    },
+    {
+      "label": "prop:cl3-zeta5-geometric-realization",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.ts"
+    },
+    {
+      "label": "prop:cl3-zeta5-orbit-sum-identity",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cl3-zeta5-orbit-sum-identity.ts"
+    },
+    {
+      "label": "prop:cl3-zeta5-pslq-independence",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cl3-zeta5-pslq-independence.ts"
+    },
+    {
+      "label": "prop:crystal-basis-resolves-mass-tower-open-problems",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.ts"
+    },
+    {
+      "label": "prop:cyclotomic-cl3-orbit-sum-general",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cyclotomic-cl3-orbit-sum-general.ts"
+    },
+    {
+      "label": "prop:cyclotomic-depth3-dimension-synthesis",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts"
+    },
+    {
+      "label": "prop:cyclotomic-dimension-synthesis-all-depths",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts"
+    },
+    {
+      "label": "prop:cyclotomic-trilog-imaginary-closed-form",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cyclotomic-trilog-imaginary-closed-form.ts"
+    },
+    {
+      "label": "prop:depth-2-identification-bloch-suslin",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.ts"
+    },
+    {
+      "label": "prop:diagrammatic-double-magic-lr-fusion",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.ts"
+    },
+    {
+      "label": "prop:double-magic-delta-i-bound",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/observations/double-magic-delta-i-bound.ts"
+    },
+    {
+      "label": "prop:em-coupling-bring-zero-mode",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.ts"
+    },
+    {
+      "label": "prop:explicit-central-idempotent",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.ts"
+    },
+    {
+      "label": "prop:gb-depth-period-correspondence",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/gb-depth-period-correspondence.ts"
+    },
+    {
+      "label": "prop:hecke-baer-star-generic",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.ts"
+    },
+    {
+      "label": "prop:homological-shell-condensation",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.ts"
+    },
+    {
+      "label": "prop:joint-galois-braid-action",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/joint-galois-braid-action.ts"
+    },
+    {
+      "label": "prop:joint-galois-braid-discharged",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.ts"
+    },
+    {
+      "label": "prop:joint-galois-braid-figure-8-verified",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts"
+    },
+    {
+      "label": "prop:knot-indexed-convolution-grid",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid.ts"
+    },
+    {
+      "label": "prop:magic-numbers-bring",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/quantum-observable-universes/magic-numbers-bring.ts"
+    },
+    {
+      "label": "prop:mass-element-nf",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/mass-element-nf.ts"
+    },
+    {
+      "label": "prop:n-v-bring-action",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/observations/n-v-bring-action.ts"
+    },
+    {
+      "label": "prop:n-v-leading-order-derivation",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts"
+    },
+    {
+      "label": "prop:n-v-tower-depth-ninety",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts"
+    },
+    {
+      "label": "prop:qou-infra-discharges-goncharov-zeta5",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.ts"
+    },
+    {
+      "label": "prop:term6-binding-density",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts"
+    },
+    {
+      "label": "prop:two-filtration-bridge",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/two-filtration-bridge.ts"
+    },
+    {
+      "label": "prop:two-filtration-bridge-general",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/two-filtration-bridge-general.ts"
+    },
+    {
+      "label": "prop:two-filtration-bridge-small-cases",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.ts"
+    },
+    {
+      "label": "prop:type-b-folded-crystal-combinatorics",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.ts"
+    },
+    {
+      "label": "prop:upstream-mathlib-additions",
+      "kind": "proposition",
+      "conj": [
+        "conj:mass-endomorphism"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.ts"
+    }
+  ]
 }

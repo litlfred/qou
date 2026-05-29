@@ -8,7 +8,7 @@ export default proposition({
     ref: "qou:QOU.ShellNeutrality.SaturatedShellConjecture",
     validation: "not_checked",
   },
-  uses: ["prop:mass-endomorphism"],
+  uses: ["conj:mass-endomorphism"],
   cites: [
     "kassel1995",
     "geckpfeiffer2000",

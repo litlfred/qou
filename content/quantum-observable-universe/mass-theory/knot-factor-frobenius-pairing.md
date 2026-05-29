@@ -171,4 +171,4 @@ $\mathrm{Vol}(K)/\hbar_q^2$ in the archimedean realisation."  The
 current implementation is SINGLE-LEVEL only.  Extension to the
 full brane-tower sum (accounting for the $\Sigma \|\Phi_q(z_i)\|$
 contributions over exceptional divisors) is
-[prop:mass-endomorphism](#prop:mass-endomorphism).
+[conj:mass-endomorphism](#conj:mass-endomorphism).
