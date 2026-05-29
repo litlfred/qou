@@ -13,6 +13,7 @@
 #   ./scripts/lean-build-all.sh --cache     # fetch Mathlib cache first
 #   ./scripts/lean-build-all.sh --update    # run lake update first
 #   ./scripts/lean-build-all.sh --log-dir DIR   # logs + sidecar (default build-logs/)
+#   ./scripts/lean-build-all.sh --commit-sidecar  # also commit + push the sidecar
 #
 # Every run writes a committable sidecar `<log-dir>/lean-build-status.json`
 # (per-paper pass/fail, failing modules, extracted errors + sorry locations)
@@ -32,20 +33,24 @@ export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 FILTER_PAPER=""
 DO_CACHE=false
 DO_UPDATE=false
+DO_COMMIT=false
 LOG_DIR="$REPO_ROOT/build-logs"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --paper)   FILTER_PAPER="$2"; shift 2 ;;
-        --cache)   DO_CACHE=true; shift ;;
-        --update)  DO_UPDATE=true; shift ;;
-        --log-dir) LOG_DIR="$2"; shift 2 ;;
+        --paper)          FILTER_PAPER="$2"; shift 2 ;;
+        --cache)          DO_CACHE=true; shift ;;
+        --update)         DO_UPDATE=true; shift ;;
+        --log-dir)        LOG_DIR="$2"; shift 2 ;;
+        --commit-sidecar) DO_COMMIT=true; shift ;;
         -h|--help)
-            echo "Usage: $0 [--paper NAME] [--cache] [--update] [--log-dir DIR]"
-            echo "  --paper NAME   Build only the named paper"
-            echo "  --cache        Run 'lake exe cache get' before building"
-            echo "  --update       Run 'lake update' before building"
-            echo "  --log-dir DIR  Write logs + sidecar here (default build-logs/)"
+            echo "Usage: $0 [--paper NAME] [--cache] [--update] [--log-dir DIR] [--commit-sidecar]"
+            echo "  --paper NAME      Build only the named paper"
+            echo "  --cache           Run 'lake exe cache get' before building"
+            echo "  --update          Run 'lake update' before building"
+            echo "  --log-dir DIR     Write logs + sidecar here (default build-logs/)"
+            echo "  --commit-sidecar  Commit + push build-logs/lean-build-status.json"
+            echo "                    (only that file; uses your configured git remote, e.g. SSH)"
             exit 0 ;;
         *) echo "Unknown arg: $1"; exit 1 ;;
     esac
@@ -176,13 +181,38 @@ echo "════════════════════════�
 
 # ── Structured sidecar (committable failure log) ──────────────────
 SIDECAR_GEN="$REPO_ROOT/scripts/lib/lean-build-sidecar.py"
+SIDECAR_JSON="$LOG_DIR/lean-build-status.json"
 if command -v python3 &>/dev/null && [ -f "$SIDECAR_GEN" ]; then
     python3 "$SIDECAR_GEN" "$LOG_DIR" || echo "  ⚠ sidecar generation failed (raw logs remain in $LOG_DIR)"
-    echo "  Sidecar: $LOG_DIR/lean-build-status.json"
-    if [ ${#FAILED_PAPERS[@]} -gt 0 ]; then
-        rel="${LOG_DIR#"$REPO_ROOT"/}/lean-build-status.json"
+    echo "  Sidecar: $SIDECAR_JSON"
+
+    if [ "$DO_COMMIT" = true ]; then
+        # Commit + push ONLY the sidecar JSON (pathspec-scoped, so any
+        # other staged/dirty work is left untouched), and only when it
+        # actually changed. Push uses the repo's configured remote
+        # (e.g. SSH) — no token handling here.
+        if [ -n "$(git -C "$REPO_ROOT" status --porcelain -- "$SIDECAR_JSON" 2>/dev/null)" ]; then
+            branch=$(git -C "$REPO_ROOT" rev-parse --abbrev-ref HEAD 2>/dev/null)
+            git -C "$REPO_ROOT" add -- "$SIDECAR_JSON"
+            if git -C "$REPO_ROOT" commit -q \
+                    -m "build: lean-build sidecar (${PASSED} ok / ${#FAILED_PAPERS[@]} failed)" \
+                    -- "$SIDECAR_JSON"; then
+                if git -C "$REPO_ROOT" push origin "$branch"; then
+                    echo "  ✓ sidecar committed + pushed to origin/$branch"
+                else
+                    echo "  ⚠ sidecar committed locally; push failed — run: git push origin $branch"
+                fi
+            else
+                echo "  ⚠ sidecar commit failed (see git output above); JSON is at $SIDECAR_JSON"
+            fi
+        else
+            echo "  (sidecar unchanged — nothing to commit)"
+        fi
+    elif [ ${#FAILED_PAPERS[@]} -gt 0 ]; then
+        rel="${SIDECAR_JSON#"$REPO_ROOT"/}"
         echo "  Share this failure with the agent (no copy-paste):"
         echo "    git add $rel && git commit -m 'build: failure sidecar' && git push"
+        echo "  (or re-run with --commit-sidecar to do that automatically)"
     fi
 else
     echo "  (python3 not found — JSON sidecar skipped; raw logs in $LOG_DIR)"
