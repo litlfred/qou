@@ -313,7 +313,7 @@ mv /tmp/_detangler_watcher_graph_current.json \
 | `critical-path-break` | critical | Moved / removed block broke a logical chain reaching a downstream `theorem`/`proposition` (per `critical-path-analysis`) |
 | `cross-chapter-forward` | critical | New forward cross-chapter edge to a non-existent block, OR a new H2 forward edge crossing the categorical/archimedean wall in an unintended direction (per PR4) |
 | `defterm-undeclared` | critical | New `:refterm`/`\refterm` with no matching `defines` declaration (per CLAUDE.md §4c) |
-| `forward-ref` | major | New H1 forward reference (block A uses block B, B appears later) — span > 3 OR cross-section |
+| `forward-ref` | major | New **logical** H1 forward reference (block A uses block B, B appears later) — span > 3 OR cross-section. **Severity gate**: only `severity: "logical"` edges from `forward_ref_classifier.py` count; storytelling/structural edges are excluded (see §Logical-vs-storytelling severity, exclusion class 3) |
 | `dense-section` | major | Section pushed > 18 blocks by this commit (H5) |
 | `sparse-section` | major | Section dropped below 3 non-prose blocks (H4) — excludes intro/overview sections |
 | `topic-mixing` | major | New / edited block violates `block-density` R1 (single-topic) |
@@ -368,6 +368,51 @@ are correct by design, so flagging them produces only false positives.
    info-only — see §Preview-chapter exclusion above. Tagged
    `preview-source-fwd-ref` if surfaced for awareness, never
    escalated to a finding.
+
+3. **Storytelling forward references (2026-05-29, STRICT — the
+   primary axis).** A forward reference is a *defect* (`forward-ref` /
+   `cross-chapter-forward`) **only when the reader must RELY ON the
+   target's content to follow the argument made here** — i.e. it is a
+   **logical** forward reference. The authoritative discriminator is
+   [`folio-assistant/computations/forward_ref_classifier.py`](../../../folio-assistant/computations/forward_ref_classifier.py),
+   which tags every edge with a `severity`:
+
+   - **`logical`** — BOTH source and target carry logical content
+     (`definition` / `proposition` / `theorem` / `lemma` /
+     `corollary` / `proof` / `conjecture`) AND the source builds its
+     argument on the target. **This is the defect — flag it.**
+   - **`storytelling`** — the source is a narrative block (`prose` /
+     `remark` / `example` / `simulator` / `equation` / `diagram` /
+     `table`), OR a logical source merely *cites* a later data-table /
+     diagram. **Never flagged** — the reader is not asked to rely on
+     the target to follow an argument.
+   - **`structural`** — target is an appendix or a framing chapter
+     (`models-of-qous` / `notation`). **Never flagged.**
+
+   The **only sanctioned `logical` forward reference** is into the
+   surreal-number lift (`appendix-surreals`) — a deliberate terminal
+   construction the main text may rely on — plus the
+   `FOUNDATIONAL_LATE` allowlist in the classifier (each entry
+   justified inline: an object used early, formally developed late).
+
+   Run the classifier on every detected `.ts` change; flag only NEW
+   non-waived `severity: "logical"` edges. As of 2026-05-29 the paper
+   carries 91 logical defects, 124 storytelling, 32 structural — so
+   ~62% of raw forward refs are benign. Full model + the 91-defect
+   breakdown:
+   [`docs/forward-ref-logical-analysis.md`](../../../docs/forward-ref-logical-analysis.md).
+
+   **Disposition of a logical-forward-ref finding** — exactly three
+   correct fixes:
+   1. **Promote** the target earlier (if genuinely foundational to
+      multiple earlier consumers).
+   2. **Demote to storytelling** — if the source does not truly *rely*
+      on the target, express the reference as an `interprets` /
+      narrative pointer (or move the reliance into a `remark`), not a
+      `uses[]` edge. Often the edge is even *backwards* (the later
+      block consumes this one) — invert or drop it.
+   3. **Add to `FOUNDATIONAL_LATE`** — only for genuine used-early /
+      developed-late objects, with inline justification.
 
 When adding a new exclusion class, document the pattern here, the
 empirical false-positive count it eliminates, and the corresponding
