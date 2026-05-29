@@ -79,8 +79,31 @@ direction is real and the placement is by design. They remain counted
 as logical defects but are explained here; the cluster's logical-defect
 count does not reach zero, which is the correct accounting.
 
+## Second cluster — particle-interactions → mass-theory (11 edges)
+
+Same triage method (MD/LEAN/REV matrix + per-edge read). Disposition:
+
+- **Tier 1 — over-declared (5 dropped):** target in neither prose nor
+  Lean, no reverse edge.
+  `atomic-braid → def:transfer-matrix-operator`,
+  `wigner-su4-from-spin-isospin → atom-knot-mass-derivation`,
+  `magic-shell-coupling-kappa → wedderburn-weight-canonical`,
+  `t-from-trace-cyclicity → atom-knot-mass-derivation`,
+  `universal-ilp-algorithm → q-integer-mass-formula`.
+- **Tier 3 — irreducible (6 documented):** target genuinely invoked in
+  the source derivation prose, and option-(b) promote is BLOCKED for
+  each (every target carries its own `mass-theory` dependency, so a
+  promote only relocates the edge).
+  `wigner-su4-from-spin-isospin → isospin-from-canonical-bowtie`,
+  `confinement-operator-selection → frobenius-gram-matrix`,
+  `type-b-folding-cpt → p-from-braid-mirror`,
+  `knot-particle-generation → skein-generation`,
+  `cemetery-group-emergence → gs-spectral-sum-finite`,
+  `geom-universality → geom-yekutieli-alignment`.
+
 ## Gate
 
 Re-run the classifier after each disposition; the logical-defect count
-must drop monotonically (baseline at branch open: 91). Regenerate
+must drop monotonically (baseline at branch open: 91; after clusters 1
++ 2 over-declared drops + §3b hygiene: 78). Regenerate
 `forward-ref-classification.witness.json`.
