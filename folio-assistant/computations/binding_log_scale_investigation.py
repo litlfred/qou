@@ -64,8 +64,16 @@ from binding_canonical import binding_canonical  # noqa: E402
 
 
 def _real(s):
-    s = str(s)
-    return mpf(complex(s.strip("()")).real) if ("j" in s or "(" in s) else mpf(s)
+    # Full-precision real part — never via float64 complex() (precision ban).
+    s = str(s).strip("()")
+    try:
+        return mpf(s)
+    except (ValueError, TypeError):
+        body = s[:-1] if s.endswith("j") else s  # complex repr "a±bj"
+        for i in range(len(body) - 1, 0, -1):
+            if body[i] in "+-" and body[i - 1] not in "eE":
+                return mpf(body[:i] or "0")
+        return mpf("0")
 
 
 def main():
