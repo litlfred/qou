@@ -1,5 +1,17 @@
 # Forward-reference waiver policy
 
+> **Superseded (2026-05-29) by the logical-vs-storytelling severity
+> model.** The headline metric is now the **logical-defect count**, not
+> the A–F "actionable" count described below. See
+> [`docs/forward-ref-logical-analysis.md`](forward-ref-logical-analysis.md)
+> for the current model: a forward reference is a *defect* only when the
+> reader must **rely on** the target's content to follow the argument
+> made here (logical/expository); references that merely motivate,
+> interpret, or cite later content are storytelling and benign. The only
+> sanctioned logical forward reference is into the surreal-number lift
+> (`appendix-surreals`) plus the `FOUNDATIONAL_LATE` allowlist. The A–F
+> categories below are retained for historical continuity.
+
 A **forward reference** is a content block in chapter N whose `uses[]`
 or `interprets` field points at a block defined in chapter M > N. Not
 all forward refs are defects — many are structurally inherent to a
