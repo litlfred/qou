@@ -63,10 +63,15 @@ Phases 1-3 of the original roadmap are complete.
 - A≥3 binding needs SDP + iterative knot building at H_{3A}
 - NOT on the 1 ppQ critical path (binding targets weaker: ~780 ppb)
 
-### Meson m_K/m_π: closed to 0.56 ppm
-- Meson tower R = 1+4u² (PR #1367)
-- c≈4 ≈ J² (actual 3.992, 0.19% off)
-- Proof of c=4 blocked on meson Habiro expansion
+### Meson m_K/m_π: 290 ppm (the lone observable not at 100×)
+- Canonical derivation χ₂₁(σ₁⁵)·(9/5)² = 3.5361 vs PDG 3.5371 (290 ppm)
+- The "meson tower R=1+4u²" (PR #1367) is a FIT, not a derivation:
+  c = C/u² = 4.03 (q₀-dependent: 3.99–4.03), NOT the integer J²=4;
+  no clean ratio exists. Do not wire it. (audit 2026-05-29)
+- Genuine closure path is the EM/isospin-breaking self-energy
+  correction (residual ≈ 0.14 MeV, sub-MeV EM regime) — needs the
+  framework's α_em fed into a meson EM self-energy model.
+- See docs/audits/2026-05-29-meson-mK-mpi-residual-derivation-attempt.md
 
 ### Habiro normalization bridge
 - Habiro correction product: (1+ℏ²)(1−ℏ²/p(n)) (PR #1372)
@@ -91,6 +96,9 @@ Phases 1-3 of the original roadmap are complete.
 
 1. **Real A≥3 binding** via SDP + iterative knot building at H_{3A}
    (replaces the retracted per-knot fit)
-2. **Prove c=4 for meson tower** (currently 3.992, 0.19% off J²)
+2. **Meson m_K/m_π EM correction** — derive the K±/π± EM/isospin-
+   breaking self-energy (≈0.14 MeV, 290 ppm) from the framework's
+   α_em. The algebraic "c=4 tower" is ruled out (c=4.03≠J², a fit;
+   audit 2026-05-29). This is the only observable not at 100×.
 3. **Lean: verify remaining 3 real sorrys** (PR #1369 drained 87)
 4. **Paper content: integrate deuteron/meson results** into chapters
