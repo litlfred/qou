@@ -172,6 +172,33 @@ const mdParser = remark()
   .use(remarkMath);
 
 /**
+ * Protect bare `|` inside inline `$...$` math from the GFM table parser.
+ *
+ * micromark's gfm-table is a *flow* construct: it splits table rows on `|`
+ * before remark-math tokenises inline math, so a cell like
+ * `$|\mathrm{tr}_M(\rho(\beta))|$` or `$\langle a|b\rangle$` spills into
+ * extra columns ("Extra alignment tab has been changed to \cr" — a fatal
+ * pdflatex error) and the orphaned `$` get escaped to literal text.
+ *
+ * Replace each bare `|` inside an inline math span with `\vert ` — which is
+ * output-identical in math mode — so the table parser sees no spurious
+ * delimiters. Real cell separators (`|` outside math) and fenced code
+ * blocks are left untouched.
+ */
+export function protectPipesInInlineMath(md: string): string {
+  const lines = md.split("\n");
+  let inFence = false;
+  for (let i = 0; i < lines.length; i++) {
+    if (/^\s*(```|~~~)/.test(lines[i])) { inFence = !inFence; continue; }
+    if (inFence) continue;
+    lines[i] = lines[i].replace(/\$[^$\n]+\$/g, (seg) =>
+      seg.replace(/(?<!\\)\|/g, "\\vert "),
+    );
+  }
+  return lines.join("\n");
+}
+
+/**
  * Parse markdown content via remark, caching the resulting AST.
  * Multiple render functions (markdownToLatex, extractMathContent)
  * may be called on the same content within a single build — this
@@ -182,7 +209,7 @@ const _mdAstCache = new Map<string, any>();
 export function parseMdCached(md: string): any {
   let tree = _mdAstCache.get(md);
   if (!tree) {
-    tree = mdParser.parse(md);
+    tree = mdParser.parse(protectPipesInInlineMath(md));
     if (_mdAstCache.size >= MD_AST_CACHE_LIMIT) {
       // Evict oldest entry (first inserted key)
       const firstKey = _mdAstCache.keys().next().value;
