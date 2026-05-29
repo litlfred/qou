@@ -17,17 +17,28 @@ RESULT (definitive negative):
 
 DEEPER FINDING:
   κ_needed tracks B/A (1.11, 2.83, 2.57, 7.07 — ⁴He is doubly magic),
-  while log-ratio/A is nearly flat (~0.5-0.7). So the per-atom Markov
-  trace does NOT encode nuclear shell / saturation structure. The A≥3
-  binding gap is therefore NOT a scale problem — it is a
-  MISSING-STRUCTURE problem: the single-braid trace lacks the shell
-  physics that makes B/A vary from 1 to 7 MeV/nucleon. Deriving a
-  scale cannot repair a missing observable.
+  while log-ratio/A is nearly flat (~0.5-0.7). So the SCALAR (collapsed)
+  Markov trace does not carry the per-nucleon shell variation.
 
-BOUNDARY: the categorical framework predicts the DEUTERON binding
-(true 2-body, +0.2%) but A≥3 binding requires shell structure absent
-from the per-atom Markov trace. This is the honest limit — stated
-without fitting and without masking.
+REFINEMENT (2026-05-29, shell review): the earlier wording
+"MISSING-STRUCTURE problem, not a scale problem" was too strong on both
+counts. (1) Shell structure is NOT missing from the framework — it is
+recoverable from the PER-λ Wedderburn decomposition χ^λ(β_K)
+(atom-chi-rust-*.witness.json; chi-lambda-he4-full-partition-table:
+self_conjugate_count=3, conjugate_pair_count=37), self-conjugate/magic
+labels, the staircase λ_shell, and the torus-knot inter-shell q^{2n_s}
+gap. The scalar log-ratio collapses that per-λ structure into one number.
+(2) It is also partly a scale problem at A=2: sibling PR #1416 finds
+E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV closes the DEUTERON to +12% (+0.7% with
+1−ℏ_q), and the scalar endomorphism m_e·Vol(𝓑₃)·Δtr closes it to +0.19%.
+What stands unchanged: no single DERIVED κ closes the LOG observable
+across D/T/³He/⁴He (κ_needed spans 313%) — because the log-ratio is the
+collapsed scalar, not the shell-resolved per-λ object.
+
+BOUNDARY: the framework cleanly predicts DEUTERON binding (true 2-body,
++0.19% via the scalar endomorphism). A≥3 binding needs the per-λ /
+inter-shell structure the scalar trace discards — an open problem, not a
+missing observable. Stated without fitting and without masking.
 """
 from __future__ import annotations
 
@@ -113,27 +124,33 @@ def main():
     spread = (max(ks) / min(ks) - 1) * 100
     print()
     print(f"κ_needed spread = {min(ks):.2f}–{max(ks):.2f} MeV ({spread:.0f}%).")
-    print("NOT constant ⟹ no derived scale closes it. κ_need tracks B/A")
-    print("(shell structure); the per-atom Markov trace lacks that physics.")
-    print("A≥3 binding is a MISSING-STRUCTURE problem, not a scale problem.")
+    print("NOT constant ⟹ no single derived κ closes the LOG observable.")
+    print("κ_need tracks B/A; the SCALAR log-ratio collapses the per-λ shell")
+    print("structure (recoverable from per-λ χ^λ). Refinement 2026-05-29:")
+    print("not 'missing structure' — the scalar projection discards it; and a")
+    print("~4 MeV scale (E₀ / m_e·Vol(𝓑₃)) closes the deuteron (see #1416).")
 
     wb.set_description(
         "Tests whether a DERIVED scale κ closes A≥3 binding with the "
-        "extensive log-observable B = κ·log(tr_free/tr_atom). Definitive "
-        f"negative: κ_needed spans {min(ks):.2f}–{max(ks):.2f} MeV ({spread:.0f}% "
-        "spread), tracking B/A (shell structure) which the per-atom Markov "
-        "trace does not encode. A≥3 binding is a missing-structure problem, "
-        "not a scale problem; the framework cleanly predicts only the "
-        "deuteron (true 2-body)."
+        "log-observable B = κ·log(tr_free/tr_atom). Negative for this SCALAR "
+        f"observable: κ_needed spans {min(ks):.2f}–{max(ks):.2f} MeV ({spread:.0f}% "
+        "spread), tracking B/A. Refinement (2026-05-29 shell review): the shell "
+        "structure is NOT missing — it is recoverable per-λ (χ^λ Wedderburn, "
+        "self-conjugate/magic, staircase λ_shell, torus-knot q^{2n_s} gap); the "
+        "scalar log-ratio collapses it. A ~4 MeV scale (E₀ / m_e·Vol(𝓑₃)) closes "
+        "the deuteron (sibling PR #1416). A≥3 needs the per-λ / inter-shell "
+        "object the scalar trace discards — open, not a missing observable."
     )
     wb.add_data("derived_scale_tests", cand_results)
     wb.add_data("kappa_needed", needed)
     wb.add_data("kappa_spread_pct", spread)
     wb.add_data("conclusion", {
-        "scale_derivable": False,
-        "reason": "κ_needed not constant (313% spread); tracks B/A shell structure",
-        "boundary": "framework predicts deuteron binding (2-body, +0.2%); "
-                    "A≥3 needs shell structure absent from per-atom Markov trace",
+        "scalar_log_scale_derivable": False,
+        "reason": "no single κ closes the SCALAR log-observable (313% spread); κ tracks B/A",
+        "refinement_2026_05_29": "shell structure NOT missing — recoverable per-λ "
+            "(χ^λ Wedderburn); scalar log-ratio collapses it. A ~4 MeV scale closes D (#1416).",
+        "boundary": "deuteron closes (+0.19% scalar endomorphism); A≥3 needs the "
+                    "per-λ / inter-shell structure the scalar trace discards — open problem",
     })
     wb.add_assertion(
         "no_derived_scale_closes_A3",
