@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
 // Block-kind rename 2026-05-02: was `lemma`, demoted to
 // `conjecture` per the cones-doc audit finding

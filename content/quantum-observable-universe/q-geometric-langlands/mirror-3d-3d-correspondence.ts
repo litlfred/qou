@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:mirror-3d-3d-correspondence",

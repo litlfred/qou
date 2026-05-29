@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
 /**
  * The seven-term atomic mass-formula coefficients are q-integer products.

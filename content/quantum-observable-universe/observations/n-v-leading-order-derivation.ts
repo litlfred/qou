@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
 // Demoted from `proposition` to `conjecture` per CLAUDE.md §3b
 // (conjectural propagation): the leading-order closed form

@@ -1,4 +1,4 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
 /**
  * Palindromicity of the NF histogram characterises orbital type.
