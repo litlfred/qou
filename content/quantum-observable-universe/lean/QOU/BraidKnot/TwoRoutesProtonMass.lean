@@ -97,6 +97,20 @@ theorem borromean_char_arccos_arg :
   unfold borromeanChar
   ring
 
+/-- The Borromean (2,1) character in Laurent form.  This matches the
+    Hoefsmit-derived trace tr_{(2,1)}[(σ₁⁻¹σ₂)³] = 2 − 3h⁴ − h⁶
+    (verified symbolically from the explicit Hoefsmit σ₁ = diag(q,−q⁻¹),
+    σ₂ solved from Hecke + braid): χ = −q⁶ + 3q⁴ − 3q² + 4 − 3q⁻² +
+    3q⁻⁴ − q⁻⁶.  So the spectral correction's input character is
+    derived, not asserted.  PROVED. -/
+-- Ref: [ram1997] https://doi.org/10.1007/BF02677006
+theorem borromeanChar_laurent (hq : q ≠ 0) :
+    borromeanChar q =
+      -q ^ 6 + 3 * q ^ 4 - 3 * q ^ 2 + 4 - 3 / q ^ 2 + 3 / q ^ 4 - 1 / q ^ 6 := by
+  unfold borromeanChar h
+  field_simp
+  ring
+
 /-- The proton mass-ratio decomposition factors as
     (Vol(B₃)/ℏ²) · lw_A · spectralCorr.  PROVED (definitional). -/
 theorem mpOverMe_factored (G : ℝ) :

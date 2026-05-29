@@ -34,7 +34,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from mpmath import mp, mpf, acos, catalan
+from mpmath import mp, mpf, acos, catalan, matrix
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _precision import set_compute_dps  # noqa: E402
@@ -54,11 +54,29 @@ def main() -> int:
     h = q0 - 1 / q0
     hbar = (q0 - 1) / q0
 
+    # ── derive chi^{(2,1)}(B_3) from the Hoefsmit (2,1) matrices ──
+    # (verify, do not assert): sigma_1 = diag(q, -1/q); sigma_2 solved
+    # from the Hecke quadratic + braid relation (gauge b=1). The
+    # Borromean braid B_3 = (sigma_1^{-1} sigma_2)^3; its (2,1) trace is
+    # the bare character chi^{(2,1)}(B_3). Symbolically (sympy) this
+    # equals 2 - 3h^4 - h^6 exactly; here we confirm numerically @ q_0.
+    s1 = matrix([[q0, 0], [0, -1 / q0]])
+    s1_inv = matrix([[1 / q0, 0], [0, -q0]])
+    s2 = matrix([
+        [-1 / (q0 ** 3 + q0), mpf(1)],
+        [(q0 ** 4 + q0 ** 2 + 1) / (q0 ** 4 + 2 * q0 ** 2 + 1),
+         q0 ** 3 / (q0 ** 2 + 1)],
+    ])
+    M = s1_inv * s2
+    M3 = M * M * M
+    chi_hoefsmit = M3[0, 0] + M3[1, 1]
+    chi = 2 - 3 * h ** 4 - h ** 6             # Laurent form of the same character
+    char_residual = abs(chi_hoefsmit - chi)
+
     # ── component pieces ──────────────────────────────────────────
     vol_b3 = 8 * catalan                      # Vol(B_3) = 8 G
     geom_scale = vol_b3 / hbar ** 2           # Vol(B_3)/hbar^2
     lw_A = mpf(5) / 2 + 3 * h ** 2 / 4        # Family-A linking weight (PROVED)
-    chi = 2 - 3 * h ** 4 - h ** 6             # exact Hoefsmit char chi^{(2,1)}(B_3)
     spectral_corr = acos(chi / 2) / (8 * hbar ** 2)
 
     # ── the two products ──────────────────────────────────────────
@@ -91,11 +109,18 @@ def main() -> int:
     print(f"  validation m_p       = {mp.nstr(m_p_val, 12)} MeV")
 
     wb.add_data("q_0", mp.nstr(q0, 50))
+    wb.add_data("borromean_character", {
+        "chi_from_hoefsmit_matrices": mp.nstr(chi_hoefsmit, 40),
+        "chi_laurent_2_minus_3h4_minus_h6": mp.nstr(chi, 40),
+        "residual": mp.nstr(char_residual, 6),
+        "derivation": ("chi^(2,1)(B_3) = tr_{(2,1)}[(sigma_1^-1 sigma_2)^3] "
+                       "from Hoefsmit matrices = 2-3h^4-h^6 (sympy-exact)"),
+    })
     wb.add_data("pieces", {
         "vol_b3_8catalan": mp.nstr(vol_b3, 40),
         "geom_scale_vol_over_hbar2": mp.nstr(geom_scale, 40),
         "lw_A_5_2_plus_3h2_4": mp.nstr(lw_A, 40),
-        "chi_21_borromean_exact": mp.nstr(chi, 40),
+        "chi_21_borromean_derived": mp.nstr(chi, 40),
         "spectral_corr_arccos": mp.nstr(spectral_corr, 40),
     })
     wb.add_data("m_p_over_m_e", {
@@ -114,6 +139,11 @@ def main() -> int:
                  "spectral_corr closes it to ~130 ppm; residual is the "
                  "arccos Taylor truncation at h^4 order"),
     })
+    wb.add_assertion(
+        "borromean_char_derived_from_hoefsmit",
+        computed=float(char_residual), expected=0.0, tolerance=1e-30,
+        source="tr_{(2,1)}[(sigma_1^-1 sigma_2)^3] = 2 - 3h^4 - h^6",
+    )
     wb.add_assertion(
         "spectral_correction_closes_gap_to_sub_200ppm",
         computed=abs(float(err_full_ppm)), expected=0.0, tolerance=200.0,

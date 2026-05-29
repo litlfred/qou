@@ -112,7 +112,18 @@ m_p/m_e into known component pieces (Route 2):
 So the +2.89% is **one missing multiplicative factor** — the spectral
 correction 0.97112 (1/0.97112 = 1.0297 ≈ the uniform 1.0289). It is
 **derived** (arccos of the exact Borromean character χ^(2,1)(B₃) =
-2−3h⁴−h⁶, Hoefsmit), not fitted, not a coordinate error. The sweep's
+2−3h⁴−h⁶, Hoefsmit), not fitted, not a coordinate error.
+
+**The character input is itself derived, not asserted.** Building the
+Hoefsmit (2,1) matrices σ₁ = diag(q, −q⁻¹), σ₂ from the Hecke
+quadratic + braid relation, the Borromean braid B₃ = (σ₁⁻¹σ₂)³ has
+bare (2,1) trace
+`tr_{(2,1)}[(σ₁⁻¹σ₂)³] = −q⁶+3q⁴−3q²+4−3q⁻²+3q⁻⁴−q⁻⁶ = 2−3h⁴−h⁶`
+— verified symbolically (sympy-exact) and numerically at q₀ (residual
+< 1e-30, witness assertion `borromean_char_derived_from_hoefsmit`).
+Lean: `borromeanChar_laurent` proves the Laurent form. So the entire
+m_p → 130 ppm chain (Vol=8G, lw_A proved, χ derived) is
+first-principles. The sweep's
 `Geom_full(𝓑₃)` computes the leading `Vol/ℏ²·lw_A` and **omits** this
 factor. Wiring it closes nucleons +2.89% → 130 ppm (the residual is
 the arccos Taylor truncation, h⁴-order). This is a legitimate,
