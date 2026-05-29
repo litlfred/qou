@@ -22,10 +22,6 @@ export default remark({
   computation: {
     engine: "python+mpmath",
     script: "folio-assistant/computations/probe_q_beta_high_precision_ck.py",
-    witness: [
-      "folio-assistant/computations/q-beta-gamma-gamma-derivation.witness.json",
-      "folio-assistant/computations/q-beta-high-precision-ck.witness.json",
-    ],
     status: "experimental",
   },
 });

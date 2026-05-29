@@ -17,9 +17,6 @@ export default remark({
   computation: {
     engine: "sympy",
     script: "folio-assistant/computations/probe_q_beta_cat_per_factor_decomposition.py",
-    witness: [
-      "folio-assistant/computations/q-beta-cat-per-factor-decomposition.witness.json",
-    ],
     status: "experimental",
   },
 });

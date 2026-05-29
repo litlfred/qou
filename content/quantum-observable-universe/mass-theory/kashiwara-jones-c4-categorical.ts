@@ -85,7 +85,6 @@ export default proposition({
   computation: {
     engine: "python+mpmath",
     script: "folio-assistant/computations/probe_kashiwara_jones_c4_categorical.py",
-    witness: ["folio-assistant/computations/kashiwara-jones-c4-categorical.witness.json"],
     status: "experimental",
   },
   lean: {

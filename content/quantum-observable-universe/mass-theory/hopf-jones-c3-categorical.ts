@@ -100,7 +100,6 @@ export default proposition({
   computation: {
     engine: "python+mpmath",
     script: "folio-assistant/computations/probe_hopf_jones_c3_categorical.py",
-    witness: ["folio-assistant/computations/hopf-jones-c3-categorical.witness.json"],
     status: "experimental",
   },
   lean: {

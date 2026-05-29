@@ -24,9 +24,6 @@ export default remark({
   computation: {
     engine: "python+mpmath",
     script: "folio-assistant/computations/probe_q_beta_c5_c6_multilink.py",
-    witness: [
-      "folio-assistant/computations/q-beta-c5-c6-multilink.witness.json",
-    ],
     status: "experimental",
   },
 });
