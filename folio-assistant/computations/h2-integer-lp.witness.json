@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-13T15:20:54.276431+00:00",
-  "commitSha": "3ad8d807f63fc6c98bd179f50998e4e7242e901b",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:55:23.109157+00:00",
+  "commitSha": "24f23a01ee830704792016d61455743988f9b8c3",
   "assertions": [
     {
       "name": "Binding is positive for at least one operator",
@@ -13,45 +13,49 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 9,
   "computation": "h2-integer-lp",
   "scriptFile": "h2-integer-lp.py",
-  "scriptHash": "2c33ecd6f597",
-  "scriptCommitSha": "",
-  "description": "H\u2082 molecular binding from integer LP. Scans all inter-atomic crossing operators (\u03c3\u2080, \u03c3\u2081, \u03c3\u2080\u207b\u00b9, \u03c3\u2081\u207b\u00b9) up to 4 crossings to find optimal binding configuration. Zero fitted parameters.",
+  "scriptHash": "52d38c6666bb",
+  "scriptCommitSha": "75b59fbc3e4bd952ca16857e262160a96d7fdb4a",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "H₂ molecular binding from integer LP. Scans all inter-atomic crossing operators (σ₀, σ₁, σ₀⁻¹, σ₁⁻¹) up to 4 crossings to find optimal binding configuration. Zero fitted parameters.",
   "contentBlock": "prop:h2-lp-dual-binding",
   "parameters": {
     "q": 1.1099785955541805,
-    "E_mol_eV": 6.750278523641413,
+    "E_mol_eV": 6.729337493682183,
     "Phi_H_isolated": -1.1698389841909715
   },
   "data": {
     "best_1_crossing": {
-      "ops": "\u03c3\u2080\u207b\u00b9",
+      "ops": "σ₀⁻¹",
       "binding": -1.6659922226701795,
-      "E_eV": -11.245911521244135
+      "E_eV": -11.211023928197356
     },
     "best_2_crossings": {
-      "ops": "\u03c3\u2081\u207b\u00b9,\u03c3\u2081\u207b\u00b9",
+      "ops": "σ₁⁻¹,σ₁⁻¹",
       "binding": 0.747447764794325,
-      "E_eV": 5.04548059423491
+      "E_eV": 5.029828268199393
     },
     "best_3_crossings": {
-      "ops": "\u03c3\u2080\u207b\u00b9,\u03c3\u2081\u207b\u00b9,\u03c3\u2080\u207b\u00b9",
+      "ops": "σ₀⁻¹,σ₁⁻¹,σ₀⁻¹",
       "binding": 0.44803549636640616,
-      "E_eV": 3.0243643889511715
+      "E_eV": 3.0149820641989646
     },
     "best_4_crossings": {
-      "ops": "\u03c3\u2081\u207b\u00b9,\u03c3\u2081\u207b\u00b9,\u03c3\u2080\u207b\u00b9,\u03c3\u2080\u207b\u00b9",
+      "ops": "σ₁⁻¹,σ₁⁻¹,σ₀⁻¹,σ₀⁻¹",
       "binding": 1.776911384097398,
-      "E_eV": 11.994646754486602
+      "E_eV": 11.957436399957324
     },
     "closest_to_observed": {
-      "ops": "\u03c3\u2081\u207b\u00b9,\u03c3\u2081\u207b\u00b9",
-      "E_eV": 5.04548059423491,
-      "error_pct": 12.672634976215047
+      "ops": "σ₁⁻¹,σ₁⁻¹",
+      "E_eV": 5.029828268199393,
+      "error_pct": 12.323096654743026
     }
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }

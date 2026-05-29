@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-25T01:03:50.255679+00:00",
-  "commitSha": "b9ce28b43793144e88cdaf32b18a3631264e43af",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:55:11.723634+00:00",
+  "commitSha": "24f23a01ee830704792016d61455743988f9b8c3",
   "assertions": [
     {
       "name": "D_branch_phase_fit",
@@ -30,11 +30,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 12,
   "computation": "branch-phase-fit-to-mass-tower",
   "scriptFile": "branch_phase_fit_to_mass_tower.py",
-  "scriptHash": "901258402180",
-  "scriptCommitSha": "",
+  "scriptHash": "0f3a80440835",
+  "scriptCommitSha": "8a937415ca8d148e71076cdf4fb51628c391c33f",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Tests whether sums of 2|sin(2*pi*k/5)| at the five branch phases of X_5 (y^2=x^5-1) match the missing prefactor in approach_1_multi_brane (ratio = rho_derived/rho_observed). Hypothesis: at q -> 1 the Hecke energy q - q^{-1} replaced by commutative-limit form 2i sin(theta) at branch phases.",
   "contentBlock": "rem:commutative-crossing-energy",
   "parameters": {
@@ -130,7 +136,5 @@
   },
   "caveats": [
     "Suggestive partial fit, not a derivation. D and 3He fit at <1%; T fits via interpolation only. Per-nucleon scaling A=2 -> A=3 not derived from first principles."
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  ]
 }

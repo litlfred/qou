@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-25T18:04:50.951460+00:00",
-  "commitSha": "747cddad4e027931aac423d5ca8e0b86ac058483",
+  "computedAt": "2026-05-29T16:01:07.647720+00:00",
+  "commitSha": "24f23a01ee830704792016d61455743988f9b8c3",
   "assertions": [
     {
       "name": "bring_plus_faddeev_h4_m_p_within_500ppm",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "m-p-bring-plus-faddeev-h4-probe",
   "scriptFile": "m_p_bring_plus_faddeev_h4_probe.py",
   "scriptHash": "fef549a8439a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "1a49d588f3fd22e20ee53a990f8f6ad57e1bb4ce",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Probe of the combined Bring color-tube + Faddeev h⁴ form for linking_weight(q). Per the h⁴ categorical-driver probe, two of the 13 drivers converge on +1·h⁴ as the leading correction: (i) Faddeev iterated `1/(1−h⁴) − 1` and (xiii) KLR positivity (smallest non-trivial non-negative integer). Both are Faddeev functional-equation ratios at substrate-natural z values (z_1 = h·q^10 for Bring color-tube; z_2 = h⁴ for KLR canonical-basis). Tests three composition rules — additive, multiplicative, bring-only — at q_0 against CODATA m_p, m_n.",
   "contentBlock": "conj:borromean-baryon-mass-formula",

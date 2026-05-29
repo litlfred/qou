@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T13:37:03.001881+00:00",
-  "commitSha": "228e7148409f4b3cb2bc5b60c98761a53e240bea",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T16:09:58.975460+00:00",
+  "commitSha": "24f23a01ee830704792016d61455743988f9b8c3",
   "assertions": [
     {
       "name": "pion_l1",
@@ -22,22 +22,22 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 25,
   "computation": "meson-character-shortcut-l1",
   "scriptFile": "meson_character_shortcut_l1.py",
   "scriptHash": "57e418025e88",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "73b4dc112004b48a8a9d3a1c1d155d05e608bab7",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Verifies the meson character shortcut (pion=half-4₁ identity) at L1 precision and measures speedup. χ^(2,1)(π) = -(h²+1) replaces 6 matrix multiplications with O(1) algebra.",
   "contentBlock": "prop:pion-half-figure-eight",
   "data": {
     "chi_pi_delta": 6.661338147750939e-16,
     "chi_K_delta": 6.661338147750939e-16,
-    "speedup_factor": 12.088968173066032
+    "speedup_factor": 10.008337380605472
   }
 }

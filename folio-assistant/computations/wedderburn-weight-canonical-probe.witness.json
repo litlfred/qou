@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-19T19:06:47.016331+00:00",
-  "commitSha": "1fb4c623ea594ce58c7bc522982110cb63672419",
+  "computedAt": "2026-05-29T16:28:48.400200+00:00",
+  "commitSha": "24f23a01ee830704792016d61455743988f9b8c3",
   "assertions": [
     {
       "name": "dim_q_at_q_to_1_equals_classical_f_lambda",
@@ -15,11 +15,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 35,
   "computation": "wedderburn-weight-canonical-probe",
   "scriptFile": "wedderburn_weight_canonical_probe.py",
   "scriptHash": "faf612a09c13",
-  "scriptCommitSha": "dde3f2099e23b587c1b9ad3710c42f906b48aba3",
+  "scriptCommitSha": "ac8f844015e912da2eb00b14b04edfb8fe8197e6",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "I1 probe for prop:wedderburn-weight-canonical.  Verifies (1) dim_q(λ)|_{q→1} = f_λ classical for all λ ⊢ n with n = 1…6 via q-deformed Frame-Robinson-Thrall and classical hook-length formula; also confirms f_λ = |SYT(λ)|.  Documents (2) at q_0 the q-deformed Wedderburn weights w̃_λ = dim_q(λ)² / [n]_q! do NOT sum to 1 — the deviation is recorded for n = 3, 4, 5 (empirical evidence for the 'not a probability measure at q ≠ 1' property called out in CLAUDE.md's notation register).  Max residue on (1): 1.20e-24 at q = 1+1e-13 — small enough to confirm the limit while avoiding the 0/0 singularity in [k]_q at q = 1 exactly.",
   "contentBlock": "prop:wedderburn-weight-canonical",
   "parameters": {

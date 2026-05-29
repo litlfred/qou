@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-05-19T17:01:12.891559+00:00",
-  "commitSha": "accdd75fc31193977a836991367ef70868fe9ba8",
+  "computedAt": "2026-05-29T15:59:07.280709+00:00",
+  "commitSha": "24f23a01ee830704792016d61455743988f9b8c3",
   "assertions": [
     {
       "name": "g_A",
@@ -14,7 +14,7 @@
     },
     {
       "name": "lp_duality_gap_zero",
-      "computed": 3.724560135224758e-16,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-10,
@@ -30,11 +30,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 26,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
   "scriptHash": "4842690bbdef",
-  "scriptCommitSha": "60d34fc28faafa9395c037ac62d69ebe8c3575d1",
+  "scriptCommitSha": "03701c4df38ee768d9afc22c4fb5639bb2863852",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Axial coupling g_A as an instance of the master formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ (prop:confinement-frobenius-reciprocity). Replaces the prior cyclic-trivial conjugation-pattern computation tr(β·σ₁·β⁻¹)/tr(σ₁) — see docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. Bound-state observable: g_A (axial coupling, Gamow-Teller form factor).",
   "contentBlock": "prop:confinement-frobenius-reciprocity",
   "parameters": {
@@ -177,9 +183,9 @@
     "active_set": [
       0
     ],
-    "primal_obj": -3.724560135224758e-16,
+    "primal_obj": 0.0,
     "dual_obj": -0.0,
-    "duality_gap": 3.724560135224758e-16,
+    "duality_gap": 0.0,
     "lp_feasible": true,
     "observable_vector": {
       "name": "O_V (trivial / vector / +q eigenspace)",

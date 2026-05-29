@@ -1,25 +1,31 @@
 {
   "engine": "closed-form",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-24T04:43:58.140978+00:00",
-  "commitSha": "9f28194fd62cd964966f7aab5f511f63f2d835e3",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T16:14:46.281397+00:00",
+  "commitSha": "24f23a01ee830704792016d61455743988f9b8c3",
   "assertions": [
     {
-      "name": "\u03c1_F(D) from weight criterion matches paper (\u03c1_F = m_e)",
+      "name": "ρ_F(D) from weight criterion matches paper (ρ_F = m_e)",
       "computed": 0.51099895,
       "expected": 0.51099895,
       "passed": true,
       "tolerance": 1e-12,
-      "source": "Plancherel-weighted \u03c7 contributions"
+      "source": "Plancherel-weighted χ contributions"
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "d-density-derivation",
   "scriptFile": "d_density_derivation.py",
-  "scriptHash": "333e3933ca8c",
-  "scriptCommitSha": "",
-  "description": "Derivation of Deuterium's Frobenius packing density \u03c1_F(D) from n_chir(\u03b2_D), using the closed-form \u03c7_sym/\u03c7_alt characters from docs/chi-sym-alt-theorem.md. Both the character-criterion (I) and the Plancherel-weight-criterion (II) readings of 'alt \u2208 \u039b' are computed.",
+  "scriptHash": "8330ab2a3e7a",
+  "scriptCommitSha": "be9b8366b63ef8ef23284ac52ff61602966a989f",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Derivation of Deuterium's Frobenius packing density ρ_F(D) from n_chir(β_D), using the closed-form χ_sym/χ_alt characters from docs/chi-sym-alt-theorem.md. Both the character-criterion (I) and the Plancherel-weight-criterion (II) readings of 'alt ∈ Λ' are computed.",
   "contentBlock": "conj:mass-volume-factorization",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -43,7 +49,7 @@
       "chi_alt_nonzero": true,
       "n_chir": 2,
       "rho_F_MeV": 1.0219979,
-      "verdict": "alt \u2208 \u039b (character non-vanishing)"
+      "verdict": "alt ∈ Λ (character non-vanishing)"
     },
     "reading_II_weight": {
       "w_sym": 0.16546138476810043,
@@ -54,17 +60,15 @@
       "alt_saturated": false,
       "n_chir": 1,
       "rho_F_MeV": 0.51099895,
-      "verdict": "alt \u2209 \u039b (weight suppressed vs sym)"
+      "verdict": "alt ∉ Λ (weight suppressed vs sym)"
     },
     "paper_claim": {
       "rho_F_MeV": 0.51099895,
       "n_chir": 1,
-      "source": "rem:frobenius-packing-density \u00a7topological triggers"
+      "source": "rem:frobenius-packing-density §topological triggers"
     }
   },
   "caveats": [
-    "The rule \u03c1_F(P) = m_e \u00b7 n_chir(P) is a conjecture (conj:mass-volume-factorization). The criterion for 'alt \u2208 \u039b' is ambiguous in the manuscript between character non-vanishing and Plancherel-weight order. Both readings are reported."
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+    "The rule ρ_F(P) = m_e · n_chir(P) is a conjecture (conj:mass-volume-factorization). The criterion for 'alt ∈ Λ' is ambiguous in the manuscript between character non-vanishing and Plancherel-weight order. Both readings are reported."
+  ]
 }

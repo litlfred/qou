@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-19T19:36:02.491125+00:00",
-  "commitSha": "5544d4b2e2c8f9d8e6cbb82a30238edffa7d4a61",
+  "computedAt": "2026-05-29T15:55:18.725382+00:00",
+  "commitSha": "24f23a01ee830704792016d61455743988f9b8c3",
   "assertions": [
     {
       "name": "clausen_orbit_sum_closed_form_all_N_n",
@@ -15,11 +15,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 340,
+  "durationMs": 351,
   "computation": "cyclotomic-orbit-sum-all-depths-probe",
   "scriptFile": "cyclotomic_orbit_sum_all_depths_probe.py",
   "scriptHash": "7fdab76cdc1f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "d968481d10e8786b1c1263c0b5b83fc13eb5b87c",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "I1 probe for prop:cyclotomic-orbit-sum-all-depths.  Verifies the universal Clausen-orbit closed form Σ_{k=1..N-1} Cl_n(2πk/N) = (N^{1-n}-1)ζ(n) for odd n, = 0 for even n.  Tested at N = 2, …, 8 and n = 2, 3, 4, 5 (28 cases) via mpmath's polylog at 50 dps.  All residues at the numerical-precision floor (~1e-49); the closed form is exact in ζ(n) · ℚ for odd n and exactly zero for even n.",
   "contentBlock": "prop:cyclotomic-orbit-sum-all-depths",
   "parameters": {

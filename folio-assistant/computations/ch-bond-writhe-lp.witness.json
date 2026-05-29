@@ -1,11 +1,11 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-13T18:32:42.156256+00:00",
-  "commitSha": "c473339abe71f2eccf1ddb92e0cc00bf983de037",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:55:15.819343+00:00",
+  "commitSha": "24f23a01ee830704792016d61455743988f9b8c3",
   "assertions": [
     {
-      "name": "H\u2082 positive binding",
+      "name": "H₂ positive binding",
       "computed": true,
       "expected": true,
       "passed": true,
@@ -19,21 +19,21 @@
       "source": "min-writhe LP"
     },
     {
-      "name": "CO\u2082 positive binding",
+      "name": "CO₂ positive binding",
       "computed": true,
       "expected": true,
       "passed": true,
       "source": "min-writhe LP"
     },
     {
-      "name": "CH\u2084 positive binding",
+      "name": "CH₄ positive binding",
       "computed": true,
       "expected": true,
       "passed": true,
       "source": "min-writhe LP"
     },
     {
-      "name": "C\u2086H\u2086 positive binding",
+      "name": "C₆H₆ positive binding",
       "computed": true,
       "expected": true,
       "passed": true,
@@ -41,76 +41,80 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "ch-bond-writhe-lp",
   "scriptFile": "ch-bond-writhe-lp.py",
-  "scriptHash": "91026a78a9d2",
-  "scriptCommitSha": "",
+  "scriptHash": "c24585c28edf",
+  "scriptCommitSha": "66cd43b2986d3f82d71450836008a4c116401fbf",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Molecular bonds from two-level LP dual. Degree 0: minimize |tr_M|. Degree 1: minimize writhe. Selects smallest n with positive binding at minimum writhe.",
   "contentBlock": "def:molecular-braid",
   "parameters": {
     "q": 1.1099785955541805,
-    "E_mol_eV": 6.750278523641413
+    "E_mol_eV": 6.729337493682183
   },
   "data": {
     "bond_H-H": {
       "n": 2,
       "writhe": -2,
-      "ops": "\u03c3\u2081\u207b\u00b9,\u03c3\u2081\u207b\u00b9",
-      "E_eV": 9.324678534223416
+      "ops": "σ₁⁻¹,σ₁⁻¹",
+      "E_eV": 9.295751080065564
     },
     "bond_C-H": {
       "n": 1,
       "writhe": -1,
-      "ops": "\u03c3\u2080\u207b\u00b9",
-      "E_eV": 0.19669447305202334
+      "ops": "σ₀⁻¹",
+      "E_eV": 0.19608427825212416
     },
     "bond_C-O": {
       "n": 1,
       "writhe": -1,
-      "ops": "\u03c3\u2081\u207b\u00b9",
-      "E_eV": 1.368406367903587
+      "ops": "σ₁⁻¹",
+      "E_eV": 1.3641612336256
     },
     "bond_C-C": {
       "n": 1,
       "writhe": -1,
-      "ops": "\u03c3\u2081\u207b\u00b9",
-      "E_eV": 1.6159120482781306
+      "ops": "σ₁⁻¹",
+      "E_eV": 1.6108990902948477
     },
     "bond_O-H": {
       "n": 1,
       "writhe": -1,
-      "ops": "\u03c3\u2080\u207b\u00b9",
-      "E_eV": 0.045850782412635106
+      "ops": "σ₀⁻¹",
+      "E_eV": 0.045708541969549044
     },
     "molecules": [
       {
-        "name": "H\u2082",
-        "pred_eV": 9.324678534223416,
+        "name": "H₂",
+        "pred_eV": "9.29575108006556",
         "obs_eV": 4.478
       },
       {
         "name": "CO",
-        "pred_eV": 4.105219103710761,
+        "pred_eV": "4.0924837008768",
         "obs_eV": 11.09
       },
       {
-        "name": "CO\u2082",
-        "pred_eV": 5.473625471614348,
+        "name": "CO₂",
+        "pred_eV": "5.4566449345024",
         "obs_eV": 16.56
       },
       {
-        "name": "CH\u2084",
-        "pred_eV": 0.7867778922080934,
+        "name": "CH₄",
+        "pred_eV": "0.784337113008497",
         "obs_eV": 17.9
       },
       {
-        "name": "C\u2086H\u2086",
-        "pred_eV": 15.723375272815314,
+        "name": "C₆H₆",
+        "pred_eV": "15.6745974821664",
         "obs_eV": 57.4
       }
     ]
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }

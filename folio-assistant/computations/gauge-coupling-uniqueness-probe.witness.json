@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-19T06:59:44.932187+00:00",
-  "commitSha": "2b859a46865c8339a0eeae6200a4ebc823b051fd",
+  "computedAt": "2026-05-29T15:55:22.353890+00:00",
+  "commitSha": "24f23a01ee830704792016d61455743988f9b8c3",
   "assertions": [
     {
       "name": "completeness_e_plus_plus_e_minus_eq_1",
@@ -42,11 +42,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 24,
   "computation": "gauge-coupling-uniqueness-probe",
   "scriptFile": "gauge_coupling_uniqueness_probe.py",
   "scriptHash": "e284f05523a5",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "8c70f2785d6985c9f12a91295c48ffbf66716d54",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "I1 probe for cor:gauge-coupling-uniqueness.  Verifies the H_2(q) idempotent decomposition that underpins the corollary: σ² = (q − q⁻¹)σ + 1 admits exactly two central idempotents e_± projecting onto V_± with V_- ≅ 𝟏 the unique singlet.  Confirms completeness, orthogonality, idempotency symbolically, and that tr_M(e_-) ≠ 0 numerically at q_0 — so the singlet coupling is non-degenerate, and uniqueness up to global scaling λ ∈ R is structural.",
   "contentBlock": "cor:gauge-coupling-uniqueness",
   "parameters": {
