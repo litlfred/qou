@@ -9,9 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "rem:quantum-bloch-group",
     "prop:kashiwara-jones-c4-categorical",
-    "rem:kashaev-volume-density",
     "prop:vol-through-tau",
     "rem:vol-as-motivic-period",
     "prop:binding-scale-catalan",

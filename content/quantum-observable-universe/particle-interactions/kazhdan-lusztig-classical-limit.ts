@@ -8,7 +8,6 @@ export default proposition({
   uses: [
     "prop:hecke-anyonic-substrate",
     "prop:crystal-graph-realization",
-    "def:observation",
   ],
   cites: [
     "kassel1995",

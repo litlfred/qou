@@ -9,8 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:pentagon-uv-commutation",
-    "prop:q-rogers-pentagon-archimedean",
     "prop:macdonald-hook-telescope",
     "prop:pachner-pentagon-borromean",
     "prop:borromean-bloch-group-element",

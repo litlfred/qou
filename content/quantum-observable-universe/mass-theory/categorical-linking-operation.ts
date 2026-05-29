@@ -8,13 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.CategoricalLinkingOperation",
     validation: "not_checked",
   },
-  uses: [
-    // broken-ref removed (Phase 7): conj:force-carrier-knot-vs-link-dichotomy
-    "prop:categorical-higgs-mechanism",
-    "def:rigid-monoidal-category",
-    "def:frobenius-hopf-substrate",
-    "rem:hecke-algebra-from-braiding",
-  ],
+  uses: ["prop:categorical-higgs-mechanism"],
   tags: [
     "ribbon-category",
     "linking-number",

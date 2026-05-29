@@ -5,11 +5,7 @@ export default example({
   title:
     "Double-magic illustration: $^{40}\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)",
   interprets: "prop:diagrammatic-double-magic-lr-fusion",
-  uses: [
-    "prop:diagrammatic-double-magic-lr-fusion",
-    "prop:categorical-neutrality-saturated-shells",
-    "prop:magic-numbers-from-q",
-  ],
+  uses: ["prop:diagrammatic-double-magic-lr-fusion"],
   tags: [
     "magic-numbers",
     "double-magic",

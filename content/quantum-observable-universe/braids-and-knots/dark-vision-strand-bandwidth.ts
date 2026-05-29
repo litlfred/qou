@@ -6,8 +6,6 @@ export default remark({
     "Dark-vision impossibility from strand-bandwidth of the observation channel",
   uses: [
     "def:observation",
-    "def:hecke-normal-form",
-    "prop:crystal-graph-realization",
     "prop:confinement-grading-correspondence",
   ],
   cites: [

@@ -7,7 +7,6 @@ export default remark({
   interprets: "prop:em-coupling-bring-zero-mode",
   uses: [
     "prop:em-coupling-bring-zero-mode",
-    "rem:q-chromaticity",
     "prop:y-lambda-closed-form-wenzl-bridge",
   ],
   tags: [

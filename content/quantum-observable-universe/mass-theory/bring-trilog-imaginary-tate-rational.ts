@@ -15,10 +15,7 @@ export default proposition({
       "folio-assistant/computations/kummer-reflection-zeta5.witness.json",
     status: "verified",
   },
-  uses: [
-    "prop:borel-partial-resolution",
-    "prop:qou-infra-discharges-goncharov-zeta5",
-  ],
+  uses: ["prop:qou-infra-discharges-goncharov-zeta5"],
   cites: ["bloch2000", "zagier1986"],
   tags: [
     "kummer-reflection",

@@ -7,7 +7,6 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.CemeteryGroupEmergence", validation: "stub" },
   uses: [
     "def:cemetery-group",
-    "def:observation",
     "prop:crystal-graph-realization",
     "prop:gs-spectral-sum-finite",
   ],

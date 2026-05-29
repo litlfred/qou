@@ -11,7 +11,6 @@ export default proposition({
   uses: [
     "def:bar-involution",
     "prop:cpt-orbit-closure-density",
-    "def:hecke-normal-form",
     "thm:jones-markov-trace",
     "prop:atom-knot-mass-derivation",
   ],

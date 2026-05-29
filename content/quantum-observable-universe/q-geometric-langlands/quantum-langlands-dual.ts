@@ -9,8 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:bar-involution",
-    "def:hecke-normal-form",
     "prop:type-b-folding-cpt",
     "prop:reverse-limit-q-to-infinity",
   ],

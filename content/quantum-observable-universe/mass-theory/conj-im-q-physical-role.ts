@@ -8,12 +8,7 @@ export default proposition({
   },
   title:
     "Physical role of $\\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation).",
-  uses: [
-    "prop:lusztig-vs-hermitian-bar",
-    "prop:q-zero-complex-extension",
-    "prop:categorical-mass-markov",
-    "rem:im-q-vs-p-skew",
-  ],
+  uses: ["rem:im-q-vs-p-skew"],
   authorNotes: [
     {
       kind: "status",

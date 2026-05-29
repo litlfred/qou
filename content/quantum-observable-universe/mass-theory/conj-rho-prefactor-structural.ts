@@ -5,12 +5,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.RhoPrefactorStructural" },
   title:
     "Structural prefactor rule: $\\rho(\\mathfrak{H}) = \\dim_q(\\lambda^*(T_w))$",
-  uses: [
-    "prop:atom-knot-mass-derivation",
-    "prop:alpha-k-derivation-procedure",
-    "prop:wedderburn-trace-identity",
-    "def:confined-particle",
-  ],
+  uses: ["prop:atom-knot-mass-derivation"],
   tags: [
     "sdp-multiplicity",
     "wedderburn",

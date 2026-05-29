@@ -15,8 +15,6 @@ export default proposition({
   uses: [
     "prop:gb-depth-period-correspondence",
     "def:brings-coordinate-ring",
-    "rem:figure-8-archimedean-illustration",
-    "prop:q-dilogarithm-exists",
   ],
   cites: [
     "thurston1978",

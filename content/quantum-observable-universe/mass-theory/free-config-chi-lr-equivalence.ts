@@ -8,11 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.FreeConfigChiLrEquivalence",
     validation: "not_checked",
   },
-  uses: [
-    // broken-ref removed (Phase 7): def:ew-interface-knot
-    "prop:atomic-mass-gb-nf",
-    "rem:block-multiplicativity-v-free",
-  ],
+  uses: ["rem:block-multiplicativity-v-free"],
   computation: {
     engine: "python",
     script:

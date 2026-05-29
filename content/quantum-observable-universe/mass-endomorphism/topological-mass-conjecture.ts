@@ -7,12 +7,6 @@ export default proposition({
     ref: "qou:QOU.TopologicalMass.TopologicalDecompositionMass",
     validation: "not_checked",
   },
-  uses: [
-    "def:mass-identity",
-    "def:brane-boundary",
-    "thm:topological-mass",
-    "cor:quantum-dilogarithm",
-    "def:recursive-brane-tower",
-  ],
+  uses: ["cor:quantum-dilogarithm"],
   tags: ["mass", "topological-decomposition", "divisor", "vortex", "holonomy"],
 });

@@ -7,7 +7,6 @@ export default proposition({
   uses: [
     "prop:brings-is-qou",
     "def:hyperelliptic-quintic",
-    "thm:frobenius-codim-universal",
     "prop:mass-endomorphism",
   ],
   defines: [],

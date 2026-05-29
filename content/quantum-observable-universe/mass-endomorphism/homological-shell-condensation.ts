@@ -10,9 +10,7 @@ export default proposition({
   },
   uses: [
     "prop:categorical-neutrality-saturated-shells",
-    "def:recursive-brane-tower",
     "ex:brane-tower-levels",
-    "def:descent-involution",
     "prop:gb-spectral-sequence",
     "prop:graded-trace-residue-split",
   ],

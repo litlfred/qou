@@ -8,10 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.wenzl_bridge_applicability_qou",
     validation: "not_checked",
   },
-  uses: [
-    "prop:fibre-functor-atlas",
-    "prop:y-lambda-closed-form-wenzl-bridge",
-  ],
+  uses: ["prop:y-lambda-closed-form-wenzl-bridge"],
   cites: ["chlouveraki2016", "wenzl1988", "juyumaya2004"],
   tags: [
     "wenzl-bridge",

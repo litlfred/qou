@@ -9,10 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:gb-spectral-sequence",
-    "prop:gb-residue-spectral-sum",
     "prop:graded-trace-residue-split",
-    "prop:gs-graded-markov-trace-existence",
     "prop:gs-residue-at-root-existence",
     "thm:knot-mass-formula-unified",
   ],

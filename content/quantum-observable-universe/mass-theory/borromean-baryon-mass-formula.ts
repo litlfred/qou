@@ -18,11 +18,7 @@ export default proposition({
   },
   uses: [
     "def:borromean-baryon",
-    "def:quantum-planck-constant",
-    "def:algebraic-quantum-volume",
     "def:typed-crossing-operator",
-    "prop:three-calibration-inputs",
-    "thm:topological-mass",
     "prop:graded-hecke-energy-truncation-bound",
   ],
   cites: [

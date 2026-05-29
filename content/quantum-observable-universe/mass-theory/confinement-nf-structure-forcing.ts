@@ -41,10 +41,7 @@ export default proposition({
   title:
     "Confinement → NF-structure forcing: $\\mathrm{shift}_{\\mathrm{NF}}(\\beta_1 \\star I \\star \\beta_2) = \\alpha_{\\mathrm{shift}}(I) + \\Delta$ with $|\\Delta|$ bounded by the LP duality gap",
   lean: { ref: "qou:QOU.BraidKnot.ConfinementNfStructureForcing", validation: "stub" },
-  uses: [
-    "prop:operator-selection-lp",
-    "prop:alpha-shift-torus-knot",
-  ],
+  uses: ["prop:alpha-shift-torus-knot"],
   computation: {
     engine: "scipy",
     script: "folio-assistant/computations/lp_confinement_nf_forcing.py",

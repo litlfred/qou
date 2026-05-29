@@ -9,20 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    // The just-merged color-tube channel-assignment conjecture
-    // (PR #1111) supplies the framework for flavor-content on color
-    // sheets:
     "prop:inter-nucleon-channel-color-tube",
-    // The existing color-tube infrastructure on Bring's surface:
-    "def:color-tube-coordinates",
-    "def:color-tube-fibers",
-    // The CPT composite that this block decomposes:
     "prop:cpt-orbit-closure-density",
-    // The categorical proton/neutron sheets:
-    "def:categorical-proton",
-    "def:categorical-neutron",
-    // Bar-involution is the framework's existing duality; this
-    // block disentangles C from CPT:
     "def:bar-involution",
   ],
   cites: [

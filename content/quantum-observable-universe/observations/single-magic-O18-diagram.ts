@@ -5,11 +5,7 @@ export default example({
   title:
     "Single-magic illustration: $^{18}\\mathrm{O}$ at $Z = 8$, $N = 10$",
   interprets: "prop:diagrammatic-double-magic-lr-fusion",
-  uses: [
-    "prop:diagrammatic-double-magic-lr-fusion",
-    "prop:categorical-neutrality-saturated-shells",
-    "prop:magic-numbers-from-q",
-  ],
+  uses: ["prop:diagrammatic-double-magic-lr-fusion"],
   tags: [
     "magic-numbers",
     "single-magic",

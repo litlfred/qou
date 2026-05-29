@@ -8,10 +8,7 @@ export default proposition({
     ref: "qou:QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases.bridge_small_cases",
     validation: "not_checked",
   },
-  uses: [
-    "prop:two-filtration-bridge",
-    "prop:b1-torus-knot-rows-theorem",
-  ],
+  uses: ["prop:b1-torus-knot-rows-theorem"],
   cites: ["thurston1978"],
   tags: [
     "two-filtration-bridge",

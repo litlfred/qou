@@ -12,7 +12,6 @@ export default proposition({
     "prop:gb-spectral-sequence",
     "prop:gb-residue-spectral-sum",
     "prop:graded-markov-trace-from-gs-filtration",
-    "def:confinement-level",
     "thm:jones-markov-trace",
   ],
   computation: {

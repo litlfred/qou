@@ -8,13 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.QZeroStokesRegionIdentification",
     validation: "not_checked",
   },
-  uses: [
-    "def:borromean-baryon",
-    "def:quantum-planck-constant",
-    "prop:phi-q-aj-machinery-identification",
-    // broken-ref removed (Phase 7): conj:q-zero-complex-extension
-    "prop:quantum-langlands-dual",
-  ],
+  uses: ["prop:phi-q-aj-machinery-identification"],
   cites: [
     "mostow1968",
     "prasad1973",

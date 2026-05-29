@@ -4,9 +4,6 @@ export default prose({
   label: "prose:derivation-audit-report",
   title: "Derivation Audit Report: Mass, Beta-Decay, and Binding-Energy Computations",
   uses: [
-    "prop:atom-knot-mass-derivation",
-    "prop:chirality-writhe-ribbon-derivation",
-    "prop:brane-tower-z-habiro",
     "prop:canonical-knot-id-sdp",
     "prop:chirality-ribbon-frobenius",
     "conj:brane-level-selection",

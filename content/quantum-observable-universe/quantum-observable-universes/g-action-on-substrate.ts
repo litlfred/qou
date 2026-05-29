@@ -7,7 +7,6 @@ export default proposition({
   lean: { ref: "qou:QOU.QuantumObservableUniverses.GActionOnSubstrate", validation: "stub" },
   uses: [
     "def:frobenius-hopf-substrate",
-    "def:rigid-monoidal-category",
     "def:categorical-action",
     "rem:hecke-algebra-from-braiding",
   ],

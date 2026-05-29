@@ -5,10 +5,7 @@ export default proposition({
   title:
     "Canonical knot identification for ${}^2$H, ${}^3$H, ${}^3$He from the confinement SDP",
   uses: [
-    "prop:confinement-categorical",
-    "prop:atom-knot-mass-derivation",
     "prop:delta-max-uniform-bound",
-    "thm:frobenius-codim-universal",
     "prop:brane-tower-z-habiro",
   ],
   tags: [

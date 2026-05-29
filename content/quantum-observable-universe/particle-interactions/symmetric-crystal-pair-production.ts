@@ -7,7 +7,6 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.SymmetricCrystalPairProduction", validation: "stub" },
   uses: [
     "prop:crystal-graph-realization",
-    "def:hecke-normal-form",
     "def:cemetery-group",
   ],
   cites: [

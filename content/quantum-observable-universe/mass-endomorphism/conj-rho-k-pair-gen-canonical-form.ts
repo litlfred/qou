@@ -12,7 +12,6 @@ export default proposition({
     "prop:rho-k-graded-expansion",
     "thm:knot-mass-formula-unified",
     "prop:per-braid-mass-tower",
-    "thm:markov-trace-factorization",
   ],
   authorNotes: [
     {

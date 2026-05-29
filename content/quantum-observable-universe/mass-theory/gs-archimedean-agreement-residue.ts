@@ -9,12 +9,7 @@ export default proposition({
       "qou:QOU.BraidKnot.HabiroResidueSumEquivalence.protonExample.archimedean_agreement",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-spectral-sequence",
-    "prop:habiro-residue-sum-equivalence",
-    "prop:gs-archimedean-agreement-trace",
-    "prop:gs-spectral-decomposition-existence",
-  ],
+  uses: ["prop:gs-archimedean-agreement-trace"],
   cites: ["habiro2004"],
   computation: {
     engine: "sympy",

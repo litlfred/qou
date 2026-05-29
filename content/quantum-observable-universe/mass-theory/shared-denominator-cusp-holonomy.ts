@@ -8,12 +8,7 @@ export default proposition({
     ref: "qou:QOU.QPochhammer.shared_denominator_cusp_holonomy",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-pochhammer-partial-product",
-    "prop:algebraic-geometric-dilog-equivalence",
-    "prop:dilogarithm-archimedean-limit",
-    "rem:kashaev-as-archimedean-realization",
-  ],
+  uses: ["prop:algebraic-geometric-dilog-equivalence"],
   cites: [
     "thurston1978",
     "neumann-zagier1985",

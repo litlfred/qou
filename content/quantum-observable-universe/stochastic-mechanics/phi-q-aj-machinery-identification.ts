@@ -8,8 +8,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:borromean-baryon",
-    // broken-ref removed (Phase 7): prop:jones-markov-trace
     "prop:quantum-langlands-dual",
     "prop:dim-master-pentagon",
   ],

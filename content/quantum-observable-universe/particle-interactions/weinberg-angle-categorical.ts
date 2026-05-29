@@ -8,13 +8,6 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.WeinbergAngleCategorical",
     validation: "not_checked",
   },
-  uses: [
-    "prop:hoefsmit-ew-cell-content",
-    "prop:categorical-linking-operation",
-    "prop:categorical-higgs-mechanism",
-    "prop:weak-spectral-completeness",
-    "rem:hecke-algebra-from-braiding",
-  ],
   tags: [
     "weinberg-angle",
     "electroweak-mixing",
