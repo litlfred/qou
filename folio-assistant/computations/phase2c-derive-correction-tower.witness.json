@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T16:34:17.406722+00:00",
-  "commitSha": "e0b83b0bb46ea9606710180e237d88891b574fbb",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:52:15.107992+00:00",
+  "commitSha": "5277287afdfc1ed9b40745b345602fb6a6e1e95e",
   "assertions": [
     {
       "name": "q_deformation_improves",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 22,
+  "durationMs": 24,
   "computation": "phase2c-derive-correction-tower",
   "scriptFile": "phase2c_derive_correction_tower.py",
   "scriptHash": "958527466e25",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "2806636dce19b22563cd3431a2b05b9dd6186f74",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Investigates whether the ℏ_q correction tower can be DERIVED (not fitted) by replacing integer coefficients with their q-deformed analogues: 2 → [2]_q, 6 → [3]_q!. Tests multiple q-deformation hypotheses against CODATA.",
   "contentBlock": "prop:proton-mass-substrate-identity",

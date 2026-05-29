@@ -1,15 +1,21 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T13:38:30.467703+00:00",
-  "commitSha": "f5004d0f5d8e34e61957ca99e39198bdff3e664f",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:44:52.944079+00:00",
+  "commitSha": "5277287afdfc1ed9b40745b345602fb6a6e1e95e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 3507,
+  "durationMs": 452,
   "computation": "lambda-scale-rd-c4-categorical",
   "scriptFile": "lambda_scale_rd_c4_categorical.py",
-  "scriptHash": "aa7ef96312c4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "949b33292c13",
+  "scriptCommitSha": "178d50b5a339a8ece255566f297ac7db6b7391b6",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "R&D: categorical derivation of c_4 via direct H_3/H_4 Markov-trace h-expansion at the canonical Borromean braid (σ_1 σ_2^{-1})^3. Symbolic in q via sympy; extracts the h⁴ coefficient of the half-symmetric Wedderburn trace.",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "parameters": {
@@ -25,8 +31,8 @@
     "c4_structural_target": {
       "categorical_source": "The h⁴ coefficient of the half-symmetric Wedderburn Markov-trace expansion at the canonical Borromean braid (σ_1 σ_2^{-1})^3 in H_3(q), stabilised to H_4 via σ_3 · z-weight.",
       "explicit_form_pending": "Requires the Hoefsmit seminormal-form 2x2 matrix product for σ_1 σ_2^{-1} on V_(2,1), cubed, and traced. The χ_(2,1) character at the Borromean braid is the load-bearing symbolic computation.",
-      "empirical_c4": "0.006910220637150406041830402",
-      "empirical_h4_correction_to_lambda_p_ppm": 5.366010183402253
+      "empirical_c4": "0.007234804634834924775107592",
+      "empirical_h4_correction_to_lambda_p_ppm": 5.618061588631889
     },
     "next_RandD": {
       "approach_A": "Symbolic computation: derive χ_(2,1)((σ_1 σ_2^{-1})^3) in closed form via Hoefsmit seminormal matrices. See content/quantum-observable-universe/braids-and-knots/chi-v21-hoefsmit-matrix-derivation.md for the matrix convention.",

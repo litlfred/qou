@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-18T18:08:33.459804+00:00",
-  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
+  "computedAt": "2026-05-29T15:56:29.581744+00:00",
+  "commitSha": "5277287afdfc1ed9b40745b345602fb6a6e1e95e",
   "assertions": [
     {
       "name": "Z_0_identity",
@@ -134,11 +134,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17202,
+  "durationMs": 22426,
   "computation": "y-lambda-macdonald-telescope",
   "scriptFile": "y_lambda_macdonald_telescope.py",
   "scriptHash": "17c5b9787348",
   "scriptCommitSha": "3905433d845e20f9ca710f12a96964a81a80bfbb",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Macdonald hook-content telescope: Z_n = ((1-X)/(1-Q))^n, giving the clean closed form y_λ = Q^{n(λ)} (1-Q)^n / (1-X)^n · ∏ (1-X·Q^c)/(1-Q^h) — sorry-free, O(n) per partition, no sympy.simplify needed.  Resolves the 'Open: a telescope for general n?' question in y-lambda-clean-closed-forms.md.",
   "contentBlock": "prop:macdonald-hook-telescope",
   "data": {

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-19T06:55:48.478477+00:00",
-  "commitSha": "2b859a46865c8339a0eeae6200a4ebc823b051fd",
+  "computedAt": "2026-05-29T15:42:37.662171+00:00",
+  "commitSha": "5277287afdfc1ed9b40745b345602fb6a6e1e95e",
   "assertions": [
     {
       "name": "all_a_m_have_integer_coefficients",
@@ -33,11 +33,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 23,
   "computation": "habiro-expansion-atomic-probe",
   "scriptFile": "habiro_expansion_atomic_probe.py",
   "scriptHash": "bc66610b9f2c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "c2211016e3b3e65af2e53fdd6cdf53b05cace026",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "I1 probe for cor:habiro-expansion-atomic.  Cross-checks the corollary's 4 claims (integrality, degree bound, termination, uniqueness signature via `remainder_nonzero == false`) against the existing `habiro-coefficients-atomic.witness.json` data for {p, n, D}.  Parses each `a_m(u)` polynomial via sympy, verifies integer coefficients and deg_u(a_m) ≤ m, and confirms termination at m ≤ ⌈√(2·deg_u p)⌉.",
   "contentBlock": "cor:habiro-expansion-atomic",
   "parameters": {

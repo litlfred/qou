@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-26T13:57:27.309597+00:00",
-  "commitSha": "4b4bd353d3d97be59f40bba73e59cd4ec3d17f64",
+  "computedAt": "2026-05-29T16:05:02.925390+00:00",
+  "commitSha": "5277287afdfc1ed9b40745b345602fb6a6e1e95e",
   "assertions": [
     {
       "name": "h2_cancellation_extends",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3516,
+  "durationMs": 4360,
   "computation": "phase3-deuteron-tritium-h-expansion",
   "scriptFile": "phase3_deuteron_tritium_h_expansion.py",
   "scriptHash": "a2f44ef6a7be",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "22a39d7206127865d9c5d52e3ca5295f51de8381",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Per-partition h-expansion for deuteron (H₆), tritium (H₉), and ³He (H₉). Tests whether the h²=0 cancellation proved at H₃ (proton) extends to heavier isotopes. Complete partition enumeration (not just trace-dominant).",
   "contentBlock": "prop:proton-mass-substrate-identity",
@@ -32,7 +32,7 @@
       "Z": 1,
       "N": 1,
       "n": 6,
-      "h2_total": "12.7030260216979",
+      "h2_total": "12.703026021698",
       "h2_is_zero": false,
       "n_partitions": 11
     },
@@ -40,7 +40,7 @@
       "Z": 1,
       "N": 2,
       "n": 9,
-      "h2_total": "18.6630252467843",
+      "h2_total": "18.6630252468093",
       "h2_is_zero": false,
       "n_partitions": 30
     },
@@ -48,15 +48,15 @@
       "Z": 2,
       "N": 1,
       "n": 9,
-      "h2_total": "36.5742424914998",
+      "h2_total": "36.5742424915215",
       "h2_is_zero": false,
       "n_partitions": 30
     },
     "cross_isotope_h2_cancellation": {
       "proton_H3": "0 (exact, Phase 1c)",
-      "deuteron_H6": "12.7030260216979",
-      "tritium_H9": "18.6630252467843",
-      "he3_H9": "36.5742424914998"
+      "deuteron_H6": "12.703026021698",
+      "tritium_H9": "18.6630252468093",
+      "he3_H9": "36.5742424915215"
     }
   }
 }

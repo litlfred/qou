@@ -1,15 +1,21 @@
 {
   "engine": "mpmath+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T15:28:50.017286+00:00",
-  "commitSha": "883529fb666e6a4133bfba2dba113a4e3b82a710",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:44:49.098631+00:00",
+  "commitSha": "5277287afdfc1ed9b40745b345602fb6a6e1e95e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 25,
   "computation": "lambda-scale-rd1-geometric",
   "scriptFile": "lambda_scale_rd1_geometric.py",
   "scriptHash": "de84d22039cd",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "178d50b5a339a8ece255566f297ac7db6b7391b6",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "R&D 1: Yekutieli-Stokes geometric family — λ_geom = π_alg − Σ_geom. Tests if Family A's +3h²/4 minus a geometric Σ_geom = (5/3)·h² + ... matches the empirical λ_p with negative h² coefficient.",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "parameters": {

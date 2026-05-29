@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T05:05:07.936486+00:00",
-  "commitSha": "260522a6b92529e5656455e73d825392f847f5cb",
+  "computedAt": "2026-05-29T15:41:50.108524+00:00",
+  "commitSha": "5277287afdfc1ed9b40745b345602fb6a6e1e95e",
   "assertions": [
     {
       "name": "status_report_emitted",
@@ -13,16 +13,22 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "binding-K-direct",
   "scriptFile": "binding_K_direct.py",
-  "scriptHash": "c7b5c4ff720a",
-  "scriptCommitSha": "c9c2f8cebd49787668da7f618cdbd940aae9d951",
+  "scriptHash": "f735dd8d2bbd",
+  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Direct binding-energy computation for atomic mass.  Surfaces the physical content of the ρ_K formula by removing the ρ_K^LO tautology (which has the |tr_M| factor cancel against itself).  Binding(K) = m_e · Σ_λ y_λ(q) χ^λ(β_K) Δ_λ(K) — the second-order correction that IS the binding energy.  Requires Δ_λ values from the in-flight derivation race (currently open).  When delta-lambda-witness.json is absent, this script reports per-atom status only.",
-  "contentBlock": "prop:rho-k-h3a-refinement",
+  "contentBlock": "prop:rho-k-graded-expansion",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
   "parameters": {
-    "m_e_MeV": "0.51099895",
+    "m_e_MeV": "0.51099895069",
     "m_p_MeV": "938.27208816",
     "m_n_MeV": "939.56542052",
     "delta_lambda_witness_present": false
@@ -34,8 +40,8 @@
         "Z": 1,
         "N": 0,
         "A": 1,
-        "M_codata_MeV": "938.2720881600000000000000000000000000000",
-        "constituent_MeV": "938.2720881600000000000000000000000000000",
+        "M_codata_MeV": "938.27208816000000000000000000000000000000000000000",
+        "constituent_MeV": "938.27208816000000000000000000000000000000000000000",
         "binding_codata_MeV": "0.0",
         "status": "delta_lambda_unavailable",
         "abs_tr_M": "1.065306228592389255153277569968066119334"
@@ -45,8 +51,8 @@
         "Z": 0,
         "N": 1,
         "A": 1,
-        "M_codata_MeV": "939.5654205200000000000000000000000000000",
-        "constituent_MeV": "939.5654205200000000000000000000000000000",
+        "M_codata_MeV": "939.56542052000000000000000000000000000000000000000",
+        "constituent_MeV": "939.56542052000000000000000000000000000000000000000",
         "binding_codata_MeV": "0.0",
         "status": "delta_lambda_unavailable",
         "abs_tr_M": "0.9232332971695836424637698809187137593269"
@@ -56,9 +62,9 @@
         "Z": 1,
         "N": 1,
         "A": 2,
-        "M_codata_MeV": "1875.612942570000000000000000000000000000",
-        "constituent_MeV": "1877.837508680000000000000000000000000000",
-        "binding_codata_MeV": "-2.224566110000000000000000000000000000000",
+        "M_codata_MeV": "1875.6129425700000000000000000000000000000000000000",
+        "constituent_MeV": "1877.8375086800000000000000000000000000000000000000",
+        "binding_codata_MeV": "-2.2245661100000000000000000000000000000000000000000",
         "status": "delta_lambda_unavailable",
         "abs_tr_M": "0.3882864715477132785110659223165687998713"
       },
@@ -67,9 +73,9 @@
         "Z": 1,
         "N": 2,
         "A": 3,
-        "M_codata_MeV": "2808.921132980000000000000000000000000000",
-        "constituent_MeV": "2817.402929200000000000000000000000000000",
-        "binding_codata_MeV": "-8.481796220000000000000000000000000000000",
+        "M_codata_MeV": "2808.9211329800000000000000000000000000000000000000",
+        "constituent_MeV": "2817.4029292000000000000000000000000000000000000000",
+        "binding_codata_MeV": "-8.4817962200000000000000000000000000000000000000000",
         "status": "delta_lambda_unavailable",
         "abs_tr_M": "0.1040521186755256548979583274321227548353"
       },
@@ -78,9 +84,9 @@
         "Z": 2,
         "N": 1,
         "A": 3,
-        "M_codata_MeV": "2808.391607430000000000000000000000000000",
-        "constituent_MeV": "2816.109596840000000000000000000000000000",
-        "binding_codata_MeV": "-7.717989410000000000000000000000000000000",
+        "M_codata_MeV": "2808.3916074300000000000000000000000000000000000000",
+        "constituent_MeV": "2816.1095968400000000000000000000000000000000000000",
+        "binding_codata_MeV": "-7.7179894100000000000000000000000000000000000000000",
         "status": "delta_lambda_unavailable",
         "abs_tr_M": "0.2065408585622626294891049090129267784181"
       },
@@ -89,11 +95,11 @@
         "Z": 2,
         "N": 2,
         "A": 4,
-        "M_codata_MeV": "3727.379378000000000000000000000000000000",
-        "constituent_MeV": "3755.675017360000000000000000000000000000",
-        "binding_codata_MeV": "-28.29563936000000000000000000000000000000",
+        "M_codata_MeV": "3727.3793780000000000000000000000000000000000000000",
+        "constituent_MeV": "3755.6750173600000000000000000000000000000000000000",
+        "binding_codata_MeV": "-28.295639360000000000000000000000000000000000000000",
         "status": "delta_lambda_unavailable",
-        "abs_tr_M": "0.96732375051946897893683751863134299804348930227964"
+        "abs_tr_M": "0.9673237505194689789368375186313429980439"
       }
     ],
     "formula": "Binding(K) = m_e * sum_lambda(y_lambda(q) * chi^lambda(beta_K) * Delta_lambda(K))",
@@ -101,27 +107,27 @@
     "upstream_witness_hashes": [
       {
         "path": "atomic-tr-m-mpfr-50dps.witness.json",
-        "sha256": "1d2e71a5be6fe90a350ef980105ee46884a5cf3c53cd345d3f70835dd9e47498",
-        "size_bytes": 6161,
-        "commitSha": "260522a6b92529e5656455e73d825392f847f5cb",
-        "scriptCommitSha": "c50ad12ea46d0a90e8bd513f0676f8e4a70d30bc",
-        "computedAt": "2026-05-18T05:05:07.683003+00:00"
+        "sha256": "290c7021601e761b20591d739285ed5cd966f38476b6ac66ec4a2f3b0e89c9fd",
+        "size_bytes": 9289,
+        "commitSha": "3ee249f510da13790a1a0d7d245aa900a3713c3d",
+        "scriptCommitSha": "15ea5d83d80d7d74ae61ec7b15c18ba5b9c42c68",
+        "computedAt": "2026-05-22T18:51:11.993808+00:00"
+      },
+      {
+        "path": "atomic-tr-m-helium4-canonical.witness.json",
+        "sha256": "6f56a11037bca7d6c2ee668f2c5b60faa2d73ae69a3bdb11032ffe87c7c1149f",
+        "size_bytes": 2364,
+        "commitSha": "782c44d57d37e40e1d5b18513ba77d1b100684d2",
+        "scriptCommitSha": "782c44d57d37e40e1d5b18513ba77d1b100684d2",
+        "computedAt": "2026-05-25T18:09:14.693061+00:00"
       },
       {
         "path": "atomic-tr-m-helium4.witness.json",
-        "sha256": "76844c025edc6cf6226b58c1b843c16333d91c43513a19fe23013cfa1a9246b5",
-        "size_bytes": 4174,
-        "commitSha": "ae0e395343871f30feb34eaa973a474d4e5fc695",
-        "scriptCommitSha": "ceb6104f7e57111dd38a2226030e5fba0cf82112",
-        "computedAt": "2026-05-09T01:15:59.857893+00:00"
-      },
-      {
-        "path": "atomic-tr-m-wenzl-bridge.witness.json",
-        "sha256": "e08a53894bb788178b3b9970fbdf2f76134e48ce3c5f5557334794b8825c3ca4",
-        "size_bytes": 10516,
-        "commitSha": null,
-        "scriptCommitSha": null,
-        "computedAt": "2026-04-27T21:27:46.973442+00:00"
+        "sha256": "5f18f03ad90dbb7cef767a2b0b27ba790560757e9c18301f4382db09aeeea8ad",
+        "size_bytes": 4113,
+        "commitSha": "c2a01939456cc60fa339516c73527a1004c0e398",
+        "scriptCommitSha": "c2a01939456cc60fa339516c73527a1004c0e398",
+        "computedAt": "2026-05-18T14:45:17.933622+00:00"
       }
     ]
   }
