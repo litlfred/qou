@@ -140,6 +140,34 @@ the pseudoscalar octet.
 
 Compute: `meson_eta_phi_gmor.py`, `meson-eta-phi-gmor.witness.json`.
 
+## Update (2026-05-29): why the squared ratio, and the EM residual
+
+**Why a *fusion product* (= squared ratio)?** A meson M = q₁q̄₂ is a
+**2-body** state on H_{q₁} ⊗ H_{q₂}; its mass-**squared** is a bilinear
+(Casimir-like) quantity on the *pair*, i.e. a fusion/tensor channel —
+not a 1-body character. This is the principled reason the naive LINEAR
+m_K/m_π character-phase ratio missed by 71% while the SQUARED (GMOR)
+ratio hits: the linear ratio asks the wrong (1-body) question.
+[3]_q ⊗ [4]_q = [2]+[4]+[6] is the SU(2)_q fusion of the pair's two
+channels. The specific "why 3 and 4" then reduces (GMOR,
+isospin-symmetric) to the quark-mass ratio
+**m_s/m_d = 2·[3]_q[4]_q − 1 ≈ 24** (PDG ≈ 17–22, scheme-dependent).
+Deriving m_s/m_d as that q-integer from the knot/generation assignment
+is the remaining open piece — but the reduction itself (squared ratio
+⇒ fusion ⇒ m_s/m_d) is the genuine structural advance.
+
+**Is the 203 ppm residual EM?** m_K/m_π is measured on *charged*
+mesons; GMOR predicts the strong/isospin-limit ratio, so the residual
+is EM + isospin breaking. The residual on the kaon scale is
+Δ(m_K²) ≈ **49.5 MeV²**, which is **~4% of the π± EM splitting**
+(m_π±²−m_π⁰² ≈ 1261 MeV²) — same order, smaller, consistent with an
+NLO/partial-EM piece and with #1420's "EM is the lead." A *crude*
+equal Dashen-LO subtraction overshoots (it wrongly removes the same EM
+self-energy from both K and π), so a rigorous close needs the
+framework's α_em (`prop:em-coupling-bring-zero-mode`), not a fit.
+
+Compute: `meson_fusion_why34_em_residual.py` (+witness).
+
 ## Cross-references
 
 - `meson-spectral-analysis.witness.json` (71% miss evidence)
