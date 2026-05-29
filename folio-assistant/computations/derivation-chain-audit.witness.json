@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-29T22:49:18.082203+00:00",
-  "commitSha": "80f5e56cd0091488c52721d56175a5a709f955b9",
+  "computedAt": "2026-05-29T22:49:22.117234+00:00",
+  "commitSha": "fd2d99c9c7d9d48df0b228819c8760c875fd26ed",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2109,6 +2109,7 @@
         "binding-multibond-wenzl.witness.json",
         "binding-per-bond-decomposition.witness.json",
         "binding-q-target-sweep.witness.json",
+        "binding-reeb-phase-decomposition.witness.json",
         "binding-shell-enhancement-derivation.witness.json",
         "binding-via-interface-knot.witness.json",
         "binding-volume-difference-probe.witness.json",
