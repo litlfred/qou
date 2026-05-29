@@ -20,7 +20,7 @@
 
 | Leg | Target | Status |
 |-----|--------|--------|
-| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **met** — `_precision.py` default is 50 dps compute / 40 dps serialization (10⁻⁴⁰ absolute truncation; relative varies by observable magnitude); `onepb-status-dashboard` reports Layer 2 max_rel_delta = 0.0 across 8 atoms |
+| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **met** — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation; relative varies by observable magnitude); `onepb-status-dashboard` reports Layer 2 max_rel_delta = 0.0 across 8 atoms |
 | **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **anchors only** — 2/7 meet, both calibration anchors (m_e, m_p); **0 of 5 genuine predictions** meet (m_μ, Q_β, m_n, Δ_pn, m_K/m_π all miss). The de-fitted, post-re-pin honest state. |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
@@ -127,14 +127,14 @@ q_0 must agree to at least 1 ppQ (10⁻¹⁵ relative, i.e. 10⁻⁶ ppb).
 **Configuration.** Controlled by `folio-assistant/computations/_precision.py`:
 
 ```python
-COMPUTE_DPS_DEFAULT  = 50    # mpmath working precision
-OUTPUT_DPS_DEFAULT   = 40    # serialization precision
-PRECISION_GUARD      = 10    # COMPUTE = OUTPUT + GUARD
+COMPUTE_DPS_DEFAULT  = 65    # mpmath working precision (OUTPUT + GUARD)
+OUTPUT_DPS_DEFAULT   = 50    # serialization precision
+PRECISION_GUARD      = 15    # COMPUTE = OUTPUT + GUARD
 ```
 
 The **1 ppQ target is the *minimum*** — raise via `QOU_COMPUTE_DPS=<n>`
-environment override. At 50 dps, compute truncation is ~10⁻⁴⁰ absolute
-(10⁻³¹ ppb), far exceeding 1 ppQ.
+environment override. At 50 dps output / 65 dps compute, serialization
+truncation is ~10⁻⁵⁰ absolute (10⁻⁴¹ ppb), far exceeding 1 ppQ.
 
 **Q_β is already at 0 ppQ (exact).** The Habiro expansion of the Markov
 trace terminates at $M = 8$ for the proton/neutron (integer coefficients
