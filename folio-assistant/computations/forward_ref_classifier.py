@@ -1,5 +1,38 @@
 #!/usr/bin/env python3
-"""Forward-reference classifier with documented waiver taxonomy.
+"""Forward-reference classifier — logical-vs-storytelling severity axis.
+
+The PRIMARY question for any cross-chapter forward reference (a block in
+chapter N whose `uses[]` / `interprets` points at a block in chapter
+M > N) is:
+
+    Does the reader have to KNOW or RELY ON the target's content to
+    follow the argument made HERE?
+
+If yes, it is a **logical / expository forward reference** — a genuine
+defect: the exposition asks the reader to depend on something not yet
+established. If no — the source merely motivates, narrates, interprets,
+or points at the target — it is **storytelling**, which is benign and
+expected in a connected scholarly work.
+
+Severity (the axis that matters):
+
+  - logical      BOTH source and target carry logical content (def /
+                 prop / thm / lem / cor / proof / conjecture) AND the
+                 source builds its argument on the target. THE DEFECT.
+  - storytelling source is narrative (prose / remark / example /
+                 simulator / equation / diagram / table) OR a logical
+                 source merely cites a later data-table/diagram. Benign.
+  - structural   target is an appendix or a framing chapter
+                 (models-of-qous / notation). Benign by construction.
+
+The ONLY sanctioned logical forward reference is into the
+surreal-number lift (`appendix-surreals`) — a deliberate terminal
+construction the main text may rely on by forward reference — plus the
+explicit `FOUNDATIONAL_LATE` allowlist (objects used early but formally
+developed late, each justified inline).
+
+Legacy A–F category labels are retained in `category` for continuity
+but the headline metric is now the **logical-defect count**.
 
 Every cross-chapter forward reference (a block in chapter N whose
 `uses[]` / `interprets` points at a block in chapter M > N) is
@@ -99,27 +132,82 @@ def load_label_info(chapters):
     return info
 
 
+# Kinds that carry NO logical content — a forward ref FROM one of these
+# is always storytelling (motivation, narration, preview), never a
+# dependency the reader must resolve to follow an argument.
+NARRATIVE_SRC = {"prose", "remark", "example", "simulator",
+                 "equation", "diagram", "table"}
+
+# Kinds that carry logical content. A logical forward ref needs a
+# logical SOURCE (the block builds an argument) and a logical TARGET
+# (the thing relied upon) — the same kind-set on both ends. Defined
+# once and aliased so there is a single authoritative source, importable
+# by sibling tooling (e.g. chapter-complexity-review's edge classifier).
+LOGICAL_KINDS = {"definition", "proposition", "theorem", "lemma",
+                 "corollary", "proof", "conjecture"}
+LOGICAL_SRC = LOGICAL_KINDS
+LOGICAL_TGT = LOGICAL_KINDS
+
+# The ONE accepted reason a logical forward ref is permitted: the
+# surreal-number appendix is a deliberate terminal lift that the main
+# text may rely on by forward reference (author-sanctioned exception).
+SURREAL_CHAPTERS = {"appendix-surreals"}
+
+
 def classify(src_ch, src_kind, tgt_ch, tgt_kind, tgt_label):
-    """Return (category_letter, waived_bool, reason)."""
-    if (tgt_ch.startswith(APPENDIX_PREFIXES) or tgt_ch in SURREAL_CHAPTERS
-            or tgt_ch in FRAMING_CHAPTERS or src_ch in FRAMING_CHAPTERS):
-        return "F", True, "appendix / surreal / framing-gallery target"
-    if tgt_label in FOUNDATIONAL_LATE:
-        return "A", True, ("foundational object intentionally developed "
-                           "late (FOUNDATIONAL_LATE allowlist)")
-    if src_kind == "remark" and tgt_kind in PROVABLE:
-        return "C", True, ("remark interprets a later-proved result; "
-                           "interpretation placed in its natural chapter")
-    if src_ch in OBSERVATIONAL_CHAPTERS:
-        return "E", True, ("observational / physical-realization chapter "
-                           "citing upstream theory (cross-Part story arc)")
-    if src_kind in ("prose",) or "intro" in (tgt_label or ""):
-        return "D", True, "framing / preview (intro or overview block)"
-    if src_kind in PROVABLE and tgt_kind in PROVABLE:
-        return "A", False, "proof-dependency: provable block uses later provable block"
-    if tgt_kind == "definition":
-        return "B", False, "definition-consumer: uses a later-defined object"
-    return "D", True, "narrative preview"
+    """Classify a forward reference.
+
+    Returns (category, severity, waived, reason) where severity is one
+    of "logical" (reader must rely on future content — the real defect),
+    "storytelling" (motivation/preview/interpretation — benign), or
+    "structural" (appendix/framing — benign by construction).
+
+    The primary axis is logical-vs-storytelling. A forward ref is
+    LOGICAL iff BOTH the source and target carry logical content
+    (source builds an argument ON the target). Everything else is
+    storytelling or structural and is waived.
+    """
+    # ── Structural waivers (benign by construction) ──────────────────
+    if tgt_ch in SURREAL_CHAPTERS:
+        return ("S-surreal", "structural", True,
+                "target is the surreal-number lift — author-sanctioned "
+                "terminal forward reference (the only accepted logical "
+                "forward-ref exception)")
+    if tgt_ch.startswith(APPENDIX_PREFIXES):
+        return ("S-appendix", "structural", True,
+                "target is an appendix — appendices are terminal; the "
+                "main text may reference them forward")
+    if src_ch in FRAMING_CHAPTERS or tgt_ch in FRAMING_CHAPTERS:
+        return ("S-framing", "structural", True,
+                "framing chapter (models-of-qous / notation) — exists to "
+                "preview the arc; forward refs are its purpose")
+
+    # ── Storytelling (no logical reliance) ───────────────────────────
+    if src_kind in NARRATIVE_SRC:
+        return ("T-narrative", "storytelling", True,
+                f"source is a {src_kind} block — it motivates / narrates / "
+                "interprets the target; the reader is not asked to rely on "
+                "the target's content to follow an argument")
+
+    # ── Logical forward references (the real defect) ─────────────────
+    if src_kind in LOGICAL_SRC and tgt_kind in LOGICAL_TGT:
+        if tgt_label in FOUNDATIONAL_LATE:
+            return ("L-foundational", "logical", True,
+                    "LOGICAL forward ref, but target is on the "
+                    "FOUNDATIONAL_LATE allowlist (an object intentionally "
+                    "used early, formally developed late — author-sanctioned)")
+        return ("L-dependency", "logical", False,
+                f"LOGICAL forward ref: a {src_kind} relies on a later "
+                f"{tgt_kind} — the reader must know future content to "
+                "follow the argument here. THIS IS THE DEFECT.")
+
+    # ── Logical source, non-logical target (citing a later table etc.)
+    if src_kind in LOGICAL_SRC:
+        return ("T-cite", "storytelling", True,
+                f"logical source cites a later {tgt_kind} (data table / "
+                "diagram / example) — a pointer, not an argument dependency")
+
+    return ("T-other", "storytelling", True, "non-logical forward reference")
 
 
 def main():
@@ -158,48 +246,59 @@ def main():
                 tgt_ch, tgt_kind = info[u]
                 if ch_order.get(tgt_ch, 0) <= src_idx:
                     continue
-                cat, waived, reason = classify(
+                cat, severity, waived, reason = classify(
                     ch, src_kind, tgt_ch, tgt_kind, u)
                 rows.append({
                     "src_chapter": ch, "src_label": src_label,
                     "src_kind": src_kind, "tgt_chapter": tgt_ch,
                     "tgt_label": u, "tgt_kind": tgt_kind,
-                    "category": cat, "waived": waived, "reason": reason,
+                    "category": cat, "severity": severity,
+                    "waived": waived, "reason": reason,
                 })
 
     total = len(rows)
-    waived = sum(1 for r in rows if r["waived"])
-    actionable = total - waived
+    logical = [r for r in rows if r["severity"] == "logical" and not r["waived"]]
+    storytelling = [r for r in rows if r["severity"] == "storytelling"]
+    structural = [r for r in rows if r["severity"] == "structural"]
+    logical_waived = [r for r in rows
+                      if r["severity"] == "logical" and r["waived"]]
 
     if as_json:
         print(json.dumps({
-            "total": total, "waived": waived, "actionable": actionable,
-            "rows": [r for r in rows
-                     if not actionable_only or not r["waived"]],
+            "total": total,
+            "logical_defects": len(logical),
+            "logical_waived": len(logical_waived),
+            "storytelling": len(storytelling),
+            "structural": len(structural),
+            "rows": logical if actionable_only else rows,
         }, indent=2))
         return
 
+    print(f"Forward references: {total} total\n")
+    print("By severity (primary axis):")
+    print(f"  LOGICAL DEFECT   {len(logical):3d}  "
+          "(reader must rely on future content — FIX THESE)")
+    print(f"  logical-waived   {len(logical_waived):3d}  "
+          "(surreal lift / FOUNDATIONAL_LATE — sanctioned)")
+    print(f"  storytelling     {len(storytelling):3d}  "
+          "(motivation / interpretation / cite — benign)")
+    print(f"  structural       {len(structural):3d}  "
+          "(appendix / framing chapter — benign)")
+
     by_cat = {}
     for r in rows:
-        key = (r["category"], r["waived"])
-        by_cat.setdefault(key, 0)
-        by_cat[key] += 1
+        by_cat.setdefault(r["category"], 0)
+        by_cat[r["category"]] += 1
+    print("\nBy category:")
+    for cat, n in sorted(by_cat.items()):
+        print(f"  {cat:16s} {n:3d}")
 
-    print(f"Forward references: {total} total")
-    print(f"  WAIVED:     {waived}")
-    print(f"  ACTIONABLE: {actionable}\n")
-    print("By category:")
-    cat_names = {
-        "A": "proof-dep (provable→provable)",
-        "B": "definition-consumer",
-        "C": "remark-interprets-later",
-        "D": "framing/preview",
-        "E": "observational consumer",
-        "F": "appendix/surreal/framing target",
-    }
-    for (cat, w), n in sorted(by_cat.items()):
-        tag = "WAIVED   " if w else "ACTIONABLE"
-        print(f"  {cat} [{tag}] {n:3d}  {cat_names.get(cat, '?')}")
+    if logical:
+        print(f"\n{'='*70}\nLOGICAL DEFECTS — {len(logical)} forward refs to fix:\n{'='*70}")
+        for r in sorted(logical, key=lambda x: (x["src_chapter"], x["src_label"])):
+            print(f"  {r['src_chapter']}/{r['src_label']} "
+                  f"({r['src_kind']})\n     →  {r['tgt_chapter']}/{r['tgt_label']} "
+                  f"({r['tgt_kind']})")
 
 
 if __name__ == "__main__":

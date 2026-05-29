@@ -25,6 +25,39 @@ edges.  Lower energy means tighter, more local dependencies.
 The skill finds the section ordering (and block-level tweaks) that
 minimises backward edges, then optionally applies the changes.
 
+## Severity: logical vs storytelling backward edges (STRICT, 2026-05-29)
+
+**Not all backward edges are equal.** The same logical-vs-storytelling
+distinction that governs cross-chapter forward references
+([`docs/forward-ref-logical-analysis.md`](../../../docs/forward-ref-logical-analysis.md))
+applies intra-chapter:
+
+- A **logical / expository backward edge** is a genuine defect: the
+  source block *builds its argument on* the later block — the reader
+  cannot follow the exposition in order. This happens iff **both** the
+  source and the target carry logical content
+  (`definition`/`proposition`/`theorem`/`lemma`/`corollary`/`proof`/
+  `conjecture`) AND the edge is a real `uses[]` reliance.
+- A **storytelling backward edge** imposes no logical burden: the
+  source is narrative (`prose`/`remark`/`example`/`simulator`/
+  `equation`/`diagram`/`table`), or it merely *mentions* / *motivates*
+  / *interprets* the later block. A remark that foreshadows a later
+  result loses the reader nothing. **Benign — do not count as energy.**
+
+When computing energy, **weight logical backward edges heavily and
+storytelling backward edges at zero (or near-zero)**. Reordering to
+chase a storytelling backward edge churns the manifest for no
+expository gain, and can *worsen* a logical edge. The classifier
+[`folio-assistant/computations/forward_ref_classifier.py`](../../../folio-assistant/computations/forward_ref_classifier.py)
+is the authoritative source for the source/target-kind sets
+(`LOGICAL_SRC`, `LOGICAL_TGT`, `NARRATIVE_SRC`); reuse them rather
+than re-deriving the kind lists here.
+
+The headline metric is the **logical backward-edge count**, not the
+raw backward-edge count. Storytelling and structural (appendix /
+framing-chapter) edges are reported for awareness but never gate a
+reordering.
+
 ## When to Use This Skill
 
 - "review chapter N complexity"
@@ -57,16 +90,22 @@ other blocks in the same chapter.  Ignore cross-paper refs (containing
 
 Flatten sections into a single ordered list.  For each block, compute:
 - Forward edges: block uses something defined earlier (good)
-- Backward edges: block uses something defined later (bad)
-- Total energy: sum of absolute position differences
+- Backward edges: block uses something defined later — classify each by
+  severity (see §Severity above): **logical** (the real defect) vs
+  **storytelling** (benign, weight ≈ 0)
+- Total energy: sum of absolute position differences over **logical**
+  backward edges (storytelling edges reported separately, not summed)
 
 Report:
 ```
-Energy: <total>
+Energy (logical edges only): <total>
 Forward edges: <count>
-Backward edges: <count>
+Backward edges: <count> total — <L> logical / <S> storytelling
 
-Backward edges (block → dependency, span):
+Logical backward edges (block → dependency, span):
+  <block> → <dep>  span=<N>
+
+Storytelling backward edges (info-only, not gated):
   <block> → <dep>  span=<N>
 ```
 
@@ -138,12 +177,20 @@ This quickly reveals which section moves will have the most impact.
 
 ## Interpreting results
 
-| Backward edges | Assessment |
-|----------------|------------|
+Assess on the **logical** backward-edge count (storytelling edges are
+benign and excluded — see §Severity):
+
+| Logical backward edges | Assessment |
+|------------------------|------------|
 | 0 | Perfect — fully topological order |
 | 1–4 | Good — remaining edges are likely architectural (e.g. Archimedean ↔ categorical) |
 | 5–10 | Moderate — section reordering likely helps |
 | 10+ | High complexity — major restructuring needed |
+
+A chapter with many *storytelling* backward edges but zero *logical*
+ones is healthy: it is well-connected narratively (remarks foreshadow,
+examples point ahead) without imposing any out-of-order logical burden.
+Do not reorder to suppress storytelling edges.
 
 Irreducible backward edges typically fall into these categories:
 - **Archimedean ↔ categorical**: A categorical section references an
@@ -164,7 +211,14 @@ The core algorithm is a standalone Python script that:
 5. Generates DOT files and renders via `graphviz`
 
 Key functions:
-- `parse_manifest(path)` → sections[], block_data{}
+- `parse_manifest(path)` → sections[], block_data{} (capture each
+  block's `kind` so backward edges can be severity-classified)
 - `compute_energy(ordering, block_data)` → (energy, backward[], forward[])
-- `optimize_sections(sections, block_data)` → best_order[]
-- `generate_dot(ordering, block_data, filename)` → svg_path
+  where `energy` sums **logical** backward edges only
+- `classify_edge(src_kind, tgt_kind, is_uses)` → "logical" | "storytelling"
+  (reuse `LOGICAL_SRC` / `LOGICAL_TGT` / `NARRATIVE_SRC` from
+  `forward_ref_classifier.py`)
+- `optimize_sections(sections, block_data)` → best_order[] (minimise
+  logical backward-edge count first, energy as tiebreaker)
+- `generate_dot(ordering, block_data, filename)` → svg_path (render
+  logical edges solid-red, storytelling edges dashed-gray)

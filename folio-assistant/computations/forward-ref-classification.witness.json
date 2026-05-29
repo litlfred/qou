@@ -1,7 +1,9 @@
 {
-  "total": 277,
-  "waived": 171,
-  "actionable": 106,
+  "total": 251,
+  "logical_defects": 91,
+  "logical_waived": 4,
+  "storytelling": 124,
+  "structural": 32,
   "rows": [
     {
       "src_chapter": "quantum-universes",
@@ -10,9 +12,10 @@
       "tgt_chapter": "quantum-observable-universes",
       "tgt_label": "ex:dagger-su2",
       "tgt_kind": "example",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later example (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "quantum-universes",
@@ -21,9 +24,10 @@
       "tgt_chapter": "quantum-observable-universes",
       "tgt_label": "ex:connection-su2",
       "tgt_kind": "example",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later example (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "quantum-universes",
@@ -32,9 +36,10 @@
       "tgt_chapter": "stochastic-mechanics",
       "tgt_label": "def:classical-limit-obstruction",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "quantum-universes",
@@ -43,9 +48,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "prop:skew-poisson-integration",
       "tgt_kind": "proposition",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-universes",
@@ -54,9 +60,10 @@
       "tgt_chapter": "quantum-observable-universes",
       "tgt_label": "ex:frobenius-su2",
       "tgt_kind": "example",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later example (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "quantum-universes",
@@ -65,9 +72,10 @@
       "tgt_chapter": "glossary",
       "tgt_label": "rem:glossary-no-quasi-zeros",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -76,9 +84,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "rem:c-substrate-via-levi",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -87,9 +96,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "def:habiro-ring",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-foundational",
+      "severity": "logical",
       "waived": true,
-      "reason": "foundational object intentionally developed late (FOUNDATIONAL_LATE allowlist)"
+      "reason": "LOGICAL forward ref, but target is on the FOUNDATIONAL_LATE allowlist (an object intentionally used early, formally developed late \u2014 author-sanctioned)"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -98,9 +108,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "prop:main-commutative-diagram",
       "tgt_kind": "proposition",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -109,9 +120,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "ex:irreducible-connection",
       "tgt_kind": "example",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -120,9 +132,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:thurston-volume-additivity",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -131,9 +144,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:vertex-is-exceptional-divisor",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -142,9 +156,10 @@
       "tgt_chapter": "particle-interactions",
       "tgt_label": "def:commutative-qou",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -153,20 +168,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "ex:reeb-decomposition",
       "tgt_kind": "example",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
-    },
-    {
-      "src_chapter": "quantum-observable-universes",
-      "src_label": "ex:substrate-parameter-brings",
-      "src_kind": "example",
-      "tgt_chapter": "observations",
-      "tgt_label": "rem:skein-mass-relation",
-      "tgt_kind": "remark",
-      "category": "D",
-      "waived": true,
-      "reason": "narrative preview"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -175,9 +180,22 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "ex:brings-surface-concrete",
       "tgt_kind": "example",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+    },
+    {
+      "src_chapter": "quantum-observable-universes",
+      "src_label": "ex:substrate-parameter-brings",
+      "src_kind": "example",
+      "tgt_chapter": "observations",
+      "tgt_label": "rem:skein-mass-relation",
+      "tgt_kind": "remark",
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -186,9 +204,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "ex:brings-surface",
       "tgt_kind": "example",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -197,9 +216,10 @@
       "tgt_chapter": "braids-and-knots",
       "tgt_label": "prop:braid-action-tensor",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -208,9 +228,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "ex:instanton",
       "tgt_kind": "example",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -219,9 +240,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "ex:irreducible-connection",
       "tgt_kind": "example",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -230,9 +252,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "def:brings-surface",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -241,9 +264,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "ex:reeb-decomposition",
       "tgt_kind": "example",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -252,9 +276,10 @@
       "tgt_chapter": "braids-and-knots",
       "tgt_label": "rem:hecke-algebra-from-braiding",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -263,9 +288,10 @@
       "tgt_chapter": "lifting-and-descent",
       "tgt_label": "def:localized-knot",
       "tgt_kind": "definition",
-      "category": "B",
-      "waived": false,
-      "reason": "definition-consumer: uses a later-defined object"
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -274,9 +300,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "rem:knot-basis-color-content",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -285,9 +312,10 @@
       "tgt_chapter": "lifting-and-descent",
       "tgt_label": "def:yekutieli-lifting-condition",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -296,9 +324,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "rem:brings-smoothness",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -307,9 +336,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "rem:physicist-translation",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -318,9 +348,10 @@
       "tgt_chapter": "information-theory",
       "tgt_label": "rem:reeb-turing-completeness",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -329,9 +360,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "ex:instanton",
       "tgt_kind": "example",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -340,31 +372,10 @@
       "tgt_chapter": "mass-endomorphism",
       "tgt_label": "prop:homological-shell-condensation",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "quantum-observable-universes",
-      "src_label": "prop:magic-numbers-bring",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-endomorphism",
-      "tgt_label": "prop:categorical-neutrality-saturated-shells",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "quantum-observable-universes",
-      "src_label": "prop:magic-numbers-bring",
-      "src_kind": "proposition",
-      "tgt_chapter": "lifting-and-descent",
-      "tgt_label": "def:descent-involution",
-      "tgt_kind": "definition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -373,9 +384,10 @@
       "tgt_chapter": "models-of-qous",
       "tgt_label": "ex:instanton",
       "tgt_kind": "example",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "quantum-observable-universes",
@@ -384,42 +396,10 @@
       "tgt_chapter": "information-theory",
       "tgt_label": "prop:q-heat-kernel-peter-weyl",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "models-of-qous",
-      "src_label": "prop:yang-mills-mass-gap",
-      "src_kind": "proposition",
-      "tgt_chapter": "lifting-and-descent",
-      "tgt_label": "rem:kummer-filtration-obstruction",
-      "tgt_kind": "remark",
-      "category": "F",
-      "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
-    },
-    {
-      "src_chapter": "models-of-qous",
-      "src_label": "prop:yang-mills-mass-gap",
-      "src_kind": "proposition",
-      "tgt_chapter": "lifting-and-descent",
-      "tgt_label": "prop:vacuum-state",
-      "tgt_kind": "proposition",
-      "category": "F",
-      "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
-    },
-    {
-      "src_chapter": "models-of-qous",
-      "src_label": "prop:yang-mills-mass-gap",
-      "src_kind": "proposition",
-      "tgt_chapter": "stochastic-mechanics",
-      "tgt_label": "thm:qou-obstruction-reduction",
-      "tgt_kind": "theorem",
-      "category": "F",
-      "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "models-of-qous",
@@ -428,9 +408,46 @@
       "tgt_chapter": "fluid-dynamics",
       "tgt_label": "rem:substrate-gm-torsion",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
+    },
+    {
+      "src_chapter": "models-of-qous",
+      "src_label": "prop:yang-mills-mass-gap",
+      "src_kind": "proposition",
+      "tgt_chapter": "stochastic-mechanics",
+      "tgt_label": "thm:qou-obstruction-reduction",
+      "tgt_kind": "theorem",
+      "category": "S-framing",
+      "severity": "structural",
+      "waived": true,
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
+    },
+    {
+      "src_chapter": "models-of-qous",
+      "src_label": "prop:yang-mills-mass-gap",
+      "src_kind": "proposition",
+      "tgt_chapter": "lifting-and-descent",
+      "tgt_label": "prop:vacuum-state",
+      "tgt_kind": "proposition",
+      "category": "S-framing",
+      "severity": "structural",
+      "waived": true,
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
+    },
+    {
+      "src_chapter": "models-of-qous",
+      "src_label": "prop:yang-mills-mass-gap",
+      "src_kind": "proposition",
+      "tgt_chapter": "lifting-and-descent",
+      "tgt_label": "rem:kummer-filtration-obstruction",
+      "tgt_kind": "remark",
+      "category": "S-framing",
+      "severity": "structural",
+      "waived": true,
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "models-of-qous",
@@ -439,9 +456,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "ex:brings-surface",
       "tgt_kind": "example",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "models-of-qous",
@@ -450,9 +468,10 @@
       "tgt_chapter": "lifting-and-descent",
       "tgt_label": "prop:jet-prolongation",
       "tgt_kind": "proposition",
-      "category": "F",
+      "category": "S-framing",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "framing chapter (models-of-qous / notation) \u2014 exists to preview the arc; forward refs are its purpose"
     },
     {
       "src_chapter": "lifting-and-descent",
@@ -461,20 +480,10 @@
       "tgt_chapter": "mass-endomorphism",
       "tgt_label": "def:mass-identity",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
-    },
-    {
-      "src_chapter": "lifting-and-descent",
-      "src_label": "cor:quantum-dilogarithm",
-      "src_kind": "corollary",
-      "tgt_chapter": "mass-endomorphism",
-      "tgt_label": "thm:topological-mass",
-      "tgt_kind": "theorem",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "lifting-and-descent",
@@ -483,9 +492,22 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "def:briggs-klein-chart",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a corollary relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
+    },
+    {
+      "src_chapter": "lifting-and-descent",
+      "src_label": "cor:quantum-dilogarithm",
+      "src_kind": "corollary",
+      "tgt_chapter": "mass-endomorphism",
+      "tgt_label": "thm:topological-mass",
+      "tgt_kind": "theorem",
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a corollary relies on a later theorem \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "lifting-and-descent",
@@ -494,9 +516,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "def:adelic-substrate",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "lifting-and-descent",
@@ -505,9 +528,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "def:quaternionic-spectral-resolvents",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "lifting-and-descent",
@@ -516,9 +540,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "def:adelic-substrate",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "lifting-and-descent",
@@ -527,9 +552,10 @@
       "tgt_chapter": "mass-endomorphism",
       "tgt_label": "def:mass-identity",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "lifting-and-descent",
@@ -538,9 +564,10 @@
       "tgt_chapter": "mass-endomorphism",
       "tgt_label": "def:mass-identity",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "lifting-and-descent",
@@ -549,9 +576,10 @@
       "tgt_chapter": "mass-endomorphism",
       "tgt_label": "def:mass-identity",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -560,9 +588,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "def:su2-generators",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -571,9 +600,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "def:su2-generators",
       "tgt_kind": "definition",
-      "category": "B",
-      "waived": false,
-      "reason": "definition-consumer: uses a later-defined object"
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -582,20 +612,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "def:su2-generators",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "braids-and-knots",
-      "src_label": "rem:markov-axioms-primitive",
-      "src_kind": "remark",
-      "tgt_chapter": "mass-endomorphism",
-      "tgt_label": "prop:categorical-chain-convergence-mechanisms",
-      "tgt_kind": "proposition",
-      "category": "C",
-      "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "braids-and-knots",
@@ -604,9 +624,22 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:markov-trace-frobenius-selection",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+    },
+    {
+      "src_chapter": "braids-and-knots",
+      "src_label": "rem:markov-axioms-primitive",
+      "src_kind": "remark",
+      "tgt_chapter": "mass-endomorphism",
+      "tgt_label": "prop:categorical-chain-convergence-mechanisms",
+      "tgt_kind": "proposition",
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -615,20 +648,10 @@
       "tgt_chapter": "particle-interactions",
       "tgt_label": "prop:confinement-grading-correspondence",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
-    },
-    {
-      "src_chapter": "braids-and-knots",
-      "src_label": "rem:dark-vision-strand-bandwidth",
-      "src_kind": "remark",
-      "tgt_chapter": "particle-interactions",
-      "tgt_label": "prop:crystal-graph-realization",
-      "tgt_kind": "proposition",
-      "category": "C",
-      "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -637,20 +660,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "rem:ck-extraction-from-algebraic-rules",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
-    },
-    {
-      "src_chapter": "braids-and-knots",
-      "src_label": "prop:habiro-precision-ladder-equivalence",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:habiro-residue-sum-equivalence",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -659,9 +672,22 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:mass-endomorphism-tower",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
+    },
+    {
+      "src_chapter": "braids-and-knots",
+      "src_label": "prop:habiro-precision-ladder-equivalence",
+      "src_kind": "proposition",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "prop:habiro-residue-sum-equivalence",
+      "tgt_kind": "proposition",
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "braids-and-knots",
@@ -670,9 +696,22 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "rem:skein-crossing-asymmetry",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "braids-and-knots",
+      "src_label": "prop:habiro-pochhammer-bridge",
+      "src_kind": "proposition",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "def:habiro-ring",
+      "tgt_kind": "definition",
+      "category": "L-foundational",
+      "severity": "logical",
+      "waived": true,
+      "reason": "LOGICAL forward ref, but target is on the FOUNDATIONAL_LATE allowlist (an object intentionally used early, formally developed late \u2014 author-sanctioned)"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -681,9 +720,22 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:skein-mass-relation",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+    },
+    {
+      "src_chapter": "braids-and-knots",
+      "src_label": "rem:braid-group-n-strand",
+      "src_kind": "remark",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "rem:typed-b3-sub-braid-extraction",
+      "tgt_kind": "remark",
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -692,20 +744,10 @@
       "tgt_chapter": "mass-endomorphism",
       "tgt_label": "prop:categorical-chain-convergence-mechanisms",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
-    },
-    {
-      "src_chapter": "braids-and-knots",
-      "src_label": "rem:braid-group-n-strand",
-      "src_kind": "remark",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "rem:typed-b3-sub-braid-extraction",
-      "tgt_kind": "remark",
-      "category": "D",
-      "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -714,9 +756,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "def:coral-sector-coords",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -725,9 +768,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "def:brings-surface",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "braids-and-knots",
@@ -736,9 +780,10 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "rem:lagrange-resolvents",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -747,20 +792,10 @@
       "tgt_chapter": "stochastic-mechanics",
       "tgt_label": "rem:markov-closure-map-axiomatic",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
-    },
-    {
-      "src_chapter": "braids-and-knots",
-      "src_label": "prop:proton-mass-substrate-identity",
-      "src_kind": "proposition",
-      "tgt_chapter": "observations",
-      "tgt_label": "prop:flavor-split-substrate",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -769,9 +804,22 @@
       "tgt_chapter": "mass-endomorphism",
       "tgt_label": "prop:rho-k-pair-gen-canonical-form",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
+    },
+    {
+      "src_chapter": "braids-and-knots",
+      "src_label": "prop:proton-mass-substrate-identity",
+      "src_kind": "proposition",
+      "tgt_chapter": "observations",
+      "tgt_label": "prop:flavor-split-substrate",
+      "tgt_kind": "proposition",
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "braids-and-knots",
@@ -780,9 +828,10 @@
       "tgt_chapter": "particle-interactions",
       "tgt_label": "prop:c-equals-bar-iff-all-1dim",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "braids-and-knots",
@@ -791,9 +840,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "rem:brings-qou-4tuple",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "braids-and-knots",
@@ -802,9 +852,10 @@
       "tgt_chapter": "brings-surface",
       "tgt_label": "def:su2-generators",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "brings-surface",
@@ -813,9 +864,10 @@
       "tgt_chapter": "appendix-knot-operations",
       "tgt_label": "rem:knot-operator-basis-table",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-appendix",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is an appendix \u2014 appendices are terminal; the main text may reference them forward"
     },
     {
       "src_chapter": "brings-surface",
@@ -824,9 +876,10 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "rem:lagrange-resolvents",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "brings-surface",
@@ -835,9 +888,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "sim:quantum-brings-surface",
       "tgt_kind": "simulator",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "brings-surface",
@@ -846,9 +900,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "sim:brings-surface",
       "tgt_kind": "simulator",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later simulator (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "brings-surface",
@@ -857,9 +912,10 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "rem:lagrange-resolvents",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "brings-surface",
@@ -868,9 +924,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "prop:local-substrate-q",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "brings-surface",
@@ -879,9 +936,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "prop:s5-equivariant-torus-knots",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "brings-surface",
@@ -890,9 +948,10 @@
       "tgt_chapter": "particle-interactions",
       "tgt_label": "def:knot-particle-generation",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "brings-surface",
@@ -901,9 +960,22 @@
       "tgt_chapter": "mass-endomorphism",
       "tgt_label": "rem:mass-geometric-drag",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+    },
+    {
+      "src_chapter": "brings-surface",
+      "src_label": "rem:fivefold-symmetry",
+      "src_kind": "remark",
+      "tgt_chapter": "predicted-spectra",
+      "tgt_label": "rem:force-knot-identification",
+      "tgt_kind": "remark",
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "brings-surface",
@@ -912,31 +984,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:skein-finiteness-bound",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
-    },
-    {
-      "src_chapter": "brings-surface",
-      "src_label": "rem:fivefold-symmetry",
-      "src_kind": "remark",
-      "tgt_chapter": "predicted-spectra",
-      "tgt_label": "rem:force-knot-identification",
-      "tgt_kind": "remark",
-      "category": "D",
-      "waived": true,
-      "reason": "narrative preview"
-    },
-    {
-      "src_chapter": "brings-surface",
-      "src_label": "prop:torus-embeddable-complete",
-      "src_kind": "proposition",
-      "tgt_chapter": "predicted-spectra",
-      "tgt_label": "rem:diophantine-valley",
-      "tgt_kind": "remark",
-      "category": "D",
-      "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "brings-surface",
@@ -945,9 +996,22 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "rem:chirality-trefoil-electron-positron",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "brings-surface",
+      "src_label": "prop:torus-embeddable-complete",
+      "src_kind": "proposition",
+      "tgt_chapter": "predicted-spectra",
+      "tgt_label": "rem:diophantine-valley",
+      "tgt_kind": "remark",
+      "category": "T-cite",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "brings-surface",
@@ -956,20 +1020,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "rem:linking-relations-table",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
-    },
-    {
-      "src_chapter": "brings-surface",
-      "src_label": "prop:torus-embeddable-complete",
-      "src_kind": "proposition",
-      "tgt_chapter": "predicted-spectra",
-      "tgt_label": "rem:force-knot-identification",
-      "tgt_kind": "remark",
-      "category": "D",
-      "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "brings-surface",
@@ -978,9 +1032,22 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "rem:unmapped-torus-knots",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "brings-surface",
+      "src_label": "prop:torus-embeddable-complete",
+      "src_kind": "proposition",
+      "tgt_chapter": "predicted-spectra",
+      "tgt_label": "rem:force-knot-identification",
+      "tgt_kind": "remark",
+      "category": "T-cite",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "brings-surface",
@@ -989,9 +1056,10 @@
       "tgt_chapter": "particle-interactions",
       "tgt_label": "rem:u1-phase-tube",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "brings-surface",
@@ -1000,9 +1068,10 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "rem:lagrange-resolvents",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "brings-surface",
@@ -1011,9 +1080,10 @@
       "tgt_chapter": "mass-endomorphism",
       "tgt_label": "def:mass-identity",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "brings-surface",
@@ -1022,9 +1092,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:reidemeister-mass-invariance",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "brings-surface",
@@ -1033,42 +1104,10 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "rem:lagrange-resolvents",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
-    },
-    {
-      "src_chapter": "brings-surface",
-      "src_label": "prop:inter-nucleon-channel-color-tube",
-      "src_kind": "proposition",
-      "tgt_chapter": "particle-interactions",
-      "tgt_label": "def:categorical-neutron",
-      "tgt_kind": "definition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "brings-surface",
-      "src_label": "prop:inter-nucleon-channel-color-tube",
-      "src_kind": "proposition",
-      "tgt_chapter": "climax-volume-mass",
-      "tgt_label": "def:knot-operator-energy",
-      "tgt_kind": "definition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "brings-surface",
-      "src_label": "prop:inter-nucleon-channel-color-tube",
-      "src_kind": "proposition",
-      "tgt_chapter": "particle-interactions",
-      "tgt_label": "def:categorical-proton",
-      "tgt_kind": "definition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "brings-surface",
@@ -1077,20 +1116,22 @@
       "tgt_chapter": "particle-interactions",
       "tgt_label": "prop:atom-knot-exists",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "brings-surface",
-      "src_label": "prop:c-from-color-flavor-swap",
+      "src_label": "prop:inter-nucleon-channel-color-tube",
       "src_kind": "proposition",
       "tgt_chapter": "particle-interactions",
       "tgt_label": "def:categorical-neutron",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "brings-surface",
@@ -1099,20 +1140,10 @@
       "tgt_chapter": "particle-interactions",
       "tgt_label": "prop:cpt-orbit-closure-density",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "brings-surface",
-      "src_label": "prop:c-from-color-flavor-swap",
-      "src_kind": "proposition",
-      "tgt_chapter": "particle-interactions",
-      "tgt_label": "def:categorical-proton",
-      "tgt_kind": "definition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "brings-surface",
@@ -1121,9 +1152,10 @@
       "tgt_chapter": "q-geometric-langlands",
       "tgt_label": "ex:tannaka-krein-su2",
       "tgt_kind": "example",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "brings-surface",
@@ -1132,9 +1164,10 @@
       "tgt_chapter": "mass-endomorphism",
       "tgt_label": "def:mass-identity",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1143,20 +1176,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "thm:knot-mass-formula-unified",
       "tgt_kind": "theorem",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:rho-k-pair-gen-canonical-form",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "thm:markov-trace-factorization",
-      "tgt_kind": "theorem",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later theorem \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1165,9 +1188,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:per-braid-mass-tower",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1176,9 +1200,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "rem:ck-extraction-from-algebraic-rules",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1187,9 +1212,22 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:q-beta-categorical-precision-ladder",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+    },
+    {
+      "src_chapter": "mass-endomorphism",
+      "src_label": "rem:chi-v3-closed-form-proof",
+      "src_kind": "remark",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "prop:hecke-1d-irrep-closed-form-character",
+      "tgt_kind": "proposition",
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1198,9 +1236,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "rem:typed-b3-sub-braid-extraction",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1209,20 +1248,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:hecke-markov-transition",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:tau-M-asymptotic-rep-theory",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:habiro-residue-sum-equivalence",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1231,20 +1260,22 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:hoefsmit-V21-cos-symmetrization",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
-      "src_label": "prop:explicit-central-idempotent",
+      "src_label": "prop:tau-M-asymptotic-rep-theory",
       "src_kind": "proposition",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:bring-figure-eight-depth-2-witness",
+      "tgt_label": "prop:habiro-residue-sum-equivalence",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1253,9 +1284,22 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:jucys-murphy-central-elements-qou",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
+    },
+    {
+      "src_chapter": "mass-endomorphism",
+      "src_label": "prop:explicit-central-idempotent",
+      "src_kind": "proposition",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "prop:bring-figure-eight-depth-2-witness",
+      "tgt_kind": "proposition",
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1264,9 +1308,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:bring-trilog-depth-3-witness",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1275,9 +1320,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:graded-trace-residue-split",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1286,53 +1332,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "rem:vc-as-depth-2-instance",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:categorical-neutrality-saturated-shells",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "thm:wedderburn-mass-formula",
-      "tgt_kind": "theorem",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:categorical-neutrality-saturated-shells",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "def:hecke-mass-element",
-      "tgt_kind": "definition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:categorical-neutrality-saturated-shells",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:hoefsmit-seminormal-form",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:categorical-chain-convergence-mechanisms",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:q-beta-categorical-precision-ladder",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1341,9 +1344,22 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:markov-trace-frobenius-selection",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
+    },
+    {
+      "src_chapter": "mass-endomorphism",
+      "src_label": "prop:categorical-chain-convergence-mechanisms",
+      "src_kind": "proposition",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "prop:q-beta-categorical-precision-ladder",
+      "tgt_kind": "proposition",
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1352,42 +1368,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:alpha-shift-torus-knot",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "rem:phi-n-global-section",
-      "src_kind": "remark",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "def:hecke-mass-element",
-      "tgt_kind": "definition",
-      "category": "C",
-      "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:mass-endomorphism",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:brane-tower-z-habiro",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:mass-endomorphism",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "def:z-habiro-ring",
-      "tgt_kind": "definition",
-      "category": "A",
-      "waived": true,
-      "reason": "foundational object intentionally developed late (FOUNDATIONAL_LATE allowlist)"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1396,20 +1380,22 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "def:qz-bicompletion",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-foundational",
+      "severity": "logical",
       "waived": true,
-      "reason": "foundational object intentionally developed late (FOUNDATIONAL_LATE allowlist)"
+      "reason": "LOGICAL forward ref, but target is on the FOUNDATIONAL_LATE allowlist (an object intentionally used early, formally developed late \u2014 author-sanctioned)"
     },
     {
       "src_chapter": "mass-endomorphism",
       "src_label": "prop:mass-endomorphism",
       "src_kind": "proposition",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "def:archimedean-realization-functor",
-      "tgt_kind": "definition",
-      "category": "A",
-      "waived": true,
-      "reason": "foundational object intentionally developed late (FOUNDATIONAL_LATE allowlist)"
+      "tgt_label": "prop:brane-tower-z-habiro",
+      "tgt_kind": "proposition",
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1418,20 +1404,22 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:hecke-mass-trace",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
       "src_label": "prop:mass-endomorphism",
       "src_kind": "proposition",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "def:habiro-ring",
+      "tgt_label": "def:archimedean-realization-functor",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-foundational",
+      "severity": "logical",
       "waived": true,
-      "reason": "foundational object intentionally developed late (FOUNDATIONAL_LATE allowlist)"
+      "reason": "LOGICAL forward ref, but target is on the FOUNDATIONAL_LATE allowlist (an object intentionally used early, formally developed late \u2014 author-sanctioned)"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1440,9 +1428,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "rem:ck-extraction-from-algebraic-rules",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1451,9 +1440,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:frobenius-gram-matrix",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1462,31 +1452,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:full-pole-structure-mass-trace",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:qbeta-c-k-closed-forms",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:q-beta-categorical-precision-ladder",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-endomorphism",
-      "src_label": "prop:qbeta-c-k-closed-forms",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:q-beta-c3-hopf-three-fold-markov",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1495,9 +1464,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "def:markov-axiom-recursive-ascent",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-endomorphism",
@@ -1506,9 +1476,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:per-nucleon-shift-additive-linearity",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1517,9 +1488,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:confinement-sdp",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1528,9 +1500,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:building-block-knots",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1539,9 +1512,22 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "ex:crossing-energy-trefoil",
       "tgt_kind": "example",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+    },
+    {
+      "src_chapter": "particle-interactions",
+      "src_label": "prop:wigner-su4-from-spin-isospin",
+      "src_kind": "proposition",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "prop:atom-knot-mass-derivation",
+      "tgt_kind": "proposition",
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1550,20 +1536,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:isospin-from-canonical-bowtie",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "prop:wigner-su4-from-spin-isospin",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:atom-knot-mass-derivation",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1572,9 +1548,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:ground-state-ordering",
       "tgt_kind": "proposition",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a table block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1583,9 +1560,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:deuterium-derived-binding",
       "tgt_kind": "proposition",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a table block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1594,20 +1572,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:wedderburn-weight-canonical",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "rem:deuteron-first-principles",
-      "src_kind": "remark",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:schur-weyl-mass-decomposition",
-      "tgt_kind": "proposition",
-      "category": "C",
-      "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1616,20 +1584,22 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "rem:q-character-closes-parity-gap",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
-      "src_label": "prop:lepton-meson-torus-knot-dictionary",
-      "src_kind": "proposition",
+      "src_label": "rem:deuteron-first-principles",
+      "src_kind": "remark",
       "tgt_chapter": "mass-theory",
-      "tgt_label": "conj:meson-volume-conjecture",
-      "tgt_kind": "conjecture",
-      "category": "D",
+      "tgt_label": "prop:schur-weyl-mass-decomposition",
+      "tgt_kind": "proposition",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1638,9 +1608,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:confinement-sdp",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1649,9 +1620,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:beta-decay-transfer-matrix",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1660,9 +1632,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:lifted-crossing-locality",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1671,9 +1644,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:frobenius-gram-matrix",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1682,9 +1656,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "rem:helium-hopf-diagram",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1693,9 +1668,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:beta-decay-transfer-matrix",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1704,20 +1680,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "def:Q-value-transition",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "prop:box-braid-irreducibility",
-      "src_kind": "proposition",
-      "tgt_chapter": "observations",
-      "tgt_label": "rem:virtual-particles-exceptional-divisor",
-      "tgt_kind": "remark",
-      "category": "D",
-      "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1726,9 +1692,22 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:electron-immortality",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "particle-interactions",
+      "src_label": "prop:box-braid-irreducibility",
+      "src_kind": "proposition",
+      "tgt_chapter": "observations",
+      "tgt_label": "rem:virtual-particles-exceptional-divisor",
+      "tgt_kind": "remark",
+      "category": "T-cite",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1737,9 +1716,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "thm:wedderburn-mass-formula",
       "tgt_kind": "theorem",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1748,9 +1728,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "rem:frobenius-packing-density",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1759,9 +1740,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:confinement-sdp",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1770,31 +1752,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:borromean-baryon-mass-formula",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "rem:delta-skein-substrate-identity",
-      "src_kind": "remark",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:three-calibration-inputs",
-      "tgt_kind": "proposition",
-      "category": "C",
-      "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "def:categorical-proton",
-      "src_kind": "definition",
-      "tgt_chapter": "climax-volume-mass",
-      "tgt_label": "def:knot-operator-energy",
-      "tgt_kind": "definition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1803,9 +1764,22 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "def:down-quark",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
+    },
+    {
+      "src_chapter": "particle-interactions",
+      "src_label": "def:categorical-proton",
+      "src_kind": "definition",
+      "tgt_chapter": "climax-volume-mass",
+      "tgt_label": "def:knot-operator-energy",
+      "tgt_kind": "definition",
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1814,9 +1788,10 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "prop:knot-operator-energy-exists",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1825,9 +1800,10 @@
       "tgt_chapter": "information-theory",
       "tgt_label": "def:information-speed-of-light",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1836,53 +1812,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:deconfinement-golden-threshold",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "prop:weinberg-angle-categorical",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:weak-spectral-completeness",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "prop:weinberg-angle-categorical",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:categorical-higgs-mechanism",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "prop:weinberg-angle-categorical",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:hoefsmit-ew-cell-content",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "prop:weinberg-angle-categorical",
-      "src_kind": "proposition",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:categorical-linking-operation",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1891,9 +1824,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:atom-knot-mass-derivation",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1902,9 +1836,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "def:quark-antiquark-production",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1913,9 +1848,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:p-from-braid-mirror",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1924,9 +1860,10 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "def:knot-operator-energy",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1935,9 +1872,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:torus-knot-shell-binding",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1946,20 +1884,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:skein-generation",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "prop:q-zero-stokes-region-identification",
-      "src_kind": "proposition",
-      "tgt_chapter": "q-geometric-langlands",
-      "tgt_label": "prop:quantum-langlands-dual",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1968,9 +1896,10 @@
       "tgt_chapter": "stochastic-mechanics",
       "tgt_label": "prop:phi-q-aj-machinery-identification",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -1979,9 +1908,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:ground-state-ordering",
       "tgt_kind": "proposition",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a table block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -1990,9 +1920,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "rem:frobenius-packing-density",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -2001,9 +1932,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:gs-spectral-sum-finite",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -2012,9 +1944,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "def:quark-antiquark-production",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -2023,9 +1956,10 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "def:coulomb-charge",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -2034,20 +1968,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "rem:figure-8-archimedean-illustration",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
-    },
-    {
-      "src_chapter": "particle-interactions",
-      "src_label": "rem:figure-8-muon-mass-cross-check",
-      "src_kind": "remark",
-      "tgt_chapter": "mass-theory",
-      "tgt_label": "prop:borromean-baryon-mass-formula",
-      "tgt_kind": "proposition",
-      "category": "C",
-      "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -2056,9 +1980,22 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:three-calibration-inputs",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+    },
+    {
+      "src_chapter": "particle-interactions",
+      "src_label": "rem:figure-8-muon-mass-cross-check",
+      "src_kind": "remark",
+      "tgt_chapter": "mass-theory",
+      "tgt_label": "prop:borromean-baryon-mass-formula",
+      "tgt_kind": "proposition",
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -2067,9 +2004,10 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "def:local-shadow-ordering",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -2078,9 +2016,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:confinement-sdp",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -2089,9 +2028,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:frobenius-gram-matrix",
       "tgt_kind": "proposition",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "particle-interactions",
@@ -2100,9 +2040,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:q-integer-mass-formula",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -2111,9 +2052,10 @@
       "tgt_chapter": "molecular-construction",
       "tgt_label": "def:molecular-braid",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -2122,9 +2064,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "prop:geom-yekutieli-alignment",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -2133,9 +2076,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "def:transfer-matrix-operator",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "particle-interactions",
@@ -2144,9 +2088,10 @@
       "tgt_chapter": "climax-volume-mass",
       "tgt_label": "def:knot-operator-energy",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "climax-volume-mass",
@@ -2155,9 +2100,10 @@
       "tgt_chapter": "mass-theory",
       "tgt_label": "ex:topological-mass-trefoil",
       "tgt_kind": "example",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a example block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "climax-volume-mass",
@@ -2166,9 +2112,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:shell-structure-eigenvalues",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "climax-volume-mass",
@@ -2177,9 +2124,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "prop:local-substrate-q",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "climax-volume-mass",
@@ -2188,9 +2136,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:nuclear-spin-parity",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "climax-volume-mass",
@@ -2199,9 +2148,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:building-block-knots",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "mass-theory",
@@ -2210,9 +2160,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "prop:classical-limit-stpart",
       "tgt_kind": "proposition",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2221,9 +2172,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:em-coupling-bring-zero-mode",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-theory",
@@ -2232,31 +2184,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "rem:transcendental-accounting",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
-    },
-    {
-      "src_chapter": "mass-theory",
-      "src_label": "def:categorical-transfer-matrix",
-      "src_kind": "definition",
-      "tgt_chapter": "information-theory",
-      "tgt_label": "def:operational-entropy",
-      "tgt_kind": "definition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-theory",
-      "src_label": "def:categorical-transfer-matrix",
-      "src_kind": "definition",
-      "tgt_chapter": "measurement-observation",
-      "tgt_label": "rem:observation-braid",
-      "tgt_kind": "remark",
-      "category": "D",
-      "waived": true,
-      "reason": "narrative preview"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2265,9 +2196,34 @@
       "tgt_chapter": "information-theory",
       "tgt_label": "rem:jet-planck-steps",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "mass-theory",
+      "src_label": "def:categorical-transfer-matrix",
+      "src_kind": "definition",
+      "tgt_chapter": "measurement-observation",
+      "tgt_label": "rem:observation-braid",
+      "tgt_kind": "remark",
+      "category": "T-cite",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
+    },
+    {
+      "src_chapter": "mass-theory",
+      "src_label": "def:categorical-transfer-matrix",
+      "src_kind": "definition",
+      "tgt_chapter": "information-theory",
+      "tgt_label": "def:operational-entropy",
+      "tgt_kind": "definition",
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2276,9 +2232,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:alpha-em-shift-multiplicative-chain",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2287,9 +2244,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "prop:gravity-spectral-prefactor",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2298,9 +2256,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "rem:em-coupling-chern-simons",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-theory",
@@ -2309,9 +2268,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "rem:hydrogen-orbitals",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "mass-theory",
@@ -2320,9 +2280,10 @@
       "tgt_chapter": "stochastic-mechanics",
       "tgt_label": "rem:q-beta-gamma-gamma-canonical-derivation",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "mass-theory",
@@ -2331,20 +2292,10 @@
       "tgt_chapter": "information-theory",
       "tgt_label": "def:information-theoretic-time",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
-    },
-    {
-      "src_chapter": "mass-theory",
-      "src_label": "rem:mass-tower-deeper-fillers",
-      "src_kind": "remark",
-      "tgt_chapter": "predicted-spectra",
-      "tgt_label": "rem:bloch-wigner-mathlib-filler",
-      "tgt_kind": "remark",
-      "category": "D",
-      "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-theory",
@@ -2353,9 +2304,22 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:type-b-folded-crystal-combinatorics",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+    },
+    {
+      "src_chapter": "mass-theory",
+      "src_label": "rem:mass-tower-deeper-fillers",
+      "src_kind": "remark",
+      "tgt_chapter": "predicted-spectra",
+      "tgt_label": "rem:bloch-wigner-mathlib-filler",
+      "tgt_kind": "remark",
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-theory",
@@ -2364,9 +2328,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "rem:transcendental-accounting",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2375,9 +2340,10 @@
       "tgt_chapter": "molecular-construction",
       "tgt_label": "prop:palindromicity-orbital-type",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2386,20 +2352,10 @@
       "tgt_chapter": "information-theory",
       "tgt_label": "prop:photon-threading-mass",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
-    },
-    {
-      "src_chapter": "mass-theory",
-      "src_label": "prop:lepton-mass-tower-canonical",
-      "src_kind": "proposition",
-      "tgt_chapter": "observations",
-      "tgt_label": "rem:skein-mass-relation",
-      "tgt_kind": "remark",
-      "category": "D",
-      "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-theory",
@@ -2408,9 +2364,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:skein-mass-relation",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "mass-theory",
@@ -2419,9 +2376,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "prf:terminal-resolution",
       "tgt_kind": "proof",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proof \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2430,9 +2388,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:confinement-curvature-rank",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "mass-theory",
@@ -2441,9 +2400,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "prop:three-calibration-discipline",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-theory",
@@ -2452,9 +2412,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:photon-channel-wedderburn-chain",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "mass-theory",
@@ -2463,9 +2424,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "rem:body-asymptotics-catalog",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2474,20 +2436,10 @@
       "tgt_chapter": "stochastic-mechanics",
       "tgt_label": "def:classical-limit-functor",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-theory",
-      "src_label": "prop:force-carrier-intertwining-correspondence",
-      "src_kind": "proposition",
-      "tgt_chapter": "molecular-construction",
-      "tgt_label": "prop:h2-lp-dual-binding",
-      "tgt_kind": "proposition",
-      "category": "A",
-      "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2496,20 +2448,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:e-hartree-categorical-derivation",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-theory",
-      "src_label": "rem:hopf-link-non-magic",
-      "src_kind": "remark",
-      "tgt_chapter": "predicted-spectra",
-      "tgt_label": "prop:knot-operator-selection",
-      "tgt_kind": "proposition",
-      "category": "C",
-      "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2518,31 +2460,22 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:torus-knot-shell-binding",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-theory",
-      "src_label": "rem:vc-as-depth-2-instance",
+      "src_label": "rem:hopf-link-non-magic",
       "src_kind": "remark",
-      "tgt_chapter": "appendix-surreals",
-      "tgt_label": "rem:algebraic-core-survives",
-      "tgt_kind": "remark",
-      "category": "F",
-      "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
-    },
-    {
-      "src_chapter": "mass-theory",
-      "src_label": "prop:bring-trilog-imaginary-tate-rational",
-      "src_kind": "proposition",
-      "tgt_chapter": "appendix-surreals",
-      "tgt_label": "prop:borel-partial-resolution",
+      "tgt_chapter": "predicted-spectra",
+      "tgt_label": "prop:knot-operator-selection",
       "tgt_kind": "proposition",
-      "category": "F",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-theory",
@@ -2551,9 +2484,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "prop:qou-infra-discharges-goncharov-zeta5",
       "tgt_kind": "proposition",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2562,9 +2496,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:quantum-dilogarithm-volume",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2573,9 +2508,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "prop:flavor-split-substrate",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2584,9 +2520,10 @@
       "tgt_chapter": "appendix-knot-periodic-table",
       "tgt_label": "prop:recursive-atom-knot-atlas",
       "tgt_kind": "proposition",
-      "category": "F",
+      "category": "S-appendix",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is an appendix \u2014 appendices are terminal; the main text may reference them forward"
     },
     {
       "src_chapter": "mass-theory",
@@ -2595,9 +2532,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:hyperbolic-volume-transcendence",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2606,20 +2544,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:em-coupling-bring-zero-mode",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
-    },
-    {
-      "src_chapter": "mass-theory",
-      "src_label": "prop:gb-depth-period-correspondence",
-      "src_kind": "proposition",
-      "tgt_chapter": "appendix-surreals",
-      "tgt_label": "lem:surreal-squeeze",
-      "tgt_kind": "lemma",
-      "category": "F",
-      "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2628,9 +2556,22 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "rem:algebraic-core-survives",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
+    },
+    {
+      "src_chapter": "mass-theory",
+      "src_label": "prop:gb-depth-period-correspondence",
+      "src_kind": "proposition",
+      "tgt_chapter": "appendix-surreals",
+      "tgt_label": "lem:surreal-squeeze",
+      "tgt_kind": "lemma",
+      "category": "S-surreal",
+      "severity": "structural",
+      "waived": true,
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2639,9 +2580,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "prop:flavor-split-substrate",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2650,9 +2592,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "rem:body-asymptotics-catalog",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2661,9 +2604,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "cor:gauge-coupling-uniqueness",
       "tgt_kind": "corollary",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "mass-theory",
@@ -2672,9 +2616,10 @@
       "tgt_chapter": "predicted-spectra",
       "tgt_label": "prop:knot-operator-selection",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2683,9 +2628,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "rem:body-asymptotics-catalog",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "mass-theory",
@@ -2694,9 +2640,10 @@
       "tgt_chapter": "measurement-observation",
       "tgt_label": "def:bundle-isotopy-equivalence",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "mass-theory",
@@ -2705,9 +2652,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "rem:b1-current-status",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "predicted-spectra",
@@ -2716,9 +2664,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "ex:hydrogen-knot-structure",
       "tgt_kind": "example",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "predicted-spectra",
@@ -2727,9 +2676,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:golden-ratio-degeneration",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "predicted-spectra",
@@ -2738,9 +2688,10 @@
       "tgt_chapter": "molecular-construction",
       "tgt_label": "prop:ilp-covalent-bond",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "predicted-spectra",
@@ -2749,9 +2700,10 @@
       "tgt_chapter": "molecular-construction",
       "tgt_label": "prop:h2-lp-dual-binding",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "predicted-spectra",
@@ -2760,9 +2712,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:valley-table",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "source is a simulator block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "predicted-spectra",
@@ -2771,9 +2724,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "prop:borromean-quark",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "predicted-spectra",
@@ -2782,20 +2736,10 @@
       "tgt_chapter": "observations",
       "tgt_label": "rem:deconfinement-golden-threshold",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
-    },
-    {
-      "src_chapter": "observations",
-      "src_label": "rem:g-q-closed-form",
-      "src_kind": "remark",
-      "tgt_chapter": "information-theory",
-      "tgt_label": "rem:regime-table",
-      "tgt_kind": "remark",
-      "category": "E",
-      "waived": true,
-      "reason": "observational / physical-realization chapter citing upstream theory (cross-Part story arc)"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "observations",
@@ -2804,9 +2748,22 @@
       "tgt_chapter": "information-theory",
       "tgt_label": "def:gravitational-constant",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
+    },
+    {
+      "src_chapter": "observations",
+      "src_label": "rem:g-q-closed-form",
+      "src_kind": "remark",
+      "tgt_chapter": "information-theory",
+      "tgt_label": "rem:regime-table",
+      "tgt_kind": "remark",
+      "category": "T-narrative",
+      "severity": "storytelling",
+      "waived": true,
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "observations",
@@ -2815,9 +2772,10 @@
       "tgt_chapter": "fluid-dynamics",
       "tgt_label": "prop:discrete-vortex-spectrum",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "observations",
@@ -2826,9 +2784,10 @@
       "tgt_chapter": "fluid-dynamics",
       "tgt_label": "prop:leray-profile",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "observations",
@@ -2837,9 +2796,10 @@
       "tgt_chapter": "fluid-dynamics",
       "tgt_label": "prop:blowup-yekutieli",
       "tgt_kind": "proposition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "observations",
@@ -2848,9 +2808,10 @@
       "tgt_chapter": "information-theory",
       "tgt_label": "prop:q-heat-kernel-peter-weyl",
       "tgt_kind": "proposition",
-      "category": "E",
-      "waived": true,
-      "reason": "observational / physical-realization chapter citing upstream theory (cross-Part story arc)"
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "observations",
@@ -2859,20 +2820,10 @@
       "tgt_chapter": "fluid-dynamics",
       "tgt_label": "prop:bn-mtc-action",
       "tgt_kind": "proposition",
-      "category": "E",
-      "waived": true,
-      "reason": "observational / physical-realization chapter citing upstream theory (cross-Part story arc)"
-    },
-    {
-      "src_chapter": "observations",
-      "src_label": "prop:borromean-quark",
-      "src_kind": "proposition",
-      "tgt_chapter": "fluid-dynamics",
-      "tgt_label": "def:observable-mtc",
-      "tgt_kind": "definition",
-      "category": "E",
-      "waived": true,
-      "reason": "observational / physical-realization chapter citing upstream theory (cross-Part story arc)"
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "observations",
@@ -2881,9 +2832,10 @@
       "tgt_chapter": "fluid-dynamics",
       "tgt_label": "prop:ns-obstruction-tower",
       "tgt_kind": "proposition",
-      "category": "E",
-      "waived": true,
-      "reason": "observational / physical-realization chapter citing upstream theory (cross-Part story arc)"
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "observations",
@@ -2892,9 +2844,10 @@
       "tgt_chapter": "fluid-dynamics",
       "tgt_label": "rem:vortex-intensity-modes",
       "tgt_kind": "remark",
-      "category": "E",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "observational / physical-realization chapter citing upstream theory (cross-Part story arc)"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "observations",
@@ -2903,9 +2856,10 @@
       "tgt_chapter": "information-theory",
       "tgt_label": "thm:mass-energy-equivalence",
       "tgt_kind": "theorem",
-      "category": "E",
-      "waived": true,
-      "reason": "observational / physical-realization chapter citing upstream theory (cross-Part story arc)"
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later theorem \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "observations",
@@ -2914,9 +2868,10 @@
       "tgt_chapter": "molecular-construction",
       "tgt_label": "prop:shell-closure-nf-term-count",
       "tgt_kind": "proposition",
-      "category": "E",
-      "waived": true,
-      "reason": "observational / physical-realization chapter citing upstream theory (cross-Part story arc)"
+      "category": "L-dependency",
+      "severity": "logical",
+      "waived": false,
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "observations",
@@ -2925,9 +2880,10 @@
       "tgt_chapter": "organic-chemistry",
       "tgt_label": "def:molecular-hopf-ring",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "fluid-dynamics",
@@ -2936,9 +2892,10 @@
       "tgt_chapter": "information-theory",
       "tgt_label": "def:information-speed-of-light",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "fluid-dynamics",
@@ -2947,9 +2904,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "rem:body-asymptotics-catalog",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "stochastic-mechanics",
@@ -2958,9 +2916,10 @@
       "tgt_chapter": "q-geometric-langlands",
       "tgt_label": "def:local-q-zeta-function",
       "tgt_kind": "definition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a definition relies on a later definition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "stochastic-mechanics",
@@ -2969,9 +2928,10 @@
       "tgt_chapter": "q-geometric-langlands",
       "tgt_label": "thm:hasse-weil-bound",
       "tgt_kind": "theorem",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "stochastic-mechanics",
@@ -2980,9 +2940,10 @@
       "tgt_chapter": "q-geometric-langlands",
       "tgt_label": "cor:spectral-half-line",
       "tgt_kind": "corollary",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a theorem relies on a later corollary \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "stochastic-mechanics",
@@ -2991,9 +2952,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "prop:b1-torus-knot-rows-theorem",
       "tgt_kind": "proposition",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "stochastic-mechanics",
@@ -3002,9 +2964,10 @@
       "tgt_chapter": "q-geometric-langlands",
       "tgt_label": "prop:quantum-langlands-dual",
       "tgt_kind": "proposition",
-      "category": "A",
+      "category": "L-dependency",
+      "severity": "logical",
       "waived": false,
-      "reason": "proof-dependency: provable block uses later provable block"
+      "reason": "LOGICAL forward ref: a proposition relies on a later proposition \u2014 the reader must know future content to follow the argument here. THIS IS THE DEFECT."
     },
     {
       "src_chapter": "stochastic-mechanics",
@@ -3013,9 +2976,10 @@
       "tgt_chapter": "appendix-surreals",
       "tgt_label": "rem:calculus-up-to-epsilon",
       "tgt_kind": "remark",
-      "category": "F",
+      "category": "S-surreal",
+      "severity": "structural",
       "waived": true,
-      "reason": "appendix / surreal / framing-gallery target"
+      "reason": "target is the surreal-number lift \u2014 author-sanctioned terminal forward reference (the only accepted logical forward-ref exception)"
     },
     {
       "src_chapter": "information-theory",
@@ -3024,9 +2988,10 @@
       "tgt_chapter": "measurement-observation",
       "tgt_label": "def:bundle-initial-conditions",
       "tgt_kind": "definition",
-      "category": "C",
+      "category": "T-narrative",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "remark interprets a later-proved result; interpretation placed in its natural chapter"
+      "reason": "source is a remark block \u2014 it motivates / narrates / interprets the target; the reader is not asked to rely on the target's content to follow an argument"
     },
     {
       "src_chapter": "information-theory",
@@ -3035,9 +3000,10 @@
       "tgt_chapter": "measurement-observation",
       "tgt_label": "rem:bundle-category",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     },
     {
       "src_chapter": "information-theory",
@@ -3046,9 +3012,10 @@
       "tgt_chapter": "measurement-observation",
       "tgt_label": "rem:bundle-category",
       "tgt_kind": "remark",
-      "category": "D",
+      "category": "T-cite",
+      "severity": "storytelling",
       "waived": true,
-      "reason": "narrative preview"
+      "reason": "logical source cites a later remark (data table / diagram / example) \u2014 a pointer, not an argument dependency"
     }
   ]
 }
