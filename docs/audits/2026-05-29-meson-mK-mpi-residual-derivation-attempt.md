@@ -2,10 +2,11 @@
 
 ## Context
 
-m_K/m_π is the **only** observable not meeting its 100× experimental
-target (`per-observable-100x-status.witness.json`): 290 ppm vs a
-264 ppb target (~1000× short). Every other observable beats 100×
-(m_p at 0.39 ppQ, m_n, Q_β, Δ_pn, m_e, m_μ).
+m_K/m_π is the meson mass-ratio observable, at 290 ppm vs a 264 ppb
+100× target. (Post-#1416: the dashboard is **2/7** — m_e + m_p — after
+the CODATA-fitted ppb-closing towers were removed; the earlier "6/7 /
+m_p 0.39 ppQ" was the pre-de-fit state. The m_K/m_π *strong-sector*
+analysis below is unaffected by that de-fit.)
 
 The canonical derivation is
 
@@ -76,6 +77,20 @@ construction does not yet exist in the framework.
 2. The genuine closure path is the **EM/isospin-breaking
    correction** (Path 2), not an algebraic tower coefficient
    (Path 1, ruled out here).
-3. Until that EM layer is derived, the headline precision result
-   stands as **6/7 observables beat 100×; m_p at 0.39 ppQ**, with
-   m_K/m_π the documented open frontier.
+3. m_K/m_π is the documented open frontier on the meson side; the
+   overall dashboard is 2/7 post-#1416 (not 6/7).
+
+## Corroborating merged work (2026-05-29)
+
+- **#1396 (merged) — derived squared-ratio (GMOR reframe).** The
+  *linear* m_K/m_π is the wrong target; the derived strong-sector
+  leading term is `m_K²/m_π² = [3]_q·[4]_q = [2]_q + [4]_q + [6]_q`
+  (203 ppm, **zero fitted integers**), a q-Clebsch–Gordan fusion. So
+  Path 1's "linear tower is a fit" is right, and GMOR (squared) is the
+  derived object; the residual 203 ppm ≈ the linear 290 ppm is the
+  EM/NLO-χPT piece — consistent with Path 2.
+- **#1417 — the EM channel is derived.** `crossing-energy-decomposition`
+  identifies `sinh(ln q)` as the Coulomb/EM channel
+  (`tanh(ln q) ≈ α_EM`). So the EM closure (Path 2) has a concrete
+  derived term to build on: feed the framework's α_EM
+  (`prop:em-coupling-bring-zero-mode`) through this sinh channel.

@@ -1,5 +1,14 @@
 # 1 ppQ Workplan — Reassessment (2026-05-27, updated 2026-05-28)
 
+> **Superseded by #1416 (merged, 2026-05-29).** The "0.39 ppQ / 6-of-6"
+> status below was the *pre-de-fit* state. #1416 found the ppb-closing
+> towers (m_p `(1+46u⁴)`, Q_β c_k, d₇=J³ rungs) were **CODATA-fits** and
+> removed them. The honest dashboard is now **2/7** (m_e + m_p). The
+> Habiro-*exact* (derived) m_p is +1.84%; the derived **spectral
+> correction** (PR #1421) closes m_p to 130 ppm without a tuned
+> coefficient. Treat the per-row "0.39 ppQ" / tower-coefficient entries
+> here as historical pending a full rewrite by the workplan owner.
+
 ## Current precision status
 
 | Observable | Error | 100× target | Status |
