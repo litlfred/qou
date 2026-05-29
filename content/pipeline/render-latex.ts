@@ -64,6 +64,78 @@ function escapeLatexSegment(text: string): string {
 }
 
 /**
+ * Transliterate Unicode that lacks a T1-font glyph into ASCII for use
+ * inside `\begin{verbatim}` blocks.
+ *
+ * `\newunicodechar` mappings (defined in main.tex) are DISABLED inside
+ * `verbatim` (its catcode regime makes every char "other"), so a raw
+ * Greek letter / math operator / arrow there has no glyph and aborts
+ * pdflatex with `Unicode character … not set up for use with LaTeX`.
+ * Fenced code blocks in the content are often ASCII-art pipeline
+ * diagrams that mix in such symbols; transliterating them keeps the
+ * diagram renderable. Latin-1 accented letters and `§` are NOT mapped
+ * — T1 has glyphs for them, so they render fine in verbatim.
+ */
+const VERBATIM_TRANSLIT: Record<string, string> = {
+  // Greek lowercase
+  "α": "alpha", "β": "beta", "γ": "gamma", "δ": "delta", "ε": "eps",
+  "ζ": "zeta", "η": "eta", "θ": "theta", "ι": "iota", "κ": "kappa",
+  "λ": "lambda", "μ": "mu", "ν": "nu", "ξ": "xi", "ο": "o", "π": "pi",
+  "ρ": "rho", "σ": "sigma", "ς": "sigma", "τ": "tau", "υ": "upsilon",
+  "φ": "phi", "ϕ": "phi", "χ": "chi", "ψ": "psi", "ω": "omega", "ϱ": "rho",
+  // Greek uppercase
+  "Γ": "Gamma", "Δ": "Delta", "Θ": "Theta", "Λ": "Lambda", "Ξ": "Xi",
+  "Π": "Pi", "Σ": "Sum", "Φ": "Phi", "Ψ": "Psi", "Ω": "Omega",
+  // arrows
+  "→": "->", "←": "<-", "↔": "<->", "↦": "|->", "⟶": "-->", "⟵": "<--",
+  "⟹": "==>", "⇒": "=>", "⇐": "<=", "⇔": "<=>", "↓": "v", "↑": "^",
+  "↘": "\\", "↙": "/",
+  // operators / relations
+  "⊗": "(x)", "⊕": "(+)", "⊙": "(.)", "≅": "~=", "≃": "~=", "≈": "~=",
+  "∼": "~", "≡": "==", "≠": "!=", "≤": "<=", "≥": ">=", "≺": "<", "≻": ">",
+  "∈": "in", "∉": "not-in", "∋": "owns", "⊂": "subset", "⊆": "subseteq",
+  "⊢": "|-", "⊨": "|=", "×": "x", "·": ".", "∘": "o", "√": "sqrt",
+  "∫": "int", "∂": "d", "∇": "grad", "∞": "inf", "±": "+/-", "∓": "-/+",
+  "∧": "and", "∨": "or", "¬": "not", "∀": "forall", "∃": "exists",
+  "∅": "{}", "∪": "union", "∩": "intersect", "⊥": "perp", "∥": "||",
+  "⌊": "|_", "⌋": "_|", "⌈": "|^", "⌉": "^|", "⟨": "<", "⟩": ">",
+  // blackboard / script (math alphabets — no T1 glyph)
+  "ℚ": "Q", "ℝ": "R", "ℤ": "Z", "ℂ": "C", "ℕ": "N", "ℍ": "H", "ℙ": "P",
+  "𝓑": "B", "𝐍": "N", "𝐨": "o", "𝟙": "1", "𝟘": "0",
+  // sub/superscripts
+  "⁻": "^-", "⁺": "^+", "⁰": "^0", "¹": "^1", "²": "^2", "³": "^3",
+  "⁴": "^4", "⁵": "^5", "⁶": "^6", "ⁿ": "^n",
+  "₀": "_0", "₁": "_1", "₂": "_2", "₃": "_3", "₄": "_4", "ₙ": "_n",
+  "ᵢ": "_i", "ⱼ": "_j", "ₖ": "_k",
+  // misc symbols lacking T1 glyphs
+  "■": "[#]", "□": "[]", "●": "(*)", "○": "( )", "★": "*", "•": "*",
+  "†": "+", "‡": "++", "≪": "<<", "≫": ">>", "↯": "lightning",
+  "ᘁ": "", "‾": "-", "−": "-", "⁄": "/",
+  // more subscripts/superscripts
+  "₅": "_5", "₆": "_6", "₇": "_7", "₈": "_8", "₉": "_9",
+  "⁷": "^7", "⁸": "^8", "⁹": "^9",
+  // script/blackboard letters + big operators
+  "ℏ": "hbar", "ℓ": "l", "℘": "P", "∏": "prod", "∑": "Sum", "∐": "coprod",
+  // dashes / ellipsis (T1 may render, but ASCII is always safe in code)
+  "–": "--", "—": "---", "…": "...", "‖": "||",
+  // box-drawing + triangles (ASCII-art frames)
+  "─": "-", "│": "|", "┌": "+", "┐": "+", "└": "+", "┘": "+",
+  "├": "+", "┤": "+", "┬": "+", "┴": "+", "┼": "+",
+  "═": "=", "║": "|", "╔": "+", "╗": "+", "╚": "+", "╝": "+",
+  "▲": "^", "►": ">", "▼": "v", "◄": "<", "△": "^", "▽": "v",
+  "◁": "<", "▷": ">", "➤": ">",
+};
+
+function transliterateForVerbatim(text: string): string {
+  let out = "";
+  for (const ch of text) {
+    out += VERBATIM_TRANSLIT[ch] ?? ch;
+  }
+  return out;
+}
+
+
+/**
  * Escape special LaTeX characters in titles, captions, etc.,
  * while preserving inline math (`$...$`) segments verbatim.
  *
@@ -312,8 +384,10 @@ function renderMdastNode(node: any): string {
         // Raw LaTeX passthrough
         return node.value;
       }
-      // Other code blocks → verbatim
-      return `\\begin{verbatim}\n${node.value}\n\\end{verbatim}`;
+      // Other code blocks → verbatim. Transliterate Unicode that has no
+      // T1 glyph (Greek / math / arrows): \newunicodechar is disabled
+      // inside verbatim, so such chars would abort pdflatex.
+      return `\\begin{verbatim}\n${transliterateForVerbatim(node.value)}\n\\end{verbatim}`;
 
     case "link": {
       const text = renderChildren(node).join("");
