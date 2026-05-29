@@ -73,8 +73,8 @@ WAIVED_CATEGORIES = {"C", "D", "E", "F"}
 
 def load_chapter_order():
     manifest = os.path.join(BASE, "quantum-observable-universe.ts")
-    with open(manifest) as f:
-        dirs = re.findall(r'dir:\s*"([^"]+)"', f.read())
+    with open(manifest, encoding="utf-8") as f:
+        dirs = re.findall(r"""dir:\s*["']([^"']+)["']""", f.read())
     return {d: i for i, d in enumerate(dirs)}, dirs
 
 
@@ -139,18 +139,18 @@ def main():
             if not fn.endswith(".ts") or fn == f"{ch}.ts":
                 continue
             try:
-                with open(os.path.join(ch_dir, fn)) as f:
+                with open(os.path.join(ch_dir, fn), encoding="utf-8") as f:
                     text = f.read()
             except OSError:
                 continue
-            lm = re.search(r'label:\s*"([^"]+)"', text)
+            lm = re.search(r"""label:\s*["']([^"']+)["']""", text)
             if not lm:
                 continue
             src_label = lm.group(1)
-            km = re.search(r"export default (\w+)\(", text)
+            km = re.search(r"export default\s+(\w+)\s*\(", text)
             src_kind = km.group(1) if km else "?"
             uses = re.findall(
-                r'"((?:def|prop|thm|lem|cor|conj|rem|ex|prf|sim|tbl):[\w-]+)"',
+                r"""["']((?:def|prop|thm|lem|cor|conj|rem|ex|prf|sim|tbl):[\w-]+)["']""",
                 text)
             for u in set(uses):
                 if u not in info:
