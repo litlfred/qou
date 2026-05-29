@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T18:07:26.580434+00:00",
-  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T16:14:10.462083+00:00",
+  "commitSha": "a8c92c96fef4175b72cbad456e1a495ddf78278b",
   "assertions": [
     {
       "name": "delta_n_squared_is_placeholder",
@@ -24,11 +24,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 13,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
-  "scriptHash": "8ea5866ad2bb",
-  "scriptCommitSha": "930a2dbf54159eedb46d94f5c1430c78ba71b6a8",
+  "scriptHash": "be751052d79a",
+  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Phase 1.8 audit per user directive: validate braid encodings of p and n, classify all knot operations (SDP / Lean / fitted / fallback / placeholder), track γγ pair-production per particle, and identify where the structural differences really are.  Findings: (1) Δ_n² is a placeholder (returns 1.0 always); (2) canonical_a_k for ³H/³He/⁴He has method:unknown in source witness; (3) framework's own fresh_derivation_pn_true_sdp.py documents that absolute m_p / m_n are NOT directly derivable — only differences project to observables — but Strategy-3 ignores this and predicts m_n directly, hence the −8.3% error.",
   "contentBlock": "prop:atomic-mass-gb-nf",
   "parameters": {
@@ -1173,13 +1179,13 @@
     },
     "tr_M_cross_check": {
       "proton": {
-        "strategy_3_tr_M": 1.6331535640480814,
+        "strategy_3_tr_M": NaN,
         "phase_1_6_closed_form": 1.6331535640480805,
         "markov_trace_assembly_chain": 1.0653062285923893,
         "axiomatic_content_block": 1.63315
       },
       "neutron": {
-        "strategy_3_tr_M": 1.2482482717548398,
+        "strategy_3_tr_M": NaN,
         "phase_1_6_closed_form": null,
         "axiomatic_content_block": "(σ₁⁷σ₂⁴ used for proton; udd encoding differs — needs separate closed form)"
       },

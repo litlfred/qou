@@ -1,8 +1,8 @@
 {
   "engine": "numpy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T03:19:23.623235+00:00",
-  "commitSha": "edc438d698314cce7488ddb97f0eaecd9fc67f14",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T16:28:42.739900+00:00",
+  "commitSha": "a8c92c96fef4175b72cbad456e1a495ddf78278b",
   "assertions": [
     {
       "name": "h2_coefficient_computed",
@@ -13,11 +13,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 27,
   "computation": "yekutieli-mi-h2-extraction",
   "scriptFile": "yekutieli_mi_h2_extraction.py",
   "scriptHash": "befcd2fd27ed",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "1309a2fac3c576dfe6791d7235c4430b73086bc8",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Yekutieli MI h² extraction: 6-step categorical derivation of the linking weight's h² coefficient from the CBH expansion of Riemann products on the Borromean surface's ideal-octahedral tessellation.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {

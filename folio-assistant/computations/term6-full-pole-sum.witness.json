@@ -1,15 +1,21 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T16:06:04.901119+00:00",
-  "commitSha": "4f2c130ae7371de321ef029831b6ec193b13692a",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T16:08:52.339412+00:00",
+  "commitSha": "a8c92c96fef4175b72cbad456e1a495ddf78278b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 39,
   "computation": "term6-full-pole-sum",
   "scriptFile": "term6_full_pole_sum.py",
   "scriptHash": "65aa9994b574",
   "scriptCommitSha": "9d801a155dc4a2aaba5408e12bc66b0b71c3a589",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Term 6 Mittag-Leffler full pole sum per prop:full-pole-structure-mass-trace. Computes Σ_{n≥2} Σ_{gcd(j,n)=1} r_n^{(j)}(T_w) / (q_0 − ζ_n^{(j)}) using symbolic Habiro residues + 1/(q_0 − ζ) kernel up to cutoff n_max=6. Upstream Habiro witness has proton, neutron, and deuteron; T, ³He, ⁴He+ pending — extension via habiro_coefficients_interpolate.py is the next step for A≥5 5–20% error assessment. Higher-order poles (e.g. deuteron at ζ_4 = ±i, where (u²+1)² appears in the u = sqrt(q) denominator) are now recovered via a chain-rule contour integral in u-space (_higher_order_q_residue_via_sqrt_sub); the deuteron Term-6 contribution that was previously emitted as 'incomplete' now resolves to ≈ 0.057 MeV.",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {

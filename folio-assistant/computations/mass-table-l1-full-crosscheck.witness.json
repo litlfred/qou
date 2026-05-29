@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-27T14:06:28.680723+00:00",
-  "commitSha": "47b92576adc40cc4a358eb3e8a34b7d5accd399f",
+  "computedAt": "2026-05-29T16:00:16.261466+00:00",
+  "commitSha": "a8c92c96fef4175b72cbad456e1a495ddf78278b",
   "assertions": [
     {
       "name": "all_exact_pass",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 13,
   "computation": "mass-table-l1-full-crosscheck",
   "scriptFile": "mass_table_l1_full_crosscheck.py",
   "scriptHash": "73f12aaf82d5",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "9834ff15abaac7e987a8969685b14cde055d41c6",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Full mass-table L1 cross-check: 5 exact identities at 10⁻⁴⁰ (X, b², 1-b², h·[5]_q, discriminant) plus cross-path m_p at 0.06 ppb. Both baryon and meson sectors verified.",
   "contentBlock": "prop:pion-half-figure-eight",

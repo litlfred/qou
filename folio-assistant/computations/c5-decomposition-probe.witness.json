@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-25T13:30:09.425124+00:00",
-  "commitSha": "8b93e508691aebcd6d2b0b4c0b41908b2b0d4f18",
+  "computedAt": "2026-05-29T15:54:14.328608+00:00",
+  "commitSha": "a8c92c96fef4175b72cbad456e1a495ddf78278b",
   "assertions": [
     {
       "name": "lean_quantum_two_squared_eq_skein_squared_plus_four",
@@ -38,16 +38,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 15,
   "computation": "c5-decomposition-probe",
   "scriptFile": "c5_decomposition_probe.py",
   "scriptHash": "e8b25417ecfb",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "ffeac433d5d2806d356cda07bdd1e1b9be3b450f",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Numerical cross-check of three c_5 closed-form identities from `c5-involution-leibniz-decomposition.lean`: (1) [2]_q² = h²+4, (2) b² = 1 - 1/[2]_q², (3) c_5 = -3/2 + 1/[2]_q² = -3/2 + 1/(h²+4). Closes the 'proven-but-unwired' gap identified post-PR #1252 audit for the highest-centrality (silver-ratio Q_β chain) Lean theorem lacking a production-compute witness.",
   "contentBlock": "prop:c5-involution-leibniz-decomposition",

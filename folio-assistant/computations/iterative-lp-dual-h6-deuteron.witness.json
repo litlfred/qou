@@ -1,8 +1,8 @@
 {
   "engine": "numpy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T22:08:36.208311+00:00",
-  "commitSha": "c748cff8f81fe8a3a87abf94980be44912522bea",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T16:16:19.881091+00:00",
+  "commitSha": "a8c92c96fef4175b72cbad456e1a495ddf78278b",
   "assertions": [
     {
       "name": "tr_M_cross_validation_within_1e-6",
@@ -25,12 +25,18 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 9,
   "computation": "iterative-lp-dual-h6-deuteron",
   "scriptFile": "iterative_lp_dual_h6_deuteron.py",
   "scriptHash": "988bc5330bb6",
-  "scriptCommitSha": "1600f63b8c6e33f540decb2d6651ad5e65637328",
-  "description": "Iterative LP-dual at H_6 for the deuteron \u03b2_D per term7-alpha5's prop:mass-formula-iterative-lp-dual.  Computes u^{(\u2113)*}(\u03b2_D) = m_e \u00b7 \u03a3_\u03bb y_\u03bb(q_0) \u00b7 c_\u2113(\u03bb) \u00b7 \u03c7^\u03bb(\u03b2_D) / [6]_q! for \u2113 \u2208 {0,\u2026,6} with y_\u03bb from y-lambda-mpfr-witness.json (50 dps, 11 partitions of 6) and \u03c7^\u03bb(\u03b2_D) computed numerically by applying the deuteron's atom_braid_word_3A(1,1) (23 crossings) to Hoefsmit seminormal matrices for each partition.  Cross-validates \u03a3_\u03bb y_\u03bb\u00b7\u03c7^\u03bb(\u03b2_D) against the closed-form |tr_M(\u03b2_D)| = 0.388 from wenzl_n6_closed_form.witness.json.  Reports \u03a3_\u2113 u^{(\u2113)*}(\u03b2_D) and compares to CODATA M_D, Z\u00b7m_p+N\u00b7m_n, AME B(D).",
+  "scriptCommitSha": "95a2883467c4c7a9fa64fc130987470e9d07ab20",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Iterative LP-dual at H_6 for the deuteron β_D per term7-alpha5's prop:mass-formula-iterative-lp-dual.  Computes u^{(ℓ)*}(β_D) = m_e · Σ_λ y_λ(q_0) · c_ℓ(λ) · χ^λ(β_D) / [6]_q! for ℓ ∈ {0,…,6} with y_λ from y-lambda-mpfr-witness.json (50 dps, 11 partitions of 6) and χ^λ(β_D) computed numerically by applying the deuteron's atom_braid_word_3A(1,1) (23 crossings) to Hoefsmit seminormal matrices for each partition.  Cross-validates Σ_λ y_λ·χ^λ(β_D) against the closed-form |tr_M(β_D)| = 0.388 from wenzl_n6_closed_form.witness.json.  Reports Σ_ℓ u^{(ℓ)*}(β_D) and compares to CODATA M_D, Z·m_p+N·m_n, AME B(D).",
   "contentBlock": "prop:mass-formula-iterative-lp-dual",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -180,14 +186,5 @@
     "sum_u_levels_MeV": 0.052510795273514585,
     "tr_M_check_at_q0": 0.38828647154771595,
     "tr_M_check_rel_err": 6.560543953728885e-15
-  },
-  "y0_star": null,
-  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "dual_obj": null,
-  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "duality_gap": null,
-  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "y_star": null,
-  "active_set": null,
-  "primal_obj": null
+  }
 }
