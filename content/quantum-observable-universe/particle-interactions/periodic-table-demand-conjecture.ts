@@ -2,6 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:periodic-table-demand",
+  interprets: "prop:demand-stability",
   title:
     "The valley of stability is the demand-minimizing locus in $(Z, N)$-space",
   lean: {

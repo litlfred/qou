@@ -39,6 +39,7 @@ import { remark } from "../../schema/builders";
  */
 export default remark({
   label: "rem:alpha-5-jm-central-empirical-findings",
+  interprets: "prop:jucys-murphy-central-elements-qou",
   title:
     "Empirical refutation of the simplest JM-central closed form for $\\alpha_5$",
   uses: [

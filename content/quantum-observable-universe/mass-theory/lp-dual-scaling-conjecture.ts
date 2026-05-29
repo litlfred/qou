@@ -75,6 +75,7 @@ import { remark } from "../../schema/builders";
  */
 export default remark({
   label: "rem:lp-dual-scaling-conjecture",
+  interprets: "prop:spin-involution-lp-dual-invariance",
   title:
     "Candidate closed forms for $y_0^*(A, |T_3|)$ — A-scaling research notes",
   uses: [
