@@ -250,7 +250,13 @@ the mandatory q₀ cross-check (no mpmath / no wheel). In priority order:
    `atom_braid_orbit_representative(Z,N)`. Single biggest lever; unlocks
    A≥8 + organic chem. (Research + ~3–5 days impl.)
 2. **scipy LP/SDP → Clarabel** — route operator-selection solves through
-   `clarabel_certify.rs`; emit primal+dual per the LP-dual CI rule.
+   `clarabel_certify.rs`; emit primal+dual per the LP-dual CI rule. When
+   porting, preserve the objective under any variable transformation: if
+   the solver operates on contribution variables
+   $x_\lambda' = y_\lambda \chi^\lambda \Delta_\lambda$ (rather than the raw
+   $x_\lambda$), the cost vector must be rescaled by
+   $1/|y_\lambda \chi^\lambda|$ so the minimised weighted L1 norm still
+   targets the intended objective.
 3. **`hecke-mass` wiring** — convention adapter + A≤6 cross-check, then add
    as an L1.5 predictor track.
 4. **Deprecate `tr_M_atomic_rust_recursive`** — superseded by `_rust_full`;
