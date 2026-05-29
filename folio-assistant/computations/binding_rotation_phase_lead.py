@@ -37,6 +37,12 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 from mass_at_3A_proper import (  # noqa: E402
     atom_braid_word_3A, chi_lambda_of_word, _cached_seminormal,
 )
@@ -72,7 +78,7 @@ def strong_channel_rho(Z, N, ydict, ame, acos_fn, clamp_fn):
             continue
         cf = mpf(str(chi_lambda_of_word(sig, dim, w_free, ng)))
         ca = mpf(str(chi_lambda_of_word(sig, dim, w_d0, ng)))
-        if fabs(cf / dim) > 1 or fabs(ca / dim) > 1:
+        if fabs(cf / dim) > 1 + 1e-14 or fabs(ca / dim) > 1 + 1e-14:
             continue
         dth = acos_fn(clamp_fn(ca / dim)) - acos_fn(clamp_fn(cf / dim))
         S += ydict.get(lam, mpf(0)) * dim * fabs(dth)
@@ -121,7 +127,12 @@ def main():
     set_compute_dps()
     wb = WitnessBuilder("binding-rotation-phase-lead", engine="mpmath")
 
-    AME = {"D": 2.22452, "T": 8.48180, "3He": 7.71804, "4He": 28.29567}
+    AME = {
+        "D": float(AME_B_DEUTERON_MEV_VALIDATION),
+        "T": float(AME_B_TRITIUM_MEV_VALIDATION),
+        "3He": float(AME_B_HE3_MEV_VALIDATION),
+        "4He": float(AME_B_HE4_MEV_VALIDATION),
+    }
     # y_λ sources (same as delta_lambda_binding_full_evaluation)
     y_H6 = load_y("rho-k-h3a-lp-dual.witness.json", ["per_lambda"])
     y_H9 = load_y("wenzl-y-lambda-h9.witness.json", ["per_partition"])
@@ -147,7 +158,7 @@ def main():
             rf = clamp(chi_f[lam] / d)
             ra = clamp(chi_a[lam] / d)
             # only rotation blocks (both ends on the unit circle)
-            if fabs(chi_f[lam] / d) > 1 or fabs(chi_a[lam] / d) > 1:
+            if fabs(chi_f[lam] / d) > 1 + 1e-14 or fabs(chi_a[lam] / d) > 1 + 1e-14:
                 continue
             dth = acos(ra) - acos(rf)
             y = ydict.get(lam, mpf(0))

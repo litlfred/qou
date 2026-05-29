@@ -54,7 +54,14 @@ sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from codata_constants import Q_BETA_MEV  # noqa: E402
+from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    Q_BETA_MEV,
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 from binding_canonical import binding_canonical  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
@@ -106,12 +113,17 @@ def main():
     wb = WitnessBuilder("binding-volume-difference-probe", engine="mpmath")
 
     q = mpf(Q_50_DIGIT_STR)
-    m_e = mpf("0.51099895069")
+    m_e = mpf(str(M_E_MEV))
     VOL_B3 = 8 * catalan
     E0 = m_e / (q * (q - 1))
     rho_cands = {"m_e": m_e, "E_0": E0, "m_e*8G": m_e * VOL_B3}
 
-    AME = {"D": 2.22452, "T": 8.48180, "3He": 7.71804, "4He": 28.29567}
+    AME = {
+        "D": float(AME_B_DEUTERON_MEV_VALIDATION),
+        "T": float(AME_B_TRITIUM_MEV_VALIDATION),
+        "3He": float(AME_B_HE3_MEV_VALIDATION),
+        "4He": float(AME_B_HE4_MEV_VALIDATION),
+    }
     cases = [("D", 1, 1), ("T", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 
     print("=" * 72)

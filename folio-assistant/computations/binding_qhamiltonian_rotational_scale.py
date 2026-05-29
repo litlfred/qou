@@ -45,6 +45,13 @@ sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 
 def main():
@@ -52,7 +59,7 @@ def main():
     wb = WitnessBuilder("binding-qhamiltonian-rotational-scale", engine="mpmath")
 
     q = mpf(Q_50_DIGIT_STR)
-    m_e = mpf("0.51099895069")
+    m_e = mpf(str(M_E_MEV))
     h = q - 1 / q
     hbar_q = 1 - 1 / q
     mu0 = m_e / (3 * h / 2)          # DERIVED per-crossing mass scale
@@ -63,8 +70,10 @@ def main():
     def Jq2(j):
         return br(j) * br(j + 1)
 
-    AME = {"D": (6, 2.22452), "T": (9, 8.48180),
-           "3He": (9, 7.71804), "4He": (12, 28.29567)}
+    AME = {"D": (6, float(AME_B_DEUTERON_MEV_VALIDATION)),
+           "T": (9, float(AME_B_TRITIUM_MEV_VALIDATION)),
+           "3He": (9, float(AME_B_HE3_MEV_VALIDATION)),
+           "4He": (12, float(AME_B_HE4_MEV_VALIDATION))}
 
     print("=" * 70)
     print("q-HAMILTONIAN ROTATIONAL ENERGY  E_rot = μ₀·ℏ_q·J_q²(j=n/2)")

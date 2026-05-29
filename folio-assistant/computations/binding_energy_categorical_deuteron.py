@@ -64,11 +64,11 @@ def main():
 
         B_D_AME = mp.mpf("2.224566")  # AME 2020 deuteron binding (MeV)
         B_D_pred = m_e * abs(mp.mpf(str(sum_with)))
-        err_pct = float(abs(B_D_pred - B_D_AME) / B_D_AME * 100)
+        err_pct = float((B_D_pred - B_D_AME) / B_D_AME * 100)
 
         print(f"B(D) predicted = m_e × |{sum_with}| = {float(B_D_pred):.6f} MeV")
         print(f"B(D) AME 2020  = {float(B_D_AME):.6f} MeV")
-        print(f"Error: {err_pct:.2f}%")
+        print(f"Error: {err_pct:+.2f}%")
         print()
 
         # C_knot is the deficit ratio: how far the bare per-λ sum
@@ -77,7 +77,7 @@ def main():
         C_knot = B_D_AME / (m_e * abs(mp.mpf(str(sum_with))))
         print(f"C_knot(D) = B_AME / (m_e × |sum|) = {float(C_knot):.6f}")
         print(f"  This is a FITTED deficit ratio (B_AME / m_e|sum|), NOT derived.")
-        print(f"  The bare per-λ formula is off by {err_pct:.1f}% — gate still open.")
+        print(f"  The bare per-λ formula is off by {err_pct:+.1f}% — gate still open.")
         print()
 
         # Build witness
@@ -108,7 +108,7 @@ def main():
         wb.add_assertion(
             "bare_perlambda_undershoots_deuteron",
             computed=round(err_pct, 1),
-            expected=82.9,
+            expected=-82.9,
             tolerance=0.5,
             source="Bare per-λ B(D) = m_e·|sum| misses AME by -82.9%; "
                    "C_knot = 5.852 is the FITTED deficit ratio, not a "
