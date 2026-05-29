@@ -162,9 +162,9 @@ def main():
     })
     wb.add_assertion(
         "no_derived_scale_closes_A3",
-        computed=spread,
-        expected=spread,
-        tolerance=1,
+        computed=round(spread, 1),
+        expected=313.0,
+        tolerance=1.0,
         source="κ_needed spread ≫ 0 ⟹ no single derived scale works",
     )
     wb.save()

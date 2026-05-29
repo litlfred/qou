@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T14:26:41.206355+00:00",
-  "commitSha": "6ea131af9daae80ac4f0893828a5586c9d14af66",
+  "computedAt": "2026-05-29T22:42:39.215440+00:00",
+  "commitSha": "5f5e7107d54440ae8bd5d2de9571831ac92a3508",
   "assertions": [
     {
       "name": "no_derived_volume_difference_closes_A3",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 761,
+  "durationMs": 11201,
   "computation": "binding-volume-difference-probe",
   "scriptFile": "binding_volume_difference_probe.py",
-  "scriptHash": "b4dbbaf89fc0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e23ff34edca5",
+  "scriptCommitSha": "9665b26785391a823875d7d77d8e1077e52a35d9",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -29,22 +29,22 @@
   "data": {
     "log_volume_errs_pct": {
       "m_e": {
-        "D": -78.6505463821556,
-        "T": -86.94831981798013,
-        "3He": -89.24836568239121,
-        "4He": -94.83344984817231
+        "D": -78.6509878790566,
+        "T": -86.94831675802985,
+        "3He": -89.24836987606474,
+        "4He": -94.83345040292326
       },
       "E_0": {
-        "D": 74.88960281779451,
-        "T": 6.916233267462979,
-        "3He": -11.925190728200729,
-        "4He": -57.67686048714008
+        "D": 74.88598618108594,
+        "T": 6.916258333841709,
+        "3He": -11.925225081768318,
+        "4He": -57.67686503152684
       },
       "m_e*8G": {
-        "D": 56.44291974742261,
-        "T": -4.360880056521145,
-        "3He": -21.214983071162276,
-        "4He": -62.140942562678
+        "D": 56.43968457965256,
+        "T": -4.3608576340476946,
+        "3He": -21.2150138012476,
+        "4He": -62.1409466277403
       }
     },
     "cosh_inversion": {
@@ -71,23 +71,23 @@
     },
     "snappy_braid_closure_vols": {
       "D": {
-        "vol_free": 7.079458821154794e-06,
-        "vol_atom": 0.0013702288470548434,
+        "vol_free": 1.490949735617222e-06,
+        "vol_atom": 5.357788282596661e-06,
         "hyperbolic": false
       },
       "T": {
-        "vol_free": 5.50389418936606e-05,
-        "vol_atom": 6.300873085819669e-06,
+        "vol_free": 1.3679106272312946e-05,
+        "vol_atom": 0.002389198088432687,
         "hyperbolic": false
       },
       "3He": {
-        "vol_free": 8.026041028319863e-06,
-        "vol_atom": 0.0174586134355502,
+        "vol_free": 1.301217613840222e-05,
+        "vol_atom": 7.9386096525913e-06,
         "hyperbolic": false
       },
       "4He": {
-        "vol_free": 37.72103575878381,
-        "vol_atom": 0.0016452834723960608,
+        "vol_free": 1.663126800065251e-05,
+        "vol_atom": 0.0015541872844781902,
         "hyperbolic": false
       }
     },
