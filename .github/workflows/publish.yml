@@ -199,13 +199,6 @@ jobs:
           ls -la ../main.tex ../chapters/*.tex 2>/dev/null | head -20 || \
             { echo "::error::main.tex was not generated"; exit 1; }
 
-      - name: Generate main.tex from paper manifest
-        run: |
-          cd content && bun run pipeline/build.ts \
-            --generate-main \
-            --main-out ../main.tex \
-            --preamble ../latex/preamble.tex
-
       - name: Compute output filename base
         id: filename
         run: |
