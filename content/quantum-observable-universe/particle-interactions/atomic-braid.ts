@@ -9,5 +9,5 @@ export default definition({
   lean: { ref: "qou:QOU.AtomicBraid.NeutralAtom",
     validation: "not_checked",
   },
-  uses: ["def:transfer-matrix-operator", "def:derived-atom"],
+  uses: ["def:derived-atom"],
 });

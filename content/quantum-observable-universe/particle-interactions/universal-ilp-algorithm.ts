@@ -13,7 +13,6 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "prop:q-integer-mass-formula",
     "def:molecular-braid",
   ],
   tags: [

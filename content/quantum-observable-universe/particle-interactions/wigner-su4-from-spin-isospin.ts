@@ -11,7 +11,6 @@ export default proposition({
   uses: [
     "prop:isospin-from-canonical-bowtie",
     "prop:spin-from-so3-fiber",
-    "prop:atom-knot-mass-derivation",
   ],
   cites: [
     "wigner1937",
