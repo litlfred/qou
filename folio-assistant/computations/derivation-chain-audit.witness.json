@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-29T22:49:26.240235+00:00",
-  "commitSha": "aa0e3b492171fd9f16d3607a120acdc063f4823d",
+  "computedAt": "2026-05-30T02:38:54.507383+00:00",
+  "commitSha": "fdf70d0af1a1d2538a709a2e0807fc785db1ce0d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -2109,6 +2109,7 @@
         "binding-multibond-wenzl.witness.json",
         "binding-per-bond-decomposition.witness.json",
         "binding-q-target-sweep.witness.json",
+        "binding-qhamiltonian-rotational-scale.witness.json",
         "binding-reeb-phase-decomposition.witness.json",
         "binding-rotation-phase-lead.witness.json",
         "binding-shell-enhancement-derivation.witness.json",
@@ -2375,6 +2376,7 @@
         "f-ell-derivation-via-per-braid-mass-tower.witness.json",
         "family-a-per-partition-h-decomposition-50dps.witness.json",
         "finite-q-volume-conjecture-probe.witness.json",
+        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "forward-ref-classification.witness.json",
