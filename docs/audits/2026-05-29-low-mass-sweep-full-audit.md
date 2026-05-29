@@ -123,7 +123,14 @@ bare (2,1) trace
 < 1e-30, witness assertion `borromean_char_derived_from_hoefsmit`).
 Lean: `borromeanChar_laurent` proves the Laurent form. So the entire
 m_p → 130 ppm chain (Vol=8G, lw_A proved, χ derived) is
-first-principles. The sweep's
+first-principles.
+
+**q₀-robust (vs #1422's re-pin).** Evaluated at both the muon-pinned
+q₀ (−130.35 ppm) and #1422's m_p-pinned q₀ = 1.10997858275 (−130.16
+ppm), the spectral decomposition shifts only 0.19 ppm under the
+−11.5 ppb re-pin. So the 130 ppm is intrinsic to the decomposition,
+not a pin artifact — and it is a **separate derived** m_p path,
+distinct from #1422's m_p-as-anchor (which is 0 by construction). The sweep's
 `Geom_full(𝓑₃)` computes the leading `Vol/ℏ²·lw_A` and **omits** this
 factor. Wiring it closes nucleons +2.89% → 130 ppm (the residual is
 the arccos Taylor truncation, h⁴-order). This is a legitimate,
