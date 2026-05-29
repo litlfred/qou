@@ -107,4 +107,4 @@ proposition statement above stays minimal:
 The geometric face of this proposition — SDP optimality as
 Picard--Lefschetz steepest descent, dual variables as thimble
 depths — is developed in
-[the SDP-as-thimble-flow remark](#rem:sdp-as-thimble-flow) below.
+the SDP-as-thimble-flow remark below.

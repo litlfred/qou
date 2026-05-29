@@ -3,7 +3,7 @@
 [staircase partition](#def:staircase-partition), let
 $V_{\rho_k}$ be the Specht module of $H_{n_k}(q)$ at this shape
 (realised in
-[Hoefsmit seminormal form](#def:hoefsmit-seminormal-form)),
+[Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)),
 and let
 $\beta_{\mathrm{EW}}\,\bowtie_K^{\mathrm{minimal}} \in H_{n_k}(q)$
 be the canonical electroweak braid word.  Then for every

@@ -124,7 +124,7 @@ $$
 a finite combinatorial sum over height-6 partitions of $3A$.
 This is the **simplest closed-form ansatz** consistent with the
 LP-dual characterisation of
-[`prop:mass-formula-iterative-lp-dual`](#prop:mass-formula-iterative-lp-dual);
+`prop:mass-formula-iterative-lp-dual`;
 it is *conjectural*, not implied by the central-element theorem.
 
 **Empirical status.** The companion witness

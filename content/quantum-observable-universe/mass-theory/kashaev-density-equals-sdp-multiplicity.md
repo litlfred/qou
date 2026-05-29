@@ -19,7 +19,7 @@ $$
   \rho_F  \;=\;  \nu_{\mathrm{SDP}}(K_w)
 $$
 
-per [`atom-knot-mass-derivation`](#def:atom-knot-mass-derivation)
+per [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation)
 §Algorithm step 3 (the joint-tower SDP solve that produces
 $\nu_{\mathrm{SDP}}$ as a non-negative integer multiplicity).
 
@@ -27,7 +27,7 @@ $\nu_{\mathrm{SDP}}$ as a non-negative integer multiplicity).
 
 The identity is exact on the three SDP-confirmed
 hyperbolic atoms (per
-[`atom-knot-mass-derivation`](#def:atom-knot-mass-derivation) line 265):
+[`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation) line 265):
 
 | Atom | $K_w$ | $\rho_F$ (legacy) | $\nu_{\mathrm{SDP}}$ |
 |------|-------|-------------------|----------------------|
@@ -90,7 +90,7 @@ conjecture-conditional adoption, $\rho_F$ is:
 
 1. **named canonically** (`nu_sdp` in the new code), connecting to the
    existing `ν_SDP` notation in
-   [`atom-knot-mass-derivation`](#def:atom-knot-mass-derivation);
+   [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation);
 2. **placed on the 13-driver menu** (driver x, MacMahon partition algebra);
 3. **conditional on a class** that R5-full SDP will eventually
    inhabit — replacing the open-ended "pending formal justification"
@@ -105,7 +105,7 @@ Owner authorised this adoption per Rule-14 procedure
 
 Prior to this block, three distinct quantities used the symbol $\rho$
 in QOU compute and content (per
-[`atom-knot-mass-derivation`](#def:atom-knot-mass-derivation) §Notation):
+[`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation) §Notation):
 
 - $\nu_{\mathrm{SDP}}$ — integer Wedderburn multiplicity (this conjecture)
 - $\rho_K$ — CODATA-fit density per knot
@@ -123,7 +123,7 @@ removing the third unnamed $\rho$.
   PR that introduces this block)
 - [`predict`](../../folio-assistant/computations/mass_table_ppb.py)
   — reads `nu_sdp` and emits `B_pred = nu_sdp · m_e · Vol(K)`
-- [`atom-knot-mass-derivation`](#def:atom-knot-mass-derivation)
+- [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation)
   §Algorithm step 3 — supplies $\nu_{\mathrm{SDP}}$ via joint-tower SDP
 
 ## Open R&D

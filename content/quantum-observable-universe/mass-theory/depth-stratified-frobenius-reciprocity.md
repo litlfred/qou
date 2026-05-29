@@ -99,10 +99,10 @@ The Markov trace $\mathrm{tr}_M(\beta_\mathcal{K}) =
 \sum_\lambda y_\lambda \chi^\lambda(\beta_\mathcal{K})$ is
 **isospectral data** — like the Laplacian spectrum of a drum.
 **Jones-faithfulness theorem** at crossing $\le 10$
-([`rem:jones-faithfulness-crossing-10`](#rem:jones-faithfulness-crossing-10))
+(`rem:jones-faithfulness-crossing-10`)
 states that the Jones polynomial distinguishes knots up to 10
 crossings. Beyond this, **Conway–KT mutant pairs**
-([`rem:conway-kt-mutant-pair`](#rem:conway-kt-mutant-pair)) have the
+(`rem:conway-kt-mutant-pair`) have the
 same Jones polynomial but distinct hyperbolic volumes — they are
 "isospectral isobars".
 
@@ -218,9 +218,9 @@ Per the structural narrative on  and
  $\alpha_{k \ge 4} = m_e \cdot 8G$)
 - The convolution structure (Hecke-product with interface knot $\bowtie_K$)
  is fixed
- ([`def:ew-interface-knot`](#def:ew-interface-knot))
+ (`def:ew-interface-knot`)
 - The bar-symmetrization Li_2^q / Φ_q split is established
- ([`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization))
+ (`prop:li2q-phiq-bar-symmetrization`)
 - The pre-$\tau$ / post-$\tau$ pentagon distinction is established
  ([`prop:q-rogers-pentagon-archimedean`](#prop:q-rogers-pentagon-archimedean))
 

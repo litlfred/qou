@@ -39,5 +39,5 @@ Hermitian quadric $w_1 w_4 + w_2 w_3 = 0$, which is the $\mathrm{SL}(2)$
 Plucker relation for $\Lambda^2 V$.  The top-degree extension to the
 full color fibre is the spectral volume
 constraint; see
-[Seiberg--Witten](#rem:seiberg-witten) for the explicit symplectic
+Seiberg--Witten for the explicit symplectic
 form and its relation to $\epsilon$.

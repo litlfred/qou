@@ -233,18 +233,18 @@ higher-page pairings.*
 *Under the fibre functor $\tau \colon R \hookrightarrow \mathbb{C}$,
 the level-$\ell$ stratum maps to the geometric jet bundle
 $J^\ell\mathcal{S}$ on the Descartes elliptic curve via
-([jet-GB-PL correspondence](#prop:jet-gb-pl-correspondence)).
+(jet-GB-PL correspondence).
 The pairing's $\mathbb{C}$-realisation is then the higher-order
 Picard–Lefschetz residue $\Pi^{(\ell)}$ of the prolonged SW
 differential $\lambda_{\mathrm{SW}}^{(\ell)}$ at the discriminant
 locus
-([Picard–Lefschetz thimble](#rem:picard-lefschetz-thimble),
- [SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)).
+(Picard–Lefschetz thimble,
+ SW-period thimble equivalence).
 This collapses Term 6 from "conjectural" on the analytic side to a
 straightforward PL computation using the same machinery that
 evaluates Terms 1–3 — provided the upstream A2.4 hypothesis
 (real-axis = thimble sum) of
-([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence))
+(SW-period thimble equivalence)
 is checked at order $\ell$. The $R$-side identification of Term 6
 with $E_\infty^{\ell, *}$ remains the same; the change is to provide
 a convergent archimedean evaluation route.*

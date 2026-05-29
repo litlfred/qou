@@ -137,7 +137,7 @@ endomorphism algebra. $\square$
    $\Delta_{\mathrm{cat}}(Z, N) = \Delta_0(A) + \mathbb{1}_{Z \in \mathrm{magic}} \cdot \Delta_p + \mathbb{1}_{N \in \mathrm{magic}} \cdot \Delta_n$
    with $\Delta_p = \Delta_n$ (the Z$\leftrightarrow$N symmetry constraint).  This
    is the precise content of
-   [`conj:magic-shell-stabilization`](#conj:magic-shell-stabilization).
+   `conj:magic-shell-stabilization`.
 
 ## Status
 

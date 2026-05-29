@@ -3,7 +3,7 @@
 is the **scope caveat** attached — implicitly or explicitly — to
 every statement in the confinement framework.  Any formal
 statement about a [confined particle](#def:confined-particle) $P$,
-its [electron shell](#def:electron-shell), a
+its electron shell, a
 [dressing morphism](#def:dressed-particle) $\mathrm{dress}_S$, or
 a trace-class invariant $\mathcal{F}(P)$ is to be read with the
 implicit quantifier:*
@@ -27,7 +27,7 @@ single $\Omega_\alpha$):**
   $\mathrm{tr}_M: \mathbf{Conf} \to \mathbb{C}(q)$
   ([confinement category](#def:confinement-category)).*
 - *Multi-operator binding structure
-  ([electron shell](#def:electron-shell)) — constancy of the active
+  (electron shell) — constancy of the active
   support $\mathcal{S}^*(S, q)$.*
 
 **Boundary phenomena — not covered by within-phase theorems:**

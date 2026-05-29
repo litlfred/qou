@@ -111,7 +111,7 @@ step (c) is what makes the lift feasible and the relaxation
 argument work.)*
 
 *Claim (2).  For $Z \in \mathcal{Z}_{\mathrm{noble}}$ the orbital
-parametrisation of [electron shell](#def:electron-shell) fills all
+parametrisation of electron shell fills all
 magnetic and spin labels of principal shell $n$, so multiple
 Wedderburn blocks of the multi-level SDP are simultaneously tight —
 $\mu(S_Z, q) \ge 2$ by the binding-multiplicity definition.  The

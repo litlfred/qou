@@ -27,7 +27,7 @@ its confinement reading
 ([confinement = collapse](#prop:confinement-categorical)), every
 observable on $A$ factors through the centre $Z(A) = \bigoplus_\lambda
 R \cdot e_\lambda$.  By the Wedderburn-enumeration completeness
-([enumeration](#rem:mass-formula-wedderburn-enumeration)), every
+(enumeration), every
 $\lambda \vdash n$ enters exactly one stratum.  The unified mass
 formula
 ([unified mass formula](#prop:unified-curvature-rank-mass-formula))

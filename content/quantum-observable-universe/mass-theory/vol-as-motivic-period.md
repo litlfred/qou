@@ -89,5 +89,5 @@ beyond what is in
 It names the existing factorisation in motivic-period
 language so that the
 [Kashaev volume conjecture](#conj:kashaev-volume-conjecture) and the
-[archimedean remainder decay conjecture](#conj:archimedean-remainder-exponential-decay)
+archimedean remainder decay conjecture
 can be cross-referenced with the regulator literature.

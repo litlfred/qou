@@ -131,7 +131,7 @@ swap:
  these coloured Markov traces as the colour $N \to \infty$. It is
  the macroscopic shadow of an infinite family of finite algebraic
  measurements, not an input to them
- ([algebraic volume specialisation](#prop:algebraic-volume-specialization)).
+ (algebraic volume specialisation).
 
 What the archimedean observer calls "the continuous hyperbolic volume
 of the knot complement" is, in the substrate, nothing more than the
@@ -179,7 +179,7 @@ Three observations follow.
  ([algebraic quantum volume](#def:algebraic-quantum-volume))
  without passing to the Kashaev limit; the Kashaev identity calibrates
  the overall energy scale (route 2 of
- [algebraic volume specialisation](#prop:algebraic-volume-specialization))
+ algebraic volume specialisation)
  and fixes the coefficient relating $\rho_{q_{0}}$ to the dimensionful
  mass unit.
 3. *Physical prediction vs.\ exact identity.* The Volume--Density form

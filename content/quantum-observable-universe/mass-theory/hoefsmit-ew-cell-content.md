@@ -4,7 +4,7 @@
 force-carriers $W^\pm, Z, H$ — identified topologically as the
 2-component torus links $T(2,4), T(2,6), T(2,8)$ on Bring's
 surface (per
-[`conj:electroweak-higgs-torus-link-triplet`](#conj:electroweak-higgs-torus-link-triplet))
+`conj:electroweak-higgs-torus-link-triplet`)
 — are realised inside $\mathrm{End}_R(V^{\otimes 6})$ as the
 **disjoint-strand-pair** Hoefsmit projectors of*
 
@@ -219,7 +219,7 @@ exactly the substrate-level
 the trace. The bar-self-duality is **automatic** from the
 disjoint-strand-pair construction (each $\sigma_i^{2k}$ is
 bar-self-dual on its own per
-[`prop:even-twist-torus-link-psd-feasibility`](#prop:even-twist-torus-link-psd-feasibility),
+`prop:even-twist-torus-link-psd-feasibility`,
 and the disjoint product preserves the duality).
 
 By contrast, the Plancherel-weighted "uniform-1/[2]_q" form
@@ -259,7 +259,7 @@ $\mathrm{tr}_{\rm pure}$ is the operative quantity going forward.
  plus matching twist parameters $k = 2, 3, 4$ to the EW link triplet.
  Needs a categorical-physics block (the "categorical Higgs mechanism"
  item from
- [`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy)
+ `conj:force-carrier-knot-vs-link-dichotomy`
  §Status) discharging the boson-to-strand-pair assignment.
 2. **The non-uniform Plancherel weight derivation** — the
  multiplicities $(2, 1, 3, 3, 1, 2)$ are read off from the

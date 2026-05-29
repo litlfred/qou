@@ -51,7 +51,7 @@ $$
   C(K) \cdot e^{-c(K)\,N}
 $$
 
-*per [conj:archimedean-remainder-exponential-decay](#conj:archimedean-remainder-exponential-decay), with $C, c > 0$ depending only on the free-neutron sector data $K$.*
+*per conj:archimedean-remainder-exponential-decay, with $C, c > 0$ depending only on the free-neutron sector data $K$.*
 
 **Proof.**
 
@@ -120,7 +120,7 @@ not because Form A and Form B measure different observables.
 spectral decomposition of the q-Hamiltonian along the GB
 filtration of the free-neutron sector $K \subset H_3(q)$ at
 $q = q_0$. By
-[conj:archimedean-remainder-exponential-decay](#conj:archimedean-remainder-exponential-decay)
+conj:archimedean-remainder-exponential-decay
 (applied to the q-dilogarithm tail in the brane-tower expansion),
 each finite-depth truncation $Q_\beta^{(N)}$ — whether assembled
 via Form A or Form B — incurs an error bounded by
@@ -149,7 +149,7 @@ MeV.
 
 The exponential-remainder bound supplies the eigenfunction
 **dampening** principle (rendered explicit in
-[conj:archimedean-remainder-exponential-decay](#conj:archimedean-remainder-exponential-decay)):
+conj:archimedean-remainder-exponential-decay):
 finite-depth truncations recover the exact $Q_\beta$ exponentially
 fast in GB depth $N$, which is why the single-wrap symbolic form
 (Form A at $N = 0$) already achieves $+0.168\%$ accuracy.
@@ -164,7 +164,7 @@ fast in GB depth $N$, which is why the single-wrap symbolic form
   $N \geq 1$ truncation analysis and for the general atom-level
   binding cascade (where the brane-tower truncation is non-trivial).
 * The exponential-remainder bound is the open conjectural input
-  ([conj:archimedean-remainder-exponential-decay](#conj:archimedean-remainder-exponential-decay));
+  (conj:archimedean-remainder-exponential-decay);
   the Taylor-expansion algebra above is unconditional.
 
 ## Provenance

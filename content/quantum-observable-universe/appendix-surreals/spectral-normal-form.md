@@ -1,5 +1,5 @@
 Under the surreal lift $q = 1 + \varepsilon$
-([Hahn substrate](#conj:hahn-substrate)), every spectral operator
+(Hahn substrate), every spectral operator
 $O_q$ of the main paper (Hecke generators, transfer matrices, $q$-
 Hamiltonians, Feynman integrals, vortex operators) has eigenvalues
 $\lambda_i(q)$ that are rational in $\varepsilon$, hence elements
@@ -107,7 +107,7 @@ depends on computability of the normal forms.
 ## Proof strategy
 
 **Algebraic case (provable now, modulo conjecture
-[Hahn-substrate](#conj:hahn-substrate))**:
+Hahn-substrate)**:
 
 1. Assume $O_q$ has matrix entries in $\mathbb{Q}(q)$ or, more
    generally, in the Hahn-series substrate.

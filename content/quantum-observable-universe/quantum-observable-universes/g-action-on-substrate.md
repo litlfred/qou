@@ -63,7 +63,7 @@ the empirically observed Higgs VEV.
 
 **Axiom (G-4) — Higgs idempotent.**
 The categorical Higgs idempotent $e_H$
-([categorical Higgs idempotent](#conj:categorical-higgs-idempotent))
+(categorical Higgs idempotent)
 is constructed from $\varrho_\Phi$ via
 
 $$

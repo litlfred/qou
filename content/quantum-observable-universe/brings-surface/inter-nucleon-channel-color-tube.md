@@ -36,7 +36,7 @@ Per [`def:color-tube-coordinates`](../archimedean-universe/color-tube-coordinate
 Bring's surface carries a canonical
 $(r, g, b)$ color-tube fiber structure. The
 $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber action on Bring's quintic
-(conjectural class supplied by [`conj:s5-so3-fiber-action`](#conj:s5-so3-fiber-action))
+(conjectural class supplied by `conj:s5-so3-fiber-action`)
 maps each Bring fiber to a 3-dimensional color rotation. Composing
 with the nucleon color-sheet assignment above gives a canonical
 $3 \times 3 = 9$-element matrix of color-pair couplings per
@@ -110,7 +110,7 @@ exists and resolves residuals the uniform-flavor form does not.
 ## Conditional structure
 
 This conjecture is conditional on
-[`conj:s5-so3-fiber-action`](#conj:s5-so3-fiber-action) (PR
+`conj:s5-so3-fiber-action` (PR
 [#1081](https://github.com/litlfred/qou/pull/1081) Task 3) being
 formalised as a Lean class. Once that class is available, the
 weight matrix $W_{c_1 c_2}$ should be derivable as a tensor in the
@@ -139,7 +139,7 @@ class InterNucleonChannelColorTube
 ```
 
 The class is *inhabited* by the $S_{5}$/SO(3) fiber data once
-[`conj:s5-so3-fiber-action`](#conj:s5-so3-fiber-action) lands; until
+`conj:s5-so3-fiber-action` lands; until
 then the instance carries an explicit `sorry` per CLAUDE.md §3b
 ("class is inhabited") policy.
 

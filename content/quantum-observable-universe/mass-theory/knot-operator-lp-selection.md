@@ -46,7 +46,7 @@ $x^*$.*
 ### Statement (formal)
 
 Define the **demand profile** of a confinement $T$ as the negative
-NF coefficients ([knot-operator basis table](#prop:knot-operator-basis-table-summary))
+NF coefficients (knot-operator basis table)
 of the formal product $T = \prod_i b_i^{n_T^i}$. Define the
 **supply profile** of a candidate knot operator $\beta(T_{m,m'})$
 as the vector of positive NF coefficients in $b_i \cdot

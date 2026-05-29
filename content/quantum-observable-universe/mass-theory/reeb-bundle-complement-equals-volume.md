@@ -84,7 +84,7 @@ chapters.
   ([hyperbolic-knot positive volume via Reeb](#rem:hyperbolic-knot-positive-volume-via-reeb)).
 
 - The Φ_q–JSJ archimedean bridge
-  ([Φ_q tower JSJ bridge](#conj:phi-q-tower-jsj-bridge))
+  ([Φ_q tower JSJ bridge](#rem:phi-q-tower-jsj-bridge))
   is the Φ_q-tower decomposition of the right-hand side; the
   present proposition packages the left-hand side as a
   Reeb-bundle Markov trace.  The two together give the

@@ -14,7 +14,7 @@ the QOU substrate $q_0 \approx 1.110$, $\mathrm{Var}(\sigma_i) \approx 0.855$.*
 **Why this matters for the q-CLT.** The second free cumulant
 $\kappa_2^{(q)} = \mathrm{Var}(\sigma_i)$ is the variance parameter
 of the q-Gaussian limit measure
-([`conj:q-clt-non-commutative`](#conj:q-clt-non-commutative)). Its
+(`conj:q-clt-non-commutative`). Its
 positivity in the Wenzl regime is one of the input conditions of
 the q-CLT — without it, the rescaled sum would degenerate to a
 delta measure at zero, not a q-Gaussian. The proposition guarantees

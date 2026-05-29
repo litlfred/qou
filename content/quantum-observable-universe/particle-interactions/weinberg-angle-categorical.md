@@ -106,7 +106,7 @@ The Standard Model $\theta_W$ is determined by the ratio $g'/g$
 of the $\mathrm{U}(1)_Y$ and $\mathrm{SU}(2)_L$ gauge couplings.
 In the QOU framework, gauge couplings are realised as Hecke-
 eigenvalue products on the relevant sector
-([`prop:gauge-coupling-uniqueness`](#prop:gauge-coupling-uniqueness)),
+([`prop:gauge-coupling-uniqueness`](#cor:gauge-coupling-uniqueness)),
 so $\theta_W$ being a ratio of categorical scalars in $R$ is
 structurally consistent.
 

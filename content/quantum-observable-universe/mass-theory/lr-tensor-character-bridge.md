@@ -2,7 +2,7 @@
 braids; trivial-interface specialisation of the branching
 decomposition).**
 *Specialise
-([Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition))
+(Hecke branching trace decomposition)
 to the trivial interface $I = \mathbf{1}$ and iterate $k-1$ times.
 For every $\nu \vdash n_1 + \cdots + n_k$ and every
 $(\beta_1, \ldots, \beta_k) \in H_{n_1}(R, q) \times \cdots \times
@@ -35,7 +35,7 @@ the iterated coproduct.*
 ## Relationship to the branching decomposition
 
 The branching identity
-([Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition))
+(Hecke branching trace decomposition)
 states the general two-factor character
 
 $$
@@ -102,7 +102,7 @@ where $\mathcal{B}_K^{\mathrm{vac}} = \mathcal{B}_p^{(1)} \otimes \cdots
 \otimes \mathcal{B}_n^{(N)}$ is the parabolic tensor of the
 $A := Z + N$ per-nucleon $H_3$ canonical sub-braids (constituent
 vacuum) and $\bowtie_K$ is the
-([electroweak interface knot](#def:ew-interface-knot)) --- a short
+(electroweak interface knot) --- a short
 word in the inter-nucleon Hecke generators $\sigma_{3k+2}$
 ($0 \leq k < A-1$), one single-generator crossing per adjacent
 nucleon pair, with sign $\sigma$ on a proton--proton arc and
@@ -194,7 +194,7 @@ The identity holds for tensor-product (parabolic) braids only. The
 interface knot $\bowtie_K$ does not factor through the parabolic
 embedding; its contribution is the $I \neq \mathbf{1}$ regime
 governed by the
-([branching trace decomposition](#prop:hecke-branching-trace-decomposition))
+(branching trace decomposition)
 in the operator-valued form, and admits the closed scalar form of
 the
 ([Markov-axiom interface identity](#prop:interface-knot-markov-z))

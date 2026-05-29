@@ -135,7 +135,7 @@ derivation:
   Wedderburn-coupling structure that closes the six-term theorem's
   Kashaev limit at sub-percent accuracy.
 
-Combined with [hecke branching trace decomp](#prop:hecke-branching-trace-decomposition)
+Combined with hecke branching trace decomp
 (refined Sub-lemma 2.1, operator-valued $A^\lambda_{\mu, \nu}(I)$
 interface), the bound atomic case is fully covered: the LO and
 single-gen pieces give $\rho_K$ to $0.18\%$; the higher pieces and

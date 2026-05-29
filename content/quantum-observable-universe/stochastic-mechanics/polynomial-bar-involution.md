@@ -54,7 +54,7 @@ All proofs use only `Polynomial.comp` lemmas from Mathlib
 
 ## Connection to the three-layer synthesis
 
-In [`prop:bar-symmetric-three-layer-synthesis`](#prop:bar-symmetric-three-layer-synthesis),
+In `prop:bar-symmetric-three-layer-synthesis`,
 the universal kernel is bar-anti-symmetric. The polynomial
 indeterminate $X$ is the **canonical such kernel**:
 

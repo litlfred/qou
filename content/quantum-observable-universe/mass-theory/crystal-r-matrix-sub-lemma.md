@@ -11,7 +11,7 @@ $\beta_2 \in \mathbf{H}_{n_2}(q)$ with $n = n_1 + n_2$. Let
 $\sigma_i \in \mathbf{H}_n(q)$ be a boundary generator and let
 $A^\lambda_{\mu, \nu}(\sigma_i) \in \mathrm{End}(V_\mu \otimes V_\nu)^{\oplus c^\lambda_{\mu, \nu}}$
 be its $(\mu, \nu)$-block in the
-[Wenzl 1988 LR decomposition](#prop:hecke-branching-trace-decomposition)
+Wenzl 1988 LR decomposition
 of $V_\lambda \downarrow_{\mathbf{H}_{n_1} \otimes \mathbf{H}_{n_2}}$.*
 
 *Under

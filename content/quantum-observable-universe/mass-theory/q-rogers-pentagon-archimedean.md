@@ -102,7 +102,7 @@ $\log_q^2$ Rogers correction term — which is *exactly* the
 archimedean kernel that distinguishes Faddeev's non-perturbative
 Volume-conjecture form from the $\mathrm{Li}_2^q$ algebraic form
 (the bar-anti-symmetric image of $\log\Phi_q$ rescaled by $h/2$, per
-[`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization)).
+`prop:li2q-phiq-bar-symmetrization`).
 
 The post-$\tau$ pentagon (R) is therefore the **defining identity**
 for the analytic q-dilogarithm in the volume-conjecture / Kashaev
@@ -132,7 +132,7 @@ Computational consequences of the post-$\tau$ pentagon (R):
    q-Rogers pentagon (R) connects this to the
    $\mathrm{Li}_2^q$ side via the bar-**anti**-symmetrization
    identity
-   ([`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization))
+   (`prop:li2q-phiq-bar-symmetrization`)
    $\mathrm{Li}_2^q(z) = -h \cdot \log \Phi_q(z) = (h/2)\bigl(\log \Phi_{q^{-1}} - \log \Phi_q\bigr)$ —
    not the bar-SYMMETRIC sum (which vanishes identically).
 

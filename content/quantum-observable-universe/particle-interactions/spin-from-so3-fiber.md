@@ -45,7 +45,7 @@ topologically.
 
 ## The conjectural content
 
-Per [`conj:s5-so3-fiber-action`](#conj:s5-so3-fiber-action) (PR
+Per `conj:s5-so3-fiber-action` (PR
 [#1081](https://github.com/litlfred/qou/pull/1081) supplier — class
 scaffolded in [`S5SO3FiberAction.lean`](../../folio-assistant/computations/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean)):
 
@@ -144,7 +144,7 @@ class SpinFromSO3Fiber
 - [`docs/audits/-h4-coefficient-source-trace-and-so3-gap.md`](../../docs/audits/-h4-coefficient-source-trace-and-so3-gap.md)
   — the structural-gap audit that proposed this closure
 - Upstream class supplier:
-  [`conj:s5-so3-fiber-action`](#conj:s5-so3-fiber-action)
+  `conj:s5-so3-fiber-action`
   (PR [#1081](https://github.com/litlfred/qou/pull/1081),
   [`S5SO3FiberAction.lean`](../../folio-assistant/computations/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean))
 - Sibling Cluster B item:

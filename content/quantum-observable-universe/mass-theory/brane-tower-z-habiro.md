@@ -318,7 +318,7 @@ The fact that $D$ and $T$ each find their own near-AME uniform $k$
 ($k = 1$ for $D$, $k = 2$ for $T$) under the canonical
 operator-valued form is structurally informative but **does not
 support the conjecture**: per-atom $k$ values are exactly what
-[`conj:brane-level-selection`](#conj:brane-level-selection) tried
+`conj:brane-level-selection` tried
 to predict via $n_\star = \ell \cdot n_0 + k$, and the conjecture
 explicitly rules out per-atom retuning as the empirical signature
 of correctness. The result is consistent with the refuted
@@ -647,7 +647,7 @@ PR: $\sigma_{pp}, \sigma_{nn}$ activate distinct partitions (the
 Type-B-fixed locus) under the LP-dual, which is the natural home
 of a per-partition $k_\lambda$ rule.  The two refinements
 (per-partition $k_\lambda$ from #639 + magic-shell $\Delta_{\text{shell}}$
-from [`conj:magic-shell-stabilization`](#conj:magic-shell-stabilization))
+from `conj:magic-shell-stabilization`)
 target different layers: per-partition $k_\lambda$ regulates the
 $\Phi_q$ tower; magic-shell $\Delta_{\text{shell}}$ is the
 non-tower structural term.  Both are open.

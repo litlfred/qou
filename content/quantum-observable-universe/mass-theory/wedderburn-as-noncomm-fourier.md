@@ -68,6 +68,6 @@ quantity. It supplies the conceptual hook for the Pieri-shift
 behaviour of the
 [degree-one Hecke photon](#prop:pieri-photon-shift) and for the
 spectral interpretation of the
-[archimedean remainder](#conj:archimedean-remainder-exponential-decay):
+archimedean remainder:
 both are statements about which partitions $\lambda$ contribute at a
 given filtration depth.

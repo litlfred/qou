@@ -105,7 +105,7 @@ state sum**. Under the archimedean realization $\tau_{\mathrm{arch}}$
 these poles mark the **cuspidal boundary** of the corresponding
 ideal-tetrahedron piece — the algebraic address of a geometric cusp
 that bounds an active JSJ piece
-([Φ$_q$-tower JSJ bridge](#conj:phi-q-tower-jsj-bridge)). The
+([Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge)). The
 detailed correspondence is the content of
 ([shared-denominator cusp holonomy](#prop:shared-denominator-cusp-holonomy)),
 and the asymptotic $\Phi_n \to \mathrm{Li}_2$ as $n \to \infty$ is

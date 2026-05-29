@@ -209,10 +209,10 @@ uniqueness applied to Hecke-trace-determined braids.
 This definition is the canonical reference for bar-symmetry. Other
 blocks that consume it (with their primary bar-classification):
 
-- [`prop:averaging-resonance-rule`](#prop:averaging-resonance-rule) — $\sigma_{\mathrm{avg}}$ bar-symmetric; level-selection rule at half-fill rung.
+- `prop:averaging-resonance-rule` — $\sigma_{\mathrm{avg}}$ bar-symmetric; level-selection rule at half-fill rung.
 - [`prop:c5-involution-leibniz-decomposition`](#prop:c5-involution-leibniz-decomposition) — $c_5$ bar-symmetric closed form; Hoefsmit-Quantum-2 identity proved here.
 - [`prop:silver-ratio-beta-decay-null`](#prop:silver-ratio-beta-decay-null) — $\Delta(\text{net}) = h(h-2)/2$ bar-anti-symmetric in $h$; $h = 2$ root at silver.
-- [`prop:bar-symmetric-three-layer-synthesis`](#prop:bar-symmetric-three-layer-synthesis) — series / phase / gain layers, all bar-symmetric projections (conjecturally of one universal kernel).
+- `prop:bar-symmetric-three-layer-synthesis` — series / phase / gain layers, all bar-symmetric projections (conjecturally of one universal kernel).
 - [`def:categorical-q-reeb-flow`](#def:categorical-q-reeb-flow) — Reeb field $R$ bar-anti-symmetric.
 - [`prop:chirality-residue-mass-term`](#prop:chirality-residue-mass-term) — chirality residue bar-anti-symmetric.
 

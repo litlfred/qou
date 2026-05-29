@@ -65,7 +65,7 @@ established, Blitvić's CLT
 sum $S_n = n^{-1/2} \sum_i \tilde\sigma_i$ has joint moments
 converging to a $(q, t)$-Gaussian process at parameter $(q, 1)$.
 The QOU q-CLT
-([`conj:q-clt-non-commutative`](#conj:q-clt-non-commutative))
+(`conj:q-clt-non-commutative`)
 is therefore conditional only on the *parameter-identification*
 step (Blitvić's $q$ $\leftrightarrow$ QOU's $q$ $\leftrightarrow$ Tsallis's $q$), not on the
 underlying CLT.
