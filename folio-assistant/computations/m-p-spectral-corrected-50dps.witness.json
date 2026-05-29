@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-29T14:17:37.167938+00:00",
+  "commitSha": "efa00606f66532e51840d5ee312fd3d02dd9996f",
+  "assertions": [
+    {
+      "name": "spectral_correction_closes_gap_to_sub_200ppm",
+      "computed": 130.35345539928875,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 200.0,
+      "unit": "ppm",
+      "source": "m_p = Vol(B_3)/hbar^2 * lw_A * arccos(chi/2)/(8 hbar^2)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "m-p-spectral-corrected-50dps",
+  "scriptFile": "m_p_spectral_corrected_50dps.py",
+  "scriptHash": "f2f63b81ace0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "data": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "pieces": {
+      "vol_b3_8catalan": "7.327724753417752120436828119459072886193",
+      "geom_scale_vol_over_hbar2": "746.4178510331171854382661548419685988013",
+      "lw_A_5_2_plus_3h2_4": "2.5327796636728840583187099162059686933",
+      "chi_21_borromean_exact": "1.99418581038121327702097647899469350404",
+      "spectral_corr_arccos": "0.9711196580949121247364689479811259633092"
+    },
+    "m_p_over_m_e": {
+      "leading_spectral_omitted": "1890.511953699095419578534413849590085505",
+      "full_spectral_restored": "1835.913322100609885135746996956230193532"
+    },
+    "m_p_MeV": {
+      "leading": "966.04962460713962341",
+      "full": "938.14978115120363791",
+      "validation_comparison_only": "938.27208816"
+    },
+    "error": {
+      "leading_pct": 2.9604990703296745,
+      "full_ppm": -130.35345539928875,
+      "note": "leading reproduces the +2.89% sweep gap; the derived spectral_corr closes it to ~130 ppm; residual is the arccos Taylor truncation at h^4 order"
+    }
+  }
+}

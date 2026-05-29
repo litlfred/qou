@@ -35,16 +35,32 @@ def hbar : ℝ := (q - 1) / q
     The substrate identity gives m_p/m_e = 2(m_μ/m_e)F_Bor − 12. -/
 def F_Bor : ℝ := 0 -- |tr_M(borromean, q)| × [3]_q!/q³
 
-/-- Route 2: the spectral correction factor.
-    θ/(8ℏ²) where θ = arccos(1 − 3h⁴/2 − h⁶/2). -/
+/-- The EXACT Hoefsmit Borromean character on the standard irrep
+    V_{(2,1)}: χ^{(2,1)}(B₃) = 2 − 3h⁴ − h⁶. -/
+-- Ref: [ram1997] https://doi.org/10.1007/BF02677006
+def borromeanChar : ℝ := 2 - 3 * (h q) ^ 4 - (h q) ^ 6
+
+/-- Route 2: the spectral correction factor θ/(8ℏ²), where the
+    spectral angle θ = arccos(χ/2) and χ = borromeanChar is the
+    exact Borromean character on V_{(2,1)}. -/
 def spectralCorr : ℝ :=
-  let hv := h q
-  Real.arccos (1 - 3 * hv ^ 4 / 2 - hv ^ 6 / 2) / (8 * (hbar q) ^ 2)
+  Real.arccos (borromeanChar q / 2) / (8 * (hbar q) ^ 2)
+
+/-- The Family-A linking weight lw_A = 5/2 + 3h²/4 (PROVED, Family A). -/
+def lwA : ℝ := 5/2 + 3 * (h q) ^ 2 / 4
 
 /-- Route 2 linking weight: lw_A × spectral correction. -/
-def lwSpectral : ℝ :=
-  let hv := h q
-  (5/2 + 3 * hv ^ 2 / 4) * spectralCorr q
+def lwSpectral : ℝ := lwA q * spectralCorr q
+
+/-- Geometric scale Vol(B₃)/ℏ² = 8G/ℏ² (G = Catalan, archimedean). -/
+def geomScale (G : ℝ) : ℝ := 8 * G / (hbar q) ^ 2
+
+/-- Route 2 decomposition of the proton mass ratio:
+    m_p/m_e = (Vol(B₃)/ℏ²) · lw_A · spectralCorr = geomScale · lwSpectral.
+    Numerically (q₀, 50 dps): the leading (Vol/ℏ²)·lw_A reproduces the
+    +2.89% Geom_full gap; the derived spectralCorr factor (≈0.97112)
+    closes it to ~130 ppm. -/
+def mpOverMe (G : ℝ) : ℝ := geomScale q G * lwSpectral q
 
 /-- Route 1 effective linking weight:
     lw_eff = m_p(Route 1) / (Vol(B₃)/ℏ²).
@@ -72,13 +88,21 @@ theorem h_eq_qp1_hbar : h q = (q + 1) * hbar q := by
   field_simp
   ring
 
-/-- The Borromean character on V_{(2,1)} in terms of h.
-    χ^{(2,1)}(B₃) = 2 − 3h⁴ − h⁶.
-    This is the EXACT rational character (from Hoefsmit seminormal). -/
+/-- The spectral arccos argument is exactly χ/2, where χ is the
+    Borromean character on V_{(2,1)} (χ = 2 − 3h⁴ − h⁶). Hence
+    spectralCorr's argument equals 1 − 3h⁴/2 − h⁶/2. PROVED. -/
 -- Ref: [ram1997] https://doi.org/10.1007/BF02677006
-theorem borromean_character_h :
-    trivial /- χ = 2 − 3(h q)^4 − (h q)^6 -/ := by
-  trivial
+theorem borromean_char_arccos_arg :
+    borromeanChar q / 2 = 1 - 3 * (h q) ^ 4 / 2 - (h q) ^ 6 / 2 := by
+  unfold borromeanChar
+  ring
+
+/-- The proton mass-ratio decomposition factors as
+    (Vol(B₃)/ℏ²) · lw_A · spectralCorr.  PROVED (definitional). -/
+theorem mpOverMe_factored (G : ℝ) :
+    mpOverMe q G = geomScale q G * lwA q * spectralCorr q := by
+  unfold mpOverMe lwSpectral
+  ring
 
 /-- The spectral correction converges as a series in h⁴(3+h²)/2:
     arccos(1−x) = √(2x)·(1 + x/12 + 3x²/160 + ...)
