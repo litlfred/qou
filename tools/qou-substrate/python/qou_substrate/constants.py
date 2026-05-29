@@ -5,37 +5,55 @@ All witness computations import q from here. When a better
 measurement of m_μ/m_e or Vol(4_1) becomes available, update
 THIS file and re-run all witnesses.
 
-Derivation:
-    ℏ_q² = Vol(4_1) / (m_μ/m_e)
-    ℏ_q = 1 - q⁻¹
-    q = 1 / (1 - ℏ_q)
+Derivation (2026-05-28: re-pinned from m_p/m_e — the most precise anchor):
+    q solves the proton substrate identity (Newton solve, q_at below)
+        m_p/m_e = 2·(Vol(4_1)/ℏ_q²)·F_Bor(q) − 12,
+        F_Bor(q) = |tr_M(β_Bor,q)|·[3]_q!/q³,
+        |tr_M(β_Bor,q)| = (4 + h² − 3h⁴ − h⁶)/(h² + 4)   (closed form).
+    m_μ/m_e is now a PREDICTION (agrees to ~9.5σ). The muon-anchor
+    closed form q = 1/(1 − √(Vol/(m_μ/m_e))) is kept as q_muon_at()
+    for cross-check.
+
+    Experimental error on q₀ (propagated; Vol is a math constant with
+    zero error, so only the mass ratio contributes):
+        m_p anchor : σ(q₀) = 0.0029 ppb = 2853 ppQ   (sensitivity ≈ 21)
+        m_μ anchor : σ(q₀) = 1.22  ppb = 1.2e6 ppQ   (429× looser)
 
 Sources:
-    Vol(4_1) = 2.029883212819307 ± 1e-12  (SnapPy 3.3.2, numerical precision)
-    m_μ/m_e  = 206.7682830 ± 0.0000046    (CODATA 2022)
+    Vol(4_1)  = 2.029883212819307…       (2·Cl₂(π/3), exact math constant)
+    m_p/m_e   = 1836.152673426 ± 1.1e-7  (CODATA 2022, 0.06 ppb — ANCHOR)
+    m_μ/m_e   = 206.7682830 ± 0.0000046  (CODATA 2022 — now a prediction)
+
+Anchor-choice rationale: observations/substrate-anchor-alternatives.md,
+docs/audits/2026-05-28-mu-p-tension-substrate-floor.md.
 """
 
 import math
 
 # ── Input measurements with uncertainties ────────────────────────
-VOL_FIGURE_EIGHT     = 2.029883212819307   # SnapPy 3.3.2 (verified to 15 digits)
-VOL_FIGURE_EIGHT_ERR = 1e-12               # numerical precision of SnapPy
+VOL_FIGURE_EIGHT     = 2.029883212819307   # 2·Cl₂(π/3): math constant (SnapPy-verified)
+VOL_FIGURE_EIGHT_ERR = 1e-12               # storage precision (math value is exact)
 
-MASS_RATIO_MU_E      = 206.7682830         # CODATA 2022
-MASS_RATIO_MU_E_ERR  = 0.0000046           # CODATA 2022 uncertainty
+MASS_RATIO_P_E       = 1836.152673426      # CODATA 2022 (m_p/m_e) — CALIBRATION ANCHOR
+MASS_RATIO_P_E_ERR   = 0.00000011          # 0.06 ppb
+MASS_RATIO_MU_E      = 206.7682830         # CODATA 2022 — now a PREDICTION (cross-check)
+MASS_RATIO_MU_E_ERR  = 0.0000046
 
-# ── Derived substrate parameter ──────────────────────────────────
-HBAR_Q_SQ = VOL_FIGURE_EIGHT / MASS_RATIO_MU_E
-HBAR_Q    = math.sqrt(HBAR_Q_SQ)
-Q         = 1.0 / (1.0 - HBAR_Q)
+# ── Derived substrate parameter (m_p-pinned) ─────────────────────
+# f64 value cast from the 50-digit Newton solve (Q_50_DIGIT_STR below);
+# the genuine arbitrary-precision derivation is q_at() (mpmath findroot
+# on the proton substrate identity). m_μ-anchor cross-check: q_muon_at().
+Q         = 1.10997858275138080759166909561076887987    # = float(Q_50_DIGIT_STR)
+HBAR_Q    = 1.0 - 1.0 / Q
+HBAR_Q_SQ = HBAR_Q * HBAR_Q
 
-# ── Uncertainty propagation ──────────────────────────────────────
-# q = 1/(1 - sqrt(V/R)) where V = Vol(4_1), R = m_μ/m_e
-# dq/dR = q² × sqrt(V/R) / (2R)
-# dq/dV = -q² × 1/(2R × sqrt(V/R)) ... but Vol is exact to 1e-12
-# Dominant uncertainty comes from CODATA mass ratio:
-_dq_dR = Q**2 * math.sqrt(VOL_FIGURE_EIGHT / MASS_RATIO_MU_E) / (2 * MASS_RATIO_MU_E)
-Q_ERR  = _dq_dR * MASS_RATIO_MU_E_ERR  # ~ 1.3e-8
+# ── Uncertainty propagation (from the m_p/m_e anchor) ────────────
+# q is pinned from m_p/m_e via the substrate identity; sensitivity
+# S = dln(m_p)/dln(q) ≈ 21, so σ(q)/q = (1/S)·σ(m_p)/m_p. Vol(4_1) is a
+# math constant (zero experimental error); only the mass ratio enters.
+#   ⇒ σ(q₀) ≈ 0.0029 ppb = 2853 ppQ (vs 1.22 ppb on the old muon anchor).
+_S_PROTON = 21.0
+Q_ERR  = (Q / _S_PROTON) * (MASS_RATIO_P_E_ERR / MASS_RATIO_P_E)  # ~3.2e-12
 
 # ── Derived constants from q ─────────────────────────────────────
 Q_INV     = 1.0 / Q
@@ -80,22 +98,18 @@ Q_RAT_NUM = 11099786
 Q_RAT_DEN = 10000000
 
 # ── Centralized high-precision string for q_0 (for mpmath callers) ─
-# Derived from CAL-1 (m_μ/m_e) per the three-calibration discipline; this
-# is the canonical 50-digit pin used by witness scripts that need
-# arbitrary-precision evaluation. Imported by callers to avoid hardcoding
-# the literal in many places (per Gemini review on PR #515).
+# Canonical 50-digit pin, imported by witness scripts needing
+# arbitrary-precision q₀ (avoids hardcoding the literal in many places).
 #
-# 2026-05-18 (Q6 follow-up): synced with the derived 50-dps value from
-# `q-pinning-50-digit.witness.json::derived_50_digit::q` (computed
-# from Vol(4_1) + m_μ/m_e via `q_pinning_50_digit.py`). The prior
-# hardcoded literal diverged from the witness at digit 15
-# (1.10997859555418051695... vs the derived 1.10997859555418057528...),
-# producing a ~14-digit precision floor in every downstream mpfr
-# computation that imported this string (PR #683 surfaced this via
-# the canonical-chi-rust binary's disagreement with the
-# atomic-tr-m-mpfr-50dps witness at digit 15).
+# 2026-05-28: RE-PINNED from m_p/m_e (the most precise anchor, 0.06 ppb)
+# via the proton substrate identity — the Newton solve in q_at(). m_μ/m_e
+# is now a prediction (9.5σ). Previous muon-anchor value was
+# 1.10997859555418057528… ; the new value differs by −11.5 ppb. q_at()
+# reproduces this string to its full precision; q_muon_at() gives the old
+# muon value for cross-check. See docs/audits/2026-05-28-mu-p-tension-
+# substrate-floor.md and observations/substrate-anchor-alternatives.md.
 Q_50_DIGIT_STR = (
-    "1.10997859555418057528159407960950937799328227995870"
+    "1.10997858275138080759166909561076887987449912187358"
 )
 
 # ── High-precision (mpmath) parallel API ─────────────────────────
@@ -114,7 +128,8 @@ Q_50_DIGIT_STR = (
 # (SnapPy's Vol limit); past that it is stable but bounded by
 # CODATA m_μ/m_e uncertainty.
 
-MASS_RATIO_MU_E_STR  = "206.7682830"   # CODATA 2022, ~7 sig figs (treated as exact for q_0 definition)
+MASS_RATIO_P_E_STR   = "1836.152673426"  # CODATA 2022 (m_p/m_e) — pinning anchor
+MASS_RATIO_MU_E_STR  = "206.7682830"    # CODATA 2022 — now a prediction (cross-check)
 
 _DPS_DEFAULT = 50
 
@@ -140,18 +155,45 @@ try:
         finally:
             _mp.mp.dps = prev
 
-    def q_at(dps: int = _DPS_DEFAULT):
-        """Return q at requested mpmath precision.  Caller should
-        set ``mpmath.mp.dps`` to at least ``dps`` before consuming
-        the result if it does further mpmath arithmetic."""
+    def q_muon_at(dps: int = _DPS_DEFAULT):
+        """CROSS-CHECK: q from the muon-anchor closed form
+        q = 1/(1 − √(Vol(4_1)/(m_μ/m_e))). This was the pin until
+        2026-05-28; now superseded by q_at() (m_p anchor). Differs from
+        q_at() by ~11.5 ppb — that gap is the μ-p tension (9.5σ)."""
         prev = _mp.mp.dps
         try:
             _mp.mp.dps = max(prev, dps + 10)
             vol = vol_4_1_at(dps + 10)
             r = _mp.mpf(MASS_RATIO_MU_E_STR)
-            hbar_sq = vol / r
-            hbar = _mp.sqrt(hbar_sq)
+            hbar = _mp.sqrt(vol / r)
             q = _mp.mpf(1) / (_mp.mpf(1) - hbar)
+            _mp.mp.dps = max(prev, dps)
+            return +q
+        finally:
+            _mp.mp.dps = prev
+
+    def q_at(dps: int = _DPS_DEFAULT):
+        """Return q at requested mpmath precision, pinned from m_p/m_e
+        (the most precise anchor) via the proton substrate identity:
+            m_p/m_e = 2·(Vol(4_1)/ℏ_q²)·|tr_M(β_Bor)|·[3]_q!/q³ − 12,
+            |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4)   (closed form).
+        The closed-form tr_M needs no Hecke machinery, so this Newton
+        solve is self-contained and exact at any dps. Caller should set
+        ``mpmath.mp.dps`` ≥ ``dps`` before further mpmath arithmetic."""
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            vol = vol_4_1_at(dps + 15)
+            mp_me = _mp.mpf(MASS_RATIO_P_E_STR)
+
+            def _resid(q):
+                h = q - 1 / q
+                hbar_sq = (1 - 1 / q) ** 2
+                trM = _mp.fabs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
+                qf3 = (q**2 + 1 + q**(-2)) * (q + q**(-1))
+                return 2 * vol / hbar_sq * (trM * qf3 / q**3) - 12 - mp_me
+
+            q = _mp.findroot(_resid, _mp.mpf("1.10997858"))
             _mp.mp.dps = max(prev, dps)
             return +q
         finally:
@@ -168,11 +210,13 @@ try:
     # importing q_parameter; the previous global assignment silently
     # overrode their precision setting.  workdps restores on exit.
     with _mp.workdps(_DPS_DEFAULT):
-        Q_MP         = q_at(_DPS_DEFAULT)
+        Q_MP         = q_at(_DPS_DEFAULT)            # m_p-pinned (proton identity)
         VOL_4_1_MP   = vol_4_1_at(_DPS_DEFAULT)
-        HBAR_Q_SQ_MP = VOL_4_1_MP / _mp.mpf(MASS_RATIO_MU_E_STR)
-        HBAR_Q_MP    = _mp.sqrt(HBAR_Q_SQ_MP)
         Q_INV_MP     = _mp.mpf(1) / Q_MP
+        # ℏ_q derived from the (m_p-pinned) q, NOT from Vol/m_μ — the
+        # latter would be the muon value and inconsistent with Q_MP.
+        HBAR_Q_MP    = _mp.mpf(1) - Q_INV_MP
+        HBAR_Q_SQ_MP = HBAR_Q_MP ** 2
         HA_MP        = Q_MP - Q_INV_MP
         E_CROSS_MP   = HA_MP / 2
         S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
@@ -194,9 +238,10 @@ except ImportError:
         raise RuntimeError("q_str requires mpmath; install it with `pip install mpmath`")
 
 if __name__ == "__main__":
-    print(f"Substrate parameter q (canonical)")
-    print(f"  Vol(4_1)   = {VOL_FIGURE_EIGHT} ± {VOL_FIGURE_EIGHT_ERR}")
-    print(f"  m_μ/m_e    = {MASS_RATIO_MU_E} ± {MASS_RATIO_MU_E_ERR}")
+    print(f"Substrate parameter q (canonical, m_p-pinned 2026-05-28)")
+    print(f"  Vol(4_1)   = {VOL_FIGURE_EIGHT} (math constant)")
+    print(f"  m_p/m_e    = {MASS_RATIO_P_E} ± {MASS_RATIO_P_E_ERR}  [ANCHOR]")
+    print(f"  m_μ/m_e    = {MASS_RATIO_MU_E} ± {MASS_RATIO_MU_E_ERR}  [now a prediction, 9.5σ]")
     print(f"  ℏ_q²       = {HBAR_Q_SQ:.15f}")
     print(f"  ℏ_q        = {HBAR_Q:.15f}")
     print(f"  q          = {Q:.15f} ± {Q_ERR:.2e}")
