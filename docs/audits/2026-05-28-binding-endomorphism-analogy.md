@@ -140,3 +140,32 @@ endomorphism $B = m_e \cdot \mathrm{Vol}(K_{\mathrm{bind}}) \cdot
 \Delta\mathrm{tr}$ matches ²H (via Hopf→$\mathrm{Vol}(\mathcal{B}_3)$)
 but gives $-60\%$ for ³H/³He: the A-dependence is not carried by a
 single binding-link volume.
+
+## Multi-bond test (Wenzl JM, PR follow-up)
+
+With conventions reconciled, the additive per-bond model
+$B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \sum_{\text{bonds}}
+\Delta\mathrm{tr}_{\text{bond}}$ (each chain bond's Wenzl trace shift,
+no scale fit) gives:
+
+| Atom | bonds | $\sum\Delta\mathrm{tr}$ | $B(\Sigma)$ | err | $B$(combined) | err |
+|------|-------|------|------|------|------|------|
+| ²H | 1 | 0.5952 | 2.229 | +0.2% | 2.229 | +0.2% |
+| ³H | 2 | 1.1940 | 4.471 | −47% | 3.010 | −64% |
+| ³He | 2 | 1.1587 | 4.339 | −44% | 3.150 | −59% |
+
+**Findings (no fit):**
+1. Binding is **more additive than multiplicative** — the per-bond sum
+   beats the combined product ($-47\%$ vs $-64\%$ for ³H), confirming
+   binding lives in the inter-nucleon bonds.
+2. The per-bond sum is still **~2× short** for $A=3$ ($t$ needs
+   $4.24$ MeV/bond; the model gives $\sim 2.2$). The factor of two
+   points to **all-pairs vs chain** bond counting: ³He has
+   $\binom{3}{2}=3$ pairs (pp + pn + pn) but the chain braid
+   `atom_braid_word_3A` encodes only $A-1=2$ adjacent bonds. The
+   missing non-adjacent (nucleon₀–nucleon₂) bond is a long-range
+   braid generator the current chain word does not carry.
+
+**Next:** an all-pairs braid (not the linear chain) is the topology
+to test — a genuine braid-structure question, not a rescaling.
+Witness: [`binding-multibond-wenzl.witness.json`](../../folio-assistant/computations/binding-multibond-wenzl.witness.json).
