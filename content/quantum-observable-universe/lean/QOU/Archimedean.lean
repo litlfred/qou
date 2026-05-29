@@ -23,7 +23,7 @@ import QOU.Archimedean.PauliWitness
 import QOU.Archimedean.NuclearGroebnerReduction
 import QOU.Archimedean.WeierstrassProjection
 import QOU.Archimedean.metallic_character_knot
-import QOU.Archimedean.descartes
+import QOU.Archimedean.archimedean
 import QOU.Archimedean.noble_gas_characterization
 
 /-!
