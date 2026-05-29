@@ -30,7 +30,7 @@ $$
 
    with **no Coulomb correction**.  The entire crossing energy is
    in the symmetric (strong) channel
-   ([decomposition](#def:crossing-energy-decomposition)).
+   ([decomposition](#prop:crossing-energy-decomposition)).
 
 3. **Enhanced binding per baryon.**  The strange quark
    $\mathfrak{s} = T_{2,5}^{\sigma}$ contributes $5$ negative
