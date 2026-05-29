@@ -54,44 +54,37 @@ with A (⁸Be +10%, ¹²C +5.4%, ²⁰Ne +8.3%, ⁴⁰Ca +19.5%).
 | D, T, ³He | **(d)→(b)** census-assigned knots = "AME-driven fitting" | `mass_table_ppb.py:18-21`, `origin:"hyp: census-assigned (EXPLORATORY)"` |
 | ⁴He | **(d)** "magic rule, ν_SDP extrapolated" | `mass_table_ppb.py:110` |
 | ⁸Be…Ca (α-cluster) | **(d)** n_pairs=C(n,2) asserted; +5–20% over-pred = KLR-positivity violations | `mass_sweep_wiring_status.py:29-33` |
-| **Q_β** | **(a) DERIVED** (Habiro-exact, CAL-3) — the ONE genuine sub-100× | `q-beta-operator-valued-N3` |
+| **Q_β** | **(a) DERIVED** at the substrate-identity / Habiro-exact residual; its *ppb-closing* c_k rungs were CODATA-fits, **removed by #1416** | `q-beta-operator-valued-N3` |
 | Published Z1–20 | **UNVERIFIABLE** — backing witness absent; falsely claims "zero fitted parameters" | `mass-table-z1-20.md` |
 | `branch_phase_fit_to_mass_tower.py` | **(b) FITTED (self-declared)** | line 123 "Suggestive partial fit, not a derivation" |
 
 ## 4. The brane-tower / m_p "0.39 ppQ" reality
 
-**Correction (owner, 2026-05-29): the tower coefficients c_k / d_k ARE
-derived — they are Habiro/Taylor expansion coefficients of the exact
-rational mass function, not fitted.** Confirmed:
-- Q_β: `qbeta_habiro_tower_1ppq.py:8` — c_k are "integer or algebraic
-  expressions from the Habiro series"; c₂=−1, c₃=−2=J (line 68). This
-  is the **production** Q_β path and the one genuine sub-100×
-  derivation (5.7 ppb).
-- m_p: `habiro_exact_mass_endomorphism.py:43` — "Habiro coefficients …
-  are exact polynomials".
+**Reconciled (2026-05-29, with merged #1416).** Two distinct objects
+were being conflated, and #1416 (merged) cut the line:
 
-So "d₃ needs categorical identification" (the exploratory probe) means
-its categorical **name** (which knot invariant) is open — **not** that
-its value is fitted. My earlier "not derived" framing was wrong on this
-point.
+- **Habiro-exact value (DERIVED).** The c_k/d_k *as Habiro/Taylor
+  coefficients of the exact rational mass function* are derived
+  (`habiro_exact_mass_endomorphism.py`); they reproduce the
+  formula→Habiro value, which for m_p is **+1.84%** vs CODATA.
+- **ppb-closing rungs (FITTED — removed by #1416).** The *additional*
+  tower rungs that tuned the Habiro-exact value down to ppb (the
+  `(1+46u⁴)…`, the "m_p 0.39 ppQ", the Q_β c_k closure) closed the
+  formula→**experiment** gap — i.e. CODATA-fits, not derivations.
+  #1416 removed them; the honest dashboard is now **2/7** (m_e + m_p),
+  not 6/7. My original "not derived" audit framing was right; the
+  intervening "c_k/d_k are derived → 0.39 ppQ" reading conflated the
+  derived Habiro-exact value with the fitted ppb closure.
 
-**However**, the dashboard's sub-ppQ m_p is still **not** the Habiro
-tower — it is a *validation* row anchored to CODATA m_e (pred=codata).
-The production-derived m_p paths give:
-- Habiro-exact mass endomorphism: m_p **+1.84%**, m_n **−55%** (the
-  neutron tower in that script is badly off; Δm_np nonsense). NOT
-  production for the nucleons.
-- Substrate identity `m_p = dim V₍₂,₁₎·(m_μ·F_Bor − |S₃|·m_e)`: **0.24
-  ppm** — derived structure (2, |S₃|=6), the ONE open piece being
-  F_Bor's status as "the natural categorical observable" (line 67).
-- Family-A Geom_full single-level: +2.89%.
-
-**Net for wiring:** the c_k/d_k Habiro method is derived and is
-already production for **Q_β**. For the **nucleons**, the cleanly-
-derived path is the substrate identity (0.24 ppm) modulo the F_Bor
-derivation; the Habiro endomorphism is not yet wireable (m_n −55%);
-the 0.39 ppQ is CODATA-anchored. So the legitimate wiring is the
-substrate identity (label F_Bor open), not a silent tower factor.
+**Where this leaves the nucleon m_p (derived options):**
+- Habiro-exact endomorphism: m_p **+1.84%** (m_n −55%, non-production).
+- Substrate identity `dim V₍₂,₁₎·(m_μ·F_Bor − |S₃|·m_e)`: **0.24 ppm**,
+  derived structure (2, |S₃|=6), F_Bor "natural observable" open.
+- **Spectral correction (this PR): m_p = Vol(B₃)/ℏ²·lw_A·arccos(χ/2)/(8ℏ²)
+  → 130 ppm** — a separate derived path with **no tuned coefficient**
+  (Vol=8G, lw_A proved, χ from Hoefsmit), so it **survives the #1416
+  de-fit**. This is the legitimate derived m_p closure, distinct from
+  the removed fitted brane-tower.
 
 ## 4b. Root cause of the nucleon +2.89% — a missing DERIVED factor
 
@@ -169,10 +162,12 @@ overcounting) and the non-production Habiro-endomorphism m_n (−55%).
    downstream/deprecated. Stop `canonical_mass_table_extended` from
    cross-referencing census `mass-table-ppb` for B_pred while its
    docstring claims "canonical".
-4. **State the honest headline:** categorical m_p/m_n = +2.89%;
-   D +1.1%, T −0.16% (census-fitted knots); Q_β the only genuine
-   sub-100× prediction. The "6/7 beat 100×" framing rests on
-   CODATA-anchored validation rows, not predictions.
+4. **State the honest headline (post-#1416):** the dashboard is now
+   **2/7** (m_e + m_p), not 6/7 — #1416 removed the CODATA-fitted
+   ppb-closing towers (m_p `(1+46u⁴)`, Q_β c_k). Categorical m_p/m_n
+   raw = +2.89%; Habiro-exact m_p = +1.84%; the derived **spectral
+   correction closes m_p to 130 ppm** (this PR, no tuned coefficient).
+   D +1.1%, T −0.16% use census-fitted knots.
 
 ## Note on wiring (the original request)
 
