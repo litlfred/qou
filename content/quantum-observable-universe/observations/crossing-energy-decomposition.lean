@@ -79,6 +79,38 @@ theorem q_inv_eq_cosh_sub_sinh (q : ℝ) (hq : 0 < q) :
   unfold symmetricWeight antisymmetricWeight
   ring
 
+/-- Algebraic→hyperbolic bridge (powers): for q > 0 and n : ℕ,
+    qⁿ = cosh(n·ln q) + sinh(n·ln q). The algebraic q-power is the
+    exponential of a hyperbolic length n·ln q. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem q_pow_eq_cosh_add_sinh (q : ℝ) (hq : 0 < q) (n : ℕ) :
+    q ^ n = Real.cosh (n * Real.log q) + Real.sinh (n * Real.log q) := by
+  have h1 : q ^ n = Real.exp ((n : ℝ) * Real.log q) := by
+    rw [Real.exp_nat_mul, Real.exp_log hq]
+  rw [h1, Real.cosh_eq, Real.sinh_eq]; ring
+
+/-- The quantum-integer numerator qⁿ − q⁻ⁿ = 2·sinh(n·ln q), for q > 0.
+    The algebraic Hecke datum is twice a hyperbolic sine. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem two_sinh_nat_log (q : ℝ) (hq : 0 < q) (n : ℕ) :
+    q ^ n - (q ^ n)⁻¹ = 2 * Real.sinh (n * Real.log q) := by
+  have h1 : q ^ n = Real.exp ((n : ℝ) * Real.log q) := by
+    rw [Real.exp_nat_mul, Real.exp_log hq]
+  rw [Real.sinh_eq, Real.exp_neg, ← h1]; ring
+
+/-- The q-bracket as a ratio of hyperbolic sines:
+    [n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹) = sinh(n·ln q)/sinh(ln q), for q > 0.
+    This is the precise sense in which the algebraic quantum integer is
+    archimedean (hyperbolic-geometric) — the bridge underlying the
+    Kashaev volume realisation (`kashaev-as-archimedean-realization`). -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem qbracket_eq_sinh_ratio (q : ℝ) (hq : 0 < q) (n : ℕ) :
+    (q ^ n - (q ^ n)⁻¹) / (q - q⁻¹)
+      = Real.sinh (n * Real.log q) / Real.sinh (Real.log q) := by
+  have hden : q - q⁻¹ = 2 * Real.sinh (Real.log q) := by
+    have h := two_sinh_nat_log q hq 1; simpa using h
+  rw [two_sinh_nat_log q hq n, hden, mul_div_mul_left _ _ (two_ne_zero)]
+
 /-- The EM/strong ratio is (q - q⁻¹)/(q + q⁻¹). -/
 noncomputable def emStrongRatio (q : ℝ) : ℝ :=
   antisymmetricWeight q / symmetricWeight q

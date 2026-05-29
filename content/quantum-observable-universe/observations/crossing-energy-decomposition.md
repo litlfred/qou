@@ -42,3 +42,36 @@ $\epsilon_i \in \{q, -q^{-1}\}$:
    $$
 
    independent of the knot composite $\mathfrak{H}$.
+
+## Algebraic-to-hyperbolic bridge
+
+The decomposition is the per-crossing case of a general identity: writing
+$\lambda = \ln q$, every algebraic $q$-power is a hyperbolic exponential,
+
+$$
+  q^{n} = \cosh(n\lambda) + \sinh(n\lambda),
+  \qquad
+  q^{n} - q^{-n} = 2\sinh(n\lambda),
+$$
+
+so the **quantum integer is a ratio of hyperbolic sines**:
+
+$$
+  [n]_q \;=\; \frac{q^{n} - q^{-n}}{q - q^{-1}}
+  \;=\; \frac{\sinh(n\lambda)}{\sinh(\lambda)}.
+$$
+
+This is the precise sense in which the Hecke datum is *archimedean*: the
+discrete algebraic invariant $[n]_q \in \mathbb{Z}[q^{\pm 1/2}]$ is a value
+of the transcendental hyperbolic sine at the crossing rapidity $\lambda$.
+It is the $q$-deformed seed of the Kashaev volume realisation
+([Kashaev as Archimedean realisation](#rem:kashaev-as-archimedean-realization)),
+where the $N\to\infty$ limit of the colored Jones polynomial integrates
+these hyperbolic lengths into the transcendental knot volume. The
+$\cosh = q^{n} + q^{-n}$ symmetric (strong) and $\sinh = q^{n} - q^{-n}$
+antisymmetric (Coulomb) channels are the real and "rotational" parts of
+that exponential.
+
+These identities are formalised in the Lean sibling
+(`q_pow_eq_cosh_add_sinh`, `two_sinh_nat_log`, `qbracket_eq_sinh_ratio`),
+holding for every $q > 0$.
