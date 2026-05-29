@@ -45,11 +45,11 @@ from typing import Any, Optional, Union
 
 # ── Shared constants ───────────────────────────────────────────
 
-# Canonical substrate parameter — single source of truth for every
-# `*.derivation.json` chain in this directory.  See CLAUDE.md §7aa
-# (notation register).  Other modules import `Q_0` from here rather
-# than redefining their own constant.
-Q_0: float = 1.1099785955541805
+# Canonical substrate parameter — imported from q_parameter (the single
+# source of truth; proton-pinned per the #1422 re-pin).  Other modules
+# may import `Q_0` from here for back-compat; new code should import
+# from q_parameter directly.
+from q_parameter import Q as Q_0  # noqa: E402
 
 # Canonical atom-target Markov-trace values at q_0 — match the
 # committed `*-tr-M-q0.derivation.json` leaf values exactly.  Per
@@ -65,31 +65,35 @@ Q_0: float = 1.1099785955541805
 # (it vanished for partitions with > 2 rows, dropping the sign-rep
 # contribution).
 #
-# ⚠️ INCONSISTENCY ESCALATED 2026-05-11 (PR #640 audit):
-# These values disagree with the canonical τ_M values reported in
-# `content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md`
-# (commit 25a204efa, "PROVED: Frobenius non-degeneracy selects
-# Jones-Markov, not Schur-Weyl"):
+# RESOLVED 2026-05-29 (#1422, decision A'):
+# The 2026-05-11 escalation framed three τ_M values as a "conflation"
+# of conventions (Jones-Markov vs Schur-Weyl).  Re-reading the audit
+# doc itself, the from_scratch number 1.7339 is reported "from the
+# single-component FREE-PROTON braid, not the 11-crossing canonical
+# recipe" — i.e. it is tr_M of a DIFFERENT braid, not a different
+# convention of the same braid.  The values below are the canonical
+# Jones-Markov tr_M of the 11-crossing canonical braid at the
+# proton-pinned q₀:
 #
-#   value below     |  Frobenius-proof τ_M (from_scratch)  |  τ_SW (Schur-Weyl)
-#   ────────────────┼──────────────────────────────────────┼────────────────────
-#   D = 0.388286    |  D = 0.336821                        |  D = 0.177389
-#   p = 1.065306    |  p_free = 1.733914                   |  p     = 2.122600
-#   n = 0.923233    |  n_free = 1.406010                   |  n     = 1.589000
+#   p = 1.0653061442544499  n = 0.9232332299116371  D = 0.3882864240747888
 #
-# The provenance comment cites PR #612 ("Canonical Wenzl-bridge"),
-# but the Frobenius selection proof on main (25a204efa) names a
-# *different* canonical Wenzl-bridge value via the `from_scratch/`
-# pipeline.  Until the discrepancy is resolved (by the author or a
-# follow-up audit), downstream chains should consume these values
-# with caution and label which convention they assume.
+# Four independent production methods (`atomic_tr_m_mpfr_50dps`
+# Hoefsmit, `markov_peel`, chi-cache combiner, Habiro `a_m` integer
+# coefficients) derive these to ≤ 2e-15 at 50 dps; the Lean theorem
+# `qou_markov_trace_is_jones_markov`
+# (`content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean`,
+# sorry-free) proves τ_M is the unique non-degenerate Frobenius form
+# on H_n(q), selecting it over τ_SW.  `from_scratch/` (different braid)
+# and τ_SW (degenerate at height > 2, per `schur-weyl-vanishing.lean`)
+# are deprecated for production — kept as pedagogy / proof
+# negative-example respectively, not re-pursued.
 #
 # Audit: `docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md`
-# §"Update 2026-05-11 — τ_M / τ_SW conflation diagnosis"
+# §"Resolution 2026-05-29".
 TR_M_AT_Q0: dict[str, float] = {
-    "p": 1.0653062285923893,
-    "n": 0.9232332971695838,
-    "D": 0.3882864715477134,
+    "p": 1.0653061442544499,
+    "n": 0.9232332299116371,
+    "D": 0.3882864240747888,
 }
 
 # ── 50-dps decimal-string companion to TR_M_AT_Q0 ──────────────────
@@ -102,9 +106,9 @@ TR_M_AT_Q0: dict[str, float] = {
 # (1ppb canonical 50-dps reducer) and markov_peel.tr_M_atomic (the
 # production canonical Markov trace).
 TR_M_AT_Q0_50DPS: dict[str, str] = {
-    "p":  "1.06530622859238926516717822268022019929625396549950",
-    "n":  "0.92323329716958305546835587742253549151548430075493",
-    "D":  "0.38828647154771295246789009070198517292737960815430",
+    "p":  "1.0653061442544499756666334037445034130528872534934",
+    "n":  "0.92323322991163717797026991200748498402824245608814",
+    "D":  "0.38828642407478887671153751312935209344259947275515",
 }
 
 # Default Model B (SDP-canonical low-strand) τ_M values at q_0 ───────
@@ -136,11 +140,11 @@ TR_M_AT_Q0_50DPS: dict[str, str] = {
 # n_canon (strand count of the canonical braid):
 #   p, n: 3, D: 3, T: 5, ³He: 3, ⁴He: open
 TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
-    "p":   1.0653062285923893,  # 11-crossing typed B_3 (uud)
-    "n":   0.9232332971695838,  # 11-crossing typed B_3 (udd)
-    "D":   0.288326,            # knot 6_2, SDP-canonical
-    "T":   0.012889,            # knot 8_11, SDP-canonical (H_5)
-    "3He": 0.998367,            # L6a4 = β_Bor (the bare Borromean)
+    "p":   1.0653061442544499,  # 11-crossing typed B_3 (uud)
+    "n":   0.9232332299116371,  # 11-crossing typed B_3 (udd)
+    "D":   0.288326,            # knot 6_2, SDP-canonical  (#1422-recompute pending)
+    "T":   0.012889,            # knot 8_11, SDP-canonical (H_5)  (#1422-recompute pending)
+    "3He": 0.998367,            # L6a4 = β_Bor (the bare Borromean)  (#1422-recompute pending)
 }
 
 # Per-isotope Model B canonical-braid metadata (knot, strand count,

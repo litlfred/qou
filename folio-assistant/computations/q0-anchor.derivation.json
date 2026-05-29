@@ -1,6 +1,6 @@
 {
   "target": "q_0",
-  "target_value": 1.1099785955541805,
+  "target_value": 1.1099785827513808,
   "target_tolerance": 1e-15,
   "content_block": "def:substrate-parameter-planck",
   "description": "Substrate-parameter anchor chain.  Records the current q_0 ≈ 1.10998 as a `script-cited` debt against `q_parameter.py` and pins the value via the AXIOM `def:substrate-parameter-planck`.  Trust profile {axiom: 1, script-cited: 1, computational: 1} — **not fully-trusted by design**: the SCRIPT_CITED frontier remains open until one of the three candidate derivations (α-FSC PSLQ closure, m_p/m_e tower inversion, brane-tower volume conjecture) lands as a real script.  Replaces PR #481's `q0-derivation-skeleton` (which referenced two scripts that were never written and one whose 2000 dps variant was never landed).",
@@ -20,12 +20,12 @@
     },
     {
       "name": "Numerical value of q_0 from Planck normalisation",
-      "operation": "Numerical solution of `G(q_0) = 1` (the Planck-normalised gravitational-constant fixed-point) at the canonical fit precision yields `q_0 ≈ 1.109978595554181`.  The compute-pipeline source of truth is the pinned literal `derivation_chain.Q_0`; the upstream computation that produced this literal lives in `q_parameter.py` (which derives `Q` from the figure-eight knot volume and the muon-electron mass ratio).  The pin is manually synchronised — when `q_parameter.Q` is regenerated at higher precision, `derivation_chain.Q_0` must be updated to match.",
+      "operation": "Numerical solution of `G(q_0) = 1` (the Planck-normalised gravitational-constant fixed-point) at the canonical fit precision yields `q_0 ≈ 1.109978582751381`.  The compute-pipeline source of truth is the pinned literal `derivation_chain.Q_0`; the upstream computation that produced this literal lives in `q_parameter.py` (which derives `Q` from the figure-eight knot volume and the muon-electron mass ratio).  The pin is manually synchronised — when `q_parameter.Q` is regenerated at higher precision, `derivation_chain.Q_0` must be updated to match.",
       "inputs": [
         "q_0_axiom"
       ],
       "output_name": "q_0_anchor",
-      "output_value": 1.1099785955541805,
+      "output_value": 1.1099785827513808,
       "trust_basis": "script-cited",
       "jet_order": 0,
       "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
@@ -39,7 +39,7 @@
         "q_0_anchor"
       ],
       "output_name": "q_0_value",
-      "output_value": 1.1099785955541805,
+      "output_value": 1.1099785827513808,
       "trust_basis": "computational",
       "jet_order": 0,
       "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})"
