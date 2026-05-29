@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T00:32:06.591878+00:00",
-  "commitSha": "908ace6b0b6ecf30907e29084c7ca06e81fba29a",
+  "computedAt": "2026-05-29T13:41:29.850864+00:00",
+  "commitSha": "5da83373cc74fc787d47e109bd66b39785294b33",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "e2720642d29d",
-  "scriptCommitSha": "52f99b3b1a648cf651843acfded842a80a9c0cdc",
+  "scriptHash": "25f9f7681b64",
+  "scriptCommitSha": "cb6ab5677d75445893c2b34623975c6a19e93f03",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "data": {
@@ -34,84 +34,84 @@
         "pred_MeV": "938.272088160",
         "codata_MeV": "938.272088160",
         "sigma_exp_MeV": "2.90000e-7",
-        "err_ppb": "3.923e-7",
+        "err_ppb": "0.0004037",
         "sigma_exp_ppb": "0.3091",
         "target_100x_ppb": "0.003091",
-        "miss_factor": "0.0001269",
+        "miss_factor": "0.1306",
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
-        "source_witness": "m-p-substrate-identity-50dps.witness.json (× Habiro brane-tower ratio)",
+        "source_witness": "m-p-substrate-identity-50dps.witness.json",
         "sigma_source": "codata_constants.M_P_MEV_VALIDATION",
-        "compute_truncation_ppb": "1.066e-34",
-        "compute_output_dps": 40
+        "compute_truncation_ppb": "1.066e-44",
+        "compute_output_dps": 50
       },
       {
         "obs": "m_mu",
         "role": "validation",
-        "pred_MeV": "105.658375649",
+        "pred_MeV": "105.658397811",
         "codata_MeV": "105.658375649",
         "sigma_exp_MeV": "2.30000e-6",
-        "err_ppb": "0.0",
+        "err_ppb": "209.8",
         "sigma_exp_ppb": "21.77",
         "target_100x_ppb": "0.2177",
-        "miss_factor": "0.0",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
+        "miss_factor": "963.6",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
-        "sigma_source": "m_e × (m_μ/m_e)_CODATA = 0.51099895069 × 206.768283 (ratio-derived; independently-quoted 105.6583755(23) MeV)",
-        "compute_truncation_ppb": "9.464e-34",
-        "compute_output_dps": 40
+        "sigma_source": "m_e × (m_μ/m_e)_CODATA = 0.51099895069000000000000000000000000000000000000000056544347190005 × 206.76828299999999999999999999999999999999999999999984248529449449 (ratio-derived; independently-quoted 105.6583755(23) MeV)",
+        "compute_truncation_ppb": "9.464e-44",
+        "compute_output_dps": 50
       },
       {
         "obs": "Q_beta",
         "role": "CAL-3 anchor",
-        "pred_MeV": "0.782333414494",
+        "pred_MeV": "0.782334385468",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "5.744",
+        "err_ppb": "1247.",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "0.7367",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
-        "source_witness": "q-beta-operator-valued-N3.witness.json (Habiro-exact, integer a_m evaluated at q₀; series terminates at M=8)",
+        "miss_factor": "159.9",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
+        "source_witness": "q-beta-operator-valued-N3.witness.json::Q_N2 (τ_M derived to k=2: Kashiwara f̃₁ + geometric; k≥3 fitted rungs dropped as non-canonical)",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)",
-        "compute_truncation_ppb": "1.278e-31",
-        "compute_output_dps": 40
+        "compute_truncation_ppb": "1.278e-41",
+        "compute_output_dps": 50
       },
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565420525",
+        "pred_MeV": "939.565421497",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "0.005518",
+        "err_ppb": "1.039",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "0.9601",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
+        "miss_factor": "180.8",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
-        "compute_truncation_ppb": "1.064e-34",
-        "compute_output_dps": 40
+        "compute_truncation_ppb": "1.064e-44",
+        "compute_output_dps": 50
       },
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.29333236518",
+        "pred_MeV": "1.29333333616",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "4.008",
+        "err_ppb": "754.8",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "0.8458",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
+        "miss_factor": "159.3",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
-        "compute_truncation_ppb": "7.732e-32",
-        "compute_output_dps": 40
+        "compute_truncation_ppb": "7.732e-42",
+        "compute_output_dps": 50
       },
       {
         "obs": "m_e",
@@ -143,31 +143,31 @@
         "beats_100x_experimental": false,
         "source_witness": "meson-kaon-pion-derivation.witness.json (Hecke character χ_{(2,1)}(σ₁⁵) × (9/5)²)",
         "sigma_source": "PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature",
-        "compute_truncation_ppb": "2.828e-32",
-        "compute_output_dps": 40
+        "compute_truncation_ppb": "2.828e-42",
+        "compute_output_dps": 50
       }
     ],
     "summary": {
       "total": 7,
-      "beats_1x_count": 6,
-      "beats_100x_count": 6
+      "beats_1x_count": 2,
+      "beats_100x_count": 2
     },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "37258f8659e415fb4f08d5f24a064c1b892eae72c57ebeadb299fbfcc3864e7e",
-        "size_bytes": 3261,
-        "commitSha": "d8d9ba88d56b52483f5e8681fc54ec193b0964c2",
-        "scriptCommitSha": "e2aa29aea92e47311c6f27b07d2adbbf2fc3b2c3",
-        "computedAt": "2026-05-26T15:07:59.219954+00:00"
+        "sha256": "3172ec1849c3ba2bbbb5319e7eed4622c889af73054dfb73a2615dfa4a0b54b0",
+        "size_bytes": 3277,
+        "commitSha": "5da83373cc74fc787d47e109bd66b39785294b33",
+        "scriptCommitSha": "db220b15c21b1a5f282c6c6cecad2d68672a0d69",
+        "computedAt": "2026-05-29T13:41:29.701781+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "56447ba64167a4664d623f596f61ae9160c4fb286119dd35d0389c9ff9f5e7f5",
-        "size_bytes": 7252,
-        "commitSha": "b7cb3790d33935014ec267ac7f141bd17920e44f",
-        "scriptCommitSha": "005d535c1122ef20427bed4e2feb13f6db8bb1cd",
-        "computedAt": "2026-05-24T06:54:24.228675+00:00"
+        "sha256": "81fc11b33f3772e486c002ffa2f5e61e7bbf421b187af1f3bf39906467d2b9a7",
+        "size_bytes": 8350,
+        "commitSha": "5da83373cc74fc787d47e109bd66b39785294b33",
+        "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+        "computedAt": "2026-05-29T13:37:42.728157+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
