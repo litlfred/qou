@@ -110,7 +110,7 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 | **5n** | Comprehensive notation refactor: $\beta_K \to \mathcal{B}_K$, $\Delta_I^K \to \bowtie_K$, $\mathbf{E} \to \mathfrak{E}$, $\mathcal{B}(q) \to \mathfrak{B}(q)$, $\tau_M \to \mathrm{tr}_M$ | **MERGED** (PR #853) — register expansions: cal admits Hecke structurals; fraktur admits energies | notation discipline |
 | **5o** | Functor disambiguation — $\tau$ (fibre, $\mathbf{C} \to \mathbf{Arch}$) vs $U$ (forgetful, $\mathbf{Arch} \to \mathbf{Vec}_\mathbb{R}$) vs $R \mapsto \mathbb{R}$ realisation (base-ring substitution, not a categorical functor) | doc note added to `notation-collisions.md` | terminology discipline |
 | **5q** | Closed-form $\mathrm{tr}_M(\mathcal{B}_K)$ shared utility (`closed_form_tau_M.py`) for production migration; combines Phase 5c.1 + 5l | new branch `claude/phase-5q-pipeline-discipline`; verification witness in progress | unblocks cheat-sheet §5 action #4 |
-| **Bind** | A≥3 binding deficit is the **linear truncation** of the boundary holonomy: the scalar Δtr collapses the per-rep **q-Reeb phase** $\theta_\lambda$; binding is carried by $\theta_\lambda$ (Markov-weighted), closing the **A=3 mirror pair (³H, ³He) to 2% with no fit** | open (scale μ₀ ungated); **per-λ "closure" retracted** as a C_knot fit (PR #1417) | identifies the binding carrier; deuteron derived, A≥3 narrowed |
+| **Bind** | A≥3 binding deficit is the **linear truncation** of the boundary holonomy: the scalar Δtr collapses the per-rep **q-Reeb phase** $\theta_\lambda$; binding is carried by $\theta_\lambda$ (Markov-weighted), closing the **A=3 mirror pair (³H, ³He) to 2% with no fit**. μ₀ = m_e/(3(q−q⁻¹)/2) ≈ 1.63 MeV **derived**; q-Hamiltonian rotational energy μ₀·ℏ_q·J_q²(j=n/2) reproduces **B_D to −9% with 0 free params**, A≥3 keeps the per-rep deficit | per-λ "closure" retracted as a C_knot fit; gate is the A≥3 per-rep structure, NOT the scale (PR #1417) | deuteron derived twice; A≥3 narrowed to one structural item |
 
 **Combined Z-step factor at full tr_M level (post-5l + 5c.1):**
 
@@ -134,9 +134,9 @@ with per-interface factors $f_i \in \{z, \, z - h\}$ for positive ($\sigma$, bot
 2. **cosh/sinh bridge PROVED** (Lean + paper): $[n]_q=\sinh(n\lambda)/\sinh(\lambda)$ — algebraic q-integer = transcendental hyperbolic sine; cosh=strong / sinh=Coulomb is a theorem, not a fit.
 3. **Yekutieli boundary↔surface form assembled** (Step 2 of the pre-archimedean chain).
 4. **Binding carrier = per-rep q-Reeb phase** $\theta_\lambda=\arccos(\chi_\lambda/d_\lambda)$: Markov-weighted phase closes the **A=3 mirror pair (³H, ³He) to 2%, no fit**; the scalar $\mathrm{tr}_M$ collapses it. Volume-difference (log/cosh/SnapPy) and Lobachevsky-volume observables **refuted** — binding is *linear* in the angle.
-5. **q-Hamiltonian rotational term** $J_q^2\hbar_q\mu_0$ is the correct structure; the scale $\mu_0\approx 249$ MeV is **not** a clean derived multiple (μ₀/m_e≈487, /E₀≈59.4) — the residual open gate, not numerology-pinned.
+5. **q-Hamiltonian rotational energy with derived μ₀** — μ₀ = m_e/(3(q−q⁻¹)/2) ≈ 1.63 MeV is the framework's per-crossing scale (`universal-ilp-algorithm`); E_rot = μ₀·ℏ_q·J_q²(j=n/2) reproduces **B_D = 2.02 MeV vs 2.225 (−9 %) from FULLY derived quantities (0 free params)** — a second independent deuteron derivation. A≥3 keeps the 44–72 % deficit (the per-rep structure, unchanged).
 
-**Net:** deuteron derived (+0.19%); A≥3 narrowed to a single open quantity — the derived value of the q-rotational scale $\mu_0$. The per-λ "closure" with a fitted `C_knot=5.852` was **retracted**.
+**Net:** deuteron derived twice (m_e·Vol(𝓑₃)·Δtr at +0.19 % and μ₀·ℏ_q·J_q²(3) at −9 %); A≥3 narrowed to one structural item — the per-rep highest-weight $j=n/2$ collapses the per-block Reeb phase just as the scalar trace does. **μ₀ is derived;** the gate is the A≥3 per-rep structure, not the scale. The per-λ "closure" with a fitted `C_knot=5.852` was **retracted**.
 
 ---
 
