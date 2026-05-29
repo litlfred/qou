@@ -746,7 +746,16 @@ export function checkAuthorNotesPollution(mdPath: string): CheckerResult {
       hits.push({ file: mdPath, line: i + 1, text: `P2:pr-commit-ref: ${l.trim().slice(0, 200)}` });
     if (AUTHOR_NOTES_AGENT_RE.test(stripped))
       hits.push({ file: mdPath, line: i + 1, text: `P3:agent-name: ${l.trim().slice(0, 200)}` });
-    if (AUTHOR_NOTES_DATE_RE.test(stripped) && !/^\$/.test(stripped) && !/Ref:/.test(stripped))
+    // P4 date check: a date inside a markdown-link target
+    // `](…/2026-05-28-foo.md)` or inside a dated filename is part of a
+    // path, not prose pollution — stripping it would break the link.
+    // Mask link targets + dated filenames before testing so genuine
+    // prose dates ("as of 2026-05-28 …") still fail but filename dates
+    // (audit-doc cross-references) do not.
+    const dateProbe = stripped
+      .replace(/\]\([^)]*\)/g, "]")
+      .replace(/[\w./-]*\d{4}-\d{2}-\d{2}[\w./-]*\.(?:md|json|py|tex|lean|txt|svg|png)\b/g, "");
+    if (AUTHOR_NOTES_DATE_RE.test(dateProbe) && !/^\$/.test(dateProbe) && !/Ref:/.test(dateProbe))
       hits.push({ file: mdPath, line: i + 1, text: `P4:date-ref: ${l.trim().slice(0, 200)}` });
   }
   return { result: hits.length > 0 ? "fail" : "pass", hits };
