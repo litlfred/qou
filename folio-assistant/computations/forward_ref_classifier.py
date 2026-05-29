@@ -138,13 +138,15 @@ def load_label_info(chapters):
 NARRATIVE_SRC = {"prose", "remark", "example", "simulator",
                  "equation", "diagram", "table"}
 
-# Kinds that carry logical content — a forward ref FROM one of these
-# TO a logical target means the argument here relies on something
-# proved later.
-LOGICAL_SRC = {"definition", "proposition", "theorem", "lemma",
-               "corollary", "proof", "conjecture"}
-LOGICAL_TGT = {"definition", "proposition", "theorem", "lemma",
-               "corollary", "proof", "conjecture"}
+# Kinds that carry logical content. A logical forward ref needs a
+# logical SOURCE (the block builds an argument) and a logical TARGET
+# (the thing relied upon) — the same kind-set on both ends. Defined
+# once and aliased so there is a single authoritative source, importable
+# by sibling tooling (e.g. chapter-complexity-review's edge classifier).
+LOGICAL_KINDS = {"definition", "proposition", "theorem", "lemma",
+                 "corollary", "proof", "conjecture"}
+LOGICAL_SRC = LOGICAL_KINDS
+LOGICAL_TGT = LOGICAL_KINDS
 
 # The ONE accepted reason a logical forward ref is permitted: the
 # surreal-number appendix is a deliberate terminal lift that the main
