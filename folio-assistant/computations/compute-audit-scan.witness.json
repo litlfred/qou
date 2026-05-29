@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T05:14:02.216364+00:00",
-  "commitSha": "b234009b9c07da66d64fd69cdaf1a4ccb3a30652",
+  "computedAt": "2026-05-29T14:45:54.498963+00:00",
+  "commitSha": "7ba9bd62bd9c74527a1f280887f756c2b67f7364",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
-  "scriptCommitSha": "8a00323ca156fd987bf98fefc66fb8083e11e269",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -34,7 +34,7 @@
       "P16": 181,
       "P21": 30,
       "P30": 142,
-      "P31": 58
+      "P31": 57
     },
     "top_files": [
       {
@@ -587,13 +587,6 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P31",
-        "file": "canonical_4he_via_jones_markov_test.py",
-        "line": 81,
-        "snippet": "CODATA literal \"938.272088\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P21",
