@@ -54,11 +54,19 @@ def _solve_q_proton_f64(mp_me, vol, iters=80):
         qf3 = (q**2 + 1 + q**-2) * (q + 1.0 / q)
         return 2 * vol / hbar2 * (trM * qf3 / q**3) - 12
     q = 1.11
+    # f64 central difference: dq = q·1e-10 is the right scale for f64
+    # (machine ε ≈ 2.2e-16); a dps-scaled dq would underflow here. The
+    # arbitrary-precision path is q_at() (mpmath findroot, no manual dq).
     for _ in range(iters):
         f = _mp_of_q(q) - mp_me
         dq = q * 1e-10
         fp = (_mp_of_q(q + dq) - _mp_of_q(q - dq)) / (2 * dq)
-        q -= f / fp
+        if fp == 0:
+            break
+        step = f / fp
+        q -= step
+        if abs(step) < 1e-15:  # f64-converged in ~4-5 iters; skip the rest
+            break
     return q
 
 Q         = _solve_q_proton_f64(MASS_RATIO_P_E, VOL_FIGURE_EIGHT)
@@ -235,9 +243,10 @@ try:
         TANH_LN_Q_MP = HA_MP / TWO_Q_MP
         LN_Q_MP      = _mp.log(Q_MP)
 
-    # Canonical 50-digit string — DERIVED from q_at (no hardcoded literal,
-    # no sync drift). This is what witness scripts import.
-    Q_50_DIGIT_STR = q_str(_DPS_DEFAULT)
+    # Canonical 50-digit string — DERIVED from the already-cached Q_MP
+    # (no hardcoded literal, no sync drift, no second findroot at import).
+    # This is what witness scripts import.
+    Q_50_DIGIT_STR = _mp.nstr(Q_MP, _DPS_DEFAULT, strip_zeros=False)
 
     HAS_MPMATH = True
 except ImportError:

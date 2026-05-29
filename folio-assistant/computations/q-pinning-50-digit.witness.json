@@ -1,13 +1,18 @@
 {
   "computation": "q-pinning-50-digit",
-  "description": "Substrate parameter q\u2080 pinned to 50 decimal digits via mpmath, derived from Vol(4_1) and m_\u03bc/m_e (CODATA 2022).  Internal arithmetic is exact to 50 digits; physical anchoring is bounded by the propagated CODATA relative uncertainty \u2248 1.22e-9 (see physical_anchoring_bound).  Recorded 50-digit outputs: q, q^{-1}, \u210f_q\u00b2, \u210f_q, H_A, [2]_q, z_markov, \u03c1_q, s_skein; plus quantum integers/factorials and n=3 Plancherel weights.  \u03be(q\u2080) via Bring-curve \u03bb is NOT yet recorded \u2014 the current placeholder has been disabled; port lambda_bring_q0.py to 50 digits and re-emit.",
-  "timestamp": "2026-05-29T13:37:40.455240+00:00",
+  "description": "Substrate parameter q\u2080 pinned to 50 decimal digits via mpmath, derived from Vol(4_1) and m_p/m_e (CODATA 2022) through the proton substrate identity (q_parameter.q_at Newton solve).  Internal arithmetic is exact to 50 digits; physical anchoring is bounded by the propagated CODATA relative uncertainty \u2248 2.85e-12 (2853 ppQ) from the 0.06 ppb m_p/m_e ratio (see physical_anchoring_bound).  m_\u03bc/m_e is recorded only as a 9.5\u03c3 cross-check prediction.  Recorded 50-digit outputs: q, q^{-1}, \u210f_q\u00b2, \u210f_q, H_A, [2]_q, z_markov, s_skein; plus quantum integers/factorials and n=3 Plancherel weights.  \u03be(q\u2080) via Bring-curve \u03bb is NOT yet recorded \u2014 the current placeholder has been disabled; port lambda_bring_q0.py to 50 digits and re-emit.",
+  "timestamp": "2026-05-29T15:17:06.302171+00:00",
   "precision_decimal_digits": 65,
   "calibration_inputs": {
     "Vol_4_1_str": "2.0298832128193072500424051085490405718833786150605995840349782136",
     "Vol_4_1_source": "SnapPy 3.3.2 verified hyperbolic structure",
+    "anchor": "m_p/m_e",
+    "m_p_over_e_str": "1836.152673426",
+    "m_p_over_e_err": "1.1e-07",
+    "m_p_over_e_source": "CODATA 2022 (0.06 ppb)",
     "m_mu_over_e_str": "206.7682830",
     "m_mu_over_e_err": "0.0000046",
+    "m_mu_over_e_role": "9.5\u03c3 cross-check PREDICTION (not the anchor)",
     "m_mu_over_e_source": "CODATA 2022"
   },
   "derived_50_digit": {
@@ -49,9 +54,13 @@
     "formula": "xi(q) = D(lambda_bring(q)) / hbar_q^2"
   },
   "physical_anchoring_bound": {
-    "codata_relative_uncertainty": "0.0000000012233536819966525400843944712002489458760364146817966901019957322",
-    "ppb_target": "1e-9",
-    "limited_by": "CODATA m_\u03bc/m_e at \u03c3(q)/q \u2248 1.22e-09",
-    "comment": "Internal arithmetic is at 50 digits.  The framework's DIMENSIONLESS predictions (ratios, equality of computed quantities) can be checked at 50-digit precision.  Absolute (MeV) predictions are bounded to the CODATA-propagated relative uncertainty above (~1.22e-9 with current m_\u03bc/m_e), which is already at 1-ppb-class."
+    "anchor": "m_p/m_e",
+    "codata_relative_uncertainty": "0.0000000000028531654050036077123596671286491586843402335600539841241367285189",
+    "sensitivity_S_dlnR_dlnq": "-20.99698540389890963458389463074624751271501581148006086418072276",
+    "sigma_q0_absolute": "0.0000000000031669524926011739196534695890806529787303254038266492993318960586",
+    "ppq": "2853",
+    "limited_by": "CODATA m_p/m_e (0.06 ppb) at \u03c3(q)/q \u2248 2.85e-12",
+    "muon_cross_check_relative_uncertainty": "0.0000000012233536819966525400843944712002489458760364146817966901019957322",
+    "comment": "Internal arithmetic is at 50 digits.  The framework's DIMENSIONLESS predictions (ratios, equality of computed quantities) can be checked at 50-digit precision.  q\u2080 is anchored on m_p/m_e (the most precise ratio, 0.06 ppb); the propagated bound \u03c3(q\u2080)/q\u2080 \u2248 2.85e-12 (2853 ppQ) improves one-for-one as CODATA improves m_p/m_e \u2014 it is not a framework ceiling.  The muon-anchor bound (~1.22e-9) is shown for comparison and is ~429\u00d7 looser; m_\u03bc/m_e is now a 9.5\u03c3 prediction."
   }
 }

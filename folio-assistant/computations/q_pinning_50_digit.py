@@ -16,16 +16,18 @@ CALIBRATION INPUTS (precision-limited by CODATA / SnapPy):
   Vol(4_1) = 2.029 883 212 819 307 250 042 405 108 549 040 ...
              (SnapPy verified hyperbolic structure, ~50+ digits)
 
-  m_μ/m_e  = 206.768 283 0 ± 4.6e-6  (CODATA 2022 — value below is the
-             primary source; q_parameter.py carries the same value)
-             — propagates to σ(q₀)/q₀ ≈ 1.22e-9 relative, computed
-             below from dq/dR
+  m_p/m_e  = 1836.152 673 426 ± 1.1e-7  (CODATA 2022 — the ANCHOR,
+             0.06 ppb, the most precise mass ratio available)
+             — propagates to σ(q₀)/q₀ ≈ 2.85e-12 relative (2853 ppQ),
+             computed below from dq/dR via the proton identity
+  m_μ/m_e  = 206.768 283 0 ± 4.6e-6  (CODATA 2022 — now a 9.5σ
+             PREDICTION, kept only for the cross-check print)
 
-DERIVATION (leading-order substrate-truncation; see purge audit above):
+DERIVATION (q₀ pinned from m_p/m_e via the proton substrate identity):
 
-  ℏ_q²  =  Vol(4_1) / (m_μ/m_e)     (LO Skein, lepton sector)
-  ℏ_q   =  +√(ℏ_q²)
-  q     =  1 / (1 - ℏ_q)
+  m_p/m_e =  2·(Vol(4_1)/ℏ_q²)·F_Bor(q) − 12   (Newton-solved for q,
+             |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4), pure-q closed form)
+  ℏ_q   =  1 - q⁻¹
   H_A   =  q - q⁻¹
   z     =  1 / (q^{1/2} + q^{-1/2})  (Markov parameter)
   [n]_q =  (q^n - q^{-n}) / (q - q⁻¹)
@@ -35,10 +37,10 @@ DERIVATION (leading-order substrate-truncation; see purge audit above):
   D(z)   = Bloch-Wigner dilogarithm
 
 This module computes ALL of the above to 50 decimal places via mpmath.
-The PHYSICAL anchoring is bounded by CODATA's ~1e-8 on m_μ/m_e, but
-the INTERNAL framework arithmetic is exact to 50 digits, allowing
-relative-quantity predictions (ratios, dimensionless invariants) at
-that precision.
+The PHYSICAL anchoring is bounded by CODATA's 0.06 ppb on m_p/m_e
+(σ(q₀)/q₀ ≈ 2.85e-12), but the INTERNAL framework arithmetic is exact
+to 50 digits, allowing relative-quantity predictions (ratios,
+dimensionless invariants) at that precision.
 """
 from __future__ import annotations
 
@@ -66,8 +68,12 @@ set_compute_dps()
 VOL_4_1 = vol_4_1_at(mp.dps)
 VOL_4_1_STR = mp.nstr(VOL_4_1, mp.dps, strip_zeros=False)
 
-# CODATA 2022 muon-electron mass ratio (now a PREDICTION, kept for the
-# cross-check print; q₀ is no longer pinned from it — see below).
+# CODATA 2022 proton-electron mass ratio — the ANCHOR (0.06 ppb).
+from q_parameter import MASS_RATIO_P_E_STR, MASS_RATIO_P_E_ERR  # noqa: E402
+R_P = mpf(MASS_RATIO_P_E_STR)
+
+# CODATA 2022 muon-electron mass ratio (now a 9.5σ PREDICTION, kept for
+# the cross-check print; q₀ is no longer pinned from it — see below).
 M_MU_OVER_E_STR = "206.7682830"
 M_MU_OVER_E = mpf(M_MU_OVER_E_STR)
 
@@ -78,9 +84,9 @@ M_MU_OVER_E = mpf(M_MU_OVER_E_STR)
 # The old muon derivation (ℏ_q² = Vol/(m_μ/m_e)) is q_parameter.q_muon_at.
 from q_parameter import q_at  # noqa: E402
 Q         = q_at(mp.dps)
-HBAR_Q    = mpf(1) - mpf(1) / Q
-HBAR_Q_SQ = HBAR_Q ** 2
 Q_INV     = mpf(1) / Q
+HBAR_Q    = mpf(1) - Q_INV
+HBAR_Q_SQ = HBAR_Q ** 2
 H_A       = Q - Q_INV
 TWO_Q     = Q + Q_INV       # [2]_q
 # Markov / Skein parameters
@@ -215,25 +221,38 @@ if __name__ == "__main__":
         print(f"  See lambda_bring_q0.py (15-digit verified) on main.")
         print(f"  TODO: port that routine to 50-digit mpmath.")
 
-    print(f"\nUncertainty propagation:")
-    # dq/d(R) = q² · ℏ_q / (2R)  where R = m_μ/m_e
-    DQ_DR = Q ** 2 * HBAR_Q / (mpf(2) * M_MU_OVER_E)
-    M_MU_E_ERR = mpf("0.0000046")
-    Q_ERR = DQ_DR * M_MU_E_ERR
-    print(f"  dq/dR (m_μ/m_e)  = {DQ_DR}")
-    print(f"  σ(m_μ/m_e)       = {M_MU_E_ERR}")
-    print(f"  σ(q₀) [absolute] = {Q_ERR}")
-    print(f"  σ(q₀)/q₀ [rel]   = {Q_ERR / Q}")
+    print(f"\nUncertainty propagation (m_p/m_e anchor):")
+    # q is pinned from m_p/m_e via the proton substrate identity
+    # G(q) = 2·(Vol/ℏ_q²)·F_Bor − 12.  σ(q) = σ(R)/|G'(q)|, derivative
+    # by central difference.  dq is scaled to the working precision —
+    # in this mpmath context dps-scaling is correct and avoids
+    # subtractive-cancellation loss (contrast the fixed f64 step in the
+    # import-time solver of qou_substrate.constants).
+    def _proton_identity(qv: mpf) -> mpf:
+        h = qv - mpf(1) / qv
+        hbar2 = (mpf(1) - mpf(1) / qv) ** 2
+        trM = abs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
+        qf3 = (qv**2 + 1 + qv**(-2)) * (qv + mpf(1) / qv)
+        return 2 * VOL_4_1 / hbar2 * (trM * qf3 / qv**3) - 12
+    DQ = Q * mpf(10) ** -(mp.dps // 2)
+    G_PRIME = (_proton_identity(Q + DQ) - _proton_identity(Q - DQ)) / (2 * DQ)
+    DQ_DR = mpf(1) / G_PRIME                       # dq/dR = 1/G'(q)
+    R_P_ERR = mpf(str(MASS_RATIO_P_E_ERR))
+    Q_ERR = abs(DQ_DR) * R_P_ERR
+    S_PROTON = (Q / R_P) * G_PRIME                 # dln(R)/dln(q) ≈ 21
+    print(f"  G'(q) = dR/dq            = {G_PRIME}")
+    print(f"  sensitivity S=dlnR/dlnq  = {S_PROTON}")
+    print(f"  σ(m_p/m_e)               = {R_P_ERR}")
+    print(f"  σ(q₀) [absolute]         = {Q_ERR}")
+    print(f"  σ(q₀)/q₀ [rel]           = {Q_ERR / Q}")
     rel_prec = float(Q_ERR / Q)
-    print(f"  → CODATA-bounded relative precision: ~{rel_prec:.2e}")
-    ratio_to_ppb = rel_prec / 1e-9
-    if ratio_to_ppb <= 2:
-        bound_msg = (f"✓ At 1-ppb-class precision "
-                      f"(σ/q = {rel_prec:.2e}).")
-    else:
-        bound_msg = (f"⚠ PINNING-LIMITED at ~{ratio_to_ppb:.1f}× from "
-                      f"1 ppb (σ/q = {rel_prec:.2e}).")
-    print(f"  → 1 ppb = 1e-9.  {bound_msg}")
+    ppq = rel_prec / 1e-15
+    print(f"  → CODATA-bounded relative precision: ~{rel_prec:.2e} ({ppq:.0f} ppQ)")
+    # muon cross-check (now a 9.5σ prediction, not the anchor)
+    DQ_DR_MU = Q ** 2 * HBAR_Q / (mpf(2) * M_MU_OVER_E)
+    Q_ERR_MU = DQ_DR_MU * mpf("0.0000046")
+    print(f"  (muon-anchor cross-check would give σ(q₀)/q₀ ≈ "
+          f"{float(Q_ERR_MU / Q):.2e} — {float(Q_ERR_MU / Q_ERR):.0f}× looser)")
 
     # ξ(q₀) is DISABLED pending verified Bring-curve derivation at
     # 50-digit mpmath precision; a 15-digit path exists in
@@ -254,12 +273,15 @@ if __name__ == "__main__":
         "computation": "q-pinning-50-digit",
         "description": (
             "Substrate parameter q₀ pinned to 50 decimal digits via "
-            "mpmath, derived from Vol(4_1) and m_μ/m_e (CODATA 2022).  "
-            "Internal arithmetic is exact to 50 digits; physical "
-            "anchoring is bounded by the propagated CODATA relative "
-            "uncertainty ≈ 1.22e-9 (see physical_anchoring_bound).  "
+            "mpmath, derived from Vol(4_1) and m_p/m_e (CODATA 2022) "
+            "through the proton substrate identity (q_parameter.q_at "
+            "Newton solve).  Internal arithmetic is exact to 50 digits; "
+            "physical anchoring is bounded by the propagated CODATA "
+            "relative uncertainty ≈ 2.85e-12 (2853 ppQ) from the "
+            "0.06 ppb m_p/m_e ratio (see physical_anchoring_bound).  "
+            "m_μ/m_e is recorded only as a 9.5σ cross-check prediction.  "
             "Recorded 50-digit outputs: q, q^{-1}, ℏ_q², ℏ_q, H_A, "
-            "[2]_q, z_markov, ρ_q, s_skein; plus quantum integers/"
+            "[2]_q, z_markov, s_skein; plus quantum integers/"
             "factorials and n=3 Plancherel weights.  ξ(q₀) via "
             "Bring-curve λ is NOT yet recorded — the current "
             "placeholder has been disabled; port lambda_bring_q0.py "
@@ -270,8 +292,13 @@ if __name__ == "__main__":
         "calibration_inputs": {
             "Vol_4_1_str": VOL_4_1_STR,
             "Vol_4_1_source": "SnapPy 3.3.2 verified hyperbolic structure",
+            "anchor": "m_p/m_e",
+            "m_p_over_e_str": MASS_RATIO_P_E_STR,
+            "m_p_over_e_err": str(MASS_RATIO_P_E_ERR),
+            "m_p_over_e_source": "CODATA 2022 (0.06 ppb)",
             "m_mu_over_e_str": M_MU_OVER_E_STR,
-            "m_mu_over_e_err": str(M_MU_E_ERR),
+            "m_mu_over_e_err": "0.0000046",
+            "m_mu_over_e_role": "9.5σ cross-check PREDICTION (not the anchor)",
             "m_mu_over_e_source": "CODATA 2022",
         },
         "derived_50_digit": {
@@ -298,18 +325,24 @@ if __name__ == "__main__":
         },
         "universal_shape_coupling": universal_shape_coupling,
         "physical_anchoring_bound": {
+            "anchor": "m_p/m_e",
             "codata_relative_uncertainty": str(Q_ERR / Q),
-            "ppb_target": "1e-9",
+            "sensitivity_S_dlnR_dlnq": str(S_PROTON),
+            "sigma_q0_absolute": str(Q_ERR),
+            "ppq": f"{float(Q_ERR / Q) / 1e-15:.0f}",
             "limited_by":
-                f"CODATA m_μ/m_e at σ(q)/q ≈ {float(Q_ERR/Q):.2e}",
+                f"CODATA m_p/m_e (0.06 ppb) at σ(q)/q ≈ {float(Q_ERR/Q):.2e}",
+            "muon_cross_check_relative_uncertainty": str(Q_ERR_MU / Q),
             "comment": (
                 "Internal arithmetic is at 50 digits.  The framework's "
                 "DIMENSIONLESS predictions (ratios, equality of "
                 "computed quantities) can be checked at 50-digit "
-                "precision.  Absolute (MeV) predictions are bounded "
-                "to the CODATA-propagated relative uncertainty above "
-                "(~1.22e-9 with current m_μ/m_e), which is already at "
-                "1-ppb-class."
+                "precision.  q₀ is anchored on m_p/m_e (the most precise "
+                "ratio, 0.06 ppb); the propagated bound σ(q₀)/q₀ ≈ "
+                "2.85e-12 (2853 ppQ) improves one-for-one as CODATA "
+                "improves m_p/m_e — it is not a framework ceiling.  The "
+                "muon-anchor bound (~1.22e-9) is shown for comparison "
+                "and is ~429× looser; m_μ/m_e is now a 9.5σ prediction."
             ),
         },
     }
