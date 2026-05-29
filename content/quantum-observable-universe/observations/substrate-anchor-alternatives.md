@@ -5,13 +5,12 @@ experimental mass ratios measured in our local cosmological context.
 Multiple independent mass ratios provide experimental handles on the
 same underlying $q_0$, each with different measurement precision.
 
-As of 2026-05-29, $q_0$ is pinned from the **proton** ratio
-$m_p/m_e$ (the most precisely measured, $0.06\,\mathrm{ppb}$) via the
-proton substrate identity below; $m_\mu/m_e$ is now a prediction. The
-muon-anchor identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ was the
-prior pin (CODATA muon ratio, $22\,\mathrm{ppb}$) and remains the most
-transparent cross-check.  The proton substrate
-identity
+$q_0$ is pinned from the **proton** ratio $m_p/m_e$ — the most
+precisely measured ($0.06\,\mathrm{ppb}$) — via the proton substrate
+identity below; $m_\mu/m_e$ is then a prediction. The muon-anchor
+identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ is the most
+transparent cross-check (CODATA muon ratio, $22\,\mathrm{ppb}$).  The
+proton substrate identity
 ([`prop:proton-mass-substrate-identity`](../braids-and-knots/proton-mass-substrate-identity.md))
 provides an alternative route through a different observable:
 
