@@ -123,7 +123,6 @@ theorem degLexNat_right_compat (a b d : List ℕ) (h : degLexNat a b) :
     refine ⟨by rw [List.length_append, List.length_append]; omega, ?_⟩
     -- a < b (same length) → a ++ d < b ++ d.
     -- Induction on a generalising b: lex difference lives in prefix.
-    clear hlen
     induction a generalizing b with
     | nil =>
       cases b with
@@ -138,7 +137,7 @@ theorem degLexNat_right_compat (a b d : List ℕ) (h : degLexNat a b) :
         | cons h =>
           have heq' : xs.length = ys.length := by
             simp [List.length_cons] at heq; exact heq
-          exact List.Lex.cons (ih heq' h)
+          exact List.Lex.cons (ih ys heq' h)
         | rel h => exact List.Lex.rel h
 
 /-! ### Ordering extends through the jet tower -/
