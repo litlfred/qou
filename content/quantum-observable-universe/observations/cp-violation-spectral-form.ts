@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:cp-violation-spectral-form",
+export default conjecture({
+  label: "conj:cp-violation-spectral-form",
   title:
     "$\\delta_{\\mathrm{CP}}$ as imaginary part of the alternating-block character",
   lean: {
@@ -11,6 +11,7 @@ export default proposition({
   uses: [
     "prop:pauli-factor-wedderburn",
     "sec:cp-violation-evidence",
+    "conj:complex-chirality-rotation",
   ],
   tags: [
     "cp-violation",
