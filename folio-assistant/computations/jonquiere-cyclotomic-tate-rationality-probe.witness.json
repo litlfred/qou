@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-19T19:38:48.347223+00:00",
-  "commitSha": "33f98ddee85c9fcf28df52d670baecaa9ca0b131",
+  "computedAt": "2026-05-29T15:36:16.607422+00:00",
+  "commitSha": "1562f2e81f46d4b906824aed4abcc101071216db",
   "assertions": [
     {
       "name": "jonquiere_master_identity_all_K_n",
@@ -15,11 +15,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 218,
+  "durationMs": 236,
   "computation": "jonquiere-cyclotomic-tate-rationality-probe",
   "scriptFile": "jonquiere_cyclotomic_tate_rationality_probe.py",
   "scriptHash": "6cec9e47e816",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "25807e59082c21b3dbde3a6ec05f83a69d252040",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "I1 probe for prop:jonquiere-cyclotomic-tate-rationality.  Verifies the universal Jonquière closed form Li_n(ζ_K) − (−1)^{n−1} Li_n(ζ_K^{−1}) = −(2πi)^n / n! · B_n(1/K) at K = 2, …, 8 and n = 2, 3, 4, 5 (28 cases).  All residues at ~1e-49 (mpmath 50 dps).  This identity establishes Tate-rationality of the 'wrong-parity' part of Li_n at primitive K-th roots of unity: Im Li_n(ζ_K) ∈ π^n ℚ for odd n, Re Li_n(ζ_K) ∈ π^n ℚ for even n.",
   "contentBlock": "prop:jonquiere-cyclotomic-tate-rationality",
   "parameters": {

@@ -1,15 +1,21 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-01T15:55:59.203846+00:00",
-  "commitSha": "c38d0c8dbecfe61a2536464084fc9240bd80dbc4",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-05-29T15:45:47.947136+00:00",
+  "commitSha": "1562f2e81f46d4b906824aed4abcc101071216db",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 12,
   "computation": "q-pochhammer-seed",
   "scriptFile": "q_pochhammer_seed.py",
   "scriptHash": "748f78a0ed41",
-  "scriptCommitSha": "2ca5a5b053ff8970496e5df038f7dbb094ff682b",
+  "scriptCommitSha": "99c430c52d654aba212464f746cadff50dc2cfcf",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "q-Pochhammer denominator zeros at substrate q_0, paired against Picard-Lefschetz discriminant roots of the color-tube cubic. Provides the candidate Newton-Raphson seed values for the Thurston gluing equations on the active JSJ piece.",
   "contentBlock": "conj:shared-denominator-cusp-holonomy",
   "parameters": {

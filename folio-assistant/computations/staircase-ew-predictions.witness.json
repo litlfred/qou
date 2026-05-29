@@ -1,8 +1,8 @@
 {
   "engine": "sympy+numpy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-06T08:58:02.846492+00:00",
-  "commitSha": "8d0b12ac6d3c0579428633f7dfef245f563f66d5",
+  "computedAt": "2026-05-29T16:02:06.079761+00:00",
+  "commitSha": "1562f2e81f46d4b906824aed4abcc101071216db",
   "assertions": [
     {
       "name": "rho3_corrected_err_lt_0p5pct",
@@ -57,15 +57,21 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 40378,
+  "durationMs": 43595,
   "computation": "staircase-ew-predictions",
   "scriptFile": "staircase_ew_predictions.py",
   "scriptHash": "ec4613e0e11a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "740555ac2f0f24e57e056730ea5ebd4a577a0e06",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Staircase EW corner-hook falsification probe.  Tests P1: ρ_4 = (4,3,2,1) pure-SL stratum should NOT benefit from q^(1/7) correction.  Reproduces ρ_3 sanity check (0.127%). Also examines corner-generator eigenvalue structure and q-hook ratios for a derivation of why q^(1/h_corner) appears.",
   "contentBlock": "conj:weinberg-angle-categorical",
   "parameters": {
-    "q_0": "1.1099785955541805169583001889...",
+    "q_0": "1.1099785955541805752815940796...",
     "q_0_numeric": 1.1099785955541805,
     "cot_w_codata": 1.8230678710486174
   },
@@ -80,12 +86,12 @@
           "ratio_applicable": true,
           "top_degenerate": false,
           "top_multiplicity": 1,
-          "ev_max_pos": 5.240325308166744,
-          "ev_2nd_pos": 2.9388009575132417,
-          "ratio": 1.7831508101184945,
-          "ratio_corrected": 1.8207528399904915,
-          "err_raw": 0.02189554298226038,
-          "err_corrected": 0.0012698545648738378,
+          "ev_max_pos": 5.240325308166742,
+          "ev_2nd_pos": 2.938800957513246,
+          "ratio": 1.7831508101184912,
+          "ratio_corrected": 1.8207528399904882,
+          "err_raw": 0.021895542982262206,
+          "err_corrected": 0.0012698545648756646,
           "correction_helps": true,
           "cot_w_codata": 1.8230678710486174
         },
@@ -97,12 +103,12 @@
           "ratio_applicable": false,
           "top_degenerate": true,
           "top_multiplicity": 2,
-          "ev_max_pos": 56.00476610061667,
-          "ev_2nd_pos": 56.00476610061663,
-          "ratio": 1.0000000000000007,
-          "ratio_corrected": 1.0150174645878947,
-          "err_raw": 0.45147406968188913,
-          "err_corrected": 0.4432366009477953,
+          "ev_max_pos": 56.0047661006167,
+          "ev_2nd_pos": 56.00476610061659,
+          "ratio": 1.000000000000002,
+          "ratio_corrected": 1.015017464587896,
+          "err_raw": 0.4514740696818884,
+          "err_corrected": 0.44323660094779455,
           "correction_helps": true,
           "cot_w_codata": 1.8230678710486174
         }
@@ -178,8 +184,8 @@
         "hook_ratio": 1.2702785206454776,
         "q_1_over_h": 1.0210874086805357,
         "predicted_ratio": 1.244044838714592,
-        "actual_ratio": 1.7831508101184945,
-        "err_derivation": 0.3023333575291244,
+        "actual_ratio": 1.7831508101184912,
+        "err_derivation": 0.3023333575291231,
         "hook_vs_cot_w_err": 0.3032192926998262,
         "conclusion": "hook-ratio hypothesis FALSIFIED; eigenvalue ratio is emergent from full beta_EW word structure"
       },
@@ -191,6 +197,5 @@
         "note": "EW reading inapplicable — top eigenvalue degenerate in pure-SL stratum"
       }
     }
-  },
-  "auditOnly": "docs/audits/2026-05-06-staircase-ew-predictions.md"
+  }
 }

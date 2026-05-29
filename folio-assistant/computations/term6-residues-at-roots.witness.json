@@ -1,15 +1,21 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-18T18:08:14.379853+00:00",
-  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
+  "computedAt": "2026-05-29T16:06:29.976682+00:00",
+  "commitSha": "1562f2e81f46d4b906824aed4abcc101071216db",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 27,
   "computation": "term6-residues-at-roots",
   "scriptFile": "term6_residues_at_roots.py",
   "scriptHash": "de325dbecab8",
-  "scriptCommitSha": "deeead4ec85e681e22a1567ac3ad828427b2f855",
+  "scriptCommitSha": "a995137977c83050f1a73a22b83615b0e1b25a7d",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Term 6 of thm:six-term-mass-formula-complete via partial-fraction polar split on the u-plane lift tr_M(u²): tr_M(u²) = entire(u) + A(u)/u^k + B(u)/Dprime(u), with Term 6 = B(u₀)/Dprime(u₀) the principal-part contribution at non-zero poles only.  This split avoids per-pole residue extraction; sp.div + one sp.series-based power-series inversion deliver the answer in seconds where sp.residue scaled polynomially in atom size and timed out at deuteron.  Evaluation enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q^{1/2}.",
   "contentBlock": "thm:six-term-mass-formula-complete",
   "parameters": {

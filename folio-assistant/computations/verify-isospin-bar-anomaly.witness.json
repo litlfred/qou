@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T21:43:39.475497+00:00",
-  "commitSha": "72b28f9b4b9dbdf7f2803d6d7ee8a8f695d44f12",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:47:24.270441+00:00",
+  "commitSha": "1562f2e81f46d4b906824aed4abcc101071216db",
   "assertions": [
     {
       "name": "full_product_is_bar_anti_symmetric",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 17,
   "computation": "verify-isospin-bar-anomaly",
   "scriptFile": "verify_isospin_bar_anomaly.py",
   "scriptHash": "16c7cdcbfcd3",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "72adcb612f47ff0f01964a8df80fcd1ea2aaa26d",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Verifies that the substrate flavor-split closed form Δm/M_N = ℏ_q² · h · [2]_q · (1 + ℏ_q³) / 3 is bar-ANTI-symmetric at leading order (consistent with the SU(2)_I Z/2 swap residue per `conj:isospin-from-canonical-bowtie`, PR #1162).  Each factor is bar-classified individually + the overall product parity verified.",
   "contentBlock": "conj:isospin-from-canonical-bowtie",

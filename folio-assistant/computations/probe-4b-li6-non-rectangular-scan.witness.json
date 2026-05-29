@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:33:29.890717+00:00",
-  "commitSha": "fb479a10d29c1f33aac8c99a4e45f993b2f63b3c",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:57:20.349042+00:00",
+  "commitSha": "1562f2e81f46d4b906824aed4abcc101071216db",
   "assertions": [
     {
       "name": "no_non_rectangular_beats_rectangular_at_a6",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 27,
   "computation": "probe-4b-li6-non-rectangular-scan",
   "scriptFile": "probe_4b_li6_non_rectangular_scan.py",
   "scriptHash": "bf453451408d",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "d56012ca3e1d8c945b69ca07c956c18455cf1ffc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Scans a curated set of non-rectangular ⁶Li partitions and tests whether any has min_eig more negative than the rectangular pair's −96.52. Strengthens or falsifies the rectangular-form conjecture at A=6 with a finite cheap scan.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
@@ -36,10 +36,10 @@
           9
         ],
         "dim": 4862,
-        "min_eig": -60.48766159582328,
-        "max_eig": 78.45261576063679,
-        "build_s": 0.3759458065032959,
-        "eig_s": 0.1927347183227539,
+        "min_eig": -60.48766159582355,
+        "max_eig": 78.45261576063683,
+        "build_s": 0.3881258964538574,
+        "eig_s": 0.1764214038848877,
         "beats_rectangular": false
       },
       {
@@ -55,10 +55,10 @@
           2
         ],
         "dim": 4862,
-        "min_eig": -78.70305219136964,
-        "max_eig": 74.8292381932768,
-        "build_s": 0.3713243007659912,
-        "eig_s": 0.19625520706176758,
+        "min_eig": -78.70305219140846,
+        "max_eig": 74.82923819327678,
+        "build_s": 0.38382816314697266,
+        "eig_s": 0.20454692840576172,
         "beats_rectangular": false
       },
       {
@@ -67,10 +67,10 @@
           8
         ],
         "dim": 11934,
-        "min_eig": -64.65137270231722,
-        "max_eig": 75.02774426938281,
-        "build_s": 0.855149507522583,
-        "eig_s": 0.3965611457824707,
+        "min_eig": -64.65137270231726,
+        "max_eig": 75.02774426942305,
+        "build_s": 0.8922688961029053,
+        "eig_s": 0.5155892372131348,
         "beats_rectangular": false
       },
       {
@@ -79,10 +79,10 @@
           7
         ],
         "dim": 13260,
-        "min_eig": -59.37269789547912,
+        "min_eig": -59.3726978954792,
         "max_eig": 68.08371202667222,
-        "build_s": 0.9616563320159912,
-        "eig_s": 0.527332067489624,
+        "build_s": 0.9903674125671387,
+        "eig_s": 0.6382038593292236,
         "beats_rectangular": false
       },
       {
@@ -91,10 +91,10 @@
           6
         ],
         "dim": 9996,
-        "min_eig": -53.27575782696364,
-        "max_eig": 59.03405044001594,
-        "build_s": 0.6970572471618652,
-        "eig_s": 0.38924741744995117,
+        "min_eig": -53.27575782696424,
+        "max_eig": 59.03405044001603,
+        "build_s": 0.7399988174438477,
+        "eig_s": 0.34747314453125,
         "beats_rectangular": false
       },
       {
@@ -104,10 +104,10 @@
           1
         ],
         "dim": 22848,
-        "min_eig": -50.450832759999095,
-        "max_eig": 52.24081562096829,
-        "build_s": 1.6390855312347412,
-        "eig_s": 1.0685553550720215,
+        "min_eig": -50.450832760001866,
+        "max_eig": 52.24081562096828,
+        "build_s": 1.7217185497283936,
+        "eig_s": 1.1069285869598389,
         "beats_rectangular": false
       },
       {
@@ -118,9 +118,9 @@
         ],
         "dim": 29172,
         "min_eig": -52.3092494765083,
-        "max_eig": 53.05475551890141,
-        "build_s": 2.2487761974334717,
-        "eig_s": 1.5094377994537354,
+        "max_eig": 53.054755518871175,
+        "build_s": 2.1612226963043213,
+        "eig_s": 1.6764028072357178,
         "beats_rectangular": false
       },
       {
@@ -131,10 +131,10 @@
           1
         ],
         "dim": 29835,
-        "min_eig": -53.3746339994518,
-        "max_eig": 53.93907864506962,
-        "build_s": 2.22670316696167,
-        "eig_s": 1.5346226692199707,
+        "min_eig": -53.374633999450396,
+        "max_eig": 53.93907864507026,
+        "build_s": 2.3062381744384766,
+        "eig_s": 1.862598180770874,
         "beats_rectangular": false
       },
       {
@@ -143,10 +143,10 @@
           2
         ],
         "dim": 135,
-        "min_eig": -13.890480073811522,
-        "max_eig": 17.56994790466999,
-        "build_s": 0.013143539428710938,
-        "eig_s": 0.04665684700012207,
+        "min_eig": -13.890480073811528,
+        "max_eig": 17.569947904671572,
+        "build_s": 0.0264279842376709,
+        "eig_s": 0.06725597381591797,
         "beats_rectangular": false
       },
       {
@@ -155,10 +155,10 @@
           3
         ],
         "dim": 663,
-        "min_eig": -24.92992363811789,
-        "max_eig": 28.446275912620358,
-        "build_s": 0.05495262145996094,
-        "eig_s": 0.058045387268066406,
+        "min_eig": -24.929923638117888,
+        "max_eig": 28.446275912653903,
+        "build_s": 0.0634005069732666,
+        "eig_s": 0.06460237503051758,
         "beats_rectangular": false
       },
       {
@@ -167,10 +167,10 @@
           4
         ],
         "dim": 2244,
-        "min_eig": -35.65106032677051,
-        "max_eig": 38.62497256179681,
-        "build_s": 0.1622776985168457,
-        "eig_s": 0.10258245468139648,
+        "min_eig": -35.65106032676967,
+        "max_eig": 38.624972561795694,
+        "build_s": 0.16485595703125,
+        "eig_s": 0.09479451179504395,
         "beats_rectangular": false
       },
       {
@@ -180,10 +180,10 @@
           1
         ],
         "dim": 136,
-        "min_eig": -14.823745796162264,
-        "max_eig": 18.37940952507509,
-        "build_s": 0.012834548950195312,
-        "eig_s": 0.03545355796813965,
+        "min_eig": -14.823745796162212,
+        "max_eig": 18.37940952507349,
+        "build_s": 0.013759613037109375,
+        "eig_s": 0.035628318786621094,
         "beats_rectangular": false
       },
       {
@@ -193,10 +193,10 @@
           2
         ],
         "dim": 136136,
-        "min_eig": -88.95460929701069,
-        "max_eig": 92.55855915103298,
-        "build_s": 11.693476676940918,
-        "eig_s": 8.686567783355713,
+        "min_eig": -88.9546092970102,
+        "max_eig": 92.55855915103784,
+        "build_s": 11.081998586654663,
+        "eig_s": 6.712007761001587,
         "beats_rectangular": false
       },
       {
@@ -206,10 +206,10 @@
           3
         ],
         "dim": 56100,
-        "min_eig": -62.438528283651415,
-        "max_eig": 63.581194101685135,
-        "build_s": 4.216760158538818,
-        "eig_s": 2.829570770263672,
+        "min_eig": -62.43852828364756,
+        "max_eig": 63.58119410175476,
+        "build_s": 4.2912256717681885,
+        "eig_s": 2.861553430557251,
         "beats_rectangular": false
       },
       {
@@ -220,10 +220,10 @@
           2
         ],
         "dim": 58344,
-        "min_eig": -64.77108502071853,
-        "max_eig": 64.7589349361714,
-        "build_s": 4.350188732147217,
-        "eig_s": 2.6545767784118652,
+        "min_eig": -64.77108502077822,
+        "max_eig": 64.75893493616914,
+        "build_s": 4.486167907714844,
+        "eig_s": 2.9647998809814453,
         "beats_rectangular": false
       },
       {
@@ -233,10 +233,10 @@
           1
         ],
         "dim": 53040,
-        "min_eig": -59.85993709809818,
-        "max_eig": 62.27920574798947,
-        "build_s": 3.8169360160827637,
-        "eig_s": 2.302008867263794,
+        "min_eig": -59.859937098096324,
+        "max_eig": 62.279205747988826,
+        "build_s": 3.9593722820281982,
+        "eig_s": 2.709894895553589,
         "beats_rectangular": false
       }
     ],

@@ -1,15 +1,21 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-18T16:22:31.076884+00:00",
-  "commitSha": "483196e3b058740bd1d34d35bbe4af214ddd5bad",
+  "computedAt": "2026-05-29T15:54:57.082768+00:00",
+  "commitSha": "1562f2e81f46d4b906824aed4abcc101071216db",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 2027,
+  "durationMs": 1926,
   "computation": "lambda-scale-rd-h4-half-symmetric",
   "scriptFile": "lambda_scale_rd_h4_half_symmetric.py",
   "scriptHash": "1bcc1e3ac6a8",
-  "scriptCommitSha": "178d50b5a339a8ece255566f297ac7db6b7391b6",
+  "scriptCommitSha": "36597ced5e76986694b90db493795b6ef7dba282",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Option 1: H_4 symbolic Hoefsmit + half-symmetric projection. Computes π_HS(β_stab) = (1/4) Σ_λ χ^λ(β_stab) symbolically for β_stab = β_Bor · σ_3 ∈ B_4 (Markov-stabilised Borromean braid). Expands in h to test λ_scale = 5/2 - h²·G - h⁴·c_4 ansatz.",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "data": {

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-17T06:30:19.150510+00:00",
-  "commitSha": "28dc05f11ef528eedd9fe05739121b14b9d8c2f2",
+  "computedAt": "2026-05-29T15:43:46.812066+00:00",
+  "commitSha": "1562f2e81f46d4b906824aed4abcc101071216db",
   "assertions": [
     {
       "name": "geometric_N1_lift_overshoots_per_braid_ceiling",
@@ -25,38 +25,44 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 329,
+  "durationMs": 318,
   "computation": "q-beta-form-a-n1-extension",
   "scriptFile": "q_beta_form_a_n1_extension.py",
-  "scriptHash": "7b00a9fe772b",
-  "scriptCommitSha": "28dc05f11ef528eedd9fe05739121b14b9d8c2f2",
+  "scriptHash": "a266bff6a46d",
+  "scriptCommitSha": "a06287d494a2d06c4b44c0efa6cc920ea25a92c7",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Symbolic extension of Form A Q_β to N=1 brane-tower depth. Derives the N=1 correction factor (1 + ℏ_q²) = (2q²-2q+1)/q² from the geometric series of E_0_full = E_0_N=0/(1-ℏ_q²). Closed form: Q_β^A,N=1 = m_e · (q+1) · |q²-2q-1| · (2q²-2q+1) / (2 q⁵). Substrate-only (CAL-1 m_e + CAL-2 q_0); no CAL-3 input. Comparator-only against CODATA Q_β. Class C (diagnostic / prediction).",
   "contentBlock": "prop:neutron-qvalue-symbolic",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
-    "m_e_MeV": "0.51099895",
+    "m_e_MeV": "0.51099895069",
     "Q_beta_codata_MeV": "0.78233341"
   },
   "data": {
     "Q_beta_N0_symbolic": "m_e*Abs((q**2 - 1)*(q*(q - 2) - 1))/(2*q**3*(q - 1))",
     "Q_beta_N1_symbolic": "m_e*(q**2 + (q - 1)**2)*Abs((q**2 - 1)*(q*(q - 2) - 1))/(2*q**5*(q - 1))",
-    "E0_N0_MeV_50dps": "4.1859808220625237732985519083214879046242353091078",
-    "E0_N1_MeV_50dps": "4.2270753849065179881067481781261608717893409882739",
-    "E0_full_MeV_50dps": "4.2274828178225800531413820350994417631367435138451",
-    "E0_full_li2q_MeV_50dps": "4.2269755045752435471717461107082171763570664255985",
-    "E0_calibrated_MeV_50dps": "4.1789704466352213321639827486680305416453852468612",
-    "E0_full_vs_calibrated_pct": 1.1608689701651131,
-    "E0_full_li2q_vs_calibrated_pct": 1.1487292995497111,
-    "E0_N0_vs_calibrated_pct": 0.16775364929768719,
-    "Q_beta_N0_MeV": "0.78364580284495003723288837004662358622224904295601",
-    "Q_beta_N1_MeV": "0.79133900141927525232061042562588281143091958535636",
-    "Q_beta_full_MeV": "0.7914152757999246119060791964964243650319857890541",
-    "N0_residual_keV": 1.3123928449500373,
-    "N0_residual_pct": 0.16775364929768719,
-    "N1_residual_keV": 9.005591419275252,
-    "N1_residual_pct": 1.1511193698445337,
-    "N1_residual_ppm": 11511.193698445337,
+    "E0_N0_MeV_50dps": "4.1859808277148382589215485966238822965145252092939",
+    "E0_N1_MeV_50dps": "4.2270753906143223105725720546598724242437070912466",
+    "E0_full_MeV_50dps": "4.2274828235309345307730488646840301545974594635829804920383249122",
+    "E0_full_li2q_MeV_50dps": "4.2269755102829130015941437448882968348156011284317796372541803777",
+    "E0_calibrated_MeV_50dps": "4.1789704466352213321639827486680305416453852468612528893093895206",
+    "E0_full_vs_calibrated_pct": 1.1608691067622618,
+    "E0_full_li2q_vs_calibrated_pct": 1.1487294361304679,
+    "E0_N0_vs_calibrated_pct": 0.167753784553836,
+    "Q_beta_N0_MeV": "0.78364580390310407837723030204216482037188922224278",
+    "Q_beta_N1_MeV": "0.79133900248781739116316562872604807337883384210256",
+    "Q_beta_full_MeV": "0.79141527686856974376388043506099410746009217140980723463437265353",
+    "N0_residual_keV": 1.3123939031040783,
+    "N0_residual_pct": 0.167753784553836,
+    "N1_residual_keV": 9.005592487817392,
+    "N1_residual_pct": 1.1511195064285176,
+    "N1_residual_ppm": 11511.195064285177,
     "per_braid_ceiling_N1_pct": 0.009733272400930732,
-    "hbar_q_50dps": "0.099081726435698885820014342688412528468474023957784"
+    "hbar_q_50dps": "0.099081726435698885820014342688412528468474023957783638667665016357"
   }
 }
