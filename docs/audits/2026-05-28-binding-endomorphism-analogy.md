@@ -169,3 +169,33 @@ no scale fit) gives:
 **Next:** an all-pairs braid (not the linear chain) is the topology
 to test — a genuine braid-structure question, not a rescaling.
 Witness: [`binding-multibond-wenzl.witness.json`](../../folio-assistant/computations/binding-multibond-wenzl.witness.json).
+
+## CORRECTION: the all-pairs "−15%" was a summing artifact
+
+The multi-bond note above suggested an all-pairs 2-body **sum**
+($\sum_{\text{pairs}} \Delta\mathrm{tr}$) improves ³He to $-15\%$.
+**This is wrong** — and the correction is important.
+
+Summing three independently-computed $H_6$ pair-traces is **not** a
+valid 3-nucleon trace. The physically correct object is the **joint
+$H_9$ trace** with all three nucleons mutually coupled (including the
+long-range nucleon₀–nucleon₂ bond). Computed directly
+([`binding_threebody_joint_trace.py`](../../folio-assistant/computations/binding_threebody_joint_trace.py)):
+
+| Atom | joint-$H_9$ Δtr | $B$(joint) | err | (all-pairs *sum* was) |
+|------|------|------|------|------|
+| ³He | 0.8479 | 3.175 | **−58.9%** | (−15%, artifact) |
+| ³H | 0.8122 | 3.041 | **−64.1%** | (−21%, artifact) |
+
+The joint trace matches the combined/single-link value (−59%), **not**
+the additive sum. The irreducible 3-body term is therefore **large and
+destructive**: $\Delta\mathrm{tr}_{3\text{body}} = 0.848 - 1.759
+\approx -0.91$ for ³He — the bonds interfere destructively, making the
+joint binding *smaller*, not larger.
+
+**Consequence.** First-principles categorical binding (the correct
+joint Markov trace) genuinely **undershoots A≥3 by ~60%**. The
+deuteron ($+0.2\%$) works because it is a true 2-body system. The
+additive multi-bond model does **not** close the gap — it overcounted
+by treating pairs as independent. The A≥3 binding deficit is real, not
+a missing-constructive-term artifact.
