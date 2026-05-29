@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T14:42:55.159127+00:00",
-  "commitSha": "c2a01939456cc60fa339516c73527a1004c0e398",
+  "computedAt": "2026-05-29T15:52:14.673837+00:00",
+  "commitSha": "afa1fcbedbf11c3616df59357a0243c8dfab9860",
   "assertions": [
     {
       "name": "canonical_a_k_finite_for_A_geq_3",
@@ -19,23 +19,29 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 12,
   "computation": "canonical-a-k-magnitude-audit",
   "scriptFile": "canonical_a_k_magnitude_audit.py",
-  "scriptHash": "97cab61dc886",
-  "scriptCommitSha": "03701c4df38ee768d9afc22c4fb5639bb2863852",
-  "description": "Item (b) audit: canonical_a_k(jet-knot) values for A\u22653 atoms (0.065/0.205/0.677 for \u00b3H/\u00b3He/\u2074He) capture a DIFFERENT physical quantity than what Strategy-3's t1_atom needs. Verified by comparing the deuteron's true \u0394_I = 0.1904 (from closed-form atomic Markov trace) \u2014 a different VALUE and different DERIVATION than what canonical_a_k would produce. Both canonical_a_k and \u0394_I are partial views of the iterative LP-dual shadow-price differences u^{(l)*}[atom] \u2212 u^{(l)*}[free] per term7-alpha5's prop:mass-formula-iterative-lp-dual. The 70-84% binding-energy under-prediction reflects this structural mismatch, not an error in canonical_a_k itself.",
+  "scriptHash": "7cc640b43ebe",
+  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Item (b) audit: canonical_a_k(jet-knot) values for A≥3 atoms (0.065/0.205/0.677 for ³H/³He/⁴He) capture a DIFFERENT physical quantity than what Strategy-3's t1_atom needs. Verified by comparing the deuteron's true Δ_I = 0.1904 (from closed-form atomic Markov trace) — a different VALUE and different DERIVATION than what canonical_a_k would produce. Both canonical_a_k and Δ_I are partial views of the iterative LP-dual shadow-price differences u^{(l)*}[atom] − u^{(l)*}[free] per term7-alpha5's prop:mass-formula-iterative-lp-dual. The 70-84% binding-energy under-prediction reflects this structural mismatch, not an error in canonical_a_k itself.",
   "contentBlock": "prop:mass-coefficient-shadow-price",
   "parameters": {
-    "q_0": "1.1099785955541805752815940796095093779932822799587"
+    "q_0": "1.1099785955541805752815940796095093779932822799586868026528300693"
   },
   "data": {
     "canonical_a_k_values": {
-      "\u00b3H": 0.06483492,
-      "\u00b3He": 0.20478991,
-      "\u2074He": 0.67676267,
-      "\u2076Li": 0.13927998,
-      "\u2077Li": 0.30927
+      "³H": 0.06483492,
+      "³He": 0.20478991,
+      "⁴He": 0.67676267,
+      "⁶Li": 0.13927998,
+      "⁷Li": 0.30927
     },
     "deuteron_true_delta_I": 0.19046898301612988,
     "tr_M_at_q0": {
@@ -43,15 +49,6 @@
       "n": 1.2482482717548398,
       "D": 0.3882864715477131
     },
-    "structural_finding": "canonical_a_k and \u0394_I measure different things. canonical_a_k is a Wedderburn-weighted character ratio in the branched Hecke algebra; \u0394_I is the atomic-braid Markov-trace ratio. Both are partial views of the iterative LP-dual; only the unified treatment via \ud835\udd2a = \u03a3_l u^{(l)*} per term7-alpha5 gives the framework-consistent path. 70-84% binding under-prediction reflects the structural mismatch, not an error in canonical_a_k."
-  },
-  "y0_star": null,
-  "y0_star_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "dual_obj": null,
-  "dual_obj_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "duality_gap": null,
-  "duality_gap_status": "STUB \u2014 re-run script through lp_dual_solver.py to populate",
-  "y_star": null,
-  "active_set": null,
-  "primal_obj": null
+    "structural_finding": "canonical_a_k and Δ_I measure different things. canonical_a_k is a Wedderburn-weighted character ratio in the branched Hecke algebra; Δ_I is the atomic-braid Markov-trace ratio. Both are partial views of the iterative LP-dual; only the unified treatment via 𝔪 = Σ_l u^{(l)*} per term7-alpha5 gives the framework-consistent path. 70-84% binding under-prediction reflects the structural mismatch, not an error in canonical_a_k."
+  }
 }

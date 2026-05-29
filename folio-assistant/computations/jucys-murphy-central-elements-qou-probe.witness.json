@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-19T18:27:21.770364+00:00",
-  "commitSha": "848c95d9909064f0a73466c226af34b7e08a5996",
+  "computedAt": "2026-05-29T16:13:44.219180+00:00",
+  "commitSha": "afa1fcbedbf11c3616df59357a0243c8dfab9860",
   "assertions": [
     {
       "name": "P_ell_is_central_scalar_on_V_lambda",
@@ -24,11 +24,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 32,
   "computation": "jucys-murphy-central-elements-qou-probe",
   "scriptFile": "jucys_murphy_central_elements_qou_probe.py",
   "scriptHash": "f31bda9d65ff",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4d800576b9ada9755e71683ac6dd12c425f86a56",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "I1 probe for prop:jucys-murphy-central-elements-qou.  Verifies for n ∈ {3, 4, 5} and ℓ ∈ {1, …, n}: (i) the elementary symmetric polynomial P_ℓ = e_ℓ(J_1, …, J_n) acts as a scalar on V_λ (all SYT diagonal entries equal — centrality); (ii) the scalar value matches the closed form c_ℓ(λ) = e_ℓ({q^{2c(□)} : □ ∈ λ}).  Uses JM-eigenvalue diagonal action on the Hoefsmit basis.  Tested across 19 irreps (3 + 5 + 11 partitions of n = 3, 4, 5).  All residues at ~1e-50 (mpmath 50 dps).",
   "contentBlock": "prop:jucys-murphy-central-elements-qou",
   "parameters": {

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-23T11:17:59.625978+00:00",
-  "commitSha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143",
+  "computedAt": "2026-05-29T15:52:13.664692+00:00",
+  "commitSha": "afa1fcbedbf11c3616df59357a0243c8dfab9860",
   "assertions": [
     {
       "name": "unit_circle_canonical_basis_hypothesis_falsified",
@@ -14,11 +14,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 171,
+  "durationMs": 208,
   "computation": "bring-zero-mode-bloch-hunt",
   "scriptFile": "bring_zero_mode_bloch_hunt.py",
   "scriptHash": "3ac040d3455d",
-  "scriptCommitSha": "6140fda213326a2e04d2d67bc7060157ca136339",
+  "scriptCommitSha": "049dfcdf4064f35d7d57398090e567acb03b222c",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Canonical search for [Z] ∈ B(ℂ) with D[Z] = 2/(3π) (the open sub-problem of prop:em-coupling-bring-zero-mode). Tests the unit-circle hypothesis: D(e^(iθ)) = Cl_2(θ) at canonical Bring-symmetric angles. Indexing convention (PR #952 review r3292598288): an angle kπ/n corresponds to the 2n-th root of unity z = e^(iπk/n) = e^(2πi · k/(2n)); 'n ≤ 30' here means the denominator-2n basis covers up to N = 60 (2 · 30). The basis sweep is intentionally partial — it covers the low-denominator angles natural to the Bring S_5 / S_4 structure (n ∈ {3, 4, 5, 6, 9, 10, 15, 30}) and the k coprime to 2n that fall in 0 < kπ/n < π. PSLQ search at maxcoeff ≤ 50 looks for integer combinations hitting the target. NEGATIVE on this partial basis is reported honestly as a partial refutation, NOT a comprehensive refutation across all higher-denominator angles.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {

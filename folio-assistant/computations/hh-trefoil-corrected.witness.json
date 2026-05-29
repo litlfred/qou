@@ -1,15 +1,21 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-13T21:21:29.660591+00:00",
-  "commitSha": "e0ae1a1ade9d055c7d7a420e0ba34bbf6233110d",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:54:58.827353+00:00",
+  "commitSha": "afa1fcbedbf11c3616df59357a0243c8dfab9860",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 11,
   "computation": "hh-trefoil-corrected",
   "scriptFile": "hh-trefoil-corrected.py",
-  "scriptHash": "26b86520a6a4",
-  "scriptCommitSha": "",
+  "scriptHash": "c356ced39a7d",
+  "scriptCommitSha": "648bd48de581be14ae71c07eba23a6f77edd3a12",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "H x trefoil x H with corrected formulas from gluon branch. Proton: corrected quark order + 2 sigma_0 gluon. Neutron: L+L- gluon. dim_std = [2]_q.",
   "contentBlock": "def:h2-molecular-braid",
   "parameters": {
@@ -17,50 +23,48 @@
     "w_sym": 0.16546138476810043,
     "w_std": 0.6690772304637992,
     "w_alt": 0.16546138476810043,
-    "E_mol_eV": 6.750278523641413
+    "E_mol_eV": 6.729337493682183
   },
   "data": {
     "Inverse trefoil s0i.s1i.s0i (w": {
       "writhe": -3,
-      "binding": 1.0819645890699932,
-      "E_eV": 7.303562328939681
+      "binding": 1.0819645890699936,
+      "E_eV": 7.2809048760651445
     },
     "Inverse trefoil s1i.s0i.s1i (w": {
       "writhe": -3,
-      "binding": 1.0819645890699936,
-      "E_eV": 7.303562328939684
+      "binding": 1.081964589069994,
+      "E_eV": 7.280904876065147
     },
     "Positive trefoil s0.s1.s0 (w=+": {
       "writhe": 3,
-      "binding": -0.8901600910081059,
-      "E_eV": -6.008828544934703
+      "binding": -0.8901600910081054,
+      "E_eV": -5.990187675800389
     },
     "(s1i)^2 Hopf link (w=-2)": {
       "writhe": -2,
-      "binding": 1.381376857497911,
-      "E_eV": 9.324678534223413
+      "binding": 1.3813768574979115,
+      "E_eV": 9.295751080065566
     },
     "(s1i)^3 (w=-3, NOT trefoil)": {
       "writhe": -3,
-      "binding": -1.2610325742323636,
-      "E_eV": -8.512321103452969
+      "binding": -1.2610325742323631,
+      "E_eV": -8.485913782536402
     },
     "Figure-8: s0.s1i.s0.s1i (w=0)": {
       "writhe": 0,
-      "binding": -1.8138242715645612,
-      "E_eV": -12.243819026001786
+      "binding": -1.8138242715645607,
+      "E_eV": -12.205835677590173
     },
     "T(2,5) = s0.s1.s0.s1.s0 (w=+5)": {
       "writhe": 5,
-      "binding": -1.8038487443499513,
-      "E_eV": -12.176481438883005
+      "binding": -1.8038487443499511,
+      "E_eV": -12.138706988285653
     },
     "T(2,5)^-1 (w=-5)": {
       "writhe": -5,
-      "binding": -0.6917567815969268,
-      "E_eV": -4.669550946397038
+      "binding": -0.6917567815969263,
+      "E_eV": -4.655064846909114
     }
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }

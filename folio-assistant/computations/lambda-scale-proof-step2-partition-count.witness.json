@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T03:43:13.238312+00:00",
-  "commitSha": "2c35e5d7ee6d7499491491cfc77f512465226df6",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T15:55:06.125887+00:00",
+  "commitSha": "afa1fcbedbf11c3616df59357a0243c8dfab9860",
   "assertions": [
     {
       "name": "h_sc_4_equals_5_over_2",
@@ -34,11 +34,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 15,
   "computation": "lambda-scale-proof-step2-partition-count",
   "scriptFile": "lambda_scale_proof_step2_partition_count.py",
   "scriptHash": "8f44635493c1",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "79548024c2941d7a297d74099852e682c33ed060",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Proof Step 2 of `conj:lambda-scale-substrate-form`: the conjugate-pair half-symmetric partition count at H_4(q) equals exactly 5/2. This is the combinatorial component of the leading-term derivation. The categorical link to λ_scale remains open (Steps 1, 3, 4, 5).",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "data": {

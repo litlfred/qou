@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T20:15:52.179437+00:00",
-  "commitSha": "b65f07713ae91bce0b8cea43fe36c2d7068f3557",
+  "computedAt": "2026-05-29T16:06:18.876131+00:00",
+  "commitSha": "afa1fcbedbf11c3616df59357a0243c8dfab9860",
   "assertions": [
     {
       "name": "A_operator_witness_present",
@@ -20,11 +20,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 18,
   "computation": "v-hat-to-chi-lambda-integrated",
   "scriptFile": "v_hat_to_chi_lambda_integrated.py",
-  "scriptHash": "9d6f8936bef3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1d7d43f5a749",
+  "scriptCommitSha": "136ea5c94c5f636cd95a605a1f4fa9a657ea0217",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Unified V̂_i → χ^λ predictor combining the 1-dim product formula (this PR) with the multi-dim operator-valued A^λ_{μν}(I) interface coefficient (refined Sub-lemma 2.1, PR #534).  The 1-dim product formula χ^{1-dim}(β_K) = ∏_i V̂_i^{1-dim} is the scalar specialisation of the operator-valued LR-decomposition formula χ^λ(β_K) = Σ c^λ_{μν} · Tr(A^λ_{μν}(I) · (ρ_μ(β_1) ⊗ ρ_ν(β_2))).  Both closures are unified by Sub-lemma 2.1; the scalar formula handles the 1-dim sector exactly, the operator formula handles the general case (already extracted with residual ≤ 7e-15 across all 11 λ ⊢ 6 in sublemma-2-1-A-operator-extract.witness.json).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",

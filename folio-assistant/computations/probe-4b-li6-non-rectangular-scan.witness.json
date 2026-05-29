@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:33:29.890717+00:00",
-  "commitSha": "fb479a10d29c1f33aac8c99a4e45f993b2f63b3c",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T16:16:09.559244+00:00",
+  "commitSha": "afa1fcbedbf11c3616df59357a0243c8dfab9860",
   "assertions": [
     {
       "name": "no_non_rectangular_beats_rectangular_at_a6",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 25,
   "computation": "probe-4b-li6-non-rectangular-scan",
   "scriptFile": "probe_4b_li6_non_rectangular_scan.py",
   "scriptHash": "bf453451408d",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "d56012ca3e1d8c945b69ca07c956c18455cf1ffc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Scans a curated set of non-rectangular ⁶Li partitions and tests whether any has min_eig more negative than the rectangular pair's −96.52. Strengthens or falsifies the rectangular-form conjecture at A=6 with a finite cheap scan.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
@@ -36,10 +36,10 @@
           9
         ],
         "dim": 4862,
-        "min_eig": -60.48766159582328,
-        "max_eig": 78.45261576063679,
-        "build_s": 0.3759458065032959,
-        "eig_s": 0.1927347183227539,
+        "min_eig": -60.487661595823816,
+        "max_eig": 78.45261576063683,
+        "build_s": 0.3983736038208008,
+        "eig_s": 0.1740894317626953,
         "beats_rectangular": false
       },
       {
@@ -55,10 +55,10 @@
           2
         ],
         "dim": 4862,
-        "min_eig": -78.70305219136964,
-        "max_eig": 74.8292381932768,
-        "build_s": 0.3713243007659912,
-        "eig_s": 0.19625520706176758,
+        "min_eig": -78.70305219140207,
+        "max_eig": 74.82923819327678,
+        "build_s": 0.3957500457763672,
+        "eig_s": 0.17627811431884766,
         "beats_rectangular": false
       },
       {
@@ -67,10 +67,10 @@
           8
         ],
         "dim": 11934,
-        "min_eig": -64.65137270231722,
-        "max_eig": 75.02774426938281,
-        "build_s": 0.855149507522583,
-        "eig_s": 0.3965611457824707,
+        "min_eig": -64.65137270231727,
+        "max_eig": 75.02774426942301,
+        "build_s": 0.903825044631958,
+        "eig_s": 0.4890165328979492,
         "beats_rectangular": false
       },
       {
@@ -79,10 +79,10 @@
           7
         ],
         "dim": 13260,
-        "min_eig": -59.37269789547912,
-        "max_eig": 68.08371202667222,
-        "build_s": 0.9616563320159912,
-        "eig_s": 0.527332067489624,
+        "min_eig": -59.37269789546671,
+        "max_eig": 68.08371202667054,
+        "build_s": 1.016784429550171,
+        "eig_s": 0.5320432186126709,
         "beats_rectangular": false
       },
       {
@@ -91,10 +91,10 @@
           6
         ],
         "dim": 9996,
-        "min_eig": -53.27575782696364,
-        "max_eig": 59.03405044001594,
-        "build_s": 0.6970572471618652,
-        "eig_s": 0.38924741744995117,
+        "min_eig": -53.275757826963805,
+        "max_eig": 59.034050440016046,
+        "build_s": 0.7607407569885254,
+        "eig_s": 0.339111328125,
         "beats_rectangular": false
       },
       {
@@ -104,10 +104,10 @@
           1
         ],
         "dim": 22848,
-        "min_eig": -50.450832759999095,
-        "max_eig": 52.24081562096829,
-        "build_s": 1.6390855312347412,
-        "eig_s": 1.0685553550720215,
+        "min_eig": -50.450832760001965,
+        "max_eig": 52.24081562096303,
+        "build_s": 1.7383644580841064,
+        "eig_s": 1.0782861709594727,
         "beats_rectangular": false
       },
       {
@@ -117,10 +117,10 @@
           2
         ],
         "dim": 29172,
-        "min_eig": -52.3092494765083,
-        "max_eig": 53.05475551890141,
-        "build_s": 2.2487761974334717,
-        "eig_s": 1.5094377994537354,
+        "min_eig": -52.309249476494976,
+        "max_eig": 53.054755518901594,
+        "build_s": 2.2322356700897217,
+        "eig_s": 1.604321002960205,
         "beats_rectangular": false
       },
       {
@@ -131,10 +131,10 @@
           1
         ],
         "dim": 29835,
-        "min_eig": -53.3746339994518,
-        "max_eig": 53.93907864506962,
-        "build_s": 2.22670316696167,
-        "eig_s": 1.5346226692199707,
+        "min_eig": -53.37463399945085,
+        "max_eig": 53.93907864507036,
+        "build_s": 2.3436293601989746,
+        "eig_s": 1.8122806549072266,
         "beats_rectangular": false
       },
       {
@@ -143,10 +143,10 @@
           2
         ],
         "dim": 135,
-        "min_eig": -13.890480073811522,
-        "max_eig": 17.56994790466999,
-        "build_s": 0.013143539428710938,
-        "eig_s": 0.04665684700012207,
+        "min_eig": -13.890480073811526,
+        "max_eig": 17.569947904670784,
+        "build_s": 0.02540278434753418,
+        "eig_s": 0.06210732460021973,
         "beats_rectangular": false
       },
       {
@@ -155,10 +155,10 @@
           3
         ],
         "dim": 663,
-        "min_eig": -24.92992363811789,
-        "max_eig": 28.446275912620358,
-        "build_s": 0.05495262145996094,
-        "eig_s": 0.058045387268066406,
+        "min_eig": -24.929923638117888,
+        "max_eig": 28.446275912653867,
+        "build_s": 0.056838274002075195,
+        "eig_s": 0.06635117530822754,
         "beats_rectangular": false
       },
       {
@@ -167,10 +167,10 @@
           4
         ],
         "dim": 2244,
-        "min_eig": -35.65106032677051,
-        "max_eig": 38.62497256179681,
-        "build_s": 0.1622776985168457,
-        "eig_s": 0.10258245468139648,
+        "min_eig": -35.65106032676795,
+        "max_eig": 38.6249725617968,
+        "build_s": 0.1696465015411377,
+        "eig_s": 0.09905004501342773,
         "beats_rectangular": false
       },
       {
@@ -180,10 +180,10 @@
           1
         ],
         "dim": 136,
-        "min_eig": -14.823745796162264,
-        "max_eig": 18.37940952507509,
-        "build_s": 0.012834548950195312,
-        "eig_s": 0.03545355796813965,
+        "min_eig": -14.823745796164753,
+        "max_eig": 18.379409525066098,
+        "build_s": 0.01364445686340332,
+        "eig_s": 0.035811662673950195,
         "beats_rectangular": false
       },
       {
@@ -193,10 +193,10 @@
           2
         ],
         "dim": 136136,
-        "min_eig": -88.95460929701069,
-        "max_eig": 92.55855915103298,
-        "build_s": 11.693476676940918,
-        "eig_s": 8.686567783355713,
+        "min_eig": -88.9546092970105,
+        "max_eig": 92.55855915099573,
+        "build_s": 11.059734582901001,
+        "eig_s": 6.354057788848877,
         "beats_rectangular": false
       },
       {
@@ -206,10 +206,10 @@
           3
         ],
         "dim": 56100,
-        "min_eig": -62.438528283651415,
-        "max_eig": 63.581194101685135,
-        "build_s": 4.216760158538818,
-        "eig_s": 2.829570770263672,
+        "min_eig": -62.43852828364881,
+        "max_eig": 63.581194101749304,
+        "build_s": 4.30324387550354,
+        "eig_s": 2.702552556991577,
         "beats_rectangular": false
       },
       {
@@ -220,10 +220,10 @@
           2
         ],
         "dim": 58344,
-        "min_eig": -64.77108502071853,
-        "max_eig": 64.7589349361714,
-        "build_s": 4.350188732147217,
-        "eig_s": 2.6545767784118652,
+        "min_eig": -64.77108502078725,
+        "max_eig": 64.75893493617238,
+        "build_s": 4.599786758422852,
+        "eig_s": 3.1244142055511475,
         "beats_rectangular": false
       },
       {
@@ -233,10 +233,10 @@
           1
         ],
         "dim": 53040,
-        "min_eig": -59.85993709809818,
-        "max_eig": 62.27920574798947,
-        "build_s": 3.8169360160827637,
-        "eig_s": 2.302008867263794,
+        "min_eig": -59.859937098094626,
+        "max_eig": 62.27920574799987,
+        "build_s": 4.051390647888184,
+        "eig_s": 2.5773191452026367,
         "beats_rectangular": false
       }
     ],
