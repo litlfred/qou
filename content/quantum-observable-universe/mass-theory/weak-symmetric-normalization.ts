@@ -22,4 +22,10 @@ export default proposition({
     "categorical-normalization",
   ],
   // computation removed: incomplete schema (had witness without engine/script/status).
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
 });
