@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-29T19:50:05.543997+00:00",
+  "commitSha": "58bb91b92f189d7771161ef8f1e8a0823e5b9c91",
+  "assertions": [
+    {
+      "name": "mu0_not_clean_derived_multiple",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "no μ₀/derived-scale ratio is integer/half-integer to 1% — pinning μ₀ would be a fit; scale remains the open gate"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "binding-qhamiltonian-rotational-scale",
+  "scriptFile": "binding_qhamiltonian_rotational_scale.py",
+  "scriptHash": "cbf1ae8c99d1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Derive-or-refute: does the q-Hamiltonian rotational term J_q²·ℏ_q·μ₀ supply the binding energy-per-Reeb-rotation ρ_phase≈18.5 MeV/rad? Structure: yes (binding is linear in the rotation, matching the Lobachevsky-volume refutation). Scale: REFUTED as clean — implied μ₀≈249 MeV is not a clean multiple of any derived scale (μ₀/m_e≈487, μ₀/E₀≈59.4, μ₀/(m_e/ℏ_q²)≈4.78); pinning it would be numerology. q-Hamiltonian fixes the rotational structure; μ₀ is the residual gate.",
+  "data": {
+    "rotational_quantum": {
+      "hbar_q": "0.09908172644",
+      "E0_MeV": "4.185980828",
+      "Jq2_spin_half": "0.750679204",
+      "rot_quantum": "0.07437859153"
+    },
+    "implied_mu0": {
+      "rho_phase_MeV_per_rad": "18.5",
+      "mu0_MeV": "248.72748",
+      "mu0_over_derived": {
+        "m_e": 486.747545,
+        "E0": 59.419165,
+        "m_e/hbar_q^2": 4.778492,
+        "E0/hbar_q": 5.887353
+      },
+      "any_clean_ratio": false
+    },
+    "conclusion": {
+      "structure": "binding = q-Hamiltonian rotational term J_q²·ℏ_q·μ₀ (linear in Reeb angle) — derived structure",
+      "scale": "μ₀≈249 MeV NOT a clean derived multiple — open gate, not numerology-pinned (suggestively near Λ_QCD)",
+      "status": "structure derived, scale open"
+    }
+  }
+}
