@@ -1,0 +1,87 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-29T14:39:28.799571+00:00",
+  "commitSha": "70afcd7b3a504141dfc26632963e59cf3daf3a38",
+  "assertions": [
+    {
+      "name": "per_rep_split_computed_all_atoms",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "source": "rotation/growth decomposition computed for D, T, ³He, ⁴He"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 29,
+  "computation": "binding-reeb-phase-decomposition",
+  "scriptFile": "binding_reeb_phase_decomposition.py",
+  "scriptHash": "a8267b581fb8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Per-representation Reeb decomposition of the atom Markov trace: splits each Wedderburn block λ into complex-q ROTATION channels (|χ_λ/dim_λ|≤1, q-Reeb phase θ_λ=arccos) vs geometric GROWTH channels (outer reps, q^{±writhe}), free vs bound, for D/T/³He/⁴He. Grounds the complex-q/Reeb finding (unit-modulus-eigenvalue.md, figure-eight-reeb-rotation.md): mass/binding = outer-channel growth × standard-rep rotation; the scalar Δtr collapses this split and the trace difference cancels the common growth. DIAGNOSTIC, no fit.",
+  "data": {
+    "per_atom": {
+      "D": {
+        "n_blocks": 11,
+        "rotation_free": 8,
+        "rotation_atom": 10,
+        "growth_free": 3,
+        "growth_atom": 1,
+        "rotation_to_growth_flips": 0,
+        "sum_abs_phase_shift_rad": "5.7412908",
+        "growth_mass_free": "16.488434",
+        "growth_mass_atom": "1.5597587",
+        "growth_mass_ratio_atom_over_free": "0.0945971"
+      },
+      "T": {
+        "n_blocks": 30,
+        "rotation_free": 26,
+        "rotation_atom": 29,
+        "growth_free": 4,
+        "growth_atom": 1,
+        "rotation_to_growth_flips": 0,
+        "sum_abs_phase_shift_rad": "8.2233939",
+        "growth_mass_free": "93.103287",
+        "growth_mass_atom": "1.5768015",
+        "growth_mass_ratio_atom_over_free": "0.016936"
+      },
+      "3He": {
+        "n_blocks": 30,
+        "rotation_free": 25,
+        "rotation_atom": 29,
+        "growth_free": 5,
+        "growth_atom": 1,
+        "rotation_to_growth_flips": 0,
+        "sum_abs_phase_shift_rad": "8.4937319",
+        "growth_mass_free": "153.10032",
+        "growth_mass_atom": "2.3935111",
+        "growth_mass_ratio_atom_over_free": "0.0156336"
+      },
+      "4He": {
+        "n_blocks": 77,
+        "rotation_free": 68,
+        "rotation_atom": 76,
+        "growth_free": 9,
+        "growth_atom": 1,
+        "rotation_to_growth_flips": 0,
+        "sum_abs_phase_shift_rad": "17.233463",
+        "growth_mass_free": "1504.0723",
+        "growth_mass_atom": "2.4196639",
+        "growth_mass_ratio_atom_over_free": "0.00160874"
+      }
+    },
+    "interpretation": {
+      "rotation_channels": "unit-modulus e^{±iθ}; q-Reeb phase, bounded",
+      "growth_channels": "outer (n)/(1^n) reps; q^{±writhe}, extensive",
+      "why_scalar_fails": "tr_M = Σ y_λ χ_λ collapses per-rep split; |tr_free|−|tr_atom| cancels common growth",
+      "compute_improvement": "track per-λ rotation/growth split + Reeb phase, not the scalar trace difference"
+    }
+  }
+}
