@@ -387,19 +387,32 @@ the scalar Markov trace $\sum_\lambda y_\lambda\chi_\lambda$ collapses
 resolution of the boundary holonomy**, not (primarily) the dropped surface
 term. The surface $[F,F]$ correction is separate and likely sub-dominant.
 
-**q-Hamiltonian rotational scale — structure derived, scale open.**
+**q-Hamiltonian rotational energy — μ₀ derived; deuteron reproduced; A≥3 deficit persists.**
 The $q$-energy block (`climax-volume-mass/q-energy`) gives the q-Hamiltonian
-$\mathfrak{E}_q = J_q^2\hbar_q$ (rotational) $+\, p_q^2\hbar_q/(2[n]_q)$
-(translational) $+\, S_q$ (action). A q-Reeb rotation is exactly the
-**rotational term** $J_q^2\hbar_q\mu_0$ — confirming the binding is *linear*
-in the rotation angle (matching the Lobachevsky-volume refutation). But the
-implied scale is NOT a clean derived multiple: with the spin-½ rotational
-quantum $J_q^2(\tfrac12)\hbar_q\approx0.0744$, $\rho_\phi\approx18.5$
-MeV/rad gives $\mu_0\approx249$ MeV, and $\mu_0/m_e\approx487$,
-$\mu_0/E_0\approx59.4$, $\mu_0/(m_e/\hbar_q^2)\approx4.78$ — none
-integer/half-integer ([`binding-qhamiltonian-rotational-scale.witness.json`](../../folio-assistant/computations/binding-qhamiltonian-rotational-scale.witness.json)).
-**Pinning $\mu_0$ to match would be numerology**, so it is left open. The
-q-Hamiltonian fixes the rotational *structure*; the scale $\mu_0$
-(suggestively near $\Lambda_{\mathrm{QCD}}$, not derived) is the single
-residual gate. **Net status: deuteron derived (+0.19%); A≥3 reduced to one
-open quantity — the derived value of $\mu_0$.**
+$\mathfrak{E}_q = J_q^2\hbar_q\mu_0$ (rotational) $+\, p_q^2\hbar_q/(2[n]_q)$
+(translational) $+\, S_q$ (action). A q-Reeb rotation is the **rotational
+term** with all factors substrate-derived: $\mu_0 = m_e/(3(q-q^{-1})/2)
+\approx 1.6295$ MeV (the per-crossing scale fixed by the electron's three
+crossings,
+[`universal-ilp-algorithm`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.md)),
+$\hbar_q = 1-q^{-1}$, and $J_q^2(j) = [j]_q[j+1]_q$ with $j = n/2$ for
+$n = 3A$ strands ([`q-angular-momentum`](../../content/quantum-observable-universe/climax-volume-mass/q-angular-momentum.md)).
+Live evaluation
+([`binding-qhamiltonian-rotational-scale.witness.json`](../../folio-assistant/computations/binding-qhamiltonian-rotational-scale.witness.json)):
+
+| atom | $j=n/2$ | $J_q^2$ | $E_{\mathrm{rot}}=\mu_0\hbar_q J_q^2$ | $B_{\mathrm{AME}}$ | err |
+|------|---------|---------|--------------------------------------|---------------------|-----|
+| D    | 3.0     | 12.51   | **2.020 MeV**                        | 2.225               | **−9 %** |
+| T    | 4.5     | 27.00   | 4.360                                | 8.482               | −49 % |
+| ³He  | 4.5     | 27.00   | 4.360                                | 7.718               | −44 % |
+| ⁴He  | 6.0     | 48.71   | 7.865                                | 28.296              | −72 % |
+
+The **deuteron binding is reproduced to −9 % from fully-derived quantities
+with zero free parameters** — a second, independent derivation of $B_D$
+alongside the $m_e\cdot\mathrm{Vol}(\mathcal{B}_3)\cdot\Delta\mathrm{tr}$
+endomorphism (+0.19 %). But A≥3 undershoots by the same 44–72 % deficit.
+**Net status:** $\mu_0$ is derived. The gate is **not** "derive the scale"
+— it is the per-rep A≥3 structure: the highest-weight $j=n/2$ quantum
+collapses the per-block Reeb phase just as the scalar trace does. (An
+earlier draft of this probe incorrectly used the spin-½ quantum $j=\tfrac12$,
+producing a bogus 249 MeV scale; corrected with $j=n/2$ above.)
