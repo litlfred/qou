@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:categorical-higgs-mechanism",
+  lean: { ref: "qou:QOU.BraidsAndKnots.CategoricalHiggsMechanism" },
   title:
     "Categorical Higgs mechanism: Goldstone-eating as topological linking",
   uses: [
