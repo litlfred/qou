@@ -34,10 +34,13 @@ inconsistencies, and they cherry-pick from each other.
 This skill assumes you've already created a branch + opened a PR for
 the work tranche being coordinated. Per CLAUDE.md (STRICT, supersedes
 default "no auto-PR" guidance for this repo): **always create a
-branch and open a PR at the start of every work tranche.** Commit
-early, commit often. Small structured commits cherry-pick cleanly;
-big mixed commits do not. Exception: integration-watcher batch
-audit-job sweeps may use a single bulk commit.
+branch and open a PR at the start of every work tranche** — ASAP, and
+**never ask the user "want me to open the PR?"** Branch + PR creation
+are pre-authorized; the only git action needing explicit permission is
+the *merge*. Commit early, commit often. Small structured commits
+cherry-pick cleanly; big mixed commits do not. Exception:
+integration-watcher batch audit-job sweeps may use a single bulk
+commit.
 
 ## When to invoke
 
