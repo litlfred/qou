@@ -66,14 +66,20 @@ set_compute_dps()
 VOL_4_1 = vol_4_1_at(mp.dps)
 VOL_4_1_STR = mp.nstr(VOL_4_1, mp.dps, strip_zeros=False)
 
-# CODATA 2022 muon-electron mass ratio
+# CODATA 2022 muon-electron mass ratio (now a PREDICTION, kept for the
+# cross-check print; q₀ is no longer pinned from it — see below).
 M_MU_OVER_E_STR = "206.7682830"
 M_MU_OVER_E = mpf(M_MU_OVER_E_STR)
 
-# ── Derived substrate constants (50-digit precision) ─────────
-HBAR_Q_SQ = VOL_4_1 / M_MU_OVER_E
-HBAR_Q    = sqrt(HBAR_Q_SQ)
-Q         = mpf(1) / (mpf(1) - HBAR_Q)
+# ── Substrate parameter q₀ — canonical single source ─────────
+# Re-pinned 2026-05-28 from m_p/m_e via the proton substrate identity
+# (q_parameter.q_at, the Newton solve). Read it here rather than
+# re-deriving, so this witness can never drift from the canonical value.
+# The old muon derivation (ℏ_q² = Vol/(m_μ/m_e)) is q_parameter.q_muon_at.
+from q_parameter import q_at  # noqa: E402
+Q         = q_at(mp.dps)
+HBAR_Q    = mpf(1) - mpf(1) / Q
+HBAR_Q_SQ = HBAR_Q ** 2
 Q_INV     = mpf(1) / Q
 H_A       = Q - Q_INV
 TWO_Q     = Q + Q_INV       # [2]_q
@@ -165,12 +171,13 @@ if __name__ == "__main__":
     print(f"HIGH-PRECISION SUBSTRATE PINNING — mp.dps = {mp.dps} digits")
     print("=" * 100)
 
-    print(f"\nInputs (calibration):")
+    print(f"\nInputs (calibration anchor = m_p/m_e via proton identity):")
     print(f"  Vol(4_1)          = {VOL_4_1}")
-    print(f"  m_μ / m_e (CODATA) = {M_MU_OVER_E}")
+    print(f"  m_p / m_e (CODATA, ANCHOR) = 1836.152673426")
+    print(f"  m_μ / m_e (CODATA, now a 9.5σ PREDICTION) = {M_MU_OVER_E}")
 
-    print(f"\nDerived substrate constants:")
-    print(f"  ℏ_q² = Vol/R     = {HBAR_Q_SQ}")
+    print(f"\nDerived substrate constants (q from q_parameter.q_at):")
+    print(f"  ℏ_q² = (1−q⁻¹)²  = {HBAR_Q_SQ}")
     print(f"  ℏ_q              = {HBAR_Q}")
     print(f"  q                = {Q}")
     print(f"  q⁻¹              = {Q_INV}")
