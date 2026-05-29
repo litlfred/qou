@@ -97,7 +97,7 @@ element of $H_n(q)$ ($n = 3 A_{\mathrm{magic}}$) of the form*
 
 $$
   \sigma_{\mathrm{shell}} \;=\; \sum_{\lambda \vdash n} x_\lambda \cdot e_\lambda,
-  \qquad x_\lambda = x_{\lambda^*}\;\text{(self-duality, [`prop:shell-schur-weyl-self-duality`](#prop:shell-schur-weyl-self-duality)).}
+  \qquad x_\lambda = x_{\lambda^*}\;\text{(self-duality, Prop.~\ref{prop:shell-schur-weyl-self-duality}).}
 $$
 
 *The staircase partition $\lambda_{\mathrm{shell}}$ is
