@@ -40,8 +40,47 @@ Source blocks (sorry-free unless noted):
 `prop:q-hecke-seminormal-character-closure`,
 `def:qou-motivic-galois-instance` (2 Lean sorries).
 
+## Tier 3 — irreducible foundational forward refs (option-b checked, fails)
+
+Seven cluster edges have a target that the source **genuinely
+invokes** (it appears in the source's `.md` derivation and/or `.lean`
+proof). For these, dropping the `uses[]` would delete a real
+dependency — wrong. The remaining levers are (b) promote the target
+to an earlier chapter, or (c) document as irreducible.
+
+**Option (b) was checked per edge and fails for all seven.** Each
+`mass-theory` target carries its *own* `uses[]` dependency that also
+lives in `mass-theory`, so promoting the target into the
+`mass-endomorphism` opener does not remove the forward edge — it
+relocates it. The transitive cost confirms this is structural, not
+incidental:
+
+| Tier 3 target | later-chapter blocks it drags if promoted |
+|---|---:|
+| `prop:habiro-residue-sum-equivalence` | 1 |
+| `prop:jucys-murphy-central-elements-qou` | 1 |
+| `prop:hecke-mass-trace` | 2 |
+| `prop:q-beta-categorical-precision-ladder` | 112 |
+| `prop:alpha-shift-torus-knot` | 153 |
+| `prop:graded-trace-residue-split` | 226 |
+| `prop:bring-figure-eight-depth-2-witness` | 282 |
+
+The union is **327 of the 445 blocks** in `mass-theory` — promoting
+the Tier 3 targets would dissolve the analysis chapter into the
+opener, destroying the deliberate opener/analysis split. Even the two
+"drags 1" cases leave a residual forward edge (their single blocker is
+itself mid-`mass-theory`).
+
+**Disposition: (c) document as irreducible.** These seven are genuine
+foundational forward references — the chapter structure intentionally
+*states* the opener/conjecture early and *develops* the trace / Habiro
+/ central-idempotent machinery in the analysis chapter. The dependency
+direction is real and the placement is by design. They remain counted
+as logical defects but are explained here; the cluster's logical-defect
+count does not reach zero, which is the correct accounting.
+
 ## Gate
 
 Re-run the classifier after each disposition; the logical-defect count
-must drop monotonically (current baseline: 91). Regenerate
+must drop monotonically (baseline at branch open: 91). Regenerate
 `forward-ref-classification.witness.json`.

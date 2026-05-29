@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-mass-markov",
   title: "Categorical mass as Markov trace",
-  uses: ["prop:frobenius-gram-matrix"],
+  uses: [],
   tags: [
     "mass",
     "categorical-trace",
