@@ -199,3 +199,38 @@ deuteron ($+0.2\%$) works because it is a true 2-body system. The
 additive multi-bond model does **not** close the gap — it overcounted
 by treating pairs as independent. The A≥3 binding deficit is real, not
 a missing-constructive-term artifact.
+
+## Error source: Δtr is intensive, binding is extensive
+
+Diagnosed in [`binding_error_source.py`](../../folio-assistant/computations/binding_error_source.py).
+The A≥3 undershoot has a single structural cause:
+
+| Atom | Δtr | $B_{\mathrm{cat}}$ | $B_{\mathrm{AME}}$ | clip |
+|------|-----|------|------|------|
+| ²H | 0.595 | 2.23 | 2.22 | **+0.2%** |
+| ³H | 0.804 | 3.01 | 8.48 | −64% |
+| ³He | 0.841 | 3.15 | 7.72 | −59% |
+| ⁴He | 0.912 | 3.42 | 28.30 | −88% |
+
+$\Delta\mathrm{tr} = |\mathrm{tr}_{\mathrm{free}}| -
+|\mathrm{tr}_{\mathrm{atom}}|$ is bounded by $|\mathrm{tr}_{\mathrm{free}}|
+\approx 1$, so $B = m_e\!\cdot\!\mathrm{Vol}(\mathcal{B}_3)\cdot
+\Delta\mathrm{tr}$ has a **hard ceiling of $\approx 3.74$ MeV for every
+$A$**. The deuteron ($B=2.2 < 3.74$) sits below the ceiling and works;
+³He/⁴He exceed it and are clipped.
+
+**Δtr is an intensive, saturating observable; binding energy is
+extensive** (grows with $A$). An intensive quantity cannot represent an
+extensive one — that is the $-60\%$, not a missing volume or a
+convention artifact.
+
+**Structural fix direction (not a calibrated formula — calibration
+would be fitting):** the Markov trace is partition-function-like
+(multiplicative over disjoint subsystems), so its **logarithm** is the
+extensive, additive, free-energy-like analog. $-\log(|\mathrm{tr}_
+{\mathrm{atom}}|/|\mathrm{tr}_{\mathrm{free}}|)$ grows with $A$
+($0.93 \to 2.17 \to 1.62 \to 2.86$) where $\Delta\mathrm{tr}$
+saturates. A correct extensive binding observable must be built from
+$\log(\mathrm{tr})$, not $\Delta\mathrm{tr}$. Recalibrating the scale
+for the log observable is deferred (it changes the deuteron
+calibration and must be done without back-fitting AME).
