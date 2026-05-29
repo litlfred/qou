@@ -16,6 +16,7 @@ with bar-involution may pin the Δ_λ uniquely or nearly so.
 """
 
 import json, time
+from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 from mpmath import mp, mpf, fabs
 import numpy as np
@@ -23,7 +24,7 @@ import numpy as np
 mp.dps = 50
 HERE = Path(__file__).resolve().parent
 
-q0_str = '1.10997859555418057528159407960950937799328227995870'
+q0_str = Q_50_DIGIT_STR
 q0 = mpf(q0_str)
 q0f = float(q0)
 h_q = float(q0 - 1/q0)

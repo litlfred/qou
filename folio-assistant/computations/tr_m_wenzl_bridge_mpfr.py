@@ -39,6 +39,7 @@ Public entry point:
 from __future__ import annotations
 
 import functools
+from q_parameter import Q_50_DIGIT_STR
 import json
 import sys
 from pathlib import Path
@@ -484,7 +485,7 @@ if __name__ == "__main__":
     #   tr_M(σ_0 σ_1) = z²
     #   tr_M(σ_0 σ_1 σ_0) = h z² + z
     #   tr_M(σ_0²)  = h z + 1
-    Q_STR = "1.1099785955541805752815940796095093779667618976181"
+    Q_STR = Q_50_DIGIT_STR
     with mp.workdps(60):
         q = mp.mpf(Q_STR)
         h = q - 1 / q

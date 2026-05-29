@@ -40,6 +40,7 @@ current run are preserved.
 from __future__ import annotations
 
 import json
+from q_parameter import Q_50_DIGIT_STR
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -78,7 +79,7 @@ from y_lambda_wenzl_bridge import (
 # Five q probes bracketing q_0 ≈ 1.10998.  The middle probe is q_0 itself
 # so test 1 can compare directly to the MPFR witness.  The other four
 # bracket q_0 within the physically relevant strip 1.05 ≤ q ≤ 1.20.
-Q0_STR = "1.1099785955541805"
+Q0_STR = Q_50_DIGIT_STR
 PROBES = ["1.05", "1.08", Q0_STR, "1.15", "1.20"]
 
 DPS_TEST = 50      # working precision for tests 1 + 3 (target 1e-30)

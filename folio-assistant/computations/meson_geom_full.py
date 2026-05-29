@@ -29,6 +29,7 @@ This script derives:
 """
 
 import json, time
+from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 from mpmath import mp, mpf, fabs, catalan
 
@@ -36,7 +37,7 @@ mp.dps = 50
 HERE = Path(__file__).resolve().parent
 
 # ── substrate (from constants.py) ────────────────────────────────
-q0 = mpf('1.10997859555418057528159407960950937799328227995870')
+q0 = mpf(Q_50_DIGIT_STR)
 qi = 1/q0
 h_q = q0 - qi
 hbar_q = 1 - qi  # ℏ_q = (q-1)/q

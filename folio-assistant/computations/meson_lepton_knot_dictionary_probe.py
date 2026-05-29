@@ -17,13 +17,14 @@ References:
 """
 
 import json, time
+from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 from mpmath import mp, mpf, fabs
 
 mp.dps = 50
 
 # ---------- substrate ----------
-q0 = mpf('1.10997859555418057528159407960950937799328227995870')
+q0 = mpf(Q_50_DIGIT_STR)
 h_q = q0 - 1/q0
 m_e_MeV = mpf('0.51099895069')  # CODATA 2022
 

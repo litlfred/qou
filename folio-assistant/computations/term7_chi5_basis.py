@@ -26,6 +26,7 @@ tracker extension lands.
 # Ref: [manuscript] term7_height6_partition_enum.py (basis)
 
 import json
+from q_parameter import Q_50_DIGIT_STR
 import sys
 from pathlib import Path
 
@@ -80,7 +81,7 @@ def dim_q(lam: tuple[int, ...], n: int, q_val: mpf, n_fac_q: mpf) -> mpf:
 
 def main() -> None:
     mp.dps = 60
-    q_0 = mpf("1.1099785955541805")
+    q_0 = mpf(Q_50_DIGIT_STR)
     A_values = [2, 3, 4, 5, 6]
     height = 6
 

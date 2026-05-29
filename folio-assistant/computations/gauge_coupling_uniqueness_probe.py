@@ -34,6 +34,7 @@ Emits `gauge-coupling-uniqueness-probe.witness.json`.
 from __future__ import annotations
 
 import sys
+from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 
 import sympy as sp
@@ -103,7 +104,7 @@ def main() -> int:
     tr_total = sp.simplify(tr_e_plus + tr_e_minus)  # should = tr(1) = 1
 
     # Numerical evaluation at the substrate q_0 ≈ 1.110
-    q_0 = sp.Float("1.109978595554180575281594079609509377993", 50)
+    q_0 = sp.Float(Q_50_DIGIT_STR, 50)
     tr_e_plus_num = float(sp.N(tr_e_plus.subs(q, q_0), 30))
     tr_e_minus_num = float(sp.N(tr_e_minus.subs(q, q_0), 30))
     tr_total_num = float(sp.N(tr_total.subs(q, q_0), 30))

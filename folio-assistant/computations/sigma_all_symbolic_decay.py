@@ -27,6 +27,7 @@ With symbolic formula: ANY A — no cancellation, no precision concern.
 """
 from __future__ import annotations
 import json
+from q_parameter import Q_50_DIGIT_STR
 from datetime import datetime, timezone
 from itertools import product as cartesian
 from pathlib import Path
@@ -38,7 +39,7 @@ import time
 q = sp.Symbol('q', positive=True)
 # Canonical 50-dps q_0 — keep in sync with `q_parameter.Q_50_DIGIT_STR`
 # (was stale `...51695830...` pre-Q6; corrected to witness-derived value).
-q0 = sp.Float('1.10997859555418057528159407960950937799328227995870', 30)
+q0 = sp.Float(Q_50_DIGIT_STR, 30)
 
 ch = {
     'triv':   {'p': (q**2 + 1)**2 / (4*q),               'n': (q**2 + 1)**2 / (4*q**3)},
