@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-29T14:45:57.583261+00:00",
-  "commitSha": "7ba9bd62bd9c74527a1f280887f756c2b67f7364",
+  "computedAt": "2026-05-29T14:52:50.568265+00:00",
+  "commitSha": "7d492740aae02ffef08d67c4ef4313aac33b5c2a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2542,9 +2542,11 @@
         "mass-table-ppb.witness.json",
         "mass-tower-operator-valued-chain.witness.json",
         "mass-tower-operator-valued.witness.json",
+        "meson-3x4-structural-origin.witness.json",
         "meson-character-shortcut-l1.witness.json",
         "meson-eigenvalue-analysis.witness.json",
         "meson-geom-full.witness.json",
+        "meson-gmor-derivation-probe.witness.json",
         "meson-h6-typed-trace.witness.json",
         "meson-habiro-expansion.witness.json",
         "meson-kaon-pion-derivation.witness.json",
