@@ -20,6 +20,13 @@ git add build-logs/lean-build-status.json
 git commit -m "build: failure sidecar" && git push
 ```
 
+Or let the script commit + push the sidecar for you (commits only that one
+file, via your configured git remote — e.g. SSH):
+
+```bash
+./scripts/lean-build-all.sh --cache --commit-sidecar
+```
+
 The agent reads `build-logs/lean-build-status.json` and acts on the extracted
 errors directly — no terminal copy-paste, and the slow build runs once on your
 machine (or in CI).
