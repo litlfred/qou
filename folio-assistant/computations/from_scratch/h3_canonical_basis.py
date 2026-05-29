@@ -162,7 +162,7 @@ if __name__ == "__main__":
     print()
 
     # Evaluate at q_0 = 1.11 numerically
-    q0 = sp.Rational(11099785955541805, 10**16)
+    q0 = sp.Rational(11099785827513808, 10**16)
     print(f"At q_0 = {float(q0):.10f}:")
     for w in H3_BASIS:
         c = sp.simplify(basis_coeffs[w])

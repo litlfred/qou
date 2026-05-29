@@ -322,7 +322,7 @@ if __name__ == "__main__":
     tr_M_symbolic, per_lam = markov_trace_from_basis(basis_coeffs)
 
     print("Per-λ contributions to tr_M(T_w(D)):")
-    q0 = sp.Rational(11099785955541805, 10**16)
+    q0 = sp.Rational(11099785827513808, 10**16)
     for p, contrib in per_lam.items():
         c_q0 = float(contrib.subs(q, q0).evalf(30))
         print(f"  λ = {p}: {sp.nsimplify(sp.simplify(contrib))}")
