@@ -1,0 +1,85 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-29T15:10:40.467107+00:00",
+  "commitSha": "a79a8e9d21494f3354031f5103734dd821848f8d",
+  "assertions": [
+    {
+      "name": "mu_d_minus_mu_u_MeV",
+      "computed": 1.2864302752398045,
+      "expected": 1.286,
+      "passed": true,
+      "tolerance": 0.001,
+      "unit": "MeV",
+      "source": "rem:dressed-quark-numerology-at-q0 cites μ_d − μ_u ≈ 1.286 MeV from the substrate split at q_0"
+    },
+    {
+      "name": "substrate_identity_holds",
+      "computed": 0.0013757112498675123,
+      "expected": 0.0013757112498675123,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "(q−1)²(1−q⁻⁴)/3 = (1/3)·ℏ_q²·h_q·[2]_q (algebraic identity, prop statement)"
+    },
+    {
+      "name": "substrate_bound_MeV",
+      "computed": 3.875043279171387,
+      "expected": 3.88,
+      "passed": true,
+      "tolerance": 0.01,
+      "unit": "MeV",
+      "source": "thm:flavor-mass-splitting-bound upper bound M_N·ℏ²·h·[2] ≈ 3.88 MeV (rem:dressed-quark-numerology)"
+    },
+    {
+      "name": "slack_ratio_one_third_times_skein",
+      "computed": 0.3319782987081594,
+      "expected": 0.3319782987081594,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "slack ratio = (μ_d−μ_u)/(M_N·ℏ²·h·[2]) = (1/3)·(q^½+q^−½)/(q+q⁻¹) (slack-ratio identity)"
+    },
+    {
+      "name": "splitting_strictly_positive_below_bound",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "thm:flavor-mass-splitting-bound: 0 < μ_d−μ_u < M_N·ℏ²·h·[2] for q_0 > 1"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "flavor-dressed-mass-from-substrate-split",
+  "scriptFile": "probe_flavor_dressed_mass_from_substrate_split.py",
+  "scriptHash": "9bc51ad70b6c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Substrate-derived down–up dressed-quark splitting μ_d − μ_u = M_N · (q−1)²(1−q⁻⁴)/3 · (q^½+q^−½)/(q+q⁻¹) at q = q_0. Verifies the substrate identity (q−1)²(1−q⁻⁴)/3 = (1/3)ℏ²h[2], the two-sided bound 0 < μ_d−μ_u < M_N·ℏ²·h·[2], and the slack ratio (1/3)(q^½+q^−½)/(q+q⁻¹). Pins μ_d−μ_u ≈ 1.286 MeV (substrate-pure modulo the CODATA M_N anchor); m_n−m_p is a cross-check target, not an input. Covers prop:flavor-dressed-mass-from-substrate-split and thm:flavor-mass-splitting-bound.",
+  "contentBlock": "prop:flavor-dressed-mass-from-substrate-split",
+  "parameters": {
+    "q_0": "1.10997859555418057528159407960950937799328227995870",
+    "M_N_MeV": "938.91875434",
+    "m_p_MeV_codata": "938.27208816",
+    "m_n_MeV_codata": "939.56542052",
+    "dps": 50
+  },
+  "data": {
+    "substrate_factor": "0.001375711249867512216725087899537173398853688341329",
+    "substrate_factor_identity_form": "0.001375711249867512216725087899537173398853688341329",
+    "skein_factor": "0.99593489612447829092722644213877187867599402471856",
+    "mu_d_minus_mu_u_MeV": "1.2864302752398044078764069555112983326002862354612",
+    "mu_d_minus_mu_u_MeV_float": 1.2864302752398045,
+    "substrate_bound_MeV": "3.8750432791713871816867549345813497305288671240656",
+    "substrate_bound_MeV_float": 3.875043279171387,
+    "slack_ratio": "0.33197829870815943030907548071292395955866467490619",
+    "slack_ratio_closed_form": "0.33197829870815943030907548071292395955866467490619",
+    "m_n_minus_m_p_predicted_MeV": "1.2916810930571290605622516448604499101762890413552",
+    "m_n_minus_m_p_codata_MeV": "1.29333236",
+    "m_n_minus_m_p_residual_fraction": -0.0012767537517355085
+  }
+}

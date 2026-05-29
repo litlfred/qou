@@ -18,7 +18,7 @@ import { remark } from "../../schema/builders";
  * Aggregate (across all 35 blocks):
  *   scalar-approximation Frobenius : 3.517
  *   operator-valued correction      : 3.603  (> scalar)
- *   ratio op/(scalar+op)            : 0.72
+ *   ratio op/sqrt(scalar^2+op^2)    : 0.72
  *   non-scalar blocks               : 19 / 35
  *
  * The operator-valued correction Frobenius EXCEEDS the scalar
