@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-29T13:41:29.850864+00:00",
-  "commitSha": "5da83373cc74fc787d47e109bd66b39785294b33",
+  "computedAt": "2026-05-29T15:31:50.262642+00:00",
+  "commitSha": "6a0adaaf8d857a2c8f77f3c41386d2503406474d",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "25f9f7681b64",
+  "scriptHash": "1fbe13ed9d80",
   "scriptCommitSha": "cb6ab5677d75445893c2b34623975c6a19e93f03",
   "precisionMetadata": {
     "compute_dps": 65,
@@ -30,7 +30,7 @@
     "rows": [
       {
         "obs": "m_p",
-        "role": "validation",
+        "role": "CAL-2 numerical anchor",
         "pred_MeV": "938.272088160",
         "codata_MeV": "938.272088160",
         "sigma_exp_MeV": "2.90000e-7",
@@ -155,11 +155,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "3172ec1849c3ba2bbbb5319e7eed4622c889af73054dfb73a2615dfa4a0b54b0",
+        "sha256": "3a50b6253c75f76ac813046cf11f5dcfb7a7ef186a419c56190e86ed74282a1c",
         "size_bytes": 3277,
-        "commitSha": "5da83373cc74fc787d47e109bd66b39785294b33",
-        "scriptCommitSha": "db220b15c21b1a5f282c6c6cecad2d68672a0d69",
-        "computedAt": "2026-05-29T13:41:29.701781+00:00"
+        "commitSha": "1b3898ea917cb1b8a478de44575bd81236434502",
+        "scriptCommitSha": "f7a486545d6e866e7d4d16db358c240569bae3df",
+        "computedAt": "2026-05-29T15:19:04.651291+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
@@ -187,11 +187,11 @@
       },
       {
         "path": "cal-3-q-beta.witness.json",
-        "sha256": "ce6f6054b3a6446d93d2a84a624f1db6938fd6648e29d0243640b56c96421d4a",
-        "size_bytes": 2339,
-        "commitSha": "c976cc9b7aed22c430f6adda01d11ef1e0a45202",
-        "scriptCommitSha": "unknown",
-        "computedAt": "2026-05-23T20:20:49.388665+00:00"
+        "sha256": "cd281a06e92e1031d088b150c1660014d68f7e46d7eda1681fbe491798f7a101",
+        "size_bytes": 2503,
+        "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+        "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+        "computedAt": "2026-05-29T14:42:16.116070+00:00"
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",

@@ -71,13 +71,13 @@ def _load_err(key: str) -> mpf:
 
 # Muon mass — not yet in codata_constants registry. Source: CODATA 2022
 # m_μ comparison value: use m_e × (m_μ/m_e)_CODATA rather than the
-# independently-rounded CODATA m_μ. Since q_0 was calibrated from
-# the CODATA ratio m_μ/m_e = 206.7682830(46), the prediction
-# m_μ_pred = m_e · Vol(4_1)/ℏ_q² is exact by construction at the
-# ratio's precision. Comparing against the independently-quoted
-# m_μ = 105.6583755(23) introduces a 1.41 ppb gap that is entirely
-# a rounding artifact between two CODATA representations of the
-# same quantity. The ratio-derived value is the more precise anchor.
+# independently-rounded CODATA m_μ (avoids the 1.41 ppb rounding
+# artifact between the two CODATA representations).
+# Re-pin note (2026-05-29, #1422): q₀ is now pinned from m_p/m_e, so
+# m_μ_pred = m_e · Vol(4_1)/ℏ_q² is NO LONGER exact by construction —
+# it is a genuine 9.5σ PREDICTION. The ~210 ppb gap vs the CODATA ratio
+# is the real μ-p tension (not a rounding artifact); see
+# observations/substrate-anchor-alternatives.md.
 _M_MU_MEV = M_E_MEV * M_MU_OVER_M_E
 _M_MU_MEV_ERR = mpf("0.0000023")
 _MU_QUOTED = (
@@ -91,7 +91,7 @@ OBSERVABLES: dict[str, tuple[mpf, mpf, str, str]] = {
                  "codata_constants.M_E_MEV"),
     "Q_beta":   (Q_BETA_MEV,      Q_BETA_MEV_ERR,         "CAL-3 anchor",
                  "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)"),
-    "m_p":      (M_P_MEV_VALIDATION, M_P_MEV_VALIDATION_ERR, "validation",
+    "m_p":      (M_P_MEV_VALIDATION, M_P_MEV_VALIDATION_ERR, "CAL-2 numerical anchor",
                  "codata_constants.M_P_MEV_VALIDATION"),
     "m_n":      (M_N_MEV_VALIDATION, M_N_MEV_VALIDATION_ERR, "validation",
                  "codata_constants.M_N_MEV_VALIDATION"),
@@ -192,21 +192,27 @@ def main() -> dict:
     #
     # m_p / m_n / Δ_pn are routed to the substrate-identity witness
     # (`m-p-substrate-identity-50dps`) per the audit
-    # `docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md`:
+    # `docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md`.
     #
-    #   m_p = 2·m_μ·F_Bor(q_0) − 12·m_e   (0.24 ppm vs CODATA)
-    #   m_n = m_p·(1 + X/(1 − X/2))        (2.00 ppm via canonical
-    #                                       Hecke-skein flavor-split)
+    # Re-pin note (2026-05-29, #1422): q₀ is now the m_p-pinned value,
+    # so m_p is the CAL-2 NUMERICAL ANCHOR — its row matches CODATA to
+    # 0.0004 ppb as a calibration round-trip (m_e × m_p/m_e re-evaluated
+    # through the identity used to pin q₀; the framework content cancels,
+    # the residual is sub-σ_CAL CODATA input slop). It is NOT a
+    # prediction — treat it like m_e, not a precision win.
     #
-    # Both formulas use ONLY Lean-proved closed forms (Borromean
-    # Markov trace + [3]_q! + flavor-split-substrate) and CAL-1 /
-    # CAL-2 anchors. The earlier Borromean-tower witness used the
-    # Family A linking weight (also Lean-proved) which produces
-    # m_p = 965.38 MeV (+2.89% gap). Switching to the substrate
-    # identity is a 120,000× improvement on the m_p dashboard row.
+    #   m_p = 2·m_μ·F_Bor(q_0) − 12·m_e   (anchor round-trip)
+    #   m_n = m_p·(1 + X/(1 − X/2))        (genuine prediction, −1.76 ppm
+    #                                       via canonical Hecke-skein split)
     #
-    # m_μ continues to read from the Borromean witness's
-    # muon_check (CAL-2 anchor cross-check, trivially zero).
+    # The formulas use ONLY Lean-proved closed forms (Borromean Markov
+    # trace + [3]_q! + flavor-split-substrate) and CAL-1 / CAL-2 anchors.
+    # The bare Borromean-tower (Family A linking weight, also Lean-proved)
+    # gives m_p = 965.38 MeV (+2.89% open gap) — the honest categorical
+    # value; the substrate-identity row is the calibration, not a closure.
+    #
+    # m_μ is now a genuine 9.5σ PREDICTION (209.8 ppb = +0.21 ppm vs
+    # CODATA) — the irreducible μ-p tension surfaced by anchoring on m_p.
     #
     # If `m-p-substrate-identity-50dps.witness.json` is absent, falls
     # back to the historical Borromean wiring for all four observables.
