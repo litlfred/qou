@@ -149,6 +149,95 @@ def solve_frobenius_dual_lp(
     )
 
 
+def _find_clarabel_lp_bin(explicit: Optional[str] = None) -> str:
+    """Locate the ``clarabel-operator-selection-lp`` binary.
+
+    Search order: explicit arg, ``$QOU_CLARABEL_LP_BIN``, then the known
+    ``tools/hecke-engine/target/release/`` path walking up from this file.
+    """
+    import os
+
+    if explicit:
+        return explicit
+    env = os.environ.get("QOU_CLARABEL_LP_BIN")
+    if env:
+        return env
+    rel = Path("tools") / "hecke-engine" / "target" / "release" / "clarabel-operator-selection-lp"
+    for parent in Path(__file__).resolve().parents:
+        cand = parent / rel
+        if cand.exists():
+            return str(cand)
+    raise FileNotFoundError(
+        "clarabel-operator-selection-lp not found. Build it via\n"
+        "  cargo build --release --manifest-path tools/hecke-engine/Cargo.toml "
+        "--features clarabel-mpfr --bin clarabel-operator-selection-lp\n"
+        "or set $QOU_CLARABEL_LP_BIN."
+    )
+
+
+def _solve_operator_selection_lp_clarabel(
+    t: np.ndarray,
+    G: np.ndarray,
+    n_target: float,
+    *,
+    M_bound: float = 1e6,
+    dual_tol: float = 1e-9,
+    prec_bits: int = 167,
+    clarabel_bin: Optional[str] = None,
+) -> LpDualResult:
+    """EXPERIMENTAL: solve via the MPFR Clarabel CLI (subprocess).
+
+    Same LP as the scipy path but solved at ``prec_bits`` MPFR precision
+    (167 bits ≈ 50 dps) instead of HiGHS f64, via the
+    ``clarabel-operator-selection-lp`` binary.  Values cross the boundary
+    as decimal strings, so no f64 truncation is introduced by the
+    marshalling itself (the *inputs* here are still f64 because callers
+    pass ``np.ndarray``; pass 50-dps strings upstream for full precision).
+
+    NOT yet cross-checked against the scipy backend to 1e-25 — that needs
+    a scipy+numpy environment.  The scipy backend therefore remains the
+    default; this path is opt-in via ``backend="clarabel"``.
+    """
+    import json as _json
+    import subprocess
+
+    t = np.asarray(t, dtype=float)
+    G = np.asarray(G, dtype=float)
+    d = len(t)
+    assert G.shape == (d, d), f"Gram matrix shape {G.shape} ≠ ({d},{d})"
+
+    payload = {
+        "t": [repr(float(x)) for x in t],
+        "G": [[repr(float(G[i, j])) for j in range(d)] for i in range(d)],
+        "n_target": repr(float(n_target)),
+        "m_bound": repr(float(M_bound)),
+        "dual_tol": repr(float(dual_tol)),
+        "prec_bits": int(prec_bits),
+    }
+    binp = _find_clarabel_lp_bin(clarabel_bin)
+    proc = subprocess.run(
+        [binp], input=_json.dumps(payload), capture_output=True, text=True,
+    )
+    out = _json.loads(proc.stdout) if proc.stdout.strip() else {}
+    if proc.returncode != 0 or "error" in out or not out.get("feasible", False):
+        return LpDualResult(
+            x_star=[float("nan")] * d, y0_star=float("nan"),
+            y_star=[float("nan")] * d, active_set=[],
+            primal_obj=float("nan"), dual_obj=float("nan"),
+            duality_gap=float("nan"), feasible=False,
+        )
+    return LpDualResult(
+        x_star=[float(v) for v in out["x_star"]],
+        y0_star=float(out["y0_star"]),
+        y_star=[float(v) for v in out["y_star"]],
+        active_set=[int(i) for i in out["active_set"]],
+        primal_obj=float(out["primal_obj"]),
+        dual_obj=float(out["dual_obj"]),
+        duality_gap=float(out["duality_gap"]),
+        feasible=True,
+    )
+
+
 def solve_operator_selection_lp(
     t: np.ndarray,
     G: np.ndarray,
@@ -156,6 +245,9 @@ def solve_operator_selection_lp(
     *,
     M_bound: float = 1e6,
     dual_tol: float = 1e-9,
+    backend: str = "scipy",
+    prec_bits: int = 167,
+    clarabel_bin: Optional[str] = None,
 ) -> LpDualResult:
     """Solve operator-selection LP per prop:operator-selection-lp.
 
@@ -165,10 +257,22 @@ def solve_operator_selection_lp(
       n_target: target categorical mass
       M_bound: large bound on x_i for boundedness
       dual_tol: threshold for "active" dual variable
+      backend: "scipy" (default, HiGHS f64) or "clarabel" (MPFR, ~50 dps,
+        EXPERIMENTAL — see `_solve_operator_selection_lp_clarabel`).
+      prec_bits: MPFR precision for the clarabel backend (167 ≈ 50 dps).
+      clarabel_bin: explicit path to the clarabel LP binary (else autodetect).
 
     Returns LpDualResult with BOTH primal coefficients AND dual shadow
     prices.  Strong duality is verified; mismatch raises ValueError.
     """
+    if backend == "clarabel":
+        return _solve_operator_selection_lp_clarabel(
+            t, G, n_target, M_bound=M_bound, dual_tol=dual_tol,
+            prec_bits=prec_bits, clarabel_bin=clarabel_bin,
+        )
+    if backend != "scipy":
+        raise ValueError(f"unknown backend {backend!r}; use 'scipy' or 'clarabel'")
+
     from scipy.optimize import linprog  # SciPy is required for LP duals.
 
     t = np.asarray(t, dtype=float)
