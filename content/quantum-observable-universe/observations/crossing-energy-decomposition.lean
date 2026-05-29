@@ -41,6 +41,44 @@ theorem q_inv_decomposition (q : ℝ) (hq : 0 < q) :
   unfold symmetricWeight antisymmetricWeight
   ring
 
+/-- The symmetric weight (q + q⁻¹)/2 equals cosh(ln q), for q > 0.
+    This is what makes the "cosh channel" name a derived identity, not a
+    definition: the symmetric crossing weight IS the hyperbolic cosine of
+    the crossing rapidity λ = ln q. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem symmetricWeight_eq_cosh (q : ℝ) (hq : 0 < q) :
+    symmetricWeight q = Real.cosh (Real.log q) := by
+  unfold symmetricWeight Real.cosh
+  rw [Real.exp_log hq, Real.exp_neg, Real.exp_log hq]
+
+/-- The antisymmetric weight (q - q⁻¹)/2 equals sinh(ln q), for q > 0.
+    The "Coulomb / sinh channel" is therefore a derived identity — the
+    antisymmetric crossing weight IS the hyperbolic sine of λ = ln q,
+    not a fitted parameter. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem antisymmetricWeight_eq_sinh (q : ℝ) (hq : 0 < q) :
+    antisymmetricWeight q = Real.sinh (Real.log q) := by
+  unfold antisymmetricWeight Real.sinh
+  rw [Real.exp_log hq, Real.exp_neg, Real.exp_log hq]
+
+/-- General identity: q = cosh(ln q) + sinh(ln q), for any q > 0.
+    This is `eˣ = cosh x + sinh x` at x = ln q (so the RHS is e^{ln q} = q).
+    It holds for every q > 0 — it is NOT specific to the substrate value. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem q_eq_cosh_add_sinh (q : ℝ) (hq : 0 < q) :
+    q = Real.cosh (Real.log q) + Real.sinh (Real.log q) := by
+  rw [← symmetricWeight_eq_cosh q hq, ← antisymmetricWeight_eq_sinh q hq]
+  unfold symmetricWeight antisymmetricWeight
+  ring
+
+/-- General identity: q⁻¹ = cosh(ln q) - sinh(ln q), for any q > 0. -/
+-- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
+theorem q_inv_eq_cosh_sub_sinh (q : ℝ) (hq : 0 < q) :
+    q⁻¹ = Real.cosh (Real.log q) - Real.sinh (Real.log q) := by
+  rw [← symmetricWeight_eq_cosh q hq, ← antisymmetricWeight_eq_sinh q hq]
+  unfold symmetricWeight antisymmetricWeight
+  ring
+
 /-- The EM/strong ratio is (q - q⁻¹)/(q + q⁻¹). -/
 noncomputable def emStrongRatio (q : ℝ) : ℝ :=
   antisymmetricWeight q / symmetricWeight q
