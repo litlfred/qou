@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T16:37:14.786324+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-05-29T19:27:42.419617+00:00",
+  "commitSha": "58bb91b92f189d7771161ef8f1e8a0823e5b9c91",
   "assertions": [
     {
       "name": "atlas |tr_M| cross-check (this compute vs Layer-1 table)",
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 330,
+  "durationMs": 318,
   "computation": "skein-proton-canonical",
   "scriptFile": "skein_proton_canonical.py",
   "scriptHash": "3d491930ea8b",
@@ -58,7 +58,7 @@
       "tr_M_q_0_canonical": "1.06530622859238925515327756997",
       "abs_tr_M": "1.06530622859238925515327756997",
       "compute_path": "markov_peel.tr_M_atomic(1, 0) symbolic, evaluated at q_0",
-      "wall_sec": "0.10"
+      "wall_sec": "0.09"
     },
     "atlas_cross_check": {
       "atlas_layer_1_value": "1.0653062285923887",

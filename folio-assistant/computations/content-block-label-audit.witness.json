@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:08:48.555916+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-05-29T18:59:56.636465+00:00",
+  "commitSha": "58bb91b92f189d7771161ef8f1e8a0823e5b9c91",
   "assertions": [
     {
       "name": "no_missing_labels",
@@ -29,13 +29,13 @@
   "description": "I5 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json with a `contentBlock` field is cross-checked against the union of all `label: \"...\"` declarations in content/**/*.ts manifests. Reports `ok` / `missing_label` / `informational_label` per field. Operationalises the 9-hit I5 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_fields_audited": 250,
+    "total_fields_audited": 249,
     "registered_labels_count": 2864
   },
   "data": {
     "by_result": {
       "informational_label": 14,
-      "ok": 141,
+      "ok": 140,
       "missing_label": 95
     },
     "rows": [
@@ -1210,11 +1210,6 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/unified-meson-mass-formula.witness.json",
-        "content_block_value": "prop:pion-half-figure-eight",
-        "result": "ok"
-      },
-      {
         "witness": "folio-assistant/computations/universal-ilp.witness.json",
         "content_block_value": "def:universal-ilp-algorithm",
         "result": "ok"
@@ -1226,7 +1221,7 @@
       },
       {
         "witness": "folio-assistant/computations/v-hat-to-delta-lambda-bridge.witness.json",
-        "content_block_value": "prop:rho-k-h3a-refinement",
+        "content_block_value": "prop:rho-k-graded-expansion",
         "result": "ok"
       },
       {
