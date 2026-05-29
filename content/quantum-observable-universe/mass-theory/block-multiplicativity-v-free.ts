@@ -2,6 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:block-multiplicativity-v-free",
+  interprets: "prop:atomic-mass-gb-nf",
   title:
     "Block-multiplicativity of per-generator V̂ on the disjoint Hecke product",
   lean: {

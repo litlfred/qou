@@ -2,6 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:electron-shells-hopf",
+  interprets: "prop:torus-hopf-stability",
   title:
     "Electron shells as closed sub-Hopf links of the trefoil chain",
   lean: {

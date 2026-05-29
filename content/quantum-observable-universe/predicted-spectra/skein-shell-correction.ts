@@ -2,6 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:skein-shell-correction",
+  interprets: "def:skein-binding-lagrangian",
   title:
     "Shell corrections from Skein polynomial factorization of the multi-nucleon link",
   lean: {

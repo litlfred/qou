@@ -2,6 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:shell-threading-energy",
+  interprets: "def:molecular-hopf-ring",
   title:
     "Shell energy from the Skein smoothing at the beta-decay vertex",
   lean: {

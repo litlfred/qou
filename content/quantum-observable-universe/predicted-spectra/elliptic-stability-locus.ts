@@ -2,6 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:elliptic-stability-locus",
+  interprets: "prop:integer-stability",
   title:
     "The nuclear degeneracy locus is an elliptic curve over the Bring's surface",
   lean: {

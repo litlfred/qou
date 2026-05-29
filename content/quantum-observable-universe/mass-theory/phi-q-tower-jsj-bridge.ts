@@ -2,6 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:phi-q-tower-jsj-bridge",
+  interprets: "prop:phi-q-tower-algebraic-stratification",
   title:
     "Φ$_q$ tower equals $\\rho_q \\cdot \\sum_S \\mathrm{Vol}(K_S)$ (archimedean bridge)",
   lean: {
