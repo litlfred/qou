@@ -103,7 +103,9 @@ cd "$REPO_ROOT"
 
 if [ "$DO_UPDATE" = true ]; then
     echo "  → lake update (root workspace)"
-    lake update 2>&1 | tail -5 || echo "  ⚠ lake update had warnings (continuing)"
+    # Check PIPESTATUS[0] (lake), not the pipeline's exit (tail always 0).
+    lake update 2>&1 | tail -5
+    [ "${PIPESTATUS[0]}" -ne 0 ] && echo "  ⚠ lake update had warnings (continuing)"
 fi
 
 if [ "$DO_CACHE" = true ]; then
@@ -139,8 +141,20 @@ for lean_dir in "${LEAN_DIRS[@]}"; do
     # lakefile, e.g. quantum-observable-universe → QOU.
     target=$(grep -E '^[[:space:]]*defaultTargets' "$lean_dir/lakefile.toml" 2>/dev/null \
                  | grep -oE '"[^"]+"' | tr -d '"' | head -1)
+    # Fallback to the package `name` if defaultTargets is absent, so a
+    # lakefile without an explicit defaultTargets is still built (Lake
+    # builds the default target when run in the package dir).
     if [ -z "$target" ]; then
-        echo "  ⚠ no defaultTargets in $lean_dir/lakefile.toml — skipping"
+        target=$(grep -E '^[[:space:]]*name[[:space:]]*=' "$lean_dir/lakefile.toml" 2>/dev/null \
+                     | grep -oE '"[^"]+"' | tr -d '"' | head -1)
+    fi
+    if [ -z "$target" ]; then
+        # Count as a failure, not a silent skip — the script advertises
+        # that exit 0 means every discovered project built.
+        echo "  ✗ no defaultTargets or package name in $lean_dir/lakefile.toml — cannot build"
+        FAILED_PAPERS+=("$paper")
+        printf '%s\t%s\t%s\t%s\t%s\n' \
+            "$paper" "(none)" "fail" "0" "$paper.log" >> "$LOG_DIR/_status.tsv"
         continue
     fi
 
