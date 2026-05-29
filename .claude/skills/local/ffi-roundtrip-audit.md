@@ -169,9 +169,33 @@ column.
 | [`closed_form_tau_M_verification_phase5q.py:72`](../../folio-assistant/computations/closed_form_tau_M_verification_phase5q.py) | P-F2 | `chi_lambda_braid` (via wrapper) | ~3 (H_3) | **F-D**: N is small, leave as-is |
 | [`markov_peel_rust_bridge.py:tr_M_atomic_rust_recursive`](../../folio-assistant/computations/markov_peel_rust_bridge.py) | P-F2/P-F3 | `tr_m_word_lq(word, n)` per reduced word | ~4000 | **F-C**: superseded on PR #886 by `tr_M_atomic_rust_full` → `tr_m_atomic_mpfr` — keep both during migration, deprecate `_recursive` after sweep |
 
-**Estimated wall savings**: each F-A / F-B fix saves 1.2-2× on the
-caller's wall; F-C saves 1.5-3×.  Combined across the seven
-offenders, ~30-50% wall reduction on the H_12+ compute set.
+### Status update (2026-05-29) — catalogue RESOLVED
+
+Re-verified against the current tree (static read; line numbers drift,
+so the check is by call-site shape, not line). **All seven catalogued
+offenders are discharged:**
+
+| File | 2026-05-22 fix | Current state |
+|------|----------------|---------------|
+| `compute_atom_chi_rust.py` | F-B | ✅ uses `chi_q_atomic_all_partitions` (batch) |
+| `delta_lambda_fr_identity_phase5c.py` | F-A | ✅ uses `chi_lambdas_braid` (has a `# F-A:` comment) |
+| `chirality_avg_content_chiral.py` | F-A | ✅ uses `chi_lambdas_braid` |
+| `chirality_avg_content_atomic.py` | F-A | ✅ uses `chi_lambdas_braid` |
+| `constit_factor_varying_q_phase5k2.py` | F-A | ✅ uses `chi_lambdas_braid` (MPFR `q_str`) |
+| `chirality_braid_average.py` | F-A | ⚠️ still per-shape, but the loop is over the **3** H_3 partitions — correctly **F-D-exempt** (N small), not ~50 as originally catalogued |
+| `closed_form_tau_M_verification_phase5q.py` | F-D | ✅ N=3, left as-is per F-D |
+| `markov_peel_rust_bridge.py:tr_M_atomic_rust_recursive` | F-C | ✅ superseded by `tr_M_atomic_rust_full` (single PyO3 call) — `_recursive` is no longer on any production caller; deprecation is a cleanup follow-up |
+
+No open per-item-FFI-in-loop offenders remain on the mass/binding
+critical path. A fresh `awk`-window scan of
+`folio-assistant/computations/*.py` (2026-05-29) finds only batch-API
+calls, docstrings/comments, and the F-D-exempt N=3 loop. See
+[`docs/audits/2026-05-29-mass-binding-compute-ffi-rounding-audit.md`](../../../docs/audits/2026-05-29-mass-binding-compute-ffi-rounding-audit.md).
+
+**Estimated wall savings** (historical, 2026-05-22): each F-A / F-B fix
+saved 1.2-2× on the caller's wall; F-C saved 1.5-3×.  Combined across the
+seven offenders, ~30-50% wall reduction on the H_12+ compute set — now
+realised.
 
 ## Pattern catalogue (cross-reference with `compute-audit.md` §P1-P32)
 
