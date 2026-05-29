@@ -8,10 +8,21 @@
 > proton's own pinned value comes from the substrate identity, not this
 > routine. All "130 ppm" figures below are corrected to −819 ppm (m_avg).
 
+> **Status: EXPLORATORY — NOT wired into production (2026-05-29).** The
+> spectral correction is **unproved**: the character χ^(2,1)(𝓑₃)=2−3h⁴−h⁶
+> is computationally verified, but "why θ/(8ℏ²) multiplies Geom" is a
+> `True := by trivial` Lean stub, the result is −819 ppm (not precision),
+> and a sinh(θ) refinement (which closes to ~+150 ppm) is an open lead.
+> Per the production-vs-exploratory discipline ("only wire proved"), the
+> production `geom_full_borromean` uses **only** the proved Family-A
+> linking weight (→ m_avg ≈ 966 MeV, +2.89 %, an open R&D gap). The
+> spectral correction lives in `geom_full_borromean_spectral` /
+> `spectral_correction_borromean`, both explicitly labelled exploratory.
+
 **Date:** 2026-05-28
 **Companion:** [`2026-05-28-mu-p-tension-substrate-floor.md`](2026-05-28-mu-p-tension-substrate-floor.md)
-(why the backfit towers are noise) — this doc is the *constructive* side:
-the genuine top-down formula.
+(why the backfit towers are noise) — this doc records an **exploratory**
+top-down ansatz, not a production formula.
 
 ## The derived formula
 

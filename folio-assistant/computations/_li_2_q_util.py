@@ -243,19 +243,20 @@ def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     vol_b3 = 8 * mp.catalan  # Adams 1985 (NOT Lean-formalized — see docstring)
     geom_leading = vol_b3 / hbar_q ** 2
     linking_weight = linking_weight_family_a(q, qi)
-    # Apply the top-down spectral-phase correction (2026-05-28): the
-    # Borromean braid's rotation angle on V_(2,1) per ideal octahedron.
-    # geom_full × m_e is the AVERAGE nucleon mass m_avg; the correction
-    # takes it from bare +2.89 % to −819 ppm vs CODATA m_avg (938.92) —
-    # fully derived, no free parameter, a ~35× improvement over bare.
-    # (It lands ~130 ppm from the PROTON only by coincidence; geom_full
-    # is m_avg, not m_p.) See spectral_correction_borromean and
-    # docs/audits/2026-05-28-spectral-phase-correction-derived.md.
-    return geom_leading * linking_weight * spectral_correction_borromean(q, qi)
+    # PROVED production formula: Vol(𝓑₃)/ℏ_q² × Family-A linking weight
+    # (lw = (3q²+4+3q⁻²)/4, Lean: lambda-scale-substrate-form.lean).
+    # m_e × this = m_avg ≈ 966 MeV (+2.89 % vs CODATA m_avg); the 2.89 %
+    # is an OPEN R&D gap (categorical-exactness refinement at h² order).
+    # The exploratory spectral-phase correction (spectral_correction_
+    # borromean, −819 ppm on m_avg) is NOT applied here: it is unproved
+    # (trivial Lean stub) so it must not enter production. Use it only
+    # via the explicitly-exploratory geom_full_borromean_spectral().
+    return geom_leading * linking_weight
 
 
 def spectral_correction_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """Top-down spectral-phase correction to the Borromean linking weight.
+    """EXPLORATORY (UNPROVED — do not wire into production geom_full).
+    Top-down spectral-phase correction to the Borromean linking weight.
 
     The leading Geom_full (Vol/ℏ² × lw_A) × m_e gives the AVERAGE
     nucleon mass m_avg, and is +2.89 % high.  The correction is the
@@ -294,13 +295,15 @@ def spectral_correction_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
 
 
 def geom_full_borromean_spectral(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """Deprecated alias: `geom_full_borromean` now applies the spectral
-    correction by default (wired 2026-05-28), so this is identical to it.
-    Retained so existing imports keep resolving; prefer
-    `geom_full_borromean` directly.
+    """EXPLORATORY (not production): proved Family-A geom_full × the
+    UNPROVED spectral-phase correction. m_e × this = m_avg ≈ 938.15 MeV
+    (−819 ppm vs CODATA m_avg) — a no-fit ~35× improvement over the bare
+    +2.89 %, but the correction is not proved (trivial Lean stub) and the
+    sinh(θ) refinement is an open lead, so this must NOT feed production.
+    Production uses geom_full_borromean (proved Family A, +2.89 %).
     """
     qi = mpf(1) / q if q_inv is None else q_inv
-    return geom_full_borromean(q, qi)
+    return geom_full_borromean(q, qi) * spectral_correction_borromean(q, qi)
 
 
 def yekutieli_correction_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
