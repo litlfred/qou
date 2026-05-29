@@ -8,12 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.HoefsmitEWCellContent",
     validation: "not_checked",
   },
-  uses: [
-    // broken-ref removed (Phase 7): conj:force-carrier-knot-vs-link-dichotomy
-    // broken-ref removed (Phase 7): conj:electroweak-higgs-torus-link-triplet
-    "prop:weak-spectral-completeness",
-    "prop:knot-operator-lp-selection",
-  ],
+  uses: ["prop:knot-operator-lp-selection"],
   tags: [
     "hoefsmit",
     "cell-content",

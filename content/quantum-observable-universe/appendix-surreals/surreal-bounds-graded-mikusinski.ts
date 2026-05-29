@@ -10,7 +10,6 @@ export default remark({
     "rem:bsd-surreal-bound",
     "rem:rh-surreal-bound",
     "rem:p-vs-np-surreal-bound",
-    "rem:algebraic-core-survives",
   ],
   cites: ["zagier1986", "bloch2000"],
   tags: [

@@ -8,13 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.spectral_sum_finite",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-spectral-sequence",
-    "prop:gb-residue-spectral-sum",
-    "prop:confinement-level-exists",
-    "prop:confinement-level-unique",
-    "prop:gs-residue-at-root-existence",
-  ],
+  uses: ["prop:gs-residue-at-root-existence"],
   tags: [
     "gs-filtration",
     "spectral-sequence",

@@ -9,11 +9,7 @@ export default theorem({
       "qou:QOU.BraidsAndKnots.confinement_grading_correspondence_conditional",
     validation: "not_checked",
   },
-  uses: [
-    "def:confinement-level",
-    "prop:crystal-graph-realization",
-    "prop:confinement-grading-correspondence",
-  ],
+  uses: ["prop:confinement-grading-correspondence"],
   cites: [
     "khovanovlauda2009",
     "brundankleshchev2009",

@@ -9,11 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:categorical-neutrality-saturated-shells",
     "prop:homological-shell-condensation",
     "prop:magic-numbers-from-q",
-    "prop:hoefsmit-seminormal-form",
-    "thm:wedderburn-mass-formula",
   ],
   computation: {
     engine: "python",

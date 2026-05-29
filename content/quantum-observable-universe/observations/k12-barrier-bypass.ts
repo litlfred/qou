@@ -5,11 +5,7 @@ export default remark({
   title:
     "Homological framework analytically bypasses the $k \\geq 12$ matrix-evaluation barrier",
   interprets: "prop:magic-numbers-from-q",
-  uses: [
-    "prop:magic-numbers-from-q",
-    "prop:homological-shell-condensation",
-    "prop:diagrammatic-double-magic-lr-fusion",
-  ],
+  uses: ["prop:diagrammatic-double-magic-lr-fusion"],
   tags: [
     "magic-numbers",
     "shell-closure",

@@ -10,8 +10,6 @@ export default proposition({
   },
   uses: [
     "prop:alpha-k-derivation-procedure",
-    "prop:unified-curvature-rank-mass-formula",
-    "prop:categorical-mass-markov",
     "rem:beta-decay-energy-scale",
   ],
   cites: [

@@ -4,10 +4,8 @@ export default prose({
   label: "prose:pre-archimedean-derivation-chain",
   title: "Pre-Archimedean Derivation Chain: Step-by-Step",
   uses: [
-    "prop:atom-knot-mass-derivation",
     "prop:chirality-writhe-ribbon-derivation",
     "prop:x5-bring-weight-identification",
-    "prop:brane-tower-z-habiro",
     "prop:canonical-knot-id-sdp",
   ],
   tags: [

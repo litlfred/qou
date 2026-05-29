@@ -10,9 +10,7 @@ export default proposition({
   },
   uses: [
     "def:brings-coordinate-ring",
-    "prop:categorical-neutrality-saturated-shells",
     "prop:homological-shell-condensation",
-    "def:descent-involution",
   ],
   cites: [
     "klein1888",

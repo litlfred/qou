@@ -7,11 +7,8 @@ export default proposition({
   uses: [
     "def:z-habiro-ring",
     "def:habiro-ring",
-    "def:algebraic-quantum-volume",
     "cor:quantum-dilogarithm",
     "prop:atom-knot-mass-derivation",
-    "thm:topological-mass",
-    "cor:habiro-expansion-atomic",
     "prop:habiro-residue-sum-equivalence",
   ],
   tags: [

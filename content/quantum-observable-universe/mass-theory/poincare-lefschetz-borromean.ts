@@ -9,10 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:borromean-baryon",
     "prop:borromean-bloch-group-element",
     "prop:reeb-bundle-complement-equals-volume",
-    "rem:vol-as-motivic-period",
   ],
   cites: [
     "lefschetz1926",

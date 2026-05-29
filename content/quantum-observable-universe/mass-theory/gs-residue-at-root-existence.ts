@@ -9,9 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:gb-spectral-sequence",
-    "prop:gb-residue-spectral-sum",
-    "prop:residue-at-root",
     "prop:gs-graded-markov-trace-existence",
     "def:habiro-ring",
   ],

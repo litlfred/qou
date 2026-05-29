@@ -9,11 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:color-tube-coordinates",
-    "def:color-tube-fibers",
     "prop:inter-nucleon-channel-color-tube",
-    "def:categorical-proton",
-    "def:categorical-neutron",
     "thm:jones-markov-trace",
   ],
   cites: [

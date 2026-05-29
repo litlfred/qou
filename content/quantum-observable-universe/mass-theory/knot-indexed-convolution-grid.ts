@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:hq-bi-filtration",
     "prop:joint-galois-braid-action",
     "prop:vol-through-tau",
   ],

@@ -11,7 +11,6 @@ export default proposition({
   uses: [
     "def:bar-involution",
     "prop:crystal-isospin-degeneracy",
-    "def:hecke-normal-form",
   ],
   cites: [
     "kashiwara1991",

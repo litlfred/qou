@@ -19,7 +19,6 @@ export default proposition({
   ],
   uses: [
     "def:neutrino-knot",
-    "def:observable-mtc",
     "prop:bn-mtc-action",
     "prop:ns-obstruction-tower",
   ],

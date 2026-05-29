@@ -9,21 +9,10 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    // The plain-generator restricted version (the load-bearing
-    // upstream this block extends):
     "prop:crystal-isospin-degeneracy",
-    // The color-tube channel-assignment that supplies the
-    // canonical bowtie interface:
     "prop:inter-nucleon-channel-color-tube",
-    // Substrate flavor split = the 305 ppm anomaly this block
-    // identifies as the bar-anti-symmetric isospin residue:
     "prop:flavor-split-substrate",
-    // The Hecke quadratic underlying sigma / sigma^-1 / averaged:
-    "def:hecke-normal-form",
     "def:bar-involution",
-    // The categorical proton/neutron color sheets:
-    "def:categorical-proton",
-    "def:categorical-neutron",
   ],
   computation: {
     engine: "python+mpmath",

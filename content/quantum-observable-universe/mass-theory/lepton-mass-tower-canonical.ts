@@ -12,7 +12,6 @@ export default proposition({
     "prop:rho-k-graded-expansion",
     "prop:per-braid-mass-tower",
     "prop:categorical-mass-markov",
-    "rem:skein-mass-relation",
     "def:typed-crossing-operator",
   ],
   authorNotes: [

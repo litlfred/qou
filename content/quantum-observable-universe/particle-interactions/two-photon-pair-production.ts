@@ -5,10 +5,7 @@ export default remark({
   label: "rem:two-photon-pair-production",
   title:
     "Two photons hitting a heavy nucleus: $\\gamma\\gamma \\to e^- e^+$ as a forced symmetric-crystal step",
-  uses: [
-    "prop:symmetric-crystal-pair-production",
-    "prop:crystal-graph-realization",
-  ],
+  uses: ["prop:symmetric-crystal-pair-production"],
   tags: [
     "pair-production",
     "two-photon",

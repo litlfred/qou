@@ -10,10 +10,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:gb-spectral-sequence",
     "prop:habiro-residue-sum-equivalence",
-    "prop:full-pole-structure-mass-trace",
-    "def:habiro-ring",
     "def:archimedean-realization-functor",
     "prop:gs-spectral-decomposition-existence",
   ],

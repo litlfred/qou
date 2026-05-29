@@ -9,9 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:bar-involution",
-    "def:hecke-normal-form",
-    "prop:crystal-isospin-degeneracy",
     "prop:reverse-limit-q-to-infinity",
     "prop:kazhdan-lusztig-classical-limit",
   ],

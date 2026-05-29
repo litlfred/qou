@@ -9,9 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:staircase-partition",
     "lem:staircase-corner-hook",
-    "prop:hoefsmit-ew-cell-content",
     "prop:weinberg-angle-categorical",
   ],
   cites: ["hoefsmit1974", "mathas1999"],

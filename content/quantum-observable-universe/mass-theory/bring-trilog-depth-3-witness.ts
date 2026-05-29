@@ -13,14 +13,7 @@ export default proposition({
       "folio-assistant/computations/bring-trilog-zeta5-depth-3.witness.json",
     status: "verified",
   },
-  uses: [
-    "prop:gb-depth-period-correspondence",
-    "def:brings-coordinate-ring",
-    "prop:q-dilogarithm-exists",
-    "prop:bring-figure-eight-depth-2-witness",
-    "prop:two-filtration-bridge",
-    "rem:chirality-period-pairing",
-  ],
+  uses: ["prop:two-filtration-bridge"],
   cites: [
     "bloch2000",
     "kontsevich1995",

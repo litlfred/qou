@@ -11,9 +11,6 @@ export default proposition({
   uses: [
     "def:bar-involution",
     "prop:cpt-orbit-closure-density",
-    // broken-ref removed (Phase 7): def:writhe
-    "def:hecke-normal-form",
-    // broken-ref removed (Phase 7): rem:chirality-from-frobenius-self-pairing
     "prop:chirality-writhe-ribbon-derivation",
   ],
   cites: [

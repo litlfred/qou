@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "rem:adjoint-trace",
     "prop:alpha-k-derivation-procedure",
     "prop:recursive-atom-knot-atlas",
   ],

@@ -9,7 +9,6 @@ export default proposition({
   title:
     "Canonical lepton-mass-tower ξ_m factor is d_q(std_rep S_{n+1}) · [2]_q / [n+1]_q where n = 2m+1 is the lepton-knot torus index; this couples lepton σ_1^{2m+1} braid at H_3 substrate level with H_{n+1} standard-rep branching, matching the T6 closure factor [3]_q·[2]_q/[4]_q at m=2 (muon) numerically to 0.034% of CODATA.",
   uses: [
-    "prop:lepton-bring-surface-h3-3channel",
     "prop:three-parameters-wedderburn",
     "prop:three-halves-structural-factor",
   ],

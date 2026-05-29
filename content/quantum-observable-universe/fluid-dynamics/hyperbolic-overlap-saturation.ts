@@ -9,7 +9,6 @@ export default remark({
     "prop:ns-counterexample",
     "def:ns-obstruction",
     "rem:townsend-biot-savart-strain",
-    "rem:vortex-reconnection",
   ],
   cites: ["townsend1951", "saffman1992", "moffatt1994"],
   tags: [

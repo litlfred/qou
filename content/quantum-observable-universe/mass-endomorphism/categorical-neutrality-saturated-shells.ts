@@ -8,13 +8,7 @@ export default proposition({
     ref: "qou:QOU.ShellNeutrality.SaturatedShellConjecture",
     validation: "not_checked",
   },
-  uses: [
-    "prop:mass-endomorphism",
-    "def:hecke-mass-element",
-    "prop:categorical-mass-markov",
-    "prop:hoefsmit-seminormal-form",
-    "thm:wedderburn-mass-formula",
-  ],
+  uses: ["prop:mass-endomorphism"],
   cites: [
     "kassel1995",
     "geckpfeiffer2000",

@@ -11,8 +11,6 @@ export default proposition({
   uses: [
     "prop:diagrammatic-double-magic-lr-fusion",
     "prop:torus-knot-shell-binding",
-    "def:brings-surface",
-    "prop:categorical-neutrality-saturated-shells",
   ],
   computation: {
     engine: "python",

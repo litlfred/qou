@@ -12,7 +12,6 @@ export default proposition({
     "prop:jet-tower-convergence",
     "prop:gb-spectral-sequence",
     "lem:tower-pair-equality-fixed-level",
-    "def:recursive-brane-tower",
   ],
   cites: [
     "kassel1995",

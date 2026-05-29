@@ -21,7 +21,6 @@ export default proposition({
   uses: [
     "def:motivic-galois-character",
     "rem:kummer-tower",
-    "thm:qu-to-qou",
   ],
   cites: ["yekutieli2010"],
   lean: {

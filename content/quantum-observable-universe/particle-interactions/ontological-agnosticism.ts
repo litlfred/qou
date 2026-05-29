@@ -6,7 +6,6 @@ export default remark({
   title:
     "Crystal-limit observables transport flatly to the generic fibre",
   uses: [
-    "prop:crystal-graph-realization",
     "prop:confinement-grading-correspondence",
     "prop:gb-spectral-sequence",
     "def:cemetery-group",
