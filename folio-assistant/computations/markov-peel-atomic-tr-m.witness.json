@@ -1,20 +1,25 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-03T23:04:42.408772+00:00",
-  "commitSha": "40f9998564f16e9139536592a86836c8aa5f3070",
+  "computedAt": "2026-05-29T14:19:37.648162+00:00",
+  "commitSha": "8f411837870b1ed99ba8a90cdc5c76de06b31774",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 20,
   "computation": "markov-peel-atomic-tr-m",
   "scriptFile": "markov_peel_atomic_witness.py",
   "scriptHash": "f4acadfe437b",
-  "scriptCommitSha": "eaa61b06898320515e5367413b3867e053bec85b",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Production atomic Markov trace tr_M(β_atom) at q = q₀ via the Markov-axiom recursive-ascent path (markov_peel + markov_trace_canonical, #508 / PR #516).  Cross-checks against atomic-tr-m-mpfr-50dps.witness.json (Hoefsmit + Wenzl bridge) for the atoms it covers (proton, neutron, D, T, ³He); ⁴He and beyond are first-time computations enabled by this rewrite.",
   "contentBlock": "prop:markov-pair-z2",
-  "auditOnly": "docs/audits/2026-05-03-categorical-mass-divergence-audit.md",
   "parameters": {
-    "q0": "1.1099785955541805"
+    "q0": "1.1099785827513808"
   },
   "data": {
     "method": "incremental_reduced_element + tr_M_element(simplify=False)",
@@ -27,13 +32,13 @@
         "word_length": 11,
         "reduced_term_count": 4,
         "trace_sympy_ops": 75,
-        "tr_M_at_q0": "1.0653062285923891039374211686663329601287841796875",
+        "tr_M_at_q0": "1.0653061442544502490648028469877317547798156738281",
         "elapsed_reduce_sec": 0.055,
-        "elapsed_trace_sec": 0.001,
+        "elapsed_trace_sec": 0.0,
         "elapsed_evalf_sec": 0.004,
         "atom": "proton",
-        "bridge_witness_value": "1.065306228592389333611777464990998459365907562335",
-        "abs_diff_vs_bridge": "2.29674e-16"
+        "bridge_witness_value": "1.0653061347940691446210109087824504288691905784894",
+        "abs_diff_vs_bridge": "9.46038e-9"
       },
       {
         "Z": 0,
@@ -43,13 +48,13 @@
         "word_length": 11,
         "reduced_term_count": 4,
         "trace_sympy_ops": 63,
-        "tr_M_at_q0": "0.92323329716958346669031243436620570719242095947266",
-        "elapsed_reduce_sec": 0.039,
-        "elapsed_trace_sec": 0,
+        "tr_M_at_q0": "0.92323322991163736528363870093016885221004486083984",
+        "elapsed_reduce_sec": 0.035,
+        "elapsed_trace_sec": 0.0,
         "elapsed_evalf_sec": 0.001,
         "atom": "neutron",
-        "bridge_witness_value": "0.92323329716958371987441489925448416037805873290687",
-        "abs_diff_vs_bridge": "2.53184e-16"
+        "bridge_witness_value": "0.92323322194991388429946102725642998317708342596368",
+        "abs_diff_vs_bridge": "7.96172e-9"
       },
       {
         "Z": 1,
@@ -59,13 +64,13 @@
         "word_length": 23,
         "reduced_term_count": 32,
         "trace_sympy_ops": 1449,
-        "tr_M_at_q0": "0.38828647154771295246789009070198517292737960815430",
-        "elapsed_reduce_sec": 0.836,
+        "tr_M_at_q0": "0.38828642407478919373886583343846723437309265136719",
+        "elapsed_reduce_sec": 0.786,
         "elapsed_trace_sec": 0.007,
-        "elapsed_evalf_sec": 0.039,
+        "elapsed_evalf_sec": 0.038,
         "atom": "deuteron",
-        "bridge_witness_value": "0.3882864715477134196206286177859443593534762784089",
-        "abs_diff_vs_bridge": "4.67153e-16"
+        "bridge_witness_value": "0.38828640544517857590525490438198497087663728414512",
+        "abs_diff_vs_bridge": "1.86296e-8"
       },
       {
         "Z": 1,
@@ -75,13 +80,13 @@
         "word_length": 35,
         "reduced_term_count": 256,
         "trace_sympy_ops": 12164,
-        "tr_M_at_q0": "0.10405211867552603688391599234819295816123485565186",
-        "elapsed_reduce_sec": 10.69,
-        "elapsed_trace_sec": 0.204,
-        "elapsed_evalf_sec": 0.159,
+        "tr_M_at_q0": "0.10405210674205159215865990063321078196167945861816",
+        "elapsed_reduce_sec": 10.277,
+        "elapsed_trace_sec": 0.17,
+        "elapsed_evalf_sec": 0.146,
         "atom": "tritium",
-        "bridge_witness_value": "0.10405211867552573145768305458682264882849191283961",
-        "abs_diff_vs_bridge": "3.05426e-16"
+        "bridge_witness_value": "0.10405209642368468115418070350893929444122661935424",
+        "abs_diff_vs_bridge": "1.03184e-8"
       },
       {
         "Z": 2,
@@ -91,13 +96,13 @@
         "word_length": 35,
         "reduced_term_count": 128,
         "trace_sympy_ops": 5420,
-        "tr_M_at_q0": "0.20654085856226245265787611060659401118755340576172",
-        "elapsed_reduce_sec": 4.827,
-        "elapsed_trace_sec": 0.06,
-        "elapsed_evalf_sec": 0.056,
+        "tr_M_at_q0": "0.20654081702073978643596774418256245553493499755859",
+        "elapsed_reduce_sec": 4.478,
+        "elapsed_trace_sec": 0.051,
+        "elapsed_evalf_sec": 0.053,
         "atom": "helium-3",
-        "bridge_witness_value": "0.20654085856226274930598854594486682967873245140839",
-        "abs_diff_vs_bridge": "2.96648e-16"
+        "bridge_witness_value": "0.20654080025233304137512409425196731053387398162610",
+        "abs_diff_vs_bridge": "1.67684e-8"
       },
       {
         "Z": 2,
@@ -107,43 +112,11 @@
         "word_length": 47,
         "reduced_term_count": 1024,
         "trace_sympy_ops": 38840,
-        "tr_M_at_q0": "0.055348345876697992162807082650033407844603061676025",
-        "elapsed_reduce_sec": 56.311,
-        "elapsed_trace_sec": 2.202,
-        "elapsed_evalf_sec": 0.619,
+        "tr_M_at_q0": "0.055348335163768344613366423345723887905478477478027",
+        "elapsed_reduce_sec": 55.034,
+        "elapsed_trace_sec": 1.804,
+        "elapsed_evalf_sec": 0.613,
         "atom": "helium-4",
-        "bridge_witness_value": null,
-        "abs_diff_vs_bridge": null
-      },
-      {
-        "Z": 3,
-        "N": 2,
-        "A": 5,
-        "n_strands": 15,
-        "word_length": 59,
-        "reduced_term_count": 4096,
-        "trace_sympy_ops": 95640,
-        "tr_M_at_q0": "0.029441393700397156668602249851574015337973833084106",
-        "elapsed_reduce_sec": 209.67,
-        "elapsed_trace_sec": 16.767,
-        "elapsed_evalf_sec": 2.454,
-        "atom": "lithium-5",
-        "bridge_witness_value": null,
-        "abs_diff_vs_bridge": null
-      },
-      {
-        "Z": 3,
-        "N": 3,
-        "A": 6,
-        "n_strands": 18,
-        "word_length": 71,
-        "reduced_term_count": 32768,
-        "trace_sympy_ops": 327480,
-        "tr_M_at_q0": "0.0078896372028493221006950619766939780674874782562256",
-        "elapsed_reduce_sec": 1966.41,
-        "elapsed_trace_sec": 443.634,
-        "elapsed_evalf_sec": 10.063,
-        "atom": "lithium-6",
         "bridge_witness_value": null,
         "abs_diff_vs_bridge": null
       }
