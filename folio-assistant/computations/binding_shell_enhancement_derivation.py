@@ -53,6 +53,7 @@ sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import Q_BETA_MEV  # noqa: E402
 from binding_canonical import binding_canonical  # noqa: E402
 
 
@@ -88,7 +89,10 @@ def main():
     # B_endo and the residual enhancement each atom needs
     endo = {}
     for iso, Z, N in cases:
-        r = binding_canonical(Z, N, Q_beta_n_mev=0.782,
+        # Q_β value is irrelevant here (we use the q-only traces, not the
+        # B output), but use the canonical high-precision constant per the
+        # E_0/Q_β calibration discipline.
+        r = binding_canonical(Z, N, Q_beta_n_mev=float(Q_BETA_MEV),
                               use_closed_form=True, verbose=False)
         dtr = fabs(_real(r["tr_M_free"])) - fabs(_real(r["tr_M_atom"]))
         B_endo = m_e * VOL_B3 * dtr
