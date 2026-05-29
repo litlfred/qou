@@ -245,8 +245,11 @@ def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     linking_weight = linking_weight_family_a(q, qi)
     # Apply the top-down spectral-phase correction (2026-05-28): the
     # Borromean braid's rotation angle on V_(2,1) per ideal octahedron.
-    # Takes the bare Vol/ℏ²·lw_A from +2.96 % to 130 ppm on m_p — fully
-    # derived, no free parameter. See spectral_correction_borromean and
+    # geom_full × m_e is the AVERAGE nucleon mass m_avg; the correction
+    # takes it from bare +2.89 % to −819 ppm vs CODATA m_avg (938.92) —
+    # fully derived, no free parameter, a ~35× improvement over bare.
+    # (It lands ~130 ppm from the PROTON only by coincidence; geom_full
+    # is m_avg, not m_p.) See spectral_correction_borromean and
     # docs/audits/2026-05-28-spectral-phase-correction-derived.md.
     return geom_leading * linking_weight * spectral_correction_borromean(q, qi)
 
@@ -254,27 +257,31 @@ def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
 def spectral_correction_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     """Top-down spectral-phase correction to the Borromean linking weight.
 
-    The leading Geom_full (Vol/ℏ² × lw_A) is +2.89 % high for m_p.  The
-    correction is the rotation angle of the Borromean braid 𝓑₃ on the
-    2-dimensional standard irrep V_(2,1) of H_3, measured per ideal
-    octahedron in substrate-tick units:
+    The leading Geom_full (Vol/ℏ² × lw_A) × m_e gives the AVERAGE
+    nucleon mass m_avg, and is +2.89 % high.  The correction is the
+    rotation angle of the Borromean braid 𝓑₃ on the 2-dimensional
+    standard irrep V_(2,1) of H_3, measured per ideal octahedron in
+    substrate-tick units:
 
         θ      = arccos( χ^(2,1)(𝓑₃) / 2 )     (𝓑₃ is det-1 ⇒ a rotation)
         χ^(2,1)(𝓑₃) = 2 − 3h⁴ − h⁶              (exact Hoefsmit character)
         correction = θ / (8 ℏ_q²)                (8 = Vol(𝓑₃)/G octahedra)
 
     All quantities are categorical with NO free parameter (the 8 cancels
-    against Vol = 8G).  Applying it gives m_p = 938.15 MeV (130 ppm vs
-    CODATA) — fully derived, no CODATA fitting.  See
-    `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md` and
-    `TwoRoutesProtonMass.lean`.
+    against Vol = 8G).  Applying it gives m_avg = 938.15 MeV, which is
+    −819 ppm vs CODATA m_avg (938.92) — fully derived, no CODATA fitting,
+    a ~35× improvement over the bare +2.89 %.  NOTE: m_avg lands only
+    ~130 ppm from the PROTON (938.27), but that is coincidence — this
+    routine produces the average nucleon mass, NOT m_p; the proton's
+    own pinned value comes from the substrate identity (242 ppb / exact).
+    See `docs/audits/2026-05-28-spectral-phase-correction-derived.md`.
 
     NOTE this correction is specific to multi-component LINKS: knots
     (muon = 4₁) have linking weight 1 and take NO such correction —
     their bare Vol/ℏ² is already exact (0.05 ppb).  χ^(2,1)(4₁) = −0.91
     is not near 2, so the rotation-angle reading does not apply.
 
-    Residual 130 ppm origin (Vol=8G precision / higher geometric term /
+    Residual ~819 ppm origin (Vol=8G precision / higher geometric term /
     calibration) is OPEN.  The "why the phase multiplies Geom this way"
     step is not yet Lean-proved (trivial stub in TwoRoutesProtonMass).
     """

@@ -1,4 +1,12 @@
-# Audit: top-down spectral-phase correction for m_p (130 ppm, no fitting)
+# Audit: top-down spectral-phase correction for m_avg (−819 ppm, no fitting)
+
+> **Correction (2026-05-29).** An earlier version of this doc reported
+> "130 ppm vs m_p". That was an m_avg-vs-m_p conflation: `geom_full × m_e`
+> is the **average nucleon mass** m_avg, which must be compared to CODATA
+> m_avg = 938.92 MeV, giving **−819 ppm** — not 130 ppm. The value 938.15
+> lands ~130 ppm from the *proton* (938.27) only by coincidence. The
+> proton's own pinned value comes from the substrate identity, not this
+> routine. All "130 ppm" figures below are corrected to −819 ppm (m_avg).
 
 **Date:** 2026-05-28
 **Companion:** [`2026-05-28-mu-p-tension-substrate-floor.md`](2026-05-28-mu-p-tension-substrate-floor.md)
@@ -8,9 +16,12 @@ the genuine top-down formula.
 ## The derived formula
 
 ```
-m_p = m_e · Vol(𝓑₃)/ℏ_q² · lw_A · θ/(8ℏ_q²)
-    = m_e · G · arccos(χ^(2,1)(𝓑₃)/2) / ℏ_q⁴ · lw_A          (8 cancels)
+m_avg = m_e · Vol(𝓑₃)/ℏ_q² · lw_A · θ/(8ℏ_q²)
+      = m_e · G · arccos(χ^(2,1)(𝓑₃)/2) / ℏ_q⁴ · lw_A        (8 cancels)
 ```
+
+(This produces the **average** nucleon mass m_avg, then a flavor split
+gives m_p, m_n. It is NOT a direct m_p formula.)
 
 with all ingredients categorical and **no free parameter**:
 
@@ -22,9 +33,12 @@ with all ingredients categorical and **no free parameter**:
 | θ = arccos(χ/2) | **forced**: 𝓑₃ is det-1 on V_(2,1) ⇒ trace = 2cos θ | no |
 | ÷8 octahedra | Vol(𝓑₃)/G = 8; cancels against Vol | no |
 
-**Result:** m_p = 938.15 MeV = **130 ppm** vs CODATA, versus the
-leading-order Vol/ℏ²·lw_A = 966 MeV (+2.96 %). The spectral factor is
-θ/(8ℏ²) = 0.9711. Fully derived; **no CODATA fitting**.
+**Result:** m_avg = 938.15 MeV = **−819 ppm** vs CODATA m_avg (938.92),
+versus the leading-order Vol/ℏ²·lw_A = 966 MeV (+2.89 %) — a **~35×**
+top-down improvement. The spectral factor is θ/(8ℏ²) = 0.9711. Fully
+derived; **no CODATA fitting**. (The substrate-identity route reaches
+m_p to 242 ppb / exact and is the more accurate proton value; this
+spectral route is a coarser independent derivation of the average mass.)
 
 Verified numerically at 50 dps (`_li_2_q_util.spectral_correction_borromean`,
 `geom_full_borromean_spectral`). The `(q+1)²√(3+h²)/8` form in commit
@@ -40,14 +54,16 @@ correct behaviour: the spectral correction refines the *linking weight*,
 and knots have lw=1 (nothing to refine). The correction appears exactly
 where it should and nowhere else — evidence it is structural, not a fit.
 
-## Recalibration is blocked by the 130 ppm
+## Relation to the q₀ anchor
 
-Pinning q₀ from m_p/m_e (0.06 ppb experimentally, vs muon 22 ppb) would
-*reduce propagated experimental error* — BUT the proton formula carries
-a 130 ppm **theory** residual, which would fold into q₀ and propagate
-everywhere. The muon formula is clean (exact). **Keep the muon anchor
-until the 130 ppm spectral residual is closed.** The residual's origin
-(Vol=8G precision / a higher geometric term / calibration) is OPEN.
+This spectral route (m_avg, −819 ppm) is **not** the q₀-pinning formula.
+q₀ is pinned from m_p via the **substrate identity** (2·Vol/ℏ²·F_Bor−12),
+which gives m_p exact / 242 ppb — far more accurate than this spectral
+m_avg. The two are independent derivations; their ~819 ppm disagreement
+on the average mass is the spectral route's intrinsic accuracy, an OPEN
+item (Vol=8G precision / a higher geometric term). The spectral
+correction's value is conceptual (a no-fit, top-down 35× improvement
+over the bare leading term), not as a precision proton predictor.
 
 ## Binding does NOT reduce to a single phase
 
