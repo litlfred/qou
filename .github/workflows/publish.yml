@@ -332,7 +332,7 @@ jobs:
 
       - name: Capture LaTeX build warnings
         run: |
-          grep -E '^(Warning|Overfull|Underfull|LaTeX Warning)' main.log \
+          grep -aE '^(Warning|Overfull|Underfull|LaTeX Warning)' main.log \
             > latex-warnings.txt 2>/dev/null || true
           wc -l < latex-warnings.txt || true
           cat latex-warnings.txt | head -30 || true
