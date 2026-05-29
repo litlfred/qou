@@ -16,6 +16,7 @@ export default chapter({
       title: "Notation and conventions",
       label: "sec:tm-notation",
       blocks: [
+        "tm-notation-intro",
         "tm-notation",
 
         "tm-notation-table1-data",
@@ -35,6 +36,7 @@ export default chapter({
       title: "Transfer matrices of knot pairs",
       label: "sec:tm-knot-pairs",
       blocks: [
+        "tm-knot-pairs-intro",
         "tm-knot-pairs",
 
         "tm-knot-pairs-table1-data",
@@ -47,6 +49,7 @@ export default chapter({
       title: "Interaction and decay matrices",
       label: "sec:tm-interactions",
       blocks: [
+        "tm-interactions-intro",
         "tm-interactions",
         "tm-interactions-table3-data",
         "tm-interactions-table2-data",
@@ -59,6 +62,7 @@ export default chapter({
       title: "Worked examples (light nuclei)",
       label: "sec:tm-worked-examples",
       blocks: [
+        "tm-worked-examples-intro",
         "tm-worked-examples",
         "tm-worked-examples-table10-data",
         "tm-worked-examples-table9-data",
@@ -83,6 +87,7 @@ export default chapter({
       title: "Heavy-atom worked examples",
       label: "sec:tm-heavy-atom-examples",
       blocks: [
+        "tm-heavy-atom-examples-intro",
         "tm-heavy-atom-examples",
 
         "tm-heavy-atom-examples-table1-data",

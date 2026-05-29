@@ -40,6 +40,7 @@ export default chapter({
       title: "Knot operator action on basis pairs",
       label: "sec:knot-operator-basis-table",
       blocks: [
+        "knot-operator-basis-table-intro",
         "knot-operator-basis-table",
 
         "knot-operator-basis-table-table1-data",

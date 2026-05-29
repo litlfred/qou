@@ -15,6 +15,7 @@ export default chapter({
       title: "Symbols by introducing chapter",
       label: "sec:notation-register-section",
       blocks: [
+        "notation-register-section-intro",
         "notation-register",
 
         "notation-register-table1-data",

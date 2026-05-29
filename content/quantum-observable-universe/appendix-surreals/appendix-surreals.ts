@@ -15,6 +15,7 @@ export default chapter({
       title: "What survives and what breaks",
       label: "sec:surreal-survives-breaks",
       blocks: [
+        "surreal-survives-breaks-intro",
         "algebraic-core-survives",
         // Dual ledger: every transcendental in the paper, indexed
         // by Goncharov period-depth.
@@ -65,6 +66,7 @@ export default chapter({
       title: "Surreal construction as a grading",
       label: "sec:surreal-construction-grading",
       blocks: [
+        "surreal-construction-grading-intro",
         "birthday-grading",
         "hoefsmit-is-surreal-construction",
         "sign-sequence-of-braid",
@@ -75,6 +77,7 @@ export default chapter({
       title: "Standard-part replaces classical limits",
       label: "sec:standard-part-classical-limits",
       blocks: [
+        "standard-part-classical-limits-intro",
         "standard-part-functor",
         "valuation-ring-finite-surreals",
         "classical-limit-stpart",
@@ -86,6 +89,7 @@ export default chapter({
       title: "Conway normal form and asymptotic notation",
       label: "sec:conway-normal-form",
       blocks: [
+        "conway-normal-form-intro",
         "conway-normal-form",
         "body-asymptotics-catalog",
         "body-asymptotics-catalog-table3-data",
@@ -115,6 +119,7 @@ export default chapter({
       title: "Speculative reformulations",
       label: "sec:surreal-speculative",
       blocks: [
+        "surreal-speculative-intro",
         "local-infinitesimal-field",
         "spectral-normal-form",
         "diophantine-birthday",
@@ -142,6 +147,7 @@ export default chapter({
       label: "sec:millennium-bounds-via-surreals",
       blocks: [
         // BSD
+        "millennium-bounds-via-surreals-intro",
         "q-birch-swinnerton-dyer",
         "bsd-surreal-bound",
         // RH

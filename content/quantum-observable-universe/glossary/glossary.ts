@@ -31,6 +31,7 @@ export default chapter({
       title: "Monoidal structure",
       label: "sec:glossary-monoidal",
       blocks: [
+        "glossary-monoidal-intro",
         "glossary-monoidal-category",
         "glossary-braided-monoidal-category",
         "glossary-symmetric-monoidal-category",
@@ -42,6 +43,7 @@ export default chapter({
       title: "Duality and rigidity",
       label: "sec:glossary-rigidity",
       blocks: [
+        "glossary-rigidity-intro",
         "glossary-exact-pairing",
         "glossary-left-dual",
         "glossary-right-dual",
@@ -65,6 +67,7 @@ export default chapter({
       title: "Geometry and transport",
       label: "sec:glossary-geometry",
       blocks: [
+        "glossary-geometry-intro",
         "glossary-quantum-flatness",
         "glossary-reeb-gauge-group",
         "glossary-categorical-transport",
