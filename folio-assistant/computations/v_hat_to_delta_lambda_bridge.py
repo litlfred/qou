@@ -49,6 +49,7 @@ Usage:
 from __future__ import annotations
 
 import sys
+from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 
 import mpmath as mp
@@ -101,7 +102,7 @@ def load_chi_lambda_at_q0(Z: int, N: int) -> dict[str, mp.mpf]:
         # Higher A: only 1-dim channels (n) and (1^n).
         n = 3 * A
         label_map = {(n,): "sym", tuple([1] * n): "alt"}
-    q0_sym = sp.Float("1.1099785955541805", 50)
+    q0_sym = sp.Float(Q_50_DIGIT_STR, 50)
     for shape, label in label_map.items():
         chi = chi_lambda_symbolic(shape, word)
         chi_at_q0 = mp.mpf(str(sp.N(chi.subs(Q, q0_sym), 50)))

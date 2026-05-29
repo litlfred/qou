@@ -32,6 +32,7 @@ Emits `knot-factor-amphicheiral-probe.witness.json`.
 from __future__ import annotations
 
 import sys
+from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 
 import sympy as sp
@@ -63,7 +64,7 @@ def char_one_dim(braid: list[tuple[str, int]], q: sp.Expr,
 
 def main() -> int:
     q = sp.Symbol("q", positive=True)
-    q_0 = sp.Float("1.109978595554180575281594079609509377993", 50)
+    q_0 = sp.Float(Q_50_DIGIT_STR, 50)
 
     # Figure-eight braid: σ_1 σ_2⁻¹ σ_1 σ_2⁻¹ (in B_3, so n = 3).
     fig8 = [("s1", 1), ("s2", -1), ("s1", 1), ("s2", -1)]

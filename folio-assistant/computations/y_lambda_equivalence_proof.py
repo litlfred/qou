@@ -35,6 +35,7 @@ Run:
 from __future__ import annotations
 
 import json
+from q_parameter import Q_50_DIGIT_STR
 import sys
 import time
 from datetime import datetime, timezone
@@ -132,7 +133,7 @@ def main() -> int:
     print("  (iii) Therefore tr_M_symbolic ≡ tr_M_markov_peel as functions in q.")
 
     # Numerical sanity check at q_0 (still useful as a cross-check).
-    q0 = sp.Float('1.1099785955541805', 50)
+    q0 = sp.Float(Q_50_DIGIT_STR, 50)
     print()
     print("Numerical sanity at q_0 (50 dps):")
     for shape in y_A:

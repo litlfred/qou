@@ -23,6 +23,7 @@ Emits `commutative-chirality-vanishes-probe.witness.json`.
 from __future__ import annotations
 
 import sys
+from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -64,7 +65,7 @@ def main() -> int:
 
     # Substrate parameter q_0 ≈ 1.110 for reference (NOT the commutative
     # limit — q_0 is the QOU substrate, where H_A is small but nonzero).
-    q_0 = mpf("1.109978595554180575281594079609509377993")
+    q_0 = mpf(Q_50_DIGIT_STR)
     h2_q0 = h_A_squared(q_0)
 
     # Quadratic decay check: H_A² should be ~4·(q - 1)² for q ≈ 1

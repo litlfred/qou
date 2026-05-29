@@ -36,6 +36,7 @@ content-summation. Verified empirically via the
 # Ref: [manuscript] prop:type-b-folded-crystal-combinatorics
 
 import json
+from q_parameter import Q_50_DIGIT_STR
 import sys
 from pathlib import Path
 
@@ -155,7 +156,7 @@ def avg_content_for_braid(name: str, n: int, word: list[tuple[int, int]],
 
 def main() -> None:
     mp.dps = 30  # f64 chi values limit downstream precision to ~16 dps
-    q_0 = mpf("1.1099785955541805")
+    q_0 = mpf(Q_50_DIGIT_STR)
 
     cases = [
         # figure-8 4_1: (σ_1 σ_2^{-1})^2 in B_3 — writhe 0, amphichiral

@@ -23,6 +23,7 @@ Emits `archimedean-knot-eigenbasis-probe.witness.json`.
 from __future__ import annotations
 
 import sys
+from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 
 import sympy as sp
@@ -46,7 +47,7 @@ def two_part_partitions(n: int) -> list[tuple[int, int]]:
 def main() -> int:
     q = sp.Symbol("q", positive=True)
     qi = 1 / q
-    q_0 = sp.Float("1.109978595554180575281594079609509377993", 50)
+    q_0 = sp.Float(Q_50_DIGIT_STR, 50)
 
     # Claim 1 — braiding eigenvalues satisfy (c − q)(c + q⁻¹) = 0
     c = sp.Symbol("c")

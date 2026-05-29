@@ -32,6 +32,7 @@ gb_filtration_jet_tracker output (extended in this PR for 4_1, 6_2,
 # Ref: [mayer1949] DOI 10.1103/PhysRev.75.1969
 
 import sys
+from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 
 import mpmath
@@ -101,7 +102,7 @@ def dim_q_of_partition(
 
 def main() -> None:
     mp.dps = 60
-    q_0 = mpf("1.1099785955541805")  # high-precision substrate parameter
+    q_0 = mpf(Q_50_DIGIT_STR)  # high-precision substrate parameter
 
     A_values = [2, 3, 4, 5, 6]
     height = 6
