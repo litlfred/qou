@@ -168,6 +168,28 @@ framework's α_em (`prop:em-coupling-bring-zero-mode`), not a fit.
 
 Compute: `meson_fusion_why34_em_residual.py` (+witness).
 
+## Update (2026-05-29): the "derive m_s/m_d" open piece resolves
+
+Attempting to derive m_s/m_d = 2[3]_q[4]_q − 1 (≈ 24) from a bare
+torus-knot ratio T(2,5)/T(2,3) (gen-2 cinquefoil over gen-1 trefoil)
+**fails** — no bare-knot invariant ratio (crossings, genus, [n]_q,
+Jones) lands within 34% of 24. This is **informative, not a dead end**:
+
+- The **lepton** gen-2/gen-1 ratio is m_μ/m_e = Vol(4₁)/ℏ² ≈ **207**
+  (a bare-knot quantity — the figure-eight transition knot).
+- The **quark** gen-2/gen-1 ratio is m_s/m_d ≈ **20** — ~10× smaller.
+
+Same generation step, wildly different ratio ⟹ **quark masses are
+confinement-dressed; they are not bare-knot ratios.** Consequently
+`2[3]_q[4]_q − 1` is a property of the **qq̄ meson bound state (the H₃
+fusion)**, not of isolated quark knots. "Derive m_s/m_d as a bare-knot
+ratio" was therefore the *wrong target* — the `m_K²/m_π² = [3]_q[4]_q`
+fusion already encodes the confined sector directly. The derived-
+candidate stands as-is; the only genuinely-open piece is the EM/α_em
+correction (the 203 ppm residual), not a bare-quark-mass derivation.
+
+Compute: `derive_ms_md_torus_knot.py` (+witness).
+
 ## Cross-references
 
 - `meson-spectral-analysis.witness.json` (71% miss evidence)
