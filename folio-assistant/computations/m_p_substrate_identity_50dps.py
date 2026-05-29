@@ -48,9 +48,12 @@ calibration input.
 
 ## Empirical performance
 
-At q_0 = 1.1097785955541805... (50 dps):
-  m_p_pred  = 938.27186 MeV   vs CODATA 938.27209  →  0.24 ppm
-  m_n_pred  = 939.56354 MeV   vs CODATA 939.56542  →  2.00 ppm
+At q_0 = 1.1099785827513808... (50 dps, m_p-pinned re-pin #1422):
+  m_p_pred  = 938.27209 MeV   vs CODATA 938.27209  →  0.0004 ppb  (ANCHOR
+                                          round-trip, not a prediction)
+  m_μ_pred  = 105.65840 MeV   vs CODATA 105.65838  →  +0.21 ppm   (9.5σ
+                                          PREDICTION — the μ-p tension)
+  m_n_pred  = 939.56377 MeV   vs CODATA 939.56542  →  -1.76 ppm
   Q_β_pred  = 0.78068 MeV     vs CODATA 0.78233    →  2113 ppm
                                                        (bottlenecked by m_n)
 

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T02:39:08.231638+00:00",
-  "commitSha": "745f97246e4835d247393e588f2b19f6f30637f5",
+  "computedAt": "2026-05-30T02:39:18.746109+00:00",
+  "commitSha": "95317813f5990253171f9182734434dc968ec31c",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2666,6 +2666,7 @@
         "q-pinning-50-digit.witness.json",
         "q-pochhammer-seed.witness.json",
         "q-values-derived.witness.json",
+        "q0-consistency-audit.witness.json",
         "q0-figure-eight-phase-derivation.witness.json",
         "qbeta-1ppq-achieved.witness.json",
         "qbeta-decay-sdp-extended-ck.witness.json",

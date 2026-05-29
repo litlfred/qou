@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-30T02:38:56.988115+00:00",
+  "computedAt": "2026-05-30T02:39:20.769686+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -461,7 +461,7 @@
       },
       {
         "file": "folio-assistant/computations/m_p_substrate_identity_50dps.py",
-        "line": 54,
+        "line": 57,
         "pattern": "literal_0_78233",
         "match": "0.78233",
         "context": "Q_β_pred  = 0.78068 MeV     vs CODATA 0.78233    →  2113 ppm",
