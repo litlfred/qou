@@ -5,7 +5,8 @@
 ## TL;DR for other agents
 
 The substrate has an **irreducible self-consistency tension** between the
-muon and proton low-order mass formulas: no single `q₀` makes both exact.
+muon and proton low-order mass formulas: no single `q₀` matches both to
+CODATA simultaneously (each formula's residual cannot be zeroed at once).
 The tension is **11.5 ppb in q₀ ≈ 240 ppb in m_p**. This is the substrate's
 honest predictive floor. **Any fit that closes an observable below this
 floor is modelling the tension = noise.** Do not re-introduce such fits to
@@ -13,7 +14,7 @@ production.
 
 ## The two independent q₀ pins
 
-| Formula | q₀ that makes it exact |
+| Formula | q₀ that matches it to CODATA |
 |---|---|
 | `m_μ/m_e = Vol(4₁)/ℏ_q²` (muon, the canonical pin) | 1.10997859555… |
 | `m_p/m_e = 2·Vol(4₁)/ℏ_q²·F_Bor(q) − 12` (proton) | 1.10997858275… |
@@ -61,7 +62,8 @@ These close **~4800× below the 240 ppb floor**. They are not derivations:
 | m_p | N=0 (3-term formula) | 242 ppb (μ-p floor) | fit / noise |
 | Q_β | N=1 (Kashiwara f̃₁, c₁=b) | 74 ppm | form-dependent / open |
 
-- m_μ/m_e = Vol/ℏ² is the q₀-pin (exact by construction).
+- q₀ is pinned from m_p/m_e (2026-05-29; matched by construction via the
+  substrate identity). m_μ/m_e = Vol/ℏ² is now a cross-check (9.5σ prediction).
 - Q_β c₁ = b is the Kashiwara crystal edge weight — a real matrix element.
 - Everything reaching ppb/ppQ is below the floor.
 
