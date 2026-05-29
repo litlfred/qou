@@ -36,7 +36,7 @@ the work tranche being coordinated. Per CLAUDE.md (STRICT, supersedes
 default "no auto-PR" guidance for this repo): **always create a
 branch and open a PR at the start of every work tranche** — ASAP, and
 **never ask the user "want me to open the PR?"** Branch + PR creation
-are pre-authorized; the only git action needing explicit permission is
+is pre-authorized; the only git action needing explicit permission is
 the *merge*. Commit early, commit often. Small structured commits
 cherry-pick cleanly; big mixed commits do not. Exception:
 integration-watcher batch audit-job sweeps may use a single bulk

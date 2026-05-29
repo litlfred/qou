@@ -169,7 +169,7 @@ ephemeral.
    `claude/laurent-q-trace-optimization-2026-05-20`, not
    `claude/respond-to-user-2026-05-20`.
 
-2. **Open the PR FIRST — ASAP, and NEVER ask permission to.** The PR
+2. **Open the PR FIRST — ASAP, and NEVER ask permission.** The PR
    is the very first action after the first commit — before any
    further work. Create the branch, make the first commit (even a
    stub), open the PR immediately. Then continue working. The PR body
@@ -178,7 +178,7 @@ ephemeral.
    the visibility artifact, not the code.
 
    **Do NOT ask "want me to open the PR?" / "should I open a PR?".**
-   Asking is itself a policy violation: branch + PR creation carry a
+   Asking is itself a policy violation: branch + PR creation carries a
    standing authorization (supersession note above), so just do it.
    The branch, the commits, the push, and the PR are **all
    pre-authorized** — the only git action that ever requires explicit
