@@ -1,16 +1,16 @@
 {
   "computation": "q0-consistency-audit",
   "description": "Scans compute scripts for stale muon-pin q\u2080 literals (10997859555 / 859555) and old-q\u2080 tr_M leaf values left behind by the 2026-05-29 proton re-pin (#1422). production-hardcode entries are real bugs (a live constant kept at the old value); stale-docstring are cosmetic; legit-muon-xcheck are the intentional muon cross-check.",
-  "timestamp": "2026-05-29T20:04:11.159607+00:00",
+  "timestamp": "2026-05-29T22:54:32.828671+00:00",
   "canonical_q0_source": "q_parameter.q_at() / Q_50_DIGIT_STR (proton pin)",
   "old_muon_q0": "1.10997859555418057528\u2026",
   "new_proton_q0": "1.10997858275138080759\u2026",
   "counts_by_classification": {
-    "production-hardcode": 45,
+    "production-hardcode": 36,
     "stale-docstring": 10
   },
-  "total_hits": 55,
-  "production_hardcode_count": 45,
+  "total_hits": 46,
+  "production_hardcode_count": 36,
   "hits": [
     {
       "file": "folio-assistant/computations/alpha_em_pslq_uniqueness.py",
@@ -53,69 +53,6 @@
       "kind": "stale-trM",
       "classification": "production-hardcode",
       "text": "expected=0.3882864715477159,"
-    },
-    {
-      "file": "folio-assistant/computations/derivation_chain.py",
-      "line": 52,
-      "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q_0: float = 1.1099785955541805"
-    },
-    {
-      "file": "folio-assistant/computations/derivation_chain.py",
-      "line": 90,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"p\": 1.0653062285923893,"
-    },
-    {
-      "file": "folio-assistant/computations/derivation_chain.py",
-      "line": 91,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"n\": 0.9232332971695838,"
-    },
-    {
-      "file": "folio-assistant/computations/derivation_chain.py",
-      "line": 92,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"D\": 0.3882864715477134,"
-    },
-    {
-      "file": "folio-assistant/computations/derivation_chain.py",
-      "line": 105,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"p\":  \"1.06530622859238926516717822268022019929625396549950\","
-    },
-    {
-      "file": "folio-assistant/computations/derivation_chain.py",
-      "line": 106,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"n\":  \"0.92323329716958305546835587742253549151548430075493\","
-    },
-    {
-      "file": "folio-assistant/computations/derivation_chain.py",
-      "line": 107,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"D\":  \"0.38828647154771295246789009070198517292737960815430\","
-    },
-    {
-      "file": "folio-assistant/computations/derivation_chain.py",
-      "line": 139,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"p\":   1.0653062285923893,  # 11-crossing typed B_3 (uud)"
-    },
-    {
-      "file": "folio-assistant/computations/derivation_chain.py",
-      "line": 140,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"n\":   0.9232332971695838,  # 11-crossing typed B_3 (udd)"
     },
     {
       "file": "folio-assistant/computations/deuteron_delta_i_audit.py",
