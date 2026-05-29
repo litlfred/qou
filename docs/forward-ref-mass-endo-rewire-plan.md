@@ -105,5 +105,25 @@ Same triage method (MD/LEAN/REV matrix + per-edge read). Disposition:
 
 Re-run the classifier after each disposition; the logical-defect count
 must drop monotonically (baseline at branch open: 91; after clusters 1
-+ 2 over-declared drops + §3b hygiene: 78). Regenerate
-`forward-ref-classification.witness.json`.
++ 2 over-declared drops + §3b hygiene + paper-wide Tier-1 sweep: 56).
+Regenerate `forward-ref-classification.witness.json`.
+
+## Paper-wide Tier-1 sweep (22 dropped, 4 held back)
+
+After the two mass clusters were dispositioned, a paper-wide sweep
+identified 26 more Tier-1 candidates (target absent from source's
+.md prose AND .lean proof). Verification flagged 4 as **orphan-risk**:
+dropping their edge would leave the target with zero referrers (each
+target is real, sorry-free, scholarly content — not abandoned).
+Those 4 are held back and documented as Tier-3 (real-but-foundational
+structural anchors):
+
+| Source → Target | Why kept |
+|---|---|
+| `prop:habiro-precision-ladder-equivalence → prop:mass-endomorphism-tower` | only structural anchor for the tower; source builds on the equivalence |
+| `def:q-angular-momentum → prop:nuclear-spin-parity` | source .md explicitly discusses spin / parity — implicit real dependency |
+| `prop:tau-M-asymptotic-rep-theory → prop:hoefsmit-V21-cos-symmetrization` | source .md discusses Hoefsmit seminormal representation — implicit real dependency |
+| `prop:borromean-quark → prop:bn-mtc-action` | only structural anchor for bn-mtc-action's role in quark assembly |
+
+The remaining 22 candidates were dropped (each target retained 1-15
+other referrers). Defect count 78→56.
