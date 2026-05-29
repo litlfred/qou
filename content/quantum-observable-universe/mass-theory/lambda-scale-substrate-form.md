@@ -81,7 +81,7 @@ $$
 
 **Therefore (post- acknowledged-CAL-4 status):** after
 **eight independent structural searches** across every tested axis
-(Tier 5 PSLQ; q-dilog substrate-natural; V̂$_S$ + $\mathbb{Q}(\zeta_{60})$;
+(Tier 5 PSLQ; q-dilog substrate-natural; $\hat{V}_S$ + $\mathbb{Q}(\zeta_{60})$;
 commutative + operator-theoretic Φ$_q$; q-locality; reframing;
 Strategy J), the original conjecture's specific form is recorded
 as **PSLQ-style empirical fit (no categorical derivation)**, the conjecture

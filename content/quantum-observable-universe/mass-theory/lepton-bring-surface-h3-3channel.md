@@ -31,9 +31,9 @@ $$
   representation of $H_3(q)$.*
 
 > **T6 status — gap (a) RESOLVED; gap (c) IMPLICATED.** This
-> proposition closes the V̂-convention ambiguity (T6 gap (a)) by
+> proposition closes the $\hat{V}$-convention ambiguity (T6 gap (a)) by
 > documenting the H_3 3-channel formula. Applying the canonical Li_2^q
-> per-braid mass tower to the resulting V̂ values gives lepton mass
+> per-braid mass tower to the resulting $\hat{V}$ values gives lepton mass
 > ratios off CODATA by 99% — the missing factor `206.77 / 1.36 ≈ 152`
 > equals **(3/2) $\times$ (1/ℏ_$q^{2}$)**, structurally identical to the
 > SUPERSEDED scalar substrate density. Full diagnosis:

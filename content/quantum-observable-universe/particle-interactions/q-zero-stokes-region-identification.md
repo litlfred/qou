@@ -76,7 +76,7 @@ This conjecture is decomposed into a chain where each step is INDEPENDENTLY trac
 ```
 [PROVED] Mostow-Prasad: ∃! ρ_DF up to conjugation
     ↓
-[PROVED] Reid: trace field of ρ_DF is in Q̄ (number field)
+[PROVED] Reid: trace field of ρ_DF is in $\overline{\mathbb{Q}}$ (number field)
     ↓
 [PROVED] X(K)_Z is a Z-scheme of finite type (Procesi)
     ↓

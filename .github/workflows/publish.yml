@@ -245,12 +245,34 @@ jobs:
 
       - name: Quick LaTeX syntax check (draftmode)
         run: |
-          latexmk -pdf -draftmode -interaction=nonstopmode main.tex \
-            > latex-syntax.log 2>&1 || \
-            { tail -50 latex-syntax.log; exit 1; }
+          # -f so undefined-citation warnings (the first pass runs before
+          # the .bbl exists) don't abort the check. Gate on actual fatal
+          # '! ' errors in main.log, not latexmk's exit code (which is
+          # nonzero on warning-level issues).
+          latexmk -pdf -draftmode -f -interaction=nonstopmode main.tex \
+            > latex-syntax.log 2>&1 || true
+          if grep -qE '^! ' main.log 2>/dev/null; then
+            echo "::error::Fatal LaTeX error(s) in draftmode syntax check:"
+            grep -nE '^! ' main.log | head -20
+            tail -50 latex-syntax.log
+            exit 1
+          fi
 
       - name: Compile LaTeX to PDF
-        run: latexmk -pdf -interaction=nonstopmode main.tex
+        run: |
+          # -f forces latexmk through the full bibtex cycle even though the
+          # first pdflatex pass returns 1 on undefined-citation warnings
+          # (before the .bbl exists). Without -f latexmk stops before
+          # bibtex and every \cite stays undefined. Gate on PDF production +
+          # absence of fatal '! ' errors rather than latexmk's exit code.
+          latexmk -pdf -f -interaction=nonstopmode main.tex || true
+          if grep -qE '^! ' main.log 2>/dev/null; then
+            echo "::error::Fatal LaTeX error(s) in PDF compile:"
+            grep -nE '^! ' main.log | head -20
+            exit 1
+          fi
+          test -f main.pdf || { echo "::error::main.pdf not produced"; exit 1; }
+          echo "main.pdf produced ($(wc -c < main.pdf) bytes)"
 
       - name: Capture LaTeX build warnings
         run: |
