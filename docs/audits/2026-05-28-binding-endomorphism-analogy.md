@@ -386,3 +386,20 @@ the scalar Markov trace $\sum_\lambda y_\lambda\chi_\lambda$ collapses
 ($\cos\theta$ summed). So the dominant missing piece is **per-rep phase
 resolution of the boundary holonomy**, not (primarily) the dropped surface
 term. The surface $[F,F]$ correction is separate and likely sub-dominant.
+
+**q-Hamiltonian rotational scale — structure derived, scale open.**
+The $q$-energy block (`climax-volume-mass/q-energy`) gives the q-Hamiltonian
+$\mathfrak{E}_q = J_q^2\hbar_q$ (rotational) $+\, p_q^2\hbar_q/(2[n]_q)$
+(translational) $+\, S_q$ (action). A q-Reeb rotation is exactly the
+**rotational term** $J_q^2\hbar_q\mu_0$ — confirming the binding is *linear*
+in the rotation angle (matching the Lobachevsky-volume refutation). But the
+implied scale is NOT a clean derived multiple: with the spin-½ rotational
+quantum $J_q^2(\tfrac12)\hbar_q\approx0.0744$, $\rho_\phi\approx18.5$
+MeV/rad gives $\mu_0\approx249$ MeV, and $\mu_0/m_e\approx487$,
+$\mu_0/E_0\approx59.4$, $\mu_0/(m_e/\hbar_q^2)\approx4.78$ — none
+integer/half-integer ([`binding-qhamiltonian-rotational-scale.witness.json`](../../folio-assistant/computations/binding-qhamiltonian-rotational-scale.witness.json)).
+**Pinning $\mu_0$ to match would be numerology**, so it is left open. The
+q-Hamiltonian fixes the rotational *structure*; the scale $\mu_0$
+(suggestively near $\Lambda_{\mathrm{QCD}}$, not derived) is the single
+residual gate. **Net status: deuteron derived (+0.19%); A≥3 reduced to one
+open quantity — the derived value of $\mu_0$.**
