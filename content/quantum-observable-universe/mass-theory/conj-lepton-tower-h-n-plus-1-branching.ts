@@ -49,9 +49,9 @@ export default proposition({
       body:
         "**Tau case requires separate work.** The conjecture's prediction for " +
         "tau (m=3) is ξ_3 = d_q((4,1)) · [2]_q / [5]_q · (1/ℏ_q²) ≈ ? at q_0. " +
-        "But T(2,7) under H_3 3-channel gives V̂ = 1.119 > q_0 = 1.110 — outside " +
+        "But T(2,7) under H_3 3-channel gives $\hat{V}$ = 1.119 > q_0 = 1.110 — outside " +
         "Li_2^q convergence radius. Need to apply the formula at H_5 substrate " +
-        "(5-strand) instead of H_3, with V̂_τ recomputed via per_generator_V_hat_general " +
+        "(5-strand) instead of H_3, with $\hat{V}_\tau$ recomputed via per_generator_V_hat_general " +
         "at n=5. Multi-day analytical follow-up.",
     },
     {

@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "Lepton Bring-surface representation: 3-sheet H_3 Wedderburn channels (analog of nucleon 3-quark color tubes); V̂_ℓ for any torus-knot lepton σ_1^k is computed via the H_3 3-channel Plancherel-weighted character sum with Markov-traced std-channel; verifies V̂_e ≈ 0.594 against `mass-endomorphism-tower.md` paper convention",
+    "Lepton Bring-surface representation: 3-sheet H_3 Wedderburn channels (analog of nucleon 3-quark color tubes); $\hat{V}_\ell$ for any torus-knot lepton σ_1^k is computed via the H_3 3-channel Plancherel-weighted character sum with Markov-traced std-channel; verifies $\hat{V}_e$ ≈ 0.594 against `mass-endomorphism-tower.md` paper convention",
   uses: [
     "def:bar-involution",
     "prop:per-braid-mass-tower",
@@ -17,7 +17,7 @@ export default proposition({
       kind: "status",
       date: "2026-05-25",
       body:
-        "**Theorem (algebraic identity).** The V̂_e ≈ 0.594 paper convention " +
+        "**Theorem (algebraic identity).** The $\hat{V}_e$ ≈ 0.594 paper convention " +
         "(`mass-endomorphism-tower.md:351`) is computed via the H_3 3-channel " +
         "formula in `tools/pyhecke/python/pyhecke/constants.py:156` " +
         "(V_HAT_ELECTRON). This proposition states the closed-form algebraic " +
@@ -44,8 +44,8 @@ export default proposition({
       date: "2026-05-25",
       body:
         "**T6 status — gap (a) RESOLVED, gap (c) IMPLICATED.** This proposition " +
-        "documents the V̂_ℓ convention (closing T6 gap (a)). But applying the " +
-        "Li_2^q canonical mass tower to V̂_μ_T(2,5) = 0.834 gives mass ratio " +
+        "documents the $\hat{V}_\ell$ convention (closing T6 gap (a)). But applying the " +
+        "Li_2^q canonical mass tower to $\hat{V}_{\mu_{T(2,5)}}$ = 0.834 gives mass ratio " +
         "1.36, vs CODATA m_μ/m_e = 206.77 — a 99% shortfall. The missing " +
         "factor 206.77/1.36 = 152.04 ≈ (3/2) · (1/ℏ_q²) IS the SUPERSEDED " +
         "scalar substrate density. This implies the framework's canonical " +

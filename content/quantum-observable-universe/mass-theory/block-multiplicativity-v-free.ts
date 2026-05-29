@@ -4,7 +4,7 @@ export default remark({
   label: "rem:block-multiplicativity-v-free",
   interprets: "prop:atomic-mass-gb-nf",
   title:
-    "Block-multiplicativity of per-generator V̂ on the disjoint Hecke product",
+    "Block-multiplicativity of per-generator $\hat{V}$ on the disjoint Hecke product",
   lean: {
     ref: "qou:QOU.BraidKnot.BlockMultiplicativityVFree",
     validation: "not_checked",

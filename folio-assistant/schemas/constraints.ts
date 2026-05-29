@@ -278,6 +278,7 @@ export const TableSchema = z.object({
   title: z.string().optional(),
   tags: z.array(z.string()).optional(),
   uses: z.array(z.string()).optional(),
+  computation: ComputationSchema.optional(),
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.string(), z.unknown()).optional(),

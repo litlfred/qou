@@ -806,6 +806,10 @@ export interface TableBlock {
   tags?: string[];
   /** Blocks that this table summarises data from. */
   uses?: string[];
+  /** Witness/script the table values are derived from (mirrors RemarkBlock).
+   *  Lets tables that cite `:val[…]` literals declare the upstream witness
+   *  dep, same as remark/proof/definition blocks. */
+  computation?: Computation;
   companions?: Companions;
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
