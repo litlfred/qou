@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-# Build all Lean projects in the content/ directory.
+# Build all Lean projects from the root Lake workspace.
 #
-# Discovers paper directories containing a lean-toolchain file
-# and runs `lake build` in each. Can be invoked from any directory.
+# Discovers paper directories containing a lean-toolchain file and runs
+# `lake build <target>` for each from the repo root (not a per-paper
+# `cd`), so cross-package deps (e.g. qou → ugb) resolve via the root
+# manifest instead of a possibly-stale per-paper manifest.
+# Can be invoked from any directory.
 #
 # Usage:
 #   ./scripts/lean-build-all.sh           # build all papers
@@ -81,6 +84,20 @@ for d in "${LEAN_DIRS[@]}"; do
 done
 echo ""
 
+# ── Root-workspace prep (update / cache once) ─────────────────────
+cd "$REPO_ROOT"
+
+if [ "$DO_UPDATE" = true ]; then
+    echo "  → lake update (root workspace)"
+    lake update 2>&1 | tail -5 || echo "  ⚠ lake update had warnings (continuing)"
+fi
+
+if [ "$DO_CACHE" = true ]; then
+    echo "  → lake exe cache get (root workspace)"
+    lake exe cache get 2>&1 | tail -5 || true
+fi
+echo ""
+
 # ── Build each project ────────────────────────────────────────────
 TOTAL=0
 PASSED=0
@@ -95,27 +112,25 @@ for lean_dir in "${LEAN_DIRS[@]}"; do
     echo "  Directory: $lean_dir"
     echo "═══════════════════════════════════════════════════════"
 
-    cd "$lean_dir"
+    # Build from the root workspace so cross-package deps resolve via
+    # the root manifest (a per-paper `cd` + `lake build` trips on a
+    # stale per-paper manifest, e.g. qou's path dep on ugb).
+    cd "$REPO_ROOT"
 
-    # Optional: lake update
-    if [ "$DO_UPDATE" = true ]; then
-        echo "  → lake update"
-        if ! lake update 2>&1 | tail -5; then
-            echo "  ⚠ lake update had warnings (continuing)"
-        fi
-    fi
-
-    # Optional: fetch Mathlib cache
-    if [ "$DO_CACHE" = true ]; then
-        echo "  → lake exe cache get"
-        lake exe cache get 2>&1 | tail -5 || true
+    # Derive the Lake library target (defaultTargets) from the paper's
+    # lakefile, e.g. quantum-observable-universe → QOU.
+    target=$(grep -E '^[[:space:]]*defaultTargets' "$lean_dir/lakefile.toml" 2>/dev/null \
+                 | grep -oE '"[^"]+"' | tr -d '"' | head -1)
+    if [ -z "$target" ]; then
+        echo "  ⚠ no defaultTargets in $lean_dir/lakefile.toml — skipping"
+        continue
     fi
 
     # Build
-    echo "  → lake build"
+    echo "  → lake build $target"
     BUILD_START=$(date +%s)
 
-    if lake build 2>&1; then
+    if lake build "$target" 2>&1; then
         BUILD_END=$(date +%s)
         elapsed=$((BUILD_END - BUILD_START))
         echo ""
