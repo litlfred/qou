@@ -351,3 +351,38 @@ shell data carries.
 [`2026-05-29-binding-a3-honesty.md`](../coordination/2026-05-29-binding-a3-honesty.md).
 PR #1417; complementary scalar-scale lane #1416; converges with #1421
 (no derived atom→knot rule) and #1420 (EM/Coulomb = sinh channel).
+
+### Two further results (cosh/sinh proofs, transcendental, Yekutieli)
+
+**cosh/sinh now proved (narrows the surface area).**
+`crossing-energy-decomposition.lean` proves the algebraic→hyperbolic
+bridge for any $q>0$: $(q\pm q^{-1})/2=\cosh/\sinh(\ln q)$,
+$q^n=\cosh(n\lambda)+\sinh(n\lambda)$, $q^n-q^{-n}=2\sinh(n\lambda)$, and
+$[n]_q=\sinh(n\lambda)/\sinh(\lambda)$ — the quantum integer is a value of a
+transcendental hyperbolic sine (the $q$-deformed seed of the Kashaev
+volume). So the cosh = strong / sinh = Coulomb split is a **theorem, not a
+fit**. (Build-deferred: no `lake` in the authoring container.)
+
+**Transcendental (Lobachevsky volume) — REFUTED; phase wins.** Replacing
+the Reeb phase shift $|\Delta\theta_\lambda|$ with the Lobachevsky volume
+$\Delta\Lambda(\theta_\lambda)$ ($\Lambda(\theta)=\tfrac12\mathrm{Cl}_2(2\theta)$,
+the building block of hyperbolic volume) makes the fit **worse** (A=3
+mirror-pair spread 1.7%→12.6%; full 274%→317%). So binding tracks the
+**Reeb angle itself**, not the volume of it — it is *linear in the
+rotation angle*, the boundary-holonomy datum.
+
+**Yekutieli non-abelian Stokes — refined picture.** The chain is
+$\mathbf{C}$ categorical action $\to$ Yekutieli non-abelian Stokes $\to$
+$H_n(q)$: the braid word (1-D boundary) is the holonomy; the curvature
+2-form $[F,F]$ is the Hecke quadratic relation
+(`atom-knot-mass-derivation.md:385`); the Yekutieli classes $\kappa_n\neq0$
+are the lifting obstruction (`archimedean-yekutieli.md`). **Assessment:**
+the pieces are present but **not assembled** into one explicit
+boundary↔surface (linear↔quadratic) derivation — that remains a gap. But
+the phase result *refines* the earlier "dropped quadratic $[F,F]$"
+hypothesis: the A=3 binding (to 2%) is recovered from the **boundary
+holonomy's per-representation Reeb phase** $e^{\pm i\theta_\lambda}$, which
+the scalar Markov trace $\sum_\lambda y_\lambda\chi_\lambda$ collapses
+($\cos\theta$ summed). So the dominant missing piece is **per-rep phase
+resolution of the boundary holonomy**, not (primarily) the dropped surface
+term. The surface $[F,F]$ correction is separate and likely sub-dominant.
