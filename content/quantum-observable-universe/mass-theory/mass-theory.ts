@@ -172,8 +172,6 @@ export default chapter({
         "two-row-stratum",
         "he4-channel-active-set",
         "he4-two-row-dominance",
-        "schur-weyl-vanishing",
-        "schur-weyl-vanishing-table-data",
         "markov-trace-frobenius-selection",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",

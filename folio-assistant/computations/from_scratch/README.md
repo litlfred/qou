@@ -1,5 +1,20 @@
 # From-scratch derivation infrastructure
 
+> **DEPRECATED for production (2026-05-29, #1422 decision A').** The
+> scripts in this directory compute $\tau_M$ on the **single-component
+> free-proton braid** — *not* the 11-crossing canonical recipe that
+> production (`markov_peel`, Hoefsmit, chi-cache, Habiro) uses.  Their
+> values (e.g. $\tau_M(p_{\text{free}}, q_0) \approx 1.7339$) are
+> legitimate Jones–Markov traces of *their own braid choice*; they
+> should **not** be compared with the production
+> $\tau_M(\beta_p, q_0) \approx 1.0653$ as if they were "different
+> conventions of the same braid".  Kept on disk for pedagogy /
+> historical reference; **not re-pursued**.
+>
+> See [`docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md`](../../../docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md)
+> §"Resolution 2026-05-29" and
+> `derivation_chain.py` (escalation block, RESOLVED).
+
 Self-contained derivation of the categorical mass formula for atoms,
 without any dependencies on the existing `folio-assistant/computations/`
 infrastructure.

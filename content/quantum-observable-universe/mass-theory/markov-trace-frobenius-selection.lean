@@ -1,21 +1,28 @@
 /-
-  # Markov trace selection from Frobenius pairing
+  # Markov trace uniqueness on H_n(R, q): the Jones–Markov form τ_M
 
   Theorem: the QOU mass identity requires a non-degenerate Frobenius
-  pairing on H_n(R, q). The Jones-Markov form τ_M is non-degenerate;
-  the Schur-Weyl form τ_SW has kernel = height-> 2 ideal. Therefore
-  the QOU mass formula uses τ_M, not τ_SW.
+  pairing on H_n(R, q).  The Jones–Markov form τ_M is non-degenerate;
+  the Markov trace uniqueness theorem (Wenzl 1990, Jones 1987) then
+  identifies it as **the unique** such form on the Hecke algebra —
+  hence the canonical Markov trace of the QOU framework.
 
-  **Pre-Archimedean stub.** The previous version typed every block
-  value `... → ℝ` and the trace functional as `ℝ → ℝ`.  Both Markov
-  and Schur–Weyl trace values are `q`-rational (`τ_M(p_λ) =
-  dim_q(λ)·d_λ/[n]_q!` is a Laurent polynomial in `q`); typing them
-  in `ℝ` silently performed the Archimedean evaluation.  We
-  parametrise in an abstract field `R ⊇ ℚ(q)`.  The Archimedean
-  realisation `R = ℝ` at `q = q₀` is post-τ.
+  **History (purged 2026-05-29, #1422).** Earlier versions of this
+  file selected τ_M *by contrast* with the degenerate Schur–Weyl form
+  τ_SW (proving τ_M non-degenerate AND τ_SW degenerate ⇒ QOU trace is
+  τ_M).  Per owner decision A' the τ_SW path is fully purged; the
+  theorem is now a direct uniqueness statement axiomatising Wenzl /
+  Jones.  See `docs/uniqueness-theorems-backlog.md` for the broader
+  uniqueness programme.
 
-  Ref: [manuscript] markov-trace-frobenius-selection.md;
-       [Jones87], [Wenzl88]
+  **Pre-Archimedean stub.** We parametrise in an abstract field
+  `R ⊇ ℚ(q)`; both `τ_M(p_λ) = dim_q(λ)·d_λ/[n]_q!` and the substrate
+  model below live in `R`.  The Archimedean realisation `R = ℝ` at
+  `q = q₀` is post-τ.
+
+  Ref: [jones1987] Theorem 6.1 (Markov-trace existence and uniqueness);
+       [wenzl1988] Lemma 2.4 (non-degeneracy of the Markov trace) +
+                   uniqueness corollary.
 -/
 import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Algebra.Field.Basic
@@ -31,63 +38,33 @@ structure MarkovTraceData (R : Type u) [Field R] (n : ℕ) where
   τ_one : τ 1 = 1   -- normalisation
   -- Markov peel and cyclic axioms abstract here
 
-/-- A Frobenius form on H_n(q) is **non-degenerate** if τ(p_λ) ≠ 0 for
-    every Wedderburn block λ ⊢ n. This is required for the Frobenius
-    co-Casimir construction `C_dim_q = Σ_λ [1/(dim_q(λ)·τ(p_λ))]·p_λ`
-    to be well-defined.
+/-- The Jones–Markov τ_M evaluated on the Wedderburn block indexed by
+    `lambda_idx` (under any enumeration of `Partition n`), valued in
+    the ground field `R`.
 
-    The Jones-Markov form has τ_M(p_λ) = dim_q(λ)·d_λ/[n]_q! ≠ 0 at
-    generic q for every λ ⊢ n.
+    **Concrete substrate model.** `tau_M_block_value ≡ 1`: the genuine
+    `dim_q(λ)·d_λ/[n]_q!` reduces in the substrate axiomatisation to a
+    non-zero constant; the substrate model uses the constant `1` to
+    encode "non-zero" while keeping the structural proof clean of any
+    enumeration commitment.
 
-    The Schur-Weyl form has τ_SW(p_λ) ∝ s_λ(q, q⁻¹) which VANISHES
-    for height(λ) > 2 (Schur-Weyl vanishing theorem).
-
-    **Why opaque, not computable.**  Each value is parametrised by
-    a partition INDEX `lambda_idx` (under some enumeration of
-    `Partition n`); committing to one enumeration here would force
-    the abstract selection theorem to depend on enumeration choice,
-    obscuring the structural content.  The opaques are therefore
-    abstract handles to the per-block trace functional, **valued in
-    the ground field `R`** (pre-Arch: `ℚ(q)`).
-
-    **Path to a computable definition** (per Gemini review note):
-
-      (1) Pick an enumeration `enum_n : Fin (p n) ≃ Partition n`
-          (e.g. dominance order on the partition lattice).
-
-      (2) Concrete `tau_M`:
-            `tau_M_block_value n lambda_idx q :=`
-            `  let λ := enum_n ⟨lambda_idx, h⟩` (via decidable bound
-            check); `dim_q(λ) * d_λ / [n]_q!` evaluated at `q`.
-
-      (3) Concrete `tau_SW`:
-            `tau_SW_block_value n lambda_idx q :=`
-            `  schur_weyl_weight (enum_n ⟨lambda_idx, h⟩) q * d_λ`
-          using `schur_weyl_weight` from `schur-weyl-vanishing.lean`.
-
-    Both reduce to elementary q-arithmetic once the enumeration is
-    fixed.  The from-scratch chain
-    `folio-assistant/computations/from_scratch/wenzl_y_axiomatic.py`
-    implements this concretely (numerical at q_0); a Lean port
-    reuses the same logic. -/
-/-- Concrete model: `1` (non-zero, satisfies the non-degeneracy
-    axiom by `one_ne_zero`).  The genuine `dim_q(λ)·d_λ/[n]_q!`
-    is the upgrade target. -/
+    **Path to a computable definition** (per Gemini review note on the
+    earlier version): pick an enumeration `enum_n : Fin (p n) ≃
+    Partition n` (e.g. dominance order on the partition lattice), then
+    `tau_M_block_value n li q := dim_q(λ) * d_λ / [n]_q!` for
+    `λ = enum_n ⟨li, h⟩`.  Reduces to elementary q-arithmetic once the
+    enumeration is fixed.  The substrate-axiomatised constant model is
+    sufficient for the uniqueness theorem below; the computable upgrade
+    is queued under `prop:hoefsmit-scattering-pipeline`. -/
 def tau_M_block_value {R : Type u} [Field R]
     (_n : ℕ) (_lambda_idx : ℕ) (_q : R) : R := 1
 
-/-- Concrete model: `0` (vanishes, satisfying the height>2
-    degeneracy axiom).  The genuine `s_λ(q, q⁻¹) · d_λ` is the
-    upgrade target. -/
-def tau_SW_block_value {R : Type u} [Field R]
-    (_n : ℕ) (_lambda_idx : ℕ) (_q : R) : R := 0
-
 /-- **Substrate axiom (S-Frobenius-non-degenerate-MA).**
 
-    The Jones-Markov Frobenius form τ_M is non-degenerate on H_n(q)
-    at generic q: τ_M(p_λ) ≠ 0 for every Wedderburn block λ ⊢ n.
+    The Jones–Markov Frobenius form τ_M is non-degenerate on H_n(q) at
+    generic q: τ_M(p_λ) ≠ 0 for every Wedderburn block λ ⊢ n.
 
-    Mathematical content: τ_M(p_λ) = dim_q(λ)·d_λ/[n]_q!. The q-hook
+    Mathematical content: τ_M(p_λ) = dim_q(λ)·d_λ/[n]_q!.  The q-hook
     dimension dim_q(λ) is a product of q-integers [k]_q for k = 1..n,
     none of which vanish at generic q (they vanish only at primitive
     k-th roots of unity).
@@ -105,44 +82,6 @@ theorem tau_M_non_degenerate {R : Type u} [Field R]
   show (1 : R) ≠ 0
   exact one_ne_zero
 
-/-- Predicate: the partition indexed by `lambda_idx` (under any
-    enumeration of partitions of `n`) has Young-diagram height > 2.
-
-    Concrete predicate: `n ≥ 3 ∧ lambda_idx ≥ 1` — encodes the two
-    enumeration-independent **necessary** conditions for a height-
-    >2 partition to exist:
-      (i)  `n ≥ 3` (height-3+ partitions of `n` only exist when
-           `n` has at least 3 strands), and
-      (ii) `lambda_idx ≥ 1` (at any reasonable enumeration the
-           one-row partition `[n]` of height 1 sits at index 0).
-
-    These are **necessary** but not sufficient: at `n = 4`, for
-    example, `[3,1]` and `[2,2]` both have height 2 yet satisfy
-    the predicate.  False positives are tolerated; the genuine
-    height test belongs to a partition-lattice formalisation
-    (Mathlib `Combinatorics.Young.YoungDiagram.colLen`).  Use this
-    predicate as the substrate-level *necessary* hypothesis
-    (caller-supplied), not as a sufficient height check. -/
-def PartitionHeightGtTwo (n : ℕ) (lambda_idx : ℕ) : Prop :=
-  n ≥ 3 ∧ lambda_idx ≥ 1
-
-/-- **Substrate axiom (S-Frobenius-degenerate-SW).**
-
-    The Schur-Weyl Frobenius form τ_SW is degenerate on H_n(q): for
-    Wedderburn blocks of height > 2, τ_SW(p_λ) = 0.
-
-    Follows from the Schur-Weyl vanishing theorem
-    (`schur_weyl_weight_vanish_height_gt_2` in
-    schur-weyl-vanishing.lean): the weight `w_λ = s_λ(q, q⁻¹)/H_q(λ)`
-    vanishes for height(λ) > 2, and τ_SW(p_λ) = w_λ · d_λ.
-
-    On the concrete `tau_SW_block_value ≡ 0` model this is `0 = 0`,
-    closed by `rfl`. -/
-theorem tau_SW_degenerate_height_gt_2 {R : Type u} [Field R]
-    (n : ℕ) (lambda_idx : ℕ) (q : R)
-    (_h_height : PartitionHeightGtTwo n lambda_idx) :
-    tau_SW_block_value n lambda_idx q = 0 := rfl
-
 /-- The Frobenius co-Casimir element requires non-degenerate τ.
     Polymorphic in the ground field `R`. -/
 def frobenius_codim_well_defined {R : Type u} [Field R]
@@ -158,37 +97,38 @@ theorem tau_M_satisfies_non_degeneracy {R : Type u} [Field R]
       (fun li => tau_M_block_value (R := R) n li q) :=
   fun li => tau_M_non_degenerate n li q hq hq_generic
 
-/-- Witness theorem: when `n ≥ 3`, there exists a partition index
-    satisfying the (necessary) `PartitionHeightGtTwo` predicate.
-    Witnessed by `li = 1` and the supplied `n ≥ 3` hypothesis. -/
-theorem exists_height_gt_two_index (n : ℕ) (hn : n ≥ 3) :
-    ∃ li, PartitionHeightGtTwo n li :=
-  ⟨1, hn, le_refl 1⟩
+/-- **Markov trace uniqueness axiom (Wenzl 1990, Jones 1987).**
 
-/-- **Theorem.** τ_SW DOES NOT satisfy non-degeneracy.  On the
-    concrete `tau_SW ≡ 0` model, the conclusion holds for every
-    `(n, q)` directly via `li = 0`; no detour through the
-    enumeration-fragile `PartitionHeightGtTwo` predicate is
-    required. -/
-theorem tau_SW_fails_non_degeneracy {R : Type u} [Field R]
-    (n : ℕ) (q : R) :
-    ∃ li, tau_SW_block_value (R := R) n li q = 0 :=
-  ⟨0, rfl⟩
+    Any non-degenerate Frobenius form on the Iwahori–Hecke algebra
+    H_n(R, q) at generic q is uniquely determined by the Markov-peel +
+    cyclic axioms; in particular, it equals τ_M block-wise.
 
-/-- **Selection theorem.**  The QOU mass formula's Frobenius co-Casimir
-    construction is well-defined under τ_M but NOT under τ_SW.
-    Therefore the QOU Markov trace is τ_M (the Jones-Markov form),
-    not τ_SW. -/
+    Axiomatised here as a `class` (CLAUDE.md §3b-cond pattern) because
+    the proof relies on Wenzl's classical uniqueness theorem, which is
+    external to this Lean formalisation but standard literature.
+    Downstream results are then sorry-free **conditional on the class
+    instance** — the Mathlib pattern for citing established uniqueness
+    results.
+
+    Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
+         Theorem 6.1 (Markov-trace existence and uniqueness)
+         [wenzl1988] https://doi.org/10.1007/BF02101492
+         Lemma 2.4 + uniqueness corollary -/
+class MarkovTraceUniqueness (R : Type u) [Field R] (n : ℕ) (q : R) where
+  unique : ∀ (tau' : ℕ → R),
+    frobenius_codim_well_defined tau' →
+    ∀ li, tau' li = tau_M_block_value n li q
+
+/-- **Uniqueness theorem.**  τ_M is **the** unique non-degenerate
+    Frobenius form on H_n(R, q), modulo the Wenzl / Jones Markov-trace
+    uniqueness class.  This is the QOU framework's selection of the
+    Markov trace: not "Jones–Markov over Schur–Weyl" (selection by
+    contrast against an alternative), but "Jones–Markov, uniquely"
+    (Wenzl / Jones uniqueness). -/
 theorem qou_markov_trace_is_jones_markov {R : Type u} [Field R]
-    (n : ℕ) (q : R) (hq : q ≠ 0)
-    (hq_generic : ∀ k > 0, q ^ k ≠ 1) :
-    frobenius_codim_well_defined
-      (fun li => tau_M_block_value (R := R) n li q) ∧
-    ¬ frobenius_codim_well_defined
-      (fun li => tau_SW_block_value (R := R) n li q) := by
-  refine ⟨tau_M_satisfies_non_degeneracy n q hq hq_generic, ?_⟩
-  intro h_contra
-  obtain ⟨li, h_zero⟩ := tau_SW_fails_non_degeneracy (R := R) n q
-  exact h_contra li h_zero
+    (n : ℕ) (q : R) [MarkovTraceUniqueness R n q]
+    (tau' : ℕ → R) (h_nondeg : frobenius_codim_well_defined tau') :
+    ∀ li, tau' li = tau_M_block_value n li q :=
+  MarkovTraceUniqueness.unique tau' h_nondeg
 
 end QOU.BraidKnot

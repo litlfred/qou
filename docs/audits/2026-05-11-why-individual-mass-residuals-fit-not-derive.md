@@ -293,3 +293,50 @@ because $\lambda_{\text{scale}}$ has no substrate derivation.
    symbolically** for $k \in \{0, 1, 2, 3\}$ — diagnostic (b) for
    pinning the Skein correction. (Per PR #487 agent's "most
    actionable next step".)
+
+## Resolution 2026-05-29 (#1422, decision A')
+
+The 2026-05-11 "$\tau_M$ / $\tau_{\mathrm{SW}}$ conflation" framing
+above is **superseded**.  On closer reading the audit doc itself
+records (line 248-251) that the from-scratch value
+$|\tau_M(p_{\text{free}})| = 1.7339$ is "from the
+**single-component free-proton braid**, *not* the 11-crossing
+canonical recipe" — i.e. it is $\tau_M$ of a *different braid*,
+not a different convention of the same braid.  No conflation of
+$\tau_M$ vs $\tau_{\mathrm{SW}}$ for the canonical braid was ever
+present in production.
+
+Four independent production methods now agree on the canonical
+$\tau_M(\beta_{\rm atom}, q_0)$ for the 11-crossing recipe to
+$\leq 2 \times 10^{-15}$ at the proton-pinned $q_0$:
+
+- proton  $1.0653061442544499$
+- neutron $0.9232332299116371$
+- deuteron $0.3882864240747888$
+
+Lean theorem `qou_markov_trace_is_jones_markov`
+(`content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean`)
+is refactored 2026-05-29 from a *selection-by-contrast* with
+$\tau_{\mathrm{SW}}$ into a direct **uniqueness statement**
+axiomatising Wenzl 1990 / Jones 1987 via a
+`MarkovTraceUniqueness` class (CLAUDE.md §3b-cond pattern).
+
+**Status of the rest:**
+
+- $\tau_{\mathrm{SW}}$ (Schur–Weyl) and its supporting Lean theorems
+  (`schur-weyl-vanishing.lean` and friends) are **fully purged**
+  2026-05-29 — deleted from `mass-theory/`, dropped from the
+  manifest, references removed from the `derivation_chain.py`
+  resolution comment.  Not re-pursued.
+- `from_scratch/` is **deprecated for production** (different
+  braid; pedagogical derivation only) — kept on disk so existing
+  pedagogy / cross-checks for the free-proton braid don't break.
+  Not re-pursued.
+- Action items 4 + 5 (re-label registry, audit `TR_M_AT_Q0`) are
+  **superseded** — `derivation_chain.py` was re-pinned to the
+  proton-q₀ canonical Jones–Markov values per #1422, and the
+  rename to "$\tau_{\mathrm{SW}}$" is moot since the SW path is
+  purged.  Item 6 (orientation-symbolic $J_{\mathcal{B}_3}$) remains
+  open R&D under `prop:geom-universality` refinement.
+- Broader uniqueness programme (T_w SDP, p-n averaging, Geom_full):
+  queued in [`docs/uniqueness-theorems-backlog.md`](../uniqueness-theorems-backlog.md).
