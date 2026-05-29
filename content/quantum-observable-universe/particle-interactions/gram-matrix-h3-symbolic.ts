@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in u = √q with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.",
+    "Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.",
   uses: [],
   cites: [
     "halverson_ram_1998",
@@ -19,13 +19,13 @@ export default proposition({
       body:
         "**Phase 1b (follow-up to PR #1255 Option E Phase 1a).** Replaces " +
         "the deferred 'rational-encode 36 decimal entries' plan with " +
-        "explicit categorical closed-form entries in `u = √q`. Sympy-" +
+        "explicit categorical closed-form entries in $u = \\sqrt{q}$. Sympy-" +
         "verified against `gram-matrix-dual.witness.json` at q_0 to 1e-16. " +
         "**Proved (sorry-free):** `gramMatrix_isSymm` (15-cell case analysis), " +
         "`gramMatrix_top_left` (G[0,0] = 1). **Deferred to Phase 1b-2:** " +
         "`gramMatrix_det_ne_zero` — proof strategy in docstring (compute " +
         "symbolic det, factor out the (u−1) zero at the classical limit). " +
-        "Numerical witness: det(G(u_0)) ≈ −0.189 at u_0 = √q_0.",
+        "Numerical witness: det(G(u_0)) ≈ −0.189 at $u_0 = \\sqrt{q_0}$.",
     },
     {
       kind: "refined-framing",
