@@ -190,6 +190,9 @@ def main():
     Q_beta_codata = m_n_codata - m_p_codata - m_e
 
     # ── RESIDUALS ──────────────────────────────────────────────────
+    # m_μ is now a PREDICTION (q₀ pinned from m_p): m_μ_pred = m_e·Vol/ℏ_q²
+    # vs CODATA m_mu_measured — the 9.5σ μ-p tension residual.
+    res_m_mu_ppm = (m_mu - m_mu_measured) / m_mu_measured * mpf("1e6")
     res_m_p_ppm = (m_p_pred - m_p_codata) / m_p_codata * mpf("1e6")
     res_m_n_ppm = (m_n_pred - m_n_codata) / m_n_codata * mpf("1e6")
     res_M_N_ppm = (M_N_pred - M_N_codata) / M_N_codata * mpf("1e6")
@@ -212,6 +215,10 @@ def main():
     print(f"    X = Δm/M_N (skein)     = {mp.nstr(X, 18)}")
     print()
     print("  PREDICTIONS vs CODATA:")
+    print(f"    m_μ_pred = m_e·Vol(4₁)/ℏ_q²   = {mp.nstr(m_mu, 18)} MeV")
+    print(f"    m_μ_codata                    = {mp.nstr(m_mu_measured, 18)} MeV")
+    print(f"    Δ (9.5σ μ-p tension)          = {mp.nstr(res_m_mu_ppm, 8)} ppm")
+    print()
     print(f"    m_p_pred = 2·m_μ·F − 12·m_e   = {mp.nstr(m_p_pred, 18)} MeV")
     print(f"    m_p_codata                    = {mp.nstr(m_p_codata, 18)} MeV")
     print(f"    Δ                              = {mp.nstr(res_m_p_ppm, 8)} ppm")
