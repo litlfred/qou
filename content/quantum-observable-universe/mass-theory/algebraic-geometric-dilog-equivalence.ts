@@ -9,11 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:q-pochhammer-partial-product",
     "prop:dilogarithm-archimedean-limit",
-    "rem:kashaev-as-archimedean-realization",
     "rem:quantum-bloch-group",
-    "def:archimedean-realization-functor",
   ],
   cites: [
     "kashaev1997",

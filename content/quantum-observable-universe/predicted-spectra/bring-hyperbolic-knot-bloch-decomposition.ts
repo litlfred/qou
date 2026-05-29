@@ -5,10 +5,8 @@ export default proposition({
   title:
     "Bloch-group decomposition of $2/(3\\pi)$ from $S_5$-equivariantly embeddable hyperbolic knots in Bring's surface",
   uses: [
-    "prop:archimedean-functor-uniqueness",
     "prop:em-coupling-bring-zero-mode",
     "rem:figure-8-archimedean-illustration",
-    "def:archimedean-realization-functor",
   ],
   cites: [
     "suslin1991",

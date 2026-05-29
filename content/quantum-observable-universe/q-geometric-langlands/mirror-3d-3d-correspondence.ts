@@ -8,11 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.Mirror3d3dCorrespondence",
     validation: "not_checked",
   },
-  uses: [
-    "prop:borromean-bloch-group-element",
-    "rem:vol-as-motivic-period",
-    "def:borromean-baryon",
-  ],
+  uses: ["prop:borromean-bloch-group-element"],
   cites: [
     "dimofte-gaiotto-gukov2014",
     "terashima-yamazaki2011",

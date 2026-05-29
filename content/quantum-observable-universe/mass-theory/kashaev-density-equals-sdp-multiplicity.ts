@@ -15,14 +15,8 @@ export default proposition({
     status: "verified",
   },
   uses: [
-    // The underlying Kashaev volume conjecture this refines:
-    "rem:kashaev-volume-density",
     "rem:kashaev-as-archimedean-realization",
-    // The Wedderburn / joint-tower SDP infrastructure:
-    "def:hecke-normal-form",
-    // Algorithm step 3 of atom-knot-mass-derivation supplies ν_SDP:
     "prop:atom-knot-mass-derivation",
-    // The wider categorical menu under which this falls:
     "def:archimedean-realization-functor",
   ],
   cites: [
