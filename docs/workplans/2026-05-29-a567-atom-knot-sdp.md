@@ -274,10 +274,69 @@ f(Z,N) = Z·N · [ 1 + (shell-closure bonus) + (mirror-split corrections) ]
 ```
 
 with **all ingredients derived integer counts** — no fitted coefficients.
-The remaining derivation pieces are: (a) prove Z·N is the inter-nucleon
-braid-interface count from the canonical word β(Z,N) (matches #1430's
-`(n_pp, n_pn, n_nn) = (Z−1, 1, N−1)` interface composition); (b) derive
-the doubly-magic doubling from the Demazure crystal closure (CLAUDE.md
+The remaining derivation pieces are: (a) identify which combinatorial
+object on the canonical word β(Z,N) **actually** counts to Z·N (NOT the
+adjacent-interface count `A−1 = Z+N−1`, which equals Z·N only at A≤3 and
+diverges from it at ⁴He+; see correction below); (b) derive the
+doubly-magic doubling from the Demazure crystal closure (CLAUDE.md
 §7b); (c) the Coulomb κ already has a derived form via #1417's sinh
 channel. Probe: `binding_factor_f_pair_count.py`, witness
 `binding-factor-f-pair-count`.
+
+### Correction (2026-05-29, same day)
+
+The prior commit message and the line above initially asserted that Z·N
+"matches #1430's `(n_pp, n_pn, n_nn) = (Z−1, 1, N−1)` interface
+composition". **This is wrong** — that composition sums to A−1=Z+N−1,
+not Z·N. The two agree only for A≤3:
+
+| atom | adjacent interfaces (A−1) | Z·N |
+|------|---------------------------|-----|
+| D | 1 | 1 ✓ |
+| T / ³He | 2 | 2 ✓ |
+| ⁴He | 3 | **4** |
+| 5Li | 4 | 6 |
+| 6Li | 5 | 9 |
+| 7Li | 6 | **12** |
+
+So Z·N is **not** the canonical adjacent-interface count. It is the count
+of **all** ordered (p,n) pairs (non-adjacent included). What this means
+for Barrier-1: the structural integer that f tracks at A≥4 is a *long-
+range* pair count, not the local interface composition — consistent with
+binding being a global rather than purely-nearest-neighbour quantity, and
+with magic-closure (⁴He doubling) being a separately-quantised collective
+effect. Honest record: the 1% match for D/6Li/7Li still stands; the
+identification of the underlying braid-theoretic object is *open*, not
+"falls out of #1430".
+
+## ⁴He doubling factor (2026-05-29) — NOT a clean integer 2
+
+A natural follow-up: is the ⁴He doubling factor `f(⁴He)/Z·N` exactly 2?
+Computed: **2.0715, not 2 — a 3.6% deviation**. That is far too large to
+be compute noise (binding-canonical Δtr matches symbolic at 1e-16, so f
+is precise to ~1e-15). The "doubling" terminology was a rounded
+approximation.
+
+Tested 2.07 against natural substrate-canonical constants:
+
+| candidate | value | err |
+|-----------|-------|-----|
+| 2 (integer) | 2.000 | 3.6% |
+| [2]_q = q + q⁻¹ | 2.011 | 3.0% |
+| 1 + q | 2.110 | −1.8% |
+| 2·√q | 2.107 | −1.7% |
+| π/√(π−1) | 2.147 | −3.5% |
+
+**No candidate clears the 1% bar.** So the ⁴He doubly-magic bonus 2.07 is
+*not* currently identified with a derived substrate quantity — it is the
+unsolved piece of Barrier-1. The honest summary:
+
+- **Done (1% derived)**: f ≈ Z·N for non-magic D/6Li/7Li.
+- **Done (derived)**: A=3 mirror split = Coulomb κ_EM = 0.367 (#1417 sinh
+  channel).
+- **Open**: identify the braid-theoretic object that counts to Z·N at
+  A≥4 (NOT adjacent interfaces).
+- **Open**: derive 2.07 (the ⁴He shell-closure bonus). This is the genuine
+  Demazure crystal-closure derivation; current best near-misses (1+q,
+  2·√q) miss by 1.7–1.8% — not close enough to claim, not far enough to
+  rule out a small correction.
