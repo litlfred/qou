@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T01:05:31.332676+00:00",
-  "commitSha": "77a328c7ca9a2c5c329783a40bc8ae96a9bcdeee",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T16:08:47.778538+00:00",
+  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
   "assertions": [
     {
       "name": "phase_5k_1_residual_matches_h_to_5_unit_coeff",
@@ -15,11 +15,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 11,
   "computation": "constit-factor-residual-phase5k",
   "scriptFile": "constit_factor_residual_phase5k.py",
   "scriptHash": "1cd61d78f4c7",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4d21d0191d3f8d26831af0f01e0e98227fecd13b",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Phase 5k.1: high-precision residual analysis for the constit-side per-Z step factor at q_0. Decomposes the 0.033% gap between measured 1.220358 and predicted (2q - 1) = 1.219957 across powers of h(q_0). Empirical result: |residual| = 4.057e-4, matching h^5(q_0) = 3.994e-4 with coefficient c = 1.016 — a striking unit-coefficient O(h^5) fit at q_0. Phase 5k.2 (queued): varying-q measurement to confirm the power empirically across the substrate window.",
   "contentBlock": "conj:constit-factor-2q-minus-1",
   "parameters": {

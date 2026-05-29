@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T17:58:45.793712+00:00",
-  "commitSha": "747cddad4e027931aac423d5ca8e0b86ac058483",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-29T16:11:44.454612+00:00",
+  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
   "assertions": [
     {
       "name": "h2_concrete_test_completed",
@@ -13,16 +13,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 18,
+  "durationMs": 35,
   "computation": "lambda-scale-h2-concrete-test",
   "scriptFile": "lambda_scale_h2_concrete_test.py",
   "scriptHash": "6102a81d4fec",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "1a49d588f3fd22e20ee53a990f8f6ad57e1bb4ce",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Concrete test per 2026-05-23-lambda-scale-canonical-unification.md §'Concrete test': symbolic h-expansion of `1/(1 − h_q · q_0^10)` around h = 0 (with q = (h + √(h²+4))/2). Compares h² coefficient to canonical Family A `3/4` and to canonical + Yekutieli additive `3/4 − G`. Reports h⁴ coefficient as concrete target for Option A h⁴ categorical derivation. Informs whether Path C (Bring color-tube) IS the resummed Path B (additive Yekutieli) at leading order.",
   "contentBlock": "conj:borromean-baryon-mass-formula",

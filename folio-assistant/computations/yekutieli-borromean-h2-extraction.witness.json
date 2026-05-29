@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-23T20:39:03.730192+00:00",
-  "commitSha": "5dddac6d14da871802009f81a64d2e180d5ada11",
+  "computedAt": "2026-05-29T16:23:39.196026+00:00",
+  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
   "assertions": [
     {
       "name": "kappa_computed",
@@ -15,11 +15,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 14,
   "computation": "yekutieli-borromean-h2-extraction",
   "scriptFile": "yekutieli_borromean_h2_extraction.py",
-  "scriptHash": "64882fa30991",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "991df0d5b771",
+  "scriptCommitSha": "d15e9a9ff1c5d124bc0672b538decdace48314c8",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Computes the h² Taylor coefficient of the Borromean braid Markov trace tr_M((σ₁σ₂⁻¹)³, q) via the Jones polynomial of the Borromean rings, V(t) = −t⁻³ + 3t⁻² − 2t⁻¹ + 4 − 2t + 3t² − t³ at t = q². The h² coefficient κ is compared against the Yekutieli conjecture's claimed −G (Catalan constant = Vol(𝓑₃)/8).",
   "contentBlock": "conj:lambda-scale-bring-bloch-identity",
   "parameters": {

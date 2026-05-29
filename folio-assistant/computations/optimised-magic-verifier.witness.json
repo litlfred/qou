@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-06T15:58:17.828925+00:00",
-  "commitSha": "adfaff0fcdaa25a041bb14e08eec6121fb04029a",
+  "computedAt": "2026-05-29T16:17:03.856584+00:00",
+  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
   "assertions": [
     {
       "name": "Optimised pair count ≤ naive pair count",
@@ -19,11 +19,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 10,
   "computation": "optimised-magic-verifier",
   "scriptFile": "optimised_magic_verifier.py",
   "scriptHash": "39308e1fa281",
-  "scriptCommitSha": "f79dccf6a91d3a302c0b3325b296914413ed5bf3",
+  "scriptCommitSha": "b763e7b40591c66ec1f61a2e01391af8c1cad264",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Empirical Δi ≤ 1 selection rule: LR-fusion sweep of shell-pair indices restricted to |i_N − i_Z| ≤ 1 (13 pairs of 49); supports conj:double-magic-delta-i-bound.",
   "contentBlock": "conj:double-magic-delta-i-bound",
   "parameters": {
@@ -76,7 +82,7 @@
           2
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 0.003905057907104492
+        "elapsed_sec": 0.003670930862426758
       },
       {
         "i_Z": 2,
@@ -92,7 +98,7 @@
           1
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 15.922195434570312
+        "elapsed_sec": 15.912166833877563
       },
       {
         "i_Z": 3,
@@ -109,7 +115,7 @@
           2
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 0.017818212509155273
+        "elapsed_sec": 0.01764059066772461
       },
       {
         "i_Z": 3,
@@ -247,8 +253,8 @@
       "optimised_pair_count": 19,
       "computed_pair_count": 3,
       "dominant_self_conj_count": 0,
-      "actual_optimised_sec": 15.943918704986572,
-      "estimated_naive_sec": 260.417338848114,
+      "actual_optimised_sec": 15.933478355407715,
+      "estimated_naive_sec": 260.246813138326,
       "empirical_speedup": 16.333333333333332
     }
   }

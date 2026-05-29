@@ -1,15 +1,21 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T00:09:07.835480+00:00",
-  "commitSha": "0bf80848d4f0be0afbe05720b5d03621bd602453",
+  "computedAt": "2026-05-29T16:23:01.413907+00:00",
+  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "delta-q-decoration",
   "scriptFile": "delta_q_decoration.py",
   "scriptHash": "876a975f1f9b",
-  "scriptCommitSha": "dd10211f939dfab89055354f490ad2b42a6b6840",
+  "scriptCommitSha": "b746fb8f6ab3e959104ddced6566acf34468cf3d",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "δ_q Wedderburn decomposition for H_n(q), n=2,3,4. Tests the round-18 force-carrier intertwining correspondence (prop:force-carrier-intertwining-correspondence): does the bare H_2 molecular braid project onto the (3,1) and (2,1,1) Wedderburn channels matching T_{3,5} and T_{2,9} strand counts? Verifies the algebraic identity α_EM = h²/[q·δ_q(T_29)·δ_q(T_35)] (prop:alpha-em-categorical-trace-ratio).",
   "contentBlock": "def:delta-q-decoration",
   "parameters": {
@@ -288,7 +294,7 @@
       "lambda_31_contribution": -0.13626929802721868,
       "lambda_211_contribution": 0.11060348479711606,
       "lambda_22_contribution": -1.843513697096132e-17,
-      "total_trM": -0.017233391902322953,
+      "total_trM": -0.017233391902322957,
       "supported": true,
       "reference": "prop:force-carrier-intertwining-correspondence",
       "all_lambdas": {

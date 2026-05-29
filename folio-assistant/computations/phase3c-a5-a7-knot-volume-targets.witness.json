@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-26T15:29:37.803986+00:00",
-  "commitSha": "7e74903aad98a9ea01fbe3a9484145214f844b1c",
+  "computedAt": "2026-05-29T16:19:14.642230+00:00",
+  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
   "assertions": [
     {
       "name": "a5_unbound",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "phase3c-a5-a7-knot-volume-targets",
   "scriptFile": "phase3c_a5_a7_knot_volume_targets.py",
   "scriptHash": "54985b5ff731",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "ffe603782f7be97c5ad1e11639766793b88ee6a9",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "Target knot volumes for A=5,6,7 isotopes. A=5 is unbound (no stable nucleus). A=6,7 can be modeled as α+fragment clusters: ⁶Li=⁴He+D, ⁷Li=⁴He+T, ⁷Be=⁴He+³He. Separation energies computed from AME 2020.",
   "contentBlock": "prop:proton-mass-substrate-identity",

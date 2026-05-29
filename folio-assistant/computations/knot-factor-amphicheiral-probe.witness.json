@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-19T07:09:29.770831+00:00",
-  "commitSha": "2b859a46865c8339a0eeae6200a4ebc823b051fd",
+  "computedAt": "2026-05-29T16:11:42.978729+00:00",
+  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
   "assertions": [
     {
       "name": "amphicheirality_non_alt_block_invariant",
@@ -42,11 +42,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 23,
   "computation": "knot-factor-amphicheiral-probe",
   "scriptFile": "knot_factor_amphicheiral_probe.py",
   "scriptHash": "eaecc1b7c921",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "e901ab90f0871a79c9654eb8fc928bdac64f835a",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "I1 probe for cor:knot-factor-amphicheiral.  Verifies the amphicheirality sign property of Hecke characters on the figure-eight braid (β = σ_1 σ_2⁻¹ σ_1 σ_2⁻¹ ∈ B_3, the canonical amphicheiral knot) and the resulting reduction of the knot factor to a = 1 − h² on the alternating block.  Uses the 1-dim Hecke characters for the symmetric (3) block (σ → q) and the alternating (1,1,1) block (σ → -q⁻¹).",
   "contentBlock": "cor:knot-factor-amphicheiral",
   "parameters": {
