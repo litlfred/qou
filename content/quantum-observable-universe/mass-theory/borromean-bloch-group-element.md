@@ -6,7 +6,7 @@ defines a non-trivial element $[\mathcal{B}_3] \in K_3(\mathbb{C})$
 to** $\mathrm{Vol}(\mathcal{B}_3) = 8G$.  The Markov-trace coefficient
 $h^4 = -3/4$ of $\mathrm{tr}_M(\mathcal{B}_3, q)$ has a K-theoretic
 shadow as the next-order regulator term: $r_2[\mathcal{B}_3] \cdot
-(\text{h^4-coefficient}) = (8G)(-3/4) = -6G$.*
+(h^4\text{-coefficient}) = (8G)(-3/4) = -6G$.*
 
 ## The K-theoretic structure
 
