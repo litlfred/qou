@@ -28,6 +28,34 @@ reproduce on any PR that touches `content/**`. The content pipeline's own
 4. Fix it at the **content source** (`.md`/`.ts`) — not the generated `.tex`.
 5. Re-compile to confirm green; record the root cause below.
 
-## Root cause
+## Root cause (primary — fixed)
 
-_TBD — filled in once the compile log is captured._
+`content/pipeline/render-latex.ts` parses markdown with micromark's
+`gfm-table`, a *flow* construct that splits table rows on `|` **before**
+`remark-math` tokenises inline `$...$`. So a table cell whose math holds a
+literal `|` — absolute value `$|\mathrm{tr}_M(\rho(\beta))|$`, bra-ket
+`$\langle a|b\rangle$`, ket `$|n\rangle$` — spills into extra columns.
+pdflatex then hits `! Extra alignment tab has been changed to \cr` (fatal,
+"no output PDF file produced!"), and the orphaned `$` are escaped to
+literal text. First fatal occurrence: the Feynman↔QOU dictionary table
+(`mass-theory/feynman-qou-dictionary-table-data.md:5`), rendered at
+`chapters/mass-theory.tex:9861`. ~41 table rows repo-wide share the
+pattern.
+
+## Fix
+
+`render-latex.ts` `parseMdCached` now runs `protectPipesInInlineMath()`
+before parsing: each bare `|` inside an inline `$...$` span is replaced
+with `\vert ` (output-identical in math mode), so the table parser sees no
+spurious delimiters. Real cell separators (`|` outside math) and fenced
+code blocks are untouched. One pipeline change fixes all ~41 occurrences
+and any future ones — no per-cell content edits. Verified: the three
+previously-broken Feynman rows now render with the correct 2 alignment
+tabs.
+
+## Residual
+
+A full `latexmk` pass still reports `pdflatex return code 1` after the
+table fix — a separate residual error ("missing or unavailable
+character(s)"). Under investigation via a halt-on-error pass; will be
+recorded here once isolated.
