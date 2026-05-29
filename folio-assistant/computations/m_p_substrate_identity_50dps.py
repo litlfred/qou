@@ -142,9 +142,11 @@ def main():
     m_e = mpf(M_E_MEV)
     # q₀ is pinned from m_p/m_e (2026-05-29), so m_p must be a PURE-q
     # function: substitute the muon-anchor formula m_μ = m_e·Vol(4₁)/ℏ_q²
-    # for m_μ here (instead of the measured value). This makes m_p exact
-    # at the m_p-pinned q₀; the measured m_μ is now a PREDICTION (≈9.5σ,
-    # the μ-p tension). See observations/substrate-anchor-alternatives.md.
+    # for m_μ here (instead of the measured value). At the m_p-pinned q₀
+    # this matches m_p to CODATA to the 50-digit-q₀ precision (≈0.0004 ppb
+    # residual — a calibration match, NOT math-exact); the measured m_μ is
+    # now a PREDICTION (≈9.5σ, the μ-p tension).
+    # See observations/substrate-anchor-alternatives.md.
     from q_parameter import vol_4_1_at  # noqa: E402
     hbar_q_sq = ((q - 1) / q) ** 2
     m_mu = m_e * vol_4_1_at(50) / hbar_q_sq          # muon FORMULA (pure-q)

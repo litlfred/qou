@@ -5,9 +5,12 @@ experimental mass ratios measured in our local cosmological context.
 Multiple independent mass ratios provide experimental handles on the
 same underlying $q_0$, each with different measurement precision.
 
-The muon-anchor identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$
-currently fixes $q_0$ from the CODATA muon-to-electron mass ratio
-(relative uncertainty $22\,\mathrm{ppb}$).  The proton substrate
+As of 2026-05-29, $q_0$ is pinned from the **proton** ratio
+$m_p/m_e$ (the most precisely measured, $0.06\,\mathrm{ppb}$) via the
+proton substrate identity below; $m_\mu/m_e$ is now a prediction. The
+muon-anchor identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ was the
+prior pin (CODATA muon ratio, $22\,\mathrm{ppb}$) and remains the most
+transparent cross-check.  The proton substrate
 identity
 ([`prop:proton-mass-substrate-identity`](../braids-and-knots/proton-mass-substrate-identity.md))
 provides an alternative route through a different observable:
@@ -56,7 +59,7 @@ At present the framework cannot satisfy both ratios with a single
 $q_0$: the two anchor formulas demand values of $q_0$ that differ by
 $\approx 11.5\,\mathrm{ppb}$. This gap reflects the **current
 formulas' theory imprecision** (each carries a residual relative to
-the exact substrate value); a fully-derived pair of formulas would
+the true substrate value); a fully-derived pair of formulas would
 close it. Until then it is the floor below which fitting any single
 observable is meaningless — see
 [`docs/audits/2026-05-28-mu-p-tension-substrate-floor.md`]. The

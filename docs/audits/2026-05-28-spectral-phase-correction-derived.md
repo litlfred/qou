@@ -48,8 +48,10 @@ with all ingredients categorical and **no free parameter**:
 versus the leading-order Vol/ℏ²·lw_A = 966 MeV (+2.89 %) — a **~35×**
 top-down improvement. The spectral factor is θ/(8ℏ²) = 0.9711. Fully
 derived; **no CODATA fitting**. (The substrate-identity route reaches
-m_p to 242 ppb / exact and is the more accurate proton value; this
-spectral route is a coarser independent derivation of the average mass.)
+m_p to 242 ppb when q₀ is muon-pinned, and matches m_p to the q₀
+precision when q₀ is pinned from m_p — a calibration match, not
+math-exact; either way the more accurate proton value. This spectral
+route is a coarser independent derivation of the average mass.)
 
 Verified numerically at 50 dps (`_li_2_q_util.spectral_correction_borromean`,
 `geom_full_borromean_spectral`). The `(q+1)²√(3+h²)/8` form in commit
@@ -69,8 +71,8 @@ where it should and nowhere else — evidence it is structural, not a fit.
 
 This spectral route (m_avg, −819 ppm) is **not** the q₀-pinning formula.
 q₀ is pinned from m_p via the **substrate identity** (2·Vol/ℏ²·F_Bor−12),
-which gives m_p exact / 242 ppb — far more accurate than this spectral
-m_avg. The two are independent derivations; their ~819 ppm disagreement
+which matches m_p to CODATA to the q₀ precision (a calibration match,
+not math-exact) — far more accurate than this spectral m_avg. The two are independent derivations; their ~819 ppm disagreement
 on the average mass is the spectral route's intrinsic accuracy, an OPEN
 item (Vol=8G precision / a higher geometric term). The spectral
 correction's value is conceptual (a no-fit, top-down 35× improvement
