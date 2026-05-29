@@ -186,7 +186,7 @@ if __name__ == "__main__":
     y3 = derive_wenzl_y(3)
     if y3:
         for lam, y in y3.items():
-            q0 = sp.Rational(11099785955541805, 10**16)
+            q0 = sp.Rational(11099785827513808, 10**16)
             y_q0 = float(y.subs(q, q0).evalf(30))
             print(f"  y_{lam} at q_0 = {y_q0:.6f}")
     print()

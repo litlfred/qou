@@ -47,7 +47,7 @@ if __name__ == "__main__":
     # Step 2: Markov trace via Wenzl y_λ from axioms
     tr_M_sym, per_lam = markov_trace_from_basis(basis_coeffs)
 
-    q0 = sp.Rational(11099785955541805, 10**16)
+    q0 = sp.Rational(11099785827513808, 10**16)
     print("Per-λ contributions to tr_M(T_w(³He)):")
     for p, contrib in per_lam.items():
         c_q0 = float(contrib.subs(q, q0).evalf(30))

@@ -51,7 +51,7 @@ if __name__ == "__main__":
     print("─" * 78)
     print("Step 1: Wenzl y_λ via Markov axioms (H_5, numerical at q_0)")
     print("─" * 78)
-    q0 = sp.Rational(11099785955541805, 10**16)
+    q0 = sp.Rational(11099785827513808, 10**16)
     t0 = time.time()
     y_lambda = derive_wenzl_y(n, numerical=True, q_value=q0)
     if y_lambda is None:
