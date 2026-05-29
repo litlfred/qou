@@ -82,11 +82,13 @@ from q_parameter import Q as Q_0  # noqa: E402
 # coefficients) derive these to ≤ 2e-15 at 50 dps; the Lean theorem
 # `qou_markov_trace_is_jones_markov`
 # (`content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean`,
-# sorry-free) proves τ_M is the unique non-degenerate Frobenius form
-# on H_n(q), selecting it over τ_SW.  `from_scratch/` (different braid)
-# and τ_SW (degenerate at height > 2, per `schur-weyl-vanishing.lean`)
-# are deprecated for production — kept as pedagogy / proof
-# negative-example respectively, not re-pursued.
+# sorry-free, axiomatising Wenzl / Jones Markov-trace uniqueness via a
+# `MarkovTraceUniqueness` class) proves τ_M is *the* unique
+# non-degenerate Frobenius form on H_n(q).  `from_scratch/` (different
+# braid) is deprecated for production — kept as pedagogy, not
+# re-pursued.  τ_SW (Schur–Weyl) and its supporting Lean theorems were
+# fully purged 2026-05-29 per #1422 (decision A' uniqueness refactor;
+# see `docs/uniqueness-theorems-backlog.md`).
 #
 # Audit: `docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md`
 # §"Resolution 2026-05-29".

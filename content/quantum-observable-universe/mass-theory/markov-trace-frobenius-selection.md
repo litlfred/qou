@@ -1,15 +1,14 @@
-**Proposition (Markov trace selection from Frobenius pairing).**
-*The choice of Markov trace functional on* $H_n(R, q)$ *is fixed
-by the* **Frobenius pairing** *on the Hecke algebra, which in turn
-is fixed by the cat-action / fibre-functor choice in the QOU
-substrate.  Two distinct Frobenius pairings appear in the
-literature, both written as* $\mathrm{tr}_M$ *but referring to
-different linear functionals:*
+**Proposition (Markov trace uniqueness on H_n(R, q)).**
+*The Jones–Markov form* $\tau_M$ *is* **the unique** *non-degenerate
+Frobenius pairing on the Iwahori–Hecke algebra* $H_n(R, q)$ *at
+generic* $q$.  *Hence the QOU mass identity's Markov trace is fixed
+by the cat-action / fibre-functor choice in the QOU substrate plus
+the standard Markov-trace uniqueness theorem (Wenzl 1990, Jones 1987),
+with no remaining choice.*
 
-| name | $\tau(1)$ | $\tau(\sigma_i)$ | $w_\lambda$ | non-degenerate? |
+| form | $\tau(1)$ | $\tau(\sigma_i)$ | $w_\lambda$ | non-degenerate? |
 |---|---:|---:|---|:---:|
-| Jones-Markov $\tau_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | ✓ on $H_n(q)$ |
-| Schur-Weyl $\tau_{\mathrm{SW}}$ | $\approx 2$ at $q_0$ | $\approx 0.883$ at $q_0$ | $s_\lambda(q,q^{-1})/H_q(\lambda)$ | $\times$ kernel = height $> 2$ |
+| Jones–Markov $\tau_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | ✓ on $H_n(q)$ |
 
 ## The chain: cat-action $\to$ Markov trace
 
@@ -41,7 +40,7 @@ $$
 The trace here is the **categorical trace** in $\mathbf{C}$ — it
 depends on the fibre functor $\tau$.
 
-### Step 3: Frobenius pairing — *the choice*
+### Step 3: Frobenius pairing — non-degeneracy + Wenzl/Jones uniqueness
 
 The categorical trace descends under $\tau$ to a Frobenius integral
 $\int_A \colon A \to R$ on the algebra.  $A$ is a Frobenius algebra
@@ -52,132 +51,105 @@ $$
   \langle x, y \rangle_\tau \;:=\; \tau(xy).
 $$
 
-**The choice of $\tau$ at Step 1 propagates here.**  The two natural
-choices for $A = H_n(R, q)$:
-
-**(A) Jones-Markov form.**  $\tau_M$ defined by:
-- $\tau_M(1) = 1$
-- $\tau_M(x \sigma_{n-1}) = z \cdot \tau_M(x)$ for $x \in H_{n-1}$ (Markov peel)
-- $z = 1/(q^{1/2} + q^{-1/2})$
-
-This Frobenius form is **non-degenerate** on $H_n(R, q)$
-(established by Jones \cite{jones1987}; Wenzl \cite{wenzl1988})
-and corresponds to the fibre functor on the **regular**
-representation of $H_n(R, q)$ — the largest possible.  The
-associated weights are the Wenzl-bridge $y_\lambda(q)$.
-
-**(B) Schur-Weyl form.**  $\tau_{\mathrm{SW}}$ defined by:
-
-$$
-  \tau_{\mathrm{SW}}(p_\lambda) \;=\;
-   \frac{s_\lambda(q, q^{-1}) \cdot d_\lambda}{H_q(\lambda)}
-$$
-
-This Frobenius form is **degenerate**: by the Schur-vanishing
-theorem
-([Schur-Weyl vanishing](#prop:schur-weyl-vanishing)),
-$s_\lambda(q, q^{-1}) = 0$ for $\mathrm{height}(\lambda) > 2$, so
-$\tau_{\mathrm{SW}}$ vanishes on the central idempotents
-$p_\lambda$ for height-$> 2$ partitions.
-
-The kernel
-$\ker \tau_{\mathrm{SW}} = \bigoplus_{\mathrm{height}(\lambda) > 2} M_{d_\lambda}(\mathbb{Q}(q))$
-is a non-trivial two-sided ideal (the height-$> 2$ part of the
-Wedderburn decomposition).  $\tau_{\mathrm{SW}}$ thus factors
-through the quotient $H_n(R, q) \,/\, \ker \tau_{\mathrm{SW}}$,
-which is the **Temperley–Lieb-like / SU(2)-restriction** of
-$H_n(R, q)$.
-
-### Step 4: Wedderburn + Markov-trace formula
-
-Both $\tau_M$ and $\tau_{\mathrm{SW}}$ admit the explicit form
-
-$$
-  \tau(x) \;=\; \sum_\lambda w_\lambda(q) \cdot \chi_\lambda(x)
-$$
-
-with $w_\lambda$ determined by the Frobenius form:
-- $w_\lambda^{(M)} = y_\lambda(q)$ (Wenzl-bridge, supported on all $\lambda$)
-- $w_\lambda^{(\mathrm{SW})} = s_\lambda(q, q^{-1}) / H_q(\lambda)$
-  (vanishes for height $> 2$)
-
-These **agree on the height-$\leq 2$ part of the algebra** up to a
-normalization scalar (the ratio $\tau(1)$), but differ on the
-height-$> 2$ part where $\tau_{\mathrm{SW}}$ is identically zero.
-
-## Selection theorem: which Frobenius form does QOU pick?
-
-**Theorem.**  *The QOU mass identity
-([atom-knot-mass-derivation](#prop:atom-knot-mass-derivation))
-requires a* **non-degenerate** *Frobenius pairing on
-* $H_n(R, q)$.  *Therefore the QOU Markov trace is the
-**Jones-Markov form*** $\tau_M$, *not the Schur-Weyl form
-*$\tau_{\mathrm{SW}}$.
-
-**Proof.**  *The mass identity uses the Frobenius co-Casimir
-trace identity*
+The QOU mass identity uses the **Frobenius co-Casimir** trace identity
+(see [Frobenius co-Casimir universal](#thm:frobenius-codim-universal))
 
 $$
   \tau(C_{\dim_q}) \;=\; \sum_\lambda \frac{1}{\dim_q(\lambda)},
 $$
 
-*where the sum is over **all** Wedderburn blocks
-([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)).
-The construction* $C_{\dim_q} = \sum_\lambda
-[\dim_q(\lambda) \tau(p_\lambda)]^{-1} \cdot p_\lambda$ *is well-
-defined only if* $\tau(p_\lambda) \neq 0$ *for every block — i.e.,
-only if* $\tau$ *is non-degenerate.  The Schur-Weyl form
-* $\tau_{\mathrm{SW}}$ *fails this on height-$> 2$ blocks, so
-* $C_{\dim_q}$ *is not well-defined under* $\tau_{\mathrm{SW}}$.
+where the construction
+$C_{\dim_q} = \sum_\lambda [\dim_q(\lambda) \tau(p_\lambda)]^{-1} \cdot p_\lambda$
+is well-defined **only if** $\tau(p_\lambda) \neq 0$ for every
+Wedderburn block — i.e., only if $\tau$ is non-degenerate.
 
-*The Jones-Markov form* $\tau_M$ *has* $\tau_M(p_\lambda) =
-\dim_q(\lambda) \cdot d_\lambda / [n]_q!$ *(Plancherel-A
-weights), which is non-zero for every $\lambda \vdash n$ at
-generic $q$, hence non-degenerate.  Therefore* $\tau_M$ *is the
-unique trace satisfying the mass identity's requirements.* ∎
+The **Jones–Markov form** $\tau_M$ is defined by:
+- $\tau_M(1) = 1$
+- $\tau_M(x \sigma_{n-1}) = z \cdot \tau_M(x)$ for $x \in H_{n-1}$ (Markov peel)
+- $z = 1/(q^{1/2} + q^{-1/2})$
+
+It is **non-degenerate** on $H_n(R, q)$: $\tau_M(p_\lambda)
+= \dim_q(\lambda) \cdot d_\lambda / [n]_q!$ (Plancherel-A weights),
+non-zero for every $\lambda \vdash n$ at generic $q$ (Jones
+\cite{jones1987} Theorem 6.1; Wenzl \cite{wenzl1988} Lemma 2.4).
+
+The **Markov-trace uniqueness theorem** of Jones / Wenzl then forces
+$\tau_M$ to be the **unique** non-degenerate Frobenius form on the
+Hecke algebra: any other trace satisfying the Markov-peel + cyclic
+axioms and non-degeneracy equals $\tau_M$ block-wise.
+
+> **History (purged 2026-05-29, #1422).** Earlier versions of this
+> proposition selected $\tau_M$ *by contrast* with a degenerate
+> Schur–Weyl candidate $\tau_{\mathrm{SW}}$ (which vanishes for
+> height-$> 2$ partitions, hence violates non-degeneracy).  Per
+> owner decision A' (#1422) the $\tau_{\mathrm{SW}}$ path is fully
+> purged from the framework; the proposition is now a direct
+> uniqueness statement (Wenzl / Jones), independent of any alternative
+> to rule out.  See `docs/uniqueness-theorems-backlog.md` for the
+> broader uniqueness programme.
+
+### Step 4: Wedderburn + Markov-trace formula
+
+$\tau_M$ admits the explicit form
+
+$$
+  \tau_M(x) \;=\; \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(x),
+$$
+
+with $y_\lambda(q)$ the Wenzl-bridge weights, supported on every
+$\lambda \vdash n$.
+
+## Uniqueness theorem
+
+**Theorem (Markov-trace uniqueness on H_n(R, q)).**  *Any
+non-degenerate Frobenius form on the Iwahori–Hecke algebra
+* $H_n(R, q)$ *at generic* $q$ *equals the Jones–Markov form
+* $\tau_M$ *block-wise.  Therefore the QOU mass identity uniquely
+determines* $\tau_M$ *as the canonical Markov trace of the
+framework.*
+
+**Proof sketch.**  Non-degeneracy is required by the Frobenius
+co-Casimir construction (Step 3).  $\tau_M$ is non-degenerate
+(Jones \cite{jones1987} Theorem 6.1; Wenzl \cite{wenzl1988} Lemma
+2.4).  Any other non-degenerate trace on $H_n(R, q)$ satisfying
+the Markov-peel + cyclic axioms equals $\tau_M$ by Wenzl's
+uniqueness corollary to Lemma 2.4 (equivalently Jones' Markov
+trace uniqueness).  Hence $\tau_M$ is the unique such trace. ∎
 
 ## Computational consequence
 
-The script
-[`habiro_coefficients_atomic.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/habiro_coefficients_atomic.py)
-computes
-`tr_M = sum_lambda schur_weyl_weight(lambda) * chi_lambda` — this is
-$\tau_{\mathrm{SW}}$, not $\tau_M$.  It is **mislabeled** as
-"Markov trace" but is actually the Schur-Weyl / SU(2)-projected
-functional.
+The QOU production stack computes $\tau_M$ on the
+**11-crossing canonical proton / neutron braid** via four
+independent paths — Hoefsmit seminormal matrices
+(`atomic_tr_m_mpfr_50dps.py`), `markov_peel`, the $\chi$-cache
+combiner (`canonical_tr_m_via_chi_cache.py`), and the Habiro
+integer-$a_m$ expansion — which agree to $\leq 2 \times 10^{-15}$
+at the proton-pinned $q_0$:
 
-The from-scratch chain
-[`folio-assistant/computations/from_scratch/`](https://github.com/litlfred/qou/tree/claude/continue-pr-442-DJRWm/folio-assistant/computations/from_scratch)
-correctly implements $\tau_M$ via the Markov axioms and
-reproduces the Wenzl-bridge $y_\lambda$ values bit-exactly for D,
-T, ${}^{3}$He.
+| atom | $\tau_M(\beta_{\rm atom}, q_0)$ | error vs 4-way |
+|---|---:|---:|
+| proton | $1.0653061442544499$ | $\leq 2.57\times 10^{-16}$ |
+| neutron | $0.9232332299116371$ | $\leq 2.03\times 10^{-16}$ |
+| deuteron | $0.3882864240747888$ | $\leq 8.16\times 10^{-16}$ |
 
-The  `prop:habiro-residue-sum-equivalence` claims agreement
-between two pipelines (polynomial path and residue path) — this
-agreement is between two computations of the *same* $\tau_{\mathrm{SW}}$
-quantity via different methods, NOT a confirmation of the
-Jones-Markov $\tau_M$ value.
-
-| Pipeline | Trace functional | $\tau(D, q_0)$ |
-|---|---|---:|
-| `habiro_coefficients_atomic.py` (polynomial) | $\tau_{\mathrm{SW}}$ | $0.1774$ |
-| `gb-residue-spectral-sum` (residue) | $\tau_{\mathrm{SW}}$ | $0.1774$ |
-| `light_isotope_sweep.py` (Wenzl, default) | $\tau_M$ | $0.3368$ |
-| from-scratch chain | $\tau_M$ | $0.3368$ |
+> **Pedagogical alternative (deprecated for production).** The
+> `from_scratch/` pipeline computes $\tau_M$ via the Markov axioms on
+> a **different braid choice** (single-component free-proton braid,
+> not the 11-crossing canonical recipe), yielding $\tau_M(p_{\rm free},
+> q_0) \approx 1.7339$ — a legitimate Jones–Markov value on its
+> *own* braid, not a competing convention for the 11-crossing braid
+> above.  The 2026-05-11 escalation framed this as a "$\tau_M$ /
+> $\tau_{\mathrm{SW}}$ conflation" but the audit doc itself records the
+> different-braid framing (line 248-251); decision A' purges
+> $\tau_{\mathrm{SW}}$ and reads the from-scratch as a different
+> braid's $\tau_M$, not a competing form.
 
 ## Status
 
-This proposition is **proved** — a structural theorem about
-representation theory of the Hecke algebra, with no fitting and
-no empirical input.  The selection of $\tau_M$ over $\tau_{\mathrm{SW}}$
-is forced by the Frobenius co-Casimir construction's
-non-degeneracy requirement.
-
-The compute side has TWO parallel implementations.  Once the
-mislabeling in `habiro_coefficients_atomic` is fixed (relabel
-its output as $\tau_{\mathrm{SW}}$ rather than $\mathrm{tr}_M$),
-the asserted agreement between polynomial and residue
-paths becomes correctly stated as "two computations of
-$\tau_{\mathrm{SW}}$".  The QOU mass formula must then be evaluated
-using $\tau_M$ (= the Wenzl-bridge / from-scratch-validated value),
-not $\tau_{\mathrm{SW}}$.
+This proposition is **proved** — a structural theorem about the
+representation theory of the Hecke algebra, with no fitting and no
+empirical input.  Uniqueness of $\tau_M$ as the non-degenerate
+Frobenius form on $H_n(R, q)$ is axiomatised via the
+`MarkovTraceUniqueness` class in the Lean file (citing Jones 1987 /
+Wenzl 1988); downstream Lean results are sorry-free **conditional on
+the class instance** per CLAUDE.md §3b-cond.
