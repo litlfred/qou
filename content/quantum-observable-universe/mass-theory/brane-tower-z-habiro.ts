@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:brane-tower-z-habiro",
+  lean: { ref: "qou:QOU.BraidKnot.BraneTowerZHabiro" },
   title: "Brane tower lives in the $z$-Habiro ring",
   uses: [
     "def:z-habiro-ring",

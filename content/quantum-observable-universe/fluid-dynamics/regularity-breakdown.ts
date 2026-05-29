@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:regularity-breakdown",
+  lean: { ref: "qou:QOU.FluidDynamics.RegularityBreakdown" },
   title: "Regularity breakdown at $q = 1$: the classical limit as a phase transition",
   uses: [
     "thm:q-ns-wellposedness",

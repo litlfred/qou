@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:chirality-ribbon-frobenius",
+  lean: { ref: "qou:QOU.BraidKnot.ChiralityRibbonFrobenius" },
   title:
     "Exact chirality factor from Frobenius ribbon twist: $a_K = \\sum_\\lambda w_\\lambda q^{2w(K)c(\\lambda)}\\chi_\\lambda / \\sum_\\lambda w_\\lambda \\chi_\\lambda$",
   uses: [

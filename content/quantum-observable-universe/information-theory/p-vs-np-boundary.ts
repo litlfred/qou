@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:p-vs-np-boundary",
+  lean: { ref: "qou:QOU.PvsNPBoundary.boundary_dichotomy" },
   title:
     "$\\mathrm{P} \\neq \\mathrm{NP}$ as jet horizon opacity",
   tags: [
