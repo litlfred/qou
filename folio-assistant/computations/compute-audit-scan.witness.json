@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-29T17:55:48.833997+00:00",
-  "commitSha": "def65d6cb6e3fef94fdbc2afc42ecaf65577d0f2",
+  "computedAt": "2026-05-29T20:15:44.139299+00:00",
+  "commitSha": "ee8cef0fb931c08934e655de144b8eed6e26c6ea",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 208,
+  "durationMs": 71,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -19,7 +19,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 740,
+    "files_scanned": 742,
     "patterns": [
       "P15",
       "P16",
