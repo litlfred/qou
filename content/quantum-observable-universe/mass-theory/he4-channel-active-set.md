@@ -90,7 +90,7 @@ load-bearing geometry of the doubly-magic
 magic-shell coupling, while
 $\mathrm{T} \oplus p$ provides the energetic accounting. The
 remark
-[`rem:he4-magic-shell-fingerprint`](#rem:he4-magic-shell-fingerprint)
+`rem:he4-magic-shell-fingerprint`
 makes this connection explicit.
 
 ## Conditional status

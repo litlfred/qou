@@ -1,7 +1,7 @@
 **Proposition (conditional on
 [`prop:hyperbolic-volume-transcendence`](#prop:hyperbolic-volume-transcendence)
 and
-[`rem:baryon-period-ratio`](#rem:baryon-period-ratio)).**
+`rem:baryon-period-ratio`).**
 *The categorical volume form, evaluated on the knot complement
 $S^3 \setminus K$ through the fibre functor $\tau$, yields
 $\mathrm{Vol}(K)$ for hyperbolic knots and $\mathrm{CS}(K)$ for

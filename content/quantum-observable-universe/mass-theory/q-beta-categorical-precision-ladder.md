@@ -14,7 +14,7 @@
 prediction of free-neutron $\beta$-decay Q-value $Q_\beta$ at the
 substrate $q_0$ via a four-rung categorical recursion ending at $-0.0066$
 ppm residual against CODATA (well under the $0.0094$ ppm $N=3$ c(K)
-ceiling from [`conj:archimedean-remainder-exponential-decay`](#conj:archimedean-remainder-exponential-decay)).
+ceiling from `conj:archimedean-remainder-exponential-decay`).
 
 ## The formula
 

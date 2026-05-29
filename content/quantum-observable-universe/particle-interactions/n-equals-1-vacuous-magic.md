@@ -2,7 +2,7 @@
 
 **Proposition (vacuous primality at $n = 1$).**
 *For every substrate $q > 1$, the integer $n = 1$ is algebraically
-prime ([def:algebraic-primality](#def:algebraic-primality)).
+prime (def:algebraic-primality).
 Equivalently, the canonical state $\psi_1(q)$ is not in the closed
 span of any non-trivial tensor product of canonical states indexed
 by a decomposition $1 = n_1 + \cdots + n_k$ with $k \geq 2$ and
@@ -43,7 +43,7 @@ $\square$
   machinery, no tensor-product manipulation.
 
 - This is the **base case of the recursion** in
-  [def:algebraic-primality](#def:algebraic-primality). Every
+  def:algebraic-primality. Every
   primality check at $n \geq 2$ ultimately bottoms out at $n = 1$
   through repeated decomposition.
 

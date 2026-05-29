@@ -8,7 +8,7 @@ representatives.*
 
 This is a **skeleton** (status: work-in-progress) for the open
 gap flagged in
-[`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy)
+`conj:force-carrier-knot-vs-link-dichotomy`
 §Status item 1.
 
 ### Setup
@@ -102,7 +102,7 @@ $$
 
 where $e_X^{(\rm Hoefsmit)}$ is the appropriate Hoefsmit-pattern
 projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
-[`crossing-energy.md`](#prop:crossing-energy).
+[`crossing-energy.md`](#def:crossing-energy).
 
 ### What this skeleton needs
 
@@ -127,7 +127,7 @@ projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
    currently structural (from the four-generator $SU(2)_L \times
    U(1)_Y$ minus one surviving $U(1)_{\rm em}$). Categorical
    derivation requires
-   [`conj:electroweak-mass-eigenstate-count`](#conj:electroweak-mass-eigenstate-count).
+   `conj:electroweak-mass-eigenstate-count`.
 4. **Mass formula** — Step D is currently a categorical
    *interpretation* of a Hoefsmit-projector trace; deriving
    absolute mass values (matching CODATA $m_W = 80.4$ GeV, $m_Z
@@ -155,7 +155,7 @@ If discharged, this conjecture supplies the categorical
 **linking** operation that underlies path-α-Bring's
 matter-knot/force-link distinction, closing the principal open
 gap of
-[`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy).
+`conj:force-carrier-knot-vs-link-dichotomy`.
 Combined with the Hoefsmit cell-content identification at
 $n = 6$, it provides the structural-derivation pathway for the
 EW boson masses ($W, Z, H$) — closing **NV-1** in the audit.

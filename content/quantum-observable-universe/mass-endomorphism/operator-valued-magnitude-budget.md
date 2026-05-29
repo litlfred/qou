@@ -1,6 +1,6 @@
 For the deuteron interface $I \in H_6(q)$, the operator-valued
 branching identity
-[`prop:hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition)
+`prop:hecke-branching-trace-decomposition`
 expands $\chi^\lambda(\beta_1 \cdot I \cdot \beta_2)$ as a sum over
 $(\mu, \nu)$ blocks of traces of $A^\lambda_{\mu,\nu}(I) \in \operatorname{End}(V_\mu \otimes V_\nu)^{\oplus c}$.
 

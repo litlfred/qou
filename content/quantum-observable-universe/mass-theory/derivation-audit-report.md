@@ -85,7 +85,7 @@ existence, but no formula for $n_\star$ has been derived.  For low
 isotopes the truncation depth was chosen by matching empirical binding
 energies (GAP-B overlap); for heavier nuclei no rule is specified.
 
-**Resolution path.**  [conj:brane-level-selection](#conj:brane-level-selection)
+**Resolution path.**  conj:brane-level-selection
 isolates the level-selection sub-problem from the broader Habiro
 convergence conjecture.
 

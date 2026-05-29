@@ -3,7 +3,7 @@
 **Proposition (conditional on
 [`prop:hyperbolic-volume-transcendence`](#prop:hyperbolic-volume-transcendence)
 and
-[`rem:baryon-period-ratio`](#rem:baryon-period-ratio)).**
+`rem:baryon-period-ratio`).**
 *The piecewise geometric invariant
 $\mathrm{Geom}(K)$
 ([topological mass formula](#prop:topological-mass-formula))

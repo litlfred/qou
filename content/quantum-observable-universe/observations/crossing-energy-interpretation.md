@@ -1,4 +1,4 @@
-The [decomposition](#prop:crossing-energy-decomposition) separates
+The [decomposition](#def:crossing-energy-decomposition) separates
 crossing energy into two physically distinct channels.
 
 **Channel identification.**

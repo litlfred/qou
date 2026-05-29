@@ -10,7 +10,7 @@ precision through two complementary convergence mechanisms.
 
 ## Mechanism 1 — per-knot c(K) brane-tower bound
 
-Per [`conj:archimedean-remainder-exponential-decay`](#conj:archimedean-remainder-exponential-decay),
+Per `conj:archimedean-remainder-exponential-decay`,
 the truncation residual at depth $N$ is bounded by
 
 $$

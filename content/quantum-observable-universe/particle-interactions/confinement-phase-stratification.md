@@ -114,7 +114,7 @@ framework that references
 [def:confinement-category](#def:confinement-category),
 [prop:confinement-sdp](#prop:confinement-sdp),
 [prop:level-sufficiency](#prop:level-sufficiency),
-[def:electron-shell](#def:electron-shell),
+def:electron-shell,
 [def:dressed-particle](#def:dressed-particle), or
 [prop:shell-closure-stability](#prop:shell-closure-stability) is
 to be read with the implicit scope "for all

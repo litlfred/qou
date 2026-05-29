@@ -59,7 +59,7 @@ combinatorial finite computation on the Type-B crystal graph.
 
 ### Reduction 2: Term 7's $\chi_5$ via height-6 crystal vertices
 
-[`conj:shell-correction-term-seven`](#conj:shell-correction-term-seven)
+`conj:shell-correction-term-seven`
 defines the level-5 character projector
 
 $$

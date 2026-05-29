@@ -115,7 +115,7 @@ This recovers the empirical BW knot factors:
 For $A \geq 5$ the closed-form product generalises beyond the
 local-knot regime via the Wenzl-LR branching identity on the
 self-conjugate stratum (cf.
-[`hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition));
+`hecke-branching-trace-decomposition`);
 the Markov trace remains the universal categorical quantity.
 
 *Historical note:* an earlier formulation of this

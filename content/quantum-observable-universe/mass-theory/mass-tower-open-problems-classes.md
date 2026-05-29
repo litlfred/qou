@@ -17,7 +17,7 @@ a class instance.
 
 **Open problem.** The unified six-term mass formula under-predicts
 isotope masses for $A \geq 5$ by $\sim 10\%$. Term 7
-([`conj:shell-correction-term-seven`](#conj:shell-correction-term-seven))
+(`conj:shell-correction-term-seven`)
 adds a shell correction with coefficient $\alpha_5$ currently fit to
 the AME panel, not derived. The class
 `Term7ShellCorrectionClass` asserts the existence of a structural

@@ -7,7 +7,7 @@ $\mathcal{O}_{\mathrm{macro}}(\Phi) = n^{-1} \sum_{i=1}^n
 \mathrm{tr}_M(\sigma_{j_i}(\Phi))$ over the unresolved ticks within
 her observation window (typically $n \sim 10^{20}$ per nanosecond).
 By the q-CLT
-([conj:q-clt-non-commutative](#conj:q-clt-non-commutative)),
+(conj:q-clt-non-commutative),
 the rescaled centred sum converges in joint moments to the q-Gaussian
 $G_{q_0}(t, x)$ peaked at $\mathrm{tr}_M(\Phi)$ with width
 $\sqrt{\kappa_2^{(q)}/n}$. The observer therefore registers a

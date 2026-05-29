@@ -87,7 +87,7 @@ $$
 $$
 
 *with $\Lambda_k$ the depth-$k$ stratum
-([enumeration](#rem:mass-formula-wedderburn-enumeration)).  The
+(enumeration).  The
 representatives $r_k$ at $H_3(R, q)$ are explicitly identified in
 ([H_3 explicit](#prop:spectral-sequence-h3-explicit)); analogues
 for $H_n(R, q)$ at $n \geq 4$ follow the same pattern (depth-$k$

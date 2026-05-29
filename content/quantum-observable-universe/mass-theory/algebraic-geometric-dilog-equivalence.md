@@ -57,7 +57,7 @@ $$
 
    *recovering the JSJ piecewise sum used in the canonical binding-
    energy pipeline (cf.
-   [Φ$_q$-tower JSJ bridge](#conj:phi-q-tower-jsj-bridge)).*
+   [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge)).*
 
 ## Why this is the structural form of Kashaev
 
@@ -94,7 +94,7 @@ A Lean instance of the equivalence is provided as a typeclass
 `[ArchimedeanLimit]` instance and a `[Kashaev.VolumeConjecture]`
 instance; downstream theorems then verify formally, modulo those two
 class instances. This matches the conjectural-class pattern used for
-[Φ$_q$-tower JSJ bridge](#conj:phi-q-tower-jsj-bridge).
+[Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge).
 
 ## Witness
 

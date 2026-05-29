@@ -21,7 +21,7 @@ caveats:
 
 - [`prop:bohr-radius-categorical`](#prop:bohr-radius-categorical)
  — categorical Bohr radius transported from QED virial-balance.
-- [`prop:archimedean-hartree-derivation`](#prop:archimedean-hartree-derivation)
+- `prop:archimedean-hartree-derivation`
  — archimedean energy unit per $\Phi_1$ asserted as
  $m_e c^{2}\,\alpha_{EM}^{2}$ by chaining through the Bohr-radius
  transport.
@@ -661,7 +661,7 @@ Hecke-algebra operations, they generate molecular/atomic braids
 whose closures *do* have hyperbolic JSJ pieces.
 
 **The Φ_q tower / JSJ archimedean bridge**
-([`conj:phi-q-tower-jsj-bridge`](#conj:phi-q-tower-jsj-bridge),
+([`conj:phi-q-tower-jsj-bridge`](#rem:phi-q-tower-jsj-bridge),
 unconditional algebraic side
 [`prop:phi-q-tower-algebraic-stratification`](#prop:phi-q-tower-algebraic-stratification))
 states:
@@ -715,7 +715,7 @@ two-question framework from round 15 becomes:
  transported through the JSJ bridge.
 
 The Φ_q–JSJ bridge is itself **conjectural**
-([`conj:phi-q-tower-jsj-bridge`](#conj:phi-q-tower-jsj-bridge)),
+([`conj:phi-q-tower-jsj-bridge`](#rem:phi-q-tower-jsj-bridge)),
 This closure path is conditional on that conjecture also
 closing.
 

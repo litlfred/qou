@@ -469,7 +469,7 @@ categorical analog of the Hecke antipode $\iota(\sigma_i) =
 \sigma_i^{-1}$ — well-known in $H_n(q)$.
 
 **Connection to $\bowtie_K$.** Per
-[`def:ew-interface-knot`](#def:ew-interface-knot), the Higgs-vev
+`def:ew-interface-knot`, the Higgs-vev
 coupling introduces an interface knot $\bowtie_K \in H_6(q)$ that
 breaks term-by-term bar-self-duality. Under bar-functoriality:
 $\iota(\bowtie_K) = \bowtie_K^{-1}$, so the interface contribution
@@ -517,7 +517,7 @@ If discharged, this conjecture supplies the categorical
 
 - [`prop:categorical-higgs-mechanism`](#prop:categorical-higgs-mechanism)
   Step C (Higgs mechanism as $\mathrm{Lk}_R^{(1)}$);
-- [`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy)
+- `conj:force-carrier-knot-vs-link-dichotomy`
   Step 6 (broken-symmetry mediators are 2-component links);
 - the Weinberg angle categorical block
   ([`prop:weinberg-angle-categorical`](#prop:weinberg-angle-categorical))

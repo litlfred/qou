@@ -3,7 +3,7 @@
 For any $n \geq 2$ and any typed braid $\beta \in B_n$ encoded as a
 sequence of crossings of three types
 $\{\sigma_i,\, \sigma_i^{-1},\, \sigma_i - h/2\cdot\mathbf{1}\}$
-(the [`operator-valued interface`](#prop:hecke-branching-trace-decomposition)
+(the `operator-valued interface`
 with $h = q - q^{-1}$), the $q$-character on each 1-dimensional
 irreducible representation of $H_n(q)$ is given by the **universal
 closed form**
@@ -41,7 +41,7 @@ which by the Iwahori-Hecke relation
 $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ must satisfy
 $\lambda_\sigma \in \{+q,\, -q^{-1}\}$.  The two choices give the
 trivial and sign 1-d irreps respectively (per
-[`prop:hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition)).
+`prop:hecke-branching-trace-decomposition`).
 
 For a typed braid $\beta = c_1 c_2 \cdots c_L$ with crossings
 $c_\ell \in \{\sigma_i,\, \sigma_i^{-1},\, \sigma_i - h/2\}$, the
@@ -115,7 +115,7 @@ where the **1-d backbone**
 ($y_{(n)} \chi^{(n)} + y_{(1^n)} \chi^{(1^n)}$) is fully closed-form
 substrate-derivable for any $n$ via the formulas above, and the
 $\dim \geq 2$ middle terms require the Hoefsmit seminormal matrix
-characters (per [`prop:hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition))
+characters (per `prop:hecke-branching-trace-decomposition`)
 plus, for $\dim = 2$ irreps, the cos-resummation from
 [`prop:q-beta-cos-resummation`](#prop:q-beta-cos-resummation).
 

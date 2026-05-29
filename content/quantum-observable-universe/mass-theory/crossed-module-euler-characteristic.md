@@ -1,5 +1,5 @@
 **Proposition (conditional on
-[`prop:quaternion-from-hecke-eigenspaces`](#prop:quaternion-from-hecke-eigenspaces)).**
+`prop:quaternion-from-hecke-eigenspaces`).**
 *Let $\beta_{\mathrm{Bor}} = (\sigma_1 \sigma_2^{-1})^3$ be the
 canonical Borromean braid on $B_3$, and let
 $\Phi_0 \colon Q_8 \to H_3(q)$ be the crossed module feedback map

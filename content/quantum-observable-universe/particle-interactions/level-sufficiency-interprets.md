@@ -37,7 +37,7 @@ channel, spectroscopy) should:*
 - ***Magic shell closure.***  *Atoms at $A \in \{2, 8, 20, 28, 50,
   82, 126\}$ and noble-gas electron counts $Z \in \{2, 10, 18, 36,
   54, 86\}$ exhibit binding multiplicity $\mu(S, q) \ge 2$
-  ([electron shell](#def:electron-shell)), forcing
+  (electron shell), forcing
   $k_{\max}$ above the coarse count.  Atoms in these rows must be
   computed one level deeper.*
 - ***SDP cross-channel demand.***  *When the active dual support
@@ -90,5 +90,5 @@ transition ($\ell = 2 \to \ell = 1$).
 uniformly across the full hierarchy — quark to molecule — and for
 any knot-operator content, including the multi-operator
 $\mu(S, q) \ge 2$ regime introduced by
-[electron shells](#def:electron-shell) and
+electron shells and
 [dressing](#def:dressed-particle).*

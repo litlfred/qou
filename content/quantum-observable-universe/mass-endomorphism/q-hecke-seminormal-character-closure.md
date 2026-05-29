@@ -25,7 +25,7 @@ $\mathrm{tr}_M(\mathcal{B}_K)$ ([`prop:markov-trace-recursive-reducer`](#prop:ma
 
 The partition-sum form is the standard rewriting of the Markov
 trace via the Wedderburn–Artin decomposition $H_n(q) \cong \bigoplus_\lambda M_{f^\lambda}(\mathbb{C})$.
-[`prop:hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition)
+`prop:hecke-branching-trace-decomposition`
 relies on this decomposition; downstream consumers (binding-energy
 analysis via $\rho_K$ refinement, force-carrier saturation
 identities) need a partition-by-partition decomposition of $\mathrm{tr}_M$
@@ -50,7 +50,7 @@ Both are now fixed:
 
 - The weight is `y_\lambda(q)` via Wenzl Schur principal
   specialization. Audit + module:
-  [`prop:hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition).
+  `prop:hecke-branching-trace-decomposition`.
 - The character is `\chi^\lambda_q(\mathcal{B}_K) = \mathrm{tr}\,\rho_\lambda^q(\mathcal{B}_K)`
   via Hoefsmit seminormal matrices at $q_0$. Audit:
   [`docs/audits/-q-hecke-character-gap-closure.md`](../../../docs/audits/-q-hecke-character-gap-closure.md).

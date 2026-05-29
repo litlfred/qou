@@ -7,7 +7,7 @@ $$
 $$
 *where $\mathcal{B}_K^{\mathrm{vac}} = \mathcal{B}_p^{(1)} \cdots \mathcal{B}_n^{(N)}$
 is the disjoint Hecke product on disjoint 3-strand blocks (constituent
-vacuum, [`def:ew-interface-knot`](#def:ew-interface-knot)) and
+vacuum, `def:ew-interface-knot`) and
 $\bowtie_K$ is the interface knot — a product of single-generator
 crossings at the strand-block boundaries
 $g \in \{3, 6, \ldots, 3(Z+N-1)\}$, each one either $\sigma_g$
@@ -104,7 +104,7 @@ $$
   \quad\text{at }q_0.
 $$
 This is the content of
-[`conj:constit-factor-2q-minus-1`](#conj:constit-factor-2q-minus-1)
+`conj:constit-factor-2q-minus-1`
 (Phase 5g, $0.033\%$ rel. err.).  Combining $(\star)$ with the
 constit-side conjecture yields the **full per-Z $\tau_M$ step**
 $$
@@ -132,7 +132,7 @@ $$
 
 5. **Phase 5b $\cosh(h)$ correction lives ELSEWHERE.** The per-Z step
    factor $\alpha \approx [3]_q^2 \cdot \cosh(h)$ identified in
-   [`conj:alpha-cosh-h-z-step-correction`](#conj:alpha-cosh-h-z-step-correction)
+   `conj:alpha-cosh-h-z-step-correction`
    is at the **single-block $|\Delta_\lambda^*|$ extraction level**,
    not the full $\tau_M$ ratio. The $\tau_M$-level identity is
    *exact* ($\star$); the single-block-level correction is *empirical*
@@ -142,5 +142,5 @@ $$
 
 - Script: [`folio-assistant/computations/delta_lambda_fr_identity_phase5c.py`](../../../folio-assistant/computations/delta_lambda_fr_identity_phase5c.py)
 - Witness: `folio-assistant/computations/delta-lambda-fr-identity-phase5c.witness.json` (2 assertions; **Markov-axiom interface identity passes to $10^{-15}$ rel. err.**)
-- Cross-reference: [`def:ew-interface-knot`](#def:ew-interface-knot) (the canonical interface-knot definition).
+- Cross-reference: `def:ew-interface-knot` (the canonical interface-knot definition).
 - Cross-reference: Phase 5c.1 audit doc covers the empirical extraction; this proposition is the categorical resolution.

@@ -54,5 +54,5 @@ $m_\mu / m_e \approx 206.8$ and $m_\tau / m_e \approx 3477$;
 the net coefficients parameterise the topological complexity
 of the torus knot, while physical mass requires the full
 Seiberg–Witten integral
-([lepton mass integrals](#rem:lepton-mass-integrals)) over
+(lepton mass integrals) over
 the jet bundle prolongation.

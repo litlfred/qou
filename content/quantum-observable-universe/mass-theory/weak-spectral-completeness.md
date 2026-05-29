@@ -3,7 +3,7 @@ $n=6$ form).**
 *Over the categorical ring $R$ with $q$ generic (not a root of
 unity in $R$ — note $q = 1$ IS excluded), the EW/Higgs
 force-carrier sector $\{T(2,4), T(2,6), T(2,8)\}$
-([electroweak/Higgs torus-link triplet](#conj:electroweak-higgs-torus-link-triplet))
+(electroweak/Higgs torus-link triplet)
 admits a **categorically complete idempotent decomposition** in
 $\mathrm{End}_R(V^{\otimes 6})$ via the disjoint-strand-pair
 Hoefsmit assignment*
@@ -44,7 +44,7 @@ $H_2(q) \cong R \oplus R$ with two 1-dimensional blocks (sym and
 alt), summing to a 2-dimensional algebra over $R$. Each torus
 link $T(2, 2k) = \sigma_1^{2k}$ acts on these two blocks with
 eigenvalues $(q^{2k}, q^{-2k}) \in R^\times \times R^\times$
-([prop:even-twist-torus-link-psd-feasibility](#conj:electroweak-higgs-torus-link-triplet)).
+(prop:even-twist-torus-link-psd-feasibility).
 
 Define the **per-link block projectors**:
 - $e_W^{+} := $ sym block of $T(2, 4)$, $e_W^{-} := $ alt block
@@ -122,7 +122,7 @@ $\iota \colon q \mapsto q^{-1}$ — the substrate-level
 [bar T-duality](#prop:bar-t-duality-substrate) at the trace level.
 The duality is automatic from the disjoint-strand-pair
 construction: each $\sigma_i^{2k}$ is bar-self-dual on its own
-([`prop:even-twist-torus-link-psd-feasibility`](#prop:even-twist-torus-link-psd-feasibility)),
+(`prop:even-twist-torus-link-psd-feasibility`),
 and disjoint products preserve the duality.
 
 The Plancherel-weighted form
@@ -168,14 +168,14 @@ prioritization plan.
 
 **To promote to `proposition`:**
 1. Discharge U2
-   ([conj:force-carrier-knot-vs-link-dichotomy](#conj:force-carrier-knot-vs-link-dichotomy))
+   (conj:force-carrier-knot-vs-link-dichotomy)
    — categorical knot-vs-link distinction in $\mathbf{Rep}$.
    Note: this is now purely categorical, since the host-surface
    distinctness assumption has been **dropped** (all carriers
    live on Bring per
    [prop:torus-embeddable-complete](#prop:torus-embeddable-complete)).
 2. Discharge U4
-   ([conj:electroweak-mass-eigenstate-count](#conj:electroweak-mass-eigenstate-count))
+   (conj:electroweak-mass-eigenstate-count)
    — categorical broken-Wedderburn split.
 3. Author `prop:weak-symmetric-normalization` —
    $\mathcal{N}_{\rm sym}(q) \in R$ as the symmetric-channel

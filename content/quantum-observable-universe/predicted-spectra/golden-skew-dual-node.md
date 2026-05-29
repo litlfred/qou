@@ -69,7 +69,7 @@ generator decouples from the antisymmetric channel.
 **Connection to the Möbius fixed points.**
 The fixed points $\{1/\varphi, -\varphi\}$ of the baryon
 integration-limit Möbius map $f(q) = (4 - q)/(4q + 3)$
-([Möbius golden fixed points](#prop:mobius-golden-fixed-points))
+(Möbius golden fixed points)
 extend under bar conjugation to the full quartet
 $\{1/\varphi, -\varphi, \varphi, -1/\varphi\}$.  The two roots
 on the positive axis, $\{1/\varphi, \varphi\}$, are exactly the

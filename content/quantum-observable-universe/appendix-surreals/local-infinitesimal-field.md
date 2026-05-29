@@ -86,8 +86,8 @@ birthday-ordered magnitude distribution.
 
 ## Relation to existing conjectures
 
-This conjecture refines [Hahn-series
-substrate](#conj:hahn-substrate): instead of $q$ being a single
+This conjecture refines Hahn-series
+substrate: instead of $q$ being a single
 Hahn series, it is a *sheaf* of Hahn series. The base $\mathbb{R}$-
 shadow agrees with the paper in both cases.
 

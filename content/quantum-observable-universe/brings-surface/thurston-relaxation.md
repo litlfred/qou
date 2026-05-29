@@ -38,10 +38,10 @@ in the manuscript:
 * **Steepest descent.** On the Archimedean side, the residue sum
   becomes the Picard--Lefschetz thimble decomposition of the
   Seiberg--Witten action $S(z)$
-  ([thimble](#rem:picard-lefschetz-thimble)); the Gröbner--Shirshov
+  (thimble); the Gröbner--Shirshov
   reduction depth maps to the number of ideal tetrahedra used in
   the triangulation
-  ([GB--PL bijection](#conj:gb-reduction-pl-thimble-bijection)).
+  (GB--PL bijection).
   The SDP's complementary-slackness rank equals the number of
   thimble flows realising the optimum.
 

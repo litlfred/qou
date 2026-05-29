@@ -21,7 +21,7 @@ $$
 - *$\rho_K^{\mathrm{LO}}(Z, N) = (Z\cdot m_p + N\cdot m_n) /
   (m_e\cdot|\mathrm{tr}_M(\mathcal{B}_K)|)$ is the **constituent-mass leading-
   order ansatz** verified to $\le$ 0.1 % residual on $\{D, T, {}^3\mathrm{He}\}$
-  ([rho-k-leading-order verification](#prop:rho-k-scaling-structure));*
+  (rho-k-leading-order verification);*
 - *$y_\lambda(q)$ is the **Wenzl-bridge central coefficient** of
   the partition $\lambda \vdash 3A$
   ([Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge));*
@@ -34,7 +34,7 @@ $$
 
 **Statement of the refinement.**
 *The mass formula in the $\rho_K$ assembly
-([§T6 unit-convention resolution](#prop:t6-mittag-leffler-decomposition))*
+(§T6 unit-convention resolution)*
 
 $$
   M(K) \;=\; \rho_K(q) \cdot m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)|
@@ -51,10 +51,10 @@ binding-energy contribution lives entirely in the $\Delta_\lambda$
 profile.*
 
 **Status.**
-*This proposition refines [`prop:rho-k-scaling-structure`](#prop:rho-k-scaling-structure)
+*This proposition refines `prop:rho-k-scaling-structure`
 ([2026-04 witness `rho-k-scaling-structure.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho-k-scaling-structure.witness.json))
 and complements
-[`prop:six-term-mass-formula-complete`](#prop:six-term-mass-formula-complete)
+`prop:six-term-mass-formula-complete`
 by giving the **exact** $\rho_K$ closed form rather than the
 narrative six-term decomposition.  Compute is stubbed in
 [`folio-assistant/computations/rho_k_h3a_refinement.py`](folio-assistant/computations/rho_k_h3a_refinement.py);
@@ -168,7 +168,7 @@ $$
 *The narrative six-term decomposition (T1+T2+T3+T4+T5+T6) is a
 **partial-fraction split** of $\rho_K \cdot m_e \cdot |\mathrm{tr}_M|$
 along principal-part boundaries (Mittag-Leffler complementarity, see
-[T6 mittag-leffler decomposition](#prop:t6-mittag-leffler-decomposition));
+T6 mittag-leffler decomposition);
 the Wedderburn-Schur decomposition above is a **partition-indexed
 split** along irreducible blocks.  Both are exact; they correspond
 to different choices of basis for the same $|\mathrm{tr}_M|$.  The

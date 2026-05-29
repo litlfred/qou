@@ -3,7 +3,7 @@
 The companion witness
 [`alpha-5-jucys-murphy-central.witness.json`](folio-assistant/computations/alpha-5-jucys-murphy-central.witness.json)
  tests the simplest closed form proposed in
-[`prop:mass-formula-iterative-lp-dual`](#prop:mass-formula-iterative-lp-dual)
+`prop:mass-formula-iterative-lp-dual`
 at the height-6 level ($\ell = 5$):
 
 $$
@@ -23,7 +23,7 @@ See [Table 1](#tbl:alpha-5-jm-central-empirical-findings-table1-data).
 
 **Conclusion.** The naive form is **not atom-independent**.
 This refutes the strongest version of Step 5 in
-[`prop:mass-formula-iterative-lp-dual`](#prop:mass-formula-iterative-lp-dual):
+`prop:mass-formula-iterative-lp-dual`:
 the JM-central elementary symmetric polynomial alone does not
 reproduce the AME-fitted $\alpha_5 \approx -4.2 \times 10^5$ MeV.
 

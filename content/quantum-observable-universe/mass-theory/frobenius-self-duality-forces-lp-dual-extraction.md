@@ -113,7 +113,7 @@ $$
 
 where $u^{(\ell)*}$ is the optimal LP-dual at filtration level
 $\ell$ (see
-[mass-formula-iterative-lp-dual](#prop:mass-formula-iterative-lp-dual)).
+mass-formula-iterative-lp-dual).
 
 **Remark (categorical content).** The Frobenius self-duality
 holds at the categorical level: the rigid monoidal category

@@ -1,6 +1,6 @@
 The crystal-limit shell-correction sum
 $S_{\mathrm{crystal}}(A)$ defined in
-[shell-correction Term 7](#conj:shell-correction-term-seven)
+shell-correction Term 7
 is invariant under generator inversion of the *plain* Hecke
 crossings in an atomic braid word.
 
@@ -156,7 +156,7 @@ in the *canonical* $\bowtie_K$-coupled convention also satisfies
 $y_0^*(T) = y_0^*({}^3\mathrm{He})$ exactly, in both 2-row and
 height-$6$ strata, at every probed
 $q \in \{1.001, 1.050, 1.110\}$ (witness:
-[LP-dual isospin invariance](#rem:lp-dual-isospin-invariance)).
+LP-dual isospin invariance).
 That proposition derives the equality from a **deeper structural
 mechanism** — the Hopf antipode
 $S \colon V_\lambda \leftrightarrow V_{\lambda^T}$ exchanging

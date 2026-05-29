@@ -14,7 +14,7 @@ Plancherel-normalization framing).**
 > not use it for $N_v$ derivation.
 >
 > **Upstream parallel.** The upstream block
-> [`conj:n-sym-symmetric-channel-normalization`](#conj:n-sym-symmetric-channel-normalization)
+> `conj:n-sym-symmetric-channel-normalization`
 > (already on main) carries the Plancherel-weighted N_sym
 > framing with N_sym(q_0) = 213.11 numerically pinned from
 > CODATA G_F. That back-solve is a CAL-3 violation (N_v
@@ -66,7 +66,7 @@ $$
   e_- \;=\; \frac{q - \sigma_0}{q + q^{-1}}.
 $$
 
-Per [`prop:even-twist-torus-link-psd-feasibility`](#prop:even-twist-torus-link-psd-feasibility),
+Per `prop:even-twist-torus-link-psd-feasibility`,
 $\sigma_0^{2k}$ acts as $q^{2k}$ on $e_+ H_2(q) e_+$ and as
 $q^{-2k}$ on $e_- H_2(q) e_-$. The Frobenius trace satisfies
 
@@ -91,7 +91,7 @@ $$
 (One can equally express this as $q^6 \cdot [3]_{q^2} / 3$ where
 $[3]_{q^2} = 1 + q^2 + q^4$ is the $q^2$-integer.) This is a
 **closed-form $R$-element** with no free parameters once
-[`conj:electroweak-higgs-torus-link-triplet`](#conj:electroweak-higgs-torus-link-triplet)
+`conj:electroweak-higgs-torus-link-triplet`
 fixes $k \in \{2, 3, 4\}$.
 
 ### Numerical evaluation (for cross-checks)

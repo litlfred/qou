@@ -108,7 +108,7 @@ by the imaginary $\sigma$-rotations.
 **The Möbius matrices have natural lifts to $\mathrm{GL}_2(\mathbb{Z}[i])$.**
 
 The baryon integration-limit Möbius matrix
-([Möbius golden fixed points](#prop:mobius-golden-fixed-points))
+(Möbius golden fixed points)
 
 $$
   M  =  \begin{pmatrix} -1 & 4 \\ 4 & 3 \end{pmatrix} \in \mathrm{GL}_2(\mathbb{Z})

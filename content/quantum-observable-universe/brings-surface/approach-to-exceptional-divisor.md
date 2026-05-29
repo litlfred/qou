@@ -22,7 +22,7 @@ Concretely, the encounter has three moments:
 
 2. **Crossing onto the fibre.**  At the threshold where
    $\partial F / \partial \mathbf{c} = 0$ on the colour-tube
-   cubic ([Picard--Lefschetz thimble](#rem:picard-lefschetz-thimble)
+   cubic (Picard--Lefschetz thimble
    §setup), the base coordinate $z$ hits a discriminant zero,
    the smooth base structure pinches, and the operative
    morphisms are now those of $\mathcal{S}_p$ — the
@@ -43,6 +43,6 @@ happens next: the merged complement admits a hyperbolic
 structure ([Thurston relaxation](#sec:thurston-relaxation)), the
 SDP/LP machinery of [Chapter 12](#chap:particle-interactions)
 selects the lowest-energy link representative
-([SDP as thimble flow](#rem:sdp-as-thimble-flow)), and Mostow
-rigidity ([geometric confinement](#prop:mostow-confinement))
+(SDP as thimble flow), and Mostow
+rigidity (geometric confinement)
 makes the resulting topology --- and hence the mass --- discrete.

@@ -4,7 +4,7 @@
 \mathcal{B}_n^{(N)} \in H_{3A}(q)$ be the disjoint Hecke product of $Z$
 proton braids and $N$ neutron braids on disjoint 3-strand blocks
 (the constituent-vacuum baseline of
-[`def:ew-interface-knot`](#def:ew-interface-knot)). For each partition
+`def:ew-interface-knot`). For each partition
 $\lambda \vdash 3A$, the Hecke character factorises via iterated
 Littlewood–Richardson:*
 
@@ -86,7 +86,7 @@ performing H_{3A}-character sums at high A:
  ..
 
 The CONVOLUTION structure $\mathcal{B}_K = T_{\text{constit}}^K *_q \bowtie_K$
-([`def:ew-interface-knot`](#def:ew-interface-knot)) is preserved
+(`def:ew-interface-knot`) is preserved
 throughout — this is **NOT** a tensor-product reduction; the LR
 coefficients encode the Wedderburn-character branching from the
 disjoint-Hecke-product structure inside the single H_{3A} algebra.

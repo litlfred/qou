@@ -44,7 +44,7 @@ to higher-rank symmetry components absent from the $\mathrm{SU}(2)$
 spin-pairing observable. The two-row sector is where the
 $q$-deformed spin observables — including the
 magic-shell coupling of
-[`conj:magic-shell-stabilization`](#conj:magic-shell-stabilization)
+`conj:magic-shell-stabilization`
 — live.
 
 ## Indexing the stratum

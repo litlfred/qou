@@ -43,7 +43,7 @@ the Hecke algebra under the Markov trace is a non-commutative
 $(W^*, \mathrm{tr})$ probability space in the sense of Voiculescu,
 and every theorem about such spaces applies directly to QOU. The
 q-CLT below
-([q-CLT for Hecke transfer matrices](#conj:q-clt-non-commutative))
+(q-CLT for Hecke transfer matrices)
 makes this explicit by stating the central limit theorem in the
 QOU setting.
 

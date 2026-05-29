@@ -74,5 +74,5 @@ group $\mathfrak{B}(q)$, and the family $\{K_S\}_S$ is the geometric
 stratification along which the regulator $\mathfrak{B}(q) \to \mathbb{R}$
 decomposes. Recasting the Φ$_q$-piece as a quantum-dilog class fixes
 its motivic type and makes the bridge to hyperbolic volume
-([Φ$_q$–JSJ bridge](#conj:phi-q-tower-jsj-bridge)) a regulator
+([Φ$_q$–JSJ bridge](#rem:phi-q-tower-jsj-bridge)) a regulator
 statement rather than a coincidence of two evaluation schemes.

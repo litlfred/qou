@@ -122,7 +122,7 @@ empirically supporting the $O(1)$ claim.
 
 This conjecture is the **shared-denominator** statement that the
 existing
-([Φ$_q$-tower JSJ bridge](#conj:phi-q-tower-jsj-bridge)) already
+([Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge)) already
 asserts implicitly: the JSJ piecewise sum
 $\sum_S \mathrm{Vol}(K_S)$ is computed from the algebraic
 $\sum_S \Phi_q(\lvert V_S\rvert)$ at exactly the cusps prescribed by

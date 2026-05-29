@@ -17,7 +17,7 @@ equality $\mathfrak{m}_{\mathrm{Markov}}(T) =
  $Z \leftrightarrow N$ on the per-atom canonical braid recipe.
 
 The empirical witness recorded in
-[LP-dual isospin invariance](#rem:lp-dual-isospin-invariance)
+LP-dual isospin invariance
 shows exact equality of the LP-dual binding-energy shadow price
 $y_0^*(T) = y_0^*({}^3\mathrm{He})$ in both 2-row and height-$6$
 strata across $q \in \{1.001, 1.050, 1.110\}$.
