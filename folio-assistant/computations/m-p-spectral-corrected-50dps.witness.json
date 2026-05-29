@@ -1,9 +1,17 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T14:17:37.167938+00:00",
-  "commitSha": "efa00606f66532e51840d5ee312fd3d02dd9996f",
+  "computedAt": "2026-05-29T14:31:34.348657+00:00",
+  "commitSha": "71bee0aa4f09d880f3d92ac46d4d055337b83d66",
   "assertions": [
+    {
+      "name": "borromean_char_derived_from_hoefsmit",
+      "computed": 2.3738919364399497e-66,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "tr_{(2,1)}[(sigma_1^-1 sigma_2)^3] = 2 - 3h^4 - h^6"
+    },
     {
       "name": "spectral_correction_closes_gap_to_sub_200ppm",
       "computed": 130.35345539928875,
@@ -15,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 13,
   "computation": "m-p-spectral-corrected-50dps",
   "scriptFile": "m_p_spectral_corrected_50dps.py",
-  "scriptHash": "f2f63b81ace0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "add1384a2274",
+  "scriptCommitSha": "71bee0aa4f09d880f3d92ac46d4d055337b83d66",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -28,11 +36,17 @@
   },
   "data": {
     "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "borromean_character": {
+      "chi_from_hoefsmit_matrices": "1.99418581038121327702097647899469350404",
+      "chi_laurent_2_minus_3h4_minus_h6": "1.99418581038121327702097647899469350404",
+      "residual": "2.37389e-66",
+      "derivation": "chi^(2,1)(B_3) = tr_{(2,1)}[(sigma_1^-1 sigma_2)^3] from Hoefsmit matrices = 2-3h^4-h^6 (sympy-exact)"
+    },
     "pieces": {
       "vol_b3_8catalan": "7.327724753417752120436828119459072886193",
       "geom_scale_vol_over_hbar2": "746.4178510331171854382661548419685988013",
       "lw_A_5_2_plus_3h2_4": "2.5327796636728840583187099162059686933",
-      "chi_21_borromean_exact": "1.99418581038121327702097647899469350404",
+      "chi_21_borromean_derived": "1.99418581038121327702097647899469350404",
       "spectral_corr_arccos": "0.9711196580949121247364689479811259633092"
     },
     "m_p_over_m_e": {
