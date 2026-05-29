@@ -40,10 +40,28 @@ MASS_RATIO_MU_E      = 206.7682830         # CODATA 2022 — now a PREDICTION (c
 MASS_RATIO_MU_E_ERR  = 0.0000046
 
 # ── Derived substrate parameter (m_p-pinned) ─────────────────────
-# f64 value cast from the 50-digit Newton solve (Q_50_DIGIT_STR below);
-# the genuine arbitrary-precision derivation is q_at() (mpmath findroot
-# on the proton substrate identity). m_μ-anchor cross-check: q_muon_at().
-Q         = 1.10997858275138080759166909561076887987    # = float(Q_50_DIGIT_STR)
+# q is DERIVED (never hardcoded): f64 Newton solve of the proton
+# substrate identity below; the arbitrary-precision derivation is
+# q_at() (mpmath findroot). m_μ-anchor cross-check: q_muon_at().
+def _solve_q_proton_f64(mp_me, vol, iters=80):
+    """f64 Newton solve of  m_p/m_e = 2·(vol/ℏ_q²)·F_Bor(q) − 12
+    for q, with |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4). Self-contained
+    (closed-form tr_M ⇒ no Hecke machinery)."""
+    def _mp_of_q(q):
+        h = q - 1.0 / q
+        hbar2 = (1.0 - 1.0 / q) ** 2
+        trM = abs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
+        qf3 = (q**2 + 1 + q**-2) * (q + 1.0 / q)
+        return 2 * vol / hbar2 * (trM * qf3 / q**3) - 12
+    q = 1.11
+    for _ in range(iters):
+        f = _mp_of_q(q) - mp_me
+        dq = q * 1e-10
+        fp = (_mp_of_q(q + dq) - _mp_of_q(q - dq)) / (2 * dq)
+        q -= f / fp
+    return q
+
+Q         = _solve_q_proton_f64(MASS_RATIO_P_E, VOL_FIGURE_EIGHT)
 HBAR_Q    = 1.0 - 1.0 / Q
 HBAR_Q_SQ = HBAR_Q * HBAR_Q
 
@@ -98,19 +116,12 @@ Q_RAT_NUM = 11099786
 Q_RAT_DEN = 10000000
 
 # ── Centralized high-precision string for q_0 (for mpmath callers) ─
-# Canonical 50-digit pin, imported by witness scripts needing
-# arbitrary-precision q₀ (avoids hardcoding the literal in many places).
-#
-# 2026-05-28: RE-PINNED from m_p/m_e (the most precise anchor, 0.06 ppb)
-# via the proton substrate identity — the Newton solve in q_at(). m_μ/m_e
-# is now a prediction (9.5σ). Previous muon-anchor value was
-# 1.10997859555418057528… ; the new value differs by −11.5 ppb. q_at()
-# reproduces this string to its full precision; q_muon_at() gives the old
-# muon value for cross-check. See docs/audits/2026-05-28-mu-p-tension-
-# substrate-floor.md and observations/substrate-anchor-alternatives.md.
-Q_50_DIGIT_STR = (
-    "1.10997858275138080759166909561076887987449912187358"
-)
+# Q_50_DIGIT_STR is DERIVED (q_str(50)) in the mpmath block below — it is
+# NOT a hardcoded literal, so it can never drift from the canonical
+# q_at() solve. Re-pinned 2026-05-28 from m_p/m_e via the proton
+# substrate identity (m_μ/m_e is now a 9.5σ prediction; old muon value
+# was 1.10997859555418…, −11.5 ppb away). See q_at()/q_muon_at() and
+# docs/audits/2026-05-28-mu-p-tension-substrate-floor.md.
 
 # ── High-precision (mpmath) parallel API ─────────────────────────
 # The f64 globals above are bit-identical to what every existing
@@ -224,6 +235,10 @@ try:
         TANH_LN_Q_MP = HA_MP / TWO_Q_MP
         LN_Q_MP      = _mp.log(Q_MP)
 
+    # Canonical 50-digit string — DERIVED from q_at (no hardcoded literal,
+    # no sync drift). This is what witness scripts import.
+    Q_50_DIGIT_STR = q_str(_DPS_DEFAULT)
+
     HAS_MPMATH = True
 except ImportError:
     HAS_MPMATH = False
@@ -236,6 +251,10 @@ except ImportError:
 
     def q_str(dps: int = _DPS_DEFAULT) -> str:
         raise RuntimeError("q_str requires mpmath; install it with `pip install mpmath`")
+
+    # No-mpmath fallback: only the f64-precision q is available. 50-dps
+    # work requires mpmath; this string carries f64 precision only.
+    Q_50_DIGIT_STR = repr(Q)
 
 if __name__ == "__main__":
     print(f"Substrate parameter q (canonical, m_p-pinned 2026-05-28)")
