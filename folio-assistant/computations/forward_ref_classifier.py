@@ -270,9 +270,7 @@ def main():
             "logical_waived": len(logical_waived),
             "storytelling": len(storytelling),
             "structural": len(structural),
-            "rows": [r for r in rows
-                     if not actionable_only or (
-                         r["severity"] == "logical" and not r["waived"])],
+            "rows": logical if actionable_only else rows,
         }, indent=2))
         return
 
