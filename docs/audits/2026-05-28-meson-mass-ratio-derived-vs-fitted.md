@@ -116,9 +116,35 @@ Until that lands, the exact-precision fitted pieces stay in audit
 docs (Category J); the GMOR/fusion candidate is promising enough to
 pursue toward paper content.
 
+## Update (2026-05-29): η and φ under the same squared-ratio lens
+
+Extending the GMOR squared-ratio reframe to the other light mesons:
+
+**η (pseudoscalar octet) — derived-candidate modulo η-η′ mixing.**
+Gell-Mann–Okubo gives 3m_η² = 4m_K² − m_π², so
+```
+m_η²/m_π² = (4·[3]_q[4]_q − 1)/3 = 16.345   (measured 15.408, 6.1% miss)
+```
+The 6.1% gap is the known **η-η′ singlet mixing** — a real physical
+effect absent from octet GMO. The octet part is carried by the *same*
+[3]_q[4]_q fusion as the kaon. (A direct fusion [2]_q+[4]_q+[6]_q+[3]_q
+fits to 0.9%, but that's a scan hit, not GMO-derived.)
+
+**φ (vector meson, s s̄) — GMOR does NOT apply, confirmed.**
+The best q-integer fusion misses m_φ²/m_π² by 3.65% (not the
+sub-ppm/sub-% precision of the pseudoscalar fusions). φ is a vector
+meson, not a pseudoscalar Goldstone, so the chiral-condensate scale
+and GMOR/GMO don't govern it — it needs the constituent (vector)
+sector. The negative result confirms the GMOR fusion is specific to
+the pseudoscalar octet.
+
+Compute: `meson_eta_phi_gmor.py`, `meson-eta-phi-gmor.witness.json`.
+
 ## Cross-references
 
 - `meson-spectral-analysis.witness.json` (71% miss evidence)
 - `meson_tower_correction_probe.py` (integer-coefficient scan)
+- `meson_gmor_derivation_probe.py` (m_K²/m_π² = [3]_q[4]_q fusion)
+- `meson_eta_phi_gmor.py` (η GMO octet, φ vector-sector negative)
 - `prop:meson-scale-independence` (m_π independence, SDP-validated)
 - `2026-05-28-habiro-product-correction-7ppm.md` (parallel fit audit)
