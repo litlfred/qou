@@ -9,8 +9,10 @@ Hecke–Hopf substrate, and the Markov trace
 $\mathrm{tr}_M \colon H_n(R, q) \to R$ — is stated polymorphically
 in $R$. In particular the specialization*
 
-$$R \;=\; \mathbb{C}, \qquad q_0 \in \mathbb{C} \quad \text{with}
-   \quad \lvert q_0 \rvert > 1$$
+$$
+R \;=\; \mathbb{C}, \qquad q_0 \in \mathbb{C} \quad \text{with}
+   \quad \lvert q_0 \rvert > 1
+$$
 
 *is admissible: the substrate identities transfer verbatim, with
 $\lvert q \rvert > 1$ replacing the archimedean ordering $q > 1$ as

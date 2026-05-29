@@ -81,7 +81,7 @@ If m_τ_dim is similar magnitude as m_μ_dim (~0.7), then required ξ $\approx$ 
 
 The simple analog `d_q((4,1)) · [2]_q / [5]_q · (1/ℏ_q²)` does NOT close tau closing the gap by a factor of ~30. So either:
 (a) The conjecture's specific form needs revision for tau
-(b) Tau's V̂ convention is different (not H_3 3-channel but H_5 5-channel)
+(b) Tau's $\hat{V}$ convention is different (not H_3 3-channel but H_5 5-channel)
 (c) Tau requires higher-tower terms beyond single-gen Li_2^q
 
 This is the OPEN T6 work for the tau side. The muon (m=2) case is the **first member** of the conjectured pattern; tau (m=3) **falsifies** the simplest extension and needs more structure.
@@ -170,6 +170,6 @@ The categorical derivation (why $\xi_m = [2m-1]_q \cdot [m]_q / [2m]_q$ specific
 - [`folio-assistant/computations/t6_three_halves_factor_probes.py`](../../../folio-assistant/computations/t6_three_halves_factor_probes.py) — muon empirical probe
 - [`folio-assistant/computations/tau_amphichiral_sdp_probe.py`](../../../folio-assistant/computations/tau_amphichiral_sdp_probe.py) — tau amphichiral q-bracket probe
 - [`prop:three-halves-structural-factor`](three-halves-structural-factor.md) — Lean-proved structural identities (muon + tau)
-- [`prop:lepton-bring-surface-h3-3channel`](lepton-bring-surface-h3-3channel.md) — V̂_e convention (calibration check)
+- [`prop:lepton-bring-surface-h3-3channel`](lepton-bring-surface-h3-3channel.md) — $\hat{V}_e$ convention (calibration check)
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula
 - [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence (partially closed: muon + tau q-bracket forms now identified; categorical derivation open for Option E)

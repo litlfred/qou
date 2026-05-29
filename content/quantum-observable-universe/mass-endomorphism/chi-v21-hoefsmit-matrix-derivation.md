@@ -82,7 +82,7 @@ noncomputable def sigma0_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![q, 0; 0, -q⁻¹]
 
 noncomputable def sigma1_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
-  !![d_1, √b²; √b², d_2]
+  !![d_1, Real.sqrt bSq; Real.sqrt bSq, d_2]
 
 inductive TypedCrossingV21 | sig | siginv | avg
 
