@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-29T20:15:47.500651+00:00",
-  "commitSha": "ee8cef0fb931c08934e655de144b8eed6e26c6ea",
+  "computedAt": "2026-05-29T22:49:18.082203+00:00",
+  "commitSha": "80f5e56cd0091488c52721d56175a5a709f955b9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -2104,11 +2104,14 @@
         "binding-k-solver.witness.json",
         "binding-ladder-catalog.witness.json",
         "binding-link-volumes.witness.json",
+        "binding-log-scale-investigation.witness.json",
         "binding-lp-delta-audit.witness.json",
         "binding-multibond-wenzl.witness.json",
         "binding-per-bond-decomposition.witness.json",
         "binding-q-target-sweep.witness.json",
+        "binding-shell-enhancement-derivation.witness.json",
         "binding-via-interface-knot.witness.json",
+        "binding-volume-difference-probe.witness.json",
         "binomial-pattern-chebyshev-derivation.witness.json",
         "borromean-axial-coupling.witness.json",
         "borromean-h3-2-1-irrep-derivation.witness.json",
@@ -2370,7 +2373,6 @@
         "f-ell-derivation-via-per-braid-mass-tower.witness.json",
         "family-a-per-partition-h-decomposition-50dps.witness.json",
         "finite-q-volume-conjecture-probe.witness.json",
-        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "forward-ref-classification.witness.json",
