@@ -8,4 +8,10 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:categorical-proton"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/codata_masses.py",
+    witness: "folio-assistant/computations/codata-masses.witness.json",
+    status: "verified",
+  },
 });

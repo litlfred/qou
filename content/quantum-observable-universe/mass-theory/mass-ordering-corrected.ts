@@ -14,4 +14,10 @@ export default remark({
   uses: [
     "prop:corrected-markov-trace",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/codata_masses.py",
+    witness: "folio-assistant/computations/codata-masses.witness.json",
+    status: "verified",
+  },
 });

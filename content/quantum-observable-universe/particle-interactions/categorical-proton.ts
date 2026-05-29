@@ -9,4 +9,10 @@ export default definition({
   },
   uses: ["def:down-quark", "def:knot-operator-energy"],
   cites: ["manuscript"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/codata_masses.py",
+    witness: "folio-assistant/computations/codata-masses.witness.json",
+    status: "verified",
+  },
 });
