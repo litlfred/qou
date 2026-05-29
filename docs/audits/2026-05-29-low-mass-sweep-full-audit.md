@@ -125,6 +125,20 @@ Lean: `borromeanChar_laurent` proves the Laurent form. So the entire
 m_p → 130 ppm chain (Vol=8G, lw_A proved, χ derived) is
 first-principles.
 
+**Neutron (the other +2.89% nucleon) — per-knot lw, open.** Each knot
+has its **own** linking weight (not the proton's + a correction). The
+effective (spectrally-corrected) weights are per-knot: λ_p ≈ 2.4596,
+**λ_n ≈ 2.4633** (`lambda_scale_substrate_probe.py`). The neutron's is
+`λ_n = 5/2 − h²·G + ΔS(n)·ℏ²/Vol(B₃)`, where ΔS(n) is the neutron's
+Skein correction from its udd braid. The shared 𝓑₃ spectral factor
+applies to both; the n-p splitting is entirely in ΔS(n).
+Numerically the required ΔS(n) ≈ 2.46 is **not** a clean derived
+integer (and the leading-weight difference lw_A_n − lw_A_p = 2.0007·h⁴
+is a fit-to-CODATA, not derived — the Family-A h⁴ term is proved to
+vanish). So the genuine n-p splitting = derive ΔS(n) from the
+neutron's braid Skein count — open, analogous to the m_K/m_π EM
+correction. **Not wired** (would be a fit).
+
 **q₀-robust (vs #1422's re-pin).** Evaluated at both the muon-pinned
 q₀ (−130.35 ppm) and #1422's m_p-pinned q₀ = 1.10997858275 (−130.16
 ppm), the spectral decomposition shifts only 0.19 ppm under the
