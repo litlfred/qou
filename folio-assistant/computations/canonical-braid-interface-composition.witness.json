@@ -1,0 +1,592 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-29T15:08:42.483651+00:00",
+  "commitSha": "a79a8e9d21494f3354031f5103734dd821848f8d",
+  "assertions": [
+    {
+      "name": "interface_composition_D",
+      "computed": 10,
+      "expected": 10,
+      "passed": true,
+      "tolerance": 0,
+      "source": "D (Z=1,N=1): canonical word atom_braid_word_3A gives (n_pp,n_pn,n_nn)=(0, 1, 0); closed form predicts (0, 1, 0)"
+    },
+    {
+      "name": "interface_composition_T",
+      "computed": 11,
+      "expected": 11,
+      "passed": true,
+      "tolerance": 0,
+      "source": "T (Z=1,N=2): canonical word atom_braid_word_3A gives (n_pp,n_pn,n_nn)=(0, 1, 1); closed form predicts (0, 1, 1)"
+    },
+    {
+      "name": "interface_composition_3He",
+      "computed": 110,
+      "expected": 110,
+      "passed": true,
+      "tolerance": 0,
+      "source": "3He (Z=2,N=1): canonical word atom_braid_word_3A gives (n_pp,n_pn,n_nn)=(1, 1, 0); closed form predicts (1, 1, 0)"
+    },
+    {
+      "name": "interface_composition_4He",
+      "computed": 111,
+      "expected": 111,
+      "passed": true,
+      "tolerance": 0,
+      "source": "4He (Z=2,N=2): canonical word atom_braid_word_3A gives (n_pp,n_pn,n_nn)=(1, 1, 1); closed form predicts (1, 1, 1)"
+    },
+    {
+      "name": "interface_composition_16O",
+      "computed": 717,
+      "expected": 717,
+      "passed": true,
+      "tolerance": 0,
+      "source": "16O (Z=8,N=8): canonical word atom_braid_word_3A gives (n_pp,n_pn,n_nn)=(7, 1, 7); closed form predicts (7, 1, 7)"
+    },
+    {
+      "name": "closed_form_matches_canonical_word_all_atoms",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "interface_composition(Z,N) closed form agrees with interface_composition_from_word(atom_braid_word_3A(Z,N)) for all 19 atoms in ATOM_TABLE"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "canonical-braid-interface-composition",
+  "scriptFile": "probe_canonical_braid_interface_composition.py",
+  "scriptHash": "bee7bb2ea0ac",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Inter-nucleon interface composition (n_pp, n_pn, n_nn) of the canonical atomic braid β(Z, N) ∈ H_{3A}(q) in pppnnn ordering. Cross-checks the closed form (n_pp = max(0, Z−1), n_nn = max(0, N−1), n_pn = 1 if Z≥1,N≥1) against the actual canonical braid word atom_braid_word_3A(Z, N) classified by interface content d ∈ {0 → pp, −h/2 → pn, −h → nn}. Total = A − 1.",
+  "contentBlock": "def:canonical-braid-interface-composition",
+  "parameters": {
+    "ordering": "pppnnn",
+    "interface_positions": "σ_{3k+2}, k = 0..A-2"
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_pp": 0,
+        "n_pn": 1,
+        "n_nn": 0,
+        "total": 1,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          0,
+          1,
+          0
+        ],
+        "from_ordering": [
+          0,
+          1,
+          0
+        ],
+        "from_word": [
+          0,
+          1,
+          0
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_pp": 0,
+        "n_pn": 1,
+        "n_nn": 1,
+        "total": 2,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          0,
+          1,
+          1
+        ],
+        "from_ordering": [
+          0,
+          1,
+          1
+        ],
+        "from_word": [
+          0,
+          1,
+          1
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_pp": 1,
+        "n_pn": 1,
+        "n_nn": 0,
+        "total": 2,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          1,
+          1,
+          0
+        ],
+        "from_ordering": [
+          1,
+          1,
+          0
+        ],
+        "from_word": [
+          1,
+          1,
+          0
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_pp": 1,
+        "n_pn": 1,
+        "n_nn": 1,
+        "total": 3,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          1,
+          1,
+          1
+        ],
+        "from_ordering": [
+          1,
+          1,
+          1
+        ],
+        "from_word": [
+          1,
+          1,
+          1
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "n_pp": 2,
+        "n_pn": 1,
+        "n_nn": 1,
+        "total": 4,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          2,
+          1,
+          1
+        ],
+        "from_ordering": [
+          2,
+          1,
+          1
+        ],
+        "from_word": [
+          2,
+          1,
+          1
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "6He",
+        "Z": 2,
+        "N": 4,
+        "A": 6,
+        "n_pp": 1,
+        "n_pn": 1,
+        "n_nn": 3,
+        "total": 5,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          1,
+          1,
+          3
+        ],
+        "from_ordering": [
+          1,
+          1,
+          3
+        ],
+        "from_word": [
+          1,
+          1,
+          3
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "n_pp": 2,
+        "n_pn": 1,
+        "n_nn": 2,
+        "total": 5,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          2,
+          1,
+          2
+        ],
+        "from_ordering": [
+          2,
+          1,
+          2
+        ],
+        "from_word": [
+          2,
+          1,
+          2
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "6Be",
+        "Z": 4,
+        "N": 2,
+        "A": 6,
+        "n_pp": 3,
+        "n_pn": 1,
+        "n_nn": 1,
+        "total": 5,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          3,
+          1,
+          1
+        ],
+        "from_ordering": [
+          3,
+          1,
+          1
+        ],
+        "from_word": [
+          3,
+          1,
+          1
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "n_pp": 2,
+        "n_pn": 1,
+        "n_nn": 3,
+        "total": 6,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          2,
+          1,
+          3
+        ],
+        "from_ordering": [
+          2,
+          1,
+          3
+        ],
+        "from_word": [
+          2,
+          1,
+          3
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "7Be",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "n_pp": 3,
+        "n_pn": 1,
+        "n_nn": 2,
+        "total": 6,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          3,
+          1,
+          2
+        ],
+        "from_ordering": [
+          3,
+          1,
+          2
+        ],
+        "from_word": [
+          3,
+          1,
+          2
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "8Be",
+        "Z": 4,
+        "N": 4,
+        "A": 8,
+        "n_pp": 3,
+        "n_pn": 1,
+        "n_nn": 3,
+        "total": 7,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          3,
+          1,
+          3
+        ],
+        "from_ordering": [
+          3,
+          1,
+          3
+        ],
+        "from_word": [
+          3,
+          1,
+          3
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "8Li",
+        "Z": 3,
+        "N": 5,
+        "A": 8,
+        "n_pp": 2,
+        "n_pn": 1,
+        "n_nn": 4,
+        "total": 7,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          2,
+          1,
+          4
+        ],
+        "from_ordering": [
+          2,
+          1,
+          4
+        ],
+        "from_word": [
+          2,
+          1,
+          4
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "8B",
+        "Z": 5,
+        "N": 3,
+        "A": 8,
+        "n_pp": 4,
+        "n_pn": 1,
+        "n_nn": 2,
+        "total": 7,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          4,
+          1,
+          2
+        ],
+        "from_ordering": [
+          4,
+          1,
+          2
+        ],
+        "from_word": [
+          4,
+          1,
+          2
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "9Be",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "n_pp": 3,
+        "n_pn": 1,
+        "n_nn": 4,
+        "total": 8,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          3,
+          1,
+          4
+        ],
+        "from_ordering": [
+          3,
+          1,
+          4
+        ],
+        "from_word": [
+          3,
+          1,
+          4
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "9B",
+        "Z": 5,
+        "N": 4,
+        "A": 9,
+        "n_pp": 4,
+        "n_pn": 1,
+        "n_nn": 3,
+        "total": 8,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          4,
+          1,
+          3
+        ],
+        "from_ordering": [
+          4,
+          1,
+          3
+        ],
+        "from_word": [
+          4,
+          1,
+          3
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "10B",
+        "Z": 5,
+        "N": 5,
+        "A": 10,
+        "n_pp": 4,
+        "n_pn": 1,
+        "n_nn": 4,
+        "total": 9,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          4,
+          1,
+          4
+        ],
+        "from_ordering": [
+          4,
+          1,
+          4
+        ],
+        "from_word": [
+          4,
+          1,
+          4
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "12C",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "n_pp": 5,
+        "n_pn": 1,
+        "n_nn": 5,
+        "total": 11,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          5,
+          1,
+          5
+        ],
+        "from_ordering": [
+          5,
+          1,
+          5
+        ],
+        "from_word": [
+          5,
+          1,
+          5
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "14N",
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "n_pp": 6,
+        "n_pn": 1,
+        "n_nn": 6,
+        "total": 13,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          6,
+          1,
+          6
+        ],
+        "from_ordering": [
+          6,
+          1,
+          6
+        ],
+        "from_word": [
+          6,
+          1,
+          6
+        ],
+        "all_three_agree": true
+      },
+      {
+        "atom": "16O",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "n_pp": 7,
+        "n_pn": 1,
+        "n_nn": 7,
+        "total": 15,
+        "total_equals_A_minus_1": true,
+        "closed_form": [
+          7,
+          1,
+          7
+        ],
+        "from_ordering": [
+          7,
+          1,
+          7
+        ],
+        "from_word": [
+          7,
+          1,
+          7
+        ],
+        "all_three_agree": true
+      }
+    ],
+    "n_atoms": 19
+  }
+}

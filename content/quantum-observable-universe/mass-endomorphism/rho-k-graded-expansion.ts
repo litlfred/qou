@@ -26,8 +26,6 @@ export default proposition({
     script: "folio-assistant/computations/rho_k_markov_multiplicativity_probe.py",
     witness: [
       "folio-assistant/computations/rho-k-markov-multiplicativity.witness.json",
-      "folio-assistant/computations/rho-k-pair-gen-extension.witness.json",
-      "folio-assistant/computations/rho-k-scaling-structure.witness.json",
     ],
     status: "verified",
     requires: ["numpy", "sympy", "mpmath"],
