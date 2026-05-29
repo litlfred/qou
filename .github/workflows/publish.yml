@@ -171,7 +171,13 @@ jobs:
           tail -3 /tmp/witness-pipeline.log
 
       - name: Validate content objects
-        run: cd content && bun run validate
+        # Pass the paper dir explicitly. Bare `bun run validate` resolves to
+        # content/package.json's no-arg script, which validates the (empty)
+        # content/objects/ dir and always passes — a silent no-op that never
+        # checked the actual paper. The paper currently validates clean
+        # (0 errors), so enabling the real check closes that hole without
+        # breaking CI; future content errors now fail here as intended.
+        run: cd content && bun run pipeline/validate.ts quantum-observable-universe/
 
       - name: Build content objects (chapters .tex + main.tex)
         # Pre-existing cross-reference warnings produce exit code 1
