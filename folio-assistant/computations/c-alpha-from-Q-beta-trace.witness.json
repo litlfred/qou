@@ -1,17 +1,22 @@
 {
   "engine": "topology+β-chain-audit",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-24T11:40:57.320622+00:00",
-  "commitSha": "f35109284e51a4e11b76b7b7e04913f1d1ee8960",
+  "computedAt": "2026-05-29T14:42:17.261017+00:00",
+  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 48,
   "computation": "c-alpha-from-Q-beta-trace",
   "scriptFile": "c_alpha_from_Q_beta_trace.py",
-  "scriptHash": "572ce04206d1",
-  "scriptCommitSha": "",
+  "scriptHash": "9b95b9efa68c",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Audit: is c_αα = m_e · Vol(7²_1) ≈ 2.427 MeV reproducible from the framework's three-constant calibration (m_e, q_0, Q_β(³H)) without using B(¹²C) or other AME inputs?",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "parameters": {
     "m_e_MeV": 0.51099895,
     "Vol_7_sq_1": 4.749499981874439,
@@ -29,8 +34,11 @@
       "valid_under_three_constant_rule": true
     },
     "route_B_beta_chain": {
-      "predictor_present": false,
-      "predictor_files": [],
+      "predictor_present": true,
+      "predictor_files": [
+        "derived_masses.py",
+        "audit_delta_S_chain.py"
+      ],
       "ame_inputs_required_in_practice": true,
       "reason": "No non-magic-Q predictor → every intermediate Q uses AME"
     },
@@ -38,7 +46,5 @@
       "c_alpha_zero_parameter_under_rule": true,
       "caveat": "Zero-parameter ONLY under the interpretation that 7²_1 is independently derived from the framework's topology.  If 7²_1 was chosen by matching Vol(7²_1) to c_αα/m_e extracted from ¹²C AME, the derivation is implicitly AME-fitted."
     }
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0
+  }
 }

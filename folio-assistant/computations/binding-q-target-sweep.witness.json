@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:17:31.284209+00:00",
-  "commitSha": "0d4029075d2cc8b6697539553215e3e98717e81d",
+  "computedAt": "2026-05-29T14:42:09.124962+00:00",
+  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
   "assertions": [
     {
       "name": "binding_rows_count",
@@ -26,7 +26,13 @@
   "computation": "binding-q-target-sweep",
   "scriptFile": "binding_q_target_sweep.py",
   "scriptHash": "c321c10926f4",
-  "scriptCommitSha": "0d4029075d2cc8b6697539553215e3e98717e81d",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Per-isotope binding-energy + Q_β precision-ladder sweep against Workplan v7 L2 100×-experimental targets. Shows current canonical state across all on-disk witnesses. Audit-only — no new predictions.",
   "data": {
     "binding_rows": [
@@ -40,9 +46,9 @@
         "sigma_rel_ppb": "449.5",
         "target_100x_ppb": "4.49526",
         "abs_tr_M_q0": null,
-        "zero_param_pred_MeV": "2.248820795",
-        "zero_param_err_ppb": "1.090e+07",
-        "zero_param_status": "misses-1x",
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
         "canonical_binding_status": "delta_lambda_unavailable"
       },
       {
@@ -55,9 +61,9 @@
         "sigma_rel_ppb": "117.9",
         "target_100x_ppb": "1.17900",
         "abs_tr_M_q0": null,
-        "zero_param_pred_MeV": "8.468598387",
-        "zero_param_err_ppb": "1.556e+06",
-        "zero_param_status": "misses-1x",
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
         "canonical_binding_status": "delta_lambda_unavailable"
       },
       {
@@ -70,9 +76,9 @@
         "sigma_rel_ppb": "129.6",
         "target_100x_ppb": "1.29567",
         "abs_tr_M_q0": null,
-        "zero_param_pred_MeV": "7.488919310",
-        "zero_param_err_ppb": "2.969e+07",
-        "zero_param_status": "misses-1x",
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
         "canonical_binding_status": "delta_lambda_unavailable"
       },
       {
@@ -85,9 +91,9 @@
         "sigma_rel_ppb": "35.34",
         "target_100x_ppb": "0.353411",
         "abs_tr_M_q0": null,
-        "zero_param_pred_MeV": "29.95567724",
-        "zero_param_err_ppb": "5.867e+07",
-        "zero_param_status": "misses-1x",
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
         "canonical_binding_status": "delta_lambda_unavailable"
       },
       {
@@ -216,19 +222,19 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-tr-m-via-chi-cache.witness.json",
-        "sha256": "a613a0eb1ada8c524068cccf2046da77f4f026b955f5bbabf16df7950c5992d4",
-        "size_bytes": 40939,
-        "commitSha": "957288e7d7426439c83288a047eaeec3f513e733",
-        "scriptCommitSha": "46d347363f6308545ed7aa5387ecb5cb252e5c06",
-        "computedAt": "2026-05-18T02:23:01.830243+00:00"
+        "sha256": "2235872a1b873c9b621383079d09d1cc8f2388e4f603bc728a5da351e67fae99",
+        "size_bytes": 32782,
+        "commitSha": "8f411837870b1ed99ba8a90cdc5c76de06b31774",
+        "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+        "computedAt": "2026-05-29T14:17:34.519738+00:00"
       },
       {
         "path": "mass-table-ppb.witness.json",
-        "sha256": "25cc77c37de0a92bd627e56baefa4e3c08401b3aac93ca1bcfe31888238de89d",
-        "size_bytes": 6158,
-        "commitSha": null,
-        "scriptCommitSha": null,
-        "computedAt": "2026-05-18T19:42:13.654186+00:00"
+        "sha256": "6214e3f17bb1cd3f8ce0e00a348213b1ca6996fe9f4e05689c951491627a617b",
+        "size_bytes": 11708,
+        "commitSha": "cf5e251f4be3766c12d67a8b54cf94aee46f2040",
+        "scriptCommitSha": "db6776a504f73fe780edcefddf59bea6f30c0be3",
+        "computedAt": "2026-05-28T01:57:41.774731+00:00"
       },
       {
         "path": "q-beta-predicted.witness.json",
@@ -240,11 +246,11 @@
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
-        "sha256": "4732372316e8f59d81ccceff8d7909fa9b459be6e4790e94d4bacc06294173d6",
-        "size_bytes": 4731,
-        "commitSha": "31201ed80a4fdeb3fb994ffe14cee3a0abd5add5",
-        "scriptCommitSha": "unknown",
-        "computedAt": "2026-05-16T01:04:25.932637+00:00"
+        "sha256": "d5ed46a2606d7f9dcb39a56055a174e28477accb45f6d203c326f9aeedaf8fcc",
+        "size_bytes": 4764,
+        "commitSha": "99ecb186f78875fd335fc418bf7caea9384e9cae",
+        "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+        "computedAt": "2026-05-23T20:31:17.402609+00:00"
       }
     ]
   }

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T01:30:57.049688+00:00",
-  "commitSha": "bc3f32d254e5eb7152195f092ed4a487a1929fad",
+  "computedAt": "2026-05-29T14:36:25.748566+00:00",
+  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
   "assertions": [
     {
       "name": "ell_K_q_eq_n_strands_disjoint",
@@ -22,11 +22,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 17,
   "computation": "atomic-braid-gb-filtration-extension",
   "scriptFile": "atomic_braid_gb_filtration_extension.py",
-  "scriptHash": "c149c3366605",
-  "scriptCommitSha": "bc3f32d254e5eb7152195f092ed4a487a1929fad",
+  "scriptHash": "ec206bed7616",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "v3 #5: gb_filtration_jet_tracker extension to atomic braid words at n ∈ {6, 9, 12}. Per-atom filtration certificate + max-grade ℓ(K, q) + reduction-step counts. Multi-nucleon counterpart of the existing H_3 test cases on main.",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "data": {
@@ -71,7 +77,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             }
           ],
           "3": [
@@ -89,7 +95,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -124,7 +130,7 @@
                 2,
                 1
               ],
-              "coefficient": "-(q**2 - 1)**2/q**2"
+              "coefficient": "-q**2 + 2 - 1/q**2"
             }
           ],
           "5": [
@@ -220,7 +226,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**3/q**3"
+              "coefficient": "-q**3 + 3*q - 3/q + q**(-3)"
             }
           ],
           "5": [
@@ -243,7 +249,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**4/q**4"
+              "coefficient": "-q**4 + 4*q**2 - 6 + 4/q**2 - 1/q**4"
             },
             {
               "perm": [
@@ -264,7 +270,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             },
             {
               "perm": [
@@ -285,7 +291,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             }
           ],
           "6": [
@@ -309,7 +315,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -331,7 +337,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -378,7 +384,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             },
             {
               "perm": [
@@ -401,7 +407,7 @@
                 2,
                 1
               ],
-              "coefficient": "-(q**2 - 1)**2/q**2"
+              "coefficient": "-q**2 + 2 - 1/q**2"
             }
           ],
           "8": [
@@ -533,7 +539,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**3/q**3"
+              "coefficient": "-q**3 + 3*q - 3/q + q**(-3)"
             }
           ],
           "3": [
@@ -554,7 +560,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**4/q**4"
+              "coefficient": "-q**4 + 4*q**2 - 6 + 4/q**2 - 1/q**4"
             },
             {
               "perm": [
@@ -573,7 +579,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**4/q**4"
+              "coefficient": "-q**4 + 4*q**2 - 6 + 4/q**2 - 1/q**4"
             },
             {
               "perm": [
@@ -592,7 +598,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             }
           ],
           "4": [
@@ -614,7 +620,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**5/q**5"
+              "coefficient": "-q**5 + 5*q**3 - 10*q + 10/q - 5/q**3 + q**(-5)"
             },
             {
               "perm": [
@@ -634,7 +640,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -654,7 +660,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             }
           ],
           "5": [
@@ -677,7 +683,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             },
             {
               "perm": [
@@ -698,7 +704,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             },
             {
               "perm": [
@@ -719,7 +725,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**4/q**4"
+              "coefficient": "q**4 - 4*q**2 + 6 - 4/q**2 + q**(-4)"
             }
           ],
           "6": [
@@ -743,7 +749,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -765,7 +771,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -834,7 +840,7 @@
                 2,
                 1
               ],
-              "coefficient": "-(q**2 - 1)**2/q**2"
+              "coefficient": "-q**2 + 2 - 1/q**2"
             },
             {
               "perm": [
@@ -857,7 +863,7 @@
                 2,
                 1
               ],
-              "coefficient": "-(q**2 - 1)**2/q**2"
+              "coefficient": "-q**2 + 2 - 1/q**2"
             }
           ],
           "8": [
@@ -974,7 +980,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**4/q**4"
+              "coefficient": "q**4 - 4*q**2 + 6 - 4/q**2 + q**(-4)"
             }
           ],
           "5": [
@@ -1000,7 +1006,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**5/q**5"
+              "coefficient": "q**5 - 5*q**3 + 10*q - 10/q + 5/q**3 - 1/q**5"
             },
             {
               "perm": [
@@ -1024,7 +1030,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**5/q**5"
+              "coefficient": "q**5 - 5*q**3 + 10*q - 10/q + 5/q**3 - 1/q**5"
             },
             {
               "perm": [
@@ -1048,7 +1054,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**3/q**3"
+              "coefficient": "-q**3 + 3*q - 3/q + q**(-3)"
             },
             {
               "perm": [
@@ -1072,7 +1078,7 @@
                 2,
                 1
               ],
-              "coefficient": "-(q**2 - 1)**3/q**3"
+              "coefficient": "-q**3 + 3*q - 3/q + q**(-3)"
             }
           ],
           "6": [
@@ -1099,7 +1105,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**6/q**6"
+              "coefficient": "q**6 - 6*q**4 + 15*q**2 - 20 + 15/q**2 - 6/q**4 + q**(-6)"
             },
             {
               "perm": [
@@ -1124,7 +1130,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**4/q**4"
+              "coefficient": "-q**4 + 4*q**2 - 6 + 4/q**2 - 1/q**4"
             },
             {
               "perm": [
@@ -1149,7 +1155,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**4/q**4"
+              "coefficient": "-q**4 + 4*q**2 - 6 + 4/q**2 - 1/q**4"
             },
             {
               "perm": [
@@ -1174,7 +1180,7 @@
                 2,
                 1
               ],
-              "coefficient": "-(q**2 - 1)**4/q**4"
+              "coefficient": "-q**4 + 4*q**2 - 6 + 4/q**2 - 1/q**4"
             },
             {
               "perm": [
@@ -1199,7 +1205,7 @@
                 2,
                 1
               ],
-              "coefficient": "-(q**2 - 1)**4/q**4"
+              "coefficient": "-q**4 + 4*q**2 - 6 + 4/q**2 - 1/q**4"
             },
             {
               "perm": [
@@ -1224,7 +1230,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             }
           ],
           "7": [
@@ -1252,7 +1258,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**3/q**3"
+              "coefficient": "-q**3 + 3*q - 3/q + q**(-3)"
             },
             {
               "perm": [
@@ -1278,7 +1284,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**3/q**3"
+              "coefficient": "-q**3 + 3*q - 3/q + q**(-3)"
             },
             {
               "perm": [
@@ -1304,7 +1310,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**5/q**5"
+              "coefficient": "-q**5 + 5*q**3 - 10*q + 10/q - 5/q**3 + q**(-5)"
             },
             {
               "perm": [
@@ -1330,7 +1336,7 @@
                 2,
                 1
               ],
-              "coefficient": "-(q**2 - 1)**5/q**5"
+              "coefficient": "-q**5 + 5*q**3 - 10*q + 10/q - 5/q**3 + q**(-5)"
             },
             {
               "perm": [
@@ -1356,7 +1362,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -1382,7 +1388,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             }
           ],
           "8": [
@@ -1411,7 +1417,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**4/q**4"
+              "coefficient": "-q**4 + 4*q**2 - 6 + 4/q**2 - 1/q**4"
             },
             {
               "perm": [
@@ -1438,7 +1444,7 @@
                 1,
                 2
               ],
-              "coefficient": "-(q**2 - 1)**4/q**4"
+              "coefficient": "-q**4 + 4*q**2 - 6 + 4/q**2 - 1/q**4"
             },
             {
               "perm": [
@@ -1465,7 +1471,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             },
             {
               "perm": [
@@ -1492,7 +1498,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             },
             {
               "perm": [
@@ -1519,7 +1525,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             },
             {
               "perm": [
@@ -1546,7 +1552,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             },
             {
               "perm": [
@@ -1573,7 +1579,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**4/q**4"
+              "coefficient": "q**4 - 4*q**2 + 6 - 4/q**2 + q**(-4)"
             }
           ],
           "9": [
@@ -1603,7 +1609,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -1631,7 +1637,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -1659,7 +1665,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -1687,7 +1693,7 @@
                 2,
                 1
               ],
-              "coefficient": "(q**2 - 1)**3/q**3"
+              "coefficient": "q**3 - 3*q + 3/q - 1/q**3"
             },
             {
               "perm": [
@@ -1774,7 +1780,7 @@
                 1,
                 2
               ],
-              "coefficient": "(q**2 - 1)**2/q**2"
+              "coefficient": "q**2 - 2 + q**(-2)"
             },
             {
               "perm": [
@@ -1803,7 +1809,7 @@
                 2,
                 1
               ],
-              "coefficient": "-(q**2 - 1)**2/q**2"
+              "coefficient": "-q**2 + 2 - 1/q**2"
             },
             {
               "perm": [
@@ -1832,7 +1838,7 @@
                 2,
                 1
               ],
-              "coefficient": "-(q**2 - 1)**2/q**2"
+              "coefficient": "-q**2 + 2 - 1/q**2"
             }
           ],
           "11": [

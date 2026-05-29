@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T02:38:54.507383+00:00",
-  "commitSha": "fdf70d0af1a1d2538a709a2e0807fc785db1ce0d",
+  "computedAt": "2026-05-30T02:39:08.231638+00:00",
+  "commitSha": "745f97246e4835d247393e588f2b19f6f30637f5",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -249,10 +249,10 @@
     },
     {
       "name": "leaf_value[proton-mass-50dps.derivation]",
-      "computed": 966.0496233026864,
-      "expected": 966.0496233026864,
+      "computed": 966.0498244665976,
+      "expected": 966.0498244665976,
       "passed": true,
-      "tolerance": 9.660496233026864
+      "tolerance": 9.660498244665975
     },
     {
       "name": "chain_valid[q0-anchor.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1302,8 +1302,8 @@
       {
         "chain": "proton-mass-50dps.derivation.json",
         "target": "m_p (MeV)",
-        "target_value": 966.0496233026864,
-        "computed_value": 966.0496233026864,
+        "target_value": 966.0498244665976,
+        "computed_value": 966.0498244665976,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
