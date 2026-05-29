@@ -63,6 +63,59 @@ additional input; it follows from the $R$-matrix eigenvalues
 $(\lambda_+, \lambda_-) = (q, -q^{-1})$ forced by the braiding
 structure of $\mathbf{C}$.
 
+**Explicit boundary$\leftrightarrow$surface form.** The categorical
+action makes the $R$-matrix $R_{i,i+1}$ the parallel transport
+(1-holonomy) across the crossing of strands $i, i+1$; the Yang--Baxter
+relation is the flatness (horizontal compatibility) of that transport.
+Yekutieli's non-abelian Stokes theorem equates the holonomy around the
+boundary $\partial\Sigma$ of a 2-cell $\Sigma$ with the surface-ordered
+multiplicative integral of the curvature over $\Sigma$:
+
+$$
+  \mathrm{Hol}(\partial\Sigma)
+  \;=\; \overrightarrow{\textstyle\prod}\!\int_{\Sigma} F .
+$$
+
+The curvature 2-form $F_{i,i+1}$ is the obstruction to the two orders
+of adjacent transport commuting; on $V^{\otimes n}$ it is exactly the
+Hecke quadratic operator
+
+$$
+  F_{i,i+1} \;=\; R_{i,i+1}^2 - (q-q^{-1})\,R_{i,i+1} - 1 ,
+$$
+
+so $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ is the *flatness condition*
+$F_{i,i+1} = 0$ on each adjacent slice.
+
+**Boundary observable and the spectral (Reeb) decomposition.** Closing
+the braid (Markov, Step 3) and applying the Frobenius integral (Step 6)
+yields the *boundary* observable
+$\mathrm{tr}_M(\rho(\beta_K)) = \sum_\lambda y_\lambda \chi_\lambda$.
+On each Wedderburn block $\lambda$ the boundary holonomy has eigenvalues
+$e^{\pm i\theta_\lambda}$ whenever $|\chi_\lambda / d_\lambda| \leq 1$
+(the unit-modulus / rotation regime,
+[prop:unit-modulus-eigenvalue](#prop\:unit-modulus-eigenvalue)); the
+**$q$-Reeb phase** $\theta_\lambda = \arccos(\chi_\lambda / d_\lambda)$
+is the boundary parallel-transport angle.  The per-crossing version is
+the eigenvalue split
+$(\lambda_+, \lambda_-) = (q, -q^{-1}) = (\cosh\lambda + \sinh\lambda,\;
+\cosh\lambda - \sinh\lambda)$ with $\lambda = \ln q$
+([prop:crossing-energy-decomposition](#prop\:crossing-energy-decomposition)):
+the symmetric $\cosh\lambda$ part is the curvature-free transport and the
+antisymmetric $\sinh\lambda$ part is the curvature defect.
+
+**Order of truncation.** The surface-ordered integral expands as
+$\mathrm{Hol} = 1 + (\text{first-order boundary}) + (\text{second-order }
+[F,F]) + \cdots$.  The chirality factor $a_K = 1 + w(K)\,h + O(h^2)$
+(Step 6, $h = q - q^{-1}$) is the **first-order boundary truncation**;
+the $O(h^2)$ remainder is the second-order surface $[F,F]$ contribution.
+A scalar Markov trace $\sum_\lambda y_\lambda \chi_\lambda$ additionally
+collapses the per-block boundary phase (since
+$\chi_\lambda = d_\lambda \cos\theta_\lambda$ is summed), so the per-rep
+Reeb angle $\theta_\lambda$ — the boundary spectral datum — is not
+visible in $\mathrm{tr}_M$ alone.  Recovering it requires the per-block
+($\theta_\lambda$-resolved) trace rather than the scalar $\mathrm{tr}_M$.
+
 ***
 
 ## Step 3 — Knot decomposition (Alexander + Markov)
