@@ -53,9 +53,44 @@ and any future ones — no per-cell content edits. Verified: the three
 previously-broken Feynman rows now render with the correct 2 alignment
 tabs.
 
-## Residual
+## All errors fixed (the table-pipe fix exposed five more, fixed in turn)
 
-A full `latexmk` pass still reports `pdflatex return code 1` after the
-table fix — a separate residual error ("missing or unavailable
-character(s)"). Under investigation via a halt-on-error pass; will be
-recorded here once isolated.
+Reproduced locally with a full TeX Live install (no native LaTeX, and no
+Docker daemon, in the dev container). Each fatal either stopped pdflatex
+or set a non-zero exit (`latexmk` then returns 12 → CI `exit 1`):
+
+1. **`|` in inline math in tables** (renderer) — see above; fixed in
+   `render-latex.ts` (`protectPipesInInlineMath`), covers all ~41 rows.
+2. **Unmapped Unicode `⊢ ↓ ⟨ ⟩ • 𝓑`** in chapter titles/prose →
+   `Unicode character not set up`. Added `\newunicodechar` mappings to
+   `latex/preamble.tex`.
+3. **`\)` typo** in `six-term-per-derivation-weights-table1-data.md`
+   (T₂ cell) → `Extra }, or forgotten $`. Changed `\)` → `)`.
+4. **`^` inside `\text{}`** in `borromean-bloch-group-element.md`
+   (`\text{h^4-coefficient}`) → `Missing $ inserted`. Moved `h^4` into math.
+5. **Markdown link inside `$$ \text{} $$`** in
+   `sigma-shell-from-beta-chain-derivation.md` — math is verbatim, so `#`
+   is an illegal macro-parameter char. Replaced with `\ref`.
+6. **Table row cell-count mismatch** in
+   `knot-formula-table-table2-data.md` (6 cells vs a 5-column header) →
+   `Extra alignment tab`. Merged the trailing note into the Particle cell.
+7. **`### heading` inside a blockquote** in `bohr-radius-categorical.md`
+   → `\subparagraph` inside `quote` (a trivlist) → `missing \item`.
+   Changed to a bold label.
+
+(Diagnostic note: many error greps were initially blank because `grep`
+treated the 1 MB `main.log` as binary — `grep -a` was needed.)
+
+## Verified
+
+`latexmk -pdf -draftmode -interaction=nonstopmode main.tex` (the exact
+`publish.yml` command) now returns **exit 0** with **0 errors**.
+
+## Note — separate CI blocker
+
+The "Compile main paper PDF" job `needs: content-pipeline`, and the
+"Content pipeline (bun + python + witnesses)" job is currently failing at
+an early step (~4 s — before any content/witness processing, i.e. at
+checkout / setup-bun), so the PDF job shows **skipped** rather than green.
+That early failure is unrelated to this PR's content (which passes local
+`validate` + build); it needs a CI re-run or an infra fix.
