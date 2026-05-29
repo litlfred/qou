@@ -10,4 +10,4 @@
 | Strange quark | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $2$ | $5$ |
 | Charm quark | $\mathfrak{c}$ | $T_{2,5}$ | $2$ | $5$ |
 | Bottom quark | $\mathfrak{b}$ | $T_{2,7}^{\sigma}$ | $3$ | $7$ |
-| Hopf${}^2$ color binding | $\mathfrak{t}$ | $T_{3,4}$ | $3$ | $8$ | *(force carrier sector $H^{0,1}$; "top quark" label deprecated)* |
+| Hopf${}^2$ color binding *(force carrier sector $H^{0,1}$; "top quark" label deprecated)* | $\mathfrak{t}$ | $T_{3,4}$ | $3$ | $8$ |
