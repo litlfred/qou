@@ -37,6 +37,46 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from mass_at_3A_proper import (  # noqa: E402
+    atom_braid_word_3A, chi_lambda_of_word, _cached_seminormal,
+)
+from sympy.utilities.iterables import partitions as _sympy_partitions  # noqa: E402
+
+
+def _parts(n):
+    out = []
+    for p in _sympy_partitions(n):
+        lam = []
+        for k in sorted(p, reverse=True):
+            lam += [k] * p[k]
+        out.append(tuple(lam))
+    return out
+
+
+def strong_channel_rho(Z, N, ydict, ame, acos_fn, clamp_fn):
+    """Markov-weighted q-Reeb phase ρ with the antisymmetric (sinh / h)
+    inter-nucleon term removed (d=0): isolates the symmetric cosh 'strong'
+    channel. Recomputes χ_λ from the braid word (free vs d=0-atom) via
+    chi_lambda_of_word. Returns ρ_need = B_AME / Σ y_λ dim_λ |Δθ_λ|."""
+    n = 3 * (Z + N)
+    ng = n - 1
+    w_free = atom_braid_word_3A(Z, N, include_inter=False)
+    w_atom = atom_braid_word_3A(Z, N, include_inter=True)
+    # zero the inter-nucleon d (the −h = −2 sinh(λ) antisymmetric term);
+    # inter-nucleon crossings sit at strand index 3k+2.
+    w_d0 = [(c, 0.0 if (k % 3 == 2) else d, k) for (c, d, k) in w_atom]
+    S = mpf(0)
+    for lam in _parts(n):
+        sig, dim, _ = _cached_seminormal(lam)
+        if dim == 0:
+            continue
+        cf = mpf(str(chi_lambda_of_word(sig, dim, w_free, ng)))
+        ca = mpf(str(chi_lambda_of_word(sig, dim, w_d0, ng)))
+        if fabs(cf / dim) > 1 or fabs(ca / dim) > 1:
+            continue
+        dth = acos_fn(clamp_fn(ca / dim)) - acos_fn(clamp_fn(cf / dim))
+        S += ydict.get(lam, mpf(0)) * dim * fabs(dth)
+    return (mpf(str(ame)) / S) if S != 0 else None
 
 
 def dim_sn(lam):
@@ -153,6 +193,33 @@ def main():
     print("Coulomb (sinh channel, crossing-energy-decomposition) is not yet")
     print("removed; the A=3 mirror pair (T,³He) is the clean test.")
 
+    # ── d=0 strong (cosh) channel: remove the antisymmetric −h term ──
+    # (D/T/³He only; H₁₂ chi_lambda_of_word recompute is too slow for ⁴He)
+    print("\n[d=0 cosh/strong channel]  −h (sinh) inter-nucleon term removed:")
+    y_by_n = {6: y_H6, 9: y_H9}
+    d0 = {}
+    for iso, _f, Z, N in [("D", None, 1, 1), ("T", None, 1, 2),
+                          ("3He", None, 2, 1)]:
+        rho = strong_channel_rho(Z, N, y_by_n[3 * (Z + N)],
+                                 AME[iso], acos, clamp)
+        full_rho = (mpf(str(AME[iso])) / aggs["S3_markov"][iso]
+                    if aggs["S3_markov"][iso] != 0 else None)
+        d0[iso] = {"rho_full": (mp.nstr(full_rho, 6) if full_rho else None),
+                   "rho_d0_strong": (mp.nstr(rho, 6) if rho else None)}
+        print(f"  {iso:4s}: full={float(full_rho):.3f}  "
+              f"d0(strong)={float(rho):.3f}" if (rho and full_rho)
+              else f"  {iso}: NA")
+    d0v = [float(mpf(d0[i]["rho_d0_strong"])) for i in ["D", "T", "3He"]
+           if d0[i]["rho_d0_strong"]]
+    fullv = [float(mpf(d0[i]["rho_full"])) for i in ["D", "T", "3He"]
+             if d0[i]["rho_full"]]
+    d0_spread = (max(d0v) / min(d0v) - 1) * 100 if len(d0v) == 3 else None
+    full_spread = (max(fullv) / min(fullv) - 1) * 100 if len(fullv) == 3 else None
+    if d0_spread is not None:
+        print(f"  D/T/³He spread: full={full_spread:.0f}%  →  "
+              f"d0(strong)={d0_spread:.0f}%  "
+              f"(removing sinh pulls D up toward the A=3 scale)")
+
     wb.set_description(
         "Push the q-Reeb rotation-phase binding lead: ρ_needed = B_AME / "
         "Σ(Δθ aggregation) for unweighted / dim / Markov(y_λ) / signed-Markov "
@@ -165,6 +232,15 @@ def main():
                              "spread_pct": results[best]["spread_pct"],
                              "A3_pair_spread_pct":
                                  results[best]["A3_pair_spread_pct"]})
+    wb.add_data("d0_strong_channel", {
+        "per_atom": d0,
+        "DTHe3_spread_full_pct": full_spread,
+        "DTHe3_spread_d0_pct": d0_spread,
+        "note": "Removing the antisymmetric −h (sinh) inter-nucleon term "
+                "(d=0, symmetric cosh/strong channel) tightens the D/T/³He "
+                "spread and pulls D up toward the A=3 scale — the sinh term "
+                "carries the deuteron's anomaly. D/T/³He only (H₁₂ too slow).",
+    })
     wb.add_assertion(
         "rotation_phase_lead_evaluated",
         computed=len(results),
