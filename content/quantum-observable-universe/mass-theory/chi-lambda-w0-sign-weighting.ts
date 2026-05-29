@@ -30,9 +30,6 @@ export default proposition({
   computation: {
     engine: "python+mpmath",
     script: "folio-assistant/computations/probe_per_wedderburn_block_ck.py",
-    witness: [
-      "folio-assistant/computations/per-wedderburn-block-ck.witness.json",
-    ],
     status: "experimental",
   },
 });
