@@ -26,6 +26,99 @@
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
 the framework's working precision discipline.
 
+## The 1 ppQ target is on the *theory residual* (2026-05-29 reframe)
+
+> Per owner direction (2026-05-29): the headline "1 ppQ on predictions
+> from CAL-1/2/3" is a target on the **framework's own theory residual**,
+> not on the absolute prediction error. This resolves an earlier
+> mis-framing ("1 ppQ on a prediction is unreachable because q₀ is only
+> known to 0.06 ppb"). The two error sources are separate and must not
+> be conflated.
+
+**Error decomposition.** Every prediction `O` carries two independent
+error terms:
+
+```
+σ_total(O)  =  σ_theory(O, N)   ⊕   σ_CAL(O)
+              └ framework's own  └ propagated experimental error of the
+                formula residual   CAL-1/2/3 inputs (m_e, q₀←m_p, m_π)
+                at derivation
+                order N
+```
+
+| Term | Owner | Improves by | Current scale |
+|------|-------|-------------|---------------|
+| **σ_theory(O, N)** — the formula's own residual at brane-tower / derivation order `N` | **us** (derivation) | adding *proved* higher-order terms | m_p: 242 ppb (μ-p floor); m_avg: 2.89 % bare → 819 ppm spectral |
+| **σ_CAL(O)** — propagated CAL experimental error | external labs | CODATA / PDG re-measurement | q₀: **0.06 ppb** (CODATA m_p); m_e: 0.29 ppb; m_π: ~30 ppb |
+
+**The 1 ppQ goal = drive `σ_theory(O, N) ≤ 1 ppQ`**, so every prediction
+is **CAL-limited, not theory-limited**. Once there, `σ_total ≈ σ_CAL`,
+and the prediction sharpens automatically as the three calibration
+measurements improve — no framework change required.
+
+### Accepted: q₀ is known to 0.06 ppb (CODATA-limited, not a framework ceiling)
+
+q₀ is pinned from the CODATA m_p/m_e ratio (0.06 ppb, the most precise
+available — see [`substrate-anchor-alternatives.md`](../content/quantum-observable-universe/observations/substrate-anchor-alternatives.md)).
+Its 0.06 ppb uncertainty is **inherited from that one measurement**, and
+**improves one-for-one as CODATA improves m_p/m_e**. It is *not* a limit
+of the framework. (If the QOU substrate picture is correct, the highest
+leverage experimental program is tightening the three CALs — m_e, the
+neutron β-decay sector behind q₀, and m_π — since every QOU prediction
+then sharpens at once.) The framework's job is to make `σ_theory` small
+enough that this external `σ_CAL` is the only thing left.
+
+### Infra requirement: true arbitrary precision end-to-end (no float64)
+
+To *certify* `σ_theory ≤ 1 ppQ` (10⁻¹⁵), the compute stack must resolve
+residuals well below 1 ppQ, which **forbids any float64 in the hot path**
+— float64 carries only ~16 significant digits (machine ε ≈ 2.2×10⁻¹⁶),
+so a cross-method agreement that bottoms out at ~10⁻¹⁶ is *measuring
+float noise*, not certifying precision. Rules:
+
+1. **No `float(...)` / numpy `float64` / `complex128` in any value that
+   feeds a witnessed quantity.** Use `mpmath.mpf` (or exact `sympy`
+   rationals) throughout. Audit: `compute-integration-watcher` I8.
+2. **dps headroom.** `_precision.COMPUTE_DPS_DEFAULT = 50` gives ~35
+   digits of headroom below 1 ppQ — adequate. Raise via
+   `QOU_COMPUTE_DPS=<n>` when bounding higher-order residuals.
+3. **The L1 cross-method gate must be tightened 1 ppb → 1 ppQ** once all
+   methods are float-clean. As of 2026-05-29, `cross_check_trM_1ppb.py`
+   still gates at 1 ppb because the `markov_peel` *fast path* computes in
+   float64 (`cf, df = float(c), float(d)`; `h_num = float(_h_num)`) and
+   only agrees with the true-mpf methods (Hoefsmit, chi-cache, Habiro)
+   to ~2.7×10⁻¹⁶. Fix = route peel through the exact `use_fast=False`
+   sympy path (or an mpf path), then drop the gate to 1 ppQ.
+
+### Bounding `σ_theory` vs derivation order N
+
+We must be able to say *"order N\* achieves ≤ 1 ppQ"* before committing
+compute. Two distinct "orders" exist — do not conflate them:
+
+| Order | What it indexes | Residual behaviour |
+|-------|-----------------|--------------------|
+| **Habiro order M** (Markov-trace expansion `Σ a_m u^{2m}`) | the *trace* tr_M | **terminates** at M=8 (proton/neutron): finite integer-`a_m` sum ⇒ trace residual is **0**, compute-limited only |
+| **Brane-tower / shell order N** (the observable formula around the trace) | the *formula shell* (e.g. `2·Vol/ℏ²·F − 12`) | **open** — this is where `σ_theory` lives |
+
+The trace is already exact (terminating Habiro sum), so 1 ppQ on the
+trace is purely a compute-precision question (met at 50 dps). The open
+work is the **shell**: tabulate `σ_theory(O, N)` as each *proved*
+correction order is added and project the convergence rate to find N\*.
+Empirical anchor so far (m_avg, no fitting): bare Family-A shell = +2.89 %
+→ first spectral correction = 819 ppm (~35× per derived order). If that
+rate held, ~9 proved correction orders would reach 1 ppQ — a *projection*
+to be validated, not a result. Harness:
+`per_observable_100x_status.py` should grow an `N`-sweep column
+(`σ_theory` vs shell order) once the second derived correction lands.
+
+> **Discipline note.** "Adding a higher-order term" means a **proved**
+> categorical term (e.g. the next Habiro `a_m`, or a derived shell
+> correction), **never** a CODATA-fitted tower. Fitting below the current
+> `σ_theory` models the μ-p tension as signal — see
+> [`audits/2026-05-28-mu-p-tension-substrate-floor.md`](audits/2026-05-28-mu-p-tension-substrate-floor.md).
+> The μ-p 240 ppb is the floor of the *current low-order shell*; it is
+> *derivable-below* (lower N residual), but *not fittable-below*.
+
 ## L1 — compute precision (default 1 ppQ)
 
 **Definition.** Different methods computing the same quantity at substrate
