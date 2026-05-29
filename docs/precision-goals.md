@@ -21,7 +21,7 @@
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **met** — `_precision.py` default is 50 dps compute / 40 dps serialization (10⁻⁴⁰ absolute truncation; relative varies by observable magnitude); `onepb-status-dashboard` reports Layer 2 max_rel_delta = 0.0 across 8 atoms |
-| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **partial** — 4 of 6 observables beat target (m_e anchor, m_μ anchor, Q_β at N=5, Δ_pn via Path C); m_p and m_n still miss |
+| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **anchors only** — 2/7 meet, both calibration anchors (m_e, m_p); **0 of 5 genuine predictions** meet (m_μ, Q_β, m_n, Δ_pn, m_K/m_π all miss). The de-fitted, post-re-pin honest state. |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
 the framework's working precision discipline.
@@ -173,20 +173,39 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 
 ### Per-observable target table (CODATA 2022)
 
-| Observable | σ_exp_rel | **100× target** | Current pred error | Status | Source |
-|---|---:|---:|---:|---|---|
-| m_e (CAL-1 anchor) | 0.29 ppb | 2.9 ppt | 0 (anchor) | **meets** ✓ | CAL-1 |
-| m_μ (CAL-2 anchor) | 21.8 ppb | **0.22 ppb** | 0 ppb (ratio-derived) | **meets** ✓ | CAL-2 via Borromean |
-| Q_β (N=5 categorical) | 0.78 ppm | **7.8 ppb** | **5.7 ppb** | **beats by ~26%** ✓ | `q-beta-operator-valued-N3.witness.json` (N=5 ladder) |
-| Δm_pn (Path C: Q_β + m_e) | 474 ppb | **4.74 ppb** | **4.0 ppb** | **beats** ✓ | Path C: m_p(sub) + Q_β(N=5) + m_e |
-| m_p (substrate identity) | 0.31 ppb | **3.1 ppt** | 242 ppb | misses by ~78 000× | `m-p-substrate-identity-50dps.witness.json` |
-| m_n (Path C) | 0.57 ppb | **5.7 ppt** | 242 ppb | misses by ~42 000× | Path C: m_p(sub) + Q_β(N=5) + m_e |
+> **Table updated 2026-05-29 (post q₀ re-pin #1422 + de-fitting #1416).**
+> Two anchors (m_e, m_p) meet trivially; **all five genuine predictions
+> miss** the 100× target. Earlier versions of this table showed the
+> *muon* pin (m_μ "meets, ratio-derived") and the *fitted* Q_β "5.7 ppb
+> (N=5)" — both stale. Live source: `per-observable-100x-status.witness.json`.
 
-> **Path C (2026-05-26).** PR #1298 identified that the flavor-split X
-> contributes 86% of the Q_β consistency gap. Bypassing it entirely via
-> `m_n = m_p + Q_β + m_e` gives m_n at 242 ppb (8× better than the
-> flavor-split route's 2001 ppb) and Δ_pn at 4.0 ppb (now **beats**
-> the 4.74 ppb 100× target). Dashboard wired in this session.
+| Observable | role | σ_exp_rel | **100× target** | Current pred error | Status |
+|---|---|---:|---:|---:|---|
+| m_e | CAL-1 anchor | 0.29 ppb | 2.9 ppt | 0 (anchor) | **anchor** ✓ |
+| m_p | **CAL-2 numerical anchor** | 0.31 ppb | 3.1 ppt | 0.0004 ppb (round-trip) | **anchor** ✓ (not a prediction) |
+| m_μ | prediction | 21.8 ppb | **0.22 ppb** | 210 ppb | **misses ~964×** (9.5σ μ-p tension) |
+| Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1247 ppb (1.25 ppm) | **misses ~160×** (de-fitted; N=5 ladder was a fit) |
+| m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 1.04 ppb | **misses ~181×** |
+| Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 755 ppb | **misses ~159×** |
+| m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 2.9×10⁵ ppb | **misses ~1098×** |
+
+**Honest summary: 2/7 "meet" — both are calibration anchors (m_e, m_p),
+not predictions. 0 of the 5 genuine predictions meet the 100× target.**
+This is the de-fitted state: production reports the real residuals, not
+CODATA-fitted towers. m_p's "0.0004 ppb" is a calibration round-trip
+(see §"The 1 ppQ target is on the theory residual" — σ_theory = 0, the
+residual is sub-σ_CAL CODATA input slop), not a framework prediction.
+
+> **m_p is the numerical anchor (was a prediction pre-#1422).** Because
+> q₀ is now inverted from m_p/m_e, m_p matches CODATA by construction.
+> The genuine baryon-mass test is the *bare* categorical value
+> (Family-A Borromean tower, m_p = 965.38 MeV, +2.89% open gap) and the
+> m_μ / m_n / Q_β predictions above.
+
+> **Path C (2026-05-26).** `m_n = m_p + Q_β + m_e` bypasses the
+> flavor-split X. With m_p the anchor and Q_β a 1.25 ppm prediction,
+> m_n lands at ~1.04 ppb and Δ_pn at ~755 ppb — both now **miss** the
+> 100× target (they previously "beat" it only via the fitted N=5 Q_β).
 
 > **CAL-3 σ source.** Q_β experimental uncertainty here is the PDG 2024
 > value Q_β(n) = 0.78233341(61) MeV (≈0.78 ppm, 779.7 ppb relative). The
@@ -225,15 +244,19 @@ giving σ_rel(B) of order 0.04–0.45 ppm. **100× targets here are in the
 
 ### Two subgoals (L2 split)
 
-**Subgoal-1 (achieved for 4/6 observables).** 100× targets ≥ ~780 ppb
-CAL-2 floor. Currently met: m_e (anchor), m_μ (anchor), Q_β (N=5
-categorical, 5.7 ppb < 7.8 ppb target), Δ_pn (Path C, 4.0 ppb <
-4.74 ppb target). Remaining: light-atom binding energies (gated on
-Δ_λ derivation).
+**Subgoal-1 (currently met only by the two anchors).** 100× targets
+≥ ~780 ppb CAL-2 floor. Met: m_e (CAL-1 anchor), m_p (CAL-2 numerical
+anchor) — both trivial calibration matches. **No genuine prediction
+currently meets Subgoal-1.** Q_β is the closest (1.25 ppm vs 7.8 ppb
+target, ~160×) after de-fitting (#1416) removed the CODATA-fitted N=5
+ladder that previously read "5.7 ppb"; Δ_pn (~755 ppb) and m_n
+(~1.04 ppb) follow Q_β. Closing them is the GAP-A program (per-isotope
+Borromean-tower extension + operator-valued branching), NOT a fit.
 
-**Q_β at N=5 categorical meets Subgoal-1** (5.7 ppb pred vs 7.8 ppb
-target). **Δ_pn via Path C also meets Subgoal-1** (4.0 ppb pred vs
-4.74 ppb target) — wired 2026-05-26 per PR #1298 gap diagnostic.
+> **Superseded (do not restore).** Prior text claimed "Q_β N=5
+> categorical meets Subgoal-1 (5.7 ppb)" and "Δ_pn via Path C beats
+> (4.0 ppb)". Both relied on the CODATA-fitted N=5 Q_β ladder removed
+> in #1416. The honest de-fitted values miss the target.
 
 **Subgoal-2 (research-grade).** 100× targets < CAL-2 floor. Includes
 absolute m_p (3 ppt), m_n (6 ppt), m_⁴He (0.6 ppt). **Requires
