@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:11:38.370591+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-05-29T19:02:36.906375+00:00",
+  "commitSha": "58bb91b92f189d7771161ef8f1e8a0823e5b9c91",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -528,12 +528,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 4,
+        "probe_witness_count": 3,
         "probe_witnesses": [
           "mass-table-l1-full-crosscheck.witness.json",
           "meson-character-shortcut-l1.witness.json",
-          "meson-sector-1ppq-crosscheck.witness.json",
-          "unified-meson-mass-formula.witness.json"
+          "meson-sector-1ppq-crosscheck.witness.json"
         ],
         "result": "wired"
       },
@@ -2045,9 +2044,10 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 1,
+        "probe_witness_count": 2,
         "probe_witnesses": [
-          "binding-K-direct.witness.json"
+          "binding-K-direct.witness.json",
+          "v-hat-to-delta-lambda-bridge.witness.json"
         ],
         "result": "wired"
       },
@@ -4251,12 +4251,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 4,
+        "probe_witness_count": 3,
         "probe_witnesses": [
           "delta-lambda-2row-stratum.witness.json",
           "delta-lambda-empirical-tabulation.witness.json",
-          "delta-lambda-q-sweep-2row.witness.json",
-          "v-hat-to-delta-lambda-bridge.witness.json"
+          "delta-lambda-q-sweep-2row.witness.json"
         ],
         "result": "wired"
       },

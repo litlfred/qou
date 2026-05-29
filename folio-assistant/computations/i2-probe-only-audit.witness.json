@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:11:39.205621+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-05-29T19:02:37.743589+00:00",
+  "commitSha": "58bb91b92f189d7771161ef8f1e8a0823e5b9c91",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -30,11 +30,11 @@
   "contentBlock": "I2 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "production_consumers_count": 9,
-    "total_label_bearing_witnesses": 222
+    "total_label_bearing_witnesses": 221
   },
   "data": {
     "by_result": {
-      "i2_probe_only": 189,
+      "i2_probe_only": 188,
       "wired_production": 33
     },
     "production_consumers": [
@@ -1981,15 +1981,6 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/unified-meson-mass-formula.witness.json",
-        "labels": [
-          "prop:pion-half-figure-eight"
-        ],
-        "production_consumers": [],
-        "upstream_consumers": [],
-        "result": "i2_probe_only"
-      },
-      {
         "witness": "folio-assistant/computations/universal-ilp.witness.json",
         "labels": [
           "def:universal-ilp-algorithm"
@@ -2012,7 +2003,7 @@
       {
         "witness": "folio-assistant/computations/v-hat-to-delta-lambda-bridge.witness.json",
         "labels": [
-          "prop:rho-k-h3a-refinement"
+          "prop:rho-k-graded-expansion"
         ],
         "production_consumers": [],
         "upstream_consumers": [],
