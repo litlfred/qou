@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T05:47:41.061354+00:00",
-  "commitSha": "a862a8156bd00eeef5ae075547bac0708985520b",
+  "computedAt": "2026-05-29T14:40:36.414380+00:00",
+  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
   "assertions": [
     {
       "name": "deuteron_below_ceiling",
@@ -26,7 +26,7 @@
   "computation": "binding-error-source",
   "scriptFile": "binding_error_source.py",
   "scriptHash": "bca9a598d0d4",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "d001bdd580afd4b028db07d787bfd2af47d94184",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -38,48 +38,48 @@
     "ceiling_MeV": "3.74445966",
     "isotopes": {
       "2H": {
-        "tr_free": "0.983526181919",
-        "tr_atom": "0.388286471548",
-        "delta_tr": "0.595239710371",
-        "B_cat_MeV": "2.228851083",
+        "tr_free": "0.983526015189",
+        "tr_atom": "0.388286417278",
+        "delta_tr": "0.595239597911",
+        "B_cat_MeV": "2.228850662",
         "B_AME_MeV": "2.224566",
-        "clip_pct": 0.1926255943534224,
-        "neg_log_ratio": "0.929400862719",
-        "B_over_dtr": "3.737260739",
-        "B_over_log": "2.393548456"
+        "clip_pct": 0.19260666470616097,
+        "neg_log_ratio": "0.929400832963",
+        "B_over_dtr": "3.737261445",
+        "B_over_log": "2.393548533"
       },
       "3H": {
-        "tr_free": "0.908024119785",
-        "tr_atom": "0.104052118676",
-        "delta_tr": "0.80397200111",
-        "B_cat_MeV": "3.010440726",
+        "tr_free": "0.908023891874",
+        "tr_atom": "0.104052104023",
+        "delta_tr": "0.803971787851",
+        "B_cat_MeV": "3.010439927",
         "B_AME_MeV": "8.481798",
-        "clip_pct": -64.50704525292494,
-        "neg_log_ratio": "2.16637902717",
-        "B_over_dtr": "10.54986739",
-        "B_over_log": "3.915195768"
+        "clip_pct": -64.50705466766112,
+        "neg_log_ratio": "2.16637891698",
+        "B_over_dtr": "10.54987019",
+        "B_over_log": "3.915195968"
       },
       "3He": {
-        "tr_free": "1.04775656758",
-        "tr_atom": "0.206540858562",
-        "delta_tr": "0.841215709019",
-        "B_cat_MeV": "3.149898288",
+        "tr_free": "1.04775629771",
+        "tr_atom": "0.206540811571",
+        "delta_tr": "0.841215486139",
+        "B_cat_MeV": "3.149897453",
         "B_AME_MeV": "7.718043",
-        "clip_pct": -59.18786293711786,
-        "neg_log_ratio": "1.62390829994",
-        "B_over_dtr": "9.174867893",
-        "B_over_log": "4.752757899"
+        "clip_pct": -59.18787375030138,
+        "neg_log_ratio": "1.62390826989",
+        "B_over_dtr": "9.174870324",
+        "B_over_log": "4.752757987"
       },
       "4He": {
-        "tr_free": "0.967323750519",
-        "tr_atom": "0.0553483458767",
-        "delta_tr": "0.911975404643",
-        "B_cat_MeV": "3.414855114",
+        "tr_free": "0.967323422553",
+        "tr_atom": "0.0553483332261",
+        "delta_tr": "0.911975089327",
+        "B_cat_MeV": "3.414853933",
         "B_AME_MeV": "28.295673",
-        "clip_pct": -87.93152891771197,
-        "neg_log_ratio": "2.86088646439",
-        "B_over_dtr": "31.02679399",
-        "B_over_log": "9.890526364"
+        "clip_pct": -87.9315330903853,
+        "neg_log_ratio": "2.86088635391",
+        "B_over_dtr": "31.02680471",
+        "B_over_log": "9.890526746"
       }
     },
     "conclusion": {

@@ -1,9 +1,9 @@
 {
   "target": "m_p (MeV)",
-  "target_value": "966.04962330268637535444052801600599162367484206799",
+  "target_value": "966.04982446659753565797793103937409734667618179461",
   "target_tolerance": 0.01,
   "content_block": "prop:full-pole-structure-mass-trace",
-  "description": "Mass-formula assembly chain for the proton at 50 dps.  Replaces the f64 chain `proton-mass-assembly-MeV` (PR #476) with a precision-lifted version anchored in the fully-trusted Markov-trace assembly chain (PR #480) and the Phase A 50 dps Terms 2–6 (PR #476).  Trust profile {axiom: 0, derived: 2, script-cited: 3, computational: 1} — the SCRIPT_CITED frontier still covers the T1+T2+T3+T4 mass-endomorphism tower assembly.  Current proton mass prediction: 966.05 MeV vs CODATA 938.27208816 (rel_diff 0.0296, 2.9605e+7 ppb).  Target: 1 ppb.",
+  "description": "Mass-formula assembly chain for the proton at 50 dps.  Replaces the f64 chain `proton-mass-assembly-MeV` (PR #476) with a precision-lifted version anchored in the fully-trusted Markov-trace assembly chain (PR #480) and the Phase A 50 dps Terms 2–6 (PR #476).  Trust profile {axiom: 0, derived: 2, script-cited: 3, computational: 1} — the SCRIPT_CITED frontier still covers the T1+T2+T3+T4 mass-endomorphism tower assembly.  Current proton mass prediction: 966.05 MeV vs CODATA 938.27208816 (rel_diff 0.02961, 2.9605e+7 ppb).  Target: 1 ppb.",
   "steps": [
     {
       "name": "tr_M(p, q_0) at 50 dps via Markov-trace assembly chain",
@@ -53,11 +53,11 @@
       "operation": "Same tower formula applied to the electron's 2-strand atomic braid; 50 dps via the same mpmath pipeline.",
       "inputs": [],
       "output_name": "m_e_Hecke",
-      "output_value": "2.002722364462553678570601868847433807101",
+      "output_value": "2.0027223638605332905078202379916317625341050850907",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
-      "notes": "script: folio-assistant/computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` (2.002722364462553678570601868847433807101) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  Full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`."
+      "notes": "script: folio-assistant/computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` (2.0027223638605332905078202379916317625341050850907) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  Full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`."
     },
     {
       "name": "Dimensionless mass ratio m_p/m_e at 50 dps",
@@ -67,7 +67,7 @@
         "m_e_Hecke"
       ],
       "output_name": "m_p_over_m_e",
-      "output_value": "1.1691181546100350623882322520699604817654738115951",
+      "output_value": "1.1691181549614731737462329251694286566564984637347",
       "trust_basis": "derived",
       "jet_order": 0,
       "citation": "manuscript:§dimensionless-mass-ratio",
@@ -75,16 +75,16 @@
     },
     {
       "name": "Scale by CODATA m_e (MeV) → m_p in MeV",
-      "operation": "m_p (MeV) := (m_p_Hecke / m_e_Hecke) × M_E_MEV.  M_E_MEV = 0.51099895 MeV is the **single CODATA-bounded constant** the framework consumes.",
+      "operation": "m_p (MeV) := (m_p_Hecke / m_e_Hecke) × M_E_MEV.  M_E_MEV = 0.51099895069 MeV is the **single CODATA-bounded constant** the framework consumes.",
       "inputs": [
         "m_p_over_m_e"
       ],
       "output_name": "m_p_pred_MeV",
-      "output_value": "966.04962330268637535444052801600599162367484206799",
+      "output_value": "966.04982446659753565797793103937409734667618179461",
       "trust_basis": "computational",
       "jet_order": 0,
       "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
-      "notes": "COMPUTATIONAL leaf: m_p_pred ≈ 966.05 MeV vs CODATA m_p = 938.27208816 MeV.  Current relative error: 0.0296 = 2.9605e+7 ppb (target: 1 ppb, gap of ~6 orders of magnitude).  Closing the gap requires Phase A item completion (Terms 2-6 at full 50 dps without f64 chokepoints) + Phase B (q_0 derivation)."
+      "notes": "COMPUTATIONAL leaf: m_p_pred ≈ 966.05 MeV vs CODATA m_p = 938.27208816 MeV.  Current relative error: 0.02961 = 2.9605e+7 ppb (target: 1 ppb, gap of ~6 orders of magnitude).  Closing the gap requires Phase A item completion (Terms 2-6 at full 50 dps without f64 chokepoints) + Phase B (q_0 derivation)."
     }
   ]
 }

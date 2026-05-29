@@ -1,15 +1,21 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T05:34:01.366365+00:00",
-  "commitSha": "fbc40b43ec7e583dcaac3eebb919224e8855b1b3",
+  "computedAt": "2026-05-29T14:42:18.733556+00:00",
+  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "canonical-derivation-pipeline-compliance",
   "scriptFile": "canonical_derivation_pipeline_compliance.py",
   "scriptHash": "b856bad69b60",
-  "scriptCommitSha": "1032f09b11e2fa0ba02bb7c871966c9dc2c93fb6",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Aggregator dashboard of compute-infra compliance for the canonical-derivation chain. Joins four upstream audit witnesses into one current-state snapshot. See docs/audits/2026-05-12-canonical-derivation-compute-review.md §3 for the contract definitions.",
   "auditOnly": "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
   "parameters": {
@@ -26,16 +32,16 @@
     "source_summaries": {
       "compute_audit_scan": {
         "status": "loaded",
-        "computedAt": "2026-05-24T04:07:13.530575+00:00",
-        "files_scanned": 538,
+        "computedAt": "2026-05-29T14:22:18.969327+00:00",
+        "files_scanned": 730,
         "by_pattern_count": {
-          "P15": 113,
-          "P16": 127,
-          "P21": 19,
-          "P30": 89,
-          "P31": 12
+          "P15": 114,
+          "P16": 181,
+          "P21": 30,
+          "P30": 142,
+          "P31": 57
         },
-        "total_findings": 360,
+        "total_findings": 524,
         "top_files": [
           {
             "file": "gauge_coupling_uniqueness_probe.py",
@@ -51,6 +57,14 @@
               "P15",
               "P16",
               "P21",
+              "P30"
+            ]
+          },
+          {
+            "file": "bowtie_q_channel_projection_probe.py",
+            "count": 12,
+            "patterns": [
+              "P16",
               "P30"
             ]
           },
@@ -71,6 +85,14 @@
             ]
           },
           {
+            "file": "yekutieli_mi_k3_cbh_probe.py",
+            "count": 10,
+            "patterns": [
+              "P16",
+              "P30"
+            ]
+          },
+          {
             "file": "hecke_symbolic.py",
             "count": 9,
             "patterns": [
@@ -86,37 +108,19 @@
             ]
           },
           {
+            "file": "t3n_binomial_pattern_probe.py",
+            "count": 9,
+            "patterns": [
+              "P16",
+              "P30"
+            ]
+          },
+          {
             "file": "atom_nf_symbolic_D.py",
             "count": 7,
             "patterns": [
               "P16",
               "P30"
-            ]
-          },
-          {
-            "file": "frobenius_partition_sum.py",
-            "count": 7,
-            "patterns": [
-              "P16",
-              "P30"
-            ]
-          },
-          {
-            "file": "hecke_character_symbolic.py",
-            "count": 7,
-            "patterns": [
-              "P15",
-              "P16",
-              "P21",
-              "P30"
-            ]
-          },
-          {
-            "file": "hoefsmit_symbolic.py",
-            "count": 7,
-            "patterns": [
-              "P15",
-              "P21"
             ]
           }
         ]
@@ -142,7 +146,7 @@
       },
       "derivation_chain_audit": {
         "status": "loaded",
-        "computedAt": "2026-05-24T04:07:15.786785+00:00",
+        "computedAt": "2026-05-29T14:14:28.885687+00:00",
         "chain_count": 70,
         "assertion_count": 89,
         "all_passed": true,
@@ -167,15 +171,15 @@
       {
         "name": "WitnessBuilder usage (P30)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "89 of 538 files write witnesses without WitnessBuilder",
+        "metric": "142 of 730 files write witnesses without WitnessBuilder",
         "status": "fail",
         "remediation": "Batch-port hand-written .witness.json writers to witness_base.WitnessBuilder. Reference: docs/audits/2026-05-08-compute-audit-workplan.md §Tier 2."
       },
       {
         "name": "CODATA constants from registry only (P31)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "12 hardcoded CODATA literals outside the allowlist",
-        "status": "warn",
+        "metric": "57 hardcoded CODATA literals outside the allowlist",
+        "status": "fail",
         "remediation": "Replace each hit with import from codata_constants (_VALIDATION aliases) or experimental_constants. Tag audit-only consumers with `# noqa: P31` and a justifying comment."
       },
       {
@@ -209,12 +213,12 @@
       {
         "name": "Witness provenance completeness (I14)",
         "source": "witness-provenance-audit.witness.json",
-        "metric": "0 of 700 witnesses missing engine/scriptFile/commitSha (completeness ratio 1.000)",
-        "status": "pass",
+        "metric": "26 of 707 witnesses missing engine/scriptFile/commitSha (completeness ratio 0.963)",
+        "status": "warn",
         "remediation": "Wrap hand-written .witness.json writers in witness_base.WitnessBuilder. See PR #781 fixups for the pattern (mass_table_ppb.py, binding_canonical.py)."
       }
     ],
-    "infra_score": 0.7142857142857143,
+    "infra_score": 0.5714285714285714,
     "known_open_conflicts": [
       {
         "id": "TR_M_AT_Q0_vs_frobenius_proof",

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T14:43:05.866088+00:00",
-  "commitSha": "c2a01939456cc60fa339516c73527a1004c0e398",
+  "computedAt": "2026-05-29T14:33:02.034529+00:00",
+  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
   "assertions": [
     {
       "name": "a_K_R_finite[deuteron]",
@@ -62,16 +62,22 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 18,
   "computation": "a-K-via-lp-dual",
   "scriptFile": "aK_via_lp_dual.py",
   "scriptHash": "13217dec5aec",
-  "scriptCommitSha": "03701c4df38ee768d9afc22c4fb5639bb2863852",
+  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Item B (B.1a) — a_K candidate values via SDP shadow-price decomposition. Compares four a_K definitions (Ratio R, Closed-form C, SDP-dual signed D-sc, SDP-dual absolute D-chi) at q_0 50dps for the proton, neutron, deuteron, tritium, ³He, ⁴He chi-cache atoms. Emits per-partition breakdown with self-conjugate vs chirality-active classification (per content sum c(λ) and Λ^∨ involution). Per `prop:mass-coefficient-shadow-price` §3, a_K should equal 1 + Σ_{λ ∉ Λ^sc} u_λ*/u_0*; this script's D-sc / D-chi candidates are working approximations using chi-cache data directly (full LP solve deferred to B.1a-full). Reference: `conj:knot-factor-frobenius-pairing`.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
   "parameters": {
-    "q0_50dps": "1.1099785955541805753",
-    "h_q": "0.2090603219898794611",
+    "q0_50dps": "1.1099785827513808076",
+    "h_q": "0.20906029879563931543",
     "dps": 50
   },
   "data": {
@@ -218,11 +224,11 @@
         "N": 1,
         "A": 2,
         "a_K_R_ratio": "0.3947901730386585178",
-        "a_K_C_closed": "1.2090603219898794611",
+        "a_K_C_closed": "1.2090602987956393154",
         "a_K_D_sc_signed": "2.037183888430180083",
         "a_K_D_chi_abs": "2.0756551685539004209",
-        "R_vs_C_ppm": -673473.5514362839,
-        "D_chi_vs_C_ppm": 716750.7119394783,
+        "R_vs_C_ppm": -673473.545172301,
+        "D_chi_vs_C_ppm": 716750.7448730948,
         "n_active_chirality_blocks": 10,
         "active_chirality_partitions": [
           [
@@ -439,11 +445,11 @@
         "N": 2,
         "A": 3,
         "a_K_R_ratio": "0.1145918003809428716",
-        "a_K_C_closed": "0.95629378176948792224",
+        "a_K_C_closed": "0.9562937914674780106",
         "a_K_D_sc_signed": "1.9957098157165850412",
         "a_K_D_chi_abs": "2.2893804494106567593",
-        "R_vs_C_ppm": -880170.923867238,
-        "D_chi_vs_C_ppm": 1394013.7362123996,
+        "R_vs_C_ppm": -880170.9250824515,
+        "D_chi_vs_C_ppm": 1394013.7119341686,
         "n_active_chirality_blocks": 28,
         "active_chirality_partitions": [
           [
@@ -1067,11 +1073,11 @@
         "N": 1,
         "A": 3,
         "a_K_R_ratio": "0.19712676107484499711",
-        "a_K_C_closed": "0.95629378176948792224",
+        "a_K_C_closed": "0.9562937914674780106",
         "a_K_D_sc_signed": "1.9976418061666389004",
         "a_K_D_chi_abs": "2.0835882937236930343",
-        "R_vs_C_ppm": -793863.8054196174,
-        "D_chi_vs_C_ppm": 1178816.1059337899,
+        "R_vs_C_ppm": -793863.807510091,
+        "D_chi_vs_C_ppm": 1178816.0838379264,
         "n_active_chirality_blocks": 28,
         "active_chirality_partitions": [
           [
@@ -1694,13 +1700,13 @@
         "Z": 2,
         "N": 2,
         "A": 4,
-        "a_K_R_ratio": "0.055675290302056218972",
-        "a_K_C_closed": "0.91449779705098899078",
+        "a_K_R_ratio": "0.057021020692630035593",
+        "a_K_C_closed": "0.91449781559924431915",
         "a_K_D_sc_signed": "2.0",
-        "a_K_D_chi_abs": "2.103298083238279325",
-        "R_vs_C_ppm": -939119.2734617905,
-        "D_chi_vs_C_ppm": 1299948.769719133,
-        "n_active_chirality_blocks": 22,
+        "a_K_D_chi_abs": "2.1008601863326607367",
+        "R_vs_C_ppm": -937647.7234609185,
+        "D_chi_vs_C_ppm": 1297282.891765058,
+        "n_active_chirality_blocks": 24,
         "active_chirality_partitions": [
           [
             12
@@ -1814,14 +1820,25 @@
             6,
             4,
             2
+          ],
+          [
+            6,
+            4,
+            1,
+            1
+          ],
+          [
+            6,
+            3,
+            3
           ]
         ],
         "dual_breakdown": {
-          "tr_M": "0.053856030626245133284",
-          "abs_tr_M": "0.053856030626245133284",
+          "tr_M": "0.055157787594843024827",
+          "abs_tr_M": "0.055157787594843024827",
           "self_conjugate_contribution": "0.0",
-          "chirality_contribution_signed": "0.053856030626245133284",
-          "chirality_contribution_abs": "0.059419255360758323665",
+          "chirality_contribution_signed": "0.055157787594843024827",
+          "chirality_contribution_abs": "0.060721012329356215208",
           "per_partition": [
             {
               "partition": [
@@ -2111,6 +2128,33 @@
               "chi_lambda": "4.6496807071223263361",
               "contribution_signed": "0.00019542957002596177824",
               "contribution_abs": "0.00019542957002596177824"
+            },
+            {
+              "partition": [
+                6,
+                4,
+                1,
+                1
+              ],
+              "self_conjugate": false,
+              "content_sum": 12,
+              "y_lambda": "-0.000011912789847179293107",
+              "chi_lambda": "-32.408652684338767967",
+              "contribution_signed": "0.00038607746865875081899",
+              "contribution_abs": "0.00038607746865875081899"
+            },
+            {
+              "partition": [
+                6,
+                3,
+                3
+              ],
+              "self_conjugate": false,
+              "content_sum": 12,
+              "y_lambda": "0.000014393230617981808491",
+              "chi_lambda": "63.6187610858649305",
+              "contribution_signed": "0.00091567949993914072343",
+              "contribution_abs": "0.00091567949993914072343"
             }
           ]
         }

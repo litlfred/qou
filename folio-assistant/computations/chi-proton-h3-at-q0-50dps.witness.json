@@ -1,7 +1,7 @@
 {
   "computation": "chi-proton-h3-at-q0-50dps",
   "description": "Numerical χ^λ_q(β_atomic(1, 0)) = proton per partition λ ⊢ 3, evaluated at q = q_0 at 50 decimal places via the Hoefsmit seminormal basis. Companion to the symbolic chi-proton-h3.witness.json emitted by per_irrep_pole_atom.py; this numerical cache is used by canonical_tr_m_via_chi_cache.py and the 3-way 1ppb cross-check (cross_check_trM_1ppb.py) when full symbolic data is not yet available. ~100× faster to build than the symbolic counterpart (no sympy poly arithmetic).",
-  "q_0_50dps": "1.1099785955541805",
+  "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "dps": 50,
   "n_strands": 3,
   "atom": "proton",
@@ -9,16 +9,17 @@
   "N": 0,
   "n_partitions": 3,
   "compute_time_sec": 0.0,
-  "tr_M_at_q0": "1.0653062285923887036108498526519307688964161791863",
+  "tr_M_at_q0": "1.0653061442544499756666334037445034130528872534934",
   "by_partition": [
     {
       "partition": [
         3
       ],
       "dim": 1,
-      "y_lambda": "0.41539578633456654388991686217104299642456133060796",
-      "chi_lambda": "1.382494514546439053991519536855615766220648830597",
-      "contribution": "0.57428239597324289601247420295447392299688699588695"
+      "y_lambda": "0.41539579536061340131043751972541446062496615551882",
+      "chi_lambda": "1.3824944633925928759010066186910068575145333016307",
+      "contribution": "0.57428238720261054553308605310815991986809859908064",
+      "compute_time_sec": 0.0
     },
     {
       "partition": [
@@ -26,9 +27,10 @@
         1
       ],
       "dim": 2,
-      "y_lambda": "0.28092963397986408740406243408845850298840381216734",
-      "chi_lambda": "1.8077033200981562755508486997010408170143672514322",
-      "contribution": "0.50783743205936013051242045100014226280406474710221"
+      "y_lambda": "0.28092963103101970777815130637822107959502749332953",
+      "chi_lambda": "1.8077030637786210288109844137955337992663530400168",
+      "contribution": "0.50783735472097189210079185791533256739134888072341",
+      "compute_time_sec": 0.0
     },
     {
       "partition": [
@@ -37,12 +39,10 @@
         1
       ],
       "dim": 1,
-      "y_lambda": "0.022744945705705281301958269652039997598631045057368",
-      "chi_lambda": "-0.73922354697012288904030614973228218835204565164548",
-      "contribution": "-0.016813599440214322914044801302685416904535563802867"
+      "y_lambda": "0.022744942577347183133259867518143380184978857822109",
+      "chi_lambda": "-0.73922357077647486081682637872259067950821434399694",
+      "contribution": "-0.016813597669132461967244507278989074206560226310639",
+      "compute_time_sec": 0.0
     }
-  ],
-  "engine": "python",
-  "scriptFile": "aK_via_lp_dual.py",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+  ]
 }
