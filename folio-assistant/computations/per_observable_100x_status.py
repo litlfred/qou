@@ -226,23 +226,20 @@ def main() -> dict:
     if sub is not None:
         sub_data = sub.get("data", {})
         sub_source = "m-p-substrate-identity-50dps.witness.json"
-        # m_p from substrate identity × Habiro brane-tower ratio.
-        # The ratio R = m_p(exact)/m_p(N=0) is a finite rational function
-        # of q₀ from the Habiro ring. No "d_i" notation — the Taylor
-        # coefficients (46, 4, -29) are integer evaluations of the Habiro
-        # expansion, same structure as Q_β (where c_k were superseded).
+        # m_p from the substrate-identity formula at N=0 — no fitted tower.
+        # A previously-applied "Habiro brane-tower ratio"
+        #   (1 + 46u⁴)(1 + 4u⁵)(1 − 29u⁶)(1 − 8u⁷),  u = b·ℏ_q²
+        # was a CODATA FIT: four integers chosen to close the 242 ppb gap
+        # to <1 ppQ. It is NOT the Taylor expansion of the exact Habiro
+        # rational function — a genuine Taylor tower converges TO the
+        # substrate value, whereas this one overshoots PAST it to CODATA.
+        # Removed from production per the canonical-derivation discipline.
+        # The fitted scan survives only in the exploratory probe
+        # proton_brane_tower_correction_probe.py (does not feed production).
         m_p_str = sub_data.get("predictions", {}).get("m_p_MeV")
         if m_p_str is not None:
-            m_p_raw = mpf(str(m_p_str))
-            from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-            q0_val = mpf(Q_50_DIGIT_STR)
-            hbar_q_val = (q0_val - 1) / q0_val
-            b_val = ((q0_val**4 + q0_val**2 + 1) / (q0_val**2 + 1)**2) ** mpf("0.5")
-            u_val = b_val * hbar_q_val**2
-            habiro_ratio = (1 + 46 * u_val**4) * (1 + 4 * u_val**5) * (1 - 29 * u_val**6) * (1 - 8 * u_val**7)
-            m_p_sub = m_p_raw * habiro_ratio
-            rows.append(_row_for("m_p", m_p_sub,
-                sub_source + " (× Habiro brane-tower ratio)"))
+            m_p_sub = mpf(str(m_p_str))
+            rows.append(_row_for("m_p", m_p_sub, sub_source))
         else:
             rows.append({"obs": "m_p", "status": "NO-WITNESS"})
         # m_mu still from Borromean (CAL-2 anchor check)
@@ -276,23 +273,24 @@ def main() -> dict:
     qb_n3 = load_witness("q-beta-operator-valued-N3.witness.json")
     qb_n3_data = qb_n3.get("data", {})
     if qb_n3_data.get("Q_N2") is not None:
-        # The N=3 witness stores the Habiro-evaluated Q_β at 50 dps.
-        # Apply the remaining N=4,N=5 multiplicative corrections
-        # (these are EXACT — from the Habiro integer coefficients,
-        # not empirical fits).
+        # Report the genuinely-DERIVED value, not a CODATA-fitted one.
+        # The τ_M expansion (prop:tau-M-asymptotic-rep-theory) is derived
+        # at k=1 (Kashiwara f̃₁ matrix element → 74 ppm) and approximately
+        # at k=2 (geometric, → Q_N2 ≈ 1.24 ppm). The previously-applied
+        # k≥3 rungs (c₃=J, c₄=J·b⁴, c₅=3J²+b) were CODATA FITS that
+        # overshoot the exact Habiro value (1677 ppm) toward CODATA to
+        # reach 5.7 ppb — the proposition's own Status section calls k≥3
+        # "open R&D", and the c_k value swings with the (unproven) c₂ form
+        # (−2.01 vs −60.7), so they cannot be pinned. Dropped from
+        # production per the canonical-derivation discipline.
+        # See docs/audits/2026-05-28-mu-p-tension-substrate-floor.md.
         Q_N2 = mpf(str(qb_n3_data["Q_N2"]))
-        b_hoef = mpf(str(qb_n3_data["hoefsmit_b"]))
-        hbar_sq = mpf(str(qb_n3_data["hbar_q_sq"]))
-        # Habiro-derived corrections (integer a_m give these exactly):
-        J = mpf(-2)  # a_3 leading coefficient = J_Hopf(q=1)
-        Q_N3 = Q_N2 * (1 + J * (b_hoef ** 3) * (hbar_sq ** 3))
-        Q_N4 = Q_N3 * (1 + J * b_hoef**4 * (b_hoef ** 4) * (hbar_sq ** 4))
-        Q_N5 = Q_N4 * (1 + (J**2 * 3 + b_hoef) * (b_hoef ** 5) * (hbar_sq ** 5))
-        Q_beta_best = Q_N5
+        Q_beta_best = Q_N2
         rows.append(_row_for(
-            "Q_beta", Q_N5,
-            "q-beta-operator-valued-N3.witness.json (Habiro-exact, "
-            "integer a_m evaluated at q₀; series terminates at M=8)",
+            "Q_beta", Q_N2,
+            "q-beta-operator-valued-N3.witness.json::Q_N2 "
+            "(τ_M derived to k=2: Kashiwara f̃₁ + geometric; k≥3 fitted "
+            "rungs dropped as non-canonical)",
         ))
     else:
         Q_beta_best = None

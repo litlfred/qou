@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T02:18:33.467211+00:00",
-  "commitSha": "0b3a08b9dd3238fc39a58ab134903930ef56fb9e",
+  "computedAt": "2026-05-28T03:49:01.009479+00:00",
+  "commitSha": "6ec28a346037c1a526d9e2976f41296f5ee56226",
   "assertions": [
     {
       "name": "habiro_tr_M_proton_matches_direct",
@@ -13,16 +13,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 69,
+  "durationMs": 12,
   "computation": "habiro-exact-qbeta",
   "scriptFile": "habiro_exact_qbeta.py",
   "scriptHash": "0721e6290c7d",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "c304651aed951d4185ec23cda5138e909852ab27",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "data": {
     "q_0": "1.10997859555418057528159407960950937799328227995870",

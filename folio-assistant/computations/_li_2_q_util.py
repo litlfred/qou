@@ -243,7 +243,67 @@ def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     vol_b3 = 8 * mp.catalan  # Adams 1985 (NOT Lean-formalized — see docstring)
     geom_leading = vol_b3 / hbar_q ** 2
     linking_weight = linking_weight_family_a(q, qi)
+    # PROVED production formula: Vol(𝓑₃)/ℏ_q² × Family-A linking weight
+    # (lw = (3q²+4+3q⁻²)/4, Lean: lambda-scale-substrate-form.lean).
+    # m_e × this = m_avg ≈ 966 MeV (+2.89 % vs CODATA m_avg); the 2.89 %
+    # is an OPEN R&D gap (categorical-exactness refinement at h² order).
+    # The exploratory spectral-phase correction (spectral_correction_
+    # borromean, −819 ppm on m_avg) is NOT applied here: it is unproved
+    # (trivial Lean stub) so it must not enter production. Use it only
+    # via the explicitly-exploratory geom_full_borromean_spectral().
     return geom_leading * linking_weight
+
+
+def spectral_correction_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """EXPLORATORY (UNPROVED — do not wire into production geom_full).
+    Top-down spectral-phase correction to the Borromean linking weight.
+
+    The leading Geom_full (Vol/ℏ² × lw_A) × m_e gives the AVERAGE
+    nucleon mass m_avg, and is +2.89 % high.  The correction is the
+    rotation angle of the Borromean braid 𝓑₃ on the 2-dimensional
+    standard irrep V_(2,1) of H_3, measured per ideal octahedron in
+    substrate-tick units:
+
+        θ      = arccos( χ^(2,1)(𝓑₃) / 2 )     (𝓑₃ is det-1 ⇒ a rotation)
+        χ^(2,1)(𝓑₃) = 2 − 3h⁴ − h⁶              (exact Hoefsmit character)
+        correction = θ / (8 ℏ_q²)                (8 = Vol(𝓑₃)/G octahedra)
+
+    All quantities are categorical with NO free parameter (the 8 cancels
+    against Vol = 8G).  Applying it gives m_avg = 938.15 MeV, which is
+    −819 ppm vs CODATA m_avg (938.92) — fully derived, no CODATA fitting,
+    a ~35× improvement over the bare +2.89 %.  NOTE: m_avg lands only
+    ~130 ppm from the PROTON (938.27), but that is coincidence — this
+    routine produces the average nucleon mass, NOT m_p; the proton's
+    own pinned value comes from the substrate identity (242 ppb / exact).
+    See `docs/audits/2026-05-28-spectral-phase-correction-derived.md`.
+
+    NOTE this correction is specific to multi-component LINKS: knots
+    (muon = 4₁) have linking weight 1 and take NO such correction —
+    their bare Vol/ℏ² is already exact (0.05 ppb).  χ^(2,1)(4₁) = −0.91
+    is not near 2, so the rotation-angle reading does not apply.
+
+    Residual ~819 ppm origin (Vol=8G precision / higher geometric term /
+    calibration) is OPEN.  The "why the phase multiplies Geom this way"
+    step is not yet Lean-proved (trivial stub in TwoRoutesProtonMass).
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    h = q - qi
+    hbar_q = 1 - qi
+    chi = 2 - 3 * h ** 4 - h ** 6  # exact χ^(2,1)(𝓑₃), Hoefsmit seminormal
+    theta = mp.acos(chi / 2)
+    return theta / (8 * hbar_q ** 2)
+
+
+def geom_full_borromean_spectral(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """EXPLORATORY (not production): proved Family-A geom_full × the
+    UNPROVED spectral-phase correction. m_e × this = m_avg ≈ 938.15 MeV
+    (−819 ppm vs CODATA m_avg) — a no-fit ~35× improvement over the bare
+    +2.89 %, but the correction is not proved (trivial Lean stub) and the
+    sinh(θ) refinement is an open lead, so this must NOT feed production.
+    Production uses geom_full_borromean (proved Family A, +2.89 %).
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    return geom_full_borromean(q, qi) * spectral_correction_borromean(q, qi)
 
 
 def yekutieli_correction_h2(q: mpf, q_inv: mpf | None = None) -> mpf:

@@ -1,20 +1,20 @@
 {
   "engine": "python+snappy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T23:29:33.643635+00:00",
-  "commitSha": "d59ecece5e2e96d3637f66930ac3ebfe3866f87a",
+  "computedAt": "2026-05-28T01:57:41.774731+00:00",
+  "commitSha": "cf5e251f4be3766c12d67a8b54cf94aee46f2040",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 17,
   "computation": "mass-table-ppb",
   "scriptFile": "mass_table_ppb.py",
-  "scriptHash": "f1da509b71b8",
-  "scriptCommitSha": "4b6d8432eb1856cf2a15e1818605dc99eb24f6ab",
+  "scriptHash": "1aca2526de30",
+  "scriptCommitSha": "db6776a504f73fe780edcefddf59bea6f30c0be3",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "description": "AME2020 light-atom binding vs strictly zero-free-parameter predictions: Kashaev law B = ρ_F · Vol_hyp(K) with ρ_F ∈ {m_e, 2m_e}; atom→knot assignments from framework rules (magic A·8G, α-cluster with c_αα = m_e·Vol(7²_1)) or census search (flagged 'hyp: census-assigned'). NO AME-derived calibrations or fits.",
   "auditOnly": "docs/audits/2026-05-03-next-session-plan-to-1ppb.md",
@@ -171,6 +171,48 @@
         }
       },
       {
+        "sym": "9Be",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "B_AME_MeV": 58.16498,
+        "B_pred_MeV": null,
+        "B_pred_kashaev_only_MeV": null,
+        "epsilon_shell_MeV": null,
+        "err_MeV": null,
+        "err_pct": 0.0,
+        "err_ppb": 0.0,
+        "formula": "GAP — no atom→knot rule",
+        "origin": "GAP: odd-A, Borromean halo — needs composite rule",
+        "inputs": {
+          "B_AME_MeV_target": 58.165,
+          "vol_kashaev_target_m_e_units": 113.82606559171991,
+          "vol_kashaev_target_2m_e_units": 56.913032795859955,
+          "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md"
+        }
+      },
+      {
+        "sym": "11B",
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "B_AME_MeV": 76.20548,
+        "B_pred_MeV": null,
+        "B_pred_kashaev_only_MeV": null,
+        "epsilon_shell_MeV": null,
+        "err_MeV": null,
+        "err_pct": 0.0,
+        "err_ppb": 0.0,
+        "formula": "GAP — no atom→knot rule",
+        "origin": "GAP: odd-A, p-shell — needs composite rule",
+        "inputs": {
+          "B_AME_MeV_target": 76.206,
+          "vol_kashaev_target_m_e_units": 149.13142189431116,
+          "vol_kashaev_target_2m_e_units": 74.56571094715558,
+          "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md"
+        }
+      },
+      {
         "sym": "12C",
         "Z": 6,
         "N": 6,
@@ -192,6 +234,27 @@
         }
       },
       {
+        "sym": "14N",
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "B_AME_MeV": 104.65877,
+        "B_pred_MeV": null,
+        "B_pred_kashaev_only_MeV": null,
+        "epsilon_shell_MeV": null,
+        "err_MeV": null,
+        "err_pct": 0.0,
+        "err_ppb": 0.0,
+        "formula": "GAP — no atom→knot rule",
+        "origin": "GAP: odd-A, N=Z mirror — needs composite rule",
+        "inputs": {
+          "B_AME_MeV_target": 104.659,
+          "vol_kashaev_target_m_e_units": 204.81255392012062,
+          "vol_kashaev_target_2m_e_units": 102.40627696006031,
+          "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md"
+        }
+      },
+      {
         "sym": "16O",
         "Z": 8,
         "N": 8,
@@ -210,6 +273,27 @@
           "n_pairs": 6,
           "B_4He_derived": 29.95567723908384,
           "c_alpha": 2.426989503762857
+        }
+      },
+      {
+        "sym": "19F",
+        "Z": 9,
+        "N": 10,
+        "A": 19,
+        "B_AME_MeV": 147.80137,
+        "B_pred_MeV": null,
+        "B_pred_kashaev_only_MeV": null,
+        "epsilon_shell_MeV": null,
+        "err_MeV": null,
+        "err_pct": 0.0,
+        "err_ppb": 0.0,
+        "formula": "GAP — no atom→knot rule",
+        "origin": "GAP: odd-A, sd-shell onset — needs composite rule",
+        "inputs": {
+          "B_AME_MeV_target": 147.801,
+          "vol_kashaev_target_m_e_units": 289.23934188123087,
+          "vol_kashaev_target_2m_e_units": 144.61967094061544,
+          "audit_doc": "docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md"
         }
       },
       {
@@ -276,43 +360,14 @@
         }
       }
     ],
-    "atoms_no_assignment": [
-      [
-        "9Be",
-        4,
-        5,
-        9,
-        58.16498
-      ],
-      [
-        "11B",
-        5,
-        6,
-        11,
-        76.20548
-      ],
-      [
-        "14N",
-        7,
-        7,
-        14,
-        104.65877
-      ],
-      [
-        "19F",
-        9,
-        10,
-        19,
-        147.80137
-      ]
-    ],
+    "atoms_no_assignment": [],
     "within": {
-      "1": 2,
-      "1000.0": 2,
-      "1000000.0": 2,
-      "1000000000.0": 12
+      "1": 6,
+      "1000.0": 6,
+      "1000000.0": 6,
+      "1000000000.0": 16
     },
-    "mean_abs_pct": 5.6663027178125605,
-    "mean_abs_ppb": 56663027.1781256
+    "mean_abs_pct": 4.249727038359421,
+    "mean_abs_ppb": 42497270.3835942
   }
 }
