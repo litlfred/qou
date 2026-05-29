@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-29T14:58:25.532485+00:00",
+  "computedAt": "2026-05-29T22:50:38.808210+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -825,15 +825,15 @@
       },
       {
         "file": "folio-assistant/computations/binding_shell_enhancement_derivation.py",
-        "line": 56,
+        "line": 58,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
-        "context": "from codata_constants import Q_BETA_MEV  # noqa: E402",
+        "context": "Q_BETA_MEV,",
         "kind": "active"
       },
       {
         "file": "folio-assistant/computations/binding_shell_enhancement_derivation.py",
-        "line": 95,
+        "line": 107,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "r = binding_canonical(Z, N, Q_beta_n_mev=float(Q_BETA_MEV),",
@@ -841,15 +841,15 @@
       },
       {
         "file": "folio-assistant/computations/binding_volume_difference_probe.py",
-        "line": 57,
+        "line": 59,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
-        "context": "from codata_constants import Q_BETA_MEV  # noqa: E402",
+        "context": "Q_BETA_MEV,",
         "kind": "active"
       },
       {
         "file": "folio-assistant/computations/binding_volume_difference_probe.py",
-        "line": 123,
+        "line": 135,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "r = binding_canonical(Z, N, Q_beta_n_mev=float(Q_BETA_MEV),",
