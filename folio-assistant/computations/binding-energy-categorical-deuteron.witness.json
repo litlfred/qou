@@ -1,28 +1,29 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T00:35:59.451610+00:00",
-  "commitSha": "1c2ec13810f6d83bf289cb4861d12d1c19c084e3",
+  "computedAt": "2026-05-29T13:17:27.161054+00:00",
+  "commitSha": "66492736c63468511a64c7372849e8a49365d88c",
   "assertions": [
     {
-      "name": "B_D_pred_within_C_knot",
-      "computed": 5.852086391457883,
-      "expected": 5.852,
+      "name": "bare_perlambda_undershoots_deuteron",
+      "computed": 82.9,
+      "expected": 82.9,
       "passed": true,
-      "tolerance": 0.01
+      "tolerance": 0.5,
+      "source": "Bare per-λ B(D) = m_e·|sum| misses AME by -82.9%; C_knot = 5.852 is the FITTED deficit ratio, not a derived layer. Δ_λ gate remains open."
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "binding-energy-categorical-deuteron",
   "scriptFile": "binding_energy_categorical_deuteron.py",
-  "scriptHash": "4c66da33d8bd",
-  "scriptCommitSha": "fc9515ea4f7735e65e80d98a51f8f36b62f80de4",
+  "scriptHash": "295a55f8db61",
+  "scriptCommitSha": "3d9e949b508be553e1ffdbffa112d5c7ff65c39a",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
   },
   "data": {
     "formula": "B(K) = m_e × |Σ_λ y_λ · χ^λ(β_K) · sgn(w_0) · f^λ|",
@@ -33,7 +34,8 @@
     "C_knot_deuteron": "5.85209",
     "err_pct": "82.9121",
     "free_parameters": 0,
-    "note": "C_knot is NOT a free parameter. It is the ratio B_AME / (m_e × |sum|) where sum uses the interface-inclusive braid word. The interface operator σ₃ between proton/neutron H₃ subspaces IS the geometric layer.",
+    "status": "delta_lambda_gate_open",
+    "note": "RETRACTED (2026-05-29): the per-λ formula does NOT close the deuteron. Bare B(D) = m_e·|sum| undershoots AME by -82.9%. C_knot = B_AME/(m_e·|sum|) = 5.852 is a FITTED deficit ratio, not a derived geometric layer; the χ^λ here is already interface-inclusive (include_inter=True) and still misses by -83%. The Δ_λ gate remains open. See docs/audits/2026-05-18-delta-lambda-gating-context.md (CORRECTION 2026-05-29).",
     "lean_proofs": {
       "sgn_formula": "commit 25cb9f38 — (-1)^{n(λ)} = sgn(w_0^{S_{λ'}}), 2712 partitions verified",
       "dim_formula": "commit 60be505b — dim(V_λ) = regular-rep multiplicity (Burnside)",

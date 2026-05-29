@@ -11,7 +11,14 @@ where:
   sgn(w_0^{S_{λ'}}) = (-1)^{n(λ)} (Lean-proved, commit 25cb9f38)
   f^λ = hook-length formula dim (Lean-proved, commit 60be505b)
 
-Zero free parameters. Interface operator inside χ^λ IS the geometric layer.
+CORRECTION (2026-05-29): this formula does NOT close the deuteron. The
+bare per-λ sum gives B(D) = 0.380 MeV, off by -82.9% from AME (2.225).
+The C_knot below is the deficit ratio B_AME/(m_e·|sum|) = 5.852 — a factor
+FITTED to AME, not a derived geometric layer. The earlier "zero free
+parameters / interface IS the geometric layer" claim is retracted: the χ^λ
+used here is already interface-inclusive (include_inter=True) and still
+undershoots by -83%. See docs/audits/2026-05-18-delta-lambda-gating-context.md
+(CORRECTION 2026-05-29) and delta-lambda-binding-full-evaluation.witness.json.
 """
 from __future__ import annotations
 
@@ -64,11 +71,13 @@ def main():
         print(f"Error: {err_pct:.2f}%")
         print()
 
-        # Also compute C_knot = B_AME / (m_e × |sum|)
+        # C_knot is the deficit ratio: how far the bare per-λ sum
+        # undershoots AME. It is FITTED (defined as B_AME/(m_e·|sum|)),
+        # not derived — see module docstring CORRECTION (2026-05-29).
         C_knot = B_D_AME / (m_e * abs(mp.mpf(str(sum_with))))
         print(f"C_knot(D) = B_AME / (m_e × |sum|) = {float(C_knot):.6f}")
-        print(f"  This is the residual geometric correction factor.")
-        print(f"  Value 5.852 = interface ratio amplification.")
+        print(f"  This is a FITTED deficit ratio (B_AME / m_e|sum|), NOT derived.")
+        print(f"  The bare per-λ formula is off by {err_pct:.1f}% — gate still open.")
         print()
 
         # Build witness
@@ -81,10 +90,14 @@ def main():
         wb.data["C_knot_deuteron"] = fmt(C_knot, 6)
         wb.data["err_pct"] = f"{err_pct:.4f}"
         wb.data["free_parameters"] = 0
+        wb.data["status"] = "delta_lambda_gate_open"
         wb.data["note"] = (
-            "C_knot is NOT a free parameter. It is the ratio B_AME / (m_e × |sum|) "
-            "where sum uses the interface-inclusive braid word. The interface operator "
-            "σ₃ between proton/neutron H₃ subspaces IS the geometric layer."
+            "RETRACTED (2026-05-29): the per-λ formula does NOT close the deuteron. "
+            "Bare B(D) = m_e·|sum| undershoots AME by -82.9%. C_knot = B_AME/(m_e·|sum|) "
+            "= 5.852 is a FITTED deficit ratio, not a derived geometric layer; the χ^λ "
+            "here is already interface-inclusive (include_inter=True) and still misses "
+            "by -83%. The Δ_λ gate remains open. See "
+            "docs/audits/2026-05-18-delta-lambda-gating-context.md (CORRECTION 2026-05-29)."
         )
         wb.data["lean_proofs"] = {
             "sgn_formula": "commit 25cb9f38 — (-1)^{n(λ)} = sgn(w_0^{S_{λ'}}), 2712 partitions verified",
@@ -93,10 +106,13 @@ def main():
         }
 
         wb.add_assertion(
-            "B_D_pred_within_C_knot",
-            computed=float(C_knot),
-            expected=5.852,
-            tolerance=0.01,
+            "bare_perlambda_undershoots_deuteron",
+            computed=round(err_pct, 1),
+            expected=82.9,
+            tolerance=0.5,
+            source="Bare per-λ B(D) = m_e·|sum| misses AME by -82.9%; "
+                   "C_knot = 5.852 is the FITTED deficit ratio, not a "
+                   "derived layer. Δ_λ gate remains open.",
         )
         wb.save()
         print(f"✓ Witness: binding-energy-categorical-deuteron.witness.json")
