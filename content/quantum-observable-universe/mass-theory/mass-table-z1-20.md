@@ -22,6 +22,17 @@ $q_{0}$ is confined to step 3 alone.
 
 See [Table](#tbl:mass-table-z1-20-table-data).
 
-Mean: $0.074\%$.  Maximum: $0.192\%$.  Zero fitted parameters.
-
-**Witness**: `atom-mass-complete-wedderburn.witness.json`.
+> **Status — unverified (2026-05-29).** The quoted row values are not
+> currently reproducible from a committed witness: the cited
+> `atom-mass-complete-wedderburn.witness.json` is absent from the
+> repository. The live mass-prediction pipelines give substantially
+> larger errors than the figures tabulated here — nucleons at $+2.89\%$
+> (Family-A Geom_full); $\mathrm{D}/\mathrm{T}/{}^{3}\mathrm{He}$ at
+> $\sim 1$–$3\%$ via census-assigned knots; and $A \geq 4$ via the
+> $\alpha$-cluster rule at $+5$–$20\%$ (growing with $A$, e.g.
+> ${}^{40}\mathrm{Ca}$ at $+19.5\%$). The earlier "zero fitted
+> parameters" characterisation does not hold for the census /
+> $\alpha$-cluster methods that are actually available; closing the
+> $A \in \{5,6,7\}$ atom$\to$knot gap with a derived (SDP) rule is the
+> prerequisite for a reproducible canonical table. See the
+> [low-mass sweep audit](../../../docs/audits/2026-05-29-low-mass-sweep-full-audit.md).

@@ -60,21 +60,64 @@ with A (⁸Be +10%, ¹²C +5.4%, ²⁰Ne +8.3%, ⁴⁰Ca +19.5%).
 
 ## 4. The brane-tower / m_p "0.39 ppQ" reality
 
-The dashboard's sub-ppQ m_p is **not a categorical prediction** — it
-is a *validation* row anchored to CODATA m_e (pred=codata). The
-**genuine categorical m_p is +2.89%**. The substrate-identity layer
-(`m_p = dim V₍₂,₁₎·(m_μ·F_Bor − |S₃|·m_e)`, derived structure 2 and
-6) reaches 0.24 ppm, but its F_Bor "natural observable" status is
-**open** (line 67), and the further brane-tower ratio that would
-close 240 ppb → sub-ppQ has **d₃ "needs categorical identification"**
-(`proton_brane_tower_correction_probe.py:202`) and is **conjectural**
-(`build_proton_mass_50dps_chain.py:373`).
+**Correction (owner, 2026-05-29): the tower coefficients c_k / d_k ARE
+derived — they are Habiro/Taylor expansion coefficients of the exact
+rational mass function, not fitted.** Confirmed:
+- Q_β: `qbeta_habiro_tower_1ppq.py:8` — c_k are "integer or algebraic
+  expressions from the Habiro series"; c₂=−1, c₃=−2=J (line 68). This
+  is the **production** Q_β path and the one genuine sub-100×
+  derivation (5.7 ppb).
+- m_p: `habiro_exact_mass_endomorphism.py:43` — "Habiro coefficients …
+  are exact polynomials".
 
-**Therefore: wiring the brane-tower "correction" everywhere is NOT
-advisable as a derived correction** — it would propagate either an
-unidentified-coefficient tower or a CODATA anchor into every mass
-row, making the tables look first-principles when they are not. Only
-Q_β is a genuine sub-100× derivation.
+So "d₃ needs categorical identification" (the exploratory probe) means
+its categorical **name** (which knot invariant) is open — **not** that
+its value is fitted. My earlier "not derived" framing was wrong on this
+point.
+
+**However**, the dashboard's sub-ppQ m_p is still **not** the Habiro
+tower — it is a *validation* row anchored to CODATA m_e (pred=codata).
+The production-derived m_p paths give:
+- Habiro-exact mass endomorphism: m_p **+1.84%**, m_n **−55%** (the
+  neutron tower in that script is badly off; Δm_np nonsense). NOT
+  production for the nucleons.
+- Substrate identity `m_p = dim V₍₂,₁₎·(m_μ·F_Bor − |S₃|·m_e)`: **0.24
+  ppm** — derived structure (2, |S₃|=6), the ONE open piece being
+  F_Bor's status as "the natural categorical observable" (line 67).
+- Family-A Geom_full single-level: +2.89%.
+
+**Net for wiring:** the c_k/d_k Habiro method is derived and is
+already production for **Q_β**. For the **nucleons**, the cleanly-
+derived path is the substrate identity (0.24 ppm) modulo the F_Bor
+derivation; the Habiro endomorphism is not yet wireable (m_n −55%);
+the 0.39 ppQ is CODATA-anchored. So the legitimate wiring is the
+substrate identity (label F_Bor open), not a silent tower factor.
+
+## 4b. Root cause of the nucleon +2.89% — a missing DERIVED factor
+
+The nucleon gap is a **uniform scale** (p and n agree to 0 ppm; both
+= 1.028891), so it is a scaling issue, not per-knot. Decomposing
+m_p/m_e into known component pieces (Route 2):
+
+| Piece | Value | Behavior |
+|---|---|---|
+| Vol(B₃) = 8G | 7.3277 | Catalan, derived |
+| Vol(B₃)/ℏ² | 746.42 | geometric scale |
+| lw_A = 5/2 + 3h²/4 | 2.5328 | Family-A, PROVED |
+| spectral_corr = arccos(2−3h⁴−h⁶)/(8ℏ²) | 0.97112 | arccos of exact Hoefsmit χ^(2,1)(B₃) |
+
+- leading (Vol/ℏ²·lw_A): m_p/m_e = 1890.5 → **+2.96%** (= the sweep's +2.89%)
+- × spectral_corr: m_p/m_e = 1835.9 → **−130 ppm**
+
+So the +2.89% is **one missing multiplicative factor** — the spectral
+correction 0.97112 (1/0.97112 = 1.0297 ≈ the uniform 1.0289). It is
+**derived** (arccos of the exact Borromean character χ^(2,1)(B₃) =
+2−3h⁴−h⁶, Hoefsmit), not fitted, not a coordinate error. The sweep's
+`Geom_full(𝓑₃)` computes the leading `Vol/ℏ²·lw_A` and **omits** this
+factor. Wiring it closes nucleons +2.89% → 130 ppm (the residual is
+the arccos Taylor truncation, h⁴-order). This is a legitimate,
+derivable wiring — distinct from the α-cluster (+5–20%, binding
+overcounting) and the non-production Habiro-endomorphism m_n (−55%).
 
 ## 5. Recommendations (priority order)
 
