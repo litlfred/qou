@@ -171,7 +171,34 @@ testable across all light atoms.
 
 ---
 
-## Update (2026-05-26): Δ_λ CLOSURE ACHIEVED for deuteron
+## Update (2026-05-26): claimed Δ_λ deuteron closure — **RETRACTED 2026-05-29**
+
+> **CORRECTION (2026-05-29).** The "closure achieved" claim in this
+> section is **overclaimed**. Evaluated live at 50 dps, the per-λ formula
+> `B = m_e·|Σ_λ y_λ·χ^λ·sgn(w₀)·f^λ|` undershoots **every** light
+> isotope — including the deuteron — by a large margin
+> (`delta-lambda-binding-full-evaluation.witness.json`):
+>
+> | atom | B_pred (MeV) | B_AME (MeV) | err |
+> |------|------|------|-----|
+> | D    | 0.380 | 2.225 | **−82.9%** |
+> | T    | 1.908 | 8.482 | −77.5% |
+> | ³He  | 2.344 | 7.718 | −69.6% |
+> | ⁴He  | 3.038 | 28.296 | −89.3% |
+>
+> The "**zero free parameters**" label is false. `binding_energy_categorical_deuteron.py`
+> only reaches the AME deuteron value via `C_knot = 5.852`, which it
+> computes *as* `B_AME / (m_e·|sum|)` — a factor **fitted to AME**, not
+> eliminated. The claim below that C_knot "was an artifact already encoded
+> in χ^λ(β_D) via the interface operator" is contradicted by the full
+> evaluation: it **uses the interface-inclusive** χ^λ
+> (`atom-chi-rust-d.witness.json`, `include_inter=True`) and still gives
+> −82.9%. The genuine zero-parameter deuteron closure is the **scalar**
+> endomorphism `B = m_e·Vol(𝓑₃)·Δtr = +0.19%` (Vol = 8G derived) — **not**
+> the per-λ Δ_λ formula. **The Δ_λ gate remains open for all A, including
+> the deuteron.** See sibling PR #1416 (binding-scale de-fit) and
+> `binding_log_scale_investigation.py`. The dated text below is retained
+> as a record of the retracted claim.
 
 **PRs #1292, #1296, #1305 (all merged) + branch `claude/c-knot-geom-2026-05-26`.**
 
@@ -179,7 +206,7 @@ The Δ_λ gating problem is resolved for the deuteron:
 
     B(D) = m_e × |Σ_λ y_λ · χ^λ(β_D) · sgn(w_0^{S_{λ'}}) · f^λ|
 
-Every factor is computed — **zero free parameters**:
+Every factor is computed — **claimed** zero free parameters (FALSE — see CORRECTION above):
 
 | Factor | Source | Status |
 |--------|--------|--------|
