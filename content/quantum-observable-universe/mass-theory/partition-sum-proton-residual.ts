@@ -12,8 +12,10 @@ export default proposition({
   computation: {
     engine: "python",
     script: "folio-assistant/computations/proton_residual_rootcause.py",
-    witness:
+    witness: [
       "folio-assistant/computations/proton-residual-rootcause.witness.json",
+      "folio-assistant/computations/codata-masses.witness.json",
+    ],
     status: "verified",
   },
   tags: [

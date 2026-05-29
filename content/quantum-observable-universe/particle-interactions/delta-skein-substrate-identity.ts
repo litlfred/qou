@@ -9,8 +9,10 @@ export default remark({
     engine: "mpmath",
     script:
       "folio-assistant/computations/derive_m_baryon_volume_form.py",
-    witness:
+    witness: [
       "folio-assistant/computations/m-baryon-volume-form.witness.json",
+      "folio-assistant/computations/codata-masses.witness.json",
+    ],
     status: "verified",
   },
   uses: [

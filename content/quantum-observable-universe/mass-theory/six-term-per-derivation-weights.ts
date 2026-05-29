@@ -16,8 +16,10 @@ export default proposition({
   computation: {
     engine: "python",
     script: "folio-assistant/computations/paper_six_term_isotope_sweep.py",
-    witness:
+    witness: [
       "folio-assistant/computations/paper-six-term-isotope-sweep.witness.json",
+      "folio-assistant/computations/codata-masses.witness.json",
+    ],
     status: "verified",
   },
 });
