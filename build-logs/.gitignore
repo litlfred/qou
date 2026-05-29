@@ -1,0 +1,5 @@
+# Raw, transient per-paper build output — large; not committed.
+*.log
+_status.tsv
+# The structured sidecar IS meant to be committed (to share build failures).
+!lean-build-status.json

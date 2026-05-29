@@ -8,10 +8,16 @@
 # Can be invoked from any directory.
 #
 # Usage:
-#   ./scripts/lean-build-all.sh           # build all papers
+#   ./scripts/lean-build-all.sh             # build all papers
 #   ./scripts/lean-build-all.sh --paper quantum-observable-universe
-#   ./scripts/lean-build-all.sh --cache   # fetch Mathlib cache first
-#   ./scripts/lean-build-all.sh --update  # run lake update first
+#   ./scripts/lean-build-all.sh --cache     # fetch Mathlib cache first
+#   ./scripts/lean-build-all.sh --update    # run lake update first
+#   ./scripts/lean-build-all.sh --log-dir DIR   # logs + sidecar (default build-logs/)
+#
+# Every run writes a committable sidecar `<log-dir>/lean-build-status.json`
+# (per-paper pass/fail, failing modules, extracted errors + sorry locations)
+# alongside raw `<paper>.log` files (gitignored). Commit the JSON to share a
+# build failure via the repo instead of copy-pasting terminal output.
 #
 # Exit code: 0 if all builds succeed, 1 if any fail.
 
@@ -26,17 +32,20 @@ export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 FILTER_PAPER=""
 DO_CACHE=false
 DO_UPDATE=false
+LOG_DIR="$REPO_ROOT/build-logs"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --paper)  FILTER_PAPER="$2"; shift 2 ;;
-        --cache)  DO_CACHE=true; shift ;;
-        --update) DO_UPDATE=true; shift ;;
+        --paper)   FILTER_PAPER="$2"; shift 2 ;;
+        --cache)   DO_CACHE=true; shift ;;
+        --update)  DO_UPDATE=true; shift ;;
+        --log-dir) LOG_DIR="$2"; shift 2 ;;
         -h|--help)
-            echo "Usage: $0 [--paper NAME] [--cache] [--update]"
+            echo "Usage: $0 [--paper NAME] [--cache] [--update] [--log-dir DIR]"
             echo "  --paper NAME   Build only the named paper"
             echo "  --cache        Run 'lake exe cache get' before building"
             echo "  --update       Run 'lake update' before building"
+            echo "  --log-dir DIR  Write logs + sidecar here (default build-logs/)"
             exit 0 ;;
         *) echo "Unknown arg: $1"; exit 1 ;;
     esac
@@ -98,6 +107,10 @@ if [ "$DO_CACHE" = true ]; then
 fi
 echo ""
 
+# ── Log dir + structured sidecar setup ────────────────────────────
+mkdir -p "$LOG_DIR"
+: > "$LOG_DIR/_status.tsv"   # truncate the per-run status table
+
 # ── Build each project ────────────────────────────────────────────
 TOTAL=0
 PASSED=0
@@ -126,23 +139,30 @@ for lean_dir in "${LEAN_DIRS[@]}"; do
         continue
     fi
 
-    # Build
+    # Build — tee full output to a per-paper log. `set -o pipefail`
+    # (above) preserves lake's exit status through the tee pipe.
     echo "  → lake build $target"
     BUILD_START=$(date +%s)
 
-    if lake build "$target" 2>&1; then
-        BUILD_END=$(date +%s)
-        elapsed=$((BUILD_END - BUILD_START))
+    if lake build "$target" 2>&1 | tee "$LOG_DIR/$paper.log"; then
+        status="ok"; PASSED=$((PASSED + 1))
+    else
+        status="fail"; FAILED_PAPERS+=("$paper")
+    fi
+    BUILD_END=$(date +%s)
+    elapsed=$((BUILD_END - BUILD_START))
+
+    if [ "$status" = "ok" ]; then
         echo ""
         echo "  ✓ $paper built successfully (${elapsed}s)"
-        PASSED=$((PASSED + 1))
     else
-        BUILD_END=$(date +%s)
-        elapsed=$((BUILD_END - BUILD_START))
         echo ""
-        echo "  ✗ $paper build FAILED (${elapsed}s)"
-        FAILED_PAPERS+=("$paper")
+        echo "  ✗ $paper build FAILED (${elapsed}s) — see $LOG_DIR/$paper.log"
     fi
+
+    # Append a row to the status table consumed by the sidecar generator.
+    printf '%s\t%s\t%s\t%s\t%s\n' \
+        "$paper" "$target" "$status" "$elapsed" "$paper.log" >> "$LOG_DIR/_status.tsv"
     echo ""
 done
 
@@ -153,5 +173,19 @@ if [ ${#FAILED_PAPERS[@]} -gt 0 ]; then
     echo "  Failed:  ${FAILED_PAPERS[*]}"
 fi
 echo "═══════════════════════════════════════════════════════"
+
+# ── Structured sidecar (committable failure log) ──────────────────
+SIDECAR_GEN="$REPO_ROOT/scripts/lib/lean-build-sidecar.py"
+if command -v python3 &>/dev/null && [ -f "$SIDECAR_GEN" ]; then
+    python3 "$SIDECAR_GEN" "$LOG_DIR" || echo "  ⚠ sidecar generation failed (raw logs remain in $LOG_DIR)"
+    echo "  Sidecar: $LOG_DIR/lean-build-status.json"
+    if [ ${#FAILED_PAPERS[@]} -gt 0 ]; then
+        rel="${LOG_DIR#"$REPO_ROOT"/}/lean-build-status.json"
+        echo "  Share this failure with the agent (no copy-paste):"
+        echo "    git add $rel && git commit -m 'build: failure sidecar' && git push"
+    fi
+else
+    echo "  (python3 not found — JSON sidecar skipped; raw logs in $LOG_DIR)"
+fi
 
 [ ${#FAILED_PAPERS[@]} -eq 0 ]
