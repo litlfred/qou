@@ -42,7 +42,7 @@ sources of CP violation are needed.
 
 **QOU interpretation.**
 
-In the [complex chirality rotation](#rem:complex-chirality-rotation)
+In the [complex chirality rotation](#conj:complex-chirality-rotation)
 framework, CP violation arises from a residual phase $\theta$ of
 the complex substrate parameter $q = |q|e^{i\theta}$:
 
