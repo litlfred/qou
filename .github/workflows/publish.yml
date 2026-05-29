@@ -300,11 +300,14 @@ jobs:
           # the .bbl exists) don't abort the check. Gate on actual fatal
           # '! ' errors in main.log, not latexmk's exit code (which is
           # nonzero on warning-level issues).
+          # NOTE: grep -a — a failing compile injects control bytes (e.g.
+          # ^^Y) into main.log, so without -a grep treats it as binary and
+          # silently misses the '! ' lines, letting a broken compile pass.
           latexmk -pdf -draftmode -f -interaction=nonstopmode main.tex \
             > latex-syntax.log 2>&1 || true
-          if grep -qE '^! ' main.log 2>/dev/null; then
+          if grep -aqE '^! ' main.log 2>/dev/null; then
             echo "::error::Fatal LaTeX error(s) in draftmode syntax check:"
-            grep -nE '^! ' main.log | head -20
+            grep -anE '^! ' main.log | head -20
             tail -50 latex-syntax.log
             exit 1
           fi
@@ -317,9 +320,11 @@ jobs:
           # bibtex and every \cite stays undefined. Gate on PDF production +
           # absence of fatal '! ' errors rather than latexmk's exit code.
           latexmk -pdf -f -interaction=nonstopmode main.tex || true
-          if grep -qE '^! ' main.log 2>/dev/null; then
+          # grep -a: a failing compile injects control bytes into main.log,
+          # so without -a grep treats it as binary and misses the '! ' lines.
+          if grep -aqE '^! ' main.log 2>/dev/null; then
             echo "::error::Fatal LaTeX error(s) in PDF compile:"
-            grep -nE '^! ' main.log | head -20
+            grep -anE '^! ' main.log | head -20
             exit 1
           fi
           test -f main.pdf || { echo "::error::main.pdf not produced"; exit 1; }
