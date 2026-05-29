@@ -93,18 +93,18 @@ def main():
     print(f"  Residual = {float(resid_charged)*1e6:.1f} ppm")
     print()
     # Residual translated to a mass² shift on the kaon scale:
-    resid_MeV2 = float(resid_charged) * float(m_K_pm**2)
-    print(f"  Residual as Δ(m_K²) = {resid_MeV2:.1f} MeV²")
+    resid_MeV2 = resid_charged * m_K_pm**2
+    print(f"  Residual as Δ(m_K²) = {float(resid_MeV2):.1f} MeV²")
     print()
     # EM scale: the π±−π⁰ splitting is almost pure EM (Dashen).
-    em_pi = float(m_pi_pm**2 - m_pi_0**2)
-    em_K = float(m_K_pm**2 - m_K_0**2)
+    em_pi = m_pi_pm**2 - m_pi_0**2
+    em_K = m_K_pm**2 - m_K_0**2
     print(f"  EM reference scales:")
-    print(f"    m_π±² − m_π⁰² = {em_pi:.1f} MeV²  (≈ pure EM, Dashen)")
-    print(f"    m_K±² − m_K⁰² = {em_K:.1f} MeV²  (EM + (m_d−m_u))")
+    print(f"    m_π±² − m_π⁰² = {float(em_pi):.1f} MeV²  (≈ pure EM, Dashen)")
+    print(f"    m_K±² − m_K⁰² = {float(em_K):.1f} MeV²  (EM + (m_d−m_u))")
     print()
-    print(f"  Residual ({resid_MeV2:.1f} MeV²) vs EM scale ({em_pi:.0f} MeV²):")
-    print(f"    ratio = {resid_MeV2/em_pi:.3f}  → residual is ~{abs(resid_MeV2/em_pi)*100:.0f}% of")
+    print(f"  Residual ({float(resid_MeV2):.1f} MeV²) vs EM scale ({float(em_pi):.0f} MeV²):")
+    print(f"    ratio = {float(resid_MeV2/em_pi):.3f}  → residual is ~{abs(float(resid_MeV2/em_pi))*100:.0f}% of")
     print(f"    the full π EM splitting — same order, smaller (an NLO/")
     print(f"    partial-EM piece, consistent with #1420's 'EM is the lead').")
     print()
@@ -113,15 +113,15 @@ def main():
     # self-energy. Dashen LO: (m_K±²−m_K⁰²)_EM = (m_π±²−m_π⁰²)_EM.
     # Strong m_K±² ≈ m_K±² − em_pi (remove the charged EM self-energy);
     # strong m_π±² ≈ m_π±² − em_pi. Recompute the ratio.
-    mK2_strong = float(m_K_pm**2) - em_pi
-    mpi2_strong = float(m_pi_pm**2) - em_pi
+    mK2_strong = m_K_pm**2 - em_pi
+    mpi2_strong = m_pi_pm**2 - em_pi
     ratio_strong = mK2_strong / mpi2_strong
-    resid_strong = ratio_strong / float(prod_34) - 1
+    resid_strong = ratio_strong / prod_34 - 1
     print(f"  Dashen-LO EM-subtracted (remove π EM self-energy from both):")
-    print(f"    m_K²(strong)/m_π²(strong) = {ratio_strong:.4f}")
-    print(f"    residual vs [3][4] = {resid_strong*1e6:.0f} ppm")
+    print(f"    m_K²(strong)/m_π²(strong) = {float(ratio_strong):.4f}")
+    print(f"    residual vs [3][4] = {float(resid_strong)*1e6:.0f} ppm")
     print(f"    (charged residual {float(resid_charged)*1e6:.0f} ppm → "
-          f"{'reduced' if abs(resid_strong)<abs(float(resid_charged)) else 'not reduced'} "
+          f"{'reduced' if abs(resid_strong)<abs(resid_charged) else 'not reduced'} "
           f"after crude EM subtraction)")
     print()
 
@@ -151,19 +151,19 @@ def main():
         "is structurally required (meson = 2-body qq̄ → mass² on the fusion "
         "product H⊗H; this is why the 1-body character ratio missed 71%); "
         "'why 3,4' reduces to m_s/m_d = 2[3]_q[4]_q−1. #3: the 203 ppm "
-        f"residual ({resid_MeV2:.0f} MeV²) sits at the EM scale "
-        f"(~{abs(resid_MeV2/em_pi)*100:.0f}% of the π± EM splitting), "
+        f"residual ({float(resid_MeV2):.0f} MeV²) sits at the EM scale "
+        f"(~{abs(float(resid_MeV2/em_pi))*100:.0f}% of the π± EM splitting), "
         "supporting the EM-correction lead."
     )
     w.set_audit_only("docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md")
     w.add_data("ms_md_from_fusion", float(ms_md))
     w.add_data("residual_charged_ppm", float(resid_charged)*1e6)
-    w.add_data("residual_MeV2", resid_MeV2)
-    w.add_data("em_pi_splitting_MeV2", em_pi)
-    w.add_data("residual_over_em_scale", resid_MeV2/em_pi)
-    w.add_data("residual_strong_dashen_ppm", resid_strong*1e6)
+    w.add_data("residual_MeV2", float(resid_MeV2))
+    w.add_data("em_pi_splitting_MeV2", float(em_pi))
+    w.add_data("residual_over_em_scale", float(resid_MeV2/em_pi))
+    w.add_data("residual_strong_dashen_ppm", float(resid_strong)*1e6)
     w.add_assertion("fusion_cg_identity",
-                    computed=1 if abs(float(prod_34-(q_int(2,q)+q_int(4,q)+q_int(6,q))))<1e-30 else 0,
+                    computed=1 if abs(prod_34-(q_int(2,q)+q_int(4,q)+q_int(6,q))) < mp.mpf("1e-30") else 0,
                     expected=1, tolerance=0,
                     source="[3]_q[4]_q = [2]_q+[4]_q+[6]_q (2-body fusion)")
     w.add_assertion("residual_at_em_scale",

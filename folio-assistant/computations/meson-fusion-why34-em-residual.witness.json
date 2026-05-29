@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T19:52:18.641963+00:00",
-  "commitSha": "c51abb8655ade5db8f495dda87d87ee699a5646f",
+  "computedAt": "2026-05-29T19:58:37.394348+00:00",
+  "commitSha": "e250add7cfc3ab350b865379b6815d6060a772c4",
   "assertions": [
     {
       "name": "fusion_cg_identity",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 68,
+  "durationMs": 19,
   "computation": "meson-fusion-why34-em-residual",
   "scriptFile": "meson_fusion_why34_em_residual.py",
-  "scriptHash": "fcbc425b03c9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "42085d36d4d2",
+  "scriptCommitSha": "e250add7cfc3ab350b865379b6815d6060a772c4",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -40,7 +40,7 @@
     "residual_charged_ppm": 203.12852206809472,
     "residual_MeV2": 49.505870017128686,
     "em_pi_splitting_MeV2": 1261.1572265121,
-    "residual_over_em_scale": 0.039254320537054556,
-    "residual_strong_dashen_ppm": 63906.26848347836
+    "residual_over_em_scale": 0.03925432053705455,
+    "residual_strong_dashen_ppm": 63906.2684834784
   }
 }
