@@ -90,6 +90,8 @@ pub mod sdp_recover_canonical;
 pub mod sdp_solve_canonical_t_w;
 #[cfg(feature = "clarabel-sdp")]
 pub mod sdp_solver_clarabel;
+#[cfg(feature = "clarabel-mpfr")]
+pub mod operator_selection_lp;
 pub mod sdp_verifier;
 pub mod seminormal;
 #[cfg(feature = "mpfr")]
