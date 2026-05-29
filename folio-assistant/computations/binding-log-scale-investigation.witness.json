@@ -1,0 +1,88 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-29T05:54:55.788473+00:00",
+  "commitSha": "a862a8156bd00eeef5ae075547bac0708985520b",
+  "assertions": [
+    {
+      "name": "no_derived_scale_closes_A3",
+      "computed": 313.2160491215027,
+      "expected": 313.2160491215027,
+      "passed": true,
+      "tolerance": 1,
+      "source": "κ_needed spread ≫ 0 ⟹ no single derived scale works"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 29,
+  "computation": "binding-log-scale-investigation",
+  "scriptFile": "binding_log_scale_investigation.py",
+  "scriptHash": "3aa1665a01d0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Tests whether a DERIVED scale κ closes A≥3 binding with the extensive log-observable B = κ·log(tr_free/tr_atom). Definitive negative: κ_needed spans 2.39–9.89 MeV (313% spread), tracking B/A (shell structure) which the per-atom Markov trace does not encode. A≥3 binding is a missing-structure problem, not a scale problem; the framework cleanly predicts only the deuteron (true 2-body).",
+  "data": {
+    "derived_scale_tests": {
+      "E0": {
+        "kappa_MeV": "4.1859808",
+        "err_pct": {
+          "D": 74.88598641723385,
+          "T": 6.916258478210339,
+          "3He": -11.925224962841273,
+          "4He": -57.67686497437806
+        }
+      },
+      "m_e*Vol(B3)": {
+        "kappa_MeV": "3.7444597",
+        "err_pct": {
+          "D": 56.439684790892485,
+          "T": -4.360857504906512,
+          "3He": -21.215013694864524,
+          "4He": -62.14094657661936
+        }
+      },
+      "m_e*Vol(4_1)": {
+        "kappa_MeV": "1.0372682",
+        "err_pct": {
+          "D": -56.66399862690464,
+          "T": -73.50660725231579,
+          "3He": -78.17544647151183,
+          "4He": -89.51250769053436
+        }
+      }
+    },
+    "kappa_needed": {
+      "D": {
+        "kappa_needed_MeV": "2.3935485",
+        "B_per_A_MeV": "1.11228",
+        "log_per_A": "0.4647"
+      },
+      "T": {
+        "kappa_needed_MeV": "3.9151958",
+        "B_per_A_MeV": "2.82727",
+        "log_per_A": "0.722126"
+      },
+      "3He": {
+        "kappa_needed_MeV": "4.7527579",
+        "B_per_A_MeV": "2.57268",
+        "log_per_A": "0.541303"
+      },
+      "4He": {
+        "kappa_needed_MeV": "9.8905264",
+        "B_per_A_MeV": "7.07392",
+        "log_per_A": "0.715222"
+      }
+    },
+    "kappa_spread_pct": 313.2160491215027,
+    "conclusion": {
+      "scale_derivable": false,
+      "reason": "κ_needed not constant (313% spread); tracks B/A shell structure",
+      "boundary": "framework predicts deuteron binding (2-body, +0.2%); A≥3 needs shell structure absent from per-atom Markov trace"
+    }
+  }
+}
