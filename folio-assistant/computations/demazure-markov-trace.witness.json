@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-20T05:00:53.670740+00:00",
-  "commitSha": "d7fceb9f62fdd152f994e26864376f49e26e753e",
+  "computedAt": "2026-05-29T16:17:12.336398+00:00",
+  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
   "assertions": [
     {
       "name": "D_w0_eq_schur_n2",
@@ -30,11 +30,17 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5282,
+  "durationMs": 4449,
   "computation": "demazure-markov-trace",
   "scriptFile": "demazure_markov_trace.py",
   "scriptHash": "3275dd59c4d7",
-  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
+  "scriptCommitSha": "3905433d845e20f9ca710f12a96964a81a80bfbb",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Demazure-fiber Markov-trace evaluator: replaces the manual Hecke-energy LP cost vector by Kashiwara weight-lattice projection.  For every Weyl element w ∈ S_n and partition λ ⊢ n, computes the Demazure character D_w(λ), the principal-specialisation ratio D_w/D_{w_0}, and the Demazure-fiber Markov-trace functional T^Dem(λ; w) = y_λ · D_w(λ)/D_{w_0}(λ).  At w = w_0 reduces to the standard Markov trace; at shorter w gives the structural Demazure resonance width.",
   "contentBlock": "prop:demazure-fiber-markov-trace",
   "data": {

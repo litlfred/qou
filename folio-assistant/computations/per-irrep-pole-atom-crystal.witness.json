@@ -1,24 +1,30 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-10T06:46:47.526835+00:00",
-  "commitSha": "8c488008360e48491c1d238a2b925ef89fd27a16",
+  "computedAt": "2026-05-29T16:32:09.627474+00:00",
+  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
   "assertions": [
     {
       "name": "asserted_atoms_match_closed_form_shift",
-      "computed": 1.0,
+      "computed": 0.0,
       "expected": 1.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.0,
       "source": "prop:per-nucleon-shift-additive-linearity (verified for A ≥ 2 in per-nucleon-shift-derivation.witness.json) + crystal-bases Path A (this script)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 14378,
+  "allPassed": false,
+  "durationMs": 13246,
   "computation": "per-irrep-pole-atom-crystal",
   "scriptFile": "per_irrep_pole_atom_crystal.py",
-  "scriptHash": "36fbef8959f1",
-  "scriptCommitSha": "c8c68b873f32a71faa2aa738e9e5e916cf32db45",
+  "scriptHash": "1f4b5a162a42",
+  "scriptCommitSha": "72f11e9d394d6f1ec49c18f0a0914f152e385d6b",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
   "description": "Crystal-bases Path A pole-order verification of shift_NF(β_K) = 18Z + 21N + 1 for each atom K, computed via per-SYT-eigenline u-pole tally at q → 0 (Kashiwara crystal limit) on the canonical Δ_I-coupled atomic braid word.  Replaces the GS-reduction-bound per_irrep_pole_atom.py path that doesn't return at H_12. Per-letter contributions: σ on sym/anti = ±2; σ⁻¹ on sym/anti = ∓2; Δ_I = -2 always (leading u⁻² term).",
   "contentBlock": "rem:crystal-bases-path-a",
   "data": {
@@ -49,7 +55,7 @@
         "expected_shift": 19,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.0006821155548095703,
+        "elapsed_sec": 0.0006496906280517578,
         "per_partition": [
           {
             "lambda": [
@@ -104,7 +110,7 @@
         "expected_shift": 22,
         "match": false,
         "asserted": false,
-        "elapsed_sec": 0.00016498565673828125,
+        "elapsed_sec": 0.000194549560546875,
         "per_partition": [
           {
             "lambda": [
@@ -160,7 +166,7 @@
         "expected_shift": 40,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.004519939422607422,
+        "elapsed_sec": 0.004161834716796875,
         "per_partition": [
           {
             "lambda": [
@@ -318,7 +324,7 @@
         "expected_shift": 61,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.20888495445251465,
+        "elapsed_sec": 0.1922600269317627,
         "per_partition": [
           {
             "lambda": [
@@ -674,7 +680,7 @@
         "expected_shift": 58,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.19314026832580566,
+        "elapsed_sec": 0.1868445873260498,
         "per_partition": [
           {
             "lambda": [
@@ -1031,7 +1037,7 @@
         "expected_shift": 79,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 13.939019918441772,
+        "elapsed_sec": 12.789423942565918,
         "per_partition": [
           {
             "lambda": [
@@ -1805,7 +1811,7 @@
       "helium-3",
       "helium-4"
     ],
-    "asserted_atoms_match": true,
+    "asserted_atoms_match": false,
     "full_atoms_match_including_extrapolations": false
   }
 }
