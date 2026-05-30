@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:gs-spectral-sum-finite",
+export default conjecture({
+  label: "conj:gs-spectral-sum-finite",
   title:
     "Finiteness of the GS residue spectral sum",
   lean: {

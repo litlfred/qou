@@ -127,8 +127,8 @@ is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
    Hecke generator invariant (no $q$-anomaly under C, in contrast
    to the $h(q_0) \approx 0.209$ anomaly under isospin Z/2 swap;
    see [`docs/audits/-isospin-categorical-source.md`](../../docs/audits/-isospin-categorical-source.md)).
-2. **Close D7 and D8** — author `prop:p-from-braid-mirror` and
-   `prop:t-from-trace-cyclicity` to complete the CPT
+2. **Close D7 and D8** — author `conj:p-from-braid-mirror` and
+   `conj:t-from-trace-cyclicity` to complete the CPT
    decomposition.
 3. **Promote to proposition** once
    [`prop:inter-nucleon-channel-color-tube`](#prop:inter-nucleon-channel-color-tube)

@@ -6,7 +6,7 @@ indexed by the deformation parameter $q$:*
 |---|---|---|
 | Generic $q$ ([anyonic substrate](#prop:hecke-anyonic-substrate)) | Abelian anyons in $H_n(R, q)$ | Topological braiding matrices |
 | $q = e^{2\pi i / k}$ ([MTC truncation](#prop:root-of-unity-mtc-truncation)) | Non-abelian anyons in $\mathrm{MTC}_k$ | Finite fusion / $F$- and $R$-matrices |
-| $q \to 1$ ([KL classical limit](#prop:kazhdan-lusztig-classical-limit)) | Symmetric-group representations | Pauli ($\pm 1$) statistics |
+| $q \to 1$ ([KL classical limit](#conj:kazhdan-lusztig-classical-limit)) | Symmetric-group representations | Pauli ($\pm 1$) statistics |
 
 *Reading the ladder downwards is the
 [observation functor](#def:observation) $\tau$ acting on a cooling

@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:t-from-trace-cyclicity",
+export default conjecture({
+  label: "conj:t-from-trace-cyclicity",
   title:
     "Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)",
   lean: {
@@ -9,6 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
+    "conj:cpt-d6-d7-d8-closure",
     "def:bar-involution",
     "prop:cpt-orbit-closure-density",
     "thm:jones-markov-trace",

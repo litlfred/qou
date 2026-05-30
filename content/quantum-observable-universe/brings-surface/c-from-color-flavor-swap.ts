@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:c-from-color-flavor-swap",
+export default conjecture({
+  label: "conj:c-from-color-flavor-swap",
   title:
     "Charge conjugation $C$ as the color-sheet flavor-swap $u \\leftrightarrow \\bar u$, $d \\leftrightarrow \\bar d$",
   lean: {
@@ -9,6 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
+    "conj:cpt-d6-d7-d8-closure",
     "prop:inter-nucleon-channel-color-tube",
     "prop:cpt-orbit-closure-density",
     "def:bar-involution",

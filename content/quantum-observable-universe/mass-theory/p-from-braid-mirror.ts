@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:p-from-braid-mirror",
+export default conjecture({
+  label: "conj:p-from-braid-mirror",
   title:
     "Parity $P$ as mirror reflection of the braid diagram (writhe sign flip)",
   lean: {
@@ -9,6 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
+    "conj:cpt-d6-d7-d8-closure",
     "def:bar-involution",
     "prop:cpt-orbit-closure-density",
     "prop:chirality-writhe-ribbon-derivation",

@@ -104,8 +104,8 @@ class TFromTraceCyclicity (M : Type*) [BrCategory M] [Hecke M] where
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D8
   + §2 Cluster A (CPT decomposition D5 $\to$ D6 + D7 + D8)
 - Sibling Z/2 decompositions of CPT:
-  [`prop:c-from-color-flavor-swap`](c-from-color-flavor-swap.md) (D6),
-  [`prop:p-from-braid-mirror`](p-from-braid-mirror.md) (D7)
+  [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md) (D6),
+  [`conj:p-from-braid-mirror`](p-from-braid-mirror.md) (D7)
 - Markov-trace cyclicity:
   [`thm:jones-markov-trace`](jones-markov-trace.md)
 - Composite CPT: [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)

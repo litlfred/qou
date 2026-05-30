@@ -14,7 +14,7 @@ $\mathrm{Cryst}(\mathfrak{sl}_n)$ [`kashiwara1991`]:*
  **height-6 crystal-vertex count**;*
 - *the brane-tower $|V|\to 1$ divergence is regularised by the
  Kazhdan-Lusztig classical-limit functor
- ([`prop:kazhdan-lusztig-classical-limit`](#prop:kazhdan-lusztig-classical-limit)),
+ ([`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)),
  whose action collapses $H_n(R, q)$ to $\mathbb{Z}[S_n]$ via
  integer KL coefficients.*
 
@@ -102,7 +102,7 @@ $z = q_0 \approx 1.11$, the first pole of $\Phi_q$. The summand
 $\Phi_q(z)$ is enormous and the analytic series diverges.
 
 The Kazhdan-Lusztig classical-limit functor
-[`prop:kazhdan-lusztig-classical-limit`](#prop:kazhdan-lusztig-classical-limit)
+[`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)
 sends each KLR canonical basis element $b_w$ to its $q \to 1$
 specialisation $C_w \in \mathbb{Z}[S_n]$ — a **specific integer
 $\pm 1$ permutation sign**. Under this functor the divergent

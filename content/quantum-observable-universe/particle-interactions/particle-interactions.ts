@@ -412,6 +412,7 @@ export default chapter({
         "particle-interactions-orphan-reconnect-intro",
         "geom-universality",
         "q-zero-stokes-region-identification",
+        "cpt-d6-d7-d8-closure",
         "t-from-trace-cyclicity",
         "spin-from-so3-fiber",
         "type-b-folding-cpt",

@@ -39,7 +39,7 @@ operate entirely on the finite, discrete crystal graph at $q = 0$ —
 no resolution of overlapping S-polynomials at the generic fibre is
 required. The crystal-limit values pull back to the physically
 relevant $q_0$ along the flat connection, and the cemetery filter of
-[cemetery-group emergence](#prop:cemetery-group-emergence) acts
+[cemetery-group emergence](#conj:cemetery-group-emergence) acts
 identically on both sides. This is the structural reason the
 engine can replace continuous polynomial term-rewriting with
 graph traversal without loss of information at the generic fibre.

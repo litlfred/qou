@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Crystal-basis correspondence (Brundan-Kleshchev + Type-B folding) reduces three mass-tower open problems to crystal-graph combinatorics",
   uses: [
-    "prop:kazhdan-lusztig-classical-limit",
+    "conj:kazhdan-lusztig-classical-limit",
   ],
   cites: [
     "brundankleshchev2009",
