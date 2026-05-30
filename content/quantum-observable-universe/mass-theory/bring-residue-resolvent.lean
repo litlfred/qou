@@ -40,6 +40,7 @@
 -/
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.NormNum
 
 namespace QOU.BraidKnot
 
