@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:bigbang-heatdeath",
+  interprets: "conj:bigbang-heatdeath",
   label: "rem:cosmological-cone-visualization",
   title: "Cosmological-cone visualization of the $q$-parameter axis",
   tags: [
@@ -15,7 +15,7 @@ export default remark({
     "schematic",
   ],
   uses: [
-    "prop:bigbang-heatdeath",
+    "conj:bigbang-heatdeath",
     "def:exceptional-divisor",
     "def:coral-sector-coords",
     "def:substrate-parameter",

@@ -2,7 +2,7 @@
 $q \in \mathbb{R}_{>0}$ ([substrate parameter](#def:substrate-parameter))
 as the radial coordinate of a schematic cone with two named
 endpoints from
-[Big Bang / heat death](#prop:bigbang-heatdeath):
+[Big Bang / heat death](#conj:bigbang-heatdeath):
 
 | endpoint | $q$ | structure constants | geometric reading |
 |---|---|---|---|
@@ -25,7 +25,7 @@ $\mathcal{S}_p$-topology is preserved.
 summaries have occasionally swapped the two endpoints (reporting
 "$q \to \infty$ as Big Bang" and "$q \to 1$ as heat death"); the
 paper's direction is the opposite, as recorded in
-[Big Bang / heat death](#prop:bigbang-heatdeath).  The mnemonic
+[Big Bang / heat death](#conj:bigbang-heatdeath).  The mnemonic
 is *light speed $c_q$ diverges at the Big Bang*, i.e. at
 $q \to 1^+$.
 
@@ -36,7 +36,7 @@ the $q$-parameter family of QOUs.  It does *not*
   $r = \sqrt{t}$ or any specific cone angle is physical);
 - commit the paper to a cosmological-time reading of $q$
   (parameter-time symmetry is preserved);
-- promote [Big Bang / heat death](#prop:bigbang-heatdeath) from
+- promote [Big Bang / heat death](#conj:bigbang-heatdeath) from
   conjecture to theorem — the endpoint functors remain
   speculative, as that block's caveat records.
 
