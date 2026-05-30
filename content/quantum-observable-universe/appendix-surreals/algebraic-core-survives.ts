@@ -13,5 +13,5 @@ export default remark({
   ],
   interprets: "def:quantum-observable-universe",
   uses: ["prop:hoefsmit-scattering-pipeline"],
-  cites: ["conway1976", "gonshor1986"],
+  cites: ["conway1976", "gonshor1986", "costin-ehrlich-friedman2015"],
 });

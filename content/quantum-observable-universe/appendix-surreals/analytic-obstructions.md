@@ -6,6 +6,40 @@ content, however, finds that most of these obstructions are
 *not triggered* by the main paper. This remark records which
 obstructions genuinely bite and which are only apparent.
 
+## 0. Why an audit, not an axiomatisation
+
+The obvious shortcut — "axiomatise a single integration operator
+on $\mathbf{No}$ and use it everywhere" — is closed off by a
+theorem. Costin, Ehrlich, and Friedman [@costin-ehrlich-friedman2015]
+prove a two-sided result on integration over the surreals:
+
+- **Positive direction.** A robust algebraic integral exists for
+  the class of semi-algebraic, analytic, and Écalle–Borel
+  transseriable functions, obtained by routing through Hardy-
+  field germs and the surreal–transseries correspondence
+  [@berarducci-mantova2018]. On this class the integral satisfies
+  the standard properties (linearity, FTC, translation
+  invariance).
+- **Negative direction.** Set-theoretic obstructions rule out
+  extending the integral to a translation-invariant operator on
+  the full ring $C(\mathbf{No})$ of continuous surreal-valued
+  functions. The order topology on $\mathbf{No}$ is totally
+  disconnected, $C(\mathbf{No})$ contains functions whose
+  "support" violates well-ordering, and no measure on
+  $C(\mathbf{No})$ can simultaneously be translation-invariant,
+  $\sigma$-additive, and non-degenerate.
+
+The lesson for QOU is that we do **not** want a measure on all
+of $C(\mathbf{No})$ — that object does not exist, and trying to
+manufacture one via a categorical proxy (e.g.\ asserting the
+Frobenius pairing $\int_A : A \otimes A \to \mathbf{1}$ at $A =
+C(\mathbf{No})$) would just smuggle the obstruction into the
+axiom. What we want instead is an audit: for each genuine
+use of an analytic structure in the main paper, decide whether
+the use lifts to $\mathbf{No}$ on the CEF-positive side
+(algebraic / transseriable) or whether it requires a
+custom workaround. The audit below is that exercise.
+
 ## 1. Lebesgue measure: one genuine use, no others
 
 A text search for Lebesgue, Haar, and Hausdorff measures across
