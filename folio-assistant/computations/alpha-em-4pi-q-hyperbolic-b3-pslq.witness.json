@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T03:39:17.375952+00:00",
-  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
+  "computedAt": "2026-05-30T03:58:53.904206+00:00",
+  "commitSha": "e8c2f780ff6d6c18b1d85bb54023d56ed14501b3",
   "assertions": [
     {
-      "name": "pslq_executed_at_maxcoeff_50",
-      "computed": 1,
-      "expected": 1,
+      "name": "basis_size_invariant",
+      "computed": 45,
+      "expected": 45,
       "passed": true,
       "tolerance": 0,
-      "source": "PSLQ search on {α/(4π), Cl_3(Bring-symmetric), S_3(Bring-symmetric), ζ(3)} basis at maxcoeff ≤ 50."
+      "source": "Canonical B_3 basis: 22 Cl_3 + 22 S_3 at Bring-symmetric angles + 1 ζ(3) reference = 45 elements (fixed a priori from the same angle set used by bring_zero_mode_bloch_hunt.py)."
     }
   ],
   "allPassed": true,
-  "durationMs": 413,
+  "durationMs": 432,
   "computation": "alpha-em-4pi-q-hyperbolic-b3-pslq",
   "scriptFile": "alpha_em_4pi_q_hyperbolic_b3_pslq.py",
-  "scriptHash": "8a90c069f802",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "efecb8407fbf",
+  "scriptCommitSha": "e8c2f780ff6d6c18b1d85bb54023d56ed14501b3",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -29,7 +29,8 @@
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
     "target_value": "0.000580704866442929781562257812526",
-    "target_formula": "α/(4π) = 1/(4π · 137.035999084)",
+    "target_formula": "α/(4π) = 1/(4π · ALPHA_EM_INV)",
+    "target_codata_source": "experimental_constants.ALPHA_EM_INV (CODATA 2018, Cs recoil)",
     "candidate_basis": [
       {
         "name": "Cl_3(π/3)",
