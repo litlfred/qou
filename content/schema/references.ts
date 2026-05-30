@@ -2631,6 +2631,53 @@ export const references: CSLData[] = [
     DOI: "10.1103/PhysRevLett.128.122001",
   }),
 
+  // ── Osterwalder–Schrader (1973): Axioms for Euclidean Green's functions I ──
+  ref({
+    id: "osterwalder1973",
+    type: "article-journal",
+    title: "Axioms for Euclidean Green's functions",
+    author: [
+      { family: "Osterwalder", given: "Konrad" },
+      { family: "Schrader", given: "Robert" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    volume: "31",
+    page: "83-112",
+    issued: { "date-parts": [[1973]] },
+    DOI: "10.1007/BF01645738",
+  }),
+
+  // ── Osterwalder–Schrader (1975): Axioms for Euclidean Green's functions II ──
+  ref({
+    id: "osterwalder1975",
+    type: "article-journal",
+    title: "Axioms for Euclidean Green's functions. II",
+    author: [
+      { family: "Osterwalder", given: "Konrad" },
+      { family: "Schrader", given: "Robert" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    volume: "42",
+    page: "281-305",
+    issued: { "date-parts": [[1975]] },
+    DOI: "10.1007/BF01608978",
+  }),
+
+  // ── Glimm–Jaffe (1981): Quantum Physics, A Functional Integral Point of View ──
+  ref({
+    id: "glimm1981",
+    type: "book",
+    title: "Quantum Physics: A Functional Integral Point of View",
+    author: [
+      { family: "Glimm", given: "James" },
+      { family: "Jaffe", given: "Arthur" },
+    ],
+    publisher: "Springer-Verlag",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[1981]] },
+    DOI: "10.1007/978-1-4612-4728-9",
+  }),
+
   // ── Jaffe–Witten 2006 (Yang–Mills Millennium Problem) ────────
   ref({
     id: "jaffe2006",
