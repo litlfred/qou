@@ -12,7 +12,7 @@ export default conjecture({
     "thm:lambda-scale-substrate-form",
   ],
   cites: [
-    "adams1985",
+    "adams1985hyperbolic",
     "yekutieli2015",
   ],
   tags: [
