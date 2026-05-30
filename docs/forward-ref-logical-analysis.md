@@ -97,6 +97,47 @@ backwards — the analysis *consumes* these foundational results, not the
 reverse — so the fix is often to invert or drop the edge, not to move a
 block.
 
+## The 56-defect floor under current chapter ordering (post-#1435)
+
+PR #1435 took the count **91 → 56** by mechanical disposition: dropped
+28 over-declared edges (target absent from source's prose AND Lean,
+no orphans), relabeled 2 conjectures mislabeled `prop:` (§3b
+hygiene), and documented 17 irreducible foundational edges where
+option-(b) "promote target to earlier chapter" was BLOCKED for each
+(every target carried its own ≥1 same-chapter dependency, so a
+promote would just relocate the forward edge).
+
+The remaining **56 defects** are a structural floor under current
+chapter ordering:
+
+- The most-cited target (`prop:flavor-split-substrate` in
+  observations) appears in only 3 edges; the rest of the distribution
+  is a long tail of 1-2x cross-chapter dependencies. There is no
+  high-fanout target that would justify a single FOUNDATIONAL_LATE
+  allowlist entry to clear a large batch.
+- Each remaining defect is a real cross-chapter logical reliance:
+  the source chapter genuinely depends on a definition or proposition
+  established in a later chapter, and that target's own dependency
+  cone keeps it pinned to its current chapter.
+
+**Further reduction requires editorial-not-mechanical decisions**:
+
+- Restructure a chapter's position in the manifest (deliberate
+  pedagogical re-ordering — owner's call).
+- Split a target block to extract a foundational piece into an
+  earlier chapter (real content surgery, not a `uses[]` edit).
+- Promote individual targets to `FOUNDATIONAL_LATE` with explicit
+  per-target rationale (the existing 5-entry allowlist is for objects
+  the author deliberately uses early and develops late; adding to it
+  should be a curated decision, not a mass sweep).
+
+The mechanical-cleanup ceiling for the forward-ref severity model is
+**56 logical defects** until the chapter ordering itself is revisited
+or the `FOUNDATIONAL_LATE` allowlist is curated further. Future PRs
+that touch the count should declare which lever they're using
+(restructure / split / allowlist) so reviewers can assess the
+editorial implication.
+
 ## CI integration
 
 The classifier runs in the witness pipeline (warn-only) and emits the
