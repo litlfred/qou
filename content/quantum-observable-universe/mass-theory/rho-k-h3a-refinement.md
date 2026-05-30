@@ -1,7 +1,7 @@
 **Proposition (H_{3A} Wedderburn refinement of $\rho_K$ beyond leading-order).**
 *Let $K$ be an $A$-nucleon atom with braid word $\mathcal{B}_K \in B_{3A}$,
 and let $\mathrm{tr}_M$ denote the canonical Markov trace on $H_{3A}(q)$
-([gs-graded Markov trace existence](#conj:gs-graded-markov-trace-existence)).
+([gs-graded Markov trace existence](#thm:gs-graded-markov-trace-existence)).
 Then the categorical density
 $\rho_K = M(K) / (m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)|)$
 admits the **Wedderburn-Schur decomposition**

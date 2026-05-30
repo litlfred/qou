@@ -1,4 +1,6 @@
-**Conjecture (existence of the graded Markov trace).**
+**Theorem (existence of the graded Markov trace — categorical
+existence, Sprint 4 discharge; concrete per-level values supplied
+by `gb-residue-spectral-sum.lean` instances per atom).**
 *Let $H_n(R, q)$ carry the Gröbner–Shirshov confinement filtration
 $J^\bullet(q)$
 ([confinement level](#def\:confinement-level)).  Then for every

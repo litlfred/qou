@@ -153,7 +153,7 @@ from the substrate:*
 - *$\chi^\lambda(\mathcal{B}_K)$ — Hoefsmit character per
  [`prop:hoefsmit-scattering-pipeline`](#prop:hoefsmit-scattering-pipeline);*
 - *$|\mathrm{tr}_M(\mathcal{B}_K)|$ — canonical Markov trace per
- [`conj:gs-graded-markov-trace-existence`](#conj:gs-graded-markov-trace-existence).*
+ [`thm:gs-graded-markov-trace-existence`](#thm:gs-graded-markov-trace-existence).*
 
 *No Q_β, no AME chain manifold, no fitted parameters. The 780 ppb
 floor from CAL-2 (Q_β uncertainty) **does not apply** to this

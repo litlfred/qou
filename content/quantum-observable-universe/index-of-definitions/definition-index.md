@@ -229,6 +229,7 @@
 | [thm:markov-trace-factorization](#thm:markov-trace-factorization) | Exact factorization of the nuclear Markov trace | Ch 10 | `qou:QOU.Archimedean.markov_trace_factorization` |
 | [thm:jones-markov-trace](#thm:jones-markov-trace) | Existence and non-degeneracy of the Markov trace (Jones, 1987) | Ch 5 | `qou:QOU.Braiding.JonesMarkovTrace` |
 | [thm:categorical-reeb-exists](#thm:categorical-reeb-exists) | Existence of the categorical Reeb derivation | Ch 2 | `qou:QOU.CategoricalReeb.ofWeightDecomposition` |
+| [thm:gs-graded-markov-trace-existence](#thm:gs-graded-markov-trace-existence) | Existence of the graded Markov trace on the GS filtration (categorical existence) | Ch 10 | `qou:QOU.IwahoriHecke.MarkovTrace.GradedMarkovTraceExistence` |
 | [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 | `qou:QOU.SubstrateParameter.ofReebDecomposition` |
 | [thm:weight-decomposition-exists](#thm:weight-decomposition-exists) | Existence of the weight decomposition | Ch 2 | `qou:QOU.WeightDecomposition.ofMaximalTorus` |
 | [thm:explicit-formula](#thm:explicit-formula) | Explicit formula as a spectral--geometric trace identity | Ch 20 | `qou:QOU.AlgebraicSubstrate.explicit_formula` |
@@ -247,6 +248,7 @@
 | [thm:topological-charge-quantization](#thm:topological-charge-quantization) | Quantization of topological charge | Ch 6 | `qou:QOU.AlgebraicSubstrate.topological_charge_quantization` |
 | [thm:quantum-peter-weyl](#thm:quantum-peter-weyl) | Quantum Peter--Weyl theorem: completeness of the $\mathrm{SU}_q(2)$ eigenbasis | Ch 16 | `qou:QOU.FluidDynamics.quantum_peter_weyl` |
 | [thm:qu-to-qou](#thm:qu-to-qou) | Quantum universe with observability and categorical lifting is a QOU | Ch 4 | `qou:QOU.QuToQou` |
+| [thm:reverse-limit-q-to-infinity](#thm:reverse-limit-q-to-infinity) | Reverse limit $q \to \infty$ — symmetric counterpart of Kashiwara crystal $q \to 0$ via bar involution (algebraic fragment) | Ch 17 | `qou:QOU.IwahoriHecke.TypeA.ReverseLimitQToInfinity` |
 | [thm:substrate-self-duality](#thm:substrate-self-duality) | Self-duality of the algebraic substrate | Ch 2 | `qou:QOU.AlgebraicSubstrate.substrate_self_duality` |
 | [thm:six-term-mass-formula-complete](#thm:six-term-mass-formula-complete) | Six-term mass formula: derivation + computation index | Ch 10 | `qou:QOU.BraidKnot.six_term_mass_formula_complete` |
 | [thm:tannaka-krein-isomorphism](#thm:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 20 | `qou:QOU.AlgebraicSubstrate.tannaka_krein_isomorphism` |
@@ -879,7 +881,6 @@
 | [conj:dim-master-pentagon](#conj:dim-master-pentagon) | Ding–Iohara–Miki master Pentagon as unified ancestor of Macdonald + $q$-dilog Pentagons | Ch 10 | `qou:QOU.BraidsAndKnots.DIMMasterPentagon` |
 | [conj:chirality-ribbon-frobenius](#conj:chirality-ribbon-frobenius) | Exact chirality factor from Frobenius ribbon twist: $a_K = \sum_\lambda w_\lambda q^{2w(K)c(\lambda)}\chi_\lambda / \sum_\lambda w_\lambda \chi_\lambda$ | Ch 10 | `qou:QOU.BraidKnot.ChiralityRibbonFrobenius` |
 | [conj:gs-residue-at-root-existence](#conj:gs-residue-at-root-existence) | Existence of the cyclotomic residue at each filtration level | Ch 10 | `qou:QOU.BraidKnot.GBResidueSpectralSum.residue` |
-| [conj:gs-graded-markov-trace-existence](#conj:gs-graded-markov-trace-existence) | Existence of the graded Markov trace on the GS filtration | Ch 10 | `qou:QOU.BraidKnot.GradedMarkovTraceFromGSFiltration` |
 | [conj:gs-spectral-sum-finite](#conj:gs-spectral-sum-finite) | Finiteness of the GS residue spectral sum | Ch 10 | `qou:QOU.BraidKnot.spectral_sum_finite` |
 | [conj:depth-stratified-frobenius-reciprocity](#conj:depth-stratified-frobenius-reciprocity) | Frobenius-reciprocity ideal restriction at low curvature-rank | Ch 10 | `qou:QOU.BraidKnot.DepthStratifiedFrobeniusReciprocity` |
 | [conj:cl3-zeta5-geometric-realization](#conj:cl3-zeta5-geometric-realization) | Geometric realisation of $\mathrm{Cl}_3(2\pi/5)$ as a Bring-natural depth-3 invariant | Ch 10 | `qou:QOU.BraidKnot.Cl3Zeta5GeometricRealization` |
@@ -918,7 +919,6 @@
 | [conj:borromean-quark](#conj:borromean-quark) | Quarks as Borromean-linked unknots in the exceptional divisor | Ch 13 | `qou:QOU.Archimedean.BorromeanQuark` |
 | [conj:borel-zagier-qou-volumes](#conj:borel-zagier-qou-volumes) | Rational linear independence of QOU hyperbolic volumes (Borel--Zagier) | Ch 12 | `qou:QOU.Archimedean.BorelZagierQouVolumes` |
 | [conj:regularity-breakdown](#conj:regularity-breakdown) | Regularity breakdown at $q = 1$: the classical limit as a phase transition | Ch 16 | `qou:QOU.FluidDynamics.RegularityBreakdown` |
-| [conj:reverse-limit-q-to-infinity](#conj:reverse-limit-q-to-infinity) | Reverse limit $q \to \infty$ — symmetric counterpart of Kashiwara crystal $q \to 0$ via bar involution | Ch 17 | `qou:QOU.BraidsAndKnots.ReverseLimitQToInfinity` |
 | [conj:n-v-bring-action](#conj:n-v-bring-action) | S_5 action on H_n(q) at the electroweak slice | Ch 13 | `qou:QOU.Observations.s5_acts_on_ew_slice` |
 | [conj:q-integer-mass-formula](#conj:q-integer-mass-formula) | Seven-term atomic mass formula with $q$-integer coefficients | Ch 10 | `qou:QOU.Interactions.QIntegerMassFormula` |
 | [conj:shared-denominator-cusp-holonomy](#conj:shared-denominator-cusp-holonomy) | Shared-denominator cusp holonomy: roots of $(x; q)_n$ enforce Thurston completeness | Ch 10 | `qou:QOU.QPochhammer.shared_denominator_cusp_holonomy` |

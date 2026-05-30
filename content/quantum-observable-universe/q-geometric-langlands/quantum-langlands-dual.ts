@@ -10,7 +10,7 @@ export default conjecture({
   },
   uses: [
     "conj:type-b-folding-cpt",
-    "conj:reverse-limit-q-to-infinity",
+    "thm:reverse-limit-q-to-infinity",
   ],
   cites: [
     "macdonald1971",
