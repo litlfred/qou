@@ -19,16 +19,17 @@ density function. Closing the conjecture means *constructing* such
 an instance from QOU primitives, not proving a Lean theorem.
 
 The conditional theorem `energyPerArea_deriv` below is elementary
-calculus on a polynomial in `1/d`; the `sorry` is the conjecture
-itself in §3b-cond form (the class axiom is the conjectural input,
-the calculus then proceeds as in the narrative
-`casimir-epsilon-vacuum.md`).
+calculus on a polynomial in `1/d`; the proof is given via
+`HasDerivAt` composition (no `sorry`).
 -/
 
 import QOU.AppendixSurreals.VacuumEpsilon
 import QOU.AppendixSurreals.StandardPart
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.Calculus.Deriv.Basic
+import Mathlib.Analysis.Calculus.Deriv.Pow
+import Mathlib.Analysis.Calculus.Deriv.Inv
+import Mathlib.Analysis.Calculus.Deriv.Mul
 
 namespace QOU.AppendixSurreals
 
@@ -61,21 +62,17 @@ class PlateModeCount where
     minus this, i.e. `-π² ℏ c / (240 d⁴)` in dimensional units
     (textbook Casimir 1948).
 
-    **Proof sketch (elementary calculus, to be filled in with
-    explicit Mathlib API):**
+    **Proof strategy.**  Elementary calculus on
+    `f(x) = -π²/(720 x³) = -π²/720 · (x³)⁻¹`:
 
-    1. `energyPerArea_eq` lets us locally rewrite
-       `energyPerArea x = -π²/720 · x⁻³` on `(0, ∞)` (open
-       neighbourhood of `d`).
-    2. `HasDerivAt (fun x => x⁻³) (-3 · d⁻⁴) d` from
-       `hasDerivAt_zpow (-3) d (Or.inl (ne_of_gt hd))`.
-    3. Multiplying by the constant `-π²/720` gives
-       `HasDerivAt (energyPerArea) ((-π²/720) · (-3 · d⁻⁴)) d`
-       via `HasDerivAt.const_mul`.
-    4. `Filter.EventuallyEq.deriv_eq` transfers the derivative
-       across the local rewrite.
-    5. `(-π²/720) · (-3) = 3π²/720 = π²/240` by `ring` /
-       `field_simp` / `norm_num`.
+    1. `HasDerivAt (fun x => x^3) (3 d²) d`  via `hasDerivAt_pow 3 d`.
+    2. `HasDerivAt (fun x => (x^3)⁻¹) (-(3 d²) / (d³)²) d` via
+       `HasDerivAt.inv` on (1).
+    3. Multiply by `-π²/720` constant via `HasDerivAt.const_mul`.
+    4. Use `EventuallyEq` (via the class axiom on `(0,∞)`) to
+       transfer the derivative back to `energyPerArea`.
+    5. Simplify `(-π²/720) · (-(3 d²) / (d³)²) = π²/(240 d⁴)` by
+       `field_simp; ring`.
 
     The `VacuumEpsilon` instance is not used by this proof but is
     listed in the hypothesis to advertise the full §3b-cond
@@ -89,6 +86,46 @@ theorem energyPerArea_deriv
     deriv PlateModeCount.energyPerArea d = Real.pi ^ 2 / (240 * d ^ 4) := by
   -- Ref: [casimir1948] https://dwc.knaw.nl/DL/publications/PU00018547.pdf
   -- Ref: [manuscript] appendix-surreals/casimir-epsilon-vacuum.md
-  sorry
+  have hd_ne : d ≠ 0 := ne_of_gt hd
+  have hd3_ne : d ^ 3 ≠ 0 := pow_ne_zero 3 hd_ne
+  have hd4_pos : (0 : ℝ) < d ^ 4 := pow_pos hd 4
+  -- Step 1: locally rewrite the function via the class axiom on (0, ∞).
+  have heq : Set.EqOn PlateModeCount.energyPerArea
+      (fun x : ℝ => -(Real.pi ^ 2) / (720 * x ^ 3))
+      (Set.Ioi (0 : ℝ)) := by
+    intro x hx
+    exact PlateModeCount.energyPerArea_eq x hx
+  -- Step 2: transfer the derivative via EventuallyEq on the
+  -- neighborhood (0, ∞).
+  have hopen : IsOpen (Set.Ioi (0 : ℝ)) := isOpen_Ioi
+  have hd_mem : d ∈ Set.Ioi (0 : ℝ) := hd
+  rw [Filter.EventuallyEq.deriv_eq
+      (heq.eventuallyEq_of_mem (hopen.mem_nhds hd_mem))]
+  -- Step 3: compute deriv of x ↦ -π²/(720 x³) at d > 0.
+  -- Build the HasDerivAt for x³ then take inverse.
+  have hpow : HasDerivAt (fun x : ℝ => x ^ 3)
+      ((3 : ℕ) * d ^ ((3 : ℕ) - 1)) d :=
+    hasDerivAt_pow 3 d
+  have hpow' : HasDerivAt (fun x : ℝ => x ^ 3) (3 * d ^ 2) d := by
+    simpa using hpow
+  -- Derivative of 1/x³.
+  have hinv : HasDerivAt (fun x : ℝ => (x ^ 3)⁻¹)
+      (-(3 * d ^ 2) / (d ^ 3) ^ 2) d :=
+    hpow'.inv hd3_ne
+  -- Multiply by the constant -π²/720.
+  have hfinal : HasDerivAt
+      (fun x : ℝ => -(Real.pi ^ 2) / 720 * (x ^ 3)⁻¹)
+      (-(Real.pi ^ 2) / 720 * (-(3 * d ^ 2) / (d ^ 3) ^ 2)) d :=
+    hinv.const_mul (-(Real.pi ^ 2) / 720)
+  -- The function we want is the same as the one in hfinal.
+  have hfun_eq : (fun x : ℝ => -(Real.pi ^ 2) / (720 * x ^ 3))
+      = fun x : ℝ => -(Real.pi ^ 2) / 720 * (x ^ 3)⁻¹ := by
+    funext x; field_simp
+  rw [hfun_eq, hfinal.deriv]
+  -- Simplify: -π²/720 · -(3 d²) / (d³)² = 3π²/(720 d⁴) = π²/(240 d⁴).
+  have hd6_pos : (0 : ℝ) < (d ^ 3) ^ 2 := pow_pos (pow_pos hd 3) 2
+  have hd6_ne : (d ^ 3) ^ 2 ≠ 0 := ne_of_gt hd6_pos
+  field_simp
+  ring
 
 end QOU.AppendixSurreals
