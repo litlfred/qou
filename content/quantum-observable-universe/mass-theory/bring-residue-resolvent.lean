@@ -65,13 +65,15 @@ noncomputable def canonicalResolvent
     Axiomatises the contour-integral / Schwarz-integral on Bring's
     surface around the simple pole of order `n` of σ on the
     relevant torus knot (T(p, k) with α_shift(p, k) = n).  The
-    field `eval` records the substrate evaluation; the field
-    `equals_resolvent` is the canonical-form identification.
+    sole field `pole_nonzero` records the **non-vanishing of the
+    denominator** `1 - h_q · q^n`, which is the precondition for the
+    canonical resolvent form to behave as a genuine reciprocal
+    (rather than the total-but-degenerate `0⁻¹ = 0` branch of `Field`).
 
     Per CLAUDE.md §3b-cond: closes the resolvent-form question by
-    *naming* the contour integral and its substrate evaluation;
-    closing the class instance for a specific (n, q) requires
-    either:
+    *naming* the pole non-vanishing as the substantive contour-
+    integral output; closing the class instance for a specific
+    (n, q) requires either:
     - the Mathlib analytic-residue machinery
       (`Mathlib.Analysis.Complex.RemovableSingularity`,
        `Mathlib.MeasureTheory.Integral.CircleIntegral`), OR
@@ -82,20 +84,26 @@ noncomputable def canonicalResolvent
 
     Closing the class is queued as a Mathlib-import follow-up. -/
 class BringResidueAtOrder {R : Type u} [Field R] (n : ℕ) (q : R) : Prop where
-  /-- The pole at order `n` is non-vanishing: `1 - h_q · q^n ≠ 0`.
-      This is the substantive precondition for the resolvent form
-      `1 / (1 - h_q · q^n)` to be well-defined as a field element.
+  /-- The pole at order `n` is **non-vanishing**: `1 - h_q · q^n ≠ 0`.
+
+      In a `Field`, `canonicalResolvent n q = (1 - h_q · q^n)⁻¹` is
+      always a field element (`x⁻¹` is total, with `0⁻¹ = 0`).  The
+      content of this precondition is that the denominator is
+      non-zero, so the resolvent behaves as a *genuine reciprocal*
+      and the resolvent equation can be discharged via
+      `mul_inv_cancel₀`.
 
       **Strengthened 2026-05-30 (Phase 2 of the §3b-cond template):**
       the previous existential field `∃ r : R, r = canonicalResolvent n q`
       was trivially provable via `⟨canonicalResolvent n q, rfl⟩` —
       the literal-rfl loophole that #1460 closed for
-      `BringZeroModeBlochClass`.  The strengthened field requires the
-      pole-vanishing condition that any concrete contour-integral
-      route (Mathlib `CircleIntegral` or substrate `BlochSuslin`)
-      must establish first; once the pole is non-zero, the resolvent
-      equation `(1 - h_q · q^n) · (1 / (1 - h_q · q^n)) = 1`
-      follows by `mul_inv_cancel₀`. -/
+      `BringZeroModeBlochClass`.  The strengthened field requires
+      the **pole non-vanishing condition** that any concrete
+      contour-integral route (Mathlib `CircleIntegral` or substrate
+      `BlochSuslin`) must establish first; once the pole is
+      non-zero, the resolvent equation
+      `(1 - h_q · q^n) · (1 / (1 - h_q · q^n)) = 1` follows by
+      `mul_inv_cancel₀`. -/
   pole_nonzero : 1 - hShift q * q^n ≠ 0
 
 /-- **Resolvent equation theorem (Phase-2 substantive content).**
