@@ -175,6 +175,7 @@ export default chapter({
         "markov-trace-frobenius-selection",
         "pn-averaging-uniqueness",
         "meson-color-tube-uniqueness",
+        "bring-residue-resolvent",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
       ],
