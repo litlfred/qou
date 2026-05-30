@@ -13,5 +13,10 @@ export default remark({
     "obstruction",
   ],
   interprets: "def:quantum-observable-universe",
-  cites: ["alling1987", "conway1976"],
+  cites: [
+    "alling1987",
+    "conway1976",
+    "costin-ehrlich-friedman2015",
+    "berarducci-mantova2018",
+  ],
 });
