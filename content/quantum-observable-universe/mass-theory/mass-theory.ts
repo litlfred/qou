@@ -364,6 +364,7 @@ export default chapter({
         "pieri-photon-shift",
         "phi-q-tower-jsj-bridge",
         "dilogarithm-archimedean-limit",
+        "phi-q-wkb-greens-function",
         "algebraic-geometric-dilog-equivalence",
         "shared-denominator-cusp-holonomy",
         "quantum-bloch-group",
