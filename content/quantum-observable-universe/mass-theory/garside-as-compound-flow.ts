@@ -10,5 +10,8 @@ export default remark({
     "braid-relation",
     "non-adjacent-transposition",
   ],
-  uses: ["prop:six-canonical-knot-operators"],
+  uses: [
+    "prop:six-canonical-knot-operators",
+    "def:q-reeb-flow-on-coral-coords",
+  ],
 });

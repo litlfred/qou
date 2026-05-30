@@ -56,3 +56,19 @@ complement does *not* admit a Seifert fibration.  The JSJ
 decomposition of $\mathcal{R}_p \setminus \nu(K_{\Delta_3})$
 therefore contains a hyperbolic piece, in agreement with
 [hyperbolic-knot positive volume via Reeb](#rem:hyperbolic-knot-positive-volume-via-reeb).
+
+**Proof status (reader guide).**  The boundary-permutation
+identity above is the §3b-cond conditional content of
+[six canonical knot operators](#prop:six-canonical-knot-operators).
+Three layers cooperate, so the differential-geometric integrability
+of $\xi_q$ never has to be proved directly:
+
+| layer | status |
+|---|---|
+| combinatorial $S_3$ bijection on the six braid words | `sorry`-free in Lean (`QOU.CategoricalReeb.boundary_perm_realises_S3`, a finite case check on six `CanonicalBraid` constructors) |
+| closed-form ODE per sub-interval | Python-verified (`folio-assistant/computations/reeb_flow_garside_closed_form_verification.py`, witness status `verified`) |
+| existence of $\phi^q_t$ as a continuous group on $\mathcal{R}_p$ | axiomatised via [$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords) per CLAUDE.md §3b-cond |
+
+Discharging the third row — Picard–Lindelöf for the
+$q$-deformed Reeb vector field — is a separate research direction,
+deliberately held outside this proposition's scope.
