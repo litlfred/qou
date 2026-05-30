@@ -1,0 +1,52 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T02:37:34.279316+00:00",
+  "commitSha": "b0bc566cd940240be53f36eb77698184c7695237",
+  "assertions": [
+    {
+      "name": "framework_ansatz_residual_pinned",
+      "computed": -1552.7,
+      "expected": -1552.7,
+      "passed": true,
+      "tolerance": 2.0,
+      "source": "Bare q·[9]_q·[10]_q at full precision (q₀=1.10998…) lands at α⁻¹=136.8232, residual −1552.7 ppm vs CODATA 137.035999084. Yekutieli h² extraction does NOT close this: T(2,9) vanishes, T(3,5) is already exact in the closed-form Markov trace, and the Markov-trace product itself is ~10⁶ ppm off — so the [n]_q ansatz is NOT the bare Markov trace, and the residual is structural to the [n]_q identification, not a missing h² term."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "alpha-em-yekutieli-h2-extraction",
+  "scriptFile": "alpha_em_yekutieli_h2_extraction.py",
+  "scriptHash": "31224459a74d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Derive-or-refute: does the exact Markov-trace product for the FSC torus knots T(2,9) and T(3,5) close the ~500 ppm α_EM residual left by the bare q·[9]_q·[10]_q ansatz? Yekutieli h² extraction: T(2,9) vanishes (single generator); T(3,5)'s h² content is already in the closed-form Markov trace via central-full-twist factorisation (Δ₃² = I on (2,1), eigenvalues of σ₁σ₂ are cube roots of unity → χ_(2,1)((σ₁σ₂)⁵) = −1 EXACTLY, independent of q). No fit; no fitting.",
+  "data": {
+    "inputs": {
+      "q0": "1.10997859555418057528159407961",
+      "CODATA_alpha_inv": "137.035999084"
+    },
+    "bare_ansatz": {
+      "formula": "q · [9]_q · [10]_q",
+      "value": "136.823219655",
+      "residual_ppm": -1552.7265161058983
+    },
+    "canonical_exact": {
+      "formula": "q · tr_M(T(2,9), Wenzl-H₂) · tr_M(T(3,5), Wenzl-H₃)",
+      "trM_T29": "1.19653678765",
+      "trM_T35": "0.39474956836",
+      "value": "0.524278832289",
+      "residual_ppm": -996174.1525161716
+    },
+    "yekutieli_h2_status": {
+      "T29": "vanishes (single generator, [σ₁,σ₁]=0)",
+      "T35": "captured by closed-form Markov trace; the (2,1) cube-root-of-unity contribution is the q-independent piece",
+      "structural_insight": "Δ₃²|_(2,1) = I ⇒ (σ₁σ₂)³|_(2,1) = I ⇒ χ_(2,1)((σ₁σ₂)⁵) = ω+ω̄ = −1 ∀q"
+    }
+  }
+}
