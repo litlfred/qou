@@ -70,13 +70,22 @@ pattern](../../../CLAUDE.md):
 
 ## Computational consequence
 
-The merged PR #1396 (`meson-volume-conj`) closed $m_K^2 / m_\pi^2$
-to **203 ppm** at the substrate $q_0$ via the GMOR fusion
-$m_K^2 / m_\pi^2 = [3]_q \cdot [4]_q$.  The 203 ppm residual is
-post-α_shift-derivation: it tracks the **residue normalisation
-error** in the q-character evaluation at $q_0$ — the same
-smaller-scope open math that #1444 reports as the
-$O(\alpha / (4\pi)) \approx 57$ ppb residual on $1 / \alpha_{\rm EM}$.
+PR #1451 (`wire(production): m_K/m_π → Lean-proved closed form`)
+wires the production dashboard to the closed form
+$m_K^2 / m_\pi^2 = [3]_q \cdot [4]_q + (\alpha_{em}/\pi) \cdot (3q^2 - 1)/(2q^2)$
+with Lean refs
+`qou:QOU.BraidKnot.meson_qCG_3x4` (strong-fusion identity
+$[3]_q \cdot [4]_q = [2]_q + [4]_q + [6]_q$) and
+`qou:QOU.BraidKnot.meson_EM_closed_form` (EM correction).  Dashboard
+reports `m_K/m_pi err 23.44 ppb` vs target 263.6 ppb (beats 100× at
+3/7 observables after #1451).
+
+This block is **complementary** to #1451: it does not provide a new
+closed form, it provides the **structural reason** for the two
+q-integer indices.  The α_shift identification embeds the meson
+into the same universal pole-order chain as 1/α_EM (#1444) and the
+Bring color-tube p-n averaging weight (merged #1445), per the
+audit doc above.
 
 ## Status
 
