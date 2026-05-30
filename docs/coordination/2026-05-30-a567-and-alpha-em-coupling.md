@@ -119,3 +119,56 @@ derived; `B = m_e·8G·Δtr` for deuteron under the universal-Borromean
 
 - [#1444 retraction](https://github.com/litlfred/qou/pull/1444#issuecomment-4581427035)
 - [#1442 critical audit](https://github.com/litlfred/qou/pull/1442#issuecomment-4581427607)
+
+## Coordinate round 2026-05-30 (later session)
+
+Added #1479 (Q_β c_k discipline cache) to the scope; the architectural
+parallel with #1508 (α_EM Lean conditional theorem) is now explicit.
+
+### New cross-PR finding
+
+PR #1508 just authored the §3b-cond Lean conditional theorem for α_EM's
+`α⁻¹ = T + α·H·(1−h²α)` form — the empirical thrashing on H is locked
+behind a single class hypothesis (`EmAlphaInvNextOrderBlochClass`). The
+class field's open content is the explicit construction of the Bloch
+class `[Z₂] ∈ B_3(ℂ)`, which is the subgoal-2 RT 2-loop research target.
+
+My #1479 just landed the analogous architectural pattern for Q_β at the
+Python-cache level (`qbeta_ck_cache.py`): each c_k carries a
+machine-readable label (`lean-proved` vs `codata-extracted`), production
+reads from cache, no structural-form guessing in production code.
+
+**The two PRs answer the same question for two different observables in
+two different ways:**
+- #1508: full Lean §3b-cond formalization with the unknown locked behind
+  a class hypothesis (α_EM).
+- #1479: Python cache with labels; future Lean theorems flip labels and
+  production picks up automatically (Q_β).
+
+**The deeper conjectural connection** (flagged on #1508 comment):
+α_EM's `[Z₂] ∈ B_3(ℂ)` from subgoal-2 RT 2-loop and Q_β's c_3 multi-
+Wedderburn-block formula may be the **same Bloch-class object at
+different graph levels**. If RT 2-loop closes α_EM, it likely closes Q_β
+c_3 too.
+
+### Scope-map deltas (51 commits on main since last round)
+
+The 51 main commits since this ledger's last update are all in disjoint
+territory from #1479's Q_β cache (surreal-appendix, bloch-wigner Lean
+wire, Bring-residue, witness drift fixes, infra). **No file conflicts;
+#1479 rebased cleanly.**
+
+### Open siblings touching Q_β / c_k territory (this round)
+
+| PR | Overlap | Action |
+|---|---|---|
+| **#1508** α_EM §3b-cond Lean | Same architectural pattern, different observable | Cherry-pick template (intent posted) |
+| #1495 α/(4π) coord ledger | Co-mentions q_β; no file conflict | Read-only |
+| #1509 H_3 Gram diagonal | Same `braids-and-knots/` chapter; foundation for Δ_λ / Q_β work | Coordinate later when their Halverson-Ram off-diagonals land |
+| 10-PR α_EM cluster (#1477-#1505) | Coordinated thread; not in my scope | Skip |
+
+### Next on my queue
+
+1. **Model Lean c_3 class on #1508's template** when authoring `QbetaC3StructuralFormClass` (probably PR #1479+1 follow-up after merge).
+2. **Don't reopen** the c_3 = -2 / J - ℏ_q² flip-flop — discipline lock in
+   the deep audit holds.
