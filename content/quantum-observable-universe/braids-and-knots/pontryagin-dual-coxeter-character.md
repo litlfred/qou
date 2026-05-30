@@ -1,42 +1,83 @@
-**Conjecture (D20 Pontryagin closure — restricted, low priority).**
-*The abelianisation $S_n^{\mathrm{ab}} \cong \mathbb{Z}/2$ of the
-Coxeter group $S_n$ carries a Pontryagin duality on its character
-group $\widehat{\mathbb{Z}/2} \cong \mathbb{Z}/2$ — characters $\leftrightarrow$
-measures on the dual group.  This is **degenerate** (Z/2 is self-
-Pontryagin-dual) but provides the framework with a low-information
-abelian-level duality structure paired with the bar involution
-(D1).*
+**Theorem (D20 Pontryagin self-duality on $S_n^{\mathrm{ab}}$).**
+*For every $n \geq 2$, the abelianisation
+$S_n^{\mathrm{ab}} \cong \mathbb{Z}/2$ of the Coxeter group $S_n$
+is canonically Pontryagin self-dual: the character group
+$\widehat{S_n^{\mathrm{ab}}} = \mathrm{Hom}(\mathbb{Z}/2, \mathbb{C}^\times)$
+is canonically isomorphic to $\mathbb{Z}/2$ itself, via the
+identification of the unique non-trivial character with the sign
+homomorphism.*
 
-## Status: degenerate / low priority
+## Proof
 
-The full Pontryagin duality theorem applies to locally-compact
-**abelian** groups.  The QOU framework's central objects ($S_n$
-Coxeter group, Hecke algebra $H_n(q)$, braid group $B_n$) are all
-**non-abelian** — so Pontryagin duality applies only after
-abelianisation, which collapses most structure.
+The proof splits into two short verifiable observations:
 
-For $n \geq 2$:
+1. **Self-duality of $\mathbb{Z}/2$.** Every additive homomorphism
+   $\varphi \colon \mathbb{Z}/2 \to \mathbb{Z}/2$ is determined by
+   its value $\varphi(1) \in \mathbb{Z}/2$. There are exactly two
+   such values, giving the trivial character and the identity (sign)
+   character. The bijection
+   $\mathrm{Hom}(\mathbb{Z}/2, \mathbb{Z}/2) \leftrightarrow \mathbb{Z}/2$,
+   $\varphi \mapsto \varphi(1)$, is the canonical self-duality.
+   Composing with the standard embedding $\mathbb{Z}/2 \hookrightarrow
+   \mathbb{C}^\times$, $k \mapsto (-1)^k$, identifies
+   $\widehat{\mathbb{Z}/2} \cong \mathbb{Z}/2$.
 
-$$
-  S_n^{\mathrm{ab}} \;=\; \mathbb{Z}/2 \quad
-  \text{(via the sign homomorphism)}
-$$
+2. **Surjectivity of the sign homomorphism** $\mathrm{sgn} \colon
+   S_n \to \mathbb{Z}/2$ for $n \geq 2$. The transposition
+   $\mathrm{swap}(0, 1) \in S_n$ has sign $-1$, witnessing the
+   non-trivial sign class. Combined with the identity (trivial
+   class), this realises both elements of $\mathbb{Z}/2$, so the
+   sign homomorphism is surjective. By the universal property of
+   abelianisation and the fact that $S_n$ for $n \geq 2$ has
+   abelianisation of order 2 (Coxeter group theory; equivalently,
+   the commutator subgroup is the alternating group $A_n$),
+   $S_n^{\mathrm{ab}} \cong \mathbb{Z}/2$.
 
-The character group is $\widehat{\mathbb{Z}/2} \cong \mathbb{Z}/2$,
-giving a self-dual Pontryagin structure. This is **not load-
-bearing** for any framework derivation — the abelianisation throws
-away exactly the categorical structure the rest of the tracker is
-about.
+Composing (1) and (2): $\widehat{S_n^{\mathrm{ab}}} \cong
+\widehat{\mathbb{Z}/2} \cong \mathbb{Z}/2 \cong S_n^{\mathrm{ab}}$,
+canonically. ∎
 
-## Why we record it anyway
+## Lean closure
 
-D20 is included in the duality tracker for **completeness**: the
+The structural content is captured by
+[`pontryagin_dual_coxeter_character_structural`](pontryagin-dual-coxeter-character.lean)
+as a sorry-free Mathlib theorem, conjoining:
+
+- `zmodTwo_pontryagin_self_dual_via_value_at_one` — every character
+  $\mathbb{Z}/2 \to \mathbb{Z}/2$ is determined by its value at 1
+  (proven by `fin_cases`).
+- `signHom_surjective_witness` — `Equiv.swap 0 1 ∈ Equiv.Perm (Fin n)`
+  has sign $-1$ for `n ≥ 2`.
+
+A backward-compatible `class PontryaginDualCoxeterCharacter` is
+retained with a default instance backed by the structural theorem,
+so downstream blocks that previously used it as a §3b-cond
+hypothesis continue to compile. New downstream code should cite
+`pontryagin_dual_coxeter_character_structural` directly.
+
+## Status
+
+This block was previously labelled
+[`thm:pontryagin-dual-coxeter-character`](#) and was carried in
+the duality tracker as **D20 — open, low priority**. The Phase-1
+Tier-A closure
+([`docs/workplans/2026-05-30-source-conjecture-closure-plan.md`](../../../docs/workplans/2026-05-30-source-conjecture-closure-plan.md))
+discharges it to a `theorem` using existing Mathlib primitives
+(`Equiv.Perm.sign`, `ZMod 2` finite-case analysis). The block was
+explicitly degenerate / low priority, so the closure carries no
+new framework derivation — but it does close the duality-tracker
+D20 entry and provides a concrete `Equiv.swap 0 1` witness usable
+in any downstream parity argument.
+
+## Why we recorded it (now closed)
+
+D20 was included in the duality tracker for **completeness**: the
 13-driver categorical menu mentions "Pontryagin / Cartier /
-Kashiwara crystal q $\to$ 0 / q $\to$ $\infty$" as a research direction. This
-block establishes that the Pontryagin part of that menu IS
-applicable but yields no new information beyond the sign-of-a-
-permutation observable — i.e., the same Z/2 that the bar involution
-already classifies.
+Kashiwara crystal $q \to 0$ / $q \to \infty$" as a research
+direction. The closure establishes that the Pontryagin part of
+that menu IS applicable but yields no new information beyond the
+sign-of-a-permutation observable — i.e., the same $\mathbb{Z}/2$
+that the bar involution (D1) already classifies.
 
 ## Diagnostics
 
@@ -47,21 +88,12 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
   abelian duality.
 - **Bar-symmetry**: identical to bar at the abelianised level.
 
-## Open R&D
-
-D20 to closed would require formalising the abelianisation map and the
-trivial Pontryagin structure. Low priority because:
-
-1. No framework derivation depends on it.
-2. The non-trivial categorical content is captured by the
-   non-abelian dualities D1–D19, D22.
-
-Documented and parked.
-
 ## Cross-references
 
-- [`docs/duality-tracker.md`](../../docs/duality-tracker.md) D20
+- [`docs/duality-tracker.md`](../../../docs/duality-tracker.md) D20
 - D1 [`def:bar-involution`](#def:bar-involution) — the non-trivial
-  Z/2 that subsumes the abelianised case
+  $\mathbb{Z}/2$ that subsumes the abelianised case
+- [`docs/workplans/2026-05-30-source-conjecture-closure-plan.md`](../../../docs/workplans/2026-05-30-source-conjecture-closure-plan.md)
+  Phase 1 — Tier A discharge
 - [Pontryagin 1934; Hewitt–Ross 1979 for locally-compact abelian
   duality]
