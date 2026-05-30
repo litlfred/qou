@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T03:50:31.213596+00:00",
-  "commitSha": "b9c9f8ce8adf90ee473cc739544ab8e2d5161895",
+  "computedAt": "2026-05-30T03:09:20.710450+00:00",
+  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -17,7 +17,7 @@
   "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "00ea73433fbe",
+  "scriptHash": "d9a059098f12",
   "scriptCommitSha": "1824b810f245b483c821870664deec74782605c5",
   "precisionMetadata": {
     "compute_dps": 65,
@@ -65,16 +65,16 @@
       {
         "obs": "Q_beta",
         "role": "CAL-3 anchor",
-        "pred_MeV": "0.782333418709",
+        "pred_MeV": "0.782334385468",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "11.13",
+        "err_ppb": "1247.",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "1.428",
-        "beats_1x_experimental": true,
+        "miss_factor": "159.9",
+        "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Q_N3 = Q_N2·(1 + c_3·u^3) with c_3 = J_Hopf(q=1) = -2 (PROVED, qou:QOU.BraidKnot.jonesHopfClassicalLimit / prop:q-beta-categorical-precision-ladder); upstream Q_N2 from q-beta-operator-valued-N3.witness.json",
+        "source_witness": "q-beta-operator-valued-N3.witness.json::Q_N2 (τ_M derived to k=2: Kashiwara f̃₁ + geometric; k≥3 fitted rungs dropped as non-canonical)",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)",
         "compute_truncation_ppb": "1.278e-41",
         "compute_output_dps": 50
@@ -82,13 +82,13 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565193238",
+        "pred_MeV": "939.565194205",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "241.9",
+        "err_ppb": "240.9",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "4.209e+4",
+        "miss_factor": "4.191e+4",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
@@ -99,14 +99,14 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.29333236940",
+        "pred_MeV": "1.29333333616",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "7.267",
+        "err_ppb": "754.8",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "1.533",
-        "beats_1x_experimental": true,
+        "miss_factor": "159.3",
+        "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
@@ -132,25 +132,25 @@
       {
         "obs": "m_K/m_pi",
         "role": "validation (meson ratio)",
-        "pred_MeV": "3.53609434741",
+        "pred_MeV": "3.53711852187",
         "codata_MeV": "3.53711843895",
         "sigma_exp_MeV": "9.32546e-5",
-        "err_ppb": "2.895e+5",
+        "err_ppb": "23.44",
         "sigma_exp_ppb": "2.636e+4",
         "target_100x_ppb": "263.6",
-        "miss_factor": "1098.",
-        "beats_1x_experimental": false,
-        "beats_100x_experimental": false,
-        "source_witness": "meson-kaon-pion-derivation.witness.json (Hecke character χ_{(2,1)}(σ₁⁵) × (9/5)²)",
+        "miss_factor": "0.08892",
+        "beats_1x_experimental": true,
+        "beats_100x_experimental": true,
+        "source_witness": "[3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²) — closed form; both pieces Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4, qou:QOU.BraidKnot.meson_EM_closed_form)",
         "sigma_source": "PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature",
-        "compute_truncation_ppb": "2.828e-42",
+        "compute_truncation_ppb": "2.827e-42",
         "compute_output_dps": 50
       }
     ],
     "summary": {
       "total": 7,
-      "beats_1x_count": 4,
-      "beats_100x_count": 2
+      "beats_1x_count": 3,
+      "beats_100x_count": 3
     },
     "upstream_witness_hashes": [
       {
