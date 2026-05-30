@@ -96,8 +96,11 @@ def main() -> int:
     ap.add_argument("--timeout", type=int, default=300, help="per-producer seconds")
     ap.add_argument("--limit", type=int, default=0, help="cap #producers (0=all)")
     ap.add_argument("--no-push", action="store_true", help="commit but don't push")
+    ap.add_argument("--skip", default="", help="comma-separated producer "
+                    "scriptFiles to defer (e.g. slow heavy-atom producers)")
     ap.add_argument("--logfile", default="/tmp/q0_regen.log")
     args = ap.parse_args()
+    skip = {s.strip() for s in args.skip.split(",") if s.strip()}
 
     logf = open(args.logfile, "a", buffering=1)
 
@@ -109,7 +112,8 @@ def main() -> int:
     by_script = scan_stale()
     total_stale = sum(len(v) for v in by_script.values())
     # High-yield producers first; skip the no-scriptFile bucket (manual).
-    producers = sorted((s for s in by_script if s != "<no-scriptFile>"),
+    producers = sorted((s for s in by_script
+                        if s != "<no-scriptFile>" and s not in skip),
                        key=lambda s: (-len(by_script[s]), s))
     no_script = by_script.get("<no-scriptFile>", [])
 
