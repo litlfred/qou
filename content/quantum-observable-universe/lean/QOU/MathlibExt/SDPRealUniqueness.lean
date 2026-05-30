@@ -137,8 +137,9 @@ theorem RealStrongDualityPair.dualSlack_mul_feasible_eq_zero
     step is encapsulated in `slater_strict_complementarity_kernel_axiom`
     pending Mathlib's finite-dimensional Slater + SDP rank-deficiency
     library. -/
-/-- **External axiom (Boyd-Vandenberghe 2004 §5.5.4): Slater + strict
-    complementarity implies optimal-face uniqueness.**
+/-- **External axiom (Boyd-Vandenberghe 2004 §5.5.4 / Alizadeh-Haeberly-
+    Overton 1997 §3): Slater + strict complementarity implies
+    optimal-face uniqueness.**
 
     Under the standard conditions
       - `Φ', Φ*` both primal-feasible
@@ -146,13 +147,43 @@ theorem RealStrongDualityPair.dualSlack_mul_feasible_eq_zero
       - `tr(A_i · (Φ' − Φ*)) = 0` for every constraint i
       - `S · (Φ' − Φ*) = 0` and `(Φ' − Φ*) · S = 0`
     where `S = dualSlack ystar`, the optimal face has dimension 0
-    and `Φ' = Φ*`. -/
+    and `Φ' = Φ*`.
+
+    **Refactored 2026-05-30 (§3b-cond pattern).**  The cited result
+    is now wrapped as a `class SlaterStrictComplementarityKernel`
+    with a single field `kernel_uniqueness` carrying the universal
+    statement.  Downstream consumers may take the class as an
+    `[Instance]` hypothesis (explicit §3b-cond dependency, matches
+    the broader uniqueness-theorems campaign — `MarkovTraceUniqueness`,
+    `BringResidueAtOrder`, `BringZeroModeBlochClass`,
+    `BindingForceCarrierKnot`).
+
+    The axiom below provides the **default instance** so existing
+    consumers keep working unchanged.  Closing the axiom in Mathlib
+    (Phase 3 of the SDP uniqueness programme) discharges the class
+    instance directly. -/
 -- Ref: [boyd-vandenberghe-2004] §5.5.2 (strict complementarity defined
 --      at end of "Complementary slackness")
 -- Ref: [alizadeh-haeberly-overton-1997] §3 (Strict complementarity in
 --      SDP — the canonical authority for the optimal-face-dimension /
 --      uniqueness result; Boyd's §5.5.4 is "Mechanics interpretation
 --      of KKT", which doesn't cover this.)
+class SlaterStrictComplementarityKernel : Prop where
+  kernel_uniqueness :
+    ∀ {n : ℕ} {ι : Type*} {sdp : SDPPrimal n ℝ ι}
+      (sc : RealStrictComplementarityPair sdp)
+      {Φ' : Matrix (Fin n) (Fin n) ℝ}
+      (_h_feas : sdp.IsFeasible Φ')
+      (_h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar)
+      (_h_constraint_diff :
+        ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0)
+      (_h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
+      (_h_diff_S : (Φ' - sc.Φstar) * sdp.dualSlack sc.ystar = 0),
+        Φ' = sc.Φstar
+
+/-- The cited-axiom field carrier — discharges the §3b-cond class
+    via Boyd-Vandenberghe / Alizadeh-Haeberly-Overton.  Closing this
+    axiom in Mathlib is the Phase-3 SDP uniqueness follow-up. -/
 axiom slater_strict_complementarity_kernel_axiom :
     ∀ {n : ℕ} {ι : Type*} {sdp : SDPPrimal n ℝ ι}
       (sc : RealStrictComplementarityPair sdp)
@@ -164,6 +195,15 @@ axiom slater_strict_complementarity_kernel_axiom :
       (_h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
       (_h_diff_S : (Φ' - sc.Φstar) * sdp.dualSlack sc.ystar = 0),
         Φ' = sc.Φstar
+
+/-- **Default class instance** discharged from the cited axiom.
+    Provides backward compatibility: every existing consumer of
+    `real_strict_complementarity_unique` keeps working unchanged
+    (the class instance is found by typeclass resolution).  An
+    alternative `Mathlib`-derived instance, when it lands, replaces
+    this default by being more specific or via `priority`. -/
+instance : SlaterStrictComplementarityKernel where
+  kernel_uniqueness := @slater_strict_complementarity_kernel_axiom
 
 theorem real_strict_complementarity_unique
     {sdp : SDPPrimal n ℝ ι}
