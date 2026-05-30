@@ -6,9 +6,10 @@ do ``from q_parameter import Q, HA, ...`` keep working without
 modification. New code should import from ``qou_substrate`` directly
 once ``qou-substrate`` is on PyPI.
 
-The substrate parameter is derived from CODATA m_μ/m_e + SnapPy
-Vol(4_1); see ``qou_substrate.constants`` for the full derivation
-docstring.
+The substrate parameter is derived from CODATA m_p/m_e + SnapPy
+Vol(4_1) (re-pinned 2026-05-28 from the muon anchor to the more precise
+proton anchor — m_μ/m_e is now a prediction); see
+``qou_substrate.constants`` for the full derivation docstring.
 
 Promotion rationale: ``docs/workplans/2026-05-24-library-reuse-production-readiness.md``
 Tier-2 item 2a.
