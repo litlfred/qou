@@ -76,3 +76,46 @@ re-framing my "⁴He bonus is unidentified" conclusion. Posting on #1444.
   proxy.
 - **#1442** (author): coordination already posted — `(1+ℏ_q)` is real
   but is NOT alone the SDP→AME bridge.
+
+## Retraction (2026-05-30, same day) — critical-discipline audit
+
+Author guidance: "be critical, we want only canonical derived."
+
+**Verdict on the κ ≈ Bring × √3 finding above: RETRACTED as a derivation.**
+0.094% (935 ppm) is a numerical near-match, not a derivation. The √3
+structural argument is suggestive (cube-root-of-unity on V_(2,1)), but a
+1-in-1000 numerical agreement without an exact identity is the same kind
+of pattern as the falsified `c=4` meson tower (#1367 audit: c=4.03≠J²=4,
+0.8% off).
+
+**Net result on #1431 after the critical pass:**
+
+| claim | residual | verdict |
+|-------|----------|---------|
+| κ_Coulomb ≈ 2√3/(3π) | 935 ppm | retracted |
+| f ≈ Z·N (D/6Li/7Li) | 0.2-0.6% | retracted |
+| ⁴He bonus 2.07 ≈ 1+q | 1.8% | retracted (was already flagged) |
+
+What survives: `Δtr` derived from canonical β(Z,N); `Vol(Borromean)=8G`
+derived; `B = m_e·8G·Δtr` for deuteron under the universal-Borromean
+*assumption* (and even then +0.19% is not compute-precision).
+
+**Net result on siblings after the critical pass:**
+
+- **#1443** Hecke-branching LR: PASSES (proposition, not numerical;
+  rigorous Wenzl/Hoefsmit citation).
+- **#1444** α_EM tree + Bring: PARTIAL — form derived; α/(4π) layer is
+  flagged "OPEN" by the author. 4.18 ppm residual is 27,867× experimental
+  σ — not at the 100× target.
+- **#1442** meson `(α/π)·m_π²·(1+ℏ_q)`: FAILS canonical-derived bar —
+  selected as winner from 8 candidates by AME-match (selection-bias =
+  fitting). Author body honestly flags this as "structurally motivated,
+  not yet first-principles-derived" — so the PR's claim doesn't claim
+  derivation; the dashboard credit risk is what I flagged.
+- **#1440** LP→Clarabel: N/A (infra, no numerical claim).
+- **#1441** V̂→math: N/A (cosmetic).
+
+## Posted retraction comments
+
+- [#1444 retraction](https://github.com/litlfred/qou/pull/1444#issuecomment-4581427035)
+- [#1442 critical audit](https://github.com/litlfred/qou/pull/1442#issuecomment-4581427607)
