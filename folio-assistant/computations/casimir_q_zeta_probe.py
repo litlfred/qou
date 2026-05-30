@@ -107,6 +107,45 @@ def main() -> int:
                     "ratio_to_target": float(val / pi_sq_720),
                 })
 
+    # ─── Family 3b: substrate quantities (ℏ_q, α_em-related) ───
+    hbar_q = 1 - 1 / q                      # ℏ_q = 1 - q⁻¹
+    h_q = q - 1 / q                         # skein parameter q - q⁻¹
+    # α_em = 1/(q · [9]_q · [10]_q) per prop:em-coupling-projection
+    q9 = _q_int(9, q)
+    q10 = _q_int(10, q)
+    alpha_em = 1 / (q * q9 * q10)
+    substrate_candidates = []
+    for name, base in [
+        ("ℏ_q²", hbar_q ** 2),
+        ("h_q²", h_q ** 2),
+        ("α_em²", alpha_em ** 2),
+        ("α_em", alpha_em),
+        ("ℏ_q² · h_q", hbar_q ** 2 * h_q),
+        ("ℏ_q² · [2]_q", hbar_q ** 2 * _q_int(2, q)),
+        ("ℏ_q² · [3]_q", hbar_q ** 2 * _q_int(3, q)),
+    ]:
+        for coef in [1, 2, 3, 4, 6, 8, 12, 120, 240, 720]:
+            # candidates of form: coef · π² · base / 720, or just coef · base
+            for divisor in [1, 720, 240, 120]:
+                val = coef * pi_sq * base / divisor if divisor > 1 else coef * base
+                form = (
+                    f"{coef}·π²·{name}/{divisor}"
+                    if divisor > 1 else f"{coef}·{name}"
+                )
+                substrate_candidates.append({
+                    "form": form,
+                    "value": float(val),
+                    "ratio_to_target": float(val / pi_sq_720),
+                })
+        # Also try ratios: π²/(720 · base)
+        for coef in [1, 2, 3, 6]:
+            val = coef * pi_sq / (720 * base)
+            substrate_candidates.append({
+                "form": f"{coef}·π²/(720·{name})",
+                "value": float(val),
+                "ratio_to_target": float(val / pi_sq_720),
+            })
+
     # ─── Family 4: closest match across all families ───
     best_match = None
     best_residue = mpf("inf")
@@ -129,6 +168,15 @@ def main() -> int:
             best_residue = residue
             best_match = (
                 "q_rational", cand["form"], cand["value"],
+            )
+
+    # Substrate-quantity comparison.
+    for cand in substrate_candidates:
+        residue = abs(mpf(cand["value"]) - pi_sq_720)
+        if residue < best_residue:
+            best_residue = residue
+            best_match = (
+                "substrate_quantity", cand["form"], cand["value"],
             )
 
     (
@@ -159,6 +207,10 @@ def main() -> int:
         .add_data(
             "candidate_q_rationals",
             candidate_q_rationals,
+        )
+        .add_data(
+            "substrate_quantity_candidates",
+            substrate_candidates,
         )
         .add_data(
             "best_match",

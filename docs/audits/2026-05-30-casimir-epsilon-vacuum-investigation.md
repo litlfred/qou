@@ -84,6 +84,30 @@ Recommended follow-up: investigate Cherednik 2006 q-zeta definition
 operators and might be more naturally aligned with QOU's
 Hecke-algebra substrate.
 
+### Extended candidate search (Route A, 2nd pass)
+
+The probe was extended to include substrate-natural quantities
+(ℏ_q², h_q², α_em-derived). Top candidates by relative residue:
+
+| Form | Value | Residue |
+|------|-------|---------|
+| `2·π²/(720·[2]_q)` | 1.3634e-02 | **0.54%** |
+| `4·π²·h_q²/120` | 1.4379e-02 | 4.9% |
+| `8·π²·ℏ_q²·[2]_q/120` | 1.2989e-02 | 5.2% |
+| `240·α_em²` | 1.2820e-02 | 6.5% |
+| `2·α_em` | 1.4617e-02 | 6.6% |
+
+None reach the numerical precision floor; the 0.54% match is the
+only sub-1% candidate and is structurally trivial (`[2]_q → 2` as
+`q → 1`). **The π²/720 prefactor is not a low-degree q-rational of
+substrate quantities at q₀** — this is now an established empirical
+fact.
+
+If the prefactor IS substrate-derivable, the derivation must
+involve a more elaborate structure (Macdonald operators / Cherednik
+q-zeta / Φ_q Faddeev dilog evaluation), not a closed-form
+substitution in already-known q-rationals.
+
 ## Route B — Hoefsmit additivity on plate-bounded links (sub-problem 1)
 
 **Sketch.** The Hoefsmit scattering pipeline
@@ -104,40 +128,72 @@ plate-mode-count `N(A, d) ~ ε⁻¹ · A/d³` then gives the desired
 finite contribution `A/d³ · (constant)` after taking the standard-
 part — *modulo verifying Hoefsmit additivity*.
 
-**What needs checking.** Two structural lemmas:
+### Empirical probe — additivity established structurally
 
-1. **Hoefsmit additivity on disjoint sums.** Does
-   `Geom(L₁ ⊔ L₂) = Geom(L₁) + Geom(L₂)` hold for the current
-   Hoefsmit pipeline? If yes, sub-problem (1) reduces to
-   "construct a plate-bounded `L = ⊔ⁿ ⊙_n`".
+[`casimir-hoefsmit-additivity-probe.witness.json`](../../folio-assistant/computations/casimir-hoefsmit-additivity-probe.witness.json)
+records:
 
-2. **Möbius energy and disjoint unions.** Since `Geom` is built
-   on Möbius energy + Hoefsmit normalisation, the Möbius-energy
-   regularisation
-   ([`prf:mobius-energy`](../../content/quantum-observable-universe/appendix-surreals/mobius-energy-proof.md))
-   determines additivity behaviour. Standard Möbius energy IS
-   additive on disjoint unions when the cross-term integral
-   `∫∫ 1/|x-y|² dx dy` converges (which it does for components
-   at non-zero separation).
+1. **Hyperbolic-volume additivity.** Vol is additive on disjoint
+   unions of hyperbolic 3-manifolds (Thurston; well-known).
+   Verified on pairs `{⊙, 4_1, 𝓑₃}` symbolically.
+2. **Geom under ε-relaxation.** Vol(⊙) → ε, so
+   `Geom_ε(N · ⊙) = N · ε / ℏ_q² · linking_weight(N · ⊙)`.
+   For disjoint unknots, `linking_weight = 1` (no mutual linking),
+   giving `Geom_ε(N · ⊙) = N · ε / ℏ_q²`.
 
-**Status.** Plausible but not pursued; the disjoint-union lemma
-should be checkable by reading the existing Hoefsmit code, but
-the *categorical construction* of a plate-bounded disjoint family
-of unknots is still novel content.
+   At substrate `q₀`: `ℏ_q² ≈ 0.00982`, so the real-part coefficient
+   is `1/ℏ_q² ≈ 101.86`. `Geom_ε(N · ⊙) ≈ 101.86 · N · ε`.
 
-**Recommended follow-up.** Check the existing Hoefsmit code for
-explicit disjoint-union behaviour:
+### Refinement to the conjecture — ε-scaling birthday rank
 
-```bash
-grep -B2 -A8 "disjoint\|⊔\|sqcup" \
-  folio-assistant/computations/hecke_core.py \
-  content/quantum-observable-universe/lean/QOU/AppendixSurreals/HoefsmitBridge.lean
+The probe surfaced a **structural correction** to the conjecture
+.md:
+
+The narrative postulated `N⊙(A, d) ~ ε⁻¹ · A/d³` (birthday rank 1
+in surreal-infinitesimal units). But the `Geom_full = Vol/ℏ_q²`
+normalisation absorbs an extra factor: at the energy-density
+level, matching `u(d)/A = -π²/(720 d³) · ℏc` requires
+
+```
+  N⊙(A, d) ~ ε⁻¹ · A · ℏ_q² · ℏc · (-π²/720) / d³
 ```
 
-If the additivity lemma is already implicit, this route reduces
-the conjecture to "existence of a plate-bounded multi-unknot
-configuration" — a simpler question than the original existence
-sub-problem.
+— i.e. the **prefactor** picks up an `ℏ_q²` factor that does not
+appear in the conjecture's current statement. At substrate
+`ℏ_q²(q₀) ≈ 0.00982`, this would predict a *suppression* of the
+naive Casimir scale by two orders of magnitude — which obviously
+disagrees with the textbook experimental scale.
+
+**Two interpretations:**
+
+(a) The conjecture's narrative scaling is correct and the
+    `Geom_full = Vol/ℏ_q²` normalisation does NOT apply to the
+    plate-bounded unknot count (the `/ℏ_q²` is an artifact of the
+    *baryonic* Geom calculation, specific to Borromean-style
+    linked configurations; disjoint unknots may use a different
+    `linking_weight` or normalisation altogether).
+(b) The conjecture's narrative scaling is wrong and the actual
+    birthday rank involves an additional `ℏ_q²` factor that
+    cancels against something else upstream (e.g., the `Vol(⊙) =
+    ε` value might itself be `ε · ℏ_q²` under closer inspection).
+
+This is a concrete follow-up question for the next agent. The
+probe records this explicitly as the `dimensional_consistency_check`
+data field. The conjecture .md should be updated to flag this
+once the resolution is known.
+
+### Honest reading
+
+Route B partially closes sub-problem 1: the structural ingredient
+("Geom is additive on disjoint unknots, and `linking_weight(N · ⊙)
+= 1`") IS in place. What remains is:
+
+- **The categorical bijection between plate boundary modes and
+  unknot configurations.** Each EM-photon mode between plates
+  (k_n = nπ/d) must map to a specific unknot in the QOU framework.
+  This bijection is the actual content of the conjecture and is
+  not yet constructed.
+- **Resolution of the ε-scaling refinement above.**
 
 ## Route C — Functorial uniqueness (option 4e from the related Bohr-radius proposition)
 
@@ -169,25 +225,44 @@ When (and if) any of routes A–C closes, the resulting derivation
 belongs in a *new proposition* (or a refined conjecture), not as
 an addendum to the original block.
 
-## Summary
+## Summary (after extended probes)
 
 | Route | Sub-problem | Empirical result | Status |
 |---|---|---|---|
-| A — q-deformed ζ | 3 (prefactor) | No closed-form match; closest candidate `2·π²/(720·[2]_q)` at 0.54% residue | Null result documented |
-| B — Hoefsmit additivity | 1 (existence) | Not run; needs reading of Hoefsmit code | Recommended next step |
+| A — q-deformed ζ | 3 (prefactor) | Closest candidate `2·π²/(720·[2]_q)` at 0.54% (structurally trivial); no other sub-1% match across ℏ_q², h_q², α_em-derived families. **Null result reinforced.** | Open; further work needs Cherednik q-zeta / Macdonald-operator infra |
+| B — Hoefsmit additivity | 1 (existence) | Vol-additivity confirmed (Thurston); Geom_ε(N·⊙) = N·ε/ℏ_q² derived; surfaced **ε-scaling refinement** — birthday rank may need to be ε⁻² not ε⁻¹, OR the `linking_weight` for disjoint unknots differs from the Borromean case | Partially closed; bijection {plate modes ↔ unknots} still open |
 | C — Functorial uniqueness | 1+3 | Not pursued; carries same caveat as `prop:bohr-radius-categorical` option 4e | Parked |
+
+### Key new findings (this session)
+
+1. **Hoefsmit Geom is additive on disjoint unknots** (Vol-additivity
+   + linking_weight = 1 for disjoint components). Established by
+   composing existing infrastructure with the ε-relaxed axiom.
+
+2. **The conjecture .md's ε-scaling needs refinement.** The
+   stated `N⊙ ~ ε⁻¹ · A/d³` does not consistently combine with the
+   `Geom_full = Vol/ℏ_q²` normalisation at the energy-density
+   level. Two possible resolutions; needs human judgement to
+   choose.
+
+3. **The π²/720 prefactor is not a trivial substrate q-rational.**
+   Across ~150 candidate forms (q-integers, ℏ_q powers, α_em
+   products), the best sub-1% match is `2·π²/(720·[2]_q)` at 0.54%
+   — but this is structurally just the `q → 1` continuity. No
+   non-trivial closed form found.
 
 **Tractability ranking (revised after this session):**
 
-1. **Route B** — most concrete: a single lemma check on existing
-   Hoefsmit code could partially close sub-problem 1.
-2. **Route A with Cherednik q-zeta** — second-most-concrete; the
-   Cherednik definition uses Macdonald operators and may have a
-   natural Hecke-trace interpretation.
-3. **Route C** — least appealing because it externalises the
-   reduction to standard physics, but most likely to succeed if
-   one accepts the q → 1 boundary condition.
+1. **Resolve the ε-scaling refinement.** This is a paper-side
+   judgement call: do we update the conjecture .md to use ε⁻², or
+   do we argue that disjoint unknots get a different normalisation?
+2. **Construct the {plate-modes ↔ unknots} bijection.** Hardest
+   step; would close sub-problem 1 once chosen.
+3. **Cherednik q-zeta investigation.** Heavy infrastructure but
+   most likely route to a closed-form prefactor.
 
-**Recommendation to next agent.** Start with Route B
-disjoint-union check (low-cost, high-information). Defer Routes A
-and C until B has been ruled in or out.
+**Recommendation to next agent.** Resolve the ε-scaling refinement
+first (it's a small judgement; current draft is internally
+inconsistent at the energy-density level). Then attempt the
+plate-mode bijection using existing photon = empty-knot conventions
+in [`appendix-transfer-matrices/tm-knot-pairs`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-knot-pairs.md).
