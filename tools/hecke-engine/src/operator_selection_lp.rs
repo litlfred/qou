@@ -208,6 +208,82 @@ pub fn to_f64<F: Display>(v: &F) -> f64 {
     format!("{}", v).parse::<f64>().unwrap_or(f64::NAN)
 }
 
+/// JSON/FFI-ready result: `f64` summary fields PLUS full-precision decimal
+/// strings.  This is what the JSON CLI and the PyO3 binding return, so
+/// neither has to handle Clarabel scalar types directly.
+#[derive(Debug, Clone)]
+pub struct OpSelLpStringResult {
+    pub x_star: Vec<f64>,
+    pub y0_star: f64,
+    pub y_star: Vec<f64>,
+    pub active_set: Vec<usize>,
+    pub primal_obj: f64,
+    pub dual_obj: f64,
+    pub duality_gap: f64,
+    pub feasible: bool,
+    pub status: String,
+    pub x_star_str: Vec<String>,
+    pub y0_star_str: String,
+    pub y_star_str: Vec<String>,
+    pub primal_obj_str: String,
+    pub dual_obj_str: String,
+    pub duality_gap_str: String,
+    pub precision_bits: u32,
+}
+
+/// Parse a decimal string into an `MpfrFloat` at the current MPFR default
+/// precision via the crate's `Deserialize` impl (wire format `(prec, s)`;
+/// `prec = 0` means "use the thread-local default", set by the caller).
+/// `rug::Float::parse` accepts plain decimals and `1e6` / `1e-9` forms.
+fn parse_mpfr(s: &str) -> Result<MpfrFloat, String> {
+    serde_json::from_value::<MpfrFloat>(serde_json::json!([0, s]))
+        .map_err(|e| format!("cannot parse MPFR scalar {s:?}: {e}"))
+}
+
+/// String-in / string-out operator-selection LP — the production MPFR path
+/// with decimal-string IO, so callers (the JSON CLI, the PyO3 wheel binding)
+/// need no Clarabel types.  Inputs are decimal strings (carry full 50-dps
+/// precision, not f64); `prec_bits` sets the MPFR working precision.
+pub fn solve_operator_selection_lp_from_strings(
+    t: &[String],
+    g: &[Vec<String>],
+    n_target: &str,
+    m_bound: &str,
+    dual_tol: &str,
+    prec_bits: u32,
+) -> Result<OpSelLpStringResult, String> {
+    set_mpfr_default_precision(prec_bits);
+    let t_m: Vec<MpfrFloat> = t.iter().map(|s| parse_mpfr(s)).collect::<Result<_, _>>()?;
+    let g_m: Vec<Vec<MpfrFloat>> = g
+        .iter()
+        .map(|row| row.iter().map(|s| parse_mpfr(s)).collect::<Result<_, _>>())
+        .collect::<Result<_, _>>()?;
+    let n_m = parse_mpfr(n_target)?;
+    let mb = parse_mpfr(m_bound)?;
+    let dt = parse_mpfr(dual_tol)?;
+
+    let r = solve_operator_selection_lp(&t_m, &g_m, &n_m, &mb, &dt, prec_bits);
+
+    Ok(OpSelLpStringResult {
+        x_star: r.x_star.iter().map(to_f64).collect(),
+        y0_star: to_f64(&r.y0_star),
+        y_star: r.y_star.iter().map(to_f64).collect(),
+        active_set: r.active_set.clone(),
+        primal_obj: to_f64(&r.primal_obj),
+        dual_obj: to_f64(&r.dual_obj),
+        duality_gap: to_f64(&r.duality_gap),
+        feasible: r.feasible,
+        status: r.status.clone(),
+        x_star_str: r.x_star.iter().map(|x| format!("{x}")).collect(),
+        y0_star_str: format!("{}", r.y0_star),
+        y_star_str: r.y_star.iter().map(|y| format!("{y}")).collect(),
+        primal_obj_str: format!("{}", r.primal_obj),
+        dual_obj_str: format!("{}", r.dual_obj),
+        duality_gap_str: format!("{}", r.duality_gap),
+        precision_bits: prec_bits,
+    })
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -331,5 +407,26 @@ mod tests {
             let drel = (yf - ym).abs() / yf.abs().max(1e-9);
             assert!(drel < 1e-5, "y_star[{i}]: f64={yf} mpfr={ym} rel={drel:e}");
         }
+    }
+
+    /// The string-in/string-out entry point (used by the CLI and the PyO3
+    /// wheel binding) solves the dummy LP via decimal-string IO.
+    #[test]
+    fn from_strings_solves_dummy() {
+        let t = vec!["1.0".to_string(), "0.5".to_string(), "0.3".to_string()];
+        let g = vec![
+            vec!["1.0".into(), "0.2".into(), "0.1".into()],
+            vec!["0.2".into(), "1.0".into(), "0.3".into()],
+            vec!["0.1".into(), "0.3".into(), "1.0".into()],
+        ];
+        let r = solve_operator_selection_lp_from_strings(
+            &t, &g, "1.0", "1e6", "1e-9", DEFAULT_PREC_BITS,
+        )
+        .expect("solve");
+        assert!(r.feasible, "status {}", r.status);
+        assert_eq!(r.x_star.len(), 3);
+        assert!((r.primal_obj - 0.16875).abs() < 1e-4, "primal {}", r.primal_obj);
+        assert_eq!(r.active_set, vec![0, 1]);
+        assert!(r.primal_obj_str.len() >= 20, "str too short: {}", r.primal_obj_str);
     }
 }

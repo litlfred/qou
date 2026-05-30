@@ -754,8 +754,60 @@ fn chi_lambda_braid_mpfr(
     seminormal_mpfr::chi_lambda_braid_mpfr(&shape, &word, &q_str, dps)
 }
 
+/// Operator-selection LP at MPFR precision (`prop:operator-selection-lp`).
+///
+/// Decimal-STRING IO so 50-dps precision survives the boundary (not f64).
+/// `t`: objective/traces; `g`: Frobenius Gram (row-major); `n_target`: net
+/// RHS; optional `m_bound` (default `"1e6"`), `dual_tol` (default `"1e-9"`),
+/// `prec_bits` (default 167 ≈ 50 dps).  Returns a dict matching
+/// `pyhecke.lp_dual_solver.LpDualResult.to_dict()` plus full-precision
+/// `*_str` variants.
+///
+/// Only present when the wheel is built with `--features clarabel-lp`
+/// (pulls clarabel + MPFR into the wheel).  The default wheel omits it; the
+/// Python bridge falls back to the `clarabel-operator-selection-lp` CLI.
+#[cfg(feature = "clarabel-lp")]
+#[pyfunction]
+#[pyo3(signature = (t, g, n_target, m_bound=None, dual_tol=None, prec_bits=167))]
+fn operator_selection_lp(
+    py: Python<'_>,
+    t: Vec<String>,
+    g: Vec<Vec<String>>,
+    n_target: String,
+    m_bound: Option<String>,
+    dual_tol: Option<String>,
+    prec_bits: u32,
+) -> PyResult<PyObject> {
+    let m_bound = m_bound.unwrap_or_else(|| "1e6".to_string());
+    let dual_tol = dual_tol.unwrap_or_else(|| "1e-9".to_string());
+    let r = hecke_engine::operator_selection_lp::solve_operator_selection_lp_from_strings(
+        &t, &g, &n_target, &m_bound, &dual_tol, prec_bits,
+    )
+    .map_err(pyo3::exceptions::PyValueError::new_err)?;
+    let d = pyo3::types::PyDict::new(py);
+    d.set_item("x_star", r.x_star)?;
+    d.set_item("y0_star", r.y0_star)?;
+    d.set_item("y_star", r.y_star)?;
+    d.set_item("active_set", r.active_set)?;
+    d.set_item("primal_obj", r.primal_obj)?;
+    d.set_item("dual_obj", r.dual_obj)?;
+    d.set_item("duality_gap", r.duality_gap)?;
+    d.set_item("feasible", r.feasible)?;
+    d.set_item("status", r.status)?;
+    d.set_item("x_star_str", r.x_star_str)?;
+    d.set_item("y0_star_str", r.y0_star_str)?;
+    d.set_item("y_star_str", r.y_star_str)?;
+    d.set_item("primal_obj_str", r.primal_obj_str)?;
+    d.set_item("dual_obj_str", r.dual_obj_str)?;
+    d.set_item("duality_gap_str", r.duality_gap_str)?;
+    d.set_item("precision_bits", r.precision_bits)?;
+    Ok(d.into())
+}
+
 #[pymodule]
 fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
+    #[cfg(feature = "clarabel-lp")]
+    m.add_function(wrap_pyfunction!(operator_selection_lp, m)?)?;
     m.add_function(wrap_pyfunction!(markov_z, m)?)?;
     m.add_function(wrap_pyfunction!(hecke_h, m)?)?;
     m.add_function(wrap_pyfunction!(trace_weights, m)?)?;
