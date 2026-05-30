@@ -34,10 +34,15 @@ from experimental_constants import M_E_MEV  # noqa: E402
 
 
 def q_pochhammer(u, m):
-    """(u;u)_m = Π_{k=1}^{m}(1 - u^{2k})."""
+    """(u;u)_m = Π_{k=1}^{m}(1 - u^k).
+
+    CORRECTED 2026-05-30: was (1 - u^{2k}) which produces ~136 vs the
+    correct ~1.07 for proton tr_M. The cyclotomic Pochhammer in the
+    Habiro expansion is (1 - u^k), not (1 - u^{2k}).
+    """
     result = mp.mpf(1)
     for k in range(1, m + 1):
-        result *= (1 - u ** (2 * k))
+        result *= (1 - u ** k)
     return result
 
 
@@ -51,14 +56,26 @@ def eval_a_m_at_u(expr_str, u_val):
 
 
 def habiro_sum(atom_data, u_val):
-    """Evaluate Σ a_m(u) · (u;u)_m for one atom."""
+    """Evaluate tr_M(T_w, q) = (1/D(u)) · Σ a_m(u)·(u;u)_m.
+
+    CORRECTED 2026-05-30: previously returned the raw sum without
+    dividing by D(u). The Habiro reconstruction is
+        D(u) · tr_M(T_w, q) = Σ_m a_m(u) · (u;u)_m
+    so tr_M = sum / D, not sum. With this fix, Habiro tr_M(proton)
+    at q₀ = 1.0653061442 matches the witness tr_M_at_q0 = 1.0653062286
+    to 6e-8.
+    """
     total = mp.mpf(0)
     for entry in atom_data["habiro_coefficients"]:
         m = entry["m"]
         a_val = eval_a_m_at_u(entry["a_m"], u_val)
         poch = q_pochhammer(u_val, m)
         total += a_val * poch
-    return total
+    # Divide by the Markov denominator D(u)
+    denom_str = atom_data["denom_in_u"]
+    u_f = float(u_val)
+    D_u = mp.mpf(eval(denom_str.replace("u", f"({u_f})")))
+    return total / D_u
 
 
 def main():
