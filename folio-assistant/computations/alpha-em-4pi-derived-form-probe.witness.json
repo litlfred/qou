@@ -1,0 +1,107 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T03:23:55.195375+00:00",
+  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
+  "assertions": [
+    {
+      "name": "all_candidates_evaluated",
+      "computed": 12,
+      "expected": 12,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Twelve parameter-free derived-form candidates evaluated against CODATA α/(4π) ≈ 5.80499e-4 at q₀ (50 dps). Includes Hodge / Chern-Simons / CM / ζ(3) candidates."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "alpha-em-4pi-derived-form-probe",
+  "scriptFile": "alpha_em_4pi_derived_form_probe.py",
+  "scriptHash": "6a14ecb563a2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Derive-or-refute candidate categorical/geometric forms for the next-order α/(4π) ≈ 5.805e-4 correction in the FSC α_EM⁻¹ closure. 8 parameter-free candidates: 2nd Hodge class, Euler-char² / area², genus-descent factors, q-bracket modulation of Bring shift, Chern-Simons one-loop on S³/PSL(2,5), central-full-twist length normalization, and sphere-volume ratio. No fit; honest residual.",
+  "data": {
+    "inputs": {
+      "q0": "1.10997858275138080759166909561",
+      "CODATA_alpha_inv": "137.035999084",
+      "target_alpha_over_4pi": "0.000580704866442929781562257812526",
+      "g_Bring": 4,
+      "chi_Bring": "-6",
+      "area_Bring": "37.699111843077518862"
+    },
+    "candidates_vs_target": {
+      "1/Area² = 1/(12π)²": {
+        "value": "0.00070361933084957",
+        "ratio_to_target": 1.2116642575419467,
+        "log10_abs_dev": -0.6743524724616692
+      },
+      "χ²/Area² = 36/(144π²)": {
+        "value": "0.025330295910584",
+        "ratio_to_target": 43.619913271510086,
+        "log10_abs_dev": 1.6296125616207238
+      },
+      "1/(2g·Area) = 1/(8·12π)": {
+        "value": "0.0033157279810812",
+        "ratio_to_target": 5.709833295166667,
+        "log10_abs_dev": 0.6730055355215732
+      },
+      "1/(2g(g-1)·Area) = 1/(24·12π)": {
+        "value": "0.0011052426603604",
+        "ratio_to_target": 1.9032777650555555,
+        "log10_abs_dev": -0.04417868016116652
+      },
+      "(2/(3π))² / [2]_q²": {
+        "value": "0.011136228710027",
+        "ratio_to_target": 19.177088661647986,
+        "log10_abs_dev": 1.259524325561935
+      },
+      "1/(2π·|PSL(2,5)|)": {
+        "value": "0.0026525823848649",
+        "ratio_to_target": 4.567866636133333,
+        "log10_abs_dev": 0.5524086124434772
+      },
+      "1/(Δ₃² length · Area) = 1/(6·12π)": {
+        "value": "0.0044209706414415",
+        "ratio_to_target": 7.613111060222222,
+        "log10_abs_dev": 0.8204058162827897
+      },
+      "Vol(S²)/Vol(S³)²": {
+        "value": "0.032251534433199",
+        "ratio_to_target": 55.538598515204775,
+        "log10_abs_dev": 1.7367039736325025
+      },
+      "1/j(i) = 1/1728  (Bring CM candidate)": {
+        "value": "0.0005787037037037",
+        "ratio_to_target": 0.9965539074065556,
+        "log10_abs_dev": -2.4626730576245834
+      },
+      "(1/1728)·(1 + 1/[2]_q²)": {
+        "value": "0.00072181590668289",
+        "ratio_to_target": 1.2429995827386935,
+        "log10_abs_dev": -0.6143944721401181
+      },
+      "ζ(3)/(2π)³": {
+        "value": "0.0048460224503646",
+        "ratio_to_target": 8.345069467126388,
+        "log10_abs_dev": 0.8659959075526876
+      },
+      "1/(2χ²·Area) = 1/(864π)": {
+        "value": "0.00036841422012013",
+        "ratio_to_target": 0.6344259216851852,
+        "log10_abs_dev": -0.43702460627504935
+      }
+    },
+    "best": {
+      "candidate": "1/j(i) = 1/1728  (Bring CM candidate)",
+      "ratio": 0.9965539074065556,
+      "deviation_percent": -0.34460925934444164,
+      "verdict": "NEAR-MATCH"
+    }
+  }
+}
