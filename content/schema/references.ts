@@ -1169,7 +1169,7 @@ export const references: CSLData[] = [
   ref({
     id: "tsai-2015-i",
     type: "article-journal",
-    title: "Dirac spectral flow on contact three manifolds I: eigensection estimates and spectral asymmetry",
+    title: "Dirac spectral flow on contact three-manifolds I: eigensection estimates and spectral asymmetry",
     author: [
       { family: "Tsai", given: "Chung-Jun" },
     ],
@@ -1185,7 +1185,7 @@ export const references: CSLData[] = [
   ref({
     id: "tsai-2015-ii",
     type: "article-journal",
-    title: "Dirac spectral flow on contact three manifolds II: Thurston-Winkelnkemper contact forms",
+    title: "Dirac spectral flow on contact three-manifolds II: Thurston-Winkelnkemper contact forms",
     author: [
       { family: "Tsai", given: "Chung-Jun" },
     ],
