@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T03:09:20.710450+00:00",
-  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
+  "computedAt": "2026-05-30T03:26:07.980279+00:00",
+  "commitSha": "1b4fce52880d3f44b1b0bbdd5f9b7f7c9174d694",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "d9a059098f12",
-  "scriptCommitSha": "1824b810f245b483c821870664deec74782605c5",
+  "scriptHash": "3206a30228ae",
+  "scriptCommitSha": "1b4fce52880d3f44b1b0bbdd5f9b7f7c9174d694",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -141,7 +141,7 @@
         "miss_factor": "0.08892",
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
-        "source_witness": "[3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²) — closed form; both pieces Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4, qou:QOU.BraidKnot.meson_EM_closed_form)",
+        "source_witness": "[3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²) — closed form; both pieces Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4, qou:QOU.BraidKnot.meson_EM_closed_form); α_em is a CLASS-A acknowledged anchor (CS ansatz conditional on Witten-κ class)",
         "sigma_source": "PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature",
         "compute_truncation_ppb": "2.827e-42",
         "compute_output_dps": 50
