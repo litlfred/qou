@@ -59,7 +59,7 @@ export default proposition({
   ],
   cites: [
     "adams1985hyperbolic",
-    "wenzl1988hecke",
+    "wenzl1988c",
     "chlouveraki2016hdr",
   ],
   tags: [

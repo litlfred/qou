@@ -4,7 +4,7 @@
   The pion braid M₊ and σ₁σ₂⁻¹ have identical characteristic
   polynomials on V_(2,1): both have det=1 and trace=-(h²+1).
 
-  -- Ref: [wenzl1988] https://doi.org/10.1007/BF01388470
+  -- Ref: [wenzl1988c] https://doi.org/10.1007/BF01388470
   -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
 -/
 
