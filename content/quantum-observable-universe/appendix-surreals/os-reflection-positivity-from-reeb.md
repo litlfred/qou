@@ -235,13 +235,14 @@ substrate $A$ at $q_0 \in \mathbb{R}_{>1}$ satisfies it requires:
 - Compatibility of the chosen norm with the antipode $S$ (the
   Müger norm has this by construction).
 
-A reasonable conjecture, motivated by these existence considerations,
-is that **the Müger $C^*$-norm on $A$ at $q_0$ exhibits substrate
-$C^*$-Frobenius positivity** — making the axiom not freely posited
-but derivable from $\mathrm{Rep}(\mathrm{SU}_q(2))$ unitarity. This
-is the natural follow-up programme: establish the substrate
-positivity from Wenzl's positivity criterion for
-$\mathrm{Rep}(\mathrm{SU}_q(2))$ at $q_0 \in \mathbb{R}_{>1}$.
+This follow-up programme is formalised as
+[`conj:wenzl-positivity-implies-substrate-positivity`](#conj:wenzl-positivity-implies-substrate-positivity):
+*Wenzl's positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$
+at $q_0 \in \mathbb{R}_{>1}$ implies substrate $C^*$-Frobenius
+positivity*. Closing that bridge conjecture makes the substrate
+axiom not freely posited but derived from Wenzl's classical result
+\cite{wenzl1988}, and discharges the OS-reflection-positivity-as-
+axiom assumption.
 
 ## Conclusion
 

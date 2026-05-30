@@ -326,6 +326,7 @@ export default chapter({
         "q-codifferential-formula",
         "q-laplacian-expansion",
         "hodge-laplacian-relation",
+        "categorical-lichnerowicz",
         "q-harmonic-particle",
         "brings-geometric-connection",
         "complex-substrate-interpretation",

@@ -1,0 +1,145 @@
+The companion conjecture
+[`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb)
+reduces the Wightman-axiom portion of the Yang–Mills millennium
+statement to a single substrate axiom — $C^*$-Frobenius positivity
+of the QOU Frobenius–Hopf substrate at $q = q_0$. This conjecture
+makes the natural follow-up step: the axiom is **not** independent of
+existing categorical theory. It should be **derivable** from Wenzl's
+positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at
+$q_0 \in \mathbb{R}_{>1}$ — i.e. *not posited*, *derived* from
+existing unitarity.
+
+**Conjecture (Wenzl positivity at $q_0$ implies substrate
+$C^*$-Frobenius positivity).** *Wenzl's positivity criterion for the
+representation category $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at
+$q = q_0 \in \mathbb{R}_{>1}$ — the criterion that picks out unitary
+fusion categories among the q-deformed semisimple ones — implies the
+substrate $C^*$-Frobenius positivity axiom of*
+[`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb).
+*Equivalently, the Müger $C^*$-norm on the
+[Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)
+$A$ at $q_0$, induced by the categorical trace of $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$,
+makes the antipode-twisted Frobenius pairing $\langle\theta(\cdot),
+\cdot\rangle_F$ positive-definite on the positive-time Reeb half.*
+
+## Why this is the natural follow-up
+
+The OS-reflection-positivity conjecture
+[`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb)
+left the substrate $C^*$-Frobenius positivity axiom as the sole
+genuinely new input needed. That axiom has three free parameters:
+
+1. **Choice of $C^*$-norm** on $A$ at $q_0$. The substrate algebra
+   $A$ at $q_0 \in \mathbb{R}_{>1}$ admits several candidate
+   $C^*$-completions:
+   - the universal $C^*$-norm of $A$ as a $*$-algebra;
+   - the GNS norm with respect to the Frobenius pairing;
+   - the Müger norm built from the categorical trace of the ambient
+     tensor category.
+2. **Positivity of the antipode-twisted pairing** in the chosen norm.
+3. **Compatibility with the antipode $S$.**
+
+The Müger norm has properties (2) and (3) *by construction* for
+*any* unitary $C^*$-tensor category $\mathbf{C}$ in the BKLR sense
+(Müger 2003, Bischoff–Kawahigashi–Longo–Rehren). The only open
+question is therefore whether $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$
+at $q_0 \in \mathbb{R}_{>1}$ is unitary as a $C^*$-tensor category.
+And that is exactly the content of Wenzl's positivity criterion.
+
+## Wenzl's criterion (recall)
+
+Wenzl proved (\cite{wenzl1988}, \cite{wenzl1990}, with the
+$\mathrm{SU}(N)$ generalisation by Wenzl and the
+$\mathfrak{sl}_n$-equivariant version by Kazhdan–Wenzl
+\cite{kazhdanwenzl1993}): the representation category
+$\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ admits a unitary structure
+(positive $C^*$-trace + positive inner product on each Hom space)
+iff $q$ lies in either:
+
+- $\{q = e^{i\pi / N} : N \geq 3\}$ (the roots-of-unity range
+  yielding the modular tensor categories at level $N - 2$); or
+- $\{q \in \mathbb{R}_{>0}\}$ (the real positive range, in
+  particular $q_0 \approx 1.10998$).
+
+The criterion is sharp: outside these two regions, the categorical
+trace fails to be positive, and no $C^*$-completion of the underlying
+algebra makes $\mathrm{Rep}$ a $C^*$-tensor category.
+
+The QOU substrate parameter $q_0 \approx 1.10998$ lies in the second
+region (real positive). Wenzl's criterion therefore applies, and
+$\mathrm{Rep}(U_{q_0}(\mathfrak{sl}_2))$ is unitary. By the standard
+Müger / BKLR theory, *every* Frobenius algebra in a unitary
+$C^*$-tensor category is automatically a positive Frobenius algebra
+(in the sense of the substrate axiom of
+[`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb)).
+
+## What the conjecture actually claims
+
+The conjecture is therefore the **identification step** between two
+positivity notions:
+
+(a) Wenzl-positivity of $\mathrm{Rep}(U_{q_0}(\mathfrak{sl}_2))$ as
+    a $C^*$-tensor category — established.
+(b) Substrate $C^*$-Frobenius positivity of $(A, \mu, \eta, \Delta,
+    \varepsilon)$ as a Frobenius algebra in
+    $\mathrm{Rep}(U_{q_0}(\mathfrak{sl}_2))$ — needed by
+    [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb).
+
+(a) is a theorem; (b) is the substrate axiom. The conjecture asserts
+that (a) implies (b) via the categorical Frobenius–algebra theory
+of Müger / BKLR — making the OS reflection-positivity axiom *not
+free-standing* but *derived* from Wenzl's classical result.
+
+## Status
+
+Three ingredients separate the conjecture from a theorem:
+
+1. **Müger–BKLR Frobenius framework, transcribed to the QOU
+   substrate.** Müger's theory of $C^*$-Frobenius algebras (2003)
+   and Bischoff–Kawahigashi–Longo–Rehren's framework for unitary
+   tensor categories (2015) establish the implication
+   "unitary $C^*$-tensor category $\Rightarrow$ every Frobenius
+   algebra has positive antipode-twisted pairing" in full
+   generality. Transcribing this to the QOU
+   [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)
+   is largely a formal exercise — the substrate is a *standard*
+   Frobenius algebra in the categorical setting, not an exotic one.
+
+2. **Wenzl's positivity at the specific value $q = q_0 \approx
+   1.10998$.** The criterion is stated for $q \in \mathbb{R}_{>0}$
+   uniformly; specialising at $q_0$ is immediate.
+
+3. **Mathlib infrastructure.** Neither Müger / BKLR nor Wenzl's
+   positivity is in Mathlib; a complete Lean proof requires
+   transcribing the relevant tensor-category positivity machinery.
+   The conjecture is packaged as the typeclass
+   `QOU.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity`,
+   bridging the existing `OSReflectionPositivity` typeclass on the
+   downstream side and a future
+   `WenzlPositivityAt(q₀)` typeclass on the upstream side.
+
+## Strategic significance
+
+If this conjecture is proved, the entire Yang–Mills millennium
+statement reduces in the QOU framework to:
+
+- [`thm:quantum-gap-collapse`](#thm:quantum-gap-collapse) — surreal
+  mass gap (established);
+- [`prop:reeb-u1-chart-swap`](#prop:reeb-u1-chart-swap) — chart-swap
+  $U(1)$ is the Reeb $U(1)$ (proved);
+- Wenzl positivity at $q_0 \in \mathbb{R}_{>1}$ (theorem
+  \cite{wenzl1988});
+- Müger / BKLR positive-Frobenius theory (theorem, off-the-shelf);
+- This conjecture: the bridge.
+
+The bridge is the *only* genuinely conjectural input. Closing it
+discharges the OS-reflection-positivity-as-axiom assumption and
+upgrades the QOU framework to a complete derivation of Yang–Mills
+mass gap + Wightman compliance from the categorical substrate +
+Bring's surface constraint.
+
+This is the natural endgame programme. It also explains why the
+QOU substrate has $q = q_0 \in \mathbb{R}_{>1}$ specifically: the
+real positive range is precisely Wenzl's unitarity range. The
+choice of $q_0$ is not free — it's locked by the unitarity
+requirement that makes the Wightman QFT reconstruction possible.

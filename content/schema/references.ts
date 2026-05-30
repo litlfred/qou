@@ -2631,6 +2631,59 @@ export const references: CSLData[] = [
     DOI: "10.1103/PhysRevLett.128.122001",
   }),
 
+  // ── Wenzl (1988): Hecke algebras of type A_n and subfactors ──
+  ref({
+    id: "wenzl1988",
+    type: "article-journal",
+    title: "Hecke algebras of type $A_n$ and subfactors",
+    author: [{ family: "Wenzl", given: "Hans" }],
+    "container-title": "Inventiones Mathematicae",
+    volume: "92",
+    page: "349-383",
+    issued: { "date-parts": [[1988]] },
+    DOI: "10.1007/BF01404457",
+  }),
+
+  // ── Wenzl (1990): Quantum groups and subfactors of type B, C, and D ──
+  ref({
+    id: "wenzl1990",
+    type: "article-journal",
+    title: "Quantum groups and subfactors of type B, C, and D",
+    author: [{ family: "Wenzl", given: "Hans" }],
+    "container-title": "Communications in Mathematical Physics",
+    volume: "133",
+    page: "383-432",
+    issued: { "date-parts": [[1990]] },
+    DOI: "10.1007/BF02097372",
+  }),
+
+  // ── Kazhdan–Wenzl (1993): Reconstructing monoidal categories ──
+  ref({
+    id: "kazhdanwenzl1993",
+    type: "article-journal",
+    title: "Reconstructing monoidal categories",
+    author: [
+      { family: "Kazhdan", given: "David" },
+      { family: "Wenzl", given: "Hans" },
+    ],
+    "container-title": "Advances in Soviet Mathematics",
+    volume: "16",
+    page: "111-136",
+    issued: { "date-parts": [[1993]] },
+  }),
+
+  // ── Lichnerowicz (1963): Spineurs harmoniques ──
+  ref({
+    id: "lichnerowicz1963",
+    type: "article-journal",
+    title: "Spineurs harmoniques",
+    author: [{ family: "Lichnerowicz", given: "André" }],
+    "container-title": "Comptes Rendus de l'Académie des Sciences, Paris",
+    volume: "257",
+    page: "7-9",
+    issued: { "date-parts": [[1963]] },
+  }),
+
   // ── Ashtekar (1986): New variables for canonical gravity ──
   ref({
     id: "ashtekar1986",
