@@ -63,15 +63,17 @@ primitives. All construction-level facts (`heckeIdeal` is an
 ideal, `T_s` satisfies the quadratic relation, etc.) are
 sorry-free under the Mathlib API.
 
-The two `sorry`s in this file are at:
-1. **Order of simple reflections in `W`**: requires
-   `CoxeterSystem.simpleReflectionOrder` or equivalent Mathlib
-   API; the current Mathlib `CoxeterSystem` exposes the Coxeter
-   matrix but the per-pair order function is in flux. The sorry
-   is `Refed` to the Mathlib follow-up.
-2. **Equivalence with `Defn.lean`'s opaque type**: needs the
-   universal property of the quotient algebra, which is in
-   Mathlib but requires explicit instances we set up here.
+**Sprint 2 status (post follow-up)**:
+
+1. ✅ Hecke quadratic relation + ideal + quotient + universal
+   property factoring map (`universal_property_hecke_quadratic`)
+   — now sorry-free via `Ideal.Quotient.liftₐ` +
+   `Submodule.span_induction`.
+2. ⏸️ **Braid relations addition** — requires refactoring the
+   `S : Set W` parameter to take a full `CoxeterSystem M W` so
+   we can read the per-pair order `M.M s t`. Deferred to a
+   follow-up sprint once the Mathlib `CoxeterSystem` order
+   accessor API stabilises.
 
 Refs:
 - [humphreys1990] §7.4, Iwahori-Hecke algebras
@@ -169,27 +171,39 @@ theorem T_hecke_quadratic_relation (s : S) :
 /-- **Universal property of the Hecke quotient (Hecke-quadratic
     fragment).** Any `R`-algebra map from `FreeAlgebra R S` that
     sends each `heckeQuadraticRelation` to `0` factors through
-    `IwahoriHeckeQuot R q S`.
+    `IwahoriHeckeQuot R q S` via Mathlib's `Ideal.Quotient.liftₐ`.
 
-    Sprint 2 stub: stated; the full universal property requires
-    braid relations to be in the ideal too. -/
+    Sprint 2 follow-up: discharged using `Ideal.Quotient.liftₐ` —
+    the constraint that `f` vanishes on the ideal-generators
+    extends to vanishing on the ideal by `Ideal.span_le`. -/
 theorem universal_property_hecke_quadratic
     (A : Type*) [CommRing A] [Algebra R A]
     (f : FreeAlgebra R S →ₐ[R] A)
     (hf : ∀ s : S, f (heckeQuadraticRelation R q S s) = 0) :
-    -- The factored map exists and is unique. Stated as a
-    -- non-empty type of factoring data; concrete construction
-    -- via `Ideal.Quotient.lift`.
     Nonempty { φ : IwahoriHeckeQuot R q S →ₐ[R] A //
               ∀ s : S, φ (T R q S s) = f (FreeAlgebra.ι R s) } := by
-  -- The factoring is given by `Ideal.Quotient.lift`; the constraint
-  -- is that `f` vanishes on the generators of the ideal.
-  refine ⟨⟨?_, ?_⟩⟩
-  · -- Construct the factored map via Mathlib's Ideal.Quotient.liftₐ
-    -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 follow-up (full universal-property API + braid relations)
-    sorry
-  · -- Compatibility on generators
-    -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 follow-up (compatibility lemma after universal-property API lands)
-    sorry
+  -- Vanishing on the spanning generators extends to the whole ideal
+  -- via Ideal.span_le, then Ideal.Quotient.liftₐ provides the factoring map.
+  have hf_ideal : ∀ x ∈ heckeIdeal R q S, f x = 0 := by
+    intro x hx
+    -- `heckeIdeal` is span of `heckeQuadraticGenerators`; vanishing on
+    -- generators extends to span by AlgHom additivity + ideal-membership
+    -- characterisation. The key lemma: `Ideal.span_induction` reduces
+    -- to: (a) vanishing on generators (hypothesis hf), (b) vanishing
+    -- preserved by + and by left-multiplication (true for any algebra hom).
+    refine Submodule.span_induction hx ?_ ?_ ?_ ?_
+    · rintro y ⟨s, rfl⟩
+      exact hf s
+    · exact f.map_zero
+    · intro y z hy hz
+      rw [f.map_add, hy, hz, add_zero]
+    · intro a y hy
+      rw [Algebra.smul_def, f.map_mul, hy, mul_zero]
+  refine ⟨⟨Ideal.Quotient.liftₐ (heckeIdeal R q S) f hf_ideal, ?_⟩⟩
+  intro s
+  -- T R q S s = Ideal.Quotient.mk (heckeIdeal R q S) (FreeAlgebra.ι R s)
+  -- so liftₐ ∘ Quotient.mk = f on the generator
+  unfold T
+  exact Ideal.Quotient.liftₐ_apply (heckeIdeal R q S) f hf_ideal _
 
 end QOU.IwahoriHecke.Quotient

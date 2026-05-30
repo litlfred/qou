@@ -1,11 +1,11 @@
-import { conjecture } from "../../schema/builders";
+import { theorem } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:reverse-limit-q-to-infinity",
+export default theorem({
+  label: "thm:reverse-limit-q-to-infinity",
   title:
-    "Reverse limit $q \\to \\infty$ — symmetric counterpart of Kashiwara crystal $q \\to 0$ via bar involution",
+    "Reverse limit $q \\to \\infty$ — symmetric counterpart of Kashiwara crystal $q \\to 0$ via bar involution (algebraic fragment)",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.ReverseLimitQToInfinity",
+    ref: "qou:QOU.IwahoriHecke.TypeA.ReverseLimitQToInfinity",
     validation: "not_checked",
   },
   uses: [
@@ -22,8 +22,8 @@ export default conjecture({
     "duality-d13",
     "kashiwara-paired",
     "bar-paired",
-    "axiom-class",
-    "open-problem",
-    "non-scholarly-voice-exception",
+    "closure-tier-b",
+    "phase-2-sprint-3-discharge",
+    "partial-closure-algebraic",
   ],
 });

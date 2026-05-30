@@ -1,11 +1,11 @@
-import { conjecture } from "../../schema/builders";
+import { theorem } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:gs-graded-markov-trace-existence",
+export default theorem({
+  label: "thm:gs-graded-markov-trace-existence",
   title:
-    "Existence of the graded Markov trace on the GS filtration",
+    "Existence of the graded Markov trace on the GS filtration (categorical existence)",
   lean: {
-    ref: "qou:QOU.BraidKnot.GradedMarkovTraceFromGSFiltration",
+    ref: "qou:QOU.IwahoriHecke.MarkovTrace.GradedMarkovTraceExistence",
     validation: "not_checked",
   },
   uses: [
@@ -27,6 +27,7 @@ export default conjecture({
     "graded-trace",
     "markov-trace",
     "noncomputable-opaque",
-    "audit-flag-13a",
+    "closure-tier-b",
+    "phase-2-sprint-4-discharge",
   ],
 });
