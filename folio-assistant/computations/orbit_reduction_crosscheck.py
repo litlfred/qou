@@ -12,7 +12,7 @@ Structural checks (fast, no trace) over A ≤ 8:
       ``atom_braid_word_3A`` (production path unchanged).
 
 Numerical checks (two cheap traces):
-  N1. ``|orbit|``-factor guard on tritium (Z=2,N=1, orbit_size=2):
+  N1. ``|orbit|``-factor guard on ³He (Z=2,N=1, orbit_size=2!·1!=2):
       ``tr_M_via_orbit_representative(2,1) == tr_M_atomic_fast(2,1)``.
       A stray ``Z!·N!`` factor would make these differ by 2×.
   N2. value smoke on ⁴He: ``tr_M_via_orbit_representative(2,2)`` reproduces
@@ -59,7 +59,7 @@ def main() -> int:
         "tr_M_via_orbit_representative are correct and carry NO |orbit| "
         "(Z!·N!) trace multiplier. Structural (canonical ordering, orbit_size "
         "metadata, interface-minimality, byte-identical production word) over "
-        "A≤8, plus the tritium |orbit|-factor guard and the ⁴He value smoke "
+        "A≤8, plus the ³He |orbit|-factor guard and the ⁴He value smoke "
         "@50dps. Confirms the corrected identity tr_M(β)=tr_M(rep)."
     )
     w.set_audit_only("docs/audits/2026-05-30-tier-1b-orbit-reduction.md")
@@ -95,16 +95,16 @@ def main() -> int:
     def evalq(expr):
         return expr.subs(qs, qsp).evalf(50)
 
-    # N1: |orbit|-factor guard on tritium (orbit_size = 2).
+    # N1: |orbit|-factor guard on ³He = (Z=2,N=1) (orbit_size = 2!·1! = 2).
     via = evalq(tr_M_via_orbit_representative(2, 1))
     direct = evalq(tr_M_atomic_fast(2, 1))
     delta = abs(via - direct)
     n1 = delta < sp.Float(10) ** -40
     ok = ok and n1
-    print(f"  N1 tritium |orbit|-guard: via={str(via)[:18]} "
+    print(f"  N1 ³He |orbit|-guard: via={str(via)[:18]} "
           f"direct={str(direct)[:18]} Δ={float(delta):.1e} "
           f"(orbit_size=2, must be 1×) [{'✓' if n1 else '✗ STRAY FACTOR'}]")
-    w.add_assertion("N1_orbit_factor_guard_tritium", computed=float(delta),
+    w.add_assertion("N1_orbit_factor_guard_he3", computed=float(delta),
                     expected=0.0, tolerance=1e-40,
                     source="tr_M_via_orbit_representative(2,1) == "
                            "tr_M_atomic_fast(2,1); a Z!·N! factor would be 2×")
