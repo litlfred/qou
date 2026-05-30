@@ -1,22 +1,22 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-28T03:49:01.009479+00:00",
-  "commitSha": "6ec28a346037c1a526d9e2976f41296f5ee56226",
+  "computedAt": "2026-05-30T19:45:02.233886+00:00",
+  "commitSha": "1051f6594abef9b48540d3f9042faebd37085e17",
   "assertions": [
     {
       "name": "habiro_tr_M_proton_matches_direct",
-      "computed": 127.72966374492657,
-      "expected": 127.72966374492657,
+      "computed": 0.9999999208322118,
+      "expected": 0.9999999208322118,
       "passed": true,
       "tolerance": 0.01
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "habiro-exact-qbeta",
   "scriptFile": "habiro_exact_qbeta.py",
-  "scriptHash": "0721e6290c7d",
+  "scriptHash": "ff43e4b6e5e7",
   "scriptCommitSha": "c304651aed951d4185ec23cda5138e909852ab27",
   "precisionMetadata": {
     "compute_dps": 65,
@@ -25,17 +25,17 @@
     "truncation_bound": "1e-50"
   },
   "data": {
-    "q_0": "1.10997859555418057528159407960950937799328227995870",
-    "tr_M_proton_habiro_sum": "136.0712063634817616514048508169837773395",
-    "tr_M_neutron_habiro_sum": "117.2593849613040823042164663805721013514",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "tr_M_proton_habiro_sum": "1.065306144254451374553174712424527057833",
+    "tr_M_neutron_habiro_sum": "0.9232332299116384613283878919865746611143",
     "tr_M_proton_direct": "1.065306228592389300000000000000000000000",
     "tr_M_neutron_direct": "0.9232332971695838000000000000000000000000",
-    "Q_A_MeV": "0.7836458028449499633475726866056511552691",
-    "Q_N5_MeV": "0.7836448302437748948783590399886630681437",
+    "Q_A_MeV": "0.7836458263164670663517768324036713825511",
+    "Q_N5_MeV": "0.7836448537158768393120483369809497608771",
     "Q_beta_codata_MeV": "0.7823334100000000000000000000000000000000",
-    "err_Q_A_ppb": "1677536.4930",
-    "err_Q_N5_ppb": "1676293.2875",
-    "chi_diff_exact": "-0.1068144700089974292306370969026870560495",
+    "err_Q_A_ppb": "1677566.4949",
+    "err_Q_N5_ppb": "1676323.2902",
+    "chi_diff_exact": "-0.1068144576515780496236312589211449075218",
     "method": "Habiro-exact: integer a_m ∈ ℤ[u], series terminates at M=8",
     "supersedes": "precision-ladder c_k approach (deprecated in PR #1314)"
   }
