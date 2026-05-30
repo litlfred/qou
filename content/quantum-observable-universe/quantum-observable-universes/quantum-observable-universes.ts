@@ -483,6 +483,7 @@ export default chapter({
         "sign-as-spin-structure",
         "i-as-braiding-orientation",
         "affine-chart-origin-of-i-and-q",
+        "reeb-u1-chart-swap",
         "categorical-coordinate-ring",
       ],
     }),
