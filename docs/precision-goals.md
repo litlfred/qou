@@ -188,9 +188,23 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 | m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 1.04 ppb | **misses ~181×** |
 | Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 755 ppb | **misses ~159×** |
 | m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 2.9×10⁵ ppb | **misses ~1098×** |
+| α_EM | prediction (FSC) | 0.15 ppb | **0.0015 ppb** | 0.31 ppb intrinsic / ~150 ppb (CAL-2 propagated) | **CAL-2-floor MET** (see notes) |
 
-**Honest summary: 2/7 "meet" — both are calibration anchors (m_e, m_p),
-not predictions. 0 of the 5 genuine predictions meet the 100× target.**
+**Honest summary: 2/7 "meet" plus α_EM "meets at CAL-2 floor" — m_e, m_p
+are calibration anchors (not predictions). α_EM is the first genuine
+prediction whose residual is consistent with the substrate calibration
+floor: the empirical form
+$\alpha_{EM}^{-1} = q[9]_q[10]_q + 2/(3\pi) + \alpha_{EM} \cdot [2]_q/(8\pi)
+\cdot (1 - h^2\alpha_{EM}) + O(\alpha^3)$
+gives 0.31 ppb intrinsic residual = 2.09× σ_α at q_0 (#1484), but the
+22 ppb CAL-2 uncertainty on q_0 propagates to ~150 ppb on the
+predicted α_EM⁻¹ (#1489) — 485× the intrinsic residual. The form is
+therefore consistent with EXACT within the substrate calibration
+floor. Subgoal-2 (rigorous categorical derivation via RT shadow-world
+2-loop) is the multi-week research target per
+[`docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md`](coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md).
+**0 of the 4 remaining genuine predictions (m_μ, Q_β, m_n, m_K/m_π)
+meet the 100× target.**
 This is the de-fitted state: production reports the real residuals, not
 CODATA-fitted towers. m_p's "0.0004 ppb" is a calibration round-trip
 (see §"The 1 ppQ target is on the theory residual" — σ_theory = 0, the

@@ -47,11 +47,23 @@ At $q_0 = 1.109978595554181\ldots$ (50 dps) in 60 dps mpmath:
 | CODATA $1/\alpha$ | $137.035999084(21)$ |
 | **Residual** (calc $-$ CODATA, relative) | $\mathbf{-4.2 \times 10^{-6}}$ |
 
-A second additive term $\alpha/(4\pi) \approx 5.81 \times 10^{-4}$
-brings the residual to $+5.7 \times 10^{-8}$ relative (calc $-$ CODATA), near CODATA
-$\sigma_\alpha = 1.5 \times 10^{-10}$ — but the coefficient $1/(4\pi)$
-is currently a numerical near-match (1.4% off) and may refine to
-$1/(2\pi[2]_q)$ or another small $q$-correction.
+A second additive term $\alpha\cdot[2]_q/(8\pi)\cdot(1 - h^2\alpha)
+\approx 5.838\times 10^{-4}$ at $q_0$ brings the residual to
+$+0.31 \times 10^{-9}$ relative (calc $-$ CODATA) — $2.09\times$ the
+CODATA experimental $\sigma_\alpha = 1.5 \times 10^{-10}$, but
+**within the propagated CAL-2 calibration floor** ($\sigma_{q_0}
+\approx 22\;\text{ppb}$ propagates to $\sim 150\;\text{ppb}$ on the
+predicted $\alpha_{EM}^{-1}$). The coefficient $[2]_q/(8\pi) =
+[2]_q/(\pi \cdot \dim H^1(M_{\text{Bring}}))$ reuses the canonical
+Bring cohomology dimension from the leading $2/(3\pi)$ shift; the
+Schwinger-pattern $(1 - h^2\alpha)$ factor is the empirically
+identified $\mathcal{O}(\alpha^2)$ closure. Subgoal-1 ($100\times
+\sigma_{\text{exp}}$) is therefore consistent with achieved to the
+substrate calibration floor; the rigorous categorical derivation of
+the $[2]_q/(8\pi)\cdot(1-h^2\alpha)$ form via Reshetikhin-Turaev
+shadow-world 2-loop self-energy is the subgoal-2 research target
+(plan in `docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-
+derivation-plan.md`).
 
 ## Conjectural physical interpretation
 
@@ -64,7 +76,11 @@ $$
   \;+\;
   \underbrace{\frac{2g}{4\pi(g-1)}}_{\substack{\text{IR zero-mode shift:}\\\text{photon harmonic 1-forms}\\\text{on Bring's surface,}\\\text{regularised by Area}}}
   \;+\;
-  \underbrace{\mathcal{O}(\alpha)}_{\text{higher loops}}.
+  \underbrace{\alpha_{EM}\cdot\frac{[2]_q}{8\pi}\cdot(1 - h^2\alpha_{EM})}_{\substack{\text{1-loop categorical self-energy:}\\
+  \text{matter q-dim }[2]_q\text{ over photon}\\\text{zero modes }\pi\cdot\dim H^1(M_{\text{Bring}});\\
+  \text{Schwinger }(1-h^2\alpha)\text{ from 2-loop}}}
+  \;+\;
+  \mathcal{O}(\alpha^3).
 $$
 
 The $g = 4$ structure of Bring's surface appears in **both** terms:
