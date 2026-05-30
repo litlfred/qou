@@ -1,3 +1,11 @@
+> **⚠ SUPERSEDED 2026-05-30** by [docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md](2026-05-30-qbeta-ck-mp-dk-deep-audit.md).
+>
+> This audit was at the WRONG c_3 form. Canonical c_3 = J_Hopf(q=1) − ℏ_q²
+> (the q-deformed Hopf invariant from 2026-05-26 b2f9087315), NOT plain
+> c_3 = −2. With canonical c_3, the Taylor match is **0.0038%**, not 0.49%.
+> Discipline analysis in this audit is correct for what it tested; it tested
+> the wrong target.
+
 # Audit: μ–p tension sets the substrate accuracy floor (~240 ppb / 11.5 ppb in q₀)
 
 **Date:** 2026-05-28

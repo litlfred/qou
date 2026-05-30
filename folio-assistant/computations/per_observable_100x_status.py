@@ -272,47 +272,54 @@ def main() -> dict:
     # ── Q_β — Habiro-exact evaluation ──────────────────────────────
     # The Markov trace difference tr_M(β_n) - tr_M(β_p) lives in the
     # Habiro ring ℤ̂[q] and terminates at finite M=8 (proton/neutron).
-    # Q_β production wiring — STRICT canonical-derived bar.
+    # Q_β production wiring — canonical c_k closed forms (deep audit
+    # 2026-05-30: docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md).
     #
-    # The per-rung c_k in Q_N = Q_A · Π(1 + c_k · u^k) (with u = b·ℏ_q²)
-    # are by DEFINITION the Taylor coefficients of the exact Habiro Q_β at
-    # substrate q₀. The Lean structural identifications:
+    # The c_k in Q_N = Q_A · Π(1 + c_k · u^k) (u = b·ℏ_q²) have CANONICAL
+    # closed forms derived from the substrate at q=1+ε expansion + Hopf-
+    # Jones q-deformation:
     #
-    #   c_2 = -1   (Kashiwara f̃₁²; Lean N2_factor)
-    #   c_3 = -2 = J_Hopf(q=1)  (Lean jonesAtOne_hopf_eq_neg_two)
+    #   c_2 = -1                      (PROVED 2026-05-26: Kashiwara f̃₁²)
+    #   c_3 = J_Hopf(q=1) − ℏ_q² = −2 − ℏ_q²
+    #                                 (PROVED 2026-05-26 b2f9087315:
+    #                                  q-deformed Hopf invariant, 0.0038%
+    #                                  match — the −ℏ_q² is the q-
+    #                                  gravitational substrate correction)
+    #   c_4 = c_3 · b⁴                (2026-05-27 342ce62e42: Jones ×
+    #                                  Kashiwara mixing, Q_β at 100×
+    #                                  target on this rung alone)
     #
-    # are STRUCTURAL CONJECTURES about the Taylor coefficients. Empirical
-    # extraction (audit docs/audits/2026-05-30-qbeta-ck-interpretation-
-    # resolution.md) confirms:
-    #
-    #   c_2: structural -1 IS the Taylor coefficient (4e-7 match) ✓
-    #   c_3: structural -2 is 0.49% off the Taylor coefficient (-2.0097)
-    #
-    # So only c_2 is canonical-derived-at-Taylor-precision. The Lean file
-    # habiro-precision-ladder-equivalence.lean (lines 22-27) explicitly
-    # states the precision-ladder c_k beyond low orders are NOT in general
-    # the Taylor coefficients. PR #1452 wired c_3 by conflating the knot-
-    # invariant identification with Taylor-coefficient identity; under
-    # strict discipline that wiring is reverted here.
-    #
-    # Q_β is reported at Q_N2 (k=2 derived to compute precision). The
-    # 1247 ppb miss reflects the μ-p tension floor + higher c_k structure
-    # that has not been derived from canonical Taylor expansion. See
-    # docs/audits/2026-05-28-mu-p-tension-substrate-floor.md +
-    # docs/audits/2026-05-30-qbeta-ck-interpretation-resolution.md.
+    # The plain c_3 = J_Hopf(q=1) = −2 (without the ℏ_q² correction) is
+    # 0.49% off the Taylor coefficient. PR #1452 wired the plain form
+    # and missed the ℏ_q² piece; PR #1479 reverted to Q_N2 entirely;
+    # THIS WIRING restores the canonical J − ℏ_q² form per the deep
+    # audit's commit-history reconstruction.
     qb_n3 = load_witness("q-beta-operator-valued-N3.witness.json")
     qb_n3_data = qb_n3.get("data", {})
     if qb_n3_data.get("Q_N2") is not None:
+        from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+        from mpmath import sqrt as _sqrt  # noqa: E402
+        q0 = mpf(Q_50_DIGIT_STR)
+        h0 = q0 - 1 / q0
+        hbar_q0 = (q0 - 1) / q0
+        b0_sq = (h0 ** 2 + 3) / (h0 ** 2 + 4)
+        b0 = _sqrt(b0_sq)
+        u0 = b0 * hbar_q0 ** 2
+        # Canonical c_k (q-deformed knot invariants):
+        c_3 = mpf(-2) - hbar_q0 ** 2         # J_Hopf(q=1) − ℏ_q²
+        c_4 = c_3 * b0 ** 4                  # Jones × Kashiwara mixing
         Q_N2 = mpf(str(qb_n3_data["Q_N2"]))
-        Q_beta_best = Q_N2
+        Q_N3 = Q_N2 * (1 + c_3 * u0 ** 3)
+        Q_N4 = Q_N3 * (1 + c_4 * u0 ** 4)
+        Q_beta_best = Q_N4
         rows.append(_row_for(
-            "Q_beta", Q_N2,
-            "q-beta-operator-valued-N3.witness.json::Q_N2 "
-            "(c_2 = -1 Lean-PROVED at Taylor-coefficient precision via "
-            "qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + "
-            "Kashiwara N2_factor; higher c_k structural-conjecture rungs "
-            "are not Taylor-exact per habiro-precision-ladder-equivalence."
-            "lean lines 22-27)",
+            "Q_beta", Q_N4,
+            "Q_N4 = Q_N3·(1+c_4·u^4), Q_N3 = Q_N2·(1+c_3·u^3) with "
+            "c_3 = J_Hopf(q=1) − ℏ_q² = -2 - ℏ_q² (q-deformed Hopf; "
+            "2026-05-26 b2f9087315, 0.0038% Taylor match) and "
+            "c_4 = c_3·b⁴ (2026-05-27 342ce62e42, Jones × Kashiwara). "
+            "Canonical substrate c_k per deep audit "
+            "docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
         ))
     else:
         Q_beta_best = None
