@@ -79,7 +79,7 @@ theorem categorical_linking_linearity_holds
     {R : Type*} [CommRing R] (q : R) :
     LkLinear q := by
   -- Ref: [kassel1995] §XIV (R-linear rigid monoidal axioms)
-  -- Ref: categorical-linking-operation.md §"Proof of Property 1"
+  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 1"
   intro a b c
   refine ⟨?_, ?_⟩
   · exact mul_add a b c
@@ -121,7 +121,7 @@ theorem categorical_linking_reduction_at_zero_holds
     LkReductionAtZero q := by
   -- Ref: [kassel1995] §X (rigid monoidal categories,
   --      coev/eval, dual morphisms)
-  -- Ref: categorical-linking-operation.md §"Proof of Property 2"
+  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 2"
   exact pow_zero q
 
 /--
@@ -149,7 +149,7 @@ theorem categorical_linking_multiplicativity_pretrace_holds
     LkMultiplicative q := by
   -- Ref: [kassel1995] §X (integer-power group law in
   --      monoidal categories)
-  -- Ref: categorical-linking-operation.md §"Proof of Property 3"
+  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 3"
   -- Direct from the integer-power group law c^(k_1+k_2) =
   -- c^(k_2) ∘ c^(k_1); generic monoidal-category fact.
   trivial
@@ -184,7 +184,7 @@ theorem markov_trace_swap
     flagged as open in `categorical-linking-operation.md` §"Proof
     of Property 3". -/
 -- Ref: [manuscript] prop:frobenius-gram-matrix
--- Ref: categorical-linking-operation.md §"Proof of Property 3"
+-- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 3"
 theorem markov_trace_cyclic_three_factor
     {T : Type*} [Semigroup T] {R : Type*} (tr_M : T → R)
     [hC : MarkovTraceCyclic T R tr_M]
@@ -214,9 +214,9 @@ def LkTraceCutSymmetric {R : Type*} [CommRing R] (_R_ : R) : Prop :=
 theorem categorical_linking_trace_cut_symmetry_holds
     {R : Type*} [CommRing R] (q : R) :
     LkTraceCutSymmetric q := by
-  -- Ref: prop:frobenius-gram-matrix (Markov-trace cyclicity)
+  -- Ref: [manuscript] prop:frobenius-gram-matrix (Markov-trace cyclicity)
   -- Ref: [kassel1995] §XIV (ribbon-category braiding inversion)
-  -- Ref: categorical-linking-operation.md §"Proof of Property 4"
+  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 4"
   -- Substrate-specific axioms cited; proof reduces to a strand-swap
   -- + exponent-shift k-1 → -k via cyclicity.
   trivial
@@ -234,7 +234,7 @@ theorem categorical_linking_trace_cut_symmetry_holds
     combined with bar-functoriality (next predicate), it closes
     the post-trace property 4 statement. -/
 -- Ref: [manuscript] prop:frobenius-gram-matrix
--- Ref: categorical-linking-operation.md §"Proof of Property 4"
+-- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 4"
 theorem trace_cut_cyclicity_step
     {T : Type*} [Semigroup T] {R : Type*} (tr_M : T → R)
     [hC : MarkovTraceCyclic T R tr_M]
@@ -280,7 +280,7 @@ theorem categorical_linking_bar_involution_holds
     {R : Type*} [CommRing R] (q : R) :
     LkBarInvolutionCompatible q := by
   -- Ref: [kassel1995] §XIV (Hecke antipode ι(σ_i) = σ_i^{-1})
-  -- Ref: categorical-linking-operation.md §"Proof of Property 5"
+  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 5"
   intro k
   exact neg_neg k
 

@@ -24,7 +24,7 @@ namespace QOU.BraidKnot
 theorem categorical_leg_to_markov_trace (T_w : Type*) :
     True := by
   trivial
-  -- Ref: prop:gb-spectral-sequence + prop:spectral-sequence-collapse +
+  -- Ref: [manuscript] prop:gb-spectral-sequence + prop:spectral-sequence-collapse +
   --      prop:e-infinity-page-identifications.
   -- Yekutieli at finite slice ⇒ holonomy = finite product of generator-actions.
   -- GB SS collapses at E_2 for semisimple H_n(q) at generic q (no further relations).
@@ -36,7 +36,7 @@ theorem categorical_leg_to_markov_trace (T_w : Type*) :
 theorem archimedean_realization_to_mev (T_w : Type*)
     (cat : True) : True := by
   trivial
-  -- Ref: prop:archimedean-realization-functor.
+  -- Ref: [manuscript] prop:archimedean-realization-functor.
   -- M(𝔥) = ρ · tr_M(T_w) ∈ ℚ(q).
   -- B(𝔥) := m_e · M(𝔥) |_{q = q_0} ∈ ℝ (MeV).
   -- ρ ∈ ℕ_{>0} = multiplicity of T_w's SDP solution in Wedderburn.

@@ -33,7 +33,7 @@ provides a concrete Lean handle for downstream usage.
 -- Ref: [manuscript] conj:shell-correction-term-seven
 -- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit
 -- Ref: [manuscript] prop:archimedean-functor-uniqueness
--- Ref: CLAUDE.md §7b "Symmetric-crystal techniques"
+-- Ref: [manuscript] CLAUDE.md §7b "Symmetric-crystal techniques"
 -- Ref: [borel1974], [bloch2000], [suslin1991]
 -/
 

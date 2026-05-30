@@ -43,7 +43,7 @@ noncomputable def qCasimir (q : R_q) (j : R_q) : R_q :=
 /-- At q = 1, the q-Casimir reduces to the classical j(j+1).
     (The limit is taken via L'Hôpital: [n]_q → n as q → 1.) -/
 -- Ref: [manuscript] §6/q-angular-momentum
--- Ref: Kassel, "Quantum Groups" (1995)
+-- Ref: [kassel1995] Kassel, "Quantum Groups" (1995)
 theorem qCasimir_classical_limit (j : R_q) :
     -- lim_{q→1} qCasimir q j = j * (j + 1)
     -- The limit requires L'Hôpital on the [n]_q formula.

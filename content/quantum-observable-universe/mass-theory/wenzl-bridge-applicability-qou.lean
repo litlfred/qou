@@ -74,7 +74,7 @@ theorem wenzl_bridge_applicability_qou
   trivial
   -- Ref: [chlouveraki2016-hdr] Chlouveraki 2016 HDR Theorem 6.20 (NOT the 2009 LNM monograph)
   -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n …"
-  -- Ref: prop:y-lambda-closed-form-wenzl-bridge
+  -- Ref: [manuscript] prop:y-lambda-closed-form-wenzl-bridge
 
 /-- **Corollary.** Under the QOU substrate axioms, the Jones–Markov
     `y_λ` weights are uniquely determined and equal the Wenzl-bridge
@@ -89,6 +89,6 @@ theorem y_lambda_unique_in_qou
   -- Direct corollary of `wenzl_bridge_applicability_qou` via the
   -- principal-specialisation closed form.
   trivial
-  -- Ref: prop:wenzl-bridge-applicability-qou
+  -- Ref: [manuscript] prop:wenzl-bridge-applicability-qou
 
 end QOU.BraidsAndKnots

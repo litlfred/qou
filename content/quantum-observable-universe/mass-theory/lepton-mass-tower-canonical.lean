@@ -50,8 +50,12 @@ inductive LeptonType
 noncomputable def lepton_mass_ratio
     {R : Type*} [CommRing R] (q : R) : LeptonType → R
   | LeptonType.electron => (1 : R)  -- calibration convention
-  | LeptonType.muon     => sorry    -- Ref: [manuscript] conj:lepton-mass-tower-canonical
-  | LeptonType.tau      => sorry    -- Ref: [manuscript] conj:lepton-mass-tower-canonical
+  | LeptonType.muon     =>
+      -- Ref: [manuscript] conj:lepton-mass-tower-canonical
+      sorry
+  | LeptonType.tau      =>
+      -- Ref: [manuscript] conj:lepton-mass-tower-canonical
+      sorry
 
 /-- **THEOREM.** The electron mass ratio is the multiplicative identity
     by calibration convention (CAL-1 sets the mass unit). -/

@@ -39,7 +39,7 @@ namespace QOU.HadronicMass
     follow from `norm_num` but are deferred to a numerical-bound
     follow-up to keep this stub minimal. -/
 -- Ref: [manuscript] §10 Observations / deuteron-binding-energy
--- Ref: NIST CODATA 2022 — `mdc2mev`
+-- Ref: [codata2022] NIST CODATA 2022 — `mdc2mev`
 theorem deuteron_binding_energy :
     (2 : ℝ) < binding_energy_CODATA ∧ binding_energy_CODATA < 3 ∧
     (2 : ℝ) < binding_energy_QOU ∧ binding_energy_QOU < 3 := by

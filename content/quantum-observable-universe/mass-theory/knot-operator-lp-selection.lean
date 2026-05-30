@@ -121,8 +121,8 @@ theorem knot_operator_lp_selection
     (n_T : ops.Basis → R) :
     ∃ _oStar : ops.Op, True := by
   -- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
-  -- Ref: docs/audits/2026-05-05-path-alpha-bring-refinement.md §3
-  -- Ref: knot-operator-lp-selection.md §"Statement (formal)"
+  -- Ref: [manuscript] docs/audits/2026-05-05-path-alpha-bring-refinement.md §3
+  -- Ref: [manuscript] knot-operator-lp-selection.md §"Statement (formal)"
   -- Active-set uniqueness reduces to LP strong duality
   -- (Schrijver §7.2) + complementary slackness (§7.4),
   -- both packaged as class hypotheses since Mathlib lacks

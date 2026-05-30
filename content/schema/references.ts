@@ -2668,6 +2668,96 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1088/1674-1137/abddb0",
   }),
 
+  // ── NUBASE 2020 (companion to AME 2020) ───────────────────────
+  ref({
+    id: "nubase2020",
+    type: "article-journal",
+    title: "The NUBASE2020 evaluation of nuclear physics properties",
+    author: [
+      { family: "Kondev", given: "F. G." },
+      { family: "Wang", given: "M." },
+      { family: "Huang", given: "W. J." },
+      { family: "Naimi", given: "S." },
+      { family: "Audi", given: "G." },
+    ],
+    "container-title": "Chinese Physics C",
+    issued: { "date-parts": [[2021]] },
+    volume: "45",
+    issue: "3",
+    page: "030001",
+    DOI: "10.1088/1674-1137/abddae",
+    URL: "https://doi.org/10.1088/1674-1137/abddae",
+  }),
+
+  // ── NNDC / ENSDF (Evaluated Nuclear Structure Data File) ───────
+  ref({
+    id: "nndc-ensdf",
+    type: "webpage",
+    title: "Evaluated Nuclear Structure Data File (ENSDF)",
+    author: [{ literal: "National Nuclear Data Center" }],
+    publisher: "Brookhaven National Laboratory",
+    issued: { "date-parts": [[2024]] },
+    URL: "https://www.nndc.bnl.gov/ensdf/",
+    note: "Online compilation of evaluated nuclear structure and decay data, maintained by the National Nuclear Data Center.",
+  }),
+
+  // ── SnapPy (computational topology of 3-manifolds) ─────────────
+  ref({
+    id: "snappy",
+    type: "webpage",
+    title: "SnapPy, a computer program for studying the geometry and topology of 3-manifolds",
+    author: [
+      { family: "Culler", given: "Marc" },
+      { family: "Dunfield", given: "Nathan M." },
+      { family: "Goerner", given: "Matthias" },
+      { family: "Weeks", given: "Jeffrey R." },
+    ],
+    issued: { "date-parts": [[2024]] },
+    URL: "https://snappy.computop.org",
+    note: "Includes the SnapPy census of hyperbolic 3-manifolds; the reference hyperbolic-volume database used throughout this paper.",
+  }),
+
+  // ── Knot Atlas / KnotInfo (knot invariant databases) ──────────
+  ref({
+    id: "knot-atlas",
+    type: "webpage",
+    title: "The Knot Atlas (and KnotInfo database)",
+    author: [
+      { family: "Bar-Natan", given: "Dror" },
+      { family: "Morrison", given: "Scott" },
+      { literal: "et al." },
+    ],
+    issued: { "date-parts": [[2024]] },
+    URL: "http://katlas.org",
+    note: "Reference compendium of knot and link invariants, including Jones polynomials, Khovanov homology, and SnapPy hyperbolic data.",
+  }),
+
+  // ── IAU definitions (units, fundamental constants conventions) ─
+  ref({
+    id: "iau-definitions",
+    type: "webpage",
+    title: "International Astronomical Union — Resolutions on units, constants, and reference systems",
+    author: [{ literal: "International Astronomical Union" }],
+    issued: { "date-parts": [[2024]] },
+    URL: "https://www.iau.org/administration/resolutions/",
+    note: "Authoritative source for SI-compatible astronomical units and constants conventions cited in the framework's archimedean-unit dictionary.",
+  }),
+
+  // ── Cartan–Eilenberg 1956 (Homological Algebra) ───────────────
+  ref({
+    id: "cartan-eilenberg-1956",
+    type: "book",
+    title: "Homological Algebra",
+    author: [
+      { family: "Cartan", given: "Henri" },
+      { family: "Eilenberg", given: "Samuel" },
+    ],
+    publisher: "Princeton University Press",
+    "publisher-place": "Princeton, NJ",
+    issued: { "date-parts": [[1956]] },
+    note: "Foundational reference; Whitehead's lemma (Ch. IX §7) is cited for spectral sequence collapse.",
+  }),
+
   // ── Iwahori 1964 (Hecke ring structure) ───────────────────────
   ref({
     id: "iwahori1964",

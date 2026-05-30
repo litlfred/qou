@@ -116,7 +116,7 @@ theorem weak_symmetric_normalization_factored
     [_inst : WeakSymmetricNormalization R q] :
     weak_symmetric_normalization q
       = ⅟(3 : R) * q^4 * (1 + q^2 + q^4) := by
-  -- Ref: weak-symmetric-normalization.md §"Statement (formal)"
+  -- Ref: [manuscript] weak-symmetric-normalization.md §"Statement (formal)"
   unfold weak_symmetric_normalization
   ring
 
@@ -128,7 +128,7 @@ theorem weak_symmetric_normalization_eq
     weak_symmetric_normalization q
       = ⅟(3 : R) * (q^4 + q^6 + q^8) := by
   -- Ref: [kassel1995] https://link.springer.com/book/10.1007/978-1-4612-0783-2
-  -- Ref: weak-symmetric-normalization.md §"Statement (formal)"
+  -- Ref: [manuscript] weak-symmetric-normalization.md §"Statement (formal)"
   rfl
 
 end QOU.BraidsAndKnots

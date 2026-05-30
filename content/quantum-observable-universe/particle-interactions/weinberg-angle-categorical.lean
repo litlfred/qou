@@ -41,7 +41,7 @@ def LkDischarged {R : Type*} [CommRing R] (_q : R) : Prop :=
     EW assignment depends on. The companion sibling proof is
     `HoefsmitEWCellContent.disjointStrandPairAssignment` in
     `hoefsmit-ew-cell-content.lean`. -/
--- Ref: hoefsmit-ew-cell-content.lean (DisjointStrandPairAssignmentB6)
+-- Ref: [manuscript] hoefsmit-ew-cell-content.lean (DisjointStrandPairAssignmentB6)
 def HoefsmitDischarged {R : Type*} [CommRing R] (_q : R) : Prop :=
   FarCommutes 1 3 ∧ FarCommutes 3 5 ∧ FarCommutes 1 5
 
@@ -94,7 +94,7 @@ class WeinbergAngleCategorical
     minimal Lean witness that an inhabitant exists, and is sufficient
     to discharge the §3b-cond hypothesis for downstream blocks
     consuming `[WeinbergAngleCategorical R q]`. -/
--- Ref: weinberg-angle-categorical.md §"Status"
+-- Ref: [manuscript] weinberg-angle-categorical.md §"Status"
 instance canonical {R : Type*} [CommRing R] (q : R) :
     WeinbergAngleCategorical R q where
   lk_discharged := trivial

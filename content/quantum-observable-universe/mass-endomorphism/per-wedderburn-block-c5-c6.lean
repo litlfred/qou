@@ -147,7 +147,7 @@ PLACEHOLDER (residuals = 0 with zero contributions); a real instance
 requires the probe to plug in the substantive per-block formulae. -/
 
 -- Ref: [manuscript] rem:per-wedderburn-block-c5-c6
--- Ref: open R&D — probe_per_wedderburn_block_ck.py (TBA)
+-- Ref: [manuscript] open R&D — probe_per_wedderburn_block_ck.py (TBA)
 /-- **Default instance** — placeholder discharging the class trivially.
     Replace with a substantive instance once the per-block formulae
     are extracted from a future ε^10, ε^12 Wenzl-bridge probe. -/

@@ -29,11 +29,11 @@ namespace QOU.Archimedean.BuildingBlockKnots
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Vol(0₁) = 0 (unknot, non-hyperbolic). -/
--- Ref: SnapPy census
+-- Ref: [snappy] SnapPy census
 noncomputable def vol_unknot : ℝ := 0
 
 /-- Vol(3₁) = 0 (trefoil, torus knot → non-hyperbolic). -/
--- Ref: SnapPy census
+-- Ref: [snappy] SnapPy census
 noncomputable def vol_trefoil : ℝ := 0
 
 /-- Vol(4₁) = 2.02988321281930 (figure-eight, exact: 2·Cl₂(π/3)). -/
@@ -41,27 +41,27 @@ noncomputable def vol_trefoil : ℝ := 0
 noncomputable def vol_figure_eight : ℝ := 2.02988321281930  -- :leanval[Vol_4_1]{precision=15}
 
 /-- Vol(5₁) = 0 (cinquefoil, torus knot → non-hyperbolic). -/
--- Ref: SnapPy census
+-- Ref: [snappy] SnapPy census
 noncomputable def vol_cinquefoil : ℝ := 0
 
 /-- Vol(5₂) = 2.82812208833 (three-twist knot, hyperbolic). -/
--- Ref: SnapPy census
+-- Ref: [snappy] SnapPy census
 noncomputable def vol_three_twist : ℝ := 2.82812208833
 
 /-- Vol(7₁) = 0 (septafoil, torus knot → non-hyperbolic). -/
--- Ref: SnapPy census
+-- Ref: [snappy] SnapPy census
 noncomputable def vol_septafoil : ℝ := 0
 
 /-- Vol(8₁₉) = 0 (T_{3,4} torus knot → non-hyperbolic). -/
--- Ref: SnapPy census
+-- Ref: [snappy] SnapPy census
 noncomputable def vol_T34 : ℝ := 0
 
 /-- Vol(L2a1) = 0 (Hopf link, torus link → non-hyperbolic). -/
--- Ref: SnapPy census
+-- Ref: [snappy] SnapPy census
 noncomputable def vol_hopf_link : ℝ := 0
 
 /-- Vol(L6a4) = 7.32772475341775 (Borromean rings, exact: 8·G). -/
--- Ref: SnapPy census, OEIS A006752
+-- Ref: [snappy] SnapPy census, OEIS A006752
 noncomputable def vol_borromean : ℝ := 7.32772475341775
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -80,7 +80,7 @@ theorem torus_knots_nonhyperbolic :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Crossing numbers of building block knots. -/
--- Ref: Knot Atlas / KnotInfo
+-- Ref: [knot-atlas] Knot Atlas / KnotInfo
 noncomputable def crossings_unknot : ℕ := 0
 noncomputable def crossings_trefoil : ℕ := 3
 noncomputable def crossings_figure_eight : ℕ := 4

@@ -119,7 +119,7 @@ instance punitInstance (M G : Type u) [Group G] : NonAbelianStokes M G where
     library. -/
 axiom yekutieli_finite_slice_substrate (M G : Type u) [Group G] :
     ∃ (instance_data : NonAbelianStokes M G), True
--- Ref: yekutieli2015 §3 (Stokes on piecewise-affine surfaces);
+-- Ref: [yekutieli2015] yekutieli2015 §3 (Stokes on piecewise-affine surfaces);
 --      [manuscript] def:yekutieli-multiplicative-trace.
 
 /-! ### Substantive Yekutieli content

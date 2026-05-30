@@ -207,7 +207,7 @@ noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
     fun acc c => acc * crossing_to_matrix q c)
 
 -- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"matrix-product trace"
--- Ref: empirical sympy verification in
+-- Ref: [manuscript] empirical sympy verification in
 --   folio-assistant/computations/probe_per_wedderburn_block_ck.py
 --   (q_character_on_braid_word + sympy.cancel + sympy.factor)
 /-- **Full V_(2,1) Hoefsmit matrix-product trace identity.**
@@ -230,7 +230,7 @@ theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
   -- Symbolic matrix-product trace evaluation; backed empirically by
   -- PROOF STRATEGY: unfold chi_v21_on_word, foldl 11 matrices,
   -- take trace, use sigma1_v21_param (sqrt-free), field_simp + ring.
-  -- Ref: folio-assistant/computations/probe_per_wedderburn_block_ck.py
+  -- Ref: [manuscript] folio-assistant/computations/probe_per_wedderburn_block_ck.py
   sorry
 
 /-! ## u = q² coordinate: sqrt-free trace identity

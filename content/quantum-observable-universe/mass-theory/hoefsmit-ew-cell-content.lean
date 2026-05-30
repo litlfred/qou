@@ -69,7 +69,7 @@ theorem totalPureMultiplicity :
     + purePatternMultiplicity .saa
     + purePatternMultiplicity .aaa
     = 20 := by
-  -- Ref: folio-assistant/computations/hoefsmit-ew-cell-content.witness.json
+  -- Ref: [manuscript] folio-assistant/computations/hoefsmit-ew-cell-content.witness.json
   decide
 
 /-- The six "physical" EW patterns (single-flip + double-flip),

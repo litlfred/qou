@@ -66,7 +66,7 @@ axiom q_factorial_exceeds_at_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     qFactorial q 4 > (qInt q 2) ^ 4
 
 /-- Below A = 5: [A-1]_q! ≤ [2]_q^{A-1}. -/
--- Ref: folio-assistant/computations output
+-- Ref: [manuscript] folio-assistant/computations output
 axiom q_factorial_bounded_below_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     qFactorial q 3 < (qInt q 2) ^ 3
 

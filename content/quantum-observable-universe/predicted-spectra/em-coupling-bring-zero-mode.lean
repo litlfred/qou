@@ -116,7 +116,7 @@ axiom BlochWigner_unit_circle : ℝ → ℝ
     sub-problem" for the 3-phase roadmap.
 -/
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: PR #952 (PSLQ negative on canonical unit-circle basis)
+-- Ref: [manuscript] PR #952 (PSLQ negative on canonical unit-circle basis)
 -- Ref: [suslin1991], [bloch2000] (full BlochGroup framework)
 class BringZeroModeBlochClass : Prop where
   /-- The τ_arch-image of the Bring-surface Bloch class equals

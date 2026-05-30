@@ -39,7 +39,7 @@ namespace QOU.Archimedean.HalfLifeVerification
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Seconds per year (Julian year, 365.25 days). -/
--- Ref: IAU definition
+-- Ref: [iau-definitions] IAU definition
 noncomputable def sec_per_yr : ℝ := 31557600
 
 /-- Seconds per day. -/
@@ -50,27 +50,27 @@ noncomputable def sec_per_day : ℝ := 86400
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- ³H (tritium) half-life: 12.32 ± 0.02 yr = 3.888 × 10⁸ s. -/
--- Ref: NNDC/ENSDF
+-- Ref: [nndc-ensdf] NNDC/ENSDF
 noncomputable def obs_tritium : ℝ := 12.32 * sec_per_yr
 
 /-- ¹⁴C half-life: 5730 ± 40 yr = 1.808 × 10¹¹ s. -/
--- Ref: NNDC/ENSDF
+-- Ref: [nndc-ensdf] NNDC/ENSDF
 noncomputable def obs_carbon14 : ℝ := 5730 * sec_per_yr
 
 /-- ⁶⁰Co half-life: 5.2714 ± 0.0006 yr = 1.664 × 10⁸ s. -/
--- Ref: NNDC/ENSDF
+-- Ref: [nndc-ensdf] NNDC/ENSDF
 noncomputable def obs_cobalt60 : ℝ := 5.2714 * sec_per_yr
 
 /-- ⁹⁰Sr half-life: 28.79 ± 0.06 yr = 9.085 × 10⁸ s. -/
--- Ref: NNDC/ENSDF
+-- Ref: [nndc-ensdf] NNDC/ENSDF
 noncomputable def obs_strontium90 : ℝ := 28.79 * sec_per_yr
 
 /-- ¹³⁷Cs half-life: 30.17 ± 0.16 yr = 9.521 × 10⁸ s. -/
--- Ref: NNDC/ENSDF
+-- Ref: [nndc-ensdf] NNDC/ENSDF
 noncomputable def obs_cesium137 : ℝ := 30.17 * sec_per_yr
 
 /-- ²¹⁰Bi half-life: 5.012 ± 0.005 d = 4.330 × 10⁵ s. -/
--- Ref: NNDC/ENSDF
+-- Ref: [nndc-ensdf] NNDC/ENSDF
 noncomputable def obs_bismuth210 : ℝ := 5.012 * sec_per_day
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -543,11 +543,11 @@ noncomputable def mu_0 : ℝ := 1.6296
 
 /-- Sensitivity: 1% shift in q changes decay rate by ~48%.
     Formula: (q²-1)/(q²+1) + 5(q²+1)/(q²-1). -/
--- Ref: beta-decay-from-q.witness.json
+-- Ref: [manuscript] beta-decay-from-q.witness.json
 noncomputable def sensitivity : ℝ := 48.2
 
 /-- Sensitivity > 40 (the decay rate is highly sensitive to q). -/
--- Ref: beta-decay-from-q.witness.json
+-- Ref: [manuscript] beta-decay-from-q.witness.json
 theorem sensitivity_large : 40 < sensitivity := by
   unfold sensitivity; norm_num
 

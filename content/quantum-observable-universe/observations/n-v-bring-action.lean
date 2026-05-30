@@ -117,7 +117,7 @@ theorem rescale_EW_eq_120 (Σ : ElectroweakSlice)
     status.  The rescaling identity is now a class field rather than
     a free-standing axiom; the underlying axiom remains as the
     instance-level discharge target. -/
--- Ref: \cite{bring1786}, \cite{klein1888}
+-- Ref: [bring1786], [klein1888]
 class NVBringAction (Σ : ElectroweakSlice) : Prop where
   /-- Rescaling identity: $\tau_{M,C}^{\mathrm{EW}}(\Sigma) \cdot
       \mathrm{rescale}_{EW}(\Sigma) = 120 \cdot

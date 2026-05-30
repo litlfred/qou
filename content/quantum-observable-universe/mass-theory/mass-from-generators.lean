@@ -31,31 +31,31 @@ namespace QOU.Experimental.MassData
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Electron mass, CODATA 2022. -/
--- Ref: CODATA 2022
+-- Ref: [codata2022] CODATA 2022
 noncomputable def codata_electron : ℝ := 0.51099895000
 
 /-- Muon mass, CODATA 2022. -/
--- Ref: CODATA 2022
+-- Ref: [codata2022] CODATA 2022
 noncomputable def codata_muon : ℝ := 105.6583755
 
 /-- Proton mass, CODATA 2022. -/
--- Ref: CODATA 2022
+-- Ref: [codata2022] CODATA 2022
 noncomputable def codata_proton : ℝ := 938.27208816
 
 /-- Neutron mass, CODATA 2022. -/
--- Ref: CODATA 2022
+-- Ref: [codata2022] CODATA 2022
 noncomputable def codata_neutron : ℝ := 939.56542052
 
 /-- Deuteron mass, CODATA 2022. -/
--- Ref: CODATA 2022
+-- Ref: [codata2022] CODATA 2022
 noncomputable def codata_deuteron : ℝ := 1875.61294257
 
 /-- He-3 nuclear mass, CODATA 2022. -/
--- Ref: CODATA 2022
+-- Ref: [codata2022] CODATA 2022
 noncomputable def codata_he3 : ℝ := 2808.39160743
 
 /-- He-4 (alpha) nuclear mass, CODATA 2022. -/
--- Ref: CODATA 2022
+-- Ref: [codata2022] CODATA 2022
 noncomputable def codata_he4 : ℝ := 3727.37940824
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -63,35 +63,35 @@ noncomputable def codata_he4 : ℝ := 3727.37940824
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Li-6 nuclear mass, AME2020. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def ame_li6 : ℝ := 5601.518
 
 /-- Li-7 nuclear mass, AME2020. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def ame_li7 : ℝ := 6533.833
 
 /-- Be-9 nuclear mass, AME2020. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def ame_be9 : ℝ := 8392.750
 
 /-- C-12 nuclear mass, AME2020. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def ame_c12 : ℝ := 11174.862
 
 /-- N-14 nuclear mass, AME2020. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def ame_n14 : ℝ := 13040.203
 
 /-- O-16 nuclear mass, AME2020. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def ame_o16 : ℝ := 14895.079
 
 /-- Si-28 nuclear mass, AME2020. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def ame_si28 : ℝ := 26053.195
 
 /-- Fe-56 nuclear mass, AME2020. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def ame_fe56 : ℝ := 52089.801
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -99,43 +99,43 @@ noncomputable def ame_fe56 : ℝ := 52089.801
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Deuteron B/A. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def binding_per_A_deuteron : ℝ := 1.1122
 
 /-- He-3 B/A. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def binding_per_A_he3 : ℝ := 2.5727
 
 /-- He-4 B/A. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def binding_per_A_he4 : ℝ := 7.0739
 
 /-- Li-6 B/A. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def binding_per_A_li6 : ℝ := 5.3325
 
 /-- Li-7 B/A. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def binding_per_A_li7 : ℝ := 5.6063
 
 /-- Be-9 B/A. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def binding_per_A_be9 : ℝ := 6.4628
 
 /-- C-12 B/A. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def binding_per_A_c12 : ℝ := 7.6801
 
 /-- N-14 B/A. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def binding_per_A_n14 : ℝ := 7.4756
 
 /-- O-16 B/A. -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def binding_per_A_o16 : ℝ := 7.9762
 
 /-- Fe-56 B/A (maximum of the curve). -/
--- Ref: AME2020
+-- Ref: [ame2020] AME2020
 noncomputable def binding_per_A_fe56 : ℝ := 8.7903
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -200,21 +200,21 @@ noncomputable def qou_iron_56 : ℝ := 52102.978883
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Hydrogen atom: QOU vs CODATA+m_e, within 0.01 MeV. -/
--- Ref: CODATA 2022
+-- Ref: [codata2022] CODATA 2022
 theorem hydrogen_agreement :
     |qou_hydrogen_1 - (codata_proton + codata_electron)| < 0.01 := by
   unfold qou_hydrogen_1 codata_proton codata_electron
   norm_num
 
 /-- Deuterium atom: QOU vs CODATA+m_e, within 0.01 MeV. -/
--- Ref: CODATA 2022
+-- Ref: [codata2022] CODATA 2022
 theorem deuterium_agreement :
     |qou_deuterium - (codata_deuteron + codata_electron)| < 0.01 := by
   unfold qou_deuterium codata_deuteron codata_electron
   norm_num
 
 /-- Helium-4 atom: QOU vs CODATA+2m_e, within 0.01 MeV. -/
--- Ref: CODATA 2022
+-- Ref: [codata2022] CODATA 2022
 theorem helium_4_agreement :
     |qou_helium_4 - (codata_he4 + 2 * codata_electron)| < 0.01 := by
   unfold qou_helium_4 codata_he4 codata_electron

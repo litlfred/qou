@@ -46,7 +46,7 @@ axiom weierstrassProjection : R_q → R_q → ℂ → ℂ
 /-- **External axiom (Lang, Elliptic Functions Thm VI.3.6):** the
     Weierstrass differential equation `℘'² = 4℘³ − g₂℘ − g₃`. -/
 -- Ref: [manuscript] §5/weierstrass-projection
--- Ref: https://doi.org/10.1007/978-0-387-09494-6 Theorem VI.3.6
+-- Ref: [manuscript] https://doi.org/10.1007/978-0-387-09494-6 Theorem VI.3.6
 axiom weierstrass_diff_eq_axiom :
     ∀ (g2 g3 : R_q) (z : ℂ),
       z ≠ 0 →

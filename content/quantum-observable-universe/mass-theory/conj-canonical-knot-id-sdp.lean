@@ -285,8 +285,8 @@ they reference `bindingKWord` directly and assert PSD-feasibility
 sharpening over the previous opaque `bindingKUniqueness : Prop`. -/
 
 -- Ref: [manuscript] conj:canonical-knot-id-sdp § "Structural decomposition"
--- Ref: binding-k-enumerator.witness.json (issue #604 deliverable 3)
--- Ref: joint-tower-sdp-h6-h9.witness.json (historical Hopf identification)
+-- Ref: [manuscript] binding-k-enumerator.witness.json (issue #604 deliverable 3)
+-- Ref: [manuscript] joint-tower-sdp-h6-h9.witness.json (historical Hopf identification)
 instance instCanonicalKnotIdSDP_deuterium : CanonicalKnotIdSDP .deuterium where
   canonicalKnotId := "6_2"
   bindingLinkName := "L_H (Hopf, σ_3² in B_6)"
@@ -317,7 +317,7 @@ instance instCanonicalKnotIdSDP_deuterium : CanonicalKnotIdSDP .deuterium where
   bindingKLengthBounded := by decide
 
 -- Ref: [manuscript] conj:canonical-knot-id-sdp § "Structural decomposition"
--- Ref: binding-k-enumerator.witness.json (issue #604 deliverable 3)
+-- Ref: [manuscript] binding-k-enumerator.witness.json (issue #604 deliverable 3)
 -- The bindingKWord is a placeholder pending L > 2 enumeration of the
 -- 8_11-class binding link in B_9; see witness `next_session_extensions`.
 instance instCanonicalKnotIdSDP_tritium : CanonicalKnotIdSDP .tritium where
@@ -342,7 +342,7 @@ instance instCanonicalKnotIdSDP_tritium : CanonicalKnotIdSDP .tritium where
   bindingKLengthBounded := by decide
 
 -- Ref: [manuscript] conj:canonical-knot-id-sdp § "Structural decomposition"
--- Ref: binding-k-enumerator.witness.json (issue #604 deliverable 3)
+-- Ref: [manuscript] binding-k-enumerator.witness.json (issue #604 deliverable 3)
 -- The bindingKWord is a placeholder pending L > 2 enumeration of the
 -- L_{6a4} 3-component-link binding in B_9; see witness `next_session_extensions`.
 instance instCanonicalKnotIdSDP_helium3 : CanonicalKnotIdSDP .helium3 where
