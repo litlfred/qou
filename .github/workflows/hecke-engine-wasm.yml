@@ -97,17 +97,36 @@ jobs:
       # Genuine dense-PSD SDP (#4) — Clarabel PSD cone needs LAPACK.
       - name: Install LAPACK toolchain (clarabel-sdp build deps)
         run: sudo apt-get install -y cmake gfortran libopenblas-dev
-      - name: cargo test --features clarabel-sdp (dense-PSD SDP)
+      - name: cargo test --features clarabel-sdp (dense-PSD + moment SDP)
         working-directory: tools/hecke-engine
         run: cargo test --release --features clarabel-sdp --lib operator_selection_sdp -- --nocapture
 
-      # Cross-check (#2 gate): clarabel MPFR ≡ scipy HiGHS on LP + SDP.
-      # Gates the default backend flip in pyhecke.lp_dual_solver.
-      - name: Install scipy/numpy/mpmath for the cross-check
-        run: python3 -m pip install --quiet --break-system-packages numpy scipy mpmath
-      - name: clarabel ≡ scipy cross-check
+      # Moment-SDP CLI (the QOU dense lift) — Python wiring subprocesses it.
+      - name: Build clarabel-confinement-moment-sdp CLI
+        working-directory: tools/hecke-engine
+        run: cargo build --release --features clarabel-sdp --bin clarabel-confinement-moment-sdp
+
+      # Cross-checks: clarabel MPFR ≡ scipy HiGHS (LP, gates the default
+      # flip) AND the Rust moment SDP ≡ cvxpy+CLARABEL (the QOU lift).
+      - name: Install scipy/numpy/mpmath/cvxpy for the cross-checks
+        run: python3 -m pip install --quiet --break-system-packages numpy scipy mpmath cvxpy
+      - name: clarabel ≡ scipy LP cross-check
         working-directory: folio-assistant/computations
         run: python3 clarabel_lp_crosscheck.py --seeds 12
+      - name: moment SDP ≡ cvxpy cross-check
+        working-directory: folio-assistant/computations
+        run: |
+          python3 - <<'PY'
+          import numpy as np
+          from sdp_moment_lift import solve_moment_sdp_clarabel, lp_vs_sdp_report
+          G = np.array([[1., .9, .1], [.9, 1., .9], [.1, .9, 1.]])
+          c = np.array([1., .5, .3])
+          r = solve_moment_sdp_clarabel(c, G, 1.0)
+          rep = lp_vs_sdp_report(c=c, G=G, A_eq=np.ones((1, 3)), b_eq=np.array([1.0]))
+          assert r['feasible'] and abs(r['objective'] - rep.sdp_objective) < 1e-5, \
+              (r['objective'], rep.sdp_objective)
+          print('moment SDP Rust == cvxpy OK:', r['objective'])
+          PY
 
   build-wasm:
     name: Build + test hecke-engine-wasm
