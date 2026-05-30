@@ -2703,7 +2703,7 @@ export const references: CSLData[] = [
 
   // ── SnapPy (computational topology of 3-manifolds) ─────────────
   ref({
-    id: "snappy",
+    id: "culler2024",
     type: "webpage",
     title: "SnapPy, a computer program for studying the geometry and topology of 3-manifolds",
     author: [
