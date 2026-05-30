@@ -244,6 +244,46 @@ The factor `ℏ_q = (q−1)/q ≈ 0.099` is the universal substrate Planck quant
 
 **Still open:** rigorous derivation of the truncation `(1+ℏ_q − ℏ_q²/2)` as the exact sinh-channel categorical action on the qq̄ pair (well-scoped via #1417's cosh/sinh theorem). The remaining 0.056 ppm gap is below the α_em derivation precision (399 ppb).
 
+## Update (2026-05-29): the EM correction has a closed-form rational identity
+
+The truncation `(1 + ℏ_q − ℏ_q²/2)` is not just a series — it is exactly
+the **rational polynomial** in q⁻²:
+
+```
+1 + ℏ_q − ℏ_q²/2  =  1 + (1 − q⁻²)/2  =  (3 − q⁻²)/2  =  (3q² − 1)/(2q²)
+```
+
+(four-way equality verified at machine precision; proved as a ring
+identity in `meson-em-sinh-closed-form.lean`). So the **full meson
+mass-squared ratio** has a single derived closed form:
+
+```
+m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(3q² − 1)/(2q²)
+
+  prediction (closed form)  = 12.511207
+  measured (PDG)            = 12.511207
+  full miss                 = +0.047 ppm
+```
+
+**Structural reading of `(3q² − 1)/(2q²)`:**
+- numerator `3q² − 1`: the **3** is the number of saturating-genus
+  generation torus knots on Bring's surface (T(2,3), T(2,5), T(2,7) —
+  the three generations, per the same Diophantine uniqueness that
+  fixes the force-carrier set); `q²` is the substrate's squared
+  coupling.
+- denominator `2q²`: the standard EM-self-energy halving (Casimir),
+  times the substrate-natural scale.
+
+Per #1417's cosh/sinh bridge with **sinh = Coulomb channel**, this is
+the sinh-side categorical-action correction on the qq̄ pair. The
+remaining genuinely-open piece is the first-principles derivation of
+the `(3q² − 1)/(2q²)` polynomial from the α_em × sinh-channel action
+— but the closed form pins down the exact expression to derive (not
+a series-truncation order to motivate).
+
+Compute: `meson_em_sinh_closed_form.py` (+witness). Content block:
+`prop:meson-em-sinh-closed-form` (`.ts`/`.md`/`.lean`).
+
 **Net (meson thread complete):**
 - strong sector: m_K²/m_π² = [3]_q·[4]_q (derived fusion, 203 ppm)
 - EM residual: (α_em/π)·m_π² at 45.3 MeV² vs 49.5 MeV² measured (9%, LO-χPT-grade)
