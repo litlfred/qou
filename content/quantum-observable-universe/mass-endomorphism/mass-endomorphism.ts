@@ -78,6 +78,7 @@ export default chapter({
         "rho-k-graded-expansion-table2-data",
         "rho-k-graded-expansion-table1-data",
         "conj-rho-k-pair-gen-canonical-form",
+        "hecke-branching-trace-decomposition",
         "operator-valued-magnitude-budget",
         "q-hecke-seminormal-character-closure",
       ],
