@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:frobenius-gram-matrix",
   lean: { ref: "qou:QOU.Archimedean.frobenius_gram_matrix", validation: "not_started" },
   title: "Frobenius Gram matrix and dual construction in $H_3(q)$",
-  uses: ["prop:knot-operator-selection"],
+  uses: [],
   tags: [
     "gram-matrix",
     "frobenius-dual",

@@ -7,7 +7,7 @@ export default proposition({
   uses: [
     "prop:brings-is-qou",
     "def:hyperelliptic-quintic",
-    "prop:mass-endomorphism",
+    "conj:mass-endomorphism",
   ],
   defines: [],
   tags: ["n-v", "electroweak", "bring", "s5", "substrate-axiom"],

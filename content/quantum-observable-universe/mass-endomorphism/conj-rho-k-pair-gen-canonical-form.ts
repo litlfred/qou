@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:rho-k-pair-gen-canonical-form",
+export default conjecture({
+  label: "conj:rho-k-pair-gen-canonical-form",
   lean: {
     ref: "qou:QOU.BraidKnot.RhoKPairGenCanonicalForm.pair_gen_kashaev_limit",
     validation: "not_checked",
@@ -10,8 +10,6 @@ export default proposition({
     "Conjectural canonical form of the pair-gen piece $\\rho_K^{\\text{pair-gen}}$ in the graded $\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\hat V_i, \\hat V_j)$ such that $\\rho_K^{\\text{pair-gen}} = \\sum_{i<j} f_2(q, \\hat V_i^{\\text{full}}, \\hat V_j^{\\text{full}})$ recovering the six-term theorem's Kashaev limit at sub-percent accuracy.",
   uses: [
     "prop:rho-k-graded-expansion",
-    "thm:knot-mass-formula-unified",
-    "prop:per-braid-mass-tower",
   ],
   authorNotes: [
     {

@@ -9,7 +9,6 @@ export default proposition({
   uses: [
     "def:q-resolvent",
     "prop:categorical-laplace-exists",
-    "prop:q-heat-kernel-peter-weyl",
   ],
   proofs: ["prf:q-resolvent-exists"],
   tags: ["existence", "resolvent"],

@@ -6,6 +6,6 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.ConfinementLevel.exists",
     validation: "not_checked",
   },
-  uses: ["prop:knot-operator-energy-exists"],
+  uses: [],
   tags: ["existence", "confinement", "filtration"],
 });

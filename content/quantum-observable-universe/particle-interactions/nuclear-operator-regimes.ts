@@ -18,6 +18,5 @@ export default proposition({
   },
   uses: [
     "prop:demand-stability",
-    "prop:torus-knot-shell-binding",
   ],
 });

@@ -73,7 +73,7 @@ The Kashaev-limit derivation that gave $\alpha \ln|V_i|$ for the single-gen piec
 ## Connection to dependent conjectures
 
 - [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — the lepton-sector variant; gates on the graded-expansion formalism but has $Z = N = 0$ so the atomic LO piece vanishes; needs its own dimensional factor $\xi_\ell(q)$.
-- [`prop:mass-endomorphism`](mass-endomorphism-conjecture.md) (per `prop:per-braid-mass-tower` §"Open: explicit closed form") — the unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$; the present conjecture is a sub-claim about its expansion at pair level.
+- [`conj:mass-endomorphism`](mass-endomorphism-conjecture.md) (per `prop:per-braid-mass-tower` §"Open: explicit closed form") — the unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$; the present conjecture is a sub-claim about its expansion at pair level.
 
 ## Lean formalization
 

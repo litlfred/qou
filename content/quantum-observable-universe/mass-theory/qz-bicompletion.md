@@ -48,7 +48,7 @@ $$
 
 ## Why bicompletion
 
-The mass-element [conjecture](#prop:mass-endomorphism) connects two
+The mass-element [conjecture](#conj:mass-endomorphism) connects two
 quantum invariants that live in **different** cyclotomic
 completions:
 

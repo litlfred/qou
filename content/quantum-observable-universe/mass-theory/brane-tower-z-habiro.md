@@ -1,4 +1,4 @@
-The [mass-endomorphism conjecture](#prop:mass-endomorphism) states that
+The [mass-endomorphism conjecture](#conj:mass-endomorphism) states that
 the Hecke mass element $\Phi_{\mathrm{mass}}$ admits a closed-form NF
 decomposition. Its **transient (brane-tower) component** is the sum
 
@@ -21,7 +21,7 @@ so each summand is enormous and the analytic brane tower dominates the
 mass formula by orders of magnitude beyond the empirical AME binding.
 
 Two regularizations have been documented but neither uniformly closes
-the gap (see [mass-endomorphism conjecture §"Two distinct convergence problems"](#prop:mass-endomorphism)):
+the gap (see [mass-endomorphism conjecture §"Two distinct convergence problems"](#conj:mass-endomorphism)):
 
 1. **Yekutieli truncation** at GB filtration depth $k_{\max}$ — works
    for $D$ ($k_{\max}=2$, error $\sim 22\%$), grossly fails for $T$

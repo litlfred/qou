@@ -92,7 +92,7 @@ non-degenerate Frobenius pairing $\int_A \circ \mu$ identifies
 $A \cong A^\vee$, making the substrate algebra self-dual; this
 self-duality drives the descent involution
 $\hat{\tau}_n$ on the endomorphism algebra
-([mass endomorphism](#prop:mass-endomorphism)),
+([mass endomorphism](#conj:mass-endomorphism)),
 which splits the categorical mass endomorphism into a
 **descended** baseline component and a **transient** component
 localized at the exceptional divisors of the brane tower.

@@ -12,7 +12,6 @@ export default proposition({
     "def:bar-involution",
     "prop:cpt-orbit-closure-density",
     "thm:jones-markov-trace",
-    "prop:atom-knot-mass-derivation",
   ],
   cites: [
     "jones1987",

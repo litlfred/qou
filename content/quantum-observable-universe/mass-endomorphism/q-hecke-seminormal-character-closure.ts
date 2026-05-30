@@ -41,9 +41,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.QHeckeSeminormalCharacterClosure.character_closure_holds",
     validation: "not_checked",
   },
-  uses: [
-    "prop:per-nucleon-shift-additive-linearity",
-  ],
+  uses: [],
   cites: [
     "wenzl1988",
     "hoefsmit1974",

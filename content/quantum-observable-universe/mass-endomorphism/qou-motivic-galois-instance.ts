@@ -14,7 +14,6 @@ export default definition({
   ],
   uses: [
     "def:motivic-galois-character",
-    "prop:full-pole-structure-mass-trace",
   ],
   cites: ["habiro2002", "yekutieli2010", "tate1967"],
   computation: {

@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:gravity-spectral-prefactor",
     "prop:knot-factor-spectral-form",
   ],
   tags: [

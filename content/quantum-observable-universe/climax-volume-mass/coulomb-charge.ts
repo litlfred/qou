@@ -9,6 +9,5 @@ export default definition({
   },
   uses: [
     "def:crossing-energy",
-    "prop:local-substrate-q",
   ],
 });

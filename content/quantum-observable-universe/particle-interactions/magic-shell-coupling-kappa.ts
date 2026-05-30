@@ -10,7 +10,6 @@ export default proposition({
   },
   uses: [
     "prop:compound-beta-shell-calibration",
-    "prop:wedderburn-weight-canonical",
   ],
   cites: [],
   tags: [

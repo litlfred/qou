@@ -20,6 +20,5 @@ export default proposition({
   uses: [
     "def:neutrino-knot",
     "prop:bn-mtc-action",
-    "prop:ns-obstruction-tower",
   ],
 });

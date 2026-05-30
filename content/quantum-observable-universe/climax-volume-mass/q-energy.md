@@ -58,7 +58,7 @@ $\mathrm{Vol}(K)/\hbar_q^2$ for hyperbolic knots
 For torus knots (including the trefoil / electron), the single-level
 action is nonzero but the hyperbolic volume vanishes; the mass
 arises from the quantum dilogarithm contributions across the tower
-([mass endomorphism conjecture](#prop:mass-endomorphism)).
+([mass endomorphism conjecture](#conj:mass-endomorphism)).
 
 The action term dominates: for hadrons, $S_q \sim 10^3$ MeV
 while the rotational and translational terms are $O(\hbar_q) \sim 0.1$.

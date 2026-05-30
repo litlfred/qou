@@ -16,5 +16,5 @@ export default proposition({
     ref: "qou:QOU.AtomicMass.magic_numbers_from_q",
     validation: "not_checked",
   },
-  uses: ["prop:shell-closure-nf-term-count"],
+  uses: [],
 });

@@ -66,7 +66,7 @@ ingredients are:
 
 (a) **Definition** of the EW slice $\Sigma_{\mathrm{EW}}$ as a
 distinguished level of the brane tower
-([mass endomorphism conjecture](#prop:mass-endomorphism)).  The
+([mass endomorphism conjecture](#conj:mass-endomorphism)).  The
 GB filtration grade or jet order at which the EW closure occurs
 is currently undefined.
 

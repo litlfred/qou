@@ -17,6 +17,5 @@ export default proposition({
   },
   uses: [
     "rem:color-tube-cubic",
-    "prop:local-substrate-q",
   ],
 });

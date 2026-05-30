@@ -45,7 +45,6 @@ export default proposition({
   title:
     "Direct axiomatic closed form of the Markov trace for atomic-braid words in $H_n(q)$",
   uses: [
-    "prop:hecke-markov-transition",
     "prop:markov-trace-antipode-polynomial-symmetry",
   ],
   cites: ["jones1987", "kassel1995", "wenzl1988", "kauffman1991"],
