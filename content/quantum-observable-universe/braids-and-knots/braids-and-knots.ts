@@ -61,6 +61,7 @@ export default chapter({
         "hecke-log-decomposition-table-data",
         "hecke-algebra-from-braiding",
         "hecke-normal-form",
+        "h3-gram-diagonal",
         "dark-vision-strand-bandwidth",
         "markov-moves-brane-tower",
         "knot-eigenbasis-complete",
