@@ -340,3 +340,95 @@ unsolved piece of Barrier-1. The honest summary:
   Demazure crystal-closure derivation; current best near-misses (1+q,
   2·√q) miss by 1.7–1.8% — not close enough to claim, not far enough to
   rule out a small correction.
+
+## SDP path investigation (2026-05-30) — incomplete, not broken; a_K signal
+
+Per author guidance "it should be obtained by SDP — all witnesses are there",
+audited the SDP knot/operator selection witnesses already on disk:
+
+- `iterative-lp-dual-h6-deuteron.witness.json` — deuteron at H_6 via the
+  iterative LP-dual `u^(ℓ)*(β_D) = m_e · Σ_λ y_λ · c_ℓ(λ) · χ^λ(β_D) / [6]_q!`
+- `iterative-lp-dual-levels.witness.json` — proton at H_3
+- `a-K-via-lp-dual.witness.json` — `a_K` per atom (4 SDP candidates)
+- `binding-K-direct.witness.json`, `binding-k-solver.witness.json` (the
+  hardcoded-registry consumers; see `census-knot-audit.md`)
+
+**Numerical state:** the iterative LP-dual sums are dramatically smaller
+than the AME values they would naively be compared to:
+
+| atom | SDP `sum_u_levels` | reference | ratio |
+|------|--------------------|-----------|-------|
+| proton (H_3) | 1.445 MeV | m_p CODATA = 938.272 | **−99.85%** |
+| deuteron (H_6) | 0.0525 MeV | B(D)_AME = 2.225 | **−97.64%** (factor 42×) |
+
+**Verdict: incomplete, NOT broken.** The producer's own
+`interpretation` field for the proton case states verbatim:
+
+> *"Σ_ℓ u^(ℓ)*(p) at H_3 does NOT recover m_p; the sum captures only the
+> H_3-internal structure. The full iterative LP-dual unification (per
+> term7-alpha5) is at H_n with n = 3A, where atomic-braid binding and
+> gluon dressing are encoded. The H_3 levels reported here are necessary
+> infrastructure but not sufficient for absolute mass."*
+
+So the iterative LP-dual at H_n computes the **H_n-internal confinement
+piece** — the structural correction *within* the Hecke algebra — not the
+absolute mass / binding. The archimedean realization (Vol/ℏ², ν_SDP) lives
+in a separate factor that multiplies the SDP slice.
+
+This **is** the missing-`ν_SDP` problem flagged at workplan line 41
+("ν_SDP comes from the SDP active set, not a guess"); the iterative LP-dual
+gives the right *kind* of object (H_n-internal correction) at the wrong
+*amplitude*. The archimedean bridge — call it `ν_SDP(K)` — is exactly the
+`Vol(K_bind)/8G = f(Z,N)` ratio that this PR's f-decomposition extracts
+from AME. The two are the **same missing object** in two languages.
+
+### Concrete signal: a_K(D) ≈ f(⁴He)/Z·N
+
+`a-K-via-lp-dual.witness.json` carries per-atom SDP shadow prices
+`a_K_D_chi_abs`:
+
+| atom | SDP `a_K` | my `f/Z·N` (from §pair-count) |
+|------|----------|-------------------------------|
+| D | 2.0757 | 0.998 |
+| T | 2.2894 | 1.41 |
+| ³He | 2.0836 | 1.22 |
+| ⁴He | 2.1033 | **2.07** ← match |
+| 5Li | (no entry) | 1.17 |
+
+**`a_K(deuteron) = 2.0757` matches my `f(⁴He)/Z·N = 2.0725` within 0.15%.**
+This is too close to be coincidence at 4-digit precision — the deuteron's
+SDP shadow price is carrying the ⁴He shell-bonus structure. And
+**`a_K(⁴He) = 2.103` matches `1+q ≈ 2.110`** (one of the ⁴He doubling
+near-misses, 0.3% off). These cross-atom signals are consistent with the
+operator-valued LR branching `A^λ_{μν}(I)` that #1443 just authored as a
+proposition — the scalar `tr_M` *collapses* what should be an operator-
+valued object, and the missing structure is what `f` and `a_K` are both
+proxies for.
+
+### Coordination posted
+
+- #1442 (meson EM, `(1+ℏ_q)` universal substrate): tested whether
+  `(1+ℏ_q)^k` bridges SDP→AME on the deuteron — it does NOT
+  (`log_(1/ℏ_q)(42.36) = 1.62`, non-integer). So the universal `(1+ℏ_q)`
+  factor is real but is NOT the SDP-completion factor by itself.
+- #1443 (Hecke-branching trace decomposition): the operator-valued
+  `A^λ_{μν}(I)` proposition is the categorical mechanism that should
+  derive the SDP-completion bridge. Asked whether the proposition is
+  expected to yield it.
+
+### What's next
+
+The honest Barrier-1 completion path is now:
+
+1. **Wait on #1443 / `prop:hecke-branching-trace-decomposition`** — the
+   operator-valued `A^λ_{μν}(I)` is the structural object that should
+   derive `ν_SDP(K)` directly from the SDP active set, not require it
+   as a guess. This is research, not within #1431's scope.
+2. **The census-knot registry triplication** (workplan §barriers + the
+   new `census-knot-audit.md`) stays as audit material per author
+   direction; not deprecating.
+3. **f remains AME-extracted**; the structural patterns recorded here
+   are leads for #1443's operator-valued derivation, not derivations.
+
+#1431 ships as: workplan + structural probes (5 probes, 0 fits) +
+2026-05-30 SDP/census audit. Nothing wired to production.
