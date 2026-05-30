@@ -1,0 +1,78 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T20:51:20.430114+00:00",
+  "commitSha": "a9a73fc05e1880456391c2ae4d81215dd1045cee",
+  "assertions": [
+    {
+      "name": "c2_extraction_matches_lean_proved_value",
+      "computed": -1.0,
+      "expected": -1.0,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "c_2 = -1 is Lean-proved (Kashiwara f̃₁²) AND empirically the Taylor coefficient at canonical q₀"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "qbeta-ck-cache",
+  "scriptFile": "qbeta_ck_cache.py",
+  "scriptHash": "7fba13078b04",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Cache of Q_β c_k Taylor coefficients at canonical q₀. c_2 is the only Lean-proved Taylor-exact coefficient (Kashiwara f̃₁², N2_factor). c_3..c_7 are extracted from CODATA Q_β recursively (each c_k computed as (Q_codata/Q_{N_{k-1}} − 1)/u^k). The witness records each c_k's label (lean-proved vs codata-extracted) and the closest structural-conjecture form with its residual %. Production reads c_2 only; higher c_k are documented for future Lean-formalization work. NO structural form is wired as derivation without a Lean theorem closing it to Taylor precision. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
+  "data": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "u_substrate": "0.0085172345501561421892555736033092029691942216116301",
+    "Q_codata": "0.78233340999999999999999999999999999999999999999999940982960403984",
+    "rows": [
+      {
+        "k": 2,
+        "c_k": "-1.0",
+        "label": "lean-proved",
+        "structural_form": "-1 (Kashiwara f̃₁²)",
+        "lean_theorem": "qou:QOU.BraidKnot.N2_factor + q_beta_categorical_precision_ladder",
+        "Q_pred_after_this_rung_MeV": "0.782334410277840137760143636388",
+        "err_ppb_after_this_rung": 1278.5825421130362
+      },
+      {
+        "k": 3,
+        "c_k": "-2.06934257711516783787971951725",
+        "label": "codata-extracted",
+        "lean_theorem": "(none — closing in Lean to Taylor precision would change label to lean-proved)",
+        "structural_candidates": [
+          {
+            "name": "J_Hopf(q=1)",
+            "value": "-2.0",
+            "err_pct": 3.350947198498039
+          },
+          {
+            "name": "J_Hopf − ℏ_q²",
+            "value": "-2.00981718645427507381056905718",
+            "err_pct": 2.876536312507328
+          },
+          {
+            "name": "J_Hopf − 6·ℏ_q²",
+            "value": "-2.05890311872565044286341434308",
+            "err_pct": 0.5044818825537747
+          }
+        ],
+        "closest_structural": "J_Hopf − 6·ℏ_q²",
+        "closest_structural_err_pct": 0.5044818825537747,
+        "Q_pred_after_this_rung_MeV": "0.78233341",
+        "err_ppb_after_this_rung": 0.0
+      }
+    ],
+    "discipline": {
+      "lean_proved_count": 1,
+      "codata_extracted_count": 5,
+      "production_uses": "c_2 only (Q_N2)",
+      "to_change_label_to_lean_proved": "future agent must provide Lean theorem closing c_k structural form to Taylor precision at canonical q₀"
+    }
+  }
+}

@@ -303,35 +303,65 @@ def main() -> dict:
     # you have a Lean theorem closing the residual to compute precision
     # (<< 1 ppb). Structural approximations with stated residuals do
     # NOT clear this bar.
-    qb_n3 = load_witness("q-beta-operator-valued-N3.witness.json")
-    qb_n3_data = qb_n3.get("data", {})
-    if qb_n3_data.get("Q_N2") is not None:
-        Q_N2 = mpf(str(qb_n3_data["Q_N2"]))
-        Q_beta_best = Q_N2
-        rows.append(_row_for(
-            "Q_beta", Q_N2,
-            "Q_N2 (c_2 = -1 Lean Taylor-exact via "
-            "qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + "
-            "Kashiwara N2_factor, 4e-7 empirical match). Higher c_k "
-            "are q₀-dependent near-matches NOT wired per discipline "
-            "lock - see docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-"
-            "audit.md.",
-        ))
+    # Cache-aware wiring: read c_k from qbeta-ck-cache.witness.json
+    # (produced by qbeta_ck_cache.py). Each c_k is labelled either
+    # "lean-proved" (Taylor-exact via Lean theorem) or
+    # "codata-extracted" (Taylor coefficient measured from CODATA Q_β
+    # at canonical q₀, NOT independently derived). Production reports
+    # the highest cumulative rung whose label is "lean-proved";
+    # codata-extracted rungs are documented in the witness but NOT
+    # credited to the production prediction.
+    ck_cache = load_witness("qbeta-ck-cache.witness.json")
+    ck_data = ck_cache.get("data", {})
+    if ck_data.get("rows"):
+        # Find the deepest k for which the label is "lean-proved"
+        last_lean_proved_row = None
+        for row in ck_data["rows"]:
+            if row.get("label") == "lean-proved":
+                last_lean_proved_row = row
+            else:
+                break  # stop at first non-lean-proved rung
+        if last_lean_proved_row is not None:
+            k = last_lean_proved_row["k"]
+            Q_pred_str = last_lean_proved_row["Q_pred_after_this_rung_MeV"]
+            Q_pred = mpf(Q_pred_str)
+            Q_beta_best = Q_pred
+            rows.append(_row_for(
+                "Q_beta", Q_pred,
+                f"Q_N{k} from qbeta-ck-cache.witness.json (deepest rung with "
+                f"label='lean-proved'). c_2 = -1 PROVED via "
+                f"qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + "
+                f"Kashiwara N2_factor. Higher c_k are 'codata-extracted' "
+                f"Taylor coefficients (documented in cache witness) but NOT "
+                f"wired as derivations - see deep audit "
+                f"docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
+            ))
+        else:
+            Q_beta_best = None
     else:
-        Q_beta_best = None
-        qb = load_witness("q-beta-predicted.witness.json")
-        v = qb.get("data", {}).get("q_beta_prediction", {}).get("Q_beta_pred_MeV")
-        if v is not None:
-            Q_beta_best = mpf(str(v))
-            rows.append(_row_for("Q_beta", Q_beta_best,
-                                 "q-beta-predicted.witness.json [N=0 BARE — FALLBACK]"))
+        # Fallback to legacy Q_N2 read
+        qb_n3 = load_witness("q-beta-operator-valued-N3.witness.json")
+        qb_n3_data = qb_n3.get("data", {})
+        if qb_n3_data.get("Q_N2") is not None:
+            Q_N2 = mpf(str(qb_n3_data["Q_N2"]))
+            Q_beta_best = Q_N2
+            rows.append(_row_for(
+                "Q_beta", Q_N2,
+                "Q_N2 (fallback; qbeta-ck-cache witness not present)",
+            ))
+        else:
+            Q_beta_best = None
 
     # ── Path C: m_n = m_p + Q_β + m_e (categorical, no flavor-split) ─
     # PR #1298 finding: bypassing the flavor-split X entirely gives
     # m_n at 0.24 ppm (8× better than the substrate-identity's 2 ppm).
     # Δ_pn = Q_β + m_e follows directly.
     m_e_mev = OBSERVABLES["m_e"][0]  # CAL-1 anchor
-    q_beta_rung = "N=5" if qb_n3_data.get("Q_N2") is not None else "N=0"
+    # Q_β rung label for Path C sourcing — pick N based on which path produced Q_β.
+    if ck_data.get("rows") and Q_beta_best is not None:
+        q_beta_rung = f"N={ck_data['rows'][-1]['k']}" if any(r.get("label") == "lean-proved" for r in ck_data["rows"]) else "N=0"
+    else:
+        q_beta_rung = "N=0"
     if m_p_sub is not None and Q_beta_best is not None:
         m_n_path_c = m_p_sub + Q_beta_best + m_e_mev
         delta_pn_path_c = Q_beta_best + m_e_mev
