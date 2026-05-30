@@ -1,0 +1,89 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T04:11:36.886900+00:00",
+  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
+  "assertions": [
+    {
+      "name": "candidates_evaluated",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Six candidate Hecke words for β_loop evaluated at q_0; ratios to α/(4π) computed for transparency. NOT a derivation claim — see witness for explicit open gaps."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "alpha-em-4pi-rt-2loop-self-energy-scaffold",
+  "scriptFile": "alpha_em_4pi_rt_2loop_self_energy_scaffold.py",
+  "scriptHash": "b2aeb530f41f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Scaffold for the Reshetikhin-Turaev shadow-world 2-loop self-energy derivation of α/(4π). This is the framework's endorsed path per prop:em-coupling-bring-zero-mode after the depth-search refutation chain (B_2/B_3/B_4 PSLQ all PARTIAL, fit-class refuted). Computes tr_M for several candidate Hecke words representing the categorical fermion loop on the photon line, identifies the OPEN gap (no canonical β_loop identification in the framework yet), and documents the next R&D steps. Honest scaffold; no claim of a derivation.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "inputs": {
+      "q0": "1.10997858275138080759166909561",
+      "CODATA_alpha_inv_source": "experimental_constants.ALPHA_EM_INV",
+      "target_alpha_over_4pi": "0.000580704866442929781562257812526",
+      "tree_alpha_inv": "136.82320885358258431"
+    },
+    "beta_loop_candidates": [
+      {
+        "name": "1 (trivial loop σ_1·σ_1^{-1})",
+        "value": "1.0",
+        "ratio_to_target": 1722.0451519985281,
+        "rationale": "Sanity baseline; trivial bubble cancels."
+      },
+      {
+        "name": "σ_1 on H_2",
+        "value": "0.20906029879563931543",
+        "ratio_to_target": 360.0112740163944,
+        "rationale": "Lowest-order non-trivial Hecke word; 1-crossing bubble."
+      },
+      {
+        "name": "σ_1² on H_2",
+        "value": "1.0437062085325219894",
+        "ratio_to_target": 1797.3092165141943,
+        "rationale": "Double-crossing bubble (canonical fermion loop in topological QFT)."
+      },
+      {
+        "name": "h·σ_1 + 1 (Hecke quadratic identity)",
+        "value": "1.0437062085325219894",
+        "ratio_to_target": 1797.3092165141943,
+        "rationale": "Hecke relation σ_1² = h·σ_1 + 1; expansion of (2) in the canonical basis."
+      },
+      {
+        "name": "(tr_M(σ_1) / tr_M(photon)) · 1/(4π)",
+        "value": "0.00012159114026188616621",
+        "ratio_to_target": 0.20938543361395412,
+        "rationale": "Direct polarization-amplitude ansatz: fermion-loop trace over photon trace, times the universal 1/(4π) QED factor."
+      },
+      {
+        "name": "(tr_M(σ_1²) / tr_M(photon)) · 1/(4π)",
+        "value": "0.00060702787054720477819",
+        "ratio_to_target": 1.0453294016038042,
+        "rationale": "Bubble-loop variant: σ_1² is the genuine closed fermion loop in the categorical diagram."
+      }
+    ],
+    "closest_candidate": {
+      "name": "(tr_M(σ_1²) / tr_M(photon)) · 1/(4π)",
+      "ratio": 1.0453294016038042,
+      "deviation_percent": 4.5329401603804165,
+      "honest_caveat": "Matching by ratio is NOT a derivation — the fit-class trap warned against in the proposition. This scaffold's purpose is to make the OPEN gaps explicit, not to claim a match."
+    },
+    "open_gaps": [
+      "(i)   No canonical β_loop identification: which Hecke word represents the categorical fermion loop on the photon line? Six candidates listed above; none has been derived from the QOU categorical Lagrangian.",
+      "(ii)  No formal RT shadow-world UV regularization argument: the assertion that the categorical self-energy is FINITE (no log Λ² divergence) requires explicit shadow-world calculation — only stated as a roadmap item in the deprecated alpha-em-correction-derivation-attempts witness.",
+      "(iii) No structural normalization: the factor 1/(4π) outside the Hecke trace should come from the Bring-area Hodge data (analogous to the leading 2/(3π) term coming from dim H¹/Area). The framework's leading-term identification (2/(3π) = Vol(S²)/(3·Vol(S³))) does NOT yet have a next-order partner identified.",
+      "(iv)  No 2-loop diagram in the Lean formalization: the predicted-spectra/em-coupling-bring-zero-mode.lean file axiomatises the Bring zero-mode shift but has no 2-loop self-energy structure."
+    ],
+    "status": "SCAFFOLD — no derivation claimed"
+  }
+}
