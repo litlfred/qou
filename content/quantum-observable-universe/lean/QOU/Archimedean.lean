@@ -15,6 +15,7 @@ import QOU.Archimedean.QuotientIdeal
 import QOU.Archimedean.NuclearNormalForms
 import QOU.Archimedean.HyperbolicVolumeTranscendence
 import QOU.Archimedean.PauliWitness
+import QOU.Archimedean.SnapPyAxioms
 -- Migrated from content-tree extracts (I12 cluster B Lake migrate).
 -- NOTE: `NuclearGroebnerReduction` is currently typed over `ℝ`,
 -- violating this module's stated `R_q = ℤ[q,q⁻¹]` invariant; refactor
