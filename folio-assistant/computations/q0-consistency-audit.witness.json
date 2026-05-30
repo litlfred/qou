@@ -1,7 +1,7 @@
 {
   "computation": "q0-consistency-audit",
   "description": "Scans compute scripts for stale muon-pin q\u2080 literals (10997859555 / 859555) and old-q\u2080 tr_M leaf values left behind by the 2026-05-29 proton re-pin (#1422). production-hardcode entries are real bugs (a live constant kept at the old value); stale-docstring are cosmetic; legit-muon-xcheck are the intentional muon cross-check.",
-  "timestamp": "2026-05-29T22:54:32.828671+00:00",
+  "timestamp": "2026-05-30T02:34:54.372510+00:00",
   "canonical_q0_source": "q_parameter.q_at() / Q_50_DIGIT_STR (proton pin)",
   "old_muon_q0": "1.10997859555418057528\u2026",
   "new_proton_q0": "1.10997858275138080759\u2026",
