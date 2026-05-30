@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T03:44:59.643825+00:00",
-  "commitSha": "3fda58749d66d5298e104771958a50ec12e47e51",
+  "computedAt": "2026-05-30T04:07:21.601743+00:00",
+  "commitSha": "0828b979d249e25e2d21cf33c0e605f57266ca55",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "3206a30228ae",
-  "scriptCommitSha": "b73c22e73a69fa9a73b784a2e52d6fb5e3a812a5",
+  "scriptHash": "81ee79c41b89",
+  "scriptCommitSha": "1d3a0e72f4dc0a2611737b30ebce94f65529ab87",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -65,16 +65,16 @@
       {
         "obs": "Q_beta",
         "role": "CAL-3 anchor",
-        "pred_MeV": "0.782334385468",
+        "pred_MeV": "0.782333418709",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "1247.",
+        "err_ppb": "11.13",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "159.9",
-        "beats_1x_experimental": false,
+        "miss_factor": "1.428",
+        "beats_1x_experimental": true,
         "beats_100x_experimental": false,
-        "source_witness": "q-beta-operator-valued-N3.witness.json::Q_N2 (τ_M derived to k=2: Kashiwara f̃₁ + geometric; k≥3 fitted rungs dropped as non-canonical)",
+        "source_witness": "Q_N3 = Q_N2·(1 + c_3·u^3) with c_3 = J_Hopf(q=1) = -2 (PROVED, qou:QOU.BraidKnot.jonesHopfClassicalLimit / prop:q-beta-categorical-precision-ladder); upstream Q_N2 from q-beta-operator-valued-N3.witness.json",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)",
         "compute_truncation_ppb": "1.278e-41",
         "compute_output_dps": 50
@@ -82,16 +82,16 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565421497",
+        "pred_MeV": "939.565420530",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "1.039",
+        "err_ppb": "0.01041",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "180.8",
-        "beats_1x_experimental": false,
+        "miss_factor": "1.811",
+        "beats_1x_experimental": true,
         "beats_100x_experimental": false,
-        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
+        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic; ~1 ppb residual is open math (baryon-EM analog gates on #1443; mass-asymmetric flavor-split gates on #1445 — see workplan docs/workplans/2026-05-30-mass-asymmetric-flavor-split.md)",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
         "compute_truncation_ppb": "1.064e-44",
         "compute_output_dps": 50
@@ -99,16 +99,16 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.29333333616",
+        "pred_MeV": "1.29333236940",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "754.8",
+        "err_ppb": "7.267",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "159.3",
-        "beats_1x_experimental": false,
+        "miss_factor": "1.533",
+        "beats_1x_experimental": true,
         "beats_100x_experimental": false,
-        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
+        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic; ~1 ppb residual is open math (baryon-EM analog gates on #1443; mass-asymmetric flavor-split gates on #1445 — see workplan docs/workplans/2026-05-30-mass-asymmetric-flavor-split.md)",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
         "compute_truncation_ppb": "7.732e-42",
         "compute_output_dps": 50
@@ -149,7 +149,7 @@
     ],
     "summary": {
       "total": 7,
-      "beats_1x_count": 4,
+      "beats_1x_count": 7,
       "beats_100x_count": 4
     },
     "upstream_witness_hashes": [

@@ -323,6 +323,25 @@ def main() -> dict:
     # PR #1298 finding: bypassing the flavor-split X entirely gives
     # m_n at 0.24 ppm (8× better than the substrate-identity's 2 ppm).
     # Δ_pn = Q_β + m_e follows directly.
+    #
+    # OPEN — m_n residual structure (2026-05-30):
+    # After CAL-2 round-trip on m_p (0.0004 ppb) the m_n prediction
+    # inherits ~1 ppb residual. Two open directions to close it (neither
+    # is "rerun a script" — both are categorical-derivation work):
+    #  (a) Baryon EM sinh-channel analog (gates on #1443's operator-
+    #      valued LR-branching). The meson got (α_em/π)·(3q²−1)/(2q²)
+    #      from a scalar H_2 trace; the baryon needs the operator-valued
+    #      tr A^{(2,1)}_{(1),(1,1)}(I_EM) on the Hoefsmit H_3 basis.
+    #      Stub: baryon_em_sinh_operator_valued_probe.py.
+    #  (b) Mass-asymmetric flavor-split (gates on PR #1445's
+    #      ColorFlavorCompatible class). The current X(q) is flavor-
+    #      blind; the canonical Bring color-tube weight should pick up
+    #      a per-tableau m_d/m_u asymmetry. Empirical scheme-4 PL
+    #      integration on Bring's surface (probe_pn_flavor_asymmetry.py
+    #      Scheme 4) reproduces Δm_{n-p} to ≈0.14% of CODATA — that's
+    #      the evidence the framework supports it; the categorical
+    #      derivation is open. Workplan:
+    #      docs/workplans/2026-05-30-mass-asymmetric-flavor-split.md.
     m_e_mev = OBSERVABLES["m_e"][0]  # CAL-1 anchor
     q_beta_rung = "N=5" if qb_n3_data.get("Q_N2") is not None else "N=0"
     if m_p_sub is not None and Q_beta_best is not None:
@@ -330,7 +349,10 @@ def main() -> dict:
         delta_pn_path_c = Q_beta_best + m_e_mev
         path_c_source = (
             f"Path C: m_n = m_p(substrate) + Q_β({q_beta_rung}) + m_e; "
-            "no flavor-split — per PR #1298 gap diagnostic"
+            "no flavor-split — per PR #1298 gap diagnostic; ~1 ppb "
+            "residual is open math (baryon-EM analog gates on #1443; "
+            "mass-asymmetric flavor-split gates on #1445 — see workplan "
+            "docs/workplans/2026-05-30-mass-asymmetric-flavor-split.md)"
         )
         rows.append(_row_for("m_n", m_n_path_c, path_c_source))
         rows.append(_row_for("Delta_pn", delta_pn_path_c, path_c_source))
