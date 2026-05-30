@@ -6,12 +6,16 @@ on:
     paths:
       - 'tools/hecke-engine/Cargo.toml'
       - 'tools/hecke-engine/src/lib.rs'
+      - 'tools/hecke-engine/src/operator_selection_lp.rs'
+      - 'tools/hecke-engine/src/bin/clarabel_operator_selection_lp.rs'
       - 'tools/hecke-engine-wasm/**'
       - '.github/workflows/hecke-engine-wasm.yml'
   pull_request:
     paths:
       - 'tools/hecke-engine/Cargo.toml'
       - 'tools/hecke-engine/src/lib.rs'
+      - 'tools/hecke-engine/src/operator_selection_lp.rs'
+      - 'tools/hecke-engine/src/bin/clarabel_operator_selection_lp.rs'
       - 'tools/hecke-engine-wasm/**'
       - '.github/workflows/hecke-engine-wasm.yml'
   workflow_dispatch:
@@ -56,6 +60,37 @@ jobs:
       - name: cargo check --no-default-features --features mpfr --lib
         working-directory: tools/hecke-engine
         run: cargo check --no-default-features --features mpfr --lib
+
+  clarabel-lp-tests:
+    name: Clarabel-mpfr operator-selection LP tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: 'tools/hecke-engine -> target'
+
+      - name: Install system GMP + MPFR (rug build deps)
+        run: sudo apt-get update && sudo apt-get install -y libgmp-dev libmpfr-dev libmpc-dev
+
+      # Operator-selection LP correctness proofs (strong duality, KKT,
+      # complementary slackness, dual nonnegativity) PLUS the MPFR≡f64
+      # validation test. The clarabel-mpfr feature pulls the
+      # litlfred/Clarabel.rs git dependency; default features stay on
+      # (no clarabel-* feature is in the default set, so there is no
+      # sdp/mpfr/bigrational mutex conflict).
+      - name: cargo test --features clarabel-mpfr (LP correctness + MPFR≡f64)
+        working-directory: tools/hecke-engine
+        run: cargo test --release --features clarabel-mpfr --lib operator_selection_lp -- --nocapture
+
+      # Build the JSON CLI the Python bridge (pyhecke.lp_dual_solver,
+      # backend="clarabel") subprocesses.
+      - name: Build clarabel-operator-selection-lp CLI
+        working-directory: tools/hecke-engine
+        run: cargo build --release --features clarabel-mpfr --bin clarabel-operator-selection-lp
 
   build-wasm:
     name: Build + test hecke-engine-wasm
