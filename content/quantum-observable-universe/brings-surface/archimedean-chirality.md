@@ -9,3 +9,4 @@ $\pm$-eigenspaces of the Reeb involution $\xi \mapsto -\xi$.  Bosons
 ([boson](#def:fermion-boson-decomposition)), being purely horizontal, are chirality-blind ---
 consistent with the observed parity invariance of the electromagnetic and
 strong interactions.
+Cf.\ \cite{nicolaescu2005, petit-2005}.

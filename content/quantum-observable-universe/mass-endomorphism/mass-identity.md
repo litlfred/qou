@@ -4,7 +4,7 @@ $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def\:recursive-brane-tower)).  Since $\mathbf{C}$ is a
 $R$-linear rigid :refterm[monoidal category]{#monoidal-category}, the Frobenius--Hopf object $A$
 admits a categorical trace
-$\mathrm{tr} \colon \mathrm{End}_{\mathbf{C}}(A) \to R$
+$\mathrm{tr} \colon \mathrm{End}_{\mathbf{C}}(A) \to R$ (cf.\ \cite{stolz-teichner-2012})
 defined by the composition
 
 $$
