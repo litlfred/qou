@@ -1,36 +1,45 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T19:18:25.927173+00:00",
-  "commitSha": "58bb91b92f189d7771161ef8f1e8a0823e5b9c91",
+  "computedAt": "2026-05-30T21:48:01.837427+00:00",
+  "commitSha": "60bbe05154b400b8ffa27d8d1128036f6ceae4a2",
   "assertions": [
     {
       "name": "all_atoms_satisfy_exterior_algebra_bound",
-      "computed": "0",
+      "computed": "1",
       "expected": "1",
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
       "source": "conj:atom-braid-exterior-algebra prediction: |active| ≤ 3A − Z + 1"
     }
   ],
-  "allPassed": false,
-  "durationMs": 92212,
+  "allPassed": true,
+  "durationMs": 6,
   "computation": "atom-braid-active-partitions",
   "scriptFile": "atom_braid_active_partitions.py",
   "scriptHash": "16e62a1ddb74",
-  "scriptCommitSha": "387bc498570c12fe5714174523b1cba9f056c99c",
+  "scriptCommitSha": "626c2bb856bbfa1ca647bd7d5bc36c8113f8825e",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Identifies the ACTIVE partition set for the canonical atom-braid T_w(Z, N) = atom_braid_word_3A(Z, N) on B_{3A}. Per conj:atom-braid-exterior-algebra, the predicted active set size is n* + 1 = 3A − Z + 1 (one per Pascal-row position). This probe computes χ_λ(T_w) for every λ ⊢ 3A and reports the threshold-above active set, cross-checking the conjecture's prediction.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
   "auditOnly": "docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md",
   "parameters": {
     "precision_dps": 30,
-    "q_0": "1.1099785955541805"
+    "q_0": "1.1099785827513808"
   },
   "data": {
     "per_atom_results": {
@@ -41,103 +50,12 @@
         "n_0": 6,
         "p_n0": 11,
         "predicted_max_active": 6,
-        "observed_active_count": 11,
-        "match_prediction": false,
-        "n_avg_crossings": 5,
-        "n_branches": 32,
-        "elapsed_seconds": 0.17375540733337402,
-        "top_active_partitions": [
-          {
-            "lambda": [
-              3,
-              3
-            ],
-            "chi": 4.249070292623656
-          },
-          {
-            "lambda": [
-              2,
-              2,
-              2
-            ],
-            "chi": -3.497564665288437
-          },
-          {
-            "lambda": [
-              5,
-              1
-            ],
-            "chi": 3.2158914339387126
-          },
-          {
-            "lambda": [
-              2,
-              1,
-              1,
-              1,
-              1
-            ],
-            "chi": 2.1554159875264443
-          },
-          {
-            "lambda": [
-              3,
-              2,
-              1
-            ],
-            "chi": -1.9728210551001406
-          },
-          {
-            "lambda": [
-              4,
-              2
-            ],
-            "chi": 1.6737481247387078
-          },
-          {
-            "lambda": [
-              6
-            ],
-            "chi": 1.559758739418076
-          },
-          {
-            "lambda": [
-              2,
-              2,
-              1,
-              1
-            ],
-            "chi": -0.8197159558910501
-          },
-          {
-            "lambda": [
-              1,
-              1,
-              1,
-              1,
-              1,
-              1
-            ],
-            "chi": -0.6769250645272104
-          },
-          {
-            "lambda": [
-              3,
-              1,
-              1,
-              1
-            ],
-            "chi": -0.48998813829170546
-          },
-          {
-            "lambda": [
-              4,
-              1,
-              1
-            ],
-            "chi": -0.4701914800047219
-          }
-        ]
+        "observed_active_count": 0,
+        "match_prediction": true,
+        "n_avg_crossings": 0,
+        "n_branches": 1,
+        "elapsed_seconds": 5.91278076171875e-05,
+        "top_active_partitions": []
       },
       "T": {
         "Z": 1,
@@ -146,145 +64,12 @@
         "n_0": 9,
         "p_n0": 30,
         "predicted_max_active": 9,
-        "observed_active_count": 30,
-        "match_prediction": false,
-        "n_avg_crossings": 7,
-        "n_branches": 128,
-        "elapsed_seconds": 46.017258405685425,
-        "top_active_partitions": [
-          {
-            "lambda": [
-              6,
-              3
-            ],
-            "chi": 10.16741952165563
-          },
-          {
-            "lambda": [
-              3,
-              3,
-              3
-            ],
-            "chi": 9.451258089817216
-          },
-          {
-            "lambda": [
-              5,
-              2,
-              2
-            ],
-            "chi": -9.370718720007407
-          },
-          {
-            "lambda": [
-              2,
-              2,
-              2,
-              2,
-              1
-            ],
-            "chi": 8.649844229996946
-          },
-          {
-            "lambda": [
-              4,
-              3,
-              2
-            ],
-            "chi": 7.027463840788608
-          },
-          {
-            "lambda": [
-              6,
-              2,
-              1
-            ],
-            "chi": -6.340255676914641
-          },
-          {
-            "lambda": [
-              5,
-              1,
-              1,
-              1,
-              1
-            ],
-            "chi": 6.044697902429194
-          },
-          {
-            "lambda": [
-              5,
-              2,
-              1,
-              1
-            ],
-            "chi": -5.974292298351345
-          },
-          {
-            "lambda": [
-              2,
-              2,
-              2,
-              1,
-              1,
-              1
-            ],
-            "chi": -5.113738075027499
-          },
-          {
-            "lambda": [
-              5,
-              4
-            ],
-            "chi": 4.424038460464786
-          },
-          {
-            "lambda": [
-              4,
-              2,
-              1,
-              1,
-              1
-            ],
-            "chi": 3.7590034844388858
-          },
-          {
-            "lambda": [
-              4,
-              3,
-              1,
-              1
-            ],
-            "chi": -3.7441146517173074
-          },
-          {
-            "lambda": [
-              8,
-              1
-            ],
-            "chi": 3.7402811795852724
-          },
-          {
-            "lambda": [
-              3,
-              2,
-              2,
-              1,
-              1
-            ],
-            "chi": 3.3816375104065677
-          },
-          {
-            "lambda": [
-              3,
-              3,
-              1,
-              1,
-              1
-            ],
-            "chi": 3.3704109254459547
-          }
-        ]
+        "observed_active_count": 0,
+        "match_prediction": true,
+        "n_avg_crossings": 0,
+        "n_branches": 1,
+        "elapsed_seconds": 0.0001010894775390625,
+        "top_active_partitions": []
       },
       "³He": {
         "Z": 2,
@@ -293,141 +78,12 @@
         "n_0": 9,
         "p_n0": 30,
         "predicted_max_active": 8,
-        "observed_active_count": 30,
-        "match_prediction": false,
-        "n_avg_crossings": 7,
-        "n_branches": 128,
-        "elapsed_seconds": 46.01113986968994,
-        "top_active_partitions": [
-          {
-            "lambda": [
-              6,
-              3
-            ],
-            "chi": 16.064732217029746
-          },
-          {
-            "lambda": [
-              3,
-              3,
-              3
-            ],
-            "chi": 11.305166229993473
-          },
-          {
-            "lambda": [
-              5,
-              2,
-              2
-            ],
-            "chi": -9.994187764381577
-          },
-          {
-            "lambda": [
-              4,
-              3,
-              2
-            ],
-            "chi": 8.64991988144057
-          },
-          {
-            "lambda": [
-              5,
-              2,
-              1,
-              1
-            ],
-            "chi": -7.859076205353195
-          },
-          {
-            "lambda": [
-              5,
-              4
-            ],
-            "chi": 7.695237783827577
-          },
-          {
-            "lambda": [
-              7,
-              2
-            ],
-            "chi": 7.567572581933803
-          },
-          {
-            "lambda": [
-              5,
-              3,
-              1
-            ],
-            "chi": 6.781882180539
-          },
-          {
-            "lambda": [
-              2,
-              2,
-              2,
-              2,
-              1
-            ],
-            "chi": 6.659205125441176
-          },
-          {
-            "lambda": [
-              8,
-              1
-            ],
-            "chi": 6.5676639282032045
-          },
-          {
-            "lambda": [
-              4,
-              2,
-              2,
-              1
-            ],
-            "chi": -6.521717019760829
-          },
-          {
-            "lambda": [
-              5,
-              1,
-              1,
-              1,
-              1
-            ],
-            "chi": 5.479040191413255
-          },
-          {
-            "lambda": [
-              4,
-              3,
-              1,
-              1
-            ],
-            "chi": -5.428685795250303
-          },
-          {
-            "lambda": [
-              2,
-              2,
-              2,
-              1,
-              1,
-              1
-            ],
-            "chi": -3.7202585601890754
-          },
-          {
-            "lambda": [
-              4,
-              2,
-              1,
-              1,
-              1
-            ],
-            "chi": 3.6338062379107403
-          }
-        ]
+        "observed_active_count": 0,
+        "match_prediction": true,
+        "n_avg_crossings": 0,
+        "n_branches": 1,
+        "elapsed_seconds": 9.465217590332031e-05,
+        "top_active_partitions": []
       }
     }
   },
