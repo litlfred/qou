@@ -177,6 +177,7 @@ section({
         "cmb-photon-color-content",
         "hawking-radiation",
         "observable-subcategory",
+        "observable-beable-correspondence",
         "aeon",
         "horizon-functor",
         "cmb-functor",
