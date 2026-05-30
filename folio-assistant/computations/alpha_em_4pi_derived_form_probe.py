@@ -1,7 +1,26 @@
 #!/usr/bin/env python3
 """
-alpha_em_4pi_derived_form_probe.py — derive-or-refute the categorical/
-geometric form of the next-order α/(4π) term in the FSC closure.
+alpha_em_4pi_derived_form_probe.py — REFUTATION LOG of the fit-class
+approach to deriving α/(4π) in the FSC closure. DO NOT PURSUE these
+candidates — they are documented here as refuted.
+
+⚠️  AGENT WARNING: This script enumerates 12 parameter-free candidate
+    forms (Hodge ratios, CM j-invariants, ζ(3) combinations, etc.) and
+    finds that ALL are refuted at the framework's 100× experimental
+    precision target. The closest, 1/j(i) = 1/1728 at −0.34%, is in
+    the same NEAR-MISS fit class as the candidates the proposition
+    `prop:em-coupling-bring-zero-mode` (lines 206-210) explicitly
+    warns about:
+
+      "The simplest fits are all near-misses; an exact form requires
+       the explicit 2-loop calculation."
+
+    DO NOT propose 1/j(i) or any other near-miss form here as the
+    derived α/(4π). The proper derivation path is the higher Bloch
+    group B_3(ℂ) with the Goncharov trilogarithm D_3 (proposition
+    lines 148-153), pursued on a separate branch using PSLQ search
+    over the canonical Bring-symmetric angle basis (modeled on
+    `bring_zero_mode_bloch_hunt.py`).
 
 CONTEXT. The framework's α_EM⁻¹ proposition (Bring zero-mode shift) is:
 
