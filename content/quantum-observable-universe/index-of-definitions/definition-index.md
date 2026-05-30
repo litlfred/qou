@@ -1,4 +1,4 @@
-**999** indexed entries across 7 categories.
+**1000** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -241,6 +241,7 @@
 | [thm:hyperelliptic-z5-classification](#thm:hyperelliptic-z5-classification) | Minimal-genus hyperelliptic curves with faithful $\mathbb{Z}_5$-symmetry | Ch 8 | `qou:QOU.HyperellipticQuintic.minimal_z5_classification` |
 | [thm:observability-q-independent](#thm:observability-q-independent) | Observability is a base property: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is independent of the substrate section | Ch 16 | `qou:QOU.FluidDynamics.observability_q_independent` |
 | [thm:parity-regime-selection](#thm:parity-regime-selection) | Parity regime selection for Q-values | Ch 8 | `qou:QOU.ParticleInteractions.parity_regime_selection` |
+| [thm:pontryagin-dual-coxeter-character](#thm:pontryagin-dual-coxeter-character) | Pontryagin self-duality on abelianised Coxeter group $S_n^{\mathrm{ab}} \cong \mathbb{Z}/2$ | Ch 5 | `qou:QOU.BraidsAndKnots.PontryaginDualCoxeterCharacter` |
 | [thm:markov-trace-product](#thm:markov-trace-product) | Product factorization of the Markov trace | Ch 10 | `qou:QOU.Hecke.markov_trace_product` |
 | [thm:topological-charge-quantization](#thm:topological-charge-quantization) | Quantization of topological charge | Ch 6 | `qou:QOU.AlgebraicSubstrate.topological_charge_quantization` |
 | [thm:quantum-peter-weyl](#thm:quantum-peter-weyl) | Quantum Peter--Weyl theorem: completeness of the $\mathrm{SU}_q(2)$ eigenbasis | Ch 16 | `qou:QOU.FluidDynamics.quantum_peter_weyl` |
@@ -311,6 +312,7 @@
 | [prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix) | Beta decay as a universal matrix-valued polynomial in $q$ | Ch 10 | `qou:QOU.Archimedean.beta_decay_transfer_matrix` |
 | [prop:beta-stability](#prop:beta-stability) | Beta-stability line from the Skein binding Lagrangian | Ch 8 | `qou:QOU.Braiding.beta_stability` |
 | [prop:bigbang-heatdeath](#prop:bigbang-heatdeath) | Big Bang and heat-death functors as evaluations at named surreal endpoints | Ch 22 | `qou:QOU.AppendixSurreals.BigbangHeatdeath` |
+| [prop:binding-alpha-shift-extension](#prop:binding-alpha-shift-extension) | Binding A≥3 via per-rep Reeb phase at a force-carrier torus knot | Ch 10 | `qou:QOU.BraidKnot.binding_unique_via_alpha_shift` |
 | [prop:binding-scale-catalan](#prop:binding-scale-catalan) | Binding energy scale $\alpha = m_e \times 8G$ | Ch 10 | `qou:QOU.BindingScale.bindingScale_value` |
 | [prop:jones-birthday](#prop:jones-birthday) | Birthday refinement of the Jones polynomial | Ch 22 | `qou:QOU.AppendixSurreals.JonesBirthday` |
 | [prop:blowup-yekutieli](#prop:blowup-yekutieli) | Blowup mechanism as Yekutieli lifting obstruction in the brane tower | Ch 16 | `qou:QOU.FluidDynamics.BlowupYekutieli` |
@@ -909,7 +911,6 @@
 | [conj:im-q-physical-role](#conj:im-q-physical-role) | Physical role of $\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation). | Ch 10 | `qou:QOU.BraidKnot.ImQPhysicalRole.im_q_observable_pairing` |
 | [conj:weak-spectral-completeness](#conj:weak-spectral-completeness) | Plancherel completeness for the EW/Higgs $\{T(2,4), T(2,6), T(2,8)\}$ idempotent decomposition | Ch 10 | `qou:QOU.BraidKnot.WeakSpectralCompleteness` |
 | [conj:poincare-lefschetz-borromean](#conj:poincare-lefschetz-borromean) | Poincaré–Lefschetz duality on Borromean complement — cohomology ↔ homology of manifold-with-cusps | Ch 10 | `qou:QOU.BraidsAndKnots.PoincareLefschetzBorromean` |
-| [conj:pontryagin-dual-coxeter-character](#conj:pontryagin-dual-coxeter-character) | Pontryagin duality on abelianised Coxeter character — character ↔ measure on dual group | Ch 5 | `qou:QOU.BraidsAndKnots.PontryaginDualCoxeterCharacter` |
 | [conj:psd-trace-orthogonality](#conj:psd-trace-orthogonality) | PSD-vs-trace orthogonality of canonical atom-braid Wedderburn blocks. At q₀, the partitions λ ⊢ 3A that dominate the Markov trace `Σ_λ y_λ χ^λ(T_w)` and the partitions that dominate the PSD obstruction `α* = 1/(1 − ε_min)` live in *disjoint shape-class subcategories*: trace-dominant = 1/2-row long-string partitions, PSD-dominant = 3+row multi-step narrow partitions. Empirically supported with 10⁵ magnitude separation at A=4 and 10⁹ at A=6. | Ch 10 | `qou:QOU.BraidKnot.PSDTraceOrthogonality.psd_trace_orthogonality_holds_for_all_atoms` |
 | [conj:qou-infra-discharges-goncharov-zeta5](#conj:qou-infra-discharges-goncharov-zeta5) | QOU's Hecke-NF + Bring-$S_5$ infrastructure discharges Goncharov's depth-3 conjecture at $F = \mathbb{Q}(\zeta_5)$ | Ch 22 | `qou:QOU.AppendixSurreals.QouInfraDischargesGoncharovZeta5` |
 | [conj:quantum-computational-universality](#conj:quantum-computational-universality) | Quantum computational universality via descent to roots of unity | Ch 18 | `qou:QOU.QuantumComputationalUniversality.QuantumComputationalUniversality` |

@@ -1,9 +1,9 @@
-import { conjecture } from "../../schema/builders";
+import { theorem } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:pontryagin-dual-coxeter-character",
+export default theorem({
+  label: "thm:pontryagin-dual-coxeter-character",
   title:
-    "Pontryagin duality on abelianised Coxeter character — character ↔ measure on dual group",
+    "Pontryagin self-duality on abelianised Coxeter group $S_n^{\\mathrm{ab}} \\cong \\mathbb{Z}/2$",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.PontryaginDualCoxeterCharacter",
     validation: "not_checked",
@@ -23,8 +23,7 @@ export default conjecture({
     "character-measure",
     "low-priority",
     "non-abelian-restriction",
-    "axiom-class",
-    "open-problem",
-    "non-scholarly-voice-exception",
+    "closure-tier-a",
+    "phase-1-discharge",
   ],
 });
