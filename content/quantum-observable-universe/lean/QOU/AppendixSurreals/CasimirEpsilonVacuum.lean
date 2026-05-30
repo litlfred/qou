@@ -27,6 +27,8 @@ the calculus then proceeds as in the narrative
 
 import QOU.AppendixSurreals.VacuumEpsilon
 import QOU.AppendixSurreals.StandardPart
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.Calculus.Deriv.Basic
 
 namespace QOU.AppendixSurreals
 
