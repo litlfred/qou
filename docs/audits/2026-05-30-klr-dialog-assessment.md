@@ -8,7 +8,7 @@
 
 ## What the dialog proposed
 
-1. Re-realize the QOU substrate as KLR modules (categorify H_n(q) via Brundan-Kleshchev).
+1. Re-realize the QOU substrate as KLR modules (via Brundan-Kleshchev cyclotomic isomorphism: cyclotomic KLR ≅ cyclotomic Hecke/Ariki-Koike — note: KLR *categorifies* the negative half of U_q(g), not H_n(q) directly).
 2. Replace Gröbner-Shirshov / Diamond-Lemma normal-form computation with Kashiwara crystal-graph traversal.
 3. Recover positivity of trace coefficients automatically (dim Hom between graded projective KLR modules).
 4. Define the cemetery group as a localizing Serre subcategory annihilated by ω.
@@ -24,7 +24,7 @@
 - KLR algebras (Khovanov-Lauda 2008, Rouquier 2008) categorify the negative half of U_q(g) for g symmetrizable Kac-Moody.
 - Brundan-Kleshchev (2009): cyclotomic KLR ≅ cyclotomic Hecke (Ariki-Koike).
 - Canonical-basis positivity for Hecke algebras / Soergel bimodules (Elias-Williamson 2014).
-- Type A_{n-1} Schur-Weyl duality between H_n(q) on n strands and U_q(sl_N) on the N-dim fundamental fibre.
+- Type A_{n-1} Schur-Weyl duality between H_n(q) on n strands and U_q(sl_N) on the N-dim fundamental representation.
 - Kashiwara crystals at q→0; Lusztig global crystal basis flatness over Z[q, q^{-1}].
 - Type B folding gives a Z/2Z-symmetric crystal whose normal forms are bar-involution invariant.
 
