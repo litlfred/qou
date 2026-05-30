@@ -72,12 +72,23 @@ def atom_character_branching(Z, N, m_pp, m_pn, m_nn, lambda_partition):
 
 ## Gap
 
-- Skew-SYT count `f^{λ/μ}` for general λ ⊢ 3A, μ = μ_1 ⊔ ... ⊔ μ_A
+- ~~Skew-SYT count `f^{λ/μ}` for general λ ⊢ 3A, μ = μ_1 ⊔ ... ⊔ μ_A
   needs a generating-function implementation (hook formula for
-  skew shapes, or direct enumeration).
+  skew shapes, or direct enumeration).~~
+  **Closed 2026-05-30** — implemented in
+  [`tools/pyhecke/python/pyhecke/skew_syt.py`](../../tools/pyhecke/python/pyhecke/skew_syt.py)
+  via Aitken-Steinberg determinant formula. Provides:
+  - `skew_syt_count(lambda_, mu)` — exact integer count.
+  - `concatenate_partitions(partitions)` — builds μ = μ_1 ⊔ ... ⊔ μ_A.
+  - `fits_inside(mu, lambda_)` — containment predicate.
+
+  Validated against straight-shape hook-formula values
+  (`f^{(4,3,2,1)} = 768`, `f^{(3,2,1)} = 16`) and Stanley EC2 §7.16
+  skew examples (`f^{(3,2)/(1)} = 5`).
+
 - Inter-nucleon σ correction term needs derivation (not trivially
-  a product of H_3 characters).
+  a product of H_3 characters). **Open.**
 
 Both are well-defined categorical quantities (per
-`prop:universal-braid-branching`); implementing them is a
-substantial refactor beyond this session's scope but well-posed.
+`prop:universal-braid-branching`); the inter-nucleon σ correction
+is the remaining piece.

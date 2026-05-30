@@ -24,6 +24,7 @@ Stable re-exports:
 Submodules (lazy-loaded via PEP-562 __getattr__):
   pyhecke.gram, pyhecke.wedderburn, pyhecke.atom, pyhecke.molecular,
   pyhecke.constants, pyhecke.partition, pyhecke.trace, pyhecke.tower,
+  pyhecke.skew_syt,
   pyhecke.certificate, pyhecke.bridge, pyhecke.schema, pyhecke.crt,
   pyhecke.undo, pyhecke.sdp
 
@@ -44,6 +45,8 @@ _SUBMODULES = (
     # Depend on hecke_core and its siblings — expensive (42s today)
     "gram", "wedderburn", "atom", "molecular", "constants",
     "partition", "trace", "tower",
+    # Pure-Python combinatorics, no heavy deps
+    "skew_syt",
 )
 
 # Flattened symbols exported at package level. The first time any of
