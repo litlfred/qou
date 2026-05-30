@@ -66,11 +66,11 @@ noncomputable def hyperbolicVolume (_T : TorusKnot) : ℝ := 0
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Vol(4₁) = 2·Cl₂(π/3) ≈ 2.0298832128 (figure-eight knot, muon). -/
--- Ref: [snappy] SnapPy; [thurston1979] Thurston
+-- Ref: [culler2024] SnapPy; [thurston1979] Thurston
 noncomputable def vol_figure_eight : ℝ := 2.0298832128  -- :leanval[Vol_4_1]{precision=11}
 
 /-- Vol(5₂) ≈ 2.8281220883 (three-twist knot, strange/down quark). -/
--- Ref: [snappy] SnapPy
+-- Ref: [culler2024] SnapPy
 noncomputable def vol_three_twist : ℝ := 2.8281220883
 
 -- ═══════════════════════════════════════════════════════════════════

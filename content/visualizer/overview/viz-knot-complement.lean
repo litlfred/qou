@@ -35,5 +35,5 @@ typed back-end agree on shape.
 
 -- Ref: [thurston1979] W. Thurston, *The Geometry and Topology of
         3-Manifolds*, Princeton Lecture Notes 1979, §4.
--- Ref: [snappy] SnapPea kernel — https://snappy.computop.org/
+-- Ref: [culler2024] SnapPea kernel — https://snappy.computop.org/
 -/
