@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T03:44:59.643825+00:00",
-  "commitSha": "3fda58749d66d5298e104771958a50ec12e47e51",
+  "computedAt": "2026-05-30T12:29:59.509896+00:00",
+  "commitSha": "1bace2ff4af5d987e849a7473a1014b20d225495",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "3206a30228ae",
-  "scriptCommitSha": "b73c22e73a69fa9a73b784a2e52d6fb5e3a812a5",
+  "scriptHash": "38adb384d214",
+  "scriptCommitSha": "e0490c4feb35621e78f34e02e75a058884665026",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -74,7 +74,7 @@
         "miss_factor": "159.9",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "q-beta-operator-valued-N3.witness.json::Q_N2 (τ_M derived to k=2: Kashiwara f̃₁ + geometric; k≥3 fitted rungs dropped as non-canonical)",
+        "source_witness": "q-beta-operator-valued-N3.witness.json::Q_N2 (c_2 = -1 Lean-PROVED at Taylor-coefficient precision via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor; higher c_k structural-conjecture rungs are not Taylor-exact per habiro-precision-ladder-equivalence.lean lines 22-27)",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)",
         "compute_truncation_ppb": "1.278e-41",
         "compute_output_dps": 50

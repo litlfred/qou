@@ -272,43 +272,47 @@ def main() -> dict:
     # ── Q_β — Habiro-exact evaluation ──────────────────────────────
     # The Markov trace difference tr_M(β_n) - tr_M(β_p) lives in the
     # Habiro ring ℤ̂[q] and terminates at finite M=8 (proton/neutron).
-    # The per-rung c_k are the Habiro / Taylor-expansion coefficients of
-    # the EXACT Habiro Q_β at substrate q₀, expanded in u = b·ℏ_q².
-    # Each c_k is therefore a derived structural quantity (Taylor
-    # coefficient of a categorically-defined function), and the canonical-
-    # derivation chain identifies each with a known knot/Wedderburn
-    # invariant (`prop:q-beta-categorical-precision-ladder`, Lean
-    # `q-beta-categorical-precision-ladder.lean`):
-    #   c_2 = -1   (PROVED, geometric Kashiwara f̃₁²)
-    #   c_3 = -2 = J_Hopf(q=1)  (PROVED via Lean
-    #                            jonesAtOne_hopf_eq_neg_two)
-    # Production reads Q_β through N=3, applying c_3 = -2 from Q_N2 →
-    # Q_N3. This is the Taylor coefficient of the Habiro Q_β at q₀,
-    # NOT a CODATA fit; the agreement with the classical Hopf-Jones
-    # value is a *theorem*, not a numerical near-match.
+    # Q_β production wiring — STRICT canonical-derived bar.
+    #
+    # The per-rung c_k in Q_N = Q_A · Π(1 + c_k · u^k) (with u = b·ℏ_q²)
+    # are by DEFINITION the Taylor coefficients of the exact Habiro Q_β at
+    # substrate q₀. The Lean structural identifications:
+    #
+    #   c_2 = -1   (Kashiwara f̃₁²; Lean N2_factor)
+    #   c_3 = -2 = J_Hopf(q=1)  (Lean jonesAtOne_hopf_eq_neg_two)
+    #
+    # are STRUCTURAL CONJECTURES about the Taylor coefficients. Empirical
+    # extraction (audit docs/audits/2026-05-30-qbeta-ck-interpretation-
+    # resolution.md) confirms:
+    #
+    #   c_2: structural -1 IS the Taylor coefficient (4e-7 match) ✓
+    #   c_3: structural -2 is 0.49% off the Taylor coefficient (-2.0097)
+    #
+    # So only c_2 is canonical-derived-at-Taylor-precision. The Lean file
+    # habiro-precision-ladder-equivalence.lean (lines 22-27) explicitly
+    # states the precision-ladder c_k beyond low orders are NOT in general
+    # the Taylor coefficients. PR #1452 wired c_3 by conflating the knot-
+    # invariant identification with Taylor-coefficient identity; under
+    # strict discipline that wiring is reverted here.
+    #
+    # Q_β is reported at Q_N2 (k=2 derived to compute precision). The
+    # 1247 ppb miss reflects the μ-p tension floor + higher c_k structure
+    # that has not been derived from canonical Taylor expansion. See
+    # docs/audits/2026-05-28-mu-p-tension-substrate-floor.md +
+    # docs/audits/2026-05-30-qbeta-ck-interpretation-resolution.md.
     qb_n3 = load_witness("q-beta-operator-valued-N3.witness.json")
     qb_n3_data = qb_n3.get("data", {})
     if qb_n3_data.get("Q_N2") is not None:
-        # Apply the derived c_3 = J_Hopf(q=1) = -2 step:
-        #   Q_N3 = Q_N2 · (1 + c_3 · u^3)  with u = b · ℏ_q²
-        from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-        from mpmath import sqrt as _sqrt  # noqa: E402
-        q0 = mpf(Q_50_DIGIT_STR)
-        h0 = q0 - 1 / q0
-        hbar_q0 = (q0 - 1) / q0
-        b0_sq = (h0 ** 2 + 3) / (h0 ** 2 + 4)
-        b0 = _sqrt(b0_sq)
-        u0 = b0 * hbar_q0 ** 2
-        c_3 = mpf(-2)  # J_Hopf(q=1), proved
         Q_N2 = mpf(str(qb_n3_data["Q_N2"]))
-        Q_N3 = Q_N2 * (1 + c_3 * u0 ** 3)
-        Q_beta_best = Q_N3
+        Q_beta_best = Q_N2
         rows.append(_row_for(
-            "Q_beta", Q_N3,
-            "Q_N3 = Q_N2·(1 + c_3·u^3) with c_3 = J_Hopf(q=1) = -2 "
-            "(PROVED, qou:QOU.BraidKnot.jonesHopfClassicalLimit / "
-            "prop:q-beta-categorical-precision-ladder); upstream Q_N2 from "
-            "q-beta-operator-valued-N3.witness.json",
+            "Q_beta", Q_N2,
+            "q-beta-operator-valued-N3.witness.json::Q_N2 "
+            "(c_2 = -1 Lean-PROVED at Taylor-coefficient precision via "
+            "qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + "
+            "Kashiwara N2_factor; higher c_k structural-conjecture rungs "
+            "are not Taylor-exact per habiro-precision-ladder-equivalence."
+            "lean lines 22-27)",
         ))
     else:
         Q_beta_best = None
