@@ -106,7 +106,8 @@ The author's earlier guidance was right: **c_k are Habiro/Taylor coefficients**.
 ## Related audits / PRs
 
 - `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md` — the original "drop integer towers" call (overshot by lumping c_3 with c_4..c_7).
-- `docs/audits/2026-05-30-qbeta-ck-interpretation-resolution.md` (PR #1475) — empirical c_2, c_3 extraction that motivates this consolidation.
+- `2026-05-30-qbeta-ck-interpretation-resolution.md` (on PR #1475, not on main) — empirical c_2, c_3 extraction that motivates this consolidation.
+- **`2026-05-30-qbeta-ck-mp-dk-deep-audit.md`** — supersedes this audit; the canonical c_3 is **J_Hopf − ℏ_q²**, not plain J_Hopf, so the 0.49% "structural approximation" framing here was against the wrong target.
 - PR #1452 (merged) — wired c_3, retracted here.
 - This PR — reverts #1452, restores Q_β at Q_N2 with discipline-consistent rationale.
 
