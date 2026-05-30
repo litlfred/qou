@@ -116,28 +116,41 @@ class BindingForceCarrierKnot
 
     Per CLAUDE.md §3b-cond: sorry-free conditional on the two
     classes.  Phase 3 (the actual `(p_A, k_A)` identification) is
-    research-grade and deferred. -/
+    research-grade and deferred.
+
+    **Refactored 2026-05-30 per @litlfred review** (#1464 line-129
+    comment): the theorem now derives the `αShiftAt` equality from
+    the shared `BindingForceCarrierKnot` class via
+    `matches_alpha_shift`, eliminating the ad-hoc hypothesis and
+    aligning the Lean structure with the audit's §3b-cond gating
+    intent. -/
 theorem binding_unique_via_alpha_shift
     {R : Type u} [Field R]
-    (B B' : ℕ → R) (m_e ρ_0 : R)
+    (B B' : ℕ → R) (m_e ρ_0 : R) (p k : ℕ → ℕ)
     [hB : BindingPerRepReebPhase B m_e ρ_0]
     [hB' : BindingPerRepReebPhase B' m_e ρ_0]
-    (hα : hB.αShiftAt = hB'.αShiftAt) :
+    [hFC : BindingForceCarrierKnot hB.αShiftAt p k]
+    [hFC' : BindingForceCarrierKnot hB'.αShiftAt p k] :
     B = B' := by
   funext A
-  rw [hB.factors A, hB'.factors A, hα]
+  rw [hB.factors A, hB'.factors A,
+      hFC.matches_alpha_shift A, hFC'.matches_alpha_shift A]
 
 /-- **Sub-singleton companion.**  The space of binding evaluators
-    sharing the same `(m_e, ρ_0, αShiftAt)` data is a subsingleton. -/
+    sharing the same `(m_e, ρ_0)` and a common
+    `BindingForceCarrierKnot` identification `(p, k)` is a
+    subsingleton.  Refactored 2026-05-30 per the same #1464 review
+    to consume the force-carrier class rather than an ad-hoc
+    equality. -/
 theorem binding_subsingleton
-    {R : Type u} [Field R] (m_e ρ_0 : R) (αShiftAt : ℕ → ℕ) :
+    {R : Type u} [Field R] (m_e ρ_0 : R) (p k : ℕ → ℕ) :
     Subsingleton {B : ℕ → R //
-      ∃ h : BindingPerRepReebPhase B m_e ρ_0, h.αShiftAt = αShiftAt} := by
-  refine ⟨fun ⟨B, h⟩ ⟨B', h'⟩ => ?_⟩
-  obtain ⟨hB, hα⟩ := h
-  obtain ⟨hB', hα'⟩ := h'
+      ∃ (hB : BindingPerRepReebPhase B m_e ρ_0),
+        BindingForceCarrierKnot hB.αShiftAt p k} := by
+  refine ⟨fun ⟨B, hB, hFC⟩ ⟨B', hB', hFC'⟩ => ?_⟩
   apply Subtype.ext
   funext A
-  rw [hB.factors A, hB'.factors A, hα, hα']
+  rw [hB.factors A, hB'.factors A,
+      hFC.matches_alpha_shift A, hFC'.matches_alpha_shift A]
 
 end QOU.BraidKnot
