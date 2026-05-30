@@ -1,0 +1,262 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T12:03:58.127145+00:00",
+  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
+  "assertions": [
+    {
+      "name": "candidates_evaluated",
+      "computed": 21,
+      "expected": 21,
+      "passed": true,
+      "tolerance": 0,
+      "source": "7 matter knots × 3 Bring normalizations = 21 candidates evaluated honestly."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "alpha-em-4pi-qq-vertex-factor",
+  "scriptFile": "alpha_em_4pi_qq_vertex_factor.py",
+  "scriptHash": "8106b371af12",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Gap (iii) attempt from #1466: test the Q_q charge-vertex hypothesis for the 1-loop self-energy α/(4π). The canonical EM charge in this framework is Q_q(K) = [w(K)]_q (Layer 1 of em-coupling-projection.md). A 1-loop self-energy diagram has two photon-matter vertices, so the contribution scales as Q_q(K_m)² for matter knot K_m. We test 7 canonical matter knots × 3 Bring normalizations = 21 derive-or-refute candidates, honestly reporting matches/non-matches.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "inputs": {
+      "q0": "1.10997858275138080759166909561",
+      "CODATA_source": "experimental_constants.ALPHA_EM_INV",
+      "target_alpha_over_4pi": "0.000580704866442929781562257812526",
+      "photon_denom": "123.26653052568763805"
+    },
+    "candidates": [
+      {
+        "matter_knot": "unknot",
+        "writhe": 0,
+        "q_bracket_w": "0.0",
+        "normalization_label": "N1 = 4π",
+        "normalization_value": "12.5663706144",
+        "pi_loop": "0.0",
+        "ratio_to_target": 0.0,
+        "deviation_percent": NaN
+      },
+      {
+        "matter_knot": "unknot",
+        "writhe": 0,
+        "q_bracket_w": "0.0",
+        "normalization_label": "N2 = 12π (Area_Bring)",
+        "normalization_value": "37.6991118431",
+        "pi_loop": "0.0",
+        "ratio_to_target": 0.0,
+        "deviation_percent": NaN
+      },
+      {
+        "matter_knot": "unknot",
+        "writhe": 0,
+        "q_bracket_w": "0.0",
+        "normalization_label": "N3 = 4π·Area = 48π²",
+        "normalization_value": "473.741011252",
+        "pi_loop": "0.0",
+        "ratio_to_target": 0.0,
+        "deviation_percent": NaN
+      },
+      {
+        "matter_knot": "T_{2,3} trefoil",
+        "writhe": 3,
+        "q_bracket_w": "3.04370620853",
+        "normalization_label": "N1 = 4π",
+        "normalization_value": "12.5663706144",
+        "pi_loop": "0.0059806780449674",
+        "ratio_to_target": 10.298997633000171,
+        "deviation_percent": 929.8997633000172
+      },
+      {
+        "matter_knot": "T_{2,3} trefoil",
+        "writhe": 3,
+        "q_bracket_w": "3.04370620853",
+        "normalization_label": "N2 = 12π (Area_Bring)",
+        "normalization_value": "37.6991118431",
+        "pi_loop": "0.0019935593483225",
+        "ratio_to_target": 3.432999211000057,
+        "deviation_percent": 243.29992110000572
+      },
+      {
+        "matter_knot": "T_{2,3} trefoil",
+        "writhe": 3,
+        "q_bracket_w": "3.04370620853",
+        "normalization_label": "N3 = 4π·Area = 48π²",
+        "normalization_value": "473.741011252",
+        "pi_loop": "0.00015864241231629",
+        "ratio_to_target": 0.27318939703061784,
+        "deviation_percent": -72.68106029693821
+      },
+      {
+        "matter_knot": "4_1 figure-8",
+        "writhe": 0,
+        "q_bracket_w": "0.0",
+        "normalization_label": "N1 = 4π",
+        "normalization_value": "12.5663706144",
+        "pi_loop": "0.0",
+        "ratio_to_target": 0.0,
+        "deviation_percent": NaN
+      },
+      {
+        "matter_knot": "4_1 figure-8",
+        "writhe": 0,
+        "q_bracket_w": "0.0",
+        "normalization_label": "N2 = 12π (Area_Bring)",
+        "normalization_value": "37.6991118431",
+        "pi_loop": "0.0",
+        "ratio_to_target": 0.0,
+        "deviation_percent": NaN
+      },
+      {
+        "matter_knot": "4_1 figure-8",
+        "writhe": 0,
+        "q_bracket_w": "0.0",
+        "normalization_label": "N3 = 4π·Area = 48π²",
+        "normalization_value": "473.741011252",
+        "pi_loop": "0.0",
+        "ratio_to_target": 0.0,
+        "deviation_percent": NaN
+      },
+      {
+        "matter_knot": "T_{2,5}",
+        "writhe": 5,
+        "q_bracket_w": "5.22044127533",
+        "normalization_label": "N1 = 4π",
+        "normalization_value": "12.5663706144",
+        "pi_loop": "0.017593789559258",
+        "ratio_to_target": 30.297300015803078,
+        "deviation_percent": 2929.730001580308
+      },
+      {
+        "matter_knot": "T_{2,5}",
+        "writhe": 5,
+        "q_bracket_w": "5.22044127533",
+        "normalization_label": "N2 = 12π (Area_Bring)",
+        "normalization_value": "37.6991118431",
+        "pi_loop": "0.0058645965197528",
+        "ratio_to_target": 10.099100005267692,
+        "deviation_percent": 909.9100005267693
+      },
+      {
+        "matter_knot": "T_{2,5}",
+        "writhe": 5,
+        "q_bracket_w": "5.22044127533",
+        "normalization_label": "N3 = 4π·Area = 48π²",
+        "normalization_value": "473.741011252",
+        "pi_loop": "0.00046668976267909",
+        "ratio_to_target": 0.8036608433088698,
+        "deviation_percent": -19.633915669113023
+      },
+      {
+        "matter_knot": "T_{3,4}",
+        "writhe": 8,
+        "q_bracket_w": "8.94568981786",
+        "normalization_label": "N1 = 4π",
+        "normalization_value": "12.5663706144",
+        "pi_loop": "0.051662168829788",
+        "ratio_to_target": 88.96458737506646,
+        "deviation_percent": 8796.458737506646
+      },
+      {
+        "matter_knot": "T_{3,4}",
+        "writhe": 8,
+        "q_bracket_w": "8.94568981786",
+        "normalization_label": "N2 = 12π (Area_Bring)",
+        "normalization_value": "37.6991118431",
+        "pi_loop": "0.017220722943263",
+        "ratio_to_target": 29.654862458355485,
+        "deviation_percent": 2865.4862458355487
+      },
+      {
+        "matter_knot": "T_{3,4}",
+        "writhe": 8,
+        "q_bracket_w": "8.94568981786",
+        "normalization_label": "N3 = 4π·Area = 48π²",
+        "normalization_value": "473.741011252",
+        "pi_loop": "0.0013703815900181",
+        "ratio_to_target": 2.3598589734787754,
+        "deviation_percent": 135.98589734787754
+      },
+      {
+        "matter_knot": "σ_2 (B_2)",
+        "writhe": 1,
+        "q_bracket_w": "1.0",
+        "normalization_label": "N1 = 4π",
+        "normalization_value": "12.5663706144",
+        "pi_loop": "0.00064557241293787",
+        "ratio_to_target": 1.1117048439636494,
+        "deviation_percent": 11.17048439636494
+      },
+      {
+        "matter_knot": "σ_2 (B_2)",
+        "writhe": 1,
+        "q_bracket_w": "1.0",
+        "normalization_label": "N2 = 12π (Area_Bring)",
+        "normalization_value": "37.6991118431",
+        "pi_loop": "0.00021519080431262",
+        "ratio_to_target": 0.37056828132121644,
+        "deviation_percent": -62.943171867878355
+      },
+      {
+        "matter_knot": "σ_2 (B_2)",
+        "writhe": 1,
+        "q_bracket_w": "1.0",
+        "normalization_label": "N3 = 4π·Area = 48π²",
+        "normalization_value": "473.741011252",
+        "pi_loop": "1.7124340107137e-5",
+        "ratio_to_target": 0.029488886862669834,
+        "deviation_percent": -97.05111131373302
+      },
+      {
+        "matter_knot": "σ_1·σ_2 (B_3)",
+        "writhe": 2,
+        "q_bracket_w": "2.01089686671",
+        "normalization_label": "N1 = 4π",
+        "normalization_value": "12.5663706144",
+        "pi_loop": "0.0026105051742542",
+        "ratio_to_target": 4.4954077795914875,
+        "deviation_percent": 349.5407779591488
+      },
+      {
+        "matter_knot": "σ_1·σ_2 (B_3)",
+        "writhe": 2,
+        "q_bracket_w": "2.01089686671",
+        "normalization_label": "N2 = 12π (Area_Bring)",
+        "normalization_value": "37.6991118431",
+        "pi_loop": "0.00087016839141806",
+        "ratio_to_target": 1.4984692598638292,
+        "deviation_percent": 49.84692598638292
+      },
+      {
+        "matter_knot": "σ_1·σ_2 (B_3)",
+        "writhe": 2,
+        "q_bracket_w": "2.01089686671",
+        "normalization_label": "N3 = 4π·Area = 48π²",
+        "normalization_value": "473.741011252",
+        "pi_loop": "6.9245800408254e-5",
+        "ratio_to_target": 0.11924439488929113,
+        "deviation_percent": -88.07556051107089
+      }
+    ],
+    "best": {
+      "matter_knot": "σ_2 (B_2)",
+      "writhe": 1,
+      "q_bracket_w": "1.0",
+      "normalization_label": "N1 = 4π",
+      "normalization_value": "12.5663706144",
+      "pi_loop": "0.00064557241293787",
+      "ratio_to_target": 1.1117048439636494,
+      "deviation_percent": 11.17048439636494
+    },
+    "verdict": "REFUTED — best candidate 11.2% off; Q_q-vertex hypothesis alone is insufficient",
+    "structural_argument": "Q_q(K) = [w(K)]_q is Layer 1 of the em-coupling-projection.md tree-term derivation (canonical EM charge in this framework). A 1-loop self-energy diagram has 2 photon-matter vertices, so Π ~ Q_q(K_m)². The hypothesis tested here is Π = Q_q(K_m)² / (photon_denom · N) for matter knot K_m and Bring normalization N. Result documents which K_m + N structurally produce α/(4π) (if any)."
+  }
+}
