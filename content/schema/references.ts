@@ -3493,6 +3493,68 @@ export const references: CSLData[] = [
       "replacement.",
   }),
 
+  // ── Casimir 1948 (parallel-plate vacuum-energy force) ──────
+  ref({
+    id: "casimir1948",
+    type: "article-journal",
+    title:
+      "On the attraction between two perfectly conducting plates",
+    author: [{ family: "Casimir", given: "Hendrik B. G." }],
+    "container-title":
+      "Proceedings of the Koninklijke Nederlandse Akademie van Wetenschappen",
+    volume: "51",
+    page: "793-795",
+    issued: { "date-parts": [[1948]] },
+    note:
+      "Original derivation of the attractive force between two " +
+      "parallel conducting plates from zero-point vacuum modes.  " +
+      "Cited by [`conj:casimir-epsilon-vacuum`] as the standard-" +
+      "physics target the QOU $\\varepsilon$-vacuum mechanism " +
+      "must reproduce.",
+  }),
+
+  // ── Lamoreaux 1997 (first precision Casimir measurement) ───
+  ref({
+    id: "lamoreaux1997",
+    type: "article-journal",
+    title:
+      "Demonstration of the Casimir Force in the 0.6 to 6 μm Range",
+    author: [{ family: "Lamoreaux", given: "Steve K." }],
+    "container-title": "Physical Review Letters",
+    volume: "78",
+    issue: "1",
+    page: "5-8",
+    issued: { "date-parts": [[1997]] },
+    DOI: "10.1103/PhysRevLett.78.5",
+    note:
+      "First modern precision measurement of the Casimir force " +
+      "using a torsion pendulum.  Agreement with Casimir's 1948 " +
+      "prediction at the $\\sim 5\\%$ level over the cited range.",
+  }),
+
+  // ── Mohideen-Roy 1998 (high-precision Casimir, AFM) ────────
+  ref({
+    id: "mohideen-roy1998",
+    type: "article-journal",
+    title:
+      "Precision Measurement of the Casimir Force from 0.1 to 0.9 μm",
+    author: [
+      { family: "Mohideen", given: "Umar" },
+      { family: "Roy", given: "Anushree" },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "81",
+    issue: "21",
+    page: "4549-4552",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.1103/PhysRevLett.81.4549",
+    note:
+      "AFM-based Casimir measurement reaching $\\sim 1\\%$ " +
+      "agreement with the textbook $\\pi^{2}\\hbar c / (240 d^{4})$ " +
+      "prediction.  Sets the experimental tolerance any QOU " +
+      "vacuum-energy mechanism must match.",
+  }),
+
   // ── Robinson 1966 (non-standard analysis) ───────────────────
   ref({
     id: "robinson1966",

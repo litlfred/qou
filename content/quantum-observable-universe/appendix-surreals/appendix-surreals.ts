@@ -114,6 +114,10 @@ export default chapter({
         "infinitesimal-frobenius",
         "infinitesimal-observability",
         "vacuum-epsilon",
+        // Conditional consequence of the ε-relaxed vacuum: the
+        // Casimir force is the st-image of the ε·(unknot-mode-count)
+        // product, with surreal-infinite mode-count gradient.
+        "casimir-epsilon-vacuum",
       ],
     },
     {
