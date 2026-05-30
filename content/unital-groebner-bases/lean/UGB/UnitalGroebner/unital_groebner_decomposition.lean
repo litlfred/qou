@@ -41,6 +41,7 @@ which do not occur as leading monomials of members of $G$. Then:
 theorem unital_groebner_decomposition [ctx : UnitalGroebnerDecompositionContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
+  -- Ref: [manuscript] unital-groebner-bases — sorry pending Lean translation
   sorry
 
 end UGB.UnitalGroebner

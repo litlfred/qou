@@ -198,6 +198,7 @@ theorem vol_B3_eq_8_catalan :
   -- to be `8 * catalan_G` directly, or (b) numerically demonstrating
   -- `|7.32772475341775 - 8 * catalan_G| < 1e-14` (since both are
   -- approximations of the same real number).
+  -- Ref: [adams1985hyperbolic] Adams 1985 — Borromean complement vol = 8·Catalan·G
   sorry
 
 /-- Corollary: `Vol(𝓑₃) > 7.32 ∧ Vol(𝓑₃) < 7.33`. -/
