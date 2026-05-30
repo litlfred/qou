@@ -174,6 +174,7 @@ export default chapter({
         "he4-two-row-dominance",
         "markov-trace-frobenius-selection",
         "pn-averaging-uniqueness",
+        "meson-color-tube-uniqueness",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
       ],
