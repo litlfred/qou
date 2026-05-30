@@ -8,6 +8,7 @@ on:
       - 'tools/hecke-engine/src/lib.rs'
       - 'tools/hecke-engine/src/operator_selection_lp.rs'
       - 'tools/hecke-engine/src/bin/clarabel_operator_selection_lp.rs'
+      - 'tools/hecke-engine/src/operator_selection_sdp.rs'
       - 'tools/hecke-engine-wasm/**'
       - '.github/workflows/hecke-engine-wasm.yml'
   pull_request:
@@ -16,6 +17,7 @@ on:
       - 'tools/hecke-engine/src/lib.rs'
       - 'tools/hecke-engine/src/operator_selection_lp.rs'
       - 'tools/hecke-engine/src/bin/clarabel_operator_selection_lp.rs'
+      - 'tools/hecke-engine/src/operator_selection_sdp.rs'
       - 'tools/hecke-engine-wasm/**'
       - '.github/workflows/hecke-engine-wasm.yml'
   workflow_dispatch:
@@ -62,7 +64,7 @@ jobs:
         run: cargo check --no-default-features --features mpfr --lib
 
   clarabel-lp-tests:
-    name: Clarabel-mpfr operator-selection LP tests
+    name: Clarabel LP/SDP tests + scipy cross-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -91,6 +93,21 @@ jobs:
       - name: Build clarabel-operator-selection-lp CLI
         working-directory: tools/hecke-engine
         run: cargo build --release --features clarabel-mpfr --bin clarabel-operator-selection-lp
+
+      # Genuine dense-PSD SDP (#4) — Clarabel PSD cone needs LAPACK.
+      - name: Install LAPACK toolchain (clarabel-sdp build deps)
+        run: sudo apt-get install -y cmake gfortran libopenblas-dev
+      - name: cargo test --features clarabel-sdp (dense-PSD SDP)
+        working-directory: tools/hecke-engine
+        run: cargo test --release --features clarabel-sdp --lib operator_selection_sdp -- --nocapture
+
+      # Cross-check (#2 gate): clarabel MPFR ≡ scipy HiGHS on LP + SDP.
+      # Gates the default backend flip in pyhecke.lp_dual_solver.
+      - name: Install scipy/numpy/mpmath for the cross-check
+        run: python3 -m pip install --quiet --break-system-packages numpy scipy mpmath
+      - name: clarabel ≡ scipy cross-check
+        working-directory: folio-assistant/computations
+        run: python3 clarabel_lp_crosscheck.py --seeds 12
 
   build-wasm:
     name: Build + test hecke-engine-wasm
