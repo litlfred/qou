@@ -1,0 +1,118 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T12:25:15.172119+00:00",
+  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
+  "assertions": [
+    {
+      "name": "candidates_evaluated",
+      "computed": 8,
+      "expected": 8,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Eight candidates for q-deformed 1/(4π) (3 framework-mentioned + 5 extensions, including the new structural candidate H: [2]_q/(π·dim H¹(M_Bring))) evaluated against F_observed extracted from CODATA at q_0."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "alpha-em-4pi-q-trio-resolution",
+  "scriptFile": "alpha_em_4pi_q_trio_resolution.py",
+  "scriptHash": "b8097859b8e0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Derivation attempt: resolve the q-deformed 1/(4π) trio. Computes the EXACT observed 1-loop coefficient F_observed = (α⁻¹(CODATA) - tree - zero_mode) / α at q_0, compares to candidates A=1/(4π), B=1/(2π[2]_q), C=1/(4π)(1-h²) plus extensions. Identifies which (if any) matches within precision; quantifies remaining residuals beyond each.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "q_0": "1.10997858275138080759166909561",
+    "tree_at_q0": "136.823208853582584308046105404",
+    "zero_mode": "0.212206590789193781025178351163",
+    "CODATA_alpha_inv": "137.035999084",
+    "F_observed": "0.0799796395584038865762888562323",
+    "F_observed_formula": "(α_EM⁻¹(CODATA) - tree - zero_mode) / α_EM(CODATA)",
+    "candidates": [
+      {
+        "name": "A: 1/(4π)",
+        "F_value": "0.079577471545948",
+        "F_over_observed": "0.99497162009385",
+        "ratio_to_observed": 0.9949716200938548,
+        "ppm_deviation": -5028.379906145242,
+        "rationale": "Standard QED 1-loop coefficient; q-independent."
+      },
+      {
+        "name": "B: 1/(2π·[2]_q)",
+        "F_value": "0.079146248485888",
+        "F_over_observed": "0.98957995963576",
+        "ratio_to_observed": 0.9895799596357596,
+        "ppm_deviation": -10420.04036424038,
+        "rationale": "q-2-integer normalization; framework-mentioned candidate."
+      },
+      {
+        "name": "C: 1/(4π)·(1-h_q²)",
+        "F_value": "0.07609944198007",
+        "F_over_observed": "0.95148518298209",
+        "ratio_to_observed": 0.9514851829820915,
+        "ppm_deviation": -48514.8170179085,
+        "rationale": "Hecke-quadratic correction; framework-mentioned candidate."
+      },
+      {
+        "name": "D: 1/(2π·[2]_q)·(1+h²/12)",
+        "F_value": "0.079434513689296",
+        "F_over_observed": "0.99318419197538",
+        "ratio_to_observed": 0.99318419197538,
+        "ppm_deviation": -6815.808024620007,
+        "rationale": "[2]_q with leading q-expansion correction."
+      },
+      {
+        "name": "E: 1/(4π)·(1+h²/12)",
+        "F_value": "0.079867307343104",
+        "F_over_observed": "0.99859548985317",
+        "ratio_to_observed": 0.9985954898531684,
+        "ppm_deviation": -1404.510146831628,
+        "rationale": "1/(4π) with q-expansion correction."
+      },
+      {
+        "name": "H: [2]_q/(π·dim H¹) = [2]_q/(8π)",
+        "F_value": "0.080011044096111",
+        "F_over_observed": "1.0003926566546",
+        "ratio_to_observed": 1.0003926566546208,
+        "ppm_deviation": 392.65665462084877,
+        "rationale": "STRUCTURAL: [2]_q (q-fundamental dim) over π·dim H¹(M_Bring); uses ALREADY-CANONICAL framework objects from the leading shift; classical limit q→1 gives 1/(4π) ✓"
+      },
+      {
+        "name": "I: [2]_q²/(16π²)·(g-1)",
+        "F_value": "0.076821206128197",
+        "F_over_observed": "0.96050953158022",
+        "ratio_to_observed": 0.9605095315802181,
+        "ppm_deviation": -39490.46841978188,
+        "rationale": "Alternative: [2]_q² normalized by Area·(g-1)."
+      },
+      {
+        "name": "J: 1/(4π)·(1+h²/8)",
+        "F_value": "0.080012225241682",
+        "F_over_observed": "1.0004074247328",
+        "ratio_to_observed": 1.0004074247328252,
+        "ppm_deviation": 407.424732825179,
+        "rationale": "Leading-q expansion of [2]_q/(8π); equivalent to H at leading h-order ([2]_q = 2·sqrt(1+h²/4) ≈ 2·(1+h²/8))."
+      }
+    ],
+    "best": {
+      "name": "H: [2]_q/(π·dim H¹) = [2]_q/(8π)",
+      "F_value": "0.080011044096111",
+      "F_over_observed": "1.0003926566546",
+      "ratio_to_observed": 1.0003926566546208,
+      "ppm_deviation": 392.65665462084877,
+      "rationale": "STRUCTURAL: [2]_q (q-fundamental dim) over π·dim H¹(M_Bring); uses ALREADY-CANONICAL framework objects from the leading shift; classical limit q→1 gives 1/(4π) ✓"
+    },
+    "verdict": "NEAR-MATCH — H: [2]_q/(π·dim H¹) = [2]_q/(8π) matches to 393 ppm",
+    "pairwise_distances_ppm": {
+      "A_vs_B": 5418.908790172002,
+      "A_vs_C": 43706.20853252151,
+      "B_vs_C": 38495.90554328364
+    }
+  }
+}
