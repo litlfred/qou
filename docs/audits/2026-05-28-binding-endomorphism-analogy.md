@@ -416,3 +416,23 @@ endomorphism (+0.19 %). But A≥3 undershoots by the same 44–72 % deficit.
 collapses the per-block Reeb phase just as the scalar trace does. (An
 earlier draft of this probe incorrectly used the spin-½ quantum $j=\tfrac12$,
 producing a bogus 249 MeV scale; corrected with $j=n/2$ above.)
+
+## See also (2026-05-30 — α_shift universal chain unification)
+
+The "per-rep A≥3 structure" gate is the same boundary holonomy that the
+**α_shift universal derivation chain** captures via
+$\alpha_{\text{shift}}(T_{p, k}) = k \cdot (p - 1)$ on torus knots.
+The merged `prop:alpha-shift-torus-knot` provides the Lean-proved
+formula; the new
+[`prop:binding-alpha-shift-extension`](../../content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.md)
+wires this into binding closure:
+$B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(T(p_A, k_A))$.
+
+Remaining open math (per-A force-carrier knot identification —
+T(2, 5) for A = 3 mirror pair, T(3, 4) for ⁴He, both conjectural)
+is now structurally parallel to:
+
+- [`prop:meson-color-tube-uniqueness`](../../content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.md) (meson, T(2, 3) + T(2, 4));
+- [`prop:em-coupling-bring-zero-mode`](../../content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md) (α_EM, T(2, 9) + T(3, 5)).
+
+Reference: [α_shift universal derivation chain audit](2026-05-30-alpha-shift-universal-derivation-chain.md).
