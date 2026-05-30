@@ -127,7 +127,7 @@ chapter ordering:
 - Split a target block to extract a foundational piece into an
   earlier chapter (real content surgery, not a `uses[]` edit).
 - Promote individual targets to `FOUNDATIONAL_LATE` with explicit
-  per-target rationale (the existing 4-entry allowlist is for objects
+  per-target rationale (the existing 5-entry allowlist is for objects
   the author deliberately uses early and develops late; adding to it
   should be a curated decision, not a mass sweep).
 
