@@ -4,7 +4,7 @@
 **Branch:** `claude/sleepy-carson-Lj3RA`
 **Trigger:** long external AI dialog re-pitching Khovanov-Lauda-Rouquier (KLR) algebras + Kashiwara crystal bases as (i) a compute-speedup for Gröbner-Shirshov reduction, (ii) a positivity-by-construction layer, (iii) the closure for Δ_λ via Option E.
 **Audience:** anyone evaluating whether the dialog content should land in the paper, the Lean formalization, or the compute pipeline.
-**Bottom-line up front:** ~60% textbook-accurate; ~70% already encoded in CLAUDE.md §7b; ~10% genuine new leverage. The load-bearing claims (compute speedup, dilog-transcendence uniqueness on the electron knot, Δ_λ resolution) do not survive contact with the framework.
+**Bottom-line up front:** ~60% textbook-accurate; ~70% already encoded in CLAUDE.md §7b; ~10% genuine new leverage. The load-bearing claims (compute speedup, dilog-transcendence uniqueness on the electron knot, Δ_λ resolution) do not survive contact with the framework. The proof-simplification audit (below) **finds 0/6 candidates that would meaningfully shorten** existing proofs.
 
 ## What the dialog proposed
 
@@ -98,18 +98,33 @@ Per the retraction:
 
 In the meantime, **Track B (recursive ρ_ξ for branching combiner)** remains the productive non-Δ_λ-gated work per the original gating doc.
 
-## Proof-simplification audit
+## Proof-simplification audit — findings
 
-A background agent is auditing the paper for proofs that would be GENUINELY shortened by adding a KLR positivity / crystal path-independence / Type B folding layer (vs. just being rewritten in fancier language). Findings will be appended in a follow-up commit.
+**0/6 candidates meaningfully shortened.** Existing GS / positivity / bar-involution arguments are already minimal — one-line Diamond-Lemma citations, direct ring algebra over `CommRing` / `Field`, one-line class-axiom invocations. The proof sites where KLR positivity *would* apply (per-knot integer Wedderburn-block dimensions) are stated as content claims with no proof step to compress.
 
-Specific targets:
-- Diamond-Lemma / S-polynomial overlap convergence proofs (GS engine).
-- Positivity arguments for trace / mass / binding coefficients.
-- Path-independence / order-independence of Hecke reductions.
-- Cemetery / off-diagonal annihilation arguments.
-- Bar-involution / chirality / CPT arguments.
+### Audited candidates
 
-If the audit finds zero candidates that meaningfully shorten, the bottom-line verdict ("nice story, no PR-worthy proof simplifications") will be recorded; we will not invent simplifications to validate the dialog.
+| # | Location | Current technique | Verdict |
+|---|----------|-------------------|---------|
+| 1 | [`particle-interactions/groebner-shirshov-energy.md:65-73`](../../content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.md) + sibling `.lean:80-95` | One-line Bergman Diamond-Lemma citation; `energy_path_independent` axiomatized in Lean | **NO** — already a cited black box; KLR / crystal would just substitute one citation for another. |
+| 2 | [`braids-and-knots/hecke-normal-form.md:15-28`](../../content/quantum-observable-universe/braids-and-knots/hecke-normal-form.md) | Single-clause Diamond-Lemma appeal; already cross-refs Brundan-Kleshchev crystal traversal as engine alternative | **MAYBE for the compute engine, NO for the proof** — no proof step to shorten. |
+| 3 | [`observations/centered-hecke-variance-positive.md:31-34`](../../content/quantum-observable-universe/observations/centered-hecke-variance-positive.md) | Direct algebra: `(q^{1/2}+q^{-1/2})^2 > 4` | **NO** — this is an *archimedean* bound on real `q > 0`, not a `dim Hom ≥ 0` statement. KLR positivity does not supply substrate-dependent inequalities. |
+| 4 | [`braids-and-knots/bar-involution.md:228-313`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.md) (33 theorems) | One-line ring-algebra identities over `CommRing` / `Field` | **NO** — Type B folding would buy bar-invariance only at the structural-theorem level; the 33 downstream sign-rule / projection / even-power lemmas are already maximally short. |
+| 5 | [`lean/QOU/frobenius_dagger_positive_definite.lean:45-57`](../../content/quantum-observable-universe/lean/QOU/frobenius_dagger_positive_definite.lean) | `claim_dagger_positive` axiomatized in the class; theorem is one line | **NO** — no proof to shorten; already a class-axiom invocation. |
+| 6 | [`observations/trace-locality-meets-gs-nonlocality.md:86-93`](../../content/quantum-observable-universe/observations/trace-locality-meets-gs-nonlocality.md) | Cites Jones-Markov + GS + Wenzl factorisation | **NO** — content claim about Wenzl's product factorisation; KLR layer offers no analog. |
+
+### Why no shortening
+
+Two structural reasons the dialog's "simpler proofs" pitch lands empty for QOU as it stands:
+
+1. **The GS / Diamond-Lemma machinery is already abstracted to one-line citations** in current QOU proofs. There is no S-polynomial overlap case-analysis on disk for crystal traversal to replace; the heavy lifting is delegated to the sibling `unital-groebner-bases` paper and to Bergman.
+2. **The positivity claims that actually appear are archimedean** (bounds on real `q > 0`) **or already class-axiomatised**, not categorical `dim Hom ≥ 0` claims. KLR positivity supplies the wrong shape of fact: it would give integer non-negativity of Wedderburn-block dimensions, but the paper's positivity needs are about substrate-evaluated trace coefficients.
+
+### What this leaves
+
+The CLAUDE.md §7b shortcuts (Type B folding, KLR → KL classical limit, Demazure resonances) remain a sound **authoring guide for new work** — for any *future* proof that would otherwise have to construct positivity by hand, the §7b guidance still applies. They yield **no measurable shortening of the proofs already on disk.**
+
+The single near-miss (Candidate 2, `hecke-normal-form.md`) already cross-references the crystal-graph engine alternative; if the compute pipeline ever ports `groebner-shirshov-engine` to a crystal-traversal backend, the proof side will not need changes.
 
 ## Cross-references
 
