@@ -1,4 +1,4 @@
-**995** indexed entries across 7 categories.
+**994** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -609,7 +609,7 @@
 | [prop:magic-numbers-from-q](#prop:magic-numbers-from-q) | Magic numbers emerge from per-partition nuclear character at $q_0$ | Ch 13 | `qou:QOU.AtomicMass.magic_numbers_from_q` |
 | [prop:magic-shell-coupling-kappa](#prop:magic-shell-coupling-kappa) | Magic-shell coupling slope $\kappa = -E_0 \cdot \log(1/h) / ([2]_q [3]_q)$ — categorical closed form | Ch 8 | `qou:QOU.BraidKnot.MagicShellCouplingKappa` |
 | [prop:main-commutative-diagram](#prop:main-commutative-diagram) | Main Commutative Diagram | Ch 3 | `qou:QOU.main_commutative_diagram` |
-| [prop:markov-trace-frobenius-selection](#prop:markov-trace-frobenius-selection) | Markov trace selection from Frobenius pairing non-degeneracy | Ch 10 | `qou:QOU.BraidKnot.qou_markov_trace_is_jones_markov` |
+| [prop:markov-trace-frobenius-selection](#prop:markov-trace-frobenius-selection) | Markov trace uniqueness on H_n(R, q) — the Jones–Markov form τ_M | Ch 10 | `qou:QOU.BraidKnot.qou_markov_trace_is_jones_markov` |
 | [prop:algebraic-gns-embedding](#prop:algebraic-gns-embedding) | Markov-trace GNS embedding $H_\infty(q) \hookrightarrow L(\mathcal{H})$ — operator-algebra route to the Archimedean side | Ch 13 | `qou:QOU.Observations.AlgebraicGnsEmbedding.HasMarkovGnsEmbedding` |
 | [prop:photon-threading-mass](#prop:photon-threading-mass) | Mass as photon threading cost | Ch 18 | `qou:QOU.Information.photon_threading_mass` |
 | [prop:mass-formula-regime-switching](#prop:mass-formula-regime-switching) | Mass formula regime switch: SW+Frob for $A \leq 2$, BW+$\chi$ for $A \geq 3$ (non-additive) | Ch 10 | `qou:QOU.BraidKnot.mass_formula_regime_switching` |
@@ -706,7 +706,6 @@
 | [prop:ring-closure-barrier](#prop:ring-closure-barrier) | Ring-closure energy barrier from braid rearrangement | Ch 15 | `qou:QOU.Organic.alexanderWeightDifference` |
 | [prop:n-v-bring-action](#prop:n-v-bring-action) | S_5 action on H_n(q) at the electroweak slice | Ch 13 | `qou:QOU.Observations.s5_acts_on_ew_slice` |
 | [prop:shell-schur-weyl-self-duality](#prop:shell-schur-weyl-self-duality) | Schur-Weyl justification of shell-operator self-duality | Ch 8 | `qou:QOU.BraidKnot.ShellSchurWeylSelfDuality` |
-| [prop:schur-weyl-vanishing](#prop:schur-weyl-vanishing) | Schur-Weyl Markov-trace vanishes for partitions of height > 2 | Ch 10 | `qou:QOU.BraidKnot.schur_weyl_weight_vanish_height_gt_2` |
 | [prop:schur-weyl-mass-decomposition](#prop:schur-weyl-mass-decomposition) | Schur–Weyl decomposition of the atomic mass trace | Ch 10 | `qou:QOU.BraidKnot.schur_weyl_mass_decomposition` |
 | [prop:leray-profile](#prop:leray-profile) | Self-similar blowup profile: the Leray equations with $\mathrm{SU}_q(2)$ constraints | Ch 16 | `qou:QOU.FluidDynamics.leray_profile` |
 | [prop:q-integer-mass-formula](#prop:q-integer-mass-formula) | Seven-term atomic mass formula with $q$-integer coefficients | Ch 10 | `qou:QOU.Interactions.QIntegerMassFormula` |
