@@ -52,9 +52,9 @@ from q_parameter import Q as Q0_FLOAT
 # Canonical |tr_M(β_K, q_0)| values from derivation_chain.TR_M_AT_Q0;
 # used as the convergence target for cumulative truncation.
 TR_M_TARGETS = {
-    "proton":   mp.mpf("1.0653062285923893"),
-    "neutron":  mp.mpf("0.9232332971695838"),
-    "deuteron": mp.mpf("0.3882864715477134"),
+    "proton":   mp.mpf("1.0653061442544499"),
+    "neutron":  mp.mpf("0.9232332299116371"),
+    "deuteron": mp.mpf("0.3882864240747888"),
 }
 
 # Atom braid encodings (Z, N, include_inter, n_strands) — same as

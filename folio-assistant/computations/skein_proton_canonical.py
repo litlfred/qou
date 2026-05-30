@@ -173,7 +173,7 @@ def main() -> int:
     })
 
     # ── Cross-check against atlas value ───────────────────────
-    atlas_value = mp.mpf("1.0653062285923887")
+    atlas_value = mp.mpf("1.0653061442544499")
     diff = abs_tr - atlas_value
     rel_diff = mp.fabs(diff / atlas_value)
     w.add_data("atlas_cross_check", {

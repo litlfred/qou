@@ -49,7 +49,7 @@ def main():
     vol = vol_4_1_at(mp.mp.dps)
 
     hab_sum = mp.mpf("136.0712063634817616514048508169837773395")
-    tr_M = mp.mpf("1.065306228592389300000000000000000000000")
+    tr_M = mp.mpf("1.065306144254449900000000000000000000000")
     plancherel = mp.factorial(n) / q_factorial(n, q)
     vol_over_hsq = vol / eps
 
