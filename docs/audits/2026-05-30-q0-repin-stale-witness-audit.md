@@ -56,22 +56,51 @@ witness-regeneration after an intentional q₀ re-pin**:
     and the proof doc's "sympy-vs-rust nuance" note corrected to this
     re-pin staleness.
 
-## Recommendation (not done here — needs owner scoping)
+## Systemic fix — the staleness gate is q₀-blind (root cause)
+
+The deeper finding: **`run_pipeline.py`'s staleness check keys on the
+producer script's `scriptHash`** (file content + deps), so a constant
+re-pin that touches *no producer script* — exactly what the q₀ re-pin
+was — is **invisible to it**. The pipeline cheerfully reports all 392
+stale witnesses as "fresh". This is why the re-pin silently left a
+two-month staleness window.
+
+**Detector landed this PR:**
+[`witness_constant_staleness.py`](../../folio-assistant/computations/witness_constant_staleness.py)
+scans every `*.witness.json` for q₀-shaped decimals (`1.10997…`) that
+differ from the live `Q_50_DIGIT_STR` and flags them. Confirmed it
+detects **392** stale witnesses (`1.109978595554` muon vs
+`1.109978582751` proton). Modes: bare report, `--strict` (exit 1 for
+CI), `--list` (full list, drives the regen). Wiring it into
+`witness-pipeline.yml` closes the gate the `scriptHash` check leaves
+open — any future constant re-pin auto-flags its blast radius.
+
+## Recommendation — batched regen is a dedicated job, not interactive
 
 **Complete the q₀ re-pin regeneration sweep.** This is a *known-good
 mechanical sweep* — re-run the witness producers against the current
 proton-anchored q₀ (the value is already live in
 `qou_substrate.constants`; both compute paths agree to 6e-16, so the
-regenerated values are trustworthy). ≈394 witnesses is large and some
-producers are slow (mass-table beyond ⁴He), so it should be batched
-(per the `compute-integration-watcher` / `integration-backlog` sweep
-discipline) rather than one bulk run, and cross-checked against the m_p
-anchor identity that `0aa024cb` already validated (4/7). The new
-`WitnessBuilder.environment` block (landed this session) will record the
-exact lib versions on each regenerated witness so future drift is
-attributable.
+regenerated values are trustworthy). It should be batched (per the
+`compute-integration-watcher` / `integration-backlog` sweep discipline)
+and cross-checked against the m_p anchor identity that `0aa024cb`
+already validated (4/7). The new `WitnessBuilder.environment` block
+(landed this session) records exact lib versions on each regenerated
+witness so future drift is attributable.
 
-Quick triage list:
+**Cost finding (measured this session):** a single producer
+(`run_pipeline.py --force <one witness>`) takes **~2.5 min** because
+`--force` runs the *dependency cascade* (one producer pulled in 13
+downstream witnesses before timing out at 2m30s; that partial run was
+reverted). At ~2.5 min × 392 that is a **~15-hour** job — a dedicated
+batch/CI run with progress logging (per CLAUDE.md "Long-compute logging
+discipline"), **not** an interactive session task. Recommended shape:
+a `q0-repin-regen.yml` workflow (or an overnight `nohup` batch) that
+walks `witness_constant_staleness.py --list`, regenerates in dependency
+order, and re-runs the detector with `--strict` as the green gate.
+
+Quick triage list (or use the detector's `--list`):
 ```bash
+python3 folio-assistant/computations/witness_constant_staleness.py --list
 grep -rl '1.1099785955541805' folio-assistant/computations/*.witness.json
 ```
