@@ -61,7 +61,7 @@ noncomputable def vol_T34 : ℝ := 0
 noncomputable def vol_hopf_link : ℝ := 0
 
 /-- Vol(L6a4) = 7.32772475341775 (Borromean rings, exact: 8·G). -/
--- Ref: [snappy] SnapPy census, OEIS A006752
+-- Ref: [snappy] SnapPy census; [oeis-A006752] OEIS A006752
 noncomputable def vol_borromean : ℝ := 7.32772475341775
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -80,7 +80,7 @@ theorem torus_knots_nonhyperbolic :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Crossing numbers of building block knots. -/
--- Ref: [knot-atlas] Knot Atlas / KnotInfo
+-- Ref: [barnatan2024] Knot Atlas / KnotInfo
 noncomputable def crossings_unknot : ℕ := 0
 noncomputable def crossings_trefoil : ℕ := 3
 noncomputable def crossings_figure_eight : ℕ := 4

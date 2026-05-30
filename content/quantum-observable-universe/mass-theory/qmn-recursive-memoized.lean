@@ -100,7 +100,7 @@ theorem chi_q_recursive_halverson_ram
       (strips.map (fun xi =>
         strip_q_weight xi q *
         chi_qMN_partition (removeStrip xi) (rho.tail) q)).sum := by
-  -- Ref: [macdonald1995] Halverson-Ram 1995 broken-strip rule; generalises Macdonald
+  -- Ref: [halverson_ram_1998] Halverson-Ram broken-strip rule (1995/1998); generalises Macdonald
   -- §I.7 to Iwahori-Hecke H_n(q).  Concrete model: chi_qMN_partition
   -- ≡ 0 (via 0·_); each summand vanishes by zero_mul on the
   -- chi_qMN_partition factor; the RHS sum is 0.

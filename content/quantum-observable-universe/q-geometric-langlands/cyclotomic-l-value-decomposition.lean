@@ -2,7 +2,7 @@
 --      and zeta functions of elliptic curves*. CRM 11.
 -- Ref: [zagier1986] Zagier, *Hyperbolic manifolds and special
 --      values of Dedekind zeta-functions*. Invent. Math. 83.
--- Ref: [lewin1981] Lewin (1991), *Polylogarithms and Associated Functions*.
+-- Ref: [lewin1981] Lewin (1981), *Polylogarithms and Associated Functions*.
 --
 -- Sibling stub for `prop:cyclotomic-l-value-decomposition`.
 -- This file is documentation; the compiled formalisation lives

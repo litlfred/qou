@@ -96,7 +96,7 @@ theorem unique_q_solution (c : ℝ) (hc_pos : 0 < c) (hc_lt : c < 1) :
 
 /-- The CODATA ratio Vol(4₁)/(m_μ/m_e) is in (0,1), ensuring
     a unique q > 1 solution exists. -/
--- Ref: [codata2022] CODATA 2018
+-- Ref: [codata2022] CODATA 2022
 theorem codata_ratio_in_range :
     0 < (2.02988 : ℝ) / 206.7682830 ∧ (2.02988 : ℝ) / 206.7682830 < 1 := by
   constructor
