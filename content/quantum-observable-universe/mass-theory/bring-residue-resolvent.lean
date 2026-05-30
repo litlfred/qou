@@ -82,64 +82,90 @@ noncomputable def canonicalResolvent
 
     Closing the class is queued as a Mathlib-import follow-up. -/
 class BringResidueAtOrder {R : Type u} [Field R] (n : ℕ) (q : R) : Prop where
-  /-- The Bring residue evaluation at pole order `n` and substrate
-      parameter `q` equals the canonical resolvent form. -/
-  equals_resolvent : ∃ r : R, r = canonicalResolvent n q
+  /-- The pole at order `n` is non-vanishing: `1 - h_q · q^n ≠ 0`.
+      This is the substantive precondition for the resolvent form
+      `1 / (1 - h_q · q^n)` to be well-defined as a field element.
 
-/-- **Resolvent form theorem (conditional on Bring residue class).**
+      **Strengthened 2026-05-30 (Phase 2 of the §3b-cond template):**
+      the previous existential field `∃ r : R, r = canonicalResolvent n q`
+      was trivially provable via `⟨canonicalResolvent n q, rfl⟩` —
+      the literal-rfl loophole that #1460 closed for
+      `BringZeroModeBlochClass`.  The strengthened field requires the
+      pole-vanishing condition that any concrete contour-integral
+      route (Mathlib `CircleIntegral` or substrate `BlochSuslin`)
+      must establish first; once the pole is non-zero, the resolvent
+      equation `(1 - h_q · q^n) · (1 / (1 - h_q · q^n)) = 1`
+      follows by `mul_inv_cancel₀`. -/
+  pole_nonzero : 1 - hShift q * q^n ≠ 0
 
-    Given the Bring residue evaluation at order `n` for the substrate
-    parameter `q`, there exists a real-valued witness equal to the
-    canonical resolvent form `1 / (1 - h_q · q^n)`.  The proof is
-    immediate from the class field; the *content* is in scaffolding
-    the named contour-integral as the bridge from "pole order n"
-    (proved via `prop:alpha-shift-torus-knot`) to the closed-form
-    resolvent ansatz used downstream (PRs #1444, merged #1445, #1455). -/
-theorem bring_residue_gives_resolvent
+/-- **Resolvent equation theorem (Phase-2 substantive content).**
+
+    Given the strengthened Bring residue class with the pole
+    non-vanishing precondition, the canonical resolvent form satisfies
+    the **resolvent equation** $(1 - h_q \cdot q^n) \cdot F_n(q) = 1$.
+    This is the algebraic identity that any concrete contour-integral
+    or substrate-Bloch-group route must produce — the bridge from
+    "pole order n proved via `prop:alpha-shift-torus-knot`" to the
+    closed-form resolvent ansatz used downstream (PRs #1444, merged
+    #1445, #1455).
+
+    Sorry-free: proof is `mul_inv_cancel₀ h.pole_nonzero`. -/
+theorem bring_residue_equation
     {R : Type u} [Field R] (n : ℕ) (q : R)
     [h : BringResidueAtOrder n q] :
-    ∃ r : R, r = canonicalResolvent n q :=
-  h.equals_resolvent
+    (1 - hShift q * q^n) * canonicalResolvent n q = 1 := by
+  unfold canonicalResolvent
+  exact mul_inv_cancel₀ h.pole_nonzero
 
 /-- **Specialisation at α_shift(T(3, 5)) = 10** — the Bring
-    color-tube p-n averaging weight from the merged #1445.
-
-    `1 / (1 − h_q · q^{10})` is the substrate evaluation of the
-    Bring residue at pole order 10. -/
+    color-tube p-n averaging weight from the merged #1445.  Now states
+    the substantive resolvent equation at pole order 10. -/
 theorem bring_residue_at_T_3_5
     {R : Type u} [Field R] (q : R)
     [BringResidueAtOrder 10 q] :
-    ∃ r : R, r = canonicalResolvent 10 q :=
-  bring_residue_gives_resolvent 10 q
+    (1 - hShift q * q^10) * canonicalResolvent 10 q = 1 :=
+  bring_residue_equation 10 q
 
 /-- **Specialisation at α_shift(T(2, 9)) = 9** — the `[9]_q` factor
     in #1444's `1 / α_EM = q · [9]_q · [10]_q + 2/(3π)`. -/
 theorem bring_residue_at_T_2_9
     {R : Type u} [Field R] (q : R)
     [BringResidueAtOrder 9 q] :
-    ∃ r : R, r = canonicalResolvent 9 q :=
-  bring_residue_gives_resolvent 9 q
+    (1 - hShift q * q^9) * canonicalResolvent 9 q = 1 :=
+  bring_residue_equation 9 q
 
-/-- **Specialisation at the meson force-carrier indices 3 and 4**
-    — `[3]_q · [4]_q = m_K² / m_π²` from PR #1455. -/
+/-- **Specialisation at the meson force-carrier indices 3 and 4** —
+    `[3]_q · [4]_q = m_K² / m_π²` from PR #1455.  Each leg satisfies
+    its own resolvent equation, jointly carrying the meson GMOR
+    factorisation. -/
 theorem bring_residue_meson_pair
     {R : Type u} [Field R] (q : R)
     [BringResidueAtOrder 3 q] [BringResidueAtOrder 4 q] :
-    (∃ r3 : R, r3 = canonicalResolvent 3 q) ∧
-    (∃ r4 : R, r4 = canonicalResolvent 4 q) := by
-  refine ⟨?_, ?_⟩
-  · exact bring_residue_gives_resolvent 3 q
-  · exact bring_residue_gives_resolvent 4 q
+    ((1 - hShift q * q^3) * canonicalResolvent 3 q = 1) ∧
+    ((1 - hShift q * q^4) * canonicalResolvent 4 q = 1) :=
+  ⟨bring_residue_equation 3 q, bring_residue_equation 4 q⟩
 
-/-- **Sub-singleton companion.**  Two Bring-residue evaluations at
-    the same `(n, q)` agree — uniqueness of the resolvent form at
-    a fixed pole order and substrate value, immediate from the
-    class field. -/
+/-- **Sub-singleton companion.**  The space of field elements equal
+    to `canonicalResolvent n q` is a subsingleton — immediate by
+    definition of equality (no class instance required).
+
+    Retained for downstream §3b-cond bookkeeping (the resolvent form
+    is unique as a closed-form element of the substrate field). -/
 theorem bring_residue_subsingleton
     {R : Type u} [Field R] (n : ℕ) (q : R) :
     Subsingleton {r : R // r = canonicalResolvent n q} := by
   refine ⟨fun ⟨r, hr⟩ ⟨r', hr'⟩ => ?_⟩
   apply Subtype.ext
   rw [hr, hr']
+
+/-- **Default instance** for the strengthened class: any concrete
+    `(n, q)` with the pole non-vanishing hypothesis (carried as a
+    `Fact`) discharges `BringResidueAtOrder n q` directly.  Lets
+    downstream code instantiate the class via a non-vanishing fact
+    rather than the full §3b-cond axiom-class chain. -/
+instance bringResidueAtOrder_of_pole_nonzero
+    {R : Type u} [Field R] (n : ℕ) (q : R)
+    [h : Fact (1 - hShift q * q^n ≠ 0)] : BringResidueAtOrder n q where
+  pole_nonzero := h.out
 
 end QOU.BraidKnot
