@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T16:14:40.733483+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-05-30T03:44:23.892484+00:00",
+  "commitSha": "3fda58749d66d5298e104771958a50ec12e47e51",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
-      "computed": 0.24224462930329393,
+      "computed": 4.0373601716288035e-07,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0,
@@ -15,7 +15,7 @@
     },
     {
       "name": "m_n_matches_codata_within_10ppm",
-      "computed": 2.000933403473519,
+      "computed": 1.7591316363147502,
       "expected": 0.0,
       "passed": true,
       "tolerance": 10.0,
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 15,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "f8077854e03b",
-  "scriptCommitSha": "db220b15c21b1a5f282c6c6cecad2d68672a0d69",
+  "scriptHash": "0cd92ae09497",
+  "scriptCommitSha": "267780da5e84424b11094ce13e976f707d52565b",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -39,29 +39,29 @@
   "contentBlock": "prop:proton-mass-substrate-identity",
   "auditOnly": "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
   "parameters": {
-    "q0": "1.109978595554180575281594",
+    "q0": "1.109978582751380807591669",
     "m_e_MeV": "0.510998949999999952",
-    "m_mu_MeV": "105.6583755",
-    "m_mu_over_m_e": "206.76828298766565"
+    "m_mu_MeV": "105.658397668671659",
+    "m_mu_over_m_e": "206.76832637067389"
   },
   "data": {
     "substrate_building_blocks": {
-      "abs_trM_borromean": "0.9985621631975700356800208",
-      "qfact_3": "6.120579304756190912391476",
-      "q_cubed": "1.367551884272548355746237",
-      "F_Bor": "4.469138597860733801813598",
-      "flavor_split_X": "0.001375711249867512216725088"
+      "abs_trM_borromean": "0.9985621638367872659512131",
+      "qfact_3": "6.120579277915063461513061",
+      "q_cubed": "1.367551836951385187966724",
+      "F_Bor": "4.469138735767522529389075",
+      "flavor_split_X": "0.001375710807027096008551109"
     },
     "predictions": {
-      "m_p_MeV": "938.2718608686258180532761",
-      "m_n_MeV": "939.5635405121653328885596",
-      "M_N_MeV": "938.9177006903955754709179",
-      "Q_beta_MeV": "0.7806806935395148834625786",
-      "Delta_m_pn_MeV": "1.291679643539514835283518"
+      "m_p_MeV": "938.2720881603788142358888",
+      "m_n_MeV": "939.5637677007443758960042",
+      "M_N_MeV": "938.9179279305615950659465",
+      "Q_beta_MeV": "0.7806805903655617082944375",
+      "Delta_m_pn_MeV": "1.291679540365561660115377"
     },
     "predictions_pathC": {
-      "m_n_MeV": "939.5651932326258180532761",
-      "m_n_residual_ppm": "-0.241906916983",
+      "m_n_MeV": "939.5654205243788142358888",
+      "m_n_residual_ppm": "4.66046763776e-6",
       "Delta_m_pn_MeV": "1.293332364",
       "Delta_m_pn_ppb": "3.092785832715111",
       "Q_beta_N3_MeV": "0.7823334140000000481790607",
@@ -69,13 +69,13 @@
     },
     "codata_comparison": {
       "m_p_codata_MeV": "938.27208816",
-      "m_p_residual_ppm": "-0.242244629303",
+      "m_p_residual_ppm": "4.03736017163e-7",
       "m_n_codata_MeV": "939.56542052",
-      "m_n_residual_ppm": "-2.00093340347",
+      "m_n_residual_ppm": "-1.75913163631",
       "M_N_codata_MeV": "938.91875434",
-      "M_N_residual_ppm": "-1.12219465162",
+      "M_N_residual_ppm": "-0.880171404166",
       "Q_beta_codata_MeV": "0.7823334100000000481790607",
-      "Q_beta_residual_ppm": "-2112.54746296"
+      "Q_beta_residual_ppm": "-2112.67934273"
     }
   }
 }
