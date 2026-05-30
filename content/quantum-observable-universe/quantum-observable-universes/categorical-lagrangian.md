@@ -34,3 +34,15 @@ Lagrangian *density* $\mathscr{L}(x)$ before integration over spacetime.
 Its first summand $\mathcal{D}_\nabla^2$ encodes the bosonic sector
 (gravity + gauge curvature); the second summand encodes the fermionic
 coupling of the state to the connection.
+
+The two-summand form $\mathcal{D}_\nabla^{2} + \psi^* \otimes \mathcal{D}_\nabla\psi$
+is the monoidal-categorical lift of the Chamseddine--Connes
+*spectral action principle* \cite{chamseddine-connes-1997},
+$S(D,\psi) = \mathrm{Tr}\,\chi(D/\Lambda) + (\psi, D\psi)$,
+whose bosonic summand reproduces gravity, gauge curvature, and the
+Higgs potential through the heat-kernel expansion of $\chi(D/\Lambda)$
+\cite{connes1996}.  The categorical setting replaces the Hilbert-space
+inner product $(\psi, D\psi)$ with the rigid pairing
+$\psi^* \otimes \mathcal{D}_\nabla\psi$, and the heat-kernel
+regulator with the bare $\mathcal{D}_\nabla^{2}$ (no UV divergence
+arises at the monoidal level).

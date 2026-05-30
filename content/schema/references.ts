@@ -1101,6 +1101,56 @@ export const references: CSLData[] = [
   }),
 
   ref({
+    id: "connes1996",
+    type: "article-journal",
+    title: "Gravity coupled with matter and the foundation of non-commutative geometry",
+    author: [
+      { family: "Connes", given: "Alain" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1996]] },
+    volume: "182",
+    issue: "1",
+    page: "155-176",
+    DOI: "10.1007/BF02506388",
+    URL: "https://arxiv.org/abs/hep-th/9603053",
+  }),
+
+  ref({
+    id: "chamseddine-connes-1997",
+    type: "article-journal",
+    title: "The Spectral Action Principle",
+    author: [
+      { family: "Chamseddine", given: "Ali H." },
+      { family: "Connes", given: "Alain" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1997]] },
+    volume: "186",
+    issue: "3",
+    page: "731-750",
+    DOI: "10.1007/s002200050126",
+    URL: "https://arxiv.org/abs/hep-th/9606001",
+  }),
+
+  ref({
+    id: "stolz-teichner-2012",
+    type: "article-journal",
+    title: "Traces in monoidal categories",
+    author: [
+      { family: "Stolz", given: "Stephan" },
+      { family: "Teichner", given: "Peter" },
+    ],
+    "container-title": "Transactions of the American Mathematical Society",
+    issued: { "date-parts": [[2012]] },
+    volume: "364",
+    issue: "8",
+    page: "4425-4464",
+    DOI: "10.1090/S0002-9947-2012-05615-7",
+    URL: "https://arxiv.org/abs/1010.4527",
+  }),
+
+  ref({
     id: "majid2002",
     type: "book",
     title: "A Quantum Groups Primer",
