@@ -99,13 +99,15 @@ def main():
     # H₃(q) Wenzl y from Markov axioms on {1, σ₁, σ₁σ₂}:
     #   (I)    y_(3) + 2·y_(21) + y_(111) = z²                  [tr_M(1)]
     #   (II)   q·y_(3) + h·y_(21) − q⁻¹·y_(111) = z²            [tr_M(σ₁)]
-    #   (III)  q²·y_(3) + h·y_(21) + q⁻²·y_(111) = z²           [tr_M(σ₁σ₂)]
-    # Solve symbolically; (III)−(II) gives a clean 2-var relation.
+    #   (III)  q²·y_(3) − y_(21) + q⁻²·y_(111) = z²             [tr_M(σ₁σ₂)]
+    # χ_(2,1)(σ₁σ₂) = −1 (q-indep): on (2,1), (σ₁σ₂)³ = Δ₃² acts as 1 because
+    # content sum c(2,1) = 0, so eigenvalues of σ₁σ₂ are non-trivial cube
+    # roots of unity ω,ω², whose sum is −1. (h-row was a length-2 mis-derivation.)
     from mpmath import matrix, lu_solve
     A = matrix([
         [1, 2, 1],
         [q, h, -1 / q],
-        [q**2, h, 1 / q**2],
+        [q**2, -1, 1 / q**2],
     ])
     b = matrix([z**2, z**2, z**2])
     y = lu_solve(A, b)
@@ -117,11 +119,11 @@ def main():
           f"y_(2,1) = {float(y_H3_std):.6f}   "
           f"y_(1,1,1) = {float(y_H3_sign):.6f}")
 
-    # T(3,5) = (σ₁σ₂)⁵ in H₃, via Δ₃²·(σ₁σ₂)² factorisation:
-    #   χ_(3)((σ₁σ₂)⁵)     = q³ · q⁴ = q⁷    (trivial: each σ→q)
-    #   χ_(2,1)((σ₁σ₂)⁵)   = 1 · (−1) = −1   (cube-root-of-unity; q-INDEP)
-    #   χ_(1,1,1)((σ₁σ₂)⁵) = q⁻³ · q⁻⁴ = q⁻⁷ (sign: each σ→−q⁻¹)
-    trM_T35 = y_H3_triv * q**7 + y_H3_std * (-1) + y_H3_sign * q**(-7)
+    # T(3,5) = (σ₁σ₂)⁵ in H₃, length 10 (= |Δ₃²|=6 + |(σ₁σ₂)²|=4):
+    #   χ_(3)((σ₁σ₂)⁵)     = q⁶ · q⁴ = q¹⁰    (trivial: each σ→q, 10 generators)
+    #   χ_(2,1)((σ₁σ₂)⁵)   = 1·(−1) = −1      (cube-root-of-unity; q-INDEP)
+    #   χ_(1,1,1)((σ₁σ₂)⁵) = q⁻⁶·q⁻⁴ = q⁻¹⁰   (sign: each σ→−q⁻¹, (−)¹⁰=+1)
+    trM_T35 = y_H3_triv * q**10 + y_H3_std * (-1) + y_H3_sign * q**(-10)
 
     print(f"\n[B] Canonical exact Markov traces")
     print(f"    tr_M(T(2,9)) = {float(trM_T29):.6f}     "
