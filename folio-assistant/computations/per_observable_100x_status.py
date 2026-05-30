@@ -272,54 +272,50 @@ def main() -> dict:
     # ── Q_β — Habiro-exact evaluation ──────────────────────────────
     # The Markov trace difference tr_M(β_n) - tr_M(β_p) lives in the
     # Habiro ring ℤ̂[q] and terminates at finite M=8 (proton/neutron).
-    # Q_β production wiring — canonical c_k closed forms (deep audit
-    # 2026-05-30: docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md).
+    # Q_β production wiring — STRICT Taylor-exact bar only (discipline
+    # lock per author 2026-05-30: "I don't want to keep coming back to
+    # this").
     #
-    # The c_k in Q_N = Q_A · Π(1 + c_k · u^k) (u = b·ℏ_q²) have CANONICAL
-    # closed forms derived from the substrate at q=1+ε expansion + Hopf-
-    # Jones q-deformation:
+    # FOUR-SESSION FLIP-FLOP HISTORY (see deep audit
+    # docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md):
     #
-    #   c_2 = -1                      (PROVED 2026-05-26: Kashiwara f̃₁²)
-    #   c_3 = J_Hopf(q=1) − ℏ_q² = −2 − ℏ_q²
-    #                                 (PROVED 2026-05-26 b2f9087315:
-    #                                  q-deformed Hopf invariant, 0.0038%
-    #                                  match — the −ℏ_q² is the q-
-    #                                  gravitational substrate correction)
-    #   c_4 = c_3 · b⁴                (2026-05-27 342ce62e42: Jones ×
-    #                                  Kashiwara mixing, Q_β at 100×
-    #                                  target on this rung alone)
+    #   c_2 = -1 (Kashiwara f̃₁²):
+    #     Lean N2_factor PROVED, Taylor match 4e-7. CLEARS BAR
     #
-    # The plain c_3 = J_Hopf(q=1) = −2 (without the ℏ_q² correction) is
-    # 0.49% off the Taylor coefficient. PR #1452 wired the plain form
-    # and missed the ℏ_q² piece; PR #1479 reverted to Q_N2 entirely;
-    # THIS WIRING restores the canonical J − ℏ_q² form per the deep
-    # audit's commit-history reconstruction.
+    #   c_3 = J_Hopf(q=1) = -2 (plain):
+    #     Lean knot invariant theorem, but Taylor coefficient gap 0.49%
+    #     at stale q₀, even worse at canonical q₀. Wired #1452,
+    #     reverted #1479. FAILS BAR.
+    #
+    #   c_3 = J_Hopf(q=1) - ℏ_q² (q-deformed):
+    #     2026-05-26 commit b2f9087315 stated "0.004% error" -
+    #     explicitly a NEAR-MATCH, not a Taylor-exact derivation. At
+    #     canonical (m_p-pin) q₀ the gap reopens to 2.6%. The 0.004%
+    #     was a stale-q₀ artifact. FAILS BAR.
+    #
+    #   c_4 = c_3 · b⁴:
+    #     Inherits c_3 near-match status. FAILS BAR.
+    #
+    # Only c_2 is Taylor-exact at compute precision. Q_β reports Q_N2
+    # (1247 ppb miss vs CODATA, the μ-p substrate tension floor).
+    #
+    # Future sessions: do NOT re-wire higher c_k as derivations unless
+    # you have a Lean theorem closing the residual to compute precision
+    # (<< 1 ppb). Structural approximations with stated residuals do
+    # NOT clear this bar.
     qb_n3 = load_witness("q-beta-operator-valued-N3.witness.json")
     qb_n3_data = qb_n3.get("data", {})
     if qb_n3_data.get("Q_N2") is not None:
-        from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-        from mpmath import sqrt as _sqrt  # noqa: E402
-        q0 = mpf(Q_50_DIGIT_STR)
-        h0 = q0 - 1 / q0
-        hbar_q0 = (q0 - 1) / q0
-        b0_sq = (h0 ** 2 + 3) / (h0 ** 2 + 4)
-        b0 = _sqrt(b0_sq)
-        u0 = b0 * hbar_q0 ** 2
-        # Canonical c_k (q-deformed knot invariants):
-        c_3 = mpf(-2) - hbar_q0 ** 2         # J_Hopf(q=1) − ℏ_q²
-        c_4 = c_3 * b0 ** 4                  # Jones × Kashiwara mixing
         Q_N2 = mpf(str(qb_n3_data["Q_N2"]))
-        Q_N3 = Q_N2 * (1 + c_3 * u0 ** 3)
-        Q_N4 = Q_N3 * (1 + c_4 * u0 ** 4)
-        Q_beta_best = Q_N4
+        Q_beta_best = Q_N2
         rows.append(_row_for(
-            "Q_beta", Q_N4,
-            "Q_N4 = Q_N3·(1+c_4·u^4), Q_N3 = Q_N2·(1+c_3·u^3) with "
-            "c_3 = J_Hopf(q=1) − ℏ_q² = -2 - ℏ_q² (q-deformed Hopf; "
-            "2026-05-26 b2f9087315, 0.0038% Taylor match) and "
-            "c_4 = c_3·b⁴ (2026-05-27 342ce62e42, Jones × Kashiwara). "
-            "Canonical substrate c_k per deep audit "
-            "docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
+            "Q_beta", Q_N2,
+            "Q_N2 (c_2 = -1 Lean Taylor-exact via "
+            "qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + "
+            "Kashiwara N2_factor, 4e-7 empirical match). Higher c_k "
+            "are q₀-dependent near-matches NOT wired per discipline "
+            "lock - see docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-"
+            "audit.md.",
         ))
     else:
         Q_beta_best = None

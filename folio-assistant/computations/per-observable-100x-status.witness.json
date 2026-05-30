@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T13:06:18.379447+00:00",
-  "commitSha": "82dcefb00534b3f13712e6fe5dd41f97d7950afd",
+  "computedAt": "2026-05-30T13:25:54.415806+00:00",
+  "commitSha": "e44e9e8500e0346e46b11792ab5f40e87b4ff766",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "b823f811e7de",
-  "scriptCommitSha": "82dcefb00534b3f13712e6fe5dd41f97d7950afd",
+  "scriptHash": "fdd0b6fd4cba",
+  "scriptCommitSha": "b88f92ae3891084fab41c8a3e04468b271968bcc",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -65,16 +65,16 @@
       {
         "obs": "Q_beta",
         "role": "CAL-3 anchor",
-        "pred_MeV": "0.782333409275",
+        "pred_MeV": "0.782334410278",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "0.9265",
+        "err_ppb": "1279.",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "0.1188",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
-        "source_witness": "Q_N4 = Q_N3·(1+c_4·u^4), Q_N3 = Q_N2·(1+c_3·u^3) with c_3 = J_Hopf(q=1) − ℏ_q² = -2 - ℏ_q² (q-deformed Hopf; 2026-05-26 b2f9087315, 0.0038% Taylor match) and c_4 = c_3·b⁴ (2026-05-27 342ce62e42, Jones × Kashiwara). Canonical substrate c_k per deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
+        "miss_factor": "164.0",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
+        "source_witness": "Q_N2 (c_2 = -1 Lean Taylor-exact via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor, 4e-7 empirical match). Higher c_k are q₀-dependent near-matches NOT wired per discipline lock - see docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)",
         "compute_truncation_ppb": "1.278e-41",
         "compute_output_dps": 50
@@ -82,15 +82,15 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565420520",
+        "pred_MeV": "939.565421521",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "0.0003661",
+        "err_ppb": "1.066",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "0.06370",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
+        "miss_factor": "185.4",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
         "compute_truncation_ppb": "1.064e-44",
@@ -99,15 +99,15 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.29333235997",
+        "pred_MeV": "1.29333336097",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "0.02693",
+        "err_ppb": "773.9",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "0.005682",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
+        "miss_factor": "163.3",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
         "compute_truncation_ppb": "7.732e-42",
@@ -149,8 +149,8 @@
     ],
     "summary": {
       "total": 7,
-      "beats_1x_count": 7,
-      "beats_100x_count": 7
+      "beats_1x_count": 4,
+      "beats_100x_count": 4
     },
     "upstream_witness_hashes": [
       {
@@ -171,11 +171,11 @@
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
-        "sha256": "d5ed46a2606d7f9dcb39a56055a174e28477accb45f6d203c326f9aeedaf8fcc",
-        "size_bytes": 4764,
-        "commitSha": "99ecb186f78875fd335fc418bf7caea9384e9cae",
-        "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
-        "computedAt": "2026-05-23T20:31:17.402609+00:00"
+        "sha256": "aa4907fcfb7234b82d44d12d2a6a15ef229ee2d4fc91dc1d8869737d6b99780a",
+        "size_bytes": 5245,
+        "commitSha": "e44e9e8500e0346e46b11792ab5f40e87b4ff766",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-30T13:18:19.417036+00:00"
       },
       {
         "path": "codata-2022-validation-masses.witness.json",
