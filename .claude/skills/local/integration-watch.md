@@ -4,10 +4,10 @@ roles: [reader, collaborator, owner]
 user_invocable: true
 description: >
   Dispatcher for the `/integration-watch` slash command. Routes to
-  one or more of the five concrete integration watchers
+  one or more of the six concrete integration watchers / audits
   (proof-integration-watcher, canonical-watcher,
   compute-integration-watcher, detangler-integration-watcher,
-  one-voice-integration-watcher).
+  one-voice-integration-watcher, proposition-consolidation-audit).
   With no argument, lists the available watchers and asks the user
   which to invoke. With arguments, dispatches the named watchers
   in parallel (each gets its own Monitor, queue, ledger, and
@@ -34,9 +34,11 @@ more concrete child watchers and invokes them.
 /integration-watch detanglement                 → same as `detangler`
 /integration-watch one-voice                    → just one-voice-integration-watcher
 /integration-watch voice                        → same as `one-voice`
+/integration-watch consolidation                → proposition-consolidation-audit (find similar props)
+/integration-watch dedupe                       → same as `consolidation`
 /integration-watch bibliography                 → bibliography watcher (block-level bib QA)
 /integration-watch bib                          → same as `bibliography`
-/integration-watch all                          → all six in parallel
+/integration-watch all                          → all watchers in parallel
 /integration-watch proof,canonical              → those two in parallel
 /integration-watch proof canonical              → same (space-separated)
 /integration-watch proof detanglement canonical → three in parallel
@@ -70,6 +72,13 @@ Per `integration-watcher §0` + `§4e` (full-context preamble):
    >   archimedean/algebraic wall placement. Persists per-block
    >   `<block>.qa.json` audit reports (multi-reviewer, hash-keyed
    >   staleness).
+   > - **consolidation** — proposition-consolidation-audit: find
+   >   similar propositions/theorems/lemmas that should be merged or
+   >   demoted to corollaries (H1: explicit "specialisation of"
+   >   wording; H2: same boxed equation under different
+   >   parametrisations; H3: uses-overlap > 70%). Helps keep
+   >   exposition tight (simply-stated theorems + simple corollaries
+   >   rather than a forest of overlapping special-case props).
 
 2. **Role-gate the chip set.** Before composing the
    `AskUserQuestion`, detect the user's role (`reader` /
@@ -145,7 +154,8 @@ When multiple watchers are dispatched in parallel:
   `local/canonical-watcher`,
   `local/compute-integration-watcher`,
   `local/detangler-integration-watcher`,
-  `local/one-voice-integration-watcher`
+  `local/one-voice-integration-watcher`,
+  `local/proposition-consolidation-audit`
 - **Inherits everything**: §0-§9 of the parent
 - **Write-side counterpart**: [`local/integration-backlog`](integration-backlog.md)
   — same argument grammar, but DRAINS the open findings into

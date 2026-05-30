@@ -782,7 +782,6 @@ export default chapter({
         "crystal-r-matrix-sub-lemma",
         "depth-stratified-frobenius-reciprocity",
         "eigenvalue-product-expansion",
-        "free-config-chi-lr-equivalence",
         "hoefsmit-ew-cell-content",
         "hoefsmit-ew-cell-content-table1-data",
         "hoefsmit-ew-cell-content-table2-data",
