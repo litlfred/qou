@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:type-b-folding-cpt",
+    "conj:type-b-folding-cpt",
     "prop:reverse-limit-q-to-infinity",
   ],
   cites: [

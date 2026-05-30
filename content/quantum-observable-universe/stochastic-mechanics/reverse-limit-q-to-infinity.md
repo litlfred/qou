@@ -89,5 +89,5 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
   [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy)
   (D12)
 - Bar involution: [`def:bar-involution`](#def:bar-involution) (D1)
-- Type-B folding for CPT: [`prop:type-b-folding-cpt`](type-b-folding-cpt.md) (D22)
+- Type-B folding for CPT: [`conj:type-b-folding-cpt`](type-b-folding-cpt.md) (D22)
 - Lusztig canonical basis ($q = 1$): D24 (literature-only currently)

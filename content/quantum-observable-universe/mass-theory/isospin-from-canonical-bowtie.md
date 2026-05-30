@@ -316,7 +316,7 @@ ultimately lives in the upstream-conjecture class instances.
 
 - The compute consumer:
   [`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
-- D6 (charge conjugation): [`prop:c-from-color-flavor-swap`](c-from-color-flavor-swap.md)
+- D6 (charge conjugation): [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md)
   — sibling Z/2 categorical symmetry on color sheets (same color-tube infrastructure)
 - The Markov-trace machinery: [`bar-involution.md`](bar-involution.md)
   Tables 1-4 — bar-symmetry classification of all framework quantities

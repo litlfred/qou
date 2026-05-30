@@ -7,7 +7,7 @@ export default remark({
     "Anyon ladder: generic $q$ ↔ root-of-unity ↔ $q \\to 1$",
   uses: [
     "prop:root-of-unity-mtc-truncation",
-    "prop:kazhdan-lusztig-classical-limit",
+    "conj:kazhdan-lusztig-classical-limit",
   ],
   tags: [
     "anyon",

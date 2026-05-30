@@ -41,7 +41,7 @@ calculus.*
 *Used by [confinement–grading correspondence](#prop:confinement-grading-correspondence)
 to upgrade the heuristic confinement filtration to a $\mathbb{Z}$-graded
 KLR shift, and by
-[cemetery-group emergence](#prop:cemetery-group-emergence) to
+[cemetery-group emergence](#conj:cemetery-group-emergence) to
 explain the GS engine's homological pruning.  No new $\mathrm{sorry}$
 is introduced in Lean: the conjecture replaces a class of brute-force
 S-polynomial bounds rather than an existing proof.*
