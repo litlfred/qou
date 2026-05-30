@@ -1174,7 +1174,11 @@ export const references: CSLData[] = [
       { family: "Tsai", given: "Chung-Jun" },
     ],
     "container-title": "Asian Journal of Mathematics",
-    issued: { "date-parts": [[2013]] },
+    issued: { "date-parts": [[2015]] },
+    volume: "19",
+    issue: "1",
+    page: "151-186",
+    DOI: "10.4310/AJM.2015.v19.n1.a7",
     URL: "https://arxiv.org/abs/1307.4604",
   }),
 
