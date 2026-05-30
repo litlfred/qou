@@ -49,3 +49,12 @@ inserted --- the morphism $\mathbf{1} \to \mathbf{1}$ obtained by
 "tracing out" the internal degrees of freedom of $A$.  The rigid
 structure provides the integration; the physics endomorphism encodes the
 dynamics.
+
+The trace $\mathrm{tr}(\Phi)$ used here is the abstract categorical
+trace of an endomorphism of a dualisable object in a balanced monoidal
+category \cite{stolz-teichner-2012}; specialising $\Phi$ to the
+categorical Lagrangian $\mathcal{L}_q$ recovers the monoidal lift of
+the Chamseddine--Connes spectral action
+\cite{chamseddine-connes-1997}, with the Markov trace
+$\mathrm{tr}_M$ on $H_n(q)$ replacing the Dixmier / heat-kernel trace
+on a Hilbert space.
