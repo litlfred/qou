@@ -1,0 +1,158 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T12:14:10.851434+00:00",
+  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
+  "assertions": [
+    {
+      "name": "candidates_evaluated",
+      "computed": 16,
+      "expected": 16,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Framework-mentioned + combined structural candidates tested honestly at q_0 (50 dps)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "alpha-em-4pi-combined-derivation",
+  "scriptFile": "alpha_em_4pi_combined_derivation.py",
+  "scriptHash": "3625232e5975",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Combined gap (i+ii+iii) probe for α/(4π) + test of framework's mentioned candidates 1/(2π[2]_q), 1/(4π)·(1-h_q²). Each individual sub-gap (matter trace, Bring integration, Q_q vertex) was refuted in #1466, #1469, #1471. This probe tests whether their COMBINATION closes α/(4π) and whether the framework's own q-deformed-1/(4π) candidates match.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "target_alpha_over_4pi": "0.000580704866442929781562257812526",
+    "alpha_em_codata": "0.00729735256928380099728510547238",
+    "framework_mentioned_candidates": [
+      {
+        "type": "framework-1/(4π)",
+        "name": "1/(4π) standard",
+        "F_value": "0.0795774715459",
+        "alpha_times_F": "0.000580704866443",
+        "ratio_to_target": 1.0
+      },
+      {
+        "type": "framework-1/(4π)",
+        "name": "1/(2π·[2]_q)",
+        "F_value": "0.0791462484859",
+        "alpha_times_F": "0.000577558079738",
+        "ratio_to_target": 0.9945810912098311
+      },
+      {
+        "type": "framework-1/(4π)",
+        "name": "1/(4π)·(1-h_q²)",
+        "F_value": "0.0760994419801",
+        "alpha_times_F": "0.000555324458454",
+        "ratio_to_target": 0.9562937914674781
+      },
+      {
+        "type": "framework-1/(4π)",
+        "name": "1/(4π)·(1-h_q²/2)",
+        "F_value": "0.077838456763",
+        "alpha_times_F": "0.000568014662449",
+        "ratio_to_target": 0.978146895733739
+      },
+      {
+        "type": "framework-1/(4π)",
+        "name": "1/(4π·[2]_q/2)",
+        "F_value": "0.0791462484859",
+        "alpha_times_F": "0.000577558079738",
+        "ratio_to_target": 0.9945810912098311
+      },
+      {
+        "type": "framework-1/(4π)",
+        "name": "1/(2π·[2]_q)·(1-h_q²/4)",
+        "F_value": "0.0782814528757",
+        "alpha_times_F": "0.00057124736127",
+        "ratio_to_target": 0.9837137490661011
+      }
+    ],
+    "combined_candidates": [
+      {
+        "type": "combined",
+        "name": "α·h_q²/(2π·[2]_q)",
+        "value": "2.52428738727e-5",
+        "ratio_to_target": 0.043469368574920154
+      },
+      {
+        "type": "combined",
+        "name": "α·h_q²/(4π)",
+        "value": "2.53804079886e-5",
+        "ratio_to_target": 0.04370620853252199
+      },
+      {
+        "type": "combined",
+        "name": "(Bring_shift)² / (16π²)",
+        "value": "0.000285166173741",
+        "ratio_to_target": 0.4910690270050577
+      },
+      {
+        "type": "combined",
+        "name": "(Bring_shift)² · h_q² / (4π)",
+        "value": "0.000156621365492",
+        "ratio_to_target": 0.26970906314550624
+      },
+      {
+        "type": "combined",
+        "name": "[3]_q² · h_q² / ([9]_q·[10]_q · 4π)",
+        "value": "0.000261392761799",
+        "ratio_to_target": 0.4501301382238559
+      },
+      {
+        "type": "combined",
+        "name": "[2]_q² · h_q²·Bring_shift / (4π · photon_denom)",
+        "value": "2.42117711412e-5",
+        "ratio_to_target": 0.04169376311492606
+      },
+      {
+        "type": "combined",
+        "name": "h_q² · Bring_shift / (2π · [9]_q · [10]_q)",
+        "value": "1.19750396753e-5",
+        "ratio_to_target": 0.020621559017788733
+      },
+      {
+        "type": "combined",
+        "name": "(Bring_shift/[2]_q)² / Area",
+        "value": "0.0002953976411",
+        "ratio_to_target": 0.5086880757688027
+      },
+      {
+        "type": "combined",
+        "name": "h_q⁴ · [9]_q · [10]_q / (4π · Area² · 2g)",
+        "value": "1.64804608172e-6",
+        "ratio_to_target": 0.002838009765290451
+      },
+      {
+        "type": "combined",
+        "name": "Q²·tr_M·Bring  [2]_q²·h_q · (2/(3π)) / ([9]·[10]·4π)",
+        "value": "0.00011581238179",
+        "ratio_to_target": 0.19943415060208328
+      }
+    ],
+    "best_overall": {
+      "type": "framework-1/(4π)",
+      "name": "1/(2π·[2]_q)",
+      "F_value": "0.0791462484859",
+      "alpha_times_F": "0.000577558079738",
+      "ratio_to_target": 0.9945810912098311
+    },
+    "final_verdict": "NEAR-MATCH (0.54%) — STILL in fit-class regime",
+    "cumulative_refutation_summary": {
+      "fit_class": "REFUTED (#1453)",
+      "B_3_unit_circle": "PARTIAL (#1457)",
+      "B_3_off_circle": "PARTIAL (#1457)",
+      "B_4": "PARTIAL (#1462)",
+      "gap_i_H_3_matter": "REFUTED -445% (#1466)",
+      "gap_ii_bring_surface": "REFUTED -67% (#1471)",
+      "gap_iii_Q_q_vertex": "REFUTED +11.2% (#1469)",
+      "combined": "-0.54% best — NEAR-MATCH (0.54%) — STILL in fit-class regime"
+    }
+  }
+}
