@@ -7,14 +7,23 @@
   (merged #1460 Phase 1) into the canonical Lake-built module tree
   under `QOU.Archimedean`.
 
-  **Phase-1 wire-up complete (this commit).**  The function signature
+  **Phase-1 wire-up partial (this commit).**  The function signature
   is now resolvable at its documented namespace
-  `QOU.Archimedean.BlochWigner_unit_circle` rather than via a
-  content-block-local axiom.  Downstream consumers — most notably
+  `QOU.Archimedean.BlochWigner_unit_circle` for any consumer inside
+  the `qou` Lake library.  Downstream consumers that live in the
+  Lake tree — e.g. future migrations of
   `BringZeroModeBlochClass.bring_zero_mode_realised` and the
-  `bring_zero_mode_additive_form` theorem — can now `import
-  QOU.Archimedean.BlochWignerUnitCircle` to obtain the signature
-  directly, without re-declaring an axiom.
+  `bring_zero_mode_additive_form` theorem — pick this up via `import
+  QOU.Archimedean.BlochWignerUnitCircle`.
+
+  **Note on content-block siblings.**  The current consumer at
+  `content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.lean`
+  is a content-block sibling (lives **outside** the `qou` Lake
+  library `srcDir`), so it cannot `import` Lake modules directly
+  and continues to use its inline `axiom BlochWigner_unit_circle`.
+  Switching that consumer to the Lake-tree declaration requires a
+  prior refactor that migrates the content-block sibling into the
+  Lake tree — tracked as a separate follow-up.
 
   **Phase-3 closure (deferred, research-grade).**  Replacing the
   declaration body with the actual Clausen-function definition (or
