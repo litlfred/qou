@@ -153,4 +153,113 @@ theorem binding_subsingleton
   rw [hB.factors A, hB'.factors A,
       hFC.matches_alpha_shift A, hFC'.matches_alpha_shift A]
 
+/-! ### Concrete light-nuclei force-carrier candidates (#1485)
+
+    The four light-nuclei candidate identifications from the
+    Phase-3 audit table, packaged as concrete `(p, k)` selectors and
+    a single `BindingForceCarrierKnot` instance.  This is the
+    "do all four in one go" consolidation requested on PR #1485:
+    rather than four separate sibling blocks (one per nucleus),
+    the four selectors share a single `αShiftAt`, `lightNucleusP`,
+    `lightNucleusK` and one instance discharges
+    `matches_alpha_shift` for all `A ∈ {2, 3, 4}`.
+
+    | A | nucleus    | T(p, k)  | α_shift |
+    |--:|------------|----------|--------:|
+    | 2 | D          | T(2, 3)  | 3       |
+    | 3 | T / ³He    | T(2, 5)  | 5       |
+    | 4 | ⁴He        | T(3, 4)  | 8       |
+
+    The A = 2 (D) candidate is informed by:
+    - T(2, 3) is the smallest non-trivial torus knot (trefoil) —
+      minimum-pole-order column-rich irrep;
+    - 𝓑₃-braid-closure consistency: the binding-endomorphism
+      analogy closes the deuteron via Vol(𝓑₃) to +0.19 %, and
+      T(2, 3) is the canonical boundary torus knot of 𝓑₃;
+    - ρ_0 ≈ 14.7 MeV/rad calibration (per
+      `binding_rotation_phase_lead.py`'s `rho_full(D) = 14.6673`).
+
+    The A = 3 (T, ³He) and A = 4 (⁴He) candidates are reproduced
+    from the audit table in the file header, with sentinel `0` for
+    A ∉ {2, 3, 4}.
+
+    **Status.**  These are CANDIDATE identifications, not derived
+    uniqueness theorems.  Phase 3 closure — proving each `(p_A, k_A)`
+    is the substrate's unique choice — requires the per-nucleus
+    H_{3A}(q) Wedderburn-block minimisation queued alongside the
+    meson force-carrier identification.  This block provides the
+    instance scaffolding; substrate-uniqueness is the remaining
+    open math. -/
+
+/-- Light-nuclei force-carrier `p`-index selector at A ∈ {2, 3, 4}.
+    A=2 → 2 (T(2,3)); A=3 → 2 (T(2,5)); A=4 → 3 (T(3,4)).  Sentinel
+    `0` elsewhere. -/
+def lightNucleusP : ℕ → ℕ := fun A =>
+  if A = 2 then 2
+  else if A = 3 then 2
+  else if A = 4 then 3
+  else 0
+
+/-- Light-nuclei force-carrier `k`-index selector.  A=2 → 3 (T(2,3));
+    A=3 → 5 (T(2,5)); A=4 → 4 (T(3,4)).  Sentinel `0` elsewhere. -/
+def lightNucleusK : ℕ → ℕ := fun A =>
+  if A = 2 then 3
+  else if A = 3 then 5
+  else if A = 4 then 4
+  else 0
+
+/-- Light-nuclei α_shift profile.  Equals `bindingAlphaShift
+    (lightNucleusP A) (lightNucleusK A)` pointwise by construction:
+    A=2 → 3 = 3·(2-1); A=3 → 5 = 5·(2-1); A=4 → 8 = 4·(3-1). -/
+def lightNucleusAlphaShift : ℕ → ℕ := fun A =>
+  if A = 2 then 3
+  else if A = 3 then 5
+  else if A = 4 then 8
+  else 0
+
+/-- Sanity check at the deuteron candidate T(2, 3): α_shift = 3. -/
+theorem light_nucleus_alpha_shift_at_deuteron :
+    lightNucleusAlphaShift 2 =
+    bindingAlphaShift (lightNucleusP 2) (lightNucleusK 2) := by
+  unfold lightNucleusAlphaShift lightNucleusP lightNucleusK bindingAlphaShift
+  rfl
+
+/-- Sanity check at the A=3 mirror pair T(2, 5): α_shift = 5. -/
+theorem light_nucleus_alpha_shift_at_A3 :
+    lightNucleusAlphaShift 3 =
+    bindingAlphaShift (lightNucleusP 3) (lightNucleusK 3) := by
+  unfold lightNucleusAlphaShift lightNucleusP lightNucleusK bindingAlphaShift
+  rfl
+
+/-- Sanity check at ⁴He's candidate T(3, 4): α_shift = 8. -/
+theorem light_nucleus_alpha_shift_at_He4 :
+    lightNucleusAlphaShift 4 =
+    bindingAlphaShift (lightNucleusP 4) (lightNucleusK 4) := by
+  unfold lightNucleusAlphaShift lightNucleusP lightNucleusK bindingAlphaShift
+  rfl
+
+/-- **Concrete `BindingForceCarrierKnot` instance covering all four
+    light-nuclei candidates A ∈ {2, 3, 4}.**
+
+    Closes the Phase-3 candidate identifications in a single
+    instance.  Discharges `matches_alpha_shift` by an exhaustive
+    case-split on A: the three light-nucleus branches close by the
+    sanity theorems above; the sentinel A ∉ {2, 3, 4} branch closes
+    by `simp` on the conditionals.  **No** `sorry`.
+
+    Substrate-uniqueness of each `(p_A, k_A)` — proving these are
+    the substrate's choices rather than candidates — remains open
+    pending the H_{3A}(q) Wedderburn-block minimisation. -/
+instance lightNucleiForceCarrierKnot :
+    BindingForceCarrierKnot lightNucleusAlphaShift lightNucleusP lightNucleusK where
+  matches_alpha_shift A := by
+    by_cases h2 : A = 2
+    · subst h2; exact light_nucleus_alpha_shift_at_deuteron
+    · by_cases h3 : A = 3
+      · subst h3; exact light_nucleus_alpha_shift_at_A3
+      · by_cases h4 : A = 4
+        · subst h4; exact light_nucleus_alpha_shift_at_He4
+        · unfold lightNucleusAlphaShift lightNucleusP lightNucleusK bindingAlphaShift
+          simp [h2, h3, h4]
+
 end QOU.BraidKnot

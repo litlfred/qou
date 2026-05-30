@@ -178,7 +178,6 @@ export default chapter({
         "meson-color-tube-uniqueness",
         "bring-residue-resolvent",
         "binding-alpha-shift-extension",
-        "binding-deuteron-force-carrier",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
       ],
