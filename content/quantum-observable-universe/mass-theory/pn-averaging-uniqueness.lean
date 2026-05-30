@@ -110,7 +110,22 @@ abbrev ColorPairWeight (R : Type u) [Field R] : Type u :=
     is the Phase 5q audit's load-bearing step.  The structural
     decomposition `factors` is the substantive content this
     class adds — the 2·(u,u) + 4·(u,d) + 1·(d,u) + 2·(d,d)
-    quark-pair multiplicities arise from p = uud × n = udd. -/
+    quark-pair multiplicities arise from p = uud × n = udd.
+
+    **Derivation-chain note (2026-05-30).**  The substrate
+    evaluation `w(t, t', q) = 1/(1 − h_q · q^{10})` per
+    `lambda_scale_refinement_h4_correction_bring.py` is not
+    purely empirical: the `q^{10}` exponent is the residue/pole
+    order of σ on the torus knot T(3,5), derived via
+    `prop:alpha-shift-torus-knot` (`alphaShift p k = k·(p−1)`,
+    Lean-proved in `mass-theory/alpha-shift-torus-knot.lean`
+    conditional on `HasAlphaShiftTorus 3 5`).  T(3,5) is the
+    second member of the genus-4 force-carrier pair
+    `{T(2,9), T(3,5)}` on Bring's surface
+    (`prop:em-coupling-bring-zero-mode`, genus g = 4).  Thus the
+    "10" in the closed-form Bring weight is derived; the
+    remaining open math is the residue calculation giving the
+    resolvent `1/(1 − ·)` form. -/
 class ColorFlavorCompatible (R : Type u) [Field R] (σ_pn : PnAveragingForm R) where
   /-- The per-pair color-tube weighting function.  Pinning this to
       the canonical Bring color-tube form is the open math. -/
