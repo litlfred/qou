@@ -1324,6 +1324,20 @@ hand-rolled combinatorial rule; the symmetric-crystal route gives the
 correct algebraic answer with less code and an audit trail to the
 KLR / Kashiwara literature (Brundan–Kleshchev, Kashiwara, Lecouvey).
 
+**Audit precedent (2026-05-30):** the §7b shortcuts are **authoring
+guidance, not proof-restructure triggers**. An external AI dialog
+re-pitching KLR/crystal as (a) GS compute-speedup, (b) positivity-
+by-construction, (c) Option E Δ_λ closure was assessed in
+[`docs/audits/2026-05-30-klr-dialog-assessment.md`](docs/audits/2026-05-30-klr-dialog-assessment.md);
+verdict was **0/6 candidate proofs would meaningfully shorten** with
+a KLR layer (existing GS arguments are already one-line Diamond-Lemma
+citations; positivity claims that appear are archimedean bounds on
+real `q > 0`, not `dim Hom ≥ 0` claims). Mass-formula mis-framings
+(re-introducing the purged `λ_scale`) and Bloch-Wigner / dilog-
+transcendence arguments on the trefoil (non-hyperbolic → D(z) = 0)
+are recurrent re-pitch failure modes — **read the audit doc first**
+before re-deriving the analysis on a new KLR re-pitch.
+
 ### 7c. Base ring convention: generic `R` vs. archimedean `ℝ` (STRICT)
 
 Every Lean declaration that holds in a generic commutative ring must
