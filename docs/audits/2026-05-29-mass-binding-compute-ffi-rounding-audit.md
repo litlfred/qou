@@ -264,6 +264,36 @@ the mandatory q₀ cross-check (no mpmath / no wheel). In priority order:
 5. **Regenerate f64 atom-chi witnesses at MPFR** if/when any
    precision-sensitive consumer reads them.
 
+## Implementation update (2026-05-29) — LP + SDP → Clarabel
+
+Roadmap item 2 was implemented this session (PR #1440):
+
+- **LP (done, verified).** `tools/hecke-engine/src/operator_selection_lp.rs`
+  solves the operator-selection LP over the `litlfred/Clarabel.rs` **MPFR**
+  backend (167 bits ≈ 50 dps), replacing scipy HiGHS f64. The dual
+  sign-mapping is proven by 5 cargo tests (strong duality, KKT,
+  complementary slackness, dual nonnegativity, feasibility). A JSON CLI
+  (`clarabel-operator-selection-lp`) bridges to Python via decimal
+  strings; `pyhecke.lp_dual_solver.solve_operator_selection_lp` gains a
+  non-regressing `backend="clarabel"` opt-in (default stays scipy).
+
+- **SDP (done for the diagonal lift; genuine dense-PSD blocked on
+  LAPACK).** The existing `solve_psd_operator_selection_sdp` enforces
+  `M(x) = diag(Gx) ⪰ 0`, which is *exactly* the LP's componentwise
+  `Gx ≥ 0`. So `backend="clarabel"` there faithfully delegates to the
+  verified MPFR LP and repackages as `SdpDualResult` — exact for the
+  diagonal lift, no cvxpy/SCS. A **genuine dense-PSD** Clarabel solve
+  (off-diagonal / moment-matrix lift) needs Clarabel's PSD cone, which
+  requires either `clarabel-sdp` (f64; its `sdp-netlib` build **fails in
+  this container with `cmake::fail`** — no CMake/gfortran/OpenBLAS
+  toolchain) or an MPFR PSD eigensolver. Tracked as a follow-up; it needs
+  a LAPACK-capable build env.
+
+- **Verification gate.** `folio-assistant/computations/clarabel_lp_crosscheck.py`
+  compares scipy LP, clarabel LP, and clarabel SDP on the dummy + random
+  SPD-Gram LPs (objective, active set, strong duality). Run it in a
+  scipy+numpy env before flipping any default backend.
+
 ## Cross-references
 
 - [`2026-05-20-compute-optimization-roadmap.md`](2026-05-20-compute-optimization-roadmap.md) — Tier menu + projected A-reach.

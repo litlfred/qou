@@ -428,10 +428,61 @@ class SdpDualResult:
         }
 
 
+def _solve_psd_via_clarabel_lp(
+    t: np.ndarray,
+    G: np.ndarray,
+    n_target: float,
+    *,
+    M_bound: float = 1e6,
+    prec_bits: int = 167,
+    clarabel_bin: Optional[str] = None,
+) -> SdpDualResult:
+    """Faithful Clarabel port of the *diagonal* PSD lift.
+
+    ``solve_psd_operator_selection_sdp`` enforces ``M(x) = diag(Gx) ⪰ 0``,
+    which is exactly the componentwise constraint ``Gx ≥ 0`` of the
+    operator-selection LP.  So the faithful MPFR port delegates to the
+    verified LP solver (`_solve_operator_selection_lp_clarabel`) and
+    repackages the result as an ``SdpDualResult`` — the PSD matrix's
+    eigenvalues are its diagonal entries ``(Gx)_i``.
+
+    A genuine *dense* PSD lift (off-diagonal correlations / moment matrix)
+    is NOT this function: it needs Clarabel's PSD cone (``clarabel-sdp``
+    f64 + LAPACK, or an MPFR eigensolver) and is tracked as a follow-up.
+    """
+    lp = _solve_operator_selection_lp_clarabel(
+        t, G, n_target, M_bound=M_bound, prec_bits=prec_bits,
+        clarabel_bin=clarabel_bin,
+    )
+    if not lp.feasible:
+        d = len(np.asarray(t, dtype=float))
+        return SdpDualResult(
+            X_star=[float("nan")] * d, Z_star=[],
+            primal_obj=float("nan"), dual_obj=float("nan"),
+            duality_gap=float("nan"), eigenvalues=[], feasible=False,
+        )
+    G = np.asarray(G, dtype=float)
+    x_star = np.asarray(lp.x_star, dtype=float)
+    gx = (G @ x_star).tolist()
+    return SdpDualResult(
+        X_star=lp.x_star,
+        Z_star=[lp.y0_star, *lp.y_star],
+        primal_obj=lp.primal_obj,
+        dual_obj=lp.dual_obj,
+        duality_gap=lp.duality_gap,
+        eigenvalues=sorted(gx),
+        feasible=True,
+    )
+
+
 def solve_psd_operator_selection_sdp(
     t: np.ndarray,
     G: np.ndarray,
     n_target: float,
+    *,
+    backend: str = "cvxpy",
+    prec_bits: int = 167,
+    clarabel_bin: Optional[str] = None,
 ) -> SdpDualResult:
     """SDP version of operator-selection: enforce M(x) ≽ 0 instead of Gx ≥ 0.
 
@@ -444,8 +495,22 @@ def solve_psd_operator_selection_sdp(
     replace M(x) with a denser SDP lift (e.g., the moment-matrix
     SDP from sdp_moment_lift.py).
 
+    Args:
+      backend: "cvxpy" (default, SCS f64) or "clarabel" (MPFR via the LP
+        solver — EXACT for the current diagonal lift; ~50 dps). The genuine
+        dense-PSD Clarabel cone is a separate follow-up.
+      prec_bits: MPFR precision for the clarabel backend (167 ≈ 50 dps).
+      clarabel_bin: explicit path to the clarabel LP binary (else autodetect).
+
     Returns SdpDualResult with both X*, Z* and strong-duality gap.
     """
+    if backend == "clarabel":
+        return _solve_psd_via_clarabel_lp(
+            t, G, n_target, prec_bits=prec_bits, clarabel_bin=clarabel_bin,
+        )
+    if backend != "cvxpy":
+        raise ValueError(f"unknown SDP backend {backend!r}; use 'cvxpy' or 'clarabel'")
+
     try:
         import cvxpy as cp
     except ImportError as e:

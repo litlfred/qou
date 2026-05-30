@@ -52,11 +52,18 @@ def _spd_gram(rng, d):
 
 
 def _compare(t, G, n_target):
-    from lp_dual_solver import solve_operator_selection_lp
+    from lp_dual_solver import (
+        solve_operator_selection_lp,
+        solve_psd_operator_selection_sdp,
+    )
 
     sp = solve_operator_selection_lp(t, G, n_target, backend="scipy")
     cl = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
-    return sp, cl
+    # SDP backend: the current PSD lift is diagonal (M(x)=diag(Gx)), so the
+    # clarabel SDP path delegates to the LP and must match the scipy LP
+    # objective exactly — validatable WITHOUT cvxpy.
+    sdp = solve_psd_operator_selection_sdp(t, G, n_target, backend="clarabel")
+    return sp, cl, sdp
 
 
 def main() -> int:
@@ -90,11 +97,12 @@ def main() -> int:
         ))
 
     n_fail = 0
-    print(f"{'case':<14}{'feas':<6}{'rel.obj':>12}{'active==':>10}{'gap_sp':>11}{'gap_cl':>11}")
+    print(f"{'case':<14}{'feas':<6}{'rel.obj':>12}{'active==':>10}"
+          f"{'gap_cl':>11}{'sdp_rel':>11}")
     print("-" * 66)
     for t, G, n_target, name in cases:
         try:
-            sp, cl = _compare(t, G, n_target)
+            sp, cl, sdp = _compare(t, G, n_target)
         except Exception as e:  # noqa: BLE001
             print(f"{name:<14}ERROR: {type(e).__name__}: {e}")
             n_fail += 1
@@ -105,10 +113,15 @@ def main() -> int:
             denom = max(abs(sp.primal_obj), 1e-30)
             rel = abs(sp.primal_obj - cl.primal_obj) / denom
             active_ok = sorted(sp.active_set) == sorted(cl.active_set)
-            ok = feas_ok and rel < REL_TOL and active_ok \
-                and sp.duality_gap < GAP_TOL and cl.duality_gap < GAP_TOL
+            # SDP (clarabel) must match the scipy LP objective: the lift is
+            # diagonal, so SDP ≡ LP.
+            sdp_rel = (abs(sp.primal_obj - sdp.primal_obj) / denom
+                       if sdp.feasible else float("inf"))
+            ok = (feas_ok and rel < REL_TOL and active_ok
+                  and sp.duality_gap < GAP_TOL and cl.duality_gap < GAP_TOL
+                  and sdp_rel < REL_TOL)
             print(f"{name:<14}{str(feas_ok):<6}{rel:>12.2e}"
-                  f"{str(active_ok):>10}{sp.duality_gap:>11.1e}{cl.duality_gap:>11.1e}"
+                  f"{str(active_ok):>10}{cl.duality_gap:>11.1e}{sdp_rel:>11.2e}"
                   f"  {'OK' if ok else 'FAIL'}")
             if not ok:
                 n_fail += 1
