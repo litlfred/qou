@@ -1,0 +1,97 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-30T19:40:09.041115+00:00",
+  "commitSha": "28ab0a5dbc4486904e8f9c3448263cc786a40203",
+  "assertions": [
+    {
+      "name": "symbolic_derivative_matches_pi2_over_240_d4",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "0 = sympy.simplify(deriv - π²/(240 d⁴))",
+      "source": "Class axiom energyPerArea(d) = -π²/(720 d³) differentiated via sympy.diff; sympy.simplify reduces the residue to 0 exactly."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 60,
+  "computation": "casimir-epsilon-vacuum-probe",
+  "scriptFile": "casimir_epsilon_vacuum_probe.py",
+  "scriptHash": "853a2853b647",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Conditional verification of conj:casimir-epsilon-vacuum.  Step 1: sympy-symbolic verification that d/dd[-π²/(720 d³)] = π²/(240 d⁴), discharging the calculus step of the §3b-cond conditional theorem.  Step 2: numerical evaluation of the standard-physics Casimir force per area at four sample plate separations (0.1–5 µm), matching Mohideen–Roy 1998 / Lamoreaux 1997 experimental geometries.  Step 3: explicit enumeration of the three open sub-problems that the conjecture's actual content requires (existence + scaling + prefactor of N_⊙(A, d) as a categorical object).  The conditional implication is rigorous modulo the PlateModeCount class hypothesis; the witness exists to document the rigorous chain and tabulate the numerical targets that any closure must reproduce.",
+  "contentBlock": "conj:casimir-epsilon-vacuum",
+  "parameters": {
+    "HBAR_J_S": 1.054571817e-34,
+    "C_M_S": 299792458,
+    "HBAR_C_J_M": 3.161526771559562e-26,
+    "class_axiom_energy_per_area": "-pi**2/(720*d**3)",
+    "expected_derivative": "pi**2/(240*d**4)"
+  },
+  "data": {
+    "symbolic_calculus_check": {
+      "energy_per_area": "-pi**2/(720*d**3)",
+      "sympy_derivative": "pi**2/(240*d**4)",
+      "expected_form": "pi**2/(240*d**4)",
+      "residue": "0",
+      "verified": true
+    },
+    "force_per_area_at_sample_separations": [
+      {
+        "separation_um": 0.1,
+        "force_per_area_Pa": -13.001257724477536,
+        "force_per_area_uPa": -13001257.724477537
+      },
+      {
+        "separation_um": 0.5,
+        "force_per_area_Pa": -0.020802012359164058,
+        "force_per_area_uPa": -20802.01235916406
+      },
+      {
+        "separation_um": 1.0,
+        "force_per_area_Pa": -0.0013001257724477536,
+        "force_per_area_uPa": -1300.1257724477537
+      },
+      {
+        "separation_um": 5.0,
+        "force_per_area_Pa": -2.080201235916406e-06,
+        "force_per_area_uPa": -2.080201235916406
+      }
+    ],
+    "open_subproblems_for_closure": [
+      {
+        "id": 1,
+        "name": "existence_of_categorical_N_unknot",
+        "description": "Construction of plate-constrained surreal-valued unknot-density N_⊙^in(A, d) within QOU; candidate is Yekutieli-homotopy lift of the link-projection functor restricted to plate-bounded ambient isotopy.",
+        "tractability": "medium",
+        "status": "not_started"
+      },
+      {
+        "id": 2,
+        "name": "scaling_A_over_d_cubed",
+        "description": "Derivation of the A/d³ scaling of the categorical mode-count from QOU substrate-conformal geometry. Should follow from dimensional analysis once (1) is settled.",
+        "tractability": "medium",
+        "status": "blocked_on_subproblem_1"
+      },
+      {
+        "id": 3,
+        "name": "prefactor_pi_squared_over_720",
+        "description": "Derivation of the π²/720 prefactor from a Hecke-trace identity on plate-boundary representations of H_n(q).  Standard physics gets π²/720 from ζ-regularising the cubic mode sum ∑ n³ → ζ(-3) = -B_4/4 = 1/120.  The QOU analogue would be a Markov-trace identity matching this regularisation.",
+        "tractability": "hard",
+        "status": "open"
+      }
+    ]
+  }
+}
