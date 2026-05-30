@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T11:55:50.423000+00:00",
-  "commitSha": "396762dbb1b615df9954c232a6148990fe1749e3",
+  "computedAt": "2026-05-30T12:56:33.517424+00:00",
+  "commitSha": "2a83182a641af1ddfbf35afd75279befb9fbea03",
   "assertions": [
     {
       "name": "alt_precision_emitted_all_tiers",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 72,
   "computation": "snappy-borromean-volume",
   "scriptFile": "snappy_borromean_volume.py",
-  "scriptHash": "1355b046657e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "361cbd7e681a",
+  "scriptCommitSha": "0105272688ed7fbb0d097b8f33886d7c93526ed3",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

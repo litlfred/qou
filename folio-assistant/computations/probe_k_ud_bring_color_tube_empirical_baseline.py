@@ -156,8 +156,16 @@ def main():
             best_residual_abs = abs(residual_pct)
             best_k = k
 
+    # Recover signed residual for the best k to keep the witness
+    # schema consistent with per-row `pdg_residual_pct` convention
+    # (Copilot review: don't store absolute value under a field
+    # name that implies signed).
+    best_pdg_residual_signed = next(
+        r["pdg_residual_pct"] for r in results if r["k"] == best_k
+    )
     print()
-    print(f"  Best integer k_ud = {best_k} (PDG residual {best_residual_abs:.3f}%)")
+    print(f"  Best integer k_ud = {best_k} "
+          f"(PDG residual {best_pdg_residual_signed:+.3f}%)")
     print()
     print("  Step 1 interpretation:")
     print("  - This is the EMPIRICAL baseline; no categorical derivation yet.")
@@ -192,7 +200,9 @@ def main():
     w.add_data("pdg_md_mu_err", str(M_D_OVER_M_U_PDG_ERR))
     w.add_data("scan_results", results)
     w.add_data("best_integer_k_ud", best_k)
-    w.add_data("best_pdg_residual_pct", best_residual_abs)
+    # Signed value matches per-row schema (Copilot review fix).
+    w.add_data("best_pdg_residual_pct", best_pdg_residual_signed)
+    w.add_data("best_pdg_residual_pct_abs", best_residual_abs)
     w.add_assertion(
         "scan_produced_results",
         computed=len(results), expected=7, tolerance=0,

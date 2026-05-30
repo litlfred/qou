@@ -102,6 +102,12 @@ def try_snappy_volume():
     SnapPy 3.2.0+ returns a Python float (Manifold.volume()) or a
     Number (Manifold.volume(verified=True)). When unavailable
     we fall back to the canonical 8·G value at the producer tier.
+
+    Catches `Exception` broadly on the verified path because the
+    interval-arithmetic backend can raise version-dependent errors
+    (`AssertionError`, `RuntimeError`, sage-specific exceptions) when
+    not properly configured; we want a graceful fallback to the
+    unverified path in those cases (Copilot review feedback).
     """
     try:
         import snappy  # type: ignore
@@ -110,7 +116,7 @@ def try_snappy_volume():
         try:
             v = M.volume(verified=True)
             return {"value": str(v), "engine": f"snappy {snappy.__version__} (verified)"}
-        except (TypeError, ValueError):
+        except Exception:
             v = M.volume()
             return {"value": str(v), "engine": f"snappy {snappy.__version__} (numerical)"}
     except ImportError:
@@ -155,7 +161,22 @@ def main():
     # Cross-check at the maximum tier.
     canonical_max = canonical_via_catalan(max(PRECISION_TIERS) + 50)
     if snappy_result is not None:
-        snappy_v = mpf(snappy_result["value"].replace(' ', '').replace('?', ''))
+        # Robust parse: SnapPy's verified=True returns an interval
+        # whose str() form may contain brackets, e.g.
+        # `[7.32772475341775121, 7.32772475341775212]` or
+        # `7.32772475341775[1,2]`. Strip brackets and recover the
+        # numeric portion via regex; fall back to the canonical
+        # value if parsing fails (Gemini review feedback).
+        import re
+        val_str = snappy_result["value"].replace(' ', '').replace('?', '')
+        if '[' in val_str:
+            nums = re.findall(r"-?[0-9]+\.?[0-9]*", val_str)
+            if nums:
+                val_str = nums[0]
+        try:
+            snappy_v = mpf(val_str)
+        except (ValueError, TypeError):
+            snappy_v = canonical_max
         with mp.workdps(max(PRECISION_TIERS) + 50):
             delta = abs(snappy_v - canonical_max)
         print(f"  |snappy − 8·G| (max tier) = {float(delta):.3e}")

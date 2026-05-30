@@ -45,7 +45,7 @@
   Ref: [SnapPy 3.2.0] Goerner-Hoffman-Weeks SnapPy manifold census.
 -/
 
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Data.Real.Basic
 
 namespace QOU.Archimedean.SnapPyAxioms
 
