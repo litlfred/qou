@@ -45,7 +45,8 @@ pub struct SdpDenseResult {
 ///
 /// * `t`          — objective, length `d`.
 /// * `psd_const`  — `M₀`, a `p × p` symmetric matrix (row-major).
-/// * `psd_slices` — `M_k` for `k = 0..d`, each `p × p` symmetric.
+/// * `psd_slices` — exactly `d` matrices `M_0, …, M_{d-1}` (one per
+///   variable; `psd_slices.len()` must equal `d = t.len()`), each `p × p`.
 /// * `n_target`   — net-constraint RHS.
 pub fn solve_operator_selection_sdp_dense(
     t: &[f64],
@@ -57,8 +58,16 @@ pub fn solve_operator_selection_sdp_dense(
     assert_eq!(psd_slices.len(), d, "psd_slices len {} != d {}", psd_slices.len(), d);
     let p = psd_const.len();
     assert!(p > 0, "PSD matrix must be non-empty");
+    // Validate squareness of every matrix (rows AND columns) so a ragged
+    // input fails with a clear message instead of an out-of-bounds panic.
+    for (i, row) in psd_const.iter().enumerate() {
+        assert_eq!(row.len(), p, "psd_const row {i} has {} cols != p {}", row.len(), p);
+    }
     for (k, m) in psd_slices.iter().enumerate() {
         assert_eq!(m.len(), p, "psd_slices[{k}] has {} rows != p {}", m.len(), p);
+        for (i, row) in m.iter().enumerate() {
+            assert_eq!(row.len(), p, "psd_slices[{k}] row {i} has {} cols != p {}", row.len(), p);
+        }
     }
     let sqrt2 = 2f64.sqrt();
 

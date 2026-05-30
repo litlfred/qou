@@ -291,14 +291,19 @@ def solve_operator_selection_lp(
         raise ValueError(f"unknown backend {backend!r}; use 'auto', 'scipy', or 'clarabel'")
     if backend in ("auto", "clarabel"):
         try:
-            return _solve_operator_selection_lp_clarabel(
+            _res = _solve_operator_selection_lp_clarabel(
                 t, G, n_target, M_bound=M_bound, dual_tol=dual_tol,
                 prec_bits=prec_bits, clarabel_bin=clarabel_bin,
             )
         except (ImportError, FileNotFoundError):
             if backend == "clarabel":
                 raise
-            # auto: clarabel unavailable → fall through to scipy below
+            # clarabel unavailable → fall through to scipy below
+        else:
+            # Return clarabel when forced, or in auto mode when it actually
+            # solved; otherwise (auto + infeasible/error) fall back to scipy.
+            if backend == "clarabel" or _res.feasible:
+                return _res
 
     from scipy.optimize import linprog  # SciPy is required for LP duals.
 
@@ -523,9 +528,12 @@ def solve_psd_operator_selection_sdp(
     SDP from sdp_moment_lift.py).
 
     Args:
-      backend: "cvxpy" (default, SCS f64) or "clarabel" (MPFR via the LP
-        solver — EXACT for the current diagonal lift; ~50 dps). The genuine
-        dense-PSD Clarabel cone is a separate follow-up.
+      backend: "auto" (default — clarabel MPFR via the diagonal-lift LP when
+        available, else cvxpy/SCS f64; falls back to cvxpy if clarabel is
+        unavailable or infeasible), "cvxpy", or "clarabel" (force; raises if
+        unavailable). For the current diagonal lift clarabel is EXACT. The
+        genuine dense-PSD cone is `operator_selection_sdp.rs`
+        (Rust, clarabel-sdp) — not yet wired into this Python entry point.
       prec_bits: MPFR precision for the clarabel backend (167 ≈ 50 dps).
       clarabel_bin: explicit path to the clarabel LP binary (else autodetect).
 
@@ -535,13 +543,18 @@ def solve_psd_operator_selection_sdp(
         raise ValueError(f"unknown SDP backend {backend!r}; use 'auto', 'cvxpy', or 'clarabel'")
     if backend in ("auto", "clarabel"):
         try:
-            return _solve_psd_via_clarabel_lp(
+            _res = _solve_psd_via_clarabel_lp(
                 t, G, n_target, prec_bits=prec_bits, clarabel_bin=clarabel_bin,
             )
         except (ImportError, FileNotFoundError):
             if backend == "clarabel":
                 raise
-            # auto: clarabel unavailable → fall through to cvxpy below
+            # clarabel unavailable → fall through to cvxpy below
+        else:
+            # Return clarabel when forced, or in auto mode when it solved;
+            # otherwise (auto + infeasible/error) fall back to cvxpy.
+            if backend == "clarabel" or _res.feasible:
+                return _res
 
     try:
         import cvxpy as cp
