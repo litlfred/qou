@@ -7,8 +7,8 @@ export default remark({
   tags: [
     "visualization",
     "cosmological-cone",
-    "bigbang",
-    "heatdeath",
+    "big-bang",
+    "heat-death",
     "exceptional-divisor",
     "reeb-bundle",
     "coral-sectors",
