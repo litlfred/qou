@@ -22,7 +22,7 @@ References:
   - Naruse (2014) hook formula for the cancellation-free analogue.
 
 All arithmetic is exact (Fraction); the final determinant times
-(n - |mu|)! is an integer.
+`(|lambda| - |mu|)!` is an integer.
 """
 
 from __future__ import annotations
@@ -47,29 +47,44 @@ def _inv_fact_frac(k: int) -> Fraction:
 
 
 def _det_fraction(matrix: list[list[Fraction]]) -> Fraction:
-    """Exact determinant of a square Fraction matrix via Laplace expansion.
+    """Exact determinant of a square Fraction matrix via Bareiss elimination.
 
-    Fine for small matrices (ell(lambda) <= ~12) where partition lengths in
-    QOU atom-branching contexts live (A-nucleon atom -> lambda |- 3A,
-    so ell(lambda) <= 3A; A <= 8 hits ell <= 24, which is the upper end).
-    For larger shapes, swap in Bareiss / sympy.Matrix.det.
+    Bareiss fraction-free Gaussian elimination is O(n^3) and minimises
+    denominator growth vs. naive Gauss on rationals. Comfortable for
+    `ell(lambda) <= 3A` (A-nucleon atom; A <= 10 hits ell <= 30) which
+    is the upper end of QOU atom-branching contexts.
+
+    Reference: Bareiss (1968), "Sylvester's identity and multistep
+    integer-preserving Gaussian elimination", Math. Comp. 22 (103).
     """
     n = len(matrix)
     if n == 0:
         return Fraction(1)
     if n == 1:
         return matrix[0][0]
-    if n == 2:
-        return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
-    # Laplace expansion along row 0
-    total = Fraction(0)
-    for j in range(n):
-        if matrix[0][j] == 0:
-            continue
-        minor = [row[:j] + row[j + 1 :] for row in matrix[1:]]
-        sign = 1 if j % 2 == 0 else -1
-        total += sign * matrix[0][j] * _det_fraction(minor)
-    return total
+    # Work on a copy; Bareiss mutates entries in-place.
+    M = [row[:] for row in matrix]
+    sign = 1
+    prev_pivot: Fraction = Fraction(1)
+    for k in range(n):
+        # Partial pivoting on the leading entry.
+        if M[k][k] == 0:
+            swapped = False
+            for i in range(k + 1, n):
+                if M[i][k] != 0:
+                    M[k], M[i] = M[i], M[k]
+                    sign = -sign
+                    swapped = True
+                    break
+            if not swapped:
+                return Fraction(0)
+        pivot = M[k][k]
+        for i in range(k + 1, n):
+            for j in range(k + 1, n):
+                M[i][j] = (M[i][j] * pivot - M[i][k] * M[k][j]) / prev_pivot
+            M[i][k] = Fraction(0)
+        prev_pivot = pivot
+    return Fraction(sign) * M[n - 1][n - 1]
 
 
 def concatenate_partitions(partitions: Sequence[Sequence[int]]) -> tuple[int, ...]:
@@ -128,17 +143,40 @@ def skew_syt_count(
         >>> skew_syt_count((2, 2), (2, 2))   # empty skew shape -> 1
         1
     """
-    lam = [int(x) for x in lambda_ if int(x) > 0]
+    raw_lam = [int(x) for x in lambda_]
+    if any(x < 0 for x in raw_lam):
+        raise ValueError(
+            f"skew_syt_count: lambda_ has negative parts: {lambda_!r}"
+        )
+    lam = [x for x in raw_lam if x > 0]
     L = len(lam)
+    # Weak-decrease check (partitions are weakly decreasing).
+    if any(lam[i] < lam[i + 1] for i in range(L - 1)):
+        raise ValueError(
+            f"skew_syt_count: lambda_ not weakly decreasing: {lambda_!r}"
+        )
     if L == 0:
         # Empty outer shape: only the empty skew is valid.
-        return 1 if (sum(int(x) for x in mu) == 0) else 0
+        if any(int(x) != 0 for x in mu):
+            return 0
+        return 1
 
-    m = [int(x) for x in mu]
+    raw_m = [int(x) for x in mu]
+    if any(x < 0 for x in raw_m):
+        raise ValueError(
+            f"skew_syt_count: mu has negative parts: {mu!r}"
+        )
+    # Weak-decrease check for mu (ignoring trailing zeros).
+    mu_nz_len = len([x for x in raw_m if x > 0])
+    if any(raw_m[i] < raw_m[i + 1] for i in range(mu_nz_len - 1)):
+        raise ValueError(
+            f"skew_syt_count: mu not weakly decreasing: {mu!r}"
+        )
+    m = list(raw_m)
     # Pad mu with zeros up to length L
     while len(m) < L:
         m.append(0)
-    # Truncate if mu longer than lambda
+    # Truncate if mu longer than lambda (with nonzero overflow -> 0)
     if any(m[i] > 0 for i in range(L, len(m))):
         return 0
     m = m[:L]
@@ -159,8 +197,11 @@ def skew_syt_count(
     ]
     det = _det_fraction(M)
     result = factorial(n) * det
-    # Result is provably an integer; assert and return.
-    assert result.denominator == 1, (
-        f"skew_syt_count({lambda_}, {mu}): non-integer result {result}"
-    )
+    # Result is provably an integer (Aitken-Steinberg). Use an explicit
+    # runtime check rather than `assert` so it survives `python -O`.
+    if result.denominator != 1:
+        raise RuntimeError(
+            f"skew_syt_count({lambda_!r}, {mu!r}): non-integer result "
+            f"{result} — Aitken-Steinberg should yield Z; this is a bug."
+        )
     return result.numerator
