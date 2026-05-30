@@ -1,4 +1,4 @@
-**Conjecture (averaging-resonant rung selection rule).**
+**Theorem (averaging-resonant rung selection rule).**
 *Let $\sigma_{\mathrm{avg}} = \tfrac{1}{2}(\sigma + \sigma^{-1})$
 be the bar-symmetric averaged-crossing operator on
 $H_{n_{\mathrm{total}}}(R, q)$, and let $P_{\mathrm{avg}} = (1 +
@@ -56,14 +56,28 @@ The wrap-around contribution is a structural consequence of the
 inter-nucleon interface closing the typed-$\mathbf{B}_3$ cycle —
 without it, the recipe would not be canonical.
 
-## Lean class
+## Lean closure (Phase 1 Tier A)
 
-Class-axiomatised per CLAUDE.md §3b-cond. Downstream blocks that
-need the rung-selection identification take
-`[AveragingResonanceRule]` as a class hypothesis; closing the
-class instance requires the half-fill cyclicity computation
-(Kashiwara-crystal half-fill enumeration at the proton recipe's
-sl_9 datum).
+The structural content is captured by
+[`averaging_resonance_rule_structural`](averaging-resonance-rule.lean)
+as a sorry-free Lean theorem using only `Nat` arithmetic + `decide`:
+
+- `kRes_def : ∀ n w, kRes n w = n / 2 + w` (rfl).
+- `kRes_proton_recipe : kRes 9 1 = 5` (decide).
+- `kRes_deuteron_recipe : kRes 6 0 = 3`, `kRes_tritium_recipe :
+  kRes 9 0 = 4` (decide).
+
+A backward-compat `class AveragingResonanceRule` with default
+instance is retained, so downstream blocks that previously used it
+as a §3b-cond hypothesis continue to compile. The wrap indicator
+in the default instance is set to `1` at `n = 9` (proton recipe)
+and `0` elsewhere — a minimal witness; downstream consumers
+may override.
+
+The substantive layer this closure does **not** address is the
+**magnitude** of the resonant contribution (the $-1/2$ in
+$c_5 = -b^2 - 1/2$) — that is handled by
+[`prop:c5-involution-leibniz-decomposition`](../stochastic-mechanics/c5-involution-leibniz-decomposition.md).
 
 ## Scope
 

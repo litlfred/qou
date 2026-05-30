@@ -17,7 +17,7 @@ in $H_{3A}(R, q)$.  Two production candidates have circulated:
 
 | candidate | form | status |
 |---|---|---|
-| uniform bar-invariant | $\sigma_{\rm avg} = (\sigma + \sigma^{-1})/2 = \sigma - h/2$ | current default ([`conj:averaging-resonance-rule`](#conj:averaging-resonance-rule)) |
+| uniform bar-invariant | $\sigma_{\rm avg} = (\sigma + \sigma^{-1})/2 = \sigma - h/2$ | current default ([`thm:averaging-resonance-rule`](#thm:averaging-resonance-rule)) |
 | Bring color-tube weighted | per-quark-composition weighted | "open audit finding" (Phase 5q); empirically reproduces $\Delta m_{n-p}$ to ${\approx}\,0.14\,\%$ of CODATA via Scheme 4 per-sheet PL integration |
 
 Both satisfy bar-invariance + standard normalisation; they differ

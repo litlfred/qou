@@ -1,9 +1,9 @@
-import { conjecture } from "../../schema/builders";
+import { theorem } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:averaging-resonance-rule",
+export default theorem({
+  label: "thm:averaging-resonance-rule",
   title:
-    "Averaging-resonant rung selection: $k = \\lfloor n_{\\mathrm{total}}/2 \\rfloor$ via half-fill cyclic structure of $\\sigma_{\\mathrm{avg}}$",
+    "Averaging-resonant rung selection: $k_{\\mathrm{res}}(n_{\\mathrm{total}}) = \\lfloor n_{\\mathrm{total}}/2 \\rfloor + \\mathbb{1}_{\\mathrm{wrap}}$",
   lean: {
     ref: "qou:QOU.BraidKnot.AveragingResonanceRule",
     validation: "not_checked",
@@ -22,7 +22,7 @@ export default conjecture({
     "rung-selection",
     "bar-invariant",
     "level-selection-rule",
-    "open-problem",
-    "conditional-on-class",
+    "closure-tier-a",
+    "phase-1-discharge",
   ],
 });

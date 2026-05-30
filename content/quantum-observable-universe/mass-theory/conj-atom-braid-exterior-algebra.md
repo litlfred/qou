@@ -1,4 +1,4 @@
-**Conjecture (atom-braid exterior-algebra structure).** *Let `A = Z + N` with $Z \geq 1$, $N \geq 0$, and let $T_w(Z, N) \in B_{3A}$ denote the canonical atom-braid word `atom_braid_word_3A(Z, N)` (`mass_at_3A_proper.py` recipe). Its image in the Iwahori–Hecke algebra $H_{3A}(q)$ under the standard $\sigma_i \mapsto T_i$ representation generates a sub-algebra whose GB-NF filtration shape is given by*
+**Conjecture (atom-braid exterior-algebra structure; partial-closure: verified at $A \leq 4$, general $A$ open).** *Let `A = Z + N` with $Z \geq 1$, $N \geq 0$, and let $T_w(Z, N) \in B_{3A}$ denote the canonical atom-braid word `atom_braid_word_3A(Z, N)` (`mass_at_3A_proper.py` recipe). Its image in the Iwahori–Hecke algebra $H_{3A}(q)$ under the standard $\sigma_i \mapsto T_i$ representation generates a sub-algebra whose GB-NF filtration shape is given by*
 
 $$
 \dim_R \bigl(F_k(T_w(Z, N))\bigr) \;=\; \binom{3A - Z}{\,k - (Z - 1)\,} \qquad (k = Z - 1, Z, \ldots, 3A - 1).
