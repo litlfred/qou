@@ -312,7 +312,6 @@
 | [prop:bar-apply-transfer](#prop:bar-apply-transfer) | Bar-transfer principle: one-sided bounds on bar-invariant properties extend for free | Ch 12 | `qou:QOU.Archimedean.BarApplyTransfer.bar_apply_transfer` |
 | [prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix) | Beta decay as a universal matrix-valued polynomial in $q$ | Ch 10 | `qou:QOU.Archimedean.beta_decay_transfer_matrix` |
 | [prop:beta-stability](#prop:beta-stability) | Beta-stability line from the Skein binding Lagrangian | Ch 8 | `qou:QOU.Braiding.beta_stability` |
-| [prop:bigbang-heatdeath](#prop:bigbang-heatdeath) | Big Bang and heat-death functors as evaluations at named surreal endpoints | Ch 22 | `qou:QOU.AppendixSurreals.BigbangHeatdeath` |
 | [prop:binding-alpha-shift-extension](#prop:binding-alpha-shift-extension) | Binding A≥3 via per-rep Reeb phase at a force-carrier torus knot | Ch 10 | `qou:QOU.BraidKnot.binding_unique_via_alpha_shift` |
 | [prop:binding-scale-catalan](#prop:binding-scale-catalan) | Binding energy scale $\alpha = m_e \times 8G$ | Ch 10 | `qou:QOU.BindingScale.bindingScale_value` |
 | [prop:jones-birthday](#prop:jones-birthday) | Birthday refinement of the Jones polynomial | Ch 22 | `qou:QOU.AppendixSurreals.JonesBirthday` |
@@ -849,6 +848,7 @@
 | [conj:gs-archimedean-agreement-trace](#conj:gs-archimedean-agreement-trace) | Archimedean agreement: Habiro polynomial trace evaluates to GB mass | Ch 10 | `qou:QOU.BraidKnot.HabiroResidueSumEquivalence.archimedean_agreement` |
 | [conj:kazhdan-lusztig-classical-limit](#conj:kazhdan-lusztig-classical-limit) | As $q \to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics | Ch 8 | `qou:QOU.BraidKnot.KazhdanLusztigClassicalLimit` |
 | [conj:root-of-unity-mtc-truncation](#conj:root-of-unity-mtc-truncation) | At $q = e^{2\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons | Ch 8 | `qou:QOU.BraidKnot.RootOfUnityMTCTruncation` |
+| [conj:bigbang-heatdeath](#conj:bigbang-heatdeath) | Big Bang and heat-death functors as evaluations at named surreal endpoints | Ch 22 | `qou:QOU.AppendixSurreals.BigbangHeatdeath` |
 | [conj:bring-hyperbolic-knot-bloch-decomposition](#conj:bring-hyperbolic-knot-bloch-decomposition) | Bloch-group decomposition of $2/(3\pi)$ from $S_5$-equivariantly embeddable hyperbolic knots in Bring's surface | Ch 12 | `qou:QOU.Archimedean.bring_hyperbolic_decomposition` |
 | [conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula) | Borromean baryon mass formula with common scale $\lambda_{\mathrm{scale}}$ | Ch 10 | `qou:QOU.Borromean.MassFormula` |
 | [conj:borromean-bloch-group-element](#conj:borromean-bloch-group-element) | Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$ | Ch 10 | `qou:QOU.BraidsAndKnots.BorromeanBlochGroupElement` |
