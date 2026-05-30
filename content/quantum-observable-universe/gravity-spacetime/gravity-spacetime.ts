@@ -28,5 +28,10 @@ export default chapter({
       label: "sec:gravity-spacetime-intro",
       blocks: ["intro"],
     }),
+    section({
+      title: "Positioning against canonical quantum-gravity programmes",
+      label: "sec:gravity-spacetime-lqg-comparison",
+      blocks: ["lqg-adm-ashtekar-comparison"],
+    }),
   ],
 });

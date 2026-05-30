@@ -2631,6 +2631,58 @@ export const references: CSLData[] = [
     DOI: "10.1103/PhysRevLett.128.122001",
   }),
 
+  // ── Ashtekar (1986): New variables for canonical gravity ──
+  ref({
+    id: "ashtekar1986",
+    type: "article-journal",
+    title: "New variables for classical and quantum gravity",
+    author: [{ family: "Ashtekar", given: "Abhay" }],
+    "container-title": "Physical Review Letters",
+    volume: "57",
+    issue: "18",
+    page: "2244-2247",
+    issued: { "date-parts": [[1986]] },
+    DOI: "10.1103/PhysRevLett.57.2244",
+  }),
+
+  // ── Rovelli (1995): Black hole entropy from loop quantum gravity ──
+  ref({
+    id: "rovelli1995",
+    type: "article-journal",
+    title: "Black hole entropy from loop quantum gravity",
+    author: [{ family: "Rovelli", given: "Carlo" }],
+    "container-title": "Physical Review Letters",
+    volume: "77",
+    issue: "16",
+    page: "3288-3291",
+    issued: { "date-parts": [[1996]] },
+    DOI: "10.1103/PhysRevLett.77.3288",
+  }),
+
+  // ── Rovelli (2004): Quantum Gravity (monograph) ──
+  ref({
+    id: "rovelli2004",
+    type: "book",
+    title: "Quantum Gravity",
+    author: [{ family: "Rovelli", given: "Carlo" }],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge, UK",
+    issued: { "date-parts": [[2004]] },
+    DOI: "10.1017/CBO9780511755804",
+  }),
+
+  // ── Thiemann (2007): Modern Canonical Quantum General Relativity ──
+  ref({
+    id: "thiemann2007",
+    type: "book",
+    title: "Modern Canonical Quantum General Relativity",
+    author: [{ family: "Thiemann", given: "Thomas" }],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge, UK",
+    issued: { "date-parts": [[2007]] },
+    DOI: "10.1017/CBO9780511755682",
+  }),
+
   // ── Osterwalder–Schrader (1973): Axioms for Euclidean Green's functions I ──
   ref({
     id: "osterwalder1973",
