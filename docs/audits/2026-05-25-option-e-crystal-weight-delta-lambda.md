@@ -44,7 +44,9 @@ Probe-2 (joint multi-atom) falsified the counter-framework "global Δ_λ" hypoth
 | Crystal-basis path | [`crystal-bases-path-a.md`](../../content/quantum-observable-universe/braids-and-knots/crystal-bases-path-a.md) | ✓ computational path | tie to Δ_λ(K) extraction |
 | Crystal vertex enumeration | [`crystal-basis-resolves-mass-tower-open-problems.lean`](../../content/quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.lean) L70-94 | ✓ finite graph traversal stub | extend to per-atom Δ_λ |
 | Frobenius Gram matrix | [`gram-matrix-dual.py`](../../folio-assistant/computations/gram-matrix-dual.py) (pyhecke) | ✓ computed (numpy 6×6) | Lean formalisation |
-| Frobenius Gram matrix | [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) L28-29 | ✗ stub `= 0` | replace with Hoefsmit-seminormal 6×6 |
+| Frobenius Gram matrix (Lean, content-block sibling) | [`particle-interactions/gram-matrix-h3-symbolic.lean`](../../content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean) | ✓ **landed on main** — full symbolic 6×6, all 21 upper-triangle entries as Laurent polynomials in `u = √q`, sympy-computed, verified to 1e-16 against `gram-matrix-dual.witness.json` at q_0 | wiring to `gram_matrix q = 0` stub is the only remaining sub-task (see row below) |
+| Frobenius Gram matrix (Lake-built production) | [`lean/QOU/Archimedean/frobenius_gram_matrix.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/frobenius_gram_matrix.lean) | ✓ **landed on main** — full 6×6 over generic ring `R` (CLAUDE.md §7c compliant), with explicit Hoefsmit-seminormal entries `g₁₅, g₃₄, g₃₅, g₅₅` and symmetry/positivity theorems | use directly in Phase 2 |
+| Wire `gram_matrix q = 0` stub | [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) L28-29 | ✗ still `= 0`; the production `gram_matrix` lives in `frobenius_gram_matrix.lean` so this content-block stub is mostly cosmetic | low-priority wiring; not blocking Phase 2 |
 | `gram_matrix(q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ hardwired to H_3 (6×6) | generalise to H_n |
 | `gram_inverse(q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ hardwired to H_3 | generalise to H_n |
 | `chi_lambda_braid(shape, word, q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ n-strand (f64) | mpfr variant for substrate precision |
@@ -68,7 +70,30 @@ This branch ships ONLY the scaffolding + framing. Full Option E is multi-PR over
 
 ### Phase 1 — categorical infrastructure (follow-on PRs)
 
-- [ ] Replace `gram_matrix q = 0` stub in [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) with computed Hoefsmit-seminormal 6×6 entries
+**Status update (2026-05-30, PR #1509 retrospective).** A misdirected
+attempt at the first Phase 1 item revealed that the symbolic
+Hoefsmit-seminormal 6×6 Gram matrix is **already done in main**, in
+two independent forms:
+
+  * [`particle-interactions/gram-matrix-h3-symbolic.lean`](../../content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean)
+    — full 21-entry symbolic matrix in `u = √q`, content-block sibling.
+  * [`lean/QOU/Archimedean/frobenius_gram_matrix.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/frobenius_gram_matrix.lean)
+    — full 6×6 over generic ring `R`, Lake-built production formalisation.
+
+The first checkbox in this section ("Replace `gram_matrix q = 0`
+stub") is therefore re-scoped from "implement the matrix" to "wire
+the existing matrix into the content-block sibling" — a low-priority
+cosmetic change since `frobenius_gram_matrix.lean` is already the
+production form. Crossed out below.
+
+**H_3 vs H_n=6 scope note.** Both existing Gram matrices are for
+H_3(q). The deuteron mass formula requires H_6(q) and the larger
+atomic nuclei H_n for n ≥ 9. Phase 1 still needs the **general H_n
+Gram matrix** generalisation (next checkbox below); the H_3 case is
+the entry-point sanity check.
+
+- [x] ~~Replace `gram_matrix q = 0` stub in [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) with computed Hoefsmit-seminormal 6×6 entries~~ **already done in `gram-matrix-h3-symbolic.lean` + `frobenius_gram_matrix.lean`**; the stub wiring is a separate cosmetic follow-up.
+- [ ] **Generalise the H_3 Gram matrix to H_n for n ≥ 4** — required for the deuteron (H_6) and larger atomic nuclei. The existing 21-entry symbolic 6×6 does not lift directly; the Hoefsmit-seminormal closed form for `tr_M(b_i · b_j)` at general n is the actual Phase 1 deliverable.
 - [ ] Formalise the canonical-basis trace ρ_w in Lean (extend [`lusztig-canonical-basis-q-eq-1.lean`](../../content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.lean) to q ≠ 1)
 - [ ] Build a Lean enumerator for crystal vertices at level n=6 (deuteron weight)
 - [ ] **Reuse**: Jones-Markov atlas (`814a7545b`) provides generic H_n y_λ solver — extends pyhecke-native's hardwired H_3 case. **No need to author from scratch**; reuse + cite.
