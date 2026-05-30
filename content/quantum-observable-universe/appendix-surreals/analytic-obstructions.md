@@ -110,7 +110,7 @@ Three narrow obstructions do bite:
    $\mathbb{CP}^1$ and metric completion of a universal cover
    — neither is native to $\mathbf{No}$. A surreal
    reformulation is proposed in
-   [Kashaev surreal reformulation](#prop:kashaev-surreal),
+   [Kashaev surreal reformulation](#conj:kashaev-surreal),
    but it **trades** the hyperbolic-volume problem for an
    asymptotic-surreal problem rather than solving it.
 

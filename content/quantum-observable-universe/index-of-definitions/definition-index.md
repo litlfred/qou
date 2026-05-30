@@ -520,8 +520,6 @@
 | [prop:hoefsmit-V21-cos-symmetrization](#prop:hoefsmit-V21-cos-symmetrization) | Hoefsmit seminormal matrix for $V_{(2,1)}$ + Markov-symmetrized cos character: $\chi^{(2,1),\mathrm{symm}}_q(\beta) = \mathrm{tr}\,\rho_{(2,1)}(\beta) \cdot \cos((z-1)h/2)$ | Ch 10 | `qou:QOU.BraidKnot.hoefsmit_V21_cos_symmetrization` |
 | [prop:hook-weight-derivation](#prop:hook-weight-derivation) | Hook weight $\beta_4 = -\tfrac{1}{2} w_{[2,2]}(4)$ from baryon Wedderburn-Artin decomposition | Ch 10 | `qou:QOU.BaryonWeight.beta4_hook` |
 | [prop:inductive-gb-reduction](#prop:inductive-gb-reduction) | Inductive Gröbner--Shirshov reduction (polynomial scaling) | Ch 8 | `qou:QOU.Interactions.inductiveGBReduction` |
-| [prop:infinitesimal-frobenius](#prop:infinitesimal-frobenius) | Infinitesimal Frobenius pairing: $\int_A \circ \mu = \mathrm{id} + O(\varepsilon)$ | Ch 22 | `qou:QOU.AppendixSurreals.InfinitesimalFrobenius` |
-| [prop:infinitesimal-observability](#prop:infinitesimal-observability) | Infinitesimal observability: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \leq \varepsilon$ | Ch 22 | `qou:QOU.AppendixSurreals.InfinitesimalObservability` |
 | [prop:vacuum-epsilon](#prop:vacuum-epsilon) | Infinitesimal vacuum: $\mathrm{Geom}(\unicode{9737}) = \varepsilon$ | Ch 22 | `qou:QOU.AppendixSurreals.VacuumEpsilon` |
 | [prop:pawlowski-leitner-inner-product](#prop:pawlowski-leitner-inner-product) | Inner product on intertwiner spaces | Ch 2 | `qou:QOU.PawLeiInnerProduct` |
 | [prop:integer-stability](#prop:integer-stability) | Integer stability: the valley of stability as a Diophantine constraint | Ch 12 | `qou:QOU.Archimedean.integer_stability` |
@@ -536,7 +534,6 @@
 | [prop:joint-galois-braid-figure-8-verified](#prop:joint-galois-braid-figure-8-verified) | Joint Galois $\times$ braid action commutes on the figure-8 bi-filtration cell — verified directly | Ch 17 | `qou:QOU.AlgebraicSubstrate.JointGaloisBraidFigure8.figure_8_joint_action` |
 | [prop:joint-tower-sdp-confinement](#prop:joint-tower-sdp-confinement) | Joint mass-tower confinement SDP at $q_0$ with GB-filtration + jet-order tracking | Ch 10 | `qou:QOU.BraidKnot.joint_tower_sdp_confinement` |
 | [prop:joint-galois-braid-discharged](#prop:joint-galois-braid-discharged) | Joint motivic-Galois $\times$ braid action commutes on every bi-filtration cell — discharged | Ch 17 | `qou:QOU.AlgebraicSubstrate.JointGaloisBraidDischarged.joint_action_discharged` |
-| [prop:kashaev-surreal](#prop:kashaev-surreal) | Kashaev volume conjecture as a surreal standard-part identity | Ch 22 | `qou:QOU.AppendixSurreals.KashaevSurreal` |
 | [prop:kelvin-dispersion-derivation](#prop:kelvin-dispersion-derivation) | Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem | Ch 16 | `qou:QOU.FluidDynamics.kelvin_dispersion_derivation` |
 | [prop:knot-factor-spectral-form](#prop:knot-factor-spectral-form) | Knot factor $a_K$ as a chirality-block Plancherel pairing | Ch 10 | `qou:QOU.BraidKnot.knot_factor_spectral_derivation` |
 | [prop:operator-selection-lp](#prop:operator-selection-lp) | Knot operator selection as linear program with LP duality | Ch 10 | `qou:QOU.ParticleInteractions.operator_selection_lp` |
@@ -655,7 +652,6 @@
 | [prop:brings-smoothness-resolution](#prop:brings-smoothness-resolution) | Smoothness of the Bring's surface and intrinsic resolution of projection singularities | Ch 6 | `qou:QOU.BringsSurface.brings_smoothness_resolution` |
 | [prop:b1-soft-sharpness-theorem](#prop:b1-soft-sharpness-theorem) | Soft sharpness of the keystone B1 is theorem-level — via Borel + polylog non-vanishing | Ch 22 | `qou:QOU.AppendixSurreals.B1SoftSharpnessTheorem.b1_soft_sharpness` |
 | [prop:sorting-color-energy](#prop:sorting-color-energy) | Sorting deposits energy $q + q^{-1}$ per crossing in the colour fibre | Ch 19 | `qou:QOU.BraidKnot.sorting_color_energy` |
-| [prop:spectral-normal-form](#prop:spectral-normal-form) | Spectral gap closure and singularity formation as $q \to 1$ read from normal-form exponents | Ch 22 | `qou:QOU.AppendixSurreals.SpectralNormalForm` |
 | [prop:q-spectral-sobolev](#prop:q-spectral-sobolev) | Spectral theory and Sobolev embedding for the $q$-Laplacian on $\Omega^1(A)$ | Ch 16 | `qou:QOU.FluidDynamics.p1_spectral_sobolev` |
 | [prop:spectral-chart-correspondence](#prop:spectral-chart-correspondence) | Spectral--chart correspondence: Hecke eigenspaces realise the chart-glue of $\mathbb{P}_q(V)$ | Ch 2 | `qou:QOU.spectral_chart_correspondence` |
 | [prop:spin-involution-lp-dual-invariance](#prop:spin-involution-lp-dual-invariance) | Spin involutions on Frobenius algebras leave the LP-dual shadow price invariant: $\sigma(c) = c \Rightarrow y_0^*(\sigma(\beta)) = y_0^*(\beta)$ | Ch 10 | `qou:QOU.BraidKnot.SpinInvolutionLPDualInvariance` |
@@ -666,7 +662,6 @@
 | [prop:strangelet-double-beta](#prop:strangelet-double-beta) | Strangelet interactions descend from the degree-2 fiber via double beta decay | Ch 13 | `qou:QOU.Archimedean.strangelet_double_beta` |
 | [prop:brane-boundary](#prop:brane-boundary) | Structure of the defining boundary | Ch 4 | `qou:QOU.Torsion.brane_boundary_structure` |
 | [prop:composite-crossing-parity](#prop:composite-crossing-parity) | Sublimation from shell-filling representation theory | Ch 18 | `qou:QOU.Information.crossing_parity_eq_Z` |
-| [prop:local-infinitesimal-field](#prop:local-infinitesimal-field) | Substrate parameter as a local infinitesimal field $\varepsilon(x)$ | Ch 22 | `qou:QOU.AppendixSurreals.LocalInfinitesimalField` |
 | [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Substrate parameter as the radial coordinate | Ch 2 | `qou:QOU.substrate_radial_coordinate` |
 | [prop:bar-t-duality-substrate](#prop:bar-t-duality-substrate) | Substrate-level bar T-duality: $\mathcal{E}_q \leftrightarrow \mathcal{E}_{1/q}$ | Ch 12 | `qou:QOU.Archimedean.BarTDualitySubstrate.bar_t_duality_substrate` |
 | [prop:flavor-split-substrate](#prop:flavor-split-substrate) | Substrate-pure derivation of the $u$--$d$ flavor split | Ch 13 | `qou:QOU.HadronicMass.flavor_split_substrate` |
@@ -890,6 +885,8 @@
 | [conj:cl3-zeta5-geometric-realization](#conj:cl3-zeta5-geometric-realization) | Geometric realisation of $\mathrm{Cl}_3(2\pi/5)$ as a Bring-natural depth-3 invariant | Ch 10 | `qou:QOU.BraidKnot.Cl3Zeta5GeometricRealization` |
 | [conj:gb-depth-period-correspondence](#conj:gb-depth-period-correspondence) | GS-depth $\leftrightarrow$ Goncharov period-depth correspondence | Ch 10 | `qou:QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence` |
 | [conj:crystal-graph-realization](#conj:crystal-graph-realization) | Hecke normal forms realise crystal highest-weight vectors | Ch 8 | `qou:QOU.BraidKnot.CrystalGraphRealization` |
+| [conj:infinitesimal-frobenius](#conj:infinitesimal-frobenius) | Infinitesimal Frobenius pairing: $\int_A \circ \mu = \mathrm{id} + O(\varepsilon)$ | Ch 22 | `qou:QOU.AppendixSurreals.InfinitesimalFrobenius` |
+| [conj:infinitesimal-observability](#conj:infinitesimal-observability) | Infinitesimal observability: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \leq \varepsilon$ | Ch 22 | `qou:QOU.AppendixSurreals.InfinitesimalObservability` |
 | [conj:inter-nucleon-channel-color-tube](#conj:inter-nucleon-channel-color-tube) | Inter-nucleon Hecke channel assignment from Bring color-tube weighting | Ch 6 | `qou:QOU.BraidsAndKnots.InterNucleonChannelColorTube` |
 | [conj:single-volume-irrationality](#conj:single-volume-irrationality) | Irrationality of a single hyperbolic knot volume | Ch 12 | `qou:QOU.Archimedean.SingleVolumeIrrationality` |
 | [conj:jet-filtered-knot-factor](#conj:jet-filtered-knot-factor) | Jet-filtered knot factor: per-level character convergence and nuclear quotient braid | Ch 10 | `qou:QOU.BraidKnot.jet_filtered_knot_factor` |
@@ -897,6 +894,7 @@
 | [conj:joint-galois-braid-action](#conj:joint-galois-braid-action) | Joint motivic-Galois $\times$ braid-group action on the bi-filtration $\mathcal{H}_q^{(n, K)}$ | Ch 10 | `qou:QOU.BraidKnot.JointGaloisBraidAction` |
 | [conj:kashaev-density-equals-sdp-multiplicity](#conj:kashaev-density-equals-sdp-multiplicity) | Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\rho_F = \nu_{\mathrm{SDP}}$) | Ch 10 | `qou:QOU.Kashaev.DensityEqualsSDPMultiplicity` |
 | [conj:kashaev-volume-conjecture](#conj:kashaev-volume-conjecture) | Kashaev volume conjecture (axiomatised as Lean class) | Ch 10 | `qou:QOU.Kashaev.VolumeConjecture` |
+| [conj:kashaev-surreal](#conj:kashaev-surreal) | Kashaev volume conjecture as a surreal standard-part identity | Ch 22 | `qou:QOU.AppendixSurreals.KashaevSurreal` |
 | [conj:knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio | Ch 10 | `qou:QOU.BraidKnot.KnotFactorFrobeniusPairing` |
 | [conj:n-v-leading-order-derivation](#conj:n-v-leading-order-derivation) | Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90) | Ch 13 | `qou:QOU.Observations.n_v_leading_order` |
 | [conj:levi-degeneracy](#conj:levi-degeneracy) | Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity | Ch 16 | `qou:QOU.FluidDynamics.LeviDegeneracy` |
@@ -928,10 +926,12 @@
 | [conj:shared-denominator-cusp-holonomy](#conj:shared-denominator-cusp-holonomy) | Shared-denominator cusp holonomy: roots of $(x; q)_n$ enforce Thurston completeness | Ch 10 | `qou:QOU.QPochhammer.shared_denominator_cusp_holonomy` |
 | [conj:shell-closure-nf-term-count](#conj:shell-closure-nf-term-count) | Shell closure from NF term count | Ch 14 | `qou:QOU.Molecular.ShellClosureNFTermCount` |
 | [conj:gs-spectral-decomposition-existence](#conj:gs-spectral-decomposition-existence) | Spectral decomposition of the mass into descended trace and residue sum | Ch 10 | `qou:QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition` |
+| [conj:spectral-normal-form](#conj:spectral-normal-form) | Spectral gap closure and singularity formation as $q \to 1$ read from normal-form exponents | Ch 22 | `qou:QOU.AppendixSurreals.SpectralNormalForm` |
 | [conj:spin-from-so3-fiber](#conj:spin-from-so3-fiber) | Spin $\mathrm{SU}(2)_S$ from full $\mathrm{SO}(3)$ fiber action on color-sheet rotations | Ch 8 | `qou:QOU.BraidsAndKnots.SpinFromSO3Fiber` |
 | [conj:staircase-ew-residual](#conj:staircase-ew-residual) | Staircase EW-residual: $q^{1/(2k-1)}$ as pairwise eigenvalue ratio of $\beta_{\mathrm{EW}}$ on $V_{\rho_k}$ | Ch 10 | `qou:QOU.StaircaseCornerHook.StaircaseEWResidual` |
 | [conj:rho-prefactor-structural](#conj:rho-prefactor-structural) | Structural prefactor rule: $\rho(\mathfrak{H}) = \dim_q(\lambda^*(T_w))$ | Ch 10 | `qou:QOU.BraidKnot.RhoPrefactorStructural` |
 | [conj:q-zero-stokes-region-identification](#conj:q-zero-stokes-region-identification) | Substrate $q_0$ identification via Stokes region of the generating function (over $\mathbb{Z}[q, q^{-1}]$) | Ch 8 | `qou:QOU.BraidKnot.QZeroStokesRegionIdentification` |
+| [conj:local-infinitesimal-field](#conj:local-infinitesimal-field) | Substrate parameter as a local infinitesimal field $\varepsilon(x)$ | Ch 22 | `qou:QOU.AppendixSurreals.LocalInfinitesimalField` |
 | [conj:q-collatz](#conj:q-collatz) | The $q$-Collatz conjecture: Skein-module crossing resolution | Ch 22 | `qou:QOU.AppendixSurreals.QCollatz` |
 | [conj:q-birch-swinnerton-dyer](#conj:q-birch-swinnerton-dyer) | The $q$-deformed Birch and Swinnerton-Dyer conjecture | Ch 22 | `qou:QOU.AppendixSurreals.QBirchSwinnertonDyer` |
 | [conj:higgs-t28](#conj:higgs-t28) | The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors | Ch 13 | `qou:QOU.HiggsT28.HiggsAsT28` |

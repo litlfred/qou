@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:infinitesimal-frobenius",
+export default conjecture({
+  label: "conj:infinitesimal-frobenius",
   title:
     "Infinitesimal Frobenius pairing: $\\int_A \\circ \\mu = \\mathrm{id} + O(\\varepsilon)$",
   lean: { ref: "qou:QOU.AppendixSurreals.InfinitesimalFrobenius", validation: "stub" },

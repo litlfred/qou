@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:infinitesimal-observability",
+export default conjecture({
+  label: "conj:infinitesimal-observability",
   title:
     "Infinitesimal observability: $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) \\leq \\varepsilon$",
   lean: { ref: "qou:QOU.AppendixSurreals.InfinitesimalObservability", validation: "stub" },
