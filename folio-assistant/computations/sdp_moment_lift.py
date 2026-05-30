@@ -53,6 +53,65 @@ except ImportError:
     HAVE_CVXPY = False
 
 
+# ── Rust Clarabel moment-SDP backend (no cvxpy dependency) ───────
+
+def _find_moment_sdp_bin(explicit: str | None = None) -> str:
+    """Locate the ``clarabel-confinement-moment-sdp`` binary."""
+    import os
+
+    if explicit:
+        return explicit
+    env = os.environ.get("QOU_CLARABEL_MOMENT_SDP_BIN")
+    if env:
+        return env
+    rel = (Path("tools") / "hecke-engine" / "target" / "release"
+           / "clarabel-confinement-moment-sdp")
+    for parent in Path(__file__).resolve().parents:
+        cand = parent / rel
+        if cand.exists():
+            return str(cand)
+    raise FileNotFoundError(
+        "clarabel-confinement-moment-sdp not found. Build via\n"
+        "  cargo build --release --manifest-path tools/hecke-engine/Cargo.toml "
+        "--features clarabel-sdp --bin clarabel-confinement-moment-sdp\n"
+        "or set $QOU_CLARABEL_MOMENT_SDP_BIN."
+    )
+
+
+def solve_moment_sdp_clarabel(c, G, n_target, *, lo=-10.0, hi=10.0,
+                              bin_path: str | None = None) -> dict:
+    """Solve the Lasserre moment SDP via the Rust Clarabel CLI (f64).
+
+    Same moment lift as ``lp_vs_sdp_report`` (M = [[1, xᵀ], [x, X]] ⪰ 0,
+    X ⪰ 0, tr(G·X) ≥ 0) but a **direct Clarabel call with no cvxpy
+    dependency** — `prop:confinement-sdp` solved by `#4`'s Rust engine
+    (`operator_selection_sdp::solve_confinement_moment_sdp`).
+
+    Cross-checked to ~1e-14 against the cvxpy+CLARABEL path
+    (`operator_selection_sdp::tests::moment_sdp_known_case`).
+
+    Returns ``{x_star, xtgx, tr_gx, objective, feasible, status}``.
+    """
+    import subprocess
+
+    c = np.asarray(c, dtype=float).flatten()
+    G = np.asarray(G, dtype=float)
+    payload = {
+        "c": c.tolist(), "G": G.tolist(),
+        "n_target": float(n_target), "lo": float(lo), "hi": float(hi),
+    }
+    proc = subprocess.run(
+        [_find_moment_sdp_bin(bin_path)],
+        input=json.dumps(payload), capture_output=True, text=True,
+    )
+    out = json.loads(proc.stdout) if proc.stdout.strip() else {}
+    if proc.returncode != 0 or "error" in out:
+        raise RuntimeError(
+            out.get("error", proc.stderr.strip() or "moment SDP solve failed")
+        )
+    return out
+
+
 @dataclass
 class SdpLiftReport:
     """LP vs SDP comparison for a single problem instance."""

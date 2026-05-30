@@ -159,6 +159,218 @@ pub fn solve_operator_selection_sdp_dense(
     }
 }
 
+/// Result of the Lasserre moment-matrix SDP (the canonical QOU dense lift).
+#[derive(Debug, Clone)]
+pub struct MomentSdpResult {
+    pub x_star: Vec<f64>,
+    /// `xᵀ G x` on the SDP solution (the quadratic Frobenius value).
+    pub xtgx: f64,
+    /// `tr(G·X)` — the moment-matrix Frobenius trace (constrained `≥ 0`).
+    pub tr_gx: f64,
+    pub objective: f64,
+    pub feasible: bool,
+    pub status: String,
+}
+
+/// Lasserre moment-matrix SDP — the canonical QOU **dense lift** of the
+/// operator-selection LP (`prop:confinement-sdp`, mirrors the cvxpy
+/// reference in `folio-assistant/computations/sdp_moment_lift.py`).
+///
+/// At q₀ the Gram `G` has a negative eigenvalue, so the componentwise LP
+/// `G x ≥ 0` is strictly weaker than the quadratic Frobenius positivity
+/// `xᵀ G x ≥ 0`.  The moment relaxation adds a symmetric matrix variable
+/// `X` and the moment matrix `M = [[1, xᵀ], [x, X]]`:
+///
+/// ```text
+///     min  c·x
+///     s.t. 1ᵀ x = n_target,  G x ≥ 0,  tr(G·X) ≥ 0,
+///          M = [[1, xᵀ], [x, X]] ⪰ 0,  X ⪰ 0,  lo ≤ x ≤ hi
+/// ```
+///
+/// `f64` (the PSD cone needs LAPACK).  Variables are `x (n)` followed by the
+/// upper-triangular `svec(X)` (n(n+1)/2 entries); the moment matrix `M`
+/// links them.  Required feature: `clarabel-sdp`.
+pub fn solve_confinement_moment_sdp(
+    c: &[f64],
+    g: &[Vec<f64>],
+    n_target: f64,
+    lo: f64,
+    hi: f64,
+) -> MomentSdpResult {
+    let n = c.len();
+    assert_eq!(g.len(), n, "G has {} rows != n {}", g.len(), n);
+    for (i, row) in g.iter().enumerate() {
+        assert_eq!(row.len(), n, "G row {i} has {} cols != n {}", row.len(), n);
+    }
+    let sqrt2 = 2f64.sqrt();
+
+    // Variable layout: x_0..x_{n-1}, then svec(X) in column-major upper-tri
+    // order. xvar(r,c) (r<=c) → n + c*(c+1)/2 + r.
+    let tri = |p: usize| p * (p + 1) / 2;
+    let xvar = |r: usize, col: usize| -> usize { n + tri(col) + r };
+    let nvars = n + tri(n);
+
+    let p_zero: CscMatrix<f64> = CscMatrix::<f64>::zeros((nvars, nvars));
+    let mut q_vec = vec![0.0_f64; nvars];
+    q_vec[..n].copy_from_slice(c);
+
+    // Build A as triplets (row, col, val) + b, then convert to CSC.
+    let mut trip: Vec<(usize, usize, f64)> = Vec::new();
+    let mut b_vec: Vec<f64> = Vec::new();
+    let mut row = 0usize;
+    let mut cones: Vec<SupportedConeT<f64>> = Vec::new();
+
+    // (1) equality 1ᵀx = n_target  → ZeroCone(1)
+    for j in 0..n {
+        trip.push((row, j, 1.0));
+    }
+    b_vec.push(n_target);
+    row += 1;
+    cones.push(SupportedConeT::ZeroConeT(1));
+
+    // (2) G x ≥ 0  → Nonneg(n);  s_i = (Gx)_i  ⇒  A coef on x_j = -G[i][j]
+    for i in 0..n {
+        for j in 0..n {
+            if g[i][j] != 0.0 {
+                trip.push((row, j, -g[i][j]));
+            }
+        }
+        b_vec.push(0.0);
+        row += 1;
+    }
+    cones.push(SupportedConeT::NonnegativeConeT(n));
+
+    // (3) tr(G·X) ≥ 0  → Nonneg(1).  tr = Σ_i G_ii X_ii + 2 Σ_{i<j} G_ij X_ij.
+    for col in 0..n {
+        for r in 0..=col {
+            let coef = if r == col { g[r][col] } else { 2.0 * g[r][col] };
+            if coef != 0.0 {
+                trip.push((row, xvar(r, col), -coef));
+            }
+        }
+    }
+    b_vec.push(0.0);
+    row += 1;
+    cones.push(SupportedConeT::NonnegativeConeT(1));
+
+    // (4) x ≥ lo  → Nonneg(n);  s_i = x_i - lo
+    for j in 0..n {
+        trip.push((row, j, -1.0));
+        b_vec.push(-lo);
+        row += 1;
+    }
+    cones.push(SupportedConeT::NonnegativeConeT(n));
+
+    // (5) x ≤ hi  → Nonneg(n);  s_i = hi - x_i
+    for j in 0..n {
+        trip.push((row, j, 1.0));
+        b_vec.push(hi);
+        row += 1;
+    }
+    cones.push(SupportedConeT::NonnegativeConeT(n));
+
+    // (6) M = [[1, xᵀ],[x, X]] ⪰ 0  → PSDTriangle(n+1).  svec column-major
+    // upper-tri, off-diagonal × √2. Index M with 0..=n.
+    for col in 0..=n {
+        for r in 0..=col {
+            let scale = if r == col { 1.0 } else { sqrt2 };
+            if r == 0 && col == 0 {
+                // constant 1
+                b_vec.push(scale); // scale==1
+            } else if r == 0 {
+                // M[0][col] = x_{col-1}
+                trip.push((row, col - 1, -scale));
+                b_vec.push(0.0);
+            } else {
+                // M[r][col] = X[r-1][col-1]
+                trip.push((row, xvar(r - 1, col - 1), -scale));
+                b_vec.push(0.0);
+            }
+            row += 1;
+        }
+    }
+    cones.push(SupportedConeT::PSDTriangleConeT(n + 1));
+
+    // (7) X ⪰ 0  → PSDTriangle(n).
+    for col in 0..n {
+        for r in 0..=col {
+            let scale = if r == col { 1.0 } else { sqrt2 };
+            trip.push((row, xvar(r, col), -scale));
+            b_vec.push(0.0);
+            row += 1;
+        }
+    }
+    cones.push(SupportedConeT::PSDTriangleConeT(n));
+
+    // Triplets → CSC (column-major).
+    let m_rows = row;
+    let mut cols: Vec<Vec<(usize, f64)>> = vec![Vec::new(); nvars];
+    for (r, col_idx, v) in trip {
+        cols[col_idx].push((r, v));
+    }
+    let mut indptr = vec![0usize];
+    let mut rows_csc: Vec<usize> = Vec::new();
+    let mut vals_csc: Vec<f64> = Vec::new();
+    for col in cols.iter_mut() {
+        col.sort_by_key(|&(r, _)| r);
+        for &(r, v) in col.iter() {
+            rows_csc.push(r);
+            vals_csc.push(v);
+        }
+        indptr.push(rows_csc.len());
+    }
+    let a_csc = CscMatrix::new(m_rows, nvars, indptr, rows_csc, vals_csc);
+
+    let settings = DefaultSettingsBuilder::default()
+        .verbose(false)
+        .max_iter(300)
+        .build()
+        .unwrap();
+    let mut solver =
+        DefaultSolver::new(&p_zero, &q_vec, &a_csc, &b_vec, &cones, settings).unwrap();
+    solver.solve();
+
+    let status = format!("{:?}", solver.solution.status);
+    let feasible = matches!(
+        solver.solution.status,
+        SolverStatus::Solved | SolverStatus::AlmostSolved
+    );
+    let sol = &solver.solution.x;
+    let x_star: Vec<f64> = sol[..n].to_vec();
+
+    // Reconstruct X from the svec variables for the reported tr(G·X).
+    let mut xmat = vec![vec![0.0; n]; n];
+    for col in 0..n {
+        for r in 0..=col {
+            let v = sol[xvar(r, col)];
+            xmat[r][col] = v;
+            xmat[col][r] = v;
+        }
+    }
+    let mut tr_gx = 0.0;
+    for i in 0..n {
+        for j in 0..n {
+            tr_gx += g[i][j] * xmat[i][j];
+        }
+    }
+    let mut xtgx = 0.0;
+    for i in 0..n {
+        for j in 0..n {
+            xtgx += x_star[i] * g[i][j] * x_star[j];
+        }
+    }
+    let objective: f64 = c.iter().zip(&x_star).map(|(ci, xi)| ci * xi).sum();
+
+    MomentSdpResult {
+        x_star,
+        xtgx,
+        tr_gx,
+        objective,
+        feasible,
+        status,
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -209,5 +421,30 @@ mod tests {
         );
         assert!(r.duality_gap < 1e-5, "gap {}", r.duality_gap);
         assert!(r.min_diag > -1e-6, "min diag {}", r.min_diag);
+    }
+
+    /// Lasserre moment SDP (canonical QOU dense lift) on a Gram with a
+    /// negative eigenvalue. Optimum cross-checked against the cvxpy
+    /// reference (sdp_moment_lift.py): obj = -4, x* = (-9, 10, 0).
+    #[test]
+    fn moment_sdp_known_case() {
+        let g = vec![
+            vec![1.0, 0.9, 0.1],
+            vec![0.9, 1.0, 0.9],
+            vec![0.1, 0.9, 1.0],
+        ];
+        let c = vec![1.0, 0.5, 0.3];
+        let r = solve_confinement_moment_sdp(&c, &g, 1.0, -10.0, 10.0);
+        assert!(r.feasible, "status {}", r.status);
+        assert!((r.objective + 4.0).abs() < 1e-4, "obj {} != -4", r.objective);
+        assert!(
+            (r.x_star[0] + 9.0).abs() < 1e-3 && (r.x_star[1] - 10.0).abs() < 1e-3,
+            "x* = {:?}, expected ~(-9, 10, 0)",
+            r.x_star
+        );
+        let s: f64 = r.x_star.iter().sum();
+        assert!((s - 1.0).abs() < 1e-5, "1ᵀx = {} != n_target", s);
+        // The moment-relaxation constraint tr(G·X) ≥ 0 holds.
+        assert!(r.tr_gx > -1e-6, "tr(G·X) = {} < 0", r.tr_gx);
     }
 }

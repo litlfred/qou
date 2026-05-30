@@ -65,6 +65,12 @@ name = "clarabel-certify"
 path = "src/bin/clarabel_certify.rs"
 required-features = ["clarabel-sdp"]
 
+# Lasserre moment-matrix SDP (canonical QOU dense lift, prop:confinement-sdp)
+[[bin]]
+name = "clarabel-confinement-moment-sdp"
+path = "src/bin/clarabel_confinement_moment_sdp.rs"
+required-features = ["clarabel-sdp"]
+
 # R5.6 Wedderburn-block decomposition smoke: per-block ≡ monolithic at H_3/H_4
 [[bin]]
 name = "r5-6-smoke"
