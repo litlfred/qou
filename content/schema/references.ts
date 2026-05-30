@@ -1119,7 +1119,7 @@ export const references: CSLData[] = [
   ref({
     id: "chamseddine-connes-1997",
     type: "article-journal",
-    title: "The Spectral Action Principle",
+    title: "The spectral action principle",
     author: [
       { family: "Chamseddine", given: "Ali H." },
       { family: "Connes", given: "Alain" },
