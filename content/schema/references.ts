@@ -1759,7 +1759,7 @@ export const references: CSLData[] = [
     title: "The Cellular Automaton Interpretation of Quantum Mechanics",
     author: [{ family: "'t Hooft", given: "Gerard" }],
     publisher: "Springer",
-    "collection-title": "Lecture Notes in Physics",
+    "collection-title": "Fundamental Theories of Physics",
     volume: "185",
     issued: { "date-parts": [[2016]] },
     DOI: "10.1007/978-3-319-41285-6",
