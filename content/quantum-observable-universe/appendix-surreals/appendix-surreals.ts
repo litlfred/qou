@@ -104,6 +104,7 @@ export default chapter({
         "surreal-blowup-calculus",
         "surreal-blowup-calculus-table-data",
         "bigbang-heatdeath",
+        "cosmological-cone-visualization",
       ],
     },
     {
