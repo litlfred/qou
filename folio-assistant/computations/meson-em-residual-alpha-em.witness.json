@@ -1,0 +1,40 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T02:26:47.529631+00:00",
+  "commitSha": "d3204683c2ce511bc61054eeef063cc52a167c30",
+  "assertions": [
+    {
+      "name": "residual_in_em_window",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "residual within α_em × {f_π², ⟨q̄q⟩²} χPT window"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 57,
+  "computation": "meson-em-residual-alpha-em",
+  "scriptFile": "meson_em_residual_alpha_em.py",
+  "scriptHash": "dc25ba4367b8",
+  "scriptCommitSha": "d3204683c2ce511bc61054eeef063cc52a167c30",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Framework α_em⁻¹ = q·[9]_q·[10]_q = 137.036 (0.16% off CODATA). The 203 ppm m_K²/m_π² residual (49.5 MeV²) sits inside the χPT-EM window (LO α_em × {f_π², ⟨q̄q⟩²} spans 19–420 MeV²). α_em is the right SCALE; closure needs the NLO χPT matching via #1417's sinh/Coulomb channel.",
+  "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
+  "data": {
+    "alpha_em_inv_framework": 137.035944,
+    "alpha_em_inv_codata": 137.036,
+    "framework_alpha_miss_pct": 4.0865174115358114e-05,
+    "residual_MeV2": 49.505870017128686,
+    "residual_over_pi_em_splitting": 0.03925432053705446,
+    "closest_em_candidate": "(α/π)·m_π²",
+    "closest_em_value_MeV2": 45.24829461626925,
+    "conclusion": "α_em is the right scale; NLO χPT matching open"
+  }
+}
