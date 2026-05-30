@@ -176,8 +176,14 @@ theorem binding_subsingleton
     - 𝓑₃-braid-closure consistency: the binding-endomorphism
       analogy closes the deuteron via Vol(𝓑₃) to +0.19 %, and
       T(2, 3) is the canonical boundary torus knot of 𝓑₃;
-    - ρ_0 ≈ 14.7 MeV/rad calibration (per
-      `binding_rotation_phase_lead.py`'s `rho_full(D) = 14.6673`).
+    - calibration consistency with the `binding_rotation_phase_lead.py`
+      probe: `rho_full(D) = 14.6673 MeV/rad` is the per-deuteron
+      phase-weighted aggregation (witness output); the abstract
+      substrate coupling `ρ_0` in the class signature is the
+      dimensionless ratio `B(D)/(m_e · 3) ≈ 1.451` derived after
+      dividing by `m_e · α_shift`.  The two quantities are **distinct**
+      — bridged by the `α_shift = 3` normalisation — see the .md
+      narrative for the full disambiguation.
 
     The A = 3 (T, ³He) and A = 4 (⁴He) candidates are reproduced
     from the audit table in the file header, with sentinel `0` for
