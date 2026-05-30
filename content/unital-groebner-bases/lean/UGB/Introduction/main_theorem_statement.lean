@@ -38,6 +38,7 @@ monomials which do not occur as leading monomials of members of $G$. Then:
 theorem main_theorem_statement [ctx : MainTheoremStatementContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
+  -- Ref: [manuscript] unital-groebner-bases — sorry pending Lean translation
   sorry
 
 end UGB.Introduction

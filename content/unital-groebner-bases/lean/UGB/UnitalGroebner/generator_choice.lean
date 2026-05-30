@@ -40,6 +40,7 @@ $\gamma_i \in \Gamma$.
 theorem generator_choice [ctx : GeneratorChoiceContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
+  -- Ref: [manuscript] unital-groebner-bases — sorry pending Lean translation
   sorry
 
 end UGB.UnitalGroebner

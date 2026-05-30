@@ -49,6 +49,7 @@ corollary follows from [Theorem 2](#thm:ugb-main). $\square$
 theorem ugb_pbw_corollary [ctx : UgbPbwCorollaryContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
+  -- Ref: [manuscript] unital-groebner-bases — sorry pending Lean translation
   sorry
 
 end UGB.BuchbergerPBW

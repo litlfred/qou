@@ -36,6 +36,7 @@ remainder under the division algorithm.
 theorem buchberger_theorem [ctx : BuchbergerTheoremContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
+  -- Ref: [manuscript] unital-groebner-bases — sorry pending Lean translation
   sorry
 
 end UGB.BuchbergerPBW

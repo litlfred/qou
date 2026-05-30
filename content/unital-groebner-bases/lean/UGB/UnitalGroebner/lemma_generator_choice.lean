@@ -36,6 +36,7 @@ $h_i = g_{\gamma_i}$ for some $\gamma_i \in \Gamma$.
 theorem lemma_generator_choice [ctx : LemmaGeneratorChoiceContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
+  -- Ref: [manuscript] unital-groebner-bases — sorry pending Lean translation
   sorry
 
 end UGB.UnitalGroebner
