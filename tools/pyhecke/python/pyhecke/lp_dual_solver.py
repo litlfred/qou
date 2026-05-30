@@ -175,51 +175,9 @@ def _find_clarabel_lp_bin(explicit: Optional[str] = None) -> str:
     )
 
 
-def _solve_operator_selection_lp_clarabel(
-    t: np.ndarray,
-    G: np.ndarray,
-    n_target: float,
-    *,
-    M_bound: float = 1e6,
-    dual_tol: float = 1e-9,
-    prec_bits: int = 167,
-    clarabel_bin: Optional[str] = None,
-) -> LpDualResult:
-    """EXPERIMENTAL: solve via the MPFR Clarabel CLI (subprocess).
-
-    Same LP as the scipy path but solved at ``prec_bits`` MPFR precision
-    (167 bits ≈ 50 dps) instead of HiGHS f64, via the
-    ``clarabel-operator-selection-lp`` binary.  Values cross the boundary
-    as decimal strings, so no f64 truncation is introduced by the
-    marshalling itself (the *inputs* here are still f64 because callers
-    pass ``np.ndarray``; pass 50-dps strings upstream for full precision).
-
-    NOT yet cross-checked against the scipy backend to 1e-25 — that needs
-    a scipy+numpy environment.  The scipy backend therefore remains the
-    default; this path is opt-in via ``backend="clarabel"``.
-    """
-    import json as _json
-    import subprocess
-
-    t = np.asarray(t, dtype=float)
-    G = np.asarray(G, dtype=float)
-    d = len(t)
-    assert G.shape == (d, d), f"Gram matrix shape {G.shape} ≠ ({d},{d})"
-
-    payload = {
-        "t": [repr(float(x)) for x in t],
-        "G": [[repr(float(G[i, j])) for j in range(d)] for i in range(d)],
-        "n_target": repr(float(n_target)),
-        "m_bound": repr(float(M_bound)),
-        "dual_tol": repr(float(dual_tol)),
-        "prec_bits": int(prec_bits),
-    }
-    binp = _find_clarabel_lp_bin(clarabel_bin)
-    proc = subprocess.run(
-        [binp], input=_json.dumps(payload), capture_output=True, text=True,
-    )
-    out = _json.loads(proc.stdout) if proc.stdout.strip() else {}
-    if proc.returncode != 0 or "error" in out or not out.get("feasible", False):
+def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
+    """Build an ``LpDualResult`` from the clarabel binding/CLI output dict."""
+    if not out or "error" in out or not out.get("feasible", False):
         return LpDualResult(
             x_star=[float("nan")] * d, y0_star=float("nan"),
             y_star=[float("nan")] * d, active_set=[],
@@ -236,6 +194,68 @@ def _solve_operator_selection_lp_clarabel(
         duality_gap=float(out["duality_gap"]),
         feasible=True,
     )
+
+
+def _solve_operator_selection_lp_clarabel(
+    t: np.ndarray,
+    G: np.ndarray,
+    n_target: float,
+    *,
+    M_bound: float = 1e6,
+    dual_tol: float = 1e-9,
+    prec_bits: int = 167,
+    clarabel_bin: Optional[str] = None,
+) -> LpDualResult:
+    """EXPERIMENTAL: solve at ``prec_bits`` MPFR precision (≈50 dps) via
+    Clarabel — the in-process ``pyhecke_native.operator_selection_lp`` PyO3
+    binding when the installed wheel carries it (built with
+    ``--features clarabel-lp``), else the ``clarabel-operator-selection-lp``
+    CLI (subprocess).
+
+    Values cross the boundary as decimal strings, so the marshalling adds no
+    f64 truncation (the *inputs* are still f64 here because callers pass
+    ``np.ndarray``; pass 50-dps strings upstream for full precision).
+
+    NOT yet cross-checked against the scipy backend to 1e-25 — that needs a
+    scipy+numpy environment.  The scipy backend therefore remains the
+    default; this path is opt-in via ``backend="clarabel"``.
+    """
+    t = np.asarray(t, dtype=float)
+    G = np.asarray(G, dtype=float)
+    d = len(t)
+    assert G.shape == (d, d), f"Gram matrix shape {G.shape} ≠ ({d},{d})"
+
+    # Decimal-string marshalling (carries full precision across the boundary).
+    t_str = [repr(float(x)) for x in t]
+    G_str = [[repr(float(G[i, j])) for j in range(d)] for i in range(d)]
+    n_str = repr(float(n_target))
+    m_str = repr(float(M_bound))
+    dt_str = repr(float(dual_tol))
+
+    # Prefer the in-process PyO3 binding if the installed wheel carries it.
+    try:
+        import pyhecke_native
+        _binding = getattr(pyhecke_native, "operator_selection_lp", None)
+    except ImportError:
+        _binding = None
+    if _binding is not None:
+        out = _binding(t_str, G_str, n_str, m_str, dt_str, int(prec_bits))
+        return _lp_result_from_dict(dict(out), d)
+
+    # Fall back to the CLI binary.
+    import json as _json
+    import subprocess
+
+    payload = {
+        "t": t_str, "G": G_str, "n_target": n_str,
+        "m_bound": m_str, "dual_tol": dt_str, "prec_bits": int(prec_bits),
+    }
+    binp = _find_clarabel_lp_bin(clarabel_bin)
+    proc = subprocess.run(
+        [binp], input=_json.dumps(payload), capture_output=True, text=True,
+    )
+    out = _json.loads(proc.stdout) if proc.stdout.strip() else {}
+    return _lp_result_from_dict(out, d)
 
 
 def solve_operator_selection_lp(
