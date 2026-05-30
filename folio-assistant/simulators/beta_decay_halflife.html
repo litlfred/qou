@@ -97,6 +97,14 @@ input[type=radio],input[type=checkbox]{margin-right:4px;cursor:pointer;}
 <div class="tooltip" id="tip"></div>
 <script>
 // ── Constants ───────────────────────────────────────────────────
+// VOL_FIG8 = hyperbolic volume Vol(4_1) of the figure-eight knot
+//   complement. Canonical 50-dps witness:
+//   folio-assistant/computations/meson-mass-from-hecke.witness.json
+//   ("Vol_4_1": "2.02988321281930725004240510854904057188...").
+//   The literal below agrees to 16 decimals; refresh from the
+//   witness if a more precise value is ever required.
+// MASS_RATIO = m_mu / m_e (CODATA 2022); MAGIC = nuclear shell
+//   closures (Mayer-Jensen).
 const VOL_FIG8 = 2.029883212819307;
 const MASS_RATIO = 206.7682830;
 const HBAR_Q_SQ = VOL_FIG8 / MASS_RATIO;
