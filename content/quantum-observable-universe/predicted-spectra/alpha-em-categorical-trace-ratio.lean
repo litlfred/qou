@@ -74,8 +74,8 @@ ring is established and the hypotheses (q ≠ 0, h ≠ 0, [n]_q ≠ 0)
 are provided.
 
 -- Ref: [manuscript] §round-12, §round-14 of conj:e-hartree-categorical-derivation
--- Ref: prop:em-coupling-projection (the bare 1/α formula)
--- Ref: def:delta-q-decoration
+-- Ref: [manuscript] prop:em-coupling-projection (the bare 1/α formula)
+-- Ref: [manuscript] def:delta-q-decoration
 -/
 theorem alpha_em_categorical_trace_ratio
     {K : Type*} [Field K] (q : K)

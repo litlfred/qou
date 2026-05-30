@@ -45,7 +45,7 @@ theorem genus_ideal_characterisation :
       = Ideal.span {(X ^ 5 : Polynomial ℤ)} := by
   -- The quotient-projection kernel coincides with the ideal we
   -- quotient by.  Mathlib provides this as `Ideal.mk_ker`.
-  -- Ref: Mathlib `Mathlib.RingTheory.Ideal.Quotient.Defs`
+  -- Ref: [manuscript] Mathlib `Mathlib.RingTheory.Ideal.Quotient.Defs`
   exact Ideal.mk_ker
 
 end QOU.Archimedean

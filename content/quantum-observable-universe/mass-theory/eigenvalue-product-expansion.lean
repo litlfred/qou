@@ -36,7 +36,7 @@ theorem geometric_sum_is_qint (q : ℝ) (hq : q > 1) (c : ℕ) :
   -- This is the definition of [c+1]_q as a geometric series.
   -- Proof: factor out q^{-c} to get q^{-c} Σ q^{2j} = q^{-c}(q^{2c+2}-1)/(q²-1)
   --        = (q^{c+1}-q^{-(c+1)})/(q-q⁻¹).
-  -- Ref: standard identity for quantum integers
+  -- Ref: [manuscript] standard identity for quantum integers
   trivial
 
 /-- The four-term expansion of ln|Λ_sym| is exact. -/

@@ -217,7 +217,7 @@ theorem beta_plus_Q_pos (d : BetaPlusDecay)
 
 /-- The crossing energy q - q⁻¹ at q = 1.110 ≈ 0.2091.
     This is the energy released per crossing change d → u. -/
--- Ref: beta-decay-from-q.witness.json
+-- Ref: [manuscript] beta-decay-from-q.witness.json
 noncomputable def crossingEnergyAtQ : ℝ := 1.110 - 1 / 1.110
 
 /-- The crossing energy is positive (q > 1 → d → u releases energy). -/
@@ -227,12 +227,12 @@ theorem crossingEnergy_pos : 0 < crossingEnergyAtQ := by
 
 /-- The Skein amplitude s = q^½ - q^{-½} at q = 1.110.
     Witness: 0.10440737953277479. -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 noncomputable def skeinAmplitudeAtQ : ℝ := Real.sqrt 1.110 - 1 / Real.sqrt 1.110
 
 /-- The electron mass m_e = 3 · E_× · μ₀ where E_× = ½(q - q⁻¹).
     With μ₀ = 1.6296 MeV/Skein: m_e = 3 × 0.10452 × 1.6296 ≈ 0.511 MeV. -/
--- Ref: beta-decay-from-q.witness.json
+-- Ref: [manuscript] beta-decay-from-q.witness.json
 noncomputable def electronMass_from_q : ℝ := 3 * (1.110 - 1 / 1.110) / 2 * 1.6296
 
 /-- Beta decay locality: the Skein crossing change affects exactly

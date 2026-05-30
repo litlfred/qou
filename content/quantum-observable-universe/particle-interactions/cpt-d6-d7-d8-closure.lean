@@ -32,8 +32,8 @@ class CPTD6D7D8Closure where
 /-- Restatement marker: `cpt_closure` is the proposition
     `conj:cpt-d6-d7-d8-closure` named in the .ts manifest. -/
 theorem cpt_closure [CPTD6D7D8Closure] : True := by
-  -- Ref: prop:cpt-orbit-closure-density (substrate-side density)
-  -- Ref: def:bar-involution (categorical CPT building block)
+  -- Ref: [manuscript] prop:cpt-orbit-closure-density (substrate-side density)
+  -- Ref: [manuscript] def:bar-involution (categorical CPT building block)
   -- Ref: [wigner1937], [jones1987], [kassel1995]
   trivial
 

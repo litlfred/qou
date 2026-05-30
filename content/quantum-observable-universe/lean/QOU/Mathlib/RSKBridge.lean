@@ -96,7 +96,7 @@ theorem BurnsideFromRSK (n : ℕ) [R : RSKBijection n] :
 axiom RSK_substrate_axiom (n : ℕ) :
     ∃ dimFn : Nat.Partition n → ℕ,
       ∑ λ : Nat.Partition n, (dimFn λ) ^ 2 = n.factorial
--- Ref: stanley2001 §7.11 (RSK bijection cardinality);
+-- Ref: [stanley1999] stanley2001 §7.11 (RSK bijection cardinality);
 --      Mathlib.Combinatorics.RSK (partial; cardinality_eq is
 --      the upstream target).
 

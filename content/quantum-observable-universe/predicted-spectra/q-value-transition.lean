@@ -159,7 +159,7 @@ structure QDeformedBalance where
 
 /-- Tritium self-deformation: Δq_eff(³H) = (3-1)/3² · ℏ_q² = 2/9 · ℏ_q².
     At q = 1.110: ℏ_q² ≈ 0.009816, so Δq ≈ 0.00218. -/
--- Ref: beta-decay-from-q.witness.json
+-- Ref: [manuscript] beta-decay-from-q.witness.json
 theorem tritium_self_deformation :
     delta_q_eff 1.110 3 = (2 : ℝ) / 9 * (hbar_q' 1.110) ^ 2 := by
   unfold delta_q_eff
@@ -187,22 +187,22 @@ theorem delta_q_decreasing {q : ℝ} (hq : 1 < q) {A : ℕ} (hA : 2 ≤ A) :
 
 /-- Q_q-value for tritium: total log-ratio = -0.1021.
     Source: beta-decay-matrix.witness.json, σ₀ + σ₁ contributions. -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 noncomputable def tritium_ln_ratio : ℝ := -0.1021
 
 /-- The tritium Q_q is negative (daughter has lower action than parent). -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 theorem tritium_Q_q_negative : tritium_ln_ratio < 0 := by
   unfold tritium_ln_ratio; norm_num
 
 /-- Per-generator contribution fractions.
     σ₀ contributes 22% and σ₁ contributes 78% of the total. -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 noncomputable def sigma0_fraction : ℝ := 0.0229 / 0.1021  -- ≈ 0.224
 noncomputable def sigma1_fraction : ℝ := 0.0792 / 0.1021  -- ≈ 0.776
 
 /-- The two generator fractions sum to 1. -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 theorem generator_fractions_sum :
     sigma0_fraction + sigma1_fraction = 1 := by
   unfold sigma0_fraction sigma1_fraction

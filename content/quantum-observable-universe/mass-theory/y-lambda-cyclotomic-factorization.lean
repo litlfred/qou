@@ -73,7 +73,7 @@ theorem y_lambda_cyclotomic_factorization
     (t : ℝ) (ht : t > 0) (ht1 : t ≠ 1) :
     ∃ P : ℝ, P = cyclotomicNumerator lam t ∧
               cyclotomicDenominator n t ≠ 0 := by
-  -- Ref: prop:y-lambda-cyclotomic-factorization proof;
+  -- Ref: [manuscript] prop:y-lambda-cyclotomic-factorization proof;
   -- denominator is a product of Φ_d(t) for d = 4, 8, 16, 3, 6, 12, ...
   -- (depending on n) which are all nonzero for t > 0, t ≠ 1.  On the
   -- concrete model `cyclotomicDenominator ≡ 1`, non-vanishing is
@@ -100,7 +100,7 @@ def CyclotomicDenominatorN23456 : Prop :=
 
 theorem cyclotomic_denominator_explicit_small_n :
     CyclotomicDenominatorN23456 := by
-  -- Ref: prop:y-lambda-cyclotomic-factorization §"Per-n denominators"
+  -- Ref: [manuscript] prop:y-lambda-cyclotomic-factorization §"Per-n denominators"
   -- + `y_lambda_cyclotomic_factor.py` witness (numerically extracted
   -- via sympy `factor` over ℚ in t).
   intro _ _ _
@@ -118,7 +118,7 @@ noncomputable def numerator_n2_partition_11 (t : ℝ) : ℝ :=
 /-- The closed-form value of y_(2) at t = q^(1/2). -/
 theorem y_2_closed_form (t : ℝ) (ht : t > 0) :
     ∃ y : ℝ, y * (t^2 + 1) * (t^4 + 1) = numerator_n2_partition_2 t := by
-  -- Ref: prop:y-lambda-cyclotomic-factorization §"n=2";
+  -- Ref: [manuscript] prop:y-lambda-cyclotomic-factorization §"n=2";
   -- y_(2) = (t³+t²+1) / ((t²+1)(t⁴+1)) = P/D with D = Φ_4 · Φ_8.
   -- Witness y := numerator / ((t²+1)(t⁴+1)); positivity gives D ≠ 0.
   have h2 : (t^2 + 1 : ℝ) > 0 := by positivity

@@ -154,7 +154,7 @@ def isPalindrome (h : List ℕ) : Prop :=
   ∀ i, i < h.length → h.get ⟨i, by omega⟩ = h.get ⟨h.length - 1 - i, by omega⟩
 
 /-- ⁴He histogram {1, 3, 4, 3, 1} is palindromic. -/
--- Ref: pruned-normal-forms.py witness, A=4
+-- Ref: [manuscript] pruned-normal-forms.py witness, A=4
 theorem he4_palindrome : isPalindrome [1, 3, 4, 3, 1] := by
   intro i hi
   fin_cases i <;> simp [isPalindrome, List.get]
@@ -175,7 +175,7 @@ theorem he4_palindrome : isPalindrome [1, 3, 4, 3, 1] := by
     grading and preserves the coefficient structure. -/
 
 /-- ⁶Li(3,3) histogram is palindromic. -/
--- Ref: pruned-normal-forms.py witness, A=6
+-- Ref: [manuscript] pruned-normal-forms.py witness, A=6
 theorem li6_palindrome :
     isPalindrome [1, 5, 13, 23, 31, 34, 31, 23, 13, 5, 1] := by
   intro i hi
@@ -186,7 +186,7 @@ theorem li6_palindrome :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- The Hecke reduction energy at step k (adding k-th nucleon). -/
--- Ref: sequential-nucleus-builder.witness.json
+-- Ref: [manuscript] sequential-nucleus-builder.witness.json
 noncomputable def hecke_energy_step (k : ℕ) : ℝ :=
   match k with
   | 0 => 0        -- free proton
@@ -198,7 +198,7 @@ noncomputable def hecke_energy_step (k : ℕ) : ℝ :=
   | _ => 0
 
 /-- Shell gap: ΔE(step 4) / ΔE(step 3) > 14. -/
--- Ref: sequential-nucleus-builder.witness.json
+-- Ref: [manuscript] sequential-nucleus-builder.witness.json
 theorem shell_gap_he4 :
     hecke_energy_step 4 / hecke_energy_step 3 > 14 := by
   unfold hecke_energy_step; norm_num
@@ -218,7 +218,7 @@ theorem energy_jumps_after_closure :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Dominant coefficient at each A. -/
--- Ref: pruned-normal-forms.py witness
+-- Ref: [manuscript] pruned-normal-forms.py witness
 noncomputable def dominant_coeff : ℕ → ℝ
   | 1 => 1.000
   | 2 => 1.116

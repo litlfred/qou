@@ -73,7 +73,7 @@ theorem chi_classical_recursive
       (strips.map (fun xi =>
         (-1 : ℝ)^xi.height *
         chi_qMN_partition (removeStrip xi) (rho.tail) 1)).sum := by
-  -- Ref: classical Murnaghan-Nakayama rule (Macdonald §I.7).
+  -- Ref: [macdonald1995] classical Murnaghan-Nakayama rule (Macdonald §I.7).
   -- Concrete model: chi_qMN_partition ≡ 0 (via 0·_), so LHS reduces
   -- via zero_mul; each summand contains a chi_qMN_partition factor
   -- which similarly reduces via zero_mul; the RHS sum vanishes.
@@ -100,7 +100,7 @@ theorem chi_q_recursive_halverson_ram
       (strips.map (fun xi =>
         strip_q_weight xi q *
         chi_qMN_partition (removeStrip xi) (rho.tail) q)).sum := by
-  -- Ref: Halverson-Ram 1995 broken-strip rule; generalises Macdonald
+  -- Ref: [macdonald1995] Halverson-Ram 1995 broken-strip rule; generalises Macdonald
   -- §I.7 to Iwahori-Hecke H_n(q).  Concrete model: chi_qMN_partition
   -- ≡ 0 (via 0·_); each summand vanishes by zero_mul on the
   -- chi_qMN_partition factor; the RHS sum is 0.
@@ -129,7 +129,7 @@ theorem chi_memoized_correct
     (q : ℝ) (hq : q > 0) (cache : CharCache q)
     (lam rho : List ℕ) :
     chi_recursive_memoized cache lam rho = chi_qMN_partition lam rho q := by
-  -- Ref: memoisation preserves equality (each cache entry is a
+  -- Ref: [manuscript] memoisation preserves equality (each cache entry is a
   -- deterministic function of its inputs); composition with
   -- chi_q_recursive_halverson_ram gives the result.  On the
   -- concrete model both sides reduce to 0 (LHS via const-0;
@@ -168,7 +168,7 @@ theorem markov_trace_via_memoised_qmn_and_wenzl
     markovTraceCanonical n q cycleType =
       (parts.map (fun lam =>
         yLambda lam q * chi_recursive_memoized cache lam cycleType)).sum := by
-  -- Ref: prop:wenzl-qmn-synergy + prop:qmn-recursive-memoized.
+  -- Ref: [manuscript] prop:wenzl-qmn-synergy + prop:qmn-recursive-memoized.
   -- Concrete model: both sides are 0 (LHS = markovTraceCanonical ≡ 0;
   -- each summand contains chi_recursive_memoized ≡ 0).
   show (0 : ℝ) = (parts.map _).sum

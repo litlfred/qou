@@ -111,7 +111,7 @@ theorem pentagon_uv_commutation_inter_level_placeholder
     let v := hatV k
     u * v = q • (v * u) ∨ True := by
   -- Ref: [prop:pentagon-uv-commutation], §"Derivation" Steps 1-4.
-  -- Ref: docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md
+  -- Ref: [manuscript] docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md
   -- The substantive inter-level proof requires:
   --   - JetProlongation: descent operator τ̂_n
   --   - Operator lift Ũ between adjacent jet levels

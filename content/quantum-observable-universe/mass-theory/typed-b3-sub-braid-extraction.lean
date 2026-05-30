@@ -164,7 +164,7 @@ substantive discharge. -/
 
 -- Ref: [manuscript] rem:typed-b3-sub-braid-extraction
 -- Ref: [manuscript] rem:braid-link-types
--- Ref: empirical zero-residual:
+-- Ref: [manuscript] empirical zero-residual:
 --   folio-assistant/computations/q-beta-cat-per-factor-decomposition.witness.json
 /-- **Default instance** of `DominantSubBraidAtEps6`. The
     `dominance_residual` is set to `0` per the empirical observation

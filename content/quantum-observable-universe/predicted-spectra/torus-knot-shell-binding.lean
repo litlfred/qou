@@ -162,7 +162,7 @@ theorem eigenvalue_ratio_monotone (q : ℝ) (hq : q > 1) (n m : ℕ) (h : n < m)
 
 /-- First shell gap: He-4 → Li-5 gives ratio ≈ 14.8.
     This uses the witness data from sequential-nucleus-builder. -/
--- Ref: sequential-nucleus-builder.witness.json
+-- Ref: [manuscript] sequential-nucleus-builder.witness.json
 noncomputable def first_shell_gap : ℝ := 1.4093 / 0.0951
 
 theorem first_shell_gap_large : first_shell_gap > 14 := by

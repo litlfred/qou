@@ -75,8 +75,8 @@ folio-assistant/computations/alpha_shift_torus.py with all 14
 witness assertions passing.
 
 -- Ref: [manuscript] §round-19 of conj:e-hartree-categorical-derivation
--- Ref: prop:em-coupling-projection (the bare 1/α formula at p ∈ {2,3})
--- Ref: prop:force-carrier-intertwining-correspondence (the V_{(p,1^{n-p})} channel)
+-- Ref: [manuscript] prop:em-coupling-projection (the bare 1/α formula at p ∈ {2,3})
+-- Ref: [manuscript] prop:force-carrier-intertwining-correspondence (the V_{(p,1^{n-p})} channel)
 -/
 class HasAlphaShiftTorus (p k : ℕ) : Prop where
   alpha_shift_eq : alphaShift p k = k * (p - 1)

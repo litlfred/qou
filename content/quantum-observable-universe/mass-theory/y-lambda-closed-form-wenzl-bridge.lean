@@ -159,7 +159,7 @@ theorem y_lambda_closed_form_wenzl_bridge
     (parts_complete : ∀ lam, lam ∈ parts) -- partitions list is complete
     (lam : Partition n) :
     jonesMarkovCoefficient q lam = yLambdaWenzlBridge parts lam q := by
-  -- Ref: prop:y-lambda-closed-form-wenzl-bridge proof composed of:
+  -- Ref: [manuscript] prop:y-lambda-closed-form-wenzl-bridge proof composed of:
   --   (a) [wenzl1988] s_{µ,r}(Q) is the y_λ for the Markov trace
   --       on H_n with eigenvalues (Q, -1) at parameter
   --       z_GL = Q^r(1-Q)/(1-Q^r);

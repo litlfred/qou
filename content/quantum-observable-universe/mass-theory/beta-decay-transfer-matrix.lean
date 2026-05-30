@@ -107,7 +107,7 @@ noncomputable def TM.tracedVolume (M : TM) (z : ℝ) : ℝ :=
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- T_pp off-diagonal at q = 1.110 is 1 (exact). -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 theorem T_pp_offdiag : (T_pp 1.110).a₁₂ = 1 := by
   unfold T_pp tm; norm_num
 
@@ -118,7 +118,7 @@ theorem T_pp_corner (q : ℝ) : (T_pp q).a₂₂ = 0 := by
 
 /-- The Hecke coefficient T_pp(1,1) = q - q⁻¹ ≈ 0.2091 at q = 1.110.
     Witness: 0.2090990990990993. -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 noncomputable def hecke_coeff_at_q : ℝ := 1.110 - 1 / 1.110
 
 /-- The Hecke coefficient is positive for q > 1. -/
@@ -146,36 +146,36 @@ theorem decay_offdiag_formula (q : ℝ) (hq : q ≠ 0) :
   ring
 
 /-- At q = 1.110: off-diagonal = (1 - 1.110²)/2 ≈ -0.1161. -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 theorem decay_offdiag_at_q : (Delta_beta 1.110).a₁₂ = (1 - 1.110 ^ 2) / 2 := by
   exact decay_offdiag_formula 1.110 (by norm_num)
 
 /-- Tritium Skein polynomial ratio: P(³He)/P(³H) ≈ 0.9029.
     Source: beta-decay-matrix.witness.json. -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 noncomputable def tritium_skein_ratio : ℝ := 0.9029
 
 /-- The Skein ratio is less than 1 (daughter has smaller polynomial). -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 theorem tritium_ratio_lt_one : tritium_skein_ratio < 1 := by
   unfold tritium_skein_ratio; norm_num
 
 /-- The Skein ratio is positive (both polynomials positive). -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 theorem tritium_ratio_pos : 0 < tritium_skein_ratio := by
   unfold tritium_skein_ratio; norm_num
 
 /-- Tritium per-generator volumes from witness computation.
     σ₀: V_par = 0.7684, V_dau = 0.7510
     σ₁: V_par = 1.3029, V_dau = 1.2036 -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 noncomputable def V_par_sigma0 : ℝ := 0.7684
 noncomputable def V_dau_sigma0 : ℝ := 0.7510
 noncomputable def V_par_sigma1 : ℝ := 1.3029
 noncomputable def V_dau_sigma1 : ℝ := 1.2036
 
 /-- All generator volumes are positive. -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 theorem generator_volumes_pos :
     0 < V_par_sigma0 ∧ 0 < V_dau_sigma0 ∧
     0 < V_par_sigma1 ∧ 0 < V_dau_sigma1 := by
@@ -184,7 +184,7 @@ theorem generator_volumes_pos :
 
 /-- At each generator, the daughter volume is smaller than the parent
     (the decay releases action). -/
--- Ref: beta-decay-matrix.witness.json
+-- Ref: [manuscript] beta-decay-matrix.witness.json
 theorem daughter_volumes_smaller :
     V_dau_sigma0 < V_par_sigma0 ∧ V_dau_sigma1 < V_par_sigma1 := by
   unfold V_par_sigma0 V_dau_sigma0 V_par_sigma1 V_dau_sigma1

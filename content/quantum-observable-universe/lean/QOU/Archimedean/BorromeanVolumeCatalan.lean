@@ -106,7 +106,7 @@ theorem catalan_G_numerical_bounds :
   -- The infrastructure exists; the LITERAL composition with the
   -- specific N=22 partial sum is the remaining bookkeeping.
   --
-  -- Ref: MathlibInfraAxioms.alternating_series_error_bound +
+  -- Ref: [manuscript] MathlibInfraAxioms.alternating_series_error_bound +
   --      explicit S_22 evaluation via norm_num.
   sorry
 
@@ -217,7 +217,7 @@ theorem vol_B3_numerical_bounds_via_catalan :
     This is the LEADING factor of the canonical mass formula
     `m(𝓑₃) = m_e · Geom_full(𝓑₃) = m_e · (8G/ℏ_q²) · linking_weight(q)`.
 
-    -- Ref: see `folio-assistant/computations/_li_2_q_util.geom_full_borromean`
+    -- Ref: [manuscript] see `folio-assistant/computations/_li_2_q_util.geom_full_borromean`
             for the production implementation; this theorem is the
             categorical statement of its first factor. -/
 theorem geom_leading_eq_8G_over_hbar_q_sq (q : ℝ) (hq : q > 1) :

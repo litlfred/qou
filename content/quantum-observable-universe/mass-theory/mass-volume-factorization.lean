@@ -146,7 +146,7 @@ noncomputable def bindingFromJSJ
     one piece of physics that has a canonical value: the m_e
     Frobenius scale. -/
 -- Ref: [manuscript] Ch 11 §8 / mass-volume-factorization
--- Ref: CODATA 2022 electron rest energy
+-- Ref: [codata2022] CODATA 2022 electron rest energy
 instance canonical (K : Type*) : MassVolumeFactorization K where
   density := fun _ => { scaleMe := 0.51099895, cptSaturated := false }
   volume := fun _ => 0

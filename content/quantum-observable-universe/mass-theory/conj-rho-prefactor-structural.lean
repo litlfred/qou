@@ -172,7 +172,7 @@ theorem q_int_placeholder_correct_at_classical_limit (rho : ℕ) (d : ℕ) :
   unfold q_int_placeholder; rfl
 
 -- Ref: [manuscript] conj:rho-prefactor-structural § "Critical structural finding"
--- Ref: binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
+-- Ref: [manuscript] binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
 -- Deuteron ²H: Z=1, N=1. Per the witness, T_w(²H)·cp^{-1} at H_6
 -- has dominant Wedderburn block λ* = (5,1) (a hook), with SYT count
 -- d_λ((5,1)) = 5 — **categorically derived** in `hook_length_5_1`
@@ -189,7 +189,7 @@ noncomputable instance instRhoPrefactorStructural_deuterium (q : ℝ) :
   rho_eq_qdim := rho_eq_qdim_placeholder q 1 5
 
 -- Ref: [manuscript] conj:rho-prefactor-structural § "Critical structural finding"
--- Ref: binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
+-- Ref: [manuscript] binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
 -- Tritium ³H: Z=1, N=2. Per the witness, dominant λ* = (8,1) at H_9
 -- with SYT count d_λ((8,1)) = 8 — **categorically derived** in
 -- `hook_length_8_1` above via Lean's `decide` on the hook-length formula
@@ -205,7 +205,7 @@ noncomputable instance instRhoPrefactorStructural_tritium (q : ℝ) :
   rho_eq_qdim := rho_eq_qdim_placeholder q 2 8
 
 -- Ref: [manuscript] conj:rho-prefactor-structural § "Critical structural finding"
--- Ref: binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
+-- Ref: [manuscript] binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
 -- Helium-3 ³He: Z=2, N=1. Per the witness, dominant λ* = (6,3) at H_9
 -- with SYT count d_λ((6,3)) = 48 — **categorically derived** in
 -- `hook_length_6_3` above via Lean's `decide` on the hook-length formula
