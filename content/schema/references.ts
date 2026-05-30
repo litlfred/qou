@@ -2691,7 +2691,7 @@ export const references: CSLData[] = [
 
   // ── NNDC / ENSDF (Evaluated Nuclear Structure Data File) ───────
   ref({
-    id: "nndc-ensdf",
+    id: "nndc2024",
     type: "webpage",
     title: "Evaluated Nuclear Structure Data File (ENSDF)",
     author: [{ literal: "National Nuclear Data Center" }],
@@ -2719,7 +2719,7 @@ export const references: CSLData[] = [
 
   // ── Knot Atlas / KnotInfo (knot invariant databases) ──────────
   ref({
-    id: "knot-atlas",
+    id: "barnatan2024",
     type: "webpage",
     title: "The Knot Atlas (and KnotInfo database)",
     author: [
@@ -2734,7 +2734,7 @@ export const references: CSLData[] = [
 
   // ── IAU definitions (units, fundamental constants conventions) ─
   ref({
-    id: "iau-definitions",
+    id: "iau2024",
     type: "webpage",
     title: "International Astronomical Union — Resolutions on units, constants, and reference systems",
     author: [{ literal: "International Astronomical Union" }],
@@ -2745,7 +2745,7 @@ export const references: CSLData[] = [
 
   // ── Cartan–Eilenberg 1956 (Homological Algebra) ───────────────
   ref({
-    id: "cartan-eilenberg-1956",
+    id: "cartan1956",
     type: "book",
     title: "Homological Algebra",
     author: [
@@ -2756,6 +2756,20 @@ export const references: CSLData[] = [
     "publisher-place": "Princeton, NJ",
     issued: { "date-parts": [[1956]] },
     note: "Foundational reference; Whitehead's lemma (Ch. IX §7) is cited for spectral sequence collapse.",
+  }),
+
+  // ── Weibel 1994 (Introduction to Homological Algebra) ─────────
+  ref({
+    id: "weibel1994",
+    type: "book",
+    title: "An Introduction to Homological Algebra",
+    author: [{ family: "Weibel", given: "Charles A." }],
+    publisher: "Cambridge University Press",
+    "collection-title": "Cambridge Studies in Advanced Mathematics",
+    volume: "38",
+    issued: { "date-parts": [[1994]] },
+    DOI: "10.1017/CBO9781139644136",
+    note: "Standard modern reference on homological algebra; §9 covers Hochschild cohomology and Whitehead's lemma.",
   }),
 
   // ── Iwahori 1964 (Hecke ring structure) ───────────────────────

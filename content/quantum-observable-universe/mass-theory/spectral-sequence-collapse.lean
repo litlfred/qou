@@ -65,8 +65,8 @@ def innerDerivation {R : Type u} [CommRing R]
 class WhiteheadHH (R : Type u) [CommRing R]
     (A : Type u) [Ring A] [Algebra R A] : Prop where
   inner_of_derivation : ∀ (D : Derivation R A), ∃ x : A, D.d = innerDerivation x
-  -- Ref: [cartan-eilenberg-1956] Cartan-Eilenberg 1956, Ch. IX §7 (Whitehead's lemma);
-  -- Weibel 1994, §9.
+  -- Ref: [cartan1956] Cartan-Eilenberg 1956, Ch. IX §7 (Whitehead's lemma);
+  --      [weibel1994] Weibel 1994, §9.
 
 /-- **Spectral sequence collapse (structural statement).**
 
