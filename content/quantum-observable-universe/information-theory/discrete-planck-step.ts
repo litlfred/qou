@@ -23,4 +23,5 @@ export default remark({
     "prop:substrate-radial-coordinate",
     "rem:witt-lift-qou",
   ],
+  cites: ["thooft2016"],
 });

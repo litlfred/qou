@@ -197,3 +197,12 @@ complexity (complex) peaks, and each Planck step carries more
 information.  The universe's information processing rate
 **increases** as it cools from the Big Bang, reaching peak capacity
 near the golden ratio before the fiber degenerates.
+
+**Relation to 't Hooft's ontological CA.**
+'t Hooft \cite{thooft2016} introduces a Planck-scale tick as the
+elementary time unit of a deterministic cellular automaton
+underlying quantum mechanics.  The Planck step $t_P(q) = q/(q-1)$
+is the QOU realisation of this tick: it is algebraically
+determined by the substrate parameter $q$ rather than posited
+independently, and it recovers the dimensional Planck time via the
+archimedean functor at $q_0$.

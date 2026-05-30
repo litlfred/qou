@@ -1752,6 +1752,20 @@ export const references: CSLData[] = [
     note: "Models Conway's Game of Life as a reversible quantum circuit with Toffoli-based neighbour-count logic.",
   }),
 
+  // ── 't Hooft 2016: Cellular Automaton Interpretation of QM ────
+  ref({
+    id: "thooft2016",
+    type: "book",
+    title: "The Cellular Automaton Interpretation of Quantum Mechanics",
+    author: [{ family: "'t Hooft", given: "Gerard" }],
+    publisher: "Springer",
+    "collection-title": "Lecture Notes in Physics",
+    volume: "185",
+    issued: { "date-parts": [[2016]] },
+    DOI: "10.1007/978-3-319-41285-6",
+    note: "arXiv:1405.1548. Proposes that QM emerges from a deterministic Planck-scale cellular automaton via information loss; the reversible (Toffoli-based) CA tick is the direct precursor of the QOU Planck step and q-Game of Life construction.",
+  }),
+
   // ── Cook 1971: NP-completeness ─────────────────────────────────
   ref({
     id: "cook1971",

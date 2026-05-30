@@ -52,3 +52,14 @@ $$
 The gate is slow and quiet, but it works.  That it works
 is not a contingent fact about our universe — it is a
 consequence of $q \neq 1$.
+
+**Relation to 't Hooft's CA interpretation.**
+The thesis that quantum mechanics emerges from a
+deterministic Planck-scale cellular automaton \cite{thooft2016}
+aligns structurally with the above: in both frameworks the
+discrete combinatorics at the Planck scale is the ontological
+primitive, and macroscopic quantum superposition is an
+artifact of coarse-graining.  The QOU substrate replaces
+'t Hooft's information-loss mechanism with algebraic
+coarse-graining by the Markov trace on $H_n(q)$, making the
+passage from CA to QM functorial rather than statistical.
