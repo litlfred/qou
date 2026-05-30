@@ -98,6 +98,34 @@ theorem helium4_total_dim_eq_1024 :
   show 2 ^ (3 * (2 + 2) - 2) = 1024
   decide
 
+/-- **Verification for ⁶Li (Z=3, N=3):** total dim 2¹⁵ = 32768.
+    Sprint follow-up: extends the verified-atom set from 4 (D, T, ³He, ⁴He)
+    to 5 with the first A=6 nucleus. The lithium-6 atom-braid lives in
+    `H_{18}(q)`; the predicted exterior-algebra dimension is `2^(3·6 - 3)
+    = 2^15 = 32768`. -/
+theorem lithium6_total_dim_eq_32768 :
+    let inst : AtomBraidExteriorAlgebraStructure 3 3 := {Z_pos := by decide}
+    inst.total_dim = 32768 := by
+  show 2 ^ (3 * (3 + 3) - 3) = 32768
+  decide
+
+/-- **Verification for ⁹Be (Z=4, N=5):** total dim 2²³ = 8388608.
+    First A=9 (beryllium-9) atom-braid in `H_{27}(q)`. Predicted
+    exterior-algebra dimension `2^(3·9 - 4) = 2^23 = 8388608`. -/
+theorem beryllium9_total_dim_eq_8388608 :
+    let inst : AtomBraidExteriorAlgebraStructure 4 5 := {Z_pos := by decide}
+    inst.total_dim = 8388608 := by
+  show 2 ^ (3 * (4 + 5) - 4) = 8388608
+  decide
+
+/-- **Verification for ¹¹B (Z=5, N=6):** total dim 2²⁸ = 268435456.
+    First A=11 (boron-11) atom-braid in `H_{33}(q)`. -/
+theorem boron11_total_dim_eq :
+    let inst : AtomBraidExteriorAlgebraStructure 5 6 := {Z_pos := by decide}
+    inst.total_dim = 268435456 := by
+  show 2 ^ (3 * (5 + 6) - 5) = 268435456
+  decide
+
 /-- **Combinatorial identity (verifies Pascal's binomial sum at each n*).**
     The sum of binomial coefficients over a row equals 2^n. -/
 theorem binomial_sum_pow_two (n_star : ℕ) :
