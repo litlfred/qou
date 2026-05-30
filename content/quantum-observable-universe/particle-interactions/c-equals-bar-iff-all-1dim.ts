@@ -8,7 +8,7 @@ export default proposition({
   uses: ["prop:lepton-meson-torus-knot-dictionary"],
   cites: [
     "jones1987",
-    "wenzl1988hecke",
+    "wenzl1988c",
   ],
   tags: [
     "charge-conjugation",

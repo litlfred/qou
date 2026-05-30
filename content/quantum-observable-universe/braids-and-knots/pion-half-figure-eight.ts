@@ -7,7 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidsAndKnots.pion_eq_half_figure_eight_phase" },
   uses: ["prop:figure-eight-reeb-rotation"],
   cites: [
-    "wenzl1988hecke",
+    "wenzl1988c",
     "jones1987",
   ],
   tags: [

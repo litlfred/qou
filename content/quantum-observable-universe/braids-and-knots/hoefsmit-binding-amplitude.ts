@@ -7,7 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidsAndKnots.hoefsmit_b_sq_eq_q3_over_q2sq" },
   uses: ["prop:frobenius-lepton-meson-bridge"],
   cites: [
-    "wenzl1988hecke",
+    "wenzl1988c",
   ],
   tags: [
     "hoefsmit",

@@ -11,7 +11,7 @@ export default proposition({
   ],
   cites: [
     "jones1987",
-    "wenzl1988hecke",
+    "wenzl1988c",
     "kashaev1997",
   ],
   tags: [

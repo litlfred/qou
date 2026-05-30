@@ -3083,6 +3083,21 @@ export const references: CSLData[] = [
     note: "PLACEHOLDER: only the DOI 10.1007/BF01393839 is verified (cited inline in delta-q-decoration.lean as a Wenzl 1988 work). The Springer 10.1007/BF... prefix suggests Invent. Math. or similar, NOT Annals of Math (which uses 10.2307 / 10.4007). Resolve DOI manually before publication. Distinct from wenzl1988 = Hecke algebras of type An (DOI BF01404457, Invent. Math. 92).",
   }),
 
+  // ── Wenzl 1988c — added 2026-05-30 per Copilot DOI-mismatch audit.
+  // hoefsmit-binding-amplitude.lean, frobenius-lepton-meson-bridge.lean,
+  // pion-half-figure-eight.lean, c-equals-bar-iff-all-1dim.lean all cite
+  // DOI 10.1007/BF01388470 — distinct from wenzl1988 (BF01404457) and
+  // wenzl1988b (BF01393839). Keyed wenzl1988c until title/venue confirmed.
+  ref({
+    id: "wenzl1988c",
+    type: "manuscript",
+    title: "Wenzl 1988c — placeholder (title/venue/pages to be verified)",
+    author: [{ family: "Wenzl", given: "Hans" }],
+    issued: { "date-parts": [[1988]] },
+    DOI: "10.1007/BF01388470",
+    note: "PLACEHOLDER: DOI 10.1007/BF01388470 cited inline in hoefsmit-binding-amplitude.lean, frobenius-lepton-meson-bridge.lean, pion-half-figure-eight.lean, c-equals-bar-iff-all-1dim.lean. Originally keyed wenzl1988hecke; rekeyed to wenzl1988c 2026-05-30 after Copilot flagged DOI mismatch with wenzl1988 (BF01404457). Resolve DOI manually before publication.",
+  }),
+
   // ── Neumann-Zagier 1985 (volumes of hyperbolic 3-manifolds) ───
   ref({
     id: "neumann-zagier1985",
