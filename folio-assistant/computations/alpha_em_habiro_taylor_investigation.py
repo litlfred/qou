@@ -39,7 +39,7 @@ def main() -> int:
     t0 = time.monotonic()
     builder = WitnessBuilder(
         "alpha-em-habiro-taylor-investigation",
-        engine="sympy+mpmath",
+        engine="python+mpmath",
         start_time=t0,
     )
     builder.set_description(
@@ -136,7 +136,13 @@ def main() -> int:
         c_sym = full_even_coeffs[n]
         c_sym_at_alpha = c_sym.subs(alpha, sp.Rational(1) /
                                     sp.Rational("137035999084", "1000000000"))
-        c_num = mpf(str(float(c_sym_at_alpha)))
+        # Per Copilot review: convert SymPy rational directly to mpmath
+        # via numerator/denominator (preserving exactness) instead of
+        # routing through float (which would lose precision).
+        if c_sym_at_alpha.is_Rational:
+            c_num = mpf(int(c_sym_at_alpha.p)) / mpf(int(c_sym_at_alpha.q))
+        else:
+            c_num = mpf(str(c_sym_at_alpha))
         h_pow = h_val ** n
         term = c_num * h_pow
         series_value += term
