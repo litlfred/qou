@@ -314,6 +314,48 @@ PR-level visibility also activates the integration-watcher infra
 coordinate-skill sweep (§7-§8 of `coordinate.md`), so sibling
 agents triage your work automatically.
 
+## CI billing failures — distinguish from real failures (STRICT)
+
+GitHub Actions workflows may fail in **2-3 seconds across multiple
+jobs simultaneously** with no logs reaching the validate / build /
+test step. When this happens the cause is almost always a GitHub
+Actions billing issue, NOT a problem with the code:
+
+> *"The job was not started because recent account payments have
+>  failed or your spending limit needs to be increased. Please check
+>  the 'Billing & plans' section in your settings."*
+
+### How to recognize it
+
+- **Setup-phase failure timing.** All failing jobs complete in
+  ≤ 5 seconds (setup-phase only — checkout / pip install alone
+  take longer). Real validate/build failures take ≥ 30 seconds.
+- **Multiple jobs fail together.** Same `started_at` timestamp
+  across `validate`, `Content pipeline`, `Build all papers + commit
+  sidecar`, etc.
+- **Local reproduction passes.** `bun run validate <paper>` exits 0,
+  witness-pipeline Python scripts exit 0, no `.lean` changes.
+- **Webhook payload says `conclusion: failure`** but no error log
+  exists because the job never actually started.
+
+### What to do
+
+1. **Do NOT diagnose as a code issue.** The MCP API does not expose
+   job-startup-phase error reasons; treat the unexplained 2-3s
+   failure as billing UNLESS the user shares a different error.
+2. **Do NOT push retrigger commits** — billing doesn't clear on retry.
+3. **Notify the user briefly** and ask whether to (a) skip CI and
+   proceed (`/prepare-merge` step 6+, request reviews on the green
+   local validate), or (b) wait for billing to clear.
+4. **Document the skip in the PR** when proceeding — e.g.
+   `[skip-ci: GitHub Actions billing; local validate exit 0]` in
+   the comment requesting reviews.
+
+History note (2026-05-29): this rule added after PR #1435 hit
+3 consecutive failures with this exact pattern; the user confirmed
+"job was not started because recent account payments have failed"
+and instructed "skip CI". Local validate had been exit 0 throughout.
+
 ## Always provide GitHub links — default to `.md`
 
 Whenever a skill or agent creates or modifies a file, the reply **must**
