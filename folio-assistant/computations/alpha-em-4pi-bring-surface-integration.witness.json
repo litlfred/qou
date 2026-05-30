@@ -1,0 +1,188 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T12:09:25.250443+00:00",
+  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
+  "assertions": [
+    {
+      "name": "candidates_evaluated",
+      "computed": 24,
+      "expected": 24,
+      "passed": true,
+      "tolerance": 0,
+      "source": "12 Hodge-side + 12 sphere-volume parameter-free candidates evaluated."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "alpha-em-4pi-bring-surface-integration",
+  "scriptFile": "alpha_em_4pi_bring_surface_integration.py",
+  "scriptHash": "22b4f5841487",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Gap (ii) attempt from #1466/#1469: test Bring-surface integration (Hodge/Gauss-Bonnet ratios on higher-genus / fibre-bundle constructions, sphere-volume ratios) as the structural source of α/(4π). Parallel to the leading 2/(3π) = dim H¹/Area = Vol(S²)/(3·Vol(S³)). Tests 10+ Hodge-side and 12+ sphere-side parameter-free candidates.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "target_alpha_over_4pi": "0.000580704866442929781562257812526",
+    "hodge_candidates": [
+      {
+        "side": "Hodge",
+        "name": "dim H¹(UT)/Vol(UT)        = 8/(24π²)",
+        "value": "0.033773727880779",
+        "ratio_to_target": 58.15988436201344
+      },
+      {
+        "side": "Hodge",
+        "name": "dim H¹(UT)/(Vol·4π)       = 8/(96π³)",
+        "value": "0.0026876278694333",
+        "ratio_to_target": 4.628216542933732
+      },
+      {
+        "side": "Hodge",
+        "name": "dim H¹(M×S¹)/Vol(M×S¹)    = 9/(24π²)",
+        "value": "0.037995443865877",
+        "ratio_to_target": 65.42986990726513
+      },
+      {
+        "side": "Hodge",
+        "name": "dim H²(M×M)/Vol(M×M)      = 66/(144π²)",
+        "value": "0.046438875836071",
+        "ratio_to_target": 79.96984099776849
+      },
+      {
+        "side": "Hodge",
+        "name": "dim H²(M×M)/(Vol·4π)      = 66/(576π³)",
+        "value": "0.0036954883204708",
+        "ratio_to_target": 6.363797746533881
+      },
+      {
+        "side": "Hodge",
+        "name": "[dim H¹(M)]²/Area²        = 64/(144π²)",
+        "value": "0.045031637174372",
+        "ratio_to_target": 77.54651248268459
+      },
+      {
+        "side": "Hodge",
+        "name": "[dim H¹(M)]²/(2·Area²)    = 32/(144π²)",
+        "value": "0.022515818587186",
+        "ratio_to_target": 38.773256241342295
+      },
+      {
+        "side": "Hodge",
+        "name": "[dim H¹(M)/Area]·1/(4π)   = (2/(3π))/(4π)",
+        "value": "0.01688686394039",
+        "ratio_to_target": 29.07994218100672
+      },
+      {
+        "side": "Hodge",
+        "name": "[dim H¹(M)/Area]²·1/Area   = (2/(3π))²/12π",
+        "value": "0.0011945012753037",
+        "ratio_to_target": 2.0569851301927695
+      },
+      {
+        "side": "Hodge",
+        "name": "[χ]/Vol(M×M)             = -6/144π²",
+        "value": "-0.0042217159850974",
+        "ratio_to_target": -7.26998554525168
+      },
+      {
+        "side": "Hodge",
+        "name": "(2g/(4π(g-1)))²·1/(2g·Area) = ...",
+        "value": "0.00014931265941296",
+        "ratio_to_target": 0.2571231412740962
+      },
+      {
+        "side": "Hodge",
+        "name": "(2g/(4π(g-1)))²·1/Vol(UT)",
+        "value": "0.00019011078249415",
+        "ratio_to_target": 0.32737935133670515
+      }
+    ],
+    "sphere_candidates": [
+      {
+        "side": "Sphere",
+        "name": "Vol(S²)·Vol(S³)/(3·Vol(S⁵)·Vol(S⁶))",
+        "value": "0.080628836082999",
+        "ratio_to_target": 138.84649628801193
+      },
+      {
+        "side": "Sphere",
+        "name": "Vol(S²)/(3·Vol(S³)·Vol(S²))",
+        "value": "0.01688686394039",
+        "ratio_to_target": 29.07994218100672
+      },
+      {
+        "side": "Sphere",
+        "name": "Vol(S²)²/(3·Vol(S³)·Vol(S⁴))",
+        "value": "0.10132118364234",
+        "ratio_to_target": 174.47965308604034
+      },
+      {
+        "side": "Sphere",
+        "name": "Vol(S²)/(3·Vol(S³)²)",
+        "value": "0.010750511477733",
+        "ratio_to_target": 18.512866171734927
+      },
+      {
+        "side": "Sphere",
+        "name": "Vol(S²)·Vol(S²)/(15·Vol(S³)·Vol(S⁵))",
+        "value": "0.017200818364373",
+        "ratio_to_target": 29.62058587477588
+      },
+      {
+        "side": "Sphere",
+        "name": "Vol(S²)/(Vol(S⁴)·Vol(S³))",
+        "value": "0.0241886508249",
+        "ratio_to_target": 41.65394888640358
+      },
+      {
+        "side": "Sphere",
+        "name": "[Vol(S²)/(3·Vol(S³))]²",
+        "value": "0.045031637174372",
+        "ratio_to_target": 77.54651248268459
+      },
+      {
+        "side": "Sphere",
+        "name": "[Vol(S²)/(3·Vol(S³))]²/Vol(S²)",
+        "value": "0.0035835038259111",
+        "ratio_to_target": 6.1709553905783086
+      },
+      {
+        "side": "Sphere",
+        "name": "[Vol(S²)/(3·Vol(S³))]/(4π)",
+        "value": "0.01688686394039",
+        "ratio_to_target": 29.07994218100672
+      },
+      {
+        "side": "Sphere",
+        "name": "[Vol(S²)/(3·Vol(S³))]/Vol(S³)",
+        "value": "0.010750511477733",
+        "ratio_to_target": 18.512866171734927
+      },
+      {
+        "side": "Sphere",
+        "name": "Vol(S²)/(3·Vol(S⁵))",
+        "value": "0.13509491152312",
+        "ratio_to_target": 232.63953744805377
+      },
+      {
+        "side": "Sphere",
+        "name": "Vol(S²)·Vol(S³)/(3·Vol(S⁷))",
+        "value": "2.5464790894703",
+        "ratio_to_target": 4385.151970688
+      }
+    ],
+    "best": {
+      "side": "Hodge",
+      "name": "(2g/(4π(g-1)))²·1/Vol(UT)",
+      "value": "0.00019011078249415",
+      "ratio_to_target": 0.32737935133670515
+    },
+    "verdict": "REFUTED — best is 67.3% off; gap (ii) Bring-surface integration alone is insufficient"
+  }
+}
