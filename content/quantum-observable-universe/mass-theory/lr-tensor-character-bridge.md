@@ -1,10 +1,10 @@
-**Proposition (LR comultiplication bridge for tensor-product
-braids; trivial-interface specialisation of the branching
-decomposition).**
-*Specialise
-(Hecke branching trace decomposition)
-to the trivial interface $I = \mathbf{1}$ and iterate $k-1$ times.
-For every $\nu \vdash n_1 + \cdots + n_k$ and every
+**Corollary (k-factor parabolic specialisation of
+[`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md)).**
+*Specialise the branching identity to the trivial interface
+$I = \mathbf{1}$ and iterate $k-1$ times across the parabolic chain
+$H_{n_1}(R, q) \otimes \cdots \otimes H_{n_k}(R, q) \hookrightarrow
+H_n(R, q)$, where $n := \sum_i n_i$. For every
+$\nu \vdash n$ and every
 $(\beta_1, \ldots, \beta_k) \in H_{n_1}(R, q) \times \cdots \times
 H_{n_k}(R, q)$, the tensor-product Hecke character factors as*
 
@@ -17,9 +17,9 @@ $$
   \;}
 $$
 
-*where $n := \sum_i n_i$, the sum runs over $\lambda_i \vdash n_i$,
-and $c^\nu_{\lambda_1, \ldots, \lambda_k}$ is the iterated
-Littlewood--Richardson coefficient*
+*where the sum runs over $\lambda_i \vdash n_i$, and
+$c^\nu_{\lambda_1, \ldots, \lambda_k}$ is the iterated
+Littlewood–Richardson coefficient*
 
 $$
   c^\nu_{\lambda_1, \ldots, \lambda_k}
@@ -32,32 +32,16 @@ $$
 *the structure constant of the Schur basis of $\mathrm{Sym}$ under
 the iterated coproduct.*
 
-## Relationship to the branching decomposition
+## Proof
 
-The branching identity
-(Hecke branching trace decomposition)
-states the general two-factor character
-
-$$
-  \chi^\lambda(\beta_1 \cdot I \cdot \beta_2)
-  \;=\;
-  \sum_{(\mu, \nu)} \,
-  \operatorname{Tr}_{V_\mu \otimes V_\nu}\!\Bigl(
-     A^\lambda_{\mu, \nu}(I) \cdot
-     \bigl(\rho_\mu(\beta_1) \otimes \rho_\nu(\beta_2)\bigr)
-  \Bigr)
-$$
-
-for an arbitrary interface $I \in H_n(R, q)$ supported on the
-boundary strands. When $I = \mathbf{1}$ the operator
-$A^\lambda_{\mu, \nu}(\mathbf{1})$ collapses to the identity on
-$V_\mu \otimes V_\nu$, the trace splits across the tensor factors,
-and the scalar prefactor reduces to the LR coefficient
-$c^\lambda_{\mu, \nu}$. Iterating $k-1$ times across the parabolic
-chain $H_{n_1} \otimes \cdots \otimes H_{n_k} \hookrightarrow H_n$
-yields the boxed identity above. The present corollary is therefore
-the *trivial-interface, $k$-factor* specialisation of the operator-
-valued branching theorem.
+Setting $I = \mathbf{1}$ in
+[`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md)
+collapses the operator-valued coefficient $A^\lambda_{\mu,\nu}(\mathbf{1})$
+to the identity on $V_\mu \otimes V_\nu$, so the trace splits across
+the tensor factors and the scalar prefactor reduces to the
+two-factor LR coefficient $c^\lambda_{\mu,\nu}$. Iterating $k-1$
+times across the parabolic chain stacks the LR coefficients into
+the iterated form $c^\nu_{\lambda_1, \ldots, \lambda_k}$. ∎
 
 ## Algebraic context
 

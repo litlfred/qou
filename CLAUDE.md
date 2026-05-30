@@ -576,6 +576,8 @@ When a user request arrives, route to the right skill(s):
 | "one voice / status leak / TODO in prose / strip emoji / scholarly voice" | `local/one-voice-audit` (sweep) + `local/one-voice-style-guide` (author voice profile) | collaborator |
 | "watch one-voice / voice + AI slop + fit + framework + wall / QA reports per block / staleness map" | `local/one-voice-integration-watcher` | collaborator |
 | "/integration-watch one-voice / voice" | `local/integration-watch` (dispatcher → one-voice-integration-watcher child) | collaborator |
+| "similar propositions / consolidate props / corollary vs theorem / mergeable lemmas / exposition redundancy / special-case forest" | `local/proposition-consolidation-audit` | reader |
+| "/integration-watch consolidation / dedupe" | `local/integration-watch` (dispatcher → proposition-consolidation-audit child) | reader |
 | "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
 | "session todos / work plan / what's left / track progress" | `local/todo-manager` (session work-plan, TodoWrite) | reader |
 | "process feedback / review todos / triage open feedback" | `local/todo-review` (content-feedback triage) | reader |
@@ -612,7 +614,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values, proof-integration-watcher, canonical-watcher, detangler-integration-watcher, production-vs-exploratory-discipline |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values, proof-integration-watcher, canonical-watcher, detangler-integration-watcher, production-vs-exploratory-discipline, proposition-consolidation-audit |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, lean-substantive-pass, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit, compute-audit, compute-author, coordinate, compute-integration-watcher, ffi-roundtrip-audit |
 | `owner` | All collaborator skills + deployment-auth |
 

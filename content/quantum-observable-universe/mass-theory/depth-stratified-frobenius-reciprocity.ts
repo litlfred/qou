@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "prop:free-config-chi-lr-equivalence",
+    "cor:lr-tensor-character-bridge",
     "prop:chirality-from-frobenius-self-pairing",
   ],
   cites: ["frobenius1898", "macdonald1995", "lewin1981"],
