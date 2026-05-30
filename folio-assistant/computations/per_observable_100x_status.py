@@ -378,6 +378,15 @@ def main() -> dict:
     #   (prop:meson-em-sinh-closed-form, QOU.BraidKnot.meson_EM_closed_form)
     # - α_em from prop:em-coupling-projection (q·[9]_q·[10]_q, CS-corrected
     #   to 137.035944, 399 ppb off CODATA)
+    #
+    # CLASS-A acknowledged anchor (CLAUDE.md §3b-cond): the α_em literal
+    # `137.035944` is the CS-corrected ansatz from em-coupling-chern-simons.lean,
+    # which still carries an open `sorry` on the Witten κ Gram-determinant
+    # value (see prop:em-coupling-chern-simons). The m_K/m_π closure is
+    # therefore "derived conditional on `class WittenKappaGramDeterminant`".
+    # When that class is closed, this literal should be re-derived from the
+    # witness. Tracked by docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md.
+    #
     # Closes m_K²/m_π² to +0.047 ppm; sqrt → m_K/m_π to ≈0.024 ppm.
     # Both terms framework-derived; no fitted integers (the (q₀⁵−q₀⁻⁵)(9/5)²
     # form formerly used here was retracted as a fit, see #1420).
@@ -388,6 +397,7 @@ def main() -> dict:
     _qcg_strong = (q0 ** 2 + 1 + q0 ** -2) * (
         (q0 ** 4 - q0 ** -4) / (q0 - q0 ** -1)
     )  # [3]_q · [4]_q
+    # CLASS-A acknowledged anchor: pending Witten-κ Gram-determinant sorry.
     _alpha_em_inv = mpf("137.035944")  # CS-corrected α_em (Witten κ, 399 ppb)
     _mk_sq_over_mpi_sq = _qcg_strong + (1 / _alpha_em_inv) / _pi * _hbar_factor
     mk_pred = mp.sqrt(_mk_sq_over_mpi_sq)
@@ -395,7 +405,8 @@ def main() -> dict:
         "m_K/m_pi", mk_pred,
         "[3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²) — closed form; both pieces "
         "Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4, "
-        "qou:QOU.BraidKnot.meson_EM_closed_form)",
+        "qou:QOU.BraidKnot.meson_EM_closed_form); α_em is a CLASS-A "
+        "acknowledged anchor (CS ansatz conditional on Witten-κ class)",
     ))
 
     return {
