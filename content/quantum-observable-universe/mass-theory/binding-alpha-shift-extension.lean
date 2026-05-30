@@ -208,58 +208,42 @@ def lightNucleusK : ℕ → ℕ := fun A =>
   else if A = 4 then 4
   else 0
 
-/-- Light-nuclei α_shift profile.  Equals `bindingAlphaShift
-    (lightNucleusP A) (lightNucleusK A)` pointwise by construction:
-    A=2 → 3 = 3·(2-1); A=3 → 5 = 5·(2-1); A=4 → 8 = 4·(3-1). -/
-def lightNucleusAlphaShift : ℕ → ℕ := fun A =>
-  if A = 2 then 3
-  else if A = 3 then 5
-  else if A = 4 then 8
-  else 0
+/-- Light-nuclei α_shift profile, defined directly as
+    `bindingAlphaShift (lightNucleusP A) (lightNucleusK A)`.
+
+    Using the structural composition rather than re-listing the
+    magic values (3, 5, 8) eliminates duplication and lets all
+    downstream proofs close definitionally (`rfl`).  Per Gemini
+    medium-priority review on #1485. -/
+def lightNucleusAlphaShift (A : ℕ) : ℕ :=
+  bindingAlphaShift (lightNucleusP A) (lightNucleusK A)
 
 /-- Sanity check at the deuteron candidate T(2, 3): α_shift = 3. -/
 theorem light_nucleus_alpha_shift_at_deuteron :
-    lightNucleusAlphaShift 2 =
-    bindingAlphaShift (lightNucleusP 2) (lightNucleusK 2) := by
-  unfold lightNucleusAlphaShift lightNucleusP lightNucleusK bindingAlphaShift
-  rfl
+    lightNucleusAlphaShift 2 = 3 := rfl
 
-/-- Sanity check at the A=3 mirror pair T(2, 5): α_shift = 5. -/
+/-- Sanity check at the A = 3 mirror pair T(2, 5): α_shift = 5. -/
 theorem light_nucleus_alpha_shift_at_A3 :
-    lightNucleusAlphaShift 3 =
-    bindingAlphaShift (lightNucleusP 3) (lightNucleusK 3) := by
-  unfold lightNucleusAlphaShift lightNucleusP lightNucleusK bindingAlphaShift
-  rfl
+    lightNucleusAlphaShift 3 = 5 := rfl
 
 /-- Sanity check at ⁴He's candidate T(3, 4): α_shift = 8. -/
 theorem light_nucleus_alpha_shift_at_He4 :
-    lightNucleusAlphaShift 4 =
-    bindingAlphaShift (lightNucleusP 4) (lightNucleusK 4) := by
-  unfold lightNucleusAlphaShift lightNucleusP lightNucleusK bindingAlphaShift
-  rfl
+    lightNucleusAlphaShift 4 = 8 := rfl
 
 /-- **Concrete `BindingForceCarrierKnot` instance covering all four
     light-nuclei candidates A ∈ {2, 3, 4}.**
 
     Closes the Phase-3 candidate identifications in a single
-    instance.  Discharges `matches_alpha_shift` by an exhaustive
-    case-split on A: the three light-nucleus branches close by the
-    sanity theorems above; the sentinel A ∉ {2, 3, 4} branch closes
-    by `simp` on the conditionals.  **No** `sorry`.
+    instance.  Since `lightNucleusAlphaShift` is defined directly
+    as `bindingAlphaShift ∘ ⟨lightNucleusP, lightNucleusK⟩`,
+    `matches_alpha_shift` holds **definitionally** — the proof is
+    `rfl`.  **No** `sorry`.
 
     Substrate-uniqueness of each `(p_A, k_A)` — proving these are
     the substrate's choices rather than candidates — remains open
     pending the H_{3A}(q) Wedderburn-block minimisation. -/
 instance lightNucleiForceCarrierKnot :
     BindingForceCarrierKnot lightNucleusAlphaShift lightNucleusP lightNucleusK where
-  matches_alpha_shift A := by
-    by_cases h2 : A = 2
-    · subst h2; exact light_nucleus_alpha_shift_at_deuteron
-    · by_cases h3 : A = 3
-      · subst h3; exact light_nucleus_alpha_shift_at_A3
-      · by_cases h4 : A = 4
-        · subst h4; exact light_nucleus_alpha_shift_at_He4
-        · unfold lightNucleusAlphaShift lightNucleusP lightNucleusK bindingAlphaShift
-          simp [h2, h3, h4]
+  matches_alpha_shift _ := rfl
 
 end QOU.BraidKnot
