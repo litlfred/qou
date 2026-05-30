@@ -31,7 +31,9 @@ export default remark({
   label: "rem:operator-valued-magnitude-budget",
   title:
     "Magnitude budget: operator-valued vs scalar approximation of $A^\\lambda_{\\mu\\nu}(I)$",
+  interprets: "prop:hecke-branching-trace-decomposition",
   uses: [
+    "prop:hecke-branching-trace-decomposition",
   ],
   computation: {
     engine: "python",
