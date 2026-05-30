@@ -176,6 +176,7 @@ export default chapter({
         "pn-averaging-uniqueness",
         "meson-color-tube-uniqueness",
         "bring-residue-resolvent",
+        "binding-alpha-shift-extension",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
       ],
