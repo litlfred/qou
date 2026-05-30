@@ -86,6 +86,32 @@ def file_content_hash(path: str, length: int = 12) -> str:
     return hashlib.sha256(content.encode("utf-8")).hexdigest()[:length]
 
 
+# ── Environment capture (software/library versions) ──────────────
+
+def capture_environment() -> dict:
+    """Capture the interpreter + numeric-library versions that produced a
+    witness.
+
+    Recorded in every witness under ``environment`` so version-driven drift
+    is *attributable* — e.g. a different mpmath/sympy build shifting q₀ at
+    ~1e-8 and cascading into every derived mass is now visible in the
+    witness rather than an unexplained diff. Versions are read from package
+    metadata (no module imports forced); missing packages are simply
+    omitted. The list is deliberately small (the libraries whose version
+    actually affects numeric output).
+    """
+    import importlib.metadata as _md
+
+    env: dict[str, str] = {"python": sys.version.split()[0]}
+    for pkg in ("numpy", "scipy", "sympy", "mpmath", "pyhecke-native", "clarabel"):
+        try:
+            env[pkg.replace("-", "_")] = _md.version(pkg)
+        except Exception:
+            # Not installed / no metadata — omit rather than guess.
+            pass
+    return env
+
+
 # ── Upstream-witness hash recording (anti-staleness) ────────────
 
 def load_and_hash_upstream(path: Union[str, Path]) -> tuple[dict, dict]:
@@ -578,6 +604,11 @@ class WitnessBuilder:
             }
         except ImportError:
             pass
+
+        # ── Environment / software versions ────────────────────────
+        # Interpreter + numeric-library versions, so version-driven drift
+        # (e.g. mpmath/sympy shifting q₀ at ~1e-8) is attributable.
+        witness["environment"] = capture_environment()
 
         if self.description:
             witness["description"] = self.description

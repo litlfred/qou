@@ -377,7 +377,8 @@ def main() -> int:
     # the LP is bounded for every atom and strong duality holds; the
     # default M_bound=1e6 in `solve_operator_selection_lp` is intended
     # for problems with signed coefficients (not this case).
-    res = solve_operator_selection_lp(t, G, n_target, M_bound=0.0)
+    # Pin scipy: committed-witness producer → byte-deterministic.
+    res = solve_operator_selection_lp(t, G, n_target, M_bound=0.0, backend="scipy")
     res_dict = res.to_dict()
 
     # Also run LP for each atom in atoms_to_test (sweep)
@@ -427,7 +428,7 @@ def main() -> int:
         ntarget_a = float(ta.sum() * 0.5)
         try:
             ra = solve_operator_selection_lp(
-                ta, Ga, ntarget_a, M_bound=0.0
+                ta, Ga, ntarget_a, M_bound=0.0, backend="scipy"
             ).to_dict()
         except Exception as e:
             lp_results_per_atom.append({

@@ -399,7 +399,9 @@ def lp_dual_at_alpha(alpha: float, G: np.ndarray) -> dict:
         # checks: y0_star, y_star, active_set, primal_obj, dual_obj,
         # duality_gap.
         from lp_dual_solver import solve_operator_selection_lp
-        canon = solve_operator_selection_lp(c, G, target_net).to_dict()
+        # Pin scipy: committed-witness producer → byte-deterministic (the
+        # new "auto" default would use clarabel when its binary is built).
+        canon = solve_operator_selection_lp(c, G, target_net, backend="scipy").to_dict()
         out["lp_dual"] = canon
         out["y0_star"] = canon["y0_star"]
         out["y_star"] = canon["y_star"]

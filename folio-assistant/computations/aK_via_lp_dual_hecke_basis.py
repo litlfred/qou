@@ -141,7 +141,8 @@ def solve_atom_lp(atom: str) -> dict:
     G = gram_matrix()
     n_target = tr_M_atom
 
-    result = solve_operator_selection_lp(t, G, n_target)
+    # Pin scipy: committed-witness producer → byte-deterministic.
+    result = solve_operator_selection_lp(t, G, n_target, backend="scipy")
     blocks = assign_wedderburn_dominant_block()
 
     per_basis = []
