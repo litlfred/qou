@@ -139,6 +139,110 @@ The positivity statement involves three open ingredients:
    conditional-class input for the Wightman-axiom theorem; granting
    the class instance, the surreal bound completes OS reconstruction.
 
+## Reduction to a single substrate axiom
+
+The three ingredients above are not independent. Ingredients (2) and
+(3) are technical (commutation with $\tau_{\mathrm{arch}}$;
+Mathlib infrastructure) and reduce to plumbing once the categorical
+content is settled. The *only* genuinely new mathematical input
+needed is a single positivity axiom on the substrate Frobenius
+algebra. To make this precise, recall the standard categorical
+formulation of GNS positivity (Müger, Bischoff–Kawahigashi–Longo–
+Rehren): a Frobenius algebra $(A, \mu, \eta, \Delta, \varepsilon)$
+in a $C^*$-tensor category is **positive** if its evaluation map
+$\eta : \mathbf{1} \to A$ admits a state-positive lift — i.e. the
+composition
+
+$$
+  \mathbf{1}
+  \;\xrightarrow{\;\eta\;}\;
+  A
+  \;\xrightarrow{\;\Delta\;}\;
+  A \otimes A
+  \;\xrightarrow{\;\mathrm{id}\,\otimes\,*\;}\;
+  A \otimes A^*
+$$
+
+factors through the positive cone of $A \otimes A^*$. The single
+missing input the QOU substrate needs to supply is exactly this:
+
+> **Axiom (substrate $C^*$-Frobenius positivity).** At the
+> archimedean substrate value $q = q_0 \in \mathbb{R}_{>1}$, the
+> [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)
+> $A$ admits a $C^*$-completion in which the unit map
+> $\eta : \mathbf{1} \to A$ is positive in the categorical sense
+> above. Equivalently, $(A, \mu, \eta, \Delta, \varepsilon)$ is a
+> *positive* Frobenius algebra (in the Bischoff–Kawahigashi–Longo–
+> Rehren sense) in the $C^*$-tensor category $\mathbf{C}$ at $q_0$.
+
+**Reduction theorem (informal):** *Granting the substrate
+$C^*$-Frobenius positivity axiom together with*
+[`prop:reeb-u1-chart-swap`](#prop:reeb-u1-chart-swap) *and the
+existing*
+[`def:archimedean-realization-functor`](#def:archimedean-realization-functor)
+*compatibility with $U(1)_\xi$-actions, OS axiom (OS2)
+holds: $\langle\theta(\phi), \phi\rangle_F \geq 0$ for every state
+$\phi$ in the positive-time Reeb half.*
+
+**Proof sketch.** Three steps:
+
+1. **Categorical reflection = Reeb $\mathbb{Z}_2$.** By
+   [`prop:reeb-u1-chart-swap`](#prop:reeb-u1-chart-swap), $\theta$
+   is the antipodal $\mathbb{Z}_2 \subset T_q$ subgroup acting on the
+   contact-affine chart $\mathbb{P}(V)$ via $z \mapsto -z$. On the
+   substrate Hopf algebra $A$, the action $\theta_A : A \to A$
+   factors through the antipode $S$ via the $T_q$-grading:
+   $\theta_A = S \circ (\mathrm{sign}\,\text{of}\,\xi\text{-grading})$.
+
+2. **Antipode-twisted pairing = state-positive form.** The
+   substrate Frobenius pairing factors through the antipode by
+   $\langle a, b \rangle_F = \varepsilon(\mu(a, S(b)))$. Composing
+   with $\theta_A$:
+   $\langle \theta(\phi), \phi \rangle_F = \varepsilon(\mu(\theta(\phi), S(\phi)))
+   = \varepsilon(\mu(S(\phi^*), S(\phi)))$ where $\phi^*$ is the
+   $C^*$-conjugate. By the substrate positivity axiom, this evaluates
+   to a non-negative element of $\mathrm{End}_{\mathbf{C}}(\mathbf{1}) = k$.
+
+3. **Stability under $\tau_{\mathrm{arch}}$.** $\tau_{\mathrm{arch}}$
+   sends the categorical $C^*$-norm to the standard $L^2$-norm on
+   $\mathbb{R}^4$ by construction (this is what makes the
+   archimedean realisation a $*$-functor, which is recorded in the
+   definition of [`def:archimedean-realization-functor`](#def:archimedean-realization-functor)).
+   Positivity is preserved.
+
+The three steps chain: granting the substrate axiom, OS reflection
+positivity follows. $\square$ (proof sketch)
+
+**What's actually open.** The status of OS reflection positivity in
+the QOU framework is therefore equal to the status of this single
+$C^*$-Frobenius positivity axiom. The axiom is well-formulated
+inside the existing Müger / BKLR theory of unitary fusion categories
+and unitary $C^*$-Frobenius algebras; verifying that the QOU
+substrate $A$ at $q_0 \in \mathbb{R}_{>1}$ satisfies it requires:
+
+- A choice of $C^*$-norm on $A$ compatible with the
+  $q_0$-deformation (not entirely canonical: there are multiple
+  candidate norms — the universal $C^*$-norm of the underlying $A$
+  considered as a $*$-algebra, the GNS norm w.r.t. the Frobenius
+  pairing, and the Müger norm built from the categorical trace);
+- Verification that one of these candidate norms makes the
+  Frobenius pairing positive in the sense above (the Müger norm
+  always does, *if* the underlying tensor category $\mathbf{C}$
+  is unitary — and Bring's surface gives $\mathbf{C}$ a
+  $C^*$-structure inherited from $\mathrm{Rep}(\mathrm{SU}_q(2))$
+  at $q_0 \in \mathbb{R}_{>1}$, which is unitary by Wenzl's
+  positivity criterion);
+- Compatibility of the chosen norm with the antipode $S$ (the
+  Müger norm has this by construction).
+
+A reasonable conjecture, motivated by these existence considerations,
+is that **the Müger $C^*$-norm on $A$ at $q_0$ exhibits substrate
+$C^*$-Frobenius positivity** — making the axiom not freely posited
+but derivable from $\mathrm{Rep}(\mathrm{SU}_q(2))$ unitarity. This
+is the natural follow-up programme: establish the substrate
+positivity from Wenzl's positivity criterion for
+$\mathrm{Rep}(\mathrm{SU}_q(2))$ at $q_0 \in \mathbb{R}_{>1}$.
+
 ## Conclusion
 
 The Wightman-axiom portion of the Yang–Mills millennium statement —
