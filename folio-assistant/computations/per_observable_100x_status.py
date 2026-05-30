@@ -370,28 +370,33 @@ def main() -> dict:
         "note": "calibration anchor — err defined as 0",
     })
 
-    # ── m_K/m_π — meson mass ratio from Hecke character + Seifert ────
-    # Formula: (q₀⁵ − q₀⁻⁵) × (9/5)²
-    # Source: meson-kaon-pion-derivation.witness.json
-    meson_w = load_witness("meson-kaon-pion-derivation.witness.json")
-    meson_data = meson_w.get("data", {}).get("formula", {})
-    mk_pred_str = meson_data.get("predicted")
-    if mk_pred_str is not None:
-        mk_pred = mpf(str(mk_pred_str))
-        rows.append(_row_for(
-            "m_K/m_pi", mk_pred,
-            "meson-kaon-pion-derivation.witness.json "
-            "(Hecke character χ_{(2,1)}(σ₁⁵) × (9/5)²)",
-        ))
-    else:
-        # Fallback: compute directly from q₀
-        from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-        q0 = mpf(Q_50_DIGIT_STR)
-        mk_pred = (q0 ** 5 - q0 ** (-5)) * (mpf(9) / mpf(5)) ** 2
-        rows.append(_row_for(
-            "m_K/m_pi", mk_pred,
-            "(q₀⁵ − q₀⁻⁵) × (9/5)² — inline fallback",
-        ))
+    # ── m_K/m_π — derived sub-ppb closure (#1442 + #1448) ────────────
+    # Closed form: m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(3q² − 1)/(2q²)
+    # - strong sector [3]_q·[4]_q: Lean-proved q-Clebsch–Gordan fusion
+    #   (prop:meson-qcg-fusion-identity, QOU.BraidKnot.meson_qCG_3x4)
+    # - EM sinh-channel (3q²−1)/(2q²): Lean-proved ring identity
+    #   (prop:meson-em-sinh-closed-form, QOU.BraidKnot.meson_EM_closed_form)
+    # - α_em from prop:em-coupling-projection (q·[9]_q·[10]_q, CS-corrected
+    #   to 137.035944, 399 ppb off CODATA)
+    # Closes m_K²/m_π² to +0.047 ppm; sqrt → m_K/m_π to ≈0.024 ppm.
+    # Both terms framework-derived; no fitted integers (the (q₀⁵−q₀⁻⁵)(9/5)²
+    # form formerly used here was retracted as a fit, see #1420).
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    from mpmath import pi as _pi
+    q0 = mpf(Q_50_DIGIT_STR)
+    _hbar_factor = (3 * q0 ** 2 - 1) / (2 * q0 ** 2)  # sinh-channel closed form
+    _qcg_strong = (q0 ** 2 + 1 + q0 ** -2) * (
+        (q0 ** 4 - q0 ** -4) / (q0 - q0 ** -1)
+    )  # [3]_q · [4]_q
+    _alpha_em_inv = mpf("137.035944")  # CS-corrected α_em (Witten κ, 399 ppb)
+    _mk_sq_over_mpi_sq = _qcg_strong + (1 / _alpha_em_inv) / _pi * _hbar_factor
+    mk_pred = mp.sqrt(_mk_sq_over_mpi_sq)
+    rows.append(_row_for(
+        "m_K/m_pi", mk_pred,
+        "[3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²) — closed form; both pieces "
+        "Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4, "
+        "qou:QOU.BraidKnot.meson_EM_closed_form)",
+    ))
 
     return {
         "computation": "per-observable-100x-experimental-status",
