@@ -26,6 +26,7 @@ import QOU.Archimedean.WeierstrassProjection
 import QOU.Archimedean.metallic_character_knot
 import QOU.Archimedean.archimedean
 import QOU.Archimedean.noble_gas_characterization
+import QOU.Archimedean.BlochWignerUnitCircle
 
 /-!
 # Descartes Universe — Module Index
