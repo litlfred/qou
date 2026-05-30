@@ -60,6 +60,11 @@ jobs:
           CIBW_BUILD: 'cp310-* cp311-* cp312-*'
           # Skip 32-bit and musl (rug needs full GMP).
           CIBW_SKIP: '*-musllinux_* *-manylinux_i686'
+          # Ship the clarabel-lp binding (operator_selection_lp — MPFR LP).
+          # Pulls clarabel + rug/MPFR into the wheel; gmp/mpfr dev headers
+          # are installed by CIBW_BEFORE_ALL below. Verified locally:
+          # `maturin build --features clarabel-lp` → importable manylinux wheel.
+          CIBW_ENVIRONMENT: 'MATURIN_PEP517_ARGS="--features clarabel-lp"'
           CIBW_BEFORE_ALL_LINUX: |
             yum install -y gmp-devel mpfr-devel || \
               apt-get install -y libgmp-dev libmpfr-dev
@@ -68,11 +73,13 @@ jobs:
           # maturin builds Rust extensions; this sets it as the build
           # backend for cibuildwheel.
           CIBW_BUILD_FRONTEND: 'build'
-          # Smoke test: import the module + call mn_chi (cheap).
+          # Smoke test: import the module + call mn_chi (cheap) + confirm
+          # the clarabel-lp LP binding shipped.
           CIBW_TEST_COMMAND: >
             python -c "import pyhecke_native;
             assert pyhecke_native.mn_chi([3], [2,1]) == 1, 'mn_chi sanity';
-            print('pyhecke_native', pyhecke_native.__version__, 'OK')"
+            assert hasattr(pyhecke_native, 'operator_selection_lp'), 'clarabel-lp binding missing';
+            print('pyhecke_native', pyhecke_native.__version__, 'OK + clarabel-lp')"
         with:
           package-dir: tools/pyhecke-native
           output-dir: wheelhouse
