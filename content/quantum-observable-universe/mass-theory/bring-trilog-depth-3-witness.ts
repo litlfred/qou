@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:bring-trilog-depth-3-witness",
+export default conjecture({
+  label: "conj:bring-trilog-depth-3-witness",
   title:
     "Bring trilog at $\\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)",
   lean: { ref: "qou:QOU.BraidKnot.BringTrilogDepth3Witness", validation: "stub" },
@@ -13,7 +13,7 @@ export default proposition({
       "folio-assistant/computations/bring-trilog-zeta5-depth-3.witness.json",
     status: "verified",
   },
-  uses: ["prop:two-filtration-bridge"],
+  uses: ["conj:two-filtration-bridge"],
   cites: [
     "bloch2000",
     "kontsevich1995",

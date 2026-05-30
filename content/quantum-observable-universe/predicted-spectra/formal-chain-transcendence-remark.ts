@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:hyperbolic-volume-transcendence",
+  interprets: "conj:hyperbolic-volume-transcendence",
   label: "rem:formal-chain-transcendence",
   title:
     "The formal derivation chain does not depend on transcendence status",

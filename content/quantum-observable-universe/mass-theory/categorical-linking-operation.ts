@@ -1,14 +1,14 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:categorical-linking-operation",
+export default conjecture({
+  label: "conj:categorical-linking-operation",
   title:
     "Categorical linking operation $\\mathrm{Lk}_R$: ribbon-category dual of topological linking number",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.CategoricalLinkingOperation",
     validation: "not_checked",
   },
-  uses: ["prop:categorical-higgs-mechanism"],
+  uses: ["conj:categorical-higgs-mechanism"],
   tags: [
     "ribbon-category",
     "linking-number",

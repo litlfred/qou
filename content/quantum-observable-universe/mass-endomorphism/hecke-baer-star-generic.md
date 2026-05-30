@@ -125,7 +125,7 @@ for the depth-2 reading.
 
 ### Significance for B1
 
-Combined with [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence),
+Combined with [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence),
 the projections $\{e_\lambda\}$ become **explicit witnesses** for
 Goncharov period classes: $e_{\lambda_K} \cdot \mathrm{Li}_2^q(z_K)$
 under $\tau_{\mathrm{arch}}$ generates the period class

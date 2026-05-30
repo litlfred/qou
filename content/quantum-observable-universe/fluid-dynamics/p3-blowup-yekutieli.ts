@@ -6,7 +6,7 @@ export default proposition({
   title:
     "Blowup mechanism as Yekutieli lifting obstruction in the brane tower",
   uses: [
-    "prop:regularity-breakdown",
+    "conj:regularity-breakdown",
     "prop:descent-condition",
     "def:local-cohomology-group",
     "rem:vortex-reconnection",

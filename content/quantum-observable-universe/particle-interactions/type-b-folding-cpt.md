@@ -123,5 +123,5 @@ class TypeBFoldingCPT (M : Type*) [BrCategory M] [Crystal M] where
   [`conj:t-from-trace-cyclicity`](t-from-trace-cyclicity.md)
 - Composite CPT:
   [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
-- Wigner SU(4) fixed-point story: [`prop:wigner-su4-from-spin-isospin`](wigner-su4-from-spin-isospin.md) (D11)
+- Wigner SU(4) fixed-point story: [`conj:wigner-su4-from-spin-isospin`](wigner-su4-from-spin-isospin.md) (D11)
 - [Brundan-Kleshchev 2009; Kashiwara 1991; Lecouvey 2007 for Type-B crystals]

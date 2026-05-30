@@ -66,7 +66,7 @@ $J^\ell/J^{\ell+1}$ is itself a semisimple $H_3$-bimodule.*
 
 **KLR grading interpretation.**
 *Under the
-[confinement–grading correspondence](#prop:confinement-grading-correspondence),
+[confinement–grading correspondence](#conj:confinement-grading-correspondence),
 the confinement level $\ell(K, q)$ of a closed braid $K$ coincides
 with the top non-zero $\mathbb{Z}$-grading degree of its KLR-module
 lift $\mathfrak{M}_K$ on the cyclotomic KLR algebra; the symbol

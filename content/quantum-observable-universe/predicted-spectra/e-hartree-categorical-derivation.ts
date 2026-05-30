@@ -1,4 +1,4 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
 /**
  * Conjecture: the Hartree-energy scaling
@@ -27,8 +27,8 @@ import { proposition } from "../../schema/builders";
  * coefficient $c_2$ conjecturally inside
  * $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.
  */
-export default proposition({
-  label: "prop:e-hartree-categorical-derivation",
+export default conjecture({
+  label: "conj:e-hartree-categorical-derivation",
   title:
     "Conjectured categorical derivation of $E_h = m_e c_q^2 \\alpha_{EM}^2$ via $J^1$-vanishing in the molecular LP dual",
   lean: {

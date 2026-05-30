@@ -51,7 +51,7 @@ export default proposition({
   title:
     "Borromean baryon $\\lambda_{\\text{scale}}$ empirical form $5/2 - h^2 \\cdot G$ (acknowledged-CAL-4)",
   uses: [
-    "prop:borromean-baryon-mass-formula",
+    "conj:borromean-baryon-mass-formula",
     "prop:plancherel-weight-boundedness",
   ],
   cites: [

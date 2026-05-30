@@ -267,7 +267,7 @@ $\mathrm{tr}_{\rm pure}$ is the operative quantity going forward.
  $q$-rational requires identifying their generating function in
  the Hoefsmit cell-content arithmetic.
 3. **Refinement of upstream blocks** — the existing
- [`prop:weak-spectral-completeness`](#prop:weak-spectral-completeness)
+ [`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness)
  and
  [`prop:weak-symmetric-normalization`](#prop:weak-symmetric-normalization)
  should be edited to reference this $n = 6$ formulation.

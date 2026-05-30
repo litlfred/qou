@@ -18,6 +18,6 @@ export default proposition({
   ],
   uses: [
     "prop:six-canonical-knot-operators",
-    "prop:mass-volume-factorization",
+    "conj:mass-volume-factorization",
   ],
 });

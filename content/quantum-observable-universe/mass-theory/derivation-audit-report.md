@@ -31,7 +31,7 @@ completed.
 
 **Resolution path.**  A conjecture stating the SDP uniqueness result
 has been created:
-[prop:canonical-knot-id-sdp](#prop:canonical-knot-id-sdp).
+[conj:canonical-knot-id-sdp](#conj:canonical-knot-id-sdp).
 
 ---
 
@@ -68,7 +68,7 @@ The reduction is *sorry-free conditional* on
 [`brundankleshchev2009`] + [`lecouvey2007`]; the residual open
 content is the explicit crystal-graph computation.
 
-**Resolution path.**  [prop:chirality-ribbon-frobenius](#prop:chirality-ribbon-frobenius)
+**Resolution path.**  [conj:chirality-ribbon-frobenius](#conj:chirality-ribbon-frobenius)
 states the complete form and flags the proof obligations.
 
 ---
@@ -80,7 +80,7 @@ states the complete form and flags the proof obligations.
 **Description.**  The brane-tower regularization requires a canonical
 level-selection rule $n_\star : \{\text{confined particles}\} \to \mathbb{N}$
 that is derivable from QOU substrate data alone.  The conjecture
-([prop:brane-tower-z-habiro](#prop:brane-tower-z-habiro)) states its
+([conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro)) states its
 existence, but no formula for $n_\star$ has been derived.  For low
 isotopes the truncation depth was chosen by matching empirical binding
 energies (GAP-B overlap); for heavier nuclei no rule is specified.
@@ -103,7 +103,7 @@ No general derivation of $\rho(Z, N)$ from the categorical data alone
 given.  Individual values are discovered by running the SDP numerically,
 which is an empirical search, not a derivation.
 
-**Resolution path.**  [prop:rho-prefactor-structural](#prop:rho-prefactor-structural)
+**Resolution path.**  [conj:rho-prefactor-structural](#conj:rho-prefactor-structural)
 frames the conjecture.
 
 ---
@@ -216,7 +216,7 @@ times $m_e$, with **0.2–2.1% agreement** to empirical fitted values
 (see the per-coefficient table in
 [`../particle-interactions/q-integer-mass-formula.md`](../particle-interactions/q-integer-mass-formula.md)).
 The block is itself a **Conjecture (BW-emergence)** conditional on
-`prop:palindromicity-orbital-type` + `prop:shell-closure-nf-term-count`,
+`conj:palindromicity-orbital-type` + `conj:shell-closure-nf-term-count`,
 hence the closure is *partial-with-conditional-uplift*, not fully derived.
 
 **Description (historical).**  The extended Bethe--Weizsäcker
@@ -247,7 +247,7 @@ close, but this is an open direction (noted in `negative-debt-confinement.md`
 §Status: the nine-strand direction).
 
 The current hadronic calibration rests on
-[prop:brane-tower-z-habiro](#prop:brane-tower-z-habiro) (GAP-D);
+[conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro) (GAP-D);
 once the brane tower is controlled algebraically the $0.75\%$ gap
 becomes a computable correction and $Q_\beta$ remains the single
 hadronic input for normalization only.

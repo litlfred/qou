@@ -4,10 +4,10 @@ export default prose({
   label: "prose:derivation-audit-report",
   title: "Derivation Audit Report: Mass, Beta-Decay, and Binding-Energy Computations",
   uses: [
-    "prop:canonical-knot-id-sdp",
-    "prop:chirality-ribbon-frobenius",
+    "conj:canonical-knot-id-sdp",
+    "conj:chirality-ribbon-frobenius",
     "conj:brane-level-selection",
-    "prop:rho-prefactor-structural",
+    "conj:rho-prefactor-structural",
   ],
   tags: [
     "audit",

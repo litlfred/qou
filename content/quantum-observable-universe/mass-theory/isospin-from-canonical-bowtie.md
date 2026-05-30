@@ -13,7 +13,7 @@
 
 **Conjecture (D9 isospin closure, conditional on
 [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy)
-+ [`prop:inter-nucleon-channel-color-tube`](#prop:inter-nucleon-channel-color-tube)).**
++ [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)).**
 *For each atomic braid $\beta_A \in B_{3A}$ written in the canonical
 operator-valued interface convention*
 
@@ -309,7 +309,7 @@ ultimately lives in the upstream-conjecture class instances.
 - Upstream restricted result:
   [`prop:crystal-isospin-degeneracy`](crystal-isospin-degeneracy.md)
 - Upstream channel-assignment class:
-  [`prop:inter-nucleon-channel-color-tube`](inter-nucleon-channel-color-tube.md)
+  [`conj:inter-nucleon-channel-color-tube`](inter-nucleon-channel-color-tube.md)
   (PR [#1111](https://github.com/litlfred/qou/pull/1111))
 - The 305 ppm closed form:
   [`prop:flavor-split-substrate`](flavor-split-substrate.md)

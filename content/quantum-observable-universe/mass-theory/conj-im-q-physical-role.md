@@ -87,7 +87,7 @@ directly. The candidate roles are all in **non-mass observables**.
 
 ## Connection to other conjectures
 
-- [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) F_ℓ
+- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) F_ℓ
   — the canonical lepton-mass formula is Im(q)-robust (modulus projection
   invariance); F_ℓ does NOT distinguish the three candidate Im(q) roles.
   Hence the F_ℓ conjecture is consistent with ALL three candidates.

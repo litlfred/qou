@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:bring-hyperbolic-knot-bloch-decomposition",
+export default conjecture({
+  label: "conj:bring-hyperbolic-knot-bloch-decomposition",
   title:
     "Bloch-group decomposition of $2/(3\\pi)$ from $S_5$-equivariantly embeddable hyperbolic knots in Bring's surface",
   uses: [

@@ -1,7 +1,7 @@
 **Remark (per-partition $k_\lambda$ — the open structural form of $n_\star$).**
 
 The level-selection rule $n_\star$ of
-[prop:brane-tower-z-habiro](#prop:brane-tower-z-habiro) was tested
+[conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro) was tested
 empirically against the AME light-isotope sample $\{D, T, {}^3\mathrm{He}\}$
 under three increasingly-refined ansatze, and is now sharpened to the
 following structural form. The progression of refutations
@@ -267,7 +267,7 @@ Candidate routes (all $(q, \beta)$-aware):
  evaluation.
 
 Closure of this open form would constitute the structural lift
-formula of [prop:brane-tower-z-habiro](#prop:brane-tower-z-habiro) — the missing piece flagged in
+formula of [conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro) — the missing piece flagged in
 that conjecture's "Status of $n_\star$" section.
 
 ## Paper-canonical $\sigma_w$ basis (cycle 7)

@@ -10,7 +10,7 @@ export default conjecture({
   uses: [
     "prop:hecke-mass-trace",
     "def:qz-bicompletion",
-    "prop:brane-tower-z-habiro",
+    "conj:brane-tower-z-habiro",
     "def:motivic-substrate",
     "def:archimedean-realization-functor",
   ],

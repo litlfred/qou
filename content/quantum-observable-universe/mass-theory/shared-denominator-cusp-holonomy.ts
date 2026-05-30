@@ -1,14 +1,14 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:shared-denominator-cusp-holonomy",
+export default conjecture({
+  label: "conj:shared-denominator-cusp-holonomy",
   title:
     "Shared-denominator cusp holonomy: roots of $(x; q)_n$ enforce Thurston completeness",
   lean: {
     ref: "qou:QOU.QPochhammer.shared_denominator_cusp_holonomy",
     validation: "not_checked",
   },
-  uses: ["prop:algebraic-geometric-dilog-equivalence"],
+  uses: ["conj:algebraic-geometric-dilog-equivalence"],
   cites: [
     "thurston1978",
     "neumann-zagier1985",

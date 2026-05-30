@@ -1,5 +1,5 @@
 The [global regularity theorem](#thm:q-ns-wellposedness) and the
-[regularity breakdown conjecture](#prop:regularity-breakdown)
+[regularity breakdown conjecture](#conj:regularity-breakdown)
 together reframe the Clay Millennium Problem as a **degeneration
 problem** within a one-parameter family of well-posed equations.
 This remark outlines the research programme that connects the
@@ -69,7 +69,7 @@ with eigenvalues growing as $[k]_q^2 \sim q^{2k}$.  This requires:
 
 **Problem 2. Rate of blowup.**
 Assuming the [regularity breakdown
-conjecture](#prop:regularity-breakdown), determine the critical
+conjecture](#conj:regularity-breakdown), determine the critical
 exponent $\alpha$ such that
 
 $$
@@ -113,7 +113,7 @@ Is the $q = 1$ phase transition universal — i.e., does the
 critical exponent $\alpha$ depend on the initial data $v_0$, or
 only on the categorical structure $(\mathbf{C}, A, \tau)$?  The
 analogy with statistical mechanics
-([regularity breakdown](#prop:regularity-breakdown)) suggests
+([regularity breakdown](#conj:regularity-breakdown)) suggests
 universality: the critical behaviour should depend only on the
 "symmetry class" (the Euler characteristic $\chi(A)$ and the
 categorical dimension), not on the specific initial condition.

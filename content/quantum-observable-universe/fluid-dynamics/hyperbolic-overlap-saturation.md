@@ -134,7 +134,7 @@ obstruction is preserved right up to $T^\ast$, and the
 [NS obstruction](#def:ns-obstruction) does not dissolve under
 the viscous diffusion mechanism the point-vortex picture
 seemed to provide. This is the
-[branch (A) outcome](#prop:levi-degeneracy) of the conjecture
+[branch (A) outcome](#conj:levi-degeneracy) of the conjecture
 — **classical 3D Navier–Stokes admits finite-time blowup**.
 
 **The dichotomy in one table.**
@@ -159,7 +159,7 @@ profile supported by the hyperbolic strain. The vortex
 collision preserves the contact non-degeneracy and the NS
 obstruction class is carried intact to $T^\ast$. This is the analytical
 bridge that the
-[Levi degeneracy conjecture](#prop:levi-degeneracy) calls
+[Levi degeneracy conjecture](#conj:levi-degeneracy) calls
 for: the geometric obstruction survives the viscous regularity
 mechanism, leaving finite-time blowup for the classical
 viscous Navier–Stokes system as the expected outcome.
@@ -200,5 +200,5 @@ viscous Navier–Stokes system as the expected outcome.
    core-shape constant
    $\kappa^2 = \pi\nu/(2\Gamma + \pi\nu)$; lifting this to NS
    blowup requires the
-   [Levi degeneracy](#prop:levi-degeneracy) and
+   [Levi degeneracy](#conj:levi-degeneracy) and
    [counter-example](#prop:ns-counterexample) conjectures.

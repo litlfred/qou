@@ -1,4 +1,4 @@
-**Proposition (conditional on [`prop:borromean-quark`](#prop:borromean-quark) — Q_β spectral bridge).**
+**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — Q_β spectral bridge).**
 
 *Let $\mathcal{B}_n$ be the canonical free-neutron braid word with single
 wrap $A = 1$, let $q = q_0$ be the substrate parameter, let

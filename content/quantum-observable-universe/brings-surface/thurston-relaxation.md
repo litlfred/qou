@@ -24,7 +24,7 @@ in the manuscript:
   positivity constraints in the SDP --- are in bijection with
   the ideal vertices of the tetrahedral triangulation of the
   $\Phi_q$-piece $K_S$.  This is the
-  [pole-to-cusp bijection](#prop:algebraic-geometric-dilog-equivalence)
+  [pole-to-cusp bijection](#conj:algebraic-geometric-dilog-equivalence)
   (1).
 
 * **Newton iteration on the gluing equations.** The Newton solver

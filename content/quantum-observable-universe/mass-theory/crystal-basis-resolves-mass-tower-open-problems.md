@@ -1,9 +1,12 @@
-**Proposition (crystal-basis reduction of three mass-tower open problems).**
+**Proposition (crystal-basis reduction of three mass-tower open
+problems; conditional on
+[`conj:kazhdan-lusztig-classical-limit`](../particle-interactions/kazhdan-lusztig-classical-limit.md)
++ Brundan-Kleshchev / Lecouvey conjectures per §3b-cond).**
 *Under the Brundan-Kleshchev isomorphism
 $H_n(R, q) \cong R^\Lambda_\alpha$ (cyclotomic KLR algebra)
 [`brundankleshchev2009`] and the Lecouvey GS-irreducible /
 crystal-highest-weight bijection [`lecouvey2007`]
-([`prop:crystal-graph-realization`](#prop:crystal-graph-realization)),
+([`conj:crystal-graph-realization`](#conj:crystal-graph-realization)),
 three of the four remaining mass-tower open problems reduce to
 finite-graph combinatorics on Kashiwara crystals
 $\mathrm{Cryst}(\mathfrak{sl}_n)$ [`kashiwara1991`]:*
@@ -95,7 +98,7 @@ enhancement $\alpha_5 < 0$ encodes.
 
 ### Reduction 3: brane-tower $|V|\to 1$ via Kazhdan-Lusztig classical limit
 
-[`prop:brane-tower-z-habiro`](../braids-and-knots/brane-tower-z-habiro.md)
+[`conj:brane-tower-z-habiro`](../braids-and-knots/brane-tower-z-habiro.md)
 diagnoses an analytic divergence: per-generator volumes
 $z_i = |\hat{V}_i|$ for low isotopes lie just below
 $z = q_0 \approx 1.11$, the first pole of $\Phi_q$. The summand
@@ -127,7 +130,7 @@ multiplied by classical character values, both bounded.
 ## The fourth open problem
 
 The K-theoretic identification
-[`prop:bring-hyperbolic-knot-bloch-decomposition`](#prop:bring-hyperbolic-knot-bloch-decomposition)
+[`conj:bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition)
 asks whether $2/(3\pi)$ lies in the rank-8 Bloch group image of
 $B(\mathbb{Q}(\zeta_{60}))\otimes\mathbb{Q}$. Crystal bases do *not*
 directly resolve this: Bloch-Wigner values $D[Z_K]$ are

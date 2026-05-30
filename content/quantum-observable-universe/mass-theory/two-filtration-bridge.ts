@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:two-filtration-bridge",
+export default conjecture({
+  label: "conj:two-filtration-bridge",
   title:
     "Two-filtration bridge: iterated-integral depth $\\leftrightarrow$ partition-cellular GB-depth via $e_\\lambda$",
   lean: { ref: "qou:QOU.BraidKnot.TwoFiltrationBridge", validation: "stub" },

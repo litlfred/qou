@@ -80,7 +80,7 @@ What is conjectured to live in $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z$
 is the **brane-tower element** — a single element collecting the
 finite-rank brane-tower partial sums $\Phi_q^{(N)}(\beta) = \sum_{i=1}^{N} \Phi_q(z_i)$
 across all $N$ as a Cauchy sequence in the $z$-cyclotomic topology.
-See [brane tower in $z$-Habiro](#prop:brane-tower-z-habiro) for the
+See [brane tower in $z$-Habiro](#conj:brane-tower-z-habiro) for the
 precise statement.
 
 ## Relation to existing blocks
@@ -105,4 +105,4 @@ straightforward, but its **utility** depends on the conjecture that
 the brane-tower partial sums are Cauchy in this topology and that
 their limit recovers the empirical mass under cyclotomic projection
 at a canonically determined depth. See
-[brane tower in $z$-Habiro](#prop:brane-tower-z-habiro).
+[brane tower in $z$-Habiro](#conj:brane-tower-z-habiro).

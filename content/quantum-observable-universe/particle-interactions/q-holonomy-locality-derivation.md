@@ -1,6 +1,6 @@
 ## Locality from flatness of the KZ connection
 
-The [lifted-crossing locality](#prop:lifted-crossing-locality)
+The [lifted-crossing locality](#conj:lifted-crossing-locality)
 hypothesis reduces to a statement about the **holonomy of the
 Knizhnik-Zamolodchikov connection** at generic $q$.  The physical
 content: cross-talk between two lifted crossings measures the
@@ -115,7 +115,7 @@ holds to extremely high order in $1/\ell_*$.
 ## Corollary — exponential mass scaling
 
 Combining locality (this remark) with the
-[crossing-graded expansion](#prop:crossing-graded-mass-expansion),
+[crossing-graded expansion](#conj:crossing-graded-mass-expansion),
 
 $$
   \mathfrak{m}(\mathcal{K}; q_0)

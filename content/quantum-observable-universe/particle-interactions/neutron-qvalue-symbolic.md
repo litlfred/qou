@@ -1,4 +1,4 @@
-**Proposition (conditional on [`prop:borromean-quark`](#prop:borromean-quark) — Q_β of free neutron $\beta^{-}$-decay).**
+**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — Q_β of free neutron $\beta^{-}$-decay).**
 The $Q$-value of free neutron $\beta^-$-decay
 $n \to p + e^- + \bar\nu_e$ is derived symbolically from
 the categorical three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$,

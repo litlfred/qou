@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:wigner-su4-from-spin-isospin",
+export default conjecture({
+  label: "conj:wigner-su4-from-spin-isospin",
   title:
     "Wigner $\\mathrm{SU}(4) = \\mathrm{SU}(2)_S \\times \\mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding (L3)",
   lean: {
@@ -9,8 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:isospin-from-canonical-bowtie",
-    "prop:spin-from-so3-fiber",
+    "conj:isospin-from-canonical-bowtie",
+    "conj:spin-from-so3-fiber",
   ],
   cites: [
     "wigner1937",

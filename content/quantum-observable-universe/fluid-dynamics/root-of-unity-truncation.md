@@ -4,7 +4,7 @@
 [`prop:critical-exponent`](#prop:critical-exponent),
 [`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`prop:regularity-breakdown`](#prop:regularity-breakdown);
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "Root-of-unity truncation").**
 
 The [QOU axiom](#def:substrate-parameter) requires that $q$ is
@@ -41,7 +41,7 @@ accumulation of infinitely many such truncations.
 3. **$q = 1$ (classical limit).**
  Infinite simple objects with $[k]_1 = k$ (polynomial).
  No truncation, no exponential damping. The
- [regularity breakdown](#prop:regularity-breakdown) regime.
+ [regularity breakdown](#conj:regularity-breakdown) regime.
 
 **Root-of-unity regularity is stronger than generic.**
 

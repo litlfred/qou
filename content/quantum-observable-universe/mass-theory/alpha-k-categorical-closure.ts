@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:alpha-k-categorical-closure",
+export default conjecture({
+  label: "conj:alpha-k-categorical-closure",
   title:
     "Closed-form resummation of the categorical stratum prefactors $\\alpha_k$ — geometric vs symmetric q-dilogarithm candidates",
   lean: {

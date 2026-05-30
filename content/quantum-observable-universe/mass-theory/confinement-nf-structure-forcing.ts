@@ -1,4 +1,4 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
 /**
  * Conjecture: confinement forces the NF support of a compound braid
@@ -36,8 +36,8 @@ import { proposition } from "../../schema/builders";
  * @see folio-assistant/computations/nh_basis_shift.py — baseline shift_NF table
  * @see docs/audits/2026-05-04-nh-knots-confinement-shift.md — full audit
  */
-export default proposition({
-  label: "prop:confinement-nf-structure-forcing",
+export default conjecture({
+  label: "conj:confinement-nf-structure-forcing",
   title:
     "Confinement → NF-structure forcing: $\\mathrm{shift}_{\\mathrm{NF}}(\\beta_1 \\star I \\star \\beta_2) = \\alpha_{\\mathrm{shift}}(I) + \\Delta$ with $|\\Delta|$ bounded by the LP duality gap",
   lean: { ref: "qou:QOU.BraidKnot.ConfinementNfStructureForcing", validation: "stub" },

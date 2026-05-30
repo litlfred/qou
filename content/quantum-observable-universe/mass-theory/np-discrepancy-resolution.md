@@ -63,7 +63,7 @@ is genuine framework R&D (not yet closed without consuming CAL-3
 as calibration). The path forward is to close the brane-tower
 truncation at $N \geq 1$ via the cyclotomic projection at
 substrate-derived $n_\star$
-([`prop:brane-tower-z-habiro`](#prop:brane-tower-z-habiro)) —
+([`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)) —
 an open conjecture. The current best non-calibrated prediction
 remains the difference $Q_\beta = |\Delta(\mathrm{net})| \cdot E_0$.*
 
@@ -105,7 +105,7 @@ $+1.84\%$, neutron $-62.9\%$ via raw tower) due to the
 pole-distance asymmetry, but cancel substantially in the
 difference. Closing the residual at $N \geq 1$ requires the
 substrate-derived $n_\star$ truncation rule (open per
-[`brane-tower-z-habiro`](#prop:brane-tower-z-habiro)).*
+[`brane-tower-z-habiro`](#conj:brane-tower-z-habiro)).*
 
 **Implication for binding energies at $A \geq 2$.**
 

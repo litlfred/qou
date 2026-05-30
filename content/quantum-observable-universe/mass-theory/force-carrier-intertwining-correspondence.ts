@@ -29,7 +29,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.force_carrier_intertwining_correspondence" },
   title:
     "Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\\lambda = (p, 1^{n-p})$",
-  uses: ["prop:e-hartree-categorical-derivation"],
+  uses: ["conj:e-hartree-categorical-derivation"],
   tags: [
     "force-carrier",
     "intertwining",

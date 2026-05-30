@@ -1,11 +1,11 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:categorical-higgs-mechanism",
+export default conjecture({
+  label: "conj:categorical-higgs-mechanism",
   lean: { ref: "qou:QOU.BraidsAndKnots.CategoricalHiggsMechanism" },
   title:
     "Categorical Higgs mechanism: Goldstone-eating as topological linking",
-  uses: ["prop:weinberg-angle-categorical"],
+  uses: ["conj:weinberg-angle-categorical"],
   tags: [
     "higgs-mechanism",
     "goldstone-eating",

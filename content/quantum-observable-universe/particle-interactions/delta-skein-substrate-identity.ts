@@ -4,7 +4,7 @@ export default remark({
   label: "rem:delta-skein-substrate-identity",
   title:
     "Substrate identity for the proton–neutron Skein difference $\\Delta S(n-p)$",
-  interprets: "prop:borromean-baryon-mass-formula",
+  interprets: "conj:borromean-baryon-mass-formula",
   computation: {
     engine: "mpmath",
     script:
@@ -16,7 +16,7 @@ export default remark({
     status: "verified",
   },
   uses: [
-    "prop:borromean-baryon-mass-formula",
+    "conj:borromean-baryon-mass-formula",
     "prop:q-beta-spectral-bridge",
   ],
   cites: ["codata2022"],

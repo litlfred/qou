@@ -51,7 +51,7 @@ $$
 
 From these six particles, take three quarks
 ($\mathfrak{u}_1$, $\mathfrak{u}_2$, $\mathfrak{d}_3$)
-and confine them via the [Borromean braid](#prop:borromean-quark)
+and confine them via the [Borromean braid](#conj:borromean-quark)
 $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$:
 
 $$

@@ -7,7 +7,7 @@ Palindromicity breaks at the first electron with $\ell \geq 1$
 
 ## Computational evidence
 
-From the [quotient atom model](#prop:shell-closure-nf-term-count),
+From the [quotient atom model](#conj:shell-closure-nf-term-count),
 the palindromicity status at each $Z$:
 
 See [Table 1](#tbl:palindromicity-orbital-type-table1-data).

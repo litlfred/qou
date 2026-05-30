@@ -1,12 +1,12 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:canonical-knot-id-sdp",
+export default conjecture({
+  label: "conj:canonical-knot-id-sdp",
   title:
     "Canonical knot identification for ${}^2$H, ${}^3$H, ${}^3$He from the confinement SDP",
   uses: [
     "prop:delta-max-uniform-bound",
-    "prop:brane-tower-z-habiro",
+    "conj:brane-tower-z-habiro",
   ],
   tags: [
     "knot-identification",

@@ -1,5 +1,5 @@
 Suppose instead that the [algebraic independence
-conjecture](#prop:hyperbolic-volume-transcendence) fails: some
+conjecture](#conj:hyperbolic-volume-transcendence) fails: some
 non-trivial $P \in \mathbb{Q}[x, y, z]$ satisfies
 $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
 \mathrm{Vol}(\mathcal{B}_3)) = 0$.

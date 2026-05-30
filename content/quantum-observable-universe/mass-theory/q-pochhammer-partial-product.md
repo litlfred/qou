@@ -39,7 +39,7 @@ appears in the QOU mass formulas: a finite rational function whose
 denominator zeros are the algebraic addresses of cusps regardless of
 the convergence radius of the analytic limit. The Faddeev limit to
 $\mathrm{Li}_2$
-([Archimedean limit](#prop:dilogarithm-archimedean-limit))
+([Archimedean limit](#conj:dilogarithm-archimedean-limit))
 takes $q \to 1$ from either side — $q \to 1^-$ in the convergence
 domain, or $q \to 1^+$ via analytic continuation in the QOU
 substrate regime.*
@@ -107,10 +107,10 @@ ideal-tetrahedron piece — the algebraic address of a geometric cusp
 that bounds an active JSJ piece
 ([Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge)). The
 detailed correspondence is the content of
-([shared-denominator cusp holonomy](#prop:shared-denominator-cusp-holonomy)),
+([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)),
 and the asymptotic $\Phi_n \to \mathrm{Li}_2$ as $n \to \infty$ is
 the content of
-([dilogarithm Archimedean limit](#prop:dilogarithm-archimedean-limit)).
+([dilogarithm Archimedean limit](#conj:dilogarithm-archimedean-limit)).
 
 ## Numerical extraction (for the solver pipeline)
 
@@ -121,7 +121,7 @@ $(x; q_0)_n$. Its zeros $\{q_0^{-k} : k = 0, \dots, n-1\}$ are
 passed across the WASM boundary to the SnapPy kernel as the
 **initial seed values** for the Newton–Raphson solver of the
 Thurston gluing equations
-([cusp-holonomy seeding](#prop:shared-denominator-cusp-holonomy)).
+([cusp-holonomy seeding](#conj:shared-denominator-cusp-holonomy)).
 The witness
 [q-pochhammer-seed.witness.json](../../../folio-assistant/computations/q-pochhammer-seed.witness.json)
 records the seed extraction for a sample nucleon word.

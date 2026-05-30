@@ -39,7 +39,7 @@ $$
 **Unification: paper's BW coefficients are Hecke-derived $q$-integer products.**
 
 *Per
-[$q$-integer mass formula](#prop:q-integer-mass-formula),
+[$q$-integer mass formula](#conj:q-integer-mass-formula),
 each BW coefficient has an exact $q$-integer expression derived
 from the Hecke algebra $H_3(R, q)$:*
 

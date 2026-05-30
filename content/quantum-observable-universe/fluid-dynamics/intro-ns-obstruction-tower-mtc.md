@@ -25,5 +25,5 @@ $\rho_3$ of [prop:bn-mtc-action](#prop:bn-mtc-action) on
 $\mathbf{V}^{\otimes 3}$.  The Brunnian (pairwise-unlinked,
 triple-linked) representative selected by SDP/LP minimisation is the
 Borromean braid $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ of
-[prop:borromean-quark](#prop:borromean-quark); confinement is the
+[conj:borromean-quark](#conj:borromean-quark); confinement is the
 non-vanishing triple Milnor invariant $\bar{\mu}_{123}$.

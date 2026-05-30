@@ -4,7 +4,7 @@ export default remark({
   label: "rem:p-vs-np-surreal-bound",
   title:
     "Surreal bound for P vs NP: Reeb-period transfinite exceeds classical-budget standard",
-  interprets: "prop:p-vs-np-qou",
+  interprets: "conj:p-vs-np-qou",
   tags: [
     "p-vs-np",
     "millennium-problem",

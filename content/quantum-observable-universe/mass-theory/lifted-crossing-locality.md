@@ -1,6 +1,6 @@
 ## Lifted-crossing locality hypothesis
 
-The [crossing-graded mass expansion](#prop:crossing-graded-mass-expansion)
+The [crossing-graded mass expansion](#conj:crossing-graded-mass-expansion)
 is a finite sum over subsets of "lifted" crossings; in general, each
 order-$n$ term is a non-trivial sum over $\binom{c}{n}$ configurations.
 The **locality hypothesis** asserts that these per-configuration
@@ -87,5 +87,5 @@ Locality predicts $\mathfrak{m}(\mathcal{K}) = \mathfrak{m}_{\mathrm{GB}}
 residuals in binding energies not accounted for by the product formula —
 quantify locality violations. For doubly-magic atoms the product form
 is within $\leq 6\%$ (see the
-[JSJ/$\alpha$-clustering witness](#prop:mass-volume-factorization)),
+[JSJ/$\alpha$-clustering witness](#conj:mass-volume-factorization)),
 consistent with approximate locality at $q_0$.

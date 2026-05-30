@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:rho-prefactor-structural",
+export default conjecture({
+  label: "conj:rho-prefactor-structural",
   lean: { ref: "qou:QOU.BraidKnot.RhoPrefactorStructural" },
   title:
     "Structural prefactor rule: $\\rho(\\mathfrak{H}) = \\dim_q(\\lambda^*(T_w))$",

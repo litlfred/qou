@@ -117,10 +117,10 @@ infrastructure and Goncharov's depth-3 polylogarithm machinery.
 
 ### Cross-references
 
-- Keystone: [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence) ("B1")
+- Keystone: [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) ("B1")
 - Depth-2 theorem-level identification: [`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
-- Bring trilog witness: [`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness)
-- Joint Galois $\times$ braid action: [`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action)
+- Bring trilog witness: [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
+- Joint Galois $\times$ braid action: [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)
 - Conway-KT precedent: [`rem:conway-kt-vol-injectivity-test`](#rem:conway-kt-vol-injectivity-test)
 - K-theory bridge: [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)

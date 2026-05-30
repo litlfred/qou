@@ -1,5 +1,5 @@
 Assume the [algebraic independence
-conjecture](#prop:hyperbolic-volume-transcendence) holds: no non-trivial
+conjecture](#conj:hyperbolic-volume-transcendence) holds: no non-trivial
 polynomial $P \in \mathbb{Q}[x, y, z]$ satisfies
 $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
 \mathrm{Vol}(\mathcal{B}_3)) = 0$.

@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:jet-tower-uniform-delta-max",
+export default conjecture({
+  label: "conj:jet-tower-uniform-delta-max",
   title:
     "Uniform per-level binding bound $|\\Delta^{(n)}(\\varrho)| \\le \\Delta_{\\max}(\\varrho)$ for the brane tower",
   lean: {

@@ -2,7 +2,7 @@
 *Let $V_\lambda$ be the irreducible $S_n$-module indexed by
 $\lambda \vdash n$, with Kashiwara crystal $\mathrm{Cryst}(V_\lambda)$
 in type $A_{n-1}$
-([`prop:crystal-graph-realization`](#prop:crystal-graph-realization)).
+([`conj:crystal-graph-realization`](#conj:crystal-graph-realization)).
 For each Weyl element $w \in S_n$, let*
 
 $$

@@ -3,7 +3,7 @@ is Tate-rational — $\mathrm{Im}\,\mathrm{Li}_3(\zeta_5) = 4\pi^3/125$,
 verified at 50 dps via Kummer reflection).**
 
 The depth-3 numerical witness
-([`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness))
+([`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness))
 records both real and imaginary parts of $\mathrm{Li}_3(\zeta_5)$
 as candidate depth-3 periods. *This proposition shows the
 imaginary part is **Tate-rational** — i.e. lies in $(2\pi i)^3 \cdot \mathbb{Q}
@@ -86,7 +86,7 @@ threshold — the closed form is verified to 50 digits.
 
 ### Significance — the depth-3 surface area shrinks by half
 
-The Bring trilog witness ([`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness))
+The Bring trilog witness ([`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness))
 recorded two real numbers as candidate depth-3 periods:
 
 - $\mathrm{Re}\,\mathrm{Li}_3(\zeta_5) = \mathrm{Cl}_3(2\pi/5) \approx 0.18937$
@@ -128,8 +128,8 @@ genuine new content.
 
 ### Cross-references
 
-- Bring trilog witness: [`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness)
+- Bring trilog witness: [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)
-- Cl_3 geometric realisation question: [`prop:cl3-zeta5-geometric-realization`](#prop:cl3-zeta5-geometric-realization)
+- Cl_3 geometric realisation question: [`conj:cl3-zeta5-geometric-realization`](#conj:cl3-zeta5-geometric-realization)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
-- Goncharov ζ_5 program: [`prop:qou-infra-discharges-goncharov-zeta5`](#prop:qou-infra-discharges-goncharov-zeta5)
+- Goncharov ζ_5 program: [`conj:qou-infra-discharges-goncharov-zeta5`](#conj:qou-infra-discharges-goncharov-zeta5)

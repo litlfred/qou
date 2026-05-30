@@ -50,7 +50,7 @@ $$
 $$
 
 The depth-2 witness is computed for $4_1$ in
-[`prop:bring-figure-eight-depth-2-witness`](#prop:bring-figure-eight-depth-2-witness).
+[`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
 Computing the analogous witness for **every Bring-embeddable
 hyperbolic knot** is a finite-but-laborious task: each requires
 identifying $\lambda_K$ (cell decomposition of the braid word)
@@ -61,7 +61,7 @@ witness per [`prop:explicit-central-idempotent`](#prop:explicit-central-idempote
 
 ### Falsifiability of B1 across the table
 
-If [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+If [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 holds, **every entry in the principled atlas** must satisfy
 
 $$
@@ -71,7 +71,7 @@ $$
 
 A single counter-example among the principled-atlas entries would
 falsify B1. The figure-8 row is verified
-([`prop:bring-figure-eight-depth-2-witness`](#prop:bring-figure-eight-depth-2-witness)).
+([`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)).
 Verifying $5_2$, $6_2$, $6_3$ would multiply the falsifiability
 surface significantly with modest implementation cost.
 

@@ -137,7 +137,7 @@ the $(m_{21}, m_{22})$ bottom row used by the basic
 These amplitudes feed the supply matrix $S$ in the LP for the EW
 operator-selection instance. Combined with the Hoefsmit
 cell-content multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$ of
-[`prop:hoefsmit-ew-cell-content`](#prop:hoefsmit-ew-cell-content),
+[`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content),
 they determine the active set $A^*(T)$ for each EW confinement
 target.
 

@@ -125,7 +125,7 @@ $\alpha_{EM}$ enters the molecular bound-state energy:
    Hartree-energy scaling.
 
 This is the **post-round-18 closure path** for
-[`prop:e-hartree-categorical-derivation`](#prop:e-hartree-categorical-derivation)
+[`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation)
 — with the specific algebraic identity between
 $\chi_{(3,1)} \cdot \chi_{(2,1,1)}$ and the $\delta_q$ values
 remaining as the final symbolic-$q$ check.

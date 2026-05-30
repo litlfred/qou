@@ -20,7 +20,7 @@ pairing.*
 ## Relationship to D16 Bloch group
 
 The K-theoretic Bloch-group element
-([`prop:borromean-bloch-group-element`](#prop:borromean-bloch-group-element), D16)
+([`conj:borromean-bloch-group-element`](#conj:borromean-bloch-group-element), D16)
 provides the **regulator** side of the Borromean structure
 ($r_2[\mathcal{B}_3] = 8G$).  D21 Poincaré–Lefschetz provides the
 **topological** side: the volume form $\in$ $H^3$ pairs with the
@@ -56,7 +56,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) D21
   + paired with D16
-- D16 [`prop:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- D16 [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
   — K-theoretic regulator route to the same $8G$
 - [`prop:reeb-bundle-complement-equals-volume`](#prop:reeb-bundle-complement-equals-volume)
   — Reeb-pairing volume route (third route to $8G$)

@@ -123,4 +123,4 @@ orientations is unique (which would follow from the Bring
 surface's rigidity as a hyperbolic 3-manifold complement), this
 would derive the averaged-crossing convention from a variational
 principle — closing
-[`prop:canonical-knot-id-sdp`](#prop:canonical-knot-id-sdp).
+[`conj:canonical-knot-id-sdp`](#conj:canonical-knot-id-sdp).

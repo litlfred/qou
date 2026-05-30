@@ -1,6 +1,6 @@
 **Proposition (additive Bring-surface zero-mode form for
 $1/\alpha_{EM}$, conditional on
-[`prop:dilogarithm-archimedean-limit`](#prop:dilogarithm-archimedean-limit)
+[`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)
 and on the Bloch-Suslin pentagon-uniqueness theorem
 [`suslin1991`]).**
 *Let $g = 4$ denote the genus of Bring's surface (the unique Riemann

@@ -6,7 +6,7 @@ export default remark({
     "Dark-vision impossibility from strand-bandwidth of the observation channel",
   uses: [
     "def:observation",
-    "prop:confinement-grading-correspondence",
+    "conj:confinement-grading-correspondence",
   ],
   cites: [
     "kashiwara1991",

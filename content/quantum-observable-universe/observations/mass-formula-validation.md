@@ -106,7 +106,7 @@ Kerov $q$-hook walk \cite{kerov1996} on the Young lattice.
 The knot factor for $A \geq 5$ is the \textbf{path probability ratio}
 in the Kerov walk: the ratio of the nuclear braid's specific
 entanglement path to the $q$-Plancherel average
-([jet-filtered knot factor](#prop:jet-filtered-knot-factor)).
+([jet-filtered knot factor](#conj:jet-filtered-knot-factor)).
 
 ## Q-value table (atomic mass differences)
 

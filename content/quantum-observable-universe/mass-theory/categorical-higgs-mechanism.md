@@ -91,7 +91,7 @@ $\tilde w_\lambda = \dim_q^2/[n]_q!$.
 The mass of the post-EWSB boson is the Markov-trace eigenvalue of
 its 2-component-link image, weighted by the Hoefsmit cell-content
 projector
-([`prop:hoefsmit-ew-cell-content`](#prop:hoefsmit-ew-cell-content)).
+([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).
 Specifically, the rest-mass energy is
 
 $$
@@ -109,7 +109,7 @@ projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
 1. **Rigorous definition of $\mathrm{Lk}_R$** as a categorical
    operation in a ribbon $\mathbf{C}$ —
    — now authored as
-   [`prop:categorical-linking-operation`](#prop:categorical-linking-operation)
+   [`conj:categorical-linking-operation`](#conj:categorical-linking-operation)
    (Tier A1, this branch). Five open structural properties
    (linearity, $k = 0$ reduction, multiplicativity, trace-cut
    symmetry, bar-involution compatibility) pending discharge.
@@ -118,7 +118,7 @@ projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
    \sin\theta_W$ as Hecke eigenvalues / Frobenius traces on
    specific projectors —
    — now authored as
-   [`prop:weinberg-angle-categorical`](#prop:weinberg-angle-categorical)
+   [`conj:weinberg-angle-categorical`](#conj:weinberg-angle-categorical)
    (Tier A2, this branch). Simple-multiplicity reading numerically
    fails; corrected version requires non-uniform Hoefsmit
    multiplicities + the Higgs-vev induced Hoefsmit-decomposition

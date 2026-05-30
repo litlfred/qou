@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:knot-factor-frobenius-pairing",
+export default conjecture({
+  label: "conj:knot-factor-frobenius-pairing",
   title:
     "Knot factor as Frobenius self-pairing ratio",
   lean: { ref: "qou:QOU.BraidKnot.KnotFactorFrobeniusPairing",

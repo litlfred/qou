@@ -59,7 +59,7 @@ completions:
 
 2. The **brane-tower partial sums** $\Phi_{\mathrm{mass}}^{(N)}(\beta) = \sum_{i=1}^{N}\Phi_q(z_i)$
    live in $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z$
-   (conjectural — see [brane-tower in $z$-Habiro](#prop:brane-tower-z-habiro)),
+   (conjectural — see [brane-tower in $z$-Habiro](#conj:brane-tower-z-habiro)),
    encoding the **algebraic-volume** content via cyclotomic projections at
    the structurally determined level $n_\star(\mathfrak{H})$.
 

@@ -1,5 +1,5 @@
 **Proposition (conditional on
-[`prop:hyperbolic-volume-transcendence`](#prop:hyperbolic-volume-transcendence)
+[`conj:hyperbolic-volume-transcendence`](#conj:hyperbolic-volume-transcendence)
 and
 `rem:baryon-period-ratio`).**
 *The mass of a nuclear state with braid word $\beta \in B_n$ is

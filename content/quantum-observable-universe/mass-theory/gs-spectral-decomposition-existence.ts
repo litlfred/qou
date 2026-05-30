@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:gs-spectral-decomposition-existence",
+export default conjecture({
+  label: "conj:gs-spectral-decomposition-existence",
   title:
     "Spectral decomposition of the mass into descended trace and residue sum",
   lean: {
@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "prop:graded-trace-residue-split",
-    "prop:gs-residue-at-root-existence",
+    "conj:gs-residue-at-root-existence",
     "thm:knot-mass-formula-unified",
   ],
   tags: [

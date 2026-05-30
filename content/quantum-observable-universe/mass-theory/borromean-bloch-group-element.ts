@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:borromean-bloch-group-element",
+export default conjecture({
+  label: "conj:borromean-bloch-group-element",
   title:
     "Borromean rings represent a non-trivial element of $K_3(\\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$",
   lean: {
@@ -13,7 +13,7 @@ export default proposition({
     "prop:vol-through-tau",
     "rem:vol-as-motivic-period",
     "prop:binding-scale-catalan",
-    "prop:dilogarithm-archimedean-limit",
+    "conj:dilogarithm-archimedean-limit",
   ],
   cites: [
     "bloch2000",

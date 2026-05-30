@@ -198,7 +198,7 @@ Candidate refinements:
    the Wenzl-bridge inductive ascent.
 
 These extensions are flagged for follow-up under the
-`prop:alpha-k-categorical-closure` proposal.
+`conj:alpha-k-categorical-closure` proposal.
 
 ## Status
 

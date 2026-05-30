@@ -1,7 +1,7 @@
 **Conjecture (Leading-order $N_v$, conditional on the two upstream substrate axioms).**
 *Combining
-[the Bring action lemma](#prop:n-v-bring-action) with
-[the tower-depth lemma](#prop:n-v-tower-depth-ninety), the
+[the Bring action lemma](#conj:n-v-bring-action) with
+[the tower-depth lemma](#conj:n-v-tower-depth-ninety), the
 electroweak topological invariant $N_v$ admits the leading-order
 closed form*
 
@@ -27,22 +27,22 @@ $v_{\mathrm{CODATA}} = 246.22$ GeV to within $-0.58\%$.*
 ## Status
 
 **Conditional conjecture.**  Conditional on the two substrate axioms
-[`prop:n-v-bring-action`](#prop:n-v-bring-action) and
-[`prop:n-v-tower-depth-ninety`](#prop:n-v-tower-depth-ninety),
+[`conj:n-v-bring-action`](#conj:n-v-bring-action) and
+[`conj:n-v-tower-depth-ninety`](#conj:n-v-tower-depth-ninety),
 the leading-order closure follows by direct multiplication.  The
 $-0.58\%$ residual is a sub-leading correction whose structural
 origin is currently unresolved (open conjecture, not yet a
 named content block).
 
 This is the **third** block in the
-[N_v derivation chain](#prop:n-v-bring-action) and the only one
+[N_v derivation chain](#conj:n-v-bring-action) and the only one
 that is *derived* (modulo the two upstream conjectures).
 
 ## Proof
 
-*From [Lemma 1](#prop:n-v-bring-action), the Markov-trace-residual
+*From [Lemma 1](#conj:n-v-bring-action), the Markov-trace-residual
 rescaling factor at the EW slice is $|S_5| = 120$, and from
-[Lemma 2](#prop:n-v-tower-depth-ninety), the brane-tower
+[Lemma 2](#conj:n-v-tower-depth-ninety), the brane-tower
 Coxeter-length depth from $m_e$ to $v$ is $90$ Hecke generations.
 The two combine into a single empirical bridge identity*
 

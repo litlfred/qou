@@ -10,7 +10,7 @@ export default proposition({
   uses: [
     "prop:topological-mass-formula",
     "prop:yekutieli-lifting",
-    "prop:hyperbolic-volume-transcendence",
+    "conj:hyperbolic-volume-transcendence",
   ],
   cites: ["yekutieli2010", "yekutieli2015"],
   tags: [

@@ -9,7 +9,7 @@ export default theorem({
       "qou:QOU.BraidsAndKnots.confinement_grading_correspondence_conditional",
     validation: "not_checked",
   },
-  uses: ["prop:confinement-grading-correspondence"],
+  uses: ["conj:confinement-grading-correspondence"],
   cites: [
     "khovanovlauda2009",
     "brundankleshchev2009",

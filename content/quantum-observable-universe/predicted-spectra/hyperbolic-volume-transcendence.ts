@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:hyperbolic-volume-transcendence",
+export default conjecture({
+  label: "conj:hyperbolic-volume-transcendence",
   title: "Algebraic independence of QOU hyperbolic volumes",
   tags: [
     "hyperbolic-volume",

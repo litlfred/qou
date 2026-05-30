@@ -4,9 +4,9 @@ D9 + D10).**
 $\mathrm{SU}(4) = \mathrm{SU}(2)_S \times \mathrm{SU}(2)_I$
 arises in the QOU framework as the **combined classical limit** of
 the spin SO(3) fiber action
-([`prop:spin-from-so3-fiber`](#prop:spin-from-so3-fiber), D10) and
+([`conj:spin-from-so3-fiber`](#conj:spin-from-so3-fiber), D10) and
 the canonical isospin Z/2 swap
-([`prop:isospin-from-canonical-bowtie`](#prop:isospin-from-canonical-bowtie), D9)
+([`conj:isospin-from-canonical-bowtie`](#conj:isospin-from-canonical-bowtie), D9)
 acting on the color-sheet flavor triples of nucleon braids.  The
 $A = 4$ first magic shell ($^{4}\!\mathrm{He}$) is the first
 $\mathrm{SU}(4)$ supermultiplet (totally-symmetric $\mathbf{1}$
@@ -18,9 +18,9 @@ its categorical home.*
 Given:
 
 - D9 closed: SU(2)_I = canonical isospin from $\bowtie_K$ operator-
-  valued interface ([`prop:isospin-from-canonical-bowtie`](#prop:isospin-from-canonical-bowtie))
+  valued interface ([`conj:isospin-from-canonical-bowtie`](#conj:isospin-from-canonical-bowtie))
 - D10 closed: SU(2)_S = spin from full SO(3) fiber action on color
-  sheets ([`prop:spin-from-so3-fiber`](#prop:spin-from-so3-fiber))
+  sheets ([`conj:spin-from-so3-fiber`](#conj:spin-from-so3-fiber))
 
 Then the **combined symmetry** SU(2)_S $\times$ SU(2)_I = SU(4) acts on
 the **4-dimensional internal space** of each nucleon (spin $\times$ isospin
@@ -181,8 +181,8 @@ BOTH D9 and D10 to be closed first.
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D11
   + §2 Cluster B (D9 + D10 + D11 nuclear physics)
-- Upstream D9: [`prop:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md)
-- Upstream D10: [`prop:spin-from-so3-fiber`](spin-from-so3-fiber.md)
+- Upstream D9: [`conj:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md)
+- Upstream D10: [`conj:spin-from-so3-fiber`](spin-from-so3-fiber.md)
 - L3 prototype:
   [`prototype_gs_nf_shell_binding.py`](../../folio-assistant/computations/prototype_gs_nf_shell_binding.py)
 - L3 closure-path audit:

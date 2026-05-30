@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:weinberg-angle-categorical",
+export default conjecture({
+  label: "conj:weinberg-angle-categorical",
   title:
     "Weinberg angle $\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors",
   lean: {

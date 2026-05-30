@@ -4,7 +4,7 @@
 [`prop:critical-exponent`](#prop:critical-exponent),
 [`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`prop:regularity-breakdown`](#prop:regularity-breakdown);
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "Vorticity lower bound").**
 
 Let $v_q$ be the q-NS solution for anti-parallel vortex pair

@@ -313,7 +313,7 @@ Frobenius pairing); they are open per the status section below.
 
 ### Why this is the right operation for the Higgs mechanism
 
-Per [`prop:categorical-higgs-mechanism`](#prop:categorical-higgs-mechanism)
+Per [`conj:categorical-higgs-mechanism`](#conj:categorical-higgs-mechanism)
 Step C, the Higgs mechanism's "Goldstone-eating" lifts a gauge
 boson from $\mathrm{Hom}_R(\mathbf{1}, A)$ (1-component knot,
 unbroken-symmetry mediator) to $\mathrm{End}_R(A)$ (2-component
@@ -334,7 +334,7 @@ $$
 
 The mass of the post-EWSB boson is the Markov trace of this
 endomorphism, weighted by the appropriate Hoefsmit projector
-([`prop:hoefsmit-ew-cell-content`](#prop:hoefsmit-ew-cell-content)).
+([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).
 
 ### Proof of Property 4 (trace-cut symmetry)
 
@@ -487,7 +487,7 @@ guarantee far-commutativity), the operation $\mathrm{Lk}_R^{(k)}(a,
 b)$ reduces to multiplication of the corresponding
 $\sigma_i^{2 k_a} \cdot \sigma_j^{2 k_b}$ in $H_n(q)$ — exactly
 the form used in
-[`prop:hoefsmit-ew-cell-content`](#prop:hoefsmit-ew-cell-content)
+[`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)
 for the EW carriers $W \leftrightarrow \sigma_1^4, Z
 \leftrightarrow \sigma_3^6, H \leftrightarrow \sigma_5^8$ in
 $B_6$.
@@ -515,12 +515,12 @@ formal proof in the QOU substrate-category. To promote to a
 If discharged, this conjecture supplies the categorical
 **linking** operation needed by:
 
-- [`prop:categorical-higgs-mechanism`](#prop:categorical-higgs-mechanism)
+- [`conj:categorical-higgs-mechanism`](#conj:categorical-higgs-mechanism)
   Step C (Higgs mechanism as $\mathrm{Lk}_R^{(1)}$);
 - `conj:force-carrier-knot-vs-link-dichotomy`
   Step 6 (broken-symmetry mediators are 2-component links);
 - the Weinberg angle categorical block
-  ([`prop:weinberg-angle-categorical`](#prop:weinberg-angle-categorical))
+  ([`conj:weinberg-angle-categorical`](#conj:weinberg-angle-categorical))
   — $\theta_W$ is realised via the relative ratio of
   $\mathrm{Lk}_R^{(1)}$ outputs on the W- and B-channels;
 - the $N_v$ derivation pipeline (Tier C of

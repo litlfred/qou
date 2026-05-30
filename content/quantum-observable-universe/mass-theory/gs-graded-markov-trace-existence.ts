@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:gs-graded-markov-trace-existence",
+export default conjecture({
+  label: "conj:gs-graded-markov-trace-existence",
   title:
     "Existence of the graded Markov trace on the GS filtration",
   lean: {

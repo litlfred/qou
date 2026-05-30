@@ -574,7 +574,7 @@ The ${}^{3}$He gap is **not** an operator-volume choice issue — it is a
 structural deficit of the brane-tower formula itself at the
 $A{=}3$ / $n_0{=}9$ regime.
 
-This closes the level-selection question for `prop:brane-tower-z-habiro`:
+This closes the level-selection question for `conj:brane-tower-z-habiro`:
 no `n_⋆` choice and no operator-volume refinement we have probed
 recovers the AME light-isotope binding uniformly.  The surviving
 open paths are recorded in §"What survives the closure" above (the

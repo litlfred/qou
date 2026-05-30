@@ -1,12 +1,12 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:cl3-zeta5-geometric-realization",
+export default conjecture({
+  label: "conj:cl3-zeta5-geometric-realization",
   title:
     "Geometric realisation of $\\mathrm{Cl}_3(2\\pi/5)$ as a Bring-natural depth-3 invariant",
   lean: { ref: "qou:QOU.BraidKnot.Cl3Zeta5GeometricRealization", validation: "stub" },
   uses: [
-    "prop:joint-galois-braid-action",
+    "conj:joint-galois-braid-action",
     "rem:transcendental-accounting",
   ],
   cites: ["bloch2000", "kontsevich1995", "zagier1986"],

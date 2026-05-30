@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:staircase-ew-residual",
+export default conjecture({
+  label: "conj:staircase-ew-residual",
   title:
     "Staircase EW-residual: $q^{1/(2k-1)}$ as pairwise eigenvalue ratio of $\\beta_{\\mathrm{EW}}$ on $V_{\\rho_k}$",
   lean: {
@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "lem:staircase-corner-hook",
-    "prop:weinberg-angle-categorical",
+    "conj:weinberg-angle-categorical",
   ],
   cites: ["hoefsmit1974", "mathas1999"],
   computation: {

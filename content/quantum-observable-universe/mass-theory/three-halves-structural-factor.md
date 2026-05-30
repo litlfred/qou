@@ -3,7 +3,7 @@ $R$ be a field, $q \in R$ with $q \neq 0$, $h = q - q^{-1}$, and
 $[n]_q = q^{n-1} + q^{n-3} + \cdots + q^{-(n-1)}$ the symmetric
 q-integer. The following five algebraic identities hold:*
 
-**Muon set** *(canonical for $T(2,5)$, used by `prop:lepton-tower-h-n-plus-1-branching` at $m = 2$):*
+**Muon set** *(canonical for $T(2,5)$, used by `conj:lepton-tower-h-n-plus-1-branching` at $m = 2$):*
 
 $$
 3 + h^2 = [3]_q
@@ -15,7 +15,7 @@ $$
 \frac{3 + h^2}{2 + h^2} = \frac{[3]_q \cdot [2]_q}{[4]_q}
 $$
 
-**Tau set** *(canonical for amphichiral $10_{43}$ candidate, used by `prop:lepton-tower-h-n-plus-1-branching` at $m = 3$):*
+**Tau set** *(canonical for amphichiral $10_{43}$ candidate, used by `conj:lepton-tower-h-n-plus-1-branching` at $m = 3$):*
 
 $$
 [6]_q = [2]_q \cdot [3]_q \cdot (1 + h^2)
@@ -56,5 +56,5 @@ $q$-bracket products. Concretely:
   identity behind this closure.
 
 The generic family is the subject of
-`prop:lepton-tower-h-n-plus-1-branching`; this proposition supplies
+`conj:lepton-tower-h-n-plus-1-branching`; this proposition supplies
 the proved algebraic core for the muon (m=2) and tau (m=3) cases.

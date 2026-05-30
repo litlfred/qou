@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:isospin-from-canonical-bowtie",
+export default conjecture({
+  label: "conj:isospin-from-canonical-bowtie",
   title:
     "Canonical $\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\bowtie_K$ interface (regularised crystal extension)",
   lean: {
@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "prop:crystal-isospin-degeneracy",
-    "prop:inter-nucleon-channel-color-tube",
+    "conj:inter-nucleon-channel-color-tube",
     "prop:flavor-split-substrate",
     "def:bar-involution",
   ],

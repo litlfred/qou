@@ -57,7 +57,7 @@ Two consequences for the
    contact geometry, viewed through Miranda's lens.
 
 2. The
-   [Levi degeneracy conjecture](#prop:levi-degeneracy) becomes
+   [Levi degeneracy conjecture](#conj:levi-degeneracy) becomes
    a question about which limit a particular vortex collision
    takes — the metric-Riemannian (NS regular) limit, in which
    the contact form genuinely degenerates and the flow flattens,

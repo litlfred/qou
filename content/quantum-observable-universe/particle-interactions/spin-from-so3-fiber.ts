@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:spin-from-so3-fiber",
+export default conjecture({
+  label: "conj:spin-from-so3-fiber",
   title:
     "Spin $\\mathrm{SU}(2)_S$ from full $\\mathrm{SO}(3)$ fiber action on color-sheet rotations",
   lean: {
@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:inter-nucleon-channel-color-tube",
+    "conj:inter-nucleon-channel-color-tube",
     "thm:jones-markov-trace",
   ],
   cites: [

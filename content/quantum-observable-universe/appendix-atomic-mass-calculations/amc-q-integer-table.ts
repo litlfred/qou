@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:q-integer-mass-table",
   title: "Atomic mass table: seven-term $q$-integer BW formula (MAE 0.020\\%)",
-  interprets: "prop:q-integer-mass-formula",
+  interprets: "conj:q-integer-mass-formula",
   tags: [
     "mass-table",
     "q-integer",

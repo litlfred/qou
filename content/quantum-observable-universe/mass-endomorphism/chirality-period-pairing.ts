@@ -5,7 +5,7 @@ export default remark({
   title:
     "Chirality structure on Goncharov period classes via the bar involution",
   interprets: "prop:hecke-baer-star-generic",
-  uses: ["prop:bring-trilog-depth-3-witness"],
+  uses: ["conj:bring-trilog-depth-3-witness"],
   cites: ["bloch2000"],
   tags: [
     "chirality",

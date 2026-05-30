@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:gs-archimedean-agreement-residue",
+export default conjecture({
+  label: "conj:gs-archimedean-agreement-residue",
   title:
     "Archimedean agreement (proton instance): degree-48 Habiro trace at $u_0$",
   lean: {
@@ -9,7 +9,7 @@ export default proposition({
       "qou:QOU.BraidKnot.HabiroResidueSumEquivalence.protonExample.archimedean_agreement",
     validation: "not_checked",
   },
-  uses: ["prop:gs-archimedean-agreement-trace"],
+  uses: ["conj:gs-archimedean-agreement-trace"],
   cites: ["habiro2004"],
   computation: {
     engine: "sympy",
