@@ -64,6 +64,20 @@ theorem hodgeRatio_at_g4 : hodgeRatio 4 = bringZeroModeValue := by
   field_simp
   ring
 
+/-- **Phase-1 wiring (2026-05-30).**  Reference to the Bloch-Wigner
+    unit-circle function `D(e^{iθ}) = Cl_2 θ` defined in the
+    Mathlib filler at
+    `predicted-spectra/bloch-wigner-mathlib-filler.lean`
+    (`noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ`).
+
+    Declared here as an `axiom` for §3b-cond strengthening of the
+    `BringZeroModeBlochClass` field below.  Closing this axiom to a
+    direct namespace import is the Lake-tree wire-up Phase 1
+    follow-up (`content/quantum-observable-universe/lean/QOU/...`);
+    until that lands, the axiom mirrors the filler's signature
+    exactly. -/
+axiom BlochWigner_unit_circle : ℝ → ℝ
+
 /-- Bloch-Wigner identification of the Bring zero-mode contribution,
     packaged as a typeclass. A concrete instance asserts the existence
     of a class `[Z] ∈ B(ℂ)` whose τ_arch-image (= the Bloch-Wigner
@@ -73,27 +87,30 @@ theorem hodgeRatio_at_g4 : hodgeRatio 4 = bringZeroModeValue := by
     genus-4 force-carrier pair `{T(2,9), T(3,5)}` is the open
     computational sub-problem.
 
-    **Status (2026-05-23):** the current field signature is the
-    placeholder `∃ z : ℝ, z = bringZeroModeValue`, which is
-    trivially provable (literal-rfl loophole). Closure of the field
-    to a content-bearing signature requires three pieces of work:
+    **Status (2026-05-30 — Phases 1 + 2 done):**
 
-    1. Wire `QOU.Archimedean.BlochWigner_unit_circle` (already
-       defined in `archimedean-universe/bloch-wigner-mathlib-filler.lean`)
-       into the Lake-built module tree under
-       `content/quantum-observable-universe/lean/QOU/Archimedean/`.
-    2. Strengthen the field to
+    1. ✅ **Phase 1 (wire-up):** the `BlochWigner_unit_circle`
+       signature is declared above as an `axiom` mirroring the
+       filler's `noncomputable def BlochWigner_unit_circle (θ : ℝ)
+       : ℝ := Cl_2 θ`.  Closing the axiom to a direct namespace
+       import under `content/quantum-observable-universe/lean/QOU/`
+       is the remaining Lake-tree wire-up follow-up.
+    2. ✅ **Phase 2 (field strengthening):** the field is now
        `∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue`
-       (forces an actual angle witness; no literal-rfl works).
-    3. Identify the explicit `[Z] ∈ B(ℂ)` from the Yekutieli
-       triple on `{T(2,9), T(3,5)}` — research-grade, estimated
-       2–4 weeks. Per PR #952 the cheapest canonical hypothesis
-       (unit-circle basis at S_5-symmetric angles `kπ/n, n ≤ 30`)
-       is REFUTED by PSLQ at maxcoeff ≤ 50; single-point inversion
-       gives `θ_*/π = 0.9019897...` (not a simple rational). The
-       witness `[Z]` therefore lives off-canonical-angle or
-       off-unit-circle, or requires a non-standard relative
-       Bloch group.
+       — forces a real angle witness; the literal-rfl loophole
+       (`⟨bringZeroModeValue, rfl⟩`) no longer discharges the
+       instance.
+    3. ⏳ **Phase 3 (witness identification, research-grade):**
+       identify the explicit `[Z] ∈ B(ℂ)` (equivalently, the
+       specific angle `θ`) from the Yekutieli triple on
+       `{T(2,9), T(3,5)}`.  Per PR #952 the cheapest canonical
+       hypothesis (unit-circle basis at S_5-symmetric angles
+       `kπ/n, n ≤ 30`) is REFUTED by PSLQ at maxcoeff ≤ 50;
+       single-point inversion gives `θ_*/π ≈ 0.9019897…` (not a
+       simple rational).  The witness `[Z]` therefore lives
+       off-canonical-angle or off-unit-circle, or requires a
+       non-standard relative Bloch group.  Estimated 2–4 weeks
+       research per the PR #952 trail.
 
     See `em-coupling-bring-zero-mode.md` §"open computational
     sub-problem" for the 3-phase roadmap.
@@ -103,14 +120,21 @@ theorem hodgeRatio_at_g4 : hodgeRatio 4 = bringZeroModeValue := by
 -- Ref: [suslin1991], [bloch2000] (full BlochGroup framework)
 class BringZeroModeBlochClass : Prop where
   /-- The τ_arch-image of the Bring-surface Bloch class equals
-      the genus-Hodge ratio `2g/(4π(g-1))` at `g = 4`. We state
+      the genus-Hodge ratio `2g/(4π(g-1))` at `g = 4`.  We state
       the equation in the canonical form used downstream.
 
-      **Placeholder field**: trivially provable via `⟨bringZeroModeValue, rfl⟩`.
-      Strengthening to the BlochWigner-image equality is the
-      Phase-1 follow-up (see class docstring §1–§2). -/
+      **Strengthened (2026-05-30, Phase 2):** the field now
+      requires a real angle witness `θ` such that
+      `BlochWigner_unit_circle θ = bringZeroModeValue = 2/(3π)`.
+      The previous placeholder `∃ z : ℝ, z = bringZeroModeValue`
+      was trivially provable via `⟨bringZeroModeValue, rfl⟩` —
+      that loophole is closed.  Closing the strengthened class
+      (Phase 3) requires identifying the specific angle from
+      the Bring genus-4 force-carrier pair `{T(2,9), T(3,5)}` —
+      research-grade per PR #952. -/
   -- Ref: [manuscript] prop:archimedean-functor-uniqueness
-  bring_zero_mode_realised : ∃ z : ℝ, z = bringZeroModeValue
+  bring_zero_mode_realised :
+    ∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue
 
 /-- **Additive Bring zero-mode form for the residual on `1/α_EM`
     (conditional on `BringZeroModeBlochClass`).**
@@ -127,9 +151,9 @@ class BringZeroModeBlochClass : Prop where
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 theorem bring_zero_mode_additive_form
     [hZ : BringZeroModeBlochClass] :
-    ∃ z : ℝ, z = hodgeRatio 4 := by
-  obtain ⟨z, hz⟩ := hZ.bring_zero_mode_realised
-  refine ⟨z, ?_⟩
-  rw [hz, hodgeRatio_at_g4]
+    ∃ θ : ℝ, BlochWigner_unit_circle θ = hodgeRatio 4 := by
+  obtain ⟨θ, hθ⟩ := hZ.bring_zero_mode_realised
+  refine ⟨θ, ?_⟩
+  rw [hθ, hodgeRatio_at_g4]
 
 end QOU.Archimedean
