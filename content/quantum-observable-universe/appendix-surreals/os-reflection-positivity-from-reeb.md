@@ -16,7 +16,7 @@ Osterwalder–Schrader sufficient input for Wightman reconstruction.
 inside the Reeb $U(1)$ — equivalently, the chart-swap involution
 $\iota : Z \mapsto Z^{-1}$ on the
 [contact affine chart](#def:contact-affine-chart) at $\varTheta = \pi$,
-per [chart-swap $U(1)$ is the Reeb flow](#rem:reeb-u1-chart-swap).
+per [chart-swap $U(1)$ is the Reeb flow](#prop:reeb-u1-chart-swap).
 Then the [Frobenius pairing](#def:frobenius-hopf-substrate)
 $\langle\,\cdot\,,\,\cdot\,\rangle_F$ on $A$ satisfies reflection
 positivity under $\theta$:*
@@ -48,7 +48,7 @@ $\phi_t \mapsto \phi_{-t}$. The categorical realisation of this
 involution is precisely the antipodal $\mathbb{Z}_2$ subgroup at
 $\varTheta = \pi$ of the chart-swap $U(1)$ family $\rho_\varTheta : z
 \mapsto e^{i\varTheta} z$ — the $U(1)$ that the
-[chart-swap–Reeb identification](#rem:reeb-u1-chart-swap)
+[chart-swap–Reeb identification](#prop:reeb-u1-chart-swap)
 shows coincides with the Reeb flow $U(1)$.
 
 There is therefore no separate OS reflection to construct: it is
@@ -90,7 +90,7 @@ In the QOU framework:
 | OS axiom | QOU input |
 |----------|-----------|
 | OS0 (temperedness) | $\tau_{\mathrm{arch}}$ images of partial products $\Phi_n$ are tempered by the [archimedean limit conjecture](#conj:dilogarithm-archimedean-limit) at every $x \in (0, 1)$. |
-| OS1 (Euclidean covariance) | $S_5$-action on Bring's coordinate ring is the categorical lift of the $\mathrm{SO}(4) / \mathrm{Spin}(4)$ rotation group, and the [$\mathbb{Z}_2 \hookrightarrow U(1)_{\xi}$](#rem:reeb-u1-chart-swap) hierarchy is the Euclidean time translation. |
+| OS1 (Euclidean covariance) | $S_5$-action on Bring's coordinate ring is the categorical lift of the $\mathrm{SO}(4) / \mathrm{Spin}(4)$ rotation group, and the [$\mathbb{Z}_2 \hookrightarrow U(1)_{\xi}$](#prop:reeb-u1-chart-swap) hierarchy is the Euclidean time translation. |
 | **OS2 (reflection positivity)** | **This conjecture.** |
 | OS3 (symmetry / locality) | Categorical permutation symmetry of the Frobenius pairing; $\Psi = S^2 = \mathrm{id}_A$. |
 | OS4 (cluster decomposition) | Mass gap $\Delta_q \asymp \varepsilon^3$ from the [surreal bound](#rem:yang-mills-surreal-bound) gives exponential clustering at separation $r$: $|S_n(\cdots) - S_k(\cdots) S_{n-k}(\cdots)| \lesssim e^{-\Delta_q r}$. |
@@ -126,7 +126,7 @@ The positivity statement involves three open ingredients:
    Equivalently, the OS reflection on the standard Euclidean correlation
    functions is the $\tau_{\mathrm{arch}}$-image of the Reeb antipodal
    $\mathbb{Z}_2$ action. This follows from the
-   [chart-swap–Reeb identification](#rem:reeb-u1-chart-swap) once
+   [chart-swap–Reeb identification](#prop:reeb-u1-chart-swap) once
    $\tau_{\mathrm{arch}}$ is shown to preserve the $U(1)_{\xi}$-action
    on contact charts.
 
@@ -149,7 +149,7 @@ positivity of the antipode-twisted Frobenius pairing**. The
 reflection involved is not a separate piece of analytic continuation
 but the antipodal $\mathbb{Z}_2$ subgroup of the Reeb $U(1)$, made
 visible by the
-[chart-swap–Reeb identification](#rem:reeb-u1-chart-swap). The
+[chart-swap–Reeb identification](#prop:reeb-u1-chart-swap). The
 categorical infrastructure already houses every OS ingredient except
 this positivity — packaging it as a class isolates the *single*
 remaining input the substrate needs to supply a Wightman QFT.

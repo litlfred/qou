@@ -23,7 +23,7 @@ regularisation patch.
 | **Ashtekar connection** $A = \Gamma + \gamma K$ | [Categorical Dirac](#def:categorical-dirac-operator) $\mathfrak{D}_\nabla = q^{-1}\nabla + \hbar_q \iota_\xi \nabla$; the role of $\gamma K$ is played by $\hbar_q \iota_\xi \nabla$ |
 | **Barbero–Immirzi parameter** $\gamma$ (fitted to $\approx 0.274$ to match $S_{BH} = A/4$ \cite{rovelli1995}) | Substrate parameter $q_0 \approx 1.11$, **derived** from the substrate Reeb flow; not a free fit |
 | **Densitised triad** $E^i_a$ | Bring-curve coordinates under the $S_5$ action ([categorical Reeb on Bring](#ex:categorical-reeb-brings)); area discretisation is innate to the algebraic slices |
-| **Spin networks** of arbitrary $\mathrm{SU}(2)$ representations | Knot operators as Reeb-$U(1)$ Wilson loops ([chart-swap–Reeb identification](#rem:reeb-u1-chart-swap)); torus knots $T_{m,n}$ are $(m,n)$-cables of Reeb fibres, with framings = integer ambiguity in the $U(1)$ lift |
+| **Spin networks** of arbitrary $\mathrm{SU}(2)$ representations | Knot operators as Reeb-$U(1)$ Wilson loops ([chart-swap–Reeb identification](#prop:reeb-u1-chart-swap)); torus knots $T_{m,n}$ are $(m,n)$-cables of Reeb fibres, with framings = integer ambiguity in the $U(1)$ lift |
 | **Spin foams** as 2-complex path integrals \cite{rovelli2004} | Frobenius-pairing cobordism amplitudes via $\mathrm{tr}_M(\mathcal{B}_K)$ — categorical state sum, not a regularised foam triangulation |
 | **Kodama state** $\Psi_K[A] = \exp\!\bigl( i \mathrm{CS}[A] \bigr)$ | $S_0$ saddle of the Faddeev WKB of $\Phi_q$ in [`conj:phi-q-wkb-greens-function`](#conj:phi-q-wkb-greens-function), evaluated at the flat-$\mathrm{SU}(2)$ critical point of a force-carrier torus knot |
 | **Reality conditions** of complex Ashtekar | [Adelic product](#def:adelic-substrate) selects the unique real archimedean realisation; the original $\gamma = \pm i$ self-dual Ashtekar formulation is recovered without the reality-condition obstruction |
@@ -66,7 +66,7 @@ well-known obstructions of the canonical programmes:
    $\delta S_q / \delta \nabla = 0$ output, and the
    [adelic product](#def:adelic-substrate) plus continuous
    $\mathbb{Z}_2 \to U(1)_{\xi}$ deformation (chart-swap–Reeb
-   identification, [`rem:reeb-u1-chart-swap`](#rem:reeb-u1-chart-swap))
+   identification, [`prop:reeb-u1-chart-swap`](#prop:reeb-u1-chart-swap))
    produces the real Lorentzian archimedean projection without
    imposing reality conditions by hand.
 

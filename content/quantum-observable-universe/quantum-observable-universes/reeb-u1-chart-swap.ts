@@ -1,9 +1,9 @@
-import { remark } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default remark({
-  label: "rem:reeb-u1-chart-swap",
+export default proposition({
+  label: "prop:reeb-u1-chart-swap",
   title:
-    "Chart-swap $U(1)$ is the Reeb flow: Wick rotation, $i$, and knot operators",
+    "Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\mathrm{Aut}(\\mathbb{P}(V))$",
   tags: [
     "reeb",
     "chart-transition",
@@ -21,6 +21,10 @@ export default remark({
     "ex:reeb-su2",
     "def:frobenius-hopf-substrate",
     "rem:i-as-braiding-orientation",
+    "def:projective-line-object",
   ],
-  interprets: "def:contact-affine-chart",
+  lean: {
+    ref: "qou:QOU.ChartSwap.eqReeb",
+    validation: "not_checked",
+  },
 });
