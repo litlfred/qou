@@ -187,3 +187,93 @@ with tr_M" and the cat-per-factor decomposition probe.
 **This is the third revisit.** The actual canonical c_k forms have been
 known since 2026-05-26. Subsequent de-fit + revert cycles missed the
 −ℏ_q² piece. **This audit is the consolidation.**
+
+---
+
+## ADDENDUM (2026-05-30, same day) — fourth flip-flop discovered
+
+After this audit's initial wiring of c_3 = J − ℏ_q² (claimed 0.0038%
+"PROVED" match), a re-verification at the **canonical (m_p-pin) q₀**
+revealed the match degrades to **2.6%**. Investigation:
+
+### What the 2026-05-26 commit actually says
+
+Reading commit `b2f9087315`'s docstring carefully:
+
+> *"c_3 = J_Hopf(q=1) − ℏ_q² at **0.004% error**"*
+>
+> *"the hbar_q² sub-leading correction closes the **0.48% gap**"*
+
+So the original finding was **explicitly a 0.004% near-match**, NOT a
+Taylor-exact derivation. The −ℏ_q² is a structural *approximation*
+that closes 99% of the 0.49% gap (plain −2 → −2−ℏ_q² is a 130×
+improvement), but the residual 0.004% is still a near-match.
+
+### q₀-sensitivity of the match
+
+| q₀ pin | empirical c_3 | J − ℏ_q² | residual |
+|--------|--------------|----------|----------|
+| muon-pin (stale, pre-#1422) | −2.018 | −2.0098 | 0.4% |
+| **m_p-pin (canonical, current)** | **−2.062** | **−2.0098** | **2.6%** |
+
+The 0.004% figure from the original commit was at the stale muon-pin
+q₀, where N=3 happened to close to compute precision because of how
+Q_AME (= m_n − m_p − m_e) cancels with the substrate formula's residual
+at that specific q₀. At the canonical q₀ (m_p-pinned via #1422), the
+cancellation breaks and the genuine c_3 residual reopens to 2.6%.
+
+### What this means for production
+
+This audit's "DEEP AUDIT" wiring of c_3 = J − ℏ_q² + c_4 wrong: it
+applied a near-match (0.004% at stale q₀) as if it were a Taylor-
+coefficient derivation. **That misreading is the FOURTH flip-flop.**
+
+The honest production wiring is **Q_N2 only** (c_2 = −1 Taylor-exact,
+matched 4×10⁻⁷ at canonical q₀). Q_β reports the 1247 ppb miss vs
+CODATA — at the μ-p substrate tension floor, NOT closed.
+
+### Discipline lock (final)
+
+For future sessions investigating Q_β c_k:
+
+1. **The Taylor coefficient of the exact Habiro Q_β at substrate q₀
+   IS the canonical c_k by definition.** Empirically extracted to
+   any precision; q₀-dependent.
+
+2. **Structural identifications (Lean knot invariants, Wedderburn
+   forms, q-deformations) are CONJECTURES about what the Taylor
+   coefficient equals.** Empirical residuals quantify the conjecture
+   gap.
+
+3. **Only Taylor-exact identifications (residual < compute precision
+   ≪ 1 ppb) wire to production.** Currently: c_2 only.
+
+4. **q₀-dependent residuals are evidence of form-fitting at the test
+   q₀.** If a residual changes substantially when q₀ moves, the
+   structural identity is not Taylor-exact.
+
+5. **Past commits claiming "PROVED" for c_3 or higher should be
+   audited against canonical q₀** before being cited as derivations.
+   The 2026-05-26 b2f9087315 commit's "0.004% error" was a stale-q₀
+   artifact.
+
+### Net dashboard
+
+Honest production state after this addendum:
+
+```
+m_e         0           CAL-1 anchor                ✓ 100×
+m_p         0.0004 ppb  CAL-2 anchor                ✓ 100×
+m_μ         ~0 ppb      derived from m_p             ✓ 100×
+Q_β         1279 ppb    Q_N2, c_2 Taylor-exact      ✗ 100× (1× ✓)
+m_n         1.07 ppb    Path C (inherits Q_β)        ✗ 100× (1× ✓)
+Δ_pn        774 ppb     downstream                    ✗ 100× (1× ✓)
+m_K/m_π    23.44 ppb   Lean closed form (#1451)    ✓ 100×
+
+NET: 4/7 beat 100× ; 7/7 beat 1× experimental.
+```
+
+This IS the honest substrate floor. Closing Q_β further requires a
+genuine Taylor-exact c_3 derivation (Lean theorem closing the
+residual to compute precision at canonical q₀, NOT a structural
+near-match).
