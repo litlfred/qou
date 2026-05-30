@@ -62,7 +62,7 @@ import sympy as sp  # noqa: E402
 from wedderburn_jones_markov import global_wedderburn_sum_jones_markov  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q_0 = sp.Rational("1.1099785955541805")
+Q_0 = sp.Rational("1.1099785827513805")
 REF_WITNESS = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
 
 

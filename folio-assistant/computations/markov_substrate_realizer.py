@@ -175,7 +175,7 @@ def main() -> int:
         return 1
 
     witness = HabiroAtomicWitness.from_json(INPUT_WITNESS)
-    q_0 = float(witness.parameters.get("q_0", 1.1099785955541805))
+    q_0 = float(witness.parameters.get("q_0", 1.1099785827513805))
 
     per_atom = [realize_atom(record, q_0) for record in witness.records]
 

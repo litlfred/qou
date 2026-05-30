@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T03:02:20.878736+00:00",
-  "commitSha": "abca0cc9e5ee4b8cc8228fd559489422be445e34",
+  "computedAt": "2026-05-30T03:27:31.608709+00:00",
+  "commitSha": "dac69596412feddd3c5ecaf334c750a14dff3175",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2102,6 +2102,9 @@
         "binding-energy-categorical-deuteron.witness.json",
         "binding-energy-scale-probe.witness.json",
         "binding-error-source.witness.json",
+        "binding-factor-f-decomposition.witness.json",
+        "binding-factor-f-pair-count.witness.json",
+        "binding-factor-f-sequence.witness.json",
         "binding-k-enumerator.witness.json",
         "binding-k-solver.witness.json",
         "binding-ladder-catalog.witness.json",
