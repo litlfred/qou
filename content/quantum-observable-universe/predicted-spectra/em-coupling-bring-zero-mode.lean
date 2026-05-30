@@ -64,19 +64,25 @@ theorem hodgeRatio_at_g4 : hodgeRatio 4 = bringZeroModeValue := by
   field_simp
   ring
 
-/-- **Phase-1 wiring (2026-05-30).**  Reference to the Bloch-Wigner
-    unit-circle function `D(e^{iθ}) = Cl_2 θ` defined in the
-    Mathlib filler at
-    `predicted-spectra/bloch-wigner-mathlib-filler.lean`
-    (`noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ`).
+/-- **Phase-1 wire-up complete (2026-05-30 follow-up to #1460).**
+    `BlochWigner_unit_circle` is now resolved via a direct namespace
+    import from the canonical Lake-tree module
+    `QOU.Archimedean.BlochWignerUnitCircle`, replacing the
+    intermediate `axiom` declaration that lived here.  The Lake
+    module uses `noncomputable opaque` (semantically cleaner than
+    `axiom` — declares the function exists without adding a global
+    Lean-kernel hypothesis).  Downstream consumers — the
+    `BringZeroModeBlochClass` field and the
+    `bring_zero_mode_additive_form` theorem below — pick it up via
+    the namespace. -/
+end QOU.Archimedean
 
-    Declared here as an `axiom` for §3b-cond strengthening of the
-    `BringZeroModeBlochClass` field below.  Closing this axiom to a
-    direct namespace import is the Lake-tree wire-up Phase 1
-    follow-up (`content/quantum-observable-universe/lean/QOU/...`);
-    until that lands, the axiom mirrors the filler's signature
-    exactly. -/
-axiom BlochWigner_unit_circle : ℝ → ℝ
+-- Phase-1 wire-up: import the canonical declaration.
+-- (em-coupling-bring-zero-mode is a content-block sibling; the
+-- Lake-built declaration lives in lean/QOU/Archimedean/.)
+
+open QOU.Archimedean (BlochWigner_unit_circle)
+namespace QOU.Archimedean
 
 /-- Bloch-Wigner identification of the Bring zero-mode contribution,
     packaged as a typeclass. A concrete instance asserts the existence
