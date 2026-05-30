@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T12:24:42.453616+00:00",
-  "commitSha": "c1ab91e71370e7a2408cb4d24d1658e35a549b35",
+  "computedAt": "2026-05-30T21:28:23.475128+00:00",
+  "commitSha": "05443e63be985c17d6baa1dd0910d45538f41ae6",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,16 +559,23 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -2056,6 +2063,7 @@
         "alpha-em-4pi-derived-form-probe.witness.json",
         "alpha-em-4pi-q-hyperbolic-b3-pslq.witness.json",
         "alpha-em-categorical-reidentification.witness.json",
+        "alpha-em-habiro-taylor-investigation.witness.json",
         "alpha-em-habiro-torus-knot-jones.witness.json",
         "alpha-em-pslq-uniqueness.witness.json",
         "alpha-em-shift-multiplicative-chain.witness.json",
@@ -2141,6 +2149,7 @@
         "brane-tower-two-avenues-probe.witness.json",
         "bring-chiral-fibre-figure.witness.json",
         "bring-coordinate-linking-weight-probe.witness.json",
+        "bring-residue-resolvent-probe.witness.json",
         "bring-trilog-zeta5-depth-3.witness.json",
         "bring-zero-mode-bloch-hunt.witness.json",
         "brundan-kleshchev-audit.witness.json",
@@ -2605,6 +2614,7 @@
         "optimised-magic-verifier.witness.json",
         "option-b-proton-mass-full-chain.witness.json",
         "option-e-isospin-probe.witness.json",
+        "orbit-trace-identity.witness.json",
         "p2-5-symbolic-q-audit.witness.json",
         "paper-six-term-isotope-sweep.witness.json",
         "paper-six-term-shadow-price-sweep.witness.json",
