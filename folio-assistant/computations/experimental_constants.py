@@ -86,13 +86,25 @@ VOL_FIGURE_EIGHT_ERR = 1e-12
 VOL_THREE_TWIST      = 2.828122088330783  # ± 1e-12
 VOL_THREE_TWIST_ERR  = 1e-12
 
-VOL_BORROMEAN        = 7.327724753846269  # ± 1e-12
-VOL_BORROMEAN_ERR    = 1e-12
+# Borromean rings complement (L6a4). Canonical identity Vol(L6a4) = 8·G
+# (Adams 1985). The literal here matches 8·mpmath.catalan at f64 precision.
+# Producer witness: `snappy-borromean-volume.witness.json` (single source
+# of truth for all precision tiers). Previous f64 value `7.327724753846269`
+# was a stale numerical literal that disagreed with 8·G at digit 11;
+# corrected in the SnapPy witness migration PR.
+VOL_BORROMEAN        = 7.3277247534177521  # = 8·G to f64 precision
+VOL_BORROMEAN_ERR    = 1e-15
 # 50-dps string form for high-precision mpmath computations (use via
 # `mp.mpf(VOL_BORROMEAN_50DPS_STR)` to preserve the full Catalan-constant
 # expansion past float's 16-digit floor). Borromean rings complement
 # admits the closed form 8 · G where G is Catalan's constant.
-VOL_BORROMEAN_50DPS_STR = "7.32772475587766148235147121870981010907842498879866"
+# Previous string carried a typo (`587766` instead of `341775` at digit 9);
+# corrected to match `8·mpmath.catalan` at the declared precision.
+# Authoritative source: `snappy-borromean-volume.witness.json` →
+# `alt_precision["50"]`. Consumers should prefer reading from that
+# witness rather than this constant; this constant is kept for backward
+# compatibility with f64-tier consumers.
+VOL_BORROMEAN_50DPS_STR = "7.3277247534177521204368281194590728861931949942534"
 VOL_4_1_50DPS_STR       = "2.02988321281930725004240510854904057483004159909893"
 
 # ── Hyperbolic-knot volumes (used by per_atom_rho_deviation and
@@ -107,7 +119,7 @@ VOL_6_2          = 4.400832516123046  # SnapPy 6_2 volume
 VOL_6_2_ERR      = 1e-15
 VOL_8_11         = 8.286316817806593  # SnapPy 8_11 volume
 VOL_8_11_ERR     = 1e-15
-VOL_L6A4         = 7.327724753846269  # Borromean (= VOL_BORROMEAN)
+VOL_L6A4         = 7.3277247534177521  # Borromean = 8·G (per VOL_BORROMEAN above)
 VOL_L6A4_ERR     = 1e-15
 VOL_7_SQ_1       = 4.749499981874439  # Whitehead-pair / α-α coupling knot
 VOL_7_SQ_1_ERR   = 1e-15
