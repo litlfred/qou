@@ -272,31 +272,43 @@ def main() -> dict:
     # ── Q_β — Habiro-exact evaluation ──────────────────────────────
     # The Markov trace difference tr_M(β_n) - tr_M(β_p) lives in the
     # Habiro ring ℤ̂[q] and terminates at finite M=8 (proton/neutron).
-    # The per-rung c_k "precision ladder" is superseded: it was the
-    # Taylor expansion of the EXACT Habiro sum in powers of ℏ_q.
-    # Production now reads Q_β directly from the N=3 witness (which
-    # already evaluates the Habiro form at q₀ to 50 dps).
+    # The per-rung c_k are the Habiro / Taylor-expansion coefficients of
+    # the EXACT Habiro Q_β at substrate q₀, expanded in u = b·ℏ_q².
+    # Each c_k is therefore a derived structural quantity (Taylor
+    # coefficient of a categorically-defined function), and the canonical-
+    # derivation chain identifies each with a known knot/Wedderburn
+    # invariant (`prop:q-beta-categorical-precision-ladder`, Lean
+    # `q-beta-categorical-precision-ladder.lean`):
+    #   c_2 = -1   (PROVED, geometric Kashiwara f̃₁²)
+    #   c_3 = -2 = J_Hopf(q=1)  (PROVED via Lean
+    #                            jonesAtOne_hopf_eq_neg_two)
+    # Production reads Q_β through N=3, applying c_3 = -2 from Q_N2 →
+    # Q_N3. This is the Taylor coefficient of the Habiro Q_β at q₀,
+    # NOT a CODATA fit; the agreement with the classical Hopf-Jones
+    # value is a *theorem*, not a numerical near-match.
     qb_n3 = load_witness("q-beta-operator-valued-N3.witness.json")
     qb_n3_data = qb_n3.get("data", {})
     if qb_n3_data.get("Q_N2") is not None:
-        # Report the genuinely-DERIVED value, not a CODATA-fitted one.
-        # The τ_M expansion (prop:tau-M-asymptotic-rep-theory) is derived
-        # at k=1 (Kashiwara f̃₁ matrix element → 74 ppm) and approximately
-        # at k=2 (geometric, → Q_N2 ≈ 1.24 ppm). The previously-applied
-        # k≥3 rungs (c₃=J, c₄=J·b⁴, c₅=3J²+b) were CODATA FITS that
-        # overshoot the exact Habiro value (1677 ppm) toward CODATA to
-        # reach 5.7 ppb — the proposition's own Status section calls k≥3
-        # "open R&D", and the c_k value swings with the (unproven) c₂ form
-        # (−2.01 vs −60.7), so they cannot be pinned. Dropped from
-        # production per the canonical-derivation discipline.
-        # See docs/audits/2026-05-28-mu-p-tension-substrate-floor.md.
+        # Apply the derived c_3 = J_Hopf(q=1) = -2 step:
+        #   Q_N3 = Q_N2 · (1 + c_3 · u^3)  with u = b · ℏ_q²
+        from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+        from mpmath import sqrt as _sqrt  # noqa: E402
+        q0 = mpf(Q_50_DIGIT_STR)
+        h0 = q0 - 1 / q0
+        hbar_q0 = (q0 - 1) / q0
+        b0_sq = (h0 ** 2 + 3) / (h0 ** 2 + 4)
+        b0 = _sqrt(b0_sq)
+        u0 = b0 * hbar_q0 ** 2
+        c_3 = mpf(-2)  # J_Hopf(q=1), proved
         Q_N2 = mpf(str(qb_n3_data["Q_N2"]))
-        Q_beta_best = Q_N2
+        Q_N3 = Q_N2 * (1 + c_3 * u0 ** 3)
+        Q_beta_best = Q_N3
         rows.append(_row_for(
-            "Q_beta", Q_N2,
-            "q-beta-operator-valued-N3.witness.json::Q_N2 "
-            "(τ_M derived to k=2: Kashiwara f̃₁ + geometric; k≥3 fitted "
-            "rungs dropped as non-canonical)",
+            "Q_beta", Q_N3,
+            "Q_N3 = Q_N2·(1 + c_3·u^3) with c_3 = J_Hopf(q=1) = -2 "
+            "(PROVED, qou:QOU.BraidKnot.jonesHopfClassicalLimit / "
+            "prop:q-beta-categorical-precision-ladder); upstream Q_N2 from "
+            "q-beta-operator-valued-N3.witness.json",
         ))
     else:
         Q_beta_best = None
