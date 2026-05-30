@@ -5,7 +5,7 @@
   the standard representation (2,1) of H₃(q). This controls the
   entanglement between the two lepton channels inside the meson.
 
-  -- Ref: [wenzl1988hecke] https://doi.org/10.1007/BF01388470
+  -- Ref: [wenzl1988] https://doi.org/10.1007/BF01388470
 -/
 
 import Mathlib.Tactic.Ring

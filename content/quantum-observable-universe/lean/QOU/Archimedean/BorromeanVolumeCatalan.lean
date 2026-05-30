@@ -43,7 +43,7 @@ The `sorry`s are tagged with `-- Ref:` citations per CLAUDE.md §1
 
 ## References
 
-- [adams1985] Adams, C. C. (1985). The noncompact hyperbolic 3-manifold
+- [adams1985hyperbolic] Adams, C. C. (1985). The noncompact hyperbolic 3-manifold
   of minimum volume. Proc. Amer. Math. Soc. 100, 601–606.
   DOI: https://doi.org/10.2307/2045438
 - [lewin1981] Lewin, L. (1981). Polylogarithms and Associated Functions.
@@ -161,11 +161,11 @@ theorem lobachevsky_pi_div_four_eq_half_catalan :
     (Factor 2 in the divisor accounts for double-counting of tetrahedra
     sharing the octahedron centre.)
 
-    -- Ref: [adams1985] Adams §2, "Decomposition of the regular ideal
+    -- Ref: [adams1985hyperbolic] Adams §2, "Decomposition of the regular ideal
             octahedron"; [zagier1986] eq. 3.1. -/
 theorem regular_ideal_octahedron_volume :
     (4 : ℝ) * catalan_G > 0 := by
-  -- Ref: [adams1985] §2 + Lobachevsky's formula
+  -- Ref: [adams1985hyperbolic] §2 + Lobachevsky's formula
   have hG := catalan_G_pos
   linarith
 
@@ -183,12 +183,12 @@ theorem regular_ideal_octahedron_volume :
     `prop:geom-universality` (paper); this theorem provides the missing
     Lean leg.
 
-    -- Ref: [adams1985] Adams, C. C. (1985), "The noncompact hyperbolic
+    -- Ref: [adams1985hyperbolic] Adams, C. C. (1985), "The noncompact hyperbolic
             3-manifold of minimum volume", Proc. Amer. Math. Soc. 100,
             601-606. DOI: 10.2307/2045438. -/
 theorem vol_B3_eq_8_catalan :
     vol_B3 = 8 * catalan_G := by
-  -- Ref: [adams1985] Adams 1985 — Borromean complement decomposes into
+  -- Ref: [adams1985hyperbolic] Adams 1985 — Borromean complement decomposes into
   --      2 regular ideal octahedra, each of volume 4G
   --      (Lobachevsky-Catalan identity).
   --

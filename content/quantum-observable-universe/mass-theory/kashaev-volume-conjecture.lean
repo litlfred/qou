@@ -110,7 +110,7 @@ theorem figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :
 /-- **CONDITIONAL.** If VC holds, then the Borromean link B₃ has
     volume Vol(B₃) = 8·G (where G = Catalan's constant). This
     enters the proton mass formula via the Borromean Markov trace. -/
--- Ref: [adams1985] — hyperbolic volume of Borromean rings
+-- Ref: [adams1985hyperbolic] — hyperbolic volume of Borromean rings
 -- Ref: [manuscript] lean/QOU/Archimedean/BorromeanVolumeCatalan.lean
 theorem borromean_volume_from_vc (q : ℝ) [VolumeConjecture q] :
     True :=

@@ -4444,6 +4444,247 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.2307/1971195",
   }),
 
+  // ──────────────────────────────────────────────────────────────
+  // Placeholder entries (added 2026-05-29) — Lean -- Ref: citations
+  // present in QOU .lean tree that lacked references.ts entries.
+  // Each follows the wenzl1988b convention: known author/year/title,
+  // venue/DOI marked PLACEHOLDER where not independently verified.
+  // Resolve DOIs and venues manually before publication.
+  // ──────────────────────────────────────────────────────────────
+
+  // ── Abel 1826 — original elliptic-function paper ──────────────
+  ref({
+    id: "abel1826",
+    type: "article-journal",
+    title:
+      "Recherches sur les fonctions elliptiques",
+    author: [{ family: "Abel", given: "Niels Henrik" }],
+    "container-title": "Journal für die reine und angewandte Mathematik (Crelle)",
+    volume: "2",
+    page: "101-181",
+    issued: { "date-parts": [[1827]] },
+    note: "PLACEHOLDER: Crelle vol 2 (1827) is the canonical first installment; the QOU Lean Ref cites '1826' which may refer to the manuscript submission year. Verify date-of-record + page range before publication.",
+  }),
+
+  // ── Adams 1985 — already covered by adams1985hyperbolic (re-keyed) ─
+
+  // ── Bertsimas–Vempala / Bertsimas 1997 LP duality and beyond ──
+  ref({
+    id: "bertsimas1997",
+    type: "book",
+    title:
+      "Introduction to Linear Optimization",
+    author: [
+      { family: "Bertsimas", given: "Dimitris" },
+      { family: "Tsitsiklis", given: "John N." },
+    ],
+    publisher: "Athena Scientific",
+    "publisher-place": "Belmont, MA",
+    issued: { "date-parts": [[1997]] },
+    note: "PLACEHOLDER: Bertsimas–Tsitsiklis 1997 is the canonical LP textbook cited in BindingConcentration.lean for concentration / duality. ISBN 1-886529-19-1. Verify whether the QOU citation intends the textbook or a contemporaneous Bertsimas paper.",
+  }),
+
+  // ── Brundan–Kleshchev 2009 — KLR / cyclotomic Hecke ───────────
+  ref({
+    id: "brundan-kleshchev2009",
+    type: "article-journal",
+    title:
+      "Blocks of cyclotomic Hecke algebras and Khovanov–Lauda algebras",
+    author: [
+      { family: "Brundan", given: "Jonathan" },
+      { family: "Kleshchev", given: "Alexander" },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    volume: "178",
+    page: "451-484",
+    issued: { "date-parts": [[2009]] },
+    DOI: "10.1007/s00222-009-0204-8",
+    URL: "https://doi.org/10.1007/s00222-009-0204-8",
+  }),
+
+  // ── Drinfeld 1985/1986 — quantum groups / ICM address ─────────
+  ref({
+    id: "drinfeld1985",
+    type: "article-journal",
+    title:
+      "Hopf algebras and the quantum Yang–Baxter equation",
+    author: [{ family: "Drinfeld", given: "V. G." }],
+    "container-title": "Soviet Mathematics Doklady",
+    volume: "32",
+    page: "254-258",
+    issued: { "date-parts": [[1985]] },
+    note: "PLACEHOLDER: Drinfeld's 1985 Doklady paper introducing the quantum Yang–Baxter / Hopf-algebra framework. Cited in R-matrix work; verify whether the QOU Lean Ref intends the 1985 Doklady note or the 1986 ICM (Berkeley) address 'Quantum Groups'.",
+  }),
+
+  // ── Faddeev 1995 — quantum dilogarithm functional equation ────
+  ref({
+    id: "faddeev1995",
+    type: "article-journal",
+    title:
+      "Discrete Heisenberg–Weyl group and modular group",
+    author: [{ family: "Faddeev", given: "L. D." }],
+    "container-title": "Letters in Mathematical Physics",
+    volume: "34",
+    page: "249-254",
+    issued: { "date-parts": [[1995]] },
+    DOI: "10.1007/BF01872779",
+    URL: "https://doi.org/10.1007/BF01872779",
+    note: "PLACEHOLDER: Faddeev 1995 LMP paper introducing the modular quantum dilogarithm. Distinct from faddeev1994 (which is in references.ts) and faddeev_kashaev1994; verify the QOU Lean Ref intends this 1995 paper vs the contemporaneous 1995 Faddeev–Volkov 'Abelian current algebra'.",
+  }),
+
+  // ── Frobenius 1898 — original character-theory paper ──────────
+  ref({
+    id: "frobenius1898",
+    type: "article-journal",
+    title:
+      "Über Relationen zwischen den Charakteren einer Gruppe und denen ihrer Untergruppen",
+    author: [{ family: "Frobenius", given: "Ferdinand Georg" }],
+    "container-title": "Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften zu Berlin",
+    page: "501-515",
+    issued: { "date-parts": [[1898]] },
+    note: "PLACEHOLDER: Frobenius's original paper on the character relations now known as Frobenius reciprocity. Cited in DepthStratifiedFrobeniusReciprocity.lean as the foundational source. No DOI for 1898 Sitzungsberichte; venue + page may need archival verification.",
+  }),
+
+  // ── Habiro 2000 / 2002 / 2004 — cyclotomic-completion ring ────
+  ref({
+    id: "habiro2000",
+    type: "article-journal",
+    title:
+      "On the colored Jones polynomial of some simple links",
+    author: [{ family: "Habiro", given: "Kazuo" }],
+    "container-title": "Recent progress towards the volume conjecture (RIMS Kokyuroku)",
+    volume: "1172",
+    page: "34-43",
+    issued: { "date-parts": [[2000]] },
+    note: "PLACEHOLDER: Habiro 2000 RIMS Kokyuroku preprint introducing the colored-Jones machinery later expanded in habiro2002 / habiro2004. Cited in DeltaLambdaSignRule.lean / TwoRoutesProtonMass.lean. Distinct from habiro2002 (Habiro ring) and habiro2004; verify the QOU Lean Ref intends the 2000 RIMS preprint vs an alternate Habiro 2000 work.",
+  }),
+
+  // ── Halverson–Ram 1998 — characters of Iwahori–Hecke ──────────
+  ref({
+    id: "halverson_ram_1998",
+    type: "article-journal",
+    title:
+      "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type",
+    author: [
+      { family: "Halverson", given: "Tom" },
+      { family: "Ram", given: "Arun" },
+    ],
+    "container-title": "Transactions of the American Mathematical Society",
+    volume: "348",
+    issue: "10",
+    page: "3967-3995",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.1090/S0002-9947-96-01622-1",
+    URL: "https://doi.org/10.1090/S0002-9947-96-01622-1",
+    note: "PLACEHOLDER: Halverson–Ram TAMS paper on Hecke-algebra character formulae. Verify vol/issue/page (the standard reference is 1996; the QOU citation key uses '1998' which may be the journal-issue year).",
+  }),
+
+  // ── James 1984 — representation theory of S_n ─────────────────
+  ref({
+    id: "james1984representation",
+    type: "book",
+    title:
+      "The Representation Theory of the Symmetric Group",
+    author: [
+      { family: "James", given: "Gordon" },
+      { family: "Kerber", given: "Adalbert" },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    "collection-title": "Encyclopedia of Mathematics and its Applications",
+    "collection-number": 16,
+    issued: { "date-parts": [[1984]] },
+    note: "PLACEHOLDER: James–Kerber 1984 encyclopedia volume on S_n representation theory. Cited in S5SO3FiberAction.lean / S4S3HalfSymmetricProjection.lean. The QOU citation key is 'james1984representation' suggesting James alone; verify whether James–Kerber (joint) is the intended reference vs James 1978 LNM-682 'Representation Theory of Symmetric Groups'.",
+  }),
+
+  // ── Klein 1884 — Vorlesungen über das Ikosaeder ───────────────
+  ref({
+    id: "klein1884vorlesungen",
+    type: "book",
+    title:
+      "Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade",
+    author: [{ family: "Klein", given: "Felix" }],
+    publisher: "B. G. Teubner",
+    "publisher-place": "Leipzig",
+    issued: { "date-parts": [[1884]] },
+    note: "PLACEHOLDER: Klein's Vorlesungen — the original treatise on the icosahedral group and the quintic. Cited in S5SO3FiberAction.lean. English translation by G. G. Morrice published as 'Lectures on the Icosahedron' (Dover reprint 1956); verify whether the QOU Lean Ref intends the 1884 German original or the translation.",
+  }),
+
+  // ── Lusztig 1990 — canonical bases / Hecke algebras ───────────
+  ref({
+    id: "lusztig1990",
+    type: "article-journal",
+    title:
+      "Canonical bases arising from quantized enveloping algebras",
+    author: [{ family: "Lusztig", given: "George" }],
+    "container-title": "Journal of the American Mathematical Society",
+    volume: "3",
+    issue: "2",
+    page: "447-498",
+    issued: { "date-parts": [[1990]] },
+    DOI: "10.2307/1990961",
+    URL: "https://doi.org/10.2307/1990961",
+  }),
+
+  // ── Majid 1995 — Foundations of Quantum Group Theory ──────────
+  ref({
+    id: "majid1995",
+    type: "book",
+    title: "Foundations of Quantum Group Theory",
+    author: [{ family: "Majid", given: "Shahn" }],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[1995]] },
+    ISBN: "978-0-521-46032-7",
+    note: "PLACEHOLDER: Majid's foundational quantum-group textbook. Cited in QuaternionFromHecke.lean. ISBN verified; verify page citations in the QOU Lean Ref against the printed edition.",
+  }),
+
+  // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
+  ref({
+    id: "murasugi1996",
+    type: "book",
+    title: "Knot Theory and Its Applications",
+    author: [{ family: "Murasugi", given: "Kunio" }],
+    publisher: "Birkhäuser",
+    "publisher-place": "Boston",
+    issued: { "date-parts": [[1996]] },
+    ISBN: "978-0-8176-3817-4",
+    note: "PLACEHOLDER: Murasugi's knot-theory textbook (translated by Kurpita from the Japanese original). Cited in BorromeanMarkovTrace.lean. Verify whether the QOU Lean Ref intends the 1996 Birkhäuser edition or a subsequent reprint.",
+  }),
+
+  // ── Ram 1997 — Hecke-algebra characters / seminormal forms ────
+  ref({
+    id: "ram1997",
+    type: "article-journal",
+    title:
+      "Seminormal representations of Weyl groups and Iwahori–Hecke algebras",
+    author: [{ family: "Ram", given: "Arun" }],
+    "container-title": "Proceedings of the London Mathematical Society",
+    volume: "75",
+    issue: "1",
+    page: "99-133",
+    issued: { "date-parts": [[1997]] },
+    DOI: "10.1112/S0024611597000282",
+    URL: "https://doi.org/10.1112/S0024611597000282",
+  }),
+
+  // ── Rogers 1907 — original dilogarithm functional eqs ─────────
+  ref({
+    id: "rogers1907",
+    type: "article-journal",
+    title:
+      "On function sum theorems connected with the series $\\sum x^n / n^2$",
+    author: [{ family: "Rogers", given: "L. J." }],
+    "container-title": "Proceedings of the London Mathematical Society",
+    series: "2",
+    volume: "4",
+    page: "169-189",
+    issued: { "date-parts": [[1907]] },
+    note: "PLACEHOLDER: Rogers's original paper on dilogarithm functional equations (later named the 'Rogers pentagon' / 'Rogers L-function'). Cited in QRogersPentagonArchimedean.lean alongside abel1826. No reliable DOI for 1907 PLMS volumes; verify page range.",
+  }),
+
+  // ── Rolfsen 1976 — already covered by rolfsen (re-keyed) ──────
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

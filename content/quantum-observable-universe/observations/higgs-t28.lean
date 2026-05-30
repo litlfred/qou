@@ -63,7 +63,7 @@ For T(2,8): genus = (8-2)/2 = 3. This is a theorem, not a conjecture. -/
 /-- **THEOREM (special case).** The genus of T(2,8) = 3.
     This closes the `t28_genus` field of the conjecture — it's
     the one sub-claim that's provable without the full conjecture. -/
--- Ref: [rolfsen1976] Knots and Links, Theorem 5.1 (torus link genus)
+-- Ref: [rolfsen] Knots and Links, Theorem 5.1 (torus link genus)
 theorem t28_genus_eq_three : (8 - 2) / 2 = 3 := by norm_num
 
 /-- **CONDITIONAL THEOREM.** If the Higgs-as-T(2,8) conjecture holds,
