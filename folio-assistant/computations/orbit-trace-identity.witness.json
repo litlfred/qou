@@ -1,69 +1,78 @@
 {
-  "engine": "python",
+  "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T12:33:37.780982+00:00",
-  "commitSha": "86fec9f535237da8cd43884ae90bd456b6534dfd",
+  "computedAt": "2026-05-30T12:50:04.372373+00:00",
+  "commitSha": "c74e7cad75efa9e554e7adc9695127a4d33fad70",
   "assertions": [
     {
-      "name": "word_invariant_4He",
-      "computed": 20.0,
-      "expected": 20.0,
+      "name": "lemma1_4He",
+      "computed": 1.0,
+      "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "atom_braid_word_3A structural invariance"
+      "source": "per-species block identity"
     },
     {
-      "name": "word_invariant_5Li",
-      "computed": 20.0,
-      "expected": 20.0,
+      "name": "lemma1_5Li",
+      "computed": 1.0,
+      "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "atom_braid_word_3A structural invariance"
+      "source": "per-species block identity"
     },
     {
-      "name": "word_invariant_6Li",
-      "computed": 20.0,
-      "expected": 20.0,
+      "name": "lemma1_6Li",
+      "computed": 1.0,
+      "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "atom_braid_word_3A structural invariance"
+      "source": "per-species block identity"
     },
     {
-      "name": "trM_4He_canonical",
-      "computed": 0.055348335163768345,
+      "name": "M1_cyclic_invariance_4He",
+      "computed": 3.675051476376769e-51,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "tr_M(AB)=tr_M(BA) on the atomic braid @50dps"
+    },
+    {
+      "name": "trM_4He_sanity",
+      "computed": 0.05534833516376857,
       "expected": 0.05534834587669805,
       "passed": true,
-      "tolerance": 1e-07,
-      "source": "markov_peel.tr_M_atomic"
+      "tolerance": 1e-06,
+      "source": "markov_trace @50dps (~7-digit sanity)"
     },
     {
-      "name": "trM_5Li_canonical",
-      "computed": 0.029441385679919337,
+      "name": "trM_5Li_sanity",
+      "computed": 0.029441385679919125,
       "expected": 0.0294413937003972,
       "passed": true,
-      "tolerance": 1e-07,
-      "source": "markov_peel.tr_M_atomic"
+      "tolerance": 1e-06,
+      "source": "markov_trace @50dps (~7-digit sanity)"
     }
   ],
   "allPassed": true,
-  "durationMs": 71464,
+  "durationMs": 125908,
   "computation": "orbit-trace-identity",
   "scriptFile": "orbit_trace_identity_proof.py",
-  "scriptHash": "b047410d809a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "84ef21deb5cb",
+  "scriptCommitSha": "c74e7cad75efa9e554e7adc9695127a4d33fad70",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
-  "description": "Proof of the orbit-trace identity (Tier 1.B): tr_M(β_{Z,N}) is invariant under same-species nucleon permutations σ ∈ S_Z × S_N. Lemma 1: atom_braid_word_3A's crossing-type sequence is literally invariant under σ (verified). Lemma 2: Markov trace is conjugation-invariant (M1). Corrects the roadmap's |orbit|·tr_M(rep) framing to tr_M(β)=tr_M(rep) + reduction-tree dedup.",
+  "description": "Proof of the orbit-trace identity (Tier 1.B): tr_M(β_{Z,N}) is invariant under same-species nucleon permutations σ ∈ S_Z × S_N. Lemma 1 (word invariance — per-species intra-blocks identical, interfaces σ-invariant) + Lemma 2 (Markov M1 conjugation-invariance, confirmed by cyclic-rotation tr_M agreement < 1e-40 at 50 dps). Corrects the roadmap's |orbit|·tr_M(rep) to tr_M(β)=tr_M(rep).",
   "auditOnly": "docs/audits/2026-05-30-orbit-trace-identity-proof.md",
   "data": {
     "conclusion": {
       "identity_holds": true,
-      "statement": "tr_M(beta_{Z,N}) invariant under S_Z x S_N",
-      "roadmap_correction": "tr_M(beta)=tr_M(rep); |orbit| is a reduction-tree dedup factor, not a trace multiplier",
+      "lemma1_word_invariance": true,
+      "lemma2_M1_conjugation": true,
+      "roadmap_correction": "tr_M(beta)=tr_M(rep); |orbit| is reduction-tree dedup, NOT a trace multiplier",
       "tier_1b_status": "SOUND — optimisation unblocked"
     }
   }

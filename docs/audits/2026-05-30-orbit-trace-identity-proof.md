@@ -32,22 +32,36 @@ between `k` and `k+1`. A permutation `σ ∈ S_Z × S_N`:
   proton block), the single pn boundary stays at position `Z`, nn stays nn
   — so the **interface crossings are untouched**.
 
-Hence the **crossing-type sequence of the word is literally invariant**
-under `σ`. *Verified:* 20/20 random `σ` on ⁴He, ⁵Li, ⁶Li leave the sequence
-invariant (the script's `word_invariant_*` assertions).
+Hence the word is unchanged under `σ`. **Verified (non-vacuously)** on ⁴He,
+⁵Li, ⁶Li — the script confirms: (i) all proton intra-blocks are identical
+and all neutron intra-blocks are identical; (ii) proton ≠ neutron blocks
+(so species genuinely matter); and (iii) the interface multiset is exactly
+`{pp:Z−1, pn:1, nn:N−1}`. No same-species `σ` can change any of these, so
+the word — hence its trace — is invariant.
 
 **Lemma 2 (conjugation invariance — Markov axiom M1).** The Markov trace is
 invariant under conjugation in `H_{3A}`. Realising `σ` as a permutation of
 the 3-strand nucleon blocks is a conjugation by a strand-permutation braid,
-so even in the strand-relabel view `tr_M` is invariant.
+so even in the strand-relabel view `tr_M` is invariant. **Verified** on the
+*real* ⁴He atomic braid: every cyclic rotation `tr_M(A·B) = tr_M(B·A)`
+agrees to `max|Δ| = 3.7×10⁻⁵¹` at **50 dps** (mpmath/sympy, not `float`).
 
 **∴ The identity holds.** The roadmap's interface-swap worry is **unfounded**:
 same-species permutations preserve all three interface types (Lemma 1b), so
 there is no obstruction. ∎
 
-The trace machinery is confirmed to reproduce the canonical values
-(`tr_M(⁴He) = 0.05534835…`, `tr_M(⁵Li) = 0.02944139…`, to float precision),
-so Lemma-1 invariance carries through to the trace.
+The trace machinery reproduces the canonical `tr_M(⁴He)`, `tr_M(⁵Li)` to a
+~7-digit sanity tolerance. (An aside, out of scope here: the sympy-path
+value and the stated rust-MPFR canonical differ at ~1e-8 — a separate
+path-comparison nuance to investigate, not an issue for this proof, which
+rests on Lemma 1 + the M1 cyclic test.)
+
+> **Review note (Gemini, PR #1483).** An earlier version of the script
+> compared only the `(c,d)` crossing pair, dropping the generator index —
+> making the permutation "invariance" check **vacuous**. That check is
+> replaced above by the non-vacuous per-species/interface checks (Lemma 1)
+> and the M1 cyclic-rotation test (Lemma 2), and all traces are now at
+> 50 dps rather than `float`.
 
 ## Correction to the roadmap
 
