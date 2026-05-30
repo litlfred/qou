@@ -166,7 +166,12 @@ def main():
                 "5 ULP of declared precision.")
     )
     print(f"  Witness: {w.save()}")
-    return 0
+    # Per Copilot review: return non-zero on tier mismatch so CI
+    # runners keyed on exit code detect drift between producer and
+    # canonical 8·G. The "independence layer" guarantee depends on
+    # this — without it, drift would only surface via the witness
+    # JSON `passed` field, which CI may not inspect.
+    return 0 if all_tiers_pass else 1
 
 
 if __name__ == "__main__":
