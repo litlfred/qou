@@ -1,0 +1,149 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-30T13:11:41.177956+00:00",
+  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
+  "assertions": [
+    {
+      "name": "epsilon_candidates_evaluated",
+      "computed": 10,
+      "expected": 10,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Ten parameter-free ε candidates evaluated; honest verdict: at CAL-2 floor, refinement is below measurement precision."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 32,
+  "computation": "alpha-em-4pi-h-refinement-search",
+  "scriptFile": "alpha_em_4pi_h_refinement_search.py",
+  "scriptHash": "8235f7ecd9da",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "description": "Task 2 from the α/(4π) queue: search for structural ε in H_eff = [2]_q·(1+ε)/(8π) that minimizes intrinsic residual. Partially mooted by #1489 which established the residual is within CAL-2 calibration band. This probe records the search honestly: at measurement precision, ε≠0 candidates sit indistinguishably with ε=0 inside the CAL-2 band.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "baseline_H_residual_ppb": 0.313,
+    "CAL2_propagation_ppb": 150.0,
+    "sigma_alpha_ppb": 0.15,
+    "epsilon_candidates": [
+      {
+        "name": "ε = 0 (baseline H)",
+        "epsilon": "0.0",
+        "H_eff": "0.0800110440961106725",
+        "alpha_inv_predicted": "137.035999126950912",
+        "residual_ppb": 0.31342795110243077,
+        "within_sigma_alpha": false,
+        "within_cal2_band": true,
+        "note": "in CAL-2 band"
+      },
+      {
+        "name": "ε = -h²/100",
+        "epsilon": "-0.00043706208532522",
+        "H_eff": "0.0799760743023289783",
+        "alpha_inv_predicted": "137.035998871846473",
+        "residual_ppb": -1.5481590855533016,
+        "within_sigma_alpha": false,
+        "within_cal2_band": true,
+        "note": "in CAL-2 band"
+      },
+      {
+        "name": "ε = -h²·α",
+        "epsilon": "-0.00031893961312845",
+        "H_eff": "0.0799855254046606554",
+        "alpha_inv_predicted": "137.035998940792209",
+        "residual_ppb": -1.0450377427028297,
+        "within_sigma_alpha": false,
+        "within_cal2_band": true,
+        "note": "in CAL-2 band"
+      },
+      {
+        "name": "ε = -α/(2π)",
+        "epsilon": "-0.0011614097328859",
+        "H_eff": "0.0799181184907590899",
+        "alpha_inv_predicted": "137.035998449059167",
+        "residual_ppb": -4.633387117620856,
+        "within_sigma_alpha": false,
+        "within_cal2_band": true,
+        "note": "in CAL-2 band"
+      },
+      {
+        "name": "ε = -h⁴",
+        "epsilon": "-0.0019102326642883",
+        "H_eff": "0.0798582043861744705",
+        "alpha_inv_predicted": "137.035998011986123",
+        "residual_ppb": -7.822863222485394,
+        "within_sigma_alpha": false,
+        "within_cal2_band": true,
+        "note": "in CAL-2 band"
+      },
+      {
+        "name": "ε = +h²/(8·dim H¹) = +h²/64",
+        "epsilon": "0.00068290950832066",
+        "H_eff": "0.0800656843988945698",
+        "alpha_inv_predicted": "137.035999525551597",
+        "residual_ppb": 3.2221576820059363,
+        "within_sigma_alpha": false,
+        "within_cal2_band": true,
+        "note": "in CAL-2 band"
+      },
+      {
+        "name": "ε = -1/(48π²)",
+        "epsilon": "-0.0021108579925487",
+        "H_eff": "0.0798421521441882305",
+        "alpha_inv_predicted": "137.03599789488511",
+        "residual_ppb": -8.67739059640759,
+        "within_sigma_alpha": false,
+        "within_cal2_band": true,
+        "note": "in CAL-2 band"
+      },
+      {
+        "name": "ε = -α·h²/(4π)",
+        "epsilon": "-2.5380407988605e-5",
+        "H_eff": "0.080009013383167919",
+        "alpha_inv_predicted": "137.035999112136874",
+        "residual_ppb": 0.20532468614262117,
+        "within_sigma_alpha": false,
+        "within_cal2_band": true,
+        "note": "in CAL-2 band"
+      },
+      {
+        "name": "ε = -h²/(4π·[2]_q)",
+        "epsilon": "-0.0017295912204455",
+        "H_eff": "0.0798726576967033609",
+        "alpha_inv_predicted": "137.035998117422939",
+        "residual_ppb": -7.053453598504427,
+        "within_sigma_alpha": false,
+        "within_cal2_band": true,
+        "note": "in CAL-2 band"
+      },
+      {
+        "name": "ε = -h⁴·α",
+        "epsilon": "-1.3939641240674e-5",
+        "H_eff": "0.080009928770860681",
+        "alpha_inv_predicted": "137.035999118814621",
+        "residual_ppb": 0.25405456628180745,
+        "within_sigma_alpha": false,
+        "within_cal2_band": true,
+        "note": "in CAL-2 band"
+      }
+    ],
+    "best_epsilon": {
+      "name": "ε = -α·h²/(4π)",
+      "epsilon": "-2.5380407988605e-5",
+      "H_eff": "0.080009013383167919",
+      "alpha_inv_predicted": "137.035999112136874",
+      "residual_ppb": 0.20532468614262117,
+      "within_sigma_alpha": false,
+      "within_cal2_band": true,
+      "note": "in CAL-2 band"
+    },
+    "candidates_within_sigma_alpha": 0,
+    "verdict": "At measurement precision, multiple ε candidates are indistinguishable. The structural form H = [2]_q/(8π) (ε=0) is consistent with being exact within CAL-2 floor per #1489. Refinement is theoretical (subgoal-2), not subgoal-1."
+  }
+}
