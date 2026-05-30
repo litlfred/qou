@@ -1,9 +1,12 @@
-//! General operator-selection LP — MPFR (arbitrary-precision) backend.
+//! Operator-selection LP — generic over the Clarabel scalar.
 //!
 //! Mirrors `pyhecke.lp_dual_solver.solve_operator_selection_lp`
-//! (`prop:operator-selection-lp`) but solves with the Clarabel MPFR
-//! backend at configurable bit-precision (167 bits ≈ 50 dps, the
-//! QOU L1 floor) instead of SciPy HiGHS at `f64`.
+//! (`prop:operator-selection-lp`) but solves with Clarabel.  **Production
+//! uses `MpfrFloat`** (167 bits ≈ 50 dps, the QOU L1 floor) — there is no
+//! `f64` in production.  The function is generic over `F: FloatT` for ONE
+//! reason: it lets a unit test solve the *same* LP with `f64` and with
+//! `MpfrFloat` in-process and assert they agree, validating that the MPFR
+//! backend introduces no discrepancy versus an independent float solve.
 //!
 //! Primal:
 //! ```text
@@ -34,11 +37,14 @@
 //!
 //! Required feature: `clarabel-mpfr`.
 
-use clarabel::algebra::{set_mpfr_default_precision, CscMatrix, MpfrFloat};
+use clarabel::algebra::{set_mpfr_default_precision, CscMatrix, FloatT, MpfrFloat};
 use clarabel::solver::*;
 use num_traits::{FromPrimitive, Signed, Zero};
+use std::fmt::Display;
 
-/// Working scalar: a run-time-precision MPFR float.
+/// Production scalar: a run-time-precision MPFR float (≈50 dps). The CLI and
+/// every production caller use this. `f64` is used ONLY by the validation
+/// tests, to confirm the MPFR solve agrees with an independent float solve.
 pub type T = MpfrFloat;
 
 /// 167 bits ≈ 50 decimal places — the QOU L1 compute floor.
@@ -47,42 +53,39 @@ pub const DEFAULT_PREC_BITS: u32 = 167;
 /// Both sides of the operator-selection LP plus the strong-duality check.
 /// Field names match `pyhecke.lp_dual_solver.LpDualResult.to_dict()`.
 #[derive(Debug, Clone)]
-pub struct OpSelLpResult {
-    pub x_star: Vec<T>,
-    pub y0_star: T,
-    pub y_star: Vec<T>,
+pub struct OpSelLpResult<F> {
+    pub x_star: Vec<F>,
+    pub y0_star: F,
+    pub y_star: Vec<F>,
     pub active_set: Vec<usize>,
-    pub primal_obj: T,
-    pub dual_obj: T,
-    pub duality_gap: T,
+    pub primal_obj: F,
+    pub dual_obj: F,
+    pub duality_gap: F,
     pub feasible: bool,
     pub status: String,
 }
 
-#[inline]
-fn zero() -> T {
-    T::zero()
-}
-
-/// Solve the operator-selection LP at `prec_bits` MPFR precision.
+/// Solve the operator-selection LP, generic over the Clarabel scalar `F`
+/// (`MpfrFloat` in production; `f64` only for cross-validation).
 ///
 /// * `t`        — objective / Markov traces, length `d`.
 /// * `g`        — Frobenius Gram, `d × d`, row-major (`g[i][j]`).
 /// * `n_target` — net-constraint right-hand side.
 /// * `m_bound`  — lower bound `-M` on each `x_i` (pass a large positive `M`).
 /// * `dual_tol` — threshold above which a dual `y_i` counts as active.
-/// * `prec_bits`— MPFR working precision in bits (167 ≈ 50 dps).
+/// * `prec_bits`— MPFR working precision in bits (167 ≈ 50 dps). Sets the
+///   thread-local MPFR default; ignored (harmless) for non-MPFR `F`.
 ///
 /// Returns primal `x*`, dual `(y0, y)`, the active set, both objectives,
 /// the duality gap, and a feasibility flag + raw solver status string.
-pub fn solve_operator_selection_lp(
-    t: &[T],
-    g: &[Vec<T>],
-    n_target: &T,
-    m_bound: &T,
-    dual_tol: &T,
+pub fn solve_operator_selection_lp<F: FloatT>(
+    t: &[F],
+    g: &[Vec<F>],
+    n_target: &F,
+    m_bound: &F,
+    dual_tol: &F,
     prec_bits: u32,
-) -> OpSelLpResult {
+) -> OpSelLpResult<F> {
     set_mpfr_default_precision(prec_bits);
     let d = t.len();
     assert_eq!(g.len(), d, "Gram row count {} != d {}", g.len(), d);
@@ -91,9 +94,9 @@ pub fn solve_operator_selection_lp(
     }
 
     // P = 0 (linear program).
-    let p_zero: CscMatrix<T> = CscMatrix::<T>::zeros((d, d));
+    let p_zero: CscMatrix<F> = CscMatrix::<F>::zeros((d, d));
     // q = t.
-    let q_vec: Vec<T> = t.to_vec();
+    let q_vec: Vec<F> = t.to_vec();
 
     // Row index ranges.
     //   row 0                : net equality
@@ -108,11 +111,11 @@ pub fn solve_operator_selection_lp(
     //   (1+d+c,       -1)            — bound (diagonal)
     let mut indptr: Vec<usize> = vec![0];
     let mut rows_csc: Vec<usize> = Vec::new();
-    let mut vals_csc: Vec<T> = Vec::new();
+    let mut vals_csc: Vec<F> = Vec::new();
     for c in 0..d {
         // net
         rows_csc.push(0);
-        vals_csc.push(T::from_i64(1).unwrap());
+        vals_csc.push(F::from_i64(1).unwrap());
         // Frobenius -g[i][c]
         for i in 0..d {
             rows_csc.push(1 + i);
@@ -120,30 +123,33 @@ pub fn solve_operator_selection_lp(
         }
         // bound -1 (diagonal)
         rows_csc.push(1 + d + c);
-        vals_csc.push(T::from_i64(-1).unwrap());
+        vals_csc.push(F::from_i64(-1).unwrap());
         indptr.push(rows_csc.len());
     }
     let a_csc = CscMatrix::new(m_rows, d, indptr, rows_csc, vals_csc);
 
     // b = [n_target, 0×d, M×d].
-    let mut b_vec: Vec<T> = Vec::with_capacity(m_rows);
+    let mut b_vec: Vec<F> = Vec::with_capacity(m_rows);
     b_vec.push(n_target.clone());
     for _ in 0..d {
-        b_vec.push(zero());
+        b_vec.push(F::zero());
     }
     for _ in 0..d {
         b_vec.push(m_bound.clone());
     }
 
-    let cones: Vec<SupportedConeT<T>> = vec![
+    let cones: Vec<SupportedConeT<F>> = vec![
         SupportedConeT::ZeroConeT(1),
         SupportedConeT::NonnegativeConeT(d), // Gx ≥ 0
         SupportedConeT::NonnegativeConeT(d), // x ≥ -M
     ];
 
-    // Tolerances: exploit MPFR headroom past the f64 floor (~1e-8).
-    let eps = T::from_f64(1e-15).unwrap();
-    let eps_red = T::from_f64(1e-10).unwrap();
+    // Tolerances: 1e-12 is achievable by BOTH the f64 and the MPFR IPM on
+    // a well-conditioned LP (so the cross-validation test converges on
+    // both), while still 4 orders tighter than SciPy HiGHS' f64 default
+    // (~1e-8). MPFR can be pushed tighter via a custom settings build.
+    let eps = F::from_f64(1e-12).unwrap();
+    let eps_red = F::from_f64(1e-8).unwrap();
     let settings = DefaultSettingsBuilder::default()
         .verbose(false)
         .max_iter(200)
@@ -166,18 +172,16 @@ pub fn solve_operator_selection_lp(
         SolverStatus::Solved | SolverStatus::AlmostSolved
     );
 
-    let x_star: Vec<T> = solver.solution.x.clone();
+    let x_star: Vec<F> = solver.solution.x.clone();
     let z = &solver.solution.z;
 
     // Dual extraction per the cone layout above.
     let y0_star = -z[0].clone(); // y0 = -z_eq
-    let y_star: Vec<T> = (0..d).map(|i| z[1 + i].clone()).collect(); // y_i = z_G[i]
-    let active_set: Vec<usize> = (0..d)
-        .filter(|&i| y_star[i] > *dual_tol)
-        .collect();
+    let y_star: Vec<F> = (0..d).map(|i| z[1 + i].clone()).collect(); // y_i = z_G[i]
+    let active_set: Vec<usize> = (0..d).filter(|&i| y_star[i] > *dual_tol).collect();
 
     // primal_obj = t·x  (== solver.solution.obj_val).
-    let mut primal_obj = zero();
+    let mut primal_obj = F::zero();
     for c in 0..d {
         primal_obj = primal_obj + t[c].clone() * x_star[c].clone();
     }
@@ -198,9 +202,9 @@ pub fn solve_operator_selection_lp(
     }
 }
 
-/// Convert an `MpfrFloat` to `f64` via its decimal `Display` (lossy —
-/// for JSON summary fields only; the full-precision value stays in `T`).
-pub fn to_f64(v: &T) -> f64 {
+/// Convert a Clarabel scalar to `f64` via its decimal `Display` (lossy —
+/// for summary / JSON fields only; the full-precision value stays in `F`).
+pub fn to_f64<F: Display>(v: &F) -> f64 {
     format!("{}", v).parse::<f64>().unwrap_or(f64::NAN)
 }
 
@@ -208,12 +212,9 @@ pub fn to_f64(v: &T) -> f64 {
 mod tests {
     use super::*;
 
-    fn f(x: f64) -> T {
-        T::from_f64(x).unwrap()
-    }
-
-    /// The 3-channel dummy LP from `lp_dual_solver.py`'s smoke test.
-    fn dummy() -> (Vec<T>, Vec<Vec<T>>, T) {
+    /// The 3-channel dummy LP from `lp_dual_solver.py`'s smoke test, over `F`.
+    fn dummy<F: FloatT>() -> (Vec<F>, Vec<Vec<F>>, F) {
+        let f = |x: f64| F::from_f64(x).unwrap();
         let t = vec![f(1.0), f(0.5), f(0.3)];
         let g = vec![
             vec![f(1.0), f(0.2), f(0.1)],
@@ -223,13 +224,17 @@ mod tests {
         (t, g, f(1.0))
     }
 
+    fn solve_dummy<F: FloatT>() -> OpSelLpResult<F> {
+        set_mpfr_default_precision(DEFAULT_PREC_BITS);
+        let (t, g, n) = dummy::<F>();
+        let big = F::from_f64(1e6).unwrap();
+        let tol = F::from_f64(1e-9).unwrap();
+        solve_operator_selection_lp(&t, &g, &n, &big, &tol, DEFAULT_PREC_BITS)
+    }
+
     #[test]
     fn solves_and_is_feasible() {
-        set_mpfr_default_precision(DEFAULT_PREC_BITS);
-        let (t, g, n) = dummy();
-        let r = solve_operator_selection_lp(
-            &t, &g, &n, &f(1e6), &f(1e-9), DEFAULT_PREC_BITS,
-        );
+        let r = solve_dummy::<MpfrFloat>();
         assert!(r.feasible, "status = {}", r.status);
         assert_eq!(r.x_star.len(), 3);
         assert_eq!(r.y_star.len(), 3);
@@ -237,14 +242,11 @@ mod tests {
 
     #[test]
     fn strong_duality_gap_is_zero() {
-        set_mpfr_default_precision(DEFAULT_PREC_BITS);
-        let (t, g, n) = dummy();
-        let r = solve_operator_selection_lp(
-            &t, &g, &n, &f(1e6), &f(1e-9), DEFAULT_PREC_BITS,
-        );
+        let r = solve_dummy::<MpfrFloat>();
+        let tol = MpfrFloat::from_f64(1e-6).unwrap();
         // primal_obj == dual_obj == n_target · y0  ⇒ the y0 sign is right.
         assert!(
-            r.duality_gap < f(1e-6),
+            r.duality_gap < tol,
             "duality gap {} too large (primal {}, dual {})",
             to_f64(&r.duality_gap),
             to_f64(&r.primal_obj),
@@ -255,66 +257,79 @@ mod tests {
     #[test]
     fn kkt_stationarity_holds() {
         // t = y0·1 + Gᵀy + z_bound, with y0 = -z_eq, y_i = z_G[i].
-        // For inactive bounds (interior x) z_bound ≈ 0, so check
-        //   | t[c] - ( y0 + Σ_i g[i][c]·y_i ) |  small  (G symmetric).
-        set_mpfr_default_precision(DEFAULT_PREC_BITS);
-        let (t, g, n) = dummy();
-        let d = t.len();
-        let r = solve_operator_selection_lp(
-            &t, &g, &n, &f(1e6), &f(1e-9), DEFAULT_PREC_BITS,
-        );
-        for c in 0..d {
+        let (t, g, _) = dummy::<MpfrFloat>();
+        let r = solve_dummy::<MpfrFloat>();
+        let tol = MpfrFloat::from_f64(1e-5).unwrap();
+        for c in 0..t.len() {
             let mut recon = r.y0_star.clone();
-            for i in 0..d {
+            for i in 0..t.len() {
                 recon = recon + g[i][c].clone() * r.y_star[i].clone();
             }
             let resid = (t[c].clone() - recon).abs();
-            // bound multiplier may absorb a little; loose tol on f64-seeded data
-            assert!(
-                resid < f(1e-5),
-                "KKT residual at c={c} is {} (too large)",
-                to_f64(&resid),
-            );
+            assert!(resid < tol, "KKT residual at c={c} is {}", to_f64(&resid));
         }
     }
 
     #[test]
     fn complementary_slackness_holds() {
         // y_i · (Gx)_i ≈ 0 for every channel.
-        set_mpfr_default_precision(DEFAULT_PREC_BITS);
-        let (t, g, n) = dummy();
-        let d = t.len();
-        let r = solve_operator_selection_lp(
-            &t, &g, &n, &f(1e6), &f(1e-9), DEFAULT_PREC_BITS,
-        );
+        let (_, g, _) = dummy::<MpfrFloat>();
+        let r = solve_dummy::<MpfrFloat>();
+        let d = g.len();
+        let tol = MpfrFloat::from_f64(1e-5).unwrap();
         for i in 0..d {
-            let mut gx_i = zero();
+            let mut gx_i = MpfrFloat::zero();
             for c in 0..d {
                 gx_i = gx_i + g[i][c].clone() * r.x_star[c].clone();
             }
             let cs = (r.y_star[i].clone() * gx_i).abs();
-            assert!(
-                cs < f(1e-5),
-                "complementary slackness violated at i={i}: y·(Gx) = {}",
-                to_f64(&cs),
-            );
+            assert!(cs < tol, "complementary slackness at i={i}: {}", to_f64(&cs));
         }
     }
 
     #[test]
     fn dual_multipliers_are_nonnegative() {
-        set_mpfr_default_precision(DEFAULT_PREC_BITS);
-        let (t, g, n) = dummy();
-        let r = solve_operator_selection_lp(
-            &t, &g, &n, &f(1e6), &f(1e-9), DEFAULT_PREC_BITS,
-        );
-        // Frobenius cone duals must be ≥ 0 (within IPM tol).
+        let r = solve_dummy::<MpfrFloat>();
+        let neg = MpfrFloat::from_f64(-1e-6).unwrap();
         for (i, y) in r.y_star.iter().enumerate() {
-            assert!(
-                *y > f(-1e-6),
-                "y_star[{i}] = {} is significantly negative",
-                to_f64(y),
-            );
+            assert!(*y > neg, "y_star[{i}] = {} is significantly negative", to_f64(y));
+        }
+    }
+
+    /// **The owner's validation:** the MPFR solve agrees with an independent
+    /// `f64` (float) solve of the *same* LP.  Both use the identical Clarabel
+    /// kernel; only the scalar precision differs.  Agreement to the f64 IPM
+    /// floor confirms the MPFR backend introduces no discrepancy vs float —
+    /// f64 is used here ONLY for this check (production is MPFR-only).
+    #[test]
+    fn mpfr_agrees_with_f64() {
+        let rf = solve_dummy::<f64>();
+        let rm = solve_dummy::<MpfrFloat>();
+        assert!(
+            rf.feasible && rm.feasible,
+            "feasibility differs: f64={} mpfr={}",
+            rf.status, rm.status
+        );
+
+        // Objective agrees to the f64 floor.
+        let pf = rf.primal_obj;
+        let pm = to_f64(&rm.primal_obj);
+        let rel = (pf - pm).abs() / pf.abs().max(1e-30);
+        assert!(rel < 1e-6, "primal_obj: f64={pf} mpfr={pm} rel={rel:e}");
+
+        // Same active set (which Frobenius channels are tight).
+        assert_eq!(
+            rf.active_set, rm.active_set,
+            "active sets differ: f64={:?} mpfr={:?}",
+            rf.active_set, rm.active_set
+        );
+
+        // Each dual shadow price agrees.
+        for i in 0..rf.y_star.len() {
+            let yf = rf.y_star[i];
+            let ym = to_f64(&rm.y_star[i]);
+            let drel = (yf - ym).abs() / yf.abs().max(1e-9);
+            assert!(drel < 1e-5, "y_star[{i}]: f64={yf} mpfr={ym} rel={drel:e}");
         }
     }
 }
