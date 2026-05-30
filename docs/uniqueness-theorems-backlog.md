@@ -22,6 +22,36 @@ without external choice.
 
 > **2026-05-30 audit finding.** Items 2 + 4 were initially flagged as "open" but the framework already carries §3b-cond scaffolds (axiom classes + conditional theorems). The genuine outstanding work is items 3 + 5 (no Lean files exist yet) plus closing the remaining `sorry`s in items 2 + 4. This re-prioritisation is the focus of the post-#1422 follow-up branches.
 
+> **2026-05-30 progress (post-#1422 follow-up PR #1445):**
+> - Item 3 (`pn-averaging-uniqueness`): **scaffolded** — new
+>   `mass-theory/pn-averaging-uniqueness.{lean,md,ts}` block with
+>   `BarInvariant` / `ColorFlavorCompatible` / `StandardNorm` classes
+>   and theorems `pn_averaging_unique` + `pn_averaging_subsingleton`,
+>   proved sorry-free conditional on the three classes.
+> - Item 4 (Geom_full): **top-level theorem added** to
+>   `particle-interactions/geom-universality.lean` — new classes
+>   `GeomFullFunctorial`, `GeomFullCanonicalSeed`, theorems
+>   `geom_full_per_knot_unique` + `geom_full_subsingleton` proved
+>   sorry-free conditional on the seed class.
+> - Item 5 (Archimedean realisation): **uniqueness theorems added**
+>   to the existing `mass-theory/archimedean-realization-functor.lean`
+>   — `archimedean_realize_determined` (immediate from the
+>   `compat_integer` law) + `archimedean_realize_pointwise_unique`
+>   (companion, proved sorry-free).
+> - Item 2 (T_w SDP): unchanged — the existing
+>   `canonical_T_w_subsingleton_under_strict_complementarity`
+>   already proves the Subsingleton uniqueness; the underlying
+>   sorry in `QOU.MathlibExt.SDP.strict_complementarity_unique` is
+>   queued as a separate Mathlib-SDP follow-up.
+>
+> Each item's §3b-cond conditional-class hypothesis is now in place;
+> closing the remaining axiom-class instances (the open math —
+> Bring color-tube weighted for item 3; Family-A linking-weight
+> extension for item 4; Mathlib `FractionField` universal property
+> for the abstract Archimedean form is unnecessary since item 5
+> uses the concrete `compat_integer` law structurally) is the
+> per-item follow-up work.
+
 ## Notes
 
 - **q₀ is NOT a uniqueness item** — q₀ is a *calibration choice* (pinned from CODATA m_p/m_e per #1422), not a mathematically unique value. The framework is parametric in q₀; the uniqueness items above hold for every q in the appropriate generic locus.

@@ -29,4 +29,40 @@ structure ArchimedeanRealizationFunctor where
   /-- Compatibility: R_top = π_∞ ∘ (ℤ → ℝ) ∘ χ_top on integer-valued motives. -/
   compat_integer : ∀ x : Motive, realize x = archimedeanProjection (Int.cast (eulerChar x))
 
+/-- **Determination theorem (uniqueness backbone).**
+
+    The `realize` function of any `ArchimedeanRealizationFunctor` is
+    fully determined by its `eulerChar` and `archimedeanProjection`
+    fields via the `compat_integer` compatibility law.  Hence two
+    realisations with identical `eulerChar` and identical
+    `archimedeanProjection` on the same `Motive` type produce
+    identical `realize` outputs — the structural backbone of the
+    Archimedean realisation uniqueness theorem (uniqueness-theorems-
+    backlog.md item 5).
+
+    Per CLAUDE.md §3b-cond: structural uniqueness immediate from the
+    `compat_integer` axiom carried by the structure itself; no
+    additional class needed. -/
+theorem archimedean_realize_determined
+    (R : ArchimedeanRealizationFunctor) (x : R.Motive) :
+    R.realize x = R.archimedeanProjection (Int.cast (R.eulerChar x)) :=
+  R.compat_integer x
+
+/-- **Pointwise uniqueness companion.**  Two `ArchimedeanRealizationFunctor`
+    instances on a *common* `Motive` type that share the same
+    `eulerChar` and `archimedeanProjection` agree on every motive.
+
+    The proof rewrites both sides via `archimedean_realize_determined`
+    to the common `projection ∘ Int.cast ∘ eulerChar` expression. -/
+theorem archimedean_realize_pointwise_unique
+    (R R' : ArchimedeanRealizationFunctor)
+    (hM : R.Motive = R'.Motive)
+    (hE : ∀ x : R.Motive, R.eulerChar x = R'.eulerChar (hM ▸ x))
+    (hP : R.archimedeanProjection = R'.archimedeanProjection)
+    (x : R.Motive) :
+    R.realize x = R'.realize (hM ▸ x) := by
+  rw [archimedean_realize_determined R x,
+      archimedean_realize_determined R' (hM ▸ x),
+      hP, hE x]
+
 end QOU.BraidsKnots
