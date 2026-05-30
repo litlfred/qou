@@ -56,6 +56,10 @@ with notation as in [categorical action notation](#sec:categorical-action-notati
 Here $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-}) \circ \mathrm{coev}_A$ is the categorical trace, which plays the role of
 spacetime integration; $R_{\int}$ is the Frobenius--Ricci endomorphism;
 and $F_\nabla = \nabla^2$ is the curvature.
+Cf.\ the gravity + gauge + matter decomposition of the
+Chamseddine--Connes spectral action
+\cite{chamseddine-connes-1997, connes1996}, and the categorical
+trace framework \cite{stolz-teichner-2012}.
 
 *Uniqueness up to scalar.*  The evaluation and coevaluation maps are
 determined up to unique isomorphism by the duality data, and the

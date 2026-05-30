@@ -1167,6 +1167,63 @@ export const references: CSLData[] = [
   }),
 
   ref({
+    id: "tsai-2013-i",
+    type: "article-journal",
+    title: "Dirac spectral flow on contact three manifolds I: eigensection estimates and spectral asymmetry",
+    author: [
+      { family: "Tsai", given: "Chung-Jun" },
+    ],
+    "container-title": "Asian Journal of Mathematics",
+    issued: { "date-parts": [[2013]] },
+    URL: "https://arxiv.org/abs/1307.4604",
+  }),
+
+  ref({
+    id: "tsai-2013-ii",
+    type: "article-journal",
+    title: "Dirac spectral flow on contact three manifolds II: Thurston-Winkelnkemper contact forms",
+    author: [
+      { family: "Tsai", given: "Chung-Jun" },
+    ],
+    "container-title": "Advances in Mathematics",
+    issued: { "date-parts": [[2015]] },
+    volume: "286",
+    page: "1106-1191",
+    DOI: "10.1016/j.aim.2015.09.022",
+    URL: "https://arxiv.org/abs/1307.4605",
+  }),
+
+  ref({
+    id: "leitner-2018",
+    type: "article-journal",
+    title: "The first eigenvalue of the Kohn-Dirac operator on CR manifolds",
+    author: [
+      { family: "Leitner", given: "Felipe" },
+    ],
+    "container-title": "Differential Geometry and its Applications",
+    issued: { "date-parts": [[2018]] },
+    volume: "61",
+    page: "97-132",
+    DOI: "10.1016/j.difgeo.2018.08.002",
+    URL: "https://www.sciencedirect.com/science/article/pii/S0926224518300998",
+  }),
+
+  ref({
+    id: "petit-2005",
+    type: "article-journal",
+    title: "Spin-structures and Dirac operators on contact manifolds",
+    author: [
+      { family: "Petit", given: "Robert" },
+    ],
+    "container-title": "Differential Geometry and its Applications",
+    issued: { "date-parts": [[2005]] },
+    volume: "22",
+    issue: "2",
+    page: "229-252",
+    DOI: "10.1016/j.difgeo.2004.10.005",
+  }),
+
+  ref({
     id: "majid2002",
     type: "book",
     title: "A Quantum Groups Primer",

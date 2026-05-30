@@ -7,6 +7,7 @@ composite
 $\mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A$,
 exists as a morphism in $\mathbf{C}$ and equals the categorical
 trace $\mathrm{tr}(\Phi)$.
+Cf.\ \cite{stolz-teichner-2012}.
 
 Uniqueness given $\Phi$ is
 ([uniqueness of categorical action](#prop:categorical-action-unique)).

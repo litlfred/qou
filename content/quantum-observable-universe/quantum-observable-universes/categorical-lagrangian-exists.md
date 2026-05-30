@@ -13,6 +13,7 @@ $$
 $$
 
 exists as an endomorphism of $A$.
+Cf.\ \cite{chamseddine-connes-1997}.
 
 Uniqueness given $(\nabla, \psi)$ is
 ([uniqueness of categorical Lagrangian](#prop:categorical-lagrangian-unique)).
