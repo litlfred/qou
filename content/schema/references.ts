@@ -1151,6 +1151,22 @@ export const references: CSLData[] = [
   }),
 
   ref({
+    id: "nicolaescu2005",
+    type: "article-journal",
+    title: "Geometric connections and geometric Dirac operators on contact manifolds",
+    author: [
+      { family: "Nicolaescu", given: "Liviu I." },
+    ],
+    "container-title": "Differential Geometry and its Applications",
+    issued: { "date-parts": [[2005]] },
+    volume: "22",
+    issue: "3",
+    page: "355-378",
+    DOI: "10.1016/j.difgeo.2005.01.004",
+    URL: "https://arxiv.org/abs/math/0101155",
+  }),
+
+  ref({
     id: "majid2002",
     type: "book",
     title: "A Quantum Groups Primer",
