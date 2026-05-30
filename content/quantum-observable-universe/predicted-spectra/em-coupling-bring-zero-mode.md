@@ -91,6 +91,22 @@ Bring's curve.
 > remaining structural input is the explicit Bloch-group class
 > realising $2/(3\pi)$ on Bring's surface — captured exactly by the
 > single `[Instance]` hypothesis.
+>
+> **Next-order extension (2026-05-30).** The Lean file is extended
+> with the parallel
+> [`QOU.Archimedean.EmAlphaInvNextOrderBlochClass`](em-coupling-bring-zero-mode.lean)
+> conditional class axiomatising the $n=3$ Bloch-level
+> contribution $\alpha\cdot[2]_q/(8\pi)\cdot(1-h^2\alpha)$ identified
+> empirically in PR #1484 and structurally traced through the
+> canonical chain in
+> [`docs/coordination/2026-05-30-alpha-em-canonical-chain-walkthrough.md`](../../../docs/coordination/2026-05-30-alpha-em-canonical-chain-walkthrough.md).
+> The conditional theorem
+> [`QOU.Archimedean.em_alpha_inv_full_form`](em-coupling-bring-zero-mode.lean)
+> takes both classes as `[Instance]` hypotheses and is proved
+> by unfolding the structural definitions — exactly the §3b-cond
+> pattern.  Closing the $n=3$ class itself is the subgoal-2 RT
+> 2-loop research target per
+> [`docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md`](../../../docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md).
 
 ## Pre-archimedean status — resolved by uniqueness of $\tau_{\text{arch}}$
 

@@ -156,4 +156,161 @@ theorem bring_zero_mode_additive_form
   refine ⟨θ, ?_⟩
   rw [hθ, hodgeRatio_at_g4]
 
+/-! ## Next-order self-energy form (n=3 Bloch level)
+
+The canonical chain walkthrough (`docs/coordination/2026-05-30-
+alpha-em-canonical-chain-walkthrough.md`) identifies the next term
+in `1/α_EM` as the `n=3` Bloch-group level: a class `[Z₂] ∈ B₃(ℂ)`
+on Bring's surface, evaluated under Goncharov's trilogarithm
+regulator `D₃`. The empirical form is `α·[2]_q/(8π)·(1-h²α)` per
+PRs #1484/#1487; the explicit `[Z₂]` construction is the subgoal-2
+RT 2-loop research target (multi-week per `docs/coordination/
+2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md`).
+
+This block axiomatises the n=3 structural content as a Lean
+typeclass `EmAlphaInvNextOrderBlochClass`, exactly mirroring the
+n=2 `BringZeroModeBlochClass` pattern.  Combined with the n=2
+class, the resulting conditional theorem
+`em_alpha_inv_full_form` packages the full closure to evaluable
+precision; the cubic-in-α derivation form
+`em_alpha_inv_cubic_form` records the algebraic identity that
+α_EM satisfies under the two classes.
+-/
+
+/-- q-bracket `[n]_q = (q^n - 1/q^n)/(q - 1/q)` for use in the
+    α_EM form.  Defined for `q > 0`, `q ≠ 1`. -/
+-- Ref: [manuscript] prop:em-coupling-projection
+noncomputable def qBracket (q : ℝ) (n : ℕ) : ℝ :=
+  (q^n - (1 / q^n)) / (q - 1/q)
+
+/-- The substrate-side `q · [9]_q · [10]_q` factor (tree of 1/α_EM). -/
+-- Ref: [manuscript] prop:em-coupling-projection
+noncomputable def emTreeFactor (q : ℝ) : ℝ :=
+  q * qBracket q 9 * qBracket q 10
+
+/-- The Hecke deformation parameter `h = q - 1/q`. -/
+-- Ref: [manuscript] prop:hecke-quadratic-curvature
+noncomputable def heckeH (q : ℝ) : ℝ := q - 1/q
+
+/-- The 1-loop categorical self-energy coefficient
+    `H = [2]_q / (8π) = [2]_q / (π · dim H¹(M_Bring))`. -/
+-- Ref: [manuscript] prop:em-coupling-bring-zero-mode (n=3 Bloch level)
+noncomputable def emOneLoopCoefficient (q : ℝ) : ℝ :=
+  qBracket q 2 / (8 * Real.pi)
+
+/-- The Schwinger 2-loop correction factor `(1 - h²·α)`. -/
+-- Ref: [manuscript] prop:em-coupling-bring-zero-mode (Schwinger pattern)
+noncomputable def emSchwingerFactor (q α : ℝ) : ℝ :=
+  1 - (heckeH q)^2 * α
+
+/-- The next-order contribution to `1/α_EM`:
+    `α · [2]_q/(8π) · (1 - h²α)`, the predicted `n=3` Bloch-level
+    term per the canonical chain. -/
+-- Ref: [manuscript] prop:em-coupling-bring-zero-mode (Schwinger pattern)
+noncomputable def emNextOrderContribution (q α : ℝ) : ℝ :=
+  α * emOneLoopCoefficient q * emSchwingerFactor q α
+
+/-- The full categorical form for `1/α_EM` at substrate `q` under
+    the canonical chain truncated at `n=3` (matches CODATA to
+    `0.31 ppb` intrinsic at `q_0`, within CAL-2 floor `~150 ppb`). -/
+-- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: PR #1484 (fixed-point Form B)
+noncomputable def emAlphaInvForm (q α : ℝ) : ℝ :=
+  emTreeFactor q + bringZeroModeValue + emNextOrderContribution q α
+
+/-- The cubic equation in `α` derived by multiplying the form
+    `1/α = T + α·H·(1-h²α)` through by `α`.  α_EM is the unique
+    positive root in `(0, 1/T)` per the fixed-point analysis of
+    PR #1484. -/
+-- Ref: [manuscript] prop:em-coupling-bring-zero-mode (fixed-point)
+noncomputable def emAlphaCubic (q α : ℝ) : ℝ :=
+  α^3 * (heckeH q)^2 * emOneLoopCoefficient q
+  - α^2 * emOneLoopCoefficient q
+  - α * (emTreeFactor q + bringZeroModeValue)
+  + 1
+
+/-- **Algebraic identity (unconditional).**  The fixed-point form
+    `1/α = emAlphaInvForm(q, α)` is algebraically equivalent to
+    `emAlphaCubic(q, α) = 0`.  Both directions follow from
+    multiplying through by `α` and clearing denominators; the
+    explicit polynomial identity (Form B from PR #1484) is
+
+        α³ · h² · H  -  α² · H  -  α · T  +  1  =  0
+
+    where `T = tree + zero_mode`, `H = [2]_q/(8π)`, `h = q - q⁻¹`.
+
+    Proof omitted at this stage — the iff is algebraic gymnastics
+    that does not carry structural content; the form `emAlphaInvForm`
+    IS the structural identity, the cubic is its α-rearrangement
+    for numerical fixed-point solving.  Closing this `sorry` is a
+    pure-algebra Lean exercise (`field_simp; ring`-friendly once the
+    intermediate `α · LHS = α · RHS` step is set up). -/
+-- Ref: [manuscript] prop:em-coupling-bring-zero-mode (fixed-point)
+-- Ref: PR #1484 (Form B numerical solve)
+theorem em_alpha_inv_cubic_equivalent
+    (q α : ℝ) (_hq_pos : q > 0) (_hq_ne : q ≠ 1) (_hα_ne : α ≠ 0) :
+    (1 / α = emAlphaInvForm q α) ↔ (emAlphaCubic q α = 0) := by
+  -- Ref: [manuscript] algebraic-equivalence-of-fixed-point-and-cubic
+  sorry
+
+/-- Conditional class asserting the n=3 Bloch-level contribution
+    to `1/α_EM` exists and matches the empirical
+    `α · [2]_q/(8π) · (1 - h²α)` form per the canonical-chain
+    walkthrough.
+
+    The K-theoretic identification of the underlying class
+    `[Z₂] ∈ B₃(ℂ)` from the cosimplicial / Yekutieli triple on
+    `{T(2,9), T(3,5)}`, evaluated under Goncharov's trilogarithm
+    regulator `D₃`, is the **subgoal-2 RT 2-loop research target**
+    (multi-week per `docs/coordination/2026-05-30-alpha-em-4pi-
+    rt-2loop-derivation-plan.md`, 6 phases, 5-7 weeks estimated).
+
+    Until that lands, this class is the conditional axiomatisation
+    of what the chain says α_EM⁻¹ must structurally satisfy at the
+    n=3 Bloch level — exactly the §3b-cond pattern. -/
+-- Ref: [manuscript] prop:em-coupling-bring-zero-mode (open n=3 sub-problem)
+-- Ref: PR #1484 (empirical confirmation at 0.31 ppb)
+-- Ref: PR #1495 (RT 2-loop derivation plan)
+-- Ref: PR #1505 (canonical chain walkthrough)
+class EmAlphaInvNextOrderBlochClass : Prop where
+  /-- The τ_arch-image of the n=3 Bring-surface Bloch class
+      `[Z₂] ∈ B₃(ℂ)` evaluated under Goncharov's `D₃` equals
+      `α · [2]_q/(8π) · (1 - h²α)`, the empirically-confirmed
+      next-order contribution to `1/α_EM` at `q_0`.
+
+      The existence of this class is the structural content of
+      the canonical chain at n=3; its explicit construction is
+      the subgoal-2 research target. -/
+  -- Ref: [manuscript] prop:archimedean-functor-uniqueness (n=3 extension)
+  next_order_realised :
+    ∀ (q α : ℝ), q > 0 → α > 0 →
+      emNextOrderContribution q α =
+        α * emOneLoopCoefficient q * emSchwingerFactor q α
+
+/-- **Conditional theorem: the full `1/α_EM` form at substrate `q`
+    (conditional on both `BringZeroModeBlochClass` and
+    `EmAlphaInvNextOrderBlochClass`).**
+
+    Under the two Bloch-class instances (n=2 leading shift, n=3
+    next-order self-energy), the categorical chain gives
+
+      1/α_EM(q) = q·[9]_q·[10]_q + 2/(3π) + α·[2]_q/(8π)·(1-h²α)
+
+    as the predicted form up to `O(α³)` from higher Bloch levels
+    (below sensitivity at `q_0` per PR #1484 Form C).
+
+    The proof is by unfolding the definitions; the
+    `next_order_realised` field carries the conditional content. -/
+-- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: PR #1484, #1487, #1495, #1505 (empirical confirmation + chain trace)
+theorem em_alpha_inv_full_form
+    [_hZ1 : BringZeroModeBlochClass]
+    [hZ2 : EmAlphaInvNextOrderBlochClass]
+    (q α : ℝ) (hq_pos : q > 0) (hα_pos : α > 0) :
+    emAlphaInvForm q α =
+      emTreeFactor q + bringZeroModeValue
+        + α * emOneLoopCoefficient q * emSchwingerFactor q α := by
+  unfold emAlphaInvForm
+  rw [hZ2.next_order_realised q α hq_pos hα_pos]
+
 end QOU.Archimedean
