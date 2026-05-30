@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T20:51:20.430114+00:00",
-  "commitSha": "a9a73fc05e1880456391c2ae4d81215dd1045cee",
+  "computedAt": "2026-05-30T21:01:41.405912+00:00",
+  "commitSha": "fef1739470be11c75f389358711458b8db39b1bf",
   "assertions": [
     {
       "name": "c2_extraction_matches_lean_proved_value",
@@ -14,16 +14,23 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 9,
   "computation": "qbeta-ck-cache",
   "scriptFile": "qbeta_ck_cache.py",
   "scriptHash": "7fba13078b04",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "fef1739470be11c75f389358711458b8db39b1bf",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Cache of Q_β c_k Taylor coefficients at canonical q₀. c_2 is the only Lean-proved Taylor-exact coefficient (Kashiwara f̃₁², N2_factor). c_3..c_7 are extracted from CODATA Q_β recursively (each c_k computed as (Q_codata/Q_{N_{k-1}} − 1)/u^k). The witness records each c_k's label (lean-proved vs codata-extracted) and the closest structural-conjecture form with its residual %. Production reads c_2 only; higher c_k are documented for future Lean-formalization work. NO structural form is wired as derivation without a Lean theorem closing it to Taylor precision. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
   "data": {
