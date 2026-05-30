@@ -3224,6 +3224,38 @@ export const references: CSLData[] = [
       "ambient.",
   }),
 
+  // ── Costin–Ehrlich–Friedman 2015 (integration on the surreals) ──
+  ref({
+    id: "costin-ehrlich-friedman2015",
+    type: "article",
+    title:
+      "Integration on the surreals: a conjecture of Conway, Kruskal " +
+      "and Norton",
+    author: [
+      { family: "Costin", given: "Ovidiu" },
+      { family: "Ehrlich", given: "Philip" },
+      { family: "Friedman", given: "Harvey M." },
+    ],
+    issued: { "date-parts": [[2015]] },
+    "container-title": "arXiv preprint",
+    URL: "https://arxiv.org/abs/1505.02478",
+    note:
+      "Two-sided result on integration over $\\mathbf{No}$. " +
+      "Positive: defines a robust algebraic integral for " +
+      "semi-algebraic, analytic, and Écalle–Borel transseriable " +
+      "functions by routing through Hardy-field germs and the " +
+      "surreal–transseries correspondence. Negative: proves " +
+      "set-theoretic obstructions ruling out a translation-" +
+      "invariant integration operator on the full ring " +
+      "$C(\\mathbf{No})$ of continuous surreal functions. " +
+      "Motivates the audit-style 'what survives' framing of " +
+      "\\ref{rem:analytic-obstructions}: QOU never needs a " +
+      "measure on $C(\\mathbf{No})$ — only the algebraic " +
+      "transfer of a small set of field-polymorphic " +
+      "constructions, all of which lift unchanged " +
+      "(\\ref{rem:algebraic-core-survives}).",
+  }),
+
   // ── Tate 1967 (Tate's 1950 Princeton thesis: adelic Fourier analysis) ──
   ref({
     id: "tate1967",
