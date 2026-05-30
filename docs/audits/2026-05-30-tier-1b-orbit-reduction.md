@@ -85,7 +85,7 @@ to extract here, only the guarantee that the choice is correct and minimal.
 - **Structural (A≤8, no trace):** canonical ordering, `orbit_size` metadata,
   interface-minimality (`n_pn == 1 == global min`), byte-identical production
   word — for (1,1),(2,1),(2,2),(3,2),(3,3),(4,3),(4,4).
-- **N1 — `|orbit|`-factor guard (tritium, orbit_size = 2):**
+- **N1 — `|orbit|`-factor guard (³He = (Z=2,N=1), orbit_size = 2!·1! = 2):**
   `tr_M_via_orbit_representative(2,1) == tr_M_atomic_fast(2,1)`. A stray
   `Z!·N!` factor would make these differ by exactly 2×; they agree to
   < 1e-40. This is the regression guard against anyone re-introducing the

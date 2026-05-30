@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T18:20:32.641828+00:00",
-  "commitSha": "b778f3720f06e560e899b38a0f4b40972e7311c5",
+  "computedAt": "2026-05-30T20:00:07.005235+00:00",
+  "commitSha": "36e895ccac403f4d5ff913eda44b09d715651fc9",
   "assertions": [
     {
       "name": "structural_1_1",
@@ -61,7 +61,7 @@
       "source": "canonical ordering + orbit_size meta + interface-minimal + byte-identical word"
     },
     {
-      "name": "N1_orbit_factor_guard_tritium",
+      "name": "N1_orbit_factor_guard_he3",
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13969,
+  "durationMs": 13977,
   "computation": "tier-1b-orbit-reduction-crosscheck",
   "scriptFile": "orbit_reduction_crosscheck.py",
-  "scriptHash": "71804e021352",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8a15a284d0b0",
+  "scriptCommitSha": "36e895ccac403f4d5ff913eda44b09d715651fc9",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -98,7 +98,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Tier 1.B cross-check: atom_braid_orbit_representative + tr_M_via_orbit_representative are correct and carry NO |orbit| (Z!·N!) trace multiplier. Structural (canonical ordering, orbit_size metadata, interface-minimality, byte-identical production word) over A≤8, plus the tritium |orbit|-factor guard and the ⁴He value smoke @50dps. Confirms the corrected identity tr_M(β)=tr_M(rep).",
+  "description": "Tier 1.B cross-check: atom_braid_orbit_representative + tr_M_via_orbit_representative are correct and carry NO |orbit| (Z!·N!) trace multiplier. Structural (canonical ordering, orbit_size metadata, interface-minimality, byte-identical production word) over A≤8, plus the ³He |orbit|-factor guard and the ⁴He value smoke @50dps. Confirms the corrected identity tr_M(β)=tr_M(rep).",
   "auditOnly": "docs/audits/2026-05-30-tier-1b-orbit-reduction.md",
   "data": {
     "conclusion": {
