@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T03:06:29.278505+00:00",
-  "commitSha": "28a78a59eb524f1472f96f373da67cee99216a8b",
+  "computedAt": "2026-05-30T19:46:53.561518+00:00",
+  "commitSha": "788b2b2cd4f5a0777078322b063dd127e5f409bc",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -24,12 +24,19 @@
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Audits production scripts in folio-assistant/computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
     "total_issues": 0,
     "flagged_script_count": 0,
-    "scripts_scanned": 750,
+    "scripts_scanned": 759,
     "rows": []
   }
 }
