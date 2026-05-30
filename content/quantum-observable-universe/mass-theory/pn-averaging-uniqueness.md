@@ -27,6 +27,36 @@ averaging is determined.  Closing the `ColorFlavorCompatible`
 class to the Bring weighted derivation refines the admissible
 normalisation $z$ to a unique canonical form.
 
+### Derivation chain for the closed-form weight (2026-05-30 finding)
+
+The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ per
+`lambda_scale_refinement_h4_correction_bring.py` is **not purely
+empirical**. The "10" exponent is derived:
+
+- Bring's surface has **genus $g = 4$** (per `prop:em-coupling-bring-zero-mode`).
+- The genus-4 force-carrier pair on Bring's surface is
+  $\{T(2,9), T(3,5)\}$ (named in `em-coupling-bring-zero-mode.lean`).
+- `prop:alpha-shift-torus-knot` proves
+  $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$ (Lean:
+  `alphaShift p k = k * (p - 1)`, sorry-free conditional on
+  `HasAlphaShiftTorus`). Specialising at $(p, k) = (3, 5)$ gives
+  $\alpha_{\text{shift}}(T(3,5)) = 5 \cdot 2 = \mathbf{10}$ — the
+  **pole order** of $\sigma$ on $T(3,5)$, verified computationally
+  in `crystal_pole_order.py` (line 318: `pole_t35 == 10`).
+- The Bring color-tube weight inherits this pole order: $q^{10}$
+  in $1/(1 - h_q \cdot q^{10})$ is the $\alpha_{\text{shift}}(T(3,5))$-th
+  power, **derived**.
+
+**Remaining open math (smaller scope):**
+
+- The resolvent form $1/(1 - h_q \cdot \cdot)$ from a residue
+  calculation at the pole; deriving it formally in Lean requires
+  the Schwarz / contour-integral machinery on Bring's surface
+  (related to the BlochGroup framework already in
+  `em-coupling-bring-zero-mode.lean`).
+- Per-pair weight degeneracy across the four quark-type pairs
+  (modulo the $h_q^4$ correction tracked in the refinement probe).
+
 ## Lean structure
 
 The uniqueness is staged via the [§3b-cond conditional-class
