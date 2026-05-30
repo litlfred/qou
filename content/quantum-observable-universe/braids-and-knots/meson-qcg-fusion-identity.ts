@@ -7,9 +7,7 @@ export default proposition({
   lean: {
     ref: "qou:QOU.BraidKnot.meson_qCG_3x4",
   },
-  uses: [
-    "def:hecke-algebra-quadratic",
-  ],
+  uses: [],
   cites: [
     "kassel1995",
     "jones1987",
