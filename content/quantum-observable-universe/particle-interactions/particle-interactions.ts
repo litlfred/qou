@@ -273,6 +273,7 @@ export default chapter({
       blocks: [
         "borromean-reidemeister-intro",
         "borromean-baryon",
+        "borromean-topological-confinement",
         "delta-skein-substrate-identity",
         "figure-8-muon-mass-cross-check",
         "typed-crossing-operator",
