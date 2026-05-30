@@ -51,6 +51,6 @@ structure provides the integration; the physics endomorphism encodes the
 dynamics.
 
 The trace $\mathrm{tr}(\Phi)$ used here is the categorical trace of an
-endomorphism of a dualisable object in a balanced monoidal category
+endomorphism of a dualizable object in a balanced monoidal category
 \cite{stolz-teichner-2012}.  Cf.\ the spectral-action trace
 $\mathrm{Tr}\,\chi(D/\Lambda)$ \cite{chamseddine-connes-1997}.
