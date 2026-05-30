@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T13:25:54.415806+00:00",
-  "commitSha": "e44e9e8500e0346e46b11792ab5f40e87b4ff766",
+  "computedAt": "2026-05-30T20:54:39.844014+00:00",
+  "commitSha": "a9a73fc05e1880456391c2ae4d81215dd1045cee",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 9,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "fdd0b6fd4cba",
-  "scriptCommitSha": "b88f92ae3891084fab41c8a3e04468b271968bcc",
+  "scriptHash": "0ea10bbcaf1c",
+  "scriptCommitSha": "1051f6594abef9b48540d3f9042faebd37085e17",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -74,7 +74,7 @@
         "miss_factor": "164.0",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Q_N2 (c_2 = -1 Lean Taylor-exact via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor, 4e-7 empirical match). Higher c_k are q₀-dependent near-matches NOT wired per discipline lock - see docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
+        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest rung with label='lean-proved'). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are 'codata-extracted' Taylor coefficients (documented in cache witness) but NOT wired as derivations - see deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)",
         "compute_truncation_ppb": "1.278e-41",
         "compute_output_dps": 50
@@ -91,7 +91,7 @@
         "miss_factor": "185.4",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
+        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=3) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
         "compute_truncation_ppb": "1.064e-44",
         "compute_output_dps": 50
@@ -108,7 +108,7 @@
         "miss_factor": "163.3",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=5) + m_e; no flavor-split — per PR #1298 gap diagnostic",
+        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=3) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
         "compute_truncation_ppb": "7.732e-42",
         "compute_output_dps": 50
