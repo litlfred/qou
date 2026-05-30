@@ -109,7 +109,7 @@ instance hypotheses.
 
 ## What is open (the actual conjecture)
 
-The conjecture has two sub-problems, in decreasing tractability:
+The conjecture has three sub-problems, in decreasing tractability:
 
 1. **Existence of $N_{\unicode{9737}}^{\text{in}}(A, d)$ as a
    categorical object.** There must be a construction within QOU
@@ -131,7 +131,7 @@ The conjecture has two sub-problems, in decreasing tractability:
    expected birthday-rank dependence on $d$.
 
 3. **Numerical prefactor $\pi^{2}/720$.** Recovers in standard
-   physics from $\sum_{n\geq 1} n^{-3}$ regularised to
+   physics from $\sum_{n\geq 1} n^{3}$ regularised to
    $\zeta(-3) = -B_{4}/4 = 1/120$ via $\zeta$-function
    regularisation. The QOU analogue would be a Hecke-trace
    identity on a specific subalgebra. Conjecturally derivable
