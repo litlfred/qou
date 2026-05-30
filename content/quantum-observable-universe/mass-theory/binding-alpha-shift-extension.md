@@ -38,14 +38,42 @@ $$
 
 | nucleus | A | hypothesised T(p, k) | α_shift | Phase-3 status |
 |---|---:|---|---:|---|
-| deuteron (D) | 2 | T(?, ?) — pinned by ρ₀ calibration | — | anchor |
+| deuteron (D) | 2 | T(2, 3) candidate | 3 | open (#1485) |
 | tritium (T) | 3 | T(2, 5) candidate | 5 | open |
 | ³He | 3 | T(2, 5) candidate (mirror) | 5 | open |
 | ⁴He | 4 | T(3, 4) candidate | 8 | open |
 
 The candidate `(p, k)` values are per the agent-survey hypothesis
 (2026-05-30); the rigorous identification from the substrate's
-Hecke-Wedderburn block structure on H_{3A}(q) is Phase 3 open math.
+Hecke-Wedderburn block structure on $H_{3A}(q)$ is Phase 3 open math.
+
+The deuteron candidate $T(2, 3)$ was added on 2026-05-30 (PR #1485)
+with the following rationale:
+
+1. *Smallest non-trivial torus knot.*  $T(2, 3)$ is the trefoil —
+   the minimum-pole-order column-rich irrep, matching the deuteron's
+   role as the lightest $A \ge 2$ nucleus.
+2. *$\mathcal{B}_3$-braid-closure consistency.*  The 2026-05-28
+   binding-endomorphism analogy closes the deuteron via
+   $B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\mathrm{tr}$
+   to $+0.19\,\%$.  $T(2, 3)$ is the canonical boundary torus knot
+   of $\mathcal{B}_3$ (the trefoil is the $(2, 3)$-cable of the
+   core circle in $\mathcal{B}_3$'s Seifert fibre structure).
+3. *Calibration consistency.*  Per
+   `binding-rotation-phase-lead.witness.json`, the deuteron's full
+   Markov-weighted q-Reeb phase aggregation gives
+   $\rho_{\mathrm{full}}(D) = 14.6673$ MeV/rad.  With
+   $\alpha_{\mathrm{shift}} = 3$ and $m_e \approx 0.511$ MeV, the
+   abstract substrate coupling $\rho_0$ in the class signature
+   reads $\rho_0 = B(D) / (m_e \cdot 3) \approx 1.451$ — a
+   dimensionless ratio (its $\mathrm{rad}^{-1}$ unit arises only
+   when the result is re-multiplied by the $14.6673$ MeV/rad
+   phase-scale measurement to recover $B(D)$).  Note that
+   $\rho_0$ (the *class field*) and $\rho_{\mathrm{full}}(D)$
+   (the *witness output*) are **distinct quantities** — one is
+   the substrate-universal coupling, the other the per-deuteron
+   phase-weighted aggregation — bridged by the $\alpha_{\mathrm{shift}} = 3$
+   normalisation.
 
 This is the A≥3 analogue of:
 - [`meson-color-tube-uniqueness`](#prop:meson-color-tube-uniqueness)
@@ -69,6 +97,29 @@ This is the A≥3 analogue of:
   on the two classes: two binding evaluators sharing $(m_e, \rho_0,
   \alpha_{\text{shift}})$ agree pointwise.
 - `theorem binding_subsingleton` — Subsingleton companion.
+
+### Concrete light-nuclei candidate instance (2026-05-30, #1485)
+
+The Phase-3 candidate table above is realised as a single Lean
+instance covering all four light nuclei $A \in \{2, 3, 4\}$:
+
+- `def lightNucleusP`, `def lightNucleusK`,
+  `def lightNucleusAlphaShift` — case-split selectors over
+  $A \in \{2, 3, 4\}$ with sentinel $0$ elsewhere.  The three
+  branches encode $D \mapsto T(2, 3)$, $T / {}^{3}\mathrm{He} \mapsto T(2, 5)$,
+  ${}^{4}\mathrm{He} \mapsto T(3, 4)$.
+- `theorem light_nucleus_alpha_shift_at_deuteron|A3|He4` —
+  per-branch sanity checks closing by `unfold` + `rfl`.
+- `instance lightNucleiForceCarrierKnot : BindingForceCarrierKnot
+  lightNucleusAlphaShift lightNucleusP lightNucleusK` — discharges
+  `matches_alpha_shift` for all $A \in \mathbb{N}$ via exhaustive
+  case-split (three light-nucleus branches + sentinel branch).
+  **No `sorry`.**
+
+Consolidating all four nuclei into one instance — rather than four
+separate sibling blocks — addresses the inefficiency of repeating
+the per-nucleus identification pattern: a single block now carries
+the full Phase-3 candidate table.
 
 ## Remaining open math
 
