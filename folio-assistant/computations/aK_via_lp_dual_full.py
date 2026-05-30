@@ -129,7 +129,8 @@ def solve_atom_lp(atom: str) -> dict:
     G = np.diag([abs(c) for c in contribs])
     n_target = tr_M_atom
 
-    result = solve_operator_selection_lp(t, G, n_target)
+    # Pin scipy: committed-witness producer → byte-deterministic.
+    result = solve_operator_selection_lp(t, G, n_target, backend="scipy")
 
     # Map LP dual back to partition labels.
     per_partition = []
