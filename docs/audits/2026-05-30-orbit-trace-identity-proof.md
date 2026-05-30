@@ -50,11 +50,13 @@ agrees to `max|Δ| = 3.7×10⁻⁵¹` at **50 dps** (mpmath/sympy, not `float`).
 same-species permutations preserve all three interface types (Lemma 1b), so
 there is no obstruction. ∎
 
-The trace machinery reproduces the canonical `tr_M(⁴He)`, `tr_M(⁵Li)` to a
-~7-digit sanity tolerance. (An aside, out of scope here: the sympy-path
-value and the stated rust-MPFR canonical differ at ~1e-8 — a separate
-path-comparison nuance to investigate, not an issue for this proof, which
-rests on Lemma 1 + the M1 cyclic test.)
+The trace machinery reproduces the (post-re-pin) canonical `tr_M(⁴He)`,
+`tr_M(⁵Li)`. (Resolved aside: a ~1e-8 gap vs the Tier 1.A doc's value was
+**not** a path difference — sympy ≡ rust-MPFR to 6e-16 — but the
+**q₀ muon→proton re-pin (2026-05-28) with incomplete witness
+regeneration**; ~394 witnesses still carry the pre-re-pin q₀. Full
+run-down: [`2026-05-30-q0-repin-stale-witness-audit.md`](2026-05-30-q0-repin-stale-witness-audit.md).
+The proof rests on Lemma 1 + the M1 cyclic test, independent of this.)
 
 > **Review note (Gemini, PR #1483).** An earlier version of the script
 > compared only the `(c,d)` crossing pair, dropping the generator index —

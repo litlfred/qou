@@ -126,7 +126,8 @@ def main() -> int:
             se = SymbolicHeckeElement(fe.to_sympy_element())
             return tr_M_element(se, n, simplify=False).subs(qs, qsp).evalf(50)
 
-        canon = {"4He": "0.0553483458766980481", "5Li": "0.0294413937003972"}
+        # Post-re-pin (proton-anchored q₀, 2026-05-28) canonical values.
+        canon = {"4He": "0.0553483351637685668", "5Li": "0.0294413856799191244"}
         # ⁴He: cyclic-rotation M1 test (valid conjugation on the real braid).
         n = 12
         wd = atom_braid_word_3A(2, 2)
@@ -149,10 +150,12 @@ def main() -> int:
             d = abs(val - ref)
             print(f"  tr_M({name}) @50dps = {str(val)[:22]}  "
                   f"(canonical {str(ref)[:12]}, Δ={float(d):.1e})")
-            # Sanity check only (tol 1e-6): the sympy-path value and the
-            # stated rust-MPFR canonical differ at ~1e-8 — a separate
-            # path-comparison nuance, NOT part of this proof, which rests on
-            # Lemma 1 + the M1 cyclic test above.
+            # Sanity check (tol 1e-6) vs the post-re-pin canonical. The
+            # earlier ~1e-8 gap vs the Tier 1.A doc was the q₀ muon→proton
+            # re-pin (2026-05-28) + stale witnesses, NOT a path bug — sympy ≡
+            # rust-MPFR to 6e-16. See
+            # docs/audits/2026-05-30-q0-repin-stale-witness-audit.md. Proof
+            # rests on Lemma 1 + the M1 cyclic test above.
             w.add_assertion(f"trM_{name}_sanity", computed=float(val),
                             expected=float(ref), tolerance=1e-6,
                             source="markov_trace @50dps (~7-digit sanity)")
