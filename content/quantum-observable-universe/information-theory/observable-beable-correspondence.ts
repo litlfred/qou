@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "def:observable-subcategory",
   label: "rem:observable-beable-correspondence",
-  title: "Beable-algebra correspondence: degree-$0$ algebra as 't Hooft's ontological basis",
+  title: "Beable-algebra correspondence: degree-$0$ algebra as 't Hooft's beable algebra",
   tags: [
     "observable-subcategory",
     "beable-algebra",

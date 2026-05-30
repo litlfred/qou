@@ -8,10 +8,10 @@ $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$
 ([observable subcategory](#def:observable-subcategory)) realises
 this notion structurally, with the following dictionary:
 
-| 't Hooft (CAI) | QOU (this framework) |
+| 't Hooft (:refterm[CAI]{#cai}) | QOU (this framework) |
 |---|---|
 | beable algebra $\mathcal{A}_{\mathrm{beable}}$ | degree-$0$ algebra $\Gamma(\mathcal{S}, A_0)$ |
-| ontological basis | simultaneous eigenstates of the Frobenius pairing on $A_0|_{\mathcal{S}}$ |
+| ontological basis | simultaneous eigenstates of the algebra $\Gamma(\mathcal{S}, A_0)$ |
 | "elements of reality" | degree-$0$ observables ([observation](#def:observation)) |
 | beable axiom (maximal commuting) | non-degeneracy of the Frobenius pairing on $A_0$ |
 | epistemological / templated states | degree-$> 0$ floors of the brane tower |
@@ -22,7 +22,7 @@ must specify, separately from the dynamics, which subalgebra of
 operators is ontological. The QOU observable subcategory removes
 this axiomatic freedom: the degree-$0$ algebra
 $\Gamma(\mathcal{S}, A_0)$ is **determined** by the bundle data
-$\mathcal{S}$, and the non-degeneracy condition
+$\mathcal{S}$, and the non-triviality condition
 $\Gamma(\mathcal{S}, A_0) \neq 0$ is a property of the bundle, not
 a choice. The ontological basis is therefore not an input to the
 theory but a derived feature of the categorical structure.
@@ -43,11 +43,11 @@ split.
 The states 't Hooft calls *epistemological* (templated
 superpositions used by the observer to encode partial knowledge)
 correspond in QOU to elements of the higher brane-tower floors
-$A_n|_{\mathcal{S}}$ for $n \geq 1$ — well-defined as categorical
-data, but not directly measurable since the Frobenius pairing is
-degenerate or absent at those floors. Projection to $A_0$ is the
-QOU realisation of 't Hooft's "epistemic-to-ontological"
-projector.
+restricted to $\mathcal{S}$ for $n \geq 1$ — well-defined as
+categorical data, but not directly measurable since the Frobenius
+pairing is degenerate or absent at those floors. Projection to
+$A_0$ is the QOU realisation of 't Hooft's
+"epistemic-to-ontological" projector.
 
 **Consequence: no superselection axiom.**
 't Hooft requires a separate superselection postulate to forbid
