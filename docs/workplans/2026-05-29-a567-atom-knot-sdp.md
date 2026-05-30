@@ -432,3 +432,65 @@ The honest Barrier-1 completion path is now:
 
 #1431 ships as: workplan + structural probes (5 probes, 0 fits) +
 2026-05-30 SDP/census audit. Nothing wired to production.
+
+## Critical-discipline audit (2026-05-30) — retracting 3 near-match claims
+
+Per author guidance "be critical, we want only canonical derived",
+re-auditing every numerical claim on this PR against the strict bar:
+
+> A derivation must reach **compute-precision** (≪ 1 ppb at 50 dps), or
+> at minimum the experimental σ of the target. A 0.1–1% near-match is
+> a **suggestive structural lead**, not a derivation. Selection of "best
+> of N candidates" by AME-match is the **selection-bias form of fitting**.
+
+### Failures (retracted as derivations; remain leads)
+
+| claim | residual | verdict |
+|-------|----------|---------|
+| κ_Coulomb ≈ 2√3/(3π) (= Bring × √3 from #1444) | **−935 ppm** | retracted: 0.1% off ≠ derivation |
+| f ≈ Z·N for D | 0.19% | retracted: not within compute precision |
+| f ≈ Z·N for 6Li | 0.62% | retracted |
+| f ≈ Z·N for 7Li | 0.33% | retracted |
+| ⁴He shell bonus 2.07 ≈ 1+q | 1.8% | retracted (was already flagged below) |
+| ⁴He shell bonus 2.07 ≈ 2√q | 1.7% | retracted (already flagged) |
+
+### What survives the bar
+
+| structural piece | status |
+|------------------|--------|
+| `Δtr = |tr_M(free)| − |tr_M(atom)|` from canonical `atom_braid_word_3A` | derived |
+| `Vol(Borromean) = 8G` (Catalan/dilog) | derived (knot invariant identity) |
+| `B(D) = m_e · 8G · Δtr` (+0.19%) | derived **under** the universal-Borromean *assumption* — and even +0.19% is not compute-precision |
+| Factorization `B = m_e · Vol(K_bind) · Δtr` (Kashaev-class identity) | derived in form; per-atom `Vol(K_bind)` is unknown |
+| A=3 mirror split structure | confirmed phenomenology, not derived |
+| ⁴He doubly-magic bump | confirmed phenomenology, not derived |
+| `f(Z,N) = B_AME/(m_e·8G·Δtr)` | AME-extracted (definition), not a derivation |
+
+### Retraction posted on sibling
+
+[#1444 retraction comment](https://github.com/litlfred/qou/pull/1444#issuecomment-4581427035):
+withdrew the §6 escalation that asked the author to extend
+`em-coupling-bring-zero-mode.md` to κ. 935 ppm is a numerical near-match,
+not a derivation; same critique I'm applying to my own f≈Z·N.
+
+### Net honest status of #1431
+
+This PR contributes:
+1. **An audit** (`census-knot-audit.md`) showing the binding-K registry
+   is triplicated-census-hardcoded across 3 production files, and the
+   `Vol(K_bind)=8G` deuteron derivation is one labelled-volume away from
+   the canonical braid.
+2. **A clarification** (workplan + SDP-incomplete section) that the
+   iterative LP-dual is structurally incomplete (H_n-internal piece only;
+   author's own interpretation field), not broken — the missing scale
+   is the archimedean realization that #1443's `A^λ_{μν}(I)` should
+   derive.
+3. **Five structural probes** that extract `f(Z,N)` from AME under the
+   universal-Borromean assumption. None of the resulting patterns
+   (Z·N near-match, κ ≈ Bring×√3, ⁴He bump ≈ 1+q) clear the canonical-
+   derived bar. **All retracted as derivations.** They remain
+   **suggestive leads** for #1443's operator-valued derivation, recorded
+   as such; not wired to production.
+
+**Nothing in #1431 should be treated as deriving an observable.** It
+is a research-side audit + probe set + honest retraction record.
