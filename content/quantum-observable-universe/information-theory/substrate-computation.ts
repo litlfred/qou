@@ -13,4 +13,5 @@ export default remark({
     "classical-limit",
   ],
   uses: ["rem:toffoli-q-and"],
+  cites: ["thooft2016"],
 });
