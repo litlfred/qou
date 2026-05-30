@@ -230,3 +230,30 @@ Pick from the four Tier-A leaves. Best ROI in one PR:
 
 After Phase 1 lands, re-run `/proposition-consolidation-audit
 all` to surface the cascade and refresh this workplan.
+
+## Closure progress log
+
+### 2026-05-30 — Phase 1 first wave
+
+| PR | closure | tier | downstream users freed |
+|---|---|---|---:|
+| #1506 | `conj:pontryagin-dual-coxeter-character` → `thm:` | A | 0 |
+| #1510 | `conj:averaging-resonance-rule` → `thm:` | A | 1 (`pn-averaging-uniqueness`) |
+
+**Re-classifications surfaced during this wave**:
+
+- `conj:dilogarithm-archimedean-limit` → Tier B (Mathlib lacks
+  Tauberian theorem + branch-cut control).
+- `conj:atom-braid-exterior-algebra` → partial closure (4 small-A
+  cases sorry-free in Lean; general A needs IwahoriHecke).
+
+**Cascade after first wave**: 103 → 101 conjectures (exactly the
+2 closures, no compound cascade). Source-node count 58 → 56.
+Confirms the low-leverage-leaves-first ordering: discharging
+0-user / 1-user leaves does not unlock further consumers, but
+clears noise so the high-leverage Tier-B targets (10+ users) come
+into focus.
+
+**Phase 2 infra started**: Sprint 1 (`QOU.IwahoriHecke.Defn`
+skeleton, PR #1510) + Sprint 2 (`QOU.IwahoriHecke.Quotient`
+concrete quotient construction, in-progress PR).
