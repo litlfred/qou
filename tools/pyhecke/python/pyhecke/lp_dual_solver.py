@@ -265,7 +265,7 @@ def solve_operator_selection_lp(
     *,
     M_bound: float = 1e6,
     dual_tol: float = 1e-9,
-    backend: str = "scipy",
+    backend: str = "auto",
     prec_bits: int = 167,
     clarabel_bin: Optional[str] = None,
 ) -> LpDualResult:
@@ -277,21 +277,28 @@ def solve_operator_selection_lp(
       n_target: target categorical mass
       M_bound: large bound on x_i for boundedness
       dual_tol: threshold for "active" dual variable
-      backend: "scipy" (default, HiGHS f64) or "clarabel" (MPFR, ~50 dps,
-        EXPERIMENTAL — see `_solve_operator_selection_lp_clarabel`).
+      backend: "auto" (default — clarabel MPFR at ~50 dps when its binary
+        or wheel is available, else scipy HiGHS f64), "scipy", or "clarabel"
+        (force MPFR; raises if unavailable). The clarabel path is
+        cross-checked equivalent to scipy to ~1e-12 (clarabel_lp_crosscheck.py).
       prec_bits: MPFR precision for the clarabel backend (167 ≈ 50 dps).
       clarabel_bin: explicit path to the clarabel LP binary (else autodetect).
 
     Returns LpDualResult with BOTH primal coefficients AND dual shadow
     prices.  Strong duality is verified; mismatch raises ValueError.
     """
-    if backend == "clarabel":
-        return _solve_operator_selection_lp_clarabel(
-            t, G, n_target, M_bound=M_bound, dual_tol=dual_tol,
-            prec_bits=prec_bits, clarabel_bin=clarabel_bin,
-        )
-    if backend != "scipy":
-        raise ValueError(f"unknown backend {backend!r}; use 'scipy' or 'clarabel'")
+    if backend not in ("auto", "scipy", "clarabel"):
+        raise ValueError(f"unknown backend {backend!r}; use 'auto', 'scipy', or 'clarabel'")
+    if backend in ("auto", "clarabel"):
+        try:
+            return _solve_operator_selection_lp_clarabel(
+                t, G, n_target, M_bound=M_bound, dual_tol=dual_tol,
+                prec_bits=prec_bits, clarabel_bin=clarabel_bin,
+            )
+        except (ImportError, FileNotFoundError):
+            if backend == "clarabel":
+                raise
+            # auto: clarabel unavailable → fall through to scipy below
 
     from scipy.optimize import linprog  # SciPy is required for LP duals.
 
@@ -500,7 +507,7 @@ def solve_psd_operator_selection_sdp(
     G: np.ndarray,
     n_target: float,
     *,
-    backend: str = "cvxpy",
+    backend: str = "auto",
     prec_bits: int = 167,
     clarabel_bin: Optional[str] = None,
 ) -> SdpDualResult:
@@ -524,12 +531,17 @@ def solve_psd_operator_selection_sdp(
 
     Returns SdpDualResult with both X*, Z* and strong-duality gap.
     """
-    if backend == "clarabel":
-        return _solve_psd_via_clarabel_lp(
-            t, G, n_target, prec_bits=prec_bits, clarabel_bin=clarabel_bin,
-        )
-    if backend != "cvxpy":
-        raise ValueError(f"unknown SDP backend {backend!r}; use 'cvxpy' or 'clarabel'")
+    if backend not in ("auto", "cvxpy", "clarabel"):
+        raise ValueError(f"unknown SDP backend {backend!r}; use 'auto', 'cvxpy', or 'clarabel'")
+    if backend in ("auto", "clarabel"):
+        try:
+            return _solve_psd_via_clarabel_lp(
+                t, G, n_target, prec_bits=prec_bits, clarabel_bin=clarabel_bin,
+            )
+        except (ImportError, FileNotFoundError):
+            if backend == "clarabel":
+                raise
+            # auto: clarabel unavailable → fall through to cvxpy below
 
     try:
         import cvxpy as cp
