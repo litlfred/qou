@@ -18,7 +18,7 @@ export default remark({
   uses: [
     "def:categorical-dirac-operator",
     "def:categorical-instanton",
-    "rem:reeb-u1-chart-swap",
+    "prop:reeb-u1-chart-swap",
     "def:contact-affine-chart",
     "thm:categorical-reeb-exists",
     "ex:categorical-reeb-brings",

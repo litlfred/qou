@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "rem:reeb-u1-chart-swap",
+    "prop:reeb-u1-chart-swap",
     "thm:categorical-reeb-exists",
     "def:contact-affine-chart",
     "def:frobenius-hopf-substrate",
