@@ -50,7 +50,15 @@ from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 
 NDIGITS = 12
 CUR = Q_50_DIGIT_STR[: NDIGITS + 2]
-SHAPE = re.compile(r"\b1\.10997[0-9]{8,}")
+# Reuse the detector's live-derived basin + audit exemption as the single
+# source of truth (fixes the same hard-coded-regex / audit-false-positive
+# bugs Copilot flagged on the detector). Local fallback if unavailable.
+try:
+    from witness_constant_staleness import Q0_SHAPE as SHAPE, AUDIT_SUFFIXES
+except Exception:  # pragma: no cover
+    SHAPE = re.compile(re.escape(Q_50_DIGIT_STR[:6]) + r"\d{6,}")
+    AUDIT_SUFFIXES = ("-audit.witness.json", "-scan.witness.json",
+                      "-compliance.witness.json")
 WGLOB = "folio-assistant/computations/*.witness.json"
 BRANCH = "claude/q0-repin-regen-batch-2026-05-30"
 
@@ -63,6 +71,8 @@ def scan_stale() -> dict[str, list[str]]:
     """Map producer scriptFile → [stale witness relpaths]."""
     by_script: dict[str, list[str]] = defaultdict(list)
     for wf in glob.glob(str(REPO / WGLOB)):
+        if Path(wf).name.endswith(AUDIT_SUFFIXES):
+            continue  # state-tracking witness — intentional q₀, not stale
         raw = Path(wf).read_text()
         if not stale_q0(raw):
             continue
