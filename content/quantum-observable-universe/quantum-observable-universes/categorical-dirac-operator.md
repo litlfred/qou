@@ -24,6 +24,6 @@ geometric Dirac operators on contact manifolds carrying an analogous
 horizontal / Reeb-direction decomposition
 \cite{nicolaescu2005, petit-2005}; the one-parameter family
 of Dirac operators on contact 3-manifolds
-\cite{tsai-2013-i, tsai-2013-ii}; and the Kohn--Dirac operator
+\cite{tsai-2015-i, tsai-2015-ii}; and the Kohn--Dirac operator
 built from the Tanaka--Webster connection on CR manifolds
 \cite{leitner-2018}.
