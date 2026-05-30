@@ -43,14 +43,19 @@ which is what the PSLQ in #1457 already used. The point of this probe
 is that the Bring-CM modular τ's give |z| ≠ 1, so the full regulator
 becomes informative.)
 
-PSLQ basis (38 elements):
+PSLQ basis (data-dependent after near-zero pruning; ~23 elements in
+practice). Pre-prune candidate set:
   - α/(4π)                             (the target; first slot)
-  - D_3({z_τ}) for τ ∈ {A, B, C, D}    (4 Bring-CM modular evals)
-  - log²|z_τ|, log|z_τ|·arg(1-z_τ)     (component parts — depth-3
-                                        regulator components)
+  - D_3({z}) for 6 Bring-natural points (1/φ, ζ_5/φ, 1-ζ_5, 1-ζ̄_5,
+                                        ζ_5·(1-ζ_5), φ·ζ_3)
+  - log|z| at each of the 6 points     (regulator component)
+  - log²|z|·arg(1-z) at each           (regulator component)
   - Cl_3(2π/5), S_3(2π/5)              (pentagon-angle reference)
   - Cl_3(π/3), S_3(π/3)                (figure-8 / ideal-tet ref)
   - ζ(3), π²·log(2), π·ζ(2)            (depth-3 universal periods)
+
+After pruning numerically-zero entries (|v| < 1e-40, which catches the
+real-axis log²·arg products), basis size ≈ 23.
 
 VERDICT LOGIC (honest derive-or-refute, parallel to #1457):
   DERIVED if PSLQ finds an integer relation with c_target ≠ 0
@@ -73,6 +78,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from experimental_constants import ALPHA_EM_INV  # noqa: E402
 
 
 def goncharov_d3(z: mpc) -> mpf:
@@ -109,12 +115,14 @@ def main() -> int:
     )
     builder.set_content_block("prop:em-coupling-bring-zero-mode")
 
-    # ── target ────────────────────────────────────────────────────
-    CODATA_alpha_inv = mpf("137.035999084")
+    # ── target (CODATA from experimental_constants.py, not hardcoded) ─
+    CODATA_alpha_inv = mpf(str(ALPHA_EM_INV))
     TARGET = (1 / CODATA_alpha_inv) / (4 * pi)
     builder.add_data("target_value", mp.nstr(TARGET, 30))
     builder.add_data("target_formula",
-                     "α/(4π) = 1/(4π · 137.035999084)")
+                     "α/(4π) = 1/(4π · ALPHA_EM_INV)")
+    builder.add_data("target_codata_source",
+                     "experimental_constants.ALPHA_EM_INV (CODATA 2018, Cs recoil)")
 
     # ── 6 canonical Bring-natural B_3 points in ℂ\{0,1} ──────────
     # These are GENUINE off-unit-circle complex points (no z=e^(2πiτ)
@@ -143,8 +151,10 @@ def main() -> int:
     z_values = cm_points
     d3_values = [(f"D_3({{{n}}})", goncharov_d3(z)) for n, z in cm_points]
     log_abs_z_values = [(f"log|{n}|", log(abs(z))) for n, z in cm_points]
+    # Per Copilot review: parens around {n} to avoid label expansion
+    # like `arg(1-1 - ζ_5)`. Use bracketed point label instead.
     log2_arg_values = [
-        (f"log²|{n}|·arg(1-{n})",
+        (f"log²|z|·arg(1-z) at z=[{n}]",
          log(abs(z))**2 * arg(1 - z))
         for n, z in cm_points
     ]
@@ -248,13 +258,26 @@ def main() -> int:
         print("  of the 4 Bring CM modular τ candidates.")
 
     builder.add_data("final_verdict", final)
+    # Assertion: sweep completeness + basis-size invariant. Per Copilot
+    # review: prefer structural invariants over tautologies. The sweep
+    # invariant catches accidental drops; basis size catches angle/point
+    # drops; combining gives signal on either regression.
     builder.add_assertion(
-        "pslq_sweep_complete",
+        "pslq_sweep_3_heights",
         computed=len(sweeps),
         expected=3,
         tolerance=0,
         source="PSLQ sweep at maxcoeff = {50, 200, 1000} on Bring CM "
-               "modular τ basis (D_3 regulator off unit circle).",
+               "B_3 off-unit-circle basis.",
+    )
+    builder.add_assertion(
+        "basis_size_post_prune",
+        computed=len(basis_real),
+        expected=23,
+        tolerance=2,  # allow drift if a point lands very close to 0/1
+        source="6 Bring-natural complex points → 18 D_3/log/log²·arg + "
+               "7 references = 25 pre-prune; ~23 after near-zero prune "
+               "(real-axis 1/φ has D_3 = log²|z|·arg(1-z) = 0).",
     )
     builder.save()
     return 0

@@ -26,7 +26,11 @@ Specifically:
              depth-3 reference period ζ(3) = Apéry's constant.
   • method:  PSLQ at maxcoeff ≤ 50 for an integer relation among
              {target, Cl_3 basis, S_3 basis, ζ(3)}.
-  • verdict: DERIVE if PSLQ finds a relation; REFUTE if not.
+  • verdict: DERIVED if PSLQ finds a relation with c_target ≠ 0;
+             PARTIAL if PSLQ finds only a basis-internal relation
+                     (c_target = 0; target not in the lattice but
+                      basis has its own functional-equation identity);
+             REFUTED if no relation found at maxcoeff = 50.
 
 Indexing convention follows the B_2 hunt: an angle kπ/n corresponds to
 the 2n-th root of unity z = e^(iπk/n) = e^(2πi · k/(2n)); "n ≤ 30" means
@@ -59,6 +63,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from experimental_constants import ALPHA_EM_INV  # noqa: E402
 
 
 def cl3(theta: mpf) -> mpf:
@@ -98,13 +103,15 @@ def main() -> int:
     )
     builder.set_content_block("prop:em-coupling-bring-zero-mode")
 
-    # ── target ────────────────────────────────────────────────────
-    CODATA_alpha_inv = mpf("137.035999084")
+    # ── target (CODATA from experimental_constants.py, not hardcoded) ─
+    CODATA_alpha_inv = mpf(str(ALPHA_EM_INV))
     alpha_codata = 1 / CODATA_alpha_inv
     TARGET = alpha_codata / (4 * pi)
     builder.add_data("target_value", mp.nstr(TARGET, 30))
     builder.add_data("target_formula",
-                     "α/(4π) = 1/(4π · 137.035999084)")
+                     "α/(4π) = 1/(4π · ALPHA_EM_INV)")
+    builder.add_data("target_codata_source",
+                     "experimental_constants.ALPHA_EM_INV (CODATA 2018, Cs recoil)")
 
     # ── canonical Bring-symmetric angles (same basis as B_2 hunt) ──
     # n ∈ {3, 4, 5, 6, 9, 10, 15, 30}; k coprime to 2n in (0, n)
@@ -209,13 +216,18 @@ def main() -> int:
         print("Pin this integer relation in prop:em-coupling-bring-zero-mode")
         print("as the explicit B_3 class identification for the α/(4π) term.")
 
+    # Assertion: invariant of the run (basis size = 45). Catches regressions
+    # in the basis-construction step (e.g. accidental angle drops, missing
+    # ζ(3) reference). Per Copilot review: tautological assertions add no
+    # signal; assert a structural invariant instead.
     builder.add_assertion(
-        "pslq_executed_at_maxcoeff_50",
-        computed=int(relation is not None),
-        expected=int(relation is not None),  # tautological; the asset is the verdict
+        "basis_size_invariant",
+        computed=len(basis),
+        expected=45,
         tolerance=0,
-        source="PSLQ search on {α/(4π), Cl_3(Bring-symmetric), "
-               "S_3(Bring-symmetric), ζ(3)} basis at maxcoeff ≤ 50.",
+        source="Canonical B_3 basis: 22 Cl_3 + 22 S_3 at Bring-symmetric "
+               "angles + 1 ζ(3) reference = 45 elements (fixed a priori "
+               "from the same angle set used by bring_zero_mode_bloch_hunt.py).",
     )
     builder.save()
     return 0
