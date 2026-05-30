@@ -3242,7 +3242,7 @@ export const references: CSLData[] = [
     note:
       "Two-sided result on integration over $\\mathbf{No}$. " +
       "Positive: defines a robust algebraic integral for " +
-      "semi-algebraic, analytic, and Écalle–Borel transseriable " +
+      "semi-algebraic, analytic, and Écalle–Borel transserial " +
       "functions by routing through Hardy-field germs and the " +
       "surreal–transseries correspondence. Negative: proves " +
       "set-theoretic obstructions ruling out a translation-" +

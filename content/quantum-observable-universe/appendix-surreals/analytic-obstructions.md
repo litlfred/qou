@@ -15,7 +15,7 @@ prove a two-sided result on integration over the surreals:
 
 - **Positive direction.** A robust algebraic integral exists for
   the class of semi-algebraic, analytic, and Écalle–Borel
-  transseriable functions, obtained by routing through Hardy-
+  transserial functions, obtained by routing through Hardy-
   field germs and the surreal–transseries correspondence
   [@berarducci-mantova2018]. On this class the integral satisfies
   the standard properties (linearity, FTC, translation
@@ -37,7 +37,7 @@ C(\mathbf{No})$) would just smuggle the obstruction into the
 axiom. What we want instead is an audit: for each genuine
 use of an analytic structure in the main paper, decide whether
 the use lifts to $\mathbf{No}$ on the CEF-positive side
-(algebraic / transseriable) or whether it requires a
+(algebraic / transserial) or whether it requires a
 custom workaround. The audit below is that exercise.
 
 ## 1. Lebesgue measure: one genuine use, no others
