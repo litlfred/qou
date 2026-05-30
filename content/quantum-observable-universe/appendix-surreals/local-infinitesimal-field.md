@@ -117,7 +117,7 @@ single-point morphism.
  structure — i.e., which $\varepsilon$-valued $q$ deformations
  preserve the rigid monoidal axioms up to the
  $\varepsilon$-relaxations of
- [infinitesimal-frobenius](#prop:infinitesimal-frobenius) etc.
+ [infinitesimal-frobenius](#conj:infinitesimal-frobenius) etc.
 
 **Physical layer (uniqueness of the fluctuation distribution)**:
 

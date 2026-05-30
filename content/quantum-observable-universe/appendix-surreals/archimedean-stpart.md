@@ -96,8 +96,8 @@ generalisation of the main paper:
 
 - defining the category $\mathbf{QOU}_{\mathbf{No}}^{\varepsilon}$
  with the relaxed axioms (the appendix's conjectures
- [infinitesimal-frobenius](#prop:infinitesimal-frobenius),
- [infinitesimal-observability](#prop:infinitesimal-observability),
+ [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
+ [infinitesimal-observability](#conj:infinitesimal-observability),
  [vacuum-epsilon](#prop:vacuum-epsilon) make a start);
 - showing that $\mathrm{St}$ extends from
  $\mathbf{No}_{\mathrm{fin}}$ to morphisms in this category in a
@@ -131,8 +131,8 @@ to that conjecture via:
 3. **Verify axioms**: each $\varepsilon$-relaxed axiom (Frobenius,
  observability, volume, vacuum) becomes the strict axiom under
  $\mathrm{St}$ — content of conjectures
- [infinitesimal-frobenius](#prop:infinitesimal-frobenius),
- [infinitesimal-observability](#prop:infinitesimal-observability),
+ [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
+ [infinitesimal-observability](#conj:infinitesimal-observability),
  [vacuum-epsilon](#prop:vacuum-epsilon).
 
 4. **Essential surjectivity**: every archimedean QOU lifts (set

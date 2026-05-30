@@ -30,8 +30,8 @@ to that conjecture via:
 3. **Verify axioms.** Each $\varepsilon$-relaxed axiom (Frobenius,
  observability, volume, vacuum) becomes the strict axiom under
  $\mathrm{St}$ — content of conjectures
- [infinitesimal-frobenius](#prop:infinitesimal-frobenius),
- [infinitesimal-observability](#prop:infinitesimal-observability),
+ [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
+ [infinitesimal-observability](#conj:infinitesimal-observability),
  [vacuum-epsilon](#prop:vacuum-epsilon).
 
 4. **Essential surjectivity.** Every archimedean QOU lifts (set
