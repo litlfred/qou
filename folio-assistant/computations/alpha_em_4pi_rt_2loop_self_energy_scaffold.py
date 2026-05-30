@@ -165,8 +165,7 @@ def main() -> int:
     # categorical fermion loop on a single photon strand. The actual
     # identification is missing from the framework — these are
     # placeholders for the 2-loop self-energy derivation.
-    h = q - 1 / q
-    h2 = h**2
+    h = hecke_eigenvalue_sigma(q)  # h = q - q⁻¹ via shared helper
 
     candidates = []
 
@@ -273,7 +272,8 @@ def main() -> int:
         "(2/(3π) = Vol(S²)/(3·Vol(S³))) does NOT yet have a "
         "next-order partner identified.",
         "(iv)  No 2-loop diagram in the Lean formalization: the "
-        "predicted-spectra/em-coupling-bring-zero-mode.lean file "
+        "content/quantum-observable-universe/predicted-spectra/"
+        "em-coupling-bring-zero-mode.lean file "
         "axiomatises the Bring zero-mode shift but has no 2-loop "
         "self-energy structure.",
     ]
