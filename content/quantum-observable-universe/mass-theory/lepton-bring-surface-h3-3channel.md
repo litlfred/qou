@@ -174,7 +174,7 @@ and possibly weak-isospin partner (neutrino).
 
 - [`prop:three-parameters-wedderburn`](three-parameters-wedderburn.md) — 3-CAL $\leftrightarrow$ 3-channel cohomological discipline
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — Li_2^q canonical mass formula
-- [`prop:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence conjecture
+- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence conjecture
 - [`rem:bar-involution`](bar-involution.md) — P_avg / P_skew projection (real-q mechanism)
 - Convention source: `tools/pyhecke/python/pyhecke/constants.py:156` (V_HAT_ELECTRON)
 - Compute infrastructure: `folio-assistant/computations/per_generator_V_hat_general.py` (generalises `per_generator_V_hat_3A`)

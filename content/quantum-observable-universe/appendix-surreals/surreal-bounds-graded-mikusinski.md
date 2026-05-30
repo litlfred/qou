@@ -15,19 +15,19 @@ on the archimedean side, with a *finite* gap. Per
 the inequality.
 
 The graded-Mikusiński keystone
-([`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence))
+([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
 identifies these four remarks as the same construction at different
 **depths** of the iterated-integral filtration on $\mathcal{H}_q$:
 
 | Bound | Conjecture interpreted | Depth class | Std-collapsed object |
 |---|---|---|---|
 | RH | [`thm:quantum-gap-collapse`](#thm:quantum-gap-collapse) | $\mathcal{P}_1$ (logs) | $\zeta$ critical-line vanishing |
-| BSD | [`prop:q-birch-swinnerton-dyer`](#prop:q-birch-swinnerton-dyer) | $\mathcal{P}_2$ (regulators) | $L$-function rank match |
-| P vs NP | [`prop:p-vs-np-qou`](#prop:p-vs-np-qou) | $\mathcal{P}_{\geq 1}$ (transfinite Reeb period) | budget separation |
-| Collatz | [`prop:q-collatz`](#prop:q-collatz) | $\mathcal{P}_2$ (Bloch–Wigner shadow) | contact-boundary deviation |
+| BSD | [`conj:q-birch-swinnerton-dyer`](#conj:q-birch-swinnerton-dyer) | $\mathcal{P}_2$ (regulators) | $L$-function rank match |
+| P vs NP | [`conj:p-vs-np-qou`](#conj:p-vs-np-qou) | $\mathcal{P}_{\geq 1}$ (transfinite Reeb period) | budget separation |
+| Collatz | [`conj:q-collatz`](#conj:q-collatz) | $\mathcal{P}_2$ (Bloch–Wigner shadow) | contact-boundary deviation |
 
 The depth assignment above is **conjectural** at each row, modulo
-[`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence).
+[`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence).
 What the keystone provides is a *single framework* generating all
 four bounds: each is
 
@@ -76,5 +76,5 @@ characteristic depth.
 This is **interpretive**: it reframes existing content under a
 single rubric, rather than introducing new mathematics. The novel
 mathematical content is in
-[`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+[`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 and its discharge targets.

@@ -14,7 +14,7 @@ export default definition({
     "rem:jet-planck-steps",
     "rem:observation-braid",
     "def:operational-entropy",
-    "prop:crystal-graph-realization",
+    "conj:crystal-graph-realization",
   ],
   cites: [
     "brundankleshchev2009",

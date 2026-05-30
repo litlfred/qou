@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "rem:gram-matrix-spectral-connection",
-    "prop:weak-spectral-completeness",
+    "conj:weak-spectral-completeness",
   ],
   computation: {
     engine: "python",

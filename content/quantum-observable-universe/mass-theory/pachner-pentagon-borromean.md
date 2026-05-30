@@ -93,7 +93,7 @@ routes for deriving $h^4 = -3/4$ categorically are flagged:
    ([`borromean-markov-trace-closed-form.md`](#prop:borromean-markov-trace-closed-form)).
 2. **Pachner-Pentagon state-sum** (this conjecture).
 3. **K-theoretic / Bloch group regulator** — see sibling
-   [`prop:borromean-bloch-group-element`](borromean-bloch-group-element.md) (D16).
+   [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md) (D16).
 4. **DIM-master Pentagon** — research-grade, no QOU block yet.
 
 Closing this conjecture provides an **independent cross-validation**
@@ -155,7 +155,7 @@ class PachnerPentagonBorromean
 - [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
   — 8-literature Pentagon catalogue, 4 candidate routes
 - Sibling Cluster C item:
-  [`prop:borromean-bloch-group-element`](borromean-bloch-group-element.md) (D16)
+  [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md) (D16)
 - The Pentagon identity itself:
   [`prop:pentagon-uv-commutation`](#prop:pentagon-uv-commutation),
   [`prop:q-rogers-pentagon-archimedean`](#prop:q-rogers-pentagon-archimedean)

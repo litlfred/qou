@@ -11,7 +11,7 @@ tubes $(r, g, b)$
 brane tower blow-up produces three exceptional divisors
 $D_r, D_g, D_b$, one for each color fiber.  The Borromean
 link $\mathcal{B}_3$
-([Borromean quark](#prop:borromean-quark)) lives at the
+([Borromean quark](#conj:borromean-quark)) lives at the
 intersection of these three divisors.
 
 The torus links $T(2, 2k)$ on the Bring's surface have genus

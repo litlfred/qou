@@ -52,7 +52,7 @@ single-knot level with topologically trivial Skein contribution
 reduces to $m_\mu = m_e \cdot \mathrm{Vol}(4_1)/\hbar_q^2$.
 
 The Borromean baryon programme
-([prop:borromean-baryon-mass-formula](#prop:borromean-baryon-mass-formula))
+([conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula))
 asks whether the same ansatz, lifted to a 3-link with non-trivial
 Skein contribution, gives baryon masses with a single common scale
 $\lambda_{\mathrm{scale}}$:
@@ -71,7 +71,7 @@ In the figure-8 case the formula degenerates to
 $\lambda_{\mathrm{scale}}^{(4_1)} = 1$ and $S(4_1) = 0$; in the
 Borromean case the empirical closure target is
 $\lambda_{\mathrm{scale}}^{(\mathcal{B}_3)} \approx 2.46$ (see
-[prop:borromean-baryon-mass-formula](#prop:borromean-baryon-mass-formula)).
+[conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula)).
 
 The substrate consistency of $\Delta S(n - p)$
 ([rem:delta-skein-substrate-identity](#rem:delta-skein-substrate-identity))

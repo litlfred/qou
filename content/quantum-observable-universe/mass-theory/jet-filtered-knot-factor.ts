@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:jet-filtered-knot-factor",
+export default conjecture({
+  label: "conj:jet-filtered-knot-factor",
   title:
     "Jet-filtered knot factor: per-level character convergence and nuclear quotient braid",
   lean: { ref: "qou:QOU.BraidKnot.jet_filtered_knot_factor",

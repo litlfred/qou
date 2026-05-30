@@ -1,8 +1,8 @@
 **Interpretive remark.**
 The
-[crystal-graph realisation](#prop:crystal-graph-realization) of Hecke
+[crystal-graph realisation](#conj:crystal-graph-realization) of Hecke
 normal forms together with the
-[confinement–grading correspondence](#prop:confinement-grading-correspondence)
+[confinement–grading correspondence](#conj:confinement-grading-correspondence)
 admit a sharper computational reading: every observable extracted by
 the Observation Frame $\tau$ is determined by its image at the
 **crystal limit** $q \to 0$ and transported back to the generic

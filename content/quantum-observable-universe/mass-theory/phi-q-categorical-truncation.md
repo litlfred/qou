@@ -120,4 +120,4 @@ is a **categorical identity**, not a real-valued numerical identity;
 the real-valued mass at $|\hat V|\approx 1$ requires the open
 $z$-Habiro uniform bound to convert categorical equality into
 numerical equality
-([brane tower in $z$-Habiro](#prop:brane-tower-z-habiro)).*
+([brane tower in $z$-Habiro](#conj:brane-tower-z-habiro)).*

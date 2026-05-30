@@ -108,4 +108,4 @@ JSJ decomposition
 ([hyperbolic-knot positive volume via Reeb](#rem:hyperbolic-knot-positive-volume-via-reeb));
 this is the geometric origin of the mass-versus-volume dichotomy
 exploited by
-[mass-volume factorization](#prop:mass-volume-factorization).
+[mass-volume factorization](#conj:mass-volume-factorization).

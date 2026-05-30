@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:levi-degeneracy",
+export default conjecture({
+  label: "conj:levi-degeneracy",
   lean: { ref: "qou:QOU.FluidDynamics.LeviDegeneracy" },
   title:
     "Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity",

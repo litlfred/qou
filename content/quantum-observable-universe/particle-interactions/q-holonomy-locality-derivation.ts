@@ -4,7 +4,7 @@ export default remark({
   label: "rem:q-holonomy-locality-derivation",
   title:
     "Derivation: locality from flatness of the KZ connection",
-  interprets: "prop:lifted-crossing-locality",
+  interprets: "conj:lifted-crossing-locality",
   tags: [
     "kz-connection",
     "flatness",

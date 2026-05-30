@@ -94,4 +94,4 @@ that *replacing* $\Phi_q$ with $\Phi_q^{[\leq k_\star(T_w)]}$ in the
 mass formula gives the same numerical answer one needs the
 $\phi_q^{(k)}$'s to be uniformly bounded as $|z_i| \to q$. That bound
 is the open part — the conjectural target of
-[$z$-Habiro completion](#prop:brane-tower-z-habiro).
+[$z$-Habiro completion](#conj:brane-tower-z-habiro).

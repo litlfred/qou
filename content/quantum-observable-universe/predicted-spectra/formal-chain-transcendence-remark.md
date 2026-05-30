@@ -14,7 +14,7 @@ and does not require knowing whether $\mathrm{Vol}(K)$ is transcendental,
 algebraic, or even irrational.
 
 The [algebraic independence
-conjecture](#prop:hyperbolic-volume-transcendence) is therefore a
+conjecture](#conj:hyperbolic-volume-transcendence) is therefore a
 statement about the number-theoretic richness of the physical coefficient
 ring, not a prerequisite for any result in this paper.  If it fails
 --- that is, if some polynomial relation holds among the volumes ---

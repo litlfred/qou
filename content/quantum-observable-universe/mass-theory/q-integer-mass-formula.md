@@ -1,4 +1,4 @@
-**Conjecture (BW-emergence: empirical liquid-drop coefficients as q-integer products, conditional on prop:palindromicity-orbital-type and prop:shell-closure-nf-term-count).**
+**Conjecture (BW-emergence: empirical liquid-drop coefficients as q-integer products, conditional on conj:palindromicity-orbital-type and conj:shell-closure-nf-term-count).**
 *The QOU production mass formula is the six-term framework
 ([six-term mass formula](#thm:six-term-mass-formula-complete)).
 The empirical Bethe--Weizsäcker liquid-drop formula — historically

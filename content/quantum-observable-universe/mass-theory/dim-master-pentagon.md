@@ -14,10 +14,10 @@ used elsewhere in the QOU framework:*
   ([`prop:macdonald-hook-telescope`](#prop:macdonald-hook-telescope))
   under restriction to the symmetric-function representation*
 - *Pachner–Pentagon TV/RT state-sum invariance
-  ([`prop:pachner-pentagon-borromean`](#prop:pachner-pentagon-borromean), D15)
+  ([`conj:pachner-pentagon-borromean`](#conj:pachner-pentagon-borromean), D15)
   under restriction to the Borromean ideal-tetrahedron triangulation*
 - *Bloch-group 5-term relation
-  ([`prop:borromean-bloch-group-element`](#prop:borromean-bloch-group-element), D16)
+  ([`conj:borromean-bloch-group-element`](#conj:borromean-bloch-group-element), D16)
   under decategorification through the regulator*
 
 *The DIM master Pentagon is therefore the **unified algebraic
@@ -65,6 +65,6 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
   + §2 Cluster C (Pentagon validation D15–D18)
 - [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
   — 8-literature Pentagon catalogue
-- D15 [`prop:pachner-pentagon-borromean`](pachner-pentagon-borromean.md),
-  D16 [`prop:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- D15 [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md),
+  D16 [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
 - [Ding–Iohara 1997; Miki 2007 — DIM algebra]

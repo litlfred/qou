@@ -1,5 +1,5 @@
 **Proposition (conditional on
-[`prop:hyperbolic-volume-transcendence`](#prop:hyperbolic-volume-transcendence)
+[`conj:hyperbolic-volume-transcendence`](#conj:hyperbolic-volume-transcendence)
 and
 `rem:baryon-period-ratio`).**
 *The categorical volume form, evaluated on the knot complement

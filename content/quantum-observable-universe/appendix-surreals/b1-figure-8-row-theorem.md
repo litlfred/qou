@@ -2,7 +2,7 @@
 combining Bloch–Suslin depth-2 identification with Murakami–Murakami's
 proof of the Volume Conjecture for $4_1$).**
 
-*The figure-8 row of [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+*The figure-8 row of [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 ("B1") — the depth-2 instance over $F = \mathbb{Q}(\zeta_6)$
 indexed by the dominant cell $\lambda_K = (2, 2)$ of $4_1$ in
 $H_4(q)$ — is **theorem-level**, requiring no part of Goncharov's
@@ -45,7 +45,7 @@ $\mathrm{Li}_2^q(\zeta_6) \in G^{(2)}(\mathcal{H}_q)$ via the
 Markov trace yields, after Hoefsmit + Schur–Weyl combinatorics, the
 specific number $2 D(\zeta_6) = 2\,\mathrm{Cl}_2(\pi/3) \approx
 2.029\ldots$ — verified numerically at 50 dps in
-[`prop:bring-figure-eight-depth-2-witness`](#prop:bring-figure-eight-depth-2-witness).
+[`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
 **Theorem-level (explicit Hoefsmit/Markov computation).**
 
 **Step 4.** Murakami–Murakami 2001 [@murakami-murakami2001]:
@@ -92,9 +92,9 @@ requires the depth-3 partner (Chern–Simons) and is open.
 
 ### Cross-references
 
-- Keystone B1: [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+- Keystone B1: [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 - Depth-2 ID: [`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin)
 - Borel discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
-- Numerical witness: [`prop:bring-figure-eight-depth-2-witness`](#prop:bring-figure-eight-depth-2-witness)
+- Numerical witness: [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)
 - VC reframe: [`rem:vc-as-depth-2-instance`](#rem:vc-as-depth-2-instance)
 - Soft sharpness across all rows: [`prop:b1-soft-sharpness-theorem`](#prop:b1-soft-sharpness-theorem)

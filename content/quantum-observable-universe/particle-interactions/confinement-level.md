@@ -79,7 +79,7 @@ to express the closed-shell structure).*
 *Conjecturally the filtration $J^\bullet(q)$ coincides with the
 $\mathbb{Z}$-grading filtration on the corresponding KLR module
 under the Brundan–Kleshchev isomorphism — see
-[confinement–grading correspondence](#prop:confinement-grading-correspondence).
+[confinement–grading correspondence](#conj:confinement-grading-correspondence).
 This identifies the heuristic shadow-price ordering with a rigid
 homological grading and supplies a structural cutoff for the
 crystal-graph traversal that replaces S-polynomial overlap analysis.*

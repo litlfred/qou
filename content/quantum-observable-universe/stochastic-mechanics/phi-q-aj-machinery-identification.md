@@ -1,4 +1,4 @@
-**Proposition (conditional on [`prop:quantum-langlands-dual`](quantum-langlands-dual.md) + [`prop:dim-master-pentagon`](dim-master-pentagon.md)).**
+**Proposition (conditional on [`conj:quantum-langlands-dual`](quantum-langlands-dual.md) + [`conj:dim-master-pentagon`](dim-master-pentagon.md)).**
 
 *Let $K$ be a hyperbolic knot or link with cusp coordinates $(L, M)$ and quantum A-polynomial $\hat{A}_K \in \mathcal{A}_q$ (the q-Weyl algebra over $\mathbb{Z}[q^{\pm 1}]$). Then the $\Phi_q$ (Faddeev dilogarithm) and $\mathrm{Li}_2^q$ (Rogers dilogarithm) asymptotic regulators that appear in the framework's volume-conjecture and substrate-evaluation routes are **specific saddle-point regimes of the AJ-conjecture machinery** $\hat{A}_K \cdot J_N(K; q) = 0$. The identification is algebraic over $\mathbb{Z}[q^{\pm 1}]$ on both sides; the difference between $\Phi_q$ and $\mathrm{Li}_2^q$ contexts is the choice of archimedean saddle (real vs root-of-unity).*
 
@@ -21,7 +21,7 @@ is governed in the asymptotic by the geometric component of the classical A-poly
 - $\Phi_q$ = saddle-point regime of $\hat{A}_K \cdot J_N = 0$ at $q = e^{2\pi i / N}$ (root-of-unity asymptotic)
 - $\mathrm{Li}_2^q$ = saddle-point regime of $\hat{A}_K \cdot J_N = 0$ at $q \in (0, 1)$ (real asymptotic, via Stokes)
 
-The two regimes are related by the modular S-transform $q \leftrightarrow \tilde{q} = e^{2\pi i / \tau}$ ([`prop:modular-s-transform-q-q-tilde`](modular-s-transform-q-q-tilde.md), D14 in the duality tracker).
+The two regimes are related by the modular S-transform $q \leftrightarrow \tilde{q} = e^{2\pi i / \tau}$ ([`conj:modular-s-transform-q-q-tilde`](modular-s-transform-q-q-tilde.md), D14 in the duality tracker).
 
 ## Why this matters
 
@@ -45,7 +45,7 @@ Both theorems are **fully verified by Lean** modulo the three class instances. T
 
 ## Honest status
 
-**Conditional on [`prop:quantum-langlands-dual`](quantum-langlands-dual.md) + [`prop:dim-master-pentagon`](dim-master-pentagon.md)** because the full identification requires:
+**Conditional on [`conj:quantum-langlands-dual`](quantum-langlands-dual.md) + [`conj:dim-master-pentagon`](dim-master-pentagon.md)** because the full identification requires:
 
 1. AJ conjecture proved for $K$ (proved for many: 2-bridge knots, twist knots, most Rolfsen-table knots; status for 𝓑_3 specifically needs literature check — Hikami / Habiro)
 2. The Faddeev / Rogers identifications used in the framework match the literature's exactly (not just up to convention)

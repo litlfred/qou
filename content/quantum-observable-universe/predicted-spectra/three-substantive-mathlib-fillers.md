@@ -66,7 +66,7 @@ $$
 $$
 
 along $q \to 1, n \to \infty, n(1-q) \to \infty$ is the substantive
-content of [`prop:dilogarithm-archimedean-limit`](#prop:dilogarithm-archimedean-limit).
+content of [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit).
 This file adds:
 
 - `FaddeevKashaevQuasiClassicalLimit x` typeclass — surrogate for

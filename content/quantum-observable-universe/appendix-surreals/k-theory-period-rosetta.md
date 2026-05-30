@@ -2,7 +2,7 @@
 conjectural at depths $\geq 3$).**
 
 The graded-Mikusiński depth filtration
-([`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence))
+([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
 on the substrate convolution algebra $\mathcal{H}_q$ admits a
 K-theoretic description: the depth axis matches the Beilinson–Borel
 regulator on algebraic K-theory of the algebraic-number field of
@@ -41,7 +41,7 @@ equivalently, the part that detects "new" periods.)
 
 ### Why the dictionary is exact (heuristic)
 
-The keystone ([`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence))
+The keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
 asserts $\tau_{\mathrm{arch}}\bigl( G^{(n)}(\mathcal{H}_q) \bigr)
 \subseteq \mathcal{P}_n$. Under the Beilinson conjectures
 (Beilinson 1985), the Goncharov filtration $\mathcal{P}_\bullet$ is
@@ -69,7 +69,7 @@ relevant K-group is $K_{2n-1}^{\mathrm{ind}}(\mathbb{Q}(z_K))
 |---|---|---|
 | $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ | $K_3^{\mathrm{ind}}(\mathbb{Q}(\zeta_6)) \otimes \mathbb{Q}$ | hyperbolic 3-mfd $S^3 \setminus 4_1$ |
 | Catalan $G = \mathrm{Cl}_2(\pi/2)$ | $K_3^{\mathrm{ind}}(\mathbb{Q}(\zeta_4)) \otimes \mathbb{Q}$ | Bloch regulator at 4th root of unity |
-| $\mathrm{Cl}_3(2\pi/5)$, $S_3(2\pi/5)$ | $K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5)) \otimes \mathbb{Q}$ | open ([`prop:cl3-zeta5-geometric-realization`](#prop:cl3-zeta5-geometric-realization)) |
+| $\mathrm{Cl}_3(2\pi/5)$, $S_3(2\pi/5)$ | $K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5)) \otimes \mathbb{Q}$ | open ([`conj:cl3-zeta5-geometric-realization`](#conj:cl3-zeta5-geometric-realization)) |
 | $\zeta(3)$ | $K_5^{\mathrm{ind}}(\mathbb{Q}) \otimes \mathbb{Q}$ | Borel regulator on $\mathbb{Q}$ |
 
 ### What this adds to the paper
@@ -126,8 +126,8 @@ would overstate it.
 
 ### Cross-references
 
-- Keystone (depth = period): [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+- Keystone (depth = period): [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)
 - Bi-filtration framework: [`def:hq-bi-filtration`](#def:hq-bi-filtration)
-- Joint Galois $\times$ braid action: [`prop:joint-galois-braid-action`](#prop:joint-galois-braid-action)
-- Depth-3 realisation question: [`prop:cl3-zeta5-geometric-realization`](#prop:cl3-zeta5-geometric-realization)
+- Joint Galois $\times$ braid action: [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)
+- Depth-3 realisation question: [`conj:cl3-zeta5-geometric-realization`](#conj:cl3-zeta5-geometric-realization)

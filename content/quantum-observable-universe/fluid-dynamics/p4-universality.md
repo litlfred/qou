@@ -4,7 +4,7 @@
 [`prop:critical-exponent`](#prop:critical-exponent),
 [`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`prop:regularity-breakdown`](#prop:regularity-breakdown);
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "Universality of the critical exponent").**
 
 The [critical exponent](#prop:critical-exponent) $\alpha = 4/3$

@@ -5,7 +5,7 @@ export default remark({
   title:
     "Volume Conjecture as the depth-2 instance of GS $\\leftrightarrow$ period correspondence",
   interprets: "conj:kashaev-volume-conjecture",
-  uses: ["prop:gb-depth-period-correspondence"],
+  uses: ["conj:gb-depth-period-correspondence"],
   cites: [
     "kashaev1997",
     "murakami-murakami2001",

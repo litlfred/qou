@@ -4,7 +4,7 @@ export default remark({
   label: "rem:b1-current-status",
   title:
     "Canonical B1 current-status synthesis — what is theorem, what is open, after eleven rounds",
-  interprets: "prop:gb-depth-period-correspondence",
+  interprets: "conj:gb-depth-period-correspondence",
   uses: [
     "prop:b1-hyperbolic-rows-theorem",
     "prop:joint-galois-braid-discharged",

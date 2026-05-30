@@ -295,7 +295,7 @@ Yekutieli's picture:
   (word, grade, jet-position) triples per term.
 
 The jet-convergence result
-([prop:jet-convergence-classical-limit](#prop\:jet-convergence-classical-limit))
+([conj:jet-convergence-classical-limit](#prop\:jet-convergence-classical-limit))
 shows that the jet tower converges to the classical limit as
 $q \to 1$, confirming the finite-slice picture is algebraically
 consistent with the semiclassical approximation.
@@ -350,7 +350,7 @@ $$
 
 where $\rho \in \mathbb{Z}_{>0}$ is the SDP multiplicity of $T_w$'s
 Wedderburn solution, $\mathrm{tower}(T_w)$ is the brane-tower
-correction ([prop:brane-tower-z-habiro](#conj\:brane-tower-z-habiro)),
+correction ([conj:brane-tower-z-habiro](#conj\:brane-tower-z-habiro)),
 and $\mathrm{tr}_M(C_{\dim_q})$ is the Frobenius co-Casimir trace
 ([thm:frobenius-codim-universal](#thm\:frobenius-codim-universal)).
 
@@ -382,7 +382,7 @@ extends the identification to $A \leq 60$.
 **canonical knot identification for $^2$H, $^3$H, $^3$He**
 from first principles (without matching to historical hyperbolic
 volumes) is an open problem
-([prop:canonical-knot-id-sdp](#conj\:canonical-knot-id-sdp)).
+([conj:canonical-knot-id-sdp](#conj\:canonical-knot-id-sdp)).
 
 ***
 

@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:borromean-quark",
+export default conjecture({
+  label: "conj:borromean-quark",
   title:
     "Quarks as Borromean-linked unknots in the exceptional divisor",
   lean: {

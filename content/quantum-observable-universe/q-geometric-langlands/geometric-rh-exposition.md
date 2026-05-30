@@ -90,4 +90,4 @@ chain of implications is the geometric hammer that enforces the quantum
 Riemann hypothesis at the $q$-scale. Whether this local rigidity
 survives the classical limit $q \to 1$ is precisely the content of the
 classical Riemann hypothesis
-([Conjecture](#prop:classical-riemann-hypothesis)).
+([Conjecture](#conj:classical-riemann-hypothesis)).

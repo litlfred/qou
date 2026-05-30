@@ -1,5 +1,5 @@
 The [algebraic independence
-conjecture](#prop:hyperbolic-volume-transcendence) is falsifiable
+conjecture](#conj:hyperbolic-volume-transcendence) is falsifiable
 against five classes of physical data.  Under independence
 ([mathematical and categorical consequences](#rem:implications-algebraic-independence)),
 each class should behave as follows.

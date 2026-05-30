@@ -10,7 +10,7 @@ any $n$ via a structural bar-eigenspace argument.*
 
 For every partition $\lambda$ (of any $n \geq 1$), the iterated-
 integral depth predicted by the two-filtration bridge conjecture
-([`prop:two-filtration-bridge`](#prop:two-filtration-bridge))
+([`conj:two-filtration-bridge`](#conj:two-filtration-bridge))
 depends only on the **bar-class** of $\lambda$:
 
 $$
@@ -122,7 +122,7 @@ $H_n(q)$.
 
 ### Cross-references
 
-- Bridge conjecture: [`prop:two-filtration-bridge`](#prop:two-filtration-bridge)
+- Bridge conjecture: [`conj:two-filtration-bridge`](#conj:two-filtration-bridge)
 - Small-cases verification: [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
 - Chirality structure: [`rem:chirality-period-pairing`](#rem:chirality-period-pairing)
 - Joint action discharge: [`prop:joint-galois-braid-discharged`](#prop:joint-galois-braid-discharged)

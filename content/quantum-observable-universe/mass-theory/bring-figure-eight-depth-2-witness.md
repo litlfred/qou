@@ -7,7 +7,7 @@ Bring's genus-4 surface
 equals the standard-part of $2\,\mathrm{Im}\,\mathrm{Li}_2^q$ at the
 regular-ideal-tetrahedron shape parameter $z = e^{i\pi/3}$ — the
 depth-2 grouplike value predicted by
-[`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence):*
+[`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence):*
 
 $$
   \mathrm{Vol}(S^3 \setminus 4_1)
@@ -72,7 +72,7 @@ the paper are consistent with the depth-2 reading:
 **Numerically discharged at 50 digits via mpmath** (witness above).
 **Conjectural** as a structural identification of *the* depth-2
 grouplike value with Vol(4_1), conditional on
-[`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence).
+[`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence).
 The witness rules out coarse numerical drift to relative precision
 $\sim 10^{-37}$.
 
@@ -101,4 +101,4 @@ requires either (a) a trilog $\mathrm{Li}_3$ at an algebraic argument,
 volume $\mathrm{CS} + i\,\mathrm{Vol} \in \mathbb{C}/\pi^2\mathbb{Z}$),
 or (c) a multiple zeta value such as $\zeta(3)$. The Bring-natural
 choice is (a) at the primitive 5th root of unity $\zeta_5$ — see
-[`prop:bring-trilog-depth-3-witness`](#prop:bring-trilog-depth-3-witness).
+[`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness).

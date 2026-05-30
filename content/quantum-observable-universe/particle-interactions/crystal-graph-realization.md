@@ -38,7 +38,7 @@ formalising the GS reduction order inside the KLR diagrammatic
 calculus.*
 
 **Status.**
-*Used by [confinement–grading correspondence](#prop:confinement-grading-correspondence)
+*Used by [confinement–grading correspondence](#conj:confinement-grading-correspondence)
 to upgrade the heuristic confinement filtration to a $\mathbb{Z}$-graded
 KLR shift, and by
 [cemetery-group emergence](#conj:cemetery-group-emergence) to

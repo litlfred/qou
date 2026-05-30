@@ -17,7 +17,7 @@ than the original conjecture. Proved in*
 
 **Original conjecture (now classified as empirical only):**
 *The Borromean baryon $\lambda_{\mathrm{scale}}$ in*
-([conj:borromean-baryon-mass-formula](#prop:borromean-baryon-mass-formula))
+([conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula))
 *was hypothesised to equal $5/2 - h^2 \cdot G + O(h^4)$ where
 $G = \mathrm{Vol}(\mathcal{B}_3)/8$ is Catalan's constant. This
 empirical match is recorded for historical reference:*
@@ -166,7 +166,7 @@ The neutron is **structurally consistent** under the same
 common-substrate hypothesis: $\lambda_n = \lambda_p$ shared, with
 $\Delta m_{pn} = 1.293\;\mathrm{MeV}$ arising entirely from the
 Skein contribution $S(n) - S(p)$
-([conj:borromean-baryon-mass-formula](#prop:borromean-baryon-mass-formula)
+([conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula)
 common-scale hypothesis).
 
 ## Comparison with the FSC derivation pattern

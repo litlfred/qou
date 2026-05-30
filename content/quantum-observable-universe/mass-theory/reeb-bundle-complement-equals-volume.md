@@ -1,5 +1,5 @@
 **Proposition (conditional on
-[`prop:mass-volume-factorization`](#prop:mass-volume-factorization)).**
+[`conj:mass-volume-factorization`](#conj:mass-volume-factorization)).**
 *Let $\mathcal{R}_p \cong S^3$ be the Reeb bundle over the
 exceptional divisor at brane point $p$
 ([Reeb bundle](#def:reeb-bundle)).  For a braid
@@ -30,7 +30,7 @@ density determined by the local Wedderburn profile.*
 
 This is the **Reeb-bundle face** of the existing mass-volume
 factorisation conjecture
-([mass-volume factorization](#prop:mass-volume-factorization)).
+([mass-volume factorization](#conj:mass-volume-factorization)).
 It packages the same equality with the geometric arena made
 explicit: the categorical observable is computed *inside* the
 Reeb bundle, and the right-hand side is the hyperbolic volume of
@@ -38,7 +38,7 @@ Reeb bundle, and the right-hand side is the hyperbolic volume of
 
 **Why this is conditional, not a new conjecture.**  All
 substantive content beyond
-[mass-volume factorization](#prop:mass-volume-factorization)
+[mass-volume factorization](#conj:mass-volume-factorization)
 is already established:
 
 1. *Localisation in the Reeb bundle* — every Hecke generator
@@ -54,7 +54,7 @@ is already established:
    braid words.
 
 3. *Volume = trace* — this is exactly
-   [mass-volume factorization](#prop:mass-volume-factorization),
+   [mass-volume factorization](#conj:mass-volume-factorization),
    taken as the class hypothesis here.
 
 The proposition adds **no new conjectural content**; its purpose
@@ -80,7 +80,7 @@ chapters.
   Gieseking–Meyerhoff constant — giving the published
   ${}^3\mathrm{He}$, ${}^4\mathrm{He}$ Borromean binding
   predictions of
-  [mass-volume factorization](#prop:mass-volume-factorization))
+  [mass-volume factorization](#conj:mass-volume-factorization))
   ([hyperbolic-knot positive volume via Reeb](#rem:hyperbolic-knot-positive-volume-via-reeb)).
 
 - The Φ_q–JSJ archimedean bridge

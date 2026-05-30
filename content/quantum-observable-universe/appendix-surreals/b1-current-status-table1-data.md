@@ -15,9 +15,9 @@
 | **Jones-faithfulness $\le$ 10 crossings** | **theorem** | [`rem:jones-faithfulness-crossing-8`](#rem:jones-faithfulness-crossing-8) (HTW 1998) |
 | **B1 chiral hyperbolic rows** ($5_2, 6_2, 6_3$, $\ldots$) | **conditional theorem** modulo per-knot VC | open knot-by-knot |
 | **Cl_3(2π/5) − Cl_3(4π/5) closed form** | **open** — single real number $\approx$ 0.955 | reflection + multiplication formulas exhausted |
-| **Strong sharpness, depth 3 over $\mathbb{Q}(\zeta_5)$** | **conditional** on Goncharov $\zeta_5$ sub-case | [`prop:qou-infra-discharges-goncharov-zeta5`](#prop:qou-infra-discharges-goncharov-zeta5) (Avenue A or B, ~1-2 weeks) |
+| **Strong sharpness, depth 3 over $\mathbb{Q}(\zeta_5)$** | **conditional** on Goncharov $\zeta_5$ sub-case | [`conj:qou-infra-discharges-goncharov-zeta5`](#conj:qou-infra-discharges-goncharov-zeta5) (Avenue A or B, ~1-2 weeks) |
 | **Strong sharpness, depth $\ge$ 3 over arbitrary $F$** | **conjectural** | Beilinson + Goncharov (external) |
 | **Strong sharpness, depth $\ge$ 4** | **conjectural** | Beilinson + Goncharov (external) |
-| **Geometric realisation of Cl_3(2π/5)** | **open**, 3 candidates | [`prop:cl3-zeta5-geometric-realization`](#prop:cl3-zeta5-geometric-realization) |
+| **Geometric realisation of Cl_3(2π/5)** | **open**, 3 candidates | [`conj:cl3-zeta5-geometric-realization`](#conj:cl3-zeta5-geometric-realization) |
 | **Bridge map at $n \geq 5$ partitions** | **open** | extends the bar-class argument |
 | **Lean substantive proofs** | **partial** (sorry pending Mathlib's IwahoriHecke API) | scaffolding in `qou:` namespace |

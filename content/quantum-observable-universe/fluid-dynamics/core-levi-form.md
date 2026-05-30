@@ -4,7 +4,7 @@
 [`prop:critical-exponent`](#prop:critical-exponent),
 [`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`prop:regularity-breakdown`](#prop:regularity-breakdown);
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "Core Levi form").**
 
 Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in

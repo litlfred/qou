@@ -7,7 +7,7 @@ export default conjecture({
   lean: { ref: "qou:QOU.BraidKnot.CemeteryGroupEmergence", validation: "stub" },
   uses: [
     "def:cemetery-group",
-    "prop:crystal-graph-realization",
+    "conj:crystal-graph-realization",
     "conj:gs-spectral-sum-finite",
   ],
   cites: [

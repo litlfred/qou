@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:mass-volume-factorization",
+export default conjecture({
+  label: "conj:mass-volume-factorization",
   title:
     "Mass-volume factorization of the categorical mass endomorphism",
   tags: [

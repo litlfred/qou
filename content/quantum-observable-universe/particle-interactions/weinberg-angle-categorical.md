@@ -3,7 +3,7 @@
 generic (not a root of unity in $R$, $q \neq 1$). Under the
 Hoefsmit cell-content identification of the EW triplet inside
 $\mathrm{End}_R(V^{\otimes 6})$
-([`prop:hoefsmit-ew-cell-content`](#prop:hoefsmit-ew-cell-content)):
+([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)):
 $W \leftrightarrow \sigma_1^4$, $Z \leftrightarrow \sigma_3^6$,
 $H \leftrightarrow \sigma_5^8$, the Standard Model **Weinberg
 angle** $\theta_W$ is the categorical scalar in $R$ given by*
@@ -87,7 +87,7 @@ the CODATA target 1.823.
 This discrepancy confirms that the **simple uniform-multiplicity
 reading is wrong** (consistent with the cell-content / Plancherel
 demotion in
-[`prop:hoefsmit-ew-cell-content`](#prop:hoefsmit-ew-cell-content)).
+[`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).
 A correct categorical derivation must:
 
 1. Use the **non-uniform** pure-pattern multiplicities
@@ -95,7 +95,7 @@ A correct categorical derivation must:
    simple multiplicity factors;
 2. Account for the **interaction** between $W^3$ and $B$ slots
    via the categorical-linking operation
-   ([`prop:categorical-linking-operation`](#prop:categorical-linking-operation));
+   ([`conj:categorical-linking-operation`](#conj:categorical-linking-operation));
 3. Possibly weight the trace by the **Higgs vacuum-expectation-
    value** that drives the $\theta_W$ rotation in the Standard
    Model.
@@ -122,9 +122,9 @@ this automorphism's restriction to the $(W^3, B)$ subspace.
 the simple-multiplicity reading numerically fails. To promote
 to a `proposition`, the authoring sequence is:
 
-1. Discharge [`prop:categorical-linking-operation`](#prop:categorical-linking-operation)
+1. Discharge [`conj:categorical-linking-operation`](#conj:categorical-linking-operation)
    first — needed to formalise the $W^3$–$B$ interaction.
-2. Discharge [`prop:hoefsmit-ew-cell-content`](#prop:hoefsmit-ew-cell-content)
+2. Discharge [`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)
    structural assignment (which slot is $W^3$ vs $B$).
 3. Compute $\cos\theta_W, \sin\theta_W$ from the corrected
    Hoefsmit-projector traces (using non-uniform multiplicities

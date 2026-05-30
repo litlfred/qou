@@ -1,5 +1,5 @@
 **Proposition (conditional on
-[`prop:borromean-baryon-mass-formula`](#prop:borromean-baryon-mass-formula)
+[`conj:borromean-baryon-mass-formula`](#conj:borromean-baryon-mass-formula)
 — half-symmetric $H_4$ projection extracts one octahedral cell via
 $S_4 \downarrow S_3$ branching).**
 *The half-symmetric Wedderburn projection on $H_4(q)$, further

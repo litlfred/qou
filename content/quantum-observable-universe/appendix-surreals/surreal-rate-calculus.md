@@ -39,7 +39,7 @@ invariant of the substrate, independent of normalization conventions.
 [`prop:critical-exponent`](#prop:critical-exponent),
 [`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`prop:regularity-breakdown`](#prop:regularity-breakdown);
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "Surreal rate calculus").** *In $\mathbb{R}(\varepsilon)$,
 the following strict inequalities hold:*
 

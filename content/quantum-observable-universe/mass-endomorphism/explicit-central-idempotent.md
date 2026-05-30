@@ -85,7 +85,7 @@ this gives a complete explicit construction of $Z(H_n(q))$.*
 
 $e_\lambda$ is the **explicit, computable, named generator** of
 the period class associated with cell $\lambda$. Combined with
-[`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+[`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 and [`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic):
 
 $$
@@ -105,7 +105,7 @@ $$
 $$
 
 (verified numerically in
-[`prop:bring-figure-eight-depth-2-witness`](#prop:bring-figure-eight-depth-2-witness)).
+[`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)).
 
 ### Provenance
 

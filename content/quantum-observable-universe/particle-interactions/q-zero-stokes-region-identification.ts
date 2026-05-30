@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:q-zero-stokes-region-identification",
+export default conjecture({
+  label: "conj:q-zero-stokes-region-identification",
   title:
     "Substrate $q_0$ identification via Stokes region of the generating function (over $\\mathbb{Z}[q, q^{-1}]$)",
   lean: {

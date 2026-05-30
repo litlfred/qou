@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:algebraic-geometric-dilog-equivalence",
+export default conjecture({
+  label: "conj:algebraic-geometric-dilog-equivalence",
   title:
     "Algebraic-geometric dilogarithm equivalence: $\\Phi_n(x; q)$ poles map to ideal-tetrahedron cusps",
   lean: {
@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:dilogarithm-archimedean-limit",
+    "conj:dilogarithm-archimedean-limit",
     "rem:quantum-bloch-group",
   ],
   cites: [

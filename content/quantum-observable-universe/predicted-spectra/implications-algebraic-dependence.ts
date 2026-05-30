@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:hyperbolic-volume-transcendence",
+  interprets: "conj:hyperbolic-volume-transcendence",
   label: "rem:implications-algebraic-dependence",
   title:
     "Implications if the QOU volumes are algebraically dependent",

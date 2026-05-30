@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:gs-residue-at-root-existence",
+export default conjecture({
+  label: "conj:gs-residue-at-root-existence",
   title:
     "Existence of the cyclotomic residue at each filtration level",
   lean: {
@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:gs-graded-markov-trace-existence",
+    "conj:gs-graded-markov-trace-existence",
     "def:habiro-ring",
   ],
   computation: {

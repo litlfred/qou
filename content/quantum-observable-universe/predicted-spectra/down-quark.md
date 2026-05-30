@@ -1,7 +1,7 @@
 The **down quark** is an unknot (neutrino) localized in a coral
 tube with **negative crossing orientation** within the
 Borromean link $\mathcal{B}_3$
-([Borromean quark conjecture](#prop:borromean-quark)).
+([Borromean quark conjecture](#conj:borromean-quark)).
 
 $$
   \mathfrak{d} =  \nu \big|_{\mathcal{B}_3, -}

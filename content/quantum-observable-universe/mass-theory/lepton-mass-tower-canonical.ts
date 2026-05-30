@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:lepton-mass-tower-canonical",
+export default conjecture({
+  label: "conj:lepton-mass-tower-canonical",
   lean: {
     ref: "qou:QOU.BraidKnot.LeptonMassTowerCanonical.lepton_mass_ratio",
     validation: "not_checked",

@@ -6,7 +6,7 @@ export default prose({
   uses: [
     "prop:chirality-writhe-ribbon-derivation",
     "prop:x5-bring-weight-identification",
-    "prop:canonical-knot-id-sdp",
+    "conj:canonical-knot-id-sdp",
   ],
   tags: [
     "derivation-chain",

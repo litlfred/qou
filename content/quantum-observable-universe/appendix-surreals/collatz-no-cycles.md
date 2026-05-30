@@ -4,7 +4,7 @@
 [`prop:critical-exponent`](#prop:critical-exponent),
 [`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
 and
-[`prop:regularity-breakdown`](#prop:regularity-breakdown);
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "no periodic Collatz cycles").**
 The Skein-Collatz map $\mathcal{C}_q$ on
 $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$

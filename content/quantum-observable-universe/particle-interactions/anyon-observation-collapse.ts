@@ -1,12 +1,12 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:hecke-anyonic-substrate",
+  interprets: "conj:hecke-anyonic-substrate",
   label: "rem:anyon-observation-collapse",
   title:
     "Anyon ladder: generic $q$ ↔ root-of-unity ↔ $q \\to 1$",
   uses: [
-    "prop:root-of-unity-mtc-truncation",
+    "conj:root-of-unity-mtc-truncation",
     "conj:kazhdan-lusztig-classical-limit",
   ],
   tags: [

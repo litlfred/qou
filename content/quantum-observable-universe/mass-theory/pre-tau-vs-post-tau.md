@@ -51,7 +51,7 @@ poles of the quantum dilogarithm $\Phi_q$ algebraically — as
 quotients of cyclotomic ideals — rather than as divergent
 analytic limits. Under $\tau_{\mathrm{arch}}$ these algebraic
 poles realise as the cusps of the hyperbolic triangulation
-([pole-to-cusp bijection](#prop:algebraic-geometric-dilog-equivalence)).
+([pole-to-cusp bijection](#conj:algebraic-geometric-dilog-equivalence)).
 
 **Self-check.** When writing or reviewing an encounter-side
 derivation, ask:

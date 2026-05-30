@@ -174,6 +174,7 @@ export default chapter({
         "he4-two-row-dominance",
         "markov-trace-frobenius-selection",
         "pn-averaging-uniqueness",
+        "averaging-resonance-rule",
         "meson-color-tube-uniqueness",
         "bring-residue-resolvent",
         "binding-alpha-shift-extension",

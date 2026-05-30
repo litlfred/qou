@@ -11,7 +11,7 @@ export default proposition({
   uses: [
     "prop:jucys-murphy-central-elements-qou",
     "prop:hecke-baer-star-generic",
-    "prop:bring-figure-eight-depth-2-witness",
+    "conj:bring-figure-eight-depth-2-witness",
   ],
   cites: [],
   tags: [

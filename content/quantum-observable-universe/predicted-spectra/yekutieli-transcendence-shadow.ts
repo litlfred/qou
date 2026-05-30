@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:hyperbolic-volume-transcendence",
+  interprets: "conj:hyperbolic-volume-transcendence",
   label: "rem:yekutieli-transcendence-shadow",
   title:
     "Algebraic independence as the transcendence shadow of non-vanishing Yekutieli obstructions",

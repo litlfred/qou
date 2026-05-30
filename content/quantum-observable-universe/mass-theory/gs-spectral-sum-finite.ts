@@ -8,7 +8,7 @@ export default conjecture({
     ref: "qou:QOU.BraidKnot.spectral_sum_finite",
     validation: "not_checked",
   },
-  uses: ["prop:gs-residue-at-root-existence"],
+  uses: ["conj:gs-residue-at-root-existence"],
   tags: [
     "gs-filtration",
     "spectral-sequence",

@@ -47,7 +47,7 @@ remainder:
 The **categorical trace** $\tau(\beta_{\mathfrak{H}})$ is the
 common invariant; the brane-tower formula contributions beyond
 $|\tau(\beta_{\mathfrak{H}})|$ (the "transient tower" component of
-[`prop:brane-tower-z-habiro`](#prop:brane-tower-z-habiro)) are
+[`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)) are
 convention-dependent regularizations of a divergent analytic
 object, and their differences must therefore cancel into the same
 $\Delta_{\mathrm{cat}}$ value.
@@ -99,7 +99,7 @@ $\tau$ value on a given $\beta$.
 
 **Step 2: All probed conventions respect $\tau$.**  Each of the
 six brane-tower convention families probed in
-[`prop:brane-tower-z-habiro`](#prop:brane-tower-z-habiro) §"Closure"
+[`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro) §"Closure"
 (scalar uniform-$k$, $\ell n_0 + k$, per-eigenvalue operator-valued,
 multiplicity / Type-B-fold, pair-knot product-volume, pair-knot
 Markov-trace) is a regularization of the divergent analytic $\Phi_q$

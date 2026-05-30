@@ -8,8 +8,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:quantum-langlands-dual",
-    "prop:dim-master-pentagon",
+    "conj:quantum-langlands-dual",
+    "conj:dim-master-pentagon",
   ],
   cites: [
     "garoufalidis2004",

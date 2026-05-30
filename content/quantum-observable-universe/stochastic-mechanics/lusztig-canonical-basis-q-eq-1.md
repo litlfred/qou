@@ -74,9 +74,9 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 - D12 (Kashiwara $q \to 0$):
   [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy)
 - D13 (reverse $q \to \infty$):
-  [`prop:reverse-limit-q-to-infinity`](reverse-limit-q-to-infinity.md)
+  [`conj:reverse-limit-q-to-infinity`](reverse-limit-q-to-infinity.md)
 - D9 (isospin classical limit):
-  [`prop:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md)
+  [`conj:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md)
 - Upstream conjecture:
   [`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)
 - [Kazhdan–Lusztig 1979; Lusztig 1990; Kashiwara 1991]

@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:joint-galois-braid-action",
+export default conjecture({
+  label: "conj:joint-galois-braid-action",
   title:
     "Joint motivic-Galois $\\times$ braid-group action on the bi-filtration $\\mathcal{H}_q^{(n, K)}$",
   lean: { ref: "qou:QOU.BraidKnot.JointGaloisBraidAction", validation: "stub" },

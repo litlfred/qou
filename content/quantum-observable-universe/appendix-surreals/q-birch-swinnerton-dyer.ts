@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:q-birch-swinnerton-dyer",
+export default conjecture({
+  label: "conj:q-birch-swinnerton-dyer",
   title:
     "The $q$-deformed Birch and Swinnerton-Dyer conjecture",
   lean: { ref: "qou:QOU.AppendixSurreals.QBirchSwinnertonDyer", validation: "stub" },

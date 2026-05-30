@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:poincare-lefschetz-borromean",
+export default conjecture({
+  label: "conj:poincare-lefschetz-borromean",
   title:
     "Poincaré–Lefschetz duality on Borromean complement — cohomology ↔ homology of manifold-with-cusps",
   lean: {
@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:borromean-bloch-group-element",
+    "conj:borromean-bloch-group-element",
     "prop:reeb-bundle-complement-equals-volume",
   ],
   cites: [

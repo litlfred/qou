@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "prop:reverse-limit-q-to-infinity",
+    "conj:reverse-limit-q-to-infinity",
     "conj:kazhdan-lusztig-classical-limit",
   ],
   cites: [

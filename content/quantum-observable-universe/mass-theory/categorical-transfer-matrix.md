@@ -134,7 +134,7 @@ Under the Brundan–Kleshchev isomorphism
 Gröbner–Shirshov filtration $J^\bullet(q)$ structurally categorifies
 to the identification of a **Lusztig canonical-basis vector** in the
 KLR module category $\mathcal{K}_n$
-([crystal-graph realisation](#prop:crystal-graph-realization)): the
+([crystal-graph realisation](#conj:crystal-graph-realization)): the
 equivalence class $\mathcal{T}(\mathfrak{H})$ corresponds to an
 indecomposable graded projective KLR module, and its eigenvalue
 $\hat{V}(T, q)$ is the graded Euler characteristic of that module

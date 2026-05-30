@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:crystal-graph-realization",
+    "conj:crystal-graph-realization",
     "prop:content-scaling-correspondence",
     "prop:spin-involution-lp-dual-invariance",
   ],

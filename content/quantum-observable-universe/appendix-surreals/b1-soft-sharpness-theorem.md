@@ -1,7 +1,7 @@
 **Proposition (soft sharpness of the keystone B1 is theorem-level
 — via Borel + polylog non-vanishing).**
 
-The keystone [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+The keystone [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 ("B1") asserts an *inclusion* $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$
 plus a *sharpness* condition. The sharpness condition admits **two
 formulations**:
@@ -118,7 +118,7 @@ the former is unconditional.
 
 ### Cross-references
 
-- Keystone B1: [`prop:gb-depth-period-correspondence`](#prop:gb-depth-period-correspondence)
+- Keystone B1: [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
 - Depth-2 strong identification (theorem): [`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin)
 - K-theory bridge: [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)

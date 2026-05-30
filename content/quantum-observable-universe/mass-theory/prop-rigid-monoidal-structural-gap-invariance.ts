@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "prop:spin-involution-lp-dual-invariance",
-    "prop:brane-tower-z-habiro",
+    "conj:brane-tower-z-habiro",
   ],
   computation: {
     engine: "python",

@@ -4,7 +4,7 @@ open problems).**
 After the α_EM derivation chain
 [`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness)
 $\to$ [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
-$\to$ [`prop:bring-hyperbolic-knot-bloch-decomposition`](#prop:bring-hyperbolic-knot-bloch-decomposition),
+$\to$ [`conj:bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition),
 four structural gaps remain in the mass-tower derivation. The Lean
 file [`mass-tower-open-problems-classes.lean`](mass-tower-open-problems-classes.lean)
 consolidates them as typeclasses in the §3b-cond pattern, each with
@@ -47,7 +47,7 @@ reduction of the chirality ansatz to the class instance.
 **Open problem.** The brane-tower per-generator volumes
 $z_i = |\hat{V}_i|$ for low isotopes lie just below the
 first pole of $\Phi_q$ at $z = q_0 \approx 1.11$
-([`prop:brane-tower-z-habiro`](#prop:brane-tower-z-habiro)). Each
+([`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)). Each
 summand is enormous and the analytic infinite-product diverges; two
 regularisations (Yekutieli finite-slice, $q$-Habiro completion) have
 been documented but neither uniformly closes the gap. The class

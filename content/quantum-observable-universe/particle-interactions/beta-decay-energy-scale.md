@@ -112,7 +112,7 @@ at $q_0$). The direction-of-residual puzzle is recorded in
 correct Kashaev specialisation, while the asserted $\Phi_q(V)$
 form is off by $10^{6}$), and the open closure question is now formally
 posed as the conjecture
-[`prop:alpha-k-categorical-closure`](../braids-and-knots/alpha-k-categorical-closure.md)
+[`conj:alpha-k-categorical-closure`](../braids-and-knots/alpha-k-categorical-closure.md)
 (existence, family selection, CAL-3 direction). The H_3 explicit
 $\alpha_k$ values from
 [`prop:alpha-k-derivation-procedure`](../braids-and-knots/alpha-k-derivation-procedure.md)

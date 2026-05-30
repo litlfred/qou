@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:quantum-langlands-dual",
+export default conjecture({
+  label: "conj:quantum-langlands-dual",
   title:
     "Quantum Langlands duality — $H_n(q)$ ↔ $H_n(q^{-1})$ via Cartan folding (Type $A_{n-1}$ ↔ ${}^L\\!A_{n-1}$)",
   lean: {
@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "conj:type-b-folding-cpt",
-    "prop:reverse-limit-q-to-infinity",
+    "conj:reverse-limit-q-to-infinity",
   ],
   cites: [
     "macdonald1971",

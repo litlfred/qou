@@ -149,14 +149,14 @@ variable {R : Type*} [CommRing R] (q : R) (h z : R)
 
 /-- The conjectural lepton mass formula. -/
 noncomputable def lepton_mass_ratio (ℓ : LeptonType) : R := sorry
-  -- Ref: [manuscript] prop:lepton-mass-tower-canonical
+  -- Ref: [manuscript] conj:lepton-mass-tower-canonical
 
 /-- Im(q) robustness at leading order. -/
 theorem lepton_mass_ratio_im_q_invariant
     {R : Type*} [Field R] [Invo R] (q : R)
     (ℓ : LeptonType) :
     lepton_mass_ratio q ℓ = lepton_mass_ratio (conj q) ℓ := by
-  sorry  -- Ref: [manuscript] prop:lepton-mass-tower-canonical, property 1
+  sorry  -- Ref: [manuscript] conj:lepton-mass-tower-canonical, property 1
 
 end QOU.BraidKnot.LeptonMassTowerCanonical
 ```

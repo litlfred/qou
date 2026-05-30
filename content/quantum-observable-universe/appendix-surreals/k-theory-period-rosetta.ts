@@ -5,7 +5,7 @@ export default remark({
   title:
     "K-theory $\\leftrightarrow$ depth filtration Rosetta: Beilinson regulator matches iterated-integral grading on $\\mathcal{H}_q$",
   interprets: "rem:transcendental-accounting",
-  uses: ["prop:cl3-zeta5-geometric-realization"],
+  uses: ["conj:cl3-zeta5-geometric-realization"],
   cites: ["bloch2000", "kontsevich1995", "zagier1986"],
   tags: [
     "k-theory",

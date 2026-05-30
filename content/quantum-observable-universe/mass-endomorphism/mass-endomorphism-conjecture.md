@@ -272,7 +272,7 @@ closes the gap:*
  $\pi_n^{(z)}$ that act as structural truncations at depth $n$,
  replacing Yekutieli's ad-hoc cutoff with a quotient by a
  structural ideal. The* [conjecture that the brane tower lives in
- this ring](#prop:brane-tower-z-habiro) *has two independent claims:
+ this ring](#conj:brane-tower-z-habiro) *has two independent claims:
  (a) the algebraic Cauchy-limit (the partial sums converge in the
  $z$-Habiro topology), and (b) the existence of a canonical
  level-selection rule $n_\star(\mathfrak{H})$ derivable from
