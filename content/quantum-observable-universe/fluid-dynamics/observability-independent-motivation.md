@@ -33,6 +33,7 @@ whether the physical brane carries one. The CR structure of
 Bring's surface is strictly pseudoconvex (Levi form positive
 definite), which is stronger than mere non-degeneracy. This is
 a property of the specific manifold, not an assumption about NS.
+Cf.\ \cite{nicolaescu2005, leitner-2018}.
 
 **3. Tannaka--Krein reconstruction.**
 The fibre functor $\tau$ reconstructs $A$ as a Hopf algebra via

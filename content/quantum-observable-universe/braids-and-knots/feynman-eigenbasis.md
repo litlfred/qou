@@ -57,7 +57,7 @@ Frobenius--Hopf object, $\Delta$ and $\int_A$ are morphisms in the
 category, and the trace is the categorical trace of a rigid monoidal
 category.  No regularisation is required because the sum is over the
 finitely many irreducible summands of $V^{\otimes n}$, not over a
-continuum of paths.
+continuum of paths. Cf.\ \cite{stolz-teichner-2012}.
 
 The connection to the skein-based mass calculation of
 [Chapter 6](#chap:brings-surface) is then as follows.  The skein relation
