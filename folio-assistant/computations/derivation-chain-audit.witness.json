@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T02:39:30.104965+00:00",
-  "commitSha": "4510bcfb928c15549648d2967e25389c61cd64de",
+  "computedAt": "2026-05-30T03:02:20.878736+00:00",
+  "commitSha": "abca0cc9e5ee4b8cc8228fd559489422be445e34",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2557,6 +2557,8 @@
         "meson-3x4-structural-origin.witness.json",
         "meson-character-shortcut-l1.witness.json",
         "meson-eigenvalue-analysis.witness.json",
+        "meson-em-residual-alpha-em.witness.json",
+        "meson-em-sinh-closed-form.witness.json",
         "meson-eta-phi-gmor.witness.json",
         "meson-fusion-why34-em-residual.witness.json",
         "meson-geom-full.witness.json",
