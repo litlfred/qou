@@ -2,6 +2,11 @@
 
 - Cavendish-type torsion balance experiments (e.g. Eot-Wash group).
 - Casimir force measurements at micrometre scales.
+  See [`conj:casimir-epsilon-vacuum`](../appendix-surreals/casimir-epsilon-vacuum.md)
+  for the QOU prediction: the textbook
+  $F_{\text{Cas}}/A \approx -\pi^{2}\hbar c/(240\, d^{4})$ is the
+  standard-part of an $\omega \cdot \varepsilon$ surreal product
+  under the $\varepsilon$-relaxed vacuum axiom.
 - Neutron interferometry (gravity resonance spectroscopy).
 
 **Planned observations.**
