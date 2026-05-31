@@ -428,18 +428,27 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | 4/7 met (m_p, m_μ, m_e, m_K/m_π) — see `per-observable-100x-status.witness.json`; the 3 failing observables (Q_β, m_n, Δ_pn) share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | 3/7 met (m_p, m_e, m_K/m_π) — see `per-observable-100x-status.witness.json` (fresh run 2026-05-31); the 4 missing observables (m_μ, Q_β, m_n, Δ_pn) — note **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
 - **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
   can still miss its 100× experimental target by 10⁴ (L2 missed).
 - **L2 is variable per observable.** Q_β target is 7.8 ppb; currently
-  measured at 1247 ppb (159.9× miss) per the dashboard — the Habiro-
-  exact 5.7 ppb result was against the pre-re-pin (muon-anchored) q₀
-  and has not been refreshed since the 2026-05-28 proton-anchor re-pin
+  measured at 1279 ppb (164.0× miss) per the dashboard (fresh run
+  2026-05-31) — the Habiro-exact 5.7 ppb result was against the
+  pre-re-pin (muon-anchored) q₀ and has not been refreshed since the
+  2026-05-28 proton-anchor re-pin
   (see [`docs/audits/2026-05-30-q0-repin-stale-witness-audit.md`](docs/audits/2026-05-30-q0-repin-stale-witness-audit.md)).
   Absolute m_p target is 3 ppt (research-grade, below CAL-2 floor).
+- **m_μ is no longer a met goal (2026-05-31 correction).** Before the
+  2026-05-28 proton-anchor re-pin, m_μ was the q₀ *anchor* (err ≈ 0).
+  Post-re-pin it is a *prediction* (m_e × (m_μ/m_e)_CODATA) and misses
+  the 100× target by **963.6×** (209.8 ppb vs 0.2177 ppb target) per
+  the dashboard. An earlier version of this table listed "4/7 met
+  (… m_μ …)"; that was stale (the q0-repin staleness class). The
+  authoritative count is **3/7**, verified by a fresh
+  `per_observable_100x_status.py` run on 2026-05-31.
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
