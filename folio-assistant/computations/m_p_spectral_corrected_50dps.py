@@ -150,6 +150,16 @@ def main() -> int:
         unit="ppm",
         source="m_p = Vol(B_3)/hbar^2 * lw_A * arccos(chi/2)/(8 hbar^2)",
     )
+    # Lean SDP-uniqueness cross-reference (PR #1537/#1542/#1554).
+    wb.add_data("lean_uniqueness_ref", {
+        "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
+        "framework_doc":
+            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+        "note": (
+            "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+        ),
+    })
+
     wb.save()
     print("\n  Witness: m-p-spectral-corrected-50dps.witness.json")
     return 0

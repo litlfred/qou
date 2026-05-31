@@ -266,6 +266,18 @@ def main() -> int:
         computed=bool(abs(err_true) > 5.0),
         expected=True,
     )
+    # Lean SDP-uniqueness cross-reference (PR #1537/#1542/#1554
+    # wiring, 2026-05-31). Each nucleus's canonical T_w knot
+    # operator uniqueness at the empty-constraint SDP level.
+    w.add_data("lean_uniqueness_ref", {
+        "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
+        "framework_doc":
+            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+        "note": (
+            "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). The real per-nucleus SDP (multi-term cost + non-empty constraints) is per-nucleus substantive open work. Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+        ),
+    })
+
     w.save()
     print(f"\n✓ Witness: deuteron-delta-i-audit.witness.json")
     return 0
