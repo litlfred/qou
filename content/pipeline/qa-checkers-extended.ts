@@ -682,6 +682,83 @@ export function checkCanonicalCalibrationCount(
 
 const VAL_DIRECTIVE_RE = /:val\[([^\]]+)\]\{([^}]+)\}/g;
 
+// Negative-result / falsified-probe signal patterns. A block whose
+// primary content is one of these is audit material, not paper material
+// (CLAUDE.md authoring discipline added 2026-05-31 in
+// docs/audits/2026-05-31-ck-exploratory-probes-removed.md). The .md
+// signals fire on *opening* prose: "## Status: ... falsified",
+// "Hypothesis falsified", "## Status: open R&D — no known", etc.
+const NEG_RESULT_TAGS = new Set([
+  "negative-result",
+  "falsified",
+  "superseded",
+  "scaffolding",  // works hand-in-hand with `open-rd-item-N` tags
+]);
+const NEG_RESULT_MD_SIGNALS: RegExp[] = [
+  /^##\s+Status\s*:[^\n]*\bfalsified\b/im,
+  /^##\s+Status\s*:[^\n]*\bopen\s+R&D\s*—\s*no\s+known/im,
+  /^##\s+Status\s*:[^\n]*\bsuperseded\b/im,
+  /\*\*Hypothesis\s+falsified\.?\*\*/i,
+  /^>\s*\*\*Errata\s+banner\s*—[^\n]*\bsuperseded\b/im,
+];
+
+export function checkCanonicalNoNegativeResultInPaper(
+  mdPath: string | undefined,
+  tsPath: string | undefined,
+): CheckerResult {
+  const ts = readMaybe(tsPath);
+  if (!ts) return { result: "pass", hits: [] };
+
+  // Open conjectures are exempt: kind=conjecture blocks legitimately
+  // document open / partially-falsified directions.
+  const kindMatch = ts.match(/kind:\s*"([a-z]+)"/);
+  if (kindMatch?.[1] === "conjecture") return { result: "pass", hits: [] };
+
+  const hits: CheckerHit[] = [];
+
+  // .ts tag signal
+  const tagsBlock = ts.match(/tags:\s*\[([\s\S]*?)\]/);
+  if (tagsBlock) {
+    const tags = Array.from(tagsBlock[1].matchAll(/"([^"]+)"/g),
+      (m) => m[1]);
+    const offenders = tags.filter((t) => NEG_RESULT_TAGS.has(t));
+    if (offenders.length > 0) {
+      hits.push({
+        file: tsPath ?? "(unknown)",
+        line: 1,
+        text:
+          `paper block carries negative-result tag(s) ${JSON.stringify(offenders)} ` +
+          `— move primary content to docs/audits/ and keep only canonical ` +
+          `material in the paper (CLAUDE.md authoring discipline; see ` +
+          `docs/audits/2026-05-31-ck-exploratory-probes-removed.md).`,
+      });
+    }
+  }
+
+  // .md prose signal
+  const md = readMaybe(mdPath);
+  if (md) {
+    for (const re of NEG_RESULT_MD_SIGNALS) {
+      const m = md.match(re);
+      if (m) {
+        const lineNo = md.slice(0, m.index ?? 0).split("\n").length;
+        hits.push({
+          file: mdPath ?? "(unknown)",
+          line: lineNo,
+          text:
+            `paper block opens with a negative-result status marker — ` +
+            `move to docs/audits/ (matched: ${JSON.stringify(m[0].slice(0, 80))}).`,
+        });
+        break;  // one hit per block is enough
+      }
+    }
+  }
+
+  return hits.length === 0
+    ? { result: "pass", hits: [] }
+    : { result: "fail", hits };
+}
+
 export function checkCanonicalWitnessPinned(
   mdPath: string | undefined,
   tsPath: string | undefined,
@@ -1802,6 +1879,8 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
     checkCanonicalCal4Acknowledged(p.md, p.ts),
   "canonical-ck-tiered-not-binary": (p) =>
     checkCanonicalCkTieredNotBinary(p.md, p.ts),
+  "canonical-no-negative-result-in-paper": (p) =>
+    checkCanonicalNoNegativeResultInPaper(p.md, p.ts),
   // detangler
   "detangler-section-band": (p) => checkDetanglerSectionBand(p.ts),
   "detangler-no-forward-ref": (p) => checkDetanglerNoForwardRef(p.ts),

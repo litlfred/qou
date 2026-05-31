@@ -138,6 +138,7 @@ number`, `rationalization`, `CODATA`, `tautolog`, `back-fit`,
 | `vol-hyp-fitted` | major | Script's primary calibration is hyperbolic volume | Author ask; sometimes Class-C |
 | `unverified-rho-K` | major | $\rho_K$ used without a derivation-chain witness | Author ask; sometimes Class-B |
 | `ck-binary-negative-result` | major | Precision-ladder block (Q_β $c_k$, α_EM Habiro factor, any convergent truncation-order series) frames a coefficient as a binary negative result (`un-wire`, `drop c_k`, `just a fit`, `fails to beat`, `should be reverted`, `negative result`) without the tiered (proved / near-match / fitted) framing or a citation to `2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`. The four-session wire/un-wire flip-flop signature. | Add tiered framing or cite the canonical doc; author-assist |
+| `negative-result-in-paper` | major | Paper block whose primary content is a negative empirical finding (tag `negative-result` / `falsified` / `superseded` / `scaffolding`, or `.md` opens with `## Status: ... falsified` / `## Status: open R&D — no known` / `**Hypothesis falsified**` / `Errata banner — ... superseded`). Detected by `canonical-no-negative-result-in-paper` checker. `kind: conjecture` blocks are exempt. | Author ask; the fix is to move the content to a dated `docs/audits/` doc and replace the paper block with a one-line forward reference. Established by `docs/audits/2026-05-31-ck-exploratory-probes-removed.md`. |
 
 Automated by the `canonical-ck-tiered-not-binary` qa-criterion
 (`content/pipeline/qa-criteria-registry.ts` →

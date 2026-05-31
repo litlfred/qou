@@ -553,6 +553,28 @@ const CANONICAL: QaCriterionDefinition[] = [
     applies_to: ["theorem", "lemma", "proposition", "corollary",
       "conjecture", "remark"],
   },
+  {
+    id: "canonical-no-negative-result-in-paper",
+    domain: "canonical",
+    description:
+      "Paper block whose primary content is a negative empirical " +
+      "finding (tag 'negative-result' / 'falsified' / 'superseded' / " +
+      "'scaffolding'; or .md opening with `## Status: ... falsified` " +
+      "or `## Status: open R&D — no known` or `**Hypothesis falsified**` " +
+      "or an `Errata banner ... superseded`) should be in `docs/audits/`, " +
+      "not the paper. Routes to a manual `canonical-watcher` review on " +
+      "fail; the fix is to move the content to a dated audit doc and " +
+      "cite it from a one-line forward reference. `kind: conjecture` " +
+      "blocks are exempt (open conjectures legitimately document " +
+      "open / partially-falsified directions). Authoring discipline " +
+      "established by `docs/audits/2026-05-31-ck-exploratory-probes-" +
+      "removed.md` after the c_k/d_k flip-flop saga.",
+    default_severity: "major",
+    depends_on: ["md", "ts"],
+    automated: true,
+    applies_to: ["definition", "theorem", "lemma", "proposition",
+      "corollary", "remark", "prose", "equation", "diagram"],
+  },
 ];
 
 // ── Domain: compute ─────────────────────────────────────────────
