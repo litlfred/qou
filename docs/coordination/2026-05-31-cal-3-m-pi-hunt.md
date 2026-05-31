@@ -5,6 +5,11 @@
 **Status:** in flight — empirical corroboration committed, content block update deferred to post-#1581 merge
 **Goal:** corroborate the framework's already-adopted `CAL-3 = m_π` assignment via two independent empirical paths and coordinate with the active sibling PRs working in adjacent scope.
 
+**Cross-links into master ledgers (post-rebase 2026-05-31):**
+- [`STATUS.md`](../../STATUS.md) — folio dashboard; this session contributes to L2 + CAL-3 + Option-E rows
+- [`docs/coordination/1ppq-qbeta.md`](1ppq-qbeta.md) — 1ppQ-Q_β master ledger; my c_3 negative result is a parallel-arrival corroboration (PR #1579 row added)
+- Canonical c_3 SETTLED on main: commit [`ced5e2830`](https://github.com/litlfred/qou/commit/ced5e2830) + audit [`2026-05-31-qbeta-c3-q0-stability-verdict.md`](../audits/2026-05-31-qbeta-c3-q0-stability-verdict.md)
+
 ## Context
 
 The framework's compute layer ([`codata_constants.py` line 22](../../folio-assistant/computations/codata_constants.py)) and content layer ([`three-calibration-inputs.md`](../../content/quantum-observable-universe/mass-theory/three-calibration-inputs.md)) both already declare `CAL-3 = m_π` (pion decay width → pion mass scale; replaces the older `CAL-3 = Q_β` framing). This session noticed the older framing via stale context, hunted for the "missing CAL-3", and produced two empirical probes that corroborate the canonical assignment from independent directions.

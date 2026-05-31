@@ -11,8 +11,14 @@ passing).
 
 **Authority:** This audit complements the truncation-order canonical
 framing ([`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md))
-by ruling out the c_3-level shortcut. The Habiro generating-function
-direction (parallel α_EM PR #1511) remains the only open path.
+by ruling out the c_3-level shortcut. **Canonical c_3 verdict on main:**
+[`2026-05-31-qbeta-c3-q0-stability-verdict.md`](2026-05-31-qbeta-c3-q0-stability-verdict.md)
+(commit `ced5e2830`) — independently SETTLED c_3 as NEAR-MATCH via a
+65-dps re-run of the truncation-order analysis. This audit and the
+canonical verdict reach the same conclusion from different methodologies
+(single-formula derivation search vs q-stability re-measurement). The
+Habiro generating-function direction (parallel α_EM PR #1511) remains
+the only open path.
 
 ---
 

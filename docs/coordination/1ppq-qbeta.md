@@ -65,7 +65,8 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 | #1577 | canonical-watcher: automate Q_β c_k flip-flop prevention | **direct overlap** — infrastructure to prevent the bug this ledger documents |
 | #1521 | Habiro element [2]_q·(1-h²α) categorical 1-loop | **direct upstream** — the canonical c_k source |
 | #1543 | ⁴He magic-A binding | adjacent (binding side) |
-| #1580 | coord infrastructure + 1ppQ kickoff (THIS PR) | sets up this ledger + STATUS.md + queue file + /session-intent + /pending-show + SessionStart hook |
+| #1580 | coord infrastructure + 1ppQ kickoff | sets up this ledger + STATUS.md + queue file + /session-intent + /pending-show + SessionStart hook |
+| #1579 | CAL-3 = m_π corroboration + parallel c_3 derivation attempt | **parallel arrival** — independent c_3 single-coefficient derivation attempt landed NEGATIVE simultaneously; corroborates the SETTLED verdict via a different methodology (15 candidate categorical formulas at both q₀ anchors). See [`docs/audits/2026-05-31-c-3-categorical-derivation-attempt.md`](../audits/2026-05-31-c-3-categorical-derivation-attempt.md) and [`docs/coordination/2026-05-31-cal-3-m-pi-hunt.md`](2026-05-31-cal-3-m-pi-hunt.md) |
 
 ## Flip-flop history (DO NOT REPEAT)
 

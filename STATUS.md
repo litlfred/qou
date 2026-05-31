@@ -32,7 +32,8 @@
 
 | Agent | Branch | Goal scope | Started | Status |
 |-------|--------|------------|---------|--------|
-| Claude (this session) | `claude/coord-infra-1ppq-2026-05-31` | coord infrastructure + 1ppQ Q_β kickoff | 2026-05-31 | active |
+| Claude (coord-infra) | `claude/coord-infra-1ppq-2026-05-31` | coord infrastructure + 1ppQ Q_β kickoff | 2026-05-31 | active |
+| Claude (CAL-3 hunt) | `claude/brave-mendel-FPxFl` (PR #1579) | CAL-3 = m_π corroboration + parallel c_3 + v9 (1+q)/2 + L2 3-failing diagnosis | 2026-05-31 | active — see [`docs/coordination/2026-05-31-cal-3-m-pi-hunt.md`](docs/coordination/2026-05-31-cal-3-m-pi-hunt.md) |
 
 ## Conventions
 
