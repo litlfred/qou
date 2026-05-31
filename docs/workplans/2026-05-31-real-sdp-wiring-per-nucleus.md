@@ -113,3 +113,49 @@ For all 252 stable nuclides — multi-month campaign. For all 12,804 isotopes �
 - [`docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md`](2026-05-31-witness-lean-uniqueness-ref-wiring.md) — witness-side wiring (sibling effort)
 - PRs #1537, #1542, #1554, #1557, #1559, #1566 — abstract SDP infrastructure
 - PRs #1445, #1525 — uniqueness scaffolds + Hoefsmit Sprint 5
+
+## Generalization to all nuclides/isotopes (2026-05-31, PR #1582)
+
+**Question:** does the Phase B constraint machinery generalize beyond ²H?
+
+**Answer:** the *method* generalizes exactly; the *dense per-nucleus SDP
+compute* caps at A ≈ 4–5.
+
+### What generalizes (no new physics)
+
+Method 5's constraint rows come from the **Littlewood–Richardson
+branching** `H_{3A} ⊃ (H_3)^Z × (H_3)^N`, i.e. the iterated-LR formula
+already canonicalised in
+[`folio-assistant/computations/UNIVERSAL-BRANCHING-PLAN.md`](../../folio-assistant/computations/UNIVERSAL-BRANCHING-PLAN.md):
+
+    χ_free(λ) = Σ_{(μ_1,…,μ_A), μ_i ⊢ 3} c^λ_{μ_1,…,μ_A} · Π_i χ^{μ_i}(K_i)
+
+For a nucleus (Z protons, N neutrons), the constituents are Z proton-H_3
+blocks and N neutron-H_3 blocks. The deuteron's `H_6 ⊃ H_3 × H_3` is the
+A=2 case. The LR coefficients are integers; the constituent characters
+are computed once at q_0 — **no fitting at any A**. (Use the corrected
+LR coefficient, not the skew-concatenation `f^{λ/⊔μ_i}` which was
+refuted in `docs/audits/2026-05-30-universal-branching-multinucleon-gap.md`.)
+
+### Scaling walls
+
+| Wall | Effect | Cap |
+|---|---|---|
+| `heckeDim(3A) = (3A)!` | SDP matrix size | H_6=720, H_9≈3.6e5, H_12≈4.8e8 — dense SDP feasible to ~A≤4–5 |
+| iterated-LR tuple count | constraint-row assembly | combinatorial but sparse (most c=0) |
+
+### Tiered coverage (consistent with #1575)
+
+- **A ≤ 4–5 (²H, ³H, ³He, ⁴He, light Li/Be):** full real per-nucleus SDP
+  via the branching route — feasible, this PR's method 5 is the template.
+- **252 stable nuclides:** branching method still exact, but dense SDP
+  compute is multi-month; needs a sparse / symmetry-reduced solver
+  (the §7b Type-B-fold from method 1 is the natural reduction — it halves
+  the block count via conjugate-pairing).
+- **All 12,804 isotopes:** out of scope for the dense per-nucleus SDP;
+  the abstract empty-SDP layer (#1537/#1542/#1566) already covers these
+  at the framework-demonstration level.
+
+**Net:** branching = the generalizable constraint source; the bar-fold
+(method 1) is the key to pushing the compute wall higher by symmetry
+reduction.
