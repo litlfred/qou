@@ -7,7 +7,7 @@ export default proposition({
   chapter: "mass-theory",
   cites: ["wenzl1988", "ariki1996", "ram1991"],
   uses: [],
-  defines: ["lr-coefficient-hecke"],
+  defines: [],
   tags: [
     "littlewood-richardson",
     "branching",
