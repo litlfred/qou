@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T04:08:02.968502+00:00",
-  "commitSha": "84e24f2056c8f1e7ea0f484f02227583066ee756",
+  "computedAt": "2026-06-01T04:09:48.713166+00:00",
+  "commitSha": "9b307b6e6679ff15008048dfc1e8e274671ae8ba",
   "assertions": [],
   "allPassed": true,
   "durationMs": 12,
@@ -25,7 +25,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 825,
+    "files_scanned": 826,
     "patterns": [
       "P15",
       "P16",
@@ -37,7 +37,7 @@
   "data": {
     "by_pattern_count": {
       "P15": 114,
-      "P16": 199,
+      "P16": 200,
       "P21": 30,
       "P30": 157,
       "P31": 62
@@ -3166,6 +3166,13 @@
         "pattern": "P16",
         "file": "qbeta_delta_tr_vs_formA.py",
         "line": 188,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_habiro_delta_am_factorization.py",
+        "line": 291,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
