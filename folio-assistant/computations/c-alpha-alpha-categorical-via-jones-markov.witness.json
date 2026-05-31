@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T21:15:41.871909+00:00",
-  "commitSha": "134aa60f3f95d344c7a478440dd4dbea889c703d",
+  "computedAt": "2026-05-31T04:24:44.255602+00:00",
+  "commitSha": "5bf16c49427d7a07283bf3841cf946e82444cfc7",
   "assertions": [
     {
       "name": "tr_M_wenzl_finite_nonzero",
@@ -14,21 +14,30 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 16,
   "computation": "c-alpha-alpha-categorical-via-jones-markov",
   "scriptFile": "c_alpha_alpha_categorical_via_jones_markov.py",
   "scriptHash": "d657a5d01a43",
-  "scriptCommitSha": "da40b32bb356d22f0a07522434d502b079e6f913",
+  "scriptCommitSha": "626c2bb856bbfa1ca647bd7d5bc36c8113f8825e",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Phase B-4 c_αα probe (EXPLORATORY — NEGATIVE result). Tests whether the substrate-canonical Markov-trace value m_e·|tr_M(T_w(7²_1), q_0)| could replace the literature c_αα = m_e·Vol(7²_1) ≈ 2.43 MeV in alpha_cluster_recursion.py. Result: bare Markov-trace value is ~22.7× smaller than the literature; the substitution does NOT work. Mirrors the proton-mass case (|tr_M(𝓑₃)| << m_p) — bare |tr_M| is not the substrate-pure binding-scale derivation; Geom_full chain (Vol/ℏ_q² × linking_weight) is. This probe does NOT propose changing alpha_cluster_recursion.py.",
   "auditOnly": "docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md",
   "parameters": {
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": "0.51099895069",
     "knot": "7^2_1 (Whitehead-link-like 2-component)",
     "braid_word": [
@@ -68,20 +77,20 @@
     "evaluator_precision": "mp.mpf at 50 dps (L1 floor) via markov_trace_for_knot mpf default; mpf used throughout c_αα arithmetic"
   },
   "data": {
-    "tr_M_wenzl": "0.2086108940022829237239006",
-    "tr_M_qschur": "0.1851937216706039356503961",
+    "tr_M_wenzl": "0.2086109044988866943022707",
+    "tr_M_qschur": "0.1851937179680412876640188",
     "c_alpha_alpha_literature_MeV": "2.426989507040012097175451",
-    "c_alpha_alpha_derived_wenzl_MeV": "0.1065999479376693884874185",
-    "c_alpha_alpha_derived_qschur_MeV": "0.09463379744805452493593668",
-    "delta_wenzl_vs_lit_MeV": "-2.320389559102342708688032",
-    "delta_qschur_vs_lit_MeV": "-2.332355709591957572239514",
-    "rel_err_wenzl": "-0.9560772934417503648134227",
-    "rel_err_qschur": "-0.9610077434725001623261372",
+    "c_alpha_alpha_derived_wenzl_MeV": "0.1065999533014229010616631",
+    "c_alpha_alpha_derived_qschur_MeV": "0.09463379555604889695091003",
+    "delta_wenzl_vs_lit_MeV": "-2.320389553738589196113788",
+    "delta_qschur_vs_lit_MeV": "-2.332355711483963200224541",
+    "rel_err_wenzl": "-0.9560772912317064000515198",
+    "rel_err_qschur": "-0.9610077442520690984492032",
     "vol_7_sq_1": "4.749499981874438508498087",
     "wall_seconds": {
-      "wenzl_jm": 0.0017123460000902924,
-      "q_schur": 0.0004313590000037948,
-      "total": 0.002143705000094087
+      "wenzl_jm": 0.0012030880002384947,
+      "q_schur": 0.00040357199986829073,
+      "total": 0.0016066600001067854
     }
   }
 }
