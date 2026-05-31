@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T03:03:02.149170+00:00",
-  "commitSha": "773cda921169374231c762359642a415fbeaf1b7",
+  "computedAt": "2026-05-31T04:21:26.302781+00:00",
+  "commitSha": "d12f8d9426f183faa24e707e13c655d38e4b6b88",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 14,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -26,7 +26,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 772,
+    "files_scanned": 777,
     "patterns": [
       "P15",
       "P16",
@@ -38,9 +38,9 @@
   "data": {
     "by_pattern_count": {
       "P15": 114,
-      "P16": 182,
+      "P16": 184,
       "P21": 30,
-      "P30": 143,
+      "P30": 144,
       "P31": 56
     },
     "top_files": [
@@ -429,6 +429,13 @@
       },
       {
         "pattern": "P30",
+        "file": "binding_alpha_shift_witness.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
         "file": "binding_ladder_catalog.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -650,6 +657,20 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P16",
+        "file": "casimir_epsilon_vacuum_probe.py",
+        "line": 93,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "casimir_epsilon_vacuum_probe.py",
+        "line": 211,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P21",
