@@ -65,27 +65,28 @@ export default conjecture({
         "(resolved 2026-05-31).",
     },
     {
-      kind: "refined-framing",
+      kind: "note",
       date: "2026-05-31",
       body:
-        "**Prefactor sub-problem RESOLVED (with substrate " +
-        "deviation prediction).** After six independent probe " +
-        "sweeps (substrate q-rationals, Carlitz q-Bernoulli, " +
+        "**Prefactor sub-problem remains open (probes ruled out " +
+        "fitting routes, not derived).** Six probe sweeps " +
+        "(substrate q-rationals, Carlitz q-Bernoulli, " +
         "Φ_q/Markov, Macdonald, brute-force grid, q-factorial " +
-        "with classical-limit constraint), the natural " +
-        "q-deformation of `ζ(−3) = −1/5!` is " +
-        "`ζ_q(−3) = −1/[5]_q!_sym` where " +
-        "`[n]_q!_sym = ∏_{k=1}^n [k]_q`. " +
-        "This gives **`c_q = π²/(2·[5]_q!_sym)`** as the " +
-        "QOU Casimir force-per-area prefactor — correct " +
-        "classical limit (`→ π²/240` as `q → 1`) and a " +
-        "specific 8.6% deviation at substrate " +
-        "(`c_q(q_0) ≈ 0.0376` vs textbook `π²/240 ≈ 0.0411`). " +
-        "Falsifiable by ~1% Casimir experiment. See " +
+        "with classical-limit constraint) all amount to " +
+        "*template fitting*: pick a 'natural' q-deformation of " +
+        "the classical formula and substitute. The Carlitz " +
+        "q-Bernoulli and `[5]_q!_sym` candidates DISAGREE by " +
+        "~10% at substrate — both are 'natural q-deformations', " +
+        "so neither is structurally forced. A genuine derivation " +
+        "requires constructing the categorical N_⊙(A, d) count " +
+        "(sub-problem 1) and a regularization scheme native to " +
+        "QOU (sub-problem 3), not template substitution. The " +
+        "audit doc records all six probe routes and their " +
+        "candidate values for future agents — they are " +
+        "*candidates*, not derivations. See " +
         "[`docs/audits/2026-05-30-casimir-epsilon-vacuum-" +
         "investigation.md`](../../../docs/audits/2026-05-30-" +
-        "casimir-epsilon-vacuum-investigation.md) §6th sweep " +
-        "for derivation chain.",
+        "casimir-epsilon-vacuum-investigation.md).",
     },
   ],
 });
