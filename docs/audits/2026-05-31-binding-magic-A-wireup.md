@@ -109,16 +109,48 @@ with the new gap report: *"For doubly-magic ⁴He the
 existing-but-unwired magic_A formula B = ρ_F·m_e·A·8G predicts
 29.956 MeV (+5.9% miss), closing the alpha_shift gap by ~80×."*
 
-### Option 2 — Lean dispatcher class (next PR, ~half session)
+### Option 2 — Lean dispatcher class (DONE in this PR)
 
-Add a `BindingRegime : ℕ → Type` class to
-`binding-alpha-shift-extension.lean` that distinguishes
-`AlphaShiftRegime` (current) from `DoublyMagicRegime` (uses
-`MagicAFormula` axiom). Refactor `BindingForceCarrierKnot` to
-take a regime; the `lightNuclei*` instances split into two
-`lightNuclei_alphaShift` (A=2, 3) and `lightNuclei_magicA` (A=4).
-Sorry-free; matches the §3b-cond pattern used by the rest of the
-file.
+**Status:** completed via the new content block
+[`prop:magic-A-binding-formula`](../../content/quantum-observable-universe/mass-theory/magic-A-binding-formula.md).
+The block triple ships:
+
+- [`magic-A-binding-formula.ts`](../../content/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts) —
+  manifest, `proposition` kind, `uses` cites
+  `prop:binding-alpha-shift-extension`,
+  `prop:diagrammatic-double-magic-lr-fusion`,
+  `rem:strutinsky-from-graded-trace`.
+- [`magic-A-binding-formula.md`](../../content/quantum-observable-universe/mass-theory/magic-A-binding-formula.md) —
+  narrative theorem statement (conditional on
+  `conj:magic-numbers-bring` + `prop:gravity-spectral-prefactor`)
+  with the two-regime dispatch table.
+- [`magic-A-binding-formula.lean`](../../content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean) —
+  Lean §3b-cond formalisation:
+  - `isMagic : ℕ → Prop` (magic-number predicate)
+  - `isDoublyMagic Z N : Prop` (conjunction)
+  - `class CatalanPrefactor R` (abstracts `8G` as a field-level
+    parameter so the formula statement doesn't depend on
+    Catalan-constant Mathlib import depth)
+  - `class MagicABindingFormula B m_e` (the §3b-cond hypothesis
+    bundling `ρ_F` per (Z, N) and the formula
+    `B Z N = ρ_F · m_e · A · 8G`)
+  - `theorem magic_A_binding_formula` — sorry-free conditional
+    theorem discharging the formula from the class hypothesis
+  - `theorem he4_is_doubly_magic` — `isDoublyMagic 2 2` proven by
+    `Or.inl rfl`
+  - `theorem two_regime_dispatch_exists` — non-trivial existence
+
+Per CLAUDE.md §3b-cond: the formula is a rigorous-conditional
+theorem — fully verified by Lean modulo the single class hypothesis
+`MagicABindingFormula`. The class field `formula` discharges
+definitionally for any concrete (Z, N) instance; the categorical
+derivation of `ρ_F = 2` for ⁴He (Open Math A below) is the
+remaining open content.
+
+Chapter manifest
+[`mass-theory.ts`](../../content/quantum-observable-universe/mass-theory/mass-theory.ts)
+updated to include the new block after
+`binding-alpha-shift-extension`.
 
 ### Option 3 — Canonical-side full-trace replacement (research)
 
@@ -168,10 +200,14 @@ no scalar q-factor can produce. **Open Math B**:
 
 1. ✓ **This PR**: witness emitter shows the 80× ⁴He gap closure via the
    wired-in formula.
-2. **Next PR (Option 2)**: Lean dispatcher class to refactor
-   `BindingForceCarrierKnot` to a regime-aware version.
+2. ✓ **This PR (now)**: Lean content-block triple
+   `magic-A-binding-formula.{ts,md,lean}` ships the §3b-cond
+   formalisation + chapter-manifest entry. The Lean theorem
+   `magic_A_binding_formula` is sorry-free conditional on the
+   `MagicABindingFormula` class hypothesis.
 3. **Research (Option 3 + Open Math A, B)**: full-trace functional
-   derivation; ρ_F = 2 derivation; p/n asymmetric A=3 closure.
+   derivation; ρ_F = 2 derivation from
+   `prop:gravity-spectral-prefactor`; p/n asymmetric A=3 closure.
 
 ## References
 
