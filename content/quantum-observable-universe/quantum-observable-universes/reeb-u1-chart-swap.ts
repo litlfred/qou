@@ -22,6 +22,8 @@ export default proposition({
     "def:frobenius-hopf-substrate",
     "rem:i-as-braiding-orientation",
     "def:projective-line-object",
+    "def:quantum-observable-universe",
+    "conj:os-reflection-positivity-from-reeb",
   ],
   lean: {
     ref: "qou:QOU.ChartSwap.eqReeb",
