@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T13:50:32.879745+00:00",
-  "commitSha": "3d020ac4f16b5add6ab0d0ffce4eb06d2b6adad3",
+  "computedAt": "2026-05-31T20:35:28.088617+00:00",
+  "commitSha": "27daa06fa4caa0618d3490e34120731658acfdea",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptCommitSha": "3e8cab5b00902b83e6d53dca4fbdf3f7521bbdd9",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -573,7 +573,6 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -2297,9 +2296,17 @@
         "canonical-tr-m-three-path-comparison.witness.json",
         "canonical-tr-m-via-chi-cache.witness.json",
         "canonical-tr-m-via-rust.witness.json",
+        "casimir-carlitz-q-bernoulli-probe.witness.json",
         "casimir-epsilon-vacuum-probe.witness.json",
+        "casimir-grid-sweep-probe.witness.json",
         "casimir-hoefsmit-additivity-probe.witness.json",
+        "casimir-jet-order-derivation.witness.json",
+        "casimir-macdonald-probe.witness.json",
+        "casimir-n-unknot-construction.witness.json",
+        "casimir-phi-q-markov-probe.witness.json",
+        "casimir-q-factorial-probe.witness.json",
         "casimir-q-zeta-probe.witness.json",
+        "casimir-xi-2-dig-deeper.witness.json",
         "catalan-binding.witness.json",
         "categorical-bypass-volmatch-demo.witness.json",
         "categorical-q-decay-ba-low-isotopes.witness.json",
@@ -2627,6 +2634,8 @@
         "option-e-q-reeb-phase-probe-v4.witness.json",
         "option-e-v6-combined-canonical.witness.json",
         "option-e-v7-involution-aware.witness.json",
+        "option-e-v8-hecke-involution-isospin-mirror.witness.json",
+        "option-e-v9-all-symmetries.witness.json",
         "orbit-trace-identity.witness.json",
         "p2-5-symbolic-q-audit.witness.json",
         "paper-six-term-isotope-sweep.witness.json",
@@ -2709,6 +2718,7 @@
         "q0-figure-eight-phase-derivation.witness.json",
         "qbeta-1ppq-achieved.witness.json",
         "qbeta-ck-cache.witness.json",
+        "qbeta-ck-truncation-order-analysis.witness.json",
         "qbeta-decay-sdp-extended-ck.witness.json",
         "qbeta-decay-sdp-full-ck-derivation.witness.json",
         "qbeta-decay-sdp-knot-operator.witness.json",
