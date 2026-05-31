@@ -10,3 +10,5 @@ mass-tower arc: knot-factor spectral derivation + amphicheiral +
 Borromean-composite + shell-closed + spectral summary, Pauli-
 factor Wedderburn, mass-formula Wedderburn enumeration, mass-tower
 coefficient stratification, and the flavor-dressing functor.
+
+The closing blocks specialise the substrate-level knot-factor to amphicheiral knots, Borromean composites, and shell-closed configurations, then exhibit the Pauli-factor Wedderburn decomposition and the mass-tower coefficient stratification that the next sub-section consumes.

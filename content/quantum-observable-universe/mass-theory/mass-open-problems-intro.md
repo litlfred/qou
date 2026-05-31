@@ -11,3 +11,5 @@ open problems; and the volume-tower decomposition
 ([volume tower](#prop:volume-tower-decomposition)) connects the
 mass tower's convergence structure to the JSJ decomposition of
 the knot complement.
+
+A note on scope: this section catalogues the substrate-level mass-tower open problems that the chapter's machinery does not yet close.  The arc proceeds through the terminal resolution (the chapter's strongest fully-derived prediction), the mass-from-generators conjecture, the volume-tower decomposition, and the mass-tower open-problems classification; the closing blocks exhibit how the crystal basis resolves a sub-class of the open problems and identify the deeper Mathlib fillers that the remaining problems demand.

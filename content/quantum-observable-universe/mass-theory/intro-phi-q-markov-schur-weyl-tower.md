@@ -22,3 +22,5 @@ Schur–Weyl-tower closed form they realise.  This is the
 chapter's most technical section; readers can take the closed
 forms from the closing tabulation if needed for downstream
 applications.
+
+The closing blocks tabulate the per-shell Hecke quandle data and exhibit the $\varphi_q$ trace series resummation with table data; this is the section's combinatorial engine for substrate-level binding-energy formulas.

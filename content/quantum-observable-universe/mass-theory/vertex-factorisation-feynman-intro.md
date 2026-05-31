@@ -8,3 +8,5 @@ Feynman-Markov identification (the categorical-trace bridge) + the
 Feynman-QOU dictionary + the classical limit. The two sub-sections
 together provide both the vertex-algebra and the Feynman views of
 the same exceptional-divisor structure.
+
+The output is the Feynman eigenbasis decomposition with explicit categorical-trace evaluations; the next sub-section's archimedean-realisation Kashaev volume bridge consumes the Feynman trace collapse as its substrate-level input.

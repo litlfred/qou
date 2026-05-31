@@ -792,6 +792,7 @@ export default chapter({
         "staircase-ew-residual",
         "staircase-partition",
         "symbolic-character-table",
+        "outro-mass-theory"
       ],
     }),
 
