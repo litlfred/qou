@@ -1,12 +1,12 @@
 {
   "engine": "python3/mpmath",
   "engineVersion": "50dps",
-  "computedAt": "2026-05-26T14:21:23Z",
+  "computedAt": "2026-05-31T04:30:13Z",
   "computation": "delta-lambda-h6-branching",
   "scriptFile": "delta_lambda_h6_branching_probe.py",
   "description": "Propagates H_3 sector-dependent \u0394_\u03bb (from pion+proton constraint) to H_6 deuteron partitions via Littlewood-Richardson branching coefficients. Tests additive and multiplicative propagation rules.",
   "parameters": {
-    "q0": "1.1099785955541805752815940796095093779932822799587",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "m_e": "0.51099895069",
     "deut_target": -4.353367281870149,
     "lr_table_size": "9 pairs \u2192 11 H_6 partitions"
