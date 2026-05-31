@@ -350,14 +350,23 @@ async function checkUrl(
   }
 }
 
-// ── Verification status (added 2026-05-19) ──────────────────────
+// ── Verification status (added 2026-05-19; Verifier union 2026-05-31) ───
+//
+// The canonical schema lives in folio-assistant/schemas/bib-verification.ts.
+// We re-declare the consumer-side shape here to avoid a content/pipeline →
+// folio-assistant import edge (the content pipeline must stay in the
+// content/ tree).  The shapes must stay in sync.
+
+import type { Verifier, VerificationStatus } from "../../folio-assistant/schemas/bib-verification";
+import { verifierLabel } from "../../folio-assistant/schemas/bib-verification";
 
 interface VerificationEntry {
   id: string;
-  status: string;
+  status: VerificationStatus;
   local_pdf?: string;
   verified_at?: string;
-  verified_by?: string;
+  verified_by?: Verifier;
+  human_adjudicated?: { who: string; at: string; note?: string };
   fixes_applied?: number;
   fix_commit?: string;
   note?: string;
@@ -506,16 +515,21 @@ async function buildReport(): Promise<BibQAReport> {
       });
     }
 
-    // ── Tag 7: verification_status (added 2026-05-19) ───────
+    // ── Tag 7: verification_status (added 2026-05-19; Verifier union 2026-05-31) ───
     if (verif) {
       const cleanStates = new Set(["verified-clean", "partial", "fixed"]);
+      const verifierStr = verif.verified_by ? verifierLabel(verif.verified_by) : "";
+      const adjudicatedStr = verif.human_adjudicated
+        ? `, human-adjudicated by ${verif.human_adjudicated.who}`
+        : "";
       if (cleanStates.has(verif.status)) {
         tags.push({
           key: "verification_status",
           label: "Verification Status",
           status: "pass",
           detail: `${verif.status}` +
-            (verif.verified_by ? ` (by ${verif.verified_by})` : "") +
+            (verifierStr ? ` (by ${verifierStr})` : "") +
+            adjudicatedStr +
             (verif.fixes_applied ? `, ${verif.fixes_applied} fix(es)` : ""),
         });
       } else if (verif.status === "pending-placement") {

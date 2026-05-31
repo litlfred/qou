@@ -1,6 +1,5 @@
 {
-  "_schema": "Per-paper verification status for QOU bibliography. Consumed by content/pipeline/bib-qa.ts (tags has_local_pdf, verification_status). Hand-edited; one entry per reference id in references.ts that has been examined. Absence = pending. Status values: verified-clean, partial, fixed, uncited, paper-mismatch, unfetchable, pending-placement.",
-  "_verified_by_caveat": "The `verified_by` field is CURRENTLY AGENT-ONLY (Claude (claude-opus-4-7) etc.). No entry has yet been independently human-adjudicated. A future schema refinement may split this into a discriminated union `{ kind: \"agent\" | \"human\", ... }` with separate `human_adjudicated` provenance. Until then, downstream consumers (validate-bib, dashboards, authors-note) MUST NOT treat agent-only verifications as equivalent to human review. See PR #820 coordination thread (2026-05-20) for context.",
+  "_schema": "Per-paper verification status for QOU bibliography. Consumed by content/pipeline/bib-qa.ts (tags has_local_pdf, verification_status). Hand-edited; one entry per reference id in references.ts that has been examined. Absence = pending. Status values: verified-clean, partial, fixed, uncited, paper-mismatch, unfetchable, pending-placement. Verified_by is a Verifier discriminated union: { kind: 'agent', model } or { kind: 'human', name, agent_assistance? }. See folio-assistant/schemas/bib-verification.ts for the typed contract.",
   "_authoritative_for": "verification_status QA tag in bib-qa.json; markdown mirror at docs/coordination/2026-05-19-bib-verification-ledger.md",
   "entries": [
     {
@@ -8,7 +7,10 @@
       "status": "fixed",
       "local_pdf": "uploads/boyd-vandenberghe-2004-convex-optimization.pdf",
       "verified_at": "2026-05-19T06:38:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 18,
       "fix_commit": "(this commit)",
       "note": "All 17 -- Ref: [boyd-vandenberghe-2004] sites now carry a §-specific citation. (1) 4 misattribution fixes in commit 66b3caf7f: §5.5.3→§5.5.2 (PosSemidefTraceZero), §5.5.4→§5.5.2+alizadeh (SDPRealUniqueness 3 occurrences), Thm 5.5→§5.2.3+§5.3 (SDP 2 occurrences), §A.5.3→§A.5.5 (PosSemidefDiagZero 2 occurrences). (2) 14 generic DOI-only Refs in this commit specified by section: §5.6 perturbation/sensitivity for shell-closure/phase-stratification monotone+openness claims (10 sites across 5 files); §5.2.3+§5.3+§5.5 Slater+strong-duality+KKT for noble-gas SDP (ElectronShell, 2 sites); §5.2.3+§5.3 Slater+strong-duality for ConfinementSDP (3 sites). Verified against uploads/boyd-vandenberghe-2004-convex-optimization.pdf TOC. 0 generic boyd Refs remain in content/."
@@ -18,7 +20,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/codata-2022-constants.txt",
       "verified_at": "2026-05-19T06:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "All 5 .lean Ref sites verified against the NIST table: muon-electron mass ratio 206.768 2827(46) ✓; proton mass energy equiv. 938.272 089 43(29) MeV ✓; derived hydrogen mass 938.7831 MeV (= m_p + m_e − 13.6 eV/c²) ✓. No fixes needed."
     },
@@ -27,7 +32,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/0409565v2.pdf",
       "verified_at": "2026-05-19T18:18:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 6,
       "note": "arXiv math/0409565 = LP2004 'Unital Gröbner Bases over Arbitrary Commutative Ground Rings' (10 pp.). Content: §2 unital GB definitions, Buchberger over R, PBW corollary. NO inner products, NO intertwiners, NO representation theory beyond GB-representations. Verified-clean for content/unital-groebner-bases/.../groebner-basis.lean (cites Definition 5 of LP2004 — exact match). MISMATCH for content/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.lean and content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean — both cite leitnerpawloski2004 for 'PL inner product' / 'PL basis dimension formula', neither of which appears in LP2004. Likely a different Pawlowski-Leitner work (Pawlowski's thesis or a separate representation-theory paper). Author decision pending: (a) add a new bib entry for the actual cited work, (b) change the QOU citation key, or (c) update the QOU content to match LP2004's actual scope. | ADDITIONAL 6 bare-URL Refs upgraded with arxiv preprint info. Confirms the prior partial verification (commit 4abfedfda): the cited 'On the morphisms of non-commutative formal groups' is the SAME math/0409565 — so QOU is consistently citing this work for the Gröbner-bases foundation, with the 2 mismatched 'PL inner product' / 'PL basis' lean files being the only outliers. | UPDATE 2026-05-19 18:18: local copy is uploads/0409565v2.pdf (arxiv-id-named — was originally claimed under a hypothetical alias). | UPDATE 2026-05-22: local_pdf path corrected to point at the file that actually exists in uploads/.",
       "fix_commit": "(this commit)"
@@ -37,7 +45,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/yekutieli2008.pdf",
       "verified_at": "2026-05-19T06:26:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "Confirmed paper is 'Twisted Deformation Quantization of Algebraic Varieties' by Amnon Yekutieli (Contemporary Mathematics survey, arXiv:0801.3233v4 2011). §2 'Poisson Deformations of Algebraic Varieties' — matches QOU's citation in global-gluing.lean:28 + Torsion/GlobalGluing.lean:30 for 'O_{q(p)}(G) of functions on the quantum group deformed by the local substrate parameter'. Scope match."
     },
@@ -46,7 +57,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T17:31:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "note": "uploads/zink2002.pdf is NOT Zink's 'The Display of a Formal p-Divisible Group' paper — it is the PRELIMINARY PAGES (front matter, pp. I-XII) of the Astérisque volume 278 (2002) that Zink's paper appears IN. URL https://www.numdam.org/item/AST_2002__278__R1_0.pdf points at the volume prelims, not Zink's chapter. Fix: update references.ts URL to the actual Zink article (typically AST_2002__278__<startpage>_0.pdf) once the volume TOC is consulted; then re-run upload-bib-papers.sh to re-fetch. The QOU citation in witt-vector-lift.lean:83 itself is about Dist(Ĝ) free ℤ_p-module structure — IS in Zink's actual paper §2 — so the cite intent is fine, just the local PDF needs replacement. | UPDATE 2026-05-19 17:31: bad URL removed from references.ts. Local PDF (uploads/zink2002.pdf) is vol prelims, can be deleted/renamed. Need to find correct chapter URL on numdam.org/issue/AST_2002__278__ then re-fetch."
     },
@@ -55,7 +69,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/freed2010.pdf",
       "verified_at": "2026-05-19T06:23:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "Confirmed paper is 'Topological Quantum Field Theories from Compact Lie Groups' by Freed, Hopkins, Lurie, Teleman (arXiv:0905.0731). Title-only citation in Glossary.lean:337 matches paper scope exactly. (Bib entry uses 'freed2010' shorthand for the 4-author group — acceptable.)"
     },
@@ -64,7 +81,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/berarducci-mantova-2018-surreal-derivations.pdf",
       "verified_at": "2026-05-19T06:23:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "Confirmed paper is 'Surreal numbers, derivations and transseries' by Berarducci & Mantova (arXiv:1503.00315). PolynomialEval.lean:202 cites §2 — §2 (subsections 2.1 Order and simplicity, 2.2 Field operations, ...) is where the surreal field structure + polynomial extensions are developed. Cited scope matches."
     },
@@ -73,7 +93,10 @@
       "status": "fixed",
       "local_pdf": null,
       "verified_at": "2026-05-19T06:55:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 43,
       "fix_commit": "(this commit)",
       "note": "Kassel, 'Quantum Groups', Springer GTM 155, 1995 (DOI 10.1007/978-1-4612-0783-2). 43 truly-bare-URL Refs across 23 .lean files updated with thematic chapter citations: Group A (15 Hecke/Markov/Schur-Weyl/Anyonic files) → Ch. X (Hecke algebras and Markov trace); Group B (7 braiding/R-matrix/Casimir/quantum-SL(2) files) → Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories); Group C (1 broad-ref file: magic-numbers-bring) → generic title-only ref. 11 already-§-specific Refs (e.g. §V.5, §VIII.3, Ch. XIII at specific sites) preserved unchanged. Status fixed. | UPDATE 2026-05-19 18:18: local_pdf path was stale (uploads/kassel-1995-quantum-groups-preprint.pdf doesn't exist on upload branch); removed. The kassel1995 entry has been verified via citation-content match (all 43 sites map to thematic Ch. citations)."
@@ -83,7 +106,10 @@
       "status": "fixed",
       "local_pdf": null,
       "verified_at": "2026-05-19T06:50:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 142,
       "fix_commit": "(this commit)",
       "note": "Jones, 'Hecke algebra representations of braid groups and link polynomials', Ann. Math. 126 (1987). 142 bare-URL `-- Ref: [jones1987] https://doi.org/10.2307/1971403` lines across 58 .lean files bulk-updated to §-specific citation: §3 (The Markov trace) + §4 (Link polynomials), the two sections that cover all sampled Lean citations (Markov trace conjugation invariance, Hecke trace evaluation, skein/braid polynomial calculations, trefoil/Borromean link polynomials, q-Schur-Weyl in Hecke algebra). 20-context sample (random + targeted) confirmed uniform §3+§4 scope before bulk-replace. No local PDF in uploads/ (Annals of Mathematics paywalled; not on arxiv). Status fixed: 142 lines now §-specific."
@@ -93,7 +119,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/faddeev-kashaev-1994-quantum-dilogarithm.pdf",
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "note": "Confirmed paper is 'Quantum Dilogarithm' by Faddeev & Kashaev (arXiv:hep-th/9310070, 1993-09 — published Mod. Phys. Lett. A 1994). pentagon-uv-commutation-woronowicz.lean:40 cites it alongside Woronowicz 1989 for the pentagon equation — this is the Faddeev-Kashaev quantum-dilogarithm paper's central result. Verified scope match."
     },
@@ -102,7 +131,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/baez2004.pdf",
       "verified_at": "2026-05-19T06:23:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "Confirmed paper is 'Higher-Dimensional Algebra V: 2-Groups' by John C. Baez (arXiv:math/0307200). emergence-to-quantum-flat.lean:34 cites it for INN(G_q) being 'the unique strict 2-group' under simplicity constraint — this paper IS the canonical 2-groups reference; INN construction is in the body."
     },
@@ -111,7 +143,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/hu-mathas2012graded.pdf",
       "verified_at": "2026-05-19T06:23:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "Confirmed paper is 'Graded Induction for Specht Modules' by Hu & Mathas (arXiv:1008.1462). StructuralRank.lean:84 cites it for 'graded induction for Specht modules' — title is the citation text, exact match. (Bib key has '2012' but arXiv is 2010-08; the paper was published 2012 — version mismatch is acceptable.)"
     },
@@ -120,7 +155,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/klein1888.pdf",
       "verified_at": "2026-05-19T06:30:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "Confirmed book is 'Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade' by Felix Klein, 1888 (282 pages, archive.org/details/vorlesungenber00kleiuoft). Index entries include §142 'Die Bring'sche Form', §192 'Classification der Curven und Flächen', §207 'Die Bring'sche Transformation', §189 'Die Hauptresolvente der Ikosaedergleichung'. The QOU citations in magic-numbers-bring.{md,lean} for (1) S_5-stable sub-lattice classification and (2) Bring's curve as unique genus-4 with maximal S_5 — both covered by Klein's icosahedron-and-quintic book."
     },
@@ -129,7 +167,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/pham1965.pdf",
       "verified_at": "2026-05-19T06:23:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "Confirmed paper is 'Formules de Picard-Lefschetz généralisées et ramification des intégrales' by F. Pham (Bull. SMF 93, 1965, pp.333-367). morse-wall-q-moduli.lean:23 cites it for 'generalised Picard-Lefschetz formula' — paper title is verbatim the citation text. Scope match."
     },
@@ -138,7 +179,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/oeis-A006752.txt",
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "note": "QOU literal `catalan_G := 0.91596559417721901505` matches OEIS A006752 b-file digits 0-19 exactly (reconstruct: 0.9159655941772190150547... → first 20 digits 0.91596559417721901505). 1 .lean Ref site cited correctly."
     },
@@ -147,7 +191,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/mostow1968.pdf",
       "verified_at": "2026-05-19T06:30:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "Confirmed paper is 'Quasi-conformal mappings in n-space and the rigidity of hyperbolic space forms' by G. D. Mostow (Publications IHES vol 34, 1968) — the canonical 'Mostow rigidity' paper. QOU .md citations in atom-knot-mass-derivation-proof.md and encounter-literature-bridge.md cite it for Mostow rigidity; title matches exactly."
     },
@@ -156,7 +203,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/bufetov2020.pdf",
       "verified_at": "2026-05-19T06:30:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "Confirmed paper is 'Interacting Particle Systems and Random Walks on Hecke Algebras' by Alexey Bufetov (arXiv:2003.02730). QOU .md citation in hecke-markov-interpretation.md cites it for 'Bufetov showed that the ASEP generator is a sum of Hecke algebra elements' — paper title and abstract confirm this is the central content. Scope match."
     },
@@ -165,7 +215,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/gromov1982.pdf",
       "verified_at": "2026-05-19T16:40:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "PDF verified: 'Volume and bounded cohomology' by Michael Gromov, Publications IHES vol 56 (1982). Title matches references.ts. Bib orphan — no .lean or .md citation sites in QOU. Decision pending (keep as forward-ref / remove / find use). Likely candidate for citation alongside thurston1978 in hyperbolic-volume contexts. | Re-classified from `uncited`: discovered citation via cites: [] array in per-braid-mass-tower.ts + \\cite{gromov1982,...} in atom-knot-mass-derivation.md. Earlier inventory missed multi-arg \\cite and .ts cites: arrays."
     },
@@ -174,7 +227,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/bilsonthompson2005.pdf",
       "verified_at": "2026-05-19T16:40:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "PDF verified: 'A topological model of composite preons' by Sundance O. Bilson-Thompson (arXiv:hep-ph/0503213, ADP-05-05/T615). Title matches references.ts. Bib orphan — no QOU citation. Likely candidate for citation alongside QOU's knot-particle model (braids-and-knots/ chapters); the Bilson-Thompson preon-as-braid construction parallels QOU's topological-particle approach. Decision pending. | Re-classified from `uncited`: 3 citation sites (\\cite{bilsonthompson2005,bilsonthompson2007} in breit-wheeler-vertex-literature.md + vertex-factorisation-intro.md + cites: in .ts). PDF verified."
     },
@@ -183,7 +239,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/finster2021.pdf",
       "verified_at": "2026-05-19T16:40:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "PDF verified: 'The linear dynamics of wave functions in causal fermion systems' by Finster, Kamran, Oppio (arXiv:2101.08673). Title matches. Bib orphan — no QOU citation. Causal fermion systems are tangential to QOU's brane substrate but conceptually related. Decision pending. | Re-classified from `uncited`: cited via cites: [...] in cfs-comparison-summary.ts + algebraic-gns-embedding.ts. Inline [`finster2021`] tick-bracket form in .md prose. PDF verified."
     },
@@ -192,7 +251,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/finster2022.pdf",
       "verified_at": "2026-05-19T16:40:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "PDF verified: 'A mechanism of baryogenesis for causal fermion systems' by Finster, Jokel, Paganini (arXiv:2111.05556). Title matches. Bib orphan. | Re-classified from `uncited`: cited via cites: [...] in cfs-comparison-summary.ts + algebraic-gns-embedding.ts. PDF verified."
     },
@@ -201,7 +263,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/finster2024.pdf",
       "verified_at": "2026-05-19T16:40:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "PDF verified: 'Causal fermion systems as an effective collapse theory' by Finster, Kleiner, Paganini (arXiv:2405.19254). Title matches. Bib orphan. | Re-classified from `uncited`: cited via cites: [...] in cfs-comparison-summary.ts + algebraic-gns-embedding.ts. PDF verified."
     },
@@ -210,7 +275,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/dappiaggi2024.pdf",
       "verified_at": "2026-05-19T16:40:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "PDF verified: 'Holographic mixing and Fock space dynamics of causal fermion systems' by Dappiaggi, Finster, Kamran, Reintjes (arXiv:2410.18045, Oct 2024 / May 2025). Title matches. Bib orphan. | Re-classified from `uncited`: cited via cites: [...] in cfs-comparison-summary.ts + algebraic-gns-embedding.ts. PDF verified."
     },
@@ -219,7 +287,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T17:31:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "note": "PDF MISMATCH: arXiv:1205.4003 = 'Two-Parameter Non-Commutative Central Limit Theorem' by Natasha Blitvić, but references.ts entry title says 'The (q,t)-Gaussian process'. These are two different Blitvić papers — the bib metadata may be for a different Blitvić arxiv id, OR the QOU intent is the (q,t)-Gaussian paper and the URL/arxiv-id needs fixing. Plus bib orphan (no QOU citations). Decision pending: update bib title to match the downloaded paper, OR update arxiv URL to point at the actual (q,t)-Gaussian paper. | UPDATE: actually has 5 citation sites via cites: arrays. The paper-mismatch (arxiv:1205.4003 = 'Two-Parameter Non-Commutative CLT', not the bib title 'The (q,t)-Gaussian process') still needs author decision: split keys or rename bib title. | UPDATE 2026-05-19 17:31: bad URL removed; the existing uploads/blitvic2012.pdf is the CLT paper, now registered as blitvic2012-clt. Need to find correct arxiv id for 'The (q,t)-Gaussian process' and re-fetch under the correct key."
     },
@@ -228,7 +299,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T07:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 23,
       "fix_commit": "(this commit)",
       "note": "Turaev, 'Quantum Invariants of Knots and 3-Manifolds', de Gruyter 2010 (DOI 10.1515/9783110221831). 23 bare-URL Refs upgraded to title+publisher form; no local PDF in uploads/ (de Gruyter paywalled, no arxiv version). Status: partial — citations improved but §-specific verification deferred until PDF available."
@@ -238,7 +312,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T07:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 23,
       "fix_commit": "(this commit)",
       "note": "Kock, 'Frobenius Algebras and 2D Topological Quantum Field Theories', CUP LMS Student Texts 59, 2004 (DOI 10.1017/CBO9780511615443). 23 bare-URL Refs → title+publisher. No local PDF (CUP textbook paywalled, no free version). Partial."
@@ -248,7 +325,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T07:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 17,
       "fix_commit": "(this commit)",
       "note": "Lusztig, 'Introduction to Quantum Groups', Birkhäuser 1993 (DOI 10.1007/978-0-8176-4717-9). 17 bare-URL Refs → title+publisher. No local PDF (Birkhäuser paywalled). Partial."
@@ -258,7 +338,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T07:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 18,
       "fix_commit": "(this commit)",
       "note": "Bergman, 'The diamond lemma for ring theory', Adv. Math. 29 (1978). 18 bare-URL Refs → title+journal form. No local PDF (Elsevier paywalled). Partial."
@@ -268,7 +351,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T07:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 12,
       "fix_commit": "(this commit)",
       "note": "Atiyah, 'Topological quantum field theories', Publ. IHES 68 (1988). 12 bare-URL Refs → title+journal form. No local PDF (IHES paywalled in this case; an open numdam mirror likely exists — could be intake candidate). Partial."
@@ -278,7 +364,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T07:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 11,
       "fix_commit": "(this commit)",
       "note": "Iwahori, 'On the structure of a Hecke ring of a Chevalley group over a finite field', J. Fac. Sci. Univ. Tokyo 10 (1964). 11 bare-URL Refs → title+journal form. No local PDF (journal not on standard databases; 1964 archive). Partial."
@@ -288,7 +377,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/yekutieli2010.pdf",
       "verified_at": "2026-05-19T15:48:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 20,
       "fix_commit": "(this commit)",
       "note": "Yekutieli, \"Central Extensions of Gerbes\", Adv. Math. 225 (2010). 20 bare-URL Refs upgraded with title+publisher form. No local PDF (publisher paywalled). Partial. | PDF verified: 'Central Extensions of Gerbes' by Amnon Yekutieli, arXiv:0801.0083v4. Title verbatim matches references.ts."
@@ -298,7 +390,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/yekutieli2015.pdf",
       "verified_at": "2026-05-19T15:48:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 11,
       "fix_commit": "(this commit)",
       "note": "Yekutieli, \"Nonabelian Multiplicative Integration on Surfaces\", World Scientific 2015. 11 bare-URL Refs upgraded with title+publisher form. No local PDF (publisher paywalled). Partial. | PDF verified: 'Nonabelian Multiplicative Integration on Surfaces' by Amnon Yekutieli, arXiv:1007.1250. Title verbatim matches references.ts."
@@ -308,7 +403,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/faddeev1994.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 4,
       "fix_commit": "(this commit)",
       "note": "Faddeev, \"Current-like variables in massive and massless integrable models\", Lectures 1994. 4 bare-URL Refs upgraded with title+publisher form. No local PDF (publisher paywalled). Partial. | PDF verified: Faddeev, \"Current-like variables in massive and massless integrable models,\" Lectures June 1994, arXiv:hep-th/9408041. Verified."
@@ -318,7 +416,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T07:03:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "Mathas, \"Iwahori–Hecke Algebras and Schur Algebras\", AMS Univ. Lect. Series 15, 1999. 3 bare-URL Refs upgraded with title+publisher form. No local PDF (publisher paywalled). Partial."
@@ -328,7 +429,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:38:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 11,
       "fix_commit": "(this commit)",
       "note": "Bolza, On binary sextics with linear transformations into themselves, Amer. J. Math. 10 (1887). 11 bare-URL Refs → title+publisher."
@@ -338,7 +442,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:38:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 10,
       "fix_commit": "(this commit)",
       "note": "Kashaev, The hyperbolic volume of knots from the quantum dilogarithm, Lett. Math. Phys. 39 (1997). 10 bare-URL Refs → title+publisher."
@@ -348,7 +455,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/frenkel2007.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 9,
       "fix_commit": "(this commit)",
       "note": "Frenkel, Lectures on the Langlands Program and Conformal Field Theory, arXiv:hep-th/0512172. 9 bare-URL Refs → title+arxiv form. (URL also added to references.ts in this batch's earlier commit f80075745.) | PDF verified: Frenkel, \"Lectures on the Langlands Program and Conformal Field Theory,\" arXiv:hep-th/0512172. Verified."
@@ -358,7 +468,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/witten2011.pdf",
       "verified_at": "2026-05-19T15:48:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 7,
       "fix_commit": "(this commit)",
       "note": "Witten, Analytic Continuation of Chern-Simons Theory, arXiv:1001.2933. 7 bare-URL Refs → title+arxiv form. | PDF verified: 'Analytic Continuation Of Chern-Simons Theory' by Edward Witten, arXiv:1001.2933v4 (hep-th, 2010 Aug rev). Matches references.ts."
@@ -368,7 +481,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:38:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 8,
       "fix_commit": "(this commit)",
       "note": "Schrijver, Theory of Linear and Integer Programming, Wiley 1986. 8 bare-URL Refs → title+publisher."
@@ -378,7 +494,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:38:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 7,
       "fix_commit": "(this commit)",
       "note": "Khovanov & Lauda, A diagrammatic approach to categorification of quantum groups, Repr. Theory 13 (2009), arXiv:0803.4121. 7 bare-URL Refs → title+arxiv."
@@ -388,7 +507,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:38:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 5,
       "fix_commit": "(this commit)",
       "note": "Witten, Topological quantum field theory, Comm. Math. Phys. 117 (1988). 5 bare-URL Refs → title+publisher."
@@ -398,7 +520,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:38:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 6,
       "fix_commit": "(this commit)",
       "note": "Weil, Sur les courbes algébriques et les variétés qui s'en déduisent, Hermann, Paris (1948). 6 bare-URL Refs → title+publisher. local PDF in uploads/ is INCOMPLETE (archive.org filename guess returned 503; needs metadata API lookup)."
@@ -408,7 +533,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/lurie2009.pdf",
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": null,
       "note": "PDF verified: 'On the Classification of Topological Field Theories (Draft)' by Jacob Lurie, arXiv:0905.0465. Matches references.ts metadata. Cited in QOU for Lurie's TQFT classification."
@@ -418,7 +546,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/yekutieli2009.pdf",
       "verified_at": "2026-05-19T15:48:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: 'MC Elements in Pronilpotent DG Lie Algebras' by Amnon Yekutieli, arXiv:1103.1035 (published JPAA 2012, DOI 10.1016/j.jpaa.2012.03.009). The references.ts entry's `note` field cites an EARLIER arxiv id (0905.0488), but the URL I added (1103.1035) and the title verbatim match — same paper, later revision. No fix needed."
@@ -428,7 +559,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/fetter2009.pdf",
       "verified_at": "2026-05-19T15:48:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: 'Rotating Trapped Bose-Einstein Condensates' by Alexander L. Fetter, arXiv:0801.2952. Vortex physics — matches cited topic."
@@ -438,7 +572,10 @@
       "status": "uncited",
       "local_pdf": "uploads/navon2021.pdf",
       "verified_at": "2026-05-19T15:48:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: 'Quantum Gases in Optical Boxes' by Nir Navon, arXiv:2106.09716. BEC / box-trap experimental review. | RE-CHECK 2026-05-19 17:20: Navon — Quantum Gases in Optical Boxes (arXiv:2106.09716, PDF verified). Bib orphan (0 cites). Was promoted to verified-clean based on PDF match, but no .lean/.md/.ts citation site exists."
@@ -448,7 +585,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/gauthier2019.pdf",
       "verified_at": "2026-05-19T15:48:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: 'Giant Vortex Clusters in a Two-Dimensional Quantum Fluid' by Gauthier et al., arXiv:1801.06951. Vortex clusters in 2D BEC — matches QOU's vortex-condensation citation."
@@ -458,7 +598,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/scheeler2014.pdf",
       "verified_at": "2026-05-19T15:48:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: 'Helicity conservation by flow across scales in reconnecting vortex links and knots' by Scheeler et al., arXiv:1404.6513. Strongly QOU-relevant (vortex knots, helicity)."
@@ -468,7 +611,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/nayak2008.pdf",
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": null,
       "note": "PDF verified: 'Non-Abelian Anyons and Topological Quantum Computation' by Nayak, Simon, Stern, Freedman, Das Sarma, arXiv:0707.1889. Anyons review — matches references.ts."
@@ -478,7 +624,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/aganagic2018.pdf",
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": null,
       "note": "PDF verified: 'Quantum q-Langlands Correspondence' by Aganagic et al., arXiv:1701.03146. Matches references.ts; q-Langlands is QOU-relevant."
@@ -488,7 +637,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/diaconis-ram2000.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 7,
       "fix_commit": "(this commit)",
       "note": "Diaconis & Ram, IHA Metropolis algorithms (Ann. Appl. Probab. 2000, arXiv:math/0401318). 7 bare-URL Refs upgraded with title+publisher form. No local PDF. | PDF verified: Diaconis & Ram, \"Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques,\" arXiv:math/0401318. Verified."
@@ -498,7 +650,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:51:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 6,
       "fix_commit": "(this commit)",
       "note": "Kashiwara, crystal bases (Duke Math. J. 63, 1991). 6 bare-URL Refs upgraded with title+publisher form. No local PDF."
@@ -508,7 +663,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:51:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 6,
       "fix_commit": "(this commit)",
       "note": "Edge, Bring's curve (J. London Math. Soc. 18, 1978). 6 bare-URL Refs upgraded with title+publisher form. No local PDF."
@@ -518,7 +676,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:51:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 5,
       "fix_commit": "(this commit)",
       "note": "Chari & Pressley, A Guide to Quantum Groups (CUP 1994). 5 bare-URL Refs upgraded with title+publisher form. No local PDF."
@@ -528,7 +689,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:51:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 5,
       "fix_commit": "(this commit)",
       "note": "Brundan & Kleshchev, Blocks of cyclotomic Hecke / KLR (Invent. Math. 178, 2009, arXiv:0808.2032). 5 bare-URL Refs upgraded with title+publisher form. No local PDF."
@@ -538,7 +702,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:51:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 4,
       "fix_commit": "(this commit)",
       "note": "Murakami & Murakami, colored Jones + simplicial volume (Acta Math. 186, 2001, arXiv:math/9905075). 4 bare-URL Refs upgraded with title+publisher form. No local PDF."
@@ -548,7 +715,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 4,
       "fix_commit": "(this commit)",
       "note": "4 bare-URL Refs upgraded with title+publisher form."
@@ -558,7 +728,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 4,
       "fix_commit": "(this commit)",
       "note": "4 bare-URL Refs upgraded with title+publisher form."
@@ -568,7 +741,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/habiro2002.pdf",
       "verified_at": "2026-05-19T18:01:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 4,
       "fix_commit": "(this commit)",
       "note": "4 bare-URL Refs upgraded with title+publisher form. | PDF verified: Habiro, \"Bottom tangles and universal invariants,\" Algebr. Geom. Topol. 6 (2006) (arXiv:math/0505219). Note: bib `issued` says 2008 but PDF says 2006; same paper, journal published in 2006. | UPDATE 2026-05-19 18:01: year fixed 2008 → 2006 (published Algebr. Geom. Topol. 6) per validate-bib year-mismatch."
@@ -578,7 +754,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "3 bare-URL Refs upgraded with title+publisher form."
@@ -588,7 +767,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "3 bare-URL Refs upgraded with title+publisher form."
@@ -598,7 +780,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "3 bare-URL Refs upgraded with title+publisher form."
@@ -608,7 +793,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "3 bare-URL Refs upgraded with title+publisher form."
@@ -618,7 +806,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "3 bare-URL Refs upgraded with title+publisher form."
@@ -628,7 +819,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "3 bare-URL Refs upgraded with title+publisher form."
@@ -638,7 +832,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "3 bare-URL Refs upgraded with title+publisher form."
@@ -648,7 +845,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:54:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "3 bare-URL Refs upgraded with title+publisher form."
@@ -658,7 +858,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form."
@@ -668,7 +871,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form."
@@ -678,7 +884,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form."
@@ -688,7 +897,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form."
@@ -698,7 +910,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/kronheimer2004.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form. | PDF verified: Kronheimer & Mrowka, \"Witten's conjecture and Property P,\" Geom. & Topol. 8 (2004), arXiv:math/0311489. Verified from page 2 Introduction matching bib title."
@@ -708,7 +923,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/kitaev2006.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form. | PDF verified: Kitaev, \"Anyons in an exactly solved model and beyond,\" Ann. Phys. 321 (2006), arXiv:cond-mat/0506438. Verified."
@@ -718,7 +936,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form."
@@ -728,7 +949,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form."
@@ -738,7 +962,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form."
@@ -748,7 +975,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/frenkel2004.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form. | PDF verified: Frenkel, \"Vertex Algebras and Algebraic Curves,\" Séminaire Bourbaki 875, 2000 (arXiv:math/0007054). Verified."
@@ -758,7 +988,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form."
@@ -768,7 +1001,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T15:57:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form."
@@ -778,7 +1014,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -788,7 +1027,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -798,7 +1040,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -808,7 +1053,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -818,7 +1066,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -828,7 +1079,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -838,7 +1092,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -848,7 +1105,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -858,7 +1118,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -868,7 +1131,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -878,7 +1144,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -888,7 +1157,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -898,7 +1170,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -908,7 +1183,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -918,7 +1196,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -928,7 +1209,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -938,7 +1222,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -948,7 +1235,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/jacobson1995.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form. | PDF verified: Jacobson, \"Thermodynamics of Spacetime: The Einstein Equation of State,\" Phys. Rev. Lett. 75 (1995), arXiv:gr-qc/9504004. Verified."
@@ -958,7 +1248,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -968,7 +1261,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/habiro2004.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form. | PDF verified: Habiro, \"A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres,\" arXiv:math/0605314. Verified."
@@ -978,7 +1274,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -988,7 +1287,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -998,7 +1300,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -1008,7 +1313,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -1018,7 +1326,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -1028,7 +1339,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -1038,7 +1352,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -1048,7 +1365,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -1058,7 +1378,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -1068,7 +1391,10 @@
       "status": "partial",
       "local_pdf": null,
       "verified_at": "2026-05-19T16:00:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form."
@@ -1078,7 +1404,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/1210.6243v1.pdf",
       "verified_at": "2026-05-19T18:18:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "1 bare-URL Ref upgraded with title+author+year form. | UPDATE 2026-05-19 18:18: PDF in uploads/1210.6243v1.pdf is Bach, Pope, Liou, Batelaan 'Controlled double-slit electron diffraction' (Phys. Rev. Lett./NJP 2013) — exact match."
@@ -1088,7 +1417,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/madison2000.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: Madison, Chevy, Wohlleben, Dalibard, \"Vortex formation in a stirred Bose-Einstein condensate,\" Phys. Rev. Lett. 84 (2000), arXiv:cond-mat/9912015. Verified."
@@ -1098,7 +1430,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/aubert2001.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: Aubert et al. (BaBar Collab.), \"Observation of CP violation in the B0 meson system,\" Phys. Rev. Lett. 87 (2001), arXiv:hep-ex/0107013 (BABAR-PUB-01/18). Verified."
@@ -1108,7 +1443,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/freedman2003.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: Freedman, Kitaev, Larsen, Wang, \"Topological Quantum Computation,\" Bull. AMS 40 (2003), arXiv:quant-ph/0101025. Verified."
@@ -1118,7 +1456,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/lloyd2000.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: Lloyd, \"Ultimate physical limits to computation,\" Nature 406 (2000), arXiv:quant-ph/9908043. Verified."
@@ -1128,7 +1469,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/shishikura1998.pdf",
       "verified_at": "2026-05-19T16:14:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: Shishikura, \"The Hausdorff dimension of the boundary of the Mandelbrot set and Julia sets,\" Ann. Math. 147 (1998), arXiv:math/9201282. Verified."
@@ -1138,7 +1482,10 @@
       "status": "uncited",
       "local_pdf": null,
       "verified_at": "2026-05-19T17:20:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "Bokut — Gröbner-Shirshov for groups/semigroups/Lie algebras. Bib orphan (0 cites)."
@@ -1148,7 +1495,10 @@
       "status": "pending-placement",
       "local_pdf": null,
       "verified_at": "2026-05-19T17:48:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "Cardona 2023 — recent, possibly forward-ref intent. Bib orphan (0 cites). | UPDATE 2026-05-19 17:48: changed uncited → pending-placement per author 'I need this but unsure where to put' workflow."
@@ -1158,7 +1508,10 @@
       "status": "uncited",
       "local_pdf": null,
       "verified_at": "2026-05-19T17:20:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "Wigner — 'Unreasonable Effectiveness' 1960. Bib orphan (0 cites). Decision: keep as canonical reference / remove."
@@ -1168,7 +1521,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/blitvic2012.pdf",
       "verified_at": "2026-05-19T17:31:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "New bib entry for Blitvić's 'Two-Parameter Non-Commutative Central Limit Theorem' (arXiv:1205.4003, the wrongly-fetched PDF at uploads/blitvic2012.pdf). Currently uncited in QOU (the existing 9 blitvic2012 citation sites all reference the OTHER Blitvić paper, 'The (q,t)-Gaussian process'). The PDF now has a canonical bib home; can be renamed to uploads/blitvic2012-clt.pdf in a follow-up upload-branch commit, or left in place pending decision."
@@ -1178,7 +1534,10 @@
       "status": "verified-clean",
       "local_pdf": null,
       "verified_at": "2026-05-19T17:55:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 5,
       "fix_commit": "(this commit)",
       "note": "Fulton & Harris, 'Representation Theory: A First Course' (Springer GTM 129, 1991). New bib entry split from fulton1991 (which stays as 'Young Tableaux' LMS Student Texts 35). 5 .lean Ref lines in baryon-product-from-alt.lean re-keyed from fulton1991 → fulton-harris1991 (all reference Repn Theory §2 / §2.1 Frobenius character)."
@@ -1188,7 +1547,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/HDR.pdf",
       "verified_at": "2026-05-19T18:18:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "TODO bib lookup (Chlouveraki HDR thesis 2016). 4 .lean sites cite 'HDR Theorem 6.20' but I haven't re-keyed them yet (need to find specific sites). Entry exists; sites can be updated when HDR metadata is filled in. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata). | UPDATE 2026-05-19 18:18: PDF in uploads/HDR.pdf is Chlouveraki's HDR thesis 'Hecke algebras, generalisations and representation theory' — exact match for the TODO entry."
@@ -1198,7 +1560,10 @@
       "status": "verified-clean",
       "local_pdf": null,
       "verified_at": "2026-05-19T18:13:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "TODO bib lookup. Placeholder for kashiwara DOI 10.1215/S0012-7094-90-06120-X cited inline in QOU .lean. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata)."
@@ -1208,7 +1573,10 @@
       "status": "verified-clean",
       "local_pdf": null,
       "verified_at": "2026-05-19T18:13:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
       "note": "TODO bib lookup. Placeholder for kashiwara DOI 10.1007/BF02100009 cited inline in QOU .lean. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata)."
@@ -1218,7 +1586,10 @@
       "status": "pending-placement",
       "local_pdf": null,
       "verified_at": "2026-05-19T18:01:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "TODO bib lookup. Placeholder for wenzl1988 DOI 10.1007/BF01393839 (distinct from wenzl1988 = BF01404457). Inline-DOI sites in delta-q-decoration.lean reference this paper."
@@ -1228,7 +1599,10 @@
       "status": "verified-clean",
       "local_pdf": null,
       "verified_at": "2026-05-19T18:01:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "Re-keyed 8 QOU citation sites (pawlowski-leitner-inner-product.lean + RepresentationTheory.lean) from leitnerpawloski2004. Bib metadata TODO (PL inner product + SU(2) intertwiner basis — possibly Pawłowski's PhD thesis)."
@@ -1238,7 +1612,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf",
       "verified_at": "2026-05-19T18:18:00Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "PDF is Bujack et al. 'The non-Riemannian nature of perceptual color space' (PNAS 2022) — exact match."
@@ -1248,7 +1625,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/0008040v1.pdf",
       "verified_at": "2026-05-19T18:45:33Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "Lusztig cones type A. Fits QOU crystal-basis / Hecke content. Cited in crystal-graph-realization.ts (cites array)."
@@ -1258,7 +1638,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/0405508v1.pdf",
       "verified_at": "2026-05-19T18:45:33Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "Geck-Lambropoulou Iwahori-Hecke type B Markov traces. DIRECT fit with braids-and-knots Markov work. Cited in hecke-markov-interpretation.ts (cites array)."
@@ -1268,7 +1651,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/0911.4494v2.pdf",
       "verified_at": "2026-05-19T18:45:33Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "Webster-Williamson Geometry of Markov traces. DIRECT fit with QOU Markov-trace content. Cited in hecke-markov-interpretation.ts (cites array)."
@@ -1278,7 +1664,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/1203.4538v1.pdf",
       "verified_at": "2026-05-19T18:45:33Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "Kuhlmann-Matusinski surreal exp-log equivalence. Fits Surreal Numbers appendix. Cited in calculus-up-to-epsilon.ts (cites array)."
@@ -1288,7 +1677,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/2104.06067v1.pdf",
       "verified_at": "2026-05-19T18:45:33Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "Jing-Liu Iwahori-Hecke characters type A. DIRECT fit with QOU chi-character content. Cited in q-hecke-seminormal-character-closure.ts (cites array)."
@@ -1298,7 +1690,10 @@
       "status": "verified-clean",
       "local_pdf": "uploads/9806163v1.pdf",
       "verified_at": "2026-05-19T18:45:33Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "Halverson Markov-trace weights on Hecke. DIRECT fit with QOU Wedderburn-block weight content. Cited in wedderburn-weight-canonical.ts (cites array)."
@@ -1308,7 +1703,10 @@
       "status": "pending-placement",
       "local_pdf": "uploads/9909088v1.pdf",
       "verified_at": "2026-05-19T23:58:55Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "Franecki-Kapranov constructible sheaves Riemann-Roch. No QOU citation site located on full-tree grep. Status: defer to author."
@@ -1318,7 +1716,10 @@
       "status": "pending-placement",
       "local_pdf": "uploads/9911033v1.pdf",
       "verified_at": "2026-05-19T23:58:55Z",
-      "verified_by": "Claude (claude-opus-4-7)",
+      "verified_by": {
+        "kind": "agent",
+        "model": "claude-opus-4-7"
+      },
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "Lu canonical bundle sections over Riemann surface. No QOU citation site located. Status: defer to author."
