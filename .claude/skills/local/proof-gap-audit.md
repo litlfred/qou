@@ -165,6 +165,48 @@ already be partially formalized in one of the existing proofs;
 identify which proof has the most complete version as the
 extraction starting point.
 
+### K. Pre-declaration corpus check (STRICT — see CLAUDE.md §"Before declaring 'open'")
+
+Before flagging any item as a **gap, open math, open question,
+TODO, pending derivation,** or equivalent in the audit output, run
+the corpus-grep checklist (CLAUDE.md §"Before declaring 'open'
+math / questions / gaps"):
+
+1. `grep -rln <topic> docs/audits/` — owner-authorised resolutions
+   land as audit docs ahead of the source file's status note being
+   updated.
+2. `grep -rln <topic> content/` (full tree) — related conjectures
+   often live in adjacent chapters (e.g.
+   `brings-surface/inter-nucleon-channel-color-tube` answers a
+   `mass-theory/` p/n question).
+3. `grep -rln <topic> folio-assistant/computations/` — implemented
+   Python may already discharge the categorical content
+   (e.g. `pn_convention="bring_color_weighted"` in
+   `closed_form_tau_M.py`).
+4. Coordination ledger `docs/coordination/<theme>.md` — prior
+   agents may have closed it.
+
+If any of (1)-(4) returns a non-trivial hit, the item is **not** a
+gap; document the existing resolution instead. Only after all four
+return empty (modulo the originating source file) may the item
+appear in the audit's gap list.
+
+**Why this matters.** Three consecutive items in May 2026 (PRs
+[#1515](https://github.com/litlfred/qou/pull/1515),
+[#1532](https://github.com/litlfred/qou/pull/1532),
+[#1543](https://github.com/litlfred/qou/pull/1543))
+were declared open against a source file's status note; each was
+found in subsequent reanalysis to be already implemented. Source
+file status notes lag the corpus by weeks; the corpus is the
+source of truth. Post-mortem in
+[`docs/audits/2026-05-31-binding-magic-A-wireup.md` §"Why was the
+resolution missed?"](../../../docs/audits/2026-05-31-binding-magic-A-wireup.md).
+
+This check applies to every gap class A-J above when the gap
+candidate is large enough that a categorical resolution could
+plausibly exist (heuristically: any gap that would warrant a
+follow-up `prop:` or `conj:` block).
+
 ## Workflow
 
 ### Phase 0 — Anti-hallucination protocol (REQUIRED)

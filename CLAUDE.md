@@ -356,6 +356,46 @@ History note (2026-05-29): this rule added after PR #1435 hit
 "job was not started because recent account payments have failed"
 and instructed "skip CI". Local validate had been exit 0 throughout.
 
+## Before declaring "open" math / questions / gaps (STRICT)
+
+Before any agent declares an item "open", "Open Math X", "TODO",
+"pending derivation", "open problem", or any equivalent phrasing in
+an audit doc, content block, Lean comment, PR description, or chat
+reply, run the **corpus-grep checklist**:
+
+1. `grep -rln <topic> docs/audits/` — owner-authorised resolutions
+   typically land as audit docs; the originating source file's
+   status note may lag the audit by weeks or months.
+2. `grep -rln <topic> content/` (whole tree, not just the chapter
+   you started in) — related conjectures/propositions cross-cut
+   chapters (e.g. `brings-surface/inter-nucleon-channel-color-tube`
+   answers a `mass-theory/` p/n asymmetry question).
+3. `grep -rln <topic> folio-assistant/computations/` — implemented
+   Python may already realise the categorical content the source
+   file says is "open" (e.g. `pn_convention="bring_color_weighted"`
+   in `closed_form_tau_M.py`).
+4. Check the relevant coordination ledger
+   `docs/coordination/<theme>.md` — prior agents may have closed
+   the item already.
+
+Only after **all four** grep paths return empty (modulo the
+originating file itself) may you declare the item open. The source
+file's `## Status`, `Open math`, or `Phase 3 open` notes are
+**not authoritative**: the corpus is the source of truth.
+
+Why this matters: pattern observed in PRs #1515, #1532, #1543 —
+three consecutive items declared open against the source-file
+status note, each found in subsequent reanalysis to be already
+implemented (Track B Gap #2 in `canonical_tr_m_via_branching.py`;
+α_shift A=4 in `lightNucleiForceCarrierKnot`; ρ_F derivation in
+`conj:kashaev-density-equals-sdp-multiplicity`; p/n asymmetry in
+`closed_form_tau_M.py::bring_color_weighted`). Post-mortem in
+[`docs/audits/2026-05-31-binding-magic-A-wireup.md` §"Why was the
+resolution missed?"](docs/audits/2026-05-31-binding-magic-A-wireup.md).
+
+Skill cross-reference: `local/proof-gap-audit` §K codifies this
+checklist for proof-gap declarations specifically.
+
 ## Always provide GitHub links — default to `.md`
 
 Whenever a skill or agent creates or modifies a file, the reply **must**
