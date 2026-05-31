@@ -314,27 +314,63 @@ this IS the categorical structure.
 
 ### What remains open (was previously framed as "Open Math B")
 
-Three pieces are still genuinely open:
+Two pieces remain. The third — "does Bring weighting close the
+T vs ³He f-spread?" — has been answered by the probe below.
 
-1. **Lean formalisation** of `conj:inter-nucleon-channel-color-tube`
-   (conditional on `conj:s5-so3-fiber-action` per PR #1081 Task 3).
-2. **Re-evaluation of the binding-shell enhancement** with
-   `pn_convention="bring_color_weighted"`: does the 15% T vs ³He
-   f-factor spread close when the closed-form $\tau_M$ baseline
-   uses Bring weighting? The +180.9 ppm uniform correction is at
-   the closed-form-ratio scale; the f-factor lives at the binding-
-   energy scale — propagating through `binding_canonical` requires
-   re-running
-   [`binding_shell_enhancement_derivation.py`](../../folio-assistant/computations/binding_shell_enhancement_derivation.py)
-   against the Bring-weighted ratio.
-3. **Closed form for the $9$-element $W_{c_1 c_2}(F_1, F_2)$**
+1. **Lean formalisation** of `conj:inter-nucleon-channel-color-tube`.
+   The sibling-resolution stub at
+   [`brings-surface/inter-nucleon-channel-color-tube.lean`](../../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.lean)
+   has been extended in this PR (commit-ref below) with the
+   substantive §3b-cond class structure: `NucleonColorContent`,
+   `ColorSheet`, `NucleonColorPair`, `chirality_sign` (stub),
+   and a refined `class InterNucleonChannelColorTube R` with a
+   `weight : NucleonColorPair → R` field. Sprint-2 inhabitation
+   supplies the explicit `weight` data from
+   [`S5SO3FiberAction.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean)
+   (existing scaffold).
+2. **Closed form for the $9$-element $W_{c_1 c_2}(F_1, F_2)$**
    weight matrix from the $\mathrm{SO}(3)$-fiber tensor (Open
-   Question 1 of the inter-nucleon-channel-color-tube block).
+   Question 1 of the inter-nucleon-channel-color-tube block). This
+   is research-grade and gated on the S_5/SO(3) fiber action being
+   formalised geometrically.
 
-None of the three is "no categorical object identified" — the
-object IS identified (Bring color-tube weighting via $\delta$);
-the residual work is verification + Lean formalisation, not
-discovery.
+### Bring weighting probe (this PR — answers the "does it close the spread?" question)
+
+The probe
+[`binding_bring_enhancement_compare.py`](../../folio-assistant/computations/binding_bring_enhancement_compare.py)
+re-runs the closed-form $\tau_M$ ratio at $q_0$ under both
+`strict_averaged` and `bring_color_weighted`. Output (witness:
+[`binding-bring-enhancement-compare.witness.json`](../../folio-assistant/computations/binding-bring-enhancement-compare.witness.json)):
+
+| atom | arc-comp | $\tau_M$ strict | $\tau_M$ Bring | Δ (ppm) | $f$ strict | $f$ Bring |
+|---|---|---:|---:|---:|---:|---:|
+| D | pn | 0.394790 | 0.394862 | 182.30 | 0.9816 | 0.9818 |
+| T | pn,nn | 0.114592 | 0.114613 | 182.30 | 2.5583 | 2.5584 |
+| ³He | pp,pn | 0.197127 | 0.197163 | 182.30 | 2.5673 | 2.5674 |
+| ⁴He | pp,pn,nn | 0.057218 | 0.057228 | 182.30 | 8.0153 | 8.0154 |
+
+**T vs ³He f-factor spread:** `strict_averaged` 0.35%,
+`bring_color_weighted` 0.35%.
+
+**Finding.** The Bring weighting at $q_0$ produces a substantially
+identical $f$-spread because the 180.9 ppm correction is uniform
+across the four single-pn-arc atoms — it cancels out of the T vs
+³He ratio. The historical 15% T vs ³He $f$-spread reported by
+[`binding_shell_enhancement_derivation.py`](../../folio-assistant/computations/binding_shell_enhancement_derivation.py)
+arises at a different layer of the binding-formula path (the
+specific `binding_canonical` Δ-tr structure under m_e · Vol(𝓑₃)
+prefactor, not the closed-form-ratio); whatever closes it is **not**
+a scalar pn-weighting refinement on top of `closed_form_ratio`. The
+actual closure path is the **operator-valued Wenzl branching with
+full per-arc operator extracts**
+([`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py)
++
+[`A_operator_extract_at_level.py`](../../folio-assistant/computations/A_operator_extract_at_level.py)).
+
+This negative result is **valuable** — it eliminates a candidate
+scalar fix and pins the closure on the operator-valued branching
+machinery, which is the genuinely-categorical structure for
+A ≥ 3 binding.
 
 ## Action items
 
