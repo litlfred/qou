@@ -330,4 +330,101 @@ axiom qbeta_inductive_categorical_closure_conjecture
     (inst : QBetaPrecisionLadderCoefficients) :
     True
 
+/-! ## §3b-cond N=3 structural-form class (mirrors PR #1508)
+
+PR #1508 (`em-coupling-bring-zero-mode.lean`) locked the α_EM⁻¹ full
+form behind a single conditional class `EmAlphaInvNextOrderBlochClass`
+whose field axiomatises the τ_arch image of the n=3 Bring-surface Bloch
+class `[Z₂] ∈ B₃(ℂ)`. The Q_β precision ladder has the exact same
+structure at its N=3 rung: the c_3 coefficient is the framework's
+structural prediction `J_Hopf(q=1) = -2`, the Q_β analog of `[Z₂]`.
+
+**DISCIPLINE (item-1 finding, 2026-05-30,
+`folio-assistant/computations/qbeta-delta-tr-vs-formA.witness.json`).**
+The c_3 = J_Hopf identification is a STRUCTURAL NEAR-MATCH, NOT a
+Taylor-exact derivation:
+
+  - At canonical q₀ the empirical Taylor coefficient is c_3 = -2.0693
+    (3.35% off J_Hopf = -2; the q-deformed J − ℏ_q² = -2.0098 is still
+    2.6% off — see `2026-05-30-qbeta-ck-mp-dk-deep-audit.md`).
+  - The Habiro trace difference Δtr_M = tr_M(β_n) − tr_M(β_p) is NOT
+    Form A's net-winding slot Δ(net)_A: their leading Taylor
+    coefficients differ (Δtr_M = −5/4·ε, Δ(net)_A = −2·ε), and
+    substituting Δtr_M into Form A's slot misses CODATA by −240000 ppm.
+
+So the ONLY Taylor-exact rung wired to production
+(`per_observable_100x_status.py`, Q_N2) is c_2 = -1. The class below is
+the framework's structural conjecture carried as a §3b-cond hypothesis;
+NO instance is provided and production wires nothing beyond c_2. The
+3.35% residual is attributed to un-derived multi-Wedderburn-block
+corrections that the open Habiro q-difference derivation must supply.
+
+Following §3b-cond, we lock the c_3 structural identification behind a
+conditional class so downstream results can carry it as a hypothesis
+without claiming it is derived. -/
+
+/-- Abstract true categorical N=3 coefficient `c_3(q)`. Declared as an
+    abstract symbol (no closed form) so the structural-form class below
+    is non-vacuous — it cannot be discharged by `rfl`, mirroring the
+    opaque `BlochWigner_unit_circle : ℝ → ℝ` axiom in PR #1508's
+    `em-coupling-bring-zero-mode.lean`. Its closed form — the
+    multi-Wedderburn-block Habiro derivation — is the open research
+    target (`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`). -/
+-- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+axiom qBetaC3Categorical : ℝ → ℝ
+
+/-- **N=3 structural-form class for Q_β** (§3b-cond, mirrors
+    `EmAlphaInvNextOrderBlochClass`, PR #1508).
+
+    The field axiomatises the framework's structural prediction that
+    the true categorical `c_3` equals the Hopf-link Jones value
+    `J_Hopf(q=1) = -2` — the Q_β analog of #1508's `[Z₂] ∈ B₃(ℂ)`
+    τ_arch image. Per the discipline note above this is a structural
+    NEAR-MATCH (3.35% at canonical q₀), not a Taylor-exact derivation;
+    the class is purely conditional (no instance), and production wires
+    only the Taylor-exact c_2 = -1 rung. -/
+-- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [jones1985] doi:10.2307/1971403 (Hopf Jones polynomial)
+-- Ref: PR #1508 (α_EM §3b-cond conditional-class pattern)
+class QbetaC3StructuralFormClass : Prop where
+  /-- Structural identity: the true categorical `c_3(q)` equals the
+      Hopf-link Jones value `J_Hopf(q=1) = -2` for all `q > 0`. The
+      existence of a multi-block construction realising this identity
+      (closing the 3.35% residual) is the open research target. -/
+  c3_is_jones_hopf :
+    ∀ (q : ℝ), q > 0 → qBetaC3Categorical q = jonesHopfClassicalLimit
+
+/-- N=3 ladder rung built with the TRUE (abstract) categorical `c_3`
+    coefficient. Absent the structural-form class, `qBetaC3Categorical`
+    is an open quantity; the conditional theorem below collapses it to
+    the explicit Jones form. -/
+-- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+noncomputable def Q_beta_n3_categorical (q m_e : ℝ) : ℝ :=
+  Q_beta_form_A q m_e * N1_factor q * N2_factor q
+    * (1 + qBetaC3Categorical q * (hoefsmitB q)^3 * (hbarQ' q)^6)
+
+/-- **Conditional N=3 ladder form** (§3b-cond, proved sorry-free from
+    `QbetaC3StructuralFormClass`).
+
+    Given the structural identity `c_3 = J_Hopf`, the categorical N=3
+    rung equals the explicit Jones closed form `(1 + J_Hopf·b³·ℏ_q⁶)`.
+    Mirrors `em_alpha_inv_full_form` (PR #1508): the class field carries
+    the conditional content, the proof is `unfold + rw`.
+
+    This LOCKS THE FORM (the way #1508 locked α_EM⁻¹) without claiming
+    it is Taylor-exact — the conditional hypothesis IS the open
+    structural content. Production (`per_observable_100x_status.py`)
+    does not consume this theorem; it wires only c_2 = -1. -/
+-- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [jones1985] doi:10.2307/1971403 (Hopf Jones polynomial)
+-- Ref: PR #1508 (§3b-cond conditional-class pattern)
+theorem q_beta_n3_structural_form
+    [hC3 : QbetaC3StructuralFormClass]
+    (q m_e : ℝ) (hq : 0 < q) :
+    Q_beta_n3_categorical q m_e
+      = Q_beta_form_A q m_e * N1_factor q * N2_factor q
+        * (1 + jonesHopfClassicalLimit * (hoefsmitB q)^3 * (hbarQ' q)^6) := by
+  unfold Q_beta_n3_categorical
+  rw [hC3.c3_is_jones_hopf q hq]
+
 end QOU.BraidKnot
