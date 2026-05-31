@@ -1,11 +1,46 @@
 {
   "paper": "quantum-observable-universe",
-  "generated_at": "2026-05-20T06:24:35.532Z",
-  "total": 0,
+  "generated_at": "2026-05-31T21:18:43.419Z",
+  "total": 4,
   "by_severity": {
     "major": 0,
-    "minor": 0
+    "minor": 4
   },
-  "by_kind": {},
-  "findings": []
+  "by_kind": {
+    "section-narrative-drift": 4
+  },
+  "findings": [
+    {
+      "kind": "section-narrative-drift",
+      "severity": "minor",
+      "chapter": "quantum-universes",
+      "section": "sec:rigid-monoidal",
+      "detail": "interpretation block \"monoidal-justification\" (interprets def:rigid-monoidal-category) precedes its target \"rigid-monoidal-category\" — breaks document-order arc per §738",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/quantum-universes/monoidal-justification.ts"
+    },
+    {
+      "kind": "section-narrative-drift",
+      "severity": "minor",
+      "chapter": "observations",
+      "section": "sec:beta-decay-magic-shells-k12-barrier-bypass",
+      "detail": "interpretation block \"k12-barrier-bypass\" (interprets prop:magic-numbers-from-q) precedes its target \"magic-numbers-from-q\" — breaks document-order arc per §738",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/observations/k12-barrier-bypass.ts"
+    },
+    {
+      "kind": "section-narrative-drift",
+      "severity": "minor",
+      "chapter": "observations",
+      "section": "sec:breit-wheeler-pair-creation",
+      "detail": "interpretation block \"breit-wheeler-observation\" (interprets rem:pair-creation-energy) precedes its target \"pair-creation-energy\" — breaks document-order arc per §738",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/observations/breit-wheeler-observation.ts"
+    },
+    {
+      "kind": "section-narrative-drift",
+      "severity": "minor",
+      "chapter": "observations",
+      "section": "sec:non-comm-probability-q-clt",
+      "detail": "interpretation block \"non-commutative-probability-dictionary\" (interprets prop:algebraic-gns-embedding) precedes its target \"algebraic-gns-embedding\" — breaks document-order arc per §738",
+      "link": "https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/observations/non-commutative-probability-dictionary.ts"
+    }
+  ]
 }
