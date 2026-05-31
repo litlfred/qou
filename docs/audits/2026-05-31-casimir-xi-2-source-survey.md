@@ -4,6 +4,14 @@
 **Block.** [`conj:casimir-epsilon-vacuum`](../../content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md)
 **User question.** "Explore additional things for β_2? What is β_2 notation? Is it conflating with other notation?"
 
+> **Follow-up (2026-05-31).** This survey's conclusion (ξ_2 OPEN, no consensus
+> across candidate sources) is correct and stands. Note however that the
+> Wedderburn `tr_M(1)` numbers below (0.9946, 0.9839, …) are **not reproducible**
+> from canonical Wenzl/Markov primitives — see
+> [`2026-05-31-casimir-xi-2-reconciliation.md`](2026-05-31-casimir-xi-2-reconciliation.md),
+> which settles the ξ_2 flip-flop structurally (normalized trace ≡ 1 tautologically;
+> unnormalized weight diverges in n; value gated on the N_⊙ construction).
+
 ## Notation cleanup — `β_k` → `ξ_k`
 
 `β` is heavily overloaded in QOU:
