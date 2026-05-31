@@ -57,38 +57,69 @@ Per the QOU paper's actual consumption sites:
 
 | File | StrictComplementarityPair source | Sorry-free path? |
 |---|---|---|
-| `lean/QOU/BraidKnot/AppliedHelium3Uniqueness.lean:87` | `trivialStrictComplementarityPair helium3_emptySDP` | ✅ via `_unique_of_dualSlack_posDef` |
-| `lean/QOU/BraidKnot/AppliedDeuteronUniqueness.lean:64` | `trivialStrictComplementarityPair deuteron_emptySDP` | ✅ via `_unique_of_dualSlack_posDef` |
-| `lean/QOU/BraidKnot/AppliedTritiumUniqueness.lean:57` | `trivialStrictComplementarityPair tritium_emptySDP` | ✅ via `_unique_of_dualSlack_posDef` |
+| `lean/QOU/BraidKnot/AppliedHelium3Uniqueness.lean:87` | `trivialStrictComplementarityPair helium3_emptySDP` | ✅ via `_unique_of_dualSlack_posDef` (the only nucleus with the closed path) |
+| `lean/QOU/BraidKnot/AppliedDeuteronUniqueness.lean:64` | `trivialStrictComplementarityPair deuteron_emptySDP` | ⚠ ends at `canonical_T_w_subsingleton` (abstract — depends on the `strict_complementarity_unique_axiom` Boyd-Vandenberghe citation). The dualSlack-PosDef closure has NOT yet been wired here. |
+| `lean/QOU/BraidKnot/AppliedTritiumUniqueness.lean:57` | `trivialStrictComplementarityPair tritium_emptySDP` | ⚠ ends at `canonical_T_w_subsingleton` (abstract — same as deuteron). |
 
-**All three light-nucleus uniqueness files invoke the sorry-free
-specialization, not the general axiom.** Their chain is:
+**Correction (per Copilot review on the now-merged #1502):** the earlier audit text claimed all three nuclei use the `_unique_of_dualSlack_posDef` sorry-free path. **That was wrong.** Only ³He has the closed path. ²H and ³H currently terminate at `canonical_T_w_subsingleton`, which consumes the `strict_complementarity_unique_axiom` (Boyd-Vandenberghe §5.5 + Todd §3.4 citation).
+
+The structural infrastructure exists to extend the sorry-free path to ²H and ³H — they share the same empty-SDP structure (`dualSlack = identity`) — but the wiring hasn't been written. Doing so is a focused 20-40 LOC Lean addition per nucleus, mirroring the ³He pattern.
+
+For the **two unwired nuclei**, the uniqueness chain reads:
 
 ```
 empty constraint set
-  ⇒ dualSlack = T - Σᵢ yᵢ·Aᵢ = T = identity matrix
-  ⇒ dualSlack.PosDef (trivial)
-  ⇒ kernel_disjoint_of_dualSlack_posDef applies (R2 closed)
+  ⇒ dualSlack = identity (trivial PosDef witness available)
+  ⇒ kernel_disjoint_of_dualSlack_posDef WOULD apply (R2 closed)
   ⇒ rank_equality_under_strict_complementarity (R3 closed)
-  ⇒ uniqueness proven without invoking AHO 1997
+  ⇒ sorry-free uniqueness available
+
+But the wiring to invoke this chain is currently MISSING in
+AppliedDeuteronUniqueness.lean and AppliedTritiumUniqueness.lean.
+The current proofs invoke canonical_T_w_subsingleton (abstract,
+axiom-dependent) instead.
 ```
 
 ## What this means for the framework's "100% Lean coverage" claim
 
 The framework can honestly claim **SDP strict-complementarity
-uniqueness is fully proven for the QOU practical case** (all
-light-nuclei T_w uniqueness instances). The two remaining axioms
-exist for the *general* result but no concrete production
-consumer invokes them.
+uniqueness is fully proven for ³He** (the only nucleus currently
+wired to the `_unique_of_dualSlack_posDef` sorry-free closure).
+The two remaining axioms exist for the *general* result, and
+²H + ³H currently DO invoke the general axiom via
+`canonical_T_w_subsingleton`.
+
+**Correction note**: an earlier version of this audit overstated
+the closure status by claiming ²H + ³H also used the sorry-free
+path. Per Copilot review on the now-merged #1502, only ³He has
+that path wired. ²H + ³H still terminate at the abstract
+axiom-dependent `canonical_T_w_subsingleton`.
 
 The status table in
 [`docs/uniqueness-theorems-backlog.md`](../uniqueness-theorems-backlog.md)
 item 2 ("T_w SDP-canonical knot operator") is therefore in a
-*finished* state per CLAUDE.md §3b-cond, with the remaining
-axioms behaving as the §3b-cond external-citation pattern (not
-sorries to chase).
+*partially-finished* state:
+- ³He: sorry-free, no axiom dependency ✓
+- ²H, ³H: depend on `strict_complementarity_unique_axiom`
+  (Boyd-Vandenberghe §5.5 + Todd §3.4 — properly cited per
+  §3b-cond, but conditional rather than fully closed)
+
+Extending the ³He pattern to ²H + ³H is the natural follow-up:
+each is a ~20-40 LOC addition mirroring
+`real_strict_complementarity_unique_of_dualSlack_posDef` with
+the corresponding nucleus's empty-SDP, plus the `_emptySDP →
+dualSlack = identity → PosDef` chain that the existing helium-3
+file demonstrates.
 
 ## Suggested follow-up work (ordered by tractability)
+
+0. **Extend the ³He sorry-free wiring to ²H + ³H** (~40-80 LOC
+   total Lean — Copilot review correction post-merge of #1502).
+   Mirror `real_strict_complementarity_unique_of_dualSlack_posDef`
+   from `AppliedHelium3Uniqueness.lean` into the deuteron and
+   tritium files; each empty-SDP → dualSlack = identity →
+   PosDef chain is structurally identical. Closes the only
+   axiom-dependent consumers in the current QOU paper.
 
 1. **`rank_via_eigenvalues` discharge** (1 hour with stable
    LSP). Candidate proof:
