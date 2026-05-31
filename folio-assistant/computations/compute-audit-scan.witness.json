@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T13:50:32.241799+00:00",
-  "commitSha": "3d020ac4f16b5add6ab0d0ffce4eb06d2b6adad3",
+  "computedAt": "2026-05-31T20:35:27.374167+00:00",
+  "commitSha": "27daa06fa4caa0618d3490e34120731658acfdea",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptCommitSha": "3e8cab5b00902b83e6d53dca4fbdf3f7521bbdd9",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -19,14 +19,13 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 791,
+    "files_scanned": 804,
     "patterns": [
       "P15",
       "P16",
@@ -40,7 +39,7 @@
       "P15": 114,
       "P16": 195,
       "P21": 30,
-      "P30": 151,
+      "P30": 153,
       "P31": 57
     },
     "top_files": [
@@ -2732,6 +2731,20 @@
       {
         "pattern": "P30",
         "file": "option_e_v7_involution_aware.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "option_e_v8_hecke_involution_isospin_mirror.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "option_e_v9_all_symmetries.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
