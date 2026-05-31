@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T13:41:51.946513+00:00",
-  "commitSha": "d01bc93291dbe7a104a9fc9d6e03dac6e8825ed3",
+  "computedAt": "2026-05-31T13:50:32.879745+00:00",
+  "commitSha": "3d020ac4f16b5add6ab0d0ffce4eb06d2b6adad3",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2626,6 +2626,7 @@
         "option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
         "option-e-q-reeb-phase-probe-v4.witness.json",
         "option-e-v6-combined-canonical.witness.json",
+        "option-e-v7-involution-aware.witness.json",
         "orbit-trace-identity.witness.json",
         "p2-5-symbolic-q-audit.witness.json",
         "paper-six-term-isotope-sweep.witness.json",
