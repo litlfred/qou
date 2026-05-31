@@ -3351,4 +3351,69 @@ theorem codata_ame_offset_bound :
   unfold codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
+/-! ## Parameterisation foundation (2026-05-31)
+
+The 118 per-element `deviation_<X>` theorems all share the same
+structural shape:
+
+```lean
+theorem deviation_<X> : |X.codataMass - X.ameMass| < <Z>·offset_bound := by
+  unfold ElementDatum.codataMass ElementDatum.ameMass <X>
+  unfold codata_atomic_mass ame2020_atomic_mass
+  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  norm_num
+```
+
+The structural identity behind every one of these is:
+
+  `e.codataMass - e.ameMass = e.Z · codata_ame_offset_per_Z`
+
+(The `N`-dependent terms `N·codata_m_n` vs `N·ame_delta_n` are
+absorbed by the `B/A` term cancellation; only the `Z·(m_p + m_e − u − Δ_H)` part survives.)
+
+This section provides the generic algebraic identity once. Future
+PRs can refactor per-element deviation theorems to:
+
+```lean
+theorem deviation_<X> : |X.codataMass - X.ameMass| < <bound> := by
+  rw [show X.codataMass - X.ameMass = (X.Z : ℝ) * codata_ame_offset_per_Z
+      from ElementDatum.codata_minus_ame_eq_Z_offset X]
+  -- only the numerical bound check remains
+  unfold codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
+  norm_num
+```
+
+This collapses ~70 LOC of `unfold` boilerplate across 118 theorems
+to a single `rw` + numerical check per element (~3 LOC each).
+
+## Generic identity -/
+
+/-- **The structural CODATA−AME2020 difference equals Z × per-proton offset.**
+
+    For any element datum `e`, the difference between the CODATA-
+    derived atomic mass and the AME2020-derived atomic mass equals
+    `e.Z · codata_ame_offset_per_Z`. The neutron-dependent terms
+    cancel via the `B/A` binding-energy mass equivalence.
+
+    This is the algebraic foundation underlying all 118 per-element
+    `deviation_<X>` theorems. -/
+theorem ElementDatum.codata_minus_ame_eq_Z_offset (e : ElementDatum) :
+    e.codataMass - e.ameMass = (e.Z : ℝ) * codata_ame_offset_per_Z := by
+  unfold ElementDatum.codataMass ElementDatum.ameMass
+  unfold codata_atomic_mass ame2020_atomic_mass codata_ame_offset_per_Z
+  ring
+
+/-- **Uniform per-element deviation bound via the structural identity.**
+
+    For any element datum `e`, the deviation `|e.codataMass - e.ameMass|`
+    is bounded by `e.Z · |codata_ame_offset_per_Z|`. Combined with
+    `codata_ame_offset_bound` (offset < 2×10⁻⁵), this gives a uniform
+    bound proportional to atomic number, replacing the per-element
+    `< <specific>` bounds with a single parameterised statement. -/
+theorem ElementDatum.deviation_uniform (e : ElementDatum) :
+    |e.codataMass - e.ameMass| ≤ (e.Z : ℝ) * |codata_ame_offset_per_Z| := by
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset]
+  rw [abs_mul]
+  rw [show |(e.Z : ℝ)| = (e.Z : ℝ) from abs_of_nonneg (Nat.cast_nonneg _)]
+
 end QOU.AtomicMass
