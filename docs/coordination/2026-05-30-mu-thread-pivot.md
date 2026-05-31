@@ -40,8 +40,7 @@ in the production chain.
 
 ## Known structural framing — μ-p tension audit
 
-Per `docs/precision-goals.md` lines 117-120 + `docs/audits/2026-05-28-
-mu-p-tension-substrate-floor.md`:
+Per `docs/precision-goals.md` lines 117-120 + `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md`:
 
 > *The μ-p 240 ppb is the floor of the current low-order shell; it is
 > derivable-below (lower N residual), but not fittable-below.*
