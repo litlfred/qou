@@ -694,12 +694,15 @@ const NEG_RESULT_TAGS = new Set([
   "superseded",
   "scaffolding",  // works hand-in-hand with `open-rd-item-N` tags
 ]);
+// .md status markers — accept ASCII hyphen, en-dash, and em-dash for
+// the dash separator after "Status:" / "Errata banner" prefixes.
+const _DASH = "[-\\u2013\\u2014]";
 const NEG_RESULT_MD_SIGNALS: RegExp[] = [
-  /^##\s+Status\s*:[^\n]*\bfalsified\b/im,
-  /^##\s+Status\s*:[^\n]*\bopen\s+R&D\s*—\s*no\s+known/im,
-  /^##\s+Status\s*:[^\n]*\bsuperseded\b/im,
+  new RegExp(`^##\\s+Status\\s*:[^\\n]*\\bfalsified\\b`, "im"),
+  new RegExp(`^##\\s+Status\\s*:[^\\n]*\\bopen\\s+R&D\\s*${_DASH}\\s*no\\s+known`, "im"),
+  new RegExp(`^##\\s+Status\\s*:[^\\n]*\\bsuperseded\\b`, "im"),
   /\*\*Hypothesis\s+falsified\.?\*\*/i,
-  /^>\s*\*\*Errata\s+banner\s*—[^\n]*\bsuperseded\b/im,
+  new RegExp(`^>\\s*\\*\\*Errata\\s+banner\\s*${_DASH}[^\\n]*\\bsuperseded\\b`, "im"),
 ];
 
 export function checkCanonicalNoNegativeResultInPaper(
@@ -710,16 +713,17 @@ export function checkCanonicalNoNegativeResultInPaper(
   if (!ts) return { result: "pass", hits: [] };
 
   // Open conjectures are exempt: kind=conjecture blocks legitimately
-  // document open / partially-falsified directions.
-  const kindMatch = ts.match(/kind:\s*"([a-z]+)"/);
+  // document open / partially-falsified directions. Accept either
+  // single- or double-quoted .ts string literals.
+  const kindMatch = ts.match(/kind:\s*["']([a-z]+)["']/);
   if (kindMatch?.[1] === "conjecture") return { result: "pass", hits: [] };
 
   const hits: CheckerHit[] = [];
 
-  // .ts tag signal
+  // .ts tag signal — accept either quoting style.
   const tagsBlock = ts.match(/tags:\s*\[([\s\S]*?)\]/);
   if (tagsBlock) {
-    const tags = Array.from(tagsBlock[1].matchAll(/"([^"]+)"/g),
+    const tags = Array.from(tagsBlock[1].matchAll(/["']([^"']+)["']/g),
       (m) => m[1]);
     const offenders = tags.filter((t) => NEG_RESULT_TAGS.has(t));
     if (offenders.length > 0) {
