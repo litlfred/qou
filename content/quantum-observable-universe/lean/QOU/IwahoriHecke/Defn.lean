@@ -201,6 +201,62 @@ def IsHeckeAlgebraMap {W : Type u} [Group W] {R : Type v} [CommRing R]
   -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (Hecke-quadratic fragment; braid relations follow-up)
   ∀ s : W, (f s - algebraMap R A q) * (f s + 1) = 0
 
+/-- **Alternating product** `s · t · s · ... · ?` of length `n` in
+    two elements `s, t` of a monoid `A`.  Used to state the braid
+    relation in `IsHeckeBraidedAlgebraMap` below.
+
+    Defined by recursion:
+    - `altProduct s t 0 = 1`
+    - `altProduct s t (n+1) = s * altProduct t s n`
+
+    So `altProduct s t 1 = s`, `altProduct s t 2 = s·t`,
+    `altProduct s t 3 = s·t·s`, etc. -/
+def altProduct {A : Type*} [Monoid A] : A → A → ℕ → A
+  | _, _, 0 => 1
+  | s, t, (n + 1) => s * altProduct t s n
+
+/-- **Refined Hecke algebra map predicate** — Hecke quadratic AND
+    braid relations, parameterised by a Coxeter-matrix function
+    `m : W → W → ℕ`.
+
+    Sprint 2 follow-up (2026-05-31): captures the FULL universal
+    property of the Iwahori-Hecke algebra (not just the Hecke
+    quadratic fragment).  The caller supplies the Coxeter matrix
+    function `m`, typically obtained from a Mathlib `CoxeterSystem`:
+
+      `let m := cs.M.M`   -- Mathlib accessor (subject to API drift)
+
+    or from a custom matrix function for the user's specific Coxeter
+    presentation.  The predicate intentionally takes `m` as an
+    explicit parameter rather than committing to Mathlib's current
+    `CoxeterSystem` API surface, so it remains stable across Mathlib
+    refactors.
+
+    Conditions:
+    1. **Hecke quadratic** — `(f s − q)(f s + 1) = 0` for every
+       `s : W` (same as `IsHeckeAlgebraMap`).
+    2. **Braid relation** — for every pair `(s, t)` of simple
+       reflections, the alternating product of length `m s t` in
+       `f s, f t` equals the alternating product of length `m t s`
+       in `f t, f s`.  When `m s t = m t s` (the standard symmetric
+       case), both sides have the same length. -/
+def IsHeckeBraidedAlgebraMap
+    {W : Type u} [Group W] {R : Type v} [CommRing R]
+    {A : Type w} [Ring A] [Algebra R A] (q : R)
+    (m : W → W → ℕ) (f : W → A) : Prop :=
+  (∀ s : W, (f s - algebraMap R A q) * (f s + 1) = 0) ∧
+  (∀ s t : W, altProduct (f s) (f t) (m s t) =
+              altProduct (f t) (f s) (m t s))
+
+/-- The braided predicate strengthens the quadratic-only predicate:
+    a Hecke-braided map is in particular a Hecke-quadratic map. -/
+theorem IsHeckeBraidedAlgebraMap.toIsHeckeAlgebraMap
+    {W : Type u} [Group W] {R : Type v} [CommRing R]
+    {A : Type w} [Ring A] [Algebra R A] (q : R) (m : W → W → ℕ)
+    {f : W → A} (h : IsHeckeBraidedAlgebraMap q m f) :
+    IsHeckeAlgebraMap q f :=
+  h.1
+
 /-- **Existence side of the Iwahori-Hecke universal property
     (Hecke-quadratic fragment).**
 
