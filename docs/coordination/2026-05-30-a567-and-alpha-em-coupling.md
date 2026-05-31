@@ -255,3 +255,26 @@ needs derivation.
 `[Z_2]` and the Q_β multi-block f may be the SAME categorical object
 at different graph levels. If RT 2-loop closes α_EM, it likely closes
 Q_β too.
+
+## PR #1524 awareness (no coordination needed)
+
+PR #1524 (IwahoriHecke universal-property scaffold) opened by the
+IwahoriHecke Sprint thread. Scaffold-level only — `Ring` + `Algebra`
+instances with `:= sorry` refs to Sprint 2 follow-ups. **No file
+overlap with #1479** (touches only `lean/QOU/IwahoriHecke/Defn.lean`).
+
+**Relevance to Q_β work:** the PR body mentions *"upgrades
+prop:hecke-branching-trace-decomposition's §3b-cond branchCoefficient
+field from Unit placeholder to operator-valued content"*. That's #1443
+(operator-valued LR, which I cherry-picked into earlier PRs this
+session). Once Sprint 2 lands, the operator-valued branching unlocks
+the multi-Wedderburn-block formula construction that the Q_β
+categorical f (`Q_β = m_e × f(Δtr_M, q)`) needs.
+
+So #1524's IwahoriHecke infrastructure is **downstream-enabling** for
+my #1479 Q_β c_3 derivation — but not a blocker, not a competing
+implementation. They confirm in their PR body: *"No active sibling on
+the IwahoriHecke/Sprint-2 scope at PR-open time."*
+
+No coordination comment posted; recorded here for future-session
+visibility.
