@@ -112,6 +112,61 @@ relative residue (above the 1% threshold).
 **Empirical conclusion: the π²/720 prefactor is genuinely NOT a
 low-degree q-rational of substrate quantities at q₀.**
 
+### Extended Carlitz q-Bernoulli probe (Route A, 3rd pass)
+
+Audit's earlier recommendation: "Cherednik q-zeta / Macdonald-
+operator infrastructure" might recover π²/720. Implemented the
+**Carlitz q-Bernoulli** definition (Carlitz 1948 / Kaneko–
+Kurokawa–Wakayama 2002) — the simplest non-trivial q-zeta with
+explicit values at negative integers.
+
+The recursion `Σ_{k=0}^{n} C(n,k)·q^{k+1}·β_k^q - β_n^q = δ_{n,1}`
+gives at substrate `q₀ ≈ 1.110`:
+
+| n | β_n^q at q₀ | B_n classical | ratio |
+|---|-------------|---------------|-------|
+| 0 | 1.0000 | 1.0000 | 1.0000 |
+| 1 | -0.4739 | -0.5000 | 0.9479 |
+| 2 | 0.1574 | 0.1667 | 0.9444 |
+| 3 | -0.0078 | 0.0000 | n/a |
+| 4 | -0.0274 | -0.0333 | **0.8234** |
+
+Note β_3^q ≠ 0 at substrate (classical Bernoulli B_3 = 0 because
+odd Bernoulli numbers vanish for n ≥ 3; the q-deformation breaks
+this).
+
+Casimir-prefactor candidates `|val| · π²/6` (the standard geometric
+multiplier that converts `ζ(-3) = -1/120` to `π²/720`):
+
+| Form | Value | Rel residue |
+|------|-------|-------------|
+| `ζ_q(-3) = -β_4^q / [4]_q` | 1.099e-2 | 19.9% |
+| `ζ_q(-3)_alt = -β_4^q / 4` | 1.129e-2 | **17.7%** |
+| `β_4^q / [2]_q²` | 1.116e-2 | 18.6% |
+| `β_4^q · [2]_q / [4]_q` | 2.209e-2 | 61.2% |
+
+Best Carlitz candidate is 17.7% off — much worse than the
+Mohideen–Roy 1998 experimental tolerance (~1%). **Carlitz q-Bernoulli
+is the wrong q-deformation for the QOU Casimir analogue.**
+
+**Implication.** If the QOU conjecture is correct (substrate
+predicts Casimir matches standard physics at ~1%), then the q-zeta
+relevant to QOU is *not* Carlitz/KKW. Two possible follow-ups:
+
+(a) **Cherednik 2006 q-zeta** via Macdonald operators — the
+    machinery is heavier but more naturally aligned with Hecke-
+    algebra substrate. Predicted q-Bernoulli numbers differ from
+    Carlitz at higher orders.
+
+(b) **Non-q-zeta route entirely** — the QOU prefactor may come
+    from a Markov-trace identity or a Φ_q (Faddeev) evaluation
+    rather than a q-zeta. The fact that all "obvious" q-zetas
+    fail at 17%+ is evidence the right derivation is *not*
+    through this family.
+
+Witness:
+[`casimir-carlitz-q-bernoulli-probe.witness.json`](../../folio-assistant/computations/casimir-carlitz-q-bernoulli-probe.witness.json).
+
 If the prefactor IS substrate-derivable, the derivation must
 involve a more elaborate structure (Macdonald operators / Cherednik
 q-zeta / Φ_q Faddeev dilog evaluation), not a closed-form
