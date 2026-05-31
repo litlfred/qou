@@ -77,3 +77,31 @@ special cases. Full write-up in
   isolating the (2,1)-only Reeb phase and removing the ⁴He Coulomb (sinh)
   term; check whether D's 2-body case unifies. **#1416's scalar-scale lane
   is complementary — do not duplicate.**
+
+---
+
+## 2026-05-31 update — magic-A wireup (PR #1543)
+
+**Continuation of this thread.** User question "why does heavy-nucleus binding miss by 2-5×?" + my honest audit ([`2026-05-31-binding-alpha-shift-a4-status.md`](../audits/2026-05-31-binding-alpha-shift-a4-status.md)) revealed:
+
+1. The framework already carries **two distinct binding paths** in disjoint Python files:
+   - `binding-alpha-shift-extension` (per-rep Reeb phase at force-carrier torus knot) — exact for D, misses ⁴He by −79%.
+   - `magic_A_formula` (ρ_F · m_e · A · 8G) — doubly-magic regime; gets ⁴He to +5.9%.
+2. The §3b-cond `BindingForceCarrierKnot` class only knew the first path — wireup gap, not new math.
+3. PR #1543 ships the wireup as a Lean content-block triple [`prop:magic-A-binding-formula`](../../content/quantum-observable-universe/mass-theory/magic-A-binding-formula.md) (sorry-free §3b-cond) + extended witness emitter + audit doc.
+
+**Gap closure factor:** 13.5× for ⁴He (|rel_err| 0.7904 → 0.0587). (The audit doc initially claimed 80×; Copilot review caught the math error, corrected in commit `68176332`.)
+
+### Scope map (2026-05-31)
+
+| PR | Branch | Angle | Relationship to #1543 |
+|---|---|---|---|
+| **#1543** (mine) | `binding-magic-A-wireup-2026-05-31` | magic-A formula wired in as §3b-cond Lean + content block + canonical-dispatch witness | — |
+| #1507 | `canonical-fit-pattern-triage-2026-05-30` | Class-A banners on fit-pattern scripts | **scope-adjacent**: ρ_F = 2 risks fit-pattern misclassification; intent comment posted [#1507](https://github.com/litlfred/qou/pull/1507) |
+| #1535 | `q0-regen-batch-cont-2026-05-31` | Witness regen sweep for ~370 stale | **no overlap** — new `binding-alpha-shift-witness.witness.json` is post-q₀-repin |
+| #1537 | `nucleus-empty-sdp-refactor-2026-05-30` | Empty-SDP uniqueness for 7 nuclei | **tangent** — different mechanism (SDP vs. magic-A formula); both target the same A≥3 problem from different sides |
+| #1475 | `qbeta-ck-interpretations-2026-05-30` | Q_β c_k Taylor interpretation | **tangent** — same `mass-theory/` chapter, different observable |
+
+### Carry-forward
+
+Open Math A (ρ_F = 2 derivation) and Open Math B (single-magic A=3 p/n asymmetry) carried into Lean as class hypothesis + into the audit doc's action items. Picked up by whichever future PR closes the categorical chain to `prop:gravity-spectral-prefactor`.
