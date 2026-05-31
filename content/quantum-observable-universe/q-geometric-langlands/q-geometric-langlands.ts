@@ -137,18 +137,19 @@ export default chapter({
         // swap makes it a backward ref, no new cascade.
         "unitary-stability",
         "geometric-rh-exposition",
-        "outro-q-geometric-langlands",
       ],
     }),
     section({
       title: "Reconnected orphan blocks (Phase 7)",
       label: "sec:q-geometric-langlands-orphan-reconnect",
       blocks: [
+        "intro-orphan-reconnect",
         "cyclotomic-l-value-decomposition",
         "mirror-3d-3d-correspondence",
         "modular-s-transform-q-q-tilde",
         "mutant-jones-bloch-group-intro",
-        "quantum-langlands-dual",
+        "quantum-langlands-dual",        "outro-q-geometric-langlands",
+
       ],
     }),
   ],

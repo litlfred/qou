@@ -145,6 +145,7 @@ export default chapter({
         "chirality-period-pairing",
         "bring-embeddable-knots",
         "bring-embeddable-knots-table-data",
+        "outro-mass-endomorphism",
       ],
     }),
   ],

@@ -218,7 +218,6 @@ export default chapter({
         "frobenius-positivity-filter",
         "categorical-quantity-map",
         "b3-local-minimum",
-        "outro-particle-interactions",
       ],
     }),
     section({
@@ -423,6 +422,7 @@ export default chapter({
         "categorical-proton",
         "categorical-neutron",
         "categorical-meson",
+        "outro-particle-interactions"
       ],
     }),
   ],
