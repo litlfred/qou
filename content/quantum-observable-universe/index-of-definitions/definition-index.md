@@ -237,7 +237,9 @@
 | [thm:generation-completeness](#thm:generation-completeness) | Generation completeness: all embeddable knots are reachable | Ch 6 | `qou:QOU.Archimedean.generation_completeness` |
 | [thm:q-ns-wellposedness](#thm:q-ns-wellposedness) | Global regularity of the $q$-deformed Navier--Stokes equation | Ch 16 | `qou:QOU.FluidDynamics.q_ns_wellposedness` |
 | [thm:hasse-weil-bound](#thm:hasse-weil-bound) | Hasse--Weil bound for the fundamental eigenvalues | Ch 20 | `qou:QOU.AlgebraicSubstrate.hasse_weil_bound` |
+| [thm:hoefsmit-ew-cell-content](#thm:hoefsmit-ew-cell-content) | Hoefsmit cell-content identification of the EW triplet inside $\mathrm{End}_R(V^{\otimes 6})$ (categorical existence) | Ch 10 | `qou:QOU.IwahoriHecke.Hoefsmit.HoefsmitSeminormalBasis` |
 | [thm:qou-obstruction-reduction](#thm:qou-obstruction-reduction) | In a QOU the classical limit obstruction is one-dimensional | Ch 17 | `qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction` |
+| [thm:hecke-anyonic-substrate](#thm:hecke-anyonic-substrate) | Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation | Ch 8 | `qou:QOU.IwahoriHecke.Tw.HeckeAnyonicSubstrate` |
 | [thm:macroscopic-stability-equivalence](#thm:macroscopic-stability-equivalence) | Macroscopic stability is equivalent to the Riemann hypothesis | Ch 17 | `qou:QOU.AlgebraicSubstrate.macroscopic_stability_equivalence` |
 | [thm:mass-energy-equivalence](#thm:mass-energy-equivalence) | Mass--energy equivalence ($E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$) | Ch 18 | `qou:QOU.Information.massEnergyEquivalence` |
 | [thm:hyperelliptic-z5-classification](#thm:hyperelliptic-z5-classification) | Minimal-genus hyperelliptic curves with faithful $\mathbb{Z}_5$-symmetry | Ch 8 | `qou:QOU.HyperellipticQuintic.minimal_z5_classification` |
@@ -886,10 +888,8 @@
 | [conj:cl3-zeta5-geometric-realization](#conj:cl3-zeta5-geometric-realization) | Geometric realisation of $\mathrm{Cl}_3(2\pi/5)$ as a Bring-natural depth-3 invariant | Ch 10 | `qou:QOU.BraidKnot.Cl3Zeta5GeometricRealization` |
 | [conj:gb-depth-period-correspondence](#conj:gb-depth-period-correspondence) | GS-depth $\leftrightarrow$ Goncharov period-depth correspondence | Ch 10 | `qou:QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence` |
 | [conj:crystal-graph-realization](#conj:crystal-graph-realization) | Hecke normal forms realise crystal highest-weight vectors | Ch 8 | `qou:QOU.BraidKnot.CrystalGraphRealization` |
-| [conj:hoefsmit-ew-cell-content](#conj:hoefsmit-ew-cell-content) | Hoefsmit cell-content identification of the EW triplet inside $\mathrm{End}_R(V^{\otimes 6})$ | Ch 10 | `qou:QOU.BraidsAndKnots.HoefsmitEWCellContent` |
 | [conj:inter-nucleon-channel-color-tube](#conj:inter-nucleon-channel-color-tube) | Inter-nucleon Hecke channel assignment from Bring color-tube weighting | Ch 6 | `qou:QOU.BraidsAndKnots.InterNucleonChannelColorTube` |
 | [conj:single-volume-irrationality](#conj:single-volume-irrationality) | Irrationality of a single hyperbolic knot volume | Ch 12 | `qou:QOU.Archimedean.SingleVolumeIrrationality` |
-| [conj:hecke-anyonic-substrate](#conj:hecke-anyonic-substrate) | Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation | Ch 8 | `qou:QOU.BraidKnot.HeckeAnyonicSubstrate` |
 | [conj:jet-filtered-knot-factor](#conj:jet-filtered-knot-factor) | Jet-filtered knot factor: per-level character convergence and nuclear quotient braid | Ch 10 | `qou:QOU.BraidKnot.jet_filtered_knot_factor` |
 | [conj:jet-convergence-classical-limit](#conj:jet-convergence-classical-limit) | Jet-filtered knot invariant converges to classical dimension-weighted average | Ch 10 | `qou:QOU.BraidKnot.jet_convergence_classical_limit` |
 | [conj:joint-galois-braid-action](#conj:joint-galois-braid-action) | Joint motivic-Galois $\times$ braid-group action on the bi-filtration $\mathcal{H}_q^{(n, K)}$ | Ch 10 | `qou:QOU.BraidKnot.JointGaloisBraidAction` |

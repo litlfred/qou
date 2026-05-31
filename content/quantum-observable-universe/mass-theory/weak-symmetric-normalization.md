@@ -5,7 +5,7 @@ Plancherel-normalization framing).**
 > framed $\mathcal{N}_{\rm sym}(q)$ as a Plancherel-weighted
 > ratio with uniform $1/[2]_q$ weights — derived under the
 > dimensionally-inconsistent $H_2(q)$-only formulation. Per
-> [`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content),
+> [`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content),
 > the operative structural quantity is the **direct cell-content
 > trace** of $\sigma_1^4 \sigma_3^6 \sigma_5^8$ on the
 > pure-eigenspace — bar-self-dual, derived without Plancherel
@@ -121,7 +121,7 @@ $$
 $$
 
 derived in
-[`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)
+[`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)
 **without** invoking Plancherel weights. The corresponding
 constrained-PSLQ basis for $N_v$ should use this trace as the
 structural input — not the Plancherel-weighted form below.
