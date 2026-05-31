@@ -244,6 +244,18 @@ jobs:
           python3 folio-assistant/computations/compute_audit_scan.py
           python3 -c "import json; d=json.load(open('folio-assistant/computations/compute-audit-scan.witness.json')); print('compute-audit-scan:', d['data']['by_pattern_count'])"
 
+      - name: Per-nucleus witness lean_uniqueness_ref wiring (warn-only)
+        # Per the post-#1537 wiring campaign: every per-nucleus
+        # witness should cite its SDP-uniqueness theorem via a
+        # `lean_uniqueness_ref` field. The audit tracks coverage
+        # and surfaces missing-wiring witnesses. Warn-only initially;
+        # flip to `--strict` once coverage > 80% (currently ~18%).
+        # See PRs #1537, #1542, #1554, #1557, #1559, #1572 + workplan
+        # docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.
+        run: |
+          python3 folio-assistant/computations/audit_lean_uniqueness_ref_wiring.py || true
+          python3 -c "import json; d=json.load(open('folio-assistant/computations/audit-lean-uniqueness-ref-wiring.witness.json')); print(f\"lean_uniqueness_ref coverage: {d['data']['wired_count']}/{d['data']['per_nucleus_witnesses_count']} ({d['data']['coverage_fraction']:.1%})\")"
+
       - name: Fitted-labelled-canonical audit (CAL-4 discipline, warn-only)
         # Per CAL-4 audit 2026-05-22: catches the
         # "fitted literal disguised as substrate-canonical derivation"
