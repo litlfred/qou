@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
+import QOU.MathlibExt.SDPRealUniqueness
 import QOU.HeckeAlgebra.Common
 import QOU.BraidKnot.LightNucleus
 import QOU.BraidKnot.WitnessR5Full
@@ -69,5 +70,73 @@ theorem deuteron_uniqueness_via_empty_sdp_pending_multiterm :
       deuteron_emptySDP.objAt Φ = deuteron_emptySDP.objAt
         deuteron_trivialStrictCompPair.Φstar} :=
   canonical_T_w_subsingleton deuteron_trivialStrictCompPair
+
+/-! ### Interior-case closure for ²H via the ℝ-uniqueness layer
+
+Mirrors the ³He closure in `AppliedHelium3Uniqueness.lean §6`.
+The empty-constraint SDP for ²H has cost matrix `T = 1`
+(identity), no equality constraints, hence dual slack
+`S(y) = T - Σ y_i A_i = 1` (identity, regardless of `y` since
+the sum is empty). The identity matrix is positive-DEFINITE,
+so `real_strict_complementarity_unique_of_dualSlack_posDef`
+applies and gives full sorry-free uniqueness.
+
+Per the audit at `docs/coordination/2026-05-30-sdp-uniqueness-status.md`
+§"Suggested follow-up §0", this closes the deuteron's only
+axiom-dependent uniqueness consumer. -/
+
+open QOU.MathlibExt.SDPRealUniqueness
+
+/-- **Real strong-duality pair** for the ²H empty SDP. -/
+def deuteron_realStrongDualityPair : RealStrongDualityPair deuteron_emptySDP where
+  Φstar := 0
+  ystar := fun i => i.elim
+  primal_feas := zero_isFeasible deuteron_emptySDP
+  dualSlack_psd := by
+    show (deuteron_emptySDP.dualSlack (fun i => i.elim)).PosSemidef
+    have h_eq : deuteron_emptySDP.dualSlack (fun i => i.elim) = 1 := by
+      unfold SDPPrimal.dualSlack deuteron_emptySDP
+      simp [Finset.sum_empty]
+    rw [h_eq]
+    exact Matrix.PosDef.one.posSemidef
+  obj_eq_dualObj := by
+    unfold SDPPrimal.objAt SDPPrimal.dualObjAt
+    simp
+
+/-- **Dual slack is PosDef** for the ²H empty SDP. -/
+theorem deuteron_dualSlack_posDef :
+    (deuteron_emptySDP.dualSlack deuteron_realStrongDualityPair.ystar).PosDef := by
+  show (deuteron_emptySDP.dualSlack (fun i => i.elim)).PosDef
+  have h_eq : deuteron_emptySDP.dualSlack (fun i => i.elim) = 1 := by
+    unfold SDPPrimal.dualSlack deuteron_emptySDP
+    simp [Finset.sum_empty]
+  rw [h_eq]
+  exact Matrix.PosDef.one
+
+/-- **Closed sorry-free uniqueness for ²H's empty SDP** —
+    via the interior-case closure of the strict-complementarity
+    uniqueness theorem. No `sorry` in the chain
+    `deuteron_realStrongDualityPair → deuteron_dualSlack_posDef →
+    real_strict_complementarity_unique_of_dualSlack_posDef`. -/
+theorem deuteron_uniqueness_closed
+    {Φ' : Matrix (Fin (heckeDim 6)) (Fin (heckeDim 6)) ℝ}
+    (h_feas : deuteron_emptySDP.IsFeasible Φ')
+    (h_obj : deuteron_emptySDP.objAt Φ' =
+             deuteron_emptySDP.objAt deuteron_realStrongDualityPair.Φstar) :
+    Φ' = deuteron_realStrongDualityPair.Φstar :=
+  real_strict_complementarity_unique_of_dualSlack_posDef
+    deuteron_realStrongDualityPair deuteron_dualSlack_posDef
+    h_feas h_obj
+
+/-- The optimum Φ⋆ in this empty-constraint setup is the zero matrix. -/
+theorem deuteron_optimum_is_zero :
+    deuteron_realStrongDualityPair.Φstar =
+      (0 : Matrix (Fin (heckeDim 6)) (Fin (heckeDim 6)) ℝ) := rfl
+
+/-- The objective value at the (zero) optimum is exactly 0. -/
+theorem deuteron_objAt_optimum_eq_zero :
+    deuteron_emptySDP.objAt deuteron_realStrongDualityPair.Φstar = 0 := by
+  unfold SDPPrimal.objAt deuteron_emptySDP
+  simp [deuteron_optimum_is_zero]
 
 end QOU.BraidKnot
