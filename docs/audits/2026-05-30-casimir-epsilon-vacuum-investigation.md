@@ -282,6 +282,68 @@ substrate q-rationals, Carlitz q-Bernoulli, Faddeev Φ_q + Markov
 parameters, and Macdonald norms — **no obvious low-degree primitive
 at `q_0` recovers π²/720**.
 
+### 5th sweep — comprehensive grid search (closest near-match, but fails classical limit)
+
+After the 4 structured routes all failed, ran a brute-force grid
+sweep ([`casimir_grid_sweep_probe.py`](../../folio-assistant/computations/casimir_grid_sweep_probe.py))
+over 44 substrate primitives — q-integers, ℏ_q, h_q, α_em,
+Vol(4_1), Vol(𝓑₃), Jones polynomials of small knots, log Φ_q(1),
+constants — searching all 2- and 3-term products/ratios with
+small-integer exponents (~10⁴ candidates).
+
+**Result.** 10 non-trivial sub-1% matches; closest at **0.038%**:
+
+```
+ζ(2) · ℏ_q / [10]_q  ≈  π²/720    (residue 0.038% at substrate q₀)
+```
+
+Equivalent forms via `1/[10]_q = α_em · q · [9]_q`:
+
+```
+π² · ℏ_q · α_em · q · [9]_q / 6  ≈  π²/720
+```
+
+This form connects Casimir prefactor explicitly to **α_em** (the
+EM coupling) and **ℏ_q** (substrate Planck) — both physically
+reasonable since Casimir IS an EM-vacuum effect.
+
+**But the classical limit fails.** As `q → 1`:
+- `ℏ_q → 0` linearly in `(q − 1)`
+- `[10]_q → 10`
+- Candidate → 0, **not** the textbook π²/720 ≈ 0.0137
+
+So this form predicts `F_Cas = 0` in the standard-physics limit
+— incompatible with the well-known classical Casimir derivation.
+
+**Honest reading.** The 0.038% closeness at substrate is a
+sophisticated numerical accident: at the specific q₀ derived
+from `m_μ/m_e ≈ 206.77`, the algebraic identity `120·ℏ_q ≈ [10]_q`
+happens to hold to 0.04% — but this is *not* an identity at
+arbitrary q, and doesn't have a physical reason within the
+substrate-derivation chain. Same class as the earlier
+`12·π²/(720·[10]_q)` accident, just tighter.
+
+**Top 10 closest non-trivial matches (all with classical-limit
+issues):**
+
+| # | Form | Residue |
+|---|------|---------|
+| 1 | `ζ(2)·ℏ_q/[10]_q` | 0.038% |
+| 2 | `ζ(2)·[3]_q²/[9]_q³` | 0.123% |
+| 3 | `ζ(2)·h_q/5²` | 0.349% |
+| 4 | `ζ(2)·Vol(4_1)³/10³` | 0.368% |
+| 5 | `ζ(2)·h_q²/[5]_q` | 0.466% |
+| 6 | `ζ(2)·h_q³/J_{4_1}³` | 0.474% |
+| 7 | `h_q · [12]_q⁻¹` | 0.726% |
+| 8 | `ζ(2)·(11)⁻²` | 0.826% |
+| ... | ... | ... |
+
+All 10 share the same defect: they involve `ℏ_q` or `h_q` powers
+that vanish at q → 1, so they fail the classical Casimir limit.
+
+Witness:
+[`casimir-grid-sweep-probe.witness.json`](../../folio-assistant/computations/casimir-grid-sweep-probe.witness.json).
+
 This pushes the audit's "soften to `c_q · ℏc/d⁴`" framing from
 *possibility* to **most-likely truth**:
 
