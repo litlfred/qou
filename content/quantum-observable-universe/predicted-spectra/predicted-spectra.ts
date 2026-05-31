@@ -350,7 +350,7 @@ export default chapter({
         "bar-apply-transfer",
         "golden-quartet-galois",
         "moduli-symmetry-d4",
-        "outro-predicted-spectra"
+        "outro-predicted-spectra",
       ],
     }),
   ],

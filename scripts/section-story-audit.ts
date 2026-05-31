@@ -144,7 +144,10 @@ function parseChapterManifest(paper: string, dir: string): ChapterInfo | null {
   // builder for tighter immutability).  Both yield the same shape;
   // we union them under a single regex.
   const sections: SectionInfo[] = [];
-  const sectionRe = /(?:section|Object\.freeze)\(\s*\{([\s\S]*?)\}\s*\)/g;
+  // Robust against optional generic type parameters (`section<T>({…})`)
+  // and `as const` / `as Section` trailing casts (`Object.freeze({…} as const)`).
+  const sectionRe =
+    /(?:section|Object\.freeze)(?:<[^>]+>)?\(\s*\{([\s\S]*?)\}(?:\s+as\s+[^)]+)?\s*\)/g;
   let m;
   while ((m = sectionRe.exec(src)) !== null) {
     const body = m[1];
@@ -416,6 +419,22 @@ function auditPaper(paper: string): Finding[] {
       // responsibility.
       const blockPosition = new Map<string, number>();
       sec.blocks.forEach((b, i) => blockPosition.set(b, i));
+
+      // Pre-read every block's .ts once into a typed map.  The previous
+      // implementation re-read files inside the inner interprets scan,
+      // making the worst case O(N²) disk reads per section.  Hoisting
+      // the reads makes the scan O(N) reads + O(N²) memory lookups.
+      const blockData = new Map<string, { interprets?: string; label?: string }>();
+      for (const rn of sec.blocks) {
+        const tsPath = join(CONTENT, paper, dir, `${rn}.ts`);
+        if (!existsSync(tsPath)) continue;
+        const tsSrc = readFileSync(tsPath, "utf-8");
+        blockData.set(rn, {
+          interprets: tsSrc.match(/interprets:\s*["']([^"']+)["']/)?.[1],
+          label: tsSrc.match(/label:\s*["']([^"']+)["']/)?.[1],
+        });
+      }
+
       for (const rn of sec.blocks) {
         const pos = blockPosition.get(rn)!;
         // (a) proof-before-target — `foo-proof` precedes `foo`.
@@ -434,35 +453,25 @@ function auditPaper(paper: string): Finding[] {
             });
           }
         }
-        // (b) interprets-before-target — scan the .ts for an `interprets:`
-        // field; if the target appears later in the section, flag.
-        const tsPath = join(CONTENT, paper, dir, `${rn}.ts`);
-        if (existsSync(tsPath)) {
-          const tsSrc = readFileSync(tsPath, "utf-8");
-          const interpretsM = tsSrc.match(/interprets:\s*["']([^"']+)["']/);
-          if (interpretsM) {
-            // The interprets value is a label like "prop:foo"; resolve
-            // to a block by stripping the prefix and searching block kinds.
-            const interpretsLabel = interpretsM[1];
-            for (const otherRn of sec.blocks) {
-              const otherPos = blockPosition.get(otherRn)!;
-              if (otherPos <= pos) continue;
-              const otherTs = join(CONTENT, paper, dir, `${otherRn}.ts`);
-              if (!existsSync(otherTs)) continue;
-              const otherSrc = readFileSync(otherTs, "utf-8");
-              const labelM = otherSrc.match(/label:\s*["']([^"']+)["']/);
-              if (labelM?.[1] === interpretsLabel) {
-                findings.push({
-                  kind: "section-narrative-drift",
-                  severity: "minor",
-                  chapter: dir,
-                  section: sec.label ?? sec.title,
-                  detail: `interpretation block "${rn}" (interprets ${interpretsLabel}) precedes its target "${otherRn}" — breaks document-order arc per §738`,
-                  link: blobUrl(paper, dir, `${rn}.ts`),
-                });
-                break;
-              }
-            }
+        // (b) interprets-before-target — uses the pre-read blockData
+        // map to compare positions without re-reading .ts files.
+        const data = blockData.get(rn);
+        if (!data?.interprets) continue;
+        const interpretsLabel = data.interprets;
+        for (const otherRn of sec.blocks) {
+          const otherPos = blockPosition.get(otherRn)!;
+          if (otherPos <= pos) continue;
+          const otherData = blockData.get(otherRn);
+          if (otherData?.label === interpretsLabel) {
+            findings.push({
+              kind: "section-narrative-drift",
+              severity: "minor",
+              chapter: dir,
+              section: sec.label ?? sec.title,
+              detail: `interpretation block "${rn}" (interprets ${interpretsLabel}) precedes its target "${otherRn}" — breaks document-order arc per §738`,
+              link: blobUrl(paper, dir, `${rn}.ts`),
+            });
+            break;
           }
         }
       }
