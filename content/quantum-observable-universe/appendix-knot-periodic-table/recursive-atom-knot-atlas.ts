@@ -12,6 +12,14 @@ export default proposition({
     "def:confined-particle",
     "prop:fermion-boson-knot-link",
     "prop:confinement-sdp",
+    // SDP-uniqueness wiring (2026-05-31): the atlas's per-atom T_w
+    // canonical-knot identifications are certified at the abstract-
+    // framework level by the parameterised SDP-uniqueness theorems
+    // (PRs #1537/#1542/#1546). Each atlas entry's T_w uniqueness is
+    // `qou:QOU.BraidKnot.nucleus_uniqueness_closed (3*A)`; named
+    // wrappers exist at per-isotope (10), per-element (118), and
+    // per-stable-isotope (252) granularities.
+    "conj:canonical-knot-id-sdp",
   ],
   cites: ["wenzl1988"],
   computation: {
