@@ -271,8 +271,6 @@ export default chapter({
       blocks: [
         "intro-kashiwara-jones-quantum-dilog",
         "kashiwara-jones-alternation-interpretation",
-        "hopf-jones-c3-categorical",
-        "kashiwara-jones-c4-categorical",
         "canonical-braid-interface-composition",
         "canonical-braid-interface-composition-table3-data",
         "canonical-braid-interface-composition-table2-data",
@@ -476,7 +474,6 @@ export default chapter({
       blocks: [
         "intro-lp-dual-jucys-murphy",
         "jucys-murphy-central-elements-qou",
-        "alpha-5-jm-central-empirical-findings",
         "spin-involution-lp-dual-invariance",
         "lp-dual-scaling-conjecture",
         "wigner-2-coefficient",
@@ -635,9 +632,6 @@ export default chapter({
         "pre-archimedean-derivation-chain",
         "pre-archimedean-derivation-chain-table2-data",
         "pre-archimedean-derivation-chain-table1-data",
-        "derivation-audit-report",
-        "derivation-audit-report-table2-data",
-        "derivation-audit-report-table1-data",
         "conj-canonical-knot-id-sdp",
         "conj-chirality-ribbon-frobenius",
         "conj-rho-prefactor-structural",
@@ -779,8 +773,6 @@ export default chapter({
       label: "sec:mass-application-orphan-reconnect",
       blocks: [
         "mass-application-orphan-reconnect-intro",
-        "alpha-5-jm-central-empirical-findings-table1-data",
-        "alpha-5-jm-central-empirical-findings-table2-data",
         "block-multiplicativity-v-free",
         "borromean-markov-trace-closed-form",
         "crystal-r-matrix-sub-lemma",

@@ -111,7 +111,6 @@ export default chapter({
         "u-coordinate-discharges",
         "u-coordinate-discharges-table-data",
         "multi-link-jones-q1-extension",
-        "per-wedderburn-block-c5-c6",
         "hecke-algebra-type-scaffold",
         "markov-trace-operator-construction",
         "chi-v3-closed-form-proof",
