@@ -71,17 +71,18 @@
   {
     "id": "probe-ck-lean-3bcond-classes",
     "summary": "Add Lean §3b-cond classes for c_4–c_7 mirroring QbetaC3StructuralFormClass",
-    "comment": "CLAIMED 2026-05-31 by claude/qbeta-ck-lean-3bcond-classes-2026-05-31. The c_3 case already exists in content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.lean (axiom qBetaC3Categorical + class QbetaC3StructuralFormClass + theorem q_beta_n3_structural_form). Mirror for c_4, c_5, c_6, c_7 using existing canonical-instance forms: c_4 = J·b⁴ = -2·b⁴; c_5 = -(b²+1/2); c_6 = J²·b² = 4·b² (empirical fit); c_7 = J³ = -8. Per CLAUDE.md §3b-cond: classes are conditional (no instance provided), so production is unaffected; the classes just LOCK the structural-form claims so downstream Lean can carry them as hypotheses without the Taylor-exact derivation. Parallel α_EM PR #1508 / #1511 pattern.",
-    "status": "in_progress",
+    "comment": "DONE 2026-05-31 by claude/qbeta-ck-lean-3bcond-classes-2026-05-31 (PR #1587). Added §3b-cond classes for c_4, c_5, c_6, c_7 to content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.lean mirroring the existing c_3 pattern. Closed forms (verbatim from qBetaPrecisionLadderCoeffsCanonical): c_4 = J·b⁴; c_5 = -(b²+1/2); c_6 = J²·b² (EMPIRICAL FIT per instance docstring); c_7 = J³ = -8 (pattern aesthetics per instance docstring). No instances provided per §3b-cond discipline; production unaffected. Local `bun run validate quantum-observable-universe` exit 0; CI billing-pattern failures (validate 2s, content-pipeline 3s) skipped per CLAUDE.md.",
+    "status": "done",
     "priority": "medium",
     "origin": "session-init",
-    "assignee": "claude/qbeta-ck-lean-3bcond-classes-2026-05-31",
     "createdAt": "2026-05-31",
     "data": {
       "goal": "1ppq-qbeta",
       "depends_on": ["probe-c3-q0-stability", "probe-c4-habiro"],
       "lean_pattern": "QbetaC3StructuralFormClass at 441c291fc",
-      "session_state": "in_progress — adding c_4/c_5/c_6/c_7 mirrors"
+      "completedAt": "2026-05-31",
+      "completedBy": "claude/qbeta-ck-lean-3bcond-classes-2026-05-31",
+      "verdict": "structural-form classes locked for c_4-c_7; no Taylor-exact claim; production unaffected"
     }
   },
   {
