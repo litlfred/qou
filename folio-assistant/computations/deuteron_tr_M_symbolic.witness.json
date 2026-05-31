@@ -1,6 +1,6 @@
 {
   "computation": "deuteron-tr_M-symbolic",
-  "description": "Closed-form symbolic Markov trace of the internal A=2 (deuteron) braid in H_6(q), via the canonical Wenzl-Ocneanu y_λ·χ^λ formula (matches CLAUDE.md §7a `thm:jones-markov-trace`). Migrated from the historical Plancherel-trace formula on 2026-05-17 per audit doc 2026-05-17-dual-tr-m-discrepancy.md — no fallback.",
+  "description": "Closed-form symbolic Markov trace of the internal A=2 (deuteron) braid in H_6(q), via the canonical Wenzl-Ocneanu y_\u03bb\u00b7\u03c7^\u03bb formula (matches CLAUDE.md \u00a77a `thm:jones-markov-trace`). Migrated from the historical Plancherel-trace formula on 2026-05-17 per audit doc 2026-05-17-dual-tr-m-discrepancy.md \u2014 no fallback.",
   "atom": {
     "Z": 1,
     "N": 1,
@@ -16,18 +16,18 @@
   "r_coord_note": "r = q^(1/2), the Wenzl Markov-parameter convention",
   "pole_order_at_q0_in_r": 38,
   "leading_coefficient_in_r": "1/16",
-  "value_at_q0": 0.983526181918645,
+  "value_at_q0": 0.9835260324047483,
   "per_partition": {
     "(1, 1, 1, 1, 1, 1)": {
       "f_lambda": 1,
-      "chi_at_q0": -0.6769250645272094,
+      "chi_at_q0": -0.6769250916999121,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "source": "cached"
     },
     "(6,)": {
       "f_lambda": 1,
-      "chi_at_q0": 1.559758739418061,
+      "chi_at_q0": 1.5597586581034162,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "conjugate_source": "(1, 1, 1, 1, 1, 1)",
@@ -35,14 +35,14 @@
     },
     "(2, 1, 1, 1, 1)": {
       "f_lambda": 5,
-      "chi_at_q0": 2.1554159875264367,
+      "chi_at_q0": 2.1554157117076285,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "source": "cached"
     },
     "(5, 1)": {
       "f_lambda": 5,
-      "chi_at_q0": 3.2158914339386846,
+      "chi_at_q0": 3.215890878473305,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "conjugate_source": "(2, 1, 1, 1, 1)",
@@ -50,14 +50,14 @@
     },
     "(2, 2, 2)": {
       "f_lambda": 5,
-      "chi_at_q0": -3.4975646652884254,
+      "chi_at_q0": -3.4975638908268736,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "source": "cached"
     },
     "(3, 3)": {
       "f_lambda": 5,
-      "chi_at_q0": 4.249070292623647,
+      "chi_at_q0": 4.2490694054099745,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "conjugate_source": "(2, 2, 2)",
@@ -65,14 +65,14 @@
     },
     "(2, 2, 1, 1)": {
       "f_lambda": 9,
-      "chi_at_q0": -0.8197159558910454,
+      "chi_at_q0": -0.8197156502925226,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "source": "cached"
     },
     "(4, 2)": {
       "f_lambda": 9,
-      "chi_at_q0": 1.6737481247386987,
+      "chi_at_q0": 1.6737477222247328,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "conjugate_source": "(2, 2, 1, 1)",
@@ -80,14 +80,14 @@
     },
     "(3, 1, 1, 1)": {
       "f_lambda": 10,
-      "chi_at_q0": -0.48998813829170385,
+      "chi_at_q0": -0.4899877712745947,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "source": "cached"
     },
     "(4, 1, 1)": {
       "f_lambda": 10,
-      "chi_at_q0": -0.4701914800047225,
+      "chi_at_q0": -0.47019171015698125,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "conjugate_source": "(3, 1, 1, 1)",
@@ -95,15 +95,17 @@
     },
     "(3, 2, 1)": {
       "f_lambda": 16,
-      "chi_at_q0": -1.972821055100127,
+      "chi_at_q0": -1.9728207380214016,
       "compute_seconds": 0.0,
       "derived_from_conjugate": false,
       "source": "cached"
     }
   },
-  "total_compute_seconds": 0.03,
-  "generated_at": "2026-05-17T07:04:38.755370+00:00",
-  "engine": "python",
-  "scriptFile": "deuteron_tr_M_symbolic.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  "total_compute_seconds": 0.05,
+  "generated_at": "2026-05-31T13:24:49.495405+00:00",
+  "lean_uniqueness_ref": {
+    "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
+    "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+    "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+  }
 }

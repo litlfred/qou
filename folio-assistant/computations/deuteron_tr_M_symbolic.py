@@ -216,6 +216,20 @@ def main() -> int:
         "per_partition": {str(k): v for k, v in chi_per_lam.items()},
         "total_compute_seconds": round(dt_total, 2),
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        # Lean SDP-uniqueness cross-reference (PR #1537/#1542/#1554).
+        "lean_uniqueness_ref": {
+            "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
+            "framework_doc": (
+                "content/quantum-observable-universe/lean/QOU/BraidKnot/"
+                "NucleusEmptySDPUniqueness.lean"
+            ),
+            "note": (
+                "Certifies T_w uniqueness at the abstract empty-"
+                "constraint SDP level (PR #1537 parameterised module). "
+                "Workplan: docs/workplans/2026-05-31-witness-lean-"
+                "uniqueness-ref-wiring.md."
+            ),
+        },
     }
     out.write_text(json.dumps(witness, indent=2))
     print()

@@ -465,6 +465,19 @@ def main() -> int:
         "Geom_full(𝓑₃) categorical-exactness refinement gap at h² "
         "order, NOT as a separate λ_scale closure."
     )
+    # Lean SDP-uniqueness cross-reference (PR #1537/#1542/#1554
+    # wiring, 2026-05-31). Each nucleus's canonical T_w knot
+    # operator uniqueness at the empty-constraint SDP level.
+    w.add_data("lean_uniqueness_ref", {
+        "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
+        "neutron": "qou:QOU.BraidKnot.nucleus_uniqueness_closed (n=3)",
+        "framework_doc":
+            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+        "note": (
+            "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). The real per-nucleus SDP (multi-term cost + non-empty constraints) is per-nucleus substantive open work. Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+        ),
+    })
+
 
     out = w.save()
     print(f"Witness emitted: {out.name}")
