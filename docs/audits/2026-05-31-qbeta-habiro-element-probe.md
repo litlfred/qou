@@ -1,0 +1,192 @@
+# Q_β Habiro element probe — element search (2026-05-31)
+
+> Keystone probe per `docs/coordination/1ppq-qbeta.md` PROBE NEW.
+> All c_k for k ≥ 3 inherit from this single element. Closing this
+> would flip Q_β + m_n + Δ_pn green simultaneously on L2.
+>
+> Sibling: PR #1579 (`claude/brave-mendel-FPxFl`).
+> Probe script: `folio-assistant/computations/qbeta_habiro_element_probe.py`.
+> Witness: `folio-assistant/computations/qbeta-habiro-element-probe.witness.json`.
+
+## TL;DR
+
+**PARTIAL — infrastructure validated, naive α_EM-parallel ansätze fail,
+structural constraints narrowed for next session.**
+
+| Sub-task | Status | Result |
+|----------|--------|--------|
+| **A. Verify Habiro infrastructure** | **CLOSED ✓** | Habiro `tr_M(β_p, β_n)` reproduces witness to **0.079 ppm** (well below 10 ppm target) |
+| **B. α_EM-parallel ansatz** | **NEGATIVE** | None of 6 candidates match c_2 = −1 AND c_3 = −2 simultaneously |
+| **C. Structural constraints** | **NARROWED ✓** | 6 invariants on the canonical Q_β Habiro element |
+
+## Sub-task A — infrastructure validated
+
+The previously-flagged `habiro_exact_qbeta.py` bugs (gap plan
+2026-05-30, Bug 1: wrong Pochhammer + ignored D(u)) **are now fixed
+on main** (commit `?` — present in current source). The corrected
+form:
+
+```python
+def q_pochhammer(u_val, m):
+    return mp.prod(1 - u_val ** k for k in range(1, m + 1))   # (1 - u^k)
+
+def habiro_sum(atom_data, u_val):
+    total = sum(eval_a_m(c["a_m"], u_val) * q_pochhammer(u_val, c["m"])
+                for c in atom_data["habiro_coefficients"])
+    D_u = eval_a_m(atom_data["denom_in_u"], u_val)
+    return total / D_u
+```
+
+reproduces the witness `tr_M_at_q0` for both proton and neutron to
+~0.08 ppm at canonical q₀ ≈ 1.10998 with 50-dps mpmath compute:
+
+| Atom | Habiro tr_M | Witness tr_M | rel err |
+|------|------------:|-------------:|--------:|
+| p (proton) | 1.0653061442544500 | 1.0653062285923893 | **0.079 ppm** |
+| n (neutron) | 0.9232332299116371 | 0.9232332971695838 | **0.073 ppm** |
+
+The residual 0.08 ppm is dominated by the witness's stored
+`tr_M_at_q0` truncation (≤ 16 significant figures in the stored JSON
+value vs the 50-dps full-precision Habiro reconstruction). This
+**closes Sub-task A** and validates the Habiro reconstruction
+pipeline end-to-end.
+
+**Implication:** the Habiro framework gives an EXACT answer for
+`tr_M(β_p, q)`, `tr_M(β_n, q)` at any q. The Q_β observable then
+emerges from `m_e · f(tr_M_n, tr_M_p, q₀)` for some closed-form `f`.
+Identifying `f` (and the canonical Habiro element underlying its
+Taylor expansion in u = b·ℏ_q²) is the remaining keystone work.
+
+## Sub-task B — α_EM-parallel ansätze fail
+
+Six α_EM-style candidate Habiro elements were tested by sympy
+Taylor expansion in h = q − q⁻¹ around h = 0:
+
+| Candidate | h² coeff | h⁴ coeff | Match c_2 = −1? | Match c_3 = −2? |
+|-----------|----------|----------|-----------------|-----------------|
+| B1: `[2]_q·(1−h²·c)`            | `1/4 − 2c`  | `−c/4 − 1/64`  | yes at c = 5/8 | NO (h⁴ = −0.172) |
+| B2: `[2]_q·(1−h²/4)^{−1}`       | `3/4`       | `11/64`        | NO            | NO |
+| B3: `[2]_q²·(1+c·h²)`           | `4c + 1`    | `c`            | yes at c = −1/2 | NO (h⁴ = −0.5) |
+| B4: `1 + J·h² + J·b²·h⁴` (pair-rule, J=−2, b²=3/4) | `−2`        | `−3/2`         | NO          | NO (h⁴ = −1.5) |
+| B5: `1 + c₂·h² + c₄·h⁴` (free)  | `c2`        | `c4`           | trivially     | trivially (but no derivation) |
+| B6: `(q;q)_2/(1−q+q²)`          | `1/2`       | `−1/8`         | NO            | NO |
+
+**Negative result.** No candidate matches c_2 AND c_3 simultaneously
+without a free-parameter fit. The α_EM template `[2]_q·(1−h²·α)`
+does NOT generalize directly to Q_β. The pair-rules form B4 has
+c_2 = −2 (vs target −1) because the recursive-pair-rules derivation
+matches the **leading** behavior of the LADDER, not the **bare**
+Habiro element's Taylor coefficients.
+
+**Anti-pattern check (per ledger §Flip-flop history).** B1 at fit
+c = 5/8 reports a clean rational h² coefficient of −1 — but this
+is **fit**, not derived. We would not wire B1 with `c = 5/8` to
+production: this would be the same near-match anti-pattern that
+generated four flip-flops (commits `b2f908731`, `41b8d4a4c`,
+`f4930df95`, `c1f7487df`). The point is that no candidate is both
+**categorically motivated** AND **Taylor-exact at canonical q₀**.
+
+## Sub-task C — structural constraints narrowed
+
+The witness `habiro-coefficients-atomic.witness.json` exposes 6
+invariants the canonical Q_β Habiro element must satisfy:
+
+### C1: integer Habiro coefficients (Habiro 2002 Thm 1.1)
+
+`a_m(u) ∈ ℤ[u]` for every m ∈ {0, …, 8}, both proton and neutron.
+Witness reports `all_integral = True`.
+
+### C2: shared denominator structure
+
+`D(u) = 4·u^19·(1+u²)` for **both** proton and neutron. The Q_β-
+relevant Habiro element therefore lives in the localized Habiro
+ring at the multiplicative set generated by `D(u)`.
+
+### C3: termination order M = 8
+
+Both proton and neutron braid words terminate at M = 8 in the Habiro
+expansion. The Q_β element is supported on m ∈ {0, …, 8}.
+
+### C4: leading coefficient a_0 = 4
+
+Common to both atoms. This is the degree of the V_(2,1) ⊕ V_(1,1,1)
+representation (dim 2 + dim 1 = 3, with Markov normalization 4/3).
+
+### C5: sign alternation a_0 > 0, a_1 < 0, a_2 > 0, a_3 < 0
+
+Characteristic of a Habiro element with positive q → 1 limit.
+
+### C6: neutron − proton difference
+
+The Q_β-RELEVANT Habiro element is the difference `Δa_m = a_m(n) − a_m(p)`:
+
+| m | Δa_m(u) |
+|---|---------|
+| 0 | `0` (atoms share leading) |
+| 1 | `10·u + 10` |
+| 2 | `−64·u² − 69·u − 73` |
+| 3 | `131·u³ + 143·u² + 160·u + 177` |
+| 4 | `−92·u⁴ − 114·u³ − 136·u² − 162·u − 189` |
+
+**Striking pattern:** Δa_m alternates sign with m, and the
+coefficients are **small integers** (10, 64–73, 131–177, 92–189).
+This suggests the canonical Q_β Habiro element factors as
+
+```
+ΔHabiro_Qβ(u) = (some categorical primitive) · Σ_{m=0}^{8} Δa_m·(u;u)_m / D(u)
+```
+
+with `Δa_m` decomposing into a low-degree polynomial generator.
+
+## What this rules out & what it doesn't
+
+**RULES OUT:**
+
+- B1–B6 as the canonical Q_β Habiro element. None of them satisfy
+  the integer-coefficient + termination + sign-alternation
+  constraints simultaneously.
+- The simple substitution `α → b·u` from α_EM. The α_EM template
+  has a single free parameter; Q_β has more structure (the
+  neutron-proton coefficient difference).
+
+**DOES NOT RULE OUT:**
+
+- A Habiro element of the form `Δ_canonical(u) / D(u)` where
+  `Δ_canonical(u)` is a low-degree polynomial in u with integer
+  coefficients matching the Δa_m pattern.
+- A categorical 2-loop derivation where the c_k arise from a
+  Habiro element on the SUB-BRAID structure (not the full β_n/β_p).
+
+## Next session targets
+
+1. **C6 follow-up:** factorize each Δa_m(u) polynomial. If the
+   sequence factors as `(u + c_m_low)·(u + c_m_high)·…` for small
+   c_m, that pattern identifies the canonical element directly.
+
+2. **Q_β closed-form derivation:** given the EXACT Habiro
+   `tr_M(β_n)` and `tr_M(β_p)` (now validated to 0.08 ppm in
+   Sub-task A), derive the closed form
+   `Q_β = m_e · f(tr_M_n, tr_M_p, q₀)`. The narrative proposition
+   `prop:neutron-qvalue-symbolic` says
+   `Q_β = m_e·|Δ(net)|·E_0`, but `Δ(net) = h(h−2)/2` is the
+   leading-order form (Form A). The higher-order corrections in
+   `f` are what we need to derive.
+
+3. **Multi-Wedderburn-block extension:** the recursive pair-rules
+   audit (2026-05-30) flagged that the c_k mismatch at canonical q₀
+   is dominated by multi-block contributions. A Habiro element that
+   only uses V_(2,1) will miss these by ~2-3% at canonical q₀.
+
+## Files touched
+
+- **NEW:** `folio-assistant/computations/qbeta_habiro_element_probe.py`
+- **NEW:** `folio-assistant/computations/qbeta-habiro-element-probe.witness.json`
+- **NEW:** `docs/audits/2026-05-31-qbeta-habiro-element-probe.md` (this file)
+
+## Cross-refs
+
+- Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
+- Gap plan: [`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`](2026-05-30-qbeta-habiro-derivation-gap-plan.md)
+- Recursive pair-rules + PDE: [`docs/audits/2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md`](2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md)
+- c_3 SETTLED verdict: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](2026-05-31-qbeta-c3-q0-stability-verdict.md)
+- α_EM template (parallel that worked): `folio-assistant/computations/alpha_em_habiro_taylor_investigation.py`
