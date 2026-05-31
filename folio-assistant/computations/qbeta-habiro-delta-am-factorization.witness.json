@@ -1,0 +1,324 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-31T22:29:47.011886+00:00",
+  "commitSha": "e6c6747eb9a4f3d42f4e0203b0782701c6b28d64",
+  "assertions": [
+    {
+      "name": "delta_n_minus_p_factorization_completed",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.factor over ℤ[u] for each Δa_m, m=0..8."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 757,
+  "computation": "qbeta-habiro-delta-am-factorization",
+  "scriptFile": "qbeta_habiro_delta_am_factorization.py",
+  "scriptHash": "16ebcf4da88b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Keystone follow-up per docs/audits/2026-05-31-qbeta-habiro-element-probe.md constraint C6. Symbolic factorization (sympy.Poly + sympy.factor) of Δa_m(u) := a_m(neutron) − a_m(proton) for m = 0..8 plus cross-m GCD, categorical-factor matching, successive ratios, and the symbolic Habiro element Σ_m Δa_m·(u;u)_m. Negative results documented; this probe explicitly tests the conjectured low-degree factorization.",
+  "contentBlock": "prop:neutron-qvalue-symbolic",
+  "data": {
+    "habiro_witness_used": "habiro-coefficients-atomic.witness.json",
+    "delta_n_minus_p": {
+      "per_m": {
+        "0": {
+          "delta_a_m": "0",
+          "factorization": "0",
+          "deg": -1,
+          "leading_coeff": 0,
+          "content_gcd": 0,
+          "primitive_part": "0",
+          "primitive_factorization": "0"
+        },
+        "1": {
+          "delta_a_m": "10*u + 10",
+          "factorization": "10*(u + 1)",
+          "deg": 1,
+          "leading_coeff": 10,
+          "content_gcd": 10,
+          "primitive_part": "u + 1",
+          "primitive_factorization": "u + 1",
+          "coeffs_descending": [
+            10,
+            10
+          ]
+        },
+        "2": {
+          "delta_a_m": "-64*u**2 - 69*u - 73",
+          "factorization": "-64*u**2 - 69*u - 73",
+          "deg": 2,
+          "leading_coeff": -64,
+          "content_gcd": 1,
+          "primitive_part": "64*u**2 + 69*u + 73",
+          "primitive_factorization": "64*u**2 + 69*u + 73",
+          "coeffs_descending": [
+            -64,
+            -69,
+            -73
+          ]
+        },
+        "3": {
+          "delta_a_m": "131*u**3 + 143*u**2 + 160*u + 177",
+          "factorization": "131*u**3 + 143*u**2 + 160*u + 177",
+          "deg": 3,
+          "leading_coeff": 131,
+          "content_gcd": 1,
+          "primitive_part": "131*u**3 + 143*u**2 + 160*u + 177",
+          "primitive_factorization": "131*u**3 + 143*u**2 + 160*u + 177",
+          "coeffs_descending": [
+            131,
+            143,
+            160,
+            177
+          ]
+        },
+        "4": {
+          "delta_a_m": "-92*u**4 - 114*u**3 - 136*u**2 - 162*u - 189",
+          "factorization": "-92*u**4 - 114*u**3 - 136*u**2 - 162*u - 189",
+          "deg": 4,
+          "leading_coeff": -92,
+          "content_gcd": 1,
+          "primitive_part": "92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189",
+          "primitive_factorization": "92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189",
+          "coeffs_descending": [
+            -92,
+            -114,
+            -136,
+            -162,
+            -189
+          ]
+        },
+        "5": {
+          "delta_a_m": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
+          "factorization": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
+          "deg": 5,
+          "leading_coeff": 18,
+          "content_gcd": 1,
+          "primitive_part": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
+          "primitive_factorization": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
+          "coeffs_descending": [
+            18,
+            28,
+            39,
+            52,
+            69,
+            90
+          ]
+        },
+        "6": {
+          "delta_a_m": "-u**4 - 3*u**3 - 5*u**2 - 8*u - 15",
+          "factorization": "-u**4 - 3*u**3 - 5*u**2 - 8*u - 15",
+          "deg": 4,
+          "leading_coeff": -1,
+          "content_gcd": 1,
+          "primitive_part": "u**4 + 3*u**3 + 5*u**2 + 8*u + 15",
+          "primitive_factorization": "u**4 + 3*u**3 + 5*u**2 + 8*u + 15",
+          "coeffs_descending": [
+            -1,
+            -3,
+            -5,
+            -8,
+            -15
+          ]
+        },
+        "7": {
+          "delta_a_m": "0",
+          "factorization": "0",
+          "deg": -1,
+          "leading_coeff": 0,
+          "content_gcd": 0,
+          "primitive_part": "0",
+          "primitive_factorization": "0"
+        },
+        "8": {
+          "delta_a_m": "0",
+          "factorization": "0",
+          "deg": -1,
+          "leading_coeff": 0,
+          "content_gcd": 0,
+          "primitive_part": "0",
+          "primitive_factorization": "0"
+        }
+      },
+      "shared_m": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "delta_n_minus_p_gcd": {
+      "polynomial_gcd": {
+        "gcd": "1",
+        "trivial": true,
+        "factorization": "1"
+      },
+      "integer_content_gcd": {
+        "integer_gcd": 1,
+        "per_m_contents": [
+          10,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "delta_n_minus_p_categorical_matches": {
+      "1": {
+        "primitive_part": "u + 1",
+        "matched_categorical_factors": [
+          "(1+u)"
+        ],
+        "irreducible_remainder": "u + 1"
+      },
+      "2": {
+        "primitive_part": "64*u**2 + 69*u + 73",
+        "matched_categorical_factors": [],
+        "irreducible_remainder": "64*u**2 + 69*u + 73"
+      },
+      "3": {
+        "primitive_part": "131*u**3 + 143*u**2 + 160*u + 177",
+        "matched_categorical_factors": [],
+        "irreducible_remainder": "131*u**3 + 143*u**2 + 160*u + 177"
+      },
+      "4": {
+        "primitive_part": "92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189",
+        "matched_categorical_factors": [],
+        "irreducible_remainder": "92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189"
+      },
+      "5": {
+        "primitive_part": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
+        "matched_categorical_factors": [],
+        "irreducible_remainder": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90"
+      },
+      "6": {
+        "primitive_part": "u**4 + 3*u**3 + 5*u**2 + 8*u + 15",
+        "matched_categorical_factors": [],
+        "irreducible_remainder": "u**4 + 3*u**3 + 5*u**2 + 8*u + 15"
+      }
+    },
+    "delta_n_minus_p_successive_ratios": {
+      "ratio_2_over_1": {
+        "ratio": "(-64*u**2 - 69*u - 73)/(10*(u + 1))",
+        "factored": "-(64*u**2 + 69*u + 73)/(10*(u + 1))",
+        "numerical_at_u0": -10.554129421048167
+      },
+      "ratio_3_over_2": {
+        "ratio": "(-131*u**3 - 143*u**2 - 160*u - 177)/(64*u**2 + 69*u + 73)",
+        "factored": "-(131*u**3 + 143*u**2 + 160*u + 177)/(64*u**2 + 69*u + 73)",
+        "numerical_at_u0": -3.0336408723133608
+      },
+      "ratio_4_over_3": {
+        "ratio": "(-92*u**4 - 114*u**3 - 136*u**2 - 162*u - 189)/(131*u**3 + 143*u**2 + 160*u + 177)",
+        "factored": "-(92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189)/(131*u**3 + 143*u**2 + 160*u + 177)",
+        "numerical_at_u0": -1.1518015178392849
+      },
+      "ratio_5_over_4": {
+        "ratio": "(-18*u**5 - 28*u**4 - 39*u**3 - 52*u**2 - 69*u - 90)/(92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189)",
+        "factored": "-(18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90)/(92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189)",
+        "numerical_at_u0": -0.4276846443578757
+      },
+      "ratio_6_over_5": {
+        "ratio": "(-u**4 - 3*u**3 - 5*u**2 - 8*u - 15)/(18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90)",
+        "factored": "-(u**4 + 3*u**3 + 5*u**2 + 8*u + 15)/(18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90)",
+        "numerical_at_u0": -0.10410655413065313
+      }
+    },
+    "delta_n_minus_p_habiro_element": {
+      "expanded": "-u**25 - 2*u**24 - u**23 - 2*u**21 + 4*u**20 + 2*u**19 + u**17 - 2*u**16 + u**15",
+      "factored": "-u**15*(u - 1)*(u + 1)*(u**8 + 2*u**7 + 2*u**6 + 2*u**5 + 4*u**4 - 2*u**3 + 2*u**2 - 2*u + 1)",
+      "numerical_at_u0_approx": -3.232201962487041,
+      "degree": 25
+    },
+    "deuteron_minus_p_plus_n": {
+      "per_m": {
+        "0": {
+          "diff": "24",
+          "factorization": "24",
+          "deg": 0
+        },
+        "1": {
+          "diff": "-934*u - 966",
+          "factorization": "-2*(467*u + 483)",
+          "deg": 1
+        },
+        "2": {
+          "diff": "10236*u**2 + 10531*u + 10851",
+          "factorization": "10236*u**2 + 10531*u + 10851",
+          "deg": 2
+        },
+        "3": {
+          "diff": "-47909*u**3 - 50249*u**2 - 52780*u - 55411",
+          "factorization": "-47909*u**3 - 50249*u**2 - 52780*u - 55411",
+          "deg": 3
+        },
+        "4": {
+          "diff": "119903*u**4 + 128584*u**3 + 137613*u**2 + 147138*u + 157199",
+          "factorization": "119903*u**4 + 128584*u**3 + 137613*u**2 + 147138*u + 157199",
+          "deg": 4
+        },
+        "5": {
+          "diff": "-178227*u**5 - 194789*u**4 - 212687*u**3 - 231889*u**2 - 252463*u - 274479",
+          "factorization": "-178227*u**5 - 194789*u**4 - 212687*u**3 - 231889*u**2 - 252463*u - 274479",
+          "deg": 5
+        },
+        "6": {
+          "diff": "163071*u**6 + 182144*u**5 + 203038*u**4 + 225964*u**3 + 251085*u**2 + 278579*u + 308566",
+          "factorization": "163071*u**6 + 182144*u**5 + 203038*u**4 + 225964*u**3 + 251085*u**2 + 278579*u + 308566",
+          "deg": 6
+        },
+        "7": {
+          "diff": "-90855*u**7 - 104179*u**6 - 119062*u**5 - 135750*u**4 - 154427*u**3 - 175499*u**2 - 198895*u - 224950",
+          "factorization": "-90855*u**7 - 104179*u**6 - 119062*u**5 - 135750*u**4 - 154427*u**3 - 175499*u**2 - 198895*u - 224950",
+          "deg": 7
+        },
+        "8": {
+          "diff": "28805*u**8 + 34129*u**7 + 40383*u**6 + 47612*u**5 + 55904*u**4 + 65416*u**3 + 76434*u**2 + 89014*u + 103356",
+          "factorization": "28805*u**8 + 34129*u**7 + 40383*u**6 + 47612*u**5 + 55904*u**4 + 65416*u**3 + 76434*u**2 + 89014*u + 103356",
+          "deg": 8
+        }
+      },
+      "shared_m": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "note": "p,n have D_denom=4·u^19·(1+u²); D has 32·u^40·(1+u²)·(1+u)². Direct coefficient subtraction is a structural probe only."
+    },
+    "verdict": {
+      "outcome": "PARTIAL",
+      "polynomial_gcd_trivial": true,
+      "integer_content_gcd": 1,
+      "any_categorical_per_m_match": true,
+      "interpretation": "ACTORS-IDENTIFIED: a common polynomial factor divides every Δa_m → this factor IS the Q_β-relevant categorical primitive. PARTIAL: per-m factorizations expose categorical primitives but no single factor unites all m. NEGATIVE: Δa_m are algebraically generic; 'small-integer' is a content phenomenon (integer GCD), not a polynomial factor; the conjecture in C6 of the prior audit is FALSIFIED."
+    }
+  }
+}
