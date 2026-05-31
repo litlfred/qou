@@ -1,7 +1,7 @@
 The perpetual obstruction
 ([obstruction calculation](#prop:q-gl-obstruction-calc)) and the
 classical limit
-([classical recovery](#prop:q-gl-classical-limit)) are compatible,
+([classical recovery](#conj:q-gl-classical-limit)) are compatible,
 but their coexistence reveals that the $q$-Geometric Langlands
 correspondence is a **singular deformation** of the classical one.
 
@@ -44,7 +44,7 @@ There is no contradiction because:
    disappear; it becomes invisible.
 
 3. The Kummer constraint (property (4) of the
-   [$q$-GL conjecture](#prop:q-geometric-langlands)) encodes this
+   [$q$-GL conjecture](#conj:q-geometric-langlands)) encodes this
    singular behaviour: the equivalence degenerates precisely at
    roots of unity, and the classical limit is the universal
    degeneration.

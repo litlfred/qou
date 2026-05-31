@@ -13,7 +13,7 @@ per-isotope $a_\mathcal{K}$ choices with derived expressions:
 
 **Practical computation.**
 The Hoefsmit pipeline
-([Hoefsmit](#prop:hoefsmit-scattering-pipeline)) produces
+([Hoefsmit](#conj:hoefsmit-scattering-pipeline)) produces
 $\chi_\lambda(\beta_\mathcal{K})$ for any braid word.  The knot
 factor is then a single q-deformed Wedderburn-weighted sum,
 bounded (though not unit-normalised) by Wedderburn completeness with

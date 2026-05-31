@@ -36,7 +36,7 @@ Physically, it acts as a vacuum subtraction: $P_K(q)$ measures the
 unbraided substrate, not the absolute count of strands. Without
 this normalisation the polynomial would grow with every additional
 trivial component, and Reidemeister-I invariance would fail
-([Reidemeister mass invariance](#prop:reidemeister-mass-invariance)).
+([Reidemeister mass invariance](#conj:reidemeister-mass-invariance)).
 
 ## Tier 2: physical scaling — base mass $m_0$
 

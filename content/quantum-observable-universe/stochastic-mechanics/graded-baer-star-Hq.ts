@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:graded-baer-star-Hq",
+export default conjecture({
+  label: "conj:graded-baer-star-Hq",
   title:
     "Graded Baer-* on $\\mathcal{H}_q$ across the depth filtration",
   lean: { ref: "qou:QOU.BraidKnot.GradedBaerStarHq", validation: "stub" },

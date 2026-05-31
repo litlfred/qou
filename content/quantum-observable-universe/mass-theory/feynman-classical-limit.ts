@@ -10,7 +10,7 @@ export default proposition({
   uses: [
     "prop:feynman-categorical-trace",
     "def:q-energy",
-    "prop:classical-limit-stpart",
+    "conj:classical-limit-stpart",
   ],
   proofs: [],
 });

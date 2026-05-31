@@ -119,7 +119,7 @@ Three narrow obstructions do bite:
    This is not so much broken as *replaced*: the classical
    limit becomes the standard-part of evaluation at
    $q = 1 + \varepsilon$ (see
-   [classical limit as standard-part](#prop:classical-limit-stpart)),
+   [classical limit as standard-part](#conj:classical-limit-stpart)),
    which is an *exact substitute*, not a weakening.
 
 ## 4. Things that look like obstructions but are not

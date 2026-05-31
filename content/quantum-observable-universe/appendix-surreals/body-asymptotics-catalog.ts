@@ -7,7 +7,7 @@ export default remark({
   interprets: "rem:conway-normal-form",
   uses: [
     "prop:hecke-convergence-bound",
-    "prop:hoefsmit-scattering-pipeline",
+    "conj:hoefsmit-scattering-pipeline",
     "prop:jet-tower-convergence",
     "prop:unified-iterative-correction",
     "prop:feynman-classical-limit",

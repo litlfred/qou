@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:orbital-fourier-decomposition",
+export default conjecture({
+  label: "conj:orbital-fourier-decomposition",
   title:
     "Quantum numbers from Fourier decomposition of normal-bundle sections",
   tags: [
@@ -16,5 +16,5 @@ export default proposition({
   lean: { ref: "qou:QOU.orbital_fourier_decomposition",
     validation: "not_checked",
   },
-  uses: ["prop:orbital-space-normal-bundle"],
+  uses: ["conj:orbital-space-normal-bundle"],
 });

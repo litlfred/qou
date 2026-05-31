@@ -1,5 +1,5 @@
 Under the hypotheses of the
-[$q$-Geometric Langlands conjecture](#prop:q-geometric-langlands),
+[$q$-Geometric Langlands conjecture](#conj:q-geometric-langlands),
 the fibre functor $\tau$ of the QOU determines the equivalence
 $\mathbb{L}_q$ uniquely up to natural isomorphism:
 

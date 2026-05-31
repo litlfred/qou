@@ -1,6 +1,6 @@
 The Hoefsmit scattering pipeline assigns to each link $L$ a
 *geometric energy* $\mathrm{Geom}(L) \in \mathbb{R}$
-([Hoefsmit scattering pipeline](#prop:hoefsmit-scattering-pipeline)).
+([Hoefsmit scattering pipeline](#conj:hoefsmit-scattering-pipeline)).
 The vacuum normalisation requires $\mathrm{Geom}(\unicode{9737}) = 0$
 on the unknot, so that the empty link contributes nothing to
 particle masses.

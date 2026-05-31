@@ -93,7 +93,7 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 
 ## Consumers / downstream
 
-- [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
+- [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
   becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once D6,
   D7, D8 are all closed.
 - The writhe-based chirality classification
@@ -120,5 +120,5 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 - Sibling Z/2 decompositions of CPT:
   [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md) (D6),
   [`conj:t-from-trace-cyclicity`](t-from-trace-cyclicity.md) (D8)
-- Composite CPT: [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
+- Composite CPT: [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
 - Bar-involution: [`bar-involution.md`](bar-involution.md) Tables 1-4

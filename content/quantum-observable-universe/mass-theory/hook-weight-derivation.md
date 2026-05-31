@@ -62,6 +62,6 @@ Adding this fourth channel improves the mass formula accuracy
 from $0.074\%$ to $0.072\%$ mean (with dramatic per-atom
 improvements: Be $0.192\% \to 0.108\%$, C $0.081\% \to 0.002\%$).
 The hook trace vanishes at magic numbers
-([shell-transition knot](#prop:shell-transition-knot)),
+([shell-transition knot](#conj:shell-transition-knot)),
 providing the discrete shell structure that the three extremal
 channels miss.  $\square$

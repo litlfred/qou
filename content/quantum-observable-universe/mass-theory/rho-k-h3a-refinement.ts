@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:hoefsmit-scattering-pipeline",
+    "conj:hoefsmit-scattering-pipeline",
     "prop:y-lambda-closed-form-wenzl-bridge",
   ],
   cites: ["wenzl1988", "hoefsmit1974", "kassel1995"],

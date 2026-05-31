@@ -8,7 +8,7 @@ export default proposition({
     ref: "qou:QOU.ParticleInteractions.bar_involution_invariance",
     validation: "not_checked",
   },
-  uses: ["prop:cpt-orbit-closure-density"],
+  uses: ["conj:cpt-orbit-closure-density"],
   cites: [
     "kashiwara1991",
     "khovanovlauda2009",

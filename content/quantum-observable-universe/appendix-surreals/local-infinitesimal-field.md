@@ -91,7 +91,7 @@ substrate: instead of $q$ being a single
 Hahn series, it is a *sheaf* of Hahn series. The base $\mathbb{R}$-
 shadow agrees with the paper in both cases.
 
-It also specialises [archimedean-stpart](#prop:archimedean-stpart)
+It also specialises [archimedean-stpart](#conj:archimedean-stpart)
 to the sheaf-theoretic setting: the archimedean QOU is the
 standard-part *sheaf-morphism* of the surreal QOU, not a
 single-point morphism.

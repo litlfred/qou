@@ -1,4 +1,4 @@
-**Proposition (conditional on [`prop:classical-limit-stpart`](#prop:classical-limit-stpart) — classical limit).**
+**Proposition (conditional on [`conj:classical-limit-stpart`](#conj:classical-limit-stpart) — classical limit).**
 *In the $q \to 1$ limit of the categorical trace
 ([Feynman transition amplitude](#prop\:feynman-categorical-trace)),
 the following degenerations occur:*

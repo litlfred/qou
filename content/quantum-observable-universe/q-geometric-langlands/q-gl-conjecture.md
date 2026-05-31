@@ -55,4 +55,4 @@ non-torsion locus of the substrate), satisfying:
 
 5. **Classical limit**: as $q \to 1$, $\mathbb{L}_q$ recovers the
    classical Geometric Langlands equivalence
-   ([classical limit](#prop:q-gl-classical-limit)).
+   ([classical limit](#conj:q-gl-classical-limit)).

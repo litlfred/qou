@@ -45,7 +45,7 @@ $\mathrm{Vol}(K)$.
 
 **Step 2: Uniqueness (Yekutieli rigidity).**
 The rigid dualizing complex $\omega_A^\bullet$
-([Geom(K) alignment](#prop:geom-yekutieli-alignment)) provides a
+([Geom(K) alignment](#conj:geom-yekutieli-alignment)) provides a
 non-degenerate Frobenius pairing
 $\langle -, - \rangle_{\mathrm{Frob}}$.  Yekutieli's rigidity
 theorem \cite{yekutieli2015} states that this pairing is unique up

@@ -53,7 +53,7 @@ where
 $\dim_q V_\lambda = [n]_q! \,/\, \prod_{\square \in \lambda} [h(\square)]_q$
 and $[h]_q = (q^h - q^{-h})/(q - q^{-1})$ is the symmetric quantum
 integer
-([Hoefsmit pipeline](#prop:hoefsmit-scattering-pipeline)).
+([Hoefsmit pipeline](#conj:hoefsmit-scattering-pipeline)).
 
 (b) The hook lengths $h(\square)$ for $\square \in \lambda$ encode
 the partition's depth in the GB filtration: by

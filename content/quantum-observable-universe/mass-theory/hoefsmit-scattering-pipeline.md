@@ -65,7 +65,7 @@ $\chi^{\mathrm{alt}}$.*
 abstract Jones polynomial $J_K(q)$ on the knot complement
 $S^3 \setminus K$. The evaluation is geometric, determined by
 Thurston's geometrization
-([Geom(K) alignment](#prop:geom-yekutieli-alignment)):*
+([Geom(K) alignment](#conj:geom-yekutieli-alignment)):*
 
 $$
   \tau(J_K)
@@ -119,7 +119,7 @@ $\mathrm{tr}_M$ is the unique trace satisfying the Markov property
 $\mathrm{tr}_M(x\sigma_k) = z \cdot \mathrm{tr}_M(x)$ for
 $x \in H_k(R, q)$.
 
-**Stage 3** is [Geom(K) alignment](#prop:geom-yekutieli-alignment).
+**Stage 3** is [Geom(K) alignment](#conj:geom-yekutieli-alignment).
 The observation frame $\tau$ is the fibre functor of the
 Tannakian category $(\mathbf{C}, A, \tau)$. On the τ-image
 (geometric) side, its evaluation on the knot complement is determined

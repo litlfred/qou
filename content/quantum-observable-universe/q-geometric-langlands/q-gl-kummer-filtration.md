@@ -21,7 +21,7 @@ $\varrho$.  Then:
    \mathrm{LocSys}_{\check{G}_q}(X)$ (all $q$-local systems).
 
 2. The $q$-GL equivalence $\mathbb{L}_q$
-   ([$q$-GL conjecture](#prop:q-geometric-langlands))
+   ([$q$-GL conjecture](#conj:q-geometric-langlands))
    restricts to each filtered piece:
    $$
      \mathbb{L}_q^{(n)} \colon

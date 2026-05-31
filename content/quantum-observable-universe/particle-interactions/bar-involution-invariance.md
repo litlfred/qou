@@ -12,7 +12,7 @@ Then:*
 2. *(**Transpose-pair equality**) $w_\lambda(q) = w_{\lambda^T}(q)$
  for every $\lambda \vdash n$, where $\lambda^T$ is the transpose
  partition (the Dynkin involution / chirality-reversal
- from [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)).*
+ from [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)).*
 3. *(**Type-B-folded normal forms**) Any Hecke normal form $T_w$
  produced by the symmetric-crystal pair-production engine of
  [`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production)

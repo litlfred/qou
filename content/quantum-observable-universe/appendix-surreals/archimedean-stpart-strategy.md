@@ -1,10 +1,10 @@
 Proof strategy for
-[archimedean QOU is the standard-part of surreal QOU](#prop:archimedean-stpart).
+[archimedean QOU is the standard-part of surreal QOU](#conj:archimedean-stpart).
 This remark records *how* one would attempt the proof, not the proof
 itself; the conjecture remains open.
 
 The conjecture is the *category-level* counterpart of
-[classical-limit-stpart](#prop:classical-limit-stpart). Reduce
+[classical-limit-stpart](#conj:classical-limit-stpart). Reduce
 to that conjecture via:
 
 1. **Functorial reduction.** Show
@@ -16,7 +16,7 @@ to that conjecture via:
  - $\mathbf{C} = \mathrm{Rep}_{\mathbf{No}}(\mathrm{SU}_q(2))$ at
  $q = 1 + \varepsilon$: $\mathrm{St}$ recovers
  $\mathrm{Rep}_{\mathbb{R}}(\mathrm{SU}(2))$ by
- [classical-limit-stpart](#prop:classical-limit-stpart).
+ [classical-limit-stpart](#conj:classical-limit-stpart).
  - $\varTheta : \mathbf{1} \to A$: just an element of a hom-space;
  $\mathrm{St}$ acts entry-wise.
  - $G = \mathrm{Aut}(A)$: a functorial gauge group; standard-part
@@ -32,7 +32,7 @@ to that conjecture via:
  $\mathrm{St}$ — content of conjectures
  [infinitesimal-frobenius](#conj:infinitesimal-frobenius),
  [infinitesimal-observability](#conj:infinitesimal-observability),
- [vacuum-epsilon](#prop:vacuum-epsilon).
+ [vacuum-epsilon](#conj:vacuum-epsilon).
 
 4. **Essential surjectivity.** Every archimedean QOU lifts (set
  $\varepsilon = 0$ by definition). This direction is automatic.

@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:z-eq-n-rho-correction",
+export default conjecture({
+  label: "conj:z-eq-n-rho-correction",
   title:
     "Z=N substrate-q correction to the Kashaev law: $B = m_e \\cdot \\mathrm{Vol}_{\\rm hyp}(K_A) \\cdot (\\rho_{\\rm struct} + A - [A]_q)$",
   lean: {

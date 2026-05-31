@@ -62,7 +62,7 @@ $$
 where $\kappa$ is the rotation angle of $\sigma$ relative to
 the Seifert framing.  The shell number is
 $n = k/2 + 1$ ([Reidemeister
-invariance](#prop:reidemeister-mass-invariance)).
+invariance](#conj:reidemeister-mass-invariance)).
 
 **The four quantum numbers.**
 

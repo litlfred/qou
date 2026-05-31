@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:vacuum-epsilon",
+export default conjecture({
+  label: "conj:vacuum-epsilon",
   title:
     "Infinitesimal vacuum: $\\mathrm{Geom}(\\unicode{9737}) = \\varepsilon$",
   lean: { ref: "qou:QOU.AppendixSurreals.VacuumEpsilon", validation: "stub" },
@@ -13,6 +13,6 @@ export default proposition({
     "infinitesimal",
     "open-problem",
   ],
-  uses: ["prop:archimedean-stpart"],
+  uses: ["conj:archimedean-stpart"],
   cites: ["robinson1966"],
 });

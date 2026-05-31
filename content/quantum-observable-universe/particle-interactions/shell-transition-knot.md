@@ -46,7 +46,7 @@ $$
 
 having $2j + 1$ states each. The spin-orbit coupling energy
 is proportional to the $q$-Laplacian eigenvalue
-([Fourier decomposition](#prop:orbital-fourier-decomposition)):
+([Fourier decomposition](#conj:orbital-fourier-decomposition)):
 
 $$
   E_{\mathrm{SO}}(\ell, j)

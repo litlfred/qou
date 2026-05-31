@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "thm:gs-graded-markov-trace-existence",
+    "conj:gs-graded-markov-trace-existence",
     "def:habiro-ring",
   ],
   computation: {

@@ -11,7 +11,7 @@ export default conjecture({
   uses: [
     "conj:cpt-d6-d7-d8-closure",
     "def:bar-involution",
-    "prop:cpt-orbit-closure-density",
+    "conj:cpt-orbit-closure-density",
     "thm:jones-markov-trace",
   ],
   cites: [

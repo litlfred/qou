@@ -15,6 +15,6 @@ export default conjecture({
     "open-problem",
     "speculative",
   ],
-  uses: ["prop:classical-limit-stpart"],
+  uses: ["conj:classical-limit-stpart"],
   cites: ["conway1976"],
 });

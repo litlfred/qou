@@ -1,13 +1,13 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:hoefsmit-scattering-pipeline",
+export default conjecture({
+  label: "conj:hoefsmit-scattering-pipeline",
   title:
     "From Hoefsmit scattering weights to physical mass via the observation frame",
   lean: { ref: "qou:QOU.BraidKnot.hoefsmit_scattering_pipeline",
     validation: "not_checked",
   },
-  uses: ["prop:geom-yekutieli-alignment"],
+  uses: ["conj:geom-yekutieli-alignment"],
   cites: ["hoefsmit1974", "wenzl1988"],
   tags: [
     "hoefsmit",

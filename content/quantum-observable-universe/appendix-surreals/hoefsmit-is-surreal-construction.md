@@ -124,7 +124,7 @@ This identification has several immediate consequences:
    weighted sum over surreal sign sequences (rather than over
    tableaux), exposing a previously-hidden combinatorial
    structure
-   ([Jones polynomial birthday refinement](#prop:jones-birthday)).
+   ([Jones polynomial birthday refinement](#conj:jones-birthday)).
 
 5. **Knot complexity** acquires an honest ordinal-valued
    refinement: knots of unbounded crossing number live at

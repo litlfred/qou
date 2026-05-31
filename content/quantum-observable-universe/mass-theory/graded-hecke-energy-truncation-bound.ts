@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "rem:mass-spectrum-generating-function",
-    "thm:gs-graded-markov-trace-existence",
+    "conj:gs-graded-markov-trace-existence",
   ],
   cites: ["khovanovlauda2009", "brundankleshchev2009"],
   tags: [

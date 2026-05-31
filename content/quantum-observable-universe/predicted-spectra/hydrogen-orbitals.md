@@ -47,7 +47,7 @@ $$
 
 The bare mass $m_e \approx 0.511$ MeV is unchanged — R-I preserves
 the knot type
-([Reidemeister invariance](#prop:reidemeister-mass-invariance)).
+([Reidemeister invariance](#conj:reidemeister-mass-invariance)).
 The binding energy $E_n = -13.6/n^2$ eV changes — R-I changes
 the embedding.  The electron is still a trefoil (same
 particle); it is in a different state (different writhe).
@@ -107,7 +107,7 @@ $N_{T_{2,3}}$ of the trefoil in the Bring's surface, at total
 framing twist $k = 2(n-1)$, has dimension $n^2$.*
 
 This is
-[Proposition](#prop:orbital-space-normal-bundle) below.
+[Proposition](#conj:orbital-space-normal-bundle) below.
 The $2\ell + 1$ orientations per mode and the cutoff
 $\ell \leq n - 1$ would then follow from the
 $\mathrm{SO}(3)$ representation theory of this space.

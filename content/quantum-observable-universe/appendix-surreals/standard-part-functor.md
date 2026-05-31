@@ -62,7 +62,7 @@ r_{ij}$.
    \hookrightarrow K} = \mathrm{id}_{\mathbf{C}_{\mathbb{R}}}$.
 4. **Classical limit = $\mathrm{St} \circ$ evaluation at
    $q = 1 + \varepsilon$** (see
-   [classical limit as standard-part](#prop:classical-limit-stpart)).
+   [classical limit as standard-part](#conj:classical-limit-stpart)).
 
 ## Example: Jackson derivative
 

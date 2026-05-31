@@ -1,7 +1,7 @@
-import { theorem } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default theorem({
-  label: "thm:hecke-anyonic-substrate",
+export default conjecture({
+  label: "conj:hecke-anyonic-substrate",
   title:
     "Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation",
   lean: { ref: "qou:QOU.IwahoriHecke.Tw.HeckeAnyonicSubstrate", validation: "stub" },

@@ -2,7 +2,7 @@ Every $q$-oper $(\mathcal{P}_{\check{G}_q}, \nabla_q) \in
 \mathrm{Op}_{\check{G}_q}(X)$ determines a $q$-Hecke eigensheaf
 $\mathcal{M}_{\nabla_q}$ on $\mathrm{Bun}_{G_q}(X)$ via the
 $q$-Geometric Langlands equivalence
-([$q$-GL conjecture](#prop:q-geometric-langlands)):
+([$q$-GL conjecture](#conj:q-geometric-langlands)):
 
 $$
   \mathcal{M}_{\nabla_q} = \mathbb{L}_q^{-1}(\delta_{\nabla_q}),

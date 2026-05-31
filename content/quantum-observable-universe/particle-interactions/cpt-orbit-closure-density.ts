@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:cpt-orbit-closure-density",
+export default conjecture({
+  label: "conj:cpt-orbit-closure-density",
   title:
     "CPT-saturation as Type-B fold-orbit closure: deriving $\\rho_F \\in \\{m_e, 2m_e\\}$ from crystal structure",
   lean: {
