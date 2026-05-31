@@ -4,8 +4,15 @@
 **Status:** thread opened; multi-week research target
 **Reason:** with α/(4π) thread structurally closed (Habiro Taylor +
 categorical identification + Lean conditional), m_μ at 210 ppb /
-0.22 ppb target (`misses ~964×`) is now the largest single open
-gap on the L2 100× dashboard.
+0.22 ppb target (`misses ~964×`) is the largest open gap among
+**absolute-mass predictions** on the L2 100× dashboard.
+
+> **Scope note.**  Per `docs/precision-goals.md` line 190, `m_K/m_π`
+> misses by ~1098× — strictly larger in miss-factor.  But `m_K/m_π`
+> is a meson ratio prediction; the largest single gap on
+> *absolute mass* predictions (m_μ, Q_β, m_n, Δ_pn) is m_μ at 964×.
+> A separate thread for `m_K/m_π` closure is warranted but out of
+> scope here.
 
 ## Current state
 
@@ -19,8 +26,10 @@ The 210 ppb is the residual after the current production m_μ
 derivation, **not** a free parameter. The production hypothesis is
 **muon = 4_1 (figure-8 knot)** per `prop:skein-mass-relation`.
 
-Production Markov-trace data (from
-`lepton_tower_probe_1_cinquefoil_muon.py`):
+Audit-probe Markov-trace data (from
+[`folio-assistant/computations/lepton_tower_probe_1_cinquefoil_muon.py`](../../folio-assistant/computations/lepton_tower_probe_1_cinquefoil_muon.py),
+which is **audit-only, not production-wired** per its module
+docstring):
 
 - `|tr_M(4_1)| = z²·(1 - h + h³) ≈ 0.199476` at q_0
 - `|tr_M(4_1)| / |tr_M(trefoil)| ≈ 0.273178`
