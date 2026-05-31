@@ -1,4 +1,4 @@
-# QOU observable sector tracker (2026-05-30)
+# QOU observable sector tracker (updated 2026-05-31)
 
 **Purpose:** single-source-of-truth tracker for every QOU observable
 across the standard-model sectors (leptons, quarks, mesons, baryons,
@@ -15,21 +15,50 @@ honest discipline call (DERIVED / PARTIAL / OPEN / NUMEROLOGY).
 > Author note: I keep finding gaps — this tracker is the place to record
 > them once so we don't re-discover them.
 
-## L2 100× dashboard (current best, post-this-session)
+> ## ⚠ c_k / d_k saga RESOLVED (2026-05-31) — read before editing precision rows
+>
+> The recurring "flip-flop" on the Q_β c_k and m_p d_k coefficients is
+> **closed with a discipline verdict**: they are **stale-q₀
+> near-matches, not derivations.** Two decisive tests settle it:
+>
+> - **c_k (item 1, `qbeta-delta-tr-vs-formA.witness.json`):** the Habiro
+>   Δtr_M is NOT Form A's net-winding slot (leading Taylor orders differ,
+>   −5/4 vs −2; substituting it misses CODATA by −240000 ppm). The bridge
+>   `Q_β = m_e·f(Δtr_M, q)` is a genuine OPEN derivation.
+> - **d_k (item 2, `mp-dk-decisive-test.witness.json`):** d_4 = 46 drifts
+>   **100%** between the muon-pin and m_p-pin q₀; at canonical q₀ the bare
+>   m_p formula is already 0.0092 ppb, so the "242 ppb gap" the d_k closed
+>   was itself a stale-pin artifact.
+>
+> **Only `c_2 = -1` is Taylor-exact and wired.** All N≥3 c_k / d_k forms
+> (J_Hopf, J−ℏ², c_3·b⁴, d_4=46, …) are structural near-matches locked
+> behind §3b-cond conditional classes (`QbetaC3StructuralFormClass`,
+> `QbetaHabiroTaylorBridgeClass`), NOT production derivations. Earlier
+> "6.02 ppb clean Q_β / 5-of-7" claims in this file were stale-q₀
+> artifacts and are corrected below. Authoritative ledger:
+> `docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md` (read the
+> ADDENDUM, not the body).
 
-| observable | current pred err | 100× target | beats 100×? | bottleneck |
-|------------|--------:|------:|:----:|---|
-| m_e | 0 ppb | 0.003 ppb | ✓ | CAL-1 anchor |
-| m_p | 242 ppb | 0.003 ppb | ✗ | upstream witness regen pending (m_p-pin q₀) |
-| m_μ | ~0 ppb | 0.22 ppb | ✓ | CAL-2 numerical anchor |
-| Q_β | **6.02 ppb (clean) / 11 ppb (production)** | 7.80 ppb | **✓ (clean) / ✗ (production)** | upstream Q_N2 witness regen needed |
-| m_n | 241 ppb | 0.006 ppb | ✗ | inherits m_p + Q_β |
-| Δ_pn | 7.3 ppb | 4.74 ppb | ✗ | inherits m_n |
-| m_K/m_π | 2.9×10⁵ ppb | 264 ppb | ✗ → ✓ on #1451 merge | (#1451 closes this) |
+## L2 100× dashboard (authoritative, from per-observable-100x-status.witness.json @ 2026-05-30T21:01)
 
-**Net after #1451 merge + this PR + upstream regens: 5/7** (m_e, m_μ,
-Q_β, Δ_pn beat 100×; m_K/m_π via #1451; m_p needs regen). 5/7 may bump
-to **6/7 with the m_p witness regen**.
+| observable | role | pred err | σ_exp (=100×/100) | beats 100×? | beats 1×? |
+|------------|------|--------:|------:|:----:|:----:|
+| m_e | CAL-1 anchor | 0 ppb | 0.2935 ppb | ✓ | ✓ |
+| m_p | CAL-2 anchor | 0.0004 ppb | 0.3091 ppb | ✓ | ✓ |
+| m_μ | validation | ~0 ppb | 21.77 ppb | ✓ | ✓ |
+| m_K/m_π | validation (meson) | 23.44 ppb | 2.64×10⁴ ppb | ✓ | ✓ |
+| Q_β | CAL-3 anchor | **1279 ppb** | 779.7 ppb | ✗ | ✗ |
+| m_n | validation | 1.066 ppb | 0.5747 ppb | ✗ | ✗ |
+| Δ_pn | validation | 773.9 ppb | 473.9 ppb | ✗ | ✗ |
+
+**Net: 4/7 beat 100×, 4/7 beat 1× experimental** (m_e, m_p, m_μ,
+m_K/m_π). Q_β / m_n / Δ_pn miss BOTH — this is the **μ-p substrate
+tension floor**, the framework's irreducible self-consistency limit at
+the single-substrate level (see `docs/precision-goals.md` Subgoal-2).
+Note: m_p is NOT 242 ppb (that was the stale muon-pin); at the canonical
+m_p-pin q₀ it is the 0.0004 ppb anchor. Closing Q_β below the floor
+requires a genuine Taylor-exact c_3 derivation (the open bridge `f`),
+NOT a structural near-match.
 
 ---
 
@@ -87,16 +116,21 @@ states (next section).
 
 | observable | canonical formula | Lean proof | production | residual | status |
 |---|---|---|---|---|---|
-| **m_p** | substrate-identity, `m_p = m_e · Vol(B_3)/ℏ_q² · …` | extensive Lean (`m-p-substrate-identity-50dps.witness.json`) | `m_p_substrate_identity_50dps.py` | **242 ppb** (stale q₀; should be ≪ 1 ppb at m_p-anchor) | DERIVED (anchor); witness-stale |
-| **m_n** | Path C: `m_n = m_p + Q_β + m_e` | (composes m_p, Q_β proofs) | dashboard composes | inherits m_p (242 ppb) + Q_β (6-11 ppb) | DERIVED (composed); witness-stale |
-| **Δ_pn** | derived from m_n − m_p | — | dashboard composes | inherits | DERIVED; witness-stale |
+| **m_p** | CAL-2 numerical anchor; substrate-identity `m_p = m_e · 2Vol/ℏ_q² · F_Bor − 12` | extensive Lean (`m-p-substrate-identity-50dps.witness.json`) | `m_p_substrate_identity_50dps.py` | **0.0004 ppb** (anchor, at canonical m_p-pin q₀) | DERIVED (anchor) |
+| **m_n** | Path C: `m_n = m_p + Q_β + m_e` | (composes m_p, Q_β proofs) | dashboard composes | **1.066 ppb** (inherits Q_β floor) — ✗ 100× | DERIVED (composed); limited by Q_β floor |
+| **Δ_pn** | derived from m_n − m_p | — | dashboard composes | **773.9 ppb** (inherits Q_β floor) — ✗ 100× | DERIVED; limited by Q_β floor |
+| **m_p brane-tower d_k** | claimed d_4 = J²·11+2 = 46, d_5 = 4, d_6 = −29 | — | `proton_brane_tower_correction_probe.py` (witness at stale q₀) | **stale-q₀ artifact** (item 2: d_4 drifts 100% between pins; d_5/d_6 don't match claims) | **NOT a derivation** — see `mp-dk-decisive-test.witness.json` |
 | **m_Λ, m_Σ, m_Ξ (other baryons)** | — | — | — | — | OPEN — no canonical chain |
 | **m_Δ, m_N* (resonances)** | — | — | — | — | OPEN — these may live in the Demazure sub-crystal layer (CLAUDE.md §7b) |
 
 **Baryon gaps:**
-- m_p / m_n / Δ_pn are derived but the production-dashboard witnesses
-  are STALE at the old muon-pin q₀ (not the current m_p-pin from
-  #1422). Need regen.
+- m_p is the CAL-2 anchor (0.0004 ppb, exact by construction at the
+  canonical m_p-pin q₀). The old "242 ppb / witness-stale" framing was
+  itself the muon-pin artifact — corrected 2026-05-31 (item 2).
+- m_n / Δ_pn are derived but limited by the Q_β substrate floor
+  (1.066 / 773.9 ppb), not by m_p. Closing them at 100× requires
+  closing Q_β (the open bridge), not regenerating m_p.
+- The m_p brane-tower d_k are NOT categorical derivations (item 2).
 - All hyperons + resonances are open.
 
 ---
@@ -105,19 +139,23 @@ states (next section).
 
 | observable | canonical formula | Lean proof | production | residual | status |
 |---|---|---|---|---|---|
-| **Q_β (free neutron)** | `m_e · |q²−2q−1| · (q+1) / (2q³)` + Habiro/Taylor c_k ladder through N=3 | `prop:neutron-qvalue-symbolic`, `prop:q-beta-categorical-precision-ladder`, Lean `jonesAtOne_hopf_eq_neg_two` (c_3 = −2) | this PR wires Q_N3 in dashboard | **6.02 ppb clean / 11 ppb production** | **DERIVED through c_3** |
-| Q_β c_k (k=4..7) | Habiro coefficients — extraction in `qbeta_decay_sdp_full_ck.py` but values not symbolically pinned (`-2.115, -1.222, +3.498, +57.1`) | partial in `q-beta-categorical-precision-ladder.lean` | not in 100× dashboard | residual closes at ~5 ppb at k=4 | PARTIAL — c_4..c_7 not yet pinned to closed-form invariants |
+| **Q_β (free neutron)** | Form A `m_e · |q²−2q−1| · (q+1) / (2q³)` × c_k ladder; **only c_2 = −1 Taylor-exact** | `prop:q-beta-categorical-precision-ladder` (c_2 via Kashiwara N2_factor, PROVED); c_3 §3b-cond conditional `QbetaC3StructuralFormClass` | `per_observable_100x_status.py` wires **Q_N2 only** | **1279 ppb (Q_N2)** — ✗ 100×, ✗ 1× | **DERIVED through c_2 only**; at μ-p floor |
+| Q_β c_k (k≥3) | structural forms (J_Hopf, J−ℏ², c_3·b⁴) — **stale-q₀ near-matches, NOT Taylor-exact** | §3b-cond `QbetaC3StructuralFormClass`, `QbetaHabiroTaylorBridgeClass` (conditional, no instance) | NOT wired | item-1: 3.35% off at canonical q₀, q₀-drifting | **NOT derivations** — `qbeta-delta-tr-vs-formA.witness.json` |
+| **bridge `f`: Q_β = m_e·f(Δtr_M, q)** | — | — | — | item-1 bounds what it is NOT (not the Form-A slot) | **OPEN** — the genuine derivation target (multi-block Habiro q-difference) |
 | **τ_n (neutron lifetime)** | depends on `(ft)`, `g_A`, Q_β | — | — | — | OPEN — only the Q_β leg is wired |
 | **τ_μ (muon lifetime)** | depends on G_F, m_μ⁵ | — | — | — | OPEN |
 | **Higher-N branching Q-values** | brane-tower structure | partial | — | — | OPEN |
 
-**Q_β gaps (the upgrades in this PR):**
-- c_3 wiring: **CLOSED** (this PR).
-- c_4..c_7 closed-form invariants: open (Habiro Taylor expansion, each
-  ck = Wedderburn-invariant by structure but identification per-k open).
-- Brane-tower E_0 correction: open (the `prop:neutron-qvalue-symbolic`
-  .md itself flags this as the residual source at the single-level
-  approximation).
+**Q_β gaps (corrected 2026-05-31 after items 1+2):**
+- c_3+ wiring: **NOT a derivation** (reversed earlier "CLOSED" claim).
+  The c_3 = J_Hopf / J−ℏ² forms are stale-q₀ near-matches (3.35% / 2.6%
+  off at canonical q₀); locked behind §3b-cond conditional classes.
+- The open derivation step is the bridge `f` with `Q_β = m_e·f(Δtr_M, q)`
+  — item 1 showed it is NOT the canonical Form-A-slot substitution; the
+  multi-Wedderburn-block Habiro q-difference solution is the research
+  target (`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`).
+- Q_β at the μ-p substrate tension floor (1279 ppb); this is the honest
+  production state, not a wiring gap.
 
 ---
 
@@ -193,11 +231,17 @@ When a session finds a gap, status change, or new derivation:
 The highest-leverage open derivations (by # observables they would close
 at 100×):
 
-1. **Habiro c_4..c_7 closed forms** — closes Q_β to L1 (1 ppQ), and via
-   m_n composition also closes Δ_pn to L1. **2-3 observables**.
-2. **m_p brane-tower correction to E_0** — closes m_p at 100× target;
-   author's own narrative (`prop:neutron-qvalue-symbolic`) identifies
-   this as the residual source. **1 observable, infrastructure for others**.
+1. **The Q_β bridge `f`: `Q_β = m_e · f(Δtr_M, q)`** — the genuine open
+   derivation. Item 1 (2026-05-31) bounded what it is NOT (not the
+   Form-A net-winding slot; Δtr_M's leading Taylor order is −5/4 vs Form
+   A's −2). The target is the multi-Wedderburn-block Habiro q-difference
+   solution. Closing it (Taylor-exact at canonical q₀, NOT a structural
+   near-match) closes Q_β → m_n → Δ_pn at L1. **3 observables**.
+   (Supersedes the earlier "Habiro c_4..c_7 closed forms" item — those
+   were stale-q₀ near-matches, not the closure path.)
+2. ~~m_p brane-tower correction to E_0~~ — **NOT a gap** (item 2): m_p is
+   the 0.0004 ppb CAL-2 anchor at canonical q₀; the brane-tower d_k were
+   a stale-pin artifact. Removed from the queue.
 3. **Operator-valued LR `A^λ_{μν}(I)`** (#1443) — categorical mechanism
    for multi-Wedderburn-block decompositions; enables higher-A binding
    derivation (#1431 Barrier-1) and flavor-split structure. **Infrastructure**.
