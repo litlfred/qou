@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-26T21:06:15.675281+00:00",
-  "commitSha": "c8e5a8b2c0fbe46046de8e286f705b9c8bbada1c",
+  "computedAt": "2026-05-31T04:29:44.902495+00:00",
+  "commitSha": "9848d6de76c04c878be1be516b060b663582b642",
   "assertions": [
     {
       "name": "q0_shift_resolves_mp",
@@ -14,23 +14,32 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 10,
   "computation": "definitive-q0-shift",
   "scriptFile": "definitive_q0_shift_for_mp.py",
   "scriptHash": "2dfd391ff15c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "626c2bb856bbfa1ca647bd7d5bc36c8113f8825e",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "The m_p 242 ppb residual is entirely a q₀ calibration shift of 11.5 ppb. All correction towers are Taylor expansions of this shift. 1 ppb m_p requires deriving q₀ to 12 ppb.",
   "contentBlock": "prop:proton-mass-substrate-identity",
   "data": {
-    "q0_current": "1.109978595554180575281594",
+    "q0_current": "1.109978582751380807591669",
     "q0_exact_for_mp": "1.109978582751402150576079",
-    "shift_absolute": "-1.28027784247055e-8",
-    "shift_ppb": "-11.53425704"
+    "shift_absolute": "2.13429844101753e-14",
+    "shift_ppb": "1.922828489e-5"
   }
 }
