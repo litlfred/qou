@@ -206,20 +206,18 @@ def _is_stale(script_name: str) -> tuple[bool, str]:
     # auto-refresh (witness-refresh.yml / publish.yml regen step) regenerates
     # it. This is warn-and-heal — `_is_stale` only drives regeneration, never
     # a hard CI failure. Audit / state-tracking witnesses are exempt (they may
-    # record an old q₀ on purpose). Reuses the standalone detector
-    # witness_constant_staleness.py (#1500).
-    try:
-        from witness_constant_staleness import Q0_SHAPE, AUDIT_SUFFIXES
-        from qou_substrate.constants import Q_50_DIGIT_STR
-        if not witness_path.name.endswith(AUDIT_SUFFIXES):
-            cur = Q_50_DIGIT_STR[:14]  # "1." + 12 significant digits
-            raw = witness_path.read_text(encoding="utf-8")
-            embedded = {m.group(0)[:14] for m in Q0_SHAPE.finditer(raw)}
-            drifted = embedded - {cur}
-            if drifted:
-                return True, f"stale q₀ ({sorted(drifted)[0]} ≠ {cur})"
-    except Exception:
-        pass  # detector / constants unavailable → fall back to scriptHash gate
+    # record an old q₀ on purpose). Reuses witness_constant_staleness.py
+    # (#1500), whose import also sets up the qou_substrate path — both are
+    # internal modules guaranteed available at runtime, so no fallback.
+    from witness_constant_staleness import Q0_SHAPE, AUDIT_SUFFIXES
+    from qou_substrate.constants import Q_50_DIGIT_STR
+    if not witness_path.name.endswith(AUDIT_SUFFIXES):
+        cur = Q_50_DIGIT_STR[:14]  # "1." + 12 significant digits
+        raw = witness_path.read_text(encoding="utf-8")
+        embedded = {m.group(0)[:14] for m in Q0_SHAPE.finditer(raw)}
+        drifted = embedded - {cur}
+        if drifted:
+            return True, f"stale q₀ ({sorted(drifted)[0]} ≠ {cur})"
 
     return False, "current"
 
