@@ -133,22 +133,145 @@ theorem magic_A_binding_formula
 theorem he4_is_doubly_magic : isDoublyMagic 2 2 := by
   refine ⟨?_, ?_⟩ <;> exact Or.inl rfl
 
-/-- **Two-regime binding dispatcher.**
+/-- **Binding regime tag.**
 
-    The light-nucleus binding evaluator is the disjoint union of
-    two regimes:
-    - `BindingForceCarrierKnot` (per-rep Reeb phase via T(p, k))
-      covers single-hyperbolic-knot nuclei (currently A = 2, 3
-      candidates in `binding-alpha-shift-extension.lean`).
-    - `MagicABindingFormula` covers doubly-magic nuclei
-      (currently ⁴He via this file).
+    The light-nucleus binding evaluator is the disjoint union of two
+    categorical regimes. A nucleus `(Z, N)` is routed to exactly one:
 
-    The substrate determines the regime: ⁴He has no single
-    hyperbolic knot (per `prop:diagrammatic-double-magic-lr-fusion`),
-    so it dispatches to `MagicABindingFormula`. Heavier doubly-magic
-    candidates (¹⁶O, ⁴⁰Ca) extend the latter; non-magic A ≥ 3
-    candidates (T, ³He) require the open Phase-3 derivation
-    documented in the audit. -/
+    - `DoublyMagic` — both `Z, N ∈ 𝔐`. The Littlewood–Richardson
+      fusion of the Z-block and N-block collapses to a single
+      self-conjugate Specht module
+      (`prop:diagrammatic-double-magic-lr-fusion`); there is no
+      Wedderburn channel, no hyperbolic force-carrier knot, no per-rep
+      Reeb phase. Binding is set by the universal Borromean residue
+      `8G` scaled by nucleon count via `MagicABindingFormula`.
+    - `AlphaShift` — at least one of `Z, N ∉ 𝔐`. The nucleus carries a
+      single hyperbolic force-carrier torus knot `T(p, k)` whose
+      per-rep Reeb phase `α_shift = k·(p−1)` sets the binding via
+      `BindingForceCarrierKnot`
+      (`prop:binding-alpha-shift-extension`). -/
+inductive BindingRegime
+  /-- Single-hyperbolic-knot regime (per-rep Reeb phase, `T(p, k)`). -/
+  | AlphaShift
+  /-- Doubly-magic regime (Borromean residue `8G · A`). -/
+  | DoublyMagic
+  deriving DecidableEq, Repr
+
+/-- **Regime classifier.** Routes a nucleus `(Z, N)` to its binding
+    regime: `DoublyMagic` when both `Z` and `N` are magic, else
+    `AlphaShift`. `isMagic` is decidable (finite disjunction of
+    equalities), so the dispatch is a total computable function. -/
+def bindingRegime (Z N : ℕ) : BindingRegime :=
+  if (isMagic Z ∧ isMagic N) then BindingRegime.DoublyMagic
+  else BindingRegime.AlphaShift
+
+/-- The classifier selects `DoublyMagic` exactly on doubly-magic
+    inputs. -/
+theorem bindingRegime_doublyMagic_iff (Z N : ℕ) :
+    bindingRegime Z N = BindingRegime.DoublyMagic ↔ isDoublyMagic Z N := by
+  unfold bindingRegime isDoublyMagic
+  by_cases h : isMagic Z ∧ isMagic N
+  · simp [h]
+  · simp [h]
+
+/-- The classifier selects `AlphaShift` exactly when the nucleus is
+    *not* doubly magic. -/
+theorem bindingRegime_alphaShift_iff (Z N : ℕ) :
+    bindingRegime Z N = BindingRegime.AlphaShift ↔ ¬ isDoublyMagic Z N := by
+  unfold bindingRegime isDoublyMagic
+  by_cases h : isMagic Z ∧ isMagic N
+  · simp [h]
+  · simp [h]
+
+/-- **⁴He dispatches to the doubly-magic regime.** `Z = N = 2` are
+    both magic, so `bindingRegime 2 2 = DoublyMagic`; the binding is
+    evaluated through `MagicABindingFormula` (this file), giving the
+    80× gap closure (`B ≈ 29.956 MeV` vs `28.296 MeV`, 5.9% miss). -/
+theorem he4_dispatches_to_magic :
+    bindingRegime 2 2 = BindingRegime.DoublyMagic := by
+  rw [bindingRegime_doublyMagic_iff]; exact he4_is_doubly_magic
+
+/-- **Tritium dispatches to the α_shift regime.** `³H = (Z, N) = (1, 2)`:
+    `Z = 1 ∉ 𝔐`, so `bindingRegime 1 2 = AlphaShift`; the binding is
+    evaluated through `BindingForceCarrierKnot` (the `T(2, 5)`
+    candidate, `α_shift = 5`, in `binding-alpha-shift-extension.lean`). -/
+theorem tritium_dispatches_to_alpha_shift :
+    bindingRegime 1 2 = BindingRegime.AlphaShift := by
+  rw [bindingRegime_alphaShift_iff]
+  rintro ⟨hZ, _⟩
+  -- Z = 1 is not in the magic set {2, 8, 20, 28, 50, 82, 126}.
+  rcases hZ with h | h | h | h | h | h | h <;> exact absurd h (by decide)
+
+/-- **³He dispatches to the α_shift regime.** `³He = (Z, N) = (2, 1)`:
+    `N = 1 ∉ 𝔐`, so `bindingRegime 2 1 = AlphaShift`; routed through
+    `BindingForceCarrierKnot` (the mirror `T(2, 5)` candidate). -/
+theorem helium3_dispatches_to_alpha_shift :
+    bindingRegime 2 1 = BindingRegime.AlphaShift := by
+  rw [bindingRegime_alphaShift_iff]
+  rintro ⟨_, hN⟩
+  rcases hN with h | h | h | h | h | h | h <;> exact absurd h (by decide)
+
+/-- **Deuteron dispatches to the α_shift regime.** `D = (Z, N) = (1, 1)`:
+    neither is magic, so `bindingRegime 1 1 = AlphaShift`; routed
+    through `BindingForceCarrierKnot` (the `T(2, 3)` trefoil candidate,
+    `α_shift = 3`). -/
+theorem deuteron_dispatches_to_alpha_shift :
+    bindingRegime 1 1 = BindingRegime.AlphaShift := by
+  rw [bindingRegime_alphaShift_iff]
+  rintro ⟨hZ, _⟩
+  rcases hZ with h | h | h | h | h | h | h <;> exact absurd h (by decide)
+
+/-- **Regime-aware binding evaluator.**
+
+    The single entry point for light-nucleus binding: given a nucleus
+    `(Z, N)`, a doubly-magic evaluator `B_dm` (closed-form `8G · A`
+    via `MagicABindingFormula`) and an α_shift evaluator `B_as`
+    (per-rep Reeb phase via `BindingForceCarrierKnot`), select the
+    correct evaluator by the regime classifier.
+
+    This is the operational dispatcher (PR #1543 fix-option 2): ⁴He
+    routes through `B_dm`, non-magic A = 2, 3 candidates route through
+    `B_as`. The two underlying evaluators are the §3b-cond
+    rigorous-conditional theorems in their respective files; this
+    function only chooses between them. -/
+def bindingDispatch {R : Type u} (B_dm B_as : ℕ → ℕ → R) (Z N : ℕ) : R :=
+  match bindingRegime Z N with
+  | BindingRegime.DoublyMagic => B_dm Z N
+  | BindingRegime.AlphaShift  => B_as Z N
+
+/-- On a doubly-magic nucleus the dispatcher returns the doubly-magic
+    evaluator. -/
+theorem bindingDispatch_doublyMagic {R : Type u}
+    (B_dm B_as : ℕ → ℕ → R) (Z N : ℕ) (h : isDoublyMagic Z N) :
+    bindingDispatch B_dm B_as Z N = B_dm Z N := by
+  unfold bindingDispatch
+  rw [(bindingRegime_doublyMagic_iff Z N).2 h]
+
+/-- On a non-doubly-magic nucleus the dispatcher returns the α_shift
+    evaluator. -/
+theorem bindingDispatch_alphaShift {R : Type u}
+    (B_dm B_as : ℕ → ℕ → R) (Z N : ℕ) (h : ¬ isDoublyMagic Z N) :
+    bindingDispatch B_dm B_as Z N = B_as Z N := by
+  unfold bindingDispatch
+  rw [(bindingRegime_alphaShift_iff Z N).2 h]
+
+/-- **⁴He binding goes through the magic-A formula.** Composing the
+    dispatcher with the §3b-cond `MagicABindingFormula` class: when
+    the doubly-magic evaluator is the class binding `B` and `(Z, N)`
+    is doubly magic, the dispatched value equals the closed form
+    `ρ_F · m_e · A · 8G`. -/
+theorem he4_binding_via_dispatch
+    {R : Type u} [Field R] [CatalanPrefactor R]
+    (B B_as : ℕ → ℕ → R) (m_e : R)
+    [hMA : MagicABindingFormula B m_e] :
+    bindingDispatch B B_as 2 2
+      = hMA.rho_F 2 2 * m_e * ((2 + 2 : ℕ) : R) * CatalanPrefactor.vol_borromean := by
+  rw [bindingDispatch_doublyMagic B B_as 2 2 he4_is_doubly_magic]
+  exact hMA.formula 2 2 he4_is_doubly_magic
+
+/-- **Two-regime binding dispatcher (existence).** Retained for the
+    `prop:magic-A-binding-formula` Lean ref: the doubly-magic regime
+    is non-trivially inhabited at the lightest scale (⁴He). -/
 theorem two_regime_dispatch_exists :
     ∃ Z N : ℕ, isDoublyMagic Z N := by
   exact ⟨2, 2, he4_is_doubly_magic⟩
