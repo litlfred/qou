@@ -71,15 +71,17 @@
   {
     "id": "probe-ck-lean-3bcond-classes",
     "summary": "Add Lean §3b-cond classes for c_4–c_7 mirroring QbetaC3StructuralFormClass",
-    "comment": "Per CLAUDE.md §3b-cond: conjectural inputs axiomatised as Lean classes; downstream theorems take class as [Instance] hypothesis. Pattern established by 441c291fc (QbetaC3StructuralFormClass) and be0f45591 (QbetaHabiroTaylorBridgeClass). One class per coefficient that isn't Taylor-exact. Q_β ladder Lean theorem proves: Q_β = product over k of class-instance values.",
-    "status": "open",
+    "comment": "CLAIMED 2026-05-31 by claude/qbeta-ck-lean-3bcond-classes-2026-05-31. The c_3 case already exists in content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.lean (axiom qBetaC3Categorical + class QbetaC3StructuralFormClass + theorem q_beta_n3_structural_form). Mirror for c_4, c_5, c_6, c_7 using existing canonical-instance forms: c_4 = J·b⁴ = -2·b⁴; c_5 = -(b²+1/2); c_6 = J²·b² = 4·b² (empirical fit); c_7 = J³ = -8. Per CLAUDE.md §3b-cond: classes are conditional (no instance provided), so production is unaffected; the classes just LOCK the structural-form claims so downstream Lean can carry them as hypotheses without the Taylor-exact derivation. Parallel α_EM PR #1508 / #1511 pattern.",
+    "status": "in_progress",
     "priority": "medium",
     "origin": "session-init",
+    "assignee": "claude/qbeta-ck-lean-3bcond-classes-2026-05-31",
     "createdAt": "2026-05-31",
     "data": {
       "goal": "1ppq-qbeta",
       "depends_on": ["probe-c3-q0-stability", "probe-c4-habiro"],
-      "lean_pattern": "QbetaC3StructuralFormClass at 441c291fc"
+      "lean_pattern": "QbetaC3StructuralFormClass at 441c291fc",
+      "session_state": "in_progress — adding c_4/c_5/c_6/c_7 mirrors"
     }
   },
   {
