@@ -192,8 +192,8 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 **Honest summary: 3/7 "meet" — 2 calibration anchors (m_e, m_p)
 plus m_K/m_π (closed via the merged meson EM correction `(3q²−1)/(2q²)`
 in PR #1442; was previously listed as missing by ~1098× pre-merge).
-1 of the 4 remaining genuine predictions (m_μ, Q_β, m_n, Δ_pn) meets
-the 100× target.**
+m_K/m_π is the first genuine prediction to meet the 100× target; the
+other 4 predictions (m_μ, Q_β, m_n, Δ_pn) still miss it.**
 This is the de-fitted state: production reports the real residuals, not
 CODATA-fitted towers. m_p's "0.0004 ppb" is a calibration round-trip
 (see §"The 1 ppQ target is on the theory residual" — σ_theory = 0, the
