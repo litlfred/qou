@@ -304,37 +304,44 @@ def main() -> dict:
     # (<< 1 ppb). Structural approximations with stated residuals do
     # NOT clear this bar.
     # Cache-aware wiring: read c_k from qbeta-ck-cache.witness.json
-    # (produced by qbeta_ck_cache.py). Each c_k is labelled either
-    # "lean-proved" (Taylor-exact via Lean theorem) or
-    # "codata-extracted" (Taylor coefficient measured from CODATA Q_β
-    # at canonical q₀, NOT independently derived). Production reports
-    # the highest cumulative rung whose label is "lean-proved";
-    # codata-extracted rungs are documented in the witness but NOT
-    # credited to the production prediction.
+    # (produced by qbeta_ck_cache.py). Each c_k carries a two-tier label:
+    #   tier "derived"      — Taylor-exact, Lean-proved, q₀-independent.
+    #   tier "cal-anchored" — extracted from CODATA Q_β at canonical q₀;
+    #                         CIRCULAR & q₀-dependent (a reusable
+    #                         calibrated constant, NOT a prediction).
+    # The dashboard headline reports the deepest cumulative DERIVED rung
+    # only; cal-anchored rungs are cached for downstream reuse but NEVER
+    # counted toward a 100×/1× pass (that would be circular). Keying off
+    # `tier` means a future agent who proves a higher c_k Taylor-exact in
+    # Lean promotes it (tier='derived') and the dashboard auto-picks it up.
     ck_cache = load_witness("qbeta-ck-cache.witness.json")
     ck_data = ck_cache.get("data", {})
     if ck_data.get("rows"):
-        # Find the deepest k for which the label is "lean-proved"
-        last_lean_proved_row = None
+        # Find the deepest cumulative rung whose tier is "derived".
+        # (Fallback to the legacy label for any cache lacking `tier`.)
+        last_derived_row = None
         for row in ck_data["rows"]:
-            if row.get("label") == "lean-proved":
-                last_lean_proved_row = row
+            tier = row.get("tier") or (
+                "derived" if row.get("label") == "lean-proved" else "cal-anchored")
+            if tier == "derived":
+                last_derived_row = row
             else:
-                break  # stop at first non-lean-proved rung
-        if last_lean_proved_row is not None:
-            k = last_lean_proved_row["k"]
-            Q_pred_str = last_lean_proved_row["Q_pred_after_this_rung_MeV"]
+                break  # stop at first non-derived (cal-anchored) rung
+        if last_derived_row is not None:
+            k = last_derived_row["k"]
+            Q_pred_str = last_derived_row["Q_pred_after_this_rung_MeV"]
             Q_pred = mpf(Q_pred_str)
             Q_beta_best = Q_pred
             rows.append(_row_for(
                 "Q_beta", Q_pred,
-                f"Q_N{k} from qbeta-ck-cache.witness.json (deepest rung with "
-                f"label='lean-proved'). c_2 = -1 PROVED via "
+                f"Q_N{k} from qbeta-ck-cache.witness.json (deepest DERIVED-tier "
+                f"rung). c_2 = -1 PROVED via "
                 f"qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + "
-                f"Kashiwara N2_factor. Higher c_k are 'codata-extracted' "
-                f"Taylor coefficients (documented in cache witness) but NOT "
-                f"wired as derivations - see deep audit "
-                f"docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
+                f"Kashiwara N2_factor. Higher c_k are tier='cal-anchored' "
+                f"(extracted from CODATA Q_β, circular, q₀-dependent) — cached "
+                f"for downstream reuse but NOT credited as a prediction. See "
+                f"deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md "
+                f"and qbeta-scaling-bridge-investigation.witness.json.",
             ))
         else:
             Q_beta_best = None
@@ -359,7 +366,9 @@ def main() -> dict:
     m_e_mev = OBSERVABLES["m_e"][0]  # CAL-1 anchor
     # Q_β rung label for Path C sourcing — pick N based on which path produced Q_β.
     if ck_data.get("rows") and Q_beta_best is not None:
-        q_beta_rung = f"N={ck_data['rows'][-1]['k']}" if any(r.get("label") == "lean-proved" for r in ck_data["rows"]) else "N=0"
+        _derived_ks = [r["k"] for r in ck_data["rows"]
+                       if (r.get("tier") or ("derived" if r.get("label") == "lean-proved" else "cal-anchored")) == "derived"]
+        q_beta_rung = f"N={max(_derived_ks)}" if _derived_ks else "N=0"
     else:
         q_beta_rung = "N=0"
     if m_p_sub is not None and Q_beta_best is not None:

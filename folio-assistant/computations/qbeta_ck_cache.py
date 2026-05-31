@@ -21,10 +21,25 @@ This script:
   6. Production reads from cache. No structural-form guessing in
      production code.
 
-DISCIPLINE: extracted c_k are LABELLED "codata-extracted" in the
-witness. Only c_2 is labelled "lean-proved". Future agents wiring
-higher c_k must close their structural form to Taylor precision in
-Lean before changing the labels.
+DISCIPLINE: a two-tier label system makes the production semantics
+machine-readable:
+
+  • tier "derived"      (c_2): Taylor-exact, Lean-proved. Wired to the
+                               L2 dashboard headline. q₀-INDEPENDENT.
+  • tier "cal-anchored" (c_3+): extracted from the CAL-3 Q_β datum at
+                               canonical q₀. q₀-DEPENDENT and CIRCULAR
+                               (uses Q_codata), so it is a reusable
+                               CALIBRATED CONSTANT, NOT a prediction.
+                               It must NEVER count toward a 100×/1×
+                               dashboard pass (that would be circular).
+
+The cal-anchored c_k are cached so downstream consumers (m_n Path C,
+Δ_pn) can REUSE the full-precision calibrated Q_β without re-extracting
+— per the author's "compute, cache, and reuse c_k/d_k" request — while
+the labels keep the derived/calibrated boundary explicit. Future agents
+who close a c_k structural form to Taylor precision in Lean (at
+canonical q₀, NOT a near-match) promote it from "cal-anchored" to
+"derived" by changing its tier; the dashboard then auto-picks it up.
 """
 from __future__ import annotations
 
@@ -88,6 +103,8 @@ def main() -> int:
     rows.append({
         "k": 2, "c_k": mp.nstr(c_2, 30),
         "label": "lean-proved",
+        "tier": "derived",
+        "q0_dependent": False,
         "structural_form": "-1 (Kashiwara f̃₁²)",
         "lean_theorem": "qou:QOU.BraidKnot.N2_factor + q_beta_categorical_precision_ladder",
         "Q_pred_after_this_rung_MeV": mp.nstr(Q_N2, 30),
@@ -135,8 +152,11 @@ def main() -> int:
         rows.append({
             "k": k,
             "c_k": mp.nstr(ck_extracted, 30),
-            "label": "codata-extracted",
-            "lean_theorem": "(none — closing in Lean to Taylor precision would change label to lean-proved)",
+            "label": "cal-anchored",
+            "tier": "cal-anchored",
+            "q0_dependent": True,
+            "circular": "value extracted from CAL-3 Q_codata at this q₀; reusable calibrated constant, NOT a prediction — must not count toward any 100×/1× dashboard pass",
+            "lean_theorem": "(none — closing in Lean to Taylor precision at canonical q₀ would promote tier to 'derived')",
             "structural_candidates": [
                 {"name": name, "value": mp.nstr(val, 30),
                  "err_pct": float(abs((ck_extracted - val) / ck_extracted) * 100)}
@@ -152,10 +172,13 @@ def main() -> int:
     print()
     print(f"  Q_N7 = {mp.nstr(Q_prev, 18)}  err = {float((Q_prev-Q_codata)/Q_codata*1e12):+8.4f} ppt")
     print()
-    print("  DISCIPLINE: only c_2 is 'lean-proved' (Taylor-exact). c_3..c_7 are")
-    print("  'codata-extracted' — empirical Taylor coefficients of the exact Habiro")
-    print("  Q_β at canonical q₀, NOT independent derivations. Production uses Q_N2")
-    print("  (Lean-proved through k=2) unless future Lean theorems close higher c_k.")
+    print("  DISCIPLINE (two tiers):")
+    print("    • derived      (c_2): Taylor-exact, Lean-proved → dashboard headline (Q_N2).")
+    print("    • cal-anchored (c_3+): extracted from Q_codata, CIRCULAR & q₀-dependent —")
+    print("      a reusable calibrated constant for downstream (m_n, Δ_pn), NOT a")
+    print("      prediction. Never counts toward a 100×/1× pass.")
+    print(f"    Q_β derived      (Q_N2)       = {mp.nstr(Q_N2, 16)}  ({float((Q_N2-Q_codata)/Q_codata*1e9):+.1f} ppb)")
+    print(f"    Q_β cal-anchored (full ladder)= {mp.nstr(Q_prev, 16)}  ({float((Q_prev-Q_codata)/Q_codata*1e12):+.2f} ppt, circular)")
 
     wb.set_description(
         "Cache of Q_β c_k Taylor coefficients at canonical q₀. c_2 is the only "
@@ -173,11 +196,33 @@ def main() -> int:
     wb.add_data("u_substrate", mp.nstr(u, 50))
     wb.add_data("Q_codata", str(Q_BETA_MEV))
     wb.add_data("rows", rows)
+    # Two-tier Q_β: the derived headline (Q_N2) and the reusable
+    # cal-anchored full-ladder value. The latter is CIRCULAR (it is
+    # calibrated to Q_codata) — provided for downstream REUSE only.
+    wb.add_data("Q_beta_tiers", {
+        "derived": {
+            "value_MeV": mp.nstr(Q_N2, 30),
+            "rungs": "Form A · cos(α−bℏ²/2) · (1+c_2 u²), c_2 Taylor-exact",
+            "err_ppb_vs_codata": float((Q_N2 - Q_codata) / Q_codata * 1e9),
+            "use": "L2 dashboard headline; a genuine prediction (no Q_codata input beyond CAL-3 anchoring of the scale).",
+        },
+        "cal_anchored": {
+            "value_MeV": mp.nstr(Q_prev, 30),
+            "rungs": "full ladder through c_7 (c_3+ extracted from Q_codata)",
+            "err_ppb_vs_codata": float((Q_prev - Q_codata) / Q_codata * 1e9),
+            "circular": True,
+            "use": ("reusable calibrated constant for downstream consumers "
+                    "(m_n Path C, Δ_pn) that need full-precision Q_β; "
+                    "MUST NOT be reported as a prediction or counted toward "
+                    "a 100×/1× dashboard pass — it is calibrated to Q_codata."),
+        },
+    })
     wb.add_data("discipline", {
-        "lean_proved_count": 1,
-        "codata_extracted_count": 5,
-        "production_uses": "c_2 only (Q_N2)",
-        "to_change_label_to_lean_proved": "future agent must provide Lean theorem closing c_k structural form to Taylor precision at canonical q₀",
+        "derived_tier_count": 1,
+        "cal_anchored_tier_count": len(rows) - 1,
+        "dashboard_headline_uses": "derived tier only (Q_N2)",
+        "cal_anchored_is_reusable_not_prediction": True,
+        "to_promote_cal_anchored_to_derived": "future agent must provide a Lean theorem closing the c_k structural form to Taylor precision at canonical q₀ (not a near-match); then set tier='derived'.",
     })
     wb.add_assertion(
         "c2_extraction_matches_lean_proved_value",
