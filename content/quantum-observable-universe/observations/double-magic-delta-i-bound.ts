@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:double-magic-delta-i-bound",
   title:
-    "Proposition 9. Empirical double-magic isotopes satisfy $|\\Delta i| \\leq 1$ across Bring shell indices",
+    "Conjecture: Empirical double-magic isotopes satisfy $|\\Delta i| \\leq 1$ across Bring shell indices",
   lean: {
     ref: "qou:QOU.Interactions.DoubleMagicDeltaI.DeltaIBoundConjecture",
     validation: "not_checked",

@@ -1,6 +1,6 @@
 **Conjecture (Casimir force as standard-part of $\varepsilon$-vacuum
 density gradient).**
-*Assume the [$\varepsilon$-relaxed vacuum axiom](#prop:vacuum-epsilon) —
+*Assume the [$\varepsilon$-relaxed vacuum axiom](#conj:vacuum-epsilon) —
 every unknot component of a link $L$ contributes an infinitesimal
 $\varepsilon \in \mathbf{No}$ to $\mathrm{Geom}(L)$. Let two parallel
 conducting plates of area $A$ separated by $d$ constrain the
@@ -31,7 +31,7 @@ Casimir calculation and the cosmological-constant problem.
 
 $\mathrm{st}$ annihilates a generic product $X \cdot \varepsilon$
 *only when $X$ is finite* (i.e., in the valuation ring of
-$\mathbf{No}$; see [`prop:archimedean-stpart`](#prop:archimedean-stpart)).
+$\mathbf{No}$; see [`conj:archimedean-stpart`](#conj:archimedean-stpart)).
 The unknot-component count between two plates is *not* finite — it
 is surreal-infinite, matching the birthday rank of the standard
 physics zero-point-mode count, which diverges. The relevant
@@ -73,7 +73,7 @@ finite *gradient* of an otherwise-infinite mode-count.
 Given:
 
 1. The $\varepsilon$-relaxed vacuum axiom
-   [`prop:vacuum-epsilon`](#prop:vacuum-epsilon).
+   [`conj:vacuum-epsilon`](#conj:vacuum-epsilon).
 2. A plate-constrained unknot-density function satisfying
    $$
      N_{\unicode{9737}}^{\text{in}}(A, d) - N_{\unicode{9737}}^{\text{out}}(A, d)
@@ -81,7 +81,7 @@ Given:
      \;+\; o(\varepsilon^{-1}).
    $$
 3. Standard-part arithmetic
-   [`prop:archimedean-stpart`](#prop:archimedean-stpart) and the
+   [`conj:archimedean-stpart`](#conj:archimedean-stpart) and the
    standard-part functor [`def:standard-part-functor`](#def:standard-part-functor).
 
 The textbook Casimir force per area follows by direct computation:
@@ -101,7 +101,7 @@ toward each other.
 
 This conditional derivation is rigorous *modulo* the surreal-
 arithmetic infrastructure already proved in
-[`prop:archimedean-stpart`](#prop:archimedean-stpart). The
+[`conj:archimedean-stpart`](#conj:archimedean-stpart). The
 conditional kind (theorem-from-hypothesis) is the §3b-cond pattern:
 the Lean formulation in `CasimirEpsilonVacuum.lean` takes
 `[VacuumEpsilon]` and the plate-mode-count class as explicit
@@ -166,7 +166,7 @@ Three reasons:
 1. **Quantitative test of the $\varepsilon$-vacuum axiom.** The
    Casimir effect is the cleanest experimental probe of
    vacuum-energy structure. If QOU's $\varepsilon$-vacuum
-   reproduces it, [`prop:vacuum-epsilon`](#prop:vacuum-epsilon)
+   reproduces it, [`conj:vacuum-epsilon`](#conj:vacuum-epsilon)
    gains empirical traction. If not, the relaxation is wrong.
 
 2. **Cosmological-constant heuristic.** The same
@@ -198,9 +198,9 @@ numerical prefactor is a separate open sub-problem.
 
 ## See also
 
-- [`prop:vacuum-epsilon`](#prop:vacuum-epsilon) — upstream
+- [`conj:vacuum-epsilon`](#conj:vacuum-epsilon) — upstream
   conjecture: $\mathrm{Geom}(\unicode{9737}) = \varepsilon$.
-- [`prop:archimedean-stpart`](#prop:archimedean-stpart) —
+- [`conj:archimedean-stpart`](#conj:archimedean-stpart) —
   standard-part arithmetic used in the conditional derivation.
 - [`def:standard-part-functor`](#def:standard-part-functor) — the
   $\mathrm{st}$ map from finite surreals to $\mathbb{R}$.
