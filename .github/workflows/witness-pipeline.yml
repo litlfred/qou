@@ -170,6 +170,22 @@ jobs:
         run: |
           python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict
 
+      - name: q₀ constant-re-pin staleness detector (warn-only)
+        # Per docs/audits/2026-05-30-q0-repin-stale-witness-audit.md:
+        # the run_pipeline.py staleness check keys on producer
+        # scriptHash, which is blind to constant re-pins (a numeric
+        # constant change that touches no producer script).  The
+        # detector scans every *.witness.json for q₀-shaped decimals
+        # that diverge from the live Q_50_DIGIT_STR and flags them.
+        # ≈394 witnesses currently carry the pre-re-pin (muon)
+        # q₀=1.109978595554 (commit 01c18125 re-pinned to the proton
+        # anchor 1.109978582751 on 2026-05-28); they need a one-time
+        # batched regen (~15-hour overnight job per the audit doc).
+        # Warn-only until that regen lands; promote to --strict once
+        # the count is at 0.
+        run: |
+          python3 folio-assistant/computations/witness_constant_staleness.py || true
+
       - name: Axiomatic Markov-trace recursive reducer (H_3..H_6)
         # Per prop:markov-trace-recursive-reducer: terminating axiom-
         # only reducer for arbitrary H_n braid words. Smoke-tests the
