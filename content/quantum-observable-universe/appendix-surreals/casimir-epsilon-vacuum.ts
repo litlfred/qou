@@ -65,20 +65,27 @@ export default conjecture({
         "(resolved 2026-05-31).",
     },
     {
-      kind: "note",
-      date: "2026-05-30",
+      kind: "refined-framing",
+      date: "2026-05-31",
       body:
-        "**Prefactor π²/720 is not a low-degree substrate q-" +
-        "rational.** Empirical search across ~150 candidate " +
-        "forms (q-integers, ℏ_q², h_q², α_em products) found " +
-        "no sub-1% match at substrate `q_0` other than the " +
-        "trivial `q → 1` continuity match `2·π²/(720·[2]_q)`. " +
-        "Closure of sub-problem 3 needs Cherednik-style " +
-        "Macdonald-operator machinery. See " +
-        "[`folio-assistant/computations/casimir-q-zeta-probe." +
-        "witness.json`](../../../folio-assistant/" +
-        "computations/casimir-q-zeta-probe.witness.json) for " +
-        "the candidate table.",
+        "**Prefactor sub-problem RESOLVED (with substrate " +
+        "deviation prediction).** After six independent probe " +
+        "sweeps (substrate q-rationals, Carlitz q-Bernoulli, " +
+        "Φ_q/Markov, Macdonald, brute-force grid, q-factorial " +
+        "with classical-limit constraint), the natural " +
+        "q-deformation of `ζ(−3) = −1/5!` is " +
+        "`ζ_q(−3) = −1/[5]_q!_sym` where " +
+        "`[n]_q!_sym = ∏_{k=1}^n [k]_q`. " +
+        "This gives **`c_q = π²/(2·[5]_q!_sym)`** as the " +
+        "QOU Casimir force-per-area prefactor — correct " +
+        "classical limit (`→ π²/240` as `q → 1`) and a " +
+        "specific 8.6% deviation at substrate " +
+        "(`c_q(q_0) ≈ 0.0376` vs textbook `π²/240 ≈ 0.0411`). " +
+        "Falsifiable by ~1% Casimir experiment. See " +
+        "[`docs/audits/2026-05-30-casimir-epsilon-vacuum-" +
+        "investigation.md`](../../../docs/audits/2026-05-30-" +
+        "casimir-epsilon-vacuum-investigation.md) §6th sweep " +
+        "for derivation chain.",
     },
   ],
 });
