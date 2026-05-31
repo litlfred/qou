@@ -432,9 +432,12 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 
 - **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
   can still miss its 100× experimental target by 10⁴ (L2 missed).
-- **L2 is variable per observable.** Q_β target is 7.8 ppb (met;
-  Habiro-exact at 5.7 ppb); absolute m_p target is 3 ppt
-  (research-grade, below CAL-2 floor).
+- **L2 is variable per observable.** Q_β target is 7.8 ppb; currently
+  measured at 1247 ppb (159.9× miss) per the dashboard — the Habiro-
+  exact 5.7 ppb result was against the pre-re-pin (muon-anchored) q₀
+  and has not been refreshed since the 2026-05-28 proton-anchor re-pin
+  (see [`docs/audits/2026-05-30-q0-repin-stale-witness-audit.md`](docs/audits/2026-05-30-q0-repin-stale-witness-audit.md)).
+  Absolute m_p target is 3 ppt (research-grade, below CAL-2 floor).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
