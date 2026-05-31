@@ -130,4 +130,40 @@ theorem hecke_anyonic_substrate_structural :
     Nonempty (HeckeAnyonicSubstrate R q S) :=
   ⟨inferInstance⟩
 
+/-! ## Word-product structure (Sprint 2 follow-up extension)
+
+The full `Tw : W → IwahoriHeckeQuot R q S` basis requires
+Matsumoto's theorem. We provide here the **finite-word product**
+machinery that the basis construction will use once the
+CoxeterSystem reduced-expression API stabilises in Mathlib. -/
+
+variable [Group W]
+
+/-- **Word product** in `IwahoriHeckeQuot R q S` for an explicit
+    finite list of simple reflections. This is the input to
+    Matsumoto's theorem: given any reduced expression
+    `[s_{i_1}, …, s_{i_k}]`, the product
+    `T_{s_{i_1}} · T_{s_{i_2}} · … · T_{s_{i_k}}` is what `Tw w`
+    should equal (Matsumoto: well-defined modulo choice of reduced
+    expression). -/
+noncomputable def wordProduct : List S → IwahoriHeckeQuot R q S
+  | [] => 1
+  | s :: rest => QOU.IwahoriHecke.Quotient.T R q S s *
+                 wordProduct rest
+
+/-- **Empty word maps to 1** definitionally. -/
+theorem wordProduct_nil : wordProduct R q S [] = 1 := rfl
+
+/-- **Cons step**: the word-product on `s :: rest` factors as
+    `T_s · wordProduct rest`. -/
+theorem wordProduct_cons (s : S) (rest : List S) :
+    wordProduct R q S (s :: rest) =
+      QOU.IwahoriHecke.Quotient.T R q S s * wordProduct R q S rest := rfl
+
+/-- **Singleton word**: the word product of `[s]` is `T_s`. -/
+theorem wordProduct_singleton (s : S) :
+    wordProduct R q S [s] = QOU.IwahoriHecke.Quotient.T R q S s := by
+  unfold wordProduct
+  rw [mul_one]
+
 end QOU.IwahoriHecke.Tw

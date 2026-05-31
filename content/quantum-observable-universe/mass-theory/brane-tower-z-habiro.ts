@@ -18,7 +18,9 @@ export default conjecture({
     "regularization",
     "quantum-dilogarithm",
     "open-problem",
-    "scalar-nstar-refuted",
+    "partial-refutation-six-families",
     "closure-2026-05-11",
+    "phase-3-leverage-15-users",
+    "algebraic-cauchy-limit-half-open",
   ],
 });
