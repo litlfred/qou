@@ -197,11 +197,12 @@ noncomputable def ame2020_mass_be : ℝ := be.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Beryllium: 0.069 keV
     (= 4 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_be :
     |be.codataMass - be.ameMass| < 0.0002 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass be
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset be]
+  show |(be.Z : ℝ) * codata_ame_offset_per_Z| < 0.0002
+  unfold be codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -224,11 +225,12 @@ noncomputable def ame2020_mass_b : ℝ := b.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Boron: 0.086 keV
     (= 5 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_b :
     |b.codataMass - b.ameMass| < 0.0002 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass b
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset b]
+  show |(b.Z : ℝ) * codata_ame_offset_per_Z| < 0.0002
+  unfold b codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -251,11 +253,12 @@ noncomputable def ame2020_mass_c : ℝ := c.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Carbon: 0.102 keV
     (= 6 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_c :
     |c.codataMass - c.ameMass| < 0.0003 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass c
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset c]
+  show |(c.Z : ℝ) * codata_ame_offset_per_Z| < 0.0003
+  unfold c codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -278,11 +281,12 @@ noncomputable def ame2020_mass_n : ℝ := n.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Nitrogen: 0.118 keV
     (= 7 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_n :
     |n.codataMass - n.ameMass| < 0.0003 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass n
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset n]
+  show |(n.Z : ℝ) * codata_ame_offset_per_Z| < 0.0003
+  unfold n codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -305,11 +309,12 @@ noncomputable def ame2020_mass_o : ℝ := o.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Oxygen: 0.135 keV
     (= 8 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_o :
     |o.codataMass - o.ameMass| < 0.0003 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass o
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset o]
+  show |(o.Z : ℝ) * codata_ame_offset_per_Z| < 0.0003
+  unfold o codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -332,11 +337,12 @@ noncomputable def ame2020_mass_f : ℝ := f.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Fluorine: 0.154 keV
     (= 9 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_f :
     |f.codataMass - f.ameMass| < 0.0003 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass f
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset f]
+  show |(f.Z : ℝ) * codata_ame_offset_per_Z| < 0.0003
+  unfold f codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -359,11 +365,12 @@ noncomputable def ame2020_mass_ne : ℝ := ne.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Neon: 0.169 keV
     (= 10 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ne :
     |ne.codataMass - ne.ameMass| < 0.0004 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ne
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ne]
+  show |(ne.Z : ℝ) * codata_ame_offset_per_Z| < 0.0004
+  unfold ne codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -386,11 +393,12 @@ noncomputable def ame2020_mass_na : ℝ := na.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Sodium: 0.188 keV
     (= 11 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_na :
     |na.codataMass - na.ameMass| < 0.0004 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass na
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset na]
+  show |(na.Z : ℝ) * codata_ame_offset_per_Z| < 0.0004
+  unfold na codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -413,11 +421,12 @@ noncomputable def ame2020_mass_mg : ℝ := mg.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Magnesium: 0.203 keV
     (= 12 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_mg :
     |mg.codataMass - mg.ameMass| < 0.0004 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass mg
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset mg]
+  show |(mg.Z : ℝ) * codata_ame_offset_per_Z| < 0.0004
+  unfold mg codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -440,11 +449,12 @@ noncomputable def ame2020_mass_al : ℝ := al.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Aluminium: 0.221 keV
     (= 13 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_al :
     |al.codataMass - al.ameMass| < 0.0004 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass al
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset al]
+  show |(al.Z : ℝ) * codata_ame_offset_per_Z| < 0.0004
+  unfold al codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -467,11 +477,12 @@ noncomputable def ame2020_mass_si : ℝ := si.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Silicon: 0.237 keV
     (= 14 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_si :
     |si.codataMass - si.ameMass| < 0.0005 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass si
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset si]
+  show |(si.Z : ℝ) * codata_ame_offset_per_Z| < 0.0005
+  unfold si codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -494,11 +505,12 @@ noncomputable def ame2020_mass_p_el : ℝ := p_el.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Phosphorus: 0.255 keV
     (= 15 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_p_el :
     |p_el.codataMass - p_el.ameMass| < 0.0005 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass p_el
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset p_el]
+  show |(p_el.Z : ℝ) * codata_ame_offset_per_Z| < 0.0005
+  unfold p_el codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -521,11 +533,12 @@ noncomputable def ame2020_mass_s : ℝ := s.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Sulfur: 0.271 keV
     (= 16 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_s :
     |s.codataMass - s.ameMass| < 0.0005 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass s
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset s]
+  show |(s.Z : ℝ) * codata_ame_offset_per_Z| < 0.0005
+  unfold s codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -548,11 +561,12 @@ noncomputable def ame2020_mass_cl : ℝ := cl.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Chlorine: 0.289 keV
     (= 17 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_cl :
     |cl.codataMass - cl.ameMass| < 0.0005 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass cl
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset cl]
+  show |(cl.Z : ℝ) * codata_ame_offset_per_Z| < 0.0005
+  unfold cl codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -575,11 +589,12 @@ noncomputable def ame2020_mass_ar : ℝ := ar.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Argon: 0.310 keV
     (= 18 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ar :
     |ar.codataMass - ar.ameMass| < 0.0006 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ar
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ar]
+  show |(ar.Z : ℝ) * codata_ame_offset_per_Z| < 0.0006
+  unfold ar codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -602,11 +617,12 @@ noncomputable def ame2020_mass_k : ℝ := k.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Potassium: 0.323 keV
     (= 19 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_k :
     |k.codataMass - k.ameMass| < 0.0006 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass k
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset k]
+  show |(k.Z : ℝ) * codata_ame_offset_per_Z| < 0.0006
+  unfold k codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -629,11 +645,12 @@ noncomputable def ame2020_mass_ca : ℝ := ca.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Calcium: 0.338 keV
     (= 20 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ca :
     |ca.codataMass - ca.ameMass| < 0.0006 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ca
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ca]
+  show |(ca.Z : ℝ) * codata_ame_offset_per_Z| < 0.0006
+  unfold ca codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -656,11 +673,12 @@ noncomputable def ame2020_mass_sc : ℝ := sc.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Scandium: 0.360 keV
     (= 21 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_sc :
     |sc.codataMass - sc.ameMass| < 0.0006 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass sc
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset sc]
+  show |(sc.Z : ℝ) * codata_ame_offset_per_Z| < 0.0006
+  unfold sc codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -683,11 +701,12 @@ noncomputable def ame2020_mass_ti : ℝ := ti.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Titanium: 0.378 keV
     (= 22 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ti :
     |ti.codataMass - ti.ameMass| < 0.0007 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ti
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ti]
+  show |(ti.Z : ℝ) * codata_ame_offset_per_Z| < 0.0007
+  unfold ti codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -710,11 +729,12 @@ noncomputable def ame2020_mass_v : ℝ := v.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Vanadium: 0.396 keV
     (= 23 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_v :
     |v.codataMass - v.ameMass| < 0.0007 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass v
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset v]
+  show |(v.Z : ℝ) * codata_ame_offset_per_Z| < 0.0007
+  unfold v codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -737,11 +757,12 @@ noncomputable def ame2020_mass_cr : ℝ := cr.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Chromium: 0.412 keV
     (= 24 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_cr :
     |cr.codataMass - cr.ameMass| < 0.0007 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass cr
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset cr]
+  show |(cr.Z : ℝ) * codata_ame_offset_per_Z| < 0.0007
+  unfold cr codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -764,11 +785,12 @@ noncomputable def ame2020_mass_mn : ℝ := mn.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Manganese: 0.430 keV
     (= 25 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_mn :
     |mn.codataMass - mn.ameMass| < 0.0007 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass mn
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset mn]
+  show |(mn.Z : ℝ) * codata_ame_offset_per_Z| < 0.0007
+  unfold mn codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -791,11 +813,12 @@ noncomputable def ame2020_mass_fe : ℝ := fe.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Iron: 0.446 keV
     (= 26 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_fe :
     |fe.codataMass - fe.ameMass| < 0.0008 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass fe
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset fe]
+  show |(fe.Z : ℝ) * codata_ame_offset_per_Z| < 0.0008
+  unfold fe codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -818,11 +841,12 @@ noncomputable def ame2020_mass_co : ℝ := co.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Cobalt: 0.464 keV
     (= 27 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_co :
     |co.codataMass - co.ameMass| < 0.0008 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass co
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset co]
+  show |(co.Z : ℝ) * codata_ame_offset_per_Z| < 0.0008
+  unfold co codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -845,11 +869,12 @@ noncomputable def ame2020_mass_ni : ℝ := ni.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Nickel: 0.477 keV
     (= 28 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ni :
     |ni.codataMass - ni.ameMass| < 0.0008 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ni
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ni]
+  show |(ni.Z : ℝ) * codata_ame_offset_per_Z| < 0.0008
+  unfold ni codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -872,11 +897,12 @@ noncomputable def ame2020_mass_cu : ℝ := cu.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Copper: 0.498 keV
     (= 29 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_cu :
     |cu.codataMass - cu.ameMass| < 0.0008 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass cu
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset cu]
+  show |(cu.Z : ℝ) * codata_ame_offset_per_Z| < 0.0008
+  unfold cu codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -899,11 +925,12 @@ noncomputable def ame2020_mass_zn : ℝ := zn.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Zinc: 0.513 keV
     (= 30 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_zn :
     |zn.codataMass - zn.ameMass| < 0.0009 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass zn
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset zn]
+  show |(zn.Z : ℝ) * codata_ame_offset_per_Z| < 0.0009
+  unfold zn codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -926,11 +953,12 @@ noncomputable def ame2020_mass_ga : ℝ := ga.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Gallium: 0.535 keV
     (= 31 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ga :
     |ga.codataMass - ga.ameMass| < 0.0009 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ga
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ga]
+  show |(ga.Z : ℝ) * codata_ame_offset_per_Z| < 0.0009
+  unfold ga codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -953,11 +981,12 @@ noncomputable def ame2020_mass_ge : ℝ := ge.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Germanium: 0.556 keV
     (= 32 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ge :
     |ge.codataMass - ge.ameMass| < 0.0009 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ge
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ge]
+  show |(ge.Z : ℝ) * codata_ame_offset_per_Z| < 0.0009
+  unfold ge codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -980,11 +1009,12 @@ noncomputable def ame2020_mass_as_el : ℝ := as_el.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Arsenic: 0.572 keV
     (= 33 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_as_el :
     |as_el.codataMass - as_el.ameMass| < 0.001 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass as_el
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset as_el]
+  show |(as_el.Z : ℝ) * codata_ame_offset_per_Z| < 0.001
+  unfold as_el codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1007,11 +1037,12 @@ noncomputable def ame2020_mass_se : ℝ := se.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Selenium: 0.593 keV
     (= 34 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_se :
     |se.codataMass - se.ameMass| < 0.001 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass se
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset se]
+  show |(se.Z : ℝ) * codata_ame_offset_per_Z| < 0.001
+  unfold se codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1034,11 +1065,12 @@ noncomputable def ame2020_mass_br : ℝ := br.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Bromine: 0.605 keV
     (= 35 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_br :
     |br.codataMass - br.ameMass| < 0.001 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass br
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset br]
+  show |(br.Z : ℝ) * codata_ame_offset_per_Z| < 0.001
+  unfold br codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1061,11 +1093,12 @@ noncomputable def ame2020_mass_kr : ℝ := kr.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Krypton: 0.627 keV
     (= 36 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_kr :
     |kr.codataMass - kr.ameMass| < 0.001 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass kr
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset kr]
+  show |(kr.Z : ℝ) * codata_ame_offset_per_Z| < 0.001
+  unfold kr codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1088,11 +1121,12 @@ noncomputable def ame2020_mass_rb : ℝ := rb.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Rubidium: 0.642 keV
     (= 37 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_rb :
     |rb.codataMass - rb.ameMass| < 0.0011 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass rb
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset rb]
+  show |(rb.Z : ℝ) * codata_ame_offset_per_Z| < 0.0011
+  unfold rb codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1115,11 +1149,12 @@ noncomputable def ame2020_mass_sr : ℝ := sr.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Strontium: 0.661 keV
     (= 38 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_sr :
     |sr.codataMass - sr.ameMass| < 0.0011 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass sr
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset sr]
+  show |(sr.Z : ℝ) * codata_ame_offset_per_Z| < 0.0011
+  unfold sr codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1142,11 +1177,12 @@ noncomputable def ame2020_mass_y : ℝ := y.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Yttrium: 0.676 keV
     (= 39 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_y :
     |y.codataMass - y.ameMass| < 0.0011 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass y
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset y]
+  show |(y.Z : ℝ) * codata_ame_offset_per_Z| < 0.0011
+  unfold y codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1169,11 +1205,12 @@ noncomputable def ame2020_mass_zr : ℝ := zr.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Zirconium: 0.691 keV
     (= 40 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_zr :
     |zr.codataMass - zr.ameMass| < 0.0011 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass zr
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset zr]
+  show |(zr.Z : ℝ) * codata_ame_offset_per_Z| < 0.0011
+  unfold zr codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1196,11 +1233,12 @@ noncomputable def ame2020_mass_nb : ℝ := nb.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Niobium: 0.710 keV
     (= 41 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_nb :
     |nb.codataMass - nb.ameMass| < 0.0012 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass nb
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset nb]
+  show |(nb.Z : ℝ) * codata_ame_offset_per_Z| < 0.0012
+  unfold nb codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1223,11 +1261,12 @@ noncomputable def ame2020_mass_mo : ℝ := mo.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Molybdenum: 0.731 keV
     (= 42 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_mo :
     |mo.codataMass - mo.ameMass| < 0.0012 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass mo
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset mo]
+  show |(mo.Z : ℝ) * codata_ame_offset_per_Z| < 0.0012
+  unfold mo codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1250,11 +1289,12 @@ noncomputable def ame2020_mass_tc : ℝ := tc.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Technetium: 0.745 keV
     (= 43 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_tc :
     |tc.codataMass - tc.ameMass| < 0.0012 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass tc
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset tc]
+  show |(tc.Z : ℝ) * codata_ame_offset_per_Z| < 0.0012
+  unfold tc codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1277,11 +1317,12 @@ noncomputable def ame2020_mass_ru : ℝ := ru.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Ruthenium: 0.765 keV
     (= 44 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ru :
     |ru.codataMass - ru.ameMass| < 0.0012 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ru
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ru]
+  show |(ru.Z : ℝ) * codata_ame_offset_per_Z| < 0.0012
+  unfold ru codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1304,11 +1345,12 @@ noncomputable def ame2020_mass_rh : ℝ := rh.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Rhodium: 0.780 keV
     (= 45 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_rh :
     |rh.codataMass - rh.ameMass| < 0.0013 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass rh
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset rh]
+  show |(rh.Z : ℝ) * codata_ame_offset_per_Z| < 0.0013
+  unfold rh codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1331,11 +1373,12 @@ noncomputable def ame2020_mass_pd : ℝ := pd.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Palladium: 0.799 keV
     (= 46 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_pd :
     |pd.codataMass - pd.ameMass| < 0.0013 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass pd
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset pd]
+  show |(pd.Z : ℝ) * codata_ame_offset_per_Z| < 0.0013
+  unfold pd codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1358,11 +1401,12 @@ noncomputable def ame2020_mass_ag : ℝ := ag.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Silver: 0.814 keV
     (= 47 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ag :
     |ag.codataMass - ag.ameMass| < 0.0013 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ag
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ag]
+  show |(ag.Z : ℝ) * codata_ame_offset_per_Z| < 0.0013
+  unfold ag codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1385,11 +1429,12 @@ noncomputable def ame2020_mass_cd : ℝ := cd.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Cadmium: 0.838 keV
     (= 48 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_cd :
     |cd.codataMass - cd.ameMass| < 0.0014 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass cd
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset cd]
+  show |(cd.Z : ℝ) * codata_ame_offset_per_Z| < 0.0014
+  unfold cd codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1412,11 +1457,12 @@ noncomputable def ame2020_mass_in_el : ℝ := in_el.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Indium: 0.854 keV
     (= 49 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_in_el :
     |in_el.codataMass - in_el.ameMass| < 0.0014 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass in_el
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset in_el]
+  show |(in_el.Z : ℝ) * codata_ame_offset_per_Z| < 0.0014
+  unfold in_el codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1439,11 +1485,12 @@ noncomputable def ame2020_mass_sn : ℝ := sn.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Tin: 0.875 keV
     (= 50 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_sn :
     |sn.codataMass - sn.ameMass| < 0.0014 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass sn
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset sn]
+  show |(sn.Z : ℝ) * codata_ame_offset_per_Z| < 0.0014
+  unfold sn codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1466,11 +1513,12 @@ noncomputable def ame2020_mass_sb : ℝ := sb.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Antimony: 0.891 keV
     (= 51 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_sb :
     |sb.codataMass - sb.ameMass| < 0.0014 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass sb
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset sb]
+  show |(sb.Z : ℝ) * codata_ame_offset_per_Z| < 0.0014
+  unfold sb codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1493,11 +1541,12 @@ noncomputable def ame2020_mass_te : ℝ := te.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Tellurium: 0.918 keV
     (= 52 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_te :
     |te.codataMass - te.ameMass| < 0.0015 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass te
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset te]
+  show |(te.Z : ℝ) * codata_ame_offset_per_Z| < 0.0015
+  unfold te codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1520,11 +1569,12 @@ noncomputable def ame2020_mass_i : ℝ := i.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Iodine: 0.927 keV
     (= 53 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_i :
     |i.codataMass - i.ameMass| < 0.0015 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass i
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset i]
+  show |(i.Z : ℝ) * codata_ame_offset_per_Z| < 0.0015
+  unfold i codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1547,11 +1597,12 @@ noncomputable def ame2020_mass_xe : ℝ := xe.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Xenon: 0.949 keV
     (= 54 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_xe :
     |xe.codataMass - xe.ameMass| < 0.0015 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass xe
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset xe]
+  show |(xe.Z : ℝ) * codata_ame_offset_per_Z| < 0.0015
+  unfold xe codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1574,11 +1625,12 @@ noncomputable def ame2020_mass_cs : ℝ := cs.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Caesium: 0.964 keV
     (= 55 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_cs :
     |cs.codataMass - cs.ameMass| < 0.0015 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass cs
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset cs]
+  show |(cs.Z : ℝ) * codata_ame_offset_per_Z| < 0.0015
+  unfold cs codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1601,11 +1653,12 @@ noncomputable def ame2020_mass_ba : ℝ := ba.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Barium: 0.986 keV
     (= 56 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ba :
     |ba.codataMass - ba.ameMass| < 0.0016 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ba
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ba]
+  show |(ba.Z : ℝ) * codata_ame_offset_per_Z| < 0.0016
+  unfold ba codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1628,11 +1681,12 @@ noncomputable def ame2020_mass_la : ℝ := la.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Lanthanum: 1.001 keV
     (= 57 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_la :
     |la.codataMass - la.ameMass| < 0.0016 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass la
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset la]
+  show |(la.Z : ℝ) * codata_ame_offset_per_Z| < 0.0016
+  unfold la codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1655,11 +1709,12 @@ noncomputable def ame2020_mass_ce : ℝ := ce.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Cerium: 1.016 keV
     (= 58 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ce :
     |ce.codataMass - ce.ameMass| < 0.0016 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ce
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ce]
+  show |(ce.Z : ℝ) * codata_ame_offset_per_Z| < 0.0016
+  unfold ce codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1682,11 +1737,12 @@ noncomputable def ame2020_mass_pr : ℝ := pr.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Praseodymium: 1.032 keV
     (= 59 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_pr :
     |pr.codataMass - pr.ameMass| < 0.0016 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass pr
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset pr]
+  show |(pr.Z : ℝ) * codata_ame_offset_per_Z| < 0.0016
+  unfold pr codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1709,11 +1765,12 @@ noncomputable def ame2020_mass_nd : ℝ := nd.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Neodymium: 1.047 keV
     (= 60 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_nd :
     |nd.codataMass - nd.ameMass| < 0.0017 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass nd
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset nd]
+  show |(nd.Z : ℝ) * codata_ame_offset_per_Z| < 0.0017
+  unfold nd codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1736,11 +1793,12 @@ noncomputable def ame2020_mass_pm : ℝ := pm.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Promethium: 1.066 keV
     (= 61 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_pm :
     |pm.codataMass - pm.ameMass| < 0.0017 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass pm
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset pm]
+  show |(pm.Z : ℝ) * codata_ame_offset_per_Z| < 0.0017
+  unfold pm codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1763,11 +1821,12 @@ noncomputable def ame2020_mass_sm : ℝ := sm.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Samarium: 1.090 keV
     (= 62 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_sm :
     |sm.codataMass - sm.ameMass| < 0.0017 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass sm
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset sm]
+  show |(sm.Z : ℝ) * codata_ame_offset_per_Z| < 0.0017
+  unfold sm codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1790,11 +1849,12 @@ noncomputable def ame2020_mass_eu : ℝ := eu.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Europium: 1.105 keV
     (= 63 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_eu :
     |eu.codataMass - eu.ameMass| < 0.0018 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass eu
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset eu]
+  show |(eu.Z : ℝ) * codata_ame_offset_per_Z| < 0.0018
+  unfold eu codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1817,11 +1877,12 @@ noncomputable def ame2020_mass_gd : ℝ := gd.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Gadolinium: 1.127 keV
     (= 64 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_gd :
     |gd.codataMass - gd.ameMass| < 0.0018 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass gd
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset gd]
+  show |(gd.Z : ℝ) * codata_ame_offset_per_Z| < 0.0018
+  unfold gd codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1844,11 +1905,12 @@ noncomputable def ame2020_mass_tb : ℝ := tb.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Terbium: 1.142 keV
     (= 65 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_tb :
     |tb.codataMass - tb.ameMass| < 0.0018 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass tb
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset tb]
+  show |(tb.Z : ℝ) * codata_ame_offset_per_Z| < 0.0018
+  unfold tb codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1871,11 +1933,12 @@ noncomputable def ame2020_mass_dy : ℝ := dy.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Dysprosium: 1.163 keV
     (= 66 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_dy :
     |dy.codataMass - dy.ameMass| < 0.0018 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass dy
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset dy]
+  show |(dy.Z : ℝ) * codata_ame_offset_per_Z| < 0.0018
+  unfold dy codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1898,11 +1961,12 @@ noncomputable def ame2020_mass_ho : ℝ := ho.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Holmium: 1.179 keV
     (= 67 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ho :
     |ho.codataMass - ho.ameMass| < 0.0019 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ho
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ho]
+  show |(ho.Z : ℝ) * codata_ame_offset_per_Z| < 0.0019
+  unfold ho codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1925,11 +1989,12 @@ noncomputable def ame2020_mass_er : ℝ := er.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Erbium: 1.194 keV
     (= 68 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_er :
     |er.codataMass - er.ameMass| < 0.0019 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass er
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset er]
+  show |(er.Z : ℝ) * codata_ame_offset_per_Z| < 0.0019
+  unfold er codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1952,11 +2017,12 @@ noncomputable def ame2020_mass_tm_el : ℝ := tm_el.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Thulium: 1.213 keV
     (= 69 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_tm_el :
     |tm_el.codataMass - tm_el.ameMass| < 0.0019 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass tm_el
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset tm_el]
+  show |(tm_el.Z : ℝ) * codata_ame_offset_per_Z| < 0.0019
+  unfold tm_el codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -1979,11 +2045,12 @@ noncomputable def ame2020_mass_yb : ℝ := yb.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Ytterbium: 1.234 keV
     (= 70 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_yb :
     |yb.codataMass - yb.ameMass| < 0.002 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass yb
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset yb]
+  show |(yb.Z : ℝ) * codata_ame_offset_per_Z| < 0.002
+  unfold yb codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2006,11 +2073,12 @@ noncomputable def ame2020_mass_lu : ℝ := lu.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Lutetium: 1.250 keV
     (= 71 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_lu :
     |lu.codataMass - lu.ameMass| < 0.002 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass lu
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset lu]
+  show |(lu.Z : ℝ) * codata_ame_offset_per_Z| < 0.002
+  unfold lu codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2033,11 +2101,12 @@ noncomputable def ame2020_mass_hf : ℝ := hf.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Hafnium: 1.271 keV
     (= 72 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_hf :
     |hf.codataMass - hf.ameMass| < 0.002 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass hf
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset hf]
+  show |(hf.Z : ℝ) * codata_ame_offset_per_Z| < 0.002
+  unfold hf codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2060,11 +2129,12 @@ noncomputable def ame2020_mass_ta : ℝ := ta.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Tantalum: 1.286 keV
     (= 73 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ta :
     |ta.codataMass - ta.ameMass| < 0.002 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ta
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ta]
+  show |(ta.Z : ℝ) * codata_ame_offset_per_Z| < 0.002
+  unfold ta codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2087,11 +2157,12 @@ noncomputable def ame2020_mass_w : ℝ := w.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Tungsten: 1.305 keV
     (= 74 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_w :
     |w.codataMass - w.ameMass| < 0.0021 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass w
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset w]
+  show |(w.Z : ℝ) * codata_ame_offset_per_Z| < 0.0021
+  unfold w codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2114,11 +2185,12 @@ noncomputable def ame2020_mass_re_el : ℝ := re_el.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Rhenium: 1.323 keV
     (= 75 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_re_el :
     |re_el.codataMass - re_el.ameMass| < 0.0021 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass re_el
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset re_el]
+  show |(re_el.Z : ℝ) * codata_ame_offset_per_Z| < 0.0021
+  unfold re_el codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2141,11 +2213,12 @@ noncomputable def ame2020_mass_os : ℝ := os.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Osmium: 1.344 keV
     (= 76 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_os :
     |os.codataMass - os.ameMass| < 0.0021 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass os
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset os]
+  show |(os.Z : ℝ) * codata_ame_offset_per_Z| < 0.0021
+  unfold os codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2168,11 +2241,12 @@ noncomputable def ame2020_mass_ir : ℝ := ir.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Iridium: 1.360 keV
     (= 77 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ir :
     |ir.codataMass - ir.ameMass| < 0.0021 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ir
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ir]
+  show |(ir.Z : ℝ) * codata_ame_offset_per_Z| < 0.0021
+  unfold ir codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2195,11 +2269,12 @@ noncomputable def ame2020_mass_pt : ℝ := pt.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Platinum: 1.377 keV
     (= 78 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_pt :
     |pt.codataMass - pt.ameMass| < 0.0022 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass pt
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset pt]
+  show |(pt.Z : ℝ) * codata_ame_offset_per_Z| < 0.0022
+  unfold pt codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2222,11 +2297,12 @@ noncomputable def ame2020_mass_au : ℝ := au.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Gold: 1.394 keV
     (= 79 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_au :
     |au.codataMass - au.ameMass| < 0.0022 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass au
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset au]
+  show |(au.Z : ℝ) * codata_ame_offset_per_Z| < 0.0022
+  unfold au codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2249,11 +2325,12 @@ noncomputable def ame2020_mass_hg : ℝ := hg.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Mercury: 1.415 keV
     (= 80 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_hg :
     |hg.codataMass - hg.ameMass| < 0.0022 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass hg
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset hg]
+  show |(hg.Z : ℝ) * codata_ame_offset_per_Z| < 0.0022
+  unfold hg codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2276,11 +2353,12 @@ noncomputable def ame2020_mass_tl : ℝ := tl.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Thallium: 1.433 keV
     (= 81 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_tl :
     |tl.codataMass - tl.ameMass| < 0.0023 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass tl
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset tl]
+  show |(tl.Z : ℝ) * codata_ame_offset_per_Z| < 0.0023
+  unfold tl codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2303,11 +2381,12 @@ noncomputable def ame2020_mass_pb : ℝ := pb.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Lead: 1.452 keV
     (= 82 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_pb :
     |pb.codataMass - pb.ameMass| < 0.0023 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass pb
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset pb]
+  show |(pb.Z : ℝ) * codata_ame_offset_per_Z| < 0.0023
+  unfold pb codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2330,11 +2409,12 @@ noncomputable def ame2020_mass_bi : ℝ := bi.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Bismuth: 1.467 keV
     (= 83 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_bi :
     |bi.codataMass - bi.ameMass| < 0.0023 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass bi
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset bi]
+  show |(bi.Z : ℝ) * codata_ame_offset_per_Z| < 0.0023
+  unfold bi codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2357,11 +2437,12 @@ noncomputable def ame2020_mass_po : ℝ := po.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Polonium: 1.481 keV
     (= 84 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_po :
     |po.codataMass - po.ameMass| < 0.0023 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass po
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset po]
+  show |(po.Z : ℝ) * codata_ame_offset_per_Z| < 0.0023
+  unfold po codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2384,11 +2465,12 @@ noncomputable def ame2020_mass_at_el : ℝ := at_el.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Astatine: 1.497 keV
     (= 85 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_at_el :
     |at_el.codataMass - at_el.ameMass| < 0.0023 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass at_el
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset at_el]
+  show |(at_el.Z : ℝ) * codata_ame_offset_per_Z| < 0.0023
+  unfold at_el codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2411,11 +2493,12 @@ noncomputable def ame2020_mass_rn : ℝ := rn.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Radon: 1.528 keV
     (= 86 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_rn :
     |rn.codataMass - rn.ameMass| < 0.0024 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass rn
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset rn]
+  show |(rn.Z : ℝ) * codata_ame_offset_per_Z| < 0.0024
+  unfold rn codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2438,11 +2521,12 @@ noncomputable def ame2020_mass_fr_el : ℝ := fr_el.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Francium: 1.544 keV
     (= 87 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_fr_el :
     |fr_el.codataMass - fr_el.ameMass| < 0.0024 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass fr_el
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset fr_el]
+  show |(fr_el.Z : ℝ) * codata_ame_offset_per_Z| < 0.0024
+  unfold fr_el codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2465,11 +2549,12 @@ noncomputable def ame2020_mass_ra : ℝ := ra.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Radium: 1.562 keV
     (= 88 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ra :
     |ra.codataMass - ra.ameMass| < 0.0024 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ra
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ra]
+  show |(ra.Z : ℝ) * codata_ame_offset_per_Z| < 0.0024
+  unfold ra codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2492,11 +2577,12 @@ noncomputable def ame2020_mass_ac : ℝ := ac.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Actinium: 1.577 keV
     (= 89 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ac :
     |ac.codataMass - ac.ameMass| < 0.0025 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ac
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ac]
+  show |(ac.Z : ℝ) * codata_ame_offset_per_Z| < 0.0025
+  unfold ac codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2519,11 +2605,12 @@ noncomputable def ame2020_mass_th : ℝ := th.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Thorium: 1.599 keV
     (= 90 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_th :
     |th.codataMass - th.ameMass| < 0.0025 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass th
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset th]
+  show |(th.Z : ℝ) * codata_ame_offset_per_Z| < 0.0025
+  unfold th codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2546,11 +2633,12 @@ noncomputable def ame2020_mass_pa : ℝ := pa.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Protactinium: 1.611 keV
     (= 91 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_pa :
     |pa.codataMass - pa.ameMass| < 0.0025 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass pa
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset pa]
+  show |(pa.Z : ℝ) * codata_ame_offset_per_Z| < 0.0025
+  unfold pa codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2573,11 +2661,12 @@ noncomputable def ame2020_mass_u_el : ℝ := u_el.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Uranium: 1.636 keV
     (= 92 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_u_el :
     |u_el.codataMass - u_el.ameMass| < 0.0026 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass u_el
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset u_el]
+  show |(u_el.Z : ℝ) * codata_ame_offset_per_Z| < 0.0026
+  unfold u_el codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2602,11 +2691,12 @@ noncomputable def ame2020_mass_np : ℝ := np.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Neptunium: 1.648 keV
     (= 93 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_np :
     |np.codataMass - np.ameMass| < 0.0026 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass np
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset np]
+  show |(np.Z : ℝ) * codata_ame_offset_per_Z| < 0.0026
+  unfold np codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2631,11 +2721,12 @@ noncomputable def ame2020_mass_pu : ℝ := pu.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Plutonium: 1.672 keV
     (= 94 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_pu :
     |pu.codataMass - pu.ameMass| < 0.0026 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass pu
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset pu]
+  show |(pu.Z : ℝ) * codata_ame_offset_per_Z| < 0.0026
+  unfold pu codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2660,11 +2751,12 @@ noncomputable def ame2020_mass_am : ℝ := am.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Americium: 1.685 keV
     (= 95 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_am :
     |am.codataMass - am.ameMass| < 0.0026 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass am
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset am]
+  show |(am.Z : ℝ) * codata_ame_offset_per_Z| < 0.0026
+  unfold am codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2689,11 +2781,12 @@ noncomputable def ame2020_mass_cm : ℝ := cm.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Curium: 1.705 keV
     (= 96 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_cm :
     |cm.codataMass - cm.ameMass| < 0.0027 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass cm
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset cm]
+  show |(cm.Z : ℝ) * codata_ame_offset_per_Z| < 0.0027
+  unfold cm codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2718,11 +2811,12 @@ noncomputable def ame2020_mass_bk : ℝ := bk.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Berkelium: 1.719 keV
     (= 97 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_bk :
     |bk.codataMass - bk.ameMass| < 0.0027 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass bk
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset bk]
+  show |(bk.Z : ℝ) * codata_ame_offset_per_Z| < 0.0027
+  unfold bk codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2747,11 +2841,12 @@ noncomputable def ame2020_mass_cf : ℝ := cf.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Californium: 1.739 keV
     (= 98 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_cf :
     |cf.codataMass - cf.ameMass| < 0.0027 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass cf
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset cf]
+  show |(cf.Z : ℝ) * codata_ame_offset_per_Z| < 0.0027
+  unfold cf codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2776,11 +2871,12 @@ noncomputable def ame2020_mass_es : ℝ := es.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Einsteinium: 1.754 keV
     (= 99 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_es :
     |es.codataMass - es.ameMass| < 0.0027 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass es
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset es]
+  show |(es.Z : ℝ) * codata_ame_offset_per_Z| < 0.0027
+  unfold es codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2805,11 +2901,12 @@ noncomputable def ame2020_mass_fm : ℝ := fm.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Fermium: 1.775 keV
     (= 100 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_fm :
     |fm.codataMass - fm.ameMass| < 0.0028 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass fm
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset fm]
+  show |(fm.Z : ℝ) * codata_ame_offset_per_Z| < 0.0028
+  unfold fm codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2834,11 +2931,12 @@ noncomputable def ame2020_mass_md_el : ℝ := md_el.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Mendelevium: 1.791 keV
     (= 101 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_md_el :
     |md_el.codataMass - md_el.ameMass| < 0.0028 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass md_el
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset md_el]
+  show |(md_el.Z : ℝ) * codata_ame_offset_per_Z| < 0.0028
+  unfold md_el codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2863,11 +2961,12 @@ noncomputable def ame2020_mass_no_el : ℝ := no_el.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Nobelium: 1.806 keV
     (= 102 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_no_el :
     |no_el.codataMass - no_el.ameMass| < 0.0028 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass no_el
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset no_el]
+  show |(no_el.Z : ℝ) * codata_ame_offset_per_Z| < 0.0028
+  unfold no_el codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2892,11 +2991,12 @@ noncomputable def ame2020_mass_lr : ℝ := lr.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Lawrencium: 1.830 keV
     (= 103 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_lr :
     |lr.codataMass - lr.ameMass| < 0.0028 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass lr
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset lr]
+  show |(lr.Z : ℝ) * codata_ame_offset_per_Z| < 0.0028
+  unfold lr codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2921,11 +3021,12 @@ noncomputable def ame2020_mass_rf : ℝ := rf.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Rutherfordium: 1.846 keV
     (= 104 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_rf :
     |rf.codataMass - rf.ameMass| < 0.0029 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass rf
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset rf]
+  show |(rf.Z : ℝ) * codata_ame_offset_per_Z| < 0.0029
+  unfold rf codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2950,11 +3051,12 @@ noncomputable def ame2020_mass_db : ℝ := db.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Dubnium: 1.861 keV
     (= 105 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_db :
     |db.codataMass - db.ameMass| < 0.0029 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass db
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset db]
+  show |(db.Z : ℝ) * codata_ame_offset_per_Z| < 0.0029
+  unfold db codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -2979,11 +3081,12 @@ noncomputable def ame2020_mass_sg : ℝ := sg.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Seaborgium: 1.877 keV
     (= 106 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_sg :
     |sg.codataMass - sg.ameMass| < 0.0029 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass sg
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset sg]
+  show |(sg.Z : ℝ) * codata_ame_offset_per_Z| < 0.0029
+  unfold sg codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3008,11 +3111,12 @@ noncomputable def ame2020_mass_bh : ℝ := bh.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Bohrium: 1.892 keV
     (= 107 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_bh :
     |bh.codataMass - bh.ameMass| < 0.0029 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass bh
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset bh]
+  show |(bh.Z : ℝ) * codata_ame_offset_per_Z| < 0.0029
+  unfold bh codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3037,11 +3141,12 @@ noncomputable def ame2020_mass_hs : ℝ := hs.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Hassium: 1.916 keV
     (= 108 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_hs :
     |hs.codataMass - hs.ameMass| < 0.003 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass hs
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset hs]
+  show |(hs.Z : ℝ) * codata_ame_offset_per_Z| < 0.003
+  unfold hs codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3066,11 +3171,12 @@ noncomputable def ame2020_mass_mt : ℝ := mt.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Meitnerium: 1.932 keV
     (= 109 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_mt :
     |mt.codataMass - mt.ameMass| < 0.003 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass mt
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset mt]
+  show |(mt.Z : ℝ) * codata_ame_offset_per_Z| < 0.003
+  unfold mt codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3095,11 +3201,12 @@ noncomputable def ame2020_mass_ds : ℝ := ds.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Darmstadtium: 1.950 keV
     (= 110 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ds :
     |ds.codataMass - ds.ameMass| < 0.003 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ds
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ds]
+  show |(ds.Z : ℝ) * codata_ame_offset_per_Z| < 0.003
+  unfold ds codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3124,11 +3231,12 @@ noncomputable def ame2020_mass_rg : ℝ := rg.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Roentgenium: 1.966 keV
     (= 111 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_rg :
     |rg.codataMass - rg.ameMass| < 0.003 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass rg
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset rg]
+  show |(rg.Z : ℝ) * codata_ame_offset_per_Z| < 0.003
+  unfold rg codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3153,11 +3261,12 @@ noncomputable def ame2020_mass_cn : ℝ := cn.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Copernicium: 1.984 keV
     (= 112 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_cn :
     |cn.codataMass - cn.ameMass| < 0.0031 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass cn
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset cn]
+  show |(cn.Z : ℝ) * codata_ame_offset_per_Z| < 0.0031
+  unfold cn codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3182,11 +3291,12 @@ noncomputable def ame2020_mass_nh : ℝ := nh.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Nihonium: 2.000 keV
     (= 113 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_nh :
     |nh.codataMass - nh.ameMass| < 0.0031 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass nh
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset nh]
+  show |(nh.Z : ℝ) * codata_ame_offset_per_Z| < 0.0031
+  unfold nh codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3211,11 +3321,12 @@ noncomputable def ame2020_mass_fl : ℝ := fl.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Flerovium: 2.018 keV
     (= 114 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_fl :
     |fl.codataMass - fl.ameMass| < 0.0031 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass fl
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset fl]
+  show |(fl.Z : ℝ) * codata_ame_offset_per_Z| < 0.0031
+  unfold fl codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3240,11 +3351,12 @@ noncomputable def ame2020_mass_mc : ℝ := mc.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Moscovium: 2.033 keV
     (= 115 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_mc :
     |mc.codataMass - mc.ameMass| < 0.0032 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass mc
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset mc]
+  show |(mc.Z : ℝ) * codata_ame_offset_per_Z| < 0.0032
+  unfold mc codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3269,11 +3381,12 @@ noncomputable def ame2020_mass_lv : ℝ := lv.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Livermorium: 2.052 keV
     (= 116 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_lv :
     |lv.codataMass - lv.ameMass| < 0.0032 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass lv
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset lv]
+  show |(lv.Z : ℝ) * codata_ame_offset_per_Z| < 0.0032
+  unfold lv codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3298,11 +3411,12 @@ noncomputable def ame2020_mass_ts : ℝ := ts.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Tennessine: 2.067 keV
     (= 117 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_ts :
     |ts.codataMass - ts.ameMass| < 0.0032 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass ts
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset ts]
+  show |(ts.Z : ℝ) * codata_ame_offset_per_Z| < 0.0032
+  unfold ts codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -3327,11 +3441,12 @@ noncomputable def ame2020_mass_og : ℝ := og.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Oganesson: 2.081 keV
     (= 118 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548/#1561). -/
 theorem deviation_og :
     |og.codataMass - og.ameMass| < 0.0032 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass og
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset og]
+  show |(og.Z : ℝ) * codata_ame_offset_per_Z| < 0.0032
+  unfold og codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 /-! ## Summary
