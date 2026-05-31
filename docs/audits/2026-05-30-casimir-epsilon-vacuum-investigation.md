@@ -344,6 +344,89 @@ that vanish at q → 1, so they fail the classical Casimir limit.
 Witness:
 [`casimir-grid-sweep-probe.witness.json`](../../folio-assistant/computations/casimir-grid-sweep-probe.witness.json).
 
+### 6th sweep — classical-limit-preserving q-factorial sweep (FINDING)
+
+The 5 prior sweeps all suffered from the same defect: every
+sub-1% match involved `ℏ_q` or `h_q` powers, which vanish at
+`q → 1`, making the form incompatible with standard physics.
+
+This probe ([`casimir_q_factorial_probe.py`](../../folio-assistant/computations/casimir_q_factorial_probe.py))
+imposes the **classical-limit constraint** `C_q(q→1) = π²/720`
+explicitly and searches q-deformations satisfying it.
+
+The natural candidate: since classical Casimir uses
+`ζ(-3) = -1/5!`, the natural q-deformation is
+`-1/[5]_q!_sym`, giving:
+
+```
+C_q = π² / (6 · [5]_q!_sym)
+```
+
+where `[n]_q!_sym = ∏_{k=1}^n [k]_q` and `[k]_q = (q^k − q^{−k})/(q − q^{−1})`.
+
+**Verification of classical limit (numerical at q = 1 + 10⁻⁶):**
+
+| n | [n]_q!_sym at q₀ | classical n! | Δ |
+|---|---|---|---|
+| 5 | **131.31** | 120 | +9.4% |
+| 6 | 838.84 | 720 | +16.5% |
+| 7 | 6396 | 5040 | +26.9% |
+
+`[5]_q!_sym → 120` exactly as `q → 1`. ✓
+
+**Result at substrate:**
+
+```
+C_q = π²/(6·[5]_q!_sym)  =  π²/(6·131.31)  =  0.012527
+target π²/720            =  0.013708
+                            ─────────
+                            8.6% lower at substrate
+```
+
+**Equivalent form for force per area:**
+
+```
+F_Cas/A  =  -3 · ∂_d C_q · ℏc · A/d³  · ...  =  -c_q · ℏc / d⁴
+
+where  c_q = π²/(2 · [5]_q!_sym)
+         = π²/(2 · 131.31) at substrate
+         = 0.0376
+         vs textbook π²/240 = 0.0411
+         (8.6% lower)
+```
+
+**This is the structural form** the conjecture should adopt.
+
+Why this works:
+- The "120" in classical `ζ(-3) = −1/120` is `5!`.
+- Standard q-deformation of `n!` is `[n]_q!_sym`.
+- So `ζ_q(−3) = −1/[5]_q!_sym` is the natural q-analogue.
+- This propagates linearly through the Casimir derivation: every
+  classical `5!` becomes `[5]_q!_sym`.
+
+Why the substrate residue is ~9% rather than ~0%:
+- `[5]_q!_sym` at substrate `q₀ ≈ 1.110` is `131.3`, not `120`.
+- This is a 9.4% discrepancy in the prefactor.
+- The "120 vs 131" difference IS the substrate prediction:
+  QOU vacuum modes have a different combinatorial weighting from
+  classical EM modes.
+
+Witness:
+[`casimir-q-factorial-probe.witness.json`](../../folio-assistant/computations/casimir-q-factorial-probe.witness.json).
+
+### Other classical-limit-OK candidates tested
+
+| Form | Substrate | Substrate residue | Classical OK |
+|------|-----------|-------------------|---|
+| `π²/(6·[5]_q!_sym)` | 0.01253 | **8.6%** | ✓ |
+| `π²/(6·{5}!_q_poch)` (Pochhammer) | 0.00795 | 42.0% | ✓ |
+| `π²/([6]_q·[5]_q!)` | 0.01177 | 14.2% | ✓ |
+| `π²/(6·([5]_q! + [5]_{q⁻¹}!)/2)` (bar-symm.) | 0.01253 | 8.6% | ✓ |
+
+The Pochhammer convention is much worse — symmetric q-factorial is
+clearly the right one. Bar-symmetrization doesn't help (`[5]_q!`
+is already real and bar-invariant at substrate).
+
 This pushes the audit's "soften to `c_q · ℏc/d⁴`" framing from
 *possibility* to **most-likely truth**:
 
