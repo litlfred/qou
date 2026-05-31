@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T13:41:49.430287+00:00",
-  "commitSha": "d01bc93291dbe7a104a9fc9d6e03dac6e8825ed3",
+  "computedAt": "2026-05-31T13:50:32.241799+00:00",
+  "commitSha": "3d020ac4f16b5add6ab0d0ffce4eb06d2b6adad3",
   "assertions": [],
   "allPassed": true,
   "durationMs": 12,
@@ -26,7 +26,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 790,
+    "files_scanned": 791,
     "patterns": [
       "P15",
       "P16",
@@ -40,7 +40,7 @@
       "P15": 114,
       "P16": 195,
       "P21": 30,
-      "P30": 150,
+      "P30": 151,
       "P31": 57
     },
     "top_files": [
@@ -2725,6 +2725,13 @@
       {
         "pattern": "P30",
         "file": "option_e_v6_combined_canonical.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "option_e_v7_involution_aware.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
