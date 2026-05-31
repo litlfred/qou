@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-30T19:40:09.041115+00:00",
-  "commitSha": "28ab0a5dbc4486904e8f9c3448263cc786a40203",
+  "computedAt": "2026-05-31T04:03:31.060902+00:00",
+  "commitSha": "ab27cbd9c5c52b8fba43990f0dcdfc9341839dbf",
   "assertions": [
     {
       "name": "symbolic_derivative_matches_pi2_over_240_d4",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 60,
+  "durationMs": 64,
   "computation": "casimir-epsilon-vacuum-probe",
   "scriptFile": "casimir_epsilon_vacuum_probe.py",
-  "scriptHash": "853a2853b647",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "68c59c024ae6",
+  "scriptCommitSha": "350d0a7642aff35ffc936480644459922b1fa3f6",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -34,9 +34,9 @@
   "description": "Conditional verification of conj:casimir-epsilon-vacuum.  Step 1: sympy-symbolic verification that d/dd[-π²/(720 d³)] = π²/(240 d⁴), discharging the calculus step of the §3b-cond conditional theorem.  Step 2: numerical evaluation of the standard-physics Casimir force per area at four sample plate separations (0.1–5 µm), matching Mohideen–Roy 1998 / Lamoreaux 1997 experimental geometries.  Step 3: explicit enumeration of the three open sub-problems that the conjecture's actual content requires (existence + scaling + prefactor of N_⊙(A, d) as a categorical object).  The conditional implication is rigorous modulo the PlateModeCount class hypothesis; the witness exists to document the rigorous chain and tabulate the numerical targets that any closure must reproduce.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "HBAR_J_S": 1.054571817e-34,
+    "HBAR_J_S": 1.0545718175645948e-34,
     "C_M_S": 299792458,
-    "HBAR_C_J_M": 3.161526771559562e-26,
+    "HBAR_C_J_M": 3.1615267732521743e-26,
     "class_axiom_energy_per_area": "-pi**2/(720*d**3)",
     "expected_derivative": "pi**2/(240*d**4)"
   },
@@ -51,23 +51,23 @@
     "force_per_area_at_sample_separations": [
       {
         "separation_um": 0.1,
-        "force_per_area_Pa": -13.001257724477536,
-        "force_per_area_uPa": -13001257.724477537
+        "force_per_area_Pa": -13.001257731438125,
+        "force_per_area_uPa": -13001257.731438125
       },
       {
         "separation_um": 0.5,
-        "force_per_area_Pa": -0.020802012359164058,
-        "force_per_area_uPa": -20802.01235916406
+        "force_per_area_Pa": -0.020802012370301,
+        "force_per_area_uPa": -20802.012370301
       },
       {
         "separation_um": 1.0,
-        "force_per_area_Pa": -0.0013001257724477536,
-        "force_per_area_uPa": -1300.1257724477537
+        "force_per_area_Pa": -0.0013001257731438125,
+        "force_per_area_uPa": -1300.1257731438125
       },
       {
         "separation_um": 5.0,
-        "force_per_area_Pa": -2.080201235916406e-06,
-        "force_per_area_uPa": -2.080201235916406
+        "force_per_area_Pa": -2.0802012370301003e-06,
+        "force_per_area_uPa": -2.0802012370301
       }
     ],
     "open_subproblems_for_closure": [

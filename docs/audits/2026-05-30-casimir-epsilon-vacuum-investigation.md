@@ -89,19 +89,28 @@ Hecke-algebra substrate.
 The probe was extended to include substrate-natural quantities
 (ℏ_q², h_q², α_em-derived). Top candidates by relative residue:
 
-| Form | Value | Residue |
-|------|-------|---------|
-| `2·π²/(720·[2]_q)` | 1.3634e-02 | **0.54%** |
-| `4·π²·h_q²/120` | 1.4379e-02 | 4.9% |
-| `8·π²·ℏ_q²·[2]_q/120` | 1.2989e-02 | 5.2% |
-| `240·α_em²` | 1.2820e-02 | 6.5% |
-| `2·α_em` | 1.4617e-02 | 6.6% |
+| Form | Value | Residue | Note |
+|------|-------|---------|------|
+| `2·π²/(720·[2]_q)` | 1.3634e-02 | **0.54%** | classical-trivial: `[2]_q → 2` as `q → 1` |
+| `12·π²/(720·[10]_q)` | 1.3829e-02 | **0.89%** | substrate-numerical-trivial: at `q₀`, `[10]_q ≈ 11.90 ≈ 12` |
+| `4·π²·h_q²/120` | 1.4379e-02 | 4.9% | not trivial; substrate-natural |
+| `8·π²·ℏ_q²·[2]_q/120` | 1.2989e-02 | 5.2% | not trivial; substrate-natural |
+| `240·α_em²` | 1.2820e-02 | 6.5% | not trivial; substrate-natural |
+| `2·α_em` | 1.4617e-02 | 6.6% | not trivial; substrate-natural |
 
-None reach the numerical precision floor; the 0.54% match is the
-only sub-1% candidate and is structurally trivial (`[2]_q → 2` as
-`q → 1`). **The π²/720 prefactor is not a low-degree q-rational of
-substrate quantities at q₀** — this is now an established empirical
-fact.
+After filtering both **classical-trivial** matches (where `a/m^p =
+1`, so the form recovers π²/720 trivially as `q → 1`) AND
+**substrate-numerical-trivial** matches (where `a/[m]_q^p` ≈ 1
+*at substrate q₀*, so the match is a numerical accident of where
+[m]_q happens to land, not a structural identity in `q` as a
+variable): **zero non-trivial substrate q-rationals match π²/720
+within 1%**.
+
+The closest non-trivial candidate is `10·π²/(720·[9]_q)` at 3.5%
+relative residue (above the 1% threshold).
+
+**Empirical conclusion: the π²/720 prefactor is genuinely NOT a
+low-degree q-rational of substrate quantities at q₀.**
 
 If the prefactor IS substrate-derivable, the derivation must
 involve a more elaborate structure (Macdonald operators / Cherednik

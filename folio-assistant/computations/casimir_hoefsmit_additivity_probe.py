@@ -45,19 +45,24 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from mpmath import mp, mpf, catalan as mp_catalan  # noqa: E402
+from mpmath import mp, mpf  # noqa: E402
 
+from experimental_constants import (  # noqa: E402
+    VOL_BORROMEAN_50DPS_STR,
+    VOL_4_1_50DPS_STR,
+)
 from q_parameter import Q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 50
 
-# Standard hyperbolic volumes from the literature (cited in
-# folio-assistant/computations/_li_2_q_util.py and elsewhere).
-VOL_UNKNOT = mpf(0)               # ⊙: no hyperbolic structure
-VOL_TREFOIL = mpf(0)              # 3_1: torus knot, no hyperbolic structure
-VOL_FIGURE_8 = 2 * mp_catalan     # 4_1: hyperbolic (Thurston)
-VOL_BORROMEAN = 8 * mp_catalan    # 𝓑₃: Adams 1985
+# Hyperbolic volumes — sourced from the canonical registry
+# (`experimental_constants.py`) per the README convention.  The
+# 50-dps string forms preserve full Catalan-constant precision.
+VOL_UNKNOT = mpf(0)                              # ⊙: not hyperbolic
+VOL_TREFOIL = mpf(0)                             # 3_1: torus knot, not hyperbolic
+VOL_FIGURE_8 = mpf(VOL_4_1_50DPS_STR)            # 4_1: 2·Cl_2(π/3), Thurston
+VOL_BORROMEAN = mpf(VOL_BORROMEAN_50DPS_STR)     # 𝓑₃: 8·G, Adams 1985
 
 
 def _hbar_q(q: "mpf") -> "mpf":

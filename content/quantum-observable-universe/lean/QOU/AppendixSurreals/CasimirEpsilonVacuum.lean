@@ -43,7 +43,7 @@ namespace QOU.AppendixSurreals
     cancel in the energy density `u(d) = ε·(N⊙^in − N⊙^out)/A`,
     leaving a real-valued function.  This class encodes that
     real-valued energy-density function directly. -/
-class PlateModeCount where
+class CasimirEpsilonVacuum where
   /-- Archimedean energy per unit area between two parallel
       conducting plates separated by `d`, in units where
       `ℏc = 1`.  The conjecture is that this equals
@@ -81,20 +81,20 @@ class PlateModeCount where
     the surreal mechanism in
     [`conj:casimir-epsilon-vacuum`](../../../quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md). -/
 theorem energyPerArea_deriv
-    [VacuumEpsilon] [PlateModeCount]
+    [VacuumEpsilon] [CasimirEpsilonVacuum]
     (d : ℝ) (hd : 0 < d) :
-    deriv PlateModeCount.energyPerArea d = Real.pi ^ 2 / (240 * d ^ 4) := by
+    deriv CasimirEpsilonVacuum.energyPerArea d = Real.pi ^ 2 / (240 * d ^ 4) := by
   -- Ref: [casimir1948] https://dwc.knaw.nl/DL/publications/PU00018547.pdf
   -- Ref: [manuscript] appendix-surreals/casimir-epsilon-vacuum.md
   have hd_ne : d ≠ 0 := ne_of_gt hd
   have hd3_ne : d ^ 3 ≠ 0 := pow_ne_zero 3 hd_ne
   have hd4_pos : (0 : ℝ) < d ^ 4 := pow_pos hd 4
   -- Step 1: locally rewrite the function via the class axiom on (0, ∞).
-  have heq : Set.EqOn PlateModeCount.energyPerArea
+  have heq : Set.EqOn CasimirEpsilonVacuum.energyPerArea
       (fun x : ℝ => -(Real.pi ^ 2) / (720 * x ^ 3))
       (Set.Ioi (0 : ℝ)) := by
     intro x hx
-    exact PlateModeCount.energyPerArea_eq x hx
+    exact CasimirEpsilonVacuum.energyPerArea_eq x hx
   -- Step 2: transfer the derivative via EventuallyEq on the
   -- neighborhood (0, ∞).
   have hopen : IsOpen (Set.Ioi (0 : ℝ)) := isOpen_Ioi

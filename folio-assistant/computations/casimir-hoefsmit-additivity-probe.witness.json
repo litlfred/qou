@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T21:23:56.142125+00:00",
-  "commitSha": "b9afc9a5705a1132f61bf16e1b1b8f4cde531a0d",
+  "computedAt": "2026-05-31T04:03:17.809467+00:00",
+  "commitSha": "ab27cbd9c5c52b8fba43990f0dcdfc9341839dbf",
   "assertions": [
     {
       "name": "hoefsmit_additivity_structural_lemma_recorded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 10,
   "computation": "casimir-hoefsmit-additivity-probe",
   "scriptFile": "casimir_hoefsmit_additivity_probe.py",
-  "scriptHash": "3c63ebd323c2",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c40aba7f763f",
+  "scriptCommitSha": "8d561dfc73e203380fdde6ff1c2e712025cc1082",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -51,24 +51,24 @@
         "L1": "⊙",
         "L2": "4_1",
         "Vol_L1": 0.0,
-        "Vol_L2": 1.831931188354438,
-        "Vol_L1_plus_L2_expected": 1.831931188354438,
+        "Vol_L2": 2.0298832128193074,
+        "Vol_L1_plus_L2_expected": 2.0298832128193074,
         "additive": true
       },
       {
         "L1": "4_1",
         "L2": "4_1",
-        "Vol_L1": 1.831931188354438,
-        "Vol_L2": 1.831931188354438,
-        "Vol_L1_plus_L2_expected": 3.663862376708876,
+        "Vol_L1": 2.0298832128193074,
+        "Vol_L2": 2.0298832128193074,
+        "Vol_L1_plus_L2_expected": 4.059766425638615,
         "additive": true
       },
       {
         "L1": "4_1",
         "L2": "𝓑₃",
-        "Vol_L1": 1.831931188354438,
+        "Vol_L1": 2.0298832128193074,
         "Vol_L2": 7.327724753417752,
-        "Vol_L1_plus_L2_expected": 9.15965594177219,
+        "Vol_L1_plus_L2_expected": 9.35760796623706,
         "additive": true
       },
       {

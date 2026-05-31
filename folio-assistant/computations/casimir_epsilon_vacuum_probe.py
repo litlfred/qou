@@ -30,7 +30,7 @@ target that any future categorical derivation of N_⊙(A, d) must
 reproduce.
 
 Ref: [casimir1948] https://dwc.knaw.nl/DL/publications/PU00018547.pdf
-Ref: [mohideen-roy1998] doi:10.1103/PhysRevLett.81.4549
+Ref: [mohideen1998] doi:10.1103/PhysRevLett.81.4549
 """
 from __future__ import annotations
 
@@ -42,12 +42,19 @@ sys.path.insert(0, str(HERE))
 
 import sympy as sp  # noqa: E402
 
+from experimental_constants import HBAR_MEV_S  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-# CODATA 2018 values (consistent with the rest of the QOU pipeline).
-HBAR_J_S = 1.054571817e-34       # ℏ in J·s
-C_M_S = 299_792_458              # c in m/s
+# Derived from registry's HBAR_MEV_S + the CODATA 2018 / SI-exact
+# values for c (defined exactly since 2019) and eV → J conversion
+# (defined exactly since 2019).  Per `folio-assistant/computations/
+# README.md:85-89`, this is the right way to use repository
+# constants — derive SI-form ℏc from the MeV-form HBAR registry entry.
+_C_M_S_SI_EXACT = 299_792_458            # exact by SI definition
+_EV_TO_J_SI_EXACT = 1.602_176_634e-19    # exact by SI definition
+HBAR_J_S = HBAR_MEV_S * 1e6 * _EV_TO_J_SI_EXACT  # ≈ 1.0546e-34 J·s
+C_M_S = _C_M_S_SI_EXACT
 HBAR_C_J_M = HBAR_J_S * C_M_S    # ℏc ≈ 3.1615e-26 J·m
 
 

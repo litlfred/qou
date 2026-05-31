@@ -15,7 +15,7 @@ export default conjecture({
   ],
   cites: [
     "casimir1948",
-    "mohideen-roy1998",
+    "mohideen1998",
     "lamoreaux1997",
     "robinson1966",
   ],
@@ -30,6 +30,13 @@ export default conjecture({
     "conditional-on-class",
     "open-problem",
   ],
+  computation: {
+    witness: [
+      "folio-assistant/computations/casimir-epsilon-vacuum-probe.witness.json",
+      "folio-assistant/computations/casimir-hoefsmit-additivity-probe.witness.json",
+      "folio-assistant/computations/casimir-q-zeta-probe.witness.json",
+    ],
+  },
   authorNotes: [
     {
       kind: "caveat",
@@ -46,7 +53,7 @@ export default conjecture({
         "Borromean case. The dimensional consistency is not " +
         "yet pinned down. See " +
         "[`docs/audits/2026-05-30-casimir-epsilon-vacuum-" +
-        "investigation.md`](../../../../docs/audits/2026-05-30-" +
+        "investigation.md`](../../../docs/audits/2026-05-30-" +
         "casimir-epsilon-vacuum-investigation.md) Route B for " +
         "the full analysis. Resolution requires a paper-side " +
         "judgement before the conjecture is finalised.",
@@ -63,7 +70,7 @@ export default conjecture({
         "Closure of sub-problem 3 needs Cherednik-style " +
         "Macdonald-operator machinery. See " +
         "[`folio-assistant/computations/casimir-q-zeta-probe." +
-        "witness.json`](../../../../folio-assistant/" +
+        "witness.json`](../../../folio-assistant/" +
         "computations/casimir-q-zeta-probe.witness.json) for " +
         "the candidate table.",
     },

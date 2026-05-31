@@ -3534,7 +3534,7 @@ export const references: CSLData[] = [
 
   // ── Mohideen-Roy 1998 (high-precision Casimir, AFM) ────────
   ref({
-    id: "mohideen-roy1998",
+    id: "mohideen1998",
     type: "article-journal",
     title:
       "Precision Measurement of the Casimir Force from 0.1 to 0.9 μm",
