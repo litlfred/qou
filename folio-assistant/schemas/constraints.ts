@@ -397,6 +397,8 @@ export interface ConstraintContext {
   fileExists: (path: string) => boolean;
   /** Markdown content of the companion .md file (for cross-ref scanning). */
   mdContent?: string;
+  /** Lean sibling stub content (for §3b-cond kind-check), if the file exists. */
+  leanContent?: string;
 }
 
 /**
@@ -555,6 +557,35 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
       }
       return missing.length === 0 ? null
         : `[warning] Undefined cross-reference(s) in .md: ${missing.join(", ")}`;
+    },
+  },
+  {
+    id: "lean-stub-conjecture-kind-check",
+    description:
+      "If the sibling .lean stub is a §3b-cond conjectural class axiomatisation, " +
+      "the block kind must be conjecture() — not proposition()/theorem()/lemma()/corollary(). " +
+      "This catches the bigbang-heatdeath / appendix-surreals pattern (PR #1496, #1519) " +
+      "where the .ts declares a provable kind but the Lean side encodes the content as a " +
+      "sorry-as-conjecture class instance per CLAUDE.md §3b-cond.",
+    appliesTo: ["proposition", "theorem", "lemma", "corollary"],
+    check: (block, ctx) => {
+      if (!ctx.leanContent) return null;
+      // Match the §3b-cond stub signature.  Any of these three signals
+      // is sufficient on its own; the generator-emitted phrase
+      // "conjectural sibling stub" is the most reliable marker.
+      const signals = [
+        /\bconjectural sibling stub\b/,
+        /\bsorry\s*=\s*conjecture\b/,
+        /\*\*CONJECTURE\.\*\*/,
+      ];
+      const hit = signals.find((re) => re.test(ctx.leanContent!));
+      if (!hit) return null;
+      return `Kind mismatch: ${block.label} declares ${block.kind}() but the ` +
+        `sibling .lean stub is a §3b-cond conjectural class ` +
+        `(matched: ${hit.source}). ` +
+        `Demote to conjecture() and rename label prop:/thm:/lem:/cor: → conj: ` +
+        `per CLAUDE.md §3b-cond. See PR #1519 commit fix(appendix): ` +
+        `demote 5 propositions → conjectures for the migration pattern.`;
     },
   },
 ];
