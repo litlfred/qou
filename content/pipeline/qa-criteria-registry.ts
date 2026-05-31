@@ -528,10 +528,13 @@ const CANONICAL: QaCriterionDefinition[] = [
       "conjecture"],
   },
   {
-    id: "canonical-no-negative-result",
+    id: "canonical-ck-tiered-not-binary",
     domain: "canonical",
     description:
-      "Precision-ladder blocks (Q_β c_k, α_EM Habiro factor, any " +
+      "Complement to `canonical-no-negative-result-in-paper` (#1574, " +
+      "which catches falsified/superseded probe-block leakage via tags " +
+      "/ Status banners). This criterion catches the prose-framing " +
+      "mode: precision-ladder blocks (Q_β c_k, α_EM Habiro factor, any " +
       "convergent truncation-order series) must report coefficient " +
       "provenance TIERED (proved / near-match / fitted), never as a " +
       "binary negative result. Scans .md for flip-flop signal phrases " +

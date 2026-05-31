@@ -1010,14 +1010,20 @@ const TIERED_FRAMING_RE =
   /\bnear[- ]match(?:es)?\b|\btier\b|\btiered\b|truncation-order-canonical-framing/i;
 
 /**
- * canonical-no-negative-result — locks Q_β c_k truncation-order Rule 4
- * into CI: a precision-ladder block that frames a coefficient as a
- * binary "negative result" (dropped / un-wired / just-a-fit) MUST also
- * carry the tiered framing (proved / near-match / fitted) or cite the
- * canonical framing doc. Prevents the four-session wire/un-wire
+ * canonical-ck-tiered-not-binary — locks Q_β c_k truncation-order
+ * Rule 4 into CI: a precision-ladder block that frames a coefficient
+ * as a binary "negative result" (dropped / un-wired / just-a-fit) MUST
+ * also carry the tiered framing (proved / near-match / fitted) or cite
+ * the canonical framing doc. Prevents the four-session wire/un-wire
  * flip-flop from re-entering the paper as flat negative-result prose.
+ *
+ * Complement to #1574's `canonical-no-negative-result-in-paper`, which
+ * catches falsified/superseded *probe-block* leakage via .ts tags and
+ * .md Status banners. This checker catches the *prose-framing* failure
+ * mode (binary wire/un-wire language in ladder context) that the
+ * tag/banner checker does not see.
  */
-export function checkCanonicalNoNegativeResultInPaper(
+export function checkCanonicalCkTieredNotBinary(
   mdPath: string | undefined,
   tsPath: string | undefined,
 ): CheckerResult {
@@ -1784,8 +1790,8 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
     checkCanonicalNoHardcodedObservable(p.md),
   "canonical-cal4-acknowledged": (p) =>
     checkCanonicalCal4Acknowledged(p.md, p.ts),
-  "canonical-no-negative-result": (p) =>
-    checkCanonicalNoNegativeResultInPaper(p.md, p.ts),
+  "canonical-ck-tiered-not-binary": (p) =>
+    checkCanonicalCkTieredNotBinary(p.md, p.ts),
   // detangler
   "detangler-section-band": (p) => checkDetanglerSectionBand(p.ts),
   "detangler-no-forward-ref": (p) => checkDetanglerNoForwardRef(p.ts),
