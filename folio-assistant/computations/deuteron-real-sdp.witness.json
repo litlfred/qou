@@ -169,9 +169,177 @@
     "strong_duality_holds": false,
     "real_sdp_well_posed_without_constraints": false,
     "diagnostic": "Real SDP UNBOUNDED at q_0 \u2014 Frobenius Gram is indefinite (negative-norm blocks forbidden). Phase B color-flavor constraints required for a well-posed bounded program.",
+    "symmetry_conjugate_pairing": [
+      {
+        "block": "(6,)",
+        "conjugate": "(1, 1, 1, 1, 1, 1)",
+        "self_conjugate": false,
+        "trM": 0.05918771693214863,
+        "trM_conjugate": -1.2437986974301156e-05,
+        "sign_flip_under_conjugation": true
+      },
+      {
+        "block": "(5, 1)",
+        "conjugate": "(2, 1, 1, 1, 1)",
+        "self_conjugate": false,
+        "trM": 0.29480340700726865,
+        "trM_conjugate": 0.0004931778805490169,
+        "sign_flip_under_conjugation": false
+      },
+      {
+        "block": "(4, 2)",
+        "conjugate": "(2, 2, 1, 1)",
+        "self_conjugate": false,
+        "trM": 0.3625594826934169,
+        "trM_conjugate": -0.0030784659379686106,
+        "sign_flip_under_conjugation": true
+      },
+      {
+        "block": "(4, 1, 1)",
+        "conjugate": "(3, 1, 1, 1)",
+        "self_conjugate": false,
+        "trM": 0.10133463492072935,
+        "trM_conjugate": -0.006853088855144668,
+        "sign_flip_under_conjugation": true
+      },
+      {
+        "block": "(3, 3)",
+        "conjugate": "(2, 2, 2)",
+        "self_conjugate": false,
+        "trM": 0.07060437002487643,
+        "trM_conjugate": 0.0038659336845269007,
+        "sign_flip_under_conjugation": false
+      },
+      {
+        "block": "(3, 2, 1)",
+        "conjugate": "(3, 2, 1)",
+        "self_conjugate": true,
+        "trM": 0.11709526963657169,
+        "trM_conjugate": 0.11709526963657169,
+        "sign_flip_under_conjugation": false
+      },
+      {
+        "block": "(3, 1, 1, 1)",
+        "conjugate": "(4, 1, 1)",
+        "self_conjugate": false,
+        "trM": -0.006853088855144668,
+        "trM_conjugate": 0.10133463492072935,
+        "sign_flip_under_conjugation": true
+      },
+      {
+        "block": "(2, 2, 2)",
+        "conjugate": "(3, 3)",
+        "self_conjugate": false,
+        "trM": 0.0038659336845269007,
+        "trM_conjugate": 0.07060437002487643,
+        "sign_flip_under_conjugation": false
+      },
+      {
+        "block": "(2, 2, 1, 1)",
+        "conjugate": "(4, 2)",
+        "self_conjugate": false,
+        "trM": -0.0030784659379686106,
+        "trM_conjugate": 0.3625594826934169,
+        "sign_flip_under_conjugation": true
+      },
+      {
+        "block": "(2, 1, 1, 1, 1)",
+        "conjugate": "(5, 1)",
+        "self_conjugate": false,
+        "trM": 0.0004931778805490169,
+        "trM_conjugate": 0.29480340700726865,
+        "sign_flip_under_conjugation": false
+      },
+      {
+        "block": "(1, 1, 1, 1, 1, 1)",
+        "conjugate": "(6,)",
+        "self_conjugate": false,
+        "trM": -1.2437986974301156e-05,
+        "trM_conjugate": 0.05918771693214863,
+        "sign_flip_under_conjugation": true
+      }
+    ],
+    "self_conjugate_blocks": [
+      "(3, 2, 1)"
+    ],
+    "sign_flip_conjugate_pairs": [
+      [
+        "(1, 1, 1, 1, 1, 1)",
+        "(6,)"
+      ],
+      [
+        "(2, 2, 1, 1)",
+        "(4, 2)"
+      ],
+      [
+        "(3, 1, 1, 1)",
+        "(4, 1, 1)"
+      ]
+    ],
+    "symmetry_note": "Every negative-norm forbidden block is the conjugate \u03bb\u21a6\u03bb' of a dominant positive block with tr_M(P_\u03bb) sign-flipped \u2014 the \u00a77b bar-involution (q\u21a6q\u207b\u00b9) / Type-B-folding signature. (3,2,1) is the self-conjugate fixed point.",
+    "phase_B_interim": {
+      "positive_norm_blocks": [
+        "(6,)",
+        "(5, 1)",
+        "(4, 2)",
+        "(4, 1, 1)",
+        "(3, 3)",
+        "(3, 2, 1)",
+        "(2, 2, 2)",
+        "(2, 1, 1, 1, 1)"
+      ],
+      "n_target": 0.3876618734432773,
+      "bounded": true,
+      "strong_duality_holds": true,
+      "active_blocks": [
+        "(6,)",
+        "(5, 1)",
+        "(4, 2)",
+        "(4, 1, 1)",
+        "(3, 3)",
+        "(2, 2, 2)",
+        "(2, 1, 1, 1, 1)"
+      ],
+      "lp": {
+        "x_star": [
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          0.3876618734432773,
+          -0.0,
+          -0.0
+        ],
+        "y0_star": -0.014438000836978567,
+        "y_star": [
+          1.8036945015210475,
+          0.6921533002841864,
+          0.22579444721539882,
+          0.09545929333671643,
+          1.0543056619749362,
+          0.0,
+          3.0351607616219556,
+          29.706526007117624
+        ],
+        "active_set": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7
+        ],
+        "primal_obj": -0.005597062453238717,
+        "dual_obj": -0.005597062453238717,
+        "duality_gap": 0.0,
+        "feasible": true
+      }
+    },
     "phase_A_cost": "done",
-    "phase_B_constraints": "pending (color-flavor 9-pair + AME2020 RHS)",
-    "phase_C_dual_solve": "diagnostic (unbounded without Phase B)",
+    "phase_B_constraints": "interim (bounded positive-norm subspace); full color-flavor 9-pair + AME2020 RHS pending",
+    "phase_C_dual_solve": "diagnostic (unbounded on full space; bounded on positive subspace)",
     "phase_D_lean_wiring": "pending (deuteron_emptySDP -> deuteron_realSDP)"
   }
 }
