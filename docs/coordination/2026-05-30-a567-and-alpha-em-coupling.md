@@ -172,3 +172,86 @@ wire, Bring-residue, witness drift fixes, infra). **No file conflicts;
 1. **Model Lean c_3 class on #1508's template** when authoring `QbetaC3StructuralFormClass` (probably PR #1479+1 follow-up after merge).
 2. **Don't reopen** the c_3 = -2 / J - ℏ_q² flip-flop — discipline lock in
    the deep audit holds.
+
+## Round 3 (2026-05-30 later): Q_β Habiro Taylor parallel CONFIRMED
+
+After main landed PR #1511 ("the next-order α_EM IS just the Habiro Taylor
+expansion"), I ran the parallel investigation on Q_β. Result: **the
+architectural parallel is real and concrete**.
+
+### #1511's finding (α_EM, on main)
+
+Habiro Taylor expansion of `[2]_q · (1-h²α)` at q=1 in h-basis gives
+binomial-series rationals as the c_k. The empirical c_k thrashing on
+PRs #1477/#1480/#1484 closes because the form is **uniquely
+determined** by Habiro universality, no choice.
+
+### My probe's finding (Q_β, #1479)
+
+Δtr_M(q) = tr_M(β_n, q) - tr_M(β_p, q), loaded as exact-rational SymPy
+expressions from `habiro-coefficients-atomic.witness.json`, Taylor-
+expanded at q=1 in ε = q-1 basis. The coefficients ARE clean rationals
+parallel to #1511:
+
+| ε^k | Δtr_M Taylor coeff |
+|-----|--------------------|
+| 0 | 0 |
+| 1 | −5/4 |
+| 2 | −3/8 |
+| 3 | −1/16 |
+| 4 | +5/32 |
+| 5 | −17/64 |
+| 6 | +25/64 |
+| 7 | −135/256 |
+
+### The remaining gap (now explicit)
+
+| | α_EM (closed by #1511) | Q_β (gap) |
+|---|---|---|
+| Habiro element | [2]_q · (1-h²α) | Δtr_M(q) |
+| Taylor coefficients | binomial-series rationals | exact rationals (above) |
+| Categorical formula | bridges to α⁻¹ directly | Q_β = m_e × f(Δtr_M, q) — **f unknown** |
+| Form A approximation | exact | misses CODATA by 1677 ppm |
+
+The Q_β c_k saga **closes the same way α_EM's did** once the
+categorical f is identified. Specifically: f must be a substrate-
+canonical function such that `Q_β = m_e × f(Δtr_M(q), q)` matches
+CODATA at q₀. Once f is in hand, its Habiro Taylor expansion gives
+the exact c_k as binomial-series rationals (parallel to #1511).
+
+### Cherry-pick declared on #1508
+
+Coordination posted: when #1508 advances its conditional class to make
+the open content explicit (about the Habiro element identification
+rather than the abstract Bloch class), my forthcoming Q_β Lean class
+will be modeled on it:
+
+```lean
+class QbetaFormulaConsumesDeltaTrClass : Prop where
+  formula : ∃ f : ℝ → ℝ → ℝ, ∀ q > 0,
+    qBetaCanonical q = m_e * f (deltaTrM q) q
+```
+
+Until that lands, the cache keeps c_3 labelled `codata-extracted`.
+
+### Files in this round
+
+- `folio-assistant/computations/qbeta_habiro_taylor_investigation.py`
+- `folio-assistant/computations/qbeta-habiro-taylor-investigation.witness.json`
+- Coordination comment on #1508: <https://github.com/litlfred/qou/pull/1508#issuecomment-4585528471>
+
+### What's next on each side
+
+**α_EM side** (#1508 + #1511 thread): the Bloch class `[Z_2] ∈ B_3(ℂ)`
+construction is the open subgoal-2 RT 2-loop research; alternatively
+the dual Habiro element identification per #1511's framing.
+
+**Q_β side** (#1479): identify f such that Q_β = m_e × f(Δtr_M, q)
+matches CODATA. Form A's structure (`|q²-2q-1|·(q+1)/(2q³)`) is the
+leading approximation; the multi-Wedderburn-block correction is what
+needs derivation.
+
+**Deeper conjecture** (flagged earlier on #1508): the Bloch class
+`[Z_2]` and the Q_β multi-block f may be the SAME categorical object
+at different graph levels. If RT 2-loop closes α_EM, it likely closes
+Q_β too.
