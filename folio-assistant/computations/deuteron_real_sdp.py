@@ -62,6 +62,7 @@ from pyhecke.lp_dual_solver import (  # noqa: E402
     solve_operator_selection_lp,
     solve_psd_operator_selection_sdp,
 )
+from murnaghan_nakayama import dim_specht  # noqa: E402  shared hook-length dim
 
 COST_WITNESS = HERE / "iterative-lp-dual-h6-deuteron.witness.json"
 OUT_WITNESS = HERE / "deuteron-real-sdp.witness.json"
@@ -76,21 +77,20 @@ def parse_partition(key: str) -> tuple[int, ...]:
     return tuple(int(p) for p in key.strip("()").rstrip(",").split(",") if p.strip())
 
 
-def dim_irrep(part: tuple[int, ...]) -> int:
-    """Dimension of the S_n irrep S^λ via the hook-length formula."""
-    n = sum(part)
-    # hook length of cell (i, j): arm + leg + 1
-    cols = [0] * (part[0] if part else 0)
-    for r in part:
-        for j in range(r):
-            cols[j] += 1
-    prod_hooks = 1
-    for i, row in enumerate(part):
-        for j in range(row):
-            arm = row - j - 1
-            leg = cols[j] - i - 1
-            prod_hooks *= arm + leg + 1
-    return math.factorial(n) // prod_hooks
+def sanitize_nan(val):
+    """Replace NaN/Inf floats with None so the witness is RFC 8259 JSON.
+
+    The infeasible/unbounded SDP path can return NaN entries (e.g. the
+    cvxpy `X_star`); standard JSON (and bun/JS `JSON.parse` in the content
+    pipeline) reject `NaN`/`Infinity` literals.
+    """
+    if isinstance(val, dict):
+        return {k: sanitize_nan(v) for k, v in val.items()}
+    if isinstance(val, list):
+        return [sanitize_nan(x) for x in val]
+    if isinstance(val, float) and not math.isfinite(val):
+        return None
+    return val
 
 
 def main() -> int:
@@ -100,7 +100,7 @@ def main() -> int:
 
     keys = list(y_lambda.keys())
     parts = [parse_partition(k) for k in keys]
-    dims = [dim_irrep(p) for p in parts]
+    dims = [dim_specht(p) for p in parts]
 
     # sanity: Σ (dim S^λ)² = n!  (Burnside)
     assert sum(d * d for d in dims) == math.factorial(6), "irrep dims do not close to 6!"
@@ -194,7 +194,7 @@ def main() -> int:
             "phase_D_lean_wiring": "pending (deuteron_emptySDP -> deuteron_realSDP)",
         },
     }
-    OUT_WITNESS.write_text(json.dumps(witness, indent=2) + "\n")
+    OUT_WITNESS.write_text(json.dumps(sanitize_nan(witness), indent=2) + "\n")
 
     print(f"deuteron real SDP @ H_6 — {len(keys)} blocks")
     print(f"  tr_M(β_D)      = {tr_M_beta_D:.10f}  (rel_err vs witness {tr_M_rel_err:.2e})")
