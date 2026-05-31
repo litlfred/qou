@@ -187,10 +187,13 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 | Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1247 ppb (1.25 ppm) | **misses ~160×** (de-fitted; N=5 ladder was a fit) |
 | m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 1.04 ppb | **misses ~181×** |
 | Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 755 ppb | **misses ~159×** |
-| m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 2.9×10⁵ ppb | **misses ~1098×** |
+| m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 23.4 ppb (post-#1442 closure via `(3q²−1)/(2q²)`) | **MET** (~11× margin below target) |
 
-**Honest summary: 2/7 "meet" — both are calibration anchors (m_e, m_p),
-not predictions. 0 of the 5 genuine predictions meet the 100× target.**
+**Honest summary: 3/7 "meet" — 2 calibration anchors (m_e, m_p)
+plus m_K/m_π (closed via the merged meson EM correction `(3q²−1)/(2q²)`
+in PR #1442; was previously listed as missing by ~1098× pre-merge).
+1 of the 4 remaining genuine predictions (m_μ, Q_β, m_n, Δ_pn) meets
+the 100× target.**
 This is the de-fitted state: production reports the real residuals, not
 CODATA-fitted towers. m_p's "0.0004 ppb" is a calibration round-trip
 (see §"The 1 ppQ target is on the theory residual" — σ_theory = 0, the
