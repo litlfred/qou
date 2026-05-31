@@ -8,6 +8,7 @@ export default chapter({
       title: "Transfer matrix Q-values",
       blocks: [
         "qvalue-derivation-chain",
+        "qbeta-ck-truncation-canonical",
         "qvalue-benchmark-table",
         "qvalue-benchmark-table-table-data",
       ],
