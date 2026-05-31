@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-31T02:46:28.151430+00:00",
-  "commitSha": "33885359d04e11b4d9a590a5da8e5a5ad3df67ab",
+  "computedAt": "2026-05-31T03:09:46.787042+00:00",
+  "commitSha": "e2ab995e4f347e1ac2fbac17d6782fb096aa6e76",
   "assertions": [
     {
       "name": "all_ansatz_forms_scanned",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 72,
+  "durationMs": 893,
   "computation": "probe-k-ud-fractional-and-alt-ansatz",
   "scriptFile": "probe_k_ud_fractional_and_alt_ansatz.py",
-  "scriptHash": "0c521a07075e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0ac8531565e9",
+  "scriptCommitSha": "773cda921169374231c762359642a415fbeaf1b7",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -51,37 +51,37 @@
     "scan_results": [
       {
         "ansatz": "multiplicative",
-        "best_k_ud": 8.3,
-        "best_value_at_k": "2.1695872272389215061",
-        "pdg_residual_pct": 0.4438531129130261,
+        "best_k_ud": 8.278904248570868,
+        "best_value_at_k": "2.1600000000000001421",
+        "pdg_residual_pct": -2.984086953607053e-29,
         "matches_pdg_within_sigma": true
       },
       {
         "ansatz": "additive (c=1)",
-        "best_k_ud": 20.0,
-        "best_value_at_k": "1.7985194540853719408",
-        "pdg_residual_pct": -16.735210459010563,
+        "best_k_ud": 20.01,
+        "best_value_at_k": "1.7993530698603787207",
+        "pdg_residual_pct": -16.696617136093582,
         "matches_pdg_within_sigma": false
       },
       {
         "ansatz": "additive (c=10)",
-        "best_k_ud": 1.5108700262738823,
-        "best_value_at_k": "2.1600000000000001265",
-        "pdg_residual_pct": -7.212496510269688e-16,
+        "best_k_ud": 1.5108700262738826,
+        "best_value_at_k": "2.1600000000000001421",
+        "pdg_residual_pct": 1.5161431735769184e-29,
         "matches_pdg_within_sigma": true
       },
       {
         "ansatz": "geometric (p=1)",
-        "best_k_ud": -7.380706394759342,
-        "best_value_at_k": "2.1600000000000000167",
-        "pdg_residual_pct": -5.804727395492725e-15,
+        "best_k_ud": -7.3807063947593425,
+        "best_value_at_k": "2.1600000000000001421",
+        "pdg_residual_pct": 3.629013705171745e-29,
         "matches_pdg_within_sigma": true
       },
       {
         "ansatz": "geometric (p=10)",
         "best_k_ud": -0.7380706394759342,
-        "best_value_at_k": "2.1600000000000000167",
-        "pdg_residual_pct": -5.804727395492725e-15,
+        "best_value_at_k": "2.1600000000000001421",
+        "pdg_residual_pct": -1.575706573359227e-29,
         "matches_pdg_within_sigma": true
       },
       {
@@ -93,9 +93,9 @@
       },
       {
         "ansatz": "9-pair weighted ratio",
-        "best_k_ud": 15.3,
-        "best_value_at_k": "2.1853130017673004176",
-        "pdg_residual_pct": 1.1718982299676053,
+        "best_k_ud": 15.275969852181513,
+        "best_value_at_k": "2.1600000000000001421",
+        "pdg_residual_pct": -6.2221921730675065e-31,
         "matches_pdg_within_sigma": true
       }
     ],
