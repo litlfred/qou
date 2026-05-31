@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T17:02:57.987608+00:00",
-  "commitSha": "a872071f893dfd1f0c5e5d4deb26751ba223c063",
+  "computedAt": "2026-05-31T04:48:16.658189+00:00",
+  "commitSha": "c71ec79f460d664b44cca54ff848ca1aaa6948aa",
   "assertions": [
     {
       "name": "rho_Z_constit_equals_tau_M_proton_H3",
-      "computed": 3.9422507200021767e-50,
+      "computed": 1.3454671363074907e-50,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-12,
@@ -15,18 +15,33 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5504,
+  "durationMs": 4708,
   "computation": "rho-constit-equals-tau-M-proton-phase5l",
   "scriptFile": "rho_constit_equals_tau_M_proton_phase5l.py",
   "scriptHash": "127d35ab2688",
-  "scriptCommitSha": "a872071f893dfd1f0c5e5d4deb26751ba223c063",
+  "scriptCommitSha": "626c2bb856bbfa1ca647bd7d5bc36c8113f8825e",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Phase 5l: structural identity for the constit-side per-Z step factor.  Empirically verifies that ρ_Z^constit(q) := tr_M(³He_constit, q) / tr_M(D_constit, q) equals tr_M^3(𝓑_p, q) exactly across the substrate window, as predicted by the disjoint-product Markov trace formula tr_M(α ⊗ β) = tr_M(α) · tr_M(β) for braids on disjoint strand sets.  Replaces the falsified (2q - 1) form (Phase 5k.2) with a rigorous closed form derivable from Wenzl's Markov trace.",
   "contentBlock": "prop:constit-factor-tau-M-proton-identity",
   "parameters": {
     "q_values": [
       "1.05",
       "1.08",
-      "1.10997859555418057528159407960950937799328227995870",
+      "1.1099785827513808075916690956107688798744991218736",
       "1.13",
       "1.17"
     ]
@@ -41,7 +56,7 @@
         "rho_Z_constit_str": "0.792841919423918992969176770448",
         "diff": -1.3363823550460978e-51,
         "rel_err": 1.68555965862289e-51,
-        "wall_s": 1.097731351852417
+        "wall_s": 0.9345951080322266
       },
       {
         "q": 1.08,
@@ -51,17 +66,17 @@
         "rho_Z_constit_str": "0.993289585647053308069684211553",
         "diff": 1.0691058840368783e-50,
         "rel_err": 1.0763284942129302e-50,
-        "wall_s": 1.0973477363586426
+        "wall_s": 0.9308333396911621
       },
       {
-        "q": 1.1099785955541805,
-        "tau_M_proton_H3": 1.220362889086693,
-        "tau_M_proton_H3_str": "1.22036288908669305595736107223",
-        "rho_Z_constit": 1.220362889086693,
-        "rho_Z_constit_str": "1.22036288908669305595736107223",
-        "diff": 4.810976478165952e-50,
-        "rel_err": 3.9422507200021767e-50,
-        "wall_s": 1.0941638946533203
+        "q": 1.1099785827513808,
+        "tau_M_proton_H3": 1.2203627853716912,
+        "tau_M_proton_H3_str": "1.2203627853716912913178177872",
+        "rho_Z_constit": 1.2203627853716912,
+        "rho_Z_constit_str": "1.2203627853716912913178177872",
+        "diff": 2.6727647100921956e-51,
+        "rel_err": 2.190139475023519e-51,
+        "wall_s": 0.9426925182342529
       },
       {
         "q": 1.13,
@@ -71,7 +86,7 @@
         "rho_Z_constit_str": "1.39054700525733001058588309562",
         "diff": 1.870935297064537e-50,
         "rel_err": 1.3454671363074907e-50,
-        "wall_s": 1.0938599109649658
+        "wall_s": 0.9435689449310303
       },
       {
         "q": 1.17,
@@ -81,10 +96,10 @@
         "rho_Z_constit_str": "1.78584582119413599318238428856",
         "diff": 0.0,
         "rel_err": 0.0,
-        "wall_s": 1.096560001373291
+        "wall_s": 0.9393832683563232
       }
     ],
     "verdict": "structural-identity-confirmed",
-    "max_rel_err": 3.9422507200021767e-50
+    "max_rel_err": 1.3454671363074907e-50
   }
 }
