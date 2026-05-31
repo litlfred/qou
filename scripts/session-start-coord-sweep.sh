@@ -27,9 +27,7 @@ git fetch origin main >/dev/null 2>&1 || {
 CURRENT_BRANCH="$(git symbolic-ref --short HEAD 2>/dev/null || echo "DETACHED")"
 
 # 2. Did main change since this branch was created?
-MERGE_BASE="$(git merge-base origin/main HEAD 2>/dev/null || echo "")"
-MAIN_HEAD="$(git rev-parse origin/main)"
-NEW_COMMITS_ON_MAIN="$(git log --oneline "$MERGE_BASE".."$MAIN_HEAD" 2>/dev/null | wc -l | tr -d ' ')"
+NEW_COMMITS_ON_MAIN="$(git log --oneline HEAD..origin/main 2>/dev/null | wc -l | tr -d ' ')"
 
 # 3. Find sibling claude/* branches updated in last 24h
 RECENT_SIBLINGS="$(git for-each-ref --sort=-committerdate \
@@ -49,7 +47,7 @@ EOF
 
 if [ "$NEW_COMMITS_ON_MAIN" -gt 0 ]; then
   echo "**Recent main landings (last 10):**"
-  git log --oneline "$MERGE_BASE".."$MAIN_HEAD" | head -10 | sed 's/^/- /'
+  git log --oneline HEAD..origin/main | head -10 | sed 's/^/- /'
   echo
 fi
 
