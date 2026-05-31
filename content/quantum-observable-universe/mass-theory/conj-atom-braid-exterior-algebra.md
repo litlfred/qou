@@ -28,6 +28,27 @@ The exterior-algebra structure says: the canonical atom-braid lives in a **fermi
 
 This is fundamentally different from the standard Wedderburn decomposition $H_n(q) \cong \bigoplus_\lambda V_\lambda^{\oplus d_\lambda}$ (which for $H_{12}$ has dimension $12! \approx 5 \times 10^8$, **8 orders of magnitude larger** than the observed $2^{10} = 1024$ for $^4$He).
 
+### Load-bearing factoring — PR-D Step 4
+
+The 5-step structural argument that produces the exterior-algebra
+shape factors so that *one* step carries all the genuine new
+representation-theory content. Steps 1, 2, 3, and 5 are mechanical
+($G_0/G_1$ pattern reductions in $H_3 \subset H_{3A}$, bar-involution
+constraint counting, and `Nat.sum_range_choose`). **Step 4** —
+"inter-nucleon Avg crossings $\sigma_{3k+2} - h/2$ preserve the
+Boolean grading" — is the load-bearing categorical claim.
+
+The Lean sibling file factors Step 4 into a dedicated
+[`AtomBraidStep4Hypothesis (Z N : ℕ)`](conj-atom-braid-exterior-algebra.lean)
+§3b-cond class with a `Prop` placeholder field
+`avg_crossing_preserves_grade`, plus a bridging theorem
+`step4_implies_exterior_algebra_structure` that derives the full
+`AtomBraidExteriorAlgebraStructure` instance once Step 4 is
+discharged. This makes the conjectural input citable,
+`lean_verify`-auditable, and individually closable as a single PR
+once Sprint 3–4 IwahoriHecke infrastructure is in place to give
+mechanical proofs for Steps 1–3.
+
 ## Falsified inference: LP/SDP under-determination implication
 
 **Status:** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../folio-assistant/computations/atom_braid_active_partitions.py). All `p(n_0)` partitions have non-trivial `χ_λ(T_w)` — the claimed "active set $\leq n^* + 1$" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/-exterior-algebra-lp-claim-falsified.md) for the full retraction.
