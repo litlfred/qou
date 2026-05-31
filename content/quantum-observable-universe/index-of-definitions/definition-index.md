@@ -1,4 +1,4 @@
-**1000** indexed entries across 7 categories.
+**1005** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -338,6 +338,7 @@
 | [prop:bohr-radius-categorical](#prop:bohr-radius-categorical) | Categorical Bohr radius $a_0^{\mathrm{cat}} = \hbar/(m_e c\,\alpha_{EM})$ (transported from QED virial-balance; categorical derivation open) | Ch 12 | `qou:QOU.Archimedean.bohr_radius_categorical` |
 | [prop:q-beta-c3-hopf-three-fold-markov](#prop:q-beta-c3-hopf-three-fold-markov) | Categorical derivation of $c_3 = J_{\mathrm{Hopf}}(q=1) = -2$ in the $Q_\beta$ precision ladder via 3-fold Markov closure → 2-strand sub-braid Hopf-link substructure → KL classical-limit decategorification | Ch 10 | `qou:QOU.BraidKnot.q_beta_c3_hopf_three_fold_markov` |
 | [prop:helicity-conservation](#prop:helicity-conservation) | Categorical helicity conservation | Ch 16 | `qou:QOU.FluidDynamics.helicity_conservation` |
+| [prop:categorical-lichnerowicz](#prop:categorical-lichnerowicz) | Categorical Lichnerowicz: $\Delta_\nabla^q = \mathfrak{D}_\nabla^2 + \tfrac{1}{4}\,\mathrm{Sc}_q$ | Ch 2 | `qou:QOU.Lichnerowicz.qDirac` |
 | [prop:yekutieli-lifting](#prop:yekutieli-lifting) | Categorical lifting condition holds in the brane tower | Ch 4 | `qou:QOU.YekutieliLifting` |
 | [prop:categorical-mass-markov](#prop:categorical-mass-markov) | Categorical mass as Markov trace | Ch 7 | `qou:QOU.CategoricalMassMarkov` |
 | [prop:categorical-neutrality-saturated-shells](#prop:categorical-neutrality-saturated-shells) | Categorical neutrality of saturated shells: full-twist identity action on $\Phi_n$ at magic $n$ | Ch 7 | `qou:QOU.ShellNeutrality.SaturatedShellConjecture` |
@@ -346,6 +347,7 @@
 | [prop:categorical-archimedean-bridge](#prop:categorical-archimedean-bridge) | Categorical--geometric correspondence | Ch 3 | `qou:QOU.categorical_archimedean_bridge` |
 | [prop:centered-hecke-variance-positive](#prop:centered-hecke-variance-positive) | Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime | Ch 13 | `qou:QOU.Observations.centered_hecke_variance_positive` |
 | [prop:c-equals-bar-iff-all-1dim](#prop:c-equals-bar-iff-all-1dim) | Charge conjugation equals bar involution iff all irreps are one-dimensional | Ch 8 | `qou:QOU.ParticleInteractions.two_only_unit_squares` |
+| [prop:reeb-u1-chart-swap](#prop:reeb-u1-chart-swap) | Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\mathrm{Aut}(\mathbb{P}(V))$ | Ch 2 | `qou:QOU.ChartSwap.eqReeb` |
 | [prop:chirality-residue-mass-term](#prop:chirality-residue-mass-term) | Chirality / non-chirality split: $\mathfrak{m} = \mathfrak{m}^{\mathrm{chir}} + \mathfrak{m}^{\neg\mathrm{chir}}$ refining the unified mass formula | Ch 10 | `qou:QOU.WedderburnMass.chirality_residue_mass_term` |
 | [prop:chirality-dual-space-derivation](#prop:chirality-dual-space-derivation) | Chirality $a_K = \prod_{pn} (1 + \mathrm{sign}\cdot h)$ from symmetric-channel trace duality | Ch 10 | `qou:QOU.BraidKnot.chirality_dual_space_derivation` |
 | [prop:chirality-writhe-ribbon-derivation](#prop:chirality-writhe-ribbon-derivation) | Chirality factor $1 + w \cdot h$ from ribbon-twist framing (writhe $w$) | Ch 10 | `qou:QOU.BraidKnot.ChiralityWritheRibbon.chirality_writhe_ribbon` |
@@ -905,6 +907,8 @@
 | [conj:mass-volume-factorization](#conj:mass-volume-factorization) | Mass-volume factorization of the categorical mass endomorphism | Ch 10 | `qou:QOU.ParticleInteractions.MassVolumeFactorization` |
 | [conj:modular-s-transform-q-q-tilde](#conj:modular-s-transform-q-q-tilde) | Modular $S$-transform $q \leftrightarrow \tilde q = \exp(2\pi i / \tau)$ for Hecke parameter analytic continuation | Ch 20 | `qou:QOU.BraidsAndKnots.ModularSTransformQQTilde` |
 | [conj:motivic-perpetual-obstruction](#conj:motivic-perpetual-obstruction) | Motivic perpetual obstruction: $\chi^{\mathrm{mot}}_A$ is non-trivial at almost every finite place when $\chi(A) \neq 0$ | Ch 4 | `qou:QOU.LiftingDescent.motivic_perpetual_obstruction` |
+| [conj:phi-q-wkb-greens-function](#conj:phi-q-wkb-greens-function) | Next Faddeev-WKB order: $S_1 = -\tfrac{1}{2}\log\det \mathfrak{D}_\nabla$ is the categorical Green's function | Ch 10 | `qou:QOU.QPochhammer.WKBGreensFunction` |
+| [conj:os-reflection-positivity-from-reeb](#conj:os-reflection-positivity-from-reeb) | Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$ | Ch 22 | `qou:QOU.AppendixSurreals.OSReflectionPositivity` |
 | [conj:p-vs-np-qou](#conj:p-vs-np-qou) | P vs NP in the QOU: classical-limit separation of BQP-width classes | Ch 22 | `qou:QOU.AlgebraicSubstrate.PvsNPQou` |
 | [conj:pachner-pentagon-borromean](#conj:pachner-pentagon-borromean) | Pachner $2$–$3$ move = Pentagon identity at Borromean ideal-tetrahedron decomposition | Ch 10 | `qou:QOU.BraidsAndKnots.PachnerPentagonBorromean` |
 | [conj:palindromicity-orbital-type](#conj:palindromicity-orbital-type) | Palindromicity and orbital type | Ch 14 | `qou:QOU.Molecular.PalindromicityOrbitalType` |
@@ -938,6 +942,7 @@
 | [conj:symmetric-crystal-pair-production](#conj:symmetric-crystal-pair-production) | Type-B folding forces matter/antimatter to be created in conjugate-operator pairs | Ch 8 | `qou:QOU.BraidKnot.SymmetricCrystalPairProduction` |
 | [conj:jet-tower-uniform-delta-max](#conj:jet-tower-uniform-delta-max) | Uniform per-level binding bound $|\Delta^{(n)}(\varrho)| \le \Delta_{\max}(\varrho)$ for the brane tower | Ch 10 | `qou:QOU.BraidKnot.JetTowerUniformDeltaMax` |
 | [conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical) | Weinberg angle $\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors | Ch 8 | `qou:QOU.BraidsAndKnots.WeinbergAngleCategorical` |
+| [conj:wenzl-positivity-implies-substrate-positivity](#conj:wenzl-positivity-implies-substrate-positivity) | Wenzl positivity at $q_0$ implies substrate $C^*$-Frobenius positivity | Ch 22 | `qou:QOU.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity` |
 | [conj:wigner-su4-from-spin-isospin](#conj:wigner-su4-from-spin-isospin) | Wigner $\mathrm{SU}(4) = \mathrm{SU}(2)_S \times \mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding (L3) | Ch 8 | `qou:QOU.BraidsAndKnots.WignerSU4FromSpinIsospin` |
 | [conj:yang-mills-mass-gap](#conj:yang-mills-mass-gap) | Yang--Mills Existence and Mass Gap | Ch 3 | `qou:QOU.Torsion.YangMillsMassGap` |
 

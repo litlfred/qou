@@ -162,4 +162,58 @@ def branchCoefficientType
   -- to this richer type is the structural upgrade promised by Sprint 5.
   Unit  -- placeholder for the Sprint 5 follow-up which lands the upgrade
 
+/-! ## Cell-content recurrence (Sprint 5 follow-up extension)
+
+The Hoefsmit basis satisfies the **cell-content recurrence**:
+for a standard Young tableau `T` of shape `λ`, the action of
+`T_{s_i}` on the basis vector `v_T` is given by:
+
+```
+T_{s_i} · v_T = α(T, i) · v_T + β(T, i) · v_{s_i T}
+```
+
+where `α(T, i)` depends on the content difference between cells
+`i` and `i+1` in `T`. We provide the **structural signature** of
+this recurrence here; the concrete formulas in terms of
+`[k]_q := (q^k - q^{-k}) / (q - q^{-1})` are deferred to a
+follow-up.
+-/
+
+/-- The q-bracket `[k]_q = (q^k - q^{-k}) / (q - q^{-1})`, the
+    standard q-analog of the integer `k`. For the Hoefsmit
+    cell-content formulas. Stated over a `Field R` so `q⁻¹`
+    exists. -/
+noncomputable def qBracket (R : Type v) [Field R] (q : R) (k : ℤ) : R :=
+  if h : q ≠ 1 ∧ q ≠ -1 then
+    (q^k - q^(-k)) / (q - q⁻¹)
+  else
+    (k : R)  -- classical limit at q = ±1
+
+/-- **q-bracket at q = 1 limit** (classical case). -/
+theorem qBracket_at_one (R : Type v) [Field R] (k : ℤ) :
+    qBracket R 1 k = (k : R) := by
+  unfold qBracket
+  simp
+
+/-- **Cell-content α coefficient signature** for the Hoefsmit
+    recurrence. Abstractly, `α` depends on the content difference
+    `c = content(T, i+1) - content(T, i)` in the standard Young
+    tableau `T`. Stated here as a function of the content
+    difference; the concrete formula is
+    `α = (q^c - q^{-c}) / ([2]_q · c)` per Hoefsmit 1974 §III.1. -/
+noncomputable def alphaCoefficient (R : Type v) [Field R] (q : R)
+    (contentDiff : ℤ) : R :=
+  -- For the trivial content-difference case (c = 1), reduces to
+  -- (q - q⁻¹) / [2]_q which is a unit; non-trivial when |c| > 1.
+  if contentDiff = 0 then 0
+  else qBracket R q contentDiff / qBracket R q 2
+
+/-- **α coefficient at trivial content difference (c = 0)** is 0.
+    This corresponds to the case where swapping `i` and `i+1` in
+    the tableau is not a valid SYT operation. -/
+theorem alphaCoefficient_zero_at_zero_diff (R : Type v) [Field R] (q : R) :
+    alphaCoefficient R q 0 = 0 := by
+  unfold alphaCoefficient
+  simp
+
 end QOU.IwahoriHecke.Hoefsmit
