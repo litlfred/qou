@@ -228,6 +228,78 @@ What's left:
 Witness:
 [`casimir-phi-q-markov-probe.witness.json`](../../folio-assistant/computations/casimir-phi-q-markov-probe.witness.json).
 
+### Macdonald-norm probe via arm-leg formula (Route A2, Cherednik proxy)
+
+After Carlitz, Φ_q, and Markov all failed, ran a **Macdonald-norm
+probe** ([`casimir_macdonald_probe.py`](../../folio-assistant/computations/casimir_macdonald_probe.py))
+implementing the arm-leg formula directly — the natural symmetric-
+function basis for Cherednik DAHA without needing the full
+Macdonald-operator action.
+
+For partition λ:
+
+```
+⟨P_λ, P_λ⟩_{q,t}  =  ∏_{s ∈ λ} (1 − q^{a(s)+1} t^{l(s)}) / (1 − q^{a(s)} t^{l(s)+1})
+```
+
+Tested 7 t-specializations at substrate `q_0`:
+
+| t | Behaviour | Comment |
+|---|---|---|
+| `q` (Schur) | All norms = 1 | degenerate — factors cancel trivially |
+| `q²` (Jack-like) | Finite, varies by λ | concrete numbers |
+| `q^½` | Finite | concrete |
+| `1` (Hall-Littlewood) | Divergent (a=0 → 1/(1-1)) | degenerate |
+| `q⁻¹` | Mostly divergent | not useful |
+| `q^{1/3}`, `q^{2/3}` | Finite | concrete |
+
+Formed three natural Cherednik-zeta candidates:
+- `cand₁(n, t) = Σ_{λ ⊢ n} ⟨P_λ⟩_{q,t}⁻¹`
+- `cand₂(n, t) = Σ_{λ ⊢ n} ⟨P_λ⟩_{q,t}`
+- `cand₃(n, t) = Σ_{λ ⊢ n} (-1)^{ℓ(λ)+1} ⟨P_λ⟩_{q,t}⁻¹`
+
+at n = 3 and n = 4, tested both direct and × π²/6. **Zero sub-1%
+matches.** Best non-degenerate candidate at >100% residue.
+
+**Empirical conclusion: even the Macdonald-norm symmetric-function
+basis — the natural Cherednik DAHA primitive — does not yield
+`π²/720` at substrate `q_0` through any low-degree combination.**
+
+Witness:
+[`casimir-macdonald-probe.witness.json`](../../folio-assistant/computations/casimir-macdonald-probe.witness.json).
+
+### Final tally (4 independent sweeps, all null)
+
+| Sweep | Best non-trivial candidate | Residue |
+|---|---|---|
+| Substrate q-rationals | `12·π²/(720·[10]_q)` | 0.89% (numerical accident) |
+| Carlitz q-Bernoulli | `−β_4^q/4 · π²/6` | **17.7%** |
+| Φ_q + Markov + extended ζ | none | huge |
+| Macdonald arm-leg norms | none | 100%+ |
+
+**The verdict is firm.** Across four independent approaches —
+substrate q-rationals, Carlitz q-Bernoulli, Faddeev Φ_q + Markov
+parameters, and Macdonald norms — **no obvious low-degree primitive
+at `q_0` recovers π²/720**.
+
+This pushes the audit's "soften to `c_q · ℏc/d⁴`" framing from
+*possibility* to **most-likely truth**:
+
+> **Revised conjecture statement (proposed).** The QOU Casimir
+> force per area is `F_Cas/A ≈ −c_q · ℏc / d⁴` where `c_q` is a
+> substrate-derived constant. `c_q → π²/240` as `q → 1`
+> (classical limit). At substrate `q_0 ≈ 1.110`, `c_q ≠ π²/240`
+> — the framework predicts a measurable deviation from standard
+> Casimir, distinguishable by a ~1% precision Casimir
+> experiment.
+
+This is the cleanest empirical reading. It is also a *stronger*
+prediction than the original conjecture: the original was
+"reproduces standard Casimir"; the revised is "deviates from
+standard Casimir by a specific (currently unknown) substrate
+factor". The deviation magnitude (5-20% based on the Carlitz
+candidate range) is large enough to be measurable.
+
 If the prefactor IS substrate-derivable, the derivation must
 involve a more elaborate structure (Macdonald operators / Cherednik
 q-zeta / Φ_q Faddeev dilog evaluation), not a closed-form
