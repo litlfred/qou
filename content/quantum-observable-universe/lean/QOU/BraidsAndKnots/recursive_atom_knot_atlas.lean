@@ -16,8 +16,10 @@ sorry-free SDP-uniqueness theorem via the parameterised
 
 - QOU R5-full nuclei (10): `QOU.BraidKnot.Applied<Nucleus>Uniqueness`
 - All 118 elements at AME2020 ref isotope:
-  `QOU.BraidKnot.PeriodicTableUniqueness` (e.g. `he_uniqueness_closed`)
-- All 252 stable nuclides (PR #1542):
+  `QOU.BraidKnot.PeriodicTableUniqueness` (e.g. `he_uniqueness_closed`).
+  Naming: short element symbol from `AtomicMass.lean`; reserved-identifier
+  elements use `_el` suffix (e.g. `n_el_uniqueness_closed` for nitrogen).
+- All 252 stable nuclides (pending PR #1542):
   `QOU.BraidKnot.StableIsotopeUniqueness` (e.g. `c12_uniqueness_closed`,
   `fe56_uniqueness_closed`, `pb208_uniqueness_closed`)
 - Generic: `@QOU.BraidKnot.nucleus_uniqueness_closed (3*A)`
