@@ -114,6 +114,14 @@ def main():
                    "C_knot = 5.852 is the FITTED deficit ratio, not a "
                    "derived layer. Δ_λ gate remains open.",
         )
+        # Lean SDP-uniqueness cross-reference (post-#1537 wiring).
+        wb.add_data("lean_uniqueness_ref", {
+            "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
+            "framework_doc":
+                "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+            "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
+        })
+
         wb.save()
         print(f"✓ Witness: binding-energy-categorical-deuteron.witness.json")
     else:

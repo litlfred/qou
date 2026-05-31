@@ -293,6 +293,14 @@ def main() -> int:
         computed=bool(0 < float(ratio_proton) < 10),
         expected=True,
     )
+    # Lean SDP-uniqueness cross-reference (post-#1537 wiring).
+    w.add_data("lean_uniqueness_ref", {
+        "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+        "framework_doc":
+            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+        "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
+    })
+
     w.save()
     print(f"\n✓ Witness: delta-n2-lp-dual-extraction.witness.json")
     return 0
