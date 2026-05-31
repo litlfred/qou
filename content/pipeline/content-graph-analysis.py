@@ -190,10 +190,14 @@ def parse_chapter(chapter_dir_path: Path, chapter_idx: int) -> ChapterInfo | Non
     title = extract_string_value(text, "title") or chapter_dir
     label = extract_string_value(text, "label") or f"chap:{chapter_dir}"
 
-    # Parse sections:  section({ title: "...", label: "...", blocks: [...] })
+    # Parse sections.  Two literal shapes are recognised:
+    #   section({ title: "...", label: "...", blocks: [...] })  — builder
+    #   Object.freeze({ ... })                                  — frozen literal
+    # Both yield the same Section interface; the second shape is used in
+    # braids-and-knots.ts (sec:lepton-meson-parallel) for tighter immutability.
     sections = []
     section_pattern = re.compile(
-        r'section\s*\(\s*\{(.*?)\}\s*\)',
+        r'(?:section|Object\.freeze)\s*\(\s*\{(.*?)\}\s*\)',
         re.DOTALL,
     )
     for sec_idx, m in enumerate(section_pattern.finditer(text)):
