@@ -1,15 +1,15 @@
 {
   "computation": "habiro-coefficients-atomic",
-  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = Σ_m a_m·(u;u)_m (u = q^{1/2}) for atomic braids p, n, D. Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
+  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = \u03a3_m a_m\u00b7(u;u)_m (u = q^{1/2}) for atomic braids p, n, D. Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
     "thm:knot-mass-formula-unified",
     "prop:e-infinity-page-identifications"
   ],
-  "timestamp": "2026-05-09T15:56:21.689835+00:00",
+  "timestamp": "2026-05-31T04:34:14.771872+00:00",
   "parameters": {
-    "q_0": 1.1099785955541805,
+    "q_0": 1.1099785827513808,
     "engine": "sympy Poly + sequential cyclotomic division"
   },
   "results": {
@@ -89,7 +89,7 @@
       ],
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0": 1.0653062285923893
+      "tr_M_at_q0": 1.06530614425445
     },
     "n (neutron, A=1)": {
       "Z": 0,
@@ -167,116 +167,7 @@
       ],
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0": 0.9232332971695838
-    },
-    "D (deuteron, A=2)": {
-      "Z": 1,
-      "N": 1,
-      "include_inter": true,
-      "tr_M_in_q": "(-2*q**(85/2) + 4*q**(81/2) + 6*q**(77/2) - 4*q**(75/2) + 4*q**(73/2) - 9*q**(71/2) + 8*q**(69/2) - 7*q**(67/2) + 8*q**(65/2) - 6*q**(63/2) + 10*q**(61/2) - 14*q**(59/2) + 12*q**(57/2) - 13*q**(55/2) + 14*q**(53/2) - 15*q**(51/2) + 12*q**(49/2) - 12*q**(47/2) + 20*q**(45/2) + 20*q**(41/2) - 12*q**(39/2) + 12*q**(37/2) - 15*q**(35/2) + 14*q**(33/2) - 13*q**(31/2) + 12*q**(29/2) - 14*q**(27/2) + 10*q**(25/2) - 6*q**(23/2) + 8*q**(21/2) - 7*q**(19/2) + 8*q**(17/2) - 9*q**(15/2) + 4*q**(13/2) - 4*q**(11/2) + 6*q**(9/2) + 4*q**(5/2) - 2*sqrt(q) - q**43 - 2*q**42 + 6*q**41 + 2*q**40 - 2*q**39 - 6*q**38 + 2*q**37 + q**36 - 3*q**35 + q**33 + 3*q**32 + 15*q**31 - q**30 + 19*q**29 - 15*q**28 + 17*q**27 - 18*q**26 + 7*q**25 - 14*q**24 + 7*q**23 + 6*q**22 - 6*q**21 - 7*q**20 + 14*q**19 - 7*q**18 + 18*q**17 - 17*q**16 + 15*q**15 - 19*q**14 + q**13 - 15*q**12 - 3*q**11 - q**10 + 3*q**8 - q**7 - 2*q**6 + 6*q**5 + 2*q**4 - 2*q**3 - 6*q**2 + 2*q + 1)/(32*q**23 + 96*q**22 + 96*q**21 + 32*q**20)",
-      "shift": 0,
-      "denom_in_u": "32*u**46 + 96*u**44 + 96*u**42 + 32*u**40",
-      "p_in_u": "-u**86 - 2*u**85 - 2*u**84 + 6*u**82 + 4*u**81 + 2*u**80 - 2*u**78 + 6*u**77 - 6*u**76 - 4*u**75 + 2*u**74 + 4*u**73 + u**72 - 9*u**71 - 3*u**70 + 8*u**69 - 7*u**67 + u**66 + 8*u**65 + 3*u**64 - 6*u**63 + 15*u**62 + 10*u**61 - u**60 - 14*u**59 + 19*u**58 + 12*u**57 - 15*u**56 - 13*u**55 + 17*u**54 + 14*u**53 - 18*u**52 - 15*u**51 + 7*u**50 + 12*u**49 - 14*u**48 - 12*u**47 + 7*u**46 + 20*u**45 + 6*u**44 - 6*u**42 + 20*u**41 - 7*u**40 - 12*u**39 + 14*u**38 + 12*u**37 - 7*u**36 - 15*u**35 + 18*u**34 + 14*u**33 - 17*u**32 - 13*u**31 + 15*u**30 + 12*u**29 - 19*u**28 - 14*u**27 + u**26 + 10*u**25 - 15*u**24 - 6*u**23 - 3*u**22 + 8*u**21 - u**20 - 7*u**19 + 8*u**17 + 3*u**16 - 9*u**15 - u**14 + 4*u**13 - 2*u**12 - 4*u**11 + 6*u**10 + 6*u**9 + 2*u**8 - 2*u**6 + 4*u**5 - 6*u**4 + 2*u**2 - 2*u + 1",
-      "deg_p_u": 86,
-      "habiro_coefficients": [
-        {
-          "m": 0,
-          "a_m": "32",
-          "deg_a_m": 0,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 1,
-          "a_m": "-1072*u - 1104",
-          "deg_a_m": 1,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 2,
-          "a_m": "10852*u**2 + 11192*u + 11556",
-          "deg_a_m": 2,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 3,
-          "a_m": "-49200*u**3 - 51684*u**2 - 54364*u - 57152",
-          "deg_a_m": 3,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 4,
-          "a_m": "121387*u**4 + 130272*u**3 + 139535*u**2 + 149320*u + 159666",
-          "deg_a_m": 4,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 5,
-          "a_m": "-179141*u**5 - 195879*u**4 - 213968*u**3 - 233399*u**2 - 254230*u - 276545",
-          "deg_a_m": 5,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 6,
-          "a_m": "163337*u**6 + 182478*u**5 + 203461*u**4 + 226489*u**3 + 251736*u**2 + 279375*u + 309539",
-          "deg_a_m": 6,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 7,
-          "a_m": "-90879*u**7 - 104213*u**6 - 119110*u**5 - 135818*u**4 - 154523*u**3 - 175625*u**2 - 199063*u - 225170",
-          "deg_a_m": 7,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 8,
-          "a_m": "28805*u**8 + 34129*u**7 + 40383*u**6 + 47612*u**5 + 55906*u**4 + 65420*u**3 + 76440*u**2 + 89024*u + 103370",
-          "deg_a_m": 8,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 9,
-          "a_m": "-4162*u**9 - 5286*u**8 - 6625*u**7 - 8243*u**6 - 10225*u**5 - 12597*u**4 - 15410*u**3 - 18745*u**2 - 22725*u - 27433",
-          "deg_a_m": 9,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 10,
-          "a_m": "9*u**10 + 65*u**9 + 156*u**8 + 292*u**7 + 466*u**6 + 680*u**5 + 970*u**4 + 1363*u**3 + 1851*u**2 + 2443*u + 3201",
-          "deg_a_m": 10,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 11,
-          "a_m": "32*u**11 + 46*u**10 + 56*u**9 + 65*u**8 + 72*u**7 + 84*u**6 + 94*u**5 + 100*u**4 + 95*u**3 + 98*u**2 + 90*u + 71",
-          "deg_a_m": 11,
-          "integral": true,
-          "remainder_nonzero": false
-        },
-        {
-          "m": 12,
-          "a_m": "-u**8 - 3*u**7 - 6*u**6 - 9*u**5 - 9*u**4 - 13*u**3 - 17*u**2 - 23*u - 30",
-          "deg_a_m": 8,
-          "integral": true,
-          "remainder_nonzero": false
-        }
-      ],
-      "all_integral": true,
-      "reconstruction_matches": true,
-      "tr_M_at_q0": 0.3882864715477134
+      "tr_M_at_q0": 0.9232332299116371
     }
-  },
-  "engine": "python",
-  "scriptFile": "habiro_coefficients_atomic.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  }
 }
