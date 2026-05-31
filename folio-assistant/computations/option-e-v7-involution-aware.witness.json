@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-05-31T13:43:11.921812+00:00",
+  "computedAt": "2026-05-31T22:29:03.432729+00:00",
   "computation": "option-e-v7-involution-aware",
   "description": "Option E v7: involution-aware \u0394_\u03bb probe. Tests partition-transpose \u03bb \u2194 \u03bb\u1d40 symmetry (self-conjugate + bar-(anti)symmetric combinations) with 5 scale candidates (m_e, \u03bc\u2080, \u03bc\u2080\u00b7\u210f_q, m_\u03c0, m_\u03c0\u00b7\u210f_q) \u00d7 7 involution sums. Addresses user question 'are we using involution / bar / skew symmetry appropriately?'",
   "scriptFile": "option_e_v7_involution_aware.py",
