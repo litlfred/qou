@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T19:12:20.308254+00:00",
-  "commitSha": "58bb91b92f189d7771161ef8f1e8a0823e5b9c91",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-31T04:40:20.300556+00:00",
+  "commitSha": "2ef5d143668e076e94d14a322084b6a6c9aa7c65",
   "assertions": [
     {
       "name": "H2 binding positive",
@@ -38,95 +38,141 @@
       "expected": true,
       "passed": true,
       "source": "Frobenius LP feasibility"
+    },
+    {
+      "name": "LP solution Frobenius-valid (xᵀGx ≥ 0)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "sdp_moment_lift"
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 706,
   "computation": "molecular-frobenius-lp",
   "scriptFile": "molecular-frobenius-lp.py",
   "scriptHash": "372cbd29bb31",
-  "scriptCommitSha": "2c2b543cd51379021ac0b229afe1f944af4cb57f",
+  "scriptCommitSha": "626c2bb856bbfa1ca647bd7d5bc36c8113f8825e",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Molecular covalent bonds derived from Frobenius LP dual. Bond operators selected by: (1) Frobenius positivity Gx >= 0, (2) minimum Markov trace among feasible operators. Zero fitted parameters.",
   "contentBlock": "def:molecular-braid",
   "parameters": {
-    "q": 1.1099785955541805,
-    "E_mol_eV": 6.729337493682183,
+    "q": 1.1099785827513808,
+    "E_mol_eV": 6.729338575040661,
     "gram_eigenvalues": [
-      -0.8550672738297336,
-      0.1017966817750354,
-      0.8550672738297332,
-      0.8550672738297339,
-      0.8550672738297339,
-      3.4769498654803237
+      -0.8550672621298654,
+      0.10179667084987284,
+      0.8550672621298651,
+      0.8550672621298653,
+      0.8550672621298654,
+      3.476949805470147
     ]
   },
   "data": {
     "bond_H-H": {
       "ops": "s1i,s0i,s0i,s1i",
       "n_crossings": 4,
-      "E_eV": 16.145397533141402,
-      "tr_M": 0.02420866963694014,
+      "E_eV": 16.145389637951023,
+      "tr_M": 0.024208708046326265,
       "frobenius_passes": true
     },
     "bond_C-H": {
       "ops": "s1i,s1i,s1i,s1i",
       "n_crossings": 4,
-      "E_eV": 4.334891076285239,
-      "tr_M": 21.715912195131644,
+      "E_eV": 4.3348913145035475,
+      "tr_M": 21.715902251441506,
       "frobenius_passes": true
     },
     "bond_C-O": {
       "ops": "s1i,s1i,s1i,s0i",
       "n_crossings": 4,
-      "E_eV": 3.5818385194456868,
-      "tr_M": 9431.71175441243,
+      "E_eV": 3.581838830751522,
+      "tr_M": 9431.70107997799,
       "frobenius_passes": true
     },
     "bond_C-C": {
       "ops": "s1i,s1i,s1i,s0i",
       "n_crossings": 4,
-      "E_eV": 3.9376271265882963,
-      "tr_M": 2016.3655924955362,
+      "E_eV": 3.9376274975812504,
+      "tr_M": 2016.3636573424196,
       "frobenius_passes": true
     },
     "bond_O-H": {
       "ops": "s1i,s1i,s1i,s1i",
       "n_crossings": 4,
-      "E_eV": 3.8950176005932744,
-      "tr_M": 107.50484108243506,
+      "E_eV": 3.895017835825102,
+      "tr_M": 107.50477242863438,
       "frobenius_passes": true
     },
     "molecules": [
       {
         "name": "H2",
-        "predicted_eV": "16.1453975331414",
+        "predicted_eV": "16.145389637951",
         "observed_eV": 4.478
       },
       {
         "name": "CO",
-        "predicted_eV": "10.7455155583371",
+        "predicted_eV": "10.7455164922546",
         "observed_eV": 11.09
       },
       {
         "name": "CO2",
-        "predicted_eV": "14.3273540777827",
+        "predicted_eV": "14.3273553230061",
         "observed_eV": 16.56
       },
       {
         "name": "CH4",
-        "predicted_eV": "17.339564305141",
+        "predicted_eV": "17.3395652580142",
         "observed_eV": 17.9
       },
       {
         "name": "C6H6",
-        "predicted_eV": "61.4479905970061",
+        "predicted_eV": "61.4479953652525",
         "observed_eV": 57.4
+      }
+    ],
+    "sdp_lift": [
+      {
+        "label": "molecular-frobenius/unit-net",
+        "lp_status": "optimal",
+        "sdp_status": "optimal",
+        "lp_objective": 2.220446049250313e-16,
+        "sdp_objective": -1.4465468830962677e-11,
+        "lp_x": [
+          -6.899006309384499,
+          3.8167942242192594,
+          3.81679422421926,
+          -3.63351597062627,
+          -6.101066168427749,
+          10.0
+        ],
+        "sdp_x": [
+          -0.5530957743298885,
+          0.1876996541677207,
+          0.18769965662862384,
+          0.469646554523067,
+          0.4696465562886059,
+          0.23840335272187022
+        ],
+        "lp_xTGx": 50.90410186250678,
+        "sdp_xTGx": 1.3003910624497461,
+        "sdp_tr_GX": 6.10327947229025,
+        "sdp_moment_rank": 6,
+        "gram_min_eigenvalue": -0.8550672621298654
       }
     ]
   }
