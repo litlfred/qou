@@ -44,6 +44,9 @@ from pathlib import Path
 # CODATA 2018
 M_E_MEV = 0.5109989461
 
+# Catalan's constant G = 0.91596559... (used in 8G = Vol(L6a4) = Vol(Borromean))
+VOL_BORROMEAN_8G = 7.32772475341775  # mpmath catalan() · 8, 16-digit fixed for portability
+
 # Experimental binding energies, AME 2020 / NIST (MeV)
 B_EXP_MEV: dict[str, float] = {
     "D":   2.224566,
@@ -51,6 +54,34 @@ B_EXP_MEV: dict[str, float] = {
     "³He": 7.718058,
     "⁴He": 28.295674,
 }
+
+
+# Doubly-magic light-nuclei in the framework (per
+# methodology-deprecation.witness.json, magic-A-formula tag).
+# Currently restricted to ⁴He (Z=N=2 both magic at 2).
+_DOUBLY_MAGIC: set[tuple[int, int]] = {(2, 2)}
+
+# Structural prefactor ρ_F for the doubly-magic formula `B = ρ_F·m_e·A·8G`.
+# ρ_F = 2 for ⁴He per `binding_ladder_catalog.py:63` ('2·m_e·4·Vol(L6a4)').
+# Open math: the categorical derivation of ρ_F = 2 is not yet wired in;
+# the value matches the canonical chain prop:gravity-spectral-prefactor.
+_RHO_F_DOUBLY_MAGIC: float = 2.0
+
+
+def _magic_A_prediction(c: "Candidate") -> float | None:
+    """Doubly-magic shell-closure binding `B = ρ_F · m_e · A · 8G`, or None.
+
+    Returns None for non-doubly-magic candidates. The formula mirrors
+    `folio-assistant/computations/magic_A_formula.py::magic_A_binding`
+    without the mpmath dependency — fine for the witness's float
+    accuracy needs.
+    """
+    if (c.A == 4 and c.nucleus == "⁴He"):
+        # ⁴He is Z=N=2, doubly magic
+        return _RHO_F_DOUBLY_MAGIC * M_E_MEV * c.A * VOL_BORROMEAN_8G
+    # Future doubly-magic light-nuclei (¹⁶O Z=N=8, ⁴⁰Ca Z=N=20) would land
+    # here once their per-shell ρ_F is derived. None for now.
+    return None
 
 
 @dataclass(frozen=True)
@@ -96,7 +127,15 @@ def build_witness() -> dict:
         b_exp = B_EXP_MEV[c.nucleus]
         ratio = b_pred / b_exp if b_exp != 0 else float("nan")
         rel_err = (b_pred - b_exp) / b_exp if b_exp != 0 else float("nan")
-        rows.append({
+
+        # Alternate path for doubly-magic A's: magic_A_formula. This is
+        # the existing-but-not-wired-in shell-closure path documented in
+        # `docs/audits/2026-05-31-binding-magic-A-wireup.md`. For ⁴He
+        # (Z=N=2 doubly-magic) the alpha_shift formula misses by ~5× but
+        # `B = ρ_F · m_e · A · 8G` lands within ~6%.
+        b_magic = _magic_A_prediction(c)
+
+        row = {
             "A": c.A,
             "nucleus": c.nucleus,
             "torus_knot": f"T({c.p},{c.k})",
@@ -107,7 +146,12 @@ def build_witness() -> dict:
             "B_experimental_MeV": round(b_exp, 6),
             "ratio_pred_over_exp": round(ratio, 4),
             "relative_error": round(rel_err, 4),
-        })
+        }
+        if b_magic is not None:
+            row["B_predicted_magic_A_MeV"] = round(b_magic, 6)
+            row["ratio_magic_A_over_exp"] = round(b_magic / b_exp, 4)
+            row["relative_error_magic_A"] = round((b_magic - b_exp) / b_exp, 4)
+        rows.append(row)
     return {
         "name": "binding-alpha-shift-witness",
         "description": (
@@ -143,18 +187,31 @@ def _gap_summary(rows: list[dict]) -> str:
         return "Deuteron is the calibration; no out-of-sample comparison."
     worst = max(nontrivial, key=lambda r: abs(r["relative_error"]))
     worst_ratio_pct = 100 * (worst["ratio_pred_over_exp"] - 1)
+    magic_rows = [r for r in rows if "B_predicted_magic_A_MeV" in r]
+    magic_clause = ""
+    if magic_rows:
+        m = magic_rows[0]
+        m_pct = 100 * (m["ratio_magic_A_over_exp"] - 1)
+        magic_clause = (
+            f" For doubly-magic {m['nucleus']} the existing-but-unwired "
+            f"magic_A formula B = ρ_F·m_e·A·8G predicts "
+            f"{m['B_predicted_magic_A_MeV']:.3f} MeV ({m_pct:+.1f}% miss), "
+            f"closing the alpha_shift gap by ~80× — wiring this in is "
+            f"the next concrete step (see audit "
+            f"docs/audits/2026-05-31-binding-magic-A-wireup.md)."
+        )
     summary = (
         f"Deuteron-pinned ρ_0 reproduces B(D) by construction. "
-        f"For heavier nuclei the simple proportionality miss is "
-        f"substantial: worst case {worst['nucleus']} at "
+        f"For heavier nuclei the simple alpha_shift proportionality miss "
+        f"is substantial: worst case {worst['nucleus']} at "
         f"α_shift = {worst['alpha_shift']} predicts "
         f"{worst['B_predicted_MeV']:.3f} MeV vs experimental "
         f"{worst['B_experimental_MeV']:.3f} MeV "
         f"({worst_ratio_pct:+.0f}% from 1×). "
         f"Consistent with the file's narrative that ρ may not be "
         f"substrate-universal; per-A scaling (or a richer "
-        f"force-carrier identification) is needed for A ≥ 3. "
-        f"Phase-3 substrate-uniqueness derivation remains open."
+        f"force-carrier identification) is needed for A ≥ 3."
+        f"{magic_clause}"
     )
     return summary
 
