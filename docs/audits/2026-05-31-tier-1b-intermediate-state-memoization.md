@@ -70,8 +70,8 @@ is structurally capped at ~1.08× — the `Z!·N!` "redundancy" does not yield a
 Profiling the reference fold (`hecke_laurent_fast.incremental_reduced_element_fast`,
 crossing-by-crossing, instrumented at `/tmp/profile_fold.py`) shows the wall is
 **term-count explosion**, not orbit-translate redundancy. The reduced element's
-term count *doubles per nucleon block* and `reduce_laurent_rules` (R1+R2+R3, no
-R4) does not collapse it:
+term count *quadruples per nucleon block* (×4 = 2², i.e. ≈2^(2A+2): 2¹⁰→2¹²
+from ⁴He to ⁵Li) and `reduce_laurent_rules` (R1+R2+R3, no R4) does not collapse it:
 
 | atom | A | final terms | wall | per-block wall (s) |
 |------|---|------------:|-----:|--------------------|
@@ -130,7 +130,7 @@ prediction.
 ### 5. The real lever for ⁷Li+ is not memoisation
 
 The path to heavier atoms is **reducing the final-block reduce cost itself**
-(the ≈2^(2A) term explosion), via Tier 1.A (the Rust reduce, already landed) +
+(the ≈2^(2A+2) term explosion), via Tier 1.A (the Rust reduce, already landed) +
 a term-bounding *complete* reduce (R4 / Gröbner–Shirshov in Rust), **or** the
 character path `tr_M = Σ_λ w_λ χ_λ` (`mass_at_3A_proper.markov_trace_3A`,
 Rust `chi_lambda_all_partitions`) which sidesteps the incremental reduce
