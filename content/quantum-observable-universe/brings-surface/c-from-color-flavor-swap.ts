@@ -11,7 +11,7 @@ export default conjecture({
   uses: [
     "conj:cpt-d6-d7-d8-closure",
     "conj:inter-nucleon-channel-color-tube",
-    "prop:cpt-orbit-closure-density",
+    "conj:cpt-orbit-closure-density",
     "def:bar-involution",
   ],
   cites: [

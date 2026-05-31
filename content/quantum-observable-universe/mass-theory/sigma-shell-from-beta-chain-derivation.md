@@ -30,7 +30,7 @@ $$
  [`y-lambda-wenzl-bridge-symbolic-witness.json`](../../../folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json));*
 - *$\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)$ is the **Hoefsmit
  character** of the atom braid in the irrep $\rho_{\lambda_{\mathrm{shell}}}$
- ([prop:hoefsmit-scattering-pipeline](#prop:hoefsmit-scattering-pipeline));
+ ([conj:hoefsmit-scattering-pipeline](#conj:hoefsmit-scattering-pipeline));
  computed for the deuteron via
  [`hecke_character_symbolic.q_character_on_braid_word`](../../../folio-assistant/computations/hecke_character_symbolic.py).*
 
@@ -151,9 +151,9 @@ from the substrate:*
 - *$y_{\lambda}(q_0)$ — closed form per
  [`prop:y-lambda-closed-form-wenzl-bridge`](#prop:y-lambda-closed-form-wenzl-bridge);*
 - *$\chi^\lambda(\mathcal{B}_K)$ — Hoefsmit character per
- [`prop:hoefsmit-scattering-pipeline`](#prop:hoefsmit-scattering-pipeline);*
+ [`conj:hoefsmit-scattering-pipeline`](#conj:hoefsmit-scattering-pipeline);*
 - *$|\mathrm{tr}_M(\mathcal{B}_K)|$ — canonical Markov trace per
- [`thm:gs-graded-markov-trace-existence`](#thm:gs-graded-markov-trace-existence).*
+ [`conj:gs-graded-markov-trace-existence`](#conj:gs-graded-markov-trace-existence).*
 
 *No Q_β, no AME chain manifold, no fitted parameters. The 780 ppb
 floor from CAL-2 (Q_β uncertainty) **does not apply** to this

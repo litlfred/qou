@@ -13,6 +13,6 @@ export default conjecture({
     "axiom-relaxation",
     "open-problem",
   ],
-  uses: ["prop:archimedean-stpart"],
+  uses: ["conj:archimedean-stpart"],
   cites: ["robinson1966"],
 });

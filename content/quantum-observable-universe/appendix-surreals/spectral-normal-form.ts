@@ -16,7 +16,7 @@ export default conjecture({
   ],
   uses: [
     "rem:conway-normal-form",
-    "prop:classical-limit-stpart",
+    "conj:classical-limit-stpart",
   ],
   cites: [
     "conway1976",

@@ -36,7 +36,7 @@ The total twist $\mathrm{tw}(\sigma) = k$ constrains the
 winding of $\sigma$ around the trefoil: it is the self-linking
 number of the displaced curve $T_{2,3} + \epsilon\sigma$
 relative to the Seifert surface.  This is the global R-I count
-([Reidemeister invariance](#prop:reidemeister-mass-invariance)).
+([Reidemeister invariance](#conj:reidemeister-mass-invariance)).
 
 **The $q$-Laplacian on the trefoil.**
 

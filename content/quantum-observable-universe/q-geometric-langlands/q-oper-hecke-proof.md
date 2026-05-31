@@ -1,7 +1,7 @@
 The $q$-oper $\nabla_q$ defines a point of
 $\mathrm{LocSys}_{\check{G}_q}(X)$.  By the conjectured equivalence
 $\mathbb{L}_q$
-([$q$-GL conjecture](#prop:q-geometric-langlands)), its
+([$q$-GL conjecture](#conj:q-geometric-langlands)), its
 pre-image $\mathcal{M}_{\nabla_q} =
 \mathbb{L}_q^{-1}(\delta_{\nabla_q})$ is a
 $q$-$\mathcal{D}$-module on $\mathrm{Bun}_{G_q}$.  The Hecke

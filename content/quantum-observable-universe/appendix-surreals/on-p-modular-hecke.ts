@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:on-p-modular-hecke",
+export default conjecture({
+  label: "conj:on-p-modular-hecke",
   title:
     "Modular Hecke at $q = \\zeta_p$ corresponds to nimber surreals $\\mathbf{On}_p$",
   lean: { ref: "qou:QOU.AppendixSurreals.OnPModularHecke", validation: "stub" },

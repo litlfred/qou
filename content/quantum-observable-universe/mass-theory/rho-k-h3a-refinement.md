@@ -1,7 +1,7 @@
 **Proposition (H_{3A} Wedderburn refinement of $\rho_K$ beyond leading-order).**
 *Let $K$ be an $A$-nucleon atom with braid word $\mathcal{B}_K \in B_{3A}$,
 and let $\mathrm{tr}_M$ denote the canonical Markov trace on $H_{3A}(q)$
-([gs-graded Markov trace existence](#thm:gs-graded-markov-trace-existence)).
+([gs-graded Markov trace existence](#conj:gs-graded-markov-trace-existence)).
 Then the categorical density
 $\rho_K = M(K) / (m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)|)$
 admits the **Wedderburn-Schur decomposition**
@@ -27,7 +27,7 @@ $$
   ([Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge));*
 - *$\chi^\lambda(\mathcal{B}_K)$ is the **Hoefsmit character** of $\mathcal{B}_K$
   in the irrep $\rho_\lambda$
-  ([Hoefsmit scattering pipeline](#prop:hoefsmit-scattering-pipeline));*
+  ([Hoefsmit scattering pipeline](#conj:hoefsmit-scattering-pipeline));*
 - *$\Delta_\lambda(K) \in \mathbb{R}$ is the **block-binding correction**
   encoding how the per-$\lambda$ Wedderburn block contributes to the
   total mass beyond the constituent piece.*
@@ -157,7 +157,7 @@ $$
 - *To reach 1 ppb mass-prediction accuracy, one must compute
   $\Delta_\lambda(K)$ for every $\lambda \vdash 3A$ in the
   Plancherel-dominant cone (per
-  [`prop:hoefsmit-scattering-pipeline`](#prop:hoefsmit-scattering-pipeline) §142 –
+  [`conj:hoefsmit-scattering-pipeline`](#conj:hoefsmit-scattering-pipeline) §142 –
   bound MAE$(k) \le C_0 \cdot [2]_q^{-2(k-3)}$).  At the substrate
   $q_0 = 1.109978595554181\ldots$ (50 dps), $[2]_{q_0}^2 \approx 4.04$, so each level
   reduces residual by $\sim 4\times$; nine levels suffice to drop

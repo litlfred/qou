@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:geom-yekutieli-alignment",
+export default conjecture({
+  label: "conj:geom-yekutieli-alignment",
   title:
     "Geometric invariant $\\mathrm{Geom}(K)$ as rigid dualizing evaluation",
   lean: { ref: "qou:QOU.BraidKnot.geom_yekutieli_alignment",

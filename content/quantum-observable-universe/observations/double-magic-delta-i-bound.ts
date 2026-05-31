@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:double-magic-delta-i-bound",
+export default conjecture({
+  label: "conj:double-magic-delta-i-bound",
   title:
     "Proposition 9. Empirical double-magic isotopes satisfy $|\\Delta i| \\leq 1$ across Bring shell indices",
   lean: {

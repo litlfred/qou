@@ -8,7 +8,7 @@ construction** (i.e., the bar Z/2 action is realised as a Cartan-
 fold symmetry).  Stable matter = fixed points of the folded crystal;
 antimatter = the $\iota$-orbit complement.  Under this folding, the
 composite CPT operator
-([`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density))
+([`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density))
 decomposes naturally as a tensor of:*
 
 - *C from color-sheet flavor conjugation
@@ -122,6 +122,6 @@ class TypeBFoldingCPT (M : Type*) [BrCategory M] [Crystal M] where
   [`conj:p-from-braid-mirror`](p-from-braid-mirror.md),
   [`conj:t-from-trace-cyclicity`](t-from-trace-cyclicity.md)
 - Composite CPT:
-  [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
+  [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
 - Wigner SU(4) fixed-point story: [`conj:wigner-su4-from-spin-isospin`](wigner-su4-from-spin-isospin.md) (D11)
 - [Brundan-Kleshchev 2009; Kashiwara 1991; Lecouvey 2007 for Type-B crystals]

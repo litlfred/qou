@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:hydrogen-shell-writhe",
+export default conjecture({
+  label: "conj:hydrogen-shell-writhe",
   title:
     "Electron shell number equals writhe level of the trefoil embedding",
   tags: ["hydrogen", "shell", "writhe", "trefoil", "reidemeister", "orbital"],

@@ -1,6 +1,6 @@
 **Numerical check at $q_0 = 1.109978595554181\ldots$ (50 dps).**
 The Hoefsmit pipeline
-([Hoefsmit](#prop:hoefsmit-scattering-pipeline)) computes
+([Hoefsmit](#conj:hoefsmit-scattering-pipeline)) computes
 $\chi_\lambda(\beta_s), \chi_\lambda(\beta_w)$ in seminormal form.
 At strand count $n = 9$ the dominant blocks are the hook partitions
 $(8,1)$, $(7,1,1)$ and the rectangular $(5,4)$.  Substituting the

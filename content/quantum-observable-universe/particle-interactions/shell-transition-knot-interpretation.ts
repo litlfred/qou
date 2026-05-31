@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:shell-transition-knot",
+  interprets: "conj:shell-transition-knot",
   label: "rem:shell-transition-knot-interpretation",
   title: "Shell-transition threshold at $N = 3$",
   tags: [
@@ -11,5 +11,5 @@ export default remark({
     "crossing-number",
     "spin-orbit",
   ],
-  uses: ["prop:shell-transition-knot"],
+  uses: ["conj:shell-transition-knot"],
 });

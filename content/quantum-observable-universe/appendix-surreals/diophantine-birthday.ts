@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:diophantine-birthday",
+export default conjecture({
+  label: "conj:diophantine-birthday",
   title:
     "Algebraic vs transcendental numbers are separated by birthday trajectory",
   lean: { ref: "qou:QOU.AppendixSurreals.DiophantineBirthday", validation: "stub" },

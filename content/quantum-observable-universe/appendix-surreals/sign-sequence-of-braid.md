@@ -114,7 +114,7 @@ Bridge to existing structure:
 - It refines the Jones polynomial: $J_K(q)$ is the Markov trace
   averaged over tableau choices, while $\mathrm{surr}(\beta, t)$ is
   the un-averaged trajectory through the Hoefsmit eigenspace tree
-  ([Jones polynomial birthday refinement](#prop:jones-birthday)).
+  ([Jones polynomial birthday refinement](#conj:jones-birthday)).
 - It places knot complexity on a transfinite scale: knots with
   arbitrarily long sign sequences live at higher birthdays than
   any classical real-valued invariant can reach.

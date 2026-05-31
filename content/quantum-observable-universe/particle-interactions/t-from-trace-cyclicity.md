@@ -81,7 +81,7 @@ class TFromTraceCyclicity (M : Type*) [BrCategory M] [Hecke M] where
 
 ## Consumers / downstream
 
-- [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
+- [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
   becomes a corollary of CPT = C $\cdot$ P $\cdot$ T once D6 / D7 / D8 close.
 - The Markov-trace cyclicity axiom
   [`thm:jones-markov-trace`](#thm:jones-markov-trace) supplies the
@@ -108,5 +108,5 @@ class TFromTraceCyclicity (M : Type*) [BrCategory M] [Hecke M] where
   [`conj:p-from-braid-mirror`](p-from-braid-mirror.md) (D7)
 - Markov-trace cyclicity:
   [`thm:jones-markov-trace`](jones-markov-trace.md)
-- Composite CPT: [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
+- Composite CPT: [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
 - Bar-involution: [`bar-involution.md`](bar-involution.md)

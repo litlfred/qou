@@ -12,6 +12,6 @@ export default remark({
     "jones-polynomial",
   ],
   interprets: "def:quantum-observable-universe",
-  uses: ["prop:hoefsmit-scattering-pipeline"],
+  uses: ["conj:hoefsmit-scattering-pipeline"],
   cites: ["conway1976", "gonshor1986", "costin-ehrlich-friedman2015"],
 });

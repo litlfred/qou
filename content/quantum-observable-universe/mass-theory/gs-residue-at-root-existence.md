@@ -13,7 +13,7 @@ $$
 dilogarithm
 ([quantum dilogarithm stratified](#prop:quantum-dilogarithm-stratified))
 and $\mathrm{tr}_{M, \ell}$ is the graded Markov trace at level $\ell$
-([graded Markov trace existence](#thm:gs-graded-markov-trace-existence)).
+([graded Markov trace existence](#conj:gs-graded-markov-trace-existence)).
 The value depends only on $\ell$ and the equivalence class of $T_w$
 modulo $J^{\ell+1}(q)$.*
 

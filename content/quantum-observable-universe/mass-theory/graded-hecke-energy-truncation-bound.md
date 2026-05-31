@@ -19,7 +19,7 @@ of $K$ at the substrate value $q_0$.*
 
 ## Proof
 
-By [graded Markov trace existence](#thm:gs-graded-markov-trace-existence),
+By [graded Markov trace existence](#conj:gs-graded-markov-trace-existence),
 the trace $\mathrm{tr}_M$ descends to a sequence of functionals
 $\mathrm{tr}_{M, \ell} \colon J^\ell(q) / J^{\ell+1}(q) \to \mathbb{R}$
 along the GS confinement filtration $J^\bullet(q)$. By the

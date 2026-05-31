@@ -70,7 +70,7 @@ $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 **Practical consequence.**
 *Numerical pipelines need only enumerate central idempotents $e_\lambda$,
 compute their GB-depth, evaluate $\chi_\lambda$ via Hoefsmit seminormal
-form ([Hoefsmit pipeline](#prop:hoefsmit-scattering-pipeline)), and
+form ([Hoefsmit pipeline](#conj:hoefsmit-scattering-pipeline)), and
 sum $\sum_\lambda w_\lambda \cdot \chi_\lambda(\beta) / \dim_q V_\lambda$
 binning by $\mathrm{depth}(\lambda)$.  No higher-page differentials
 $d_r$ ($r \geq 1$) need ever be computed — they all vanish.*

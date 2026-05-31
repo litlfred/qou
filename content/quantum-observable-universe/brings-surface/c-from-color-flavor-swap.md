@@ -23,7 +23,7 @@ averaging of
 
 ## Why this disentangles D6 from CPT
 
-[`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
+[`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
 formalises the **composite** CPT action; the framework historically
 collapses C, P, T into the single bar-involution
 [`def:bar-involution`](#def:bar-involution) on Hecke generators
@@ -66,7 +66,7 @@ Specifically:
 
 When all three hold, $C$ is the well-defined Z/2 categorical symmetry
 acting on the color-sheet flavor data, and the CPT composite of
-[`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
+[`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
 factors as
 $\mathrm{CPT} = C \cdot P \cdot T$ in the natural order — three
 commuting Z/2 actions on the color-tube structure.
@@ -108,7 +108,7 @@ is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
 
 ## Consumers / downstream
 
-- [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
+- [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
   becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$
   once D6, D7, D8 are all closed.
 - The matter/antimatter sheet structure on Bring's quintic surface
@@ -143,7 +143,7 @@ is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
   D6 + D7 + D8)
 - Upstream class: [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)
   (PR [#1111](https://github.com/litlfred/qou/pull/1111) merged)
-- [`prop:cpt-orbit-closure-density`](#prop:cpt-orbit-closure-density)
+- [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
   (CPT composite already formalised)
 - [`bar-involution.md`](bar-involution.md) — the bar-involution =
   CPT composite identification at the algebraic level

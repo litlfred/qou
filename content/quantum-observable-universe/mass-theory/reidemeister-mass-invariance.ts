@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:reidemeister-mass-invariance",
+export default conjecture({
+  label: "conj:reidemeister-mass-invariance",
   title:
     "Reidemeister invariance of mass and binding energy",
   tags: [

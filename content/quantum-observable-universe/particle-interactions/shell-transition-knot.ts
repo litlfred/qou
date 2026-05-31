@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:shell-transition-knot",
+export default conjecture({
+  label: "conj:shell-transition-knot",
   title:
     "Stability pairs from Borromean spin-orbit shell-transition knots",
   tags: [
@@ -16,5 +16,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Braiding.stability_pairs_correct",
     validation: "not_checked",
   },
-  uses: ["prop:orbital-fourier-decomposition"],
+  uses: ["conj:orbital-fourier-decomposition"],
 });

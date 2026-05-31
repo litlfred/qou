@@ -95,7 +95,7 @@ $$
 *where the parent contains $\sigma_{\mathrm{shell}}$ (via
 [shell self-duality](#prop:shell-schur-weyl-self-duality)) and the
 daughter contains a **different** shell operator or a cross-shell
-transition ([shell-transition knot](#prop:shell-transition-knot)).
+transition ([shell-transition knot](#conj:shell-transition-knot)).
 The Q-value measures the **difference of shell-operator
 contributions**, not either side individually.*
 

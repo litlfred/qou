@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:q-geometric-langlands",
+  interprets: "conj:q-geometric-langlands",
   label: "rem:q-gl-physical-interpretation",
   title: "Physical interpretation of $q$-Geometric Langlands",
   uses: [],

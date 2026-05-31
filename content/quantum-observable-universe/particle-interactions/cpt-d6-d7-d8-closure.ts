@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "prop:cpt-orbit-closure-density",
+    "conj:cpt-orbit-closure-density",
     "def:bar-involution",
   ],
   cites: [
