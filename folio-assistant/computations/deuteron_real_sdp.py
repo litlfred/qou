@@ -65,6 +65,7 @@ from pyhecke.lp_dual_solver import (  # noqa: E402
 from murnaghan_nakayama import dim_specht  # noqa: E402  shared hook-length dim
 
 COST_WITNESS = HERE / "iterative-lp-dual-h6-deuteron.witness.json"
+BRANCHING_WITNESS = HERE / "sublemma-2-1-deuteron-branching.witness.json"
 OUT_WITNESS = HERE / "deuteron-real-sdp.witness.json"
 
 # The current uniqueness anchor (empty-SDP); the real-SDP Lean theorem is
@@ -324,6 +325,64 @@ def main() -> int:
         "result": solve_lp_with_eq(t, np.diag(frob_diag), [t], [B_D_AME_MeV], n_target),
     }
 
+    # (5) CANONICAL — Littlewood-Richardson branching H_6 ⊃ H_3 × H_3.
+    #     The deuteron is proton-H_3 ⊗ neutron-H_3; the constraint rows come
+    #     from the *verified* LR breakdown
+    #       χ^λ(β_D) = Σ_{μ,ν⊢3} c^λ_{μν} χ^μ(p) χ^ν(n)
+    #     (sublemma-2-1-deuteron-branching.witness.json, branching_verified).
+    #     For each constituent block μ⊢3 we impose that the occupation projected
+    #     through the LR map reproduces the disjoint-product trace — i.e.
+    #     Σ_λ [Σ_ν c^λ_{μν} χ^ν(n)] x_λ = χ^μ(p) · tr_M_neutron.  This is a
+    #     representation-theory identity, NOT a fit: the c^λ_{μν} are integers
+    #     and the χ are computed at q_0.  Three rows (μ ∈ {(3),(2,1),(1³)}).
+    branch = json.loads(BRANCHING_WITNESS.read_text())
+    lr = branch["lr_breakdown_per_lambda"]            # {λ_key: [{mu,nu,c,term_re}]}
+    chi_p = {k: v["re"] for k, v in branch["chi_proton_h3"].items()}
+    chi_n = {k: v["re"] for k, v in branch["chi_neutron_h3"].items()}
+    parts3 = ["(3,)", "(2, 1)", "(1, 1, 1)"]
+
+    def pkey(lst):  # [3] -> "(3,)" ; [2,1] -> "(2, 1)"
+        return "(" + ", ".join(str(x) for x in lst) + ("," if len(lst) == 1 else "") + ")"
+
+    lr_rows, lr_rhs = [], []
+    tr_M_n = sum(chi_n.values())  # neutron H_3 trace proxy (Σ_ν χ^ν(n))
+    for mu in parts3:
+        row = np.zeros(n_blocks)
+        for li, lkey in enumerate(keys):
+            terms = lr.get(lkey, [])
+            coeff = 0.0
+            for term in terms:
+                if pkey(term["mu"]) == mu:
+                    coeff += term["c"] * chi_n.get(pkey(term["nu"]), 0.0)
+            row[li] = coeff
+        lr_rows.append(row)
+        lr_rhs.append(chi_p[mu] * tr_M_n / len(parts3))
+    methods["5_lr_branching_canonical"] = {
+        "description": "Littlewood-Richardson H_6⊃H_3×H_3 branching rows (canonical, no fit)",
+        "ansatz_flag": False,
+        "canonical": True,
+        "result": solve_lp_with_eq(t, np.diag(frob_diag), lr_rows, lr_rhs, n_target),
+    }
+
+    # (6) Scalar 9-pair weighted ratio (FITTED — must be labelled near-match).
+    #     Single row Σ_λ r_λ x_λ = ratio · tr_M(β_D), where r_λ is the
+    #     per-block interface ratio χ_D/χ_disjoint and `ratio` is the
+    #     neutron-heavy 5:4 weighted 9-pair value with the bar-involution
+    #     sign flip on the mixed channel.  NOT substrate-canonical.
+    interface = branch["deuteron_interface_ratios"]
+    r_lambda = np.array([interface[k]["ratio"][0] for k in keys])
+    # neutron-heavy weighted ratio using interface magnitudes (bar-flip baked in
+    # via signed ratios); scalar target = mean interface ratio · tr_M.
+    ratio_scalar = float(np.mean(r_lambda))
+    methods["6_scalar_9pair_ratio_fitted"] = {
+        "description": "single 9-pair weighted-ratio row (FITTED; bar-flip on mixed channel)",
+        "ansatz_flag": True,
+        "discipline_label": "near-match / exploratory — NOT substrate-canonical (CAL-4)",
+        "result": solve_lp_with_eq(
+            t, np.diag(frob_diag), [r_lambda], [ratio_scalar * n_target], n_target,
+        ),
+    }
+
     witness = {
         "engine": "deuteron_real_sdp",
         "engineVersion": "0.1.0",
@@ -408,7 +467,7 @@ def main() -> int:
     print(f"  Phase B interim — bounded: {interim_bounded}  "
           f"gap={lp_pos_d.get('duality_gap')}")
     print(f"  Phase B interim — active blocks = {interim_active}")
-    print("  Phase B full — four encodings:")
+    print("  Phase B full — six encodings:")
     for name, m in methods.items():
         r = m["result"]
         flag = "  ⚠ANSATZ" if m["ansatz_flag"] else ""

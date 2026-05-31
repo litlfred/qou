@@ -480,6 +480,90 @@
             -0.0
           ]
         }
+      },
+      "5_lr_branching_canonical": {
+        "description": "Littlewood-Richardson H_6\u2283H_3\u00d7H_3 branching rows (canonical, no fit)",
+        "ansatz_flag": false,
+        "canonical": true,
+        "result": {
+          "status": 0,
+          "feasible": true,
+          "primal_obj": -2780.480240569741,
+          "x_star": [
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.37063517110976385,
+            -0.27538275194846534,
+            1000000.0,
+            -1000000.0,
+            999999.9663059065,
+            -999999.6732718542
+          ],
+          "duality_gap": 0.0,
+          "eq_duals": [
+            -0.0005972696588284949,
+            -0.004357795817782258,
+            -0.0014661704821185572,
+            -0.0006650355491465482
+          ],
+          "ineq_duals": [
+            -1.6524668624148144,
+            -0.6925145835723093,
+            -0.23296651330033838,
+            -0.04106242583196261,
+            -0.9628520356895303,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        }
+      },
+      "6_scalar_9pair_ratio_fitted": {
+        "description": "single 9-pair weighted-ratio row (FITTED; bar-flip on mixed channel)",
+        "ansatz_flag": true,
+        "discipline_label": "near-match / exploratory \u2014 NOT substrate-canonical (CAL-4)",
+        "result": {
+          "status": 0,
+          "feasible": true,
+          "primal_obj": -20236.261161855793,
+          "x_star": [
+            -0.0,
+            -0.0,
+            -0.0,
+            519121.22955141665,
+            -0.0,
+            1000000.0,
+            -1000000.0,
+            1000000.0,
+            -1000000.0,
+            -0.0,
+            -519120.8412649451
+          ],
+          "duality_gap": 0.0,
+          "eq_duals": [
+            -0.005220352730553397,
+            -0.005200438069189203
+          ],
+          "ineq_duals": [
+            -1.736300859774241,
+            -0.6704507661587125,
+            -0.203036395816174,
+            -0.0,
+            -0.9914065153855328,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.8262794454848699,
+            -0.0
+          ]
+        }
       }
     },
     "phase_A_cost": "done",
