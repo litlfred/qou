@@ -46,6 +46,9 @@ import QOU.BraidKnot.AppliedHelium4Uniqueness
 import QOU.BraidKnot.AppliedLithium6Uniqueness
 import QOU.BraidKnot.AppliedBeryllium9Uniqueness
 import QOU.BraidKnot.AppliedBoron11Uniqueness
+import QOU.BraidKnot.AppliedCarbon12Uniqueness
+import QOU.BraidKnot.AppliedNitrogen14Uniqueness
+import QOU.BraidKnot.AppliedOxygen16Uniqueness
 import QOU.BraidKnot.PerNucleusMassDerivation
 import QOU.BraidKnot.frobenius_antipode_unifies
 import QOU.BraidKnot.CommutativeCrossingEnergy
