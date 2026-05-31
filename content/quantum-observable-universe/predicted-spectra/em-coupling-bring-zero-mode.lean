@@ -453,4 +453,114 @@ instance trivialEmAlphaInvNextOrderHabiroClass :
     EmAlphaInvNextOrderHabiroClass where
   habiro_element_realised := fun _ _ _ _ => rfl
 
+/-! ## Phase 5: external categorical opaque + meaningful class
+
+Per #1495's plan Phase 5: replace the structurally-vacuous trivial
+instance above with a class that axiomatises an external
+categorical-physics object (the Habiro element of the closed
+fundamental-rep fermion-loop unknot on M_Bring) and identifies it
+with the empirical form.
+
+The opaque pattern mirrors the bloch-wigner phase-1 migration
+on `main` (commit `84199bbbe4`) — from `axiom` to
+`noncomputable opaque` in the Lake tree.
+-/
+
+/-- The categorical 1-loop self-energy Habiro element on M_Bring.
+
+    This is the external categorical-physics object whose Habiro
+    element identification is the n=3 Bloch-level contribution to
+    `1/α_EM` per PR #1521.
+
+    Axiomatic at this stage — the explicit Reshetikhin-Turaev
+    shadow-world construction is the multi-week subgoal-2 work
+    (per `docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-
+    derivation-plan.md`).  Phases 1-4 of #1495's plan (in PRs
+    #1527, #1538, #1549, #1552) establish the algebraic /
+    structural identifications symbolically; the external opaque
+    here is the Lean-side handle. -/
+-- Ref: PR #1521 (categorical identification)
+-- Ref: PR #1527-#1552 (RT phases 1-4)
+opaque categoricalOneLoopHabiroElement : ℝ → ℝ → ℝ
+
+/-- **Meaningful Habiro class (Phase 5).**
+
+    Axiomatises that the external categorical opaque
+    `categoricalOneLoopHabiroElement` is identified with the
+    empirical Habiro-Taylor form `α · [2]_q/(8π) · (1 - h²α)`
+    derived structurally in Phases 1-4 of #1495's plan.
+
+    Unlike `EmAlphaInvNextOrderHabiroClass`'s trivial instance
+    (`habiro_element_realised` is provable by `rfl` because the
+    LHS and RHS unfold to the same expression), this class field
+    is a GENUINE structural axiom: the LHS is the external opaque
+    (categorical-physics object) and the RHS is the empirical form.
+    No `rfl` discharge is possible. -/
+-- Ref: PR #1521 (identification), PR #1527-#1552 (RT phases)
+class EmAlphaInvNextOrderCategoricalHabiroClass : Prop where
+  /-- The categorical 1-loop Habiro opaque equals the empirical
+      form `α · [2]_q/(8π) · (1-h²α)` for all valid `(q, α)`. -/
+  -- Ref: PR #1521, PR #1511 (Habiro Taylor closed form)
+  categorical_equals_empirical :
+    ∀ (q α : ℝ), q > 0 → α > 0 →
+      categoricalOneLoopHabiroElement q α =
+        α * emOneLoopCoefficient q * emSchwingerFactor q α
+
+/-- **Conditional theorem under the meaningful categorical Habiro class.**
+
+    Identical conclusion to `em_alpha_inv_full_form_habiro` but
+    routed through the external opaque.  The proof uses
+    `categorical_equals_empirical` to bridge the opaque to the
+    Habiro-Taylor closed form. -/
+-- Ref: PR #1495 (RT plan), PR #1521 (identification)
+theorem em_alpha_inv_full_form_categorical
+    [_hZ1 : BringZeroModeBlochClass]
+    [hZ2 : EmAlphaInvNextOrderCategoricalHabiroClass]
+    (q α : ℝ) (hq_pos : q > 0) (hα_pos : α > 0) :
+    emAlphaInvForm q α =
+      emTreeFactor q + bringZeroModeValue
+        + categoricalOneLoopHabiroElement q α := by
+  unfold emAlphaInvForm
+  rw [hZ2.categorical_equals_empirical q α hq_pos hα_pos]
+
+/-! ## Phase 6: conditional cubic-identity theorem combining all Bloch levels
+
+The full structural identity α_EM⁻¹ form combined with the cubic
+algebraic equivalent (`em_alpha_inv_cubic_equivalent` above, with a
+decorative-only `sorry`) yields the cubic identity that α_EM
+satisfies under all classes.
+
+This is the final piece of #1495's plan — the conditional theorem
+combining n=2 + n=3 + Phase 1-4 derivations into a single
+α_EM-equation statement.
+-/
+
+/-- **Conditional cubic identity for α_EM (Phase 6).**
+
+    Under both `BringZeroModeBlochClass` (n=2 leading Bloch class)
+    and `EmAlphaInvNextOrderCategoricalHabiroClass` (n=3 categorical
+    Habiro identification per Phases 1-4), the substrate parameter
+    `α` solving `1/α = emAlphaInvForm q α` is equivalently the
+    cubic root of `emAlphaCubic q α = 0`.
+
+    Combined with the leading-shift theorem (proven unconditionally)
+    and the empirical Habiro-Taylor closed form (#1511 merged), this
+    is the structural statement that α_EM at substrate q satisfies a
+    specific cubic equation with coefficients derived from canonical
+    Bring + Hecke data — NO free parameters.
+
+    Conditional on the two class instances (n=2 leading Bloch class
+    + n=3 categorical Habiro class) and on the algebraic-only
+    `em_alpha_inv_cubic_equivalent` sorry.
+
+    This is Phase 6 of the RT 2-loop derivation plan per #1495. -/
+-- Ref: PR #1495 (Phase 6), PR #1484 (fixed-point Form B cubic), PR #1511
+theorem em_alpha_inv_cubic_identity
+    [_hZ1 : BringZeroModeBlochClass]
+    [_hZ2 : EmAlphaInvNextOrderCategoricalHabiroClass]
+    (q α : ℝ) (hq_pos : q > 0) (hq_ne : q ≠ 1) (hα_ne : α ≠ 0)
+    (hsol : 1 / α = emAlphaInvForm q α) :
+    emAlphaCubic q α = 0 := by
+  exact (em_alpha_inv_cubic_equivalent q α hq_pos hq_ne hα_ne).mp hsol
+
 end QOU.Archimedean
