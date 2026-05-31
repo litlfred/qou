@@ -289,73 +289,97 @@ the structural conclusion via the existing
 `AtomBraidExteriorAlgebraStructure` class fields.
 -/
 
+/-- **The Step 4 categorical claim, as a named opaque Prop.**
+
+    Per CLAUDE.md §3b-cond + the audit
+    `docs/audits/2026-05-30-atom-braid-categorical-proof-feasibility.md`'s
+    failure-mode #4 ("axiomatising more just relocates the sorry"),
+    Step 4 must be a *specific* Prop, not a `Prop`-typed slot, so
+    any `AtomBraidStep4Hypothesis` instance is forced to discharge
+    a named obligation rather than supply an arbitrary proposition.
+
+    Informally: for the canonical atom-braid
+    `T_w(Z, N) ∈ H_{3A}(q)`, every inter-nucleon Avg crossing
+    `σ_{3k+2} − h/2` acts by left/right-multiplication on the
+    Coxeter-length filtration preserving the Boolean grading — i.e.
+    it maps `F_k → F_k` without expanding the binary-DOF count
+    `n* = 3A − Z`.
+
+    Formally we leave this `opaque` until the
+    `coxeterLengthFiltration` API in `QOU.IwahoriHecke.*` is
+    exposed (Sprint 5 follow-up). At that point this declaration
+    will be promoted from `opaque` to a concrete `def` over the
+    filtration accessor; any existing instances become real
+    proofs. -/
+opaque AvgCrossingPreservesGradeHolds (Z N : ℕ) : Prop
+
 /-- **PR-D Step 4 hypothesis** — the inter-nucleon Avg-crossing
     Boolean-grading preservation claim, axiomatised as a class
     field per CLAUDE.md §3b-cond.
 
-    The field `avg_crossing_preserves_grade` captures the
-    structural assertion that for the canonical atom-braid
-    `T_w(Z, N) ∈ H_{3A}(q)`, left- or right-multiplication by
-    any inter-nucleon Avg crossing `σ_{3k+2} − h/2` preserves
-    the Coxeter-length filtration's binary-DOF dimension count.
-
-    Formally we record this as a `Prop` parameter — the
-    statement-level Hecke API in `QOU.IwahoriHecke.*` has not
-    yet exposed a `coxeterLengthFiltration` accessor (Sprint 5
-    follow-up). Once that accessor exists, this Prop becomes
-    a concrete statement about the filtration map. -/
+    The field `avg_crossing_preserves_grade` carries a proof of
+    the *specific* named Prop `AvgCrossingPreservesGradeHolds Z N`,
+    not an arbitrary `Prop` — so any instance is forced to
+    discharge the actual Step 4 obligation. -/
 class AtomBraidStep4Hypothesis (Z N : ℕ) where
   /-- Positive proton count (consistent with
       `AtomBraidExteriorAlgebraStructure`). -/
   Z_pos : 0 < Z
-  /-- The structural Boolean-grading preservation under
-      inter-nucleon Avg crossings. Currently a Prop placeholder;
-      the concrete formulation requires the
-      `coxeterLengthFiltration` API (Sprint 5 follow-up). -/
-  avg_crossing_preserves_grade : Prop
+  /-- Proof of the specific Step 4 obligation — that inter-nucleon
+      Avg crossings preserve the Boolean grading of the canonical
+      atom-braid's Coxeter-length filtration.  Typed by the named
+      `AvgCrossingPreservesGradeHolds Z N` opaque Prop above. -/
+  avg_crossing_preserves_grade : AvgCrossingPreservesGradeHolds Z N
 
-/-- **Bridge lemma.** Given the Step 4 hypothesis for `(Z, N)`,
-    one can derive the full `AtomBraidExteriorAlgebraStructure`
-    instance via Steps 1-3 (mechanical G0/G1 reductions) +
-    Step 5 (`Nat.sum_range_choose`).
+/-- **Step 4-augmented structural result.** Given the Step 4
+    hypothesis for `(Z, N)`, both
+    (a) the `AtomBraidExteriorAlgebraStructure` instance, and
+    (b) the witness of `AvgCrossingPreservesGradeHolds Z N`,
+    are available together.
 
-    Currently this bridge is itself a `sorry` because Steps 1-3
-    require the Hecke-algebra word-reduction machinery (Sprint 3
-    `IwahoriHeckeOfSn` + Sprint 4 `markovTrace`). Once those are
-    available, the bridge becomes a concrete proof and the entire
-    atom-braid conjecture reduces to discharging Step 4 alone.
+    Honest scope: (a) is currently derivable from `Z_pos` alone —
+    `AtomBraidExteriorAlgebraStructure`'s structural-shape fields
+    (`n₀`, `n_star`, `delta`, `total_dim`, `shape`) are all
+    defaulted formulas, so they require no Steps 1-3 obligation
+    at the field level. The dimension-shape FACTS for individual
+    atoms are proved by `decide` in this file.  The *structural
+    reason* — that this shape is in fact what the canonical
+    atom-braid produces — is precisely the
+    `AvgCrossingPreservesGradeHolds` content carried in (b).
 
-    Per CLAUDE.md §3b-cond Steps 1-3 + 5 are mechanical
-    derivations from established Hecke representation theory;
-    only Step 4 is genuine new content. -/
+    Mathematical reading: until `AtomBraidExteriorAlgebraStructure`
+    gains a proof-bearing field connecting its dimension formula to
+    the canonical Hecke sub-algebra, the Step 4 content lives in
+    `AvgCrossingPreservesGradeHolds`, not in the structural class.
+    Discharging Step 4 is therefore: instance
+    `AtomBraidStep4Hypothesis` → supply a proof of
+    `AvgCrossingPreservesGradeHolds Z N` → both (a) and (b)
+    available together. -/
 theorem step4_implies_exterior_algebra_structure
     (Z N : ℕ) [hyp : AtomBraidStep4Hypothesis Z N] :
-    Nonempty (AtomBraidExteriorAlgebraStructure Z N) := by
-  -- Ref: [manuscript] folio-assistant/computations/joint-tower-sdp-rust.witness.json
-  -- Steps 1-3: mechanical Hecke-algebra word reduction (needs Sprint 3-4 infra)
-  -- Step 4: hypothesis `hyp.avg_crossing_preserves_grade`
-  -- Step 5: Nat.sum_range_choose (already proved in this file)
-  exact ⟨{Z_pos := hyp.Z_pos}⟩
+    Nonempty (AtomBraidExteriorAlgebraStructure Z N) ∧
+    AvgCrossingPreservesGradeHolds Z N :=
+  -- (a) the structural-shape class instance — currently consumes
+  --     only `hyp.Z_pos`; a proof-bearing field tying the shape
+  --     to T_w(Z,N) is Sprint 5+ work.
+  -- (b) the Step 4 obligation, consumed directly from the hypothesis.
+  ⟨⟨{Z_pos := hyp.Z_pos}⟩, hyp.avg_crossing_preserves_grade⟩
 
 /-- **Atom-braid conjecture, factored through Step 4.**
 
-    The original conjecture
-    `atom_braid_exterior_algebra_structure` is essentially
-    Step 5 alone (`Nat.sum_range_choose`); the *structural*
-    conjecture — that the dimension count actually matches the
-    canonical Hecke sub-algebra generated by `T_w(Z, N)` —
-    factors as Steps 1-4. This corollary records the factoring:
-    once Step 4 lands, the structural conjecture is unconditional.
-
-    Status: same as `step4_implies_exterior_algebra_structure` —
-    needs Sprint 3-4 infra for Steps 1-3 to be discharged
-    mechanically. -/
+    Records the Pascal-sum identity together with the Step 4
+    obligation in a single statement: once Step 4 is discharged
+    (i.e., once a proof of `AvgCrossingPreservesGradeHolds Z N`
+    is provided as the class field), both the dimensional shape
+    AND its structural meaning are delivered. -/
 theorem atom_braid_exterior_algebra_via_step4
     (Z N : ℕ) [hyp : AtomBraidStep4Hypothesis Z N] :
-    2 ^ (3 * (Z + N) - Z) =
+    (2 ^ (3 * (Z + N) - Z) =
       (Finset.range (3 * (Z + N) - Z + 1)).sum
-        (fun k => Nat.choose (3 * (Z + N) - Z) k) :=
-  atom_braid_exterior_algebra_structure Z N hyp.Z_pos
+        (fun k => Nat.choose (3 * (Z + N) - Z) k)) ∧
+    AvgCrossingPreservesGradeHolds Z N :=
+  ⟨atom_braid_exterior_algebra_structure Z N hyp.Z_pos,
+   hyp.avg_crossing_preserves_grade⟩
 
 /-! ## LP/SDP under-determination: predicted reduction from p(3A) to n*+1 channels
 
