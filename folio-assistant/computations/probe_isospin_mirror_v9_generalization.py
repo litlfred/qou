@@ -28,6 +28,7 @@ new high-precision compute is introduced.
 Output: probe-isospin-mirror-v9-generalization.witness.json
 """
 
+import ast
 import json
 import sys
 from datetime import datetime, timezone
@@ -47,12 +48,6 @@ MU_0 = M_E_MEV / (D(3) * H / D(2))
 AME_MeV = {"D": D("2.224566"), "T": D("8.481798"), "3He": D("7.71806")}
 
 
-def transpose(lam):
-    if not lam:
-        return tuple()
-    return tuple(sum(1 for p in lam if p > i) for i in range(max(lam)))
-
-
 def load_chi_atom(repo_root, atom_label):
     fn_map = {"D": "d", "T": "t", "3He": "3he"}
     fn = (repo_root / "folio-assistant" / "computations"
@@ -62,7 +57,7 @@ def load_chi_atom(repo_root, atom_label):
     chi_atom = {}
     for e in data["atom"]["by_partition"]:
         part = e["partition"]
-        part = tuple(eval(part)) if isinstance(part, str) else tuple(part)
+        part = tuple(ast.literal_eval(part)) if isinstance(part, str) else tuple(part)
         chi_atom[part] = D(str(e["chi_lambda"]))
     return chi_atom
 
@@ -76,7 +71,7 @@ def load_y(repo_root, atom_label):
     y = {}
     for e in data["by_partition"]:
         part = e["partition"]
-        part = tuple(eval(part)) if isinstance(part, str) else tuple(part)
+        part = tuple(ast.literal_eval(part)) if isinstance(part, str) else tuple(part)
         y[part] = D(e["y_lambda"])
     return y
 
@@ -92,7 +87,6 @@ def sum_y_chi(y, chi_atom):
 def main() -> int:
     repo_root = Path(__file__).resolve().parent.parent.parent
 
-    results = {}
     base = {}
     for atom in ["D", "T", "3He"]:
         chi = load_chi_atom(repo_root, atom)
