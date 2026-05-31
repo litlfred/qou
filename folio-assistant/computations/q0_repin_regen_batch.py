@@ -60,7 +60,14 @@ except Exception:  # pragma: no cover
     AUDIT_SUFFIXES = ("-audit.witness.json", "-scan.witness.json",
                       "-compliance.witness.json")
 WGLOB = "folio-assistant/computations/*.witness.json"
-BRANCH = "claude/q0-repin-regen-batch-2026-05-30"
+# Push to whatever feature branch the batch is run on (auto-detected), so a
+# continuation run needs no per-branch edit. Falls back to the original
+# branch name if detection fails. A main/master guard lives in
+# push_with_retry so the sweep can never push regen commits to the trunk.
+BRANCH = (subprocess.run(
+    ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+    cwd=REPO, text=True, capture_output=True,
+).stdout.strip() or "claude/q0-repin-regen-batch-2026-05-30")
 
 
 def stale_q0(raw: str) -> bool:
@@ -91,6 +98,9 @@ def git(*args: str, check: bool = True) -> subprocess.CompletedProcess:
 
 
 def push_with_retry(log) -> bool:
+    if BRANCH in ("main", "master", "HEAD"):
+        log(f"    REFUSING to push regen commits to '{BRANCH}' — run on a "
+            f"feature branch."); return False
     for i in range(4):
         r = git("push", "-u", "origin", BRANCH, check=False)
         if r.returncode == 0:
