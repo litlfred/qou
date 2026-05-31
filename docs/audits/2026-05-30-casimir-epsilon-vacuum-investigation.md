@@ -395,21 +395,45 @@ where  c_q = π²/(2 · [5]_q!_sym)
          (8.6% lower)
 ```
 
-**This is the structural form** the conjecture should adopt.
+**WARNING — this is FITTING, not DERIVATION.**
 
-Why this works:
-- The "120" in classical `ζ(-3) = −1/120` is `5!`.
-- Standard q-deformation of `n!` is `[n]_q!_sym`.
-- So `ζ_q(−3) = −1/[5]_q!_sym` is the natural q-analogue.
-- This propagates linearly through the Casimir derivation: every
-  classical `5!` becomes `[5]_q!_sym`.
+The reasoning above is template substitution:
+- Classical Casimir has `1/5!` (via `ζ(-3) = -1/120 = -1/5!`).
+- We replaced `5!` with `[5]_q!_sym`.
+- Got a number that's close to the target with correct classical
+  limit and called it a "derivation".
 
-Why the substrate residue is ~9% rather than ~0%:
-- `[5]_q!_sym` at substrate `q₀ ≈ 1.110` is `131.3`, not `120`.
-- This is a 9.4% discrepancy in the prefactor.
-- The "120 vs 131" difference IS the substrate prediction:
-  QOU vacuum modes have a different combinatorial weighting from
-  classical EM modes.
+This is the same kind of move that CLAUDE.md's Δ_λ context warns
+against:
+
+> "Do not propose a seventh fit-based ansatz — the three-
+> calibration discipline review will catch it."
+
+The Carlitz q-Bernoulli candidate from sweep 2 gives
+`|ζ_q^Carlitz(−3)| ≈ 0.00686` at substrate. This sweep's
+`1/[5]_q!_sym ≈ 0.00761`. **Both are equally "natural" q-deformations
+of `ζ(-3) = -1/120`, and they disagree by ~10%.**  Whichever
+matches observation better is a free choice — pure fitting.
+
+What an actual derivation would need:
+1. **Construct N_⊙(A, d) as a categorical object** (sub-problem 1,
+   still open). This is the prerequisite for any derivation —
+   without a definition of "QOU vacuum mode count between plates",
+   we cannot compute its sum.
+2. **Show the regularization commutes with q-deformation.** The
+   classical Casimir uses ζ-function regularization of `Σn³`. The
+   q-deformed analogue would require regularizing `Σ [n]_q³` — and
+   the answer depends on whether we use Carlitz, KKW, Cherednik,
+   Macdonald, Tsumura, or yet another q-zeta definition. Until
+   sub-problem 1 is settled (which q-deformed sum is the natural
+   QOU mode-count), no choice is forced.
+3. **Verify the chain is q-equivariant.** Each step of the
+   classical Casimir derivation (mode sum, Fourier transform,
+   ζ-regularization) must have a forced q-analogue. None of this
+   has been done.
+
+The probes ruled out specific candidate forms but did not produce
+a derivation. **Sub-problem 3 remains genuinely open.**
 
 Witness:
 [`casimir-q-factorial-probe.witness.json`](../../folio-assistant/computations/casimir-q-factorial-probe.witness.json).
