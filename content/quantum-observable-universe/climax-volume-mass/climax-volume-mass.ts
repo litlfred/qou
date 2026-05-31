@@ -87,6 +87,7 @@ export default chapter({
         "vertex-algebra-jet-relations-table2-data",
         "vertex-algebra-jet-relations-table3-data",
         "t211-ideal-annihilation",
+        "outro-climax-volume-mass",
       ],
     }),
   ],

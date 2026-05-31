@@ -51,18 +51,25 @@ the **Directory** column links to the source content objects.
 | 1 | `notation/` | Notation | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
 | 2 | `quantum-universes/` | Quantum Universes | [quantum-universes.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/quantum-universes.pdf) |
 | 3 | `quantum-observable-universes/` | Quantum Observable Universes | [quantum-observable-universes.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/quantum-observable-universes.pdf) |
-| 4 | `lifting-and-descent/` | Lifting and Descent | [lifting-and-descent.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/lifting-and-descent.pdf) |
-| 5 | `braids-and-knots/` | Braids and Knots | [braids-and-knots.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/braids-and-knots.pdf) |
-| 6 | `models-of-qous/` | Models of QOUs | [models-of-qous.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/models-of-qous.pdf) |
-| 7 | `descartes-universe/` | The Descartes Universe | [descartes-universe.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/descartes-universe.pdf) |
-| 8 | `particle-interactions/` | Particle Interactions and Nuclear Structure | [particle-interactions.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/particle-interactions.pdf) |
-| 9 | `observations/` | Physical Observations | [observations.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/observations.pdf) |
-| 10 | `molecular-construction/` | Molecular Construction from Nucleon Braids | [molecular-construction.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/molecular-construction.pdf) |
-| 11 | `organic-chemistry/` | Organic Chemistry from Hopf Chains | [organic-chemistry.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/organic-chemistry.pdf) |
-| 12 | `fluid-dynamics/` | Fluid Dynamics of the Brane | [fluid-dynamics.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/fluid-dynamics.pdf) |
-| 13 | `information-theory/` | Information-Theoretic Perspectives | [information-theory.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/information-theory.pdf) |
-| 14 | `q-geometric-langlands/` | $q$-Geometric Langlands Correspondence | [q-geometric-langlands.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/q-geometric-langlands.pdf) |
-| 15 | `glossary/` | Glossary | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
+| 4 | `models-of-qous/` | Models of QOUs | [models-of-qous.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/models-of-qous.pdf) |
+| 5 | `lifting-and-descent/` | Lifting and Descent | [lifting-and-descent.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/lifting-and-descent.pdf) |
+| 6 | `braids-and-knots/` | Braids and Knots | [braids-and-knots.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/braids-and-knots.pdf) |
+| 7 | `brings-surface/` | Bring | [brings-surface.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/brings-surface.pdf) |
+| 8 | `mass-endomorphism/` | The Mass Endomorphism | [mass-endomorphism.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/mass-endomorphism.pdf) |
+| 9 | `particle-interactions/` | Particle Interactions and Nuclear Structure | [particle-interactions.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/particle-interactions.pdf) |
+| 10 | `climax-volume-mass/` | q-Hyperbolic Geometry | [climax-volume-mass.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/climax-volume-mass.pdf) |
+| 11 | `mass-theory/` | Mass Analysis | [mass-theory.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/mass-theory.pdf) |
+| 12 | `gravity-spacetime/` | Gravity and Spacetime Emergence | [gravity-spacetime.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/gravity-spacetime.pdf) |
+| 13 | `predicted-spectra/` | Predicted Particle Spectra | [predicted-spectra.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/predicted-spectra.pdf) |
+| 14 | `observations/` | Physical Observations | [observations.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/observations.pdf) |
+| 15 | `molecular-construction/` | Molecular Construction from Nucleon Braids | [molecular-construction.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/molecular-construction.pdf) |
+| 16 | `organic-chemistry/` | Organic Chemistry from Hopf Chains | [organic-chemistry.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/organic-chemistry.pdf) |
+| 17 | `fluid-dynamics/` | Fluid Dynamics of the Brane | [fluid-dynamics.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/fluid-dynamics.pdf) |
+| 18 | `stochastic-mechanics/` | Stochastic Mechanics | [stochastic-mechanics.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/stochastic-mechanics.pdf) |
+| 19 | `information-theory/` | Information-Theoretic Perspectives | [information-theory.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/information-theory.pdf) |
+| 20 | `measurement-observation/` | Measurement and Observation | [measurement-observation.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/measurement-observation.pdf) |
+| 21 | `q-geometric-langlands/` | $q$-Geometric Langlands Correspondence | [q-geometric-langlands.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/q-geometric-langlands.pdf) |
+| 22 | `glossary/` | Glossary | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
 | App | `appendix-knot-periodic-table/` | Knot-Periodic Table of the Elements | [appendix-knot-periodic-table.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-knot-periodic-table.pdf) |
 | App | `appendix-knot-operations/` | Knot Operation Actions Dictionary | [appendix-knot-operations.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-knot-operations.pdf) |
 | App | `appendix-transfer-matrices/` | Transfer Matrices | [appendix-transfer-matrices.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-transfer-matrices.pdf) |
@@ -84,9 +91,9 @@ Live snapshot from `scripts/lean-coverage.ts` (regenerated on each `main` publis
 
 | Block kind | Total | With Lean sibling | Fully formalized |
 |------------|------:|------------------:|-----------------:|
-| Provable claims (theorem/lemma/proposition/corollary) | 572 | 569 | **564 sorry-free (98.6%)** |
-| Conjectures (open) | 133 | 131 | **122 class-axiomatised (91.7%)** |
-| Definitions | 215 | 215 | — |
+| Provable claims (theorem/lemma/proposition/corollary) | 581 | 575 | **572 sorry-free (98.5%)** |
+| Conjectures (open) | 134 | 132 | **124 class-axiomatised (92.5%)** |
+| Definitions | 211 | 211 | — |
 
 Class-axiomatised conjectures follow the conditional-class convention
 (CLAUDE.md §3b): the conjecture is encoded as a Lean `class` with
@@ -100,7 +107,9 @@ by Lean modulo a single, named, axiomatised input.
 |--------|--------|
 | `QOU.AlgebraicSubstrate` | `AlgebraicSubstrate.lean` |
 | `QOU.AppendixSurreals` | `AppendixSurreals.lean` |
+| `QOU.Archimedean` | `Archimedean.lean` |
 | `QOU.ArchimedeanMassFormula` | `ArchimedeanMassFormula.lean` |
+| `QOU.ArchimedeanUniverse` | `ArchimedeanUniverse.lean` |
 | `QOU.AtomicMass` | `AtomicMass.lean` |
 | `QOU.Basic` | `Basic.lean` |
 | `QOU.BraidKnot` | `BraidKnot.lean` |
@@ -115,8 +124,6 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.CODATAChain` | `CODATAChain.lean` |
 | `QOU.ColorTubeFibers` | `ColorTubeFibers.lean` |
 | `QOU.ComputationalHorizon` | `ComputationalHorizon.lean` |
-| `QOU.Descartes` | `Descartes.lean` |
-| `QOU.DescartesUniverse` | `DescartesUniverse.lean` |
 | `QOU.dq_squared` | `dq_squared.lean` |
 | `QOU.Elaboration` | `Elaboration.lean` |
 | `QOU.emergence_to_quantum_flat` | `emergence_to_quantum_flat.lean` |
@@ -178,20 +185,20 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.variational_equations` | `variational_equations.lean` |
 | `QOU.volume_from_rigidity` | `volume_from_rigidity.lean` |
 | `QOU.AlgebraicSubstrate.*` | `19 files` |
-| `QOU.AppendixSurreals.*` | `33 files` |
+| `QOU.AppendixSurreals.*` | `34 files` |
+| `QOU.Archimedean.*` | `67 files` |
+| `QOU.ArchimedeanUniverse.*` | `4 files` |
 | `QOU.AtomicMass.*` | `1 files` |
 | `QOU.BaryonWeight.*` | `1 files` |
 | `QOU.Braiding.*` | `10 files` |
-| `QOU.BraidKnot.*` | `121 files` |
-| `QOU.BraidsAndKnots.*` | `8 files` |
+| `QOU.BraidKnot.*` | `143 files` |
+| `QOU.BraidsAndKnots.*` | `15 files` |
 | `QOU.BraidsKnots.*` | `6 files` |
 | `QOU.Brings.*` | `2 files` |
 | `QOU.BringsSurface.*` | `1 files` |
 | `QOU.CategoricalReeb.*` | `3 files` |
 | `QOU.Common.*` | `1 files` |
 | `QOU.CommutativeQOU.*` | `1 files` |
-| `QOU.Descartes.*` | `64 files` |
-| `QOU.DescartesUniverse.*` | `4 files` |
 | `QOU.Descent.*` | `1 files` |
 | `QOU.Encounter.*` | `1 files` |
 | `QOU.Experimental.*` | `2 files` |
@@ -207,14 +214,17 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.Information.*` | `6 files` |
 | `QOU.Infra.*` | `4 files` |
 | `QOU.Interactions.*` | `27 files` |
+| `QOU.IwahoriHecke.*` | `6 files` |
+| `QOU.KnotTheory.*` | `1 files` |
 | `QOU.LiftingDescent.*` | `17 files` |
 | `QOU.MagicShell.*` | `1 files` |
 | `QOU.MassEndomorphism.*` | `4 files` |
 | `QOU.Mathlib.*` | `10 files` |
 | `QOU.MathlibExt.*` | `12 files` |
 | `QOU.Molecular.*` | `7 files` |
-| `QOU.Observations.*` | `10 files` |
-| `QOU.ParticleInteractions.*` | `21 files` |
+| `QOU.Observations.*` | `11 files` |
+| `QOU.OptionE.*` | `5 files` |
+| `QOU.ParticleInteractions.*` | `22 files` |
 | `QOU.QGeometricLanglands.*` | `4 files` |
 | `QOU.QuantumBloch.*` | `2 files` |
 | `QOU.QuantumObservableUniverse.*` | `16 files` |
@@ -262,7 +272,6 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 | Double Slit Simulator | `simulators/double_slit_simulator.html` |
 | Knot Atom Diagrams | `simulators/knot_atom_diagrams.html` |
 | Knot Periodic Table | `simulators/knot_periodic_table.html` |
-| Knot Periodic Table Classic | `simulators/knot_periodic_table_classic.html` |
 | Q Double Slit | `simulators/q_double_slit.html` |
 | Quantum Brings Surface | `simulators/quantum_brings_surface.html` |
 | Valley Stability | `simulators/valley_stability.html` |
@@ -286,44 +295,6 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 | Glossary | [glossary.json](https://litlfred.github.io/qou/glossary.json) | CI-generated |
 | Feature branch drafts | [drafts/](https://litlfred.github.io/qou/drafts/) | CI-generated |
 
-## Reusable libraries (`tools/`)
-
-The `tools/` directory ships **8 cross-language wrappers** around QOU's canonical Iwahori-Hecke `H_3(q)` Gram + Markov-trace surface, plus 4 Python support packages. Every wrapper exposes the same Phase A surface (`markov_z`, `hecke_h`, `trace_weights`, `gram_matrix`, `gram_det`) plus the Phase B research surface (`chi_lambda_braid`, `lr_coefficient`, `tr_m_atomic_mpfr`).
-
-### Canonical compute core
-
-| Package | Path | Language | Purpose |
-|---|---|---|---|
-| `hecke-engine` | `tools/hecke-engine/` | Rust | Pure-Rust compute core. Source of truth. |
-| `hecke-engine-c` | `tools/hecke-engine-c/` | C ABI | cbindgen-generated header. Substrate for octave/julia/gap/r wrappers. |
-
-### Cross-language wrappers
-
-| Wrapper | Path | Mechanism | Phase A | Phase B |
-|---|---|---|---|---|
-| C ABI | `tools/hecke-engine-c/` | cbindgen | ✓ | ✓ |
-| Node.js | `tools/hecke-engine-node/` | napi-rs | ✓ | ✓ |
-| Browser (WASM) | `tools/hecke-engine-wasm/` | wasm-bindgen | ✓ | ✓ (no MPFR) |
-| Kotlin / Swift / Java | `tools/hecke-engine-jvm/` | UniFFI | ✓ | ✓ |
-| R | `tools/hecke-engine-r/` | extendr | ✓ | ✓ |
-| GNU Octave | `tools/hecke-engine-octave/` | MEX over C ABI | ✓ | ✓ |
-| Julia | `tools/hecke-engine-julia/` | ccall over C ABI | ✓ | ✓ |
-| GAP | `tools/hecke-engine-gap/` | kernel ext over C ABI | ✓ | ✓ |
-| SageMath examples | `tools/sage-examples/` | pure pyhecke (Sage uses CPython) | ✓ | ✓ |
-
-Each wrapper has its own `README.md` with install + build instructions. Smoke tests live under `tools/<wrapper>/test/` (or `tst/` for GAP) and run automatically via `.github/workflows/wrapper-tests.yml` on every PR touching `tools/**`.
-
-### Python packages (PyPI)
-
-| Package | Path | Purpose |
-|---|---|---|
-| `pyhecke` | `tools/pyhecke/` | Pure-Python Hecke / Gram / Wedderburn primitives |
-| `pyhecke-native` | `tools/pyhecke-native/` | PyO3 wheel — same surface, ~10× faster |
-| `qou-substrate` | `tools/qou-substrate/` | `q_parameter`, precision, `WitnessBuilder` |
-| `witness-schema` | `tools/witness-schema/` | Pydantic schema for witness JSON files |
-
-Version management is automated via `release-please` — every conventional-commit (`fix:`, `feat:`) touching a package's directory triggers a release PR. See `docs/release-process.md` for the lifecycle + manual rescue procedure.
-
 ## Project Structure
 
 | Path | Description |
@@ -333,15 +304,13 @@ Version management is automated via `release-please` — every conventional-comm
 | `content/pipeline/` | Validation, rendering, build pipelines |
 | `content/quantum-observable-universe/` | Main paper — chapters, appendices, Lean |
 | `content/quantum-observable-universe/lean/` | Lean 4 formalization (`lakefile.toml`, `QOU/`) |
-| `tools/` | **Reusable libraries + cross-language wrappers** (see section above) |
 | `folio-assistant/` | Platform: MCP server, auth, viewer, chat UI, simulators |
 | `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache |
 | `folio-assistant/simulators/` | Interactive HTML/WebGL visualizations |
 | `blueprint/src/` | LeanBlueprint source (dependency graph) |
 | `deploy/` | Remote MCP deployment (Docker Compose, Caddy, auth) |
-| `.github/workflows/` | CI/CD: Lean build, publish, blueprint, deploy, wrapper-tests |
+| `.github/workflows/` | CI/CD: Lean build, publish, blueprint, deploy |
 | `.claude/skills/` | AI skill definitions (local + synced packages) |
-| `docs/` | Workplans, audits, `release-process.md`, `lambda-scale-absorbed-into-geom-full.md` |
 | `scripts/` | Build, setup, and utility scripts |
 | `main.tex` | LaTeX preamble (rendering target, not source of truth) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
@@ -356,17 +325,29 @@ Version management is automated via `release-please` — every conventional-comm
 | `blueprint.yml` | Blueprint compilation, dependency graph, doc-gen4 |
 | `build-latex-image.yml` | Build LaTeX CI Docker image |
 | `build-lean-mcp.yml` | Build Lean MCP Docker image |
+| `copilot-setup-steps.yml` | Copilot Setup Steps |
 | `deploy-folio.yml` | Deploy Folio Assistant to remote server |
+| `discoverability-docs.yml` | Discoverability docs (cargo doc + pdoc + TypeDoc) |
 | `docker-ci-image.yml` | Build general CI Docker image |
+| `hecke-engine-wasm.yml` | hecke-engine-wasm Build & Test |
+| `lake-cache-refresh.yml` | Lake cache refresh (orphan-branch family) |
+| `lean-build-sidecar.yml` | Lean build sidecar |
 | `lean-build.yml` | Lean build and proof status updates |
 | `lean_ci.yml` | Lean build, proof status, axiom report, doc generation |
+| `paper-builder-image.yml` | Build paper-builder Docker image |
 | `publish.yml` | Full paper build — PDF, HTML, viewer, schema docs, deploy to gh-pages |
 | `pyhecke-native-wheels.yml` | pyhecke-native wheels |
+| `pyhecke-pypi-publish.yml` | Publish pyhecke to PyPI |
 | `pyhecke.yml` | pyhecke |
+| `pyodide-smoke.yml` | Pyodide integration smoke |
+| `qa-sweep.yml` | QA sweep (all integration watchers) |
 | `release-folio-assistant.yml` | Release Folio Assistant package |
+| `release-please.yml` | release-please |
 | `snappea_wasm.yml` | SnapPea WASM build and test |
 | `sync-skills.yml` | Sync external skill packages |
 | `witness-pipeline.yml` | Witness pipeline |
+| `witness-refresh.yml` | Witness refresh (commit-back to main) |
+| `wrapper-tests.yml` | Wrapper tests (per-language smoke matrix) |
 
 ## Building
 

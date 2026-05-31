@@ -31,7 +31,7 @@ export default chapter({
     section({
       title: "Positioning against canonical quantum-gravity programmes",
       label: "sec:gravity-spacetime-lqg-comparison",
-      blocks: ["lqg-adm-ashtekar-comparison"],
+      blocks: ["intro-gravity-spacetime-lqg-comparison", "lqg-adm-ashtekar-comparison", "outro-gravity-spacetime"],
     }),
   ],
 });

@@ -162,6 +162,7 @@ export default chapter({
         "hoefsmit-binding-amplitude",
         "figure-eight-reeb-rotation",
         "pion-half-figure-eight",
+        "outro-braids-and-knots",
       ],
     }),
 
