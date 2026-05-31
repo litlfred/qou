@@ -80,12 +80,12 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import M_MU_MEV_VALIDATION as M_MU_MEV  # noqa: E402
 
 
 # ── PDG 2024 reference for charged pion ─────────────────────────
 M_PI_PDG_MEV = mpf("139.57039")             # PDG 2024 average
 M_PI_PDG_ERR_MEV = mpf("0.00018")           # ±0.00018 MeV (1.3 ppb)
-M_MU_MEV = mpf("105.6583755")               # CODATA 2022
 
 
 def q_int(q, n):
@@ -135,7 +135,7 @@ def F_Bor(q):
 def meson_nf_coefficients(q):
     """Return (c_sigma1, c_Lplus, c_Lminus, c_e_minus) at q.
 
-    NF of σ_0·L_+·σ_0⁻¹ = σ_0σ_1σ_0σ_0(σ_0 − h)
+    NF of σ_0·L_+·σ_0⁻¹ = σ_0²·σ_1·(σ_0 − h)
                        = h·(σ_0σ_1σ_0) + (σ_1σ_0) − h²·(σ_0σ_1) − h·(σ_1)
     """
     h = q - 1 / q
@@ -167,16 +167,21 @@ def markov_trace_basis(q):
       tr_M(𝓜_+) = h·tr_M(σ_0σ_1σ_0) + tr_M(σ_1σ_0)
                   − h²·tr_M(σ_0σ_1) − h·tr_M(σ_1)
 
-    tr_M(σ_0σ_1σ_0) (trefoil 3_1): closed form is
-      tr_M(σ^3) = P_1·z + Q_1  with P_1 = h²+1, Q_1 = h
-      so tr_M(trefoil) = (h²+1)z + h.
+    tr_M(σ_0σ_1σ_0) in H_3(q): via cyclicity + Hecke σ_0² = h·σ_0 + 1,
+      tr_M(σ_0σ_1σ_0) = tr_M(σ_1·σ_0²) = tr_M(σ_1·(h·σ_0+1))
+                      = h·tr_M(σ_1σ_0) + tr_M(σ_1)
+                      = h·z² + z.
+    (Distinct from the H_2 trace of σ_0³ = (h²+1)z + h: both close to
+    the trefoil knot, but the Markov trace differs by the strand
+    normalization. The meson NF lives in H_3(q), so we use the H_3
+    trace.)
     """
     z = mpf(1) / (sqrt(q) + 1 / sqrt(q))
     h = q - 1 / q
     tr_sig = z
     tr_Lplus = z ** 2          # Hopf link L_+
     tr_Lminus = z ** 2         # Hopf link L_− (same up to sign convention)
-    tr_e_minus = (h ** 2 + 1) * z + h   # trefoil
+    tr_e_minus = h * z ** 2 + z   # trefoil in H_3(q)
     return tr_sig, tr_Lplus, tr_Lminus, tr_e_minus, z, h
 
 
