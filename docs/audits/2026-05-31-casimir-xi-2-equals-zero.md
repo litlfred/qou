@@ -1,8 +1,18 @@
 # Audit: ξ_2 = 0 — closure via structural separation argument
 
+> **⚠ SUPERSEDED (2026-05-31).** This closure is **retracted** by
+> [`2026-05-31-casimir-xi-2-reconciliation.md`](2026-05-31-casimir-xi-2-reconciliation.md).
+> It was the third reversal of a flip-flop, and its "Casimir doesn't go through
+> Hecke at any order" argument **contradicts the conjecture block itself**
+> (which frames the prefactor as a Markov trace on `H_n(q)` and carries the
+> `ℏ²_q` substrate-Planck factor). The honest status is `ξ_2` **OPEN**, gated on
+> the N_⊙ construction. `ξ_2 = 0` is defensible only as the content-free
+> "normalized trace of identity ≡ 1". Read the reconciliation doc; the text
+> below is kept for the audit trail only.
+
 **Date.** 2026-05-31
 **Block.** [`conj:casimir-epsilon-vacuum`](../../content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md)
-**Result.** **All higher-rank substrate corrections vanish: `ξ_k = 0` for all `k ≥ 1`.** QOU Casimir = standard Casimir EXACTLY at substrate.
+**Result.** ~~**All higher-rank substrate corrections vanish: `ξ_k = 0` for all `k ≥ 1`.** QOU Casimir = standard Casimir EXACTLY at substrate.~~ **RETRACTED — see banner above.**
 
 ## Notation note
 
