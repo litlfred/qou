@@ -244,15 +244,17 @@ def IsHeckeBraidedAlgebraMap
     {W : Type u} [Group W] {R : Type v} [CommRing R]
     {A : Type w} [Ring A] [Algebra R A] (q : R)
     (m : W → W → ℕ) (f : W → A) : Prop :=
-  (∀ s : W, (f s - algebraMap R A q) * (f s + 1) = 0) ∧
+  IsHeckeAlgebraMap q f ∧
   (∀ s t : W, altProduct (f s) (f t) (m s t) =
               altProduct (f t) (f s) (m t s))
 
 /-- The braided predicate strengthens the quadratic-only predicate:
-    a Hecke-braided map is in particular a Hecke-quadratic map. -/
+    a Hecke-braided map is in particular a Hecke-quadratic map.
+    All arguments implicit so dot notation `h.toIsHeckeAlgebraMap`
+    works at call sites. -/
 theorem IsHeckeBraidedAlgebraMap.toIsHeckeAlgebraMap
     {W : Type u} [Group W] {R : Type v} [CommRing R]
-    {A : Type w} [Ring A] [Algebra R A] (q : R) (m : W → W → ℕ)
+    {A : Type w} [Ring A] [Algebra R A] {q : R} {m : W → W → ℕ}
     {f : W → A} (h : IsHeckeBraidedAlgebraMap q m f) :
     IsHeckeAlgebraMap q f :=
   h.1
