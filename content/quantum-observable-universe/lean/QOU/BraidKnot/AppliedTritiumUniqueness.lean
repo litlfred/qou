@@ -1,66 +1,57 @@
-import Mathlib.Tactic
-import QOU.MathlibExt.SDP
-import QOU.MathlibExt.SDPEmptyConstraints
-import QOU.HeckeAlgebra.Common
-import QOU.BraidKnot.LightNucleus
-import QOU.BraidKnot.WitnessR5Full
+import QOU.BraidKnot.NucleusEmptySDPUniqueness
 import QOU.BraidKnot.TritiumWitness
-import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
+import QOU.BraidKnot.LightNucleus
 
 /-!
-# QOU.BraidKnot.AppliedTritiumUniqueness
+# QOU.BraidKnot.AppliedTritiumUniqueness — concrete ³H application
 
-Mirror of `AppliedHelium3Uniqueness` for ³H, with the same
-empty-constraint SDP setup at `heckeDim 9 = 9! = 362880` (the
-tritium's H_9 strand count = 3·3).
+Thin wrapper specialising `NucleusEmptySDPUniqueness` to ³H's
+strand count `n = 3·A = 3·3 = 9` (Z=1, N=2, A=3). Shares `n_0 = 9`
+with ³He; the SDP setup is the same up to the witness data.
 
-The SDP setup is identical to ³He's H_9 case (³H and ³He share
-n_0 = 9), but the witness data is provisional (Hoefsmit-H_5
-Python port pending).
+## Status
 
-## Open work
-
-The "real" tritium uniqueness statement awaits the Python H_5
-Hoefsmit port (PR #608 deferred-Hoefsmit-H5).  At that point,
-the `R5FullWitness LightNucleus.tritium` placeholder gets
-replaced by a real witness, and the strict-complementarity
-certificate gets concrete numerical Wedderburn-block min-eigs.
+**Sorry-free closure** for ³H's empty-SDP uniqueness via the
+parameterised `nucleus_uniqueness_closed` at `n := 9`. No
+abstract-axiom dependency. The "real" ³H T_w uniqueness (with
+Hoefsmit-H_5 cost basis) awaits the Python port (PR #608 deferred-
+Hoefsmit-H5).
 
 ## References
 
+- `QOU.BraidKnot.NucleusEmptySDPUniqueness` (parameterised proof)
 - `QOU.BraidKnot.TritiumWitness` (placeholder R5-full witness)
-- `QOU.MathlibExt.SDPEmptyConstraints` (trivial sub-case)
-- `QOU.BraidKnot.CanonicalKnotIdSDPUniqueness` (abstract bridge)
 - PR #608 deferred-Hoefsmit-H5
 -/
 
 namespace QOU.BraidKnot
 
-open QOU.MathlibExt.SDP QOU.MathlibExt.SDPEmptyConstraints
-open QOU.HeckeAlgebra
+/-- **³H empty-constraint SDP** at `heckeDim 9 = 362880`. -/
+abbrev tritium_emptySDP := nucleusEmptySDP 9
 
-/-- **Empty-constraint SDP at the tritium's H_9 dimension**
-    (`heckeDim 9 = 9! = 362880`).  Used for the abstract-
-    uniqueness framework demonstration; the concrete H_9
-    Hoefsmit-based SDP awaits the Python port. -/
-def tritium_emptySDP : SDPPrimal (heckeDim 9) ℝ Empty where
-  cost := 1
-  constraint := fun i => i.elim
-  rhs := fun i => i.elim
+/-- ³H empty SDP is strictly feasible. -/
+abbrev tritium_emptySDP_strictlyFeasible := nucleusEmptySDP_strictlyFeasible 9
 
-theorem tritium_emptySDP_strictlyFeasible :
-    tritium_emptySDP.IsStrictlyFeasible :=
-  one_isStrictlyFeasible tritium_emptySDP
+/-- ³H trivial strict-complementarity pair. -/
+abbrev tritium_trivialStrictCompPair := nucleusTrivialStrictCompPair 9
 
-def tritium_trivialStrictCompPair :
-    StrictComplementarityPair tritium_emptySDP :=
-  trivialStrictComplementarityPair tritium_emptySDP
+/-- **³H uniqueness via the abstract bridge** (axiom-dependent path). -/
+abbrev tritium_uniqueness_via_empty_sdp_pending_hoefsmit :=
+  nucleus_uniqueness_via_empty_sdp 9
 
-theorem tritium_uniqueness_via_empty_sdp_pending_hoefsmit :
-    Subsingleton {Φ : Matrix (Fin (heckeDim 9)) (Fin (heckeDim 9)) ℝ //
-      tritium_emptySDP.IsFeasible Φ ∧
-      tritium_emptySDP.objAt Φ = tritium_emptySDP.objAt
-        tritium_trivialStrictCompPair.Φstar} :=
-  canonical_T_w_subsingleton tritium_trivialStrictCompPair
+/-- ³H real strong-duality pair. -/
+abbrev tritium_realStrongDualityPair := nucleusRealStrongDualityPair 9
+
+/-- ³H dual slack is PosDef. -/
+abbrev tritium_dualSlack_posDef := nucleus_dualSlack_posDef 9
+
+/-- **Sorry-free uniqueness for ³H's empty SDP.** -/
+abbrev tritium_uniqueness_closed := @nucleus_uniqueness_closed 9
+
+/-- ³H optimum is the zero matrix. -/
+abbrev tritium_optimum_is_zero := nucleus_optimum_is_zero 9
+
+/-- ³H objective at optimum equals 0. -/
+abbrev tritium_objAt_optimum_eq_zero := nucleus_objAt_optimum_eq_zero 9
 
 end QOU.BraidKnot
