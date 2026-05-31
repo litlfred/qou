@@ -110,4 +110,69 @@ theorem habiro_evaluation_determined : True := by
   -- truncation or free parameter enters the evaluation.
   trivial
 
+/-! ## §3b-cond bridge class: are the c_k the Habiro Taylor coefficients?
+
+The header note above states that the precision-ladder c_k are NOT in
+general the Taylor coefficients of the exact Habiro tr_M. This section
+makes that statement a formal §3b-cond conditional, mirroring the
+verified `EmAlphaInvNextOrderBlochClass` pattern (PR #1508) and
+`QbetaC3StructuralFormClass` (`q-beta-categorical-precision-ladder.lean`).
+
+**The bridge is the genuine open derivation step** (gap-plan Bug 3,
+`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`):
+identifying the substrate-canonical `f` with `Q_β = m_e · f(Δtr_M, q)`,
+whose Habiro Taylor coefficients would then BE the c_k. Two decisive
+tests (2026-05-31) bound what the bridge is NOT:
+
+  - `qbeta-delta-tr-vs-formA.witness.json` (item 1): the Habiro Δtr_M is
+    NOT Form A's net-winding slot (leading Taylor orders differ,
+    −5/4 vs −2); the bridge is not the canonical-refinement substitution.
+  - `mp-dk-decisive-test.witness.json` (item 2): the m_p d_k are stale-q₀
+    near-matches (d_4 = 46 drifts 100% between q₀ pins), confirming the
+    same failure mode on the mass side.
+
+Only `c_2 = -1` is Taylor-exact (proved to compute precision). The
+bridge class below carries the OPEN equivalence as a conditional
+hypothesis; NO instance is provided, and production wires only c_2. -/
+
+/-- Abstract precision-ladder coefficient `c_k` (as used in the Q_β
+    ladder). Opaque so the bridge class is non-vacuous (mirrors #1508's
+    opaque `BlochWigner_unit_circle`). -/
+-- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+axiom precisionLadderCoeff : ℕ → ℝ
+
+/-- Abstract Habiro Taylor coefficient: the exact Taylor coefficient,
+    at substrate q₀, of the Habiro tr_M expansion. Opaque (its closed
+    form is the open multi-block derivation). -/
+-- Ref: [habiro2000] Corollary 1.2
+axiom habiroTaylorCoeff : ℕ → ℝ
+
+/-- **§3b-cond bridge class.** Axiomatises the OPEN equivalence between
+    the precision-ladder coefficients and the Habiro Taylor
+    coefficients. This is the formal statement of the gap-plan Bug 3
+    bridge. Per the discipline note above it is NOT established beyond
+    `c_2`; the class is purely conditional (no instance) and production
+    wires only the Taylor-exact `c_2 = -1` rung. -/
+-- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+-- Ref: PR #1508 (§3b-cond conditional-class pattern)
+class QbetaHabiroTaylorBridgeClass : Prop where
+  /-- The precision-ladder `c_k` equals the Habiro Taylor coefficient at
+      every order `k`. Known to hold for `k = 2` (Taylor-exact); open
+      for `k ≥ 3` (item-1 / item-2 decisive tests). -/
+  ck_eq_taylor : ∀ k : ℕ, precisionLadderCoeff k = habiroTaylorCoeff k
+
+/-- **Conditional bridge theorem** (§3b-cond, proved sorry-free from
+    `QbetaHabiroTaylorBridgeClass`). Under the bridge hypothesis, the
+    ladder coefficient at any order equals the Habiro Taylor
+    coefficient — i.e. the c_k ARE the Habiro Taylor coefficients.
+    Mirrors `em_alpha_inv_full_form` (#1508): the class field carries
+    the conditional content. This LOCKS the equivalence as the open
+    derivation target without claiming it is established (only c_2 is). -/
+-- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+-- Ref: PR #1508 (§3b-cond conditional-class pattern)
+theorem precision_ladder_is_habiro_taylor
+    [h : QbetaHabiroTaylorBridgeClass] (k : ℕ) :
+    precisionLadderCoeff k = habiroTaylorCoeff k :=
+  h.ck_eq_taylor k
+
 end QOU.BraidKnot
