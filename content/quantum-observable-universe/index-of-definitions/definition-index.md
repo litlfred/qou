@@ -1,4 +1,4 @@
-**1006** indexed entries across 7 categories.
+**1005** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -274,8 +274,6 @@
 | [prop:phi-q-aj-machinery-identification](#prop:phi-q-aj-machinery-identification) | $\Phi_q$ / $\mathrm{Li}_2^q$ machinery is the AJ-conjecture machinery | Ch 17 | `qou:QOU.BraidKnot.PhiQAJMachineryIdentification` |
 | [prop:tau-M-asymptotic-rep-theory](#prop:tau-M-asymptotic-rep-theory) | $\tau_M^{V_\lambda}(\beta) = \mathrm{Tr}\,\rho_\lambda(\beta) \cdot \exp(-\frac{1}{2} \sum_k c_k^{(\lambda)}(b_\lambda) \hbar_q^{2k})$: representation-theoretic asymptotic expansion of the Markov-traced character | Ch 7 | `qou:QOU.BraidKnot.tau_M_asymptotic_rep_theory` |
 | [prop:he4-channel-active-set](#prop:he4-channel-active-set) | $^4\mathrm{He}$ operator-selection LP: primal $\mathrm{T} \oplus p$, active set $\{\mathrm{D} \oplus \mathrm{D},\,{}^3\mathrm{He} \oplus n\}$ | Ch 10 | `qou:QOU.BraidKnot.He4ChannelActiveSet.HasHe4ChannelActiveSet` |
-| [prop:hopf-jones-c3-categorical](#prop:hopf-jones-c3-categorical) | $c_3 = J_{\mathrm{Hopf}}(q{=}1) = -2$ from Schur-Weyl branching of $V_{(2,1)}^{\otimes 2}$ + Markov-Frobenius selection — Story B closure at $c_3$ | Ch 10 | `qou:QOU.BraidKnot.HopfJonesC3Categorical.HasC3HopfJonesIdentity` |
-| [prop:kashiwara-jones-c4-categorical](#prop:kashiwara-jones-c4-categorical) | $c_4 = b^2 + 1/2$ from Kashiwara cos-tower at $\hbar_q^8$ + GB-jet-order half-shift — Story B closure at $c_4$ | Ch 10 | `qou:QOU.BraidKnot.KashiwaraJonesC4Categorical.HasC4KashiwaraJonesIdentity` |
 | [prop:c5-involution-leibniz-decomposition](#prop:c5-involution-leibniz-decomposition) | $c_5$ decomposes as $-b^2 - 1/2$: pure-$\sigma$ Kashiwara contribution plus bar-invariant involution fingerprint from averaged-crossing structure. Interpretation of the unique averaging-resonant rung k = 5 identified in `thm:averaging-resonance-rule` (planned, not yet derived); involution supplies the $1/2$ magnitude, while the half-fill cyclic structure supplies the rung selection. | Ch 17 | `qou:QOU.BraidKnot.C5InvolutionLeibnizDecomposition` |
 | [prop:dq-squared](#prop:dq-squared) | $d_q^2$ does not vanish | Ch 2 | `qou:QOU.dq_squared` |
 | [prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications) | $E_\infty$-page identifications with the six mass-formula terms | Ch 10 | `qou:QOU.BraidKnot.e_infinity_identifications` |
@@ -836,6 +834,7 @@
 | [conj:n-v-tower-depth-ninety](#conj:n-v-tower-depth-ninety) | Brane-tower depth from m_e to v equals 90 | Ch 13 | `qou:QOU.Observations.tower_depth_m_e_to_v_is_ninety` |
 | [conj:bring-figure-eight-depth-2-witness](#conj:bring-figure-eight-depth-2-witness) | Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness) | Ch 10 | `qou:QOU.BraidKnot.BringFigureEightDepth2Witness` |
 | [conj:bring-trilog-depth-3-witness](#conj:bring-trilog-depth-3-witness) | Bring trilog at $\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness) | Ch 10 | `qou:QOU.BraidKnot.BringTrilogDepth3Witness` |
+| [conj:brunnian-property-of-borromean](#conj:brunnian-property-of-borromean) | Brunnian property of $\mathcal{B}_3$: every two-component sub-link is the unlink | Ch 8 | `qou:QOU.KnotTheory.Brunnian.borromean_brunnian` |
 | [conj:isospin-from-canonical-bowtie](#conj:isospin-from-canonical-bowtie) | Canonical $\mathrm{SU}(2)_I$ isospin from the operator-valued $\bowtie_K$ interface (regularised crystal extension) | Ch 10 | `qou:QOU.BraidsAndKnots.IsospinFromCanonicalBowtie` |
 | [conj:atom-braid-exterior-algebra](#conj:atom-braid-exterior-algebra) | Canonical atom-braid `atom_braid_word_3A(Z, N)` in `H_{3A}(q)` generates a sub-algebra graded-isomorphic to the exterior algebra Λ*(ℂ^{3A−Z}) with grade shift δ = Z−1; total dim = 2^{3A−Z}, k-th component dim = C(3A−Z, k−δ). Empirically verified across D, T, ³He, ⁴He. | Ch 10 | `qou:QOU.BraidKnot.AtomBraidExteriorAlgebra.AtomBraidExteriorAlgebraStructure` |
 | [conj:canonical-knot-id-sdp](#conj:canonical-knot-id-sdp) | Canonical knot identification for ${}^2$H, ${}^3$H, ${}^3$He from the confinement SDP | Ch 10 | `qou:QOU.BraidKnot.helium3_uniqueness_closed` |

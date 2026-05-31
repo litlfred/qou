@@ -9,7 +9,6 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "prop:kashiwara-jones-c4-categorical",
     "prop:vol-through-tau",
     "rem:vol-as-motivic-period",
     "prop:binding-scale-catalan",

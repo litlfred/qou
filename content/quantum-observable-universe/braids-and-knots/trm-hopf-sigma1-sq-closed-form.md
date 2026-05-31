@@ -87,8 +87,11 @@ SEPARATE decomposition of $Q_\beta$ in which each factor must
 arise from a distinct categorical object $\mathcal{B}_n$ — for $F_3$
 specifically, the V_(2,2,2) Wedderburn-block projection inside
 Hoefsmit $V_{(2,1)} \otimes V_{(2,1)}$ embedded in $H_6$
-(per [`prop:hopf-jones-c3-categorical`](#prop:hopf-jones-c3-categorical)
-claim, derivation pending).
+(per the c_3 = J_Hopf(q=1) = −2 structural identification, locked
+behind the §3b-cond `QbetaC3StructuralFormClass` in
+`q-beta-categorical-precision-ladder.lean`; see
+[`docs/audits/2026-05-31-ck-exploratory-probes-removed.md`](../../../docs/audits/2026-05-31-ck-exploratory-probes-removed.md)
+for the derivation status).
 
 ## Remarks
 
