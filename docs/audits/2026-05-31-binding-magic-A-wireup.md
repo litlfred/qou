@@ -211,6 +211,126 @@ with a derivation from
 [`conj:kashaev-density-equals-sdp-multiplicity`](../../content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md)
 once the SDP-multiplicity Lean class is in place.
 
+## Bar-involution discipline check (added 2026-05-31)
+
+Verifying that bar / skew symmetry are used appropriately in the
+Bring-vs-strict pn-weighting:
+
+The Hecke bar-involution
+([`def:bar-involution`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.md)):
+$\overline{\sigma_i} = \sigma_i^{-1}$, $\overline q = q^{-1}$;
+every $x \in H_n(q)$ decomposes as
+$x = P_{\mathrm{avg}}(x) + P_{\mathrm{skew}}(x)$ (sym + skew under
+bar).
+
+In the two pn-conventions:
+
+- **`strict_averaged`** uses $\sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2$,
+  which is **bar-symmetric by construction**: $\overline{\sigma_{\mathrm{avg}}} = \sigma_{\mathrm{avg}}$,
+  $f_{\mathrm{pn}} = z - h/2$ uses only bar-invariant combinations
+  ($z$ and $h$ are bar-invariant). This is the **matter-blind**
+  averaging — no proton/neutron distinction at the Hecke
+  generator level.
+- **`bring_color_weighted`** uses
+  $w_+ \sigma + w_- \sigma^{-1}$ with
+  $w_\pm = 1/2 \pm \delta/4$ ($\delta = \Delta m_{n-p}/M_N$).
+  Since $w_+ \neq w_-$, **bar-symmetry is broken** — the formula
+  $f_{\mathrm{pn}} = z - h(1/2 - \delta/4)$ is in
+  $P_{\mathrm{avg}} \oplus P_{\mathrm{skew}}$ with a non-zero skew
+  component proportional to $\delta$. This is **the categorical
+  content** — the bar-skew piece IS the matter-antimatter
+  asymmetry encoded into the Hecke channel.
+
+So both conventions use bar / skew symmetry appropriately:
+strict respects bar (no matter-distinction), Bring breaks bar
+precisely where matter-antimatter asymmetry is the physics
+content. The bar-skew projection $P_{\mathrm{skew}}$ on the
+Bring-weighted pn factor is what makes the proton (uud) ↔ neutron
+(udd) distinction algebraically explicit — it's not a fitted
+parameter, it's the substrate-pure $\delta$ propagated through the
+bar decomposition.
+
+## Operator-valued Wenzl branching — Lean gaps (added 2026-05-31)
+
+The actual closure path for A ≥ 3 single-magic binding (per the
+Bring-weighting probe negative result above) is the
+operator-valued Wenzl branching identity, implemented in
+[`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py)
++
+[`A_operator_extract_at_level.py`](../../folio-assistant/computations/A_operator_extract_at_level.py)
++
+[`lr_coefficients.py`](../../folio-assistant/computations/lr_coefficients.py).
+Sub-lemma 2.1 of Wenzl (1988):
+
+$$
+  \chi^\lambda(W_{\mathrm{inner}} \cdot I \cdot \beta_{\mathrm{block}})
+  = \sum_{\substack{\xi \vdash n-3 \\ \nu \vdash 3}}
+    c^\lambda_{\xi\nu} \cdot
+    \mathrm{Tr}\bigl(A^\lambda_{\xi\nu}(I) \cdot
+                     (\rho_\xi(W_{\mathrm{inner}}) \otimes \rho_\nu(\beta_{\mathrm{block}}))\bigr)
+$$
+
+### Corpus-grep status (per the new STRICT rule)
+
+| Component | Lean status |
+|---|---|
+| Iwahori-Hecke algebra `H_n(q)` | Scaffolded ([`QOU/IwahoriHecke/Defn.lean`](../../content/quantum-observable-universe/lean/QOU/IwahoriHecke/Defn.lean), PR [#1524](https://github.com/litlfred/qou/pull/1524)) — opaque type + statement-level universal property; Sprint 2 implements the concrete quotient. |
+| Markov trace structure | [`MarkovTraceInductiveLimit`](../../content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.lean) class exists; provides the per-$n$ trace API. |
+| Markov axioms | [`markov-axioms-primitive.lean`](../../content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.lean) defines axioms; substrate. |
+| Wedderburn / character decomposition | [`QSchurWeightsGeneral.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/QSchurWeightsGeneral.lean) provides $q$-Schur weights; foundations for $\rho_\lambda$. |
+| Littlewood-Richardson coefficient `c^λ_{ξν}` | **No Lean** — only Python (`lr_coefficients.py`). Mathlib has skew Schur expansion lemmas but not the Hecke-specific construction. |
+| Operator-valued $A^\lambda_{\xi\nu}(I)$ | **No Lean** — Python implementation via bilinear-system inversion. |
+| Sub-lemma 2.1 (the identity itself) | **No Lean** — no dedicated content block. |
+
+### Concrete Lean gaps (Sprint 2-shaped)
+
+1. **`prop:lr-coefficient-hecke`** — content block stating the LR
+   coefficient $c^\lambda_{\xi\nu}$ for $\lambda, \xi, \nu \vdash$
+   given partitions, with reference to the Mathlib skew Schur
+   expansion. Provides the integer-valued constants for the sum.
+   Tractable: ~50-100 LOC Lean with `pyhecke.skew_syt` from PR
+   #1515 as a related primitive.
+2. **`def:wenzl-A-operator`** — definition block for
+   $A^\lambda_{\xi\nu}(I) \in \mathrm{End}(V_\xi \otimes V_\nu)$
+   given the interface $I \in \{I_{pp}, I_{pn}, I_{nn}\}$. §3b-cond
+   class hypothesis on the bilinear-inversion data
+   (extracted compute-side). The class fields encode the matrix
+   structure; downstream theorems take `[WenzlAOperator]` as
+   instance hypothesis.
+3. **`prop:wenzl-branching-sub-lemma-2-1`** — the headline
+   identity above stated formally. Sorry-free conditional on
+   (1) + (2) + the Iwahori-Hecke Sprint-2 concrete quotient
+   (PR #1524 follow-up). Statement only; proof requires the
+   non-trivial Wenzl 1988 result, which can also be §3b-cond
+   axiomatised as a class if the proof is research-grade.
+4. **`prop:operator-valued-combiner-convergence`** — for an
+   A-nucleon atom, the iterated application of sub-lemma 2.1
+   at each peeling level $n_k = 3(A-k+1)$ assembles into a
+   convergent representation of $\chi^\lambda(\beta_{\mathrm{atom}})$.
+   Needs the inductive structure on $A$. Tractable as a
+   `theorem` with `Nat.rec` on $A$, modulo (1)-(3) above.
+
+### Why these specific four
+
+The closure path for A ≥ 3 single-magic binding requires evaluating
+the full $\chi^\lambda(\beta_{\mathrm{atom}})$ at each $\lambda \vdash 3A$,
+not just the dominant force-carrier irrep used by the
+alpha-shift formula. The four blocks above are the **minimal**
+formalisation of the existing canonical compute path — each
+exists as production Python today; each lacks a Lean counterpart.
+Until (1)-(3) land, downstream `theorem` blocks consuming
+$A^\lambda_{\xi\nu}$ have to carry an explicit
+`[WenzlBranchingSubLemma]` class hypothesis per §3b-cond.
+
+### Next concrete step (queued for a follow-up PR)
+
+The smallest valuable single-PR slice is (1) +
+the LR coefficient Lean axiomatisation: replace the corresponding
+Python `lr_coef(mu, nu, lam)` call sites in
+`canonical_tr_m_via_branching.py` with a `LRCoefficient` class
+hypothesis. The Python continues to compute; the Lean carries the
+contract. Cost: ~half session of Lean.
+
 ## Why was the resolution missed? (post-mortem)
 
 The initial framing of this audit ($\rho_F = 2$ as "Open Math A",
