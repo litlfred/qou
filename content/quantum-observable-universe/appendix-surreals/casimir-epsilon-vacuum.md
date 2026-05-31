@@ -47,13 +47,36 @@ Concretely, the conjecture asserts
 
 $$
 N_{\unicode{9737}}^{\text{in}}(A, d) - N_{\unicode{9737}}^{\text{out}}(A, d)
-\;=\; -\,\frac{\pi^{2}}{720}\,\frac{A}{d^{3}}\,\hbar c \cdot \varepsilon^{-1}
-\;+\; \bigl(\text{lower-birthday corrections}\bigr).
+\;=\; -\,\frac{\pi^{2}}{720}\,\frac{A}{d^{3}}\,\hbar^{2}_{q}\,\hbar c \cdot \varepsilon^{-1}
+\;+\; \bigl(\text{lower-birthday corrections}\bigr),
 $$
 
-Multiplying by $\varepsilon$ and applying $\partial/\partial d$
-recovers the textbook Casimir force per unit area exactly (see the
-conditional derivation below).
+where $\hbar_{q} = 1 - q^{-1}$ is the substrate-Planck constant
+([`def:hbar-q`](#def:hbar-q)).
+
+The $\hbar^{2}_{q}$ factor is forced by dimensional consistency
+with the Hoefsmit normalisation
+$\mathrm{Geom}_\varepsilon(L) = \mathrm{Vol}(L)/\hbar^{2}_{q}
+\cdot \mathrm{linking\_weight}(L)$
+([`prop:hoefsmit-scattering-pipeline`](#prop:hoefsmit-scattering-pipeline)):
+$N_\unicode{9737}$ disjoint copies of the unknot contribute
+$\mathrm{Geom}_\varepsilon(N_\unicode{9737} \cdot \unicode{9737})
+= N_\unicode{9737} \cdot \varepsilon / \hbar^{2}_{q}$
+(disjoint-union additivity of $\mathrm{Vol}$, linking_weight = 1
+on disjoint unknots, per the
+[Hoefsmit-additivity probe](../../../folio-assistant/computations/casimir-hoefsmit-additivity-probe.witness.json)).
+The $\hbar^{2}_{q}$ in the denominator cancels the same factor in
+$N_\unicode{9737}$'s formula above, leaving a finite real energy:
+
+$$
+\mathrm{Geom}_\varepsilon\bigl((N^{\text{in}}_\unicode{9737} - N^{\text{out}}_\unicode{9737}) \cdot \unicode{9737}\bigr)
+\;=\; -\,\frac{\pi^{2}}{720}\,\frac{A}{d^{3}}\,\hbar c
+\;+\; o(1).
+$$
+
+Applying $\partial/\partial d$ and dividing by $A$ recovers the
+textbook Casimir force per unit area exactly (see the conditional
+derivation below).
 
 ## Structural appeal
 
@@ -77,7 +100,7 @@ Given:
 2. A plate-constrained unknot-density function satisfying
    $$
      N_{\unicode{9737}}^{\text{in}}(A, d) - N_{\unicode{9737}}^{\text{out}}(A, d)
-     \;=\; -\,\frac{\pi^{2}}{720}\,\frac{A}{d^{3}}\,\hbar c \cdot \varepsilon^{-1}
+     \;=\; -\,\frac{\pi^{2}}{720}\,\frac{A}{d^{3}}\,\hbar^{2}_{q}\,\hbar c \cdot \varepsilon^{-1}
      \;+\; o(\varepsilon^{-1}).
    $$
 3. Standard-part arithmetic

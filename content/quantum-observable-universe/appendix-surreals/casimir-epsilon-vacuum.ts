@@ -42,24 +42,27 @@ export default conjecture({
   },
   authorNotes: [
     {
-      kind: "caveat",
-      date: "2026-05-30",
+      kind: "refined-framing",
+      date: "2026-05-31",
       body:
-        "**ε-scaling under review.** The narrative states " +
-        "`N_⊙(A,d) ~ ε⁻¹ · A/d³`, but the empirical Hoefsmit-" +
-        "additivity probe " +
-        "(`folio-assistant/computations/casimir_hoefsmit_" +
-        "additivity_probe.py`) found that composing with the " +
-        "`Geom_full = Vol/ℏ_q²` normalisation forces either " +
-        "(a) `N_⊙ ~ ε⁻²` (birthday rank 2), or (b) a different " +
-        "`linking_weight` for disjoint unknots than the " +
-        "Borromean case. The dimensional consistency is not " +
-        "yet pinned down. See " +
+        "**ε-scaling refinement RESOLVED.** Earlier draft asserted " +
+        "`N_⊙(A,d) ~ -π²·A/(720·d³·ε)·ℏc` (no `ℏ²_q` factor). The " +
+        "Hoefsmit-additivity probe (`casimir_hoefsmit_additivity_" +
+        "probe.py`) found that under disjoint-union additivity, " +
+        "`Geom_ε(N · ⊙) = N · ε / ℏ²_q`. For this to give the " +
+        "textbook `-π²·A·ℏc/(720·d³)` after taking the standard-" +
+        "part, the `N_⊙` formula must carry an extra `ℏ²_q` " +
+        "factor so the `ℏ²_q` numerator and denominator cancel. " +
+        "The narrative + conditional implication are now updated " +
+        "with the corrected formula `N_⊙ ~ -π²·A·ℏ²_q·ℏc/(720·d³·ε)`. " +
+        "Interpretation (a) of the original caveat is correct; " +
+        "interpretation (b) (`ε⁻²` birthday rank) is wrong " +
+        "because it would give a surreal-infinite Casimir energy, " +
+        "incompatible with archimedean experimental scale. See " +
         "[`docs/audits/2026-05-30-casimir-epsilon-vacuum-" +
         "investigation.md`](../../../docs/audits/2026-05-30-" +
-        "casimir-epsilon-vacuum-investigation.md) Route B for " +
-        "the full analysis. Resolution requires a paper-side " +
-        "judgement before the conjecture is finalised.",
+        "casimir-epsilon-vacuum-investigation.md) Route B " +
+        "(resolved 2026-05-31).",
     },
     {
       kind: "note",
