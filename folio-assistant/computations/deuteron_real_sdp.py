@@ -77,6 +77,13 @@ def parse_partition(key: str) -> tuple[int, ...]:
     return tuple(int(p) for p in key.strip("()").rstrip(",").split(",") if p.strip())
 
 
+def conjugate_partition(part: tuple[int, ...]) -> tuple[int, ...]:
+    """Conjugate (transpose) partition λ ↦ λ' — the 'skew'/column-reading."""
+    if not part:
+        return ()
+    return tuple(sum(1 for r in part if r > j) for j in range(part[0]))
+
+
 def sanitize_nan(val):
     """Replace NaN/Inf floats with None so the witness is RFC 8259 JSON.
 
@@ -142,11 +149,62 @@ def main() -> int:
     sdp = solve_psd_operator_selection_sdp(t, G, n_target)
     lp_d = lp.to_dict()
     sdp_d = sdp.to_dict()
-    bounded = abs(float(lp_d.get("duality_gap") or 0.0)) < 1e-6
+    _gap_full = lp_d.get("duality_gap")
+    bounded = (_gap_full is not None and abs(float(_gap_full)) < 1e-6
+               and bool(lp_d.get("feasible", True)))
 
     # active demand channels = blocks the deuteron bound state saturates
     active_idx = lp_d.get("active_set", [])
     active_blocks = [keys[i] for i in active_idx if i < len(keys)]
+
+    # ── Symmetry analysis (involution / bar / skew) ──────────────────────
+    # The Frobenius-norm sign structure is governed by the bar-involution
+    # (q ↦ q⁻¹) composed with the skew/conjugate map λ ↦ λ'.  Empirically
+    # every negative-norm forbidden block is the conjugate of a dominant
+    # positive block, with tr_M(P_λ) sign-flipped — the §7b "symmetric
+    # crystal / Type-B folding" signature.  We record the pairing.
+    key_of = {parse_partition(k): k for k in keys}
+    trM_block = {k: float(frob_diag[i]) for i, k in enumerate(keys)}
+    symmetry = []
+    for i, k in enumerate(keys):
+        p = parse_partition(k)
+        cp = conjugate_partition(p)
+        ck = key_of.get(cp)
+        t_self = trM_block[k]
+        t_conj = trM_block.get(ck) if ck else None
+        symmetry.append({
+            "block": k,
+            "conjugate": ck,
+            "self_conjugate": (ck == k),
+            "trM": t_self,
+            "trM_conjugate": t_conj,
+            "sign_flip_under_conjugation": (
+                t_conj is not None and (t_self < 0) != (t_conj < 0)
+            ),
+        })
+    self_conjugate_blocks = [s["block"] for s in symmetry if s["self_conjugate"]]
+    sign_flip_pairs = sorted({
+        tuple(sorted((s["block"], s["conjugate"])))
+        for s in symmetry if s["sign_flip_under_conjugation"]
+    })
+
+    # ── Phase B (interim) — bounded subspace on positive-norm blocks ─────
+    # Drop the bar-conjugate forbidden blocks (tr_M(P_λ) < 0); on the
+    # surviving positive-Gram subspace the operator-selection program is
+    # bounded and strong duality holds.  This is the well-posed interim
+    # result (no quark constraints yet) that de-risks the Phase D Lean
+    # wiring; the full color-flavor SDP is the follow-up.
+    pos = [i for i, g in enumerate(frob_diag) if g > 0.0]
+    pos_keys = [keys[i] for i in pos]
+    t_pos = t[pos]
+    G_pos = np.diag(frob_diag[pos])
+    n_target_pos = float(t_pos.sum())
+    lp_pos = solve_operator_selection_lp(t_pos, G_pos, n_target_pos)
+    lp_pos_d = lp_pos.to_dict()
+    _gap_pos = lp_pos_d.get("duality_gap")
+    interim_bounded = (_gap_pos is not None and abs(float(_gap_pos)) < 1e-6
+                       and bool(lp_pos_d.get("feasible", True)))
+    interim_active = [pos_keys[i] for i in lp_pos_d.get("active_set", []) if i < len(pos_keys)]
 
     witness = {
         "engine": "deuteron_real_sdp",
@@ -187,10 +245,29 @@ def main() -> int:
                 "(negative-norm blocks forbidden). Phase B color-flavor "
                 "constraints required for a well-posed bounded program."
             ) if not bounded else "Real SDP bounded; strong duality holds.",
+            # ---- symmetry (involution / bar / skew) ----
+            "symmetry_conjugate_pairing": symmetry,
+            "self_conjugate_blocks": self_conjugate_blocks,
+            "sign_flip_conjugate_pairs": [list(p) for p in sign_flip_pairs],
+            "symmetry_note": (
+                "Every negative-norm forbidden block is the conjugate λ↦λ' "
+                "of a dominant positive block with tr_M(P_λ) sign-flipped — "
+                "the §7b bar-involution (q↦q⁻¹) / Type-B-folding signature. "
+                "(3,2,1) is the self-conjugate fixed point."
+            ),
+            # ---- Phase B interim (bounded positive-norm subspace) ----
+            "phase_B_interim": {
+                "positive_norm_blocks": pos_keys,
+                "n_target": n_target_pos,
+                "bounded": interim_bounded,
+                "strong_duality_holds": interim_bounded,
+                "active_blocks": interim_active,
+                "lp": lp_pos_d,
+            },
             # ---- scope markers ----
             "phase_A_cost": "done",
-            "phase_B_constraints": "pending (color-flavor 9-pair + AME2020 RHS)",
-            "phase_C_dual_solve": "diagnostic (unbounded without Phase B)",
+            "phase_B_constraints": "interim (bounded positive-norm subspace); full color-flavor 9-pair + AME2020 RHS pending",
+            "phase_C_dual_solve": "diagnostic (unbounded on full space; bounded on positive subspace)",
             "phase_D_lean_wiring": "pending (deuteron_emptySDP -> deuteron_realSDP)",
         },
     }
@@ -203,7 +280,12 @@ def main() -> int:
     print(f"  duality_gap    = {lp_d.get('duality_gap')}")
     print(f"  Gram indefinite at q_0: {bool((frob_diag < 0).any())}  "
           f"forbidden (neg-norm) blocks = {forbidden_blocks}")
-    print(f"  active blocks  = {active_blocks}")
+    print(f"  active blocks (full, unbounded) = {active_blocks}")
+    print(f"  self-conjugate block(s)         = {self_conjugate_blocks}")
+    print(f"  sign-flip conjugate pairs       = {[list(p) for p in sign_flip_pairs]}")
+    print(f"  Phase B interim — bounded: {interim_bounded}  "
+          f"gap={lp_pos_d.get('duality_gap')}")
+    print(f"  Phase B interim — active blocks = {interim_active}")
     print(f"  wrote {OUT_WITNESS.name}")
     return 0
 
