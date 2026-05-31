@@ -11,3 +11,5 @@ exhibits the empirical evaluations against CODATA-grade
 constants.  The closing blocks tie the conjecture to the Bloch-
 group quotient construction from the Descartes chapter and the
 Mathlib-bridge fillers from the q-geometric-Langlands chapter.
+
+The arc through the Bring trilog depth-3 witness, the Tate-rational cyclotomic identification, the $\zeta_5$-orbit-sum identity and its PSLQ independence verification, the cyclotomic trilog imaginary closed form (with table data), and the general $\mathrm{Cl}_3$ orbit-sum formula pins the trilog substrate-flow data for the next sub-section's spectral computations.

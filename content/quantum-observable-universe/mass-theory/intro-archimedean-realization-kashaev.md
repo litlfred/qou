@@ -13,3 +13,5 @@ vanishes).  The second half tracks the convergence of the
 substrate-level invariant to the hyperbolic volume as $q \to 1$,
 identifying the categorical $\mathrm{Vol}_{\mathrm{hyp}}$ as the
 limit of the Kashaev sum.
+
+The arc closes with the archimedean-image table, the pre-tau vs post-tau distinction, and the volume-through-tau / volume-as-motivic-period identifications that pin the Kashaev volume conjecture's substrate-level interpretation.

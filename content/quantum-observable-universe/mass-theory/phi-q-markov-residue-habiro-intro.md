@@ -11,3 +11,5 @@ form + residue-as-braid-holonomy + the graded-trace residue split +
 the 6-term binding density + the full pole structure of the mass
 trace + the Habiro residue-sum equivalence that closes the
 foundations.
+
+The output is the substrate-level Habiro residue formula together with the substrate-flow data the term-6 binding-density block consumes.

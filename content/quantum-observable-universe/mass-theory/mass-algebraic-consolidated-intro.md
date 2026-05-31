@@ -20,3 +20,5 @@ ladder, and the filtration bridges (Hecke bi-filtration,
 Galois--braid joint action, adelic substrate) that connect the
 algebraic mass machinery to the number-theoretic structure of
 the substrate.
+
+The arc widens further into the substrate-flow behaviour of the transfer matrix at higher levels and into the closing blocks that wire the substrate-level Markov-trace evaluation into the substrate-flow numerics consumed downstream. The output is the consolidated algebraic-mass closed form together with its substrate-flow data.
