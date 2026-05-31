@@ -401,6 +401,71 @@ function auditPaper(paper: string): Finding[] {
           }
         }
       }
+
+      // section-narrative-drift: block ordering breaks the story arc.
+      // §738 §Story coherence (STRICT) requires the narrative order:
+      //   definitions → (proposition / lemma / theorem) immediately
+      //   followed by its proof → examples / remarks / simulators
+      // We catch two common drift signatures:
+      //   (a) a `proof` block precedes its target `prop`/`lem`/`thm`/`cor`
+      //       block at the same root (e.g. foo-proof appears before foo)
+      //   (b) a block whose .ts carries `interprets: "X"` precedes the
+      //       interpreted block X in document order
+      // The check is conservative — it flags only same-section ordering
+      // violations; cross-section drift is the detangler watcher's
+      // responsibility.
+      const blockPosition = new Map<string, number>();
+      sec.blocks.forEach((b, i) => blockPosition.set(b, i));
+      for (const rn of sec.blocks) {
+        const pos = blockPosition.get(rn)!;
+        // (a) proof-before-target — `foo-proof` precedes `foo`.
+        const proofMatch = rn.match(/^(.+)-proof$/);
+        if (proofMatch) {
+          const target = proofMatch[1];
+          const targetPos = blockPosition.get(target);
+          if (targetPos !== undefined && targetPos > pos) {
+            findings.push({
+              kind: "section-narrative-drift",
+              severity: "minor",
+              chapter: dir,
+              section: sec.label ?? sec.title,
+              detail: `proof block "${rn}" precedes its target "${target}" in document order — breaks the definitions → claim → proof arc per §738`,
+              link: blobUrl(paper, dir, `${rn}.ts`),
+            });
+          }
+        }
+        // (b) interprets-before-target — scan the .ts for an `interprets:`
+        // field; if the target appears later in the section, flag.
+        const tsPath = join(CONTENT, paper, dir, `${rn}.ts`);
+        if (existsSync(tsPath)) {
+          const tsSrc = readFileSync(tsPath, "utf-8");
+          const interpretsM = tsSrc.match(/interprets:\s*["']([^"']+)["']/);
+          if (interpretsM) {
+            // The interprets value is a label like "prop:foo"; resolve
+            // to a block by stripping the prefix and searching block kinds.
+            const interpretsLabel = interpretsM[1];
+            for (const otherRn of sec.blocks) {
+              const otherPos = blockPosition.get(otherRn)!;
+              if (otherPos <= pos) continue;
+              const otherTs = join(CONTENT, paper, dir, `${otherRn}.ts`);
+              if (!existsSync(otherTs)) continue;
+              const otherSrc = readFileSync(otherTs, "utf-8");
+              const labelM = otherSrc.match(/label:\s*["']([^"']+)["']/);
+              if (labelM?.[1] === interpretsLabel) {
+                findings.push({
+                  kind: "section-narrative-drift",
+                  severity: "minor",
+                  chapter: dir,
+                  section: sec.label ?? sec.title,
+                  detail: `interpretation block "${rn}" (interprets ${interpretsLabel}) precedes its target "${otherRn}" — breaks document-order arc per §738`,
+                  link: blobUrl(paper, dir, `${rn}.ts`),
+                });
+                break;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
