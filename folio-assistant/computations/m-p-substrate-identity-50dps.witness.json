@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T03:44:23.892484+00:00",
-  "commitSha": "3fda58749d66d5298e104771958a50ec12e47e51",
+  "computedAt": "2026-05-31T04:46:34.977228+00:00",
+  "commitSha": "0247f05b4031608cc8b03aa7e8e67ecab26d561d",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
@@ -24,16 +24,23 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 13,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "0cd92ae09497",
+  "scriptHash": "73a4f1ccf5dc",
   "scriptCommitSha": "267780da5e84424b11094ce13e976f707d52565b",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Production substrate-categorical prediction of m_p and m_n from (m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| and [3]_q!, plus the canonical Hecke-skein flavor-split formula. CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where the '12' is the Ocneanu cancellation reciprocal.",
   "contentBlock": "prop:proton-mass-substrate-identity",
@@ -76,6 +83,15 @@
       "M_N_residual_ppm": "-0.880171404166",
       "Q_beta_codata_MeV": "0.7823334100000000481790607",
       "Q_beta_residual_ppm": "-2112.67934273"
+    },
+    "lean_uniqueness_ref": {
+      "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
+      "neutron": "qou:QOU.BraidKnot.nucleus_uniqueness_closed (n=3)",
+      "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
+      "tritium": "qou:QOU.BraidKnot.tritium_uniqueness_closed",
+      "helium3": "qou:QOU.BraidKnot.helium3_uniqueness_closed",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level. The real per-nucleus SDP (multi-term cost from this mass-identity formula + non-empty constraints) is per-nucleus substantive open work; see docs/coordination/2026-05-30-sdp-uniqueness-status.md."
     }
   }
 }

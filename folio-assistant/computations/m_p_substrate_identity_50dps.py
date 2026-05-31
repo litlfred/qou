@@ -296,6 +296,27 @@ def main():
         "Q_beta_residual_ppm": mp.nstr(res_Q_beta_ppm, 12),
     })
 
+    # Lean SDP-uniqueness cross-reference (PR #1537/#1542 wiring,
+    # 2026-05-31). Each nucleus's canonical T_w knot operator's
+    # uniqueness at the empty-constraint SDP demonstration level is
+    # certified by the named theorem below.
+    w.add_data("lean_uniqueness_ref", {
+        "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
+        "neutron": "qou:QOU.BraidKnot.nucleus_uniqueness_closed (n=3)",
+        "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
+        "tritium": "qou:QOU.BraidKnot.tritium_uniqueness_closed",
+        "helium3": "qou:QOU.BraidKnot.helium3_uniqueness_closed",
+        "framework_doc":
+            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+        "note": (
+            "These theorems certify T_w uniqueness at the abstract "
+            "empty-constraint SDP level. The real per-nucleus SDP "
+            "(multi-term cost from this mass-identity formula + "
+            "non-empty constraints) is per-nucleus substantive open "
+            "work; see docs/coordination/2026-05-30-sdp-uniqueness-status.md."
+        ),
+    })
+
     # Assertions: tight matches
     w.add_assertion(
         name="m_p_matches_codata_within_1ppm",
