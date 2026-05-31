@@ -171,8 +171,8 @@ theorem bindingRegime_doublyMagic_iff (Z N : ℕ) :
     bindingRegime Z N = BindingRegime.DoublyMagic ↔ isDoublyMagic Z N := by
   unfold bindingRegime isDoublyMagic
   by_cases h : isMagic Z ∧ isMagic N
-  · simp [h]
-  · simp [h]
+  · rw [if_pos h]; exact ⟨fun _ => h, fun _ => rfl⟩
+  · rw [if_neg h]; exact ⟨fun hc => absurd hc (by decide), fun hd => absurd hd h⟩
 
 /-- The classifier selects `AlphaShift` exactly when the nucleus is
     *not* doubly magic. -/
@@ -180,8 +180,8 @@ theorem bindingRegime_alphaShift_iff (Z N : ℕ) :
     bindingRegime Z N = BindingRegime.AlphaShift ↔ ¬ isDoublyMagic Z N := by
   unfold bindingRegime isDoublyMagic
   by_cases h : isMagic Z ∧ isMagic N
-  · simp [h]
-  · simp [h]
+  · rw [if_pos h]; exact ⟨fun hc => absurd hc (by decide), fun hn => absurd h hn⟩
+  · rw [if_neg h]; exact ⟨fun _ => h, fun _ => rfl⟩
 
 /-- **⁴He dispatches to the doubly-magic regime.** `Z = N = 2` are
     both magic, so `bindingRegime 2 2 = DoublyMagic`; the binding is
@@ -189,7 +189,7 @@ theorem bindingRegime_alphaShift_iff (Z N : ℕ) :
     80× gap closure (`B ≈ 29.956 MeV` vs `28.296 MeV`, 5.9% miss). -/
 theorem he4_dispatches_to_magic :
     bindingRegime 2 2 = BindingRegime.DoublyMagic := by
-  rw [bindingRegime_doublyMagic_iff]; exact he4_is_doubly_magic
+  decide
 
 /-- **Tritium dispatches to the α_shift regime.** `³H = (Z, N) = (1, 2)`:
     `Z = 1 ∉ 𝔐`, so `bindingRegime 1 2 = AlphaShift`; the binding is
@@ -197,19 +197,16 @@ theorem he4_dispatches_to_magic :
     candidate, `α_shift = 5`, in `binding-alpha-shift-extension.lean`). -/
 theorem tritium_dispatches_to_alpha_shift :
     bindingRegime 1 2 = BindingRegime.AlphaShift := by
-  rw [bindingRegime_alphaShift_iff]
-  rintro ⟨hZ, _⟩
-  -- Z = 1 is not in the magic set {2, 8, 20, 28, 50, 82, 126}.
-  rcases hZ with h | h | h | h | h | h | h <;> exact absurd h (by decide)
+  -- Z = 1 ∉ 𝔐 = {2, 8, 20, 28, 50, 82, 126}; classifier is computable.
+  decide
 
 /-- **³He dispatches to the α_shift regime.** `³He = (Z, N) = (2, 1)`:
     `N = 1 ∉ 𝔐`, so `bindingRegime 2 1 = AlphaShift`; routed through
     `BindingForceCarrierKnot` (the mirror `T(2, 5)` candidate). -/
 theorem helium3_dispatches_to_alpha_shift :
     bindingRegime 2 1 = BindingRegime.AlphaShift := by
-  rw [bindingRegime_alphaShift_iff]
-  rintro ⟨_, hN⟩
-  rcases hN with h | h | h | h | h | h | h <;> exact absurd h (by decide)
+  -- N = 1 ∉ 𝔐; classifier is computable.
+  decide
 
 /-- **Deuteron dispatches to the α_shift regime.** `D = (Z, N) = (1, 1)`:
     neither is magic, so `bindingRegime 1 1 = AlphaShift`; routed
@@ -217,9 +214,8 @@ theorem helium3_dispatches_to_alpha_shift :
     `α_shift = 3`). -/
 theorem deuteron_dispatches_to_alpha_shift :
     bindingRegime 1 1 = BindingRegime.AlphaShift := by
-  rw [bindingRegime_alphaShift_iff]
-  rintro ⟨hZ, _⟩
-  rcases hZ with h | h | h | h | h | h | h <;> exact absurd h (by decide)
+  -- Neither Z = 1 nor N = 1 is magic; classifier is computable.
+  decide
 
 /-- **Regime-aware binding evaluator.**
 
