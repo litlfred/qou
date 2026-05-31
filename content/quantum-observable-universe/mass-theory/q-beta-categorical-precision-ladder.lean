@@ -15,9 +15,21 @@ The Q_β categorical-derivation precision ladder through depth N=3:
 
 with α = (z-1)h/2, b = √(q⁴+q²+1)/(q²+1), and ℏ_q = (q-1)/q.
 
-Each rung's coefficient is derived from substrate-only data:
+Each rung's coefficient is BUILT from substrate-only data:
   - b: Hoefsmit off-diagonal coupling on V_(2,1) (Hecke seminormal form)
   - 2 = -J_Hopf(q=1): classical-limit Jones polynomial of the Hopf link
+
+**DISCIPLINE (2026-05-30, supersedes earlier "derived" framing).** Only
+the N=2 rung (c_2 = -1) is Taylor-EXACT and wired to production
+(`per_observable_100x_status.py`, Q_N2 = 1279 ppb honest floor). The
+N≥3 rungs (c_3 = J_Hopf, c_4, c_5, …) are STRUCTURAL NEAR-MATCHES at
+canonical q₀ (c_3 = J_Hopf is 3.35% off the empirical Taylor coefficient
+-2.0693), NOT Taylor-exact derivations — see
+`docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md` and
+`folio-assistant/computations/qbeta-delta-tr-vs-formA.witness.json`.
+The c_3 identification is locked behind the conditional
+`QbetaC3StructuralFormClass` (§3b-cond) at the foot of this file;
+production wires nothing beyond c_2.
 
 LaTeX label: `prop:q-beta-categorical-precision-ladder`
 -/
@@ -147,14 +159,23 @@ theorem hoefsmitB_bar_invariant (q : ℝ) (hq : 0 < q) :
 
 /-- **Q_β categorical-derivation precision ladder export.** Bundles the
     Form A baseline + N=1..N=5 factors into the canonical export.
-    Empirical residuals at q_0 against CODATA Q_β:
 
-      N=3 (Hopf at q=1):       +6.02 ppb  (beats 7.80 ppb 100×-exp target ✓)
-      N=4 (c_3·b⁴):            -0.01 ppb  (sub-percent of N=3)
-      N=5 (c_3²·3 + b):       ≈+0.0004 ppb (0.4% residual on c_5)
+    **STALE-CLAIM CORRECTION (2026-05-30).** Earlier revisions of this
+    docstring reported "N=3 (Hopf at q=1): +6.02 ppb (beats 7.80 ppb
+    100×-exp target ✓)". That figure was a STALE-q₀ ARTIFACT: it was
+    computed against a pre-#1422 q₀ pin. At the current canonical q₀
+    (m_p-anchored, 1.10997858…) the N=3 rung is a 3.35% near-match
+    (c_3 = J_Hopf = -2 vs empirical Taylor c_3 = -2.0693), NOT a +6 ppb
+    beat of the target. The honest production status is **Q_N2 = 1279
+    ppb** (c_2 = -1 only); see
+    `docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md` and
+    `qbeta-delta-tr-vs-formA.witness.json`. The N=3+ factors below
+    remain as the framework's STRUCTURAL form (conditional on
+    `QbetaC3StructuralFormClass`), but do NOT clear the 100× target at
+    canonical q₀ and are NOT wired to production.
 
-    Source for c_4, c_5 derivations:
-    `docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md`. -/
+    Source for the c_4, c_5 structural forms (near-matches, not
+    derivations): `docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md`. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf Jones polynomial)
 theorem q_beta_categorical_precision_ladder (q m_e : ℝ) (hq : 0 < q) :
