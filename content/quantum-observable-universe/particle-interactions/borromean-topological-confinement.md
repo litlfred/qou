@@ -28,4 +28,8 @@ the corresponding Bloch-group element lives in
 [Borromean Bloch-group element](#conj:borromean-bloch-group-element).
 The present remark records only the *topological* mechanism so
 that the confinement statement has a single named home in the
-manifest.
+manifest.  The formal Lean counterpart is
+[Brunnian property of $\mathcal{B}_3$](#conj:brunnian-property-of-borromean),
+which states that every two-component sub-link of the Borromean
+rings is the unlink and traces the formalisation gap to the
+absence of Mathlib Reidemeister-move primitives.
