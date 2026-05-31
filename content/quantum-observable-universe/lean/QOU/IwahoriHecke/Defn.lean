@@ -222,15 +222,42 @@ def altProduct {A : Type*} [Monoid A] : A → A → ℕ → A
     Sprint 2 follow-up (2026-05-31): captures the FULL universal
     property of the Iwahori-Hecke algebra (not just the Hecke
     quadratic fragment).  The caller supplies the Coxeter matrix
-    function `m`, typically obtained from a Mathlib `CoxeterSystem`:
+    function `m`, derived from a Mathlib `CoxeterSystem`.
 
-      `let m := cs.M.M`   -- Mathlib accessor (subject to API drift)
+    **Mathlib accessor (verified against `Mathlib.GroupTheory.Coxeter`
+    for the Lean v4.24.0 toolchain pinned in `lean-toolchain`).**
+    In Mathlib the Coxeter matrix is the *type parameter* `M` of
+    `CoxeterSystem M W`, NOT a field of the term `cs`. Concretely,
+    given
 
-    or from a custom matrix function for the user's specific Coxeter
-    presentation.  The predicate intentionally takes `m` as an
-    explicit parameter rather than committing to Mathlib's current
-    `CoxeterSystem` API surface, so it remains stable across Mathlib
-    refactors.
+      `variable {B : Type*} {M : CoxeterMatrix B} {W : Type*}`
+      `         [Group W] (cs : CoxeterSystem M W)`
+
+    the matrix is `M : CoxeterMatrix B` itself, and its `(i, j)`
+    entry is the natural number `M i j` (a `CoxeterMatrix B` carries
+    a `FunLike` to `B → B → ℕ`). There is **no `cs.M` projection**;
+    `cs.M.M` does not typecheck. Note also the index type is `B`
+    (the simple-reflection index), not `W`: the simple reflections
+    embed via `cs.simple : B → W`.
+
+    Because Mathlib indexes by `B` while this predicate indexes by
+    `W`, the caller adapts at the call site, e.g.
+
+      `let m : W → W → ℕ := fun s t => M (φ s) (φ t)`
+
+    for some chosen section `φ : W → B` on the simple reflections
+    (or supplies any custom matrix function for the user's specific
+    presentation). The predicate intentionally takes `m : W → W → ℕ`
+    as an explicit parameter rather than committing to Mathlib's
+    `CoxeterSystem`/`CoxeterMatrix` API surface (`FunLike` coercion
+    vs. structure field has drifted across Mathlib refactors), so
+    this definition stays stable across Mathlib bumps.
+
+    (The exact entry-application spelling — `M i j` via the
+    `FunLike` coercion — is the one surface detail to re-confirm on
+    a local `lake build QOU` when wiring an actual `CoxeterSystem`
+    caller; the `m : W → W → ℕ` parameterisation here is independent
+    of it.)
 
     Conditions:
     1. **Hecke quadratic** — `(f s − q)(f s + 1) = 0` for every
