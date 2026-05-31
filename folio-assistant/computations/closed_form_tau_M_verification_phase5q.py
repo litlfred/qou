@@ -230,6 +230,14 @@ def main() -> int:
             f"max rel.err < 1e-12."
         ),
     )
+    # Lean SDP-uniqueness cross-reference (post-#1537 wiring).
+    builder.add_data("lean_uniqueness_ref", {
+        "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+        "framework_doc":
+            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+        "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
+    })
+
     builder.save()
     print(f"\nWitness written: closed-form-tau-M-verification-phase5q.witness.json")
     return 0

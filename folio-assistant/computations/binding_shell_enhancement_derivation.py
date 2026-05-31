@@ -214,6 +214,14 @@ def main():
         tolerance=1,
         source="best derived f leaves ≥12% on A≥3; p/n asymmetry blocks any scalar f",
     )
+    # Lean SDP-uniqueness cross-reference (post-#1537 wiring).
+    wb.add_data("lean_uniqueness_ref", {
+        "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+        "framework_doc":
+            "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+        "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.",
+    })
+
     wb.save()
 
 

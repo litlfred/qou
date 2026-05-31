@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T13:30:08.873529+00:00",
-  "commitSha": "6a931e064a174cafe145ac382e66c86482a86ba6",
+  "computedAt": "2026-05-31T15:07:18.589411+00:00",
+  "commitSha": "130eff212f447a8ef1e9079a61284806bf4695df",
   "assertions": [
     {
       "name": "lean_uniqueness_ref_coverage",
-      "computed": 1,
+      "computed": 6,
       "expected": 163,
       "passed": false,
       "tolerance": 0,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 2173,
+  "durationMs": 2292,
   "computation": "audit-lean-uniqueness-ref-wiring",
   "scriptFile": "audit_lean_uniqueness_ref_wiring.py",
   "scriptHash": "374841f611e6",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "96a3d16e833e112b29e6cc11c7f6bcf3fabf844d",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -34,11 +34,11 @@
   },
   "description": "Audit: per-nucleus witness JSONs cite their Lean SDP-uniqueness theorem (`lean_uniqueness_ref` field). Tracks the wiring campaign per workplan at docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md. In `--strict` mode exits non-zero if any per-nucleus witness is missing the field.",
   "data": {
-    "total_witnesses_scanned": 802,
+    "total_witnesses_scanned": 813,
     "per_nucleus_witnesses_count": 163,
-    "wired_count": 1,
-    "missing_count": 162,
-    "coverage_fraction": 0.006134969325153374,
+    "wired_count": 6,
+    "missing_count": 157,
+    "coverage_fraction": 0.03680981595092025,
     "missing_witnesses": [
       "A-operator-per-interface.witness.json",
       "a-K-via-lp-dual-full.witness.json",
@@ -92,6 +92,11 @@
       "delta-n2-lp-dual-extraction.witness.json"
     ],
     "wired_witnesses": [
+      "deuteron_tr_M_symbolic.witness.json",
+      "m-p-borromean-verification-50dps.witness.json",
+      "m-p-bring-plus-faddeev-h4-probe.witness.json",
+      "m-p-m-e-li2q.witness.json",
+      "m-p-spectral-corrected-50dps.witness.json",
       "m-p-substrate-identity-50dps.witness.json"
     ]
   }
