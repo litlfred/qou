@@ -20,3 +20,14 @@ The three calibration inputs ($m_e$, $m_\mu/m_e$, $m_\pi$) are
 categorical constraints — they fix the substrate parameter $q_0$
 and the chiral scale, not archimedean fitting targets.  Everything
 else is derived.
+
+A note on scope: this section's closed-form blocks supply the
+substrate-level mass identity used throughout the chapter cycle.
+Subsequent sub-sections specialise the identity to particular
+mass channels (Markov-trace endomorphism, $\chi$-character closed
+forms, Hecke-Baer-star chirality); the substrate-level statement
+established here factorises through each specialisation without
+modification.  Readers focused on a specific channel can take the
+identity as a black box; readers focused on the structural
+content should work through the existence and uniqueness proofs
+that follow.

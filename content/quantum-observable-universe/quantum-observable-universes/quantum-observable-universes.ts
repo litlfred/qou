@@ -178,6 +178,7 @@ export default chapter({
       title: "Heisenberg commutator",
       label: "sec:heisenberg-commutator",
       blocks: [
+        "intro-heisenberg-commutator",
         "heisenberg-commutator-prop",
         "heisenberg-commutator",
       ],
