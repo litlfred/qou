@@ -19,8 +19,8 @@ For doubly-magic ⁴He (Z=N=2):
 | [`magic_A_formula::magic_A_binding`](../../folio-assistant/computations/magic_A_formula.py) (ρ_F·m_e·A·8G, ρ_F=2) | 29.96 MeV | 28.30 MeV | **+5.9%** |
 
 Wiring the existing magic_A path through for the doubly-magic case
-closes ~80× of the alpha_shift gap on ⁴He alone, with zero new math
-required.
+closes the ⁴He gap by **13.5×** (|rel_err| from 0.7904 → 0.0587),
+with zero new math required.
 
 ## What the framework already has (per existing code)
 
@@ -105,9 +105,14 @@ look like" question.
    4 ⁴He   T(3,4)         8     5.9322    28.2957    0.2096
 ```
 
-with the new gap report: *"For doubly-magic ⁴He the
-existing-but-unwired magic_A formula B = ρ_F·m_e·A·8G predicts
-29.956 MeV (+5.9% miss), closing the alpha_shift gap by ~80×."*
+with the new gap report: *"For doubly-magic ⁴He the magic_A formula
+B = ρ_F·m_e·A·8G predicts 29.956 MeV (+5.9% miss), closing the
+alpha_shift gap by **13.5×** (|rel_err| 0.7904 → 0.0587)."*
+
+The script dispatches to the canonical
+[`magic_A_formula.magic_A_binding`](../../folio-assistant/computations/magic_A_formula.py)
+rather than mirroring the formula locally; `VOL_BORROMEAN` is sourced
+from `knot_volumes` (mpmath 50dps) via that import chain.
 
 ### Option 2 — Lean dispatcher class (DONE in this PR)
 
@@ -198,8 +203,8 @@ no scalar q-factor can produce. **Open Math B**:
 
 ## Action items
 
-1. ✓ **This PR**: witness emitter shows the 80× ⁴He gap closure via the
-   wired-in formula.
+1. ✓ **This PR**: witness emitter shows the 13.5× ⁴He gap closure
+   (|rel_err| 0.7904 → 0.0587) via the wired-in formula.
 2. ✓ **This PR (now)**: Lean content-block triple
    `magic-A-binding-formula.{ts,md,lean}` ships the §3b-cond
    formalisation + chapter-manifest entry. The Lean theorem

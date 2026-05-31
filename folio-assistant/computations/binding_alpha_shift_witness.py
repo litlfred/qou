@@ -44,9 +44,6 @@ from pathlib import Path
 # CODATA 2018
 M_E_MEV = 0.5109989461
 
-# Catalan's constant G = 0.91596559... (used in 8G = Vol(L6a4) = Vol(Borromean))
-VOL_BORROMEAN_8G = 7.32772475341775  # mpmath catalan() · 8, 16-digit fixed for portability
-
 # Experimental binding energies, AME 2020 / NIST (MeV)
 B_EXP_MEV: dict[str, float] = {
     "D":   2.224566,
@@ -55,33 +52,49 @@ B_EXP_MEV: dict[str, float] = {
     "⁴He": 28.295674,
 }
 
+# Map nucleus label -> (Z, N) for the magic_A dispatch. The Candidate
+# type carries A and a label but not the (Z, N) split, so we resolve
+# the split here against the four light-nuclei the witness tracks.
+_ZN_BY_NUCLEUS: dict[str, tuple[int, int]] = {
+    "D":   (1, 1),
+    "T":   (1, 2),
+    "³He": (2, 1),
+    "⁴He": (2, 2),
+}
 
-# Doubly-magic light-nuclei in the framework (per
-# methodology-deprecation.witness.json, magic-A-formula tag).
-# Currently restricted to ⁴He (Z=N=2 both magic at 2).
-_DOUBLY_MAGIC: set[tuple[int, int]] = {(2, 2)}
-
-# Structural prefactor ρ_F for the doubly-magic formula `B = ρ_F·m_e·A·8G`.
+# Structural prefactor ρ_F for the doubly-magic formula.
 # ρ_F = 2 for ⁴He per `binding_ladder_catalog.py:63` ('2·m_e·4·Vol(L6a4)').
-# Open math: the categorical derivation of ρ_F = 2 is not yet wired in;
-# the value matches the canonical chain prop:gravity-spectral-prefactor.
-_RHO_F_DOUBLY_MAGIC: float = 2.0
+# Open math: categorical derivation of ρ_F = 2 from
+# prop:gravity-spectral-prefactor is the remaining input.
+_RHO_F_BY_NUCLEUS: dict[str, float] = {
+    "⁴He": 2.0,
+}
 
 
-def _magic_A_prediction(c: "Candidate") -> float | None:
-    """Doubly-magic shell-closure binding `B = ρ_F · m_e · A · 8G`, or None.
+def _magic_A_prediction(c: "Candidate") -> tuple[float, int, int, float] | None:
+    """Doubly-magic shell-closure binding, or None for non-magic A.
 
-    Returns None for non-doubly-magic candidates. The formula mirrors
-    `folio-assistant/computations/magic_A_formula.py::magic_A_binding`
-    without the mpmath dependency — fine for the witness's float
-    accuracy needs.
+    Dispatches to the canonical `magic_A_formula.magic_A_binding(Z, N)`
+    rather than mirroring locally, addressing the dual-source-of-truth
+    Copilot review comment (audit
+    docs/audits/2026-05-31-binding-magic-A-wireup.md addressed-comments).
+
+    Returns (B_pred_MeV, Z, N, rho_F) or None.
     """
-    if (c.A == 4 and c.nucleus == "⁴He"):
-        # ⁴He is Z=N=2, doubly magic
-        return _RHO_F_DOUBLY_MAGIC * M_E_MEV * c.A * VOL_BORROMEAN_8G
-    # Future doubly-magic light-nuclei (¹⁶O Z=N=8, ⁴⁰Ca Z=N=20) would land
-    # here once their per-shell ρ_F is derived. None for now.
-    return None
+    zn = _ZN_BY_NUCLEUS.get(c.nucleus)
+    rho_F = _RHO_F_BY_NUCLEUS.get(c.nucleus)
+    if zn is None or rho_F is None:
+        return None
+    # Lazy import: magic_A_formula pulls in mpmath via codata_constants.
+    try:
+        from magic_A_formula import magic_A_binding
+    except ImportError:
+        return None
+    Z, N = zn
+    result = magic_A_binding(Z, N, rho_F=rho_F)
+    if not result.get("applicable", False):
+        return None
+    return (float(result["B_pred_MeV"]), Z, N, rho_F)
 
 
 @dataclass(frozen=True)
@@ -128,12 +141,10 @@ def build_witness() -> dict:
         ratio = b_pred / b_exp if b_exp != 0 else float("nan")
         rel_err = (b_pred - b_exp) / b_exp if b_exp != 0 else float("nan")
 
-        # Alternate path for doubly-magic A's: magic_A_formula. This is
-        # the existing-but-not-wired-in shell-closure path documented in
-        # `docs/audits/2026-05-31-binding-magic-A-wireup.md`. For ⁴He
-        # (Z=N=2 doubly-magic) the alpha_shift formula misses by ~5× but
-        # `B = ρ_F · m_e · A · 8G` lands within ~6%.
-        b_magic = _magic_A_prediction(c)
+        # Alternate path for doubly-magic A's: dispatched to canonical
+        # magic_A_formula.magic_A_binding (no local mirror). See audit
+        # docs/audits/2026-05-31-binding-magic-A-wireup.md.
+        magic = _magic_A_prediction(c)
 
         row = {
             "A": c.A,
@@ -147,10 +158,12 @@ def build_witness() -> dict:
             "ratio_pred_over_exp": round(ratio, 4),
             "relative_error": round(rel_err, 4),
         }
-        if b_magic is not None:
+        if magic is not None:
+            b_magic, mZ, mN, mRho_F = magic
             row["B_predicted_magic_A_MeV"] = round(b_magic, 6)
             row["ratio_magic_A_over_exp"] = round(b_magic / b_exp, 4)
             row["relative_error_magic_A"] = round((b_magic - b_exp) / b_exp, 4)
+            row["magic_A_inputs"] = {"Z": mZ, "N": mN, "rho_F": mRho_F}
         rows.append(row)
     return {
         "name": "binding-alpha-shift-witness",
@@ -168,8 +181,21 @@ def build_witness() -> dict:
             "m_e_MeV": M_E_MEV,
             "m_e_source": "CODATA 2018",
             "B_experimental_source": "AME 2020 / NIST",
-            "rho_0_dimensionless": round(rho_0, 6),
-            "rho_0_pinned_by": "deuteron (D) at α_shift(T(2,3)) = 3",
+            "alpha_shift_inputs": {
+                "rho_0_dimensionless": round(rho_0, 6),
+                "rho_0_pinned_by": "deuteron (D) at α_shift(T(2,3)) = 3",
+                "alpha_shift_formula": "k · (p - 1)",
+            },
+            "magic_A_inputs": {
+                "formula": "B = ρ_F · m_e · A · 8G",
+                "source": "magic_A_formula.magic_A_binding (canonical)",
+                "rho_F_per_nucleus": _RHO_F_BY_NUCLEUS,
+                "vol_borromean_8G_source": (
+                    "knot_volumes.VOL_BORROMEAN (mpmath 50dps "
+                    "= 8 · Catalan_G ≈ 7.32772475...)"
+                ),
+                "applicable_nuclei": list(_RHO_F_BY_NUCLEUS.keys()),
+            },
         },
         "lean_reference": (
             "content/quantum-observable-universe/mass-theory/"
@@ -192,12 +218,18 @@ def _gap_summary(rows: list[dict]) -> str:
     if magic_rows:
         m = magic_rows[0]
         m_pct = 100 * (m["ratio_magic_A_over_exp"] - 1)
+        # Gap closure factor: ratio of |relative-errors|. Computed from
+        # the row, not hardcoded (Copilot review on PR #1543).
+        alpha_re = abs(m["relative_error"])
+        magic_re = abs(m["relative_error_magic_A"])
+        gap_factor = alpha_re / magic_re if magic_re > 0 else float("inf")
         magic_clause = (
             f" For doubly-magic {m['nucleus']} the existing-but-unwired "
             f"magic_A formula B = ρ_F·m_e·A·8G predicts "
             f"{m['B_predicted_magic_A_MeV']:.3f} MeV ({m_pct:+.1f}% miss), "
-            f"closing the alpha_shift gap by ~80× — wiring this in is "
-            f"the next concrete step (see audit "
+            f"closing the alpha_shift gap by {gap_factor:.1f}× "
+            f"(|rel_err| {alpha_re:.4f} → {magic_re:.4f}) — wiring this in "
+            f"is the next concrete step (see audit "
             f"docs/audits/2026-05-31-binding-magic-A-wireup.md)."
         )
     summary = (
@@ -238,7 +270,8 @@ def main() -> int:
 
     if args.print:
         print()
-        print(f"  ρ_0 = {witness['inputs']['rho_0_dimensionless']} (deuteron-pinned)")
+        rho_0 = witness['inputs']['alpha_shift_inputs']['rho_0_dimensionless']
+        print(f"  ρ_0 = {rho_0} (deuteron-pinned)")
         print()
         print(f"  {'A':>2} {'nucleus':<5} {'T(p,k)':<8} {'α_shift':>7} "
               f"{'B_pred':>10} {'B_exp':>10} {'pred/exp':>9}")
