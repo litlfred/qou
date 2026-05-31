@@ -107,6 +107,22 @@ instance instModule_iwahoriHecke
   -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (Module instance via concrete quotient)
   sorry
 
+/-- Ring structure on `IwahoriHecke W R q`. Sprint 1 stub; Sprint 2
+    provides the multiplication via the concrete quotient. -/
+instance instRing_iwahoriHecke
+    (W : Type u) [Group W] (R : Type v) [CommRing R] (q : R) :
+    Ring (IwahoriHecke W R q) := by
+  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (Ring instance via concrete quotient — non-commutative in general)
+  sorry
+
+/-- `R`-algebra structure on `IwahoriHecke W R q`. Sprint 1 stub;
+    Sprint 2 provides the coherent algebraMap via the concrete quotient. -/
+instance instAlgebra_iwahoriHecke
+    (W : Type u) [Group W] (R : Type v) [CommRing R] (q : R) :
+    Algebra R (IwahoriHecke W R q) := by
+  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (Algebra coherence via concrete quotient)
+  sorry
+
 /-- The generators `T : S → IwahoriHecke W q`, one per simple
     reflection. Sprint 1 stub: signature only; the concrete
     embedding lives in Sprint 2. -/
@@ -132,6 +148,47 @@ universal_property :
 Sprint 1 leaves this statement informal; Sprint 2 formalises it
 once the concrete quotient is in place.
 -/
+
+/-- Predicate: `f : W → A` is a Hecke algebra map (Sprint 1
+    placeholder).
+
+    Sprint 1 returns `True` unconditionally — the predicate is a
+    type-level *contract* that Sprint 2 will refine to the actual
+    conditions:
+
+      1. `(f s - algebraMap R A q) * (f s + 1) = 0` for every simple
+         reflection `s`.
+      2. For every pair `(s, t)` of simple reflections with braid
+         order `m_{s,t} = m`, the alternating product of length `m`
+         in `s, t` equals the one in `t, s` inside `A`.
+
+    Sprint 1 stub: `True`. Sprint 2 replaces with the
+    `CoxeterSystem (W, S)`-indexed conditions. The Sprint 1
+    placeholder lets the `universal_property` theorem statement
+    typecheck without requiring the full Coxeter-system API yet. -/
+def IsHeckeAlgebraMap {W : Type u} [Group W] {R : Type v} [CommRing R]
+    {A : Type w} [Ring A] [Algebra R A] (_q : R) (_f : W → A) : Prop :=
+  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (formal conditions via CoxeterSystem)
+  True
+
+/-- **Universal property of the Iwahori-Hecke algebra.**
+
+    Any Hecke algebra map `f : W → A` (in the sense of
+    `IsHeckeAlgebraMap`) extends uniquely to an `R`-algebra
+    homomorphism from `IwahoriHecke W R q`.
+
+    Sprint 1 stub: statement only; the proof needs the concrete
+    quotient construction from Sprint 2. The statement is the
+    canonical API contract — when Sprint 2 lands, this theorem
+    becomes the entry point for embedding any Hecke representation
+    into the framework's algebra. -/
+theorem universal_property
+    {W : Type u} [Group W] {R : Type v} [CommRing R] (q : R)
+    {A : Type w} [Ring A] [Algebra R A]
+    (f : W → A) (_hf : IsHeckeAlgebraMap q f) :
+    ∃! φ : IwahoriHecke W R q →ₐ[R] A, ∀ s : W, φ (T q s) = f s := by
+  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (proof via concrete quotient construction)
+  sorry
 
 /-! ## Closure paths (downstream consumers gated on this infra)
 
