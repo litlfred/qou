@@ -158,3 +158,22 @@ file demonstrates.
 - This branch (`claude/sdp-rank-via-eigenvalues-2026-05-30`) is
   the documentation-only deliverable; the actual `rank_via_
   eigenvalues` discharge requires a stable LSP session.
+
+## 2026-05-31 — Deuteron real-SDP Phase A (PR #1582)
+
+First tranche of the [#1575](https://github.com/litlfred/qou/pull/1575)
+"drop the empty-SDP layer" workplan.
+
+- **Phase A done:** real cost `t_λ = y_λ·χ^λ(β_D)` + Frobenius Gram
+  `diag(y_λ·dim S^λ)` assembled from the mass-formula witness
+  (`deuteron_real_sdp.py` → `deuteron-real-sdp.witness.json`).
+  `tr_M(β_D)` cross-checks to 0 rel-error.
+- **Phase C finding:** the q₀ Frobenius Gram is **indefinite** — three
+  blocks `(3,1,1,1)`, `(2,2,1,1)`, `(1⁶)` carry negative q-trace norm.
+  The real SDP is therefore **unbounded without constraints**, which
+  empirically proves Phase B (color-flavor 9-pair + AME2020 RHS) is
+  mandatory — the empty-SDP cannot be upgraded by a cost alone.
+- **Wiring:** the new witness carries `lean_uniqueness_ref =
+  deuteron_uniqueness_closed` (additive to #1572's coverage campaign).
+- **Next:** Phase B constraints (this PR's follow-up commits), then
+  Phase D Lean wiring `deuteron_emptySDP → deuteron_realSDP`.
