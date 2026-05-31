@@ -64,6 +64,47 @@ classical-limit Jones values: the mass observable lives in the KL
 classical limit of the Hecke / quantum-group representation theory, so
 Jones invariants enter at $q = 1$ rather than at substrate $q_0$.
 
+## Truncation order and error estimate
+
+The ladder is a **convergent series**: $N$ is a *truncation order*
+chosen by the target precision, not a discrete "wire/don't-wire"
+canonicity gate. The ladder step is
+
+$$u \;=\; b\,\hbar_q^2 \;\approx\; 0.00852, \qquad
+  \frac{1}{u} \approx 117, \qquad \log_{10}\!\frac{1}{u} \approx 2.07,$$
+
+so **each rung gains $\approx 2.07$ decimal digits**. The truncation
+error after $N$ rungs is the standard first-dropped-term bound
+
+$$\varepsilon_N \;\approx\; \bigl|c_{N+1}\,u^{N+1}\bigr|,$$
+
+and the required order for relative precision $\varepsilon$ is
+
+$$N \;\geq\; \frac{\log_{10}(1/\varepsilon)}{\log_{10}(1/u)} - 1
+  \;\approx\; \frac{\log_{10}(1/\varepsilon)}{2.07} - 1.$$
+
+| target | $N$ required |
+|---|---|
+| $100\times$ experimental ($7.8$ ppb) | $3$ |
+| $1$ ppb | $4$ |
+| $1$ ppt | $5$ |
+| $1$ ppQ ($10^{-15}$) | $7$ |
+
+**Coefficient tier (read with the truncation order).** The $c_k$ carry a
+provenance tier: $c_2 = -1$ is **proved** Taylor-exact (q$_0$-stable at
+compute precision); $c_k$ for $k \geq 3$ are at present **structural
+near-matches** — their empirical value swings with the $q_0$ anchor
+(e.g. $c_3$: $-2.010$ at the muon-pin $q_0$, $-2.069$ at the $m_p$-pin
+$q_0$), so they are not yet Taylor-exact derivations. A near-match that
+beats the experimental target is a genuine result *and* not a
+derivation; both facts are reported, neither suppressed. The permanent
+upgrade is to identify the $Q_\beta$ **Habiro element** whose Taylor
+coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
+next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
+([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)).
+Full discipline:
+[`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](../../../docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).
+
 ## Numerical precision ladder
 
 Verified at $q_0$ via [`binding_q_target_sweep.py`](../../folio-assistant/computations/binding_q_target_sweep.py) at 50 dps:
@@ -71,10 +112,14 @@ Verified at $q_0$ via [`binding_q_target_sweep.py`](../../folio-assistant/comput
 See [Table 2](#tbl:q-beta-categorical-precision-ladder-table2-data).
 
 The N=3 rung is the first to beat the **7.80 ppb 100$\times$ experimental
-target** (CAL-3 σ = 0.78 ppm). N=4, N=5 further reduce by $\sim$10$\times$
-each, putting the categorical prediction at sub-ppb agreement with
-CODATA Q_β — well within Subgoal-2 territory (research-grade,
-sub-CAL-2-floor).
+target** (CAL-3 σ = 0.78 ppm) — with $c_3$ at tier *near-match* (see the
+truncation-order section above). N=4, N=5 reduce the residual further at
+$q_0$, but the $N{=}4 \to N{=}5$ non-monotonicity (the residual ticks
+back up) is the signature that the $c_k{\geq}3$ are q$_0$-dependent
+near-matches rather than exact Taylor coefficients: a series with exact
+$c_k$ converges monotonically. Sub-ppb agreement at $q_0$ is therefore
+Subgoal-2 territory (research-grade) **conditional on** the Habiro-element
+upgrade, not an unconditional derivation.
 
 The $N=2$ slight over-ceiling reflects that the Kashiwara-only prediction
 gives $b^2$ (= 0.7527) rather than the exact empirical $0.7656$ — the
