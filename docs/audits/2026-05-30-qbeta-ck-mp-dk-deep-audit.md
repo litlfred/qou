@@ -1,5 +1,29 @@
 # Deep audit: Q_β c_k and m_p d_k production wiring (2026-05-30)
 
+> ## ⚠ READ THIS FIRST — BODY SUPERSEDED BY THE ADDENDUM
+>
+> **The TL;DR table, the "What's canonical now" wiring, and the
+> "Maintenance contract" below are STALE-q₀ ARTIFACTS and are
+> SUPERSEDED by the [ADDENDUM](#addendum-2026-05-30-same-day--fourth-flip-flop-discovered)
+> at the foot of this file.** Do NOT wire `c_3 = J − ℏ_q²` (or c_4,
+> c_5, d_4, d_5) to production on the strength of this body.
+>
+> - The body computed the empirical Taylor c_3 at the **pre-#1422
+>   (muon-pin) q₀**, where it is −2.0097 and J − ℏ_q² matches to
+>   0.004%. At the **current canonical (m_p-pin) q₀** the empirical
+>   c_3 is **−2.0693** and J − ℏ_q² is **2.6% off** — NOT Taylor-exact.
+> - The item-1 decisive test (2026-05-31,
+>   `folio-assistant/computations/qbeta-delta-tr-vs-formA.witness.json`)
+>   independently confirms: the Habiro Δtr_M is not Form A's slot, and
+>   no simple bridge closes Q_β.
+> - **Honest production = Q_N2 only** (c_2 = −1 Taylor-exact). Dashboard
+>   is **4/7 beats 100×**, NOT 6/7. The c_3 structural form is locked
+>   behind the conditional `QbetaC3StructuralFormClass` (§3b-cond,
+>   `q-beta-categorical-precision-ladder.lean`); it is NOT a derivation.
+>
+> The body is retained verbatim below as the historical record of the
+> fourth flip-flop and how it was caught — not as a wiring instruction.
+
 > **Author guidance:** "I think we can go to production with canonical
 > for all c_k and d_k. If so, purge all these other ones. This is the
 > third time this has come up. Deep audit. I don't want to keep coming
@@ -155,7 +179,15 @@ Per author "purge all these other ones":
 
 ## Maintenance contract for future sessions
 
-**The canonical c_k / d_k closed forms are:**
+> **⚠ SUPERSEDED by the ADDENDUM.** This "contract" instructed future
+> sessions to wire `c_3 = J − ℏ_q²` and to treat any "structural
+> conjecture vs fit" question as a mistake. The addendum INVERTS this:
+> the J − ℏ_q² match is a stale-q₀ artifact (2.6% off at canonical q₀),
+> the question IS legitimate, and production is Q_N2 only. The closed
+> forms below are the framework's STRUCTURAL CONJECTURES (near-matches),
+> not Taylor-exact derivations. Retained as historical record.
+
+**The (conjectural, near-match) c_k / d_k closed forms are:**
 
 ```
 Q_β ladder (u = b · ℏ_q²):
@@ -172,21 +204,22 @@ m_p brane-tower (u = b · ℏ_q²):
   d_6 = -29                            (closest-integer; structural id TBD)
 ```
 
-If a future session questions whether c_3 = -2 is "structural conjecture
-vs. fit", that session has missed the J − ℏ_q² correction. **Refer to
-this audit.** The −ℏ_q² piece is the q-gravitational substrate
-correction; it is derived from the same Planck-quantum that gives Q_A
-its scale.
+> **⚠ The two paragraphs that previously stood here are INVERTED by the
+> addendum and have been corrected:**
+>
+> - The old text said "if a future session questions whether c_3 = −2
+>   is structural-conjecture vs fit, that session has missed the J − ℏ_q²
+>   correction." **This is backwards.** Questioning c_3 is correct: the
+>   J − ℏ_q² form is a 2.6% near-match at canonical q₀, NOT a derivation.
+> - The old text said c_4 = c_3·b⁴ and c_5 = c_3²·3 + b "were derived
+>   structurally". They are structural CONJECTURES with q₀-dependent
+>   residuals — exactly the form-fitting signature the addendum's
+>   discipline lock §4 flags.
 
-If a future session questions whether c_4 or c_5 is "selection-bias
-fitting", that session has missed the structural identification:
-c_4 = c_3·b⁴ and c_5 = c_3²·3 + b were derived structurally at q=1+ε
-in `032fac5577` "analysis: c₃ vs Hopf/Habiro + b² shared denominator
-with tr_M" and the cat-per-factor decomposition probe.
-
-**This is the third revisit.** The actual canonical c_k forms have been
-known since 2026-05-26. Subsequent de-fit + revert cycles missed the
-−ℏ_q² piece. **This audit is the consolidation.**
+**This was the third revisit; the addendum records the fourth, and the
+item-1 test (2026-05-31) the confirmation.** The recurring failure mode
+is wiring a stale-q₀ near-match as if it were a Taylor-exact derivation.
+**The consolidation is the ADDENDUM + discipline lock, not this body.**
 
 ---
 
