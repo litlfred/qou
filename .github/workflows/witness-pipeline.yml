@@ -254,7 +254,7 @@ jobs:
         # docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md.
         run: |
           python3 folio-assistant/computations/audit_lean_uniqueness_ref_wiring.py || true
-          python3 -c "import json; d=json.load(open('folio-assistant/computations/audit-lean-uniqueness-ref-wiring.witness.json')); print(f\"lean_uniqueness_ref coverage: {d['data']['wired_count']}/{d['data']['per_nucleus_witnesses_count']} ({d['data']['coverage_fraction']:.1%})\")"
+          python3 -c "import json; d=json.load(open('folio-assistant/computations/audit-lean-uniqueness-ref-wiring.witness.json')); print(f\"lean_uniqueness_ref coverage: {d['data']['wired_count']}/{d['data']['per_nucleus_witnesses_count']} ({d['data']['coverage_fraction']:.1%})\")" || true
 
       - name: Fitted-labelled-canonical audit (CAL-4 discipline, warn-only)
         # Per CAL-4 audit 2026-05-22: catches the
