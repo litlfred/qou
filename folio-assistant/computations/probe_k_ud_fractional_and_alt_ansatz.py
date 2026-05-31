@@ -115,38 +115,85 @@ ANSATZ_FORMS = {
 
 def find_root_k(q: mpf, ansatz_fn, target: mpf,
                 k_lo: float = -10.0, k_hi: float = 20.0,
+                coarse_step: float = 0.01,
                 tol: mpf = mpf("1e-30")) -> tuple[float, mpf]:
-    """Bisect for k such that ansatz(q, k) ≈ target, within k ∈ [k_lo, k_hi]."""
-    f_lo = ansatz_fn(q, k_lo) - target
-    f_hi = ansatz_fn(q, k_hi) - target
-    if f_lo * f_hi > 0:
-        # no sign change in [k_lo, k_hi] — return midpoint best-guess
-        # and a small residual sentinel
-        candidates = []
-        for k_t in [k_lo + 0.1 * i for i in range(int((k_hi - k_lo) * 10) + 1)]:
+    """Find k such that ansatz(q, k) ≈ target, within k ∈ [k_lo, k_hi].
+
+    Robust against POLES inside the interval (per Copilot review on
+    #1520): Bring color-tube weights can have singularities at
+    `q^{10+k} = 1/h_q` which separate same-sign endpoints. Strategy:
+
+    1. Fine-scan the interval at `coarse_step` resolution to identify
+       all sign changes of `ansatz_fn - target` (this handles poles
+       since the function diverges to ±∞ at each pole, producing
+       multiple sign changes per branch).
+    2. Within EACH sign-change bracket, bisect to high precision.
+    3. Return the bisected root closest to the target — or, if no
+       sign change exists anywhere, the coarse-grid global best.
+
+    The bisected `best_k_ud` values reported in the witness are
+    therefore actual roots of `ansatz(q, k) - target`, not rounded
+    grid points.
+    """
+    # 1. Fine-scan for sign changes + track values for fallback
+    n_steps = int((k_hi - k_lo) / coarse_step) + 1
+    samples = []  # (k, value-target) — None where the eval failed
+    for i in range(n_steps + 1):
+        k_t = k_lo + i * coarse_step
+        try:
+            v = ansatz_fn(q, k_t)
+            samples.append((k_t, v - target))
+        except (ZeroDivisionError, ValueError, OverflowError):
+            samples.append((k_t, None))
+
+    # 2. Find sign-change brackets (skip None entries)
+    brackets = []
+    prev_k, prev_f = None, None
+    for k_t, f in samples:
+        if f is None:
+            prev_k, prev_f = None, None
+            continue
+        if prev_f is not None and float(prev_f) * float(f) < 0:
+            brackets.append((prev_k, k_t))
+        prev_k, prev_f = k_t, f
+
+    if brackets:
+        # 3. Bisect within each bracket; pick the root closest to target
+        results = []
+        for k_lo_b, k_hi_b in brackets:
+            lo, hi = mpf(k_lo_b), mpf(k_hi_b)
+            f_lo = ansatz_fn(q, lo) - target
+            f_hi = ansatz_fn(q, hi) - target
+            for _ in range(200):
+                mid = (lo + hi) / 2
+                try:
+                    f_mid = ansatz_fn(q, mid) - target
+                except (ZeroDivisionError, ValueError, OverflowError):
+                    break
+                if abs(f_mid) < tol:
+                    lo = hi = mid
+                    break
+                if float(f_lo) * float(f_mid) < 0:
+                    hi, f_hi = mid, f_mid
+                else:
+                    lo, f_lo = mid, f_mid
+            mid = (lo + hi) / 2
             try:
-                v = ansatz_fn(q, k_t)
-                candidates.append((float(abs(v - target)), k_t))
+                v_mid = ansatz_fn(q, mid)
+                results.append((float(abs(v_mid - target)), float(mid), v_mid))
             except (ZeroDivisionError, ValueError, OverflowError):
                 continue
-        if not candidates:
-            return float('nan'), mpf('nan')
-        candidates.sort()
-        best_k = candidates[0][1]
-        best_v = ansatz_fn(q, best_k)
-        return best_k, best_v
-    for _ in range(200):
-        mid = (k_lo + k_hi) / 2
-        f_mid = ansatz_fn(q, mid) - target
-        if abs(f_mid) < tol:
-            return mid, ansatz_fn(q, mid)
-        if f_lo * f_mid < 0:
-            k_hi = mid
-            f_hi = f_mid
-        else:
-            k_lo = mid
-            f_lo = f_mid
-    return (k_lo + k_hi) / 2, ansatz_fn(q, (k_lo + k_hi) / 2)
+        if results:
+            results.sort()
+            return results[0][1], results[0][2]
+
+    # 4. No sign-change bracket found — global best on the fine grid
+    valid = [(float(abs(f)), k_t, ansatz_fn(q, k_t))
+             for k_t, f in samples if f is not None]
+    if not valid:
+        return float('nan'), mpf('nan')
+    valid.sort()
+    return valid[0][1], valid[0][2]
 
 
 def main():
