@@ -51,6 +51,7 @@ import QOU.BraidKnot.AppliedNitrogen14Uniqueness
 import QOU.BraidKnot.AppliedOxygen16Uniqueness
 import QOU.BraidKnot.PeriodicTableUniqueness
 import QOU.BraidKnot.StableIsotopeUniqueness
+import QOU.BraidKnot.AllKnownIsotopesUniqueness
 import QOU.BraidKnot.PerNucleusMassDerivation
 import QOU.BraidKnot.frobenius_antipode_unifies
 import QOU.BraidKnot.CommutativeCrossingEnergy
