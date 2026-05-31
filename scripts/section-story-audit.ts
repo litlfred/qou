@@ -137,10 +137,14 @@ function parseChapterManifest(paper: string, dir: string): ChapterInfo | null {
   const labelM = src.match(/label:\s*["']([^"']+)["']/);
   const tabLabelM = src.match(/tabLabel:\s*["']([^"']+)["']/);
 
-  // Extract section(...) calls in source order.
-  // Sections take the form: section({ title: "...", label: "...", blocks: [...] })
+  // Extract section(...) calls in source order.  Two patterns are
+  // recognised: `section({ ... })` (the builder call) and
+  // `Object.freeze({ ... })` (a plain object literal that satisfies the
+  // Section interface — used in chapter manifests that bypass the
+  // builder for tighter immutability).  Both yield the same shape;
+  // we union them under a single regex.
   const sections: SectionInfo[] = [];
-  const sectionRe = /section\(\s*\{([\s\S]*?)\}\s*\)/g;
+  const sectionRe = /(?:section|Object\.freeze)\(\s*\{([\s\S]*?)\}\s*\)/g;
   let m;
   while ((m = sectionRe.exec(src)) !== null) {
     const body = m[1];

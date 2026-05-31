@@ -40,6 +40,7 @@ export default chapter({
         "bundle-isotopy-equivalence",
         "torsion-knot-flow",
         "bundle-category",
+        "outro-measurement-observation",
       ],
     }),
   ],

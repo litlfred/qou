@@ -114,6 +114,7 @@ export default chapter({
         "lusztig-canonical-basis-q-eq-1",
         "phi-q-aj-machinery-identification",
         "reverse-limit-q-to-infinity",
+        "outro-stochastic-mechanics",
       ],
     }),
   ],

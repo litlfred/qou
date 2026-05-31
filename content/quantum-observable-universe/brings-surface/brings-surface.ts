@@ -253,6 +253,7 @@ export default chapter({
         "bring-fibre-qhalf-figure",
         "inter-nucleon-channel-color-tube",
         "c-from-color-flavor-swap",
+        "outro-brings-surface",
       ],
     }),
   ],
