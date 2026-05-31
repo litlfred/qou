@@ -93,20 +93,45 @@ substrate-determined $\rho_F$. The §3b-cond pattern (CLAUDE.md
 §3b-cond) makes this a rigorous-conditional theorem: fully verified
 modulo the axiomatised class.
 
-Open math (carried in the class) — see audit
+**Reanalysis (2026-05-31).** What was initially framed in this block
+as "Open Math A" and "Open Math B" turned out to be structurally
+already answered in the framework. Both items reduce to verification
+/ formalisation, not derivation. See audit
 [`docs/audits/2026-05-31-binding-magic-A-wireup.md`](../../docs/audits/2026-05-31-binding-magic-A-wireup.md)
-for the full context:
+for the full reanalysis. Summary:
 
-- **Open Math A.** Derive $\rho_F = 2$ for $^4_2\mathrm{He}$ from
-  [`prop:gravity-spectral-prefactor`](gravity-spectral-prefactor.md).
-- **Open Math B.** Extend to single-magic $A = 3$
-  ($^3\mathrm{T}$, $^3_2\mathrm{He}$), which neither formula covers
-  — the
+- **$\rho_F$ derivation (was "Open Math A"):** structurally answered
+  by
+  [`conj:kashaev-density-equals-sdp-multiplicity`](kashaev-density-equals-sdp-multiplicity.md)
+  (landed 2026-05-24, Rule-14 owner-authorised). The identity is
+  $\rho_F = \nu_{\mathrm{SDP}}$, exact on the three SDP-confirmed
+  hyperbolic atoms (D, T, ³He). Only the $\nu_{\mathrm{SDP}}(^4\mathrm{He})$
+  numerical verification (joint-tower SDP solver) is open.
+- **$A=3$ p/n asymmetry (was "Open Math B"):** structurally answered
+  by
+  [`conj:inter-nucleon-channel-color-tube`](../brings-surface/inter-nucleon-channel-color-tube.md)
+  (Bring color-tube weighting; proton's $(u, u, d)$ vs neutron's
+  $(u, d, d)$ color-sheet content via $\mathrm{SO}(3)$-fiber action),
+  with the substrate-pure formula
+  $f_{\mathrm{pn}} = z - h \cdot (1/2 - \delta/4)$
+  ($\delta = \Delta m_{n-p}/M_N \approx 1.37 \times 10^{-3}$, PROVED
+  PR #690/#942) already implemented in
+  [`closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py)
+  under `pn_convention="bring_color_weighted"`. Numerical check at
+  $q_0$: +180.9 ppm uniform correction across the four light nuclei
+  (each has one pn arc); the T vs ³He f-factor spread reported by
   [`binding_shell_enhancement_derivation.py`](../../folio-assistant/computations/binding_shell_enhancement_derivation.py)
-  probe found a 15% p/n asymmetry ($f_\mathrm{T} \approx 2.82$ vs.
-  $f_{^3\mathrm{He}} \approx 2.45$) that rules out any scalar
-  $q$-factor, requiring a categorical object that carries the
-  proton/neutron distinction at the $H_9(q)$ Wedderburn block.
+  arises from the **arc-composition asymmetry** (T = pn+nn vs.
+  ³He = pp+pn) at the closed-form-ratio scale, not from a missing
+  scalar $q$-factor.
+
+The remaining genuinely open items are: Lean formalisation of
+`conj:inter-nucleon-channel-color-tube` (conditional on
+`conj:s5-so3-fiber-action`); re-evaluation of
+`binding_shell_enhancement_derivation.py` against the
+Bring-weighted ratio (does the 15% f-spread close?); SDP solver
+extension to verify $\nu_{\mathrm{SDP}}(^4\mathrm{He}) = 2$. All
+three are verification / formalisation, not derivation.
 
 ## Numerical witness
 

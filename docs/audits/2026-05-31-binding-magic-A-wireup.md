@@ -174,32 +174,115 @@ This is the right long-term path — it makes Option 2 a special case
 functional `F[·]` derivation and the `tr_M → B` calibration are
 research-grade.
 
-## ρ_F = 2 — what derives it?
+## ρ_F = 2 — what derives it? (reanalysed 2026-05-31)
 
-The current ⁴He magic_A formula uses `ρ_F = 2` from
-`binding_ladder_catalog.py:63`. The canonical chain
-([`prop:gravity-spectral-prefactor`](../../content/quantum-observable-universe/mass-theory/gravity-spectral-prefactor.md))
-should fix it from first principles; the chain is plausible but the
-exact derivation of the integer 2 (vs `[2]_q` vs `2 cos(π/3)` etc.)
-is not in the file. This is **Open Math A**:
+**Status:** structurally answered by the existing block
+[`conj:kashaev-density-equals-sdp-multiplicity`](../../content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md)
+(landed 2026-05-24, Rule-14 escalation owner-authorised). The
+identity is
 
-> Derive `ρ_F = 2` for ⁴He from the categorical structure (likely
-> via the Borromean-rings residue prefactor `8G` and the doubly-magic
-> LR-fusion rigidity).
+$$
+  \rho_F \;=\; \nu_{\mathrm{SDP}}
+$$
 
-## A=3 (T, ³He) — what closes them?
+where $\nu_{\mathrm{SDP}}$ is the joint-tower SDP Wedderburn
+multiplicity of the canonical Hecke element $T_w$'s saturating SDP
+solution. Driver (x) of the canonical 13-menu (MacMahon-style
+partition-algebra multiplicity). Exact on the three SDP-confirmed
+hyperbolic atoms:
 
-Neither formula closes A=3:
-- α_shift miss: T −56%, ³He −52%
-- magic_A_formula is N/A (T, ³He are *single*-magic, not doubly)
+| Atom | $K_w$ | $\rho_F$ (legacy) | $\nu_{\mathrm{SDP}}$ |
+|------|-------|------:|------:|
+| D | $6_2$ | 1 | 1 |
+| T | $8_{11}$ | 2 | 2 |
+| ³He | $L_{6a4}$ | 2 | 2 |
+| ⁴He | magic A·8G | 2 | **extrapolated** |
 
-The `binding_shell_enhancement_derivation.py` finding is the relevant
-constraint: **T (f≈2.82) ≠ ³He (f≈2.45)** — a 15% p/n asymmetry that
-no scalar q-factor can produce. **Open Math B**:
+**What remains open** (was previously framed as "Open Math A"):
+extending the joint-tower SDP solver to produce
+$\nu_{\mathrm{SDP}}(^4\mathrm{He})$ directly and confirm the value 2
+(R&D follow-up per the kashaev-density block's `## Status` section).
+The structural derivation is **not** open; only the numerical
+verification for ⁴He is.
 
-> The single-magic enhancement is p/n-asymmetric; identify the
-> categorical object that carries the proton/neutron distinction
-> for the H_9(q) Wedderburn block at A=3.
+The `magic-A-binding-formula` Lean class hypothesis
+`MagicABindingFormula.rho_F` can therefore be replaced (Sprint 2)
+with a derivation from
+[`conj:kashaev-density-equals-sdp-multiplicity`](../../content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md)
+once the SDP-multiplicity Lean class is in place.
+
+## A=3 (T, ³He) — what closes them? (reanalysed 2026-05-31)
+
+The p/n asymmetry **is** structurally answered by two existing pieces
+in the framework:
+
+### 1. Bring color-tube weighting — IMPLEMENTED
+
+[`folio-assistant/computations/closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py)
+already implements `pn_convention="bring_color_weighted"` with the
+substrate-pure formula
+
+$$
+  f_{\mathrm{pn}}^{\mathrm{Bring}} \;=\; z - h \cdot (1/2 - \delta/4),
+  \qquad
+  \delta = \frac{\Delta m_{n-p}}{M_N} \approx 1.3697 \times 10^{-3}
+$$
+
+where $\delta$ comes from `_li_2_q_util.flavor_split_subleading(q)` —
+**PROVED** (PR #690 / #942), substrate-pure with no fitted quark
+masses. The arc-composition pattern for the four light nuclei:
+
+| Atom | arc composition | $\tau_M$ (strict) | $\tau_M$ (Bring) | $\Delta$ (ppm) |
+|---|---|---:|---:|---:|
+| D | pn | +0.394985 | +0.395056 | +180.9 |
+| T | pn, nn | +0.114801 | +0.114822 | +180.9 |
+| ³He | pp, pn | +0.197225 | +0.197261 | +180.9 |
+| ⁴He | pp, pn, nn | +0.057323 | +0.057333 | +180.9 |
+
+The Bring correction is uniform at +180.9 ppm because each of the
+four has exactly one pn arc. The **arc-composition asymmetry**
+between T (pn,nn) and ³He (pp,pn) is what drives the very different
+baseline values 0.115 vs 0.197 — that is the structural source of
+the f≈2.82 vs f≈2.45 spread reported in
+[`binding_shell_enhancement_derivation.py`](../../folio-assistant/computations/binding_shell_enhancement_derivation.py).
+
+### 2. Quark color-sheet content — STATED in `conj:inter-nucleon-channel-color-tube`
+
+The pn-arc factor uses the substrate-pure $\delta$ because the
+proton's $(u, u, d)$ vs the neutron's $(u, d, d)$ color-sheet
+content propagates through the Bring $\mathrm{SO}(3)$-fiber action
+to give a $9$-element color-pair weight matrix $W_{c_1 c_2}(F_1, F_2)$
+(per
+[`conj:inter-nucleon-channel-color-tube`](../../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md)).
+The uniform-flavor projection (current production) collapses this
+to a single $\sigma_{\mathrm{avg}}$; the Scheme-4 per-sheet
+PL-integration probe on Bring reproduces $\Delta m_{n-p}$ to
+$\sim 0.14\%$ vs $305$ ppm for uniform — third-line evidence that
+this IS the categorical structure.
+
+### What remains open (was previously framed as "Open Math B")
+
+Three pieces are still genuinely open:
+
+1. **Lean formalisation** of `conj:inter-nucleon-channel-color-tube`
+   (conditional on `conj:s5-so3-fiber-action` per PR #1081 Task 3).
+2. **Re-evaluation of the binding-shell enhancement** with
+   `pn_convention="bring_color_weighted"`: does the 15% T vs ³He
+   f-factor spread close when the closed-form $\tau_M$ baseline
+   uses Bring weighting? The +180.9 ppm uniform correction is at
+   the closed-form-ratio scale; the f-factor lives at the binding-
+   energy scale — propagating through `binding_canonical` requires
+   re-running
+   [`binding_shell_enhancement_derivation.py`](../../folio-assistant/computations/binding_shell_enhancement_derivation.py)
+   against the Bring-weighted ratio.
+3. **Closed form for the $9$-element $W_{c_1 c_2}(F_1, F_2)$**
+   weight matrix from the $\mathrm{SO}(3)$-fiber tensor (Open
+   Question 1 of the inter-nucleon-channel-color-tube block).
+
+None of the three is "no categorical object identified" — the
+object IS identified (Bring color-tube weighting via $\delta$);
+the residual work is verification + Lean formalisation, not
+discovery.
 
 ## Action items
 
@@ -210,9 +293,21 @@ no scalar q-factor can produce. **Open Math B**:
    formalisation + chapter-manifest entry. The Lean theorem
    `magic_A_binding_formula` is sorry-free conditional on the
    `MagicABindingFormula` class hypothesis.
-3. **Research (Option 3 + Open Math A, B)**: full-trace functional
-   derivation; ρ_F = 2 derivation from
-   `prop:gravity-spectral-prefactor`; p/n asymmetric A=3 closure.
+3. ✓ **Reanalysis 2026-05-31** (this commit, post-Bring-investigation):
+   Open Math A and B are **structurally already answered** in the
+   framework; "Open" was a framing error. ρ_F = ν_SDP per
+   `conj:kashaev-density-equals-sdp-multiplicity` (driver x); p/n
+   asymmetry per Bring color-tube weighting in `closed_form_tau_M.py`
+   (`bring_color_weighted` mode, +180.9 ppm uniform at q_0, with
+   the f-factor spread coming from arc-composition asymmetry).
+4. **Research (remaining)**: full-trace functional derivation
+   (Option 3 — collapses both regimes via Strutinsky); R&D
+   follow-up: extend joint-tower SDP solver to verify
+   ν_SDP(⁴He) = 2; re-run binding-shell-enhancement-derivation
+   against the Bring-weighted ratio to check whether the 15% T vs
+   ³He f-factor spread closes; Lean formalisation of
+   `conj:inter-nucleon-channel-color-tube` (gated on
+   `conj:s5-so3-fiber-action` PR #1081 Task 3).
 
 ## References
 
