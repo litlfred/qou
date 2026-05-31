@@ -100,6 +100,59 @@ the entry-point sanity check.
 - [ ] Generalise `gram_matrix(q)` / `gram_inverse(q)` in pyhecke-native from hardwired H_3 to general H_n (still open after `814a7545b`; atlas covers y_λ but not the basis matrix)
 - [ ] **Reuse**: pyhecke-native multi-block χ_λ tier-3 wiring (`8bb47b448`) supersedes the `chi_lambda_eval.py` wrapper plan — direct PyO3 import from the lazy-loaded M3 API (`134c04fe5`).
 
+#### Phase 1' design note — H_n Gram generalisation (2026-05-30)
+
+**New primitive available** (commit `6964850fe`,
+`sprint3-4(iwahori): TypeA + MarkovTrace`):
+[`lean/QOU/IwahoriHecke/TypeA.lean`](../../content/quantum-observable-universe/lean/QOU/IwahoriHecke/TypeA.lean)
+defines `IwahoriHeckeOfSn R q n` over generic `[Field R]`, which
+is the right ambient type for an abstract H_n Gram matrix.
+
+**Hardcoded entries do not scale.** The H_3 case has `3! = 6`
+basis elements and `21` distinct upper-triangle Gram entries; this
+is hand-tractable. At H_6 (deuteron) the count jumps to `6! = 720`
+basis elements with `720·721/2 = 259 560` distinct entries — far
+beyond hand-symbolic encoding. The Phase 1' deliverable therefore
+must **compute** `G_{ij} = tr_M(b_i^* · b_j)` from primitives,
+not list entries.
+
+**Recommended Phase 1' design:**
+
+1. Extend
+   [`braids-and-knots/markov-axioms-primitive.lean`](../../content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.lean)'s
+   `MarkovTraceAxioms` class to a uniform family
+   `MarkovTraceHn (R : Type*) [Field R] (n : ℕ) (q : R)` providing
+   `trM : IwahoriHeckeOfSn R q n → R` satisfying M1–M4.
+2. Author
+   `lean/QOU/IwahoriHecke/GramMatrix.lean` with
+   `noncomputable def gramHn (R) [Field R] (n : ℕ) (q : R)
+     (b : Fin n.factorial → IwahoriHeckeOfSn R q n) :
+     Matrix (Fin n.factorial) (Fin n.factorial) R`
+   defined as `Matrix.of (fun i j => trM (bar (b i) * b j))`.
+3. Prove abstract structural properties at the `gramHn` level:
+   `gramHn_isSymm` (symmetric), `gramHn_pos_semidefinite_at_q_pos`
+   (positivity for `q > 0` from M3 stability), etc. These are
+   independent of `n` and reusable.
+4. Specialise to `H_3` and verify the result matches the existing
+   `gram-matrix-h3-symbolic.lean` entries — closes the loop on the
+   "already done at H_3" finding without re-encoding the 21
+   entries.
+5. Specialise to `H_6` and feed into Phase 2 crystal-weight
+   tabulation `ρ_w(D) = (gramH6_inv u) · χ^•(D)`.
+
+**Scope estimate.** Items 1–3 are the abstract scaffolding pass:
+typeclass design + structural theorems, no per-entry symbolic
+work. ~1-2 sessions of focused Lean work. Items 4–5 (specialisation
++ verification) are Phase 2 deliverables that depend on item 3
+landing.
+
+**Anti-pattern.** Do NOT author a separate per-`n` hardcoded entry
+table (e.g., `gram-matrix-h6-symbolic.lean` mirroring
+`gram-matrix-h3-symbolic.lean`). That pattern stalled at H_3 for a
+reason — the entry count grows super-exponentially. The abstract
+`gramHn` over the Iwahori-Hecke primitive is the only scalable
+design.
+
 ### Phase 2 — crystal-weight formula verification (research-grade)
 
 - [ ] Tabulate canonical-basis-trace ρ_w(K) for K ∈ {D, T, ³He, ⁴He}
