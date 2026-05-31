@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T04:21:26.302781+00:00",
-  "commitSha": "d12f8d9426f183faa24e707e13c655d38e4b6b88",
+  "computedAt": "2026-05-31T13:41:49.430287+00:00",
+  "commitSha": "d01bc93291dbe7a104a9fc9d6e03dac6e8825ed3",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 12,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -26,7 +26,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 777,
+    "files_scanned": 790,
     "patterns": [
       "P15",
       "P16",
@@ -38,10 +38,10 @@
   "data": {
     "by_pattern_count": {
       "P15": 114,
-      "P16": 184,
+      "P16": 195,
       "P21": 30,
-      "P30": 144,
-      "P31": 56
+      "P30": 150,
+      "P31": 57
     },
     "top_files": [
       {
@@ -117,6 +117,13 @@
         ]
       },
       {
+        "file": "qbeta_delta_tr_vs_formA.py",
+        "count": 8,
+        "patterns": [
+          "P16"
+        ]
+      },
+      {
         "file": "atom_nf_symbolic_D.py",
         "count": 7,
         "patterns": [
@@ -156,14 +163,6 @@
         "patterns": [
           "P15",
           "P21"
-        ]
-      },
-      {
-        "file": "kazhdan_lusztig.py",
-        "count": 7,
-        "patterns": [
-          "P15",
-          "P16"
         ]
       }
     ],
@@ -2690,6 +2689,48 @@
       },
       {
         "pattern": "P30",
+        "file": "option_e_canonical_reeb_v5.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "option_e_deuteron_delta_lambda_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "option_e_deuteron_delta_lambda_probe_v2.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "option_e_multi_isotope_delta_lambda_probe_v3.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "option_e_q_reeb_phase_probe_v4.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "option_e_v6_combined_canonical.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
         "file": "p2_5_symbolic_q_audit.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -2899,6 +2940,13 @@
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
+        "pattern": "P31",
+        "file": "probe_q_beta_operator_valued_N3.py",
+        "line": 59,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
         "pattern": "P30",
         "file": "pyhecke_h3_vs_h3a_impact_comparison.py",
         "line": 1,
@@ -2988,6 +3036,83 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_delta_tr_vs_formA.py",
+        "line": 86,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_delta_tr_vs_formA.py",
+        "line": 88,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_delta_tr_vs_formA.py",
+        "line": 89,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_delta_tr_vs_formA.py",
+        "line": 91,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_delta_tr_vs_formA.py",
+        "line": 100,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_delta_tr_vs_formA.py",
+        "line": 116,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_delta_tr_vs_formA.py",
+        "line": 186,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_delta_tr_vs_formA.py",
+        "line": 188,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_habiro_taylor_investigation.py",
+        "line": 103,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_habiro_taylor_investigation.py",
+        "line": 114,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_habiro_taylor_investigation.py",
+        "line": 122,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
