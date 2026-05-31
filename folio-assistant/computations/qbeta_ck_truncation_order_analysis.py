@@ -14,7 +14,8 @@ two facts were conflated:
   FACT B (discipline camp): c_3 = -2 is NOT a Taylor-EXACT derivation
                            (it is a q₀-dependent near-match: -2.0097
                            at muon-pin q₀, -2.0693 at m_p-pin q₀ — a
-                           3.35% swing).
+                           3.47% m_p-pin swing, 2.98% cross-anchor
+                           swing — see Part D computed values).
 
 BOTH ARE TRUE. The flip-flop comes from treating "wire c_k?" as a
 binary decision instead of recognising:
@@ -77,7 +78,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 def load_q_data():
     import json
-    d = json.load(open(HERE / "q-beta-operator-valued-N3.witness.json"))["data"]
+    with open(HERE / "q-beta-operator-valued-N3.witness.json",
+              encoding="utf-8") as f:
+        d = json.load(f)["data"]
     return {
         "q0": mpf(d["q_0_50dps"]),
         "b": mpf(d["hoefsmit_b"]),

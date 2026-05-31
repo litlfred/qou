@@ -32,7 +32,8 @@ binary decision**:
   target — residual +6.0 ppb < 7.8 ppb. ✓
 - **FACT B** (discipline camp): `c_3 = -2` is **not** a Taylor-EXACT
   derivation — it is a q₀-dependent near-match (−2.0097 at muon-pin q₀,
-  −2.0693 at m_p-pin q₀; a 3.35% swing). ✓
+  −2.0693 at m_p-pin q₀ — a 3.47% m_p-pin swing, 2.98% cross-anchor
+  swing per the probe's Part D). ✓
 
 **Both are true.** Treating "wire c_k?" as yes/no forces a false choice.
 This doc replaces that with the correct framing.
@@ -81,7 +82,8 @@ Taylor coefficient of a convergent series is **q₀-anchor-independent**.
 
 - `c_2 = -1` — Taylor-exact at compute precision (10⁻⁵⁰), q₀-stable.
   **PROVED.**
-- `c_3 = -2` — swings 0.4% (muon-pin) → 3.35% (m_p-pin). **NEAR-MATCH.**
+- `c_3 = -2` — swings 0.49% (muon-pin) → 3.47% (m_p-pin); cross-anchor
+  swing 2.98%. **NEAR-MATCH.**
 - `c_4, c_5` — inherit c_3's near-match status; the **N=4→N=5
   non-monotonicity** (+0.055 → +0.63 ppb) is the experimental signature:
   a convergent series with *exact* c_k would be **monotone**.
