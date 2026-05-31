@@ -420,4 +420,37 @@ theorem em_alpha_inv_full_form_habiro
   unfold emAlphaInvForm
   rw [hZ2.habiro_element_realised q α hq_pos hα_pos]
 
+/-- **Trivial-by-definition instance** of `EmAlphaInvNextOrderHabiroClass`.
+
+    The class field `habiro_element_realised` asserts that
+    `emNextOrderContribution q α = α · [2]_q/(8π) · (1-h²α)`, but
+    `emNextOrderContribution` is **defined** as exactly that RHS
+    (see `noncomputable def emNextOrderContribution` above).  So
+    the class is discharged unconditionally by `rfl`.
+
+    **Caveat (subgoal-2 placeholder).** This instance is
+    structurally vacuous: it tells us nothing more than that the
+    definitions agree with themselves.  The genuine structural
+    content of the categorical 1-loop self-energy identification
+    (PR #1521) lives in the *interpretation* of
+    `emOneLoopCoefficient = [2]_q/(8π) = J_2(unknot)/(π·dim H¹(M_Bring))`
+    and `emSchwingerFactor = 1-h²α = 2-vertex Hecke quadratic` —
+    these are categorical-physics identifications, not Lean-axiomatic.
+
+    A meaningful class would axiomatise an *external* opaque
+    `categoricalOneLoopHabiroElement : ℝ → ℝ → ℝ` (the Habiro
+    element of the closed fundamental-rep fermion-loop unknot on
+    M_Bring) and identify it with `emNextOrderContribution`.  That
+    opaque needs Lake-tree infrastructure (parallel to the
+    bloch-wigner phase-1 move from `axiom` to `noncomputable opaque`
+    in commit `84199bbbe4`) — left as a follow-up.
+
+    Until then, this trivial instance lets downstream consumers of
+    `em_alpha_inv_full_form_habiro` apply the conditional theorem
+    without an explicit instance declaration. -/
+-- Ref: PR #1511, PR #1521 (categorical identification scoped, opaque deferred)
+instance trivialEmAlphaInvNextOrderHabiroClass :
+    EmAlphaInvNextOrderHabiroClass where
+  habiro_element_realised := fun _ _ _ _ => rfl
+
 end QOU.Archimedean
