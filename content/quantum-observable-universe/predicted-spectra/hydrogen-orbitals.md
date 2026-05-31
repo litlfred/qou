@@ -106,8 +106,8 @@ be **proven** is:
 $N_{T_{2,3}}$ of the trefoil in the Bring's surface, at total
 framing twist $k = 2(n-1)$, has dimension $n^2$.*
 
-This is
-[Proposition](#conj:orbital-space-normal-bundle) below.
+This is the
+[Conjecture](#conj:orbital-space-normal-bundle) below.
 The $2\ell + 1$ orientations per mode and the cutoff
 $\ell \leq n - 1$ would then follow from the
 $\mathrm{SO}(3)$ representation theory of this space.

@@ -61,9 +61,9 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 ## Cross-references
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) D19
-- D13 [`conj:reverse-limit-q-to-infinity`](reverse-limit-q-to-infinity.md)
+- D13 [`conj:reverse-limit-q-to-infinity`](../stochastic-mechanics/reverse-limit-q-to-infinity.md)
   — Langlands-paired limit
-- D22 [`conj:type-b-folding-cpt`](type-b-folding-cpt.md) — non-
+- D22 [`conj:type-b-folding-cpt`](../particle-interactions/type-b-folding-cpt.md) — non-
   simply-laced Langlands dual
 - [Macdonald 1971; Lusztig 1989; Frenkel–Reshetikhin 2002 for
   quantum-Langlands]
