@@ -302,28 +302,22 @@ theorem universal_property
   apply AlgHom.ext
   intro x
   -- IwahoriHecke W R q = IwahoriHeckeQuot R q (Set.univ : Set W)
-  --                    = (FreeAlgebra R (Set.univ : Set W)) ⧸ heckeIdeal R q (Set.univ : Set W)
-  obtain ⟨y, rfl⟩ :=
-    Ideal.Quotient.mk_surjective
-      (I := QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W)) x
+  --                    = (FreeAlgebra R (Set.univ : Set W)) ⧸ I
+  -- where I is the Hecke quadratic ideal (let-bound below for readability).
+  let I := QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W)
+  obtain ⟨y, rfl⟩ := Ideal.Quotient.mk_surjective (I := I) x
   -- Reduce ψ (mk y) = φ_witness.val (mk y) to equality of the composed AlgHoms
   -- ψ.comp mkₐ = φ_witness.val.comp mkₐ on FreeAlgebra R Set.univ.
   have hcomp :
-      ψ.comp (Ideal.Quotient.mkₐ R
-        (QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W))) =
-      φ_witness.val.comp (Ideal.Quotient.mkₐ R
-        (QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W))) := by
+      ψ.comp (Ideal.Quotient.mkₐ R I) =
+      φ_witness.val.comp (Ideal.Quotient.mkₐ R I) := by
     apply FreeAlgebra.hom_ext
     funext s
     -- s : (Set.univ : Set W); ι R s : FreeAlgebra R Set.univ.
     -- After mkₐ then ψ/φ_witness.val, both sides equal `f s.val`.
     show ψ _ = φ_witness.val _
-    -- mkₐ (ι s) = mk (ι s) = T R q univ s = T q s.val (after Subtype eta)
-    have hT : (Ideal.Quotient.mkₐ R
-                (QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W)))
-                (FreeAlgebra.ι R s) = T q s.val := by
-      show Ideal.Quotient.mk _ (FreeAlgebra.ι R s) = _
-      rfl
+    -- mkₐ (ι s) = mk (ι s) = T R q univ s = T q s.val (Subtype eta is rfl).
+    have hT : Ideal.Quotient.mkₐ R I (FreeAlgebra.ι R s) = T q s.val := rfl
     rw [hT, hψ s.val, ← φ_witness.property s.val]
   -- Apply hcomp at y, then unfold the .comp into pointwise application.
   have := AlgHom.congr_fun hcomp y
