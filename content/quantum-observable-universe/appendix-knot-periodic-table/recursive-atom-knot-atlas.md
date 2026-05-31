@@ -394,7 +394,7 @@ the canonical $T_w$ knot operator's uniqueness at the
 empty-constraint SDP demonstration level is certified by:
 
 $$
-\verb|nucleus_uniqueness_closed|\ (3A)\ : \ \text{(sorry-free, axiom-free)}
+\texttt{nucleus\_uniqueness\_closed}\ (3A)\ : \ \text{(sorry-free, axiom-free)}
 $$
 
 Named wrappers exist at multiple granularity layers:
@@ -403,12 +403,18 @@ Named wrappers exist at multiple granularity layers:
 |---|---|---|
 | QOU-tracked R5-full nuclei | `Applied<Nucleus>Uniqueness.lean` (10 files) | ²H, ³H, ³He, ⁴He, ⁶Li, ⁹Be, ¹¹B, ¹²C, ¹⁴N, ¹⁶O |
 | Per-element (AME2020 ref) | `PeriodicTableUniqueness.lean` | 118 elements H..Og |
-| Per-stable-isotope | `StableIsotopeUniqueness.lean` (PR #1542) | 252 stable nuclides H..Bi |
+| Per-stable-isotope | `StableIsotopeUniqueness.lean` (pending [PR #1542](https://github.com/litlfred/qou/pull/1542)) | 252 stable nuclides H..Bi |
 | Generic | `NucleusEmptySDPUniqueness.lean` | Any $n : \mathbb{N}$ |
 
-Usage example for any atlas entry: cite `qou:QOU.BraidKnot.<isotope>_uniqueness_closed`
-in the corresponding `.lean` content block's docstring. For atoms
-beyond the named-isotope set, consumers can directly use
+Usage example for any atlas entry: cite
+`qou:QOU.BraidKnot.<isotope>_uniqueness_closed` in the
+corresponding `.lean` content block's docstring. **Naming
+convention**: the element symbol is taken from `AtomicMass.lean`;
+elements whose short symbol collides with a reserved Lean
+identifier (`n`, `p`, `s`, `b`, `k`, `v`, `y`, `i`, `u`, `w`)
+receive an `_el` suffix (e.g. `n_el_uniqueness_closed` for
+nitrogen, `b_el_uniqueness_closed` for boron). For atoms beyond
+the named-isotope set, consumers can directly use
 `@nucleus_uniqueness_closed (3*A)` with the appropriate $A$ value
 from the atlas entry.
 
