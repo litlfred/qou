@@ -1,16 +1,14 @@
 {
-  "computedAt": "2026-04-12T09:15:16.900639+00:00",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
+  "title": "Per-irrep Garside Q-values (quark level, 2-row)",
   "parameters": {
-    "q": 1.1099785955541805,
-    "h": 0.20906032198987945,
-    "z": 0.4993203340335982,
+    "q": 1.1099785827513808,
+    "h": 0.20906029879563937,
+    "z": 0.4993203341836945,
     "m_e_MeV": 0.51099895
   },
-  "title": "Per-irrep Garside Q-values (quark level, 2-row)",
   "decays": [
     {
-      "name": "n→p",
+      "name": "n\u2192p",
       "A": 1,
       "n_quarks": 3,
       "Z_par": 0,
@@ -18,18 +16,18 @@
       "Z_dau": 1,
       "N_dau": 0,
       "Q_exp": 0.7823334100000222,
-      "sum_weighted_dtr": 0.10643375183998782,
-      "sum_dtr": 0.31815910101293465,
-      "sum_abs_weighted_dtr": 0.10643375183998782,
-      "weight_coverage": 1,
+      "sum_weighted_dtr": 0.10643373960928497,
+      "sum_dtr": 0.31815906470097577,
+      "sum_abs_weighted_dtr": 0.10643373960928497,
+      "weight_coverage": 1.0,
       "irreps": [
         {
           "partition": [
             3
           ],
           "dim": 1,
-          "tr_par": 0.9107622062323656,
-          "tr_dau": 1.1221068372363028,
+          "tr_par": 0.9107622145530744,
+          "tr_dau": 1.122106821602472,
           "skipped": false
         },
         {
@@ -38,14 +36,14 @@
             1
           ],
           "dim": 2,
-          "tr_par": -0.4226892620078743,
-          "tr_dau": -0.31587479199887686,
+          "tr_par": -0.42268921409879556,
+          "tr_dau": -0.3158747564472175,
           "skipped": false
         }
       ]
     },
     {
-      "name": "³H→³He",
+      "name": "\u00b3H\u2192\u00b3He",
       "A": 3,
       "n_quarks": 9,
       "Z_par": 1,
@@ -53,18 +51,18 @@
       "Z_dau": 2,
       "N_dau": 1,
       "Q_exp": 0.01861,
-      "sum_weighted_dtr": 0.008720129904319255,
-      "sum_dtr": 3.6403492907938593,
-      "sum_abs_weighted_dtr": 0.008720129904319255,
-      "weight_coverage": 1,
+      "sum_weighted_dtr": 0.00872012893389404,
+      "sum_dtr": 3.64034888520011,
+      "sum_abs_weighted_dtr": 0.00872012893389404,
+      "weight_coverage": 1.0,
       "irreps": [
         {
           "partition": [
             9
           ],
           "dim": 1,
-          "tr_par": 0.7344083890463615,
-          "tr_dau": 1.6922107972424738,
+          "tr_par": 0.7344084053165773,
+          "tr_dau": 1.6922106785846054,
           "skipped": false
         },
         {
@@ -73,8 +71,8 @@
             1
           ],
           "dim": 8,
-          "tr_par": -0.9118679739783934,
-          "tr_dau": -0.8491598372275122,
+          "tr_par": -0.9118677984239019,
+          "tr_dau": -0.8491596022720855,
           "skipped": false
         },
         {
@@ -83,8 +81,8 @@
             2
           ],
           "dim": 27,
-          "tr_par": 3.277965455954771,
-          "tr_dau": 5.065984029161773,
+          "tr_par": 3.2779652026635446,
+          "tr_dau": 5.065983496424884,
           "skipped": false
         },
         {
@@ -93,8 +91,8 @@
             3
           ],
           "dim": 48,
-          "tr_par": -2.4356208099715593,
-          "tr_dau": -1.716003602352124,
+          "tr_par": -2.435620217622906,
+          "tr_dau": -1.7160031263060835,
           "skipped": false
         },
         {
@@ -103,14 +101,14 @@
             4
           ],
           "dim": 42,
-          "tr_par": 3.111800799886392,
-          "tr_dau": 3.2240037649068203,
+          "tr_par": 3.1118003057626757,
+          "tr_dau": 3.224003336464779,
           "skipped": false
         }
       ]
     },
     {
-      "name": "⁶He→⁶Li",
+      "name": "\u2076He\u2192\u2076Li",
       "A": 6,
       "n_quarks": 18,
       "Z_par": 2,
@@ -118,9 +116,9 @@
       "Z_dau": 3,
       "N_dau": 3,
       "Q_exp": 3.508,
-      "sum_weighted_dtr": 9.02079542785348e-11,
-      "sum_dtr": 26.119044237188202,
-      "sum_abs_weighted_dtr": 9.083737743993915e-11,
+      "sum_weighted_dtr": 9.020790845400586e-11,
+      "sum_dtr": 26.119030982499616,
+      "sum_abs_weighted_dtr": 9.083733133834078e-11,
       "weight_coverage": 3.8763609397647214e-05,
       "irreps": [
         {
@@ -128,8 +126,8 @@
             18
           ],
           "dim": 1,
-          "tr_par": 0.2620812263991248,
-          "tr_dau": 1.552901766596129,
+          "tr_par": 0.2620812526468218,
+          "tr_dau": 1.5529016157614675,
           "skipped": false
         },
         {
@@ -138,8 +136,8 @@
             1
           ],
           "dim": 17,
-          "tr_par": -1.5217642827038969,
-          "tr_dau": -8.493740577429586,
+          "tr_par": -1.5217639400039815,
+          "tr_dau": -8.493737165694858,
           "skipped": false
         },
         {
@@ -148,8 +146,8 @@
             2
           ],
           "dim": 135,
-          "tr_par": 8.034425930995548,
-          "tr_dau": 39.83462592271243,
+          "tr_par": 8.03442379314534,
+          "tr_dau": 39.834607638221186,
           "skipped": false
         },
         {
@@ -225,9 +223,5 @@
       ]
     }
   ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0,
-  "engine": "python",
-  "scriptFile": "garside-irrep-qvalues.py",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+  "timestamp": "2026-05-31T04:33:07.215109+00:00"
 }
