@@ -1,11 +1,10 @@
 {
-  "computedAt": "2026-04-27T21:20:38.661713+00:00",
   "computation": "entanglement-orders",
-  "description": "Entanglement energy tracked at all GB filtration orders (k = 0, 1, 2, ..., n_gens).  Each k-subset contribution weighted by z^(2·span) where span = max(i) - min(i) of the subset, reflecting the total number of crossings the k-entanglement spans.",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-  "q_0": 1.1099785955541805,
-  "z": 0.4993203340335982,
-  "calibration_MeV_per_cat": 0.0007958232816978196,
+  "description": "Entanglement energy tracked at all GB filtration orders (k = 0, 1, 2, ..., n_gens).  Each k-subset contribution weighted by z^(2\u00b7span) where span = max(i) - min(i) of the subset, reflecting the total number of crossings the k-entanglement spans.",
+  "timestamp": "2026-05-31T04:31:32.638851+00:00",
+  "q_0": 1.1099785827513808,
+  "z": 0.4993203341836945,
+  "calibration_MeV_per_cat": 0.0007958231914398445,
   "particles": [
     {
       "particle": "proton",
@@ -14,22 +13,22 @@
       "n_gens": 2,
       "orders": {
         "0": {
-          "contribution": 0.9603954911881509,
+          "contribution": 0.9603954011165767,
           "n_terms": 1,
-          "description": "|ΠV̂_i|"
+          "description": "|\u03a0V\u0302_i|"
         },
         "1": {
-          "contribution": 1096978.3961756874,
+          "contribution": 1096978.5786418868,
           "n_terms": 2,
-          "description": "Σ_{k=1-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=1-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "2": {
-          "contribution": 82016.16886542104,
+          "contribution": 82016.12011462673,
           "n_terms": 1,
-          "description": "Σ_{k=2-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=2-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         }
       },
-      "total": 1178995.5254365997
+      "total": 1178995.6591519148
     },
     {
       "particle": "neutron",
@@ -38,22 +37,22 @@
       "n_gens": 2,
       "orders": {
         "0": {
-          "contribution": 0.8332902504795164,
+          "contribution": 0.8332901758695206,
           "n_terms": 1,
-          "description": "|ΠV̂_i|"
+          "description": "|\u03a0V\u0302_i|"
         },
         "1": {
-          "contribution": 511298.2733512385,
+          "contribution": 511298.9126727705,
           "n_terms": 2,
-          "description": "Σ_{k=1-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=1-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "2": {
-          "contribution": 6137.397714011593,
+          "contribution": 6137.396926797969,
           "n_terms": 1,
-          "description": "Σ_{k=2-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=2-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         }
       },
-      "total": 517436.50435550057
+      "total": 517437.1428897443
     },
     {
       "particle": "D",
@@ -62,37 +61,37 @@
       "n_gens": 5,
       "orders": {
         "0": {
-          "contribution": 0.2113922189397068,
+          "contribution": 0.211392186309078,
           "n_terms": 1,
-          "description": "|ΠV̂_i|"
+          "description": "|\u03a0V\u0302_i|"
         },
         "1": {
-          "contribution": 1608289.7568490494,
+          "contribution": 1608290.5786417618,
           "n_terms": 5,
-          "description": "Σ_{k=1-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=1-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "2": {
-          "contribution": 95228.88989317713,
+          "contribution": 95228.84300128646,
           "n_terms": 10,
-          "description": "Σ_{k=2-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=2-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "3": {
-          "contribution": 1377.0373693800705,
+          "contribution": 1377.0363057021325,
           "n_terms": 10,
-          "description": "Σ_{k=3-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=3-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "4": {
-          "contribution": 53.8061971948591,
+          "contribution": 53.80612465198813,
           "n_terms": 5,
-          "description": "Σ_{k=4-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=4-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "5": {
-          "contribution": 0.029364224115178573,
+          "contribution": 0.029364221416820848,
           "n_terms": 1,
-          "description": "Σ_{k=5-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=5-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         }
       },
-      "total": 1704949.7310652444
+      "total": 1704950.50482981
     },
     {
       "particle": "T",
@@ -101,109 +100,106 @@
       "n_gens": 8,
       "orders": {
         "0": {
-          "contribution": 0.028116345849300853,
+          "contribution": 0.028116342382230246,
           "n_terms": 1,
-          "description": "|ΠV̂_i|"
+          "description": "|\u03a0V\u0302_i|"
         },
         "1": {
-          "contribution": 2119592.558095667,
+          "contribution": 2119594.0192115684,
           "n_terms": 8,
-          "description": "Σ_{k=1-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=1-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "2": {
-          "contribution": 107322.21466461368,
+          "contribution": 107322.17118846423,
           "n_terms": 28,
-          "description": "Σ_{k=2-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=2-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "3": {
-          "contribution": 1874.2065398016607,
+          "contribution": 1874.2053297033065,
           "n_terms": 56,
-          "description": "Σ_{k=3-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=3-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "4": {
-          "contribution": 87.91250931352317,
+          "contribution": 87.91240616577076,
           "n_terms": 70,
-          "description": "Σ_{k=4-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=4-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "5": {
-          "contribution": 2.5560587285249996,
+          "contribution": 2.5560552574024356,
           "n_terms": 56,
-          "description": "Σ_{k=5-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=5-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "6": {
-          "contribution": 0.11618309287924564,
+          "contribution": 0.1161829130022226,
           "n_terms": 28,
-          "description": "Σ_{k=6-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=6-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "7": {
-          "contribution": 0.0014233806072754106,
+          "contribution": 0.0014233805427181776,
           "n_terms": 8,
-          "description": "Σ_{k=7-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=7-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "8": {
-          "contribution": 7.746166218660589e-05,
+          "contribution": 7.746166235919246e-05,
           "n_terms": 1,
-          "description": "Σ_{k=8-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=8-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         }
       },
-      "total": 2228879.5936684054
+      "total": 2228881.0099912565
     },
     {
-      "particle": "³He",
+      "particle": "\u00b3He",
       "Z": 2,
       "N": 1,
       "n_gens": 8,
       "orders": {
         "0": {
-          "contribution": 0.07484850403357003,
+          "contribution": 0.07484848465886275,
           "n_terms": 1,
-          "description": "|ΠV̂_i|"
+          "description": "|\u03a0V\u0302_i|"
         },
         "1": {
-          "contribution": 2705308.6859446946,
+          "contribution": 2705309.6902193897,
           "n_terms": 8,
-          "description": "Σ_{k=1-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=1-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "2": {
-          "contribution": 210370.6348709083,
+          "contribution": 210370.50903329268,
           "n_terms": 28,
-          "description": "Σ_{k=2-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=2-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "3": {
-          "contribution": 9911.763314647475,
+          "contribution": 9911.747913174182,
           "n_terms": 56,
-          "description": "Σ_{k=3-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=3-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "4": {
-          "contribution": 678.1592860366675,
+          "contribution": 678.1578715772918,
           "n_terms": 70,
-          "description": "Σ_{k=4-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=4-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "5": {
-          "contribution": 12.458070112903988,
+          "contribution": 12.458044580638141,
           "n_terms": 56,
-          "description": "Σ_{k=5-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=5-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "6": {
-          "contribution": 0.5177640474931782,
+          "contribution": 0.5177628727299798,
           "n_terms": 28,
-          "description": "Σ_{k=6-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=6-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "7": {
-          "contribution": 0.0028509967783798755,
+          "contribution": 0.0028509960507060476,
           "n_terms": 8,
-          "description": "Σ_{k=7-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=7-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         },
         "8": {
-          "contribution": 0.00011975490033564361,
+          "contribution": 0.00011975488862786474,
           "n_terms": 1,
-          "description": "Σ_{k=8-subset} z^(2·span) · Φ_q(Π V̂_i)"
+          "description": "\u03a3_{k=8-subset} z^(2\u00b7span) \u00b7 \u03a6_q(\u03a0 V\u0302_i)"
         }
       },
-      "total": 2926282.297069703
+      "total": 2926283.1586641227
     }
-  ],
-  "engine": "python",
-  "scriptFile": "entanglement_orders.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  ]
 }
