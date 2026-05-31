@@ -41,11 +41,17 @@ its 4 sorry-bearing instance proofs with a `def` aliasing
 over `Set.univ : Set W`. The algebra structure inherits via
 `inferInstanceAs` — no instance proof remains as `sorry`.
 
-Remaining `sorry`s in this file:
-- `universal_property` (line ~191): blocked on
-  `IsHeckeAlgebraMap` upgrade from the `True` placeholder to the
-  actual Hecke-quadratic + braid conditions (Sprint 2 follow-up
-  via `CoxeterSystem` once Mathlib's accessor stabilises).
+**This file is now `sorry`-free** (uniqueness side of
+`universal_property` discharged via the Sprint 2 follow-up:
+`FreeAlgebra.hom_ext` on the composed AlgHoms + surjectivity of
+`Ideal.Quotient.mk`). The original 5 sorrys (4 instance + 1
+universal_property) are all closed.
+
+The remaining `Unit`/`True` deferral lives in `IsHeckeAlgebraMap`,
+which currently encodes only the Hecke quadratic relation. The
+braid-relation side is a Sprint 2 follow-up gated on Mathlib's
+`CoxeterSystem` reduced-expression accessor (the `Quotient.lean`
+inheritance — see its docstring §113-118 for the in-flux note).
 
 Sprints 2-5 (each its own PR per the infra plan):
 - Sprint 2: reduced-expression `T_w` basis (closes `conj:hecke-anyonic-substrate`)
@@ -278,16 +284,50 @@ theorem universal_property
     (f : W → A) (hf : IsHeckeAlgebraMap q f) :
     ∃! φ : IwahoriHecke W R q →ₐ[R] A, ∀ s : W, φ (T q s) = f s := by
   -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 follow-up:
-  -- existence side now discharged via `universal_property_existence`;
-  -- uniqueness deferred until the FreeAlgebra-generates-quotient lemma is wired in.
+  -- existence via `universal_property_existence`; uniqueness via the
+  -- surjective-quotient + FreeAlgebra-generator chain (this proof).
   obtain ⟨φ_witness⟩ := universal_property_existence q f hf
   refine ⟨φ_witness.val, φ_witness.property, ?_⟩
   intro ψ hψ
-  -- Uniqueness: ψ agrees with φ_witness on every `T q s` (by hψ and φ_witness.property);
-  -- AlgHom.ext from the fact that {T q s : s ∈ W} generates IwahoriHeckeQuot R q univ.
-  -- Deferred: needs `AlgHom.ext_of_image_eq_self_of_genSet` (or similar Mathlib lemma)
-  -- via the surjective `Ideal.Quotient.mk` composed with FreeAlgebra's generator density.
-  sorry
+  -- Strategy: both ψ and φ_witness.val are AlgHoms from
+  --   IwahoriHecke W R q = (FreeAlgebra R Set.univ) ⧸ heckeIdeal
+  -- to A. Precompose each with `Ideal.Quotient.mkₐ R heckeIdeal`
+  -- to get AlgHoms FreeAlgebra R Set.univ →ₐ[R] A; these agree on
+  -- every generator `FreeAlgebra.ι R s` because
+  --   mkₐ (ι s) = mk (ι s) = Quotient.T R q univ s = T q s.val
+  -- and `hψ s.val` + `(φ_witness.property s.val).symm` give the
+  -- equality on values. `FreeAlgebra.hom_ext` upgrades pointwise-on-
+  -- generators to AlgHom equality, then surjectivity of mk lifts
+  -- the equality back to the quotient.
+  apply AlgHom.ext
+  intro x
+  -- IwahoriHecke W R q = IwahoriHeckeQuot R q (Set.univ : Set W)
+  --                    = (FreeAlgebra R (Set.univ : Set W)) ⧸ heckeIdeal R q (Set.univ : Set W)
+  obtain ⟨y, rfl⟩ :=
+    Ideal.Quotient.mk_surjective
+      (I := QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W)) x
+  -- Reduce ψ (mk y) = φ_witness.val (mk y) to equality of the composed AlgHoms
+  -- ψ.comp mkₐ = φ_witness.val.comp mkₐ on FreeAlgebra R Set.univ.
+  have hcomp :
+      ψ.comp (Ideal.Quotient.mkₐ R
+        (QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W))) =
+      φ_witness.val.comp (Ideal.Quotient.mkₐ R
+        (QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W))) := by
+    apply FreeAlgebra.hom_ext
+    funext s
+    -- s : (Set.univ : Set W); ι R s : FreeAlgebra R Set.univ.
+    -- After mkₐ then ψ/φ_witness.val, both sides equal `f s.val`.
+    show ψ _ = φ_witness.val _
+    -- mkₐ (ι s) = mk (ι s) = T R q univ s = T q s.val (after Subtype eta)
+    have hT : (Ideal.Quotient.mkₐ R
+                (QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W)))
+                (FreeAlgebra.ι R s) = T q s.val := by
+      show Ideal.Quotient.mk _ (FreeAlgebra.ι R s) = _
+      rfl
+    rw [hT, hψ s.val, ← φ_witness.property s.val]
+  -- Apply hcomp at y, then unfold the .comp into pointwise application.
+  have := AlgHom.congr_fun hcomp y
+  simpa [AlgHom.comp_apply, Ideal.Quotient.mkₐ_eq_mk] using this
 
 /-! ## Closure paths (downstream consumers gated on this infra)
 
