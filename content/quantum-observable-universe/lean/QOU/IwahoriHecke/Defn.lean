@@ -267,17 +267,17 @@ theorem universal_property_existence
     predicate) extends uniquely to an `R`-algebra homomorphism
     from `IwahoriHecke W R q`.
 
-    Sprint 2 follow-up status:
-    - **Existence**: discharged by `universal_property_existence`
+    Sprint 2 follow-up status (both sides now discharged):
+    - **Existence**: provided by `universal_property_existence`
       via Quotient.lean's `universal_property_hecke_quadratic`.
-    - **Uniqueness**: deferred. The uniqueness argument is that any
-      two algebra homs agreeing on every `T q s` agree on the entire
-      quotient, because the image of `Quotient.T R q (Set.univ)`
-      generates `IwahoriHeckeQuot R q (Set.univ)` as an R-algebra
-      (via `Ideal.Quotient.mk`'s surjectivity composed with
-      `FreeAlgebra`'s generator-density). Discharging this requires
-      `AlgHom.ext_of_surjective`-style Mathlib API; deferred here to
-      keep the existence content reviewable. -/
+    - **Uniqueness**: discharged inline below — any two algebra homs
+      agreeing on every `T q s` agree on the entire quotient, because
+      the image of `Quotient.T R q (Set.univ)` generates
+      `IwahoriHeckeQuot R q (Set.univ)` as an R-algebra. The argument
+      precomposes both AlgHoms with `Ideal.Quotient.mkₐ R heckeIdeal`,
+      uses `FreeAlgebra.hom_ext` on the resulting AlgHoms from
+      `FreeAlgebra R Set.univ`, then lifts the equality back via
+      `Ideal.Quotient.mk_surjective`. -/
 theorem universal_property
     {W : Type u} [Group W] [DecidableEq W] {R : Type v} [CommRing R] (q : R)
     {A : Type w} [CommRing A] [Algebra R A]
