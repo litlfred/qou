@@ -63,7 +63,7 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 | #1577 | canonical-watcher: automate Q_β c_k flip-flop prevention | **direct overlap** — infrastructure to prevent the bug this ledger documents |
 | #1521 | Habiro element [2]_q·(1-h²α) categorical 1-loop | **direct upstream** — the canonical c_k source |
 | #1543 | ⁴He magic-A binding | adjacent (binding side) |
-| this PR (TBD) | coord infrastructure + 1ppQ kickoff | sets up this ledger + STATUS.md + /session-intent skill |
+| #1580 | coord infrastructure + 1ppQ kickoff (THIS PR) | sets up this ledger + STATUS.md + queue file + /session-intent + /pending-show + SessionStart hook |
 
 ## Flip-flop history (DO NOT REPEAT)
 
@@ -90,7 +90,7 @@ Taylor-exact. Otherwise, it's a near-match.
 
 | Date | Agent / branch | Intent | Results |
 |------|----------------|--------|---------|
-| 2026-05-31 | Claude / `claude/coord-infra-1ppq-2026-05-31` | (1) create this ledger + STATUS.md, (2) coord with #1577, (3) ask user about queue-schema formalization, (4) probe c_3 q_0-stability if scope permits | in progress |
+| 2026-05-31 | Claude / `claude/coord-infra-1ppq-2026-05-31` | (1) create this ledger + STATUS.md, (2) coord with #1577, (3) ask user about queue-schema formalization, (4) probe c_3 q_0-stability if scope permits | (1) ✓ STATUS.md + 1ppq-qbeta.md committed (262a1d7b7); PR #1580 open. (2) ✓ intent comment on #1577 (`pull/1577#issuecomment-...`). (3) ✓ user chose: TodoItem JSON schema, no explicit claim, intent at branch-open, pre-work main sweep; new skills `/session-intent` + `/pending-show` + SessionStart hook added (this PR). (4) deferred — infra came in over-scope; probe `probe-c3-q0-stability` left in queue with `status: open` for next session OR sibling agent. |
 
 ## Cross-refs
 

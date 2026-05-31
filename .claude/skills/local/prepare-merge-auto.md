@@ -44,10 +44,10 @@ before proceeding.
 **Wait for Copilot and Gemini reviews to land** before proceeding.
 Do NOT skip ahead — the reviews are the input to Phase 2.
 
-**Wait protocol (5-minute window):**
+**Wait protocol (15-minute window — extended 2026-05-31 per author):**
 
 1. After requesting reviews in Phase 1, poll for Copilot's
-   check-run status every 30 seconds (up to 5 minutes):
+   check-run status every 30 seconds (up to 15 minutes):
    ```
    mcp__github__pull_request_read(method="get_check_runs", ...)
    ```
@@ -65,11 +65,11 @@ Do NOT skip ahead — the reviews are the input to Phase 2.
    limit", note "Gemini: quota exhausted" and proceed without
    waiting further.
 
-3. **5-minute hard cap**: if neither reviewer has completed after
-   5 minutes, proceed with whatever comments have landed. Note
-   "Copilot: timed out (5 min)" in the briefing.
+3. **15-minute hard cap**: if neither reviewer has completed after
+   15 minutes, proceed with whatever comments have landed. Note
+   "Copilot: timed out (15 min)" in the briefing.
 
-Once reviews arrive (or the 5-minute cap is reached), give the
+Once reviews arrive (or the 15-minute cap is reached), give the
 user a concise **status briefing**:
 
 1. **PR identity**: "#N — title" with clickable URL

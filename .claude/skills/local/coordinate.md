@@ -572,12 +572,96 @@ After invocation, you should have:
 - ❌ Long prose.  Coordination comments are tables, file pointers,
   and one-line asks.
 
+## §11 STATUS.md + master ledger pattern (2026-05-31)
+
+The 4× c_k flip-flop episode (PR #1580 history) prompted a more
+structured coordination layer that overlays this skill:
+
+- **Root [`STATUS.md`](../../../STATUS.md)** — single dashboard
+  listing every goal + pointer to its master ledger + active PRs.
+- **Master ledger per goal** — `docs/coordination/<goal>.md` holds
+  the durable narrative: current canonical status, open probes,
+  flip-flop history, sessions log.
+- **Per-goal queue** — `todos/<goal>-queue.json` (committed, typed
+  as `TodoItem[]` per `folio-assistant/schemas/types.ts`); each
+  open probe is one entry.
+
+When `/coordinate` runs, it now ALSO:
+
+1. **Reads STATUS.md** to find which goal(s) the current PR
+   touches.
+2. **Reads the goal's master ledger** to identify the current
+   canonical status — overrides recent commit claims if the
+   ledger records a retraction.
+3. **Reads the queue file** to find sibling probes in flight.
+4. **References the ledger session log** when posting intent
+   comments on sibling PRs, so the comment is grounded in the
+   durable record, not just session memory.
+
+See `local/session-intent` for the session-start / session-end
+ledger + queue update protocol — `/coordinate` is the sibling-PR
+arm; `/session-intent` is the durable-state arm. They are run
+together at session start.
+
+## §12 Multi-agent same-goal coordination (2026-05-31)
+
+**Multiple agents MAY work the same goal in parallel.** The author's
+2026-05-31 directive: "ok if multiple agents attack same goal at
+once — the agents coordinate with user on goals."
+
+Model:
+
+- **Goal** = product (author's directive). User-level concern.
+- **Queue** = per-goal item list (`todos/<goal>-queue.json`).
+- **Probes** are NOT exclusively claimed. Two agents may attack the
+  same probe with different methods (Habiro recursion vs PSLQ basis
+  sweep) — both threads have value.
+- **Coordination is with the USER** on goal-level decisions, not
+  agent-to-agent on probe-level locks.
+
+### When you detect a sibling agent on your probe
+
+Signals:
+
+- The queue entry has `co_assignees` populated, OR
+- A sibling PR (from `mcp__github__list_pull_requests`) has commits
+  touching your probe's scope files within the last 24h, OR
+- The ledger session log shows another agent declared intent on
+  the same probe ID.
+
+Workflow:
+
+1. **Do not silently abandon.** Your independent attack is valuable.
+2. **Post intent** on the sibling PR (this skill §3) so the sibling
+   sees you're also working it.
+3. **Ask the user** with `AskUserQuestion` whether to keep both
+   threads or have one stand down. Include rich context per CLAUDE.md
+   §User accessibility — quote what each agent is doing, what method,
+   what's been found, cost of running both.
+4. **If user says one stands down**, the standing-down agent appends
+   partial results to the ledger and updates queue
+   `status: "open"` (releasing the probe). The continuing agent
+   may pick up the partial results.
+
+### Watching for sibling-PR contradictions
+
+Per §8 of this skill: at each triage cycle, look for sibling-PR
+commits or comments that **contradict** your branch's framing. Per
+§6: escalate inconsistent findings to the user. Do not silently
+adopt the sibling's framing without an §6 conversation.
+
 ## Related skills
 
 - `local/delivery-summary` — what to post **after** a feature lands
   (one PR scope).
 - `local/watch` — passive monitoring of upstream branches.
 - `local/diff` — per-block change report (one PR scope).
+- `local/session-intent` — session-start / session-end ledger +
+  queue update protocol (the durable-state arm of coordination).
+- `local/pending-show` — read-only display of current session's
+  pending work (todos, intent, queue assignments).
+- `local/prepare-merge-auto` — autonomous merge pipeline (uses
+  this skill's §0 sibling-coord pattern).
 
 `/coordinate` complements them: it is the **active** cross-PR
 protocol — including handling of code-review comments on your own
