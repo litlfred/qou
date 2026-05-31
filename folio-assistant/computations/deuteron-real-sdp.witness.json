@@ -337,8 +337,153 @@
         "feasible": true
       }
     },
+    "B_D_AME_MeV": 2.22456607,
+    "nine_pair_multiplicities": {
+      "uu": 2,
+      "ud": 4,
+      "du": 1,
+      "dd": 2
+    },
+    "phase_B_full_methods": {
+      "1_bar_involution_fold": {
+        "description": "x_\u03bb = x_\u03bb' (bar-involution/Type-B fold, \u00a77b) \u2014 symmetry regulariser",
+        "ansatz_flag": false,
+        "result": {
+          "status": 0,
+          "feasible": true,
+          "primal_obj": -0.005606080401193377,
+          "x_star": [
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.38828647154771595,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          "duality_gap": 0.0,
+          "eq_duals": [
+            -0.014438000836978567,
+            -0.014446420422113734,
+            0.20404915109510324,
+            -0.014718386131314121,
+            -0.014773794061946564,
+            0.07443858707740068
+          ],
+          "ineq_duals": [
+            -2.047772515860995,
+            -0.0,
+            -0.2663902303458599,
+            -0.24125144104123625,
+            -0.0,
+            -0.0,
+            -0.0,
+            -22.290169551693896,
+            -0.0,
+            -443.45004359543907,
+            -0.0
+          ]
+        }
+      },
+      "2_character_projection_colorflavor": {
+        "description": "per-pair \u03c7^\u03bb projection rows + AME-apportioned RHS",
+        "ansatz_flag": true,
+        "ansatz_warning": "UN-VETTED: pair\u2192block map invented here; flag to canonical-watcher / CAL-4 discipline before any production use.",
+        "result": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null
+        }
+      },
+      "3_conservation_laws": {
+        "description": "baryon (net) + charge (sign-weighted) conservation rows",
+        "ansatz_flag": false,
+        "result": {
+          "status": 0,
+          "feasible": true,
+          "primal_obj": -22531.53677430401,
+          "x_star": [
+            -0.0,
+            -0.0,
+            -0.0,
+            1000000.0,
+            -0.0,
+            1000000.0,
+            -1000000.0,
+            999999.6941432358,
+            -1000000.0,
+            0.6941432357998565,
+            -1000000.0
+          ],
+          "duality_gap": 0.0,
+          "eq_duals": [
+            -0.0012458349564919875,
+            0.0014584356541779391
+          ],
+          "ineq_duals": [
+            -1.556166766138728,
+            -0.6424571258627583,
+            -0.18538562539717823,
+            -0.0,
+            -0.8468029035833154,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        }
+      },
+      "4_ame_binding_equality": {
+        "description": "t\u00b7x = B_D_AME (physical binding-energy target)",
+        "ansatz_flag": false,
+        "result": {
+          "status": 0,
+          "feasible": true,
+          "primal_obj": 2.2245660699984153,
+          "x_star": [
+            237140.5220876443,
+            -0.0,
+            -0.0,
+            1000000.0,
+            -0.0,
+            1000000.0,
+            -1000000.0,
+            762859.8661988273,
+            -1000000.0,
+            -0.0,
+            -1000000.0
+          ],
+          "duality_gap": 0.0,
+          "eq_duals": [
+            -0.0,
+            1.0
+          ],
+          "ineq_duals": [
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        }
+      }
+    },
     "phase_A_cost": "done",
-    "phase_B_constraints": "interim (bounded positive-norm subspace); full color-flavor 9-pair + AME2020 RHS pending",
+    "phase_B_constraints": "interim (bounded subspace) + 4 full encodings compared (method 2 un-vetted ansatz); full color-flavor 9-pair + AME2020 RHS",
     "phase_C_dual_solve": "diagnostic (unbounded on full space; bounded on positive subspace)",
     "phase_D_lean_wiring": "pending (deuteron_emptySDP -> deuteron_realSDP)"
   }

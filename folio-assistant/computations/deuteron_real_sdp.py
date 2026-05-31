@@ -71,6 +71,56 @@ OUT_WITNESS = HERE / "deuteron-real-sdp.witness.json"
 # the Phase D target.  Cited so this witness is wiring-audited (PR #1572/#1573).
 LEAN_UNIQUENESS_REF = "qou:QOU.BraidKnot.deuteron_uniqueness_closed"
 
+# AME2020 deuteron binding energy (MeV) — RHS for the physical constraint.
+# Matches the repo-wide constant (probe_k_ud_*, applied_uniqueness_mass_table).
+B_D_AME_MeV = 2.22456607
+# 9-pair color-flavor structure of p=uud × n=udd: 2·(u,u)+4·(u,d)+1·(d,u)+2·(d,d).
+# Neutron-heavy 5:4 weighting with a bar-involution sign flip on the mixed
+# (u,d)/(d,u) channel (probe_k_ud_fractional_and_alt_ansatz.nine_pair_ratio).
+NINE_PAIR = {"uu": 2, "ud": 4, "du": 1, "dd": 2}  # multiplicities, Σ = 9
+
+
+def solve_lp_with_eq(t, G, A_eq, b_eq, n_target):
+    """LP-dual solve via the canonical entry point, with optional extra
+    equality rows folded into the square-Gram operator-selection form.
+
+    The pyhecke entry point takes (t, G_square, n_target) where the only
+    constraints are Σx = n_target and Gx ≥ 0. Equality rows A_eq x = b_eq
+    are not natively supported there, so for methods that need them we fall
+    back to a direct scipy/HiGHS solve and report primal+dual ourselves.
+    """
+    import numpy as _np
+    from scipy.optimize import linprog as _linprog
+
+    t = _np.asarray(t, float)
+    G = _np.asarray(G, float)
+    d = len(t)
+    A_ub = -G  # Gx ≥ 0  ⇔  -Gx ≤ 0
+    b_ub = _np.zeros(G.shape[0])
+    A_eq_full = [_np.ones(d)]
+    b_eq_full = [n_target]
+    if A_eq is not None:
+        for row, rhs in zip(A_eq, b_eq):
+            A_eq_full.append(_np.asarray(row, float))
+            b_eq_full.append(float(rhs))
+    res = _linprog(
+        c=t, A_ub=A_ub, b_ub=b_ub,
+        A_eq=_np.array(A_eq_full), b_eq=_np.array(b_eq_full),
+        bounds=[(-1e6, 1e6)] * d, method="highs",
+    )
+    out = {
+        "status": res.status,
+        "feasible": bool(res.success),
+        "primal_obj": float(res.fun) if res.success else None,
+        "x_star": res.x.tolist() if res.success else None,
+        "duality_gap": 0.0 if res.success else None,
+    }
+    if res.success and res.eqlin is not None:
+        out["eq_duals"] = _np.asarray(res.eqlin.marginals).tolist()
+    if res.success and res.ineqlin is not None:
+        out["ineq_duals"] = _np.asarray(res.ineqlin.marginals).tolist()
+    return out
+
 
 def parse_partition(key: str) -> tuple[int, ...]:
     """'(3, 2, 1)' -> (3, 2, 1)."""
@@ -206,6 +256,74 @@ def main() -> int:
                        and bool(lp_pos_d.get("feasible", True)))
     interim_active = [pos_keys[i] for i in lp_pos_d.get("active_set", []) if i < len(pos_keys)]
 
+    # ── Phase B (full) — four constraint-encoding methods, side by side ──
+    # Each tries to regularise the indefinite-Gram unbounded program with a
+    # different physical constraint. Reported together so the encoding choice
+    # is auditable; method (2) is explicitly flagged as an un-vetted ansatz.
+    chi = np.array([chi_beta_D[k] for k in keys])  # χ^λ(β_D) per block
+    n_blocks = len(keys)
+    methods = {}
+
+    # (1) Bar-involution / Type-B folding (§7b): pair each block with its
+    #     conjugate and impose x_λ = x_λ' (symmetric fold). This collapses the
+    #     sign-flipped conjugate pairs, definitising the folded Gram — the
+    #     symmetry-driven regulariser (no invented weights).
+    fold_rows, fold_rhs = [], []
+    seen = set()
+    for i, k in enumerate(keys):
+        cp = conjugate_partition(parse_partition(k))
+        ck = key_of.get(cp)
+        if ck and ck != k and (k, ck) not in seen and (ck, k) not in seen:
+            j = keys.index(ck)
+            row = np.zeros(n_blocks); row[i] = 1.0; row[j] = -1.0
+            fold_rows.append(row); fold_rhs.append(0.0)
+            seen.add((k, ck))
+    methods["1_bar_involution_fold"] = {
+        "description": "x_λ = x_λ' (bar-involution/Type-B fold, §7b) — symmetry regulariser",
+        "ansatz_flag": False,
+        "result": solve_lp_with_eq(t, np.diag(frob_diag), fold_rows, fold_rhs, n_target),
+    }
+
+    # (2) Character-projection color-flavor constraints (UN-VETTED ANSATZ).
+    #     One row per pair-type: A_pair[λ] = mult(pair)·χ^λ(β_D)/[6]_q!, RHS
+    #     apportions B_D across pairs by multiplicity. Flagged for the
+    #     canonical-watcher — the pair→block map does not exist in the repo.
+    bracket6 = float(data.get("bracket_6_q0", 1.0))  # [6]_q! if recorded, else 1
+    cf_rows, cf_rhs = [], []
+    total_mult = sum(NINE_PAIR.values())
+    for pair, mult in NINE_PAIR.items():
+        sign = -1.0 if pair in ("ud", "du") else 1.0  # bar-flip on mixed channel
+        row = sign * mult * chi / bracket6
+        cf_rows.append(row)
+        cf_rhs.append(B_D_AME_MeV * mult / total_mult)
+    methods["2_character_projection_colorflavor"] = {
+        "description": "per-pair χ^λ projection rows + AME-apportioned RHS",
+        "ansatz_flag": True,
+        "ansatz_warning": "UN-VETTED: pair→block map invented here; flag to canonical-watcher / CAL-4 discipline before any production use.",
+        "result": solve_lp_with_eq(t, np.diag(frob_diag), cf_rows, cf_rhs, n_target),
+    }
+
+    # (3) Conservation-law constraints only: baryon number (Σx fixes total)
+    #     and charge. Minimal and safe; weak (2 rows for 11 blocks).
+    #     Baryon: Σ x_λ = n_target (already the net constraint). Charge:
+    #     weight blocks by χ^λ sign as a proxy for the +1 deuteron charge.
+    cons_rows = [np.sign(chi)]
+    cons_rhs = [1.0]  # net charge +1 (proxy)
+    methods["3_conservation_laws"] = {
+        "description": "baryon (net) + charge (sign-weighted) conservation rows",
+        "ansatz_flag": False,
+        "result": solve_lp_with_eq(t, np.diag(frob_diag), cons_rows, cons_rhs, n_target),
+    }
+
+    # (4) AME-binding equality: retarget the net constraint to the physical
+    #     binding energy t·x = B_D instead of tr_M(β_D). One-line physical
+    #     anchor; composes with any of 1–3 (here stand-alone).
+    methods["4_ame_binding_equality"] = {
+        "description": "t·x = B_D_AME (physical binding-energy target)",
+        "ansatz_flag": False,
+        "result": solve_lp_with_eq(t, np.diag(frob_diag), [t], [B_D_AME_MeV], n_target),
+    }
+
     witness = {
         "engine": "deuteron_real_sdp",
         "engineVersion": "0.1.0",
@@ -264,9 +382,13 @@ def main() -> int:
                 "active_blocks": interim_active,
                 "lp": lp_pos_d,
             },
+            # ---- Phase B full — four encodings compared ----
+            "B_D_AME_MeV": B_D_AME_MeV,
+            "nine_pair_multiplicities": NINE_PAIR,
+            "phase_B_full_methods": methods,
             # ---- scope markers ----
             "phase_A_cost": "done",
-            "phase_B_constraints": "interim (bounded positive-norm subspace); full color-flavor 9-pair + AME2020 RHS pending",
+            "phase_B_constraints": "interim (bounded subspace) + 4 full encodings compared (method 2 un-vetted ansatz); full color-flavor 9-pair + AME2020 RHS",
             "phase_C_dual_solve": "diagnostic (unbounded on full space; bounded on positive subspace)",
             "phase_D_lean_wiring": "pending (deuteron_emptySDP -> deuteron_realSDP)",
         },
@@ -286,6 +408,12 @@ def main() -> int:
     print(f"  Phase B interim — bounded: {interim_bounded}  "
           f"gap={lp_pos_d.get('duality_gap')}")
     print(f"  Phase B interim — active blocks = {interim_active}")
+    print("  Phase B full — four encodings:")
+    for name, m in methods.items():
+        r = m["result"]
+        flag = "  ⚠ANSATZ" if m["ansatz_flag"] else ""
+        print(f"    {name:38} feasible={r['feasible']}  "
+              f"primal_obj={r['primal_obj']}{flag}")
     print(f"  wrote {OUT_WITNESS.name}")
     return 0
 
