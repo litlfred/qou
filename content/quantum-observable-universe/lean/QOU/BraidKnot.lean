@@ -38,9 +38,14 @@ import QOU.BraidKnot.Helium3Witness
 import QOU.BraidKnot.DeuteronWitness
 import QOU.BraidKnot.TritiumWitness
 import QOU.BraidKnot.MassFormulaCategorical
+import QOU.BraidKnot.NucleusEmptySDPUniqueness
 import QOU.BraidKnot.AppliedHelium3Uniqueness
 import QOU.BraidKnot.AppliedDeuteronUniqueness
 import QOU.BraidKnot.AppliedTritiumUniqueness
+import QOU.BraidKnot.AppliedHelium4Uniqueness
+import QOU.BraidKnot.AppliedLithium6Uniqueness
+import QOU.BraidKnot.AppliedBeryllium9Uniqueness
+import QOU.BraidKnot.AppliedBoron11Uniqueness
 import QOU.BraidKnot.PerNucleusMassDerivation
 import QOU.BraidKnot.frobenius_antipode_unifies
 import QOU.BraidKnot.CommutativeCrossingEnergy
