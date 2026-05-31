@@ -1,0 +1,76 @@
+[
+  {
+    "id": "probe-c3-q0-stability",
+    "summary": "Settle whether c_3 3.35% q_0 swing is Taylor-exact or fitting artifact",
+    "comment": "The c_3 coefficient has flip-flopped four times (b2f908731 → 41b8d4a4c → f4930df95 → c1f7487df/b3c92844d). Latest read (b3c92844d): c_3 = J_Hopf − ℏ_q² is q_0-dependent, NOT Taylor-exact. Open question: is the q_0 dependence the TRUE Taylor structure (i.e. c_3 IS a function of q, not a constant), or is the near-match a fitting artifact masking the real coefficient? Test: compute c_3 at three q_0 anchors (muon-pin, m_p-pin, m_⁴He-pin) to 50 dps; if Taylor-exact, the residual should drop monotonically with truncation order N. **Keystone for the whole c_k ladder** — once settled, c_4–c_7 derivations follow the Habiro recursion (probe-c4-habiro etc).",
+    "status": "open",
+    "priority": "high",
+    "origin": "session-init",
+    "assignee": "claude/coord-infra-1ppq-2026-05-31",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "1ppq-qbeta",
+      "evidence": ["6ace8153e", "b3c92844d", "c1f7487df", "f4930df95"],
+      "blocks": ["probe-c4-habiro", "probe-c5-c7-habiro"],
+      "expected_duration": "2h",
+      "expected_artifacts": ["folio-assistant/computations/qbeta_c3_q0_stability_probe.py", "matching .witness.json", "audit doc updating 1ppq-qbeta.md"]
+    }
+  },
+  {
+    "id": "probe-c4-habiro",
+    "summary": "Derive c_4 canonically via Habiro recursion",
+    "comment": "Per d6b6e0483 audit: Habiro q-difference equation gives recursive c_k pair-rules. Per PR #1521 (claude/alpha-em-habiro-categorical-1loop-2026-05-30): Habiro element [2]_q·(1−h²α) is the closed fermion loop in fundamental rep. Together these suggest c_4 can be derived from c_2, c_3 (once c_3 is settled) via the recursion. Blocked by probe-c3-q0-stability.",
+    "status": "blocked",
+    "priority": "high",
+    "origin": "session-init",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "1ppq-qbeta",
+      "blocked_by": ["probe-c3-q0-stability"],
+      "upstream_pr": "#1521",
+      "blocks": ["probe-c5-c7-habiro"]
+    }
+  },
+  {
+    "id": "probe-c5-c7-habiro",
+    "summary": "Extend Habiro recursion to c_5, c_6, c_7 (1ppQ target requires N=7)",
+    "comment": "Per 6ace8153e truncation analysis: each rung buys log₁₀(1/u) ≈ 2.07 digits. N=7 reaches 1 ppQ (10⁻¹⁵). Requires c_2, c_3, c_4 settled first. Once Habiro recursion is verified canonical for c_4, applying it three more steps should reach c_7 — assuming the recursion does not break degree.",
+    "status": "blocked",
+    "priority": "medium",
+    "origin": "session-init",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "1ppq-qbeta",
+      "blocked_by": ["probe-c4-habiro"],
+      "upstream_pr": "#1521"
+    }
+  },
+  {
+    "id": "probe-ck-lean-3bcond-classes",
+    "summary": "Add Lean §3b-cond classes for c_4–c_7 mirroring QbetaC3StructuralFormClass",
+    "comment": "Per CLAUDE.md §3b-cond: conjectural inputs axiomatised as Lean classes; downstream theorems take class as [Instance] hypothesis. Pattern established by 441c291fc (QbetaC3StructuralFormClass) and be0f45591 (QbetaHabiroTaylorBridgeClass). One class per coefficient that isn't Taylor-exact. Q_β ladder Lean theorem proves: Q_β = product over k of class-instance values.",
+    "status": "open",
+    "priority": "medium",
+    "origin": "session-init",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "1ppq-qbeta",
+      "depends_on": ["probe-c3-q0-stability", "probe-c4-habiro"],
+      "lean_pattern": "QbetaC3StructuralFormClass at 441c291fc"
+    }
+  },
+  {
+    "id": "probe-precision-headroom-bump",
+    "summary": "Bump _precision.py defaults to 70 dps compute / 60 dps output for 1 ppQ headroom",
+    "comment": "Current defaults: 65 dps compute / 50 dps serialization. For safe 10⁻¹⁵ arithmetic with a 10⁻³⁰ truncation floor, recommend 70 dps compute / 60 dps output. Mechanical change. Should be done early to make all downstream c_k derivations measure at the right precision.",
+    "status": "open",
+    "priority": "low",
+    "origin": "session-init",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "1ppq-qbeta",
+      "expected_duration": "15min",
+      "blast_radius": "affects every witness regenerated after the bump — coordinate with q0-regen sweep"
+    }
+  }
+]

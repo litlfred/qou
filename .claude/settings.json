@@ -23,6 +23,10 @@
           {
             "type": "command",
             "command": "./scripts/watch-main-prompt.sh"
+          },
+          {
+            "type": "command",
+            "command": "./scripts/session-start-coord-sweep.sh"
           }
         ]
       }
