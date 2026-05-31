@@ -178,6 +178,8 @@ export default chapter({
         "meson-color-tube-uniqueness",
         "bring-residue-resolvent",
         "binding-alpha-shift-extension",
+        "magic-A-binding-formula",
+        "lr-coefficient-hecke",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
       ],

@@ -278,9 +278,36 @@ $$
 | Markov trace structure | [`MarkovTraceInductiveLimit`](../../content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.lean) class exists; provides the per-$n$ trace API. |
 | Markov axioms | [`markov-axioms-primitive.lean`](../../content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.lean) defines axioms; substrate. |
 | Wedderburn / character decomposition | [`QSchurWeightsGeneral.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/QSchurWeightsGeneral.lean) provides $q$-Schur weights; foundations for $\rho_\lambda$. |
-| Littlewood-Richardson coefficient `c^λ_{ξν}` | **No Lean** — only Python (`lr_coefficients.py`). Mathlib has skew Schur expansion lemmas but not the Hecke-specific construction. |
-| Operator-valued $A^\lambda_{\xi\nu}(I)$ | **No Lean** — Python implementation via bilinear-system inversion. |
-| Sub-lemma 2.1 (the identity itself) | **No Lean** — no dedicated content block. |
+| Littlewood-Richardson coefficient `c^λ_{ξν}` | **Closed 2026-05-31** — new content block [`prop:lr-coefficient-hecke`](../../content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.md) ships §3b-cond class `LRCoefficientHecke` with `coeff`, `zero_of_not_contains`, `zero_of_size_mismatch` fields. |
+| Operator-valued $A^\lambda_{\xi\nu}(I)$ | **Closed 2026-05-31** — `crystal-r-matrix-sub-lemma.lean` strengthened from `True := trivial` stub to §3b-cond `class WenzlAOperator` + `theorem CrystalRMatrixSubLemma` consuming both `LRCoefficientHecke` and `WenzlAOperator` as instance hypotheses. |
+| Sub-lemma 2.1 (the identity itself) | **Already closed at statement level** — `prop:crystal-r-matrix-sub-lemma` block exists; the H_9 multi-interface extension is verified at machine ε for tritium (30/30 partitions) per [`docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md`](2026-05-16-sublemma-2-1-h9-phase-1.md). The corpus-grep discipline (per the new STRICT rule) revealed this on the first follow-up scope, preventing re-implementation. |
+
+### Concrete Lean gaps remaining (after the 2026-05-31 sweep)
+
+After the corpus-grep discipline and this PR's commits, the
+genuinely-remaining gap is:
+
+- **`prop:operator-valued-combiner-convergence`** — for an
+  A-nucleon atom, the iterated application of sub-lemma 2.1
+  at each peeling level $n_k = 3(A-k+1)$ assembles into a
+  convergent representation of $\chi^\lambda(\beta_{\mathrm{atom}})$.
+  Needs the inductive structure on $A$. Tractable as a
+  `theorem` with `Nat.rec` on $A$, modulo the now-shipped
+  `LRCoefficientHecke` and `WenzlAOperator` classes.
+
+This single gap is the Sprint-2 successor to the work in this PR.
+
+### Closed in this PR (commit-refs to follow on push)
+
+1. ✓ **`prop:lr-coefficient-hecke`** — new content-block triple in
+   `mass-theory/` (chapter manifest updated). §3b-cond class
+   `LRCoefficientHecke` with `coeff`, vanishing conditions for
+   non-containment and size mismatch.
+2. ✓ **`crystal-r-matrix-sub-lemma.lean`** strengthened — from
+   `True := trivial` stub to §3b-cond `class WenzlAOperator`
+   + conditional theorem statement consuming both class
+   hypotheses. The H_9 numerical verification (30/30 at machine
+   ε) is cited as the empirical anchor.
 
 ### Concrete Lean gaps (Sprint 2-shaped)
 
