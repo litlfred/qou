@@ -167,6 +167,67 @@ relevant to QOU is *not* Carlitz/KKW. Two possible follow-ups:
 Witness:
 [`casimir-carlitz-q-bernoulli-probe.witness.json`](../../folio-assistant/computations/casimir-carlitz-q-bernoulli-probe.witness.json).
 
+### Extended Φ_q / Markov-trace / extended q-zeta probe (Route A2 + B)
+
+After Carlitz failed, ran [`casimir_phi_q_markov_probe.py`](../../folio-assistant/computations/casimir_phi_q_markov_probe.py)
+to cover the audit's two follow-up directions in a single sweep:
+
+**Route A2 — extended q-zeta variants:**
+- Heine ζ_q(-3) at substrate = 2.396
+- Tsumura-style Σ [n]_q³·q^{-7n} = 26.23
+
+**Route B — Φ_q (Faddeev) + Markov-trace:**
+- Φ_q(1) at substrate ≈ 9.01 × 10⁵
+- Φ_q(q^{1/2}) ≈ 4.98 × 10⁶
+- Φ_q(q⁻¹) ≈ 8.93 × 10⁴
+- **log Φ_q(1) = 13.7117** ← noted below
+- Markov parameters z_M ≈ 0.499 (3 conventions)
+
+**Result.** 17 candidate combinations multiplied by the standard
+geometric multiplier `π²/6`; **0 sub-1% matches**. Best
+(non-trivial) candidate: `π²·ℏ_q⁴/6 = 1.59e-4` at 98.8% residue.
+Best from Markov family: `(z_M^v1)³ · π²/6 = 0.205` at huge
+residue.
+
+**Numerical curio (NOT structural).** `log Φ_q(1) = 13.7117`
+satisfies `log Φ_q(1) ≈ 1000 · π²/720` to within 0.03% at
+substrate. But there is no natural substrate quantity ≈ 1000 (it
+isn't `[k]_q` for any small k; `[51]_q ≈ 1000` but 51 isn't
+natural). Same class of numerical accident as the earlier
+`12·π²/(720·[10]_q)` near-match — not a structural identity.
+
+**Stronger empirical conclusion.** After three full sweeps (basic
+substrate q-rationals, Carlitz q-Bernoulli, Φ_q/Markov/extended
+q-zeta), **no obvious primitive at substrate q₀ yields the
+Casimir prefactor `π²/720` within experimental tolerance**.
+Sub-problem 3 is narrowed further:
+
+- The prefactor is **not** Carlitz/KKW q-Bernoulli derived.
+- The prefactor is **not** a simple Φ_q evaluation.
+- The prefactor is **not** a low-degree Markov-trace combination.
+
+What's left:
+
+1. **Cherednik 2006 q-zeta via Macdonald operators (heavy infra).**
+   The `(q, t)` double-parameter framework is qualitatively
+   different from anything tested here; would need a full sympy/
+   sage-style Macdonald-polynomial implementation.
+2. **Genuinely non-zeta derivation.** The Casimir prefactor in
+   QOU may come from a categorical *integration* (not a sum) —
+   e.g., a `B_4`-class secondary invariant from the Borel-rank
+   tower (sibling `prop:b1-current-status`), or a Faddeev-state-
+   integral expansion of the plate Wilson-line operator.
+3. **Empirical correction predicted.** If the QOU framework
+   genuinely deviates from standard Casimir at substrate by
+   ~5-20% (the Carlitz residue range), then **the conjecture's
+   `≈ -π²ℏc/(240 d⁴)` claim is too strong** — it should be
+   `≈ -c_q · ℏc/d⁴` where `c_q` is a substrate-derived constant
+   that approaches π²/240 only as `q → 1`. A higher-precision
+   Casimir experiment (~0.1%) could distinguish.
+
+Witness:
+[`casimir-phi-q-markov-probe.witness.json`](../../folio-assistant/computations/casimir-phi-q-markov-probe.witness.json).
+
 If the prefactor IS substrate-derivable, the derivation must
 involve a more elaborate structure (Macdonald operators / Cherednik
 q-zeta / Φ_q Faddeev dilog evaluation), not a closed-form
