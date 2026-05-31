@@ -978,6 +978,93 @@ export function checkCanonicalCal4Acknowledged(
   };
 }
 
+// Precision-ladder / convergent-coefficient context. The checker
+// below only fires inside blocks that discuss a truncation-order
+// coefficient ladder (Q_β c_k, α_EM Habiro factor, etc.), where the
+// canonical framing (docs/audits/2026-05-31-qbeta-ck-truncation-order-
+// canonical-framing.md, Rule 4) requires TIERED reporting.
+const LADDER_CONTEXT_TAGS = new Set([
+  "precision-ladder", "1ppb-roadmap", "habiro", "truncation-order",
+]);
+const LADDER_CONTEXT_RE =
+  /\bprecision\s+ladder\b|\btruncation\s+order\b|\bc_k\b|\bc_2\b|\bc_3\b|\bHabiro\s+element\b/i;
+
+// Binary "negative result" framing — the flip-flop signature. A
+// near-match coefficient reported as flatly dropped / un-wired / "just
+// a fit" instead of tiered. See the four-session wire/un-wire log in
+// the canonical framing doc.
+const NEGATIVE_RESULT_PHRASES = [
+  /\bun-?wire[ds]?\b/i,
+  /\bdrop(?:ping|ped)?\s+(?:the\s+)?c_?[k0-9]/i,
+  /\b(?:just|merely|only|nothing\s+but)\s+a\s+fit\b/i,
+  /\bc_?[k0-9].{0,30}\b(?:is|are)\s+(?:just|merely|only)\s+numerolog/i,
+  /\bfails?\s+to\s+(?:beat|derive|hold)\b/i,
+  /\bshould\s+be\s+(?:dropped|reverted|un-?wired)\b/i,
+  /\bnegative\s+result\b/i,
+];
+
+// Tiered-framing vocabulary that discharges a negative-result hit:
+// the block is reporting proved / near-match / fitted tiers rather
+// than a binary verdict, OR cites the canonical framing doc.
+const TIERED_FRAMING_RE =
+  /\bnear[- ]match(?:es)?\b|\btier\b|\btiered\b|truncation-order-canonical-framing/i;
+
+/**
+ * canonical-no-negative-result — locks Q_β c_k truncation-order Rule 4
+ * into CI: a precision-ladder block that frames a coefficient as a
+ * binary "negative result" (dropped / un-wired / just-a-fit) MUST also
+ * carry the tiered framing (proved / near-match / fitted) or cite the
+ * canonical framing doc. Prevents the four-session wire/un-wire
+ * flip-flop from re-entering the paper as flat negative-result prose.
+ */
+export function checkCanonicalNoNegativeResultInPaper(
+  mdPath: string | undefined,
+  tsPath: string | undefined,
+): CheckerResult {
+  const md = readMaybe(mdPath);
+  if (!md) return { result: "pass", hits: [] };
+  const ts = readMaybe(tsPath);
+
+  const tagsMatch = (ts ?? "").match(/tags:\s*\[([\s\S]*?)\]/);
+  const tags = tagsMatch
+    ? tagsMatch[1].match(/"([^"]+)"/g)?.map((t) => t.replace(/"/g, "")) ?? []
+    : [];
+
+  const inContext =
+    tags.some((t) => LADDER_CONTEXT_TAGS.has(t)) || LADDER_CONTEXT_RE.test(md);
+  if (!inContext) return { result: "pass", hits: [] };
+
+  // Discipline satisfied if the block reports tiers or cites the doc.
+  if (TIERED_FRAMING_RE.test(md)) return { result: "pass", hits: [] };
+
+  // Strip blockquotes — historical "wired and un-wired N times" notes
+  // describe past flip-flops, not the block's current claim.
+  const scan = md
+    .split("\n")
+    .map((l, i) => [i + 1, l] as const)
+    .filter(([, l]) => !l.trimStart().startsWith(">"));
+
+  const hits: CheckerHit[] = [];
+  for (const [lineNo, line] of scan) {
+    for (const re of NEGATIVE_RESULT_PHRASES) {
+      const m = line.match(re);
+      if (m) {
+        hits.push({
+          file: mdPath ?? "(unknown)",
+          line: lineNo,
+          text:
+            `binary negative-result framing "${m[0].trim()}" in a ` +
+            `precision-ladder block without tiered (proved/near-match/` +
+            `fitted) framing — report TIERED per the c_k truncation-order ` +
+            `canonical framing (Rule 4), do not re-open the wire/un-wire flip-flop`,
+        });
+        break;
+      }
+    }
+  }
+  return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
 // ─── Detangler axis ─────────────────────────────────────────────
 
 export function checkDetanglerSectionBand(
@@ -1697,6 +1784,8 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
     checkCanonicalNoHardcodedObservable(p.md),
   "canonical-cal4-acknowledged": (p) =>
     checkCanonicalCal4Acknowledged(p.md, p.ts),
+  "canonical-no-negative-result": (p) =>
+    checkCanonicalNoNegativeResultInPaper(p.md, p.ts),
   // detangler
   "detangler-section-band": (p) => checkDetanglerSectionBand(p.ts),
   "detangler-no-forward-ref": (p) => checkDetanglerNoForwardRef(p.ts),

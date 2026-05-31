@@ -137,6 +137,16 @@ number`, `rationalization`, `CODATA`, `tautolog`, `back-fit`,
 | `over-count-3-input` | major | Script consumes both $m_p$ and $m_n$ from CODATA, double-counts hadronic | Yes — `canonical_script_input_audit` rewire |
 | `vol-hyp-fitted` | major | Script's primary calibration is hyperbolic volume | Author ask; sometimes Class-C |
 | `unverified-rho-K` | major | $\rho_K$ used without a derivation-chain witness | Author ask; sometimes Class-B |
+| `ck-binary-negative-result` | major | Precision-ladder block (Q_β $c_k$, α_EM Habiro factor, any convergent truncation-order series) frames a coefficient as a binary negative result (`un-wire`, `drop c_k`, `just a fit`, `fails to beat`, `should be reverted`, `negative result`) without the tiered (proved / near-match / fitted) framing or a citation to `2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`. The four-session wire/un-wire flip-flop signature. | Add tiered framing or cite the canonical doc; author-assist |
+
+Automated by the `canonical-no-negative-result` qa-criterion
+(`content/pipeline/qa-criteria-registry.ts` →
+`checkCanonicalNoNegativeResultInPaper` in `qa-checkers-extended.ts`).
+It enforces **Rule 4** of the truncation-order canonical framing:
+*report TIERED, never binary wired/dropped.* Context-gated on the
+`precision-ladder` / `1ppb-roadmap` / `habiro` tags (or ladder prose);
+passes when the block carries `near-match` / `tier` vocabulary or cites
+the framing doc.
 
 ### Allowed-class opt-outs (extends parent's defer band)
 
