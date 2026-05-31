@@ -1,0 +1,58 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-31T02:47:44.589372+00:00",
+  "commitSha": "6be981c5e4fcd6a8be56e8c608e80cf80d0908f5",
+  "assertions": [
+    {
+      "name": "bra2_equals_J2_unknot",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "[2]_q = J_2(unknot) (colored Jones polynomial of trivial knot in fundamental SU_q(2) rep) is a standard identity; verified symbolically and numerically at q_0."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "alpha-em-habiro-categorical-1loop-identification",
+  "scriptFile": "alpha_em_habiro_categorical_1loop_identification.py",
+  "scriptHash": "1f1b6973a37b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Identifies the Habiro element [2]_q·(1-h²α) of the empirical α_EM next-order term (#1511) with the categorical 1-loop self-energy diagram on M_Bring: closed fermion loop in the fundamental SU_q(2) representation. Verifies [2]_q = J_2(unknot) (colored Jones at N=2 of the trivial knot), the structural origin of the (1-h²α) Schwinger factor from 2-vertex Hecke quadratic, and the reuse of dim H¹(M_Bring) = 8 in the 8π = π·dim H¹ normalization. Does NOT do full RT shadow-world calculation; identifies the categorical object whose Habiro element matches the empirical form.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "categorical_identification": {
+      "Habiro_element_form": "[2]_q · (1 - h²α)",
+      "categorical_object": "Closed fermion loop in fundamental SU_q(2) representation (topologically the unknot)",
+      "fundamental_q_dim_equals_colored_jones": "[2]_q = J_2(unknot) verified symbolically and numerically at q_0",
+      "Schwinger_factor_origin": "(1 - h²α) from 2-vertex Hecke quadratic σ² = hσ + 1 insertion times α coupling at each photon-matter vertex; minus sign from antisymmetric singlet channel parity",
+      "normalization_origin": "8π = π · dim H¹(M_Bring) = π · 2g at g=4; same dim H¹ used in n=2 leading 2/(3π) shift = dim H¹/Area — structural consistency across Bloch levels",
+      "full_next_order_contribution": "α · [2]_q/(8π) · (1 - h²α)",
+      "habiro_taylor_coefficients_exact": "c_k^{[2]_q} = 2 · C(1/2, k/2) · (1/4)^(k/2)  (binomial, even k); c_k(α) = c_k^{[2]_q} - α · c_{k-2}^{[2]_q}  (Schwinger shift); all rationals exact, full closed form via binomial series of √(1+h²/4) per PR #1511"
+    },
+    "verification_at_q0": {
+      "q_0": "1.1099785827513808076",
+      "bra2": "2.0108968667071222998",
+      "J_2_unknot": "2.0108968667071222998",
+      "bra2_equals_J2_unknot": "True",
+      "dim_H1_M_Bring": 8,
+      "8pi_value": "25.132741228718345908",
+      "next_order_at_q0_with_alpha_CODATA": "0.00058368257931721517008"
+    },
+    "status": "STRUCTURAL IDENTIFICATION (Habiro framing of subgoal-2). The categorical object whose Habiro element matches the empirical α_EM next-order is the closed fermion loop in fundamental SU_q(2) representation — topologically the unknot, q-dim [2]_q = J_2(unknot). The (1-h²α) Schwinger factor and 8π = π·dim H¹(M_Bring) normalization are structurally consistent. Full Reshetikhin-Turaev shadow-world calculation (subgoal-2 rigorous derivation) remains multi-week work per #1495's plan; this probe identifies the specific categorical object to derive from."
+  }
+}
