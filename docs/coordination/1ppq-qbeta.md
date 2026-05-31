@@ -26,7 +26,7 @@ prose in the dashboard. This ledger:
 | Coefficient | Status | Evidence | Open question |
 |-------------|--------|----------|---------------|
 | **c_2** | **Taylor-exact (derived)** ✓ | `f4930df95` ("honest c_k bar — only Taylor-exact c_2 wired") | none |
-| **c_3** | **NOT derived** — q_0-dependent 3.35% swing across anchors | `b3c92844d` ("fourth flip-flop closed: stale-q₀ artifact"), `6ace8153e` (truncation-order framing) | is the q_0 swing the true Taylor-exact behaviour, or a fitting artifact masquerading as canonical? |
+| **c_3** | **NOT derived** — near-match (J_Hopf(q=1)=-2), 2.98% cross-anchor swing >> 10⁻⁵⁰ compute precision | `b3c92844d`, `6ace8153e`, [verdict 2026-05-31](../audits/2026-05-31-qbeta-c3-q0-stability-verdict.md) (this PR) | **SETTLED** as near-match. Resolution path = identify Q_β Habiro element. |
 | **c_4** | **NOT derived** — CAL-anchored tier | `453918755` ("CAL-anchored, honestly labeled") | derive canonically via Habiro recursion |
 | **c_5** | **NOT derived** | — | extend Habiro recursion |
 | **c_6** | **NOT derived** | — | extend Habiro recursion |
@@ -48,12 +48,13 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 - 1 ppt → N=5
 - **1 ppQ → N=7**
 
-## Open probes
+## Open probes (current queue)
 
-- [ ] **PROBE 1 — c_3 q_0-stability:** Is the 3.35% swing the true Taylor-exact structure (in which case c_3 ≠ constant, c_3 = c_3(q)), or a fitting artifact? Assigned: this session.
-- [ ] **PROBE 2 — c_4 via Habiro recursion** (PR #1521 lead): the categorical 1-loop interpretation of `[2]_q·(1-h²α)` may extend.
-- [ ] **PROBE 3 — c_5 / c_6 / c_7** via the Habiro recursion (depends on Probes 1+2).
-- [ ] **PROBE 4 — Lean §3b-cond classes for each c_k** mirroring `QbetaC3StructuralFormClass` (`441c291fc`). One class per unproved coefficient.
+- [x] **PROBE 1 — c_3 q_0-stability** (DONE this session, 2026-05-31): verdict NEAR-MATCH. The 2.98% cross-anchor swing exceeds 10⁻⁵⁰ compute precision by 48 orders of magnitude — c_3 = -2 is NOT Taylor-exact at the value level, and J_Hopf(q) − ℏ_q²(q) is not the right q-dependent function either. Audit: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](../audits/2026-05-31-qbeta-c3-q0-stability-verdict.md).
+- [ ] **PROBE NEW — Q_β Habiro element search** (the actual blocker — parallel α_EM PR #1511). High priority; this is the keystone for all c_k≥3.
+- [ ] **PROBE 2 — c_4 coefficients** from the Habiro element (renamed from c_4 Habiro recursion). Blocked on the search.
+- [ ] **PROBE 3 — c_5 / c_6 / c_7 coefficients** from the Habiro element. Blocked on c_4.
+- [ ] **PROBE 4 — Lean §3b-cond classes for each c_k** mirroring `QbetaC3StructuralFormClass` (`441c291fc`).
 - [ ] **PROBE 5 — _precision.py headroom bump** to 70 dps compute / 60 dps output (for safe 10⁻¹⁵ arithmetic).
 
 ## Active PRs
@@ -73,6 +74,7 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 | 2 | 2026-05-29 | `41b8d4a4c` | wire(Q_β) restore derived c_3 = J(q=1) = −2 | same conflation, different prose |
 | 3 | 2026-05-30 | `f4930df95` | wire(Q_β) honest c_k bar — revert c_3 | corrected |
 | 4 | 2026-05-30 | `c1f7487df` → `b3c92844d` | deep-audit re-wired c_3, then "stale-q₀ artifact" | conflated FACT A (N=3 beats 100×) with FACT B (c_3 = −2 is NOT Taylor-exact) |
+| **5 (settled)** | 2026-05-31 | this PR #1580 | **probe-c3-q0-stability verdict: NEAR-MATCH, not Taylor-exact. Habiro element identification is the resolution path.** | (no flip — settled) |
 
 **Failure mode pattern:** every flip used a fresh canonical-looking formula
 (`J − ℏ_q²`, `J_Hopf(q=1)`) and matched it numerically near the substrate
@@ -90,7 +92,7 @@ Taylor-exact. Otherwise, it's a near-match.
 
 | Date | Agent / branch | Intent | Results |
 |------|----------------|--------|---------|
-| 2026-05-31 | Claude / `claude/coord-infra-1ppq-2026-05-31` | (1) create this ledger + STATUS.md, (2) coord with #1577, (3) ask user about queue-schema formalization, (4) probe c_3 q_0-stability if scope permits | (1) ✓ STATUS.md + 1ppq-qbeta.md committed (262a1d7b7); PR #1580 open. (2) ✓ intent comment on #1577 (`pull/1577#issuecomment-...`). (3) ✓ user chose: TodoItem JSON schema, no explicit claim, intent at branch-open, pre-work main sweep; new skills `/session-intent` + `/pending-show` + SessionStart hook added (this PR). (4) deferred — infra came in over-scope; probe `probe-c3-q0-stability` left in queue with `status: open` for next session OR sibling agent. |
+| 2026-05-31 | Claude / `claude/coord-infra-1ppq-2026-05-31` | (1) create this ledger + STATUS.md, (2) coord with #1577, (3) ask user about queue-schema formalization, (4) probe c_3 q_0-stability if scope permits | (1) ✓ STATUS.md + 1ppq-qbeta.md committed; PR #1580. (2) ✓ intent comment on #1577. (3) ✓ user chose: TodoItem JSON, no explicit claim, intent at branch-open, pre-work main sweep, new skills `/session-intent` + `/pending-show` + SessionStart hook. (4) ✓ **probe-c3-q0-stability SETTLED** — verdict: NEAR-MATCH, not Taylor-exact. 2.98% cross-anchor swing >> 10⁻⁵⁰ compute precision; J_Hopf(q=1)=-2 nominal mismatches empirical c_3 at both anchors by 0.48% (muon) / 3.46% (m_p). Q_β Habiro element search added as new keystone probe; old c_4/c_5-c_7 entries renamed `*-coefficients` and re-blocked on Habiro search. Audit doc: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](../audits/2026-05-31-qbeta-c3-q0-stability-verdict.md). Also addressed 4 Gemini review comments on PR #1580 (STATUS.md link, hook simplification x2, queue assignee). |
 
 ## Cross-refs
 

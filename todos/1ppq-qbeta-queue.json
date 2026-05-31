@@ -2,45 +2,65 @@
   {
     "id": "probe-c3-q0-stability",
     "summary": "Settle whether c_3 3.35% q_0 swing is Taylor-exact or fitting artifact",
-    "comment": "The c_3 coefficient has flip-flopped four times (b2f908731 → 41b8d4a4c → f4930df95 → c1f7487df/b3c92844d). Latest read (b3c92844d): c_3 = J_Hopf − ℏ_q² is q_0-dependent, NOT Taylor-exact. Open question: is the q_0 dependence the TRUE Taylor structure (i.e. c_3 IS a function of q, not a constant), or is the near-match a fitting artifact masking the real coefficient? Test: compute c_3 at three q_0 anchors (muon-pin, m_p-pin, m_⁴He-pin) to 50 dps; if Taylor-exact, the residual should drop monotonically with truncation order N. **Keystone for the whole c_k ladder** — once settled, c_4–c_7 derivations follow the Habiro recursion (probe-c4-habiro etc).",
+    "comment": "VERDICT (2026-05-31, 5th-and-final settlement): NEAR-MATCH, not Taylor-exact. Reran qbeta_ck_truncation_order_analysis.py at 65 dps default. 2.98% cross-anchor swing >> 10⁻⁵⁰ compute precision ⟹ NOT Taylor-exact. N=4→N=5 non-monotonicity confirms. The q_0 swing is NOT the true Taylor structure either — J_Hopf(q=1)=-2 nominal doesn't match c_3_empirical at either anchor, even before q-evaluation. Fix path: identify the Q_β Habiro element (parallel α_EM PR #1511 [2]_q·(1-h²α)). Until then, c_3+ tier stays 'near-match', c_2 stays 'proved'. See docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md.",
+    "status": "done",
+    "priority": "high",
+    "origin": "session-init",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "1ppq-qbeta",
+      "evidence": ["6ace8153e", "b3c92844d", "c1f7487df", "f4930df95", "this PR #1580"],
+      "blocks": [],
+      "completedAt": "2026-05-31",
+      "completedBy": "claude/coord-infra-1ppq-2026-05-31",
+      "verdict": "near-match, not Taylor-exact; need Q_β Habiro element identification",
+      "summary_of_finding": "c_3 = -2 (J_Hopf at q=1) is a structural near-match. The 2.98% cross-anchor swing exceeds compute precision by 48 orders of magnitude. The c_3+ coefficients cannot be credited as derivations until a Q_β Habiro element is identified (parallel to α_EM [2]_q·(1-h²α) in PR #1511). Pivoting next work to probe-qbeta-habiro-element-search.",
+      "follow_up_probe": "probe-qbeta-habiro-element-search"
+    }
+  },
+  {
+    "id": "probe-qbeta-habiro-element-search",
+    "summary": "Identify the Q_β Habiro element (parallel α_EM [2]_q·(1-h²α) PR #1511)",
+    "comment": "Per probe-c3-q0-stability verdict (5th settlement): the c_3+ coefficients cannot become Taylor-exact without identifying a Q_β Habiro element whose Taylor coefficients ARE the c_k. PR #1511 (merged) did this for α_EM: the next-order factor is the Habiro element [2]_q·(1-h²α), whose binomial Taylor coefficients give c_k = 2·C(1/2,k/2)·(1/4)^(k/2). Search Q_β for an analogous structure. Hint from b502b9b83 audit: '6 mechanisms ruled out, 1 direction left' — start with that direction. Hint from PR #1521 (in-flight, claude/alpha-em-habiro-categorical-1loop-2026-05-30): the categorical-1-loop interpretation may extend to Q_β.",
     "status": "open",
     "priority": "high",
-    "origin": "session-init",
+    "origin": "claude/coord-infra-1ppq-2026-05-31",
     "createdAt": "2026-05-31",
     "data": {
       "goal": "1ppq-qbeta",
-      "evidence": ["6ace8153e", "b3c92844d", "c1f7487df", "f4930df95"],
-      "blocks": ["probe-c4-habiro", "probe-c5-c7-habiro"],
-      "expected_duration": "2h",
-      "expected_artifacts": ["folio-assistant/computations/qbeta_c3_q0_stability_probe.py", "matching .witness.json", "audit doc updating 1ppq-qbeta.md"]
+      "blocked_by": [],
+      "upstream_pr": "#1521",
+      "follows_from": "probe-c3-q0-stability",
+      "blocks": ["probe-c4-habiro-coefficients", "probe-c5-c7-habiro-coefficients"],
+      "hints": ["b502b9b83 (6 mechanisms ruled out, 1 left)", "PR #1521 (categorical-1-loop)", "PR #1511 α_EM Habiro element as template"]
     }
   },
   {
-    "id": "probe-c4-habiro",
-    "summary": "Derive c_4 canonically via Habiro recursion",
-    "comment": "Per d6b6e0483 audit: Habiro q-difference equation gives recursive c_k pair-rules. Per PR #1521 (claude/alpha-em-habiro-categorical-1loop-2026-05-30): Habiro element [2]_q·(1−h²α) is the closed fermion loop in fundamental rep. Together these suggest c_4 can be derived from c_2, c_3 (once c_3 is settled) via the recursion. Blocked by probe-c3-q0-stability.",
+    "id": "probe-c4-habiro-coefficients",
+    "summary": "Derive c_4 from the identified Q_β Habiro element",
+    "comment": "Once probe-qbeta-habiro-element-search identifies the Q_β Habiro element, extract c_4 as its 4th Taylor coefficient. Mirrors α_EM PR #1511 pattern.",
     "status": "blocked",
     "priority": "high",
-    "origin": "session-init",
+    "origin": "claude/coord-infra-1ppq-2026-05-31",
     "createdAt": "2026-05-31",
     "data": {
       "goal": "1ppq-qbeta",
-      "blocked_by": ["probe-c3-q0-stability"],
+      "blocked_by": ["probe-qbeta-habiro-element-search"],
       "upstream_pr": "#1521",
-      "blocks": ["probe-c5-c7-habiro"]
+      "blocks": ["probe-c5-c7-habiro-coefficients"]
     }
   },
   {
-    "id": "probe-c5-c7-habiro",
-    "summary": "Extend Habiro recursion to c_5, c_6, c_7 (1ppQ target requires N=7)",
-    "comment": "Per 6ace8153e truncation analysis: each rung buys log₁₀(1/u) ≈ 2.07 digits. N=7 reaches 1 ppQ (10⁻¹⁵). Requires c_2, c_3, c_4 settled first. Once Habiro recursion is verified canonical for c_4, applying it three more steps should reach c_7 — assuming the recursion does not break degree.",
+    "id": "probe-c5-c7-habiro-coefficients",
+    "summary": "Extend identified Q_β Habiro element to c_5, c_6, c_7 (1ppQ target requires N=7)",
+    "comment": "Per 6ace8153e truncation analysis: each rung buys log₁₀(1/u) ≈ 2.07 digits. N=7 reaches 1 ppQ (10⁻¹⁵). Requires the Q_β Habiro element identified (probe-qbeta-habiro-element-search) and c_4 extracted. Once the element is known, c_5-c_7 are mechanical Taylor extractions; no extra theory needed.",
     "status": "blocked",
     "priority": "medium",
     "origin": "session-init",
     "createdAt": "2026-05-31",
     "data": {
       "goal": "1ppq-qbeta",
-      "blocked_by": ["probe-c4-habiro"],
+      "blocked_by": ["probe-c4-habiro-coefficients"],
       "upstream_pr": "#1521"
     }
   },
