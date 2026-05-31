@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-28T03:56:23.424330+00:00",
-  "commitSha": "6d549951f7bd3dfefcbd9c2ce80dad90c7158c2b",
+  "computedAt": "2026-05-31T04:39:39.424806+00:00",
+  "commitSha": "6fcb31b0c197c1f96171b0bb9619fec228d3739b",
   "assertions": [
     {
       "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(2)]",
@@ -75,60 +75,33 @@
       "computed": true,
       "expected": true,
       "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(2)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(3)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(5)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(7)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(11)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(13)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 15,
   "computation": "markov-substrate-realization",
   "scriptFile": "markov_substrate_realizer.py",
-  "scriptHash": "503dcd61edf3",
-  "scriptCommitSha": "8a00323ca156fd987bf98fefc66fb8083e11e269",
+  "scriptHash": "19a4dc083f1c",
+  "scriptCommitSha": "bc60c4d79ae695d3022cb53914e2693e7ddcf29b",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Place-by-place realization of the Habiro Markov trace via the Lean MotivicSubstrate.realize map: Place.infty → ℝ (numerical at q_0), Place.finite(p) → 𝔽_p[u] (mod-p coefficient reduction).  Free consistency check: the tail_in_ideal axiom is re-verified in 𝔽_p[u].",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
-    "q_0": 1.1099785955541805,
+    "q_0": 1.1099785827513808,
     "finite_places": [
       2,
       3,
@@ -160,8 +133,8 @@
           {
             "place": "infty",
             "target": "ℝ",
-            "u_0": 1.053555217135856,
-            "tr_M_at_q0": 1.065306228592389
+            "u_0": 1.0535552110598574,
+            "tr_M_at_q0": 1.0653061442544502
           },
           {
             "place": "finite(2)",
@@ -216,8 +189,8 @@
           {
             "place": "infty",
             "target": "ℝ",
-            "u_0": 1.053555217135856,
-            "tr_M_at_q0": 0.9232332971695835
+            "u_0": 1.0535552110598574,
+            "tr_M_at_q0": 0.9232332299116374
           },
           {
             "place": "finite(2)",
@@ -259,62 +232,6 @@
             "target": "𝔽_13[u]",
             "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 + 4*u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
-            "tail_in_ideal_mod_p": true
-          }
-        ]
-      },
-      {
-        "atom": "D (deuteron, A=2)",
-        "Z": 1,
-        "N": 1,
-        "deg_p_u": 86,
-        "realizations": [
-          {
-            "place": "infty",
-            "target": "ℝ",
-            "u_0": 1.053555217135856,
-            "tr_M_at_q0": 0.3882864715477132
-          },
-          {
-            "place": "finite(2)",
-            "target": "𝔽_2[u]",
-            "p_in_u_mod_p": "u**86 + u**72 + u**71 + u**70 + u**67 + u**66 + u**64 + u**62 + u**60 + u**58 + u**56 + u**55 + u**54 + u**51 + u**50 + u**46 + u**40 + u**36 + u**35 + u**32 + u**31 + u**30 + u**28 + u**26 + u**24 + u**22 + u**20 + u**19 + u**16 + u**15 + u**14 + 1",
-            "deg": 86,
-            "tail_in_ideal_mod_p": true
-          },
-          {
-            "place": "finite(3)",
-            "target": "𝔽_3[u]",
-            "p_in_u_mod_p": "-u**86 + u**85 + u**84 + u**81 - u**80 + u**78 - u**75 - u**74 + u**73 + u**72 - u**69 - u**67 + u**66 - u**65 + u**61 - u**60 + u**59 + u**58 - u**55 - u**54 - u**53 + u**50 + u**48 + u**46 - u**45 - u**41 - u**40 - u**38 - u**36 - u**33 + u**32 - u**31 - u**28 + u**27 + u**26 + u**25 - u**21 - u**20 - u**19 - u**17 - u**14 + u**13 + u**12 - u**11 - u**8 + u**6 + u**5 - u**2 + u + 1",
-            "deg": 86,
-            "tail_in_ideal_mod_p": true
-          },
-          {
-            "place": "finite(5)",
-            "target": "𝔽_5[u]",
-            "p_in_u_mod_p": "-u**86 - 2*u**85 - 2*u**84 + u**82 - u**81 + 2*u**80 - 2*u**78 + u**77 - u**76 + u**75 + 2*u**74 - u**73 + u**72 + u**71 + 2*u**70 - 2*u**69 - 2*u**67 + u**66 - 2*u**65 - 2*u**64 - u**63 - u**60 + u**59 - u**58 + 2*u**57 + 2*u**55 + 2*u**54 - u**53 + 2*u**52 + 2*u**50 + 2*u**49 + u**48 - 2*u**47 + 2*u**46 + u**44 - u**42 - 2*u**40 - 2*u**39 - u**38 + 2*u**37 - 2*u**36 - 2*u**34 - u**33 - 2*u**32 + 2*u**31 + 2*u**29 + u**28 + u**27 + u**26 - u**23 + 2*u**22 - 2*u**21 - u**20 - 2*u**19 - 2*u**17 - 2*u**16 + u**15 - u**14 - u**13 - 2*u**12 + u**11 + u**10 + u**9 + 2*u**8 - 2*u**6 - u**5 - u**4 + 2*u**2 - 2*u + 1",
-            "deg": 86,
-            "tail_in_ideal_mod_p": true
-          },
-          {
-            "place": "finite(7)",
-            "target": "𝔽_7[u]",
-            "p_in_u_mod_p": "-u**86 - 2*u**85 - 2*u**84 - u**82 - 3*u**81 + 2*u**80 - 2*u**78 - u**77 + u**76 + 3*u**75 + 2*u**74 - 3*u**73 + u**72 - 2*u**71 - 3*u**70 + u**69 + u**66 + u**65 + 3*u**64 + u**63 + u**62 + 3*u**61 - u**60 - 2*u**58 - 2*u**57 - u**56 + u**55 + 3*u**54 + 3*u**52 - u**51 - 2*u**49 + 2*u**47 - u**45 - u**44 + u**42 - u**41 + 2*u**39 - 2*u**37 - u**35 - 3*u**34 - 3*u**32 + u**31 + u**30 - 2*u**29 + 2*u**28 + u**26 + 3*u**25 - u**24 + u**23 - 3*u**22 + u**21 - u**20 + u**17 + 3*u**16 - 2*u**15 - u**14 - 3*u**13 - 2*u**12 + 3*u**11 - u**10 - u**9 + 2*u**8 - 2*u**6 - 3*u**5 + u**4 + 2*u**2 - 2*u + 1",
-            "deg": 86,
-            "tail_in_ideal_mod_p": true
-          },
-          {
-            "place": "finite(11)",
-            "target": "𝔽_11[u]",
-            "p_in_u_mod_p": "-u**86 - 2*u**85 - 2*u**84 - 5*u**82 + 4*u**81 + 2*u**80 - 2*u**78 - 5*u**77 + 5*u**76 - 4*u**75 + 2*u**74 + 4*u**73 + u**72 + 2*u**71 - 3*u**70 - 3*u**69 + 4*u**67 + u**66 - 3*u**65 + 3*u**64 + 5*u**63 + 4*u**62 - u**61 - u**60 - 3*u**59 - 3*u**58 + u**57 - 4*u**56 - 2*u**55 - 5*u**54 + 3*u**53 + 4*u**52 - 4*u**51 - 4*u**50 + u**49 - 3*u**48 - u**47 - 4*u**46 - 2*u**45 - 5*u**44 + 5*u**42 - 2*u**41 + 4*u**40 - u**39 + 3*u**38 + u**37 + 4*u**36 - 4*u**35 - 4*u**34 + 3*u**33 + 5*u**32 - 2*u**31 + 4*u**30 + u**29 + 3*u**28 - 3*u**27 + u**26 - u**25 - 4*u**24 + 5*u**23 - 3*u**22 - 3*u**21 - u**20 + 4*u**19 - 3*u**17 + 3*u**16 + 2*u**15 - u**14 + 4*u**13 - 2*u**12 - 4*u**11 - 5*u**10 - 5*u**9 + 2*u**8 - 2*u**6 + 4*u**5 + 5*u**4 + 2*u**2 - 2*u + 1",
-            "deg": 86,
-            "tail_in_ideal_mod_p": true
-          },
-          {
-            "place": "finite(13)",
-            "target": "𝔽_13[u]",
-            "p_in_u_mod_p": "-u**86 - 2*u**85 - 2*u**84 + 6*u**82 + 4*u**81 + 2*u**80 - 2*u**78 + 6*u**77 - 6*u**76 - 4*u**75 + 2*u**74 + 4*u**73 + u**72 + 4*u**71 - 3*u**70 - 5*u**69 + 6*u**67 + u**66 - 5*u**65 + 3*u**64 - 6*u**63 + 2*u**62 - 3*u**61 - u**60 - u**59 + 6*u**58 - u**57 - 2*u**56 + 4*u**54 + u**53 - 5*u**52 - 2*u**51 - 6*u**50 - u**49 - u**48 + u**47 - 6*u**46 - 6*u**45 + 6*u**44 - 6*u**42 - 6*u**41 + 6*u**40 + u**39 + u**38 - u**37 + 6*u**36 - 2*u**35 + 5*u**34 + u**33 - 4*u**32 + 2*u**30 - u**29 - 6*u**28 - u**27 + u**26 - 3*u**25 - 2*u**24 - 6*u**23 - 3*u**22 - 5*u**21 - u**20 + 6*u**19 - 5*u**17 + 3*u**16 + 4*u**15 - u**14 + 4*u**13 - 2*u**12 - 4*u**11 + 6*u**10 + 6*u**9 + 2*u**8 - 2*u**6 + 4*u**5 - 6*u**4 + 2*u**2 - 2*u + 1",
-            "deg": 86,
             "tail_in_ideal_mod_p": true
           }
         ]
