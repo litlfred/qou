@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T15:25:29.856782+00:00",
-  "commitSha": "e656e6060b79ef8b678658bb728248ce796c08e5",
+  "computedAt": "2026-05-31T04:40:10.358026+00:00",
+  "commitSha": "f35f0bfdc3a133d39ae02998af4a1950f77e8b3f",
   "assertions": [
     {
       "name": "no_atom_fully_canonical",
@@ -15,23 +15,32 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "mass-sweep-wiring-status",
   "scriptFile": "mass_sweep_wiring_status.py",
   "scriptHash": "c412c68b94f4",
-  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
+  "scriptCommitSha": "120cf7850125b310b4a20ee635b198749dc284e6",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Wiring-status taxonomy for every atom in mass_table_ppb.py ATOM_ASSIGN.  Per author direction 2026-05-24, classifies each entry as canonical-sdp / extrapolated / exploratory / alpha-cluster / gap / unwired.  Identifies KLR-positivity violations (predicted > observed) and the suspect formula component for each.  Reports that NO atom is fully canonically wired — every current prediction sits at EXPLORATORY/extrapolated layer, awaiting R5-full SDP.",
   "parameters": {
-    "q_0": 1.1099785955541805,
-    "h_q0": 0.20906032198987945,
-    "h_sq_q0": 0.04370621823051208,
-    "h_4_q0": 0.0019102335120131464,
+    "q_0": 1.1099785827513808,
+    "h_q0": 0.2090602987956393,
+    "h_sq_q0": 0.04370620853252199,
+    "h_4_q0": 0.001910232664288298,
     "klr_positivity": "Khovanov-Lauda-Rouquier categorical positivity: framework's |tr_M|·Vol(K) prediction is a LOWER BOUND on observed binding. Over-predictions (B_pred > B_AME) indicate the formula has a mistake — wrong knot, wrong ν_SDP, or missing restriction."
   },
   "data": {
