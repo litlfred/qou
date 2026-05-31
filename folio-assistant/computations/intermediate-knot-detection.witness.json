@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:11:40.123273+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-31T04:38:39.650847+00:00",
+  "commitSha": "f6c31f7f76e4d932c051f30e3c09fe5bcb61c808",
   "assertions": [
     {
       "name": "knot_detected(³H)",
@@ -24,21 +24,30 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "intermediate-knot-detection",
   "scriptFile": "intermediate_knot_detection.py",
   "scriptHash": "861fd0733bd5",
-  "scriptCommitSha": "84f707c0e363c6b2e9194d6b04e893d7710ecdde",
+  "scriptCommitSha": "626c2bb856bbfa1ca647bd7d5bc36c8113f8825e",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Intermediate knot detection during atom NF construction. At each step (nucleon addition), the NF is compared against reference knot signatures via cosine similarity. LP dual shadow prices (tightest Frobenius constraint) tracked per step. Finding: Z=N nuclei show trefoil/hopf alternation; double-magic nuclei converge to unknot.",
   "contentBlock": "prop:confined-knot-binding",
   "parameters": {
-    "q": 1.1099785955541805,
+    "q": 1.1099785827513808,
     "reference_knots": [
       "unknot",
       "trefoil",
@@ -287,7 +296,7 @@
         "frob": 7.1437,
         "min_Gx": 1.4878,
         "tight": "σ₁",
-        "tr_M": 1.616114,
+        "tr_M": 1.616113,
         "stable": true
       },
       {
@@ -380,7 +389,7 @@
         "frob": 7.1437,
         "min_Gx": 1.4878,
         "tight": "σ₁",
-        "tr_M": 1.616114,
+        "tr_M": 1.616113,
         "stable": true
       },
       {
@@ -416,10 +425,10 @@
         "nuc": "p",
         "knot": "hopf",
         "cos_sim": 0.3656,
-        "frob": 77.1285,
+        "frob": 77.1284,
         "min_Gx": 5.5467,
         "tight": "γ",
-        "tr_M": 4.840947,
+        "tr_M": 4.840946,
         "stable": true
       },
       {
@@ -432,7 +441,7 @@
         "frob": 45.6143,
         "min_Gx": 3.8281,
         "tight": "γ",
-        "tr_M": 3.301807,
+        "tr_M": 3.301806,
         "stable": true
       },
       {
@@ -442,10 +451,10 @@
         "nuc": "p",
         "knot": "trefoil",
         "cos_sim": 0.4464,
-        "frob": 251.2528,
+        "frob": 251.2526,
         "min_Gx": 10.0067,
         "tight": "γ",
-        "tr_M": 7.960897,
+        "tr_M": 7.960895,
         "stable": true
       },
       {
@@ -455,10 +464,10 @@
         "nuc": "n",
         "knot": "hopf",
         "cos_sim": 0.5961,
-        "frob": 126.1645,
+        "frob": 126.1644,
         "min_Gx": 6.6702,
         "tight": "σ₀",
-        "tr_M": 7.131247,
+        "tr_M": 7.131245,
         "stable": true
       },
       {
@@ -471,7 +480,7 @@
         "frob": 38.4687,
         "min_Gx": 3.4262,
         "tight": "σ₀",
-        "tr_M": 3.953645,
+        "tr_M": 3.953644,
         "stable": true
       }
     ],
@@ -551,7 +560,7 @@
         "frob": 7.1437,
         "min_Gx": 1.4878,
         "tight": "σ₁",
-        "tr_M": 1.616114,
+        "tr_M": 1.616113,
         "stable": true
       },
       {
@@ -587,10 +596,10 @@
         "nuc": "p",
         "knot": "hopf",
         "cos_sim": 0.3656,
-        "frob": 77.1285,
+        "frob": 77.1284,
         "min_Gx": 5.5467,
         "tight": "γ",
-        "tr_M": 4.840947,
+        "tr_M": 4.840946,
         "stable": true
       },
       {
@@ -603,7 +612,7 @@
         "frob": 45.6143,
         "min_Gx": 3.8281,
         "tight": "γ",
-        "tr_M": 3.301807,
+        "tr_M": 3.301806,
         "stable": true
       },
       {
@@ -613,10 +622,10 @@
         "nuc": "p",
         "knot": "trefoil",
         "cos_sim": 0.4464,
-        "frob": 251.2528,
+        "frob": 251.2526,
         "min_Gx": 10.0067,
         "tight": "γ",
-        "tr_M": 7.960897,
+        "tr_M": 7.960895,
         "stable": true
       },
       {
@@ -626,10 +635,10 @@
         "nuc": "n",
         "knot": "hopf",
         "cos_sim": 0.5961,
-        "frob": 126.1645,
+        "frob": 126.1644,
         "min_Gx": 6.6702,
         "tight": "σ₀",
-        "tr_M": 7.131247,
+        "tr_M": 7.131245,
         "stable": true
       },
       {
@@ -639,10 +648,10 @@
         "nuc": "p",
         "knot": "figure_eight",
         "cos_sim": 0.4103,
-        "frob": 852.7096,
+        "frob": 852.7089,
         "min_Gx": 18.9586,
         "tight": "γ",
-        "tr_M": 16.736024,
+        "tr_M": 16.736016,
         "stable": true
       },
       {
@@ -652,10 +661,10 @@
         "nuc": "n",
         "knot": "inv_trefoil",
         "cos_sim": 0.6052,
-        "frob": 377.716,
+        "frob": 377.7157,
         "min_Gx": 8.1373,
         "tight": "γ",
-        "tr_M": 6.933867,
+        "tr_M": 6.933865,
         "stable": true
       },
       {
@@ -665,10 +674,10 @@
         "nuc": "p",
         "knot": "trefoil",
         "cos_sim": 0.4379,
-        "frob": 2938.4716,
+        "frob": 2938.4685,
         "min_Gx": 31.8062,
         "tight": "σ₁",
-        "tr_M": 25.912797,
+        "tr_M": 25.912784,
         "stable": true
       },
       {
@@ -678,10 +687,10 @@
         "nuc": "n",
         "knot": "unknot",
         "cos_sim": 0.6579,
-        "frob": 1442.5716,
+        "frob": 1442.57,
         "min_Gx": 10.9162,
         "tight": "σ₀",
-        "tr_M": 25.812209,
+        "tr_M": 25.812196,
         "stable": true
       },
       {
@@ -691,10 +700,10 @@
         "nuc": "e⁻",
         "knot": "B3",
         "cos_sim": 0.6033,
-        "frob": 510.7696,
+        "frob": 510.769,
         "min_Gx": -0.2284,
         "tight": "L₋",
-        "tr_M": 11.70068,
+        "tr_M": 11.700675,
         "stable": false
       }
     ],
@@ -774,7 +783,7 @@
         "frob": 7.1437,
         "min_Gx": 1.4878,
         "tight": "σ₁",
-        "tr_M": 1.616114,
+        "tr_M": 1.616113,
         "stable": true
       },
       {
@@ -810,10 +819,10 @@
         "nuc": "p",
         "knot": "hopf",
         "cos_sim": 0.3656,
-        "frob": 77.1285,
+        "frob": 77.1284,
         "min_Gx": 5.5467,
         "tight": "γ",
-        "tr_M": 4.840947,
+        "tr_M": 4.840946,
         "stable": true
       },
       {
@@ -826,7 +835,7 @@
         "frob": 45.6143,
         "min_Gx": 3.8281,
         "tight": "γ",
-        "tr_M": 3.301807,
+        "tr_M": 3.301806,
         "stable": true
       },
       {
@@ -836,10 +845,10 @@
         "nuc": "p",
         "knot": "trefoil",
         "cos_sim": 0.4464,
-        "frob": 251.2528,
+        "frob": 251.2526,
         "min_Gx": 10.0067,
         "tight": "γ",
-        "tr_M": 7.960897,
+        "tr_M": 7.960895,
         "stable": true
       },
       {
@@ -849,10 +858,10 @@
         "nuc": "n",
         "knot": "hopf",
         "cos_sim": 0.5961,
-        "frob": 126.1645,
+        "frob": 126.1644,
         "min_Gx": 6.6702,
         "tight": "σ₀",
-        "tr_M": 7.131247,
+        "tr_M": 7.131245,
         "stable": true
       },
       {
@@ -862,10 +871,10 @@
         "nuc": "p",
         "knot": "figure_eight",
         "cos_sim": 0.4103,
-        "frob": 852.7096,
+        "frob": 852.7089,
         "min_Gx": 18.9586,
         "tight": "γ",
-        "tr_M": 16.736024,
+        "tr_M": 16.736016,
         "stable": true
       },
       {
@@ -875,10 +884,10 @@
         "nuc": "n",
         "knot": "inv_trefoil",
         "cos_sim": 0.6052,
-        "frob": 377.716,
+        "frob": 377.7157,
         "min_Gx": 8.1373,
         "tight": "γ",
-        "tr_M": 6.933867,
+        "tr_M": 6.933865,
         "stable": true
       },
       {
@@ -888,10 +897,10 @@
         "nuc": "p",
         "knot": "trefoil",
         "cos_sim": 0.4379,
-        "frob": 2938.4716,
+        "frob": 2938.4685,
         "min_Gx": 31.8062,
         "tight": "σ₁",
-        "tr_M": 25.912797,
+        "tr_M": 25.912784,
         "stable": true
       },
       {
@@ -901,10 +910,10 @@
         "nuc": "n",
         "knot": "unknot",
         "cos_sim": 0.6579,
-        "frob": 1442.5716,
+        "frob": 1442.57,
         "min_Gx": 10.9162,
         "tight": "σ₀",
-        "tr_M": 25.812209,
+        "tr_M": 25.812196,
         "stable": true
       },
       {
@@ -914,10 +923,10 @@
         "nuc": "p",
         "knot": "figure_eight",
         "cos_sim": 0.4776,
-        "frob": 10373.4552,
+        "frob": 10373.4425,
         "min_Gx": 59.0614,
         "tight": "L₊",
-        "tr_M": 65.769996,
+        "tr_M": 65.769955,
         "stable": true
       },
       {
@@ -927,10 +936,10 @@
         "nuc": "n",
         "knot": "inv_trefoil",
         "cos_sim": 0.7252,
-        "frob": 11207.8614,
+        "frob": 11207.8438,
         "min_Gx": -15.2843,
         "tight": "γ",
-        "tr_M": -10.035761,
+        "tr_M": -10.035743,
         "stable": false
       },
       {
@@ -940,10 +949,10 @@
         "nuc": "p",
         "knot": "trefoil",
         "cos_sim": 0.2387,
-        "frob": 37389.4002,
+        "frob": 37389.3481,
         "min_Gx": 21.4393,
         "tight": "σ₁",
-        "tr_M": 53.904433,
+        "tr_M": 53.904411,
         "stable": true
       },
       {
@@ -953,10 +962,10 @@
         "nuc": "n",
         "knot": "unknot",
         "cos_sim": 0.5927,
-        "frob": 231904.2359,
-        "min_Gx": -165.9814,
+        "frob": 231903.7324,
+        "min_Gx": -165.9812,
         "tight": "σ₀",
-        "tr_M": 240.90233,
+        "tr_M": 240.902089,
         "stable": false
       },
       {
@@ -966,10 +975,10 @@
         "nuc": "p",
         "knot": "figure_eight",
         "cos_sim": 0.3972,
-        "frob": 138187.5775,
-        "min_Gx": -273.9327,
+        "frob": 138187.3596,
+        "min_Gx": -273.9322,
         "tight": "L₊",
-        "tr_M": 479.21247,
+        "tr_M": 479.211973,
         "stable": false
       },
       {
@@ -979,10 +988,10 @@
         "nuc": "n",
         "knot": "inv_trefoil",
         "cos_sim": 0.6979,
-        "frob": 9297608.1766,
-        "min_Gx": -1513.6649,
+        "frob": 9297582.7145,
+        "min_Gx": -1513.6627,
         "tight": "γ",
-        "tr_M": -1145.651391,
+        "tr_M": -1145.649768,
         "stable": false
       },
       {
@@ -992,10 +1001,10 @@
         "nuc": "p",
         "knot": "trefoil",
         "cos_sim": 0.0829,
-        "frob": 590412.0936,
-        "min_Gx": -4548.1128,
+        "frob": 590410.8718,
+        "min_Gx": -4548.1053,
         "tight": "L₋",
-        "tr_M": -1600.265415,
+        "tr_M": -1600.26273,
         "stable": false
       },
       {
@@ -1005,10 +1014,10 @@
         "nuc": "n",
         "knot": "unknot",
         "cos_sim": 0.5685,
-        "frob": 604057206.7094,
-        "min_Gx": -11689.828,
+        "frob": 604055193.1878,
+        "min_Gx": -11689.8085,
         "tight": "σ₀",
-        "tr_M": 9980.841518,
+        "tr_M": 9980.825056,
         "stable": false
       },
       {
@@ -1018,10 +1027,10 @@
         "nuc": "p",
         "knot": "figure_eight",
         "cos_sim": 0.3634,
-        "frob": 12717444.3469,
-        "min_Gx": -37743.1719,
+        "frob": 12717391.6463,
+        "min_Gx": -37743.1002,
         "tight": "e⁻",
-        "tr_M": 18490.215559,
+        "tr_M": 18490.182388,
         "stable": false
       },
       {
@@ -1031,10 +1040,10 @@
         "nuc": "n",
         "knot": "inv_trefoil",
         "cos_sim": 0.6938,
-        "frob": 61813664965.2637,
-        "min_Gx": -131463.6027,
+        "frob": 61813419101.9207,
+        "min_Gx": -131463.3402,
         "tight": "γ",
-        "tr_M": -98475.078109,
+        "tr_M": -98474.88233,
         "stable": false
       },
       {
@@ -1044,10 +1053,10 @@
         "nuc": "p",
         "knot": "B3",
         "cos_sim": 0.0644,
-        "frob": 1994805116.7487,
-        "min_Gx": -531702.0868,
+        "frob": 1994795202.565,
+        "min_Gx": -531700.9068,
         "tight": "L₋",
-        "tr_M": -197453.282242,
+        "tr_M": -197452.8524,
         "stable": false
       },
       {
@@ -1057,10 +1066,10 @@
         "nuc": "n",
         "knot": "B3",
         "cos_sim": 0.5694,
-        "frob": 9928428010773.836,
-        "min_Gx": -1517137.7075,
+        "frob": 9928381615814.72,
+        "min_Gx": -1517134.1741,
         "tight": "σ₀",
-        "tr_M": 1243749.270257,
+        "tr_M": 1243746.368844,
         "stable": false
       },
       {
@@ -1070,10 +1079,10 @@
         "nuc": "p",
         "knot": "figure_eight",
         "cos_sim": 0.3629,
-        "frob": 510553072447.3516,
-        "min_Gx": -6364820.7478,
+        "frob": 510550235962.3854,
+        "min_Gx": -6364804.4362,
         "tight": "e⁻",
-        "tr_M": 2804861.127023,
+        "tr_M": 2804854.030935,
         "stable": false
       },
       {
@@ -1083,10 +1092,10 @@
         "nuc": "n",
         "knot": "inv_trefoil",
         "cos_sim": 0.6939,
-        "frob": 2499162686297904.0,
-        "min_Gx": -26495936.3959,
+        "frob": 2499149142829116.5,
+        "min_Gx": -26495864.4616,
         "tight": "γ",
-        "tr_M": -19617439.536422,
+        "tr_M": -19617386.428329,
         "stable": false
       },
       {
@@ -1096,10 +1105,10 @@
         "nuc": "p",
         "knot": "B3",
         "cos_sim": 0.0696,
-        "frob": 190916948233014.0,
-        "min_Gx": -135978886.5914,
+        "frob": 190915758632368.06,
+        "min_Gx": -135978484.445,
         "tight": "L₋",
-        "tr_M": -49454761.428142,
+        "tr_M": -49454617.04315,
         "stable": false
       },
       {
@@ -1109,10 +1118,10 @@
         "nuc": "n",
         "knot": "B3",
         "cos_sim": 0.5714,
-        "frob": 9.844604496621896e+17,
-        "min_Gx": -476568383.0067,
+        "frob": 9.844543303879468e+17,
+        "min_Gx": -476566905.5778,
         "tight": "σ₀",
-        "tr_M": 387605048.676383,
+        "tr_M": 387603844.722219,
         "stable": false
       },
       {
@@ -1122,10 +1131,10 @@
         "nuc": "p",
         "knot": "figure_eight",
         "cos_sim": 0.3641,
-        "frob": 1.065159591725906e+17,
-        "min_Gx": -2535883664.7911,
+        "frob": 1.0651521515347518e+17,
+        "min_Gx": -2535875157.0691,
         "tight": "e⁻",
-        "tr_M": 1093256987.46341,
+        "tr_M": 1093253344.794616,
         "stable": false
       },
       {
@@ -1135,10 +1144,10 @@
         "nuc": "n",
         "knot": "inv_trefoil",
         "cos_sim": 0.6939,
-        "frob": 6.060473806133179e+20,
-        "min_Gx": -13048240411.7407,
+        "frob": 6.060431002856454e+20,
+        "min_Gx": -13048194265.2997,
         "tight": "γ",
-        "tr_M": -9580827547.832144,
+        "tr_M": -9580793725.042385,
         "stable": false
       },
       {
@@ -1148,10 +1157,10 @@
         "nuc": "p",
         "knot": "B3",
         "cos_sim": 0.0729,
-        "frob": 8.989858756209462e+19,
-        "min_Gx": -84339698082.9061,
+        "frob": 8.989788569766437e+19,
+        "min_Gx": -84339377456.9643,
         "tight": "L₋",
-        "tr_M": -30227047567.007473,
+        "tr_M": -30226933631.541626,
         "stable": false
       },
       {
@@ -1161,10 +1170,10 @@
         "nuc": "n",
         "knot": "B3",
         "cos_sim": 0.5726,
-        "frob": 5.8236697641443405e+23,
-        "min_Gx": -365830467856.7141,
+        "frob": 5.8236234102016414e+23,
+        "min_Gx": -365829014669.8542,
         "tight": "σ₀",
-        "tr_M": 296070904363.46625,
+        "tr_M": 296069726188.8445,
         "stable": false
       },
       {
@@ -1174,10 +1183,10 @@
         "nuc": "p",
         "knot": "figure_eight",
         "cos_sim": 0.3648,
-        "frob": 1.1573714002561832e+23,
-        "min_Gx": -2453181833354.9805,
+        "frob": 1.1573613407459945e+23,
+        "min_Gx": -2453171408951.135,
         "tight": "e⁻",
-        "tr_M": 1044607303791.4753,
+        "tr_M": 1044602883617.5209,
         "stable": false
       },
       {
@@ -1187,10 +1196,10 @@
         "nuc": "n",
         "knot": "inv_trefoil",
         "cos_sim": 0.6938,
-        "frob": 8.725987984956652e+26,
-        "min_Gx": -15656910956002.805,
+        "frob": 8.725910267129264e+26,
+        "min_Gx": -15656841149701.537,
         "tight": "γ",
-        "tr_M": -11431218863846.322,
+        "tr_M": -11431167955586.494,
         "stable": false
       },
       {
@@ -1200,10 +1209,10 @@
         "nuc": "p",
         "knot": "B3",
         "cos_sim": 0.075,
-        "frob": 2.2847881396452718e+26,
-        "min_Gx": -126971775064307.67,
+        "frob": 2.284766126575873e+26,
+        "min_Gx": -126971172368752.31,
         "tight": "L₋",
-        "tr_M": -45092452137571.31,
+        "tr_M": -45092239376864.62,
         "stable": false
       },
       {
@@ -1213,10 +1222,10 @@
         "nuc": "n",
         "knot": "B3",
         "cos_sim": 0.5734,
-        "frob": 2.0369146417262846e+30,
-        "min_Gx": -683278146858200.4,
+        "frob": 2.036894469298346e+30,
+        "min_Gx": -683274768387069.2,
         "tight": "σ₀",
-        "tr_M": 551137299578937.5,
+        "tr_M": 551134570081124.7,
         "stable": false
       },
       {
@@ -1226,10 +1235,10 @@
         "nuc": "e⁻",
         "knot": "B3",
         "cos_sim": 0.3667,
-        "frob": 1.0402594321546846e+31,
-        "min_Gx": -3264689101033622.5,
+        "frob": 1.0402486634022226e+31,
+        "min_Gx": -3264672090403148.5,
         "tight": "L₋",
-        "tr_M": 235764768257463.25,
+        "tr_M": 235763570003072.16,
         "stable": false
       }
     ]
