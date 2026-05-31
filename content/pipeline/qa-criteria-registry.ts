@@ -527,6 +527,29 @@ const CANONICAL: QaCriterionDefinition[] = [
     applies_to: ["theorem", "lemma", "proposition", "corollary",
       "conjecture"],
   },
+  {
+    id: "canonical-no-negative-result",
+    domain: "canonical",
+    description:
+      "Precision-ladder blocks (Q_β c_k, α_EM Habiro factor, any " +
+      "convergent truncation-order series) must report coefficient " +
+      "provenance TIERED (proved / near-match / fitted), never as a " +
+      "binary negative result. Scans .md for flip-flop signal phrases " +
+      "(`un-wire`, `drop c_k`, `just a fit`, `fails to beat`, " +
+      "`should be reverted`, `negative result`) in ladder context " +
+      "(tags `precision-ladder`/`1ppb-roadmap`/`habiro` or prose " +
+      "mentioning `precision ladder`/`truncation order`/`c_k`/`Habiro " +
+      "element`). Passes if the block carries tiered vocabulary " +
+      "(`near-match`/`tier`) or cites " +
+      "`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md` " +
+      "(Rule 4). Prevents the four-session wire/un-wire flip-flop from " +
+      "re-entering the paper as flat negative-result prose.",
+    default_severity: "major",
+    depends_on: ["md", "ts"],
+    automated: true,
+    applies_to: ["theorem", "lemma", "proposition", "corollary",
+      "conjecture", "remark"],
+  },
 ];
 
 // ── Domain: compute ─────────────────────────────────────────────
