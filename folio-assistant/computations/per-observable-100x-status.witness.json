@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T04:40:48.958514+00:00",
-  "commitSha": "676df0d9afa5731165a3999420807971d5b276a5",
+  "computedAt": "2026-05-31T14:01:02.205765+00:00",
+  "commitSha": "477b0770486f107819d615d5bfdd46ee38acba6d",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "01af702dc70a",
-  "scriptCommitSha": "938e443567a4c57681ad77c4ad1faecd97a2f6e0",
+  "scriptHash": "64ce62190835",
+  "scriptCommitSha": "d184ba0eeaa6048d30726c172def783b3894db5b",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -55,15 +55,15 @@
       {
         "obs": "m_mu",
         "role": "validation",
-        "pred_MeV": "105.658375649",
+        "pred_MeV": "105.658397811",
         "codata_MeV": "105.658375649",
         "sigma_exp_MeV": "2.30000e-6",
-        "err_ppb": "3.448e-43",
+        "err_ppb": "209.8",
         "sigma_exp_ppb": "21.77",
         "target_100x_ppb": "0.2177",
-        "miss_factor": "1.584e-42",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
+        "miss_factor": "963.6",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
         "sigma_source": "m_e × (m_μ/m_e)_CODATA = 0.51099895069000000000000000000000000000000000000000056544347190005 × 206.76828299999999999999999999999999999999999999999984248529449449 (ratio-derived; independently-quoted 105.6583755(23) MeV)",
         "compute_truncation_ppb": "9.464e-44",
@@ -156,25 +156,25 @@
     ],
     "summary": {
       "total": 7,
-      "beats_1x_count": 4,
-      "beats_100x_count": 4
+      "beats_1x_count": 3,
+      "beats_100x_count": 3
     },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "2fc7cdd6612327c79afef6e97908a37a1dca67a2ab7a6aa9eceabf26e55eb025",
-        "size_bytes": 3277,
-        "commitSha": "3fda58749d66d5298e104771958a50ec12e47e51",
+        "sha256": "07183f84344cc08b0075903d0d03122bec5a26772d7ef88007aa1c9ece2c121f",
+        "size_bytes": 4203,
+        "commitSha": "0247f05b4031608cc8b03aa7e8e67ecab26d561d",
         "scriptCommitSha": "267780da5e84424b11094ce13e976f707d52565b",
-        "computedAt": "2026-05-30T03:44:23.892484+00:00"
+        "computedAt": "2026-05-31T04:46:34.977228+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "64fbca40583b8765c3dc62a6e47d070e44bb21c8428663261918c858cf8acfc8",
-        "size_bytes": 8350,
-        "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
-        "scriptCommitSha": "4a421c09b7252b680d38b59056777a2bea2565b6",
-        "computedAt": "2026-05-29T16:14:40.508140+00:00"
+        "sha256": "f1c967186860d6e40dae4bbb6ff2eede34272d2be4460c8094e53b6332d47a4b",
+        "size_bytes": 9104,
+        "commitSha": "ff495d269869a366bdc403f9baaa38527e8f6676",
+        "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+        "computedAt": "2026-05-31T13:24:38.013990+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",

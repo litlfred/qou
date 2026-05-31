@@ -364,11 +364,11 @@ def main() -> dict:
     # m_n at 0.24 ppm (8× better than the substrate-identity's 2 ppm).
     # Δ_pn = Q_β + m_e follows directly.
     m_e_mev = OBSERVABLES["m_e"][0]  # CAL-1 anchor
-    # Q_β rung label for Path C sourcing — pick N based on which path produced Q_β.
-    if ck_data.get("rows") and Q_beta_best is not None:
-        _derived_ks = [r["k"] for r in ck_data["rows"]
-                       if (r.get("tier") or ("derived" if r.get("label") == "lean-proved" else "cal-anchored")) == "derived"]
-        q_beta_rung = f"N={max(_derived_ks)}" if _derived_ks else "N=0"
+    # Q_β rung label for Path C sourcing — reuse the deepest-derived-row
+    # found above; it is guaranteed non-None whenever Q_beta_best is set
+    # from the ck cache (the cache path sets both together).
+    if ck_data.get("rows") and Q_beta_best is not None and last_derived_row is not None:
+        q_beta_rung = f"N={last_derived_row['k']}"
     else:
         q_beta_rung = "N=0"
     if m_p_sub is not None and Q_beta_best is not None:

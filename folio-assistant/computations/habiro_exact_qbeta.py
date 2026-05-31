@@ -71,10 +71,10 @@ def habiro_sum(atom_data, u_val):
         a_val = eval_a_m_at_u(entry["a_m"], u_val)
         poch = q_pochhammer(u_val, m)
         total += a_val * poch
-    # Divide by the Markov denominator D(u)
-    denom_str = atom_data["denom_in_u"]
-    u_f = float(u_val)
-    D_u = mp.mpf(eval(denom_str.replace("u", f"({u_f})")))
+    # Divide by the Markov denominator D(u) — evaluate at full mpmath
+    # precision via the shared helper (NOT float() — would silently
+    # truncate the 50-dps u_val to ~17 digits).
+    D_u = eval_a_m_at_u(atom_data["denom_in_u"], u_val)
     return total / D_u
 
 
