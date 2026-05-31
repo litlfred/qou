@@ -294,9 +294,12 @@ export async function validateObjects(
   // across Phase 2 (constraint rules) and Phase 3 (AST validation).
   // Store undefined for missing files to preserve the distinction from empty files.
   const mdCache = new Map<string, string | undefined>();
+  const leanCache = new Map<string, string | undefined>();
   for (const [name, { dir }] of allBlocks) {
     const mdPath = join(dir, `${name}.md`);
     mdCache.set(name, existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : undefined);
+    const leanPath = join(dir, `${name}.lean`);
+    leanCache.set(name, existsSync(leanPath) ? readFileSync(leanPath, "utf-8") : undefined);
   }
 
   // PR #565: harvest \label{eq:foo} declarations from .md content
@@ -330,6 +333,7 @@ export async function validateObjects(
       allLabels,
       fileExists: (p: string) => existsSync(p),
       mdContent,
+      leanContent: leanCache.get(name),
     };
 
     for (const rule of CONSTRAINT_RULES) {
