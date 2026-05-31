@@ -239,19 +239,23 @@ noncomputable def emAlphaCubic (q α : ℝ) : ℝ :=
 
     where `T = tree + zero_mode`, `H = [2]_q/(8π)`, `h = q - q⁻¹`.
 
-    Proof omitted at this stage — the iff is algebraic gymnastics
-    that does not carry structural content; the form `emAlphaInvForm`
-    IS the structural identity, the cubic is its α-rearrangement
-    for numerical fixed-point solving.  Closing this `sorry` is a
-    pure-algebra Lean exercise (`field_simp; ring`-friendly once the
-    intermediate `α · LHS = α · RHS` step is set up). -/
+    Proved by clearing denominators (`div_eq_iff hα_ne`) and using
+    `linear_combination` on each direction of the iff.  The form
+    `emAlphaInvForm` IS the structural identity; the cubic is its
+    α-rearrangement for numerical fixed-point solving (Form B
+    from PR #1484). -/
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode (fixed-point)
 -- Ref: PR #1484 (Form B numerical solve)
 theorem em_alpha_inv_cubic_equivalent
-    (q α : ℝ) (_hq_pos : q > 0) (_hq_ne : q ≠ 1) (_hα_ne : α ≠ 0) :
+    (q α : ℝ) (_hq_pos : q > 0) (_hq_ne : q ≠ 1) (hα_ne : α ≠ 0) :
     (1 / α = emAlphaInvForm q α) ↔ (emAlphaCubic q α = 0) := by
-  -- Ref: [manuscript] algebraic-equivalence-of-fixed-point-and-cubic
-  sorry
+  unfold emAlphaInvForm emAlphaCubic emNextOrderContribution emSchwingerFactor
+  rw [div_eq_iff hα_ne]
+  constructor
+  · intro h
+    linear_combination h
+  · intro h
+    linear_combination h
 
 /-- Conditional class asserting the n=3 Bloch-level contribution
     to `1/α_EM` exists and matches the empirical
