@@ -49,10 +49,10 @@ hypothesis automatically.
 
 | # | conj | effort | downstream | rationale |
 |---|------|------:|------:|------|
-| 1 | `conj:pontryagin-dual-coxeter-character` | ≤ 50 LOC Lean | 0 users | `S_n^ab ≅ Z/2`, self-Pontryagin-dual on Z/2 — Mathlib has both pieces. Block itself says "no derivation depends on it" |
-| 2 | `conj:atom-braid-exterior-algebra` | 50-200 LOC | 1 user | Computational at A ∈ {1,2,3,4} via `hecke_core.py`; small structural Lean lemma |
-| 3 | `conj:dilogarithm-archimedean-limit` | 50-150 LOC | 3 users | Standard q-Pochhammer partial-product convergence (Andrews-Askey-Roy) |
-| 4 | `conj:averaging-resonance-rule` | 100-200 LOC | 1 user | Half-fill cyclicity at proton recipe n=9 — concrete `Nat` lemma + crystal-graph enumeration |
+| 1 | `conj:pontryagin-dual-coxeter-character` | ≤ 50 LOC Lean | 0 users | ✅ **CLOSED** `ad094372d` (S_n^ab ≅ Z/2, self-Pontryagin-dual on Z/2 — Mathlib has both pieces) |
+| 2 | `conj:atom-braid-exterior-algebra` | 50-200 LOC | 1 user | ✅ **STRUCTURALLY CLOSED** — verified D/T/³He/⁴He cases sorry-free; general case is the open §3b-cond class instance (by design per CLAUDE.md, not a missing sorry) |
+| 3 | `conj:dilogarithm-archimedean-limit` | ~~50-150 LOC~~ | 3 users | ⚠ **DEMOTED to Tier B** (2026-05-30 audit): standard Faddeev-Kashaev limit `(1-q) log Φ_n(x; q) → Li_2(x)`, but closing it in Lean requires Mathlib analysis infra (q-Pochhammer partial product + Riemann-sum convergence + Li_2 series) that doesn't yet exist. The original ≤150 LOC estimate assumed the infra was available; in practice it must be authored first, which is multi-week Mathlib PR work. See [`docs/audits/2026-05-30-conjecture-closure-session-audit.md`](../audits/2026-05-30-conjecture-closure-session-audit.md). |
+| 4 | `conj:averaging-resonance-rule` | 100-200 LOC | 1 user | ✅ **CLOSED** `c662572c5` (+ Sprint 1 IwahoriHecke skeleton) |
 
 **Deliverable**: One PR `discharge(tier-a): 4 source-node conjectures
 → theorem` with three commits (#1+#3 bundled; #2 standalone;
