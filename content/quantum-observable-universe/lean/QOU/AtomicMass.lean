@@ -108,11 +108,16 @@ noncomputable def ame2020_mass_h : ℝ := h.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Hydrogen: 0.015 keV
     (= 1 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` from
+    PR #1548. Proof drops from 4-line per-element unfold sweep
+    (unfold .codataMass + .ameMass + .codata_atomic_mass +
+    .ame2020_atomic_mass + 6 constants) to 2-line offset rewrite +
+    numerical bound on `Z * offset`. -/
 theorem deviation_h :
     |h.codataMass - h.ameMass| < 0.0001 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass h
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset h]
+  show |(h.Z : ℝ) * codata_ame_offset_per_Z| < 0.0001
+  unfold h codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -135,11 +140,13 @@ noncomputable def ame2020_mass_he : ℝ := he.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Helium: 0.034 keV
     (= 2 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548). -/
 theorem deviation_he :
     |he.codataMass - he.ameMass| < 0.0002 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass he
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset he]
+  show |(he.Z : ℝ) * codata_ame_offset_per_Z| < 0.0002
+  unfold he codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
@@ -162,11 +169,12 @@ noncomputable def ame2020_mass_li : ℝ := li.ameMass
 -- Ref: [ame2020] https://www-nds.iaea.org/amdc/
 /-- CODATA−AME2020 deviation for Lithium: 0.052 keV
     (= 3 × 0.015 keV from H atom electron binding energy). -/
+/-- Refactored via `ElementDatum.codata_minus_ame_eq_Z_offset` (PR #1548). -/
 theorem deviation_li :
     |li.codataMass - li.ameMass| < 0.0002 := by
-  unfold ElementDatum.codataMass ElementDatum.ameMass li
-  unfold codata_atomic_mass ame2020_atomic_mass
-  unfold codata_m_p codata_m_n codata_m_e ame_u ame_delta_H ame_delta_n
+  rw [ElementDatum.codata_minus_ame_eq_Z_offset li]
+  show |(li.Z : ℝ) * codata_ame_offset_per_Z| < 0.0002
+  unfold li codata_ame_offset_per_Z codata_m_p codata_m_e ame_u ame_delta_H
   norm_num
 
 -- ════════════════════════════════════════════════════════════
