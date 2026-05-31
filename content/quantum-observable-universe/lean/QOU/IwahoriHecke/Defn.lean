@@ -32,14 +32,20 @@ At `q = 1`, the relations collapse to the group algebra `R[W]`
 (the Hecke quadratic becomes `T_s^2 = 1` and braid relations
 match the Coxeter presentation).
 
-## Scope of this PR (Sprint 1)
+## Scope of this PR (Sprint 1 + Sprint 2 bridge)
 
-Sprint 1 establishes the foundation:
-- `IwahoriHecke W q` type (skeleton — quotient construction below)
-- Universal-property statement (`R`-algebra map `IwahoriHecke W q →ₐ A`
-  characterised by where each `T_s` is sent, modulo the relations)
-- `q = 1` reduction (forward direction: there is a canonical map
-  `IwahoriHecke W 1 → R[W]`)
+Sprint 1 established the foundation; the Sprint 2 bridge (added
+2026-05-31) replaces the original `opaque IwahoriHecke` stub +
+its 4 sorry-bearing instance proofs with a `def` aliasing
+[`QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot`](Quotient.lean)
+over `Set.univ : Set W`. The algebra structure inherits via
+`inferInstanceAs` — no instance proof remains as `sorry`.
+
+Remaining `sorry`s in this file:
+- `universal_property` (line ~191): blocked on
+  `IsHeckeAlgebraMap` upgrade from the `True` placeholder to the
+  actual Hecke-quadratic + braid conditions (Sprint 2 follow-up
+  via `CoxeterSystem` once Mathlib's accessor stabilises).
 
 Sprints 2-5 (each its own PR per the infra plan):
 - Sprint 2: reduced-expression `T_w` basis (closes `conj:hecke-anyonic-substrate`)
@@ -54,13 +60,13 @@ Per the infra plan's "Option C" strategy: this file stubs in the
 `qou` Lake package mirroring the expected Mathlib API. The
 upstream Mathlib contribution is a separable follow-up.
 
-The skeleton below uses **placeholders** (`sorry`-equivalent
-`opaque` definitions and abstract typeclasses) at points where
-the full implementation requires Mathlib material not yet
-imported here. Each placeholder is tagged `-- Ref: [pending Sprint N]`
-or `-- Ref: [Mathlib upstream]` so the implementation gaps are
-auditable. Sprint 2 will replace the `opaque` declarations with
-concrete constructions.
+The Sprint 1 `opaque IwahoriHecke` skeleton was structurally
+dead-code (zero downstream consumers — `Tw.lean`, `TypeA.lean`,
+`Hoefsmit.lean`, `MarkovTrace.lean` all reference
+`IwahoriHeckeQuot` from `Quotient.lean` directly). The Sprint 2
+bridge turns it into a thin wrapper so the namespace stays
+auditable while existing tooling and citations continue to
+resolve to `QOU.IwahoriHecke.IwahoriHecke`.
 
 Refs:
 - [bourbaki1968] Bourbaki, "Groupes et Algèbres de Lie" Ch IV-VI
@@ -73,6 +79,7 @@ Refs:
 import Mathlib.GroupTheory.Coxeter.Basic
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.Algebra.Algebra.Basic
+import QOU.IwahoriHecke.Quotient
 
 namespace QOU.IwahoriHecke
 
@@ -82,52 +89,66 @@ universe u v
     system `(W, S)` over a commutative ring `R` with parameter
     `q : R`.
 
-    Sprint 1 stub: declared as an abstract `Type` with the
-    expected algebra structure. The concrete construction (quotient
-    of the free `R`-algebra on `{T_s}_{s ∈ S}` by the Hecke + braid
-    relations) lives in Sprint 2.
+    Sprint 2 bridge: definitionally equal to
+    `QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot R q (Set.univ : Set W)`
+    — the concrete quotient over the full generating set of `W`.
+    This dissolves the Sprint 1 opaque stub and makes the algebra,
+    ring, and module instances inherit automatically from
+    `Quotient.lean`'s noncomputable instances.
+
+    Caveat: the Hecke-quadratic-only fragment (Sprint 2 scope of
+    `Quotient.lean`). Braid relations are not yet quotiented out —
+    that step lands once Mathlib's `CoxeterSystem` reduced-expression
+    accessor stabilises. For Sprint 1 + 2 the quadratic-only sub-
+    algebra is the well-defined intermediate object.
 
     The type parameters are intentionally generic: `W` is the
     Coxeter group, `R` is the base ring, `q : R` is the parameter.
-    A Type-A specialisation (Sprint 3) instantiates `W = symmetricGroup n`. -/
-opaque IwahoriHecke (W : Type u) [Group W] (R : Type v) [CommRing R] (_q : R) : Type (max u v)
+    A Type-A specialisation (Sprint 3 via `TypeA.lean`) instantiates
+    `W = Fin n × Fin n` (adjacent-transposition index set). -/
+def IwahoriHecke (W : Type u) [Group W] [DecidableEq W]
+    (R : Type v) [CommRing R] (q : R) : Type (max u v) :=
+  QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot R q (Set.univ : Set W)
 
 /-- The expected `R`-algebra structure on `IwahoriHecke W q`.
-    Sprint 1 stub: declared abstractly; Sprint 2 constructs the
-    instance via the quotient algebra. -/
-instance instCommRing_iwahoriHecke
-    (W : Type u) [Group W] (R : Type v) [CommRing R] (q : R) :
-    AddCommGroup (IwahoriHecke W R q) := by
-  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (concrete quotient construction)
-  sorry
+    Sprint 2 bridge: inherited via the definitional equality with
+    the concrete quotient. Each instance is now sorry-free. -/
+noncomputable instance instAddCommGroup_iwahoriHecke
+    (W : Type u) [Group W] [DecidableEq W] (R : Type v) [CommRing R] (q : R) :
+    AddCommGroup (IwahoriHecke W R q) :=
+  inferInstanceAs (AddCommGroup (QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot
+    R q (Set.univ : Set W)))
 
-instance instModule_iwahoriHecke
-    (W : Type u) [Group W] (R : Type v) [CommRing R] (q : R) :
-    Module R (IwahoriHecke W R q) := by
-  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (Module instance via concrete quotient)
-  sorry
+noncomputable instance instModule_iwahoriHecke
+    (W : Type u) [Group W] [DecidableEq W] (R : Type v) [CommRing R] (q : R) :
+    Module R (IwahoriHecke W R q) :=
+  inferInstanceAs (Module R (QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot
+    R q (Set.univ : Set W)))
 
-/-- Ring structure on `IwahoriHecke W R q`. Sprint 1 stub; Sprint 2
-    provides the multiplication via the concrete quotient. -/
-instance instRing_iwahoriHecke
-    (W : Type u) [Group W] (R : Type v) [CommRing R] (q : R) :
-    Ring (IwahoriHecke W R q) := by
-  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (Ring instance via concrete quotient — non-commutative in general)
-  sorry
+/-- Ring structure on `IwahoriHecke W R q`. Sprint 2 bridge: inherited
+    from the concrete quotient. -/
+noncomputable instance instRing_iwahoriHecke
+    (W : Type u) [Group W] [DecidableEq W] (R : Type v) [CommRing R] (q : R) :
+    Ring (IwahoriHecke W R q) :=
+  inferInstanceAs (Ring (QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot
+    R q (Set.univ : Set W)))
 
-/-- `R`-algebra structure on `IwahoriHecke W R q`. Sprint 1 stub;
-    Sprint 2 provides the coherent algebraMap via the concrete quotient. -/
-instance instAlgebra_iwahoriHecke
-    (W : Type u) [Group W] (R : Type v) [CommRing R] (q : R) :
-    Algebra R (IwahoriHecke W R q) := by
-  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (Algebra coherence via concrete quotient)
-  sorry
+/-- `R`-algebra structure on `IwahoriHecke W R q`. Sprint 2 bridge:
+    inherited from the concrete quotient. -/
+noncomputable instance instAlgebra_iwahoriHecke
+    (W : Type u) [Group W] [DecidableEq W] (R : Type v) [CommRing R] (q : R) :
+    Algebra R (IwahoriHecke W R q) :=
+  inferInstanceAs (Algebra R (QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot
+    R q (Set.univ : Set W)))
 
-/-- The generators `T : S → IwahoriHecke W q`, one per simple
-    reflection. Sprint 1 stub: signature only; the concrete
-    embedding lives in Sprint 2. -/
-opaque T {W : Type u} [Group W] {R : Type v} [CommRing R] (q : R)
-    (_s : W) : IwahoriHecke W R q
+/-- The generators `T : W → IwahoriHecke W q`, lifting each element
+    of `W` to its image in the quadratic-only quotient.
+
+    Sprint 2 bridge: defined via `Quotient.T` applied to the
+    Subtype wrapping `Set.univ`. -/
+noncomputable def T {W : Type u} [Group W] [DecidableEq W]
+    {R : Type v} [CommRing R] (q : R) (s : W) : IwahoriHecke W R q :=
+  QOU.IwahoriHecke.Quotient.T R q (Set.univ : Set W) ⟨s, Set.mem_univ s⟩
 
 /-! ## Universal property (sketched)
 
@@ -183,11 +204,17 @@ def IsHeckeAlgebraMap {W : Type u} [Group W] {R : Type v} [CommRing R]
     becomes the entry point for embedding any Hecke representation
     into the framework's algebra. -/
 theorem universal_property
-    {W : Type u} [Group W] {R : Type v} [CommRing R] (q : R)
+    {W : Type u} [Group W] [DecidableEq W] {R : Type v} [CommRing R] (q : R)
     {A : Type w} [Ring A] [Algebra R A]
     (f : W → A) (_hf : IsHeckeAlgebraMap q f) :
     ∃! φ : IwahoriHecke W R q →ₐ[R] A, ∀ s : W, φ (T q s) = f s := by
-  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (proof via concrete quotient construction)
+  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 follow-up:
+  -- the Quotient-side `universal_property_hecke_quadratic` provides existence
+  -- (Nonempty {φ // ...}) given an AlgHom factoring `f` through `FreeAlgebra R S`
+  -- with vanishing on `heckeQuadraticGenerators`. Bridging to ∃! requires
+  -- (a) IsHeckeAlgebraMap refinement (currently `True`) to supply the AlgHom factor +
+  --     vanishing hypothesis, (b) uniqueness from `IwahoriHeckeQuot`'s universal
+  -- characterisation. Deferred until IsHeckeAlgebraMap is refined.
   sorry
 
 /-! ## Closure paths (downstream consumers gated on this infra)
