@@ -986,8 +986,14 @@ export function checkCanonicalCal4Acknowledged(
 const LADDER_CONTEXT_TAGS = new Set([
   "precision-ladder", "1ppb-roadmap", "habiro", "truncation-order",
 ]);
-const LADDER_CONTEXT_RE =
-  /\bprecision\s+ladder\b|\btruncation\s+order\b|\bc_k\b|\bc_2\b|\bc_3\b|\bHabiro\s+element\b/i;
+// Ladder-coefficient token: matches c_k, c_2, c_3, c_{10}, d_k, d_3, …
+// (single or multi-digit, braced or bare, c- or d-family).
+const CK = String.raw`[cd]_?\{?[k0-9]+\}?`;
+const LADDER_CONTEXT_RE = new RegExp(
+  String.raw`\bprecision\s+ladder\b|\btruncation\s+order\b|\b${CK}\b|` +
+    String.raw`\bHabiro\s+element\b`,
+  "i",
+);
 
 // Binary "negative result" framing — the flip-flop signature. A
 // near-match coefficient reported as flatly dropped / un-wired / "just
@@ -995,9 +1001,12 @@ const LADDER_CONTEXT_RE =
 // the canonical framing doc.
 const NEGATIVE_RESULT_PHRASES = [
   /\bun-?wire[ds]?\b/i,
-  /\bdrop(?:ping|ped)?\s+(?:the\s+)?c_?[k0-9]/i,
+  new RegExp(String.raw`\bdrop(?:ping|ped)?\s+(?:the\s+)?${CK}`, "i"),
   /\b(?:just|merely|only|nothing\s+but)\s+a\s+fit\b/i,
-  /\bc_?[k0-9].{0,30}\b(?:is|are)\s+(?:just|merely|only)\s+numerolog/i,
+  new RegExp(
+    String.raw`\b${CK}.{0,30}\b(?:is|are)\s+(?:just|merely|only)\s+numerolog`,
+    "i",
+  ),
   /\bfails?\s+to\s+(?:beat|derive|hold)\b/i,
   /\bshould\s+be\s+(?:dropped|reverted|un-?wired)\b/i,
   /\bnegative\s+result\b/i,
@@ -1033,7 +1042,8 @@ export function checkCanonicalCkTieredNotBinary(
 
   const tagsMatch = (ts ?? "").match(/tags:\s*\[([\s\S]*?)\]/);
   const tags = tagsMatch
-    ? tagsMatch[1].match(/"([^"]+)"/g)?.map((t) => t.replace(/"/g, "")) ?? []
+    ? tagsMatch[1].match(/["']([^"']+)["']/g)?.map((t) =>
+        t.replace(/["']/g, "")) ?? []
     : [];
 
   const inContext =
@@ -1046,7 +1056,7 @@ export function checkCanonicalCkTieredNotBinary(
   // Strip blockquotes — historical "wired and un-wired N times" notes
   // describe past flip-flops, not the block's current claim.
   const scan = md
-    .split("\n")
+    .split(/\r?\n/)
     .map((l, i) => [i + 1, l] as const)
     .filter(([, l]) => !l.trimStart().startsWith(">"));
 
