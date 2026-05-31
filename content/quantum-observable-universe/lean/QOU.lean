@@ -33,6 +33,7 @@ import QOU.MathlibExt.MonoidalCalcVar
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.KnotTheory
+import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
 import QOU.MassDerivation
 import QOU.Calculations
