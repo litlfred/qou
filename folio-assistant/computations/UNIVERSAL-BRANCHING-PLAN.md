@@ -24,14 +24,22 @@ Young's lattice from μ to λ.
 
 ## Extension to A nucleons (tensor branching)
 
-For A nucleons K_i ∈ H_3(q) (disconnected tensor, free baseline):
+For A nucleons K_i ∈ H_3(q) (disconnected tensor, free baseline),
+the correct decomposition is via the iterated **Littlewood-Richardson
+coefficient** `c^λ_{μ_1,…,μ_A}`:
 
-    χ_free(λ) = Σ_{(μ_1,...,μ_A), μ_i⊢3} f^{λ/(μ_1⊔...⊔μ_A)}
+    χ_free(λ) = Σ_{(μ_1,…,μ_A), μ_i ⊢ 3} c^λ_{μ_1,…,μ_A}
                 · Π_i χ^{μ_i}(K_i)
 
-This factorizes the atom character through per-nucleon H_3 channel
-characters weighted by skew-SYT counts. **Only 3^A terms** per λ
-(not matrix exponentiation).
+where `c^λ_{μ_1,…,μ_A} = ⟨s_{μ_1} · s_{μ_2} · … · s_{μ_A}, s_λ⟩`
+in the symmetric-function Hall inner product.
+
+> **Note (2026-05-30).** An earlier draft of this plan used
+> `f^{λ/(μ_1 ⊔ … ⊔ μ_A)}` (skew-SYT count of the sorted concatenation)
+> in place of the LR coefficient. **That formula is incorrect** —
+> see [`docs/audits/2026-05-30-universal-branching-multinucleon-gap.md`](../../docs/audits/2026-05-30-universal-branching-multinucleon-gap.md)
+> for counterexamples (e.g. λ=(2,2), μ_1=μ_2=(1,1): `f^{concat}=0`
+> but `c^λ=1`).
 
 For atom with inter-nucleon couplings, the inter-nucleon generators
 σ_j ∈ H_{3A} must be handled separately. Options:
@@ -86,9 +94,26 @@ def atom_character_branching(Z, N, m_pp, m_pn, m_nn, lambda_partition):
   (`f^{(4,3,2,1)} = 768`, `f^{(3,2,1)} = 16`) and Stanley EC2 §7.16
   skew examples (`f^{(3,2)/(1)} = 5`).
 
-- Inter-nucleon σ correction term needs derivation (not trivially
-  a product of H_3 characters). **Open.**
+  Note: this primitive computes the **single-K** universal-branching
+  case (`prop:universal-braid-branching` — one 3-strand braid
+  embedded in H_k). For A-nucleon tensors, use LR coefficients (see
+  Gap #2 + the [multinucleon gap audit](../../docs/audits/2026-05-30-universal-branching-multinucleon-gap.md)).
 
-Both are well-defined categorical quantities (per
-`prop:universal-braid-branching`); the inter-nucleon σ correction
-is the remaining piece.
+- ~~Inter-nucleon σ correction term needs derivation (not trivially
+  a product of H_3 characters).~~
+  **Closed 2026-05-30 (already implemented)** — the operator-valued
+  Wenzl branching identity (Wenzl 1988) is implemented in
+  [`canonical_tr_m_via_branching.py`](canonical_tr_m_via_branching.py)
+  consuming the LR table from
+  [`lr_coefficients.py`](lr_coefficients.py) and the cached
+  interface operators `A^λ_{ξν}(I)` from
+  [`A_operator_extract_at_level.py`](A_operator_extract_at_level.py).
+  The plan doc lagged the implementation; see the
+  [multinucleon gap audit](../../docs/audits/2026-05-30-universal-branching-multinucleon-gap.md)
+  for the full derivation context and a correction to the
+  "free baseline" formula above.
+
+Both Gap #1 and Gap #2 are now closed at the infra level. Remaining
+follow-up is **testing / witness emission** for the A-nucleon
+combiner at A=4 (⁴He) once the H_12 trio extracts land — a smaller
+scope than the original gap framing suggested.
