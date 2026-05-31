@@ -211,6 +211,58 @@ with a derivation from
 [`conj:kashaev-density-equals-sdp-multiplicity`](../../content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md)
 once the SDP-multiplicity Lean class is in place.
 
+## Why was the resolution missed? (post-mortem)
+
+The initial framing of this audit ($\rho_F = 2$ as "Open Math A",
+single-magic A=3 p/n asymmetry as "Open Math B") was wrong: both
+items had been structurally answered earlier in the framework. The
+miss came from scoping against a single source file's status note
+without cross-checking the broader corpus:
+
+- $\rho_F$ derivation: I read `binding-alpha-shift-extension.lean`
+  and `magic_A_formula.py` headers; both flagged $\rho_F$ as
+  "pending formal justification" / "open math". I did **not** grep
+  `docs/audits/` for the topic, where
+  [`2026-05-24-rule14-kashaev-density.md`](2026-05-24-rule14-kashaev-density.md)
+  recorded the owner-authorised resolution + the new content block
+  `conj:kashaev-density-equals-sdp-multiplicity`.
+- p/n asymmetry: I read `binding_shell_enhancement_derivation.py`'s
+  conclusion ("$f_T \neq f_{³He}$ — no scalar q-factor closes it");
+  framed this as "categorical object that carries p/n distinction
+  not yet identified". I did **not** check `brings-surface/` (where
+  [`conj:inter-nucleon-channel-color-tube`](../../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md)
+  identifies the structure) nor grep computations for
+  `bring_color_weighted` (where the substrate-pure formula
+  $f_{\mathrm{pn}} = z - h(1/2 - \delta/4)$ is already implemented
+  in `closed_form_tau_M.py`).
+
+**Pattern this session.** This is the *third* consecutive item in
+this session that was framed as open but turned out to be already-
+implemented: Track B Gap #2 (already in `canonical_tr_m_via_branching.py`,
+PR [#1515](https://github.com/litlfred/qou/pull/1515));
+α_shift A=4 instance (already in `lightNucleiForceCarrierKnot`,
+PR [#1532](https://github.com/litlfred/qou/pull/1532)); and now
+$\rho_F$ + p/n (this PR). Each time, the source file's stated
+"open" status was treated as authoritative without cross-checking
+the corpus.
+
+**Corrective discipline** (to apply going forward, before declaring
+any item "open"):
+
+1. `grep -rln <topic> docs/audits/` — prior owner-authorised
+   resolutions land as audit docs.
+2. Search the full `content/` tree for related conjectures and
+   propositions (especially in adjacent chapters — `brings-surface`,
+   `observations`, `mass-theory` cross over).
+3. Search `folio-assistant/computations/` for related Python:
+   `pn_convention`, `nu_sdp`, the topic keyword, etc.
+4. Cross-check the coordination ledger
+   `docs/coordination/<theme>.md` for the topic.
+
+The framework's own status notes lag the corpus by weeks or months;
+the corpus is the source of truth. This audit's reanalysis section
+above and the paper-block update reflect the corrected framing.
+
 ## A=3 (T, ³He) — what closes them? (reanalysed 2026-05-31)
 
 The p/n asymmetry **is** structurally answered by two existing pieces
