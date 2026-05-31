@@ -139,10 +139,21 @@ The conjecture has three sub-problems, in decreasing tractability:
    producing a surreal-valued unknot-density that varies with
    plate geometry. The natural candidate is the Yekutieli-
    homotopy lift of the link-projection functor restricted to
-   plate-bounded ambient isotopy — but no such construction has
-   been written. *Tractability: medium.* The plate boundary is a
+   plate-bounded ambient isotopy — the full lift has not been
+   written. *Tractability: medium.* The plate boundary is a
    conformal boundary condition on $\mathbb{R}^{3}$, which the
    substrate-conformal structure of QOU already accommodates.
+   The *trace functional* the lift must reduce to is, however,
+   pinned down by an **n-stability** criterion: a single-number
+   observable cannot depend on the mode-cutoff $n$, and among the
+   candidate functionals only the bare disjoint-component count is
+   $n$-stable (the Jones value $\delta^{n-1}$ of the $n$-unlink and
+   the unnormalised Wenzl sum $\sum_\lambda y_\lambda$ both diverge
+   in $n$; the normalised Markov trace is $\equiv 1$ for any
+   identity). Under the free-field $\leftrightarrow$ disjoint-unknot
+   identification (Maxwell linearity $\Rightarrow$ unbraided modes
+   $\Rightarrow$ no $y_\lambda$ weighting), the bare count is the
+   physical functional.
 
 2. **Scaling $A/d^{3} \cdot \varepsilon^{-1}$.** This is the
    standard-physics mode-count for parallel-plate Casimir. The
@@ -156,13 +167,18 @@ The conjecture has three sub-problems, in decreasing tractability:
 3. **Numerical prefactor $\pi^{2}/720$.** Recovers in standard
    physics from $\sum_{n\geq 1} n^{3}$ regularised to
    $\zeta(-3) = -B_{4}/4 = 1/120$ via $\zeta$-function
-   regularisation. The QOU analogue would be a Hecke-trace
-   identity on a specific subalgebra. Conjecturally derivable
-   from the Markov-trace structure on $H_{n}(q)$ at the plate-
-   boundary representation, but not proved. *Tractability: hard.*
-   This is the same kind of prefactor obstruction that appears
-   in [`prop:bohr-radius-categorical`](#prop:bohr-radius-categorical)
-   round-4 (option 4a — symbolic-$q$ recompute).
+   regularisation. Under the disjoint-unknot model selected in
+   sub-problem 1, the QOU mode-count carries the same geometric
+   per-level degeneracy $\propto n^{3}$ with **no** $y_\lambda$
+   weighting, so the prefactor follows from the *same* $\zeta(-3)$
+   together with the $k_\perp$ geometric factor:
+   $(\pi^{2}/6)\cdot|\zeta(-3)| = \pi^{2}/720$, with $q$ absent.
+   This is a derivation *conditional* on the disjoint-unknot
+   identification; the earlier expectation that the prefactor would
+   require a non-trivial Markov trace on $H_{n}(q)$ is superseded —
+   q-deformation re-enters only when modes braid (field
+   interactions), at the subleading $1/d^{6}$ order. *Tractability:
+   conditional on sub-problem 1.*
 
 ## Falsification path
 
@@ -216,8 +232,22 @@ existence and scaling) is rigorous and is formalised in
 `CasimirEpsilonVacuum.lean` as a §3b-cond conditional theorem with
 two class hypotheses (`VacuumEpsilon` and a new
 `PlateModeCount` class carrying the surreal-coefficient axiom).
-The plate-mode-count construction itself is not started; the
-numerical prefactor is a separate open sub-problem.
+
+The trace functional the plate-mode-count must carry is now
+identified — the bare disjoint-component count, selected by
+$n$-stability — and under the free-field $\leftrightarrow$
+disjoint-unknot identification the $\pi^{2}/720$ prefactor follows
+from $(\pi^{2}/6)\cdot|\zeta(-3)|$ with no substrate dependence.
+The substrate-correction series is then trivial at leading order
+($\xi_{0}=1$, $\xi_{k}=0$ for $k\ge 1$ on the $1/d^{4}$ term),
+with q-corrections relocated to the $1/d^{6}$ (interacting-mode)
+order. What remains open is (i) the free-field
+$\leftrightarrow$ disjoint identification itself, presently a
+modeling statement rather than a QOU theorem, and (ii) the full
+Yekutieli-homotopy lift realising the categorical object. The
+selection argument and the prefactor derivation are recorded in
+the [N\_⊙-construction audit](../../../docs/audits/2026-05-31-casimir-n-unknot-construction.md)
+(see also the [ξ\_2 reconciliation](../../../docs/audits/2026-05-31-casimir-xi-2-reconciliation.md)).
 
 ## See also
 
