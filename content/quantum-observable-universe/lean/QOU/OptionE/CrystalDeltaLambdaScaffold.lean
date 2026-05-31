@@ -61,6 +61,10 @@ Refs:
 
 import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic
+import QOU.OptionE.CrystalGraph
+import QOU.OptionE.RungSelection
+import QOU.OptionE.DeltaLambda
+import QOU.OptionE.DeuteronVerification
 
 namespace QOU.OptionE
 

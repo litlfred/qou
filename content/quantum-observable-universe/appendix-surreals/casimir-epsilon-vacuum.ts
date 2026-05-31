@@ -31,11 +31,14 @@ export default conjecture({
     "open-problem",
   ],
   computation: {
+    engine: "python",
+    script: "folio-assistant/computations/casimir_hoefsmit_additivity_probe.py",
     witness: [
       "folio-assistant/computations/casimir-epsilon-vacuum-probe.witness.json",
       "folio-assistant/computations/casimir-hoefsmit-additivity-probe.witness.json",
       "folio-assistant/computations/casimir-q-zeta-probe.witness.json",
     ],
+    status: "experimental",
   },
   authorNotes: [
     {
