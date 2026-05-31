@@ -1,20 +1,29 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-27T15:31:26.399929+00:00",
-  "commitSha": "2191707003c4be56d6bea00be950dfb8f0686c11",
+  "computedAt": "2026-05-31T04:39:18.840642+00:00",
+  "commitSha": "50e94b3a111bbefe17aac7fa982c12ee32132cbf",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "light-isotope-sweep",
   "scriptFile": "light_isotope_sweep.py",
   "scriptHash": "64be69537e0e",
-  "scriptCommitSha": "bb9f94d14848134d7e4a74a7cbeff1526c75b8fc",
+  "scriptCommitSha": "626c2bb856bbfa1ca647bd7d5bc36c8113f8825e",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
-    "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 15,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Schur-Weyl + Frobenius binding predictions for light isotopes (D, T, ³He, ⁴He) with β-decay calibration at A=1. Tests three Frobenius-scaling hypotheses: per-vortex (universal, +1·Frob), per-bond (+(A-1)·Frob), per-nucleon (+A·Frob). Per-vortex is the universal interpretation from thm:frobenius-codim-universal; the others are candidate scalings to test empirically.",
   "convention": "plancherel",
@@ -26,16 +35,16 @@
     "prop:partition-sum-proton-residual"
   ],
   "parameters": {
-    "q_0": 1.1099785955541805,
+    "q_0": 1.1099785827513808,
     "m_e_MeV": 0.51099895,
-    "h_q_val": 0.20906032198987945,
-    "frobenius_n3_per_vortex_MeV": 1.2761128463443179,
-    "E_0_MeV": 7.390664060395216
+    "h_q_val": 0.20906029879563937,
+    "frobenius_n3_per_vortex_MeV": 1.2761128466490388,
+    "E_0_MeV": 7.390664900738934
   },
   "A1_calibration": {
-    "tr_p_q0": 0.7022507726245328,
-    "tr_n_q0": 0.5963964943611819,
-    "Q_cat": -0.10585427826335092
+    "tr_p_q0": 0.7022506773529952,
+    "tr_n_q0": 0.5963964111256355,
+    "Q_cat": -0.10585426622735972
   },
   "rows": [
     {
@@ -43,116 +52,116 @@
       "Z": 1,
       "N": 1,
       "A": 2,
-      "tr_free_q0": 0.4256701505198475,
-      "tr_atom_q0": 0.005400322224014614,
-      "B_pred_MeV": 3.106073115654481,
+      "tr_free_q0": 0.4256700318538424,
+      "tr_atom_q0": 0.005400320230200628,
+      "B_pred_MeV": 3.106072606540523,
       "B_AME_MeV": 2.22457,
-      "err_pct_raw": 39.62577557255924,
+      "err_pct_raw": 39.62575268661013,
       "plus_frob": {
         "per_vortex": {
-          "value": 4.382185961998799,
-          "err_pct": 96.99024809283586
+          "value": 4.382185453189562,
+          "err_pct": 96.99022522058475
         },
         "per_bond": {
-          "value": 4.382185961998799,
-          "err_pct": 96.99024809283586
+          "value": 4.382185453189562,
+          "err_pct": 96.99022522058475
         },
         "per_nucleon": {
-          "value": 5.658298808343117,
-          "err_pct": 154.35472061311253
+          "value": 5.6582982998386,
+          "err_pct": 154.35469775455934
         }
       },
       "best_frob_scaling": "per-vortex (+1·Frob)",
-      "best_value": 4.382185961998799,
-      "best_err_pct": 96.99024809283586,
-      "walltime_sec": 0.003961324691772461
+      "best_value": 4.382185453189562,
+      "best_err_pct": 96.99022522058475,
+      "walltime_sec": 0.003453969955444336
     },
     {
       "iso": "T",
       "Z": 1,
       "N": 2,
       "A": 3,
-      "tr_free_q0": 0.28812639179613625,
-      "tr_atom_q0": 0.00041595502450810293,
-      "B_pred_MeV": 2.1263711848486824,
+      "tr_free_q0": 0.2881262634553054,
+      "tr_atom_q0": 0.00041595475895675444,
+      "B_pred_MeV": 2.1263704800628678,
       "B_AME_MeV": 8.4818,
-      "err_pct_raw": -74.93018952523424,
+      "err_pct_raw": -74.93019783462394,
       "plus_frob": {
         "per_vortex": {
-          "value": 3.4024840311930005,
-          "err_pct": -59.88488255803013
+          "value": 3.4024833267119066,
+          "err_pct": -59.88489086382718
         },
         "per_bond": {
-          "value": 4.678596877537318,
-          "err_pct": -44.83957559082602
+          "value": 4.678596173360946,
+          "err_pct": -44.83958389303042
         },
         "per_nucleon": {
-          "value": 5.954709723881637,
-          "err_pct": -29.79426862362191
+          "value": 5.954709020009984,
+          "err_pct": -29.794276922233674
         }
       },
       "best_frob_scaling": "per-nucleon (+A·Frob)",
-      "best_value": 5.954709723881637,
-      "best_err_pct": -29.79426862362191,
-      "walltime_sec": 0.2171769142150879
+      "best_value": 5.954709020009984,
+      "best_err_pct": -29.794276922233674,
+      "walltime_sec": 0.19355320930480957
     },
     {
       "iso": "3He",
       "Z": 2,
       "N": 1,
       "A": 3,
-      "tr_free_q0": 0.33928178340865855,
-      "tr_atom_q0": 0.0003963873332270496,
-      "B_pred_MeV": 2.5045881173674895,
+      "tr_free_q0": 0.3392816335959009,
+      "tr_atom_q0": 0.00039638707897087194,
+      "B_pred_MeV": 2.5045872968109357,
       "B_AME_MeV": 7.71806,
-      "err_pct_raw": -67.54899395226923,
+      "err_pct_raw": -67.54900458391182,
       "plus_frob": {
         "per_vortex": {
-          "value": 3.7807009637118076,
-          "err_pct": -51.01487985696137
+          "value": 3.7807001434599745,
+          "err_pct": -51.01489048465581
         },
         "per_bond": {
-          "value": 5.056813810056125,
-          "err_pct": -34.48076576165351
+          "value": 5.056812990109013,
+          "err_pct": -34.480776385399786
         },
         "per_nucleon": {
-          "value": 6.332926656400444,
-          "err_pct": -17.94665166634564
+          "value": 6.3329258367580525,
+          "err_pct": -17.94666228614377
         }
       },
       "best_frob_scaling": "per-nucleon (+A·Frob)",
-      "best_value": 6.332926656400444,
-      "best_err_pct": -17.94665166634564,
-      "walltime_sec": 0.19541287422180176
+      "best_value": 6.3329258367580525,
+      "best_err_pct": -17.94666228614377,
+      "walltime_sec": 0.1880340576171875
     },
     {
       "iso": "4He",
       "Z": 2,
       "N": 2,
       "A": 4,
-      "tr_free_q0": 0.2797677702839086,
-      "tr_atom_q0": 3.718718253334805e-05,
-      "B_pred_MeV": 2.067394767120731,
+      "tr_free_q0": 0.2797675887533283,
+      "tr_atom_q0": 3.718714714701917e-05,
+      "B_pred_MeV": 2.06739366082041,
       "B_AME_MeV": 28.29569,
-      "err_pct_raw": -92.69360539672039,
+      "err_pct_raw": -92.69360930650424,
       "plus_frob": {
         "per_vortex": {
-          "value": 3.343507613465049,
-          "err_pct": -88.18368587772537
+          "value": 3.3435065074694488,
+          "err_pct": -88.18368978643232
         },
         "per_bond": {
-          "value": 5.895733306153685,
-          "err_pct": -79.16384683973536
+          "value": 5.895732200767526,
+          "err_pct": -79.16385074628847
         },
         "per_nucleon": {
-          "value": 7.171846152498002,
-          "err_pct": -74.65392732074037
+          "value": 7.171845047416565,
+          "err_pct": -74.65393122621656
         }
       },
       "best_frob_scaling": "per-nucleon (+A·Frob)",
-      "best_value": 7.171846152498002,
-      "best_err_pct": -74.65392732074037,
-      "walltime_sec": 10.765191793441772
+      "best_value": 7.171845047416565,
+      "best_err_pct": -74.65393122621656,
+      "walltime_sec": 10.540103197097778
     }
   ]
 }
