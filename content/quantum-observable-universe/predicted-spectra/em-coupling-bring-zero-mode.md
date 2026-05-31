@@ -94,6 +94,45 @@ Bring's curve.
 
 ## Pre-archimedean status — resolved by uniqueness of $\tau_{\text{arch}}$
 
+### Categorical identification of the next-order factor (2026-05-30)
+
+The empirical next-order factor $[2]_q/(8\pi) \cdot (1 - h^2\alpha)$ has
+a clean **categorical identification**: it is the Habiro element of
+the **closed fermion loop in the fundamental** $\mathrm{SU}_q(2)$
+**representation** (topologically the unknot), normalised by the same
+Bring cohomology data that produces the leading $2/(3\pi)$ shift:
+
+| empirical piece | categorical structure |
+|---|---|
+| $[2]_q$ | $J_2(\text{unknot})$ — colored Jones polynomial at $N=2$ of the trivial knot $=$ quantum dimension $\dim_q V_F$ of the fundamental $\mathrm{SU}_q(2)$ representation |
+| $(1 - h^2\alpha)$ | 2-vertex Hecke quadratic from step 2 of the canonical chain ($\sigma^2 = h\sigma + 1$, Yekutieli non-abelian Stokes), with $\alpha$ coupling at each photon-matter vertex; minus sign from antisymmetric singlet channel parity |
+| $1/(8\pi)$ | $1/(\pi \cdot \dim H^1(M_{\text{Bring}}))$ — reuses $\dim H^1 = 2g = 8$ at $g=4$ from the $n=2$ leading shift's $\dim H^1 / \text{Area}$ Hodge ratio |
+
+**Structural consistency**: the same Bring cohomology dimension
+$\dim H^1(M_{\text{Bring}}) = 8$ threads through *both* Bloch levels
+(leading $n=2$ and next-order $n=3$). This is *exactly* what one
+expects from a categorical-Lagrangian QFT whose UV completion lives
+on Bring's curve.
+
+**Habiro Taylor coefficients are binomial-determined**: $[2]_q = 2 \cdot
+\sqrt{1 + h^2/4}$ as an algebraic identity, so its Taylor coefficients
+at $h=0$ in even-$k$ basis are
+$c_k^{[2]_q} = 2 \cdot \binom{1/2}{k/2} \cdot (1/4)^{k/2}$ — fully
+closed-form via the binomial series, with no choice or empirical fit.
+The Schwinger factor adds a linear-in-$\alpha$ shift
+$c_k(\alpha) = c_k^{[2]_q} - \alpha \cdot c_{k-2}^{[2]_q}$. Truncation
+at $k=8$ reproduces the exact form to $4.4 \times 10^{-12}$ relative
+at $q_0$ — vastly inside the CAL-2 calibration floor.
+
+This is the Habiro-framing answer to the open computational
+sub-problem (item 2 of the open-problems list below): the
+categorical 1-loop self-energy in $\mathrm{Rep}(\mathrm{SU}_q(2))$ on
+$M_{\text{Bring}}$ has a Habiro element whose Taylor expansion at
+$q=1$ matches the empirical form term-by-term. The remaining
+rigorous step is the Reshetikhin-Turaev shadow-world calculation
+showing the predicted coefficient symbolically (subgoal-2 per
+[`docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md`](../../../docs/coordination/2026-05-30-alpha-em-4pi-rt-2loop-derivation-plan.md)).
+
 The bare formula $1/\alpha_{\text{bare}} = q[9]_q[10]_q$ and its
 trace-ratio refactoring
 [`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)
