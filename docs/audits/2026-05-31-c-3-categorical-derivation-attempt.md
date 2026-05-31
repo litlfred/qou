@@ -147,9 +147,20 @@ useful partial probe but does not promote c_3 to Taylor-exact alone.
 | c_3 tier verdict | **stays `near-match`** per #1479 discipline |
 | Wire/un-wire flip-flop reopened? | **NO** — the truncation-order framing covers it |
 
+## Sibling cross-reference — PR #1581 Finding B reframing
+
+Sibling PR [#1581](https://github.com/litlfred/qou/pull/1581) (three-dashboard-probes) Finding B independently audited the c_3 q₀-stability question and concluded:
+
+> Rule A (c_3 = J_Hopf(q=1) = −2 constant) is the only structurally legitimate Taylor coefficient. Rule B (c_3 = J_Hopf(q_0) = −2.044 evaluation) is q_0-DEPENDENT, which by definition disqualifies it as a Taylor coefficient of a q-series. The "3.47% m_p-pin swing" the deep audit attributed to c_3 being mis-wired is actually Rule B's q-dependence — **= bounded c_4·u⁴ truncation error**, NOT evidence c_3 is wrong.
+
+**This audit's NEGATIVE result is consistent with #1581 Finding B.** I attempted to find a single-formula categorical candidate that matches the empirical c_3(q_0) at BOTH anchors to ≤ 10 ppm — equivalent to trying to derive the apparent q-dependence. #1581 Finding B explains *why* this had to fail: the apparent q-dependence isn't a property of c_3, it's the missing-c_4 truncation noise leaking into the c_3 extraction.
+
+The combined verdict: **c_3 = −2 IS the correct Taylor coefficient (Rule A), and the open work is identifying the Habiro generating function (per PR #1511 α_EM template)**, not deriving a "q-running c_3".
+
 ## Cross-references
 
 - Canonical framing: [`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
+- Sibling reframing (Rule A is legitimate; swing is c_4 truncation): PR [#1581](https://github.com/litlfred/qou/pull/1581) Finding B
 - Bridge narrowing (6 mechanisms ruled out at the Q_β chain level): [`2026-05-31-qbeta-bridge-narrowing.md`](2026-05-31-qbeta-bridge-narrowing.md)
 - Cached cal-anchored c_3: [`qbeta-ck-cache.witness.json`](../../folio-assistant/computations/qbeta-ck-cache.witness.json)
 - α_EM Habiro precedent: PR #1511 (merged), [`alpha_em_habiro_taylor_investigation.py`](../../folio-assistant/computations/alpha_em_habiro_taylor_investigation.py)
