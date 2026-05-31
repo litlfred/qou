@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-30T02:39:32.107108+00:00",
+  "computedAt": "2026-05-31T13:41:58.731953+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -407,6 +407,30 @@
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "cal3_target = mp.mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_delta_tr_vs_formA.py",
+        "line": 124,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_codata = mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_habiro_taylor_investigation.py",
+        "line": 152,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_codata = mpf(\"0.78233341\")",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_scaling_bridge_investigation.py",
+        "line": 80,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_codata = mp.mpf(\"0.78233341\")",
         "kind": "active"
       }
     ],
@@ -1209,7 +1233,7 @@
       },
       {
         "file": "folio-assistant/computations/habiro_exact_qbeta.py",
-        "line": 72,
+        "line": 89,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "Q_beta_codata = mp.mpf(str(Q_BETA_MEV))",
@@ -1333,6 +1357,30 @@
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "q_beta_codata = float(Q_BETA_MEV)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_ck_cache.py",
+        "line": 57,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_ck_cache.py",
+        "line": 66,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_codata = mpf(str(Q_BETA_MEV))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_ck_cache.py",
+        "line": 197,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "wb.add_data(\"Q_codata\", str(Q_BETA_MEV))",
         "kind": "active"
       },
       {
