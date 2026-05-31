@@ -8,6 +8,28 @@ The full Lean statement and proof are pending; this stub exists so the
 declaration in the `qou` Lake package. The body is `sorry` carrying
 the manuscript citation per CLAUDE.md §1.
 
+## Cross-reference: SDP-uniqueness wiring
+
+Each atlas entry (atom / isotope / element) has a corresponding
+sorry-free SDP-uniqueness theorem via the parameterised
+`NucleusEmptySDPUniqueness` module (PR #1537). Named wrappers:
+
+- QOU R5-full nuclei (10): `QOU.BraidKnot.Applied<Nucleus>Uniqueness`
+- All 118 elements at AME2020 ref isotope:
+  `QOU.BraidKnot.PeriodicTableUniqueness` (e.g. `he_uniqueness_closed`)
+- All 252 stable nuclides (PR #1542):
+  `QOU.BraidKnot.StableIsotopeUniqueness` (e.g. `c12_uniqueness_closed`,
+  `fe56_uniqueness_closed`, `pb208_uniqueness_closed`)
+- Generic: `@QOU.BraidKnot.nucleus_uniqueness_closed (3*A)`
+
+Atlas-entry consumers can pick the appropriate granularity. See the
+atlas content block's "SDP-uniqueness wiring (Lean side)" section
+for the layer-by-layer table.
+
+-- Ref: [manuscript] prop:recursive-atom-knot-atlas
+-- Ref: PR #1537 (parameterised SDP uniqueness)
+-- Ref: PR #1542 (252-stable-isotope coverage)
+
 Note: the chapter-dir uses singular `QOU.BraidKnot` for most blocks;
 this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 `.ts` lean.ref URIs (a pre-existing convention drift).

@@ -383,6 +383,43 @@ inside `mpmath.workdps(50)`. Updates to any input propagate via
 [`witness_staleness_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/witness_staleness_tracker.py)
 to the rendered appendix on the next `bun run build`.
 
+## SDP-uniqueness wiring (Lean side)
+
+Each atlas entry has a corresponding **sorry-free SDP-uniqueness
+theorem** in the Lean side, via the parameterised
+`NucleusEmptySDPUniqueness` module ([PR #1537](https://github.com/litlfred/qou/pull/1537),
+landed) and its three specialisation layers. For any nucleus
+characterised by mass number $A$ (yielding strand count $n = 3A$),
+the canonical $T_w$ knot operator's uniqueness at the
+empty-constraint SDP demonstration level is certified by:
+
+$$
+\verb|nucleus_uniqueness_closed|\ (3A)\ : \ \text{(sorry-free, axiom-free)}
+$$
+
+Named wrappers exist at multiple granularity layers:
+
+| Granularity | Lean file | Coverage |
+|---|---|---|
+| QOU-tracked R5-full nuclei | `Applied<Nucleus>Uniqueness.lean` (10 files) | ²H, ³H, ³He, ⁴He, ⁶Li, ⁹Be, ¹¹B, ¹²C, ¹⁴N, ¹⁶O |
+| Per-element (AME2020 ref) | `PeriodicTableUniqueness.lean` | 118 elements H..Og |
+| Per-stable-isotope | `StableIsotopeUniqueness.lean` (PR #1542) | 252 stable nuclides H..Bi |
+| Generic | `NucleusEmptySDPUniqueness.lean` | Any $n : \mathbb{N}$ |
+
+Usage example for any atlas entry: cite `qou:QOU.BraidKnot.<isotope>_uniqueness_closed`
+in the corresponding `.lean` content block's docstring. For atoms
+beyond the named-isotope set, consumers can directly use
+`@nucleus_uniqueness_closed (3*A)` with the appropriate $A$ value
+from the atlas entry.
+
+**What this wiring certifies**: the *abstract framework demonstration*
+of $T_w$ uniqueness at the empty-constraint SDP for the
+nucleus's strand count. The **real per-nucleus SDP** (with
+non-empty constraints from the mass formula and multi-term cost)
+is per-nucleus substantive open work — see
+[`docs/coordination/2026-05-30-sdp-uniqueness-status.md`](https://github.com/litlfred/qou/blob/main/docs/coordination/2026-05-30-sdp-uniqueness-status.md)
+for the gating analysis.
+
 ## Open
 
 - **Principled derivation for ${}^{6}$Li, ${}^{7}$Li (and any new atom)**: the only
