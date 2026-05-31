@@ -148,8 +148,8 @@ export default chapter({
         "mirror-3d-3d-correspondence",
         "modular-s-transform-q-q-tilde",
         "mutant-jones-bloch-group-intro",
-        "quantum-langlands-dual",        "outro-q-geometric-langlands",
-
+        "quantum-langlands-dual",
+        "outro-q-geometric-langlands",
       ],
     }),
   ],

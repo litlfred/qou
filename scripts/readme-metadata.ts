@@ -35,12 +35,14 @@ async function getPapers(): Promise<PaperInfo[]> {
       await stat(manifest);
     } catch { continue; }
     const src = await readFile(manifest, "utf-8");
-    const titleMatch = src.match(/title:\s*["']([^"']+)["']/);
-    const abstractMatch = src.match(/abstract:\s*\n?\s*["']([^"']+)["']/);
+    // Backreferenced quote: an apostrophe inside a double-quoted title
+    // (e.g. `title: "Bring's Surface"`) must not terminate the match.
+    const titleMatch = src.match(/title:\s*("|')((?:\\.|(?!\1).)*)\1/);
+    const abstractMatch = src.match(/abstract:\s*\n?\s*("|')((?:\\.|(?!\1).)*)\1/);
     papers.push({
-      title: titleMatch?.[1] ?? dir,
+      title: titleMatch?.[2] ?? dir,
       dir,
-      abstract: abstractMatch?.[1],
+      abstract: abstractMatch?.[2],
     });
   }
   return papers;
@@ -62,8 +64,8 @@ async function getChapters(): Promise<ChapterInfo[]> {
     let title = dir;
     try {
       const chSrc = await readFile(chapterTs, "utf-8");
-      const m = chSrc.match(/title:\s*["']([^"']+)["']/);
-      if (m) title = m[1];
+      const m = chSrc.match(/title:\s*("|')((?:\\.|(?!\1).)*)\1/);
+      if (m) title = m[2];
     } catch {}
 
     const kind = dir.startsWith("appendix-") ? "appendix"

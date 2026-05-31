@@ -54,7 +54,7 @@ the **Directory** column links to the source content objects.
 | 4 | `models-of-qous/` | Models of QOUs | [models-of-qous.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/models-of-qous.pdf) |
 | 5 | `lifting-and-descent/` | Lifting and Descent | [lifting-and-descent.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/lifting-and-descent.pdf) |
 | 6 | `braids-and-knots/` | Braids and Knots | [braids-and-knots.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/braids-and-knots.pdf) |
-| 7 | `brings-surface/` | Bring | [brings-surface.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/brings-surface.pdf) |
+| 7 | `brings-surface/` | Bring's Surface | [brings-surface.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/brings-surface.pdf) |
 | 8 | `mass-endomorphism/` | The Mass Endomorphism | [mass-endomorphism.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/mass-endomorphism.pdf) |
 | 9 | `particle-interactions/` | Particle Interactions and Nuclear Structure | [particle-interactions.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/particle-interactions.pdf) |
 | 10 | `climax-volume-mass/` | q-Hyperbolic Geometry | [climax-volume-mass.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/climax-volume-mass.pdf) |
