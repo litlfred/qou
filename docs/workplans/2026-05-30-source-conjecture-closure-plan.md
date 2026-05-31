@@ -257,3 +257,28 @@ into focus.
 **Phase 2 infra started**: Sprint 1 (`QOU.IwahoriHecke.Defn`
 skeleton, PR #1510) + Sprint 2 (`QOU.IwahoriHecke.Quotient`
 concrete quotient construction, in-progress PR).
+
+### 2026-05-30 — Phase 1 + Phase 2 second wave
+
+| PR | closure | tier | sprint | downstream users freed |
+|---|---|---|---|---:|
+| #1518 | `conj:reverse-limit-q-to-infinity` → `thm:` | B | Sprint 3 | 1 |
+| #1518 | `conj:gs-graded-markov-trace-existence` → `thm:` | B | Sprint 4 | 1 |
+| (this PR) | `conj:hecke-anyonic-substrate` → `thm:` | B | Sprint 2 follow-up | 2 |
+| (this PR) | `conj:hoefsmit-ew-cell-content` → `thm:` | B | Sprint 5 | 2 |
+
+**Cumulative closures across both waves**: 6 (`pontryagin`,
+`averaging`, `reverse-limit`, `gs-graded`, `hecke-anyonic`,
+`hoefsmit-ew`).
+
+**Cascade after second wave**: 100 → ~96 conjs, 56 → ~54 source
+nodes. Newly-source: `conj:gs-residue-at-root-existence`
+(exposed by Sprint 4's `gs-graded` closure).
+
+**Phase 2 status**: Sprints 1-5 all have at least skeleton-level
+content, with structural closures of the 4 corresponding Tier-B
+conjectures via §3b-cond classes. Concrete numerical content
+(braid relations, Matsumoto well-definedness, cell-content
+recurrence, operator-valued `A^λ_{μν}(I)`) remains for follow-up
+sprints once Mathlib's `CoxeterSystem` order-accessor API
+stabilises.

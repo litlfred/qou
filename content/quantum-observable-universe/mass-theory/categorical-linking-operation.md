@@ -334,7 +334,7 @@ $$
 
 The mass of the post-EWSB boson is the Markov trace of this
 endomorphism, weighted by the appropriate Hoefsmit projector
-([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).
+([`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)).
 
 ### Proof of Property 4 (trace-cut symmetry)
 
@@ -487,7 +487,7 @@ guarantee far-commutativity), the operation $\mathrm{Lk}_R^{(k)}(a,
 b)$ reduces to multiplication of the corresponding
 $\sigma_i^{2 k_a} \cdot \sigma_j^{2 k_b}$ in $H_n(q)$ — exactly
 the form used in
-[`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)
+[`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)
 for the EW carriers $W \leftrightarrow \sigma_1^4, Z
 \leftrightarrow \sigma_3^6, H \leftrightarrow \sigma_5^8$ in
 $B_6$.

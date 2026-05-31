@@ -1,10 +1,10 @@
-import { conjecture } from "../../schema/builders";
+import { theorem } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:hecke-anyonic-substrate",
+export default theorem({
+  label: "thm:hecke-anyonic-substrate",
   title:
     "Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation",
-  lean: { ref: "qou:QOU.BraidKnot.HeckeAnyonicSubstrate", validation: "stub" },
+  lean: { ref: "qou:QOU.IwahoriHecke.Tw.HeckeAnyonicSubstrate", validation: "stub" },
   uses: [
     "def:hecke-normal-form",
     "def:observation",
@@ -21,5 +21,7 @@ export default conjecture({
     "hecke-algebra",
     "topological-statistics",
     "observation-frame",
+    "closure-tier-b",
+    "phase-2-sprint-2-followup-discharge",
   ],
 });

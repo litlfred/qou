@@ -3,7 +3,7 @@
 generic (not a root of unity in $R$, $q \neq 1$). Under the
 Hoefsmit cell-content identification of the EW triplet inside
 $\mathrm{End}_R(V^{\otimes 6})$
-([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)):
+([`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)):
 $W \leftrightarrow \sigma_1^4$, $Z \leftrightarrow \sigma_3^6$,
 $H \leftrightarrow \sigma_5^8$, the Standard Model **Weinberg
 angle** $\theta_W$ is the categorical scalar in $R$ given by*
@@ -87,7 +87,7 @@ the CODATA target 1.823.
 This discrepancy confirms that the **simple uniform-multiplicity
 reading is wrong** (consistent with the cell-content / Plancherel
 demotion in
-[`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).
+[`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)).
 A correct categorical derivation must:
 
 1. Use the **non-uniform** pure-pattern multiplicities
@@ -124,7 +124,7 @@ to a `proposition`, the authoring sequence is:
 
 1. Discharge [`conj:categorical-linking-operation`](#conj:categorical-linking-operation)
    first — needed to formalise the $W^3$–$B$ interaction.
-2. Discharge [`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)
+2. Discharge [`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)
    structural assignment (which slot is $W^3$ vs $B$).
 3. Compute $\cos\theta_W, \sin\theta_W$ from the corrected
    Hoefsmit-projector traces (using non-uniform multiplicities

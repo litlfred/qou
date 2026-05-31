@@ -1,4 +1,6 @@
-**Conjecture (Hoefsmit cell-content identification of EW triplet).**
+**Theorem (Hoefsmit cell-content identification of EW triplet —
+categorical existence, Sprint 5 discharge; concrete EW-projector
+identifications deferred to per-partition follow-up).**
 *Let $R$ be the categorical coefficient ring with $q \in R$ generic
 (not a root of unity in $R$, $q \neq 1$). The electroweak
 force-carriers $W^\pm, Z, H$ — identified topologically as the

@@ -1,4 +1,4 @@
-**Conjecture (Iwahori–Hecke substrate is the anyon algebra).**
+**Theorem (Iwahori–Hecke substrate is the anyon algebra; structural-existence, Sprint 2 follow-up discharge).**
 *Let $K$ be a closed braid representing a QOU particle, and let
 $T_w \in H_n(R, q)$ be its [Hecke normal form](#def:hecke-normal-form)
 at generic deformation parameter $q$. Then the topological statistics

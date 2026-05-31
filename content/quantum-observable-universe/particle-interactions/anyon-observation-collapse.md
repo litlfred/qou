@@ -4,7 +4,7 @@ indexed by the deformation parameter $q$:*
 
 | $q$ regime | Substrate state | Observation image |
 |---|---|---|
-| Generic $q$ ([anyonic substrate](#conj:hecke-anyonic-substrate)) | Abelian anyons in $H_n(R, q)$ | Topological braiding matrices |
+| Generic $q$ ([anyonic substrate](#thm:hecke-anyonic-substrate)) | Abelian anyons in $H_n(R, q)$ | Topological braiding matrices |
 | $q = e^{2\pi i / k}$ ([MTC truncation](#conj:root-of-unity-mtc-truncation)) | Non-abelian anyons in $\mathrm{MTC}_k$ | Finite fusion / $F$- and $R$-matrices |
 | $q \to 1$ ([KL classical limit](#conj:kazhdan-lusztig-classical-limit)) | Symmetric-group representations | Pauli ($\pm 1$) statistics |
 

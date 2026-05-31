@@ -91,7 +91,7 @@ $\tilde w_\lambda = \dim_q^2/[n]_q!$.
 The mass of the post-EWSB boson is the Markov-trace eigenvalue of
 its 2-component-link image, weighted by the Hoefsmit cell-content
 projector
-([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).
+([`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)).
 Specifically, the rest-mass energy is
 
 $$
