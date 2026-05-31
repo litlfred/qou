@@ -9,8 +9,8 @@ export default conjecture({
     validation: "stub",
   },
   uses: [
-    "prop:vacuum-epsilon",
-    "prop:archimedean-stpart",
+    "conj:vacuum-epsilon",
+    "conj:archimedean-stpart",
     "def:standard-part-functor",
   ],
   cites: [
