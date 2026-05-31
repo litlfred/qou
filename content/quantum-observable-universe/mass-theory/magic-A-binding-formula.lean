@@ -77,12 +77,26 @@ class CatalanPrefactor (R : Type u) [Field R] where
     formula `B(Z, N) = ρ_F · m_e · A · 8G` for doubly-magic (Z, N).
     The class field `formula` records the binding evaluation.
 
-    Open math (per audit
-    `docs/audits/2026-05-31-binding-magic-A-wireup.md`):
-    1. Derive `ρ_F = 2` for ⁴He from
-       `prop:gravity-spectral-prefactor` + categorical chain.
+    Reanalysis (2026-05-31, see audit
+    `docs/audits/2026-05-31-binding-magic-A-wireup.md`): the
+    derivation of `ρ_F` was previously framed here as Open Math A,
+    but is structurally answered by
+    `conj:kashaev-density-equals-sdp-multiplicity` (RESOLVED
+    2026-05-24, Rule-14 owner-authorised): `ρ_F = ν_SDP` (joint-
+    tower SDP Wedderburn multiplicity), driver (x) of the canonical
+    13-menu. The class hypothesis below can be replaced (Sprint 2)
+    with a derivation from the SDP-multiplicity Lean class once it
+    is in place. Only the numerical verification
+    `ν_SDP(⁴He) = 2` (joint-tower SDP solver extension) remains
+    open; structural derivation is closed.
+
+    Remaining R&D follow-up:
+    1. Extend joint-tower SDP solver to confirm `ν_SDP(⁴He) = 2`
+       (currently extrapolated from the SDP-confirmed D, T, ³He
+       census).
     2. Extend to higher-A doubly-magic candidates (¹⁶O Z=N=8,
-       ⁴⁰Ca Z=N=20) by deriving each `ρ_F`.
+       ⁴⁰Ca Z=N=20) by computing each `ν_SDP` via the same SDP
+       infrastructure.
 
     The class hypothesis is sorry-free per §3b-cond: any instance
     discharges `formula` definitionally for its specific (Z, N). -/
