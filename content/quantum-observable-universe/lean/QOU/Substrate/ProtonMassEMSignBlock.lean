@@ -43,6 +43,7 @@ as an explicit hypothesis until the structural derivation lands.
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pi
+import Mathlib.Tactic
 
 namespace QOU
 namespace Substrate

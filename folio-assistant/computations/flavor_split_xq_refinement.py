@@ -37,8 +37,15 @@ sys.path.insert(0, str(HERE))
 
 from _h4_substrate import M_E_MEV, M_P_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+import experimental_constants as _ec  # noqa: E402
 from q_parameter import q_at, q_str  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+
+# Derive m_n from the 3-input scheme: m_n = m_p + m_e + Q_neutron
+# (per repo convention; avoids P31 hard-coded CODATA literal flag)
+import mpmath as _mp_for_neutron  # noqa: E402
+
+M_N_MEV = M_P_MEV + M_E_MEV + _mp_for_neutron.mpf(repr(_ec.Q_NEUTRON_MEV))
 
 
 def main() -> int:
@@ -51,8 +58,7 @@ def main() -> int:
     print("=" * 78)
     print(f"\nq_0 = {q_str(DPS)}\n")
 
-    # CODATA targets
-    M_N_MEV = mp.mpf("939.56542052")  # PDG 2024
+    # CODATA targets (m_n derived from m_p + m_e + Q_neutron at module top)
     M_N_MEV_avg = (M_P_MEV + M_N_MEV) / 2
     delta_target = (M_N_MEV - M_P_MEV) / M_N_MEV_avg
     print(f"[CODATA target]")
