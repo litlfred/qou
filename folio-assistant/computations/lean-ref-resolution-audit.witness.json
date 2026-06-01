@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:35:58.328095+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T06:04:41.247052+00:00",
+  "commitSha": "5e18e71e3dd55e8f5ac767e09bd8a5ce0e4bb8f5",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,8 +15,8 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 1000.0,
-      "expected": 1020.0,
+      "computed": 1001.0,
+      "expected": 1021.0,
       "passed": false,
       "tolerance": 0.0,
       "unit": "count (gates only at full closure)",
@@ -24,16 +24,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "a0c94bc39a15",
   "scriptCommitSha": "c92c9c82cba04187e5a95410c6644dc067e0ff50",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -45,11 +45,11 @@
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_blocks_with_lean_ref": 1020
+    "total_blocks_with_lean_ref": 1021
   },
   "data": {
     "by_result": {
-      "ok": 1000,
+      "ok": 1001,
       "sibling_no_decl": 19,
       "lake_root_no_decl": 1
     },
@@ -1140,6 +1140,25 @@
         "grep_hit_under_lake_root": true,
         "result": "ok",
         "resolved_via": "lake_root"
+      },
+      {
+        "path": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts",
+        "ref": "qou:QOU.BraidKnot.CyclotomicStrandDoubling.cyclotomic_8_eq_cyclotomic_4_comp_X_sq",
+        "kind": "proposition",
+        "pkg": "qou",
+        "decl_path": "QOU.BraidKnot.CyclotomicStrandDoubling.cyclotomic_8_eq_cyclotomic_4_comp_X_sq",
+        "sibling_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
+        "lake_root_declares": false,
+        "lake_parent_declares": false,
+        "grep_hits": [
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": false,
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.ts",

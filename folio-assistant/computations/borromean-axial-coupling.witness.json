@@ -1,12 +1,12 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T01:35:59.429336+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T06:04:42.240711+00:00",
+  "commitSha": "5e18e71e3dd55e8f5ac767e09bd8a5ce0e4bb8f5",
   "assertions": [
     {
       "name": "g_A",
-      "computed": 3.591107424543653,
+      "computed": 3.5911074245436523,
       "expected": 1.2754,
       "passed": false,
       "tolerance": 0.5,
@@ -14,7 +14,7 @@
     },
     {
       "name": "lp_duality_gap_zero",
-      "computed": 6.022959908591474e-15,
+      "computed": 4.164035515102736e-15,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-10,
@@ -30,16 +30,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 28,
+  "durationMs": 18,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
   "scriptHash": "4842690bbdef",
   "scriptCommitSha": "03701c4df38ee768d9afc22c4fb5639bb2863852",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -202,9 +202,9 @@
       3,
       4
     ],
-    "primal_obj": -4.368285857481169e-07,
+    "primal_obj": -4.368285876070413e-07,
     "dual_obj": -4.368285917710768e-07,
-    "duality_gap": 6.022959908591474e-15,
+    "duality_gap": 4.164035515102736e-15,
     "lp_feasible": true,
     "observable_vector": {
       "name": "O_V (trivial / vector / +q eigenspace)",
@@ -216,7 +216,7 @@
         1.232052454166764,
         1.3675518369513853
       ],
-      "dual_pairing_value": 2.418262598882023,
+      "dual_pairing_value": 2.4182625988820234,
       "u_active": [
         1.0000002711431513,
         7.586395976835048e-08,

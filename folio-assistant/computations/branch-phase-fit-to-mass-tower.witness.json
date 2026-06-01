@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:31:54.417006+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T06:00:58.195496+00:00",
+  "commitSha": "5e18e71e3dd55e8f5ac767e09bd8a5ce0e4bb8f5",
   "assertions": [
     {
       "name": "D_branch_phase_fit",
@@ -30,16 +30,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "branch-phase-fit-to-mass-tower",
   "scriptFile": "branch_phase_fit_to_mass_tower.py",
   "scriptHash": "0f3a80440835",
   "scriptCommitSha": "8a937415ca8d148e71076cdf4fb51628c391c33f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
