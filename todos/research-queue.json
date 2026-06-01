@@ -24,7 +24,7 @@
   {
     "id": "research-flavor-split-mn-dpn-refinement",
     "summary": "m_n / Δ_pn flavor-split formula refinement (Hecke-skein X(q) intrinsic residual)",
-    "comment": "Per CLAUDE.md L2 precision-goals: m_n misses 100× by 185× (1.04 ppb target, ~193 ppb miss) and Δ_pn misses by 163× (755 ppb miss). PR #1581 m_K/m_π pattern audit identified the shared blocker: canonical Hecke-skein X(q) has 0.10% intrinsic residual that is the dominant error in both m_n and Δ_pn predictions. OPEN: refine the X(q) formula in m_n = m_p · (1 + X/(1−X/2)). Candidates: (a) higher-order Hecke-skein truncation, (b) Habiro-element identification for X(q), (c) Plancherel-weighted Wedderburn correction. Estimated 1-2 sessions; deliverable: 2 missing 100× observables MET. Cross-refs: audit 2026-05-29-meson-mK-mpi-residual-derivation-attempt.md; prop:flavor-split-substrate.",
+    "comment": "UPDATED 2026-06-01 (PR #1673 Probe 1): MULTIPLICATIVE-REFINEMENT FAMILY REFUTED at cross-anchor. mn_dpn_xq_cross_anchor_probe.py tested 14 candidate X·(factor) forms (α_em, h², ℏ_q², G, [2]_q-based; PR #1645 set + 3 new) at q_proton AND q_muon. ALL TIER 3 (refuted): residuals near-identical at both anchors (Δq ≈ 1.28e-8 cannot discriminate any multiplicative q-correction). Confirms the 0.10% intrinsic X(q) residual is NOT a multiplicative-refinement problem; needs a fibre-level Habiro element (parallel α_EM PR #1511's `[2]_q·(1-h²α)` pattern). NEW research direction: Habiro element identification for X(q) — same template as research-qbeta-habiro-element. Estimated 2-3 sessions (revised). Cross-refs: PR #1673 Probe 1; folio-assistant/computations/mn-dpn-xq-cross-anchor-probe.witness.json.",
     "status": "open",
     "priority": "high",
     "origin": "user-2026-06-01",
@@ -150,8 +150,8 @@
         "magic-A-formula-postulated-rho_F=2": "+5.87% miss; current production",
         "rho_F=[2]_{q^(1/2)}": "RULED OUT (still +5.97% miss, this PR)",
         "per-nucleon δ_int simple substrate": "RULED OUT (no clean match)",
-        "categorical interface H_3⊗H_3⊗H_3⊗H_3 → H_12": "UNDERIVED (research direction)",
-        "additional-bar-symmetric-rho_F-candidates": "EXHAUSTED 2026-06-01 (PR #1662): 8 candidates tested (incl. [2]_q, [2]_q/2+1, 1+b² Hoefsmit, ([2]_q)²/(·-2)), ALL bar-symmetric candidates miss by ≥+5.87%; best NEAR-MATCH C7=2·cos(h/2)/q^(1/4) at +2.58% violates bar-symmetry. Confirms structural-operator direction."
+        "categorical interface H_3⊗H_3⊗H_3⊗H_3 → H_12 with (4,4,4) PSD dominance per PR #1289": "REFRAMED 2026-06-01 (PR #1673 Probe 2): empirical accounting against the existing partial H_12 chi cache (24/77 partitions, sum = 100.0% of reported tr_M to 10⁻⁵⁰) shows (4,4,4) contributes ≤ 4.28e-51 — NOT dominant. Bulk is in 2-row partitions (84.47%), led by (9,3) at 29.09%. The PR #1289 (4,4,4) framing must refer to a different braid frame OR a non-tr_M observable (magic-A B = ρ_F·m_e·A·8G PSD structure decoupled from Hoefsmit decomp). Research direction RE-AIMED: target (9,3)/(8,4)/(10,2) interface operator or non-tr_M PSD framing.",
+        "additional-bar-symmetric-rho_F-candidates": "EXHAUSTED 2026-06-01 (PR #1662): 8 candidates tested (incl. [2]_q, [2]_q/2+1, 1+b² Hoefsmit, ([2]_q)²/(·-2)), ALL bar-symmetric candidates miss by ≥+5.87%; best NEAR-MATCH C7=2·cos(h/2)/q^(1/4) at +2.58% violates bar-symmetry."
       },
       "current_pred_vs_exp": {
         "⁴He B_pred_MeV": 29.956,
