@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:26:53.361249+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-01T05:37:16.118448+00:00",
+  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "i2-probe-only-audit",
   "scriptFile": "i2_probe_only_audit.py",
   "scriptHash": "1155d3faa225",
@@ -37,11 +37,11 @@
   "contentBlock": "I2 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "production_consumers_count": 9,
-    "total_label_bearing_witnesses": 261
+    "total_label_bearing_witnesses": 262
   },
   "data": {
     "by_result": {
-      "i2_probe_only": 221,
+      "i2_probe_only": 222,
       "wired_production": 40
     },
     "production_consumers": [
@@ -806,15 +806,6 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/e0-lambda-composite.witness.json",
-        "labels": [
-          "prop:rho-k-h3a-refinement"
-        ],
-        "production_consumers": [],
-        "upstream_consumers": [],
-        "result": "i2_probe_only"
-      },
-      {
         "witness": "folio-assistant/computations/eigenvalue-reeb-extension-h4-h5.witness.json",
         "labels": [
           "prop:figure-eight-reeb-rotation"
@@ -912,15 +903,6 @@
         "witness": "folio-assistant/computations/full-twist-root-of-unity-probe.witness.json",
         "labels": [
           "conj:categorical-neutrality-saturated-shells"
-        ],
-        "production_consumers": [],
-        "upstream_consumers": [],
-        "result": "i2_probe_only"
-      },
-      {
-        "witness": "folio-assistant/computations/gap-a1-binding-k-sdp-feasibility.witness.json",
-        "labels": [
-          "conj:canonical-knot-id-sdp"
         ],
         "production_consumers": [],
         "upstream_consumers": [],
@@ -2007,6 +1989,15 @@
         "result": "i2_probe_only"
       },
       {
+        "witness": "folio-assistant/computations/qbeta-habiro-cross-pair-factorization.witness.json",
+        "labels": [
+          "prop:neutron-qvalue-symbolic"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
         "witness": "folio-assistant/computations/qbeta-habiro-cross-pair-quick-dp.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
@@ -2070,7 +2061,25 @@
         "result": "i2_probe_only"
       },
       {
+        "witness": "folio-assistant/computations/qbeta-habiro-phase5q-dn-refactorize.witness.json",
+        "labels": [
+          "prop:neutron-qvalue-symbolic"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
         "witness": "folio-assistant/computations/qbeta-habiro-phi8-interpretation.witness.json",
+        "labels": [
+          "prop:neutron-qvalue-symbolic"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
         ],
