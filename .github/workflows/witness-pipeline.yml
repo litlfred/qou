@@ -116,20 +116,43 @@ jobs:
           key: clarabel-mpfr-${{ runner.os }}-${{ hashFiles('tools/hecke-engine/Cargo.toml', 'tools/hecke-engine/Cargo.lock') }}
           restore-keys: clarabel-mpfr-${{ runner.os }}-
 
-      - name: Build clarabel-MPFR operator-selection-lp binary
+      - name: Provision clarabel-MPFR binary (prebuilt artifact else cargo build)
         # The high-precision SDP/LP path (pyhecke.lp_dual_solver) routes
-        # through this MPFR binary; without it the solver silently falls
-        # back to scipy/cvxpy float64. Build so CI runs the SAME MPFR path
-        # as local. The binary is autodetected at
+        # through this MPFR binary; without it the solver silently falls back
+        # to scipy/cvxpy float64. Prefer the artifact published by
+        # build-clarabel-mpfr.yml (avoids a cold cargo build); fall back to
+        # building from source (cargo cache above keeps it fast) when the
+        # artifact is unavailable (first run, expired, fork). Autodetected at
         # tools/hecke-engine/target/release/clarabel-operator-selection-lp.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cargo build --release \
-            --manifest-path tools/hecke-engine/Cargo.toml \
-            --features clarabel-mpfr \
-            --bin clarabel-operator-selection-lp
-          test -x tools/hecke-engine/target/release/clarabel-operator-selection-lp \
-            && echo "clarabel-MPFR binary built" \
-            || (echo "::error::clarabel-MPFR binary missing after build" && exit 1)
+          set -e
+          BIN_DIR=tools/hecke-engine/target/release
+          BIN="$BIN_DIR/clarabel-operator-selection-lp"
+          mkdir -p "$BIN_DIR"
+          # 1. Try the prebuilt artifact from the latest successful
+          #    build-clarabel-mpfr run on this repo.
+          RUN_ID=$(gh run list --workflow build-clarabel-mpfr.yml \
+            --status success --limit 1 --json databaseId \
+            --jq '.[0].databaseId' 2>/dev/null || true)
+          if [ -n "$RUN_ID" ]; then
+            gh run download "$RUN_ID" \
+              -n clarabel-operator-selection-lp -D "$BIN_DIR" 2>/dev/null \
+              && echo "using prebuilt clarabel-MPFR artifact (run $RUN_ID)" || true
+          fi
+          # 2. Fallback: build from source.
+          if [ ! -f "$BIN" ]; then
+            echo "prebuilt artifact unavailable — building from source"
+            cargo build --release \
+              --manifest-path tools/hecke-engine/Cargo.toml \
+              --features clarabel-mpfr \
+              --bin clarabel-operator-selection-lp
+          fi
+          chmod +x "$BIN" || true
+          test -x "$BIN" \
+            && echo "clarabel-MPFR binary ready" \
+            || (echo "::error::clarabel-MPFR binary missing" && exit 1)
 
       - name: Smoke-test clarabel-MPFR LP/SDP path (strict — no float64 fallback)
         # QOU_REQUIRE_CLARABEL=1 makes the solver RAISE rather than silently
