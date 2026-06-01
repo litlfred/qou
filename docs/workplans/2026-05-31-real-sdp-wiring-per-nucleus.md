@@ -166,7 +166,7 @@ reduction.
 
 | Shell / nucleus | A | n=3A | χ_λ witness | y_λ source | real SDP |
 |---|---|---|---|---|---|
-| proton / neutron | — | 3 | ✅ chi-{proton,neutron}-h3 | inline | constituents |
+| proton / neutron | 1 | 3 | ✅ chi-{proton,neutron}-h3 | inline | ✅ wired |
 | ²H deuteron | 2 | 6 | ✅ chi-deuteron-h6 (11) | inline | ✅ wired |
 | ³He / ³H | 3 | 9 | ✅ chi-{helium-3,tritium}-h9 (30) | wenzl-h9 | ✅ wired |
 | ⁴He | 4 | 12 | ✅ chi-lambda-he4-full (77) | wenzl-h12 | ✅ wired |
@@ -175,8 +175,19 @@ reduction.
 | ¹¹B | 11 | 33 | ❌ none | ❌ none | abstract only |
 | ¹²C | 12 | 36 | ❌ none | ❌ none | abstract only |
 
+**A=1 finding (2026-06-01).** Wiring the single-nucleon shell
+(`nucleus-real-sdp-{proton,neutron}.witness.json`) shows the Frobenius
+Gram is **positive-definite** at A=1 — all 3 H_3 blocks carry positive
+q-trace norm, the bar-fold reduction is 3/3, and the operator-selection
+solve is bounded with no forbidden channels. The indefiniteness that
+makes the deuteron program ill-posed (3 negative-norm blocks,
+unbounded) therefore **onsets at A≥2**: it is a property of the bound
+*pair*, not of the individual nucleon q-trace. This is consistent with
+the Phase B reading that color-flavor (proton uud × neutron udd)
+constraints are what regularize the A≥2 program.
+
 **Verdict:** the generic resolver (`nucleus_real_sdp.py`) covers every
-nucleus for which a per-nucleus χ_λ witness exists — currently A≤4. The
+nucleus for which a per-nucleus χ_λ witness exists — currently A=1…4. The
 Lean abstract empty-SDP uniqueness covers all of Li-6…C-12, but their
 *real* SDP needs χ_λ(β_K) at H_18…H_36, which is past the `(3A)!`
 compute wall (H_18 = 6.4e15 dim) and has no witness. Producing those is
