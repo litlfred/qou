@@ -207,6 +207,87 @@ def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
 # migration.
 
 
+def bring_color_weighted_linking_weight(
+    Z: int, N: int, q: mpf, q_inv: mpf | None = None,
+) -> mpf:
+    """Per-atom Bring-color-tube extension of linking_weight_family_a.
+
+    [PROBE — extends `bring_color_weighted` from the per-interface
+    p-n averaging in closed_form_tau_M.py to the BASE mass scale.]
+
+    Categorical construction.  Each nucleon carries 3 color tubes
+    (r, g, b) per Bring's 3-color-tube structure.  For atom (Z, N):
+
+      Z protons (uud) + N neutrons (udd)
+      Total quarks = 3·A where A = Z + N
+      n_u = 2Z + N   (u-quark count)
+      n_d = Z + 2N   (d-quark count)
+
+    Substrate-derived quark-flavor split δ = flavor_split_subleading(q)
+    encodes (m_d - m_u) / M_N.  The linking_weight then has TWO
+    Bring-color-tube corrections to the H_4 average:
+
+      linking_weight_bring(Z, N, q)
+        = linking_weight_family_a(q) · (1 + δ·asym + δ²·sym)
+
+    where:
+      asym = (n_d - n_u) / (3·A) = (N - Z) / (3·A)
+             — odd in flavor exchange; positive for neutron-rich, so
+               correction is larger for n (matches δ = (m_n - m_p)/M_N > 0)
+      sym  = 2·n_u·n_d / (3·A)²  — even in flavor exchange; shifts m_avg
+
+    Reduces to Family A in the substrate-degenerate limit δ → 0.
+
+    Effect at q₀ (δ ≈ 0.00138):
+      - asym term: |δ/3| ≈ 4.6e-4 = 460 ppm asymmetric shift per p / n
+      - sym term:  δ²·(4/9) ≈ 8.4e-7 = 0.84 ppb symmetric m_avg shift
+
+    The symmetric m_avg shift is ~33000× smaller than the +2.89%
+    (29 kppm) gap recorded in `lambda-scale-absorbed-into-geom-full.md`.
+    This implementation therefore CONFIRMS that Bring-color-tube
+    quark-flavor weighting at H_4 is structurally insufficient to
+    close m_avg — consistent with the 5+ refuted routes documented
+    in the canonical reference.
+
+    Status: PROBE, NOT WIRED into production `geom_full_borromean`.
+    Use via `geom_full_borromean_bring_color_weighted(Z, N, q)`.
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    base = linking_weight_family_a(q, qi)
+    A = Z + N
+    if A == 0:
+        return base
+    delta = flavor_split_subleading(q, qi)
+    n_u = 2 * Z + N
+    n_d = Z + 2 * N
+    asym = mpf(N - Z) / mpf(3 * A)
+    sym = mpf(2 * n_u * n_d) / mpf(3 * A) ** 2
+    return base * (1 + delta * asym + delta ** 2 * sym)
+
+
+def geom_full_borromean_bring_color_weighted(
+    Z: int, N: int, q: mpf, q_inv: mpf | None = None,
+) -> mpf:
+    """Bring-color-tube extension of geom_full_borromean for atom (Z, N).
+
+    [PROBE — parallels `geom_full_borromean` but uses the per-atom
+    Bring-color-tube linking_weight instead of the H_4 Wedderburn
+    average.]
+
+    m(K) = m_e · Geom_full_bring(Z, N, q₀)
+
+    Status: PROBE.  NOT wired into production mass computation;
+    the existing `geom_full_borromean` (H_4 average, acknowledged
+    CAL-4) remains in production until a categorical Bring-color-tube
+    formulation is found that closes the +2.89% m_avg gap.
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    hbar_q = 1 - qi
+    vol_b3 = 8 * mp.catalan
+    geom_leading = vol_b3 / hbar_q ** 2
+    return geom_leading * bring_color_weighted_linking_weight(Z, N, q, qi)
+
+
 def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     """[SHORTCUT — global-scalar collapse, NOT the paper's per-block sum.]
 
