@@ -76,7 +76,7 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 | 3 | 2026-05-30 | `f4930df95` | wire(Q_β) honest c_k bar — revert c_3 | corrected |
 | 4 | 2026-05-30 | `c1f7487df` → `b3c92844d` | deep-audit re-wired c_3, then "stale-q₀ artifact" | conflated FACT A (N=3 beats 100×) with FACT B (c_3 = −2 is NOT Taylor-exact) |
 | **5 (settled)** | 2026-05-31 | this PR #1580 | **probe-c3-q0-stability verdict: NEAR-MATCH, not Taylor-exact. Habiro element identification is the resolution path.** | (no flip — settled) |
-| **6 (ruled out, not a flip)** | 2026-05-31 | claude/phi-q-spectral-combiner-2026-05-31 | Li_2^q × spectral combiner: c_3 candidate = Σ μ_λ · c_3^(λ) where μ_λ = Li_2^q(-|χ_λ|) / Σ Li_2^q(-|χ_λ'|). Σ μ_λ = 1 by construction (cures mech #6 defect). Result: c_3 cand = -1.797 vs empirical -2.07 ⟹ **REFUTED by 13%** at q_proton. | new mechanism #7 added to b502b9b83 list — not a flip-flop, never claimed as derivation |
+| **6 (ruled out, not a flip)** | 2026-05-31 | claude/phi-q-spectral-combiner-2026-05-31 (PR #1609) | Li_2^q × spectral combiner — μ_λ := Li_2^q(−abs χ_λ) / Σ Li_2^q(−abs χ_λ'); c_3 candidate = Σ μ_λ · c_3^(λ); Σ μ_λ = 1 by construction (cures mech #6 defect). Single-anchor result at q_proton: c_3 cand = −1.797 vs empirical −2.07 → **REFUTED by 13%**. Cross-anchor q_muon deferred (Hoefsmit χ_λ(q) evaluator not yet wired). | new mechanism #7 added to b502b9b83 list — not a flip-flop, never claimed as derivation |
 
 **Failure mode pattern:** every flip used a fresh canonical-looking formula
 (`J − ℏ_q²`, `J_Hopf(q=1)`) and matched it numerically near the substrate
