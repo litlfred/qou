@@ -85,8 +85,8 @@ The package ecosystem is layered but **mid-migration**. Today's import counts (f
 | [`qou-substrate`](../tools/qou-substrate/) | 7 | wired — substrate trio, the foundation |
 | [`pyhecke`](../tools/pyhecke/) | 19 | wired — primary Hecke / Gram surface |
 | [`pyhecke-native`](../tools/pyhecke-native/) | 15 | wired — Rust-accelerated Markov trace |
-| [`qou-mass`](../qou-mass/) | **0** | alpha, not yet adopted |
-| [`witness-schema`](../tools/witness-schema/) | **0** | alpha, not yet adopted |
+| [`qou-mass`](../qou-mass/) | 1 | alpha; first in-repo importer is the canonical wiring example [`qou_mass_canonical_wiring_example.py`](../folio-assistant/computations/qou_mass_canonical_wiring_example.py) |
+| [`witness-schema`](../tools/witness-schema/) | 1 | alpha; same wiring example demonstrates the Pydantic `model_validate` emit-time-schema-check pattern |
 | `mpmath` (also exposed transitively via `qou_substrate.precision`) | 593 | direct imports — pre-substrate carve-out |
 | `sympy` | 206 | direct imports — `Rational`, `Symbol`, partition combinatorics |
 | `numpy` | 127 | direct imports — Gram-matrix linear algebra |
