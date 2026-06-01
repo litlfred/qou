@@ -51,10 +51,19 @@ from mpmath import mp, mpf
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
 # PROBE-5 local headroom: 1 ppQ is 1e-15; expand with extra guard so the
 # u^k extraction is safe well past N=7. Local opt-in only (NOT the global
 # default — that would force-regenerate 400+ unrelated witnesses).
+#
+# Set QOU_COMPUTE_DPS *before* importing the precision module so the
+# module constant COMPUTE_DPS (which WitnessBuilder records in
+# precisionMetadata) reflects the ACTUAL 70-dps run — otherwise the
+# witness would claim 65 while computing at 70 (Copilot review, #1602).
+import os  # noqa: E402
+os.environ.setdefault("QOU_COMPUTE_DPS", "70")
+os.environ.setdefault("QOU_OUTPUT_DPS", "60")
+
+from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(70)
 mpmath.mp.dps = 70
 
@@ -400,6 +409,43 @@ def main() -> int:
         source=("cos(α−bℏ²/2) Taylor-expanded in u = b·ℏ² to order "
                 f"{ORDER}; coefficients are exact symbolic radicals, "
                 "directly comparable to the ladder c_k."),
+    )
+    # The PR's substantive claims are the exact coefficient identities and
+    # the symbolic↔numeric cross-check — assert them, not just the count
+    # (Copilot review, #1602). a_1 = -√3/12, a_2 = -11/32 - √3/12.
+    a1_target = -mp.sqrt(3) / 12
+    a2_target = mpf(-11) / 32 - mp.sqrt(3) / 12
+    builder.add_assertion(
+        "eigenphase_a1_equals_neg_sqrt3_over_12",
+        computed=float(coeffs[1]),
+        expected=float(a1_target),
+        tolerance=1e-25,
+        source="Numeric u¹ coefficient matches the exact radical -√3/12.",
+    )
+    builder.add_assertion(
+        "eigenphase_a2_equals_neg_11_32_minus_sqrt3_over_12",
+        computed=float(coeffs[2]),
+        expected=float(a2_target),
+        tolerance=1e-25,
+        source="Numeric u² coefficient matches the exact radical -11/32 - √3/12.",
+    )
+    builder.add_assertion(
+        "eigenphase_a1_nonzero_falsifies_eigenphase_eq_f",
+        computed=1.0 if abs(coeffs[1]) > mpf("1e-20") else 0.0,
+        expected=1.0,
+        tolerance=0.0,
+        source=("The u¹ coefficient is nonzero (a_1 = -√3/12), but the Q_β "
+                "ladder has no c_1 rung — this is the falsification of the "
+                "'eigenphase = f' hypothesis at order u¹."),
+    )
+    builder.add_assertion(
+        "symbolic_numeric_crosscheck_agree",
+        computed=1.0 if symbolic_ok else 0.0,
+        expected=1.0,
+        tolerance=0.0,
+        source=(f"Symbolic-exact path certified {len(symbolic_coeffs)} "
+                "leading coefficients in radicals; each agrees with the "
+                "numeric path to < 1e-30."),
     )
     builder.save()
     print("\n  Witness: qbeta-eigenphase-taylor-in-u.witness.json")
