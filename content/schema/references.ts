@@ -2632,17 +2632,9 @@ export const references: CSLData[] = [
   }),
 
   // ── Wenzl (1988): Hecke algebras of type A_n and subfactors ──
-  ref({
-    id: "wenzl1988",
-    type: "article-journal",
-    title: "Hecke algebras of type $A_n$ and subfactors",
-    author: [{ family: "Wenzl", given: "Hans" }],
-    "container-title": "Inventiones Mathematicae",
-    volume: "92",
-    page: "349-383",
-    issued: { "date-parts": [[1988]] },
-    DOI: "10.1007/BF01404457",
-  }),
+  // (Canonical entry moved to line ~3211 alongside wenzl1988b/c
+  //  per the wrong-work-split triage 2026-05-19; duplicate removed
+  //  here 2026-06-01 to silence `validate-refs` "duplicate id" error.)
 
   // ── Wenzl (1990): Quantum groups and subfactors of type B, C, and D ──
   ref({
@@ -3206,7 +3198,12 @@ export const references: CSLData[] = [
     genre: "PhD thesis",
   }),
 
-  // ── Wenzl 1988 (Hecke algebra subfactors) ─────────────────────
+  // ── Wenzl (1988): Hecke algebras of type A_n and subfactors ──
+  //
+  // Canonical entry; the duplicate previously sitting near line 2636
+  // was removed 2026-06-01 (bib-refs-cleanup) — `validate-refs` was
+  // flagging "duplicate id".  This is the entry kept because it
+  // carries the wrong-work-split triage note linking it to wenzl1988b/c.
   ref({
     id: "wenzl1988",
     type: "article-journal",
@@ -4892,6 +4889,52 @@ export const references: CSLData[] = [
     page: "601-606",
     issued: { "date-parts": [[1985]] },
     DOI: "10.2307/2045438",
+  }),
+
+  // ── Lickorish 1997 (knot theory textbook) ─────────────────────
+  ref({
+    id: "lickorish1997",
+    type: "book",
+    title: "An Introduction to Knot Theory",
+    author: [{ family: "Lickorish", given: "W. B. Raymond" }],
+    publisher: "Springer",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[1997]] },
+    "collection-title": "Graduate Texts in Mathematics",
+    "collection-number": "175",
+    ISBN: "978-0-387-98254-0",
+    DOI: "10.1007/978-1-4612-0691-0",
+  }),
+
+  // ── Washington (1997) — Introduction to Cyclotomic Fields ─────
+  ref({
+    id: "washington-cyclotomic",
+    type: "book",
+    title: "Introduction to Cyclotomic Fields",
+    author: [{ family: "Washington", given: "Lawrence C." }],
+    publisher: "Springer",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[1997]] },
+    edition: "2",
+    "collection-title": "Graduate Texts in Mathematics",
+    "collection-number": "83",
+    ISBN: "978-0-387-94762-4",
+    DOI: "10.1007/978-1-4612-1934-7",
+  }),
+
+  // ── Wigner 1937 — symmetry of nuclear Hamiltonian (SU(4) symm.) ─
+  ref({
+    id: "wigner1937",
+    type: "article-journal",
+    title: "On the consequences of the symmetry of the nuclear Hamiltonian on the spectroscopy of nuclei",
+    author: [{ family: "Wigner", given: "Eugene P." }],
+    "container-title": "Physical Review",
+    volume: "51",
+    issue: "2",
+    page: "106-119",
+    issued: { "date-parts": [[1937]] },
+    DOI: "10.1103/PhysRev.51.106",
+    note: "Wigner SU(4) supermultiplet symmetry — foundational for the spin-isospin structure used in the QOU mass theory.",
   }),
 
   // ── Lewin 1981 (polylogarithms; Λ(π/4) = G/2 identity) ────────

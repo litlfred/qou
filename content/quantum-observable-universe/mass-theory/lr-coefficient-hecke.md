@@ -71,7 +71,7 @@ Yamanouchi-valid SSYT of content $\nu$).
 ## Status
 
 **Statement.** Proven in the symmetric-function literature
-(\cite{macdonald-symfunc} §I.9, \cite{stanley-ec2} §A1.3) and the
+(\cite{macdonald1995} §I.9, \cite{stanley1999} §A1.3) and the
 Hecke deformation (\cite{ariki1996}). For QOU, the proof is consumed
 as a class hypothesis via the
 [`LRCoefficientHecke`](#prop:lr-coefficient-hecke) Lean class — the
