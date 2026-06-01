@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T15:58:38.522751+00:00",
-  "commitSha": "6f21c789aafc2ed6cf052fc7467109d1d7971a9e",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T17:49:20.592221+00:00",
+  "commitSha": "2cd898ed89ad3dc8e7e7f9ae07f8cd7b960dbf98",
   "assertions": [
     {
       "name": "c_2_target_is_minus_one_taylor_exact",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 551,
+  "durationMs": 429,
   "computation": "qbeta-wenzl-habiro-ansatz-probe",
   "scriptFile": "qbeta_wenzl_habiro_ansatz_probe.py",
   "scriptHash": "1888d650afba",
-  "scriptCommitSha": "56e44c92d07242ee6e0bce9cbf9c864047b33028",
+  "scriptCommitSha": "734a17dd5b48fc26f03649a47d4878079dc8d924",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,8 +26,9 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

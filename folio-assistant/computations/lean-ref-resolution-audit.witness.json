@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:50:00.161597+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T17:38:20.441518+00:00",
+  "commitSha": "2cd898ed89ad3dc8e7e7f9ae07f8cd7b960dbf98",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,8 +15,8 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 1003.0,
-      "expected": 1023.0,
+      "computed": 1005.0,
+      "expected": 1025.0,
       "passed": false,
       "tolerance": 0.0,
       "unit": "count (gates only at full closure)",
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "a0c94bc39a15",
@@ -45,11 +45,11 @@
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_blocks_with_lean_ref": 1023
+    "total_blocks_with_lean_ref": 1025
   },
   "data": {
     "by_result": {
-      "ok": 1003,
+      "ok": 1005,
       "sibling_no_decl": 19,
       "lake_root_no_decl": 1
     },
@@ -1077,6 +1077,25 @@
         "lake_parent_declares": false,
         "grep_hits": [
           "/home/runner/work/qou/qou/content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": false,
+        "result": "ok",
+        "resolved_via": "sibling"
+      },
+      {
+        "path": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts",
+        "ref": "qou:QOU.BraidKnot.alphaEmHabiro_bar_invariant",
+        "kind": "proposition",
+        "pkg": "qou",
+        "decl_path": "QOU.BraidKnot.alphaEmHabiro_bar_invariant",
+        "sibling_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
+        "lake_root_declares": false,
+        "lake_parent_declares": false,
+        "grep_hits": [
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
@@ -7628,7 +7647,7 @@
         "kind": "conjecture",
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.geom_yekutieli_alignment",
-        "sibling_exists": true,
+        "sibling_exists": false,
         "sibling_declares": false,
         "lake_root_exists": true,
         "lake_root_declares": true,
@@ -15224,8 +15243,7 @@
           "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeIndependence.lean",
           "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
           "/home/runner/work/qou/qou/content/quantum-observable-universe/particle-interactions/geom-universality.lean",
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean",
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -17944,6 +17962,25 @@
         "grep_hit_under_lake_root": true,
         "result": "ok",
         "resolved_via": "grep_under_lake_root"
+      },
+      {
+        "path": "content/quantum-observable-universe/quantum-observable-universes/q-laplacian-spectral-tower.ts",
+        "ref": "qou:QOU.QuantumObservableUniverses.qIntegerNumerator_vanishes_at_truncRoot",
+        "kind": "proposition",
+        "pkg": "qou",
+        "decl_path": "QOU.QuantumObservableUniverses.qIntegerNumerator_vanishes_at_truncRoot",
+        "sibling_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
+        "lake_root_declares": false,
+        "lake_parent_declares": false,
+        "grep_hits": [
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/quantum-observable-universes/q-laplacian-spectral-tower.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": false,
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-lie-bracket.ts",
