@@ -39,27 +39,17 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+from _h4_substrate import (  # noqa: E402
+    ALPHA_EM,
+    M_E_MEV,
+    M_MU_MEV,
+    M_P_MEV,
+    qfact,
+    trM_borromean_closed,
+)
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-
-Q_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
-
-
-def trM_borromean_closed(q):
-    h = q - 1 / q
-    h2 = h * h
-    return (4 + h2 - 3 * h2 ** 2 - h2 ** 3) / (h2 + 4)
-
-
-def qint(k, q):
-    return (q ** k - q ** (-k)) / (q - 1 / q)
-
-
-def qfact(k, q):
-    out = mp.mpf(1)
-    for i in range(1, k + 1):
-        out *= qint(i, q)
-    return out
 
 
 def vol_4_1():
@@ -95,13 +85,13 @@ def evaluate_form(q, form_name, m_e, m_mu, m_p, alpha_em):
 def main() -> int:
     set_compute_dps(80)
 
-    # CODATA anchors
-    m_e = mp.mpf("0.51099895069")
-    m_mu = mp.mpf("105.6583755")
-    m_p = mp.mpf("938.27208816")
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
+    # CODATA anchors (from central registry)
+    m_e = M_E_MEV
+    m_mu = M_MU_MEV
+    m_p = M_P_MEV
+    alpha_em = ALPHA_EM
 
-    q_proton = mp.mpf(Q_PROTON_STR)
+    q_proton = mp.mpf(Q_50_DIGIT_STR)
 
     # Compute q_muon: invert m_μ = m_e · Vol(4_1) / ℏ_q²
     vol = vol_4_1()
@@ -167,7 +157,6 @@ def main() -> int:
     coef_stability = abs(f_A_m - f_A_p) / abs(f_A_p - 1)
 
     # Improvement metric: does Form X tighten the baseline at BOTH anchors?
-    bare_p_abs = abs(ppb_A_p - (-0.003072))  # placeholder dummy
     bare_p, _ = evaluate_form(q_proton, "bare", m_e, m_mu, m_p, alpha_em)
     bare_m, _ = evaluate_form(q_muon, "bare", m_e, m_mu, m_p, alpha_em)
     improvement_A_p = abs(bare_p) - abs(ppb_A_p)
@@ -223,7 +212,7 @@ def main() -> int:
         "option-e ledger: stable cross-anchor = structural candidate, "
         "collapses = proton-anchor coincidence."
     )
-    w.add_parameter("q_proton", Q_PROTON_STR)
+    w.add_parameter("q_proton", Q_50_DIGIT_STR)
     w.add_data("q_muon", mp.nstr(q_muon, 25))
     w.add_data("Form_A_ppb_proton", mp.nstr(ppb_A_p, 12))
     w.add_data("Form_A_ppb_muon", mp.nstr(ppb_A_m, 12))
