@@ -63,17 +63,17 @@ $T_w \in H_{n_0}(q_0)$ in Gröbner–Shirshov normal form
 element of $\mathbb{Q}(q)$
 
 $$
-M(\mathfrak{H}) \;:=\; \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H}) \;=\; \nu_{\mathrm{SDP}} \cdot \bigl[\,|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})\,\bigr],
+M(\mathfrak{H}) \;:=\; \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H}) \;=\; \nu_{\mathrm{SDP}} \cdot \bigl[\,\mathrm{tr}_M(T_w) + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})\,\bigr],
 $$
 
 where $m(\mathfrak{H})$ is the **categorical mass invariant** in
 the multi-term form of the
 [unified knot mass formula](#thm:knot-mass-formula-unified):
-$|\mathrm{tr}_M(T_w)|$ is the descended Markov trace
+$\mathrm{tr}_M(T_w)$ is the descended Markov trace
 $\sum_\lambda y_\lambda(q)\,\chi_\lambda(T_w)$
 (Wenzl-bridge coefficients $y_\lambda$,
 $q$-Murnaghan–Nakayama character $\chi_\lambda$),
-$\mathrm{tower}(T_w) = \sum_i \mathrm{Li}_2^q(-|\hat{V}_i|) + z^2 \sum_{i<j} \mathrm{Li}_2^q(-|\hat{V}_i \hat{V}_j|)$
+$\mathrm{tower}(T_w) = \sum_i \mathrm{Li}_2^q(-\hat{V}_i) + z^2 \sum_{i<j} \mathrm{Li}_2^q(-\hat{V}_i \hat{V}_j)$
 is the brane tower built from per-generator additive-Wedderburn
 volumes $\hat{V}_i$ (symmetric $q$-dilogarithm
 $\mathrm{Li}_2^q$ per the paper canon,
