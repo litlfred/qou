@@ -206,18 +206,6 @@ export default chapter({
         "rigid-dualizing-complex",
         "rigid-dualizing-brings",
         "substrate-self-duality",
-        // Two electroweak / Higgs-program conjectures using the
-        // substrate. Previously orphan files in algebraic-substrate;
-        // wired in here adjacent to def:frobenius-hopf-substrate.
-        // Their full `uses[]` was trimmed to only currently-resolvable
-        // targets — the broader electroweak cluster (forward refs to
-        // `conj:electroweak-mass-eigenstate-count` etc.) remains
-        // orphan and is a separate cleanup.
-        "g-action-on-substrate",
-
-        "g-action-on-substrate-table1-data",
-        "g-action-on-substrate-table2-data",
-        "g-action-on-substrate-table3-data",
       ],
     }),
 

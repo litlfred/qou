@@ -10,12 +10,17 @@ $\xi \in \mathrm{Der}(A)$ be the
 Then as subgroups of $\mathrm{Aut}_{\mathbf{C}}(\mathbb{P}(V))$:
 
 $$
-  \underbrace{\langle \rho_\varTheta : \varTheta \in U(1) \rangle}_{\text{chart-swap, from } [\text{rem:affine-chart-origin-of-i-and-q}](\#\text{rem:affine-chart-origin-of-i-and-q})}
+  \underbrace{\langle \rho_\varTheta : \varTheta \in U(1) \rangle}_{\text{chart-swap}}
   \;=\;
-  \underbrace{\langle \phi_t : t \in \mathbb{R} \rangle}_{\text{Reeb flow, from } [\text{thm:categorical-reeb-exists}](\#\text{thm:categorical-reeb-exists})}
+  \underbrace{\langle \phi_t : t \in \mathbb{R} \rangle}_{\text{Reeb flow}}
   \;=\;
   T_q,
 $$
+
+(The chart-swap one-parameter subgroup originates in
+[`rem:affine-chart-origin-of-i-and-q`](#rem:affine-chart-origin-of-i-and-q);
+the Reeb flow subgroup originates in
+[`thm:categorical-reeb-exists`](#thm:categorical-reeb-exists).)
 
 i.e. both one-parameter families of automorphisms are the image of
 the maximal torus $T_q$ under the standard $T_q$-action on

@@ -22,8 +22,11 @@ $$
 
 $$
   S_0(x_0)  =  \mathrm{Li}_2(x_0)
-  \qquad \text{(} = \text{[archimedean limit](#conj:dilogarithm-archimedean-limit)}\text{),}
+  \qquad (= \text{archimedean limit}),
 $$
+
+(See [archimedean limit](#conj:dilogarithm-archimedean-limit) for the
+conjectural archimedean realisation of $\mathrm{Li}_2$.)
 
 *and the next-to-leading term is the half-log-determinant of the
 [categorical Dirac operator](#def:categorical-dirac-operator)

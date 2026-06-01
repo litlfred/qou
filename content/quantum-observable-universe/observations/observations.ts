@@ -104,7 +104,6 @@ export default chapter({
         "mass-comparison-table-table1-data",
         "atom-mass-full-hecke",
         "atom-mass-full-hecke-table-data",
-        "atom-mass-full-hecke-table-data",
       ],
     }),
     section({
