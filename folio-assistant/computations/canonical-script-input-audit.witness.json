@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:31:57.841089+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:01:45.201517+00:00",
+  "commitSha": "2a50db9d7ee66988a418d87d462389b0eb394cb3",
   "assertions": [],
   "allPassed": true,
   "durationMs": 11,
@@ -11,10 +11,10 @@
   "scriptHash": "6bec73dc14ca",
   "scriptCommitSha": "803ffcd0c8814e20b4bbd12580c3f00d90825e1d",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -26,11 +26,11 @@
   "description": "Audit of every Python computation script under folio-assistant/computations/ for alignment with the paper's 3-input canonical scheme (calibration-inputs.md): q_0 from m_μ/m_e, m_e, and Q_β(n). Flags scripts that use both m_p AND m_n from CODATA (over-counts hadronic input), use Vol_hyp (fitted under option B), or omit canonical input modules entirely.",
   "contentBlock": "calibration-inputs.md",
   "parameters": {
-    "total_scripts_audited": 816
+    "total_scripts_audited": 817
   },
   "data": {
     "by_scheme": {
-      "no-hadronic-input (substrate-only or pure dimensionless)": 616,
+      "no-hadronic-input (substrate-only or pure dimensionless)": 617,
       "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 107,
       "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 41,
       "Q_β-only-hadronic": 29,
@@ -10062,6 +10062,26 @@
       },
       {
         "script": "meson_habiro_c3_categorical_search.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "meson_habiro_c3_pslq_search.py",
         "found": {
           "M_E_MEV": false,
           "M_P_MEV": false,
