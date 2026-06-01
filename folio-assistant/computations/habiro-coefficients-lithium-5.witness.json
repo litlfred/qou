@@ -1,6 +1,6 @@
 {
   "computation": "habiro-coefficients-lithium-5",
-  "description": "Habiro / cyclotomic expansion tr_M(A=5, q) = \u03a3_m a_m\u00b7(u;u)_m (u = q^{1/2}) via the Phase 5q closed form: tr_M(\u2075Li, q) = \u03c4_p\u00b3\u00b7\u03c4_n\u00b2\u00b7z\u00b3\u00b7(z\u2212h) via Phase 5q closed form. Extends the helium-3/helium-4 extraction (PR #1618) to higher A; provides additional \u0394a_m data points for Q_\u03b2 Habiro element fitting and feeds the \u2077Be\u2212\u2077Li mirror test (PR #1579 \u03a6_1\u00b7\u03a6_2 falsifiable prediction).",
+  "description": "Habiro / cyclotomic expansion tr_M(A=5, q) = \u03a3_m a_m\u00b7(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=3, N=2 under chi_lambda_braid (production) pn-convention. Feeds (i) mirror-pair \u03a6_k universality audit, (ii) \u03a6_8-multiplicity scaling-law table, and (iii) Q_\u03b2 Habiro element keystone search.",
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
@@ -8,12 +8,13 @@
     "prop:interface-knot-markov-z",
     "thm:knot-mass-formula-unified"
   ],
-  "timestamp": "2026-06-01T14:33:54.160940+00:00",
+  "timestamp": "2026-06-01T14:44:44.949328+00:00",
   "parameters": {
     "q_0": 1.1099785827513808,
     "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
     "pn_convention": "chi_lambda_braid (production default)",
-    "source": "habiro-coefficients-atomic.witness.json (\u03c4_p, \u03c4_n)"
+    "source": "habiro-coefficients-atomic.witness.json (\u03c4_p, \u03c4_n)",
+    "generator": "_habiro_coefficient_extract.py"
   },
   "habiro_coefficients": [
     {
@@ -172,6 +173,7 @@
   "denom_in_u": "1024*u**112 + 9216*u**110 + 36864*u**108 + 86016*u**106 + 129024*u**104 + 129024*u**102 + 86016*u**100 + 36864*u**98 + 9216*u**96 + 1024*u**94",
   "p_in_u": "-u**206 - 5*u**205 - 11*u**204 - 14*u**203 - 4*u**202 + 19*u**201 + 31*u**200 + 24*u**199 + u**198 - 9*u**197 + 10*u**196 - 14*u**195 - 35*u**194 - 25*u**193 + 15*u**192 + 67*u**191 - 53*u**190 - 108*u**189 - 20*u**188 + 52*u**187 + 52*u**186 - 111*u**185 - 10*u**184 + 227*u**183 + 141*u**182 - 85*u**181 - 100*u**180 + 139*u**179 + 151*u**178 - 214*u**177 - 165*u**176 + 218*u**175 + 118*u**174 - 377*u**173 - 204*u**172 + 374*u**171 + 95*u**170 - 644*u**169 - 288*u**168 + 1013*u**167 + 335*u**166 - 1037*u**165 - 290*u**164 + 1710*u**163 + 870*u**162 - 1750*u**161 - 874*u**160 + 2083*u**159 + 1094*u**158 - 2392*u**157 - 1318*u**156 + 2634*u**155 + 1270*u**154 - 3212*u**153 - 1320*u**152 + 2993*u**151 + 1334*u**150 - 3893*u**149 - 659*u**148 + 4696*u**147 + 918*u**146 - 4973*u**145 - 381*u**144 + 6106*u**143 + 498*u**142 - 6667*u**141 - 516*u**140 + 7984*u**139 + 752*u**138 - 8100*u**137 - 1299*u**136 + 8670*u**135 + 1410*u**134 - 8935*u**133 - 2373*u**132 + 9536*u**131 + 2007*u**130 - 9615*u**129 - 2223*u**128 + 10060*u**127 + 2253*u**126 - 11052*u**125 - 1270*u**124 + 11749*u**123 + 1061*u**122 - 12840*u**121 + 109*u**120 + 14172*u**119 - 220*u**118 - 14917*u**117 + 628*u**116 + 15380*u**115 - 563*u**114 - 15695*u**113 + 92*u**112 + 15714*u**111 + 299*u**110 - 15287*u**109 - 1697*u**108 + 14254*u**107 + 1478*u**106 - 14524*u**105 - 2350*u**104 + 14266*u**103 + 2350*u**102 - 14524*u**101 - 1478*u**100 + 14254*u**99 + 1697*u**98 - 15287*u**97 - 299*u**96 + 15714*u**95 - 92*u**94 - 15695*u**93 + 563*u**92 + 15380*u**91 - 628*u**90 - 14917*u**89 + 220*u**88 + 14172*u**87 - 109*u**86 - 12840*u**85 - 1061*u**84 + 11749*u**83 + 1270*u**82 - 11052*u**81 - 2253*u**80 + 10060*u**79 + 2223*u**78 - 9615*u**77 - 2007*u**76 + 9536*u**75 + 2373*u**74 - 8935*u**73 - 1410*u**72 + 8670*u**71 + 1299*u**70 - 8100*u**69 - 752*u**68 + 7984*u**67 + 516*u**66 - 6667*u**65 - 498*u**64 + 6106*u**63 + 381*u**62 - 4973*u**61 - 918*u**60 + 4696*u**59 + 659*u**58 - 3893*u**57 - 1334*u**56 + 2993*u**55 + 1320*u**54 - 3212*u**53 - 1270*u**52 + 2634*u**51 + 1318*u**50 - 2392*u**49 - 1094*u**48 + 2083*u**47 + 874*u**46 - 1750*u**45 - 870*u**44 + 1710*u**43 + 290*u**42 - 1037*u**41 - 335*u**40 + 1013*u**39 + 288*u**38 - 644*u**37 - 95*u**36 + 374*u**35 + 204*u**34 - 377*u**33 - 118*u**32 + 218*u**31 + 165*u**30 - 214*u**29 - 151*u**28 + 139*u**27 + 100*u**26 - 85*u**25 - 141*u**24 + 227*u**23 + 10*u**22 - 111*u**21 - 52*u**20 + 52*u**19 + 20*u**18 - 108*u**17 + 53*u**16 + 67*u**15 - 15*u**14 - 25*u**13 + 35*u**12 - 14*u**11 - 10*u**10 - 9*u**9 - u**8 + 24*u**7 - 31*u**6 + 19*u**5 + 4*u**4 - 14*u**3 + 11*u**2 - 5*u + 1",
   "deg_p_u": 206,
+  "n_nonzero": 20,
   "all_integral": true,
   "reconstruction_matches": true,
   "tr_M_at_q0": 0.03723669711925989,

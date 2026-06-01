@@ -1,6 +1,6 @@
 {
   "computation": "habiro-coefficients-helium-3",
-  "description": "Habiro / cyclotomic expansion tr_M(\u00b3He, q) = \u03a3_m a_m\u00b7(u;u)_m (u = q^{1/2}) for helium-3 (Z=2, N=1) via the Phase 5q closed form tr_M(\u00b3He) = \u03c4_p\u00b2 \u00b7 \u03c4_n \u00b7 z\u00b2. Unlocks the strand-doubling \u03a6_16 falsifiable prediction for (\u00b3He\u2212D) per docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md.",
+  "description": "Habiro / cyclotomic expansion tr_M(A=3, q) = \u03a3_m a_m\u00b7(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=2, N=1 under chi_lambda_braid (production) pn-convention. Feeds (i) mirror-pair \u03a6_k universality audit, (ii) \u03a6_8-multiplicity scaling-law table, and (iii) Q_\u03b2 Habiro element keystone search.",
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
@@ -8,12 +8,13 @@
     "prop:interface-knot-markov-z",
     "thm:knot-mass-formula-unified"
   ],
-  "timestamp": "2026-06-01T05:04:11.927970+00:00",
+  "timestamp": "2026-06-01T14:44:37.264767+00:00",
   "parameters": {
     "q_0": 1.1099785827513808,
     "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
     "pn_convention": "chi_lambda_braid (production default)",
-    "source": "habiro-coefficients-atomic.witness.json (\u03c4_p, \u03c4_n)"
+    "source": "habiro-coefficients-atomic.witness.json (\u03c4_p, \u03c4_n)",
+    "generator": "_habiro_coefficient_extract.py"
   },
   "habiro_coefficients": [
     {
@@ -131,12 +132,18 @@
   ],
   "Z": 2,
   "N": 1,
+  "A": 3,
+  "interface_kinds": [
+    "positive",
+    "positive"
+  ],
   "include_inter": true,
   "tr_M_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) - q**(25/2) - q**(21/2) + q**(19/2) + q**(15/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 4*q**10 - q**2 + 1)*(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) + q**(23/2) + q**(21/2) - q**(19/2) - q**(17/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 2*q**12 + 2*q**8 - q**2 + 1)**2/(64*q**(55/2)*(q + 1)**5)",
   "shift": 0,
   "denom_in_u": "64*u**65 + 320*u**63 + 640*u**61 + 640*u**59 + 320*u**57 + 64*u**55",
   "p_in_u": "u**120 + 3*u**119 + 3*u**118 + u**117 - 3*u**116 - 3*u**115 + 3*u**114 - 3*u**112 - 3*u**111 + 3*u**110 + 9*u**109 - 7*u**108 - 9*u**107 + 6*u**106 + 15*u**105 + 2*u**104 - 9*u**103 + 8*u**102 + 23*u**101 - 2*u**100 - 17*u**99 + 6*u**98 + 16*u**97 - 10*u**96 - 18*u**95 + 18*u**94 + 23*u**93 - 26*u**92 - 33*u**91 + 45*u**90 + 28*u**89 - 40*u**88 - 35*u**87 + 65*u**86 + 48*u**85 - 55*u**84 - 36*u**83 + 71*u**82 + 52*u**81 - 55*u**80 - 41*u**79 + 49*u**78 + 40*u**77 - 43*u**76 - 28*u**75 + 27*u**74 + 41*u**73 - 47*u**72 - 31*u**71 + 37*u**70 + 46*u**69 - 58*u**68 - 42*u**67 + 79*u**66 + 60*u**65 - 96*u**64 - 70*u**63 + 108*u**62 + 58*u**61 - 108*u**60 - 58*u**59 + 108*u**58 + 70*u**57 - 96*u**56 - 60*u**55 + 79*u**54 + 42*u**53 - 58*u**52 - 46*u**51 + 37*u**50 + 31*u**49 - 47*u**48 - 41*u**47 + 27*u**46 + 28*u**45 - 43*u**44 - 40*u**43 + 49*u**42 + 41*u**41 - 55*u**40 - 52*u**39 + 71*u**38 + 36*u**37 - 55*u**36 - 48*u**35 + 65*u**34 + 35*u**33 - 40*u**32 - 28*u**31 + 45*u**30 + 33*u**29 - 26*u**28 - 23*u**27 + 18*u**26 + 18*u**25 - 10*u**24 - 16*u**23 + 6*u**22 + 17*u**21 - 2*u**20 - 23*u**19 + 8*u**18 + 9*u**17 + 2*u**16 - 15*u**15 + 6*u**14 + 9*u**13 - 7*u**12 - 9*u**11 + 3*u**10 + 3*u**9 - 3*u**8 + 3*u**6 + 3*u**5 - 3*u**4 - u**3 + 3*u**2 - 3*u + 1",
   "deg_p_u": 120,
+  "n_nonzero": 16,
   "all_integral": true,
   "reconstruction_matches": true,
   "tr_M_at_q0": 0.2612274411870306,
