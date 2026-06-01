@@ -137,7 +137,11 @@ interface QaEntry {
     script_hash?: string;
   };
   reviewed_at: string;
-  reviewed_sha?: string;
+  /**
+   * Repo HEAD SHA at audit time — required by block-qa/v1 schema
+   * (#1640-Copilot @ q-usage-audit.ts:141).
+   */
+  reviewed_sha: string;
   notes?: string;
 }
 
@@ -165,6 +169,24 @@ const SCRIPT_PATH = "content/pipeline/qa-checkers-q-usage.ts";
 const SCRIPT_HASH = hashFile(join(REPO_ROOT, SCRIPT_PATH));
 const NOW_ISO = new Date().toISOString();
 const REVIEWER_ID = "q-usage-audit";
+
+// Capture HEAD SHA once per run for `reviewed_sha` in every entry —
+// required by block-qa/v1 (#1640-Copilot @ q-usage-audit.ts:168).
+function captureHeadSha(): string {
+  try {
+    const headPath = join(REPO_ROOT, ".git", "HEAD");
+    if (!existsSync(headPath)) return "uncommitted";
+    const head = readFileSync(headPath, "utf-8").trim();
+    if (head.startsWith("ref: ")) {
+      const refPath = join(REPO_ROOT, ".git", head.slice(5));
+      if (existsSync(refPath)) return readFileSync(refPath, "utf-8").trim();
+    }
+    return head;
+  } catch {
+    return "uncommitted";
+  }
+}
+const HEAD_SHA = captureHeadSha();
 
 function updateSidecar(b: BlockTriple, results: Map<string, QUsageResult>): void {
   const sidecarPath = b.ts.replace(/\.ts$/, ".qa.json");
@@ -204,13 +226,14 @@ function updateSidecar(b: BlockTriple, results: Map<string, QUsageResult>): void
         script_hash: SCRIPT_HASH,
       },
       reviewed_at: NOW_ISO,
+      reviewed_sha: HEAD_SHA,
     };
     if (r.result === "fail" || r.result === "warn") {
       entry.severity = CRITERION_SEVERITY[criterionId];
       if (r.hits.length > 0) {
         entry.evidence = r.hits
           .slice(0, 4)
-          .map((h) => `${h.file}:${h.line} — ${h.text}`)
+          .map((h) => `${relative(REPO_ROOT, h.file)}:${h.line} — ${h.text}`)
           .join(" | ");
       }
     }

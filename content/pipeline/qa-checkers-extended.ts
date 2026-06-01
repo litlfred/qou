@@ -41,7 +41,12 @@ export interface CheckerHit {
 }
 
 export interface CheckerResult {
-  result: "pass" | "fail" | "n/a";
+  /**
+   * Outcome. `warn` is preserved end-to-end (matches block-qa/v1's
+   * `QaCriterionEntry.result` union) so a soft finding lands in the
+   * sidecar without being silently coerced to `pass`.
+   */
+  result: "pass" | "fail" | "warn" | "n/a";
   hits: CheckerHit[];
 }
 
@@ -1912,20 +1917,15 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
     checkVoiceStatementNoInterpretation(p.md),
   // q-usage — per-block regime detector + 6 mismatch criteria. The
   // checker functions live in qa-checkers-q-usage.ts and return a
-  // result shape compatible with CheckerResult.
+  // CheckerResult-compatible shape. `warn` flows through end-to-end
+  // (#1640-Copilot @ qa-checkers-extended.ts:1927 — earlier `warn`→`pass`
+  // coercion silently dropped chapter-mismatch warnings).
   ...(() => {
     const m: Record<string, (paths: { md?: string; ts?: string; lean?: string }) => CheckerResult> = {};
     for (const [id, fn] of Object.entries(Q_USAGE_AUTOMATED_CHECKERS)) {
       m[id] = (p) => {
         const r = fn(p);
-        // QUsageResult.result may be "warn" — collapse to "pass" for
-        // the registry typing while preserving evidence; the per-block
-        // sidecar writer reads the underlying result via the q-usage
-        // CLI runner, which knows about "warn".
-        return {
-          result: r.result === "warn" ? "pass" : r.result,
-          hits: r.hits,
-        };
+        return { result: r.result, hits: r.hits };
       };
     }
     return m;

@@ -1587,9 +1587,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "notes": "{\"regimes\":[\"root-of-unity\"],\"chapter\":\"models-of-qous\",\"expected\":[\"fixed-q0\",\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
@@ -1603,9 +1604,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -1618,9 +1620,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -1633,9 +1636,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1648,9 +1652,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -1663,11 +1668,12 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "severity": "minor",
-        "evidence": "/home/user/qou/content/quantum-observable-universe/models-of-qous/finite-fields-intro.md:1 — root-of-unity construction used without explicit regime declaration — _[draft]_ We close the catalogue of general models with realisations over finite fields, where the substrate parameter $q$ ranges over $\\mathbb{F}_\\pp^{\\times}$ (or a primitive $\\ell$-th root of unity in $\\overline{\\mathbb{F}}_\\pp$ with $\\ell$ coprime to $\\pp$) and the categorical data lives in a fusion category with finitely many simple objects. **$\\mathbb{F}_\\pp$ realisation** (ex) constructs $\\mathrm{Rep}_{\\mathbb{F}_\\pp}(\\mathrm{SU}_q(2))$ as a QOU and checks the Frobenius and observability axioms on the regular representation, supplying the finite-field counterpart of the Calabi--Yau and Bring's-surface witnesses of the archimedean section. **Outlook for finite-field models** (prose) lists the reductions to $\\mathbb{F}_\\pp$ from $\\mathbb{Q}_\\pp$, the finite-group representation theory, and the Betti-number comparison with characteristic zero. **Jones polynomials** (prose) sketches how the universal $R$-matrix of $U_q(\\mathfrak{sl}_2)$ at a root of unity produces the Jones invariant $J_K(q)$ via the Markov trace, recovering the same knot-theoretic output from both the archimedean and finite-field models when both apply. The next section, **Mostow confinement and the Archimedean wall**, takes that compatibility as the setting for its rigidity-pairing narrative."
+        "evidence": "content/quantum-observable-universe/models-of-qous/finite-fields-intro.md:1 — root-of-unity construction used without explicit regime declaration — _[draft]_ We close the catalogue of general models with realisations over finite fields, where the substrate parameter $q$ ranges over $\\mathbb{F}_\\pp^{\\times}$ (or a primitive $\\ell$-th root of unity in $\\overline{\\mathbb{F}}_\\pp$ with $\\ell$ coprime to $\\pp$) and the categorical data lives in a fusion category with finitely many simple objects. **$\\mathbb{F}_\\pp$ realisation** (ex) constructs $\\mathrm{Rep}_{\\mathbb{F}_\\pp}(\\mathrm{SU}_q(2))$ as a QOU and checks the Frobenius and observability axioms on the regular representation, supplying the finite-field counterpart of the Calabi--Yau and Bring's-surface witnesses of the archimedean section. **Outlook for finite-field models** (prose) lists the reductions to $\\mathbb{F}_\\pp$ from $\\mathbb{Q}_\\pp$, the finite-group representation theory, and the Betti-number comparison with characteristic zero. **Jones polynomials** (prose) sketches how the universal $R$-matrix of $U_q(\\mathfrak{sl}_2)$ at a root of unity produces the Jones invariant $J_K(q)$ via the Markov trace, recovering the same knot-theoretic output from both the archimedean and finite-field models when both apply. The next section, **Mostow confinement and the Archimedean wall**, takes that compatibility as the setting for its rigidity-pairing narrative."
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -1680,13 +1686,14 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "severity": "minor",
-        "evidence": "/home/user/qou/content/quantum-observable-universe/models-of-qous/finite-fields-intro.md:1 — detected regime [root-of-unity] is disjoint from chapter 'models-of-qous' expected [fixed-q0, generic-R, mod-gt-1, mod-lt-1, na, real-gt-1, real-positive, symbolic]"
+        "evidence": "content/quantum-observable-universe/models-of-qous/finite-fields-intro.md:1 — detected regime [root-of-unity] is disjoint from chapter 'models-of-qous' expected [fixed-q0, generic-R, mod-gt-1, mod-lt-1, na, real-gt-1, real-positive, symbolic]"
       }
     ]
   },
-  "updated_at": "2026-06-01T13:26:15.486Z"
+  "updated_at": "2026-06-01T13:33:29.393Z"
 }
