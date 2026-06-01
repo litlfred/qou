@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T14:46:29.483281+00:00",
-  "commitSha": "4ffd171f257dd9fe5725707210f02b74d8289e91",
+  "computedAt": "2026-06-01T15:01:31.186914+00:00",
+  "commitSha": "da4c90cc785126e98f87b273a385c201d50aeb0a",
   "assertions": [
     {
       "name": "exotic_basis_pslq_completed",
@@ -17,8 +17,8 @@
   "durationMs": 21,
   "computation": "mp-residual-exotic-basis-pslq",
   "scriptFile": "mp_residual_exotic_basis_pslq.py",
-  "scriptHash": "bf88684e2281",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3b7f4f63061a",
+  "scriptCommitSha": "2ca3f0fb8eb0420eb65df3b0695694b9cc70064f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -63,23 +63,27 @@ def bloch_wigner_D(z):
     return Im_Li2 + arg_1mz * log_abs_z
 
 
-def mahler_measure_polynomial(coeffs, n_grid=200):
-    """Mahler measure: m(P) = (1/2π) ∫₀^2π log|P(e^{iθ})| dθ.
+def mahler_measure_polynomial(coeffs):
+    """Mahler measure exact via Jensen's formula:
+    m(P) = log|a_d| + Σ max(0, log|r_i|) for roots r_i of P, a_d leading coef.
 
-    Numerical via trapezoid rule with n_grid points (sufficient for ~10⁻⁵
-    relative precision at 200 grid points)."""
-    total = mp.mpf(0)
-    n = mp.mpf(n_grid)
-    for k in range(n_grid):
-        theta = 2 * mp.pi * k / n
-        z = mp.exp(mp.mpc(0, theta))
-        # Evaluate polynomial Σ c_i · z^i
-        val = mp.mpc(0)
-        for i, c in enumerate(coeffs):
-            val += c * z ** i
-        if abs(val) > mp.mpf("1e-30"):
-            total += mp.log(abs(val))
-    return total / n
+    Uses mp.polyroots for full-precision root extraction (no grid).
+    coeffs is [c_0, c_1, ..., c_d] (constant term first); mp.polyroots
+    expects highest-degree first, so we reverse."""
+    rev = list(reversed(coeffs))
+    while len(rev) > 1 and rev[0] == 0:
+        rev.pop(0)
+    if not rev or (len(rev) == 1 and rev[0] == 0):
+        return mp.mpf(0)
+    if len(rev) == 1:
+        return mp.log(abs(rev[0]))
+    roots = mp.polyroots(rev)
+    total = mp.log(abs(rev[0]))
+    for r in roots:
+        abs_r = abs(r)
+        if abs_r > 1:
+            total += mp.log(abs_r)
+    return total
 
 
 def main() -> int:
@@ -131,8 +135,8 @@ def main() -> int:
     basis["D(ℏ_q + i·ℏ_q)"] = bloch_wigner_D(mp.mpc(hbar_q, hbar_q))
     print(f"  D(ℏ_q+iℏ_q)    = {mp.nstr(basis['D(ℏ_q + i·ℏ_q)'], 12)}")
 
-    # Mahler measures
-    print(f"  computing Mahler measures (200-point grid)...")
+    # Mahler measures (exact via polyroots — full 120 dps precision)
+    print(f"  computing Mahler measures (exact via mp.polyroots)...")
     basis["m(z²+z-1)"] = mahler_measure_polynomial([-1, 1, 1])
     print(f"  m(z²+z-1)      = {mp.nstr(basis['m(z²+z-1)'], 12)} (golden ratio)")
     basis["m(z⁵-z-1)"] = mahler_measure_polynomial([-1, -1, 0, 0, 0, 1])

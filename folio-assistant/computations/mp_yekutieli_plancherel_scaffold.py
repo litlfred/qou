@@ -103,7 +103,9 @@ def main() -> int:
     print(f"\n[H_3 Wedderburn decomposition]")
     print(f"  Block            classical dim   dim_q at q_0")
     dim_q_3 = mp.mpf(1)
-    dim_q_21 = qfact_3 / 3  # [3]_q!/(3·1·1) = [3]_q · [2]_q / 3
+    # Hecke q-dim via Frame-Robinson-Thrall hook formula:
+    # dim_q V_(2,1) = [3]_q!/([3]_q · [1]_q · [1]_q) = [2]_q
+    dim_q_21 = qfact_3 / qint(3, q)
     dim_q_111 = mp.mpf(1)
     classical_dims = {"(3)": 1, "(2,1)": 2, "(1,1,1)": 1}
     q_dims = {"(3)": dim_q_3, "(2,1)": dim_q_21, "(1,1,1)": dim_q_111}
