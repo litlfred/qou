@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T18:25:53.787708+00:00",
-  "commitSha": "3575bd9bdb3b58a37bd8f304612eed9f752defb4",
+  "computedAt": "2026-06-01T18:30:11.494825+00:00",
+  "commitSha": "18ac6def75acf693c516f28e4a8e625e698c5307",
   "assertions": [
     {
       "name": "q_integer_truncates_at_root_of_unity",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1950,
+  "durationMs": 2207,
   "computation": "q-spectral-truncation-tower",
   "scriptFile": "q_spectral_truncation_tower.py",
   "scriptHash": "6140eb3cc3d4",
