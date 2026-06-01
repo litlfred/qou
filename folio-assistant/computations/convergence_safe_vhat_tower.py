@@ -107,7 +107,7 @@ def q_log_lambert(z, q, qi, m_terms=6000):
     """
     h = q - qi
     total = mp.mpf(0)
-    tol = mp.mpf(10) ** (5 - mp.dps)
+    tol = mp.mpf(10) ** (5 - mp.mp.dps)
     for m in range(m_terms):
         w = z * qi ** (2 * m + 1)
         denom = 1 - w
