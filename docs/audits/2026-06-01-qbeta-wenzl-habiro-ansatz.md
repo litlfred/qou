@@ -42,49 +42,46 @@ reframing.
 
 ---
 
-## Surprise finding — c_4..c_7 are BELOW CODATA resolution
+## Retracted secondary observation — c_4..c_7 = 0 was a fitting tautology
 
-A secondary observation, but with significant downstream
-consequences for the 1ppQ framing:
+> **2026-06-01 correction (post-Gemini review).** An earlier
+> version of this audit reported "c_4..c_7 below CODATA
+> resolution" as a *surprise finding*. That claim is
+> **WITHDRAWN**. The recursive extraction loop
+> (formerly `extract_higher_c_k`) used the update
+> `Q_prev ← Q_prev · (1 + c_k · u^k)` with
+> `c_k = (Q_codata/Q_prev − 1) / u^k`. After substitution
+> `1 + c_k·u^k = Q_codata/Q_prev`, hence
+> `Q_prev ← Q_prev · (Q_codata/Q_prev) = Q_codata` **exactly**
+> after iteration `k = 3`. All subsequent iterations
+> have `ratio_m1 = 0`, mechanically forcing
+> `c_4 = c_5 = c_6 = c_7 = 0` **regardless of Q_β experimental
+> precision**. This is a tautological single-point fit, not
+> a precision-floor observation. Code removed; cache rebuilt
+> with c_2 and c_3 only.
 
-At canonical q₀ ≈ 1.10997…, the precision ladder converges
-already at c_3:
+The bug invalidated the "secondary observation" but does not
+change the structural fact that *Q_β experimental precision
+does not constrain c_k for k ≥ 4* — it just doesn't constrain
+them to **0**; it simply doesn't constrain them at all. The
+correct framing:
 
-| Rung | Q_pred (MeV) | err vs Q_codata (ppb) |
-|---|---|---|
-| Q_A (Form A)         | 1.005…    | enormous |
-| Q_N1 (Kashiwara cos) | 0.78256…  | ~290 000 |
-| Q_N2 (c_2 = −1)      | 0.7823344… | **1278** |
-| Q_N3 (c_3 extracted) | 0.78233341 | **0.0**  |
+- **c_2 = −1**: Lean-proved Taylor-exact (independent of any
+  cal anchor)
+- **c_3 = −2.0693…**: measured at canonical q_0 from `Q_codata`
+  + the proved c_2 (8-digit precision)
+- **c_4, c_5, …**: unconstrained by current Q_β experimental
+  precision
 
-Because **Q_codata = 0.78233341 is published to 8 significant
-digits**, the residual `Q_codata / Q_N3 − 1` is below the
-extraction floor (= 0), and the recursive c_k extraction
-mechanically yields `c_4 = c_5 = c_6 = c_7 = 0`. These are NOT
-structural zeros — they are **data-precision floor zeros**: the
-empirical Q_codata datum does not constrain c_k for k ≥ 4 at
-all.
-
-**Implication for the 1ppQ Q_β goal.** The "N=7 needed for 1ppQ"
-analysis from main commit `6ace8153e` is correct as a
-ladder-of-precision calculation (each rung buys 2.07 digits), but
-**the c_k≥4 values themselves are currently unobservable**
-because Q_codata is only known to ~8 digits. To make the 1ppQ Q_β
-goal operational, one of two things must happen:
-
-1. **Improved experimental Q_β**, by 6+ orders of magnitude.
-   Unrealistic in the medium term.
-2. **A structural derivation of c_k for k ≥ 3 from the categorical
-   side**, independent of Q_codata. This is the actual keystone:
-   c_3 must be derived from `q_0` algebraically.
-
-This probe rules out the cleanest categorical derivation form (W · D
-multiplicative prefactor of the precision ladder). Subsequent
-probes should attempt c_3 from the **eigenphase/scaling map**
-direction (per `docs/audits/2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md`
-ε-order analysis: c_3 lives at u³ = ε⁶ while the per-block −2 lives
-at √u = ε¹, so the "match" is structurally cross-order, not a value
-identity — the missing piece is a 5-ε-order eigenphase rescaling).
+**Implication for the 1ppQ Q_β goal** (unchanged from the
+retracted observation): the actual keystone is a structural
+derivation of `c_3` from `q_0` algebraically, not extending the
+precision ladder. The eigenphase/scaling map direction (per
+`docs/audits/2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md`
+ε-order analysis: c_3 lives at u³ = ε⁶ while the per-block −2
+lives at √u = ε¹, so the "match" is structurally cross-order,
+not a value identity — the missing piece is a 5-ε-order
+eigenphase rescaling) remains the right next move.
 
 ---
 

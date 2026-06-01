@@ -1,7 +1,7 @@
 # Q_β Wenzl-Habiro keystone — coordination ledger
 
 **Branch:** `claude/qbeta-wenzl-habiro-keystone-2026-06-01`
-**PR:** _to be opened_
+**PR:** [#1642](https://github.com/litlfred/qou/pull/1642)
 **Goal:** Identify the explicit Q_β Habiro element categorical formula by wiring the level-2 SU(2) Wenzl identification (PR #1625 merged) into a concrete ansatz that reproduces the known c_2 = −1 (Taylor-exact) and c_3 = −2 (near-match) coefficients and predicts c_4–c_7 Taylor-exactly. Closing this would flip Q_β / m_n / Δ_pn from `near-match` to `proved` and meet the 1ppQ goal.
 
 ## The Wenzl-Habiro ansatz hypothesis
@@ -26,13 +26,13 @@ The Wenzl factor encodes the level-2 SU(2) Verlinde annihilator (`[4]_q = 0` at 
 
 ## Status
 
-- L1 (1 ppQ compute): MET
-- L2: 3/7 met; Q_β, m_n, Δ_pn share c_k tier wall root; m_μ misses 963.6× (post-re-pin)
+- **L1 (cross-method compute precision at q₀, target ≤ 1 ppQ)**: MET — `_precision.py` default 65 dps compute / 50 dps serialization, per CLAUDE.md §Precision goals + [`docs/precision-goals.md`](../precision-goals.md).
+- **L2 (per-observable accuracy, target σ_pred ≤ σ_exp/100)**: 3/7 met; Q_β, m_n, Δ_pn share c_k tier wall root; m_μ misses 963.6× (post-re-pin).
 - c_2 = −1 Taylor-exact PROVED
 - c_3 = −2 near-match SETTLED (J_Hopf(q=1))
-- c_4-c_7 CAL-anchored
+- c_4-c_7 cal-anchored (note: the earlier "c_4-c_7 below CODATA resolution" framing was retracted on 2026-06-01 — it was a tautology of a recursive single-point fit, not a precision floor; see `docs/audits/2026-06-01-qbeta-wenzl-habiro-ansatz.md` correction)
 - N=7 needed for 1ppQ per truncation-order math (commit `6ace8153e`)
 
 ## Master ledger
 
-- [`docs/coordination/1ppq-qbeta.md`](1ppq-qbeta.md) — 1ppQ Q_β authority
+- [`1ppq-qbeta.md`](1ppq-qbeta.md) — 1ppQ Q_β authority
