@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:25:58.681545+00:00",
-  "commitSha": "301cc5abe937758518d0cec3ec5baa85f77cbfc0",
+  "computedAt": "2026-06-01T05:26:09.024906+00:00",
+  "commitSha": "dfb50d1b28974cbfdb8299a02adda00075aa61b9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2354,6 +2354,7 @@
         "constit-factor-residual-phase5k.witness.json",
         "constit-factor-varying-q-phase5k2.witness.json",
         "content-block-label-audit.witness.json",
+        "cross-check-trM-1ppb.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
@@ -2414,6 +2415,7 @@
         "f-ell-derivation-via-per-braid-mass-tower.witness.json",
         "family-a-per-partition-h-decomposition-50dps.witness.json",
         "finite-q-volume-conjecture-probe.witness.json",
+        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "forward-ref-classification.witness.json",
