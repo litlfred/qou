@@ -51,7 +51,8 @@ N_{\unicode{9737}}^{\text{in}}(A, d) - N_{\unicode{9737}}^{\text{out}}(A, d)
 \;+\; \bigl(\text{lower-birthday corrections}\bigr),
 $$
 
-where $\hbar_{q} = 1 - q^{-1}$ is the substrate-Planck constant.
+where $\hbar_{q} = 1 - q^{-1}$ is the substrate-Planck constant
+([`def:quantum-planck-constant`](#def:quantum-planck-constant)).
 
 The $\hbar^{2}_{q}$ factor is forced by dimensional consistency
 with the Hoefsmit normalisation
