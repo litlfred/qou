@@ -1,0 +1,53 @@
+{
+  "schema": "volume-def-reconcile/1",
+  "description": "Reconciliation of the two Borromean-volume definitions (8G vs ln|Vol_q|). Determines they are the SAME post-\u03c4 volume Vol(K) linked by the Kashaev Volume Conjecture; the keystone audit's 5090\u00d7 was a cross-\u03c4 category comparison. No fit.",
+  "compute_dps": 70,
+  "q0": "1.1099785827513808076",
+  "hbar_q": "0.099081716044258507839",
+  "definition_A_production": {
+    "name": "classical hyperbolic Vol(\ud835\udcd1\u2083) = 8\u00b7G",
+    "value": "7.3277247534177521204",
+    "chain_stage": "POST-\u03c4 (archimedean \u211d). topological-mass-formula Step 1: Re tr(\u03c4\u0302_desc\u00b7Hol)=Vol(K), CS/volume corr.",
+    "provenance": "_li_2_q_util.geom_full_borromean vol_b3=8*mp.catalan; Adams 1985 SnapPy table."
+  },
+  "definition_B_vol_through_tau": {
+    "name": "Vol(K)=\u03c4_arch(Vol_q)=ln|Vol_q|, Vol_q=\u220fV\u0302_i \u2208 \u2124[q^\u00bd]",
+    "chain_stage": "Vol_q is PRE-\u03c4 algebraic; \u03c4_arch=ln|\u00b7| is the archimedean EXIT. The result ln|Vol_q| is POST-\u03c4 \u211d.",
+    "kvc_bridge": "kashaev-volume-conjecture.md: Vol_hyp = 2\u03c0\u00b7lim log|J_N|/N at roots of unity = regulator of a Bloch-group class. prop:vol-through-tau asserts this EQUALS the classical Vol(K)=8G.",
+    "normalized_trM_at_q0": "0.998562163837",
+    "ln_normalized_trM_at_q0_WRONGSTAGE": "-0.00143887084155",
+    "note": "The keystone audit's \u22120.00144 = ln|trM_norm(q\u2080)| logs the PRE-\u03c4 algebraic number at q\u2080 \u2014 a category error, not the \u03c4_arch/Kashaev regulator."
+  },
+  "exact_functional_relation": {
+    "exp_ln_trM_norm": "0.998562163837",
+    "trM_norm": "0.998562163837",
+    "ln_8G": "1.99166506572",
+    "ratio_8G_over_abs_ln_trM_norm": "5092.6911",
+    "is_log_or_exp_relation": "NO. exp(ln_trM_norm)=trM_norm\u22481 (round-trips to the trace, not 8G); ln(8G)\u22481.99 (not \u2248ln_trM_norm). 8G is NEITHER log NOR exp of ln_trM_norm. The '5090\u00d7' = 8G / |ln(trM_norm(q\u2080))| is the ratio of a POST-\u03c4 volume to ln of a PRE-\u03c4 algebraic number at q\u2080 \u2014 a cross-functor (category) comparison, not one functional map."
+  },
+  "the_5090x_explained": {
+    "ratio_8G_over_abs_ln_trM_norm": "5092.6911",
+    "interpretation": "8G / |ln(trM_norm(q\u2080))| = 7.328 / 0.00144 \u2248 5090. NOT a log\u2194exp relation (see exact_functional_relation). It is the magnitude of a post-\u03c4 volume over ln of a pre-\u03c4 number \u2014 cross-functor compare."
+  },
+  "raw_m_p_readings_no_fit": {
+    "production_8G_over_hbar2_times_linking_weight": {
+      "m_avg_MeV": "966.0498245",
+      "err_vs_codata_pct": "2.88961",
+      "stage": "POST-\u03c4 classical Vol (8G) \u00d7 H\u2084 linking_weight (Def A, production)"
+    },
+    "8G_over_hbar2_bare_lw1": {
+      "m_avg_MeV": "381.4188187",
+      "err_vs_codata_pct": "-59.3768",
+      "stage": "POST-\u03c4 classical Vol (8G) alone, linking_weight=1"
+    },
+    "lnTrMnorm_over_hbar2_WRONGSTAGE": {
+      "m_avg_MeV": "-0.07489533724",
+      "err_vs_codata_pct": "-100.008",
+      "stage": "ln of PRE-\u03c4 normalized trace at q\u2080 \u2014 CATEGORY ERROR (the keystone audit's \u22120.00144 reading; gives negative mass)"
+    }
+  },
+  "production_stage_verdict": "CORRECT. Production uses the POST-\u03c4 classical Vol(K)=8G, which is exactly what prop:vol-through-tau says ln|Vol_q| evaluates to via the KVC. The q-volume functional (Def B) is the SAME observable computed the long way (open KVC asymptotic + per-crossing V\u0302_i). Production short-circuits to the SnapPy 8G \u2014 correct value, correct stage. Raw production m_avg \u2248 966 MeV (+2.89%) is unchanged; the +2.89% is the SEPARATE linking_weight residual.",
+  "verdict": "(a) SAME OBJECT ACROSS \u03c4 \u2014 the '5090\u00d7' is a CROSS-FUNCTOR CATEGORY ERROR, not a numerical contradiction. Definition A (8G) is the POST-\u03c4 archimedean volume Vol(K)=Re tr(\u03c4\u0302_desc\u00b7Hol) [topological-mass-formula Step 1, Chern\u2013Simons/volume correspondence]. Definition B (ln|Vol_q|) is \u03c4_arch applied to the PRE-\u03c4 algebraic generator Vol_q=\u220fV\u0302_i; prop:vol-through-tau + kashaev-volume-conjecture assert these are EQUAL by the Kashaev Volume Conjecture (the regulator of a Bloch-group class landing in \u211d as the hyperbolic volume). So ln|Vol_q| SHOULD equal 8G \u2014 they are the same Vol(K). The keystone audit's \u22120.00144 took ln of the q\u2080-evaluated NORMALIZED trace (\u22480.9986), i.e. the PRE-\u03c4 algebraic number specialized at q\u2080 \u2014 NOT the \u03c4_arch regulator/Kashaev-limit (an N\u2192\u221e asymptotic at roots of unity). Logging a pre-\u03c4 number is the category error. PRODUCTION USES THE CORRECT STAGE: the post-\u03c4 classical Vol(K)=8G is exactly what the KVC says ln|Vol_q| evaluates to. No volume-definition bug.",
+  "residual_open": "Not the volume DEFINITION (reconciled here). The genuine open items per keystone \u00a75: (i) the KVC itself (axiomatized as VolumeConjecture class \u2014 proved only for 4\u2081, some torus/pretzel); (ii) the per-crossing V\u0302_i factorization compute for atomic braids; (iii) the H\u2084 linking_weight 2.53 vs CODATA-\u03bb 2.46 residual (+2.89%) = the separate \u03bb_scale-absorbed item, NOT a volume-definition inconsistency.",
+  "discipline": "No fit, no fabrication. m_p readings are raw at each stage; we report whichever follows, not the one nearest CODATA."
+}
