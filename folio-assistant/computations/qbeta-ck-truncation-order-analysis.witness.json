@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-31T15:20:36.375776+00:00",
-  "commitSha": "6d9885a72c06d78b44d0e1d18bc61243f9fb359f",
+  "computedAt": "2026-06-01T01:44:38.829705+00:00",
+  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
   "assertions": [
     {
       "name": "N3_beats_100x_experimental_target",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 19,
   "computation": "qbeta-ck-truncation-order-analysis",
   "scriptFile": "qbeta_ck_truncation_order_analysis.py",
   "scriptHash": "32b0a2c48b06",
-  "scriptCommitSha": "7ef3ec6b56d83c2faadeed7dac479a26926ccf34",
+  "scriptCommitSha": "9e45f6d48aa26ae872730fdcb25ff1b624100511",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -26,7 +26,7 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T19:08:04.037731+00:00",
-  "commitSha": "58bb91b92f189d7771161ef8f1e8a0823e5b9c91",
+  "computedAt": "2026-06-01T01:40:23.885674+00:00",
+  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
   "assertions": [
     {
       "name": "Optimised pair count ≤ naive pair count",
@@ -29,6 +29,13 @@
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Empirical Δi ≤ 1 selection rule: LR-fusion sweep of shell-pair indices restricted to |i_N − i_Z| ≤ 1 (13 pairs of 49); supports conj:double-magic-delta-i-bound.",
   "contentBlock": "conj:double-magic-delta-i-bound",
@@ -82,7 +89,7 @@
           2
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 0.003468751907348633
+        "elapsed_sec": 0.0035314559936523438
       },
       {
         "i_Z": 2,
@@ -98,7 +105,7 @@
           1
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 15.753864765167236
+        "elapsed_sec": 15.823869943618774
       },
       {
         "i_Z": 3,
@@ -115,7 +122,7 @@
           2
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 0.01709461212158203
+        "elapsed_sec": 0.0175018310546875
       },
       {
         "i_Z": 3,
@@ -253,8 +260,8 @@
       "optimised_pair_count": 19,
       "computed_pair_count": 3,
       "dominant_self_conj_count": 0,
-      "actual_optimised_sec": 15.774428129196167,
-      "estimated_naive_sec": 257.6489927768707,
+      "actual_optimised_sec": 15.844903230667114,
+      "estimated_naive_sec": 258.8000861008962,
       "empirical_speedup": 16.333333333333332
     }
   }
