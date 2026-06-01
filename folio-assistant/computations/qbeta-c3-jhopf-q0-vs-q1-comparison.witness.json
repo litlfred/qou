@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T20:08:41.380334+00:00",
-  "commitSha": "4d1c79074c13f5893246e5f43c0dd666812bc3b0",
+  "computedAt": "2026-06-01T00:10:41.179654+00:00",
+  "commitSha": "bb8bf155ff9eb1118f07b28d937665a910340fb0",
   "assertions": [
     {
       "name": "audit_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "qbeta-c3-jhopf-q0-vs-q1-comparison",
   "scriptFile": "qbeta_c3_jhopf_q0_vs_q1_comparison.py",
-  "scriptHash": "3c85c41f601f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "867d748d8055",
+  "scriptCommitSha": "99fb307c32eb0ca45a3699b74d49c08f90794633",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
