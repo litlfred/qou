@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T14:15:10.764091+00:00",
-  "commitSha": "a3f84cce8b4787999c2d7c96f9b043f131c8921a",
+  "computedAt": "2026-06-01T14:19:09.011314+00:00",
+  "commitSha": "e4fba288e9f2fa67ac00617152d5448e98da4862",
   "assertions": [
     {
       "name": "q_integer_truncates_at_root_of_unity",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1511,
+  "durationMs": 1415,
   "computation": "q-spectral-truncation-tower",
   "scriptFile": "q_spectral_truncation_tower.py",
-  "scriptHash": "4a6589ddee22",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b230c149bedf",
+  "scriptCommitSha": "e4fba288e9f2fa67ac00617152d5448e98da4862",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Exact root-of-unity truncation of the q-integer eigenvalue tower [k]_q — the shared spectral engine of the q-Laplacian (q-heat ∂_t=−Δ_q, q-Navier-Stokes Δ_q) and the Wenzl/Gram-matrix block dimensions. At q=e^{iπ/κ} the q-integer [κ]_q vanishes (WRT/Verlinde truncation), making the infinite q-Laplacian spectrum FINITE and exact. Records the surviving quantum dimensions [1]_q..[κ−1]_q (incl. the golden ratio at κ=5 = Fibonacci anyon dim), the q-heat mode-decay rates [k]_q², and the bar involution k↦−k ([k]_q²  bar-even = physical). Fibre-level (q formal, Im unconstrained); reality only at q₀. Exact symbolic; characterizes the shared engine, does not solve the q-NS PDE or build the q-heat archimedean realisation.",
+  "description": "Exact root-of-unity truncation of the q-integer eigenvalue tower [k]_q — the shared spectral engine of the q-Laplacian (q-heat ∂_t=−Δ_q, q-Navier-Stokes Δ_q) and the Wenzl/Gram-matrix block dimensions. At q=e^{iπ/κ} the q-integer [κ]_q vanishes (WRT/Verlinde truncation), making the infinite q-Laplacian spectrum FINITE and exact. Records the surviving quantum dimensions [1]_q..[κ−1]_q (incl. the golden ratio at κ=5 = Fibonacci anyon dim), the q-heat mode-decay rates [k]_q², the bar involution k↦−k ([k]_q²  bar-even = physical), and the Yekutieli obstruction-level cap (κ−1) from the same truncation (4 survey targets: q-heat, q-NS, Gram/Wenzl, Yekutieli). Fibre-level (q formal, Im unconstrained); reality only at q₀. Exact symbolic; characterizes the shared engine, does not solve the q-NS PDE or build the q-heat archimedean realisation.",
   "contentBlock": "def:q-harmonic-form",
   "data": {
     "bar_involution": {
@@ -146,11 +146,53 @@
       "equals_golden_ratio": true,
       "interpretation": "Fibonacci-anyon quantum dimension"
     },
+    "yekutieli_obstruction_cap": {
+      "cap_table": [
+        {
+          "kappa": 2,
+          "max_obstruction_level": 1,
+          "n_simple_objects": 1
+        },
+        {
+          "kappa": 3,
+          "max_obstruction_level": 2,
+          "n_simple_objects": 2
+        },
+        {
+          "kappa": 4,
+          "max_obstruction_level": 3,
+          "n_simple_objects": 3
+        },
+        {
+          "kappa": 5,
+          "max_obstruction_level": 4,
+          "n_simple_objects": 4
+        },
+        {
+          "kappa": 6,
+          "max_obstruction_level": 5,
+          "n_simple_objects": 5
+        },
+        {
+          "kappa": 7,
+          "max_obstruction_level": 6,
+          "n_simple_objects": 6
+        },
+        {
+          "kappa": 8,
+          "max_obstruction_level": 7,
+          "n_simple_objects": 7
+        }
+      ],
+      "mechanism": "at q=e^{iπ/κ} only j=0..(κ−2)/2 survive ⇒ Yekutieli obstruction tower κ_n capped at level (κ−1); the q-difference / Verlinde handle on the abstract cohomological obstruction",
+      "bring_substrate": "genus-4, χ(A)=−6; 3 lepton generations = cyclotomic-Galois orbits of S_3⊂S_5 on 6 branch points"
+    },
     "serves_targets": {
       "q_heat_equation": "eigenvalues [k]_q²; finite exact kernel at roots",
       "q_navier_stokes": "Δ_q spectrum [k]_q²; finite-dim system at roots",
       "gram_markov_wenzl": "block quantum dims [2j+1]_q",
-      "open_research": "q-NS blowup exponent; q-heat archimedean Padé continuation — boundary data supplied here",
+      "yekutieli_lifting": "obstruction level capped at (κ−1) by truncation",
+      "open_research": "q-NS blowup exponent; q-heat archimedean Padé continuation; Yekutieli Galois-Fourier full decomposition — boundary data / level-cap supplied here",
       "no_fitted_form_proposed": true
     }
   }
