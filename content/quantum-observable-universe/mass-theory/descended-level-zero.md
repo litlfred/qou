@@ -191,7 +191,9 @@ the level-$0$ holonomy by the geometric series displayed above.
 At the base level, the Nakayama automorphism
 $\Psi = S^2 = \mathrm{id}$ in $H_n(R, q)$
 ([categorical mass as Markov trace](#prop\:categorical-mass-markov)),
-The single-level mass is $|\mathrm{tr}_M(\rho(\beta))|$.
+The single-level mass is $\mathrm{tr}_M(\rho(\beta))$
+(signed at the categorical level; positive observable at $q_0$
+by Wenzl positivity for canonical $T_w$).
 The base-level descended term $\prod_i \hat V_i^{(0)}$ is
 exactly this Markov trace by the factorization theorem
 ([Markov trace factorization](#thm\:markov-trace-factorization)).

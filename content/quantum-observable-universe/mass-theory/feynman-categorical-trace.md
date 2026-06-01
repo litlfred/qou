@@ -38,7 +38,7 @@ mass at a single brane level
 $$
   \mathfrak{m}(\varrho)\big|_{\text{single level}}
   =
-  \bigl|\mathrm{tr}_M\bigl(\rho(\beta)\bigr)\bigr|
+  \mathrm{tr}_M\bigl(\rho(\beta)\bigr)
   =
   \bigl|
   \langle\psi_f|\psi_i\rangle_{\mathrm{eigenbasis}}

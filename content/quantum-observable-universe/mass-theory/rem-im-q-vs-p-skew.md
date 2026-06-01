@@ -30,7 +30,7 @@ canonical projection.
 Per [`prop:categorical-mass-markov`](categorical-mass-markov.md),
 the categorical mass formula is
 
-$$\mathfrak{m}_{q, \mathcal{K}} = \bigl|\mathrm{tr}_M(\rho(\beta_\mathcal{K}))\bigr|.$$
+$$\mathfrak{m}_{q, \mathcal{K}} = \mathrm{tr}_M(\rho(\beta_\mathcal{K})).$$
 
 The $|\cdot|$ is the modulus. For real $q$, $\mathrm{tr}_M$ is real
 and $|\cdot|$ is trivial (absolute value of a sign). For

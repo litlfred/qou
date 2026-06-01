@@ -128,8 +128,8 @@ The formula is the binding-energy analogue of the mass endomorphism.
 The nucleon mass is $m(K) = m_e \cdot \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2
 \cdot \mathrm{lw}(K, q_0)$; binding replaces the $\mathrm{lw}/\hbar_q^2$
 structural factor with the Wedderburn trace difference
-$\Delta\mathrm{tr} = |\mathrm{tr}_M(\text{free})| -
-|\mathrm{tr}_M(\text{atom})|$, keeping the common
+$\Delta\mathrm{tr} = \mathrm{tr}_M(\text{free}) -
+\mathrm{tr}_M(\text{atom})$, keeping the common
 $m_e \cdot \mathrm{Vol}(\mathcal{B}_3)$ prefactor:
 
 $$

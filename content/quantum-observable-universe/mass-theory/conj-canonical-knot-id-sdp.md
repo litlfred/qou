@@ -17,7 +17,7 @@ the joint mass-tower confinement SDP*
 $$
   \min_{T_w \in H_{n_0}(q_0)^{\mathrm{GB\text{-}NF}},\,\rho \in \mathbb{Z}_{>0}}
   \Bigl\|
-    \rho \cdot \bigl[|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w)
+    \rho \cdot \bigl[\mathrm{tr}_M(T_w) + \mathrm{tower}(T_w)
     + \mathrm{tr}_M(C_{\dim_q})\bigr] \cdot \mathfrak{E}_0
     \;-\; B_{\mathrm{AME}}(\mathfrak{H})
   \Bigr\|^2
@@ -96,7 +96,7 @@ three light nuclei.  Result:
   canonical-basis class).  This discharges sub-deliverable 2 of
   Issue #604 for $^3\mathrm{He}$.
 - **$^2\mathrm{H}$ — needs multi-term cost.** The prototype's
-  single-term flagship formula $B = m_e \cdot \rho \cdot |\mathrm{tr}_M(T_w)|$
+  single-term flagship formula $B = m_e \cdot \rho \cdot \mathrm{tr}_M(T_w)$
   does not make $6_2$ the structural winner (per the known offset
   documented in `probe-sdp-canonical-paper-formula.witness.json`).
   Wiring T2–T6 of
