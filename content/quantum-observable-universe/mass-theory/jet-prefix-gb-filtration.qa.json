@@ -3,13 +3,13 @@
   "label": "prop:jet-prefix-gb-filtration",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/jet-prefix-gb-filtration.ts",
-    "md": "content/quantum-observable-universe/mass-application/jet-prefix-gb-filtration.md",
-    "lean": "content/quantum-observable-universe/mass-application/jet-prefix-gb-filtration.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.ts",
+    "md": "content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md",
+    "lean": "content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.lean"
   },
   "source_hashes": {
-    "md": "c6198ed9205e",
-    "ts": "543bc3facbc7",
+    "ts": "e000f8115f63",
+    "md": "67a639906675",
     "lean": "f051a05b3bfc"
   },
   "criteria": {
@@ -1947,7 +1947,122 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "e000f8115f63",
+          "md": "67a639906675",
+          "lean": "f051a05b3bfc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "e000f8115f63",
+          "md": "67a639906675",
+          "lean": "f051a05b3bfc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "e000f8115f63",
+          "md": "67a639906675",
+          "lean": "f051a05b3bfc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "e000f8115f63",
+          "md": "67a639906675",
+          "lean": "f051a05b3bfc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "e000f8115f63",
+          "md": "67a639906675",
+          "lean": "f051a05b3bfc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "e000f8115f63",
+          "md": "67a639906675",
+          "lean": "f051a05b3bfc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "e000f8115f63",
+          "md": "67a639906675",
+          "lean": "f051a05b3bfc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md:1 — detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T18:29:30.189Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

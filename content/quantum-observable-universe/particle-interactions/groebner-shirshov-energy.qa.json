@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean"
   },
   "source_hashes": {
-    "md": "86d931e6f0ba",
     "ts": "2469a091c744",
+    "md": "86d931e6f0ba",
     "lean": "fd32f78a9a90"
   },
   "criteria": {
@@ -1933,7 +1933,122 @@
           "tanglement_score": 2
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "2469a091c744",
+          "md": "86d931e6f0ba",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\",\"symbolic\"],\"chapter\":\"particle-interactions\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "2469a091c744",
+          "md": "86d931e6f0ba",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "2469a091c744",
+          "md": "86d931e6f0ba",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "2469a091c744",
+          "md": "86d931e6f0ba",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "2469a091c744",
+          "md": "86d931e6f0ba",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.md:52 — formal-power-series context uses 'q < 1' or 'q > 1' rather than '|q| < 1' / '|q| > 1' — (since $q > 1$ ensures $q - q^{-1} > 0$)."
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "2469a091c744",
+          "md": "86d931e6f0ba",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "2469a091c744",
+          "md": "86d931e6f0ba",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

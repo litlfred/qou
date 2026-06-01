@@ -1,15 +1,15 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:p-vs-np-boundary",
-  "kind": "conjecture",
+  "label": "prop:p-vs-np-boundary",
+  "kind": "proposition",
   "paths": {
     "ts": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.ts",
     "md": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.md",
     "lean": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean"
   },
   "source_hashes": {
+    "ts": "d4b902c48a21",
     "md": "d9df43d29732",
-    "ts": "76d3e3e21737",
     "lean": "e383a6d19ff3"
   },
   "criteria": {
@@ -1337,7 +1337,120 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "d4b902c48a21",
+          "md": "d9df43d29732",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"information-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "d4b902c48a21",
+          "md": "d9df43d29732",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "d4b902c48a21",
+          "md": "d9df43d29732",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "d4b902c48a21",
+          "md": "d9df43d29732",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "d4b902c48a21",
+          "md": "d9df43d29732",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "d4b902c48a21",
+          "md": "d9df43d29732",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "d4b902c48a21",
+          "md": "d9df43d29732",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

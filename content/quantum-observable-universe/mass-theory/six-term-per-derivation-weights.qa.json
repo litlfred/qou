@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/six-term-per-derivation-weights.lean"
   },
   "source_hashes": {
+    "ts": "c2cb4f98e55a",
     "md": "77bcd7566727",
-    "ts": "419ad7645f1e",
     "lean": "2d4e7edbe6a3"
   },
   "criteria": {
@@ -1949,7 +1949,120 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "c2cb4f98e55a",
+          "md": "77bcd7566727",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "c2cb4f98e55a",
+          "md": "77bcd7566727",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "c2cb4f98e55a",
+          "md": "77bcd7566727",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "c2cb4f98e55a",
+          "md": "77bcd7566727",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "c2cb4f98e55a",
+          "md": "77bcd7566727",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "c2cb4f98e55a",
+          "md": "77bcd7566727",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "c2cb4f98e55a",
+          "md": "77bcd7566727",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T18:29:30.189Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

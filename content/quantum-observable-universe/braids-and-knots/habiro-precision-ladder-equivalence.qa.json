@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.lean"
   },
   "source_hashes": {
-    "md": "3e534cfb3d51",
-    "ts": "871fa7725fdf",
-    "lean": "8a4c06311859"
+    "ts": "5b55e3b75642",
+    "md": "610112181cfe",
+    "lean": "fa3eea6663eb"
   },
   "criteria": {
     "proof-lean-compiles": [
@@ -281,7 +281,122 @@
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:habiro-precision-ladder-equivalence' → expected 'habiro_precision_ladder_equivalence'; Lean declares: qPochhammer, HabiroCoeff, HabiroExpansion, HabiroExpansion.eval, habiro_terminates.... Structural match via content."
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "5b55e3b75642",
+          "md": "610112181cfe",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"generic-R\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "5b55e3b75642",
+          "md": "610112181cfe",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "5b55e3b75642",
+          "md": "610112181cfe",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "major",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md:70 — MeV/CODATA reference in categorical chapter — form, improving to $\\sim 1\\,\\text{ppm}$ once the derived low-order | /home/user/qou/content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md:77 — MeV/CODATA reference in categorical chapter — ppb-level prediction."
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "5b55e3b75642",
+          "md": "610112181cfe",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "5b55e3b75642",
+          "md": "610112181cfe",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "5b55e3b75642",
+          "md": "610112181cfe",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "5b55e3b75642",
+          "md": "610112181cfe",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

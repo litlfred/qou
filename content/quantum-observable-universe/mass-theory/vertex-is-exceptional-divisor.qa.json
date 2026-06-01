@@ -3,13 +3,13 @@
   "label": "prop:vertex-is-exceptional-divisor",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.md",
-    "lean": "content/quantum-observable-universe/climax-volume-mass/vertex-is-exceptional-divisor.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.ts",
+    "md": "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.md",
+    "lean": "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean"
   },
   "source_hashes": {
-    "md": "0bb6d1422082",
     "ts": "b5e8f28052e5",
+    "md": "0bb6d1422082",
     "lean": "baf3032b02e4"
   },
   "criteria": {
@@ -1917,7 +1917,120 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "b5e8f28052e5",
+          "md": "0bb6d1422082",
+          "lean": "baf3032b02e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "b5e8f28052e5",
+          "md": "0bb6d1422082",
+          "lean": "baf3032b02e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "b5e8f28052e5",
+          "md": "0bb6d1422082",
+          "lean": "baf3032b02e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "b5e8f28052e5",
+          "md": "0bb6d1422082",
+          "lean": "baf3032b02e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "b5e8f28052e5",
+          "md": "0bb6d1422082",
+          "lean": "baf3032b02e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "b5e8f28052e5",
+          "md": "0bb6d1422082",
+          "lean": "baf3032b02e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "b5e8f28052e5",
+          "md": "0bb6d1422082",
+          "lean": "baf3032b02e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

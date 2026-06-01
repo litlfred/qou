@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/diophantine-birthday.lean"
   },
   "source_hashes": {
+    "ts": "81045f630dcf",
     "md": "5cd8b8e9bc2a",
-    "ts": "1f97fc81acee",
     "lean": "5b53771009ba"
   },
   "criteria": {
@@ -1335,7 +1335,124 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "81045f630dcf",
+          "md": "5cd8b8e9bc2a",
+          "lean": "5b53771009ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\"],\"chapter\":\"appendix-surreals\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "81045f630dcf",
+          "md": "5cd8b8e9bc2a",
+          "lean": "5b53771009ba"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "major",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/appendix-surreals/diophantine-birthday.md:96 — 4. **QOU substrate parameter $q_0 = 1.109978595554181\\ldots$ (50 dps)**: the"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "81045f630dcf",
+          "md": "5cd8b8e9bc2a",
+          "lean": "5b53771009ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "81045f630dcf",
+          "md": "5cd8b8e9bc2a",
+          "lean": "5b53771009ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "81045f630dcf",
+          "md": "5cd8b8e9bc2a",
+          "lean": "5b53771009ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "81045f630dcf",
+          "md": "5cd8b8e9bc2a",
+          "lean": "5b53771009ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "81045f630dcf",
+          "md": "5cd8b8e9bc2a",
+          "lean": "5b53771009ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/appendix-surreals/diophantine-birthday.md:1 — detected regime [fixed-q0] is disjoint from chapter 'appendix-surreals' expected [generic-R, na, symbolic]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

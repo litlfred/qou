@@ -1,16 +1,16 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:hoefsmit-ew-cell-content",
-  "kind": "conjecture",
+  "label": "thm:hoefsmit-ew-cell-content",
+  "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/hoefsmit-ew-cell-content.ts",
-    "md": "content/quantum-observable-universe/mass-application/hoefsmit-ew-cell-content.md",
-    "lean": "content/quantum-observable-universe/mass-application/hoefsmit-ew-cell-content.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.ts",
+    "md": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.md",
+    "lean": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean"
   },
   "source_hashes": {
-    "md": "b8e1f905258e",
-    "ts": "a81e121d2e4d",
-    "lean": "e989a22986fe"
+    "ts": "ded2948b5ee2",
+    "md": "f335681240d1",
+    "lean": "eae62b5a4a59"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1369,7 +1369,120 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "ded2948b5ee2",
+          "md": "f335681240d1",
+          "lean": "eae62b5a4a59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"generic-R\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "ded2948b5ee2",
+          "md": "f335681240d1",
+          "lean": "eae62b5a4a59"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "ded2948b5ee2",
+          "md": "f335681240d1",
+          "lean": "eae62b5a4a59"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "ded2948b5ee2",
+          "md": "f335681240d1",
+          "lean": "eae62b5a4a59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "ded2948b5ee2",
+          "md": "f335681240d1",
+          "lean": "eae62b5a4a59"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "ded2948b5ee2",
+          "md": "f335681240d1",
+          "lean": "eae62b5a4a59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "ded2948b5ee2",
+          "md": "f335681240d1",
+          "lean": "eae62b5a4a59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

@@ -3,13 +3,13 @@
   "label": "prop:quantum-dilogarithm-stratified",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/quantum-dilogarithm-stratified.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/quantum-dilogarithm-stratified.md",
-    "lean": "content/quantum-observable-universe/climax-volume-mass/quantum-dilogarithm-stratified.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified.ts",
+    "md": "content/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified.md",
+    "lean": "content/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified.lean"
   },
   "source_hashes": {
-    "md": "8643059f1757",
     "ts": "abe59bb72c0d",
+    "md": "b48ec81b1f5a",
     "lean": "43646f53e590"
   },
   "criteria": {
@@ -1933,7 +1933,122 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "abe59bb72c0d",
+          "md": "b48ec81b1f5a",
+          "lean": "43646f53e590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"generic-R\",\"mod-gt-1\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "abe59bb72c0d",
+          "md": "b48ec81b1f5a",
+          "lean": "43646f53e590"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "abe59bb72c0d",
+          "md": "b48ec81b1f5a",
+          "lean": "43646f53e590"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "abe59bb72c0d",
+          "md": "b48ec81b1f5a",
+          "lean": "43646f53e590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "abe59bb72c0d",
+          "md": "b48ec81b1f5a",
+          "lean": "43646f53e590"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "abe59bb72c0d",
+          "md": "b48ec81b1f5a",
+          "lean": "43646f53e590"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "abe59bb72c0d",
+          "md": "b48ec81b1f5a",
+          "lean": "43646f53e590"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified.md:1 — detected regime [generic-R, mod-gt-1, symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

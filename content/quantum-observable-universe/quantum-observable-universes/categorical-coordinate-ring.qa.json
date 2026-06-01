@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.lean"
   },
   "source_hashes": {
-    "md": "ea5966aeba15",
     "ts": "b7ccc9ffc6e3",
+    "md": "ea5966aeba15",
     "lean": "dd2547cd8e17"
   },
   "criteria": {
@@ -1933,7 +1933,122 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "b7ccc9ffc6e3",
+          "md": "ea5966aeba15",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"generic-R\",\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"quantum-observable-universes\",\"expected\":[\"generic-R\",\"na\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "b7ccc9ffc6e3",
+          "md": "ea5966aeba15",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "b7ccc9ffc6e3",
+          "md": "ea5966aeba15",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "b7ccc9ffc6e3",
+          "md": "ea5966aeba15",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "b7ccc9ffc6e3",
+          "md": "ea5966aeba15",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "b7ccc9ffc6e3",
+          "md": "ea5966aeba15",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.md:99 — root-of-unity construction used without explicit regime declaration — | Universal $R = \\mathbb{Z}$ | $\\mathbb{Z}[i, q, q^{-1}]$ | Lusztig integral form with $i$ |"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "b7ccc9ffc6e3",
+          "md": "ea5966aeba15",
+          "lean": "dd2547cd8e17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

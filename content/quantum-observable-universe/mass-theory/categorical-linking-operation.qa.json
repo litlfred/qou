@@ -3,14 +3,14 @@
   "label": "conj:categorical-linking-operation",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/categorical-linking-operation.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/categorical-linking-operation.md",
-    "lean": "content/quantum-observable-universe/climax-volume-mass/categorical-linking-operation.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.ts",
+    "md": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.md",
+    "lean": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.lean"
   },
   "source_hashes": {
-    "md": "652d1d2bc10d",
-    "ts": "26e2ea8aee78",
-    "lean": "675d4619f000"
+    "ts": "7da4984d039a",
+    "md": "063fa85affea",
+    "lean": "17f17a9d6691"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1369,7 +1369,122 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "7da4984d039a",
+          "md": "063fa85affea",
+          "lean": "17f17a9d6691"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"generic-R\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "7da4984d039a",
+          "md": "063fa85affea",
+          "lean": "17f17a9d6691"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "7da4984d039a",
+          "md": "063fa85affea",
+          "lean": "17f17a9d6691"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "7da4984d039a",
+          "md": "063fa85affea",
+          "lean": "17f17a9d6691"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "7da4984d039a",
+          "md": "063fa85affea",
+          "lean": "17f17a9d6691"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "7da4984d039a",
+          "md": "063fa85affea",
+          "lean": "17f17a9d6691"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "7da4984d039a",
+          "md": "063fa85affea",
+          "lean": "17f17a9d6691"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/categorical-linking-operation.md:1 — detected regime [generic-R, symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

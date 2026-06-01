@@ -3,13 +3,13 @@
   "label": "conj:lepton-tower-h-n-plus-1-branching",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/conj-lepton-tower-h-n-plus-1-branching.ts",
-    "md": "content/quantum-observable-universe/mass-application/conj-lepton-tower-h-n-plus-1-branching.md",
-    "lean": "content/quantum-observable-universe/mass-application/conj-lepton-tower-h-n-plus-1-branching.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/conj-lepton-tower-h-n-plus-1-branching.ts",
+    "md": "content/quantum-observable-universe/mass-theory/conj-lepton-tower-h-n-plus-1-branching.md",
+    "lean": "content/quantum-observable-universe/mass-theory/conj-lepton-tower-h-n-plus-1-branching.lean"
   },
   "source_hashes": {
-    "md": "7dca3107cee8",
-    "ts": "e54cc7b2f5f1",
+    "ts": "aba40a024abd",
+    "md": "8d08d2a9320c",
     "lean": "cc981c0b9bef"
   },
   "criteria": {
@@ -1461,7 +1461,120 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "aba40a024abd",
+          "md": "8d08d2a9320c",
+          "lean": "cc981c0b9bef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"generic-R\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "aba40a024abd",
+          "md": "8d08d2a9320c",
+          "lean": "cc981c0b9bef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "aba40a024abd",
+          "md": "8d08d2a9320c",
+          "lean": "cc981c0b9bef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "aba40a024abd",
+          "md": "8d08d2a9320c",
+          "lean": "cc981c0b9bef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "aba40a024abd",
+          "md": "8d08d2a9320c",
+          "lean": "cc981c0b9bef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "aba40a024abd",
+          "md": "8d08d2a9320c",
+          "lean": "cc981c0b9bef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "aba40a024abd",
+          "md": "8d08d2a9320c",
+          "lean": "cc981c0b9bef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

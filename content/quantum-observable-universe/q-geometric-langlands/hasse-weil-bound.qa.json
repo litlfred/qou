@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.lean"
   },
   "source_hashes": {
-    "md": "5d3a95285ffc",
     "ts": "856081b2f348",
+    "md": "5d3a95285ffc",
     "lean": "2b024d9ddb1a"
   },
   "criteria": {
@@ -1917,7 +1917,124 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "856081b2f348",
+          "md": "5d3a95285ffc",
+          "lean": "2b024d9ddb1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-positive\"],\"chapter\":\"q-geometric-langlands\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"root-of-unity\",\"symbolic\",\"unit-circle\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "856081b2f348",
+          "md": "5d3a95285ffc",
+          "lean": "2b024d9ddb1a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "856081b2f348",
+          "md": "5d3a95285ffc",
+          "lean": "2b024d9ddb1a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "856081b2f348",
+          "md": "5d3a95285ffc",
+          "lean": "2b024d9ddb1a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.lean:106 — positivity-dependent Real.* on q without explicit hypothesis — Complex.abs (Z.eigenvalues i) = Real.rpow Z.q (1 / 2) := by"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "856081b2f348",
+          "md": "5d3a95285ffc",
+          "lean": "2b024d9ddb1a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "856081b2f348",
+          "md": "5d3a95285ffc",
+          "lean": "2b024d9ddb1a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "856081b2f348",
+          "md": "5d3a95285ffc",
+          "lean": "2b024d9ddb1a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.md:1 — detected regime [real-positive] is disjoint from chapter 'q-geometric-langlands' expected [generic-R, mod-gt-1, mod-lt-1, na, root-of-unity, symbolic, unit-circle]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

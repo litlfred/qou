@@ -1,15 +1,15 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:homological-shell-condensation",
-  "kind": "conjecture",
+  "label": "prop:homological-shell-condensation",
+  "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md",
-    "lean": "content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.lean"
+    "ts": "content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.md",
+    "lean": "content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.lean"
   },
   "source_hashes": {
+    "ts": "cc27b7c24955",
     "md": "5ba007ecef78",
-    "ts": "928cb3dfa956",
     "lean": "1fdb32b5a3d7"
   },
   "criteria": {
@@ -1337,7 +1337,120 @@
           "tanglement_score": 2
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "cc27b7c24955",
+          "md": "5ba007ecef78",
+          "lean": "1fdb32b5a3d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-positive\",\"symbolic\"],\"chapter\":\"mass-endomorphism\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "cc27b7c24955",
+          "md": "5ba007ecef78",
+          "lean": "1fdb32b5a3d7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "cc27b7c24955",
+          "md": "5ba007ecef78",
+          "lean": "1fdb32b5a3d7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "cc27b7c24955",
+          "md": "5ba007ecef78",
+          "lean": "1fdb32b5a3d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "cc27b7c24955",
+          "md": "5ba007ecef78",
+          "lean": "1fdb32b5a3d7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "cc27b7c24955",
+          "md": "5ba007ecef78",
+          "lean": "1fdb32b5a3d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "cc27b7c24955",
+          "md": "5ba007ecef78",
+          "lean": "1fdb32b5a3d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

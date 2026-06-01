@@ -25,7 +25,7 @@
 
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync, mkdirSync } from "node:fs";
 import { createHash } from "node:crypto";
-import { dirname, join, resolve, basename } from "node:path";
+import { dirname, join, resolve, basename, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   Q_USAGE_AUTOMATED_CHECKERS,
@@ -186,9 +186,9 @@ function updateSidecar(b: BlockTriple, results: Map<string, QUsageResult>): void
     lean: b.lean ? hashFile(b.lean) : undefined,
   };
   sidecar.paths = {
-    ts: b.ts.replace(REPO_ROOT + "/", ""),
-    md: b.md ? b.md.replace(REPO_ROOT + "/", "") : undefined,
-    lean: b.lean ? b.lean.replace(REPO_ROOT + "/", "") : undefined,
+    ts: relative(REPO_ROOT, b.ts),
+    md: b.md ? relative(REPO_ROOT, b.md) : undefined,
+    lean: b.lean ? relative(REPO_ROOT, b.lean) : undefined,
   };
   sidecar.label = b.label;
   sidecar.kind = b.kind;
@@ -243,9 +243,9 @@ function makeFreshSidecar(b: BlockTriple): QaSidecar {
     label: b.label,
     kind: b.kind,
     paths: {
-      ts: b.ts.replace(REPO_ROOT + "/", ""),
-      md: b.md ? b.md.replace(REPO_ROOT + "/", "") : undefined,
-      lean: b.lean ? b.lean.replace(REPO_ROOT + "/", "") : undefined,
+      ts: relative(REPO_ROOT, b.ts),
+      md: b.md ? relative(REPO_ROOT, b.md) : undefined,
+      lean: b.lean ? relative(REPO_ROOT, b.lean) : undefined,
     },
     source_hashes: {
       ts: hashFile(b.ts),
@@ -307,7 +307,7 @@ function main(): void {
           severity: CRITERION_SEVERITY[id],
           evidence: r.hits
             .slice(0, 3)
-            .map((h) => `${h.file.replace(REPO_ROOT + "/", "")}:${h.line} — ${h.text}`)
+            .map((h) => `${relative(REPO_ROOT, h.file)}:${h.line} — ${h.text}`)
             .join(" | "),
         });
       }
@@ -385,7 +385,7 @@ function main(): void {
     }
     if (!noWrite) {
       console.error("");
-      console.error(`Witness written to ${witnessPath.replace(REPO_ROOT + "/", "")}`);
+      console.error(`Witness written to ${relative(REPO_ROOT, witnessPath)}`);
     }
   }
 

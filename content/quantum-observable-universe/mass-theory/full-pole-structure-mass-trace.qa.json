@@ -3,13 +3,13 @@
   "label": "prop:full-pole-structure-mass-trace",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-application/full-pole-structure-mass-trace.ts",
-    "md": "content/quantum-observable-universe/mass-application/full-pole-structure-mass-trace.md",
-    "lean": "content/quantum-observable-universe/mass-application/full-pole-structure-mass-trace.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.ts",
+    "md": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.md",
+    "lean": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.lean"
   },
   "source_hashes": {
-    "md": "cbba90606ca1",
     "ts": "6ba60aeb29e9",
+    "md": "cbba90606ca1",
     "lean": "e895df5ec8e1"
   },
   "criteria": {
@@ -1933,7 +1933,122 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "6ba60aeb29e9",
+          "md": "cbba90606ca1",
+          "lean": "e895df5ec8e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"generic-R\",\"real-gt-1\",\"real-lt-1\",\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "6ba60aeb29e9",
+          "md": "cbba90606ca1",
+          "lean": "e895df5ec8e1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "6ba60aeb29e9",
+          "md": "cbba90606ca1",
+          "lean": "e895df5ec8e1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "6ba60aeb29e9",
+          "md": "cbba90606ca1",
+          "lean": "e895df5ec8e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "6ba60aeb29e9",
+          "md": "cbba90606ca1",
+          "lean": "e895df5ec8e1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.md:84 — formal-power-series context uses 'q < 1' or 'q > 1' rather than '|q| < 1' / '|q| > 1' — regime $q > 1$, where the naive Pochhammer monotonicity* | /home/user/qou/content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.md:97 — formal-power-series context uses 'q < 1' or 'q > 1' rather than '|q| < 1' / '|q| > 1' — this bridge: at $q > 1$ the dual sequence"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "6ba60aeb29e9",
+          "md": "cbba90606ca1",
+          "lean": "e895df5ec8e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "6ba60aeb29e9",
+          "md": "cbba90606ca1",
+          "lean": "e895df5ec8e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

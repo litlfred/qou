@@ -1,0 +1,124 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:lqg-adm-ashtekar-comparison",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/gravity-spacetime/lqg-adm-ashtekar-comparison.ts",
+    "md": "content/quantum-observable-universe/gravity-spacetime/lqg-adm-ashtekar-comparison.md"
+  },
+  "source_hashes": {
+    "ts": "fc8d8c61503a",
+    "md": "c2187c8609e9"
+  },
+  "criteria": {
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "fc8d8c61503a",
+          "md": "c2187c8609e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"gravity-spacetime\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "fc8d8c61503a",
+          "md": "c2187c8609e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "fc8d8c61503a",
+          "md": "c2187c8609e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "fc8d8c61503a",
+          "md": "c2187c8609e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "fc8d8c61503a",
+          "md": "c2187c8609e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "fc8d8c61503a",
+          "md": "c2187c8609e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "fc8d8c61503a",
+          "md": "c2187c8609e9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/gravity-spacetime/lqg-adm-ashtekar-comparison.md:1 — detected regime [symbolic] is disjoint from chapter 'gravity-spacetime' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
+    ]
+  },
+  "updated_at": "2026-06-01T13:26:15.486Z"
+}

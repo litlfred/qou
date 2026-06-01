@@ -3,13 +3,13 @@
   "label": "lem:skein-mass-from-linking",
   "kind": "lemma",
   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/skein-mass-from-linking.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/skein-mass-from-linking.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/skein-mass-from-linking.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/skein-mass-from-linking.ts",
+    "md": "content/quantum-observable-universe/mass-theory/skein-mass-from-linking.md",
+    "lean": "content/quantum-observable-universe/mass-theory/skein-mass-from-linking.lean"
   },
   "source_hashes": {
-    "md": "8d1b92cd60e8",
     "ts": "0c025ddcf791",
+    "md": "8d1b92cd60e8",
     "lean": "29ad3ef47a75"
   },
   "criteria": {
@@ -1947,7 +1947,122 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "0c025ddcf791",
+          "md": "8d1b92cd60e8",
+          "lean": "29ad3ef47a75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "0c025ddcf791",
+          "md": "8d1b92cd60e8",
+          "lean": "29ad3ef47a75"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "0c025ddcf791",
+          "md": "8d1b92cd60e8",
+          "lean": "29ad3ef47a75"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "0c025ddcf791",
+          "md": "8d1b92cd60e8",
+          "lean": "29ad3ef47a75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "0c025ddcf791",
+          "md": "8d1b92cd60e8",
+          "lean": "29ad3ef47a75"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "0c025ddcf791",
+          "md": "8d1b92cd60e8",
+          "lean": "29ad3ef47a75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "0c025ddcf791",
+          "md": "8d1b92cd60e8",
+          "lean": "29ad3ef47a75"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/skein-mass-from-linking.md:1 — detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T18:29:30.189Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

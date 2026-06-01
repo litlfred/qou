@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean"
   },
   "source_hashes": {
-    "md": "4039ceb953e7",
     "ts": "6a7a9d6041e9",
+    "md": "4039ceb953e7",
     "lean": "315d0115ac3c"
   },
   "criteria": {
@@ -1933,7 +1933,122 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "6a7a9d6041e9",
+          "md": "4039ceb953e7",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "6a7a9d6041e9",
+          "md": "4039ceb953e7",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "6a7a9d6041e9",
+          "md": "4039ceb953e7",
+          "lean": "315d0115ac3c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "major",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:114 — archimedean tactic in categorical chapter — (0 : R_q) ≤ (a : R_q) / 2 := by positivity | /home/user/qou/content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:128 — archimedean tactic in categorical chapter — linarith [this ▸ (le_refl (a : R_q))] | /home/user/qou/content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:133 — archimedean tactic in categorical chapter — have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | /home/user/qou/content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:136 — archimedean tactic in categorical chapter — push_cast [← hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum]"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "6a7a9d6041e9",
+          "md": "4039ceb953e7",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "6a7a9d6041e9",
+          "md": "4039ceb953e7",
+          "lean": "315d0115ac3c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "6a7a9d6041e9",
+          "md": "4039ceb953e7",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "6a7a9d6041e9",
+          "md": "4039ceb953e7",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }
