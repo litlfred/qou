@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T01:12:07.525880+00:00",
-  "commitSha": "a73d80e9784e3889ade802caaecebfd47cc7d2c0",
+  "computedAt": "2026-06-01T01:17:59.938971+00:00",
+  "commitSha": "aabe5dad71dcdb6dcf905791912aa3e5cd30aff0",
   "assertions": [
     {
       "name": "candidate_search_completed",
@@ -18,7 +18,7 @@
   "computation": "meson-habiro-c3-categorical-search",
   "scriptFile": "meson_habiro_c3_categorical_search.py",
   "scriptHash": "221621b240ba",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "aabe5dad71dcdb6dcf905791912aa3e5cd30aff0",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
