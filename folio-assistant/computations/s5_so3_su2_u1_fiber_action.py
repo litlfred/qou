@@ -123,6 +123,34 @@ def icosahedral_branching_table(ell_max: int = 6):
 
 
 # ---------------------------------------------------------------------------
+# Part 1c — S₃ as a rotation subgroup of SO(3): does the "S₃ sees only ℓ≤1"
+# premise of the conjecture actually hold?
+# ---------------------------------------------------------------------------
+#
+# S₃ ≅ D₃ realised as the triangle-rotation subgroup of SO(3):
+#   E    : 1, θ = 0
+#   2C₃  : 2, θ = 2π/3      (3-fold axis)
+#   3C₂  : 3, θ = π         (three 2-fold axes through vertices)
+# Irreps: triv [1,1,1], sign [1,1,-1], std (2-dim) [2,-1,0].
+
+S3_CLASSES = [("E", 1, mp.mpf(0)), ("2C3", 2, 2 * mp.pi / 3), ("3C2", 3, mp.pi)]
+S3_IRREP_CHARS = {"triv": [1, 1, 1], "sign": [1, 1, -1], "std": [2, -1, 0]}
+S3_IRREP_DIM = {"triv": 1, "sign": 1, "std": 2}
+
+
+def s3_branching_table(ell_max: int = 4):
+    table = {}
+    for ell in range(ell_max + 1):
+        row = {}
+        for irrep, ch in S3_IRREP_CHARS.items():
+            m = sum(sz * so3_char(ell, th) * c
+                    for (lab, sz, th), c in zip(S3_CLASSES, ch)) / 6
+            row[irrep] = int(mp.nint(m))
+        table[str(ell)] = row
+    return table
+
+
+# ---------------------------------------------------------------------------
 # Part 1b — the Borromean Markov-trace h⁴, derived from the (2,1)-irrep
 # ---------------------------------------------------------------------------
 
@@ -221,6 +249,16 @@ def main():
         print(f"  l={ell}: {mults}  sumdim={row['dim_check']} "
               f"(expect {row['dim_expected']})", flush=True)
 
+    s3_table = s3_branching_table(ell_max=4)
+    print("[s5-so3-su2-u1] S3-as-rotation-subgroup branching of V_l:", flush=True)
+    for ell, row in s3_table.items():
+        print(f"  l={ell}: {row}", flush=True)
+    # The conjecture's premise: "S3 truncation sees only l<=1". Test it.
+    std_at_ell2 = s3_table["2"]["std"]
+    s3_premise_holds = (std_at_ell2 == 0)
+    print(f"[s5-so3-su2-u1] S3 'sees only l<=1' premise holds? {s3_premise_holds} "
+          f"(std irrep multiplicity at l=2 is {std_at_ell2})", flush=True)
+
     bor_coeffs = borromean_trace_h_coeffs(order=8)
     print(f"[s5-so3-su2-u1] Borromean tr_M h-coeffs (raw): {bor_coeffs}", flush=True)
 
@@ -266,6 +304,9 @@ def main():
         "precision_dps": mp.mp.dps,
         "so3_h4": {
             "icosahedral_branching": branching_out,
+            "s3_rotation_subgroup_branching": s3_table,
+            "s3_sees_only_ell_le_1_premise_holds": s3_premise_holds,
+            "s3_std_irrep_multiplicity_at_ell2": std_at_ell2,
             "borromean_trace_h_coeffs_raw": bor_coeffs,
             "falsification_reading": falsification,
         },

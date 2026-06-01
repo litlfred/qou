@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T20:13:36.679266+00:00",
-  "commitSha": "aa54ad98e7a9bca02605182a977f254030d6a685",
+  "computedAt": "2026-06-01T20:15:25.362399+00:00",
+  "commitSha": "af1fcbf28be3ffccf8b2a3976a06cffc65b98c5a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 3003,
+  "durationMs": 369,
   "computation": "s5-so3-su2-u1-fiber-action",
   "scriptFile": "s5_so3_su2_u1_fiber_action.py",
-  "scriptHash": "90b9ba1a6880",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6c213a642905",
+  "scriptCommitSha": "af1fcbf28be3ffccf8b2a3976a06cffc65b98c5a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -114,6 +114,35 @@
         "max_integrality_residual": 4.667261458395856e-61
       }
     },
+    "s3_rotation_subgroup_branching": {
+      "0": {
+        "triv": 1,
+        "sign": 0,
+        "std": 0
+      },
+      "1": {
+        "triv": 0,
+        "sign": 1,
+        "std": 1
+      },
+      "2": {
+        "triv": 1,
+        "sign": 0,
+        "std": 2
+      },
+      "3": {
+        "triv": 1,
+        "sign": 2,
+        "std": 2
+      },
+      "4": {
+        "triv": 2,
+        "sign": 1,
+        "std": 3
+      }
+    },
+    "s3_sees_only_ell_le_1_premise_holds": false,
+    "s3_std_irrep_multiplicity_at_ell2": 2,
     "borromean_trace_h_coeffs_raw": {
       "8": "1/64",
       "6": "-1/16",
