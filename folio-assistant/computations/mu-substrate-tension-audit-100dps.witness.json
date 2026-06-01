@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T20:05:01.431602+00:00",
-  "commitSha": "d4d2f10a2c38e5bad929224de489c4e0e270258f",
+  "computedAt": "2026-06-01T00:10:19.755286+00:00",
+  "commitSha": "bb8bf155ff9eb1118f07b28d937665a910340fb0",
   "assertions": [
     {
       "name": "audit_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 33,
+  "durationMs": 42,
   "computation": "mu-substrate-tension-audit-100dps",
   "scriptFile": "mu_substrate_tension_audit_100dps.py",
-  "scriptHash": "33d82d0e8117",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "46db2af8f66c",
+  "scriptCommitSha": "9ee1b24998aa9581598eb8cbc02745e1ea559227",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

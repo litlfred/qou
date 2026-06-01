@@ -67,9 +67,8 @@ def main() -> int:
     set_compute_dps(50)
 
     q = mp.mpf(Q_50_DIGIT_STR)
-    target = mp.mpf("1.05605")  # multiplicative correction needed (from v9)
 
-    # Recompute target precisely if possible — from v9's v8_base and target
+    # Recompute target precisely from v9's v8_base and diff_target
     v8_base = mp.mpf("0.7232")
     diff_target = mp.mpf("0.7637")
     target_exact = diff_target / v8_base
@@ -107,13 +106,11 @@ def main() -> int:
         ("1 + h_q + h_q²", 1 + h + h2),
         # More q-arithmetic naturals
         ("(1 + q⁻¹)/2", (1 + qi) / 2),
-        ("(q + q⁻¹)/2 = [2]_q/2", qbracket2 / 2),
         ("(1 + q²)/2", (1 + q ** 2) / 2),
         ("q^(1/2)", mp.sqrt(q)),
         ("[3]_q/3", qbracket3 / 3),
         ("[4]_q/4", qbracket4 / 4),
         ("[5]_q/5", qbracket5 / 5),
-        ("(1+q)/(q+q⁻¹)", (1 + q) / qbracket2),
         ("(1+q)/[2]_q", (1 + q) / qbracket2),
         ("(1+q²)/(2q)", (1 + q ** 2) / (2 * q)),
         ("(1+q²)/[2]_q²", (1 + q ** 2) / qbracket2 ** 2),

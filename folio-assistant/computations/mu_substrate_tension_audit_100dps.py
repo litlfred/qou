@@ -71,26 +71,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q as Q_CANONICAL, Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # CODATA 2022 anchors
 M_E_MEV = "0.51099895069"
 M_MU_MEV = "105.6583755"
-
-
-def vol_4_1(dps: int) -> "mp.mpf":
-    """Vol(4_1) = 2·Λ(π/3) where Λ is the Lobachevsky function.
-
-    Computed via series Λ(θ) = (1/2) Σ_{k=1}^∞ sin(2kθ)/k².
-    Converges; truncating at 50,000 terms gives ~50 dps.
-    """
-    mp.mp.dps = dps + 5
-    theta = mp.pi / 3
-    total = mp.mpf(0)
-    for k in range(1, 50001):
-        total += mp.sin(2 * k * theta) / (k * k)
-    return 2 * total / 2  # 2·Λ(π/3) — but Λ = (1/2)Σ so 2·(1/2)·Σ = Σ
 
 
 def vol_4_1_mathlib(dps: int) -> "mp.mpf":

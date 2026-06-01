@@ -68,11 +68,6 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-# CODATA / framework anchors
-M_E_MEV = "0.51099895069"
-Q_BETA_CODATA_MEV = "0.78233341"  # PDG 2024 (per audit; not 0.78232)
-
-
 def hoefsmit_b(q):
     """Hoefsmit b(q) — the Habiro substrate parameter for Q_β.
 
@@ -100,8 +95,6 @@ def main() -> int:
     set_compute_dps(50)
 
     q = mp.mpf(Q_50_DIGIT_STR)
-    m_e = mp.mpf(M_E_MEV)
-    qbeta_codata = mp.mpf(Q_BETA_CODATA_MEV)
 
     print("=" * 78)
     print("Q_β c_3 audit — J_Hopf(q=1) vs J_Hopf(q_0) at 50 dps")
@@ -204,9 +197,15 @@ def main() -> int:
           f"Taylor coefficient of a q-series (Taylor coefs are constants).")
     print(f"      The 3.47% m_p-pin 'swing' in #1479's deep audit is the "
           f"difference between Rule A and Rule B at the substrate.")
+    # Truncation-error bound: assume c_4 = c_3·b⁴ as the natural-magnitude
+    # next-rung coefficient (this script's c_3 = J_Hopf(q=1) = -2 and
+    # b = hoefsmit_b(q) = (q-q⁻¹)/(q+q⁻¹)).
+    c4_estimate = jhopf_q1 * b ** 4  # c_4 ≈ c_3·b⁴
+    trunc_ppb = abs(c4_estimate * u ** 4) * mp.mpf("1e9")
     print(f"      Resolution: ONLY Rule A is structurally legitimate. The "
-          f"swing IS the truncation error |c_4·u^4| ≈ {mp.nstr(abs(c2 * 1.13 * u**4) * mp.mpf('1e9'), 8)} ppb "
-          f"(c_4 = c_3·b⁴), and is BOUNDED, not 'a sign that c_3 is wrong'.")
+          f"swing IS the truncation error |c_4·u⁴| ≈ {mp.nstr(trunc_ppb, 8)} ppb "
+          f"(c_4 ≈ c_3·b⁴ ≈ {mp.nstr(c4_estimate, 6)}), and is BOUNDED, "
+          f"not 'a sign that c_3 is wrong'.")
 
     # ── Witness ──
     w = WitnessBuilder("qbeta-c3-jhopf-q0-vs-q1-comparison", engine="python")
