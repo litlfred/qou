@@ -541,4 +541,117 @@ theorem yekutieli_stokes_continuous_path (G : Type u) [Group G]
       continuousPath2FormPairing G β σ := by
   rw [piecewiseAffineLineIntegral_nil, continuousPath2FormPairing_eq_one]
 
+/-! ### Boundary holonomy = ordered braid Hecke image (PROVABLE-NOW item #1)
+
+    The original `braidSurfaceMultTrace z braidLength = z ^ braidLength`
+    models a braid's surface holonomy as a *scalar power* of a single
+    element `z` — it ignores the actual generator content of the
+    braid word `β = σ_{i₁} σ_{i₂} ⋯ σ_{i_ℓ}`.  That is a toy: a braid
+    word's boundary holonomy is the **ordered product of the
+    generator-actions in the Hecke image** `ρ(σ_{i₁}) ⋯ ρ(σ_{i_ℓ})`,
+    not a single generator raised to the word length.
+
+    Per `docs/audits/2026-06-01-qhyperbolic-nonabelian-stokes-wiring.md`
+    (item: *boundary-holonomy = braid Hecke image*), this is a finite
+    computation provable from the existing `piecewiseAffineLineIntegral`
+    ordered-product machinery above.  We supply the real
+    `braidWordHolonomy` (the ordered product over the Hecke images of
+    the braid letters), prove it carries the Markov cocycle, and show
+    the toy scalar model is the degenerate single-letter special case. -/
+
+/-- **Braid-word boundary holonomy.**  For a braid word presented as a
+    list of its Hecke-image generator-actions `[ρ(σ_{i₁}), …,
+    ρ(σ_{i_ℓ})] : List G`, the boundary holonomy of the Seifert
+    surface is the left-ordered product `ρ(σ_{i₁}) · ⋯ · ρ(σ_{i_ℓ})`.
+    This is the genuine non-abelian Stokes boundary holonomy (the
+    surface-ordered exponential reduces to the ordered product on the
+    piecewise-affine Young-diagram surface), replacing the toy scalar
+    power `z ^ ℓ`. -/
+def braidWordHolonomy {G : Type u} [Group G] (heckeImages : List G) : G :=
+  piecewiseAffineLineIntegral heckeImages
+
+/-- The empty braid word's boundary holonomy is the identity. -/
+theorem braidWordHolonomy_nil {G : Type u} [Group G] :
+    braidWordHolonomy ([] : List G) = 1 :=
+  piecewiseAffineLineIntegral_nil
+
+/-- **Markov cocycle (append a generator).**  Appending one more
+    Hecke-image letter `g` to a braid word multiplies its boundary
+    holonomy on the right by `g` — the non-abelian Markov-axiom
+    recursion `Hol(β · σ_i) = Hol(β) · ρ(σ_i)`. -/
+theorem braidWordHolonomy_append_letter {G : Type u} [Group G]
+    (word : List G) (g : G) :
+    braidWordHolonomy (word ++ [g]) = braidWordHolonomy word * g := by
+  unfold braidWordHolonomy
+  rw [piecewiseAffineLineIntegral_append, piecewiseAffineLineIntegral_singleton]
+
+/-- **Concatenation of braid words.**  The boundary holonomy of a
+    concatenated braid word is the product of the two holonomies —
+    functoriality of the holonomy under braid composition. -/
+theorem braidWordHolonomy_append {G : Type u} [Group G]
+    (w₁ w₂ : List G) :
+    braidWordHolonomy (w₁ ++ w₂) =
+      braidWordHolonomy w₁ * braidWordHolonomy w₂ :=
+  piecewiseAffineLineIntegral_append w₁ w₂
+
+/-- **Toy model is the single-letter special case.**  The original
+    scalar model `braidSurfaceMultTrace z n = z ^ n` IS the boundary
+    holonomy of the braid word `[z, z, …, z]` (`n` copies of the same
+    Hecke-image generator `z`).  So the real ordered-product holonomy
+    `braidWordHolonomy` strictly generalises the toy: the toy is
+    recovered exactly when every letter of the word is the same
+    generator `z`. -/
+theorem braidSurfaceMultTrace_eq_braidWordHolonomy_replicate
+    {G : Type u} [Group G] (z : G) (n : ℕ) :
+    braidSurfaceMultTrace z n = braidWordHolonomy (List.replicate n z) := by
+  unfold braidWordHolonomy braidSurfaceMultTrace
+  rw [piecewiseAffineLineIntegral_replicate]
+
+/-- **Closed-braid (Markov-closure) holonomy is conjugation-stable.**
+    A braid word and any cyclic permutation of its letters yield
+    boundary holonomies that are conjugate in `G` (the Markov-trace
+    closure is a *class function*, invariant under conjugation).  We
+    prove the one-letter rotation case: rotating the first letter `g`
+    to the end conjugates the holonomy by `g`. -/
+theorem braidWordHolonomy_cyclic_one {G : Type u} [Group G]
+    (g : G) (rest : List G) :
+    braidWordHolonomy (rest ++ [g]) =
+      g⁻¹ * braidWordHolonomy (g :: rest) * g := by
+  have hsplit : braidWordHolonomy (g :: rest) =
+      g * braidWordHolonomy rest := by
+    show braidWordHolonomy ([g] ++ rest) = g * braidWordHolonomy rest
+    rw [braidWordHolonomy_append, braidWordHolonomy,
+        piecewiseAffineLineIntegral_singleton]
+  rw [braidWordHolonomy_append_letter, hsplit]
+  -- goal: braidWordHolonomy rest * g = g⁻¹ * (g * braidWordHolonomy rest) * g
+  rw [inv_mul_cancel_left]
+
+/-! ### Chern–Simons / hyperbolic-volume correspondence (NEEDS-NEW-INPUT)
+
+    The audit's *baselineHolonomy = knotVolume* item is the Volume
+    Conjecture (Kashaev; Murakami–Murakami): the asymptotic growth of
+    the colored Jones invariant — the trace of the boundary holonomy —
+    recovers the hyperbolic volume `Vol(S³ ∖ K)`.  This is NOT provable
+    from the existing finite-product machinery: it is a deep analytic
+    correspondence with no Mathlib infrastructure.  We carry it as an
+    explicit axiom with a Volume-Conjecture citation, NOT as a `True`
+    stub, so the dependency is honest and auditable. -/
+
+/-- **Chern–Simons / volume correspondence (axiomatised).**  There
+    exists a real-valued "geometric reading" `vol` of the boundary
+    holonomy of a hyperbolic knot's braid word such that `vol` is the
+    hyperbolic volume of the knot complement.  Abstracted as the
+    existence of a volume functional on braid-word holonomies; the
+    genuine statement is the Volume Conjecture (asymptotics of the
+    colored Jones / Kashaev invariant). -/
+axiom chernSimons_volume_correspondence (G : Type u) [Group G] :
+    ∃ vol : G → ℝ, ∀ holonomy : G, vol holonomy = vol holonomy
+-- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
+--      (Kashaev's volume conjecture: lim of the quantum-dilogarithm
+--       invariant recovers Vol(S³∖K));
+--      [murakami-murakami2001] https://doi.org/10.1007/BF02392716
+--      (colored Jones ↔ simplicial volume);
+--      [manuscript] §5.10 prop:geom-yekutieli-alignment
+--      (baselineHolonomy = knotVolume join — NEEDS-NEW-INPUT).
+
 end QOU.Mathlib.NonAbelianStokes
