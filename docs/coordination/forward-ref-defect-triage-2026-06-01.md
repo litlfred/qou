@@ -62,3 +62,39 @@ per `forward-ref-logical-analysis.md`. Target: 56 → ~21 (≈ 60% cut).
 `forward_ref_classifier.py` before/after; net logical count must fall).
 Edge reclassification (`uses`→`interprets`) only when block A genuinely
 *mentions* rather than *relies on* block B — verified by reading prose.
+
+---
+
+## B1 feasibility check (2026-06-01) — the "easy wins" do NOT survive
+
+After the Bucket-A reclassification (60→57 on main), each Bucket-B1
+target was checked for **(deps that block an earlier move)** and
+**(same-chapter consumers that would become NEW backward edges)**:
+
+| B1 target | own deps | same-chapter consumers | verdict |
+|---|---|---|---|
+| `def:su2-generators` | `def:su2-basis` (same ch) | 1 | CLUSTER, +1 new edge |
+| `def:brings-surface` | none | **13** | RISKY — up to 13 new backward edges |
+| `thm:topological-mass` | 3 | 4 | RISKY |
+| `def:bundle-isotopy-equivalence` | `def:bundle-initial-conditions` | 1 | CLUSTER |
+| `def:adelic-substrate` | `def:classical-limit-functor` | 3 | RISKY |
+| quark cluster (`up`/`down`/`qq̄`/`breit-wheeler`) | `up-quark`→`conj:borromean-quark` **in observations (LATER)** | up=3, breit=2, … | **RISKY — net negative** |
+
+**Conclusion.** *No* B1 defect is a clean single/cluster move: every
+target is a foundational block with multiple same-chapter consumers, so
+moving it earlier **creates more backward edges than it removes**. The
+quark cluster additionally depends on `conj:borromean-quark` which lives
+*later* (observations) — moving the cluster earlier would *worsen* that
+edge.
+
+This empirically confirms the **~21 irreducible floor**: the
+particle-interactions→predicted-spectra and ↔mass-theory edges are the
+intrinsic categorical→numerical (archimedean-wall) flow, not
+misplacements. They belong with Bucket C (accept), not B (reorder).
+
+**Recommendation:** the cheap, safe wins are exhausted at 60→57 (Bucket-A
+narrative reclassifications). Further reduction requires either (a) the
+author's editorial decision to relocate a heavily-consumed foundational
+block (large, multi-PR), or (b) accepting the remaining cross-chapter
+edges as architectural. Do NOT execute net-negative reorders to chase
+the count.
