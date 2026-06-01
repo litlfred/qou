@@ -18,8 +18,9 @@
 #   qou-substrate    : 7
 #   pyhecke          : 19
 #   pyhecke-native   : 15
-#   qou-mass         : 0  (alpha, external-researcher facade)
-#   witness-schema   : 0  (alpha, cross-language interchange)
+#   qou-mass         : 1  (alpha; canonical wiring example —
+#                         qou_mass_canonical_wiring_example.py)
+#   witness-schema   : 1  (alpha; same wiring example)
 
 set -uo pipefail
 
@@ -54,7 +55,11 @@ PACKAGES=(
 
 # Snapshot of intentionally-alpha (zero-import) packages.  Update this
 # list when you intentionally ship a new external-only package.
-KNOWN_EXTERNAL_ONLY=("qou_mass" "witness_schema")
+# qou_mass + witness_schema were here until 2026-06-01 when
+# qou_mass_canonical_wiring_example.py became the first in-repo
+# importer of both — now they're "wired" (1 importer each) and the
+# audit will flag a regression to 0 as unexpected.
+KNOWN_EXTERNAL_ONLY=()
 
 count_importers() {
     local pkg="$1"

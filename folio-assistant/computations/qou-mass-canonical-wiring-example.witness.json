@@ -1,0 +1,51 @@
+{
+  "engine": "python",
+  "engineVersion": "qou_mass==0.1.0a1",
+  "computedAt": "2026-06-01T21:15:23.347416+00:00",
+  "assertions": [
+    {
+      "name": "parse_atom_label('4He')",
+      "computed": "(2, 2)",
+      "expected": "(2, 2)",
+      "passed": true
+    },
+    {
+      "name": "parse_atom_label('He-4')",
+      "computed": "(2, 2)",
+      "expected": "(2, 2)",
+      "passed": true
+    },
+    {
+      "name": "parse_atom_label('p')",
+      "computed": "(1, 0)",
+      "expected": "(1, 0)",
+      "passed": true
+    },
+    {
+      "name": "parse_atom_label('n')",
+      "computed": "(0, 1)",
+      "expected": "(0, 1)",
+      "passed": true
+    },
+    {
+      "name": "parse_atom_label('D')",
+      "computed": "(1, 1)",
+      "expected": "(1, 1)",
+      "passed": true
+    },
+    {
+      "name": "parse_atom_label('3He')",
+      "computed": "(2, 1)",
+      "expected": "(2, 1)",
+      "passed": true
+    },
+    {
+      "name": "parse_atom_label('12C')",
+      "computed": "(6, 6)",
+      "expected": "(6, 6)",
+      "passed": true
+    }
+  ],
+  "commitSha": "HEAD",
+  "allPassed": true
+}
