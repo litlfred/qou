@@ -1,7 +1,7 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T03:34:33+00:00",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T13:17:05+00:00",
   "commitSha": "auto",
   "assertions": [
     {
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 804,
+  "durationMs": 861,
   "computation": "qbeta-habiro-partition-followup",
   "scriptFile": "qbeta_habiro_partition_followup.py",
   "scriptHash": "auto",
@@ -34,7 +34,7 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "sympy": "1.14.0"
   },
   "description": "Option D follow-up: detailed investigation of the partition-function match in a_8(u), the S_5 \u2192 S_6 telescoping transition, and the categorical interpretation of the m=6 Habiro level as the support boundary of the n\u2212p split.",

@@ -1,8 +1,8 @@
 {
   "engine": "numpy+scipy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:49:35.260082+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:21:45.933585+00:00",
+  "commitSha": "3cbfa67b21fff1650c4e3e7f488d213a5e2c90a0",
   "assertions": [
     {
       "name": "lp_feasibility_at_q0_two_row",
@@ -34,16 +34,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3057,
+  "durationMs": 2876,
   "computation": "alpha-5-lp-dual-crystal",
   "scriptFile": "alpha_5_lp_dual_crystal.py",
   "scriptHash": "762fcccb7a38",
   "scriptCommitSha": "71299ff700f2c5a03d016917d66027ab614e1939",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

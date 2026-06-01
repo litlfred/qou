@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T01:53:39.325716+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:25:41.976730+00:00",
+  "commitSha": "3cbfa67b21fff1650c4e3e7f488d213a5e2c90a0",
   "assertions": [
     {
       "name": "n_syt_eq_16",
@@ -67,16 +67,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 134,
+  "durationMs": 117,
   "computation": "path-b-evacuation",
   "scriptFile": "path_b_evacuation.py",
   "scriptHash": "87032e93a7da",
   "scriptCommitSha": "c8717623433bf7e6af4f04aee8e53003070eab8e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
