@@ -256,6 +256,36 @@ when re-classifying any "near-match" residual, ask explicitly:
    - Identify the underlying Habiro element (if any) whose Taylor
      series gives (c_2, c_3) = (4, c_3_unknown) at q=1
 
+   **Update 2026-06-01 — STEP 1b (PSLQ wider search): STRONG NULL.**
+   [`meson_habiro_c3_pslq_search.py`](../../folio-assistant/computations/meson_habiro_c3_pslq_search.py)
+   ran PSLQ integer-relation search over **24 natural substrate basis
+   elements** (G, π, ln 2, h-powers, b-powers, q-brackets, ℏ_q-powers,
+   J_Hopf, G·b, G/π, …) — pairwise, triples (top-12), and full-basis
+   — at 60 dps, tol 1e-12 to 1e-25, maxcoeff up to 10000. **Zero
+   integer relations found.** This is a MUCH stronger NULL than the
+   hand-curated 40-candidate scan: PSLQ would have found ANY clean
+   rational combination of substrate quantities with small integer
+   coefficients.
+
+   **Diagnostic implications:** Two routes remain for c_3:
+   - **Either** c_3 is genuinely transcendental in q (involves a
+     non-standard arithmetic object — Bloch-Wigner dilog,
+     Mahler measure of a Borromean-like polynomial, regulator of
+     a number-field tower, etc.). Searching such transcendental
+     candidates requires problem-specific basis construction.
+   - **Or** the leading c_2 = 4 framing itself is wrong: the 0.15%
+     miss is NOT a c_3 truncation residual, but rather c_2 is
+     slightly off-integer (e.g. c_2 = 4·b_correction, c_2 =
+     4·(1 + α·h²), etc.) — in which case the meson Habiro c=4
+     re-opening should be RE-CLOSED.
+
+   **Net update to the REOPENED status:** the meson Habiro c=4
+   re-opening stays REOPENED but with **lower confidence** —
+   the PSLQ NULL suggests that EITHER a problem-specific
+   transcendental search is needed OR the framing needs revision.
+   Recommend: pivot to a c_2-off-integer hypothesis (test
+   `c_2 = 4·(1 + ε·h²)` with PSLQ on ε) before further c_3 work.
+
 2. **Ocneanu integer "12" = dim H_3 · 2 categorical derivation.**
    Tests whether `m_p = 2·m_μ·F_Bor − (2 dim H_3)·m_e` can be
    derived structurally. The integer 12 has 4 natural candidates;
