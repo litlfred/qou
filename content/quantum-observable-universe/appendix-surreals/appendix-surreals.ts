@@ -16,7 +16,6 @@ export default chapter({
       label: "sec:surreal-survives-breaks",
       blocks: [
         "surreal-survives-breaks-intro",
-        "algebraic-core-survives",
         // Dual ledger: every transcendental in the paper, indexed
         // by Goncharov period-depth.
         "transcendental-accounting",
@@ -55,9 +54,6 @@ export default chapter({
         "b1-current-status-table1-data",
         "b1-current-status-table2-data",
         "b1-current-status-table3-data",
-        "analytic-obstructions",
-        "analytic-obstructions-table2-data",
-        "analytic-obstructions-table1-data",
         "calculus-up-to-epsilon",
         "calculus-up-to-epsilon-table-data",
       ],
@@ -78,7 +74,6 @@ export default chapter({
       label: "sec:standard-part-classical-limits",
       blocks: [
         "standard-part-classical-limits-intro",
-        "standard-part-functor",
         "valuation-ring-finite-surreals",
         "classical-limit-stpart",
         "archimedean-stpart",
@@ -111,7 +106,6 @@ export default chapter({
       title: "Relaxing strict equalities to $1 + \\varepsilon$",
       label: "sec:relaxing-strict-equalities",
       blocks: [
-        "infinitesimal-frobenius",
         "infinitesimal-observability",
         "vacuum-epsilon",
         // Conditional consequence of the ε-relaxed vacuum: the
@@ -127,7 +121,6 @@ export default chapter({
         "surreal-speculative-intro",
         "local-infinitesimal-field",
         "spectral-normal-form",
-        "diophantine-birthday",
         "kashaev-surreal",
       ],
     },
@@ -135,8 +128,6 @@ export default chapter({
       title: "Characteristic-$p$ companion: nimber surreals",
       label: "sec:nimber-surreals",
       blocks: [
-        "on-p-modular-hecke",
-        "on-p-modular-hecke-table-data",
       ],
     },
     {
@@ -160,7 +151,6 @@ export default chapter({
         // Yang-Mills
         "yang-mills-surreal-bound",
         "os-reflection-positivity-from-reeb",
-        "wenzl-positivity-implies-substrate-positivity",
         // P vs NP
         "p-vs-np-conjecture",
         "p-vs-np-surreal-bound",
@@ -169,8 +159,6 @@ export default chapter({
         "collatz-contact-boundary",
         "collatz-no-cycles",
         "collatz-three-forms",
-        "collatz-hausdorff-comparison",
-        "collatz-hausdorff-comparison-table-data",
         "q-collatz-interpretation",
         "collatz-surreal-bound",
         // Graded-Mikusiński unification of the bounds.
