@@ -55,6 +55,7 @@ import QOU.BraidKnot.AllKnownIsotopesUniqueness
 import QOU.BraidKnot.PerNucleusMassDerivation
 import QOU.BraidKnot.frobenius_antipode_unifies
 import QOU.BraidKnot.CommutativeCrossingEnergy
+import QOU.BraidKnot.nonabelian_stokes_surface_boundary_stokes
 
 /-!
 # BraidKnot — Module Index
