@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:26:09.024906+00:00",
-  "commitSha": "dfb50d1b28974cbfdb8299a02adda00075aa61b9",
+  "computedAt": "2026-06-01T05:26:42.850774+00:00",
+  "commitSha": "cfe418a9813bf5df3644b3cd448913fce88d8022",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2633,6 +2633,8 @@
         "nucleus-real-sdp-deuteron.witness.json",
         "nucleus-real-sdp-he3.witness.json",
         "nucleus-real-sdp-he4.witness.json",
+        "nucleus-real-sdp-neutron.witness.json",
+        "nucleus-real-sdp-proton.witness.json",
         "nucleus-real-sdp-tritium.witness.json",
         "nv-categorical-derivation-probe.witness.json",
         "nv-pslq-extended-basis.witness.json",
