@@ -106,8 +106,8 @@
   {
     "id": "research-im-q0-fibre-vs-observable-doc",
     "summary": "Document Im(q_0)=0 (observable) vs Im(q) unconstrained (fibre) distinction in canonical chain",
-    "comment": "User-raised 2026-05-31: Im(q_0) = 0 is verified at the OBSERVABLE / archimedean level (`lusztig_q_0_imaginary_part_zero` assertion); but at the FIBRE / categorical level (formal q-deformation in H_n(q), KZ q-difference equations, complex residues in term6_full_pole_sum.py), q is a complex formal variable. The c_k flip-flop saga and the (1+q)/2 near-match BOTH glossed over this distinction. The Q_\u03b2 Habiro element search needs to look for a fibre-level element whose archimedean evaluation reproduces the c_k at each anchor \u2014 NOT a real formula matching all anchors. Action: add a CLAUDE.md sub-section under the canonical chain cheat sheet making this distinction explicit; update 1ppq-qbeta.md and option-e.md to use the framing.",
-    "status": "open",
+    "comment": "DONE 2026-06-01 by claude/claude-md-fibre-observable-session-refresh-2026-06-01. Added Im(q) fibre vs observable framing as Critical Framing block in CLAUDE.md \u00a7Canonical derivation chain, with explicit table (observable: Im(q_0)=0 verified; fibre: Im(q) unconstrained), the c_k flip-flop trap explanation, and the implication for Habiro element / \u0394_\u03bb closure attacks. Also cited the lusztig_q_0_imaginary_part_zero assertion as archimedean constraint (NOT categorical claim) so future sessions do not conflate the two levels.",
+    "status": "done",
     "priority": "medium",
     "origin": "user-2026-05-31",
     "createdAt": "2026-05-31",
@@ -119,8 +119,11 @@
         "docs/coordination/1ppq-qbeta.md",
         "docs/coordination/option-e.md",
         "docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md"
-      ]
-    }
+      ],
+      "completedAt": "2026-06-01",
+      "completedBy": "claude/claude-md-fibre-observable-session-refresh-2026-06-01"
+    },
+    "assignee": "claude/claude-md-fibre-observable-session-refresh-2026-06-01"
   },
   {
     "id": "research-substrate-q0-derivation-DECLINED",
