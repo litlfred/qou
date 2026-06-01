@@ -206,11 +206,11 @@ where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.
 The nuclear energy decomposes as:
 
 $$
-  \ln|\mathrm{tr}(\mathcal{N})| = 
-  \sum_{i=0}^{A-2} \ln|\hat{V}_i|
+  \tfrac{1}{2}\ln\bigl(\mathrm{tr}(\mathcal{N}) \cdot \overline{\mathrm{tr}(\mathcal{N})}\bigr) =
+  \tfrac{1}{2}\sum_{i=0}^{A-2} \ln\bigl(\hat{V}_i \cdot \overline{\hat{V}_i}\bigr)
 $$
 
-Each term $\ln|\hat{V}_i|$ is determined by exactly $k_i$
+Each term $\tfrac{1}{2}\ln(\hat{V}_i \cdot \overline{\hat{V}_i})$ is determined by exactly $k_i$
 transfer matrix steps.
 
 ## The volume of the ideal

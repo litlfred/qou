@@ -59,7 +59,7 @@ $\mathcal{M}(K)/(m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)|) = \rho_K^{\ma
 replaces the $\rho_q$ ansatz with a categorically-derived series
 where the LO piece is the constituent-mass ratio (Markov
 multiplicativity, \[Wenzl 1988] Theorem 5) and the single-gen
-piece is the proven $\alpha \cdot \sum \ln|\hat V_i^{\mathrm{full}}|$
+piece is the proven $\tfrac{\alpha}{2} \cdot \sum \ln(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}})$
 binding correction at $0.18\%$ accuracy across $Z = 1..20$. The
 $\rho_q$ display below is retained for historical readability of
 the brane-tower spectral structure but does not represent the
@@ -120,7 +120,7 @@ consequence is the $-737$ MeV mirror-nucleus pathology
 (`brane-tower-isospin-diagnosis.witness.json`).*
 
 *The paper's `prop:atomic-braid-mass` uses the alternative form
-$\alpha \cdot \sum_i \ln|\hat V_i^{\mathrm{full}}|$ (with $\alpha = m_e \cdot 8G$,
+$\tfrac{\alpha}{2} \cdot \sum_i \ln(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}})$ (with $\alpha = m_e \cdot 8G$,
 the Borromean binding scale `prop:binding-scale-catalan`), which gives
 0.19% mean atomic-mass error across $Z = 1$..$10$ with zero fitted
 parameters — but the integration probe shows the

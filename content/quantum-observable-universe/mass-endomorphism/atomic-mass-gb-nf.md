@@ -6,7 +6,7 @@
   **graded substrate expansion**
   ([`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)) —
   LO piece (Markov-multiplicative nucleon sum) **proved** via Wenzl
-  1988; single-gen piece $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$
+  1988; single-gen piece $\tfrac{\alpha}{2} \sum_i \ln(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}})$
   closes empirically to $0.18\%$ mean error; pair-gen piece remains
   open. The H_3-anchor refinement of the per-irrep coefficients is
   the subject of [`prop:rho-k-h3a-refinement`](rho-k-h3a-refinement.md).
@@ -117,8 +117,8 @@ $$
   m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)| \cdot \rho_K
   \;=\;
   \underbrace{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}_{\rho_K^{\mathrm{LO}}\text{-piece}}
-  \;+\; \underbrace{\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|}_{\rho_K^{\text{single-gen}}\text{-piece}}
-  \;+\; \underbrace{\alpha\, z^2\!\!\sum_{i<j}\!\ln|\hat V_i \hat V_j|_{\mathrm{Wedd}}}_{\rho_K^{\text{pair-gen}}\text{-piece (open)}}
+  \;+\; \underbrace{\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)}_{\rho_K^{\text{single-gen}}\text{-piece}}
+  \;+\; \underbrace{\tfrac{\alpha\, z^2}{2}\!\!\sum_{i<j}\!\ln\bigl(\hat V_i \hat V_j \cdot \overline{\hat V_i \hat V_j}\bigr)\!\big|_{\mathrm{Wedd}}}_{\rho_K^{\text{pair-gen}}\text{-piece (open)}}
   \;+\; \dots
 $$
 
@@ -134,7 +134,10 @@ $$
   \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot \lvert\!\operatorname{tr}_M(\mathcal{B}_K)\!\rvert}.
 $$
 
-The single-gen binding correction $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$
+The single-gen binding correction $\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)$
+(where $\overline{\,\cdot\,}$ is the Hecke bar-involution $q \leftrightarrow q^{-1}$;
+at the archimedean specialization with real $q_0$ and real $\hat V_i$,
+this equals $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$)
 with $\alpha = m_e \cdot 8G$ ([binding scale](#prop\:binding-scale-catalan))
 takes ρ\_K to $0.18\%$ mean accuracy across $Z = 1..20$
 ([atomic braid mass](#prop\:atomic-braid-mass)). The pair-gen and
