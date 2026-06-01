@@ -78,19 +78,21 @@ The **witness JSON** is the universal data-interchange format. Any language with
 
 ## Library coherence status
 
-The package ecosystem is layered but **mid-migration**. Today's import counts (from `folio-assistant/computations/*.py`, the 901-file compute layer; refresh with [`scripts/audit-library-coherence.sh`](../scripts/audit-library-coherence.sh)):
+The package ecosystem is layered but **mid-migration**. Today's import counts (from `folio-assistant/computations/*.py`, the 901-file compute layer; refresh with [`scripts/audit-library-coherence.sh`](../scripts/audit-library-coherence.sh) — anchored regex `^(import|from) <pkg>([ .]|$)`, so the numbers measure real import statements, not loose substring matches):
 
 | Package | Importers in compute layer | Status |
 |---|---:|---|
-| [`qou-substrate`](../tools/qou-substrate/) | 25 | wired — substrate trio, the foundation |
-| [`pyhecke`](../tools/pyhecke/) | 41 | wired — primary Hecke / Gram surface |
-| [`pyhecke-native`](../tools/pyhecke-native/) | 20 | wired — Rust-accelerated Markov trace |
+| [`qou-substrate`](../tools/qou-substrate/) | 7 | wired — substrate trio, the foundation |
+| [`pyhecke`](../tools/pyhecke/) | 18 | wired — primary Hecke / Gram surface |
+| [`pyhecke-native`](../tools/pyhecke-native/) | 15 | wired — Rust-accelerated Markov trace |
 | [`qou-mass`](../qou-mass/) | **0** | alpha, not yet adopted |
 | [`witness-schema`](../tools/witness-schema/) | **0** | alpha, not yet adopted |
-| `mpmath` (transitive via `qou_substrate.precision`) | 593 | direct imports — pre-substrate carve-out |
+| `mpmath` (also exposed transitively via `qou_substrate.precision`) | 593 | direct imports — pre-substrate carve-out |
 | `sympy` | 206 | direct imports — `Rational`, `Symbol`, partition combinatorics |
 | `numpy` | 127 | direct imports — Gram-matrix linear algebra |
 | `scipy` | 20 | direct imports — LP/SDP fallbacks |
+
+> The transitive importer count (any script that pulls in `qou_substrate.WitnessBuilder` *or* `qou_substrate.precision` via any intermediate, including `pyhecke`) is much higher; per [`docs/workplans/2026-05-24-library-reuse-production-readiness.md`](workplans/2026-05-24-library-reuse-production-readiness.md) ≈ 67% of compute scripts depend on the substrate trio. The numbers above count **direct** importers only — they're a deliberately strict measure of "is this package's public API the canonical entry point".
 
 The two zero-import packages (`qou-mass`, `witness-schema`) ship clean public APIs (`predict()`, `compute_tr_M()`, `ComputationWitness.model_validate_json()`); they're not yet adopted because the in-repo compute scripts predate them. They are the **external-researcher interface** — `pip install qou-mass` gets you the canonical predictions without cloning this repo. The migration of in-repo scripts onto these packages is tracked by [`docs/workplans/2026-05-24-library-reuse-production-readiness.md`](workplans/2026-05-24-library-reuse-production-readiness.md).
 
