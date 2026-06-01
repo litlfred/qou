@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T04:39:37.779182+00:00",
-  "commitSha": "d4da00c83c066e4ca7e0229301ed46eb38fd7469",
+  "computedAt": "2026-06-01T04:46:39.311653+00:00",
+  "commitSha": "250a78bc71292054209c3e7247f50843a7cc4b0e",
   "assertions": [
     {
       "name": "bar_decomposition_sums_to_total_at_q_proton",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 210,
+  "durationMs": 219,
   "computation": "qbeta-delta-tr-bar-decomposition-probe",
   "scriptFile": "qbeta_delta_tr_bar_decomposition_probe.py",
-  "scriptHash": "c42e51a56993",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b57296b7d06a",
+  "scriptCommitSha": "250a78bc71292054209c3e7247f50843a7cc4b0e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,10 +33,11 @@
     "mpmath": "1.3.0"
   },
   "description": "Structural observation: Δtr_M(q) bar-decomposition under q → 1/q. Records the closed forms of the symmetric and antisymmetric components without proposing a c_k closure candidate (per CLAUDE.md no-7th-ansatz discipline).",
+  "auditOnly": "docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md",
   "data": {
     "delta_tr_M_in_q": "(-q**(25/2) - q**(23/2) - 2*q**(21/2) + 2*q**(19/2) + q**(17/2) + q**(15/2) - 2*q**12 + 4*q**10 - 2*q**8)/(4*q**(21/2) + 4*q**(19/2))",
     "delta_tr_M_in_t_q_half": "(-t**10 - 2*t**9 - t**8 - 2*t**6 + 4*t**5 + 2*t**4 + t**2 - 2*t + 1)/(4*t**6 + 4*t**4)",
-    "bar_q_minus_original": "(-q**5 - q**4 - 2*q**3 + 2*q**2 + q + 1)/(2*q**3 + 2*q**2)",
+    "delta_tr_minus_bar_q": "(-q**5 - q**4 - 2*q**3 + 2*q**2 + q + 1)/(2*q**3 + 2*q**2)",
     "verdict_q_bar_symmetric": false,
     "bar_t_decomposition": {
       "symmetric_part_t": "(-t**6 + t**4 + t**2 - 1)/(2*t**3)",
