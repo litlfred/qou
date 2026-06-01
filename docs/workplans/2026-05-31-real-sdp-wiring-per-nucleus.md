@@ -159,3 +159,28 @@ refuted in `docs/audits/2026-05-30-universal-branching-multinucleon-gap.md`.)
 **Net:** branching = the generalizable constraint source; the bar-fold
 (method 1) is the key to pushing the compute wall higher by symmetry
 reduction.
+
+## Shell coverage census (2026-06-01, PR #1582)
+
+**Q: can we do all shells?** Real-SDP character data exists only for A≤4.
+
+| Shell / nucleus | A | n=3A | χ_λ witness | y_λ source | real SDP |
+|---|---|---|---|---|---|
+| proton / neutron | — | 3 | ✅ chi-{proton,neutron}-h3 | inline | constituents |
+| ²H deuteron | 2 | 6 | ✅ chi-deuteron-h6 (11) | inline | ✅ wired |
+| ³He / ³H | 3 | 9 | ✅ chi-{helium-3,tritium}-h9 (30) | wenzl-h9 | ✅ wired |
+| ⁴He | 4 | 12 | ✅ chi-lambda-he4-full (77) | wenzl-h12 | ✅ wired |
+| ⁶Li | 6 | 18 | ❌ none | ❌ none | abstract only |
+| ⁹Be | 9 | 27 | ❌ none | ❌ none | abstract only |
+| ¹¹B | 11 | 33 | ❌ none | ❌ none | abstract only |
+| ¹²C | 12 | 36 | ❌ none | ❌ none | abstract only |
+
+**Verdict:** the generic resolver (`nucleus_real_sdp.py`) covers every
+nucleus for which a per-nucleus χ_λ witness exists — currently A≤4. The
+Lean abstract empty-SDP uniqueness covers all of Li-6…C-12, but their
+*real* SDP needs χ_λ(β_K) at H_18…H_36, which is past the `(3A)!`
+compute wall (H_18 = 6.4e15 dim) and has no witness. Producing those is
+the multi-week-per-nucleus campaign #1575 scopes; the bar-fold symmetry
+reduction is the lever, but a sparse Hoefsmit evaluator at H_18+ is the
+prerequisite that does not yet exist. **Adding a shell = produce its
+χ_λ witness + Wenzl y_λ at that n**, then one registry line.
