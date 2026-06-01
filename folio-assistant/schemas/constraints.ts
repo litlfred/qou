@@ -11,7 +11,7 @@
 
 import { z } from "zod";
 import { isCrossPaperRef } from "./types";
-import { LEAN_REF_PATTERN } from "./lean-packages";
+import { LEAN_REF_PATTERN, leanPackageByName, parseLeanRef } from "./lean-packages";
 
 // ── Label patterns ───────────────────────────────────────────────
 
@@ -395,6 +395,8 @@ export interface ConstraintContext {
   allRefIds?: Set<string>;
   /** File existence checker. */
   fileExists: (path: string) => boolean;
+  /** Basename lookup under a Lake package root (for lean.ref fallback). */
+  lakeTreeContainsBasename?: (lakeRoot: string, basename: string) => boolean;
   /** Markdown content of the companion .md file (for cross-ref scanning). */
   mdContent?: string;
   /** Lean sibling stub content (for §3b-cond kind-check), if the file exists. */
@@ -422,12 +424,42 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
   },
   {
     id: "lean-file-exists",
-    description: "Definitions must have a sibling .lean file matching the block rootName",
+    description: "Definitions must have a Lean formalization: sibling .lean OR a resolvable Lake-tree file via lean.ref",
     appliesTo: ["definition"],
     check: (block, ctx) => {
-      const leanPath = `${ctx.dir}/${ctx.rootName}.lean`;
-      return ctx.fileExists(leanPath) ? null
-        : `Definition "${block.label}" requires Lean formalization. Expected sibling file: ${leanPath}`;
+      const siblingPath = `${ctx.dir}/${ctx.rootName}.lean`;
+      if (ctx.fileExists(siblingPath)) return null;
+
+      // Per CLAUDE.md §0a, the resolver chain is:
+      // (1) sibling <rootName>.lean — checked above,
+      // (2) <lakeRoot>/<module-as-path>.lean under the package's Lake root
+      //     (when the Lean module path matches the lean.ref decl prefix), or
+      // (3) any <name>.lean under <lakeRoot>/ that matches the parsed ref's
+      //     bare declaration name (covers the cluster-migration case where
+      //     the module path was renamed but the lean.ref decl was kept —
+      //     e.g. lean.ref qou:QOU.Braiding.HeckeMassElement points at
+      //     lean/QOU/Torsion/HeckeMassElement.lean per the wire-in note).
+      const ref = (block as { lean?: { ref?: string } }).lean?.ref;
+      if (ref) {
+        try {
+          const parsed = parseLeanRef(ref);
+          const pkg = leanPackageByName(parsed.package);
+          if (pkg) {
+            // (2) Direct module-path resolution.
+            const modulePath = parsed.module.replace(/\./g, "/");
+            if (ctx.fileExists(`${pkg.lakeRoot}/${modulePath}.lean`)) return null;
+            // (3) Basename fallback under the lake tree.
+            if (ctx.lakeTreeContainsBasename?.(pkg.lakeRoot, `${parsed.name}.lean`)) {
+              return null;
+            }
+          }
+        } catch {
+          // parseLeanRef threw — fall through to the failure message.
+        }
+      }
+
+      return `Definition "${block.label}" requires Lean formalization. Expected sibling file: ${siblingPath}` +
+        (ref ? ` (or Lake-tree resolution from lean.ref "${ref}")` : "");
     },
   },
   {
