@@ -48,4 +48,30 @@ theorem hecke_times_qInteger_five (hh : q - q⁻¹ ≠ 0) :
     (q - q⁻¹) * qInteger q 5 = q^5 - q⁻¹^5 :=
   hecke_times_qInteger q 5 hh
 
+/-- **q-Lambert single-term identity** (the structural root of the
+  Li_2^q simple-pole / branch-point analysis, PRs #1657/#1666).
+
+  `[n]_q · (q − q⁻¹) · q⁻ⁿ = 1 − q⁻²ⁿ`.
+
+  Equivalently `1/[n]_q = (q − q⁻¹)·q⁻ⁿ/(1 − q⁻²ⁿ)`: the inverse
+  q-integer is a single geometric (Lambert) kernel in `q⁻²ⁿ`. Summing
+  the geometric series gives the Lambert expansion
+  `1/[n]_q = (q − q⁻¹)·Σ_{m≥0} q⁻⁽²ᵐ⁺¹⁾ⁿ`, whose `m`-terms each carry a
+  simple pole at `z = q^{2m+1}` of the Rogers dilogarithm derivative
+  `−ln_q(1−z)/z`. The *simple*-pole order is exactly why `z = q₀` is an
+  integrable logarithmic **branch point** (not a pole) of `Li_2^q`, and
+  why the `+i0` continuation's imaginary part is the `z`-INDEPENDENT
+  residue `π·Res` that cancels in the m_e-normalised ratio
+  (`qbeta_li2q_imaginary_quantization.py`, PR #1666 — the reality gate).
+
+  Proof is `field_simp` + `ring` over `ℝ` (algebraic; the pole/branch
+  analysis is archimedean, real `q > 0`). -/
+-- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
+theorem qLambert_single_term (n : ℕ) (hh : q - q⁻¹ ≠ 0) :
+    qInteger q n * (q - q⁻¹) * q⁻¹^n = 1 - q⁻¹^(2*n) := by
+  unfold qInteger
+  rw [two_mul, pow_add]
+  field_simp
+  ring
+
 end QOU.BraidsAndKnots
