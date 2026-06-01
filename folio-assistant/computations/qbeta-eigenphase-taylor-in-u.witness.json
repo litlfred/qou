@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T03:51:27.583092+00:00",
-  "commitSha": "0d65e9bcd6fd7a37cb2e8a7eff98e1bd6a0a14d8",
+  "computedAt": "2026-06-01T04:49:55.057443+00:00",
+  "commitSha": "49d8ebfc893394b5b048f71764a1a3cc1d0c59d2",
   "assertions": [
     {
       "name": "eigenphase_u_series_extracted",
@@ -11,19 +11,51 @@
       "passed": true,
       "tolerance": 0.0,
       "source": "cos(α−bℏ²/2) Taylor-expanded in u = b·ℏ² to order 3; coefficients are exact symbolic radicals, directly comparable to the ladder c_k."
+    },
+    {
+      "name": "eigenphase_a1_equals_neg_sqrt3_over_12",
+      "computed": -0.14433756729740643,
+      "expected": -0.14433756729740643,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "Numeric u¹ coefficient matches the exact radical -√3/12."
+    },
+    {
+      "name": "eigenphase_a2_equals_neg_11_32_minus_sqrt3_over_12",
+      "computed": -0.48808756729740643,
+      "expected": -0.48808756729740643,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "Numeric u² coefficient matches the exact radical -11/32 - √3/12."
+    },
+    {
+      "name": "eigenphase_a1_nonzero_falsifies_eigenphase_eq_f",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "The u¹ coefficient is nonzero (a_1 = -√3/12), but the Q_β ladder has no c_1 rung — this is the falsification of the 'eigenphase = f' hypothesis at order u¹."
+    },
+    {
+      "name": "symbolic_numeric_crosscheck_agree",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Symbolic-exact path certified 3 leading coefficients in radicals; each agrees with the numeric path to < 1e-30."
     }
   ],
   "allPassed": true,
-  "durationMs": 15230,
+  "durationMs": 15496,
   "computation": "qbeta-eigenphase-taylor-in-u",
   "scriptFile": "qbeta_eigenphase_taylor_in_u.py",
-  "scriptHash": "b0357ab9e6eb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8db63b1d58b5",
+  "scriptCommitSha": "a32720bb4fe4037049214b0d8378158cf77ff37a",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
