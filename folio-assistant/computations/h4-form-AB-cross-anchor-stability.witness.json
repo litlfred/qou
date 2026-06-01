@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T11:49:37.625285+00:00",
-  "commitSha": "0b9b9ee931959c315d20b3a6e0e69aa649e12b14",
+  "computedAt": "2026-06-01T12:56:14.069427+00:00",
+  "commitSha": "529eed16b1f13229ca1c3faeff9cfb17a22b4213",
   "assertions": [
     {
       "name": "cross_anchor_test_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "h4-form-AB-cross-anchor-stability",
   "scriptFile": "h4_form_AB_cross_anchor_stability.py",
-  "scriptHash": "526e33bbed02",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "42ee85d6f454",
+  "scriptCommitSha": "d6743ced842fed4731752be9100de1471ea838f6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,9 +39,9 @@
   },
   "data": {
     "q_muon": "1.109978595640239578377506",
-    "Form_A_ppb_proton": "-0.00307214283036",
+    "Form_A_ppb_proton": "-0.00307214282928",
     "Form_A_ppb_muon": "4784.5782219",
-    "Form_B_ppb_proton": "-0.000787733366012",
+    "Form_B_ppb_proton": "-0.000787733364937",
     "Form_B_ppb_muon": "4784.5805063",
     "verdict": "NUANCED RESULT — Form A/B coefficient values are q-anchor-stable to 10⁻⁹, AND the 54-ppb improvement over the bare baseline is reproduced at both anchors. BUT the absolute residual at q_muon is 4785 ppb — dominated by the m_μ over-determination effect (PR #1581 Probe A), which is a SUBSTRATE property independent of Form A/B. This test therefore neither confirms nor falsifies the structural validity of Form A/B; it shows they are no worse than the bare baseline under anchor variation, but the 54-ppb closure they provide IS proton-anchor-specific (any q anchor would have its own 54-ppb-style residual that they may or may not match). Higher-precision PSLQ (Task 2) and structural derivation attempts (Task 3) remain the deciding tests."
   }

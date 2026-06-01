@@ -34,26 +34,18 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+from _h4_substrate import (  # noqa: E402
+    ALPHA_EM,
+    M_E_MEV,
+    M_MU_MEV,
+    M_P_MEV,
+    qfact,
+    qint,
+    trM_borromean_closed,
+)
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-
-
-def trM_borromean_closed(q):
-    h = q - 1 / q
-    h2 = h * h
-    return (4 + h2 - 3 * h2 ** 2 - h2 ** 3) / (h2 + 4)
-
-
-def qint(k, q):
-    return (q ** k - q ** (-k)) / (q - 1 / q)
-
-
-def qfact(k, q):
-    out = mp.mpf(1)
-    for i in range(1, k + 1):
-        out *= qint(i, q)
-    return out
 
 
 def main() -> int:
@@ -70,13 +62,9 @@ def main() -> int:
     qfact_3 = qfact(3, q)
     trM = abs(trM_borromean_closed(q))
     F_Bor = trM * qfact_3 / q ** 3
-    m_e = mp.mpf("0.51099895069")
-    m_mu = mp.mpf("105.6583755")
-    m_p = mp.mpf("938.27208816")
-    k_req = (2 * m_mu * F_Bor - m_p) / m_e
+    k_req = (2 * M_MU_MEV * F_Bor - M_P_MEV) / M_E_MEV
     residual = 12 - k_req
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
-    f = residual / (alpha_em / mp.pi / 6)
+    f = residual / (ALPHA_EM / mp.pi / 6)
     fm1 = f - 1
     coef_h4 = fm1 / h ** 4  # target ≈ 0.876580096
 
@@ -97,8 +85,8 @@ def main() -> int:
         "1/π²": 1 / mp.pi ** 2,
         "G/π²": G / mp.pi ** 2,
         "ζ(3)/π³": mp.zeta(3) / mp.pi ** 3,
-        "α_em": alpha_em,
-        "α_em²": alpha_em ** 2,
+        "α_em": ALPHA_EM,
+        "α_em²": ALPHA_EM ** 2,
         "h²": h2,
         "h⁴": h ** 4,
         "[3]_q": qint(3, q),

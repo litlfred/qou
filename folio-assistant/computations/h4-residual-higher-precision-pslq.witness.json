@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T11:51:46.013822+00:00",
-  "commitSha": "253fd20e565873628423a679eeb98045de1aa1aa",
+  "computedAt": "2026-06-01T12:56:15.586303+00:00",
+  "commitSha": "529eed16b1f13229ca1c3faeff9cfb17a22b4213",
   "assertions": [
     {
       "name": "higher_precision_pslq_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 12,
   "computation": "h4-residual-higher-precision-pslq",
   "scriptFile": "h4_residual_higher_precision_pslq.py",
-  "scriptHash": "0293383f8c55",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ab0a5065b3af",
+  "scriptCommitSha": "529eed16b1f13229ca1c3faeff9cfb17a22b4213",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,9 +38,9 @@
     "q_120dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "target_h4_coef": "0.87658009579234760622334895778",
+    "target_h4_coef": "0.876580095792365045294580102307",
     "pslq_pairwise_hits": 0,
-    "exact_N_for_one_minus_pi2_over_N": "79.9676880682379786",
+    "exact_N_for_one_minus_pi2_over_N": "79.9676880682492779",
     "verdict": "NULL — no clean PSLQ integer relations at higher precision. The h⁴-residual coefficient is NOT a rational multiple of any single basis element in {G, π², ζ(3), ln(2), ...}. Best N for `1 - π²/N` form: N = 80 (Δ = 56.8678 ppm). Exact N = 79.9676880682 — NOT clean integer 80."
   }
 }
