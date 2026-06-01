@@ -147,7 +147,7 @@ function parseChapterManifest(paper: string, dir: string): ChapterInfo | null {
   // Robust against optional generic type parameters (`section<T>({…})`)
   // and `as const` / `as Section` trailing casts (`Object.freeze({…} as const)`).
   const sectionRe =
-    /(?:section|Object\.freeze)(?:<[^>]+>)?\(\s*\{([\s\S]*?)\}(?:\s+as\s+[^)]+)?\s*\)/g;
+    /(?:\bsection|Object\.freeze)(?:<[^>]+>)?\(\s*\{([\s\S]*?)\}(?:\s+as\s+[^)]+)?\s*\)/g;
   let m;
   while ((m = sectionRe.exec(src)) !== null) {
     const body = m[1];
