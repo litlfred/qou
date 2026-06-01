@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:32:30.594540+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-01T14:54:33.180077+00:00",
+  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
   "assertions": [
     {
       "name": "D_w0_eq_schur_n2",
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4482,
+  "durationMs": 3760,
   "computation": "demazure-markov-trace",
   "scriptFile": "demazure_markov_trace.py",
   "scriptHash": "3275dd59c4d7",

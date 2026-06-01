@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:26:53.361249+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-01T14:48:50.544644+00:00",
+  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "i2-probe-only-audit",
   "scriptFile": "i2_probe_only_audit.py",
   "scriptHash": "1155d3faa225",
@@ -37,12 +37,12 @@
   "contentBlock": "I2 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "production_consumers_count": 9,
-    "total_label_bearing_witnesses": 261
+    "total_label_bearing_witnesses": 270
   },
   "data": {
     "by_result": {
-      "i2_probe_only": 221,
-      "wired_production": 40
+      "i2_probe_only": 224,
+      "wired_production": 46
     },
     "production_consumers": [
       "atomic_mass_via_rho_k.py",
@@ -2007,6 +2007,26 @@
         "result": "i2_probe_only"
       },
       {
+        "witness": "folio-assistant/computations/qbeta-habiro-all-10-pairs-phi8-universality.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-cross-pair-factorization.witness.json",
+        "labels": [
+          "prop:neutron-qvalue-symbolic"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
         "witness": "folio-assistant/computations/qbeta-habiro-cross-pair-quick-dp.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
@@ -2023,6 +2043,17 @@
         "production_consumers": [],
         "upstream_consumers": [],
         "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-delta-am-partial-sum-scan.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
       },
       {
         "witness": "folio-assistant/computations/qbeta-habiro-delta6-partition.witness.json",
@@ -2070,7 +2101,36 @@
         "result": "i2_probe_only"
       },
       {
+        "witness": "folio-assistant/computations/qbeta-habiro-phase5q-dn-refactorize.witness.json",
+        "labels": [
+          "prop:neutron-qvalue-symbolic"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
         "witness": "folio-assistant/computations/qbeta-habiro-phi8-interpretation.witness.json",
+        "labels": [
+          "prop:neutron-qvalue-symbolic"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-phi8-squared-boundary-explained.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
         ],
@@ -2091,6 +2151,28 @@
         "witness": "folio-assistant/computations/qbeta-habiro-taylor-investigation.witness.json",
         "labels": [
           "prop:q-beta-categorical-precision-ladder"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-wenzl-tower-zeta-n.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-zeta8-categorical-witness.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
         ],
         "production_consumers": [
           "paper_six_term_isotope_sweep.py"
@@ -2407,6 +2489,18 @@
         "production_consumers": [],
         "upstream_consumers": [],
         "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/vhat-std-vs-full-tower-compare.witness.json",
+        "labels": [
+          "prop:mass-endomorphism-tower"
+        ],
+        "production_consumers": [
+          "derive_m_p_hecke_full_tower_50dps.py",
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
       },
       {
         "witness": "folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json",
