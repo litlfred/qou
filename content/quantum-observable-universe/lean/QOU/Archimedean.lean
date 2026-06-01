@@ -27,6 +27,20 @@ import QOU.Archimedean.metallic_character_knot
 import QOU.Archimedean.archimedean
 import QOU.Archimedean.noble_gas_characterization
 import QOU.Archimedean.BlochWignerUnitCircle
+-- Sibling-import cluster wire-in (2026-06-01): content-tree extracts
+-- migrated into the Lake build (see
+-- docs/audits/2026-06-01-sibling-import-cluster-wire-in-plan.md).
+-- COMPILE-PENDING — these files have never been in the build.
+import QOU.Archimedean.ClausenFunctionMathlibFiller
+import QOU.Archimedean.BlochWignerMathlibFiller
+import QOU.Archimedean.TorusKnotGenusFourUnique
+import QOU.Archimedean.ForceCarrierBringUniqueness
+import QOU.Archimedean.EmCouplingProjection
+import QOU.Archimedean.EmCouplingBringZeroMode
+import QOU.Archimedean.EmSpectralCompleteness
+import QOU.Archimedean.MassTowerOpenProblemsClasses
+import QOU.Archimedean.ThreeSubstantiveMathlibFillers
+import QOU.Archimedean.TypeBFoldedCrystalCombinatorics
 
 /-!
 # Descartes Universe — Module Index

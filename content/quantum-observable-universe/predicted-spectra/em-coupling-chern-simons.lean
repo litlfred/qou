@@ -28,7 +28,7 @@
   derivation roadmap.
 -/
 
-import QOU.ArchimedeanUniverse.EmCouplingProjection
+import QOU.Archimedean.EmCouplingProjection
 
 namespace QOU.ArchimedeanUniverse
 
