@@ -1,12 +1,12 @@
 {
   "$schema": "q-usage-audit/v1",
   "description": "Per-block q-usage regime audit + chapter-mismatch sweep",
-  "audited_at": "2026-06-01T14:30:48.589Z",
+  "audited_at": "2026-06-01T15:11:37.208Z",
   "script": "content/pipeline/qa-checkers-q-usage.ts",
   "script_hash": "93cae3264dc7",
-  "n_blocks": 1934,
+  "n_blocks": 1936,
   "n_chapters": 31,
-  "n_fails": 27,
+  "n_fails": 25,
   "n_warns": 532,
   "by_chapter": {
     "appendix-atomic-mass-calculations": {
@@ -224,10 +224,10 @@
     },
     "appendix-qvalues": {
       "chapter": "appendix-qvalues",
-      "n_blocks": 3,
+      "n_blocks": 4,
       "by_criterion": {
         "q-usage-regime-detected": {
-          "pass": 3,
+          "pass": 4,
           "fail": 0,
           "warn": 0,
           "n/a": 0
@@ -236,16 +236,16 @@
           "pass": 0,
           "fail": 0,
           "warn": 0,
-          "n/a": 3
+          "n/a": 4
         },
         "q-usage-archimedean-in-categorical-chapter": {
           "pass": 0,
           "fail": 0,
           "warn": 0,
-          "n/a": 3
+          "n/a": 4
         },
         "q-usage-positivity-implicit": {
-          "pass": 1,
+          "pass": 2,
           "fail": 0,
           "warn": 0,
           "n/a": 2
@@ -254,24 +254,24 @@
           "pass": 1,
           "fail": 0,
           "warn": 0,
-          "n/a": 2
+          "n/a": 3
         },
         "q-usage-root-of-unity-undeclared": {
-          "pass": 3,
+          "pass": 4,
           "fail": 0,
           "warn": 0,
           "n/a": 0
         },
         "q-usage-narrative-chapter-mismatch": {
-          "pass": 1,
+          "pass": 2,
           "fail": 0,
           "warn": 2,
           "n/a": 0
         }
       },
       "regime_dist": {
-        "symbolic": 2,
-        "fixed-q0": 1
+        "symbolic": 3,
+        "fixed-q0": 2
       }
     },
     "appendix-surreals": {
@@ -385,28 +385,28 @@
     },
     "braids-and-knots": {
       "chapter": "braids-and-knots",
-      "n_blocks": 70,
+      "n_blocks": 71,
       "by_criterion": {
         "q-usage-regime-detected": {
-          "pass": 70,
+          "pass": 71,
           "fail": 0,
           "warn": 0,
           "n/a": 0
         },
         "q-usage-fixed-q0-leak": {
-          "pass": 68,
-          "fail": 2,
+          "pass": 70,
+          "fail": 1,
           "warn": 0,
           "n/a": 0
         },
         "q-usage-archimedean-in-categorical-chapter": {
-          "pass": 61,
-          "fail": 9,
+          "pass": 63,
+          "fail": 8,
           "warn": 0,
           "n/a": 0
         },
         "q-usage-positivity-implicit": {
-          "pass": 32,
+          "pass": 33,
           "fail": 0,
           "warn": 2,
           "n/a": 36
@@ -415,16 +415,16 @@
           "pass": 4,
           "fail": 0,
           "warn": 0,
-          "n/a": 66
+          "n/a": 67
         },
         "q-usage-root-of-unity-undeclared": {
-          "pass": 67,
+          "pass": 68,
           "fail": 0,
           "warn": 3,
           "n/a": 0
         },
         "q-usage-narrative-chapter-mismatch": {
-          "pass": 67,
+          "pass": 68,
           "fail": 0,
           "warn": 3,
           "n/a": 0
@@ -436,7 +436,7 @@
         "symbolic": 40,
         "generic-R": 6,
         "root-of-unity": 7,
-        "fixed-q0": 5
+        "fixed-q0": 4
       }
     },
     "brings-surface": {
@@ -1920,24 +1920,6 @@
       "result": "fail",
       "severity": "major",
       "evidence": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:38 — MeV/CODATA reference in categorical chapter — is precisely $[3]_q \\cdot [4]_q$ — verified at $q_0$ to 203 ppm with | content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:42 — MeV/CODATA reference in categorical chapter — The remaining 203 ppm residual is the EM/Coulomb (sinh-channel) | content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:43 — MeV/CODATA reference in categorical chapter — correction, closed to **0.056 ppm on the full ratio** by"
-    },
-    {
-      "label": "prop:proton-mass-substrate-identity",
-      "kind": "proposition",
-      "chapter": "braids-and-knots",
-      "criterion": "q-usage-fixed-q0-leak",
-      "result": "fail",
-      "severity": "major",
-      "evidence": "content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:47 — At $q_0 = 1.10977859555\\ldots$ (50 dps): | content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.lean:97 — /-- **Empirical witness at substrate q_0 ≈ 1.10978.**"
-    },
-    {
-      "label": "prop:proton-mass-substrate-identity",
-      "kind": "proposition",
-      "chapter": "braids-and-knots",
-      "criterion": "q-usage-archimedean-in-categorical-chapter",
-      "result": "fail",
-      "severity": "major",
-      "evidence": "content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:32 — MeV/CODATA reference in categorical chapter — *to a residual of $0.24\\,\\mathrm{ppm}$ at $q = q_0$ (50-dps MPFR | content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:58 — MeV/CODATA reference in categorical chapter — | CODATA $m_p$ | $938.27209\\,\\mathrm{MeV}$ | | content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:59 — MeV/CODATA reference in categorical chapter — | Residual | $0.24\\,\\mathrm{ppm}$ |"
     },
     {
       "label": "rem:braid-group-n-strand",

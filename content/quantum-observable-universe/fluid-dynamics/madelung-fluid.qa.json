@@ -1399,8 +1399,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d",
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
         "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"fluid-dynamics\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
       }
     ],
@@ -1416,8 +1416,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -1432,8 +1432,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -1448,8 +1448,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1464,8 +1464,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -1480,8 +1480,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -1496,12 +1496,12 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d",
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/madelung-fluid.md:1 — detected regime [symbolic] is disjoint from chapter 'fluid-dynamics' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ]
   },
-  "updated_at": "2026-06-01T14:30:48.589Z"
+  "updated_at": "2026-06-01T15:11:37.208Z"
 }

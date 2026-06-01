@@ -1,29 +1,12 @@
-**Proposition (proton-mass substrate identity).**
+**Proposition (proton-mass substrate identity at $q_0$).**
+
 *Let $q_0 \approx 1.10978$ be the substrate parameter, $m_e$ the
-electron mass (CAL-1), $m_\mu$ the muon mass (derived from CAL-2 $\mathfrak{D}_\beta$),
-and let*
-
-$$
-  F_{\mathrm{Bor}}(q) \;:=\; \frac{\bigl|\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)\bigr| \cdot [3]_q!}{q^3}
-$$
-
-*be the natural categorical observable combining the proven Borromean
-Markov-trace closed form*
-
-$$
-  \mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)
-  \;=\; \frac{4 + h^2 - 3h^4 - h^6}{h^2 + 4}
-  \qquad (h := q - q^{-1})
-$$
-
-*([`thm:borromean-markov-trace-closed-form`](borromean-markov-trace-closed-form.md))
-with the proven q-factorial closed form*
-
-$$
-  [3]_q! \;=\; (q^2 + 1 + q^{-2})(q + q^{-1}).
-$$
-
-*Then the proton mass satisfies the substrate identity*
+*Let $q_0 \approx 1.10978$ be the substrate parameter, $m_e$ the
+electron mass (CAL-1), $m_\mu$ the muon mass (derived from CAL-2
+$\mathfrak{D}_\beta$), and let $F_{\mathrm{Bor}}$ denote the
+Borromean categorical observable
+([`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md)).
+Then the proton mass satisfies the substrate identity*
 
 $$
   \boxed{\;m_p \;=\; 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) \;-\; 12 \cdot m_e\;}
@@ -38,9 +21,9 @@ $$
   \boxed{\;m_p \;=\; \dim V_{(2,1)} \cdot \bigl(m_\mu \cdot F_{\mathrm{Bor}}(q_0) \;-\; |S_3| \cdot m_e\bigr)\;}
 $$
 
-*where $\dim V_{(2,1)} = 2$ is the standard irrep dimension (Lean-proved via
-hook-length formula) and $|S_3| = 3! = 6$ is the symmetric group order
-($= P_3(q^2)|_{q=1}$, the Poincaré polynomial classical limit of $[3]_q!$).*
+*where the structural integers $\dim V_{(2,1)} = 2$ and $|S_3| = 6$
+are the categorical invariants of $H_3(q)$ recorded in
+[`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md).*
 
 ## Numerical verification
 
@@ -58,20 +41,13 @@ At $q_0 = 1.10977859555\ldots$ (50 dps):
 | CODATA $m_p$ | $938.27209\,\mathrm{MeV}$ |
 | Residual | $0.24\,\mathrm{ppm}$ |
 
-## Exact rational $h$-expansion of $F_{\mathrm{Bor}}$
+## Per-order $h$-expansion in MeV
 
-Every coefficient of $F_{\mathrm{Bor}}$ in the variable
-$h = q - q^{-1}$ is an exact rational number, derivable from
-Lean-proved closed forms:
-
-$$
-  F_{\mathrm{Bor}}(h)
-  = 6 - 9h + \tfrac{19}{2}h^2 - \tfrac{57}{8}h^3
-    - \tfrac{1}{2}h^4 + \tfrac{649}{128}h^5 - 7h^6 + \cdots
-$$
-
-At $h_0 = q_0 - q_0^{-1} \approx 0.2091$, the per-order MeV
-contributions to $m_p = 2 m_\mu F_{\mathrm{Bor}} - 12 m_e$ are:
+At $h_0 = q_0 - q_0^{-1} \approx 0.2091$, using the exact rational
+$h$-expansion of $F_{\mathrm{Bor}}$ (categorical,
+[`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md))
+the per-order MeV contributions to
+$m_p = 2 m_\mu F_{\mathrm{Bor}} - 12 m_e$ are:
 
 | Order | Coefficient | $2 m_\mu \cdot c_k \cdot h_0^k$ |
 |---|---|---|
@@ -81,14 +57,6 @@ contributions to $m_p = 2 m_\mu F_{\mathrm{Bor}} - 12 m_e$ are:
 | $h^3$ | $-57/8$ | $-13.8\,\mathrm{MeV}$ |
 | $-12 m_e$ | — | $-6.1\,\mathrm{MeV}$ |
 | **Sum** | | $\approx 938.1\,\mathrm{MeV}$ |
-
-The $h^2$ coefficient $19/2$ decomposes cleanly across the three
-factors of $F_{\mathrm{Bor}} = |\mathrm{tr}_M| \cdot [3]_q! / q^3$:
-
-- $|\mathrm{tr}_M|$ contributes $h^2 = 0$ (exact per-partition
-  cancellation, [`prop:borromean-markov-trace-closed-form`](../mass-application/borromean-markov-trace-closed-form.md))
-- $[3]_q! = (h^2 + 3)\sqrt{h^2 + 4}$ contributes $11/4$
-- $q^3$ (denominator) contributes $9/8$
 
 The series converges to $0.017\,\mathrm{ppm}$ accuracy at order $h^9$.
 
@@ -158,45 +126,16 @@ $\mathfrak{m}_\mu$ and $Q_\beta$ are substrate-derived, the lifetime
 ratio $\hbar/\mathfrak{D}_n \div \hbar/\mathfrak{D}_\mu$ should match
 CODATA ($\approx 4 \times 10^8$) from categorical invariants alone.
 
-## Structural identifications
-
-The two structural integers in the identity:
-
-| Integer | Categorical meaning | Status |
-|---|---|---|
-| $2$ | $\dim V_{(2,1)}$ — classical dimension of the standard irrep of $S_3$ (trace-dominant per Wedderburn diagnostic at 49% of $T_1$). Hook-length formula: $3! / (3 \cdot 1 \cdot 1) = 2$. | **Lean-proved** ([`DimStandardRepS3.lean`](../lean/QOU/BraidsAndKnots/DimStandardRepS3.lean) `dim_V_21_eq_two`) |
-| $12$ | $\dim V_{(2,1)} \cdot 3! = 2 \cdot 6$. The mass formula factors as $m_p = \dim V_{(2,1)} \cdot (m_\mu \cdot F_{\mathrm{Bor}} - \lvert S_3 \rvert \cdot m_e)$, where $\lvert S_3 \rvert = 3! = P_3(1)$ is the Poincaré polynomial at $q=1$ (classical limit of $[3]_q!$). Both factors are categorically meaningful. | **Identified** — $\dim V_{(2,1)}$ is Lean-proved; $3!$ is the symmetric group order |
-
 ## Open work for full categorical proof
 
-1. ~~**Categorical derivation of the factor 2.**~~ **DONE.** The factor
-   $2 = \dim V_{(2,1)}$ is the hook-length dimension of the standard
-   irrep of $S_3$. Lean-proved in
-   [`DimStandardRepS3.lean`](../lean/QOU/BraidsAndKnots/DimStandardRepS3.lean)
-   via $3!/(3 \cdot 1 \cdot 1) = 2$.
+The categorical structure of $F_{\mathrm{Bor}}$ + its rational
+$h$-expansion are completed in
+[`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md).
+What remains specific to this archimedean evaluation:
 
-2. ~~**Categorical derivation of the 12.**~~ **IDENTIFIED:** $12 = \dim V_{(2,1)} \cdot 3! = 2 \cdot 6$.
-   The mass formula factors cleanly as
-   $m_p = \dim V_{(2,1)} \cdot \bigl(m_\mu \cdot F_{\mathrm{Bor}}(q_0) - |S_3| \cdot m_e\bigr)$
-   where $|S_3| = 3! = 6$ is the symmetric group order (equivalently
-   the Poincaré polynomial $P_3(q^2)|_{q=1}$, the classical limit of
-   $[3]_q!$). Both factors have clean categorical meaning: $\dim V_{(2,1)}$
-   is the standard irrep dimension (Lean-proved), and $|S_3|$ is the
-   group order. Verified at 50 dps: factored form matches original to
-   machine precision, residual $-0.24\,\mathrm{ppm}$ vs CODATA.
-
-3. ~~**Identification of $F_{\mathrm{Bor}}(q)$.**~~ **IDENTIFIED:**
-   $F_{\mathrm{Bor}}(q) = |\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)| /
-   y_{(3)}(q)$ where $y_{(3)}(q) = q^3 / [3]_q!$ is the q-Schur
-   Markov weight for the trivial partition. Lean-proved in
-   [`YLambdaQSchur.lean`](../lean/QOU/BraidsAndKnots/YLambdaQSchur.lean)
-   `F_Bor_eq_trM_over_y_3`. The content sum of $(3)$ is
-   $c((3)) = 0 + 1 + 2 = 3$, so $y_{(3)} = q^3/[3]_q!$ is the
-   content-shift normalisation. The cleaner substrate identity form is
-   $$y_{(3)}(q_0) \cdot (m_p + 12 \cdot m_e) = 2 \cdot m_\mu \cdot |\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q_0)|.$$
-
-4. **Bridge from $\dim V_{(2,1)}$ to linear factor in mass formula.**
-   The factored form $m_p = \dim V_{(2,1)} \cdot (m_\mu \cdot F_{\mathrm{Bor}} - |S_3| \cdot m_e)$
+1. **Bridge from $\dim V_{(2,1)}$ to linear factor in mass formula.**
+   The factored form
+   $m_p = \dim V_{(2,1)} \cdot (m_\mu \cdot F_{\mathrm{Bor}} - |S_3| \cdot m_e)$
    is numerically exact at 50 dps but the categorical WHY — why the
    trace-dominant irrep's dimension enters linearly — remains a formal
    gap. The Wedderburn block expansion of the Markov trace provides
@@ -240,15 +179,13 @@ categorical derivation.
 
 ## See also
 
-- [`docs/audits/-proton-mass-identity-12-me-ocneanu.md`](../../../docs/audits/-proton-mass-identity-12-me-ocneanu.md)
+- [`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md)
+  — categorical observable $F_{\mathrm{Bor}}$ (closed form, $h$-expansion, structural integers)
+- [`docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md`](../../../docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md)
   — full audit writeup
-- [`thm:borromean-markov-trace-closed-form`](borromean-markov-trace-closed-form.md)
-  — Lean-proved $|\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)|$
-- [`thm:q-schur-y-lambda-closed-form`](q-schur-y-lambda-closed-form.md)
-  — Lean-proved q-Schur y_λ closed form (this PR)
 - [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md)
   — canonical Hecke-skein $\Delta m / M_N$ derivation
-- [`docs/audits/-ocneanu-cancellation-numerical-verification.md`](../../../docs/audits/-ocneanu-cancellation-numerical-verification.md)
+- [`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](../../../docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md)
   — the universal $-1/12$ leading-pole coefficient (200-dps verified)
 - [`m_p_substrate_identity_50dps.py`](../../../folio-assistant/computations/m_p_substrate_identity_50dps.py)
   — production-grade compute script (50-dps MPFR)

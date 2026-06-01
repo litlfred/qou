@@ -13,5 +13,11 @@ export default chapter({
         "qvalue-benchmark-table-table-data",
       ],
     },
+    {
+      title: "Substrate evaluations",
+      blocks: [
+        "proton-mass-substrate-identity",
+      ],
+    },
   ],
 });
