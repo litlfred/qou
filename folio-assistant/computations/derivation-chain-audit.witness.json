@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:06:42.091739+00:00",
-  "commitSha": "86ecadb92944ecbb885b5002af48626c242f1f99",
+  "computedAt": "2026-06-01T05:25:58.681545+00:00",
+  "commitSha": "301cc5abe937758518d0cec3ec5baa85f77cbfc0",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2354,7 +2354,6 @@
         "constit-factor-residual-phase5k.witness.json",
         "constit-factor-varying-q-phase5k2.witness.json",
         "content-block-label-audit.witness.json",
-        "cross-check-trM-1ppb.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
@@ -2400,6 +2399,7 @@
         "derive-ms-md-torus-knot.witness.json",
         "deuteron-binding-interface-closure.witness.json",
         "deuteron-delta-i-audit.witness.json",
+        "deuteron-real-sdp.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "dirac-yekutieli-combinations-50dps.witness.json",
         "e-0-lp-dual-h3.witness.json",
@@ -2628,6 +2628,10 @@
         "nf-transition-lifting.witness.json",
         "nh-basis-shift.witness.json",
         "normalization-reconciliation-phase5l2.witness.json",
+        "nucleus-real-sdp-deuteron.witness.json",
+        "nucleus-real-sdp-he3.witness.json",
+        "nucleus-real-sdp-he4.witness.json",
+        "nucleus-real-sdp-tritium.witness.json",
         "nv-categorical-derivation-probe.witness.json",
         "nv-pslq-extended-basis.witness.json",
         "nv-pslq-tr-pure-basis.witness.json",
