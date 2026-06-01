@@ -50,7 +50,7 @@ import sympy as sp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
-START = time.time()
+START = time.monotonic()
 mp.mp.dps = 60
 
 # Substrate q0 (proton-anchored). FALSIFICATION reference only -- not tuned.
@@ -307,7 +307,7 @@ w.add_caveat(
 )
 
 path = w.save()
-elapsed = time.time() - START
+elapsed = time.monotonic() - START
 print(f"[inter-nucleon-linked-channel] wrote {path} in {elapsed:.2f}s")
 print(f"  braid words: pp=sigma_1^2 (T(2,2)), nn=sigma_1^-2 (T(2,-2)), pn=unlink")
 print(f"  writhe pp/nn/pn = +2 / -2 / 0   (linking number +1 / -1 / 0)")
