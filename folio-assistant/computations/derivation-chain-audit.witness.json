@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T04:10:03.498506+00:00",
-  "commitSha": "c249ec397c9bb5c84bda4d06a606e4dc9fcf27c5",
+  "computedAt": "2026-06-01T04:10:09.322420+00:00",
+  "commitSha": "e49ba458ccf801ada13cdae608d199b98ede211a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2740,12 +2740,16 @@
         "qbeta-delta-tr-vs-formA.witness.json",
         "qbeta-fsc-g-pattern-comparison.witness.json",
         "qbeta-golden-ratio-fibonacci-probe.witness.json",
+        "qbeta-habiro-a7-partition.witness.json",
         "qbeta-habiro-cross-pair-quick-dp.witness.json",
         "qbeta-habiro-delta-am-factorization.witness.json",
+        "qbeta-habiro-delta6-partition.witness.json",
         "qbeta-habiro-depth15-interpretation.witness.json",
         "qbeta-habiro-element-probe.witness.json",
         "qbeta-habiro-p8-identification.witness.json",
+        "qbeta-habiro-partition-followup.witness.json",
         "qbeta-habiro-phi8-interpretation.witness.json",
+        "qbeta-habiro-recursion.witness.json",
         "qbeta-habiro-taylor-investigation.witness.json",
         "qbeta-habiro-tower-1ppq.witness.json",
         "qbeta-half-fill-probe.witness.json",
