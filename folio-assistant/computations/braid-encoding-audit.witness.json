@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T15:18:28.637030+00:00",
-  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
+  "computedAt": "2026-06-01T16:40:03.808687+00:00",
+  "commitSha": "7061a125aa7e53726e5fd310d58a9642067c23e8",
   "assertions": [
     {
       "name": "delta_n_squared_is_placeholder",
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
   "scriptHash": "be751052d79a",

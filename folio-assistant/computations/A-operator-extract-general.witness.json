@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T15:15:14.523024+00:00",
-  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
+  "computedAt": "2026-06-01T16:36:33.676677+00:00",
+  "commitSha": "7061a125aa7e53726e5fd310d58a9642067c23e8",
   "assertions": [
     {
       "name": "all_solved_lambda_residuals_below_1e-10",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 10,
   "computation": "A-operator-extract-general",
   "scriptFile": "A_operator_extract_general.py",
   "scriptHash": "85a45978b4bf",
@@ -48,7 +48,7 @@
       "split_3_3": {
         "n1": 3,
         "n2": 3,
-        "elapsed_sec": 0.617131233215332,
+        "elapsed_sec": 0.5845193862915039,
         "n_partitions": 11,
         "results_per_lambda": {
           "[6]": {
@@ -116,7 +116,7 @@
             "n_unknowns": 9,
             "n_equations": 484,
             "rank": 9,
-            "max_relative_residual": 2.849348079444163e-15,
+            "max_relative_residual": 2.6301674579484583e-15,
             "status": "solved"
           },
           "[4, 2]": {
@@ -254,7 +254,7 @@
             "n_unknowns": 26,
             "n_equations": 484,
             "rank": 26,
-            "max_relative_residual": 8.607230710764505e-16,
+            "max_relative_residual": 9.93142005088212e-16,
             "status": "solved"
           },
           "[3, 3]": {
@@ -289,7 +289,7 @@
             "n_unknowns": 17,
             "n_equations": 484,
             "rank": 17,
-            "max_relative_residual": 2.3914982509831966e-15,
+            "max_relative_residual": 2.323169729526534e-15,
             "status": "solved"
           },
           "[3, 2, 1]": {
@@ -368,7 +368,7 @@
             "n_unknowns": 32,
             "n_equations": 484,
             "rank": 32,
-            "max_relative_residual": 1.5021419477205375e-15,
+            "max_relative_residual": 1.3143742042554702e-15,
             "status": "solved"
           },
           "[3, 1, 1, 1]": {
@@ -488,7 +488,7 @@
             "n_unknowns": 17,
             "n_equations": 484,
             "rank": 17,
-            "max_relative_residual": 7.988684545651889e-16,
+            "max_relative_residual": 1.0271165844409572e-15,
             "status": "solved"
           },
           "[2, 2, 1, 1]": {
@@ -557,7 +557,7 @@
             "n_unknowns": 25,
             "n_equations": 484,
             "rank": 25,
-            "max_relative_residual": 1.5540892789889118e-15,
+            "max_relative_residual": 1.6736346081419049e-15,
             "status": "solved"
           },
           "[2, 1, 1, 1, 1]": {
