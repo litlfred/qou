@@ -12,6 +12,8 @@ export default conjecture({
     "conj:vacuum-epsilon",
     "conj:archimedean-stpart",
     "def:standard-part-functor",
+    "conj:hoefsmit-scattering-pipeline",
+    "sec:knot-notation-convention",
   ],
   cites: [
     "casimir1948",
