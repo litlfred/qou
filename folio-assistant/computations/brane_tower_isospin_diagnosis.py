@@ -175,7 +175,7 @@ def diagnose_atom(label, Z, N):
     inter = (A >= 2)
     vols = atom_per_generator_volumes(Z, N, include_inter=inter)
     abs_vols = [float(abs_mpf(v)) for v in vols]
-    phi_vals = [float(Phi_q(abs_mpf(v))) for v in vols]
+    phi_vals = [float(Phi_q(v)) for v in vols]
     return {
         "atom": label, "Z": Z, "N": N, "A": A,
         "n_generators": len(vols),

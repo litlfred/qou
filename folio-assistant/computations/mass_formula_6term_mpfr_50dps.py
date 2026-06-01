@@ -251,7 +251,7 @@ def term_23_brane_tower_mp(
             return -li2q_symmetric(-mp.fabs(x), q0)
     else:  # tower_form == "phi_q"
         def tower_fn(x: mp.mpf) -> mp.mpf:
-            return mp_Phi_q(mp.fabs(x))
+            return mp_Phi_q(x)
 
     single = mp.mpf(0)
     for v in vols_mp:
