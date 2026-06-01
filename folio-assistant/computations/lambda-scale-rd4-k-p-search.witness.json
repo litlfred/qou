@@ -1,11 +1,11 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T16:11:48.927457+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:41:55.703093+00:00",
+  "commitSha": "7361cd4c9a262a420b4f286a341efc93d7f64668",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 20,
   "computation": "lambda-scale-rd4-k-p-search",
   "scriptFile": "lambda_scale_rd4_k_p_search.py",
   "scriptHash": "68623954a738",
@@ -16,13 +16,20 @@
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "R&D 4 exploration: search for a specific knot/link K_p with Vol(K_p) = m_p/m_e · ℏ_q² ≈ 18.03, eliminating the λ_scale fudge factor from the Borromean baryon mass formula.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
     "dps": 80
   },
   "data": {
-    "Vol_K_p_target": 18.0258569345436,
+    "Vol_K_p_target": 18.02585315353141,
     "standard_blocks": {
       "V_tetrahedron": 2.0298832128193074,
       "V_octahedron": 3.663862376708876,
@@ -39,22 +46,22 @@
       {
         "combo": "3·Vol(5_2) + 3·Vol(6_1)",
         "val": 17.97625594443,
-        "rel_err": -0.0027516578154212373
+        "rel_err": -0.00275144863763048
       },
       {
         "combo": "4·V_octahedron + 1·Vol(L_Whitehead)",
         "val": 18.082652031095503,
-        "rel_err": 0.0031507570906692227
+        "rel_err": 0.0031509675065208094
       },
       {
         "combo": "1·Vol(L_Whitehead) + 2·Vol(B_3)",
         "val": 18.082652031095503,
-        "rel_err": 0.0031507570906692227
+        "rel_err": 0.0031509675065208094
       },
       {
         "combo": "1·Vol(6_2) + 4·Vol(L_Whitehead)",
         "val": 18.10964260921,
-        "rel_err": 0.0046480827497214
+        "rel_err": 0.004648293479644477
       }
     ],
     "conclusion": "No integer combination of standard small-volume hyperbolic 3-manifolds matches Vol(K_p) = 18.03 to 1 ppm. The closest candidates (9·Vol(4_1) = 18.27, 5·V_oct = 18.32) are off by ~1%. q-deformed Vol candidates including the Family A factor Vol(B_3)·(5/2 + 3h²/4) match λ_p's q-rational form but not the CODATA target exactly. The Borromean baryon mass formula's structural status remains conjectural; foundational paper-level work needed."

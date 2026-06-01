@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-31T12:53:27.985966+00:00",
-  "commitSha": "bbc9ddef87b8a5d61e535b2056272504c5a1a67a",
+  "computedAt": "2026-06-01T03:39:11.479629+00:00",
+  "commitSha": "7361cd4c9a262a420b4f286a341efc93d7f64668",
   "assertions": [
     {
       "name": "exists_classical_ok_candidate_within_one_percent",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "casimir-q-factorial-probe",
   "scriptFile": "casimir_q_factorial_probe.py",
   "scriptHash": "b5e96f91b552",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6a3c53bbc973c5b2e1a951e73a6edf165ed0856d",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,7 +27,9 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

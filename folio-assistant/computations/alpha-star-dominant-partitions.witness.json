@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:06:41.683518+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:37:06.369323+00:00",
+  "commitSha": "7361cd4c9a262a420b4f286a341efc93d7f64668",
   "assertions": [
     {
       "name": "dominant_partition_predicts_alpha_star",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "alpha-star-dominant-partitions",
   "scriptFile": "alpha_star_dominant_partitions.py",
   "scriptHash": "2e8301788347",
@@ -24,6 +24,13 @@
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Identifies the partition λ ⊢ n forcing the smallest α* in each canonical atom-braid's Wedderburn-block PSD bisection. Per the α-bisection algebra (α·ε + (1−α) ≥ 0 ⟹ α ≤ 1/(1 − ε_min)), the partition with the most negative min_eig is the dominant constraint. Identifies which Wedderburn irreps the canonical atom-braid is most non-PSD against — structural fingerprint of where the bar-anti-symmetric content lives.",
   "contentBlock": "conj:atom-braid-exterior-algebra",

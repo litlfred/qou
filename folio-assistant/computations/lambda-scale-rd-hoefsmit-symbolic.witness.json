@@ -1,11 +1,11 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-29T16:30:42.766666+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:57:41.360266+00:00",
+  "commitSha": "7361cd4c9a262a420b4f286a341efc93d7f64668",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1400,
+  "durationMs": 951,
   "computation": "lambda-scale-rd-hoefsmit-symbolic",
   "scriptFile": "lambda_scale_rd_hoefsmit_symbolic.py",
   "scriptHash": "cf32fd2735e4",
@@ -15,6 +15,13 @@
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "APPROACH A v2: symbolic χ^λ via canonical hoefsmit_symbolic + Markov-trace half-symmetric projection at the Borromean braid (σ_1 σ_2^{-1})^3. Extracts c_4, c_6 in closed form via sympy.series at q=1+ε.",
   "contentBlock": "conj:lambda-scale-substrate-form",
@@ -43,8 +50,8 @@
       "h2": "-31/72",
       "h4": "-6425/3456"
     },
-    "tau_M_at_q0_numeric": 1.6442727167876234,
-    "lambda_p_target_numeric": 2.4599527876829836,
+    "tau_M_at_q0_numeric": 1.644272722555562,
+    "lambda_p_target_numeric": 2.459952271695782,
     "structural_finding": {
       "tau_M_at_q1": "5/3",
       "expected_5_2": "5/2",

@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:28:31.170273+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:55:33.239488+00:00",
+  "commitSha": "7361cd4c9a262a420b4f286a341efc93d7f64668",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 33,
+  "durationMs": 27,
   "computation": "d-from-scratch",
   "scriptFile": "d_from_scratch.py",
   "scriptHash": "47e6b948cc26",
@@ -16,13 +16,20 @@
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Deuteron binding from scratch using full canonical infra at 50 dps mpmath. Combines Habiro polynomial Markov trace values (exact at q_0 from habiro-coefficients-atomic.witness.json) for the atom-level tr_M with light_isotope_sweep f64 values for the free-nucleon disconnected baseline. Term 4 and Δm_shell computed exactly at 50 dps. NO Vol_hyp, NO BW (invalid at A=2), NO census.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
     "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
     "m_e_MeV": 0.51099895,
     "Q_beta_n_MeV": 0.7823334100000222,
-    "E_0_MeV_per_cat": 7.390664060395218
+    "E_0_MeV_per_cat": 7.390664900738935
   },
   "data": {
     "tr_M_habiro_50dps": {
@@ -31,18 +38,18 @@
       "D_atom": "0.3882864715477134"
     },
     "tr_M_f64": {
-      "proton_free": 0.7022507726245328,
-      "neutron_free": 0.5963964943611819,
-      "D_free": 0.4256701505198475
+      "proton_free": 0.7022506773529952,
+      "neutron_free": 0.5963964111256355,
+      "D_free": 0.4256700318538424
     },
     "terms_50dps": {
-      "Term_1_descended_MeV": "0.276290212624703927337230904161",
-      "Term_4_frobenius_MeV": "1.63628710348275173267991936553",
-      "delta_m_shell_MeV": "0.0435249214085420668056361313888",
-      "B_pred_MeV": "1.95610223751599772682278640108",
+      "Term_1_descended_MeV": "0.276289367019164884542882510409",
+      "Term_4_frobenius_MeV": "1.63628711238361145629165493476",
+      "delta_m_shell_MeV": "0.0435249263574741195650045074039",
+      "B_pred_MeV": "1.95610140576025046039954195257",
       "B_AME_MeV": "2.22456612",
-      "err_pct": -12.068145786738956,
-      "err_ppb": -120681457.86738956
+      "err_pct": -12.068183176310782,
+      "err_ppb": -120681831.76310782
     }
   },
   "caveats": [

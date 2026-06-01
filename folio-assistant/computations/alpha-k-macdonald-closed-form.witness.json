@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T21:47:57.480209+00:00",
-  "commitSha": "091094f69800d8e3fea987ffea3d1d2d5a5f1034",
+  "computedAt": "2026-06-01T03:47:01.395810+00:00",
+  "commitSha": "7361cd4c9a262a420b4f286a341efc93d7f64668",
   "assertions": [
     {
       "name": "markov_m3_completeness_n2",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 13,
   "computation": "alpha-k-macdonald-closed-form",
   "scriptFile": "alpha_k_macdonald_closed_form.py",
   "scriptHash": "c86fcb4198f2",
-  "scriptCommitSha": "626c2bb856bbfa1ca647bd7d5bc36c8113f8825e",
+  "scriptCommitSha": "3905433d845e20f9ca710f12a96964a81a80bfbb",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -98,13 +98,11 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "α_k mass-tower coefficients via the Macdonald hook-content closed form for y_λ.  Replaces the linear-system / Hoefsmit-matrix path used in alpha_k_jones_markov_h3.py by a rounding-free algebraic evaluation of y_λ for every partition λ ⊢ n at every n ≤ 6, and cross-checks against the Markov-axiom prediction tr_M(σ_1 ⋯ σ_{k-1}) = z^{k-1}.",
   "contentBlock": "prop:macdonald-hook-telescope",
