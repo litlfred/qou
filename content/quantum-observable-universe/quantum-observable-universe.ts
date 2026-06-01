@@ -120,7 +120,8 @@ export default paper({
     chapterRef({ dir: "appendix-transfer-matrices" }),
     chapterRef({ dir: "appendix-atomic-mass-calculations" }),
     chapterRef({ dir: "appendix-qvalues" }),
-    chapterRef({ dir: "appendix-surreals" }),                  // Surreal-number lift + Millennium-problem surreal bounds
+    chapterRef({ dir: "appendix-surreals" }),                  // Surreal-number lift (categorical lobe) + Millennium-problem surreal bounds
+    chapterRef({ dir: "appendix-surreals-archimedean" }),      // Surreal-number lift (archimedean lobe) — substrate-q_0-pinned content split out per q-usage audit
     chapterRef({ dir: "index-of-definitions" }),
   ],
 });
