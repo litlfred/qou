@@ -225,8 +225,8 @@ def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     NOT compute the formula in `prop:hoefsmit-scattering-pipeline`
     Stage 4 — the 2.53 is a CODATA-implied-λ near-match that lands
     near `λ = m_p/(m_e·Vol/ℏ²) ≈ 2.46` (the value that round-trips m_p).
-    Use `geom_full_per_block(K, q, ...)` for the paper-faithful
-    per-block evaluation.  This routine is retained ONLY until the
+    Use `geom_full_per_block(vol_K, tr_M_K, q, ...)` for the
+    paper-faithful per-block evaluation.  This routine is retained ONLY until the
     per-block version is validated and the owner approves a production
     switch (the switch changes the m_p computation).
 

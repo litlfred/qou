@@ -77,7 +77,7 @@ def _load_trM(atom: str, n: int) -> mp.mpf:
     return mp.mpf(d["tr_M_at_q0"])
 
 
-def _series_h(fn, q0: mp.mpf, order: int = 6) -> list[mp.mpf]:
+def _series_h(fn, _q0: mp.mpf, order: int = 6) -> list[mp.mpf]:
     """Taylor coefficients of fn(q) in h = q − q⁻¹ about h = 0 (q = 1),
     via mpmath.taylor on the reparametrised function.  Returns
     [c_0, c_1, …, c_order].  fn must accept q and return mpf."""
@@ -94,7 +94,6 @@ def _series_h(fn, q0: mp.mpf, order: int = 6) -> list[mp.mpf]:
 def main() -> int:
     start = time.monotonic()
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    qi0 = 1 / q0
     me = mp.mpf(repr(M_E_MEV))
     mpc = mp.mpf(repr(M_P_MEV))
     mnc = mp.mpf(repr(M_N_MEV))
