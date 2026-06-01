@@ -263,6 +263,56 @@ when re-classifying any "near-match" residual, ask explicitly:
    target. **Effort: ~1-2 sessions** (Lean theorem + interpretive
    block).
 
+   **Update 2026-06-01 — STEP 2a (q-deformation discriminator): NULL.**
+   [`ocneanu_12_qdeformation_discriminator.py`](../../folio-assistant/computations/ocneanu_12_qdeformation_discriminator.py)
+   scanned 14 q-deformations of the 4 candidates against k_required
+   = 11.99961221. The bare INTEGER 12 wins (32 ppm); every natural
+   q-deformation (3! · [2]_q, [3]_q!·[2]_q, Σ d²_q·[2]_q, etc.)
+   OVERSHOOTS in the wrong direction (5000+ ppm). This is the
+   signature of an ADDITIVE missing correction, parallel to m_K/m_π's
+   Bring-zero-mode EM closure.
+
+   **Update 2026-06-01 — STEP 2b (EM-correction candidate): NEAR-MATCH.**
+   [`ocneanu_12_em_correction_candidate.py`](../../folio-assistant/computations/ocneanu_12_em_correction_candidate.py)
+   tests `k = 12 − (α_em/π) / dim H_3`. Result:
+
+   - `(α_em/π) / dim H_3 = (α_em/π) / 6 ≈ 3.871e-4`
+   - residual `12 − k_required ≈ 3.878e-4`
+   - **k_predicted matches k_required to 54 ppb (0.054 ppm)** —
+     a **600× improvement** over the bare integer 12 (32 ppm)
+   - Variants with the m_K/m_π shape `(3q²−1)/(2q²)` REGRESS to
+     2984 ppb — the bare `(α_em/π) / dim H_3` is the cleanest
+     match in the tested basis
+
+   **Tier classification (per production-vs-exploratory-discipline):**
+   `tier = near-match`. NOT a derivation — the Bring-zero-mode
+   projection argument that pins the `(3q²−1)/(2q²)` shape in
+   m_K/m_π hasn't been applied to the proton-mass `12·m_e` term.
+   Both factors are structurally motivated:
+   - `(α_em/π)` from m_K/m_π's PR #1442 closure
+   - `1/dim H_3 = 1/|S_3| = 1/6` from the natural Plancherel
+     normalization over the H_3 Wedderburn block
+
+   **The full form is now:**
+   ```
+   m_p = 2·m_μ·F_Bor(q_0) − (12 − (α_em/π)/dim H_3) · m_e
+       = 2·m_μ·F_Bor(q_0) − 12·m_e + (α_em/π) · m_e / dim H_3
+   ```
+
+   **Critical guard:** 0.054 ppm is between the 1 ppm structural-
+   identity threshold and the 1% empirical-fit threshold. Do NOT
+   wire to production without:
+   - a Bring zero-mode (or analog) categorical derivation, OR
+   - independent cross-validation at higher precision (e.g. 100 dps
+     refresh of all CODATA anchors), OR
+   - alternative-form scan ruling out a tighter near-match
+
+   **Effort to close (estimate):** 1 session on the Bring-analog
+   derivation, parallel to PR #1442's m_K/m_π closure (the EM
+   correction there was derived from the projection of the
+   α-EM coupling onto the Bring radical-equation zero-mode).
+   Result would promote tier=near-match → tier=proved.
+
 3. **Yekutieli +0.5 observable hunt.** Test whether `+0.5·h²` shows
    up in m_He, m_Li, or higher-isotope linking_weight predictions.
    Constructive R&D, low ranking — important only if a positive
