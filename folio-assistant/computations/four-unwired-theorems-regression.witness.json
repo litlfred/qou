@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T05:34:36.358532+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:23:39.014038+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "skein_bar_antisymmetry_bar_h_eq_neg_h",
@@ -62,7 +62,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "four-unwired-theorems-regression",
   "scriptFile": "four_unwired_theorems_regression.py",
   "scriptHash": "d6339ef571d2",

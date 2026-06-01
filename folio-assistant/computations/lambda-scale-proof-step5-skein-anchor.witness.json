@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T05:37:22.737796+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:26:28.553695+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "step_5b_delta_S_substrate_within_2000_ppm",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "lambda-scale-proof-step5-skein-anchor",
   "scriptFile": "lambda_scale_proof_step5_skein_anchor.py",
   "scriptHash": "f85d3f27ea8f",

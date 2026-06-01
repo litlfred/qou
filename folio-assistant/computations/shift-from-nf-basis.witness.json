@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T05:48:24.700179+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:36:34.804691+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "shift_proton_h3_finite",
@@ -36,7 +36,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 54,
+  "durationMs": 51,
   "computation": "shift-from-nf-basis",
   "scriptFile": "shift_from_nf_basis.py",
   "scriptHash": "4e768c43961b",

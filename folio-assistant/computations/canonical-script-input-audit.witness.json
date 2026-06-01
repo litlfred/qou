@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:41:52.072842+00:00",
-  "commitSha": "ce8d16364742ae365a2538acb8a4b55887e7703f",
+  "computedAt": "2026-06-01T14:23:29.632850+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "canonical-script-input-audit",
   "scriptFile": "canonical_script_input_audit.py",
   "scriptHash": "6bec73dc14ca",
@@ -11441,26 +11441,6 @@
         "uses_canonical_consts_source": false
       },
       {
-        "script": "paper_modulus_audit_nonarchimedean.py",
-        "found": {
-          "M_E_MEV": false,
-          "M_P_MEV": false,
-          "M_N_MEV": false,
-          "Q_NEUTRON": false,
-          "Q_TRITIUM": false,
-          "Q_C14": false,
-          "Vol_hyp": false,
-          "q_parameter": false,
-          "experimental_constants": false,
-          "MASS_RATIO_MU_E": false,
-          "calibration_skein_pair": false,
-          "substrate_splitting_witness": false
-        },
-        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
-        "uses_canonical_q0_source": false,
-        "uses_canonical_consts_source": false
-      },
-      {
         "script": "paper_six_term_isotope_sweep.py",
         "found": {
           "M_E_MEV": true,
@@ -14199,6 +14179,26 @@
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
+      },
+      {
+        "script": "qbeta_signed_vs_abs_tower_diagnostic.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
       },
       {
         "script": "qbeta_silver_ratio_pell_lucas_ck.py",

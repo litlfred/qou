@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:48:18.068390+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:36:27.643647+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "geometric_li2q_towers_wrong_direction",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 38,
+  "durationMs": 42,
   "computation": "qbeta-scaling-bridge-investigation",
   "scriptFile": "qbeta_scaling_bridge_investigation.py",
   "scriptHash": "433df4e52bcf",

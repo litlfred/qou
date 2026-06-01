@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:59:00.067428+00:00",
-  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
+  "computedAt": "2026-06-01T14:23:38.836631+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "no_i8_violations",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "float64-leak-audit",
   "scriptFile": "float64_leak_audit.py",
   "scriptHash": "c80f32b0fb3f",
@@ -36,12 +36,12 @@
   "description": "I8 audit per local/compute-integration-watcher: scripts whose docstrings claim substrate-pure / canonical / 50-dps precision are scanned for float64 leaks — `np.float64(...)`, `float(...)` casts on derived mpf values, f-string precision clipping, and `==` comparison on mpf values. Antipattern shapes are matched against the four catalogue items. False-positive guards: lines inside builder `add_data` / `add_parameter` / `add_assertion` calls are classified as `ok_witness_emit` (final-step JSON serialization is expected); lines followed within 3 by `mp.mpf(str(...))` re-wrap are `false_positive_candidate`.",
   "contentBlock": "I8 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "substrate_banner_scripts_total": 45
+    "substrate_banner_scripts_total": 44
   },
   "data": {
     "by_result": {
       "ok_with_display_or_fp": 5,
-      "ok_no_leaks": 29,
+      "ok_no_leaks": 28,
       "i8_violation": 11
     },
     "rows": [
@@ -696,19 +696,6 @@
       },
       {
         "path": "folio-assistant/computations/guarded_off_audit.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/h4_form_AB_cross_anchor_stability.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,

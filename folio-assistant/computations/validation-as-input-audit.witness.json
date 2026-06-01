@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:56:45.107576+00:00",
-  "commitSha": "ce8d16364742ae365a2538acb8a4b55887e7703f",
+  "computedAt": "2026-06-01T14:38:22.644424+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "no_i11_violations",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "validation-as-input-audit",
   "scriptFile": "validation_as_input_audit.py",
   "scriptHash": "1535a12e8aa7",

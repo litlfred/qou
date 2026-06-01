@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:34:30.863745+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:23:33.774920+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "phase_5k_1_residual_matches_h_to_5_unit_coeff",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "constit-factor-residual-phase5k",
   "scriptFile": "constit_factor_residual_phase5k.py",
   "scriptHash": "1cd61d78f4c7",

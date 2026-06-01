@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:47:20.809865+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:36:09.715195+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "eigenphase_u_series_extracted",
@@ -46,7 +46,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15155,
+  "durationMs": 18585,
   "computation": "qbeta-eigenphase-taylor-in-u",
   "scriptFile": "qbeta_eigenphase_taylor_in_u.py",
   "scriptHash": "8db63b1d58b5",
