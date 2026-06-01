@@ -154,12 +154,23 @@ def main() -> int:
         tau_full_empirical = compute_tau_M_full(Z, N, q_val, label=name)
         t_emp = time.time() - t0
         t0 = time.time()
-        tau_full_closed = closed_form_tau_M(Z, N, q_val, tau_p, tau_n)
+        # Explicit chi_lambda_braid convention — the empirical slow path
+        # above is bound to chi_lambda_braid via marshal_to_chi_lambda_braid
+        # (line 93). The closed-form side must use the same convention to
+        # validate the marshalling-pipeline-faithful behavior. The default
+        # default for closed_form_tau_M switched to "bring_color_weighted"
+        # 2026-06-01 (canonical/derived per substrate δ), so we pass
+        # explicitly here to preserve this script's original verification
+        # purpose.
+        tau_full_closed = closed_form_tau_M(
+            Z, N, q_val, tau_p, tau_n,
+            pn_convention="chi_lambda_braid",
+        )
         t_cf = time.time() - t0
         rel_err = (abs(tau_full_empirical - tau_full_closed)
                    / abs(tau_full_empirical)) if tau_full_empirical != 0 else mp.mpf("inf")
-        census = interface_census(Z, N)
-        ratio = closed_form_ratio(Z, N, q_val)
+        census = interface_census(Z, N, pn_convention="chi_lambda_braid")
+        ratio = closed_form_ratio(Z, N, q_val, pn_convention="chi_lambda_braid")
         results.append({
             "atom": name,
             "Z": Z, "N": N,
