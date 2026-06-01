@@ -1,0 +1,118 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T12:53:55.115087+00:00",
+  "commitSha": "b4cf96aba6fdaf80b8f541ee1f7c4a7dee2ca082",
+  "assertions": [
+    {
+      "name": "alpha_em_habiro_is_exactly_bar_even",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "H = [2]_q·(1−h²α) satisfies H(1/q) = H(q) exactly — it is purely bar-even (charge-conjugation-symmetric), the sector PR #1602 requires of the Q_β scaling map f."
+    },
+    {
+      "name": "alpha_em_habiro_zero_at_zeta4",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "H(ζ_4) = H(q=i) = 0 exactly — α_EM's modular node, the dual of Q_β's ζ_4 pole (PR #1622)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5021,
+  "computation": "alpha-em-q-difference-fourier",
+  "scriptFile": "alpha_em_q_difference_fourier.py",
+  "scriptHash": "9e2cb8ad3175",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Apply the Q_β q-difference / root-of-unity / Fourier machinery (PRs #1593/#1602/#1622) to the α_EM Habiro element H = [2]_q·(1−h²α) = (q+q⁻¹)(1−(q−q⁻¹)²α). Computes the exact root-of-unity spectrum H(ζ_d) (the Fourier modes of σ_q), the special values H(ζ_1)=2 (classical α/4π), H(ζ_2)=−2 (bar mode), H(ζ_4)=0 (a ZERO — vs Q_β's pole), confirms H is exactly bar-even (purely the charge-conjugation-symmetric sector PR #1602 requires), and reproduces the established h-Taylor recursion + q₀ truncation. Exact symbolic; sharpens the α_EM modular target, no closure of the open derived form.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "habiro_element": {
+      "H": "[2]_q·(1−h²α) = (q+q⁻¹)(1−(q−q⁻¹)²α)",
+      "h_basis": "h = q − q⁻¹ (Hecke differential; distinct from Habiro u=q^{1/2} and ladder u_ladder=b·ℏ²)",
+      "is_bar_even_exact": true
+    },
+    "root_of_unity_spectrum": [
+      {
+        "d": 1,
+        "H_symbolic": "2",
+        "H_at_alpha_codata": "2.00000000+0.00000000j"
+      },
+      {
+        "d": 2,
+        "H_symbolic": "-2",
+        "H_at_alpha_codata": "-2.00000000+0.00000000j"
+      },
+      {
+        "d": 3,
+        "H_symbolic": "-3*alpha - 1",
+        "H_at_alpha_codata": "-1.02189206+0.00000000j"
+      },
+      {
+        "d": 4,
+        "H_symbolic": "0",
+        "H_at_alpha_codata": "0.00000000+0.00000000j"
+      },
+      {
+        "d": 5,
+        "H_symbolic": "sqrt(5)*alpha - 1/2 + sqrt(5)/2",
+        "H_at_alpha_codata": "0.63435137+0.00000000j"
+      },
+      {
+        "d": 6,
+        "H_symbolic": "3*alpha + 1",
+        "H_at_alpha_codata": "1.02189206+0.00000000j"
+      },
+      {
+        "d": 7,
+        "H_symbolic": "alpha*cos(2*pi/7) + alpha*sin(3*pi/14) + alpha*cos(pi/7) + alpha*sin(5*pi/14) - I*alpha*cos(3*pi/14)/(4*sin(pi/14)) + I*alpha*cos(3*pi/14)/2 + I*alpha*cos(pi/14)/2 + 3*cos(2*pi/7)/4 + 5*sin(3*pi/14)/4",
+        "H_at_alpha_codata": "1.26922863+0.00000000j"
+      },
+      {
+        "d": 8,
+        "H_symbolic": "sqrt(2)*(2*alpha + 1)",
+        "H_at_alpha_codata": "1.43485359+0.00000000j"
+      }
+    ],
+    "special_values": {
+      "H_zeta1": "2",
+      "H_zeta2": "-2",
+      "H_zeta4": "0",
+      "zeta4_is_zero": true,
+      "contrast_with_qbeta": "α_EM has a ZERO at ζ_4; Q_β had a POLE at ζ_4 (PR #1622) — dual modular nodes"
+    },
+    "h_taylor_coefficients": {
+      "c_0": "2",
+      "c_2": "1/4 - 2*alpha",
+      "c_4": "-alpha/4 - 1/64",
+      "c_6": "alpha/64 + 1/512",
+      "c_8": "-alpha/512 - 5/16384"
+    },
+    "q0_truncation": {
+      "exact": "2.010255512038413512",
+      "truncated_k8": "2.0102555120296129096",
+      "relative_error": "4.3778527e-12"
+    },
+    "interpretation": {
+      "alpha_em_is_clean_bar_even_case": true,
+      "qbeta_is_same_machinery_with_bar_odd_to_cancel": true,
+      "open": "α_EM next-order derived form (alpha-em ledger) — modular target sharpened (H(ζ_4)=0 node), not closed",
+      "no_fitted_form_proposed": true
+    }
+  }
+}
