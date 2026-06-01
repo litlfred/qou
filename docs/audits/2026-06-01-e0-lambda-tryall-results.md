@@ -54,18 +54,120 @@ therefore: does a candidate produce **stable, positive, per-block E₀^λ that m
 the structural m^b into the observed MeV across all three anchors with one (or
 zero) global constant**? That is the PASS bar.
 
+## The test (corrected after a vacuous first pass)
+
+A candidate provides a per-block **energy scale** `E₀^λ` as a function of the
+partition λ **only** (substrate-derived, parameter-free). The prediction is
+
+> `M(particle) = C · Σ_λ E₀^λ · m^λ(particle)`
+
+where `m^λ(particle)` is the genuine per-block **structural mass** from
+`_deprecated/per_block_phi_q.mass_per_block` (the same object the deprecated
+fit scales against). These structural masses differ across particles because
+the braid words differ. **One** global positive constant `C` is permitted (it
+is the overall MeV unit / m_e scale — not a per-block freedom). `C` is pinned
+from the proton; the **electron and neutron residuals are the falsification
+test**.
+
+- **PASS** — one positive `C` fits e⁻, p, n within 1%.
+- **LATENT-FIT** — nucleons fit but the electron (a different Hecke order)
+  needs a separate scale (a hidden per-order parameter).
+- **FAIL** — one `C` fails even on the nucleons, or `C ≤ 0`.
+
+*(A first scoring pass compared a proton-pinned `C` to a neutron-pinned `C`
+using identical per-block y_λ for both; that test reduced to "is m_p ≈ m_n?"
+— trivially yes for every candidate, spread = m_n/m_p − 1 = 1.378e-3. It was
+vacuous and is replaced by the cross-particle test above, which uses the
+electron as the real discriminator.)*
+
 ## Candidate results
 
-(filled in per-commit as each candidate lands)
+Run: `python3 folio-assistant/computations/e0_lambda_tryall.py`
+(witness: `e0-lambda-tryall.witness.json`). Residuals are relative; proton
+is 0 by the pin.
 
-| # | Candidate | Verdict | Notes |
-|---|-----------|---------|-------|
-| 1 | Archimedean per-block | — | |
-| 2 | q-dimension (+ variants) | — | |
-| 3 | Option-E ρ_w energy functional | — | |
-| 4 | Casimir (content-sum) | — | |
-| 5 | Ribbon twist θ_λ | — | |
+| # | Candidate | E₀^λ {(3),(2,1),(1³)} | e⁻ resid | n resid | Verdict |
+|---|-----------|------------------------|----------|---------|---------|
+| 1 | Archimedean per-block (`Geom_full·χ^λ`) | 2121, 3216, −1722 | +929× | −0.78 | **FAIL** |
+| 2 | q-dimension `dim_q(λ)` | 10.67, 8.26, 1.0 | +862× | −0.37 | **FAIL** |
+| 2b | q-dimension² | 113.8, 68.3, 1.0 | +983× | −0.33 | **FAIL** |
+| 3 | ρ_w energy functional (`Σ a_T²`) | 2.46, 2.58, 1.62 | +617× | −0.36 | **FAIL** |
+| 4 | Casimir content-sum | 3, 0, −3 | +7363× | −0.0021 | **LATENT-FIT** |
+| 4b | Casimir q-exp `q^{Σc}` | 1.368, 1.0, 0.731 | +726× | −0.29 | **FAIL** |
+| 5 | Ribbon twist `θ_λ=q^{2Σc}` | 1.870, 1.0, 0.535 | +883× | −0.26 | **FAIL** |
+
+**No candidate PASSES.** Candidate 4 (Casimir) is the only one whose per-block
+shape happens to fit the **nucleons** (n residual 0.21%) with one C — but its
+electron residual is +7363×, the largest of all. Every candidate's electron
+residual is ~+600× to +7000×.
+
+### Candidate-specific findings
+
+- **1 — Archimedean.** `Geom_full(𝓑₃, q₀)` is a **single knot-level scalar**
+  (`Vol(𝓑₃)/ℏ_q² × linking_weight`), with `m(K) = m_e·Geom_full(K)`. It has
+  **no per-block decomposition** — the only per-block object in `_li_2_q_util.py`
+  is the *exploratory* spectral correction, which reads one block's character
+  χ^(2,1). So "Geom_full restricted to block λ" does not exist as a function of
+  λ; the charitable reading `w_λ = Geom_full·χ^λ` fails.
+- **3 — ρ_w energy functional.** This was the subtle one. The plain crystal
+  trace `Σ_w ρ_w = χ^λ` (proved #1592) carries no new degree of freedom. We
+  built a genuinely **non-linear** per-vertex functional `Σ_{T∈SYT(λ)} Σ_i a_{T,i}²`
+  (L² of the seminormal eigenphases `a_T = h/(1−q^{−2ρ})`), which IS a different
+  scalar from the linear trace. It still FAILS — the eigenphase energy is a
+  function of λ only and so inherits the same mass-ratio blindness as every
+  other per-partition quantity.
+- **4 — Casimir.** Fits the nucleons (their per-block structural masses are
+  nearly equal, since the p,n braids differ by one crossing), but is the worst
+  on the electron — confirming the obstruction is the cross-Hecke-order bridge,
+  not the within-nucleon split.
 
 ## Bottom line
 
-(filled in at end)
+**The substrate-derived χ^λ → M_λ map is not achievable from per-partition
+data via any of the 5 candidates — and the obstruction is structural, not a
+matter of finding a 6th construction.**
+
+The reason is sharp and is the key finding of this probe:
+
+> The electron's per-block structural masses (sym 1.57e8, std 4450, alt 4522)
+> are **comparable in magnitude to the proton's** (sym 1.97e8, std 1.60e8, alt
+> 1.57e8), yet `m_e` is **1837× lighter** than `m_p`. A per-block energy scale
+> `E₀^λ = f(λ)` is, by construction, the **same function of λ for every
+> particle**. So the only particle-dependent input is the per-block structural
+> mass `m^λ(particle)` — and the electron/proton mass ratio is **not encoded**
+> in the per-block (per-partition) data. It is encoded in the **braid word**:
+> the number of strands (Hecke order n) and the crossing pattern. The
+> per-partition projection (χ^λ, dim_q, content-sum, ribbon twist, seminormal
+> eigenphases) **discards exactly the information that fixes the mass scale.**
+
+This is precisely *why* χ^λ (a dimensionless trace over a fixed-n algebra)
+does not determine `M_λ` (a dimensional MeV component): the missing dimensional
+information is the Hecke-order / strand-count, which lives upstream of the
+Wedderburn block decomposition. Any genuine χ^λ → M_λ map must therefore carry
+an n-dependent (Hecke-order) scale — which is **not** parameter-free unless that
+n-dependence is itself derived from the substrate. That derivation is the
+Borromean-tower / brane-tower level-selection programme (GAP-A-3 / GAP-A-4),
+**not** a per-partition closure ansatz, and it borders Subgoal-2 (the q₀-from-
+substrate derivation the coordination ledger declined on 2026-05-08).
+
+**Consequence for L2-Subgoal-1.** The gap does not close by finding the right
+per-block energy functional — all five "obvious" candidates (archimedean,
+q-dim, Casimir, ribbon, and even the genuinely-new ρ_w energy functional) are
+mass-ratio-blind. The productive direction remains GAP-A-3/A-4 (categorical
+brane-tower level selection) and Option E at the crystal level, **not** a 7th
+per-partition fit. This is a negative result of the kind the Δ_λ-gate context
+doc anticipated.
+
+**Lean status.** Per the task discipline, NO candidate passed → **no Lean
+identity is authored** (there is no parameter-free per-block energy identity to
+state). The structural obstruction (per-partition data is mass-ratio-blind /
+Hecke-order-blind) is documented here rather than formalised, since stating it
+in Lean would require formalising the whole per-block-mass functor — out of
+scope for this probe and bordering Subgoal-2.
+
+## Files
+
+- Harness: [`folio-assistant/computations/e0_lambda_tryall.py`](../../folio-assistant/computations/e0_lambda_tryall.py)
+- Witness: [`folio-assistant/computations/e0-lambda-tryall.witness.json`](../../folio-assistant/computations/e0-lambda-tryall.witness.json)
+- Anchor source (deprecated, read-only): `folio-assistant/computations/_deprecated/per_block_phi_q.py`
+- Substrate χ caches consumed: `chi-neutron-h3-at-q0-50dps.witness.json`, `chi-proton-h3-at-q0-50dps.witness.json`
