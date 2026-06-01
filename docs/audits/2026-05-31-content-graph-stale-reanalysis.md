@@ -96,11 +96,12 @@ The 2 March witnesses and 21 April witnesses are candidates for
 regeneration.  Spot-checking shows they belong to compute axes that
 have not been touched recently (probe results, exploratory audits);
 their staleness is benign as long as no current block references them
-via `computation.witness`.  An automated check via the existing
-witness-pipeline drift detector is the right tool — it already
-identifies witnesses whose `computedAt` is behind the latest script
-mtime.  **Recommendation:** do not bulk-regenerate; let the drift
-detector flag the genuine consumers.
+via `computation.witness`.  The witness-pipeline drift detector
+(implemented in `folio-assistant/computations/run_pipeline.py::_is_stale`)
+identifies stale witnesses by comparing the witness `scriptHash` against
+the current script version and detecting q₀-shape drift.
+**Recommendation:** do not bulk-regenerate; let the pipeline's staleness
+check flag the genuine consumers.
 
 ## Recommendations
 
