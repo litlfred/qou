@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:32:09.166165+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:07:48.101581+00:00",
+  "commitSha": "34a5a69486b82bd2bbcb5ad0336b0bb18e04f723",
   "assertions": [
     {
       "name": "no_guarded_off_candidates",
@@ -21,10 +21,10 @@
   "scriptHash": "3f3f9bcf888f",
   "scriptCommitSha": "48c4d805bfe3a20c894bdd7f4eed14b81246db56",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

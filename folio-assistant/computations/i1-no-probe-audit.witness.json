@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T04:12:23.940681+00:00",
-  "commitSha": "527ad0d3124997e48b6033314efb898a00f48ad5",
+  "computedAt": "2026-06-01T13:10:33.835281+00:00",
+  "commitSha": "34a5a69486b82bd2bbcb5ad0336b0bb18e04f723",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -21,10 +21,10 @@
   "scriptHash": "0e004cc143d0",
   "scriptCommitSha": "7459e4632d8c53d65f0e475a73976a2b23bc13b5",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -36,14 +36,14 @@
   "description": "I1 audit per local/compute-integration-watcher: every provable content block (theorem / proposition / lemma / corollary) is cross-checked against the union of all witness `contentBlock` fields.  Blocks with proven Lean (0 sorrys, or class+sorry via §3b-cond) but no probe witness are flagged as `i1_no_probe`. Blocks with `sorry` (without conditional-class) belong to the proof-integration-watcher's queue; blocks without any `.lean` sibling are `i1_pre_lean` (deeper gap).",
   "contentBlock": "I1 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_provable_blocks": 599
+    "total_provable_blocks": 600
   },
   "data": {
     "by_result": {
       "i1_no_probe": 521,
       "wired": 69,
+      "i1_lean_with_sorry": 3,
       "i1_pre_lean": 6,
-      "i1_lean_with_sorry": 2,
       "i1_no_probe_conditional": 1
     },
     "rows": [
@@ -257,6 +257,17 @@
         "probe_witness_count": 0,
         "probe_witnesses": [],
         "result": "i1_no_probe"
+      },
+      {
+        "path": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts",
+        "label": "prop:cyclotomic-strand-doubling",
+        "kind": "proposition",
+        "sibling_lean_exists": true,
+        "sibling_sorry_count": 1,
+        "sibling_has_class": false,
+        "probe_witness_count": 0,
+        "probe_witnesses": [],
+        "result": "i1_lean_with_sorry"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.ts",
@@ -3458,13 +3469,13 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 5,
+        "probe_witness_count": 7,
         "probe_witnesses": [
+          "c-3-categorical-derivation-attempt.witness.json",
           "q-beta-predicted.witness.json",
           "qbeta-ck-truncation-order-analysis.witness.json",
-          "qbeta-habiro-taylor-investigation.witness.json",
-          "qbeta-multiblock-order-audit.witness.json",
-          "qbeta-scaling-bridge-investigation.witness.json"
+          "qbeta-eigenphase-taylor-in-u.witness.json",
+          "qbeta-habiro-taylor-investigation.witness.json"
         ],
         "result": "wired"
       },
@@ -3554,11 +3565,12 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 3,
+        "probe_witness_count": 4,
         "probe_witnesses": [
           "delta-lambda-2row-stratum.witness.json",
           "delta-lambda-empirical-tabulation.witness.json",
-          "delta-lambda-q-sweep-2row.witness.json"
+          "delta-lambda-q-sweep-2row.witness.json",
+          "e0-lambda-composite.witness.json"
         ],
         "result": "wired"
       },
@@ -5046,10 +5058,13 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 2,
+        "probe_witness_count": 12,
         "probe_witnesses": [
           "q-beta-form-a-n1-extension.witness.json",
-          "qbeta-delta-tr-vs-formA.witness.json"
+          "qbeta-delta-tr-vs-formA.witness.json",
+          "qbeta-habiro-a7-partition.witness.json",
+          "qbeta-habiro-cross-pair-quick-dp.witness.json",
+          "qbeta-habiro-delta-am-factorization.witness.json"
         ],
         "result": "wired"
       },

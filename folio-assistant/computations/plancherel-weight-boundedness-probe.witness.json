@@ -1,8 +1,8 @@
 {
   "engine": "python (Fraction)",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:54:00.776931+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:30:06.504636+00:00",
+  "commitSha": "34a5a69486b82bd2bbcb5ad0336b0bb18e04f723",
   "assertions": [
     {
       "name": "all_plancherel_weights_in_unit_interval",
@@ -24,16 +24,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 27,
   "computation": "plancherel-weight-boundedness-probe",
   "scriptFile": "plancherel_weight_boundedness_probe.py",
   "scriptHash": "39856d40659b",
   "scriptCommitSha": "4aac739bd4b97e95fb3cb60c4216158b865267f5",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
