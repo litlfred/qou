@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:49:35.584628+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:08:56.726698+00:00",
+  "commitSha": "3d4367f6fa4afa779fae9ce6c6c32d9f997b79d3",
   "assertions": [
     {
       "name": "all_atoms_satisfy_exterior_algebra_bound",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "atom-braid-active-partitions",
   "scriptFile": "atom_braid_active_partitions.py",
   "scriptHash": "16e62a1ddb74",
@@ -52,7 +52,7 @@
         "match_prediction": true,
         "n_avg_crossings": 0,
         "n_branches": 1,
-        "elapsed_seconds": 5.841255187988281e-05,
+        "elapsed_seconds": 6.031990051269531e-05,
         "top_active_partitions": []
       },
       "T": {
@@ -66,7 +66,7 @@
         "match_prediction": true,
         "n_avg_crossings": 0,
         "n_branches": 1,
-        "elapsed_seconds": 0.00013375282287597656,
+        "elapsed_seconds": 0.0001049041748046875,
         "top_active_partitions": []
       },
       "³He": {
@@ -80,7 +80,7 @@
         "match_prediction": true,
         "n_avg_crossings": 0,
         "n_branches": 1,
-        "elapsed_seconds": 0.00010609626770019531,
+        "elapsed_seconds": 0.000102996826171875,
         "top_active_partitions": []
       }
     }

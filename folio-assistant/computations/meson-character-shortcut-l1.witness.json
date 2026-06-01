@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:46:57.799195+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:06:20.099780+00:00",
+  "commitSha": "3d4367f6fa4afa779fae9ce6c6c32d9f997b79d3",
   "assertions": [
     {
       "name": "pion_l1",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 38,
   "computation": "meson-character-shortcut-l1",
   "scriptFile": "meson_character_shortcut_l1.py",
   "scriptHash": "57e418025e88",
@@ -45,6 +45,6 @@
   "data": {
     "chi_pi_delta": 8.881784197001252e-16,
     "chi_K_delta": 6.661338147750939e-16,
-    "speedup_factor": 10.530186377214019
+    "speedup_factor": 8.242972573119381
   }
 }

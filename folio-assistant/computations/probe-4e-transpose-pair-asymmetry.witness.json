@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:42:35.922047+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:02:06.798004+00:00",
+  "commitSha": "3d4367f6fa4afa779fae9ce6c6c32d9f997b79d3",
   "assertions": [
     {
       "name": "tall_narrow_systematically_deeper",
@@ -49,13 +49,13 @@
           2,
           2
         ],
-        "tall_min_eig": -78.7030521914086,
+        "tall_min_eig": -78.70300634880219,
         "wide_short": [
           9,
           9
         ],
-        "wide_min_eig": -60.48766159582389,
-        "asymmetry": 18.215390595584715,
+        "wide_min_eig": -60.487628053696,
+        "asymmetry": 18.21537829510619,
         "tall_n_rows": 9,
         "wide_n_rows": 2
       },
@@ -105,8 +105,8 @@
       "n_tall_narrow_deeper": 2,
       "n_wide_short_deeper": 1,
       "frac_tall_narrow_deeper": 0.6666666666666666,
-      "mean_asymmetry": 6.173906643236751,
-      "max_asymmetry": 18.215390595584715,
+      "mean_asymmetry": 6.173902543077243,
+      "max_asymmetry": 18.21537829510619,
       "min_asymmetry": -0.49368139075296824
     }
   }
