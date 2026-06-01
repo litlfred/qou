@@ -59,10 +59,51 @@ continuation, Q_β light-touch coordination, Option E speculative).
 
 | Item | Tier | Status |
 |---|---|---|
-| 1. Δ_λ Option E binding energies | TBD | pending (deferred) |
-| 2. m_n / Δ_pn Plancherel-channel rewrite | TBD | pending |
-| 3. Q_β template cross-application | TBD | pending (light coord) |
-| 4. Lean deepening | TBD | pending (first) |
+| 4. Lean deepening | DONE | `plancherelSignH3`, `plancherelTrivialH3`, `plancherelStandardH3` defs + `plancherel_sum_S3` lemma + `plancherel_one_dim_rep_eq_inv_factorial` |
+| 2. m_n / Δ_pn Plancherel-channel rewrite | NULL | 8 candidates × σ_1 eigendecomp at H_2 — all miss by 500,000+ ppm vs baseline 1277 ppm |
+| 3. Q_β template cross-application | PARTIAL | c_3 = -2 reproduces as `dim H_2 · σ_1(sign)\|_{q=1}` (sign-channel × dim H_2) but NOT as clean Plancherel-weight; complements sibling work |
+| 1. Δ_λ Option E binding energies | DEFERRED | too speculative for productive single-probe; needs deeper framework engagement; covered by existing queue entries |
+
+## Findings summary
+
+**Item 4 (Lean):** Extended `ProtonMassEMSignBlock` with Plancherel
+structure. `plancherel_sum_S3 : P_(3) + P_(2,1) + P_(1,1,1) = 1`
+formalizes the classical Plancherel sum identity at H_3.
+
+**Item 2 (m_n):** The Plancherel-channel template that closed m_p
+does NOT transfer to m_n flavor-split at H_2. All 8 σ_1-eigendecomp
+candidates miss by orders of magnitude. The 0.10% X(q) residual is
+NOT a missing channel piece; may require H_3+ or a different
+categorical operator.
+
+**Item 3 (Q_β):** Partial transfer. c_3 = -2 reproduces as a
+sign-channel × dim H_2 contribution, but NOT as a Plancherel-weighted
+sum (Σ_λ P_λ · σ_1(λ) = 0 cancels; Σ_λ P_λ · σ_1²(λ) = 1, not -2).
+The normalization differs from m_p's d²_λ/|S_n| weight: c_3 uses
+dim H_n scaling, not Plancherel weight squared. Complements sibling
+Q_β Habiro work (PR #1647 etc.) without competing.
+
+**Item 1 (Δ_λ):** Deferred. Multiple existing queue entries cover
+this from different angles
+(`research-one-plus-q-over-two-derivation`, etc.); a brief in-line
+attempt would not meaningfully advance the state.
+
+## Net effect of the template expansion
+
+The PR #1645 sign-block / Plancherel template is **m_p-specific in
+its current form**. The structural pattern (1-dim Wedderburn block ×
+classical Plancherel weight P_λ = d²_λ/|S_n|) does NOT directly
+transfer to m_n flavor-split or to Q_β c_3 = -2. Both targets have
+their own categorical mechanisms (Hecke-skein X(q) for m_n; Hopf-link
+Jones evaluation for Q_β c_3) that are independent of the m_p
+template.
+
+This is itself an informative finding: the EM correction `(α_em/π)/6`
+on the proton-mass identity is uniquely characterized by its
+Plancherel-channel structure at H_3, suggesting it IS the proton-
+specific categorical signature (sign rep = color antisymmetric per
+Fermi statistics) rather than a universal Plancherel-channel pattern
+that would generalize across observables.
 
 ## Cross-references
 
