@@ -430,6 +430,38 @@ export async function validateObjects(
     }
   }
 
+  // Per-lake-tree basename cache, populated lazily.  Some constraints
+  // (e.g. `lean-file-exists`) need to look up whether a `.lean` file
+  // with a given basename exists anywhere under a package's Lake root —
+  // the cluster-migration pattern allows the file path to differ from
+  // the `lean.ref` decl prefix, so we fall back to a basename scan.
+  // `LEAN_PACKAGES.lakeRoot` is repo-root-relative; resolve against the
+  // repo root (two levels up from `content/pipeline/`).
+  const REPO_ROOT = resolve(import.meta.dir, "../..");
+  const lakeTreeBasenameCache = new Map<string, Set<string>>();
+  function lakeTreeContainsBasename(lakeRoot: string, basename: string): boolean {
+    const absRoot = resolve(REPO_ROOT, lakeRoot);
+    let cached = lakeTreeBasenameCache.get(absRoot);
+    if (!cached) {
+      cached = new Set<string>();
+      try {
+        const stack: string[] = [absRoot];
+        while (stack.length) {
+          const dir = stack.pop()!;
+          for (const entry of readdirSync(dir, { withFileTypes: true })) {
+            const full = join(dir, entry.name);
+            if (entry.isDirectory()) stack.push(full);
+            else if (entry.isFile() && entry.name.endsWith(".lean")) cached.add(entry.name);
+          }
+        }
+      } catch {
+        // Lake root missing — leave the set empty (constraint will fail downstream).
+      }
+      lakeTreeBasenameCache.set(absRoot, cached);
+    }
+    return cached.has(basename);
+  }
+
   // Phase 2: Constraint rules
   for (const [name, { block, dir }] of allBlocks) {
     const mdContent = mdCache.get(name);
@@ -438,6 +470,7 @@ export async function validateObjects(
       dir,
       allLabels,
       fileExists: (p: string) => existsSync(p),
+      lakeTreeContainsBasename,
       mdContent,
       leanContent: leanCache.get(name),
     };
