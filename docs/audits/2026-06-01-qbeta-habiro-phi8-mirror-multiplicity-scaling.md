@@ -1,22 +1,28 @@
-# Φ_8 multiplicity in mirror-pair Habiro elements scales as `A − 1`
+# Φ_8 multiplicity in mirror-pair Habiro elements: even-A correction
 
 **Date:** 2026-06-01
 **Branch:** `claude/qbeta-wenzl-habiro-keystone-2026-06-01` (PR #1642)
-**Status:** **PROPOSED SCALING LAW** (3 data points consistent; falsifiable predictions for higher A)
+**Status:** **SCALING LAW REFINED** — 5 mirror-pair data points; even-A pairs require correction to original A−1 hypothesis.
 
 ## TL;DR
 
-The cyclotomic factor `Φ_8 = u^4 + 1` appears in the Habiro element `Σ_m Δa_m(X − Y) · (u; u)_m` for every tested mirror pair `(X, Y)` (canonical Phase 5q convention), with multiplicity scaling as
+The cyclotomic factor `Φ_8 = u^4 + 1` appears in the mirror-pair Habiro element `Σ_m Δa_m(X − Y) · (u; u)_m` (canonical Phase 5q convention) with multiplicity
 
-   **`mult(Φ_8) = A − 1`**
+   **`mult(Φ_8) = 2 · ⌊(A − 1)/2⌋`**
 
-where `A` is the atomic mass of the mirror pair.
+i.e. the largest even integer ≤ A − 1. Equivalently:
+- **Odd A**: `mult(Φ_8) = A − 1`
+- **Even A**: `mult(Φ_8) = A − 2`
 
-| Mirror pair | A | `mult(Φ_8)` | Prediction matches |
-|---|---|---|---|
-| **n − p** | **1** | **0** | A − 1 = 0 ✓ |
-| **³He − ³H** | **3** | **2** | A − 1 = 2 ✓ |
-| **⁷Be − ⁷Li** | **7** | **6** | A − 1 = 6 ✓ |
+The original "mult = A − 1" hypothesis from a 3-data-point fit was refuted on the first even-A data point (⁸B − ⁸Li).
+
+| Mirror pair | A (parity) | (Z_lhs, N_lhs) ↔ (Z_rhs, N_rhs) | `mult(Φ_8)` | predicted `2⌊(A−1)/2⌋` |
+|---|---|---|---|---|
+| n − p | 1 (odd) | (0,1) ↔ (1,0) | 0 | 0 ✓ |
+| ³He − ³H | 3 (odd) | (2,1) ↔ (1,2) | 2 | 2 ✓ |
+| ⁷Be − ⁷Li | 7 (odd) | (4,3) ↔ (3,4) | 6 | 6 ✓ |
+| **⁸B − ⁸Li** | **8 (even)** | (5,3) ↔ (3,5) | **6** | **6** ✓ (REFUTES `A−1 = 7`) |
+| ⁹B − ⁹Be | 9 (odd) | (5,4) ↔ (4,5) | 8 | 8 ✓ |
 
 ## Secondary findings on `Φ_1`, `Φ_2`
 
