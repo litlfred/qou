@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T18:16:00.669565+00:00",
-  "commitSha": "3575bd9bdb3b58a37bd8f304612eed9f752defb4",
+  "computedAt": "2026-06-01T21:00:30.652944+00:00",
+  "commitSha": "eb6103bd15037a0dea544d490a95dc1f775fc53b",
   "assertions": [
     {
       "name": "no_hardcoded_registry_matches",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "hardcoded-literal-audit",
   "scriptFile": "hardcoded_literal_audit.py",
   "scriptHash": "82ea041c3646",
@@ -39,13 +39,13 @@
     "registry_constants_in_scope": 26,
     "relative_error_tolerance": "1e-6",
     "magnitude_window_MeV": "[0.0001, 1e6]",
-    "total_scripts_with_hits": 198,
-    "i9_violation_count": 183,
+    "total_scripts_with_hits": 199,
+    "i9_violation_count": 184,
     "ok_acknowledged_anchor_count": 15
   },
   "data": {
     "by_result": {
-      "i9_violation": 183,
+      "i9_violation": 184,
       "ok_acknowledged_anchor": 15
     },
     "rows": [
@@ -5837,6 +5837,23 @@
             "registry_value": "0.51099895069",
             "rel_err": "1.35e-9",
             "snippet": "M_E     = mp.mpf(\"0.51099895000\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/he4_9_3_trace_dominant_correction_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 75,
+            "literal": "28.295674",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.295673",
+            "rel_err": "3.534e-8",
+            "snippet": "B_AME = mp.mpf(\"28.295674\")"
           }
         ],
         "has_class_a_banner": false,
