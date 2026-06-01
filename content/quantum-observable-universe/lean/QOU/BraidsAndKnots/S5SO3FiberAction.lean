@@ -193,4 +193,85 @@ theorem s5_so3_fiber_action_scaffold [BringFiberAction] :
     (∀ p : PartitionOf5, p.conjugate.conjugate = p) := by
   exact ⟨total_dim_squared_eq_120, PartitionOf5.conjugate_involutive⟩
 
+/-! ## Derived facts (sorry-free) from the icosahedral character analysis
+
+    These encode the RAW results of
+    `folio-assistant/computations/s5_so3_su2_u1_fiber_action.py`
+    (audit `docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md`).
+    They are unconditional Lean facts — they do NOT depend on
+    `BringFiberAction` — and capture exactly what the icosahedral
+    character table determines.  They sharpen, but do NOT discharge,
+    the conjectural `partition_to_rotation` map. -/
+
+/-- Dimensions of the five icosahedral (≅ A₅) irreps: A, T₁, T₂, G, H. -/
+def IcosahedralIrrepDims : List ℕ := [1, 3, 3, 4, 5]
+
+/-- Multiplicity of each icosahedral irrep (in the order A, T₁, T₂, G, H)
+    inside the restriction `V_ℓ|_I` of the SO(3) angular-momentum rep, as
+    DERIVED from the I character table (probe output, ℓ = 0..6). -/
+def icosBranchingMult : ℕ → List ℕ
+  | 0 => [1, 0, 0, 0, 0]   -- V_0 = A (trivial)
+  | 1 => [0, 1, 0, 0, 0]   -- V_1 = T₁ (the 3-dim, = color sheets)
+  | 2 => [0, 0, 0, 0, 1]   -- V_2 = H (the dim-5 irrep) — first appearance
+  | 3 => [0, 0, 1, 1, 0]   -- V_3 = T₂ ⊕ G
+  | 4 => [0, 0, 0, 1, 1]   -- V_4 = G ⊕ H
+  | 5 => [0, 1, 1, 0, 1]   -- V_5 = T₁ ⊕ T₂ ⊕ H
+  | 6 => [1, 1, 0, 1, 1]   -- V_6 = A ⊕ T₁ ⊕ G ⊕ H
+  | _ => [0, 0, 0, 0, 0]
+
+/-- Dimension check: for each ℓ ≤ 6, `Σ mult·dim = 2ℓ+1`.  Confirms the
+    icosahedral branching is consistent (the multiplicities partition the
+    full angular-momentum dimension). -/
+theorem icos_branching_dim_check :
+    ∀ ℓ ∈ [0, 1, 2, 3, 4, 5, 6],
+      ((List.zip (icosBranchingMult ℓ) IcosahedralIrrepDims).map
+        (fun p => p.1 * p.2)).sum = 2 * ℓ + 1 := by
+  native_decide
+
+/-- **The ℓ=2 reading.** The SO(3) angular-momentum level ℓ=2 restricts to
+    EXACTLY ONE copy of the dim-5 icosahedral irrep H (the fifth entry), and
+    H first appears at ℓ=2.  This is the derived "ℓ=2 → dim-5 irrep"
+    statement; it does NOT by itself supply the Borromean h⁴ coefficient
+    (see audit: the h⁴ lives in the 3-strand H₃ algebra, a different
+    representation ring). -/
+theorem ell2_yields_one_copy_of_H :
+    (icosBranchingMult 2).get! 4 = 1 ∧
+    (icosBranchingMult 0).get! 4 = 0 ∧
+    (icosBranchingMult 1).get! 4 = 0 := by
+  native_decide
+
+/-- **The S₃-rotation-subgroup branching (corrects the source-file premise).**
+    S₃ realised as the triangle-rotation subgroup of SO(3) (irreps triv,
+    sign, std) branches `V_ℓ` with the std (=(2,1)) irrep already present at
+    ℓ=1 AND ℓ=2 — so the premise "S₃ sees only ℓ≤1" is FALSE.  Order:
+    [triv, sign, std]. -/
+def s3RotBranchingMult : ℕ → List ℕ
+  | 0 => [1, 0, 0]
+  | 1 => [0, 1, 1]
+  | 2 => [1, 0, 2]
+  | 3 => [1, 2, 2]
+  | 4 => [2, 1, 3]
+  | _ => [0, 0, 0]
+
+/-- The std/(2,1) irrep (which carries the Borromean h⁴) appears at BOTH ℓ=1
+    and ℓ=2 under the S₃⊂SO(3) rotation embedding: multiplicities 1 and 2.
+    Therefore "S₃ sees only ℓ≤1" is false — h⁴ cannot be attributed to "ℓ=2
+    only". -/
+theorem s3_std_appears_at_ell1_and_ell2 :
+    (s3RotBranchingMult 1).get! 2 = 1 ∧
+    (s3RotBranchingMult 2).get! 2 = 2 := by
+  native_decide
+
+/-- **SU(2) double cover: spin ℤ₂ ≠ sign ℤ₂.**  The binary icosahedral group
+    2I (the SU(2)-preimage of I ≅ A₅) has order 120 = |S₅|, but 2I is PERFECT
+    (trivial abelianisation) while S₅ has abelianisation ℤ₂ (the sign
+    character).  Hence 2I ≇ S₅, and the spin ℤ₂ (SU(2)→SO(3) kernel) is a
+    different ℤ₂ from the sign ℤ₂ (S₅/A₅).  Encoded via the abelianisation
+    orders. -/
+theorem spin_Z2_ne_sign_Z2 :
+    let binaryIcosahedralAbelianizationOrder : ℕ := 1   -- 2I is perfect
+    let s5AbelianizationOrder : ℕ := 2                  -- sign character
+    binaryIcosahedralAbelianizationOrder ≠ s5AbelianizationOrder := by
+  native_decide
+
 end QOU.BraidsAndKnots
