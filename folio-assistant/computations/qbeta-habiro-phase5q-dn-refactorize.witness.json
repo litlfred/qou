@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T15:00:01.290692+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T16:09:33.068662+00:00",
+  "commitSha": "95a00f6434a69c3ac9f52b63952a222a14e33122",
   "assertions": [
     {
       "name": "phase5q_dn_refactorize_completed",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1559,
+  "durationMs": 1754,
   "computation": "qbeta-habiro-phase5q-dn-refactorize",
   "scriptFile": "qbeta_habiro_phase5q_dn_refactorize.py",
   "scriptHash": "da792a195415",
@@ -222,6 +222,6 @@
     },
     "verdict": "PHI_8_SQUARED_SURVIVES: (u^4+1)^2 factor present in the Phase 5q canonical (D - n) Habiro factorization. Strand-doubling chain Φ_4 → Φ_8 → Φ_16 → Φ_32 is STRUCTURAL (convention-invariant); unlocks Φ_16/Φ_32 test.",
     "verdict_short": "phi8_squared_survives",
-    "elapsed_seconds": 1.559640884399414
+    "elapsed_seconds": 1.75498628616333
   }
 }
