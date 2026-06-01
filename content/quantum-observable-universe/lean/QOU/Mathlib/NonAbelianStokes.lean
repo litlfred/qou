@@ -619,9 +619,12 @@ theorem braidWordHolonomy_cyclic_one {G : Type u} [Group G]
       g⁻¹ * braidWordHolonomy (g :: rest) * g := by
   have hsplit : braidWordHolonomy (g :: rest) =
       g * braidWordHolonomy rest := by
-    show braidWordHolonomy ([g] ++ rest) = g * braidWordHolonomy rest
-    rw [braidWordHolonomy_append, braidWordHolonomy,
-        piecewiseAffineLineIntegral_singleton]
+    have : (g :: rest) = [g] ++ rest := by rfl
+    rw [this, braidWordHolonomy_append]
+    congr 1
+    show braidWordHolonomy [g] = g
+    unfold braidWordHolonomy
+    exact piecewiseAffineLineIntegral_singleton g
   rw [braidWordHolonomy_append_letter, hsplit]
   -- goal: braidWordHolonomy rest * g = g⁻¹ * (g * braidWordHolonomy rest) * g
   rw [inv_mul_cancel_left]
