@@ -31,7 +31,7 @@ admits a **graded substrate expansion**
 ([`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)) — the
 LO piece $Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ is
 **proved** (Wenzl 1988 Markov multiplicativity); the single-gen
-piece $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ closes
+piece $\tfrac{\alpha}{2} \sum_i \ln(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}})$ closes
 empirically to $0.18\%$; the pair-gen piece is open. On the
 nucleon-anchor side, $m_{\mathfrak{p}}$ has a **conjectural
 substrate form**

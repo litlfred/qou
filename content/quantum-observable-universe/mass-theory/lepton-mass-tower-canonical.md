@@ -27,9 +27,9 @@ m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)| \cdot \rho_K
 \;=\;
 \underbrace{Z m_\mathfrak{p} + N m_\mathfrak{n} + Z m_e}_{\rho_K^{\mathrm{LO}}\text{-piece}}
 \;+\;
-\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|
+\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)
 \;+\;
-\alpha z^2 \sum_{i<j} \ln|\hat V_i \hat V_j|_{\mathrm{Wedderburn}}
+\tfrac{\alpha z^2}{2} \sum_{i<j} \ln\bigl(\hat V_i \hat V_j \cdot \overline{\hat V_i \hat V_j}\bigr)\!\big|_{\mathrm{Wedderburn}}
 \;+\;\dots
 $$
 

@@ -12,8 +12,8 @@ $$
     m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)| \cdot \rho_K
     \;=\;
     \underbrace{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}_{\rho_K^{\mathrm{LO}}\text{-piece (Markov mult.)}}
-    \;+\; \underbrace{\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|}_{\rho_K^{\text{single-gen}}\text{-piece}}
-    \;+\; \underbrace{\alpha\, z^2\!\!\sum_{i<j}\!\ln|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|_{\mathrm{Wedd}}}_{\rho_K^{\text{pair-gen}}\text{-piece (open)}}
+    \;+\; \underbrace{\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)}_{\rho_K^{\text{single-gen}}\text{-piece}}
+    \;+\; \underbrace{\tfrac{\alpha\, z^2}{2}\!\!\sum_{i<j}\!\ln\bigl(\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}}\bigr)\!\big|_{\mathrm{Wedd}}}_{\rho_K^{\text{pair-gen}}\text{-piece (open)}}
     \;+\; \dots
   }
 $$
@@ -58,8 +58,12 @@ Per [atomic braid mass](#thm:wedderburn-mass-formula), the per-generator
 log-volume sum
 
 $$
-  \alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|
+  \tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)
 $$
+
+(where $\overline{\,\cdot\,}$ denotes the Hecke bar-involution
+$q \leftrightarrow q^{-1}$; at real $q_0$ and real $\hat V_i$ this
+reduces to the archimedean form $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$).
 
 with $\alpha = m_e \cdot 8G \approx 3.7445$ MeV (the Borromean
 binding scale, [Catalan binding](#prop:binding-scale-catalan))

@@ -28,7 +28,7 @@ exponential form**.  The connection to our framework:
 4. The algebraic quantum volume
    $\mathrm{Vol}_q = \prod \hat{V}_i$ therefore satisfies
    the pentagon identity (multiplicatively), and its
-   logarithm $\Phi_1 = \sum \ln|\hat{V}_i|$ satisfies the
+   logarithm $\Phi_1 = \tfrac{1}{2}\sum \ln(\hat{V}_i \cdot \overline{\hat{V}_i})$ satisfies the
    five-term relation (additively).
 
 This explains **why** $\Phi_1$ is a quantum dilogarithm:
