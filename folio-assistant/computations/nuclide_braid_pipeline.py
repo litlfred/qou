@@ -111,6 +111,11 @@ def main() -> int:
     ap.add_argument("--m-nn", type=int, default=1)
     ap.add_argument("--max-dim", type=int, default=None,
                     help="skip partitions with dim S^λ above this (compute cap)")
+    ap.add_argument("--precision", choices=["mpmath50", "double"],
+                    default="mpmath50",
+                    help="χ_λ precision: mpmath50 (50-dps, default, full "
+                         "high-precision chain) or double (float64, fast). "
+                         "y_λ is ALWAYS canonical 50-dps regardless.")
     args = ap.parse_args()
     Z, N = args.Z, args.N
     A = Z + N
@@ -154,6 +159,13 @@ def main() -> int:
                 prod *= (row - j - 1) + (cols[j] - i - 1) + 1
         return math.factorial(sum(s)) // prod
 
+    # χ precision: "mpmath50" (50-dps, ~1e-49, DEFAULT — full high-precision
+    # chain feeding the clarabel-MPFR SDP) or "double" (float64, fast, for
+    # quick smoke tests only).  y_λ is ALWAYS the canonical 50-dps
+    # principal-spec Schur weight regardless.
+    use_mp = (args.precision == "mpmath50")
+    q0_chi = q0 if use_mp else float(q0)
+
     per_partition = []
     total = mp.mpf(0)
     skipped = 0
@@ -163,9 +175,11 @@ def main() -> int:
         if args.max_dim is not None and f_dim > args.max_dim:
             skipped += 1
             continue
-        # χ_λ at 50-dps mpmath (NOT the float64 path — keeps full precision)
-        chi = chi_lambda_fast_mp(shape, word, q0)
-        chi_re = mp.re(chi)
+        if use_mp:
+            chi_re = mp.re(chi_lambda_fast_mp(shape, word, q0))
+        else:
+            chi_re = mp.mpf(float(chi_lambda_fast(shape, word, q_val=q0_chi,
+                                                  precision="double").real))
         y = y_canon[tuple(shape)]
         contrib = y * chi_re
         total += contrib

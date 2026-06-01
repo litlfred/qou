@@ -58,16 +58,16 @@
         "(5, 1)",
         "(6,)"
       ],
-      "y0_star": -0.014437996946183564,
+      "y0_star": -0.014437996946192383,
       "y_star": [
-        29.706509833656146,
-        3.0351604362762616,
-        0.0,
-        1.0543054256675402,
-        0.09545924560799288,
-        0.22579439083556238,
-        0.6921531742118898,
-        1.8036943373270138
+        29.706509833674026,
+        3.0351604362785425,
+        7.531154071871923e-14,
+        1.054305425667665,
+        0.0954592456080799,
+        0.22579439083558675,
+        0.6921531742119197,
+        1.8036943373271628
       ],
       "active_set": [
         0,
@@ -78,9 +78,9 @@
         6,
         7
       ],
-      "primal_obj": -0.005597060263077108,
-      "dual_obj": -0.005597060263077108,
-      "duality_gap": 0.0
+      "primal_obj": -0.005597060263072392,
+      "dual_obj": -0.005597060263080527,
+      "duality_gap": 8.134697090356861e-15
     },
     "note": "Full real SDP needs Phase B color-flavor constraints (LR branching H_{3A} \u2283 (H_3)^Z\u00d7(H_3)^N); this is the bar-fold symmetry-reduced bounded baseline. Partial character tables cannot close the fold (conjugates absent) \u2014 see conjugates_all_present."
   }
