@@ -2,7 +2,7 @@
   {
     "id": "research-yekutieli-substrate-derivation-mp",
     "summary": "Yekutieli non-abelian Stokes substrate-derivation of m_p (α_em/π)/dim H_3 correction",
-    "comment": "PR #1581 found (α_em/π)/dim H_3 closes proton-mass identity to 54 ppb tier=near-match. PR #1617 confirmed (α_em/π)/6 is structurally robust across 27 alt-geometries. PR #1629 showed the 54 ppb residual is anchor-stable but its sub-coefficient is NOT a rational basis combination at 120-dps PSLQ (Mahler measure, Bloch-Wigner, q-Bernoulli would need to be tested next). OPEN: derive (α_em/π)/dim H_3 from Bring-zero-mode analog (parallel to m_K/m_π closure in PR #1442). Multi-paper-scale Yekutieli non-abelian Stokes integration over the 8 ideal-octahedron tessellation of 𝓑_3-complement. Estimated 3-5 sessions; deliverable: tier=proved closure of m_p sub-100 ppb. Cross-refs: audit 2026-05-23-yekutieli-bijection-natural-reading-negative.md (natural reading +0.5 ruled out); audit 2026-05-25-non-abelian-stokes-reading-a-exploration.md (Reading-A geometrised scaffold); merged PR #1628 (Yekutieli volume-join verdict).",
+    "comment": "PR #1581 found (α_em/π)/dim H_3 closes proton-mass identity to 54 ppb tier=near-match. PR #1617 confirmed (α_em/π)/6 is structurally robust across 27 alt-geometries. PR #1629 showed the 54 ppb residual is anchor-stable but its sub-coefficient is NOT a rational basis combination at 120-dps PSLQ (Mahler measure, Bloch-Wigner, q-Bernoulli would need to be tested next). OPEN: derive (α_em/π)/dim H_3 from Bring-zero-mode analog (parallel to m_K/m_π closure in PR #1442). Multi-paper-scale Yekutieli non-abelian Stokes integration over the 8 ideal-octahedron tessellation of 𝓑_3-complement. Estimated 3-5 sessions; deliverable: promote the existing 54 ppb near-match to tier=proved. Cross-refs: audit 2026-05-23-yekutieli-bijection-natural-reading-negative.md (natural reading +0.5 ruled out); audit 2026-05-25-non-abelian-stokes-reading-a-exploration.md (Reading-A geometrised scaffold); merged PR #1628 (Yekutieli volume-join verdict).",
     "status": "open",
     "priority": "high",
     "origin": "user-2026-06-01",
@@ -14,7 +14,7 @@
       "target_residual_ppb": 1,
       "research_grade": false,
       "would_close": [
-        "m_p identity at 54 ppb tier=proved"
+        "promote (α_em/π)/dim H_3 from tier=near-match to tier=proved (m_p at 54 ppb)"
       ],
       "blocked_by": [
         "multi-paper Yekutieli 2015 machinery integration"
