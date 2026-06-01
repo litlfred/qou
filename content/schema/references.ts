@@ -2064,6 +2064,27 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF01239527",
   }),
 
+  // ── Verlinde 1988: Fusion rules and modular transformations ───
+  // The original Verlinde formula: fusion coefficients are diagonalised
+  // by the modular S-matrix; the quantum dimensions are S_{0i}/S_{00}.
+  // Canonical reference for the root-of-unity / ADE quantum-dimension
+  // truncation of SU_q(2) representations (q-Laplacian spectral tower).
+  ref({
+    id: "verlinde1988",
+    type: "article-journal",
+    title:
+      "Fusion rules and modular transformations in 2D conformal field theory",
+    author: [
+      { family: "Verlinde", given: "Erik" },
+    ],
+    "container-title": "Nuclear Physics B",
+    volume: "300",
+    page: "360-376",
+    issued: { "date-parts": [[1988]] },
+    DOI: "10.1016/0550-3213(88)90603-7",
+    URL: "https://doi.org/10.1016/0550-3213(88)90603-7",
+  }),
+
   // ── Bowen 1979: Hausdorff dimension of quasi-circles ──────────
   ref({
     id: "bowen1979",
