@@ -75,6 +75,23 @@ theorem plancherel_one_dim_rep_eq_inv_factorial (n : ℕ) (hn : 0 < n) :
     (1 : ℚ)^2 / Nat.factorial n := by
   ring
 
+/-- **Higher-rank Plancherel weights at H_4**: per PR #1671 follow-up,
+    the H_4 Wedderburn blocks (4), (3,1), (2,2), (2,1,1), (1,1,1,1)
+    have classical dimensions 1, 3, 2, 3, 1 → Plancherel weights
+    1/24, 9/24, 4/24, 9/24, 1/24. -/
+def plancherelH4 : List (String × ℚ) :=
+  [("(4)",       1 / 24),
+   ("(3,1)",     9 / 24),
+   ("(2,2)",     4 / 24),
+   ("(2,1,1)",   9 / 24),
+   ("(1,1,1,1)", 1 / 24)]
+
+/-- Plancherel sum at H_4 = 1 (Σ d² = |S_4| = 24). -/
+theorem plancherel_sum_S4 :
+    (plancherelH4.map Prod.snd).sum = 1 := by
+  simp [plancherelH4, List.sum, List.map]
+  norm_num
+
 /-- The conjectural conditional class. Per CLAUDE.md §3b-cond: this
     class axiomatizes the hypothesis that the proton-mass identity
     EM correction equals `(α_em/π) · P_(1,1,1)(H_3) = (α_em/π)/6`,
