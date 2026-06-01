@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T14:58:51.586400+00:00",
-  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
+  "computedAt": "2026-06-01T16:55:45.183519+00:00",
+  "commitSha": "042f6ff654d27fbbbd4372854230fa41706f639f",
   "assertions": [
     {
       "name": "exists_classical_ok_candidate_within_one_percent",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 12,
   "computation": "casimir-q-factorial-probe",
   "scriptFile": "casimir_q_factorial_probe.py",
   "scriptHash": "b5e96f91b552",

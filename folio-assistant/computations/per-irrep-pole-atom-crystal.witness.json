@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T15:22:08.697593+00:00",
-  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
+  "computedAt": "2026-06-01T17:18:49.648338+00:00",
+  "commitSha": "042f6ff654d27fbbbd4372854230fa41706f639f",
   "assertions": [
     {
       "name": "asserted_atoms_match_closed_form_shift",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13380,
+  "durationMs": 11463,
   "computation": "per-irrep-pole-atom-crystal",
   "scriptFile": "per_irrep_pole_atom_crystal.py",
   "scriptHash": "1f4b5a162a42",
@@ -62,7 +62,7 @@
         "expected_shift": 19,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.0005598068237304688,
+        "elapsed_sec": 0.0005879402160644531,
         "per_partition": [
           {
             "lambda": [
@@ -117,7 +117,7 @@
         "expected_shift": 22,
         "match": false,
         "asserted": false,
-        "elapsed_sec": 0.0002849102020263672,
+        "elapsed_sec": 0.0002455711364746094,
         "per_partition": [
           {
             "lambda": [
@@ -173,7 +173,7 @@
         "expected_shift": 40,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.0041692256927490234,
+        "elapsed_sec": 0.0034584999084472656,
         "per_partition": [
           {
             "lambda": [
@@ -331,7 +331,7 @@
         "expected_shift": 61,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.19406366348266602,
+        "elapsed_sec": 0.16492748260498047,
         "per_partition": [
           {
             "lambda": [
@@ -687,7 +687,7 @@
         "expected_shift": 58,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.18166494369506836,
+        "elapsed_sec": 0.15228581428527832,
         "per_partition": [
           {
             "lambda": [
@@ -1044,7 +1044,7 @@
         "expected_shift": 79,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 12.922775983810425,
+        "elapsed_sec": 11.08109736442566,
         "per_partition": [
           {
             "lambda": [

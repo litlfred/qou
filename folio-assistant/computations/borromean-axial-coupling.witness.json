@@ -1,12 +1,12 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T05:38:24.610755+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T16:59:29.057567+00:00",
+  "commitSha": "042f6ff654d27fbbbd4372854230fa41706f639f",
   "assertions": [
     {
       "name": "g_A",
-      "computed": 3.591107424543653,
+      "computed": 3.5911074245436523,
       "expected": 1.2754,
       "passed": false,
       "tolerance": 0.5,
@@ -14,7 +14,7 @@
     },
     {
       "name": "lp_duality_gap_zero",
-      "computed": 6.022959908591474e-15,
+      "computed": 4.164035515102736e-15,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-10,
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 28,
+  "durationMs": 19,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
   "scriptHash": "4842690bbdef",
@@ -202,9 +202,9 @@
       3,
       4
     ],
-    "primal_obj": -4.368285857481169e-07,
+    "primal_obj": -4.368285876070413e-07,
     "dual_obj": -4.368285917710768e-07,
-    "duality_gap": 6.022959908591474e-15,
+    "duality_gap": 4.164035515102736e-15,
     "lp_feasible": true,
     "observable_vector": {
       "name": "O_V (trivial / vector / +q eigenspace)",
@@ -216,7 +216,7 @@
         1.232052454166764,
         1.3675518369513853
       ],
-      "dual_pairing_value": 2.418262598882023,
+      "dual_pairing_value": 2.4182625988820234,
       "u_active": [
         1.0000002711431513,
         7.586395976835048e-08,

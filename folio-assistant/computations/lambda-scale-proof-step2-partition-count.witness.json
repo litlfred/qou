@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T15:01:56.809826+00:00",
-  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
+  "computedAt": "2026-06-01T16:58:46.041444+00:00",
+  "commitSha": "042f6ff654d27fbbbd4372854230fa41706f639f",
   "assertions": [
     {
       "name": "h_sc_4_equals_5_over_2",
@@ -34,7 +34,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 14,
   "computation": "lambda-scale-proof-step2-partition-count",
   "scriptFile": "lambda_scale_proof_step2_partition_count.py",
   "scriptHash": "8f44635493c1",
