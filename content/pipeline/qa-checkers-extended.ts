@@ -25,6 +25,7 @@
 import { existsSync, readFileSync } from "fs";
 import { resolve, dirname, join, relative } from "path";
 import { fileURLToPath } from "url";
+import { Q_USAGE_AUTOMATED_CHECKERS } from "./qa-checkers-q-usage";
 
 const __filename = fileURLToPath(import.meta.url);
 const REPO_ROOT = resolve(dirname(__filename), "..", "..");
@@ -1909,4 +1910,24 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   "voice-title-scholarly": (p) => checkVoiceTitleScholarly(p.ts),
   "voice-statement-no-interpretation": (p) =>
     checkVoiceStatementNoInterpretation(p.md),
+  // q-usage — per-block regime detector + 6 mismatch criteria. The
+  // checker functions live in qa-checkers-q-usage.ts and return a
+  // result shape compatible with CheckerResult.
+  ...(() => {
+    const m: Record<string, (paths: { md?: string; ts?: string; lean?: string }) => CheckerResult> = {};
+    for (const [id, fn] of Object.entries(Q_USAGE_AUTOMATED_CHECKERS)) {
+      m[id] = (p) => {
+        const r = fn(p);
+        // QUsageResult.result may be "warn" — collapse to "pass" for
+        // the registry typing while preserving evidence; the per-block
+        // sidecar writer reads the underlying result via the q-usage
+        // CLI runner, which knows about "warn".
+        return {
+          result: r.result === "warn" ? "pass" : r.result,
+          hits: r.hits,
+        };
+      };
+    }
+    return m;
+  })(),
 };

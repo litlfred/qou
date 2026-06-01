@@ -38,6 +38,8 @@ more concrete child watchers and invokes them.
 /integration-watch dedupe                       → same as `consolidation`
 /integration-watch bibliography                 → bibliography watcher (block-level bib QA)
 /integration-watch bib                          → same as `bibliography`
+/integration-watch q-usage                      → q-usage watcher (per-block q regime + chapter-mismatch)
+/integration-watch q                            → same as `q-usage`
 /integration-watch all                          → all watchers in parallel
 /integration-watch proof,canonical              → those two in parallel
 /integration-watch proof canonical              → same (space-separated)
@@ -79,6 +81,15 @@ Per `integration-watcher §0` + `§4e` (full-context preamble):
    >   parametrisations; H3: uses-overlap > 70%). Helps keep
    >   exposition tight (simply-stated theorems + simple corollaries
    >   rather than a forest of overlapping special-case props).
+   > - **q-usage** — q-usage-watcher: per-block q-regime detector
+   >   (symbolic / generic-R / real-positive / q > 1 / |q| > 1 /
+   >   unit-circle / root-of-unity / fixed q_0 / n/a) + chapter-
+   >   mismatch flagger. Catches: fixed-q_0 leak into a categorical
+   >   chapter, `Real.*` archimedean leak into a generic-R block,
+   >   `Real.sqrt q` without `0 < q` hypothesis, root-of-unity
+   >   construction without declaration, formal-power-series prose
+   >   using `q > 1` instead of `|q| > 1`. Emits per-block sidecars
+   >   (`q-usage-*` criteria) and a global witness JSON.
 
 2. **Role-gate the chip set.** Before composing the
    `AskUserQuestion`, detect the user's role (`reader` /
