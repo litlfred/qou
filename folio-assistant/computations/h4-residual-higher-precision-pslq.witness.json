@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T12:56:15.586303+00:00",
-  "commitSha": "529eed16b1f13229ca1c3faeff9cfb17a22b4213",
+  "computedAt": "2026-06-01T13:02:34.324677+00:00",
+  "commitSha": "844dd586a72e278b9084040d1c65be72be86dcb4",
   "assertions": [
     {
       "name": "higher_precision_pslq_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 24,
   "computation": "h4-residual-higher-precision-pslq",
   "scriptFile": "h4_residual_higher_precision_pslq.py",
-  "scriptHash": "ab0a5065b3af",
-  "scriptCommitSha": "529eed16b1f13229ca1c3faeff9cfb17a22b4213",
+  "scriptHash": "d2752145dc0f",
+  "scriptCommitSha": "844dd586a72e278b9084040d1c65be72be86dcb4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,12 +35,13 @@
   },
   "description": "Task 2 of PR #1629: higher-precision (120 dps) PSLQ search for the h⁴-residual coefficient (target ≈ 0.876580096) across 17 natural substrate basis elements. Tests pairwise (maxcoeff 10⁶) and full basis (maxcoeff 100).",
   "parameters": {
-    "q_120dps": "1.1099785827513808075916690956107688798744991218736"
+    "q_120dps": "1.10997858275138080759166909561076887987449912187357873607281424018179896357448302113713825718367460865475264918359381182",
+    "mp_dps_runtime": "120"
   },
   "data": {
-    "target_h4_coef": "0.876580095792365045294580102307",
+    "target_h4_coef": "0.876580034567752547207181217189",
     "pslq_pairwise_hits": 0,
-    "exact_N_for_one_minus_pi2_over_N": "79.9676880682492779",
-    "verdict": "NULL — no clean PSLQ integer relations at higher precision. The h⁴-residual coefficient is NOT a rational multiple of any single basis element in {G, π², ζ(3), ln(2), ...}. Best N for `1 - π²/N` form: N = 80 (Δ = 56.8678 ppm). Exact N = 79.9676880682 — NOT clean integer 80."
+    "exact_N_for_one_minus_pi2_over_N": "79.9676483988919158",
+    "verdict": "NULL — no clean PSLQ integer relations at higher precision. The h⁴-residual coefficient is NOT a rational multiple of any single basis element in {G, π², ζ(3), ln(2), ...}. Best N for `1 - π²/N` form: N = 80 (Δ = 56.9377 ppm). Exact N = 79.9676483989 — NOT clean integer 80."
   }
 }

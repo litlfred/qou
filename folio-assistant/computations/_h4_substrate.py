@@ -18,12 +18,16 @@ from __future__ import annotations
 
 import mpmath as mp
 
-# CODATA constants — re-exported from canonical registry
+# Acknowledged-anchor constants from the central registries
+# (consistent with repo convention; see CLAUDE.md §Acknowledged-anchor
+# banner). Masses use the mpf-typed codata_2022_source registry (more
+# recent CODATA 2022 values + includes muon). α_em uses
+# experimental_constants.ALPHA_EM_INV (which has the canonical CODATA
+# 2018 fine-structure constant; experimental_constants lacks muon).
 from codata_2022_source import M_E_MEV, M_MU_MEV, M_P_MEV  # noqa: F401
+import experimental_constants as _ec  # noqa: E402
 
-# α_em (CODATA 2018): not yet in central registry; matches the
-# 137.035999084 convention used by 8+ alpha_em_*.py scripts in this dir.
-ALPHA_EM = mp.mpf(1) / mp.mpf("137.0359991")
+ALPHA_EM = mp.mpf(1) / mp.mpf(repr(_ec.ALPHA_EM_INV))
 
 
 def trM_borromean_closed(q):
