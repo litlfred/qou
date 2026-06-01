@@ -21,7 +21,7 @@ compute-chain wiring, or any future domain — runs a domain QA
 pipeline on every detected change, queues findings, attempts
 auto-discharge where possible, and asks the author for the rest.
 
-Five concrete children today:
+Six concrete children today:
 
 | Child | Domain | Goal |
 |-------|--------|------|
@@ -30,6 +30,7 @@ Five concrete children today:
 | [`compute-integration-watcher`](compute-integration-watcher.md) | Cross-layer compute wiring | Every `prop:`/`thm:`/`lem:` block has a probe + production consumer (13-pattern I1-I13 audit) |
 | [`detangler-integration-watcher`](detangler-integration-watcher.md) | Structural QA (graph + density) | No new forward refs (H1-H7), sections in 3-18 block band (R1-R3), no new cross-chapter forward edges, archimedean wall preserved |
 | [`one-voice-integration-watcher`](one-voice-integration-watcher.md) | Content-block voice + fit + framework + wall placement | Scholarly voice (narrative + proof bodies), zero AI-slop, block fit to section/chapter, canonical-vs-deprecated notation, archimedean/algebraic wall placement; persists per-block `<block>.qa.json` audit reports (multi-reviewer, hash-keyed staleness) |
+| [`q-usage-watcher`](q-usage-watcher.md) | Per-block q-regime detection + chapter-mismatch | Detect each block's `q` regime vector (symbolic / generic-R / real-positive / real-gt-1 / mod-{lt,gt}-1 / unit-circle / root-of-unity / fixed-q_0); flag fixed-q_0 leak into a categorical chapter, `Real.*` archimedean leak, positivity-implicit `Real.sqrt q`, root-of-unity construction without declaration, formal-power-series prose using `q > 1` instead of `\|q\| > 1` |
 
 ## Domain slots (every child must fill)
 

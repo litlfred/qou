@@ -273,6 +273,131 @@ const WALL: QaCriterionDefinition[] = [
   },
 ];
 
+// ── Domain: q-usage ─────────────────────────────────────────────
+//
+// Owned by `q-usage-watcher`. Detects how a block treats the substrate
+// parameter `q` (symbolic, generic-R, real-positive, root-of-unity,
+// fixed-q0, …) and cross-checks the detected regime vector against
+// the chapter's narrative-expected profile. See
+// `qa-checkers-q-usage.ts` for the regime detector and the
+// chapter → expected-regime registry.
+
+const Q_USAGE: QaCriterionDefinition[] = [
+  {
+    id: "q-usage-regime-detected",
+    domain: "q-usage",
+    description:
+      "Infrastructure criterion — records the block's detected " +
+      "q-regime vector (symbolic / generic-R / real-positive / " +
+      "real-gt-1 / real-lt-1 / mod-gt-1 / mod-lt-1 / unit-circle / " +
+      "root-of-unity / fixed-q0 / na) in the sidecar so downstream " +
+      "sweeps + agents can query the classification without re-running " +
+      "the detector. Always result `pass`; the regime tags surface " +
+      "via the `notes` field on the entry.",
+    default_severity: "minor",
+    depends_on: ["md", "ts", "lean"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-q-usage.ts",
+  },
+  {
+    id: "q-usage-fixed-q0-leak",
+    domain: "q-usage",
+    description:
+      "Block in a categorical/symbolic chapter (braids-and-knots, " +
+      "lifting-and-descent, quantum-universes, appendix-knot-operations, " +
+      "appendix-surreals) has a fixed q_0 numerical pin (e.g. " +
+      "`q ≈ 1.1097…`, `substrate value`). Categorical blocks should " +
+      "state identities for general q; numerical specialisation belongs " +
+      "in an archimedean chapter (or in a block explicitly carrying " +
+      "an `archimedean-specialisation` tag in its `.ts` manifest). " +
+      "Mirrors CLAUDE.md §7c base-ring convention.",
+    default_severity: "major",
+    depends_on: ["md", "ts", "lean"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-q-usage.ts",
+  },
+  {
+    id: "q-usage-archimedean-in-categorical-chapter",
+    domain: "q-usage",
+    description:
+      "Block in a categorical/symbolic chapter uses archimedean " +
+      "Real.* functions (`Real.sqrt`, `Real.cos`, `Real.log`, …), " +
+      "archimedean tactics (`linarith`, `positivity`, `norm_num`), " +
+      "or numerical observable references (MeV, CODATA, PDG) without " +
+      "an explicit `archimedean-specialisation` marker on the `.ts`. " +
+      "Categorical chapters should keep statements over generic `R`; " +
+      "see CLAUDE.md §7c.",
+    default_severity: "major",
+    depends_on: ["md", "ts", "lean"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-q-usage.ts",
+  },
+  {
+    id: "q-usage-positivity-implicit",
+    domain: "q-usage",
+    description:
+      "Lean file uses positivity-dependent constructs (`Real.sqrt`, " +
+      "`Real.log`, `Real.rpow`) on `q` without an explicit positivity " +
+      "hypothesis (`hq : 0 < q`, `hq : 1 < q`, `hq_pos`). Mathlib's " +
+      "`Real.sqrt` returns 0 on negative inputs so the proof may still " +
+      "compile, but the implicit regime assumption should be made " +
+      "explicit. Severity `minor` because it's a code-discipline flag, " +
+      "not a correctness bug.",
+    default_severity: "minor",
+    depends_on: ["lean"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-q-usage.ts",
+  },
+  {
+    id: "q-usage-modulus-vs-real-mismatch",
+    domain: "q-usage",
+    description:
+      "Formal-power-series / shuffle / Macdonald / Hall-Littlewood / " +
+      "Habiro-ring context uses a real-line inequality `q > 1` / `q < 1` " +
+      "in prose where the convergence regime is naturally `|q| > 1` / " +
+      "`|q| < 1`. Heuristic — sometimes the real-line form is the " +
+      "intended archimedean specialisation, but the convention should be " +
+      "explicit (modulus inequality in the formal context, real-line " +
+      "inequality only after specialisation).",
+    default_severity: "minor",
+    depends_on: ["md"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-q-usage.ts",
+  },
+  {
+    id: "q-usage-root-of-unity-undeclared",
+    domain: "q-usage",
+    description:
+      "Block uses constructions that require `q` to be a root of unity " +
+      "(Kashiwara modular crystal, Lusztig integral form, fusion " +
+      "category, divided-power algebra, finite-dimensional quantum " +
+      "group) without declaring the regime. The chapter " +
+      "`q-geometric-langlands` is exempt (root-of-unity is its default " +
+      "context); elsewhere the block should state `q = e^{2πi/N}` " +
+      "or `q is a primitive N-th root of unity` in prose.",
+    default_severity: "minor",
+    depends_on: ["md", "lean"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-q-usage.ts",
+  },
+  {
+    id: "q-usage-narrative-chapter-mismatch",
+    domain: "q-usage",
+    description:
+      "Block's detected regime vector is disjoint from its chapter's " +
+      "expected-regime profile — i.e. every detected regime is outside " +
+      "the chapter's expected set. Weak condition (single-regime " +
+      "mismatches do not fire); meant to catch wholesale mis-placements " +
+      "(e.g. a numerical observation block in a categorical chapter). " +
+      "The stronger per-regime checks live in `q-usage-fixed-q0-leak` " +
+      "and `q-usage-archimedean-in-categorical-chapter`.",
+    default_severity: "minor",
+    depends_on: ["md", "ts", "lean"],
+    automated: true,
+    source_file: "content/pipeline/qa-checkers-q-usage.ts",
+  },
+];
+
 // ── Domain: proof ───────────────────────────────────────────────
 //
 // Owned by `proof-integration-watcher`. Each criterion maps to one
@@ -943,6 +1068,7 @@ export const QA_CRITERIA_REGISTRY: QaCriterionDefinition[] = [
   ...FIT,
   ...FRAMEWORK,
   ...WALL,
+  ...Q_USAGE,
   ...PROOF,
   ...CANONICAL,
   ...COMPUTE,
@@ -991,9 +1117,10 @@ export const DETANGLER_WATCHER_CRITERIA: string[] = DETANGLER.map(
 export const BIBLIOGRAPHY_WATCHER_CRITERIA: string[] = BIBLIOGRAPHY.map(
   (c) => c.id,
 );
+export const Q_USAGE_WATCHER_CRITERIA: string[] = Q_USAGE.map((c) => c.id);
 
 /**
- * All 6 watcher buckets, keyed by watcher short name (matches the
+ * All 7 watcher buckets, keyed by watcher short name (matches the
  * `/integration-watch` / `/integration-backlog` axis arguments).
  */
 export const WATCHER_CRITERIA_BY_AXIS: Record<string, string[]> = {
@@ -1003,6 +1130,7 @@ export const WATCHER_CRITERIA_BY_AXIS: Record<string, string[]> = {
   compute: COMPUTE_WATCHER_CRITERIA,
   detangler: DETANGLER_WATCHER_CRITERIA,
   bibliography: BIBLIOGRAPHY_WATCHER_CRITERIA,
+  "q-usage": Q_USAGE_WATCHER_CRITERIA,
 };
 
 // ── Source-file + extra-input declaration (script staleness) ────
