@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:34:55.396835+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:56:59.485320+00:00",
+  "commitSha": "fd6319d75e8da423bddf2b464841c2448c8d16d7",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "i2-probe-only-audit",
   "scriptFile": "i2_probe_only_audit.py",
   "scriptHash": "1155d3faa225",
   "scriptCommitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -41,8 +41,8 @@
   },
   "data": {
     "by_result": {
-      "i2_probe_only": 209,
-      "wired_production": 38
+      "i2_probe_only": 208,
+      "wired_production": 39
     },
     "production_consumers": [
       "atomic_mass_via_rho_k.py",
@@ -1475,15 +1475,6 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/meson-em-sinh-closed-form.witness.json",
-        "labels": [
-          "prop:meson-color-tube-uniqueness"
-        ],
-        "production_consumers": [],
-        "upstream_consumers": [],
-        "result": "i2_probe_only"
-      },
-      {
         "witness": "folio-assistant/computations/meson-mass-from-hecke.witness.json",
         "labels": [
           "prop:meson-mass-hecke-prediction"
@@ -1956,6 +1947,17 @@
         "production_consumers": [],
         "upstream_consumers": [],
         "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-eigenphase-taylor-in-u.witness.json",
+        "labels": [
+          "prop:q-beta-categorical-precision-ladder"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
       },
       {
         "witness": "folio-assistant/computations/qbeta-habiro-taylor-investigation.witness.json",

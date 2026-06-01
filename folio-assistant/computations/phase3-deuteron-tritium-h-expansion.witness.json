@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:54:00.275423+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:16:08.608945+00:00",
+  "commitSha": "fd6319d75e8da423bddf2b464841c2448c8d16d7",
   "assertions": [
     {
       "name": "h2_cancellation_extends",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4364,
+  "durationMs": 4294,
   "computation": "phase3-deuteron-tritium-h-expansion",
   "scriptFile": "phase3_deuteron_tritium_h_expansion.py",
   "scriptHash": "a2f44ef6a7be",
   "scriptCommitSha": "22a39d7206127865d9c5d52e3ca5295f51de8381",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

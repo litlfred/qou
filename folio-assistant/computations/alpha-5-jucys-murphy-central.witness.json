@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:40:27.053267+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:02:32.135079+00:00",
+  "commitSha": "fd6319d75e8da423bddf2b464841c2448c8d16d7",
   "assertions": [
     {
       "name": "naive_jm_central_form_refuted_at_q0",
@@ -27,16 +27,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1721,
+  "durationMs": 1774,
   "computation": "alpha-5-jucys-murphy-central",
   "scriptFile": "alpha_5_jucys_murphy_central.py",
   "scriptHash": "ef9cbca7159c",
   "scriptCommitSha": "39acb9beea531384fb4ec1f0e69ff829e71ec064",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

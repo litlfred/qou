@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:32:48.477748+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:54:52.317083+00:00",
+  "commitSha": "fd6319d75e8da423bddf2b464841c2448c8d16d7",
   "assertions": [
     {
       "name": "h4_categorical_driver_search_completed",
@@ -13,16 +13,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 27,
   "computation": "h4-categorical-drivers-probe",
   "scriptFile": "h4_categorical_drivers_probe.py",
   "scriptHash": "bf0f8174835f",
   "scriptCommitSha": "1a49d588f3fd22e20ee53a990f8f6ad57e1bb4ce",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
