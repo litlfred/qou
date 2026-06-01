@@ -1762,9 +1762,9 @@ tool rather than silently failing.
 | `folio-assistant/feedback/` | User feedback (TypeScript files, committed to main) |
 | `folio-assistant/computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
 | `qou-mass/` | `qou-mass` PyPI package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). Alpha (`v0.1.0a1`); 0 in-repo importers today. |
-| `tools/qou-substrate/` | `qou-substrate` PyPI package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). 25 in-repo importers. |
-| `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 41 in-repo importers. |
-| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 20 in-repo importers. |
+| `tools/qou-substrate/` | `qou-substrate` PyPI package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). 7 in-repo direct importers (≈67 % transitive via `pyhecke`). |
+| `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 18 in-repo direct importers. |
+| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 15 in-repo direct importers. |
 | `tools/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. 0 in-repo importers today. |
 | `tools/hecke-engine/` | `hecke-engine` Rust crate — Layer 1 canonical compute core (Gröbner-Shirshov reducer, Hoefsmit, Markov trace, Clarabel SDP backend). |
 | `tools/hecke-engine-{wasm,node,r,jvm,c}/` | Multi-language bindings of `hecke-engine` (WASM, Node napi-rs, R/JVM/C — last three Tier-3). |
