@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:18:39.227636+00:00",
-  "commitSha": "82afa677c111848a4394f7ac6394a5e12be88589",
+  "computedAt": "2026-06-01T05:34:57.166625+00:00",
+  "commitSha": "40175b400c15e64a5d3e4883717c4bc45c6d738d",
   "assertions": [
     {
       "name": "habiro_pochhammer_reproduces_witness",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1272,
+  "durationMs": 1222,
   "computation": "habiro-q-difference-fourier",
   "scriptFile": "habiro_q_difference_fourier.py",
-  "scriptHash": "aef9ed2d4026",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c211b221101c",
+  "scriptCommitSha": "1c84b89ea12a1dea8755d4a68143b99f2a909fb1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -75,7 +75,8 @@
         "d": 4,
         "surviving_modes": 4,
         "pole": true,
-        "note": "D(ζ_4)=0 — genuine pole of tr_M"
+        "pole_sector": "p&n",
+        "note": "cancelled denominator(p&n)=0 at ζ_4 — genuine pole of tr_M"
       },
       {
         "d": 5,
@@ -133,10 +134,11 @@
       "pole_note": "D(u)=4u¹⁹(u²+1) vanishes at ζ_4=i while the numerator does not — a genuine pole of tr_M, a structural feature of the q-difference equation."
     },
     "bar_symmetry_split": {
-      "even_leading_order": 1,
-      "odd_leading_order": 0,
-      "even_series": "-eps**3/2 + eps/2 + 1/(2*eps) - 1/(2*eps**3)",
-      "odd_series": "-eps**2 + 1/2 + 1/(4*eps**4)",
+      "even_leading_laurent_order": -3,
+      "odd_leading_laurent_order": -4,
+      "laurent_note": "orders are FULL Laurent (negative powers / poles at u=0 included); bar map u↦1/u makes both parts Laurent, not Taylor",
+      "even_expr": "(-u**6 + u**4 + u**2 - 1)/(2*u**3)",
+      "odd_expr": "(-u**10 - u**8 - 2*u**6 + 2*u**4 + u**2 + 1)/(4*u**6 + 4*u**4)",
       "interpretation": "bar-even = charge-conjugation-symmetric = physical; the mechanism that cancels the odd-order u¹ term PR #1602 identified in f"
     },
     "interpretation": {
