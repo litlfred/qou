@@ -467,6 +467,35 @@ def main():
         mass_out[label] = {"m_MeV": str(mval), "rel_err_vs_codata_mavg": str(err)}
     witness["raw_mass_readings"] = mass_out
 
+    witness["verdict"] = {
+        "verdict": "C (genuinely-open) with a clean B (production-wrong) sub-finding",
+        "summary": (
+            "The q-volume functional, as the framework defines it "
+            "(def:algebraic-quantum-volume + thm:markov-trace-product + "
+            "prop:vol-through-tau), is Vol_q(beta)=tr_M(rho(beta)) followed by "
+            "tau_arch = ln|.| at q0. tau_arch is a LOGARITHM, not a "
+            "multiplicative factor, so a 2.38x multiplicative bridge is the "
+            "wrong shape. No zero-parameter functional of tr_M reproduces the "
+            "production scalar (closest tr_M^2 at -55%). prop:vol-through-tau "
+            "says Vol(B3)=ln|tr_M|=-0.00144, but production uses classical "
+            "8G=7.328 -- two volume definitions inconsistent by ~5090x at q0. "
+            "Not (A): wrong shape, no zero-param match, A-vs-B inconsistent."),
+        "not_A_reasons": [
+            "tau_arch is ln|.| (logarithm), not multiplicative",
+            "no zero-parameter q-vol functional of tr_M matches (>=55% off)",
+            "classical Vol=8G vs prop:vol-through-tau Vol=ln|tr_M| disagree ~5090x at q0",
+        ],
+        "missing_input_for_C": [
+            "per-crossing transfer chain V_hat_i(q)=z*a_i+b_i for atomic braids",
+            "reconciliation of Definition A (classical 8G) vs Definition B (ln|tr_M|)",
+            "non-abelian Stokes surface->boundary map (still z^n stub in Lean)",
+        ],
+        "B_subfinding": (
+            "production linking_weight is an H4 (partitions of 4) empirical "
+            "near-match; literal per-block restore gives m_p=406 MeV (-56.7%), "
+            "confirming the sibling RED gate independently."),
+    }
+
     print(f"\nElapsed: {time.time() - t0:.1f}s")
     outpath = HERE / "yekutieli-volume-join.witness.json"
     json.dump(witness, open(outpath, "w"), indent=2)
