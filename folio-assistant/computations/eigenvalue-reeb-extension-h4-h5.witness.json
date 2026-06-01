@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:32:06.711848+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:08:58.606050+00:00",
+  "commitSha": "e774e0a3e7ffcae7c463c085b2a28a2a75888046",
   "assertions": [
     {
       "name": "extends_beyond_h3",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "eigenvalue-reeb-extension-h4-h5",
   "scriptFile": "eigenvalue_reeb_extension_h4_h5.py",
   "scriptHash": "cddcefd3c4d0",
   "scriptCommitSha": "dea998267a81fd7c63f6f8a9b6541284e2f24412",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

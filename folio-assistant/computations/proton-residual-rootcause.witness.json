@@ -1,20 +1,20 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:42:36.461738+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:19:06.654301+00:00",
+  "commitSha": "e774e0a3e7ffcae7c463c085b2a28a2a75888046",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 19,
   "computation": "proton-residual-rootcause",
   "scriptFile": "proton_residual_rootcause.py",
   "scriptHash": "75a7194bfb96",
   "scriptCommitSha": "bc60c4d79ae695d3022cb53914e2693e7ddcf29b",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

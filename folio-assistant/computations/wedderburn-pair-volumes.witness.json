@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:46:24.969624+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:23:38.955035+00:00",
+  "commitSha": "e774e0a3e7ffcae7c463c085b2a28a2a75888046",
   "assertions": [
     {
       "name": "n_pairs equals C(n_gens, 2)",
@@ -21,16 +21,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 6,
   "computation": "wedderburn-pair-volumes",
   "scriptFile": "wedderburn_pair_volumes.py",
   "scriptHash": "977ea04d1e07",
   "scriptCommitSha": "cd523015984b3af986e24f697bdeb6381634f933",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
