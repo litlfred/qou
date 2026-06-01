@@ -57,6 +57,13 @@ def main() -> int:
         "antisymmetric components without proposing a c_k closure "
         "candidate (per CLAUDE.md no-7th-ansatz discipline)."
     )
+    # Audit-only: this probe documents a structural observation in the
+    # paired audit doc; it is not expected to wire to any production
+    # content block via `computation.witness`. Excludes from orphan tally
+    # in scripts/audit-wiring.ts.
+    builder.set_audit_only(
+        "docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md"
+    )
 
     upstream_path = HERE / "habiro-coefficients-atomic.witness.json"
     upstream = builder.add_upstream(upstream_path)
@@ -73,8 +80,8 @@ def main() -> int:
 
     # Bar-symmetry test in q
     bar_q = sp.cancel(delta_tr.subs(q, 1 / q))
-    diff_q = sp.cancel(delta_tr - bar_q)
-    print("Δtr_M(q) - Δtr_M(1/q) =", diff_q)
+    delta_tr_minus_bar_q = sp.cancel(delta_tr - bar_q)
+    print("Δtr_M(q) - Δtr_M(1/q) =", delta_tr_minus_bar_q)
     print("  → not zero ⟹ Δtr_M is NOT bar-symmetric in q")
     print()
 
@@ -104,8 +111,9 @@ def main() -> int:
 
     builder.add_data("delta_tr_M_in_q", str(delta_tr))
     builder.add_data("delta_tr_M_in_t_q_half", str(delta_tr_t))
-    builder.add_data("bar_q_minus_original", str(diff_q))
-    builder.add_data("verdict_q_bar_symmetric", str(diff_q) == "0")
+    # Δtr_M(q) − Δtr_M(1/q): nonzero ⟺ not bar-symmetric
+    builder.add_data("delta_tr_minus_bar_q", str(delta_tr_minus_bar_q))
+    builder.add_data("verdict_q_bar_symmetric", str(delta_tr_minus_bar_q) == "0")
     builder.add_data("bar_t_decomposition", {
         "symmetric_part_t": str(sym_t),
         "symmetric_part_t_factored": str(sym_t_factored),

@@ -136,5 +136,25 @@
       "status_owner_decision": "DECLINED 2026-05-08",
       "warning": "do not attempt without explicit owner reversal"
     }
+  },
+  {
+    "id": "research-qbeta-bar-decomposition-followup",
+    "summary": "Use \u0394tr_M sym/antisym bar-decomposition (PR #1615) for structurally-justified Q_\u03b2 attack",
+    "comment": "Per PR #1615 + audit doc docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md: \u0394tr_M(q) decomposes in t=q^(1/2) as sym(t)+antisym(t) under t \u2194 1/t. Symmetric part has clean closed form: \u2212(q\u22121)\u00b2(q+1)/(2q^(3/2)). Numerically at q_proton: sym = 7.7%, antisym = 92.3% of \u0394tr_M. Per prop:li2q-phiq-bar-symmetrization, BINDING quantities (Q_\u03b2) live in the bar-symmetric (Li_2^q) sector \u2014 so Q_\u03b2 derivation should isolate the symmetric projection. ANTI-PATTERN GUARD (CLAUDE.md no-7th-ansatz): any candidate using this decomposition MUST have a structural justification AND pass cross-anchor (q_proton vs q_muon) test before wiring. Numerical near-match candidates (1/h\u00b2 \u2248 102, [2]_q/h\u00b2 \u2248 195) for the required scaling S(q_proton) \u2248 140 are the trap to avoid.",
+    "status": "open",
+    "priority": "medium",
+    "origin": "pr-1615-structural-finding",
+    "createdAt": "2026-06-01",
+    "data": {
+      "goal": "1ppq-qbeta",
+      "research_grade": true,
+      "follows_from": "research-phi-q-spectral-combiner (refuted PR #1609) + PR #1615 bar-decomposition",
+      "witness": "folio-assistant/computations/qbeta-delta-tr-bar-decomposition-probe.witness.json",
+      "audit": "docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md",
+      "sym_closed_form_q": "\u2212(q\u22121)\u00b2(q+1)/(2q^(3/2))",
+      "sym_pct_at_q_proton": 7.7,
+      "antisym_pct_at_q_proton": 92.3,
+      "anti_pattern_guard": "numerical-search-for-scaling-factor-S(q)-without-structural-justification"
+    }
   }
 ]
