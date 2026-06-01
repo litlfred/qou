@@ -367,14 +367,28 @@ theorem eigenvalue_sum_eq_trace (M : Mat2) (θ : ℝ)
     (hθ : 2 * Real.cos θ = M.trace) :
     Complex.exp (θ * Complex.I) + Complex.exp (-(θ * Complex.I))
       = (M.trace : ℂ) := by
-  have hsum : Complex.exp (θ * Complex.I) + Complex.exp (-(θ * Complex.I))
-      = 2 * Complex.cos (θ : ℂ) := by
-    rw [Complex.exp_mul_I, ← neg_mul, Complex.exp_mul_I,
-        Complex.cos_neg, Complex.sin_neg]
+  -- Euler: `exp(±θ·I) = cos θ ± i sin θ`, so the sum is `2 cos θ`.
+  -- `Complex.exp_mul_I : exp (z * I) = cos z + sin z * I`.
+  have e₁ : Complex.exp ((θ : ℂ) * Complex.I)
+      = Complex.cos (θ : ℂ) + Complex.sin (θ : ℂ) * Complex.I :=
+    Complex.exp_mul_I (θ : ℂ)
+  have e₂ : Complex.exp (-((θ : ℂ) * Complex.I))
+      = Complex.cos (θ : ℂ) - Complex.sin (θ : ℂ) * Complex.I := by
+    have : (-((θ : ℂ) * Complex.I)) = ((-θ : ℝ) : ℂ) * Complex.I := by
+      push_cast; ring
+    rw [this, Complex.exp_mul_I]
+    push_cast
+    rw [Complex.cos_neg, Complex.sin_neg]
     ring
-  rw [hsum, ← Complex.ofReal_cos, ← hθ]
-  push_cast
-  ring
+  rw [e₁, e₂]
+  -- (cos + i sin) + (cos − i sin) = 2 cos θ = ↑(M.trace)
+  have : Complex.cos (θ : ℂ) + Complex.sin (θ : ℂ) * Complex.I
+        + (Complex.cos (θ : ℂ) - Complex.sin (θ : ℂ) * Complex.I)
+      = 2 * Complex.cos (θ : ℂ) := by ring
+  rw [this, ← Complex.ofReal_cos]
+  rw [show (2 : ℂ) * ((Real.cos θ : ℝ) : ℂ) = (((2 * Real.cos θ : ℝ)) : ℂ) by
+        push_cast; ring]
+  rw [hθ]
 
 /-- **Full eigenphase certificate (PROVED, compile-pending).**  For the
     figure-eight operator `M = M_{4₁}` on `V_(2,1)` with `|tr M| ≤ 2`,
