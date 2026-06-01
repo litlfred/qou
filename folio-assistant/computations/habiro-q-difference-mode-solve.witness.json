@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:46:21.835017+00:00",
-  "commitSha": "bda8cf48f20743fb753b8ffe04f3a5e6557e5b86",
+  "computedAt": "2026-06-01T11:59:02.848601+00:00",
+  "commitSha": "8a35f1886750a6c8b6af2443ff8738e385582b6a",
   "assertions": [
     {
       "name": "mode_decomposition_reconstructs_exactly",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 825,
+  "durationMs": 617,
   "computation": "habiro-q-difference-mode-solve",
   "scriptFile": "habiro_q_difference_mode_solve.py",
-  "scriptHash": "9cc228d933c9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "be9023647225",
+  "scriptCommitSha": "d8b8c991e8d1ddd15e1cd21fe45dcb4c0e28443b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

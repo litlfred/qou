@@ -118,7 +118,6 @@ def main() -> int:
     print()
 
     # the two variables
-    h = q - 1 / q
     hbar = (q - 1) / q
     b = sp.sqrt(q ** 4 + q ** 2 + 1) / (q ** 2 + 1)
     u_ladder = b * hbar ** 2
@@ -133,14 +132,11 @@ def main() -> int:
     print(f"    Δtr_M(q)             = {dq_ser}")
     print()
 
-    # the consistent picture
+    # the consistent picture. Use SymPy's leadterm for a robust leading
+    # order (Gemini review #1622: the manual coeff loop is fragile).
     dtrM_at_1 = sp.limit(dq, q, 1)
-    dq_eps = sp.series(dq.subs(q, 1 + eps), eps, 0, 6).removeO()
-    dtrM_lead = None
-    for n in range(0, 6):
-        if sp.simplify(dq_eps.coeff(eps, n)) != 0:
-            dtrM_lead = n
-            break
+    _, dtrM_lead_pow = dq.subs(q, 1 + eps).leadterm(eps)
+    dtrM_lead = int(dtrM_lead_pow)
     u_lad_lead = 2  # u_ladder = O(ε²)
     print("  ORDER-MATCHING (the unifying statement):")
     print(f"    Δtr_M(q=1) = {dtrM_at_1}  (exact — p/n traces coincide "
