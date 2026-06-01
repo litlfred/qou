@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:46:06.671388+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T18:05:27.643935+00:00",
+  "commitSha": "e9d91e493476e2b6a3f7ed8d0b9146142f047987",
   "assertions": [
     {
       "name": "no_missing_labels",
@@ -36,13 +36,13 @@
   "description": "I5 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json with a `contentBlock` field is cross-checked against the union of all `label: \"...\"` declarations in content/**/*.ts manifests. Reports `ok` / `missing_label` / `informational_label` per field. Operationalises the 9-hit I5 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_fields_audited": 299,
-    "registered_labels_count": 2880
+    "total_fields_audited": 305,
+    "registered_labels_count": 2883
   },
   "data": {
     "by_result": {
       "informational_label": 14,
-      "ok": 242,
+      "ok": 248,
       "missing_label": 43
     },
     "rows": [
@@ -118,6 +118,11 @@
       },
       {
         "witness": "folio-assistant/computations/alpha-em-habiro-taylor-investigation.witness.json",
+        "content_block_value": "prop:em-coupling-bring-zero-mode",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/alpha-em-q-difference-fourier.witness.json",
         "content_block_value": "prop:em-coupling-bring-zero-mode",
         "result": "ok"
       },
@@ -609,6 +614,21 @@
       {
         "witness": "folio-assistant/computations/habiro-interpolate-cross-validation.witness.json",
         "content_block_value": "prop:full-pole-structure-mass-trace",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/habiro-ladder-bridge.witness.json",
+        "content_block_value": "prop:q-beta-categorical-precision-ladder",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/habiro-q-difference-fourier.witness.json",
+        "content_block_value": "prop:q-beta-categorical-precision-ladder",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/habiro-q-difference-mode-solve.witness.json",
+        "content_block_value": "prop:q-beta-categorical-precision-ladder",
         "result": "ok"
       },
       {
@@ -1197,6 +1217,11 @@
         "result": "ok"
       },
       {
+        "witness": "folio-assistant/computations/q-spectral-truncation-tower.witness.json",
+        "content_block_value": "prop:q-laplacian-spectral-tower",
+        "result": "ok"
+      },
+      {
         "witness": "folio-assistant/computations/qbeta-ck-truncation-order-analysis.witness.json",
         "content_block_value": "prop:q-beta-categorical-precision-ladder",
         "result": "ok"
@@ -1313,6 +1338,11 @@
       },
       {
         "witness": "folio-assistant/computations/qbeta-scaling-bridge-investigation.witness.json",
+        "content_block_value": "prop:q-beta-categorical-precision-ladder",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-wenzl-habiro-ansatz-probe.witness.json",
         "content_block_value": "prop:q-beta-categorical-precision-ladder",
         "result": "ok"
       },

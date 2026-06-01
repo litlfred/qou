@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:48:46.879008+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T18:08:20.784415+00:00",
+  "commitSha": "e9d91e493476e2b6a3f7ed8d0b9146142f047987",
   "assertions": [
     {
       "name": "no_hardcoded_registry_matches",
@@ -39,13 +39,13 @@
     "registry_constants_in_scope": 26,
     "relative_error_tolerance": "1e-6",
     "magnitude_window_MeV": "[0.0001, 1e6]",
-    "total_scripts_with_hits": 195,
-    "i9_violation_count": 180,
+    "total_scripts_with_hits": 196,
+    "i9_violation_count": 181,
     "ok_acknowledged_anchor_count": 15
   },
   "data": {
     "by_result": {
-      "i9_violation": 180,
+      "i9_violation": 181,
       "ok_acknowledged_anchor": 15
     },
     "rows": [
@@ -5708,6 +5708,23 @@
             "registry_value": "2.224566",
             "rel_err": "3.147e-8",
             "snippet": "B_D_AME_MEV = mp.mpf(\"2.22456607\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/deuteron_binding_plancherel_channel.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 31,
+            "literal": "1875.61294257",
+            "matches_constant": "M_D_MEV_VALIDATION",
+            "registry_value": "1875.61294257",
+            "rel_err": "0.0",
+            "snippet": "M_D_MEV = mp.mpf(\"1875.61294257\")"
           }
         ],
         "has_class_a_banner": false,
