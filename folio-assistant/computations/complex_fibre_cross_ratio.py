@@ -191,7 +191,9 @@ def borromean_volume_canonical():
 # the merged predecessors. These are REAL scalars: D(V̂_i)=0.
 
 
-def _std_vhat(chain, q, qi, z, h):
+def _std_vhat(chain, _q, _qi, z, h):
+    # _q, _qi unused: the std-channel V̂ recurrence is q-independent (real
+    # Markov trace) — exactly the q-blindness the audit reports.
     a, b = mp.mpf(0), mp.mpf(1)
     for c, d in chain:
         c, d = mp.mpf(c), mp.mpf(d)
@@ -217,9 +219,11 @@ def nucleon_chains(quarks, h):
     return g0, g1
 
 
-def vhat_factors(quarks, q, qi, z, h):
+def vhat_factors(quarks, _q, _qi, z, h):
+    # _q, _qi forwarded only (q-independent recurrence); kept in the signature
+    # so call sites read uniformly with the (q, qi, z, h) substrate tuple.
     g0, g1 = nucleon_chains(quarks, h)
-    return [_std_vhat(g0, q, qi, z, h), _std_vhat(g1, q, qi, z, h)]
+    return [_std_vhat(g0, _q, _qi, z, h), _std_vhat(g1, _q, _qi, z, h)]
 
 
 # ── Main ──────────────────────────────────────────────────────────────
