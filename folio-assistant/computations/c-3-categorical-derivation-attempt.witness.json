@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-31T20:12:01.135214+00:00",
-  "commitSha": "c98033d6355e45f3dcc8be0e9099c26baf49ac0e",
+  "computedAt": "2026-06-01T04:56:12.493856+00:00",
+  "commitSha": "eeeebf762097f802c1d6fa1e32f4aeec6d7c6d15",
   "assertions": [
     {
       "name": "c_3_taylor_exact_promotion",
@@ -14,19 +14,21 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "c-3-categorical-derivation-attempt",
   "scriptFile": "c_3_categorical_derivation_attempt.py",
   "scriptHash": "a1f68dd1afbf",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "a900e6f647a80c6ab17e279bb987cca266e7c99a",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -40,7 +42,7 @@
       "u_muon_pin": "0.008517236340043947582414571",
       "b_mp_pin_recomputed": "0.8675840669652511556511629",
       "b_mp_pin_stored": "0.8675840669652511556511629",
-      "b_match_ppm": 0.0
+      "b_match_ppm": 2.4130863612097237e-60
     },
     "empirical_c3": {
       "muon_pin": "-2.0097",
