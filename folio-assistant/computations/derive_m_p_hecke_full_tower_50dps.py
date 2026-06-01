@@ -224,21 +224,44 @@ def _per_gen_results(w: dict) -> list:
 def _t1_t2_t3_from_per_gen(
     per_gen_witness: dict, atom: str,
     q0: mp.mpf, qi: mp.mpf, z: mp.mpf,
+    channel: str = "full",
 ) -> tuple[mp.mpf, mp.mpf, mp.mpf, list[mp.mpf]]:
-    """Extract T1 (descended) + compute T2 + T3 + raw V̂_i^full list for ``atom``.
+    """Extract T1 (descended) + compute T2 + T3 + raw V̂_i list for ``atom``.
 
-    T1 (descended) = |∏ V̂_i^full| is the GS-NF / Coxeter-image product.
+    T1 (descended) = |∏ V̂_i| is the GS-NF / Coxeter-image product.
     T2 and T3 are computed locally from `wedderburn_vols` via the
     canonical Li_2^q tower (centralised in ``_li_2_q_util``) since
     `terms_2_3_atom_per_gen_mpfr_50dps.py` on `main` (post-2026-05-17
     rebase) no longer emits pre-summed scalars.  Constants ``q0, qi, z``
     are passed in from main (loaded once via ``load_q_50dps`` — gemini
     #687 review: avoid per-call filesystem reads).
+
+    ``channel`` selects which per-generator Wedderburn scalar feeds the
+    tower (see CHANNEL-SELECTION NOTE below):
+
+    - ``"full"`` (production default, OWNER-GATED): the W-weighted
+      3-channel Wedderburn average ``w_sym·λ_sym + w_std·V_std +
+      w_alt·λ_alt``.  This is what the tower has historically consumed.
+    - ``"std"`` (DERIVED, falsification-verified): the genuine
+      standard-channel Hoefsmit Markov trace ``V̂_i = z·a_i + b_i`` per
+      [`thm:markov-trace-product`].  ``∏V̂_i^std = tr_M`` to 4e-6 (audit
+      `docs/audits/2026-06-01-vhat-per-crossing-transfer-chain.md`).
+
+    CHANNEL-SELECTION NOTE (2026-06-01, PR vhat-std-channel-fix).
+    The merged item-2 audit (verdict A + RED finding) showed the brane
+    tower consumes the ``"full"`` 3-channel average, which is NOT
+    ``thm:markov-trace-product``'s per-generator factor and whose
+    product ≠ tr_M (proton ∏ = 0.960 vs genuine tr_M = 1.065).  The
+    genuine derived factor is the ``"std"`` channel.  This switch is
+    OWNER-GATED: ``channel="full"`` remains the default until the owner
+    reviews the m_p delta; ``channel="std"`` is the derived path.
     """
+    if channel not in ("full", "std"):
+        raise ValueError(f"channel must be 'full' or 'std', got {channel!r}")
     for r in _per_gen_results(per_gen_witness):
         if r.get("atom") != atom:
             continue
-        vols = [mp.mpf(v["full"]) for v in r["wedderburn_vols"]]
+        vols = [mp.mpf(v[channel]) for v in r["wedderburn_vols"]]
         desc = mp.mpf(1)
         for v in vols:
             desc *= v
@@ -252,6 +275,7 @@ def derive_full_tower(
     atom: str, per_gen_witness: dict, *,
     Z: int = 0, N: int = 0, knot_type: str = "none",
     q0: mp.mpf | None = None, qi: mp.mpf | None = None, z: mp.mpf | None = None,
+    channel: str = "full",
 ) -> dict:
     """Sum T1 + T2 + T3 + T4 + T5 for ``atom`` at MPFR @ 50 dps with
     A derived categorically from the GS normal form.
@@ -265,7 +289,7 @@ def derive_full_tower(
     A = _A_categorical(atom)
     if q0 is None:
         q0, qi, z = load_q_50dps()  # back-compat fallback
-    t1, t2, t3, vols = _t1_t2_t3_from_per_gen(per_gen_witness, atom, q0, qi, z)
+    t1, t2, t3, vols = _t1_t2_t3_from_per_gen(per_gen_witness, atom, q0, qi, z, channel=channel)
     t4 = term_4_frobenius_mp(A)
     t5_cat = _t5_cat_units_for(A, Z, N)
     # T6 (Habiro residue at non-zero roots-of-unity) — KEY CONVENTION
@@ -287,7 +311,7 @@ def derive_full_tower(
     except (FileNotFoundError, KeyError):
         t6_cat = mp.mpf(0)
     m_hecke = t1 + t2 + t3 + t4 + t5_cat + t6_cat
-    return {
+    result = {
         "atom": atom,
         "A_categorical_max_grade": A,
         "A_derivation": "max filtration grade of GS normal form (gb_filtration_jet_tracker.reduce_braid)",
@@ -311,9 +335,32 @@ def derive_full_tower(
         "m_hecke_50dps":      str(m_hecke),
         "wedderburn_vols_full_50dps": [str(v) for v in vols],
     }
+    # Owner-gated: only record the channel for non-default ("std") runs so
+    # the production witness (channel="full") stays byte-identical.
+    if channel != "full":
+        result["vhat_channel"] = channel
+    return result
 
 
 def main() -> int:
+    # Channel selection is OWNER-GATED: default stays "full" so the
+    # production witness `proton-mass-full-tower-50dps.witness.json` is
+    # unchanged.  Pass `--channel std` to run the derived
+    # thm:markov-trace-product factor (see CHANNEL-SELECTION NOTE in
+    # `_t1_t2_t3_from_per_gen`).  The std-vs-full comparison witness is
+    # emitted by `vhat_std_vs_full_tower_compare.py`.
+    channel = "full"
+    if "--channel" in sys.argv:
+        i = sys.argv.index("--channel")
+        if i + 1 >= len(sys.argv):
+            print("Error: --channel requires an argument ('full' or 'std')",
+                  file=sys.stderr)
+            return 1
+        channel = sys.argv[i + 1]
+        if channel not in ("full", "std"):
+            print(f"Error: --channel must be 'full' or 'std', got {channel!r}",
+                  file=sys.stderr)
+            return 1
     # P31 / centralization: per_gen_w is loaded here and the upstream
     # hash is recorded via builder.add_upstream below — no duplicate
     # filesystem read.
@@ -322,15 +369,16 @@ def main() -> int:
     q0, qi, z = load_q_50dps()
     print(f"\n  MPFR @ {mp.mp.dps} dps")
     print(f"  Source: {PER_GEN_WITNESS.name}")
+    print(f"  V̂ channel: {channel}  (production default = 'full', owner-gated)")
 
     # A is derived per-particle from GS normal form (see derive_full_tower).
-    p = derive_full_tower("proton",   per_gen_w, Z=1, N=0, knot_type="none", q0=q0, qi=qi, z=z)
-    n = derive_full_tower("neutron",  per_gen_w, Z=0, N=1, knot_type="none", q0=q0, qi=qi, z=z)
+    p = derive_full_tower("proton",   per_gen_w, Z=1, N=0, knot_type="none", q0=q0, qi=qi, z=z, channel=channel)
+    n = derive_full_tower("neutron",  per_gen_w, Z=0, N=1, knot_type="none", q0=q0, qi=qi, z=z, channel=channel)
     # Schema regression (post-2026-05-17 rebase): main's terms_2_3 producer
     # dropped the electron atom.  Skip the electron derivation rather than
     # KeyError; the proton/neutron rows are the substantive output.
     try:
-        e = derive_full_tower("electron", per_gen_w, Z=0, N=0, knot_type="none", q0=q0, qi=qi, z=z)
+        e = derive_full_tower("electron", per_gen_w, Z=0, N=0, knot_type="none", q0=q0, qi=qi, z=z, channel=channel)
     except KeyError:
         print("  NOTE: electron not in per-gen witness — skipping (CAL-1 anchor)")
         e = {"m_hecke_50dps": str(M_E_MEV)}  # fall back to CAL-1 anchor
@@ -362,6 +410,15 @@ def main() -> int:
     print(f"  CODATA m_p     = {mp.nstr(M_P_MEV_CODATA, 14)}")
     print(f"  residual       = {mp.nstr(rel_diff_p * 100, 6)} %  "
           f"({mp.nstr(rel_diff_p * mp.mpf('1e6'), 6)} ppm)")
+
+    if channel != "full":
+        # OWNER-GATED: do NOT overwrite the production witness when
+        # running a non-default channel (e.g. `--channel std`).  The
+        # std-vs-full comparison is emitted by the dedicated script
+        # `vhat_std_vs_full_tower_compare.py`.
+        print(f"\n  channel={channel!r} ≠ 'full' — skipping production witness write "
+              f"(owner-gated). Use vhat_std_vs_full_tower_compare.py for the std witness.")
+        return 0
 
     builder = WitnessBuilder("proton-mass-full-tower-50dps", engine="mpmath")
     builder.set_description(
