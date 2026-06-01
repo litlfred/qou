@@ -1,5 +1,12 @@
 # Deprecated witnesses and producing scripts
 
+> **Note (2026-06-01):** `hecke_core_legacy.py` was moved out of this
+> directory because 9 live importers still depend on its symbols
+> (5 in `folio-assistant/computations/` + 4 in `tools/pyhecke/python/
+> pyhecke/`). It now sits at `../hecke_core_legacy.py` with a
+> `DEPRECATION-CANDIDATE` banner, matching the convention used by the
+> 23 other still-live deprecated scripts mentioned below.
+
 This directory holds `*.witness.json` files that are **dead exploratory
 probes** from earlier research passes:
 

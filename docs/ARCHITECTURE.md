@@ -83,7 +83,7 @@ The package ecosystem is layered but **mid-migration**. Today's import counts (f
 | Package | Importers in compute layer | Status |
 |---|---:|---|
 | [`qou-substrate`](../tools/qou-substrate/) | 7 | wired — substrate trio, the foundation |
-| [`pyhecke`](../tools/pyhecke/) | 18 | wired — primary Hecke / Gram surface |
+| [`pyhecke`](../tools/pyhecke/) | 19 | wired — primary Hecke / Gram surface |
 | [`pyhecke-native`](../tools/pyhecke-native/) | 15 | wired — Rust-accelerated Markov trace |
 | [`qou-mass`](../qou-mass/) | **0** | alpha, not yet adopted |
 | [`witness-schema`](../tools/witness-schema/) | **0** | alpha, not yet adopted |
@@ -190,7 +190,7 @@ The **folio deployment** (`deploy/`) is a separate Docker-based hosting for the 
 |---|---|
 | **Substrate** | The fundamental parameter `q_0 ≈ 1.1097` from which all observables derive |
 | **Canonical surface** | The 11-step derivation chain (cheat sheet) — pyhecke owns 100% of this |
-| **Exploratory surface** | Phase-5 LP-dual + Plancherel-trace cluster — lives in `_deprecated/hecke_core_legacy.py` |
+| **Exploratory surface** | Phase-5 LP-dual + Plancherel-trace cluster — lives in `folio-assistant/computations/hecke_core_legacy.py` with a `DEPRECATION-CANDIDATE` banner (moved out of `_deprecated/` 2026-06-01 because 9 live importers still depend on it). |
 | **L1 / L2 precision** | L1 = compute-stable to 1 ppb; L2 = per-observable σ_pred ≤ σ_exp / 100 |
 | **CAL-2 floor** | The CODATA-2022 experimental precision floor (~780 ppb on m_p) |
 | **NF** | Normal Form (in the H₃(q) Gröbner-Shirshov reduction) |

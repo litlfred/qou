@@ -13,7 +13,7 @@ from hecke_core import (  # type: ignore[import-not-found]
     nf_net,
     TR_M,
 )
-from _deprecated.hecke_core_legacy import (  # type: ignore[import-not-found]
+from hecke_core_legacy import (  # type: ignore[import-not-found]
     atom_character_raw,
 )
 

@@ -35,7 +35,7 @@ from hecke_core import (
     build_nucleon_nf,
     check_frobenius,
 )
-from _deprecated.hecke_core_legacy import (
+from hecke_core_legacy import (
     binding_energy,
     classify_nuclear_knot,
 )

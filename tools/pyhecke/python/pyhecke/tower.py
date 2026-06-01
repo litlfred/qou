@@ -16,7 +16,7 @@ from hecke_core import (  # type: ignore[import-not-found]
     atom_gen_chains,
     atom_V_full,
 )
-from _deprecated.hecke_core_legacy import (  # type: ignore[import-not-found]
+from hecke_core_legacy import (  # type: ignore[import-not-found]
     knot_factor,
 )
 

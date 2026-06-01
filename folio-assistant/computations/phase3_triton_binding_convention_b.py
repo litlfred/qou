@@ -76,7 +76,7 @@ from hecke_core import E_0_CALIBRATION_MEV  # noqa: E402
 # Canonical binding entries are `binding_canonical.binding_canonical`
 # or `mass_formula_6term_mpfr_50dps.py`.  This convention-B comparison
 # script intentionally probes the legacy path; do not promote.
-from _deprecated.hecke_core_legacy import (  # noqa: E402
+from hecke_core_legacy import (  # noqa: E402
     binding_from_frobenius_pairing,
 )
 from derivation_chain import E_0_CONVENTIONS  # noqa: E402

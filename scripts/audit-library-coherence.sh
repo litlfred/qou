@@ -16,7 +16,7 @@
 # anchored regex on `^(import|from) <pkg>([ .]|$)` — excludes inline
 # mentions in comments / strings / other identifiers):
 #   qou-substrate    : 7
-#   pyhecke          : 18
+#   pyhecke          : 19
 #   pyhecke-native   : 15
 #   qou-mass         : 0  (alpha, external-researcher facade)
 #   witness-schema   : 0  (alpha, cross-language interchange)

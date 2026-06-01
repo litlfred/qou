@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from . import _legacy  # noqa: F401
 
-from _deprecated.hecke_core_legacy import (  # type: ignore[import-not-found]
+from hecke_core_legacy import (  # type: ignore[import-not-found]
     lp_shadow_price,
     q_laplacian_eigenvalue,
     q_resolvent_weight,
