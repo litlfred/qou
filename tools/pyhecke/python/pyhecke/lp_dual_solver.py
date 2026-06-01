@@ -28,6 +28,7 @@ computation cannot be silently omitted again.
 from __future__ import annotations
 
 import json
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
@@ -295,10 +296,19 @@ def solve_operator_selection_lp(
                 t, G, n_target, M_bound=M_bound, dual_tol=dual_tol,
                 prec_bits=prec_bits, clarabel_bin=clarabel_bin,
             )
-        except (ImportError, FileNotFoundError):
+        except (ImportError, FileNotFoundError) as _e:
             if backend == "clarabel":
                 raise
-            # clarabel unavailable → fall through to scipy below
+            # clarabel unavailable. In strict mode (QOU_REQUIRE_CLARABEL=1)
+            # do NOT silently downgrade to scipy float64 — raise so the
+            # missing MPFR binary surfaces instead of producing low-precision
+            # duals. Otherwise fall through to scipy.
+            if os.environ.get("QOU_REQUIRE_CLARABEL") == "1":
+                raise RuntimeError(
+                    "QOU_REQUIRE_CLARABEL=1 but the clarabel-MPFR binary is "
+                    "unavailable; refusing to fall back to scipy float64. "
+                    f"Build it (see _find_clarabel_lp_bin). Cause: {_e!r}"
+                ) from _e
         else:
             # Return clarabel when forced, or in auto mode when it actually
             # solved; otherwise (auto + infeasible/error) fall back to scipy.
@@ -546,10 +556,17 @@ def solve_psd_operator_selection_sdp(
             _res = _solve_psd_via_clarabel_lp(
                 t, G, n_target, prec_bits=prec_bits, clarabel_bin=clarabel_bin,
             )
-        except (ImportError, FileNotFoundError):
+        except (ImportError, FileNotFoundError) as _e:
             if backend == "clarabel":
                 raise
-            # clarabel unavailable → fall through to cvxpy below
+            # clarabel unavailable. Strict mode refuses the cvxpy float64
+            # downgrade so the missing MPFR binary surfaces.
+            if os.environ.get("QOU_REQUIRE_CLARABEL") == "1":
+                raise RuntimeError(
+                    "QOU_REQUIRE_CLARABEL=1 but the clarabel-MPFR binary is "
+                    "unavailable; refusing to fall back to cvxpy float64. "
+                    f"Build it (see _find_clarabel_lp_bin). Cause: {_e!r}"
+                ) from _e
         else:
             # Return clarabel when forced, or in auto mode when it solved;
             # otherwise (auto + infeasible/error) fall back to cvxpy.
