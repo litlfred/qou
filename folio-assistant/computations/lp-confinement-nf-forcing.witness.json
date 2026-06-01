@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:40:05.224818+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:15:32.073114+00:00",
+  "commitSha": "7d073826232a56536a19d92703c41ab500e84987",
   "assertions": [
     {
       "name": "all_compounds_feasible",
@@ -25,16 +25,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2612,
+  "durationMs": 2144,
   "computation": "lp-confinement-nf-forcing",
   "scriptFile": "lp_confinement_nf_forcing.py",
   "scriptHash": "3fcac72c6e1d",
   "scriptCommitSha": "2c03810cdff85622ee6c1e7dfaee21813d29e504",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

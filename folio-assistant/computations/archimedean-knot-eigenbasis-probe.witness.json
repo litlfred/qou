@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T01:29:53.756303+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:05:25.426391+00:00",
+  "commitSha": "7d073826232a56536a19d92703c41ab500e84987",
   "assertions": [
     {
       "name": "braiding_quadratic_matches_c_sq_minus_h_c_minus_1",
@@ -33,16 +33,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 24,
   "computation": "archimedean-knot-eigenbasis-probe",
   "scriptFile": "archimedean_knot_eigenbasis_probe.py",
   "scriptHash": "dd842d699c6f",
   "scriptCommitSha": "5a94db74bc38829390149c5991c136d3f5c648d9",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

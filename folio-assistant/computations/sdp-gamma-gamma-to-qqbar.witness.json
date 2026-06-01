@@ -1,20 +1,20 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:44:47.340482+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:20:36.203549+00:00",
+  "commitSha": "7d073826232a56536a19d92703c41ab500e84987",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 17,
   "computation": "sdp-gamma-gamma-to-qqbar",
   "scriptFile": "sdp_gamma_gamma_to_qqbar.py",
   "scriptHash": "d1cb1bb43058",
   "scriptCommitSha": "136ea5c94c5f636cd95a605a1f4fa9a657ea0217",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -28,7 +28,7 @@
   "parameters": {
     "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
     "m_e_MeV": 0.51099895,
-    "mpmath_dps": 65
+    "mpmath_dps": 70
   },
   "data": {
     "h2_breit_wheeler_demo": {

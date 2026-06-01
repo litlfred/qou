@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:29:50.434559+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:05:22.228497+00:00",
+  "commitSha": "7d073826232a56536a19d92703c41ab500e84987",
   "assertions": [
     {
       "name": "pslq_executed_at_maxcoeff_50",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 337,
+  "durationMs": 325,
   "computation": "alpha-em-4pi-q-hyperbolic-b3-pslq",
   "scriptFile": "alpha_em_4pi_q_hyperbolic_b3_pslq.py",
   "scriptHash": "8a90c069f802",
   "scriptCommitSha": "c418cb2c22d88cb007fd9b34027f368254e7323c",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -274,6 +274,6 @@
       "maxcoeff": 50,
       "maxsteps": 2000
     },
-    "relation_residual_abs": "0.0"
+    "relation_residual_abs": "9.05567907882671236750911929089e-72"
   }
 }
