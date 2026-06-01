@@ -74,20 +74,44 @@ def hoefsmitMatrix (b : R) (h : b^2 = hoefsmit_b_sq q) :
 
 ## Migration order (proposed)
 
-1. **Phase 1** (this PR): Introduce the generic-R variants ALONGSIDE the
-   existing `Real`-only definitions; mark the latter as
-   `@[deprecated]`. No callsite breakage. Validates the pattern works
-   under Lake build.
+1. **Phase 1** (this PR — DONE for all 4 blocks): Introduce the
+   generic-R variants ALONGSIDE the existing `Real`-only definitions;
+   mark the latter as `@[deprecated]`. No callsite breakage.
 
-2. **Phase 2** (follow-up commits on this branch, one per file):
-   migrate the Markov-Jones parameter usages — note: each file
-   currently has its OWN local definition of the `1 / (Real.sqrt q +
-   (Real.sqrt q)⁻¹)` formula, so each is an independent migration:
-   - `markov-axioms-primitive` — migrate `markovZax_legacy` callsites
-     in the same file (`MarkovTraceAxioms`, `markov_iterated_stab`,
-     `disjoint_product_factorisation`,
-     `MarkovTraceAxioms_implies_disjoint_stabilisation`) to the
-     generic `markovZax (u : R)` form.
+   Per-block scaffold status:
+   - `markov-axioms-primitive.lean` — DONE: `markovZax (u : R)` /
+     `markovZax_real q hq` / `markovZax_legacy` (deprecated).
+   - `braid-group-n-strand.lean` — DONE: `markovZN (u : R)` /
+     `markovZN_real q hq` / `markovZN_legacy` (deprecated); in-file
+     callsite at `MarkovTraceN.tau_stab_factor_eq_z` routed to
+     `markovZN_legacy`; downstream callsite in
+     `markov-trace-inductive-limit.lean` also routed to `_legacy`.
+   - `hoefsmit-V21-cos-symmetrization.lean` — DONE: `markovZ (u : R)`
+     + `markovZ_legacy` (deprecated); `hoefsmit_sigma1_gen d1 d2 b`
+     (Tier 2 matrix form) + `hoefsmit_sigma1_legacy` (deprecated);
+     existing `hoefsmit_sigma1` kept as a backward-compat alias to
+     `hoefsmit_sigma1_legacy` so the existing theorems compile
+     unchanged (with deprecation warnings).
+   - `chi-v21-hoefsmit-matrix-derivation.lean` — DONE: `sigma1_v21_gen
+     d1 d2 b` (Tier 2 matrix form) + `sigma1_v21_legacy` (deprecated);
+     existing `sigma1_v21` kept as a backward-compat alias.
+
+2. **Phase 2** (partial — this PR + remaining follow-ups):
+   migrate callsites to the generic forms, file-by-file.
+
+   Done in this PR:
+   - `markov-axioms-primitive.lean` — generic-R variants
+     `markov_iterated_stab_gen` and `disjoint_product_factorisation_gen`
+     added alongside the legacy archimedean variants. Legacy variants
+     now route through the generic forms (so the algebraic content
+     lives at the generic level).
+
+   Remaining for follow-up PRs:
+   - `markov-axioms-primitive.lean` — refactor `MarkovTraceAxioms`
+     class to take `{R : Type*} [Field R] (u : R)` instead of `(q :
+     ℝ)`; ripple-update downstream instances in
+     `markov-trace-inductive-limit.lean` and elsewhere. Larger Lean
+     work — best done on a dedicated follow-up branch.
    - `braid-group-n-strand` — apply the same Tier 2 scaffold pattern
      to the locally-defined `markovZN` (rename to `markovZN_legacy`,
      introduce generic `markovZN (u : R)` and `markovZN_real`).

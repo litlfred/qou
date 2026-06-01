@@ -43,10 +43,35 @@ noncomputable def hoefsmit_b_sq (q : ℝ) : ℝ := hoefsmit_d1 q * hoefsmit_d2 q
 noncomputable def hoefsmit_sigma0 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![q, 0; 0, -q⁻¹]
 
-/-- The Hoefsmit ρ_(2,1)(σ_1) 2x2 matrix — off-diagonal. -/
-noncomputable def hoefsmit_sigma1 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+/-- Hoefsmit ρ_(2,1)(σ_1) 2x2 matrix — **Tier 2 generic-R form**.
+    The off-diagonal entry `b` is taken as an abstract square-root of
+    `hoefsmit_b_sq q`; downstream consumers supply the witness either
+    formally (`u² = q` style adjoin) or archimedeanly (`Real.sqrt` with
+    a positivity hypothesis on `hoefsmit_b_sq q`).
+
+    Mathematically: `b² = hoefsmit_b_sq q` is the Hecke quadratic
+    constraint; this constructor leaves the choice of square-root
+    representative to the caller. -/
+def hoefsmit_sigma1_gen {R : Type*} [Field R]
+    (d1 d2 b : R) : Matrix (Fin 2) (Fin 2) R :=
+  !![d1, b; b, d2]
+
+/-- **Legacy archimedean form** of `hoefsmit_sigma1` — instantiates the
+    off-diagonal as `Real.sqrt (hoefsmit_b_sq q)` without an explicit
+    `0 ≤ hoefsmit_b_sq q` hypothesis. Kept for backward compatibility
+    with the existing theorems in this file; new code should use the
+    generic `hoefsmit_sigma1_gen` with an explicit square-root witness. -/
+@[deprecated "Migrate to the generic `hoefsmit_sigma1_gen d1 d2 b` with an explicit `b² = hoefsmit_b_sq q` hypothesis (Tier 2), or a future `hoefsmit_sigma1_real q hq` archimedean shim carrying `0 ≤ hoefsmit_b_sq q` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+noncomputable def hoefsmit_sigma1_legacy (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![hoefsmit_d1 q, Real.sqrt (hoefsmit_b_sq q);
      Real.sqrt (hoefsmit_b_sq q), hoefsmit_d2 q]
+
+/-- Backward-compatibility alias — `hoefsmit_sigma1` is the legacy form.
+    Phase 2 migrates the file's theorems to use `hoefsmit_sigma1_gen`
+    directly; until then, this alias keeps existing references compiling. -/
+@[deprecated "Use `hoefsmit_sigma1_legacy` explicitly (Phase 1), or migrate to `hoefsmit_sigma1_gen` (Phase 2)."]
+noncomputable def hoefsmit_sigma1 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  hoefsmit_sigma1_legacy q
 
 /-! ## Hecke quadratic identity on σ_0
 
@@ -156,14 +181,25 @@ This corresponds to the spectral content of `prop:beta-decay-transfer-matrix`:
 the transfer matrix `M_β` on `V_(2,1)` has eigenvalues `e^{±iα}` with
 `α = (z - 1) h / 2`. We axiomatise this as a class field. -/
 
-/-- Markov-Jones parameter (local definition to avoid imports). -/
-noncomputable def markovZ (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+/-- Markov-Jones parameter (Tier 2 / generic-R form):
+    `z = u / (u² + 1) = 1 / (u + u⁻¹)`. -/
+def markovZ {R : Type*} [Field R] (u : R) : R := u / (u^2 + 1)
+
+/-- Archimedean shim of `markovZ` with explicit positivity. -/
+noncomputable def markovZ_real (q : ℝ) (_hq : 0 < q) : ℝ :=
+  markovZ (Real.sqrt q)
+
+/-- **Legacy unsafe form** of `markovZ` — `Real.sqrt q` without the
+    `0 < q` hypothesis. Use `markovZ (u : R)` (Tier 2) or `markovZ_real
+    q hq` (Tier 5) in new code. -/
+@[deprecated "Migrate to (a) the generic `markovZ (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZ_real q hq` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+noncomputable def markovZ_legacy (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- Quantum-integer differential. -/
 noncomputable def heckeH (q : ℝ) : ℝ := q - q⁻¹
 
 /-- The single-wrap eigenphase on V_(2,1): `α = (z - 1) h / 2`. -/
-noncomputable def eigenphase (q : ℝ) : ℝ := (markovZ q - 1) * heckeH q / 2
+noncomputable def eigenphase (q : ℝ) : ℝ := (markovZ_legacy q - 1) * heckeH q / 2
 
 /-- **Hoefsmit V_(2,1) eigenphase axiomatisation**: the transfer-matrix
     spectrum on V_(2,1) is `{e^{+i·eigenphase q}, e^{-i·eigenphase q}}`.

@@ -155,12 +155,29 @@ open Matrix in
 noncomputable def sigma0_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![q, 0; 0, -q⁻¹]
 
+/-- The Hoefsmit σ_1 matrix on V_(2,1) — **Tier 2 generic-R form**.
+    The off-diagonal entry `b` is taken as an abstract square-root of
+    `hoefsmit_v21_b_sq q`; downstream consumers supply the witness either
+    formally (`u² = q` style adjoin) or archimedeanly. -/
+def sigma1_v21_gen {R : Type*} [Field R]
+    (d1 d2 b : R) : Matrix (Fin 2) (Fin 2) R :=
+  !![d1, b; b, d2]
+
 open Matrix in
-/-- The Hoefsmit σ_1 matrix on V_(2,1): off-diagonal with
-    `d_1 = q³/(q²+1)`, `d_2 = -q⁻¹/(q²+1)`, `b = √(b²)`. -/
-noncomputable def sigma1_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+/-- **Legacy archimedean form** of `sigma1_v21` — instantiates the
+    off-diagonal as `Real.sqrt (hoefsmit_v21_b_sq q)` without an explicit
+    `0 ≤ hoefsmit_v21_b_sq q` hypothesis. Use `sigma1_v21_gen` in new
+    code with an explicit square-root witness. -/
+@[deprecated "Migrate to the generic `sigma1_v21_gen d1 d2 b` with an explicit `b² = hoefsmit_v21_b_sq q` hypothesis (Tier 2), or a future archimedean shim carrying `0 ≤ hoefsmit_v21_b_sq q` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+noncomputable def sigma1_v21_legacy (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![hoefsmit_v21_d1 q, Real.sqrt (hoefsmit_v21_b_sq q);
      Real.sqrt (hoefsmit_v21_b_sq q), hoefsmit_v21_d2 q]
+
+/-- Backward-compatibility alias — `sigma1_v21` is the legacy form.
+    Phase 2 migrates this file's downstream uses to `sigma1_v21_gen`. -/
+@[deprecated "Use `sigma1_v21_legacy` explicitly (Phase 1), or migrate to `sigma1_v21_gen` (Phase 2)."]
+noncomputable def sigma1_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  sigma1_v21_legacy q
 
 /-- Typed-crossing variant. -/
 inductive TypedCrossingV21 : Type
