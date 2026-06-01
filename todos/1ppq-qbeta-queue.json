@@ -100,6 +100,18 @@
      "no_fitted_form_proposed": true,
      "audit": "docs/audits/2026-06-01-habiro-q-difference-fourier-spectrum.md",
      "probe": "folio-assistant/computations/habiro_q_difference_fourier.py"
+    },
+    {
+     "date": "2026-06-01",
+     "branch": "claude/habiro-q-difference-fourier-2026-06-01",
+     "pr": 1622,
+     "attack": "q-difference mode-by-mode solve (partial fraction = Fourier modes)",
+     "outcome": "spectral solve (exact; bridge to c_k still open)",
+     "finding": "Partial-fraction decomposition of Δtr_M(u=√q) = the mode-by-mode solution of (1−σ_q)F=δ(q;q)_∞. THREE EXACT SECTORS (recon A+B+C=Δtr_M exact): (A) entire poly −u⁴/4−u³/2+u/2−1/2; (B) ζ_4 cyclotomic 1/(u²+1), residues ∓i/2 = WRT level-4 modular phase; (C) u=0 Laurent tower u^{-1},u^{-3},u^{-4}. Bar-even content of the modular sector B = EXACTLY 1/2 (clean constant; charge-conj-symmetric physical phase).",
+     "open_bridge": "change of variable u=√q ↦ u_ladder=b·ℏ² to read off c_k — now a defined computation, not a search",
+     "no_fitted_form_proposed": true,
+     "audit": "docs/audits/2026-06-01-habiro-q-difference-mode-solve.md",
+     "probe": "folio-assistant/computations/habiro_q_difference_mode_solve.py"
     }
    ]
   }
