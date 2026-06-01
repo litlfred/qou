@@ -23,7 +23,7 @@ Wenzl-annihilator-forced Δa_m interference.
 
 -- Ref: [wenzl1987] Hans Wenzl, "On the structure of Brauer's centralizer
 --      algebras", Annals of Math. 128 (1988), 173-193.
--- Ref: [washington-cyclotomic] Lawrence Washington, "Introduction to
+-- Ref: [washington1997] Lawrence Washington, "Introduction to
 --      Cyclotomic Fields", Springer GTM 83, 1997. Chapter 2.
 -- Ref: [jones1987] Vaughan Jones, "Hecke algebra representations of
 --      braid groups and link polynomials", Annals of Math. 126 (1987),
@@ -50,7 +50,7 @@ theorem zeta8_is_primitive_root : IsPrimitiveRoot zeta8 8 := by
   -- Use Mathlib's `Complex.isPrimitiveRoot_exp` for `e^(2πi/n)`.
   -- Note: `e^(iπ/4) = e^(2πi/8)` so this is the canonical primitive
   -- 8th root via the standard exponential identity.
-  -- Ref: [washington-cyclotomic] §2.1.
+  -- Ref: [washington1997] §2.1.
   sorry
 
 /-- The q-Pochhammer symbol `(q; q)_m = Π_{k=1..m} (1 − q^k)`. -/
@@ -71,7 +71,7 @@ noncomputable def qPoch (q : ℂ) : ℕ → ℂ
     `M = 7` produces the integer normalisation `8` in the relation
     `Δa_7(ζ_8) = −S_6(ζ_8) / 8`. -/
 theorem qPoch_zeta8_seven_eq_eight : qPoch zeta8 7 = 8 := by
-  -- Ref: [washington-cyclotomic] §2.1, Theorem 2.1 (cyclotomic
+  -- Ref: [washington1997] §2.1, Theorem 2.1 (cyclotomic
   -- evaluations at roots of unity).
   -- Standard cyclotomic identity:
   --   ∏_{k=1}^{n−1}(1 − ζ_n^k) = n  for n ∈ ℕ_{≥1} and ζ_n primitive.
