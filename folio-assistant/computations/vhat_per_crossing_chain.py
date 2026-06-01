@@ -248,6 +248,14 @@ def main() -> int:
         "scalar_vs_matrix_all_agree": all_agree,
         "production_is_genuine_seminormal": prod_is_genuine,
         "production_max_rel_pct_vs_genuine": max_rel,
+        "production_consumer_trace": {
+            "note": "terms_2_3_atom_per_gen_mpfr_50dps.atom_per_generator_volumes_mpfr "
+                    "computes BOTH the genuine std channel (Vs = z·a+b, line 246) "
+                    "AND the W-weighted 3-channel full (Vf, line 247). The genuine "
+                    "V̂_i = z·a+b IS production's 'std' field; the brane tower "
+                    "(_li_2_q_util.compute_t2_t3_from_vols) consumes the 'full' field.",
+            "genuine_equals_production_std_channel": True,
+        },
         "pn_signal": {
             "gen0_proton": pg0, "gen0_neutron": ng0, "gen0_rel_pct": d0,
             "gen1_proton": pg1, "gen1_neutron": ng1, "gen1_rel_pct": d1,
