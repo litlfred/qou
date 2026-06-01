@@ -32,10 +32,52 @@ LaTeX label: `rem:markov-axioms-primitive` (helper Lean infrastructure).
 
 namespace QOU.BraidKnot
 
-/-! ## Primitive Markov-trace axiomatisation -/
+/-! ## Primitive Markov-trace axiomatisation
 
-/-- Markov-Jones parameter. -/
-noncomputable def markovZax (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+### Generic-R primary definition (Tier 2 formal adjoin)
+
+The Markov-Jones parameter `markovZax` is naturally a function of the
+formal square root `u = √q`. Over any field `R` carrying an element
+`u` with `u² = q` (the formal adjoin `R[X]/(X² − q)` realises this
+universally), the parameter has the closed form
+`z = u / (u² + 1) = 1 / (u + u⁻¹)`.
+
+The archimedean specialisation `markovZax_real (q : ℝ) (hq : 0 < q)`
+instantiates `u := Real.sqrt q` and recovers the original real-valued
+formula. See [`docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md`](../../../docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md)
+for the migration roadmap and Policy B rationale.
+-/
+
+/-- **Markov-Jones parameter, generic-R Tier 2 form**.
+
+    Defined for the formal square root `u` (any element of a field
+    with `u² = q`). The closed form `u / (u² + 1)` avoids
+    `Real.sqrt`, works over any field, and matches the original
+    `1 / (u + u⁻¹)` formula (equivalent by clearing the denominator).
+
+    Archimedean specialisation: `markovZax (Real.sqrt q) = markovZax_real q hq`
+    when `0 < q`. See `markovZax_real` below. -/
+def markovZax {R : Type*} [Field R] (u : R) : R := u / (u^2 + 1)
+
+/-- **Archimedean specialisation** of `markovZax` over `ℝ`.
+
+    Backward-compat shim: instantiates the generic Tier 2 `markovZax`
+    at `u := Real.sqrt q` under the explicit positivity hypothesis
+    `0 < q`. Use the generic `markovZax` directly in new code.
+
+    Equivalence: `markovZax_real q hq = 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)`
+    follows from `markovZax u = u / (u² + 1) = 1 / (u + u⁻¹)` with
+    `u := Real.sqrt q`. -/
+noncomputable def markovZax_real (q : ℝ) (_hq : 0 < q) : ℝ :=
+  markovZax (Real.sqrt q)
+
+/-- **Legacy unsafe form** of `markovZax` — `Real.sqrt q` without the
+    `0 < q` hypothesis. Kept for backward compatibility with the
+    pre-Tier-2 callsites; new code should use `markovZax` (generic)
+    or `markovZax_real q hq` (archimedean with hypothesis). -/
+@[deprecated "Use the generic-R `markovZax (Real.sqrt q)` or the archimedean `markovZax_real q hq`. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+noncomputable def markovZax_legacy (q : ℝ) : ℝ :=
+  1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- **Primitive Markov-trace axioms** as a Lean class via the
     explicit-residual pattern. Captures the four axioms M1-M4 from
@@ -50,10 +92,14 @@ class MarkovTraceAxioms (q : ℝ) : Type where
   /-- M1: τ(1) = 1 (normalisation). -/
   tau_identity_eq_one : tau_identity = 1
   /-- M3: stabilisation factor. Adding one disjoint strand
-      multiplies a trace value by `markovZax q`. -/
+      multiplies a trace value by `markovZax_legacy q`. -/
   tau_stab_factor : ℝ
-  /-- M3: the stabilisation factor equals `z = 1/(√q + 1/√q)`. -/
-  tau_stab_factor_eq_z : tau_stab_factor = markovZax q
+  /-- M3: the stabilisation factor equals `z = 1/(√q + 1/√q)`.
+      Currently routed through `markovZax_legacy q` for
+      backward-compat; a follow-up PR refactors the class to take
+      `u : R` with `u² = q`, eliminating the `Real.sqrt` call. See
+      `docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md`. -/
+  tau_stab_factor_eq_z : tau_stab_factor = markovZax_legacy q
 
 /-! ## Iterated stabilisation → disjoint-product factorisation -/
 
@@ -61,8 +107,8 @@ class MarkovTraceAxioms (q : ℝ) : Type where
     of M3 give `τ_x · z^k`. -/
 theorem markov_iterated_stab (q : ℝ) [MarkovTraceAxioms q]
     (τ_x : ℝ) (k : ℕ) :
-    ∃ τ_x_k_stab : ℝ, τ_x_k_stab = τ_x * (markovZax q)^k := by
-  refine ⟨τ_x * (markovZax q)^k, rfl⟩
+    ∃ τ_x_k_stab : ℝ, τ_x_k_stab = τ_x * (markovZax_legacy q)^k := by
+  refine ⟨τ_x * (markovZax_legacy q)^k, rfl⟩
 
 /-- **Disjoint-product factorisation (derived from M3)**: two braids K_1, K_2
     acting on disjoint strands give the factorised joint trace.
@@ -78,7 +124,7 @@ theorem markov_iterated_stab (q : ℝ) [MarkovTraceAxioms q]
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov axioms M1–M4)
 theorem disjoint_product_factorisation (q : ℝ) [MarkovTraceAxioms q]
     (τ_K1 τ_K2 : ℝ) (k : ℕ) :
-    ∃ τ_joint : ℝ, τ_joint = τ_K1 * τ_K2 * (markovZax q)^k := by
+    ∃ τ_joint : ℝ, τ_joint = τ_K1 * τ_K2 * (markovZax_legacy q)^k := by
   -- Strategy: first apply iterated stab to τ_K2 alone with k strands,
   -- getting τ_K2 · z^k. Then take the product with τ_K1 (M2-cyclicity
   -- ensures the disjoint action commutes at the trace level).
@@ -97,7 +143,7 @@ class from the more fundamental `MarkovTraceAxioms` class. -/
     theorem `disjoint_product_factorisation` follows from M3 alone. -/
 theorem MarkovTraceAxioms_implies_disjoint_stabilisation
     (q : ℝ) [h : MarkovTraceAxioms q] :
-    ∀ τ_x : ℝ, ∃ τ_x_stab : ℝ, τ_x_stab = τ_x * markovZax q := by
+    ∀ τ_x : ℝ, ∃ τ_x_stab : ℝ, τ_x_stab = τ_x * markovZax_legacy q := by
   intro τ_x
   refine ⟨τ_x * h.tau_stab_factor, ?_⟩
   rw [h.tau_stab_factor_eq_z]
