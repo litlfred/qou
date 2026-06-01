@@ -143,7 +143,7 @@ def _interface_product_symbolic(Z: int, N: int, q: sp.Symbol) -> sp.Expr:
     under the production `chi_lambda_braid` convention."""
     z = _markov_z_q(q)
     h = _hecke_h_q(q)
-    kinds = canonical_interface_kinds(Z, N)
+    kinds = canonical_interface_kinds(Z, N, pn_convention="chi_lambda_braid")
     expr = sp.Integer(1)
     for kind in kinds:
         if kind == "positive":
@@ -176,7 +176,7 @@ def analyse_atom(label: str, Z: int, N: int, q,
     """Extract Habiro coefficients for (Z, N)."""
     t0 = time.perf_counter()
     print(f"\n── {label} (Z={Z}, N={N}, A={Z+N}) ──")
-    kinds = canonical_interface_kinds(Z, N)
+    kinds = canonical_interface_kinds(Z, N, pn_convention="chi_lambda_braid")
     print(f"  canonical_interface_kinds = {kinds}")
 
     tr_M_q = _build_closed_form(Z, N, tau_p, tau_n, q)
@@ -268,7 +268,7 @@ def _write_witness(path: Path, slug: str, body: dict, q0_float: float,
         "reference_blocks": reference_blocks,
         "parameters": {
             "q_0": q0_float,
-            "pn_convention": "chi_lambda_braid (production default)",
+            "pn_convention": "chi_lambda_braid (legacy production marshalling)",
             "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
             "generator": "_habiro_coefficient_extract.py",
         },
@@ -549,7 +549,7 @@ def main() -> int:
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q_0": q0_float,
-            "pn_convention": "chi_lambda_braid (production default)",
+            "pn_convention": "chi_lambda_braid (legacy production marshalling)",
             "generator": "_habiro_coefficient_extract.py",
         },
         "atoms": [
