@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:32:48.873999+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:57:00.331173+00:00",
+  "commitSha": "077ff7a1fb66b325134f90c0947b325ece355722",
   "assertions": [],
   "allPassed": true,
   "durationMs": 12,
@@ -11,10 +11,10 @@
   "scriptHash": "8cb75c2d7f9e",
   "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -28,7 +28,7 @@
   "parameters": {
     "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
     "m_e_MeV": 0.51099895,
-    "mpmath_dps": 65
+    "mpmath_dps": 70
   },
   "data": {
     "particles": {
@@ -76,8 +76,8 @@
       "m_n_over_m_e": "820.638359766407968290394711756",
       "m_n_over_m_p": "0.438879107843847638807591191233",
       "delta_np_over_m_e": "-1049.21223257117387295079818262",
-      "m_p_over_m_e_codata": "1836.1526734252585059127812297853058210784973237224851440497089084",
-      "m_n_over_m_e_codata": "1838.6836617178958978291442673218800156047287377009287396774494351",
+      "m_p_over_m_e_codata": "1836.152673425258505912781229785305821078497323722485144049708908403824",
+      "m_n_over_m_e_codata": "1838.683661717895897829144267321880015604728737700928739677449435072225",
       "m_p_over_m_e_diff_pct": 1.8352460228408685,
       "m_n_over_m_e_diff_pct": -55.368159469058455
     },

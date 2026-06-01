@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T01:53:32.625921+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T06:18:10.193030+00:00",
+  "commitSha": "077ff7a1fb66b325134f90c0947b325ece355722",
   "assertions": [
     {
       "name": "symbolic χ^(2,1)(proton) matches numerical hecke_characters",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 2012,
+  "durationMs": 2061,
   "computation": "ocneanu-cancellation-derivation",
   "scriptFile": "ocneanu_cancellation_derivation.py",
   "scriptHash": "4fab818fd4a6",
   "scriptCommitSha": "fc7c11e00bc20b78e1b292da1ec0eea52a125c27",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
