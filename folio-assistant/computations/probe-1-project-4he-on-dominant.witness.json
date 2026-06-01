@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:44:59.910402+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:33:44.851475+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "psd_dominant_pair_contributes_under_1pct_of_trace",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "probe-1-project-4he-on-dominant",
   "scriptFile": "probe_1_project_4he_on_dominant.py",
   "scriptHash": "61803c8bcd7d",

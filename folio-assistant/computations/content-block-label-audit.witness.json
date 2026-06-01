@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:41:57.531545+00:00",
-  "commitSha": "ce8d16364742ae365a2538acb8a4b55887e7703f",
+  "computedAt": "2026-06-01T14:23:34.446925+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "no_missing_labels",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "content-block-label-audit",
   "scriptFile": "content_block_label_audit.py",
   "scriptHash": "d86c5a63a3d7",

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T05:32:04.456540+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:21:08.751871+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "additive_composition_supported_by_all_4_hypotheses",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 16,
   "computation": "additive-composition-categorical-probe",
   "scriptFile": "additive_composition_categorical_probe.py",
   "scriptHash": "7a959bff7c02",

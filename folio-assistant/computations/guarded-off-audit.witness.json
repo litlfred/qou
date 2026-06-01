@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:34:37.646312+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:23:40.228239+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "no_guarded_off_candidates",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "guarded-off-audit",
   "scriptFile": "guarded_off_audit.py",
   "scriptHash": "3f3f9bcf888f",

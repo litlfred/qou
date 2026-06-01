@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T05:34:23.424048+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:23:27.171581+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "c_3_taylor_exact_promotion",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 12,
   "computation": "c-3-categorical-derivation-attempt",
   "scriptFile": "c_3_categorical_derivation_attempt.py",
   "scriptHash": "a1f68dd1afbf",

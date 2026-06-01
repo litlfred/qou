@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:37:21.800345+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:26:27.750077+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "h2_concrete_test_completed",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 37,
+  "durationMs": 25,
   "computation": "lambda-scale-h2-concrete-test",
   "scriptFile": "lambda_scale_h2_concrete_test.py",
   "scriptHash": "6102a81d4fec",

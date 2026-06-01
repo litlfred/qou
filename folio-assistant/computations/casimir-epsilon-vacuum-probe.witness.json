@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T05:34:27.013234+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:23:30.253001+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "symbolic_derivative_matches_pi2_over_240_d4",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 61,
+  "durationMs": 52,
   "computation": "casimir-epsilon-vacuum-probe",
   "scriptFile": "casimir_epsilon_vacuum_probe.py",
   "scriptHash": "36004588dc80",

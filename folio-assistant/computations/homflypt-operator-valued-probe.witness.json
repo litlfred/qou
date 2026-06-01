@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:55:11.247544+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:44:21.867397+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "proton_neq_neutron",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 148,
+  "durationMs": 133,
   "computation": "homflypt-operator-valued-probe",
   "scriptFile": "homflypt_operator_valued_probe.py",
   "scriptHash": "e66a77c888ac",

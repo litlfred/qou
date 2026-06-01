@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:41:49.984213+00:00",
-  "commitSha": "ce8d16364742ae365a2538acb8a4b55887e7703f",
+  "computedAt": "2026-06-01T14:23:27.933568+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "no_unacknowledged_cal4_disguises_found",
@@ -12,7 +12,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "cal4-disguise-hunt",
   "scriptFile": "cal4_disguise_hunt.py",
   "scriptHash": "0f34ae223f4d",

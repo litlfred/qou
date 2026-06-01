@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:37:19.613658+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:26:25.719197+00:00",
+  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
   "assertions": [
     {
       "name": "T_eq_3He_corrected_under_isospin",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "isospin-mass-tower-collapse",
   "scriptFile": "isospin_mass_tower_collapse.py",
   "scriptHash": "f776e97ee357",
