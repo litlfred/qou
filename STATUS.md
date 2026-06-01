@@ -14,8 +14,8 @@
 | **L1: 1 ppb compute precision** | met (50 dps default, 10⁻⁵⁰ truncation) | `docs/coordination/1ppb.md` | — |
 | **L2: per-observable 100× exp** | 4/7 met (m_p, m_μ, m_e, m_K/m_π) | `folio-assistant/computations/per-observable-100x-status.witness.json` | #1576 (m_K/m_π fix) |
 | **1 ppQ — Q_β only (achievable)** | open; c_2 Taylor-exact, c_3 q_0-dependent (NOT Taylor), c_4–c_7 CAL-anchored | [`1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md) | #1577 (watcher), this PR |
-| **Δ_λ closure (Option-E)** | mirror pair closed to 0.11% (v9 breakthrough, `30c5393b7`) | `docs/coordination/option-e.md` (TBD) | #1516 |
-| **α_EM canonical derivation** | RT Phase 3 + Schwinger structural form | `docs/coordination/alpha-em.md` (TBD) | #1505, #1521, #1549, #1552 |
+| **Δ_λ closure (Option-E)** | mirror pair closed to 0.11% (v9 breakthrough, `30c5393b7`) — deuteron closed; A=3 mirror near-match (1+q)/2 not yet derived | [`option-e.md`](docs/coordination/option-e.md) | #1516 |
+| **α_EM canonical derivation** | RT Phase 3 + Schwinger structural form; closure at 4.18 ppm near-match; Habiro element `[2]_q·(1-h²α)` derived (PR #1511) | [`alpha-em.md`](docs/coordination/alpha-em.md) | #1505, #1521, #1549, #1552 |
 | **Q_β c_k flip-flop prevention** | infra-in-flight | (lives in 1ppq-qbeta.md flip-flop history) | #1577 |
 | **per-isotope SDP wiring** | empty-layer drop planned | `docs/coordination/2026-05-30-...` | #1575 |
 | **Habiro / α_EM categorical** | 1-loop derivation in progress | `docs/coordination/alpha-em.md` (TBD) | #1521 |
