@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:35:58.328095+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:20:41.324593+00:00",
+  "commitSha": "23ab64dafc2f7ed450d973332f3d5caf89b0d667",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -24,16 +24,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "a0c94bc39a15",
   "scriptCommitSha": "c92c9c82cba04187e5a95410c6644dc067e0ff50",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

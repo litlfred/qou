@@ -1,8 +1,8 @@
 {
   "engine": "codata-constants",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:32:01.457584+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:16:49.514243+00:00",
+  "commitSha": "23ab64dafc2f7ed450d973332f3d5caf89b0d667",
   "assertions": [
     {
       "name": "m_e_in_codata_2022_window",
@@ -33,10 +33,10 @@
   "scriptHash": "fe21954b89a8",
   "scriptCommitSha": "c1c714cd0f91119e41efe8c2541b09d96b082970",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T01:53:54.966649+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:38:32.196873+00:00",
+  "commitSha": "23ab64dafc2f7ed450d973332f3d5caf89b0d667",
   "assertions": [
     {
       "name": "asserted_atoms_match_closed_form_shift",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13442,
+  "durationMs": 12933,
   "computation": "per-irrep-pole-atom-crystal",
   "scriptFile": "per_irrep_pole_atom_crystal.py",
   "scriptHash": "1f4b5a162a42",
   "scriptCommitSha": "72f11e9d394d6f1ec49c18f0a0914f152e385d6b",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -62,7 +62,7 @@
         "expected_shift": 19,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.0006055831909179688,
+        "elapsed_sec": 0.0006096363067626953,
         "per_partition": [
           {
             "lambda": [
@@ -117,7 +117,7 @@
         "expected_shift": 22,
         "match": false,
         "asserted": false,
-        "elapsed_sec": 0.00018072128295898438,
+        "elapsed_sec": 0.0002574920654296875,
         "per_partition": [
           {
             "lambda": [
@@ -173,7 +173,7 @@
         "expected_shift": 40,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.004192352294921875,
+        "elapsed_sec": 0.0037746429443359375,
         "per_partition": [
           {
             "lambda": [
@@ -331,7 +331,7 @@
         "expected_shift": 61,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.1957859992980957,
+        "elapsed_sec": 0.18863987922668457,
         "per_partition": [
           {
             "lambda": [
@@ -687,7 +687,7 @@
         "expected_shift": 58,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 0.18030714988708496,
+        "elapsed_sec": 0.17528963088989258,
         "per_partition": [
           {
             "lambda": [
@@ -1044,7 +1044,7 @@
         "expected_shift": 79,
         "match": true,
         "asserted": true,
-        "elapsed_sec": 12.987436294555664,
+        "elapsed_sec": 12.494058609008789,
         "per_partition": [
           {
             "lambda": [
