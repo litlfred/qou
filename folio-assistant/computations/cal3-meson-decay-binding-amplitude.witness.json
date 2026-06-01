@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T14:23:27.324968+00:00",
-  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
+  "computedAt": "2026-06-01T13:23:51.759760+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "b_sq_identity",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "cal3-meson-decay-binding-amplitude",
   "scriptFile": "cal3_meson_decay_binding_amplitude.py",
   "scriptHash": "7f13b9e9874e",

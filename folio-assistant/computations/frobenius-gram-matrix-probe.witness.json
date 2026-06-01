@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:38:24.329193+00:00",
-  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
+  "computedAt": "2026-06-01T13:38:49.452120+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "single_element_traces_match_closed_forms",
@@ -42,7 +42,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 611,
+  "durationMs": 679,
   "computation": "frobenius-gram-matrix-probe",
   "scriptFile": "frobenius_gram_matrix_probe.py",
   "scriptHash": "3e050aee2643",

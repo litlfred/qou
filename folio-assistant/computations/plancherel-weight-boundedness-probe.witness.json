@@ -1,8 +1,8 @@
 {
   "engine": "python (Fraction)",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:45:56.242703+00:00",
-  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
+  "computedAt": "2026-06-01T13:46:12.772275+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "all_plancherel_weights_in_unit_interval",
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 28,
   "computation": "plancherel-weight-boundedness-probe",
   "scriptFile": "plancherel_weight_boundedness_probe.py",
   "scriptHash": "39856d40659b",

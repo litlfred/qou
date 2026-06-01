@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T14:45:36.339038+00:00",
-  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
+  "computedAt": "2026-06-01T13:45:51.783337+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "n_syt_eq_16",
@@ -67,7 +67,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 110,
+  "durationMs": 129,
   "computation": "path-b-evacuation",
   "scriptFile": "path_b_evacuation.py",
   "scriptHash": "87032e93a7da",
