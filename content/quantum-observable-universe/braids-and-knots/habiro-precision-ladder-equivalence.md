@@ -18,9 +18,11 @@ $$
 *where $u = q^{1/2}$, $(u;\,u)_m = \prod_{k=1}^{m}(1-u^{2k})$ is the
 $q$-Pochhammer symbol, and $M < \infty$ (the series terminates).*
 
-*Under the archimedean evaluation $u \mapsto u_0 = q_0^{1/2}$, each
-$(u_0;\,u_0)_m$ contributes a factor that shrinks like
-$\sim \hbar_q^m$ where $\hbar_q = (q_0-1)/q_0 \approx 0.099$.*
+*Under the archimedean evaluation $u \mapsto u_0$ at the substrate
+square-root, each $(u_0;\,u_0)_m$ contributes a factor that shrinks
+like $\sim \hbar_q^m$, where $\hbar_q$ is the universal substrate
+Planck quantum (categorical; numerical value at the substrate q_0
+recorded in the audit ledger, not here).*
 
 > **Author note (scope, 2026-05-28).** A historical "precision ladder"
 > wrote the $q$-deformed observables as a product

@@ -10,12 +10,14 @@ $$
 
 ## Motivation
 
-At $q_0 \approx 1.110$, the formula
-$\tfrac{5}{2} + (-G) h^2 \approx 2.4599666$ matches the
-$m_p$-anchored target $m_p^{\mathrm{CODATA}} / (m_e \cdot
-\mathrm{Vol}(\mathcal{B}_3) / \hbar_q^2) \approx 2.4599528$
-to **$1.4 \times 10^{-5}$** in linking-weight units, equivalent to
-**5.6 ppm in $m_p$**.
+At the substrate value $q_0$, the formula
+$\tfrac{5}{2} + (-G) h^2$ matches the $m_p$-anchored target
+$m_p^{\mathrm{CODATA}} / (m_e \cdot \mathrm{Vol}(\mathcal{B}_3) /
+\hbar_q^2)$ to high precision in linking-weight units. (Specific
+numerical values of $q_0$, the residual, and the ppm-in-$m_p$
+equivalent are recorded in the archimedean witness audit ledger, not
+here — this block carries only the categorical conjecture and its
+algebraic consequences.)
 
 The empirical match is striking — far closer than any known
 substrate-derived formula. This file states the conjecture

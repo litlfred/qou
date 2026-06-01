@@ -33,17 +33,18 @@ ratio $m_K^2 / m_\pi^2$. A meson $M = q_1 \bar q_2$ is a **2-body** state
 on $H_{q_1} \otimes H_{q_2}$, so its mass-squared is a bilinear (Casimir-
 like) quantity on the *pair* — a fusion product, not a 1-body character.
 The 1-body Hecke character ratio for the kaon vs pion misses
-$m_K / m_\pi$ by 71%; the 2-body **squared** ratio
+$m_K / m_\pi$ substantially; the 2-body **squared** ratio
 $m_K^2/m_\pi^2$ is the genuinely-derived target, and the right q-fusion
-is precisely $[3]_q \cdot [4]_q$ — verified at $q_0$ to 203 ppm with
-**zero fitted integers** (see audit
-[2026-05-28-meson-mass-ratio-derived-vs-fitted.md](../../../docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md)).
+is precisely $[3]_q \cdot [4]_q$.
 
-The remaining 203 ppm residual is the EM/Coulomb (sinh-channel)
-correction, closed to **0.056 ppm on the full ratio** by
-$(\alpha_{\mathrm{em}}/\pi) \cdot (1 + \hbar_q - \hbar_q^2/2)$ — the
-first three terms of $1 + \log(1 + \hbar_q)$, where $\hbar_q$ is the
-universal substrate Planck quantum (also ubiquitous in the Habiro
-bridge, deuteron binding, and flavor split). Both ingredients are
-framework-derived; the derived-candidate exact closure form is the
-sinh-channel categorical action open piece.
+The residual archimedean-evaluation cross-check at the substrate
+parameter (numerical residual + EM/Coulomb sinh-channel correction
+via $(\alpha_{\mathrm{em}}/\pi) \cdot (1 + \hbar_q - \hbar_q^2/2)$,
+the first three terms of $1 + \log(1 + \hbar_q)$) is recorded in
+audit
+[2026-05-28-meson-mass-ratio-derived-vs-fitted.md](../../../docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md);
+both ingredients are framework-derived with no fitted integers. The
+derived-candidate exact sinh-channel closure form is the open
+categorical piece. (Specific ppm residuals and the substrate
+evaluation live in the audit document, not here — this block carries
+only the categorical fusion identity.)
