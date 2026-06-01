@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:31:55.172376+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:51:46.305189+00:00",
+  "commitSha": "0cfa94d97a04a31215b1ed911fba05fac897a54f",
   "assertions": [
     {
       "name": "b_sq_identity",
@@ -20,10 +20,10 @@
   "scriptHash": "7f13b9e9874e",
   "scriptCommitSha": "518f2852c914d248d0eec067c1d8a248f22b862e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

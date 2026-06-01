@@ -1,8 +1,8 @@
 {
   "engine": "closed-form",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:50:15.493945+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:10:16.797052+00:00",
+  "commitSha": "0cfa94d97a04a31215b1ed911fba05fac897a54f",
   "assertions": [
     {
       "name": "ρ_F(D) from weight criterion matches paper (ρ_F = m_e)",
@@ -20,10 +20,10 @@
   "scriptHash": "cb1181b10bdb",
   "scriptCommitSha": "cce9436d753779edd6cdccfe04a293b0e3d81d4f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

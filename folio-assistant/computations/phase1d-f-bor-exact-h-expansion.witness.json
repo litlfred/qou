@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T01:42:33.709349+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:02:22.026950+00:00",
+  "commitSha": "0cfa94d97a04a31215b1ed911fba05fac897a54f",
   "assertions": [
     {
       "name": "tr_M_h2_is_zero",
@@ -22,16 +22,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 25,
   "computation": "phase1d-f-bor-exact-h-expansion",
   "scriptFile": "phase1d_f_bor_exact_h_expansion.py",
   "scriptHash": "e648bb8d965a",
   "scriptCommitSha": "4906a99a3699d3a2f59cb77746220461a6564257",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+numpy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:59:44.233179+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:19:46.230136+00:00",
+  "commitSha": "0cfa94d97a04a31215b1ed911fba05fac897a54f",
   "assertions": [
     {
       "name": "rho3_corrected_err_lt_0p5pct",
@@ -57,16 +57,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 43752,
+  "durationMs": 42622,
   "computation": "staircase-ew-predictions",
   "scriptFile": "staircase_ew_predictions.py",
   "scriptHash": "ec4613e0e11a",
   "scriptCommitSha": "740555ac2f0f24e57e056730ea5ebd4a577a0e06",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
