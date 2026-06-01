@@ -5,7 +5,8 @@ export default proposition({
   lean: { ref: "qou:QOU.FluidDynamics.root_of_unity_truncation", validation: "not_started" },
   title:
     "Representation-theoretic truncation at roots of unity and the $q = 1$ accumulation",
-  uses: ["prop:vorticity-lower-bound"],
+  uses: ["prop:vorticity-lower-bound", "prop:q-laplacian-spectral-tower"],
+  cites: ["verlinde1988"],
   tags: [
     "root-of-unity",
     "truncation",

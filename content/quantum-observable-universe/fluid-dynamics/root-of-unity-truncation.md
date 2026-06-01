@@ -14,6 +14,13 @@ representation theory undergoes a dramatic truncation that
 **strengthens** regularity. The blowup at $q = 1$ is the
 accumulation of infinitely many such truncations.
 
+The truncation mechanism itself — the vanishing of the $q$-integer
+$[\kappa]_q$ at $q = e^{i\pi/\kappa}$, collapsing the $q$-Laplacian
+spectral tower $[k]_q^2$ to the finite Verlinde/ADE set — is
+established in
+[the $q$-Laplacian spectral tower](#prop:q-laplacian-spectral-tower).
+Here we read off its fluid-dynamical consequence.
+
 **Three regimes of $\mathrm{SU}_q(2)$ representations.**
 
 1. **Generic $q > 1$ (QOU regime).**
