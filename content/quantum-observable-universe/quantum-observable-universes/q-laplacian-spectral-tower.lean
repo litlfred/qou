@@ -47,6 +47,7 @@ theorem truncRoot_pow (κ : ℕ) (hκ : κ ≠ 0) :
     (truncRoot κ) ^ κ = -1 := by
   unfold truncRoot
   rw [← Complex.exp_nat_mul]
+  have hκ_ne : (κ : ℂ) ≠ 0 := Nat.cast_ne_zero.mpr hκ
   have : (κ : ℂ) * (Real.pi * I / κ) = Real.pi * I := by
     field_simp
   rw [this, Complex.exp_pi_mul_I]

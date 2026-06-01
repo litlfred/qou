@@ -37,14 +37,16 @@ WHAT THIS PROBE COMPUTES (exact symbolic; α/q FORMAL — fibre level):
   3. The q-heat-kernel mode-decay rates [k]_q² at each truncation: the
      EXACT finite heat kernel K_q(t) = Σ_{k<κ} e^{−[k]_q² t}·(…) — no
      series truncation error, the sum is genuinely finite at the root.
-  4. The bar involution k ↦ −k: [−k]_q = −[k]_q (the q-integer is
-     bar-anti-invariant), so [k]_q² is bar-EVEN — the physical
-     (charge-conjugation-symmetric) spectral weight.
+  4. The two involutions: (a) bar q↦q⁻¹ — [k]_q is bar-INVARIANT
+     ([k]_{q⁻¹}=[k]_q); (b) index k↦−k — [−k]_q = −[k]_q (index-odd),
+     so [k]_q² is index-EVEN — the physical (charge-conjugation-
+     symmetric) spectral weight.
 
 DISCIPLINE (CLAUDE.md §7b, ck-tiered-not-binary; Im(q) fibre-vs-
 observable): exact symbolic; q FORMAL (Im unconstrained) at the fibre
-level; the bar involution q↦q⁻¹ / k↦−k is the operative symmetry, NOT a
-reality assumption. The truncation values are cyclotomic-field exact.
+level; the bar involution q↦q⁻¹ (fixing [k]_q) and the index involution
+k↦−k (flipping it) are the operative symmetries, NOT a reality
+assumption. The truncation values are cyclotomic-field exact.
 Reality of the observable enters only at the archimedean q₀ evaluation.
 This probe characterizes the shared spectral engine; it does not solve
 the q-NS PDE or construct the q-heat archimedean realisation (those are
@@ -95,7 +97,8 @@ def main() -> int:
         "q-Laplacian spectrum FINITE and exact. Records the surviving "
         "quantum dimensions [1]_q..[κ−1]_q (incl. the golden ratio at "
         "κ=5 = Fibonacci anyon dim), the q-heat mode-decay rates [k]_q², "
-        "the bar involution k↦−k ([k]_q²  bar-even = physical), and the "
+        "the involutions (bar q↦q⁻¹ fixes [k]_q; index k↦−k flips it ⇒ "
+        "[k]_q² index-even = physical), and the "
         "Yekutieli obstruction-level cap (κ−1) from the same truncation "
         "(4 survey targets: q-heat, q-NS, Gram/Wenzl, Yekutieli). "
         "Fibre-level (q formal, Im unconstrained); reality only at q₀. "
@@ -109,10 +112,17 @@ def main() -> int:
     print("=" * 78)
     print()
 
-    # ── 1. bar involution: [−k]_q = −[k]_q, so [k]_q² is bar-even ──
-    bar_anti = sp.simplify(q_integer(3).subs(q, 1 / q) + q_integer(3))
-    print(f"  BAR INVOLUTION (q↦q⁻¹): [k]_q(1/q) + [k]_q(q) = {bar_anti}")
-    print(f"    → [k]_q is bar-ANTI-invariant; [k]_q² is bar-EVEN (the")
+    # ── 1. TWO distinct involutions (do not conflate — Gemini #1647) ──
+    # (a) bar involution q↦q⁻¹: [k]_q is bar-INVARIANT ([k]_{q⁻¹}=[k]_q),
+    #     since [k]_q = q^{k-1}+…+q^{1-k} is symmetric in q↔q⁻¹.
+    # (b) index involution k↦−k: [−k]_q = −[k]_q (index-ODD), which makes
+    #     [k]_q² index-EVEN — the charge-conjugation-symmetric weight.
+    bar_diff = sp.cancel(q_integer(3).subs(q, 1 / q) - q_integer(3))
+    index_anti = sp.cancel(q_integer(-3) + q_integer(3))
+    print(f"  BAR INVOLUTION (q↦q⁻¹): [k]_q(1/q) − [k]_q(q) = {bar_diff}")
+    print(f"    → [k]_q is bar-INVARIANT under q↦q⁻¹ ([k]_{{q⁻¹}} = [k]_q).")
+    print(f"  INDEX INVOLUTION (k↦−k): [−k]_q + [k]_q = {index_anti}")
+    print(f"    → [−k]_q = −[k]_q (index-ODD), so [k]_q² is index-EVEN (the")
     print(f"      physical, charge-conjugation-symmetric spectral weight).")
     print()
 
@@ -202,9 +212,9 @@ def main() -> int:
     finite-dimensional q-NS system (no series-truncation error) — the
     compute-accuracy win the survey identified.
 
-  • [k]_q is bar-ANTI-invariant (k↦−k flips sign); [k]_q² is bar-EVEN,
-    the physical spectral weight — same charge-conjugation sector as the
-    Q_β/α_EM scaling maps.
+  • [k]_q is BAR-INVARIANT (q↦q⁻¹ fixes it) and index-ODD (k↦−k flips
+    sign); hence [k]_q² is index-EVEN, the physical spectral weight —
+    same charge-conjugation sector as the Q_β/α_EM scaling maps.
 
   • Cyclotomic structure is concrete: [3]_q at κ=5 is the golden ratio
     φ (the Fibonacci-anyon quantum dimension). The truncated spectra ARE
@@ -216,9 +226,15 @@ def main() -> int:
     those the exact finite spectral boundary data. No fitted form.
     """)
 
-    builder.add_data("bar_involution", {
-        "q_integer_bar_anti_invariant": str(bar_anti) + " (=0 ⇒ [−k]_q=−[k]_q)",
-        "q_integer_squared_is_bar_even": True,
+    builder.add_data("involutions", {
+        "bar_involution_q_to_qinv": str(bar_diff)
+        + " (=0 ⇒ [k]_{q⁻¹} = [k]_q; [k]_q is BAR-INVARIANT)",
+        "index_involution_k_to_negk": str(index_anti)
+        + " (=0 ⇒ [−k]_q = −[k]_q; index-ODD)",
+        "q_integer_squared_is_index_even": True,
+        "note": ("two distinct involutions: bar q↦q⁻¹ fixes [k]_q; index "
+                 "k↦−k flips its sign, making [k]_q² index-even (the "
+                 "charge-conjugation-symmetric spectral weight)."),
     })
     builder.add_data("truncation_tower", tower)
     builder.add_data("q_heat_decay_rates_kappa5", {
