@@ -112,16 +112,21 @@
   {
     "id": "research-one-plus-q-over-two-derivation",
     "summary": "Derive Option-E v9 (1+q)/2 correction factor structurally (or refute)",
-    "comment": "Per docs/coordination/option-e.md PROBE 1. The v9 mirror-pair closure formula B_T − B_³He = m_π · ℏ_q · (1+q)/2 · Σ_λ y_λ · (χ^λ(β_T) + χ^{λᵀ}(β_³He))/2 hits 0.11% accuracy via the (1+q)/2 factor SELECTED from substrate candidates. Per CLAUDE.md discipline: this is a NEAR-MATCH not a derivation. Open question: is (1+q)/2 the principal-specialization half-trace of σ_1 in standard rep? Or the q-deformation of an identity-half weight? Or a Hoefsmit-seminormal-form normalization artefact? Test: derive structurally, then evaluate at multiple q_0 anchors.",
-    "status": "open",
+    "comment": "REFUTED-via-bar-symmetry 2026-06-01 (PR #1662). Probe option_e_v9_bar_symmetric_test_probe.py tested 6 bar-symmetric replacements for v9's (1+q)/2; best bar-symmetric candidate err -5.05% vs v9 original -0.0958%. Verification: (1+q)/2 at q_proton = 1.0550; bar((1+q)/2) = (1+q⁻¹)/2 = 0.9505; diff 0.1045 ≠ 0 at 50 dps ⟹ INHERENTLY bar-asymmetric. Per prop:li2q-phiq-bar-symmetrization discipline (PR #1643), binding-context formulas must be bar-symmetric — v9's (1+q)/2 violates this. Closure was anchor-coincidence of a discipline-violating form, NOT a categorical derivation. Audit doc: docs/audits/2026-06-01-bar-symmetric-discipline-tests.md (Probe 1). DO NOT search for a derivation of (1+q)/2 — there isn't one.",
+    "status": "done",
     "priority": "high",
     "origin": "session-2026-05-31-queue-build",
     "createdAt": "2026-05-31",
+    "completedAt": "2026-06-01",
+    "completedBy": "claude/bar-symmetric-v9-and-he4-probes-2026-06-01 (PR #1662)",
+    "verdict": "REFUTED-via-bar-symmetry",
     "data": {
       "goal": "option-e",
       "cross_listed": "docs/coordination/option-e.md (PROBE 1)",
       "research_grade": true,
-      "pre_stated_failure_signature": "matches at q_proton but not at q_muon ⟹ another near-match"
+      "pre_stated_failure_signature": "matches at q_proton but not at q_muon ⟹ another near-match",
+      "actual_failure_signature": "bar-symmetric replacement test — best bar-sym candidate at -5.05% vs v9 -0.0958%; v9 form is inherently bar-asymmetric (diff 0.1045 at q_proton)",
+      "witness": "folio-assistant/computations/option-e-v9-bar-symmetric-test-probe.witness.json"
     }
   },
   {
@@ -145,7 +150,8 @@
         "magic-A-formula-postulated-rho_F=2": "+5.87% miss; current production",
         "rho_F=[2]_{q^(1/2)}": "RULED OUT (still +5.97% miss, this PR)",
         "per-nucleon δ_int simple substrate": "RULED OUT (no clean match)",
-        "categorical interface H_3⊗H_3⊗H_3⊗H_3 → H_12": "UNDERIVED (research direction)"
+        "categorical interface H_3⊗H_3⊗H_3⊗H_3 → H_12": "UNDERIVED (research direction)",
+        "additional-bar-symmetric-rho_F-candidates": "EXHAUSTED 2026-06-01 (PR #1662): 8 candidates tested (incl. [2]_q, [2]_q/2+1, 1+b² Hoefsmit, ([2]_q)²/(·-2)), ALL bar-symmetric candidates miss by ≥+5.87%; best NEAR-MATCH C7=2·cos(h/2)/q^(1/4) at +2.58% violates bar-symmetry. Confirms structural-operator direction."
       },
       "current_pred_vs_exp": {
         "⁴He B_pred_MeV": 29.956,
