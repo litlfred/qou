@@ -636,4 +636,60 @@ theorem q_beta_n7_structural_form
   unfold Q_beta_n7_categorical
   rw [hC7.c7_is_jones_cubed q hq]
 
+/-! ## Eigenphase expansion grounding (PR #1602)
+
+The probe `qbeta_eigenphase_taylor_in_u.py` Taylor-expands the N=1
+eigenphase `N1_factor q = cos(α − b·ℏ_q²/2)` in the ladder variable
+`u = b·ℏ_q²` and finds (symbolic-exact, numerically cross-checked):
+
+  a_0 = 1,  a_1 = -√3/12,  a_2 = -11/32 - √3/12,  …
+
+The KEY structural consequence is that **a_1 ≠ 0**: the eigenphase
+carries an odd-order `u¹` correction, whereas the Q_β precision ladder
+`Π(1 + c_k u^k)` starts at `u²` (no `c_1` rung). Hence the cos
+eigenphase is NOT, by itself, the `c_k` generating factor — the
+"eigenphase = f" hypothesis is falsified at `u¹`.
+
+The lemmas below ground that probe at the base point `q = 1` (the
+`u → 0` limit), where every quantity is an exact algebraic value. They
+are the Lean-verifiable core of the probe's claim: the `u⁰` coefficient
+is `1` (`N1_factor 1 = 1`), and the Hoefsmit coupling whose value sets
+the `u¹` coefficient is `hoefsmitB 1 = √3/2` (so `a_1 = -hoefsmitB 1 /6
+= -√3/12`). The full Taylor-coefficient identities require a
+power-series development and are left as the probe's numerical/symbolic
+witness; these base-point lemmas are the sorry-free Lean anchor. -/
+
+/-- `ℏ_q = (q−1)/q` vanishes at the classical point `q = 1`. -/
+theorem hbarQ_one : hbarQ' 1 = 0 := by
+  unfold hbarQ'; norm_num
+
+/-- `h = q − q⁻¹` vanishes at `q = 1`. -/
+theorem heckeH_one : heckeH' 1 = 0 := by
+  unfold heckeH'; norm_num
+
+/-- Markov–Jones parameter `z = 1/(√q + 1/√q)` equals `1/2` at `q = 1`. -/
+theorem markovZ_one : markovZ' 1 = 1 / 2 := by
+  unfold markovZ'
+  rw [Real.sqrt_one]; norm_num
+
+/-- The eigenphase `α = (z−1)·h/2` vanishes at `q = 1` (since `h(1)=0`). -/
+theorem alpha_one : alpha 1 = 0 := by
+  unfold alpha
+  rw [heckeH_one]; ring
+
+/-- Hoefsmit coupling at the classical point: `b(1) = √3/2`.
+    This value sets the eigenphase `u¹` Taylor coefficient
+    `a_1 = -b(1)/6 = -√3/12` (probe `qbeta_eigenphase_taylor_in_u.py`). -/
+theorem hoefsmitB_one : hoefsmitB 1 = Real.sqrt 3 / 2 := by
+  unfold hoefsmitB
+  norm_num
+
+/-- The `u⁰` coefficient of the eigenphase expansion is `1`:
+    `N1_factor 1 = cos(α(1) − b(1)·ℏ_q(1)²/2) = cos 0 = 1`.
+    Matches the probe's `[u^0] = 1`. -/
+theorem N1_factor_one : N1_factor 1 = 1 := by
+  unfold N1_factor
+  rw [alpha_one, hbarQ_one]
+  norm_num
+
 end QOU.BraidKnot
