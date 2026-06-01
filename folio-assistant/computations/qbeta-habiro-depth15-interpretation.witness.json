@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T22:42:05.520469+00:00",
-  "commitSha": "c7204a1d86a55d549fc2f8607092e3af93d4caf1",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T15:22:16.292652+00:00",
+  "commitSha": "00780c3dbd30b1c36c16997036b4a56e0d079671",
   "assertions": [
     {
       "name": "depth15_interpretation_tests_completed",
@@ -14,19 +14,21 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 342,
+  "durationMs": 420,
   "computation": "qbeta-habiro-depth15-interpretation",
   "scriptFile": "qbeta_habiro_depth15_interpretation.py",
   "scriptHash": "5d2a83545bd4",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "c426c209be3e24ae6dd5ffa5a22e495e9b0a2f60",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
