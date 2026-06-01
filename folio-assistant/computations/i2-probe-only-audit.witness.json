@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:34:55.396835+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:07:52.428964+00:00",
+  "commitSha": "b767aa72b6cbd0a118a2e2fafb8d369480f174f8",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -786,6 +786,15 @@
         "result": "wired_production"
       },
       {
+        "witness": "folio-assistant/computations/e0-lambda-composite.witness.json",
+        "labels": [
+          "prop:rho-k-h3a-refinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
         "witness": "folio-assistant/computations/eigenvalue-reeb-extension-h4-h5.witness.json",
         "labels": [
           "prop:figure-eight-reeb-rotation"
@@ -1469,15 +1478,6 @@
         "witness": "folio-assistant/computations/meson-character-shortcut-l1.witness.json",
         "labels": [
           "prop:pion-half-figure-eight"
-        ],
-        "production_consumers": [],
-        "upstream_consumers": [],
-        "result": "i2_probe_only"
-      },
-      {
-        "witness": "folio-assistant/computations/meson-em-sinh-closed-form.witness.json",
-        "labels": [
-          "prop:meson-color-tube-uniqueness"
         ],
         "production_consumers": [],
         "upstream_consumers": [],

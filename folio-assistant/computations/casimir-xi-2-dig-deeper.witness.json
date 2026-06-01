@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:46:57.226191+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:19:52.072209+00:00",
+  "commitSha": "b767aa72b6cbd0a118a2e2fafb8d369480f174f8",
   "assertions": [
     {
       "name": "normalized_markov_trace_identity_is_one",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 46,
+  "durationMs": 64,
   "computation": "casimir-xi-2-dig-deeper",
   "scriptFile": "casimir_xi_2_dig_deeper.py",
   "scriptHash": "211fa4cc4b7b",

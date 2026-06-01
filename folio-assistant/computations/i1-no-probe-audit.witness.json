@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:34:54.609388+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:07:51.629865+00:00",
+  "commitSha": "b767aa72b6cbd0a118a2e2fafb8d369480f174f8",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -40,8 +40,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 520,
-      "wired": 70,
+      "i1_no_probe": 521,
+      "wired": 69,
       "i1_pre_lean": 6,
       "i1_lean_with_sorry": 2,
       "i1_no_probe_conditional": 1
@@ -3254,11 +3254,9 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 1,
-        "probe_witnesses": [
-          "meson-em-sinh-closed-form.witness.json"
-        ],
-        "result": "wired"
+        "probe_witness_count": 0,
+        "probe_witnesses": [],
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.ts",
@@ -3556,11 +3554,12 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 3,
+        "probe_witness_count": 4,
         "probe_witnesses": [
           "delta-lambda-2row-stratum.witness.json",
           "delta-lambda-empirical-tabulation.witness.json",
-          "delta-lambda-q-sweep-2row.witness.json"
+          "delta-lambda-q-sweep-2row.witness.json",
+          "e0-lambda-composite.witness.json"
         ],
         "result": "wired"
       },
