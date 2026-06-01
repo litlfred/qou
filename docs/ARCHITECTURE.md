@@ -96,7 +96,10 @@ The package ecosystem is layered but **mid-migration**. Today's import counts (f
 
 The two zero-import packages (`qou-mass`, `witness-schema`) ship clean public APIs (`predict()`, `compute_tr_M()`, `ComputationWitness.model_validate_json()`); they're not yet adopted because the in-repo compute scripts predate them. They are the **external-researcher interface** — `pip install qou-mass` gets you the canonical predictions without cloning this repo. The migration of in-repo scripts onto these packages is tracked by [`docs/workplans/2026-05-24-library-reuse-production-readiness.md`](workplans/2026-05-24-library-reuse-production-readiness.md).
 
-A pre-commit / CI audit ([`scripts/audit-library-coherence.sh`](../scripts/audit-library-coherence.sh)) re-counts these numbers and flags any new zero-import library packages.
+Two scripts keep this section honest:
+
+- [`scripts/audit-library-coherence.sh`](../scripts/audit-library-coherence.sh) — re-counts importers and flags any *new* zero-import library packages (relative to its `KNOWN_EXTERNAL_ONLY` snapshot). `--strict` mode exits non-zero so it can gate CI; `--json` mode emits a dashboard-friendly payload.
+- [`scripts/smoke-test-libraries.sh`](../scripts/smoke-test-libraries.sh) — exercises each library's advertised public API from outside its own test suite, so the alpha / zero-import packages (`qou-mass`, `witness-schema`) have a callable verification path that catches API breakage without developers remembering to cd into the package and run `pytest`.
 
 ## Content-object architecture
 
