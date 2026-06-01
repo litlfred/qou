@@ -117,7 +117,7 @@ def atom_level_tower(Z, N, include_inter=True, with_phi_q=True):
         by_level[lvl]["sum_w_chi"] += mc
         if with_phi_q and abs(chi) > 1e-20:
             try:
-                phi = float(Phi_q(mp.mpf(abs(chi) / d)))
+                phi = float(Phi_q(mp.mpf(chi / d)))
                 if not (mp.isinf(phi) or mp.isnan(phi)):
                     by_level[lvl]["sum_phi_q"] += w_lambda * phi
             except Exception:

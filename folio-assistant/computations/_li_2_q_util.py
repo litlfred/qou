@@ -140,11 +140,11 @@ def compute_t2_t3_from_vols(
     """
     t2 = mpf(0)
     for v in vols:
-        t2 = t2 + li_2_q(mp.fabs(v), q, q_inv)
+        t2 = t2 + li_2_q(v, q, q_inv)
     t3 = mpf(0)
     for i, vi in enumerate(vols):
         for vj in vols[i + 1:]:
-            t3 = t3 + li_2_q(mp.fabs(vi * vj), q, q_inv)
+            t3 = t3 + li_2_q(vi * vj, q, q_inv)
     t3 = t3 * z ** 2
     return t2, t3
 

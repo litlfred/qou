@@ -288,7 +288,7 @@ def term2_single_gen_tower(vols):
     total = mp.mpf(0)
     for v in vols:
         try:
-            phi = Phi_q(abs_mpf(v))
+            phi = Phi_q(v)
             if not mp.isinf(phi) and not mp.isnan(phi):
                 total += phi
         except Exception:

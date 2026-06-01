@@ -65,7 +65,7 @@ def mass_per_level(vols, *, include_all_pairs: bool = True):
     for v in vols:
         desc *= v["full"]
     desc = abs(desc)
-    single = sum(Phi_q(abs(v["full"])) for v in vols)
+    single = sum(Phi_q(v["full"]) for v in vols)
     cross = 0.0
     if include_all_pairs:
         for i in range(n):

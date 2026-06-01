@@ -142,7 +142,7 @@ def mass_from_tower(vols):
         desc *= v["full"]
     desc = abs(desc)
 
-    single = sum(Phi_q(abs(v["full"])) for v in vols)
+    single = sum(Phi_q(v["full"]) for v in vols)
 
     cross = 0.0
     for i in range(n):
@@ -252,7 +252,7 @@ if __name__ == "__main__":
     print()
     print(f"ELECTRON (trefoil σ₁³, 1 generator):")
     for i, v in enumerate(electron_vols):
-        phi = Phi_q(abs(v["full"]))
+        phi = Phi_q(v["full"])
         print(f"  Gen {i}: V̂_full={v['full']:.6f}, Φ_q={phi:.4f}")
     print(f"  Descended: {e_desc:.6f}")
     print(f"  Single:    {e_single:.4f}")
@@ -261,7 +261,7 @@ if __name__ == "__main__":
     print()
     print(f"PROTON (B₃ × uud + gluon, 2 generators):")
     for i, v in enumerate(proton_vols):
-        phi = Phi_q(abs(v["full"]))
+        phi = Phi_q(v["full"])
         print(f"  Gen {i}: V̂_full={v['full']:.6f}, Φ_q={phi:.4f}")
     print(f"  Descended: {p_desc:.6f}")
     print(f"  Single:    {p_single:.4f}")
@@ -270,7 +270,7 @@ if __name__ == "__main__":
     print()
     print(f"NEUTRON (B₃ × udd + gluon, 2 generators):")
     for i, v in enumerate(neutron_vols):
-        phi = Phi_q(abs(v["full"]))
+        phi = Phi_q(v["full"])
         print(f"  Gen {i}: V̂_full={v['full']:.6f}, Φ_q={phi:.4f}")
     print(f"  Descended: {n_desc:.6f}")
     print(f"  Single:    {n_single:.4f}")

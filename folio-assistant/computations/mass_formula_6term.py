@@ -138,9 +138,9 @@ def term_23_brane_tower(Z, N, include_inter):
     single = mp.mpf(0)
     pair = mp.mpf(0)
     for v in vols:
-        single += Phi_q(abs(v))
+        single += Phi_q(v)
     for i in range(len(vols) - 1):
-        pair += Phi_q(abs(vols[i] * vols[i + 1]))
+        pair += Phi_q(vols[i] * vols[i + 1])
     pair *= z_mark ** 2
     return {"T2": float(single), "T3": float(pair),
             # Legacy aliases for backward compat with downstream

@@ -142,7 +142,7 @@ def main() -> int:
     t2 = mpf(0)
     print("  T2 terms (single-brane Li_2^q):")
     for i, v in enumerate(V_compound):
-        contrib = -Li_2_q(-mp.fabs(v), q, q_inv)
+        contrib = -Li_2_q(-v, q, q_inv)
         t2 += contrib
         tag = "boundary-gen" if i == 2 else f"gen {i}"
         print(f"    gen {i:2d} ({tag}): V̂={mp.nstr(v, 10)}, "

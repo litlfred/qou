@@ -14,8 +14,11 @@ Cat$\to$Alg$\to$Geom$\to$Arch$\to$Phys arc.
 
 2. **Markov chain** (stochastic dynamics).  The random walk on
    braid words induced by Hecke--Markov transition probabilities
-   $p_{w \to w'} = |\mathrm{tr}_M(\rho(w'))|^2 /
-   \sum |\mathrm{tr}_M(\rho(w''))|^2$.  This is the **stochastic**
+   $p_{w \to w'} = \mathrm{tr}_M(\rho(w')) \cdot \overline{\mathrm{tr}_M(\rho(w'))} /
+   \sum \mathrm{tr}_M(\rho(w'')) \cdot \overline{\mathrm{tr}_M(\rho(w''))}$
+   (bar denotes the Hecke bar-involution $q \leftrightarrow q^{-1}$;
+   at real $q_0$ the form reduces to $|\mathrm{tr}_M|^2$).
+   This is the **stochastic**
    object that gives error bounds on the mass formula via
    Perron--Frobenius dominant-eigenvalue convergence.  See
    Chapter Stochastic Mechanics.

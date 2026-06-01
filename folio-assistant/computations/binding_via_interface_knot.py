@@ -116,7 +116,7 @@ def mass_tower_first_order(
     # T2: -Σ Li_2^q(-|V_i|)
     t2 = mp.mpf(0)
     for v in flat:
-        t2 += li_2_q(-mp.fabs(v), q, q_inv)
+        t2 += li_2_q(-v, q, q_inv)
     t2 = -t2
 
     # T3: -z² · Σ_{i<j} Li_2^q(-|V_i V_j|) via pentagon reduction.
