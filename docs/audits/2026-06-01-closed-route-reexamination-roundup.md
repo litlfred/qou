@@ -202,6 +202,13 @@ when re-classifying any "near-match" residual, ask explicitly:
 - audit 2026-05-25-non-abelian-stokes-reading-a-exploration.md
 - audit 2026-05-25-proton-mass-identity-12-me-ocneanu.md
 - audit 2026-05-29-meson-mK-mpi-residual-derivation-attempt.md
+- audit 2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md
+  (sibling-PR finding, landed on main 2026-06-01): the Q_β c_3 = −2
+  Rule-A identification is a NUMERICAL coincidence between two
+  different ε-orders (per-block at ε¹, ladder at ε⁶ — 5 orders
+  apart) — independent structural diagnosis CONSISTENT with this
+  branch's Probe B tier=near-match verdict. Reinforces (does not
+  invalidate) the canonical-framing Rule 4 tiered classification.
 - audit 2026-05-31-qbeta-ck-truncation-order-canonical-framing.md
 - commit 6766b40b9 (Ocneanu correction)
 - PR #1452 / #1479 (Q_β c_3 flip-flop history)
