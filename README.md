@@ -295,6 +295,36 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 | Glossary | [glossary.json](https://litlfred.github.io/qou/glossary.json) | CI-generated |
 | Feature branch drafts | [drafts/](https://litlfred.github.io/qou/drafts/) | CI-generated |
 
+## Libraries
+
+The compute pipeline is layered into reusable packages so external researchers can run their own explorations without cloning the paper repository. See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the full layered diagram + library coherence status.
+
+### Python (PyPI)
+
+| Package | Source | Role |
+|---|---|---|
+| [`qou-substrate`](tools/qou-substrate/) | `tools/qou-substrate/` | Substrate parameter `q_0`, mpmath 50-dps precision discipline, `WitnessBuilder`. The 1.1k-LOC foundation — 25 in-repo compute scripts import from it. |
+| [`pyhecke`](tools/pyhecke/) | `tools/pyhecke/` | Hecke algebra, Gram matrix, Markov trace, tower binding. Primary domain library — 41 in-repo importers. |
+| [`pyhecke-native`](tools/pyhecke-native/) | `tools/pyhecke-native/` | PyO3 bindings into `hecke-engine` for Rust-accelerated Markov trace. 20 in-repo importers. |
+| [`qou-mass`](qou-mass/) | `qou-mass/` | High-level facade: `predict("4He")`, `compute_tr_M(Z, N)`, `canonical_braid(Z, N)`. Ships vendored per-Z shards; alpha (`v0.1.0a1`). |
+| [`witness-schema`](tools/witness-schema/) | `tools/witness-schema/` | Pydantic v2 models for the `*.witness.json` interchange format (Python). Also JSON Schema + Zod (TypeScript). |
+
+### TypeScript / npm
+
+| Package | Source | Role |
+|---|---|---|
+| `@litlfred/witness-schema` | `tools/witness-schema/js/` | Zod schemas + JSON Schema for `*.witness.json` (Node, Deno, Bun, browser). |
+| `@litlfred/hecke-engine-node` | `tools/hecke-engine-node/` | napi-rs native bindings into `hecke-engine` (Node.js, server-side). |
+| `@litlfred/hecke-engine-wasm` | `tools/hecke-engine-wasm/` | wasm-bindgen build of `hecke-engine` for in-browser symbolic compute. |
+
+### Rust (crates)
+
+| Crate | Source | Role |
+|---|---|---|
+| `hecke-engine` | `tools/hecke-engine/` | Gröbner-Shirshov reducer, Gram matrix, Hoefsmit seminormal, Markov-trace, Wenzl LR, Clarabel SDP backend (opt-in). Currently path-only (not on crates.io due to Clarabel fork + MPFR system deps). |
+| `pyhecke-native` | `tools/pyhecke-native/` | PyO3 binding crate (built into the `pyhecke-native` PyPI wheel). |
+| `hecke-engine-wasm` | `tools/hecke-engine-wasm/` | WASM-bindgen crate, MPFR-free surface. |
+
 ## Project Structure
 
 | Path | Description |
@@ -307,6 +337,14 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 | `folio-assistant/` | Platform: MCP server, auth, viewer, chat UI, simulators |
 | `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache |
 | `folio-assistant/simulators/` | Interactive HTML/WebGL visualizations |
+| `folio-assistant/computations/` | Python compute scripts + `*.witness.json` (in-repo Layer 3) |
+| `qou-mass/` | `qou-mass` PyPI package — external-researcher facade (Layer 3 alt.) |
+| `tools/qou-substrate/` | `qou-substrate` PyPI package — q₀, precision, WitnessBuilder (Layer 2a) |
+| `tools/pyhecke/` | `pyhecke` PyPI package — Hecke/Gram/trace (Layer 2b) |
+| `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 → hecke-engine |
+| `tools/hecke-engine/` | `hecke-engine` Rust crate — canonical compute core (Layer 1) |
+| `tools/hecke-engine-{wasm,node,r,jvm,c}/` | Multi-language bindings of `hecke-engine` |
+| `tools/witness-schema/` | `witness-schema` PyPI + npm — cross-language `*.witness.json` schemas |
 | `blueprint/src/` | LeanBlueprint source (dependency graph) |
 | `deploy/` | Remote MCP deployment (Docker Compose, Caddy, auth) |
 | `.github/workflows/` | CI/CD: Lean build, publish, blueprint, deploy |
