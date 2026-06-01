@@ -14,27 +14,38 @@ whose Taylor coefficients in h = q−q⁻¹ are exact rationals linear in α
 TAYLOR analysis only — it never applied the q-difference / Fourier /
 root-of-unity machinery that PRs #1593/#1602/#1622 developed for Q_β.
 
+LEVEL DISCIPLINE (CLAUDE.md "Im(q) at fibre vs observable level"): the
+Habiro element H(q,α) lives at the FIBRE / categorical level (pre-τ,
+formal q), where Im is UNCONSTRAINED and the operative symmetry is the
+bar INVOLUTION q↦q⁻¹ — NOT a reality assumption. q and α are kept formal
+throughout the spectrum; the observable component is real ONLY at the
+final archimedean q₀ evaluation. Forcing q or α real at the fibre level
+would conflate the two levels (a registered audit flag).
+
 This probe applies that machinery to H, exactly. Two structural
 advantages over Q_β make α_EM a cleaner test:
-  • [2]_q = q + q⁻¹ is MANIFESTLY bar-symmetric (q↦q⁻¹ invariant), so H
-    is PURELY bar-even — the charge-conjugation-symmetric (physical)
-    sector PR #1602 said f must live in. No bar-even extraction needed.
+  • [2]_q = q + q⁻¹ is a FIXED POINT of the bar involution (q↦q⁻¹
+    invariant), so H is a bar fixed point — the clean charge-
+    conjugation-symmetric sector PR #1602 said f must live in. (Q_β's
+    Δtr_M is NOT a bar fixed point; it carries a bar-anti-invariant
+    part to cancel.) This is an involution statement, not a reality one.
   • H is a Laurent POLYNOMIAL (no denominator), so it has NO poles —
     contrast Q_β's Δtr_M which had a genuine pole at ζ_4. H's
     root-of-unity spectrum is finite and exact.
 
-WHAT THIS PROBE COMPUTES (exact symbolic; no fitting):
+WHAT THIS PROBE COMPUTES (exact symbolic; α FORMAL; no fitting):
 
-  1. The root-of-unity spectrum H(ζ_d), ζ_d = e^{2πi/d}, as exact
-     complex numbers (rectangular form), for d = 1..8. These are the
-     Fourier modes of the q-difference shift σ_q acting on H.
+  1. The root-of-unity spectrum H(ζ_d), ζ_d = e^{2πi/d}, exact in the
+     cyclotomic field ℚ(ζ_d) with α a formal (Im-unconstrained) fibre
+     parameter, for d = 1..8. These are the Fourier modes of σ_q on H.
   2. The special values: H(ζ_1) = 2 (classical α/(4π) leading term),
      H(ζ_2) = −2 (bar mode), H(ζ_4) = 0 (a ZERO — vs Q_β's pole).
   3. The exact Taylor coefficients c_k(α) in the ladder variable h
      (re-deriving the known recursion c_k = c_k^{[2]_q} − α·c_{k−2}^{[2]_q})
-     and the q₀ truncation error — to confirm the q-difference view
-     reproduces the established α_EM result.
-  4. The bar-symmetry check: H is exactly bar-even (witness assertion).
+     and the q₀ truncation error — at the archimedean level, where the
+     observable is real — confirming the established α_EM result.
+  4. The bar-INVOLUTION check: H is exactly a bar fixed point (witness
+     assertion), over the formal fibre variable (no reality assumed).
 
 DISCIPLINE (CLAUDE.md §7b, ck-tiered-not-binary): exact symbolic; no
 fit; characterization of the α_EM Habiro element's q-difference
@@ -82,9 +93,11 @@ def main() -> int:
         "(1−h²α) = (q+q⁻¹)(1−(q−q⁻¹)²α). Computes the exact root-of-unity "
         "spectrum H(ζ_d) (the Fourier modes of σ_q), the special values "
         "H(ζ_1)=2 (classical α/4π), H(ζ_2)=−2 (bar mode), H(ζ_4)=0 (a "
-        "ZERO — vs Q_β's pole), confirms H is exactly bar-even (purely "
-        "the charge-conjugation-symmetric sector PR #1602 requires), and "
-        "reproduces the established h-Taylor recursion + q₀ truncation. "
+        "ZERO — vs Q_β's pole), confirms H is a fixed point of the bar "
+        "involution q↦q⁻¹ over the FORMAL fibre variable (the charge-"
+        "conjugation-symmetric sector PR #1602 requires; not a reality "
+        "assumption — reality enters only at the archimedean q₀ step), "
+        "and reproduces the established h-Taylor recursion + q₀ truncation. "
         "Exact symbolic; sharpens the α_EM modular target, no closure of "
         "the open derived form."
     )
@@ -95,41 +108,50 @@ def main() -> int:
     print("=" * 78)
     print()
 
-    q = sp.Symbol("q", positive=True)
-    alpha = sp.Symbol("alpha", real=True, positive=True)
+    # FIBRE-LEVEL symbols: NO reality assumption. Per CLAUDE.md "Im(q) at
+    # fibre vs observable level", the Habiro element H(q,α) lives at the
+    # fibre/categorical level (pre-τ, formal q), where Im is UNCONSTRAINED
+    # and the relevant structure is the bar INVOLUTION q↦q⁻¹ — not a
+    # reality constraint. The observable component is real ONLY at the
+    # final archimedean (q₀) evaluation, applied there explicitly. Forcing
+    # α real here would conflate the two levels (a registered audit flag).
+    q = sp.Symbol("q")           # formal fibre variable, Im unconstrained
+    alpha = sp.Symbol("alpha")   # fibre parameter, Im unconstrained
     h = q - 1 / q
     H = (q + 1 / q) * (1 - h ** 2 * alpha)
     print(f"  H(q,α) = [2]_q·(1−h²α) = {sp.expand(H)}")
     print()
 
-    # ── 1. bar-symmetry: H is exactly bar-even ─────────────────────
+    # ── 1. bar INVOLUTION: H is a fixed point (the structural object) ─
+    # The relevant fibre-level structure is the bar INVOLUTION q↦q⁻¹ (the
+    # framework/tower involution), NOT a reality assumption. H being a
+    # fixed point of bar is an exact algebraic statement over the formal
+    # (Im-unconstrained) fibre variable q — it holds whether or not q,α
+    # are later evaluated to real archimedean values.
     H_bar = sp.cancel(H.subs(q, 1 / q))
-    is_bar_even = sp.simplify(H_bar - H) == 0
-    print(f"  BAR-SYMMETRY: H(1/q) − H(q) = {sp.simplify(H_bar - H)}  "
-          f"→ bar-even (physical) = {is_bar_even}")
-    print(f"    (contrast Q_β's Δtr_M, which mixed bar-even/odd; H is "
-          f"PURELY bar-even —\n     the sector PR #1602 said f must live in.)")
+    is_bar_fixed = sp.simplify(H_bar - H) == 0
+    print(f"  BAR INVOLUTION (q↦q⁻¹): H(1/q) − H(q) = "
+          f"{sp.simplify(H_bar - H)}  → fixed point = {is_bar_fixed}")
+    print(f"    (the framework/tower involution structure; NOT a reality")
+    print(f"     constraint. Contrast Q_β's Δtr_M, which was NOT a bar")
+    print(f"     fixed point — it mixed bar-even/odd. H is the clean case.)")
     print()
 
     # ── 2. root-of-unity spectrum (Fourier modes of σ_q) ───────────
+    # α is kept FORMAL (Im unconstrained) at the fibre level: the spectrum
+    # is exact in the cyclotomic field ℚ(ζ_d), with α-coefficients that
+    # are cyclotomic elements. Reality of the observable component is
+    # imposed ONLY at the archimedean q₀ evaluation (§5), never here.
     def roots_eval(expr, d):
         z = sp.exp(sp.I * 2 * sp.pi / d)
-        val = expr.subs(q, z)
-        # rectangular complex simplification
-        val = sp.simplify(sp.expand_complex(sp.simplify(val)))
-        return val
-    print("  ROOT-OF-UNITY SPECTRUM H(ζ_d) (Fourier modes of σ_q):")
+        # collect in α (formal); simplify only the cyclotomic coefficients
+        return sp.collect(sp.simplify(sp.expand(expr.subs(q, z))), alpha)
+    print("  ROOT-OF-UNITY SPECTRUM H(ζ_d) (Fourier modes of σ_q; α FORMAL,")
+    print("  exact in the cyclotomic field ℚ(ζ_d) — no reality imposed):")
     spectrum = []
     for d in range(1, 9):
         val = roots_eval(H, d)
-        # numeric (at α = CODATA) for a clean readout
-        al_cod = sp.Rational("1", "137") * 0 + sp.nsimplify(
-            mpf("1") / mpf("137.035999084"), rational=True)
-        valn = complex(sp.N(val.subs(alpha, al_cod), 30))
-        spectrum.append({
-            "d": d, "H_symbolic": str(val),
-            "H_at_alpha_codata": f"{valn.real:.8f}{valn.imag:+.8f}j",
-        })
+        spectrum.append({"d": d, "H_symbolic_cyclotomic": str(val)})
         print(f"    ζ_{d}:  H = {val}")
     print()
 
@@ -159,10 +181,14 @@ def main() -> int:
     print(f"    recursion c_2 = 1/4 − 2α holds: {recursion_ok}")
     print()
 
-    # ── 5. q₀ truncation accuracy ──────────────────────────────────
-    q0 = mpf(Q_50_DIGIT_STR)
+    # ── 5. ARCHIMEDEAN (q₀) evaluation — reality imposed HERE ONLY ─
+    # This is the observable level (post-τ functor): q₀ is real
+    # (Im(q₀)=0, verified `lusztig_q_0_imaginary_part_zero`) and α is the
+    # real CODATA fine-structure constant. The reality constraint belongs
+    # to this archimedean step, NOT to the fibre-level spectrum above.
+    q0 = mpf(Q_50_DIGIT_STR)          # real archimedean substrate value
     h0 = q0 - 1 / q0
-    al_cod = mpf("1") / mpf("137.035999084")
+    al_cod = mpf("1") / mpf("137.035999084")   # real observable α
     H_exact = (q0 + 1 / q0) * (1 - h0 ** 2 * al_cod)
     H_trunc = mpf(0)
     for n in [0, 2, 4, 6, 8]:
@@ -180,34 +206,42 @@ def main() -> int:
     print(" FINDING (α_EM q-difference — exact; sharpens the modular target)")
     print("=" * 78)
     print(f"""
-  • The α_EM Habiro element H = [2]_q·(1−h²α) is PURELY bar-even
-    (q↦q⁻¹ invariant) — it already lives entirely in the charge-
-    conjugation-symmetric sector PR #1602 said the Q_β scaling map f
-    must occupy. α_EM is the "clean" case; Q_β is the same machinery
-    with a bar-odd contamination to cancel.
+  • The α_EM Habiro element H = [2]_q·(1−h²α) is a FIXED POINT of the
+    bar involution q↦q⁻¹ (the framework/tower involution structure) —
+    an exact algebraic fact over the FORMAL fibre variable, with NO
+    reality assumed. This is the clean charge-conjugation-symmetric
+    sector PR #1602 said the Q_β scaling map f must occupy. α_EM is the
+    "clean" case (a bar fixed point); Q_β's Δtr_M is NOT a bar fixed
+    point — it carries a bar-anti-invariant part to be cancelled.
 
-  • Root-of-unity spectrum (exact): H(ζ_1)=2 (classical α/4π leading),
-    H(ζ_2)=−2 (bar mode), H(ζ_4)=0. The ζ_4 ZERO is the structural
-    counterpart of Q_β's ζ_4 POLE — α_EM's modular node vs Q_β's
-    modular singularity. Same q-difference machinery, dual special
-    value.
+  • Root-of-unity spectrum (exact, α formal, in the cyclotomic field):
+    H(ζ_1)=2 (classical α/4π leading), H(ζ_2)=−2, H(ζ_4)=0. The ζ_4
+    ZERO is the structural counterpart of Q_β's ζ_4 POLE — dual modular
+    nodes of the same q-difference machinery. The α-coefficients are
+    cyclotomic elements (e.g. ζ_8 carries √2, ζ_5 carries √5).
 
-  • H is a Laurent polynomial (no poles) → its q-difference structure
-    is finite and exact; the h-Taylor recursion c_k = c_k^{{[2]_q}} −
-    α·c_{{k−2}}^{{[2]_q}} is the mode generator, q₀-stable (the c_k are
-    α-linear rationals, not q₀-dependent near-matches like Q_β's).
+  • LEVEL DISCIPLINE (per CLAUDE.md Im(q) fibre-vs-observable): the
+    spectrum lives at the FIBRE level (q,α formal, Im unconstrained;
+    the involution q↦q⁻¹ is the operative symmetry). The observable
+    component is real ONLY at the archimedean q₀ evaluation — where the
+    h-recursion c_k = c_k^{{[2]_q}} − α·c_{{k−2}}^{{[2]_q}} gives the real
+    α-linear rationals (q₀-stable, NOT the Q_β near-match flip-flop).
 
   • OPEN (unchanged): the α_EM next-order DERIVED form is still open
     (alpha-em ledger). This probe sharpens its modular target — any
-    derivation of H must reproduce the H(ζ_4)=0 node and the bar-even
-    structure — but does not close it. No fitted form.
+    derivation of H must reproduce the H(ζ_4)=0 node and the bar-
+    involution fixed-point structure — but does not close it. No fit.
     """)
 
     builder.add_data("habiro_element", {
         "H": "[2]_q·(1−h²α) = (q+q⁻¹)(1−(q−q⁻¹)²α)",
         "h_basis": "h = q − q⁻¹ (Hecke differential; distinct from Habiro "
                    "u=q^{1/2} and ladder u_ladder=b·ℏ²)",
-        "is_bar_even_exact": bool(is_bar_even),
+        "is_bar_involution_fixed_point": bool(is_bar_fixed),
+        "level_note": ("fibre-level: q,α formal (Im unconstrained), bar "
+                       "involution q↦q⁻¹ is the structural object; reality "
+                       "of observable component imposed ONLY at archimedean "
+                       "q₀ evaluation. Per CLAUDE.md Im(q) fibre-vs-observable."),
     })
     builder.add_data("root_of_unity_spectrum", spectrum)
     builder.add_data("special_values", {
@@ -231,13 +265,15 @@ def main() -> int:
         "no_fitted_form_proposed": True,
     })
     builder.add_assertion(
-        "alpha_em_habiro_is_exactly_bar_even",
-        computed=1.0 if is_bar_even else 0.0,
+        "alpha_em_habiro_is_bar_involution_fixed_point",
+        computed=1.0 if is_bar_fixed else 0.0,
         expected=1.0,
         tolerance=0.0,
-        source=("H = [2]_q·(1−h²α) satisfies H(1/q) = H(q) exactly — it is "
-                "purely bar-even (charge-conjugation-symmetric), the sector "
-                "PR #1602 requires of the Q_β scaling map f."),
+        source=("H = [2]_q·(1−h²α) satisfies H(1/q) = H(q) exactly over the "
+                "FORMAL fibre variable (no reality assumed) — it is a fixed "
+                "point of the bar involution q↦q⁻¹ (the framework/tower "
+                "involution structure). This is the clean charge-conjugation "
+                "sector PR #1602 requires; reality enters only at q₀."),
     )
     builder.add_assertion(
         "alpha_em_habiro_zero_at_zeta4",
