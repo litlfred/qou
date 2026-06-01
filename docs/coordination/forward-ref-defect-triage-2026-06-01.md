@@ -27,7 +27,7 @@ The mass-endomorphism chapter is a pedagogical opener; mass-theory is
 the analysis chapter. Many `uses[]` edges are either backwards or merely
 narrative. Candidates to review (read block prose, then invert edge OR
 change `uses`→`interprets` OR extract a foundational piece):
-1. `conj:mass-endomorphism` → `prop:hecke-mass-trace`, `prop:brane-tower-z-habiro`
+1. `conj:mass-endomorphism` → `prop:hecke-mass-trace`, `conj:brane-tower-z-habiro`
 2. `prop:explicit-central-idempotent` → `prop:jucys-murphy-central-elements-qou`, `prop:bring-figure-eight-depth-2-witness`
 3. `prop:tau-M-asymptotic-rep-theory` → `prop:hoefsmit-V21-cos-symmetrization`, `prop:habiro-residue-sum-equivalence`
 4. `prop:homological-shell-condensation` → `prop:graded-trace-residue-split`
