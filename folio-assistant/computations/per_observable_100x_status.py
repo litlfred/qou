@@ -81,8 +81,15 @@ def _load_err(key: str) -> mpf:
 _M_MU_MEV = M_E_MEV * M_MU_OVER_M_E
 _M_MU_MEV_ERR = mpf("0.0000023")
 _MU_QUOTED = (
+    f"COMPARISON TARGET (codata_MeV), NOT the prediction: "
     f"m_e × (m_μ/m_e)_CODATA = {M_E_MEV} × {M_MU_OVER_M_E} "
-    f"(ratio-derived; independently-quoted 105.6583755(23) MeV)"
+    f"(ratio-derived; independently-quoted 105.6583755(23) MeV). "
+    f"The PREDICTION (pred_MeV) is the INDEPENDENT categorical value "
+    f"m_μ = m_e·Vol(4_1)/ℏ_q² from the Borromean witness — post the "
+    f"2026-05-29 q₀ re-pin it is a genuine 9.5σ PREDICTION, NOT "
+    f"ratio-derived. The ~210 ppb pred-vs-codata gap (963.6× the 100× "
+    f"target) is the real μ-p tension; m_μ does NOT meet L2. Do not read "
+    f"'ratio-derived' as 'm_μ trivially meets' (the error PR #1556 made)."
 )
 
 # Observable registry: (codata_value, codata_err, role, source_label)

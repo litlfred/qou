@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T15:23:04.504821+00:00",
-  "commitSha": "9e45f6d48aa26ae872730fdcb25ff1b624100511",
+  "computedAt": "2026-06-01T03:30:33.181126+00:00",
+  "commitSha": "9fb34426a99a647347ed0e82bd38492a028ff965",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 14,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "64ce62190835",
+  "scriptHash": "9e646082d14f",
   "scriptCommitSha": "130eff212f447a8ef1e9079a61284806bf4695df",
   "precisionMetadata": {
     "compute_dps": 65,
@@ -30,7 +30,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
   },
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "data": {
@@ -65,7 +66,7 @@
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
-        "sigma_source": "m_e × (m_μ/m_e)_CODATA = 0.51099895069000000000000000000000000000000000000000056544347190005 × 206.76828299999999999999999999999999999999999999999984248529449449 (ratio-derived; independently-quoted 105.6583755(23) MeV)",
+        "sigma_source": "COMPARISON TARGET (codata_MeV), NOT the prediction: m_e × (m_μ/m_e)_CODATA = 0.51099895069000000000000000000000000000000000000000056544347190005 × 206.76828299999999999999999999999999999999999999999984248529449449 (ratio-derived; independently-quoted 105.6583755(23) MeV). The PREDICTION (pred_MeV) is the INDEPENDENT categorical value m_μ = m_e·Vol(4_1)/ℏ_q² from the Borromean witness — post the 2026-05-29 q₀ re-pin it is a genuine 9.5σ PREDICTION, NOT ratio-derived. The ~210 ppb pred-vs-codata gap (963.6× the 100× target) is the real μ-p tension; m_μ does NOT meet L2. Do not read 'ratio-derived' as 'm_μ trivially meets' (the error PR #1556 made).",
         "compute_truncation_ppb": "9.464e-44",
         "compute_output_dps": 50
       },
