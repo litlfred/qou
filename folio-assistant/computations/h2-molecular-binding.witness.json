@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T18:28:50.280138+00:00",
-  "commitSha": "3575bd9bdb3b58a37bd8f304612eed9f752defb4",
+  "computedAt": "2026-06-01T21:20:47.023743+00:00",
+  "commitSha": "882c55709a2574a282085001f4b3e2c038e7dd8e",
   "assertions": [
     {
       "name": "H2 binding is positive",
@@ -29,7 +29,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "h2-molecular-binding",
   "scriptFile": "h2-molecular-binding.py",
   "scriptHash": "7b9df38444aa",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T18:17:11.882721+00:00",
-  "commitSha": "3575bd9bdb3b58a37bd8f304612eed9f752defb4",
+  "computedAt": "2026-06-01T21:06:57.098099+00:00",
+  "commitSha": "882c55709a2574a282085001f4b3e2c038e7dd8e",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "a0c94bc39a15",
@@ -643,26 +643,6 @@
         "resolved_via": "sibling"
       },
       {
-        "path": "content/quantum-observable-universe/appendix-surreals/diophantine-birthday.ts",
-        "ref": "qou:QOU.AppendixSurreals.DiophantineBirthday",
-        "kind": "conjecture",
-        "pkg": "qou",
-        "decl_path": "QOU.AppendixSurreals.DiophantineBirthday",
-        "sibling_exists": true,
-        "sibling_declares": true,
-        "lake_root_exists": true,
-        "lake_root_declares": true,
-        "lake_parent_declares": false,
-        "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/DiophantineBirthday.lean",
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals/diophantine-birthday.lean"
-        ],
-        "grep_hit": true,
-        "grep_hit_under_lake_root": true,
-        "result": "ok",
-        "resolved_via": "sibling"
-      },
-      {
         "path": "content/quantum-observable-universe/appendix-surreals/hoefsmit-is-surreal-construction.ts",
         "ref": "qou:QOU.AppendixSurreals.hoefsmit_is_surreal_construction",
         "kind": "proposition",
@@ -676,27 +656,6 @@
         "grep_hits": [
           "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/HoefsmitBridge.lean",
           "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals/hoefsmit-is-surreal-construction.lean"
-        ],
-        "grep_hit": true,
-        "grep_hit_under_lake_root": true,
-        "result": "ok",
-        "resolved_via": "sibling"
-      },
-      {
-        "path": "content/quantum-observable-universe/appendix-surreals/infinitesimal-frobenius.ts",
-        "ref": "qou:QOU.AppendixSurreals.InfinitesimalFrobenius",
-        "kind": "conjecture",
-        "pkg": "qou",
-        "decl_path": "QOU.AppendixSurreals.InfinitesimalFrobenius",
-        "sibling_exists": true,
-        "sibling_declares": true,
-        "lake_root_exists": true,
-        "lake_root_declares": true,
-        "lake_parent_declares": false,
-        "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/InfinitesimalFrobenius.lean",
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals/infinitesimal-frobenius.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -780,27 +739,6 @@
         "grep_hits": [
           "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/LocalInfinitesimalField.lean",
           "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals/local-infinitesimal-field.lean"
-        ],
-        "grep_hit": true,
-        "grep_hit_under_lake_root": true,
-        "result": "ok",
-        "resolved_via": "sibling"
-      },
-      {
-        "path": "content/quantum-observable-universe/appendix-surreals/on-p-modular-hecke.ts",
-        "ref": "qou:QOU.AppendixSurreals.OnPModularHecke",
-        "kind": "conjecture",
-        "pkg": "qou",
-        "decl_path": "QOU.AppendixSurreals.OnPModularHecke",
-        "sibling_exists": true,
-        "sibling_declares": true,
-        "lake_root_exists": true,
-        "lake_root_declares": true,
-        "lake_parent_declares": false,
-        "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/OnPModularHecke.lean",
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals/on-p-modular-hecke.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -946,26 +884,6 @@
         "resolved_via": "sibling"
       },
       {
-        "path": "content/quantum-observable-universe/appendix-surreals/standard-part-functor.ts",
-        "ref": "qou:QOU.AppendixSurreals.StandardPart",
-        "kind": "definition",
-        "pkg": "qou",
-        "decl_path": "QOU.AppendixSurreals.StandardPart",
-        "sibling_exists": true,
-        "sibling_declares": true,
-        "lake_root_exists": true,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/ClassicalLimitStpart.lean",
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals/standard-part-functor.lean"
-        ],
-        "grep_hit": true,
-        "grep_hit_under_lake_root": true,
-        "result": "ok",
-        "resolved_via": "sibling"
-      },
-      {
         "path": "content/quantum-observable-universe/appendix-surreals/surreal-blowup-calculus.ts",
         "ref": "qou:QOU.AppendixSurreals.BlowupCalculus",
         "kind": "definition",
@@ -1046,7 +964,89 @@
         "resolved_via": "sibling"
       },
       {
-        "path": "content/quantum-observable-universe/appendix-surreals/wenzl-positivity-implies-substrate-positivity.ts",
+        "path": "content/quantum-observable-universe/appendix-surreals-archimedean/diophantine-birthday.ts",
+        "ref": "qou:QOU.AppendixSurreals.DiophantineBirthday",
+        "kind": "conjecture",
+        "pkg": "qou",
+        "decl_path": "QOU.AppendixSurreals.DiophantineBirthday",
+        "sibling_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": true,
+        "lake_root_declares": true,
+        "lake_parent_declares": false,
+        "grep_hits": [
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/DiophantineBirthday.lean",
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals-archimedean/diophantine-birthday.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "sibling"
+      },
+      {
+        "path": "content/quantum-observable-universe/appendix-surreals-archimedean/infinitesimal-frobenius.ts",
+        "ref": "qou:QOU.AppendixSurreals.InfinitesimalFrobenius",
+        "kind": "conjecture",
+        "pkg": "qou",
+        "decl_path": "QOU.AppendixSurreals.InfinitesimalFrobenius",
+        "sibling_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": true,
+        "lake_root_declares": true,
+        "lake_parent_declares": false,
+        "grep_hits": [
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/InfinitesimalFrobenius.lean",
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals-archimedean/infinitesimal-frobenius.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "sibling"
+      },
+      {
+        "path": "content/quantum-observable-universe/appendix-surreals-archimedean/on-p-modular-hecke.ts",
+        "ref": "qou:QOU.AppendixSurreals.OnPModularHecke",
+        "kind": "conjecture",
+        "pkg": "qou",
+        "decl_path": "QOU.AppendixSurreals.OnPModularHecke",
+        "sibling_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": true,
+        "lake_root_declares": true,
+        "lake_parent_declares": false,
+        "grep_hits": [
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/OnPModularHecke.lean",
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals-archimedean/on-p-modular-hecke.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "sibling"
+      },
+      {
+        "path": "content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.ts",
+        "ref": "qou:QOU.AppendixSurreals.StandardPart",
+        "kind": "definition",
+        "pkg": "qou",
+        "decl_path": "QOU.AppendixSurreals.StandardPart",
+        "sibling_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": true,
+        "lake_root_declares": false,
+        "lake_parent_declares": false,
+        "grep_hits": [
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/AppendixSurreals/ClassicalLimitStpart.lean",
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-functor.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "sibling"
+      },
+      {
+        "path": "content/quantum-observable-universe/appendix-surreals-archimedean/wenzl-positivity-implies-substrate-positivity.ts",
         "ref": "qou:QOU.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity",
         "kind": "conjecture",
         "pkg": "qou",
@@ -1057,7 +1057,7 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals/wenzl-positivity-implies-substrate-positivity.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/appendix-surreals-archimedean/wenzl-positivity-implies-substrate-positivity.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
@@ -5835,18 +5835,18 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.AlphaShiftTorus.alpha_shift_torus_knot",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/AlphaShiftTorus/AlphaShiftTorusKnot.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts",
@@ -7163,18 +7163,18 @@
         "kind": "theorem",
         "pkg": "qou",
         "decl_path": "QOU.Archimedean.em_spectral_completeness",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/em-spectral-completeness.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/Archimedean/EmSpectralCompleteness.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/explicit-alpha-k-h3.ts",
@@ -8033,18 +8033,18 @@
         "kind": "definition",
         "pkg": "qou",
         "decl_path": "QOU.Braiding.HeckeMassElement",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/hecke-mass-element.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/Torsion/HeckeMassElement.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/hecke-mass-trace.ts",
@@ -8071,18 +8071,18 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.hoefsmit_V21_cos_symmetrization",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/hoefsmit-V21-cos-symmetrization.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.ts",
@@ -8434,18 +8434,18 @@
         "kind": "corollary",
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.knot_factor_amphicheiral",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/knot-factor-amphicheiral.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorAmphicheiral.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.ts",
@@ -8507,22 +8507,22 @@
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.ts",
-        "ref": "qou:QOU.BraidKnot.knot_factor_spectral_derivation",
+        "ref": "qou:QOU.BraidKnot.knot_factor_spectral_form",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.knot_factor_spectral_derivation",
-        "sibling_exists": true,
+        "decl_path": "QOU.BraidKnot.knot_factor_spectral_form",
+        "sibling_exists": false,
         "sibling_declares": false,
-        "lake_root_exists": true,
-        "lake_root_declares": true,
+        "lake_root_exists": false,
+        "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/knot_factor_spectral_derivation.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorSpectralDerivation.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "lake_root"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid.ts",
@@ -9448,18 +9448,18 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.plancherel_weight_boundedness",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/PlancherelWeightBoundedness.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.ts",
@@ -9543,18 +9543,18 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.q_beta_categorical_precision_ladder",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/q-integer-mass-formula.ts",
@@ -10497,18 +10497,18 @@
         "kind": "definition",
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.TwoRowStratum.TwoRowStratum",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
-        "lake_parent_declares": false,
+        "lake_parent_declares": true,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/mass-theory/two-row-stratum.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/TwoRowStratum.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "lake_parent"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/unified-curvature-rank-mass-formula.ts",
@@ -11710,8 +11710,8 @@
           "/home/runner/work/qou/qou/content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean",
           "/home/runner/work/qou/qou/content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean",
           "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/ParticleInteractions/neutron_qvalue_symbolic.lean",
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean",
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -15044,18 +15044,18 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.Archimedean.bring_zero_mode_additive_form",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.ts",
@@ -15082,7 +15082,7 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.Archimedean.em_coupling_projection",
-        "sibling_exists": true,
+        "sibling_exists": false,
         "sibling_declares": false,
         "lake_root_exists": true,
         "lake_root_declares": true,
@@ -15101,18 +15101,18 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.Archimedean.force_carrier_bring_uniqueness",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/predicted-spectra/force-carrier-bring-uniqueness.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/Archimedean/ForceCarrierBringUniqueness.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/predicted-spectra/gauge-coupling-uniqueness.ts",
@@ -15757,18 +15757,18 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.Archimedean.torus_knot_genus_four_unique",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/predicted-spectra/torus-knot-genus-four-unique.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/Archimedean/TorusKnotGenusFourUnique.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.ts",
@@ -15795,18 +15795,18 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.Archimedean.TypeBCrystal.PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero",
-        "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_exists": false,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/predicted-spectra/up-quark.ts",

@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T18:26:24.771288+00:00",
-  "commitSha": "3575bd9bdb3b58a37bd8f304612eed9f752defb4",
+  "computedAt": "2026-06-01T21:16:15.811670+00:00",
+  "commitSha": "882c55709a2574a282085001f4b3e2c038e7dd8e",
   "assertions": [
     {
       "name": "delta_n_minus_p_factorization_completed",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 740,
+  "durationMs": 815,
   "computation": "qbeta-habiro-delta-am-factorization",
   "scriptFile": "qbeta_habiro_delta_am_factorization.py",
   "scriptHash": "16ebcf4da88b",
