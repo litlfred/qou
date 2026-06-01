@@ -91,8 +91,8 @@ Live snapshot from `scripts/lean-coverage.ts` (regenerated on each `main` publis
 
 | Block kind | Total | With Lean sibling | Fully formalized |
 |------------|------:|------------------:|-----------------:|
-| Provable claims (theorem/lemma/proposition/corollary) | 581 | 575 | **572 sorry-free (98.5%)** |
-| Conjectures (open) | 134 | 132 | **124 class-axiomatised (92.5%)** |
+| Provable claims (theorem/lemma/proposition/corollary) | 583 | 577 | **574 sorry-free (98.5%)** |
+| Conjectures (open) | 135 | 133 | **125 class-axiomatised (92.6%)** |
 | Definitions | 211 | 211 | — |
 
 Class-axiomatised conjectures follow the conditional-class convention
