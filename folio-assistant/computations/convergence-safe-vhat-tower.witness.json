@@ -1,12 +1,36 @@
 {
-  "description": "Convergence-safe brane tower for derived per-crossing V\u0302_i: 4 derivation-motivated candidates, raw, zero free parameters.",
-  "computation": "convergence_safe_vhat_tower",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-01T17:29:38.477439+00:00",
+  "commitSha": "4b0cb4926a7bf222845558fcef01d480d9a9e5f9",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "convergence-safe-vhat-tower",
+  "scriptFile": "convergence_safe_vhat_tower.py",
+  "scriptHash": "28e2979fff53",
+  "scriptCommitSha": "1072eadf2ff736ba5682c6d86c4edb2a23411674",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Convergence-safe brane tower for derived per-crossing V̂_i: 4 derivation-motivated candidates, raw, zero free parameters.",
   "q0": "1.10997858275138080759166909561076887987449912187357873607281",
   "q0_inv": "0.900918283955741492160822882481093936014741626610554180691118",
   "z_markov": "0.499320334183694452413442680257666303751948164041532194568092",
   "h": "0.209060298795639315430846213129674943859757495263024555381696",
   "radius_li2q": "1.10997858275138080759166909561076887987449912187357873607281",
-  "generated": "2026-06-01T17:21:32.887207+00:00",
+  "generated": "2026-06-01T17:27:35.910434+00:00",
   "vhat_std_derived": {
     "proton": {
       "g0": "1.14610143246416131871008044613853833312413067120548698723388",
@@ -52,7 +76,7 @@
     "li2q_continued_at_proton_g0": "(2.08085459537335555835192303385596189815254264096631071682507 + 0.65678229885366757245614396881335944805302471193499025227679j)",
     "li2q_continued_at_proton_g0_re": "2.08085459537335555835192303385596189815254264096631071682507",
     "li2q_continued_at_proton_g0_im": "0.65678229885366757245614396881335944805302471193499025227679",
-    "singularity_class": "ln_q(1\u2212z) has a SIMPLE POLE at z=q (Lambert closed form); the integrand \u2212ln_q(1\u2212u)/u ~ (h/q)/(1\u2212u/q)/u diverges like 1/(q\u2212u). Li_2^q = \u2212\u222b of it \u21d2 \u222bdu/(1\u2212u/q) = \u2212q\u00b7ln(1\u2212u/q) \u2192 LOGARITHMIC singularity (branch point), INTEGRABLE. So z=q is NOT a pole of Li_2^q itself; Li_2^q is continuable past z=q with a branch cut on [q,\u221e). The +i0 continuation yields a finite complex value with a nonzero imaginary part for z>q."
+    "singularity_class": "ln_q(1−z) has a SIMPLE POLE at z=q (Lambert closed form); the integrand −ln_q(1−u)/u ~ (h/q)/(1−u/q)/u diverges like 1/(q−u). Li_2^q = −∫ of it ⇒ ∫du/(1−u/q) = −q·ln(1−u/q) → LOGARITHMIC singularity (branch point), INTEGRABLE. So z=q is NOT a pole of Li_2^q itself; Li_2^q is continuable past z=q with a branch cut on [q,∞). The +i0 continuation yields a finite complex value with a nonzero imaginary part for z>q."
   },
   "candidates": {
     "cand1_phi_q": {

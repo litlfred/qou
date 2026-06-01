@@ -49,6 +49,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps()
 
 from _li_2_q_util import li_2_q, load_q_50dps  # noqa: E402
@@ -349,9 +350,12 @@ def main():
         else:
             out["pn_signal_per_candidate"][cname] = {"finite": False}
 
-    wpath = HERE / "convergence-safe-vhat-tower.witness.json"
-    with wpath.open("w") as fh:
-        json.dump(out, fh, indent=2)
+    wpath = WitnessBuilder.wrap_legacy(
+        "convergence-safe-vhat-tower",
+        out,
+        script_path=__file__,
+        engine="mpmath",
+    ).save()
     print(f"Wrote {wpath}")
 
     print("\n=== genuine derived V̂_i (std) ===")
