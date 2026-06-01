@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T20:37:26.894964+00:00",
-  "commitSha": "c9ea96355533bc7681cf488e7de46fc91bc91781",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T20:48:20.736860+00:00",
+  "commitSha": "e162ef7b5e81cbab10fad405e27e10cee82a9730",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "a15808a316f9",
-  "scriptCommitSha": "8948cf14da37f8b87865ccd85007d308796d8201",
+  "scriptCommitSha": "e96faa966cf29a746d508c5a99f3db367eba0d39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,7 +25,7 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
@@ -36,7 +36,7 @@
   "data": {
     "total_issues": 0,
     "flagged_script_count": 0,
-    "scripts_scanned": 899,
+    "scripts_scanned": 900,
     "rows": []
   }
 }

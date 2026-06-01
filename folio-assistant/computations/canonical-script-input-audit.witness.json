@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T18:13:12.197442+00:00",
-  "commitSha": "3575bd9bdb3b58a37bd8f304612eed9f752defb4",
+  "computedAt": "2026-06-01T20:48:10.476903+00:00",
+  "commitSha": "e162ef7b5e81cbab10fad405e27e10cee82a9730",
   "assertions": [],
   "allPassed": true,
   "durationMs": 11,
@@ -26,17 +26,17 @@
   "description": "Audit of every Python computation script under folio-assistant/computations/ for alignment with the paper's 3-input canonical scheme (calibration-inputs.md): q_0 from m_μ/m_e, m_e, and Q_β(n). Flags scripts that use both m_p AND m_n from CODATA (over-counts hadronic input), use Vol_hyp (fitted under option B), or omit canonical input modules entirely.",
   "contentBlock": "calibration-inputs.md",
   "parameters": {
-    "total_scripts_audited": 895
+    "total_scripts_audited": 901
   },
   "data": {
     "by_scheme": {
-      "no-hadronic-input (substrate-only or pure dimensionless)": 674,
-      "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 114,
+      "no-hadronic-input (substrate-only or pure dimensionless)": 677,
+      "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 116,
       "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 50,
       "Q_β-only-hadronic": 29,
       "3-input-canonical-with-substrate-splitting (m_n − m_p derived from prop:flavor-dressed-mass-from-substrate-split; m_p + m_n used only for M_N anchor — CLASS-A pending Workplan-0b)": 1,
       "m_p-only (no Q_β; m_n derivation TBD)": 21,
-      "3-input-canonical (m_p + Q_β; per calibration-inputs.md)": 4,
+      "3-input-canonical (m_p + Q_β; per calibration-inputs.md)": 5,
       "3-input-canonical-with-substrate-splitting-pure (consumes substrate-splitting witness; no CODATA nucleon masses — post-Workplan-0b target form)": 2
     },
     "rows": [
@@ -4081,6 +4081,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "complex_fibre_cross_ratio.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": true,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "compound_binding_via_differences.py",
         "found": {
           "M_E_MEV": true,
@@ -5961,6 +5981,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "flavor_dependent_cusp_shape.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": true,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "flavor_split_xq_refinement.py",
         "found": {
           "M_E_MEV": true,
@@ -7324,6 +7364,26 @@
         "script": "hardcoded_literal_audit.py",
         "found": {
           "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "he4_partition_dominance_audit_probe.py",
+        "found": {
+          "M_E_MEV": false,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -10759,6 +10819,26 @@
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
+      },
+      {
+        "script": "mn_dpn_xq_cross_anchor_probe.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": true,
+          "M_N_MEV": false,
+          "Q_NEUTRON": true,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": true,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "3-input-canonical (m_p + Q_β; per calibration-inputs.md)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": true
       },
       {
         "script": "mn_flavor_split_h3_plancherel.py",
@@ -14521,6 +14601,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbeta_li2q_imaginary_quantization.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "qbeta_li2q_spectral_combiner_crossanchor_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -15442,6 +15542,26 @@
       },
       {
         "script": "run_pipeline.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "s5_so3_su2_u1_fiber_action.py",
         "found": {
           "M_E_MEV": false,
           "M_P_MEV": false,
@@ -17941,10 +18061,10 @@
         "uses_canonical_consts_source": false
       }
     ],
-    "canonical_3input_count": 36,
+    "canonical_3input_count": 37,
     "substrate_splitting_count": 3,
     "over_count_count": 50,
-    "vol_hyp_fitted_count": 114
+    "vol_hyp_fitted_count": 116
   },
   "caveats": [
     "Heuristic detection by import + regex. False positives possible for scripts that comment out CODATA constants or use them only for comparison rather than derivation.",
