@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:31:54.239710+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T06:05:10.340123+00:00",
+  "commitSha": "fe4b124cd7ed45182c925a10d63cf19198d97711",
   "assertions": [
     {
       "name": "γ e⁻ pair count",
@@ -70,16 +70,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 13,
   "computation": "basis-knot-tables",
   "scriptFile": "basis_knot_tables.py",
   "scriptHash": "86cc478cc978",
   "scriptCommitSha": "49244773d36c5d7240acc362209d1222aa43a29f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
