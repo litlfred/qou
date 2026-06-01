@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T01:44:51.714398+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:17:09.853114+00:00",
+  "commitSha": "9801035a40068c23fce21d0a5cd6afe65025b264",
   "assertions": [
     {
       "name": "shift_proton_h3_finite",
@@ -36,16 +36,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 57,
+  "durationMs": 56,
   "computation": "shift-from-nf-basis",
   "scriptFile": "shift_from_nf_basis.py",
   "scriptHash": "4e768c43961b",
   "scriptCommitSha": "770ecb53f705ffc22279ddeb08cd0990fc831390",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

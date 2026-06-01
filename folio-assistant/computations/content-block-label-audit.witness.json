@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:32:02.947338+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:03:58.560849+00:00",
+  "commitSha": "9801035a40068c23fce21d0a5cd6afe65025b264",
   "assertions": [
     {
       "name": "no_missing_labels",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "content-block-label-audit",
   "scriptFile": "content_block_label_audit.py",
   "scriptHash": "d86c5a63a3d7",
   "scriptCommitSha": "f43e7bb19e062bfbf676c7e50d9e9d8093da7506",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -36,13 +36,13 @@
   "description": "I5 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json with a `contentBlock` field is cross-checked against the union of all `label: \"...\"` declarations in content/**/*.ts manifests. Reports `ok` / `missing_label` / `informational_label` per field. Operationalises the 9-hit I5 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_fields_audited": 276,
-    "registered_labels_count": 2877
+    "total_fields_audited": 290,
+    "registered_labels_count": 2878
   },
   "data": {
     "by_result": {
       "informational_label": 14,
-      "ok": 219,
+      "ok": 233,
       "missing_label": 43
     },
     "rows": [
@@ -232,6 +232,11 @@
         "result": "ok"
       },
       {
+        "witness": "folio-assistant/computations/c-3-categorical-derivation-attempt.witness.json",
+        "content_block_value": "prop:q-beta-categorical-precision-ladder",
+        "result": "ok"
+      },
+      {
         "witness": "folio-assistant/computations/c-k-beta-decay-bound.witness.json",
         "content_block_value": "conj:archimedean-remainder-exponential-decay",
         "result": "missing_label"
@@ -273,6 +278,11 @@
       },
       {
         "witness": "folio-assistant/computations/casimir-carlitz-q-bernoulli-probe.witness.json",
+        "content_block_value": "conj:casimir-epsilon-vacuum",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/casimir-d6-qcorrection-structure.witness.json",
         "content_block_value": "conj:casimir-epsilon-vacuum",
         "result": "ok"
       },
@@ -482,6 +492,11 @@
         "result": "ok"
       },
       {
+        "witness": "folio-assistant/computations/e0-lambda-composite.witness.json",
+        "content_block_value": "prop:rho-k-h3a-refinement",
+        "result": "ok"
+      },
+      {
         "witness": "folio-assistant/computations/eigenvalue-reeb-extension-h4-h5.witness.json",
         "content_block_value": "prop:figure-eight-reeb-rotation",
         "result": "ok"
@@ -540,6 +555,11 @@
         "witness": "folio-assistant/computations/full-twist-root-of-unity-probe.witness.json",
         "content_block_value": "conj:categorical-neutrality-saturated-shells",
         "result": "missing_label"
+      },
+      {
+        "witness": "folio-assistant/computations/gap-a1-binding-k-sdp-feasibility.witness.json",
+        "content_block_value": "conj:canonical-knot-id-sdp",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/gauge-coupling-uniqueness-probe.witness.json",
@@ -917,11 +937,6 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/meson-em-sinh-closed-form.witness.json",
-        "content_block_value": "prop:meson-color-tube-uniqueness",
-        "result": "ok"
-      },
-      {
         "witness": "folio-assistant/computations/meson-mass-from-hecke.witness.json",
         "content_block_value": "prop:meson-mass-hecke-prediction",
         "result": "missing_label"
@@ -1188,6 +1203,61 @@
       },
       {
         "witness": "folio-assistant/computations/qbeta-delta-tr-vs-formA.witness.json",
+        "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-eigenphase-taylor-in-u.witness.json",
+        "content_block_value": "prop:q-beta-categorical-precision-ladder",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-a7-partition.witness.json",
+        "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-cross-pair-quick-dp.witness.json",
+        "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-delta-am-factorization.witness.json",
+        "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-delta6-partition.witness.json",
+        "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-depth15-interpretation.witness.json",
+        "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-element-probe.witness.json",
+        "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-p8-identification.witness.json",
+        "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-partition-followup.witness.json",
+        "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-phi8-interpretation.witness.json",
+        "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-recursion.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
       },

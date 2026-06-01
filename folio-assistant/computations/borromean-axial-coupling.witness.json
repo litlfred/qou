@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T01:35:59.429336+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:07:51.704025+00:00",
+  "commitSha": "9801035a40068c23fce21d0a5cd6afe65025b264",
   "assertions": [
     {
       "name": "g_A",
@@ -30,16 +30,16 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 28,
+  "durationMs": 25,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
   "scriptHash": "4842690bbdef",
   "scriptCommitSha": "03701c4df38ee768d9afc22c4fb5639bb2863852",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
