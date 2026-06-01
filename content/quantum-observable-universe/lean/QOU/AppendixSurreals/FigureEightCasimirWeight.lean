@@ -77,4 +77,29 @@ theorem jones41_three_quarters (q : ℝ) (hq : 0 < q) :
   rw [eq_div_iff (ne_of_gt hpos)]
   exact jones41_three_quarters_cleared q (ne_of_gt hq)
 
+/-- **The result, as a theorem.**  With `h = q − q⁻¹`, the figure-eight Jones
+weight expands as
+  `J_{4_1}(q) = 1 + (3/4)·h² + R(q)`,
+where the remainder `R(q) = h⁴ / (4·(h² + 8 + 4(q+q⁻¹)))` is *exact*, and for
+`q > 0` is positive and of order `h⁴` (its denominator `→ 64` as `q → 1`).
+The leading coefficient `3/4` is forced by `ring`; it is not a fitted constant.
+This is the precise sense in which "`J_{4_1} = 1 + (3/4)h² + O(h⁴)`" holds. -/
+theorem jones41_taylor (q : ℝ) (hq : 0 < q) :
+    jones41 q
+      = 1 + (3 / 4) * (q - q⁻¹) ^ 2
+          + (q - q⁻¹) ^ 4 / (4 * ((q - q⁻¹) ^ 2 + 8 + 4 * (q + q⁻¹))) := by
+  have hpos := jones41_remainder_denom_pos q hq
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hden : (q - q⁻¹) ^ 2 + 8 + 4 * (q + q⁻¹) ≠ 0 := ne_of_gt hpos
+  field_simp
+  ring
+
+/-- The remainder in `jones41_taylor` is nonnegative for `q > 0`: the weight
+is bounded *below* by its second-order Taylor polynomial `1 + (3/4)h²`. -/
+theorem jones41_taylor_remainder_nonneg (q : ℝ) (hq : 0 < q) :
+    0 ≤ (q - q⁻¹) ^ 4 / (4 * ((q - q⁻¹) ^ 2 + 8 + 4 * (q + q⁻¹))) := by
+  have hpos := jones41_remainder_denom_pos q hq
+  have hden : (0 : ℝ) ≤ 4 * ((q - q⁻¹) ^ 2 + 8 + 4 * (q + q⁻¹)) := by linarith
+  exact div_nonneg (by positivity) hden
+
 end QOU.AppendixSurreals
