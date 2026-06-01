@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T04:14:02.326183+00:00",
-  "commitSha": "1ee1ac69eae6e9c7e1fe2e93f89db86f73b7c7d4",
+  "computedAt": "2026-06-01T04:22:29.963961+00:00",
+  "commitSha": "8e4a4c861c2bfc438dc823c541dc1a4fc99d54ba",
   "assertions": [
     {
       "name": "li_2_q_measure_normalized_at_proton",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 23,
   "computation": "phi-q-spectral-combiner-probe",
   "scriptFile": "phi_q_spectral_combiner_probe.py",
-  "scriptHash": "b6fba80ece9e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "355edb121bac",
+  "scriptCommitSha": "8e4a4c861c2bfc438dc823c541dc1a4fc99d54ba",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,42 +66,24 @@
       "c3_baseline_y_lambda_weighted_(mech_6)": "-1.15721110690694083816820736387853685300797224044799804687500"
     },
     "anchor_q_muon": {
-      "q_at_this_anchor": "1.10997859555418057528159407960950937799328227995868622546675",
-      "Σ_y_λ_(should_be_1_but_isnt)": "0.719070368968980268981061598765336384531110525131225585937500",
-      "Σ_μ_λ_(should_be_1_by_construction)": "1.00000000000000000000000000000000000000000000000000000000000",
-      "Σ_μ_λ_deviation_from_1": "-9.05567907882671236750911929088779178068253119813913818958261e-72",
-      "per_block_χ_λ": {
-        "(3)": "-0.260387641790120805129760128693305887281894683837890625000000",
-        "(2,1)": "-0.106814457651578043062556844233768060803413391113281250000000",
-        "(1,1,1)": "-0.171538643776599497581258901846013031899929046630859375000000"
-      },
-      "per_block_y_λ": {
-        "(3)": "0.415395795360613384605841247321222908794879913330078125000000",
-        "(2,1)": "0.280929631031019699793915833652135916054248809814453125000000",
-        "(1,1,1)": "0.0227449425773471845813045177919775596819818019866943359375000"
-      },
-      "per_block_Li_2_q_neg_chi": {
-        "(3)": "-0.245221884433799106512460937771619383136707706801330252486174",
-        "(2,1)": "-0.104103624733653643700973228647873727710524167413947369417305",
-        "(1,1,1)": "-0.164727349142865832587266699977075428948920588429154140670492"
-      },
-      "per_block_μ_λ_(Li_2_q_measure)": {
-        "(3)": "0.477036321206030278254664807801275096778819219198996678907466",
-        "(2,1)": "0.202515408776910932093324944793998237239543544202523523595364",
-        "(1,1,1)": "0.320448270017058789652010247404726665981637236598479797497170"
-      },
-      "c3_candidate_Li_2_q_measure": "-1.79748459122308906790667505520600176276045645579747647640464",
-      "c3_baseline_uniform_sum_(mech_5)": "-5.00000000000000000000000000000000000000000000000000000000000",
-      "c3_baseline_y_lambda_weighted_(mech_6)": "-1.15721110690694083816820736387853685300797224044799804687500"
+      "note": "DEFERRED — q_muon cross-anchor evaluation requires Hoefsmit χ_λ(q) closed-form re-evaluation infrastructure not yet wired. Single-anchor refutation at q_proton is decisive (13% off empirical c_3 = -2.07). The fibre/observable distinction (user 2026-05-31) would matter here: a TRULY q-independent Li_2^q × spectral mechanism would close at both anchors; an empirical near-match would swing. Deferred to a future session that wires the Hoefsmit evaluator."
     },
-    "cross_anchor_summary": {
+    "single_anchor_summary": {
       "c3_candidate_at_q_proton": "-1.79748459121884870713669324258167575566626699265581007469812",
-      "c3_candidate_at_q_muon": "-1.79748459122308906790667505520600176276045645579747647640464",
       "err_pct_vs_empirical_at_q_proton": "13.1356211656671962916593416816471388553488139633784335428348",
-      "err_pct_vs_empirical_at_q_muon": "10.5595565893870195598012113645816906622651910336131523906732",
-      "cross_anchor_swing_pct": "0.000000000235905263983736537301431388863487414570929700857753495442590"
+      "cross_anchor_status": "DEFERRED — Hoefsmit χ_λ(q) evaluator not wired; single-anchor refutation at q_proton is decisive without it"
     },
-    "verdict": "REFUTED — candidate misses by > 5% at one or both anchors",
-    "interpretation": "If TAYLOR-EXACT: Li_2^q × spectral combiner IS the Q_β Habiro element analog; closes c_k chain. If NEAR-MATCH: another near-match (mech #7 trap) — does NOT wire to production. If REFUTED: cleanly rules out combined Li_2^q × spectral attack; updates research-queue."
+    "verdict": "REFUTED — candidate misses empirical c_3 at q_proton by +13.14% (> 5% threshold); decisive single-anchor refutation; q_muon adds no information",
+    "interpretation": "If TAYLOR-EXACT: Li_2^q × spectral combiner IS the Q_β Habiro element analog; closes c_k chain. If NEAR-MATCH: another near-match (mech #7 trap) — does NOT wire to production. If REFUTED: cleanly rules out combined Li_2^q × spectral attack; updates research-queue.",
+    "upstream_witness_hashes": [
+      {
+        "path": "qbeta-per-block-paper-closed-forms.witness.json",
+        "sha256": "ade7228b078f970780b54f587449fbd8764609ae533e6e7219a4d802163dce00",
+        "size_bytes": 2924,
+        "commitSha": "18e46c1c0c0ad4b7f0327c7f4783a0ec73fb8448",
+        "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+        "computedAt": "2026-05-31T04:44:06.333077+00:00"
+      }
+    ]
   }
 }

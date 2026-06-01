@@ -59,8 +59,29 @@ except ImportError:
 
 
 def compute_at_anchor(q: mpf, label: str, per_block_data: dict) -> dict:
-    """Compute candidate μ_λ measure + c_3 candidate at one q anchor."""
+    """Compute candidate μ_λ measure + c_3 candidate at one q anchor.
+
+    For the ``q_proton`` anchor we use the χ_λ values directly from the
+    upstream witness (computed at production q_0 = q_proton). For
+    ``q_muon`` we would need to re-evaluate the Hoefsmit closed forms
+    at q_muon; that requires the per-block χ_λ(q) symbolic forms which
+    are NOT on disk in evaluable form. This probe therefore reports
+    the single-anchor (q_proton) result only; the q_muon cross-anchor
+    test is deferred. Single-anchor refutation at q_proton alone is
+    decisive (13.14% off ⟹ refuted) so the cross-anchor extension
+    isn't required to settle the candidate.
+    """
     q_inv = 1 / q
+
+    if label != "proton":
+        raise NotImplementedError(
+            "q_muon cross-anchor evaluation requires Hoefsmit χ_λ(q) "
+            "closed-form re-evaluation infrastructure not yet wired. "
+            "Single-anchor (q_proton) refutation is decisive (13% off "
+            "empirical c_3 = -2.07); cross-anchor adds nothing to the "
+            "verdict. Deferred to a future session that wires Hoefsmit "
+            "χ_λ(q) reusable evaluator."
+        )
 
     # Per-block leading-order c_3^(λ) (from witness, ε^1 coefficient)
     # Indexing: position 1 in the Taylor coefs list (position 0 is the ε^0 = 0)
@@ -70,26 +91,10 @@ def compute_at_anchor(q: mpf, label: str, per_block_data: dict) -> dict:
         "(1,1,1)": mpf(-2),   # from witness
     }
 
-    # Per-block χ_λ AT THIS q (must recompute at q_muon if not q_proton).
-    # For this probe, we use the witness values for q_proton; q_muon uses
-    # recomputed estimates via the same Hoefsmit-character closed forms.
-    if label == "proton":
-        chi_per_block = {k: mpf(v) for k, v in per_block_data["chi_at_q_0"].items()
-                         if k in c3_per_block}
-        y_per_block = {k: mpf(v) for k, v in per_block_data["y_lambda_at_q_0"].items()
-                       if k in c3_per_block}
-    else:
-        # For muon anchor: recompute using paper closed forms at q_muon.
-        # χ_(3)(q) = q² + q + q⁻¹ + q⁻² (sym), divided by 2-cos normalization...
-        # Use simpler approach: compute via formulas from the witness's
-        # `paper_closed_forms` field if available, else use ratio scaling.
-        # Simplification: scale chi_proton by (q_muon / q_proton)^χ_exp; this
-        # is a near-anchor approximation — for proper probe we need true
-        # recomputation. Mark as estimate.
-        chi_per_block = {k: mpf(v) for k, v in per_block_data["chi_at_q_0"].items()
-                         if k in c3_per_block}
-        y_per_block = {k: mpf(v) for k, v in per_block_data["y_lambda_at_q_0"].items()
-                       if k in c3_per_block}
+    chi_per_block = {k: mpf(v) for k, v in per_block_data["chi_at_q_0"].items()
+                     if k in c3_per_block}
+    y_per_block = {k: mpf(v) for k, v in per_block_data["y_lambda_at_q_0"].items()
+                   if k in c3_per_block}
 
     # Candidate μ_λ via Li_2^q(-|χ_λ|):
     # Li_2^q has convergence radius |z| < q; |χ_λ| ≈ 0.1-0.3 << q ≈ 1.11 → converges.
@@ -151,19 +156,35 @@ def main() -> int:
     EMPIRICAL_C3_PROTON = mpf("-2.0693")   # m_p-pin anchor
     EMPIRICAL_C3_MUON = mpf("-2.0097")    # muon-pin anchor
 
-    # Load per-block data
-    per_block_witness = json.load(open(HERE / "qbeta-per-block-paper-closed-forms.witness.json"))
+    # Load per-block data via WitnessBuilder so the drift detector
+    # (folio-assistant/computations/witness_dependency_drift.py) sees
+    # the upstream hash. Per Copilot review on PR #1609.
+    upstream_path = HERE / "qbeta-per-block-paper-closed-forms.witness.json"
+    per_block_witness = builder.add_upstream(upstream_path)
     per_block_data = per_block_witness.get("data", per_block_witness)
 
-    # Anchor 1: q_proton (production)
+    # SINGLE-ANCHOR PROBE: q_proton only.
+    # Cross-anchor (q_muon) evaluation requires re-evaluating the
+    # Hoefsmit χ_λ(q) closed forms — not yet wired as a reusable
+    # evaluator. The single-anchor refutation at q_proton alone (13%
+    # off empirical c_3) is DECISIVE for this Li_2^q-derived candidate;
+    # cross-anchor data would not change the verdict.
     q_proton = q_at()
     print(f"q_proton = {fmt(q_proton)}")
     result_proton = compute_at_anchor(q_proton, "proton", per_block_data)
-
-    # Anchor 2: q_muon (cross-check)
-    q_muon = q_muon_at()
-    print(f"q_muon   = {fmt(q_muon)}")
-    result_muon = compute_at_anchor(q_muon, "muon", per_block_data)
+    result_muon = {
+        "note": (
+            "DEFERRED — q_muon cross-anchor evaluation requires "
+            "Hoefsmit χ_λ(q) closed-form re-evaluation infrastructure "
+            "not yet wired. Single-anchor refutation at q_proton is "
+            "decisive (13% off empirical c_3 = -2.07). The fibre/"
+            "observable distinction (user 2026-05-31) would matter "
+            "here: a TRULY q-independent Li_2^q × spectral mechanism "
+            "would close at both anchors; an empirical near-match "
+            "would swing. Deferred to a future session that wires "
+            "the Hoefsmit evaluator."
+        )
+    }
 
     print()
     print("--- Per-anchor results ---")
@@ -177,29 +198,33 @@ def main() -> int:
     print()
 
     c3_proton_pred = mpf(result_proton["c3_candidate_Li_2_q_measure"])
-    c3_muon_pred = mpf(result_muon["c3_candidate_Li_2_q_measure"])
     err_proton = (c3_proton_pred - EMPIRICAL_C3_PROTON) / abs(EMPIRICAL_C3_PROTON) * 100
-    err_muon = (c3_muon_pred - EMPIRICAL_C3_MUON) / abs(EMPIRICAL_C3_MUON) * 100
-    cross_anchor_swing = abs(c3_proton_pred - c3_muon_pred) / abs(c3_proton_pred) * 100
 
-    print(f"  Cross-anchor analysis:")
+    print(f"  Single-anchor (q_proton) analysis:")
     print(f"    c_3 candidate at q_proton: {fmt(c3_proton_pred)}")
-    print(f"    c_3 candidate at q_muon:   {fmt(c3_muon_pred)}")
+    print(f"    c_3 empirical at q_proton: {fmt(EMPIRICAL_C3_PROTON)}")
     print(f"    err vs empirical @ proton: {float(err_proton):+.4f}%")
-    print(f"    err vs empirical @ muon:   {float(err_muon):+.4f}%")
-    print(f"    cross-anchor swing:        {float(cross_anchor_swing):.4f}%")
+    print(f"    cross-anchor (q_muon):     DEFERRED (see result_muon note)")
     print()
 
-    # VERDICT logic per pre-stated failure signature
-    if abs(float(err_proton)) < 0.01 and abs(float(err_muon)) < 0.01:
-        verdict = "TAYLOR-EXACT — candidate closes both anchors to compute precision"
-    elif abs(float(err_proton)) < 5 and abs(float(err_muon)) < 5:
-        if abs(float(cross_anchor_swing)) < 0.1:
-            verdict = "NEAR-MATCH (q_0-independent) — both anchors close, no swing, but not at Taylor precision"
-        else:
-            verdict = "NEAR-MATCH (q_0-dependent) — matches at one anchor, swings across; same mode as c_3=-2 (mech #7 trap)"
+    # VERDICT logic — single-anchor decisive for this candidate
+    if abs(float(err_proton)) < 0.01:
+        verdict = (
+            "PROTON-EXACT but cross-anchor unknown — candidate matches at q_proton "
+            "to compute precision; q_muon cross-check REQUIRED before declaring "
+            "Taylor-exact (deferred)"
+        )
+    elif abs(float(err_proton)) < 5:
+        verdict = (
+            "NEAR-MATCH at q_proton (within 5%) — q_muon cross-check would be "
+            "diagnostic, but currently deferred"
+        )
     else:
-        verdict = "REFUTED — candidate misses by > 5% at one or both anchors"
+        verdict = (
+            f"REFUTED — candidate misses empirical c_3 at q_proton by "
+            f"{float(err_proton):+.2f}% (> 5% threshold); decisive single-"
+            f"anchor refutation; q_muon adds no information"
+        )
 
     print(f"  VERDICT: {verdict}")
     print()
@@ -208,12 +233,13 @@ def main() -> int:
     builder.add_data("EMPIRICAL_C3_MUON", fmt(EMPIRICAL_C3_MUON))
     builder.add_data("anchor_q_proton", result_proton)
     builder.add_data("anchor_q_muon", result_muon)
-    builder.add_data("cross_anchor_summary", {
+    builder.add_data("single_anchor_summary", {
         "c3_candidate_at_q_proton": fmt(c3_proton_pred),
-        "c3_candidate_at_q_muon": fmt(c3_muon_pred),
         "err_pct_vs_empirical_at_q_proton": fmt(err_proton),
-        "err_pct_vs_empirical_at_q_muon": fmt(err_muon),
-        "cross_anchor_swing_pct": fmt(cross_anchor_swing),
+        "cross_anchor_status": (
+            "DEFERRED — Hoefsmit χ_λ(q) evaluator not wired; single-"
+            "anchor refutation at q_proton is decisive without it"
+        ),
     })
     builder.add_data("verdict", verdict)
     builder.add_data("interpretation", (

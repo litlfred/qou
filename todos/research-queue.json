@@ -20,7 +20,7 @@
   {
     "id": "research-phi-q-spectral-combiner",
     "summary": "\u03a6_q (Faddeev q-hyperbolic) \u00d7 spectral (Wedderburn) combined attack on c_k AND \u0394_\u03bb",
-    "comment": "DONE (REFUTED) 2026-05-31 by claude/phi-q-spectral-combiner-2026-05-31. CORRECTION: should have been Li_2^q \u00d7 spectral (binding context uses Li_2^q per prop:li2q-phiq-bar-symmetrization), not \u03a6_q \u00d7 spectral. Probe phi_q_spectral_combiner_probe.py tested ONE specific candidate: \u03bc_\u03bb = Li_2^q(-|\u03c7_\u03bb|) / \u03a3 Li_2^q(-|\u03c7_\u03bb'|) as a per-block measure replacing y_\u03bb in the c_3 = \u03a3 \u03bc_\u03bb \u00b7 c_3^(\u03bb) sum. Result: c_3 candidate = -1.7975 vs empirical -2.07 \u2192 REFUTED by 13.1% at q_proton, 10.6% at q_muon. \u03a3 \u03bc_\u03bb = 1 by construction (cures mech #6 normalization defect). Adds as MECHANISM #7 to b502b9b83 ruled-out list. NOTE: this rules out THIS specific Li_2^q-derived measure, not all Li_2^q \u00d7 spectral candidates. Other per-block measures (Li_2^q at dim_q, hook-length sums, etc.) remain untested but would be 7th-ansatz fit-trap if explored without structural justification \u2014 DO NOT proceed without one.",
+    "comment": "DONE (REFUTED) 2026-05-31 by claude/phi-q-spectral-combiner-2026-05-31 (PR #1609). CORRECTION: should have been Li_2^q \u00d7 spectral (binding context uses Li_2^q per prop:li2q-phiq-bar-symmetrization), not \u03a6_q \u00d7 spectral. Probe phi_q_spectral_combiner_probe.py tested ONE specific candidate: \u03bc_\u03bb = Li_2^q(-|\u03c7_\u03bb|) / \u03a3 Li_2^q(-|\u03c7_\u03bb'|) as a per-block measure replacing y_\u03bb in the c_3 = \u03a3 \u03bc_\u03bb \u00b7 c_3^(\u03bb) sum. Result at q_proton: c_3 candidate = -1.7975 vs empirical -2.07 \u2192 REFUTED by 13.1%. \u03a3 \u03bc_\u03bb = 1 by construction (cures mech #6 normalization defect). q_muon cross-anchor evaluation deferred (Hoefsmit \u03c7_\u03bb(q) closed-form evaluator not yet wired); single-anchor refutation at q_proton alone is decisive. Adds as MECHANISM #7 to b502b9b83 ruled-out list. NOTE: this rules out THIS specific Li_2^q-derived measure, not all Li_2^q \u00d7 spectral candidates. Other per-block measures (Li_2^q at dim_q, hook-length sums, etc.) remain untested but would be 7th-ansatz fit-trap if explored without structural justification \u2014 DO NOT proceed without one.",
     "status": "done",
     "priority": "high",
     "origin": "user-2026-05-31",
@@ -40,7 +40,8 @@
       "witness": "folio-assistant/computations/phi-q-spectral-combiner-probe.witness.json",
       "empirical_c3_proton": "-2.0693",
       "candidate_c3_proton": "-1.7975",
-      "err_pct": 13.14
+      "err_pct": 13.14,
+      "cross_anchor_status": "DEFERRED \u2014 Hoefsmit \u03c7_\u03bb(q) re-evaluator not wired; single-anchor decisive without it"
     },
     "assignee": "claude/phi-q-spectral-combiner-2026-05-31"
   },
