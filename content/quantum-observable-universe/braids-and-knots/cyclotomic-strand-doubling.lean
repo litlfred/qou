@@ -10,8 +10,11 @@ as a cyclotomic prefactor in every atomic-step Habiro element
 `Σ_m Δa_m(X − Y) · (u; u)_m` tested: (D − n), (³He − D), and
 (⁴He − ³He). The factor is convention-invariant (appears in both
 `include_inter=True` habiro-witness and Phase 5q canonical
-conventions). The most likely algebraic origin is the `z(q)²`
-interface factor in the Phase 5q closed forms.
+conventions). The categorical mechanism is OPEN — neither the
+`z(q)²` interface factor nor the m=8 Pochhammer boundary explains
+it (both were refuted on direct test); the cyclotomic structure
+arises from a `Δa_m` interference signature that doesn't reduce
+to either naive source.
 
 **Historical note.** An earlier interpretation conjectured a
 strand-doubling categorical chain

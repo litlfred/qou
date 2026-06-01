@@ -36,24 +36,34 @@ $\mathrm{tr}_M(\mathfrak{D}, q) = \tau_p \cdot \tau_n \cdot z(q)$
 ## Categorical interpretation — universal atomic-step cyclotomic
 
 The $\Phi_8^2$ prefactor is **universal across atomic-step pairs**,
-not indexed by atomic number via strand doubling. Most likely
-algebraic origin: the $z(q)^k$ interface factor present in the
-Phase~5q closed forms
-$$
-  \mathrm{tr}_M(X, q) \;=\; \tau_p^Z \cdot \tau_n^N \cdot z(q)^k \cdot (\text{interface corrections}),
-$$
-where $z(q) = 1/(\sqrt{q} + 1/\sqrt{q}) = u/(u^2 + 1)$ in the
-$u = \sqrt{q}$ Habiro variable. The denominator $\Phi_4(u) = u^2 + 1$
-of $z(q)$, squared by the universal $z(q)^2$ presence in
-atomic-step formulas, propagates through the Pochhammer-division
-Habiro extraction and surfaces as $\Phi_8(u) = \Phi_4(u^2)$ via the
-algebraic identity proved here.
+not indexed by atomic number via strand doubling. The categorical
+mechanism is **OPEN** — neither of the two naive candidates explains it:
 
-The mechanism details are under active investigation; see the
-falsification + mechanism audits:
+- **Not $z(q)^k$ interface.** Direct Habiro expansion of $z(q)^k$
+  alone produces a pure monomial $u^k$ with no cyclotomic factor;
+  the $\Phi_4(u) = u^2 + 1$ denominator of $z(q) = u/(u^2 + 1)$ clears
+  into the normalisation prefactor.
+- **Not the Pochhammer boundary.** The earliest mechanical Pochhammer
+  contribution of $\Phi_8$ is at $m = 8$ via $(u; u)_8 \ni 1 - u^8$;
+  the earliest mechanical $\Phi_8^2$ is at $m = 16$. But the observed
+  $\Delta a_m$ partial sums acquire $\Phi_8$ already at $M = 7$
+  (before $m = 8$) and $\Phi_8^2$ at $M = 12$ for $(\mathfrak{D} - \mathfrak{n})$
+  or $M = 15$ for the helium pairs — strictly before the mechanical
+  Pochhammer boundary.
+
+The pre-$m{=}8$ $\Phi_8$ appearance is a **structural $\Delta a_m$
+interference signature**: the cyclotomic structure must arise from
+algebraic relations among the $a_m$ coefficients themselves, not from
+the Pochhammer weighting or the closed-form $z(q)$ factor. The
+categorical witness of $\zeta_8 = e^{i\pi/4}$ in the
+proton/neutron/deuteron/helium Habiro coefficients is the next
+question for investigation.
+
+Cross-references:
 
 - [Strand-doubling FALSIFIED (2026-06-01)](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-strand-doubling-FALSIFIED.md)
 - [Phase~5q convention test — $\Phi_8^2$ survives](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phase5q-dn-convention-test.md)
+- [Mechanism investigation — z(q)² hypothesis refuted](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md)
 
 ## Historical note — strand-doubling interpretation refuted
 
