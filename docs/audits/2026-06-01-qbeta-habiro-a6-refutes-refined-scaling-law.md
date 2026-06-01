@@ -77,13 +77,31 @@ A=6: matches `A−4`. A=8, 10: match `A−2`. The "even-A" formula is itself not
 
 The Wedderburn-block structure at q = ζ_8 (level-2 SU(2) Wenzl) determines which partitions λ contribute to the Markov-trace decomposition. The Φ_8 multiplicity counts the **number of distinct Wenzl-block linear relations** the pair-difference triggers, which depends on the Wedderburn-block content of the canonical braid representations for the specific Z, N values — not just A.
 
-Candidate invariants (from current data) that might explain the irregularity:
+**Connection to existing magic-shell propositions in the corpus** (per CLAUDE.md §"Before declaring 'open' math" corpus-grep — the framework already has this):
 
-- `|N − Z|` (isospin component): equals 1 for all odd-A pairs (mult = A−1) and 2 for all even-A pairs (mult irregular)
-- The actual Wedderburn-block multiplicities of the canonical Hecke-algebra braid representations for the involved Z, N
-- The number of "active" partitions λ with first-column ≤ 3 (level-2 Wenzl cutoff) for the pair-specific Markov-trace decomposition
+- [`prop:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.md) — At magic `n ∈ {2, 8, 20, 28, 50, 82, 126}`, the full-twist `Δ²_n` acts as identity on the mass endomorphism Φ_n ⇒ Φ_n is supported on self-conjugate partitions (content sum `c(λ) = 0`).
+- [`conj:diagrammatic-double-magic-lr-fusion`](../../content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md) — Double-magic (both Z, N magic) ⇒ LR-fusion of Z-block and N-block is rigid: single self-conjugate Specht module on the diagonal.
+- [`prop:magic-numbers-from-q`](../../content/quantum-observable-universe/observations/magic-numbers-from-q.md) — Magic numbers {2, 8, 20, 28} EMERGE from substrate q₀ via Hoefsmit seminormal forms (no empirical magic list used).
+- [`conj:homological-shell-condensation`](../../content/quantum-observable-universe/) — Homological / BB-collapse coincidence at the magic ladder.
+- **MAG-1 audit** (2026-05-02): all 7 magic numbers numerically verified — self-conjugate partition support on the magic ladder.
 
-The right framework is **NOT** a closed-form formula in A — it's the per-block Wenzl-annihilator linear relation count from PR #1625's framing, mediated by per-pair Wedderburn-block content.
+**The Φ_8 multiplicity drops are the mirror-pair empirical signature of these propositions:** when a mirror-pair half hits a magic shell, `prop:categorical-neutrality-saturated-shells` restricts that half's Wedderburn support to self-conjugates. The Wenzl-annihilator linear-relation count in the pair-difference decreases ⇒ lower `mult(Φ_8)`.
+
+| Pair | Magic structure | mult(Φ_8) | Refined | Verdict |
+|---|---|---|---|---|
+| A=3 ³He−³H | Z=2 vs N=2 (odd valence) | 2 | 2 | match |
+| A=5 ⁵Li−⁵He | N=2 vs Z=2 (odd valence) | 4 | 4 | match |
+| **A=6 ⁶He−⁶Be** | **Z=2 vs N=2 (EVEN valence, 2 paired)** | **2** | **4** | **ANOMALY** |
+| A=14 ¹⁴O−¹⁴C | **Z=8 vs N=8 (EVEN valence, 2 paired holes)** | **4** | **12** | **ANOMALY** |
+
+Refined hypothesis: **anomaly = one magic shell per half + EVEN paired valence on the non-magic side**. The paired valence couples to a self-conjugate Wedderburn block, enhancing the contraction. (A=3, A=5 have odd valence, so the contraction is incomplete.)
+
+Candidate empirical invariants (need LR-fused per-block compute to verify):
+
+- The actual Wedderburn-block multiplicities of the canonical Hecke-algebra braid representations for the involved Z, N (require Rust LR bridge per-pair compute)
+- The number of "active" partitions λ with first-column ≤ 3 (level-2 Wenzl cutoff) for the pair-specific Markov-trace decomposition AFTER applying the saturated-shells contraction
+
+The right framework is **NOT** a closed-form formula in A — it's the per-block Wenzl-annihilator linear relation count from PR #1625's framing, mediated by per-pair Wedderburn-block content. The probe [`folio-assistant/computations/per_pair_wedderburn_enumeration.py`](../../folio-assistant/computations/per_pair_wedderburn_enumeration.py) lays out the data; full LR-fused χ_λ evaluation at q = ζ_8 per pair is research-grade and queued.
 
 ## Implication for PR #1642 ledger
 
