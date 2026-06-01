@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:50:14.020180+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:51:31.435092+00:00",
+  "commitSha": "eee87ac81faac697d31efbafde2b84b6f9b5ce78",
   "assertions": [
     {
       "name": "delta_n_squared_is_placeholder",
@@ -24,16 +24,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
   "scriptHash": "be751052d79a",
   "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

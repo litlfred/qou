@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:35:01.285078+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:36:22.071349+00:00",
+  "commitSha": "eee87ac81faac697d31efbafde2b84b6f9b5ce78",
   "assertions": [
     {
       "name": "h_sc_4_equals_5_over_2",
@@ -40,10 +40,10 @@
   "scriptHash": "8f44635493c1",
   "scriptCommitSha": "79548024c2941d7a297d74099852e682c33ed060",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

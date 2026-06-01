@@ -1,8 +1,8 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:52:22.070090+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:53:39.462131+00:00",
+  "commitSha": "eee87ac81faac697d31efbafde2b84b6f9b5ce78",
   "assertions": [
     {
       "name": "tr_M_cross_validation_within_1e-6",
@@ -31,10 +31,10 @@
   "scriptHash": "d63bd133df29",
   "scriptCommitSha": "bc60c4d79ae695d3022cb53914e2693e7ddcf29b",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

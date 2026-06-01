@@ -1,20 +1,20 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:52:19.181600+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:53:36.486445+00:00",
+  "commitSha": "eee87ac81faac697d31efbafde2b84b6f9b5ce78",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 24,
   "computation": "full-twist-root-of-unity-probe",
   "scriptFile": "full_twist_root_of_unity_probe.py",
   "scriptHash": "becb0dfbbdf1",
   "scriptCommitSha": "dbaf2aa9c0a5b5d8deb69644685e51708f11bb54",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

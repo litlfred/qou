@@ -1,20 +1,20 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:35:06.456927+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:36:26.953736+00:00",
+  "commitSha": "eee87ac81faac697d31efbafde2b84b6f9b5ce78",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 498,
+  "durationMs": 426,
   "computation": "lambda-scale-rd-c4-categorical",
   "scriptFile": "lambda_scale_rd_c4_categorical.py",
   "scriptHash": "949b33292c13",
   "scriptCommitSha": "178d50b5a339a8ece255566f297ac7db6b7391b6",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
