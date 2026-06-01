@@ -20,7 +20,7 @@ audit `2026-05-25-non-abelian-stokes-reading-a-exploration.md` is the
 ideal-octahedron tessellation of the 𝓑_3-complement.
 
 Goal: derive `(α_em/π)/dim H_3` as a Bring-zero-mode analog (parallel
-to PR #1442's m_K/m_π closure via Bring zero-mode of Brings curve).
+to PR #1442's m_K/m_π closure via Bring zero-mode of Bring's curve).
 
 ## Item 3 — m_n / Δ_pn flavor-split refinement
 
