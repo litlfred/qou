@@ -81,6 +81,13 @@ Summing $G^{-1}$ diagonal times $1/\dim_q$ gives exactly the Frobenius
 co-Casimir trace $\sum_\lambda 1/\dim_q(\lambda)$ — recovering
 ([Frobenius universal](#thm:frobenius-codim-universal)).*
 
+The quantum dimensions $\dim_q(\lambda)$ entering this block structure
+are the Wedderburn-block face of the $q$-Laplacian spectral tower
+([the $q$-Laplacian spectral tower](#prop:q-laplacian-spectral-tower)):
+at a root of unity $q = e^{i\pi/\kappa}$ they truncate to the finite
+Verlinde/ADE set, so the Gram matrix becomes finite block-diagonal
+modular-tensor data there.
+
 **Where Gram-matrix rank governs the spectral sequence.**
 
 *The filtration $J^\bullet(q)$ induces a block structure on $G$:
