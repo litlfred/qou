@@ -1,6 +1,28 @@
 {
+  "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-01T16:07:41.918954+00:00",
+  "commitSha": "2b3a65d87ea1549a52c6baa4904ac6d36fa5f949",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "habiro-coefficients-beryllium-9",
-  "description": "Habiro / cyclotomic expansion tr_M(A=9, q) = \u03a3_m a_m\u00b7(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=4, N=5 under chi_lambda_braid (production) pn-convention. Feeds (i) mirror-pair \u03a6_k universality audit, (ii) \u03a6_8-multiplicity scaling-law table, and (iii) Q_\u03b2 Habiro element keystone search.",
+  "scriptFile": "_habiro_coefficient_extract.py",
+  "scriptHash": "53ae956b30cd",
+  "scriptCommitSha": "2b3a65d87ea1549a52c6baa4904ac6d36fa5f949",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Habiro / cyclotomic expansion tr_M(A=9, q) = Σ_m a_m·(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=4, N=5 under chi_lambda_braid (production) pn-convention. Feeds (i) mirror-pair Φ_k universality audit, (ii) Φ_8-multiplicity scaling-law table, and (iii) Q_β Habiro element keystone search.",
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
@@ -8,12 +30,10 @@
     "prop:interface-knot-markov-z",
     "thm:knot-mass-formula-unified"
   ],
-  "timestamp": "2026-06-01T14:47:00.286735+00:00",
   "parameters": {
     "q_0": 1.1099785827513808,
-    "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
     "pn_convention": "chi_lambda_braid (production default)",
-    "source": "habiro-coefficients-atomic.witness.json (\u03c4_p, \u03c4_n)",
+    "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
     "generator": "_habiro_coefficient_extract.py"
   },
   "habiro_coefficients": [
