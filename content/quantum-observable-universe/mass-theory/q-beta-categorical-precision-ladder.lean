@@ -682,7 +682,8 @@ theorem alpha_one : alpha 1 = 0 := by
     `a_1 = -b(1)/6 = -√3/12` (probe `qbeta_eigenphase_taylor_in_u.py`). -/
 theorem hoefsmitB_one : hoefsmitB 1 = Real.sqrt 3 / 2 := by
   unfold hoefsmitB
-  norm_num
+  rw [show (1 : ℝ) ^ 4 + 1 ^ 2 + 1 = 3 by norm_num,
+      show (1 : ℝ) ^ 2 + 1 = 2 by norm_num]
 
 /-- The `u⁰` coefficient of the eigenphase expansion is `1`:
     `N1_factor 1 = cos(α(1) − b(1)·ℏ_q(1)²/2) = cos 0 = 1`.
@@ -690,6 +691,6 @@ theorem hoefsmitB_one : hoefsmitB 1 = Real.sqrt 3 / 2 := by
 theorem N1_factor_one : N1_factor 1 = 1 := by
   unfold N1_factor
   rw [alpha_one, hbarQ_one]
-  norm_num
+  rw [show (0 : ℝ) - hoefsmitB 1 * 0 ^ 2 / 2 = 0 by ring, Real.cos_zero]
 
 end QOU.BraidKnot
