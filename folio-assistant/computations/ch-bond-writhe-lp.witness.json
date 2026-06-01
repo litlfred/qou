@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:46:04.593739+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T18:31:45.161722+00:00",
+  "commitSha": "ad4584f9ca7a59b89df4d8b96e5dbbbc91110a36",
   "assertions": [
     {
       "name": "H₂ positive binding",
@@ -41,7 +41,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "ch-bond-writhe-lp",
   "scriptFile": "ch-bond-writhe-lp.py",
   "scriptHash": "c24585c28edf",
