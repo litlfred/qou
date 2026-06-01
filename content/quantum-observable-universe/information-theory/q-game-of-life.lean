@@ -11,7 +11,6 @@
 Toffoli diagonal P₇₇(q) are elements of the fraction field.
 -/
 import QOU.QuantumObservableUniverse
-import QOU.Information
 import Mathlib.Algebra.Polynomial.Laurent
 
 namespace QOU.Information
