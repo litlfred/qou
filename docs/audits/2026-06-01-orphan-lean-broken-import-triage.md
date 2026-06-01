@@ -1,8 +1,10 @@
 # Orphan / broken-import `.lean` triage (2026-06-01)
 
 **Trigger:** cleanup of the orphan `mass-theory/geom-yekutieli-alignment.lean`
-surfaced 33 *additional* sibling `.lean` files (outside the Lake `srcDir`
-`lean/QOU/`) that `import` a `QOU.*` module absent from the build tree.
+surfaced 33 *additional* sibling `.lean` files (outside the Lake package tree
+`content/quantum-observable-universe/lean/`, whose `lakefile.toml` sets
+`srcDir = "."` so only `QOU.*` modules under `lean/QOU/` are compiled) that
+`import` a `QOU.*` module absent from the build tree.
 
 **Headline:** **only 1 of 34 was a safe delete.** A naive "broken import →
 orphan → delete" sweep would have destroyed ~32 real formalizations. The 33
@@ -63,7 +65,9 @@ or archive them. They should not be silently deleted.
 
 ## Root cause (structural, not cruft)
 
-The Lake package builds only `srcDir = lean/QOU/`. The ~32 bucket-A/B files
+The `qou` Lake package is rooted at `content/quantum-observable-universe/lean/`
+(`lakefile.toml` sets `srcDir = "."`), so it compiles only the `QOU.*` modules
+under that root's `lean/QOU/` subtree. The ~32 bucket-A/B files
 live beside their `.md`/`.ts` blocks under the chapter directories, **outside
 that srcDir**, so `lake build QOU` never compiles them — which is exactly why
 their broken `QOU.*` imports were never caught. This is a build-coverage gap,
