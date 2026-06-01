@@ -3,7 +3,8 @@
 Branch: `claude/sign-block-template-expansion-2026-06-01`
 
 Per author 2026-06-01 "1 2 3 4" — apply PR #1645's sign-block /
-Plancherel structural template across all 4 remaining items:
+Plancherel structural template (P_λ = d²_λ/dim H_n) across all 4
+remaining items:
 
 ## Items in this branch
 
@@ -25,7 +26,7 @@ formula needs a fresh categorical derivation, not refinement. The
 flavor-split happens via Hecke σ_1 on a 2-strand sub-braid of H_n.
 Apply the Plancherel-channel pattern: the σ_1 eigendecomposition is
 (symmetric, antisymmetric) = ([2]_q, -1) eigenspaces. The flavor-split
-should live at the SYMMETRIC channel (trivial rep of S_2).
+should live at the SYMMETRIC channel (trivial rep of H_2).
 
 ### Item 3 — Sign-block template applied to Q_β + m_e atomic
 
@@ -37,8 +38,8 @@ the Q_β c_3 = -2 finding at a 1-dim block of H_2 or H_3.
 ### Item 4 — Lean formalization deepening
 
 Extend `ProtonMassEMSignBlock.lean` with:
-- Lemma: Σ_λ (d²_λ/|S_n|) = 1 (Plancherel sum identity)
-- Lemma: P_λ = 1/n! at any 1-dim rep of S_n
+- Lemma: Σ_λ (d²_λ/dim H_n) = 1 (Plancherel sum identity)
+- Lemma: P_λ = 1/dim H_n at any 1-dim rep of H_n
 - Connect to the Wedderburn-decomposition theorems available in
   Mathlib (if any)
 
