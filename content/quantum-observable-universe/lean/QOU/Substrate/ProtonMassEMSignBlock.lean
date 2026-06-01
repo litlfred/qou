@@ -49,7 +49,7 @@ namespace Substrate
 namespace ProtonMassEMSignBlock
 
 /-- The Plancherel weight P_(1,1,1) of the sign rep of S_3 = 1/6. -/
-def planckerelSignH3 : ℚ := 1 / 6
+def plancherelSignH3 : ℚ := 1 / 6
 
 /-- The conjectural conditional class. Per CLAUDE.md §3b-cond: this
     class axiomatizes the hypothesis that the proton-mass identity
@@ -66,12 +66,12 @@ class EmSignBlockCorrection (α_em : ℝ) (m_p_residual : ℝ) : Prop where
     m_p_residual = α_em / Real.pi / 6
 
 /-- Trivial corollary: the form `(α_em/π)/6` numerically equals the
-    sign-block Plancherel contribution `(α_em/π) · planckerelSignH3`. -/
+    sign-block Plancherel contribution `(α_em/π) · plancherelSignH3`. -/
 theorem residual_eq_alpha_em_over_6pi
     (α_em : ℝ) (m_p_residual : ℝ) [c : EmSignBlockCorrection α_em m_p_residual] :
-    m_p_residual = α_em / Real.pi * (planckerelSignH3 : ℝ) := by
+    m_p_residual = α_em / Real.pi * (plancherelSignH3 : ℝ) := by
   rw [c.residual_equals_em_over_6π]
-  unfold planckerelSignH3
+  unfold plancherelSignH3
   push_cast
   ring
 

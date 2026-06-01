@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T14:37:57.491863+00:00",
-  "commitSha": "11ec7ee312c7d056e615d5c4a60835ea2d240339",
+  "computedAt": "2026-06-01T15:01:30.950255+00:00",
+  "commitSha": "da4c90cc785126e98f87b273a385c201d50aeb0a",
   "assertions": [
     {
       "name": "scaffold_plancherel_match",
@@ -17,8 +17,8 @@
   "durationMs": 18,
   "computation": "mp-yekutieli-plancherel-scaffold",
   "scriptFile": "mp_yekutieli_plancherel_scaffold.py",
-  "scriptHash": "acb24c84e388",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "75f17fbf8a90",
+  "scriptCommitSha": "3f7ae19b07055da4b0a1f13bb48929be1348aa24",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
