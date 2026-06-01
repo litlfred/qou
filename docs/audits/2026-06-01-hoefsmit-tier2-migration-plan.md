@@ -16,14 +16,14 @@ preference: keep `q` symbolic / generic-`R` as long as possible.
 
 | Block | File | Current Real.sqrt usage |
 |---|---|---|
-| `rem:markov-axioms-primitive` | `braids-and-knots/markov-axioms-primitive.lean` | `markovZax (q : ℝ) := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)` |
-| `rem:braid-group-n-strand` | `braids-and-knots/braid-group-n-strand.lean` | Imports `markovZax`; uses `markovZ` definition |
+| `rem:markov-axioms-primitive` | `braids-and-knots/markov-axioms-primitive.lean` | `markovZax_legacy (q : ℝ) := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)` (post-PR-1658 name; was `markovZax` pre-rename) |
+| `rem:braid-group-n-strand` | `braids-and-knots/braid-group-n-strand.lean` | Locally defines `markovZN (q : ℝ) := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)` — an independent copy of the same formula, NOT an import of `markovZax_legacy` |
 | `prop:hoefsmit-V21-cos-symmetrization` | `mass-theory/hoefsmit-V21-cos-symmetrization.lean` | Matrix entries `Real.sqrt (hoefsmit_b_sq q)` |
 | `rem:chi-v21-hoefsmit-matrix-derivation` | `mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean` | Matrix entries `Real.sqrt (hoefsmit_v21_b_sq q)` |
 
-Additional callsites of `markovZax`:
-- `braids-and-knots/markov-trace-inductive-limit.lean`
-- `mass-theory/markov-trace-product.lean`
+Adjacent files (NOT direct callsites of `markovZax_legacy`):
+- `braids-and-knots/markov-trace-inductive-limit.lean` — uses `markovZN q` (from `braid-group-n-strand`); references `markovZax` only in a doc comment.
+- `mass-theory/markov-trace-product.lean` — uses an independent abstract parameter `z : R_q`; no `markovZax` / `markovZN` / `Real.sqrt` reference. Out of scope for this migration.
 
 ## Migration pattern
 
@@ -79,13 +79,27 @@ def hoefsmitMatrix (b : R) (h : b^2 = hoefsmit_b_sq q) :
    `@[deprecated]`. No callsite breakage. Validates the pattern works
    under Lake build.
 
-2. **Phase 2** (follow-up PRs, one per block): migrate callsites of
-   `markovZax` to use the generic variant. The 5 callsites are:
-   - `markov-axioms-primitive` itself
-   - `markov-trace-inductive-limit`
-   - `markov-trace-product`
-   - `braid-group-n-strand`
-   - downstream Hoefsmit matrix users
+2. **Phase 2** (follow-up commits on this branch, one per file):
+   migrate the Markov-Jones parameter usages — note: each file
+   currently has its OWN local definition of the `1 / (Real.sqrt q +
+   (Real.sqrt q)⁻¹)` formula, so each is an independent migration:
+   - `markov-axioms-primitive` — migrate `markovZax_legacy` callsites
+     in the same file (`MarkovTraceAxioms`, `markov_iterated_stab`,
+     `disjoint_product_factorisation`,
+     `MarkovTraceAxioms_implies_disjoint_stabilisation`) to the
+     generic `markovZax (u : R)` form.
+   - `braid-group-n-strand` — apply the same Tier 2 scaffold pattern
+     to the locally-defined `markovZN` (rename to `markovZN_legacy`,
+     introduce generic `markovZN (u : R)` and `markovZN_real`).
+   - `markov-trace-inductive-limit` — uses `markovZN q` from
+     braid-group-n-strand; follow-up after that file migrates.
+   - `hoefsmit-V21-cos-symmetrization` + `chi-v21-hoefsmit-matrix-
+     derivation` — apply the formal-adjoin pattern to the matrix
+     entries `Real.sqrt (hoefsmit_b_sq q)`.
+
+   Out of scope: `mass-theory/markov-trace-product.lean` uses an
+   abstract `z : R_q` parameter (no `Real.sqrt` reference); already
+   on the Tier 2 / generic side.
 
 3. **Phase 3**: Remove the deprecated `Real`-only definitions. Audit
    re-sweep confirms `q-usage-positivity-implicit` warns drop to zero.

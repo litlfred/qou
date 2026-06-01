@@ -73,9 +73,15 @@ noncomputable def markovZax_real (q : ℝ) (_hq : 0 < q) : ℝ :=
 
 /-- **Legacy unsafe form** of `markovZax` — `Real.sqrt q` without the
     `0 < q` hypothesis. Kept for backward compatibility with the
-    pre-Tier-2 callsites; new code should use `markovZax` (generic)
-    or `markovZax_real q hq` (archimedean with hypothesis). -/
-@[deprecated "Use the generic-R `markovZax (Real.sqrt q)` or the archimedean `markovZax_real q hq`. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+    pre-Tier-2 callsites; new code should use one of:
+      - generic `markovZax (u : R)` with `u² = q` for `[Field R]`
+        (Tier 2 — preferred; avoids `Real.sqrt` entirely)
+      - `markovZax_real (q : ℝ) (hq : 0 < q)` (Tier 5 archimedean
+        shim with explicit positivity)
+    Do NOT migrate to `markovZax (Real.sqrt q)` — that still triggers
+    the `q-usage-positivity-implicit` warning since `Real.sqrt` carries
+    no positivity hypothesis. -/
+@[deprecated "Migrate to (a) the generic `markovZax (u : R)` with an explicit u² = q hypothesis (Tier 2 — preferred), or (b) `markovZax_real q hq` carrying `0 < q` (Tier 5). Avoid `markovZax (Real.sqrt q)` — still positivity-implicit. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
 noncomputable def markovZax_legacy (q : ℝ) : ℝ :=
   1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
