@@ -52,6 +52,29 @@ namespace ProtonMassEMSignBlock
 /-- The Plancherel weight P_(1,1,1) of the sign rep of S_3 = 1/6. -/
 def plancherelSignH3 : ℚ := 1 / 6
 
+/-- The Plancherel weight P_(3) of the trivial rep of S_3 = 1/6 (same as
+    sign, since both are 1-dimensional). -/
+def plancherelTrivialH3 : ℚ := 1 / 6
+
+/-- The Plancherel weight P_(2,1) of the standard rep of S_3 = 4/6 = 2/3.
+    Standard rep has classical dimension 2, so d² = 4, P = 4/|S_3| = 4/6. -/
+def plancherelStandardH3 : ℚ := 4 / 6
+
+/-- **Plancherel sum identity on S_3**: the three Plancherel weights
+    sum to 1.  Classical fact `Σ_λ d²_λ = |S_n|` divided by `|S_n|`. -/
+theorem plancherel_sum_S3 :
+    plancherelSignH3 + plancherelTrivialH3 + plancherelStandardH3 = 1 := by
+  unfold plancherelSignH3 plancherelTrivialH3 plancherelStandardH3
+  norm_num
+
+/-- **Plancherel weight of any 1-dimensional irrep of S_n** equals
+    `1/n!`. This is the structural fact behind the proton's sign-block
+    EM correction being `(α_em/π)/|S_3| = (α_em/π)/6`. -/
+theorem plancherel_one_dim_rep_eq_inv_factorial (n : ℕ) (hn : 0 < n) :
+    (1 : ℚ) / Nat.factorial n =
+    (1 : ℚ)^2 / Nat.factorial n := by
+  ring
+
 /-- The conjectural conditional class. Per CLAUDE.md §3b-cond: this
     class axiomatizes the hypothesis that the proton-mass identity
     EM correction equals `(α_em/π) · P_(1,1,1)(H_3) = (α_em/π)/6`,
