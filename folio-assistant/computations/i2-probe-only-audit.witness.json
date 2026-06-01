@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:48:50.544644+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T19:20:28.093460+00:00",
+  "commitSha": "f03b7721213dbbac58f89d517f1c2b588e373a44",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "i2-probe-only-audit",
   "scriptFile": "i2_probe_only_audit.py",
   "scriptHash": "1155d3faa225",
@@ -37,12 +37,12 @@
   "contentBlock": "I2 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "production_consumers_count": 9,
-    "total_label_bearing_witnesses": 270
+    "total_label_bearing_witnesses": 276
   },
   "data": {
     "by_result": {
-      "i2_probe_only": 224,
-      "wired_production": 46
+      "i2_probe_only": 226,
+      "wired_production": 50
     },
     "production_consumers": [
       "atomic_mass_via_rho_k.py",
@@ -163,6 +163,15 @@
       },
       {
         "witness": "folio-assistant/computations/alpha-em-habiro-taylor-investigation.witness.json",
+        "labels": [
+          "prop:em-coupling-bring-zero-mode"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/alpha-em-q-difference-fourier.witness.json",
         "labels": [
           "prop:em-coupling-bring-zero-mode"
         ],
@@ -1005,6 +1014,39 @@
         "witness": "folio-assistant/computations/habiro-interpolate-cross-validation.witness.json",
         "labels": [
           "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/habiro-ladder-bridge.witness.json",
+        "labels": [
+          "prop:q-beta-categorical-precision-ladder"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/habiro-q-difference-fourier.witness.json",
+        "labels": [
+          "prop:q-beta-categorical-precision-ladder"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/habiro-q-difference-mode-solve.witness.json",
+        "labels": [
+          "prop:q-beta-categorical-precision-ladder"
         ],
         "production_consumers": [
           "paper_six_term_isotope_sweep.py"
@@ -1967,6 +2009,15 @@
         "result": "i2_probe_only"
       },
       {
+        "witness": "folio-assistant/computations/q-spectral-truncation-tower.witness.json",
+        "labels": [
+          "prop:q-laplacian-spectral-tower"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
         "witness": "folio-assistant/computations/qbeta-ck-truncation-order-analysis.witness.json",
         "labels": [
           "prop:q-beta-categorical-precision-ladder"
@@ -2193,6 +2244,17 @@
       },
       {
         "witness": "folio-assistant/computations/qbeta-scaling-bridge-investigation.witness.json",
+        "labels": [
+          "prop:q-beta-categorical-precision-ladder"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-wenzl-habiro-ansatz-probe.witness.json",
         "labels": [
           "prop:q-beta-categorical-precision-ladder"
         ],
