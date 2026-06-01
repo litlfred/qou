@@ -1,8 +1,8 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T02:04:37.522749+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:52:08.074887+00:00",
+  "commitSha": "8bb05dc52cb3ac539cc892ef30a060909b3e114d",
   "assertions": [
     {
       "name": "h2_coefficient_computed",
@@ -19,10 +19,10 @@
   "scriptHash": "befcd2fd27ed",
   "scriptCommitSha": "1309a2fac3c576dfe6791d7235c4430b73086bc8",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

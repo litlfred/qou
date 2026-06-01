@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T04:22:17.327069+00:00",
-  "commitSha": "527ad0d3124997e48b6033314efb898a00f48ad5",
+  "computedAt": "2026-06-01T13:32:24.756758+00:00",
+  "commitSha": "8bb05dc52cb3ac539cc892ef30a060909b3e114d",
   "assertions": [
     {
       "name": "H2 binding positive",
@@ -47,10 +47,10 @@
   "scriptHash": "372cbd29bb31",
   "scriptCommitSha": "2c2b543cd51379021ac0b229afe1f944af4cb57f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

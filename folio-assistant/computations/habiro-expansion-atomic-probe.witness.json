@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T01:32:49.397729+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:19:53.471348+00:00",
+  "commitSha": "8bb05dc52cb3ac539cc892ef30a060909b3e114d",
   "assertions": [
     {
       "name": "all_a_m_have_integer_coefficients",
@@ -39,10 +39,10 @@
   "scriptHash": "bc66610b9f2c",
   "scriptCommitSha": "c2211016e3b3e65af2e53fdd6cdf53b05cace026",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

@@ -1,20 +1,20 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T01:35:05.379289+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:22:09.891366+00:00",
+  "commitSha": "8bb05dc52cb3ac539cc892ef30a060909b3e114d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 2312,
+  "durationMs": 2291,
   "computation": "lambda-scale-rd3-hecke-levels",
   "scriptFile": "lambda_scale_rd3_hecke_levels.py",
   "scriptHash": "83866009c9d1",
   "scriptCommitSha": "178d50b5a339a8ece255566f297ac7db6b7391b6",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
