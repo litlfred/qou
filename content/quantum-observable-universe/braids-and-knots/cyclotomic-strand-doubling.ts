@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:cyclotomic-strand-doubling",
   title:
-    "Cyclotomic strand-doubling identity: $\\Phi_8(X) = \\Phi_4(X^2)$",
+    "Cyclotomic doubling identity: $\\Phi_8(X) = \\Phi_4(X^2)$",
   lean: {
     ref: "qou:QOU.BraidKnot.CyclotomicStrandDoubling.cyclotomic_8_eq_cyclotomic_4_comp_X_sq",
   },

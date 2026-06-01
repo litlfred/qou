@@ -1,5 +1,27 @@
 # Φ_8² in the Hecke/braid structure of the deuteron (2026-06-01)
 
+> **⚠ STRAND-DOUBLING INTERPRETATION FALSIFIED (2026-06-01, PR #1618).**
+> The categorical interpretation below (Φ_8 = 4-strand B_4 strand-
+> doubling map; predictions Φ_{2^{k+1}} for atomic step A=k → A=k+1)
+> is **WRONG**. The Φ_16 / Φ_32 predictions did not hold: both
+> (³He − D) and (⁴He − ³He) carry Φ_8², the SAME factor as (D − n).
+> See:
+>
+> - [Falsification audit (2026-06-01)](2026-06-01-qbeta-habiro-strand-doubling-FALSIFIED.md)
+> - [Phase 5q convention test (Φ_8² IS structural)](2026-06-01-qbeta-habiro-phase5q-dn-convention-test.md)
+>
+> The **algebraic identity `Φ_8(X) = Φ_4(X²)` remains TRUE** (Lean-
+> proved, [`cyclotomic-strand-doubling.lean`](../../content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean)),
+> and Φ_8² IS a real structural feature (convention-invariant). What's
+> wrong is the *strand-doubling categorical content* of this audit —
+> Φ_8² is universal across atomic-step pairs, not a per-atomic-number
+> strand-count signature.
+>
+> Best current re-interpretation: Φ_8² is a universal atomic-step
+> cyclotomic, most likely induced by the `z(q)²` interface factor or
+> the m=8 Pochhammer boundary — see the mechanism audit (in progress)
+> for the algebraic verification.
+
 > Categorical interpretation of `Φ_8(u) = u^4 + 1` (squared) in the
 > (D − n) Habiro element factorization, surfaced by the cross-pair
 > probe [`2026-05-31-qbeta-habiro-cross-pair-quick-dp.md`](2026-05-31-qbeta-habiro-cross-pair-quick-dp.md).
