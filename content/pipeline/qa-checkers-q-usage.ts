@@ -429,14 +429,14 @@ export function checkQUsageFixedQ0Leak(
     return { result: "n/a", hits: [], chapter };
   }
   const md = readMaybe(mdPath);
-  const ts = readMaybe(tsPath);
   const lean = readMaybe(leanPath);
   const mdClean = stripFraming(md);
 
-  // Explicit archimedean-specialisation marker → pass
-  if (/archimedean[-\s]?specialis|archimedean:\s*true|wall:\s*["']archimedean["']/i.test(ts)) {
-    return { result: "pass", hits: [] };
-  }
+  // Detector reports raw findings only. Author dispensations live in
+  // the sidecar as a `kind: "human"` reviewer entry with `result: "pass"`
+  // + `notes:` rationale — the qa-sweep "most-recent matching-hash entry
+  // wins" rule lets a human entry override the script's fail. See
+  // q-usage-watcher.md §Dispensations for the pattern.
 
   const hits: QUsageHit[] = [];
   for (const m of matchLines(mdClean, FIXED_Q0_RE)) {
@@ -469,10 +469,9 @@ export function checkQUsageArchimedeanInCategoricalChapter(
   if (!chapter || !CATEGORICAL_CHAPTERS.has(chapter)) {
     return { result: "n/a", hits: [], chapter };
   }
-  const ts = readMaybe(tsPath);
-  if (/archimedean[-\s]?specialis|archimedean:\s*true|wall:\s*["']archimedean["']/i.test(ts)) {
-    return { result: "pass", hits: [] };
-  }
+
+  // No .ts tag-read — dispensations live in the sidecar as a human
+  // reviewer entry. See q-usage-watcher.md §Dispensations.
 
   const lean = readMaybe(leanPath);
   const md = readMaybe(mdPath);

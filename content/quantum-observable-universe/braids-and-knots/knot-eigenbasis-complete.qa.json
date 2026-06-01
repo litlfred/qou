@@ -1945,10 +1945,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "fa7e3b2a6286"
+          "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T13:33:29.393Z",
-        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
+        "reviewed_at": "2026-06-01T14:30:48.589Z",
+        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d",
         "notes": "{\"regimes\":[\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
@@ -1963,10 +1963,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "fa7e3b2a6286"
+          "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T13:33:29.393Z",
-        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
+        "reviewed_at": "2026-06-01T14:30:48.589Z",
+        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -1980,10 +1980,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "fa7e3b2a6286"
+          "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T13:33:29.393Z",
-        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
+        "reviewed_at": "2026-06-01T14:30:48.589Z",
+        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:114 — archimedean tactic in categorical chapter — (0 : R_q) ≤ (a : R_q) / 2 := by positivity | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:128 — archimedean tactic in categorical chapter — linarith [this ▸ (le_refl (a : R_q))] | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:133 — archimedean tactic in categorical chapter — have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:136 — archimedean tactic in categorical chapter — push_cast [← hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum]"
       }
@@ -1999,10 +1999,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "fa7e3b2a6286"
+          "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T13:33:29.393Z",
-        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
+        "reviewed_at": "2026-06-01T14:30:48.589Z",
+        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -2016,10 +2016,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "fa7e3b2a6286"
+          "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T13:33:29.393Z",
-        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
+        "reviewed_at": "2026-06-01T14:30:48.589Z",
+        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -2033,10 +2033,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "fa7e3b2a6286"
+          "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T13:33:29.393Z",
-        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
+        "reviewed_at": "2026-06-01T14:30:48.589Z",
+        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -2050,12 +2050,12 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "fa7e3b2a6286"
+          "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T13:33:29.393Z",
-        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
+        "reviewed_at": "2026-06-01T14:30:48.589Z",
+        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
       }
     ]
   },
-  "updated_at": "2026-06-01T13:33:29.393Z"
+  "updated_at": "2026-06-01T14:30:48.589Z"
 }
