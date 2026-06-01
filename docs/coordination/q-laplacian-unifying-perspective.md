@@ -98,3 +98,16 @@ local re-derivations into backward references to one source.
 - Not the q-heat archimedean Padé continuation — likewise.
 - Not new mathematics — it is exposition + citation + one organizing
   proposition that the corpus already supports.
+
+---
+
+## Execution status (2026-06-01, PR #1647)
+
+- [x] **Item 1** — Verlinde 1988 reference added to `references.ts` (valid; was missing).
+- [x] **Item 2** — `prop:q-laplacian-spectral-tower` (+ Lean over ℂ) in `quantum-observable-universes` "Geometric interpretations"; cites verlinde1988 + reshetikhin1991; validates 0 issues.
+- [x] **Item 3** — `root-of-unity-truncation` (fluid-dynamics) recast to `uses: prop:q-laplacian-spectral-tower` (backward cross-chapter ref) + prose backward-ref; cites verlinde1988.
+- [x] **Item 4** — detangler gate PASSED: `forward_ref_classifier` reports 60 logical defects, **none are the new blocks**. Placement in ch #3 (before all 4 consumers) → every edge backward; zero logical forward-refs introduced.
+
+**Lean caveat:** the spectral-tower lemmas are unverified locally (no `lake`); CI-gated.
+
+**Not done (out of scope, survey research targets):** q-NS PDE blowup-exponent solve; q-heat archimedean Padé continuation; full Yekutieli Galois-Fourier decomposition. The probes supply these their exact finite spectral boundary data.
