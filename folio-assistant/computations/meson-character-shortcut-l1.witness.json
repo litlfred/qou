@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T15:02:06.097294+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T18:33:09.838353+00:00",
+  "commitSha": "694fb23168932aadc3ccc8b2a2da06e8da5f556c",
   "assertions": [
     {
       "name": "pion_l1",
@@ -45,6 +45,6 @@
   "data": {
     "chi_pi_delta": 8.881784197001252e-16,
     "chi_K_delta": 6.661338147750939e-16,
-    "speedup_factor": 8.29660569820612
+    "speedup_factor": 8.199103178441113
   }
 }

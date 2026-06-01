@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:48:49.683694+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T18:19:50.654223+00:00",
+  "commitSha": "694fb23168932aadc3ccc8b2a2da06e8da5f556c",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -36,12 +36,12 @@
   "description": "I1 audit per local/compute-integration-watcher: every provable content block (theorem / proposition / lemma / corollary) is cross-checked against the union of all witness `contentBlock` fields.  Blocks with proven Lean (0 sorrys, or class+sorry via §3b-cond) but no probe witness are flagged as `i1_no_probe`. Blocks with `sorry` (without conditional-class) belong to the proof-integration-watcher's queue; blocks without any `.lean` sibling are `i1_pre_lean` (deeper gap).",
   "contentBlock": "I1 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_provable_blocks": 602
+    "total_provable_blocks": 604
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 522,
-      "wired": 69,
+      "i1_no_probe": 523,
+      "wired": 70,
       "i1_lean_with_sorry": 4,
       "i1_pre_lean": 6,
       "i1_no_probe_conditional": 1
@@ -250,6 +250,17 @@
       {
         "path": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts",
         "label": "prop:a-8-partition-function-identity",
+        "kind": "proposition",
+        "sibling_lean_exists": true,
+        "sibling_sorry_count": 0,
+        "sibling_has_class": false,
+        "probe_witness_count": 0,
+        "probe_witnesses": [],
+        "result": "i1_no_probe"
+      },
+      {
+        "path": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts",
+        "label": "prop:alpha-em-habiro-bar-involution",
         "kind": "proposition",
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
@@ -3492,13 +3503,13 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 7,
+        "probe_witness_count": 11,
         "probe_witnesses": [
           "c-3-categorical-derivation-attempt.witness.json",
-          "q-beta-predicted.witness.json",
-          "qbeta-ck-truncation-order-analysis.witness.json",
-          "qbeta-eigenphase-taylor-in-u.witness.json",
-          "qbeta-habiro-taylor-investigation.witness.json"
+          "habiro-ladder-bridge.witness.json",
+          "habiro-q-difference-fourier.witness.json",
+          "habiro-q-difference-mode-solve.witness.json",
+          "q-beta-predicted.witness.json"
         ],
         "result": "wired"
       },
@@ -5410,13 +5421,13 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 5,
+        "probe_witness_count": 6,
         "probe_witnesses": [
           "alpha-em-4pi-b4-pslq.witness.json",
           "alpha-em-4pi-bring-cm-modular-pslq.witness.json",
           "alpha-em-4pi-q-hyperbolic-b3-pslq.witness.json",
           "alpha-em-habiro-taylor-investigation.witness.json",
-          "bring-zero-mode-bloch-hunt.witness.json"
+          "alpha-em-q-difference-fourier.witness.json"
         ],
         "result": "wired"
       },
@@ -6279,6 +6290,19 @@
         "probe_witness_count": 0,
         "probe_witnesses": [],
         "result": "i1_no_probe"
+      },
+      {
+        "path": "content/quantum-observable-universe/quantum-observable-universes/q-laplacian-spectral-tower.ts",
+        "label": "prop:q-laplacian-spectral-tower",
+        "kind": "proposition",
+        "sibling_lean_exists": true,
+        "sibling_sorry_count": 0,
+        "sibling_has_class": false,
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "q-spectral-truncation-tower.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm-exists.ts",
