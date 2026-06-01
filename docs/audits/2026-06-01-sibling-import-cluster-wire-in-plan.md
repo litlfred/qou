@@ -71,3 +71,34 @@ For each provider row, in dependency order (leaf modules first):
 - `lake build QOU` exits 0.
 - The broken-import scan (this PR's method) reports 0.
 - `bun run validate quantum-observable-universe` passes (lean.ref all resolve).
+
+## Bucket-B is the SAME cluster (folded in)
+
+The "bucket-B" set (9–10 `lean-infrastructure` remark-blocks with real `.lean`
+decls but **no `lean:` field**) is **not a separate task** — every one is a
+member of this same out-of-build cluster, and several are *providers* the
+item-A files import (e.g. `braid-group-n-strand`, `markov-axioms-primitive`,
+`typed-b3-sub-braid-extraction`). They are:
+
+- `braids-and-knots/{braid-group-n-strand,markov-trace-inductive-limit}`
+- `mass-endomorphism/{multi-link-jones-q1-extension,u-coordinate-discharges}`
+- `mass-theory/{ck-extraction-from-algebraic-rules,mass-tower-deeper-fillers,typed-b3-sub-braid-extraction}`
+- `predicted-spectra/{bloch-wigner-mathlib-filler,three-substantive-mathlib-fillers}`
+- `stochastic-mechanics/markov-closure-map-axiomatic`
+
+All are `kind: remark` with **no `lean:` field** (only the `"lean-infrastructure"`
+tag). Per CLAUDE.md §3 a `remark` does not *require* a `.lean` sibling, so
+"wiring in" here is a **decision**, made during the same toolchain session:
+
+- **If the block's `.lean` becomes a real in-build module** (because item-A
+  importers depend on it): add a `lean: { ref: "qou:QOU.<Path>" }` to the
+  `.ts` once the module compiles, promoting the remark to a referenced block.
+- **If it stays narrative infrastructure** (no downstream importer needs it
+  as a module): leave it as a `remark` with no `lean.ref`; the `.lean` is
+  grep-resolved scaffolding. Add it to the broken-import scanner's documented
+  exclusion so it stops being re-flagged.
+
+Because the providers (bucket-B) and consumers (bucket-A) are the same
+connected component, **wire the whole component in one toolchain session** —
+moving a provider also satisfies the consumers that import it, and the
+`lean.ref` promotion (bucket-B) happens as each provider's module goes green.
