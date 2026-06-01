@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:37:12.643390+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T15:12:29.532476+00:00",
+  "commitSha": "f0b6202e8711057882beec73ec22704679e56a5d",
   "assertions": [
     {
       "name": "no_hardcoded_registry_matches",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "hardcoded-literal-audit",
   "scriptFile": "hardcoded_literal_audit.py",
   "scriptHash": "82ea041c3646",
@@ -39,13 +39,13 @@
     "registry_constants_in_scope": 26,
     "relative_error_tolerance": "1e-6",
     "magnitude_window_MeV": "[0.0001, 1e6]",
-    "total_scripts_with_hits": 186,
-    "i9_violation_count": 171,
+    "total_scripts_with_hits": 195,
+    "i9_violation_count": 180,
     "ok_acknowledged_anchor_count": 15
   },
   "data": {
     "by_result": {
-      "i9_violation": 171,
+      "i9_violation": 180,
       "ok_acknowledged_anchor": 15
     },
     "rows": [
@@ -716,6 +716,71 @@
             "registry_value": "31.99405",
             "rel_err": "0.0",
             "snippet": "\"6Li\": 31.99405,"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/yekutieli_half_h2_observable_hunt.py",
+        "imported_codata_names": [],
+        "hit_count": 7,
+        "hits": [
+          {
+            "line_number": 41,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "m_e_MeV = mp.mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 42,
+            "literal": "938.27208816",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208816",
+            "rel_err": "0.0",
+            "snippet": "m_p_MeV = mp.mpf(\"938.27208816\")"
+          },
+          {
+            "line_number": 43,
+            "literal": "939.56542052",
+            "matches_constant": "M_N_MEV_VALIDATION",
+            "registry_value": "939.56542052",
+            "rel_err": "0.0",
+            "snippet": "m_n_MeV = mp.mpf(\"939.56542052\")"
+          },
+          {
+            "line_number": 44,
+            "literal": "1875.61294257",
+            "matches_constant": "M_D_MEV_VALIDATION",
+            "registry_value": "1875.61294257",
+            "rel_err": "0.0",
+            "snippet": "m_d_MeV = mp.mpf(\"1875.61294257\")"
+          },
+          {
+            "line_number": 45,
+            "literal": "2808.92113298",
+            "matches_constant": "M_T_MEV_VALIDATION",
+            "registry_value": "2808.92113298",
+            "rel_err": "0.0",
+            "snippet": "m_T_MeV = mp.mpf(\"2808.92113298\")"
+          },
+          {
+            "line_number": 46,
+            "literal": "2808.39160743",
+            "matches_constant": "M_HE3_MEV_VALIDATION",
+            "registry_value": "2808.39160743",
+            "rel_err": "0.0",
+            "snippet": "m_He3_MeV = mp.mpf(\"2808.39160743\")"
+          },
+          {
+            "line_number": 47,
+            "literal": "3727.37941",
+            "matches_constant": "M_HE4_MEV_VALIDATION",
+            "registry_value": "3727.3794066",
+            "rel_err": "9.122e-10",
+            "snippet": "m_He4_MeV = mp.mpf(\"3727.37941\")"
           }
         ],
         "has_class_a_banner": false,
@@ -2752,6 +2817,47 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/e0_lambda_tryall.py",
+        "imported_codata_names": [],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 27,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 31,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "\"electron\": mpf(\"0.51099895069\"),"
+          },
+          {
+            "line_number": 32,
+            "literal": "938.27208816",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208816",
+            "rel_err": "0.0",
+            "snippet": "\"proton\": mpf(\"938.27208816\"),"
+          },
+          {
+            "line_number": 33,
+            "literal": "939.56542052",
+            "matches_constant": "M_N_MEV_VALIDATION",
+            "registry_value": "939.56542052",
+            "rel_err": "0.0",
+            "snippet": "\"neutron\": mpf(\"939.56542052\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/fr_pullback_cosh_h_test.py",
         "imported_codata_names": [
           "#",
@@ -3569,6 +3675,72 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/ocneanu_12_alt_knot_geometries.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 47,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "m_e = mp.mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 48,
+            "literal": "105.6583755",
+            "matches_constant": "M_MU_MEV_VALIDATION",
+            "registry_value": "105.6583755",
+            "rel_err": "0.0",
+            "snippet": "m_mu = mp.mpf(\"105.6583755\")"
+          },
+          {
+            "line_number": 49,
+            "literal": "938.27208816",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208816",
+            "rel_err": "0.0",
+            "snippet": "m_p = mp.mpf(\"938.27208816\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/ocneanu_12_bring_zero_mode_variants.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 47,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "m_e = mp.mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 48,
+            "literal": "105.6583755",
+            "matches_constant": "M_MU_MEV_VALIDATION",
+            "registry_value": "105.6583755",
+            "rel_err": "0.0",
+            "snippet": "m_mu = mp.mpf(\"105.6583755\")"
+          },
+          {
+            "line_number": 49,
+            "literal": "938.27208816",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208816",
+            "rel_err": "0.0",
+            "snippet": "m_p = mp.mpf(\"938.27208816\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/ocneanu_12_em_correction_candidate.py",
         "imported_codata_names": [],
         "hit_count": 3,
@@ -3657,6 +3829,39 @@
           },
           {
             "line_number": 64,
+            "literal": "938.27208816",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208816",
+            "rel_err": "0.0",
+            "snippet": "m_p = mp.mpf(\"938.27208816\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/ocneanu_54ppb_residual_exploration.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 47,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "m_e = mp.mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 48,
+            "literal": "105.6583755",
+            "matches_constant": "M_MU_MEV_VALIDATION",
+            "registry_value": "105.6583755",
+            "rel_err": "0.0",
+            "snippet": "m_mu = mp.mpf(\"105.6583755\")"
+          },
+          {
+            "line_number": 49,
             "literal": "938.27208816",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -4818,6 +5023,31 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/meson_habiro_c2_off_integer_pivot.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 39,
+            "literal": "493.677",
+            "matches_constant": "M_K_PM_MEV_VALIDATION",
+            "registry_value": "493.677",
+            "rel_err": "0.0",
+            "snippet": "m_K = mp.mpf(\"493.677\")"
+          },
+          {
+            "line_number": 40,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "m_pi = mp.mpf(\"139.57039\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/meson_habiro_c3_categorical_search.py",
         "imported_codata_names": [],
         "hit_count": 2,
@@ -5501,6 +5731,23 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/deuteron_real_sdp.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 34,
+            "literal": "2.22456607",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "3.147e-8",
+            "snippet": "B_D_AME_MeV = 2.22456607"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/family_1_kashaev.py",
         "imported_codata_names": [],
         "hit_count": 1,
@@ -5512,6 +5759,23 @@
             "registry_value": "7.718043",
             "rel_err": "3.887e-7",
             "snippet": "(2, 1):  7.71804,"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/gap_a1_binding_k_sdp_feasibility.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 31,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "B_AME_D_MEV = 2.224566"
           }
         ],
         "has_class_a_banner": false,
@@ -6034,6 +6298,23 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/yekutieli_volume_join.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 391,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "m_e = mp.mpf(\"0.51099895069\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/adjacent_vs_full_probe.py",
         "imported_codata_names": [],
         "hit_count": 5,
@@ -6289,15 +6570,15 @@
         "hit_count": 3,
         "hits": [
           {
-            "line_number": 65,
+            "line_number": 66,
             "literal": "105.6583755",
             "matches_constant": "M_MU_MEV_VALIDATION",
             "registry_value": "105.6583755",
             "rel_err": "0.0",
-            "snippet": "f\"(ratio-derived; independently-quoted 105.6583755(23) MeV)\""
+            "snippet": "f\"(ratio-derived; independently-quoted 105.6583755(23) MeV). \""
           },
           {
-            "line_number": 113,
+            "line_number": 120,
             "literal": "493.677",
             "matches_constant": "M_K_PM_MEV_VALIDATION",
             "registry_value": "493.677",
@@ -6305,7 +6586,7 @@
             "snippet": "\"PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature\","
           },
           {
-            "line_number": 113,
+            "line_number": 120,
             "literal": "139.57039",
             "matches_constant": "M_PI_PM_MEV_VALIDATION",
             "registry_value": "139.57039",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:37:15.296175+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T15:12:32.223825+00:00",
+  "commitSha": "f0b6202e8711057882beec73ec22704679e56a5d",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -36,13 +36,13 @@
   "description": "I1 audit per local/compute-integration-watcher: every provable content block (theorem / proposition / lemma / corollary) is cross-checked against the union of all witness `contentBlock` fields.  Blocks with proven Lean (0 sorrys, or class+sorry via §3b-cond) but no probe witness are flagged as `i1_no_probe`. Blocks with `sorry` (without conditional-class) belong to the proof-integration-watcher's queue; blocks without any `.lean` sibling are `i1_pre_lean` (deeper gap).",
   "contentBlock": "I1 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_provable_blocks": 601
+    "total_provable_blocks": 602
   },
   "data": {
     "by_result": {
       "i1_no_probe": 522,
       "wired": 69,
-      "i1_lean_with_sorry": 3,
+      "i1_lean_with_sorry": 4,
       "i1_pre_lean": 6,
       "i1_no_probe_conditional": 1
     },
@@ -493,6 +493,17 @@
         "probe_witness_count": 0,
         "probe_witnesses": [],
         "result": "i1_pre_lean"
+      },
+      {
+        "path": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts",
+        "label": "prop:zeta8-witness-level2-su2",
+        "kind": "proposition",
+        "sibling_lean_exists": true,
+        "sibling_sorry_count": 3,
+        "sibling_has_class": false,
+        "probe_witness_count": 0,
+        "probe_witnesses": [],
+        "result": "i1_lean_with_sorry"
       },
       {
         "path": "content/quantum-observable-universe/brings-surface/brings-euler-characteristic.ts",
@@ -2671,7 +2682,7 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 8,
+        "probe_witness_count": 13,
         "probe_witnesses": [
           "habiro-interpolate-cross-validation.witness.json",
           "kite-tail-reconciliation.witness.json",
@@ -3239,11 +3250,12 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 3,
+        "probe_witness_count": 4,
         "probe_witnesses": [
           "habiro-exact-mass-endomorphism.witness.json",
           "proton-mass-full-tower-50dps.witness.json",
-          "proton-residual-rootcause.witness.json"
+          "proton-residual-rootcause.witness.json",
+          "vhat-std-vs-full-tower-compare.witness.json"
         ],
         "result": "wired"
       },
@@ -3576,11 +3588,12 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 3,
+        "probe_witness_count": 4,
         "probe_witnesses": [
           "delta-lambda-2row-stratum.witness.json",
           "delta-lambda-empirical-tabulation.witness.json",
-          "delta-lambda-q-sweep-2row.witness.json"
+          "delta-lambda-q-sweep-2row.witness.json",
+          "e0-lambda-composite.witness.json"
         ],
         "result": "wired"
       },
