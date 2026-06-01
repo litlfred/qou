@@ -62,6 +62,7 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
+from witness_base import WitnessBuilder  # noqa: E402
 from habiro_coefficients_atomic import (  # noqa: E402
     to_u_polynomial,
     cyclotomic_expansion,
@@ -256,16 +257,17 @@ def analyse_atom(label: str, Z: int, N: int, q,
 
 def _write_witness(path: Path, slug: str, body: dict, q0_float: float,
                    description: str, reference_blocks: list[str]) -> None:
-    """Write per-atom witness in lithium-7-compatible schema."""
-    witness = {
+    """Write per-atom witness via WitnessBuilder.wrap_legacy so the
+    file carries `engine`, `scriptFile`, `commitSha`, `scriptHash`,
+    `computedAt`, `durationMs` provenance required by
+    `witness_provenance_audit.py`.
+    """
+    payload = {
         "computation": f"habiro-coefficients-{slug}",
         "description": description,
         "reference_blocks": reference_blocks,
-        "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q_0": q0_float,
-            "engine": "sympy Poly + sequential cyclotomic division "
-                      "(via closed_form_tau_M closed form)",
             "pn_convention": "chi_lambda_braid (production default)",
             "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
             "generator": "_habiro_coefficient_extract.py",
@@ -288,7 +290,14 @@ def _write_witness(path: Path, slug: str, body: dict, q0_float: float,
         "tr_M_at_q0_via_u_poly": body["tr_M_at_q0_via_u_poly"],
         "tr_M_at_q0_rel_err": body["tr_M_at_q0_rel_err"],
     }
-    path.write_text(json.dumps(witness, indent=2, default=str))
+    wb = WitnessBuilder.wrap_legacy(
+        name=f"habiro-coefficients-{slug}",
+        payload=payload,
+        script_path=__file__,
+        engine="sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
+        output_dir=path.parent,
+    )
+    wb.save()
     print(f"  → wrote {path.name}")
 
 
@@ -540,7 +549,6 @@ def main() -> int:
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q_0": q0_float,
-            "engine": "sympy Poly + sequential cyclotomic division",
             "pn_convention": "chi_lambda_braid (production default)",
             "generator": "_habiro_coefficient_extract.py",
         },
@@ -592,8 +600,14 @@ def main() -> int:
             ],
         },
     }
-    summary_path = HERE / "habiro-coefficients-mass-table-summary.witness.json"
-    summary_path.write_text(json.dumps(summary, indent=2, default=str))
+    wb = WitnessBuilder.wrap_legacy(
+        name="habiro-coefficients-mass-table-summary",
+        payload=summary,
+        script_path=__file__,
+        engine="sympy Poly + sequential cyclotomic division",
+        output_dir=HERE,
+    )
+    summary_path = wb.save()
     print(f"\n  → wrote {summary_path.name}")
 
     total = time.perf_counter() - t_overall

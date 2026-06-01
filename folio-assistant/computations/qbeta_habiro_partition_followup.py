@@ -478,47 +478,16 @@ def main():
     print(f"    Difference vs a_8: {out_gf['difference_p_gf_reversed_vs_a_8']}")
     print()
 
-    duration_ms = int((time.time() - start) * 1000)
+    from witness_base import WitnessBuilder
 
-    witness = {
-        "engine": "python+sympy",
-        "engineVersion": f"python {sys.version.split()[0]}",
-        "computedAt": time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime()),
-        "commitSha": "auto",
-        "assertions": [
-            {
-                "name": "a_8_coeffs_match_partition_p_1_to_5",
-                "computed": int(out_dp["a_8_partition_match"]),
-                "expected": 1,
-                "passed": out_dp["a_8_partition_match"],
-                "tolerance": 0,
-                "source": (
-                    "a_8(u) = u^4 + 2u^3 + 3u^2 + 5u + 7. Descending "
-                    "coefficient sequence (1,2,3,5,7) EQUALS the integer "
-                    "partition function p(k) for k=1..5. Structural "
-                    "interpretation: the m=8 Habiro coefficient is a "
-                    "truncated PARTITION GENERATING FUNCTION."
-                )
-            },
-            {
-                "name": "S_6_equals_S_7_equals_S_8_stable_telescope",
-                "computed": int(
-                    out_s5s6["S_6"] == out_s5s6["S_7"]
-                    and out_s5s6["S_7"] == out_s5s6["S_8"]
-                ),
-                "expected": 1,
-                "passed": out_s5s6["S_6"] == out_s5s6["S_7"] and
-                          out_s5s6["S_7"] == out_s5s6["S_8"],
-                "tolerance": 0,
-                "source": "S_m partial sums stabilize at m=6 (since Δa_7=Δa_8=0)."
-            },
-        ],
-        "allPassed": True,
-        "durationMs": duration_ms,
-        "computation": "qbeta-habiro-partition-followup",
-        "scriptFile": "qbeta_habiro_partition_followup.py",
-        "scriptHash": "auto",
-        "scriptCommitSha": "auto",
+    payload = {
+        "description": (
+            "Option D follow-up: detailed investigation of the partition-"
+            "function match in a_8(u), the S_5 → S_6 telescoping "
+            "transition, and the categorical interpretation of the m=6 "
+            "Habiro level as the support boundary of the n−p split."
+        ),
+        "contentBlock": "prop:neutron-qvalue-symbolic",
         "precisionMetadata": {
             "compute_dps": 65,
             "output_dps": 50,
@@ -529,13 +498,6 @@ def main():
             "python": sys.version.split()[0],
             "sympy": sp.__version__,
         },
-        "description": (
-            "Option D follow-up: detailed investigation of the partition-"
-            "function match in a_8(u), the S_5 → S_6 telescoping "
-            "transition, and the categorical interpretation of the m=6 "
-            "Habiro level as the support boundary of the n−p split."
-        ),
-        "contentBlock": "prop:neutron-qvalue-symbolic",
         "data": {
             "partition_match_by_m": out_pm,
             "S_5_S_6_transition": out_s5s6,
@@ -544,9 +506,39 @@ def main():
             "partition_gf_sanity_check": out_gf,
         },
     }
-    WITNESS_PATH.write_text(json.dumps(witness, indent=2, default=str))
+    wb = WitnessBuilder.wrap_legacy(
+        name="qbeta-habiro-partition-followup",
+        payload=payload,
+        script_path=__file__,
+        engine="python+sympy",
+        engine_version=f"python {sys.version.split()[0]}",
+        output_dir=WITNESS_PATH.parent,
+    )
+    wb.add_assertion(
+        name="a_8_coeffs_match_partition_p_1_to_5",
+        computed=int(out_dp["a_8_partition_match"]),
+        expected=1,
+        tolerance=0,
+        source=(
+            "a_8(u) = u^4 + 2u^3 + 3u^2 + 5u + 7. Descending "
+            "coefficient sequence (1,2,3,5,7) EQUALS the integer "
+            "partition function p(k) for k=1..5. Structural "
+            "interpretation: the m=8 Habiro coefficient is a "
+            "truncated PARTITION GENERATING FUNCTION."
+        ),
+    )
+    wb.add_assertion(
+        name="S_6_equals_S_7_equals_S_8_stable_telescope",
+        computed=int(
+            out_s5s6["S_6"] == out_s5s6["S_7"]
+            and out_s5s6["S_7"] == out_s5s6["S_8"]
+        ),
+        expected=1,
+        tolerance=0,
+        source="S_m partial sums stabilize at m=6 (since Δa_7=Δa_8=0).",
+    )
+    wb.save()
     print(f"Wrote witness → {WITNESS_PATH}")
-    print(f"Total wall: {duration_ms} ms")
 
 
 if __name__ == "__main__":
