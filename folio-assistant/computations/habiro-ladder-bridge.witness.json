@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T11:59:04.014853+00:00",
-  "commitSha": "8a35f1886750a6c8b6af2443ff8738e385582b6a",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T16:14:47.650502+00:00",
+  "commitSha": "36ca37a0ce3c8fbc30b9012e29291cc5c5d55bfc",
   "assertions": [
     {
       "name": "delta_trM_vanishes_at_classical_point",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 746,
+  "durationMs": 781,
   "computation": "habiro-ladder-bridge",
   "scriptFile": "habiro_ladder_bridge.py",
   "scriptHash": "d01b4380d6cb",
-  "scriptCommitSha": "8a35f1886750a6c8b6af2443ff8738e385582b6a",
+  "scriptCommitSha": "cf57199df0b1ce2326bef365ad6dcb27a32cebe0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,8 +34,9 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
