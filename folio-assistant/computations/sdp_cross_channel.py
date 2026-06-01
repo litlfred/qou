@@ -185,7 +185,7 @@ def sdp_with_atom_observables(Z, N, partition_entries, pair_couplings):
     Returns a dict with
       y0, y_lambda, cross_blocks, chi_lambda, objective_value, status.
     """
-    from _deprecated.hecke_core_legacy import atom_character_raw
+    from hecke_core_legacy import atom_character_raw
     import math as _math
 
     if not _HAVE_CVXPY:
@@ -423,7 +423,7 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
     from hecke_core import (partitions_of, partition_dimension,
                              partition_conjugate, q_hook_product,
                              M_E_MEV)
-    from _deprecated.hecke_core_legacy import (
+    from hecke_core_legacy import (
         _build_ysn_matrices, atom_character_raw,
         _step_chain_generic, _identity, _matmul_dim,
         _trace_dim, _crossing_in_partition,
@@ -474,7 +474,7 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
         import math as _math
         h_q = q - 1.0 / q
         # Build YSN matrices at this q (NOT the globally-precomputed ones)
-        from _deprecated.hecke_core_legacy import (
+        from hecke_core_legacy import (
             _standard_tableaux, _swap_tab, _content_at,
         )
         n = sum(partition)
@@ -640,7 +640,7 @@ def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
     from hecke_core import (partitions_of, q_hook_product,
                              wedderburn_weight, partition_dimension,
                              M_E_MEV, partition_conjugate)
-    from _deprecated.hecke_core_legacy import (
+    from hecke_core_legacy import (
         lp_shadow_price, partition_jet_depth,
     )
     # Override q for this sweep by monkey-patching Q temporarily?
@@ -707,7 +707,7 @@ def q_sweep_regime_detection(q_values, k_cap=5, Z=2, N=2):
 
 if __name__ == '__main__':
     # Smoke test: solve for a small set of partitions
-    from _deprecated.hecke_core_legacy import _PARTITION_TABLE
+    from hecke_core_legacy import _PARTITION_TABLE
     import sys
 
     # Small subset: k=2..4 with dim >= 2

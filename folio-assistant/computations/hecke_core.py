@@ -193,20 +193,23 @@ from pyhecke.constants import (  # noqa: E402
 # ════════════════════════════════════════════════════════════════════
 # Phase-B cycle break (2026-05-24).
 #
-# The Phase-5 EXPLORATORY surface (was the `from _deprecated.hecke_core_legacy
+# The Phase-5 EXPLORATORY surface (was the `from hecke_core_legacy
 # import (...)` re-export block here) has been removed.  External
 # consumers that still use the exploratory symbols import them
-# directly from `_deprecated.hecke_core_legacy` now — see the
-# legacy module's top docstring for the full list and `docs/audits/
+# directly from `hecke_core_legacy` now — see that module's top
+# docstring for the full list and `docs/audits/
 # 2026-05-24-hecke-core-canonical-audit.md` for the canonical-vs-
 # exploratory classification.
 #
-# This module imports nothing from `_deprecated/` — the import cycle
-# documented in the legacy file's top docstring is fully broken.
-# `_deprecated/hecke_core_legacy.py` still imports canonical symbols
-# from `hecke_core` (one-way), which is safe because `hecke_core` is
-# fully initialised by the time any consumer imports the legacy
-# module.
+# This module imports nothing from `hecke_core_legacy` — the import
+# cycle documented in the legacy file's top docstring is fully broken.
+# `hecke_core_legacy.py` still imports canonical symbols from
+# `hecke_core` (one-way), which is safe because `hecke_core` is fully
+# initialised by the time any consumer imports the legacy module.
+#
+# (hecke_core_legacy.py lived under `_deprecated/` until 2026-06-01;
+#  it was moved one level up to match the existing DEPRECATION-CANDIDATE
+#  convention used by the 23 other still-live deprecated scripts.)
 # ════════════════════════════════════════════════════════════════════
 
 # ── Back-compat aliases for mass_endomorphism consumers ──────────

@@ -1,3 +1,11 @@
+# DEPRECATION-CANDIDATE: Phase-5 exploratory surface, kept in place
+# because 9 live importers (5 in folio-assistant/computations/ + 4 in
+# tools/pyhecke/python/pyhecke/) still depend on its symbols. Revisit
+# when the live importers are themselves retired or rewired to the
+# canonical surface. Previously lived at _deprecated/hecke_core_legacy.py;
+# moved out 2026-06-01 to match the existing 23-candidate convention
+# (DEPRECATION-CANDIDATE banner in folio-assistant/computations/,
+# not under _deprecated/).
 """hecke_core_legacy — Phase-5 EXPLORATORY surface of hecke_core.py.
 
 Carved out per the canonical-vs-exploratory audit
@@ -92,16 +100,22 @@ _PARTITION_TABLE_CACHE: list[dict] | None = None
 # consumers that previously imported legacy symbols via `hecke_core`
 # (sdp_cross_channel.py, atomic_chirality_residue.py, hadron_knot_table.py,
 # phase3_triton_binding_convention_b.py) now import directly from
-# `_deprecated.hecke_core_legacy`.
+# `hecke_core_legacy`.
 #
 # Import direction is now one-way only:
-#   `_deprecated.hecke_core_legacy` → `hecke_core` (canonical primitives)
-#   `hecke_core` does NOT import from `_deprecated`.
+#   `hecke_core_legacy` → `hecke_core` (canonical primitives)
+#   `hecke_core` does NOT import from `hecke_core_legacy`.
 #
-# Direct imports `from _deprecated.hecke_core_legacy import X` are now
-# safe — hecke_core is imported fresh, completes its initialisation
-# (no recursion back into legacy), and legacy's `from hecke_core import
+# Direct imports `from hecke_core_legacy import X` are now safe —
+# hecke_core is imported fresh, completes its initialisation (no
+# recursion back into legacy), and legacy's `from hecke_core import
 # (...)` block finds the canonical surface fully populated.
+#
+# (Path note: until 2026-06-01 this module lived at
+#  `_deprecated/hecke_core_legacy.py`; importers used
+#  `from _deprecated.hecke_core_legacy import X`. The file moved one
+#  level up to match the DEPRECATION-CANDIDATE banner convention used
+#  by the other 23 still-live deprecated scripts.)
 #
 # **Recommendation for new code**: do NOT import from this module.
 # The exploratory surface is being deprecated in favour of the
