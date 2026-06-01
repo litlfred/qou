@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:46:57.226191+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:49:27.194167+00:00",
+  "commitSha": "7f768e0a93baaeaf0fe5b2ca8be3915e0a86f792",
   "assertions": [
     {
       "name": "normalized_markov_trace_identity_is_one",
@@ -20,10 +20,10 @@
   "scriptHash": "211fa4cc4b7b",
   "scriptCommitSha": "547cbba5cb9a135e9a83211d5cce7b83a2eb0a3b",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
