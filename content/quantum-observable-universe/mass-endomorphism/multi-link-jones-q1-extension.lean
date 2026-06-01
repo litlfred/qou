@@ -35,7 +35,7 @@ LaTeX label: `rem:multi-link-jones-q1-extension`
 -- `jonesAtOne` cases for `trefoil`, `borromean`, `doubleHopf` from
 -- `braid-link-types.lean`.
 -- Ref: [manuscript] rem:braid-link-types
-import QOU.BraidKnot.braid_link_types
+import QOU.BraidKnot.BraidLinkTypes
 
 namespace QOU.BraidKnot
 

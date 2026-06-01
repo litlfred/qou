@@ -56,6 +56,23 @@ import QOU.BraidKnot.PerNucleusMassDerivation
 import QOU.BraidKnot.frobenius_antipode_unifies
 import QOU.BraidKnot.CommutativeCrossingEnergy
 import QOU.BraidKnot.nonabelian_stokes_surface_boundary_stokes
+-- Sibling-import cluster wire-in (2026-06-01): content-tree extracts
+-- migrated into the Lake build (see
+-- docs/audits/2026-06-01-sibling-import-cluster-wire-in-plan.md).
+-- Six modules renamed snake_case → CamelCase (Lean-4 idiom) with all
+-- importers updated in lock-step. COMPILE-PENDING.
+import QOU.BraidKnot.BraidLinkTypes
+import QOU.BraidKnot.BraidGroupNStrand
+import QOU.BraidKnot.MarkovAxiomsPrimitive
+import QOU.BraidKnot.H3HeckeIdempotents
+import QOU.BraidKnot.HoefsmitV21CosSymmetrization
+import QOU.BraidKnot.QBetaCategoricalPrecisionLadder
+import QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed
+import QOU.BraidKnot.KnotFactorSpectralDerivation
+import QOU.BraidKnot.KnotFactorAmphicheiral
+import QOU.BraidKnot.PlancherelWeightBoundedness
+import QOU.BraidKnot.TwoRowStratum
+import QOU.BraidKnot.AlphaShiftTorus.AlphaShiftTorusKnot
 
 /-!
 # BraidKnot — Module Index

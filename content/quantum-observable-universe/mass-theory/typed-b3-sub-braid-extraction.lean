@@ -52,7 +52,7 @@ LaTeX label: `rem:typed-b3-sub-braid-extraction` (Track C extension).
 -- `F3-eps6-leading-eq-neg-2b-cubed.lean`.
 -- Ref: [manuscript] rem:braid-link-types
 -- Ref: [manuscript] rem:F3-eps6-leading-eq-neg-2b-cubed
-import QOU.BraidKnot.braid_link_types
+import QOU.BraidKnot.BraidLinkTypes
 import QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed
 
 namespace QOU.BraidKnot

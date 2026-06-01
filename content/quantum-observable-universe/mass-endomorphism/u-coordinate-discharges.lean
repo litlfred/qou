@@ -29,9 +29,9 @@ LaTeX label: `rem:u-coordinate-discharges`
 -/
 
 -- Sibling-chapter dependency for `hoefsmitB` and `hoefsmit_b_sq`.
-import QOU.BraidKnot.q_beta_categorical_precision_ladder
-import QOU.BraidKnot.hoefsmit_V21_cos_symmetrization
-import QOU.BraidKnot.h3_hecke_idempotents
+import QOU.BraidKnot.QBetaCategoricalPrecisionLadder
+import QOU.BraidKnot.HoefsmitV21CosSymmetrization
+import QOU.BraidKnot.H3HeckeIdempotents
 
 namespace QOU.BraidKnot
 

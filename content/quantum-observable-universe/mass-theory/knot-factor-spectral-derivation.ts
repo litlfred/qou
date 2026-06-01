@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Knot factor $a_K$ as a chirality-block Plancherel pairing",
   lean: {
-    ref: "qou:QOU.BraidKnot.knot_factor_spectral_derivation",
+    ref: "qou:QOU.BraidKnot.knot_factor_spectral_form",
     validation: "not_checked",
   },
   uses: ["rem:gram-matrix-spectral-connection"],

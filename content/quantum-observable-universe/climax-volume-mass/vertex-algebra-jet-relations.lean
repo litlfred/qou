@@ -1,4 +1,4 @@
-import QOU.GrobnerShirshov.HeckeGS
+import UGB.GrobnerShirshov.HeckeGS
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
@@ -36,8 +36,8 @@ abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
-open QOU.GrobnerShirshov
-open QOU.GrobnerShirshov.Hecke
+open UGB.GrobnerShirshov
+open UGB.GrobnerShirshov.Hecke
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Level-indexed Hecke algebra

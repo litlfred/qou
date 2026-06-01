@@ -22,7 +22,6 @@ stub at this level; the true expression involves q^(1/2) which
 lives in the extension R_q[q^(1/2)].
 -/
 import QOU.QuantumObservableUniverse
-import QOU.Information
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Sqrt
