@@ -65,14 +65,40 @@ abbrev GeomFullEval (Knot : Type) : Type := Knot → ℝ → ℝ
 /-- **Categorical functoriality (axiomatised).**  The Geom_full
     evaluator factors through the fibre functor of the QOU
     substrate's monoidal category — equivalently, it respects
-    Hecke-algebra morphisms.
+    Hecke-algebra morphisms.  Concretely (`prop:hoefsmit-scattering-
+    pipeline` Stage 3–4), this functoriality means the evaluator
+    factors as the geometric projection `geomLeading` (= Vol(K)/ℏ_q²
+    for hyperbolic K) times the knot's OWN per-block Markov-trace sum
+    `perBlock K q = Σ_λ w_λ χ_λ(β_K)/dim λ`:
 
-    **Open math.**  Closing this class to a Lean-witnessed
-    predicate requires the categorical fibre-functor formalisation
-    (cf. `prop:hoefsmit-scattering-pipeline`); for now it is carried
-    as a per-evaluation substrate axiom. -/
+        G K q = geomLeading K q · perBlock K q.
+
+    **Replaces the previous trivial `functorial : True` stub
+    (2026-06-01).**  The class now carries the real Stage-4 per-block
+    factorisation as its content.  This is the structural statement
+    that production's `geom_full_borromean` VIOLATES — it drops the
+    per-block factor `perBlock` and substitutes a global H₄ scalar
+    (the discrepancy is quantified, raw, in
+    `geom-full-per-block-wiring.witness.json`: the H₃ per-block trace
+    `tr_M(proton) ≈ 1.065` differs from the global scalar `≈ 2.53` by
+    `≈ 2.38×`).
+
+    **Open math.**  The conjectural join is the Yekutieli non-abelian
+    Stokes identification `perBlock = boundary-holonomy of the
+    categorical connection` (`conj:geom-yekutieli-alignment`); that
+    join is the §3b-cond axiom carried by the class instance, not a
+    Lean-proved fact. -/
 class GeomFullFunctorial {Knot : Type} (G : GeomFullEval Knot) : Prop where
-  functorial : True
+  /-- The geometric-projection factor (Vol(K)/ℏ_q² for hyperbolic K). -/
+  geomLeading : Knot → ℝ → ℝ
+  /-- The knot's own per-block Markov-trace sum
+      `Σ_λ w_λ χ_λ(β_K)/dim λ`, over the partitions of the knot's OWN
+      Hecke level (H₃ for the 3-strand Borromean baryons). -/
+  perBlock : Knot → ℝ → ℝ
+  /-- Stage-4 functorial factorisation: the evaluator is the geometric
+      projection times the per-block sum (the paper's forced form). -/
+  factors_per_block : ∀ (k : Knot) (q : ℝ),
+    G k q = geomLeading k q * perBlock k q
 
 /-- **Canonical normalisation seed.**  The Geom_full evaluator
     agrees pointwise with a fixed reference evaluator `seed` on

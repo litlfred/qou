@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:04:41.411838+00:00",
-  "commitSha": "46e5bfc305cca30e40c565bcc04448443b94a55c",
+  "computedAt": "2026-06-01T05:06:41.590190+00:00",
+  "commitSha": "86ecadb92944ecbb885b5002af48626c242f1f99",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 12,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
-  "scriptCommitSha": "3e8cab5b00902b83e6d53dca4fbdf3f7521bbdd9",
+  "scriptCommitSha": "95163cf6c2f0adecc5a4ab1c05afa3e743bd0209",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,13 +19,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
   },
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 839,
+    "files_scanned": 841,
     "patterns": [
       "P15",
       "P16",
@@ -37,7 +39,7 @@
   "data": {
     "by_pattern_count": {
       "P15": 124,
-      "P16": 232,
+      "P16": 234,
       "P21": 30,
       "P30": 164,
       "P31": 62
@@ -3233,6 +3235,20 @@
         "pattern": "P16",
         "file": "qbeta_delta_tr_vs_formA.py",
         "line": 188,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_eigenphase_taylor_in_u.py",
+        "line": 144,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_eigenphase_taylor_in_u.py",
+        "line": 150,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },

@@ -208,8 +208,27 @@ def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
 
 
 def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """Geom_full(𝓑₃, q) — the complete per-knot Geom evaluation for the
+    """[SHORTCUT — global-scalar collapse, NOT the paper's per-block sum.]
+
+    Geom_full(𝓑₃, q) — the complete per-knot Geom evaluation for the
     Borromean baryon mass formula (canonical post-PR #1080, 2026-05-23).
+
+    ⚠ **Discipline note (2026-06-01, PR geom-full-perblock-wiring-fix).**
+    This routine multiplies the bare hyperbolic Geom_leading =
+    Vol(𝓑₃)/ℏ_q² by a GLOBAL scalar `linking_weight_family_a(q)` =
+    (3q²+4+3q⁻²)/4 ≈ 2.53. That scalar is the H₄ (partitions of 4)
+    half-symmetric Wedderburn count — it is NOT the paper's Stage-4
+    per-block character sum `Σ_λ w_λ χ_λ(β)/dim λ` over partitions of
+    the knot's own strand count.  For 𝓑₃ the paper's per-block sum is
+    the H₃ Markov trace tr_M(𝓑₃) ≈ 1.065 (proton) / 0.923 (neutron),
+    not 2.53.  The two differ by ≈ 2.38×; this routine therefore does
+    NOT compute the formula in `prop:hoefsmit-scattering-pipeline`
+    Stage 4 — the 2.53 is a CODATA-implied-λ near-match that lands
+    near `λ = m_p/(m_e·Vol/ℏ²) ≈ 2.46` (the value that round-trips m_p).
+    Use `geom_full_per_block(vol_K, tr_M_K, q, ...)` for the
+    paper-faithful per-block evaluation.  This routine is retained ONLY until the
+    per-block version is validated and the owner approves a production
+    switch (the switch changes the m_p computation).
 
     The mass formula is:
         m(B) = m_e × Geom_full(𝓑₃, q₀)            (single Geom call)
@@ -252,6 +271,64 @@ def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     # (trivial Lean stub) so it must not enter production. Use it only
     # via the explicitly-exploratory geom_full_borromean_spectral().
     return geom_leading * linking_weight
+
+
+def geom_leading(vol_K: mpf, q: mpf, q_inv: mpf | None = None) -> mpf:
+    """Bare hyperbolic Geom_leading(K, q) = Vol(K) / ℏ_q².
+
+    This is the `Geom(K)` factor of `prop:hoefsmit-scattering-pipeline`
+    Stage 3 for hyperbolic `K` — the geometric projection of the
+    algebraic Markov trace into a measurable observable.  It carries
+    NO per-block character sum; the per-block sum is the SEPARATE
+    `tr_M = Σ_λ w_λ χ_λ/dim λ` factor (Stage 2 / Stage 4).
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    hbar_q = 1 - qi  # ℏ_q = (q - 1)/q
+    return vol_K / hbar_q ** 2
+
+
+def geom_full_per_block(
+    vol_K: mpf,
+    tr_M_K: mpf,
+    q: mpf,
+    q_inv: mpf | None = None,
+) -> mpf:
+    """Paper-faithful per-block Geom_full(K, q) — `prop:hoefsmit-
+    scattering-pipeline` Stage 4, WITH the dropped Σ_λ factor restored.
+
+    Computes the FULL mass-formula geometric factor of the paper:
+
+        Geom_full(K) · (Σ_λ w_λ χ_λ(β)/dim λ)
+          =  [Vol(K)/ℏ_q²]  ·  tr_M(K, q)
+
+    where `tr_M(K, q) = Σ_λ w_λ χ_λ(β_K)/dim λ` is the canonical
+    Markov trace over the partitions of the KNOT'S OWN strand count
+    (H₃ for the 3-strand Borromean baryons, H₆ for the deuteron at
+    n=6, etc.).  This is the `Σ_λ` factor that the legacy
+    `geom_full_borromean` shortcut DROPPED and replaced with a global
+    H₄ scalar.
+
+    The mass is then `m(K) = m_e · geom_full_per_block(...)`.
+
+    Arguments
+    ---------
+    vol_K   : hyperbolic volume Vol(K) of the knot complement
+              (8·G for the Borromean rings, Adams 1985).
+    tr_M_K  : the per-block Markov trace Σ_λ w_λ χ_λ/dim λ at q,
+              loaded from the canonical chi-cache witness
+              (`chi-{atom}-h{n}-at-q0-50dps.witness.json`) or computed
+              via `canonical_tr_m_via_chi_cache.canonical_tr_m`.
+    q, q_inv: substrate parameter and its inverse.
+
+    Per CLAUDE.md production-vs-exploratory discipline: this is a
+    DERIVATION (restores the paper's formula), not a fit.  NO fudge
+    factor is applied; if the resulting m(K) disagrees with the
+    legacy shortcut, that discrepancy is REPORTED, never tuned away.
+
+    Returns Vol(K)/ℏ_q² · tr_M(K, q).
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    return geom_leading(vol_K, q, qi) * tr_M_K
 
 
 def spectral_correction_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
