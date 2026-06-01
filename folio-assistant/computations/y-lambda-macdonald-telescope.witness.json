@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:39:11.105650+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-01T05:49:50.222963+00:00",
+  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
   "assertions": [
     {
       "name": "Z_0_identity",
@@ -134,7 +134,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14401,
+  "durationMs": 11854,
   "computation": "y-lambda-macdonald-telescope",
   "scriptFile": "y_lambda_macdonald_telescope.py",
   "scriptHash": "17c5b9787348",

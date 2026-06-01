@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:32:03.054513+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-01T05:42:30.072838+00:00",
+  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
   "assertions": [
     {
       "name": "all_compounds_feasible",
@@ -25,7 +25,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2572,
+  "durationMs": 2194,
   "computation": "lp-confinement-nf-forcing",
   "scriptFile": "lp_confinement_nf_forcing.py",
   "scriptHash": "3fcac72c6e1d",
