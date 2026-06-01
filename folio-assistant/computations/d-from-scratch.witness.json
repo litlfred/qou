@@ -1,20 +1,20 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:50:16.157587+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:08:35.804156+00:00",
+  "commitSha": "66a1bf9704db7c4b9bce41a72bc070ad63fac0a9",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 33,
   "computation": "d-from-scratch",
   "scriptFile": "d_from_scratch.py",
   "scriptHash": "47e6b948cc26",
   "scriptCommitSha": "621cbb9207942e0a9db11c2f336e2da439e42bca",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

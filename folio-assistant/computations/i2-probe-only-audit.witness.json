@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:34:55.396835+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:53:19.105150+00:00",
+  "commitSha": "66a1bf9704db7c4b9bce41a72bc070ad63fac0a9",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -21,10 +21,10 @@
   "scriptHash": "1155d3faa225",
   "scriptCommitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -37,11 +37,11 @@
   "contentBlock": "I2 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "production_consumers_count": 9,
-    "total_label_bearing_witnesses": 247
+    "total_label_bearing_witnesses": 246
   },
   "data": {
     "by_result": {
-      "i2_probe_only": 209,
+      "i2_probe_only": 208,
       "wired_production": 38
     },
     "production_consumers": [
@@ -1469,15 +1469,6 @@
         "witness": "folio-assistant/computations/meson-character-shortcut-l1.witness.json",
         "labels": [
           "prop:pion-half-figure-eight"
-        ],
-        "production_consumers": [],
-        "upstream_consumers": [],
-        "result": "i2_probe_only"
-      },
-      {
-        "witness": "folio-assistant/computations/meson-em-sinh-closed-form.witness.json",
-        "labels": [
-          "prop:meson-color-tube-uniqueness"
         ],
         "production_consumers": [],
         "upstream_consumers": [],
