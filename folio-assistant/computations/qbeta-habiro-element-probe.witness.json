@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T15:13:05.388123+00:00",
-  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
+  "computedAt": "2026-06-01T16:59:38.743708+00:00",
+  "commitSha": "3e54b1e82cf84661be61ce7c40423935af0ed90b",
   "assertions": [
     {
       "name": "habiro_infrastructure_reproduces_witness",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 804,
+  "durationMs": 795,
   "computation": "qbeta-habiro-element-probe",
   "scriptFile": "qbeta_habiro_element_probe.py",
   "scriptHash": "2c75c801d281",
