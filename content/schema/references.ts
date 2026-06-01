@@ -4975,7 +4975,7 @@ export const references: CSLData[] = [
     "collection-title": "Encyclopedia of Mathematics and its Applications",
     "collection-number": "2",
     ISBN: "978-0-201-13501-3",
-    note: "Andrews's canonical monograph on integer partitions — Chapter 1 covers the partition function $p(n)$ and Table 1 lists values for $n \\le 200$ as used in QOU `a8-partition-function-identity.lean`.",
+    note: "Andrews's canonical monograph on integer partitions — Chapter 1 covers the partition function $p(n)$ and Table 1 lists values for $n \\le 200$ as used in QOU \\texttt{a8-partition-function-identity.lean}.",
   }),
 
   // ── Lickorish 1997 (knot theory textbook) ─────────────────────
