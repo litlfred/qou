@@ -42,6 +42,7 @@
                     <li><a href="pyhecke/partition.html">partition</a></li>
                     <li><a href="pyhecke/schema.html">schema</a></li>
                     <li><a href="pyhecke/sdp.html">sdp</a></li>
+                    <li><a href="pyhecke/skew_syt.html">skew_syt</a></li>
                     <li><a href="pyhecke/tower.html">tower</a></li>
                     <li><a href="pyhecke/trace.html">trace</a></li>
                     <li><a href="pyhecke/undo.html">undo</a></li>
@@ -311,6 +312,7 @@ the legacy file so downstream scripts continue to work unchanged.</p>
 <p>Submodules (lazy-loaded via PEP-562 __getattr__):
   <a href="pyhecke/gram.html">pyhecke.gram</a>, <a href="pyhecke/wedderburn.html">pyhecke.wedderburn</a>, <a href="pyhecke/atom.html">pyhecke.atom</a>, <a href="pyhecke/molecular.html">pyhecke.molecular</a>,
   <a href="pyhecke/constants.html">pyhecke.constants</a>, <a href="pyhecke/partition.html">pyhecke.partition</a>, <a href="pyhecke/trace.html">pyhecke.trace</a>, <a href="pyhecke/tower.html">pyhecke.tower</a>,
+  <a href="pyhecke/skew_syt.html">pyhecke.skew_syt</a>,
   <a href="pyhecke/certificate.html">pyhecke.certificate</a>, <a href="pyhecke/bridge.html">pyhecke.bridge</a>, <a href="pyhecke/schema.html">pyhecke.schema</a>, <a href="pyhecke/crt.html">pyhecke.crt</a>,
   <a href="pyhecke/undo.html">pyhecke.undo</a>, <a href="pyhecke/sdp.html">pyhecke.sdp</a></p>
 
@@ -361,7 +363,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="ALPHA_EM_INV_DERIVED">
                     <div class="attr variable">
             <span class="name">ALPHA_EM_INV_DERIVED</span>        =
-<span class="default_value">137.0359444240373</span>
+<span class="default_value">137.0359335779956</span>
 
         
     </div>
@@ -421,7 +423,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="E_HARTREE_EV">
                     <div class="attr variable">
             <span class="name">E_HARTREE_EV</span>        =
-<span class="default_value">27.21146386777438</span>
+<span class="default_value">27.211468175209315</span>
 
         
     </div>
@@ -433,7 +435,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="E_MOL">
                     <div class="attr variable">
             <span class="name">E_MOL</span>        =
-<span class="default_value">6.729337493682183</span>
+<span class="default_value">6.729338575040661</span>
 
         
     </div>
@@ -445,7 +447,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="FIG8_A_BULK">
                     <div class="attr variable">
             <span class="name">FIG8_A_BULK</span>        =
-<span class="default_value">0.9562937817694879</span>
+<span class="default_value">0.956293791467478</span>
 
         
     </div>
@@ -457,7 +459,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="FIG8_F_COUL">
                     <div class="attr variable">
             <span class="name">FIG8_F_COUL</span>        =
-<span class="default_value">0.37737353352656794</span>
+<span class="default_value">0.37737353300356785</span>
 
         
     </div>
@@ -469,7 +471,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="FIG8_F_EXCH">
                     <div class="attr variable">
             <span class="name">FIG8_F_EXCH</span>        =
-<span class="default_value">0.4993203340335982</span>
+<span class="default_value">0.4993203341836945</span>
 
         
     </div>
@@ -481,7 +483,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="FIG8_R_311">
                     <div class="attr variable">
             <span class="name">FIG8_R_311</span>        =
-<span class="default_value">-0.014156261636560205</span>
+<span class="default_value">-0.014156258584355246</span>
 
         
     </div>
@@ -493,7 +495,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="FIG8_R_32">
                     <div class="attr variable">
             <span class="name">FIG8_R_32</span>        =
-<span class="default_value">-0.2119250225224806</span>
+<span class="default_value">-0.21192501994404875</span>
 
         
     </div>
@@ -505,7 +507,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="FIG8_R_41">
                     <div class="attr variable">
             <span class="name">FIG8_R_41</span>        =
-<span class="default_value">0.23148543087317658</span>
+<span class="default_value">0.23148543485099032</span>
 
         
     </div>
@@ -519,17 +521,17 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
             <span class="name">G</span>        =
 <input id="G-view-value" class="view-value-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
             <label class="view-value-button pdoc-button" for="G-view-value"></label><span class="default_value">array([[1.        , 0.49932033, 0.49932033, 0.2493208 , 0.2493208 ,
-        0.55144342],
-       [0.49932033, 1.10438807, 0.2493208 , 0.55144342, 0.55144342,
-        0.36460573],
-       [0.49932033, 0.2493208 , 1.10438807, 0.55144342, 0.55144342,
-        0.36460573],
-       [0.2493208 , 0.55144342, 0.55144342, 0.36460573, 1.21967301,
-        0.62766801],
-       [0.2493208 , 0.55144342, 0.55144342, 1.21967301, 0.36460573,
-        0.62766801],
-       [0.55144342, 0.36460573, 0.36460573, 0.62766801, 0.62766801,
-        1.35089349]])</span>
+        0.55144341],
+       [0.49932033, 1.10438806, 0.2493208 , 0.55144341, 0.55144341,
+        0.36460572],
+       [0.49932033, 0.2493208 , 1.10438806, 0.55144341, 0.55144341,
+        0.36460572],
+       [0.2493208 , 0.55144341, 0.55144341, 0.36460572, 1.21967298,
+        0.627668  ],
+       [0.2493208 , 0.55144341, 0.55144341, 1.21967298, 0.36460572,
+        0.627668  ],
+       [0.55144341, 0.36460572, 0.36460572, 0.627668  , 0.627668  ,
+        1.35089344]])</span>
 
         
     </div>
@@ -542,18 +544,18 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                     <div class="attr variable">
             <span class="name">G_INV</span>        =
 <input id="G_INV-view-value" class="view-value-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-            <label class="view-value-button pdoc-button" for="G_INV-view-value"></label><span class="default_value">array([[ 2.99774583, -1.8589706 , -1.8589706 ,  1.43961022,  1.43961022,
-        -1.55800522],
-       [-1.8589706 ,  2.60910884,  1.43961022, -1.55800522, -1.55800522,
-         1.11389315],
-       [-1.8589706 ,  1.43961022,  2.60910884, -1.55800522, -1.55800522,
-         1.11389315],
-       [ 1.43961022, -1.55800522, -1.55800522,  1.11389315,  2.28339177,
-        -1.32513436],
-       [ 1.43961022, -1.55800522, -1.55800522,  2.28339177,  1.11389315,
-        -1.32513436],
-       [-1.55800522,  1.11389315,  1.11389315, -1.32513436, -1.32513436,
-         2.00635875]])</span>
+            <label class="view-value-button pdoc-button" for="G_INV-view-value"></label><span class="default_value">array([[ 2.99774602, -1.85897078, -1.85897078,  1.43961039,  1.43961039,
+        -1.5580054 ],
+       [-1.85897078,  2.60910903,  1.43961039, -1.5580054 , -1.5580054 ,
+         1.11389332],
+       [-1.85897078,  1.43961039,  2.60910903, -1.5580054 , -1.5580054 ,
+         1.11389332],
+       [ 1.43961039, -1.5580054 , -1.5580054 ,  1.11389332,  2.28339196,
+        -1.32513453],
+       [ 1.43961039, -1.5580054 , -1.5580054 ,  2.28339196,  1.11389332,
+        -1.32513453],
+       [-1.5580054 ,  1.11389332,  1.11389332, -1.32513453, -1.32513453,
+         2.00635894]])</span>
 
         
     </div>
@@ -565,7 +567,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="INV_TREFOIL_G0">
                     <div class="attr variable">
             <span class="name">INV_TREFOIL_G0</span>        =
-<span class="default_value">[(1, -0.20906032198987945), (1, -0.20906032198987945)]</span>
+<span class="default_value">[(1, -0.20906029879563937), (1, -0.20906029879563937)]</span>
 
         
     </div>
@@ -577,7 +579,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="INV_TREFOIL_G1">
                     <div class="attr variable">
             <span class="name">INV_TREFOIL_G1</span>        =
-<span class="default_value">[(1, -0.20906032198987945)]</span>
+<span class="default_value">[(1, -0.20906029879563937)]</span>
 
         
     </div>
@@ -638,7 +640,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                     <div class="attr variable">
             <span class="name">NEUTRON_NF</span>        =
 <input id="NEUTRON_NF-view-value" class="view-value-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-            <label class="view-value-button pdoc-button" for="NEUTRON_NF-view-value"></label><span class="default_value">[-0.20170383884270424, 0.04813038950468018, 1.008995448774928, 0.009237074564505125, -0.009640792161232883, -0.04418377660851536]</span>
+            <label class="view-value-button pdoc-button" for="NEUTRON_NF-view-value"></label><span class="default_value">[-0.20170381820966593, 0.04813037781513514, 1.0089954472120495, 0.0092370714679249, -0.009640788839731823, -0.044183766698594085]</span>
 
         
     </div>
@@ -687,7 +689,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                     <div class="attr variable">
             <span class="name">PROTON_NF</span>        =
 <input id="PROTON_NF-view-value" class="view-value-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-            <label class="view-value-button pdoc-button" for="PROTON_NF-view-value"></label><span class="default_value">[-0.0996576638783709, 0.03572941527166866, 0.9975704635686099, 0.009336913072779455, 0.09935378478991747, -0.04320778758182197]</span>
+            <label class="view-value-button pdoc-button" for="PROTON_NF-view-value"></label><span class="default_value">[-0.0996576539713873, 0.035729406670202905, 0.9975704646560543, 0.009336909920816226, 0.09935377505247167, -0.043207778109657174]</span>
 
         
     </div>
@@ -700,7 +702,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                     <div class="attr variable">
             <span class="name">TR_M</span>        =
 <span class="default_value">array([1.        , 0.49932033, 0.49932033, 0.2493208 , 0.2493208 ,
-       0.55144342])</span>
+       0.55144341])</span>
 
         
     </div>
@@ -712,7 +714,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="TWO_Q">
                     <div class="attr variable">
             <span class="name">TWO_Q</span>        =
-<span class="default_value">2.010896869118482</span>
+<span class="default_value">2.0108968667071223</span>
 
         
     </div>
@@ -748,7 +750,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="V_HAT_ELECTRON">
                     <div class="attr variable">
             <span class="name">V_HAT_ELECTRON</span>        =
-<span class="default_value">0.5938490006705095</span>
+<span class="default_value">0.5938489697813898</span>
 
         
     </div>
@@ -760,7 +762,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="W_ALT">
                     <div class="attr variable">
             <span class="name">W_ALT</span>        =
-<span class="default_value">0.16546138476810043</span>
+<span class="default_value">0.16546138503360688</span>
 
         
     </div>
@@ -772,7 +774,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="W_STD">
                     <div class="attr variable">
             <span class="name">W_STD</span>        =
-<span class="default_value">0.669077230463799</span>
+<span class="default_value">0.6690772299327864</span>
 
         
     </div>
@@ -784,7 +786,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="W_SYM">
                     <div class="attr variable">
             <span class="name">W_SYM</span>        =
-<span class="default_value">0.16546138476810043</span>
+<span class="default_value">0.16546138503360688</span>
 
         
     </div>
@@ -808,7 +810,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="_NEUTRON_G0">
                     <div class="attr variable">
             <span class="name">_NEUTRON_G0</span>        =
-<span class="default_value">[(1, 0), (1, 0), (1, 0), (1, -0.10453016099493972), (1, -0.10453016099493972), (1, 0), (1, 0)]</span>
+<span class="default_value">[(1, 0), (1, 0), (1, 0), (1, -0.10453014939781968), (1, -0.10453014939781968), (1, 0), (1, 0)]</span>
 
         
     </div>
@@ -821,7 +823,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                     <div class="attr variable">
             <span class="name">_NEUTRON_G1</span>        =
 <input id="_NEUTRON_G1-view-value" class="view-value-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-            <label class="view-value-button pdoc-button" for="_NEUTRON_G1-view-value"></label><span class="default_value">[(1, -0.20906032198987945), (1, -0.20906032198987945), (1, -0.20906032198987945), (1, -0.20906032198987945)]</span>
+            <label class="view-value-button pdoc-button" for="_NEUTRON_G1-view-value"></label><span class="default_value">[(1, -0.20906029879563937), (1, -0.20906029879563937), (1, -0.20906029879563937), (1, -0.20906029879563937)]</span>
 
         
     </div>
@@ -833,7 +835,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                 <section id="_PROTON_G0">
                     <div class="attr variable">
             <span class="name">_PROTON_G0</span>        =
-<span class="default_value">[(1, 0), (1, 0), (1, 0), (1, 0), (1, -0.10453016099493972), (1, 0), (1, 0)]</span>
+<span class="default_value">[(1, 0), (1, 0), (1, 0), (1, 0), (1, -0.10453014939781968), (1, 0), (1, 0)]</span>
 
         
     </div>
@@ -846,7 +848,7 @@ plus its own deps. <code>import pyhecke</code> on its own loads none of them.</p
                     <div class="attr variable">
             <span class="name">_PROTON_G1</span>        =
 <input id="_PROTON_G1-view-value" class="view-value-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-            <label class="view-value-button pdoc-button" for="_PROTON_G1-view-value"></label><span class="default_value">[(1, -0.20906032198987945), (1, -0.20906032198987945), (1, -0.20906032198987945), (1, -0.10453016099493972)]</span>
+            <label class="view-value-button pdoc-button" for="_PROTON_G1-view-value"></label><span class="default_value">[(1, -0.20906029879563937), (1, -0.20906029879563937), (1, -0.20906029879563937), (1, -0.10453014939781968)]</span>
 
         
     </div>
@@ -896,7 +898,7 @@ Returns V̂^full = w_sym·λ_sym + w_std·V_std + w_alt·λ_alt.</p>
                 <section id="alpha_em">
                     <div class="attr variable">
             <span class="name">alpha_em</span>        =
-<span class="default_value">0.007297355480002014</span>
+<span class="default_value">0.007297356057568933</span>
 
         
     </div>
@@ -908,7 +910,7 @@ Returns V̂^full = w_sym·λ_sym + w_std·V_std + w_alt·λ_alt.</p>
                 <section id="alpha_em_derived">
                     <div class="attr variable">
             <span class="name">alpha_em_derived</span>        =
-<span class="default_value">0.007297355480002014</span>
+<span class="default_value">0.007297356057568933</span>
 
         
     </div>
@@ -1364,7 +1366,7 @@ Bond ratios correct: double = 2×single, triple = 3×single.</p>
                 <section id="q2">
                     <div class="attr variable">
             <span class="name">q2</span>        =
-<span class="default_value">1.2320524825884311</span>
+<span class="default_value">1.232052454166764</span>
 
         
     </div>
@@ -1484,7 +1486,7 @@ in molecular binding.</p>
                 <section id="z">
                     <div class="attr variable">
             <span class="name">z</span>        =
-<span class="default_value">0.4993203340335982</span>
+<span class="default_value">0.4993203341836945</span>
 
         
     </div>
