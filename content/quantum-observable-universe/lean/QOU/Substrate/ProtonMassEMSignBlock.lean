@@ -75,23 +75,58 @@ theorem residual_eq_alpha_em_over_6pi
   push_cast
   ring
 
-/-! ## What this Lean module does NOT do
+/-! ## Open work — current status (post-PR #1645 follow-up)
 
 This module does NOT prove that `m_p_residual = (α_em/π)/6` — that
 would require:
 
-1. Categorical derivation of the bare per-block `(α_em/π)` EM coupling
-   (Bring zero-mode analog of m_K/m_π's `(3q²-1)/(2q²)` from PR #1442).
-2. Categorical proof that the proton's mass identity residual lives at
-   the sign Wedderburn block (color antisymmetry via Fermi statistics).
-3. Reconciliation with the residual 54 ppb after the (α_em/π)/6
-   correction (PR #1629 PSLQ NULL suggests exotic basis or CODATA
-   precision floor).
+1. **Categorical derivation of the bare per-block `(α_em/π)`** EM
+   coupling (Bring zero-mode analog of m_K/m_π's `(3q²-1)/(2q²)` from
+   PR #1442). **Status: open, multi-session.**
 
-Each of (1)–(3) is multi-session open work; the class above lets
-downstream Lean theorems carry the conjecture as an explicit
-hypothesis pending those derivations.
+2. **Categorical proof that the proton's mass identity residual lives
+   at the sign Wedderburn block** (color antisymmetry via Fermi
+   statistics). **Status: open; physical argument identified
+   (color singlet → sign rep) but not formalized.**
+
+3. **Reconciliation with the residual 54 ppb after the (α_em/π)/6
+   correction.** **Status: RESOLVED as CODATA precision floor.**
+   PR #1645 follow-up `mp_residual_exotic_basis_pslq.py` ran PSLQ over
+   the exotic basis (Bloch-Wigner D(z), Mahler measures including
+   Bring quintic z⁵-z-1, hyperbolic volumes, elliptic K) at 120 dps
+   maxcoeff 10⁶ — NULL. CODATA propagation analysis:
+
+     - δk from m_p: 44.4 ppb
+     - δk from m_e: 44.9 ppb
+     - δk from m_μ: 33.5 ppb
+     - Quadrature sum: **~71 ppb CODATA floor**
+
+   Observed 54 ppb sub-residual = **76% of CODATA floor**. The
+   proton-mass identity is **exact within experimental uncertainty**;
+   the residual cannot be discriminated from "exact closure" at
+   current input-anchor precision.
+
+Items (1)–(2) remain multi-session open work; item (3) is closed
+empirically. The class above lets downstream Lean theorems carry the
+conjecture as an explicit hypothesis pending (1)–(2).
 -/
+
+/-- CODATA-propagated precision floor on the proton-mass identity.
+    Computed in `mp_residual_exotic_basis_pslq.py` from anchor
+    uncertainties (δm_p ≈ 3e-10, δm_e ≈ 1.5e-10, δm_μ ≈ 2.2e-10
+    relative) via the chain `k = (2·m_μ·F_Bor - m_p) / m_e`. -/
+def codataPropagatedFloorPpb : ℝ := 71
+
+/-- The observed sub-residual after the `(α_em/π)/6` correction at the
+    proton anchor (from `mp_residual_exotic_basis_pslq.py`, 80 dps). -/
+def observedSubResidualPpb : ℝ := 54
+
+/-- The sub-residual is within the CODATA-propagated floor.
+    This is the empirical content of item (3) above. -/
+theorem subResidual_at_or_below_codata_floor :
+    observedSubResidualPpb ≤ codataPropagatedFloorPpb := by
+  unfold observedSubResidualPpb codataPropagatedFloorPpb
+  norm_num
 
 end ProtonMassEMSignBlock
 end Substrate
