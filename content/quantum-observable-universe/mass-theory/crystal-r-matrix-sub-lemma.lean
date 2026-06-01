@@ -29,7 +29,8 @@ docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md.
 Ref: [manuscript] prop:crystal-r-matrix-sub-lemma
      [manuscript] prop:lr-coefficient-hecke
      [wenzl1988] Wenzl, Invent. Math. 92 (1988) 349-383
-     [audit] docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md
+
+Local audit: docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md
 -/
 
 import Mathlib.Data.Nat.Basic
@@ -80,7 +81,7 @@ theorem CrystalRMatrixSubLemma
     hA.identity_holds ∨ True := by
   -- Ref: [manuscript] prop:crystal-r-matrix-sub-lemma
   -- Ref: [wenzl1988] sub-lemma 2.1
-  -- Ref: [audit] docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md
+  -- Local audit: docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md
   right; trivial
 
 end QOU.BraidKnot

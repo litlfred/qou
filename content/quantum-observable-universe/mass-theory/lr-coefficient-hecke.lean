@@ -25,7 +25,7 @@
        Math. Surveys Mono. 26 (2002)
        [ram1991] Ram, "A Frobenius formula for the characters of
        the Hecke algebras", Invent. Math. 106 (1991) 461-488
-       [stanley-ec2] Stanley, Enumerative Combinatorics Vol 2 §A1.3
+       [stanley1999] Stanley, Enumerative Combinatorics Vol 2 §A1.3
        [compute] folio-assistant/computations/lr_coefficients.py
        [related] tools/pyhecke/python/pyhecke/skew_syt.py (PR #1515 —
                  skew SYT count, distinct from LR coefficient)
@@ -102,7 +102,7 @@ theorem lr_coefficient_hecke_trivial_case
   -- Standard LR theorem: c^μ_{μ, ()} = 1.
   -- Sprint 2 will replace this disjunction with the equality.
   -- Ref: [manuscript] prop:lr-coefficient-hecke
-  -- Ref: [stanley-ec2] §A1.3 (LR rule, base case)
+  -- Ref: [stanley1999] §A1.3 (LR rule, base case)
   by_cases h : hLR.coeff mu mu [] = 0
   · left; exact h
   · right; exact Nat.pos_of_ne_zero h

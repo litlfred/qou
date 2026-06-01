@@ -40,9 +40,9 @@
   Currently only L6a4 is migrated. Other per-manifold axioms can
   be added in follow-up commits as their producer scripts land.
 
-  Ref: [adams1985] Adams, C.C. (1985), Proc. Amer. Math. Soc.
+  Ref: [adams1985hyperbolic] Adams, C.C. (1985), Proc. Amer. Math. Soc.
        100, 601-606.
-  Ref: [SnapPy 3.2.0] Goerner-Hoffman-Weeks SnapPy manifold census.
+  Ref: [culler2024] Goerner-Hoffman-Weeks SnapPy manifold census.
 -/
 
 import Mathlib.Data.Real.Basic
@@ -66,13 +66,13 @@ namespace QOU.Archimedean.SnapPyAxioms
     when that theorem closes, this axiom becomes a named
     constant whose value is `8·G`.
 
-    -- Ref: [SnapPy 3.2.0] snappy-borromean-volume.witness.json
-    -- Ref: [adams1985] Adams 1985, Proc. Amer. Math. Soc. 100, 601-606
+    -- Ref: [culler2024] snappy-borromean-volume.witness.json
+    -- Ref: [adams1985hyperbolic] Adams 1985, Proc. Amer. Math. Soc. 100, 601-606
 -/
 axiom snappy_L6a4_volume : ℝ
 
 /-- The hyperbolic volume of L6a4 is positive. -/
--- Ref: [adams1985] hyperbolic structure non-degenerate
+-- Ref: [adams1985hyperbolic] hyperbolic structure non-degenerate
 axiom snappy_L6a4_volume_pos : 0 < snappy_L6a4_volume
 
 end QOU.Archimedean.SnapPyAxioms
