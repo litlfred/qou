@@ -7,6 +7,23 @@ but related to full SO(3) action. SU(2) picked up quadratic terms."*
 **Status:** Source trace + structural surprise + concrete next-step
 probe definition.
 
+> **Correction (2026-06-01, see
+> [`2026-06-01-s5-so3-su2-u1-fiber-action.md`](2026-06-01-s5-so3-su2-u1-fiber-action.md)).**
+> The central premise below — that the discrete $S_3$ subgroup "sees
+> only $\ell \le 1$", so that $\ell = 2$ (hence $h^4$) requires the
+> full continuous $\mathrm{SO}(3)$ — is **falsified by a
+> character-table check**: under $S_3 \subset \mathrm{SO}(3)$ the
+> standard/$(2,1)$ irrep already appears at **both** $\ell = 1$
+> (mult 1) and $\ell = 2$ (mult 2). The icosahedral $\ell = 2 \to
+> h^4$ link is moreover not derivable as written, because the
+> icosahedral story lives on $A_5 \subset S_5$ (5 strands) while
+> $h^4 = -3/4$ lives on the $H_3$ Borromean trace (3 strands) —
+> different representation rings, no canonical map. A genuine
+> positive survives: spin-$\mathbb{Z}_2 \ne$ sign-$\mathbb{Z}_2$
+> (binary icosahedral $2I$ perfect, $\not\cong S_5$). Read the
+> 2026-06-01 audit before re-deriving the $h^4$-from-$\mathrm{SO}(3)$
+> mechanism on this doc's terms.
+
 ## §1. Source trace for `Geom_leading = Vol(K)/ℏ_q²`
 
 The current canonical mass formula is anchored in

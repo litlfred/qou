@@ -26,22 +26,34 @@ gap**.
 
 The framework's pipeline currently uses only the **$S_3$ discrete
 subgroup** of $\mathrm{SO}(3)$ — the 6 permutations on 3 color
-sheets — which is exactly the action that produces up to $\ell = 1$
-in spherical-harmonic decomposition (the $\mathbf{3}$ and
-$\mathbf{1}$ irreps of $\mathrm{SO}(3)$ restricted to $S_3$).  This
-sees up to $h^2$ but NOT $h^4$.
+sheets.  A natural-looking proposal was that $S_3$ "sees only
+$\ell \le 1$", so that reaching $\ell = 2$ (and hence $h^4$) would
+require the full continuous $\mathrm{SO}(3)$.  **This
+$\ell$-truncation premise is false** (character-table check, audit
+[`2026-06-01-s5-so3-su2-u1-fiber-action.md`](../../docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md)):
+under $S_3 \subset \mathrm{SO}(3)$ the standard/$(2,1)$ irrep already
+appears at **both** $\ell = 1$ (multiplicity 1) and $\ell = 2$
+(multiplicity 2), so $S_3$ is not $\ell$-truncated and the
+"only full $\mathrm{SO}(3)$ reaches $\ell = 2$" reasoning does not
+hold.
 
-Extending to the full $\mathrm{SO}(3)$ via the icosahedral $I$
-subgroup ($A_5 \subset S_5$ acting on Bring's quintic surface)
-opens:
+Spherical-harmonic levels of $\mathrm{SO}(3)$ do still organise the
+higher-order corrections —
 
-- $\ell = 2$ (5-dim irrep of $\mathrm{SO}(3)$) — contributes $h^4$
-- $\ell = 3$ (7-dim irrep) — contributes $h^6$
-- $\ell = 4, 5, \ldots$ — higher orders
+- $\ell = 2$ (5-dim irrep) — the order at which $h^4$ first appears,
+- $\ell = 3$ (7-dim irrep) — $h^6$, and so on —
 
-The $\ell = 2$ contribution should categorically produce the
-$h^4 = -3/4$ coefficient that the Markov trace already supplies
-topologically.
+but the proposed *categorical link*, that the icosahedral
+$\ell = 2$ level **produces** the Borromean $h^4 = -3/4$, is **not
+derivable as written**.  The icosahedral construction lives on
+$A_5 \subset S_5$ (**5 strands**), whereas the $h^4 = -3/4$
+coefficient lives on the $H_3$ Borromean Markov trace (**3 strands**,
+the $(2,1)$ irrep); these are different representation rings with no
+canonical map between them.  The genuine missing object is therefore
+a functor from the $S_5$/$\mathrm{SO}(3)$ level $\ell$ (5-strand) to
+a Wedderburn coefficient of the 3-strand $H_3$ trace — the same gap
+named on the flavour-to-sheet side in
+[`2026-06-01-flavor-dependent-cusp-shape.md`](../../docs/audits/2026-06-01-flavor-dependent-cusp-shape.md).
 
 ## The conjectural content
 
