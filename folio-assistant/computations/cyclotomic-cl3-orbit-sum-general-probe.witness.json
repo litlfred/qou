@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:32:03.295935+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T11:51:43.757662+00:00",
+  "commitSha": "343dbf3936c0cb0fd70a27e0a57a2c57d26a26d9",
   "assertions": [
     {
       "name": "cl3_full_orbit_sum_closed_form",
@@ -30,10 +30,10 @@
   "scriptHash": "d0c27cbddd6f",
   "scriptCommitSha": "03b5ebbd143745ffafb2421edfde30b56e64a1a4",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

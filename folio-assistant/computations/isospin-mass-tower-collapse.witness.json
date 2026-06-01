@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:34:58.898219+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T11:54:38.204565+00:00",
+  "commitSha": "343dbf3936c0cb0fd70a27e0a57a2c57d26a26d9",
   "assertions": [
     {
       "name": "T_eq_3He_corrected_under_isospin",
@@ -21,10 +21,10 @@
   "scriptHash": "f776e97ee357",
   "scriptCommitSha": "0504eab9eff9a2900f1e01aa4ed2270f94004831",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
