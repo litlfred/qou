@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T16:19:13.668023+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:52:52.846924+00:00",
+  "commitSha": "7d55a94c00606760e6d5a65863af596b6477b806",
   "assertions": [
     {
       "name": "correction_tower_converges",
@@ -24,6 +24,13 @@
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Reconstructs the exact flavor-split correction tower: X = X_leading · (1 + ℏ_q³ + c₄ℏ⁴ + c₅ℏ⁵ + ...) where ℏ_q = (q-1)/q is the substrate Planck constant. Identifies the coefficient c₄ and checks for rational structure.",
   "contentBlock": "prop:flavor-split-substrate"

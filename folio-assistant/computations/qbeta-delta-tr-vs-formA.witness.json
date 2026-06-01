@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T03:53:35.645519+00:00",
-  "commitSha": "3171870228d1158f58e3fc103ed6ef65140bbcea",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T03:55:00.093189+00:00",
+  "commitSha": "7d55a94c00606760e6d5a65863af596b6477b806",
   "assertions": [
     {
       "name": "delta_tr_is_not_form_A_delta_net",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1431,
+  "durationMs": 1721,
   "computation": "qbeta-delta-tr-vs-formA",
   "scriptFile": "qbeta_delta_tr_vs_formA.py",
   "scriptHash": "9e873a42ac99",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "f0ea36669ba892b6d6b15598d24b7d2fa068b712",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -26,7 +26,7 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",

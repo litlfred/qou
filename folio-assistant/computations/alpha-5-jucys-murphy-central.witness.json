@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T20:07:08.414212+00:00",
-  "commitSha": "0a36373b5f9344b8c9cf45b2fefe869c1de6ed10",
+  "computedAt": "2026-06-01T03:50:45.755595+00:00",
+  "commitSha": "7d55a94c00606760e6d5a65863af596b6477b806",
   "assertions": [
     {
       "name": "naive_jm_central_form_refuted_at_q0",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1744,
+  "durationMs": 1760,
   "computation": "alpha-5-jucys-murphy-central",
   "scriptFile": "alpha_5_jucys_murphy_central.py",
   "scriptHash": "ef9cbca7159c",
-  "scriptCommitSha": "626c2bb856bbfa1ca647bd7d5bc36c8113f8825e",
+  "scriptCommitSha": "39acb9beea531384fb4ec1f0e69ff829e71ec064",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -39,13 +39,11 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "α_5 derivation probe via the Jucys–Murphy central element P_5 := e_5(J_1, ..., J_n) restricted to height-6 partitions. By Murphy 1992, e_5(J_1..J_n) ∈ Z(H_n(q)) — central — so α_5(A) := Σ_{λ ⊢ 3A, ht=6} w_λ · c_5(λ) is computable as a finite combinatorial sum in q-rationals.  Tests atom-independence across A = 2..4: if the sum normalised by [3A]_q! is constant, α_5 is DERIVED.",
   "contentBlock": "prop:mass-formula-iterative-lp-dual",

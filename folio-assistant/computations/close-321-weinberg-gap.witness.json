@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-29T16:28:30.315510+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T04:00:42.062173+00:00",
+  "commitSha": "7d55a94c00606760e6d5a65863af596b6477b806",
   "assertions": [
     {
       "name": "predecessor_321_dim_eq_16",
@@ -66,7 +66,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 406,
+  "durationMs": 414,
   "computation": "close-321-weinberg-gap",
   "scriptFile": "close_321_weinberg_gap.py",
   "scriptHash": "6c2cb8b481ea",
@@ -77,19 +77,26 @@
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Close-the-gap probe for the (3,2,1) Weinberg-angle 2.19% residual.  Three independent paths: (A) sign-coherent conjugate-pair Wedderburn aggregate over 6-group quotient; (B) categorical pick of EW bar-pair channel via principal Frobenius coords on 16 SYT; (C/G3) hook-length q-rational sweep for the residual factor cot_codata / empirical = 1.0223944.  All values substrate-derived from q_0 (50dps) + canonical Hoefsmit + combinatorial invariants of (3,2,1).  No fit constants.",
   "contentBlock": "conj:weinberg-angle-categorical",
   "parameters": {
-    "q_0": "1.1099785955541805752815940796095093779932822799587",
-    "q_0_numeric": 1.1099785955541805,
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_numeric": 1.1099785827513808,
     "cot_theta_W_codata": 1.8230678710486174
   },
   "data": {
     "cross_check_geometric_mean": {
-      "path_a_value": 1.8578120796229944,
-      "empirical_value": 1.7831508101184923,
-      "geometric_mean": 1.8200986552458258,
-      "geometric_mean_rel_err": 0.0016286918605415174,
+      "path_a_value": 1.8578120946888097,
+      "empirical_value": 1.7831507148237846,
+      "geometric_mean": 1.8200986139911826,
+      "geometric_mean_rel_err": 0.00162871448978309,
       "interpretation": "Path A overshoots; empirical undershoots; their geometric mean is the natural cross-validation."
     },
     "path_a": {
@@ -111,13 +118,13 @@
           "self_conjugate": false,
           "dim_lambda": 1,
           "dim_lambda_prime": 1,
-          "chi_lambda": 16.729937179867267,
-          "chi_lambda_prime": -0.05977308756445276,
-          "w_lambda": 0.0011921233292002003,
-          "w_lambda_prime": 0.0011921233292002003,
-          "w_chi_lambda": 0.019944148408173577,
-          "w_chi_lambda_prime": -7.125689214391052e-05,
-          "pair_sum": 0.019872891516029667,
+          "chi_lambda": 16.72993196973968,
+          "chi_lambda_prime": -0.059773106179317005,
+          "w_lambda": 0.001192123369086218,
+          "w_lambda_prime": 0.001192123369086218,
+          "w_chi_lambda": 0.019944142864349295,
+          "w_chi_lambda_prime": -7.125691671923562e-05,
+          "pair_sum": 0.01987288594763006,
           "det_product": -1.0,
           "sign": -1
         },
@@ -138,14 +145,14 @@
           "self_conjugate": false,
           "dim_lambda": 5,
           "dim_lambda_prime": 5,
-          "chi_lambda": 24.948703957191427,
-          "chi_lambda_prime": -0.5755468898116451,
-          "w_lambda": 0.032488946179757956,
-          "w_lambda_prime": 0.032488946179757956,
-          "w_chi_lambda": 0.8105571001199066,
-          "w_chi_lambda_prime": -0.01869891192701762,
-          "pair_sum": 0.7918581881928889,
-          "det_product": -1.0000000000000007,
+          "chi_lambda": 24.94869740758072,
+          "chi_lambda_prime": -0.5755469899253296,
+          "w_lambda": 0.03248894665267473,
+          "w_lambda_prime": 0.03248894665267473,
+          "w_chi_lambda": 0.8105568991286144,
+          "w_chi_lambda_prime": -0.018698915451791556,
+          "pair_sum": 0.7918579836768228,
+          "det_product": -0.9999999999999998,
           "sign": -1
         },
         {
@@ -164,14 +171,14 @@
           "self_conjugate": false,
           "dim_lambda": 9,
           "dim_lambda_prime": 9,
-          "chi_lambda": 17.874790515521426,
-          "chi_lambda_prime": -1.1261304672885086,
-          "w_lambda": 0.11145220242008574,
-          "w_lambda_prime": 0.11145220242008574,
-          "w_chi_lambda": 1.9921847707525226,
-          "w_chi_lambda_prime": -0.12550972079166461,
-          "pair_sum": 1.866675049960858,
-          "det_product": -1.0000000000000064,
+          "chi_lambda": 17.874786168736158,
+          "chi_lambda_prime": -1.1261306112898852,
+          "w_lambda": 0.11145220265739338,
+          "w_lambda_prime": 0.11145220265739338,
+          "w_chi_lambda": 1.9921842905355545,
+          "w_chi_lambda_prime": -0.12550973710817456,
+          "pair_sum": 1.8666745534273799,
+          "det_product": -0.9999999999999966,
           "sign": -1
         },
         {
@@ -191,14 +198,14 @@
           "self_conjugate": false,
           "dim_lambda": 10,
           "dim_lambda_prime": 10,
-          "chi_lambda": 9.753875669618486,
-          "chi_lambda_prime": -0.14919540443475215,
-          "w_lambda": 0.13569772208004183,
-          "w_lambda_prime": 0.13569772208004183,
-          "w_chi_lambda": 1.3235787098191711,
-          "w_chi_lambda_prime": -0.020245476526606437,
-          "pair_sum": 1.3033332332925647,
-          "det_product": 0.9999999999999993,
+          "chi_lambda": 9.753873541424582,
+          "chi_lambda_prime": -0.14919566770108908,
+          "w_lambda": 0.13569772276743833,
+          "w_lambda_prime": 0.13569772276743833,
+          "w_chi_lambda": 1.3235784277328848,
+          "w_chi_lambda_prime": -0.02024551235380524,
+          "pair_sum": 1.3033329153790796,
+          "det_product": 0.9999999999999944,
           "sign": 1
         },
         {
@@ -216,14 +223,14 @@
           "self_conjugate": false,
           "dim_lambda": 5,
           "dim_lambda_prime": 5,
-          "chi_lambda": 7.665459542411035,
-          "chi_lambda_prime": -1.311537677798833,
-          "w_lambda": 0.03539094559714425,
-          "w_lambda_prime": 0.03539094559714425,
-          "w_chi_lambda": 0.27128786164257923,
-          "w_chi_lambda_prime": -0.0464165586035834,
-          "pair_sum": 0.22487130303899583,
-          "det_product": -1.000000000000001,
+          "chi_lambda": 7.665457441242438,
+          "chi_lambda_prime": -1.311537501989795,
+          "w_lambda": 0.03539094545460656,
+          "w_lambda_prime": 0.03539094545460656,
+          "w_chi_lambda": 0.2712877861876191,
+          "w_chi_lambda_prime": -0.04641655219459178,
+          "pair_sum": 0.22487123399302733,
+          "det_product": -1.0000000000000016,
           "sign": -1
         },
         {
@@ -236,56 +243,56 @@
           ],
           "self_conjugate": true,
           "dim_lambda": 16,
-          "chi_lambda": 4.236525868720987,
-          "dim_q_lambda": 17.344673582613545,
-          "w_lambda": 0.35863564248453456,
-          "w_chi_lambda": 1.5193691768311022,
-          "det_lambda": 0.9999999999999978,
-          "pair_sum": 1.5193691768311022,
-          "det_product": 0.9999999999999978,
+          "chi_lambda": 4.236524768600218,
+          "dim_q_lambda": 17.344673276746967,
+          "w_lambda": 0.3586356418349518,
+          "w_chi_lambda": 1.5193687795366098,
+          "det_lambda": 1.0000000000000127,
+          "pair_sum": 1.5193687795366098,
+          "det_product": 1.0000000000000127,
           "sign": 1
         }
       ],
-      "pair_sum_total": 5.725979842832439,
-      "pos_sum": 2.822702410123667,
-      "neg_sum": 2.9032774327087725,
-      "sc_sum": 1.5193691768311022,
+      "pair_sum_total": 5.725978351960549,
+      "pos_sum": 2.8227016949156893,
+      "neg_sum": 2.9032766570448603,
+      "sc_sum": 1.5193687795366098,
       "candidates": [
         {
           "name": "|pos_sum / neg_sum|",
-          "value": 0.972246874626126,
-          "rel_err": 0.46669737859682886
+          "value": 0.9722468880347127,
+          "rel_err": 0.4666973712418714
         },
         {
           "name": "|pair_sum_total / sc_sum|",
-          "value": 3.768656051569326,
-          "rel_err": 1.0672055667360416
+          "value": 3.7686560557779183,
+          "rel_err": 1.0672055690445637
         },
         {
           "name": "|pos_sum / sc_sum|",
-          "value": 1.8578120796229944,
-          "rel_err": 0.01905809933142661
+          "value": 1.8578120946888097,
+          "rel_err": 0.019058107595416943
         },
         {
           "name": "|neg_sum / sc_sum|",
-          "value": 1.9108439719463322,
-          "rel_err": 0.04814746740461529
+          "value": 1.9108439610891088,
+          "rel_err": 0.04814746144914676
         },
         {
           "name": "max|pair_sum| / 2nd-max|pair_sum|",
-          "value": 1.2285855725032675,
-          "rel_err": 0.3260889558672368
+          "value": 1.2285855669593886,
+          "rel_err": 0.3260889589081981
         },
         {
           "name": "max(pos pair_sum) / |min(neg pair_sum)|",
-          "value": 76.45435872306575,
-          "rel_err": 40.937198245444186
+          "value": 76.45436015385586,
+          "rel_err": 40.93719903026966
         }
       ],
       "best": {
         "name": "|pos_sum / sc_sum|",
-        "value": 1.8578120796229944,
-        "rel_err": 0.01905809933142661
+        "value": 1.8578120946888097,
+        "rel_err": 0.019058107595416943
       }
     },
     "path_b": {
@@ -294,22 +301,22 @@
       "n_self_paired": 0,
       "pair_data": [],
       "positive_eigenvalues": [
-        5.240325308166744,
-        2.938800957513245,
-        1.870331184473338,
-        1.6002829557794742,
-        1.3457141866509479,
-        0.514420322846357,
-        0.4710469909940963,
-        0.28350473081241223
+        5.240324264513027,
+        2.938800529281614,
+        1.8703310048432165,
+        1.6002828527290451,
+        1.3457141132765855,
+        0.5144203631932829,
+        0.47104702231762974,
+        0.28350477412605235
       ],
-      "empirical_channel_value": 1.7831508101184923,
-      "empirical_channel_rel_err": 0.0218955429822616,
+      "empirical_channel_value": 1.7831507148237846,
+      "empirical_channel_rel_err": 0.021895595253879782,
       "principal_pair_spread": null
     },
     "path_c": {
-      "empirical": 1.7831508101184923,
-      "residual_target": 1.0223856898158112,
+      "empirical": 1.7831507148237846,
+      "residual_target": 1.022385744453899,
       "hook_set": [
         1,
         3,
@@ -326,107 +333,107 @@
       "top_12": [
         {
           "name": "q^(1/5)",
-          "value": 1.0210874086805357,
+          "value": 1.021087406325035,
           "family": "F3",
-          "abs_diff_from_target": 0.0012982811352755252
+          "abs_diff_from_target": 0.0012983381288640405
         },
         {
           "name": "q^(1/4)",
-          "value": 1.0264283789606832,
+          "value": 1.026428376000906,
           "family": "F3",
-          "abs_diff_from_target": 0.004042689144871936
+          "abs_diff_from_target": 0.004042631547007014
         },
         {
           "name": "q^(1/6)",
-          "value": 1.0175422104802536,
+          "value": 1.0175422085241514,
           "family": "F3",
-          "abs_diff_from_target": 0.004843479335557621
+          "abs_diff_from_target": 0.004843535929747622
         },
         {
           "name": "q^(1/7)",
-          "value": 1.015017464587894,
+          "value": 1.015017462915395,
           "family": "F3",
-          "abs_diff_from_target": 0.007368225227917247
+          "abs_diff_from_target": 0.007368281538504107
         },
         {
           "name": "[3]_q / 3",
-          "value": 1.0145687394101708,
+          "value": 1.0145687361775073,
           "family": "F4",
-          "abs_diff_from_target": 0.007816950405640455
+          "abs_diff_from_target": 0.007817008276391757
         },
         {
           "name": "q^(1/8)",
-          "value": 1.013128017064321,
+          "value": 1.0131280156036087,
           "family": "F3",
-          "abs_diff_from_target": 0.009257672751490142
+          "abs_diff_from_target": 0.009257728850290414
         },
         {
           "name": "q^(1/9)",
-          "value": 1.0116608787430426,
+          "value": 1.011660877446512,
           "family": "F3",
-          "abs_diff_from_target": 0.01072481107276868
+          "abs_diff_from_target": 0.010724867007387173
         },
         {
           "name": "q^(1/10)",
-          "value": 1.0104886979479464,
+          "value": 1.0104886967824207,
           "family": "F3",
-          "abs_diff_from_target": 0.011896991867864859
+          "abs_diff_from_target": 0.011897047671478367
         },
         {
           "name": "q^(1/11)",
-          "value": 1.0095306512140962,
+          "value": 1.0095306501555321,
           "family": "F3",
-          "abs_diff_from_target": 0.012855038601714996
+          "abs_diff_from_target": 0.012855094298366954
         },
         {
           "name": "q^(1/3)",
-          "value": 1.0353921501090408,
+          "value": 1.0353921461282078,
           "family": "F3",
-          "abs_diff_from_target": 0.013006460293229605
+          "abs_diff_from_target": 0.013006401674308776
         },
         {
           "name": "q^(1/12)",
-          "value": 1.0087329728328769,
+          "value": 1.0087329718632931,
           "family": "F3",
-          "abs_diff_from_target": 0.013652716982934354
+          "abs_diff_from_target": 0.013652772590605933
         },
         {
           "name": "[5]_q / 5",
-          "value": 1.0440882649329146,
+          "value": 1.0440882550653796,
           "family": "F4",
-          "abs_diff_from_target": 0.021702575117103384
+          "abs_diff_from_target": 0.02170251061148054
         }
       ],
       "best": {
         "name": "q^(1/5)",
-        "value": 1.0210874086805357,
+        "value": 1.021087406325035,
         "family": "F3",
-        "abs_diff_from_target": 0.0012982811352755252
+        "abs_diff_from_target": 0.0012983381288640405
       },
       "ansatz_supported_at_1e_3": false,
       "ansatz_falsified_at_1e_2": false,
       "h_corner": 5,
-      "q_over_corner_value": 1.0210874086805357,
-      "combined_prediction": 1.8207528399904893,
-      "combined_rel_err": 0.0012698545648750557
+      "q_over_corner_value": 1.021087406325035,
+      "combined_prediction": 1.8207527384860505,
+      "combined_rel_err": 0.0012699102426918095
     },
     "eigenvalues_321_sorted": [
-      5.240325308166744,
-      2.938800957513245,
-      1.870331184473338,
-      1.6002829557794742,
-      1.3457141866509479,
-      0.514420322846357,
-      0.4710469909940963,
-      0.28350473081241223,
-      -0.19082784773715364,
-      -0.3402748312856755,
-      -0.5346646670394847,
-      -0.6248894899420562,
-      -0.7430998423882866,
-      -1.9439356409304827,
-      -2.1229304488063914,
-      -3.527278000386084
+      5.240324264513027,
+      2.938800529281614,
+      1.8703310048432165,
+      1.6002828527290451,
+      1.3457141132765855,
+      0.5144203631932829,
+      0.47104702231762974,
+      0.28350477412605235,
+      -0.19082788574209225,
+      -0.3402748808693224,
+      -0.5346647183896882,
+      -0.6248895301818976,
+      -0.7430998829054195,
+      -1.9439354884640736,
+      -2.1229303076364525,
+      -3.5272774614912823
     ],
     "verdict": {
       "path_a_status": "improves-over-baseline",

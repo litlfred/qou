@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-31T04:03:31.060902+00:00",
-  "commitSha": "ab27cbd9c5c52b8fba43990f0dcdfc9341839dbf",
+  "computedAt": "2026-06-01T03:42:14.242386+00:00",
+  "commitSha": "7d55a94c00606760e6d5a65863af596b6477b806",
   "assertions": [
     {
       "name": "symbolic_derivative_matches_pi2_over_240_d4",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 64,
+  "durationMs": 67,
   "computation": "casimir-epsilon-vacuum-probe",
   "scriptFile": "casimir_epsilon_vacuum_probe.py",
-  "scriptHash": "68c59c024ae6",
-  "scriptCommitSha": "350d0a7642aff35ffc936480644459922b1fa3f6",
+  "scriptHash": "36004588dc80",
+  "scriptCommitSha": "cce9436d753779edd6cdccfe04a293b0e3d81d4f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,7 +27,9 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -92,6 +94,11 @@
         "tractability": "hard",
         "status": "open"
       }
-    ]
+    ],
+    "lean_uniqueness_ref": {
+      "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
   }
 }

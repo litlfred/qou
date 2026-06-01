@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-31T04:17:46.689246+00:00",
-  "commitSha": "c40273680377fc91d5c07c9bec40fc4645ea9e6e",
+  "computedAt": "2026-06-01T03:42:13.840512+00:00",
+  "commitSha": "7d55a94c00606760e6d5a65863af596b6477b806",
   "assertions": [
     {
       "name": "zero_carlitz_candidates_within_one_percent",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 13,
   "computation": "casimir-carlitz-q-bernoulli-probe",
   "scriptFile": "casimir_carlitz_q_bernoulli_probe.py",
   "scriptHash": "35bbdf27e611",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6ffd45154b144b86461bdba633ca384dbcd5f15e",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,7 +27,9 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

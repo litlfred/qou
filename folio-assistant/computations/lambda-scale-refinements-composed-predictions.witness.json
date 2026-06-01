@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T16:11:50.376377+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:45:25.260721+00:00",
+  "commitSha": "7d55a94c00606760e6d5a65863af596b6477b806",
   "assertions": [
     {
       "name": "refinement_options_ordered_a_gt_b_gt_c",
@@ -24,6 +24,13 @@
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Composed framework m_p, m_n predictions: three scale-factor options (canonical alone / canonical + Yekutieli additive / Bring color-tube Φ_q pentagon) × proved flavor-split (PR #942). Per user 2026-05-23 directives. Best framework m_p prediction currently option (c) Bring color-tube at ~700 ppm; option (b) Yekutieli additive at ~1.3 %; option (a) canonical alone at ~3 %. Layer-2 flavor split matches Δm to 0.03 % (PROVED). Production today is option (a).",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
@@ -34,40 +41,40 @@
       {
         "option": "a",
         "name": "canonical Wedderburn alone",
-        "lambda_scale_at_q0": "2.53277966367288405831871",
-        "m_avg_MeV": "966.049624607139623",
-        "m_p_pred_MeV": "965.384475574493905",
-        "m_n_pred_MeV": "966.714773639785342",
-        "rel_m_avg_vs_codata_pct": "2.889586574",
-        "rel_m_p_vs_codata_pct": "2.889608223",
-        "rel_m_n_vs_codata_pct": "2.889564955"
+        "lambda_scale_at_q0": "2.532779656399391492051515",
+        "m_avg_MeV": "966.049824466597536",
+        "m_p_pred_MeV": "965.384675510658027",
+        "m_n_pred_MeV": "966.714973422537044",
+        "rel_m_avg_vs_codata_pct": "2.88960786",
+        "rel_m_p_vs_codata_pct": "2.889629532",
+        "rel_m_n_vs_codata_pct": "2.889586218"
       },
       {
         "option": "b",
         "name": "canonical + Yekutieli additive",
-        "lambda_scale_at_q0": "2.4927462715221338611441",
-        "m_avg_MeV": "950.780138668951227",
-        "m_p_pred_MeV": "950.125503054604195",
-        "m_n_pred_MeV": "951.43477428329826",
-        "rel_m_avg_vs_codata_pct": "1.263302525",
-        "rel_m_p_vs_codata_pct": "1.263323832",
-        "rel_m_n_vs_codata_pct": "1.263281247"
+        "lambda_scale_at_q0": "2.492746273131666548482928",
+        "m_avg_MeV": "950.780338713711655",
+        "m_p_pred_MeV": "950.125703172555771",
+        "m_n_pred_MeV": "951.434974254867539",
+        "rel_m_avg_vs_codata_pct": "1.263323831",
+        "rel_m_p_vs_codata_pct": "1.26334516",
+        "rel_m_n_vs_codata_pct": "1.263302531"
       },
       {
         "option": "c",
         "name": "Bring color-tube Φ_q pentagon",
-        "lambda_scale_at_q0": "2.45999923162239306241051",
-        "m_avg_MeV": "938.289804015733083",
-        "m_p_pred_MeV": "937.643768305366539",
-        "m_n_pred_MeV": "938.935839726099626",
-        "rel_m_avg_vs_codata_pct": "-0.06698666113",
-        "rel_m_p_vs_codata_pct": "-0.06696563423",
-        "rel_m_n_vs_codata_pct": "-0.06700765909"
+        "lambda_scale_at_q0": "2.459998418887548384192148",
+        "m_avg_MeV": "938.28969083431341",
+        "m_p_pred_MeV": "937.643655410030978",
+        "m_n_pred_MeV": "938.935726258595843",
+        "rel_m_avg_vs_codata_pct": "-0.06699871557",
+        "rel_m_p_vs_codata_pct": "-0.06697766649",
+        "rel_m_n_vs_codata_pct": "-0.06701973568"
       }
     ],
-    "delta_m_over_M_N_substrate": "0.001377049409684751603682584",
+    "delta_m_over_M_N_substrate": "0.00137704896599255450539757",
     "delta_m_over_M_N_codata": "0.00137746993978103053256773",
-    "delta_m_rel_diff_pct": "-0.0305291668539626",
+    "delta_m_rel_diff_pct": "-0.0305613775167353",
     "M_P_CODATA_ref": "938.27208816",
     "M_N_CODATA_ref": "939.56542052"
   }

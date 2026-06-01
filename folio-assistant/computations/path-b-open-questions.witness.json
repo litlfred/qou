@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-05-29T16:31:55.752724+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T04:04:09.194405+00:00",
+  "commitSha": "7d55a94c00606760e6d5a65863af596b6477b806",
   "assertions": [
     {
       "name": "self_evacuating_eq_domino_count",
@@ -48,7 +48,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 826,
+  "durationMs": 828,
   "computation": "path-b-open-questions",
   "scriptFile": "path_b_open_questions.py",
   "scriptHash": "2258329c564e",
@@ -59,10 +59,17 @@
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Resolve three open questions from path_b_evacuation: (1) why no self-paired SYT — connect to 2-core / domino-tableau count for (3,2,1); (2) refine SYT-level invariants — find which statistic best predicts diag(M) (descents, major index, Hoefsmit + count); (3) derive q^(1/5) — test fractional-power, corner-hook, and abelian-residue hypotheses.",
   "contentBlock": "conj:weinberg-angle-categorical",
   "parameters": {
-    "q_0": 1.1099785955541805,
+    "q_0": 1.1099785827513808,
     "cot_w_codata": 1.8230678710486174,
     "shape": [
       3,
@@ -73,7 +80,7 @@
   "data": {
     "syt_invariant_correlations": {
       "content_sum": [
-        0.03262383230075058,
+        0.03262383786263811,
         0.05481631871250128
       ],
       "max_diag_entry": [
@@ -81,19 +88,19 @@
         0.0
       ],
       "n_descents": [
-        -0.07075121907754948,
+        -0.07075121945687171,
         -0.1084652289093281
       ],
       "major_index": [
-        -0.02773130898122572,
+        -0.02773131208052533,
         -0.001483738317275951
       ],
       "n_plus": [
-        0.07536316900608246,
+        0.07536316696876577,
         -0.03757345746510897
       ],
       "n_minus": [
-        -0.17030230460825097,
+        -0.17030230186582787,
         -0.09706476511819816
       ],
       "comaj_charge": [
@@ -101,6 +108,6 @@
         0.0
       ]
     },
-    "multivariate_R2": 0.08475652169441239
+    "multivariate_R2": 0.08475652336168293
   }
 }
