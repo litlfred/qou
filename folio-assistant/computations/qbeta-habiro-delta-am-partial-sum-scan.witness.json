@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:46:01.313747+00:00",
-  "commitSha": "239a5a23ae485e16b5e951f78817571a02550ddb",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T14:59:55.330297+00:00",
+  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
   "assertions": [
     {
       "name": "phi8_first_at_M_le_7_for_D_minus_n",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 37400,
+  "durationMs": 43426,
   "computation": "qbeta-habiro-delta-am-partial-sum-scan",
   "scriptFile": "qbeta_habiro_delta_am_partial_sum_scan.py",
   "scriptHash": "865e294a8334",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "1e1840bf0c14b84a555f7e3699c779191c3e3bd9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,8 +26,9 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T05:34:31.591370+00:00",
-  "commitSha": "d67adea70f7ee6c66488d21e62b082dae2c72c22",
+  "computedAt": "2026-06-01T14:46:06.671388+00:00",
+  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
   "assertions": [
     {
       "name": "no_missing_labels",
@@ -36,13 +36,13 @@
   "description": "I5 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json with a `contentBlock` field is cross-checked against the union of all `label: \"...\"` declarations in content/**/*.ts manifests. Reports `ok` / `missing_label` / `informational_label` per field. Operationalises the 9-hit I5 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_fields_audited": 291,
-    "registered_labels_count": 2879
+    "total_fields_audited": 299,
+    "registered_labels_count": 2880
   },
   "data": {
     "by_result": {
       "informational_label": 14,
-      "ok": 234,
+      "ok": 242,
       "missing_label": 43
     },
     "rows": [
@@ -492,6 +492,11 @@
         "result": "ok"
       },
       {
+        "witness": "folio-assistant/computations/e0-lambda-composite.witness.json",
+        "content_block_value": "prop:rho-k-h3a-refinement",
+        "result": "ok"
+      },
+      {
         "witness": "folio-assistant/computations/eigenvalue-reeb-extension-h4-h5.witness.json",
         "content_block_value": "prop:figure-eight-reeb-rotation",
         "result": "ok"
@@ -550,6 +555,11 @@
         "witness": "folio-assistant/computations/full-twist-root-of-unity-probe.witness.json",
         "content_block_value": "conj:categorical-neutrality-saturated-shells",
         "result": "missing_label"
+      },
+      {
+        "witness": "folio-assistant/computations/gap-a1-binding-k-sdp-feasibility.witness.json",
+        "content_block_value": "conj:canonical-knot-id-sdp",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/gauge-coupling-uniqueness-probe.witness.json",
@@ -1207,6 +1217,11 @@
         "result": "ok"
       },
       {
+        "witness": "folio-assistant/computations/qbeta-habiro-all-10-pairs-phi8-universality.witness.json",
+        "content_block_value": "prop:full-pole-structure-mass-trace",
+        "result": "ok"
+      },
+      {
         "witness": "folio-assistant/computations/qbeta-habiro-cross-pair-factorization.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
@@ -1219,6 +1234,11 @@
       {
         "witness": "folio-assistant/computations/qbeta-habiro-delta-am-factorization.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-delta-am-partial-sum-scan.witness.json",
+        "content_block_value": "prop:full-pole-structure-mass-trace",
         "result": "ok"
       },
       {
@@ -1257,6 +1277,11 @@
         "result": "ok"
       },
       {
+        "witness": "folio-assistant/computations/qbeta-habiro-phi8-squared-boundary-explained.witness.json",
+        "content_block_value": "prop:full-pole-structure-mass-trace",
+        "result": "ok"
+      },
+      {
         "witness": "folio-assistant/computations/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
@@ -1269,6 +1294,16 @@
       {
         "witness": "folio-assistant/computations/qbeta-habiro-taylor-investigation.witness.json",
         "content_block_value": "prop:q-beta-categorical-precision-ladder",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-wenzl-tower-zeta-n.witness.json",
+        "content_block_value": "prop:full-pole-structure-mass-trace",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-habiro-zeta8-categorical-witness.witness.json",
+        "content_block_value": "prop:full-pole-structure-mass-trace",
         "result": "ok"
       },
       {
@@ -1454,6 +1489,11 @@
       {
         "witness": "folio-assistant/computations/verify-isospin-bar-anomaly.witness.json",
         "content_block_value": "conj:isospin-from-canonical-bowtie",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/vhat-std-vs-full-tower-compare.witness.json",
+        "content_block_value": "prop:mass-endomorphism-tower",
         "result": "ok"
       },
       {
