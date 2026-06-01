@@ -233,8 +233,8 @@ export default chapter({
         "beta-decay-magic-shells-k12-barrier-bypass-intro",
         "double-magic-delta-i-bound-table2-data",
         "double-magic-delta-i-bound-table1-data",
-        "k12-barrier-bypass",
         "magic-numbers-from-q",
+        "k12-barrier-bypass",
         "non-magic-Li6-diagram",
         "shell-threading-conjecture",
         "single-magic-O18-diagram",
@@ -374,8 +374,8 @@ export default chapter({
       label: "sec:breit-wheeler-pair-creation",
       blocks: [
         "breit-wheeler-pair-creation-intro",
-        "breit-wheeler-observation",
         "pair-creation-energy",
+        "breit-wheeler-observation",
       ],
     }),
 
@@ -410,10 +410,10 @@ export default chapter({
       label: "sec:non-comm-probability-q-clt",
       blocks: [
         "non-comm-probability-intro",
-        "non-commutative-probability-dictionary",
-        "non-commutative-probability-dictionary-table-data",
         "algebraic-gns-embedding",
         "algebraic-gns-embedding-proof",
+        "non-commutative-probability-dictionary",
+        "non-commutative-probability-dictionary-table-data",
         "q-plancherel-asymptotic-skeleton",
         "hecke-satisfies-blitvic-hypothesis",
         "hecke-satisfies-blitvic-hypothesis-proof",

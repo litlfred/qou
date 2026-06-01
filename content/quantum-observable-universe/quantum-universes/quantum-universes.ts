@@ -31,8 +31,8 @@ export default chapter({
       blocks: [
         "rigid-monoidal-intro",
         "snake-identity",
-        "monoidal-justification",
         "rigid-monoidal-category",
+        "monoidal-justification",
         "rigid-monoidal-vect",
       ],
     }),
