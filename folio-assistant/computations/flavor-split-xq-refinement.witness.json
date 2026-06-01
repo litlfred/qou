@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T14:34:30.917682+00:00",
-  "commitSha": "1c9e650ed98e41580ef068a81763cd9d64db427a",
+  "computedAt": "2026-06-01T15:13:19.876849+00:00",
+  "commitSha": "a4dd145c0122816b75ab01fe69a61605ee5cd497",
   "assertions": [
     {
       "name": "refinement_search_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 15,
   "computation": "flavor-split-xq-refinement",
   "scriptFile": "flavor_split_xq_refinement.py",
-  "scriptHash": "d14131ca2013",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "dd88724fdbd7",
+  "scriptCommitSha": "ac37156c2cc7c54475145df0602e4094fc3df114",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,8 +39,8 @@
     "mp_dps_runtime": "80"
   },
   "data": {
-    "baseline_residual_pct": "-0.127707524",
-    "required_refinement_factor": "1.00127870824663796955041",
+    "baseline_residual_pct": "-0.127707577241",
+    "required_refinement_factor": "1.001278708780411801674446",
     "best_candidate": "(d3) 1 - h²·a (PSLQ-fit)",
     "best_residual_ppb": "0.0",
     "verdict": "BEST tested: '(d3) 1 - h²·a (PSLQ-fit)' at 0.0 ppb. Significant improvement over bare 10⁶ ppb but not yet at structural-identity level."

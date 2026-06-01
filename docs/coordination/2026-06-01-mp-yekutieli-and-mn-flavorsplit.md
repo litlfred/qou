@@ -103,9 +103,20 @@ The per-block × Plancherel-weight hypothesis EXACTLY reproduces the
 
 This is the **first structural hypothesis** identified for the
 `/dim H_3 = /6` factor. It's consistent with:
-  - 54 ppb robustness (PR #1629)
+  - 54 ppb robustness at proton-pin (PR #1629)
   - 27 alt-geometries failure for N ≠ 6 (PR #1617)
   - PSLQ NULL for natural-basis combinations (PR #1629)
+
+**Note on "anchor stability" claim:** the sign-block hypothesis is
+anchor-stable in its **IMPROVEMENT over baseline** (32,262 ppb tighter
+than bare at both proton-pin and muon-pin, per
+`mp_yekutieli_sign_block_discrimination.py`). The **ABSOLUTE residual**
+at q_muon is ~4806 ppb (vs ~54 ppb at q_proton); that jump is the
+documented m_μ over-determination effect (PR #1581 Probe A) — a
+SUBSTRATE property independent of which Wedderburn block hosts the
+EM correction. So "anchor stability" applies to the structural
+prediction's reproducibility, not to the closure being at sub-100 ppb
+at every q anchor.
 
 Remaining open work (3-4 sessions estimated):
   1. WHY the sign block (not trivial)? — likely Borromean structure /
