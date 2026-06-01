@@ -1,11 +1,11 @@
 {
   "engine": "q_beta_substrate_prediction.py",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:19:17.154460+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:47:02.053699+00:00",
+  "commitSha": "cb48f80ed8613db475b314ac6ba8ad87c115a38d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "q-beta-substrate-prediction",
   "scriptFile": "q_beta_substrate_prediction.py",
   "scriptHash": "65d7ed3c49c3",
@@ -15,6 +15,13 @@
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Substrate-only prediction of Q_β(n) from CAL-1 (m_e) and CAL-2 (q_0), via the single-wrap closed form Q_β = m_e · |q_0² - 2 q_0 - 1| · (q_0 + 1) / (2 q_0³). This is a PREDICTION witness (companion to the CAL-3 calibration witness cal-3-q-beta.witness.json); the substrate value is NOT yet wired as a CAL replacement. Per the cohomological audit (docs/audits/2026-05-24-q-beta-droppability-cohomology.md), the framework can in principle drop CAL-3 once the tower-summation closure lands (Workplan 2 Phase 2); until then the +0.18% residual vs CODATA is recorded here for L2 dashboard visibility and audit-trail purposes.",
   "contentBlock": "prop:three-calibration-inputs",
@@ -27,15 +34,15 @@
     "units": "MeV"
   },
   "data": {
-    "q_zero": "1.1099785955541805",
+    "q_zero": "1.1099785827513808",
     "m_e_MeV_input_CAL1": "0.51099895069",
-    "Q_beta_substrate_MeV": "0.7836458039031041",
+    "Q_beta_substrate_MeV": "0.7836458273746213",
     "Q_beta_codata_MeV_CAL3": "0.78233341",
-    "absolute_residual_MeV": "0.0013123939031041143",
-    "absolute_residual_keV": "1.3123939031041143",
-    "relative_residual": "0.0016775378455384058",
-    "relative_residual_ppm": "1677.5378455384057",
-    "relative_residual_percent": "0.16775378455384057",
+    "absolute_residual_MeV": "0.0013124173746212886",
+    "absolute_residual_keV": "1.3124173746212886",
+    "relative_residual": "0.0016775678474747597",
+    "relative_residual_ppm": "1677.5678474747597",
+    "relative_residual_percent": "0.16775678474747596",
     "residual_attribution": "Brane-tower truncation at N=0. Exact tower-summed E_0 (Li_2^q form, Workplan 2 P2) is expected to close the residual to within 1ppb.",
     "downstream_consumers": [
       "L2 dashboard: per-observable-100x-status.witness.json (new row 'Q_beta-substrate-2CAL' for visibility)",

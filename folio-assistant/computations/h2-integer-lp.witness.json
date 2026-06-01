@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:08:54.378586+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:36:35.287242+00:00",
+  "commitSha": "cb48f80ed8613db475b314ac6ba8ad87c115a38d",
   "assertions": [
     {
       "name": "Binding is positive for at least one operator",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "h2-integer-lp",
   "scriptFile": "h2-integer-lp.py",
   "scriptHash": "52d38c6666bb",
@@ -24,38 +24,45 @@
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "H₂ molecular binding from integer LP. Scans all inter-atomic crossing operators (σ₀, σ₁, σ₀⁻¹, σ₁⁻¹) up to 4 crossings to find optimal binding configuration. Zero fitted parameters.",
   "contentBlock": "prop:h2-lp-dual-binding",
   "parameters": {
-    "q": 1.1099785955541805,
-    "E_mol_eV": 6.729337493682183,
-    "Phi_H_isolated": -1.1698389841909715
+    "q": 1.1099785827513808,
+    "E_mol_eV": 6.729338575040661,
+    "Phi_H_isolated": -1.1698390315178333
   },
   "data": {
     "best_1_crossing": {
       "ops": "σ₀⁻¹",
-      "binding": -1.6659922226701795,
-      "E_eV": -11.211023928197356
+      "binding": -1.6659922989750102,
+      "E_eV": -11.21102624321321
     },
     "best_2_crossings": {
       "ops": "σ₁⁻¹,σ₁⁻¹",
-      "binding": 0.747447764794325,
-      "E_eV": 5.029828268199393
+      "binding": 0.7474468820435822,
+      "E_eV": 5.029823136129744
     },
     "best_3_crossings": {
       "ops": "σ₀⁻¹,σ₁⁻¹,σ₀⁻¹",
-      "binding": 0.44803549636640616,
-      "E_eV": 3.0149820641989646
+      "binding": 0.4480352380698469,
+      "E_eV": 3.014980810520947
     },
     "best_4_crossings": {
       "ops": "σ₁⁻¹,σ₁⁻¹,σ₀⁻¹,σ₀⁻¹",
-      "binding": 1.776911384097398,
-      "E_eV": 11.957436399957324
+      "binding": 1.776913742285025,
+      "E_eV": 11.957454190478478
     },
     "closest_to_observed": {
       "ops": "σ₁⁻¹,σ₁⁻¹",
-      "E_eV": 5.029828268199393,
-      "error_pct": 12.323096654743026
+      "E_eV": 5.029823136129744,
+      "error_pct": 12.322982048453435
     }
   }
 }

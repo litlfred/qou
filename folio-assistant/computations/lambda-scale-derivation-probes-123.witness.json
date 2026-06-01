@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T16:11:43.635434+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:39:25.144215+00:00",
+  "commitSha": "cb48f80ed8613db475b314ac6ba8ad87c115a38d",
   "assertions": [
     {
       "name": "probe_3_lobachevsky_matches_Vol_B3_within_1e-25",
@@ -26,6 +26,13 @@
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Probes 1-3 on the substrate derivation of the Borromean baryon λ_scale. Builds on the H_4-conjugate-pair-counting derivation of the '5/2' leading term: at level n=4, partitions split as 2 conjugate pairs {((4),(1^4)), ((3,1),(2,1²))} + 1 self-conjugate {(2,2)} = 5/2 in the half-symmetric count. Probes investigate the h²·G correction, Skein S(B) for proton/neutron, strange baryon extensions, and Vol(B_3) = 8G identity.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
@@ -33,25 +40,25 @@
   },
   "data": {
     "probe_1_skein": {
-      "V(q)": "4.01053934993535",
-      "V(q^2)": "4.03789202861173",
-      "V(q^{1/2})": "4.00270011048158",
-      "V(-q)": "16.2516979594477",
-      "V(q^4)": "4.07750883920593",
-      "V(q) - V(q^{-1}) (odd part)": "0.0",
-      "delta_lambda_pn": "0.00339084641281595",
+      "V(q)": "4.0105393476825",
+      "V(q^2)": "4.03789202151249",
+      "V(q^{1/2})": "4.00270010988941",
+      "V(-q)": "16.2516979035126",
+      "V(q^4)": "4.07750884531505",
+      "V(q) - V(q^{-1}) (odd part)": "-5.71493695641137e-101",
+      "delta_lambda_pn": "0.00339084570156923",
       "implied_delta_S_pn": "2.53098829264",
       "implied_delta_S_pn_MeV": "1.2933324 MeV",
       "codata_delta_m_pn_MeV": "1.2933324 MeV"
     },
     "probe_2_strange_baryons": {
-      "lambda_Lambda": "2.9250870197",
-      "lambda_Sigma+": "3.1182788916",
-      "lambda_Sigma0": "3.12685738991",
-      "lambda_Sigma-": "3.13946033654",
-      "strange_contribution_Lambda": "0.465134232014",
-      "strange_contribution_Sigma+": "0.658326103917",
-      "strange_contribution_Sigma0_avg": "0.666904602225",
+      "lambda_Lambda": "2.92508640615",
+      "lambda_Sigma+": "3.11827823753",
+      "lambda_Sigma0": "3.12685673403",
+      "lambda_Sigma-": "3.13945967802",
+      "strange_contribution_Lambda": "0.46513413445",
+      "strange_contribution_Sigma+": "0.65832596583",
+      "strange_contribution_Sigma0_avg": "0.666904462339",
       "ratio_Sigma+_to_Lambda_strange": "1.4153465",
       "compare_to_sqrt2": "1.4142136",
       "status": "Strange baryons λ values not closed by simple p(n)/2 form. Σ⁺ - p strange contribution ≈ 0.658, Λ - p ≈ 0.465. Ratio Σ/Λ ≈ 1.41 ≈ √2 (suggestive of spin/isospin factor) but no clean substrate derivation yet."
@@ -66,8 +73,8 @@
       "Lobachevsky_vs_Catalan_relation": "Λ(π/4) ≈ 0.4579827971, G ≈ 0.9159655942, Λ/G = 0.5000000000, 2·Λ/G = 1.0000000000",
       "Vol_B3_via_16_Lobachevsky": "7.32772475341775212043682811946",
       "matches_literature?": "0.0",
-      "test_5/2 - h²·Λ(π/4)": "2.479983303924624901412695",
-      "diff_ppm": 8142.642550675969
+      "test_5/2 - h²·Λ(π/4)": "2.479983308366137528215706",
+      "diff_ppm": 8142.855819128282
     }
   }
 }

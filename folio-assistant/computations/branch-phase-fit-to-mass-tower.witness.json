@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:08:42.703694+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:36:20.279306+00:00",
+  "commitSha": "cb48f80ed8613db475b314ac6ba8ad87c115a38d",
   "assertions": [
     {
       "name": "D_branch_phase_fit",
@@ -40,6 +40,13 @@
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Tests whether sums of 2|sin(2*pi*k/5)| at the five branch phases of X_5 (y^2=x^5-1) match the missing prefactor in approach_1_multi_brane (ratio = rho_derived/rho_observed). Hypothesis: at q -> 1 the Hecke energy q - q^{-1} replaced by commutative-limit form 2i sin(theta) at branch phases.",
   "contentBlock": "rem:commutative-crossing-energy",

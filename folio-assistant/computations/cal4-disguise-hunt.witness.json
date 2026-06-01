@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:08:43.952413+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:36:21.760454+00:00",
+  "commitSha": "cb48f80ed8613db475b314ac6ba8ad87c115a38d",
   "assertions": [
     {
       "name": "no_unacknowledged_cal4_disguises_found",
@@ -23,21 +23,63 @@
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Hunt for CAL-4 disguises beyond the literal pattern caught by fitted_labelled_canonical_audit. Three heuristics: (A) Möbius rational q-pencils, (B) PSLQ + substrate-claim + CODATA-target trifecta, (C) high-precision literals not in acknowledged CODATA/FITTED/VALIDATION slots. Exempts `# CAL-1/2/3/4`, `# FITTED_FROM_CODATA`, `# acknowledged`, `# noqa: P31/P32`, `_deprecated/`, and `codata_constants.py`.",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "data": {
-    "scripts_scanned": 745,
-    "total_findings": 13,
+    "scripts_scanned": 815,
+    "total_findings": 27,
     "findings_by_pattern": {
-      "C-unnamed-high-precision-literal": 13
+      "C-unnamed-high-precision-literal": 27
     },
     "findings": [
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_multi_isotope_delta_lambda_probe_v3.py",
+        "line": 75,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v6_combined_canonical.py",
+        "line": 38,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v6_combined_canonical.py",
+        "line": 41,
+        "name": "Q_0",
+        "value": "1.1097090249"
+      },
       {
         "pattern": "C-unnamed-high-precision-literal",
         "file": "computations/mass_sweep_bar_sym_h2_coefficient_hunt.py",
         "line": 83,
         "name": "VOL_7_SQ_1",
         "value": "4.7494999818964"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v9_all_symmetries.py",
+        "line": 32,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v9_all_symmetries.py",
+        "line": 36,
+        "name": "Q_0",
+        "value": "1.1097090249"
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
@@ -90,6 +132,41 @@
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_canonical_reeb_v5.py",
+        "line": 40,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_canonical_reeb_v5.py",
+        "line": 41,
+        "name": "Q_0",
+        "value": "1.1097090249"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_deuteron_param_free_residual.py",
+        "line": 28,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_deuteron_param_free_residual.py",
+        "line": 32,
+        "name": "Q_0",
+        "value": "1.1097090249"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_q_reeb_phase_probe_v4.py",
+        "line": 33,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
         "file": "computations/delta_lambda_full_variance_phase5e_1.py",
         "line": 88,
         "name": "M_E_MEV",
@@ -101,6 +178,34 @@
         "line": 221,
         "name": "M_E_MEV",
         "value": "0.51099894999999995"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v7_involution_aware.py",
+        "line": 37,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v7_involution_aware.py",
+        "line": 41,
+        "name": "Q_0",
+        "value": "1.1097090249"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v8_hecke_involution_isospin_mirror.py",
+        "line": 34,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v8_hecke_involution_isospin_mirror.py",
+        "line": 38,
+        "name": "Q_0",
+        "value": "1.1097090249"
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
@@ -121,7 +226,7 @@
         "file": "computations/deuteron_delta_i_audit.py",
         "line": 101,
         "name": "TR_M_DEUTERON_AT_Q0",
-        "value": "0.3882864715477131"
+        "value": "0.3882864240747888"
       }
     ]
   }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:11:36.089299+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:39:16.996422+00:00",
+  "commitSha": "cb48f80ed8613db475b314ac6ba8ad87c115a38d",
   "assertions": [
     {
       "name": "no_hardcoded_registry_matches",
@@ -26,19 +26,26 @@
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "I9 audit per local/compute-integration-watcher: scripts that hardcode a numerical literal matching a registered constant in codata_constants.py (within 1e-3 relative error) without importing the corresponding symbol.  Bypassing the registry decouples the script from the canonical source of truth — if CODATA updates, the literal silently drifts.  Tolerance is permissive (1e-3) to catch loose rounding like `0.511` matching M_E_MEV = 0.51099895.",
   "contentBlock": "I9 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "registry_constants_in_scope": 26,
     "relative_error_tolerance": "1e-6",
     "magnitude_window_MeV": "[0.0001, 1e6]",
-    "total_scripts_with_hits": 155,
-    "i9_violation_count": 140,
+    "total_scripts_with_hits": 177,
+    "i9_violation_count": 162,
     "ok_acknowledged_anchor_count": 15
   },
   "data": {
     "by_result": {
-      "i9_violation": 140,
+      "i9_violation": 162,
       "ok_acknowledged_anchor": 15
     },
     "rows": [
@@ -355,7 +362,7 @@
         "hit_count": 9,
         "hits": [
           {
-            "line_number": 13,
+            "line_number": 14,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -363,7 +370,7 @@
             "snippet": "m_e_MeV = mpf('0.51099895069')"
           },
           {
-            "line_number": 18,
+            "line_number": 19,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -371,7 +378,7 @@
             "snippet": "'e':     mpf('0.51099895069'),"
           },
           {
-            "line_number": 19,
+            "line_number": 20,
             "literal": "105.6583755",
             "matches_constant": "M_MU_MEV_VALIDATION",
             "registry_value": "105.6583755",
@@ -379,7 +386,7 @@
             "snippet": "'mu':    mpf('105.6583755'),"
           },
           {
-            "line_number": 29,
+            "line_number": 30,
             "literal": "139.57039",
             "matches_constant": "M_PI_PM_MEV_VALIDATION",
             "registry_value": "139.57039",
@@ -387,7 +394,7 @@
             "snippet": "'pi_pm': mpf('139.57039'),"
           },
           {
-            "line_number": 30,
+            "line_number": 31,
             "literal": "134.9768",
             "matches_constant": "M_PI_0_MEV_VALIDATION",
             "registry_value": "134.9768",
@@ -395,7 +402,7 @@
             "snippet": "'pi_0':  mpf('134.9768'),"
           },
           {
-            "line_number": 31,
+            "line_number": 32,
             "literal": "493.677",
             "matches_constant": "M_K_PM_MEV_VALIDATION",
             "registry_value": "493.677",
@@ -403,7 +410,7 @@
             "snippet": "'K_pm':  mpf('493.677'),"
           },
           {
-            "line_number": 32,
+            "line_number": 33,
             "literal": "497.611",
             "matches_constant": "M_K_0_MEV_VALIDATION",
             "registry_value": "497.611",
@@ -411,7 +418,7 @@
             "snippet": "'K_0':   mpf('497.611'),"
           },
           {
-            "line_number": 38,
+            "line_number": 39,
             "literal": "938.27208816",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -419,7 +426,7 @@
             "snippet": "'p':     mpf('938.27208816'),"
           },
           {
-            "line_number": 39,
+            "line_number": 40,
             "literal": "939.56542052",
             "matches_constant": "M_N_MEV_VALIDATION",
             "registry_value": "939.56542052",
@@ -590,7 +597,7 @@
         "hit_count": 7,
         "hits": [
           {
-            "line_number": 15,
+            "line_number": 16,
             "literal": "139.57039",
             "matches_constant": "M_PI_PM_MEV_VALIDATION",
             "registry_value": "139.57039",
@@ -598,7 +605,7 @@
             "snippet": "m_pi = mpf('139.57039')"
           },
           {
-            "line_number": 16,
+            "line_number": 17,
             "literal": "493.677",
             "matches_constant": "M_K_PM_MEV_VALIDATION",
             "registry_value": "493.677",
@@ -606,7 +613,7 @@
             "snippet": "m_K_pdg = mpf('493.677')"
           },
           {
-            "line_number": 42,
+            "line_number": 43,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -614,7 +621,7 @@
             "snippet": "m_e = mpf('0.51099895069')"
           },
           {
-            "line_number": 57,
+            "line_number": 58,
             "literal": "938.272",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -622,7 +629,7 @@
             "snippet": "print(f\"  m_p (Geom_full)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf("
           },
           {
-            "line_number": 57,
+            "line_number": 58,
             "literal": "938.27208816",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -630,7 +637,7 @@
             "snippet": "print(f\"  m_p (Geom_full)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf("
           },
           {
-            "line_number": 57,
+            "line_number": 58,
             "literal": "938.27208816",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -638,7 +645,7 @@
             "snippet": "print(f\"  m_p (Geom_full)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf("
           },
           {
-            "line_number": 68,
+            "line_number": 69,
             "literal": "938.272",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -1301,7 +1308,7 @@
         "hit_count": 6,
         "hits": [
           {
-            "line_number": 16,
+            "line_number": 17,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -1309,7 +1316,7 @@
             "snippet": "m_e = mpf('0.51099895069')"
           },
           {
-            "line_number": 19,
+            "line_number": 20,
             "literal": "139.57039",
             "matches_constant": "M_PI_PM_MEV_VALIDATION",
             "registry_value": "139.57039",
@@ -1317,7 +1324,7 @@
             "snippet": "M_PI = mpf('139.57039')"
           },
           {
-            "line_number": 22,
+            "line_number": 23,
             "literal": "493.677",
             "matches_constant": "M_K_PM_MEV_VALIDATION",
             "registry_value": "493.677",
@@ -1325,7 +1332,7 @@
             "snippet": "M_K  = mpf('493.677')"
           },
           {
-            "line_number": 23,
+            "line_number": 24,
             "literal": "938.27208816",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -1333,7 +1340,7 @@
             "snippet": "M_P  = mpf('938.27208816')"
           },
           {
-            "line_number": 24,
+            "line_number": 25,
             "literal": "939.56542052",
             "matches_constant": "M_N_MEV_VALIDATION",
             "registry_value": "939.56542052",
@@ -1341,7 +1348,7 @@
             "snippet": "M_N  = mpf('939.56542052')"
           },
           {
-            "line_number": 108,
+            "line_number": 109,
             "literal": "0.78233341",
             "matches_constant": "Q_BETA_MEV",
             "registry_value": "0.78233341",
@@ -1713,7 +1720,7 @@
         "hit_count": 5,
         "hits": [
           {
-            "line_number": 17,
+            "line_number": 18,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -1721,7 +1728,7 @@
             "snippet": "m_e = mpf('0.51099895069')"
           },
           {
-            "line_number": 46,
+            "line_number": 47,
             "literal": "139.57039",
             "matches_constant": "M_PI_PM_MEV_VALIDATION",
             "registry_value": "139.57039",
@@ -1729,7 +1736,7 @@
             "snippet": "m_pi_target = mpf('139.57039') / m_e"
           },
           {
-            "line_number": 94,
+            "line_number": 95,
             "literal": "938.27208816",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -1737,7 +1744,7 @@
             "snippet": "m_p_target = mpf('938.27208816') / m_e"
           },
           {
-            "line_number": 205,
+            "line_number": 206,
             "literal": "139.57039",
             "matches_constant": "M_PI_PM_MEV_VALIDATION",
             "registry_value": "139.57039",
@@ -1745,7 +1752,7 @@
             "snippet": "\"m_pi_MeV\": \"139.57039\","
           },
           {
-            "line_number": 206,
+            "line_number": 207,
             "literal": "938.27208816",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -1762,7 +1769,7 @@
         "hit_count": 5,
         "hits": [
           {
-            "line_number": 14,
+            "line_number": 15,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -1770,7 +1777,7 @@
             "snippet": "m_e = mpf('0.51099895069')"
           },
           {
-            "line_number": 64,
+            "line_number": 65,
             "literal": "8.48180",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.481798",
@@ -1778,7 +1785,7 @@
             "snippet": "B_AME = {'D': mpf('2.22452'), 'T': mpf('8.48180'), '3He': mpf('7.71804')}"
           },
           {
-            "line_number": 64,
+            "line_number": 65,
             "literal": "7.71804",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.718043",
@@ -1786,7 +1793,7 @@
             "snippet": "B_AME = {'D': mpf('2.22452'), 'T': mpf('8.48180'), '3He': mpf('7.71804')}"
           },
           {
-            "line_number": 67,
+            "line_number": 68,
             "literal": "938.27208816",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -1794,7 +1801,7 @@
             "snippet": "M_P = mpf('938.27208816')"
           },
           {
-            "line_number": 68,
+            "line_number": 69,
             "literal": "939.56542052",
             "matches_constant": "M_N_MEV_VALIDATION",
             "registry_value": "939.56542052",
@@ -2096,6 +2103,47 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/binding_alpha_shift_witness.py",
+        "imported_codata_names": [],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 15,
+            "literal": "0.5109989461",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "8.982e-9",
+            "snippet": "M_E_MEV = 0.5109989461"
+          },
+          {
+            "line_number": 19,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "\"D\":   2.224566,"
+          },
+          {
+            "line_number": 20,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "\"T\":   8.481798,"
+          },
+          {
+            "line_number": 22,
+            "literal": "28.295674",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.295673",
+            "rel_err": "3.534e-8",
+            "snippet": "\"⁴He\": 28.295674,"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/binding_depth_stratified.py",
         "imported_codata_names": [
           "M_E_MEV"
@@ -2268,6 +2316,141 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/binding_factor_f_decomposition.py",
+        "imported_codata_names": [
+          "#",
+          "E402",
+          "M_E_MEV"
+        ],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 19,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "\"D\":   (1, 1, \"0.9835261819186453\", \"0.38828647154771295\", \"2.224566\"),"
+          },
+          {
+            "line_number": 20,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "\"T\":   (1, 2, \"0.9080241197853626\", \"0.10405211867552604\", \"8.481798\"),"
+          },
+          {
+            "line_number": 21,
+            "literal": "7.718043",
+            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
+            "registry_value": "7.718043",
+            "rel_err": "0.0",
+            "snippet": "\"3He\": (2, 1, \"1.0477565675816238\", \"0.20654085856226245\", \"7.718043\"),"
+          },
+          {
+            "line_number": 22,
+            "literal": "28.295673",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.295673",
+            "rel_err": "0.0",
+            "snippet": "\"4He\": (2, 2, \"0.9673237505194684\", \"0.05534834587669799\", \"28.295673\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/binding_factor_f_pair_count.py",
+        "imported_codata_names": [
+          "#",
+          "E402",
+          "M_E_MEV"
+        ],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 18,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "(\"D\",   1, 1, \"2.224566\"),"
+          },
+          {
+            "line_number": 19,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "(\"T\",   1, 2, \"8.481798\"),"
+          },
+          {
+            "line_number": 20,
+            "literal": "7.718043",
+            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
+            "registry_value": "7.718043",
+            "rel_err": "0.0",
+            "snippet": "(\"3He\", 2, 1, \"7.718043\"),"
+          },
+          {
+            "line_number": 21,
+            "literal": "28.295673",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.295673",
+            "rel_err": "0.0",
+            "snippet": "(\"4He\", 2, 2, \"28.295673\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/binding_factor_f_sequence.py",
+        "imported_codata_names": [
+          "#",
+          "E402",
+          "M_E_MEV"
+        ],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 18,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "(\"D\",   1, 1, \"2.224566\"),"
+          },
+          {
+            "line_number": 19,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "(\"T\",   1, 2, \"8.481798\"),"
+          },
+          {
+            "line_number": 20,
+            "literal": "7.718043",
+            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
+            "registry_value": "7.718043",
+            "rel_err": "0.0",
+            "snippet": "(\"3He\", 2, 1, \"7.718043\"),"
+          },
+          {
+            "line_number": 21,
+            "literal": "28.295673",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.295673",
+            "rel_err": "0.0",
+            "snippet": "(\"4He\", 2, 2, \"28.295673\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/binding_ladder_catalog.py",
         "imported_codata_names": [
           "M_E_MEV"
@@ -2311,51 +2494,6 @@
         "result": "i9_violation"
       },
       {
-        "path": "folio-assistant/computations/binding_shell_enhancement_derivation.py",
-        "imported_codata_names": [
-          "#",
-          "E402",
-          "Q_BETA_MEV"
-        ],
-        "hit_count": 4,
-        "hits": [
-          {
-            "line_number": 38,
-            "literal": "0.51099895069",
-            "matches_constant": "M_E_MEV",
-            "registry_value": "0.51099895069",
-            "rel_err": "0.0",
-            "snippet": "m_e = mpf(\"0.51099895069\")"
-          },
-          {
-            "line_number": 44,
-            "literal": "8.48180",
-            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
-            "registry_value": "8.481798",
-            "rel_err": "2.358e-7",
-            "snippet": "AME = {\"D\": 2.22452, \"T\": 8.48180, \"3He\": 7.71804, \"4He\": 28.29567}"
-          },
-          {
-            "line_number": 44,
-            "literal": "7.71804",
-            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
-            "registry_value": "7.718043",
-            "rel_err": "3.887e-7",
-            "snippet": "AME = {\"D\": 2.22452, \"T\": 8.48180, \"3He\": 7.71804, \"4He\": 28.29567}"
-          },
-          {
-            "line_number": 44,
-            "literal": "28.29567",
-            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
-            "registry_value": "28.295673",
-            "rel_err": "1.06e-7",
-            "snippet": "AME = {\"D\": 2.22452, \"T\": 8.48180, \"3He\": 7.71804, \"4He\": 28.29567}"
-          }
-        ],
-        "has_class_a_banner": false,
-        "result": "i9_violation"
-      },
-      {
         "path": "folio-assistant/computations/binding_via_interface_knot.py",
         "imported_codata_names": [
           "M_E_MEV"
@@ -2393,51 +2531,6 @@
             "registry_value": "28.295673",
             "rel_err": "3.534e-8",
             "snippet": "\"4He\": mp.mpf(\"28.295674\"),"
-          }
-        ],
-        "has_class_a_banner": false,
-        "result": "i9_violation"
-      },
-      {
-        "path": "folio-assistant/computations/binding_volume_difference_probe.py",
-        "imported_codata_names": [
-          "#",
-          "E402",
-          "Q_BETA_MEV"
-        ],
-        "hit_count": 4,
-        "hits": [
-          {
-            "line_number": 66,
-            "literal": "0.51099895069",
-            "matches_constant": "M_E_MEV",
-            "registry_value": "0.51099895069",
-            "rel_err": "0.0",
-            "snippet": "m_e = mpf(\"0.51099895069\")"
-          },
-          {
-            "line_number": 71,
-            "literal": "8.48180",
-            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
-            "registry_value": "8.481798",
-            "rel_err": "2.358e-7",
-            "snippet": "AME = {\"D\": 2.22452, \"T\": 8.48180, \"3He\": 7.71804, \"4He\": 28.29567}"
-          },
-          {
-            "line_number": 71,
-            "literal": "7.71804",
-            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
-            "registry_value": "7.718043",
-            "rel_err": "3.887e-7",
-            "snippet": "AME = {\"D\": 2.22452, \"T\": 8.48180, \"3He\": 7.71804, \"4He\": 28.29567}"
-          },
-          {
-            "line_number": 71,
-            "literal": "28.29567",
-            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
-            "registry_value": "28.295673",
-            "rel_err": "1.06e-7",
-            "snippet": "AME = {\"D\": 2.22452, \"T\": 8.48180, \"3He\": 7.71804, \"4He\": 28.29567}"
           }
         ],
         "has_class_a_banner": false,
@@ -2582,7 +2675,7 @@
         "hit_count": 4,
         "hits": [
           {
-            "line_number": 16,
+            "line_number": 17,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -2590,7 +2683,7 @@
             "snippet": "m_e = 0.51099895069"
           },
           {
-            "line_number": 162,
+            "line_number": 163,
             "literal": "1875.61294257",
             "matches_constant": "M_D_MEV_VALIDATION",
             "registry_value": "1875.61294257",
@@ -2598,7 +2691,7 @@
             "snippet": "m_D_codata = 1875.61294257"
           },
           {
-            "line_number": 163,
+            "line_number": 164,
             "literal": "938.27208816",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -2606,7 +2699,7 @@
             "snippet": "B_D_pred = (938.27208816 + 939.56542052) - m_D_pred + m_e"
           },
           {
-            "line_number": 163,
+            "line_number": 164,
             "literal": "939.56542052",
             "matches_constant": "M_N_MEV_VALIDATION",
             "registry_value": "939.56542052",
@@ -2923,6 +3016,88 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/meson_fusion_why34_em_residual.py",
+        "imported_codata_names": [],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 26,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "m_pi_pm = mp.mpf(\"139.57039\")"
+          },
+          {
+            "line_number": 27,
+            "literal": "134.9768",
+            "matches_constant": "M_PI_0_MEV_VALIDATION",
+            "registry_value": "134.9768",
+            "rel_err": "0.0",
+            "snippet": "m_pi_0  = mp.mpf(\"134.9768\")"
+          },
+          {
+            "line_number": 28,
+            "literal": "493.677",
+            "matches_constant": "M_K_PM_MEV_VALIDATION",
+            "registry_value": "493.677",
+            "rel_err": "0.0",
+            "snippet": "m_K_pm  = mp.mpf(\"493.677\")"
+          },
+          {
+            "line_number": 29,
+            "literal": "497.611",
+            "matches_constant": "M_K_0_MEV_VALIDATION",
+            "registry_value": "497.611",
+            "rel_err": "0.0",
+            "snippet": "m_K_0   = mp.mpf(\"497.611\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_v7_involution_aware.py",
+        "imported_codata_names": [],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 12,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 13,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "M_PI_MEV = mpf(\"139.57039\")"
+          },
+          {
+            "line_number": 20,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "AME_MeV = {\"D\": mpf(\"2.224566\"), \"T\": mpf(\"8.481798\"),"
+          },
+          {
+            "line_number": 20,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "AME_MeV = {\"D\": mpf(\"2.224566\"), \"T\": mpf(\"8.481798\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/path_c3_klr_prescreen_50dps.py",
         "imported_codata_names": [],
         "hit_count": 4,
@@ -2958,6 +3133,47 @@
             "registry_value": "938.27208816",
             "rel_err": "4.263e-11",
             "snippet": "print(f\"  m_p CODATA:                     938.2720882 MeV  (0 ppm)\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_isospin_mirror_v9_generalization.py",
+        "imported_codata_names": [],
+        "hit_count": 4,
+        "hits": [
+          {
+            "line_number": 13,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = D(\"0.51099895069\")"
+          },
+          {
+            "line_number": 14,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "M_PI_MEV = D(\"139.57039\")"
+          },
+          {
+            "line_number": 21,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "AME_MeV = {\"D\": D(\"2.224566\"), \"T\": D(\"8.481798\"), \"3He\": D(\"7.71806\")}"
+          },
+          {
+            "line_number": 21,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "AME_MeV = {\"D\": D(\"2.224566\"), \"T\": D(\"8.481798\"), \"3He\": D(\"7.71806\")}"
           }
         ],
         "has_class_a_banner": false,
@@ -3046,33 +3262,37 @@
         "result": "i9_violation"
       },
       {
-        "path": "folio-assistant/computations/binding_rotation_phase_lead.py",
-        "imported_codata_names": [],
+        "path": "folio-assistant/computations/binding_bring_enhancement_compare.py",
+        "imported_codata_names": [
+          "#",
+          "E402",
+          "M_E_MEV"
+        ],
         "hit_count": 3,
         "hits": [
           {
-            "line_number": 98,
-            "literal": "8.48180",
+            "line_number": 24,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "\"D\":   2.224566,"
+          },
+          {
+            "line_number": 25,
+            "literal": "8.481798",
             "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
             "registry_value": "8.481798",
-            "rel_err": "2.358e-7",
-            "snippet": "AME = {\"D\": 2.22452, \"T\": 8.48180, \"3He\": 7.71804, \"4He\": 28.29567}"
+            "rel_err": "0.0",
+            "snippet": "\"T\":   8.481798,"
           },
           {
-            "line_number": 98,
-            "literal": "7.71804",
-            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
-            "registry_value": "7.718043",
-            "rel_err": "3.887e-7",
-            "snippet": "AME = {\"D\": 2.22452, \"T\": 8.48180, \"3He\": 7.71804, \"4He\": 28.29567}"
-          },
-          {
-            "line_number": 98,
-            "literal": "28.29567",
+            "line_number": 27,
+            "literal": "28.295674",
             "matches_constant": "AME_B_HE4_MEV_VALIDATION",
             "registry_value": "28.295673",
-            "rel_err": "1.06e-7",
-            "snippet": "AME = {\"D\": 2.22452, \"T\": 8.48180, \"3He\": 7.71804, \"4He\": 28.29567}"
+            "rel_err": "3.534e-8",
+            "snippet": "\"⁴He\": 28.295674,"
           }
         ],
         "has_class_a_banner": false,
@@ -3150,7 +3370,7 @@
         "hit_count": 3,
         "hits": [
           {
-            "line_number": 13,
+            "line_number": 14,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -3158,7 +3378,7 @@
             "snippet": "m_e = mpf('0.51099895069')"
           },
           {
-            "line_number": 62,
+            "line_number": 63,
             "literal": "139.57039",
             "matches_constant": "M_PI_PM_MEV_VALIDATION",
             "registry_value": "139.57039",
@@ -3166,7 +3386,7 @@
             "snippet": "m_pi = mpf('139.57039')"
           },
           {
-            "line_number": 63,
+            "line_number": 64,
             "literal": "938.27208816",
             "matches_constant": "M_P_MEV_VALIDATION",
             "registry_value": "938.27208816",
@@ -3283,6 +3503,39 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/meson_em_residual_alpha_em.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 48,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "m_pi_pm = mp.mpf(\"139.57039\")"
+          },
+          {
+            "line_number": 49,
+            "literal": "493.677",
+            "matches_constant": "M_K_PM_MEV_VALIDATION",
+            "registry_value": "493.677",
+            "rel_err": "0.0",
+            "snippet": "m_K_pm  = mp.mpf(\"493.677\")"
+          },
+          {
+            "line_number": 144,
+            "literal": "134.9768",
+            "matches_constant": "M_PI_0_MEV_VALIDATION",
+            "registry_value": "134.9768",
+            "rel_err": "0.0",
+            "snippet": "em_pi_meas = float(m_pi_pm**2) - 134.9768**2"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/meson_spectrum_predictions.py",
         "imported_codata_names": [],
         "hit_count": 3,
@@ -3310,6 +3563,204 @@
             "registry_value": "493.677",
             "rel_err": "0.0",
             "snippet": "\"K±\": 493.677,"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_canonical_reeb_v5.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 14,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 21,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "\"D\":     mpf(\"2.224566\"),"
+          },
+          {
+            "line_number": 22,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "\"T\":     mpf(\"8.481798\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_multi_isotope_delta_lambda_probe_v3.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 49,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "\"deuteron\":  mpf(\"2.224566\"),"
+          },
+          {
+            "line_number": 50,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "\"tritium\":   mpf(\"8.481798\"),"
+          },
+          {
+            "line_number": 54,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = mpf(\"0.51099895069\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_q_reeb_phase_probe_v4.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 11,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 13,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "\"deuteron\":  mpf(\"2.224566\"),"
+          },
+          {
+            "line_number": 14,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "\"tritium\":   mpf(\"8.481798\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_v6_combined_canonical.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 12,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 19,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "AME_MeV = {\"D\": mpf(\"2.224566\"), \"T\": mpf(\"8.481798\"),"
+          },
+          {
+            "line_number": 19,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "AME_MeV = {\"D\": mpf(\"2.224566\"), \"T\": mpf(\"8.481798\"),"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_v8_hecke_involution_isospin_mirror.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 12,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 13,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "M_PI_MEV = mpf(\"139.57039\")"
+          },
+          {
+            "line_number": 20,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "AME_MeV = {\"T\": mpf(\"8.481798\"), \"3He\": mpf(\"7.71806\")}"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_v9_all_symmetries.py",
+        "imported_codata_names": [],
+        "hit_count": 3,
+        "hits": [
+          {
+            "line_number": 12,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 13,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "M_PI_MEV = mpf(\"139.57039\")"
+          },
+          {
+            "line_number": 19,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "AME_MeV = {\"T\": mpf(\"8.481798\"), \"3He\": mpf(\"7.71806\")}"
           }
         ],
         "has_class_a_banner": false,
@@ -4163,6 +4614,131 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/meson_em_sinh_closed_form.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 61,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "m_pi = mp.mpf(\"139.57039\")"
+          },
+          {
+            "line_number": 62,
+            "literal": "493.677",
+            "matches_constant": "M_K_PM_MEV_VALIDATION",
+            "registry_value": "493.677",
+            "rel_err": "0.0",
+            "snippet": "m_K  = mp.mpf(\"493.677\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/meson_eta_phi_gmor.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 26,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "m_pi = mp.mpf(\"139.57039\")"
+          },
+          {
+            "line_number": 27,
+            "literal": "493.677",
+            "matches_constant": "M_K_PM_MEV_VALIDATION",
+            "registry_value": "493.677",
+            "rel_err": "0.0",
+            "snippet": "m_K = mp.mpf(\"493.677\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_deuteron_delta_lambda_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 40,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "B_D_MeV = mpf(\"2.224566\")"
+          },
+          {
+            "line_number": 41,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "m_e_MeV = mpf(\"0.51099895069\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_deuteron_delta_lambda_probe_v2.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 52,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "B_D_MeV = mpf(\"2.224566\")"
+          },
+          {
+            "line_number": 53,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "m_e_MeV = mpf(\"0.51099895069\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_deuteron_param_free_residual.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 12,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV = mpf(\"0.51099895069\")"
+          },
+          {
+            "line_number": 13,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "B_D_AME_MEV = mpf(\"2.224566\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/path_b_defect_binding_probe.py",
         "imported_codata_names": [
           "(",
@@ -4290,6 +4866,35 @@
             "registry_value": "0.51099895069",
             "rel_err": "1.35e-9",
             "snippet": "m_e = mp.mpf(\"0.51099895\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py",
+        "imported_codata_names": [
+          "#",
+          "E402",
+          "M_E_MEV"
+        ],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 30,
+            "literal": "939.5654205240",
+            "matches_constant": "M_N_MEV_VALIDATION",
+            "registry_value": "939.56542052",
+            "rel_err": "4.257e-12",
+            "snippet": "Q_AME = mp.mpf(\"939.5654205240\") - mp.mpf(\"938.27208816\") - m_e"
+          },
+          {
+            "line_number": 30,
+            "literal": "938.27208816",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208816",
+            "rel_err": "0.0",
+            "snippet": "Q_AME = mp.mpf(\"939.5654205240\") - mp.mpf(\"938.27208816\") - m_e"
           }
         ],
         "has_class_a_banner": false,
@@ -4425,6 +5030,31 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/rho_w_crystal_vertex_trace.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 28,
+            "literal": "0.51099895069",
+            "matches_constant": "M_E_MEV",
+            "registry_value": "0.51099895069",
+            "rel_err": "0.0",
+            "snippet": "M_E_MEV_STR = \"0.51099895069\""
+          },
+          {
+            "line_number": 30,
+            "literal": "2.224566",
+            "matches_constant": "AME_B_DEUTERON_MEV_VALIDATION",
+            "registry_value": "2.224566",
+            "rel_err": "0.0",
+            "snippet": "B_D_AME_MEV_STR = \"2.224566\""
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/shell_binding_transfer_matrix.py",
         "imported_codata_names": [],
         "hit_count": 2,
@@ -4518,7 +5148,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 61,
+            "line_number": 69,
             "literal": "7.71804",
             "matches_constant": "AME_B_HE3_MEV_VALIDATION",
             "registry_value": "7.718043",
@@ -4658,7 +5288,7 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 15,
+            "line_number": 16,
             "literal": "0.51099895069",
             "matches_constant": "M_E_MEV",
             "registry_value": "0.51099895069",
@@ -4785,12 +5415,12 @@
         "hit_count": 1,
         "hits": [
           {
-            "line_number": 58,
+            "line_number": 67,
             "literal": "105.6583755",
             "matches_constant": "M_MU_MEV_VALIDATION",
             "registry_value": "105.6583755",
             "rel_err": "0.0",
-            "snippet": "m_mu = mpf(\"105.6583755\")"
+            "snippet": "m_mu_measured = mpf(\"105.6583755\")"
           }
         ],
         "has_class_a_banner": false,
@@ -4928,6 +5558,65 @@
             "registry_value": "105.6583755",
             "rel_err": "0.0",
             "snippet": "m_mu_codata = mpf(\"105.6583755\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/qbeta_delta_tr_vs_formA.py",
+        "imported_codata_names": [
+          "#",
+          "E402",
+          "M_E_MEV"
+        ],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 89,
+            "literal": "0.78233341",
+            "matches_constant": "Q_BETA_MEV",
+            "registry_value": "0.78233341",
+            "rel_err": "0.0",
+            "snippet": "Q_codata = mpf(\"0.78233341\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/qbeta_habiro_taylor_investigation.py",
+        "imported_codata_names": [
+          "#",
+          "E402",
+          "M_E_MEV"
+        ],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 120,
+            "literal": "0.78233341",
+            "matches_constant": "Q_BETA_MEV",
+            "registry_value": "0.78233341",
+            "rel_err": "0.0",
+            "snippet": "Q_codata = mpf(\"0.78233341\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/qbeta_scaling_bridge_investigation.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 47,
+            "literal": "0.78233341",
+            "matches_constant": "Q_BETA_MEV",
+            "registry_value": "0.78233341",
+            "rel_err": "0.0",
+            "snippet": "Q_codata = mp.mpf(\"0.78233341\")"
           }
         ],
         "has_class_a_banner": false,
@@ -5346,15 +6035,15 @@
         "hit_count": 3,
         "hits": [
           {
-            "line_number": 65,
+            "line_number": 66,
             "literal": "105.6583755",
             "matches_constant": "M_MU_MEV_VALIDATION",
             "registry_value": "105.6583755",
             "rel_err": "0.0",
-            "snippet": "f\"(ratio-derived; independently-quoted 105.6583755(23) MeV)\""
+            "snippet": "f\"(ratio-derived; independently-quoted 105.6583755(23) MeV). \""
           },
           {
-            "line_number": 113,
+            "line_number": 120,
             "literal": "493.677",
             "matches_constant": "M_K_PM_MEV_VALIDATION",
             "registry_value": "493.677",
@@ -5362,7 +6051,7 @@
             "snippet": "\"PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature\","
           },
           {
-            "line_number": 113,
+            "line_number": 120,
             "literal": "139.57039",
             "matches_constant": "M_PI_PM_MEV_VALIDATION",
             "registry_value": "139.57039",

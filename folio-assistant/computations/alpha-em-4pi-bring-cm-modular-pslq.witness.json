@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T03:46:30.099243+00:00",
-  "commitSha": "43acebadaac64dcd72d553d863593468e6bb98b9",
+  "computedAt": "2026-06-01T03:34:15.724961+00:00",
+  "commitSha": "cb48f80ed8613db475b314ac6ba8ad87c115a38d",
   "assertions": [
     {
       "name": "pslq_sweep_complete",
@@ -14,16 +14,23 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 235,
+  "durationMs": 201,
   "computation": "alpha-em-4pi-bring-cm-modular-pslq",
   "scriptFile": "alpha_em_4pi_bring_cm_modular_pslq.py",
   "scriptHash": "b20b877602ff",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "0c4c46e87ad1f433a3255f277884fd108b2fa396",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Option-3 derivation continuation of #1457 (q-hyperbolic B_3 PSLQ): extends the search from unit-circle Bring-symmetric angles to OFF-unit-circle modular CM-τ candidates for Bring's curve. Four canonical τ-candidates (pentagon, quintic, Bring-Schwarz, icosahedral) give |z| ≠ 1 evaluations where the full Goncharov D_3 regulator becomes informative (the log|z|·Im(Li_2) and log²|z|·arg(1-z) terms are NOT visible on the unit circle that #1457 explored). PSLQ at maxcoeff = 50, 200, 1000 against the augmented basis. Honest derive-or-refute, no fit.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

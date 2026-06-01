@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-29T16:21:20.169966+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T03:49:11.407528+00:00",
+  "commitSha": "cb48f80ed8613db475b314ac6ba8ad87c115a38d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 17,
@@ -15,6 +15,13 @@
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Scaffold for γγ → qq̄ SDP categorical crossing-budget derivation. H_2 demo confirms σ_0³ has tr_M ≈ 0.73 at q_0 (not 1). H_3 skeleton outlines the 6-dim NF basis + 3 Wedderburn blocks (dims 1, 2, 1). Full SDP solve deferred to follow-up — uses joint_tower_sdp_solver_v2.py (PR #444 Phase 3b) infrastructure.",
   "contentBlock": "rem:photon-channel-wedderburn-chain",
