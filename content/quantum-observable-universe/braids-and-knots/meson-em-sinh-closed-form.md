@@ -51,9 +51,10 @@ fusion $[3]_q \cdot [4]_q$ from the qq̄ 2-body decomposition
 and the sinh-channel EM correction from the CS-corrected
 $\alpha_{\mathrm{em}} = q \cdot [9]_q \cdot [10]_q$ ([force-carrier
 Diophantine uniqueness](#prop:force-carrier-bring-uniqueness))
-multiplied by $(3 q^2 - 1)/(2 q^2)$. At the substrate value $q_0$
-this matches the PDG ratio to $+0.056 \;\mathrm{ppm}$ — see audit
-[`2026-05-28-meson-mass-ratio-derived-vs-fitted.md`](../../../docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md).
+multiplied by $(3 q^2 - 1)/(2 q^2)$.
+
+(See [`docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md`](../../../docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md)
+for the archimedean substrate evaluation.)
 
 ## Structural reading
 
