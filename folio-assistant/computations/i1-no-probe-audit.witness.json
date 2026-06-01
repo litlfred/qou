@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T15:01:49.697122+00:00",
-  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
+  "computedAt": "2026-06-01T14:44:48.621529+00:00",
+  "commitSha": "ce8d16364742ae365a2538acb8a4b55887e7703f",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -36,11 +36,11 @@
   "description": "I1 audit per local/compute-integration-watcher: every provable content block (theorem / proposition / lemma / corollary) is cross-checked against the union of all witness `contentBlock` fields.  Blocks with proven Lean (0 sorrys, or class+sorry via §3b-cond) but no probe witness are flagged as `i1_no_probe`. Blocks with `sorry` (without conditional-class) belong to the proof-integration-watcher's queue; blocks without any `.lean` sibling are `i1_pre_lean` (deeper gap).",
   "contentBlock": "I1 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_provable_blocks": 602
+    "total_provable_blocks": 601
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 522,
+      "i1_no_probe": 521,
       "wired": 69,
       "i1_lean_with_sorry": 4,
       "i1_pre_lean": 6,
@@ -243,17 +243,6 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts",
-        "label": "prop:a-8-partition-function-identity",
-        "kind": "proposition",
-        "sibling_lean_exists": true,
-        "sibling_sorry_count": 0,
-        "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
         "result": "i1_no_probe"
@@ -5081,13 +5070,13 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 15,
+        "probe_witness_count": 12,
         "probe_witnesses": [
           "q-beta-form-a-n1-extension.witness.json",
           "qbeta-delta-tr-vs-formA.witness.json",
           "qbeta-habiro-a7-partition.witness.json",
-          "qbeta-habiro-cross-pair-factorization.witness.json",
-          "qbeta-habiro-cross-pair-quick-dp.witness.json"
+          "qbeta-habiro-cross-pair-quick-dp.witness.json",
+          "qbeta-habiro-delta-am-factorization.witness.json"
         ],
         "result": "wired"
       },
