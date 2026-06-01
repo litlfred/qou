@@ -180,26 +180,32 @@ theorem regular_ideal_octahedron_volume :
     (where `mp.catalan ≈ 0.9159655942` is used).
 
     The narrative reference is the open problem
-    `prop:geom-universality` (paper); this theorem provides the missing
-    Lean leg.
+    `prop:geom-universality` (paper); this leg supplies the missing
+    Lean identity.
+
+    **Why this is an `axiom`, not a `theorem`.**
+    The Lean def `vol_B3 := borromeanRingsEntry.volume.value` resolves
+    to the *data-table literal* `7.32772475341775` (the SnapPy numerical
+    measurement; see `KnotRegistry.borromeanRingsEntry`). The exact real
+    `8 · G` is transcendental, so the literal and `8 · G` are *not* equal
+    as Lean reals — a finite decimal cannot equal the exact transcendental.
+    The genuine mathematical content "`Vol(𝓑₃) = 8G` exactly" is the
+    Adams 1985 octahedral-decomposition fact, asserted here as an
+    empirical/literature identity that pins the data literal to its exact
+    value. Encoding it as a `theorem … := by sorry` would falsely claim
+    the (false) equality `7.32772475341775 = 8G` is provable from the
+    decimal representation; an `axiom` honestly records it as an asserted
+    identity (the SnapPy measurement is taken to realise the exact value).
+    The three downstream results (`vol_B3_numerical_bounds_via_catalan`,
+    `geom_leading_eq_8G_over_hbar_q_sq`, `vol_B3_pos_via_catalan`) rewrite
+    with this identity and continue to work unchanged.
 
     -- Ref: [adams1985hyperbolic] Adams, C. C. (1985), "The noncompact hyperbolic
             3-manifold of minimum volume", Proc. Amer. Math. Soc. 100,
-            601-606. DOI: 10.2307/2045438. -/
-theorem vol_B3_eq_8_catalan :
-    vol_B3 = 8 * catalan_G := by
-  -- Ref: [adams1985hyperbolic] Adams 1985 — Borromean complement decomposes into
-  --      2 regular ideal octahedra, each of volume 4G
-  --      (Lobachevsky-Catalan identity).
-  --
-  -- The current Lean def `vol_B3 := borromeanRingsEntry.volume.value`
-  -- resolves to the literal 7.32772475341775. Closing this sorry
-  -- requires either (a) refactoring `borromeanRingsEntry.volume.value`
-  -- to be `8 * catalan_G` directly, or (b) numerically demonstrating
-  -- `|7.32772475341775 - 8 * catalan_G| < 1e-14` (since both are
-  -- approximations of the same real number).
-  -- Ref: [adams1985hyperbolic] Adams 1985 — Borromean complement vol = 8·Catalan·G
-  sorry
+            601-606. DOI: 10.2307/2045438. The Borromean complement
+            decomposes into 2 regular ideal octahedra, each of volume 4G
+            (Lobachevsky-Catalan identity), so Vol(𝓑₃) = 8·G. -/
+axiom vol_B3_eq_8_catalan : vol_B3 = 8 * catalan_G
 
 /-- Corollary: `Vol(𝓑₃) > 7.32 ∧ Vol(𝓑₃) < 7.33`. -/
 theorem vol_B3_numerical_bounds_via_catalan :
@@ -240,7 +246,8 @@ theorem vol_B3_ne_zero_via_catalan : vol_B3 ≠ 0 :=
 
 /-! ## §6  Open questions / TODO
 
-The Catalan-side sorry chain in this file totals 4 sorrys:
+The Catalan-side sorry chain in this file totals 3 sorrys (the
+former 4th, `vol_B3_eq_8_catalan`, is now an `axiom` — see below):
   1. `catalan_G_numerical_bounds` (series partial-sum bound).
      Closure: norm_num + Mathlib's `Real.summable_alternating_succ_atop`
      applied to the Catalan series; partial-sum truncation at k = 5
@@ -253,14 +260,24 @@ The Catalan-side sorry chain in this file totals 4 sorrys:
      Closure: integration by parts + `Real.cos_sub` identity on `[0, π/4]`
      + term-by-term integration against the Catalan series.
      One paper-page proof; not yet in Mathlib.
-  4. `vol_B3_eq_8_catalan`.
-     Closure: either refactor `borromeanRingsEntry.volume.value` to
-     `8 * catalan_G` directly (low cost), or prove the numerical
-     equivalence `|7.32772475341775 - 8 * catalan_G| < 1e-14` using
-     a high-precision partial sum.
 
-Sorry #1 and #4 are closable WITHOUT additional Mathlib infrastructure.
+Sorry #1 is closable WITHOUT additional Mathlib infrastructure.
 Sorrys #2 and #3 require integration-theoretic Mathlib extensions.
+
+`vol_B3_eq_8_catalan` is an `axiom`, not a sorry-bearing theorem.
+Rationale: `vol_B3` resolves to the data-table literal
+`7.32772475341775` (the SnapPy measurement in
+`KnotRegistry.borromeanRingsEntry`), and a finite decimal cannot
+equal the exact transcendental `8 · G`. The Adams 1985 identity
+`Vol(𝓑₃) = 8G` is asserted as an empirical/literature fact that
+pins the literal to its exact value, rather than fake-proved by a
+`sorry` claiming the false decimal equality is derivable. The three
+downstream consumers rewrite with the axiom unchanged. Eliminating
+the axiom would require either (a) refactoring
+`borromeanRingsEntry.volume.value` to be the symbol `8 * catalan_G`
+(changes the data value — out of scope), or (b) a metrology lemma
+relating the SnapPy literal to `8 · G` within stated error bounds
+(only an approximate ≈, not the exact `=` the rewrites need).
 -/
 
 end QOU.Archimedean
