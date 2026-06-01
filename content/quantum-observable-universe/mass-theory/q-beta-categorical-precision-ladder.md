@@ -70,18 +70,24 @@ The ladder is a **convergent series**: $N$ is a *truncation order*
 chosen by the target precision, not a discrete "wire/don't-wire"
 canonicity gate. The ladder step is
 
-$$u \;=\; b\,\hbar_q^2 \;\approx\; 0.00852, \qquad
-  \frac{1}{u} \approx 117, \qquad \log_{10}\!\frac{1}{u} \approx 2.07,$$
+$$
+u \;=\; b\,\hbar_q^2 \;\approx\; 0.00852, \qquad
+  \frac{1}{u} \approx 117, \qquad \log_{10}\!\frac{1}{u} \approx 2.07,
+$$
 
 so **each rung gains $\approx 2.07$ decimal digits**. The truncation
 error after $N$ rungs is the standard first-dropped-term bound
 
-$$\varepsilon_N \;\approx\; \bigl|c_{N+1}\,u^{N+1}\bigr|,$$
+$$
+\varepsilon_N \;\approx\; \bigl|c_{N+1}\,u^{N+1}\bigr|,
+$$
 
 and the required order for relative precision $\varepsilon$ is
 
-$$N \;\geq\; \frac{\log_{10}(1/\varepsilon)}{\log_{10}(1/u)} - 1
-  \;\approx\; \frac{\log_{10}(1/\varepsilon)}{2.07} - 1.$$
+$$
+N \;\geq\; \frac{\log_{10}(1/\varepsilon)}{\log_{10}(1/u)} - 1
+  \;\approx\; \frac{\log_{10}(1/\varepsilon)}{2.07} - 1.
+$$
 
 | target | $N$ required |
 |---|---|
