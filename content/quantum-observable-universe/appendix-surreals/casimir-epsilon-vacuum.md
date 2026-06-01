@@ -189,7 +189,19 @@ refuted.
 
 The standard-physics value of $\pi^{2}/240$ (Casimir 1948) is
 verified experimentally to $\sim 1\%$ (Mohideen–Roy 1998,
-Lamoreaux 1997), so the QOU prediction is unambiguous.
+Lamoreaux 1997). The QOU leading term reproduces it exactly, so
+this is a **consistency check** the framework passes within the
+$\sim 1\%$ window — *not* a measurement that discriminates QOU from
+standard QED, since both predict the textbook force. The
+substrate-distinctive signal is the interacting-mode $1/d^{6}$
+correction (relative size $\sim\alpha\,\lambda_C/d \approx 10^{-8}$),
+which is swamped by finite-conductivity, thermal, and roughness
+corrections by $\sim 10^{6}$–$10^{8}$ and is therefore not
+experimentally accessible at present. The framework's live
+falsification leverage is cross-sector: the same substrate $q_0$
+(fixed by $\mathrm{Vol}(4_1)$ in $m_p/m_e$) is tested against
+CODATA/PDG-precision mass and decay observables. See the
+[operative-bar status audit](../../../docs/audits/2026-06-01-casimir-operative-bar-status.md).
 
 A *weaker* partial test: if the $1/d^{4}$ scaling is recovered
 but the prefactor differs, the conjecture is refined rather than
@@ -202,11 +214,14 @@ transported.
 
 Three reasons:
 
-1. **Quantitative test of the $\varepsilon$-vacuum axiom.** The
-   Casimir effect is the cleanest experimental probe of
-   vacuum-energy structure. If QOU's $\varepsilon$-vacuum
-   reproduces it, [`conj:vacuum-epsilon`](#conj:vacuum-epsilon)
-   gains empirical traction. If not, the relaxation is wrong.
+1. **Consistency test of the $\varepsilon$-vacuum axiom.** The
+   Casimir effect is a clean *theoretical* setting for the
+   $\varepsilon$-vacuum construction: reproducing the textbook
+   force shows the relaxation is compatible with established
+   physics ([`conj:vacuum-epsilon`](#conj:vacuum-epsilon)). It is a
+   consistency check rather than a discriminating measurement (the
+   substrate-distinctive signal is experimentally inaccessible; see
+   the Falsification-path note above).
 
 2. **Cosmological-constant heuristic.** The same
    "$\omega \cdot \varepsilon = $ finite" mechanism that drives
