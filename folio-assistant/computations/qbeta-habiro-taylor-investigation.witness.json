@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:44:43.126261+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:59:04.204764+00:00",
+  "commitSha": "9f08d137d80e43015278a76e2f6177873d9dc461",
   "assertions": [
     {
       "name": "symbolic_delta_tr_loaded",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1625,
+  "durationMs": 1639,
   "computation": "qbeta-habiro-taylor-investigation",
   "scriptFile": "qbeta_habiro_taylor_investigation.py",
   "scriptHash": "bdb80fe836c3",
   "scriptCommitSha": "5819aebcd4c91c5e7b76de98b9d44eabbb822bab",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:29:53.376685+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:44:11.724666+00:00",
+  "commitSha": "9f08d137d80e43015278a76e2f6177873d9dc461",
   "assertions": [
     {
       "name": "dominant_partition_obstruction_tracks_binding_gap",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "alpha-star-vs-binding-gap",
   "scriptFile": "alpha_star_vs_binding_gap.py",
   "scriptHash": "61e1f4aafcff",
   "scriptCommitSha": "55ea517d29ec84a52377b36db1033d83be2f00de",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
