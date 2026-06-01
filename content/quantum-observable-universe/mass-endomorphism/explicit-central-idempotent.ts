@@ -11,7 +11,10 @@ export default proposition({
   uses: [
     "prop:jucys-murphy-central-elements-qou",
     "prop:hecke-baer-star-generic",
-    "conj:bring-figure-eight-depth-2-witness",
+    // conj:bring-figure-eight-depth-2-witness removed from uses[]
+    // (2026-06-01 detangler Bucket-A): referenced only as numerical
+    // corroboration ("verified numerically in (…)"), not a dependency
+    // the idempotent construction builds on. Prose link retained.
   ],
   cites: [],
   tags: [
