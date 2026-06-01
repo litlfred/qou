@@ -1,12 +1,12 @@
 {
   "$schema": "q-usage-audit/v1",
   "description": "Per-block q-usage regime audit + chapter-mismatch sweep",
-  "audited_at": "2026-06-01T15:11:37.208Z",
+  "audited_at": "2026-06-01T16:06:38.106Z",
   "script": "content/pipeline/qa-checkers-q-usage.ts",
   "script_hash": "93cae3264dc7",
   "n_blocks": 1936,
   "n_chapters": 31,
-  "n_fails": 25,
+  "n_fails": 23,
   "n_warns": 532,
   "by_chapter": {
     "appendix-atomic-mass-calculations": {
@@ -394,14 +394,14 @@
           "n/a": 0
         },
         "q-usage-fixed-q0-leak": {
-          "pass": 70,
-          "fail": 1,
+          "pass": 71,
+          "fail": 0,
           "warn": 0,
           "n/a": 0
         },
         "q-usage-archimedean-in-categorical-chapter": {
-          "pass": 63,
-          "fail": 8,
+          "pass": 64,
+          "fail": 7,
           "warn": 0,
           "n/a": 0
         },
@@ -436,7 +436,7 @@
         "symbolic": 40,
         "generic-R": 6,
         "root-of-unity": 7,
-        "fixed-q0": 4
+        "fixed-q0": 3
       }
     },
     "brings-surface": {
@@ -1893,24 +1893,6 @@
       "result": "fail",
       "severity": "major",
       "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:70 — archimedean Real.* in categorical chapter — (1 / Complex.ofReal (Real.sqrt 5)) * ∑ j : Fin 5, ζ ^ (k.val * j.val) * x j"
-    },
-    {
-      "label": "prop:meson-em-sinh-closed-form",
-      "kind": "proposition",
-      "chapter": "braids-and-knots",
-      "criterion": "q-usage-fixed-q0-leak",
-      "result": "fail",
-      "severity": "major",
-      "evidence": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md:54 — multiplied by $(3 q^2 - 1)/(2 q^2)$. At the substrate value $q_0$"
-    },
-    {
-      "label": "prop:meson-em-sinh-closed-form",
-      "kind": "proposition",
-      "chapter": "braids-and-knots",
-      "criterion": "q-usage-archimedean-in-categorical-chapter",
-      "result": "fail",
-      "severity": "major",
-      "evidence": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md:55 — MeV/CODATA reference in categorical chapter — this matches the PDG ratio to $+0.056 \\;\\mathrm{ppm}$ — see audit"
     },
     {
       "label": "prop:meson-qcg-fusion-identity",

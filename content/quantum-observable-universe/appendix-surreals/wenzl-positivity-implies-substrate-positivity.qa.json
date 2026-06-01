@@ -26,8 +26,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "notes": "{\"regimes\":[\"fixed-q0\",\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"appendix-surreals\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
       }
     ],
@@ -44,8 +44,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/appendix-surreals/wenzl-positivity-implies-substrate-positivity.md:68 — The QOU substrate parameter $q_0 \\approx 1.10998$ lies in the second"
       }
@@ -63,8 +63,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -80,8 +80,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -97,8 +97,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -114,8 +114,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-surreals/wenzl-positivity-implies-substrate-positivity.md:16 — root-of-unity construction used without explicit regime declaration — fusion categories among the q-deformed semisimple ones — implies the"
       }
@@ -133,10 +133,10 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ]
   },
-  "updated_at": "2026-06-01T15:11:37.208Z"
+  "updated_at": "2026-06-01T16:06:38.106Z"
 }

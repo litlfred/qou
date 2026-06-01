@@ -1568,8 +1568,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "notes": "{\"regimes\":[\"root-of-unity\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
@@ -1585,8 +1585,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -1601,8 +1601,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -1617,8 +1617,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1633,8 +1633,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -1649,8 +1649,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/braid-base-field.md:17 — root-of-unity construction used without explicit regime declaration — persists on the fusion category"
       }
@@ -1667,12 +1667,12 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T15:11:37.208Z",
-        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
+        "reviewed_at": "2026-06-01T16:06:38.106Z",
+        "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/braid-base-field.md:1 — detected regime [root-of-unity] is disjoint from chapter 'braids-and-knots' expected [generic-R, mod-gt-1, mod-lt-1, na, real-positive, symbolic]"
       }
     ]
   },
-  "updated_at": "2026-06-01T15:11:37.208Z"
+  "updated_at": "2026-06-01T16:06:38.106Z"
 }
