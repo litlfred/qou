@@ -29,3 +29,33 @@ The Φ_8² finding lives in the Habiro-witness convention (`include_inter=True`,
 
 - 1ppQ Q_β master: [`docs/coordination/1ppq-qbeta.md`](1ppq-qbeta.md)
 - PR #1579 (merged 2026-06-01): commit [`57b5fa2d3a`](https://github.com/litlfred/qou/commit/57b5fa2d3a) HEAD
+
+## Tracks 1 + 3 follow-up: Φ_8² mechanism investigation (2026-06-01)
+
+After Tracks 1 + 3 jointly established that Φ_8² is convention-invariant and
+universal across atomic-step pairs (NOT strand-doubling), a follow-up probe
+tested the conjecture that Φ_8² arises from the `z(q)²` interface factor.
+
+**Probe:** [`folio-assistant/computations/qbeta_habiro_phi8_squared_from_z_squared_probe.py`](../../folio-assistant/computations/qbeta_habiro_phi8_squared_from_z_squared_probe.py)
+**Audit:** [`docs/audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md`](../audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md)
+
+**Verdict: FROM-POCHHAMMER-BOUNDARY (not z(q)²).**
+
+- `z(q)^k` alone Habiro-expands to a pure monomial `u^k` (NO cyclotomic
+  factor). The Φ_4(u)^k denominator is cleared by `to_u_polynomial` into
+  the normalisation prefactor.
+- The Pochhammer boundaries are `(u;u)_8` (first Φ_8) and `(u;u)_16`
+  (first Φ_8²).
+- The ACTUAL Δa_m prefix sums acquire Φ_8 at M=7 (before the m=8 Pochhammer
+  enters) and Φ_8² at M=12 (D−n) or M=15 (helium pairs). The pre-m=8 Φ_8
+  appearance is a **structural Δa_m interference signature**, not mechanical
+  boundary behaviour.
+- The proposed "z(q)² → Φ_8²" mechanism in the FALSIFIED audit §Possible
+  re-interpretations option (2) is **WRONG** (there is no u → u² substitution
+  in the pipeline; z(q) = u/(u²+1) directly in u). The audit needs revision
+  to reflect this finding.
+
+The categorical content of the universal Φ_8² Δa_m signature remains
+**open** — neither z(q)^k nor the m=8 Pochhammer boundary alone explains
+its appearance at M=7. Probable next directions: study the Δa_m algebraic
+configuration directly for a categorical witness of `ζ_8 = e^{iπ/4}`.
