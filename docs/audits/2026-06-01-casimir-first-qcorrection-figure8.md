@@ -80,6 +80,36 @@ $$
 — the first q-correction's relative **weight** grows as `(3/4) h²`, i.e.
 `≈ 3.28 %` at q₀. The leading coefficient `3/4` is exact, not fitted.
 
+## The 3/4 is exact algebra, not a fit — Lean-proved
+
+To answer the "sounds like fitting" concern directly: the `3/4` is forced by an
+exact field identity, formalised in
+[`QOU.AppendixSurreals.FigureEightCasimirWeight`](../../content/quantum-observable-universe/lean/QOU/AppendixSurreals/FigureEightCasimirWeight.lean):
+
+```lean
+theorem jones41_three_quarters_cleared (q : ℝ) (hq : q ≠ 0) :
+    (4 * (jones41 q - 1) - 3 * (q - q⁻¹) ^ 2) *
+        ((q - q⁻¹) ^ 2 + 8 + 4 * (q + q⁻¹))
+      = (q - q⁻¹) ^ 4 := by
+  unfold jones41; field_simp; ring
+```
+
+i.e. `4(J−1) − 3h² = h⁴ / (h² + 8 + 4(q+q⁻¹))`, with the remainder denominator
+proved strictly positive for `q > 0` (`jones41_remainder_denom_pos`). The proof
+is `ring` after clearing `q⁻¹` — **there is no fitted constant**; `3/4` is the
+unique coefficient that makes the residual `O(h⁴)`. The identity was first
+checked exactly in rational arithmetic (`LHS − RHS = 0` for all test `q`), then
+discharged by `field_simp; ring`.
+
+**What is fitting-free vs. what is structural input.** The `3/4` *given* the
+weight `J_{4_1}` is exact algebra (above). What is *not* algebra is the
+**identification** of `J_{4_1}` as the first-correction weight — that rests on
+the physical chain: Casimir = free field ⇒ leading disjoint-unknot count (q-free,
+grounded in QOU's photon representation, PR #1596); first interacting correction
+= first hyperbolic braided mode = `4_1`, weighted by its Markov trace. That chain
+is a structural derivation, not a fit, but it is not itself a Lean theorem — it
+is the modelling content the conjecture still rests on.
+
 (Note: the same `3/4` appeared in the original ξ_2 source survey as Source A
 [`linking_weight_A = 5/2 + 3h²/4`]. There it was *not applicable* to the
 **leading** Casimir term, because that term is built from **disjoint** unknots
