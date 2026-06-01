@@ -55,9 +55,20 @@ Per-process overrides (useful in CI / sanity checks)::
 CONSTANTS
 ---------
 
-  COMPUTE_DPS_DEFAULT   = 50   (mp.mp.dps target)
-  OUTPUT_DPS_DEFAULT    = 40   (serialization precision)
+  COMPUTE_DPS_DEFAULT   = 70   (mp.mp.dps target)
+  OUTPUT_DPS_DEFAULT    = 60   (serialization precision)
   PRECISION_GUARD_DEFAULT = 10 (COMPUTE = OUTPUT + GUARD)
+
+  2026-05-31 (PR #1595 via 1ppq-qbeta queue probe-precision-headroom-bump):
+  Bumped from 50/40/10 → 70/60/10. Rationale: 1 ppQ target (10⁻¹⁵)
+  requires only 15 dps; previous defaults (65/50/15) already gave
+  35 orders of magnitude headroom. New 70/60/10 gives 45 orders of
+  magnitude headroom — pure future-proofing for sub-ppQ precision
+  goals (1 part per quintillion = 10⁻¹⁸ → N ≥ log₁₀(10¹⁸)/2.07 − 1 ≈ 8
+  rungs of the Q_β ladder, per qbeta_ck_truncation_order_analysis.py).
+  Existing witnesses do NOT need regen — they remain mathematically
+  valid at 50 dps. Future witnesses pick up the new defaults
+  organically as scripts re-run.
 """
 from __future__ import annotations
 
@@ -66,9 +77,12 @@ from typing import Any
 from mpmath import mp, mpf
 
 # ── Defaults ────────────────────────────────────────────────────
-PRECISION_GUARD_DEFAULT: int = 15
-OUTPUT_DPS_DEFAULT: int = 50
-COMPUTE_DPS_DEFAULT: int = OUTPUT_DPS_DEFAULT + PRECISION_GUARD_DEFAULT  # 65
+# Bumped 2026-05-31 (PR #1595): 50→60 output, 65→70 compute. See
+# top-of-file note. Existing witnesses don't need regen; new ones
+# pick up the higher precision organically.
+PRECISION_GUARD_DEFAULT: int = 10
+OUTPUT_DPS_DEFAULT: int = 60
+COMPUTE_DPS_DEFAULT: int = OUTPUT_DPS_DEFAULT + PRECISION_GUARD_DEFAULT  # 70
 
 # ── Environment overrides ───────────────────────────────────────
 def _env_int(key: str, default: int, minimum: int = 1) -> int:
