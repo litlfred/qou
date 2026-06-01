@@ -1,15 +1,27 @@
 /-!
-# Cyclotomic strand-doubling identity
+# Cyclotomic doubling identity Φ_8(X) = Φ_4(X²)
 
-The key algebraic identity `Φ_8(X) = Φ_4(X²)` underlying the proposed
-categorical interpretation of the `Φ_8² = (u^4+1)²` factor in the
-(D − n) Habiro element factorization (PR #1579,
-`docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md`).
+The key algebraic identity `Φ_8(X) = Φ_4(X²)` over ℤ[X]. This is a
+true and useful cyclotomic-polynomial composition identity (proved
+without `sorry` in `cyclotomic_8_eq_cyclotomic_4_comp_X_sq` below).
 
-Categorical content: `X → X²` is the strand-doubling map; it lifts
-the 2-strand B_2 representation (carrying `Φ_4(X) = X² + 1` in the
-single-nucleon denominator) to the 4-strand B_4 representation
-(carrying `Φ_8(X) = X^4 + 1` in the deuteron Habiro element).
+**Empirical context.** The factor `Φ_8(u)² = (u^4 + 1)²` appears
+as a cyclotomic prefactor in every atomic-step Habiro element
+`Σ_m Δa_m(X − Y) · (u; u)_m` tested: (D − n), (³He − D), and
+(⁴He − ³He). The factor is convention-invariant (appears in both
+`include_inter=True` habiro-witness and Phase 5q canonical
+conventions). The most likely algebraic origin is the `z(q)²`
+interface factor in the Phase 5q closed forms.
+
+**Historical note.** An earlier interpretation conjectured a
+strand-doubling categorical chain
+`Φ_{2^{k+1}}(X) = Φ_{2^k}(X²)` predicting `Φ_16` and `Φ_32` for
+A=2→3 and A=3→4 atomic steps. **This prediction was refuted**
+(PR #1618, see `docs/audits/2026-06-01-qbeta-habiro-strand-doubling-FALSIFIED.md`):
+all three atomic-step pairs carry `Φ_8²`, not the predicted
+doubling chain. The algebraic identity proved here remains valid;
+the categorical interpretation as "atomic-step strand-doubling"
+was wrong.
 
 ## References
 
