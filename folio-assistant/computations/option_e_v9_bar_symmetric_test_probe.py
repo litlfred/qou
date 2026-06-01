@@ -17,12 +17,13 @@ This is a discipline violation per the framework's bar-symmetrization
 prop. This probe replaces (1+q)/2 with bar-symmetric candidates and
 reports whether the 0.11% closure survives.
 
-CANDIDATES TESTED:
+CANDIDATES TESTED (in code order):
   C1: (1+q)/2          — original v9 (bar-asymmetric, baseline)
   C2: (2 + [2]_q)/4    — bar-symmetric average: ((1+q) + (1+q⁻¹))/4
   C3: √((2+[2]_q)/4)   — bar-modulus: √((1+q)/2 · (1+q⁻¹)/2)
   C4: [2]_{q^(1/2)}/2  — bar-symmetric, half-q
-  C5: ([2]_{q^(1/2)})²/4 = (2+[2]_q)/4 — same as C2
+  C5: (2 + [2]_q)/2    — bar-symmetric, 2× C2
+  C6: [2]_{q^(1/2)}    — bar-symmetric, 2× C4
 
 VERDICTS:
   - If a bar-symmetric form matches the 0.11% closure: v9 was secretly
@@ -70,7 +71,7 @@ def main() -> int:
         "per PR #1643's bar-symmetrization audit."
     )
     builder.set_audit_only(
-        "docs/audits/2026-06-01-option-e-v9-bar-symmetric-test.md"
+        "docs/audits/2026-06-01-bar-symmetric-discipline-tests.md"
     )
 
     q = q_at()
@@ -96,11 +97,17 @@ def main() -> int:
     print(f"bar-symmetric? {is_bar_symmetric}")
     print()
 
-    # The v8 base (before (1+q)/2) gives 0.7232 MeV per the audit
-    # The empirical target is 0.7637 MeV
-    # So the required correction is 0.7637 / 0.7232 = 1.0560
-    v8_base_MeV = mp.mpf("0.7232")
-    target_MeV = mp.mpf("0.7637")
+    # v8_base is the v9-PRIOR framework prediction (before (1+q)/2),
+    # an upstream PROBE INPUT — not a CODATA constant; carried over from
+    # the Option-E master ledger v8 row (PR #1594).
+    # The target B_T - B_³He = 8.4817983 - 7.7180428 = 0.7637555 MeV
+    # is derived from AME 2020 isotope binding values (³H, ³He).
+    # (AME isotope bindings are not yet centralized in
+    # experimental_constants.py; if/when added, swap these literals.)
+    v8_base_MeV = mp.mpf("0.7232")  # PROBE INPUT from v8 audit
+    B_T_AME_MeV = mp.mpf("8.4817983")    # AME 2020 ³H binding
+    B_He3_AME_MeV = mp.mpf("7.7180428")  # AME 2020 ³He binding
+    target_MeV = B_T_AME_MeV - B_He3_AME_MeV
     required_factor = target_MeV / v8_base_MeV
 
     print(f"v8_base = {fmt(v8_base_MeV)} MeV")
