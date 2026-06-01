@@ -37,13 +37,16 @@ WHAT THIS PROBE COMPUTES (no fitting; exact symbolic where possible):
      only the first d Habiro modes — a clean finite "Fourier coefficient"
      of the trace. We tabulate the per-d truncated values and the
      increments (the contribution of each new mode).
-  3. The q-difference residual: r_d(q) = tr_M(q) − tr_M(ζ_d·q-analog),
-     i.e. how far the d-mode truncation is from the full trace, to
-     quantify the convergence the q-difference equation governs.
+  3. Pole detection at each ζ_d: where the Habiro denominator D(u)
+     vanishes while the numerator does not, the trace has a genuine pole
+     (reported as POLE, not nan) — a structural singularity of the
+     q-difference equation. Checked symbolically per root of unity.
   4. The bar-symmetry decomposition (σ_q at d=2 is the bar involution
-     q ↦ q⁻¹): split Δtr_M into bar-even / bar-odd parts. PR #1602's
-     finding (f must CANCEL an odd-order u¹ term) predicts the physical
-     content is the BAR-EVEN part — tested here directly.
+     q ↦ q⁻¹, exact since u = √q): split Δtr_M into bar-even / bar-odd
+     parts and report their FULL Laurent leading orders (the bar map
+     u↦1/u makes both parts Laurent, with poles at u=0). PR #1602's
+     finding (f must CANCEL an odd-order term) predicts the physical
+     content is the BAR-EVEN sector — located here.
 
 DISCIPLINE (CLAUDE.md §7b, canonical-derivation, ck-tiered-not-binary):
 no fitting. Every quantity is an exact function of the witness-cited
@@ -131,7 +134,8 @@ def main() -> int:
     n_atom = wit["results"]["n (neutron, A=1)"]
     M = max(int(c["m"]) for c in p_atom["habiro_coefficients"])
 
-    u = sp.Symbol("u")
+    u = sp.Symbol("u")  # Habiro half-twist u = q^{1/2} (NOT ladder b·ℏ²;
+    #                     see notation-collisions.md §u registration)
     trM_p = habiro_trM_symbolic(p_atom, u)
     trM_n = habiro_trM_symbolic(n_atom, u)
     dtrM = sp.cancel(trM_n - trM_p)
@@ -165,33 +169,44 @@ def main() -> int:
     print("  ROOT-OF-UNITY SPECTRUM  (ζ_d = e^{2πi/d}; modes m<d survive):")
     print(f"  {'d':>3} {'#modes':>7} {'|tr_M(p)|':>14} {'|tr_M(n)|':>14} "
           f"{'|Δtr_M|':>14}")
+    # truncated Habiro sum keeping only m < d, cancelled (lifted out of
+    # the loop — Copilot review #1622: avoid per-iteration closure over d).
+    def trunc_expr(atom: dict, d: int) -> sp.Expr:
+        D = sp.sympify(atom["denom_in_u"], locals={"u": u})
+        tot = sp.Integer(0)
+        for c in atom["habiro_coefficients"]:
+            if int(c["m"]) < d:
+                a_m = sp.sympify(c["a_m"], locals={"u": u})
+                tot += a_m * q_pochhammer_sym(u, int(c["m"]))
+        return sp.cancel(tot / D)
+
     spectrum = []
     poles = []
     for d in range(2, M + 1):
         zeta = sp.exp(sp.I * 2 * sp.pi / d)
-        # truncated Habiro sum keeping only m < d (the surviving modes)
-        def trunc_expr(atom):
-            D = sp.sympify(atom["denom_in_u"], locals={"u": u})
-            tot = sp.Integer(0)
-            for c in atom["habiro_coefficients"]:
-                if int(c["m"]) < d:
-                    a_m = sp.sympify(c["a_m"], locals={"u": u})
-                    tot += a_m * q_pochhammer_sym(u, int(c["m"]))
-            return sp.cancel(tot / D)
-
-        # Detect a genuine pole: D(ζ_d)=0 while numerator ≠ 0 ⇒ real pole
-        # of the trace at that root of unity (not a numerical nan).
-        Dp = sp.sympify(p_atom["denom_in_u"], locals={"u": u}).subs(u, zeta)
-        is_pole = sp.simplify(Dp) == 0
-        if is_pole:
+        # Robust pole detection: build the CANCELLED truncated rationals
+        # for BOTH p and n, then check whether either simplified
+        # denominator vanishes at ζ_d (Copilot review #1622 — checking the
+        # raw denominator alone can misclassify when num/den share a
+        # cancelable factor at ζ_d).
+        ep = trunc_expr(p_atom, d)
+        en = trunc_expr(n_atom, d)
+        den_p = sp.denom(ep)
+        den_n = sp.denom(en)
+        pole_p = sp.simplify(den_p.subs(u, zeta)) == 0
+        pole_n = sp.simplify(den_n.subs(u, zeta)) == 0
+        if pole_p or pole_n:
+            which = "p&n" if (pole_p and pole_n) else ("p" if pole_p else "n")
             poles.append(d)
             print(f"  {d:>3} {d:>7} {'POLE':>14} {'POLE':>14} {'POLE':>14}"
-                  f"   (D(ζ_{d})=0; genuine trace pole)")
+                  f"   (cancelled denom({which})=0 at ζ_{d}; genuine pole)")
             spectrum.append({"d": d, "surviving_modes": d, "pole": True,
-                             "note": f"D(ζ_{d})=0 — genuine pole of tr_M"})
+                             "pole_sector": which,
+                             "note": (f"cancelled denominator({which})=0 at "
+                                      f"ζ_{d} — genuine pole of tr_M")})
             continue
-        tp = complex(sp.N(trunc_expr(p_atom).subs(u, zeta), 30))
-        tn = complex(sp.N(trunc_expr(n_atom).subs(u, zeta), 30))
+        tp = complex(sp.N(ep.subs(u, zeta), 30))
+        tn = complex(sp.N(en.subs(u, zeta), 30))
         dd = tn - tp
         spectrum.append({
             "d": d, "surviving_modes": d, "pole": False,
@@ -220,22 +235,33 @@ def main() -> int:
     dtrM_bar = dtrM.subs(u, 1 / u)
     dtrM_even = sp.cancel((dtrM + dtrM_bar) / 2)
     dtrM_odd = sp.cancel((dtrM - dtrM_bar) / 2)
-    # leading u-orders of each part near u=0
+    # The bar map u ↦ 1/u makes both parts LAURENT in u (negative powers
+    # present). Report the leading order over the FULL Laurent range,
+    # including poles at u=0 — scanning only n≥0 would mis-report the
+    # leading order (Copilot review #1622: the even part has 1/u³ terms).
+    def laurent_leading_order(expr: sp.Expr) -> int | None:
+        ex = sp.cancel(expr)
+        num, den = sp.fraction(ex)
+        num_p = sp.Poly(sp.expand(num), u)
+        den_p = sp.Poly(sp.expand(den), u)
+        if num_p.is_zero:
+            return None
+        # leading (lowest) Laurent order = min-degree(num) − min-degree(den)
+        num_lo = min(m[0] for m in num_p.monoms())
+        den_lo = min(m[0] for m in den_p.monoms())
+        return num_lo - den_lo
+    even_lead = laurent_leading_order(dtrM_even)
+    odd_lead = laurent_leading_order(dtrM_odd)
+    # Display the genuine Laurent series (with poles) for transparency.
     eps = sp.Symbol("eps")
-    even_series = sp.series(dtrM_even.subs(u, eps), eps, 0, 4).removeO()
-    odd_series = sp.series(dtrM_odd.subs(u, eps), eps, 0, 4).removeO()
+    even_disp = sp.series(dtrM_even.subs(u, eps), eps,
+                          0, 4) if even_lead is None or even_lead >= 0 \
+        else dtrM_even
     print("  BAR-SYMMETRY SPLIT of Δtr_M (σ_q at d=2 = bar involution):")
-    print(f"    bar-EVEN part, leading u-series:  {even_series}")
-    print(f"    bar-ODD  part, leading u-series:  {odd_series}")
-    even_lead = None
-    odd_lead = None
-    for n_ord in range(0, 6):
-        if even_lead is None and sp.simplify(even_series.coeff(eps, n_ord)) != 0:
-            even_lead = n_ord
-        if odd_lead is None and sp.simplify(odd_series.coeff(eps, n_ord)) != 0:
-            odd_lead = n_ord
-    print(f"    bar-EVEN leading order: u^{even_lead};  "
-          f"bar-ODD leading order: u^{odd_lead}")
+    print(f"    bar-EVEN part = [Δtr_M(u)+Δtr_M(1/u)]/2  (Laurent in u)")
+    print(f"    bar-ODD  part = [Δtr_M(u)−Δtr_M(1/u)]/2")
+    print(f"    bar-EVEN leading Laurent order: u^({even_lead});  "
+          f"bar-ODD leading Laurent order: u^({odd_lead})")
     print()
 
     print("=" * 78)
@@ -258,7 +284,8 @@ def main() -> int:
       at the 4th root of unity — a structural feature, not an artifact.
 
   • Bar-symmetry split (u = √q, so bar = q↦q⁻¹ exactly): Δtr_M's
-    bar-EVEN part leads at u^{even_lead}, bar-ODD at u^{odd_lead}.
+    bar-EVEN part leads at Laurent order u^({even_lead}), bar-ODD at
+    u^({odd_lead}) — both Laurent (poles at u=0), not Taylor.
     Bar-even = charge-conjugation-symmetric = physical. PR #1602 found
     the scaling map f must be a cancellation (bar-even) construction;
     this identifies which symmetry sector carries Δtr_M's content.
@@ -288,10 +315,13 @@ def main() -> int:
                       "structural feature of the q-difference equation."),
     })
     builder.add_data("bar_symmetry_split", {
-        "even_leading_order": int(even_lead) if even_lead is not None else None,
-        "odd_leading_order": int(odd_lead) if odd_lead is not None else None,
-        "even_series": str(even_series),
-        "odd_series": str(odd_series),
+        "even_leading_laurent_order": int(even_lead) if even_lead is not None else None,
+        "odd_leading_laurent_order": int(odd_lead) if odd_lead is not None else None,
+        "laurent_note": ("orders are FULL Laurent (negative powers / poles "
+                         "at u=0 included); bar map u↦1/u makes both parts "
+                         "Laurent, not Taylor"),
+        "even_expr": str(sp.cancel(dtrM_even)),
+        "odd_expr": str(sp.cancel(dtrM_odd)),
         "interpretation": ("bar-even = charge-conjugation-symmetric = "
                            "physical; the mechanism that cancels the "
                            "odd-order u¹ term PR #1602 identified in f"),

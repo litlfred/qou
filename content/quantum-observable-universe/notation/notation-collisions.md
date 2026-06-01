@@ -84,6 +84,33 @@ paper to keep them disambiguated:
   representation. **Never** use $t$ for $q^{1/2}$ either ($t$ is
   the standard knot-polynomial variable in $V_K(t)$, and $t$ is
   also reserved for time-like usage).
+- **$u$** = **two distinct objects historically conflated in Python
+  compute scripts** (registered 2026-06-01 after
+  [`habiro_q_difference_fourier.py`](../../../folio-assistant/computations/habiro_q_difference_fourier.py)
+  caught the collision producing a $5\times10^{38}$ error from the
+  wrong substitution). They are **not interchangeable**:
+    - **Habiro $u = q^{1/2}$** — the half-twist variable in the Habiro
+      ring expansion $\mathrm{tr}_M = \sum_m a_m(u)\,(u;u)_m / D(u)$,
+      $a_m \in \mathbb{Z}[u]$. This is *numerically equal to the
+      registered spinor rate $r = q^{1/2}$* (§above); the two names
+      coexist because $u$ is the established symbol in the Habiro /
+      cyclotomic-completion literature (Habiro 2002) while $r$ is the
+      QOU spinor-rate name. At $q_0 \approx 1.110$, $u = \sqrt{q_0}
+      \approx 1.054$.
+    - **Ladder $u_{\text{ladder}} = b\,\hbar_q^2$** — the $Q_\beta$
+      precision-ladder step variable, $Q_\beta = Q_{\text{base}}
+      \prod_k (1 + c_k\,u_{\text{ladder}}^k)$, with $b$ the Hoefsmit
+      coupling and $\hbar_q = (q-1)/q$. At $q_0$, $u_{\text{ladder}}
+      \approx 0.00852$ — **three orders of magnitude smaller** than the
+      Habiro $u$, so silent substitution of one for the other is a
+      catastrophic error, not a small drift.
+  **Discipline:** any compute script using $u$ must name which one in a
+  comment at definition (`u = sqrt(q)  # Habiro half-twist` vs
+  `u_ladder = b*hbar**2  # Q_β ladder step`). When both appear in one
+  script, the ladder variable **must** be spelled `u_ladder` (never
+  bare `u`). 15 scripts use the Habiro $u$, 14 use the ladder $u$ as of
+  this registration; mixing them without the explicit name is a
+  registered audit flag.
 - **$\ell$** = Wenzl principal-specialisation length (number of
   points in $s_\lambda(1, q^2, \ldots, q^{2(\ell-1)})$). **Renamed
   from $r_W$** to free $r$ for the spinor rate. Old code/docs
