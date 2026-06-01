@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T01:50:13.644182+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:08:39.042576+00:00",
+  "commitSha": "65cf6e95d64afe752a5327a4ed998035cce71edf",
   "assertions": [
     {
       "name": "abs_det_product_eq_1[6_x_1_1_1_1_1_1]",
@@ -81,16 +81,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 37598,
+  "durationMs": 35665,
   "computation": "beta-ew-delta-I-conjugate-pairing",
   "scriptFile": "beta_ew_delta_I_conjugate_pairing.py",
   "scriptHash": "52353e2a6a7f",
   "scriptCommitSha": "3a2ae913a4e25f689392e628cc271c5014695bff",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

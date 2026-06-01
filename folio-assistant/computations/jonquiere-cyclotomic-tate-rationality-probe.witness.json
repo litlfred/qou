@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:34:58.490961+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:53:23.772541+00:00",
+  "commitSha": "65cf6e95d64afe752a5327a4ed998035cce71edf",
   "assertions": [
     {
       "name": "jonquiere_master_identity_all_K_n",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 236,
+  "durationMs": 187,
   "computation": "jonquiere-cyclotomic-tate-rationality-probe",
   "scriptFile": "jonquiere_cyclotomic_tate_rationality_probe.py",
   "scriptHash": "6cec9e47e816",
   "scriptCommitSha": "25807e59082c21b3dbde3a6ec05f83a69d252040",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

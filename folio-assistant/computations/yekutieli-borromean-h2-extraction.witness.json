@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:46:58.540278+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:05:26.859604+00:00",
+  "commitSha": "65cf6e95d64afe752a5327a4ed998035cce71edf",
   "assertions": [
     {
       "name": "kappa_computed",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 20,
   "computation": "yekutieli-borromean-h2-extraction",
   "scriptFile": "yekutieli_borromean_h2_extraction.py",
   "scriptHash": "991df0d5b771",
   "scriptCommitSha": "d15e9a9ff1c5d124bc0672b538decdace48314c8",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

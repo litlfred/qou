@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:46:19.627063+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:04:46.836396+00:00",
+  "commitSha": "65cf6e95d64afe752a5327a4ed998035cce71edf",
   "assertions": [
     {
       "name": "muon_canonical_pin_consistency",
@@ -38,16 +38,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 19,
   "computation": "tau-amphichiral-sdp-probe",
   "scriptFile": "tau_amphichiral_sdp_probe.py",
   "scriptHash": "96bfa119279f",
   "scriptCommitSha": "5abc4272f13364a7e93a8dad2cf432d2a573c52f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
