@@ -60,6 +60,7 @@ export default chapter({
         "trm-hopf-sigma1-sq-closed-form-table1-data",
         "hecke-log-decomposition-table-data",
         "hecke-algebra-from-braiding",
+        "f-bor-borromean-observable",
         "hecke-normal-form",
         "dark-vision-strand-bandwidth",
         "markov-moves-brane-tower",

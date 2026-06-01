@@ -1399,8 +1399,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d",
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
         "notes": "{\"regimes\":[\"fixed-q0\"],\"chapter\":\"appendix-surreals\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
       }
     ],
@@ -1416,8 +1416,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d",
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-hausdorff-comparison.md:31 — At $q_0 = 1.109978595554181\\ldots$ (50 dps): $|\\Delta\\Phi| \\approx 2.76$ per"
       }
@@ -1434,8 +1434,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -1450,8 +1450,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1466,8 +1466,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -1482,8 +1482,8 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d"
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -1498,12 +1498,12 @@
           "id": "q-usage-audit",
           "script_hash": "93cae3264dc7"
         },
-        "reviewed_at": "2026-06-01T14:30:48.589Z",
-        "reviewed_sha": "09d3e3c8b6e90d7a48cc3170e09458499709be4d",
+        "reviewed_at": "2026-06-01T15:11:37.208Z",
+        "reviewed_sha": "ce0d8707118a88d0525040a68a3e3ff1decd3b41",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-hausdorff-comparison.md:1 — detected regime [fixed-q0] is disjoint from chapter 'appendix-surreals' expected [generic-R, na, symbolic]"
       }
     ]
   },
-  "updated_at": "2026-06-01T14:30:48.589Z"
+  "updated_at": "2026-06-01T15:11:37.208Z"
 }

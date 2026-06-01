@@ -11,7 +11,7 @@ identity below; $m_\mu/m_e$ is then a prediction. The muon-anchor
 identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ is the most
 transparent cross-check (CODATA muon ratio, $22\,\mathrm{ppb}$).  The
 proton substrate identity
-([`prop:proton-mass-substrate-identity`](../braids-and-knots/proton-mass-substrate-identity.md))
+([`prop:proton-mass-substrate-identity`](../appendix-qvalues/proton-mass-substrate-identity.md))
 provides an alternative route through a different observable:
 
 $$
