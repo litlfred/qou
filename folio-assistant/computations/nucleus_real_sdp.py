@@ -58,6 +58,11 @@ from murnaghan_nakayama import dim_specht  # noqa: E402
 # To add a nuclide: append (Z, N, chi_source). y_λ is automatic if a Wenzl
 # source for that n exists; otherwise the run reports the missing source.
 NUCLEI = {
+    # A=1 nucleons (n=3, complete H_3 table). χ witnesses carry inline
+    # 50-dps y_λ + χ_λ in `by_partition`, so the bar-fold solve runs with
+    # zero recompute — the smallest shell of the per-nucleus census.
+    "proton":   dict(Z=1, N=0, chi="chi-proton-h3-at-q0-50dps.witness.json"),
+    "neutron":  dict(Z=0, N=1, chi="chi-neutron-h3-at-q0-50dps.witness.json"),
     "deuteron": dict(Z=1, N=1, chi="iterative-lp-dual-h6-deuteron.witness.json"),
     "he3":      dict(Z=2, N=1, chi="chi-helium-3-h9-at-q0-50dps.witness.json"),
     "tritium":  dict(Z=1, N=2, chi="chi-tritium-h9-at-q0-50dps.witness.json"),
