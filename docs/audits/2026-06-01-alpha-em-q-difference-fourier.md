@@ -56,9 +56,10 @@ The spectrum is exact and the cyclotomic-field constants (`√5` at ζ_5,
 
 ## Why α_EM is the clean template
 
-- **`[2]_q = q + q⁻¹` is manifestly bar-symmetric** → `H` is exactly
-  bar-even (witness assertion `alpha_em_habiro_is_exactly_bar_even`). No
-  bar-even extraction needed (unlike Q_β, where `Δtr_M` mixed sectors).
+- **`[2]_q = q + q⁻¹` is manifestly bar-symmetric** → `H` is a fixed
+  point of the bar involution `q↦q⁻¹` (witness assertion
+  `alpha_em_habiro_is_bar_involution_fixed_point`). No bar-even
+  extraction needed (unlike Q_β, where `Δtr_M` mixed sectors).
 - **`H` is a Laurent polynomial (no poles)** → finite, exact
   root-of-unity spectrum. Its h-Taylor recursion `c_k = c_k^{[2]_q} −
   α·c_{k−2}^{[2]_q}` is the mode generator, and the `c_k` are **α-linear
@@ -69,7 +70,7 @@ The spectrum is exact and the cyclotomic-field constants (`√5` at ζ_5,
 
 | | Q_β (PR #1622) | α_EM (this probe) |
 |---|---|---|
-| bar-symmetry | mixed (extract bar-even) | **purely bar-even** |
+| bar-symmetry | mixed (not a bar fixed point) | **bar-involution fixed point** |
 | ζ_4 special value | **POLE** (residue ∓i/2) | **ZERO** |
 | `c_k` stability | q₀-dependent near-matches | q₀-stable α-linear rationals |
 | object type | rational (Δtr_M) | Laurent polynomial |
