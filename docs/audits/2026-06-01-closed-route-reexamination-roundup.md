@@ -217,6 +217,38 @@ when re-classifying any "near-match" residual, ask explicitly:
    `−J · b^k` or `−J_Hopf(q=1) · scaling factor` from H_4 Wedderburn
    data. **Effort: ~1 session.**
 
+   **Update 2026-06-01 — RESULT: NULL.**
+   [`meson_habiro_c3_categorical_search.py`](../../folio-assistant/computations/meson_habiro_c3_categorical_search.py)
+   scanned 40+ natural candidates (integer/rational fractions,
+   Catalan-G variants, b-powers, J·b combinations, q-bracket ratios
+   including the q-deformation `−[5]_q/[7]_q`). Only candidate
+   within 0.5% is the **classical integer fraction −5/7** at 0.103%;
+   the q-deformed `−[5]_q/[7]_q` at q_0 is −0.6846 (off by 4.25%),
+   so the −5/7 hit is at the q=1 limit, NOT a clean Hecke
+   q-deformation. At 50 dps precision a true categorical identity
+   would land below 0.05%; the −5/7 near-match looks empirical, not
+   structural.
+
+   **Implications for the REOPENED status of meson Habiro c=4:** the
+   leading coefficient c_2 = 4 (= J² with J = 2) is still plausibly
+   the right framing, AND the |c_3·u³|/|c_2·u²| = 0.0015 ratio is
+   well within natural truncation bounds — but **no clean categorical
+   identification for c_3 = −0.7156 has been found in the natural
+   q-arithmetic basis**. The route stays REOPENED at
+   **tier=near-match-without-c_k-identification**, parallel to Q_β's
+   pre-Habiro-element state where c_3 = −2 was wired before its
+   Habiro-element categorical home was established.
+
+   Productive follow-up directions:
+   - Wider basis search (continued fractions, Bring-radical-style
+     algebraic numbers, Hopf-link evaluations at different braid
+     words)
+   - Try identifying c_3 as a SUM of two natural quantities
+     (analogous to how m_K/m_π's closure required adding the
+     (3q²−1)/(2q²) EM correction)
+   - Identify the underlying Habiro element (if any) whose Taylor
+     series gives (c_2, c_3) = (4, c_3_unknown) at q=1
+
 2. **Ocneanu integer "12" = dim H_3 · 2 categorical derivation.**
    Tests whether `m_p = 2·m_μ·F_Bor − (2 dim H_3)·m_e` can be
    derived structurally. The integer 12 has 4 natural candidates;
