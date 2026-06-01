@@ -1,8 +1,8 @@
 [
   {
     "id": "research-qbeta-habiro-element",
-    "summary": "Identify the Q_β Habiro element (analog of α_EM `[2]_q · (1-h²α)` from PR #1511)",
-    "comment": "Cross-listed in todos/1ppq-qbeta-queue.json (probe-qbeta-habiro-element-search). 6 mechanisms ruled out per b502b9b83; 1 left = KR/KLR with §7b skeptical prior (0/6 proofs shorten). Per CLAUDE.md §7b audit precedent. The fibre/observable distinction (this session): the Habiro element lives at the fibre level (formal q-deformation, potentially complex Taylor coefficients), evaluated archimedean-ly at real q_0. Untested attack candidates: non-uniform multi-block PRODUCT decomposition; exponentiated per-block; symbolic q-difference solve via sympy; modular bootstrap; Galois descent.",
+    "summary": "Identify the Q_\u03b2 Habiro element (analog of \u03b1_EM `[2]_q \u00b7 (1-h\u00b2\u03b1)` from PR #1511)",
+    "comment": "Cross-listed in todos/1ppq-qbeta-queue.json (probe-qbeta-habiro-element-search). 6 mechanisms ruled out per b502b9b83; 1 left = KR/KLR with \u00a77b skeptical prior (0/6 proofs shorten). Per CLAUDE.md \u00a77b audit precedent. The fibre/observable distinction (this session): the Habiro element lives at the fibre level (formal q-deformation, potentially complex Taylor coefficients), evaluated archimedean-ly at real q_0. Untested attack candidates: non-uniform multi-block PRODUCT decomposition; exponentiated per-block; symbolic q-difference solve via sympy; modular bootstrap; Galois descent.",
     "status": "open",
     "priority": "high",
     "origin": "session-2026-05-31-queue-build",
@@ -11,28 +11,43 @@
       "goal": "1ppq-qbeta",
       "cross_listed": "1ppq-qbeta-queue.json",
       "research_grade": true,
-      "blocks": ["probe-c4-habiro-coefficients", "probe-c5-c7-habiro-coefficients"]
+      "blocks": [
+        "probe-c4-habiro-coefficients",
+        "probe-c5-c7-habiro-coefficients"
+      ]
     }
   },
   {
     "id": "research-phi-q-spectral-combiner",
-    "summary": "Φ_q (Faddeev q-hyperbolic) × spectral (Wedderburn) combined attack on c_k AND Δ_λ",
-    "comment": "USER-PROPOSED 2026-05-31. Each alone is RULED OUT (Φ_q geom tower wrong direction per b502b9b83 mech #3; per-block dim_q² decomp gives -8 not -2 per mech #5; y_λ-weighted SUM doesn't sum to 1 per mech #6). But COMBINED — Φ_q × spectral — has never been tested. Why combined might work: Φ_q has natural normalization (Σ Φ_q(λ) = 1 unlike y_λ); fibre-level Habiro element lives PER Wedderburn block; recombining via Φ_q weights gives a different operator than dim_q² or y_λ. Maps onto the operator-valued branching combiner from CLAUDE.md Subgoal-1. Pre-stated failure signature: matches at proton-pin but not at muon-pin (per fibre/observable distinction).",
-    "status": "open",
+    "summary": "\u03a6_q (Faddeev q-hyperbolic) \u00d7 spectral (Wedderburn) combined attack on c_k AND \u0394_\u03bb",
+    "comment": "DONE (REFUTED) 2026-05-31 by claude/phi-q-spectral-combiner-2026-05-31. CORRECTION: should have been Li_2^q \u00d7 spectral (binding context uses Li_2^q per prop:li2q-phiq-bar-symmetrization), not \u03a6_q \u00d7 spectral. Probe phi_q_spectral_combiner_probe.py tested ONE specific candidate: \u03bc_\u03bb = Li_2^q(-|\u03c7_\u03bb|) / \u03a3 Li_2^q(-|\u03c7_\u03bb'|) as a per-block measure replacing y_\u03bb in the c_3 = \u03a3 \u03bc_\u03bb \u00b7 c_3^(\u03bb) sum. Result: c_3 candidate = -1.7975 vs empirical -2.07 \u2192 REFUTED by 13.1% at q_proton, 10.6% at q_muon. \u03a3 \u03bc_\u03bb = 1 by construction (cures mech #6 normalization defect). Adds as MECHANISM #7 to b502b9b83 ruled-out list. NOTE: this rules out THIS specific Li_2^q-derived measure, not all Li_2^q \u00d7 spectral candidates. Other per-block measures (Li_2^q at dim_q, hook-length sums, etc.) remain untested but would be 7th-ansatz fit-trap if explored without structural justification \u2014 DO NOT proceed without one.",
+    "status": "done",
     "priority": "high",
     "origin": "user-2026-05-31",
     "createdAt": "2026-05-31",
     "data": {
       "goal": "1ppq-qbeta + option-e",
       "research_grade": true,
-      "would_close": ["c_3 through c_7", "Option-E Δ_λ A=3 mirror pair", "potentially A=4 ⁴He"],
-      "concrete_first_step": "compute Φ_q at each Wedderburn block of H_3, verify normalization Σ Φ_q(λ) = 1 at q_proton AND q_muon (must hold at both for fibre-level validity)"
-    }
+      "would_close": [
+        "c_3 through c_7",
+        "Option-E \u0394_\u03bb A=3 mirror pair",
+        "potentially A=4 \u2074He"
+      ],
+      "concrete_first_step": "compute \u03a6_q at each Wedderburn block of H_3, verify normalization \u03a3 \u03a6_q(\u03bb) = 1 at q_proton AND q_muon (must hold at both for fibre-level validity)",
+      "completedAt": "2026-05-31",
+      "completedBy": "claude/phi-q-spectral-combiner-2026-05-31",
+      "verdict": "REFUTED for this specific candidate; combined Li_2^q \u00d7 spectral attack family still has untested variants but those are 7th-ansatz fit-trap territory",
+      "witness": "folio-assistant/computations/phi-q-spectral-combiner-probe.witness.json",
+      "empirical_c3_proton": "-2.0693",
+      "candidate_c3_proton": "-1.7975",
+      "err_pct": 13.14
+    },
+    "assignee": "claude/phi-q-spectral-combiner-2026-05-31"
   },
   {
     "id": "research-one-plus-q-over-two-derivation",
     "summary": "Derive Option-E v9 (1+q)/2 correction factor structurally (or refute)",
-    "comment": "Per docs/coordination/option-e.md PROBE 1. The v9 mirror-pair closure formula B_T − B_³He = m_π · ℏ_q · (1+q)/2 · Σ_λ y_λ · (χ^λ(β_T) + χ^{λᵀ}(β_³He))/2 hits 0.11% accuracy via the (1+q)/2 factor SELECTED from substrate candidates. Per CLAUDE.md discipline: this is a NEAR-MATCH not a derivation. Open question: is (1+q)/2 the principal-specialization half-trace of σ_1 in standard rep? Or the q-deformation of an identity-half weight? Or a Hoefsmit-seminormal-form normalization artefact? Test: derive structurally, then evaluate at multiple q_0 anchors.",
+    "comment": "Per docs/coordination/option-e.md PROBE 1. The v9 mirror-pair closure formula B_T \u2212 B_\u00b3He = m_\u03c0 \u00b7 \u210f_q \u00b7 (1+q)/2 \u00b7 \u03a3_\u03bb y_\u03bb \u00b7 (\u03c7^\u03bb(\u03b2_T) + \u03c7^{\u03bb\u1d40}(\u03b2_\u00b3He))/2 hits 0.11% accuracy via the (1+q)/2 factor SELECTED from substrate candidates. Per CLAUDE.md discipline: this is a NEAR-MATCH not a derivation. Open question: is (1+q)/2 the principal-specialization half-trace of \u03c3_1 in standard rep? Or the q-deformation of an identity-half weight? Or a Hoefsmit-seminormal-form normalization artefact? Test: derive structurally, then evaluate at multiple q_0 anchors.",
     "status": "open",
     "priority": "high",
     "origin": "session-2026-05-31-queue-build",
@@ -41,13 +56,13 @@
       "goal": "option-e",
       "cross_listed": "docs/coordination/option-e.md (PROBE 1)",
       "research_grade": true,
-      "pre_stated_failure_signature": "matches at q_proton but not at q_muon ⟹ another near-match"
+      "pre_stated_failure_signature": "matches at q_proton but not at q_muon \u27f9 another near-match"
     }
   },
   {
     "id": "research-multi-nucleon-interface-operator",
-    "summary": "Multi-nucleon interface operator for A=4 ⁴He binding (mirror-pair fails at A=4)",
-    "comment": "Per audit 2026-05-26-delta-lambda-binding-formula-closure.md: ⁴He has no canonical mirror partner (unlike T/³He pair). The v9 mirror-symmetry collapses at A=4. Per audit: 'A=4 requires the multi-nucleon interface operator, not just the mirror'. Open question: what categorical object plays the role of the mirror for ⁴He? Hypothesis: the H_3 × H_3 interface within H_12 — the operator that joins two D-like substructures. Failed prior: q-factorial ratio (PR #1386 RETRACTED).",
+    "summary": "Multi-nucleon interface operator for A=4 \u2074He binding (mirror-pair fails at A=4)",
+    "comment": "Per audit 2026-05-26-delta-lambda-binding-formula-closure.md: \u2074He has no canonical mirror partner (unlike T/\u00b3He pair). The v9 mirror-symmetry collapses at A=4. Per audit: 'A=4 requires the multi-nucleon interface operator, not just the mirror'. Open question: what categorical object plays the role of the mirror for \u2074He? Hypothesis: the H_3 \u00d7 H_3 interface within H_12 \u2014 the operator that joins two D-like substructures. Failed prior: q-factorial ratio (PR #1386 RETRACTED).",
     "status": "open",
     "priority": "medium",
     "origin": "session-2026-05-31-queue-build",
@@ -55,14 +70,18 @@
     "data": {
       "goal": "mass-sweep-gap",
       "research_grade": true,
-      "blocked_by": ["probe-qbeta-habiro-element-search OR research-phi-q-spectral-combiner"],
-      "anti_patterns": ["q-factorial ratio (PR #1386 retracted)"]
+      "blocked_by": [
+        "probe-qbeta-habiro-element-search OR research-phi-q-spectral-combiner"
+      ],
+      "anti_patterns": [
+        "q-factorial ratio (PR #1386 retracted)"
+      ]
     }
   },
   {
     "id": "research-atom-to-knot-rule-A5plus",
-    "summary": "Atom → knot rule for A ≥ 5 isotopes (currently NO assignment for ⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹⁴N, ¹⁹F)",
-    "comment": "Mass-table sweep shows 6 GAPs at A ∈ {6, 7, 9, 11, 14, 19} — these isotopes have no canonical atom→knot rule. Per `mass-table-ppb.witness.json`. Open question: what extends the deuteron (E₀×q⁻¹) and ⁴He (no canonical) to ⁶Li and beyond? Per CLAUDE.md Subgoal-1: 'per-isotope Borromean-tower extension + operator-valued branching combiner' is the closure path. Each isotope likely needs its own braid word in B_{3A} (A nucleons × 3 strands).",
+    "summary": "Atom \u2192 knot rule for A \u2265 5 isotopes (currently NO assignment for \u2076Li, \u2077Li, \u2079Be, \u00b9\u00b9B, \u00b9\u2074N, \u00b9\u2079F)",
+    "comment": "Mass-table sweep shows 6 GAPs at A \u2208 {6, 7, 9, 11, 14, 19} \u2014 these isotopes have no canonical atom\u2192knot rule. Per `mass-table-ppb.witness.json`. Open question: what extends the deuteron (E\u2080\u00d7q\u207b\u00b9) and \u2074He (no canonical) to \u2076Li and beyond? Per CLAUDE.md Subgoal-1: 'per-isotope Borromean-tower extension + operator-valued branching combiner' is the closure path. Each isotope likely needs its own braid word in B_{3A} (A nucleons \u00d7 3 strands).",
     "status": "open",
     "priority": "medium",
     "origin": "session-2026-05-31-queue-build",
@@ -70,14 +89,23 @@
     "data": {
       "goal": "mass-sweep-gap",
       "research_grade": true,
-      "gaps": ["6Li", "7Li", "9Be", "11B", "14N", "19F"],
-      "blocked_by": ["research-multi-nucleon-interface-operator"]
+      "gaps": [
+        "6Li",
+        "7Li",
+        "9Be",
+        "11B",
+        "14N",
+        "19F"
+      ],
+      "blocked_by": [
+        "research-multi-nucleon-interface-operator"
+      ]
     }
   },
   {
     "id": "research-im-q0-fibre-vs-observable-doc",
     "summary": "Document Im(q_0)=0 (observable) vs Im(q) unconstrained (fibre) distinction in canonical chain",
-    "comment": "User-raised 2026-05-31: Im(q_0) = 0 is verified at the OBSERVABLE / archimedean level (`lusztig_q_0_imaginary_part_zero` assertion); but at the FIBRE / categorical level (formal q-deformation in H_n(q), KZ q-difference equations, complex residues in term6_full_pole_sum.py), q is a complex formal variable. The c_k flip-flop saga and the (1+q)/2 near-match BOTH glossed over this distinction. The Q_β Habiro element search needs to look for a fibre-level element whose archimedean evaluation reproduces the c_k at each anchor — NOT a real formula matching all anchors. Action: add a CLAUDE.md sub-section under the canonical chain cheat sheet making this distinction explicit; update 1ppq-qbeta.md and option-e.md to use the framing.",
+    "comment": "User-raised 2026-05-31: Im(q_0) = 0 is verified at the OBSERVABLE / archimedean level (`lusztig_q_0_imaginary_part_zero` assertion); but at the FIBRE / categorical level (formal q-deformation in H_n(q), KZ q-difference equations, complex residues in term6_full_pole_sum.py), q is a complex formal variable. The c_k flip-flop saga and the (1+q)/2 near-match BOTH glossed over this distinction. The Q_\u03b2 Habiro element search needs to look for a fibre-level element whose archimedean evaluation reproduces the c_k at each anchor \u2014 NOT a real formula matching all anchors. Action: add a CLAUDE.md sub-section under the canonical chain cheat sheet making this distinction explicit; update 1ppq-qbeta.md and option-e.md to use the framing.",
     "status": "open",
     "priority": "medium",
     "origin": "user-2026-05-31",
@@ -85,13 +113,18 @@
     "data": {
       "goal": "framework-discipline",
       "research_grade": false,
-      "files_to_update": ["CLAUDE.md (Canonical derivation chain section)", "docs/coordination/1ppq-qbeta.md", "docs/coordination/option-e.md", "docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md"]
+      "files_to_update": [
+        "CLAUDE.md (Canonical derivation chain section)",
+        "docs/coordination/1ppq-qbeta.md",
+        "docs/coordination/option-e.md",
+        "docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md"
+      ]
     }
   },
   {
     "id": "research-substrate-q0-derivation-DECLINED",
     "summary": "Derivation of substrate q_0 from non-CAL inputs (registered as DECLINED, not for attack)",
-    "comment": "Per CLAUDE.md §Precision goals Subgoal-2: this is RESEARCH-GRADE OUT OF SCOPE. The coordination ledger explicitly declined this 2026-05-08. Listed here so future sessions DO NOT silently attempt it. To unlock: owner reversal required. The 1ppQ-Q_β arm is achievable WITHOUT this (Q_β is a relative quantity, q_0 cancels in the right framing). Absolute masses (m_p, m_n, m_⁴He) at 1ppQ would need this — those stay open at percent level for nuclei, ppm level for m_p individually.",
+    "comment": "Per CLAUDE.md \u00a7Precision goals Subgoal-2: this is RESEARCH-GRADE OUT OF SCOPE. The coordination ledger explicitly declined this 2026-05-08. Listed here so future sessions DO NOT silently attempt it. To unlock: owner reversal required. The 1ppQ-Q_\u03b2 arm is achievable WITHOUT this (Q_\u03b2 is a relative quantity, q_0 cancels in the right framing). Absolute masses (m_p, m_n, m_\u2074He) at 1ppQ would need this \u2014 those stay open at percent level for nuclei, ppm level for m_p individually.",
     "status": "open",
     "priority": "low",
     "origin": "session-2026-05-31-queue-build",
