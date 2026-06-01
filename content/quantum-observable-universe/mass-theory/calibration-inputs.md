@@ -144,9 +144,11 @@ all but three real parameters:
    measurement.
 
 2. **The leptonic mass scale.**  The categorical mass
-   $\mathfrak{m}(\varrho) = |\mathrm{tr}_M(\rho(\beta))|$
+   $\mathfrak{m}(\varrho) = \mathrm{tr}_M(\rho(\beta))$
    ([categorical mass as Markov trace](#prop:categorical-mass-markov))
-   is dimensionless.  Converting to physical units (MeV)
+   is dimensionless (signed at the categorical level;
+   the archimedean specialization at $q_0$ takes the positive
+   observable value by Wenzl positivity for canonical $T_w$).  Converting to physical units (MeV)
    requires one mass measurement.  The electron mass sets this
    scale, analogous to the speed of light $c$ and Planck's
    constant $\hbar$ in the Standard Model.

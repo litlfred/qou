@@ -11,7 +11,7 @@ $$
 Markov-trace closed form*
 
 $$
-  \bigl|\mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)\bigr|
+  \mathrm{tr}_M(\beta_{\mathrm{Bor}}, q)
   \;=\; \frac{4 + h^2 - 3h^4 - h^6}{h^2 + 4}
   \qquad (h := q - q^{-1})
 $$

@@ -41,7 +41,7 @@ the charge--mass duality
    neutron--neutron pairs.
 
 2. **Vertical / fibre** (Markov trace mass):
-   $\mathfrak{m}_{\mathrm{vert}} = |\mathrm{tr}_M^{\mathrm{full}}(\Phi_{\mathrm{mass}})|$.
+   $\mathfrak{m}_{\mathrm{vert}} = \mathrm{tr}_M^{\mathrm{full}}(\Phi_{\mathrm{mass}})$.
 
 3. **Mixed** (vertex operator coupling):
    $\mathfrak{m}_{\mathrm{mix}} = \mathfrak{E}_{\mathrm{cross}} \cdot (q - 1)^2$.

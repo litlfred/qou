@@ -57,7 +57,7 @@ exactly the descended Markov trace:*
 $$
   \bigl\langle \mathrm{tr}_M,\ E_\infty^{0, *}(T_w) \bigr\rangle
   \;=\;
-  |\mathrm{tr}_M(T_w)|.
+  \mathrm{tr}_M(T_w).
 $$
 
 *This is **Term 1** of the mass formula

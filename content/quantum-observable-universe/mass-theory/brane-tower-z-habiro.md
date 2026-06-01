@@ -119,7 +119,7 @@ uniform-depth probe
 sweeping $k \in \{1, 2, 3, 4, 5, 6, 8, 10\}$ uniformly across
 $\{D, T, {}^3\mathrm{He}\}$ shows:
 
-1. **The absolute formula** $B = m_e \cdot \rho \cdot (|\mathrm{tr}_M(T_w)| + \mathrm{tower}^{(k)} + \sigma_{3A})$
+1. **The absolute formula** $B = m_e \cdot \rho \cdot (\mathrm{tr}_M(T_w) + \mathrm{tower}^{(k)} + \sigma_{3A})$
    overshoots at every uniform $k$ — errors grow monotonically with
    $k$ ($+775\%$ at $k=1$, $+1.27 \times 10^6\,\%$ at $k=10$). No
    uniform absolute-form $k$ closes the gap.
@@ -169,7 +169,7 @@ The conjecture is **falsifiable** by computation:
 2. Compute $\pi_{n_\star(\mathfrak{H})}^{(z)}(\widetilde{\Phi}^{(N)})$
    at $q_0$ for each isotope in the AME light-isotope sample
    $\{D, T, {}^3\mathrm{He}\}$.
-3. Form $B(\mathfrak{H}) = m_e \cdot \rho \cdot (|\mathrm{tr}_M(T_w)| + \mathrm{tower}(\mathfrak{H}) + \sigma_{3A})|_{q_0}$.
+3. Form $B(\mathfrak{H}) = m_e \cdot \rho \cdot (\mathrm{tr}_M(T_w) + \mathrm{tower}(\mathfrak{H}) + \sigma_{3A})|_{q_0}$.
 4. Compare with the AME values $\{2.224566, 8.481798, 7.71806\}$ MeV.
 
 A candidate $n_\star$ rule that closes all three to within $\sim 5\%$
@@ -214,7 +214,7 @@ evaluated on the scalar per-generator volumes $|\hat{V}_i|$ — without
 per-atom retuning. Then the cyclotomic projection
 $\pi_{n_\star(\mathfrak{H})}^{(z)}\!\bigl(\widetilde{\Phi}_q^{\mathrm{tower}}(\beta_\mathfrak{H})\bigr)$,
 evaluated at $(q_0, z_i)$ into the binding formula
-$B(\mathfrak{H}) = m_e \cdot \rho \cdot (|\mathrm{tr}_M(T_w)| + \mathrm{tower}(\mathfrak{H}) + \sigma_{3A})$,
+$B(\mathfrak{H}) = m_e \cdot \rho \cdot (\mathrm{tr}_M(T_w) + \mathrm{tower}(\mathfrak{H}) + \sigma_{3A})$,
 produces an error exceeding $100\%$ on at least one of
 $\{D, T, {}^3\mathrm{He}\}$.*
 
