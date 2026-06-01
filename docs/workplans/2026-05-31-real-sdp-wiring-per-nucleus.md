@@ -184,3 +184,30 @@ the multi-week-per-nucleus campaign #1575 scopes; the bar-fold symmetry
 reduction is the lever, but a sparse Hoefsmit evaluator at H_18+ is the
 prerequisite that does not yet exist. **Adding a shell = produce its
 χ_λ witness + Wenzl y_λ at that n**, then one registry line.
+
+## y_λ convention — canonical source settled (2026-06-01, PR #1582)
+
+A pipeline-correctness investigation (user: "pipeline may have errors")
+found my `nuclide_braid_pipeline.py` used the WRONG y_λ weight.
+Three weights were in play; only one matches the per-nucleus χ witnesses:
+
+| candidate | formula | matches true witness? |
+|---|---|---|
+| balanced Wenzl | `d_q(λ)² / [n]_q!` (balanced q-int) | ❌ (gives (9)=(1⁹), no sign) |
+| q-Schur Markov | `q^{c(λ)} / [n]_q!` | ❌ (fails y_λ·y_{λᵀ}=1/[n]!²) |
+| **principal-spec Schur** | `s_λ(1,q,q²,…) / Z`, `Σ y_λ f^λ = 1` | ✅ **9.8e-49 exact** |
+
+**Canonical y_λ** = `schur_principal_mpmath.y_lambda_at_q0_mpmath(n, q0)`.
+The integer `f^λ` (SYT count) is the dimension that appears in the
+witness `dim` field — NOT the quantum dimension `d_q`. y_λ can be
+**signed** (e.g. (6,1,1,1) < 0), which immediately rules out any
+`d_q²` form.
+
+The asymmetry between λ and λᵀ comes from the **principal
+specialization** `s_λ(1,q,q²,…)` (content-graded), NOT from an
+asymmetric q-integer and NOT from Bring/Brioschi.
+
+**χ_λ precision:** the character itself was exact only to 2.66e-14
+because `chi_lambda_of_word` uses float64 numpy. Switching to
+`char_fast.chi_lambda_fast_mp` (mpmath 50-dps) brings χ to ~1e-49,
+matching y_λ. The pipeline now computes both at 50-dps.
