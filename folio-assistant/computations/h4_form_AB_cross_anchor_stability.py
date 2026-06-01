@@ -48,12 +48,8 @@ from _h4_substrate import (  # noqa: E402
     trM_borromean_closed,
 )
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import q_at, q_muon_at, q_str  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-
-
-def vol_4_1():
-    return 2 * mp.clsin(2, mp.pi / 3)
 
 
 def evaluate_k_required(q, m_e, m_mu, m_p):
@@ -83,7 +79,8 @@ def evaluate_form(q, form_name, m_e, m_mu, m_p, alpha_em):
 
 
 def main() -> int:
-    set_compute_dps(80)
+    DPS = 80
+    set_compute_dps(DPS)
 
     # CODATA anchors (from central registry)
     m_e = M_E_MEV
@@ -91,12 +88,9 @@ def main() -> int:
     m_p = M_P_MEV
     alpha_em = ALPHA_EM
 
-    q_proton = mp.mpf(Q_50_DIGIT_STR)
-
-    # Compute q_muon: invert m_μ = m_e · Vol(4_1) / ℏ_q²
-    vol = vol_4_1()
-    hbar_q_muon = mp.sqrt(vol * m_e / m_mu)
-    q_muon = 1 / (1 - hbar_q_muon)
+    # q anchors via canonical qou_substrate.constants helpers
+    q_proton = q_at(DPS)
+    q_muon = q_muon_at(DPS)
 
     print("=" * 78)
     print("Form A/B cross-anchor stability test (80 dps)")
@@ -212,7 +206,8 @@ def main() -> int:
         "option-e ledger: stable cross-anchor = structural candidate, "
         "collapses = proton-anchor coincidence."
     )
-    w.add_parameter("q_proton", Q_50_DIGIT_STR)
+    w.add_parameter("q_proton", q_str(DPS))
+    w.add_parameter("mp_dps_runtime", str(mp.mp.dps))
     w.add_data("q_muon", mp.nstr(q_muon, 25))
     w.add_data("Form_A_ppb_proton", mp.nstr(ppb_A_p, 12))
     w.add_data("Form_A_ppb_muon", mp.nstr(ppb_A_m, 12))

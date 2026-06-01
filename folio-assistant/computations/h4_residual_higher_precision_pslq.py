@@ -10,13 +10,14 @@ to either:
   - Identify an even tighter / cleaner structural form
   - Conclude that neither form is exact — empirical near-match
 
-## Wider basis additions vs. PR #1581's c_3 PSLQ basis
+## Basis (17 elements)
 
-  - Bloch-Wigner dilog D(z) at substrate-natural z (q, 1/q, h)
-  - Mahler measures of small Bring-quintic-related polynomials
-  - q-Bernoulli evaluations B_2(q), B_4(q)
-  - Apéry-like ζ(3), ζ(5) at substrate scaling
-  - Higher q-bracket combinations [k]_q · [m]_q / [n]_q
+The implemented basis is the natural-constants set: 1, G (Catalan),
+π², ζ(3), ζ(5), ln(2/3/5), 1/π², G/π², ζ(3)/π³, α_em, α_em², h²,
+h⁴, [3]_q, [5]_q. Mahler measures, Bloch-Wigner D(z) at substrate
+roots, and q-Bernoulli evaluations are NOT in this basis — they were
+identified as potential future extensions in the audit doc but
+deferred (the natural basis NULL is informative enough on its own).
 
 ## Cross-references
 
@@ -44,13 +45,14 @@ from _h4_substrate import (  # noqa: E402
     trM_borromean_closed,
 )
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import q_at, q_str  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
 def main() -> int:
-    set_compute_dps(120)  # significant headroom for PSLQ at maxcoeff 10⁶
-    q = mp.mpf(Q_50_DIGIT_STR)
+    DPS = 120
+    set_compute_dps(DPS)  # significant headroom for PSLQ at maxcoeff 10⁶
+    q = q_at(DPS)
 
     print("=" * 78)
     print("h⁴-residual coefficient — higher-precision PSLQ (120 dps)")
@@ -187,7 +189,8 @@ def main() -> int:
         "natural substrate basis elements. Tests pairwise (maxcoeff 10⁶) "
         "and full basis (maxcoeff 100)."
     )
-    w.add_parameter("q_120dps", Q_50_DIGIT_STR)
+    w.add_parameter("q_120dps", q_str(DPS))
+    w.add_parameter("mp_dps_runtime", str(mp.mp.dps))
     w.add_data("target_h4_coef", mp.nstr(coef_h4, 30))
     w.add_data("pslq_pairwise_hits", len(matches))
     w.add_data("exact_N_for_one_minus_pi2_over_N", mp.nstr(N_exact, 18))
