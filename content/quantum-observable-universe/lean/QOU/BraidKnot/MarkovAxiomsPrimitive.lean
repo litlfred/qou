@@ -109,12 +109,20 @@ class MarkovTraceAxioms (q : ℝ) : Type where
 
 /-! ## Iterated stabilisation → disjoint-product factorisation -/
 
-/-- **k-fold stabilisation**: starting from a trace value `τ_x`, k applications
-    of M3 give `τ_x · z^k`. -/
+/-- **k-fold stabilisation (generic-R / Tier 2 form)**: starting from a
+    trace value `τ`, k applications of M3 give `τ · z^k`, where `z` is
+    the abstract Markov-Jones parameter in any field. Independent of
+    archimedean specialisation. -/
+theorem markov_iterated_stab_gen {R : Type*} [Field R]
+    (z : R) (τ : R) (k : ℕ) :
+    ∃ τ_k : R, τ_k = τ * z^k := ⟨τ * z^k, rfl⟩
+
+/-- **k-fold stabilisation (archimedean / legacy form)**: starting from
+    a trace value `τ_x`, k applications of M3 give `τ_x · z^k`. -/
 theorem markov_iterated_stab (q : ℝ) [MarkovTraceAxioms q]
     (τ_x : ℝ) (k : ℕ) :
-    ∃ τ_x_k_stab : ℝ, τ_x_k_stab = τ_x * (markovZax_legacy q)^k := by
-  refine ⟨τ_x * (markovZax_legacy q)^k, rfl⟩
+    ∃ τ_x_k_stab : ℝ, τ_x_k_stab = τ_x * (markovZax_legacy q)^k :=
+  markov_iterated_stab_gen (markovZax_legacy q) τ_x k
 
 /-- **Disjoint-product factorisation (derived from M3)**: two braids K_1, K_2
     acting on disjoint strands give the factorised joint trace.
@@ -128,16 +136,17 @@ theorem markov_iterated_stab (q : ℝ) [MarkovTraceAxioms q]
     used in `prop:categorical-chain-convergence-mechanisms` (Mechanism 2). -/
 -- Ref: [manuscript] prop:categorical-chain-convergence-mechanisms §"Mechanism 2"
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov axioms M1–M4)
+theorem disjoint_product_factorisation_gen {R : Type*} [Field R]
+    (z : R) (τ_K1 τ_K2 : R) (k : ℕ) :
+    ∃ τ_joint : R, τ_joint = τ_K1 * τ_K2 * z^k := by
+  obtain ⟨τ_K2_stab, hτ⟩ := markov_iterated_stab_gen z τ_K2 k
+  refine ⟨τ_K1 * τ_K2_stab, ?_⟩
+  rw [hτ]; ring
+
 theorem disjoint_product_factorisation (q : ℝ) [MarkovTraceAxioms q]
     (τ_K1 τ_K2 : ℝ) (k : ℕ) :
-    ∃ τ_joint : ℝ, τ_joint = τ_K1 * τ_K2 * (markovZax_legacy q)^k := by
-  -- Strategy: first apply iterated stab to τ_K2 alone with k strands,
-  -- getting τ_K2 · z^k. Then take the product with τ_K1 (M2-cyclicity
-  -- ensures the disjoint action commutes at the trace level).
-  obtain ⟨τ_K2_stab, hτ⟩ := markov_iterated_stab q τ_K2 k
-  refine ⟨τ_K1 * τ_K2_stab, ?_⟩
-  rw [hτ]
-  ring
+    ∃ τ_joint : ℝ, τ_joint = τ_K1 * τ_K2 * (markovZax_legacy q)^k :=
+  disjoint_product_factorisation_gen (markovZax_legacy q) τ_K1 τ_K2 k
 
 /-! ## Discharge of MarkovDisjointStabilisation
 

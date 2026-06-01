@@ -191,10 +191,29 @@ Generalises `MarkovTraceAxioms` (`rem:markov-axioms-primitive`,
 Discharged at n = 2 by `MarkovTraceAxioms`; the n-strand class is
 the canonical extension. -/
 
-/-- The Markov-Jones parameter `z = 1 / (√q + 1/√q)` (local copy,
-    matches `markovZax` from `markov-axioms-primitive.lean` so the
-    `MarkovTraceInductiveLimit` bridge instance can interoperate). -/
-noncomputable def markovZN (q : ℝ) : ℝ :=
+/-- Markov-Jones parameter (Tier 2 / generic-R form): `z = u / (u² + 1)`,
+    where `u` is the formal square root of `q`. Mathematically equivalent
+    to `1 / (u + u⁻¹)`. Use this in new code instead of `markovZN_legacy`.
+
+    Matches `markovZax` from `markov-axioms-primitive.lean` so the
+    `MarkovTraceInductiveLimit` bridge instance can interoperate. -/
+def markovZN {R : Type*} [Field R] (u : R) : R := u / (u^2 + 1)
+
+/-- Archimedean shim of `markovZN` with explicit positivity:
+    `markovZN_real q hq = markovZN (Real.sqrt q)`. -/
+noncomputable def markovZN_real (q : ℝ) (_hq : 0 < q) : ℝ :=
+  markovZN (Real.sqrt q)
+
+/-- **Legacy unsafe form** of `markovZN` — `Real.sqrt q` without the
+    `0 < q` hypothesis. Kept for backward compatibility with the
+    pre-Tier-2 callsites; new code should use one of:
+      - generic `markovZN (u : R)` with explicit `u² = q` for `[Field R]`
+        (Tier 2 — preferred; avoids `Real.sqrt` entirely)
+      - `markovZN_real (q : ℝ) (hq : 0 < q)` (Tier 5 archimedean shim)
+    Do NOT migrate to `markovZN (Real.sqrt q)` — that still triggers
+    the `q-usage-positivity-implicit` warning. -/
+@[deprecated "Migrate to (a) the generic `markovZN (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZN_real q hq` carrying `0 < q` (Tier 5). Avoid `markovZN (Real.sqrt q)` — still positivity-implicit. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+noncomputable def markovZN_legacy (q : ℝ) : ℝ :=
   1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- **Markov-trace axioms** for n-strand braids: the four Jones
@@ -219,7 +238,7 @@ class MarkovTraceN (n : ℕ) (q : ℝ) : Type where
       `σ_n` (positive or inverse) multiplies `τ` by the Markov-Jones
       parameter `z = 1/(√q + 1/√q)`. -/
   tau_stab_factor : ℝ
-  tau_stab_factor_eq_z : tau_stab_factor = markovZN q
+  tau_stab_factor_eq_z : tau_stab_factor = markovZN_legacy q
 
 /-! ## Specialisations
 
