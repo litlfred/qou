@@ -397,7 +397,7 @@ Markov-trace computation) and the production-scale Rust port
  top 17 % of the 138 canonical-basis classes by single-term cost;
  ${}^2$H ($6_2$) is **not** PSD-feasible on its own ($\alpha^* = 0.89$
  on the standard $(2,1)$ block) and ranks in the top 45 %. The
- single-term shorthand $B = m_e \cdot \nu_{\mathrm{SDP}} \cdot |\mathrm{tr}_M(T_w)|$
+ single-term shorthand $B = m_e \cdot \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w)$
  (retired — see Statement above) has the known structural offset documented in
  [`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json),
  which prevents the historical $T_w$ from being the unique global
