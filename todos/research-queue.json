@@ -63,7 +63,7 @@
   {
     "id": "research-multi-nucleon-interface-operator",
     "summary": "Multi-nucleon interface operator for A=4 \u2074He binding (mirror-pair fails at A=4)",
-    "comment": "Per audit 2026-05-26-delta-lambda-binding-formula-closure.md: \u2074He has no canonical mirror partner (unlike T/\u00b3He pair). The v9 mirror-symmetry collapses at A=4. Per audit: 'A=4 requires the multi-nucleon interface operator, not just the mirror'. Open question: what categorical object plays the role of the mirror for \u2074He? Hypothesis: the H_3 \u00d7 H_3 interface within H_12 \u2014 the operator that joins two D-like substructures. Failed prior: q-factorial ratio (PR #1386 RETRACTED).",
+    "comment": "CONTINUED 2026-06-01 (PR #TBD): research-state audit doc adds docs/audits/2026-06-01-he4-multi-nucleon-interface-research-state.md. Current state: \u2074He B = 2\u00b7m_e\u00b74\u00b78G \u2248 29.956 MeV (magic-A-binding-formula with \u03c1_F=2 postulated), +5.87% off experimental 28.296. Three candidate attacks documented: (1) \u03c1_F = [2]_{q^(1/2)} \u2248 2.0021 \u2014 RULED OUT (still +5.97% miss, doesn't close residual), (2) per-nucleon \u03b4_int multiplier \u2014 RULED OUT (no simple substrate hits the 5.54% residual: tested h\u00b2\u00b7q, (q-1)/q\u00b2, \u210f_q\u00b2\u00b7[2]_q/2, h\u0303\u00b2), (3) categorical interface operator H_3\u2297H_3\u2297H_3\u2297H_3 \u2192 H_12 respecting (4,4,4) Wedderburn PSD dominance per PR #1289 \u2014 UNDERIVED, recorded as the actual next-session research direction with cross-anchor + structural-justification failure signature pre-stated. Anti-pattern guards: do not wire \u03c1_F=[2]_{q^(1/2)} just because it's \u22482; do not search for substrate matching the 5.54% residual (8th-ansatz trap); do not restart q-factorial ratio (PR #1386 RETRACTED).",
     "status": "open",
     "priority": "medium",
     "origin": "session-2026-05-31-queue-build",
@@ -76,7 +76,19 @@
       ],
       "anti_patterns": [
         "q-factorial ratio (PR #1386 retracted)"
-      ]
+      ],
+      "mechanism_status": {
+        "magic-A-formula-postulated-rho_F=2": "+5.87% miss; current production",
+        "rho_F=[2]_{q^(1/2)}": "RULED OUT (still +5.97% miss, this PR)",
+        "per-nucleon \u03b4_int simple substrate": "RULED OUT (no clean match)",
+        "categorical interface H_3\u2297H_3\u2297H_3\u2297H_3 \u2192 H_12": "UNDERIVED (research direction)"
+      },
+      "current_pred_vs_exp": {
+        "\u2074He B_pred_MeV": 29.956,
+        "\u2074He B_exp_MeV": 28.296,
+        "miss_pct": 5.87,
+        "miss_MeV": 1.66
+      }
     }
   },
   {
