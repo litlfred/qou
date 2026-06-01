@@ -51,14 +51,13 @@ N_{\unicode{9737}}^{\text{in}}(A, d) - N_{\unicode{9737}}^{\text{out}}(A, d)
 \;+\; \bigl(\text{lower-birthday corrections}\bigr),
 $$
 
-where $\hbar_{q} = 1 - q^{-1}$ is the substrate-Planck constant
-([`def:hbar-q`](#def:hbar-q)).
+where $\hbar_{q} = 1 - q^{-1}$ is the substrate-Planck constant.
 
 The $\hbar^{2}_{q}$ factor is forced by dimensional consistency
 with the Hoefsmit normalisation
 $\mathrm{Geom}_\varepsilon(L) = \mathrm{Vol}(L)/\hbar^{2}_{q}
 \cdot \mathrm{linking\_weight}(L)$
-([`prop:hoefsmit-scattering-pipeline`](#prop:hoefsmit-scattering-pipeline)):
+([`conj:hoefsmit-scattering-pipeline`](#conj:hoefsmit-scattering-pipeline)):
 $N_\unicode{9737}$ disjoint copies of the unknot contribute
 $\mathrm{Geom}_\varepsilon(N_\unicode{9737} \cdot \unicode{9737})
 = N_\unicode{9737} \cdot \varepsilon / \hbar^{2}_{q}$
