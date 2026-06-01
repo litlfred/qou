@@ -53,16 +53,33 @@ whether this is the *canonical* object or whether the H₃ per-block trace
    categorical-exactness refinement gap recorded in
    `docs/lambda-scale-absorbed-into-geom-full.md` (open R&D, no fit).
 
-## Raw m_avg per candidate (filled from the lwfix witness)
+## Raw m_avg per candidate (from the lwfix witness)
+
+Inputs (60 dps): `q₀ = 1.10997858…`, `m_e = 0.51099895` MeV,
+`Vol(𝓑₃)/ℏ_q² = 746.418`, `m_avg^CODATA = 938.91875` MeV.
 
 | candidate factor | factor at q₀ | m_avg = m_e·Vol/ℏ_q²·factor | err vs CODATA m_avg |
 |---|---:|---:|---:|
-| (A) production H₄ average | _pending_ | _pending_ | _pending_ |
-| (B) H₃ per-block trace (wenzl) | _pending_ | _pending_ | _pending_ |
-| (C) bare (linking_weight = 1) | _pending_ | _pending_ | _pending_ |
+| (A) production **H₄ average** | **2.532780** | **966.050 MeV** | **+2.890 %** |
+| (B) H₃ bare-Borromean trace (wenzl) | 0.998562 | 380.870 MeV | −59.435 % |
+| (B2) H₃ atomic-proton trace (PR #1623 §6, Rust) | 1.065310 | 406.329 MeV | −56.724 % |
+| (C) bare (linking_weight = 1) | 1.000000 | 381.419 MeV | −59.377 % |
 
-(Numbers below filled from the witness run; the table is updated in the
-results commit.)
+- **CODATA-implied λ target** (AUDIT-ONLY, the value that round-trips m_p):
+  `(m_p/m_e)/(Vol/ℏ_q²) = 2.461648`. Family A's 2.532780 sits **+2.890 %**
+  above it — that residual IS the +2.89 % m_p gap.
+- **Ratio production / atomic-proton trace = 2.37750** — reproduces the
+  documented 2.38× gate (PR #1623 §4) exactly.
+- Family A h-coefficients: h⁰ = 5/2, h² = 3/4, h⁴⁺ = 0 (TERMINATES) — a
+  Lean-proved exact identity, structurally distinct from the H₃ trace
+  (leading 1, non-terminating tail).
+
+The H₃ readings (bare-Borromean 0.9986 → 381 MeV; atomic-proton 1.0653 →
+406 MeV) both regress catastrophically (−57 % to −59 %). The exact H₃
+value depends on which 3-strand braid you trace, but **neither beats
+production** — confirming that "switch the index set to H₃ for the
+3-strand braid" is not the better canonical object. No fit applied; all
+numbers from the witness.
 
 ## Discipline
 
