@@ -169,15 +169,22 @@ def main() -> int:
     print("  ROOT-OF-UNITY SPECTRUM  (ζ_d = e^{2πi/d}; modes m<d survive):")
     print(f"  {'d':>3} {'#modes':>7} {'|tr_M(p)|':>14} {'|tr_M(n)|':>14} "
           f"{'|Δtr_M|':>14}")
-    # truncated Habiro sum keeping only m < d, cancelled (lifted out of
-    # the loop — Copilot review #1622: avoid per-iteration closure over d).
+    # truncated Habiro sum keeping only m < d, cancelled. Pre-parse the
+    # denominator + coefficients ONCE per atom (Gemini review #1622: the
+    # sp.sympify calls are expensive and were redundant per loop iter).
+    parsed_atoms = {
+        id(a): (sp.sympify(a["denom_in_u"], locals={"u": u}),
+                [(int(c["m"]), sp.sympify(c["a_m"], locals={"u": u}))
+                 for c in a["habiro_coefficients"]])
+        for a in (p_atom, n_atom)
+    }
+
     def trunc_expr(atom: dict, d: int) -> sp.Expr:
-        D = sp.sympify(atom["denom_in_u"], locals={"u": u})
+        D, coeffs = parsed_atoms[id(atom)]
         tot = sp.Integer(0)
-        for c in atom["habiro_coefficients"]:
-            if int(c["m"]) < d:
-                a_m = sp.sympify(c["a_m"], locals={"u": u})
-                tot += a_m * q_pochhammer_sym(u, int(c["m"]))
+        for m, a_m in coeffs:
+            if m < d:
+                tot += a_m * q_pochhammer_sym(u, m)
         return sp.cancel(tot / D)
 
     spectrum = []
@@ -252,11 +259,6 @@ def main() -> int:
         return num_lo - den_lo
     even_lead = laurent_leading_order(dtrM_even)
     odd_lead = laurent_leading_order(dtrM_odd)
-    # Display the genuine Laurent series (with poles) for transparency.
-    eps = sp.Symbol("eps")
-    even_disp = sp.series(dtrM_even.subs(u, eps), eps,
-                          0, 4) if even_lead is None or even_lead >= 0 \
-        else dtrM_even
     print("  BAR-SYMMETRY SPLIT of Δtr_M (σ_q at d=2 = bar involution):")
     print(f"    bar-EVEN part = [Δtr_M(u)+Δtr_M(1/u)]/2  (Laurent in u)")
     print(f"    bar-ODD  part = [Δtr_M(u)−Δtr_M(1/u)]/2")

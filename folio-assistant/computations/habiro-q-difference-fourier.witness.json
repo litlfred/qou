@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:34:57.166625+00:00",
-  "commitSha": "40175b400c15e64a5d3e4883717c4bc45c6d738d",
+  "computedAt": "2026-06-01T11:59:01.818668+00:00",
+  "commitSha": "8a35f1886750a6c8b6af2443ff8738e385582b6a",
   "assertions": [
     {
       "name": "habiro_pochhammer_reproduces_witness",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1222,
+  "durationMs": 842,
   "computation": "habiro-q-difference-fourier",
   "scriptFile": "habiro_q_difference_fourier.py",
-  "scriptHash": "c211b221101c",
-  "scriptCommitSha": "1c84b89ea12a1dea8755d4a68143b99f2a909fb1",
+  "scriptHash": "bbf8afb38f7d",
+  "scriptCommitSha": "8362f7d593db4cbd5a4566f0b2eb2eae47e9bf6e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -174,11 +174,14 @@ def main() -> int:
     print()
 
     # ── u=0 Laurent coefficients (short-distance data) ─────────────
-    # The u=0 tower is sector_C, a Laurent polynomial in u.
-    sector_C_poly = sp.Poly(sector_C * u ** 6, u)  # clear poles to read coeffs
+    # The u=0 tower is sector_C, a Laurent polynomial in u. Multiply by
+    # u^6 to clear the poles, then read the polynomial coefficients
+    # reliably (Gemini review #1622: coeff(u, k) with negative k is
+    # fragile; Poly coefficient extraction at k+6 is robust).
+    sector_C_poly = sp.Poly(sp.expand(sector_C * u ** 6), u)
     laurent_coeffs = {}
     for k in range(-6, 1):
-        c = sector_C.coeff(u, k)
+        c = sector_C_poly.coeff_monomial(u ** (k + 6))
         if c != 0:
             laurent_coeffs[k] = sp.nsimplify(c)
     print(f"  u=0 LAURENT TOWER coefficients (short-distance modes):")
