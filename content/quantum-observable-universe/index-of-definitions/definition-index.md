@@ -1,4 +1,4 @@
-**1005** indexed entries across 7 categories.
+**1007** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -406,6 +406,7 @@
 | [prop:reeb-operations-per-planck](#prop:reeb-operations-per-planck) | Discrete iterations per Reeb circuit | Ch 18 | `qou:QOU.Information.reeb_operations_per_planck` |
 | [prop:sdp-regime-switch](#prop:sdp-regime-switch) | Discrete regime switches in SDP cross-channel couplings across isotopes | Ch 13 | `qou:QOU.Observations.SDPRegimeSwitch` |
 | [prop:discrete-vortex-spectrum](#prop:discrete-vortex-spectrum) | Discrete vortex mode spectrum | Ch 16 | `qou:QOU.FluidDynamics.discrete_vortex_spectrum` |
+| [prop:magic-A-binding-formula](#prop:magic-A-binding-formula) | Doubly-magic light-nucleus binding formula: $\mathfrak{B}(^A_Z\mathfrak{X}) = \rho_F \cdot \mathfrak{m}_e \cdot A \cdot 8G$ | Ch 10 | `qou:QOU.BraidKnot.magic_A_binding_formula` |
 | [prop:hadron-q-self-correction](#prop:hadron-q-self-correction) | Effective substrate parameter: hadron self-deformation of $q$ | Ch 12 | `qou:QOU.Archimedean.hadron_q_self_correction` |
 | [prop:descent-eigenspaces](#prop:descent-eigenspaces) | Eigenspaces of the descent involution | Ch 4 | `qou:QOU.Torsion.idempotent_direct_sum_decomposition` |
 | [prop:eigenvalue-product-expansion](#prop:eigenvalue-product-expansion) | Eigenvalue product expansion of the nuclear braid Markov trace | Ch 10 | `qou:QOU.BraidKnot.eigenvalue_product_expansion` |
@@ -527,6 +528,7 @@
 | [prop:three-halves-structural-factor](#prop:three-halves-structural-factor) | Lepton-tower closure structural identities — muon (3+h²)/(2+h²) = [3]_q·[2]_q/[4]_q and tau [6]_q = [2]_q·[3]_q·(1+h²) — proved over generic [Field R] via field_simp; ring. | Ch 10 | `qou:QOU.BraidKnot.ThreeHalvesStructuralFactor.three_halves_factor_eq_q_brackets` |
 | [prop:level-sufficiency](#prop:level-sufficiency) | Level sufficiency: Markov trace computable in the coarsest confinement algebra | Ch 8 | `qou:QOU.BraidKnot.LevelSufficiency` |
 | [prop:alpha-k-derivation-procedure](#prop:alpha-k-derivation-procedure) | Linear-system procedure for Jones--Markov weights $y_\lambda$ and stratum prefactors $\alpha_k$ at $H_n(R, q)$ | Ch 10 | `qou:QOU.BraidKnot.alpha_k_derivation_procedure` |
+| [prop:lr-coefficient-hecke](#prop:lr-coefficient-hecke) | Littlewood-Richardson coefficient $c^\lambda_{\mu\nu}$ for Iwahori-Hecke branching | Ch 10 | `qou:QOU.BraidKnot.LRCoefficientHecke` |
 | [prop:local-substrate-q](#prop:local-substrate-q) | Local Value of the Substrate Parameter | Ch 13 | `qou:QOU.Experimental.local_substrate_q` |
 | [prop:chi-lambda-w0-sign-weighting](#prop:chi-lambda-w0-sign-weighting) | Long-element $\chi_\lambda(w_0)$ sign-character weighting of the $c_k$ chain at $H_3$ | Ch 10 | `qou:QOU.BraidKnot.ChiLambdaW0SignWeighting` |
 | [prop:h2-lp-dual-binding](#prop:h2-lp-dual-binding) | LP dual gives optimal $H_2$ binding | Ch 14 | `qou:QOU.Molecular.h2_lp_dual_binding` |
@@ -837,11 +839,11 @@
 | [conj:brunnian-property-of-borromean](#conj:brunnian-property-of-borromean) | Brunnian property of $\mathcal{B}_3$: every two-component sub-link is the unlink | Ch 8 | `qou:QOU.KnotTheory.Brunnian.borromean_brunnian` |
 | [conj:isospin-from-canonical-bowtie](#conj:isospin-from-canonical-bowtie) | Canonical $\mathrm{SU}(2)_I$ isospin from the operator-valued $\bowtie_K$ interface (regularised crystal extension) | Ch 10 | `qou:QOU.BraidsAndKnots.IsospinFromCanonicalBowtie` |
 | [conj:atom-braid-exterior-algebra](#conj:atom-braid-exterior-algebra) | Canonical atom-braid `atom_braid_word_3A(Z, N)` in `H_{3A}(q)` generates a sub-algebra graded-isomorphic to the exterior algebra Λ*(ℂ^{3A−Z}) with grade shift δ = Z−1; total dim = 2^{3A−Z}, k-th component dim = C(3A−Z, k−δ). Empirically verified across D, T, ³He, ⁴He. | Ch 10 | `qou:QOU.BraidKnot.AtomBraidExteriorAlgebra.AtomBraidExteriorAlgebraStructure` |
+| [conj:qbeta-ck-truncation-canonical](#conj:qbeta-ck-truncation-canonical) | Canonical closed form for the $Q_\beta$ truncation coefficients $c_k$ ($k\geq 3$): only $c_2=-1$ is proved; $c_3=-2=J_{\mathrm{Hopf}}(q{=}1)$ is a near-match; $c_{k\geq 3}$ are cal-anchored (open) | Ch 21 | `qou:QOU.BraidKnot.QbetaCkTruncationCanonicalClass` |
 | [conj:canonical-knot-id-sdp](#conj:canonical-knot-id-sdp) | Canonical knot identification for ${}^2$H, ${}^3$H, ${}^3$He from the confinement SDP | Ch 10 | `qou:QOU.BraidKnot.helium3_uniqueness_closed` |
 | [conj:lepton-tower-h-n-plus-1-branching](#conj:lepton-tower-h-n-plus-1-branching) | Canonical lepton-mass-tower ξ_m factor is d_q(std_rep S_{n+1}) · [2]_q / [n+1]_q where n = 2m+1 is the lepton-knot torus index; this couples lepton σ_1^{2m+1} braid at H_3 substrate level with H_{n+1} standard-rep branching, matching the T6 closure factor [3]_q·[2]_q/[4]_q at m=2 (muon) numerically to 0.034% of CODATA. | Ch 10 | `qou:QOU.BraidKnot.LeptonTowerHnPlus1.lepton_xi` |
 | [conj:lepton-mass-tower-canonical](#conj:lepton-mass-tower-canonical) | Canonical operator-level lepton-mass-tower formula: there exists a categorical formula $\mathfrak{m}(K_\ell) = m_e \cdot \mathcal{F}_\ell(q)$ for each lepton $\ell \in \{\mathfrak{e}, \mu, \tau\}$ expressed as a per-braid Markov-trace-weighted sum over $K_\ell$'s braid representative, **without** invoking the SUPERSEDED scalar substrate density $\rho_q = 1/\hbar_q^2$ as a dimensional factor. | Ch 10 | `qou:QOU.BraidKnot.LeptonMassTowerCanonical.lepton_mass_ratio` |
 | [conj:casimir-epsilon-vacuum](#conj:casimir-epsilon-vacuum) | Casimir force as $\mathrm{st}$-image of $\varepsilon$-vacuum density gradient | Ch 22 | `qou:QOU.AppendixSurreals.CasimirEpsilonVacuum` |
-| [conj:g-action-on-substrate](#conj:g-action-on-substrate) | Categorical $G = \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate | Ch 2 | `qou:QOU.QuantumObservableUniverses.GActionOnSubstrate` |
 | [conj:g-action-on-substrate](#conj:g-action-on-substrate) | Categorical $G = \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate | Ch 2 | `qou:QOU.QuantumObservableUniverses.GActionOnSubstrate` |
 | [conj:categorical-higgs-mechanism](#conj:categorical-higgs-mechanism) | Categorical Higgs mechanism: Goldstone-eating as topological linking | Ch 10 | `qou:QOU.BraidsAndKnots.CategoricalHiggsMechanism` |
 | [conj:categorical-linking-operation](#conj:categorical-linking-operation) | Categorical linking operation $\mathrm{Lk}_R$: ribbon-category dual of topological linking number | Ch 10 | `qou:QOU.BraidsAndKnots.CategoricalLinkingOperation` |
