@@ -2,21 +2,33 @@
 
 **Trigger.** User-prioritised item 3 of the post-#1485 next-tranche queue ("L2 100× gaps for the missing 2 observables").
 
-**Source.** [`folio-assistant/computations/per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json) (`computedAt: 2026-05-30T03:44:59Z`, commit `3fda58749d`).
+**Source.** [`folio-assistant/computations/per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json).
 
-## Headline
-
-The L2 dashboard tracks 7 observables — not 6 as stated in `CLAUDE.md §Precision goals` (the `m_K/m_π` meson ratio was added after that section was written; refresh PR pending). Current status:
+> **Refresh (2026-06-01, PR #1602).** The table below was first written
+> against the muon-pinned dashboard (`computedAt 2026-05-30`, commit
+> `3fda58749d`), where `m_μ` was the calibration anchor and read ✓ at
+> `1.6e−42`. After the **proton-anchor re-pin** (2026-05-28), `m_μ`
+> became a *validation* observable and now reads **209.8 ppb (✗, miss
+> ~964×)** — see the live witness (`computedAt 2026-05-31`, commit
+> `9e45f6d4`). The headline count is unchanged at **3 of 7 failing for
+> the SAME shared root**, but the failing *set* is now `{Q_β, m_n,
+> Δ_pn}` **and** `m_μ` is a fourth, *independent* miss (μ–p substrate
+> tension floor, NOT the Q_β chain). The post-re-pin table:
 
 | obs | role | 100× target met? | `miss_factor` | `err_ppb` | gating witness |
 |---|---|:--:|---:|---:|---|
 | `m_p` | CAL-2 anchor | ✓ | 0.1306 | 0.0004037 | `m-p-substrate-identity-50dps.witness.json` |
-| `m_μ` | validation | ✓ | 1.6e−42 | 3.4e−43 | `m-p-borromean-verification-50dps.witness.json` |
 | `m_e` | CAL-1 anchor | ✓ | N/A (anchor) | 0 | — |
 | `m_K/m_π` | validation (meson) | ✓ | 0.08892 | 23.44 | merged PR #1455 |
-| `Q_β` | **CAL-3 anchor** | ✗ | **159.9** | 1247. | `q-beta-operator-valued-N3.witness.json::Q_N2` |
-| `m_n` | validation | ✗ | **180.8** | 1.039 | Path C: `m_p(substrate) + Q_β(N=5) + m_e`, no flavor-split |
-| `Δ_pn` | validation (derived) | ✗ | **159.3** | 754.8 | Path C, same chain |
+| `m_μ` | validation | ✗ (post-re-pin) | **963.6** | 209.8 | `m-p-borromean-verification-50dps.witness.json` (μ–p tension floor; independent of Q_β) |
+| `Q_β` | **CAL-3 anchor** | ✗ | **164.0** | 1279. | `qbeta-ck-cache.witness.json::Q_N2` (deepest DERIVED-tier rung) |
+| `m_n` | validation | ✗ | **185.4** | 1.066 | Path C: `m_p(substrate) + Q_β(N=2) + m_e`, no flavor-split |
+| `Δ_pn` | validation (derived) | ✗ | **163.3** | 773.9 | Path C, same chain |
+
+> The original muon-pin table (for history) had `m_μ` ✓ `1.6e−42` and
+> the failing trio at `159.9 / 180.8 / 159.3`× off `Q_N5`; the live
+> dashboard wires the deepest *honest* (DERIVED-tier) rung `Q_N2`
+> instead of `Q_N5`, which is why the miss factors shifted slightly.
 
 ## Shared root cause
 
