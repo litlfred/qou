@@ -25,18 +25,24 @@ Both prior scaling laws predicted `mult(Φ_8) ≥ 4` for A=6:
 
 The refined formula's first prediction beyond the data it was fit on is wrong.
 
-## Updated data (8 mirror-pair data points)
+## Updated data (10 mirror-pair data points — extended 2026-06-01 PM)
 
-| Pair | A | Φ_1 | Φ_2 | Φ_4 | Φ_8 | (Z_lhs, N_lhs) ↔ (Z_rhs, N_rhs) |
-|---|---|---|---|---|---|---|
-| n − p | 1 | 1 | 1 | 0 | 0 | (0,1) ↔ (1,0) |
-| ³He − ³H | 3 | 1 | 0 | 0 | 2 | (2,1) ↔ (1,2) |
-| ⁵Li − ⁵He | 5 | 1 | 0 | 0 | 4 | (3,2) ↔ (2,3) |
-| **⁶He − ⁶Be** | **6** | **1** | **1** | **0** | **2** | (2,4) ↔ (4,2) |
-| ⁷Be − ⁷Li | 7 | 1 | 0 | 0 | 6 | (4,3) ↔ (3,4) |
-| ⁸B − ⁸Li | 8 | 1 | 1 | 0 | 6 | (5,3) ↔ (3,5) |
-| ⁹B − ⁹Be | 9 | 1 | 0 | 0 | 8 | (5,4) ↔ (4,5) |
-| ¹⁰C − ¹⁰Be | 10 | 1 | 1 | 0 | 8 | (6,4) ↔ (4,6) |
+| Pair | A | Φ_1 | Φ_2 | Φ_4 | Φ_8 | (Z_lhs, N_lhs) ↔ (Z_rhs, N_rhs) | Refined match |
+|---|---|---|---|---|---|---|---|
+| n − p | 1 | 1 | 1 | 0 | 0 | (0,1) ↔ (1,0) | ✓ |
+| ³He − ³H | 3 | 1 | 0 | 0 | 2 | (2,1) ↔ (1,2) | ✓ |
+| ⁵Li − ⁵He | 5 | 1 | 0 | 0 | 4 | (3,2) ↔ (2,3) | ✓ |
+| **⁶He − ⁶Be** | **6** | **1** | **1** | **0** | **2** | (2,4) ↔ (4,2) | **✗** (predicted 4) |
+| ⁷Be − ⁷Li | 7 | 1 | 0 | 0 | 6 | (4,3) ↔ (3,4) | ✓ |
+| ⁸B − ⁸Li | 8 | 1 | 1 | 0 | 6 | (5,3) ↔ (3,5) | ✓ |
+| ⁹B − ⁹Be | 9 | 1 | 0 | 0 | 8 | (5,4) ↔ (4,5) | ✓ |
+| ¹⁰C − ¹⁰Be | 10 | 1 | 1 | 0 | 8 | (6,4) ↔ (4,6) | ✓ |
+| ¹²N − ¹²B | 12 | 1 | 1 | 0 | 10 | (7,5) ↔ (5,7) | ✓ |
+| **¹⁴O − ¹⁴C** | **14** | **1** | **1** | **0** | **4** | (8,6) ↔ (6,8) | **✗** (predicted 12) |
+
+**Refined formula's score: 8/10 match, 2 anomalies at A=6 and A=14.**
+
+The A=14 anomaly is particularly striking — `mult(Φ_8)` DROPS from 10 (at A=12) to 4 (at A=14), proving the multiplicity is genuinely non-monotonic in A. No closed form in A can capture this — the right framework is the per-block Wenzl-annihilator linear-relation count.
 
 ## Patterns that survive 8 data points
 
