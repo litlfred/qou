@@ -47,13 +47,30 @@ sys.path.insert(0, str(HERE.parent.parent / "tools" / "pyhecke" / "python"))
 from pyhecke.lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from murnaghan_nakayama import dim_specht  # noqa: E402
 
-# atom → (witness file, loader-kind).  loader-kind selects how to read the
-# per-partition cost out of that witness's particular schema.
-ATOMS = {
-    "deuteron": ("iterative-lp-dual-h6-deuteron.witness.json", "deuteron"),
-    "he3": ("chi-helium-3-h9-at-q0-50dps.witness.json", "chi_by_partition"),
-    "he4": ("chi-helium-4-h12-at-q0-50dps.witness.json", "chi_by_partition"),
+# ── Nucleus registry ────────────────────────────────────────────────────
+# A nucleus is (Z, N); strand count n = 3·A = 3·(Z+N). The cost has two
+# factors per Wedderburn block λ ⊢ n:
+#   * y_λ  — the Wenzl weight d_q(λ)²/[n]_q!.  Depends ONLY on (n, q_0),
+#            NOT on the nucleus → resolved generically from a Wenzl source
+#            keyed by n (`wenzl-y-lambda-h{n}.witness.json` etc.).
+#   * χ_λ  — the per-nucleus character χ^λ(β_K).  Nucleus-specific → comes
+#            from a per-nucleus character witness.
+# To add a nuclide: append (Z, N, chi_source). y_λ is automatic if a Wenzl
+# source for that n exists; otherwise the run reports the missing source.
+NUCLEI = {
+    "deuteron": dict(Z=1, N=1, chi="iterative-lp-dual-h6-deuteron.witness.json"),
+    "he3":      dict(Z=2, N=1, chi="chi-helium-3-h9-at-q0-50dps.witness.json"),
+    "tritium":  dict(Z=1, N=2, chi="chi-tritium-h9-at-q0-50dps.witness.json"),
+    # He-4: full 77-partition table (existing infra) + Wenzl y_λ for n=12.
+    "he4":      dict(Z=2, N=2, chi="chi-lambda-he4-full-partition-table.witness.json"),
 }
+
+# Wenzl y_λ sources keyed by strand count n (existing infra, q_0-pinned).
+# Generic: any nucleus at strand count n reuses the same y_λ table.
+YLAMBDA_SOURCES = {
+    12: "wenzl-y-lambda-h12.witness.json",
+}
+
 
 
 def conjugate_partition(part: tuple[int, ...]) -> tuple[int, ...]:
@@ -72,43 +89,127 @@ def sanitize_nan(val):
     return val
 
 
+def _norm(part) -> tuple[int, ...]:
+    """Normalize a partition (list or '(a, b)' string) to a tuple."""
+    if isinstance(part, str):
+        return tuple(int(p) for p in part.strip("()[]").split(",") if p.strip())
+    return tuple(int(x) for x in part)
+
+
+def extract_chi(data: dict) -> dict[tuple, float]:
+    """Pull {partition: χ^λ} from any of the per-nucleus witness schemas.
+
+    Handles: deuteron's `chi_lambda_beta_D_at_q0` dict, the
+    `by_partition` list (he3/he4-partial), and the full-table
+    `per_partition_chi_lambda` list (he4-full).  Schema-agnostic so new
+    nuclei drop in without a per-atom loader branch.
+    """
+    if "chi_lambda_beta_D_at_q0" in data:
+        return {_norm(k): float(v) for k, v in data["chi_lambda_beta_D_at_q0"].items()}
+    for container in ("by_partition", "per_partition_chi_lambda", "per_partition"):
+        if container in data and isinstance(data[container], list):
+            out = {}
+            for e in data[container]:
+                p = _norm(e["partition"])
+                # chi field name varies across schemas
+                for ck in ("chi_lambda", "chi_lambda_he4", "chi", "chi_lambda_at_q0"):
+                    if ck in e:
+                        out[p] = float(e[ck])
+                        break
+            if out:
+                return out
+    raise KeyError("no recognized χ container in witness")
+
+
+def resolve_y_lambda(parts: list[tuple], n: int, chi_data: dict) -> dict[tuple, float]:
+    """y_λ for every block, generic in (n, q_0) — NOT nucleus-specific.
+
+    Order of resolution:
+      1. inline in the χ witness (deuteron `y_lambda_at_q0`, or a
+         `by_partition` list carrying `y_lambda`), else
+      2. the Wenzl source for strand count n (`YLAMBDA_SOURCES[n]`).
+    Raises if neither covers all blocks — the run then reports exactly
+    which y_λ source is missing for that n.
+    """
+    # (1) inline
+    if "y_lambda_at_q0" in chi_data:
+        ydict = {_norm(k): float(v) for k, v in chi_data["y_lambda_at_q0"].items()}
+        if all(p in ydict for p in parts):
+            return ydict
+    for container in ("by_partition", "per_partition"):
+        if container in chi_data and isinstance(chi_data[container], list) \
+                and all("y_lambda" in e for e in chi_data[container]):
+            ydict = {_norm(e["partition"]): float(e["y_lambda"])
+                     for e in chi_data[container]}
+            if all(p in ydict for p in parts):
+                return ydict
+    # (2) Wenzl source by n
+    src = YLAMBDA_SOURCES.get(n)
+    if src and (HERE / src).exists():
+        wdata = json.loads((HERE / src).read_text())
+        wdata = wdata.get("data", wdata)
+        wlist = wdata.get("per_partition", [])
+        ydict = {_norm(e["partition"]): float(e["y_lambda"]) for e in wlist}
+        if all(p in ydict for p in parts):
+            return ydict
+    raise KeyError(
+        f"no y_λ source covers all {len(parts)} blocks at n={n}; "
+        f"add a Wenzl source to YLAMBDA_SOURCES[{n}]"
+    )
+
+
 def load_cost(atom: str):
-    """Return (parts, y, chi, dims, meta) for the atom's character witness."""
-    fname, kind = ATOMS[atom]
-    raw = json.loads((HERE / fname).read_text())
+    """Return (parts, y, chi, dims, meta) for the nucleus — generic resolver."""
+    spec = NUCLEI[atom]
+    Z, N = spec["Z"], spec["N"]
+    n = 3 * (Z + N)
+    raw = json.loads((HERE / spec["chi"]).read_text())
     data = raw.get("data", raw)
 
-    if kind == "deuteron":
-        ydict = data["y_lambda_at_q0"]
-        chidict = data["chi_lambda_beta_D_at_q0"]
-        keys = list(ydict.keys())
-        parts = [tuple(int(p) for p in k.strip("()").rstrip(",").split(",") if p.strip())
-                 for k in keys]
-        y = np.array([float(ydict[k]) for k in keys])
-        chi = np.array([float(chidict[k]) for k in keys])
-        meta = {"n_strands": 6, "partial": False}
-    elif kind == "chi_by_partition":
-        bp = data["by_partition"]
-        parts = [tuple(e["partition"]) for e in bp]
-        y = np.array([float(e["y_lambda"]) for e in bp])
-        chi = np.array([float(e["chi_lambda"]) for e in bp])
-        meta = {
-            "n_strands": data["n_strands"],
-            "partial": bool(data.get("partial")) or
-            (data.get("n_partitions_total") is not None and
-             data["n_partitions"] != data["n_partitions_total"]),
-            "tr_M_at_q0": float(data["tr_M_at_q0"]),
-        }
-    else:  # pragma: no cover
-        raise ValueError(kind)
+    chi_map = extract_chi(data)
+    parts = sorted(chi_map.keys(), key=lambda p: (-sum(p), p))
+    y_map = resolve_y_lambda(parts, n, data)
 
+    chi = np.array([chi_map[p] for p in parts])
+    y = np.array([y_map[p] for p in parts])
     dims = [dim_specht(p) for p in parts]
+
+    # full table = all p(n) partitions present?  (completeness, not the old
+    # "partial" flag that just meant the upstream witness was truncated)
+    n_partitions_total = num_partitions(n)
+    complete = (len(parts) == n_partitions_total)
+    meta = {
+        "n_strands": n, "Z": Z, "N": N, "A": Z + N,
+        "partial": not complete,
+        "n_partitions": len(parts),
+        "n_partitions_total": n_partitions_total,
+    }
     return parts, y, chi, dims, meta
+
+
+def num_partitions(n: int) -> int:
+    """p(n) via Euler's pentagonal recurrence (no sympy dependency)."""
+    p = [1] + [0] * n
+    for i in range(1, n + 1):
+        k, total = 1, 0
+        while True:
+            g1 = k * (3 * k - 1) // 2
+            g2 = k * (3 * k + 1) // 2
+            if g1 > i and g2 > i:
+                break
+            sign = -1 if k % 2 == 0 else 1
+            if g1 <= i:
+                total += sign * p[i - g1]
+            if g2 <= i:
+                total += sign * p[i - g2]
+            k += 1
+        p[i] = total
+    return p[n]
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--atom", choices=sorted(ATOMS), default="he3")
+    ap.add_argument("--atom", choices=sorted(NUCLEI), default="he3")
     args = ap.parse_args()
     atom = args.atom
 
