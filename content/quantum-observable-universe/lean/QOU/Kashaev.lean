@@ -85,7 +85,7 @@ class VolumeConjecture (q : ℝ) where
 noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) : ℝ :=
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
-  trivial
+  sorry
 
 /-- The piece volume is non-negative.  Once `pieceVolume` is given a
     concrete combinatorial definition, this becomes a non-trivial fact
@@ -96,6 +96,6 @@ theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
     0 ≤ pieceVolume q β S := by
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
-  trivial
+  sorry
 
 end QOU.Kashaev

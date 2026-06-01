@@ -81,6 +81,6 @@ theorem hecke_mass_trace [ctx : HeckeMassTraceContext] :
   -- on `H_n(R, q)`; the topological decomposition is `R`-linear in
   -- the mass element, and `tr_M` is `R`-linear in its argument.
   -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
-  trivial
+  sorry
 
 end QOU.Braiding
