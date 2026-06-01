@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-31T04:02:57.923638+00:00",
-  "commitSha": "ab27cbd9c5c52b8fba43990f0dcdfc9341839dbf",
+  "computedAt": "2026-06-01T01:31:59.891966+00:00",
+  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
   "assertions": [
     {
       "name": "zero_nontrivial_substrate_q_rationals_within_one_percent",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 113,
+  "durationMs": 111,
   "computation": "casimir-q-zeta-probe",
   "scriptFile": "casimir_q_zeta_probe.py",
   "scriptHash": "7f7e9b177106",
-  "scriptCommitSha": "8d561dfc73e203380fdde6ff1c2e712025cc1082",
+  "scriptCommitSha": "08bbde26d901da4ae5fe6b5b1174e8449a529175",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,7 +27,9 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

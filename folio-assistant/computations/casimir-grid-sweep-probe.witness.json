@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-31T04:47:05.341779+00:00",
-  "commitSha": "63bf83c52e12e47833df768b15f6ba040fbb558f",
+  "computedAt": "2026-06-01T01:31:58.863524+00:00",
+  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
   "assertions": [
     {
       "name": "zero_nontrivial_substrate_combinations_within_one_percent",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 238,
+  "durationMs": 243,
   "computation": "casimir-grid-sweep-probe",
   "scriptFile": "casimir_grid_sweep_probe.py",
   "scriptHash": "3b27b3ef43e8",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6a4d908426c740e5e8cca336a33b8f53cf6ac4aa",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,7 +27,9 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

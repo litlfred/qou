@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T16:08:51.150411+00:00",
-  "commitSha": "b302ff3f23b51c0b859ac24f1ec600dce94e6f88",
+  "computedAt": "2026-06-01T01:32:05.715256+00:00",
+  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
   "assertions": [
     {
       "name": "delta_n2_shadow_price_is_particle_dependent",
@@ -21,38 +21,50 @@
   "durationMs": 23,
   "computation": "delta-n2-lp-dual-extraction",
   "scriptFile": "delta_n2_lp_dual_extraction.py",
-  "scriptHash": "b1b3cbdb5345",
-  "scriptCommitSha": "621cbb9207942e0a9db11c2f336e2da439e42bca",
+  "scriptHash": "85adf75c34a5",
+  "scriptCommitSha": "cce9436d753779edd6cdccfe04a293b0e3d81d4f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
     "guard_digits": 15,
     "truncation_bound": "1e-50"
   },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Item 4b PROPER (LP-dual) — Δ_n² discharge via per-particle shadow-price extraction.  Computes u^{(Δ_n²)*}(β) = Σ_λ y_λ(q) · q^{c(λ)} · χ^λ(β) for the proton via the closed-form Markov-trace chain (Phase 1.6 / option_b_proton_mass_full_chain.py).  Verifies that Δ_n² is PARTICLE-DEPENDENT, not a uniform scalar — Phase 1.11's simplified discharge missed this.  Per term7-alpha5's prop:mass-formula-iterative-lp-dual, the proper formulation is m = Σ_l u^{(l)*}, where each u^{(l)*} carries the per-braid information.  Δ_n² is the saturated-shell limit at ℓ = n.  Confirms Item 2 (m_n via difference formula) is the framework-consistent closure.",
   "contentBlock": "conj:categorical-neutrality-saturated-shells",
   "parameters": {
-    "q_0": 1.1099785955541805
+    "q_0": 1.1099785827513808
   },
   "data": {
     "y_lambda_at_q0": {
-      "(3,)": 0.4113029957045193,
-      "(2, 1)": 0.28502242460991134,
-      "(1, 1, 1)": 0.018652155075658008
+      "(3,)": 0.411303005681678,
+      "(2, 1)": 0.2850224207099551,
+      "(1, 1, 1)": 0.01865215289841178
     },
     "q_to_c_at_q0": {
-      "(3,)": 1.3675518842725483,
+      "(3,)": 1.3675518369513853,
       "(2, 1)": 1.0,
-      "(1, 1, 1)": 0.7312336822466793
+      "(1, 1, 1)": 0.7312337075494336
     },
     "chi_lambda_proton_at_q0": {
-      "(3,)": 3.1510888204317715,
-      "(2, 1)": 1.2034862378802729,
-      "(1, 1, 1)": -0.31735062290722005
+      "(3,)": 3.151088420630976,
+      "(2, 1)": 1.2034860665075826,
+      "(1, 1, 1)": -0.31735066317173016
     },
-    "tr_M_proton_at_q0": 1.6331535640480814,
-    "tr_M_delta_n2_proton_at_q0": 2.1111109197975844,
-    "delta_n2_shadow_price_ratio_proton": 1.2926591633947726,
-    "interpretation": "u^{(Δ_n²)*}(β) is particle-dependent. The simplified Phase 1.11 discharge (uniform dim²-weighted ⟨q^{c(λ)}⟩ = 1.0165) made the neutron error 0.09 pp worse. The proper LP-dual extraction per term7-alpha5's formalism gives ratio_Δ_n²(p) ≠ ratio_Δ_n²(n), so a single scalar discharge cannot capture Δ_n²'s effect on p−n splitting. The neutron extraction requires a separate closed-form chain for the σ⁻¹-rich neutron braid word, which is naturally subsumed by Item 2's difference formula."
+    "tr_M_proton_at_q0": 1.6331533774490536,
+    "tr_M_delta_n2_proton_at_q0": 2.1111106228497016,
+    "delta_n2_shadow_price_ratio_proton": 1.2926591292651308,
+    "interpretation": "u^{(Δ_n²)*}(β) is particle-dependent. The simplified Phase 1.11 discharge (uniform dim²-weighted ⟨q^{c(λ)}⟩ = 1.0165) made the neutron error 0.09 pp worse. The proper LP-dual extraction per term7-alpha5's formalism gives ratio_Δ_n²(p) ≠ ratio_Δ_n²(n), so a single scalar discharge cannot capture Δ_n²'s effect on p−n splitting. The neutron extraction requires a separate closed-form chain for the σ⁻¹-rich neutron braid word, which is naturally subsumed by Item 2's difference formula.",
+    "lean_uniqueness_ref": {
+      "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
   }
 }

@@ -1,11 +1,11 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-30T19:53:25.314882+00:00",
-  "commitSha": "83768987ff7ca5145a68bc3edcdeaff4ab2835ef",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T01:50:17.660872+00:00",
+  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 3442,
+  "durationMs": 1100,
   "computation": "delta-lambda-empirical-tabulation",
   "scriptFile": "delta_lambda_empirical_tabulation.py",
   "scriptHash": "c9218120b3c1",
@@ -17,13 +17,11 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Empirical tabulation of per-Wedderburn-block binding fractions Δ_λ(K) for K ∈ {p, n, D, T, ³He, ⁴He} per the full ρ_K mass formula M(K) = m_e · Σ_λ y_λ · χ^λ · (1 + Δ_λ). Solves the underdetermined Σ c_λ Δ_λ = ΔM/m_e under four ansätze: (a) single-block sweep, (b) padded-staircase-supported, (c) Δ-monotonic via content sum c(λ), (d) Δ-isotypic via dim_q(λ)/[n]_q!. Reports best λ* per ansatz, ‖Δ‖₂, and cross-atom recurrence pattern. Mixed-precision: tier-2 chi data is float64 (numpy), per-ansatz solutions are mpmath. Proposal 1 of docs/audits/2026-05-09-workplan-update-rho-k.md. **Class-A audit-only**: consumes CODATA m_p, m_n as fit targets per the docstring banner; the emitted Δ_λ values are *fitted to CODATA*, not predicted from substrate. Tracked under Workplan-0b for substrate-pure replacement.",
   "contentBlock": "prop:rho-k-h3a-refinement",
@@ -270,8 +268,8 @@
         "M_codata_MeV": "2808.9211329800000000000000000000000000000000000000",
         "constituent_MeV": "2817.4029292000000000000000000000000000000000000000",
         "delta_M_MeV": "-8.4817962200000000000000000000000000000000000000000",
-        "tr_M": "0.10405210674205243557910036256932385433600000000000",
-        "abs_tr_M": "0.10405210674205243557910036256932385433600000000000",
+        "tr_M": "0.10405210674205243934119815906826148473600000000000",
+        "abs_tr_M": "0.10405210674205243934119815906826148473600000000000",
         "target_signed": "-16.598461151436808236103029174521787177840580690039",
         "a_single_block": {
           "ansatz": "a_single_block",
@@ -303,8 +301,8 @@
                 7,
                 2
               ],
-              "delta": "-830.00381883443941767718284034099008333723721483556",
-              "abs_delta": "830.00381883443941767718284034099008333723721483556"
+              "delta": "-830.00381883443926156453139517719007203336262375729",
+              "abs_delta": "830.00381883443926156453139517719007203336262375729"
             },
             {
               "lambda": [
@@ -337,15 +335,15 @@
         },
         "c_content_monotonic": {
           "ansatz": "c_content_monotonic",
-          "alpha": "-7.6232219139191638637472949298934628492422309556413",
-          "weighted_sum_yChi_cContent": "2.1773551050809429722772038990800573617520000000000",
-          "norm_delta_2": "638.25991693469995946109934187144160650650671807248"
+          "alpha": "-7.6232219139191636003812782260829089773402377342131",
+          "weighted_sum_yChi_cContent": "2.1773551050809430475001670306968977793520000000000",
+          "norm_delta_2": "638.25991693469993741058397672482433656670677067022"
         },
         "d_isotypic": {
           "ansatz": "d_isotypic",
-          "alpha": "-2727054.0330222605436468190944048114036773726249392",
-          "weighted_sum_yChi_planch": "0.0000060865904930536143222696809105966158675946122661126",
-          "norm_delta_2": "3732.5546293414176030975978035831532642539023306471"
+          "alpha": "-2727054.0330222604500221610770712623079878754102919",
+          "weighted_sum_yChi_planch": "0.0000060865904930536145312332535069767069396179290486861",
+          "norm_delta_2": "3732.5546293414174749523001778456351934879912349571"
         }
       },
       "3He": {
@@ -356,8 +354,8 @@
         "M_codata_MeV": "2808.3916074300000000000000000000000000000000000000",
         "constituent_MeV": "2816.1095968400000000000000000000000000000000000000",
         "delta_M_MeV": "-7.7179894100000000000000000000000000000000000000000",
-        "tr_M": "0.20654081702074089319680102259229082473600000000000",
-        "abs_tr_M": "0.20654081702074089319680102259229082473600000000000",
+        "tr_M": "0.20654081702074089319813896642414066132800000000000",
+        "abs_tr_M": "0.20654081702074089319813896642414066132800000000000",
         "target_signed": "-15.103728510596743887634211381451957973690552593112",
         "a_single_block": {
           "ansatz": "a_single_block",
@@ -423,15 +421,15 @@
         },
         "c_content_monotonic": {
           "ansatz": "c_content_monotonic",
-          "alpha": "-3.6549760130368447071902525716831780778339686657541",
-          "weighted_sum_yChi_cContent": "4.1323741815879566405551246251360071581840000000000",
-          "norm_delta_2": "306.01558144591544894259485632058794361681241759831"
+          "alpha": "-3.6549760130368447072074531674864380613031405011877",
+          "weighted_sum_yChi_cContent": "4.1323741815879566405356773571507206055120000000000",
+          "norm_delta_2": "306.01558144591544894403498898005711416562240291341"
         },
         "d_isotypic": {
           "ansatz": "d_isotypic",
-          "alpha": "-992808.00542385251470451351324200325316002736481281",
-          "weighted_sum_yChi_planch": "0.000015213141340604536799503127017857377345325753926323",
-          "norm_delta_2": "1358.8693409881441722229895413154745758306760342176"
+          "alpha": "-992808.00542385251469634734223807041827273485122897",
+          "weighted_sum_yChi_planch": "0.000015213141340604536799628260087912889939098075050551",
+          "norm_delta_2": "1358.8693409881441722118123959360180092428228840418"
         }
       },
       "4He": {
