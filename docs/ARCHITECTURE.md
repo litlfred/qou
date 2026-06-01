@@ -14,11 +14,20 @@ This document describes the **architecture of the QOU repository** — how the l
                                   │ emits
                                   │
 ┌──────────────────────────────────────────────────────────────────────┐
-│ LAYER 3 — Compute scripts (Python, in folio-assistant/computations/) │
-│ ~539 scripts. Each reads inputs, runs the canonical pipeline, emits  │
-│ a witness JSON. ~67% depend on the substrate trio (WitnessBuilder +  │
-│ _precision + q_parameter); ~60% depend on pyhecke; ~2% depend on     │
-│ pyhecke-native (Rust acceleration).                                  │
+│ LAYER 3 — Two consumer paths emit Layer-4 witnesses                  │
+│                                                                      │
+│ (A) In-repo compute scripts (Python, folio-assistant/computations/)  │
+│     ~539 scripts. Each runs the canonical pipeline directly. ~67%    │
+│     depend on the substrate trio; ~60% depend on pyhecke; ~2% depend │
+│     on pyhecke-native (Rust acceleration).                           │
+│                                                                      │
+│ (B) qou-mass high-level facade (qou-mass/, PyPI `qou-mass`)          │
+│     `predict("4He")` / `compute_tr_M(Z, N)` / `canonical_braid(...)` │
+│     for external researchers — no paper-repo checkout needed.        │
+│     Vendors per-Z shards + on-demand `markov_peel` recomputation.    │
+│     Status: alpha (`v0.1.0a1`); not yet adopted by the in-repo       │
+│     scripts (path-A and path-B are parallel today, see Coherence     │
+│     status below).                                                   │
 └──────────────────────────────────────────────────────────────────────┘
                   ▲                                ▲
                   │ uses                           │ uses
@@ -60,12 +69,32 @@ This document describes the **architecture of the QOU repository** — how the l
 
 | Runtime | Witness reader | Hecke compute |
 |---|---|---|
-| **Python (CPython, Pyodide)** | `qou-substrate` + `witness-schema` (PyPI) | `pyhecke` + `pyhecke-native` (PyPI) |
+| **Python (CPython, Pyodide)** | `qou-substrate` + `witness-schema` (PyPI) | `pyhecke` + `pyhecke-native` (PyPI); `qou-mass` (high-level facade, PyPI, alpha) |
 | **TypeScript / Node / Deno / Bun** | `@litlfred/witness-schema` (npm — Zod + JSON Schema) | `@litlfred/hecke-engine-node` (npm — napi-rs native) |
 | **Browser / WASM** | Same npm package as above | `@litlfred/hecke-engine-wasm` (npm — wasm-bindgen, rug-free surface) |
 | **R / Kotlin / Java / Swift / C** | JSON Schema (from npm or PyPI download) | Tier-3; not yet shipped (UniFFI / extendr / cbindgen templates ready) |
 
 The **witness JSON** is the universal data-interchange format. Any language with a JSON parser + JSON-Schema validator can read every witness file the repo produces.
+
+## Library coherence status
+
+The package ecosystem is layered but **mid-migration**. Today's import counts (from `folio-assistant/computations/*.py`, the 901-file compute layer; refresh with [`scripts/audit-library-coherence.sh`](../scripts/audit-library-coherence.sh)):
+
+| Package | Importers in compute layer | Status |
+|---|---:|---|
+| [`qou-substrate`](../tools/qou-substrate/) | 25 | wired — substrate trio, the foundation |
+| [`pyhecke`](../tools/pyhecke/) | 41 | wired — primary Hecke / Gram surface |
+| [`pyhecke-native`](../tools/pyhecke-native/) | 20 | wired — Rust-accelerated Markov trace |
+| [`qou-mass`](../qou-mass/) | **0** | alpha, not yet adopted |
+| [`witness-schema`](../tools/witness-schema/) | **0** | alpha, not yet adopted |
+| `mpmath` (transitive via `qou_substrate.precision`) | 593 | direct imports — pre-substrate carve-out |
+| `sympy` | 206 | direct imports — `Rational`, `Symbol`, partition combinatorics |
+| `numpy` | 127 | direct imports — Gram-matrix linear algebra |
+| `scipy` | 20 | direct imports — LP/SDP fallbacks |
+
+The two zero-import packages (`qou-mass`, `witness-schema`) ship clean public APIs (`predict()`, `compute_tr_M()`, `ComputationWitness.model_validate_json()`); they're not yet adopted because the in-repo compute scripts predate them. They are the **external-researcher interface** — `pip install qou-mass` gets you the canonical predictions without cloning this repo. The migration of in-repo scripts onto these packages is tracked by [`docs/workplans/2026-05-24-library-reuse-production-readiness.md`](workplans/2026-05-24-library-reuse-production-readiness.md).
+
+A pre-commit / CI audit ([`scripts/audit-library-coherence.sh`](../scripts/audit-library-coherence.sh)) re-counts these numbers and flags any new zero-import library packages.
 
 ## Content-object architecture
 
