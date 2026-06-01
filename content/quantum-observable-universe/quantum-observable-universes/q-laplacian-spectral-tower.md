@@ -1,7 +1,7 @@
 **Proposition (the $q$-Laplacian spectral tower).** *The $q$-Laplacian
 $\Delta_q = d_q\delta_q + \delta_qd_q$
 ([particle / $q$-harmonic form](#def:q-harmonic-form)) has eigenvalues
-given by the **$q$-integer tower***
+given by the $q$-integer tower*
 $$
   [k]_q^2, \qquad [k]_q = \frac{q^k - q^{-k}}{q - q^{-1}}
   \quad (k = 1, 2, 3, \ldots).
@@ -35,11 +35,9 @@ this proposition rather than re-introducing $[k]_q$ locally.
 The vanishing $[\kappa]_q = 0$ at $q = e^{i\pi/\kappa}$ is elementary:
 the numerator $q^\kappa - q^{-\kappa}$ vanishes because
 $q^\kappa = e^{i\pi} = -1$, hence $q^{-\kappa} = -1$ as well and the
-difference is $0$. By the **Verlinde formula**
-[[verlinde1988]](#) the fusion coefficients are diagonalised by the
+difference is $0$. By the **Verlinde formula** \cite{verlinde1988} the fusion coefficients are diagonalised by the
 modular $S$-matrix and the surviving simple objects are
-$j = 0, \tfrac12, \ldots, \tfrac{\kappa-2}{2}$ — the **Reshetikhin–
-Turaev** truncation [[reshetikhin1991]](#). The surviving quantum
+$j = 0, \tfrac12, \ldots, \tfrac{\kappa-2}{2}$ — the **Reshetikhin–Turaev** truncation \cite{reshetikhin1991}. The surviving quantum
 dimensions are exact algebraic numbers in the cyclotomic field
 $\mathbb{Q}(\zeta_\kappa)$; for example $[3]_q$ at $\kappa = 5$ is the
 golden ratio $\varphi = \tfrac{1+\sqrt5}{2}$ (the Fibonacci-anyon

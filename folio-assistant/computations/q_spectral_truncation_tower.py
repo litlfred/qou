@@ -105,7 +105,7 @@ def main() -> int:
         "Exact symbolic; characterizes the shared engine, does not solve "
         "the q-NS PDE or build the q-heat archimedean realisation."
     )
-    builder.set_content_block("def:q-harmonic-form")
+    builder.set_content_block("prop:q-laplacian-spectral-tower")
 
     print("=" * 78)
     print(" q-SPECTRAL TRUNCATION TOWER — [k]_q at roots of unity (WRT cut)")
