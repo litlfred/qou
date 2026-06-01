@@ -295,7 +295,9 @@ const Q_USAGE: QaCriterionDefinition[] = [
       "the detector. Always result `pass`; the regime tags surface " +
       "via the `notes` field on the entry.",
     default_severity: "minor",
-    depends_on: ["md", "ts", "lean"],
+    // Only `md` is required — the detector reads md+ts+lean opportunistically
+    // and tolerates missing files (#1640-Copilot @ qa-criteria-registry.ts:300).
+    depends_on: ["md"],
     automated: true,
     source_file: "content/pipeline/qa-checkers-q-usage.ts",
   },
@@ -312,7 +314,9 @@ const Q_USAGE: QaCriterionDefinition[] = [
       "an `archimedean-specialisation` tag in its `.ts` manifest). " +
       "Mirrors CLAUDE.md §7c base-ring convention.",
     default_severity: "major",
-    depends_on: ["md", "ts", "lean"],
+    // Pin lives in narrative md (q_0 ≈ 1.1097…) — md is the load-bearing
+    // file (#1640-Copilot @ qa-criteria-registry.ts:317).
+    depends_on: ["md"],
     automated: true,
     source_file: "content/pipeline/qa-checkers-q-usage.ts",
   },
@@ -328,7 +332,11 @@ const Q_USAGE: QaCriterionDefinition[] = [
       "Categorical chapters should keep statements over generic `R`; " +
       "see CLAUDE.md §7c.",
     default_severity: "major",
-    depends_on: ["md", "ts", "lean"],
+    // MeV/CODATA leak appears in md; Real.* leak appears in lean. md is
+    // present on nearly every block so anchoring on md catches the
+    // common case without forcing n/a on lean-less blocks
+    // (#1640-Copilot @ qa-criteria-registry.ts:333).
+    depends_on: ["md"],
     automated: true,
     source_file: "content/pipeline/qa-checkers-q-usage.ts",
   },
@@ -376,7 +384,9 @@ const Q_USAGE: QaCriterionDefinition[] = [
       "context); elsewhere the block should state `q = e^{2πi/N}` " +
       "or `q is a primitive N-th root of unity` in prose.",
     default_severity: "minor",
-    depends_on: ["md", "lean"],
+    // Most root-of-unity prose lives in the narrative md
+    // (#1640-Copilot @ qa-criteria-registry.ts:381).
+    depends_on: ["md"],
     automated: true,
     source_file: "content/pipeline/qa-checkers-q-usage.ts",
   },
@@ -392,7 +402,9 @@ const Q_USAGE: QaCriterionDefinition[] = [
       "The stronger per-regime checks live in `q-usage-fixed-q0-leak` " +
       "and `q-usage-archimedean-in-categorical-chapter`.",
     default_severity: "minor",
-    depends_on: ["md", "ts", "lean"],
+    // Regime detector tolerates missing md/lean — only require md
+    // (#1640-Copilot @ qa-criteria-registry.ts:397).
+    depends_on: ["md"],
     automated: true,
     source_file: "content/pipeline/qa-checkers-q-usage.ts",
   },

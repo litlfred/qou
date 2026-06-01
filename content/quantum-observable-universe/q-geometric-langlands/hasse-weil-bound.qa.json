@@ -1929,9 +1929,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "notes": "{\"regimes\":[\"real-positive\"],\"chapter\":\"q-geometric-langlands\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"root-of-unity\",\"symbolic\",\"unit-circle\"]}"
       }
     ],
@@ -1946,9 +1947,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -1962,9 +1964,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -1978,11 +1981,12 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "severity": "minor",
-        "evidence": "/home/user/qou/content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.lean:106 — positivity-dependent Real.* on q without explicit hypothesis — Complex.abs (Z.eigenvalues i) = Real.rpow Z.q (1 / 2) := by"
+        "evidence": "content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.lean:106 — positivity-dependent Real.* on q without explicit hypothesis — Complex.abs (Z.eigenvalues i) = Real.rpow Z.q (1 / 2) := by"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1996,9 +2000,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -2012,9 +2017,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -2028,13 +2034,14 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "severity": "minor",
-        "evidence": "/home/user/qou/content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.md:1 — detected regime [real-positive] is disjoint from chapter 'q-geometric-langlands' expected [generic-R, mod-gt-1, mod-lt-1, na, root-of-unity, symbolic, unit-circle]"
+        "evidence": "content/quantum-observable-universe/q-geometric-langlands/hasse-weil-bound.md:1 — detected regime [real-positive] is disjoint from chapter 'q-geometric-langlands' expected [generic-R, mod-gt-1, mod-lt-1, na, root-of-unity, symbolic, unit-circle]"
       }
     ]
   },
-  "updated_at": "2026-06-01T13:26:15.486Z"
+  "updated_at": "2026-06-01T13:33:29.393Z"
 }

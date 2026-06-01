@@ -1959,9 +1959,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
       }
     ],
@@ -1976,9 +1977,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -1992,9 +1994,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -2008,9 +2011,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -2024,9 +2028,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -2040,9 +2045,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -2056,13 +2062,14 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "severity": "minor",
-        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/staircase-corner-hook.md:1 — detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/mass-theory/staircase-corner-hook.md:1 — detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ]
   },
-  "updated_at": "2026-06-01T13:26:15.486Z"
+  "updated_at": "2026-06-01T13:33:29.393Z"
 }

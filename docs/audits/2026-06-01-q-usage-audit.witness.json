@@ -1,9 +1,9 @@
 {
   "$schema": "q-usage-audit/v1",
   "description": "Per-block q-usage regime audit + chapter-mismatch sweep",
-  "audited_at": "2026-06-01T13:26:15.486Z",
+  "audited_at": "2026-06-01T13:33:29.393Z",
   "script": "content/pipeline/qa-checkers-q-usage.ts",
-  "script_hash": "c13279b870c7",
+  "script_hash": "fa7e3b2a6286",
   "n_blocks": 1934,
   "n_chapters": 31,
   "n_fails": 27,

@@ -1945,9 +1945,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\"],\"chapter\":\"lifting-and-descent\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
       }
     ],
@@ -1962,9 +1963,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -1978,11 +1980,12 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "severity": "major",
-        "evidence": "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:55 — archimedean tactic in categorical chapter — linarith | /home/user/qou/content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:56 — archimedean tactic in categorical chapter — · linarith"
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:55 — archimedean tactic in categorical chapter — linarith | content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:56 — archimedean tactic in categorical chapter — · linarith"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -1996,9 +1999,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -2012,9 +2016,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -2028,9 +2033,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -2044,13 +2050,14 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "severity": "minor",
-        "evidence": "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md:1 — detected regime [real-gt-1, real-positive] is disjoint from chapter 'lifting-and-descent' expected [generic-R, na, symbolic]"
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md:1 — detected regime [real-gt-1, real-positive] is disjoint from chapter 'lifting-and-descent' expected [generic-R, na, symbolic]"
       }
     ]
   },
-  "updated_at": "2026-06-01T13:26:15.486Z"
+  "updated_at": "2026-06-01T13:33:29.393Z"
 }

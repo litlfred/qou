@@ -494,9 +494,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "notes": "{\"regimes\":[\"fixed-q0\",\"real-positive\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
@@ -511,11 +512,12 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "severity": "major",
-        "evidence": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:47 — At $q_0 = 1.10977859555\\ldots$ (50 dps): | /home/user/qou/content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.lean:97 — /-- **Empirical witness at substrate q_0 ≈ 1.10978.**"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:47 — At $q_0 = 1.10977859555\\ldots$ (50 dps): | content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.lean:97 — /-- **Empirical witness at substrate q_0 ≈ 1.10978.**"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -529,11 +531,12 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664",
         "severity": "major",
-        "evidence": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:32 — MeV/CODATA reference in categorical chapter — *to a residual of $0.24\\,\\mathrm{ppm}$ at $q = q_0$ (50-dps MPFR | /home/user/qou/content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:58 — MeV/CODATA reference in categorical chapter — | CODATA $m_p$ | $938.27209\\,\\mathrm{MeV}$ | | /home/user/qou/content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:59 — MeV/CODATA reference in categorical chapter — | Residual | $0.24\\,\\mathrm{ppm}$ | | /home/user/qou/content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:93 — MeV/CODATA reference in categorical chapter — The series converges to $0.017\\,\\mathrm{ppm}$ accuracy at order $h^9$."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:32 — MeV/CODATA reference in categorical chapter — *to a residual of $0.24\\,\\mathrm{ppm}$ at $q = q_0$ (50-dps MPFR | content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:58 — MeV/CODATA reference in categorical chapter — | CODATA $m_p$ | $938.27209\\,\\mathrm{MeV}$ | | content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:59 — MeV/CODATA reference in categorical chapter — | Residual | $0.24\\,\\mathrm{ppm}$ | | content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.md:93 — MeV/CODATA reference in categorical chapter — The series converges to $0.017\\,\\mathrm{ppm}$ accuracy at order $h^9$."
       }
     ],
     "q-usage-positivity-implicit": [
@@ -547,9 +550,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -563,9 +567,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -579,9 +584,10 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -595,11 +601,12 @@
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "c13279b870c7"
+          "script_hash": "fa7e3b2a6286"
         },
-        "reviewed_at": "2026-06-01T13:26:15.486Z"
+        "reviewed_at": "2026-06-01T13:33:29.393Z",
+        "reviewed_sha": "70cc682cd6c64784241b4d357f36bf7b0e7c8664"
       }
     ]
   },
-  "updated_at": "2026-06-01T13:26:15.486Z"
+  "updated_at": "2026-06-01T13:33:29.393Z"
 }

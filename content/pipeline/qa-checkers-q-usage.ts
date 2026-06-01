@@ -54,9 +54,10 @@ export interface QUsageResult {
 }
 
 /**
- * The seven q-regime tags. A block's detected-regime vector is a
- * subset of these; the empty set means "block doesn't mention q"
- * (regime `na`).
+ * The eleven q-regime tags. A block's detected-regime vector is a
+ * subset of these; the `na` tag means "block doesn't mention q"
+ * (#1640-Copilot @ qa-checkers-q-usage.ts:60 — earlier comment said
+ * "seven", which under-counted the regime taxonomy).
  */
 export type QRegime =
   | "na"
