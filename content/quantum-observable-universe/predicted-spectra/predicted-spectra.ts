@@ -81,7 +81,6 @@ export default chapter({
         "categorical-proton-unique-proof",
         "meson-to-proton-via-borromean",
         "categorical-neutron-table-data",
-        "categorical-neutron-table-data",
         "categorical-neutron-exists",
         "categorical-neutron-exists-proof",
         "categorical-neutron-unique",

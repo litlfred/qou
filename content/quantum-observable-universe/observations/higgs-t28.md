@@ -63,9 +63,12 @@ and the Higgs link:
 
 $$
   m_{\mathrm{Higgs}}  \propto 
-  \#\text{crossings with } T(2,8)
+  N_{\mathrm{cross}}(T(2,8))
    \times  \frac{q - q^{-1}}{q + q^{-1}}
 $$
+
+where $N_{\mathrm{cross}}(L)$ counts the crossings between the particle
+braid and the link $L$.
 
 Particles that cross all three exceptional divisors (heavy
 quarks, $W$, $Z$) interact strongly with $T(2,8)$ and acquire

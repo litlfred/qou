@@ -31,7 +31,6 @@ export default chapter({
         "geodesic-vortices",
         "braid-fluid",
         "braid-fluid-table-data",
-        "braid-fluid-table-data",
         "planck-reynolds",
       ],
     }),
