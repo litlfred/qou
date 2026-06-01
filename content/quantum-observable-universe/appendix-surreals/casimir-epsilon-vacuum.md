@@ -234,18 +234,29 @@ two class hypotheses (`VacuumEpsilon` and a new
 
 The trace functional the plate-mode-count must carry is now
 identified — the bare disjoint-component count, selected by
-$n$-stability — and under the free-field $\leftrightarrow$
-disjoint-unknot identification the $\pi^{2}/720$ prefactor follows
-from $(\pi^{2}/6)\cdot|\zeta(-3)|$ with no substrate dependence.
-The substrate-correction series is then trivial at leading order
+$n$-stability — and the $\pi^{2}/720$ prefactor follows from
+$(\pi^{2}/6)\cdot|\zeta(-3)|$ with no substrate dependence. The
+substrate-correction series is then trivial at leading order
 ($\xi_{0}=1$, $\xi_{k}=0$ for $k\ge 1$ on the $1/d^{4}$ term),
 with q-corrections relocated to the $1/d^{6}$ (interacting-mode)
-order. What remains open is (i) the free-field
-$\leftrightarrow$ disjoint identification itself, presently a
-modeling statement rather than a QOU theorem, and (ii) the full
-Yekutieli-homotopy lift realising the categorical object. The
-selection argument and the prefactor derivation are recorded in
-the [N\_⊙-construction audit](../../../docs/audits/2026-05-31-casimir-n-unknot-construction.md)
+order. The free-field $\leftrightarrow$ disjoint-unknot
+identification this rests on is **not a fresh assumption**: QOU
+already represents a free photon mode as the identity braid
+([`rem:trivial-knot-photon-interpretation`](#rem:trivial-knot-photon-interpretation)),
+whose Markov closure is disjoint unknots
+([`prop:recursive-atom-knot-atlas`](#prop:recursive-atom-knot-atlas):
+$\unicode{9737}$ photon $= \mathbf{1}_{B_4}$, closure $= 4\cdot 0_1$),
+and degree-$\le 1$ closures are non-hyperbolic with $\mathrm{Vol}=0$
+— carrying no substrate-$q$ deformation
+([`lem:degree-one-braid-trivial-volume`](#lem:degree-one-braid-trivial-volume)).
+The leading-order $\xi_{k}=0$ thus reduces to cited QOU content;
+the only physical input is that the Casimir vacuum tower is built
+from free photon modes (standard physics). What remains is the
+full Yekutieli-homotopy lift realising the explicit categorical
+object. The selection argument, the prefactor derivation, and the
+grounding in the photon representation are recorded in the
+[N\_⊙-construction audit](../../../docs/audits/2026-05-31-casimir-n-unknot-construction.md)
+and the [free-field/disjoint grounding audit](../../../docs/audits/2026-06-01-casimir-free-field-disjoint-grounding.md)
 (see also the [ξ\_2 reconciliation](../../../docs/audits/2026-05-31-casimir-xi-2-reconciliation.md)).
 
 ## See also
