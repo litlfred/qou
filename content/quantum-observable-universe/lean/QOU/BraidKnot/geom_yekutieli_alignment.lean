@@ -37,6 +37,56 @@ class GeomYekutieliAlignmentContext where
     Geom = CS_K * hbar_q ^ 2
   /-- Manuscript sub-claim (iii) — unknot case: `Geom(K) = 0`. -/
   claim_iii_unknot_case : Geom = 0
+  /-- The per-block Markov-trace factor of the knot's own Hecke level:
+      `trM = Σ_λ w_λ χ_λ(β_K)/dim λ`
+      (`prop:hoefsmit-scattering-pipeline` Stage 2/4), evaluated over the
+      partitions of the KNOT'S OWN strand count (H₃ for the 3-strand
+      Borromean baryons — NOT a fixed global level). -/
+  trM : ℝ
+  /-- The boundary holonomy of the categorical connection: the
+      surface-ordered exponential `Hol_∂Σ A` of the gauge field `A`
+      over the boundary of the Seifert surface `Σ` of `β_K`
+      (Yekutieli non-abelian Stokes, surface-ordered integral). -/
+  boundaryHolonomy : ℝ
+  /-- The physical mass factor (`prop:hoefsmit-scattering-pipeline`
+      Stage 4, before scaling by `m_e`): `Geom(K) · trM`. -/
+  massFactor : ℝ
+  /-- **Manuscript sub-claim (iv) — Yekutieli alignment (CONJECTURAL).**
+      The boundary holonomy of the categorical connection equals the
+      Hecke Markov trace: `Hol_∂Σ A = trM`. This is the non-abelian
+      Stokes identification of Stage 3 — surface curvature integrates
+      to the boundary trace. It is the conjectural join
+      `conj:geom-yekutieli-alignment`; the class instance is the
+      §3b-cond axiomatisation (the only `sorry` in the chain). -/
+  claim_iv_holonomy_equals_trM : boundaryHolonomy = trM
+  /-- **Manuscript sub-claim (v) — Stage-4 per-block mass factor.**
+      The mass factor is `Geom(K)` times the per-block sum `trM` — the
+      paper's FORCED per-block form. (Production's `geom_full_borromean`
+      drops `trM` and substitutes a global H₄ scalar; the per-block /
+      global discrepancy is quantified in
+      `geom-full-per-block-wiring.witness.json`.) -/
+  claim_v_mass_factor_per_block : massFactor = Geom * trM
+
+/-- **Yekutieli alignment + Stage-4 per-block mass factor.**
+
+    Two consequences of the §3b-cond `GeomYekutieliAlignmentContext`:
+
+    1. the boundary holonomy of the categorical connection equals the
+       Hecke Markov trace `trM` (non-abelian Stokes, conjectural join);
+    2. the Stage-4 mass factor is `Geom(K)` times the per-block sum
+       `trM = Σ_λ w_λ χ_λ/dim λ` over the knot's own Hecke level.
+
+    Together these encode the paper's per-block formula
+    `m(K) = m_e · Geom(K) · Σ_λ w_λ χ_λ(β_K)/dim λ`.  The proof is
+    purely from the class fields — the conjectural content is the
+    instance (the holonomy↔trM identification), per CLAUDE.md §3b. -/
+-- Ref: [yekutieli2015] https://doi.org/10.1142/9537
+-- Ref: [manuscript] §5.14, prop:hoefsmit-scattering-pipeline (Stage 3–4)
+theorem geom_yekutieli_per_block_alignment
+    [ctx : GeomYekutieliAlignmentContext] :
+    ctx.boundaryHolonomy = ctx.trM ∧
+      ctx.massFactor = ctx.Geom * ctx.trM :=
+  ⟨ctx.claim_iv_holonomy_equals_trM, ctx.claim_v_mass_factor_per_block⟩
 
 /-- **Manuscript statement** (full body):
 
