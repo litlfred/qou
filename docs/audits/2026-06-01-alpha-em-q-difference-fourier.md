@@ -16,13 +16,28 @@ open *derived form* (alpha-em ledger) is unchanged.
 Applying the Q_β machinery to the α_EM Habiro element
 `H = [2]_q·(1−h²α) = (q+q⁻¹)(1−(q−q⁻¹)²α)` gives exact structure:
 
-- **H is purely bar-even** (`q↦q⁻¹` invariant) — it already lives entirely
-  in the charge-conjugation-symmetric (physical) sector that PR #1602
-  said the Q_β scaling map `f` must occupy. **α_EM is the clean case;
-  Q_β is the same machinery with a bar-odd contamination to cancel.**
+- **H is a fixed point of the bar involution** `q↦q⁻¹` — an exact
+  algebraic fact over the **formal fibre variable** (no reality assumed).
+  This is the clean charge-conjugation-symmetric sector PR #1602 said the
+  Q_β scaling map `f` must occupy. **α_EM is the clean case (a bar fixed
+  point); Q_β's `Δtr_M` is NOT a bar fixed point — it carries a
+  bar-anti-invariant part to cancel.**
 - **H(ζ_4) = 0** — a ZERO at the 4th root of unity, the exact dual of
   Q_β's **POLE** at ζ_4 (PR #1622). Same q-difference machinery, dual
   modular node.
+
+## Level discipline (fibre vs observable)
+
+Per CLAUDE.md *"Im(q) at fibre vs observable level"*: this probe works
+at the **fibre / categorical level** — `q` and `α` are **formal**, with
+`Im` **unconstrained**, and the operative symmetry is the **bar
+involution `q↦q⁻¹`** (the framework/tower involution structure), NOT a
+reality assumption. The root-of-unity spectrum below is exact in the
+**cyclotomic field** `ℚ(ζ_d)` with `α` a formal parameter. The
+**observable component is real ONLY at the archimedean `q₀` evaluation**
+(the h-Taylor / truncation step), where `Im(q₀)=0` is the verified
+`lusztig_q_0_imaginary_part_zero` constraint. Forcing `q` or `α` real at
+the fibre level would conflate the two levels — a registered audit flag.
 
 ## The root-of-unity spectrum (Fourier modes of σ_q)
 
