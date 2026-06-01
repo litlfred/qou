@@ -1,0 +1,174 @@
+{
+  "computation": "yekutieli-volume-join",
+  "description": "Order-by-order symbolic test: does the q-hyperbolic volume functional applied to the H3 per-block tr_M reproduce the production global linking_weight scalar at all orders? No fit, no hard-coded factor.",
+  "h_definition": "h = q - q^{-1}",
+  "objects": {
+    "production_linking_weight": {
+      "exact_q": "(3*q**4 + 4*q**2 + 3)/(4*q**2)",
+      "h_series": {
+        "h^0": "5/2",
+        "h^1": "0",
+        "h^2": "3/4",
+        "h^3": "0",
+        "h^4": "0",
+        "h^5": "0",
+        "h^6": "0",
+        "h^7": "0",
+        "h^8": "0"
+      },
+      "index_set": "H4 (partitions of 4)"
+    },
+    "paper_J_proton_w": {
+      "exact_q": "(q**18 + q**11 + q**10 - q**8 - q**7 - 1)/(4*q**9)",
+      "h_series": {
+        "h^0": "0",
+        "h^1": "3",
+        "h^2": "0",
+        "h^3": "121/16",
+        "h^4": "0",
+        "h^5": "1727/256",
+        "h^6": "0",
+        "h^7": "4609/2048",
+        "h^8": "0"
+      },
+      "weight_convention": "w_lambda = dim_q^2 / [k]_q!  (paper Stage-2 literal)",
+      "index_set": "H3 (partitions of 3)"
+    },
+    "paper_J_neutron_w": {
+      "exact_q": "(q**20 - q**19 + q**18 + q**11 - q**9 - q**2 + q - 1)/(4*q**11 - 4*q**10 + 4*q**9)",
+      "h_series": {
+        "h^0": "0",
+        "h^1": "5/2",
+        "h^2": "0",
+        "h^3": "119/16",
+        "h^4": "0",
+        "h^5": "1733/256",
+        "h^6": "0",
+        "h^7": "4595/2048",
+        "h^8": "0"
+      },
+      "weight_convention": "w_lambda = dim_q^2 / [k]_q!  (paper Stage-2 literal)",
+      "index_set": "H3 (partitions of 3)"
+    },
+    "bare_borromean_trM_wenzl": {
+      "closed_form_h": "(4 + h^2 - 3 h^4 - h^6)/(h^2 + 4)",
+      "h_series": {
+        "h^0": "1",
+        "h^1": "0",
+        "h^2": "0",
+        "h^3": "0",
+        "h^4": "-3/4",
+        "h^5": "0",
+        "h^6": "-1/16",
+        "h^7": "0",
+        "h^8": "1/64"
+      },
+      "note": "documented markov_trace_for_knot('Borromean','wenzl') closed form"
+    }
+  },
+  "ratios": {
+    "proton_w": {
+      "ratio_exact_q": "(3*q**11 + 4*q**9 + 3*q**7)/(q**18 + q**11 + q**10 - q**8 - q**7 - 1)",
+      "ratio_h_series": {
+        "h^-1": "5/6",
+        "h^0": "0",
+        "h^1": "-533/288",
+        "h^2": "0",
+        "h^3": "9647/3456",
+        "h^4": "0",
+        "h^5": "-2322485/663552",
+        "h^6": "0"
+      }
+    },
+    "neutron_w": {
+      "ratio_exact_q": "(3*q**13 - 3*q**12 + 7*q**11 - 4*q**10 + 7*q**9 - 3*q**8 + 3*q**7)/(q**20 - q**19 + q**18 + q**11 - q**9 - q**2 + q - 1)",
+      "ratio_h_series": {
+        "h^-1": "1",
+        "h^0": "0",
+        "h^1": "-107/40",
+        "h^2": "0",
+        "h^3": "16801/3200",
+        "h^4": "0",
+        "h^5": "-1187039/128000",
+        "h^6": "0"
+      }
+    },
+    "bare_borromean_wenzl": {
+      "ratio_exact_q": "(-3*q**10 - 10*q**8 - 14*q**6 - 10*q**4 - 3*q**2)/(4*q**12 - 12*q**10 + 8*q**8 - 16*q**6 + 8*q**4 - 12*q**2 + 4)",
+      "ratio_h_series": {
+        "h^0": "5/2",
+        "h^1": "0",
+        "h^2": "3/4",
+        "h^3": "0",
+        "h^4": "15/8",
+        "h^5": "0",
+        "h^6": "23/32",
+        "h^7": "0",
+        "h^8": "181/128"
+      },
+      "audit_claim_check": "sibling audit said 5/2 at h0, 4 at h2 (Jones norm), divergent at h4; reported raw here"
+    }
+  },
+  "qvolume_join": {
+    "production_scalar": "2.5327796563993914920515145017580412323261604705351",
+    "trM_proton": "1.0653061442544499756666334037445034130528872534934",
+    "ratio_prod_over_trM": "2.377513421901782685768037380265314873048956023778",
+    "candidates": {
+      "tr_M itself": {
+        "value": "1.0653061442544499756666334037445034130528872534934",
+        "rel_err_vs_prod": "-0.57939249015885852695623995428312873349920533748867"
+      },
+      "tr_M^2": {
+        "value": "1.134877180986282980901374911726054515586728870837",
+        "rel_err_vs_prod": "-0.55192423544666795414899032472274838158898509662213"
+      },
+      "ln|tr_M|": {
+        "value": "0.063262217246702782874360430280585711534656737854927",
+        "rel_err_vs_prod": "-0.97502261316460644096447024656133283278824748267299"
+      },
+      "tr_M/hbar_q^2": {
+        "value": "108.51440473462158660704277012888051391170005828108",
+        "rel_err_vs_prod": "41.843997289873232700977307619318349706546924979852"
+      },
+      "1+ln|tr_M|/hbar_q^2": {
+        "value": "7.4440272721064690228823453836699895231534483730676",
+        "rel_err_vs_prod": "1.9390741722432043271197461319895179716569401985344"
+      }
+    }
+  },
+  "verdict": {
+    "verdict": "C (genuinely-open) with a clean B (production-wrong) sub-finding",
+    "summary": "The q-volume functional, as the framework defines it (def:algebraic-quantum-volume + thm:markov-trace-product + prop:vol-through-tau), is Vol_q(beta)=tr_M(rho(beta)) followed by tau_arch = ln|.| at q0. tau_arch is a LOGARITHM, not a multiplicative factor, so a 2.38x multiplicative bridge is the wrong shape. No zero-parameter functional of tr_M reproduces the production scalar (closest tr_M^2 at -55%). prop:vol-through-tau says Vol(B3)=ln|tr_M|=-0.00144, but production uses classical 8G=7.328 -- two volume definitions inconsistent by ~5090x at q0. Not (A): wrong shape, no zero-param match, A-vs-B inconsistent.",
+    "not_A_reasons": [
+      "tau_arch is ln|.| (logarithm), not multiplicative",
+      "no zero-parameter q-vol functional of tr_M matches (>=55% off)",
+      "classical Vol=8G vs prop:vol-through-tau Vol=ln|tr_M| disagree ~5090x at q0"
+    ],
+    "missing_input_for_C": [
+      "per-crossing transfer chain V_hat_i(q)=z*a_i+b_i for atomic braids",
+      "reconciliation of Definition A (classical 8G) vs Definition B (ln|tr_M|)",
+      "non-abelian Stokes surface->boundary map (still z^n stub in Lean)"
+    ],
+    "B_subfinding": "production linking_weight is an H4 (partitions of 4) empirical near-match; literal per-block restore gives m_p=406 MeV (-56.7%), confirming the sibling RED gate independently."
+  },
+  "structural_vol_vs_log_trM": {
+    "classical_vol_b3_8G": "7.3277247534177521204368281194590728861931949942534",
+    "bare_borromean_trM_q0": "0.99856216383678726595121313514665020209402588005941",
+    "log_abs_trM_bare": "-0.0014388708415464003730867826311748191828895630567947",
+    "note": "prop:vol-through-tau says Vol(K)=ln|Vol_q|=ln|tr_M|; the SnapPy 8G is a different (classical-geometry) number. Production uses 8G, not ln|tr_M|."
+  },
+  "raw_mass_readings": {
+    "production (8G/\u210f\u00b2\u00b7linking_weight)": {
+      "m_MeV": "966.04982446659753565797793103937409734667618179462",
+      "rel_err_vs_codata_mavg": "0.028896083358221928849517523256803740841980396913595"
+    },
+    "8G/\u210f\u00b2\u00b7tr_M(proton)": {
+      "m_MeV": "406.32781105136741556414044847640027144558289227828",
+      "rel_err_vs_codata_mavg": "-0.56723858049339475267253907915205626530987596926967"
+    },
+    "8G/\u210f\u00b2 alone (linking_weight=1)": {
+      "m_MeV": "381.4188186586816553999362294040082276529301148819",
+      "rel_err_vs_codata_mavg": "-0.59376802448701588353631639648903781327944498405011"
+    }
+  }
+}
