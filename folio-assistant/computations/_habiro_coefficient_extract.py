@@ -368,9 +368,9 @@ def mirror_pair_diff(x: dict, y: dict, u: sp.Symbol) -> dict:
 
 
 def find_mirror_pairs(atoms: list[tuple[str, str, int, int, int]]) -> \
-        list[tuple[str, str, int, int, int, int]]:
-    """Return list of (label_X, label_Y, Z_X, N_X, Z_Y, N_Y) with
-    Z_X = N_Y, N_X = Z_Y, Z_X > Z_Y (avoids reflection duplicates).
+        list[tuple[str, str, str, str, int, int]]:
+    """Return list of (label_X, label_Y, slug_X, slug_Y, Z_X, N_X) with
+    Z_X = N_Y, N_X = Z_Y, Z_X > N_X (avoids reflection duplicates).
     """
     by_zn = {(Z, N): (label, slug) for label, slug, Z, N, _ in atoms}
     pairs = []

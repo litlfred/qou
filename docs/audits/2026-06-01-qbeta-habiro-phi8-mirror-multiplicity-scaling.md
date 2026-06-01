@@ -39,19 +39,24 @@ The earlier framing in PR #1579 (`Φ_1·Φ_2 = u²−1` as the isospin classical
 
 ## Falsifiable predictions
 
-If `mult(Φ_8) = A − 1` is the true scaling law, then:
+The original 3-point hypothesis (n−p, ³He−³H, ⁷Be−⁷Li) `mult = A − 1` was REFUTED on the first even-A pair tested (⁸B − ⁸Li at A=8: mult=6 = A−2, not A−1=7), then refined to `mult = 2·⌊(A−1)/2⌋`. Both laws collapse on odd A (the original 3 data points were all odd). To separate them, the predictions table below explicitly contrasts the two laws on **even-A** mirror pairs — testing the refined formula against the now-refuted original.
 
-| Mirror pair (predicted) | A | Predicted `mult(Φ_8)` |
-|---|---|---|
-| ⁵Li − ⁵He | 5 | 4 |
-| ⁹B − ⁹Be (or ⁹Be−⁹Li) | 9 | 8 |
-| ¹¹C − ¹¹B | 11 | 10 |
-| ¹³N − ¹³C | 13 | 12 |
-| ¹⁵O − ¹⁵N | 15 | 14 |
-| ¹⁷F − ¹⁷O | 17 | 16 |
-| ¹⁹Ne − ¹⁹F | 19 | 18 |
+| Mirror pair | A (parity) | Original `A − 1` | Refined `2⌊(A−1)/2⌋` | Status |
+|---|---|---|---|---|
+| ⁶Be − ⁶Li | 6 (even) | 5 | **4** | open |
+| ⁸B − ⁸Li | 8 (even) | 7 | **6** | ✓ MEASURED 6 (refutes original) |
+| ¹⁰C − ¹⁰Be | 10 (even) | 9 | **8** | ✓ MEASURED 8 (confirms refined) |
+| ¹²N − ¹²B | 12 (even) | 11 | **10** | open |
+| ¹⁴O − ¹⁴C | 14 (even) | 13 | **12** | open |
+| ⁵Li − ⁵He | 5 (odd) | 4 | 4 | open |
+| ⁹B − ⁹Be | 9 (odd) | 8 | 8 | ✓ MEASURED 8 (both laws agree) |
+| ¹¹C − ¹¹B | 11 (odd) | 10 | 10 | open |
+| ¹³N − ¹³C | 13 (odd) | 12 | 12 | open |
+| ¹⁵O − ¹⁵N | 15 (odd) | 14 | 14 | open |
 
-Testable as soon as the corresponding atom Habiro coefficients are extracted via the [`_habiro_coefficient_extract.py`](../../folio-assistant/computations/_habiro_coefficient_extract.py) infrastructure landed earlier this commit.
+Even-A pairs are the discriminating tests: the two laws differ by 1 for every even A. ⁸B−⁸Li and ¹⁰C−¹⁰Be have already discharged the discrimination in favour of the refined formula; ⁶Be−⁶Li, ¹²N−¹²B, ¹⁴O−¹⁴C remain open and are the next falsification targets.
+
+Testable via the [`_habiro_coefficient_extract.py`](../../folio-assistant/computations/_habiro_coefficient_extract.py) general (Z, N) → canonical Phase 5q Habiro infrastructure (this commit).
 
 ## Connection to level-2 SU(2) Wenzl
 

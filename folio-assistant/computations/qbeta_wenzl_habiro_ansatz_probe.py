@@ -88,7 +88,13 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
-N_TAYLOR = 10  # expand to u^N_TAYLOR
+N_TAYLOR = 3  # Match ONLY the structurally-constrained coefficients: c_2 (proved)
+              # and c_3 (cal-anchored from Q_codata). c_k for k ≥ 4 are
+              # PREDICTED by the W · D ansatz, not constrained — the prior
+              # padding with c_k = 0 was a methodology bug (Gemini review,
+              # PR #1642): it forced D to cancel W's natural higher Taylor
+              # coefficients, artificially biasing the verdict toward
+              # GENERIC_D. See docs/audits/2026-06-01-qbeta-wenzl-habiro-ansatz.md.
 
 
 def taylor_coeffs(expr: sp.Expr, var: sp.Symbol, N: int) -> list[sp.Expr]:
@@ -232,25 +238,28 @@ def main() -> int:
     # Build target_c list: c_0 = 0, c_1 = 0, c_2 = -1, c_3..c_7 = cal_anchored
     # The product Q_β/Q_base − 1 in u is the relevant series. We are matching
     # the c_k of  (Σ_k c_k u^k) directly (NOT 1 + Σ c_k u^k).
+    # target_c[k] constrains the Taylor coefficient at u^k of the SERIES
+    #   Q_β / Q_base − 1 = Σ_k c_k u^k.
+    # ONLY c_2 (proved Taylor-exact = −1) and c_3 (cal-anchored from Q_codata
+    # at q_0) are physically constrained. c_k for k ≥ 4 are NOT constrained
+    # by current Q_β experimental precision (8 sig figs); they are PREDICTED
+    # by the W · D ansatz and reported, not matched.
+    #
+    # Earlier methodology bug (Gemini review, PR #1642): the probe padded
+    # target_c[k ≥ 4] with values from extract_higher_c_k(), which is a
+    # tautological recursive single-point fit yielding c_k = 0 by construction
+    # (Q_prev becomes exactly Q_codata after the first iteration). Forcing
+    # D to cancel W's natural u^k≥4 Taylor coefficients to "match" those
+    # spurious zeros artificially biased every W candidate toward GENERIC_D.
     target_c = [sp.Integer(0)] * (N_TAYLOR + 1)
     target_c[2] = sp.Integer(-1)
-    # NB: c_3 from cache is a 30-decimal-place mpmath string. Use it as a
-    # high-precision float for the structural-acceptance numerical check; for
-    # the Taylor matching we use the algebraic "c_3 = c_3_cal" symbol and
-    # check after solving whether the resulting D(u) collapses to something
-    # categorically clean.
     if 3 in cal_c_k:
         target_c[3] = cal_c_k[3]
-    # If c_4..c_7 are not in cache (only c_2, c_3 are in the merged version),
-    # extract them on-the-fly using the same recursive method.
-    if 4 not in cal_c_k or 5 not in cal_c_k or 6 not in cal_c_k or 7 not in cal_c_k:
-        print("  c_4..c_7 missing from cache — extracting from Q_codata.")
-        cal_c_k_mp = extract_higher_c_k(N_max=7)
-        for k in [4, 5, 6, 7]:
-            if k in cal_c_k_mp:
-                target_c[k] = cal_c_k_mp[k]
-                cal_c_k[k] = cal_c_k_mp[k]
-                print(f"     extracted c_{k} = {mp.nstr(cal_c_k_mp[k], 8)}")
+    else:
+        raise RuntimeError("c_3 missing from qbeta-ck-cache.witness.json")
+    print(f"  Constraints: c_2 = {target_c[2]} (proved Taylor-exact);")
+    print(f"               c_3 = {float(target_c[3]):+.8e} (cal-anchored at q_0)")
+    print(f"  c_k for k ≥ 4 are NOT constrained (Q_β CODATA = 8 sig figs).")
     print()
 
     # ─── Test each candidate W(u) ─────────────────────────────────
@@ -464,41 +473,6 @@ def main() -> int:
     print()
 
     return 0 if verdict in ("PARTIAL_OR_POSITIVE", "PARTIAL") else 0  # always 0
-
-
-def extract_higher_c_k(N_max: int = 7) -> dict[int, mp.mpf]:
-    """Re-extract c_3..c_N_max from Q_codata at canonical q₀ (same recipe as
-    qbeta_ck_cache.py).
-    """
-    from codata_constants import M_E_MEV, Q_BETA_MEV
-    from mpmath import mpf, cos, sqrt
-
-    q = mpf(Q_50_DIGIT_STR)
-    me = mpf(M_E_MEV)
-    Q_codata = mpf(str(Q_BETA_MEV))
-
-    h = q - 1 / q
-    hbar_q = (q - 1) / q
-    b_sq = (h**2 + 3) / (h**2 + 4)
-    b = sqrt(b_sq)
-    u = b * hbar_q**2
-    z = 1 / (sqrt(q) + 1 / sqrt(q))
-    alpha = (z - 1) * h / 2
-
-    Q_A = me * mp.fabs(q**2 - 2 * q - 1) * (q + 1) / (2 * q**3)
-    N1_factor = cos(alpha - b * hbar_q**2 / 2)
-    Q_N1 = Q_A * N1_factor
-    c_2 = mpf(-1)
-    Q_N2 = Q_N1 * (1 + c_2 * u**2)
-
-    out: dict[int, mp.mpf] = {3: None, 4: None, 5: None, 6: None, 7: None}
-    Q_prev = Q_N2
-    for k in range(3, N_max + 1):
-        ratio_m1 = Q_codata / Q_prev - 1
-        ck = ratio_m1 / u**k
-        out[k] = ck
-        Q_prev = Q_prev * (1 + ck * u**k)
-    return out
 
 
 if __name__ == "__main__":
