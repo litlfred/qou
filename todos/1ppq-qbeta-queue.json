@@ -87,6 +87,19 @@
      "no_fitted_form_proposed": true,
      "audit": "docs/audits/2026-06-01-qbeta-eigenphase-not-f-falsified-at-u1.md",
      "probe": "folio-assistant/computations/qbeta_eigenphase_taylor_in_u.py"
+    },
+    {
+     "date": "2026-06-01",
+     "branch": "claude/habiro-q-difference-fourier-2026-06-01",
+     "pr": 1622,
+     "attack": "Habiro q-difference equation via Fourier/root-of-unity diagonalisation of σ_q",
+     "outcome": "spectral characterization (no closure)",
+     "finding": "Evaluated exact Habiro tr_M=Σa_m(u;u)_m/D (u=√q) at ζ_d=e^{2πi/d}; (u;u)_m vanishes for m≥d → WRT truncation = Fourier diagonalisation of σ_q. THREE EXACT FACTS: (1) d=2 bar mode Δtr_M=0 exactly (p/n difference is entirely d≥3); (2) d=3≡d=6 period-3 resonance; (3) ζ_4=i genuine pole (D=4u¹⁹(u²+1) vanishes, numerator doesn't).",
+     "buys": "finite spectral target for f (6 ζ_d values + ζ_4 pole) instead of value-chasing",
+     "notation_fix": "caught Habiro u=q^{1/2} ≠ ladder u=b·ℏ² collision",
+     "no_fitted_form_proposed": true,
+     "audit": "docs/audits/2026-06-01-habiro-q-difference-fourier-spectrum.md",
+     "probe": "folio-assistant/computations/habiro_q_difference_fourier.py"
     }
    ]
   }
