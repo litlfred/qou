@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:46:26.628317+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:45:43.436759+00:00",
+  "commitSha": "287f3acf403e2dae2559a7e84e72388ab696e94c",
   "assertions": [
     {
       "name": "single_element_traces_match_closed_forms",
@@ -42,16 +42,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1013,
+  "durationMs": 889,
   "computation": "frobenius-gram-matrix-probe",
   "scriptFile": "frobenius_gram_matrix_probe.py",
   "scriptHash": "3e050aee2643",
   "scriptCommitSha": "6ddb5f8bef53fed344fe0dcfec7234eeb1697b57",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

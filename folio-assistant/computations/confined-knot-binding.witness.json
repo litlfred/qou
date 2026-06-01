@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:32:01.932086+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:31:02.747090+00:00",
+  "commitSha": "287f3acf403e2dae2559a7e84e72388ab696e94c",
   "assertions": [
     {
       "name": "W_sym equals W_alt",
@@ -39,10 +39,10 @@
   "scriptHash": "6e1b26ab7529",
   "scriptCommitSha": "fba1fbf96a9d53fda71ccb2bd13587cd20f42358",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
