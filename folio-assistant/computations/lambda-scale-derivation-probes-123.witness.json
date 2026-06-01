@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:35:00.109448+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:41:32.943321+00:00",
+  "commitSha": "9f7ad028bcf71bfc6da5c036aa474af7fe1a88bb",
   "assertions": [
     {
       "name": "probe_3_lobachevsky_matches_Vol_B3_within_1e-25",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 53,
+  "durationMs": 50,
   "computation": "lambda-scale-derivation-probes-123",
   "scriptFile": "lambda_scale_derivation_probes_123.py",
   "scriptHash": "bbf2264a0e32",
   "scriptCommitSha": "36597ced5e76986694b90db493795b6ef7dba282",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

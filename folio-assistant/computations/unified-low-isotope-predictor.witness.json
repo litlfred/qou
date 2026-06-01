@@ -1,20 +1,20 @@
 {
   "engine": "python+numpy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T02:04:10.723364+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:10:18.582722+00:00",
+  "commitSha": "9f7ad028bcf71bfc6da5c036aa474af7fe1a88bb",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 48,
+  "durationMs": 44,
   "computation": "unified-low-isotope-predictor",
   "scriptFile": "unified_low_isotope_predictor.py",
   "scriptHash": "d37cb25002c0",
   "scriptCommitSha": "8a82ee372f157d009a571ca85914345a32577a66",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

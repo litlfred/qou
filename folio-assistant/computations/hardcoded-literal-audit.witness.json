@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:34:52.030563+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:41:24.909272+00:00",
+  "commitSha": "9f7ad028bcf71bfc6da5c036aa474af7fe1a88bb",
   "assertions": [
     {
       "name": "no_hardcoded_registry_matches",
@@ -21,10 +21,10 @@
   "scriptHash": "82ea041c3646",
   "scriptCommitSha": "457451fa150032a176ac02402e3f7a6e3392a2c2",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -39,13 +39,13 @@
     "registry_constants_in_scope": 26,
     "relative_error_tolerance": "1e-6",
     "magnitude_window_MeV": "[0.0001, 1e6]",
-    "total_scripts_with_hits": 184,
-    "i9_violation_count": 169,
+    "total_scripts_with_hits": 185,
+    "i9_violation_count": 170,
     "ok_acknowledged_anchor_count": 15
   },
   "data": {
     "by_result": {
-      "i9_violation": 169,
+      "i9_violation": 170,
       "ok_acknowledged_anchor": 15
     },
     "rows": [
@@ -4802,6 +4802,31 @@
           },
           {
             "line_number": 36,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "m_pi = mp.mpf(\"139.57039\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/meson_habiro_c3_pslq_search.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 39,
+            "literal": "493.677",
+            "matches_constant": "M_K_PM_MEV_VALIDATION",
+            "registry_value": "493.677",
+            "rel_err": "0.0",
+            "snippet": "m_K = mp.mpf(\"493.677\")"
+          },
+          {
+            "line_number": 40,
             "literal": "139.57039",
             "matches_constant": "M_PI_PM_MEV_VALIDATION",
             "registry_value": "139.57039",

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:31:57.995530+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:38:39.524982+00:00",
+  "commitSha": "9f7ad028bcf71bfc6da5c036aa474af7fe1a88bb",
   "assertions": [
     {
       "name": "zero_carlitz_candidates_within_one_percent",
@@ -21,10 +21,10 @@
   "scriptHash": "35bbdf27e611",
   "scriptCommitSha": "6ffd45154b144b86461bdba633ca384dbcd5f15e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

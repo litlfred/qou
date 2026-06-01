@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T01:44:38.629697+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:51:13.437369+00:00",
+  "commitSha": "9f7ad028bcf71bfc6da5c036aa474af7fe1a88bb",
   "assertions": [],
   "allPassed": true,
   "durationMs": 13,
@@ -11,10 +11,10 @@
   "scriptHash": "748f78a0ed41",
   "scriptCommitSha": "99c430c52d654aba212464f746cadff50dc2cfcf",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
