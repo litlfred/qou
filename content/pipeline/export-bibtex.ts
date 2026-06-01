@@ -28,12 +28,16 @@ const outPath = outIdx >= 0 ? resolve(args[outIdx + 1]) : join(REPO_ROOT, "refer
 // `annotation = {...}` field that LaTeX / biblatex / pandoc can
 // display in the rendered bibliography.
 
+import type { Verifier } from "../../folio-assistant/schemas/bib-verification";
+import { verifierLabel } from "../../folio-assistant/schemas/bib-verification";
+
 interface VerifEntry {
   id: string;
   status: string;
   local_pdf?: string;
   verified_at?: string;
-  verified_by?: string;
+  verified_by?: Verifier;
+  human_adjudicated?: { who: string; at: string; note?: string };
   fixes_applied?: number;
   fix_commit?: string;
   note?: string;
@@ -65,7 +69,7 @@ function verificationAnnotation(id: string): string | null {
   if (v.fixes_applied && v.fixes_applied > 0) {
     parts.push(`${v.fixes_applied} fix${v.fixes_applied !== 1 ? "es" : ""}`);
   }
-  if (v.verified_by) parts.push(`by ${v.verified_by}`);
+  if (v.verified_by) parts.push(`by ${verifierLabel(v.verified_by)}`);
   if (v.verified_at) parts.push(v.verified_at.slice(0, 10)); // YYYY-MM-DD
   return parts.join(" ");
 }

@@ -64,7 +64,8 @@ export interface BibQAEntry {
     status: string;
     local_pdf?: string;
     verified_at?: string;
-    verified_by?: string;
+    verified_by?: Verifier;
+    human_adjudicated?: { who: string; at: string; note?: string };
     fixes_applied?: number;
     fix_commit?: string;
     note?: string;
