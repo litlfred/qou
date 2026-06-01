@@ -70,10 +70,15 @@ import mpmath as mp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
+import time  # noqa: E402
+
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from experimental_constants import M_E_MEV as _M_E_MEV_CAL1  # noqa: E402
 
 set_compute_dps()
+
+_START = time.monotonic()
 
 from _li_2_q_util import li_2_q, load_q_50dps  # noqa: E402
 
@@ -347,7 +352,9 @@ def main():
     def bloch_wigner(zv):
         """Classical Bloch-Wigner D(z) = Im Li_2(z) + log|z|·arg(1−z), the
         DERIVED archimedean image per prop:vol-through-tau / Bloch-Suslin.
-        Real by construction for any z."""
+        This helper intentionally evaluates on the real nonnegative argument
+        |z| (it takes mp.fabs below) — the V̂_i magnitudes are real, and
+        D(real) = 0 is exactly the structural fact under test."""
         zv = mp.fabs(zv)
         li2 = mp.polylog(2, zv)
         return mp.im(li2) + mp.log(mp.fabs(zv)) * mp.arg(1 - zv)
@@ -441,7 +448,7 @@ def main():
     # m(K) = m_e · tower(K)/tower(electron). Report under BOTH Re and BW
     # projections, RAW. m_e is the CAL-1 dimensional anchor (CODATA), NOT a
     # fit target.
-    m_e_MeV = mp.mpf("0.51099895069")  # CODATA m_e (CAL-1 dimensional anchor)
+    m_e_MeV = mp.mpf(str(_M_E_MEV_CAL1))  # CAL-1 anchor from registry (P31)
     re_e = real_total_re(towers_plus["electron"])
     bw_e = real_total_bw(towers_plus["electron"])
     raw_mp = {}
@@ -511,12 +518,17 @@ def main():
         "distinction, not a free real projection."
     )
 
-    wpath = WitnessBuilder.wrap_legacy(
-        "vhat-tower-im-cancellation",
-        out,
-        script_path=__file__,
-        engine="mpmath",
-    ).save()
+    wpath = (
+        WitnessBuilder.wrap_legacy(
+            "vhat-tower-im-cancellation",
+            out,
+            script_path=__file__,
+            engine="mpmath",
+            start_time=_START,
+        )
+        .set_audit_only("docs/audits/2026-06-01-vhat-tower-im-cancellation.md")
+        .save()
+    )
 
     # ── console summary ───────────────────────────────────────────────
     print(f"\nWrote {wpath}")
