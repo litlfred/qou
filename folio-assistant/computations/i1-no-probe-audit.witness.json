@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:34:54.609388+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:13:38.939567+00:00",
+  "commitSha": "f453128d2b939aeb6efede11cc0126485a00691c",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -40,8 +40,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 520,
-      "wired": 70,
+      "i1_no_probe": 521,
+      "wired": 69,
       "i1_pre_lean": 6,
       "i1_lean_with_sorry": 2,
       "i1_no_probe_conditional": 1
@@ -3254,11 +3254,9 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 1,
-        "probe_witnesses": [
-          "meson-em-sinh-closed-form.witness.json"
-        ],
-        "result": "wired"
+        "probe_witness_count": 0,
+        "probe_witnesses": [],
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.ts",

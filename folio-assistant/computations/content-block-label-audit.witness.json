@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:32:02.947338+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T04:10:52.833558+00:00",
+  "commitSha": "f453128d2b939aeb6efede11cc0126485a00691c",
   "assertions": [
     {
       "name": "no_missing_labels",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "content-block-label-audit",
   "scriptFile": "content_block_label_audit.py",
   "scriptHash": "d86c5a63a3d7",
@@ -36,13 +36,13 @@
   "description": "I5 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json with a `contentBlock` field is cross-checked against the union of all `label: \"...\"` declarations in content/**/*.ts manifests. Reports `ok` / `missing_label` / `informational_label` per field. Operationalises the 9-hit I5 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_fields_audited": 276,
+    "total_fields_audited": 275,
     "registered_labels_count": 2877
   },
   "data": {
     "by_result": {
       "informational_label": 14,
-      "ok": 219,
+      "ok": 218,
       "missing_label": 43
     },
     "rows": [
@@ -914,11 +914,6 @@
       {
         "witness": "folio-assistant/computations/meson-character-shortcut-l1.witness.json",
         "content_block_value": "prop:pion-half-figure-eight",
-        "result": "ok"
-      },
-      {
-        "witness": "folio-assistant/computations/meson-em-sinh-closed-form.witness.json",
-        "content_block_value": "prop:meson-color-tube-uniqueness",
         "result": "ok"
       },
       {
