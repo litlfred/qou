@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:31:54.023951+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T14:26:28.741858+00:00",
+  "commitSha": "1eb608134e4cd9cd88d2a8ac92838bf6704dde58",
   "assertions": [
     {
       "name": "bring_color_tube_breaks_bar_symmetry",
@@ -26,10 +26,10 @@
   "scriptHash": "02b04c07f946",
   "scriptCommitSha": "cce9436d753779edd6cdccfe04a293b0e3d81d4f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

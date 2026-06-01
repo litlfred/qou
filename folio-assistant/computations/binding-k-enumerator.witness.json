@@ -1,20 +1,20 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:46:17.461347+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T14:41:11.351745+00:00",
+  "commitSha": "1eb608134e4cd9cd88d2a8ac92838bf6704dde58",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 54933,
+  "durationMs": 57428,
   "computation": "binding-k-enumerator",
   "scriptFile": "binding_k_enumerator.py",
   "scriptHash": "f771b265252b",
   "scriptCommitSha": "b1205d9491386c1bc2152ed980bcecddac0f6671",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

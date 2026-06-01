@@ -1,20 +1,20 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T02:04:09.055806+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T14:58:32.592991+00:00",
+  "commitSha": "1eb608134e4cd9cd88d2a8ac92838bf6704dde58",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 29,
   "computation": "term6-residues-at-roots",
   "scriptFile": "term6_residues_at_roots.py",
   "scriptHash": "de325dbecab8",
   "scriptCommitSha": "a995137977c83050f1a73a22b83615b0e1b25a7d",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

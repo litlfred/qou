@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T01:49:31.905577+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T14:44:12.919842+00:00",
+  "commitSha": "1eb608134e4cd9cd88d2a8ac92838bf6704dde58",
   "assertions": [
     {
       "name": "all_drops_are_exact_zeros",
@@ -13,16 +13,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "A-operator-rank-probe",
   "scriptFile": "A_operator_rank_probe.py",
   "scriptHash": "41e1724da585",
   "scriptCommitSha": "f33f5c97f7bce950c88bd973d970f983b33bda6b",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

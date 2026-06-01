@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T13:12:22.345479+00:00",
-  "commitSha": "6c25883aa3aedd28e4c39678f7c68e51bab5ae72",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T14:26:42.753901+00:00",
+  "commitSha": "1eb608134e4cd9cd88d2a8ac92838bf6704dde58",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "a15808a316f9",
-  "scriptCommitSha": "95163cf6c2f0adecc5a4ab1c05afa3e743bd0209",
+  "scriptCommitSha": "e96faa966cf29a746d508c5a99f3db367eba0d39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,19 +25,18 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Audits production scripts in folio-assistant/computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
     "total_issues": 0,
     "flagged_script_count": 0,
-    "scripts_scanned": 858,
+    "scripts_scanned": 865,
     "rows": []
   }
 }
