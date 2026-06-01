@@ -1,0 +1,122 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "sec:glossary-rigidity-intro",
+  "kind": "prose",
+  "paths": {
+    "ts": "content/quantum-observable-universe/glossary/glossary-rigidity-intro.ts",
+    "md": "content/quantum-observable-universe/glossary/glossary-rigidity-intro.md"
+  },
+  "source_hashes": {
+    "ts": "6cce61b3f63c",
+    "md": "d45ec07169fa"
+  },
+  "criteria": {
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "6cce61b3f63c",
+          "md": "d45ec07169fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"na\"],\"chapter\":\"glossary\",\"expected\":[\"fixed-q0\",\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-gt-1\",\"real-lt-1\",\"real-positive\",\"root-of-unity\",\"symbolic\",\"unit-circle\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "6cce61b3f63c",
+          "md": "d45ec07169fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "6cce61b3f63c",
+          "md": "d45ec07169fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "6cce61b3f63c",
+          "md": "d45ec07169fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "6cce61b3f63c",
+          "md": "d45ec07169fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "6cce61b3f63c",
+          "md": "d45ec07169fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "6cce61b3f63c",
+          "md": "d45ec07169fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ]
+  },
+  "updated_at": "2026-06-01T13:26:15.486Z"
+}

@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean"
   },
   "source_hashes": {
-    "md": "6946dceccea3",
     "ts": "8ba79fef68aa",
+    "md": "8637df4c3038",
     "lean": "b809b5abeddf"
   },
   "criteria": {
@@ -1933,7 +1933,122 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "8ba79fef68aa",
+          "md": "8637df4c3038",
+          "lean": "b809b5abeddf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"real-positive\",\"symbolic\"],\"chapter\":\"particle-interactions\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "8ba79fef68aa",
+          "md": "8637df4c3038",
+          "lean": "b809b5abeddf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "8ba79fef68aa",
+          "md": "8637df4c3038",
+          "lean": "b809b5abeddf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "8ba79fef68aa",
+          "md": "8637df4c3038",
+          "lean": "b809b5abeddf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:36 — positivity-dependent Real.* on q without explicit hypothesis — noncomputable def markovZ (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "8ba79fef68aa",
+          "md": "8637df4c3038",
+          "lean": "b809b5abeddf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "8ba79fef68aa",
+          "md": "8637df4c3038",
+          "lean": "b809b5abeddf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "8ba79fef68aa",
+          "md": "8637df4c3038",
+          "lean": "b809b5abeddf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

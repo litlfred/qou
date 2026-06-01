@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/infinitesimal-frobenius.lean"
   },
   "source_hashes": {
+    "ts": "9fcc04e59d3f",
     "md": "3a82a40437f7",
-    "ts": "eee73bb5cdc8",
     "lean": "5d547d53c5d8"
   },
   "criteria": {
@@ -1335,7 +1335,124 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "9fcc04e59d3f",
+          "md": "3a82a40437f7",
+          "lean": "5d547d53c5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\"],\"chapter\":\"appendix-surreals\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "9fcc04e59d3f",
+          "md": "3a82a40437f7",
+          "lean": "5d547d53c5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "9fcc04e59d3f",
+          "md": "3a82a40437f7",
+          "lean": "5d547d53c5d8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "major",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/appendix-surreals/infinitesimal-frobenius.md:74 — MeV/CODATA reference in categorical chapter — 2. **CODATA fits**: the QOU mass formula's $\\sim 4\\%$ MAE on"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "9fcc04e59d3f",
+          "md": "3a82a40437f7",
+          "lean": "5d547d53c5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "9fcc04e59d3f",
+          "md": "3a82a40437f7",
+          "lean": "5d547d53c5d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "9fcc04e59d3f",
+          "md": "3a82a40437f7",
+          "lean": "5d547d53c5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "9fcc04e59d3f",
+          "md": "3a82a40437f7",
+          "lean": "5d547d53c5d8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/appendix-surreals/infinitesimal-frobenius.md:1 — detected regime [fixed-q0] is disjoint from chapter 'appendix-surreals' expected [generic-R, na, symbolic]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/lifting-and-descent/motivic-galois-character.lean"
   },
   "source_hashes": {
-    "md": "c94e86be6a4b",
     "ts": "73676e727738",
+    "md": "2e6da868dcd8",
     "lean": "2bbb9fc65257"
   },
   "criteria": {
@@ -1432,7 +1432,120 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "73676e727738",
+          "md": "2e6da868dcd8",
+          "lean": "2bbb9fc65257"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"lifting-and-descent\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "73676e727738",
+          "md": "2e6da868dcd8",
+          "lean": "2bbb9fc65257"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "73676e727738",
+          "md": "2e6da868dcd8",
+          "lean": "2bbb9fc65257"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "73676e727738",
+          "md": "2e6da868dcd8",
+          "lean": "2bbb9fc65257"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "73676e727738",
+          "md": "2e6da868dcd8",
+          "lean": "2bbb9fc65257"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "73676e727738",
+          "md": "2e6da868dcd8",
+          "lean": "2bbb9fc65257"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "73676e727738",
+          "md": "2e6da868dcd8",
+          "lean": "2bbb9fc65257"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.lean"
   },
   "source_hashes": {
-    "md": "3afb8c88d82e",
     "ts": "c32346ca48d5",
+    "md": "3afb8c88d82e",
     "lean": "11711756de38"
   },
   "criteria": {
@@ -62,7 +62,120 @@
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:meson-kaon-pion-hecke-seifert' → expected 'meson_kaon_pion_hecke_seifert'; Lean declares: seifertEuler, seifert_ratio_T25_T23, chi_21, chi_21_odd, mesonMassRatio.... Structural match via content."
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "c32346ca48d5",
+          "md": "3afb8c88d82e",
+          "lean": "11711756de38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"real-positive\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "c32346ca48d5",
+          "md": "3afb8c88d82e",
+          "lean": "11711756de38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "c32346ca48d5",
+          "md": "3afb8c88d82e",
+          "lean": "11711756de38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "c32346ca48d5",
+          "md": "3afb8c88d82e",
+          "lean": "11711756de38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "c32346ca48d5",
+          "md": "3afb8c88d82e",
+          "lean": "11711756de38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "c32346ca48d5",
+          "md": "3afb8c88d82e",
+          "lean": "11711756de38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "c32346ca48d5",
+          "md": "3afb8c88d82e",
+          "lean": "11711756de38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

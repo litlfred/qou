@@ -1,0 +1,124 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "outro-particle-interactions",
+  "kind": "prose",
+  "paths": {
+    "ts": "content/quantum-observable-universe/particle-interactions/outro-particle-interactions.ts",
+    "md": "content/quantum-observable-universe/particle-interactions/outro-particle-interactions.md"
+  },
+  "source_hashes": {
+    "ts": "450c695cd6fe",
+    "md": "b7e56ce7807a"
+  },
+  "criteria": {
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "450c695cd6fe",
+          "md": "b7e56ce7807a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"particle-interactions\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "450c695cd6fe",
+          "md": "b7e56ce7807a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "450c695cd6fe",
+          "md": "b7e56ce7807a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "450c695cd6fe",
+          "md": "b7e56ce7807a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "450c695cd6fe",
+          "md": "b7e56ce7807a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "450c695cd6fe",
+          "md": "b7e56ce7807a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "450c695cd6fe",
+          "md": "b7e56ce7807a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/particle-interactions/outro-particle-interactions.md:1 — detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
+    ]
+  },
+  "updated_at": "2026-06-01T13:26:15.486Z"
+}

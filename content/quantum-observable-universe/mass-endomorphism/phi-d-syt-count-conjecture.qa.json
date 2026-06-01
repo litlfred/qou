@@ -3,13 +3,13 @@
   "label": "rem:phi-d-syt-count-conjecture",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/phi-d-syt-count-conjecture.ts",
-    "md": "content/quantum-observable-universe/mass-theory/phi-d-syt-count-conjecture.md",
-    "lean": "content/quantum-observable-universe/mass-theory/phi-d-syt-count-conjecture.lean"
+    "ts": "content/quantum-observable-universe/mass-endomorphism/phi-d-syt-count-conjecture.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/phi-d-syt-count-conjecture.md",
+    "lean": "content/quantum-observable-universe/mass-endomorphism/phi-d-syt-count-conjecture.lean"
   },
   "source_hashes": {
-    "md": "aa19f1cddb27",
     "ts": "b8a37eedbad9",
+    "md": "aa19f1cddb27",
     "lean": "5b57adf190ea"
   },
   "criteria": {
@@ -1279,7 +1279,120 @@
         },
         "reviewed_at": "2026-05-27"
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "b8a37eedbad9",
+          "md": "aa19f1cddb27",
+          "lean": "5b57adf190ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-positive\",\"symbolic\"],\"chapter\":\"mass-endomorphism\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "b8a37eedbad9",
+          "md": "aa19f1cddb27",
+          "lean": "5b57adf190ea"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "b8a37eedbad9",
+          "md": "aa19f1cddb27",
+          "lean": "5b57adf190ea"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "b8a37eedbad9",
+          "md": "aa19f1cddb27",
+          "lean": "5b57adf190ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "b8a37eedbad9",
+          "md": "aa19f1cddb27",
+          "lean": "5b57adf190ea"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "b8a37eedbad9",
+          "md": "aa19f1cddb27",
+          "lean": "5b57adf190ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "b8a37eedbad9",
+          "md": "aa19f1cddb27",
+          "lean": "5b57adf190ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

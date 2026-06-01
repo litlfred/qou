@@ -545,11 +545,11 @@ export function checkQUsagePositivityImplicit(
   const lean = readMaybe(leanPath);
   if (!lean) return { result: "n/a", hits: [] };
   // Quick gate — only fire if the file uses real-archimedean predicates on q.
-  const needsHypothesis =
-    /Real\.(sqrt|log|rpow)\s*[\(\s][^)]*\bq\b/.test(lean) ||
-    /\bRealRpow\b.{0,20}\bq\b/.test(lean) ||
-    /\bRealSqrt\b.{0,20}\bq\b/.test(lean);
-  if (!needsHypothesis) return { result: "pass", hits: [] };
+  // Shared with the line-matching loop below so the gate and the hits
+  // can never disagree (Gemini #1640-552).
+  const POS_DEP_RE =
+    /Real\.(sqrt|log|rpow)\s*[\(\s][^)]*\bq\b|\bRealRpow\b.{0,20}\bq\b|\bRealSqrt\b.{0,20}\bq\b/;
+  if (!POS_DEP_RE.test(lean)) return { result: "pass", hits: [] };
 
   // Has an explicit positivity hypothesis?
   const hasHypothesis =
@@ -563,10 +563,7 @@ export function checkQUsagePositivityImplicit(
   if (hasHypothesis) return { result: "pass", hits: [] };
 
   const hits: QUsageHit[] = [];
-  for (const m of matchLines(
-    lean,
-    /Real\.(sqrt|log|rpow)\s*[\(\s][^)]*\bq\b/,
-  )) {
+  for (const m of matchLines(lean, POS_DEP_RE)) {
     hits.push({
       file: leanPath!,
       line: m.line,
@@ -612,10 +609,11 @@ export function checkQUsageModulusVsRealMismatch(
   const hasMod = MOD_PRED_RE.test(mdClean);
 
   const hits: QUsageHit[] = [];
-  for (const m of matchLines(
-    mdClean,
-    /\$[^$]*?\bq\s*[<>]\s*1\b[^$]*?\$|^[^$]*\bq\s*[<>]\s*1\b/,
-  )) {
+  // Simple word-boundary match — `\bq\s*[<>]\s*1\b` does not match
+  // modulus expressions `|q| < 1` (the `|` between `q` and the boundary
+  // breaks the `\b`), so we don't need an explicit "not after $" anchor.
+  // Per Gemini #1640-618.
+  for (const m of matchLines(mdClean, /\bq\s*[<>]\s*1\b/)) {
     // Skip if line already uses |q| pattern
     if (MOD_PRED_RE.test(m.text)) continue;
     hits.push({

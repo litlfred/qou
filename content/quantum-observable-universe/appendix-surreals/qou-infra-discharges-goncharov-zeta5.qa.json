@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.lean"
   },
   "source_hashes": {
-    "md": "0f9b08a177a7",
-    "ts": "e8e6c08c4eb5",
+    "ts": "13af48adbfa5",
+    "md": "173ffeae5c62",
     "lean": "29f8e354a169"
   },
   "criteria": {
@@ -1335,7 +1335,120 @@
           "tanglement_score": 3
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "13af48adbfa5",
+          "md": "173ffeae5c62",
+          "lean": "29f8e354a169"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"appendix-surreals\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "13af48adbfa5",
+          "md": "173ffeae5c62",
+          "lean": "29f8e354a169"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "13af48adbfa5",
+          "md": "173ffeae5c62",
+          "lean": "29f8e354a169"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "13af48adbfa5",
+          "md": "173ffeae5c62",
+          "lean": "29f8e354a169"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "13af48adbfa5",
+          "md": "173ffeae5c62",
+          "lean": "29f8e354a169"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "13af48adbfa5",
+          "md": "173ffeae5c62",
+          "lean": "29f8e354a169"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "13af48adbfa5",
+          "md": "173ffeae5c62",
+          "lean": "29f8e354a169"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

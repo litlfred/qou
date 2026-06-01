@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/particle-interactions/stable-atom.lean"
   },
   "source_hashes": {
-    "md": "8de59ed0bba1",
     "ts": "d518d6f9ad14",
+    "md": "8de59ed0bba1",
     "lean": "6f25ddfcd48e"
   },
   "criteria": {
@@ -1434,7 +1434,120 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "d518d6f9ad14",
+          "md": "8de59ed0bba1",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"generic-R\",\"real-positive\"],\"chapter\":\"particle-interactions\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "d518d6f9ad14",
+          "md": "8de59ed0bba1",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "d518d6f9ad14",
+          "md": "8de59ed0bba1",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "d518d6f9ad14",
+          "md": "8de59ed0bba1",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "d518d6f9ad14",
+          "md": "8de59ed0bba1",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "d518d6f9ad14",
+          "md": "8de59ed0bba1",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "d518d6f9ad14",
+          "md": "8de59ed0bba1",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

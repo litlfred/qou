@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean"
   },
   "source_hashes": {
-    "md": "00b820e5c6b8",
-    "ts": "98e22b8dd8b9",
+    "ts": "47541f78c24a",
+    "md": "fc08e8bb6535",
     "lean": "dbaf7f78dda5"
   },
   "criteria": {
@@ -1371,7 +1371,122 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "47541f78c24a",
+          "md": "fc08e8bb6535",
+          "lean": "dbaf7f78dda5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"generic-R\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "47541f78c24a",
+          "md": "fc08e8bb6535",
+          "lean": "dbaf7f78dda5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "47541f78c24a",
+          "md": "fc08e8bb6535",
+          "lean": "dbaf7f78dda5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "47541f78c24a",
+          "md": "fc08e8bb6535",
+          "lean": "dbaf7f78dda5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "47541f78c24a",
+          "md": "fc08e8bb6535",
+          "lean": "dbaf7f78dda5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "47541f78c24a",
+          "md": "fc08e8bb6535",
+          "lean": "dbaf7f78dda5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "47541f78c24a",
+          "md": "fc08e8bb6535",
+          "lean": "dbaf7f78dda5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/weak-spectral-completeness.md:1 — detected regime [generic-R, symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

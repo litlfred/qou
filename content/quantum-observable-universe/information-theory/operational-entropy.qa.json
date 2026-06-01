@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/information-theory/operational-entropy.lean"
   },
   "source_hashes": {
-    "md": "10b7c4fefd8d",
     "ts": "2fd5d03865fc",
+    "md": "10b7c4fefd8d",
     "lean": "3f551f054a4e"
   },
   "criteria": {
@@ -1434,7 +1434,120 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "2fd5d03865fc",
+          "md": "10b7c4fefd8d",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"information-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "2fd5d03865fc",
+          "md": "10b7c4fefd8d",
+          "lean": "3f551f054a4e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "2fd5d03865fc",
+          "md": "10b7c4fefd8d",
+          "lean": "3f551f054a4e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "2fd5d03865fc",
+          "md": "10b7c4fefd8d",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "2fd5d03865fc",
+          "md": "10b7c4fefd8d",
+          "lean": "3f551f054a4e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "2fd5d03865fc",
+          "md": "10b7c4fefd8d",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "2fd5d03865fc",
+          "md": "10b7c4fefd8d",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

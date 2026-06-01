@@ -3,13 +3,13 @@
   "label": "conj:lifted-crossing-locality",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/lifted-crossing-locality.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/lifted-crossing-locality.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/lifted-crossing-locality.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts",
+    "md": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.md",
+    "lean": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean"
   },
   "source_hashes": {
-    "md": "261acb790a92",
-    "ts": "1dbcb9fea3e1",
+    "ts": "0b696152d4ab",
+    "md": "88af01c41620",
     "lean": "fd1ae30a7336"
   },
   "criteria": {
@@ -1337,7 +1337,122 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "0b696152d4ab",
+          "md": "88af01c41620",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"root-of-unity\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "0b696152d4ab",
+          "md": "88af01c41620",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "0b696152d4ab",
+          "md": "88af01c41620",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "0b696152d4ab",
+          "md": "88af01c41620",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "0b696152d4ab",
+          "md": "88af01c41620",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "0b696152d4ab",
+          "md": "88af01c41620",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "0b696152d4ab",
+          "md": "88af01c41620",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/lifted-crossing-locality.md:1 — detected regime [root-of-unity] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

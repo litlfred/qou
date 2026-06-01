@@ -3,14 +3,14 @@
   "label": "rem:chi-v21-hoefsmit-matrix-derivation",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/chi-v21-hoefsmit-matrix-derivation.ts",
-    "md": "content/quantum-observable-universe/mass-theory/chi-v21-hoefsmit-matrix-derivation.md",
-    "lean": "content/quantum-observable-universe/mass-theory/chi-v21-hoefsmit-matrix-derivation.lean"
+    "ts": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.md",
+    "lean": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean"
   },
   "source_hashes": {
-    "md": "54c0130ae712",
-    "ts": "e039b868071e",
-    "lean": "9c9fe55136c1"
+    "ts": "7fe7b19bdbc2",
+    "md": "6f34a8ce5570",
+    "lean": "60b2b125876c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1279,7 +1279,122 @@
         },
         "reviewed_at": "2026-05-27"
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "7fe7b19bdbc2",
+          "md": "6f34a8ce5570",
+          "lean": "60b2b125876c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-positive\",\"symbolic\"],\"chapter\":\"mass-endomorphism\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "7fe7b19bdbc2",
+          "md": "6f34a8ce5570",
+          "lean": "60b2b125876c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "7fe7b19bdbc2",
+          "md": "6f34a8ce5570",
+          "lean": "60b2b125876c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "7fe7b19bdbc2",
+          "md": "6f34a8ce5570",
+          "lean": "60b2b125876c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:162 — positivity-dependent Real.* on q without explicit hypothesis — !![hoefsmit_v21_d1 q, Real.sqrt (hoefsmit_v21_b_sq q); | /home/user/qou/content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:163 — positivity-dependent Real.* on q without explicit hypothesis — Real.sqrt (hoefsmit_v21_b_sq q), hoefsmit_v21_d2 q]"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "7fe7b19bdbc2",
+          "md": "6f34a8ce5570",
+          "lean": "60b2b125876c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "7fe7b19bdbc2",
+          "md": "6f34a8ce5570",
+          "lean": "60b2b125876c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "7fe7b19bdbc2",
+          "md": "6f34a8ce5570",
+          "lean": "60b2b125876c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

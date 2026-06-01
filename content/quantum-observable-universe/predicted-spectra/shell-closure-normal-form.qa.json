@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean"
   },
   "source_hashes": {
-    "md": "fad31b851ef1",
     "ts": "67bd68ac5939",
-    "lean": "f62385ba602c"
+    "md": "fad31b851ef1",
+    "lean": "73868b508bef"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1933,7 +1933,120 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "67bd68ac5939",
+          "md": "fad31b851ef1",
+          "lean": "73868b508bef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"predicted-spectra\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "67bd68ac5939",
+          "md": "fad31b851ef1",
+          "lean": "73868b508bef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "67bd68ac5939",
+          "md": "fad31b851ef1",
+          "lean": "73868b508bef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "67bd68ac5939",
+          "md": "fad31b851ef1",
+          "lean": "73868b508bef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "67bd68ac5939",
+          "md": "fad31b851ef1",
+          "lean": "73868b508bef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "67bd68ac5939",
+          "md": "fad31b851ef1",
+          "lean": "73868b508bef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "67bd68ac5939",
+          "md": "fad31b851ef1",
+          "lean": "73868b508bef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

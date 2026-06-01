@@ -3,12 +3,12 @@
   "label": "rem:markov-lambda-knot-operations",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/markov-lambda-knot-operations.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/markov-lambda-knot-operations.md"
+    "ts": "content/quantum-observable-universe/mass-theory/markov-lambda-knot-operations.ts",
+    "md": "content/quantum-observable-universe/mass-theory/markov-lambda-knot-operations.md"
   },
   "source_hashes": {
-    "md": "32dc66080608",
-    "ts": "53c44d4c9356"
+    "ts": "53c44d4c9356",
+    "md": "14261da947d8"
   },
   "criteria": {
     "voice-status-leak": [
@@ -108,7 +108,7 @@
         "reviewed_at": "2026-05-25T17:09:23.625Z",
         "reviewed_sha": "4059af433aef31bf05c0a7c6506c0b3a13d7754b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/markov-lambda-knot-operations.md:1: > **\u26a0\ufe0f SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
+        "evidence": "quantum-observable-universe/braids-and-knots/markov-lambda-knot-operations.md:1: > **⚠️ SUPERSEDED-$\\rho_q$ note (2026-05-24, PR #1127).** Any use of the"
       },
       {
         "field_hash": {
@@ -1726,7 +1726,115 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "53c44d4c9356",
+          "md": "14261da947d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "53c44d4c9356",
+          "md": "14261da947d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "53c44d4c9356",
+          "md": "14261da947d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "53c44d4c9356",
+          "md": "14261da947d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "53c44d4c9356",
+          "md": "14261da947d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "53c44d4c9356",
+          "md": "14261da947d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "53c44d4c9356",
+          "md": "14261da947d8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/markov-lambda-knot-operations.md:1 — detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:26:49.037Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

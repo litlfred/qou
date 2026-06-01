@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/q-geometric-langlands/local-q-zeta-function.lean"
   },
   "source_hashes": {
-    "md": "b65e5ef34b2a",
     "ts": "fdcfb757be15",
+    "md": "b65e5ef34b2a",
     "lean": "e76c83747432"
   },
   "criteria": {
@@ -1418,7 +1418,122 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "fdcfb757be15",
+          "md": "b65e5ef34b2a",
+          "lean": "e76c83747432"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-positive\"],\"chapter\":\"q-geometric-langlands\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"root-of-unity\",\"symbolic\",\"unit-circle\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "fdcfb757be15",
+          "md": "b65e5ef34b2a",
+          "lean": "e76c83747432"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "fdcfb757be15",
+          "md": "b65e5ef34b2a",
+          "lean": "e76c83747432"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "fdcfb757be15",
+          "md": "b65e5ef34b2a",
+          "lean": "e76c83747432"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "fdcfb757be15",
+          "md": "b65e5ef34b2a",
+          "lean": "e76c83747432"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "fdcfb757be15",
+          "md": "b65e5ef34b2a",
+          "lean": "e76c83747432"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "fdcfb757be15",
+          "md": "b65e5ef34b2a",
+          "lean": "e76c83747432"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/q-geometric-langlands/local-q-zeta-function.md:1 — detected regime [real-positive] is disjoint from chapter 'q-geometric-langlands' expected [generic-R, mod-gt-1, mod-lt-1, na, root-of-unity, symbolic, unit-circle]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

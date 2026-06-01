@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean"
   },
   "source_hashes": {
-    "md": "c53e7c97c6f4",
     "ts": "ca7c3e3749f1",
+    "md": "c53e7c97c6f4",
     "lean": "c4900d1996d6"
   },
   "criteria": {
@@ -1915,7 +1915,122 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "ca7c3e3749f1",
+          "md": "c53e7c97c6f4",
+          "lean": "c4900d1996d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"real-gt-1\",\"real-positive\",\"symbolic\"],\"chapter\":\"information-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "ca7c3e3749f1",
+          "md": "c53e7c97c6f4",
+          "lean": "c4900d1996d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "ca7c3e3749f1",
+          "md": "c53e7c97c6f4",
+          "lean": "c4900d1996d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "ca7c3e3749f1",
+          "md": "c53e7c97c6f4",
+          "lean": "c4900d1996d6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean:17 — positivity-dependent Real.* on q without explicit hypothesis — 4. For q ≤ 0, Real.sqrt returns 0, so f(q) = q - 1 ≤ -1 < 0, | /home/user/qou/content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean:104 — positivity-dependent Real.* on q without explicit hypothesis — q_star_threshold < q ↔ 0 < q + Real.sqrt q - 1 := by | /home/user/qou/content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean:122 — positivity-dependent Real.* on q without explicit hypothesis — have hsqrt_zero : Real.sqrt q = 0 :="
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "ca7c3e3749f1",
+          "md": "c53e7c97c6f4",
+          "lean": "c4900d1996d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "ca7c3e3749f1",
+          "md": "c53e7c97c6f4",
+          "lean": "c4900d1996d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "ca7c3e3749f1",
+          "md": "c53e7c97c6f4",
+          "lean": "c4900d1996d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

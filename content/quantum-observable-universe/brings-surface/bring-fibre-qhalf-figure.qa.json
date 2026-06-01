@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.md"
   },
   "source_hashes": {
-    "md": "0f5ed308cb23",
-    "ts": "db880a1857a3"
+    "ts": "41aa9bd80371",
+    "md": "5744e049e68c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -158,7 +158,7 @@
         "reviewed_at": "2026-05-25T07:06:37.458Z",
         "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/bring-fibre-qhalf-figure.ts:5: title \"Bring chiral fibre at $q = \\\\tfrac{1}{2}$: real segment with well-separated sheets\" \u2014 first-person aside in the title"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/bring-fibre-qhalf-figure.ts:5: title \"Bring chiral fibre at $q = \\\\tfrac{1}{2}$: real segment with well-separated sheets\" — first-person aside in the title"
       },
       {
         "field_hash": {
@@ -1354,7 +1354,113 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "41aa9bd80371",
+          "md": "5744e049e68c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"brings-surface\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "41aa9bd80371",
+          "md": "5744e049e68c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "41aa9bd80371",
+          "md": "5744e049e68c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "41aa9bd80371",
+          "md": "5744e049e68c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "41aa9bd80371",
+          "md": "5744e049e68c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "41aa9bd80371",
+          "md": "5744e049e68c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "41aa9bd80371",
+          "md": "5744e049e68c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-26T14:26:49.037Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

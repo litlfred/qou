@@ -3,12 +3,12 @@
   "label": "prop:q-rogers-pentagon-archimedean",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/climax-volume-mass/q-rogers-pentagon-archimedean.ts",
-    "md": "content/quantum-observable-universe/climax-volume-mass/q-rogers-pentagon-archimedean.md"
+    "ts": "content/quantum-observable-universe/mass-theory/q-rogers-pentagon-archimedean.ts",
+    "md": "content/quantum-observable-universe/mass-theory/q-rogers-pentagon-archimedean.md"
   },
   "source_hashes": {
-    "md": "b44601c0f7ee",
-    "ts": "066bc861fd40"
+    "ts": "aa20bdc04e05",
+    "md": "4459ebeb49ba"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1484,7 +1484,117 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "aa20bdc04e05",
+          "md": "4459ebeb49ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"root-of-unity\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "aa20bdc04e05",
+          "md": "4459ebeb49ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "aa20bdc04e05",
+          "md": "4459ebeb49ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "aa20bdc04e05",
+          "md": "4459ebeb49ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "aa20bdc04e05",
+          "md": "4459ebeb49ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "aa20bdc04e05",
+          "md": "4459ebeb49ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/q-rogers-pentagon-archimedean.md:99 — root-of-unity construction used without explicit regime declaration — implicit in passing from divided-power algebras to series-form"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "aa20bdc04e05",
+          "md": "4459ebeb49ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/mass-theory/q-rogers-pentagon-archimedean.md:1 — detected regime [root-of-unity, symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
     ]
   },
-  "updated_at": "2026-05-27T08:55:11.920Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

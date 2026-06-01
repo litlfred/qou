@@ -3,13 +3,13 @@
   "label": "cor:mass-identity-C",
   "kind": "corollary",
   "paths": {
-    "ts": "content/quantum-observable-universe/lifting-and-descent/mass-identity-C.ts",
-    "md": "content/quantum-observable-universe/lifting-and-descent/mass-identity-C.md",
-    "lean": "content/quantum-observable-universe/lifting-and-descent/mass-identity-C.lean"
+    "ts": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.md",
+    "lean": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.lean"
   },
   "source_hashes": {
-    "md": "24072c0f8b25",
     "ts": "b2a2095094eb",
+    "md": "24072c0f8b25",
     "lean": "0e68c60f859f"
   },
   "criteria": {
@@ -1933,7 +1933,120 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "b2a2095094eb",
+          "md": "24072c0f8b25",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-endomorphism\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "b2a2095094eb",
+          "md": "24072c0f8b25",
+          "lean": "0e68c60f859f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "b2a2095094eb",
+          "md": "24072c0f8b25",
+          "lean": "0e68c60f859f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "b2a2095094eb",
+          "md": "24072c0f8b25",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "b2a2095094eb",
+          "md": "24072c0f8b25",
+          "lean": "0e68c60f859f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "b2a2095094eb",
+          "md": "24072c0f8b25",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "b2a2095094eb",
+          "md": "24072c0f8b25",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

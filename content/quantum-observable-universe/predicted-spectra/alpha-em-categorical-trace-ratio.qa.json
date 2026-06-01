@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean"
   },
   "source_hashes": {
-    "md": "cbca91e6e127",
     "ts": "ca5be552846c",
-    "lean": "34cd14984249"
+    "md": "7773625e8511",
+    "lean": "870b856da170"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1933,7 +1933,122 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "ca5be552846c",
+          "md": "7773625e8511",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"generic-R\",\"symbolic\"],\"chapter\":\"predicted-spectra\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "ca5be552846c",
+          "md": "7773625e8511",
+          "lean": "870b856da170"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "ca5be552846c",
+          "md": "7773625e8511",
+          "lean": "870b856da170"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "ca5be552846c",
+          "md": "7773625e8511",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "ca5be552846c",
+          "md": "7773625e8511",
+          "lean": "870b856da170"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "ca5be552846c",
+          "md": "7773625e8511",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "ca5be552846c",
+          "md": "7773625e8511",
+          "lean": "870b856da170"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.md:1 — detected regime [generic-R, symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

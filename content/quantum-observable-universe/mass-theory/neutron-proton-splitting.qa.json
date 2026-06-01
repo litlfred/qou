@@ -3,13 +3,13 @@
   "label": "prop:neutron-proton-splitting",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.lean"
+    "ts": "content/quantum-observable-universe/mass-theory/neutron-proton-splitting.ts",
+    "md": "content/quantum-observable-universe/mass-theory/neutron-proton-splitting.md",
+    "lean": "content/quantum-observable-universe/mass-theory/neutron-proton-splitting.lean"
   },
   "source_hashes": {
-    "md": "35813b473945",
     "ts": "bfee1f77a2b0",
+    "md": "35813b473945",
     "lean": "5c7496d80fd0"
   },
   "criteria": {
@@ -1947,7 +1947,120 @@
           "tanglement_score": 0
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "bfee1f77a2b0",
+          "md": "35813b473945",
+          "lean": "5c7496d80fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "bfee1f77a2b0",
+          "md": "35813b473945",
+          "lean": "5c7496d80fd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "bfee1f77a2b0",
+          "md": "35813b473945",
+          "lean": "5c7496d80fd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "bfee1f77a2b0",
+          "md": "35813b473945",
+          "lean": "5c7496d80fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "bfee1f77a2b0",
+          "md": "35813b473945",
+          "lean": "5c7496d80fd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "bfee1f77a2b0",
+          "md": "35813b473945",
+          "lean": "5c7496d80fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "bfee1f77a2b0",
+          "md": "35813b473945",
+          "lean": "5c7496d80fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T18:29:30.189Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

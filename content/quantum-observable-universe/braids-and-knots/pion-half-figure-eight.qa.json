@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/pion-half-figure-eight.lean"
   },
   "source_hashes": {
+    "ts": "18e0d12369c3",
     "md": "c33e84f16221",
-    "ts": "b233f5d6e158",
-    "lean": "22bddd4dc956"
+    "lean": "d2d9bb17dab7"
   },
   "criteria": {
     "proof-narrative-lean-equiv": [
@@ -62,7 +62,120 @@
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:pion-half-figure-eight' → expected 'pion_half_figure_eight'; Lean declares: pion_eq_half_figure_eight_phase, figure_eight_is_square_of_half, pion_det_one, half_41_det_one. Structural match via content."
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "18e0d12369c3",
+          "md": "c33e84f16221",
+          "lean": "d2d9bb17dab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-positive\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "18e0d12369c3",
+          "md": "c33e84f16221",
+          "lean": "d2d9bb17dab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "18e0d12369c3",
+          "md": "c33e84f16221",
+          "lean": "d2d9bb17dab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "18e0d12369c3",
+          "md": "c33e84f16221",
+          "lean": "d2d9bb17dab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "18e0d12369c3",
+          "md": "c33e84f16221",
+          "lean": "d2d9bb17dab7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "18e0d12369c3",
+          "md": "c33e84f16221",
+          "lean": "d2d9bb17dab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "18e0d12369c3",
+          "md": "c33e84f16221",
+          "lean": "d2d9bb17dab7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

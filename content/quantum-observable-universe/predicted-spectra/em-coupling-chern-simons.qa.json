@@ -1,15 +1,15 @@
 {
   "$schema": "block-qa/v1",
-  "label": "conj:em-coupling-chern-simons",
-  "kind": "conjecture",
+  "label": "rem:em-coupling-chern-simons",
+  "kind": "remark",
   "paths": {
     "ts": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.ts",
     "md": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md",
     "lean": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean"
   },
   "source_hashes": {
+    "ts": "abadb3b00f1d",
     "md": "12a33dd5968f",
-    "ts": "7d6d54e218f1",
     "lean": "3201e1b2c20a"
   },
   "criteria": {
@@ -1337,7 +1337,120 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "abadb3b00f1d",
+          "md": "12a33dd5968f",
+          "lean": "3201e1b2c20a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"real-gt-1\",\"real-positive\"],\"chapter\":\"predicted-spectra\",\"expected\":[\"fixed-q0\",\"na\",\"real-gt-1\",\"real-positive\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "abadb3b00f1d",
+          "md": "12a33dd5968f",
+          "lean": "3201e1b2c20a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "abadb3b00f1d",
+          "md": "12a33dd5968f",
+          "lean": "3201e1b2c20a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "abadb3b00f1d",
+          "md": "12a33dd5968f",
+          "lean": "3201e1b2c20a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "abadb3b00f1d",
+          "md": "12a33dd5968f",
+          "lean": "3201e1b2c20a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "abadb3b00f1d",
+          "md": "12a33dd5968f",
+          "lean": "3201e1b2c20a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "abadb3b00f1d",
+          "md": "12a33dd5968f",
+          "lean": "3201e1b2c20a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.lean"
   },
   "source_hashes": {
-    "md": "cf06f4c9204c",
-    "ts": "f0ab9e340e08",
+    "ts": "130b0674cbb7",
+    "md": "8b5d4026215e",
     "lean": "661a61577014"
   },
   "criteria": {
@@ -1335,7 +1335,122 @@
           "tanglement_score": 1
         }
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "130b0674cbb7",
+          "md": "8b5d4026215e",
+          "lean": "661a61577014"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"fixed-q0\"],\"chapter\":\"quantum-observable-universes\",\"expected\":[\"generic-R\",\"na\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "130b0674cbb7",
+          "md": "8b5d4026215e",
+          "lean": "661a61577014"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "130b0674cbb7",
+          "md": "8b5d4026215e",
+          "lean": "661a61577014"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "130b0674cbb7",
+          "md": "8b5d4026215e",
+          "lean": "661a61577014"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "130b0674cbb7",
+          "md": "8b5d4026215e",
+          "lean": "661a61577014"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "130b0674cbb7",
+          "md": "8b5d4026215e",
+          "lean": "661a61577014"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "130b0674cbb7",
+          "md": "8b5d4026215e",
+          "lean": "661a61577014"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md:1 — detected regime [fixed-q0] is disjoint from chapter 'quantum-observable-universes' expected [generic-R, na, real-positive, symbolic]"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }

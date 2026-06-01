@@ -3,13 +3,13 @@
   "label": "rem:braid-group-n-strand",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/stochastic-mechanics/braid-group-n-strand.ts",
-    "md": "content/quantum-observable-universe/stochastic-mechanics/braid-group-n-strand.md",
-    "lean": "content/quantum-observable-universe/stochastic-mechanics/braid-group-n-strand.lean"
+    "ts": "content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.lean"
   },
   "source_hashes": {
-    "md": "792c554afde1",
     "ts": "4f74c997a469",
+    "md": "792c554afde1",
     "lean": "303980112eed"
   },
   "criteria": {
@@ -1279,7 +1279,124 @@
         },
         "reviewed_at": "2026-05-27"
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "4f74c997a469",
+          "md": "792c554afde1",
+          "lean": "303980112eed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "notes": "{\"regimes\":[\"real-positive\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "4f74c997a469",
+          "md": "792c554afde1",
+          "lean": "303980112eed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "4f74c997a469",
+          "md": "792c554afde1",
+          "lean": "303980112eed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "major",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.lean:198 — archimedean Real.* in categorical chapter — 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "4f74c997a469",
+          "md": "792c554afde1",
+          "lean": "303980112eed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z",
+        "severity": "minor",
+        "evidence": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.lean:198 — positivity-dependent Real.* on q without explicit hypothesis — 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "4f74c997a469",
+          "md": "792c554afde1",
+          "lean": "303980112eed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "4f74c997a469",
+          "md": "792c554afde1",
+          "lean": "303980112eed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "4f74c997a469",
+          "md": "792c554afde1",
+          "lean": "303980112eed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "c13279b870c7"
+        },
+        "reviewed_at": "2026-06-01T13:26:15.486Z"
+      }
     ]
   },
-  "updated_at": "2026-05-28T15:44:09.524Z"
+  "updated_at": "2026-06-01T13:26:15.486Z"
 }
