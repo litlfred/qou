@@ -188,6 +188,17 @@ def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
     where h = q − q⁻¹. The h-series TERMINATES exactly at h²:
     all higher h^{2k} coefficients are identically zero.
 
+    CAVEAT (audit 2026-06-01, `docs/audits/2026-06-01-geom-full-
+    compute-vs-paper-audit.md`): this is a sum of QUANTUM DIMENSIONS
+    over H_4 — it is NOT the paper's Stage-4 per-block factor
+    J_𝓑₃ = Σ_{λ⊢3} w_λ χ_λ(β)/dim λ (the normalized Markov trace,
+    over H_3, ≈ 1 for the Borromean rings). The two coincide only at
+    the h² coefficient under a factor of 4 (Jones normalization); they
+    DISAGREE at h⁰ (factor 5/2, not 4) and at h⁴ (this terminates; the
+    true trace has a₄ ≈ −0.758). Per `lambda-scale-substrate-form.md`
+    this H_4 average is an acknowledged-CAL-4 empirical near-match, not
+    a categorical derivation of the per-block trace.
+
     Replaces three independent inline copies of the same algebraic
     expression in production scripts (Gemini PR #942 review, 2026-05-23
     — centralize to avoid drift).
@@ -348,8 +359,16 @@ def borromean_markov_trace_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
 
         (3/16) × 4 = 3/4 = Family A's proved h² coefficient
 
-    establishing that Family A's λ_A = 5/2 + (3/4)·h² IS the
-    Borromean braid trace, renormalized to the H₄ Wedderburn sum.
+    CAVEAT (audit 2026-06-01, `docs/audits/2026-06-01-geom-full-
+    compute-vs-paper-audit.md`): this match holds at the h²
+    coefficient ONLY. It does NOT establish that Family A IS the
+    Borromean braid trace — the same factor 4 FAILS at h⁰ (here
+    a₀ = 1, Family A a₀ = 5/2, ratio 5/2 ≠ 4) and at h⁴ (Family A
+    terminates at h²; this trace has a₄ ≈ −0.758). The "(3/16)·4 =
+    3/4" is a single-order `mpmath.identify` coincidence, not a
+    renormalization of the trace. Family A is an acknowledged-CAL-4
+    H₄ empirical near-match (`lambda-scale-substrate-form.md`), a
+    DIFFERENT object from this H₃ Markov trace.
 
     Ref: `yekutieli_borromean_h2_extraction.py` (empirical computation).
     """
