@@ -12,5 +12,6 @@ export default remark({
     "markov-pairing",
     "spectral-sequence",
   ],
-  uses: ["prop:e-infinity-page-identifications"],
+  uses: ["prop:e-infinity-page-identifications",
+    "prop:q-laplacian-spectral-tower"],
 });
