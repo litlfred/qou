@@ -123,7 +123,9 @@ check flag the genuine consumers.
    improves audit-tree navigability without losing institutional memory.
 5. **Parser parity.** Both audit tools now handle `Object.freeze({...})`
    sections.  Future content-pipeline scripts should adopt the same
-   `(?:section|Object\.freeze)` regex when extracting sections.
+   `(?:\bsection|Object\.freeze)` regex when extracting sections — the
+   `\b` word boundary keeps it from matching `section` as a substring
+   of unrelated identifiers (e.g. `intersection(`).
 
 ## Reproduce
 

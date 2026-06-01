@@ -197,7 +197,7 @@ def parse_chapter(chapter_dir_path: Path, chapter_idx: int) -> ChapterInfo | Non
     # braids-and-knots.ts (sec:lepton-meson-parallel) for tighter immutability.
     sections = []
     section_pattern = re.compile(
-        r'(?:section|Object\.freeze)\s*\(\s*\{(.*?)\}\s*\)',
+        r'(?:\bsection|Object\.freeze)\s*\(\s*\{(.*?)\}\s*\)',
         re.DOTALL,
     )
     for sec_idx, m in enumerate(section_pattern.finditer(text)):
