@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:31:54.417006+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:10:56.630701+00:00",
+  "commitSha": "30a447e4ead9753aec8e3adab611c74e77d8e2b1",
   "assertions": [
     {
       "name": "D_branch_phase_fit",
@@ -36,10 +36,10 @@
   "scriptHash": "0f3a80440835",
   "scriptCommitSha": "8a937415ca8d148e71076cdf4fb51628c391c33f",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

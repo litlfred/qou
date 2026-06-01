@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:32:04.386461+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:11:07.118037+00:00",
+  "commitSha": "30a447e4ead9753aec8e3adab611c74e77d8e2b1",
   "assertions": [
     {
       "name": "clausen_orbit_sum_closed_form_all_N_n",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 356,
+  "durationMs": 347,
   "computation": "cyclotomic-orbit-sum-all-depths-probe",
   "scriptFile": "cyclotomic_orbit_sum_all_depths_probe.py",
   "scriptHash": "7fdab76cdc1f",
   "scriptCommitSha": "d968481d10e8786b1c1263c0b5b83fc13eb5b87c",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

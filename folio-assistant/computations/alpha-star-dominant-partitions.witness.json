@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:29:53.209050+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:08:55.426162+00:00",
+  "commitSha": "30a447e4ead9753aec8e3adab611c74e77d8e2b1",
   "assertions": [
     {
       "name": "dominant_partition_predicts_alpha_star",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "alpha-star-dominant-partitions",
   "scriptFile": "alpha_star_dominant_partitions.py",
   "scriptHash": "2e8301788347",
   "scriptCommitSha": "134aa60f3f95d344c7a478440dd4dbea889c703d",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

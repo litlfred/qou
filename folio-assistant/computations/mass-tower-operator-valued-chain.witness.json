@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:38:00.559477+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:17:01.630354+00:00",
+  "commitSha": "30a447e4ead9753aec8e3adab611c74e77d8e2b1",
   "assertions": [
     {
       "name": "operator-valued mass-tower verified through A = 3",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "mass-tower-operator-valued-chain",
   "scriptFile": "mass_tower_operator_valued_chain.py",
   "scriptHash": "d9ac4299a570",
   "scriptCommitSha": "99eebe463445cc7a8a73d943f7ce856f2abd5b9c",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
