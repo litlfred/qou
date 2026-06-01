@@ -1,0 +1,76 @@
+# α_EM canonical derivation — master ledger
+
+> Single source of truth for the **α_EM canonical derivation** goal.
+> α_EM is the EM coupling constant; the framework's prediction must
+> derive it from substrate primitives (q₀, knot invariants) without
+> CAL-anchoring.
+
+## Status (as of 2026-05-31)
+
+| Sub-goal | Status | Evidence |
+|----------|--------|----------|
+| **α_EM closure to 4.18 ppm** | NEAR-MATCH | `8cd964a99` (categorical re-identification — Bring zero-mode shift) |
+| **α_EM Habiro element `[2]_q · (1−h²α)`** | **DERIVED** ✓ | PR #1511 (merged 2026-05-30) — Habiro Taylor coefficients are binomial-exact: `c_k = 2·C(1/2, k/2)·(1/4)^(k/2)` |
+| **Bring residue → resolvent form** | DERIVED | `f963fbe69` — single Bring-residue class closes shared open math |
+| **α_EM 1/(8π) factor** | DERIVED via Bring | PR #1552 — `1/(8π) = 1/(π·dim H¹(M_Bring))` |
+| **RT Phase 3 Schwinger structural form** | in-flight | PR #1549 |
+| **RT Phase 4 closure** | open | PR #1552 (RT Phase 4 derivation) |
+| **Categorical 1-loop interpretation** | open | PR #1521 |
+| **B_4 PSLQ depth** | PARTIAL refutation | `396762dbb` — depth chain complete, refutation partial |
+
+## Why this ledger exists
+
+α_EM is the **template** the c_k flip-flop saga (1ppQ-Q_β ledger) is
+trying to mirror. PR #1511 cleanly closed α_EM's "next-order factor"
+by identifying the Habiro element `[2]_q · (1 - h² α)`. The Q_β probe
+`probe-qbeta-habiro-element-search` looks for the analogous element
+for Q_β.
+
+This ledger captures the active α_EM threads + their PR dependencies
+so a coordinating agent can see at-a-glance where each piece sits.
+
+## Active PRs (5)
+
+| PR | Branch | Scope |
+|----|--------|-------|
+| #1505 | `claude/alpha-em-canonical-chain-walkthrough-2026-05-30` | walkthrough: α_EM through the canonical derivation chain (Cat→Alg→Geom→Arch) |
+| #1521 | `claude/alpha-em-habiro-categorical-1loop-2026-05-30` | derive: Habiro element `[2]_q·(1-h²α)` IS closed fermion loop in fundamental rep |
+| #1549 | `claude/alpha-em-rt-phase-3-2026-05-30` | derive(alpha_em): RT Phase 3 — Schwinger `(1-h²α)` structural derivation |
+| #1552 | `claude/alpha-em-rt-phase-4-2026-05-30` | derive(alpha_em): RT Phase 4 — `1/(8π) = 1/(π·dim H¹(M_Bring))` Bring mesh |
+| #1508 (merged) | — | Lean conditional theorem for α_EM⁻¹ full form (§3b-cond pattern; the c_3 / c_4-c_7 classes mirror this) |
+
+## Open probes (queue file `todos/alpha-em-queue.json` — TBD)
+
+This ledger does not yet have a populated queue file; the active PRs
+above each track their own scope. When a new tranche needs a queue,
+follow the `1ppq-qbeta-queue.json` schema.
+
+Items that would belong in such a queue:
+
+- [ ] **Close α_EM final ppm** — current 4.18 ppm near-match (`8cd964a99`); is the residual a numerical floor or a structural gap?
+- [ ] **Lean §3b-cond classes for the Bring-zero-mode shift** — extend the existing `EmAlphaInvNextOrderBlochClass` pattern (PR #1508)
+- [ ] **Cross-check the Habiro `[2]_q·(1-h²α)` element against Q_β** — does the same element apply? (this is `probe-qbeta-habiro-element-search` in `1ppq-qbeta-queue.json`)
+- [ ] **B_4 PSLQ closure** — `396762dbb` left the depth chain complete but refutation partial; close or refute
+- [ ] **κ_Coulomb = Bring × √3 hypothesis** — `0eab531a4` coord note suggested this; verify or refute
+
+## Anti-patterns (DO NOT repeat)
+
+- ❌ Yekutieli h² extraction for T(2,9)+T(3,5) — REFUTED route (`a87221e2f`)
+- ❌ Bring-CM B_3 off-unit-circle PSLQ — STRONGER refutation (`0c4c46e87`)
+- ❌ q-hyperbolic B_3 PSLQ — PARTIAL refutation (`c418cb2c2`)
+- ❌ Habiro/full-Jones as alternative tree identification — REFUTED (`833f99e98`)
+- ❌ NEAR-MATCH on `1/j(i)` candidate — refuted in 12-candidate sweep (`6a17848a8`)
+
+## Sessions log
+
+| Date | Agent / branch | Intent | Results |
+|------|----------------|--------|---------|
+| 2026-05-31 (cont. 3) | Claude / `claude/coord-ledgers-option-e-followup-2026-05-31` | backfill this ledger to track α_EM threads | landed; active PRs catalogued; anti-patterns cross-linked from refuted commits |
+
+## Cross-refs
+
+- PR #1511 (merged) — α_EM Habiro element `[2]_q · (1-h²α)` (the structural template)
+- `docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md` — Q_β analog plan
+- `docs/coordination/1ppq-qbeta.md` — sibling c_k saga
+- CLAUDE.md §Precision goals — L2 / Subgoal-1 / Subgoal-2 framing
+- CLAUDE.md §Rendering Hecke-Skein convention §7a — Iwahori-Hecke H_n(q) notation
