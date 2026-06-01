@@ -72,17 +72,27 @@ jobs:
         run: |
           cat > pyodide-smoke.mjs << 'JSEOF'
           import { loadPyodide } from "pyodide";
-          import { readFileSync } from "fs";
+          import { readFileSync, readdirSync } from "fs";
           import { resolve } from "path";
 
           const py = await loadPyodide();
           await py.loadPackage(["micropip"]);
 
-          const wheels = [
-            "qou_substrate-0.1.0-py3-none-any.whl",
-            "witness_schema-0.1.1-py3-none-any.whl",
-            "pyhecke-0.1.0-py3-none-any.whl",
-          ];
+          // Discover built wheels dynamically so a version bump in any
+          // package's pyproject.toml doesn't require editing this file
+          // (the previous hardcoded list went stale when qou-substrate
+          // and pyhecke moved 0.1.0 → 0.1.1).  Order: install
+          // qou_substrate first (no deps), then witness_schema (only
+          // pydantic), then pyhecke (depends on qou_substrate).
+          const wheelDir = "_wheels";
+          const wheelOrder = ["qou_substrate", "witness_schema", "pyhecke"];
+          const wheelFiles = readdirSync(wheelDir).filter((f) => f.endsWith(".whl"));
+          const wheels = wheelOrder.map((pkg) => {
+            const w = wheelFiles.find((f) => f.startsWith(pkg + "-"));
+            if (!w) throw new Error(`wheel for ${pkg} not found in ${wheelDir}/`);
+            return w;
+          });
+          console.log("discovered wheels:", wheels);
 
           // Pyodide's micropip can install file:// wheels — we mount
           // the local _wheels/ via Pyodide's virtual FS.
