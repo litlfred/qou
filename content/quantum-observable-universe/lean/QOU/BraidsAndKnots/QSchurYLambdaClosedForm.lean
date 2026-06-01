@@ -222,6 +222,26 @@ left to the future `q-Schur algebra` development that will
 discharge `QSchurYLambdaClosedFormClaim`.
 -/
 
+/-- Non-vanishing of `q + q⁻¹` for any real `q ≠ 0` (since `q² = -1`
+    has no real solution).  Helper shared across the H_3 identities. -/
+lemma q_add_inv_ne_zero {q : ℝ} (hq : q ≠ 0) : q + q⁻¹ ≠ 0 := by
+  intro heq
+  have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
+  rw [mul_add, mul_inv_cancel₀ hq] at this
+  have hsq : 0 ≤ q * q := mul_self_nonneg q
+  linarith
+
+/-- Strict positivity of `q² + 1 + (q⁻¹)²` for any real `q` (sum of
+    two squares plus 1).  Helper shared across the H_3 identities. -/
+lemma q_sq_add_one_add_inv_sq_pos (q : ℝ) : 0 < q^2 + 1 + (q⁻¹)^2 := by
+  have h_q : 0 ≤ q^2 := sq_nonneg q
+  have h_iq : 0 ≤ (q⁻¹)^2 := sq_nonneg q⁻¹
+  linarith
+
+/-- Non-vanishing of `q² + 1 + (q⁻¹)²`, via strict positivity. -/
+lemma q_sq_add_one_add_inv_sq_ne_zero (q : ℝ) : q^2 + 1 + (q⁻¹)^2 ≠ 0 :=
+  ne_of_gt (q_sq_add_one_add_inv_sq_pos q)
+
 /-- **H_3 case for `(3)`**: `y_(3)(q) = q^3 / ((q + q⁻¹)(q^2 + 1 + q⁻²))`. -/
 theorem qSchur_H3_top (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
     ySchurClosedForm [3] q = q^3 / ((q + q⁻¹) * (q^2 + 1 + (q⁻¹)^2)) := by
@@ -229,18 +249,8 @@ theorem qSchur_H3_top (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
   have hc : contentSum [3] = 3 := by decide
   have hs : ([3] : List ℕ).sum = 3 := by decide
   rw [hc, hs]
-  have hsum_ne : q + q⁻¹ ≠ 0 := by
-    intro heq
-    have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
-    rw [mul_add, mul_inv_cancel₀ hq] at this
-    have hsq : 0 ≤ q * q := mul_self_nonneg q
-    linarith
-  have hsq3_ne : q^2 + 1 + (q⁻¹)^2 ≠ 0 := by
-    have h_q : 0 ≤ q^2 := sq_nonneg q
-    have h_iq : 0 ≤ (q⁻¹)^2 := sq_nonneg q⁻¹
-    linarith
   simp only [qFactorial, qBracket, dif_neg h2]
-  field_simp [hsum_ne, hsq3_ne]
+  field_simp [q_add_inv_ne_zero hq, q_sq_add_one_add_inv_sq_ne_zero q]
   ring
 
 /-- **H_3 case for `(2,1)`**: `y_{(2,1)}(q) = 1 / ((q + q⁻¹)(q^2 + 1 + q⁻²))`. -/
@@ -250,18 +260,8 @@ theorem qSchur_H3_mid (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
   have hc : contentSum [2, 1] = 0 := by decide
   have hs : ([2, 1] : List ℕ).sum = 3 := by decide
   rw [hc, hs]
-  have hsum_ne : q + q⁻¹ ≠ 0 := by
-    intro heq
-    have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
-    rw [mul_add, mul_inv_cancel₀ hq] at this
-    have hsq : 0 ≤ q * q := mul_self_nonneg q
-    linarith
-  have hsq3_ne : q^2 + 1 + (q⁻¹)^2 ≠ 0 := by
-    have h_q : 0 ≤ q^2 := sq_nonneg q
-    have h_iq : 0 ≤ (q⁻¹)^2 := sq_nonneg q⁻¹
-    linarith
   simp only [qFactorial, qBracket, dif_neg h2]
-  field_simp [hsum_ne, hsq3_ne]
+  field_simp [q_add_inv_ne_zero hq, q_sq_add_one_add_inv_sq_ne_zero q]
   ring
 
 /-- **H_3 case for `(1,1,1)`**: `y_{(1,1,1)}(q) = (q⁻¹)^3 / ((q + q⁻¹)(q^2 + 1 + q⁻²))`. -/
@@ -271,18 +271,8 @@ theorem qSchur_H3_bottom (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
   have hc : contentSum [1, 1, 1] = -3 := by decide
   have hs : ([1, 1, 1] : List ℕ).sum = 3 := by decide
   rw [hc, hs]
-  have hsum_ne : q + q⁻¹ ≠ 0 := by
-    intro heq
-    have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
-    rw [mul_add, mul_inv_cancel₀ hq] at this
-    have hsq : 0 ≤ q * q := mul_self_nonneg q
-    linarith
-  have hsq3_ne : q^2 + 1 + (q⁻¹)^2 ≠ 0 := by
-    have h_q : 0 ≤ q^2 := sq_nonneg q
-    have h_iq : 0 ≤ (q⁻¹)^2 := sq_nonneg q⁻¹
-    linarith
   simp only [qFactorial, qBracket, dif_neg h2]
-  field_simp [hsum_ne, hsq3_ne]
+  field_simp [q_add_inv_ne_zero hq, q_sq_add_one_add_inv_sq_ne_zero q]
   ring
 
 end QOU.BraidsAndKnots
