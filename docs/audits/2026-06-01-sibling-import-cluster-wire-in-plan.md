@@ -27,7 +27,6 @@ orphan content-block triples and likely break main's build.
 | `predicted-spectra/three-substantive-mathlib-fillers.lean` | `lean/QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean` (module `QOU.Archimedean.ThreeSubstantiveMathlibFillers`) | `(none)` |
 | `predicted-spectra/torus-knot-genus-four-unique.lean` | `lean/QOU/Archimedean/TorusKnotGenusFourUnique.lean` (module `QOU.Archimedean.TorusKnotGenusFourUnique`) | `qou:QOU.Archimedean.torus_knot_genus_four_unique` |
 | `predicted-spectra/type-b-folded-crystal-combinatorics.lean` | `lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean` (module `QOU.Archimedean.TypeBFoldedCrystalCombinatorics`) | `qou:QOU.Archimedean.TypeBCrystal.PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero` |
-| `predicted-spectra/em-coupling-projection.lean` | `lean/QOU/ArchimedeanUniverse/EmCouplingProjection.lean` (module `QOU.ArchimedeanUniverse.EmCouplingProjection`) | `qou:QOU.Archimedean.em_coupling_projection` |
 | `mass-theory/alpha-shift-torus-knot.lean` | `lean/QOU/BraidKnot/AlphaShiftTorus/AlphaShiftTorusKnot.lean` (module `QOU.BraidKnot.AlphaShiftTorus.AlphaShiftTorusKnot`) | `qou:QOU.BraidKnot.AlphaShiftTorus.alpha_shift_torus_knot` |
 | `stochastic-mechanics/F3-eps6-leading-eq-neg-2b-cubed.lean` | `lean/QOU/BraidKnot/F3_eps6_leading_eq_neg_2b_cubed.lean` (module `QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed`) | `(none)` |
 | `mass-theory/knot-factor-amphicheiral.lean` | `lean/QOU/BraidKnot/KnotFactorAmphicheiral.lean` (module `QOU.BraidKnot.KnotFactorAmphicheiral`) | `qou:QOU.BraidKnot.knot_factor_amphicheiral` |
@@ -102,3 +101,35 @@ Because the providers (bucket-B) and consumers (bucket-A) are the same
 connected component, **wire the whole component in one toolchain session** —
 moving a provider also satisfies the consumers that import it, and the
 `lean.ref` promotion (bucket-B) happens as each provider's module goes green.
+
+## Corrections (Gemini review of PR #1653)
+
+**1. `em-coupling-projection.lean` is ONE module, not two.** An earlier draft
+double-mapped it (the spurious `QOU.ArchimedeanUniverse.EmCouplingProjection`
+row, removed). The provider declares `namespace QOU.Archimedean`, so the
+canonical target is **`QOU.Archimedean.EmCouplingProjection`** (single row
+above). The `import QOU.ArchimedeanUniverse.EmCouplingProjection` in
+`predicted-spectra/em-coupling-chern-simons.lean` is a **wrong import in the
+consumer** (stale `ArchimedeanUniverse` namespace) — fix it during the
+migration to `import QOU.Archimedean.EmCouplingProjection`, not by creating a
+second module.
+
+**2. Lean 4 module-name casing — UpperCamelCase, BUT update importers too.**
+Six targets currently use snake_case file/module names matching how their
+importers reference them today:
+
+| current (snake) | Lean-4 CamelCase |
+|---|---|
+| `QOU.BraidKnot.braid_group_n_strand` | `QOU.BraidKnot.BraidGroupNStrand` |
+| `QOU.BraidKnot.braid_link_types` | `QOU.BraidKnot.BraidLinkTypes` |
+| `QOU.BraidKnot.h3_hecke_idempotents` | `QOU.BraidKnot.H3HeckeIdempotents` |
+| `QOU.BraidKnot.hoefsmit_V21_cos_symmetrization` | `QOU.BraidKnot.HoefsmitV21CosSymmetrization` |
+| `QOU.BraidKnot.markov_axioms_primitive` | `QOU.BraidKnot.MarkovAxiomsPrimitive` |
+| `QOU.BraidKnot.q_beta_categorical_precision_ladder` | `QOU.BraidKnot.QBetaCategoricalPrecisionLadder` |
+
+Renaming to CamelCase is the right Lean-4 idiom, **but it is not free**: every
+`import QOU.BraidKnot.braid_group_n_strand` in the consumer files must be
+updated in lock-step (otherwise the rename re-breaks them). Do the rename +
+all importer updates in the same commit during the toolchain session. (The
+already-CamelCase targets — `TwoRowStratum`, `KnotFactorAmphicheiral`, etc. —
+need no rename, only the move.)
