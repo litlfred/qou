@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:46:24.003368+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:32:47.517523+00:00",
+  "commitSha": "b10ce50b8c80abeae41fb67966cf27728de92d7b",
   "assertions": [
     {
       "name": "no_i11_violations",
@@ -21,10 +21,10 @@
   "scriptHash": "1535a12e8aa7",
   "scriptCommitSha": "8d025364c5f553aa009b5f71179be92660371c17",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -36,7 +36,7 @@
   "description": "I11 audit per local/compute-integration-watcher: scripts that import M_*_MEV_VALIDATION constants from codata_constants.py are classified by usage. The validation constants are tagged 'DO NOT USE AS PREDICTION INPUTS' in the source; using them outside `pred - VAL` / `abs(...)` / `expected=VAL` style comparison contexts is an I11 violation unless the script's docstring carries a CLASS-A acknowledged-anchor banner (typical for the M_N anchor pending Workplan-0b). Per-script classification surfaces the violation queue for follow-up.",
   "contentBlock": "I11 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_scripts": 47,
+    "total_scripts": 50,
     "validation_constants_in_scope": [
       "M_P_MEV_VALIDATION",
       "M_N_MEV_VALIDATION",
@@ -55,10 +55,10 @@
   },
   "data": {
     "by_result": {
-      "i11_violation": 37,
+      "i11_violation": 39,
       "imported_unused": 5,
       "ok_comparison_only": 1,
-      "ok_acknowledged_anchor": 4
+      "ok_acknowledged_anchor": 5
     },
     "rows": [
       {
@@ -281,6 +281,20 @@
         "result": "ok_acknowledged_anchor"
       },
       {
+        "path": "folio-assistant/computations/linking_weight_canonical_object_lwfix.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          55,
+          56
+        ],
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
         "path": "folio-assistant/computations/m_p_borromean_verification_50dps.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
@@ -468,12 +482,12 @@
           "M_N_MEV_VALIDATION_ERR"
         ],
         "comparison_lines": [
-          100,
-          102,
-          104,
-          106,
-          112,
-          118
+          107,
+          109,
+          111,
+          113,
+          119,
+          125
         ],
         "violation_lines": [
           38,
@@ -482,10 +496,10 @@
           41,
           42,
           43,
-          94,
-          95,
-          96,
-          97
+          101,
+          102,
+          103,
+          104
         ],
         "violation_count": 11,
         "result": "ok_acknowledged_anchor"
@@ -718,6 +732,36 @@
           "M_P_MEV_VALIDATION"
         ],
         "result": "imported_unused"
+      },
+      {
+        "path": "folio-assistant/computations/vhat_std_vs_full_tower_compare.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          40,
+          41
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/volume_def_reconcile.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          50,
+          51,
+          63,
+          64
+        ],
+        "violation_count": 4,
+        "result": "i11_violation"
       }
     ]
   }
