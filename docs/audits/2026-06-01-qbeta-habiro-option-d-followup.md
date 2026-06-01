@@ -1,8 +1,25 @@
 # Q_β Habiro element — Option D follow-up (2026-06-01)
 
+> **Parallel-work note (2026-06-01).** A sibling agent independently
+> ran the Option D recursion probe and the partition-followup probes
+> on the same branch (commits `0b0c67a23`, `549b274cd`) and wrote the
+> companion audit
+> [`2026-06-01-qbeta-habiro-a8-partition-function-match.md`](2026-06-01-qbeta-habiro-a8-partition-function-match.md)
+> for the **a_8 = Σ p(k)·u^{5−k} identification**. The sibling audit
+> covers a_8 exhaustively and the a_m(p), a_m(n) leading-coefficient
+> recurrence-search negatives. **This audit complements** with three
+> distinct findings the sibling audit did not surface:
+> (i) the **mechanical S_5 → S_6 telescoping** (constant-term
+> cancellation 15 + (−15) = 0 producing the u^15 lift in ONE
+> step at m=6), (ii) the **Padé [3/3] exact reconstruction** of a_7's
+> 8-coefficient sequence (rational generating-function constraint),
+> (iii) the **constant-term boundary chain** p(5) → p_{b=2}(7) → p(7)
+> at m = 8 → 7 → 6.
+>
 > Branch: `claude/brave-mendel-FPxFl` (PR #1579).
 > Parent audits: [Δa_m factorization](2026-05-31-qbeta-habiro-delta-am-factorization.md),
 > [P_8 identification](2026-05-31-qbeta-habiro-p8-identification.md).
+> Sibling audit (parallel work): [a_8 partition-function match](2026-06-01-qbeta-habiro-a8-partition-function-match.md).
 > Probe scripts:
 > [`qbeta_habiro_recursion_probe.py`](../../folio-assistant/computations/qbeta_habiro_recursion_probe.py),
 > [`qbeta_habiro_partition_followup.py`](../../folio-assistant/computations/qbeta_habiro_partition_followup.py),
