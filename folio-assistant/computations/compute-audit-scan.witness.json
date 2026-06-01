@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T04:10:06.224535+00:00",
-  "commitSha": "e49ba458ccf801ada13cdae608d199b98ede211a",
+  "computedAt": "2026-06-01T05:02:36.827462+00:00",
+  "commitSha": "e875964af66b021612ac984b3dd3d79829e19545",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
-  "scriptCommitSha": "6ab311baa1558b2a1892b772faf6b3b662662f7a",
+  "scriptCommitSha": "3e8cab5b00902b83e6d53dca4fbdf3f7521bbdd9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,7 +25,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 836,
+    "files_scanned": 838,
     "patterns": [
       "P15",
       "P16",
@@ -36,7 +36,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 114,
+      "P15": 124,
       "P16": 232,
       "P21": 30,
       "P30": 164,
@@ -87,6 +87,13 @@
       },
       {
         "file": "option_b_proton_mass_full_chain.py",
+        "count": 10,
+        "patterns": [
+          "P15"
+        ]
+      },
+      {
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
         "count": 10,
         "patterns": [
           "P15"
@@ -148,14 +155,6 @@
       },
       {
         "file": "crystal_yekutieli_probes_abcd.py",
-        "count": 7,
-        "patterns": [
-          "P16",
-          "P30"
-        ]
-      },
-      {
-        "file": "frobenius_partition_sum.py",
         "count": 7,
         "patterns": [
           "P16",
@@ -3110,6 +3109,76 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P15",
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
+        "line": 79,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
+        "line": 82,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
+        "line": 83,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
+        "line": 89,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
+        "line": 92,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
+        "line": 93,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
+        "line": 94,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
+        "line": 95,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
+        "line": 97,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "qbeta_delta_tr_bar_decomposition_probe.py",
+        "line": 98,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P16",

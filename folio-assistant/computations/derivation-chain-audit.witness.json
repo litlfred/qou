@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T04:10:09.322420+00:00",
-  "commitSha": "e49ba458ccf801ada13cdae608d199b98ede211a",
+  "computedAt": "2026-06-01T05:02:37.893079+00:00",
+  "commitSha": "e875964af66b021612ac984b3dd3d79829e19545",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "6ab311baa1558b2a1892b772faf6b3b662662f7a",
+  "scriptCommitSha": "3e8cab5b00902b83e6d53dca4fbdf3f7521bbdd9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2411,7 +2411,6 @@
         "f-ell-derivation-via-per-braid-mass-tower.witness.json",
         "family-a-per-partition-h-decomposition-50dps.witness.json",
         "finite-q-volume-conjecture-probe.witness.json",
-        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "forward-ref-classification.witness.json",
@@ -2687,6 +2686,7 @@
         "phase3-triton-binding-convention-b.witness.json",
         "phase3c-a5-a7-knot-volume-targets.witness.json",
         "phi-q-regularization-probe.witness.json",
+        "phi-q-spectral-combiner-probe.witness.json",
         "photon-operator-table.witness.json",
         "plancherel-weight-boundedness-probe.witness.json",
         "pn-alpha-lp-dual.witness.json",
@@ -2737,6 +2737,7 @@
         "qbeta-decay-sdp-extended-ck.witness.json",
         "qbeta-decay-sdp-full-ck-derivation.witness.json",
         "qbeta-decay-sdp-knot-operator.witness.json",
+        "qbeta-delta-tr-bar-decomposition-probe.witness.json",
         "qbeta-delta-tr-vs-formA.witness.json",
         "qbeta-fsc-g-pattern-comparison.witness.json",
         "qbeta-golden-ratio-fibonacci-probe.witness.json",
