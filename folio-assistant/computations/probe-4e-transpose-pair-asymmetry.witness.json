@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T04:20:04.735225+00:00",
-  "commitSha": "527ad0d3124997e48b6033314efb898a00f48ad5",
+  "computedAt": "2026-06-01T13:34:34.111821+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "tall_narrow_systematically_deeper",
@@ -20,10 +20,10 @@
   "scriptHash": "effd4abfe4d1",
   "scriptCommitSha": "fe8ecae3d56262be495e90a81733fc7f4d3df1be",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -49,13 +49,13 @@
           2,
           2
         ],
-        "tall_min_eig": -78.70300634880219,
+        "tall_min_eig": -78.70300634879186,
         "wide_short": [
           9,
           9
         ],
-        "wide_min_eig": -60.487628053696,
-        "asymmetry": 18.21537829510619,
+        "wide_min_eig": -60.48762805369424,
+        "asymmetry": 18.215378295097622,
         "tall_n_rows": 9,
         "wide_n_rows": 2
       },
@@ -105,8 +105,8 @@
       "n_tall_narrow_deeper": 2,
       "n_wide_short_deeper": 1,
       "frac_tall_narrow_deeper": 0.6666666666666666,
-      "mean_asymmetry": 6.173902543077243,
-      "max_asymmetry": 18.21537829510619,
+      "mean_asymmetry": 6.173902543074386,
+      "max_asymmetry": 18.215378295097622,
       "min_asymmetry": -0.49368139075296824
     }
   }

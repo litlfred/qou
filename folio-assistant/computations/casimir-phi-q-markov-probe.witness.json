@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:31:59.521740+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:23:56.448994+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "zero_phi_q_markov_q_zeta_within_one_percent",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 63,
+  "durationMs": 62,
   "computation": "casimir-phi-q-markov-probe",
   "scriptFile": "casimir_phi_q_markov_probe.py",
   "scriptHash": "91dc1bee3a27",
   "scriptCommitSha": "1105a98ec7023f16262fd6717b3fef021c1803ca",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

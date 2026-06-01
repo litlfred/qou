@@ -1,8 +1,8 @@
 {
   "engine": "numpy+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T02:04:22.392555+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:56:33.681712+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "lp_strong_duality_all_klr_atoms",
@@ -33,10 +33,10 @@
   "scriptHash": "a43af231f094",
   "scriptCommitSha": "dd867616ae15be4e9a031f4f1cfff79654373543",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
