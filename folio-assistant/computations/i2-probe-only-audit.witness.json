@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T15:01:50.536765+00:00",
-  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
+  "computedAt": "2026-06-01T14:44:49.442785+00:00",
+  "commitSha": "ce8d16364742ae365a2538acb8a4b55887e7703f",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -37,11 +37,11 @@
   "contentBlock": "I2 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "production_consumers_count": 9,
-    "total_label_bearing_witnesses": 270
+    "total_label_bearing_witnesses": 267
   },
   "data": {
     "by_result": {
-      "i2_probe_only": 224,
+      "i2_probe_only": 221,
       "wired_production": 46
     },
     "production_consumers": [
@@ -2018,15 +2018,6 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-cross-pair-factorization.witness.json",
-        "labels": [
-          "prop:neutron-qvalue-symbolic"
-        ],
-        "production_consumers": [],
-        "upstream_consumers": [],
-        "result": "i2_probe_only"
-      },
-      {
         "witness": "folio-assistant/computations/qbeta-habiro-cross-pair-quick-dp.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
@@ -2101,15 +2092,6 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-phase5q-dn-refactorize.witness.json",
-        "labels": [
-          "prop:neutron-qvalue-symbolic"
-        ],
-        "production_consumers": [],
-        "upstream_consumers": [],
-        "result": "i2_probe_only"
-      },
-      {
         "witness": "folio-assistant/computations/qbeta-habiro-phi8-interpretation.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
@@ -2128,15 +2110,6 @@
         ],
         "upstream_consumers": [],
         "result": "wired_production"
-      },
-      {
-        "witness": "folio-assistant/computations/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
-        "labels": [
-          "prop:neutron-qvalue-symbolic"
-        ],
-        "production_consumers": [],
-        "upstream_consumers": [],
-        "result": "i2_probe_only"
       },
       {
         "witness": "folio-assistant/computations/qbeta-habiro-recursion.witness.json",
