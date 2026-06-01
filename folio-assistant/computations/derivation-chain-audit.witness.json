@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T15:36:31.326565+00:00",
-  "commitSha": "204b4fa58c7f318c20aeb5a2cc29123e9e7aa6c9",
+  "computedAt": "2026-06-01T15:46:30.330383+00:00",
+  "commitSha": "c8ae0c896f034e1477743a4ba6bf534762863f33",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2065,6 +2065,7 @@
         "alpha-em-habiro-taylor-investigation.witness.json",
         "alpha-em-habiro-torus-knot-jones.witness.json",
         "alpha-em-pslq-uniqueness.witness.json",
+        "alpha-em-q-difference-fourier.witness.json",
         "alpha-em-shift-multiplicative-chain.witness.json",
         "alpha-em-yekutieli-h2-extraction.witness.json",
         "alpha-high-precision.witness.json",
