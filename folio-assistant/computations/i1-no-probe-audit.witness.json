@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:48:49.683694+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T15:01:49.697122+00:00",
+  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",

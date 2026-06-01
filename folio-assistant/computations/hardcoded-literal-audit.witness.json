@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:48:46.879008+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T15:01:46.937046+00:00",
+  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
   "assertions": [
     {
       "name": "no_hardcoded_registry_matches",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "hardcoded-literal-audit",
   "scriptFile": "hardcoded_literal_audit.py",
   "scriptHash": "82ea041c3646",

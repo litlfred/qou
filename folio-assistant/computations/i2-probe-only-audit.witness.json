@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:48:50.544644+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T15:01:50.536765+00:00",
+  "commitSha": "a530fcb65bb54ffc03855e53ea189bcdc15f997c",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "i2-probe-only-audit",
   "scriptFile": "i2_probe_only_audit.py",
   "scriptHash": "1155d3faa225",
