@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-31T13:41:58.731953+00:00",
+  "computedAt": "2026-06-01T05:50:46.488026+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -1289,7 +1289,7 @@
       },
       {
         "file": "folio-assistant/computations/per_observable_100x_status.py",
-        "line": 92,
+        "line": 99,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_beta\":   (Q_BETA_MEV,      Q_BETA_MEV_ERR,         \"CAL-3 anchor\",",
@@ -1297,7 +1297,7 @@
       },
       {
         "file": "folio-assistant/computations/per_observable_100x_status.py",
-        "line": 92,
+        "line": 99,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_beta\":   (Q_BETA_MEV,      Q_BETA_MEV_ERR,         \"CAL-3 anchor\",",
@@ -1305,7 +1305,7 @@
       },
       {
         "file": "folio-assistant/computations/per_observable_100x_status.py",
-        "line": 93,
+        "line": 100,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)\"),",
