@@ -36,7 +36,7 @@ LaTeX label: `rem:ck-extraction-from-algebraic-rules`
 -- `hoefsmit_sigma{0,1}_hecke_quadratic` from the Hoefsmit module
 -- discharge Rules 1+3 below at n=3 on V_(2,1).
 -- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization
-import QOU.BraidKnot.hoefsmit_V21_cos_symmetrization
+import QOU.BraidKnot.HoefsmitV21CosSymmetrization
 
 namespace QOU.BraidKnot
 

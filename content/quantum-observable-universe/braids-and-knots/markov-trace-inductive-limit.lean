@@ -34,8 +34,8 @@ LaTeX label: `rem:markov-trace-inductive-limit`
 
 -- Sibling dependencies: BraidWord type from `braid-group-n-strand`,
 -- markovZax from `markov-axioms-primitive`.
-import QOU.BraidKnot.braid_group_n_strand
-import QOU.BraidKnot.markov_axioms_primitive
+import QOU.BraidKnot.BraidGroupNStrand
+import QOU.BraidKnot.MarkovAxiomsPrimitive
 
 namespace QOU.BraidKnot
 

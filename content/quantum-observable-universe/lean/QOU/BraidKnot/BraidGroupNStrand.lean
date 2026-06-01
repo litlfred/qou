@@ -47,7 +47,7 @@ LaTeX label: `rem:braid-group-n-strand`
 -- semantic dependency; it is also valid Lean once the chapter
 -- sibling is wired into the Lake `QOU.BraidKnot.*` namespace.
 -- Ref: [manuscript] rem:braid-link-types
-import QOU.BraidKnot.braid_link_types
+import QOU.BraidKnot.BraidLinkTypes
 
 namespace QOU.BraidKnot
 
