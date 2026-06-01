@@ -147,7 +147,92 @@ mentions: `q regime`, `q usage`, `q_0`, `Real.sqrt`, `|q|`, `q > 1`,
 |------|----------|
 | **Auto-discharge** | None today — all q-usage findings touch semantic placement of a block and need author input. The infrastructure criterion `q-usage-regime-detected` is always recorded automatically. |
 | **Author-assist** | All seven criteria — `fixed-q_0` placement, `Real.*` placement, positivity-hypothesis additions, modulus-vs-real prose rewrites, root-of-unity declaration insertions, chapter relocations. |
-| **Defer** | A block with an explicit `archimedean-specialisation` marker on its `.ts` manifest (e.g. `wall: "archimedean"` or `archimedean: true` or `"archimedean-specialisation"` tag) is exempt from `fixed-q_0-leak` and `archimedean-in-categorical-chapter` even when in a categorical chapter. |
+| **Defer** | A block with an author-granted **dispensation** in its sidecar (per §Dispensations below) — the dispensation overrides the script's fail. The paper content (`.ts` / `.md` / `.lean`) is never tagged for dispensation; the dispensation lives entirely in the audit sidecar. |
+
+## §Dispensations — how to grant per-block opt-out (STRICT)
+
+Dispensations live in the sidecar `<block>.qa.json`, **never** in the
+paper content (`.ts` / `.md` / `.lean`). The `block-qa/v1` schema's
+multi-reviewer mechanism is the dispensation primitive: a
+`kind: "human"` reviewer entry with `result: "pass"` overrides the
+script's `result: "fail"` for the same criterion, as long as the
+human entry's `field_hash` matches the current source files (the
+qa-sweep "most-recent matching-hash entry wins" rule).
+
+### Pattern
+
+A dispensed block's sidecar looks like:
+
+```jsonc
+"q-usage-fixed-q0-leak": [
+  {
+    // The script's raw finding — preserved for audit trail.
+    "field_hash": { "md": "ab12…", "ts": "cd34…" },
+    "result": "fail",
+    "severity": "major",
+    "evidence": "…",
+    "reviewer": { "kind": "script", "id": "q-usage-audit", … },
+    "reviewed_at": "2026-06-01T13:32:21Z",
+    "reviewed_sha": "70cc682c…"
+  },
+  {
+    // Author dispensation — overrides the script entry.
+    "field_hash": { "md": "ab12…", "ts": "cd34…" },
+    "result": "pass",
+    "reviewer": { "kind": "human", "id": "litlfred" },
+    "reviewed_at": "2026-06-02",
+    "reviewed_sha": "<sha at dispensation time>",
+    "notes": "Acknowledged archimedean specialisation. This block is the substrate-evaluation companion of `prop:proton-mass-substrate-identity` (which keeps the generic-q categorical statement). Dispensation kind: archimedean-specialisation. Re-grant after any change to the .md / .ts."
+  }
+]
+```
+
+### Rules
+
+1. **`field_hash` on the human entry must match the current source
+   files.** If a sibling file is later edited, the hash drifts, the
+   human entry becomes stale, and the script's fail re-surfaces. The
+   author re-grants the dispensation (or removes it) on the next
+   sweep.
+2. **`notes:` must explain the dispensation rationale.** A free-text
+   sentence (or two) — what kind of dispensation (archimedean
+   specialisation / paired-block / acknowledged-Class-A / etc.) and
+   why this block is the exception. Reviewers reading the sidecar
+   need the context.
+3. **Never tag the paper content** with dispensation metadata. The
+   `wall:` field on a `.ts` manifest is a SEPARATE concept — it
+   declares the block's intrinsic archimedean / algebraic side for
+   the detangler axis. Don't conflate the two.
+4. **Apply at the criterion granularity.** A block can be dispensed
+   for `q-usage-fixed-q0-leak` while still failing
+   `q-usage-archimedean-in-categorical-chapter` — each criterion is
+   tracked independently. Add one human entry per dispensed criterion.
+
+### Why this works
+
+- **Zero schema change** — `block-qa/v1` already supports
+  multi-reviewer entries with the most-recent-matching-hash-wins
+  rule.
+- **CI / qa-sweep / qa-staleness / one-voice-integration-watcher
+  already understand the pattern** — they don't need to know about
+  q-usage specifically; the dispensation works because it's a
+  generic block-qa primitive.
+- **Hash-staleness is safety.** A dispensation written against
+  yesterday's content can't silently mask today's drift. Re-granting
+  is the explicit acknowledgement that the dispensation still applies.
+- **Paper content stays clean.** Readers reading the `.md` / `.ts`
+  see no audit metadata.
+
+### Anti-pattern (do NOT do)
+
+- ❌ Add `wall: "archimedean-specialisation"` (or any other
+  audit-control tag) to the block's `.ts` manifest. This was the
+  previous (pre-2026-06-01) approach; it was rejected for mixing
+  audit concerns with paper content.
+- ❌ Set a `human` entry's `result: "pass"` without populating
+  `notes:` — undocumented dispensation defeats the audit trail.
+- ❌ Re-use one human entry across multiple criteria — each
+  criterion gets its own entry under its own key in `criteria`.
 
 ## Slot F — §4e author-ask templates
 
