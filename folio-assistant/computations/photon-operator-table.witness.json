@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:42:35.382251+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T06:05:00.938858+00:00",
+  "commitSha": "0fa01ff7cd779a742ba2247c63a92a0b84b09391",
   "assertions": [
     {
       "name": "T_{1,0} e⁻ pair count",
@@ -60,10 +60,10 @@
   "scriptHash": "7a871d0ae7fd",
   "scriptCommitSha": "c32e95e39554116276819a11d4cbe55c4e46b4ad",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
