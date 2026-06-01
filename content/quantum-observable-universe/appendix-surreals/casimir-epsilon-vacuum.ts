@@ -13,7 +13,7 @@ export default conjecture({
     "conj:archimedean-stpart",
     "def:standard-part-functor",
     "conj:hoefsmit-scattering-pipeline",
-    "sec:knot-notation-convention",
+    "def:quantum-planck-constant",
   ],
   cites: [
     "casimir1948",
