@@ -203,6 +203,41 @@ The two structural integers in the identity:
    the natural framework (the $(2,1)$ block carries 49% of the proton's
    $T_1$ contribution), but the formal categorical statement is pending.
 
+## Sub-ppm precision frontier (PR #1581 / PR #1617)
+
+The identity matches CODATA at $-0.24\,\mathrm{ppm}$. A near-match
+candidate for closing the residual to $\sim 0.054\,\mathrm{ppm}$ is
+
+$$
+  \mathfrak{m}_\mathfrak{p}
+  \;=\;
+  \dim V_{(2,1)} \cdot \bigl(\mathfrak{m}_\mu \cdot F_{\mathrm{Bor}}(q_0)
+  \;-\;
+  \lvert S_3 \rvert \cdot \mathfrak{m}_\mathfrak{e}\bigr)
+  \;+\;
+  \frac{\alpha_{\mathrm{em}}}{\pi \cdot \dim H_3} \cdot \mathfrak{m}_\mathfrak{e}.
+$$
+
+The correction $(\alpha_{\mathrm{em}}/\pi) / \dim H_3 = (\alpha_{\mathrm{em}}/\pi) / 6$
+appeared at 0.054 ppm (vs the bare identity's 32 ppm residual to integer
+12) — a 600× improvement, identified in PR #1581's
+[`ocneanu-12-em-correction-candidate`](../../../folio-assistant/computations/ocneanu_12_em_correction_candidate.py).
+Both factors are structurally motivated: $(\alpha_{\mathrm{em}}/\pi)$
+appears in m_K/m_π's Bring zero-mode closure (PR #1442), and
+$1/\dim H_3$ is the Plancherel-mean normalization over the H_3
+Wedderburn block.
+
+**Status: tier=near-match (not derivation).** PR #1617's Task 1
+(Bring zero-mode template transfer) and Task 1-alt (27 alternative
+knot-operator geometries) both confirmed that $1/\dim H_3 = 1/6$ is
+the structurally robust denominator, but no transfer of the m_K/m_π
+$(3q^2-1)/(2q^2)$ shape gives a tighter form. The 54 ppb residual
+after the EM correction is either (a) a non-trivial categorical
+$f(q)$ factor with $f(q_0) \approx 1.00167$ not yet identified, or
+(b) higher-order QED / categorical corrections at the substrate
+precision floor. **Do not wire to production** without a Bring-analog
+categorical derivation.
+
 ## See also
 
 - [`docs/audits/-proton-mass-identity-12-me-ocneanu.md`](../../../docs/audits/-proton-mass-identity-12-me-ocneanu.md)
