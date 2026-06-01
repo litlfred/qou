@@ -1,12 +1,12 @@
 # Q_β Habiro follow-up — coordination ledger
 
 **Branch:** `claude/qbeta-habiro-followup-2026-06-01`
-**PR:** _to be opened_
+**PR:** [#1618](https://github.com/litlfred/qou/pull/1618)
 **Goal:** Three follow-up tracks on the Q_β Habiro keystone, after PR #1579 merged the structural findings (cyclotomic strand-doubling Lean lemma, Δa_m factorization with `−u^15·(u−1)(u+1)·P_8`, a_8 partition-function match, Φ_8² categorical interpretation).
 
 ## Tracks
 
-1. **Convention-resolution gate** (highest-impact) — Phase 5q re-factorization on (D-n); does Φ_8² survive in the canonical convention?
+1. **Convention-resolution gate** (highest-impact) — Phase 5q re-factorization on (D−n); does Φ_8² survive in the canonical convention?
 2. **Lean-formalize a_8 partition identity** (concrete) — `a_8 = Σ p(n)·u^(5−n)` via Mathlib's `Nat.partition`.
 3. **Generate canonical Phase 5q ³He/⁴He Habiro coefficients** — unlocks strand-doubling Φ_16/Φ_32 falsifiable predictions test.
 
@@ -27,5 +27,5 @@ The Φ_8² finding lives in the Habiro-witness convention (`include_inter=True`,
 
 ## Master ledger cross-link
 
-- 1ppQ Q_β master: `docs/coordination/1ppq-qbeta.md`
-- PR #1579 (merged 2026-06-01): commit `57b5fa2d3a` HEAD
+- 1ppQ Q_β master: [`docs/coordination/1ppq-qbeta.md`](1ppq-qbeta.md)
+- PR #1579 (merged 2026-06-01): commit [`57b5fa2d3a`](https://github.com/litlfred/qou/commit/57b5fa2d3a) HEAD
