@@ -43,3 +43,37 @@ $\langle K \rangle = \sum_j \prod_{\text{tetrahedra}}
 \Phi_q(x_j)^{\pm 1}$, living in the Habiro ring.  For the
 Borromean rings, this gives $\langle \mathcal{B}_3 \rangle$
 whose archimedean evaluation yields $8G$.
+
+## Pre-archimedean side: $\mathfrak{B}(\widehat{\mathbb{Z}[q]})$
+
+The quantum Bloch group $\mathfrak{B}(q)$ has a natural
+**pre-archimedean refinement** over the Habiro ring
+$\widehat{\mathbb{Z}[q]}$ (Habiro 2002), without passing through
+the complex numbers:
+
+| Side | Bloch group | Regulator $\Phi_1$ | Where |
+|------|-------------|---------------------|-------|
+| **Pre-archimedean** | $\mathfrak{B}(\widehat{\mathbb{Z}[q]})$ | $\tfrac{1}{2}\sum \ln(\hat{V}_i \cdot \overline{\hat{V}_i})$ | Habiro ring; bar = $q \leftrightarrow q^{-1}$ |
+| **Archimedean** ($\tau_{\mathrm{arch}}$ at real $q_0$, real $\hat{V}_i$) | $\mathcal{B}(\mathbb{C})$ | $\sum \ln\lvert\hat{V}_i\rvert$ | Borel regulator $r_1: K_1(\mathbb{C}) \to \mathbb{R}$ |
+
+The bar-involution form $\tfrac{1}{2}\ln(V \cdot \overline{V})$ at
+the pre-archimedean level is what the framework uses for $\rho_K$'s
+single-generator piece (`[prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)).
+At the archimedean specialization with real $q_0$ and real $\hat{V}_i$,
+this reduces to the classical Borel regulator $\sum \ln\lvert\hat{V}_i\rvert$ —
+the form that appears in
+[`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+under the Beilinson regulator $r_2: K_3(\mathbb{C}) \to \mathbb{R}$.
+
+This makes the QOU framework's K-theoretic content categorically
+explicit: $\rho_K$ is a graded regulator on $\mathfrak{B}(\widehat{\mathbb{Z}[q]})$
+whose archimedean evaluation at $q_0 \in \mathbb{R}_{>1}$ recovers the
+classical hyperbolic K_3 regulator. The pre-archimedean form respects
+the Hecke bar-involution; the archimedean form respects the standard
+$\mathbb{R}$-valued K-theory.
+
+This refines the discussion in
+[`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md):
+the framework's working object is the **pre-archimedean
+$\mathfrak{B}(\widehat{\mathbb{Z}[q]})$**, and the Beilinson regulator
+$r_2$ is the archimedean realization of the graded $\rho_K$.
