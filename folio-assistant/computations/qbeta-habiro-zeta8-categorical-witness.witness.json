@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:56:15.814907+00:00",
-  "commitSha": "e29ed3afe569eca592834295247899b0f01e72af",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-06-01T16:03:26.749645+00:00",
+  "commitSha": "3cc2e3937cbb14f6e5438012d47d0bdea3a96774",
   "assertions": [
     {
       "name": "delta_a7_zeta8_exact_cancellation_all_pairs",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2661,
+  "durationMs": 2095,
   "computation": "qbeta-habiro-zeta8-categorical-witness",
   "scriptFile": "qbeta_habiro_zeta8_categorical_witness.py",
   "scriptHash": "79fdb31800bf",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "f6bf1b73ef1a718877e8f59ce244b575131039d9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,8 +34,9 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

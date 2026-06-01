@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T12:57:25.062133+00:00",
-  "commitSha": "8c8477af0d8a80119b52f9c604efc93a40976adf",
+  "computedAt": "2026-06-01T16:22:05.571995+00:00",
+  "commitSha": "3cc2e3937cbb14f6e5438012d47d0bdea3a96774",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 36,
+  "durationMs": 37,
   "computation": "vhat-std-vs-full-tower-compare",
   "scriptFile": "vhat_std_vs_full_tower_compare.py",
   "scriptHash": "b8f2b4b1425f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6c25883aa3aedd28e4c39678f7c68e51bab5ae72",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,12 +17,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "RAW brane-tower m_p / m_n (full T1..T6 endomorphism tower @ MPFR 50 dps) computed with BOTH per-generator V̂_i channels: (a) production 'full' = W-weighted 3-channel Wedderburn average; (b) DERIVED 'std' = thm:markov-trace-product factor V̂_i = z·a_i + b_i whose product reproduces tr_M to 4e-6 (item-2 audit 2026-06-01-vhat-per-crossing-transfer-chain.md, verdict A + RED). ZERO tuning: no channel weight fitted, no correction hard-coded; only CAL-1 (m_e) + CAL-2 (q_0) consumed. Reports m_p/m_n in MeV and rel-diff vs CODATA for each channel and the std−full delta. Production default in derive_m_p_hecke_full_tower_50dps stays 'full' — this is a diagnostic for the owner-gated wiring decision.",
   "contentBlock": "prop:mass-endomorphism-tower",
