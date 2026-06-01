@@ -1,5 +1,5 @@
 (function() {
-    const implementors = Object.fromEntries([["hecke_engine",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.95.0/core/cmp/trait.PartialOrd.html\" title=\"trait core::cmp::PartialOrd\">PartialOrd</a> for <a class=\"struct\" href=\"hecke_engine/geck_pfeiffer/struct.Perm.html\" title=\"struct hecke_engine::geck_pfeiffer::Perm\">Perm</a>",0]]]]);
+    const implementors = Object.fromEntries([["hecke_engine",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.96.0/core/cmp/trait.PartialOrd.html\" title=\"trait core::cmp::PartialOrd\">PartialOrd</a> for <a class=\"struct\" href=\"hecke_engine/geck_pfeiffer/struct.Perm.html\" title=\"struct hecke_engine::geck_pfeiffer::Perm\">Perm</a>",0]]]]);
     if (window.register_implementors) {
         window.register_implementors(implementors);
     } else {
