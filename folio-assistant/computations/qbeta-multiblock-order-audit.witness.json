@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:44:44.588758+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:21:08.266072+00:00",
+  "commitSha": "d39c733f28a886bce5e143b7cc63b43ad54bf2ae",
   "assertions": [
     {
       "name": "block_contributions_are_sqrt_u_order",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 915,
+  "durationMs": 912,
   "computation": "qbeta-multiblock-order-audit",
   "scriptFile": "qbeta_multiblock_order_audit.py",
   "scriptHash": "032935a0d94d",
   "scriptCommitSha": "2d419180b9787dc5ed9115793eefe811d031c824",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

@@ -1,20 +1,20 @@
 {
   "engine": "q_beta_substrate_prediction.py",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:42:37.671935+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:18:52.730361+00:00",
+  "commitSha": "d39c733f28a886bce5e143b7cc63b43ad54bf2ae",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "q-beta-substrate-prediction",
   "scriptFile": "q_beta_substrate_prediction.py",
   "scriptHash": "65d7ed3c49c3",
   "scriptCommitSha": "e7c1dffdd9e524e7e44ab3e3c4f7725c52e9610b",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

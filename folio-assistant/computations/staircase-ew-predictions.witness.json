@@ -1,8 +1,8 @@
 {
   "engine": "sympy+numpy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:59:44.233179+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T05:36:07.267452+00:00",
+  "commitSha": "d39c733f28a886bce5e143b7cc63b43ad54bf2ae",
   "assertions": [
     {
       "name": "rho3_corrected_err_lt_0p5pct",
@@ -57,16 +57,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 43752,
+  "durationMs": 40542,
   "computation": "staircase-ew-predictions",
   "scriptFile": "staircase_ew_predictions.py",
   "scriptHash": "ec4613e0e11a",
   "scriptCommitSha": "740555ac2f0f24e57e056730ea5ebd4a577a0e06",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -110,12 +110,12 @@
           "ratio_applicable": false,
           "top_degenerate": true,
           "top_multiplicity": 2,
-          "ev_max_pos": 56.00474059882335,
-          "ev_2nd_pos": 56.00474059882306,
-          "ratio": 1.000000000000005,
-          "ratio_corrected": 1.0150174629154,
-          "err_raw": 0.4514740696818867,
-          "err_corrected": 0.443236601865202,
+          "ev_max_pos": 56.00474059882344,
+          "ev_2nd_pos": 56.004740598823275,
+          "ratio": 1.0000000000000029,
+          "ratio_corrected": 1.0150174629153979,
+          "err_raw": 0.4514740696818879,
+          "err_corrected": 0.44323660186520314,
           "correction_helps": true,
           "cot_w_codata": 1.8230678710486174
         }
