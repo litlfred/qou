@@ -326,6 +326,7 @@ export default chapter({
         "q-codifferential-formula-prop",
         "q-codifferential-formula",
         "q-laplacian-expansion",
+        "q-laplacian-spectral-tower",
         "hodge-laplacian-relation",
         "categorical-lichnerowicz",
         "q-harmonic-particle",
