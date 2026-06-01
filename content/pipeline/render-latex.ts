@@ -1136,6 +1136,17 @@ export function validateLatexAst(latex: string): AstValidationResult {
 
     // Check for unmatched environments
     checkEnvironmentBalance(ast.content, errors);
+
+    // Check for bare `#` outside macro definitions. A bare `#` token
+    // (catcode 6, "macro parameter character") in rendered output
+    // causes pdflatex to abort with "You can't use `macro parameter
+    // character #' in restricted horizontal mode" when the surrounding
+    // context is a table cell, \mbox{}, \text{}, etc. Authoring should
+    // always use \# (which produces the # glyph) or a literal #
+    // inside verbatim. Parameter slots #1…#9 inside \newcommand /
+    // \def / \DeclareRobustCommand argument bodies are legitimate
+    // and are filtered out by the walker below.
+    checkBareHash(ast.content, errors, /* inMacroDef */ false);
   } catch (e) {
     errors.push(`Parse error: ${e instanceof Error ? e.message : String(e)}`);
   }
@@ -1169,6 +1180,75 @@ function checkEnvironmentBalance(nodes: any[], errors: string[]): void {
     }
     if (node.content && Array.isArray(node.content)) {
       checkEnvironmentBalance(node.content, errors);
+    }
+  }
+}
+
+/** Macros whose argument bodies legitimately contain #1…#9 parameter
+ *  slots. The walker enters `inMacroDef=true` for their content args. */
+const MACRO_DEF_NAMES = new Set([
+  "newcommand", "renewcommand", "providecommand",
+  "DeclareRobustCommand", "DeclarePairedDelimiter",
+  "def", "edef", "gdef", "xdef",
+  "newenvironment", "renewenvironment",
+  "NewDocumentCommand", "DeclareDocumentCommand",
+  "RenewDocumentCommand", "ProvideDocumentCommand",
+]);
+
+/** Environments whose body is a verbatim block — `#` is literal there. */
+const VERBATIM_ENVS = new Set([
+  "verbatim", "verbatim*", "lstlisting", "minted",
+  "alltt", "BVerbatim", "Verbatim",
+]);
+
+/** Macros that read their first argument as a URL — `#` is the legal
+ *  URL fragment delimiter and hyperref re-catcodes it internally. */
+const URL_MACROS = new Set(["href", "url", "nolinkurl", "hyperref", "hyperlink", "hypertarget"]);
+
+function checkBareHash(
+  nodes: any[],
+  errors: string[],
+  inMacroDef: boolean,
+): void {
+  for (const node of nodes) {
+    // Verbatim environments: # is literal, skip entirely.
+    if (node.type === "environment" && VERBATIM_ENVS.has(node.env)) {
+      continue;
+    }
+    // unified-latex tokenises bare `#` as a "parameter" node (or
+    // "string"/"macro" in some configurations). Flag it unless we're
+    // inside a macro-definition body.
+    if (
+      !inMacroDef &&
+      (node.type === "parameter" ||
+        (node.type === "string" && typeof node.content === "string" && /^#\d?$/.test(node.content)))
+    ) {
+      errors.push(
+        `Bare # outside macro definition (use \\# to typeset the # character)`,
+      );
+    }
+    // Recurse. Enter macro-def mode for the *argument bodies* of
+    // command-defining macros so #1…#9 inside `\newcommand{\foo}[1]{#1}`
+    // is accepted.
+    const enterMacroDef = inMacroDef ||
+      (node.type === "macro" && MACRO_DEF_NAMES.has(node.content));
+    if (node.content && Array.isArray(node.content)) {
+      checkBareHash(node.content, errors, enterMacroDef);
+    }
+    if (node.args && Array.isArray(node.args)) {
+      // URL macros (href, url, hyperref, …) read URL / label arguments
+      // where `#` is the legitimate URL-fragment delimiter. hyperref
+      // re-catcodes them internally so they don't reach the # check.
+      // Skip every argument of those macros — accepting that we won't
+      // catch `#` in the visible text, which is rare and caught by
+      // the math-link detector for the common case.
+      const isUrlMacro = node.type === "macro" && URL_MACROS.has(node.content);
+      if (isUrlMacro) continue;
+      for (const arg of node.args) {
+        if (arg && arg.content && Array.isArray(arg.content)) {
+          checkBareHash(arg.content, errors, enterMacroDef);
+        }
+      }
     }
   }
 }

@@ -51,9 +51,9 @@ categorical Reeb derivation are now checkable by direct computation:
    The exterior derivative $d\omega_3$ is computed from the
    Woronowicz structure equations
    $d\omega_3 = -q^{-1}\omega_+ \wedge \omega_-$, and
-   $\iota_{e_3}(d\omega_3) = -q^{-1}(\omega_+(e_3)\omega_-
-   - \omega_-(e_3)\omega_+) = 0$, confirming that $\omega_3$ is a
-   contact form with Reeb field $\xi$. The vertical projection
+   $\iota_{e_3}(d\omega_3) = -q^{-1}(\omega_+(e_3)\omega_- - \omega_-(e_3)\omega_+) = 0$,
+   confirming that $\omega_3$ is a contact form with Reeb field $\xi$.
+   The vertical projection
    $\pi_V$ is the independent projection onto non-zero-weight
    components under the $\xi$-action, as constructed in
    [weight decomposition](#ex:weight-decomposition-su2). Combined

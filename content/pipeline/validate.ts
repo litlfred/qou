@@ -112,6 +112,15 @@ async function loadBlocksFromDir(
       }
 
       blocks.set(name, block);
+
+      // Math-link detection: scan the sibling .md (if any) for
+      // [text](#anchor) inside math blocks. The remark renderer treats
+      // math as opaque; links leak through and break pdflatex.
+      const mdPath = join(dir, `${name}.md`);
+      if (existsSync(mdPath)) {
+        const mdContent = readFileSync(mdPath, "utf-8");
+        checkMathLinks(name, mdContent, mdPath, issues);
+      }
     } catch (e) {
       issues.push({
         level: "error",
@@ -123,6 +132,95 @@ async function loadBlocksFromDir(
   }
 
   return blocks;
+}
+
+/**
+ * Check that a chapter's section manifests don't list the same block
+ * twice — either within one `section.blocks[]` array or across
+ * sibling sections in the same chapter.
+ *
+ * Each duplicate produces multiple `\label{}` calls in the rendered
+ * `.tex`, which surface as pdflatex "multiply defined" warnings and
+ * break `\ref{}` cross-references (LaTeX picks the LAST definition,
+ * silently re-pointing earlier readers to wrong content).
+ *
+ * History: CI build run 26736170013 failed with 14 multiply-defined
+ * labels traced to 7 duplicated block entries (g-action-on-substrate
+ * + 3 table-data siblings + braid-fluid + atom-mass + neutron).
+ */
+function checkSectionDedupes(
+  chapter: Chapter,
+  chapterFile: string,
+  issues: ValidationIssue[],
+): void {
+  // Per-chapter aggregate: block → first section seen
+  const blockOrigin = new Map<string, string>();
+  for (const sec of chapter.sections) {
+    if (!("blocks" in sec)) continue;
+    // Within-section dupes
+    const seenInSection = new Set<string>();
+    for (const ref of (sec as Section).blocks) {
+      if (seenInSection.has(ref)) {
+        issues.push({
+          level: "error",
+          block: ref,
+          file: chapterFile,
+          message: `[section-block-dedupe] block "${ref}" listed twice in section "${(sec as Section).label ?? "(unnamed)"}" — each entry emits a \\label{}, producing pdflatex "multiply defined" errors`,
+        });
+      }
+      seenInSection.add(ref);
+      // Across-section dupes
+      const prev = blockOrigin.get(ref);
+      if (prev !== undefined && prev !== (sec as Section).label) {
+        issues.push({
+          level: "error",
+          block: ref,
+          file: chapterFile,
+          message: `[chapter-block-dedupe] block "${ref}" listed in both section "${prev}" and section "${(sec as Section).label ?? "(unnamed)"}" — each entry emits a \\label{}, producing pdflatex "multiply defined" errors`,
+        });
+      } else {
+        blockOrigin.set(ref, (sec as Section).label ?? "(unnamed)");
+      }
+    }
+  }
+}
+
+/**
+ * Scan a block's `.md` content for Markdown link syntax inside a math
+ * block. The remark renderer doesn't recurse into `$$…$$` or `\[…\]`
+ * content (math is a leaf node), so `[text](#anchor)` leaks through
+ * literally. The `escapeLatex` pass then turns `#` into `\#`, which —
+ * when followed by `\text{…}` — puts `#` in restricted horizontal
+ * mode and trips the pdflatex "macro parameter character `#'" error.
+ *
+ * History: CI build run 26736170013 had three such patterns
+ * (reeb-u1-chart-swap, phi-q-wkb-greens-function, higgs-t28). Catching
+ * them at authoring time prevents the same class of failure.
+ */
+function checkMathLinks(
+  blockName: string,
+  mdContent: string,
+  mdFile: string,
+  issues: ValidationIssue[],
+): void {
+  // Match $$…$$ (multi-line) and \[…\] math blocks.
+  const mathBlockRegex = /\$\$([\s\S]*?)\$\$|\\\[([\s\S]*?)\\\]/g;
+  // Markdown link with internal anchor: [text](#anchor) or [text](\#anchor).
+  const mdLinkRegex = /\[[^\]]+\]\(\\?#[^)]+\)/;
+  let m: RegExpExecArray | null;
+  while ((m = mathBlockRegex.exec(mdContent)) !== null) {
+    const body = m[1] ?? m[2] ?? "";
+    const linkMatch = body.match(mdLinkRegex);
+    if (linkMatch) {
+      const lineNum = mdContent.slice(0, m.index).split("\n").length;
+      issues.push({
+        level: "error",
+        block: blockName,
+        file: mdFile,
+        message: `[math-link-detected] Markdown link "${linkMatch[0]}" appears inside a math block (line ${lineNum}) — math content is not parsed for Markdown links, so this leaks through as literal LaTeX and produces a "macro parameter character #'" error. Move the cross-reference outside the math block, or use \\hyperref[anchor]{text} directly.`,
+      });
+    }
+  }
 }
 
 /**
@@ -152,6 +250,10 @@ export async function validateObjects(
   if (manifestKind === "chapter" && manifestPath && manifestData) {
     // ── Chapter mode: manifest already validated by detectManifestKind ──
     const chapter: Chapter = manifestData;
+
+    // Dedupe check: block listed twice in one section or across sibling
+    // sections produces multiply-defined \label errors at pdflatex.
+    checkSectionDedupes(chapter, manifestPath, issues);
 
     // Collect block names from sections
     const blockNames: string[] = [];
@@ -225,6 +327,10 @@ export async function validateObjects(
           }
           continue;
         }
+
+        // Dedupe check: block listed twice in one section or across sibling
+        // sections produces multiply-defined \label errors at pdflatex.
+        checkSectionDedupes(chapter, chPath, issues);
 
         // Collect block names from sections
         const blockNames: string[] = [];
