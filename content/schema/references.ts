@@ -4908,7 +4908,7 @@ export const references: CSLData[] = [
 
   // ── Washington (1997) — Introduction to Cyclotomic Fields ─────
   ref({
-    id: "washington-cyclotomic",
+    id: "washington1997",
     type: "book",
     title: "Introduction to Cyclotomic Fields",
     author: [{ family: "Washington", given: "Lawrence C." }],

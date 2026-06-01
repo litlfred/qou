@@ -14,7 +14,7 @@ single-nucleon denominator) to the 4-strand B_4 representation
 ## References
 
 -- Ref: [habiro2000] https://doi.org/10.2140/gt.2000.4.227
--- Ref: [washington-cyclotomic] Lawrence Washington, "Introduction to
+-- Ref: [washington1997] Lawrence Washington, "Introduction to
 --      Cyclotomic Fields", Springer GTM 83, 1997. Chapter 2.
 -/
 
@@ -33,14 +33,14 @@ variable {R : Type*} [CommRing R]
 theorem cyclotomic_4 : cyclotomic 4 ℤ = X ^ 2 + 1 := by
   -- Mathlib has `Polynomial.cyclotomic_four`; if not, decide on
   -- the explicit polynomial.
-  -- Ref: [washington-cyclotomic] §2.1 Table of low-degree cyclotomic polynomials.
+  -- Ref: [washington1997] §2.1 Table of low-degree cyclotomic polynomials.
   decide
 
 /-- The 8th cyclotomic polynomial: `Φ_8(X) = X^4 + 1`.  Squared
     factor identified in the (D − n) Habiro element factorization
     (`docs/audits/2026-05-31-qbeta-habiro-cross-pair-quick-dp.md`). -/
 theorem cyclotomic_8 : cyclotomic 8 ℤ = X ^ 4 + 1 := by
-  -- Ref: [washington-cyclotomic] §2.1 Table of low-degree cyclotomic polynomials.
+  -- Ref: [washington1997] §2.1 Table of low-degree cyclotomic polynomials.
   decide
 
 /-- Strand-doubling cyclotomic identity over ℤ:
@@ -68,7 +68,7 @@ theorem cyclotomic_8_eq_cyclotomic_4_comp_X_sq :
     in the canonical Q_β Habiro element framework. -/
 theorem cyclotomic_pow_two_strand_doubling (k : ℕ) (hk : 1 ≤ k) :
     cyclotomic (2 ^ (k + 1)) ℤ = (cyclotomic (2 ^ k) ℤ).comp (X ^ 2) := by
-  -- Ref: [washington-cyclotomic] §2.2 Theorem 2.5: for any prime p
+  -- Ref: [washington1997] §2.2 Theorem 2.5: for any prime p
   --      and integer n with p ∤ n, Φ_{p·n}(X) = Φ_n(X^p);
   --      and for p | n, Φ_{p·n}(X) = Φ_n(X^p).
   --      Specialising to p = 2 and n = 2^k (so 2 | 2^k) yields the
@@ -79,12 +79,12 @@ theorem cyclotomic_pow_two_strand_doubling (k : ℕ) (hk : 1 ≤ k) :
 
 /-- The 1st cyclotomic polynomial: `Φ_1(X) = X - 1`. -/
 theorem cyclotomic_1 : cyclotomic 1 ℤ = X - 1 := by
-  -- Ref: [washington-cyclotomic] §2.1.
+  -- Ref: [washington1997] §2.1.
   decide
 
 /-- The 2nd cyclotomic polynomial: `Φ_2(X) = X + 1`. -/
 theorem cyclotomic_2 : cyclotomic 2 ℤ = X + 1 := by
-  -- Ref: [washington-cyclotomic] §2.1.
+  -- Ref: [washington1997] §2.1.
   decide
 
 /-- The isospin "classical-limit kill" factor:
@@ -126,7 +126,7 @@ theorem isospin_signature_distinct_from_deuteron :
     structural appearance, not a polynomial-degree property. -/
 theorem cyclotomic_8_irreducible :
     Irreducible (cyclotomic 8 ℚ) := by
-  -- Ref: [washington-cyclotomic] §2.3 Theorem 2.5.
+  -- Ref: [washington1997] §2.3 Theorem 2.5.
   exact cyclotomic.irreducible (by decide : (0:ℕ) < 8)
 
 end QOU.BraidKnot.CyclotomicStrandDoubling
