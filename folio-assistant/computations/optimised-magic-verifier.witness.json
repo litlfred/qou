@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:54:25.360215+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-01T18:21:37.235291+00:00",
+  "commitSha": "3575bd9bdb3b58a37bd8f304612eed9f752defb4",
   "assertions": [
     {
       "name": "Optimised pair count ≤ naive pair count",
@@ -89,7 +89,7 @@
           2
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 0.003439664840698242
+        "elapsed_sec": 0.0034384727478027344
       },
       {
         "i_Z": 2,
@@ -105,7 +105,7 @@
           1
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 15.484344005584717
+        "elapsed_sec": 15.78012728691101
       },
       {
         "i_Z": 3,
@@ -122,7 +122,7 @@
           2
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 0.016933441162109375
+        "elapsed_sec": 0.017036914825439453
       },
       {
         "i_Z": 3,
@@ -260,8 +260,8 @@
       "optimised_pair_count": 19,
       "computed_pair_count": 3,
       "dominant_self_conj_count": 0,
-      "actual_optimised_sec": 15.504717111587524,
-      "estimated_naive_sec": 253.24371282259625,
+      "actual_optimised_sec": 15.800602674484253,
+      "estimated_naive_sec": 258.0765103499095,
       "empirical_speedup": 16.333333333333336
     }
   }
