@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T19:09:25.278399+00:00",
-  "commitSha": "8677007942f9c72c5feabeb25d9884276a1a82a9",
+  "computedAt": "2026-06-01T20:37:18.271695+00:00",
+  "commitSha": "c9ea96355533bc7681cf488e7de46fc91bc91781",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2423,6 +2423,7 @@
         "family-a-per-partition-h-decomposition-50dps.witness.json",
         "finite-q-volume-conjecture-probe.witness.json",
         "fitted-labelled-canonical-audit.witness.json",
+        "flavor-dependent-cusp-shape.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "flavor-split-xq-refinement.witness.json",
         "float64-leak-audit.witness.json",
@@ -2518,6 +2519,7 @@
         "habiro-to-precision-ladder-verification.witness.json",
         "hadron-knot-table.witness.json",
         "hardcoded-literal-audit.witness.json",
+        "he4-partition-dominance-audit-probe.witness.json",
         "he4-rho-f-bar-symmetric-audit-probe.witness.json",
         "hecke-1d-irrep-closed-form-character-probe.witness.json",
         "hecke-branching-trace-decomposition-probe.witness.json",
@@ -2662,6 +2664,7 @@
         "meson-symmetry-bar-involution.witness.json",
         "meson-tower-correction-probe.witness.json",
         "meson-typed-crossing-probe.witness.json",
+        "mn-dpn-xq-cross-anchor-probe.witness.json",
         "mn-flavor-split-h3-plancherel.witness.json",
         "mn-flavor-split-plancherel-channel.witness.json",
         "mn-standard-channel-correction.witness.json",
@@ -2837,6 +2840,7 @@
         "qbeta-habiro-zeta8-categorical-witness.witness.json",
         "qbeta-half-fill-probe.witness.json",
         "qbeta-ladder-verification-1ppq.witness.json",
+        "qbeta-li2q-imaginary-quantization.witness.json",
         "qbeta-li2q-spectral-combiner-crossanchor.witness.json",
         "qbeta-multiblock-order-audit.witness.json",
         "qbeta-operator-identification-probe.witness.json",
