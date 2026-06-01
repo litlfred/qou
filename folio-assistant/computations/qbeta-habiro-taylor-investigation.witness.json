@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:36:23.728018+00:00",
-  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
+  "computedAt": "2026-06-01T13:37:08.824697+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "symbolic_delta_tr_loaded",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1662,
+  "durationMs": 1625,
   "computation": "qbeta-habiro-taylor-investigation",
   "scriptFile": "qbeta_habiro_taylor_investigation.py",
   "scriptHash": "bdb80fe836c3",

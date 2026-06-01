@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:33:44.134822+00:00",
-  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
+  "computedAt": "2026-06-01T13:34:32.988093+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "q_deformation_improves",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 17,
+  "durationMs": 23,
   "computation": "phase2c-derive-correction-tower",
   "scriptFile": "phase2c_derive_correction_tower.py",
   "scriptHash": "958527466e25",

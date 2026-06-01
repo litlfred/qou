@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:38:23.274935+00:00",
-  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
+  "computedAt": "2026-06-01T13:38:48.326511+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "n_pairs equals C(n_gens, 2)",
@@ -21,7 +21,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 13,
   "computation": "wedderburn-pair-volumes",
   "scriptFile": "wedderburn_pair_volumes.py",
   "scriptHash": "977ea04d1e07",

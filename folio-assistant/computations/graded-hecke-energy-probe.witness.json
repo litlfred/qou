@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T14:44:20.974313+00:00",
-  "commitSha": "cdba9484d806733d15c4343f4685b29b3712dfd3",
+  "computedAt": "2026-06-01T13:44:33.969036+00:00",
+  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
   "assertions": [
     {
       "name": "cumulative_at_max_grade_matches_target[proton]",
@@ -27,7 +27,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 551,
+  "durationMs": 653,
   "computation": "graded-hecke-energy-probe",
   "scriptFile": "graded_hecke_energy_probe.py",
   "scriptHash": "b60821952ecc",
