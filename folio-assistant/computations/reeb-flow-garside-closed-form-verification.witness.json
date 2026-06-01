@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:44:45.629180+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:13:09.668072+00:00",
+  "commitSha": "ec86d84d1a3991a1d099a1ca9e94204e1ba7f142",
   "assertions": [
     {
       "name": "identity__direct_matches_closed",
@@ -58,7 +58,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "direct iterative composition over 3 sub-interval(s) vs closed-form prediction from prop:six-canonical-knot-operators; mpmath max-abs-diff (50 dps) = 4.74778e-66 < tol 1.0e-45"
+      "source": "direct iterative composition over 3 sub-interval(s) vs closed-form prediction from prop:six-canonical-knot-operators; mpmath max-abs-diff (50 dps) = 1.81114e-71 < tol 1.0e-45"
     },
     {
       "name": "garside_sigma1_sigma2_sigma1__center_of_mass_preserved",
@@ -66,7 +66,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "Sum of Δψ^(r) + Δψ^(g) + Δψ^(b) should be 0 for the explicit closed-form trajectories (all six S_3 operators) by the table in prop:six-canonical-knot-operators; mpmath sum (50 dps) = 2.37389e-66"
+      "source": "Sum of Δψ^(r) + Δψ^(g) + Δψ^(b) should be 0 for the explicit closed-form trajectories (all six S_3 operators) by the table in prop:six-canonical-knot-operators; mpmath sum (50 dps) = 0.0"
     },
     {
       "name": "three_cycle_plus_sigma1_sigma2__direct_matches_closed",
@@ -110,16 +110,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 19,
   "computation": "reeb-flow-garside-closed-form-verification",
   "scriptFile": "reeb_flow_garside_closed_form_verification.py",
   "scriptHash": "f3082d467550",
   "scriptCommitSha": "fbe0165bf38f5b747a3a9266c350724b029790e2",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
@@ -243,9 +243,9 @@
         "delta_g": "-1.16236685373791611122676877905",
         "delta_b": "-1.16236685373791611122676877905"
       },
-      "max_abs_diff": "4.74778e-66",
+      "max_abs_diff": "1.81114e-71",
       "matches_within_tol": true,
-      "centre_of_mass_sum": "2.37389e-66",
+      "centre_of_mass_sum": "0.0",
       "centre_of_mass_preserved": true
     },
     "three_cycle_plus_sigma1_sigma2": {

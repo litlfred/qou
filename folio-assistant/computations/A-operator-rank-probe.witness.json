@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T01:49:31.905577+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:17:53.347765+00:00",
+  "commitSha": "ec86d84d1a3991a1d099a1ca9e94204e1ba7f142",
   "assertions": [
     {
       "name": "all_drops_are_exact_zeros",
@@ -19,10 +19,10 @@
   "scriptHash": "41e1724da585",
   "scriptCommitSha": "f33f5c97f7bce950c88bd973d970f983b33bda6b",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

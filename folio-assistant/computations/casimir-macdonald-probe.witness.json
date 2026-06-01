@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T01:31:59.282277+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T12:59:48.219814+00:00",
+  "commitSha": "ec86d84d1a3991a1d099a1ca9e94204e1ba7f142",
   "assertions": [
     {
       "name": "zero_macdonald_candidates_within_one_percent",
@@ -15,16 +15,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 31,
+  "durationMs": 30,
   "computation": "casimir-macdonald-probe",
   "scriptFile": "casimir_macdonald_probe.py",
   "scriptHash": "f23c84969ff6",
   "scriptCommitSha": "0df78a03b0688f6c30af73406e893f7eee659412",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",

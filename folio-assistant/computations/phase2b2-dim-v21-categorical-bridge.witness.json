@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T01:42:34.419905+00:00",
-  "commitSha": "3ab1ce01e2bd6969d2d2414d38f58a9aaa7e4790",
+  "computedAt": "2026-06-01T13:10:29.630805+00:00",
+  "commitSha": "ec86d84d1a3991a1d099a1ca9e94204e1ba7f142",
   "assertions": [
     {
       "name": "factored_exact",
@@ -14,16 +14,16 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 24,
   "computation": "phase2b2-dim-v21-categorical-bridge",
   "scriptFile": "phase2b2_dim_v21_categorical_bridge.py",
   "scriptHash": "fa95e43a9b03",
   "scriptCommitSha": "0166a17ae8b8889e4095abe7c55cfecadb8dd2fd",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.12.3",
