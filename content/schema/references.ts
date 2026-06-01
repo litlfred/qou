@@ -597,6 +597,21 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF01223371",
   }),
 
+  // ── Witten 1989 — Quantum field theory and the Jones polynomial ─
+  ref({
+    id: "witten1989",
+    type: "article-journal",
+    title: "Quantum field theory and the Jones polynomial",
+    author: [{ family: "Witten", given: "Edward" }],
+    "container-title": "Communications in Mathematical Physics",
+    volume: "121",
+    issue: "3",
+    page: "351-399",
+    issued: { "date-parts": [[1989]] },
+    DOI: "10.1007/BF01217730",
+    note: "Chern-Simons construction of the Jones polynomial — the bridge between QFT and knot theory used throughout the QOU braid / Witten-Reshetikhin-Turaev material.",
+  }),
+
   // ── Witten 2011 ───────────────────────────────────────────────
   ref({
     id: "witten2011",
@@ -3198,6 +3213,24 @@ export const references: CSLData[] = [
     genre: "PhD thesis",
   }),
 
+  // ── Wenzl (1987): On the structure of Brauer's centralizer algebras ──
+  // Announced 1987, published 1988 in Annals of Math. — the citation
+  // key follows the announcement year (per the QOU `zeta8-witness-
+  // level2-su2.lean` convention).
+  ref({
+    id: "wenzl1987",
+    type: "article-journal",
+    title: "On the structure of Brauer's centralizer algebras",
+    author: [{ family: "Wenzl", given: "Hans" }],
+    "container-title": "Annals of Mathematics",
+    volume: "128",
+    issue: "1",
+    page: "173-193",
+    issued: { "date-parts": [[1988]] },
+    DOI: "10.2307/1971466",
+    note: "Wenzl's Brauer-centralizer-algebras paper; announced 1987, published 1988.  Distinct from wenzl1988 (Hecke-A_n subfactors, Invent. Math. 92).",
+  }),
+
   // ── Wenzl (1988): Hecke algebras of type A_n and subfactors ──
   //
   // Canonical entry; the duplicate previously sitting near line 2636
@@ -4889,6 +4922,39 @@ export const references: CSLData[] = [
     page: "601-606",
     issued: { "date-parts": [[1985]] },
     DOI: "10.2307/2045438",
+  }),
+
+  // ── Hardy & Ramanujan 1918 — partition function asymptotics ───
+  ref({
+    id: "hardy-ramanujan1918",
+    type: "article-journal",
+    title: "Asymptotic formulae in combinatory analysis",
+    author: [
+      { family: "Hardy", given: "G. H." },
+      { family: "Ramanujan", given: "S." },
+    ],
+    "container-title": "Proceedings of the London Mathematical Society",
+    volume: "s2-17",
+    issue: "1",
+    page: "75-115",
+    issued: { "date-parts": [[1918]] },
+    DOI: "10.1112/plms/s2-17.1.75",
+    note: "Hardy-Ramanujan circle-method derivation of the partition function asymptotic.  Multi-author key follows the same dash convention as arnold-gusein-zade-varchenko1988.",
+  }),
+
+  // ── Andrews 1976 — The Theory of Partitions ───────────────────
+  ref({
+    id: "andrews1976",
+    type: "book",
+    title: "The Theory of Partitions",
+    author: [{ family: "Andrews", given: "George E." }],
+    publisher: "Addison-Wesley",
+    "publisher-place": "Reading, MA",
+    issued: { "date-parts": [[1976]] },
+    "collection-title": "Encyclopedia of Mathematics and its Applications",
+    "collection-number": "2",
+    ISBN: "978-0-201-13501-3",
+    note: "Andrews's canonical monograph on integer partitions — Chapter 1 covers the partition function $p(n)$ and Table 1 lists values for $n \\le 200$ as used in QOU `a8-partition-function-identity.lean`.",
   }),
 
   // ── Lickorish 1997 (knot theory textbook) ─────────────────────
