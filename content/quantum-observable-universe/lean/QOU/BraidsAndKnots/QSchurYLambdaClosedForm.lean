@@ -45,6 +45,16 @@ chain at Lean level.
   these specific identities depend on numerical simplification
   for a particular n=2 case.
 
+- `qSchur_H3_top`, `qSchur_H3_mid`, `qSchur_H3_bottom`:
+  the H_3 case explicit identities for partitions `(3)`, `(2,1)`,
+  `(1,1,1)`.  Mechanical mirrors of the H_2 pattern via
+  `unfold ySchurClosedForm; decide (contentSum/sum); simp [qFactorial,
+  qBracket, dif_neg h2]; field_simp [hsum_ne, hsq3_ne]; ring`.
+  Unlike H_2 there is no clean "normalization" theorem at H_3 because
+  the unweighted partition sum is not 1 — Plancherel weighting by
+  `dim_q(λ)²` would be required, deferred to the q-Schur algebra
+  formalisation that discharges `QSchurYLambdaClosedFormClaim`.
+
 ## H_2 cross-check (numerically verified in PR #1259 audit)
 
   y_(2)(q) = q · q^0 / ([1]_q · [2]_q)
@@ -192,5 +202,87 @@ theorem qSchur_H2_normalization (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0)
     have hsq : 0 ≤ q * q := mul_self_nonneg q
     linarith
   field_simp
+
+/-! ## H_3 explicit identities
+
+For partitions of `n = 3`:
+
+  c((3))     =  3  ⇒  y_(3)(q)     = q^3 / [3]_q!
+  c((2,1))   =  0  ⇒  y_{(2,1)}(q) = 1   / [3]_q!
+  c((1,1,1)) = -3  ⇒  y_{(1,1,1)}(q) = q⁻³ / [3]_q!
+
+with `[3]_q! = [3]_q · [2]_q · 1 = (q² + 1 + q⁻²)(q + q⁻¹)`.
+
+Unlike `H_2`, the analogue of `qSchur_H2_normalization` requires
+weighting by `dim_q(λ)²` (q-Schur Plancherel measure on the dual
+chain) — `dim((2,1)) = 2` makes the un-weighted sum
+`y_(3) + y_{(2,1)} + y_{(1,1,1)}` not equal to 1.  We therefore
+state the three identities only; a full Plancherel statement is
+left to the future `q-Schur algebra` development that will
+discharge `QSchurYLambdaClosedFormClaim`.
+-/
+
+/-- **H_3 case for `(3)`**: `y_(3)(q) = q^3 / ((q + q⁻¹)(q^2 + 1 + q⁻²))`. -/
+theorem qSchur_H3_top (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
+    ySchurClosedForm [3] q = q^3 / ((q + q⁻¹) * (q^2 + 1 + (q⁻¹)^2)) := by
+  unfold ySchurClosedForm
+  have hc : contentSum [3] = 3 := by decide
+  have hs : ([3] : List ℕ).sum = 3 := by decide
+  rw [hc, hs]
+  have hsum_ne : q + q⁻¹ ≠ 0 := by
+    intro heq
+    have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
+    rw [mul_add, mul_inv_cancel₀ hq] at this
+    have hsq : 0 ≤ q * q := mul_self_nonneg q
+    linarith
+  have hsq3_ne : q^2 + 1 + (q⁻¹)^2 ≠ 0 := by
+    have h_q : 0 ≤ q^2 := sq_nonneg q
+    have h_iq : 0 ≤ (q⁻¹)^2 := sq_nonneg q⁻¹
+    linarith
+  simp only [qFactorial, qBracket, dif_neg h2]
+  field_simp [hsum_ne, hsq3_ne]
+  ring
+
+/-- **H_3 case for `(2,1)`**: `y_{(2,1)}(q) = 1 / ((q + q⁻¹)(q^2 + 1 + q⁻²))`. -/
+theorem qSchur_H3_mid (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
+    ySchurClosedForm [2, 1] q = 1 / ((q + q⁻¹) * (q^2 + 1 + (q⁻¹)^2)) := by
+  unfold ySchurClosedForm
+  have hc : contentSum [2, 1] = 0 := by decide
+  have hs : ([2, 1] : List ℕ).sum = 3 := by decide
+  rw [hc, hs]
+  have hsum_ne : q + q⁻¹ ≠ 0 := by
+    intro heq
+    have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
+    rw [mul_add, mul_inv_cancel₀ hq] at this
+    have hsq : 0 ≤ q * q := mul_self_nonneg q
+    linarith
+  have hsq3_ne : q^2 + 1 + (q⁻¹)^2 ≠ 0 := by
+    have h_q : 0 ≤ q^2 := sq_nonneg q
+    have h_iq : 0 ≤ (q⁻¹)^2 := sq_nonneg q⁻¹
+    linarith
+  simp only [qFactorial, qBracket, dif_neg h2]
+  field_simp [hsum_ne, hsq3_ne]
+  ring
+
+/-- **H_3 case for `(1,1,1)`**: `y_{(1,1,1)}(q) = (q⁻¹)^3 / ((q + q⁻¹)(q^2 + 1 + q⁻²))`. -/
+theorem qSchur_H3_bottom (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
+    ySchurClosedForm [1, 1, 1] q = (q⁻¹)^3 / ((q + q⁻¹) * (q^2 + 1 + (q⁻¹)^2)) := by
+  unfold ySchurClosedForm
+  have hc : contentSum [1, 1, 1] = -3 := by decide
+  have hs : ([1, 1, 1] : List ℕ).sum = 3 := by decide
+  rw [hc, hs]
+  have hsum_ne : q + q⁻¹ ≠ 0 := by
+    intro heq
+    have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
+    rw [mul_add, mul_inv_cancel₀ hq] at this
+    have hsq : 0 ≤ q * q := mul_self_nonneg q
+    linarith
+  have hsq3_ne : q^2 + 1 + (q⁻¹)^2 ≠ 0 := by
+    have h_q : 0 ≤ q^2 := sq_nonneg q
+    have h_iq : 0 ≤ (q⁻¹)^2 := sq_nonneg q⁻¹
+    linarith
+  simp only [qFactorial, qBracket, dif_neg h2]
+  field_simp [hsum_ne, hsq3_ne]
+  ring
 
 end QOU.BraidsAndKnots
