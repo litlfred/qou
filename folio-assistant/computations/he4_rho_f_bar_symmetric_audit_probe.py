@@ -49,6 +49,7 @@ sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from experimental_constants import M_E_MEV  # noqa: E402
 
 try:
     from qou_substrate.constants import q_at
@@ -70,7 +71,7 @@ def main() -> int:
         "Companion to PR #1621 audit. Per PR #1643 discipline."
     )
     builder.set_audit_only(
-        "docs/audits/2026-06-01-option-e-v9-bar-symmetric-test.md"
+        "docs/audits/2026-06-01-bar-symmetric-discipline-tests.md"
     )
 
     q = q_at()
@@ -84,9 +85,11 @@ def main() -> int:
     b = mp.sqrt(b_sq)
 
     # ⁴He
-    m_e = mp.mpf("0.5109989461")  # MeV
+    m_e = mp.mpf(str(M_E_MEV))  # CODATA via experimental_constants registry
     A = 4
     G_catalan = mp.catalan
+    # AME 2020 ⁴He binding (not yet centralized in experimental_constants.py;
+    # swap to a registry constant when one is added).
     B_AME = mp.mpf("28.295674")  # MeV
     required_rho_F = B_AME / (m_e * A * 8 * G_catalan)
 
@@ -103,23 +106,27 @@ def main() -> int:
     print(f"  (production ρ_F = 2 gives B = 29.956 MeV → +5.87% off)")
     print()
 
+    # (name, value, bar_symmetric?)
     candidates = [
-        ("C1: 2 [production, postulated]", mp.mpf(2)),
-        ("C2: [2]_q = q + q⁻¹", two_q),
-        ("C3: [2]_{q^(1/2)} (PR #1621 already tested)", two_q_half),
-        ("C4: [2]_q/2 + 1", two_q / 2 + 1),
-        ("C5: √(([2]_q + 2)/2) [bar-modulus form]", mp.sqrt((two_q + 2) / 2)),
-        ("C6: 1 + b² (Hoefsmit, bar-symmetric)", 1 + b_sq),
-        ("C7: 2·cos(h/2)/q^(1/4) [normalized]",
-         2 * mp.cos(h / 2) / mp.power(q, mp.mpf("0.25"))),
+        ("C1: 2 [production, postulated]", mp.mpf(2), True),
+        ("C2: [2]_q = q + q⁻¹", two_q, True),
+        ("C3: [2]_{q^(1/2)} (PR #1621 already tested)", two_q_half, True),
+        ("C4: [2]_q/2 + 1", two_q / 2 + 1, True),
+        ("C5: √(([2]_q + 2)/2) [bar-modulus form]",
+         mp.sqrt((two_q + 2) / 2), True),
+        ("C6: 1 + b² (Hoefsmit, bar-symmetric)", 1 + b_sq, True),
+        # C7 contains q^(1/4) which is NOT bar-symmetric under q ↔ q⁻¹.
+        # Kept as comparison only — excluded from "best bar-symmetric" pick.
+        ("C7: 2·cos(h/2)/q^(1/4) [NOT bar-symmetric]",
+         2 * mp.cos(h / 2) / mp.power(q, mp.mpf("0.25")), False),
         ("C8: ([2]_q)² / (2·[2]_q − 2) [bar-sym ratio]",
-         two_q * two_q / (2 * two_q - 2)),
+         two_q * two_q / (2 * two_q - 2), True),
     ]
 
     print(f"{'Candidate':<55} {'Value':<25} {'B(⁴He) MeV':>15} {'err %':>10}")
     print("-" * 110)
     results = []
-    for name, val in candidates:
+    for name, val, is_bar_sym in candidates:
         B_pred = val * m_e * A * 8 * G_catalan
         err_pct = float((B_pred - B_AME) / B_AME * 100)
         print(f"  {name:<53} {fmt(val)[:24]:<25} {float(B_pred):15.6f} {err_pct:+10.4f}%")
@@ -129,17 +136,16 @@ def main() -> int:
             "value_numeric": float(val),
             "B_pred_MeV": float(B_pred),
             "err_vs_AME_pct": err_pct,
+            "bar_symmetric": is_bar_sym,
         })
-
     print()
-    print(f"Bar-symmetry check of each (under q ↔ q⁻¹):")
-    for name, val in candidates:
-        # crude check: substitute q ↔ q⁻¹ and compare
-        # for ones depending only on bar-sym combos, equal
-        pass  # the candidates are defined to be bar-symmetric
 
-    # VERDICT
-    best = min(results, key=lambda r: abs(r["err_vs_AME_pct"]))
+    # VERDICT — restrict to bar-symmetric candidates only.
+    # The probe's claim is about the bar-symmetric family closing ⁴He;
+    # non-bar-symmetric forms (C7) are shown for comparison but cannot
+    # be the "best bar-symmetric" pick.
+    bar_sym_results = [r for r in results if r["bar_symmetric"]]
+    best = min(bar_sym_results, key=lambda r: abs(r["err_vs_AME_pct"]))
     print("=" * 78)
     print(" VERDICTS")
     print("=" * 78)

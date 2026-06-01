@@ -18,7 +18,8 @@ within 5% of the 0.11% empirical closure. **Confirms v9 was a
 discipline-violating near-match, not a structural derivation.**
 
 **Probe 2 — ⁴He ρ_F:** ALL truly bar-symmetric substrate candidates
-miss ⁴He by ≥ +5.8%. Best near-bar-symmetric candidate (C7:
+miss ⁴He by `|err| ≥ 5.87%` (signed errors span −25.04% to +6.44%
+across C1–C6, C8 — see Probe 2 table). Best near-match (C7:
 2·cos(h/2)/q^(1/4)) at +2.58% is NOT bar-symmetric (q^(1/4) asymmetry).
 **Confirms PR #1621's research direction: the +5.87% gap needs the
 categorical multi-nucleon interface operator, NOT a substrate constant.**
