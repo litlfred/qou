@@ -1,0 +1,135 @@
+[
+  {
+    "id": "lean-q-schur-h3-y-lambda-extension",
+    "summary": "Extend QSchurYLambdaClosedForm Lean from H_2 to H_3 (5 partitions of n=3 missing)",
+    "comment": "QSchurYLambdaClosedForm.lean currently has qSchur_H2_top, qSchur_H2_bottom, qSchur_H2_normalization (discharged). H_3 needs the analogous theorems for partitions (3), (2,1), (1,1,1). Mechanical mirror of H_2 pattern; uses contentSum, qBracket, qFactorial unfoldings + decide + field_simp + ring.",
+    "status": "open",
+    "priority": "high",
+    "origin": "session-2026-05-31-queue-build",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "lean-discharge",
+      "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QSchurYLambdaClosedForm.lean",
+      "pattern_reference": "qSchur_H2_top (lines 145-160) — adapt for partitions [3], [2,1], [1,1,1]",
+      "proof_sketch": "for each λ: unfold ySchurClosedForm; have hc : contentSum λ = <C>; have hs : λ.sum = 3; rw [hc, hs]; show qFactorial 3 q = [3]_q!; field_simp + ring",
+      "expected_duration": "30min"
+    }
+  },
+  {
+    "id": "lean-bar-involution-extension",
+    "summary": "Bar-involution + Mullineux theorems beyond y_λ — extend to χ^λ, b(q), Hoefsmit form",
+    "comment": "Per commits e3a590e5, 8590f0e7, def3d27f, d07259bb on y_λ. The bar-involution q ↔ q⁻¹ on y_λ is proved; extend to other Hecke-algebra quantities: χ^λ(σ_i), Hoefsmit b(q), Markov trace bar-symmetry. Each is a small unfold+symm+rfl/ring proof but requires the relevant definitional infrastructure to be available.",
+    "status": "open",
+    "priority": "medium",
+    "origin": "session-2026-05-31-queue-build",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "lean-discharge",
+      "candidate_files": [
+        "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean",
+        "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/HoefsmitBQ.lean (if exists)",
+        "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean"
+      ],
+      "expected_duration": "1h"
+    }
+  },
+  {
+    "id": "lean-mathlibext-sdp-rank-equality",
+    "summary": "Discharge 2 sorries in MathlibExt/SDPRankEquality.lean (R1 + R2 factoring)",
+    "comment": "Per file docstring: 'helium3_uniqueness_closed is an axiom (zero sorry); kernel-disjoint + affine-Slater inputs have proven sub-instances; chain is fully sorry-free'. But the file has 2 sorries per grep. Likely the R1 (range containment) or R2 (strict-complementarity rank equality) lemmas. Both follow textbook Alizadeh-Haeberly-Overton 1997 §3 + Boyd-Vandenberghe §5.5.4. PSD properties from Mathlib.LinearAlgebra.Matrix.PosDef.",
+    "status": "open",
+    "priority": "medium",
+    "origin": "session-2026-05-31-queue-build",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "lean-discharge",
+      "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRankEquality.lean",
+      "proof_sketch": "R1: rank-nullity from S * Φ = 0; PSD assumption gives kernel containment. R2: strict-complementarity ⟹ ker(S) ∩ ker(Φ) = {0} ⟹ rank equality via dimension counting.",
+      "expected_duration": "1-2h",
+      "references": ["Alizadeh-Haeberly-Overton 1997 §3", "Boyd-Vandenberghe §5.5.4"]
+    }
+  },
+  {
+    "id": "lean-staircase-corner-hook",
+    "summary": "Discharge 6 of 9 non-conjectural sorries in StaircaseCornerHook.lean",
+    "comment": "9 sorries, 3 marked as conjectural witnesses. The other 6 are likely combinatorial-identity proofs (hook-length formula bits). Need LSP to triage each; queue entry is the placeholder for that triage.",
+    "status": "open",
+    "priority": "medium",
+    "origin": "session-2026-05-31-queue-build",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "lean-discharge",
+      "file": "content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean",
+      "triage_action_first": "lean_diagnostic_messages on each sorry to determine which are tractable",
+      "expected_duration": "2-3h after triage"
+    }
+  },
+  {
+    "id": "lean-tractable-fluid-dynamics",
+    "summary": "Survey 7+ FluidDynamics/*.lean files (each 2 sorries) for tractable discharge",
+    "comment": "Multiple FluidDynamics files have exactly 2 sorries with 1 conj-marked, suggesting 1 tractable + 1 conjectural per file: ns_obstruction_computation, p1_nonlinear_uniqueness, kelvin_dispersion_derivation, quantum_peter_weyl, vorticity_lower_bound, core_levi_form, p4_universality, ns_obstruction_tower. Triage with LSP, discharge the tractable ones.",
+    "status": "open",
+    "priority": "low",
+    "origin": "session-2026-05-31-queue-build",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "lean-discharge",
+      "candidate_files": [
+        "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_computation.lean",
+        "content/quantum-observable-universe/lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean",
+        "content/quantum-observable-universe/lean/QOU/FluidDynamics/kelvin_dispersion_derivation.lean",
+        "content/quantum-observable-universe/lean/QOU/FluidDynamics/quantum_peter_weyl.lean",
+        "content/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean",
+        "content/quantum-observable-universe/lean/QOU/FluidDynamics/core_levi_form.lean",
+        "content/quantum-observable-universe/lean/QOU/FluidDynamics/p4_universality.lean",
+        "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean"
+      ],
+      "expected_duration": "4-6h triage + discharge"
+    }
+  },
+  {
+    "id": "lean-g-action-on-substrate",
+    "summary": "Discharge 1 tractable sorry in QuantumObservableUniverses/GActionOnSubstrate.lean (3 sorries, 2 conjectural)",
+    "comment": "4 sorries per earlier survey; 2 marked conjectural per grep. The remaining 1-2 likely structural lemmas about G-action commutativity or substrate-fixing. Triage with LSP first.",
+    "status": "open",
+    "priority": "low",
+    "origin": "session-2026-05-31-queue-build",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "lean-discharge",
+      "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean",
+      "expected_duration": "1h"
+    }
+  },
+  {
+    "id": "lean-section-3b-cond-classes-permanent",
+    "summary": "Catalog all §3b-cond class sorries (NOT discharge targets — permanent by design)",
+    "comment": "Many sorries are LEGITIMATELY PERMANENT per CLAUDE.md §3b-cond: class fields like `c4_is_jones_kashiwara`, `chirality_interpolation`, `cpt_quotient`, `t28_genus`, `spans_three`, `uniqueness`, `smoothing_identification`. These represent OPEN CONJECTURES whose Taylor-exact derivation is the open research target — not lean-proof bugs. This queue entry is a REGISTRY (not a discharge target) so the next session doesn't mistakenly attack them.",
+    "status": "open",
+    "priority": "high",
+    "origin": "session-2026-05-31-queue-build",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "lean-discharge-registry",
+      "permanent_sorry_pattern": "field of `class FooClass : Prop where bar := sorry  -- Ref: [manuscript]`",
+      "anti_pattern": "an agent attempting to discharge these is a CLAUDE.md violation",
+      "examples": ["QbetaC3StructuralFormClass.c3_is_jones_hopf", "QbetaC4StructuralFormClass.c4_is_jones_kashiwara (added PR #1587)", "PeriodicTableUniqueness class fields", "Jones (1987) markov-trace axiomatisation"],
+      "expected_count": "~80-100 of the 1100+ sorries are these permanent §3b-cond fields"
+    }
+  },
+  {
+    "id": "lean-discharge-triage-pass",
+    "summary": "Single triage pass: run lean_diagnostic_messages on all 598 sorry files; classify into TRACTABLE / PERMANENT / RESEARCH-GRADE",
+    "comment": "Without LSP, the discharge queue can only be a starter. With LSP: scan all 598 files, classify each sorry into 3 buckets. Result feeds back into this queue with prioritized discharge work + culls the noise from the registry.",
+    "status": "open",
+    "priority": "high",
+    "origin": "session-2026-05-31-queue-build",
+    "createdAt": "2026-05-31",
+    "data": {
+      "goal": "lean-discharge-meta",
+      "blocked_on": "lean LSP / lake toolchain available",
+      "expected_duration": "1h triage + this queue gets repopulated based on findings",
+      "tool": "mcp__lean-lsp__lean_diagnostic_messages per file"
+    }
+  }
+]
