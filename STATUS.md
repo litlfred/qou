@@ -43,6 +43,10 @@
 - **Coordinate with siblings** via `.claude/skills/local/coordinate.md`; cross-link active PRs in this table.
 - **STATUS.md is a board, not a narrative.** Use master ledgers for chronology + open probes + retraction history.
 
+## Session history (recent)
+
+- **2026-05-31 / 2026-06-01** (Claude, ~10 PRs): Built coordination infrastructure (STATUS.md, master ledgers for 1ppq-qbeta + option-e + alpha-em, queue files, `/session-intent` + `/pending-show` skills, SessionStart hook), bumped precision defaults (50/65 → 60/70 dps), settled c_3 q_0-stability as NEAR-MATCH not Taylor-exact (5th-and-final settlement; flip-flop history catalogued), refuted Li_2^q × spectral combiner (mech #7), recorded Δtr_M bar-decomposition as structural observation (sym 7.7% + antisym 92.3% in t=q^(1/2) basis), made fibre/observable Im(q) distinction explicit in CLAUDE.md. PRs: #1580, #1585, #1587, #1594, #1599, #1603, #1609, #1615, plus this one.
+
 ## Last updated
 
-2026-05-31 by Claude (coord-infra-1ppq-2026-05-31 session).
+2026-06-01 by Claude (claude-md-fibre-observable-session-refresh-2026-06-01).
