@@ -352,13 +352,30 @@ density `Δ_λ` is forced and `mass = density × volume` must be a per-λ sum.
 | Hecke characters `χ^λ(β_K)` | ✅ derived | Hoefsmit seminormal, per-irrep λ |
 | Frobenius pairing `⟨a,b⟩_F`, self-duality `Ψ=S²=id` | ✅ formalised (D3/D23) | the pairing is central/symmetric; per-block orthogonality follows from Schur — **proved sorry-free** at the algebra level, finer per-λ orthogonality is the standing audit item |
 | q-Reeb phase `θ_λ = arccos(χ_λ/d_λ)` | ✅ per-λ | `binding_reeb_phase_decomposition.py` |
+| Categorical action / R-matrix (per generator) | ✅ **proved block-diagonal** | `MultiGeneratorSpectrum.lean` — 6×6 transfer matrix block-diagonal by induction; partition-*agnostic* until the Schur projection `π_λ` |
+| Central idempotents `π_λ` (orthogonal, central) | 🟡 asserted (class axiom) | `Wedderburn.lean` — `trace_decomposition` PROVED *from* the axiom; the orthogonality `π_λπ_μ=0` is a classical theorem (Mathas §3.43) **awaiting Lean formalization**, not math |
 | Confinement SDP (`T_w` selection) | ✅ per-block duals | `lp_dual_solver.py` emits `y_star[λ]` shadow prices |
 
 **Verdict:** the binding/mass machinery is **manifestly block-graded** — every
-load-bearing object is a per-λ quantity or a sum over λ. So `Δ_λ` is genuinely a
-per-block density, and the volume-Wedderburn framing is structurally legitimate.
-The one gap is not whether the objects respect the partition (they do) but **what
-the per-block density numerically is** (§9.3).
+load-bearing object is a per-λ quantity or a sum over λ, and the per-generator
+block-diagonality is *proved by induction*. So `Δ_λ` is genuinely a per-block
+density and the volume-Wedderburn framing is structurally legitimate. The gap is
+not whether the objects respect the partition (they do) but **what the per-block
+density numerically is** (§9.3).
+
+**Two caveats the 1–6 audit surfaced** (both *formalization*, not math, gaps —
+track in the proof-watcher queue):
+
+1. **`y_λ` uniqueness rests on Schur character-orthogonality**, which is **not yet
+   in Mathlib** (`wedderburn-as-noncomm-fourier.lean`); the cross-validation
+   `Σ_λ y_λ χ_λ = z^{ℓ(w)}` passes numerically (n=3,4,5) but is unproved in Lean.
+   Same for `π_λ` orthogonality and the per-λ Frobenius block-orthogonality
+   `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` (implied by §step 5+6, not formalized).
+2. **The per-block q-Reeb phase `θ_λ` is DERIVED at step 2 (Yekutieli boundary
+   holonomy) but COLLAPSED by the scalar trace** `tr_M = Σ_λ y_λ χ_λ`. This is an
+   *information loss*: the framework computes the per-λ phase, then sums it away.
+   **Retaining `θ_λ` per-block instead of collapsing it is the binding lever**
+   (§9.3) — and the heaviest *unused* duality in steps 1–6.
 
 ### 9.2 mass = density × volume — the realized form
 
