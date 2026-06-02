@@ -68,6 +68,21 @@ jobs:
       - name: Install pyodide npm package
         run: npm install pyodide@0.27.0
 
+      - name: Download Pyodide distribution (offline package store)
+        # Pyodide's npm package ships the runtime (asm.js + wasm) but
+        # NOT the per-package wheels (micropip, packaging, …).  By
+        # default `loadPackage(...)` fetches those wheels from
+        # cdn.jsdelivr.net at runtime, which has been intermittent.
+        # Pull the full distribution tarball once via curl and point
+        # `loadPyodide({ indexURL })` at the extracted directory so the
+        # wheel lookups are local-only and deterministic.
+        run: |
+          mkdir -p pyodide-dist
+          curl -sSL https://github.com/pyodide/pyodide/releases/download/0.27.0/pyodide-0.27.0.tar.bz2 \
+            | tar -xjC pyodide-dist/ --strip-components=1
+          ls pyodide-dist/ | head -5
+          test -f pyodide-dist/micropip-0.8.0-py3-none-any.whl
+
       - name: Run Pyodide smoke script
         run: |
           cat > pyodide-smoke.mjs << 'JSEOF'
@@ -75,7 +90,11 @@ jobs:
           import { readFileSync, readdirSync } from "fs";
           import { resolve } from "path";
 
-          const py = await loadPyodide();
+          // Point indexURL at the locally-extracted Pyodide distribution
+          // so loadPackage(...) resolves micropip + packaging locally
+          // instead of fetching them from cdn.jsdelivr.net (which has
+          // been intermittent on CI runners).
+          const py = await loadPyodide({ indexURL: resolve("pyodide-dist") + "/" });
           await py.loadPackage(["micropip"]);
 
           // Discover built wheels dynamically so a version bump in any
