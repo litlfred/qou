@@ -13,27 +13,12 @@ export default chapter({
   label: "app:knot-operations",
   sections: [
     section({
-      title: "Particle normal forms",
-      label: "sec:particle-nf-table",
-      blocks: [
-        "particle-nf-table",
-        "particle-nf-table-table-data",
-      ],
-    }),
-    section({
       title: "Hecke algebra operations",
       label: "sec:hecke-operations",
       blocks: [
         "hecke-operations",
         "hecke-operations-table2-data",
         "hecke-operations-table1-data",
-      ],
-    }),
-    section({
-      title: "Gluon models and nucleon NF",
-      label: "sec:gluon-model-comparison",
-      blocks: [
-        "gluon-model-comparison",
       ],
     }),
     section({

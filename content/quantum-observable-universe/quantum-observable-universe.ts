@@ -117,6 +117,7 @@ export default paper({
     chapterRef({ dir: "glossary" }),
     chapterRef({ dir: "appendix-knot-periodic-table" }),
     chapterRef({ dir: "appendix-knot-operations" }),
+    chapterRef({ dir: "appendix-knot-operations-archimedean" }),  // Archimedean lobe (particle NF + gluon-model) — split per q-usage Policy A
     chapterRef({ dir: "appendix-transfer-matrices" }),
     chapterRef({ dir: "appendix-atomic-mass-calculations" }),
     chapterRef({ dir: "appendix-qvalues" }),
