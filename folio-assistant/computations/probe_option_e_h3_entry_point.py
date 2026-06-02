@@ -57,9 +57,10 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 warnings.filterwarnings("ignore")
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/
 
-import mpmath as mp
+import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
