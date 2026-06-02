@@ -246,44 +246,75 @@ def assemble_row(
         }
 
     # Composite nuclei: binding-energy prediction (D and up).
+    #
+    # Selection is CANONICITY-FIRST (user directive 2026-06-02 "excise
+    # all non-canonical"): production emits a binding prediction ONLY
+    # from a genuinely canonical layer (the α-cluster recursion). We do
+    # NOT fall through layer order L1→L2→L3 — that previously let L1's
+    # empirical (knot, ρ_K) assignment mask ⁴He's canonical α-cluster
+    # result (29.96 MeV empirical shadowing the 28.296 MeV / 0.41 ppb
+    # α-cluster value). Any non-canonical value is recorded under
+    # `excised` for the audit trail, never shipped as a prediction.
     l1 = l1_lookup(Z, N, layer1)
     l2 = l2_lookup(Z, N, layer2)
     l3 = l3_lookup(Z, N, layer3)
+
+    def _as_float(x):
+        try:
+            return float(x)
+        except (TypeError, ValueError):
+            return None
+
+    # Canonical candidates: the α-cluster recursion (canonical-recursive;
+    # c_αα = m_e·Vol(7²₁) is canonical). Present in L2 and/or the L3 sweep.
+    canonical_candidates: list[tuple[float, str, str]] = []
+    if l2 and _as_float(l2.get("B_pred_MeV")) is not None:
+        canonical_candidates.append(
+            (_as_float(l2["B_pred_MeV"]), "L2-alpha-cluster", "canonical-recursive")
+        )
+    if (l3 and str(l3.get("strategy", "")).startswith("α-cluster")
+            and _as_float(l3.get("B_pred_MeV")) is not None):
+        canonical_candidates.append(
+            (_as_float(l3["B_pred_MeV"]), f"L3-{l3['strategy']}", "canonical-recursive")
+        )
+
+    # Non-canonical candidates (recorded as excised, never shipped):
+    #   • L1 (knot, ρ_K) empirical-assignment
+    #   • L3 census  B = ρ·Vol(census-knot), ρ hand-assigned
+    #   • L3 partial-shell  linear interpolation between α anchors
+    noncanonical_candidates: list[tuple[float, str, str]] = []
+    if l1 and _as_float(l1.get("prediction_MeV_50dps")) is not None:
+        noncanonical_candidates.append(
+            (_as_float(l1["prediction_MeV_50dps"]), "L1-canonical",
+             "canonical-with-empirical-assignment")
+        )
+    if (l3 and not str(l3.get("strategy", "")).startswith("α-cluster")
+            and _as_float(l3.get("B_pred_MeV")) is not None):
+        noncanonical_candidates.append(
+            (_as_float(l3["B_pred_MeV"]),
+             f"L3-{l3.get('strategy', 'partial-shell')}", "heuristic")
+        )
+
     b_pred: float | None = None
     layer_used: str | None = None
     canonical_status: str = "pending"
-    if l1 and l1.get("prediction_MeV_50dps") is not None:
-        try:
-            b_pred = float(l1["prediction_MeV_50dps"])
-            layer_used = "L1-canonical"
-            # L1 B comes from mass-table-ppb's per-atom (knot, ρ_K)
-            # hypothesis table — empirical-assignment, not substrate-
-            # derived. The |tr_M| / Vol / m_e factors ARE canonical.
-            canonical_status = "canonical-with-empirical-assignment"
-        except (TypeError, ValueError):
-            b_pred = None
-    if b_pred is None and l2:
-        try:
-            b_pred = float(l2.get("B_pred_MeV"))
-            layer_used = "L2-alpha-cluster"
-            # L2 is structurally recursive on L1's ⁴He anchor; the
-            # α-count is determined by (Z, N) for magic atoms and
-            # c_αα = m_e · Vol(7²₁) is canonical.
-            canonical_status = "canonical-recursive"
-        except (TypeError, ValueError):
-            b_pred = None
-    if b_pred is None and l3:
-        try:
-            b_pred = float(l3.get("B_pred_MeV"))
-            l3_strategy = l3.get("strategy", "partial-shell")
-            layer_used = f"L3-{l3_strategy}"
-            # L3 partial-shell linearly interpolates between L2
-            # anchors at fractional shell-fill f ∈ {¼, ½, ¾} —
-            # heuristic, not substrate-derived. Demoted per user
-            # directive 2026-05-19; ρ_K(Z, N) derivation OPEN.
-            canonical_status = "heuristic"
-        except (TypeError, ValueError):
-            b_pred = None
+    excised: dict | None = None
+    if canonical_candidates:
+        b_pred, layer_used, canonical_status = canonical_candidates[0]
+    else:
+        layer_used = "derivation-pending"
+        canonical_status = (
+            "derivation-pending" if noncanonical_candidates else "pending"
+        )
+        if noncanonical_candidates:
+            ev, el, es = noncanonical_candidates[0]
+            excised = {
+                "excised_layer": el,
+                "excised_status": es,
+                "excised_prediction_MeV": ev,
+                "reason": "non-canonical (heuristic / empirical-assignment) — "
+                          "excised from production per user directive 2026-06-02",
+            }
 
     err_MeV = (b_pred - b_ame_mev) if (b_pred is not None and b_ame_mev is not None) else None
     err_pct = (err_MeV / b_ame_mev * 100.0) if (err_MeV is not None and b_ame_mev) else None
@@ -336,6 +367,7 @@ def assemble_row(
         "err_MeV": err_MeV,
         "err_pct": err_pct,
         "err_ppm": err_ppm,
+        "excised": excised,
         # L4 composite mass — emitted ONLY when B is canonical
         # (canonical_status ∈ {canonical-substrate,
         # canonical-with-empirical-assignment, canonical-recursive}).
