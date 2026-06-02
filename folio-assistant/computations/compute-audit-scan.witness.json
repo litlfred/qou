@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T20:37:14.494375+00:00",
-  "commitSha": "c9ea96355533bc7681cf488e7de46fc91bc91781",
+  "computedAt": "2026-06-02T02:25:29.727401+00:00",
+  "commitSha": "d88715c8292f0fc8df1eadf02b6eb9829413030a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 14,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
@@ -26,7 +26,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 907,
+    "files_scanned": 914,
     "patterns": [
       "P15",
       "P16",
@@ -38,10 +38,10 @@
   "data": {
     "by_pattern_count": {
       "P15": 164,
-      "P16": 339,
+      "P16": 343,
       "P21": 30,
       "P30": 171,
-      "P31": 67
+      "P31": 68
     },
     "top_files": [
       {
@@ -1966,6 +1966,41 @@
         "pattern": "P31",
         "file": "implied_h2_coefficient_audit_50dps.py",
         "line": 60,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P16",
+        "file": "inter_nucleon_linked_channel.py",
+        "line": 87,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "inter_nucleon_linked_channel.py",
+        "line": 88,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "inter_nucleon_linked_channel.py",
+        "line": 99,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "inter_nucleon_linked_channel.py",
+        "line": 189,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P31",
+        "file": "inter_nucleon_linked_channel.py",
+        "line": 62,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
