@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+
+
 # polynomial_q_not_applicable: Lean source generator for n=8 dim_q table.
 """
 Phase 5 n=8 dim_q table generator (corrected convention).
@@ -20,6 +22,17 @@ accounting 2·10 + 2 = 22.
 Output: `phase5-n8-dim-q-table.json` (raw data + Lean code chunks).
 """
 from __future__ import annotations
+
+# Path bridge (subdirectory refactor — Phase 3, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
 
 import sys
 from pathlib import Path

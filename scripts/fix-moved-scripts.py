@@ -40,7 +40,26 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 COMPUTE_DIR = REPO_ROOT / "folio-assistant" / "computations"
-CLUSTER_DIRS = ("probes", "audits", "sweeps")
+
+
+def _discover_cluster_dirs() -> tuple[str, ...]:
+    """Return the names of every regular-package cluster subdir of
+    folio-assistant/computations/ (skip _deprecated, __pycache__,
+    data/, etc.). Auto-discovery so new clusters added by Phase N
+    don't need a code change here."""
+    out: list[str] = []
+    for d in sorted(COMPUTE_DIR.iterdir()):
+        if not d.is_dir():
+            continue
+        if d.name.startswith(("_", ".")):
+            continue
+        if not (d / "__init__.py").is_file():
+            continue
+        out.append(d.name)
+    return tuple(out)
+
+
+CLUSTER_DIRS = _discover_cluster_dirs()
 
 SHIM_HEADER_RE = re.compile(
     r"^# Path bridge \(subdirectory refactor", re.MULTILINE
@@ -86,9 +105,12 @@ def fix_shim_order(content: str) -> tuple[str, bool]:
     if block is None:
         return content, False
     fut = find_future_import(content)
-    if fut is None:
-        return content, False
     shim_start, shim_end = block
+    if fut is None:
+        # No `from __future__` in this file — the shim's position
+        # may still be wrong (e.g. before a docstring), but Python
+        # is fine with that. Leave as-is.
+        return content, False
     if shim_start > fut:
         return content, False  # Already in correct order
 

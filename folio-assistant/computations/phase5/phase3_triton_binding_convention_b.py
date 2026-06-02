@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+
+
 # polynomial_q_not_applicable: assembly script — consumes upstream
 # hecke_core canonical chain at H_{3A}.
 """Phase 3 — Triton binding via convention B (hecke_core._canon at H_9).
@@ -57,6 +59,17 @@ size of the gap that subsequent Phase 4 (³He sign) and Phase 5
 """
 from __future__ import annotations
 
+# Path bridge (subdirectory refactor — Phase 3, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
+
 import json
 import sys
 import time
@@ -65,7 +78,7 @@ from pathlib import Path
 import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent))
 
 from hecke_core import E_0_CALIBRATION_MEV  # noqa: E402
 # NOTE: `binding_from_frobenius_pairing` is the Phase-5 EXPLORATORY
