@@ -37,7 +37,7 @@ The trivial case $\Delta_I = \mathbf{1}$ recovers the disjoint-product pre-EWSB 
 
 ## 3. Structural finding from the Hoefsmit probe
 
-[`ew_interface_knot_probe.py`](../../folio-assistant/computations/ew_interface_knot_probe.py) enumerates standard Young tableaux of partitions of 6 (76 total) and classifies each tableau by the eigenvalue class (sym, alt, mixed) of each $\sigma_i$ for $i \in \{1, 2, 3, 4, 5\}$.
+[`ew_interface_knot_probe.py`](../../folio-assistant/computations/probes/ew_interface_knot_probe.py) enumerates standard Young tableaux of partitions of 6 (76 total) and classifies each tableau by the eigenvalue class (sym, alt, mixed) of each $\sigma_i$ for $i \in \{1, 2, 3, 4, 5\}$.
 
 **Theorem (verified by enumeration).** For $\beta_{\rm EW}(\Delta_I^{\rm minimal})$ on $V^{\otimes 6}$:
 
@@ -92,6 +92,6 @@ Three reasons:
   [`conj:hoefsmit-ew-cell-content`](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-ew-cell-content.md)
   (new §"Refinement (2026-05-06)")
 - Witness:
-  [`folio-assistant/computations/ew-interface-knot-probe.witness.json`](../../folio-assistant/computations/ew-interface-knot-probe.witness.json)
+  [`folio-assistant/computations/probes/ew-interface-knot-probe.witness.json`](../../folio-assistant/computations/probes/ew-interface-knot-probe.witness.json)
 - Workplan:
   [`docs/audits/2026-05-06-refocused-1ppb-workplan-v2.md`](2026-05-06-refocused-1ppb-workplan-v2.md)

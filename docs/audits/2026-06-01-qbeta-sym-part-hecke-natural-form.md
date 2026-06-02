@@ -91,7 +91,7 @@ from substrate axioms, not match-by-fitting.
 
 - PR #1615 — bar-decomposition structural finding (this PR's upstream)
 - `docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md`
-- `folio-assistant/computations/qbeta-delta-tr-bar-decomposition-probe.witness.json`
+- `folio-assistant/computations/probes/qbeta-delta-tr-bar-decomposition-probe.witness.json`
 - `folio-assistant/computations/qbeta-sym-part-hecke-natural-form.witness.json` (this PR)
 - `todos/research-queue.json` — `research-qbeta-bar-decomposition-followup`
 - CLAUDE.md §Canonical derivation chain: Im(q) fibre vs observable (PR #1616 framing)

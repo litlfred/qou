@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-12
 **Branch:** `copilot/phase3-delta-coupling-leading-form`
-**Builds on:** PR #644 P3.A initial probe ([`delta_coupling_closed_form_probe.py`](../../folio-assistant/computations/delta_coupling_closed_form_probe.py)),
+**Builds on:** PR #644 P3.A initial probe ([`delta_coupling_closed_form_probe.py`](../../folio-assistant/computations/probes/delta_coupling_closed_form_probe.py)),
 [`2026-05-12-1ppb-implementation-plan.md` §Phase 3](2026-05-12-1ppb-implementation-plan.md),
 [`2026-05-11-1ppb-gap-narrowing-plan.md` §Path A](2026-05-11-1ppb-gap-narrowing-plan.md)
 **Author:** Copilot agent (Phase 3 follow-up handover)

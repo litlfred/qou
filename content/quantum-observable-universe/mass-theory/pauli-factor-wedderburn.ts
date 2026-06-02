@@ -22,8 +22,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/pauli_factor_wedderburn_probe.py",
-    witness: "folio-assistant/computations/pauli-factor-wedderburn-probe.witness.json",
+    script: "folio-assistant/computations/probes/pauli_factor_wedderburn_probe.py",
+    witness: "folio-assistant/computations/probes/pauli-factor-wedderburn-probe.witness.json",
     status: "verified",
   },
 });

@@ -35,7 +35,7 @@ requires a NEW categorical principle that:
 - Does not arise from any Σ_{λ⊢N} dim_q V_λ Wedderburn-sum form
   ([PR #701](https://github.com/litlfred/qou/pull/701) falsified 5 structural routes)
 - Does not arise from higher-N Wedderburn limit
-  ([Path C1 probe](../../../folio-assistant/computations/higher_n_wedderburn_h2_drift_probe.py)
+  ([Path C1 probe](../../../folio-assistant/computations/probes/higher_n_wedderburn_h2_drift_probe.py)
   shows h² coefficient grows factorially with N, drifts AWAY from -G)
 - Does not arise from the natural reading of the Yekutieli per-cell
   half-symmetric projection (audit

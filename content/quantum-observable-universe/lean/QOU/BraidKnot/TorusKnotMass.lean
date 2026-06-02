@@ -26,7 +26,7 @@ scaffolds the class structure: `TorusKnotMass` extends
 Downstream theorems take `[TorusKnotMass q_0]` as instance hypothesis.
 
 Empirical input (from probes, NOT proved):
-- From [`rt_binomial_trace_evaluation_probe.py`](../../../../../folio-assistant/computations/rt_binomial_trace_evaluation_probe.py):
+- From [`rt_binomial_trace_evaluation_probe.py`](../../../../../folio-assistant/computations/probes/rt_binomial_trace_evaluation_probe.py):
   - mass / P_m(h_0) ≈ 143 for gauge bosons (W, Z)
   - mass / P_m(h_0) ≈ 171 for Higgs scalar (H)
   - W/Z ratio matches SM cos θ_W within 1% from binomial pattern alone

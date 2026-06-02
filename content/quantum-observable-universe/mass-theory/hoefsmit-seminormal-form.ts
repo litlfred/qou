@@ -23,8 +23,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/hoefsmit_seminormal_form_probe.py",
-    witness: "folio-assistant/computations/hoefsmit-seminormal-form-probe.witness.json",
+    script: "folio-assistant/computations/probes/hoefsmit_seminormal_form_probe.py",
+    witness: "folio-assistant/computations/probes/hoefsmit-seminormal-form-probe.witness.json",
     status: "verified",
   },
 });

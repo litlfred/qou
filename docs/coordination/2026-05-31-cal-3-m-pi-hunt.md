@@ -33,7 +33,7 @@ The framework's compute layer ([`codata_constants.py` line 22](../../folio-assis
 
 ### Probe A — m_π Hecke prediction (negative)
 
-[`m_pi_hecke_prediction_probe.py`](../../folio-assistant/computations/m_pi_hecke_prediction_probe.py)
+[`m_pi_hecke_prediction_probe.py`](../../folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py)
 tested ~100 candidate categorical formulas for m_π from (m_e, q_0,
 m_μ) alone, using the same Lean-proved building blocks that close
 m_p to 0.24 ppm under the substrate identity. **Best miss = 19,938 ppm**

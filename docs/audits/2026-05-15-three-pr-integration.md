@@ -331,8 +331,8 @@ nice" rationale is empirical, not derivational.
 | `folio-assistant/computations/unified_low_isotope_predictor.py` | landed | docstring fix only |
 | `folio-assistant/computations/magic-shell-empirical-instantiation.witness.json` | landed | Δ_cat columns for {p, n, D, T, ³He, ⁴He} — required by #645's H7a cross-anchor |
 | `folio-assistant/computations/probe_magic_shell_empirical_instantiation.py` | landed | producer for the above |
-| `folio-assistant/computations/delta_coupling_closed_form_probe.py` | landed | H1 closed-form probe |
-| `folio-assistant/computations/delta-coupling-closed-form-probe.witness.json` | landed | H1 witness |
+| `folio-assistant/computations/probes/delta_coupling_closed_form_probe.py` | landed | H1 closed-form probe |
+| `folio-assistant/computations/probes/delta-coupling-closed-form-probe.witness.json` | landed | H1 witness |
 | `folio-assistant/computations/term5_aK_audit.py` | landed (audit-only) | V1-V4 audit; **not** production-wired |
 | `folio-assistant/computations/term5-aK-audit.witness.json` | landed (audit-only) | V1 backfill {p, n, D, T, ³He} |
 | `folio-assistant/computations/probe_he4_model_b_knot_survey.py` | **DROPPED** | compositionality violation |

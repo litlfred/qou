@@ -102,20 +102,20 @@ git fetch origin
 git checkout claude/i1-probe-knot-factor-borromean-composite-2026-05-19
 
 # Re-run all 12 probes + audits to confirm state
-python3 folio-assistant/computations/knot_factor_borromean_composite_probe.py
-python3 folio-assistant/computations/hecke_branching_trace_decomposition_probe.py
-python3 folio-assistant/computations/hecke_1d_irrep_closed_form_character_probe.py
-python3 folio-assistant/computations/symbolic_character_table_probe.py
-python3 folio-assistant/computations/q_hecke_seminormal_character_closure_probe.py
-python3 folio-assistant/computations/hecke_markov_transition_probe.py
-python3 folio-assistant/computations/hecke_log_decomposition_probe.py
-python3 folio-assistant/computations/hoefsmit_seminormal_form_probe.py
-python3 folio-assistant/computations/plancherel_weight_boundedness_probe.py
-python3 folio-assistant/computations/wedderburn_weight_canonical_probe.py
-python3 folio-assistant/computations/three_parameters_wedderburn_probe.py
-python3 folio-assistant/computations/frobenius_gram_matrix_probe.py
-python3 folio-assistant/computations/jucys_murphy_central_elements_qou_probe.py
-python3 folio-assistant/computations/explicit_central_idempotent_probe.py
+python3 folio-assistant/computations/probes/knot_factor_borromean_composite_probe.py
+python3 folio-assistant/computations/probes/hecke_branching_trace_decomposition_probe.py
+python3 folio-assistant/computations/probes/hecke_1d_irrep_closed_form_character_probe.py
+python3 folio-assistant/computations/probes/symbolic_character_table_probe.py
+python3 folio-assistant/computations/probes/q_hecke_seminormal_character_closure_probe.py
+python3 folio-assistant/computations/probes/hecke_markov_transition_probe.py
+python3 folio-assistant/computations/probes/hecke_log_decomposition_probe.py
+python3 folio-assistant/computations/probes/hoefsmit_seminormal_form_probe.py
+python3 folio-assistant/computations/probes/plancherel_weight_boundedness_probe.py
+python3 folio-assistant/computations/probes/wedderburn_weight_canonical_probe.py
+python3 folio-assistant/computations/probes/three_parameters_wedderburn_probe.py
+python3 folio-assistant/computations/probes/frobenius_gram_matrix_probe.py
+python3 folio-assistant/computations/probes/jucys_murphy_central_elements_qou_probe.py
+python3 folio-assistant/computations/probes/explicit_central_idempotent_probe.py
 
 python3 folio-assistant/computations/i1_no_probe_audit.py
 # Inspect data.by_result for current totals

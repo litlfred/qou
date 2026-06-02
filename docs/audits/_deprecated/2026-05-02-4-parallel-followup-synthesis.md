@@ -9,8 +9,8 @@ User picked option 6 (all four 1-4 in parallel). Results:
 
 ## Item 1 — GT-MATRIX PSLQ probe
 
-**Driver**: [`gt_matrix_pslq_probe.py`](../../folio-assistant/computations/gt_matrix_pslq_probe.py)
-**Witness**: [`gt-matrix-pslq-probe.witness.json`](../../folio-assistant/computations/gt-matrix-pslq-probe.witness.json)
+**Driver**: [`gt_matrix_pslq_probe.py`](../../folio-assistant/computations/probes/gt_matrix_pslq_probe.py)
+**Witness**: [`gt-matrix-pslq-probe.witness.json`](../../folio-assistant/computations/probes/gt-matrix-pslq-probe.witness.json)
 
 **Finding**: Leading order $g_A \approx [5]_q/[4]_q = 1.27027852$ vs PDG $1.27510(13)$ — residual $\delta_{\rm GT} = 0.003796$. Best small-rational ansatz for $\delta_{\rm GT}$:
 

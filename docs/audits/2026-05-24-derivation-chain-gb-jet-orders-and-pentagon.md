@@ -297,4 +297,4 @@ Combining the per-step analysis with the empirical h⁴ probe results
 - [`content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md) — exact $\mathrm{tr}_M$, h² = 0, h⁴ = -3/4
 - [`content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.md`](../../content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.md) — spectral sequence
 - [`content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.md`](../../content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.md) — collapse at $E_2$
-- [`folio-assistant/computations/geom_full_borromean_h4_probe.py`](../../folio-assistant/computations/geom_full_borromean_h4_probe.py) — empirical h⁴ probe (commit `2184c84d3`)
+- [`folio-assistant/computations/probes/geom_full_borromean_h4_probe.py`](../../folio-assistant/computations/probes/geom_full_borromean_h4_probe.py) — empirical h⁴ probe (commit `2184c84d3`)

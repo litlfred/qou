@@ -95,6 +95,6 @@ These don't bridge — the ratios $0.388/0.288 = 1.35$, $0.104/0.0129 = 8.07$, $
 2. **Run `term6_residues_at_roots.py`** to generate the missing T6 witness; re-run sweep with non-zero T6.
 3. **Add `tower_mode="path-2"`** (Path 2 Wedderburn-Heine) per
    [`brane-tower-plancherel-scaffold.witness.json`](../../folio-assistant/computations/brane-tower-plancherel-scaffold.witness.json).
-4. **Add `tower_mode="habiro-single-trace"`** (Path 3) per [`path-b-habiro-mass-probe.witness.json`](../../folio-assistant/computations/path-b-habiro-mass-probe.witness.json) — claims sub-1% error.
+4. **Add `tower_mode="habiro-single-trace"`** (Path 3) per [`path-b-habiro-mass-probe.witness.json`](../../folio-assistant/computations/probes/path-b-habiro-mass-probe.witness.json) — claims sub-1% error.
 5. **Relabel `atomic_mass_via_rho_k.py`** with explicit "post-calibration only" docstring (currently misleadingly tagged "canonical going-forward").
 6. **Deprecate** `atomic_braid_mass_table_modes_sweep.py` (already-flagged downstream of broken script).
