@@ -219,6 +219,46 @@ def main() -> int:
         print(f"  ε = {name:>14s} = {mp.nstr(val, 10):>14s}  ratio={mp.nstr(ratio, 6):>8s}  {t}{mark}")
     print()
 
+    # ─── (6) Cyclotomic Φ_8 / q-Pochhammer / depth-15 (Q_β-native) ─
+    # Per CLAUDE.md §"Q_β c_k truncation order": Φ_8² is a documented
+    # Q_β structural object (mirror-pair Δa_m). The simple-pole at
+    # u_subst with exponent 15 strongly suggests the documented
+    # depth-15 Habiro prefactor Σ_m Δa_m·(u;u)_m = −u^15·(...). Test
+    # residue against (u;u)_m q-Pochhammers and Φ_8-cyclotomic forms.
+    print("--- (6) Cyclotomic Φ_8 / q-Pochhammer (u;u)_m / depth-15 ---")
+    u = c["u_subst"]
+
+    def pochhammer(base: mp.mpf, m: int) -> mp.mpf:
+        """(base; base)_m = Π_{j=1}^m (1 − base^j)."""
+        p = mp.mpf(1)
+        for j in range(1, m + 1):
+            p *= (1 - base ** j)
+        return p
+
+    # Φ_8(x) = x^4 + 1 (8th cyclotomic). Evaluate at q and at u.
+    Phi8_q = q ** 4 + 1
+    Phi8_u = u ** 4 + 1
+    print(f"  Φ_8(q) = q⁴+1 = {mp.nstr(Phi8_q, 12)}")
+    print(f"  (u;u)_15 = {mp.nstr(pochhammer(u, 15), 12)}")
+    family6 = [
+        ("u^15", u ** 15),
+        ("2·u^15·(u;u)_15", 2 * u ** 15 * pochhammer(u, 15)),
+        ("[2]_q·u^7·hbar", nq(2) * u ** 7 * hbar),
+        ("Φ_8(q)·hbar^17", Phi8_q * hbar ** 17),
+        ("(u;u)_7 · hbar^7", pochhammer(u, 7) * hbar ** 7),
+        ("2·hbar^15·(u;u)_2", 2 * hbar ** 15 * pochhammer(u, 2)),
+        # α_em Habiro element cross-link: α_em ID is [2]_q·(1-h²α).
+        # Here test [2]_q·ℏ_q^15·(1−h²·α_em-analog).  Use α≈1/137.
+        ("[2]_q·hbar^15·(1-h²/137)",
+         nq(2) * hbar ** 15 * (1 - c["h"] ** 2 / 137)),
+    ]
+    for name, val in family6:
+        t = tier(val, TARGET)
+        mark = "  ★" if "PROVED" in t else ("  ◆" if "NEAR" in t else "")
+        results.append({"hypothesis": name, "value": val, "tier": t})
+        print(f"  {name:>28s} = {mp.nstr(val, 10):>14s}  {t}{mark}")
+    print()
+
     # Verdict
     n_proved = sum(1 for r in results if "PROVED" in r["tier"])
     n_near = sum(1 for r in results if "NEAR-MATCH" in r["tier"])

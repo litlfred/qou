@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T20:01:13.483935+00:00",
-  "commitSha": "a4cb3755587818bd45919303e503692084a0ecf2",
+  "computedAt": "2026-06-02T20:58:56.291870+00:00",
+  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
   "assertions": [
     {
       "name": "at_least_one_categorical_match",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "qbeta-residue-categorical-id-probe",
   "scriptFile": "qbeta_residue_categorical_id_probe.py",
-  "scriptHash": "2423c5b30f6c",
-  "scriptCommitSha": "a4cb3755587818bd45919303e503692084a0ecf2",
+  "scriptHash": "a8cbe50b4c51",
+  "scriptCommitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "TARGET_residue_A": "1.80390319636685542631544027695e-15",
     "n_proved": "0",
     "n_near_match": "3",
-    "n_refuted": "28",
+    "n_refuted": "35",
     "hyp_hbar_q^12": "value=8.95204459178e-13;tier=REFUTED (4.953e+4 %)",
     "hyp_hbar_q^13": "value=8.86983940259e-14;tier=REFUTED (4817.0 %)",
     "hyp_hbar_q^14": "value=8.78838909045e-15;tier=REFUTED (387.2 %)",
@@ -70,6 +70,13 @@
     "hyp_ε_=_ℏ_q^14xu": "value=7.48527712014e-17;tier=REFUTED (-96.75 %)",
     "hyp_ε_=_u^7": "value=3.25154860239e-15;tier=REFUTED (41.02 %)",
     "hyp_ε_=_u^8_/_b": "value=3.19210588948e-17;tier=REFUTED (-98.62 %)",
-    "hyp_ε_=_u_subst^7xhbar": "value=3.22169015327e-16;tier=REFUTED (-86.03 %)"
+    "hyp_ε_=_u_subst^7xhbar": "value=3.22169015327e-16;tier=REFUTED (-86.03 %)",
+    "hyp_u^15": "value=9.00490441256e-32;tier=REFUTED (-100.0 %)",
+    "hyp_2xu^15x(u;u)_15": "value=1.78551085693e-31;tier=REFUTED (-100.0 %)",
+    "hyp_[2]_qxu^7xhbar": "value=6.4784866347e-16;tier=REFUTED (-64.09 %)",
+    "hyp_Φ_8(q)xhbar^17": "value=2.1524719365e-17;tier=REFUTED (-98.81 %)",
+    "hyp_(u;u)_7_x_hbar^7": "value=9.29411475968e-8;tier=REFUTED (5.152e+9 %)",
+    "hyp_2xhbar^15x(u;u)_2": "value=1.72657900185e-15;tier=REFUTED (-4.286 %)",
+    "hyp_[2]_qxhbar^15x(1-h²/137)": "value=1.75046737655e-15;tier=REFUTED (-2.962 %)"
   }
 }
