@@ -41,6 +41,7 @@ Ref: [manuscript] docs/audits/2026-05-19-closed-forms-first-principles-workplan.
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import ast
 import json
 import sys

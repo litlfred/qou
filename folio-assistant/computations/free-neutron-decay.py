@@ -11,6 +11,7 @@ script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 #!/usr/bin/env python3
 """
 Free neutron decay: n → p + e⁻ + ν̄ₑ

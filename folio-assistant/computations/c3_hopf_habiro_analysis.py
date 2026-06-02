@@ -18,6 +18,7 @@ Habiro/Taylor connection (per sibling #1302) likely involves the
 Habiro series evaluation at the substrate, not q=1 limits.
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json, sys
 from pathlib import Path
 from mpmath import mp, mpf, sqrt, log

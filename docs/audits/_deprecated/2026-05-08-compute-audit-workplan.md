@@ -60,7 +60,7 @@ cites the matching pattern and a prior successful instance.
      with the `WitnessBuilder("foo", engine=...)` builder pattern.
    - Witnesses gain `scriptHash` + `scriptCommitSha` so
      `run_pipeline.py` can detect staleness.
-   - Reference: [`witness_base.py:136-330`](../../folio-assistant/computations/witness_base.py).
+   - Reference: [`witness_base.py:136-330`](../../folio-assistant/computations/substrate/witness_base.py).
    - **Question that blocks autonomous sweep:** which witnesses are
      hand-curated reference values that should be flagged
      `set_audit_only(...)` vs which are computational outputs that
@@ -190,7 +190,7 @@ that hardcodes the top-level path.
 
 Resolved by adding **`WitnessBuilder.wrap_legacy(name, payload, *,
 script_path, ...)`** in
-[`folio-assistant/computations/witness_base.py`](../../folio-assistant/computations/witness_base.py).
+[`folio-assistant/computations/substrate/witness_base.py`](../../folio-assistant/computations/substrate/witness_base.py).
 The helper:
 
 - accepts an existing payload dict (the one a script is currently

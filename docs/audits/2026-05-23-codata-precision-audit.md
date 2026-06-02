@@ -133,7 +133,7 @@ coord-ledger 2026-05-08).
   scripts that re-define M_E_MEV at higher precision
 - `docs/audits/codata-reconciliation.md` — existing CODATA-vs-
   prediction reconciliation infrastructure
-- `folio-assistant/computations/codata_constants.py` — existing
+- `folio-assistant/computations/substrate/codata_constants.py` — existing
   storage (to be updated)
 - `folio-assistant/computations/codata_2022_source.py` — new
   source-of-truth module (this PR)

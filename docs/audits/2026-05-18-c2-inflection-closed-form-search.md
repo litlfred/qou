@@ -159,7 +159,7 @@ Worth chasing if the identity holds at higher precision.
 - Cubic + thimble machinery:
   [`picard_lefschetz_thimble.py`](../../folio-assistant/computations/picard_lefschetz_thimble.py)
 - Substrate constants:
-  [`q_parameter.py`](../../folio-assistant/computations/q_parameter.py),
+  [`q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py),
   [`_li_2_q_util.load_q_50dps`](../../folio-assistant/computations/_li_2_q_util.py)
 - Sibling audit (Items A/B/C):
   [`2026-05-18-mp-chain-items-abc-findings.md`](2026-05-18-mp-chain-items-abc-findings.md)

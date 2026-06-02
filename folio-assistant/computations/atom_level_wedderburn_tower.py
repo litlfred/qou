@@ -23,6 +23,7 @@ Sum weights by GB level, scaling by z^ℓ.
 
 Witness: atom-level-wedderburn-tower.witness.json
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
 import time

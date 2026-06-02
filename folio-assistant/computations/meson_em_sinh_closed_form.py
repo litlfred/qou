@@ -21,6 +21,7 @@ This brings the meson sector to a single closed-form derived expression:
   m_K²/m_π² = [3]_q · [4]_q  +  (α_em / π) · (3q² − 1)/(2q²)
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 from pathlib import Path

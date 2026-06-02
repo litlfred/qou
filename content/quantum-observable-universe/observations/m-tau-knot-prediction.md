@@ -33,7 +33,7 @@ Compute script:
 [`folio-assistant/computations/m_tau_knot_prediction.py`](../../../folio-assistant/computations/m_tau_knot_prediction.py).
 Operates at 50 dps via mpmath; uses the canonical
 $q_0 = 1.10997859555\ldots$ pin
-([`q_parameter.Q_50_DIGIT_STR`](../../../folio-assistant/computations/q_parameter.py)).
+([`q_parameter.Q_50_DIGIT_STR`](../../../folio-assistant/computations/substrate/q_parameter.py)).
 
 Candidate table: 25 hyperbolic knots and links from the SnapPy census
 through 10 crossings + Borromean / Whitehead / $L_{n}$ family. All

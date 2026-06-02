@@ -26,6 +26,7 @@ All symbolic in q.
 Usage:
     python3 jet_knot_invariants.py
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import math
 from pathlib import Path

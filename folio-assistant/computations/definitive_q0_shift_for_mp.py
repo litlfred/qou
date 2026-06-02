@@ -13,6 +13,7 @@ the Taylor expansion of this single q₀ shift.
 IMPLICATION: 1 ppb m_p ⟺ derive q₀ to ≤12 ppb.
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from pathlib import Path
 import mpmath as mp

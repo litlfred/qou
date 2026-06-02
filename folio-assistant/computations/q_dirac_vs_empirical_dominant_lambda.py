@@ -62,6 +62,7 @@ predicts the Δ_λ dominant. If it's far down the ranking (e.g. rank
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from pathlib import Path
 

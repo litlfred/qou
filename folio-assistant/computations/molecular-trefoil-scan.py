@@ -15,6 +15,7 @@ Usage:
     python3 molecular-trefoil-scan.py
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import math, sys
 from pathlib import Path
 from mpmath import mp

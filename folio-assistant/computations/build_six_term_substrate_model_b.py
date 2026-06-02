@@ -40,6 +40,7 @@ Output: build-six-term-substrate-model-b.witness.json
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import json
 from math import comb

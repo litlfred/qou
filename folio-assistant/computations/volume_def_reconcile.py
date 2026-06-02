@@ -33,6 +33,7 @@ Run:  python3 -u volume_def_reconcile.py 2>&1 | tee /tmp/volume_def_reconcile.lo
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 from pathlib import Path

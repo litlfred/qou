@@ -46,6 +46,7 @@ References:
     [rosso-jones1993] https://doi.org/10.1016/0022-4049(93)90022-K
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import math
 import sys
 import os

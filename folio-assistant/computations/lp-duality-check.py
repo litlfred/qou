@@ -12,6 +12,7 @@ Checks:
 Reuses: confinement-lp.witness.json, breit-wheeler-nucleon-nf.witness.json
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import math
 import numpy as np

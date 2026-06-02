@@ -93,7 +93,7 @@ formula.
 
 ### Compute precision floor
 
-Per `folio-assistant/computations/_precision.py`: default is 65 dps
+Per `folio-assistant/computations/substrate/_precision.py`: default is 65 dps
 compute / 50 dps serialization, truncation to 10⁻⁵⁰ absolute. The
 2.98% swing at 10⁻² scale dwarfs this floor by 10⁴⁸ — there is no
 plausible compute-precision explanation for the swing.

@@ -26,6 +26,7 @@ Witness output: wedderburn-lp-ew-wiring.witness.json (with LP duals
 to satisfy lp_dual_witness_validator).
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 from pathlib import Path

@@ -24,6 +24,18 @@ script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
 
+
+# Path bridge (subdirectory refactor — Phase 6, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
+
 # ── Fundamental constants (CODATA 2022) ─────────────────────────
 
 M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV

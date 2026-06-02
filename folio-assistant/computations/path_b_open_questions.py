@@ -37,6 +37,7 @@ Open questions from docs/audits/2026-05-06-path-b-evacuation.md:
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from pathlib import Path
 

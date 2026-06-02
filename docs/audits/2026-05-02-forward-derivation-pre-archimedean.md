@@ -276,7 +276,7 @@ $\tau$-image identification).
   projectors of the Hecke quotient of the braid-group algebra.
 - **Riding-on:** Steps 1, 6.
 - **Compute backing:**
-  [`hecke_core.py`](../../folio-assistant/computations/hecke_core.py)
+  [`hecke_core.py`](../../folio-assistant/computations/substrate/hecke_core.py)
   (H₃(q) NF multiplication),
   [`hecke_characters.py`](../../folio-assistant/computations/hecke/hecke_characters.py)
   (Hoefsmit seminormal matrices, k≤12+).
@@ -440,7 +440,7 @@ $\tau$-image identification).
   $y_\lambda$ pinned by Markov + cyclicity (Jones–Ocneanu–Wenzl).
 - **Riding-on:** Steps 10–12.
 - **Compute backing:**
-  [`hecke_core.py`](../../folio-assistant/computations/hecke_core.py)
+  [`hecke_core.py`](../../folio-assistant/computations/substrate/hecke_core.py)
   Markov trace,
   [`hoefsmit_witness.json`](../../folio-assistant/computations/hoefsmit_witness.json).
 - **AUDIT.** 🟢 Classical theorem; no fits.
@@ -628,7 +628,7 @@ Below: how each output sector consumes the chain.
   No AME mass data feeds the LP directly (no least-squares on
   masses), but the magic-ladder structure is the linchpin.
 - **🟠 Compute hygiene §3·E status.**
-  [`hecke_core.py`](../../folio-assistant/computations/hecke_core.py)
+  [`hecke_core.py`](../../folio-assistant/computations/substrate/hecke_core.py)
   three-term formula (Volume / Coulomb / chirality) **still
   substitutes $q_0$ early into $[3]_q$, $H_A$** (lines 49–52).
   [`exact_binding_per_operation.py`](../../folio-assistant/computations/exact_binding_per_operation.py)

@@ -11,6 +11,7 @@ Error bounds: propagates δq throughout.
 CRT: for A > 10, delegates to hecke-crt Rust engine.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import math
 from mpmath import mp

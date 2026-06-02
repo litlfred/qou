@@ -33,6 +33,7 @@ Workplan ref: `docs/audits/2026-05-17-1ppb-workplan-v4.md`
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import shutil
 import subprocess

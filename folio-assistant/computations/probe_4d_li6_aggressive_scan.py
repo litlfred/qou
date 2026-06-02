@@ -16,6 +16,7 @@ Time estimate: ~30 shapes at ~60s each (build + Lanczos) = ~30 min.
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 from math import factorial

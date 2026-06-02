@@ -23,6 +23,7 @@ combinations.  We test:
   B3.  v_w/m_e = INT · ([4]_q · [6]_q · [8]_q / [2]_q) · tr_pure^a
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
 from datetime import datetime, timezone

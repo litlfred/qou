@@ -22,6 +22,7 @@ Output:
     folio-assistant/computations/level1-qvalues.witness.json
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import math
 import sys

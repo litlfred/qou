@@ -36,6 +36,7 @@ GENUINE DERIVATIONS, not empirical fits. Each identity follows from
 standard hyperbolic-function identities applied to the sibling
 definitions. Verified symbolically.
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import subprocess
 from pathlib import Path

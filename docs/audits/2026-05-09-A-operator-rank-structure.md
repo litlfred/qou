@@ -297,4 +297,4 @@ algebras of type A_n and crystal bases*.
 - [`folio-assistant/computations/probes/A_operator_rank_probe.py`](../../folio-assistant/computations/probes/A_operator_rank_probe.py)
 - [`folio-assistant/computations/probes/A-operator-rank-probe.witness.json`](../../folio-assistant/computations/probes/A-operator-rank-probe.witness.json)
 - [`folio-assistant/computations/a_operator/A_operator_extract_general.py`](../../folio-assistant/computations/a_operator/A_operator_extract_general.py)
-- [`folio-assistant/computations/lr_coefficients.py`](../../folio-assistant/computations/lr_coefficients.py)
+- [`folio-assistant/computations/substrate/lr_coefficients.py`](../../folio-assistant/computations/substrate/lr_coefficients.py)

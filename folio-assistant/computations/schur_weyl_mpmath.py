@@ -23,6 +23,7 @@ at q_0 (mass-tower compute, P2.2a wiring, etc.), use this module.
 
 Witness: docs/audits/2026-05-01-p2-2b-mn-mpmath.witness.json
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
 import time

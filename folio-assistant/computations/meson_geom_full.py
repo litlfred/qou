@@ -28,6 +28,7 @@ This script derives:
   - Q_β from CAL-1 + CAL-2 (cross-check)
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json, time
 from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path

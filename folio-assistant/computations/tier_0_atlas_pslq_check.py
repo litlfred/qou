@@ -21,6 +21,7 @@ with small coefficients. A non-trivial small relation would
 inhabit `BringHyperbolicDecomposition` directly from the atlas.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 # Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
 # Ref: [manuscript] rem:figure-8-archimedean-illustration
 # Ref: [manuscript] binding-scale-catalan

@@ -32,6 +32,7 @@ content-summation. Verified empirically via the
 λ vs λ^T pairing.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 # Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
 # Ref: [manuscript] prop:type-b-folded-crystal-combinatorics
 

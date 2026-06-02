@@ -26,6 +26,7 @@ where every term has structural categorical origin.
 
 Status: EXPLORATORY (categorical formula CONSTRUCTION attempt).
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import subprocess
 import sys

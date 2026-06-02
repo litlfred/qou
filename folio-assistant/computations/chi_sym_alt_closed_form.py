@@ -41,6 +41,7 @@ character product (computed from seminormal matrices) across D/T/³He/⁴He.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import warnings
 from pathlib import Path

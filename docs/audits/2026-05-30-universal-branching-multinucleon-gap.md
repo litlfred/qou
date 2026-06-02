@@ -13,7 +13,7 @@ implemented in the canonical compute path.
 1. **Gap #2 is already implemented** in
    [`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py)
    via the operator-valued Wenzl branching (Wenzl 1988), consuming
-   [`lr_coefficients.py`](../../folio-assistant/computations/lr_coefficients.py)
+   [`lr_coefficients.py`](../../folio-assistant/computations/substrate/lr_coefficients.py)
    (Littlewood-Richardson coefficients) and the cached interface
    operators `A^λ_{ξν}(I)` extracted by
    [`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py).
@@ -100,7 +100,7 @@ nucleons" should not be implemented using this primitive**.
 - Stanley, *Enumerative Combinatorics Vol 2*, §7.10 (LR rule), §7.16 (skew SYT).
 - Existing canonical infra:
   [`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py),
-  [`lr_coefficients.py`](../../folio-assistant/computations/lr_coefficients.py),
+  [`lr_coefficients.py`](../../folio-assistant/computations/substrate/lr_coefficients.py),
   [`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py).
 - Formalized single-K statement:
   [`universal-braid-branching.lean`](../../content/quantum-observable-universe/mass-theory/universal-braid-branching.lean).

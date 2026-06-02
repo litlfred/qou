@@ -11,6 +11,7 @@ No magic = one unfold, one magic = two unfold, double magic = closure.
 
 From shell-construction-rules.md §Algorithm.
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 import json

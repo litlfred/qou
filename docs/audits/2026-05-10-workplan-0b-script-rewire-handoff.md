@@ -37,7 +37,7 @@ self-recommendation already exists in
 
 Surgical, non-destructive infrastructure cleanup. Backwards-compatible.
 
-1. [`folio-assistant/computations/codata_constants.py`](../../folio-assistant/computations/codata_constants.py)
+1. [`folio-assistant/computations/substrate/codata_constants.py`](../../folio-assistant/computations/substrate/codata_constants.py)
    refactored:
    - Adds DISCIPLINE banner (CAL-1/2/3 table).
    - Renames `M_P_MEV`, `M_N_MEV`, `M_D_MEV`, `M_T_MEV`, `M_HE3_MEV`,

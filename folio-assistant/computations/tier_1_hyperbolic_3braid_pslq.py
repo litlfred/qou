@@ -27,6 +27,7 @@ inhabitable from the Tier-1 basis. If not, the search extends
 further.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 # Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
 # Ref: [manuscript] tier-0-atlas-pslq-check.witness.json (negative)
 

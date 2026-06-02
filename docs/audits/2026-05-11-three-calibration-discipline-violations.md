@@ -118,8 +118,8 @@ predictions. OK.
 ## Registry / CODATA re-export (Class D) — no fix required
 
 [`codata_masses.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/codata_masses.py),
-[`codata_constants.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/codata_constants.py),
-[`experimental_constants.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/experimental_constants.py)
+[`codata_constants.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/substrate/codata_constants.py),
+[`experimental_constants.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/substrate/experimental_constants.py)
 re-export CODATA values. Their downstream consumers tag their own
 status. OK.
 

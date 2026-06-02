@@ -24,6 +24,7 @@ If not (negative result), K-theoretic identification requires
 content outside the H_3 + bridge-3 hyperbolic regime.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 # Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
 
 from pathlib import Path

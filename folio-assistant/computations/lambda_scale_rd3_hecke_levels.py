@@ -15,6 +15,7 @@ The "(1/4)" normalization at H_4 was chosen to give 5/2 leading.
 For other H_n, the natural normalization may differ.
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json, sys
 from pathlib import Path
 import mpmath as mp

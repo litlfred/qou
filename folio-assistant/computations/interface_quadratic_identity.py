@@ -11,6 +11,7 @@ The interface's quadratic terms factor as a universal scalar.
 Only ONE effective crossing carries operator-valued content.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json, time
 from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path

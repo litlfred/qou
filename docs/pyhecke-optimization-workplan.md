@@ -80,7 +80,7 @@ same witness they did last time.
 - Scripts that want the optimization wrap their main with
   `if not w.skip_if_fresh(): compute()`.
 
-**Files:** `folio-assistant/computations/witness_base.py`
+**Files:** `folio-assistant/computations/substrate/witness_base.py`
 
 **Verification:** rerun any migrated script twice; second run should
 log "fresh; skipping" and take < 100 ms.
@@ -114,7 +114,7 @@ computations/` pays this tax on the first Python invocation.
 - `atom_per_generator_volumes` cache initialization
 - Any `scipy.sparse` re-import overhead
 
-**Files:** `folio-assistant/computations/hecke_core.py`
+**Files:** `folio-assistant/computations/substrate/hecke_core.py`
 
 **Verification:**
 ```bash

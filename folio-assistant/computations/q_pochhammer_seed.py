@@ -24,6 +24,7 @@ yet drive a SnapPy Newton iteration; that is the next pipeline step.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from functools import reduce
 from pathlib import Path

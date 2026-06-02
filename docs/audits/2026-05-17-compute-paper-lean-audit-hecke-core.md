@@ -20,7 +20,7 @@ skipped per instructions.
 
 ---
 
-## 1. `folio-assistant/computations/hecke_core.py`  (3173 LOC)
+## 1. `folio-assistant/computations/substrate/hecke_core.py`  (3173 LOC)
 
 Largest of the seven — canonical Hecke infrastructure for `H_3(q)`
 extended with partition-table machinery and per-generator atomic

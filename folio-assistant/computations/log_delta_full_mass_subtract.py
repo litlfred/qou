@@ -32,6 +32,7 @@ Ref: docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import ast
 import json
 import sys

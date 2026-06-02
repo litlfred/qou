@@ -16,6 +16,7 @@ This is symbolic in q: no empirical input beyond q₀.
 Usage:
     python3 confined_knot_binding.py
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import math
 import sys
 from pathlib import Path

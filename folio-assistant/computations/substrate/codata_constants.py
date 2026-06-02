@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+
+
 # polynomial_q_not_applicable: constants module; no q-polynomial logic.
 """CODATA / AME constants module — split into legitimate calibration
 inputs and validation-only literals, and loaded from witness JSONs
@@ -45,6 +47,17 @@ Workplan 0b in
 """
 from __future__ import annotations
 
+# Path bridge (subdirectory refactor — Phase 6, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
+
 import json
 import warnings
 from pathlib import Path
@@ -52,7 +65,7 @@ from pathlib import Path
 import mpmath as mp
 
 # ── Witness JSON loader ─────────────────────────────────────────
-_WITNESS_DIR = Path(__file__).resolve().parent
+_WITNESS_DIR = Path(__file__).resolve().parent.parent  # was: .parent (pre-Phase-6 — substrate moved into substrate/, added .parent to reach root)
 _VALIDATION_WITNESS = _WITNESS_DIR / "codata-2022-validation-masses.witness.json"
 _CAL3_WITNESS = _WITNESS_DIR / "cal-3-q-beta.witness.json"
 

@@ -2,7 +2,7 @@
 
 **Date.** 2026-05-24
 **Branch.** `claude/hecke-core-audit-2026-05-24` (based on `origin/main` @ `d128bdee`)
-**Target file.** [`folio-assistant/computations/hecke_core.py`](../../folio-assistant/computations/hecke_core.py) (3 183 LOC, 72 top-level `def`/`class`, 52 importers)
+**Target file.** [`folio-assistant/computations/substrate/hecke_core.py`](../../folio-assistant/computations/substrate/hecke_core.py) (3 183 LOC, 72 top-level `def`/`class`, 52 importers)
 **Prereq for.** pyhecke 1.0 hardening (workplan §3.5 — split canonical surface from Phase-5 probes before promoting the canonical surface into `pyhecke`).
 **Companion docs.**
 
@@ -14,7 +14,7 @@
 ## 1. Methodology
 
 For every top-level `def` / `class` / module-level cached constant in
-[`hecke_core.py`](../../folio-assistant/computations/hecke_core.py),
+[`hecke_core.py`](../../folio-assistant/computations/substrate/hecke_core.py),
 classification was derived from three signals:
 
 1. **Cheat-sheet match.** Does the symbol appear in the canonical chain
@@ -56,7 +56,7 @@ this audit.
 
 The table below has 73 rows total: 72 top-level `def` / `class`
 declarations (matching
-`grep -cE '^(class |def )' folio-assistant/computations/hecke_core.py`)
+`grep -cE '^(class |def )' folio-assistant/computations/substrate/hecke_core.py`)
 plus 1 inline tuple-assignment (row #28, `_PROTON_G0/G1`,
 `_NEUTRON_G0/G1`, emitted at module load by `nucleon_gen_chains`).
 A supplementary table at §C below covers 8 more module-level cached
@@ -203,7 +203,7 @@ the 8 cached module-level objects in the §C table are classified
 separately and not counted toward the 72-`def`/`class` tally above.
 
 **Total = 19 + 29 + 24 = 72**, matching
-`grep -cE "^(class |def )" folio-assistant/computations/hecke_core.py` = 72.
+`grep -cE "^(class |def )" folio-assistant/computations/substrate/hecke_core.py` = 72.
 Sanity-check passes.
 
 The strong-exploratory candidates the workplan flagged (`_chebyshev_magic`,

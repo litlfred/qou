@@ -50,6 +50,7 @@ Ref: [casimir1948] https://dwc.knaw.nl/DL/publications/PU00018547.pdf
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from pathlib import Path
 

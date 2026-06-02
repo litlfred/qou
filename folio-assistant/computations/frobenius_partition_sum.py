@@ -67,6 +67,7 @@ This script:
   4. Tests self-dual pairing: conjugate partitions λ' contribute the
      SAME 1/dim_q value (since dim_q(λ) = dim_q(λ')).
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
 from pathlib import Path

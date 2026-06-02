@@ -234,7 +234,7 @@ Phase numbering matches `/root/.claude/plans/lots-of-new-math-parallel-lagoon.md
 - `folio-assistant/computations/per_block_phi_q.py`
 - `folio-assistant/computations/proton_mass_tower_derivation.py`
 - `folio-assistant/computations/cross_check_trM_1ppb.py`
-- `folio-assistant/computations/q_parameter.py`
+- `folio-assistant/computations/substrate/q_parameter.py`
 - `folio-assistant/computations/lp_dual_solver.py`
 - `folio-assistant/computations/atomic_braid_mass_table.py`
 - `folio-assistant/computations/habiro/habiro_witness_validator.py`

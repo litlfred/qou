@@ -22,6 +22,7 @@ undershoots by -83%. See docs/audits/2026-05-18-delta-lambda-gating-context.md
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import json
 import time

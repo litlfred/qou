@@ -259,7 +259,7 @@ operator-valued Wenzl branching identity, implemented in
 +
 [`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py)
 +
-[`lr_coefficients.py`](../../folio-assistant/computations/lr_coefficients.py).
+[`lr_coefficients.py`](../../folio-assistant/computations/substrate/lr_coefficients.py).
 Sub-lemma 2.1 of Wenzl (1988):
 
 $$
