@@ -52,7 +52,56 @@ Source: workplan §"Critical-discipline audit (2026-05-30)" +
 
 ## Recent landings (since 2026-05-30 audit) that touch the gap
 
-- **#1690** (merged today): dashboard wiring + Lean sibling fill + q₀
+### 2026-06-02 17:00–17:35Z (during this doc's review window) — Δ_λ binding-measure probes
+
+**Major narrowing.** Four commits landed in the hour after this doc
+was first drafted, directly sharpening the binding-measure half of
+the gap:
+
+- **[`ba7af156c`](https://github.com/litlfred/qou/commit/ba7af156c)**
+  per-block θ_λ carry via y_λ-weighted observation: B = E · Σ_λ y_λ
+  |Δθ_λ|, tested D / T / ³He / ⁴He.  **Absolute binding NOT closed**
+  (μ₀ 0-fit −99%; one-global-scale worst 228%): `|Δθ|` is
+  A-independent like scalar Δtr.  But **T / ³He difference +8.18 %
+  with NO isotope-fit** — the signed per-block object PR #1709
+  proved necessary, *without* the fitted (1+q)/2.
+- **[`d59bcb79d`](https://github.com/litlfred/qou/commit/d59bcb79d)**
+  emit full per-λ θ_λ vector + cheat-sheet §9.2 "**preserve
+  information until observation**" guiding principle (τ at step 9 is
+  the only legitimate collapse site; scalar `tr_M` collapses θ_λ at
+  step 5 prematurely — harmless A=2, lossy A≥3).  Adds Lean debt
+  queue items L-1 / L-2 / L-3 (Schur character-orthogonality,
+  π_λ idempotent orthogonality, per-λ Frobenius block-orthogonality)
+  to the proof-watcher queue.
+- **[`5e388f598`](https://github.com/litlfred/qou/commit/5e388f598)**
+  full-order θ_λ (Re = rotation, Im = growth/volume): **`y_λ` is the
+  WRONG measure for A≥3 absolute** — `Σ y_λ |Δθ|` *anti-correlates*
+  with A (D 0.133 → ⁴He 0.006) while binding grows ~13×, because
+  `y_λ` (the Markov / trace measure) **suppresses the growth
+  channels** where the extensive binding lives.  Narrowed gap: per-
+  block θ_λ carrier is right (differences work, +8 %, no fit), but
+  `y_λ` is the wrong measure for binding.
+- **[`d7c56c17e`](https://github.com/litlfred/qou/commit/d7c56c17e)**
+  binding-measure search — `abs_content` (Σ |content| of the Young
+  diagram) is the **standout from 6 candidates**: A-growth ratio
+  S(⁴He) / S(D) = 13.40 vs target 12.72 (~5 %), worst |err| 20 %.
+  `y_λ` failed (199 %); other candidates 600–90 000× off.  Refined
+  target for the operator-valued combiner (#1698): **content × sign
+  per-block measure ≠ y_λ**.  Discipline: 20 % is NOT closure;
+  `abs_content` was selected from 6 candidates — a structural lead,
+  not a derivation.
+
+**Net effect on this doc's blocking table.**  The "A=4 (⁴He) shell-
+closure bonus derivation" row above was already known to be open;
+these landings narrow the open problem from "find the missing
+combiner" to **"derive `|content|` as the Hecke-energy density and
+combine it with the signed per-block phase to get a binding-specific
+weight `w_λ^bind`"**.  That is the productive next probe (see "What
+WOULD be a productive next probe" below — now revised).
+
+### 2026-05-30 → 2026-06-02 16:00Z — Q_β sub-attacks (cross-link)
+
+- **#1690** (merged today, 14:00Z): dashboard wiring + Lean sibling fill + q₀
   drift fixes. **No new derivation**, just regenerates witnesses at
   current q₀.
 - **#1593** (Q_β c_3 order audit): the per-block Δtr_M is O(√u); ladder
@@ -91,20 +140,33 @@ Source: workplan §"Critical-discipline audit (2026-05-30)" +
 
 Per CLAUDE.md Δ_λ gate ("**do not propose a seventh fit-based
 ansatz**") and the 2026-05-30 retraction (selection-bias fitting is
-forbidden), the productive directions are:
+forbidden), the productive directions — **revised in light of the
+17:00–17:35Z Δ_λ landings above** — are:
 
-1. **Wait on PR #1712's PSD-feasibility test at A=2, A=3.** If L_H
+1. **(NEW, highest priority) Derive `|content|` as the Hecke-energy
+   density.** The `d7c56c17e` finding is that `abs_content` matches
+   A-growth at ~5 % vs `y_λ`'s 199 %.  This is a *categorical*
+   lead: `content(λ) = Σ_{(i,j) ∈ λ} (j − i)` is the q-grading of
+   the partition `λ` (the same quantity that appears in the q-Schur
+   `ySchurClosedForm = q^{c(λ)} / [n]_q!`).  A *derived* identification
+   of `|content|` with a Hecke-energy density (rather than selection
+   from 6 candidates) would upgrade the lead from 20 % near-match to
+   a categorical statement.  This is the productive direction for any
+   next-session probe on this gap.
+2. **Wait on PR #1712's PSD-feasibility test at A=2, A=3.** If L_H
    (Hopf) for ²H and 8_11-class for ³H pass PSD-feasibility at q₀,
    that's the binding-link canonical object derived. *Then* extend to
    A=4 via operator-valued LR branching (still gated on #1443 + Sprint 2).
-2. **Wait on PR #1713's fibre F(q) identification.** If the Q_β Habiro
+3. **Wait on PR #1713's fibre F(q) identification.** If the Q_β Habiro
    element lands, the same fibre construction applies to the
    binding-factor f(Z, N) via the shared multi-Wedderburn-block
    structure recorded in the 2026-05-30 coord doc.
-3. **No new ansatz attack** without one of the above first. The retracted
+4. **No new ansatz attack** without one of the above first. The retracted
    leads stand as suggestive structure; they are NOT to be re-pitched
    as a new derivation candidate without a categorical chain replacing
-   selection-bias fitting.
+   selection-bias fitting.  In particular, `abs_content` × signed-phase
+   is **infrastructure** (a per-λ vector to feed the operator-valued
+   combiner), **not** a new closed-form ansatz.
 
 ## This branch's scope
 
