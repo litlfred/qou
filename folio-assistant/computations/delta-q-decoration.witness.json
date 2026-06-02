@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:38:41.261495+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T19:10:33.165539+00:00",
+  "commitSha": "e7818776fe6b465946c56b90542a75dc85a47004",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "delta-q-decoration",
   "scriptFile": "delta_q_decoration.py",
-  "scriptHash": "876a975f1f9b",
-  "scriptCommitSha": "b746fb8f6ab3e959104ddced6566acf34468cf3d",
+  "scriptHash": "8e0c192d490f",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,34 +50,34 @@
       },
       "sigma_1": {
         "(2,)": {
-          "chi_lambda": 1.109978595554181,
+          "chi_lambda": 1.109978582751381,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.49729054560491565,
-          "trM_contribution": 0.18399395379763886
+          "trM_contribution": 0.18399395167540178
         },
         "(1, 1)": {
-          "chi_lambda": -0.9009182735643012,
+          "chi_lambda": -0.9009182839557418,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.49729054560491565,
-          "trM_contribution": -0.14933937993541
+          "trM_contribution": -0.14933938165793173
         }
       },
       "T_2_9": {
         "(2,)": {
-          "chi_lambda": 2.557593012443454,
+          "chi_lambda": 2.5575927469436044,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.49729054560491565,
-          "trM_contribution": 0.42395560819777506
+          "trM_contribution": 0.4239555641875867
         },
         "(1, 1)": {
-          "chi_lambda": -0.3909926228038259,
+          "chi_lambda": -0.3909926633921814,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.49729054560491565,
-          "trM_contribution": -0.06481231157387053
+          "trM_contribution": -0.06481231830193901
         }
       }
     },
@@ -107,179 +107,179 @@
       },
       "sigma_1": {
         "(3,)": {
-          "chi_lambda": 1.109978595554181,
+          "chi_lambda": 1.109978582751381,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": 0.06045062867166436
+          "trM_contribution": 0.06045062797441011
         },
         "(2, 1)": {
-          "chi_lambda": 0.20906032198987978,
+          "chi_lambda": 0.20906029879563925,
           "dim_q_lambda": 2.010896866707122,
           "f_lambda": 3,
           "w_lambda": 0.6606737736611729,
-          "trM_contribution": 0.04604022395062459
+          "trM_contribution": 0.046040218842682445
         },
         "(1, 1, 1)": {
-          "chi_lambda": -0.9009182735643012,
+          "chi_lambda": -0.9009182839557418,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": -0.049064978583268644
+          "trM_contribution": -0.049064979149197684
         }
       },
       "sigma_2": {
         "(3,)": {
-          "chi_lambda": 1.109978595554181,
+          "chi_lambda": 1.109978582751381,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": 0.06045062867166436
+          "trM_contribution": 0.06045062797441011
         },
         "(2, 1)": {
-          "chi_lambda": 0.2090603219898794,
+          "chi_lambda": 0.20906029879563937,
           "dim_q_lambda": 2.010896866707122,
           "f_lambda": 3,
           "w_lambda": 0.6606737736611729,
-          "trM_contribution": 0.046040223950624494
+          "trM_contribution": 0.04604021884268247
         },
         "(1, 1, 1)": {
-          "chi_lambda": -0.9009182735643012,
+          "chi_lambda": -0.9009182839557418,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": -0.049064978583268644
+          "trM_contribution": -0.049064979149197684
         }
       },
       "sigma_1_sigma_2": {
         "(3,)": {
-          "chi_lambda": 1.232052482588432,
+          "chi_lambda": 1.2320524541667646,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": 0.0670989039133413
+          "trM_contribution": 0.06709890236546671
         },
         "(2, 1)": {
-          "chi_lambda": -1.0000000000000004,
+          "chi_lambda": -1.0000000000000002,
           "dim_q_lambda": 2.010896866707122,
           "f_lambda": 3,
           "w_lambda": 0.6606737736611729,
-          "trM_contribution": -0.22022459122039106
+          "trM_contribution": -0.22022459122039098
         },
         "(1, 1, 1)": {
-          "chi_lambda": 0.8116537356420811,
+          "chi_lambda": 0.8116537543657586,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": 0.044203535797707805
+          "trM_contribution": 0.044203536817419425
         }
       },
       "sigma_2_sigma_1": {
         "(3,)": {
-          "chi_lambda": 1.232052482588432,
+          "chi_lambda": 1.2320524541667646,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": 0.0670989039133413
+          "trM_contribution": 0.06709890236546671
         },
         "(2, 1)": {
-          "chi_lambda": -1.0000000000000004,
+          "chi_lambda": -1.0000000000000002,
           "dim_q_lambda": 2.010896866707122,
           "f_lambda": 3,
           "w_lambda": 0.6606737736611729,
-          "trM_contribution": -0.22022459122039106
+          "trM_contribution": -0.22022459122039098
         },
         "(1, 1, 1)": {
-          "chi_lambda": 0.8116537356420811,
+          "chi_lambda": 0.8116537543657586,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": 0.044203535797707805
+          "trM_contribution": 0.044203536817419425
         }
       },
       "sigma_1_sigma_2_sigma_1": {
         "(3,)": {
-          "chi_lambda": 1.3675518842725498,
+          "chi_lambda": 1.3675518369513862,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": 0.07447834712895553
+          "trM_contribution": 0.07447834455179404
         },
         "(2, 1)": {
-          "chi_lambda": -3.3306690738754696e-16,
+          "chi_lambda": 1.1102230246251565e-16,
           "dim_q_lambda": 2.010896866707122,
           "f_lambda": 3,
           "w_lambda": 0.6606737736611729,
-          "trM_contribution": -7.334952352846234e-17
+          "trM_contribution": 2.4449841176154114e-17
         },
         "(1, 1, 1)": {
-          "chi_lambda": -0.7312336822466794,
+          "chi_lambda": -0.7312337075494344,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": -0.0398237731563087
+          "trM_contribution": -0.039823774534323966
         }
       },
       "T_3_5": {
         "(3,)": {
-          "chi_lambda": 2.838873499951172,
+          "chi_lambda": 2.8388731725076735,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": 0.15460810548846268
+          "trM_contribution": 0.15460808765553744
         },
         "(2, 1)": {
-          "chi_lambda": -0.9999999999999997,
+          "chi_lambda": -1.0000000000000013,
           "dim_q_lambda": 2.010896866707122,
           "f_lambda": 3,
           "w_lambda": 0.6606737736611729,
-          "trM_contribution": -0.22022459122039087
+          "trM_contribution": -0.22022459122039126
         },
         "(1, 1, 1)": {
-          "chi_lambda": 0.35225239871280084,
+          "chi_lambda": 0.35225243934256906,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.16338322805625743,
-          "trM_contribution": 0.019184044664085752
+          "trM_contribution": 0.01918404687682665
         }
       }
     },
     "H_4": {
       "bare_molecule_b4": {
         "(4,)": {
-          "chi_lambda": 1.3675518842725498,
+          "chi_lambda": 1.3675518369513862,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.03975568224217961,
-          "trM_contribution": 0.018122652720277823
+          "trM_contribution": 0.018122652093182777
         },
         "(3, 1)": {
-          "chi_lambda": -1.1099785955541814,
+          "chi_lambda": -1.1099785827513813,
           "dim_q_lambda": 3.0437062085325217,
           "f_lambda": 3,
           "w_lambda": 0.36830250361300276,
-          "trM_contribution": -0.1362692985664832
+          "trM_contribution": -0.13626929699471543
         },
         "(2, 2)": {
-          "chi_lambda": -3.3306690738754696e-16,
+          "chi_lambda": 1.1102230246251565e-16,
           "dim_q_lambda": 2.0437062085325226,
           "f_lambda": 3,
           "w_lambda": 0.16604895212524615,
-          "trM_contribution": -1.843513698643286e-17
+          "trM_contribution": 6.1450456621442864e-18
         },
         "(2, 1, 1)": {
-          "chi_lambda": 0.9009182735643015,
+          "chi_lambda": 0.900918283955742,
           "dim_q_lambda": 3.0437062085325217,
           "f_lambda": 3,
           "w_lambda": 0.36830250361300276,
-          "trM_contribution": 0.11060348523481213
+          "trM_contribution": 0.1106034865105433
         },
         "(1, 1, 1, 1)": {
-          "chi_lambda": -0.7312336822466794,
+          "chi_lambda": -0.7312337075494344,
           "dim_q_lambda": 1.0,
           "f_lambda": 3,
           "w_lambda": 0.03975568224217961,
-          "trM_contribution": -0.00969023130539264
+          "trM_contribution": -0.00969023164070207
         }
       }
     },
@@ -298,18 +298,18 @@
         3,
         1
       ],
-      "lambda_31_contribution": -0.1362692985664832,
-      "lambda_211_contribution": 0.11060348523481213,
-      "lambda_22_contribution": -1.843513698643286e-17,
-      "total_trM": -0.017233391916785912,
+      "lambda_31_contribution": -0.13626929699471543,
+      "lambda_211_contribution": 0.1106034865105433,
+      "lambda_22_contribution": 6.1450456621442864e-18,
+      "total_trM": -0.017233390031691418,
       "supported": true,
       "reference": "prop:force-carrier-intertwining-correspondence",
       "all_lambdas": {
-        "(4,)": 0.018122652720277823,
-        "(3, 1)": -0.1362692985664832,
-        "(2, 2)": -1.843513698643286e-17,
-        "(2, 1, 1)": 0.11060348523481213,
-        "(1, 1, 1, 1)": -0.00969023130539264
+        "(4,)": 0.018122652093182777,
+        "(3, 1)": -0.13626929699471543,
+        "(2, 2)": 6.1450456621442864e-18,
+        "(2, 1, 1)": 0.1106034865105433,
+        "(1, 1, 1, 1)": -0.00969023164070207
       }
     },
     "alpha_em_identity": {
@@ -331,12 +331,12 @@
       "reference": "rem:bound-state-frobenius-self-dual-channel"
     },
     "closed_form_characters": {
-      "chi_4_eq_q3": false,
-      "chi_31_eq_neg_q": false,
+      "chi_4_eq_q3": true,
+      "chi_31_eq_neg_q": true,
       "chi_22_eq_zero": true,
-      "chi_211_eq_q_inv": false,
-      "chi_1111_eq_neg_qm3": false,
-      "all_match": false,
+      "chi_211_eq_q_inv": true,
+      "chi_1111_eq_neg_qm3": true,
+      "all_match": true,
       "reference": "round-19 task 1 finding"
     },
     "dressed_braid": {
@@ -344,55 +344,55 @@
       "beta_dr": 0.4272578306063122,
       "per_lambda": {
         "(4,)": {
-          "chi_bare": 1.3675518842725498,
-          "chi_no_middle": 1.232052482588432,
-          "chi_dressed": 2.0758798209550293,
+          "chi_bare": 1.3675518369513862,
+          "chi_no_middle": 1.2320524541667646,
+          "chi_dressed": 2.0758797551954054,
           "w_lambda": 0.03975568224217961,
           "f_lambda": 3,
-          "trM_bare": 0.018122652720277823,
-          "trM_dressed": 0.027509339511613617
+          "trM_bare": 0.018122652093182777,
+          "trM_dressed": 0.027509338640174043
         },
         "(3, 1)": {
-          "chi_bare": -1.1099785955541814,
-          "chi_no_middle": -0.7679475174115693,
-          "chi_dressed": -1.585749371124621,
+          "chi_bare": -1.1099785827513813,
+          "chi_no_middle": -0.7679475458332367,
+          "chi_dressed": -1.585749368762059,
           "w_lambda": 0.36830250361300276,
           "f_lambda": 3,
-          "trM_bare": -0.1362692985664832,
-          "trM_dressed": -0.1946784878293142
+          "trM_bare": -0.13626929699471543,
+          "trM_dressed": -0.19467848753926834
         },
         "(2, 2)": {
-          "chi_bare": -3.3306690738754696e-16,
-          "chi_no_middle": 2.043706218230513,
-          "chi_dressed": 0.873189485197799,
+          "chi_bare": 1.1102230246251565e-16,
+          "chi_no_middle": 2.043706208532523,
+          "chi_dressed": 0.8731894810542573,
           "w_lambda": 0.16604895212524615,
           "f_lambda": 3,
-          "trM_bare": -1.843513698643286e-17,
-          "trM_dressed": 0.048330733007959224
+          "trM_bare": 6.1450456621442864e-18,
+          "trM_dressed": 0.04833073277861563
         },
         "(2, 1, 1)": {
-          "chi_bare": 0.9009182735643015,
-          "chi_no_middle": -1.1883462643579195,
-          "chi_dressed": 0.5130361559651216,
+          "chi_bare": 0.900918283955742,
+          "chi_no_middle": -1.1883462456342426,
+          "chi_dressed": 0.5130361757387611,
           "w_lambda": 0.36830250361300276,
           "f_lambda": 3,
-          "trM_bare": 0.11060348523481213,
-          "trM_dressed": 0.0629841668953151
+          "trM_bare": 0.1106034865105433,
+          "trM_dressed": 0.0629841693228754
         },
         "(1, 1, 1, 1)": {
-          "chi_bare": -0.7312336822466794,
-          "chi_no_middle": 0.8116537356420811,
-          "chi_dressed": -0.48172344982462206,
+          "chi_bare": -0.7312337075494344,
+          "chi_no_middle": 0.8116537543657586,
+          "chi_dressed": -0.4817234704935358,
           "w_lambda": 0.03975568224217961,
           "f_lambda": 3,
-          "trM_bare": -0.00969023130539264,
-          "trM_dressed": -0.006383748133278077
+          "trM_bare": -0.00969023164070207,
+          "trM_dressed": -0.006383748407180332
         }
       },
-      "total_trM_dressed": -0.06223799654770436,
-      "force_carrier_bare": -0.025665813331671075,
-      "force_carrier_dressed": -0.13169432093399913,
-      "amplification_ratio": 5.131118162208836,
+      "total_trM_dressed": -0.06223799520478359,
+      "force_carrier_bare": -0.02566581048417213,
+      "force_carrier_dressed": -0.13169431821639294,
+      "amplification_ratio": 5.131118625597567,
       "q_5_at_q0": 5.220441275326898,
       "reference": "round-19 task 2 (dressed Wedderburn)"
     }
