@@ -240,10 +240,11 @@ def bring_color_weighted_linking_weight(
 
     Effect at q₀ (δ ≈ 0.00138):
       - asym term: |δ/3| ≈ 4.6e-4 = 460 ppm asymmetric shift per p / n
-      - sym term:  δ²·(4/9) ≈ 8.4e-7 = 0.84 ppb symmetric m_avg shift
+      - sym term:  δ²·(4/9) ≈ 8.4e-7 = 0.84 ppm = 840 ppb symmetric
+                   m_avg shift (measured 842.8 ppb at q₀)
 
-    The symmetric m_avg shift is ~33000× smaller than the +2.89%
-    (29 kppm) gap recorded in `lambda-scale-absorbed-into-geom-full.md`.
+    The symmetric m_avg shift is ~34000× smaller than the +2.89%
+    (29 kppm = 28900 ppm) gap recorded in `lambda-scale-absorbed-into-geom-full.md`.
     This implementation therefore CONFIRMS that Bring-color-tube
     quark-flavor weighting at H_4 is structurally insufficient to
     close m_avg — consistent with the 5+ refuted routes documented
