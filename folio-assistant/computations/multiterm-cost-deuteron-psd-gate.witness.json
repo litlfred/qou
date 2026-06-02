@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T15:14:12.231055+00:00",
-  "commitSha": "f4386be0c04b0f139d02935ef2408bf838f51448",
+  "computedAt": "2026-06-02T15:46:57.351432+00:00",
+  "commitSha": "05563751272a73fbea4999822fea6d7819cea3cd",
   "assertions": [
     {
       "name": "multiterm_cost_cannot_rescue_6_2",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "multiterm-cost-deuteron-psd-gate",
   "scriptFile": "multiterm_cost_deuteron_psd_gate_probe.py",
-  "scriptHash": "0a887dfad3a0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9f447253b10e",
+  "scriptCommitSha": "e5d247f6d7a29bccbee79d640062635ce2fe6847",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

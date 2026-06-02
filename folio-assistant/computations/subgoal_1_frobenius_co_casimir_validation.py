@@ -39,11 +39,13 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as Q_CANONICAL  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402
+from murnaghan_nakayama import dim_q_lambda  # noqa: E402
 
 set_compute_dps()
 
 q = mp.mpf(str(Q_CANONICAL))
-m_e = mp.mpf("0.51099895000")
+m_e = M_E_MEV
 
 # Documented target values (knot-mass-formula-unified.md §194-198 + §156)
 DOCUMENTED = {
@@ -71,37 +73,15 @@ def partitions(n: int):
     yield from helper(n, n)
 
 
-def hook_lengths(lam: tuple[int, ...]) -> list[int]:
-    """Hook lengths of partition lam."""
-    rows = list(lam)
-    conj = [sum(1 for r in rows if r > c) for c in range(rows[0])]
-    hooks = []
-    for i, row in enumerate(rows):
-        for j in range(row):
-            arm = row - j - 1
-            leg = conj[j] - i - 1
-            hooks.append(arm + leg + 1)
-    return hooks
-
-
-def dim_q(lam: tuple[int, ...]) -> mp.mpf:
-    """Quantum dimension dim_q(λ) = [n]_q! / Π hook (q-deformed)."""
-    n = sum(lam)
-    if n == 0:
-        return mp.mpf(1)
-    denom = q - 1 / q
-    nfac = mp.mpf(1)
-    for k in range(1, n + 1):
-        nfac *= (q ** k - 1 / q ** k) / denom
-    prod_h = mp.mpf(1)
-    for h in hook_lengths(lam):
-        prod_h *= (q ** h - 1 / q ** h) / denom
-    return nfac / prod_h
-
-
 def frobenius_co_casimir(n: int) -> mp.mpf:
-    """Σ_{λ ⊢ n} 1/dim_q(λ) — Frobenius co-Casimir at H_n(q_0)."""
-    return sum((1 / dim_q(lam) for lam in partitions(n)), mp.mpf(0))
+    """Σ_{λ ⊢ n} 1/dim_q(λ) — Frobenius co-Casimir at H_n(q_0).
+
+    Uses the shared `murnaghan_nakayama.dim_q_lambda` (the canonical
+    q-dimension). The documented target values came from a different
+    code path (`probe_term4_conventions.py`), so this remains an
+    independent cross-check while reusing the centralized utility.
+    """
+    return sum((1 / dim_q_lambda(lam, q) for lam in partitions(n)), mp.mpf(0))
 
 
 def main() -> int:

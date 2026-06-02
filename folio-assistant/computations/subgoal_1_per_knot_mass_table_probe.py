@@ -40,24 +40,29 @@ from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
 )
 from q_parameter import Q as Q_CANONICAL  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION,
+    M_T_MEV_VALIDATION, M_HE3_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
 q = mp.mpf(str(Q_CANONICAL))
-m_e = mp.mpf("0.51099895000")
+m_e = M_E_MEV
 hbar_q = 1 - 1 / q
 vol_b3 = 8 * mp.catalan
 lw_FA = linking_weight_family_a(q)
 
-# Atom data: A, Z, N, atlas Vol, CODATA, tr_M (from markov_peel @ q_0)
+# Atom data: A, Z, N, atlas Vol, CODATA (central registry), tr_M (markov_peel @ q_0)
 ATOMS = [
     # (atom, A, Z, N, Vol(K_atom), CODATA_MeV, tr_M_abs)
-    ("p",   1, 1, 0, mp.mpf("7.32772475341775"),  mp.mpf("938.27208816"),   mp.mpf("1.06530614425")),
-    ("n",   1, 0, 1, mp.mpf("7.32772475341775"),  mp.mpf("939.56542052"),   mp.mpf("0.92323322991")),
-    ("D",   2, 1, 1, mp.mpf("4.40083251608"),     mp.mpf("1875.61294257"),  mp.mpf("0.38828642408")),
-    ("T",   3, 1, 2, mp.mpf("8.28631681780"),     mp.mpf("2808.92112585"),  mp.mpf("0.10405210674")),
-    ("3He", 3, 2, 1, mp.mpf("7.32772475341775"),  mp.mpf("2808.39160743"),  mp.mpf("0.20654081702")),
-    ("4He", 4, 2, 2, mp.mpf("29.31089901367"),    mp.mpf("3727.37941060"),  mp.mpf("0.05534833516")),
+    ("p",   1, 1, 0, mp.mpf("7.32772475341775"),  M_P_MEV_VALIDATION,   mp.mpf("1.06530614425")),
+    ("n",   1, 0, 1, mp.mpf("7.32772475341775"),  M_N_MEV_VALIDATION,   mp.mpf("0.92323322991")),
+    ("D",   2, 1, 1, mp.mpf("4.40083251608"),     M_D_MEV_VALIDATION,   mp.mpf("0.38828642408")),
+    ("T",   3, 1, 2, mp.mpf("8.28631681780"),     M_T_MEV_VALIDATION,   mp.mpf("0.10405210674")),
+    ("3He", 3, 2, 1, mp.mpf("7.32772475341775"),  M_HE3_MEV_VALIDATION, mp.mpf("0.20654081702")),
+    ("4He", 4, 2, 2, mp.mpf("29.31089901367"),    M_HE4_MEV_VALIDATION, mp.mpf("0.05534833516")),
 ]
 
 
@@ -87,8 +92,8 @@ def main() -> int:
     m_p_pred = m_e * vol_b3 / hbar_q ** 2 * lw_FA  # H0 proton baseline
 
     for (atom, A, Z, N, vol_K, codata, trM) in ATOMS:
-        # H0: uniform Vol(𝓑₃) · Family A
-        m_H0 = m_e * vol_b3 / hbar_q ** 2 * lw_FA
+        # H0: uniform Vol(𝓑₃) · Family A (loop-invariant; == m_p_pred above)
+        m_H0 = m_p_pred
         # H1: per-atom Vol(K) · Family A
         m_H1 = m_e * vol_K / hbar_q ** 2 * lw_FA
         # H2: A · m_proton
