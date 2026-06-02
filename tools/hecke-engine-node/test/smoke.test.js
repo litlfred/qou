@@ -80,12 +80,14 @@ test("chiLambdaBraid: empty shape returns 1.0", () => {
 
 test("lrCoefficient: Pieri c^[2]_{[1],[1]} = 1", () => {
   const c = heckeNode.lrCoefficient([2], [1], [1]);
-  assert.equal(c, 1n, `lrCoefficient([2],[1],[1]) = ${c}, expected 1n`);
+  // napi-rs maps the Rust i32 return type to Number, not BigInt.
+  // Strict-equal compare against a plain Number literal.
+  assert.equal(c, 1, `lrCoefficient([2],[1],[1]) = ${c}, expected 1`);
 });
 
 test("lrCoefficient: size mismatch returns 0", () => {
   const c = heckeNode.lrCoefficient([3], [2], [2]);
-  assert.equal(c, 0n, `lrCoefficient([3],[2],[2]) = ${c}, expected 0n`);
+  assert.equal(c, 0, `lrCoefficient([3],[2],[2]) = ${c}, expected 0`);
 });
 
 test("trMAtomicMpfr: 3-strand single crossing returns z ≈ 0.4993", () => {

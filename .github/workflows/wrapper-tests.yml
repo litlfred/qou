@@ -68,11 +68,6 @@ jobs:
         with:
           name: hecke-engine-c
           path: tools/hecke-engine-c/
-      - name: Restore artefact layout
-        run: |
-          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
-          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
-          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
       - name: Build smoke binary
         run: |
           cd tools/hecke-engine-c
@@ -96,16 +91,11 @@ jobs:
       - name: Install Octave + system deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y octave liboctave-dev libgmp-dev libmpfr-dev
+          sudo apt-get install -y octave octave-dev libgmp-dev libmpfr-dev
       - uses: actions/download-artifact@v4
         with:
           name: hecke-engine-c
           path: tools/hecke-engine-c/
-      - name: Restore artefact layout
-        run: |
-          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
-          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
-          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
       - name: Build MEX files
         run: cd tools/hecke-engine-octave && make
       - name: Run smoke
@@ -127,11 +117,6 @@ jobs:
         with:
           name: hecke-engine-c
           path: tools/hecke-engine-c/
-      - name: Restore artefact layout
-        run: |
-          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
-          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
-          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
       - uses: julia-actions/setup-julia@v2
         with:
           version: '1.11'
@@ -162,11 +147,6 @@ jobs:
         with:
           name: hecke-engine-c
           path: tools/hecke-engine-c/
-      - name: Restore artefact layout
-        run: |
-          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
-          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
-          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
       - name: Locate GAP root
         id: gaproot
         run: |
@@ -226,8 +206,14 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: tools/hecke-engine-jvm -> target
-      - name: cargo test
-        run: cd tools/hecke-engine-jvm && cargo test --release
+      - name: cargo test + build cdylib
+        # `cargo test` only builds the test harness; uniffi-bindgen needs
+        # the cdylib (target/release/libhecke_engine_jvm.so), so an
+        # explicit `cargo build --release` ensures the .so exists.
+        run: |
+          cd tools/hecke-engine-jvm
+          cargo test --release
+          cargo build --release
       - name: Generate Kotlin bindings
         run: |
           cd tools/hecke-engine-jvm
@@ -304,13 +290,16 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: tools/hecke-engine-r -> target
-      - name: Install rextendr
-        run: Rscript -e 'install.packages("rextendr", repos="https://cloud.r-project.org")'
+      - name: Install rextendr + pkgload
+        # rextendr::document() pulls devtools::document() under the hood
+        # since rextendr 0.4.0; pkgload is the actual loader. Install both
+        # explicitly so neither resolution fails at runtime.
+        run: Rscript -e 'install.packages(c("rextendr", "pkgload", "devtools"), repos="https://cloud.r-project.org")'
       - name: Build + load + smoke
         run: |
           cd tools/hecke-engine-r
           Rscript -e 'rextendr::document(".")'
-          Rscript -e 'devtools::load_all("."); source("tests/smoke.R")'
+          Rscript -e 'pkgload::load_all("."); source("tests/smoke.R")'
 
   # ── 10. SageMath examples smoke ──
   # Runs the vanilla-Python hecke_surface.py demo inside SageMath. The
@@ -330,9 +319,9 @@ jobs:
       - name: Install pyhecke + qou-substrate from local sources
         run: |
           sage -pip install --no-deps \
-            ./tools/qou-substrate/python \
-            ./tools/pyhecke/python \
-            ./tools/witness-schema/python
+            ./tools/qou-substrate \
+            ./tools/pyhecke \
+            ./tools/witness-schema
           sage -pip install pydantic numpy mpmath
       - name: Run hecke_surface.py (vanilla-Python smoke)
         run: |
