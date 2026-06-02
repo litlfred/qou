@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T06:51:41.821768+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "computedAt": "2026-06-02T15:47:18.184961+00:00",
+  "commitSha": "8505acc0e994c29c1cac74618ee88411ce6eca0c",
   "assertions": [
     {
       "name": "all_atoms_satisfy_exterior_algebra_bound",
@@ -52,7 +52,7 @@
         "match_prediction": true,
         "n_avg_crossings": 0,
         "n_branches": 1,
-        "elapsed_seconds": 6.127357482910156e-05,
+        "elapsed_seconds": 5.91278076171875e-05,
         "top_active_partitions": []
       },
       "T": {
@@ -66,7 +66,7 @@
         "match_prediction": true,
         "n_avg_crossings": 0,
         "n_branches": 1,
-        "elapsed_seconds": 0.00010609626770019531,
+        "elapsed_seconds": 0.00010919570922851562,
         "top_active_partitions": []
       },
       "³He": {
@@ -80,7 +80,7 @@
         "match_prediction": true,
         "n_avg_crossings": 0,
         "n_branches": 1,
-        "elapsed_seconds": 0.00010275840759277344,
+        "elapsed_seconds": 0.0001049041748046875,
         "top_active_partitions": []
       }
     }
