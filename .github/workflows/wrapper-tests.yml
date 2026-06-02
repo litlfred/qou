@@ -101,8 +101,12 @@ jobs:
       - name: Run smoke
         run: |
           cd tools/hecke-engine-octave
+          # Add the MEX-files directory (current dir) to Octave's path
+          # using its absolute resolution so it survives the subsequent
+          # `cd test` inside the eval.  The previous `addpath('.')` was
+          # a no-op once `cd test` ran.
           LD_LIBRARY_PATH=../hecke-engine-c/target/release \
-            octave --no-gui --eval "addpath('.'); cd test; smoke"
+            octave --no-gui --eval "addpath(pwd); cd test; smoke"
 
   # ── 4. Julia smoke ──
   julia-smoke:
@@ -142,7 +146,10 @@ jobs:
       - name: Install GAP + system deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y gap autoconf libtool libgmp-dev libmpfr-dev gcc make
+          # `libgap-dev` provides /usr/include/gap/{gap_all.h,…} headers
+          # the kernel extension's HeckeEngine.c #includes.  Without it
+          # `gap` alone installs the runtime only.
+          sudo apt-get install -y gap libgap-dev autoconf libtool libgmp-dev libmpfr-dev gcc make
       - uses: actions/download-artifact@v4
         with:
           name: hecke-engine-c
@@ -215,10 +222,17 @@ jobs:
           cargo test --release
           cargo build --release
       - name: Generate Kotlin bindings
+        # The crate uses UDL-based scaffolding
+        # (`uniffi::include_scaffolding!` in src/lib.rs + build.rs runs
+        # `uniffi::generate_scaffolding(".../hecke_engine_jvm.udl")`).
+        # For UDL crates, uniffi-bindgen's `--library` flag does NOT
+        # work — it only extracts metadata from proc-macro-defined
+        # crates.  Pass the .udl file path directly instead.  See
+        # https://mozilla.github.io/uniffi-rs/0.28/tutorial/foreign_language_bindings.html
         run: |
           cd tools/hecke-engine-jvm
           cargo run --release --bin uniffi-bindgen generate \
-            --library target/release/libhecke_engine_jvm.so \
+            src/hecke_engine_jvm.udl \
             --language kotlin \
             --out-dir bindings/kotlin/
           # Verify Kotlin file produced + has the expected public surface.
@@ -290,15 +304,24 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: tools/hecke-engine-r -> target
-      - name: Install rextendr + pkgload
-        # rextendr::document() pulls devtools::document() under the hood
-        # since rextendr 0.4.0; pkgload is the actual loader. Install both
-        # explicitly so neither resolution fails at runtime.
-        run: Rscript -e 'install.packages(c("rextendr", "pkgload", "devtools"), repos="https://cloud.r-project.org")'
+      - name: Install rextendr + pkgload + roxygen2
+        # Use the Posit Package Manager (RSPM) binary repo set by the
+        # env var above so the install is a binary fetch, not a source
+        # build.  CRAN's noble source repo currently fails on a long
+        # transitive dependency chain for `devtools`
+        # (htmlwidgets → profvis → devtools), so avoid devtools entirely:
+        # roxygen2 covers `document()` with far fewer deps, and
+        # pkgload covers `load_all()` directly.
+        run: Rscript -e 'install.packages(c("rextendr", "pkgload", "roxygen2"))'
       - name: Build + load + smoke
         run: |
           cd tools/hecke-engine-r
-          Rscript -e 'devtools::document(".")'
+          # roxygen2 generates the same NAMESPACE / man/*.Rd files that
+          # devtools::document() would, with a tenth of the dependency
+          # weight.  rextendr 0.4 wants devtools::document() — but the
+          # generated scaffolding is identical, so calling the
+          # underlying roxygenize() directly is equivalent.
+          Rscript -e 'roxygen2::roxygenize(".")'
           Rscript -e 'pkgload::load_all("."); source("tests/smoke.R")'
 
   # ── 10. SageMath examples smoke ──
