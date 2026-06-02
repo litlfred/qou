@@ -625,6 +625,10 @@ const ENV_NAMES: Record<string, string> = {
   lemma: "lemma",
   proposition: "proposition",
   corollary: "corollary",
+  // `algorithmblock` (not `algorithm`) to avoid colliding with the
+  // LaTeX `algorithm` float package used for pseudocode floats in
+  // e.g. atom-knot-mass-derivation.md.
+  algorithm: "algorithmblock",
   conjecture: "conjecture",
   example: "example",
   remark: "remark",
