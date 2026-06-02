@@ -1,0 +1,66 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T19:56:09.241803+00:00",
+  "commitSha": "3f1aa2eeed5b3e342167725efb6e00c0e6a340de",
+  "assertions": [
+    {
+      "name": "at_least_one_categorical_match",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Tiered structural test; default expectation is no clean closure"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "qbeta-residue-categorical-id-probe",
+  "scriptFile": "qbeta_residue_categorical_id_probe.py",
+  "scriptHash": "44c50db80c22",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Tests categorical closed forms for the Q_β simple-pole residue A = 1.804e-15 at u_substrate (Step 1+2 of PR #1727). Three hypothesis families: (1) ℏ_q^N integer powers, (2) b^N·ℏ_q^M products, (3) Q_β · small-q_0-rational ε. Reports tiered PROVED <1ppm / NEAR-MATCH <1% / REFUTED otherwise. NO fits.",
+  "data": {
+    "TARGET_residue_A": "1.80390319636685542631544027695e-15",
+    "n_proved": "0",
+    "n_near_match": "0",
+    "n_refuted": "22",
+    "hyp_hbar_q^12": "value=8.95204459178e-13;tier=REFUTED (4.953e+4 %)",
+    "hyp_hbar_q^13": "value=8.86983940259e-14;tier=REFUTED (4817.0 %)",
+    "hyp_hbar_q^14": "value=8.78838909045e-15;tier=REFUTED (387.2 %)",
+    "hyp_hbar_q^15": "value=8.70768672347e-16;tier=REFUTED (-51.73 %)",
+    "hyp_hbar_q^16": "value=8.62772543337e-17;tier=REFUTED (-95.22 %)",
+    "hyp_hbar_q^17": "value=8.54849841497e-18;tier=REFUTED (-99.53 %)",
+    "hyp_hbar_q^18": "value=8.46999892557e-19;tier=REFUTED (-99.95 %)",
+    "hyp_hbar_q^19": "value=8.39222028438e-20;tier=REFUTED (-100.0 %)",
+    "hyp_hbar_q^20": "value=8.31515587198e-21;tier=REFUTED (-100.0 %)",
+    "hyp_b^9xhbar^14": "value=2.44744750436e-15;tier=REFUTED (35.68 %)",
+    "hyp_b^0xhbar^15": "value=8.70768672347e-16;tier=REFUTED (-51.73 %)",
+    "hyp_b^8xhbar^14": "value=2.8209917604e-15;tier=REFUTED (56.38 %)",
+    "hyp_b^1xhbar^15": "value=7.5546502614e-16;tier=REFUTED (-58.12 %)",
+    "hyp_b^2xhbar^15": "value=6.55429419829e-16;tier=REFUTED (-63.67 %)",
+    "hyp_b^3xhbar^15": "value=5.68640121664e-16;tier=REFUTED (-68.48 %)",
+    "hyp_b^4xhbar^15": "value=4.93343109393e-16;tier=REFUTED (-72.65 %)",
+    "hyp_b^5xhbar^15": "value=4.28016621256e-16;tier=REFUTED (-76.27 %)",
+    "hyp_ε_=_ℏ_q^15": "value=8.70768672347e-16;tier=REFUTED (-62.24 %)",
+    "hyp_ε_=_ℏ_q^14xu": "value=7.48527712014e-17;tier=REFUTED (-96.75 %)",
+    "hyp_ε_=_u^7": "value=3.25154860239e-15;tier=REFUTED (41.02 %)",
+    "hyp_ε_=_u^8_/_b": "value=3.19210588948e-17;tier=REFUTED (-98.62 %)",
+    "hyp_ε_=_u_subst^7xhbar": "value=3.22169015327e-16;tier=REFUTED (-86.03 %)"
+  }
+}
