@@ -121,12 +121,26 @@ def main() -> int:
                     help="exit non-zero if any issues found")
     args = ap.parse_args()
 
-    py_files = sorted(HERE.glob("*.py"))
-    py_files = [
-        p for p in py_files
-        if not p.name.startswith("_")
-        and p.name != "fitted_labelled_canonical_audit.py"
-    ]
+    # Scan all `.py` files in the computations/ tree.  Pre-phase-6-
+    # refactor this script lived at `computations/` so `HERE.glob`
+    # picked up every production script.  Post-refactor, scripts live
+    # in cluster subdirs (probes/, sweeps/, habiro/, etc.) so we
+    # rglob from `HERE.parent` (= computations/) and skip the same
+    # exclusions the path-bridge skips: leading-underscore dirs
+    # (`_deprecated`, `__pycache__`), `script-qa/` sidecars, and this
+    # script itself.  Per Copilot review on PR #1714.
+    SCAN_ROOT = HERE.parent
+    SKIP_DIR_NAMES = {"__pycache__", "script-qa", "data"}
+    def _scan_keep(p: Path) -> bool:
+        if p.name == "fitted_labelled_canonical_audit.py":
+            return False
+        if p.name.startswith("_"):
+            return False
+        if any(part.startswith("_") or part in SKIP_DIR_NAMES
+               for part in p.relative_to(SCAN_ROOT).parts):
+            return False
+        return True
+    py_files = sorted(p for p in SCAN_ROOT.rglob("*.py") if _scan_keep(p))
 
     rows = []
     total_issues = 0
