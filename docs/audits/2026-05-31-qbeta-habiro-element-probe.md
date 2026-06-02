@@ -189,4 +189,4 @@ with `Δa_m` decomposing into a low-degree polynomial generator.
 - Gap plan: [`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`](2026-05-30-qbeta-habiro-derivation-gap-plan.md)
 - Recursive pair-rules + PDE: [`docs/audits/2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md`](2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md)
 - c_3 SETTLED verdict: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](2026-05-31-qbeta-c3-q0-stability-verdict.md)
-- α_EM template (parallel that worked): `folio-assistant/computations/alpha_em_habiro_taylor_investigation.py`
+- α_EM template (parallel that worked): `folio-assistant/computations/alpha/alpha_em_habiro_taylor_investigation.py`

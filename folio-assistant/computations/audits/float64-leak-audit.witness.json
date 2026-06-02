@@ -1196,7 +1196,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/qbeta_c3_jhopf_q0_vs_q1_comparison.py",
+        "path": "folio-assistant/computations/qbeta/qbeta_c3_jhopf_q0_vs_q1_comparison.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -1209,7 +1209,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/qbeta_decay_sdp_extended_ck.py",
+        "path": "folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py",
         "substrate_banner": true,
         "hit_count": 7,
         "violation_count": 0,
@@ -1265,7 +1265,7 @@
         "result": "ok_with_display_or_fp"
       },
       {
-        "path": "folio-assistant/computations/qbeta_decay_sdp_full_ck.py",
+        "path": "folio-assistant/computations/qbeta/qbeta_decay_sdp_full_ck.py",
         "substrate_banner": true,
         "hit_count": 17,
         "violation_count": 2,

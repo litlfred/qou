@@ -545,7 +545,7 @@ of 2026-05-04) **independently derived `α_shift(T_(p,k)) = k(p-1)`**
 for torus-knot interfaces, with maximizer at the column partition
 V_(1^p).  Their files:
 
-- [`alpha_shift_torus.py`](https://github.com/litlfred/qou/blob/copilot/identify-multiplicative-chain/folio-assistant/computations/alpha_shift_torus.py) —
+- [`alpha_shift_torus.py`](https://github.com/litlfred/qou/blob/copilot/identify-multiplicative-chain/folio-assistant/computations/alpha/alpha_shift_torus.py) —
   symbolic seminormal computation of `α_shift(T_(p,k))` for torus
   knots, verified at (p, k) ∈ {(2, 3), (2, 5), (2, 9), (3, 4),
   (3, 5), (3, 7)}.

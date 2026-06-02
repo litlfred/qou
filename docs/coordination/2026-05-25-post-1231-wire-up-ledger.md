@@ -35,7 +35,7 @@
 ### PR [#1238](https://github.com/litlfred/qou/pull/1238) — merged 2026-05-25
 
 **Code:**
-- [`folio-assistant/computations/alpha_k_jones_markov_h4.py`](../../folio-assistant/computations/alpha_k_jones_markov_h4.py) — production H_4 Wedderburn atlas
+- [`folio-assistant/computations/alpha/alpha_k_jones_markov_h4.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h4.py) — production H_4 Wedderburn atlas
 - [`folio-assistant/computations/alpha-k-jones-markov-h4.witness.json`](../../folio-assistant/computations/alpha-k-jones-markov-h4.witness.json) — y_λ at H_4 substrate
 
 **Audits:**

@@ -2,8 +2,8 @@
 
 **Date:** 2026-06-01
 **Branch:** `claude/qbeta-habiro-followup-2026-06-01` (PR #1618)
-**Probe:** [`folio-assistant/computations/qbeta_habiro_phase5q_dn_refactorize.py`](../../folio-assistant/computations/qbeta_habiro_phase5q_dn_refactorize.py)
-**Witness:** [`folio-assistant/computations/qbeta-habiro-phase5q-dn-refactorize.witness.json`](../../folio-assistant/computations/qbeta-habiro-phase5q-dn-refactorize.witness.json)
+**Probe:** [`folio-assistant/computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py)
+**Witness:** [`folio-assistant/computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json`](../../folio-assistant/computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json)
 **Companion:** [`docs/audits/2026-06-01-qbeta-habiro-phi16-phi32-prediction-blocked-convention.md`](2026-06-01-qbeta-habiro-phi16-phi32-prediction-blocked-convention.md) (the convention-blocker audit this resolves)
 
 ## TL;DR

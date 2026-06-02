@@ -16,7 +16,7 @@ implemented in the canonical compute path.
    [`lr_coefficients.py`](../../folio-assistant/computations/lr_coefficients.py)
    (Littlewood-Richardson coefficients) and the cached interface
    operators `A^λ_{ξν}(I)` extracted by
-   [`A_operator_extract_at_level.py`](../../folio-assistant/computations/A_operator_extract_at_level.py).
+   [`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py).
    The plan doc lagged behind the implementation.
 
 2. **The plan's "free baseline" formula is wrong.** Replacing the
@@ -101,6 +101,6 @@ nucleons" should not be implemented using this primitive**.
 - Existing canonical infra:
   [`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py),
   [`lr_coefficients.py`](../../folio-assistant/computations/lr_coefficients.py),
-  [`A_operator_extract_at_level.py`](../../folio-assistant/computations/A_operator_extract_at_level.py).
+  [`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py).
 - Formalized single-K statement:
   [`universal-braid-branching.lean`](../../content/quantum-observable-universe/mass-theory/universal-braid-branching.lean).

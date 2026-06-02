@@ -23,9 +23,9 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/qbeta_silver_ratio_pell_lucas_ck.py",
+    script: "folio-assistant/computations/qbeta/qbeta_silver_ratio_pell_lucas_ck.py",
     witness: [
-      "folio-assistant/computations/qbeta-silver-ratio-pell-lucas-ck.witness.json",
+      "folio-assistant/computations/qbeta/qbeta-silver-ratio-pell-lucas-ck.witness.json",
     ],
     status: "experimental",
   },

@@ -659,7 +659,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/qbeta_1ppq_achieved.py",
+        "path": "folio-assistant/computations/qbeta/qbeta_1ppq_achieved.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
@@ -673,7 +673,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/qbeta_physics.py",
+        "path": "folio-assistant/computations/qbeta/qbeta_physics.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"

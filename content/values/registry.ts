@@ -435,7 +435,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Inverse fine-structure constant 1/α (CODATA).  Canonical witness pending.",
       symbol: "\\alpha^{-1}",
       witnessFile:
-        "folio-assistant/computations/alpha-high-precision.witness.json",
+        "folio-assistant/computations/alpha/alpha-high-precision.witness.json",
       witnessPath: "computation",
       defaultPrecision: 6,
       units: null,

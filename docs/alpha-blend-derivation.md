@@ -1,7 +1,7 @@
 # Alpha-Blend Tower Formula — Formal Derivation
 
 **Status**: derivation documented 2026-04-24.
-**Witness**: `folio-assistant/computations/alpha_blend_tower.py`.
+**Witness**: `folio-assistant/computations/alpha/alpha_blend_tower.py`.
 
 ## 1. Problem statement
 
@@ -916,7 +916,7 @@ with all mass predictions sub-percent:
 
 ## Computational artifacts
 
-- `folio-assistant/computations/alpha_blend_tower.py` — formula + α* root-find
+- `folio-assistant/computations/alpha/alpha_blend_tower.py` — formula + α* root-find
 - `folio-assistant/computations/tower_with_frobenius_fix.py` — Frobenius-only (−13%)
 - `folio-assistant/computations/frobenius_antipode_symmetry.py` — Frobenius antipode probe
 - `folio-assistant/computations/alpha-blend-tower.witness.json` — high-precision α*

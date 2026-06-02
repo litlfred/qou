@@ -150,7 +150,7 @@ S-even subspace of the symmetrised blend, while chirality is
 S-anti-invariant and vanishes under Frobenius symmetrisation. `α*` is
 absorbing what the **chirality term $H_A^2 \Phi_3$** should contribute
 in the full 3-term Wedderburn formula — see
-[`alpha_blend_tower.py:151–193`](../folio-assistant/computations/alpha_blend_tower.py).
+[`alpha_blend_tower.py:151–193`](../folio-assistant/computations/alpha/alpha_blend_tower.py).
 
 There is no closed form for `α*` in the 2-term frame because the
 quantity it patches is structurally outside that frame.
@@ -318,7 +318,7 @@ The original framing — *"PSLQ-falsified at 25 digits in `{1, G, π, 1/π, q₀
 in the 2-term blend)**. PSLQ falsified `α*`, not `α_em`. The correct
 state is:
 
-- **Closed form** ([`alpha_em_pslq_uniqueness.py`](../folio-assistant/computations/alpha_em_pslq_uniqueness.py)):
+- **Closed form** ([`alpha_em_pslq_uniqueness.py`](../folio-assistant/computations/alpha/alpha_em_pslq_uniqueness.py)):
 
   $$\frac{1}{\alpha_{EM}} \;=\; 45 \cdot [3]_q \cdot \bigl(1 + \delta_{CS} + 8q \cdot \delta_{CS}^2\bigr), \qquad \delta_{CS} = \hbar_q^{4} \cdot [5]_q.$$
 
@@ -326,7 +326,7 @@ state is:
   m_μ/m_e is bounded to ~22 ppb, propagating to q_0 → α_em — the
   formula sits inside the q_0-uncertainty band.
 
-- **PSLQ uniqueness** ([`alpha-em-pslq-uniqueness.witness.json`](../folio-assistant/computations/alpha-em-pslq-uniqueness.witness.json), 2026-04-26): no
+- **PSLQ uniqueness** ([`alpha-em-pslq-uniqueness.witness.json`](../folio-assistant/computations/alpha/alpha-em-pslq-uniqueness.witness.json), 2026-04-26): no
   competing integer relation found in 52-element basis at tolerances
   tol_dps ∈ {50, 100, 200}. Above 200 dps PSLQ runs to its precision
   ceiling without finding alternatives.

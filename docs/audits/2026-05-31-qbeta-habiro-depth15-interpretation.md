@@ -5,8 +5,8 @@
 > `Σ_m Δa_m·(u;u)_m = −u^15·(u−1)(u+1)·P_8(u)`.
 >
 > Branch: `claude/brave-mendel-FPxFl` (PR #1579).
-> Probe script: [`folio-assistant/computations/qbeta_habiro_depth15_interpretation.py`](../../folio-assistant/computations/qbeta_habiro_depth15_interpretation.py).
-> Witness: `folio-assistant/computations/qbeta-habiro-depth15-interpretation.witness.json`.
+> Probe script: [`folio-assistant/computations/qbeta/qbeta_habiro_depth15_interpretation.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_depth15_interpretation.py).
+> Witness: `folio-assistant/computations/qbeta/qbeta-habiro-depth15-interpretation.witness.json`.
 
 ## TL;DR
 
@@ -240,8 +240,8 @@ with TWO of the three factors now categorically identified.
 
 ## Files touched
 
-- **NEW:** `folio-assistant/computations/qbeta_habiro_depth15_interpretation.py`
-- **NEW:** `folio-assistant/computations/qbeta-habiro-depth15-interpretation.witness.json`
+- **NEW:** `folio-assistant/computations/qbeta/qbeta_habiro_depth15_interpretation.py`
+- **NEW:** `folio-assistant/computations/qbeta/qbeta-habiro-depth15-interpretation.witness.json`
 - **NEW:** `docs/audits/2026-05-31-qbeta-habiro-depth15-interpretation.md` (this file)
 
 ## Cross-refs
