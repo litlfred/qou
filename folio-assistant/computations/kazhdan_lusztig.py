@@ -157,7 +157,10 @@ def kl_polynomial(x: tuple[int, ...], w: tuple[int, ...]) -> sp.Expr:
         raise NotImplementedError(
             f"kl_polynomial(x, w): n={len(x)} exceeds the closed-form "
             f"rank-≤ 3 cap.  For n ≥ 5 implement the standard KL "
-            f"recursion (Kazhdan-Lusztig 1979 §1.1, Brenti §5.2)."
+            f"recursion (Kazhdan-Lusztig 1979 §1.1, Brenti §5.2). "
+            f"Scaffold IN PROGRESS — see "
+            f"`docs/audits/2026-06-02-kl-recursion-s6-scaffold-design.md` "
+            f"and the `claude/kl-recursion-s6-scaffold-2026-06-02` branch."
         )
     if not bruhat_le(x, w):
         return sp.Integer(0)
