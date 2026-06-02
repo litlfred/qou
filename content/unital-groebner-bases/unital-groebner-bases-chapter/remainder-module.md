@@ -19,4 +19,4 @@ $$
   \tilde{o}(I) := B \setminus \{\mathrm{LM}(h) \mid h \in I\}.
 $$
 
-Clearly $\tilde{O}(I)$ is a free $R$-module.
+$\tilde{O}(I)$ is a free $R$-module.

@@ -1,7 +1,7 @@
 **Remark (recomputed low-isotope mass table after q-Hecke
 character gap closure).** *After 's q-Hecke character
 closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-character-closure))
-and the cherry-picked* $\rho_K$ *refinement infrastructure from
+and the* $\rho_K$ *refinement infrastructure from
 , **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
 *at* $q = q_0$ *now agree to machine epsilon across* $\{p, n, D, T, ^{3}\mathrm{He}\}$:
 

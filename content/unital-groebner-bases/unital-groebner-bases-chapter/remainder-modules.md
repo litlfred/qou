@@ -10,4 +10,4 @@ the set:
 
 $$\widetilde{o}(I) := B \setminus \{\LM(h) \mid h \in I\}$$
 
-Clearly $\widetilde{O}(I)$ is a free $R$-module.
+$\widetilde{O}(I)$ is a free $R$-module.

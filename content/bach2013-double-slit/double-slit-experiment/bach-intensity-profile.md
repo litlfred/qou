@@ -9,7 +9,7 @@ measured fringe spacing.
 $a = 50$ nm, $d = 280$ nm, $\lambda = 50$ pm, $E = 600$ eV.
 
 The digitized data spans $\pm 2.56$ mrad in scattering angle and shows
-five clearly resolved interference maxima consistent with the
+five resolved interference maxima consistent with the
 double-slit geometry.  The central peak is normalized to unity.
 
 The standard Fraunhofer prediction for these parameters is
