@@ -167,14 +167,19 @@ jobs:
         # The pdflatex compile in the paper-pdf job then fails with
         # an undefined-citation error, which is opaque from a content
         # PR's perspective. Fail fast here with an actionable message.
+        #
+        # Ignores the `% Generated:` timestamp line, which differs on
+        # every regen but carries no semantic content.
         run: |
           cd content && bun run pipeline/export-bibtex.ts
           cd ..
-          if ! git diff --exit-code --quiet -- references.bib; then
+          if ! diff -q -I '^% Generated:' \
+               <(git show HEAD:references.bib) references.bib > /dev/null; then
             echo "::error::references.bib is stale: a content/schema/references.ts entry was added/modified without regenerating references.bib. Fix locally with: cd content && bun run export-bibtex && cd .. && git add references.bib && git commit"
             echo ""
-            echo "── Diff (regenerated vs committed) ──"
-            git --no-pager diff -- references.bib | head -40
+            echo "── Diff (regenerated vs committed; '% Generated:' line ignored) ──"
+            diff -u -I '^% Generated:' \
+              <(git show HEAD:references.bib) references.bib | head -40 || true
             exit 1
           fi
           echo "✓ references.bib is in sync with content/schema/references.ts"
