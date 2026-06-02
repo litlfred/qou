@@ -172,8 +172,12 @@ forbidden), the productive directions — **revised in light of the
    `ySchurClosedForm = q^{c(λ)} / [n]_q!`).  A *derived* identification
    of `|content|` with a Hecke-energy density (rather than selection
    from 6 candidates) would upgrade the lead from 20 % near-match to
-   a categorical statement.  This is the productive direction for any
-   next-session probe on this gap.
+   a categorical statement.  **Categorical scoping**:
+   [`2026-06-02-abs-content-hecke-energy-scoping.md`](2026-06-02-abs-content-hecke-energy-scoping.md)
+   — identifies 5 candidate categorical constructions (trace of `|Ω_q|`,
+   arm + leg hook sum, etc.) and pre-states the falsification
+   signatures any derivation must clear.  This is the productive
+   direction for any next-session probe on this gap.
 2. **Wait on PR #1712's PSD-feasibility test at A=2, A=3.** If L_H
    (Hopf) for ²H and 8_11-class for ³H pass PSD-feasibility at q₀,
    that's the binding-link canonical object derived. *Then* extend to
