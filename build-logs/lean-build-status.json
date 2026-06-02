@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T07:34:11Z",
+  "generatedAt": "2026-06-02T18:04:36Z",
   "tool": "scripts/lean-build-all.sh",
   "summary": {
     "passed": 2,
@@ -21,13 +21,13 @@
       "paper": "quantum-observable-universe",
       "target": "QOU",
       "status": "fail",
-      "elapsed_s": 6832,
+      "elapsed_s": 6825,
       "log": "quantum-observable-universe.log",
       "failingModules": [
         "QOU.Torsion.quantum_dilogarithm",
         "QOU.Torsion.skein_generation",
-        "QOU.Torsion.brane_boundary_structure",
         "QOU.Torsion.GlobalGluing",
+        "QOU.Torsion.brane_boundary_structure",
         "QOU.Torsion.HeckeMassElement",
         "QOU.MathlibExt.PosSemidefTraceZero",
         "QOU.HeckeAlgebra.Hoefsmit",
@@ -45,17 +45,17 @@
         "QOU.Archimedean.PauliWitness.Witness10Be",
         "QOU.Archimedean.PauliWitness.Witness9Be",
         "QOU.Archimedean.PauliWitness.Witness10B",
-        "QOU.Archimedean.PauliWitness.Witness9B",
         "QOU.Archimedean.PauliWitness.Witness8Li",
+        "QOU.Archimedean.PauliWitness.Witness9B",
         "QOU.Archimedean.EmCouplingProjection",
         "QOU.Archimedean.TypeBFoldedCrystalCombinatorics",
         "QOU.Interactions.AlgebraicPrimality",
         "QOU.BraidKnot.ShellNeutrality",
         "QOU.Interactions.WedderburnMassFormula",
         "QOU.QuantumObservableUniverse.GaugeTheory",
+        "QOU.Interactions.BringShellBinding",
         "QOU.Archimedean.HeckeRep",
         "QOU.Interactions.HeckeEngine",
-        "QOU.Interactions.BringShellBinding",
         "QOU.BraidKnot.Cl3Zeta5PslqIndependence",
         "QOU.BraidKnot.KnotIndexedConvolutionGrid",
         "QOU.BraidKnot.ThreeCalibrationInputs",
@@ -71,6 +71,7 @@
         "QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed",
         "QOU.BraidKnot.TwoRowStratum",
         "QOU.FlavorDressing",
+        "QOU.BraidKnot.GramSeminormalBlock",
         "QOU.BraidKnot.WitnessR5Full",
         "QOU.BraidKnot.JetTowerUniformDeltaMax",
         "QOU.AppendixSurreals.B1SoftSharpnessTheorem",
@@ -78,9 +79,9 @@
         "QOU.AppendixSurreals.FigureEightCasimirWeight",
         "QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral",
         "QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases",
+        "QOU.QGeometricLanglands",
         "QOU.AlgebraicSubstrate.ConditionalClasses",
         "QOU.LiftingDescent.DirectLimitAlgebra",
-        "QOU.QGeometricLanglands",
         "QOU.AlgebraicSubstrate.SurrealSqueeze",
         "QOU.AppendixSurreals.KComplex",
         "QOU.MassEndomorphism.MassEndomorphismConjecture",
@@ -217,19 +218,19 @@
           "message": "Lean exited with code 1"
         },
         {
-          "file": "QOU/Torsion/brane_boundary_structure.lean",
-          "line": 33,
-          "col": 6,
-          "message": "Unknown identifier `\u2115`"
+          "file": "QOU/Torsion/GlobalGluing.lean",
+          "line": 69,
+          "col": 0,
+          "message": "type of theorem `QOU.Torsion.global_gluing` is not a proposition"
         },
         {
           "message": "Lean exited with code 1"
         },
         {
-          "file": "QOU/Torsion/GlobalGluing.lean",
-          "line": 69,
-          "col": 0,
-          "message": "type of theorem `QOU.Torsion.global_gluing` is not a proposition"
+          "file": "QOU/Torsion/brane_boundary_structure.lean",
+          "line": 33,
+          "col": 6,
+          "message": "Unknown identifier `\u2115`"
         },
         {
           "message": "Lean exited with code 1"
@@ -711,6 +712,21 @@
           "message": "Lean exited with code 1"
         },
         {
+          "file": "QOU/Archimedean/PauliWitness/Witness8Li.lean",
+          "line": 15,
+          "col": 4417,
+          "message": "maximum recursion depth has been reached"
+        },
+        {
+          "file": "QOU/Archimedean/PauliWitness/Witness8Li.lean",
+          "line": 28,
+          "col": 4426,
+          "message": "maximum recursion depth has been reached"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
           "file": "QOU/Archimedean/PauliWitness/Witness9B.lean",
           "line": 15,
           "col": 4319,
@@ -726,21 +742,6 @@
           "file": "QOU/Archimedean/PauliWitness/Witness9B.lean",
           "line": 28,
           "col": 4314,
-          "message": "maximum recursion depth has been reached"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
-          "file": "QOU/Archimedean/PauliWitness/Witness8Li.lean",
-          "line": 15,
-          "col": 4417,
-          "message": "maximum recursion depth has been reached"
-        },
-        {
-          "file": "QOU/Archimedean/PauliWitness/Witness8Li.lean",
-          "line": 28,
-          "col": 4426,
           "message": "maximum recursion depth has been reached"
         },
         {
@@ -1155,6 +1156,27 @@
           "message": "Lean exited with code 1"
         },
         {
+          "file": "QOU/Interactions/BringShellBinding.lean",
+          "line": 93,
+          "col": 17,
+          "message": "Tactic `rcases` failed: `2` is not a free variable"
+        },
+        {
+          "file": "QOU/Interactions/BringShellBinding.lean",
+          "line": 154,
+          "col": 17,
+          "message": "Tactic `rcases` failed: `2` is not a free variable"
+        },
+        {
+          "file": "QOU/Interactions/BringShellBinding.lean",
+          "line": 215,
+          "col": 17,
+          "message": "Tactic `rcases` failed: `2` is not a free variable"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
           "file": "QOU/Archimedean/HeckeRep.lean",
           "line": 115,
           "col": 44,
@@ -1210,27 +1232,6 @@
           "line": 184,
           "col": 82,
           "message": "unsolved goals"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
-          "file": "QOU/Interactions/BringShellBinding.lean",
-          "line": 93,
-          "col": 17,
-          "message": "Tactic `rcases` failed: `2` is not a free variable"
-        },
-        {
-          "file": "QOU/Interactions/BringShellBinding.lean",
-          "line": 154,
-          "col": 17,
-          "message": "Tactic `rcases` failed: `2` is not a free variable"
-        },
-        {
-          "file": "QOU/Interactions/BringShellBinding.lean",
-          "line": 215,
-          "col": 17,
-          "message": "Tactic `rcases` failed: `2` is not a free variable"
         },
         {
           "message": "Lean exited with code 1"
@@ -1537,6 +1538,15 @@
           "message": "Lean exited with code 1"
         },
         {
+          "file": "QOU/BraidKnot/GramSeminormalBlock.lean",
+          "line": 159,
+          "col": 0,
+          "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
           "file": "QOU/BraidKnot/WitnessR5Full.lean",
           "line": 67,
           "col": 2,
@@ -1695,6 +1705,51 @@
           "message": "Lean exited with code 1"
         },
         {
+          "file": "QOU/QGeometricLanglands.lean",
+          "line": 271,
+          "col": 25,
+          "message": "Application type mismatch: The argument"
+        },
+        {
+          "file": "QOU/QGeometricLanglands.lean",
+          "line": 306,
+          "col": 23,
+          "message": "Invalid `\u27e8...\u27e9` notation: The expected type of this term could not be determined"
+        },
+        {
+          "file": "QOU/QGeometricLanglands.lean",
+          "line": 308,
+          "col": 10,
+          "message": "Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce"
+        },
+        {
+          "file": "QOU/QGeometricLanglands.lean",
+          "line": 329,
+          "col": 4,
+          "message": "Type mismatch"
+        },
+        {
+          "file": "QOU/QGeometricLanglands.lean",
+          "line": 342,
+          "col": 4,
+          "message": "omega could not prove the goal:"
+        },
+        {
+          "file": "QOU/QGeometricLanglands.lean",
+          "line": 439,
+          "col": 2,
+          "message": "failed to synthesize"
+        },
+        {
+          "file": "QOU/QGeometricLanglands.lean",
+          "line": 439,
+          "col": 61,
+          "message": "Application type mismatch: The argument"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
           "file": "QOU/AlgebraicSubstrate/ConditionalClasses.lean",
           "line": 104,
           "col": 23,
@@ -1742,51 +1797,6 @@
           "line": 40,
           "col": 64,
           "message": "unexpected identifier; expected 'lemma'"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
-          "file": "QOU/QGeometricLanglands.lean",
-          "line": 271,
-          "col": 25,
-          "message": "Application type mismatch: The argument"
-        },
-        {
-          "file": "QOU/QGeometricLanglands.lean",
-          "line": 306,
-          "col": 23,
-          "message": "Invalid `\u27e8...\u27e9` notation: The expected type of this term could not be determined"
-        },
-        {
-          "file": "QOU/QGeometricLanglands.lean",
-          "line": 308,
-          "col": 10,
-          "message": "Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce"
-        },
-        {
-          "file": "QOU/QGeometricLanglands.lean",
-          "line": 329,
-          "col": 4,
-          "message": "Type mismatch"
-        },
-        {
-          "file": "QOU/QGeometricLanglands.lean",
-          "line": 342,
-          "col": 4,
-          "message": "omega could not prove the goal:"
-        },
-        {
-          "file": "QOU/QGeometricLanglands.lean",
-          "line": 439,
-          "col": 2,
-          "message": "failed to synthesize"
-        },
-        {
-          "file": "QOU/QGeometricLanglands.lean",
-          "line": 439,
-          "col": 61,
-          "message": "Application type mismatch: The argument"
         },
         {
           "message": "Lean exited with code 1"
@@ -2287,7 +2297,7 @@
       "paper": "unital-groebner-bases",
       "target": "UGB",
       "status": "ok",
-      "elapsed_s": 7,
+      "elapsed_s": 8,
       "log": "unital-groebner-bases.log",
       "failingModules": [],
       "errors": [],
