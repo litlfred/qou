@@ -61,11 +61,10 @@ export default chapter({
       title: "Sidecar algorithms",
       label: "sec:mba-sidecars",
       blocks: [
-        // Sidecars land in the next commit:
-        // - mba-sidecar-delta-lambda-closure
-        // - mba-sidecar-ck-truncation-ladder
-        // - mba-sidecar-lp-sdp-dual-emission
-        // - mba-sidecar-witness-json-pipeline
+        "mba-sidecar-delta-lambda-closure",
+        "mba-sidecar-ck-truncation-ladder",
+        "mba-sidecar-lp-sdp-dual-emission",
+        "mba-sidecar-witness-json-pipeline",
       ],
     }),
   ],

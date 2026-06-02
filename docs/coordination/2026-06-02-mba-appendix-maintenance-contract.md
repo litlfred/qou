@@ -76,26 +76,27 @@ derivation PRs) will trigger the contract. No intent comments on the
 
 | Step / Sidecar | alg:-block | Status |
 |----------------|------------|--------|
-| 1 — categorical action | `alg:categorical-action` | not authored |
-| 2 — GS reduction → Hecke NF | `alg:gs-reduce-to-hecke-nf` | not authored |
+| 1 — categorical action | `alg:categorical-action` | ✅ authored (PR #1724) |
+| 2 — GS reduction → Hecke NF | `alg:gs-reduce-to-hecke-nf` | ✅ authored (PR #1724) |
 | 3 — Markov trace | `alg:markov-trace` | ✅ authored (template, PR #1724) |
-| 4 — Bring χ=−6 brane | `alg:bring-brane` | not authored |
-| 5 — Wedderburn decomp | `alg:wedderburn-decomposition` | not authored |
-| 6 — Frobenius pairing + Ψ=S² | `alg:frobenius-pairing` | not authored |
-| 7 — GB filtration | `alg:gb-filtration` | not authored |
-| 8 — Jet-prefix transport | `alg:jet-prefix-transport` | not authored |
-| 9a — mass identity | `alg:mass-identity` | not authored |
-| 9b — per-isotope binding | `alg:per-isotope-binding` | not authored |
-| 10 — confinement SDP | `alg:confinement-sdp` | not authored |
-| 11 — Q_β truncation | `alg:q-beta-truncation` | not authored |
-| Sidecar — Δ_λ closure | `alg:delta-lambda-closure` | not authored |
-| Sidecar — c_k truncation ladder | `alg:ck-truncation-ladder` | not authored |
-| Sidecar — LP/SDP dual emission | `alg:lp-sdp-dual-emission` | not authored |
-| Sidecar — witness-JSON pipeline | `alg:witness-json-pipeline` | not authored |
+| 4 — Bring χ=−6 brane | `alg:bring-brane` | ✅ authored (PR #1724) |
+| 5 — Wedderburn decomp | `alg:wedderburn-decomposition` | ✅ authored (PR #1724) |
+| 6 — Frobenius pairing + Ψ=S² | `alg:frobenius-pairing` | ✅ authored (PR #1724) |
+| 7 — GB filtration | `alg:gb-filtration` | ✅ authored (PR #1724) |
+| 8 — Jet-prefix transport | `alg:jet-prefix-transport` | ✅ authored (PR #1724) |
+| 9a — mass identity | `alg:mass-identity` | ✅ authored (PR #1724) |
+| 9b — per-isotope binding | `alg:per-isotope-binding` | ✅ authored (PR #1724) |
+| 10 — confinement SDP | `alg:confinement-sdp` | ✅ authored (PR #1724) |
+| 11 — Q_β truncation | `alg:q-beta-truncation` | ✅ authored (PR #1724) |
+| Sidecar — Δ_λ closure | `alg:delta-lambda-closure` | ✅ authored (PR #1724) |
+| Sidecar — c_k truncation ladder | `alg:ck-truncation-ladder` | ✅ authored (PR #1724) |
+| Sidecar — LP/SDP dual emission | `alg:lp-sdp-dual-emission` | ✅ authored (PR #1724) |
+| Sidecar — witness-JSON pipeline | `alg:witness-json-pipeline` | ✅ authored (PR #1724) |
 
-Authoring continues on PR #1724. Sibling PRs can either (a) update
-the relevant block in-place once it lands on #1724, or (b) push a
-follow-up commit referencing the merged #1724 block.
+**All 16 blocks authored** (PR #1724 commits 4–9). Sibling PRs
+touching any of the listed scopes should now diff their compute
+against the matching block in the same PR (or post a follow-up
+commit immediately after merge if a sibling lands first).
 
 ## Coordination ledger entries
 

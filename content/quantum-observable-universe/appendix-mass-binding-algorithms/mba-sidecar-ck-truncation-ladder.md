@@ -1,0 +1,72 @@
+**Algorithm ($c_k$ truncation ladder).**
+*Compute the coefficients of the convergent $Q_\beta$ series
+$Q_\beta = Q_{\mathrm{base}} \cdot \prod_{k = 2}^{N} (1 + c_k\, u^k)$
+and report each $c_k$ with its **tiered classification**.*
+
+### Input
+
+- *Target precision $\varepsilon \in \mathbb{R}_{> 0}$.*
+- *Substrate $q_0$ (CAL-2 anchor).*
+
+### Output
+
+- *Truncation order $N \geq \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$.*
+- *Tuple $\{(k, c_k, \mathrm{tier})\}_{k = 2}^{N}$ with tier one
+  of `proved`, `near-match`, or `fitted`.*
+
+### Tier classification (STRICT)
+
+| $k$ | $c_k$ | Tier | Notes |
+|---|---|---|---|
+| 2 | $-1$ | **proved** | Taylor-exact, established |
+| 3 | $-2 = J_{\mathrm{Hopf}}(q = 1)$ | **near-match** | swings $\leq 3.47\%$ at m_p-pin $q_0$ |
+| $\geq 4$ | $q_0$-dependent | **near-match** | N=4→N=5 non-monotonicity is the experimental signature |
+| any | empirical fit | **fitted** | flagged as discipline violation |
+
+*Per CLAUDE.md "Q_β c_k is a TRUNCATION ORDER, not a wire/un-wire
+gate", **never** report tiers as binary wired / dropped — always
+tiered.*
+
+### Algorithm
+
+```
+1. Choose N from target precision.
+2. For k = 2:
+   c_2 = -1   (proved).
+3. For k = 3, …, N:
+   compute c_k from the categorical-precision-ladder formula at q_0;
+   classify as `near-match` if within 5% of a closed-form q=1
+   limit, else as `fitted` and flag for discipline review.
+```
+
+### Correctness conditions
+
+*[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
+establishes the convergent ladder, the truncation-order
+inequality, and the Taylor-exactness of $c_2$.*
+
+### Python API entry point
+
+```python
+from qou_mass import q_beta_ladder
+
+ladder = q_beta_ladder(epsilon=1e-8)
+# returns [(k, c_k, tier)] with N inferred from epsilon
+```
+
+### Witness contract
+
+*Canonical witness:
+[`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json).
+**Must** record each $c_k$ alongside its tier. The Q_β subdir
+ledger ([`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md))
+maintains the flip-flop history table; any wire/un-wire decision
+must update both.*
+
+### Notes
+
+*Permanent fix path is the Q_β Habiro element parallel to
+$\alpha_{\mathrm{EM}}$'s $[2]_q \cdot (1 - h^2 \alpha)$
+(PR #1511). The $c_3$ flip-flop history (six entries as of
+2026-05-31) is the canonical example of why tiered classification
+is mandatory.*
