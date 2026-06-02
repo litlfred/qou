@@ -106,13 +106,29 @@ w = load_witness("binding-reeb-phase-decomposition.witness.json")
 per_atom_theta = w["data"]["per_atom"]
 
 per_atom_y = {}
+# Gate out atoms whose chi witness is `partial: true` — silently zeroing
+# missing y_λ produces a plausible-looking but wrong Σ (per Copilot
+# review on PR #1726 lines 115/142).
+PARTIAL_ATOMS: list[tuple[str, int, int]] = []
 for atom, fname in chi_for.items():
     cw = load_witness(fname)
+    if cw.get("partial", False):
+        n = cw.get("n_partitions", 0)
+        nt = cw.get("n_partitions_total", 0)
+        PARTIAL_ATOMS.append((atom, n, nt))
     y_map = {}
     for entry in cw.get("by_partition", []):
         key = "_".join(str(p) for p in entry["partition"])
         y_map[key] = mp.mpf(entry["y_lambda"])
     per_atom_y[atom] = y_map
+
+ATOMS_FOR_ASSEMBLY = [a for a in chi_for
+                      if a not in {p[0] for p in PARTIAL_ATOMS}]
+if PARTIAL_ATOMS:
+    print("WARNING — partial chi witnesses detected:", file=sys.stderr)
+    for atom, n, nt in PARTIAL_ATOMS:
+        print(f"  {atom}: {n}/{nt} partitions covered  →  "
+              f"assembly SKIPPED (incomplete data)", file=sys.stderr)
 
 
 def theta_rotation(r: mp.mpf) -> mp.mpf:
@@ -133,12 +149,24 @@ def theta_growth(r: mp.mpf) -> mp.mpf:
     return mp.acosh(abs_r)
 
 
-def channel_sum(by_partition: list, y_map: dict, combine_fn) -> mp.mpf:
-    """Σ_λ y_λ · dim_λ · combine_fn(|Δθ_rot|, |Δθ_growth|)."""
+def channel_sum(by_partition: list, y_map: dict, combine_fn,
+                atom_label: str) -> mp.mpf:
+    """Σ_λ y_λ · dim_λ · combine_fn(|Δθ_rot|, |Δθ_growth|).
+
+    Raises KeyError if any partition in by_partition lacks a y_λ entry
+    — silent y_λ = 0 fallbacks hide truncation + drift (per Copilot
+    review on PR #1726).
+    """
     s = mp.mpf(0)
     for row in by_partition:
         key = "_".join(str(p) for p in row["partition"])
-        y = y_map.get(key, mp.mpf(0))
+        if key not in y_map:
+            raise KeyError(
+                f"chi-{atom_label} witness is missing y_λ for partition "
+                f"{key} (θ_λ has this partition; y_λ does not). "
+                f"Regenerate the chi witness or align jet orders."
+            )
+        y = y_map[key]
         dim = row["dim"]
         r_free = mp.mpf(repr(row.get("r_free", 0)))
         r_atom = mp.mpf(repr(row.get("r_atom", 0)))
@@ -172,9 +200,11 @@ results = {}
 for combo_name, combo_fn in combos.items():
     atom_results = {}
     for atom_key in per_atom_theta:
+        if atom_key not in ATOMS_FOR_ASSEMBLY:
+            continue  # skip partial-chi atoms; flagged separately
         bp = per_atom_theta[atom_key].get("by_partition", [])
         y_map = per_atom_y.get(atom_key, {})
-        sigma = channel_sum(bp, y_map, combo_fn)
+        sigma = channel_sum(bp, y_map, combo_fn, atom_key)
         Vol = VOL_K.get(atom_key, mp.mpf(0))
         B_pred = MU_0 * Vol * sigma
         B_exp = B_AME.get(atom_key, mp.mpf(0))
@@ -202,21 +232,27 @@ wb.add_data("substrate_constants", {
 })
 wb.add_data("Vol_per_atom", {k: str(v) for k, v in VOL_K.items()})
 wb.add_data("combination_variants", results)
-# Headline assertion: ⁴He V3 (cosh-of-growth) closes to ≤ 5 % — the
-# closest non-fit ⁴He derivation to date.
-he4_v3_rel_err = mp.mpf(results["V3_cosh_growth_m1"]["4He"]["rel_err"])
-wb.add_assertion(
-    "he4_cosh_growth_within_5pct",
-    computed=float(he4_v3_rel_err * 100),
-    expected=2.7,
-    tolerance=5.0,
-    source=(
-        "⁴He doubly-magic shell closes to +2.7 % under "
-        "B = μ₀ · Vol(2·𝓑₃) · Σ y · dim · (|Δθ_rot| + (cosh(|Δθ_growth|)−1)); "
-        "ZERO FITS; substrate-derived μ₀ + canonical knot volumes + "
-        "Markov-weighted Reeb phase.  Best non-fit ⁴He derivation to date."
-    ),
-)
+# Headline assertion: cosh-growth assembly does NOT close T or ³He at
+# A=3 — the earlier ⁴He +2.7 % claim was INVALIDATED by Copilot review
+# on PR #1726 (⁴He chi witness is partial: true, 24/77 partitions, so
+# y_λ = 0 was silently substituted for 53 partitions).  ⁴He is now
+# gated out of the assembly until the chi witness is regenerated full.
+# The remaining valid result on this assembly is T/³He = +99/+121 %
+# under V1 — still refuted.
+if "3He" in results["V1_rot_plus_growth"]:
+    he3_v1_rel_err = mp.mpf(results["V1_rot_plus_growth"]["3He"]["rel_err"])
+    wb.add_assertion(
+        "he3_v1_rotation_plus_growth_does_not_close",
+        computed=float(he3_v1_rel_err * 100),
+        expected=120.6,
+        tolerance=10.0,
+        source=(
+            "³He sum-of-rotation-plus-growth under μ₀·Vol(Borromean)·"
+            "Σ y·dim·(|Δθ_rot|+|Δθ_growth|) lands at +121 % "
+            "(refuted; full witness, no fit).  Open: explore non-trivial "
+            "combinations + revisit ⁴He once chi-helium-4-h12 is full."
+        ),
+    )
 out_path = wb.save()
 
 print("=" * 72)

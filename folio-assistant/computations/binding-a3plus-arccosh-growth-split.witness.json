@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T19:55:37.563405+00:00",
-  "commitSha": "cbbd9809de47a2430565c0d96d25cbb4c51da62b",
+  "computedAt": "2026-06-02T20:23:38.393821+00:00",
+  "commitSha": "6e2e81c3dd90591a835ae3d0d692a807cba4dfb2",
   "assertions": [
     {
-      "name": "he4_cosh_growth_within_5pct",
-      "computed": 2.7286732803287506,
-      "expected": 2.7,
+      "name": "he3_v1_rotation_plus_growth_does_not_close",
+      "computed": 120.60005037521516,
+      "expected": 120.6,
       "passed": true,
-      "tolerance": 5.0,
-      "source": "⁴He doubly-magic shell closes to +2.7 % under B = μ₀ · Vol(2·𝓑₃) · Σ y · dim · (|Δθ_rot| + (cosh(|Δθ_growth|)−1)); ZERO FITS; substrate-derived μ₀ + canonical knot volumes + Markov-weighted Reeb phase.  Best non-fit ⁴He derivation to date."
+      "tolerance": 10.0,
+      "source": "³He sum-of-rotation-plus-growth under μ₀·Vol(Borromean)·Σ y·dim·(|Δθ_rot|+|Δθ_growth|) lands at +121 % (refuted; full witness, no fit).  Open: explore non-trivial combinations + revisit ⁴He once chi-helium-4-h12 is full."
     }
   ],
   "allPassed": true,
   "durationMs": 11,
   "computation": "binding-a3plus-arccosh-growth-split",
   "scriptFile": "binding_a3plus_arccosh_growth_split.py",
-  "scriptHash": "29d9d743c0ed",
-  "scriptCommitSha": "cbbd9809de47a2430565c0d96d25cbb4c51da62b",
+  "scriptHash": "2a73f79e814e",
+  "scriptCommitSha": "8a1c9f44521f0d9fc86379c5df5d0f431c681873",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,14 +72,6 @@
           "B_AME_MeV": "7.718042999999999999999999999999999999999999999999995488886340188711451",
           "rel_err": "1.206000503752151562135485872653688553783886120478886276810649042241511",
           "closes_within_10pct": false
-        },
-        "4He": {
-          "sigma": "1.375269182322176553456055869442859852717703113871798448172451411448863",
-          "Vol_K_bind": "14.65544950683550424087365623891814577238638998850675414826396991394821",
-          "B_pred_MeV": "32.84309198496912381126828902659969534228503095729491699096817576183119",
-          "B_AME_MeV": "28.29567299999999999999999999999999999999999999999997923505576399924391",
-          "rel_err": "0.1607107554914535452564881219329787753161068463469641133138019960922091",
-          "closes_within_10pct": false
         }
       },
       "V2_sinh_growth": {
@@ -105,14 +97,6 @@
           "B_pred_MeV": "17.46054295442292347190304336207570979452474363034836643026312883589392",
           "B_AME_MeV": "7.718042999999999999999999999999999999999999999999995488886340188711451",
           "rel_err": "1.262301849629876831717968319440006980334878107098959753886303214114637",
-          "closes_within_10pct": false
-        },
-        "4He": {
-          "sigma": "1.39936364956115406811219319966330001038447610839015499406773546669628",
-          "Vol_K_bind": "14.65544950683550424087365623891814577238638998850675414826396991394821",
-          "B_pred_MeV": "33.41849701405759031685114994816986308093426921118782561618198159055032",
-          "B_AME_MeV": "28.29567299999999999999999999999999999999999999999997923505576399924391",
-          "rel_err": "0.1810461979136382554622803970122874646216850615706454531242434632306224",
           "closes_within_10pct": false
         }
       },
@@ -140,14 +124,6 @@
           "B_AME_MeV": "7.718042999999999999999999999999999999999999999999995488886340188711451",
           "rel_err": "0.8626859172602894495932465629572429930800917011561581595108605979291628",
           "closes_within_10pct": false
-        },
-        "4He": {
-          "sigma": "1.21718160906901328439043712610402633354428292878824918158500970185338",
-          "Vol_K_bind": "14.65544950683550424087365623891814577238638998850675414826396991394821",
-          "B_pred_MeV": "29.06776946864019657736941979955514589922296354825726658159059924684934",
-          "B_AME_MeV": "28.29567299999999999999999999999999999999999999999997923505576399924391",
-          "rel_err": "0.0272867328032875053853435399665222982758870428088877021282483823771593",
-          "closes_within_10pct": true
         }
       }
     }

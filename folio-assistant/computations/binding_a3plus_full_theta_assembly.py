@@ -109,8 +109,17 @@ chi_witness_for_atom = {
     "4He": "chi-helium-4-h12-at-q0-50dps.witness.json",
 }
 y_lambda_per_atom: dict[str, dict[str, mp.mpf]] = {}
+# Atoms whose chi witness is marked `partial: true` cannot be assembled —
+# silently zeroing missing y_λ produces a plausible-looking but wrong Σ
+# (per Copilot review on PR #1726 lines 119/138).  Track which atoms
+# are gated out so the witness records the exclusion explicitly.
+PARTIAL_ATOMS: list[tuple[str, int, int]] = []
 for atom_key, fname in chi_witness_for_atom.items():
     chi_w = load_witness(fname)
+    if chi_w.get("partial", False):
+        n = chi_w.get("n_partitions", 0)
+        nt = chi_w.get("n_partitions_total", 0)
+        PARTIAL_ATOMS.append((atom_key, n, nt))
     by_part = chi_w.get("by_partition", [])
     y_map: dict[str, mp.mpf] = {}
     for entry in by_part:
@@ -118,11 +127,21 @@ for atom_key, fname in chi_witness_for_atom.items():
         y_map[part_key] = mp.mpf(entry["y_lambda"])
     y_lambda_per_atom[atom_key] = y_map
 
+ATOMS_FOR_ASSEMBLY = [a for a in chi_witness_for_atom
+                      if a not in {p[0] for p in PARTIAL_ATOMS}]
+if PARTIAL_ATOMS:
+    print("WARNING — partial chi witnesses detected:", file=sys.stderr)
+    for atom_key, n, nt in PARTIAL_ATOMS:
+        print(f"  {atom_key}: {n}/{nt} partitions covered  →  "
+              f"assembly SKIPPED (incomplete data)", file=sys.stderr)
+
 # ── Compute the rotation-phase-lead sum Σ y_λ · dim_λ · |Δθ_λ| ───
 # (carries both rotation and growth channels — by_partition contains
 # both, classified via `channel_free` / `channel_atom`.)
 per_atom_sums = {}
 for atom_key, atom_data in per_atom.items():
+    if atom_key not in ATOMS_FOR_ASSEMBLY:
+        continue  # skip partial-chi atoms; flagged separately
     bp = atom_data.get("by_partition", [])
     sum_full = mp.mpf(0)
     sum_rotation_only = mp.mpf(0)
@@ -134,26 +153,30 @@ for atom_key, atom_data in per_atom.items():
         part_key = "_".join(str(p) for p in row["partition"])
         y_lam = y_map.get(part_key)
         if y_lam is None:
-            # Partition not in y_λ witness; skip with warning marker.
-            y_lam = mp.mpf(0)
-        # Handle channel_flip cases where delta_theta_rad is None.
+            # Per Copilot review: missing y_λ for an atom whose chi
+            # witness is supposed to be complete is a hard error —
+            # silent y_λ = 0 hides truncation + drift.
+            raise KeyError(
+                f"chi-{atom_key} witness is missing y_λ for partition "
+                f"{part_key} (θ_λ has this partition; y_λ does not). "
+                f"Either the chi witness is incomplete (regenerate) or "
+                f"the θ_λ + chi witnesses are at different jet orders."
+            )
+        # Use the witness's pre-computed theta_*_rad strings for
+        # channel-flip cases — taking abs(r) breaks rotation-channel
+        # sign per Copilot review (e.g. ⁴He partition [9,2,1] has
+        # r_atom < 0 → witness θ_atom = acos(r_atom) ≠ acos(|r_atom|)).
         dtheta_raw = row.get("delta_theta_rad")
         if dtheta_raw is None:
-            # Channel-flip: rotation ↔ growth. For full-order θ_λ,
-            # combine arccos (rotation side) with arccosh (growth
-            # side) into a complex/magnitude form. Conservative: use
-            # |Δθ| = |θ_atom − θ_free| where the missing piece is
-            # taken from `r_free` / `r_atom` magnitudes directly.
-            r_free = abs(mp.mpf(repr(row.get("r_free", 0))))
-            r_atom = abs(mp.mpf(repr(row.get("r_atom", 0))))
-            # Free / atom phases via |r| → arccos for |r|≤1 else arccosh.
-            def theta_of(r: mp.mpf) -> mp.mpf:
-                if r <= 1:
-                    return mp.acos(r)
-                return mp.acosh(r)  # imaginary part magnitude
-            theta_free = theta_of(r_free)
-            theta_atom = theta_of(r_atom)
-            delta_theta = theta_atom - theta_free
+            theta_free_raw = row.get("theta_free_rad")
+            theta_atom_raw = row.get("theta_atom_rad")
+            if theta_free_raw is None or theta_atom_raw is None:
+                raise ValueError(
+                    f"chi-{atom_key} partition {part_key}: channel-flip "
+                    f"row missing both delta_theta_rad AND "
+                    f"theta_free_rad/theta_atom_rad — cannot recover Δθ."
+                )
+            delta_theta = mp.mpf(theta_atom_raw) - mp.mpf(theta_free_raw)
         else:
             delta_theta = mp.mpf(dtheta_raw)
         abs_delta_theta = abs(delta_theta)
@@ -206,7 +229,9 @@ try:
         "3He": VOL_BORROMEAN_MPF,           # L6a4 = Borromean
         "4He": 2 * VOL_BORROMEAN_MPF,       # provisional (doubly-magic)
     }
-except Exception:
+except ImportError:
+    # Narrow the fallback to ImportError so genuine runtime errors in
+    # substrate.knot_volumes surface (per Copilot review on PR #1726).
     # Fallback constants from binding_link_volumes.py docstring.
     VOL_K = {
         "D":   mp.mpf("7.3277248"),
@@ -236,6 +261,8 @@ for rho_name, rho in rho_candidates.items():
     for atom_key in per_atom:
         if atom_key not in B_AME:
             continue
+        if atom_key not in per_atom_sums:
+            continue  # partial chi witness; skipped
         sum_S = mp.mpf(per_atom_sums[atom_key]["sum_y_dim_abs_dtheta"])
         B_pred = rho * sum_S
         B_exp = B_AME[atom_key]
@@ -312,21 +339,29 @@ wb.add_data("per_atom_sums", per_atom_sums)
 wb.add_data("rho_candidate_tests", results)
 wb.add_data("rho_candidate_tests_volume_scaled", volume_scaled_results)
 wb.add_data("volume_per_atom", {k: str(v) for k, v in VOL_K.items()})
-# Record the closest non-fit result so far as an informational
-# assertion (10% rel_err target marks "close"; the actual values are
-# +17%/+39%/-26% — informational, not a pass/fail gate).
-he3_vol_mu0 = mp.mpf(volume_scaled_results["rho_v2_mu_0"]["per_atom"]["3He"]["rel_err"])
-wb.add_assertion(
-    "he3_volume_scaled_mu0_rel_err_under_25pct",
-    computed=float(he3_vol_mu0 * 100),
-    expected=17.4,
-    tolerance=10.0,
-    source=(
-        "Best non-fit A≥3 derivation to date: μ₀ · Vol(L6a4) · "
-        "Σ y · dim · |Δθ| lands ³He at +17.4 % (no fit). Companion "
-        "binding_a3plus_arccosh_growth_split.py refines ⁴He to +2.7 %."
-    ),
-)
+wb.add_data("partial_atoms_excluded", [
+    {"atom": a, "n_partitions": n, "n_partitions_total": nt}
+    for a, n, nt in PARTIAL_ATOMS
+])
+# Closest non-fit A≥3 result so far (informational assertion).  ⁴He is
+# gated out because its chi witness is partial (24/77); the earlier
+# +2.7 % claim was INVALIDATED by Copilot review and retracted.
+if "3He" in volume_scaled_results["rho_v2_mu_0"]["per_atom"]:
+    he3_vol_mu0 = mp.mpf(
+        volume_scaled_results["rho_v2_mu_0"]["per_atom"]["3He"]["rel_err"]
+    )
+    wb.add_assertion(
+        "he3_volume_scaled_mu0_rel_err_under_25pct",
+        computed=float(he3_vol_mu0 * 100),
+        expected=17.4,
+        tolerance=10.0,
+        source=(
+            "Best non-fit A≥3 derivation at this resolution: μ₀ · "
+            "Vol(L6a4) · Σ y · dim · |Δθ| lands ³He at +17.4 % (no fit; "
+            "complete chi witness).  ⁴He gated out — chi witness is "
+            "partial (24/77); previous +2.7 % claim retracted."
+        ),
+    )
 out_path = wb.save()
 
 print("=" * 72)
