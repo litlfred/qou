@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T18:17:25.114394+00:00",
-  "commitSha": "18ac6def75acf693c516f28e4a8e625e698c5307",
+  "computedAt": "2026-06-02T05:26:49.950104+00:00",
+  "commitSha": "fe1566b974fc7e9a5b50206e615238e7756c3196",
   "assertions": [
     {
       "name": "no_missing_labels",
@@ -36,13 +36,13 @@
   "description": "I5 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json with a `contentBlock` field is cross-checked against the union of all `label: \"...\"` declarations in content/**/*.ts manifests. Reports `ok` / `missing_label` / `informational_label` per field. Operationalises the 9-hit I5 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_fields_audited": 305,
-    "registered_labels_count": 2883
+    "total_fields_audited": 306,
+    "registered_labels_count": 2890
   },
   "data": {
     "by_result": {
       "informational_label": 14,
-      "ok": 248,
+      "ok": 249,
       "missing_label": 43
     },
     "rows": [
@@ -1329,6 +1329,11 @@
       {
         "witness": "folio-assistant/computations/qbeta-habiro-zeta8-categorical-witness.witness.json",
         "content_block_value": "prop:full-pole-structure-mass-trace",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-li2q-imaginary-quantization.witness.json",
+        "content_block_value": "prop:mass-endomorphism-tower",
         "result": "ok"
       },
       {
