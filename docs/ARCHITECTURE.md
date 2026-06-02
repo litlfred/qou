@@ -101,6 +101,46 @@ Two scripts keep this section honest:
 - [`scripts/audit-library-coherence.sh`](../scripts/audit-library-coherence.sh) — re-counts importers and flags any *new* zero-import library packages (relative to its `KNOWN_EXTERNAL_ONLY` snapshot). `--strict` mode exits non-zero so it can gate CI; `--json` mode emits a dashboard-friendly payload.
 - [`scripts/smoke-test-libraries.sh`](../scripts/smoke-test-libraries.sh) — exercises each library's advertised public API from outside its own test suite, so the alpha / zero-import packages (`qou-mass`, `witness-schema`) have a callable verification path that catches API breakage without developers remembering to cd into the package and run `pytest`.
 
+## Two axes of organisation — domain vs. workflow
+
+Code in this repository is organised along **two orthogonal axes**. Conflating them is the most common source of confusion for new contributors and downstream-language reviewers, so this section makes the split explicit.
+
+### Axis A — Domain modules (mirrors across the entire stack)
+
+Names of mathematical primitives — `gram`, `seminormal`, `wenzl-lr`, `laurent`, `wedderburn`, `markov-trace`, `gb-nf-reducer`, `sdp-*`, `lp-dual`, … — appear under the same name in every package that exposes them, regardless of language:
+
+| Layer | Where the domain modules live |
+|---|---|
+| Rust core | `tools/hecke-engine/src/{gram,seminormal,wenzl_lr,laurent_*,gb_nf_reducer,sdp_*,…}.rs` (34 flat files) |
+| Python library | `tools/pyhecke/python/pyhecke/{gram,trace,wedderburn,partition,tower,sdp,lp_dual_solver,…}.py` (20 modules) |
+| Python substrate | `tools/qou-substrate/python/qou_substrate/{constants,precision,witness}.py` (3 modules) |
+| Python in-repo substrate | `folio-assistant/computations/substrate/{q_parameter,witness_base,_precision,hecke_core,…}.py` (11 modules) |
+| Python facade | `qou-mass/src/qou_mass/{api,prediction}.py` + `_internal/` |
+| Thin-binding crates | `tools/pyhecke-native/src/lib.rs`, `tools/hecke-engine-{wasm,node,r,jvm,c}/src/lib.rs` (single-file re-export shims, 132-1155 lines each) |
+
+This axis is **identity-preserving**: `pyhecke.gram` calls `pyhecke_native::gram` which calls `hecke_engine::gram`. The name travels unchanged. Add a primitive in the Rust core → it surfaces under the same name in every binding.
+
+### Axis B — Workflow clusters (in-repo only; do NOT mirror to libraries)
+
+Names of research-script categories — `probes/`, `audits/`, `sweeps/`, `phase5/`, `habiro/`, `markov/`, `qbeta/`, `alpha/`, `a_operator/` — only exist inside `folio-assistant/computations/`:
+
+| Cluster | What lives there |
+|---|---|
+| `probes/` | Self-contained verification scripts (no CLI args; emit exactly one `<slug>.witness.json` on success) |
+| `audits/` | Scripts that walk a tree and emit a structural / coverage report |
+| `sweeps/` | Scripts that iterate over an isotope / partition / parameter range |
+| `phase5/`, `habiro/`, `markov/`, `qbeta/`, `alpha/`, `a_operator/` | Domain-research clusters (Phase-5 evidence, Habiro-element series, Markov-trace pipelines, Q_β / α-EM / α-cluster derivations, A-operator extracts) |
+| `substrate/` | The 11 substrate modules above — the only cluster that overlaps Axis A |
+
+The published libraries (`pyhecke`, `hecke-engine`, the 5 thin-binding crates, `qou-mass`, `qou-substrate`, `witness-schema`) have **no** notion of "a probe" or "an audit". They expose primitive operations (`gram_matrix`, `markov_trace`, `wedderburn_weight`, …) that probes/audits/sweeps are *built from*. Forcing the workflow cluster names into a library API would harm the library's design without simplifying anything downstream.
+
+The substrate cluster is the **only** in-repo cluster whose contents map 1-to-1 to a library — because the substrate modules ARE the library primitives, and the cluster was carved out specifically to make that mirroring explicit.
+
+### Rule of thumb when adding code
+
+- **Adding a new mathematical primitive** (a new Hecke operation, a new Markov-trace variant, a new SDP backend) → Axis A. Add it to `tools/hecke-engine/src/`, surface it in `tools/pyhecke/`, optionally re-export through `pyhecke-native` / the WASM / Node bindings. Same name everywhere.
+- **Adding a new research script** (a probe to test a conjecture, an audit to check a discipline, a sweep over a new parameter family) → Axis B. Drop it into the matching `folio-assistant/computations/<cluster>/` subdirectory. The cluster name is for filesystem organisation only; the script's logic lives entirely inside `folio-assistant/computations/` and is not exposed by any published library.
+
 ## Content-object architecture
 
 Each definition / theorem / lemma / proposition / corollary / remark / conjecture is a file triple:
