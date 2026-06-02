@@ -1986,6 +1986,36 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:70 — archimedean Real.* in categorical chapter — (1 / Complex.ofReal (Real.sqrt 5)) * ∑ j : Fin 5, ζ ^ (k.val * j.val) * x j"
+      },
+      {
+        "field_hash": {
+          "ts": "ef6c0dbf9455",
+          "md": "41215535d687",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-06-02T05:50:07Z",
+        "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
+        "notes": "Author dispensation. The `Real.sqrt 5` at line 70 is the **cyclotomic normalisation** of the 5th-root-of-unity Lagrange resolvent (`(1/√5) * Σ ζ^(k·j) * x_j` is the standard discrete Fourier kernel over ℤ/5). The √5 is an algebraic-integer norm of ℚ(ζ_5)/ℚ — categorical content of the cyclotomic-field decomposition — NOT an archimedean evaluation at the substrate q_0. The q-usage detector regex catches `Real.sqrt` without knowing the radicand is a small concrete integer. Block remains categorical; the resolvent is a fixed Hecke-algebra construction independent of the substrate parameter."
+      },
+      {
+        "field_hash": {
+          "ts": "ef6c0dbf9455",
+          "md": "41215535d687",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-06-02T05:50:07Z",
+        "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
+        "notes": "Author dispensation. The `Real.sqrt 5` at line 70 is the **cyclotomic normalisation** of the 5th-root-of-unity Lagrange resolvent (`(1/√5) * Σ ζ^(k·j) * x_j` is the standard discrete Fourier kernel over ℤ/5). The √5 is an algebraic-integer norm of ℚ(ζ_5)/ℚ — categorical content of the cyclotomic-field decomposition — NOT an archimedean evaluation at the substrate q_0. The q-usage detector regex catches `Real.sqrt` without knowing the radicand is a small concrete integer. Block remains categorical; the resolvent is a fixed Hecke-algebra construction independent of the substrate parameter."
       }
     ],
     "q-usage-positivity-implicit": [
