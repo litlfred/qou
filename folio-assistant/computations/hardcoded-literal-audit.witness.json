@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:33:42.889479+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "computedAt": "2026-06-02T15:21:34.205468+00:00",
+  "commitSha": "9ddff153b85254efcd272efa9858274aa0c410d5",
   "assertions": [
     {
       "name": "no_hardcoded_registry_matches",
@@ -39,13 +39,13 @@
     "registry_constants_in_scope": 26,
     "relative_error_tolerance": "1e-6",
     "magnitude_window_MeV": "[0.0001, 1e6]",
-    "total_scripts_with_hits": 202,
-    "i9_violation_count": 187,
+    "total_scripts_with_hits": 203,
+    "i9_violation_count": 188,
     "ok_acknowledged_anchor_count": 15
   },
   "data": {
     "by_result": {
-      "i9_violation": 187,
+      "i9_violation": 188,
       "ok_acknowledged_anchor": 15
     },
     "rows": [
@@ -5250,6 +5250,31 @@
             "registry_value": "2.224566",
             "rel_err": "0.0",
             "snippet": "B_D_AME_MEV = mpf(\"2.224566\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/option_e_probe1_derive_1plusq_over_2.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 19,
+            "literal": "139.57039",
+            "matches_constant": "M_PI_PM_MEV_VALIDATION",
+            "registry_value": "139.57039",
+            "rel_err": "0.0",
+            "snippet": "M_PI_MEV = mp.mpf(\"139.57039\")"
+          },
+          {
+            "line_number": 23,
+            "literal": "8.481798",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "0.0",
+            "snippet": "AME = {\"T\": mp.mpf(\"8.481798\"), \"3He\": mp.mpf(\"7.71806\")}"
           }
         ],
         "has_class_a_banner": false,
