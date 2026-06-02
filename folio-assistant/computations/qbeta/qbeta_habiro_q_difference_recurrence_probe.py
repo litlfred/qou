@@ -13,7 +13,7 @@ q-difference recurrence
     or         a_{k+1}(q²) = G_k(q) · a_k(q)  (q-Frobenius action)
 
 where G_k(q) is a polynomial in q. The SDP-extracted c_k values
-(`qbeta-decay-sdp-extended-ck.witness.json`, c_2..c_9 at 50 dps)
+(`qbeta-decay-sdp-extended-ck.witness.json`, c_2..c_10 at 50 dps)
 are archimedean evaluations at q_0. If the underlying F(q) has a
 clean q-difference structure, the c_k should satisfy *some* linear
 recurrence with q_0-evaluated polynomial coefficients.
@@ -23,8 +23,13 @@ This probe:
   2. Tests three candidate fibre-level structures:
      (a) Simple ratio test: r_k = c_{k+1} / c_k — does r_k follow a
          pattern consistent with G_k(q_0)?
-     (b) PSLQ test for a 2-term linear recurrence with q_0-polynomial
-         coefficients: c_{k+1} = α(q_0) · c_k + β(q_0)
+     (b) 2-term homogeneous linear-recurrence test with constant
+         q_0-evaluated coefficients: c_{n+1} = α · c_n + β · c_{n-1}.
+         Solved per (n−1, n, n+1, n+2) triple via 2×2 `lu_solve`
+         (mpmath); reports α/β spread across triples — constant
+         spread = recurrence holds, large spread = refutation.
+         (Note: not a PSLQ-style integer-relation search, despite
+         legacy naming in the implementation; renamed below.)
      (c) Logarithmic-derivative test: u · d/du log F(u) — if F is
          meromorphic with a clean pole structure, this should
          simplify.
@@ -80,7 +85,7 @@ u = b * hbar_q ** 2        # Q_β precision-ladder variable
 
 
 def load_ck_data() -> dict[int, mp.mpf]:
-    """Load c_2..c_9 at 50 dps from the SDP extraction witness.
+    """Load c_2..c_10 at 50 dps from the SDP extraction witness.
 
     HERE = folio-assistant/computations/qbeta — so the sibling
     witness lives at HERE / "qbeta-decay-sdp-extended-ck.witness.json"
@@ -132,15 +137,23 @@ def test_ratio_pattern(ck: dict[int, mp.mpf]) -> dict:
 
 
 def test_pslq_recurrence(ck: dict[int, mp.mpf]) -> dict:
-    """Test (b) 2-term recurrence c_{k+1} = α(q_0) · c_k + β(q_0).
+    """Test (b): 2-term **homogeneous** linear recurrence with constant
+    coefficients: ``c_{n+1} = α · c_n + β · c_{n-1}``.
 
-    For each (k, k+1, k+2) triple, solve for α, β:
-       [c_{k+1}, c_k]   [α]   [c_{k+2}]
-       [c_k,   c_{k-1}] [β] = [c_{k+1}]
-    Then check whether α, β are recognizable q_0-polynomial values
-    (e.g. integer multiples of 1, h, u, b²).
+    For each (n−1, n, n+1, n+2) triple, solve for constants α, β via
+    a 2×2 linear system (mpmath ``lu_solve``, not PSLQ — the legacy
+    ``pslq_2term_recurrence`` name in `out["name"]` is preserved for
+    witness-key continuity but does NOT involve PSLQ / integer-
+    relation detection):
+
+        [c_n,    c_{n-1}]   [α]   [c_{n+1}]
+        [c_{n+1}, c_n   ]   [β] = [c_{n+2}]
+
+    Then report α-spread and β-spread across triples — if both spreads
+    are < 1 %, a constant-coefficient recurrence holds. Otherwise it
+    is refuted.
     """
-    out = {"name": "pslq_2term_recurrence"}
+    out = {"name": "pslq_2term_recurrence"}  # legacy key, see docstring
     ks = sorted(ck.keys())
     if len(ks) < 4:
         out["note"] = "need >=4 c_k values for 2-term recurrence test"
@@ -242,7 +255,7 @@ def main() -> int:
     w = WitnessBuilder("qbeta-habiro-q-difference-recurrence-probe", engine="mpmath")
     w.set_description(
         "Topic 1 of PR #1713 / PR #1698 follow-up: tests whether the "
-        "SDP-extracted Q_β c_k (c_2..c_9, 50 dps) satisfy a fibre-level "
+        "SDP-extracted Q_β c_k (c_2..c_10, 50 dps) satisfy a fibre-level "
         "q-difference recurrence. Three candidates: (a) ratio pattern, "
         "(b) 2-term linear recurrence c_{k+1} = α·c_k + β·c_{k-1} with "
         "constant α/β, (c) log F partial sums for clean-closed-form "
@@ -257,7 +270,10 @@ def main() -> int:
             w.add_data(f"rec_{k}", str(v))
     for k, v in lf.items():
         if k != "name":
-            w.add_data(f"log_{k}", str(v))
+            # Per Copilot #1713 review: avoid the `log_log_F_N=2`
+            # double-prefix that arose when source keys already start
+            # with "log_". Just pass the source key through.
+            w.add_data(k, str(v))
 
     # Pass/fail assertion: recurrence either holds within 1% or not
     recur_holds = rec.get("recurrence_holds_within_1pct", False)
