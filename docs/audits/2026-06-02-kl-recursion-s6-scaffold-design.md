@@ -9,17 +9,19 @@ direction surfaced by PR #1516's cheap-pass refutation).
 
 [`folio-assistant/computations/kazhdan_lusztig.py`](../../folio-assistant/computations/kazhdan_lusztig.py)
 is currently capped at **n ≤ 4** (Coxeter rank ≤ 3).  The cap is
-*intentional* and theoretically grounded: at rank ≤ 3, Brenti
-(*Combinatorics of Coxeter Groups* §5.1) shows every Kazhdan–Lusztig
-polynomial `P_{x,w}(q) = 1` for `x ≤ w` in Bruhat order, so the
-canonical basis element `C_w` admits a closed form
+NOT theoretically grounded — Brenti (*Combinatorics of Coxeter
+Groups* §5.1) shows every Kazhdan–Lusztig polynomial
+`P_{x,w}(q) = 1` only at **rank ≤ 2** (dihedral groups, i.e.
+n ≤ 3).  S_4 (rank 3) already has the famous
 
-  C_w = q^{-ℓ(w)/2} · Σ_{x ≤ w} q^{ℓ(x)} · T_x        (rank ≤ 3)
+  P_{e, (3,4,1,2)}(q) = 1 + q
 
-The first non-trivial `P_{x,w}` appears at rank 4 (= S_5), so the
-current implementation explicitly raises `NotImplementedError` for
-`n ≥ 5`, pointing to K-L 1979 §1.1 + Brenti §5.2 for the deferred
-recursion.
+as the minimal non-trivial KL polynomial in any symmetric group
+("3412" example).  The existing closed-form code's "rank ≤ 3"
+applicability claim at n ≤ 4 is a latent bug — it returns 1 in
+6 Bruhat pairs at S_4 that should be `1 + q`.  This scaffold
+fixes the bug by routing **n ≥ 4** through the full Kazhdan-Lusztig
+recursion (K-L 1979 §1.1 + Brenti §5.2).
 
 ## Why now: PR #1516 PROBE 4 verdict
 
