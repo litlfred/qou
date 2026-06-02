@@ -1,19 +1,10 @@
 {
-  "criterion": "voice-author-notes-pollution",
-  "description": "Detects author-tracking content (status banners, PR/commit refs, agent names, ISO dates) in .md scholarly prose that belongs in the .ts authorNotes field per CLAUDE.md §4d.",
-  "categories": {
-    "P1": "Status banners (> **Status:, > **Caveat, etc.)",
-    "P2": "PR/commit references (PR #NNN, commit abc1234)",
-    "P3": "Agent/model name mentions (Claude, Copilot, Gemini)",
-    "P4": "ISO date references (2026-05-27 etc. in prose)"
-  },
-  "severity": "warn",
-  "automated": true,
-  "script": "content/pipeline/qa-checkers-voice.ts",
-  "function": "checkAuthorNotesPollution",
-  "added": "2026-05-27",
-  "reviewer_types": {
-    "script": "Automated lexical scan — conservative, prefers false-positive",
-    "agent": "Agent review — semantic analysis, can override script false-positives. Recorded with agent identity (model, session, date) for multi-reviewer tracking."
-  }
+  "$schema": "qa-script/v1",
+  "criterion_id": "voice-author-notes-pollution",
+  "source_file": "content/pipeline/qa-checkers-extended.ts",
+  "script_hash": "8055e5864896",
+  "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
+  "last_run_at": "2026-06-02T19:35:52.628Z",
+  "last_run_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
+  "engine_version": "bun-1.3.11"
 }
