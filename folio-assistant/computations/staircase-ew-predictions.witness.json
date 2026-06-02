@@ -1,8 +1,8 @@
 {
   "engine": "sympy+numpy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T17:18:00.901352+00:00",
-  "commitSha": "c3fc7c9c26831d36f4a071ea4b443a02dc27f69a",
+  "computedAt": "2026-06-02T17:04:30.706083+00:00",
+  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
   "assertions": [
     {
       "name": "rho3_corrected_err_lt_0p5pct",
@@ -57,7 +57,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 44123,
+  "durationMs": 44268,
   "computation": "staircase-ew-predictions",
   "scriptFile": "staircase_ew_predictions.py",
   "scriptHash": "18b0513ae11f",
