@@ -46,8 +46,8 @@ simple reflection):
 For `w` with right descent `s` (i.e. `ws < w`), let
 
   c(x, w; s) :=
-    P_{xs, ws}(q)          if xs > x
-    P_{xs, ws}(q) + q · P_{x, ws}(q)   if xs < x
+    q · P_{xs, ws}(q) + P_{x, ws}(q)   if xs > x  (c=0)
+    P_{xs, ws}(q) + q · P_{x, ws}(q)   if xs < x  (c=1)
 
 Then
 
