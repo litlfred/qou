@@ -39,7 +39,9 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent.parent / "tools" / "pyhecke" / "python"))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()  # canonical compute precision per qou_substrate.precision
 
 from gram_matrix_seminormal_n import (  # noqa: E402
     gram_matrix_seminormal_block,
@@ -83,6 +85,17 @@ def matrix_for_word(sigma_k_at_q: list[np.ndarray], word_1based: list[int],
 
 
 def main() -> None:
+    # Witness builder created up front so durationMs measures actual
+    # solve/reassembly time, not just JSON serialisation.
+    w = WitnessBuilder(name="option-e-phase1-h3-cross-check", engine="python")
+    w.set_description(
+        "Option E Phase 1 cross-check: verify that the per-block "
+        "Hoefsmit-seminormal data from `gram_matrix_seminormal_block` "
+        "reassembles to the published H_3 NF-basis 6×6 Gram from "
+        "pyhecke.gram via the Wedderburn isomorphism "
+        "tr_M(b_i·b_j) = Σ_λ y_λ · tr(ρ_λ(b_i)·ρ_λ(b_j))."
+    )
+
     print("=" * 78)
     print(f"Option E Phase 1 — H_3 NF-basis Gram cross-check at q_0 = {Q0_F64:.10f}")
     print("=" * 78)
@@ -147,21 +160,17 @@ def main() -> None:
                   f"{G_published[i,j]:>+22.15e}  "
                   f"{residual[i,j]:>10.2e}")
     print()
+    # Tolerance: 1 ppQ (10⁻¹⁵) per CLAUDE.md §Precision goals L1 floor
+    # and the Phase-1 scope-doc acceptance criterion. Actual residual at
+    # H_3 is 2.22e-16 (float64 epsilon) — well below the gate.
+    PPQ = 1e-15
     print(f"  Max |Δ| = {max_resid:.2e}")
     print(f"  RMS Δ  = {rms_resid:.2e}")
-    print(f"  Verdict: {'✓ PASS' if max_resid < 1e-10 else '✗ FAIL'}  "
-          f"(threshold 1e-10)")
+    print(f"  Verdict: {'✓ PASS' if max_resid < PPQ else '✗ FAIL'}  "
+          f"(threshold {PPQ:.0e} = 1 ppQ)")
     print()
 
-    # Witness
-    w = WitnessBuilder(name="option-e-phase1-h3-cross-check", engine="python")
-    w.set_description(
-        "Option E Phase 1 cross-check: verify that the per-block "
-        "Hoefsmit-seminormal data from `gram_matrix_seminormal_block` "
-        "reassembles to the published H_3 NF-basis 6×6 Gram from "
-        "pyhecke.gram via the Wedderburn isomorphism "
-        "tr_M(b_i·b_j) = Σ_λ y_λ · tr(ρ_λ(b_i)·ρ_λ(b_j))."
-    )
+    # Witness assembly (builder created at top of main for durationMs accuracy)
     w.add_data("q_0", Q0_F64)
     w.add_data("nf_basis_names", list(NF_NAMES))
     w.add_data("y_lambda_solved",
@@ -173,19 +182,19 @@ def main() -> None:
         "h3_nf_gram_reassembly_max_residual",
         computed=max_resid,
         expected=0.0,
-        tolerance=1e-10,
-        source="Σ_λ y_λ · tr(ρ_λ(b_i)·ρ_λ(b_j)) == tr_M(b_i·b_j) for all i,j ∈ NF basis",
+        tolerance=PPQ,
+        source="Σ_λ y_λ · tr(ρ_λ(b_i)·ρ_λ(b_j)) == tr_M(b_i·b_j) for all i,j ∈ NF basis; 1 ppQ gate",
     )
     w.add_assertion(
         "h3_nf_gram_reassembly_rms_residual",
         computed=rms_resid,
         expected=0.0,
-        tolerance=1e-10,
-        source="RMS over 36 NF Gram entries",
+        tolerance=PPQ,
+        source="RMS over 36 NF Gram entries; 1 ppQ gate",
     )
     w.save()
     print("Witness saved: option-e-phase1-h3-cross-check.witness.json")
-    sys.exit(0 if max_resid < 1e-10 else 1)
+    sys.exit(0 if max_resid < PPQ else 1)
 
 
 if __name__ == "__main__":

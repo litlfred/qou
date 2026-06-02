@@ -57,7 +57,9 @@ from sympy.utilities.iterables import partitions as _sp_partitions
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()  # canonical compute precision per qou_substrate.precision
 
 from hecke_character_symbolic import (  # noqa: E402
     _hoefsmit_build,
@@ -149,6 +151,41 @@ def per_block_data(n: int, q_sym: sp.Symbol, q_val: float) -> dict[tuple, dict]:
 
         residual = abs(chi_direct - chi_chain)
 
+        # Per-block det/cond telemetry (real part; imag is float-noise zero)
+        import numpy as _np
+        def _np_real(M):
+            return _np.array([[v.real for v in row] for row in M], dtype=_np.float64)
+
+        sigma_k_dets = [float(_np.linalg.det(_np_real(M))) for M in sigma_k_at_q0]
+        sigma_k_conds = [
+            (float(_np.linalg.cond(_np_real(M))) if dim > 1 else 1.0)
+            for M in sigma_k_at_q0
+        ]
+        w0_arr = _np_real(w0_at_q0)
+        w0_det = float(_np.linalg.det(w0_arr))
+        w0_cond = float(_np.linalg.cond(w0_arr)) if dim > 1 else 1.0
+
+        # q → 1 classical-limit check (recorded as data, not asserted).
+        # The Hoefsmit-seminormal construction has axial-distance
+        # denominators `1 − q⁻²ρ` that vanish at q=1, so the direct
+        # evaluation at q=1 yields 0/0 NaN. The genuine classical limit
+        # exists via L'Hôpital (equals the classical Frobenius character
+        # on the cycle type of w_0), but recovering it requires a basis
+        # change to Young's natural / orthogonal form — out of scope for
+        # this Phase 1 deliverable. Reported as data here for transparency:
+        # a future phase should replace this with a symbolic L'Hôpital or
+        # natural-form evaluation.
+        try:
+            chi_at_q_eq_1_sym = q_character_on_braid_word(
+                shape_t, crossings, sp.Integer(1)
+            )
+            chi_at_q_eq_1_val = complex(chi_at_q_eq_1_sym.evalf())
+            chi_at_q_eq_1 = (chi_at_q_eq_1_val.real
+                             if chi_at_q_eq_1_val.real == chi_at_q_eq_1_val.real
+                             else None)  # NaN check
+        except (ZeroDivisionError, TypeError):
+            chi_at_q_eq_1 = None
+
         out[shape_t] = {
             "dim": dim,
             "n_syts": len(syts),
@@ -158,12 +195,29 @@ def per_block_data(n: int, q_sym: sp.Symbol, q_val: float) -> dict[tuple, dict]:
             "chi_lambda_w0_direct": chi_direct.real,
             "chi_lambda_w0_via_chain": chi_chain.real,
             "cross_check_residual": residual,
+            "chi_lambda_w0_at_q_eq_1": chi_at_q_eq_1,
+            "sigma_k_dets": sigma_k_dets,
+            "sigma_k_conds": sigma_k_conds,
+            "w0_det": w0_det,
+            "w0_cond": w0_cond,
             "w0_word": word_w0_1based,
         }
     return out
 
 
 def main() -> None:
+    # Witness builder created up front so durationMs measures the
+    # actual per-block symbolic compute, not just JSON assembly.
+    w = WitnessBuilder(name="option-e-phase1-gram-h6", engine="python")
+    w.set_description(
+        "Option E Phase 1: per-block Hoefsmit-seminormal σ_k matrices "
+        "and longest-word matrix ρ_λ(w_0) for each partition λ ⊢ n "
+        "(n ∈ {3, 6}) at substrate q_0. Per-block χ_λ(w_0) verified "
+        "by cross-checking direct matrix-product trace vs canonical "
+        "chain-rule computation. Within-block representation data "
+        "needed by Option E Phase 2 (canonical-basis trace ρ_w(K))."
+    )
+
     print("=" * 78)
     print("Option E Phase 1 — Hoefsmit-seminormal per-block ρ_λ at H_6")
     print("=" * 78)
@@ -214,16 +268,7 @@ def main() -> None:
             "passed": max_resid < 1e-6,
         }
 
-    # Witness
-    w = WitnessBuilder(name="option-e-phase1-gram-h6", engine="python")
-    w.set_description(
-        "Option E Phase 1: per-block Hoefsmit-seminormal σ_k matrices "
-        "and longest-word matrix ρ_λ(w_0) for each partition λ ⊢ n "
-        "(n ∈ {3, 6}) at substrate q_0. Per-block χ_λ(w_0) verified "
-        "by cross-checking direct matrix-product trace vs canonical "
-        "chain-rule computation. Within-block representation data "
-        "needed by Option E Phase 2 (canonical-basis trace ρ_w(K))."
-    )
+    # Witness assembly (builder created at top of main for durationMs accuracy)
     w.add_data("q_0_f64", Q0_F64)
     w.add_data("q_0_50dps", str(Q0_MP))
     w.add_data("h3", results[3])

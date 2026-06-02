@@ -1,32 +1,32 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T05:58:36.593980+00:00",
-  "commitSha": "56a138b87282a6ee14f70ef27e77c2b108ea9f38",
+  "computedAt": "2026-06-02T06:36:34.559021+00:00",
+  "commitSha": "5d80bf9a735374582966d53ef493dcfd2187d1cc",
   "assertions": [
     {
       "name": "h3_nf_gram_reassembly_max_residual",
       "computed": 2.220446049250313e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
-      "source": "Σ_λ y_λ · tr(ρ_λ(b_i)·ρ_λ(b_j)) == tr_M(b_i·b_j) for all i,j ∈ NF basis"
+      "tolerance": 1e-15,
+      "source": "Σ_λ y_λ · tr(ρ_λ(b_i)·ρ_λ(b_j)) == tr_M(b_i·b_j) for all i,j ∈ NF basis; 1 ppQ gate"
     },
     {
       "name": "h3_nf_gram_reassembly_rms_residual",
       "computed": 1.1387681191624302e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
-      "source": "RMS over 36 NF Gram entries"
+      "tolerance": 1e-15,
+      "source": "RMS over 36 NF Gram entries; 1 ppQ gate"
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 79,
   "computation": "option-e-phase1-h3-cross-check",
   "scriptFile": "option_e_phase1_h3_cross_check.py",
-  "scriptHash": "2208cf9420f0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "91fe47e7f12d",
+  "scriptCommitSha": "51b300b16a0b8430bd57c6eebb8a0f9575661b6f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
