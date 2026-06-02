@@ -101,13 +101,13 @@ Two scripts keep this section honest:
 - [`scripts/audit-library-coherence.sh`](../scripts/audit-library-coherence.sh) — re-counts importers and flags any *new* zero-import library packages (relative to its `KNOWN_EXTERNAL_ONLY` snapshot). `--strict` mode exits non-zero so it can gate CI; `--json` mode emits a dashboard-friendly payload.
 - [`scripts/smoke-test-libraries.sh`](../scripts/smoke-test-libraries.sh) — exercises each library's advertised public API from outside its own test suite, so the alpha / zero-import packages (`qou-mass`, `witness-schema`) have a callable verification path that catches API breakage without developers remembering to cd into the package and run `pytest`.
 
-## Two axes of organisation — domain vs. workflow
+## Two axes of organisation: domain vs. workflow
 
 Code in this repository is organised along **two orthogonal axes**. Conflating them is the most common source of confusion for new contributors and downstream-language reviewers, so this section makes the split explicit.
 
 ### Axis A — Domain modules (mirrors across the entire stack)
 
-Names of mathematical primitives — `gram`, `seminormal`, `wenzl-lr`, `laurent`, `wedderburn`, `markov-trace`, `gb-nf-reducer`, `sdp-*`, `lp-dual`, … — appear under the same name in every package that exposes them, regardless of language:
+Names of mathematical primitives — `gram`, `seminormal`, `wenzl-lr`, `laurent`, `wedderburn`, `markov-trace`, `gb-nf-reducer`, `sdp-*`, `lp-dual`, … — appear under the same conceptual name in every package that exposes them. **The conceptual identity is preserved across the stack; language-specific filename conventions still apply** — e.g. the conceptual `markov-trace` primitive lands as `trace.rs` / `trace.py`, and `lp-dual` lands as `lp_dual_solver.py` (Python snake_case + a `_solver` suffix making the role explicit). The mapping is mechanical, not aspirational.
 
 | Layer | Where the domain modules live |
 |---|---|
