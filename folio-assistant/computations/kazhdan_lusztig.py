@@ -146,25 +146,46 @@ def bruhat_le(x: tuple[int, ...], w: tuple[int, ...]) -> bool:
 def kl_polynomial(x: tuple[int, ...], w: tuple[int, ...]) -> sp.Expr:
     """Kazhdan–Lusztig polynomial ``P_{x, w}(q)``.
 
-    For ``n = len(x) = len(w) ≤ 4`` (Coxeter rank ≤ 3) every
-    ``P_{x, w}`` is the constant polynomial ``1`` whenever
-    ``x ≤ w`` and ``0`` otherwise.  This module enforces that
-    bound; ``n ≥ 5`` will need the full Kazhdan–Lusztig recursion.
+    The closed-form ``P_{x, w} = 1 for all x ≤ w`` holds only at
+    **Coxeter rank ≤ 2** (dihedral groups, i.e. ``S_n`` for n ≤ 3).
+    The famous "3412" example shows ``P_{e, (3,4,1,2)}(q) = 1 + q``
+    is already non-trivial at S_4 (rank 3); see e.g. Bjorner-Brenti
+    §5.1 (the lattice of non-trivial KL polynomials in low rank).
+
+    Implementation:
+
+    - ``n ≤ 3``: closed-form (``P = 1`` whenever ``x ≤ w``).
+    - ``n ≥ 4``: route to the K-L 1979 §1.1 recursion via
+      :func:`kl_polynomial_recursive`.
+    - Cap raised to ``n ≤ 6`` (covers the deuteron H_6 PROBE 4
+      need); ``n ≥ 7`` raises ``NotImplementedError`` until the
+      recursion is optimised (sympy at S_7 takes hours).
+
+    Historical note: prior to this branch, the closed form was
+    incorrectly applied at n=4, returning ``1`` for 6 Bruhat pairs
+    that should have been ``1 + q``. Fixed by routing through the
+    recursion.
     """
     if len(x) != len(w):
         raise ValueError(f"length mismatch: |x|={len(x)} vs |w|={len(w)}")
-    if len(x) > 4:
+    n = len(x)
+    if n > 6:
         raise NotImplementedError(
-            f"kl_polynomial(x, w): n={len(x)} exceeds the closed-form "
-            f"rank-≤ 3 cap.  For n ≥ 5 implement the standard KL "
-            f"recursion (Kazhdan-Lusztig 1979 §1.1, Brenti §5.2). "
-            f"Scaffold IN PROGRESS — see "
-            f"`docs/audits/2026-06-02-kl-recursion-s6-scaffold-design.md` "
-            f"and the `claude/kl-recursion-s6-scaffold-2026-06-02` branch."
+            f"kl_polynomial(x, w): n={n} exceeds the current "
+            f"recursion cap (n ≤ 6).  The pure-Python sympy "
+            f"recursion at n ≥ 7 is slow (hours for S_7, days for "
+            f"S_8); deferred to a follow-up (C/Rust port or external "
+            f"Sage/Magma backend).  Tracking: "
+            f"`docs/audits/2026-06-02-kl-recursion-s6-scaffold-design.md`."
         )
     if not bruhat_le(x, w):
         return sp.Integer(0)
-    return sp.Integer(1)
+    if n <= 3:
+        # Coxeter rank ≤ 2 closed form: every Bruhat-comparable
+        # pair has P_{x, w} = 1 (Brenti §5.1 for dihedral groups).
+        return sp.Integer(1)
+    # n ∈ {4, 5, 6}: route to the full K-L recursion.
+    return kl_polynomial_recursive(x, w)
 
 
 # ── Memoized Kazhdan–Lusztig recursion (K-L 1979 §1.1) ────────────
@@ -310,20 +331,25 @@ def canonical_basis_C_w(w: tuple[int, ...]) -> SymbolicHeckeElement:
 
         C_w  =  q^{-ℓ(w)/2}  ∑_{x ≤ w}  P_{x, w}(q)·q^{ℓ(x)}  T_x
 
-    For ``n ≤ 4`` (rank ≤ 3) every ``P_{x, w} = 1``, so this
-    collapses to the closed form
+    At ``n ≤ 3`` (Coxeter rank ≤ 2 = dihedral), every ``P_{x, w} = 1``
+    so this collapses to the closed form
 
         C_w  =  q^{-ℓ(w)/2}  ∑_{x ≤ w}  q^{ℓ(x)}  T_x.
+
+    At ``n ≥ 4`` the KL polynomials are non-trivial (P_{e, 3412} = 1+q
+    is the famous minimal example in S_4); the per-``x`` coefficient
+    is computed via :func:`kl_polynomial`.
 
     The ``T_x`` words are produced via ``reduced_word(x)``; any
     reduced expression yields the same ``T_x`` because the braid
     relations are quotiented in ``H_n``.
     """
     n = len(w)
-    if n > 4:
+    if n > 6:
         raise NotImplementedError(
-            f"canonical_basis_C_w: n={n} exceeds the rank-≤3 closed "
-            f"form; need full KL polynomial recursion for n ≥ 5."
+            f"canonical_basis_C_w: n={n} exceeds the current KL-"
+            f"recursion cap (n ≤ 6).  See kl_polynomial() for the "
+            f"S_7+ deferral rationale."
         )
     lw = length(w)
     q_neg_half_lw = q ** sp.Rational(-lw, 2)
@@ -332,7 +358,8 @@ def canonical_basis_C_w(w: tuple[int, ...]) -> SymbolicHeckeElement:
         if not bruhat_le(x, w):
             continue
         lx = length(x)
-        coeff = sp.expand(q_neg_half_lw * q ** lx)
+        P_xw = kl_polynomial(x, w)
+        coeff = sp.expand(q_neg_half_lw * P_xw * q ** lx)
         word = reduced_word(x)
         terms[word] = sp.expand(terms.get(word, sp.S.Zero) + coeff)
     return SymbolicHeckeElement(terms)
@@ -356,9 +383,10 @@ def C_basis_to_T_basis(
     """Convert an element written in the C-basis ``{C_w : w ∈ S_n}``
     to the T-basis.  ``coeffs`` is ``{perm: coefficient_in_q}``.
     """
-    if n > 4:
+    if n > 6:
         raise NotImplementedError(
-            f"C_basis_to_T_basis: n={n} exceeds rank-≤3 cap."
+            f"C_basis_to_T_basis: n={n} exceeds the current KL-"
+            f"recursion cap (n ≤ 6)."
         )
     out = SymbolicHeckeElement.zero()
     for w_perm, c in coeffs.items():
@@ -375,13 +403,17 @@ def T_basis_to_C_basis(
     ``{perm: coefficient_in_q}``.
 
     Because the C-basis is upper-triangular in Bruhat order with
-    diagonal coefficient ``q^{-ℓ(w)/2}`` (and KL ≡ 1 at rank ≤ 3),
-    we can solve by back-substitution top-down (longest perms
-    first).
+    diagonal coefficient ``q^{ℓ(w)/2}`` (which holds for any KL
+    polynomial values since ``P_{w, w} = 1`` always), we can solve
+    by back-substitution top-down (longest perms first).  The
+    non-trivial KL polynomials at n ≥ 4 affect off-diagonal entries
+    only; the diagonal stays ``q^{ℓ(w)/2}`` and the back-substitution
+    remains well-defined.
     """
-    if n > 4:
+    if n > 6:
         raise NotImplementedError(
-            f"T_basis_to_C_basis: n={n} exceeds rank-≤3 cap."
+            f"T_basis_to_C_basis: n={n} exceeds the current KL-"
+            f"recursion cap (n ≤ 6)."
         )
     word_of: dict[tuple[int, ...], tuple[int, ...]] = _T_basis_index(n)
     perm_of_word: dict[tuple[int, ...], tuple[int, ...]] = {
