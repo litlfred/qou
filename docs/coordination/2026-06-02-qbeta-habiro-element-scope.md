@@ -10,7 +10,7 @@ Per CLAUDE.md "Precision goals" + the L2 100× shared-root audit (`docs/audits/2
 
 - `u = b · ℏ_q² ≈ 0.00852` — Q_β precision-ladder variable.
 - `c_2 = -1` — **PROVED Taylor-exact**.
-- `c_3 = -2 = J_Hopf(q=1)` — **NEAR-MATCH at q_0** (up to 3.47 % cross-anchor swing); 4-session flip-flop history settled 2026-05-31 as fibre-vs-observable Im(q) distinction (CLAUDE.md §"Critical framing").
+- `c_3 = -2 = J_Hopf(q=1)` — **NEAR-MATCH at q_0** (2.98 % cross-anchor swing between q_proton and q_muon; up to 3.47 % displacement at the m_p-anchor q_0 alone per CLAUDE.md §"Q_β c_k truncation order"); 4-session flip-flop history settled 2026-05-31 as fibre-vs-observable Im(q) distinction (CLAUDE.md §"Critical framing").
 - `c_4 - c_7` — **OPEN**, blocked on the Habiro element identification.
 
 ## What the open question actually is
@@ -23,7 +23,7 @@ So Topic 1 is: **find the fibre-level Habiro element `F(q) ∈ Habiro ring` whos
 
 ## Categorical reuse from sibling #1521 (α_em Habiro element)
 
-PR #1521 (open) closed the **categorical identification** question for the **α_em Habiro element**:
+PR #1521 (open, not yet merged) **proposes** the **categorical identification** for the **α_em Habiro element**:
 
 | α_em piece | categorical structure |
 |---|---|

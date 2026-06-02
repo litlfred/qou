@@ -80,11 +80,20 @@ u = b * hbar_q ** 2        # Q_β precision-ladder variable
 
 
 def load_ck_data() -> dict[int, mp.mpf]:
-    """Load c_2..c_9 at 50 dps from the SDP extraction witness."""
-    path = HERE / "qbeta" / "qbeta-decay-sdp-extended-ck.witness.json"
+    """Load c_2..c_9 at 50 dps from the SDP extraction witness.
+
+    HERE = folio-assistant/computations/qbeta — so the sibling
+    witness lives at HERE / "qbeta-decay-sdp-extended-ck.witness.json"
+    primarily. Fall back to a nested ../qbeta/ path only if the
+    parent layout ever flips (Gemini #1713 review: prior code had
+    the order reversed). Uses `with` for clean file-descriptor
+    closure.
+    """
+    path = HERE / "qbeta-decay-sdp-extended-ck.witness.json"
     if not path.exists():
-        path = HERE / "qbeta-decay-sdp-extended-ck.witness.json"
-    d = json.load(path.open())
+        path = HERE.parent / "qbeta" / "qbeta-decay-sdp-extended-ck.witness.json"
+    with path.open() as f:
+        d = json.load(f)
     raw = d["data"]["c_k_extracted_50dps"]
     return {int(k.split("_")[1]): mp.mpf(str(v)) for k, v in raw.items()}
 
