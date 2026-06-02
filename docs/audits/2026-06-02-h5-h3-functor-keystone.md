@@ -14,8 +14,8 @@ restriction.
 [`h5_h3_functor_keystone.py`](../../folio-assistant/computations/h5_h3_functor_keystone.py),
 witness
 [`h5-h3-functor-keystone.witness.json`](../../folio-assistant/computations/h5-h3-functor-keystone.witness.json)
-(audit-only, exact integer/rational branching + RAW @ 60 dps for the substrate
-`z`, 17 assertions pass). **No tuning to h⁴=−3/4, m_n−m_p, B_AME, spin, or
+(audit-only, exact integer/rational branching + RAW @ the canonical
+`compute_dps` for the substrate `z`, 17 assertions pass). **No tuning to h⁴=−3/4, m_n−m_p, B_AME, spin, or
 hypercharge.** Every multiplicity is computed FIRST from the branching rule;
 the comparison to the (2,1) block comes SECOND. **A chosen multiplicity would
 be a fit — we report RAW multiplicities only.**
@@ -27,16 +27,21 @@ be a fit — we report RAW multiplicities only.**
 **RIGOROUS NONEXISTENCE. Every standard categorical bridge between the
 5-strand fiber level and the 3-strand baryon trace — Hecke restriction
 Res^{H₅}_{H₃}, its adjoint induction, the Markov stabilization tower H₃⊂H₄⊂H₅,
-and the icosahedral A₅ → S₃/Z₃ restriction — sends the (2,1) baryon block with
-multiplicity ≠ 1, computed RAW. There is NO canonical isomorphism taking the
-ℓ=2 / dim-5 icosahedral irrep H to THE (2,1) h⁴ coefficient: the multiplicities
-are {0,1,2} (restriction) and 2 (icosahedral H → S₃). Because the
-multiplicities are not 1 and were computed before any comparison, ANY
-normalization that hits −3/4 is a fit the discipline review catches. This
-confirms and SHARPENS the s5-so3 audit's informal "different representation
-rings, no canonical map" into a precise theorem, and forces a reframe: the
-bridge — if it exists — is non-functorial / geometric, OR the baryon is not
-literally a 3-strand object, OR the fiber is not literally a 5-strand object.**
+and the icosahedral A₅ → S₃/Z₃ restriction — spreads the (2,1) baryon block
+across MULTIPLE 5-strand blocks with multiplicities in {1, 2}, computed RAW,
+with no distinguished single occurrence that singles out the ℓ=2 carrier. There
+is NO canonical isomorphism taking the ℓ=2 / dim-5 icosahedral irrep H to THE
+(2,1) h⁴ coefficient: the restriction (2,1)-multiplicity vector is `[0,1,2,2,2,1,0]`
+(values in {0,1,2}; the multiplicity-1 entries (4,1) and (2,1,1,1) do NOT single
+out the dim-5 ℓ=2 carrier — the same-dimension (3,2) and (2,2,1) give 2), and the
+icosahedral H → S₃ restriction contains (2,1) with multiplicity 2. So
+`Hom(fiber, (2,1))` is a multiplicity space of dimension ≥ 1 with no canonical
+distinguished basis vector; choosing one to read off h⁴ is a fit the discipline
+review catches. This confirms and SHARPENS the s5-so3 audit's informal "different
+representation rings, no canonical map" into a precise theorem, and forces a
+reframe: the bridge — if it exists — is non-functorial / geometric, OR the baryon
+is not literally a 3-strand object, OR the fiber is not literally a 5-strand
+object.**
 
 ---
 
@@ -61,11 +66,11 @@ computed by iterating S₅→S₄→S₃ remove-a-box (RAW):
 | λ ⊢ 5 | dim S^λ | (3) | **(2,1)** | (1³) | dim check |
 |---|---|---|---|---|---|
 | (5) | 1 | 1 | **0** | 0 | 1 = 1 ✓ |
-| (4,1) | 4 | 1 | **1** | 0 | 4 = 1+2 ✓ |
+| (4,1) | 4 | 2 | **1** | 0 | 4 = 2+2 ✓ |
 | (3,2) | 5 | 1 | **2** | 0 | 5 = 1+4 ✓ |
 | (3,1,1) | 6 | 1 | **2** | 1 | 6 = 1+4+1 ✓ |
 | (2,2,1) | 5 | 0 | **2** | 1 | 5 = 4+1 ✓ |
-| (2,1,1,1) | 4 | 0 | **1** | 1 | 4 = 2+... ✓ |
+| (2,1,1,1) | 4 | 0 | **1** | 2 | 4 = 2+2 ✓ |
 | (1⁵) | 1 | 0 | **0** | 1 | 1 = 1 ✓ |
 
 **RAW (2,1)-multiplicity vector: `[0, 1, 2, 2, 2, 1, 0]`.** All seven
@@ -170,9 +175,12 @@ and choosing a line in it to define "the h⁴ amplitude" is exactly a fit.
 > 4. **Icosahedral restriction.** `[Res^{A₅}_{S₃}(H) : (2,1)] = 2 ≠ 1` (and
 >    `[Res^{A₅}_{Z₃}(H) : ω] = 2`).
 >
-> In every case the multiplicity of the (2,1) baryon block in the image of the
-> fiber datum is **≠ 1**, so `Hom(fiber, (2,1))` is a multiplicity space of
-> dimension ≥ 1 with no canonical basis vector. **Therefore there is no
+> In every case the (2,1) baryon block occurs in the image of the fiber datum
+> **across multiple blocks with multiplicities in {1, 2}** — with no single
+> distinguished occurrence singling out the ℓ=2 carrier (the multiplicity-1
+> entries (4,1) and (2,1,1,1) are NOT the dim-5 ℓ=2 irrep, and the icosahedral
+> H → S₃ restriction gives multiplicity 2). Hence `Hom(fiber, (2,1))` is a
+> multiplicity space of dimension ≥ 1 with no canonical basis vector. **Therefore there is no
 > canonical map (natural transformation / isomorphism) sending the ℓ=2 / H
 > amplitude to THE coefficient h⁴ = −3/4.** Any such assignment requires
 > choosing an element of a ≥1-dimensional Hom-space, i.e. a fit. ∎

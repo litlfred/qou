@@ -26,8 +26,9 @@ FALSIFICATION reference, not a target. Every multiplicity is computed FIRST
 from the branching rule; the comparison to the (2,1) std block comes SECOND.
 A chosen multiplicity would be a fit -- we report RAW multiplicities only.
 
-COMPUTES (exact rational / integer combinatorics + RAW @ 60 dps where a
-substrate value is needed):
+COMPUTES (exact rational / integer combinatorics + RAW @ the canonical
+compute_dps -- via _precision.set_compute_dps() -- where a substrate value is
+needed):
   1. CANDIDATE 1 -- Restriction Res^{S5}_{S3} (= Res^{H5}_{H3} on irreps,
      since branching is q-independent / generic). Branch every irrep
      lambda |- 5 down to S3 via the iterated remove-a-box (Pieri/branching)
@@ -63,13 +64,24 @@ import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps, COMPUTE_DPS  # noqa: E402
+from q_parameter import Q as Q0  # noqa: E402  (proton-pinned, single source of truth)
+from q_parameter import Q_MP as Q0_MP  # noqa: E402  (high-precision mpf for the z eval)
 
 START = time.monotonic()
-mp.mp.dps = 60
+# Shared precision infra: set mpmath working dps to the canonical COMPUTE_DPS
+# (the SAME value the witness records in precisionMetadata.compute_dps, so the
+# two cannot drift). Previously this script hardcoded mp.mp.dps = 60 while the
+# witness recorded 70 -- the mismatch Copilot flagged. set_compute_dps() with no
+# argument pins mp.mp.dps to COMPUTE_DPS.
+ACTUAL_DPS = set_compute_dps()
+assert ACTUAL_DPS == COMPUTE_DPS, (ACTUAL_DPS, COMPUTE_DPS)
 
-# Substrate q0 (proton-anchored). FALSIFICATION / reference only -- not tuned.
-Q0_STR = "1.10997859561220225731080831999100762523924148"
-Q0 = mp.mpf(Q0_STR)
+# Substrate q0 is the canonical proton-anchored value imported above (NOT a
+# hardcoded literal). FALSIFICATION / reference only -- not tuned. This probe's
+# results are INTEGER branching multiplicities (q0-INDEPENDENT), so the substrate
+# value affects only the RAW Markov-z report in Candidate 3.
+Q0_STR = mp.nstr(Q0_MP, COMPUTE_DPS)
 
 # Borromean h^4 falsification reference (NOT a fit target).
 H4_BORROMEAN = Fraction(-3, 4)
@@ -236,11 +248,11 @@ def candidate_3_markov_tower():
             paths.setdefault(mu5, []).append((STD3, mu4, mu5))
     # cross-check via Candidate 1: level5 multiplicity of (2,1) embedding
     # should equal Res^{S5}_{S3}(lambda5)[(2,1)] -- Frobenius/branching duality
-    z = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z = 1 / (mp.sqrt(Q0_MP) + 1 / mp.sqrt(Q0_MP))
     z2 = z * z
     return {str(k): v for k, v in level5.items()}, \
            {str(k): [(str(a), str(b), str(c)) for (a, b, c) in v] for k, v in paths.items()}, \
-           mp.nstr(z, 60), mp.nstr(z2, 60)
+           mp.nstr(z, COMPUTE_DPS), mp.nstr(z2, COMPUTE_DPS)
 
 
 # ===========================================================================
@@ -312,7 +324,7 @@ def candidate_4_icosahedral_restriction():
 # ===========================================================================
 
 def main():
-    w = WitnessBuilder("h5-h3-functor-keystone", engine="sympy+mpmath",
+    w = WitnessBuilder("h5-h3-functor-keystone", engine="python+mpmath",
                        start_time=START)
     w.set_description(
         "THE 5<->3 keystone (named by PRs #1670/#1672/#1677/#1678): compute "
@@ -321,11 +333,15 @@ def main():
         "A5 -> 3-element-stabilizer restriction of the dim-5 (ell=2) irrep H -- "
         "all via exact Young-tableau branching (remove/add-a-box) and explicit "
         "character tables. RAW multiplicities; the Borromean h^4=-3/4 is a "
-        "FALSIFICATION reference only. No fit, no tuning."
+        "FALSIFICATION reference only. No fit, no tuning. Environment: exact "
+        "integer/rational branching combinatorics (Python stdlib + sympy for "
+        "factorials/hook-lengths); RAW substrate z at compute_dps via mpmath; "
+        "engine=python+mpmath."
     )
     w.set_audit_only("docs/audits/2026-06-02-h5-h3-functor-keystone.md")
     w.add_parameter("q0_falsification_ref", Q0_STR)
-    w.add_parameter("dps", mp.mp.dps)
+    w.add_parameter("q0_source", "q_parameter.Q_MP (proton-pinned)")
+    w.add_parameter("dps", COMPUTE_DPS)
     w.add_parameter("h4_borromean_falsification_ref", str(H4_BORROMEAN))
 
     # --- CANDIDATE 1: restriction --------------------------------------------
@@ -344,8 +360,12 @@ def main():
         w.add_assertion(f"dim_check_Res_{lam}",
                         res_rows[lam]["_dim_restricted"],
                         res_rows[lam]["_dim_lambda"])
-    # The KEY raw finding: NO lambda5 restricts to (2,1) with multiplicity 1
-    # in a way that singles out the ell=2 carrier -- record the full vector.
+    # The KEY raw finding: the (2,1) baryon block appears across MULTIPLE |-5
+    # blocks (multiplicities in {1,2}; (4,1) and (2,1,1,1) DO restrict to (2,1)
+    # with multiplicity exactly 1, while (3,2)/(3,1,1)/(2,2,1) give 2). So
+    # Hom(fiber,(2,1)) is a multiplicity space of dim >= 1 with NO canonical
+    # distinguished basis vector / NO single canonical channel identifiable with
+    # THE ell=2 carrier -- record the full vector.
     mult_values = sorted(set(std_mult.values()))
     w.add_data("std_(2,1)_multiplicity_distinct_values", mult_values)
 
