@@ -4,7 +4,7 @@ import { chapter, section } from "../../schema/builders";
  * Appendix: Mass and Binding Algorithms.
  *
  * Self-contained bridge between the categorical derivation chain
- * (`prop:pre-archimedean-derivation-chain`) and the executable
+ * (`prose:pre-archimedean-derivation-chain`) and the executable
  * compute layer (`qou-mass`, `pyhecke`, `pyhecke-native`,
  * `qou-substrate`, `hecke-engine`).
  *
