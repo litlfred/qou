@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T15:22:02.084947+00:00",
-  "commitSha": "8808c2bdddd6414702bc200911a7b62a759ab340",
+  "computedAt": "2026-06-02T15:33:32.503610+00:00",
+  "commitSha": "4708b58954e86c4830724c99f8f4dd0dfaf8c17d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2724,6 +2724,8 @@
         "option-e-deuteron-param-free-residual.witness.json",
         "option-e-isospin-probe.witness.json",
         "option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "option-e-phase1-gram-h6.witness.json",
+        "option-e-phase1-h3-cross-check.witness.json",
         "option-e-probe1-derive-1plusq-over-2.witness.json",
         "option-e-q-reeb-phase-probe-v4.witness.json",
         "option-e-v6-combined-canonical.witness.json",

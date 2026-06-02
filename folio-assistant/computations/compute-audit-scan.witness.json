@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T15:22:01.511512+00:00",
-  "commitSha": "8808c2bdddd6414702bc200911a7b62a759ab340",
+  "computedAt": "2026-06-02T15:33:31.964871+00:00",
+  "commitSha": "4708b58954e86c4830724c99f8f4dd0dfaf8c17d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 9,
@@ -28,7 +28,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 935,
+    "files_scanned": 938,
     "patterns": [
       "P15",
       "P16",
@@ -41,7 +41,7 @@
     "by_pattern_count": {
       "P15": 165,
       "P16": 345,
-      "P21": 31,
+      "P21": 32,
       "P30": 172,
       "P31": 70
     },
@@ -1438,6 +1438,13 @@
         "line": 95,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P21",
+        "file": "gram_matrix_seminormal_n.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
         "pattern": "P30",
