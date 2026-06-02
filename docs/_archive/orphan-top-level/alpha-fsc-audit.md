@@ -101,10 +101,10 @@ Inventory of every place α_em / FSC is referenced, with a one-line summary.
 
 | File | Summary |
 |------|---------|
-| [`alpha_em_pslq_uniqueness.py`](../folio-assistant/computations/alpha_em_pslq_uniqueness.py) | PSLQ uniqueness probe at 1500 dps in 52-element basis; verifies the gluon-octet form is the unique q-arithmetic relation |
+| [`alpha_em_pslq_uniqueness.py`](../folio-assistant/computations/alpha/alpha_em_pslq_uniqueness.py) | PSLQ uniqueness probe at 1500 dps in 52-element basis; verifies the gluon-octet form is the unique q-arithmetic relation |
 | [`alpha_em_q9_q10_derivation.py`](../folio-assistant/computations/alpha_em_q9_q10_derivation.py) | Alternative `q · [9]_q · [10]_q · (1 + ℏ_q³ · 1.6)` derivation (older / less accurate: −0.155 % vs gluon-octet's 7 ppb) |
 | [`picard_lefschetz_thimble.py`](../folio-assistant/computations/picard_lefschetz_thimble.py) | Picard–Lefschetz thimble computation feeding the EM coupling derivation |
-| [`alpha-em-pslq-uniqueness.witness.json`](../folio-assistant/computations/alpha-em-pslq-uniqueness.witness.json) / [`alpha-em-q9-q10-derivation.witness.json`](../folio-assistant/computations/alpha-em-q9-q10-derivation.witness.json) | Witness artefacts for the two candidate forms |
+| [`alpha-em-pslq-uniqueness.witness.json`](../folio-assistant/computations/alpha/alpha-em-pslq-uniqueness.witness.json) / [`alpha-em-q9-q10-derivation.witness.json`](../folio-assistant/computations/alpha-em-q9-q10-derivation.witness.json) | Witness artefacts for the two candidate forms |
 
 ---
 
@@ -118,7 +118,7 @@ $$
 \boxed{\;\frac{1}{\alpha_{EM}} \;=\; 45 \cdot [3]_q \cdot \bigl(1 + \delta_{CS} + 8q \cdot \delta_{CS}^2\bigr), \qquad \delta_{CS} = \hbar_q^{4} \cdot [5]_q.\;}
 $$
 
-with $\hbar_q = (q-1)/q$ and $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ per the [CLAUDE.md notation register](../CLAUDE.md). Source: [`alpha_em_pslq_uniqueness.py`](../folio-assistant/computations/alpha_em_pslq_uniqueness.py).
+with $\hbar_q = (q-1)/q$ and $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ per the [CLAUDE.md notation register](../CLAUDE.md). Source: [`alpha_em_pslq_uniqueness.py`](../folio-assistant/computations/alpha/alpha_em_pslq_uniqueness.py).
 
 ### 3.2 Numerical validation
 
@@ -139,7 +139,7 @@ PSLQ run at tol_dps ∈ {50, 100, 200, 500, 1000} with 52-element basis $\{1, \p
 
 > **No competing integer relation found at any tested precision.**
 
-Witness: [`alpha-em-pslq-uniqueness.witness.json`](../folio-assistant/computations/alpha-em-pslq-uniqueness.witness.json), 2026-04-26. The gluon-octet form is the unique q-arithmetic closed form in this basis with the reported precision; alternative forms (e.g. `q · [9]_q · [10]_q · (1 + ℏ_q³ · 1.6)` from [`alpha_em_q9_q10_derivation.py`](../folio-assistant/computations/alpha_em_q9_q10_derivation.py)) are less accurate (−0.155 % vs the gluon-octet's 7 ppb).
+Witness: [`alpha-em-pslq-uniqueness.witness.json`](../folio-assistant/computations/alpha/alpha-em-pslq-uniqueness.witness.json), 2026-04-26. The gluon-octet form is the unique q-arithmetic closed form in this basis with the reported precision; alternative forms (e.g. `q · [9]_q · [10]_q · (1 + ℏ_q³ · 1.6)` from [`alpha_em_q9_q10_derivation.py`](../folio-assistant/computations/alpha_em_q9_q10_derivation.py)) are less accurate (−0.155 % vs the gluon-octet's 7 ppb).
 
 ### 3.4 Why "derived from q_0 alone" is non-trivial
 

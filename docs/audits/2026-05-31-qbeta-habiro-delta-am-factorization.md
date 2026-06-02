@@ -5,8 +5,8 @@
 > suggesting low-degree polynomial factorization."
 >
 > Branch: `claude/brave-mendel-FPxFl` (PR #1579).
-> Probe script: [`folio-assistant/computations/qbeta_habiro_delta_am_factorization.py`](../../folio-assistant/computations/qbeta_habiro_delta_am_factorization.py).
-> Witness: `folio-assistant/computations/qbeta-habiro-delta-am-factorization.witness.json`.
+> Probe script: [`folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py).
+> Witness: `folio-assistant/computations/qbeta/qbeta-habiro-delta-am-factorization.witness.json`.
 
 ## TL;DR
 
@@ -174,11 +174,11 @@ deuteron channel.
 - Prior probe: [`docs/audits/2026-05-31-qbeta-habiro-element-probe.md`](2026-05-31-qbeta-habiro-element-probe.md)
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
 - Witness pipeline: `folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json`
-- α_EM template (parallel that worked): `folio-assistant/computations/alpha_em_habiro_taylor_investigation.py`
+- α_EM template (parallel that worked): `folio-assistant/computations/alpha/alpha_em_habiro_taylor_investigation.py`
 - Production-vs-exploratory discipline: `.claude/skills/local/production-vs-exploratory-discipline.md`
 
 ## Files touched
 
-- **NEW:** `folio-assistant/computations/qbeta_habiro_delta_am_factorization.py`
-- **NEW:** `folio-assistant/computations/qbeta-habiro-delta-am-factorization.witness.json`
+- **NEW:** `folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py`
+- **NEW:** `folio-assistant/computations/qbeta/qbeta-habiro-delta-am-factorization.witness.json`
 - **NEW:** `docs/audits/2026-05-31-qbeta-habiro-delta-am-factorization.md` (this file)

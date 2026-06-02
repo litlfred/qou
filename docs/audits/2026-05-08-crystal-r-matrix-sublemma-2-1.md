@@ -269,7 +269,7 @@ records 15 / 15 passing assertions:
   envelopes $[9]_q, [10]_q$ in $\alpha_{\mathrm{EM}}^{-1} = q [9]_q [10]_q$.
 
 The witness is audit-only (no content block) — `prop:alpha-shift-torus-knot`
-already has its own seminormal-trace witness ([`alpha-shift-torus.witness.json`](../../folio-assistant/computations/alpha-shift-torus.witness.json));
+already has its own seminormal-trace witness ([`alpha-shift-torus.witness.json`](../../folio-assistant/computations/alpha/alpha-shift-torus.witness.json));
 the crystal route here is a complementary independent verification.
 
 ## Status of the residual after this audit

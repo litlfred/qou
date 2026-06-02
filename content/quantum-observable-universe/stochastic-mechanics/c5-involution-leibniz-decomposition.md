@@ -193,7 +193,7 @@ sub-braid combinatorics).
 This is testable by extending SDP-$T_\beta$ extraction to $k \geq 8$
 and checking whether c_8 has a $1/2$ fingerprint — the probe is
 queued in
-[`folio-assistant/computations/qbeta_decay_sdp_extended_ck.py`](../../folio-assistant/computations/qbeta_decay_sdp_extended_ck.py).
+[`folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py`](../../folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py).
 
 ## Status
 

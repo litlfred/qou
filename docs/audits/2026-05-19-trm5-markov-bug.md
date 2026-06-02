@@ -58,7 +58,7 @@ The bug affects any computation that:
 Modules importing `pyhecke.gram.TR_M` (from grep):
 
 - `folio-assistant/computations/aK_via_lp_dual_hecke_basis.py`
-- `folio-assistant/computations/qbeta_decay_sdp_solver.py` (mine — in this PR)
+- `folio-assistant/computations/qbeta/qbeta_decay_sdp_solver.py` (mine — in this PR)
 - `folio-assistant/computations/confinement-operator-selection.py`
 - `folio-assistant/computations/gram-matrix-dual.py`
 - `folio-assistant/computations/pn_alpha_lp_dual.py`
@@ -116,7 +116,7 @@ Verified all 5 modules importing `pyhecke.gram.TR_M`:
 
 - `tools/pyhecke/python/pyhecke/gram.py` lines 50 + 178 — fix locations
 - `folio-assistant/computations/y-lambda-at-q0.witness.json` — y_λ values (correct, now consistent)
-- `folio-assistant/computations/qbeta-decay-sdp-knot-operator.witness.json` — needs T_β NF coeff update
+- `folio-assistant/computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json` — needs T_β NF coeff update
 - `docs/audits/2026-05-19-qbeta-ladder-sdp-c2-c3-derived.md` — SDP-T_β derivation (c_k unchanged by fix)
 - `docs/audits/2026-05-19-qbeta-ladder-knot-operator-general-statement.md` — Path B per-block scaffolding (now usable)
 - `folio-assistant/computations/pn_alpha_lp_dual.py` line 206 — latent shadowing bug, needs follow-up fix

@@ -47,17 +47,17 @@
     },
     "rows": [
       {
-        "witness": "folio-assistant/computations/A-operator-extract-general.witness.json",
+        "witness": "folio-assistant/computations/a_operator/A-operator-extract-general.witness.json",
         "content_block_value": "operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)",
         "result": "informational_label"
       },
       {
-        "witness": "folio-assistant/computations/A-operator-extract-kron.witness.json",
+        "witness": "folio-assistant/computations/a_operator/A-operator-extract-kron.witness.json",
         "content_block_value": "operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)",
         "result": "informational_label"
       },
       {
-        "witness": "folio-assistant/computations/A-operator-extract-reduced.witness.json",
+        "witness": "folio-assistant/computations/a_operator/A-operator-extract-reduced.witness.json",
         "content_block_value": "prop:crystal-r-matrix-sub-lemma",
         "result": "ok"
       },
@@ -92,62 +92,62 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/alpha-5-jucys-murphy-central.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-5-jucys-murphy-central.witness.json",
         "content_block_value": "prop:mass-formula-iterative-lp-dual",
         "result": "missing_label"
       },
       {
-        "witness": "folio-assistant/computations/alpha-5-lp-dual-crystal.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-5-lp-dual-crystal.witness.json",
         "content_block_value": "prop:mass-formula-iterative-lp-dual",
         "result": "missing_label"
       },
       {
-        "witness": "folio-assistant/computations/alpha-em-4pi-b4-pslq.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-em-4pi-b4-pslq.witness.json",
         "content_block_value": "prop:em-coupling-bring-zero-mode",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/alpha-em-4pi-bring-cm-modular-pslq.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-em-4pi-bring-cm-modular-pslq.witness.json",
         "content_block_value": "prop:em-coupling-bring-zero-mode",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/alpha-em-4pi-q-hyperbolic-b3-pslq.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-em-4pi-q-hyperbolic-b3-pslq.witness.json",
         "content_block_value": "prop:em-coupling-bring-zero-mode",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/alpha-em-habiro-taylor-investigation.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-em-habiro-taylor-investigation.witness.json",
         "content_block_value": "prop:em-coupling-bring-zero-mode",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/alpha-em-q-difference-fourier.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-em-q-difference-fourier.witness.json",
         "content_block_value": "prop:em-coupling-bring-zero-mode",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/alpha-em-shift-multiplicative-chain.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-em-shift-multiplicative-chain.witness.json",
         "content_block_value": "prop:alpha-em-shift-multiplicative-chain",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/alpha-k-macdonald-closed-form.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-k-macdonald-closed-form.witness.json",
         "content_block_value": "prop:macdonald-hook-telescope",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/alpha-shift-torus.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-shift-torus.witness.json",
         "content_block_value": "prop:alpha-shift-torus-knot",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/alpha-star-dominant-partitions.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-star-dominant-partitions.witness.json",
         "content_block_value": "conj:atom-braid-exterior-algebra",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/alpha-star-vs-binding-gap.witness.json",
+        "witness": "folio-assistant/computations/alpha/alpha-star-vs-binding-gap.witness.json",
         "content_block_value": "conj:atom-braid-exterior-algebra",
         "result": "ok"
       },
@@ -1222,57 +1222,57 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-ck-truncation-order-analysis.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json",
         "content_block_value": "prop:q-beta-categorical-precision-ladder",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-delta-tr-vs-formA.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-delta-tr-vs-formA.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-eigenphase-taylor-in-u.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-eigenphase-taylor-in-u.witness.json",
         "content_block_value": "prop:q-beta-categorical-precision-ladder",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-a7-partition.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-a7-partition.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-all-10-pairs-phi8-universality.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-all-10-pairs-phi8-universality.witness.json",
         "content_block_value": "prop:full-pole-structure-mass-trace",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-cross-pair-factorization.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-cross-pair-factorization.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-cross-pair-quick-dp.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-cross-pair-quick-dp.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-delta-am-factorization.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-delta-am-factorization.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-delta-am-partial-sum-scan.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-delta-am-partial-sum-scan.witness.json",
         "content_block_value": "prop:full-pole-structure-mass-trace",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-delta6-partition.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-delta6-partition.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-depth15-interpretation.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-depth15-interpretation.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
       },
@@ -1287,12 +1287,12 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-partition-followup.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-partition-followup.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-phase5q-dn-refactorize.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json",
         "content_block_value": "prop:neutron-qvalue-symbolic",
         "result": "ok"
       },
@@ -1302,7 +1302,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-phi8-squared-boundary-explained.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-phi8-squared-boundary-explained.witness.json",
         "content_block_value": "prop:full-pole-structure-mass-trace",
         "result": "ok"
       },
@@ -1317,17 +1317,17 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-taylor-investigation.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-taylor-investigation.witness.json",
         "content_block_value": "prop:q-beta-categorical-precision-ladder",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-wenzl-tower-zeta-n.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-wenzl-tower-zeta-n.witness.json",
         "content_block_value": "prop:full-pole-structure-mass-trace",
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-zeta8-categorical-witness.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-habiro-zeta8-categorical-witness.witness.json",
         "content_block_value": "prop:full-pole-structure-mass-trace",
         "result": "ok"
       },
@@ -1337,7 +1337,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-scaling-bridge-investigation.witness.json",
+        "witness": "folio-assistant/computations/qbeta/qbeta-scaling-bridge-investigation.witness.json",
         "content_block_value": "prop:q-beta-categorical-precision-ladder",
         "result": "ok"
       },

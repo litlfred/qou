@@ -78,7 +78,7 @@ These are **backlog items**, not active CAL-4 issues. Cleanup paths:
 - [`folio-assistant/computations/cal4_disguise_hunt.py`](../../folio-assistant/computations/cal4_disguise_hunt.py) — new audit
 - [`folio-assistant/computations/cal4-disguise-hunt.witness.json`](../../folio-assistant/computations/cal4-disguise-hunt.witness.json) — finding details
 - [`folio-assistant/computations/picard_lefschetz_thimble.py`](../../folio-assistant/computations/picard_lefschetz_thimble.py) lines 883, 1051 — CAL-4 banners
-- [`folio-assistant/computations/alpha_high_precision.py`](../../folio-assistant/computations/alpha_high_precision.py) line 189 — `noqa: P31`
+- [`folio-assistant/computations/alpha/alpha_high_precision.py`](../../folio-assistant/computations/alpha/alpha_high_precision.py) line 189 — `noqa: P31`
 - [`folio-assistant/computations/probe_a_higher_derivatives_and_gb_tracking.py`](../../folio-assistant/computations/probe_a_higher_derivatives_and_gb_tracking.py) docstring — CAL-4 caveat
 
 ## Recommended next actions

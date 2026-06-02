@@ -88,7 +88,7 @@ Per the canonical truncation-order framing
 ([`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)),
 the dashboard's 164× headline reflects a **tier policy**, not a
 compute limit. Per
-[`qbeta-ck-truncation-order-analysis.witness.json`](../../folio-assistant/computations/qbeta-ck-truncation-order-analysis.witness.json):
+[`qbeta-ck-truncation-order-analysis.witness.json`](../../folio-assistant/computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json):
 
 | N | c_k tier | cumulative residual (ppb) | miss factor vs 7.8 ppb target |
 |---:|---|---:|---:|
@@ -198,6 +198,6 @@ Q_β-derivation gap propagating to m_n / Δ_pn). This 2026-05-31 audit
 - L2 dashboard witness:
   [`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json)
 - Q_β c_k cache (tier table):
-  [`qbeta-ck-cache.witness.json`](../../folio-assistant/computations/qbeta-ck-cache.witness.json)
+  [`qbeta-ck-cache.witness.json`](../../folio-assistant/computations/qbeta/qbeta-ck-cache.witness.json)
 - Q_β truncation-order analysis (per-rung residuals):
-  [`qbeta-ck-truncation-order-analysis.witness.json`](../../folio-assistant/computations/qbeta-ck-truncation-order-analysis.witness.json)
+  [`qbeta-ck-truncation-order-analysis.witness.json`](../../folio-assistant/computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json)

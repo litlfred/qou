@@ -111,8 +111,8 @@ Out of scope for this diagnostic. Recorded as FOLLOW-UP.
 
 ## Files
 
-- `folio-assistant/computations/qbeta_signed_vs_abs_tower_diagnostic.py`
-- `folio-assistant/computations/qbeta-signed-vs-abs-tower-diagnostic.witness.json`
+- `folio-assistant/computations/qbeta/qbeta_signed_vs_abs_tower_diagnostic.py`
+- `folio-assistant/computations/qbeta/qbeta-signed-vs-abs-tower-diagnostic.witness.json`
 - `docs/audits/2026-06-01-qbeta-signed-vs-abs-tower-diagnostic.md` (this file)
 
 ## Cross-refs

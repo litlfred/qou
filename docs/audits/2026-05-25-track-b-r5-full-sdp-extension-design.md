@@ -47,7 +47,7 @@ line 101). Refined to **+0.37%** with the `cosh(h)` α-derivation correction.
 
 ### α-cluster cascade for ⁴He → 7 atoms
 
-[`alpha_cluster_recursion.py`](../../folio-assistant/computations/alpha_cluster_recursion.py)
+[`alpha_cluster_recursion.py`](../../folio-assistant/computations/alpha/alpha_cluster_recursion.py)
 extends ⁴He to six heavier α-chain atoms via:
 
 ```
@@ -276,7 +276,7 @@ If Phases B-1, B-2, B-3 (Option γ + β), B-4 all land:
 
 - [`folio-assistant/computations/r5_full_canonical_knot_solver.py`](../../folio-assistant/computations/r5_full_canonical_knot_solver.py)
 - [`folio-assistant/computations/magic_A_formula.py`](../../folio-assistant/computations/magic_A_formula.py)
-- [`folio-assistant/computations/alpha_cluster_recursion.py`](../../folio-assistant/computations/alpha_cluster_recursion.py)
+- [`folio-assistant/computations/alpha/alpha_cluster_recursion.py`](../../folio-assistant/computations/alpha/alpha_cluster_recursion.py)
 - [`docs/audits/2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md`](2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md) (the cosh(h) refinement)
 - [`docs/audits/2026-05-25-phase5q-closed-form-reconciliation.md`](2026-05-25-phase5q-closed-form-reconciliation.md) (closed-form path that subsumes Option α)
 - [`folio-assistant/computations/atomic_tr_m_helium4_canonical.py`](../../folio-assistant/computations/atomic_tr_m_helium4_canonical.py) (Option β realisation, PR #1269)

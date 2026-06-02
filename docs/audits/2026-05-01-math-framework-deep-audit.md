@@ -229,7 +229,7 @@ vs CODATA $137.035999084$ — residue **~6.7 ppb**, well within the
 
 | ID | Quantity | Status |
 |----|----------|--------|
-| **ALPHA-1** | $1/\alpha$ closed form | 🟢 PSLQ uniqueness witness: [`alpha-em-pslq-uniqueness.witness.json`](../../folio-assistant/computations/alpha-em-pslq-uniqueness.witness.json) |
+| **ALPHA-1** | $1/\alpha$ closed form | 🟢 PSLQ uniqueness witness: [`alpha-em-pslq-uniqueness.witness.json`](../../folio-assistant/computations/alpha/alpha-em-pslq-uniqueness.witness.json) |
 | **ALPHA-2** | The "399-ppb" residual | 🟢 **Resolved.** Live closed form predicts $1/\alpha_{EM} = 137.035998166$ at 6.7 ppb of CODATA — within experimental uncertainty (21 ppb). Each factor $45$, $[3]_q$, $\delta_{CS}$, the $8q\,\delta_{CS}^2$ correction is forced by an upstream block (`exterior-square-borromean`, `force-carrier-bring-uniqueness`, `gram-determinant-plancherel-ratio`, genus-4 torus-knot enumeration). PSLQ uniqueness confirms no shorter rational combination matches. |
 
 🟢 **Action.** None — already at sub-CODATA-uncertainty

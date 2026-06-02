@@ -108,4 +108,4 @@ The bug shows up most clearly in:
 - PR [#1233](https://github.com/litlfred/qou/pull/1233) — crystal-Yekutieli probes A-D + BIG review
 - [`folio-assistant/computations/mass_at_3A_proper.py`](../../folio-assistant/computations/mass_at_3A_proper.py) — orphan "proper" implementation
 - [`folio-assistant/computations/atom_mass_derived.py`](../../folio-assistant/computations/atom_mass_derived.py) — secondary bug (multiplicative composition)
-- [`folio-assistant/computations/alpha_k_jones_markov_h4.py`](../../folio-assistant/computations/alpha_k_jones_markov_h4.py) — H_4 reference implementation (this PR)
+- [`folio-assistant/computations/alpha/alpha_k_jones_markov_h4.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h4.py) — H_4 reference implementation (this PR)

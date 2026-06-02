@@ -257,7 +257,7 @@ Bring-weighting probe negative result above) is the
 operator-valued Wenzl branching identity, implemented in
 [`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py)
 +
-[`A_operator_extract_at_level.py`](../../folio-assistant/computations/A_operator_extract_at_level.py)
+[`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py)
 +
 [`lr_coefficients.py`](../../folio-assistant/computations/lr_coefficients.py).
 Sub-lemma 2.1 of Wenzl (1988):
@@ -512,7 +512,7 @@ actual closure path is the **operator-valued Wenzl branching with
 full per-arc operator extracts**
 ([`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py)
 +
-[`A_operator_extract_at_level.py`](../../folio-assistant/computations/A_operator_extract_at_level.py)).
+[`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py)).
 
 This negative result is **valuable** — it eliminates a candidate
 scalar fix and pins the closure on the operator-valued branching

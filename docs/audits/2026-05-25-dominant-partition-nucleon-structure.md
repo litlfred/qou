@@ -6,7 +6,7 @@
 
 ## Empirical observation
 
-Per [`alpha_star_dominant_partitions.py`](../../folio-assistant/computations/alpha_star_dominant_partitions.py) (PR #1284), the Wedderburn partition forcing the smallest α* in each canonical atom-braid's PSD bisection has a structural correspondence with the atom's nucleon decomposition.
+Per [`alpha_star_dominant_partitions.py`](../../folio-assistant/computations/alpha/alpha_star_dominant_partitions.py) (PR #1284), the Wedderburn partition forcing the smallest α* in each canonical atom-braid's PSD bisection has a structural correspondence with the atom's nucleon decomposition.
 
 | Atom | A | dominant λ* | transpose λ*^T | rows(λ*^T) | cols(λ*^T) | Pattern |
 |---|---:|---|---|---:|---:|---|
@@ -52,7 +52,7 @@ Testing requires extending the Rust solver to higher-A atoms via the `atom_braid
 
 ## Gap-narrowing probe (3) — α* vs binding-energy gap correlation
 
-Per [`alpha_star_vs_binding_gap.py`](../../folio-assistant/computations/alpha_star_vs_binding_gap.py), tested whether the PSD obstruction depth `(1 − α*)` per atom tracks the absolute fractional binding-energy gap `|B_pred − B_AME| / B_AME`:
+Per [`alpha_star_vs_binding_gap.py`](../../folio-assistant/computations/alpha/alpha_star_vs_binding_gap.py), tested whether the PSD obstruction depth `(1 − α*)` per atom tracks the absolute fractional binding-energy gap `|B_pred − B_AME| / B_AME`:
 
 | sym | α* | 1−α* | B_AME | B_pred | \|err\|/B | err_MeV |
 |---|---:|---:|---:|---:|---:|---:|
@@ -223,12 +223,12 @@ This sign flip is structurally significant — it means these blocks would *subt
 
 ## Cross-references
 
-- [`alpha_star_dominant_partitions.py`](../../folio-assistant/computations/alpha_star_dominant_partitions.py) — empirical witness (PR #1284)
+- [`alpha_star_dominant_partitions.py`](../../folio-assistant/computations/alpha/alpha_star_dominant_partitions.py) — empirical witness (PR #1284)
 - [`conj-atom-braid-exterior-algebra.lean`](../../content/quantum-observable-universe/braids-and-knots/conj-atom-braid-exterior-algebra.lean) — Lean transpose-pair theorems (PR #1286)
 - [`joint-tower-sdp-rust.witness.json`](../../folio-assistant/computations/joint-tower-sdp-rust.witness.json) — per-partition eigenvalue data (PR #1283)
 - [`mass_at_3A_proper.py`](../../folio-assistant/computations/mass_at_3A_proper.py) — canonical atom-braid recipe
-- [`alpha_star_vs_binding_gap.py`](../../folio-assistant/computations/alpha_star_vs_binding_gap.py) — Probe (3): obstruction-vs-gap correlation (ρ=+0.80)
-- [`alpha-star-vs-binding-gap.witness.json`](../../folio-assistant/computations/alpha-star-vs-binding-gap.witness.json) — per-atom data + Spearman
+- [`alpha_star_vs_binding_gap.py`](../../folio-assistant/computations/alpha/alpha_star_vs_binding_gap.py) — Probe (3): obstruction-vs-gap correlation (ρ=+0.80)
+- [`alpha-star-vs-binding-gap.witness.json`](../../folio-assistant/computations/alpha/alpha-star-vs-binding-gap.witness.json) — per-atom data + Spearman
 - [`probe_1_project_4he_on_dominant.py`](../../folio-assistant/computations/probe_1_project_4he_on_dominant.py) — Probe (1): y·χ projection on (4,4,4)/(3,3,3,3)
 - [`probe-1-project-4he-on-dominant.witness.json`](../../folio-assistant/computations/probe-1-project-4he-on-dominant.witness.json) — per-block contributions to tr_M_⁴He
 - [`probe_4_li6_rectangular_python.py`](../../folio-assistant/computations/probe_4_li6_rectangular_python.py) — Probe (4): ⁶Li (6,6,6) / (3,3,3,3,3,3) via Lanczos LinearOperator
