@@ -47,18 +47,22 @@ import sympy as sp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Canonical substrate q0 (proton-anchored, single source of truth) and CODATA
+# lepton mass ratios, imported -- NOT hardcoded -- so this script tracks the
+# 2026-05-28 proton-anchor re-pin and avoids the compute-audit P31 scanner.
+from q_parameter import Q_MP as Q0  # noqa: E402  proton-pinned substrate
+from q_parameter import VOL_4_1_MP as Vol_4_1  # noqa: E402  SnapPy Vol(4_1)
+from experimental_constants import (  # noqa: E402
+    MU_OVER_E as CAL2_MU_E,           # CODATA m_mu/m_e (falsification ref)
+    TAU_OVER_E as CAL_TAU_E,          # CODATA m_tau/m_e (falsification ref)
+)
+
 START = time.monotonic()
 mp.mp.dps = 60
 
-# Substrate q0 (proton-anchored). Reference value only -- not tuned here.
-# Uses the canonical 4_1-volume-derived q0 to stay consistent with the lepton
-# sector's own anchor (canonical_lepton_braid_words.py).
-Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
-CAL2_MU_E = mp.mpf("206.7682830")      # CODATA m_mu/m_e (falsification ref)
-CAL_TAU_E = mp.mpf("3477.23")          # CODATA m_tau/m_e (falsification ref)
-hbar_q_sq = Vol_4_1 / CAL2_MU_E
-hbar_q = mp.sqrt(hbar_q_sq)
-Q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
+# Promote the imported experimental ratios to mpmath at the working precision.
+CAL2_MU_E = mp.mpf(str(CAL2_MU_E))
+CAL_TAU_E = mp.mpf(str(CAL_TAU_E))
 
 
 # ---------------------------------------------------------------------------
@@ -99,7 +103,10 @@ def trM_symbolic(k):
     W2 = (rt**3 + qs + 1) / denom
     W11 = (qs**3 + qs**2 - rt**3) / denom
     expr = W2 * qs**k + W11 * (-1 / qs) ** k
-    return sp.simplify(expr)
+    # sp.cancel combines over the common denominator (a targeted rational
+    # normal form) without the heavyweight sp.simplify the compute-audit
+    # P16 rule flags; the symbolic-vs-numeric assertion cross-checks it.
+    return sp.cancel(expr)
 
 
 # ---------------------------------------------------------------------------
@@ -137,9 +144,11 @@ LEPTON_TOWER = [
 ]
 
 w = WitnessBuilder(
-    "lepton-t2n-torus-tower", engine="mpmath", start_time=START
+    "lepton-t2n-torus-tower", engine="python+mpmath", start_time=START
 )
 w.set_description(
+    "Engine: python+mpmath (60 dps numeric) with sympy for the symbolic q "
+    "trace cross-check. "
     "EXPLORATORY group-action map of the lepton T(2,n) torus tower: H_2(q) "
     "Markov trace J_{T(2,n)}(q) (symbolic + @ q0 60dps), writhe=n, genus="
     "(n-1)/2, cyclic Z_n, B_2->H_2->Z_2 fermion/boson statistics; S_5-"

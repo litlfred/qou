@@ -51,14 +51,15 @@ than a near-match.**
 ## 1. The tower group-action table (RAW)
 
 For each `T(2,n) = σ₁ⁿ` in `H₂(q)` (all values RAW; trace @ q₀ = 60 dps,
-`q₀ = 1.10997859555…` the canonical 4₁-volume-derived anchor):
+`q₀ = 1.10997858275…` the canonical proton-pinned 4₁-volume-derived
+anchor, imported from `q_parameter.Q_MP`):
 
 | `n` | Particle | `tr_M(σ₁ⁿ)(q₀)` `=J_{T(2,n)}(q₀)` | writhe `w` | genus `g` | cyclic | `B_n→H_n→S_n` | components `gcd(2,n)` | statistics |
 |---|---|---:|---:|---:|---|---|---:|---|
 | 3 | electron | 0.730204 | +3 | 1 | `ℤ₃` | `ℤ → H₂ → ℤ₂` | 1 (knot) | fermion |
 | 5 | muon | 0.993002 | +5 | 2 | `ℤ₅` | `ℤ → H₂ → ℤ₂` | 1 (knot) | fermion |
 | 7 | tau | 1.299201 | +7 | 3 | `ℤ₇` | `ℤ → H₂ → ℤ₂` | 1 (knot) | fermion |
-| 9 | (ghost) | 1.662183 | +9 | 4 | `ℤ₉` | `ℤ → H₂ → ℤ₂` | 1 (knot) | fermion |
+| 9 | (ghost) | 1.662182 | +9 | 4 | `ℤ₉` | `ℤ → H₂ → ℤ₂` | 1 (knot) | fermion |
 | 11 | (ghost) | 2.097812 | +11 | 5 | `ℤ₁₁` | `ℤ → H₂ → ℤ₂` | 1 (knot) | fermion |
 
 Note `|tr_M(σ₁³)| = 0.7302` matches the conv-A trefoil value in
@@ -95,7 +96,7 @@ corpus value exactly.
   (sympy) from the Wenzl weights; the `T(2,3)` symbolic value evaluated
   at q₀ matches the mpmath value to 1e-45 (asserted
   `trM_T2_3_symbolic_eq_numeric`).
-- **Census Hopf cross-check.** The Wenzl `tr_M(σ₁²)(q₀) = 1.1043880698…`
+- **Census Hopf cross-check.** The Wenzl `tr_M(σ₁²)(q₀) = 1.1043880583…`
   matches the census's Hopf closed form `1 + (q−1)/√q` to **1e-50**
   (asserted `trM_hopf_wenzl_eq_census`). This validates the Wenzl trace
   against the merged census's independent Hopf computation — the same
@@ -190,9 +191,9 @@ Borromean baryon). At the observable level `Im(q₀)=0` (CLAUDE.md), so
 
 | `n` | Particle | writhe | `q^{n}` (q₀, c=1) | electric charge |
 |---|---|---:|---:|---:|
-| 3 | electron | +3 | 1.367 | −1 |
-| 5 | muon | +5 | 1.684 | −1 |
-| 7 | tau | +7 | 2.074 | −1 |
+| 3 | electron | +3 | 1.368 | −1 |
+| 5 | muon | +5 | 1.685 | −1 |
+| 7 | tau | +7 | 2.076 | −1 |
 | 9 | (ghost) | +9 | 2.558 | −1 |
 
 **Verdict: the framing factor is a genuine LADDER (monotone in `n`), but
