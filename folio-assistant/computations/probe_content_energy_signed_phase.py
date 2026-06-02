@@ -81,9 +81,15 @@ def casimir(lam):
     return mpf(sum(c * (c + 1) for c in contents(lam)))
 
 
+_y_cache = None
+
+
 def load_y(n):
-    d = json.load(open(HERE / "y-lambda-at-q0.witness.json"))
-    byn = d.get("data", d)["by_n"][str(n)]
+    global _y_cache
+    if _y_cache is None:
+        with open(HERE / "y-lambda-at-q0.witness.json") as f:
+            _y_cache = json.load(f)
+    byn = _y_cache.get("data", _y_cache)["by_n"][str(n)]
     return {tuple(e["partition"]): mpf(e["y_at_q0_50dps"]) for e in byn}
 
 
@@ -93,9 +99,12 @@ def main() -> int:
                   "casimir_c(c+1)": casimir}
     print("(1) which content-energy matches the binding A-growth 12.72?")
     egrow = {}
-    atoms_parts = {k: [tuple(e["partition"]) for e in
-                       json.load(open(HERE / CHI[k]))["data"]["atom"]["by_partition"]]
-                   for k in ("D", "4He")}
+    atoms_parts = {}
+    for k in ("D", "4He"):
+        with open(HERE / CHI[k]) as f:
+            data = json.load(f)
+        data = data.get("data", data)
+        atoms_parts[k] = [tuple(e["partition"]) for e in data["atom"]["by_partition"]]
     for ename, efn in energy_fns.items():
         s_d = sum(efn(list(p)) for p in atoms_parts["D"])
         s_4 = sum(efn(list(p)) for p in atoms_parts["4He"])
@@ -113,14 +122,16 @@ def main() -> int:
     }
     S = {w: {} for w in weights}
     for name, fname in CHI.items():
-        d = json.load(open(HERE / fname))["data"]
+        with open(HERE / fname) as f:
+            d = json.load(f)
+        d = d.get("data", d)
         atom = {tuple(e["partition"]): mpf(str(e["chi_lambda"])) for e in d["atom"]["by_partition"]}
         free = {tuple(e["partition"]): mpf(str(e["chi_lambda"])) for e in d["free"]["by_partition"]}
         y = load_y(d["atom"]["n_strands"])
         acc = {w: mpf(0) for w in weights}
         for lam in atom:
             dl = dim_classical(list(lam))
-            a = fabs(acos(mp.mpc(atom[lam] / dl)) - acos(mp.mpc(free[lam] / dl)))
+            a = abs(acos(mp.mpc(atom[lam] / dl)) - acos(mp.mpc(free[lam] / dl)))
             for w, wf in weights.items():
                 acc[w] += wf(list(lam), y[lam]) * a
         for w in weights:

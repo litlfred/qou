@@ -49,9 +49,15 @@ CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
        "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
 
 
+_y_cache = None
+
+
 def load_y(n):
-    d = json.load(open(HERE / "y-lambda-at-q0.witness.json"))
-    byn = d.get("data", d)["by_n"][str(n)]
+    global _y_cache
+    if _y_cache is None:
+        with open(HERE / "y-lambda-at-q0.witness.json") as f:
+            _y_cache = json.load(f)
+    byn = _y_cache.get("data", _y_cache)["by_n"][str(n)]
     return {tuple(e["partition"]): mpf(e["y_at_q0_50dps"]) for e in byn}
 
 
@@ -62,7 +68,9 @@ def main() -> int:
     print("  vs scalar B = E_0·(|Σ y_λ χ^λ_free| − |Σ y_λ χ^λ_atom|)  [collapse-first]\n")
     results = {}
     for name, fname in CHI.items():
-        d = json.load(open(HERE / fname))["data"]
+        with open(HERE / fname) as f:
+            d = json.load(f)
+        d = d.get("data", d)
         atom = {tuple(e["partition"]): mpf(str(e["chi_lambda"])) for e in d["atom"]["by_partition"]}
         free = {tuple(e["partition"]): mpf(str(e["chi_lambda"])) for e in d["free"]["by_partition"]}
         y = load_y(d["atom"]["n_strands"])
