@@ -54,7 +54,7 @@ discipline.
 | v6 | mirror-pair + μ₀ | 81% | refuted |
 | v7 | transpose + m_π | 58% | refuted |
 | v8 | transpose + Z↔N + m_π·ℏ_q | 6.15% | partial — within 10% |
-| **v9** | **+ (1+q)/2 correction** | **0.11%** | **near-match; structural derivation OPEN** |
+| **v9** | **+ (1+q)/2 correction** | **0.11% (stale) → +0.12% (canonical q₀, PR #1707)** | **NEAR-MATCH (fit) — PROBE 1 tested; structural derivation REFUTED; A=3 closure OPEN** |
 
 Each version's witness lives at
 `folio-assistant/computations/option-e-v{N}-*.witness.json`.
@@ -82,12 +82,22 @@ near-match. Do NOT wire as a derivation.
 
 ## Open probes
 
-- [ ] **PROBE 1 — Derive `(1+q)/2` structurally** from the categorical
-  action. Hypothesis: `(1+q)/2` is the principal-specialization
-  half-trace of σ_1 in the standard rep, OR the q-deformation of the
-  "identity-half" weight in the (2,1) block, OR a normalisation
-  artefact of the Hoefsmit seminormal form. **NOT YET TESTED.** Pre-
-  stated failure signature: matches at proton-pin but not at muon-pin.
+- [x] **PROBE 1 — Derive `(1+q)/2` structurally** from the categorical
+  action. **TESTED → NEAR-MATCH (fit)** (PR #1707, audit
+  `2026-06-02-option-e-derive-1plusq-over-2.md`). Verdict: `(1+q)/2` is
+  NOT structurally forced. All four hypotheses fail: the σ_1 standard-rep
+  trace (= h, −80%), its half (h/2, −90%), the Hoefsmit seminormal
+  diagonal `1/[2]_q` (−53%) and off-diagonal `√([3][1])/[2]` (−18%), and
+  the (2,1)-block symmetric-channel projector `q/[2]_q` (−48%) all land
+  18–90% away. The only "matches" are `[2]_q/2` (unbalanced) and
+  `(q+1)/2` — tautologies (literally `(1+q)/2` renamed), not independent
+  derivations. The DECISIVE test: the required closure factor
+  `R = target/(m_π·ℏ_q·S) = 1.05372` ≠ `(1+q)/2 = 1.05499` by **+0.12%**
+  at the SAME pin — not an algebraic identity. Staleness: the published
+  0.11% used the stale muon-anchor literal `1.1097090249`; at canonical
+  proton q₀ the residual is **+0.12%, sign-flipped**. Corroborates the
+  prior PARTIAL record (#1579 chirality-odd narrative; #1581 33-candidate
+  scan). `(1+q)/2` stays un-wired; A=3 closure OPEN. No v10 ansatz.
 
 - [ ] **PROBE 2 — A=4 extension** of the v9 mirror-pair formula. The
   mirror-pair symmetry collapses at A=4 (no canonical mirror partner
@@ -126,6 +136,7 @@ near-match. Do NOT wire as a derivation.
 | Date | Agent / branch | Intent | Results |
 |------|----------------|--------|---------|
 | 2026-05-31 (cont. 3) | Claude / `claude/coord-ledgers-option-e-followup-2026-05-31` | (1) backfill this ledger from v1..v9 commits + existing audits, (2) document v9 near-match status honestly with failure signature for v10 | landed (1) + (2); did NOT propose v10 to avoid 7th-ansatz trap; PROBE 1 (derive (1+q)/2 structurally) is the next-session keystone. |
+| 2026-06-02 | Claude / `claude/option-e-derive-1plusq-over-2-2026-06-02` (PR #1707) | PROBE 1: DERIVE-OR-FALSIFY the v9 (1+q)/2 — refresh at canonical q₀, test 4 structural hypotheses, proton-vs-muon discriminator | **VERDICT NEAR-MATCH (fit)**. (1+q)/2 NOT forced: 4 independent hypotheses 18–90% off; only tautological [2]_q/2 / (q+1)/2 "match". Required factor R=1.05372 ≠ (1+q)/2=1.05499 by +0.12% same-pin. Published 0.11% was stale (muon literal); canonical-q₀ residual +0.12%, sign-flipped. No v10. (1+q)/2 stays un-wired; A=3 closure OPEN. |
 
 ## Cross-refs
 
