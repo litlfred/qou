@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T21:10:52.024263+00:00",
-  "commitSha": "eb6103bd15037a0dea544d490a95dc1f775fc53b",
+  "computedAt": "2026-06-02T03:02:42.896902+00:00",
+  "commitSha": "e12f154c399cdfa9308e74bbe06470d081c79c61",
   "assertions": [
     {
       "name": "cross_pair_factorization_completed",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7820,
+  "durationMs": 6232,
   "computation": "qbeta-habiro-cross-pair-factorization",
   "scriptFile": "qbeta_habiro_cross_pair_factorization.py",
   "scriptHash": "358925a6c1aa",

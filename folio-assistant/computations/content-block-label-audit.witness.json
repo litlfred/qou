@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T20:57:46.207341+00:00",
-  "commitSha": "eb6103bd15037a0dea544d490a95dc1f775fc53b",
+  "computedAt": "2026-06-02T02:50:17.665688+00:00",
+  "commitSha": "e12f154c399cdfa9308e74bbe06470d081c79c61",
   "assertions": [
     {
       "name": "no_missing_labels",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 8,
   "computation": "content-block-label-audit",
   "scriptFile": "content_block_label_audit.py",
   "scriptHash": "d86c5a63a3d7",
@@ -37,7 +37,7 @@
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "total_fields_audited": 306,
-    "registered_labels_count": 2883
+    "registered_labels_count": 2889
   },
   "data": {
     "by_result": {

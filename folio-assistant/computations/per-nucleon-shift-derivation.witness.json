@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:46:07.559754+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T03:12:38.426454+00:00",
+  "commitSha": "e12f154c399cdfa9308e74bbe06470d081c79c61",
   "assertions": [
     {
       "name": "Per-NEW-proton Δshift = 18 invariant across host",
@@ -41,7 +41,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 100,
+  "durationMs": 68,
   "computation": "per-nucleon-shift-derivation",
   "scriptFile": "per_nucleon_shift_derivation.py",
   "scriptHash": "5d1e34553840",
@@ -305,9 +305,9 @@
       }
     },
     "linear_fit_cancellation": {
-      "c_sigma_sq_adj": 0.949999999999997,
-      "c_averaged": -1.6846153846153757,
-      "fit_residuals": 1.5230769230769208
+      "c_sigma_sq_adj": 0.9499999999999975,
+      "c_averaged": -1.6846153846153773,
+      "fit_residuals": 1.5230769230769212
     }
   }
 }
