@@ -197,6 +197,32 @@ q_0 = mp.mpf(Q_0_STR)
 hbar_q = 1 - 1 / q_0  # ℏ_q = 1 − q⁻¹
 mu_0 = M_E_MEV / (3 * (q_0 - 1 / q_0) / 2)  # μ₀ = m_e / (3·(q−q⁻¹)/2)
 
+# ── Atom-specific binding-link volumes (substrate-derived knots) ─
+# Per binding_link_volumes.py + binding-k-solver SDP registry:
+#   D   → Hopf link (Vol = 0, Seifert-fibred) → substitute Vol(𝓑₃)
+#         via the binding-endomorphism path (deuteron is special; +0.19%)
+#   T   → 8₁₁ knot, Vol(8₁₁) = 8.2863168
+#   ³He → L6a4 link = Borromean = Vol(𝓑₃) = 7.3277248
+#   ⁴He → multi-link / JSJ decomposition (NOT a single binding link;
+#         needs per-pair sum per binding_link_volumes.py finding).
+#         Provisional: 2·Vol(𝓑₃) for the (2,2) doubly-magic shell.
+try:
+    from substrate.knot_volumes import VOL_BORROMEAN_MPF, VOL_8_11_MPF
+    VOL_K = {
+        "D":   VOL_BORROMEAN_MPF,           # via 𝓑₃ substitution (deuteron)
+        "T":   VOL_8_11_MPF,                # 8₁₁ (hyperbolic)
+        "3He": VOL_BORROMEAN_MPF,           # L6a4 = Borromean
+        "4He": 2 * VOL_BORROMEAN_MPF,       # provisional (doubly-magic)
+    }
+except Exception:
+    # Fallback constants from binding_link_volumes.py docstring.
+    VOL_K = {
+        "D":   mp.mpf("7.3277248"),
+        "T":   mp.mpf("8.2863168"),
+        "3He": mp.mpf("7.3277248"),
+        "4He": mp.mpf("14.6554497"),
+    }
+
 rho_candidates = {
     "rho_v1_m_e": M_E_MEV,
     "rho_v2_mu_0": mu_0,
@@ -205,9 +231,16 @@ rho_candidates = {
 }
 
 # ── Test each ρ against B_AME ────────────────────────────────────
+# Two assembly forms:
+#   v_unscaled: B_pred = ρ · Σ y_λ · dim_λ · |Δθ_λ|
+#   v_volume_scaled: B_pred = ρ · Vol(K_bind) · Σ y_λ · dim_λ · |Δθ_λ|
+#     (extends the deuteron binding-endomorphism B = m_e · Vol(K) · Δtr
+#      with Δtr → full-order Markov-Reeb sum per audit lead.)
 results = {}
+volume_scaled_results = {}
 for rho_name, rho in rho_candidates.items():
     per_atom_results = {}
+    per_atom_vol_results = {}
     for atom_key in per_atom:
         if atom_key not in B_AME:
             continue
@@ -222,9 +255,23 @@ for rho_name, rho in rho_candidates.items():
             "rel_err": str(rel_err),
             "closes_within_10pct": bool(rel_err < mp.mpf("0.10")),
         }
+        Vol = VOL_K.get(atom_key, mp.mpf(0))
+        B_pred_vol = rho * Vol * sum_S
+        rel_err_vol = abs(B_pred_vol - B_exp) / abs(B_exp)
+        per_atom_vol_results[atom_key] = {
+            "Vol_K_bind": str(Vol),
+            "B_pred_MeV": str(B_pred_vol),
+            "B_AME_MeV": str(B_exp),
+            "rel_err": str(rel_err_vol),
+            "closes_within_10pct": bool(rel_err_vol < mp.mpf("0.10")),
+        }
     results[rho_name] = {
         "rho_value_MeV": str(rho),
         "per_atom": per_atom_results,
+    }
+    volume_scaled_results[rho_name] = {
+        "rho_value_MeV": str(rho),
+        "per_atom": per_atom_vol_results,
     }
 
 # ── Reference: empirical ρ_need from audit (proves scaffold reads right) ──
@@ -274,6 +321,8 @@ out = {
     "rho_need_reproduced": rho_need_reproduced,
     "per_atom_sums": per_atom_sums,
     "rho_candidate_tests": results,
+    "rho_candidate_tests_volume_scaled": volume_scaled_results,
+    "volume_per_atom": {k: str(v) for k, v in VOL_K.items()},
 }
 
 out_path = Path(__file__).parent / "binding-a3plus-full-theta-assembly.witness.json"
@@ -306,6 +355,27 @@ for atom in ["D", "T", "3He", "4He"]:
     print(f"  {atom:>10s}", end="")
 print()
 for rho_name, rdata in results.items():
+    rho = float(mp.mpf(rdata["rho_value_MeV"]))
+    print(f"    {rho_name:<28s} {rho:>10.4f}", end="")
+    for atom in ["D", "T", "3He", "4He"]:
+        atom_data = rdata["per_atom"].get(atom)
+        if atom_data:
+            rel_err = float(mp.mpf(atom_data["rel_err"]))
+            print(f"  {rel_err*100:>+8.1f}%", end="")
+        else:
+            print(f"  {'n/a':>10s}", end="")
+    print()
+print()
+print("  ===== Volume-scaled: B_pred = ρ · Vol(K_bind) · Σ y_λ · dim_λ · |Δθ_λ| =====")
+print("  Vol per atom:")
+for atom, v in VOL_K.items():
+    print(f"    {atom:>4s}  Vol(K_bind) = {float(v):>8.4f}")
+print()
+print(f"    {'rho_name':<28s} {'ρ MeV':>10s}", end="")
+for atom in ["D", "T", "3He", "4He"]:
+    print(f"  {atom:>10s}", end="")
+print()
+for rho_name, rdata in volume_scaled_results.items():
     rho = float(mp.mpf(rdata["rho_value_MeV"]))
     print(f"    {rho_name:<28s} {rho:>10.4f}", end="")
     for atom in ["D", "T", "3He", "4He"]:
