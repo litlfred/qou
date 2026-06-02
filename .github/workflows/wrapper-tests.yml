@@ -351,7 +351,16 @@ jobs:
           # `overwrite = TRUE` is needed because the repo's DESCRIPTION
           # is already set up; without it, use_extendr() refuses to
           # update an existing config.
+          # use_extendr(overwrite=TRUE) bootstraps the package layout
+          # but ALSO overwrites src/rust/Cargo.toml and
+          # src/rust/src/lib.rs with rextendr's "hello_world" template
+          # — destroying our real #[extendr] functions in the process.
+          # Save the real files, run use_extendr(), restore them.
+          cp src/rust/Cargo.toml      /tmp/real_cargo.toml
+          cp src/rust/src/lib.rs      /tmp/real_lib.rs
           Rscript -e 'rextendr::use_extendr(quiet = TRUE, overwrite = TRUE)'
+          cp /tmp/real_cargo.toml     src/rust/Cargo.toml
+          cp /tmp/real_lib.rs         src/rust/src/lib.rs
           # use_extendr() generates configure/cleanup shell scripts but
           # leaves them non-executable (R generates them with 0644);
           # R CMD INSTALL then complains "'cleanup' exists but is not
