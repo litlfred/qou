@@ -82,12 +82,12 @@ test("lrCoefficient: Pieri c^[2]_{[1],[1]} = 1", () => {
   const c = heckeNode.lrCoefficient([2], [1], [1]);
   // napi-rs maps the Rust i32 return type to Number, not BigInt.
   // Strict-equal compare against a plain Number literal.
-  assert.equal(c, 1, `lrCoefficient([2],[1],[1]) = ${c}, expected 1`);
+  assert.strictEqual(c, 1, `lrCoefficient([2],[1],[1]) = ${c}, expected 1`);
 });
 
 test("lrCoefficient: size mismatch returns 0", () => {
   const c = heckeNode.lrCoefficient([3], [2], [2]);
-  assert.equal(c, 0, `lrCoefficient([3],[2],[2]) = ${c}, expected 0`);
+  assert.strictEqual(c, 0, `lrCoefficient([3],[2],[2]) = ${c}, expected 0`);
 });
 
 test("trMAtomicMpfr: 3-strand single crossing returns z ≈ 0.4993", () => {
