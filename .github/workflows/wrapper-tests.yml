@@ -320,30 +320,26 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: tools/hecke-engine-r -> target
-      - name: Install rextendr + pkgload + roxygen2
-        # Use the Posit Package Manager (RSPM) binary repo set by the
-        # env var above so the install is a binary fetch, not a source
-        # build.  CRAN's noble source repo currently fails on a long
-        # transitive dependency chain for `devtools`
-        # (htmlwidgets → profvis → devtools), so avoid devtools entirely:
-        # roxygen2 covers `document()` with far fewer deps, and
-        # pkgload covers `load_all()` directly.
-        run: Rscript -e 'install.packages(c("rextendr", "pkgload", "roxygen2"))'
+      - name: Install rextendr + devtools (RSPM binary repo)
+        # The Posit Package Manager (RSPM) URL in the env block above
+        # serves *binary* packages for noble — no source compilation,
+        # no transitive-dep cascade.  Both rextendr 0.4+ and recent
+        # extendr-based packages REQUIRE `devtools::document()`
+        # (rextendr::register_extendr() became a no-op deprecation in
+        # 0.4.0).  Round-3's "skip devtools" gambit hit a real
+        # rextendr version barrier; RSPM binary install is fast and
+        # reliable.
+        run: Rscript -e 'install.packages(c("rextendr", "pkgload", "devtools"))'
       - name: Build + load + smoke
         run: |
           cd tools/hecke-engine-r
-          # rextendr workflow without devtools (12-dep cascade fails on
-          # noble CRAN).  Three explicit steps:
-          #   register_extendr  — generate src/entrypoint.c + Makevars
-          #                       + R/extendr-wrappers.R from Rust source.
-          #   roxygenize        — generate NAMESPACE / man/*.Rd
-          #                       (devtools::document() under the hood).
-          #   compile           — pkgbuild::compile_dll() builds the
-          #                       Rust cdylib via the just-generated
-          #                       Makevars; this is what pkgload::load_all
-          #                       would attempt and fail without.
-          Rscript -e 'rextendr::register_extendr(force = TRUE); roxygen2::roxygenize(".")'
-          Rscript -e 'rextendr::compile()'
+          # devtools::document() — generates src/entrypoint.c +
+          # Makevars + R/extendr-wrappers.R via rextendr's roclet, then
+          # generates NAMESPACE / man/*.Rd.  This is the only documented
+          # entry point in rextendr 0.4+.
+          Rscript -e 'devtools::document(".")'
+          # pkgload::load_all() — Compiles + loads the Rust cdylib using
+          # the Makevars devtools::document() just generated.
           Rscript -e 'pkgload::load_all("."); source("tests/smoke.R")'
 
   # ── 10. SageMath examples smoke ──
