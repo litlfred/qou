@@ -91,7 +91,10 @@ def main() -> int:
     n_fail = sum(1 for (_, _, psd) in PSD_REPORT.values() if not psd)
     all_psd = n_fail == 0
 
-    w = WitnessBuilder("tritium-h5-psd-feasibility", engine="rust-hecke-engine")
+    # Engine is "python" (the schema-allowed identifier): this is a Python
+    # driver that shells out to the Rust dump-block-matrices binary. The Rust
+    # provenance is recorded in the description, not the engine enum.
+    w = WitnessBuilder("tritium-h5-psd-feasibility", engine="python")
     w.set_description(
         "Tritium ³H = 8_11 Wedderburn PSD-feasibility at H_5 (B_5 braid), "
         "computed by the Rust dump-block-matrices binary (the check "
