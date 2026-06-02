@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:33:52.940932+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "computedAt": "2026-06-02T16:58:57.406778+00:00",
+  "commitSha": "d09b21a5e2da979a447585ef1917039c5212ca56",
   "assertions": [
     {
       "name": "h_sc_4_equals_5_over_2",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 17,
   "computation": "lambda-scale-proof-step2-partition-count",
   "scriptFile": "lambda_scale_proof_step2_partition_count.py",
-  "scriptHash": "8f44635493c1",
-  "scriptCommitSha": "79548024c2941d7a297d74099852e682c33ed060",
+  "scriptHash": "a1528714c647",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

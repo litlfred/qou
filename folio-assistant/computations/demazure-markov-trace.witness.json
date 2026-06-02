@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-02T06:53:27.813387+00:00",
-  "commitSha": "f9da6997a26dbd5abac1074852bb32c8a3783957",
+  "computedAt": "2026-06-02T17:03:31.338040+00:00",
+  "commitSha": "d09b21a5e2da979a447585ef1917039c5212ca56",
   "assertions": [
     {
       "name": "D_w0_eq_schur_n2",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4445,
+  "durationMs": 3761,
   "computation": "demazure-markov-trace",
   "scriptFile": "demazure_markov_trace.py",
-  "scriptHash": "3275dd59c4d7",
-  "scriptCommitSha": "3905433d845e20f9ca710f12a96964a81a80bfbb",
+  "scriptHash": "359ae8082a0f",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
