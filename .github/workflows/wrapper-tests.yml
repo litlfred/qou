@@ -335,13 +335,16 @@ jobs:
       - name: Build + load + smoke
         run: |
           cd tools/hecke-engine-r
-          # devtools::document() — generates src/entrypoint.c +
-          # Makevars + R/extendr-wrappers.R via rextendr's roclet, then
-          # generates NAMESPACE / man/*.Rd.  This is the only documented
-          # entry point in rextendr 0.4+.
-          Rscript -e 'devtools::document(".")'
+          # `rextendr::document()` is the version-agnostic wrapper that
+          # dispatches to whatever generator pipeline the installed
+          # rextendr version uses (register_extendr() in 0.3,
+          # extendr_roclet in 0.4, the renamed roclet in 0.5+).
+          # Avoid the explicit DESCRIPTION `Roxygen: ... extendr_roclet`
+          # line — that name disappeared in rextendr 0.5 and surfaces
+          # as `'extendr_roclet' is not an exported object`.
+          Rscript -e 'rextendr::document(".")'
           # pkgload::load_all() — Compiles + loads the Rust cdylib using
-          # the Makevars devtools::document() just generated.
+          # the Makevars rextendr::document() just generated.
           Rscript -e 'pkgload::load_all("."); source("tests/smoke.R")'
 
   # ── 10. SageMath examples smoke ──

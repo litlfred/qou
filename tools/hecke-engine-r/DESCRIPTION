@@ -14,7 +14,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 SystemRequirements: Cargo (Rust 1.70+), libgmp-dev, libmpfr-dev
 Config/rextendr/version: 0.4.0
-Roxygen: list(markdown = TRUE, roclets = c("rd", "namespace", "rextendr::extendr_roclet"))
 URL: https://github.com/litlfred/qou
 BugReports: https://github.com/litlfred/qou/issues
 RoxygenNote: 7.3.1
