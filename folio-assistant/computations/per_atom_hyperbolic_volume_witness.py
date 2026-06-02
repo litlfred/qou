@@ -43,6 +43,8 @@ def compute_vol(snappy_id: str) -> float:
     import snappy  # imported lazily
     if snappy_id.startswith("braid:"):
         braid = ast.literal_eval(snappy_id[len("braid:"):])
+        if not (isinstance(braid, list) and all(isinstance(x, int) for x in braid)):
+            raise ValueError(f"braid identifier is not a list[int]: {braid!r}")
         L = snappy.Link(braid_closure=braid)
         return float(L.exterior().volume())
     if snappy_id.startswith("formula:"):
@@ -74,7 +76,7 @@ def main() -> int:
             print(f"{atom:4s} {knot:>20s} {tag:>30s} ERR: {type(e).__name__}: {e}")
             vols[atom] = float('nan')
 
-    w = WitnessBuilder("per-atom-hyperbolic-volume", engine="snappy")
+    w = WitnessBuilder("per-atom-hyperbolic-volume", engine="snappea")
     w.set_description(
         "Per-atom hyperbolic volumes Vol(K_atom) for the canonical "
         "atom-knot atlas (proton=𝓑₃, ²H=6_2, ³H=8_11, ³He=L6a4, "

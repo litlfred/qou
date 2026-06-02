@@ -1,8 +1,8 @@
 {
-  "engine": "rust-hecke-engine",
+  "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T15:18:34.796289+00:00",
-  "commitSha": "f4386be0c04b0f139d02935ef2408bf838f51448",
+  "computedAt": "2026-06-02T15:50:50.050959+00:00",
+  "commitSha": "078d896bb95c493b1efe6d05d10ce4b413426612",
   "assertions": [
     {
       "name": "tritium_8_11_not_psd_feasible_at_q0",
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "tritium-h5-psd-feasibility",
   "scriptFile": "tritium_h5_psd_feasibility_witness.py",
-  "scriptHash": "731022f642bf",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "323b41beade7",
+  "scriptCommitSha": "e5d247f6d7a29bccbee79d640062635ce2fe6847",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

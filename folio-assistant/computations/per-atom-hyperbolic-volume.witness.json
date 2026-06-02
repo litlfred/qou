@@ -1,8 +1,8 @@
 {
-  "engine": "snappy",
+  "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-06-02T15:45:55.799416+00:00",
-  "commitSha": "05563751272a73fbea4999822fea6d7819cea3cd",
+  "computedAt": "2026-06-02T15:50:49.742233+00:00",
+  "commitSha": "078d896bb95c493b1efe6d05d10ce4b413426612",
   "assertions": [
     {
       "name": "Vol_p_present",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 36,
+  "durationMs": 34,
   "computation": "per-atom-hyperbolic-volume",
   "scriptFile": "per_atom_hyperbolic_volume_witness.py",
-  "scriptHash": "3b29868e01a5",
-  "scriptCommitSha": "bbacdb1aa801ab802cd480e6fbf8a5208e725bbe",
+  "scriptHash": "fbdee4b58881",
+  "scriptCommitSha": "078d896bb95c493b1efe6d05d10ce4b413426612",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
