@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T19:20:55.086436+00:00",
-  "commitSha": "a2844ad71c074053c091ac166b3de40d4b44692f",
+  "computedAt": "2026-06-02T19:45:45.593853+00:00",
+  "commitSha": "67292fc1f4aa5e860b199108eaebedbb324d5d28",
   "assertions": [
     {
       "name": "bond_type_reproduces_T_He3_ordering",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 21,
   "computation": "derive-binding-bond-type",
   "scriptFile": "derive_binding_bond_type.py",
-  "scriptHash": "fc6bb7b59ec3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ad7910dd7c35",
+  "scriptCommitSha": "50b75bb1008200e7cdf80c9f4c3caee6592e5eeb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

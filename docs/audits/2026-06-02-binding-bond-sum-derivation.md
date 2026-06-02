@@ -66,8 +66,10 @@ this reframing. Track A per-isotope binding (gated for the L2 100× `Q_β`/`m_n`
 ## Level 1 — bond TYPE (derive_binding_bond_type.py, pure-Python, 0 fit)
 
 Derived the three bond types from their 2-nucleon sub-braids
-(`binding_canonical(Z,N)`: pn=(1,1)=deuteron, pp=(2,0), nn=(0,2)), `B_xy =
-E_0·Δtr_M`, summed by composition `n_pp=C(Z,2), n_pn=Z·N, n_nn=C(N,2)`:
+(`binding_canonical(Z,N)`: pn=(1,1)=deuteron, pp=(2,0), nn=(0,2)),
+`B_xy = E_0·(|tr_M_free| − |tr_M_atom|)` (the absolute-trace binding convention
+used throughout, matching `binding_canonical`), summed by composition
+`n_pp=C(Z,2), n_pn=Z·N, n_nn=C(N,2)`:
 
 | bond | B (MeV) |
 |---|---|

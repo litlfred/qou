@@ -50,9 +50,9 @@ BOND_ZN = {"pp": (2, 0), "pn": (1, 1), "nn": (0, 2)}
 
 
 def bond_binding(Z, N):
-    """E_0·(tr_M_free − tr_M_atom) for the 2-nucleon (Z,N) sub-braid (scalar)."""
+    """E_0·(|tr_M_free| − |tr_M_atom|) for the 2-nucleon (Z,N) sub-braid."""
     r = bc.binding_canonical(Z, N)
-    dtr = mpf(str(r["tr_M_free"])) - mpf(str(r["tr_M_atom"]))
+    dtr = abs(mpf(str(r["tr_M_free"]))) - abs(mpf(str(r["tr_M_atom"])))
     return E0 * dtr
 
 
