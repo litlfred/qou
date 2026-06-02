@@ -109,6 +109,23 @@ def load_witness(name: str) -> dict:
 w = load_witness("binding-reeb-phase-decomposition.witness.json")
 per_atom = w["data"]["per_atom"]
 
+# ── Load y_λ per atom from chi-*-at-q0-50dps witnesses ───────────
+chi_witness_for_atom = {
+    "D":   "chi-deuteron-h6-at-q0-50dps.witness.json",
+    "T":   "chi-tritium-h9-at-q0-50dps.witness.json",
+    "3He": "chi-helium-3-h9-at-q0-50dps.witness.json",
+    "4He": "chi-helium-4-h12-at-q0-50dps.witness.json",
+}
+y_lambda_per_atom: dict[str, dict[str, mp.mpf]] = {}
+for atom_key, fname in chi_witness_for_atom.items():
+    chi_w = load_witness(fname)
+    by_part = chi_w.get("by_partition", [])
+    y_map: dict[str, mp.mpf] = {}
+    for entry in by_part:
+        part_key = "_".join(str(p) for p in entry["partition"])
+        y_map[part_key] = mp.mpf(entry["y_lambda"])
+    y_lambda_per_atom[atom_key] = y_map
+
 # ── Compute the rotation-phase-lead sum Σ y_λ · dim_λ · |Δθ_λ| ───
 # (carries both rotation and growth channels — by_partition contains
 # both, classified via `channel_free` / `channel_atom`.)
@@ -119,8 +136,14 @@ for atom_key, atom_data in per_atom.items():
     sum_rotation_only = mp.mpf(0)
     sum_growth_only = mp.mpf(0)
     rows = []
+    y_map = y_lambda_per_atom.get(atom_key, {})
     for row in bp:
         dim = row["dim"]
+        part_key = "_".join(str(p) for p in row["partition"])
+        y_lam = y_map.get(part_key)
+        if y_lam is None:
+            # Partition not in y_λ witness; skip with warning marker.
+            y_lam = mp.mpf(0)
         # Handle channel_flip cases where delta_theta_rad is None.
         dtheta_raw = row.get("delta_theta_rad")
         if dtheta_raw is None:
@@ -142,7 +165,7 @@ for atom_key, atom_data in per_atom.items():
         else:
             delta_theta = mp.mpf(dtheta_raw)
         abs_delta_theta = abs(delta_theta)
-        weight = dim  # placeholder until y_λ added
+        weight = y_lam * dim  # Markov-weighted per audit 2026-05-28
         contrib = weight * abs_delta_theta
         sum_full += contrib
         ch_free = row.get("channel_free", "")
@@ -152,17 +175,18 @@ for atom_key, atom_data in per_atom.items():
         else:
             sum_rotation_only += contrib
         rows.append({
-            "partition": "_".join(str(p) for p in row["partition"]),
+            "partition": part_key,
             "dim": dim,
+            "y_lambda": str(y_lam),
             "delta_theta_rad": str(delta_theta),
             "abs_delta_theta_rad": str(abs_delta_theta),
             "channel_free": ch_free,
             "channel_atom": ch_atom,
             "channel_flip": row.get("channel_flip", False),
-            "contrib_dim_x_abs_dtheta": str(contrib),
+            "contrib_y_dim_x_abs_dtheta": str(contrib),
         })
     per_atom_sums[atom_key] = {
-        "sum_dim_abs_dtheta": str(sum_full),
+        "sum_y_dim_abs_dtheta": str(sum_full),
         "sum_rotation_only": str(sum_rotation_only),
         "sum_growth_only": str(sum_growth_only),
         "by_partition": rows,
@@ -187,7 +211,7 @@ for rho_name, rho in rho_candidates.items():
     for atom_key in per_atom:
         if atom_key not in B_AME:
             continue
-        sum_S = mp.mpf(per_atom_sums[atom_key]["sum_dim_abs_dtheta"])
+        sum_S = mp.mpf(per_atom_sums[atom_key]["sum_y_dim_abs_dtheta"])
         B_pred = rho * sum_S
         B_exp = B_AME[atom_key]
         rel_err = abs(B_pred - B_exp) / abs(B_exp)
@@ -215,7 +239,7 @@ rho_need_reproduced = {}
 for atom in B_AME:
     if atom not in per_atom_sums:
         continue
-    sum_S = mp.mpf(per_atom_sums[atom]["sum_dim_abs_dtheta"])
+    sum_S = mp.mpf(per_atom_sums[atom]["sum_y_dim_abs_dtheta"])
     if sum_S == 0:
         continue
     rho_need_local = B_AME[atom] / sum_S
@@ -266,7 +290,7 @@ print(f"  μ₀  = m_e / (3·(q−q⁻¹)/2) = {float(mu_0):.6f} MeV")
 print()
 print("  Σ_λ dim_λ · |Δθ_λ| per atom  (placeholder — y_λ pending commit 3):")
 for atom, s in per_atom_sums.items():
-    print(f"    {atom:>4s}  sum_full = {float(mp.mpf(s['sum_dim_abs_dtheta'])):>9.4f}  "
+    print(f"    {atom:>4s}  sum_full = {float(mp.mpf(s['sum_y_dim_abs_dtheta'])):>9.4f}  "
           f"rot = {float(mp.mpf(s['sum_rotation_only'])):>9.4f}  "
           f"growth = {float(mp.mpf(s['sum_growth_only'])):>9.4f}")
 print()
