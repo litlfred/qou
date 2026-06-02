@@ -25,7 +25,7 @@ This doc summarises the scan that produced the per-flag findings in PR
 The Q_β value is **derived arithmetically** as `m_n − m_p − m_e`, so
 its uncertainty floor is propagated from CODATA m_n: ~783 ppb. Every
 E_0-dependent quantity inherits this floor (see
-[`e0-calibration-audit.witness.json`](../../folio-assistant/computations/e0-calibration-audit.witness.json)).
+[`e0-calibration-audit.witness.json`](../../folio-assistant/computations/audits/e0-calibration-audit.witness.json)).
 
 ## Latest canonical witness sources
 

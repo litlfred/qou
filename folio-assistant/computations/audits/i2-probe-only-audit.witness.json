@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:33:46.645042+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "computedAt": "2026-06-01T18:20:21.731859+00:00",
+  "commitSha": "18ac6def75acf693c516f28e4a8e625e698c5307",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "i2-probe-only-audit",
   "scriptFile": "i2_probe_only_audit.py",
   "scriptHash": "1155d3faa225",
@@ -37,12 +37,12 @@
   "contentBlock": "I2 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "production_consumers_count": 9,
-    "total_label_bearing_witnesses": 277
+    "total_label_bearing_witnesses": 276
   },
   "data": {
     "by_result": {
       "i2_probe_only": 226,
-      "wired_production": 51
+      "wired_production": 50
     },
     "production_consumers": [
       "atomic_mass_via_rho_k.py",
@@ -66,7 +66,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/A-operator-per-interface.witness.json",
+        "witness": "folio-assistant/computations/probes/A-operator-per-interface.witness.json",
         "labels": [
           "prop:crystal-r-matrix-sub-lemma"
         ],
@@ -108,7 +108,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/additive-composition-categorical-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/additive-composition-categorical-probe.witness.json",
         "labels": [
           "conj:borromean-baryon-mass-formula"
         ],
@@ -234,7 +234,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/archimedean-knot-eigenbasis-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/archimedean-knot-eigenbasis-probe.witness.json",
         "labels": [
           "cor:archimedean-knot-eigenbasis"
         ],
@@ -315,7 +315,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/braid-encoding-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/braid-encoding-audit.witness.json",
         "labels": [
           "prop:atomic-mass-gb-nf"
         ],
@@ -373,7 +373,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/c5-decomposition-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/c5-decomposition-probe.witness.json",
         "labels": [
           "prop:c5-involution-leibniz-decomposition"
         ],
@@ -411,7 +411,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/canonical-a-k-magnitude-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/canonical-a-k-magnitude-audit.witness.json",
         "labels": [
           "prop:mass-coefficient-shadow-price"
         ],
@@ -431,7 +431,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/casimir-carlitz-q-bernoulli-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-carlitz-q-bernoulli-probe.witness.json",
         "labels": [
           "conj:casimir-epsilon-vacuum"
         ],
@@ -449,7 +449,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/casimir-epsilon-vacuum-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-epsilon-vacuum-probe.witness.json",
         "labels": [
           "conj:casimir-epsilon-vacuum"
         ],
@@ -458,7 +458,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/casimir-grid-sweep-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-grid-sweep-probe.witness.json",
         "labels": [
           "conj:casimir-epsilon-vacuum"
         ],
@@ -467,7 +467,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/casimir-hoefsmit-additivity-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-hoefsmit-additivity-probe.witness.json",
         "labels": [
           "conj:casimir-epsilon-vacuum"
         ],
@@ -485,7 +485,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/casimir-macdonald-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-macdonald-probe.witness.json",
         "labels": [
           "conj:casimir-epsilon-vacuum"
         ],
@@ -503,7 +503,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/casimir-phi-q-markov-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-phi-q-markov-probe.witness.json",
         "labels": [
           "conj:casimir-epsilon-vacuum"
         ],
@@ -512,7 +512,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/casimir-q-factorial-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-q-factorial-probe.witness.json",
         "labels": [
           "conj:casimir-epsilon-vacuum"
         ],
@@ -521,7 +521,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/casimir-q-zeta-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-q-zeta-probe.witness.json",
         "labels": [
           "conj:casimir-epsilon-vacuum"
         ],
@@ -606,7 +606,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/commutative-chirality-vanishes-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/commutative-chirality-vanishes-probe.witness.json",
         "labels": [
           "cor:commutative-chirality-vanishes"
         ],
@@ -651,7 +651,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/cyclotomic-cl3-orbit-sum-general-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/cyclotomic-cl3-orbit-sum-general-probe.witness.json",
         "labels": [
           "prop:cyclotomic-cl3-orbit-sum-general"
         ],
@@ -660,7 +660,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/cyclotomic-depth3-dimension-synthesis-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/cyclotomic-depth3-dimension-synthesis-probe.witness.json",
         "labels": [
           "prop:cyclotomic-depth3-dimension-synthesis"
         ],
@@ -669,7 +669,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/cyclotomic-orbit-sum-all-depths-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/cyclotomic-orbit-sum-all-depths-probe.witness.json",
         "labels": [
           "prop:cyclotomic-orbit-sum-all-depths"
         ],
@@ -678,7 +678,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/cyclotomic-trilog-imaginary-closed-form-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/cyclotomic-trilog-imaginary-closed-form-probe.witness.json",
         "labels": [
           "prop:cyclotomic-trilog-imaginary-closed-form"
         ],
@@ -714,7 +714,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/delta-coupling-closed-form-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/delta-coupling-closed-form-probe.witness.json",
         "labels": [
           "conj:magic-shell-stabilization"
         ],
@@ -777,7 +777,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/delta-n2-placeholder-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/delta-n2-placeholder-audit.witness.json",
         "labels": [
           "conj:categorical-neutrality-saturated-shells"
         ],
@@ -804,7 +804,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/deuteron-delta-i-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/deuteron-delta-i-audit.witness.json",
         "labels": [
           "prop:mass-coefficient-shadow-price"
         ],
@@ -833,7 +833,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/explicit-central-idempotent-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/explicit-central-idempotent-probe.witness.json",
         "labels": [
           "prop:explicit-central-idempotent"
         ],
@@ -842,7 +842,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/finite-q-volume-conjecture-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "labels": [
           "prop:figure-eight-reeb-rotation"
         ],
@@ -851,7 +851,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/fitted-labelled-canonical-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/fitted-labelled-canonical-audit.witness.json",
         "labels": [
           "prop:three-calibration-inputs"
         ],
@@ -900,7 +900,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/frobenius-gram-matrix-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/frobenius-gram-matrix-probe.witness.json",
         "labels": [
           "prop:frobenius-gram-matrix"
         ],
@@ -918,7 +918,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/full-twist-root-of-unity-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/full-twist-root-of-unity-probe.witness.json",
         "labels": [
           "conj:categorical-neutrality-saturated-shells"
         ],
@@ -936,7 +936,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/gauge-coupling-uniqueness-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/gauge-coupling-uniqueness-probe.witness.json",
         "labels": [
           "cor:gauge-coupling-uniqueness"
         ],
@@ -945,7 +945,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/graded-hecke-energy-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/graded-hecke-energy-probe.witness.json",
         "labels": [
           "prop:graded-hecke-energy-truncation-bound"
         ],
@@ -981,7 +981,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/h4-categorical-drivers-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/h4-categorical-drivers-probe.witness.json",
         "labels": [
           "conj:borromean-baryon-mass-formula"
         ],
@@ -990,7 +990,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/habiro-exact-mass-endomorphism.witness.json",
+        "witness": "folio-assistant/computations/habiro/habiro-exact-mass-endomorphism.witness.json",
         "labels": [
           "prop:mass-endomorphism-tower"
         ],
@@ -1002,7 +1002,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/habiro-expansion-atomic-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/habiro-expansion-atomic-probe.witness.json",
         "labels": [
           "cor:habiro-expansion-atomic"
         ],
@@ -1011,7 +1011,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/habiro-interpolate-cross-validation.witness.json",
+        "witness": "folio-assistant/computations/habiro/habiro-interpolate-cross-validation.witness.json",
         "labels": [
           "prop:full-pole-structure-mass-trace"
         ],
@@ -1022,7 +1022,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/habiro-ladder-bridge.witness.json",
+        "witness": "folio-assistant/computations/habiro/habiro-ladder-bridge.witness.json",
         "labels": [
           "prop:q-beta-categorical-precision-ladder"
         ],
@@ -1033,7 +1033,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/habiro-q-difference-fourier.witness.json",
+        "witness": "folio-assistant/computations/habiro/habiro-q-difference-fourier.witness.json",
         "labels": [
           "prop:q-beta-categorical-precision-ladder"
         ],
@@ -1044,7 +1044,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/habiro-q-difference-mode-solve.witness.json",
+        "witness": "folio-assistant/computations/habiro/habiro-q-difference-mode-solve.witness.json",
         "labels": [
           "prop:q-beta-categorical-precision-ladder"
         ],
@@ -1055,7 +1055,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/hecke-1d-irrep-closed-form-character-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/hecke-1d-irrep-closed-form-character-probe.witness.json",
         "labels": [
           "prop:hecke-1d-irrep-closed-form-character"
         ],
@@ -1064,7 +1064,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/hecke-branching-trace-decomposition-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/hecke-branching-trace-decomposition-probe.witness.json",
         "labels": [
           "prop:hecke-branching-trace-decomposition"
         ],
@@ -1073,7 +1073,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/hecke-crossed-module-q8.witness.json",
+        "witness": "folio-assistant/computations/hecke/hecke-crossed-module-q8.witness.json",
         "labels": [
           "conj:lambda-scale-bring-bloch-identity"
         ],
@@ -1082,7 +1082,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/hecke-log-decomposition-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/hecke-log-decomposition-probe.witness.json",
         "labels": [
           "prop:hecke-log-decomposition"
         ],
@@ -1091,7 +1091,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/hecke-markov-transition-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/hecke-markov-transition-probe.witness.json",
         "labels": [
           "prop:hecke-markov-transition"
         ],
@@ -1118,7 +1118,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/hoefsmit-seminormal-form-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/hoefsmit-seminormal-form-probe.witness.json",
         "labels": [
           "prop:hoefsmit-seminormal-form"
         ],
@@ -1172,7 +1172,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/jonquiere-cyclotomic-tate-rationality-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/jonquiere-cyclotomic-tate-rationality-probe.witness.json",
         "labels": [
           "prop:jonquiere-cyclotomic-tate-rationality"
         ],
@@ -1181,7 +1181,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/jucys-murphy-central-elements-qou-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/jucys-murphy-central-elements-qou-probe.witness.json",
         "labels": [
           "prop:jucys-murphy-central-elements-qou"
         ],
@@ -1219,7 +1219,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/knot-factor-amphicheiral-BD-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/knot-factor-amphicheiral-BD-probe.witness.json",
         "labels": [
           "cor:knot-factor-amphicheiral"
         ],
@@ -1228,7 +1228,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/knot-factor-amphicheiral-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/knot-factor-amphicheiral-probe.witness.json",
         "labels": [
           "cor:knot-factor-amphicheiral"
         ],
@@ -1237,7 +1237,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/knot-factor-borromean-composite-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/knot-factor-borromean-composite-probe.witness.json",
         "labels": [
           "cor:knot-factor-borromean-composite"
         ],
@@ -1390,7 +1390,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/lambda-scale-substrate-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/lambda-scale-substrate-probe.witness.json",
         "labels": [
           "conj:borromean-baryon-mass-formula"
         ],
@@ -1435,7 +1435,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/m-p-bring-plus-faddeev-h4-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/m-p-bring-plus-faddeev-h4-probe.witness.json",
         "labels": [
           "conj:borromean-baryon-mass-formula"
         ],
@@ -1453,7 +1453,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/markov-peel-atomic-tr-m.witness.json",
+        "witness": "folio-assistant/computations/markov/markov-peel-atomic-tr-m.witness.json",
         "labels": [
           "prop:markov-pair-z2"
         ],
@@ -1466,7 +1466,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/markov-pipeline-cross-validation.witness.json",
+        "witness": "folio-assistant/computations/markov/markov-pipeline-cross-validation.witness.json",
         "labels": [
           "prop:full-pole-structure-mass-trace"
         ],
@@ -1477,7 +1477,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/markov-substrate-realization.witness.json",
+        "witness": "folio-assistant/computations/markov/markov-substrate-realization.witness.json",
         "labels": [
           "prop:full-pole-structure-mass-trace"
         ],
@@ -1510,7 +1510,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/mass-table-bring-faddeev-h4-sweep.witness.json",
+        "witness": "folio-assistant/computations/sweeps/mass-table-bring-faddeev-h4-sweep.witness.json",
         "labels": [
           "conj:borromean-baryon-mass-formula"
         ],
@@ -1690,7 +1690,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/pauli-factor-wedderburn-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/pauli-factor-wedderburn-probe.witness.json",
         "labels": [
           "prop:pauli-factor-wedderburn"
         ],
@@ -1710,7 +1710,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/phase1a-per-partition-h-expansion.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase1a-per-partition-h-expansion.witness.json",
         "labels": [
           "conj:psd-trace-orthogonality"
         ],
@@ -1719,7 +1719,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/phase1b-two-row-transfer-matrix.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase1b-two-row-transfer-matrix.witness.json",
         "labels": [
           "conj:psd-trace-orthogonality"
         ],
@@ -1728,7 +1728,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/phase1c-proton-h3-symbolic-decomposition.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase1c-proton-h3-symbolic-decomposition.witness.json",
         "labels": [
           "prop:proton-mass-substrate-identity"
         ],
@@ -1737,7 +1737,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/phase1d-f-bor-exact-h-expansion.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase1d-f-bor-exact-h-expansion.witness.json",
         "labels": [
           "prop:proton-mass-substrate-identity"
         ],
@@ -1746,7 +1746,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/phase1e-neutron-cross-isotope-h-expansion.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase1e-neutron-cross-isotope-h-expansion.witness.json",
         "labels": [
           "prop:proton-mass-substrate-identity"
         ],
@@ -1755,7 +1755,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/phase2-m-e-hecke-diagnostic.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase2-m-e-hecke-diagnostic.witness.json",
         "labels": [
           "prop:atom-knot-mass-derivation"
         ],
@@ -1766,7 +1766,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/phase2a-flavor-split-higher-order.witness.json",
+        "witness": "folio-assistant/computations/probes/phase2a-flavor-split-higher-order.witness.json",
         "labels": [
           "prop:flavor-split-substrate"
         ],
@@ -1777,7 +1777,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/phase2a2-flavor-split-exact-correction.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase2a2-flavor-split-exact-correction.witness.json",
         "labels": [
           "prop:flavor-split-substrate"
         ],
@@ -1788,7 +1788,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/phase2b-dim-v21-bridge.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase2b-dim-v21-bridge.witness.json",
         "labels": [
           "prop:proton-mass-substrate-identity"
         ],
@@ -1797,7 +1797,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/phase2b2-dim-v21-categorical-bridge.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase2b2-dim-v21-categorical-bridge.witness.json",
         "labels": [
           "prop:proton-mass-substrate-identity"
         ],
@@ -1806,7 +1806,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/phase2c-derive-correction-tower.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase2c-derive-correction-tower.witness.json",
         "labels": [
           "prop:proton-mass-substrate-identity"
         ],
@@ -1815,7 +1815,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/phase3-deuteron-tritium-h-expansion.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase3-deuteron-tritium-h-expansion.witness.json",
         "labels": [
           "prop:proton-mass-substrate-identity"
         ],
@@ -1824,7 +1824,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/phase3c-a5-a7-knot-volume-targets.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase3c-a5-a7-knot-volume-targets.witness.json",
         "labels": [
           "prop:proton-mass-substrate-identity"
         ],
@@ -1833,7 +1833,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/plancherel-weight-boundedness-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/plancherel-weight-boundedness-probe.witness.json",
         "labels": [
           "prop:plancherel-weight-boundedness"
         ],
@@ -1905,7 +1905,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/proton-m_e-anomaly-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/proton-m_e-anomaly-audit.witness.json",
         "labels": [
           "prop:full-pole-structure-mass-trace"
         ],
@@ -1991,7 +1991,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/q-hecke-seminormal-character-closure-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/q-hecke-seminormal-character-closure-probe.witness.json",
         "labels": [
           "prop:q-hecke-seminormal-character-closure"
         ],
@@ -2125,7 +2125,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-element-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-habiro-element-probe.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
         ],
@@ -2134,7 +2134,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-p8-identification.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-habiro-p8-identification.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
         ],
@@ -2161,7 +2161,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-phi8-interpretation.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-habiro-phi8-interpretation.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
         ],
@@ -2181,7 +2181,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
         ],
@@ -2190,7 +2190,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-recursion.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-habiro-recursion.witness.json",
         "labels": [
           "prop:neutron-qvalue-symbolic"
         ],
@@ -2232,19 +2232,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-li2q-imaginary-quantization.witness.json",
-        "labels": [
-          "prop:mass-endomorphism-tower"
-        ],
-        "production_consumers": [
-          "derive_m_p_hecke_full_tower_50dps.py",
-          "paper_six_term_isotope_sweep.py"
-        ],
-        "upstream_consumers": [],
-        "result": "wired_production"
-      },
-      {
-        "witness": "folio-assistant/computations/qbeta-multiblock-order-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/qbeta-multiblock-order-audit.witness.json",
         "labels": [
           "prop:q-beta-categorical-precision-ladder"
         ],
@@ -2266,7 +2254,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-wenzl-habiro-ansatz-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-wenzl-habiro-ansatz-probe.witness.json",
         "labels": [
           "prop:q-beta-categorical-precision-ladder"
         ],
@@ -2313,7 +2301,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/rho-k-markov-multiplicativity.witness.json",
+        "witness": "folio-assistant/computations/probes/rho-k-markov-multiplicativity.witness.json",
         "labels": [
           "prop:rho-k-graded-expansion"
         ],
@@ -2376,7 +2364,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/symbolic-character-table-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/symbolic-character-table-probe.witness.json",
         "labels": [
           "prop:symbolic-character-table"
         ],
@@ -2385,7 +2373,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/tau-amphichiral-sdp-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/tau-amphichiral-sdp-probe.witness.json",
         "labels": [
           "conj:lepton-tower-h-n-plus-1-branching"
         ],
@@ -2394,7 +2382,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/term5-aK-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/term5-aK-audit.witness.json",
         "labels": [
           "conj:knot-factor-frobenius-pairing"
         ],
@@ -2455,7 +2443,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/three-parameters-wedderburn-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/three-parameters-wedderburn-probe.witness.json",
         "labels": [
           "prop:three-parameters-wedderburn"
         ],
@@ -2595,7 +2583,7 @@
         "result": "i2_probe_only"
       },
       {
-        "witness": "folio-assistant/computations/wedderburn-weight-canonical-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/wedderburn-weight-canonical-probe.witness.json",
         "labels": [
           "prop:wedderburn-weight-canonical"
         ],
@@ -2616,7 +2604,7 @@
         "result": "wired_production"
       },
       {
-        "witness": "folio-assistant/computations/y-lambda-cyclotomic-factorization-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/y-lambda-cyclotomic-factorization-probe.witness.json",
         "labels": [
           "prop:y-lambda-cyclotomic-factorization"
         ],

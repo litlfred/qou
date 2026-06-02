@@ -225,7 +225,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/e0_calibration_audit.py",
+        "path": "folio-assistant/computations/audits/e0_calibration_audit.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION",
@@ -255,7 +255,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/habiro_exact_mass_endomorphism.py",
+        "path": "folio-assistant/computations/habiro/habiro_exact_mass_endomorphism.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
@@ -342,7 +342,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/markov_trace_axiomatic_multi_atom.py",
+        "path": "folio-assistant/computations/markov/markov_trace_axiomatic_multi_atom.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
@@ -363,7 +363,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/mass_table_bring_faddeev_h4_sweep.py",
+        "path": "folio-assistant/computations/sweeps/mass_table_bring_faddeev_h4_sweep.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
@@ -428,7 +428,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
+        "path": "folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
@@ -442,7 +442,7 @@
         "result": "ok_acknowledged_anchor"
       },
       {
-        "path": "folio-assistant/computations/path_b_defect_binding_probe.py",
+        "path": "folio-assistant/computations/probes/path_b_defect_binding_probe.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
@@ -456,7 +456,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/path_b_habiro_mass_probe.py",
+        "path": "folio-assistant/computations/probes/path_b_habiro_mass_probe.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
@@ -505,14 +505,14 @@
         "result": "ok_acknowledged_anchor"
       },
       {
-        "path": "folio-assistant/computations/phase2_proton_m_e_hecke_diagnostic.py",
+        "path": "folio-assistant/computations/phase5/phase2_proton_m_e_hecke_diagnostic.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
         ],
         "result": "imported_unused"
       },
       {
-        "path": "folio-assistant/computations/phase2a2_flavor_split_exact_correction.py",
+        "path": "folio-assistant/computations/phase5/phase2a2_flavor_split_exact_correction.py",
         "validation_constants_imported": [
           "M_N_MEV_VALIDATION"
         ],
@@ -524,7 +524,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/phase2a_flavor_split_higher_order_probe.py",
+        "path": "folio-assistant/computations/probes/phase2a_flavor_split_higher_order_probe.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
@@ -538,7 +538,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/phase2c_derive_correction_tower.py",
+        "path": "folio-assistant/computations/phase5/phase2c_derive_correction_tower.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
@@ -551,7 +551,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/phi_q_regularization_probe.py",
+        "path": "folio-assistant/computations/probes/phi_q_regularization_probe.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
         ],
@@ -581,7 +581,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/proton_brane_tower_correction_probe.py",
+        "path": "folio-assistant/computations/probes/proton_brane_tower_correction_probe.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
         ],
@@ -608,7 +608,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/proton_identity_extension_audit.py",
+        "path": "folio-assistant/computations/audits/proton_identity_extension_audit.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
@@ -624,7 +624,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/proton_m_e_anomaly_audit.py",
+        "path": "folio-assistant/computations/audits/proton_m_e_anomaly_audit.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
         ],
@@ -715,7 +715,7 @@
         "result": "i11_violation"
       },
       {
-        "path": "folio-assistant/computations/rho_k_proton_substrate_audit.py",
+        "path": "folio-assistant/computations/audits/rho_k_proton_substrate_audit.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
         ],

@@ -208,7 +208,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/light_isotope_sweep.py",
+        "file": "folio-assistant/computations/sweeps/light_isotope_sweep.py",
         "line": 14,
         "pattern": "literal_0_782",
         "match": "0.782",
@@ -320,7 +320,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
+        "file": "folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py",
         "line": 560,
         "pattern": "literal_0_782",
         "match": "0.782",
@@ -466,7 +466,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/hecke_characters.py",
+        "file": "folio-assistant/computations/hecke/hecke_characters.py",
         "line": 45,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -694,7 +694,7 @@
     ],
     "E_0_CALIBRATION_MEV": [
       {
-        "file": "folio-assistant/computations/adjacent_vs_full_probe.py",
+        "file": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
         "line": 46,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -702,7 +702,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/adjacent_vs_full_probe.py",
+        "file": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
         "line": 384,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -758,7 +758,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/hecke_characters.py",
+        "file": "folio-assistant/computations/hecke/hecke_characters.py",
         "line": 39,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",

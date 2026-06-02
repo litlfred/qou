@@ -79,6 +79,12 @@ const SCAN_GLOBS = [
   ".github/workflows/*.yml",
   ".github/actions/**/action.yml",
   "docs/**/*.md",
+  // Phase-4 addition (2026-06-02): the witness / derivation JSON
+  // sidecars cite their producer script's path; derivation_chain_
+  // validator checks those citations exist on disk, so cluster
+  // moves require rewriting these too.
+  "folio-assistant/computations/**/*.derivation.json",
+  "folio-assistant/computations/**/*.witness.json",
 ];
 
 function normalize(p: string): string {

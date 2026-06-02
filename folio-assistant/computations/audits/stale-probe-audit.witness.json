@@ -57,7 +57,7 @@
         "result": "stale"
       },
       {
-        "witness": "folio-assistant/computations/A-operator-per-interface.witness.json",
+        "witness": "folio-assistant/computations/probes/A-operator-per-interface.witness.json",
         "label": "prop:crystal-r-matrix-sub-lemma",
         "witness_mtime_unix": 1779129949,
         "md": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.md",
@@ -93,7 +93,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/additive-composition-categorical-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/additive-composition-categorical-probe.witness.json",
         "label": "conj:borromean-baryon-mass-formula",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.md",
@@ -213,7 +213,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/archimedean-knot-eigenbasis-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/archimedean-knot-eigenbasis-probe.witness.json",
         "label": "cor:archimedean-knot-eigenbasis",
         "witness_mtime_unix": 1780333979,
         "result": "md_missing"
@@ -291,7 +291,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/braid-encoding-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/braid-encoding-audit.witness.json",
         "label": "prop:atomic-mass-gb-nf",
         "witness_mtime_unix": 1780369790,
         "md": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md",
@@ -342,7 +342,7 @@
         "result": "md_missing"
       },
       {
-        "witness": "folio-assistant/computations/c5-decomposition-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/c5-decomposition-probe.witness.json",
         "label": "prop:c5-involution-leibniz-decomposition",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition.md",
@@ -375,7 +375,7 @@
         "result": "md_missing"
       },
       {
-        "witness": "folio-assistant/computations/canonical-a-k-magnitude-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/canonical-a-k-magnitude-audit.witness.json",
         "label": "prop:mass-coefficient-shadow-price",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price.md",
@@ -393,7 +393,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/casimir-carlitz-q-bernoulli-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-carlitz-q-bernoulli-probe.witness.json",
         "label": "conj:casimir-epsilon-vacuum",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md",
@@ -411,7 +411,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/casimir-epsilon-vacuum-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-epsilon-vacuum-probe.witness.json",
         "label": "conj:casimir-epsilon-vacuum",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md",
@@ -420,7 +420,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/casimir-grid-sweep-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-grid-sweep-probe.witness.json",
         "label": "conj:casimir-epsilon-vacuum",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md",
@@ -429,7 +429,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/casimir-hoefsmit-additivity-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-hoefsmit-additivity-probe.witness.json",
         "label": "conj:casimir-epsilon-vacuum",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md",
@@ -447,7 +447,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/casimir-macdonald-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-macdonald-probe.witness.json",
         "label": "conj:casimir-epsilon-vacuum",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md",
@@ -465,7 +465,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/casimir-phi-q-markov-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-phi-q-markov-probe.witness.json",
         "label": "conj:casimir-epsilon-vacuum",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md",
@@ -474,7 +474,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/casimir-q-factorial-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-q-factorial-probe.witness.json",
         "label": "conj:casimir-epsilon-vacuum",
         "witness_mtime_unix": 1780369790,
         "md": "content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md",
@@ -483,7 +483,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/casimir-q-zeta-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/casimir-q-zeta-probe.witness.json",
         "label": "conj:casimir-epsilon-vacuum",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md",
@@ -564,7 +564,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/commutative-chirality-vanishes-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/commutative-chirality-vanishes-probe.witness.json",
         "label": "cor:commutative-chirality-vanishes",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.md",
@@ -606,7 +606,7 @@
         "result": "md_missing"
       },
       {
-        "witness": "folio-assistant/computations/cyclotomic-cl3-orbit-sum-general-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/cyclotomic-cl3-orbit-sum-general-probe.witness.json",
         "label": "prop:cyclotomic-cl3-orbit-sum-general",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/cyclotomic-cl3-orbit-sum-general.md",
@@ -615,7 +615,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/cyclotomic-depth3-dimension-synthesis-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/cyclotomic-depth3-dimension-synthesis-probe.witness.json",
         "label": "prop:cyclotomic-depth3-dimension-synthesis",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.md",
@@ -624,7 +624,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/cyclotomic-orbit-sum-all-depths-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/cyclotomic-orbit-sum-all-depths-probe.witness.json",
         "label": "prop:cyclotomic-orbit-sum-all-depths",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/cyclotomic-orbit-sum-all-depths.md",
@@ -633,7 +633,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/cyclotomic-trilog-imaginary-closed-form-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/cyclotomic-trilog-imaginary-closed-form-probe.witness.json",
         "label": "prop:cyclotomic-trilog-imaginary-closed-form",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/cyclotomic-trilog-imaginary-closed-form.md",
@@ -669,7 +669,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/delta-coupling-closed-form-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/delta-coupling-closed-form-probe.witness.json",
         "label": "conj:magic-shell-stabilization",
         "witness_mtime_unix": 1778893542,
         "result": "md_missing"
@@ -720,7 +720,7 @@
         "result": "md_missing"
       },
       {
-        "witness": "folio-assistant/computations/delta-n2-placeholder-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/delta-n2-placeholder-audit.witness.json",
         "label": "conj:categorical-neutrality-saturated-shells",
         "witness_mtime_unix": 1779929920,
         "result": "md_missing"
@@ -744,7 +744,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/deuteron-delta-i-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/deuteron-delta-i-audit.witness.json",
         "label": "prop:mass-coefficient-shadow-price",
         "witness_mtime_unix": 1779929920,
         "md": "content/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price.md",
@@ -771,7 +771,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/explicit-central-idempotent-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/explicit-central-idempotent-probe.witness.json",
         "label": "prop:explicit-central-idempotent",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.md",
@@ -780,7 +780,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/finite-q-volume-conjecture-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/finite-q-volume-conjecture-probe.witness.json",
         "label": "prop:figure-eight-reeb-rotation",
         "witness_mtime_unix": 1779889408,
         "md": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.md",
@@ -789,7 +789,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/fitted-labelled-canonical-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/fitted-labelled-canonical-audit.witness.json",
         "label": "prop:three-calibration-inputs",
         "witness_mtime_unix": 1780370125,
         "md": "content/quantum-observable-universe/mass-theory/three-calibration-inputs.md",
@@ -828,7 +828,7 @@
         "result": "stale"
       },
       {
-        "witness": "folio-assistant/computations/frobenius-gram-matrix-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/frobenius-gram-matrix-probe.witness.json",
         "label": "prop:frobenius-gram-matrix",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/frobenius-gram-matrix.md",
@@ -843,7 +843,7 @@
         "result": "md_missing"
       },
       {
-        "witness": "folio-assistant/computations/full-twist-root-of-unity-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/full-twist-root-of-unity-probe.witness.json",
         "label": "conj:categorical-neutrality-saturated-shells",
         "witness_mtime_unix": 1780369790,
         "result": "md_missing"
@@ -858,7 +858,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/gauge-coupling-uniqueness-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/gauge-coupling-uniqueness-probe.witness.json",
         "label": "cor:gauge-coupling-uniqueness",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/predicted-spectra/gauge-coupling-uniqueness.md",
@@ -867,7 +867,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/graded-hecke-energy-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/graded-hecke-energy-probe.witness.json",
         "label": "prop:graded-hecke-energy-truncation-bound",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/graded-hecke-energy-truncation-bound.md",
@@ -903,7 +903,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/h4-categorical-drivers-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/h4-categorical-drivers-probe.witness.json",
         "label": "conj:borromean-baryon-mass-formula",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.md",
@@ -912,7 +912,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/habiro-exact-mass-endomorphism.witness.json",
+        "witness": "folio-assistant/computations/habiro/habiro-exact-mass-endomorphism.witness.json",
         "label": "prop:mass-endomorphism-tower",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.md",
@@ -921,7 +921,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/habiro-expansion-atomic-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/habiro-expansion-atomic-probe.witness.json",
         "label": "cor:habiro-expansion-atomic",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.md",
@@ -930,7 +930,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/habiro-interpolate-cross-validation.witness.json",
+        "witness": "folio-assistant/computations/habiro/habiro-interpolate-cross-validation.witness.json",
         "label": "prop:full-pole-structure-mass-trace",
         "witness_mtime_unix": 1779945240,
         "md": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.md",
@@ -939,7 +939,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/habiro-ladder-bridge.witness.json",
+        "witness": "folio-assistant/computations/habiro/habiro-ladder-bridge.witness.json",
         "label": "prop:q-beta-categorical-precision-ladder",
         "witness_mtime_unix": 1780369790,
         "md": "content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md",
@@ -948,7 +948,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/habiro-q-difference-fourier.witness.json",
+        "witness": "folio-assistant/computations/habiro/habiro-q-difference-fourier.witness.json",
         "label": "prop:q-beta-categorical-precision-ladder",
         "witness_mtime_unix": 1780369790,
         "md": "content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md",
@@ -957,7 +957,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/habiro-q-difference-mode-solve.witness.json",
+        "witness": "folio-assistant/computations/habiro/habiro-q-difference-mode-solve.witness.json",
         "label": "prop:q-beta-categorical-precision-ladder",
         "witness_mtime_unix": 1780369790,
         "md": "content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md",
@@ -966,7 +966,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/hecke-1d-irrep-closed-form-character-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/hecke-1d-irrep-closed-form-character-probe.witness.json",
         "label": "prop:hecke-1d-irrep-closed-form-character",
         "witness_mtime_unix": 1779534630,
         "md": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.md",
@@ -975,7 +975,7 @@
         "result": "stale"
       },
       {
-        "witness": "folio-assistant/computations/hecke-branching-trace-decomposition-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/hecke-branching-trace-decomposition-probe.witness.json",
         "label": "prop:hecke-branching-trace-decomposition",
         "witness_mtime_unix": 1779534630,
         "md": "content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.md",
@@ -984,19 +984,19 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/hecke-crossed-module-q8.witness.json",
+        "witness": "folio-assistant/computations/hecke/hecke-crossed-module-q8.witness.json",
         "label": "conj:lambda-scale-bring-bloch-identity",
         "witness_mtime_unix": 1780333979,
         "result": "md_missing"
       },
       {
-        "witness": "folio-assistant/computations/hecke-log-decomposition-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/hecke-log-decomposition-probe.witness.json",
         "label": "prop:hecke-log-decomposition",
         "witness_mtime_unix": 1780333979,
         "result": "md_missing"
       },
       {
-        "witness": "folio-assistant/computations/hecke-markov-transition-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/hecke-markov-transition-probe.witness.json",
         "label": "prop:hecke-markov-transition",
         "witness_mtime_unix": 1779534630,
         "md": "content/quantum-observable-universe/mass-theory/hecke-markov-transition.md",
@@ -1023,7 +1023,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/hoefsmit-seminormal-form-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/hoefsmit-seminormal-form-probe.witness.json",
         "label": "prop:hoefsmit-seminormal-form",
         "witness_mtime_unix": 1779534630,
         "md": "content/quantum-observable-universe/mass-theory/hoefsmit-seminormal-form.md",
@@ -1068,7 +1068,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/jonquiere-cyclotomic-tate-rationality-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/jonquiere-cyclotomic-tate-rationality-probe.witness.json",
         "label": "prop:jonquiere-cyclotomic-tate-rationality",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/jonquiere-cyclotomic-tate-rationality.md",
@@ -1077,7 +1077,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/jucys-murphy-central-elements-qou-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/jucys-murphy-central-elements-qou-probe.witness.json",
         "label": "prop:jucys-murphy-central-elements-qou",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.md",
@@ -1107,7 +1107,7 @@
         "result": "stale"
       },
       {
-        "witness": "folio-assistant/computations/knot-factor-amphicheiral-BD-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/knot-factor-amphicheiral-BD-probe.witness.json",
         "label": "cor:knot-factor-amphicheiral",
         "witness_mtime_unix": 1779534630,
         "md": "content/quantum-observable-universe/mass-theory/knot-factor-amphicheiral.md",
@@ -1116,7 +1116,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/knot-factor-amphicheiral-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/knot-factor-amphicheiral-probe.witness.json",
         "label": "cor:knot-factor-amphicheiral",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/knot-factor-amphicheiral.md",
@@ -1125,7 +1125,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/knot-factor-borromean-composite-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/knot-factor-borromean-composite-probe.witness.json",
         "label": "cor:knot-factor-borromean-composite",
         "witness_mtime_unix": 1779534630,
         "md": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.md",
@@ -1248,7 +1248,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/lambda-scale-substrate-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/lambda-scale-substrate-probe.witness.json",
         "label": "conj:borromean-baryon-mass-formula",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.md",
@@ -1287,7 +1287,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/m-p-bring-plus-faddeev-h4-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/m-p-bring-plus-faddeev-h4-probe.witness.json",
         "label": "conj:borromean-baryon-mass-formula",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.md",
@@ -1305,7 +1305,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/markov-peel-atomic-tr-m.witness.json",
+        "witness": "folio-assistant/computations/markov/markov-peel-atomic-tr-m.witness.json",
         "label": "prop:markov-pair-z2",
         "witness_mtime_unix": 1780108852,
         "md": "content/quantum-observable-universe/mass-theory/markov-pair-z2.md",
@@ -1314,7 +1314,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/markov-pipeline-cross-validation.witness.json",
+        "witness": "folio-assistant/computations/markov/markov-pipeline-cross-validation.witness.json",
         "label": "prop:full-pole-structure-mass-trace",
         "witness_mtime_unix": 1780370220,
         "md": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.md",
@@ -1323,7 +1323,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/markov-substrate-realization.witness.json",
+        "witness": "folio-assistant/computations/markov/markov-substrate-realization.witness.json",
         "label": "prop:full-pole-structure-mass-trace",
         "witness_mtime_unix": 1780288325,
         "md": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.md",
@@ -1350,7 +1350,7 @@
         "result": "stale"
       },
       {
-        "witness": "folio-assistant/computations/mass-table-bring-faddeev-h4-sweep.witness.json",
+        "witness": "folio-assistant/computations/sweeps/mass-table-bring-faddeev-h4-sweep.witness.json",
         "label": "conj:borromean-baryon-mass-formula",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.md",
@@ -1521,7 +1521,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/pauli-factor-wedderburn-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/pauli-factor-wedderburn-probe.witness.json",
         "label": "prop:pauli-factor-wedderburn",
         "witness_mtime_unix": 1779534630,
         "md": "content/quantum-observable-universe/mass-theory/pauli-factor-wedderburn.md",
@@ -1539,7 +1539,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase1a-per-partition-h-expansion.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase1a-per-partition-h-expansion.witness.json",
         "label": "conj:psd-trace-orthogonality",
         "witness_mtime_unix": 1779807443,
         "md": "content/quantum-observable-universe/mass-theory/conj-psd-trace-orthogonality.md",
@@ -1548,7 +1548,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase1b-two-row-transfer-matrix.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase1b-two-row-transfer-matrix.witness.json",
         "label": "conj:psd-trace-orthogonality",
         "witness_mtime_unix": 1779807444,
         "md": "content/quantum-observable-universe/mass-theory/conj-psd-trace-orthogonality.md",
@@ -1557,7 +1557,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase1c-proton-h3-symbolic-decomposition.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase1c-proton-h3-symbolic-decomposition.witness.json",
         "label": "prop:proton-mass-substrate-identity",
         "witness_mtime_unix": 1779807444,
         "md": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md",
@@ -1566,7 +1566,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase1d-f-bor-exact-h-expansion.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase1d-f-bor-exact-h-expansion.witness.json",
         "label": "prop:proton-mass-substrate-identity",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md",
@@ -1575,7 +1575,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase1e-neutron-cross-isotope-h-expansion.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase1e-neutron-cross-isotope-h-expansion.witness.json",
         "label": "prop:proton-mass-substrate-identity",
         "witness_mtime_unix": 1779807444,
         "md": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md",
@@ -1584,7 +1584,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase2-m-e-hecke-diagnostic.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase2-m-e-hecke-diagnostic.witness.json",
         "label": "prop:atom-knot-mass-derivation",
         "witness_mtime_unix": 1778539641,
         "md": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.md",
@@ -1593,7 +1593,7 @@
         "result": "stale"
       },
       {
-        "witness": "folio-assistant/computations/phase2a-flavor-split-higher-order.witness.json",
+        "witness": "folio-assistant/computations/probes/phase2a-flavor-split-higher-order.witness.json",
         "label": "prop:flavor-split-substrate",
         "witness_mtime_unix": 1779809586,
         "md": "content/quantum-observable-universe/observations/flavor-split-substrate.md",
@@ -1602,7 +1602,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase2a2-flavor-split-exact-correction.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase2a2-flavor-split-exact-correction.witness.json",
         "label": "prop:flavor-split-substrate",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/observations/flavor-split-substrate.md",
@@ -1611,7 +1611,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase2b-dim-v21-bridge.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase2b-dim-v21-bridge.witness.json",
         "label": "prop:proton-mass-substrate-identity",
         "witness_mtime_unix": 1779809587,
         "md": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md",
@@ -1620,7 +1620,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase2b2-dim-v21-categorical-bridge.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase2b2-dim-v21-categorical-bridge.witness.json",
         "label": "prop:proton-mass-substrate-identity",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md",
@@ -1629,7 +1629,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase2c-derive-correction-tower.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase2c-derive-correction-tower.witness.json",
         "label": "prop:proton-mass-substrate-identity",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md",
@@ -1638,7 +1638,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase3-deuteron-tritium-h-expansion.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase3-deuteron-tritium-h-expansion.witness.json",
         "label": "prop:proton-mass-substrate-identity",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md",
@@ -1647,7 +1647,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/phase3c-a5-a7-knot-volume-targets.witness.json",
+        "witness": "folio-assistant/computations/phase5/phase3c-a5-a7-knot-volume-targets.witness.json",
         "label": "prop:proton-mass-substrate-identity",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md",
@@ -1656,7 +1656,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/plancherel-weight-boundedness-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/plancherel-weight-boundedness-probe.witness.json",
         "label": "prop:plancherel-weight-boundedness",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.md",
@@ -1728,7 +1728,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/proton-m_e-anomaly-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/proton-m_e-anomaly-audit.witness.json",
         "label": "prop:full-pole-structure-mass-trace",
         "witness_mtime_unix": 1778539641,
         "md": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.md",
@@ -1800,7 +1800,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/q-hecke-seminormal-character-closure-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/q-hecke-seminormal-character-closure-probe.witness.json",
         "label": "prop:q-hecke-seminormal-character-closure",
         "witness_mtime_unix": 1779534630,
         "md": "content/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.md",
@@ -1926,7 +1926,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-element-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-habiro-element-probe.witness.json",
         "label": "prop:neutron-qvalue-symbolic",
         "witness_mtime_unix": 1780369790,
         "md": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md",
@@ -1935,7 +1935,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-p8-identification.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-habiro-p8-identification.witness.json",
         "label": "prop:neutron-qvalue-symbolic",
         "witness_mtime_unix": 1780289840,
         "md": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md",
@@ -1962,7 +1962,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-phi8-interpretation.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-habiro-phi8-interpretation.witness.json",
         "label": "prop:neutron-qvalue-symbolic",
         "witness_mtime_unix": 1780289840,
         "md": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md",
@@ -1980,7 +1980,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json",
         "label": "prop:neutron-qvalue-symbolic",
         "witness_mtime_unix": 1780369790,
         "md": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md",
@@ -1989,7 +1989,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-habiro-recursion.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-habiro-recursion.witness.json",
         "label": "prop:neutron-qvalue-symbolic",
         "witness_mtime_unix": 1780289840,
         "md": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md",
@@ -2034,7 +2034,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-multiblock-order-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/qbeta-multiblock-order-audit.witness.json",
         "label": "prop:q-beta-categorical-precision-ladder",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md",
@@ -2052,7 +2052,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/qbeta-wenzl-habiro-ansatz-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/qbeta-wenzl-habiro-ansatz-probe.witness.json",
         "label": "prop:q-beta-categorical-precision-ladder",
         "witness_mtime_unix": 1780369790,
         "md": "content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md",
@@ -2094,7 +2094,7 @@
         "result": "md_missing"
       },
       {
-        "witness": "folio-assistant/computations/rho-k-markov-multiplicativity.witness.json",
+        "witness": "folio-assistant/computations/probes/rho-k-markov-multiplicativity.witness.json",
         "label": "prop:rho-k-graded-expansion",
         "witness_mtime_unix": 1780069802,
         "md": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.md",
@@ -2157,7 +2157,7 @@
         "result": "stale"
       },
       {
-        "witness": "folio-assistant/computations/symbolic-character-table-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/symbolic-character-table-probe.witness.json",
         "label": "prop:symbolic-character-table",
         "witness_mtime_unix": 1779534630,
         "md": "content/quantum-observable-universe/mass-theory/symbolic-character-table.md",
@@ -2166,7 +2166,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/tau-amphichiral-sdp-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/tau-amphichiral-sdp-probe.witness.json",
         "label": "conj:lepton-tower-h-n-plus-1-branching",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/conj-lepton-tower-h-n-plus-1-branching.md",
@@ -2175,7 +2175,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/term5-aK-audit.witness.json",
+        "witness": "folio-assistant/computations/audits/term5-aK-audit.witness.json",
         "label": "conj:knot-factor-frobenius-pairing",
         "witness_mtime_unix": 1779463503,
         "md": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.md",
@@ -2223,7 +2223,7 @@
         "result": "md_missing"
       },
       {
-        "witness": "folio-assistant/computations/three-parameters-wedderburn-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/three-parameters-wedderburn-probe.witness.json",
         "label": "prop:three-parameters-wedderburn",
         "witness_mtime_unix": 1779534630,
         "md": "content/quantum-observable-universe/mass-theory/three-parameters-wedderburn.md",
@@ -2355,7 +2355,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/wedderburn-weight-canonical-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/wedderburn-weight-canonical-probe.witness.json",
         "label": "prop:wedderburn-weight-canonical",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md",
@@ -2373,7 +2373,7 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/y-lambda-cyclotomic-factorization-probe.witness.json",
+        "witness": "folio-assistant/computations/probes/y-lambda-cyclotomic-factorization-probe.witness.json",
         "label": "prop:y-lambda-cyclotomic-factorization",
         "witness_mtime_unix": 1780333979,
         "md": "content/quantum-observable-universe/mass-theory/y-lambda-cyclotomic-factorization.md",

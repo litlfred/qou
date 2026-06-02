@@ -458,7 +458,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/fitted_labelled_canonical_audit.py",
+        "path": "folio-assistant/computations/audits/fitted_labelled_canonical_audit.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -471,7 +471,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/geom_full_borromean_h4_probe.py",
+        "path": "folio-assistant/computations/probes/geom_full_borromean_h4_probe.py",
         "substrate_banner": true,
         "hit_count": 44,
         "violation_count": 10,
@@ -605,7 +605,7 @@
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/geom_leading_alt_q_locality_probe.py",
+        "path": "folio-assistant/computations/probes/geom_leading_alt_q_locality_probe.py",
         "substrate_banner": true,
         "hit_count": 16,
         "violation_count": 11,
@@ -715,7 +715,7 @@
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/guarded_off_audit.py",
+        "path": "folio-assistant/computations/audits/guarded_off_audit.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -767,7 +767,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/higher_n_wedderburn_h2_drift_probe.py",
+        "path": "folio-assistant/computations/probes/higher_n_wedderburn_h2_drift_probe.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -881,7 +881,7 @@
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/markov_trace_for_knot.py",
+        "path": "folio-assistant/computations/markov/markov_trace_for_knot.py",
         "substrate_banner": true,
         "hit_count": 4,
         "violation_count": 3,
@@ -919,7 +919,7 @@
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/markov_trace_h4_natural_elements_prescreen.py",
+        "path": "folio-assistant/computations/markov/markov_trace_h4_natural_elements_prescreen.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -1381,7 +1381,7 @@
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/qbeta_operator_identification_probe.py",
+        "path": "folio-assistant/computations/probes/qbeta_operator_identification_probe.py",
         "substrate_banner": true,
         "hit_count": 24,
         "violation_count": 0,

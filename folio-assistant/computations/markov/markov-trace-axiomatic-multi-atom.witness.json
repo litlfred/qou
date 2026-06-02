@@ -41,9 +41,9 @@
     "prop:markov-trace-axiomatic-closed-form"
   ],
   "reference_scripts": [
-    "folio-assistant/computations/markov_trace_recursive.py",
-    "folio-assistant/computations/markov_trace_atomic_proton_full.py",
-    "folio-assistant/computations/markov_trace_axiomatic_proton.py"
+    "folio-assistant/computations/markov/markov_trace_recursive.py",
+    "folio-assistant/computations/markov/markov_trace_atomic_proton_full.py",
+    "folio-assistant/computations/markov/markov_trace_axiomatic_proton.py"
   ],
   "q0": "1.1099785955541805752815940796095093779932822799587",
   "m_e_MeV": "0.51099895069000000000000000000000000000000000000000",

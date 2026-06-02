@@ -156,7 +156,7 @@
         "recommendation": "Replace empirical conjecture with shift_nf_atomic_via_crystal for categorical-derivation provenance."
       },
       {
-        "script": "folio-assistant/computations/markov_peel.py",
+        "script": "folio-assistant/computations/markov/markov_peel.py",
         "role": "Full atomic tr_M via Markov axiom ascent",
         "currently_uses": "NOT_DIRECT",
         "recommendation": "Doesn't directly use shift; tr_M values are independent. But D(u) factorization downstream uses shift; cite via_crystal as the categorical pole-order derivation."
