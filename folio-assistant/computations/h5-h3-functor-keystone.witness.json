@@ -1,8 +1,8 @@
 {
-  "engine": "sympy+mpmath",
+  "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T02:24:31.274317+00:00",
-  "commitSha": "55b1ec12d07e66643a2f72ef115d5b4908284fcc",
+  "computedAt": "2026-06-02T02:47:28.995122+00:00",
+  "commitSha": "d962ce2d7d9944b273ccd1de4405d9cbebe980af",
   "assertions": [
     {
       "name": "dim_check_Res_(5,)",
@@ -108,11 +108,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 23,
   "computation": "h5-h3-functor-keystone",
   "scriptFile": "h5_h3_functor_keystone.py",
-  "scriptHash": "515677f34ed8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "53ed89be7427",
+  "scriptCommitSha": "d962ce2d7d9944b273ccd1de4405d9cbebe980af",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -127,11 +127,12 @@
     "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
-  "description": "THE 5<->3 keystone (named by PRs #1670/#1672/#1677/#1678): compute the STANDARD Hecke restriction functor Res^{H5}_{H3} and its adjoint Ind, the Markov tower H3<H4<H5 forward embedding, and the icosahedral A5 -> 3-element-stabilizer restriction of the dim-5 (ell=2) irrep H -- all via exact Young-tableau branching (remove/add-a-box) and explicit character tables. RAW multiplicities; the Borromean h^4=-3/4 is a FALSIFICATION reference only. No fit, no tuning.",
+  "description": "THE 5<->3 keystone (named by PRs #1670/#1672/#1677/#1678): compute the STANDARD Hecke restriction functor Res^{H5}_{H3} and its adjoint Ind, the Markov tower H3<H4<H5 forward embedding, and the icosahedral A5 -> 3-element-stabilizer restriction of the dim-5 (ell=2) irrep H -- all via exact Young-tableau branching (remove/add-a-box) and explicit character tables. RAW multiplicities; the Borromean h^4=-3/4 is a FALSIFICATION reference only. No fit, no tuning. Environment: exact integer/rational branching combinatorics (Python stdlib + sympy for factorials/hook-lengths); RAW substrate z at compute_dps via mpmath; engine=python+mpmath.",
   "auditOnly": "docs/audits/2026-06-02-h5-h3-functor-keystone.md",
   "parameters": {
-    "q0_falsification_ref": "1.10997859561220225731080831999100762523924148",
-    "dps": 60,
+    "q0_falsification_ref": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "q0_source": "q_parameter.Q_MP (proton-pinned)",
+    "dps": 70,
     "h4_borromean_falsification_ref": "-3/4"
   },
   "data": {
@@ -284,8 +285,8 @@
         "(2, 2, 1)": 2,
         "(2, 1, 1, 1)": 1
       },
-      "markov_z_at_q0": "0.499320334032918021108404271978964169152271615813877115422639",
-      "markov_z_squared_at_q0_two_stabilizations": "0.249320795978744830590018538696819809045027514473902900852224",
+      "markov_z_at_q0": "0.4993203341836944524134426802576663037519481640415322074643519921624937",
+      "markov_z_squared_at_q0_two_stabilizations": "0.249320796129316306699798262239700847037557731631611521661936720235325",
       "caveat": "add-box embedding multiplicity of (2,1) into lambda5 EQUALS Res^{S5}_{S3}(lambda5)[(2,1)] (branching duality) -- so the Markov-tower forward embedding gives the SAME multiplicity vector as Candidate 1, NOT a canonical single channel."
     },
     "candidate_4_icosahedral_A5_restriction": {
