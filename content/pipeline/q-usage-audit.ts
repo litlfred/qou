@@ -365,11 +365,56 @@ interface BlockFinding {
   evidence: string;
 }
 
+/**
+ * Check the existing sidecar for a human dispensation on `criterion`
+ * whose `field_hash` matches the present source files. Returns true
+ * iff a human-pass entry exists that supersedes the script verdict
+ * for the current source state. Per `block-qa/v1` schema, the
+ * criterion's "current verdict" is the most recent matching entry;
+ * a human-pass dated after the latest script-fail (and with matching
+ * hashes) is the documented dispensation mechanism (see
+ * `qa-checkers-q-usage.ts` line 435-436).
+ */
+function hasHumanDispensation(
+  b: BlockTriple,
+  criterionId: string,
+  currentHashes: { ts?: string; md?: string; lean?: string },
+): boolean {
+  const sidecarPath = b.ts.replace(/\.ts$/, ".qa.json");
+  if (!existsSync(sidecarPath)) return false;
+  let sidecar: { criteria?: Record<string, Array<{
+    field_hash?: { ts?: string; md?: string; lean?: string };
+    result?: string;
+    reviewer?: { kind?: string };
+    reviewed_at?: string;
+  }>> };
+  try {
+    sidecar = JSON.parse(readFileSync(sidecarPath, "utf-8"));
+  } catch { return false; }
+  const entries = sidecar.criteria?.[criterionId] ?? [];
+  // Most recent first.
+  const sorted = [...entries].sort((a, b) =>
+    (b.reviewed_at ?? "").localeCompare(a.reviewed_at ?? ""),
+  );
+  for (const e of sorted) {
+    const fh = e.field_hash ?? {};
+    const matches =
+      fh.ts === currentHashes.ts &&
+      fh.md === currentHashes.md &&
+      fh.lean === currentHashes.lean;
+    if (!matches) continue;
+    // Most recent matching entry decides. Stop at first match.
+    return e.reviewer?.kind === "human" && e.result === "pass";
+  }
+  return false;
+}
+
 function main(): void {
   const blocks = walkBlocks();
   const stats: Map<string, ChapterStat> = new Map();
   const findings: BlockFinding[] = [];
   let touchedSidecars = 0;
+  let dispensationsHonored = 0;
 
   for (const b of blocks) {
     const stat = stats.get(b.chapter) ?? {
@@ -381,9 +426,29 @@ function main(): void {
       regime_dist: {},
     };
     stat.n_blocks++;
+    const currentHashes = {
+      ts: hashFile(b.ts),
+      md: b.md ? hashFile(b.md) : undefined,
+      lean: b.lean ? hashFile(b.lean) : undefined,
+    };
     const results = new Map<string, QUsageResult>();
     for (const [id, fn] of Object.entries(Q_USAGE_AUTOMATED_CHECKERS)) {
       const r = fn({ md: b.md, ts: b.ts, lean: b.lean });
+      // Honor existing human dispensation: if the sidecar carries a
+      // human-pass entry for this criterion with field_hash matching
+      // the current source files, the script's raw finding is
+      // overridden to pass and excluded from the findings report.
+      // The script entry is still written to the sidecar (so the
+      // dispensation chain stays auditable) but reporting + counts
+      // reflect the human verdict.
+      if ((r.result === "fail" || r.result === "warn") &&
+          hasHumanDispensation(b, id, currentHashes)) {
+        dispensationsHonored++;
+        const dispensed: QUsageResult = { ...r, result: "pass", hits: [] };
+        results.set(id, dispensed);
+        stat.by_criterion[id]["pass"]++;
+        continue;
+      }
       results.set(id, r);
       stat.by_criterion[id][r.result]++;
       if (r.result === "fail" || r.result === "warn") {
@@ -449,7 +514,7 @@ function main(): void {
   } else {
     console.error(`q-usage-audit — ${blocks.length} blocks across ${stats.size} chapters`);
     console.error(
-      `  fails=${witness.n_fails}  warns=${witness.n_warns}  sidecars-touched=${touchedSidecars}`,
+      `  fails=${witness.n_fails}  warns=${witness.n_warns}  sidecars-touched=${touchedSidecars}  dispensations-honored=${dispensationsHonored}`,
     );
     console.error("");
     console.error("Chapter regime distribution (top tags only):");

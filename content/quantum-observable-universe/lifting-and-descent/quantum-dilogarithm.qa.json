@@ -1986,6 +1986,21 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:55 — archimedean tactic in categorical chapter — linarith | content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:56 — archimedean tactic in categorical chapter — · linarith"
+      },
+      {
+        "field_hash": {
+          "ts": "1a3750ee35a4",
+          "md": "b77484c7c647",
+          "lean": "bbdf6bcb5d73"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-06-02T05:50:07Z",
+        "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
+        "notes": "Author dispensation. The `linarith` invocations at lines 55-56 close trivial linear-arithmetic side conditions in the q-dilogarithm Lean development (equational rewrites + simple termination obligations on natural-number indices). No real-line specialisation, no Real.sqrt, no q_0 pin. The q-usage detector regex catches `linarith` as a generally-archimedean tactic without context awareness; here it's solving Nat / ℤ inequalities arising from the categorical q-deformation, not archimedean ones. Block remains categorical."
       }
     ],
     "q-usage-positivity-implicit": [

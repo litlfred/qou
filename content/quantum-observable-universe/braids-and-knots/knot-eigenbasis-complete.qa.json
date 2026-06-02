@@ -1986,6 +1986,36 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:114 — archimedean tactic in categorical chapter — (0 : R_q) ≤ (a : R_q) / 2 := by positivity | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:128 — archimedean tactic in categorical chapter — linarith [this ▸ (le_refl (a : R_q))] | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:133 — archimedean tactic in categorical chapter — have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:136 — archimedean tactic in categorical chapter — push_cast [← hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum]"
+      },
+      {
+        "field_hash": {
+          "ts": "6a7a9d6041e9",
+          "md": "4039ceb953e7",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-06-02T05:50:07Z",
+        "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
+        "notes": "Author dispensation. The `positivity` / `linarith` tactics flagged at lines 114/128/133/136 are operating on the **Hecke base ring R_q** (the categorical algebraic structure, NOT a real-line specialisation). These are algebraic inequalities on size/sum-of-list invariants of Hecke elements — `positivity` here only needs to show that `(a : R_q) / 2 ≥ 0` given `a ≥ 0`, which holds in any ordered ring; `linarith` is closing equational rewrites on `List.sum`. No real archimedean structure (Real.sqrt, MeV, q_0 pin) is introduced; the q-usage detector regex hits the tactic NAMES without context awareness. The block remains categorical — see the .lean header and the proposition statement (`thm:knot-eigenbasis-complete-pair-action`)."
+      },
+      {
+        "field_hash": {
+          "ts": "6a7a9d6041e9",
+          "md": "4039ceb953e7",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "human",
+          "id": "litlfred"
+        },
+        "reviewed_at": "2026-06-02T05:50:07Z",
+        "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
+        "notes": "Author dispensation. The `positivity` / `linarith` tactics flagged at lines 114/128/133/136 are operating on the **Hecke base ring R_q** (the categorical algebraic structure, NOT a real-line specialisation). These are algebraic inequalities on size/sum-of-list invariants of Hecke elements — `positivity` here only needs to show that `(a : R_q) / 2 ≥ 0` given `a ≥ 0`, which holds in any ordered ring; `linarith` is closing equational rewrites on `List.sum`. No real archimedean structure (Real.sqrt, MeV, q_0 pin) is introduced; the q-usage detector regex catches the tactic NAMES without context awareness. The block remains categorical."
       }
     ],
     "q-usage-positivity-implicit": [
