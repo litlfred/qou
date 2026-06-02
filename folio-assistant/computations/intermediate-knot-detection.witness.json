@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:26:54.311779+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T17:12:26.682788+00:00",
+  "commitSha": "c3fc7c9c26831d36f4a071ea4b443a02dc27f69a",
   "assertions": [
     {
       "name": "knot_detected(³H)",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "intermediate-knot-detection",
   "scriptFile": "intermediate_knot_detection.py",
-  "scriptHash": "861fd0733bd5",
-  "scriptCommitSha": "84f707c0e363c6b2e9194d6b04e893d7710ecdde",
+  "scriptHash": "adda5b3e774a",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

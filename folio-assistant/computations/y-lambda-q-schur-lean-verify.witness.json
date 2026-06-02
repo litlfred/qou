@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:39:11.391657+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T17:21:06.688629+00:00",
+  "commitSha": "c3fc7c9c26831d36f4a071ea4b443a02dc27f69a",
   "assertions": [
     {
       "name": "lean_transpose_pair_theorem_verified",
@@ -25,8 +25,8 @@
   "durationMs": 12,
   "computation": "y-lambda-q-schur-lean-verify",
   "scriptFile": "y_lambda_q_schur_lean_verify.py",
-  "scriptHash": "380cc1448084",
-  "scriptCommitSha": "747b04a06abb843219f02ec5ce8d9d895ad03a96",
+  "scriptHash": "aa1d506b909f",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
