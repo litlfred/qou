@@ -17,6 +17,7 @@ export default chapter({
       title: "Substrate evaluations",
       blocks: [
         "proton-mass-substrate-identity",
+        "per-observable-100x-status-dashboard",
       ],
     },
   ],
