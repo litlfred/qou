@@ -1,4 +1,3 @@
-import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic

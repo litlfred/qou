@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Ring.Basic
-import Mathlib.Analysis.Normed.Group.Basic
+import Mathlib.Analysis.Normed.Ring.Basic
 
 
 /-!

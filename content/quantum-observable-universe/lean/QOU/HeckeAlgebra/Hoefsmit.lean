@@ -79,13 +79,13 @@ open QOU.HeckeAlgebra
     `f^λ`, the number of standard Young tableaux of shape `λ`.
     Axiomatised pending the Mathlib `StandardYoungTableau`
     enumeration. -/
-axiom seminormalDim : ∀ {n : ℕ}, Nat.Partition n → ℕ
+opaque seminormalDim : ∀ {n : ℕ}, Nat.Partition n → ℕ
 
 /-- The seminormal dimension is positive for non-empty
     partitions (the trivial Young tableau `T = λ` is always
     standard, giving `f^λ ≥ 1`). -/
-axiom seminormalDim_pos : ∀ {n : ℕ} (λ : Nat.Partition n) (hn : 0 < n),
-    0 < seminormalDim λ
+axiom seminormalDim_pos : ∀ {n : ℕ} (lam : Nat.Partition n) (hn : 0 < n),
+    0 < seminormalDim lam
 
 /-- **Hoefsmit seminormal matrix** for generator `σ_i` of
     `H_n(q)` acting on the irrep `V_λ` at parameter `q`.
@@ -94,8 +94,8 @@ axiom seminormalDim_pos : ∀ {n : ℕ} (λ : Nat.Partition n) (hn : 0 < n),
     Hoefsmit (1974); the concrete construction is in
     `folio-assistant/computations/hecke/hecke_characters.py`
     (function `build_seminormal_matrices`). -/
-axiom HoefsmitMatrix : ∀ {n : ℕ} (λ : Nat.Partition n) (_q : ℝ) (_i : Fin (n - 1)),
-    Matrix (Fin (seminormalDim λ)) (Fin (seminormalDim λ)) ℝ
+opaque HoefsmitMatrix : ∀ {n : ℕ} (lam : Nat.Partition n) (_q : ℝ) (_i : Fin (n - 1)),
+    Matrix (Fin (seminormalDim lam)) (Fin (seminormalDim lam)) ℝ
 
 /-- **Hecke relation in T-form** (the F_p-friendly form, per
     user direction "we want as many stmts to hold in F_p"):
@@ -122,10 +122,10 @@ axiom HoefsmitMatrix : ∀ {n : ℕ} (λ : Nat.Partition n) (_q : ℝ) (_i : Fin
     For the q-integer convention, the T-form analogue is
     `[k]_q := (q^k − 1) / (q − 1)` (a polynomial in q, integer
     coefficients).  See `QOU.HeckeAlgebra.JonesMarkovWenzl`. -/
-axiom HoefsmitMatrix_hecke_relation : ∀ {n : ℕ} (λ : Nat.Partition n) (q : ℝ)
+axiom HoefsmitMatrix_hecke_relation : ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ)
     (i : Fin (n - 1)),
-    (HoefsmitMatrix λ q i) * (HoefsmitMatrix λ q i) =
-      (q - 1) • (HoefsmitMatrix λ q i) + q • 1
+    (HoefsmitMatrix lam q i) * (HoefsmitMatrix lam q i) =
+      (q - 1) • (HoefsmitMatrix lam q i) + q • 1
 
 /-- **Braid relation** (axiomatised): `T_i T_{i+1} T_i = T_{i+1}
     T_i T_{i+1}` whenever both `i` and `i+1` index valid
@@ -136,9 +136,9 @@ axiom HoefsmitMatrix_hecke_relation : ∀ {n : ℕ} (λ : Nat.Partition n) (q : 
     has the same shape as the σ-form (it does not depend on the
     quadratic relation), but we phrase it in T's to keep this
     file uniformly in the T-form / `ℤ[q, q⁻¹]`-friendly setup. -/
-axiom HoefsmitMatrix_braid_relation : ∀ {n : ℕ} (λ : Nat.Partition n) (q : ℝ)
+axiom HoefsmitMatrix_braid_relation : ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ)
     (i j : Fin (n - 1)) (_h_adj : j.val = i.val + 1),
-    (HoefsmitMatrix λ q i) * (HoefsmitMatrix λ q j) * (HoefsmitMatrix λ q i) =
-      (HoefsmitMatrix λ q j) * (HoefsmitMatrix λ q i) * (HoefsmitMatrix λ q j)
+    (HoefsmitMatrix lam q i) * (HoefsmitMatrix lam q j) * (HoefsmitMatrix lam q i) =
+      (HoefsmitMatrix lam q j) * (HoefsmitMatrix lam q i) * (HoefsmitMatrix lam q j)
 
 end QOU.HeckeAlgebra.Hoefsmit

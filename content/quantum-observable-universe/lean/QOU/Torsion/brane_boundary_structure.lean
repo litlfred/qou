@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.Notation
+
 /-!
 # QOU.Torsion.brane_boundary_structure — four properties of `∂A_n`
 

@@ -68,7 +68,7 @@ attribute [instance] GlobalGluing.instVac
 
 /-- The global algebra inherits a ring structure from the local data. -/
 -- Ref: [yekutieli2010] §4
-theorem global_gluing {R : Type*} [CommRing R]
+instance global_gluing {R : Type*} [CommRing R]
     (gg : GlobalGluing R) : Ring gg.tqm.GlobalAlgebra :=
   gg.tqm.instGlobalRing
 

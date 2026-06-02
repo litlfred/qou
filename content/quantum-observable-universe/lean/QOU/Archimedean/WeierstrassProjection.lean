@@ -1,3 +1,7 @@
+import Mathlib.Data.Complex.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
 /-!
 # QOU.Archimedean.weierstrassProjection — Weierstrass projection ℘_q(z)
 
@@ -15,33 +19,30 @@ indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
 
-import Mathlib.Data.Complex.Basic
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-
 namespace QOU.Archimedean
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
+noncomputable def q_param : R_q := LaurentPolynomial.T 1
+noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
-/-- **Weierstrass projection** ℘_q : ℂ/Λ_q → ℙ¹.
+/-- Archimedean specialization map for Laurent-polynomial coefficients.
+    This keeps the formal coefficients in `R_q` while allowing the
+    differential equation to be stated over `ℂ`.
 
-    The meromorphic function defined by
-    ℘_q(z) = 1/z² + Σ_{ω ∈ Λ_q \ {0}} (1/(z-ω)² - 1/ω²)
-    which uniformises the Descartes elliptic curve E_q.
+    Intended semantics: a chosen coefficient specialization
+    `ℤ[q, q⁻¹] → ℂ` for the archimedean model. The algebraic properties
+    of this map are left axiomatic here because this file only needs
+    coefficient transport into the analytic differential equation. -/
+opaque coeffEmbed : R_q → ℂ
 
-    The Weierstrass invariants are g₂(q) = -4p(q), g₃(q) = -4r(q)
-    where p, r are the short Weierstrass coefficients of E_q. -/
 /-- **External axiom** (Lang, Elliptic Functions §VI.3; manuscript
     §5/weierstrass-projection): the Weierstrass projection ℘_q
     associated to the Descartes elliptic curve.  Axiomatised pending
     a complex Weierstrass-℘ formalisation in Mathlib. -/
 -- Ref: [manuscript] §5/weierstrass-projection
-axiom weierstrassProjection : R_q → R_q → ℂ → ℂ
+opaque weierstrassProjection : R_q → R_q → ℂ → ℂ
 
 /-- **External axiom (Lang, Elliptic Functions Thm VI.3.6):** the
     Weierstrass differential equation `℘'² = 4℘³ − g₂℘ − g₃`. -/
@@ -51,14 +52,14 @@ axiom weierstrass_diff_eq_axiom :
     ∀ (g2 g3 : R_q) (z : ℂ),
       z ≠ 0 →
       ∃ (wp_deriv wp_val : ℂ),
-        wp_deriv ^ 2 = 4 * wp_val ^ 3 - ↑g2 * wp_val - ↑g3
+        wp_deriv ^ 2 = 4 * wp_val ^ 3 - coeffEmbed g2 * wp_val - coeffEmbed g3
 
 /-- The Weierstrass function satisfies the differential equation
     ℘'(z)² = 4℘(z)³ - g₂℘(z) - g₃. -/
 theorem weierstrass_diff_eq (g2 g3 : R_q) (z : ℂ)
     (hz : z ≠ 0) :
     ∃ (wp_deriv wp_val : ℂ),
-      wp_deriv ^ 2 = 4 * wp_val ^ 3 - ↑g2 * wp_val - ↑g3 :=
+      wp_deriv ^ 2 = 4 * wp_val ^ 3 - coeffEmbed g2 * wp_val - coeffEmbed g3 :=
   weierstrass_diff_eq_axiom g2 g3 z hz
 
 end QOU.Archimedean
