@@ -90,7 +90,7 @@ would **not** commute with the difference of two $\tau$-images. Hence:
 `fold_commutes_sub` proves $f(x-y)=f(x)-f(y)$ by `sub_eq_add_neg` +
 `map_add` + `map_neg` over a generic `CommRing` — no `ℝ`, no ordering.
 `archimedean_does_not_commute_sub` exhibits a concrete nonlinear
-witness ($\tau=(\cdot)^2$ over $\mathbb Z$) closing by `decide`. The
+witness ($\tau=(\cdot)^2$ over $\mathbb Z$) closing by `norm_num`. The
 fibre/observable level discipline matches the front-matter
 $\mathrm{Im}(q)$ convention: the fold lives in the fibre; reality enters
 only at $\tau$.
