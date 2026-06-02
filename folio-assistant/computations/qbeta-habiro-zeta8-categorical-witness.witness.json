@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T21:12:32.564133+00:00",
-  "commitSha": "eb6103bd15037a0dea544d490a95dc1f775fc53b",
+  "computedAt": "2026-06-02T02:54:29.937928+00:00",
+  "commitSha": "fe058a0f89813bc129b5c19231e7c97fe41b43d2",
   "assertions": [
     {
       "name": "delta_a7_zeta8_exact_cancellation_all_pairs",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1772,
+  "durationMs": 2064,
   "computation": "qbeta-habiro-zeta8-categorical-witness",
   "scriptFile": "qbeta_habiro_zeta8_categorical_witness.py",
   "scriptHash": "79fdb31800bf",
