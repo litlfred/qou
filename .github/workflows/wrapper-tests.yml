@@ -335,16 +335,24 @@ jobs:
       - name: Build + load + smoke
         run: |
           cd tools/hecke-engine-r
-          # `rextendr::document()` is the version-agnostic wrapper that
-          # dispatches to whatever generator pipeline the installed
-          # rextendr version uses (register_extendr() in 0.3,
-          # extendr_roclet in 0.4, the renamed roclet in 0.5+).
-          # Avoid the explicit DESCRIPTION `Roxygen: ... extendr_roclet`
-          # line — that name disappeared in rextendr 0.5 and surfaces
-          # as `'extendr_roclet' is not an exported object`.
-          Rscript -e 'rextendr::document(".")'
-          # pkgload::load_all() — Compiles + loads the Rust cdylib using
-          # the Makevars rextendr::document() just generated.
+          # rextendr 0.5 deprecated rextendr::document() AND the explicit
+          # extendr_roclet name simultaneously — the only forward-
+          # compatible path is the auto-bootstrap entry point:
+          #
+          #   use_extendr() — idempotent; writes the right Roxygen
+          #     line into DESCRIPTION (whatever the installed rextendr
+          #     version names its roclet), confirms src/rust/Cargo.toml
+          #     + src/rust/src/lib.rs are in place.
+          #   devtools::document() — actually runs the roclet (which
+          #     use_extendr just registered), generating src/Makevars
+          #     + src/entrypoint.c + R/extendr-wrappers.R.
+          #   pkgload::load_all() — compile + load the cdylib.
+          #
+          # `overwrite = TRUE` is needed because the repo's DESCRIPTION
+          # is already set up; without it, use_extendr() refuses to
+          # update an existing config.
+          Rscript -e 'rextendr::use_extendr(quiet = TRUE, overwrite = TRUE)'
+          Rscript -e 'devtools::document(".")'
           Rscript -e 'pkgload::load_all("."); source("tests/smoke.R")'
 
   # ── 10. SageMath examples smoke ──
