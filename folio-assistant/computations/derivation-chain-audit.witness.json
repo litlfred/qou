@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T18:30:56.913832+00:00",
-  "commitSha": "12ab03fb90cad6f3a2ba18b6950d9e74882bdac7",
+  "computedAt": "2026-06-02T19:24:37.351749+00:00",
+  "commitSha": "unknown",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "8c9ce6665871",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -575,9 +575,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -2098,6 +2096,7 @@
         "binding-k-enumerator.witness.json",
         "binding-k-solver.witness.json",
         "binding-ladder-catalog.witness.json",
+        "binding-link-psd-feasibility-probe.witness.json",
         "binding-link-volumes.witness.json",
         "binding-log-scale-investigation.witness.json",
         "binding-lp-delta-audit.witness.json",
@@ -2343,6 +2342,7 @@
         "delta-q-decoration.witness.json",
         "demazure-markov-trace.witness.json",
         "demazure-sub-crystal-prescreen-50dps.witness.json",
+        "derive-binding-per-block-archimedean.witness.json",
         "derive-ms-md-torus-knot.witness.json",
         "deuteron-binding-interface-closure.witness.json",
         "deuteron-binding-plancherel-channel.witness.json",
@@ -2493,6 +2493,7 @@
         "lr-fusion-self-conj-test.witness.json",
         "m-baryon-volume-form.witness.json",
         "m-p-borromean-verification-50dps.witness.json",
+        "m-p-linking-weight-operator-valued-probe.witness.json",
         "m-p-m-e-li2q.witness.json",
         "m-p-spectral-corrected-50dps.witness.json",
         "m-p-substrate-identity-50dps.witness.json",
@@ -2613,6 +2614,7 @@
         "probe-4e-transpose-pair-asymmetry.witness.json",
         "probe-4f-h3-sigma-avg-asymmetry.witness.json",
         "probe-binding-measure-search.witness.json",
+        "probe-content-energy-signed-phase.witness.json",
         "probe-full-theta-binding.witness.json",
         "probe-isospin-mirror-v9-generalization.witness.json",
         "probe-k-ud-bring-color-tube-empirical-baseline.witness.json",
