@@ -1,8 +1,8 @@
 {
   "engine": "numpy+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:56:33.681712+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:21:32.504170+00:00",
+  "commitSha": "86d8cdc2264a2907343699f9b29114ccb338bf44",
   "assertions": [
     {
       "name": "lp_strong_duality_all_klr_atoms",
@@ -30,8 +30,8 @@
   "durationMs": 44,
   "computation": "wedderburn-lp-ew-wiring",
   "scriptFile": "wedderburn_lp_ew_wiring.py",
-  "scriptHash": "a43af231f094",
-  "scriptCommitSha": "dd867616ae15be4e9a031f4f1cfff79654373543",
+  "scriptHash": "4496caf0e3e6",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

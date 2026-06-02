@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:23:55.998462+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:13:08.834420+00:00",
+  "commitSha": "86d8cdc2264a2907343699f9b29114ccb338bf44",
   "assertions": [
     {
       "name": "jet_rank_0_derivation_q_independent_and_matches_textbook",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "casimir-jet-order-derivation",
   "scriptFile": "casimir_jet_order_derivation.py",
-  "scriptHash": "0bdf62aadf12",
-  "scriptCommitSha": "6cd700001c7391587945e1ea3524192051d4da1c",
+  "scriptHash": "7ceb72b63da8",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

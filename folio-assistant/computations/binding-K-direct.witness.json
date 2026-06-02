@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:23:58.169159+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:13:06.966975+00:00",
+  "commitSha": "86d8cdc2264a2907343699f9b29114ccb338bf44",
   "assertions": [
     {
       "name": "status_report_emitted",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 13,
   "computation": "binding-K-direct",
   "scriptFile": "binding_K_direct.py",
-  "scriptHash": "f735dd8d2bbd",
-  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+  "scriptHash": "ff4b5094af15",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
