@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:45:40.545147+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "computedAt": "2026-06-02T14:03:19.563933+00:00",
+  "commitSha": "6cbfcb9e069e512caa6966a76e57e0628e19e625",
   "assertions": [
     {
       "name": "level_2_baseline_universal_at_M_7",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5092,
+  "durationMs": 6188,
   "computation": "qbeta-habiro-wenzl-tower-zeta-n",
   "scriptFile": "qbeta_habiro_wenzl_tower_zeta_n.py",
   "scriptHash": "2d1c0b30b1d4",
