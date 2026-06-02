@@ -24,8 +24,13 @@ namespace QOU.Archimedean
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 abbrev R_q := LaurentPolynomial ℤ
-noncomputable abbrev q_param : R_q := LaurentPolynomial.T 1
-noncomputable abbrev q_inv_param : R_q := LaurentPolynomial.T (-1)
+noncomputable def q_param : R_q := LaurentPolynomial.T 1
+noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
+/-- Archimedean specialization map for Laurent-polynomial coefficients.
+    This keeps the formal coefficients in `R_q` while allowing the
+    differential equation to be stated over `ℂ`. -/
+axiom coeffEmbed : R_q → ℂ
 
 /-- **External axiom** (Lang, Elliptic Functions §VI.3; manuscript
     §5/weierstrass-projection): the Weierstrass projection ℘_q
@@ -39,17 +44,17 @@ axiom weierstrassProjection : R_q → R_q → ℂ → ℂ
 -- Ref: [manuscript] §5/weierstrass-projection
 -- Ref: [lang2002algebra] https://doi.org/10.1007/978-0-387-09494-6 Theorem VI.3.6
 axiom weierstrass_diff_eq_axiom :
-    ∀ (g2 g3 : ℂ) (z : ℂ),
+    ∀ (g2 g3 : R_q) (z : ℂ),
       z ≠ 0 →
       ∃ (wp_deriv wp_val : ℂ),
-        wp_deriv ^ 2 = 4 * wp_val ^ 3 - g2 * wp_val - g3
+        wp_deriv ^ 2 = 4 * wp_val ^ 3 - coeffEmbed g2 * wp_val - coeffEmbed g3
 
 /-- The Weierstrass function satisfies the differential equation
     ℘'(z)² = 4℘(z)³ - g₂℘(z) - g₃. -/
-theorem weierstrass_diff_eq (g2 g3 : ℂ) (z : ℂ)
+theorem weierstrass_diff_eq (g2 g3 : R_q) (z : ℂ)
     (hz : z ≠ 0) :
     ∃ (wp_deriv wp_val : ℂ),
-      wp_deriv ^ 2 = 4 * wp_val ^ 3 - g2 * wp_val - g3 :=
+      wp_deriv ^ 2 = 4 * wp_val ^ 3 - coeffEmbed g2 * wp_val - coeffEmbed g3 :=
   weierstrass_diff_eq_axiom g2 g3 z hz
 
 end QOU.Archimedean
