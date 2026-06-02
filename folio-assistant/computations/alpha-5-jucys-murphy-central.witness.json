@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T19:31:36.311919+00:00",
-  "commitSha": "e6569d7622ab45a74f1b5f89eae787051aa64066",
+  "computedAt": "2026-06-02T03:41:44.696971+00:00",
+  "commitSha": "36c1b6fcfd7e067a22e8a4acf0097d34baa0ed49",
   "assertions": [
     {
       "name": "naive_jm_central_form_refuted_at_q0",
@@ -27,7 +27,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1691,
+  "durationMs": 1653,
   "computation": "alpha-5-jucys-murphy-central",
   "scriptFile": "alpha_5_jucys_murphy_central.py",
   "scriptHash": "ef9cbca7159c",
