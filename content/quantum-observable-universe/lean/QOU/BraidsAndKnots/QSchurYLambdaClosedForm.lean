@@ -39,21 +39,21 @@ chain at Lean level.
   currently in Mathlib.
 
 - `qSchur_H2_top`, `qSchur_H2_bottom`, `qSchur_H2_normalization`:
-  the H_2 case explicit identities. **Stated; proofs require
-  numerical simplification chain that is in progress**. Per
-  §3b-cond, the class above carries the categorical content;
-  these specific identities depend on numerical simplification
-  for a particular n=2 case.
+  the H_2 case explicit identities, **sorry-free** via
+  `unfold + decide + qFactorial + qBracket + field_simp + ring`.
+  These are concrete `q`-bracket identities — the class
+  `QSchurYLambdaClosedFormClaim` above carries the categorical
+  content (the fact that this closed form IS the q-Schur weight).
 
 - `qSchur_H3_top`, `qSchur_H3_mid`, `qSchur_H3_bottom`:
   the H_3 case explicit identities for partitions `(3)`, `(2,1)`,
-  `(1,1,1)`.  Mechanical mirrors of the H_2 pattern via
-  `unfold ySchurClosedForm; decide (contentSum/sum); simp [qFactorial,
-  qBracket, dif_neg h2]; field_simp [hsum_ne, hsq3_ne]; ring`.
-  Unlike H_2 there is no clean "normalization" theorem at H_3 because
-  the unweighted partition sum is not 1 — Plancherel weighting by
-  `dim_q(λ)²` would be required, deferred to the q-Schur algebra
-  formalisation that discharges `QSchurYLambdaClosedFormClaim`.
+  `(1,1,1)`, **sorry-free** via the same H_2 pattern. Helper lemmas
+  `q_add_inv_ne_zero` and `q_sq_add_one_add_inv_sq_ne_zero` factor
+  the non-vanishing side-conditions. Unlike H_2 there is no clean
+  "normalization" theorem at H_3 because the unweighted partition
+  sum is not 1 — Plancherel weighting by `dim_q(λ)²` would be
+  required, deferred to the q-Schur algebra formalisation that
+  discharges `QSchurYLambdaClosedFormClaim`.
 
 ## H_2 cross-check (numerically verified in PR #1259 audit)
 
@@ -145,10 +145,9 @@ class QSchurYLambdaClosedFormClaim where
 /-! ## H_2 explicit identities
 
 The audit `docs/audits/2026-05-25-markov-trace-convention-audit.md`
-verifies these at H_2 numerically. The Lean theorems below state
-the algebraic identities; their proofs require a numerical-
-simplification chain over `qBracket` and `qFactorial` definitions.
-Scoped `sorry`s mark where the chain is in progress.
+verifies these at H_2 numerically. The Lean theorems below discharge
+the algebraic identities sorry-free via the numerical-simplification
+chain `qFactorial + qBracket + field_simp + ring`.
 -/
 
 /-- **H_2 case for `(2)`**: `y_(2)(q) = q / (q + q⁻¹)`. -/
