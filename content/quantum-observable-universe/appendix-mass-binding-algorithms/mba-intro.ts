@@ -1,7 +1,7 @@
 import { prose } from "../../schema/builders";
 
 export default prose({
-  label: "mba-intro",
+  label: "prose:mba-intro",
   title: "Scope and conventions",
   tags: [
     "appendix",
