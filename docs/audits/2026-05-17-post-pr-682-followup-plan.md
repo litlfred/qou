@@ -57,10 +57,10 @@ giving Path-3 (Habiro-tower) mass predictions alongside Path-2
 
 ## 3. m_p Item B — chirality T5 (governance-blocked)
 
-**Audit witness:** [`term5-aK-audit.witness.json`](../../folio-assistant/computations/term5-aK-audit.witness.json)
+**Audit witness:** [`term5-aK-audit.witness.json`](../../folio-assistant/computations/audits/term5-aK-audit.witness.json)
 covers V1/V2/V3/V4 for {p, n} and **V1 only** for {D, T, ³He}.
 
-**Audit script:** [`term5_aK_audit.py`](../../folio-assistant/computations/term5_aK_audit.py)
+**Audit script:** [`term5_aK_audit.py`](../../folio-assistant/computations/audits/term5_aK_audit.py)
 takes `--variants V1,V2,V3,V4` and `--atoms`. The script's own
 docstring notes:
 
@@ -84,7 +84,7 @@ to test whether the 2.2% gap holds across the V1 → V2 mirror
 re-interpretation, or whether one of the other variants closes it.
 
 ```bash
-python3 folio-assistant/computations/term5_aK_audit.py \
+python3 folio-assistant/computations/audits/term5_aK_audit.py \
     --atoms deuteron --variants V2
 ```
 

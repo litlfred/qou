@@ -37,7 +37,7 @@ import sys
 from pathlib import Path
 
 THIS = Path(__file__).resolve()
-COMPUTE_DIR = THIS.parent
+COMPUTE_DIR = THIS.parent.parent  # was: THIS.parent (pre-cluster-move)
 sys.path.insert(0, str(COMPUTE_DIR))
 
 from _precision import set_compute_dps, fmt  # noqa: E402

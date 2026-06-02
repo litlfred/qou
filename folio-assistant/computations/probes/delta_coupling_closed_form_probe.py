@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
 
-# Path bridge (subdirectory refactor — Phase 1, 2026-06-02).
-# Keeps flat-namespace imports (`from witness_base import …`)
-# working from the `probes/` cluster subdirectory. The bridge
-# module also puts every other cluster subdir on sys.path so
-# cross-cluster bare-name imports resolve. Idempotent.
-import sys as _sys  # noqa: E402
-from pathlib import Path as _Path  # noqa: E402
-_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
-import _path_bridge as _bridge  # noqa: E402, F401
-del _sys, _Path, _bridge
 
 # polynomial_q_not_applicable: probe of closed-form candidates at q_0
 """P3.A — Closed-form `f` candidate probe for Δ_coupling at magic shells.
@@ -78,6 +68,17 @@ Reference blocks:
   - thm:knot-mass-formula-unified
 """
 from __future__ import annotations
+
+# Path bridge (subdirectory refactor — Phase 1, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the `probes/` cluster subdirectory. The bridge
+# module also puts every other cluster subdir on sys.path so
+# cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
 
 import json
 import sys

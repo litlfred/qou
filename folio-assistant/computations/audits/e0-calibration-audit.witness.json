@@ -1,0 +1,44 @@
+{
+  "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
+  "computation": "e0-calibration-audit",
+  "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
+  "computedAt": "2026-06-02T03:23:13.439799+00:00",
+  "reference_blocks": [
+    "prop:three-calibration-inputs",
+    "rem:calibration-inputs"
+  ],
+  "pdg_inputs_2022": {
+    "m_n_MeV": "939.56542052",
+    "m_n_err_MeV": "0.00000054",
+    "m_p_MeV": "938.27208816",
+    "m_p_err_MeV": "0.00000029",
+    "m_e_MeV": "0.51099895069",
+    "m_e_err_MeV": "1.5e-10"
+  },
+  "Q_beta_n": {
+    "value_MeV": "0.78233341",
+    "abs_err_MeV": "0.00000061294373518292851542608324257",
+    "rel_err": "0.000000783481476501084768226993197913",
+    "rel_err_ppb": "783.481476501084768226993197913"
+  },
+  "precision_floor": "Every E_0-dependent quantity inherits a relative uncertainty floor of 7.83e-7 (~783.0 ppb). 1 ppb is NOT physically achievable on these quantities without a tighter Q_β(n) measurement.",
+  "findings_by_pattern": {
+    "literal_0_782": [],
+    "literal_0_78233341": [],
+    "literal_0_78233": [],
+    "E_0_CALIBRATION_MEV": [],
+    "Q_BETA_MEV": [
+      {
+        "file": "computations/audits/hardcoded_literal_audit.py",
+        "line": 192,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "# matches like `1e-3` ~ `Q_BETA_MEV_ERR`.  Tightened",
+        "kind": "doc"
+      }
+    ],
+    "proton_mass_anchor": []
+  },
+  "inconsistencies": [],
+  "achievable_precision_floor_ppb": "783.481476501084768226993197913"
+}

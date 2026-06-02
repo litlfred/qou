@@ -98,7 +98,7 @@ trace-per-dim identity (Wigner-2) gives the direct closed form.
 
 **Compute**:
 [`shadow_price_c_321_q0.py`](../../folio-assistant/computations/shadow_price_c_321_q0.py),
-[`paper_six_term_shadow_price_sweep.py`](../../folio-assistant/computations/paper_six_term_shadow_price_sweep.py).
+[`paper_six_term_shadow_price_sweep.py`](../../folio-assistant/computations/sweeps/paper_six_term_shadow_price_sweep.py).
 
 **What it exposes**: the BW coefficients as **shadow prices** —
 i.e., what would change in the optimal LP value per unit relaxation

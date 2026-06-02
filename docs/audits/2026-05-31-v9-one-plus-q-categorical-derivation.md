@@ -189,7 +189,7 @@ The v9 formula remains in the **"near-match"** tier — promoted from
   [`folio-assistant/computations/option_e_v9_all_symmetries.py`](../../folio-assistant/computations/option_e_v9_all_symmetries.py)
   (commit `30c5393b7`)
 - #1581 audit (empirical uniqueness):
-  [`folio-assistant/computations/option_e_v9_one_plus_q_structural_audit.py`](../../folio-assistant/computations/option_e_v9_one_plus_q_structural_audit.py)
+  [`folio-assistant/computations/audits/option_e_v9_one_plus_q_structural_audit.py`](../../folio-assistant/computations/audits/option_e_v9_one_plus_q_structural_audit.py)
 - Canonical chain:
   [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
 - CLAUDE.md §7a (Hecke-Skein eigenvalue conventions)

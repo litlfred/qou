@@ -22,6 +22,9 @@ This probe applies per_generator_V_hat_general with n_strands=5
 """
 
 
+
+from __future__ import annotations
+
 # Path bridge (subdirectory refactor — Phase 1, 2026-06-02).
 # Keeps flat-namespace imports (`from witness_base import …`)
 # working from the `probes/` cluster subdirectory. The bridge
@@ -32,8 +35,6 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
-
-from __future__ import annotations
 
 import json
 import sys

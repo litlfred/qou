@@ -151,7 +151,7 @@ place of $\Phi_q(|\hat V_i|)$; see the proposition statement below.
 The production compute pipeline at
 [`canonical_plus_multibrane.py`](folio-assistant/computations/canonical_plus_multibrane.py)
 and
-[`paper_six_term_isotope_sweep.py`](folio-assistant/computations/paper_six_term_isotope_sweep.py)
+[`paper_six_term_isotope_sweep.py`](folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py)
 use `tower_mode="li2q"` and evaluate $-\mathrm{Li}_2^q(-|V|)$ via the
 symmetric q-dilogarithm series
 $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$. The

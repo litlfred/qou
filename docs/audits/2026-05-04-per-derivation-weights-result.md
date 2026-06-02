@@ -14,7 +14,7 @@ assembly** (14.7 % mean, ~32 % max in li2q mode).
 ## What changed
 
 Added one new function to
-`folio-assistant/computations/paper_six_term_isotope_sweep.py`:
+`folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py`:
 
 ```python
 def assemble_per_derivation_weights(Z, N, tower_mode="li2q",
@@ -115,7 +115,7 @@ predictions should use `assemble_per_derivation_weights`.
 
 ## Files
 
-- `folio-assistant/computations/paper_six_term_isotope_sweep.py`
+- `folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py`
   (`assemble_per_derivation_weights` + helper)
 - `docs/audits/2026-05-04-six-term-per-weight-derivation.md`
   (the per-term weight derivation that drove this implementation)

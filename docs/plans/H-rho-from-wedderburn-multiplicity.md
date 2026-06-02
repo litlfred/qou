@@ -10,7 +10,7 @@ specifies that ρ should come from "the multiplicity of T_w's SDP
 solution in the Wedderburn decomposition".
 
 Today
-[`folio-assistant/computations/low_isotope_binding_sweep.py`](../../folio-assistant/computations/low_isotope_binding_sweep.py)
+[`folio-assistant/computations/sweeps/low_isotope_binding_sweep.py`](../../folio-assistant/computations/sweeps/low_isotope_binding_sweep.py)
 hand-picks ρ ∈ {`m_e`, `2 m_e`} per row:
 
 | Entry | ρ today (hand-pick) | Comment |

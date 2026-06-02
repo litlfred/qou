@@ -29,7 +29,7 @@ amplitude. Two production compute paths follow this discipline:
 
 - [`canonical_plus_multibrane.py`](folio-assistant/computations/canonical_plus_multibrane.py)
   with `tower_mode="li2q"` — the canonical mass tower.
-- [`paper_six_term_isotope_sweep.py`](folio-assistant/computations/paper_six_term_isotope_sweep.py)
+- [`paper_six_term_isotope_sweep.py`](folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py)
   using the symmetric q-dilogarithm series identity.
 
 The $\Phi_q$ product form survives in

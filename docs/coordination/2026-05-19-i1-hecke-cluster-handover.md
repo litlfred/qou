@@ -81,7 +81,7 @@
 - `cor:knot-factor-shell-closed` — needs ⁴He braid word in B_12 (intractable per PR #798's deferred-intractable taxonomy); may need to use a smaller analog at H_4 or H_6
 - `prop:wenzl-bridge-applicability-qou` — structural existence proof, not numerical; could probe via uniqueness check (compute tr_M two ways with different normalisations and verify they collapse to the same up-to-scale answer)
 
-**Non-Hecke I1 backlog (508 items):** the broader queue includes Plancherel-spectral, GB/NF, observation-theory, Brundan-Kleshchev, etc. Run `python3 folio-assistant/computations/i1_no_probe_audit.py` and inspect `data.rows` for filtering.
+**Non-Hecke I1 backlog (508 items):** the broader queue includes Plancherel-spectral, GB/NF, observation-theory, Brundan-Kleshchev, etc. Run `python3 folio-assistant/computations/audits/i1_no_probe_audit.py` and inspect `data.rows` for filtering.
 
 ### D. Sibling PR awareness
 
@@ -117,7 +117,7 @@ python3 folio-assistant/computations/probes/frobenius_gram_matrix_probe.py
 python3 folio-assistant/computations/probes/jucys_murphy_central_elements_qou_probe.py
 python3 folio-assistant/computations/probes/explicit_central_idempotent_probe.py
 
-python3 folio-assistant/computations/i1_no_probe_audit.py
+python3 folio-assistant/computations/audits/i1_no_probe_audit.py
 # Inspect data.by_result for current totals
 ```
 

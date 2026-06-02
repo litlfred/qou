@@ -8,7 +8,7 @@ P2.5.
 
 ## Sweep result (610 Python scripts)
 
-[`folio-assistant/computations/p2_5_symbolic_q_audit.py`](../../folio-assistant/computations/p2_5_symbolic_q_audit.py)
+[`folio-assistant/computations/audits/p2_5_symbolic_q_audit.py`](../../folio-assistant/computations/audits/p2_5_symbolic_q_audit.py)
 triages every Python file under `folio-assistant/computations/`.
 
 | Category | Count | Share | Notes |
@@ -176,6 +176,6 @@ Total realistic scope: **~5 days mechanical work**, not 1 week.
 ## Reproducibility
 
 ```bash
-python3 folio-assistant/computations/p2_5_symbolic_q_audit.py
+python3 folio-assistant/computations/audits/p2_5_symbolic_q_audit.py
 # → folio-assistant/computations/p2-5-symbolic-q-audit.witness.json
 ```

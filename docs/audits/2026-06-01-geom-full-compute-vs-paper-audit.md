@@ -5,8 +5,8 @@
 **Scope:** AUDIT ONLY. Does production `Geom_full(𝓑₃,q₀)` match the paper's
 forced per-block form? No fitting, no tuning to m_p/B_AME. Every number below
 is a RAW computed value, reported whether it matches or not.
-**Compute:** [`geom_full_compute_vs_paper_audit.py`](../../folio-assistant/computations/geom_full_compute_vs_paper_audit.py),
-witness [`geom-full-compute-vs-paper-audit.witness.json`](../../folio-assistant/computations/geom-full-compute-vs-paper-audit.witness.json).
+**Compute:** [`geom_full_compute_vs_paper_audit.py`](../../folio-assistant/computations/audits/geom_full_compute_vs_paper_audit.py),
+witness [`geom-full-compute-vs-paper-audit.witness.json`](../../folio-assistant/computations/audits/geom-full-compute-vs-paper-audit.witness.json).
 Cross-checked against the Rust-computed 50-dps witness
 `borromean-markov-trace-h-expansion-50dps.witness.json`.
 
