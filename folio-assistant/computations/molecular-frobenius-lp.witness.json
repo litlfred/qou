@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T20:36:45.805461+00:00",
-  "commitSha": "3411e763ec782e9acf1e00b1a3d93c9f6bc479b6",
+  "computedAt": "2026-06-02T19:42:46.476397+00:00",
+  "commitSha": "3f1aa2eeed5b3e342167725efb6e00c0e6a340de",
   "assertions": [
     {
       "name": "H2 binding positive",
@@ -41,7 +41,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "molecular-frobenius-lp",
   "scriptFile": "molecular-frobenius-lp.py",
   "scriptHash": "2fca5a777687",
