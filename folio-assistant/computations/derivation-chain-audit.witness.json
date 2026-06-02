@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T20:37:18.271695+00:00",
-  "commitSha": "c9ea96355533bc7681cf488e7de46fc91bc91781",
+  "computedAt": "2026-06-02T02:31:04.340832+00:00",
+  "commitSha": "280d2b5072ddb8246ea183e6e110cd230a626e00",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2422,7 +2422,6 @@
         "f-ell-derivation-via-per-braid-mass-tower.witness.json",
         "family-a-per-partition-h-decomposition-50dps.witness.json",
         "finite-q-volume-conjecture-probe.witness.json",
-        "fitted-labelled-canonical-audit.witness.json",
         "flavor-dependent-cusp-shape.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "flavor-split-xq-refinement.witness.json",
@@ -2519,6 +2518,7 @@
         "habiro-to-precision-ladder-verification.witness.json",
         "hadron-knot-table.witness.json",
         "hardcoded-literal-audit.witness.json",
+        "he4-9-3-trace-dominant-correction-probe.witness.json",
         "he4-partition-dominance-audit-probe.witness.json",
         "he4-rho-f-bar-symmetric-audit-probe.witness.json",
         "hecke-1d-irrep-closed-form-character-probe.witness.json",
@@ -2546,6 +2546,7 @@
         "implied-c2-closed-form-search-50dps.witness.json",
         "implied-h2-coefficient-audit-50dps.witness.json",
         "incomplete-coverage-audit.witness.json",
+        "inter-nucleon-linked-channel.witness.json",
         "interface-quadratic-identity.witness.json",
         "interface-quadratic-structure.witness.json",
         "intermediate-knot-detection.witness.json",
@@ -2572,6 +2573,7 @@
         "knot-factor-amphicheiral-BD-probe.witness.json",
         "knot-factor-amphicheiral-probe.witness.json",
         "knot-factor-borromean-composite-probe.witness.json",
+        "knot-operator-census-group-actions.witness.json",
         "knot-operator-sdp-4_1.witness.json",
         "knot-volumes.witness.json",
         "kummer-reflection-zeta5.witness.json",
@@ -2666,6 +2668,7 @@
         "meson-typed-crossing-probe.witness.json",
         "mn-dpn-xq-cross-anchor-probe.witness.json",
         "mn-flavor-split-h3-plancherel.witness.json",
+        "mn-flavor-split-h4-plancherel.witness.json",
         "mn-flavor-split-plancherel-channel.witness.json",
         "mn-standard-channel-correction.witness.json",
         "molecular-frobenius-lp.witness.json",
@@ -2885,6 +2888,7 @@
         "rt-route-w-specific-correction-probe.witness.json",
         "rt-w-sqrt-quantum-two-probe.witness.json",
         "rt-w-sqrt2-jet-order-validation.witness.json",
+        "s5-so3-su2-u1-fiber-action.witness.json",
         "sdp-gamma-gamma-to-qqbar.witness.json",
         "seifert-volume-meson-n7-extension.witness.json",
         "shadow-price-c-321-q0.witness.json",
@@ -2977,6 +2981,7 @@
         "wenzl-y-lambda-h9.witness.json",
         "witness-provenance-audit.witness.json",
         "witness-reproducibility-check.witness.json",
+        "xq-habiro-element-search-probe.witness.json",
         "y-lambda-at-q0.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
         "y-lambda-cyclotomic-factorization-probe.witness.json",
@@ -2988,6 +2993,7 @@
         "yekutieli-mi-h2-extraction.witness.json",
         "yekutieli-mi-k3-h6-scaffold.witness.json",
         "yekutieli-natural-reading-precision-floor-check.witness.json",
+        "yekutieli-per-cell-qlambert-decomposition-probe.witness.json",
         "yekutieli-volume-join.witness.json"
       ]
     }
