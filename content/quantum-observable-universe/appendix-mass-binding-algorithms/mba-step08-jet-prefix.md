@@ -41,11 +41,12 @@ in the Hecke dimension.*
 
 ### Python API entry point
 
-```python
-from qou_substrate import jet_truncate
-
-P_N = jet_truncate(P_K, order=N)
-```
+*Canonical compute is the script
+[`folio-assistant/computations/gb_filtration_jet_order_reader.py`](../../../folio-assistant/computations/gb_filtration_jet_order_reader.py),
+which reads the GS-filtered NF and emits the per-jet-order
+truncation witness. The substrate's precision discipline (compute
+at 65 dps, serialise at 50 dps) is configured by
+[`qou_substrate.precision`](../../../tools/qou-substrate/python/qou_substrate/precision.py).*
 
 ### Witness contract
 

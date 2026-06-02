@@ -47,12 +47,11 @@ inequality, and the Taylor-exactness of $c_2$.*
 
 ### Python API entry point
 
-```python
-from qou_mass import q_beta_ladder
-
-ladder = q_beta_ladder(epsilon=1e-8)
-# returns [(k, c_k, tier)] with N inferred from epsilon
-```
+*Canonical compute is the script
+[`folio-assistant/computations/q_beta_predicted.py`](../../../folio-assistant/computations/q_beta_predicted.py),
+which records each $c_k$ with its tier in the witness JSON.
+Higher-precision regenerations use
+[`build_cal_3_q_beta_witness.py`](../../../folio-assistant/computations/build_cal_3_q_beta_witness.py).*
 
 ### Witness contract
 

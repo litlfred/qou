@@ -49,17 +49,14 @@ stored implicitly as a braid word until passed to the next step
 (GS reduction), so the representation is **lazy** — no matrix
 exponentiation occurs at this layer.*
 
-### Python API entry point
+### Python / Rust API entry point
 
-*Invoked indirectly through Step 2 (GS reduction) — the
-categorical action is the upstream specification, the Rust core
-realises it implicitly inside the reducer.*
-
-```python
-from pyhecke import categorical_action_signature
-# Returns the symbolic description of ρ_n(w) without evaluating it.
-sig = categorical_action_signature(word, n=3)
-```
+*No standalone Python entry point — the categorical action is the
+upstream specification, realised implicitly inside the Rust
+`hecke-engine` crate at [`tools/hecke-engine/src/lib.rs`](../../../tools/hecke-engine/src/lib.rs).
+Per-particle braid words are constructed via
+`pyhecke.build_nucleon_nf` / `pyhecke.build_atom_nf` and consumed
+by Step 2 (GS reduction).*
 
 ### Witness contract
 

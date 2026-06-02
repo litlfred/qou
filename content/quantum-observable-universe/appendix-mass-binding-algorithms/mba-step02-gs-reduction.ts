@@ -8,8 +8,8 @@ export default algorithm({
     "def:categorical-action",
   ],
   computation: {
-    engine: "python",
-    script: "tools/hecke-engine/src/gs_reduce.rs",
+    engine: "rust",
+    script: "tools/hecke-engine/src/gb_nf_reducer.rs",
     witness: "folio-assistant/computations/hecke-core-symbolic-migration.witness.json",
     status: "verified",
   },

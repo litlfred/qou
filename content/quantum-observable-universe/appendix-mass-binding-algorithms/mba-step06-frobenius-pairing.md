@@ -43,11 +43,16 @@ $O(\dim H_n(q))$ basis-element verifications.*
 ### Python API entry point
 
 ```python
-from pyhecke import frobenius_pairing, check_self_duality
+from pyhecke import check_frobenius
 
-val = frobenius_pairing(a, b, q)
-assert check_self_duality(n, q)
+# Verifies Frobenius positivity Gx ≥ 0 on the standard basis vector x.
+ok = check_frobenius(x)
 ```
+
+*The canonical audit script is
+[`folio-assistant/computations/audit_frobenius_pairing.py`](../../../folio-assistant/computations/audit_frobenius_pairing.py);
+the Gram matrix `G` and the Markov-trace vector `TR_M` are
+exposed as constants by `pyhecke`.*
 
 ### Witness contract
 

@@ -54,17 +54,22 @@ Polynomial in $|w|$ after caching cycle-equivalent words. For
 nucleon-scale knots ($n \leq 9$, $|w| \leq 24$) the reducer
 finishes in milliseconds on the Rust core.*
 
-### Python API entry point
+### Python / Rust API entry point
 
 ```python
-from pyhecke import gs_reduce
+# Per-particle Hecke normal forms (the user-facing surface):
+from pyhecke import (
+    build_nucleon_nf, build_atom_nf, build_atom_nf_exact,
+)
 
-nf = gs_reduce(word, q)            # symbolic mode
-nf_at_q0 = gs_reduce(word, q_0)    # numerical mode
+nf_proton  = build_nucleon_nf("proton")
+nf_atom    = build_atom_nf(Z=2, N=2)        # ⁴He
+nf_exact   = build_atom_nf_exact(Z=2, N=2)  # symbolic
 ```
 
-*The lower-level Rust API is `hecke_engine::gs_reduce::reduce`;
-the PyO3 binding is `pyhecke_native.gs_reduce`.*
+*The Rust core is at [`tools/hecke-engine/src/gb_nf_reducer.rs`](../../../tools/hecke-engine/src/gb_nf_reducer.rs)
+(canonical implementation, called via the `pyhecke-native` PyO3
+wheel from the builders above).*
 
 ### Witness contract
 

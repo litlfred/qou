@@ -52,11 +52,16 @@ Mass-table sweeps over $A \leq 4$ take seconds.*
 ### Python API entry point
 
 ```python
-from qou_mass import predict, binding_energy
+from qou_mass import predict
 
 p = predict(atom="deuteron", observable="binding_energy")
-B = binding_energy(K="deuteron", isotope="²H")
+B = p.value   # MeV
 ```
+
+*Binding-energy is selected by the `observable` keyword on the
+unified `predict()` entry point; there is no separate
+`binding_energy(...)` function. The mass-table sweep is the
+script [`canonical_mass_table_extended.py`](../../../folio-assistant/computations/canonical_mass_table_extended.py).*
 
 ### Witness contract
 

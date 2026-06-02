@@ -37,12 +37,11 @@ constants.*
 
 ### Python API entry point
 
-```python
-from qou_substrate.bring_brane import constants, torus_knots
-
-chi, g, k, aut = constants()
-embeddings = torus_knots()    # list of (p_i, q_i)
-```
+*The Bring constants are produced by the canonical script
+[`folio-assistant/computations/bring_chiral_fibre_figure.py`](../../../folio-assistant/computations/bring_chiral_fibre_figure.py),
+which emits the witness JSON consumed by every downstream step.
+The substrate parameter $q_0$ and its derived constants live in
+[`qou_substrate.constants`](../../../tools/qou-substrate/python/qou_substrate/constants.py).*
 
 ### Witness contract
 

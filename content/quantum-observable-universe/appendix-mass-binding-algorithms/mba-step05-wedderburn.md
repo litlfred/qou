@@ -47,11 +47,15 @@ products. For $n \leq 9$ (nucleon-scale): at most 30 partitions.*
 ### Python API entry point
 
 ```python
-from pyhecke import wedderburn_decompose
+from pyhecke import wedderburn_weight, partitions_of, partition_dimension
 
-decomposition = wedderburn_decompose(n, q)
-# returns list[(partition, d_lambda, y_lambda)]
+for lam in partitions_of(n):
+    y_lam = wedderburn_weight(lam, q)
+    d_lam = partition_dimension(lam)
 ```
+
+*The per-partition heavy lifting lives in the submodule
+[`pyhecke.wedderburn`](../../../tools/pyhecke/python/pyhecke/wedderburn.py).*
 
 ### Witness contract
 

@@ -70,11 +70,10 @@ word = canonical_braid(Z=1, N=0)              # proton braid 𝓑₃
 trM  = compute_tr_M(Z=1, N=0)                 # Decimal at q = q_0
 ```
 
-*The lower-level `pyhecke` and `pyhecke-native` bindings expose
-the same trace under names
-`pyhecke.tr_M(word, q)` (Python reference implementation) and
-`pyhecke_native.markov_trace(word, q)` (PyO3 wheel into the
-Rust core).*
+*The lower-level `pyhecke` surface exposes the trace on a Hecke
+normal form: `pyhecke.nf_tr(nf)`. The compile-time Markov-trace
+vector for the 6-element basis is the constant `pyhecke.TR_M`.
+The PyO3 binding `pyhecke_native` calls the Rust core directly.*
 
 ### Witness contract
 

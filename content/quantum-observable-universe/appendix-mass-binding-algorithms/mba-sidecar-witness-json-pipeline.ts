@@ -9,7 +9,7 @@ export default algorithm({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "tools/qou-substrate/src/qou_substrate/witness_builder.py",
+    script: "tools/qou-substrate/python/qou_substrate/witness.py",
     status: "verified",
   },
   tags: [

@@ -8,7 +8,7 @@ export default algorithm({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "qou-mass/src/qou_mass/q_beta.py",
+    script: "folio-assistant/computations/q_beta_predicted.py",
     witness: "folio-assistant/computations/cal-3-q-beta.witness.json",
     status: "verified",
   },

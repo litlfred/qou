@@ -16,10 +16,13 @@ documents the canonical contract enforced in CI.*
 
 ### Canonical entry point
 
-[`folio-assistant/computations/lp_dual_solver.py`](../../../folio-assistant/computations/lp_dual_solver.py)
-exposes `solve_operator_selection_lp(t, G, n_target)` and
+The shared solver helpers live at
+[`tools/pyhecke/python/pyhecke/lp_dual_solver.py`](../../../tools/pyhecke/python/pyhecke/lp_dual_solver.py)
+and expose `solve_operator_selection_lp(t, G, n_target)` and
 `solve_psd_operator_selection_sdp(t, G, n_target)`. Both return a
-result whose `.to_dict()` contains every required field.
+result whose `.to_dict()` contains every required field. The
+per-witness driver script is
+[`confinement-operator-selection.py`](../../../folio-assistant/computations/confinement-operator-selection.py).
 
 ### CI enforcement
 
@@ -55,7 +58,7 @@ binding-energy shadow prices.*
 ### Python API entry point
 
 ```python
-from folio_assistant.computations.lp_dual_solver import (
+from pyhecke.lp_dual_solver import (
     solve_operator_selection_lp,
     solve_psd_operator_selection_sdp,
 )
