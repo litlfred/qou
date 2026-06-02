@@ -155,11 +155,42 @@ design.
 
 ### Phase 2 — crystal-weight formula verification (research-grade)
 
-- [ ] Tabulate canonical-basis-trace ρ_w(K) for K ∈ {D, T, ³He, ⁴He}
+- [x] ~~Tabulate canonical-basis-trace ρ_w(K) for K ∈ {D, T, ³He, ⁴He}~~ **(partial, w = w_0 only)**: H_6 ρ_λ(w_0) diagonal per partition landed via PR #1697 + #1516 (`probe-option-e-h6-entry-point.witness.json`).  Multi-vertex enumeration (w ≠ w_0) blocked on `kazhdan_lusztig.py` n ≤ 4 cap.
 - [ ] Identify the Brundan–Kleshchev image of each crystal vertex w in the KLR algebra R^Λ_α
-- [ ] Verify Δ_λ(D) = Σ_w n^w_λ · ρ_w(D) against probe-1's empirical D solution from `delta-lambda-bar-invariance-probe.witness.json` (PR #1229 merged)
+- [ ] ~~Verify Δ_λ(D) = Σ_w n^w_λ · ρ_w(D) against probe-1's empirical D solution from `delta-lambda-bar-invariance-probe.witness.json` (PR #1229 merged)~~ **single-vertex (w = w_0) shortcut REFUTED — see PROBE 4 cheap-pass verdict below**
 - [ ] Extend to T, ³He, ⁴He using the full atomic χ caches; cross-check shape patterns
 - [ ] **⁴He upgrade**: re-run the per-atom sweep (probe-4 logic) with the full 77-partition `chi-lambda-he4-full-partition-table.witness.json` (now on main) — supersedes probe-4's provisional 24/77 truncation
+
+#### PROBE 4 cheap-pass verdict (2026-06-02, PR #1516)
+
+Following PR #1709's "cheap proxy first" strategy: tested four
+single-vertex crystal-weight candidate rules for Δ_λ at H_6 /
+deuteron using existing canonical witness data.  **All four
+candidates refuted (miss ≥ 66%):**
+
+| Candidate                       | S_candidate | rel_err |
+|---------------------------------|-------------|---------|
+| A: χ^λ(w_0)                     | −0.0074     | 99.83%  |
+| B: \|χ^λ(w_0)\|                 | +0.9024     | 120.73% |
+| C: sgn(χ^λ(w_0)) · dim_λ        | −1.4596     |  66.47% |
+| D: max-abs ρ_λ(w_0) diag        | +0.7600     | 117.46% |
+
+Target_signed = −4.35337 per `delta-lambda-empirical-tabulation.witness.json`.
+
+**Implication.**  The Kashiwara/KL approach cannot close Δ_λ via a
+single-vertex shortcut.  The remaining live paths are:
+
+1. **Full Kazhdan-Lusztig multiplicity machinery** `n^w_λ` summed
+   across multiple vertices `w` (extend `kazhdan_lusztig.py` past
+   the n ≤ 4 cap to S_6, ~hours of recursion-implementation work).
+2. **Pivot to GAP-A-3 / GAP-A-4** per CLAUDE.md §L2 (categorical
+   brane-tower level selection / ρ general rule).
+
+Witness: `probe-option-e-phase2-crystal-vertex-candidates.witness.json`
+(PR #1516).  Symmetric refutation to PR #1709's geometric Vol_λ
+result — both single-vertex KL shortcuts AND content/hook-angle
+Vol_λ proxies fail at deuteron; q-6j saddle (#1709) and full
+n^w_λ enumeration (this PR) remain the live in-Option-E directions.
 
 ### Phase 3 — closure proof (Lean, research-grade)
 
