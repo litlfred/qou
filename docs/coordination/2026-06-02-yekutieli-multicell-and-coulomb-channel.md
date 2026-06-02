@@ -62,7 +62,7 @@ variants.
 ## Findings
 
 **Item 1 (multi-cell summed Yekutieli) — REFUTED for genuine forms.**
-`alpha_em_multicell_yekutieli_probe.py`: the only summed-cell forms
+`probes/alpha_em_multicell_yekutieli_probe.py`: the only summed-cell forms
 that hit 2/(3π) are tautological rewrites (`2/(N_cusps·π)` with
 N_cusps=3; `Σ_3·(2/9π)`; and `2·V_oct/(Vol_𝓑·π)·(2/3)` where
 `V_oct/Vol_𝓑 = 1/2` cancels exactly — all ASSUME the answer). Genuine
@@ -72,7 +72,7 @@ plausible INTERPRETATION but the coefficient "2" and the 1/π are not
 derived. Consistent with the prior individual-cell refutations.
 
 **Item 2 (substrate Coulomb channel) — PARTIAL / interpretive.**
-`alpha_em_coulomb_channel_probe.py`: the cosh/sinh bridge
+`probes/alpha_em_coulomb_channel_probe.py`: the cosh/sinh bridge
 `[n]_q = sinh(nλ)/sinh(λ)` is verified to 1e-40. The tree term IS a
 pure Coulomb-channel (sinh) object, and the self-energy's `[2]_q`
 numerator IS `sinh(2λ)/sinh(λ)`. BUT:

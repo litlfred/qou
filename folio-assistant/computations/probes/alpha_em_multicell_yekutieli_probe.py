@@ -47,13 +47,17 @@ refutations).
 """
 from __future__ import annotations
 
-import sys
-from pathlib import Path
+# Path bridge (subdirectory refactor — Phase 1, 2026-06-02).
+# Puts the flat computations/ dir + cluster subdirs on sys.path so
+# flat-namespace imports resolve from the probes/ subdirectory.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
 
-import mpmath as mp
-
-HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE))
+import sys  # noqa: E402
+import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import q_at, q_str  # noqa: E402
