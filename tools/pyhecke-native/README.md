@@ -1,5 +1,7 @@
 # pyhecke-native
 
+> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation--domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `folio-assistant/computations/` clusters.*
+
 PyO3 native acceleration layer for `pyhecke`.
 
 Exposes zero-copy Rust implementations of the hottest H_n(q) kernels
