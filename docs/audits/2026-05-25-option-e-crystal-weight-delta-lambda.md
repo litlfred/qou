@@ -163,10 +163,17 @@ design.
 
 #### PROBE 4 cheap-pass verdict (2026-06-02, PR #1516)
 
-Following PR #1709's "cheap proxy first" strategy: tested four
-single-vertex crystal-weight candidate rules for Δ_λ at H_6 /
-deuteron using existing canonical witness data.  **All four
-candidates refuted (miss ≥ 66%):**
+**Upstream context.** [`rho_w_crystal_vertex_trace.py`](../../folio-assistant/computations/rho_w_crystal_vertex_trace.py)
+(on main; design doc [`2026-05-31-rho-w-crystal-vertex-trace-design.md`](2026-05-31-rho-w-crystal-vertex-trace-design.md)) already established the genuine
+per-vertex ρ_w := ⟨v_T|ρ_λ(β_K)|v_T⟩ via Hoefsmit/Young seminormal,
+and showed that the regular-multiplicity sum `Σ_w ρ_w(K) = χ^λ(β_K)`
+(trace identity) does **not close** the deuteron
+(`closure_status: does_not_close`).
+
+This PR's PROBE 4 cheap-pass is **orthogonal scope**: tests four
+ad-hoc closed-form variants of Δ_λ that are NOT the regular-
+multiplicity Σ_w ρ_w. Following PR #1709's "cheap proxy first"
+strategy.  **All four candidates refuted (miss ≥ 66%):**
 
 | Candidate                       | S_candidate | rel_err |
 |---------------------------------|-------------|---------|
@@ -177,12 +184,16 @@ candidates refuted (miss ≥ 66%):**
 
 Target_signed = −4.35337 per `delta-lambda-empirical-tabulation.witness.json`.
 
-**Implication.**  The Kashiwara/KL approach cannot close Δ_λ via a
-single-vertex shortcut.  The remaining live paths are:
+**Combined implication.**  With `rho_w_crystal_vertex_trace.py`
+(regular-multiplicity sum, refuted) AND this probe (four ad-hoc
+closed-form variants, all refuted), the Kashiwara/KL approach
+cannot close Δ_λ via any single-vertex or trivial-multiplicity
+shortcut.  The remaining live paths are:
 
-1. **Full Kazhdan-Lusztig multiplicity machinery** `n^w_λ` summed
-   across multiple vertices `w` (extend `kazhdan_lusztig.py` past
-   the n ≤ 4 cap to S_6, ~hours of recursion-implementation work).
+1. **Full Kazhdan-Lusztig multiplicity machinery** with NON-trivial
+   `n^w_λ` (KL polynomials, not `n^w_λ = 1`) summed across multiple
+   vertices `w` (extend `kazhdan_lusztig.py` past the n ≤ 4 cap to
+   S_6, ~hours of recursion-implementation work).
 2. **Pivot to GAP-A-3 / GAP-A-4** per CLAUDE.md §L2 (categorical
    brane-tower level selection / ρ general rule).
 
