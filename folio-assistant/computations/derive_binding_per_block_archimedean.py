@@ -24,24 +24,25 @@ comparison. Reports both E_0 conventions for D/T/³He/⁴He.
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
-import mpmath as mp
-from mpmath import mpf, fabs
+import _path_bridge  # noqa: F401, E402 — Phase-6 bridge: flat imports from substrate/
+from mpmath import mpf, fabs  # noqa: E402
 
-sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402 — CAL-1, centralized
+from experimental_constants import Q_NEUTRON_MEV  # noqa: E402 — CAL-3, centralized
 
-mp.mp.dps = 40
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
-M_E = mpf("0.51099895069")
-q0 = mpf(str(Q0))
+M_E = mpf(str(M_E_MEV))   # CAL-1 electron mass (codata_constants)
+q0 = mpf(str(Q0))         # substrate parameter (q_parameter)
 
 # Calibration-fixed energy scales (NOT fitted).
 E0_substrate = M_E / (q0 * (q0 - 1))        # 𝔈₀ ≈ 4.186 MeV
-E0_qbeta = mpf("0.78233341")                # CAL-3 free-neutron β-decay Q-value
+E0_qbeta = mpf(str(Q_NEUTRON_MEV))          # CAL-3 free-neutron β-decay Q-value
 
 AME_B = {"D": mpf("2.2245662"), "T": mpf("8.4818"),
          "3He": mpf("7.7180"), "4He": mpf("28.29566")}
