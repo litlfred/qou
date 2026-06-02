@@ -24,7 +24,18 @@ import numpy as np
 
 from . import _legacy  # noqa: F401  — adjusts sys.path
 
-from q_parameter import Q as q0, Q_INV as qi, HA as h  # type: ignore[import-not-found]
+# Prefer the in-repo folio-assistant/computations/q_parameter shim (which
+# _legacy puts on sys.path).  Fall back to the published qou_substrate
+# package when pyhecke is used outside the repo (e.g. inside a Sage
+# docker, on PyPI installs, in Pyodide, …).  Same fallback chain the
+# `constants` module already uses — making it consistent here unblocks
+# the SageMath + Pyodide smokes.
+try:
+    from q_parameter import Q as q0, Q_INV as qi, HA as h  # type: ignore[import-not-found]
+except ImportError:
+    from qou_substrate.constants import (  # type: ignore[import-not-found]
+        Q as q0, Q_INV as qi, HA as h,
+    )
 
 
 # ══════════════════════════════════════════════════════════════
