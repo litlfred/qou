@@ -142,6 +142,29 @@ near-match. Do NOT wire as a derivation.
 | 2026-06-02 | Claude / `claude/option-e-derive-1plusq-over-2-2026-06-02` (PR #1707) | PROBE 1: DERIVE-OR-FALSIFY the v9 (1+q)/2 — refresh at canonical q₀, test 4 structural hypotheses, proton-vs-muon discriminator | **VERDICT NEAR-MATCH (fit)**. (1+q)/2 NOT forced: 4 independent hypotheses 18–90% off; only tautological [2]_q/2 / (q+1)/2 "match". Required factor R=1.05372 ≠ (1+q)/2=1.05499 by +0.12% same-pin. Published 0.11% was stale (muon literal); canonical-q₀ residual +0.12%, sign-flipped. No v10. (1+q)/2 stays un-wired; A=3 closure OPEN. |
 | 2026-06-02 | Claude / `claude/option-e-phase1-gram-h6-2026-06-02` | Phase 1 H_n Gram-matrix generalisation at H_6 (deuteron) — deliver the per-block Hoefsmit-seminormal infrastructure that #1516's doc update identified as missing. Pure-Python, no pyhecke_native dep. | landed (PR #1697); 11 H_6 partition blocks with σ_k matrices + ρ_λ(w_0) at q_0; 4 assertions pass (χ_λ cross-check residual 2.22e-16 at H_6, Σ dim_λ² = n! at both n=3,6). Witness `option-e-phase1-gram-h6.witness.json` carries the data needed to test **PROBE 1** ("`(1+q)/2` = half-trace of σ_1 in standard rep") on the (5,1) standard rep of H_6 — not run in this PR (scope = infrastructure). |
 | 2026-06-02 | Claude / `claude/option-e-derive-1plusq-over-2-2026-06-02` | Open **PROBE 1** — derive `(1+q)/2` structurally or falsify as near-match. Per ledger §"Open probes" line 85. | in flight (PR #1707, stub-only commit; coord posts cross-published on #1697 and #1707; canonical q_0 confirmed not stale; can consume #1697's `option-e-phase1-gram-h6.witness.json::data.h6.blocks["5_1"]` data for the half-trace hypothesis test). |
+| 2026-06-02 | Claude / `claude/option-e-probe4-closure-deuteron-2026-06-02` (PR #1719, stacked on #1714 KL scaffold) | **PROBE 4 closure test on deuteron** — exhaustively test Δ_λ closure ansätze: KL-cell trivial-multiplicity (Step A) + quantum-dim weighted (Step B-2) + W-graph edge-weight μ(y,w) (Step B-1) + measure-level pivot to \|content_λ\| per sibling triage (Step C). | **REFUTED (all 4 + 5 = 9 variants):** Step A v1/v2: +6.007/+1.162 (238% / 127% miss, wrong sign). B-2 qdim a/b: +7.902/+2.122 (282% / 149%). B-1 W-graph a/b/c: +26.285/+26.285/+5.968 (704% / 704% / 237%). Step C 1-5: +411/+2258/+11.2/+4.11/+109 (9552% / 51987% / 357% / 194% / 2602%). **Best: Step C-4 (y_λ·χ·\|content\|) at 194 % miss, still wrong sign.** Combined with cumulative refutation pile (cheap-pass #1516, `rho_w_crystal_vertex_trace.py`, #1709 volume-Wedderburn, sibling commits d7c56c17e1/5e388f598b/d59bcb79de/ba7af156cb on main): **Option-E is structurally exhausted on the deuteron within the standard categorical framework**. Pivot recommended: GAP-A-3/A-4 per CLAUDE.md §L2 (categorical brane-tower level selection / ρ general rule). Step B-3 (Type-B folded crystal) queued but unlikely to close given the cumulative magnitude of the miss. |
+
+### Cumulative refutation pile on deuteron Δ_λ closure (2026-06-02)
+
+For the next session orienting on Option-E: **don't re-run these probes** — the verdict is firm.
+
+| Probe | Variant | S (vs target −4.353) | rel_err | Witness |
+|-------|---------|----------------------|---------|---------|
+| #1516 cheap-pass | C: sgn·dim_λ | best of 4 | **66%** | `probe-option-e-phase2-crystal-vertex-candidates.witness.json` |
+| Upstream main | `rho_w_crystal_vertex_trace.py` (regular-multiplicity Σ_w ρ_w = χ^λ trace identity) | does_not_close | n/a | `rho-w-crystal-vertex-trace.witness.json` |
+| #1709 volume-Wedderburn | clausen_content | best of 5 | **99.7%** | `volume-wedderburn-delta-lambda.witness.json` |
+| #1719 Step A | v2 (single left cell, Δ_λ = χ^λ) | +1.162 | **127%** | `probe-option-e-step-a-kl-cell-collapse.witness.json` |
+| #1719 Step C-4 | y_λ · χ · \|content_λ\| | +4.11 | **194%** ← best Step C | `probe-option-e-step-c-content-weighted.witness.json` |
+| #1719 Step A | v1 (whole 2-sided cell, Δ_λ = f^λ · χ^λ) | +6.007 | **238%** | (same as Step A) |
+| #1719 Step B-1c | per-w direct μ-degree | +5.968 | **237%** | `probe-option-e-step-b1-wgraph-weight.witness.json` |
+| #1719 Step B-2a | qdim_λ(q_0) replaces f^λ | +7.902 | **282%** | `probe-option-e-step-b2-quantum-dim-weighted.witness.json` |
+| sibling main d7c56c17e1 | abs_content A-growth ratio | matches D/T/³He/⁴He growth | 5% on **ratio** (not absolute) | `probe-binding-measure-search.witness.json` |
+| sibling main 5e388f598b | full-order θ_λ, y_λ wrong-measure diagnosis | n/a | n/a | `probe-full-theta-binding.witness.json` |
+
+**Convergent verdict across 10+ structural variants from 4 independent sessions/PRs**: standard Option-E (KL cells + Kashiwara crystal + canonical-basis trace) cannot close Δ_λ(D) on the deuteron under any of: trivial / multiplicative-cell / quantum-dim / W-graph-edge-weight / |content_λ|-weighted assemblies. The Δ_λ-structure variants and the outer-measure variants are BOTH refuted independently. Closure requires either:
+
+1. A **fundamentally different structural object** beyond the standard categorical framework (e.g., 6j-symbol quantum volume per #1709's remaining direction), or
+2. **GAP-A-3 / GAP-A-4 pivot** per CLAUDE.md §L2: categorical brane-tower level selection / ρ general rule (not in the H_n / S_n algebra at all).
 
 ## Cross-refs
 
