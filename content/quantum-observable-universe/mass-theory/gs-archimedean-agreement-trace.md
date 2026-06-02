@@ -65,7 +65,7 @@ cross-pipeline witness.*
 
 **Empirical witness.**
 *Cross-pipeline validation
-(`folio-assistant/computations/markov-pipeline-cross-validation.witness.json`)
+(`folio-assistant/computations/markov/markov-pipeline-cross-validation.witness.json`)
 records $\mathrm{rel\_diff} \leq 10^{-9}$ to machine precision on
 every available atom (proton, neutron, deuteron), and rel\_diff = 0
 to 60 decimal places on the atomic-vs-interpolate checkpoint.*

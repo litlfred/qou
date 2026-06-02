@@ -95,6 +95,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 import json
 from pathlib import Path
@@ -113,11 +114,11 @@ HERE = Path(__file__).parent
 
 # χ_λ × y_λ contributions per partition (already in m_e units)
 CHI_DEUT = json.loads(
-    (HERE / "chi-deuteron-h6-at-q0-50dps.witness.json").read_text()
+    (_pb.witness_path("chi-deuteron-h6-at-q0-50dps.witness.json", HERE)).read_text()
 )
 # Empirical target (signed, in m_e units): -B_D / m_e
 EMP = json.loads(
-    (HERE / "delta-lambda-empirical-tabulation.witness.json").read_text()
+    (_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)).read_text()
 )
 
 TARGET_SIGNED = mp.mpf(EMP["data"]["per_atom"]["D"]["target_signed"])

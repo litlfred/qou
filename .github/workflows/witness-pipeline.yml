@@ -30,8 +30,8 @@ name: Witness pipeline
 on:
   pull_request:
     paths:
-      - "folio-assistant/computations/habiro_*.py"
-      - "folio-assistant/computations/markov_*.py"
+      - "folio-assistant/computations/habiro/*.py"
+      - "folio-assistant/computations/markov/*.py"
       - "folio-assistant/computations/witness_base.py"
       # thimble scripts removed from CI triggers (2026-05-24 cleanup)
       - "folio-assistant/computations/q_parameter.py"
@@ -58,8 +58,8 @@ on:
   push:
     branches: [main]
     paths:
-      - "folio-assistant/computations/habiro_*.py"
-      - "folio-assistant/computations/markov_*.py"
+      - "folio-assistant/computations/habiro/*.py"
+      - "folio-assistant/computations/markov/*.py"
       - "folio-assistant/computations/witness_base.py"
       # thimble scripts removed from CI triggers (2026-05-24 cleanup)
       - "folio-assistant/computations/q_parameter.py"
@@ -189,16 +189,16 @@ jobs:
         run: python3 folio-assistant/computations/codata_masses.py
 
       - name: Run habiro_witness_validator
-        run: python3 folio-assistant/computations/habiro_witness_validator.py
+        run: python3 folio-assistant/computations/habiro/habiro_witness_validator.py
 
       - name: Run markov_substrate_realizer
-        run: python3 folio-assistant/computations/markov_substrate_realizer.py
+        run: python3 folio-assistant/computations/markov/markov_substrate_realizer.py
 
       - name: Run markov_pipeline_cross_validator (skips if term6 absent)
-        run: python3 folio-assistant/computations/markov_pipeline_cross_validator.py
+        run: python3 folio-assistant/computations/markov/markov_pipeline_cross_validator.py
 
       - name: Run habiro_interpolate_cross_validator
-        run: python3 folio-assistant/computations/habiro_interpolate_cross_validator.py
+        run: python3 folio-assistant/computations/habiro/habiro_interpolate_cross_validator.py
 
       # ── Picard–Lefschetz / SW thimble correctness chain ─────────
       # REMOVED (2026-05-24): all 6 thimble-dependent steps removed
@@ -271,7 +271,7 @@ jobs:
         # (proton, neutron-like, deuteron disjoint) and emits the
         # symbolic closed form + numerical value at q_0 for each.
         run: |
-          python3 folio-assistant/computations/markov_trace_recursive.py
+          python3 folio-assistant/computations/markov/markov_trace_recursive.py
 
       - name: Multi-atom axiomatic Markov-trace anchor (proton/neutron/deuteron)
         # Per prop:markov-trace-recursive-reducer + prop:markov-trace-
@@ -282,7 +282,7 @@ jobs:
         # markov_trace_atomic_proton_full at float64 precision. Exits
         # non-zero on any structural failure.
         run: |
-          python3 folio-assistant/computations/markov_trace_axiomatic_multi_atom.py
+          python3 folio-assistant/computations/markov/markov_trace_axiomatic_multi_atom.py
 
       - name: Full-twist Δ_n² scalar verification
         # Per prop:categorical-neutrality-saturated-shells: tabulates

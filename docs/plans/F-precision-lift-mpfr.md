@@ -20,7 +20,7 @@ needs to change.
 | 1b | Hoefsmit seminormal `ρ_λ(σ_i)` | `tools/hecke-engine/src/seminormal.rs` (f64) **and** `seminormal_mpfr.rs` (rug::Float, 167-bit) | mixed | drive everything through `seminormal_mpfr` |
 | 2  | `χ_λ(β)` characters | `tools/hecke-engine/src/seminormal.rs::chi_lambda_braid` (f64) **and** `seminormal_mpfr::chi_lambda_braid_mpfr` | mixed | exclusive MPFR path via `pyhecke_native.chi_lambda_braid_mpfr` |
 | 3  | `y_λ` Jones–Markov solve | `folio-assistant/computations/y_lambda_jones_markov_witness.py` (f64) **and** `y_lambda_mpfr_witness.py` (mpmath, 50 dps; n ≤ 11 only) | mixed | extend mpmath solver to n=12; fall back to symbolic Wenzl bridge for n ≥ 13 |
-| 4  | `tr_M(T_w)` Markov trace | `folio-assistant/computations/markov_trace_canonical.py` (sympy, exact) | symbolic exact | OK — already exact rational in q.  Must evaluate with `q = mpf(q_0_str, 50)` |
+| 4  | `tr_M(T_w)` Markov trace | `folio-assistant/computations/markov/markov_trace_canonical.py` (sympy, exact) | symbolic exact | OK — already exact rational in q.  Must evaluate with `q = mpf(q_0_str, 50)` |
 | 5  | Census-knot volumes (²H/³H/³He shortcut) | `low_isotope_binding_sweep.py` constants `VOL_6_2`, `VOL_8_11`, `VOL_BORROMEAN`, `VOL_7_2_1` | `float` literals from SnapPy | Plan G retires these.  Until then: pass through as `mpf` with reported uncertainty |
 | 6  | Mass-excess assembly `Δ = Z·Δ_H + N·Δ_n − B` and `M = A·u + Δ` | `folio-assistant/computations/low_isotope_mass_table.py` | `float` (CODATA constants) | `mpf` constants pinned at 50 dps from CODATA-2022 source |
 

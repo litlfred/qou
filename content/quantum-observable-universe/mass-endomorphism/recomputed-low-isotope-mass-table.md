@@ -6,7 +6,7 @@ and the cherry-picked* $\rho_K$ *refinement infrastructure from
 *at* $q = q_0$ *now agree to machine epsilon across* $\{p, n, D, T, ^{3}\mathrm{He}\}$:
 
 1. **Canonical Markov-axiom reducer** —
-   [`markov_trace_recursive.markov_trace_of_word`](../../../folio-assistant/computations/markov_trace_recursive.py)
+   [`markov_trace_recursive.markov_trace_of_word`](../../../folio-assistant/computations/markov/markov_trace_recursive.py)
    at mpfr 50-dps; reference values stored in
    [`atomic-tr-m-mpfr-50dps.witness.json`](../../../folio-assistant/computations/atomic-tr-m-mpfr-50dps.witness.json).
 2. **Hybrid partition-sum** (this PR) — 30-dps sympy `Float`

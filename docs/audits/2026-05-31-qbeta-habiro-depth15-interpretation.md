@@ -249,4 +249,4 @@ with TWO of the three factors now categorically identified.
 - Prior audit (factorization): [`docs/audits/2026-05-31-qbeta-habiro-delta-am-factorization.md`](2026-05-31-qbeta-habiro-delta-am-factorization.md)
 - Original probe: [`docs/audits/2026-05-31-qbeta-habiro-element-probe.md`](2026-05-31-qbeta-habiro-element-probe.md)
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
-- Witness: `folio-assistant/computations/habiro-coefficients-atomic.witness.json`
+- Witness: `folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json`

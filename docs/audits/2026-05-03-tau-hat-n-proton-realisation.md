@@ -122,7 +122,7 @@ into $\Omega^1$.
 | Module | Role |
 |---|---|
 | `folio-assistant/computations/hecke_core.py` (3155 lines) | YSN matrices for partitions; not a clean H_3 multiplication table. |
-| `folio-assistant/computations/hecke_symbolic.py` (905 lines) | Symbolic Hecke division (Gröbner-style). Does not give regular rep directly. |
+| `folio-assistant/computations/hecke/hecke_symbolic.py` (905 lines) | Symbolic Hecke division (Gröbner-style). Does not give regular rep directly. |
 | `folio-assistant/computations/schur_weyl_q_hecke_v2.py` (294 lines) | Schur–Weyl q-Hecke, partition-indexed, not regular rep. |
 | `folio-assistant/computations/kahler_lift.py` (343 lines) | **Misleading name** — this is the Hoefsmit/Markov q-derivative lift, *not* the universal Kähler differential. |
 | `folio-assistant/computations/jet_lifted_hecke.py` (302 lines) | Jet lift via aggregated character traces; not the J^1 = A ⊗ Ω^1 functor. |

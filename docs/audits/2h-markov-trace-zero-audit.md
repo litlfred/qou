@@ -89,7 +89,7 @@ H_2.
 This is a different representation from the simple Borromean
 braid σ_1 σ_2^{-1} σ_1 σ_2^{-1} on B_3 used elsewhere. Habiro
 expansion in
-[`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro-coefficients-atomic.witness.json)
+[`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json)
 reports proton's tr_M as a non-zero degree-48 polynomial in u
 = q^{1/2}; deuteron isn't included in that witness.
 

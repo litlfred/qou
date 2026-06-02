@@ -40,6 +40,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json, time
 from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
@@ -123,7 +124,7 @@ def solve_h3_delta(Da):
 #  DEUTERON H_6 DATA (from rho-k-h3a-lp-dual.witness.json)
 # ══════════════════════════════════════════════════════════════════
 
-deut_witness_path = HERE / "rho-k-h3a-lp-dual.witness.json"
+deut_witness_path = _pb.witness_path("rho-k-h3a-lp-dual.witness.json", HERE)
 if deut_witness_path.exists():
     deut_w = json.load(open(deut_witness_path))
     deut_target = float(deut_w['data']['target_yc_delta_sum'])

@@ -72,6 +72,7 @@ _add_to_path(_HERE)
 #    Filter out: leading-underscore dirs (`_deprecated`,
 #    `__pycache__`), leading-dot dirs, and any dir without
 #    `__init__.py` (so untracked tmp dirs don't pollute sys.path).
+_WITNESS_DIRS: list[Path] = [_HERE]
 for _child in _HERE.iterdir():
     if not _child.is_dir():
         continue
@@ -81,3 +82,38 @@ for _child in _HERE.iterdir():
     if not (_child / "__init__.py").is_file():
         continue
     _add_to_path(_child)
+    _WITNESS_DIRS.append(_child)
+
+
+def witness_path(name: str, prefer_dir: "Path | None" = None) -> Path:
+    """Locate a `*.witness.json` / `*.derivation.json` file by
+    bare name (no directory prefix). Searches in order:
+
+      1. ``prefer_dir`` — typically ``Path(__file__).parent``,
+         so a script's own emitted witness is found in its own
+         directory first (post-cluster-refactor convention).
+      2. Every cluster subdirectory of
+         ``folio-assistant/computations/``, then the package
+         root.
+
+    Returns the first existing match. If nothing matches, returns
+    ``prefer_dir / name`` (or the package root / name when
+    ``prefer_dir`` is None) so the caller gets a sensible error
+    message pointing at where the witness *would* be written.
+
+    Use this when a moved script needs to LOAD an upstream
+    witness produced by a different cluster — replaces the
+    pre-refactor ``HERE / "<name>.witness.json"`` idiom, which
+    after Phase 4 silently resolved to the wrong cluster dir.
+    """
+    search: list[Path] = []
+    if prefer_dir is not None:
+        search.append(prefer_dir)
+    for d in _WITNESS_DIRS:
+        if d not in search:
+            search.append(d)
+    for d in search:
+        candidate = d / name
+        if candidate.exists():
+            return candidate
+    return (prefer_dir if prefer_dir is not None else _HERE) / name

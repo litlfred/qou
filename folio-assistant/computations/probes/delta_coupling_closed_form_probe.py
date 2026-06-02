@@ -80,6 +80,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -105,7 +106,7 @@ from derived_masses import e_0_full_mev  # noqa: E402
 # the witness rather than recomputing.  If the witness is missing
 # (e.g. fresh checkout), run the upstream probe first.
 
-_MSEI_PATH = HERE / "magic-shell-empirical-instantiation.witness.json"
+_MSEI_PATH = _pb.witness_path("magic-shell-empirical-instantiation.witness.json", HERE)
 
 
 def _load_delta_cat() -> dict[str, mp.mpf]:

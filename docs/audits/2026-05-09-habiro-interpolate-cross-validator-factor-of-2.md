@@ -80,7 +80,7 @@ separate workstream.
 
    ```bash
    git checkout origin/main
-   python3 folio-assistant/computations/habiro_interpolate_cross_validator.py
+   python3 folio-assistant/computations/habiro/habiro_interpolate_cross_validator.py
    # exit 2; rel_diff 0.42–0.54
    ```
 
@@ -117,7 +117,7 @@ producing an apparent ratio close to 2 — but it was a structural
 truncation artefact, not a $\Delta_n^2$ rescaling.
 
 **Fix.**
-[`folio-assistant/computations/habiro_coefficients_interpolate.py`](../../folio-assistant/computations/habiro_coefficients_interpolate.py)
+[`folio-assistant/computations/habiro/habiro_coefficients_interpolate.py`](../../folio-assistant/computations/habiro/habiro_coefficients_interpolate.py)
 now imports `y_lambda_wenzl_bridge_numeric` and uses it in
 `markov_trace_numerical`, matching the symbolic atomic path
 (`habiro_coefficients_atomic.markov_trace_symbolic`).
@@ -170,5 +170,5 @@ the validate-job failure.
 - [`folio-assistant/computations/y_lambda_wenzl_bridge.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge.py)
   — canonical implementation; `_y_lambda_wenzl_bridge_numeric_impl`
   applies the principal-specialisation formula at $X = q z / (1 - q^2 + q z)$
-- [`folio-assistant/computations/habiro_interpolate_cross_validator.py`](../../folio-assistant/computations/habiro_interpolate_cross_validator.py)
+- [`folio-assistant/computations/habiro/habiro_interpolate_cross_validator.py`](../../folio-assistant/computations/habiro/habiro_interpolate_cross_validator.py)
   — the validator that originally surfaced the gap

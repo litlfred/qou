@@ -44,10 +44,10 @@ export default proposition({
   computation: {
     engine: "sympy",
     script:
-      "folio-assistant/computations/markov_trace_recursive.py",
+      "folio-assistant/computations/markov/markov_trace_recursive.py",
     witness: [
-      "folio-assistant/computations/markov-trace-recursive.witness.json",
-      "folio-assistant/computations/markov-trace-axiomatic-multi-atom.witness.json",
+      "folio-assistant/computations/markov/markov-trace-recursive.witness.json",
+      "folio-assistant/computations/markov/markov-trace-axiomatic-multi-atom.witness.json",
     ],
     status: "verified",
     requires: ["sympy"],

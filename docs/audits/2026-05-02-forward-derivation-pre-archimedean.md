@@ -278,7 +278,7 @@ $\tau$-image identification).
 - **Compute backing:**
   [`hecke_core.py`](../../folio-assistant/computations/hecke_core.py)
   (H₃(q) NF multiplication),
-  [`hecke_characters.py`](../../folio-assistant/computations/hecke_characters.py)
+  [`hecke_characters.py`](../../folio-assistant/computations/hecke/hecke_characters.py)
   (Hoefsmit seminormal matrices, k≤12+).
 - **AUDIT.** 🟢 The CS-side / TQFT path-integral interpretation
   lives at $\tau$ and is not used as a derivation input on the
@@ -381,7 +381,7 @@ $\tau$-image identification).
   `noncomputable opaque` per
   [`AUDIT-gb-residue-opaque-declarations.md`](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md)).
 - **Compute backing:** symbolic-in-$q$ machinery in
-  [`hecke_characters.py`](../../folio-assistant/computations/hecke_characters.py)
+  [`hecke_characters.py`](../../folio-assistant/computations/hecke/hecke_characters.py)
   (sparse, k≤12+).
 - **AUDIT.** 🟡 The *spectral-sequence existence* is now derived
   via the standard Hochschild route (post-update to

@@ -56,6 +56,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from collections import Counter
@@ -388,17 +389,17 @@ def cross_check_tr_M() -> dict:
     (Phase 1.6 / option_b_proton_mass_full_chain.py)."""
     out = {}
     # Strategy-3 (atomic-braid-mass-table.witness.json)
-    s3_path = HERE / "atomic-braid-mass-table.witness.json"
+    s3_path = _pb.witness_path("atomic-braid-mass-table.witness.json", HERE)
     s3 = json.loads(s3_path.read_text()) if s3_path.exists() else {"data": {"rows": []}}
     s3_rows = {r["atom"]: r for r in s3.get("data", {}).get("rows", [])}
 
     # Phase 1.6 closed-form (option-b-proton-mass-full-chain.witness.json)
-    ob_path = HERE / "option-b-proton-mass-full-chain.witness.json"
+    ob_path = _pb.witness_path("option-b-proton-mass-full-chain.witness.json", HERE)
     ob = json.loads(ob_path.read_text()) if ob_path.exists() else {}
     ob_at_q0 = ob.get("data", {}).get("tr_M_at_q0", {})
 
     # Markov-trace assembly chain (markov-trace-assembly-proton.derivation.json)
-    chain_path = HERE / "markov-trace-assembly-proton.derivation.json"
+    chain_path = _pb.witness_path("markov-trace-assembly-proton.derivation.json", HERE)
     chain_value = None
     if chain_path.exists():
         chain = json.loads(chain_path.read_text())

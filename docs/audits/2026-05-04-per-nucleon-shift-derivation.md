@@ -143,7 +143,7 @@ one-time +1 for the interface), the closed form is:
 **This is now categorically derived** from:
 
 1. Per-new-nucleon generator counts (rigorous, from
-   [`atomic_braid_to_crossings`](../../folio-assistant/computations/hecke_character_symbolic.py))
+   [`atomic_braid_to_crossings`](../../folio-assistant/computations/hecke/hecke_character_symbolic.py))
 2. Per-generator DP-max pole contribution = 1 (rigorous, from the
    seminormal eigenvalue structure σ_i ↔ {q, −q⁻¹})
 3. Cancellation count per new-nucleon (3 for proton, 1.5 for neutron) —

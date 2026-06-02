@@ -31,7 +31,7 @@ $$\chi^\lambda_q(\beta) \;=\; \mathrm{tr}_{V_\lambda}\,\rho_\lambda(\beta), \qqu
 
 Both ingredients already live in the repo:
 
-- [`hecke_characters.build_seminormal_matrices(shape, q)`](../../folio-assistant/computations/hecke_characters.py)
+- [`hecke_characters.build_seminormal_matrices(shape, q)`](../../folio-assistant/computations/hecke/hecke_characters.py)
   — Hoefsmit seminormal matrices $\rho_\lambda(\sigma_1), \ldots, \rho_\lambda(\sigma_{n-1})$ at $q$.
 - [`mass_at_3A_proper.chi_lambda_of_word(sigmas, dim, word)`](../../folio-assistant/computations/mass_at_3A_proper.py)
   — $\mathrm{tr}\bigl(\prod_k (c_k \rho_\lambda(\sigma_{g_k}) + d_k I)\bigr)$ over the atomic-braid word.

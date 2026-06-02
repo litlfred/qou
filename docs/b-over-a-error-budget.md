@@ -381,7 +381,7 @@ The ~5–19% residuals in `mass-table-ppb.witness.json` come from a
 
 [`atomic_tr_m_mpfr_50dps.py`](../folio-assistant/computations/atomic_tr_m_mpfr_50dps.py)
 computes `tr_M` at MPFR 50-dps via the Hoefsmit-bridge.
-[`markov_peel.py`](../folio-assistant/computations/markov_peel.py)
+[`markov_peel.py`](../folio-assistant/computations/markov/markov_peel.py)
 (PR #508) computes the same trace via the Markov-axiom recursion
 `tr_M^{(n)}(x · σ_{n−1}) = z · tr_M^{(n−1)}(x)` without materialising
 Wedderburn blocks.  Independent validation:

@@ -42,6 +42,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -58,7 +59,7 @@ from lr_coefficients import lr_coef, partitions_of  # noqa: E402
 set_compute_dps()  # 50 dps compute, 40 dps output
 
 # ── q_0 ──────────────────────────────────────────────────────────
-Q_PIN = HERE / "q-pinning-50-digit.witness.json"
+Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 Q0 = mp.mpf(json.loads(Q_PIN.read_text())["derived_50_digit"]["q"])
 
 
@@ -156,7 +157,7 @@ def lr_character_sum(
 def load_y_lambda_h3() -> dict[tuple[int, ...], mp.mpf]:
     """Jones-Markov weights y_λ at H_3 from the proton chi-cache
     (y_λ is atom-independent — it depends only on the algebra H_3)."""
-    data = json.loads((HERE / "chi-proton-h3-at-q0-50dps.witness.json").read_text())
+    data = json.loads((_pb.witness_path("chi-proton-h3-at-q0-50dps.witness.json", HERE)).read_text())
     return {tuple(e["partition"]): mp.mpf(e["y_lambda"]) for e in data["by_partition"]}
 
 

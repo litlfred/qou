@@ -157,7 +157,7 @@ constructing the $H_n$ seminormal matrices.
 
 ## Witness
 
-[`folio-assistant/computations/markov_trace_via_wenzl_lr.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov_trace_via_wenzl_lr.py)
+[`folio-assistant/computations/markov/markov_trace_via_wenzl_lr.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_via_wenzl_lr.py)
 is the Python entry point; the per-partition LR sum is dispatched to
 the Rust implementation in
 [`tools/hecke-engine/src/wenzl_lr.rs`](https://github.com/litlfred/qou/blob/main/tools/hecke-engine/src/wenzl_lr.rs)

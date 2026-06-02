@@ -61,4 +61,4 @@ atom) is the working substitute.*
 *Cross-pipeline validation at `proton`, `neutron`, `deuteron` records
 relative difference $\le$ $10^{-9}$ to machine precision on every
 checkpoint. See
-`folio-assistant/computations/markov-pipeline-cross-validation.witness.json`.*
+`folio-assistant/computations/markov/markov-pipeline-cross-validation.witness.json`.*

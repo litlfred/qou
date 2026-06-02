@@ -68,6 +68,6 @@ applied to this instance.*
 **Empirical witness.**
 *Bit-pattern equality of the two pipelines for the proton at $q_0$ is
 recorded in
-`folio-assistant/computations/markov-pipeline-cross-validation.witness.json`
+`folio-assistant/computations/markov/markov-pipeline-cross-validation.witness.json`
 (rel\_diff = 0.00e+00 to machine precision) and
 `folio-assistant/computations/term6-full-pole-sum.witness.json`.*

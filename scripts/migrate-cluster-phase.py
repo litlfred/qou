@@ -154,6 +154,8 @@ def main() -> int:
                         help="cluster subdirectory name (e.g. audits, sweeps)")
     parser.add_argument("--glob", required=True,
                         help="script-file glob (e.g. '*_audit.py')")
+    parser.add_argument("--exclude-glob", action="append", default=[],
+                        help="exclude scripts matching this glob (can repeat)")
     parser.add_argument("--phase-label", default=None,
                         help="phase label for the shim comment (default: 'Phase N')")
     parser.add_argument("--write", action="store_true")
@@ -189,6 +191,14 @@ def main() -> int:
 
     scripts = sorted(p for p in COMPUTE_DIR.glob(args.glob)
                      if p.is_file() and p.parent == COMPUTE_DIR)
+    if args.exclude_glob:
+        from fnmatch import fnmatch
+        before = len(scripts)
+        scripts = [p for p in scripts
+                   if not any(fnmatch(p.name, ex) for ex in args.exclude_glob)]
+        excluded = before - len(scripts)
+        if excluded > 0:
+            print(f"  --exclude-glob: skipped {excluded} script(s)")
     print(f"Cluster: {args.cluster}/  (glob: {args.glob})")
     print(f"Found {len(scripts)} scripts.")
     if args.limit:

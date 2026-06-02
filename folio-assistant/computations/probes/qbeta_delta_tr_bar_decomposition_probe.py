@@ -42,6 +42,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -77,7 +78,7 @@ def main() -> int:
         "docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md"
     )
 
-    upstream_path = HERE / "habiro-coefficients-atomic.witness.json"
+    upstream_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
     upstream = builder.add_upstream(upstream_path)
 
     tr_p_str = upstream["results"]["p (proton, A=1)"]["tr_M_in_q"]

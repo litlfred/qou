@@ -98,9 +98,9 @@ for the derivation status).
 1. The closed form $1 + (q-1) \cdot q^{-1/2}$ is the simplest
    nontrivial Markov-trace value in the framework and serves as a
    sanity check for all canonical-Markov implementations
-   ([`markov_peel.tr_M_atomic`](folio-assistant/computations/markov_peel.py),
-   [`markov_weights_symbolic.tr_M_canonical`](folio-assistant/computations/markov_weights_symbolic.py),
-   [`markov_trace_canonical.tr_M_word`](folio-assistant/computations/markov_trace_canonical.py)).
+   ([`markov_peel.tr_M_atomic`](folio-assistant/computations/markov/markov_peel.py),
+   [`markov_weights_symbolic.tr_M_canonical`](folio-assistant/computations/markov/markov_weights_symbolic.py),
+   [`markov_trace_canonical.tr_M_word`](folio-assistant/computations/markov/markov_trace_canonical.py)).
    All three produce identical output for $\sigma_1^2$ at $q = q_0$ to 50 dps.
 
 2. The binomial-coefficient closed form for the Taylor expansion is

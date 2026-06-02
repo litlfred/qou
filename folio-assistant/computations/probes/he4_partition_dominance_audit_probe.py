@@ -47,6 +47,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -79,7 +80,7 @@ def main() -> int:
         "docs/audits/2026-06-01-precision-residual-probes-workplan.md"
     )
 
-    cache_path = HERE / "chi-helium-4-h12-at-q0-50dps.witness.json"
+    cache_path = _pb.witness_path("chi-helium-4-h12-at-q0-50dps.witness.json", HERE)
     with open(cache_path) as f:
         cache = json.load(f)
 

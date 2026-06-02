@@ -71,6 +71,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -88,7 +89,7 @@ from codata_constants import M_E_MEV, M_P_MEV_VALIDATION  # noqa: E402
 
 def load_six_term_proton():
     """Load proton entry from mass-formula-6term-mpfr-50dps witness."""
-    path = HERE / "mass-formula-6term-mpfr-50dps.witness.json"
+    path = _pb.witness_path("mass-formula-6term-mpfr-50dps.witness.json", HERE)
     with path.open() as f:
         data = json.load(f)
     proton = next(r for r in data["data"]["results"] if r["Z"] == 1 and r["N"] == 0)
@@ -97,7 +98,7 @@ def load_six_term_proton():
 
 def load_term6_proton():
     """Load proton term6 from term6-full-pole-sum witness."""
-    path = HERE / "term6-full-pole-sum.witness.json"
+    path = _pb.witness_path("term6-full-pole-sum.witness.json", HERE)
     with path.open() as f:
         data = json.load(f)
     proton = next(a for a in data["data"]["atoms"] if a["atom"].startswith("p"))

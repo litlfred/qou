@@ -62,6 +62,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from datetime import datetime, timezone
@@ -91,8 +92,8 @@ sys.path.insert(0, str(HERE.parent))
 
 # Prefer the fast-path witness (covers more atoms) if available;
 # fall back to the symbolic-q baseline.
-WITNESS_FAST = HERE / "habiro-coefficients-atomic-fast.witness.json"
-WITNESS_SYMBOLIC = HERE / "habiro-coefficients-atomic.witness.json"
+WITNESS_FAST = _pb.witness_path("habiro-coefficients-atomic-fast.witness.json", HERE)
+WITNESS_SYMBOLIC = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
 WITNESS_OUT = HERE / "habiro-frobenius-probe.witness.json"
 
 PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23]

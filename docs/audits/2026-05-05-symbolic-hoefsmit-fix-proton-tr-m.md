@@ -198,11 +198,11 @@ deuteron weights.
 
 ### Code
 
-[`folio-assistant/computations/markov_weights_symbolic.py`](../../folio-assistant/computations/markov_weights_symbolic.py)
+[`folio-assistant/computations/markov/markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py)
 implements both paths (`solve_y_lambda` for $n \le 3$ via the
 linear system; `y_lambda_symbolic` for any $n$ via Schur principal
 specialisation). Witness:
-[`markov_weights_symbolic.witness.json`](../../folio-assistant/computations/markov_weights_symbolic.witness.json).
+[`markov_weights_symbolic.witness.json`](../../folio-assistant/computations/markov/markov_weights_symbolic.witness.json).
 
 The earlier closed forms in §"Closed-form Markov trace for proton
 standalone" (and the deuteron $-1/8 / +1/128$ leading-coefficient

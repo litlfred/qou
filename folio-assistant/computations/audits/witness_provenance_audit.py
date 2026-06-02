@@ -57,6 +57,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import sys
@@ -82,7 +83,7 @@ AUDIT_SUFFIXES = (
 
 def load_legacy_removed_set() -> set[str]:
     """Witness names removed via methodology-deprecation."""
-    path = HERE / "methodology-deprecation.witness.json"
+    path = _pb.witness_path("methodology-deprecation.witness.json", HERE)
     if not path.exists():
         return set()
     try:

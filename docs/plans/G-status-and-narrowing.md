@@ -15,7 +15,7 @@ Of the four entries Plan G originally targeted, only **³He is unblocked** — i
 
 ## Existing infrastructure that already does most of the work
 
-- `folio-assistant/computations/markov_trace_canonical.py` — symbolic `tr_M_element(braid_word)` in `H_n(q)`. Works on any word over σ_0..σ_{n−2}, returns a sympy expression in q.
+- `folio-assistant/computations/markov/markov_trace_canonical.py` — symbolic `tr_M_element(braid_word)` in `H_n(q)`. Works on any word over σ_0..σ_{n−2}, returns a sympy expression in q.
 - `folio-assistant/computations/atom_nf_symbolic_D.py` — already runs the full categorical pipeline for ²H (D = deuteron): GB-NF reduction → symbolic Markov trace → Jones polynomial. Witness `atom-nf-symbolic-D.witness.json` reports `markov_trace = 0` for D's atom braid (suspicious; the reported Jones polynomial `q − 1 + 2/q − 2/q² + 2/q³ − 2/q⁴ + 1/q⁵` is the standard `J_{6_2}(q)`). The discrepancy is exactly what Plan G needs to investigate — does D's atom braid actually close to 6_2, or is the historical ID wrong (which the α\* = 0.546 already suggests)?
 - `folio-assistant/computations/q_mn_recursive_memoized.py` + `y_lambda_wenzl_bridge_extended.py` — supply χ_λ(T_w) and y_λ(q) for the Wedderburn-block decomposition.
 

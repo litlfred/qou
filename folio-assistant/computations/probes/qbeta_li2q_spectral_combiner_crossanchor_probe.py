@@ -48,6 +48,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -120,7 +121,7 @@ def main() -> int:
     )
 
     upstream = builder.add_upstream(
-        HERE / "qbeta-per-block-paper-closed-forms.witness.json"
+        _pb.witness_path("qbeta-per-block-paper-closed-forms.witness.json", HERE)
     )
 
     q_sym = sp.Symbol("q", positive=True)

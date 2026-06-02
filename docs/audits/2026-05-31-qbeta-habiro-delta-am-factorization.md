@@ -173,7 +173,7 @@ deuteron channel.
 
 - Prior probe: [`docs/audits/2026-05-31-qbeta-habiro-element-probe.md`](2026-05-31-qbeta-habiro-element-probe.md)
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
-- Witness pipeline: `folio-assistant/computations/habiro-coefficients-atomic.witness.json`
+- Witness pipeline: `folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json`
 - α_EM template (parallel that worked): `folio-assistant/computations/alpha_em_habiro_taylor_investigation.py`
 - Production-vs-exploratory discipline: `.claude/skills/local/production-vs-exploratory-discipline.md`
 

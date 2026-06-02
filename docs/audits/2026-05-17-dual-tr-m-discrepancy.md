@@ -15,7 +15,7 @@ implicitly cites the other.
 | Function | Module | Formula |
 |---|---|---|
 | `tr_M_symbolic` | [`hoefsmit_symbolic.py`](../../folio-assistant/computations/hoefsmit_symbolic.py) | $\displaystyle \text{tr}_M(\beta) = \sum_\lambda \frac{\dim_q^2(\lambda)}{[n]_q!} \cdot \frac{\chi^\lambda(\beta)}{f^\lambda}$ |
-| `tr_M_canonical` | [`markov_weights_symbolic.py`](../../folio-assistant/computations/markov_weights_symbolic.py) | $\displaystyle \text{tr}_M(\beta) = \sum_\lambda y_\lambda(q) \cdot \chi^\lambda(\beta)$, with $y_\lambda$ from Wenzl's Schur principal specialisation |
+| `tr_M_canonical` | [`markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py) | $\displaystyle \text{tr}_M(\beta) = \sum_\lambda y_\lambda(q) \cdot \chi^\lambda(\beta)$, with $y_\lambda$ from Wenzl's Schur principal specialisation |
 
 The Wenzl $y_\lambda$ is the literature-standard Jones-Markov weight
 (Wenzl 1988); `dim_q^2/[n]_q!` is a different weight that gives the
@@ -82,15 +82,15 @@ Scripts calling **`tr_M_symbolic`** (Hoefsmit, ~15+ production scripts):
 
 - [`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py)
 - [`deuteron_tr_M_symbolic.py`](../../folio-assistant/computations/deuteron_tr_M_symbolic.py)
-- [`markov_trace_recursive.py`](../../folio-assistant/computations/markov_trace_recursive.py)
-- [`markov_trace_axiomatic_multi_atom.py`](../../folio-assistant/computations/markov_trace_axiomatic_multi_atom.py)
+- [`markov_trace_recursive.py`](../../folio-assistant/computations/markov/markov_trace_recursive.py)
+- [`markov_trace_axiomatic_multi_atom.py`](../../folio-assistant/computations/markov/markov_trace_axiomatic_multi_atom.py)
 - [`option_b_proton_mass_full_chain.py`](../../folio-assistant/computations/option_b_proton_mass_full_chain.py)
 - [`probe_neutron_gap_round2.py`](../../folio-assistant/computations/probe_neutron_gap_round2.py)
 - [`y_lambda_equivalence_proof.py`](../../folio-assistant/computations/y_lambda_equivalence_proof.py) (which claims equivalence)
 
 Scripts calling **`tr_M_canonical`** (Wenzl Jones-Markov):
 
-- [`markov_weights_symbolic.py`](../../folio-assistant/computations/markov_weights_symbolic.py) (itself, demo only)
+- [`markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py) (itself, demo only)
 
 CLAUDE.md §7a refers to:
 

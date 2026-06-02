@@ -5,10 +5,10 @@ $(c, d, \mathrm{gen\_idx})$ word produced by
 ($\mathcal{B}_p \cdot I \cdot \mathcal{B}_n$ with $I = \sigma_{n_1} - \frac{h}{2} \cdot 1$
 the inter-nucleon interface). For each $\lambda \vdash 3A$ let
 $\rho_\lambda^q$ be the Hoefsmit seminormal representation at $q$
-([`hecke_characters.build_seminormal_matrices`](../../../folio-assistant/computations/hecke_characters.py))
+([`hecke_characters.build_seminormal_matrices`](../../../folio-assistant/computations/hecke/hecke_characters.py))
 and let $y_\lambda(q)$ be the Jones-Markov weight via Wenzl's Schur
 principal specialization
-([`markov_weights_symbolic.solve_y_lambda`](../../../folio-assistant/computations/markov_weights_symbolic.py)).
+([`markov_weights_symbolic.solve_y_lambda`](../../../folio-assistant/computations/markov/markov_weights_symbolic.py)).
 Then the partition-sum form of the canonical Markov trace,*
 
 $$
@@ -83,7 +83,7 @@ $1.4 \times 10^{-16}$ on the deuteron (commit
 
 | Path | Module | Use case |
 |---|---|---|
-| Recursive Markov-axiom | [`markov_trace_recursive.markov_trace_of_word`](../../../folio-assistant/computations/markov_trace_recursive.py) | Production $\mathrm{tr}_M$ for mass-table predictions |
+| Recursive Markov-axiom | [`markov_trace_recursive.markov_trace_of_word`](../../../folio-assistant/computations/markov/markov_trace_recursive.py) | Production $\mathrm{tr}_M$ for mass-table predictions |
 | Symbolic partition-sum (50-dps mpmath) | [`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py) | Per-block $\rho_K$ binding-fraction $\Delta_\lambda$ analysis |
 | Float64 partition-sum | [`wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal`](../../../folio-assistant/computations/wedderburn_jones_markov.py) | Fast cross-check + reusable API |
 

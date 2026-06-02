@@ -78,7 +78,7 @@ The original q-Murnaghan-Nakayama implementation
 [`folio-assistant/computations/_deprecated/q_mn_canonical.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/_deprecated/q_mn_canonical.py)
 exposed `chi_q_canonical_T_w(λ, µ, q)` for canonical permutation
 braids $T_w$.  Active code now uses the unified Hoefsmit path
-[`hecke_characters.chi_lambda_braid`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/hecke_characters.py),
+[`hecke_characters.chi_lambda_braid`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/hecke/hecke_characters.py),
 which handles both canonical $T_w$ and arbitrary braid words
 (positive and inverse generators) through the same API.  The
 q-MN speedup quoted above applies in the canonical-$T_w$ regime

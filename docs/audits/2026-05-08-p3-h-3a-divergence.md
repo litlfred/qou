@@ -10,7 +10,7 @@ shortcut** and the **H_{3A} Jones-Markov formulation** required by
 draft of this audit used `hecke_3a_weights.wedderburn_weights_3a`
 which returns the **symmetric Plancherel** weight
 $w_\lambda = d_q(\lambda)^2 / [n]_q!$. Per
-[`markov_weights_symbolic.py:18-23`](../../folio-assistant/computations/markov_weights_symbolic.py),
+[`markov_weights_symbolic.py:18-23`](../../folio-assistant/computations/markov/markov_weights_symbolic.py),
 that is **NOT** the correct Jones-Markov weight $y_\lambda(q)$
 for $q \neq 1$; they coincide only at the classical Plancherel
 point $q = 1$. The QOU paper at $q = q_0 \approx 1.1098$
@@ -23,7 +23,7 @@ specialization. This audit now uses the correct $y_\lambda$.
 ## Methodology
 
 Each $y_\lambda(q)$ computed via
-[`markov_weights_symbolic.schur_principal_symbolic`](../../folio-assistant/computations/markov_weights_symbolic.py)
+[`markov_weights_symbolic.schur_principal_symbolic`](../../folio-assistant/computations/markov/markov_weights_symbolic.py)
 with **numerical-q-from-start** — substitutes $q = q_0$ before
 the symbolic `sp.cancel` step that was the bottleneck in naive
 `solve_y_lambda(n)`. Timings:
@@ -233,6 +233,6 @@ follow-up:
 - [`prop:atomic-mass-gb-nf`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md) — defines the H_{3A} mass formula
 - [`prop:per-nucleon-shift-additive-linearity`](../../content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md)
 - [`docs/audits/2026-05-08-rho-k-mass-table-audit.md`](2026-05-08-rho-k-mass-table-audit.md) — pre-P3 baseline (0.23% MAE)
-- [`folio-assistant/computations/markov_weights_symbolic.py`](../../folio-assistant/computations/markov_weights_symbolic.py) — canonical y_λ
+- [`folio-assistant/computations/markov/markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py) — canonical y_λ
 - [`folio-assistant/computations/schur_weyl_symbolic.py`](../../folio-assistant/computations/schur_weyl_symbolic.py) — wrong-weight site
 - [`docs/coordination/1ppb.md`](../coordination/1ppb.md) — P3 in workplan

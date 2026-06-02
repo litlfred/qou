@@ -32,6 +32,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -46,7 +47,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 mp.mp.dps = 80
 
 # Substrate constants
-Q_PIN = HERE / "q-pinning-50-digit.witness.json"
+Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q

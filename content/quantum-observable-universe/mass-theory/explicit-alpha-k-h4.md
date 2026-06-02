@@ -69,7 +69,7 @@ uniquely determined.
 
 **Numerical evaluation at $q_0$.**  Hoefsmit characters computed via
 [seminormal matrices](#prop:hoefsmit-seminormal-form) (see
-`folio-assistant/computations/hecke_characters.py`); the $5 \times 5$
+`folio-assistant/computations/hecke/hecke_characters.py`); the $5 \times 5$
 character matrix at $q_0$ is recorded in
 [`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wedderburn-orthogonal-r-3-h4.witness.json).
 

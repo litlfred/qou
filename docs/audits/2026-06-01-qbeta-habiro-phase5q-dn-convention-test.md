@@ -160,7 +160,7 @@ the Φ_16 / Φ_32 prediction is decoupled from the witness availability.
   — master ledger.
 - [`folio-assistant/computations/closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py)
   — Phase 5q canonical tr_M.
-- [`folio-assistant/computations/habiro_coefficients_atomic.py`](../../folio-assistant/computations/habiro_coefficients_atomic.py)
+- [`folio-assistant/computations/habiro/habiro_coefficients_atomic.py`](../../folio-assistant/computations/habiro/habiro_coefficients_atomic.py)
   — Habiro coefficient extraction (sequential cyclotomic division).
 - PR #1579 (commit `57b5fa2d3a`) — original (D − n) Φ_8² discovery
   in the habiro-witness convention.

@@ -77,7 +77,7 @@ The hypothesized pattern `A=k → A=k+1 atomic-step pair carries Φ_{2^{k+1}}` m
 | **(any A=k+1 − A=k)** | `Φ_{2^{k+1}}(u) = u^{2^k} + 1` | 2^k-strand B_{2^k} |
 | **Isospin mirror pairs** (³H/³He, ⁷Li/⁷Be, …) | `Φ_1·Φ_2 = u² − 1` (the n−p signature) | NOT Φ_8 — distinguishes isospin from atomic step |
 
-These are testable as soon as the per-isotope Habiro coefficients land (currently only p, n, D are in [`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro-coefficients-atomic.witness.json)).
+These are testable as soon as the per-isotope Habiro coefficients land (currently only p, n, D are in [`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json)).
 
 ## Hypotheses ruled out
 
