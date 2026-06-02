@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T18:16:03.424786+00:00",
-  "commitSha": "3575bd9bdb3b58a37bd8f304612eed9f752defb4",
+  "computedAt": "2026-06-02T02:24:18.928662+00:00",
+  "commitSha": "3071d6b4ed9fc824248fc970d3af1b93e2c20698",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -40,10 +40,10 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 523,
-      "wired": 70,
+      "i1_no_probe": 516,
+      "wired": 65,
       "i1_lean_with_sorry": 4,
-      "i1_pre_lean": 6,
+      "i1_pre_lean": 18,
       "i1_no_probe_conditional": 1
     },
     "rows": [
@@ -123,6 +123,23 @@
         "probe_witness_count": 1,
         "probe_witnesses": [
           "mass-table-comprehensive.witness.json"
+        ],
+        "result": "wired"
+      },
+      {
+        "path": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts",
+        "label": "prop:proton-mass-substrate-identity",
+        "kind": "proposition",
+        "sibling_lean_exists": true,
+        "sibling_sorry_count": 0,
+        "sibling_has_class": false,
+        "probe_witness_count": 10,
+        "probe_witnesses": [
+          "definitive-q0-shift.witness.json",
+          "m-p-substrate-identity-50dps.witness.json",
+          "phase1c-proton-h3-symbolic-decomposition.witness.json",
+          "phase1d-f-bor-exact-h-expansion.witness.json",
+          "phase1e-neutron-cross-isotope-h-expansion.witness.json"
         ],
         "result": "wired"
       },
@@ -432,23 +449,6 @@
         "probe_witness_count": 0,
         "probe_witnesses": [],
         "result": "i1_no_probe"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.ts",
-        "label": "prop:proton-mass-substrate-identity",
-        "kind": "proposition",
-        "sibling_lean_exists": true,
-        "sibling_sorry_count": 0,
-        "sibling_has_class": false,
-        "probe_witness_count": 10,
-        "probe_witnesses": [
-          "definitive-q0-shift.witness.json",
-          "m-p-substrate-identity-50dps.witness.json",
-          "phase1c-proton-h3-symbolic-decomposition.witness.json",
-          "phase1d-f-bor-exact-h-expansion.witness.json",
-          "phase1e-neutron-cross-isotope-h-expansion.witness.json"
-        ],
-        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts",
@@ -1968,15 +1968,15 @@
         "path": "content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.ts",
         "label": "prop:alpha-shift-torus-knot",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
-        "sibling_has_class": true,
+        "sibling_has_class": false,
         "probe_witness_count": 2,
         "probe_witnesses": [
           "alpha-shift-torus.witness.json",
           "nh-basis-shift.witness.json"
         ],
-        "result": "wired"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts",
@@ -2488,12 +2488,12 @@
         "path": "content/quantum-observable-universe/mass-theory/em-spectral-completeness.ts",
         "label": "thm:em-spectral-completeness",
         "kind": "theorem",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/explicit-alpha-k-h3.ts",
@@ -2869,12 +2869,12 @@
         "path": "content/quantum-observable-universe/mass-theory/hoefsmit-V21-cos-symmetrization.ts",
         "label": "prop:hoefsmit-V21-cos-symmetrization",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
-        "sibling_has_class": true,
+        "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.ts",
@@ -2985,7 +2985,7 @@
         "path": "content/quantum-observable-universe/mass-theory/knot-factor-amphicheiral.ts",
         "label": "cor:knot-factor-amphicheiral",
         "kind": "corollary",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 2,
@@ -2993,7 +2993,7 @@
           "knot-factor-amphicheiral-BD-probe.witness.json",
           "knot-factor-amphicheiral-probe.witness.json"
         ],
-        "result": "wired"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.ts",
@@ -3023,12 +3023,12 @@
         "path": "content/quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.ts",
         "label": "prop:knot-factor-spectral-form",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid.ts",
@@ -3261,11 +3261,12 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 4,
+        "probe_witness_count": 5,
         "probe_witnesses": [
           "habiro-exact-mass-endomorphism.witness.json",
           "proton-mass-full-tower-50dps.witness.json",
           "proton-residual-rootcause.witness.json",
+          "qbeta-li2q-imaginary-quantization.witness.json",
           "vhat-std-vs-full-tower-compare.witness.json"
         ],
         "result": "wired"
@@ -3454,14 +3455,14 @@
         "path": "content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.ts",
         "label": "prop:plancherel-weight-boundedness",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 1,
         "probe_witnesses": [
           "plancherel-weight-boundedness-probe.witness.json"
         ],
-        "result": "wired"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.ts",
@@ -3500,9 +3501,9 @@
         "path": "content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.ts",
         "label": "prop:q-beta-categorical-precision-ladder",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
-        "sibling_has_class": true,
+        "sibling_has_class": false,
         "probe_witness_count": 11,
         "probe_witnesses": [
           "c-3-categorical-derivation-attempt.witness.json",
@@ -3511,7 +3512,7 @@
           "habiro-q-difference-mode-solve.witness.json",
           "q-beta-predicted.witness.json"
         ],
-        "result": "wired"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/q-rogers-pentagon-archimedean.ts",
@@ -5418,9 +5419,9 @@
         "path": "content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.ts",
         "label": "prop:em-coupling-bring-zero-mode",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
-        "sibling_has_class": true,
+        "sibling_has_class": false,
         "probe_witness_count": 6,
         "probe_witnesses": [
           "alpha-em-4pi-b4-pslq.witness.json",
@@ -5429,29 +5430,29 @@
           "alpha-em-habiro-taylor-investigation.witness.json",
           "alpha-em-q-difference-fourier.witness.json"
         ],
-        "result": "wired"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/predicted-spectra/em-coupling-projection.ts",
         "label": "prop:em-coupling-projection",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/predicted-spectra/force-carrier-bring-uniqueness.ts",
         "label": "prop:force-carrier-bring-uniqueness",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/predicted-spectra/gauge-coupling-uniqueness.ts",
@@ -5712,12 +5713,12 @@
         "path": "content/quantum-observable-universe/predicted-spectra/torus-knot-genus-four-unique.ts",
         "label": "prop:torus-knot-genus-four-unique",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.ts",
@@ -5734,12 +5735,12 @@
         "path": "content/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.ts",
         "label": "prop:type-b-folded-crystal-combinatorics",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.ts",
