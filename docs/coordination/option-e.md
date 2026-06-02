@@ -114,6 +114,18 @@ near-match. Do NOT wire as a derivation.
   hit the crystal weight without deriving it. Worth tracing
   `(1+q)/2` against known Kashiwara-crystal coefficients (Lecouvey,
   Brundan-Kleshchev).
+  - **(2026-06-02, PR #1516) Cheap pass DONE — single-vertex
+    candidates REFUTED.** All four shortcuts (χ^λ(w_0), \|χ^λ(w_0)\|,
+    sgn(χ^λ(w_0))·dim_λ, peak \|ρ_λ(w_0) diag\|) miss ≥ 66 % on the
+    deuteron target. Symmetric to #1709 geometric Vol_λ refutation.
+    Remaining in-Option-E path: full `n^w_λ` multiplicity sum
+    across multiple vertices `w` — requires extending
+    `kazhdan_lusztig.py` past its n ≤ 4 cap. Witness:
+    `probe-option-e-phase2-crystal-vertex-candidates.witness.json`.
+    Note: the (1+q)/2 framing in this bullet is stale post-PROBE 1
+    (#1707 refuted (1+q)/2 separately); PROBE 4 is now framed as
+    Δ_λ closure via crystal-vertex weights rather than as a
+    cross-check on (1+q)/2.
 
 ## Anti-patterns (DO NOT repeat)
 
@@ -142,6 +154,7 @@ near-match. Do NOT wire as a derivation.
 | 2026-06-02 | Claude / `claude/option-e-derive-1plusq-over-2-2026-06-02` (PR #1707) | PROBE 1: DERIVE-OR-FALSIFY the v9 (1+q)/2 — refresh at canonical q₀, test 4 structural hypotheses, proton-vs-muon discriminator | **VERDICT NEAR-MATCH (fit)**. (1+q)/2 NOT forced: 4 independent hypotheses 18–90% off; only tautological [2]_q/2 / (q+1)/2 "match". Required factor R=1.05372 ≠ (1+q)/2=1.05499 by +0.12% same-pin. Published 0.11% was stale (muon literal); canonical-q₀ residual +0.12%, sign-flipped. No v10. (1+q)/2 stays un-wired; A=3 closure OPEN. |
 | 2026-06-02 | Claude / `claude/option-e-phase1-gram-h6-2026-06-02` | Phase 1 H_n Gram-matrix generalisation at H_6 (deuteron) — deliver the per-block Hoefsmit-seminormal infrastructure that #1516's doc update identified as missing. Pure-Python, no pyhecke_native dep. | landed (PR #1697); 11 H_6 partition blocks with σ_k matrices + ρ_λ(w_0) at q_0; 4 assertions pass (χ_λ cross-check residual 2.22e-16 at H_6, Σ dim_λ² = n! at both n=3,6). Witness `option-e-phase1-gram-h6.witness.json` carries the data needed to test **PROBE 1** ("`(1+q)/2` = half-trace of σ_1 in standard rep") on the (5,1) standard rep of H_6 — not run in this PR (scope = infrastructure). |
 | 2026-06-02 | Claude / `claude/option-e-derive-1plusq-over-2-2026-06-02` | Open **PROBE 1** — derive `(1+q)/2` structurally or falsify as near-match. Per ledger §"Open probes" line 85. | in flight (PR #1707, stub-only commit; coord posts cross-published on #1697 and #1707; canonical q_0 confirmed not stale; can consume #1697's `option-e-phase1-gram-h6.witness.json::data.h6.blocks["5_1"]` data for the half-trace hypothesis test). |
+| 2026-06-02 | Claude / `claude/option-e-phase2-gram-probe-2026-05-30` (PR #1516) | **PROBE 4 (cheap pass)** — test single-vertex KL candidate rules for Δ_λ closure at H_6/deuteron, mirroring PR #1709's "cheap proxy first" strategy. Also extends Phase 2 entry-point probe H_3 → H_6 consuming #1697's just-merged Gram. | **VERDICT: ALL FOUR SINGLE-VERTEX CANDIDATES REFUTED** (miss ≥ 66%): A χ^λ(w_0) 99.83%, B \|χ^λ(w_0)\| 120.73%, C sgn·dim_λ 66.47%, D peak \|ρ_λ(w_0) diag\| 117.46%. Symmetric to #1709's geometric Vol_λ refutation. Remaining in-Option-E direction: full `n^w_λ` enumeration across multiple vertices (extend `kazhdan_lusztig.py` past n ≤ 4 cap to S_6). Otherwise: pivot to GAP-A-3/A-4. Witness: `probe-option-e-phase2-crystal-vertex-candidates.witness.json`. |
 
 ## Cross-refs
 
