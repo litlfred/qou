@@ -1,0 +1,417 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-02T05:49:25.723761+00:00",
+  "commitSha": "ad1c93fce227101f03b731e9c07874a65e964ef2",
+  "assertions": [
+    {
+      "name": "syt_evacuation_involution_corroborating_check",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "B_2_1_sl3_unique_highest_weight_vector",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "num_m2_lambdas",
+      "computed": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "name": "bar_maps_each_V_lam_to_V_lamT",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "num_self_conjugate_m2_cases",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "self_conjugate_case_bar_swaps_two_copies",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "self_conjugate_case_has_no_bar_fixed_OV_line",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "any_V_lam_has_bar_fixed_distinguished_line",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "no_h4_fit_performed",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "verdict_code_ii",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 38,
+  "computation": "crystal-keystone-selector",
+  "scriptFile": "crystal_keystone_selector.py",
+  "scriptHash": "d9d3f650cd00",
+  "scriptCommitSha": "ad1c93fce227101f03b731e9c07874a65e964ef2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Crystal (Kashiwara / Option-E) selector test of the keystone (2,1)-multiplicity SECTION: does the Kashiwara / lower-global canonical basis SELECT a distinguished line in V = Hom_{S3}((2,1), Res^{A5}_{S3}(H)) ~= C^2 (equivalently the (2,1)-mult space in Res^{H5}_{H3}, GT/OV basis = the (2,0)/(0,2) symmetric pair #1687), or does it -- like spin #1687 and geometry #1699 -- only SEPARATE (give a canonical basis) without SELECTING a line? THE TEST: does the BAR INVOLUTION (Schuetzenberger evacuation / q->q^{-1} content reversal) FIX each copy (distinguished -> SELECTS) or SWAP the two copies (bar-conjugate -> SEPARATES)? Reuses validated crystal_basis.py Kashiwara primitives + a self-contained SYT-evacuation (validated as an involution) + #1687's SYT chains. h^4=-3/4 is a FALSIFICATION reference, NOT a target; NO crystal convention chosen to produce it. engine=python+mpmath; exact SYT combinatorics + RAW q-contents @ compute_dps.",
+  "auditOnly": "docs/audits/2026-06-02-crystal-keystone-selector.md",
+  "parameters": {
+    "q0_falsification_ref": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "q0_source": "q_parameter.Q_MP (proton-pinned)",
+    "dps": 70,
+    "h4_borromean_falsification_ref": "-3/4"
+  },
+  "data": {
+    "task2_crystal_component_uniqueness": {
+      "B_2_1_size_sl3": 8,
+      "num_highest_weight_vectors": 1,
+      "highest_weight_tableau": [
+        [
+          1,
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "note": "Each (2,1)-copy is its OWN crystal component B((2,1)), with a UNIQUE highest-weight vector. BOTH copies have one each and are ISOMORPHIC as crystals -- so 'unique highest weight' does NOT by itself distinguish the copies. Selection needs a BAR-asymmetry between them."
+    },
+    "task1_V_C2_two_copies": {
+      "(3, 2)": {
+        "multiplicity": 2,
+        "copies": [
+          {
+            "lam4": "(3, 1)",
+            "content_tuple_c4_c5": [
+              2,
+              0
+            ],
+            "q_content_c4_RAW": "2.01089686670712229975249197809",
+            "q_content_c5_RAW": "0.0",
+            "syt_rows": [
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                3,
+                5
+              ]
+            ]
+          },
+          {
+            "lam4": "(2, 2)",
+            "content_tuple_c4_c5": [
+              0,
+              2
+            ],
+            "q_content_c4_RAW": "0.0",
+            "q_content_c5_RAW": "2.01089686670712229975249197809",
+            "syt_rows": [
+              [
+                1,
+                2,
+                5
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          }
+        ]
+      },
+      "(3, 1, 1)": {
+        "multiplicity": 2,
+        "copies": [
+          {
+            "lam4": "(3, 1)",
+            "content_tuple_c4_c5": [
+              2,
+              -2
+            ],
+            "q_content_c4_RAW": "2.01089686670712229975249197809",
+            "q_content_c5_RAW": "-2.01089686670712229975249197809",
+            "syt_rows": [
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                3
+              ],
+              [
+                5
+              ]
+            ]
+          },
+          {
+            "lam4": "(2, 1, 1)",
+            "content_tuple_c4_c5": [
+              -2,
+              2
+            ],
+            "q_content_c4_RAW": "-2.01089686670712229975249197809",
+            "q_content_c5_RAW": "2.01089686670712229975249197809",
+            "syt_rows": [
+              [
+                1,
+                2,
+                5
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ]
+          }
+        ]
+      },
+      "(2, 2, 1)": {
+        "multiplicity": 2,
+        "copies": [
+          {
+            "lam4": "(2, 2)",
+            "content_tuple_c4_c5": [
+              0,
+              -2
+            ],
+            "q_content_c4_RAW": "0.0",
+            "q_content_c5_RAW": "-2.01089686670712229975249197809",
+            "syt_rows": [
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                5
+              ]
+            ]
+          },
+          {
+            "lam4": "(2, 1, 1)",
+            "content_tuple_c4_c5": [
+              -2,
+              0
+            ],
+            "q_content_c4_RAW": "-2.01089686670712229975249197809",
+            "q_content_c5_RAW": "0.0",
+            "syt_rows": [
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                5
+              ],
+              [
+                4
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "task3_THE_TEST_bar_on_multiplicity_space": {
+      "(3, 2)": {
+        "lambda_transpose": [
+          2,
+          2,
+          1
+        ],
+        "is_self_conjugate": false,
+        "V_lam_OV_content_basis": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "bar_content_negation_image": [
+          [
+            -2,
+            0
+          ],
+          [
+            0,
+            -2
+          ]
+        ],
+        "V_lamT_OV_content_basis": [
+          [
+            -2,
+            0
+          ],
+          [
+            0,
+            -2
+          ]
+        ],
+        "bar_maps_V_lam_to_V_lamT": true,
+        "bar_action_on_V_lam": [
+          "bar maps V_(3, 2) -> V_(2, 2, 1) (NOT an endomorphism)"
+        ],
+        "bar_fixed_OV_vectors_in_V_lam": [],
+        "bar_is_endomorphism_of_V_lam": false,
+        "bar_endomorphism_swaps_the_two_copies": false,
+        "crystal_bar_SELECTS_a_line_here": false
+      },
+      "(3, 1, 1)": {
+        "lambda_transpose": [
+          3,
+          1,
+          1
+        ],
+        "is_self_conjugate": true,
+        "V_lam_OV_content_basis": [
+          [
+            -2,
+            2
+          ],
+          [
+            2,
+            -2
+          ]
+        ],
+        "bar_content_negation_image": [
+          [
+            -2,
+            2
+          ],
+          [
+            2,
+            -2
+          ]
+        ],
+        "V_lamT_OV_content_basis": [
+          [
+            -2,
+            2
+          ],
+          [
+            2,
+            -2
+          ]
+        ],
+        "bar_maps_V_lam_to_V_lamT": true,
+        "bar_action_on_V_lam": [
+          "[-2, 2]->[2, -2] (other copy, SWAP)",
+          "[2, -2]->[-2, 2] (other copy, SWAP)"
+        ],
+        "bar_fixed_OV_vectors_in_V_lam": [],
+        "bar_is_endomorphism_of_V_lam": true,
+        "bar_endomorphism_swaps_the_two_copies": true,
+        "crystal_bar_SELECTS_a_line_here": false
+      },
+      "(2, 2, 1)": {
+        "lambda_transpose": [
+          3,
+          2
+        ],
+        "is_self_conjugate": false,
+        "V_lam_OV_content_basis": [
+          [
+            -2,
+            0
+          ],
+          [
+            0,
+            -2
+          ]
+        ],
+        "bar_content_negation_image": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "V_lamT_OV_content_basis": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "bar_maps_V_lam_to_V_lamT": true,
+        "bar_action_on_V_lam": [
+          "bar maps V_(2, 2, 1) -> V_(3, 2) (NOT an endomorphism)"
+        ],
+        "bar_fixed_OV_vectors_in_V_lam": [],
+        "bar_is_endomorphism_of_V_lam": false,
+        "bar_endomorphism_swaps_the_two_copies": false,
+        "crystal_bar_SELECTS_a_line_here": false
+      }
+    },
+    "task3_selection_verdict": {
+      "crystal_selects_a_distinguished_line": false,
+      "reason": "The Lusztig bar (q -> q^{-1}, content c -> -c) maps the (2,1)-mult space V_lam to V_{lam^T}: it is an endomorphism of V_lam ONLY for self-conjugate lam. The non-self-conjugate m=2 cases (3,2) and (2,2,1) form a transpose PAIR -- the bar maps one mult space to the other, so no line in either is bar-distinguished. The ONLY self-conjugate m=2 case, (3,1,1), has its bar act as an endomorphism that SWAPS the two copies ((2,-2) <-> (-2,2)), with NO bar-fixed OV vector (no content tuple equals its own negation). Therefore NO V_lam carries a bar-fixed distinguished line: the crystal SEPARATES (the canonical basis = the OV/JM basis of #1687) but does NOT SELECT -- exactly the spin #1687 / geometry #1699 failure mode."
+    },
+    "task4_h4_falsification": {
+      "performed": false,
+      "reason": "Task 3 forces NO distinguished line (the bar SWAPS the two copies in every m=2 case -> bar-conjugate symmetric pair, no bar-fixed copy). There is no derived section to test against h^4 = -3/4. Choosing a crystal convention / orientation / Demazure window to make a line appear (and land -3/4) would be exactly the fit the discipline review catches (CLAUDE.md §7b, 2026-05-30 KLR-dialog assessment).",
+      "h4_block_invariant_RAW": "-3/4",
+      "fit_performed": false
+    },
+    "VERDICT": {
+      "code": "ii",
+      "one_line": "CASE (ii): the Kashiwara / lower-global crystal SEPARATES but does NOT SELECT. The Lusztig bar involution (q->q^{-1}, content c->-c) maps the (2,1)-mult space V_lam to V_{lam^T}: it is an ENDOMORPHISM of V_lam only for self-conjugate lam. The non-self-conjugate m=2 cases (3,2) and (2,2,1) are a TRANSPOSE PAIR -- the bar maps one mult space to the other, distinguishing no line in either. The only self-conjugate m=2 case (3,1,1) has its bar act as an endomorphism that SWAPS its two copies ((2,-2)<->(-2,2)) with NO bar-fixed OV vector (no content tuple equals its own negation). Hence NO V_lam carries a bar-fixed distinguished line: the crystal canonical basis = the OV/JM basis (#1687) -- NO new selection. The crystal JOINS spin (#1687) and geometry (#1699): all three SEPARATE, none SELECT. KEYSTONE STANDS: the section is a genuine new physical input (triple-confirmed). h^4=-3/4 is a block invariant; no fit performed.",
+      "why_not_i": "(i) would require a bar-FIXED OV line in a fixed V_lam -- a distinguished self-conjugate line. For non-self-conjugate lam the bar is not even an endomorphism of V_lam (it maps to V_{lam^T}); for the self-conjugate (3,1,1) the bar SWAPS the two copies with no fixed OV vector (no content tuple = its own negation). So no V_lam has a distinguished line.",
+      "why_not_iii": "(iii) would require the crystal NOT to act on V at all. But the crystal DOES act: each copy is a canonical-basis vector (a B((2,1)) component / SYT-chain), and the bar involution acts (mapping V_lam to V_{lam^T}, and within the self-conjugate case swapping the copies). The structure exists; it just fails to SELECT a line within any V_lam.",
+      "triple_confirmed_delimitation": "Spin (#1687), icosahedral geometry (#1699), and the Kashiwara crystal (this audit) ALL separate-not-select. The missing object -- the canonical section / vertical baryon-number charge of the (2,1)-mult space -- is NOT derivable from existing CATEGORICAL (Hecke branching, OV/JM eigenbasis, ribbon-twist spin, Kashiwara crystal / bar involution) OR GEOMETRIC (icosahedral A5 holonomy, Bring cross-ratio) structure. It is definitively a genuine NEW physical input."
+    }
+  },
+  "caveats": [
+    "EXPLORATORY / audit-only, HIGHEST re-pitch risk probe. The crystal / canonical basis is a rigorous canonical basis -- the Kashiwara f_i/e_i (crystal_basis.py, validated vs the Weyl dimension formula) are NOT fits. METHOD NOTE (a first-pass error was corrected -- see the audit doc): the LOAD-BEARING selection test acts on the (2,1)-MULTIPLICITY SPACE V_lam, NOT the full S^{lam5}. The Lusztig bar (q->q^{-1}, JM content c->-c) maps V_lam to V_{lam^T} (verified RAW: negate(contents)==contents of transpose), so it is an endomorphism of V_lam only when lam is self-conjugate; the only self-conjugate m=2 case (3,1,1) has its bar SWAP the two copies with no bar-fixed OV vector. This content/transpose computation is EXACT and convention-free; the SYT Schuetzenberger evacuation is validated as an involution only as a corroborating sanity check. h^4 = -3/4 is the Borromean (2,1)-BLOCK invariant used ONLY as a falsification reference; NO crystal convention / orientation / Demazure window is chosen to reproduce it (that would be the §7b / 2026-05-30 re-pitch trap). The lambda_scale mass-formula and Bloch-Wigner / dilog-on-trefoil re-pitches (2026-05-30 KLR-dialog assessment) are NOT re-derived. Changes no production value; emits no LP/SDP solve (no dual required)."
+  ]
+}
