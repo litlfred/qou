@@ -1,8 +1,8 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:44:35.888215+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T18:04:41.307168+00:00",
+  "commitSha": "75c3eb3d57a6b902cc384dd44711dd7a16fc34f8",
   "assertions": [
     {
       "name": "tr_M_cross_validation_within_1e-6",
@@ -25,11 +25,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 6,
   "computation": "iterative-lp-dual-h6-deuteron",
   "scriptFile": "iterative_lp_dual_h6_deuteron.py",
-  "scriptHash": "d63bd133df29",
-  "scriptCommitSha": "bc60c4d79ae695d3022cb53914e2693e7ddcf29b",
+  "scriptHash": "8ba6084f4b7d",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
