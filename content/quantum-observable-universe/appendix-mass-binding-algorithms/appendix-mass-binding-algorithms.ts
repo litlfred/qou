@@ -39,5 +39,14 @@ export default chapter({
         "mba-chain-map",
       ],
     }),
+    section({
+      title: "Canonical chain — algorithms",
+      label: "sec:mba-canonical-chain",
+      blocks: [
+        // Step 3 — Markov trace (template / first block).
+        // Steps 1, 2, 4–11 land in subsequent commits.
+        "mba-step03-markov-trace",
+      ],
+    }),
   ],
 });
