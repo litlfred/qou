@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T21:00:33.441606+00:00",
-  "commitSha": "eb6103bd15037a0dea544d490a95dc1f775fc53b",
+  "computedAt": "2026-06-02T02:57:19.594478+00:00",
+  "commitSha": "3de9bc643b069700def80979471b46ee86c55c90",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -123,6 +123,23 @@
         "probe_witness_count": 1,
         "probe_witnesses": [
           "mass-table-comprehensive.witness.json"
+        ],
+        "result": "wired"
+      },
+      {
+        "path": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts",
+        "label": "prop:proton-mass-substrate-identity",
+        "kind": "proposition",
+        "sibling_lean_exists": true,
+        "sibling_sorry_count": 0,
+        "sibling_has_class": false,
+        "probe_witness_count": 10,
+        "probe_witnesses": [
+          "definitive-q0-shift.witness.json",
+          "m-p-substrate-identity-50dps.witness.json",
+          "phase1c-proton-h3-symbolic-decomposition.witness.json",
+          "phase1d-f-bor-exact-h-expansion.witness.json",
+          "phase1e-neutron-cross-isotope-h-expansion.witness.json"
         ],
         "result": "wired"
       },
@@ -432,23 +449,6 @@
         "probe_witness_count": 0,
         "probe_witnesses": [],
         "result": "i1_no_probe"
-      },
-      {
-        "path": "content/quantum-observable-universe/braids-and-knots/proton-mass-substrate-identity.ts",
-        "label": "prop:proton-mass-substrate-identity",
-        "kind": "proposition",
-        "sibling_lean_exists": true,
-        "sibling_sorry_count": 0,
-        "sibling_has_class": false,
-        "probe_witness_count": 10,
-        "probe_witnesses": [
-          "definitive-q0-shift.witness.json",
-          "m-p-substrate-identity-50dps.witness.json",
-          "phase1c-proton-h3-symbolic-decomposition.witness.json",
-          "phase1d-f-bor-exact-h-expansion.witness.json",
-          "phase1e-neutron-cross-isotope-h-expansion.witness.json"
-        ],
-        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts",

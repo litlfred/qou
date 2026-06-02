@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:45:51.077757+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T03:16:48.568822+00:00",
+  "commitSha": "3de9bc643b069700def80979471b46ee86c55c90",
   "assertions": [
     {
       "name": "option_e_breaks_S_invariance_as_structurally_expected",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5346,
+  "durationMs": 3882,
   "computation": "option-e-isospin-probe",
   "scriptFile": "option_e_isospin_probe.py",
   "scriptHash": "eec07e482090",
@@ -123,7 +123,7 @@
         "A": 3,
         "n_strands": 9,
         "n_partitions": 26,
-        "W_c_q0": "14784241.10994021745886405854403178778418209979602679657630208828437023",
+        "W_c_q0": "14784241.10994021618449678010898605117828488180141512163916228837337865",
         "n_nonzero_contributions": 26,
         "top_contributions": [
           {
@@ -196,7 +196,7 @@
         "A": 3,
         "n_strands": 9,
         "n_partitions": 26,
-        "W_c_q0": "292761867.6231947000760288607199253770851594493006800794667998276520032",
+        "W_c_q0": "292761867.6231946996059220907650788012995433386041901972623878099864077",
         "n_nonzero_contributions": 26,
         "top_contributions": [
           {
@@ -261,6 +261,6 @@
         ]
       }
     ],
-    "isospin_split_T_minus_3He": "277977626.5132544826171648021758935893009773495046532828904977393676329"
+    "isospin_split_T_minus_3He": "277977626.513254483421425310656092750121258456802775075623225521613029"
   }
 }
