@@ -12,8 +12,8 @@ factor `a_K` per atom.
 
 ## 1  Source
 
-- Witness: [`folio-assistant/computations/paper-six-term-isotope-sweep.witness.json`](../../folio-assistant/computations/paper-six-term-isotope-sweep.witness.json)
-- Generator: [`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/paper_six_term_isotope_sweep.py) (commit `f25a90e3` + cherry-picks)
+- Witness: [`folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json`](../../folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json)
+- Generator: [`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py) (commit `f25a90e3` + cherry-picks)
 - Default `chirality_source = "v2"` (substrate-derived `τ(β · β_mirror⁻¹)` per
   [`prop:he4-two-row-dominance`](../../content/quantum-observable-universe/braids-and-knots/he4-two-row-dominance.md)
   conjecture context; library `term5_v2_chirality.aK_v2`).

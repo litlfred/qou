@@ -38,13 +38,13 @@ stopped working).
 
 ## §V1 ≠ mirror — the physics correction
 
-PR #644's [`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/paper_six_term_isotope_sweep.py)
+PR #644's [`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py)
 P1.B section states:
 
 > V1 is the natural Hecke choice; V2–V4 are alternative mirror-knot
 > conventions whose physical meaning differs.
 
-Reading [`term5_aK_audit.py`](../../folio-assistant/computations/term5_aK_audit.py)
+Reading [`term5_aK_audit.py`](../../folio-assistant/computations/audits/term5_aK_audit.py)
 module docstring directly contradicts the "natural choice" framing:
 
 | Variant | Definition | What $\tau(\beta \cdot \beta^{*-1})$ computes | Physical meaning |
@@ -104,7 +104,7 @@ into:
 
 | Caller | Mode flag | Default |
 |---|---|---|
-| [`paper_six_term_isotope_sweep.paper_six_term_mass`](../../folio-assistant/computations/paper_six_term_isotope_sweep.py) | `chirality_source: "v2" | "closed_form"` | `"v2"` |
+| [`paper_six_term_isotope_sweep.paper_six_term_mass`](../../folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py) | `chirality_source: "v2" | "closed_form"` | `"v2"` |
 | [`mass_formula_6term_mpfr_50dps.term_5_chirality_bw_mp`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py) | `chirality_source: "v2" | "bw_legacy"` | `"v2"` |
 
 V2-cache-miss fallback in both callers: surface the routing
@@ -324,8 +324,8 @@ nice" rationale is empirical, not derivational.
 | `docs/audits/2026-05-12-1ppb-implementation-plan.md` | landed + corrected | banner override on P1.B + P1.E |
 | `docs/audits/2026-05-12-lean-handover.md` | landed | Phase 4 hand-off for Lean agent |
 | `docs/audits/2026-05-12-m1-mass-table.md` | landed | honest −98% MAE baseline under substrate $E_0$ |
-| `folio-assistant/computations/paper_six_term_isotope_sweep.py` | landed | P1.A, P1.C, P1.D, P2.A, P2.B all wired |
-| `folio-assistant/computations/paper-six-term-isotope-sweep.witness.json` | landed | output of the above; combined+sub_tower_mode audit field present |
+| `folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py` | landed | P1.A, P1.C, P1.D, P2.A, P2.B all wired |
+| `folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json` | landed | output of the above; combined+sub_tower_mode audit field present |
 | `folio-assistant/computations/d_from_scratch.py` | landed | T4 → per-3A migration; P1.C hard break comment |
 | `folio-assistant/computations/mass_formula_6term_mpfr_50dps.py` | landed | T4 → per-3A migration |
 | `folio-assistant/computations/unified_low_isotope_predictor.py` | landed | docstring fix only |
@@ -333,8 +333,8 @@ nice" rationale is empirical, not derivational.
 | `folio-assistant/computations/probe_magic_shell_empirical_instantiation.py` | landed | producer for the above |
 | `folio-assistant/computations/probes/delta_coupling_closed_form_probe.py` | landed | H1 closed-form probe |
 | `folio-assistant/computations/probes/delta-coupling-closed-form-probe.witness.json` | landed | H1 witness |
-| `folio-assistant/computations/term5_aK_audit.py` | landed (audit-only) | V1-V4 audit; **not** production-wired |
-| `folio-assistant/computations/term5-aK-audit.witness.json` | landed (audit-only) | V1 backfill {p, n, D, T, ³He} |
+| `folio-assistant/computations/audits/term5_aK_audit.py` | landed (audit-only) | V1-V4 audit; **not** production-wired |
+| `folio-assistant/computations/audits/term5-aK-audit.witness.json` | landed (audit-only) | V1 backfill {p, n, D, T, ³He} |
 | `folio-assistant/computations/probe_he4_model_b_knot_survey.py` | **DROPPED** | compositionality violation |
 | `folio-assistant/computations/model-b-he4-knot-survey.witness.json` | **DROPPED** | compositionality violation |
 | `docs/coordination/1ppb.md` (one ledger row) | **NOT cherry-picked** | replaced by this branch's integrated row |

@@ -61,7 +61,7 @@ Phase 4 (Lean closure of conditional results) for the Lean agent.
 
 ## 1  Live mass table on this branch (M0 baseline)
 
-Source: `folio-assistant/computations/paper-six-term-isotope-sweep.witness.json`.
+Source: `folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json`.
 Default mode `tower_mode="li2q"`, proton-calibrated $E_0$ at S9,
 Model A T1 from Hoefsmit + Wenzl bridge.
 
@@ -135,7 +135,7 @@ only (no CAL-3 leak). Already implemented in
 
 **Code:** Add a new boolean parameter `use_substrate_E0=False` (or
 a new mode label) to `run_sweep_for_mode()` in
-`folio-assistant/computations/paper_six_term_isotope_sweep.py`. When
+`folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py`. When
 true, use `e_0_full_mev()` instead of the proton-fit calibration at
 line 564. Emit a parallel set of rows in the witness JSON under
 `all_modes[<mode>].rows_substrate_E0`.
@@ -172,10 +172,10 @@ stand up a new production-grade `term5_aK_canonical.py`); (b) emit
 `chirality_signs_for_isotope` lookup with a witness-driven $a_K$.
 
 **Status (2026-05-12, this PR):**
-- (a) ✅ Done — script lives at `folio-assistant/computations/term5_aK_audit.py`.
+- (a) ✅ Done — script lives at `folio-assistant/computations/audits/term5_aK_audit.py`.
 - (b) ✅ V1 backfill done for {p, n, D, T, ³He}; V2–V4 done for {p, n}
   only. ⁴He still blocked on P1.E (no canonical Model B braid). Witness:
-  `folio-assistant/computations/term5-aK-audit.witness.json`. Run with
+  `folio-assistant/computations/audits/term5-aK-audit.witness.json`. Run with
   `--merge-prior` for incremental backfills; use `--variants V1` to skip
   the slow symbolic mirror conventions (V2 alone takes >34 min for
   deuteron in this implementation — unbounded for A=3).

@@ -109,7 +109,7 @@ residuals are mass-table dict literals deferred to Workplan-0b
 
 | File | #644 | #645 | #652 | Conflict class |
 |------|:---:|:---:|:---:|----------------|
-| `folio-assistant/computations/paper_six_term_isotope_sweep.py` | +250 / -12 | — | +11 / -3 | **mechanical** — #652's `M_P_MEV_VALIDATION` import lands cleanly after #644's structural changes |
+| `folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py` | +250 / -12 | — | +11 / -3 | **mechanical** — #652's `M_P_MEV_VALIDATION` import lands cleanly after #644's structural changes |
 | `folio-assistant/computations/d_from_scratch.py` | +15 / -7 | — | +3 / -1 | **mechanical** — same pattern |
 | `folio-assistant/computations/probes/delta_coupling_closed_form_probe.py` | added | — | — | none |
 | `folio-assistant/computations/probe_delta_coupling_leading_form.py` | — | added | — | none |

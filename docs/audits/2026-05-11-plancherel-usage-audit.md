@@ -244,7 +244,7 @@ Active call sites that compute or rely on a Plancherel-labelled weight:
 | [`alpha_k_macdonald_closed_form.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/alpha_k_macdonald_closed_form.py), [`y_lambda_symbolic_validate.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/y_lambda_symbolic_validate.py), [`y_lambda_wenzl_bridge.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/y_lambda_wenzl_bridge.py) | $\sum y_\lambda d_\lambda = 1$ called "Plancherel completeness" | **Misnamed but numerically valid**. Identity is Markov axiom M3 (Finding D). |
 | [`mass_at_3A_proper.py:115,303,405`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/mass_at_3A_proper.py) | `normalized_plancherel_weights_3A` rescales $d_q^2/[n]_q!$ to force $\sum = 1$ | **Marked DEPRECATED** — patch around the non-normalised q-deformed weight. The fact that a renormalisation was needed is itself the witness that q-deformed $\neq$ Plancherel. |
 | [`hecke_core.py:2622,2948,3063`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/hecke_core.py) | "LEGACY Plancherel-weighted form" | Multiple deprecated paths. |
-| [`light_isotope_sweep.py:97–177`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/light_isotope_sweep.py) | `convention="plancherel"` (LEGACY) vs `"wenzl-schur"` | Explicitly exposes both conventions as a switch — already implements the distinction the canonical-weight block denies. |
+| [`light_isotope_sweep.py:97–177`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/sweeps/light_isotope_sweep.py) | `convention="plancherel"` (LEGACY) vs `"wenzl-schur"` | Explicitly exposes both conventions as a switch — already implements the distinction the canonical-weight block denies. |
 
 ---
 
@@ -346,7 +346,7 @@ needed to estimate the perturbation to downstream observables.
 - Pattern catalogue: [`.claude/skills/local/compute-audit.md`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/.claude/skills/local/compute-audit.md) §P2.
 - In-repo audit witness: [`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json).
 - Honest in-script flag: [`hecke_3a_weights.py:146`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/hecke_3a_weights.py).
-- Convention switch already implemented: [`light_isotope_sweep.py:176`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/light_isotope_sweep.py).
+- Convention switch already implemented: [`light_isotope_sweep.py:176`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/sweeps/light_isotope_sweep.py).
 
 ---
 

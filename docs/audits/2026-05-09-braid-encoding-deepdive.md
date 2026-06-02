@@ -205,8 +205,8 @@ shell-saturation.
 
 ## 7 — Cross-references
 
-- Braid-encoding audit + script: [`braid-encoding-audit.witness.json`](../../folio-assistant/computations/braid-encoding-audit.witness.json),
-  [`braid_encoding_audit.py`](../../folio-assistant/computations/braid_encoding_audit.py)
+- Braid-encoding audit + script: [`braid-encoding-audit.witness.json`](../../folio-assistant/computations/audits/braid-encoding-audit.witness.json),
+  [`braid_encoding_audit.py`](../../folio-assistant/computations/audits/braid_encoding_audit.py)
 - Neutron error diagnostic: [`neutron-error-diagnostic.witness.json`](../../folio-assistant/computations/neutron-error-diagnostic.witness.json)
 - Option B closed-form chain: [`option-b-proton-mass-full-chain.witness.json`](../../folio-assistant/computations/option-b-proton-mass-full-chain.witness.json)
 - m_e anomaly audit: [`2026-05-09-proton-m_e-anomaly.md`](2026-05-09-proton-m_e-anomaly.md)

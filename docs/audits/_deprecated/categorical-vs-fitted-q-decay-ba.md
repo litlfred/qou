@@ -537,7 +537,7 @@ The errors are SIMILAR in magnitude, but the 4-tier formula is
 ### Concrete next steps (refined under 3-input scheme)
 
 1. **Re-emit `mass-table-ppb` using the 4-tier formula.** Existing
-   computations: [`light_isotope_sweep.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/light_isotope_sweep.py),
+   computations: [`light_isotope_sweep.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/sweeps/light_isotope_sweep.py),
    [`bw_chirality_isotopes.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/bw_chirality_isotopes.py),
    [`mass_formula_6term.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass_formula_6term.py).
 2. **Investigate the 1.84% `m_p/m_e` residual** in the
@@ -622,7 +622,7 @@ pair does not change this; Q-value precision needs sub-ppm B-precision.
 
 ## Audit of 524 canonical compute scripts (2026-04-27)
 
-[`canonical_script_input_audit.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/canonical_script_input_audit.py)
+[`canonical_script_input_audit.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/audits/canonical_script_input_audit.py)
 classified every Python compute script under
 `folio-assistant/computations/` for alignment with the paper's
 3-input scheme (`calibration-inputs.md`):
@@ -642,7 +642,7 @@ both `m_p` and `m_n` from CODATA when the framework prescribes
 `m_n = m_p + Q_β`. This is a major alignment gap — the codebase has
 drifted from the paper's stated calibration scheme.
 
-**Witness:** [`canonical-script-input-audit.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/canonical-script-input-audit.witness.json) (full per-script
+**Witness:** [`canonical-script-input-audit.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/audits/canonical-script-input-audit.witness.json) (full per-script
 classification table).
 
 ### How to migrate over-counting scripts
@@ -945,7 +945,7 @@ should be re-evaluated.
 
 ### Update (2026-04-28): calibration-consistent Wenzl-Schur sweep
 
-Refactored [`light_isotope_sweep.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/light_isotope_sweep.py) with a
+Refactored [`light_isotope_sweep.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/sweeps/light_isotope_sweep.py) with a
 `--convention {plancherel,wenzl-schur}` flag. Both modes use the
 same atomic braid words, the same E_0 calibration formula
 (`E_0 = 0.782 / |tr_n - tr_p|`), but **different per-λ weights**:

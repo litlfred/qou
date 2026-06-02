@@ -41,7 +41,7 @@ on:
       - "folio-assistant/computations/demazure_markov_trace.py"
       - "folio-assistant/computations/alpha_k_macdonald_closed_form.py"
       - "folio-assistant/computations/codata_reconciliation.py"
-      - "folio-assistant/computations/brundan_kleshchev_audit.py"
+      - "folio-assistant/computations/audits/brundan_kleshchev_audit.py"
       - "folio-assistant/computations/atom_mass_additive_baseline.py"
       - "folio-assistant/computations/rho_f_volume_binding_gap.py"
       - "folio-assistant/computations/onepb_status_dashboard.py"
@@ -69,7 +69,7 @@ on:
       - "folio-assistant/computations/demazure_markov_trace.py"
       - "folio-assistant/computations/alpha_k_macdonald_closed_form.py"
       - "folio-assistant/computations/codata_reconciliation.py"
-      - "folio-assistant/computations/brundan_kleshchev_audit.py"
+      - "folio-assistant/computations/audits/brundan_kleshchev_audit.py"
       - "folio-assistant/computations/atom_mass_additive_baseline.py"
       - "folio-assistant/computations/rho_f_volume_binding_gap.py"
       - "folio-assistant/computations/onepb_status_dashboard.py"
@@ -229,7 +229,7 @@ jobs:
         # 262 actually-unblocked scripts; it is an active CI gate
         # for the 22 ppb m_μ/m_e calibration floor (#564 1ppb plan).
         run: |
-          python3 folio-assistant/computations/e0_calibration_audit.py --strict
+          python3 folio-assistant/computations/audits/e0_calibration_audit.py --strict
 
       - name: Cross-check tr_M @ q_0 — Hoefsmit vs markov_peel (1ppb)
         # Independent-path consistency gate for the canonical Markov
@@ -341,8 +341,8 @@ jobs:
         # See docs/canonical-derivation-cheat-sheet.md §5 fix #1 for
         # the originating LAMBDA_PROTON_DOC case.
         run: |
-          python3 folio-assistant/computations/fitted_labelled_canonical_audit.py || true
-          python3 -c "import json; d=json.load(open('folio-assistant/computations/fitted-labelled-canonical-audit.witness.json')); print(f'fitted-labelled-canonical-audit: flagged={d[\"data\"][\"flagged_script_count\"]} issues={d[\"data\"][\"total_issues\"]} (baseline 0)')"
+          python3 folio-assistant/computations/audits/fitted_labelled_canonical_audit.py || true
+          python3 -c "import json; d=json.load(open('folio-assistant/computations/audits/fitted-labelled-canonical-audit.witness.json')); print(f'fitted-labelled-canonical-audit: flagged={d[\"data\"][\"flagged_script_count\"]} issues={d[\"data\"][\"total_issues\"]} (baseline 0)')"
 
       - name: I14 witness-provenance audit (warn-only)
         # Every *.witness.json under folio-assistant/computations/
@@ -356,8 +356,8 @@ jobs:
         # tables so they always have correct witnessed data from
         # canonical pipeline. too much divergence."
         run: |
-          python3 folio-assistant/computations/witness_provenance_audit.py
-          python3 -c "import json; d=json.load(open('folio-assistant/computations/witness-provenance-audit.witness.json')); print('witness-provenance:', d['data']['counts'])"
+          python3 folio-assistant/computations/audits/witness_provenance_audit.py
+          python3 -c "import json; d=json.load(open('folio-assistant/computations/audits/witness-provenance-audit.witness.json')); print('witness-provenance:', d['data']['counts'])"
 
       - name: Run lp_dual_witness_validator (--strict-wired)
         # Per prop:operator-selection-lp § dual program: every wired

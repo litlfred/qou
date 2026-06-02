@@ -25,8 +25,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/brundan_kleshchev_audit.py",
-    witness: "folio-assistant/computations/brundan-kleshchev-audit.witness.json",
+    script: "folio-assistant/computations/audits/brundan_kleshchev_audit.py",
+    witness: "folio-assistant/computations/audits/brundan-kleshchev-audit.witness.json",
     status: "verified",
   },
 });

@@ -33,7 +33,7 @@ The boxed Kashaev form is flagged "Markov-invariance-broken at $q_0$" producing 
 
 ### Canonical substrate-only predictor
 
-[`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/paper_six_term_isotope_sweep.py) — **the working entry point**. Implements T1+T2+T3+T4+T5(+T6 if witness present) with 5 selectable `tower_mode`s:
+[`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py) — **the working entry point**. Implements T1+T2+T3+T4+T5(+T6 if witness present) with 5 selectable `tower_mode`s:
 
 | Mode | T2+T3 path | Mean \|err\| | Max \|err\| | Status |
 |------|-----------|-------------:|------------:|--------|
@@ -43,7 +43,7 @@ The boxed Kashaev form is flagged "Markov-invariance-broken at $q_0$" producing 
 | `r-side-bare` | **Path 1 (paper preferred)** | **36%** | **48%** | canonical for now |
 | `li2q` | corrected Kashaev (Li_2^q) | 22% | 31% | best empirical |
 
-Output: [`paper-six-term-isotope-sweep.witness.json`](../../folio-assistant/computations/paper-six-term-isotope-sweep.witness.json).
+Output: [`paper-six-term-isotope-sweep.witness.json`](../../folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json).
 
 ### Five-mode side-by-side at $q_0$ (mean \|err\| vs CODATA, post-calibration)
 

@@ -97,7 +97,7 @@ Each crossing tuple `(c, d)` represents the Hecke element `c·σ + d·I`; chain 
 
 **Formula**: `T4 = m_e · τ(C_dim_q) = m_e · Σ_{λ ⊢ 3A} 1/dim_q(λ)`
 
-**Source**: [`term4_frobenius_codim(A)`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/paper_six_term_isotope_sweep.py#L285) in `paper_six_term_isotope_sweep.py`. Per `thm:frobenius-codim-universal`.
+**Source**: [`term4_frobenius_codim(A)`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py#L285) in `paper_six_term_isotope_sweep.py`. Per `thm:frobenius-codim-universal`.
 
 **A used**: A=1 (¹H has 1 nucleon). Partitions of 3·1 = 3 are `(3), (2,1), (1,1,1)`. Hook-length formula gives:
 - dim_q((3)) = [3]_q!/([3]_q·[2]_q·[1]_q) = 1

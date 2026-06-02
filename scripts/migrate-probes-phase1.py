@@ -134,6 +134,17 @@ def inject_shim(script_path: Path, dry: bool) -> bool:
             while j < len(lines) and quote not in lines[j]:
                 j += 1
             insert_idx = j + 1  # past the closing line
+    # Skip blank lines + comment-only lines between docstring close
+    # and `from __future__` — Phase 2 bugfix (the shim used to land
+    # before `from __future__` and break compile() in 38 scripts).
+    look_ahead = insert_idx
+    while look_ahead < len(lines) and (
+        lines[look_ahead].strip() == ""
+        or lines[look_ahead].lstrip().startswith("#")
+    ):
+        look_ahead += 1
+    if look_ahead < len(lines) and lines[look_ahead].startswith("from __future__"):
+        insert_idx = look_ahead
     # Skip `from __future__ import …` lines
     while insert_idx < len(lines) and lines[insert_idx].startswith("from __future__"):
         insert_idx += 1

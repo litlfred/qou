@@ -113,7 +113,7 @@ Full discipline:
 
 ## Numerical precision ladder
 
-Verified at $q_0$ via [`binding_q_target_sweep.py`](../../folio-assistant/computations/binding_q_target_sweep.py) at 50 dps:
+Verified at $q_0$ via [`binding_q_target_sweep.py`](../../folio-assistant/computations/sweeps/binding_q_target_sweep.py) at 50 dps:
 
 See [Table 2](#tbl:q-beta-categorical-precision-ladder-table2-data).
 

@@ -165,9 +165,9 @@ code reads from Lean directly.
 
 ## Files modified by this branch
 
-- [`folio-assistant/computations/term5_aK_audit.py`](https://github.com/litlfred/qou/blob/claude/chirality-pn-counting-finding2/folio-assistant/computations/term5_aK_audit.py)
+- [`folio-assistant/computations/audits/term5_aK_audit.py`](https://github.com/litlfred/qou/blob/claude/chirality-pn-counting-finding2/folio-assistant/computations/audits/term5_aK_audit.py)
   — `aK_closed_form` uses canonical `chirality_signs_for_isotope_inferred`
-- [`folio-assistant/computations/term5-aK-audit.witness.json`](https://github.com/litlfred/qou/blob/claude/chirality-pn-counting-finding2/folio-assistant/computations/term5-aK-audit.witness.json)
+- [`folio-assistant/computations/audits/term5-aK-audit.witness.json`](https://github.com/litlfred/qou/blob/claude/chirality-pn-counting-finding2/folio-assistant/computations/audits/term5-aK-audit.witness.json)
   — T and ³He `closed_form_aK` updated from `1.209` to `0.956`
 - [`docs/audits/2026-05-18-chirality-pn-counting-finding2.md`](https://github.com/litlfred/qou/blob/claude/chirality-pn-counting-finding2/docs/audits/2026-05-18-chirality-pn-counting-finding2.md)
   (this file)

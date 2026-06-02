@@ -44,7 +44,7 @@ folio-assistant/computations/mass_formula_6term.py:141:        single += Phi_q(a
 folio-assistant/computations/mass_formula_6term.py:143:        pair += Phi_q(abs(vols[i] * vols[i + 1]))
 folio-assistant/computations/mass_endomorphism.py:145,255,264,273
 folio-assistant/computations/multi_level_jet_sum.py:68
-folio-assistant/computations/paper_six_term_isotope_sweep.py:291
+folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py:291
 folio-assistant/computations/brane_tower_isospin_diagnosis.py:178
 folio-assistant/computations/atom_level_wedderburn_tower.py:120
 folio-assistant/computations/mass_formula_6term_mpfr_50dps.py:254

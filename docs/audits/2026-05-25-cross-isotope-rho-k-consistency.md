@@ -20,7 +20,7 @@ closure piece — not a per-isotope coincidence**.
 
 | Object | |tr_M(T_w, q₀)| | Target (MeV) | Bare m_e·|tr_M| (MeV) | ρ_K closure factor | Source |
 |---|---:|---:|---:|---:|---|
-| **proton** (β_Bor in H_3) | 1.0653 | 938.27 | 0.544 | **1723.59** | [PR #1272 `rho_k_proton_substrate_audit.py`](../../folio-assistant/computations/rho_k_proton_substrate_audit.py) |
+| **proton** (β_Bor in H_3) | 1.0653 | 938.27 | 0.544 | **1723.59** | [PR #1272 `rho_k_proton_substrate_audit.py`](../../folio-assistant/computations/audits/rho_k_proton_substrate_audit.py) |
 | **deuteron** (T_w in H_6) | 0.3883 | 1875.6 | 0.198 | **9453.03** | [`rho-k-h3a-crystal.witness.json`](../../folio-assistant/computations/rho-k-h3a-crystal.witness.json) |
 | **⁴He** (T_w via Phase 5q in H_12) | **0.1539** | 3727.4 | 0.0786 | **47397** | [`atomic-tr-m-helium4-canonical.witness.json`](../../folio-assistant/computations/atomic-tr-m-helium4-canonical.witness.json) (commit `d2eeec27`) |
 | **c_αα binding** (T_w(7²_1) in H_?) | 0.2086 (Wenzl) | 2.427 | 0.107 | **22.66** | [`c-alpha-alpha-categorical-via-jones-markov.witness.json`](../../folio-assistant/computations/c-alpha-alpha-categorical-via-jones-markov.witness.json) (commit `388a5b77`) |

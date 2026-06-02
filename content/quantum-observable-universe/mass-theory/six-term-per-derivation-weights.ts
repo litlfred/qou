@@ -15,9 +15,9 @@ export default proposition({
   cites: [],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/paper_six_term_isotope_sweep.py",
+    script: "folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py",
     witness: [
-      "folio-assistant/computations/paper-six-term-isotope-sweep.witness.json",
+      "folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json",
       "folio-assistant/computations/codata-masses.witness.json",
     ],
     status: "verified",
