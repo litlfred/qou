@@ -143,7 +143,7 @@ exist in this codebase:
   ([`hoefsmit_symbolic.chi_lambda_symbolic`](../../folio-assistant/computations/hoefsmit_symbolic.py)).
 
 - **Markov-peel recursive ascent.**
-  [`markov_peel.tr_M_element`](../../folio-assistant/computations/markov_peel.py)
+  [`markov_peel.tr_M_element`](../../folio-assistant/computations/markov/markov_peel.py)
   recursively reduces $\beta$ via $\mathrm{tr}_M(x \sigma_n) = z \mathrm{tr}_M(x)$
   until reaching the constant term $\mathrm{tr}_M(1) = 1$.
 
@@ -189,7 +189,7 @@ canonical basis of reduced braid words $\sigma_{i_1} \cdots \sigma_{i_k}$).
 
 ## Files
 
-- [`folio-assistant/computations/markov_weights_symbolic.py`](../../folio-assistant/computations/markov_weights_symbolic.py)
+- [`folio-assistant/computations/markov/markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py)
   — both paths.
 - [`folio-assistant/computations/y_lambda_equivalence_proof.py`](../../folio-assistant/computations/y_lambda_equivalence_proof.py)
   — equivalence verification script.

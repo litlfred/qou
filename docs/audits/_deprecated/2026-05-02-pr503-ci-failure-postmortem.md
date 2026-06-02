@@ -75,9 +75,9 @@ Two acceptable resolutions, both followed:
   the four validators **locally** before pushing:
 
   ```bash
-  python3 folio-assistant/computations/habiro_witness_validator.py
-  python3 folio-assistant/computations/markov_substrate_realizer.py
-  python3 folio-assistant/computations/markov_pipeline_cross_validator.py
+  python3 folio-assistant/computations/habiro/habiro_witness_validator.py
+  python3 folio-assistant/computations/markov/markov_substrate_realizer.py
+  python3 folio-assistant/computations/markov/markov_pipeline_cross_validator.py
   python3 folio-assistant/computations/derivation_chain_validator.py
   ```
 

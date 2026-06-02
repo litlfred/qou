@@ -3,13 +3,13 @@
 **Date:** 2026-05-03
 **Branch:** `claude/w3-w4-followups`
 **Ref:**
-- [`habiro_coefficients_extended.py`](../../folio-assistant/computations/habiro_coefficients_extended.py)
+- [`habiro_coefficients_extended.py`](../../folio-assistant/computations/habiro/habiro_coefficients_extended.py)
 - [`habiro-coefficients-extended.witness.json`](../../folio-assistant/computations/habiro-coefficients-extended.witness.json)
 
 ## Background
 
 The previous symbolic-q pipeline,
-[`habiro_coefficients_atomic.py`](../../folio-assistant/computations/habiro_coefficients_atomic.py),
+[`habiro_coefficients_atomic.py`](../../folio-assistant/computations/habiro/habiro_coefficients_atomic.py),
 took 10+ minutes per atom even for the deuteron (A = 2) and was
 documented as **intractable for A ≥ 3** (it builds Hoefsmit-symbolic
 matrices over partitions of 3·A and runs simplification on the full
@@ -20,7 +20,7 @@ binding constraint for:
   [`docs/audits/2026-05-03-next-session-plan-to-1ppb.md`](2026-05-03-next-session-plan-to-1ppb.md))
 - The “analytical D(u)” research question raised in the W-3 explore
   pass (see PR #521,
-  [`habiro-coefficients-interpolate.witness.json`](../../folio-assistant/computations/habiro-coefficients-interpolate.witness.json)).
+  [`habiro-coefficients-interpolate.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-interpolate.witness.json)).
 
 ## Resolution
 
@@ -92,7 +92,7 @@ in D(u).  ∎
 ### `2^(2A + 1)` factor
 
 Inspection of `atomic_braid_to_crossings(Z, N, include_inter=True)`
-(see [`folio-assistant/computations/hecke_character_symbolic.py`](../../folio-assistant/computations/hecke_character_symbolic.py)
+(see [`folio-assistant/computations/hecke/hecke_character_symbolic.py`](../../folio-assistant/computations/hecke/hecke_character_symbolic.py)
 together with the per-nucleon crossing tables `proton_cross` /
 `neutron_cross` in
 [`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py))
@@ -441,7 +441,7 @@ and `Dprime = 2^(2A+1) · (1+u²)^(3A-1)`.  Deferred as a follow-up.
    provides them. The previous interpolate-path note that the
    “analytical D(u) is the next step” is superseded.
 2. **No D(u) sampling needed.** The numerical-interpolation path
-   ([`habiro_coefficients_interpolate.py`](../../folio-assistant/computations/habiro_coefficients_interpolate.py))
+   ([`habiro_coefficients_interpolate.py`](../../folio-assistant/computations/habiro/habiro_coefficients_interpolate.py))
    was scaffolded as a fallback; with markov_peel symbolic available,
    sampling D(u) by Vandermonde + rounding is no longer required.
 3. **Closed-form D(u) is a structural finding.** The 2^(2A+1) ·
@@ -594,7 +594,7 @@ provides the machinery.
 
 - `markov_peel.tr_M_atomic` — PR #520 / PR #516 (#508).
 - W-3 explore note from PR #521:
-  [`habiro-coefficients-interpolate.witness.json`](../../folio-assistant/computations/habiro-coefficients-interpolate.witness.json).
+  [`habiro-coefficients-interpolate.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-interpolate.witness.json).
 - 1-ppb workplan:
   [`docs/audits/2026-05-03-next-session-plan-to-1ppb.md`](2026-05-03-next-session-plan-to-1ppb.md).
 

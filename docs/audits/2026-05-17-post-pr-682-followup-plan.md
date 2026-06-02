@@ -42,7 +42,7 @@ chi-cache path, not just p/n/D.
 
 ## 2. Habiro coefficient extension to T / ³He / ⁴He (Phase γ)
 
-**Source script:** `folio-assistant/computations/habiro_coefficients_atomic.py`
+**Source script:** `folio-assistant/computations/habiro/habiro_coefficients_atomic.py`
 
 **Current coverage:** `habiro-coefficients-atomic.witness.json` covers
 A ∈ {1, 1, 2} (p, n, D); A ∈ {3, 3, 4} (T, ³He, ⁴He) are missing.

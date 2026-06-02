@@ -46,6 +46,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -261,9 +262,9 @@ def extract_helium_witnesses(u):
     contribution carrying Φ_8 — this pins where Φ_8 actually enters.
     """
     log("  --- Loading existing witnesses ---")
-    atomic_path = HERE / "habiro-coefficients-atomic.witness.json"
-    he3_path = HERE / "habiro-coefficients-helium-3.witness.json"
-    he4_path = HERE / "habiro-coefficients-helium-4.witness.json"
+    atomic_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
+    he3_path = _pb.witness_path("habiro-coefficients-helium-3.witness.json", HERE)
+    he4_path = _pb.witness_path("habiro-coefficients-helium-4.witness.json", HERE)
 
     atomic = json.loads(atomic_path.read_text())
     he3 = json.loads(he3_path.read_text()) if he3_path.exists() else None

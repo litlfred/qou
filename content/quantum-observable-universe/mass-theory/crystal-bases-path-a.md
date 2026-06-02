@@ -139,7 +139,7 @@ verified via crystal-bases Path A in $13.7$ s, matching the
 closed-form prediction $18 \cdot 2 + 21 \cdot 2 + 1 = 79$.
 
 The naive symbolic attempt with
-[`hecke_laurent_fast.tr_M_atomic_fast(2, 2)`](../../../folio-assistant/computations/hecke_laurent_fast.py)
+[`hecke_laurent_fast.tr_M_atomic_fast(2, 2)`](../../../folio-assistant/computations/hecke/hecke_laurent_fast.py)
 did not return in $600$ s; the crystal-bases route at $H_{12}$
 with the $y_\lambda$ pole-order cache pre-built is **40000$\times$
 faster end-to-end** than even the projected symbolic completion.

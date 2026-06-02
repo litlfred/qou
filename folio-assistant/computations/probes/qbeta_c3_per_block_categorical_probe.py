@@ -69,6 +69,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -102,14 +103,14 @@ def chi_lambda_diff(q: sp.Symbol) -> dict[str, sp.Expr]:
 
 def load_q0_50_digit() -> str:
     """Load canonical q_0 substrate value (50-decimal-digit string)."""
-    p = HERE / "q-pinning-50-digit.witness.json"
+    p = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
     data = json.load(open(p))
     return data["derived_50_digit"]["q"]
 
 
 def load_y_lambda_at_q0() -> dict[str, mp.mpf]:
     """Load shadow weights y_λ(q_0) for n=3 partitions."""
-    p = HERE / "y-lambda-at-q0.witness.json"
+    p = _pb.witness_path("y-lambda-at-q0.witness.json", HERE)
     data = json.load(open(p))
     out = {}
     for entry in data["data"]["by_n"]["3"]:

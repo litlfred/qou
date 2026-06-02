@@ -29,7 +29,7 @@ with the symbolic value.  Compare against AME-derived B values.
 
 | Asset | Path | Coverage | Gap |
 |-------|------|----------|-----|
-| Symbolic Markov-trace recursion | `folio-assistant/computations/markov_trace_canonical.py` | Implements canonical tr_M with cyclicity, Markov II, Hecke quadratic.  Symbolic in q. | Returns sympy expression; needs harness to feed it the four target braid words and evaluate at `q_0` mpf. |
+| Symbolic Markov-trace recursion | `folio-assistant/computations/markov/markov_trace_canonical.py` | Implements canonical tr_M with cyclicity, Markov II, Hecke quadratic.  Symbolic in q. | Returns sympy expression; needs harness to feed it the four target braid words and evaluate at `q_0` mpf. |
 | Memoised q-MN characters | `folio-assistant/computations/q_mn_recursive_memoized.py` | Halverson–Ram broken-strip rule, all partitions/cycle types up to large n. | Already gives χ_λ(β) symbolically; not yet wired to ²H/³H/³He braid words. |
 | Wenzl-bridge `y_λ` extension | `folio-assistant/computations/y_lambda_wenzl_bridge_extended.py` | Symbolic `y_λ` for n=2..12 via Schur principal specialisation. | Provides the *weights*; combined with χ_λ they form `tr_M = Σ y_λ χ_λ / d_λ` (or similar) — needs explicit assembler. |
 | Hoefsmit witness (k=3..11) | `hoefsmit_witness.py` + `hoefsmit_witness.json` | Pre-computed χ(4₁), χ(B³) at every λ for k=3..11. | Lacks `χ(8_11)` for ³H; lacks `χ(T(2,3))` for the electron. |

@@ -70,6 +70,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from datetime import datetime, timezone
@@ -213,7 +214,7 @@ def main() -> int:
     # Production witness (post-2026-05-11 migration); was
     # `habiro-coefficients-atomic-fast.witness.json` in the deprecated
     # version (different schema; we now use the canonical witness).
-    witness_path = HERE / "habiro-coefficients-atomic.witness.json"
+    witness_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
     if not witness_path.exists():
         print(f"  ERROR: missing {witness_path}")
         return 1

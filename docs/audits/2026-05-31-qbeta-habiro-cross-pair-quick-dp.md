@@ -4,7 +4,7 @@
 > against atomic-number-jump pairs. Sibling: full cross-pair probe
 > [`qbeta_habiro_cross_pair_factorization.py`](../../folio-assistant/computations/qbeta_habiro_cross_pair_factorization.py)
 > requires ³He / ⁴He Habiro coefficients that are not yet generated
-> (only p, n, D are in [`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro-coefficients-atomic.witness.json)).
+> (only p, n, D are in [`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json)).
 > This audit uses the available 3 atoms to compute (D − p) and (D − n)
 > as the closest available "atomic-number step" comparisons.
 >

@@ -85,6 +85,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 import time
 from pathlib import Path
@@ -236,7 +237,7 @@ def main() -> int:
 
     # Read CAL-anchored c_k from the cache witness
     import json
-    cache_path = HERE / "qbeta-ck-cache.witness.json"
+    cache_path = _pb.witness_path("qbeta-ck-cache.witness.json", HERE)
     cache = json.loads(cache_path.read_text())
     cal_c_k = {}
     for row in cache["data"]["rows"]:

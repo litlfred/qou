@@ -60,6 +60,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -84,7 +85,7 @@ def main() -> int:
     print("=" * 100)
 
     # Load Δ_n² verification witness
-    witness_path = HERE / "full-twist-delta-n2-verification.witness.json"
+    witness_path = _pb.witness_path("full-twist-delta-n2-verification.witness.json", HERE)
     if not witness_path.exists():
         print(f"  ERROR: {witness_path} missing")
         return 1
@@ -157,7 +158,7 @@ def main() -> int:
     # `atomic-mass-via-rho-k.witness.json`; this script audits the
     # placeholder `full_twist_scalar(A)=1.0` shortcut in the legacy
     # path and therefore remains a legacy-witness consumer by design.
-    s3_path = HERE / "atomic-braid-mass-table.witness.json"
+    s3_path = _pb.witness_path("atomic-braid-mass-table.witness.json", HERE)
     s3 = json.loads(s3_path.read_text())
     rows = {r["atom"]: r for r in s3["data"]["rows"]}
 

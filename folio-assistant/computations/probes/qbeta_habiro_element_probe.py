@@ -60,6 +60,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -409,7 +410,7 @@ def main() -> int:
     print()
 
     # Load Habiro witness
-    hab_path = HERE / "habiro-coefficients-atomic.witness.json"
+    hab_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
     hab = json.loads(hab_path.read_text())
     builder.add_data("habiro_witness_used", str(hab_path.name))
 

@@ -86,7 +86,7 @@ paper to keep them disambiguated:
   also reserved for time-like usage).
 - **$u$** = **two distinct objects historically conflated in Python
   compute scripts** (registered 2026-06-01 after
-  [`habiro_q_difference_fourier.py`](../../../folio-assistant/computations/habiro_q_difference_fourier.py)
+  [`habiro_q_difference_fourier.py`](../../../folio-assistant/computations/habiro/habiro_q_difference_fourier.py)
   caught the collision producing a $5\times10^{38}$ error from the
   wrong substitution). They are **not interchangeable**:
     - **Habiro $u = q^{1/2}$** — the half-twist variable in the Habiro

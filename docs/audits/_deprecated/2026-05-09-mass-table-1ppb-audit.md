@@ -237,7 +237,7 @@ Phase numbering matches `/root/.claude/plans/lots-of-new-math-parallel-lagoon.md
 - `folio-assistant/computations/q_parameter.py`
 - `folio-assistant/computations/lp_dual_solver.py`
 - `folio-assistant/computations/atomic_braid_mass_table.py`
-- `folio-assistant/computations/habiro_witness_validator.py`
+- `folio-assistant/computations/habiro/habiro_witness_validator.py`
 - `folio-assistant/computations/build_atom_tr_M_chains.py`
 - `folio-assistant/computations/build_markov_trace_assembly_chain.py`
 - `folio-assistant/computations/n_sym_w2_retraction.py`

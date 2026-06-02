@@ -737,7 +737,7 @@ this conjecture and the broader Φ_q–JSJ programme.
 ### Round 17 — Wedderburn projection computed: hypothesis FALSIFIED for bare braid
 
 Implementing the Wedderburn decomposition via the existing
-[`hecke_characters.py`](folio-assistant/computations/hecke_characters.py)
+[`hecke_characters.py`](folio-assistant/computations/hecke/hecke_characters.py)
 infrastructure, computed the H_4(q) Wedderburn projection of the
 bare H_2 molecular braid $\sigma_1 \sigma_2 \sigma_3 \in B_4$.
 

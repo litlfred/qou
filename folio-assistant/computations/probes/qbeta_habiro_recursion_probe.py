@@ -93,6 +93,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -110,7 +111,7 @@ except Exception:
 
 HERE = Path(__file__).resolve().parent
 WITNESS_PATH = HERE / "qbeta-habiro-recursion.witness.json"
-HAB_INPUT = HERE / "habiro-coefficients-atomic.witness.json"
+HAB_INPUT = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
 
 
 u = sp.Symbol('u')

@@ -41,6 +41,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -117,7 +118,7 @@ def main() -> int:
     print()
 
     # ── Load production mass-table-comprehensive witness ────────
-    witness_path = HERE / "mass-table-comprehensive.witness.json"
+    witness_path = _pb.witness_path("mass-table-comprehensive.witness.json", HERE)
     if not witness_path.exists():
         print(f"ERROR: {witness_path} not found")
         return 1

@@ -32,7 +32,7 @@ $$
  character** of the atom braid in the irrep $\rho_{\lambda_{\mathrm{shell}}}$
  ([conj:hoefsmit-scattering-pipeline](#conj:hoefsmit-scattering-pipeline));
  computed for the deuteron via
- [`hecke_character_symbolic.q_character_on_braid_word`](../../../folio-assistant/computations/hecke_character_symbolic.py).*
+ [`hecke_character_symbolic.q_character_on_braid_word`](../../../folio-assistant/computations/hecke/hecke_character_symbolic.py).*
 
 **Numerical verification — A_magic = 2 (deuteron).**
 

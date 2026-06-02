@@ -798,7 +798,7 @@ relate it to the Kashaev intra-exactness condition.
 Per [`six-term-mass-formula-complete.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md), Term 6 is DERIVED via:
 
 - [`gb_residue_tower.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/gb_residue_tower.py) — **broken**: imports `markov_trace_three_channels` which is **never defined** anywhere in the codebase. Stale dependency.
-- [`habiro_residue_symbolic.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/habiro_residue_symbolic.py) — **works**. Emits exact residues of `Φ_q · tr_M` at primitive `n`-th roots of unity (`n=2, 3` give nonzero; `n=4, 5, 6` give no pole at primitive roots).
+- [`habiro_residue_symbolic.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/habiro/habiro_residue_symbolic.py) — **works**. Emits exact residues of `Φ_q · tr_M` at primitive `n`-th roots of unity (`n=2, 3` give nonzero; `n=4, 5, 6` give no pole at primitive roots).
 
 Habiro witness output:
 

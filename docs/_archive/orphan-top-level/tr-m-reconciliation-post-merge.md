@@ -33,7 +33,7 @@ of $\tau_M$.
 `atomic-tr-m-wenzl-bridge.witness.json` records 0.998367 for p, n, ³He
 — bit-exact identical, with identical per-block $\mathrm{Tr}(\rho_\lambda) = (1, 1.994, 1)$
 — a witness-generation bug surfaced by PR #487's audit. Direct
-re-computation via [`atomic_braid_to_crossings`](../folio-assistant/computations/hecke_character_symbolic.py)
+re-computation via [`atomic_braid_to_crossings`](../folio-assistant/computations/hecke/hecke_character_symbolic.py)
 + [`wenzl_y_lambda`](../folio-assistant/computations/from_scratch/wedderburn_markov.py)
 gives the parity-distinguishing values shown.
 
@@ -84,7 +84,7 @@ requires.
 ## Wenzl-bridge witness audit (PR #487 follow-up)
 
 Direct re-computation of τ_M for free p, n via the canonical
-[`atomic_braid_to_crossings`](../folio-assistant/computations/hecke_character_symbolic.py)
+[`atomic_braid_to_crossings`](../folio-assistant/computations/hecke/hecke_character_symbolic.py)
 + [`wenzl_y_lambda`](../folio-assistant/computations/from_scratch/wedderburn_markov.py)
 flagged a **witness-generation bug** in
 [`atomic-tr-m-wenzl-bridge.witness.json`](../folio-assistant/computations/atomic-tr-m-wenzl-bridge.witness.json):

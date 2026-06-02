@@ -97,7 +97,7 @@ rayon-parallelized binary + Python wrapper:
 |-----------|------|------|
 | Rust module | [`tools/hecke-engine/src/wenzl_lr.rs`](../../tools/hecke-engine/src/wenzl_lr.rs) | `chi_via_lr_2way`, `chi_via_lr_kway`, `tr_m_via_lr` — rayon-parallelized over `λ ⊢ n` outer partition |
 | Rust binary | [`tools/hecke-engine/src/bin/hecke_tr_m_wenzl_lr.rs`](../../tools/hecke-engine/src/bin/hecke_tr_m_wenzl_lr.rs) | CLI with JSON stdin/stdout; `--all-partitions` mode for full Markov decomposition |
-| Python wrapper | [`folio-assistant/computations/markov_trace_via_wenzl_lr.py`](../../folio-assistant/computations/markov_trace_via_wenzl_lr.py) | `subprocess.run` driver; emits `markov-trace-via-wenzl-lr.witness.json` |
+| Python wrapper | [`folio-assistant/computations/markov/markov_trace_via_wenzl_lr.py`](../../folio-assistant/computations/markov/markov_trace_via_wenzl_lr.py) | `subprocess.run` driver; emits `markov-trace-via-wenzl-lr.witness.json` |
 
 **Benchmark (4-way decomposition, p ⊗ p ⊗ n ⊗ n at H_12):**
 **173 ms wall** for all `p(12)=77` partitions on a debug build

@@ -36,6 +36,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import math
 import sys
@@ -63,7 +64,7 @@ def all_integer_coeffs(poly: sp.Expr, u: sp.Symbol) -> bool:
 
 
 def main() -> int:
-    upstream = HERE / "habiro-coefficients-atomic.witness.json"
+    upstream = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
     data = json.loads(upstream.read_text())
 
     u = sp.Symbol("u")

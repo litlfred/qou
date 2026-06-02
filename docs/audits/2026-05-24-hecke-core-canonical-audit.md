@@ -46,7 +46,7 @@ called only from EXPLORATORY functions is itself EXPLORATORY.
 
 **`chi_lambda_braid` clarification (per starting allowlist).**  The
 cheat-sheet step 6 cites `chi_lambda_braid`, but a grep confirms it
-lives in `folio-assistant/computations/hecke_characters.py:280`, not
+lives in `folio-assistant/computations/hecke/hecke_characters.py:280`, not
 in `hecke_core.py`.  No row is added here for it — out of scope for
 this audit.
 
@@ -401,6 +401,6 @@ Compared to the workplan's "strong EXPLORATORY candidates" list:
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
 - [`docs/pyhecke-optimization-workplan.md`](../pyhecke-optimization-workplan.md) §B1
 - [`folio-assistant/computations/lp_dual_solver.py`](../../folio-assistant/computations/lp_dual_solver.py) — canonical LP/SDP entry (per CLAUDE.md `## LP / SDP duals`)
-- [`folio-assistant/computations/hecke_characters.py`](../../folio-assistant/computations/hecke_characters.py) — where `chi_lambda_braid` lives (line 280)
+- [`folio-assistant/computations/hecke/hecke_characters.py`](../../folio-assistant/computations/hecke/hecke_characters.py) — where `chi_lambda_braid` lives (line 280)
 - [`folio-assistant/computations/binding_canonical.py`](../../folio-assistant/computations/binding_canonical.py) — canonical binding entry referenced by deprecated `binding_from_frobenius_pairing`
 - [`folio-assistant/computations/_deprecated/`](../../folio-assistant/computations/_deprecated/) — destination directory for the recommended split

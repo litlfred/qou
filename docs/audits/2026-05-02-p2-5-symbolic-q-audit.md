@@ -70,7 +70,7 @@ The two key invariants:
 | 487 | [`garside-irrep-qvalues.py`](../../folio-assistant/computations/garside-irrep-qvalues.py) |
 | 468 | [`gram-matrix-dual.py`](../../folio-assistant/computations/gram-matrix-dual.py) |
 | 364 | [`probe_proton_mass_scale.py`](../../folio-assistant/computations/probe_proton_mass_scale.py) |
-| 358 | [`hecke_engine.py`](../../folio-assistant/computations/hecke_engine.py) |
+| 358 | [`hecke_engine.py`](../../folio-assistant/computations/hecke/hecke_engine.py) |
 | 343 | [`electron-proton-skein-weight.py`](../../folio-assistant/computations/electron-proton-skein-weight.py) |
 | 327 | [`beta-decay-matrix.py`](../../folio-assistant/computations/beta-decay-matrix.py) |
 | 319 | [`t35-generator-volumes.py`](../../folio-assistant/computations/t35-generator-volumes.py) |

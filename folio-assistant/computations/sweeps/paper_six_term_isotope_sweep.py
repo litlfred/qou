@@ -25,6 +25,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 #!/usr/bin/env python3
 """
 Paper-canonical 6-term mass-formula sweep (singular implementation).
@@ -135,7 +136,7 @@ def _load_canonical_t1() -> dict:
     global _T1_CACHE
     if _T1_CACHE is not None:
         return _T1_CACHE
-    path = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+    path = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(f"missing canonical T1 witness: {path}")
     d = json.loads(path.read_text())
@@ -153,7 +154,7 @@ def _load_canonical_t1_model_b() -> dict:
     global _T1_CACHE_B
     if _T1_CACHE_B is not None:
         return _T1_CACHE_B
-    path = HERE / "probe-sdp-canonical-paper-formula.witness.json"
+    path = _pb.witness_path("probe-sdp-canonical-paper-formula.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(
             f"missing Model B T1 witness: {path}.  Run "
@@ -266,7 +267,7 @@ def _load_canonical_t6_MeV() -> dict[int, mp.mpf]:
     global _T6_CACHE
     if _T6_CACHE is not None:
         return _T6_CACHE
-    path = HERE / "term6-habiro-residue-mpfr-50dps.witness.json"
+    path = _pb.witness_path("term6-habiro-residue-mpfr-50dps.witness.json", HERE)
     if not path.exists():
         warnings.warn(
             f"T6 witness missing ({path}); Term 6 contributions set to 0 MeV. "
@@ -598,7 +599,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
         # If the atom is missing from the Habiro witness this raises
         # KeyError so the caller surfaces the gap rather than silently
         # falling back (per owner directive 2026-05-12: break loudly).
-        habiro_path = HERE / "path-b-habiro-mass-probe.witness.json"
+        habiro_path = _pb.witness_path("path-b-habiro-mass-probe.witness.json", HERE)
         if not habiro_path.exists():
             raise FileNotFoundError(
                 f"tower_mode='habiro' requires {habiro_path.name}; "
@@ -638,7 +639,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
         # T6 unchanged. Coverage is currently {D, T, ³He}; missing
         # atoms raise so the gap is surfaced rather than silently
         # falling back (per owner directive 2026-05-12: break loudly).
-        ppk_path = HERE / "probe-phiq-per-partition-klambda.witness.json"
+        ppk_path = _pb.witness_path("probe-phiq-per-partition-klambda.witness.json", HERE)
         if not ppk_path.exists():
             raise FileNotFoundError(
                 f"tower_mode='per-partition-k' requires {ppk_path.name}; "

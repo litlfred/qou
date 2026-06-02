@@ -130,8 +130,8 @@ calibration remains the *primary* blocker.
 Code:
 - `folio-assistant/computations/term6_residues_at_roots.py` — partial-fraction polar split on u-plane lift
 - `folio-assistant/computations/laurent_q.py` — sparse Laurent polynomial class (new)
-- `folio-assistant/computations/hecke_laurent_fast.py` — LaurentQ-coefficient GS reducer + tr_M_atomic_fast (new)
-- `folio-assistant/computations/markov_peel.py` — `tr_M_atomic` defaults to fast path
+- `folio-assistant/computations/hecke/hecke_laurent_fast.py` — LaurentQ-coefficient GS reducer + tr_M_atomic_fast (new)
+- `folio-assistant/computations/markov/markov_peel.py` — `tr_M_atomic` defaults to fast path
 - `folio-assistant/computations/binding_full_pipeline.py` — T6 wired in with module-level cache
 
 Witnesses:

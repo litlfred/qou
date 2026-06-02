@@ -5,7 +5,7 @@ using the full $H_6(R, q)$ Schur–Weyl sum
 over all $11$ partitions of $6$, with the paper's atomic-braid
 convention
 (`atomic_braid_to_crossings` in
-`folio-assistant/computations/hecke_character_symbolic.py`) and
+`folio-assistant/computations/hecke/hecke_character_symbolic.py`) and
 the numerical Hoefsmit pipeline
 (`hecke_characters.build_seminormal_matrices`).*
 

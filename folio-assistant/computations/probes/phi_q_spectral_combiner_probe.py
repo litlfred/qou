@@ -48,6 +48,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -171,7 +172,7 @@ def main() -> int:
     # Load per-block data via WitnessBuilder so the drift detector
     # (folio-assistant/computations/witness_dependency_drift.py) sees
     # the upstream hash. Per Copilot review on PR #1609.
-    upstream_path = HERE / "qbeta-per-block-paper-closed-forms.witness.json"
+    upstream_path = _pb.witness_path("qbeta-per-block-paper-closed-forms.witness.json", HERE)
     per_block_witness = builder.add_upstream(upstream_path)
     per_block_data = per_block_witness.get("data", per_block_witness)
 

@@ -331,7 +331,7 @@ therefore consistent with AME.
 
 User pushback: "where optimize ⁴He? are you using cached/recursion
 /full compute infra?" — I was building Hoefsmit seminormal matrices
-when [`markov_peel.tr_M_atomic`](../../folio-assistant/computations/markov_peel.py)
+when [`markov_peel.tr_M_atomic`](../../folio-assistant/computations/markov/markov_peel.py)
 (Gröbner-Shirshov reduction + Markov-axiom recursive peeling, with
 `@functools.lru_cache` on per-nucleon NFs) bypasses matrix
 construction entirely.

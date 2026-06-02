@@ -62,6 +62,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import math
 import sys
@@ -71,7 +72,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 
 # ── Load tr_M values (zero AME) ────────────────────────────────────────────
-_peel = HERE / "markov-peel-atomic-tr-m.witness.json"
+_peel = _pb.witness_path("markov-peel-atomic-tr-m.witness.json", HERE)
 _peel_data: dict[tuple[int, int], float] = {}
 if _peel.exists():
     _pd = json.loads(_peel.read_text())
@@ -111,7 +112,7 @@ TR_M_N = TR_M[(0, 1)]   # neutron
 TR_M_AVG = (TR_M_P + TR_M_N) / 2.0
 
 # ── Load empirical true_ρ (used only for scoring, not as formula input) ─────
-_census_path = HERE / "rho-census-wedderburn-experiment.witness.json"
+_census_path = _pb.witness_path("rho-census-wedderburn-experiment.witness.json", HERE)
 _TRUE_RHO: dict[tuple[int, int], dict] = {}
 if _census_path.exists():
     _cd = json.loads(_census_path.read_text())
