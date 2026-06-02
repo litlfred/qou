@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T20:01:43.233296+00:00",
-  "commitSha": "8a1c9f44521f0d9fc86379c5df5d0f431c681873",
+  "computedAt": "2026-06-03T11:58:05.134500+00:00",
+  "commitSha": "8a4d5fb10aac33b212925756899080ae64e470b9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "8c9ce6665871",
@@ -2312,7 +2312,6 @@
         "constit-factor-residual-phase5k.witness.json",
         "constit-factor-varying-q-phase5k2.witness.json",
         "convergence-safe-vhat-tower.witness.json",
-        "cross-check-trM-1ppb.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
@@ -2624,6 +2623,8 @@
         "probe-isospin-mirror-v9-generalization.witness.json",
         "probe-k-ud-bring-color-tube-empirical-baseline.witness.json",
         "probe-k-ud-fractional-and-alt-ansatz.witness.json",
+        "probe-option-e-h6-entry-point.witness.json",
+        "probe-option-e-phase2-crystal-vertex-candidates.witness.json",
         "probe-q6j-jm-spectral-delta-lambda.witness.json",
         "probe-theta-carry-binding.witness.json",
         "probe-volume-wedderburn-delta-lambda.witness.json",
