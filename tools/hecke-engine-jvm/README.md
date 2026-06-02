@@ -1,5 +1,7 @@
 # hecke-engine-jvm
 
+> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation--domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `folio-assistant/computations/` clusters.*
+
 UniFFI bindings for [`hecke-engine`](../hecke-engine) — same Rust core, consumed from **Kotlin / Java / Swift** (and Ruby / Python if you want them later).
 
 **Tier-3 wrapper** per [workplan v2 §3.6](../../docs/workplans/2026-05-24-library-reuse-production-readiness.md). Sibling of:

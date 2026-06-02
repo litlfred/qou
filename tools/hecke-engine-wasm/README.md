@@ -1,5 +1,7 @@
 # hecke-engine-wasm
 
+> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation--domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `folio-assistant/computations/` clusters.*
+
 `wasm-bindgen` exports of [`hecke-engine`](../hecke-engine)'s pure-Rust canonical surface — the WASM-targetable subset that doesn't depend on system GMP / MPFR / OpenBLAS / LAPACK / gfortran.
 
 **Tier-2 item 2d** from [workplan v2](../../docs/workplans/2026-05-24-library-reuse-production-readiness.md).
