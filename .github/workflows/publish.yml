@@ -159,6 +159,31 @@ jobs:
       - name: Install content pipeline dependencies
         run: cd content && bun install --frozen-lockfile 2>/dev/null || bun install
 
+      - name: Check references.bib is in sync with references.ts
+        # Guard against the recurring "Citation 'foo' undefined" failure
+        # mode (PR #1702): a contributor adds an entry to
+        # content/schema/references.ts but forgets to regenerate
+        # references.bib via `cd content && bun run export-bibtex`.
+        # The pdflatex compile in the paper-pdf job then fails with
+        # an undefined-citation error, which is opaque from a content
+        # PR's perspective. Fail fast here with an actionable message.
+        #
+        # Ignores the `% Generated:` timestamp line, which differs on
+        # every regen but carries no semantic content.
+        run: |
+          cd content && bun run pipeline/export-bibtex.ts
+          cd ..
+          if ! diff -q -I '^% Generated:' \
+               <(git show HEAD:references.bib) references.bib > /dev/null; then
+            echo "::error::references.bib is stale: a content/schema/references.ts entry was added/modified without regenerating references.bib. Fix locally with: cd content && bun run export-bibtex && cd .. && git add references.bib && git commit"
+            echo ""
+            echo "── Diff (regenerated vs committed; '% Generated:' line ignored) ──"
+            diff -u -I '^% Generated:' \
+              <(git show HEAD:references.bib) references.bib | head -40 || true
+            exit 1
+          fi
+          echo "✓ references.bib is in sync with content/schema/references.ts"
+
       - name: Extract paper list from folio
         id: folio
         run: |

@@ -65,7 +65,7 @@ with $\check{R}_{(a)} = P \circ \mathcal{R}$ the braid operator
 ([R-matrix braiding](#rem:r-matrix-braiding)) applied to the state
 $a$, and $\mathrm{tr}_M$ the Markov trace
 ([Jones--Markov trace](#thm:jones-markov-trace)).  The contour
-integral is taken around the equator of $\mathcal{S}_p \cong S^2$, i.e.\
+integral is taken around the equator of $\mathcal{S}_p \cong S^2$, i.e.,
 along a fibre of the Reeb bundle $\mathcal{R}_p$.
 
 **Vacuum and translation.**
