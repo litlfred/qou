@@ -73,3 +73,53 @@ Ranked by load-bearing-ness; per CLAUDE.md Rule 14, any h^k coefficient or weigh
 - ❌ Did NOT silently rewrite framing when sign-flip evidence contradicted PR #1063's diagnosis — posted a coordination comment instead.
 - ❌ Did NOT split-the-difference on the alias-removal Copilot finding (Copilot wanted full removal, my initial draft kept a back-compat alias; full removal won).
 - ❌ Did NOT cherry-pick from sibling PRs without source attribution.
+
+---
+
+## 2026-06-02 — census-excision + q₀-refresh coordination (PRs #1706, #1700)
+
+**Session goal:** owner directives — (1) refresh stale q₀ in producer witnesses,
+(2) "excise all non-canonical" binding from production, (3) trace the deuteron
+`2.2488 MeV` derivation. Tied to the open Δ_λ gate.
+
+### Findings
+- Deuteron `2.2488 = m_e·Vol(6₂)` is a **census knot-lookup** (ρ=m_e hand-assigned,
+  no Δ_λ). Canonical Path-D formula `B=m_e·Σ_λ y_λ χ^λ Δ_λ` undershoots D by −83%
+  bare; the `C_knot=5.852` "fix" is retracted as a fit.
+- **All composite binding is non-canonical**: census, partial-shell (interp),
+  L1 empirical-(knot,ρ_K), AND α-cluster (B(⁴He) is hardcoded AME, c_αα is ¹²C-fit,
+  NOT Lean-proved). ⁴He's "0.41 ppb" is the AME input echoed back.
+- "census → SDP" (`gap_a1_binding_k_sdp_feasibility.py`) is **circular**:
+  SDP canonically selects operator K=σ₃² but `GAP-A-1 ⊆ Δ_λ`.
+
+### Actions (PRs)
+- **#1706** — canonicity-first gate in `canonical_isotope_witness.py`: only
+  α-cluster (canonical-recursive, per owner decision) ships; census/partial-shell/
+  L1-empirical → `derivation-pending` + `excised` audit field. 119 shards regen,
+  0 non-canonical predictions leak. Fixed ⁴He shadow-by-L1 mis-tag.
+- **#1700** — `habiro-coefficients-atomic` refreshed to canonical q₀ (p/n/D).
+  Completes the realizer fix #1696 (merged): both producer cache + realizer canonical.
+
+### New Δ_λ lead (flagged to Option E #1697)
+- **Δ_λ = per-block q-hyperbolic volume via quantum-6j volume conjecture**
+  (Costantino–Murakami), Wedderburn-decomposed. Never among the 6 failed ansätze
+  (corpus-confirmed). Zero-param test: `B_D = m_e·Σ_{λ⊢6} y_λ χ^λ(β_D)·Vol_λ`.
+  Breaks 1-eqn/11-unknowns underdetermination IFF Vol_λ is categorical. Scalar
+  precedent `binding_link_volumes.py`: D +0.2%, A≥3 −60% (needs per-pair JSJ split).
+
+### Coordination posted
+- **#1535** (q₀-regen): I did the deferred canonical_isotope (98) + habiro;
+  drop from their batch; #1706 changes binding values (rebase, don't re-regen).
+- **#1697** (Option E Δ_λ H₆): excision makes table Δ_λ-gated; flagged volume-6j lead.
+- **#1507** (fit-pattern banners): complementary discipline; binding_ladder_catalog shared.
+
+### CI triage (both pre-existing, NOT mine — witnesses-only PRs)
+- #1706 validate red = `derivation_chain_validator` (c-q-q0 chain + 967 trust count);
+  my PR touches 0 `*.derivation.json`.
+- #1700 PDF-compile red = `verlinde1988` undefined cite — being fixed by **#1702**.
+
+### Next concrete task (non-overlapping)
+- Build the **zero-parameter volume-6j Δ_λ probe** (EXPLORATORY): compute
+  `Σ_λ y_λ χ^λ(β_D)·Vol_λ` for q-6j / JSJ-per-pair `Vol_λ` candidates vs D/T/³He/⁴He,
+  no free params. Coordinate with Option E #1697/#1516 before authoring any prop block.
+- (Deferred) census/partial-shell → `deprecated/` move — coordinate with #1681 refactor.
