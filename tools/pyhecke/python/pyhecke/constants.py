@@ -60,16 +60,33 @@ from pyhecke.gram import (  # type: ignore[import-not-found]
 # computations/ for now (not yet pyhecke-owned). Pull through the
 # legacy bridge.
 from . import _legacy  # noqa: F401 — sys.path bridge
-from experimental_constants import (  # type: ignore[import-not-found]
-    M_E_MEV, M_P_MEV, M_N_MEV,
-    Q_NEUTRON_MEV as _Q_NEUTRON_MEV,
-    Q_NEUTRON_MEV_ERR as _Q_NEUTRON_MEV_ERR,
-)
-from knot_volumes import (  # type: ignore[import-not-found]
-    CATALAN_G,
-    VOL_BORROMEAN,
-    VOL_4_1 as VOL_FIGURE8,  # legacy alias preserved
-)
+# Prefer the in-repo `folio-assistant/computations/substrate/`
+# (re-exported via flat-name `experimental_constants` / `knot_volumes`
+# shims that _legacy adds to sys.path).  Fall back to qou_substrate
+# (PyPI wheel) when pyhecke runs outside the repo — Pyodide, Sage,
+# user installs.  Same chain `gram.py` and the first block of this
+# file already use for q_parameter; consistency is what keeps the
+# multi-environment compatibility going.
+try:
+    from experimental_constants import (  # type: ignore[import-not-found]
+        M_E_MEV, M_P_MEV, M_N_MEV,
+        Q_NEUTRON_MEV as _Q_NEUTRON_MEV,
+        Q_NEUTRON_MEV_ERR as _Q_NEUTRON_MEV_ERR,
+    )
+    from knot_volumes import (  # type: ignore[import-not-found]
+        CATALAN_G,
+        VOL_BORROMEAN,
+        VOL_4_1 as VOL_FIGURE8,  # legacy alias preserved
+    )
+except ImportError:
+    from qou_substrate.constants import (  # type: ignore[import-not-found]
+        M_E_MEV, M_P_MEV, M_N_MEV,
+        Q_NEUTRON_MEV as _Q_NEUTRON_MEV,
+        Q_NEUTRON_MEV_ERR as _Q_NEUTRON_MEV_ERR,
+        CATALAN_G,
+        VOL_BORROMEAN,
+        VOL_FIGURE_EIGHT as VOL_FIGURE8,
+    )
 
 
 # ── Substrate q^2 ──

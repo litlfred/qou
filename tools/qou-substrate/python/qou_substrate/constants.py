@@ -265,6 +265,35 @@ except ImportError:
     # work requires mpmath; this string carries f64 precision only.
     Q_50_DIGIT_STR = repr(Q)
 
+# ── Experimental observable anchors (CODATA 2022) ─────────────
+# Mirrored from `folio-assistant/computations/substrate/experimental_constants.py`
+# so consumers running outside the repo (Pyodide, Sage, PyPI installs)
+# can reach the same MeV anchors without depending on the flat-name
+# `experimental_constants` shim that only `_legacy` puts on sys.path.
+# Authoritative source is the substrate cluster file; values match.
+M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV (CODATA 2022)
+M_E_MEV_ERR = 0.00000000015
+M_P_MEV     = 938.27208816    # ± 0.00000029   MeV (CODATA 2022)
+M_P_MEV_ERR = 0.00000029
+M_N_MEV     = 939.56542052    # ± 0.00000054   MeV (CODATA 2022)
+M_N_MEV_ERR = 0.00000054
+# β-decay endpoint Q-value (n → p + e⁻ + ν̄):
+#   Q_β = m_n − m_p − m_e   (m_ν ≈ 0 in the rest mass budget)
+Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV         # ≈ 0.78233341 MeV
+Q_NEUTRON_MEV_ERR = math.sqrt(
+    M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2,
+)
+
+# ── Knot-volume constants (math; SnapPy-verified) ─────────────
+# Catalan's constant G = Σ (-1)^k / (2k+1)², used in figure-8 and
+# Borromean hyperbolic volumes.  These f64 values are accurate to
+# machine epsilon; the substrate cluster's knot_volumes.py carries
+# the mpmath versions if higher precision is needed.
+CATALAN_G       = 0.9159655941772190     # ± < f64 ε
+VOL_BORROMEAN   = 8.0 * CATALAN_G        # 7.32772475… (8·G exactly)
+VOL_4_1         = VOL_FIGURE_EIGHT        # alias: figure-8 = 4_1 in Rolfsen
+
+
 if __name__ == "__main__":
     print(f"Substrate parameter q (canonical, m_p-pinned 2026-05-28)")
     print(f"  Vol(4_1)   = {VOL_FIGURE_EIGHT} (math constant)")
