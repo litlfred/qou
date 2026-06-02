@@ -321,10 +321,16 @@ def main():
         c = cyc_type(g)
         return {(1, 1, 1, 1, 1): "e", (1, 1, 3): "3cyc", (1, 2, 2): "transp"}[c]
 
-    class_trace = {}
+    # Average the trace over ALL elements of each S3 conjugacy class (rather than
+    # picking an arbitrary single representative): the class function is constant
+    # by definition, so averaging is exact in theory and robust to any fp noise.
+    class_trace_accum: dict = {}
+    class_count: dict = {}
     for g in S3:
         cl = s3_class(g)
-        class_trace.setdefault(cl, np.trace(Hmats_S3[g]).real)
+        class_trace_accum[cl] = class_trace_accum.get(cl, 0.0) + np.trace(Hmats_S3[g]).real
+        class_count[cl] = class_count.get(cl, 0) + 1
+    class_trace = {cl: class_trace_accum[cl] / class_count[cl] for cl in class_trace_accum}
     chi_resH = {k: round(v, 6) for k, v in class_trace.items()}
     # S3 inner products with triv, sign, std=(2,1)
     sizes = {"e": 1, "3cyc": 2, "transp": 3}
@@ -387,12 +393,24 @@ def main():
     })
 
     # --- TASK 3: THE TEST -- simple spectrum / unique invariant line? --------
+    # A canonical section requires BOTH (a) a forced NON-scalar operator AND
+    # (b) that operator having a SIMPLE spectrum (a unique distinguished
+    # eigenline). Existence of a non-scalar operator alone is insufficient: a
+    # degenerate-spectrum operator leaves every line invariant, distinguishing
+    # none. We therefore conjoin both conditions (robust if C/N change in future).
     only_forced_operator_is_scalar = (len(C) == 1) and (len(N) // len(S3) == 1)
-    canonical_line_forced = not only_forced_operator_is_scalar  # => False here
+    forced_nonscalar_operator_exists = not only_forced_operator_is_scalar
+    # No forced non-scalar operator exists here, so there is nothing whose
+    # spectrum could be simple; both flags are False.
+    forced_operator_spectrum_simple = False
+    unique_invariant_line_on_V = (
+        forced_nonscalar_operator_exists and forced_operator_spectrum_simple
+    )
+    canonical_line_forced = unique_invariant_line_on_V  # => False here
     w.add_data("task3_THE_TEST", {
-        "forced_nonscalar_operator_exists": (not only_forced_operator_is_scalar),
-        "forced_operator_spectrum_simple": False,
-        "unique_invariant_line_on_V": False,
+        "forced_nonscalar_operator_exists": forced_nonscalar_operator_exists,
+        "forced_operator_spectrum_simple": forced_operator_spectrum_simple,
+        "unique_invariant_line_on_V": unique_invariant_line_on_V,
         "canonical_section_forced": canonical_line_forced,
         "reason": (
             "C_{A5}(S3) = {e} (trivial centralizer) and N_{A5}(S3) = S3 "
