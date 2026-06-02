@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T14:57:19.083901+00:00",
-  "commitSha": "134e4f8b8b9b79e78d56b129c3c7c7846c532b84",
+  "computedAt": "2026-06-02T16:04:01.365845+00:00",
+  "commitSha": "dc84fed64012cf8c0c0daf4c5483b9e172635ebe",
   "assertions": [
     {
       "name": "multicell_scan_completed",
@@ -17,7 +17,7 @@
   "durationMs": 18,
   "computation": "alpha-em-multicell-yekutieli-probe",
   "scriptFile": "alpha_em_multicell_yekutieli_probe.py",
-  "scriptHash": "9257c616d5fe",
+  "scriptHash": "e480684dd61b",
   "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "compute_dps": 70,
