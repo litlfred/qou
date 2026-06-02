@@ -114,13 +114,20 @@ near-match. Do NOT wire as a derivation.
   hit the crystal weight without deriving it. Worth tracing
   `(1+q)/2` against known Kashiwara-crystal coefficients (Lecouvey,
   Brundan-Kleshchev).
-  - **(2026-06-02, PR #1516) Cheap pass DONE — single-vertex
-    candidates REFUTED.** All four shortcuts (χ^λ(w_0), \|χ^λ(w_0)\|,
-    sgn(χ^λ(w_0))·dim_λ, peak \|ρ_λ(w_0) diag\|) miss ≥ 66 % on the
-    deuteron target. Symmetric to #1709 geometric Vol_λ refutation.
-    Remaining in-Option-E path: full `n^w_λ` multiplicity sum
-    across multiple vertices `w` — requires extending
-    `kazhdan_lusztig.py` past its n ≤ 4 cap. Witness:
+  - **(2026-06-02, upstream main: `rho_w_crystal_vertex_trace.py`)
+    Regular-multiplicity sum REFUTED.** Σ_w ρ_w(K) = χ^λ(β_K) by
+    trace identity (n^w_λ = 1); `closure_status: does_not_close`.
+    Design doc: `docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md`.
+  - **(2026-06-02, PR #1516) Cheap pass DONE — four ad-hoc closed-
+    form candidates REFUTED.** Orthogonal to the regular-multiplicity
+    sum above: tests χ^λ(w_0), \|χ^λ(w_0)\|, sgn(χ^λ(w_0))·dim_λ,
+    peak \|ρ_λ(w_0) diag\|. All miss ≥ 66 % on the deuteron target.
+    Symmetric to #1709 geometric Vol_λ refutation. Combined verdict
+    (this + upstream): no single-vertex / trivial-multiplicity
+    shortcut closes Δ_λ. Remaining in-Option-E path: full
+    `n^w_λ` multiplicity sum (non-trivial KL polynomials) across
+    multiple vertices `w` — requires extending `kazhdan_lusztig.py`
+    past its n ≤ 4 cap. Witness:
     `probe-option-e-phase2-crystal-vertex-candidates.witness.json`.
     Note: the (1+q)/2 framing in this bullet is stale post-PROBE 1
     (#1707 refuted (1+q)/2 separately); PROBE 4 is now framed as

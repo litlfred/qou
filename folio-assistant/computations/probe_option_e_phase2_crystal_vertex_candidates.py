@@ -11,24 +11,43 @@ candidates for Δ_λ closure at the deuteron (H_6, A=2).
 
 # Ref: docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md
 # Ref: docs/coordination/option-e.md (master ledger, PROBE 4)
+# Ref: docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md
 # Ref: PR #1697 (H_6 Hoefsmit-seminormal Gram landed; provides χ_λ(w_0))
 # Ref: PR #1709 (volume-Wedderburn refutation; analogous "cheap proxy
 #                first" strategy)
 
-## Background
+## Upstream: `rho_w_crystal_vertex_trace.py` (already on main)
+
+`folio-assistant/computations/rho_w_crystal_vertex_trace.py` (landed
+on main before this branch) implements the genuine per-vertex
+ρ_w := ⟨v_T|ρ_λ(β_K)|v_T⟩ from the Hoefsmit/Young seminormal
+representation, then computes `Δ_λ^{ρ_w}(K) = Σ_w n^w_λ · ρ_w(K)`
+with `n^w_λ = 1` (regular multiplicity).  By the trace-as-diagonal-
+sum identity, this collapses to the Hecke character χ^λ(β_K) which
+is already on disk — the regular-multiplicity sum does NOT close
+the deuteron (`closure_status: does_not_close`).
+
+## What this probe adds (orthogonal scope)
+
+This probe does NOT recompute the forced identity that
+`rho_w_crystal_vertex_trace.py` already established.  Instead it
+tests four **ad-hoc closed-form candidates** for `Δ_λ` that are
+NOT the regular-multiplicity sum:
 
 The Option-E binding-energy formula is
     B(K) = m_e · Σ_λ y_λ(q_0) · χ^λ(β_K) · Δ_λ
-The Δ_λ closure factors are the open gate. The Kashiwara-crystal
-ansatz proposes
-    Δ_λ = Σ_w n^w_λ · ρ_w(K)
-with n^w_λ = Kazhdan-Lusztig multiplicities and ρ_w(K) the
-canonical-basis trace at crystal vertex w of β_K.
+With `n^w_λ = 1` and ρ_w summed, this reduces to χ^λ(β_K) and gives
+tr_M (i.e. the existing rho_w_crystal_vertex_trace.py result, no
+closure).  The full Kashiwara/KL ansatz proposes
 
-Full KL machinery for S_6 is not scaffolded (kazhdan_lusztig.py
-caps at n ≤ 4). Following PR #1709's "cheap proxy first" strategy,
-this probe tests four single-vertex / closed-form candidates for
-Δ_λ at H_6 / deuteron, using existing witness data:
+    Δ_λ = Σ_w n^w_λ · ρ_w(K)
+
+with non-trivial n^w_λ (Kazhdan-Lusztig multiplicities) and
+non-trivial single-vertex selection.  Full KL machinery for S_6 is
+not scaffolded (`kazhdan_lusztig.py` caps at n ≤ 4).  Following PR
+#1709's "cheap proxy first" strategy, this probe tests four
+single-vertex / closed-form candidates for Δ_λ at H_6 / deuteron,
+using existing witness data:
 
 | Candidate | Δ_λ formula |
 |-----------|-------------|
@@ -226,16 +245,31 @@ out = {
     "assertions": assertions,
     "allPassed": bool(all_passed),
     "verdict": (
-        "ALL FOUR cheap candidates REFUTED (consistent with PR #1709's "
-        "volume-Wedderburn refutation — both single-vertex KL and "
-        "geometric Vol_λ shortcuts fail). Full KL multiplicity machinery "
-        "n^w_λ across multiple vertices w is the remaining live "
-        "direction; or pivot to GAP-A-3/A-4 per CLAUDE.md §L2."
+        "ALL FOUR cheap candidates REFUTED (consistent with both PR "
+        "#1709's volume-Wedderburn refutation AND the upstream "
+        "rho_w_crystal_vertex_trace.py result on main — regular-"
+        "multiplicity Σ_w ρ_w = χ^λ does not close; four ad-hoc "
+        "closed-form variants also do not close). Remaining live "
+        "in-Option-E direction: full Kazhdan-Lusztig multiplicity "
+        "machinery n^w_λ (non-trivial KL multiplicities, not n^w_λ = 1) "
+        "summed across multiple vertices w — requires extending "
+        "kazhdan_lusztig.py past its n ≤ 4 cap to S_6. Otherwise: "
+        "pivot to GAP-A-3/A-4 per CLAUDE.md §L2."
         if not any_closes else
         "POSITIVE FINDING — one or more candidates closed within 10%. "
         "Escalate: refine the candidate rule, then attempt the full "
         "Σ_w n^w_λ ρ_w(D) sum to see if the leading term carries the "
         "structure."
+    ),
+    "upstream_reference": (
+        "rho_w_crystal_vertex_trace.py (on main, design doc "
+        "docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md) "
+        "implements the genuine per-vertex ρ_w from Hoefsmit/Young "
+        "seminormal at first principles; its regular-multiplicity sum "
+        "Σ_w ρ_w(K) collapses to χ^λ(β_K) by trace identity and is "
+        "shown not to close. This probe complements that work by "
+        "testing four ad-hoc closed-form variants that ARE NOT "
+        "Σ_w ρ_w; results refute the closed-form direction as well."
     ),
 }
 
