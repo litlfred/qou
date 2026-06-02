@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T03:13:36.619722+00:00",
-  "commitSha": "8288d5aa55fe6b9843ed8dcfffcb7fbf2be97a15",
+  "computedAt": "2026-06-02T15:21:02.270174+00:00",
+  "commitSha": "80331e85190595657a8593f0772a8ec70c2c0979",
   "assertions": [],
   "allPassed": true,
   "durationMs": 10,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "98670ef3a577",
-  "scriptCommitSha": "8948cf14da37f8b87865ccd85007d308796d8201",
+  "scriptCommitSha": "17b500529abcb7ea71ccc52761828810556e9b50",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,15 +18,16 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
+    "numpy": "2.4.4",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
   },
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 924,
+    "files_scanned": 931,
     "patterns": [
       "P15",
       "P16",
@@ -38,9 +39,9 @@
   "data": {
     "by_pattern_count": {
       "P15": 165,
-      "P16": 343,
-      "P21": 30,
-      "P30": 171,
+      "P16": 345,
+      "P21": 32,
+      "P30": 172,
       "P31": 69
     },
     "top_files": [
@@ -1436,6 +1437,13 @@
         "line": 95,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P21",
+        "file": "gram_matrix_seminormal_n.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
         "pattern": "P30",
@@ -2908,6 +2916,27 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
+        "pattern": "P16",
+        "file": "native_5_strand_baryon.py",
+        "line": 89,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "native_5_strand_baryon.py",
+        "line": 398,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P21",
+        "file": "native_5_strand_baryon.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
         "pattern": "P30",
         "file": "nf-qvalues.py",
         "line": 1,
@@ -3141,6 +3170,13 @@
       {
         "pattern": "P30",
         "file": "option_e_multi_isotope_delta_lambda_probe_v3.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "option_e_probe1_derive_1plusq_over_2.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
