@@ -34,8 +34,8 @@ variable (K : TorusKnot)
 /-- Genus of a torus knot: `g = (m-1)(n-1)/2`. -/
 def genus : ℕ := (K.m - 1) * (K.n - 1) / 2
 
-/-- Crossing number of a torus knot: `c = m(n-1)` for `m ≤ n`. -/
-def crossingNumber : ℕ := K.m * (K.n - 1)
+/-- Crossing number of a torus knot: `c = (m-1)n` for `m ≤ n`. -/
+def crossingNumber : ℕ := (K.m - 1) * K.n
 
 end TorusKnot
 
