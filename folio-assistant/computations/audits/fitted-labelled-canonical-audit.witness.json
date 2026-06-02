@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T19:45:21.674167+00:00",
-  "commitSha": "ffe88ea537e6c7baa07089c7c471956a22053f0a",
+  "computedAt": "2026-06-02T20:01:44.551451+00:00",
+  "commitSha": "8a1c9f44521f0d9fc86379c5df5d0f431c681873",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -37,7 +37,7 @@
   "data": {
     "total_issues": 2,
     "flagged_script_count": 2,
-    "scripts_scanned": 1515,
+    "scripts_scanned": 1519,
     "rows": [
       {
         "path": "computations/_deprecated/proton_mass_mpfr_50dps.py",

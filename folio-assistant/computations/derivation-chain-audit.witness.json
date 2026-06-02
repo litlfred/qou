@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T19:45:16.270004+00:00",
-  "commitSha": "ffe88ea537e6c7baa07089c7c471956a22053f0a",
+  "computedAt": "2026-06-02T20:01:43.233296+00:00",
+  "commitSha": "8a1c9f44521f0d9fc86379c5df5d0f431c681873",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "8c9ce6665871",
@@ -2077,6 +2077,8 @@
         "beta-ew-delta-I-eigenvalues.witness.json",
         "beta-ew-delta-I-numerical-spectrum.witness.json",
         "binding-K-direct.witness.json",
+        "binding-a3plus-arccosh-growth-split.witness.json",
+        "binding-a3plus-full-theta-assembly.witness.json",
         "binding-alpha-shift-witness.witness.json",
         "binding-block-multiplicative.witness.json",
         "binding-bring-enhancement-compare.witness.json",
@@ -2310,6 +2312,7 @@
         "constit-factor-residual-phase5k.witness.json",
         "constit-factor-varying-q-phase5k2.witness.json",
         "convergence-safe-vhat-tower.witness.json",
+        "cross-check-trM-1ppb.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
@@ -2342,6 +2345,8 @@
         "delta-q-decoration.witness.json",
         "demazure-markov-trace.witness.json",
         "demazure-sub-crystal-prescreen-50dps.witness.json",
+        "derive-binding-bond-sum.witness.json",
+        "derive-binding-bond-type.witness.json",
         "derive-binding-per-block-archimedean.witness.json",
         "derive-ms-md-torus-knot.witness.json",
         "deuteron-binding-interface-closure.witness.json",
