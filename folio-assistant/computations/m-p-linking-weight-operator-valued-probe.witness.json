@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T16:59:43.481525+00:00",
-  "commitSha": "fac0649257634c94e50401d3c207f2d504c8d3dd",
+  "computedAt": "2026-06-02T18:10:36.743486+00:00",
+  "commitSha": "c3fc7c9c26831d36f4a071ea4b443a02dc27f69a",
   "assertions": [
     {
       "name": "at_least_one_categorical_weight_passes_1ppm",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "m-p-linking-weight-operator-valued-probe",
   "scriptFile": "m_p_linking_weight_operator_valued_probe.py",
-  "scriptHash": "a79075ea9bee",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "401490c82868",
+  "scriptCommitSha": "49bff8c1d93496808c8a2c6c1df7860806d2d5f0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,17 +42,20 @@
     "L_n3_recip_dim_q": "1.20130194913836658244877825924",
     "L_n3_hook_q_inv": "1.39361763839830364514752613283",
     "L_n3_y_lambda": "1.67636807532413443402082426314",
+    "L_n3_abs_content": "1.25272421667678057458065740146",
     "L_n4_uniform": "2.53277965639939148773855585547",
     "L_n4_dim_q": "2.43852934187275243020457103597",
     "L_n4_dim_q_sq": "2.70919346062999730486155718491",
     "L_n4_recip_dim_q": "1.58911733636997032433645558467",
     "L_n4_hook_q_inv": "2.1410071638381192315276373028",
     "L_n4_y_lambda": "2.70919346062999730486155718491",
+    "L_n4_abs_content": "1.83804827660569181075063991241",
     "L_n5_uniform": "5.37613772967931538833260584567",
     "L_n5_dim_q": "4.79819861042664795602604838706",
     "L_n5_dim_q_sq": "5.16409644493214142070206875501",
     "L_n5_recip_dim_q": "2.30983058764163092346352539345",
     "L_n5_hook_q_inv": "4.08368369623022616994236471641",
-    "L_n5_y_lambda": "5.16409644493214142070206875501"
+    "L_n5_y_lambda": "5.16409644493214142070206875501",
+    "L_n5_abs_content": "3.26295274190599481420225623529"
   }
 }
