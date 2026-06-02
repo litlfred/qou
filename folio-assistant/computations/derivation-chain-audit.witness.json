@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T18:23:15.996998+00:00",
-  "commitSha": "a3aeb0d1da32cb23badcca0fe3dd382980ed1f5b",
+  "computedAt": "2026-06-02T18:30:56.913832+00:00",
+  "commitSha": "12ab03fb90cad6f3a2ba18b6950d9e74882bdac7",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2098,7 +2098,6 @@
         "binding-k-enumerator.witness.json",
         "binding-k-solver.witness.json",
         "binding-ladder-catalog.witness.json",
-        "binding-link-psd-feasibility-probe.witness.json",
         "binding-link-volumes.witness.json",
         "binding-log-scale-investigation.witness.json",
         "binding-lp-delta-audit.witness.json",
@@ -2494,7 +2493,6 @@
         "lr-fusion-self-conj-test.witness.json",
         "m-baryon-volume-form.witness.json",
         "m-p-borromean-verification-50dps.witness.json",
-        "m-p-linking-weight-operator-valued-probe.witness.json",
         "m-p-m-e-li2q.witness.json",
         "m-p-spectral-corrected-50dps.witness.json",
         "m-p-substrate-identity-50dps.witness.json",
