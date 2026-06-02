@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T16:01:35.416705+00:00",
-  "commitSha": "af4180d7c1eefc927aebbe0b5df94f7127ce0898",
+  "computedAt": "2026-06-02T17:41:03.918150+00:00",
+  "commitSha": "ae3d37dc25bd99dbca404ecafdc5eb1782b6c5c7",
   "assertions": [
     {
       "name": "vol_4_1_in_cao_meyerhoff_window",
@@ -34,7 +34,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 12,
   "computation": "hyperbolic-volumes",
   "scriptFile": "hyperbolic_volumes.py",
   "scriptHash": "3ca5b055b3e5",
@@ -46,12 +46,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.12.3",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.4.0"
+    "mpmath": "1.3.0"
   },
   "description": "Hyperbolic volumes used by the MostowRigidity class instances in the encounter chapter.  Vol(4_1) computed via the Clausen-function identity at 50 decimal digits (Vol(4_1) = 2 · Cl_2(pi/3)); Vol(5_2) is a 15-dps literature constant (Adams–Hildebrand–Weeks 1991, SnapPy verified).  Source of truth for the Lean literals MostowRigidity.figureEight.volume / .mostow_gap and MostowRigidity.knot5_2.volume via the :leanval[vol_4_1], :leanval[vol_5_2], :leanval[mostow_gap_4_1] tags.",
   "contentBlock": "prop:mostow-confinement",
