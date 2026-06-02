@@ -79,13 +79,14 @@ The investigation is open.
 
 2. **Substrate-derive α_r per isotope** (replacing the fitted α-
    ladder): the canonical chain's higher-order corrections come
-   from `binding-ladder-catalog.py`'s q-Pochhammer terms.  Per
-   `binding-endomorphism-deuteron.witness.json` + `prop:six-term-
-   per-derivation-weights`, the series may be substrate-derived if
-   we extract from the GS-NF jet tower.  This is the closure
-   mechanism that does NOT depend on the partial ⁴He chi witness
-   (it operates on the leading magic-A residual + the q-Pochhammer
-   structure, both of which are already on `main`).
+   from `binding_ladder_catalog.py`'s q-Pochhammer terms.  Per
+   `binding-endomorphism-deuteron.witness.json` +
+   `prop:six-term-per-derivation-weights`, the series may be
+   substrate-derived if we extract from the GS-NF jet tower.
+   This is the closure mechanism that does NOT depend on the
+   partial ⁴He chi witness (it operates on the leading magic-A
+   residual + the q-Pochhammer structure, both of which are
+   already on `main`).
 
 3. **Re-run PR #1726 V3 on the full ⁴He chi witness** once
    regenerated; only then is a V3-vs-magic-A comparison meaningful.
