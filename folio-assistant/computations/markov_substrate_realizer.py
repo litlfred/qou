@@ -46,6 +46,7 @@ from sympy import GF, Integer, Symbol
 sys.path.insert(0, str(Path(__file__).parent))
 from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q as CANONICAL_Q  # noqa: E402
 
 
 HERE = Path(__file__).parent
@@ -175,7 +176,21 @@ def main() -> int:
         return 1
 
     witness = HabiroAtomicWitness.from_json(INPUT_WITNESS)
-    q_0 = float(witness.parameters.get("q_0", 1.1099785827513805))
+    # Evaluate at the canonical substrate parameter q_parameter.Q (the
+    # single source of truth), NOT the q_0 cached in the input witness.
+    # The cached value goes stale across a substrate re-pin (e.g. the
+    # 2026-05-28 proton-anchor re-pin); a stale cached q_0 here vs the
+    # canonical Q used by term6_full_pole_sum.py was the cause of the
+    # markov_pipeline_cross_validator ~1e-7 disagreement (q_0 drift of
+    # ~1.3e-8 amplified by tr_M's q-sensitivity).
+    q_0 = float(CANONICAL_Q)
+    witness_q0 = witness.parameters.get("q_0")
+    if witness_q0 is not None and abs(float(witness_q0) - q_0) > 1e-12:
+        print(
+            f"  NOTE: input witness q_0={float(witness_q0)!r} is stale vs "
+            f"canonical q_parameter.Q={q_0!r}; evaluating at canonical value.",
+            file=sys.stderr,
+        )
 
     per_atom = [realize_atom(record, q_0) for record in witness.records]
 
