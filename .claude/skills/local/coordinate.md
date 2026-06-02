@@ -463,53 +463,51 @@ posting; final state can be merged to main when the goal completes.
 
 ### 10.  Cherry-picking
 
-`/coordinate` explicitly authorises cross-PR cherry-picks —
-including pre-emptive cherry-picks when an in-flight sibling has
-infrastructure (caches, witnesses, helpers) that you can build
-on without waiting for it to land on `main`. The constraints:
+**Cherry-picking is fine — treat it as a low-friction default.**
+When an in-flight sibling has infrastructure (a script, a witness,
+a Lean class template, a content block) that you'd otherwise
+duplicate, just cherry-pick it. The cross-PR ceremony in earlier
+revisions of this skill (mandatory "inform the sibling before",
+"byte-for-byte identical or post the adaptation back") was
+over-engineered for a working norm where small structured commits
+exist precisely so they can be picked up by anyone.
 
-1. **Inform the sibling.** Before (or with) the cherry-pick,
-   post a short coordination comment on the source PR listing
-   the files you are taking. Use this template:
+The remaining rules are minimal:
 
-   ```markdown
-   **Cherry-pick from #<source PR> → #<your PR>:**
+1. **Cite the source in your commit message.** Either
+   `Cherry-pick of #<N>:<sha>` on the trailer line or a
+   `Co-authored-by:` line. Attribution is cheap and lets
+   `git log --grep` surface who originated the change. Optional
+   but recommended — missing attribution is not a blocker.
 
-   | file | use |
-   |------|-----|
-   | `path/to/file.py` | <one-line: what I will use it for> |
-   | `path/to/witness.json` | … |
+2. **One-voice still applies.** Whatever you keep from the source
+   should read as your own work; rewrite voice / framing if the
+   sibling's tone clashes (CLAUDE.md voice rules don't relax just
+   because the source was a different agent).
 
-   I will cite this comment in my commit message and treat your
-   version as authoritative — if you change the file, I'll
-   rebase rather than diverge. Will not modify the cherry-picked
-   files except to bridge naming / imports if strictly required.
-   ```
+3. **You may diverge.** If you adapt the cherry-picked file —
+   rename imports, change a helper, tighten a tolerance — that's
+   normal. No requirement to post the adaptation back on the
+   source PR; the sibling will see your divergence in their own
+   §7 triage if it matters to them.
 
-   This protects the sibling from silent divergence and lets
-   them flag if a file is mid-refactor on their side.
+4. **You may pre-empt main.** Cherry-picks from open sibling PRs
+   are explicitly allowed; you do not need to wait for the source
+   to land on `main`. When the source eventually merges, you'll
+   either pick up the canonical version on your next rebase
+   (witness drift handled by the standard §1·a auto-resolve) or
+   keep a slight divergence (also fine).
 
-2. **Cite the source PR** in your commit message
-   (`Co-authored-by:` or `Cherry-pick of #<N>:<sha>`).
+5. **Pre-flagging is optional.** If you're picking something
+   substantive (a whole module, a large script) and want to
+   reduce the chance of duplicated work, posting a one-liner
+   coord comment on the source PR before picking is courteous —
+   but it is **not required**. For small picks (single helper, a
+   witness JSON, a class declaration), just commit.
 
-3. **Do not silently diverge** the cherry-picked code from the
-   source. If you must adapt (e.g. import path, naming bridge),
-   post a follow-up comment on the source PR describing the
-   adaptation so the source can mirror it. The default is
-   "byte-for-byte identical".
-
-4. **Match the author's voice / style** (one-voice rule still
-   applies).
-
-5. **Pull through subsequent changes.** When the source PR's
-   files change, rebase / re-`git checkout` your cherry-picked
-   copies so they stay byte-aligned. Periodic §7 triage is the
-   right place to do this.
-
-When the source PR lands on `main`, the cherry-picks stop being
-"cherry-picks" and become normal upstream files. At that point,
-delete the credit line from your commit-message template (a new
-PR sourced from main does not need attribution).
+When the source PR lands on `main`, attribution stops being
+necessary — the file is just upstream code. A fresh PR sourced
+from a main-merged commit needs no `Cherry-pick of` line.
 
 ### 11.  Asks and responses
 

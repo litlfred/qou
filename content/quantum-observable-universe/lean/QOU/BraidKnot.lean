@@ -73,6 +73,7 @@ import QOU.BraidKnot.KnotFactorAmphicheiral
 import QOU.BraidKnot.PlancherelWeightBoundedness
 import QOU.BraidKnot.TwoRowStratum
 import QOU.BraidKnot.AlphaShiftTorus.AlphaShiftTorusKnot
+import QOU.BraidKnot.GramSeminormalBlock
 
 /-!
 # BraidKnot — Module Index
