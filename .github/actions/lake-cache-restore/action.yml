@@ -45,10 +45,10 @@ runs:
         TOOLCHAIN_FILE: ${{ inputs.toolchain-file }}
         PACKAGE: ${{ inputs.package }}
       run: |
-        # Read inputs from env vars (NOT from ${{ ... }} interpolation
-        # into the run block — that would inject the multi-line
-        # manifest-files literal into the script and corrupt it).
-        # Per PR #1097 review (Gemini + Copilot).
+        # Read inputs from env vars (NOT from $-brace template
+        # interpolation into the run block — that would inject the
+        # multi-line manifest-files literal into the script and
+        # corrupt it). Per PR #1097 review (Gemini + Copilot).
         set -euo pipefail
 
         if [ ! -f "$TOOLCHAIN_FILE" ]; then
