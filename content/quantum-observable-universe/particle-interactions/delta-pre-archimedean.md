@@ -13,13 +13,16 @@ convention** — a point that is otherwise ambiguous.
 Hecke antipode $\sigma_i\mapsto\sigma_i^{-1}$, or a Type-B fold — i.e.
 any additive map on the fibre coefficient ring. Then for fibre
 quantities $x_{\mathfrak n}, x_{\mathfrak p}$:*
+
 $$
   f\bigl(x_{\mathfrak n} - x_{\mathfrak p}\bigr)
   \;=\; f(x_{\mathfrak n}) - f(x_{\mathfrak p}).
 $$
+
 *By contrast, the archimedean functor $\tau$ is **nonlinear** (it is a
 $\mathrm{Li}_2^q$-tower / Markov-product / $\mathfrak{E}_0$-scaling), so
 in general*
+
 $$
   \tau(x_{\mathfrak n}) - \tau(x_{\mathfrak p})
   \;\neq\; \tau\bigl(x_{\mathfrak n} - x_{\mathfrak p}\bigr).
