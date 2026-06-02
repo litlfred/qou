@@ -12,7 +12,12 @@ import {
   readdirSync,
   statSync,
 } from "fs";
+import { join, resolve } from "path";
 import { execFileSync } from "child_process";
+import {
+  parseLeanRef,
+  leanPackageByName,
+} from "../../folio-assistant/schemas/lean-packages";
 import { mkdirSync } from "fs";
 import { dirname, join } from "path";
 import type {
@@ -245,6 +250,57 @@ export function readBlockManifest(
  * file that is not a single-block manifest.
  */
 export function* walkBlocks(rootDir: string): Generator<BlockPaths> {
+  // Per-Lake-package basename cache, populated lazily.  When a block's
+  // sibling `<root>.lean` is missing but its `lean.ref` URI points at
+  // a file in the package's Lake tree (the cluster-migration pattern,
+  // e.g. lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean), fall back to
+  // resolving the Lake-tree path so qa-checkers that consume the
+  // .lean source (wall-side, voice, q-usage, …) don't silently skip.
+  // Resolve REPO_ROOT relative to qa-utils.ts (= content/pipeline/).
+  const REPO_ROOT = resolve(import.meta.dir, "../..");
+  const lakeTreeBasenameToPath = new Map<string, Map<string, string>>();
+  function lakeTreePathFor(
+    lakeRoot: string,
+    base: string,
+  ): string | undefined {
+    const absRoot = resolve(REPO_ROOT, lakeRoot);
+    let cached = lakeTreeBasenameToPath.get(absRoot);
+    if (!cached) {
+      cached = new Map<string, string>();
+      try {
+        const stack: string[] = [absRoot];
+        while (stack.length) {
+          const dir = stack.pop()!;
+          for (const e of readdirSync(dir, { withFileTypes: true })) {
+            const full = join(dir, e.name);
+            if (e.isDirectory()) stack.push(full);
+            else if (e.isFile() && e.name.endsWith(".lean")) {
+              // First occurrence wins for ambiguous basenames; the
+              // common case (one file per basename) is unambiguous.
+              if (!cached.has(e.name)) cached.set(e.name, full);
+            }
+          }
+        }
+      } catch { /* Lake root missing — empty map */ }
+      lakeTreeBasenameToPath.set(absRoot, cached);
+    }
+    return cached.get(base);
+  }
+  function resolveLakeTreeLean(ref: string | undefined): string | undefined {
+    if (!ref) return undefined;
+    try {
+      const parsed = parseLeanRef(ref);
+      const pkg = leanPackageByName(parsed.package);
+      if (!pkg) return undefined;
+      // (a) Direct module-path resolution.
+      const modulePath = parsed.module.replace(/\./g, "/");
+      const direct = resolve(REPO_ROOT, pkg.lakeRoot, `${modulePath}.lean`);
+      if (existsSync(direct)) return direct;
+      // (b) Basename fallback under the Lake tree.
+      return lakeTreePathFor(pkg.lakeRoot, `${parsed.name}.lean`);
+    } catch { return undefined; }
+  }
+
   function* recurse(d: string): Generator<BlockPaths> {
     if (!existsSync(d)) return;
     for (const entry of readdirSync(d)) {
@@ -262,13 +318,22 @@ export function* walkBlocks(rootDir: string): Generator<BlockPaths> {
         const md = root + ".md";
         const lean = root + ".lean";
         const qa = root + ".qa.json";
+        let leanResolved: string | undefined = existsSync(lean) ? lean : undefined;
+        if (!leanResolved) {
+          // Parse the .ts source for a lean.ref URI and try Lake-tree
+          // resolution.  Manifest is already loaded; extract the URI
+          // via a regex over the raw file (mirrors q-usage-audit).
+          const tsSrc = readFileSync(full, "utf-8");
+          const refMatch = tsSrc.match(/ref:\s*["']([^"']+)["']/);
+          leanResolved = resolveLakeTreeLean(refMatch?.[1]);
+        }
         yield {
           label: manifest.label,
           kind: manifest.kind,
           root,
           ts: full,
           md: existsSync(md) ? md : undefined,
-          lean: existsSync(lean) ? lean : undefined,
+          lean: leanResolved,
           qa: existsSync(qa) ? qa : undefined,
         };
       }
