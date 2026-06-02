@@ -102,12 +102,16 @@ The deuteron-binding NULL (template does NOT close `B(d)` at H_2) was
 **independently confirmed** by the joint-tower SDP subgoal-1 run that
 landed 2026-06-02 (PR #1698,
 `docs/audits/2026-06-02-subgoal-1-sdp-canonical-knot-run.md`): the
-deuteron knot `6_2` fails the single-term PSD-feasibility test at the
-standard `(2,1)` Wedderburn block (eigenvalue −0.89 < 0), and the SDP
-defers it to a multi-term cost — i.e. the classical single-channel
-Plancherel structure is provably insufficient for the deuteron, matching
-this campaign's H_2 NULL by a completely different method (SDP feasibility
-vs. Plancherel-weight scan). The m_p CODATA-floor status (Finding #1) is
+deuteron knot `6_2` (a B_3 / 3-strand braid) fails the single-term
+PSD-feasibility test at the standard `(2,1)` Wedderburn block of **H_3**
+(eigenvalue −0.89 < 0), and the SDP defers it to a multi-term cost —
+i.e. the classical single-channel structure is provably insufficient
+for the deuteron. This campaign's deuteron NULL was identified at **H_2**
+(the 2-strand flavor-swap sub-braid Plancherel scan); the SDP failure is
+at **H_3** (the 6_2 knot's natural level). The two are COMPLEMENTARY
+confirmations across different strand models — both reach "the deuteron
+is not closed by single-channel/classical structure" by completely
+different methods (Plancherel-weight scan vs. SDP feasibility). The m_p CODATA-floor status (Finding #1) is
 likewise unchanged by PR #1690's dashboard-wiring refresh (still 0.40 ppb,
 0.13× the 100× target). A full sibling-coordination triage on
 2026-06-02 found no contradictions to any of the six campaign findings.
