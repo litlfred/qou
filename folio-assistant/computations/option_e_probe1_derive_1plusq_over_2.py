@@ -259,10 +259,23 @@ def main() -> int:
 
     elapsed = time.monotonic() - t0
 
+    # Provenance: last commit that touched THIS script (robust to the
+    # subsequent witness commit, unlike `git rev-parse HEAD`).
+    import subprocess
+    try:
+        script_sha = subprocess.run(
+            ["git", "log", "-1", "--format=%H", "--", __file__],
+            cwd=str(Path(__file__).resolve().parent),
+            capture_output=True, text=True, check=True,
+        ).stdout.strip() or None
+    except Exception:
+        script_sha = None
+
     witness = {
         "engine": "python+mpmath",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "computation": "option-e-probe1-derive-1plusq-over-2",
+        "scriptCommitSha": script_sha,
         "auditOnly": True,
         "trigger": (
             "author directive 'work on Delta_lambda binding-energy Gram "
