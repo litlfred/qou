@@ -20,6 +20,18 @@ coefficients are exact rationals derivable from Lean-proved forms.
 """
 from __future__ import annotations
 
+
+# Path bridge (subdirectory refactor — Phase 3, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
+
 import sys
 import time
 from pathlib import Path
@@ -28,7 +40,7 @@ import sympy as sp
 from sympy import Symbol, sqrt, Rational, cancel, series, Abs
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder
 
