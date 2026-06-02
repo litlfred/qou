@@ -98,7 +98,7 @@ rules instead of $O(n^2)$.
 **Input:** Element $f \in A_{n+1}$; jet-stratified system
 $(\Sigma_n^{\mathrm{desc}}, \Sigma_{n+1}^{\mathrm{trans}})$;
 degree buckets $B_0, \ldots, B_D$; normal-form cache
-$\mathcal{C}$ from level $n$.
+$\mathsf{C}$ from level $n$.
 
 **Output:** Normal form $\mathrm{NF}(f)$.
 
@@ -110,18 +110,18 @@ $\mathcal{C}$ from level $n$.
 2. **Cache lookup.**  For each descended monomial $m$ in
    $f^{\mathrm{desc}}$:
 
-   a. **If** $\mathrm{NF}(m) \in \mathcal{C}$: replace $m$ by
-      $\mathcal{C}[m]$.
+   a. **If** $\mathrm{NF}(m) \in \mathsf{C}$: replace $m$ by
+      $\mathsf{C}[m]$.
 
    b. **Else**: reduce $m$ using degree-bucketed division
       (Algorithm 2) restricted to $\Sigma_n^{\mathrm{desc}}$;
-      store result in $\mathcal{C}$.
+      store result in $\mathsf{C}$.
 
 3. **Reduce transient part.**  Apply degree-bucketed division
    (Algorithm 2) to $f^{\mathrm{trans}}$ using the full system
    $\Sigma_{n+1}$.
 
-4. **Combine.**  Set $h := \mathcal{C}[f^{\mathrm{desc}}] +
+4. **Combine.**  Set $h := \mathsf{C}[f^{\mathrm{desc}}] +
    \mathrm{NF}(f^{\mathrm{trans}})$.
 
 5. **Final pass.**  Apply degree-bucketed division to $h$ using
