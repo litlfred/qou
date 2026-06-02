@@ -29,7 +29,7 @@ See [Table 2](#tbl:canonical-braid-interface-composition-table2-data).
 ### Z$\leftrightarrow$N asymmetry and ordering dependence
 
 Under the pppnnn ordering the asymmetric counts $(n_{pp}, n_{nn})$
-encode Z$\leftrightarrow$N asymmetry directly. **Alternative orderings** (e.g.\
+encode Z$\leftrightarrow$N asymmetry directly. **Alternative orderings** (e.g.,
 alternating pnpnpn) would produce different interface compositions
 for the same atom — at $(Z=2, N=2)$ ${}^{4}$He:
 
