@@ -40,6 +40,7 @@ patch to flip the `canonical_status` field for matching atoms.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import multiprocessing as multi
@@ -186,7 +187,7 @@ def load_y_lambda_for_n(n: int):
 
 def load_tr_M_for_atom(Z: int, N: int) -> mp.mpf | None:
     """Load |tr_M(β_atom, q_0)| from L1 canonical witness."""
-    path = HERE / "canonical-mass-table-extended.witness.json"
+    path = _pb.witness_path("canonical-mass-table-extended.witness.json", HERE)
     d = json.loads(path.read_text())
     for r in d.get("data", {}).get("rows", []):
         if r.get("Z") == Z and r.get("N") == N:
@@ -418,10 +419,10 @@ def main(argv: list[str] | None = None) -> int:
             .add_data("per_atom", results_so_far)
         )
         for u in [
-            HERE / "canonical-mass-table-extended.witness.json",
+            _pb.witness_path("canonical-mass-table-extended.witness.json", HERE),
             HERE / "y-lambda-wenzl-bridge-symbolic-witness.json",
-            HERE / "rho-k-h3a-refinement.witness.json",
-            HERE / "rho-k-h3a-co-casimir.witness.json",
+            _pb.witness_path("rho-k-h3a-refinement.witness.json", HERE),
+            _pb.witness_path("rho-k-h3a-co-casimir.witness.json", HERE),
         ]:
             if u.exists():
                 b.add_upstream(u)
@@ -484,10 +485,10 @@ def main(argv: list[str] | None = None) -> int:
         .add_data("per_atom", results)
     )
     for u in [
-        HERE / "canonical-mass-table-extended.witness.json",
+        _pb.witness_path("canonical-mass-table-extended.witness.json", HERE),
         HERE / "y-lambda-wenzl-bridge-symbolic-witness.json",
-        HERE / "rho-k-h3a-refinement.witness.json",
-        HERE / "rho-k-h3a-co-casimir.witness.json",
+        _pb.witness_path("rho-k-h3a-refinement.witness.json", HERE),
+        _pb.witness_path("rho-k-h3a-co-casimir.witness.json", HERE),
     ]:
         if u.exists():
             builder.add_upstream(u)

@@ -73,6 +73,7 @@ Output: term6-full-pole-sum.witness.json
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -88,7 +89,7 @@ from witness_base import WitnessBuilder
 from witness_polynomial import expose_polynomial
 
 HERE = Path(__file__).parent
-HABIRO_WITNESS = HERE / "habiro-coefficients-atomic.witness.json"
+HABIRO_WITNESS = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
 
 q = sp.Symbol("q", complex=True)
 

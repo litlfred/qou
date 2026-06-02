@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T14:58:28.818883+00:00",
-  "commitSha": "042422a20828d9a851c6cf926467b876bb9c15b8",
+  "computedAt": "2026-06-02T15:07:13.029797+00:00",
+  "commitSha": "02ebd00ea4ddbca947f572802865aa2e4dad419a",
   "assertions": [
     {
       "name": "all_atoms_within_1ppb",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 24,
   "computation": "cross-check-trM-1ppb",
   "scriptFile": "cross_check_trM_1ppb.py",
-  "scriptHash": "2288ab7c0115",
-  "scriptCommitSha": "e949aee4cb4eecd16a9cf809dc4fbfb398c1195a",
+  "scriptHash": "031c70d68a7c",
+  "scriptCommitSha": "f57909f28f73840f67b2eb8609aeb61492297c84",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,10 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.4",
+    "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "parameters": {

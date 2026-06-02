@@ -42,6 +42,7 @@ canonical deuteron word the χ-cache was built from (sigma / sigma_inv / average
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -303,7 +304,7 @@ def main() -> int:
 
     # Load cached χ^λ + y_λ + dim to (a) cross-check Σ_w ρ_w = χ^λ and
     # (b) form the parameter-free binding via the SAME formula the retraction used.
-    cache_path = HERE / "chi-deuteron-h6-at-q0-50dps.witness.json"
+    cache_path = _pb.witness_path("chi-deuteron-h6-at-q0-50dps.witness.json", HERE)
     cache = json.loads(cache_path.read_text())
     chi_cache = {tuple(e["partition"]): mpf(e["chi_lambda"]) for e in cache["by_partition"]}
     y_cache = {tuple(e["partition"]): mpf(e["y_lambda"]) for e in cache["by_partition"]}

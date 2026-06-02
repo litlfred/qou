@@ -37,6 +37,7 @@ Caveats:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -150,7 +151,7 @@ def main() -> int:
 
     # 3. Load empirical |Δ_λ*| from tabulation
     emp = json.loads(
-        (HERE / "delta-lambda-empirical-tabulation.witness.json").read_text()
+        (_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)).read_text()
     )["data"]["per_atom"]
     empirical_delta = {a: float(mp.mpf(emp[a]["a_single_block"]["best_abs_delta"]))
                        for a in ("D", "T", "3He", "4He")}

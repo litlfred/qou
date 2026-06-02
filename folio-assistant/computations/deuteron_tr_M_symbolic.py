@@ -51,6 +51,7 @@ Run:  python3 folio-assistant/computations/deuteron_tr_M_symbolic.py
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -108,7 +109,7 @@ def main() -> int:
     # Fast path: read symbolic χ^λ from the cached witness
     # chi-deuteron-h6.witness.json (computed once, ~131s; reused in ms).
     # If absent, fall back to direct computation with conjugate-pairing.
-    chi_cache_path = HERE / "chi-deuteron-h6.witness.json"
+    chi_cache_path = _pb.witness_path("chi-deuteron-h6.witness.json", HERE)
     cached_chi: dict[tuple, sp.Expr] = {}
     if chi_cache_path.exists():
         cache_doc = json.loads(chi_cache_path.read_text())

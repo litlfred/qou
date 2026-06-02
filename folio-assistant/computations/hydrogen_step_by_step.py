@@ -47,6 +47,7 @@ NOT as an independent calibration input.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -74,8 +75,8 @@ M_H_CODATA_MEV = mpf("938.7830731")  # CODATA m(¹H_atomic), 2018
 BE_H_EV = mpf("13.605693")  # ¹H ionisation energy
 BE_H_MEV = BE_H_EV * mpf("1e-6")
 
-PROTON_TOWER = HERE / "proton-mass-full-tower-50dps.witness.json"
-Q_WITNESS_PATH = HERE / "q-pinning-50-digit.witness.json"
+PROTON_TOWER = _pb.witness_path("proton-mass-full-tower-50dps.witness.json", HERE)
+Q_WITNESS_PATH = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 
 
 def main() -> int:

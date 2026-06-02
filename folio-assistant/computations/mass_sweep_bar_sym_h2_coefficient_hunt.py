@@ -60,6 +60,7 @@ and tabulate.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -72,7 +73,7 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
-Q_PIN = HERE / "q-pinning-50-digit.witness.json"
+Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 q0 = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
 h = q0 - 1 / q0
 h2 = h ** 2

@@ -47,6 +47,7 @@ per PR #564 audit).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 import time
 from pathlib import Path
@@ -129,7 +130,7 @@ def main() -> int:
     print(f"      total:                          {t_h3 + t_closed:.4f}s")
 
     # Comparison vs the deprecated disjoint-product witness
-    legacy_witness = HERE / "atomic-tr-m-helium4.witness.json"
+    legacy_witness = _pb.witness_path("atomic-tr-m-helium4.witness.json", HERE)
     if legacy_witness.exists():
         import json
         with open(legacy_witness, encoding="utf-8") as f:

@@ -51,6 +51,7 @@ Usage:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import sys
@@ -379,7 +380,7 @@ def main() -> int:
     lp_secondary = lp_select_delta_lambda(y_chi_list, target, secondary_cost)
 
     # ── Step 7: comparison to Occam baseline ──────────────────
-    occam_path = HERE / "rho-k-h3a-refinement.witness.json"
+    occam_path = _pb.witness_path("rho-k-h3a-refinement.witness.json", HERE)
     occam_blob = json.loads(occam_path.read_text())
     occam_per_lambda = occam_blob["data"]["per_lambda"]
     occam_solo: dict[tuple, mp.mpf] = {}

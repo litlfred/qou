@@ -126,6 +126,7 @@ For now, consumers should:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 from functools import lru_cache
 from pathlib import Path
@@ -135,8 +136,8 @@ import mpmath as mp
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (re-export)
 
 _HERE = Path(__file__).resolve().parent
-_BETA_DECAY_WITNESS = _HERE / "beta-decay-energy-scale.witness.json"
-_Q_PINNING_WITNESS = _HERE / "q-pinning-50-digit.witness.json"
+_BETA_DECAY_WITNESS = __pb.witness_path("beta-decay-energy-scale.witness.json", HERE)
+_Q_PINNING_WITNESS = __pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 
 
 @lru_cache(maxsize=None)

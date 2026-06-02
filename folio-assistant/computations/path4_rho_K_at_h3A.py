@@ -27,6 +27,7 @@ Path 4 hypothesis is confirmed.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -40,7 +41,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 # q_0 pinning
-Q_WITNESS = HERE / "q-pinning-50-digit.witness.json"
+Q_WITNESS = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 q = mpf(json.load(Q_WITNESS.open())["derived_50_digit"]["q"])
 q_inv = mpf(1) / q
 h_q = q - q_inv

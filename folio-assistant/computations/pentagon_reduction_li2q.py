@@ -68,6 +68,7 @@ omits T3.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -230,7 +231,7 @@ def _li_2_q_complex(
 
 def load_binding_witness() -> dict:
     """Load PR #801's binding-via-interface-knot witness."""
-    p = HERE / "binding-via-interface-knot.witness.json"
+    p = _pb.witness_path("binding-via-interface-knot.witness.json", HERE)
     return json.loads(p.read_text())
 
 
@@ -357,8 +358,8 @@ def main() -> int:
         .add_data("per_atom", results)
     )
     for u in [
-        HERE / "binding-via-interface-knot.witness.json",
-        HERE / "canonical-mass-table-extended.witness.json",
+        _pb.witness_path("binding-via-interface-knot.witness.json", HERE),
+        _pb.witness_path("canonical-mass-table-extended.witness.json", HERE),
     ]:
         if u.exists():
             builder.add_upstream(u)

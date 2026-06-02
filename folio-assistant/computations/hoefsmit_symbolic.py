@@ -35,6 +35,7 @@ exactly (verified at q_0 to 1e-6 for all proton-standalone partitions).
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from pathlib import Path
 

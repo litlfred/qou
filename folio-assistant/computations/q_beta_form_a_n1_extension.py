@@ -78,6 +78,7 @@ Output: `q-beta-form-a-n1-extension.witness.json`.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 from pathlib import Path
 
@@ -99,7 +100,7 @@ def main() -> int:
 
     # ── Load CAL-2 q_0 from canonical pinning witness ──────────
     import json
-    q_pinning = HERE / "q-pinning-50-digit.witness.json"
+    q_pinning = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
     with q_pinning.open() as fh:
         q_0 = mp.mpf(json.load(fh)["derived_50_digit"]["q"])
 

@@ -40,6 +40,7 @@ Candidate V(K) forms (categorically motivated):
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -57,7 +58,7 @@ from q_parameter import Q as Q0, HBAR_Q
 def load_empirical_atoms() -> dict:
     """Per-atom empirical best-single-block Δ data."""
     w = json.loads(
-        (HERE / "delta-lambda-empirical-tabulation.witness.json").read_text()
+        (_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)).read_text()
     )
     out = {}
     for atom in ("D", "T", "3He", "4He"):

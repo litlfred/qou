@@ -41,6 +41,8 @@ Audit doc: docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -57,7 +59,7 @@ from hoefsmit_symbolic import chi_lambda_symbolic  # noqa: E402
 from per_irrep_pole_proton_h3 import negative_q_pole_order  # noqa: E402
 
 Y_LAMBDA_CACHE = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
-CHI_CACHE = HERE / "chi-deuteron-h6.witness.json"
+CHI_CACHE = _pb.witness_path("chi-deuteron-h6.witness.json", HERE)
 
 
 def parts_of(n: int) -> list[tuple[int, ...]]:

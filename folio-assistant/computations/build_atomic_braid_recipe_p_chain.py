@@ -31,6 +31,8 @@ Output: `atomic-braid-recipe-p.derivation.json`.
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 from pathlib import Path
 
@@ -44,7 +46,7 @@ from derivation_chain import (  # noqa: E402
 
 
 HERE = Path(__file__).parent
-OUTPUT = HERE / "atomic-braid-recipe-p.derivation.json"
+OUTPUT = _pb.witness_path("atomic-braid-recipe-p.derivation.json", HERE)
 
 # Target leaf: total crossing count of β_p.
 PROTON_BRAID_LEN = 11

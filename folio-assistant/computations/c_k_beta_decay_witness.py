@@ -56,6 +56,7 @@ Output: `c-k-beta-decay-bound.witness.json`.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -73,7 +74,7 @@ set_compute_dps()
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q_PINNING = HERE / "q-pinning-50-digit.witness.json"
+Q_PINNING = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 
 # Observed N=0 residual: single-wrap symbolic Q_β prediction
 # Q_β = 0.7836 MeV vs CODATA Q_β = 0.7823 MeV.

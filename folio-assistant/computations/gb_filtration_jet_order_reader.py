@@ -38,6 +38,8 @@ each consumer solver).
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from dataclasses import dataclass, field
@@ -48,7 +50,7 @@ from typing import Iterable
 
 HERE = Path(__file__).parent
 
-DEFAULT_WITNESS = HERE / "gb-filtration-jet-order.witness.json"
+DEFAULT_WITNESS = _pb.witness_path("gb-filtration-jet-order.witness.json", HERE)
 
 
 @dataclass

@@ -35,6 +35,7 @@ benchmark + cross-check entry point is `_self_check()` below.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from pathlib import Path
 from typing import Dict, Tuple

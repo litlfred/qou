@@ -42,6 +42,7 @@ per-Z shards, atlas per-Z sections.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import sys
@@ -69,25 +70,25 @@ def load_ame2020() -> dict:
 
 def load_layer1() -> dict:
     """Load the L1 canonical |tr_M| witness for p..⁶Li reuse."""
-    path = HERE / "canonical-mass-table-extended.witness.json"
+    path = _pb.witness_path("canonical-mass-table-extended.witness.json", HERE)
     return json.loads(path.read_text()) if path.exists() else {}
 
 
 def load_layer2() -> dict:
     """Load the L2 α-cluster recursion witness."""
-    path = HERE / "alpha-cluster-recursion.witness.json"
+    path = _pb.witness_path("alpha-cluster-recursion.witness.json", HERE)
     return json.loads(path.read_text()) if path.exists() else {}
 
 
 def load_layer3() -> dict:
     """Load the L3 low-isotope binding sweep (partial-shell)."""
-    path = HERE / "low-isotope-binding-sweep.witness.json"
+    path = _pb.witness_path("low-isotope-binding-sweep.witness.json", HERE)
     return json.loads(path.read_text()) if path.exists() else {}
 
 
 def load_borromean() -> dict:
     """Load m_p, m_n, m_μ from the Borromean tower witness."""
-    path = HERE / "m-p-borromean-verification-50dps.witness.json"
+    path = _pb.witness_path("m-p-borromean-verification-50dps.witness.json", HERE)
     return json.loads(path.read_text()) if path.exists() else {}
 
 
@@ -534,10 +535,10 @@ def main(argv: list[str] | None = None) -> int:
 
     shards_written: list[tuple[int, Path]] = []
     upstreams = [
-        HERE / "canonical-mass-table-extended.witness.json",
-        HERE / "alpha-cluster-recursion.witness.json",
-        HERE / "low-isotope-binding-sweep.witness.json",
-        HERE / "m-p-borromean-verification-50dps.witness.json",
+        _pb.witness_path("canonical-mass-table-extended.witness.json", HERE),
+        _pb.witness_path("alpha-cluster-recursion.witness.json", HERE),
+        _pb.witness_path("low-isotope-binding-sweep.witness.json", HERE),
+        _pb.witness_path("m-p-borromean-verification-50dps.witness.json", HERE),
         HERE / "data" / "ame2020.json",
     ]
     for Z, entries in by_z.items():

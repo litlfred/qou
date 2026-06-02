@@ -18,6 +18,7 @@ Usage:
     p = qpoch(3)           # (q;q)_3 = ∏_{k=1}^3 (1 - q^k)
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import mpmath as mp
 
 # Module-level state.  Call set_q(Q0) before using qint/qfac/qpoch.

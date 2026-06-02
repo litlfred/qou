@@ -70,6 +70,7 @@ diff/compare tooling can read both.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from datetime import datetime, timezone
@@ -157,7 +158,7 @@ def _load_substrate_m_p_MeV() -> mp.mpf:
     m_p_pred is in MeV; the value is absolute and does NOT require
     E_0 scaling (gemini #690 documentation note).
     """
-    c2_wit = HERE / "probe-a-selection-criteria.witness.json"
+    c2_wit = _pb.witness_path("probe-a-selection-criteria.witness.json", HERE)
     if not c2_wit.exists():
         return mp.mpf("938.9182")
     # Load + hash so witness_dependency_drift catches changes to the
@@ -289,7 +290,7 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
 
     # 1. Legacy 5-atom witness (p, n, D, T, ³He) — load first as
     #    fallback layer (gets overwritten by Model B for D, T, ³He).
-    legacy = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+    legacy = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
     if legacy.exists():
         d = _load_upstream(legacy)
         for r in d.get("results", []):
@@ -301,7 +302,7 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
 
     # 2. Model B (SDP-canonical low-strand) overlay, if enabled.
     if src == "model-b":
-        model_b_witness = HERE / "probe-sdp-canonical-paper-formula.witness.json"
+        model_b_witness = _pb.witness_path("probe-sdp-canonical-paper-formula.witness.json", HERE)
         if model_b_witness.exists():
             db = _load_upstream(model_b_witness)
             for atom_name, atom_data in db.get("data", {}).get("results", {}).items():
@@ -449,7 +450,7 @@ def main() -> int:
         _load_upstream(_shadow_price_path)
 
     # ── Compare to legacy E_0-anchored predictions ─────────────
-    legacy_path = HERE / "atomic-braid-mass-table.witness.json"
+    legacy_path = _pb.witness_path("atomic-braid-mass-table.witness.json", HERE)
     legacy_compare = []
     if legacy_path.exists():
         legacy = _load_upstream(legacy_path)

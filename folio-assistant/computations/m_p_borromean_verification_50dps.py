@@ -120,6 +120,7 @@ NOT as a separate λ_scale closure.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -136,7 +137,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps()
 
 # Substrate q_0 at 50 dps (witness-derived)
-Q_PIN = HERE / "q-pinning-50-digit.witness.json"
+Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
 HBAR_Q = (Q - mp.mpf(1)) / Q
 

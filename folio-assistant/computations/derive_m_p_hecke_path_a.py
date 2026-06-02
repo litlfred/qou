@@ -74,6 +74,7 @@ Replaces the placeholder consumed by `derivation_chain.py:106`.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -90,7 +91,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
 
-SIX_TERM_WITNESS = HERE / "mass-formula-6term-mpfr-50dps.witness.json"
+SIX_TERM_WITNESS = _pb.witness_path("mass-formula-6term-mpfr-50dps.witness.json", HERE)
 OUT_WITNESS = HERE / "proton-m_e-derivation.witness.json"
 
 

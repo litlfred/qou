@@ -28,6 +28,8 @@ Output: `term7-s-crystal-4he.derivation.json`.
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 from pathlib import Path
 
@@ -41,7 +43,7 @@ from derivation_chain import (  # noqa: E402
 
 
 HERE = Path(__file__).parent
-OUTPUT = HERE / "term7-s-crystal-4he.derivation.json"
+OUTPUT = _pb.witness_path("term7-s-crystal-4he.derivation.json", HERE)
 
 # Witness-pinned target value — must match the ⁴He row of
 # `term7-alpha5-crystal-derivation.witness.json` exactly so the

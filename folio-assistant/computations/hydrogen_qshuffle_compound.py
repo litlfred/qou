@@ -55,6 +55,7 @@ violation.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -77,9 +78,9 @@ set_compute_dps()
 M_E_MEV = mpf(str(_M_E_MEV))
 M_H_CODATA_MEV = mpf("938.7830731")
 
-Q_WITNESS_PATH = HERE / "q-pinning-50-digit.witness.json"
-PER_GEN_PATH = HERE / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
-PROTON_TOWER = HERE / "proton-mass-full-tower-50dps.witness.json"
+Q_WITNESS_PATH = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
+PER_GEN_PATH = _pb.witness_path("terms-2-3-atom-per-gen-mpfr-50dps.witness.json", HERE)
+PROTON_TOWER = _pb.witness_path("proton-mass-full-tower-50dps.witness.json", HERE)
 
 
 def _load(p: Path) -> dict:

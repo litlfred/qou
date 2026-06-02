@@ -42,6 +42,7 @@ Ref: [manuscript] docs/audits/2026-05-19-closed-forms-first-principles-workplan.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import ast
 import json
 import sys
@@ -63,7 +64,7 @@ B_D_AME_MEV = mp.mpf("2.22456607")  # AME 2020 deuteron binding energy
 
 def load_chi_deuteron() -> tuple[mp.mpf, list[dict]]:
     """Load Hecke characters for the deuteron at q_0, 50 dps."""
-    path = HERE / "chi-deuteron-h6-at-q0-50dps.witness.json"
+    path = _pb.witness_path("chi-deuteron-h6-at-q0-50dps.witness.json", HERE)
     w = json.loads(path.read_text())
     by_part = w["by_partition"]
     parsed = []

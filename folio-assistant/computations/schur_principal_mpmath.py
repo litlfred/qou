@@ -32,6 +32,8 @@ Matches `markov_weights_symbolic.schur_principal_symbolic` exactly:
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 from typing import Iterable
 
 import mpmath as mp
@@ -163,7 +165,7 @@ def main() -> int:
     print()
 
     witness = json.loads(
-        (HERE / "y-lambda-at-q0.witness.json").read_text()
+        (_pb.witness_path("y-lambda-at-q0.witness.json", HERE)).read_text()
     )
     cache = witness.get("data", witness)["by_n"]
 

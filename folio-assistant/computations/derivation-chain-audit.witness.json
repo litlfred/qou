@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T06:18:40.427538+00:00",
-  "commitSha": "1177beac9eedb590984d8fea1e222cde64e16138",
+  "computedAt": "2026-06-02T14:55:54.179058+00:00",
+  "commitSha": "02ebd00ea4ddbca947f572802865aa2e4dad419a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "8c9ce6665871",
-  "scriptCommitSha": "f57909f28f73840f67b2eb8609aeb61492297c84",
+  "scriptCommitSha": "02ebd00ea4ddbca947f572802865aa2e4dad419a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2422,8 +2422,6 @@
         "habiro-coefficients-tritium.witness.json",
         "habiro-mirror-pair-li7-be7.witness.json",
         "hadron-knot-table.witness.json",
-        "he4-9-3-trace-dominant-correction-probe.witness.json",
-        "he4-channel-split-categorical-constraint-probe.witness.json",
         "hecke-core-symbolic-migration.witness.json",
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",
@@ -2531,7 +2529,6 @@
         "mn-flavor-split-h4-plancherel.witness.json",
         "mn-flavor-split-plancherel-channel.witness.json",
         "mn-standard-channel-correction.witness.json",
-        "mn-wrapper-categorical-analysis-probe.witness.json",
         "molecular-frobenius-lp.witness.json",
         "molecular-trefoil-scan.witness.json",
         "mp-dk-decisive-test.witness.json",
@@ -2748,19 +2745,16 @@
         "wenzl-y-lambda-h12.witness.json",
         "wenzl-y-lambda-h9.witness.json",
         "witness-reproducibility-check.witness.json",
-        "xq-habiro-element-search-probe.witness.json",
         "y-lambda-at-q0.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
         "y-lambda-macdonald-telescope.witness.json",
         "y-lambda-q-schur-lean-verify.witness.json",
         "y_lambda_equivalence_proof.witness.json",
-        "yekutieli-a2-em-gauge-coupling-h2-probe.witness.json",
         "yekutieli-borromean-h2-extraction.witness.json",
         "yekutieli-half-h2-observable-hunt.witness.json",
         "yekutieli-mi-h2-extraction.witness.json",
         "yekutieli-mi-k3-h6-scaffold.witness.json",
         "yekutieli-natural-reading-precision-floor-check.witness.json",
-        "yekutieli-per-cell-qlambert-decomposition-probe.witness.json",
         "yekutieli-volume-join.witness.json"
       ]
     }

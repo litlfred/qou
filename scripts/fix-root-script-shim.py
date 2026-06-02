@@ -42,12 +42,17 @@ SUBSTRATE_MODULES = (
     "char_fast",
     "witness_constant_staleness",
 )
+# Match a substrate import anywhere — including indented / lazy
+# imports inside a function body (e.g. compute_audit_scan.py does
+# `from witness_base import WitnessBuilder` inside main()). The
+# leading `\s*` (instead of `^`) catches those; without the bridge
+# shim at module top, the lazy import still fails at call time.
 IMPORT_PATTERN = re.compile(
-    r"^(?:from\s+("
+    r"^\s*(?:from\s+("
     + "|".join(SUBSTRATE_MODULES)
     + r")(?:\s|\.)|import\s+("
     + "|".join(SUBSTRATE_MODULES)
-    + r")(?:\s|$))",
+    + r")(?:\s|$|,))",
     re.MULTILINE,
 )
 

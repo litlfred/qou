@@ -84,6 +84,7 @@ Notes
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import math
 import sys
@@ -337,7 +338,7 @@ def main() -> int:
                      script_path=__file__, engine="python",
                      start_time=start_time)
         .save())
-    out = HERE / "b-over-a.witness.json"
+    out = _pb.witness_path("b-over-a.witness.json", HERE)
 
     # Pretty print summary
     print(f"q_0 = {Q0:.10f}")

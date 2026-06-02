@@ -27,6 +27,7 @@ This script computes that coefficient and compares to −G (Catalan).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 import time
 from pathlib import Path
@@ -133,7 +134,7 @@ def main() -> int:
 
     # Compute at q near 1 and at substrate q_0
     import json
-    q0 = mp.mpf(json.load(open(HERE / "q-pinning-50-digit.witness.json"))["derived_50_digit"]["q"])
+    q0 = mp.mpf(json.load(open(_pb.witness_path("q-pinning-50-digit.witness.json", HERE)))["derived_50_digit"]["q"])
 
     tr_q0 = borromean_markov_trace_at_q(q0)
     print(f"  tr_M(β_Borromean, q_0) = {mp.nstr(tr_q0, 20)}")

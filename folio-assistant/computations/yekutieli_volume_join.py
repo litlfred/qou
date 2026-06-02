@@ -43,6 +43,8 @@ Run:  python3 -u yekutieli_volume_join.py 2>&1 | tee /tmp/yvj.log
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -348,7 +350,7 @@ def main():
     # reconstruct the bare-Borromean closed form for the order-by-order test.
     import mpmath as mp
     mp.mp.dps = 50
-    q0 = mp.mpf(json.load(open(HERE / "chi-proton-h3-at-q0-50dps.witness.json"))
+    q0 = mp.mpf(json.load(open(_pb.witness_path("chi-proton-h3-at-q0-50dps.witness.json", HERE)))
                 ["q_0_50dps"])
     trM = {}
     for name in ["proton", "neutron"]:

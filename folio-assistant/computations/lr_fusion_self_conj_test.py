@@ -19,6 +19,7 @@ Run as:
 If no n is supplied, runs on small magic + non-magic.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 from typing import List, Tuple, Iterator, Optional

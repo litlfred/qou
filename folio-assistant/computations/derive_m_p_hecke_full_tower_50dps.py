@@ -122,6 +122,7 @@ needed by downstream consumers).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -157,8 +158,8 @@ from _li_2_q_util import (  # noqa: E402
 M_E_MEV = mp.mpf(str(_M_E_MEV_RAW))
 
 
-PER_GEN_WITNESS = HERE / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
-OUT_PATH = HERE / "proton-mass-full-tower-50dps.witness.json"
+PER_GEN_WITNESS = _pb.witness_path("terms-2-3-atom-per-gen-mpfr-50dps.witness.json", HERE)
+OUT_PATH = _pb.witness_path("proton-mass-full-tower-50dps.witness.json", HERE)
 
 
 # Canonical braid words per particle (positive int i ↦ σ_i; negative −i ↦ σ_i^{-1}).

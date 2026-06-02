@@ -32,6 +32,7 @@ Output: ``term6-habiro-residue-mpfr-50dps.witness.json``
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -51,8 +52,8 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder, load_and_hash_upstream  # noqa: E402
 
-SRC_PATH = HERE / "term6-residues-at-roots.witness.json"
-OUT_PATH = HERE / "term6-habiro-residue-mpfr-50dps.witness.json"
+SRC_PATH = _pb.witness_path("term6-residues-at-roots.witness.json", HERE)
+OUT_PATH = _pb.witness_path("term6-habiro-residue-mpfr-50dps.witness.json", HERE)
 
 
 def main() -> int:

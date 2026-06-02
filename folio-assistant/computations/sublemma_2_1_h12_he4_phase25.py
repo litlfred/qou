@@ -16,6 +16,7 @@ re-computed Path A via direct Hoefsmit, timing out for high-dim λ).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import sys
@@ -38,7 +39,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 def load_f1_cache() -> dict[tuple, complex]:
     """Load F1's chi_q_at_q0 per λ ⊢ 12 from cached witness."""
-    cache_path = HERE / "he4-canonical-tr-m-block-fingerprint.witness.json"
+    cache_path = _pb.witness_path("he4-canonical-tr-m-block-fingerprint.witness.json", HERE)
     if not cache_path.exists():
         raise FileNotFoundError(f"F1 cache not found at {cache_path}")
     d = json.loads(cache_path.read_text())

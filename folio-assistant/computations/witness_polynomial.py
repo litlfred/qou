@@ -30,6 +30,7 @@ parameter from `q_parameter.Q`).
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 from typing import Any
 
 import sympy as sp

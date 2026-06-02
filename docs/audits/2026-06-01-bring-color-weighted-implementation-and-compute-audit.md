@@ -11,7 +11,7 @@
 - [`folio-assistant/computations/_li_2_q_util.py`](../../folio-assistant/computations/_li_2_q_util.py) — added two functions:
   - `bring_color_weighted_linking_weight(Z, N, q)` — per-atom Bring-color-tube extension of `linking_weight_family_a(q)`
   - `geom_full_borromean_bring_color_weighted(Z, N, q)` — wrapper for `m_e × Geom_full_bring`
-- [`folio-assistant/computations/bring_color_weighted_base_scale_probe.py`](../../folio-assistant/computations/bring_color_weighted_base_scale_probe.py) — measures shifts vs Family A
+- [`folio-assistant/computations/probes/bring_color_weighted_base_scale_probe.py`](../../folio-assistant/computations/probes/bring_color_weighted_base_scale_probe.py) — measures shifts vs Family A
 
 ### Categorical construction
 

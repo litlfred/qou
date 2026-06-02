@@ -22,6 +22,8 @@ Usage:
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import sys
@@ -31,17 +33,17 @@ from pathlib import Path
 from mpmath import mp, mpf, fabs, mpmathify
 
 HERE = Path(__file__).parent
-HOEF_PATH = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
-PEEL_PATH = HERE / "markov-peel-atomic-tr-m.witness.json"
+HOEF_PATH = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+PEEL_PATH = _pb.witness_path("markov-peel-atomic-tr-m.witness.json", HERE)
 # Third path landed via PR #681's Step 2 + this PR's combiner: the
 # canonical Σ_λ y_λ(q_0) · χ^λ(β; q_0) trace built from per-irrep
 # chi caches (`per_irrep_pole_atom.py` chi-{atom}-h{n} caches).
-CHICACHE_PATH = HERE / "canonical-tr-m-via-chi-cache.witness.json"
+CHICACHE_PATH = _pb.witness_path("canonical-tr-m-via-chi-cache.witness.json", HERE)
 # Fourth path (this PR): direct evaluation of the cyclotomic Habiro
 # series `tr_M = (1/denom) · Σ_m a_m(u) · (u;u)_m` at u_0 = q_0^{1/2}
 # using the coefficients in `habiro-coefficients-extended.witness.json`.
 # Extends 1ppb coverage to ⁴He/⁵Li/⁶Li without needing chi caches.
-HABIRO_EXT_PATH = HERE / "habiro-coefficients-extended.witness.json"
+HABIRO_EXT_PATH = _pb.witness_path("habiro-coefficients-extended.witness.json", HERE)
 OUT_PATH = HERE / "cross-check-trM-1ppb.witness.json"
 
 TOLERANCE = mpf("1e-9")  # 1 ppb relative

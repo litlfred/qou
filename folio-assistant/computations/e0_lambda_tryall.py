@@ -34,6 +34,8 @@ no 6th fit (the Δ_λ gate already killed six).
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -74,7 +76,7 @@ H3_BLOCKS = [(3,), (2, 1), (1, 1, 1)]  # sym, std, alt
 
 
 def load_nucleon_blocks() -> dict:
-    cache = json.loads((HERE / "chi-neutron-h3-at-q0-50dps.witness.json").read_text())
+    cache = json.loads((_pb.witness_path("chi-neutron-h3-at-q0-50dps.witness.json", HERE)).read_text())
     by = {tuple(e["partition"]): e for e in cache["by_partition"]}
     out = {}
     for lam in H3_BLOCKS:

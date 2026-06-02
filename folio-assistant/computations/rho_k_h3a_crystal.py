@@ -69,6 +69,7 @@ and a side-by-side ``comparison_to_occam`` block.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import hashlib
 import json
@@ -444,7 +445,7 @@ def main() -> int:
         })
 
     # Comparison to Occam baseline
-    occam_path = HERE / "rho-k-h3a-refinement.witness.json"
+    occam_path = _pb.witness_path("rho-k-h3a-refinement.witness.json", HERE)
     if occam_path.exists():
         occam_witness = json.loads(occam_path.read_text())
         occam_pick = occam_witness["data"]["occam_pick"]

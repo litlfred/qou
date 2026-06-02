@@ -51,6 +51,7 @@ Occam pick from ``rho-k-h3a-refinement.witness.json``.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import hashlib
 import json
@@ -365,7 +366,7 @@ def main() -> int:
         closure_err_MeV = None
 
     # ── Step 10: load Option A (Occam) for comparison ──────────
-    occam_path = HERE / "rho-k-h3a-refinement.witness.json"
+    occam_path = _pb.witness_path("rho-k-h3a-refinement.witness.json", HERE)
     occam_pick = None
     if occam_path.exists():
         try:

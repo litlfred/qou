@@ -40,6 +40,7 @@ The difference between (a) and (b) is the interface-knot contribution
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -69,7 +70,7 @@ ATOMS = [
 
 def load_y_lambda_at_q0() -> dict[int, dict[tuple, mp.mpf]]:
     """Load cached Jones-Markov weights y_λ at q_0 from the canonical witness."""
-    path = HERE / "y-lambda-at-q0.witness.json"
+    path = _pb.witness_path("y-lambda-at-q0.witness.json", HERE)
     w = json.loads(path.read_text())
     by_n = {}
     for n_str, entries in w["data"]["by_n"].items():

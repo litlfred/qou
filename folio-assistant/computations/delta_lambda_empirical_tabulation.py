@@ -70,6 +70,7 @@ Output: `delta-lambda-empirical-tabulation.witness.json`.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import functools
 import json
 import sys
@@ -266,7 +267,7 @@ def load_y_lambda_at_q0(n: int) -> dict[tuple, mp.mpf]:
         return getattr(load_y_lambda_at_q0, cache_attr)
 
     # Try cached witness first (fast path).
-    cache_path = HERE / "y-lambda-at-q0.witness.json"
+    cache_path = _pb.witness_path("y-lambda-at-q0.witness.json", HERE)
     if cache_path.exists():
         try:
             cache_d = json.loads(cache_path.read_text())
@@ -306,7 +307,7 @@ def _load_chi_cache() -> dict[str, list[dict]]:
     global _CHI_CACHE
     if _CHI_CACHE is not None:
         return _CHI_CACHE
-    cache_path = HERE / "chi-lambda-at-q0.witness.json"
+    cache_path = _pb.witness_path("chi-lambda-at-q0.witness.json", HERE)
     if not cache_path.exists():
         _CHI_CACHE = {}
         return _CHI_CACHE

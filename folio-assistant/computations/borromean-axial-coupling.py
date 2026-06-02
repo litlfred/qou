@@ -58,6 +58,7 @@ Output
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from datetime import datetime, timezone
@@ -81,7 +82,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 # ── Step 1. Load Gram matrix + inverse from canonical witness ────
 
-GRAM_WITNESS_PATH = HERE / "gram-matrix-dual.witness.json"
+GRAM_WITNESS_PATH = _pb.witness_path("gram-matrix-dual.witness.json", HERE)
 _gram_data = json.loads(GRAM_WITNESS_PATH.read_text())
 GRAM = np.array(_gram_data["gram_matrix"], dtype=float)
 GRAM_INV = np.array(_gram_data["gram_inverse"], dtype=float)

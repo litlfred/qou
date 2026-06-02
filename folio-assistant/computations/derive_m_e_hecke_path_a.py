@@ -71,6 +71,7 @@ alone. No CODATA m_p, no fitted scale, no algebraic +1.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -91,7 +92,7 @@ OUT_WITNESS = HERE / "electron-m_e-derivation.witness.json"
 
 def _q_0_50dps() -> mp.mpf:
     """CAL-2 q_0 at 50 dps from the canonical pinning witness."""
-    p = HERE / "q-pinning-50-digit.witness.json"
+    p = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
     with p.open() as fh:
         d = json.load(fh)
     return mp.mpf(d["derived_50_digit"]["q"])

@@ -32,6 +32,7 @@ chain rebases to consume that mpfr witness directly.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -50,7 +51,7 @@ from derivation_chain import (  # noqa: E402
 
 
 HERE = Path(__file__).parent
-OUTPUT_CHAIN = HERE / "proton-mass-50dps.derivation.json"
+OUTPUT_CHAIN = _pb.witness_path("proton-mass-50dps.derivation.json", HERE)
 
 # CODATA pinned values for the proton/electron mass comparison; the
 # Hecke-pipeline summary values live in
@@ -355,7 +356,7 @@ def emit_codata_witness(chain: DerivationChain) -> None:
     the CODATA comparison data.  This is consumed by the Phase E
     final-convergence assertion in the workplan."""
     from witness_base import WitnessBuilder, load_and_hash_upstream
-    out = HERE / "proton-mass-codata-50dps.witness.json"
+    out = _pb.witness_path("proton-mass-codata-50dps.witness.json", HERE)
     w = WitnessBuilder("proton-mass-codata-50dps", engine="python")
     w.set_description(
         "Cross-pipeline m_p prediction vs CODATA at the precision "
@@ -418,7 +419,7 @@ def emit_codata_witness(chain: DerivationChain) -> None:
     # trace axiomatic-closed-form witness in the dep chain, and add the
     # corresponding `prop:` to reference_blocks via add_data so the
     # block-resolver picks it up.
-    _option_b_path = HERE / "option-b-proton-mass-full-chain.witness.json"
+    _option_b_path = _pb.witness_path("option-b-proton-mass-full-chain.witness.json", HERE)
     upstream_hashes: list[dict] = []
     if _option_b_path.exists():
         _, _hr = load_and_hash_upstream(_option_b_path)

@@ -47,6 +47,8 @@ is a no-op.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -57,7 +59,7 @@ mp.mp.dps = 60  # enough precision to truncate 100-dps → 50-dps cleanly
 
 HERE = Path(__file__).resolve().parent
 SRC = HERE / "y-lambda-wenzl-witness.json"
-DST = HERE / "y-lambda-at-q0.witness.json"
+DST = _pb.witness_path("y-lambda-at-q0.witness.json", HERE)
 
 
 def main() -> int:

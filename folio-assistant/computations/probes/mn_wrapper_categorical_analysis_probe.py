@@ -51,6 +51,18 @@ This probe DOCUMENTS the result; no new substrate constants.
 """
 from __future__ import annotations
 
+
+# Path bridge (subdirectory refactor — Phase 1 catch-up, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
+
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
@@ -59,7 +71,7 @@ from pathlib import Path
 import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent))
 sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"))
 
 from _precision import set_compute_dps, fmt  # noqa: E402
