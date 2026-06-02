@@ -12,7 +12,7 @@ Description: R bindings to the QOU `hecke-engine` Rust crate via
     (Kotlin/Swift via UniFFI).
 License: MIT + file LICENSE
 Encoding: UTF-8
-SystemRequirements: Cargo (Rust 1.70+), libgmp-dev, libmpfr-dev
+SystemRequirements: Cargo (Rust's package manager), rustc, libgmp-dev, libmpfr-dev
 Config/rextendr/version: 0.4.0
 URL: https://github.com/litlfred/qou
 BugReports: https://github.com/litlfred/qou/issues

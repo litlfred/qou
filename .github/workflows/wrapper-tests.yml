@@ -352,6 +352,11 @@ jobs:
           # is already set up; without it, use_extendr() refuses to
           # update an existing config.
           Rscript -e 'rextendr::use_extendr(quiet = TRUE, overwrite = TRUE)'
+          # use_extendr() generates configure/cleanup shell scripts but
+          # leaves them non-executable (R generates them with 0644);
+          # R CMD INSTALL then complains "'cleanup' exists but is not
+          # executable".  Mark them +x here.
+          chmod +x configure cleanup 2>/dev/null || true
           Rscript -e 'devtools::document(".")'
           Rscript -e 'pkgload::load_all("."); source("tests/smoke.R")'
 
