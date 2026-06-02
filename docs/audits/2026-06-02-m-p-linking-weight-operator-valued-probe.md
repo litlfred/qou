@@ -58,8 +58,9 @@ The target sits **between** two canonical weights on the same H_4 partition latt
 
 ## What this rules out
 
-- ❌ None of the six standard categorical weights (uniform, dim_q, dim_q², 1/dim_q, hook-density, Wenzl y_λ) at H_3, H_4, or H_5 is the canonical proton linking_weight.
+- ❌ None of the **seven** standard categorical weights (uniform, dim_q, dim_q², 1/dim_q, hook-density, Wenzl y_λ, **abs-content**) at H_3, H_4, or H_5 is the canonical proton linking_weight. (abs_content added per sibling PR #1709's Δ_λ binding-measure scan — refuted here at all three n.)
 - ❌ The 2.461648 target is NOT a clean weighted sum over a single H_n partition basis with a categorical weight; if it were, one of these would have hit within ~1 ppm.
+- ❌ Mixed-H_n test with canonical α values (1/2, 3/4, 1/4, h_q², [3]_q/[4]_q, dim_(2,1)/Σ_H4): closest is `α = h_q² ≈ 0.0437` giving +7664 ppm (WEAK). NOT a closure; coincidence at the 1-parameter-fit level, not a structural finding.
 
 ## What this opens
 

@@ -117,6 +117,20 @@ def hook_lengths(lam: tuple[int, ...]) -> list[int]:
     return out
 
 
+def _abs_content_sum(lam: tuple[int, ...]) -> mp.mpf:
+    """Σ_cell |content(cell)| where content(i, j) = j - i (0-indexed)
+    on partition cells. Per sibling PR #1709 (Δ_λ binding-measure
+    search, 2026-06-02): abs_content matched A-growth (13.40 vs 12.72)
+    in their per-block measure scan. Added here for cross-check
+    coverage on the linking_weight target."""
+    rows = list(lam)
+    s = mp.mpf(0)
+    for i, row in enumerate(rows):
+        for j in range(row):
+            s += abs(j - i)
+    return s
+
+
 WEIGHTS = {
     "uniform":      lambda lam, n: mp.mpf(1),
     "dim_q":        lambda lam, n: dim_q_lambda(lam, q),
@@ -124,6 +138,7 @@ WEIGHTS = {
     "recip_dim_q":  lambda lam, n: 1 / dim_q_lambda(lam, q),
     "hook_q_inv":   lambda lam, n: sum(1 / n_q(h) for h in hook_lengths(lam)),
     "y_lambda":     lambda lam, n: dim_q_lambda(lam, q) ** 2 / n_q_factorial(n),
+    "abs_content":  lambda lam, n: _abs_content_sum(lam) + mp.mpf("1e-30"),
 }
 
 
@@ -185,6 +200,32 @@ def main() -> int:
     n_proved = sum(1 for f in findings if "PROVED" in f["tier"])
     n_near = sum(1 for f in findings if "NEAR-MATCH" in f["tier"])
     print(f"Verdict: {n_proved} PROVED + {n_near} NEAR-MATCH out of {len(findings)} candidates")
+
+    # Mixed-H_n probe: test α·Family_A(H_3) + (1−α)·Family_A(H_4) for
+    # categorically-motivated α values (no fits).
+    print()
+    print("--- Mixed-H_n test: α · Family_A(H_3) + (1−α) · Family_A(H_4) ---")
+    FA_H3 = weighted_mean(3, "uniform")
+    FA_H4 = weighted_mean(4, "uniform")
+    print(f"  Family_A(H_3) = {mp.nstr(FA_H3, 12)}  (=(2+[2]_q)/3)")
+    print(f"  Family_A(H_4) = {mp.nstr(FA_H4, 12)}  (= 2.5328 = production)")
+    mixed_findings = []
+    for label, alpha in [
+        ("1/2 + 1/2",      mp.mpf(1) / 2),
+        ("3/4 + 1/4",      mp.mpf(3) / 4),
+        ("1/4 + 3/4",      mp.mpf(1) / 4),
+        ("h_q² ratio",     (q - 1 / q) ** 2 / 1),       # categorical: h²-scaled
+        ("[3]_q / [4]_q",  n_q(3) / n_q(4)),            # categorical: n=3/n=4 q-int ratio
+        ("dim_(2,1)/Σ_H4", dim_q_lambda((2, 1), q) /
+                            sum(dim_q_lambda(lam, q) for lam in partitions_of(4))),
+    ]:
+        val = alpha * FA_H3 + (1 - alpha) * FA_H4
+        t = tier(val)
+        mixed_findings.append({"label": label, "alpha": alpha, "value": val, "tier": t})
+        print(f"  α = {label:18s} ({mp.nstr(alpha, 6)}): L = {mp.nstr(val, 10):>14s}  {t}")
+    for mf in mixed_findings:
+        if "PROVED" in mf["tier"] or "NEAR-MATCH" in mf["tier"]:
+            print(f"  ★ Mixed match: α = {mf['label']}")
 
     w_out = WitnessBuilder("m-p-linking-weight-operator-valued-probe", engine="mpmath")
     w_out.set_description(

@@ -36,7 +36,15 @@ PR #1698 final-verdict audit predicted that the structural decomposition would s
 
 - L_H (Hopf, deuteron binding) is PSD-feasible in all three H_3 Wedderburn blocks.
 - The standard-(2,1) eigenvalue is **+0.812**, the same value as the sign-(1,1,1) block — a categorically clean +ve value, not an accidental near-zero pass.
-- The +0.812 value = `1 / (q + q⁻¹) = z(q_0) · 1/[2]_q`? Quick check: at q_0 ≈ 1.110, [2]_q = 2.011, 1/[2]_q = 0.497, 2 · 0.497 = 0.994 — no, that's not 0.812. The 0.812 value = `1 − h²/2`? At q_0, h ≈ 0.209, h² ≈ 0.0437, 1 − h²/2 = 0.978 — no. The 0.812 value = `1 − h²` = 0.956 — no. Looking at sign_(1,1,1) = z − h = z(q_0) − (q − q⁻¹) at q_0: z(q_0) = 1/(q^{1/2}+q^{-1/2}) ≈ 0.487, h ≈ 0.209, z − h = 0.278 — no. **The 0.812 categorical identification is an OPEN follow-up**; the value is positive and stable across σ_1² / σ_2² variants, which is what the PSD-feasibility result needs.
+**Categorical identification of +0.812 = q_0⁻²** (verified 2026-06-02 at 10+ digits):
+
+σ_1 acts on the Hoefsmit standard-(2,1) basis with eigenvalues `(+q, −q⁻¹)`. So `σ_1² = L_H` has eigenvalues `(q², q⁻²)`. At q_0 > 1:
+
+- Max eigenvalue: `q_0² = 1.232052...` (= the trivial-block value, since trivial sends σ ↦ +q)
+- **Min eigenvalue: `q_0⁻² = 0.811653754...`** (matches witness `+0.811653754365758` to 10+ digits)
+- The sign block (σ ↦ −q⁻¹) gives σ² → q⁻² = 0.812 — same value, different reason; on the Hopf link the standard-(2,1) min eig coincides with the sign-block value at q_0 > 1.
+
+This is the clean structural fact behind L_H's PSD-feasibility: the Hopf link σ_1² is diagonal in the Hoefsmit basis with strictly positive eigenvalues (q², q⁻²) at any q > 0. Contrast 6_2 = (σ_1σ_2⁻¹σ_1)·(σ_1²·σ_2⁻¹) which is non-diagonal off-block and its symmetric part's min eigenvalue is −0.891 at q_0.
 
 ## What this rules in
 
