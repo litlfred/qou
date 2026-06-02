@@ -30,7 +30,7 @@ Confirmation via `linking_weight_canonical_object_lwfix.py` (sibling branch):
 | D | 0.39479 | 0.39486 | +0.018 % |
 | ⁴He | 0.057218 | 0.057228 | +0.018 % |
 
-**0.018 % is 1500× smaller than the 2.89 % m_avg gap.** The existing color_weighted convention is a per-p-n-interface correction (closes the 0.030 % p/n split toward 0.14 %); it does NOT contribute to the base mass scale.
+**0.018 % is ~160× smaller than the 2.89 % m_avg gap** (`2.89 / 0.018 ≈ 161`). The existing color_weighted convention is a per-p-n-interface correction (closes the 0.030 % p/n split toward 0.14 %); it does NOT contribute to the base mass scale. (Note: a separate later analysis using the symmetric δ² term — base-scale extension via `bring_color_weighted_linking_weight` — measures the m_avg shift as 842.8 ppb, which is the ~34290× gap to the +2.89 % residual at the BASE scale; that is a distinct quantity from this per-interface 160× number.)
 
 To shift m_avg, Option A would need a DIFFERENT categorical formalism — e.g. per-sheet PL integration on Bring's surface contributing to the BASE m_avg, not just the per-interface asymmetry. This is research-level (color-sheet ↔ quark-flavor mapping not in the paper). 1-2 weeks.
 

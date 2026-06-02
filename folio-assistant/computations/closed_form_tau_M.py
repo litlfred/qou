@@ -148,9 +148,20 @@ def canonical_interface_kinds(
 ) -> list[InterfaceKind]:
     """Interface kinds for the canonical atomic braid 𝓑_K.
 
-    Two conventions for the p-n boundary:
+    Three conventions for the p-n boundary:
 
-      - "chi_lambda_braid" (DEFAULT, matches production):
+      - "bring_color_weighted" (DEFAULT, 2026-06-01 — canonical/derived):
+          Quaternionic color-tube weighting using the substrate-derived
+          δ = (m_n − m_p) / M_N from `flavor_split_subleading(q)`
+          (PR #690, prop:flavor-split-substrate — substrate-pure,
+          no fitted quark masses).  Net p-n interface factor (applied
+          downstream in `closed_form_ratio` / `closed_form_tau_M`):
+            f_pn = z − h·(1/2 − δ/4)
+          For LABEL purposes returned here, the p-n kind is `"averaged"`
+          (same as strict_averaged); the δ-aware factor is applied at
+          the value-computation layer, not in the labels.
+
+      - "chi_lambda_braid" (legacy production marshalling):
           p-n is marshalled as positive σ in the chi_lambda_braid
           pipeline.  `chi_lambda_braid` itself only takes
           `(sign, gen)` pairs; the averaged → σ simplification lives
@@ -158,22 +169,22 @@ def canonical_interface_kinds(
           (`canonical_braid_marshalling.marshal_to_chi_lambda_braid`,
           which maps `(c=1, d=-h/2)` → `(sign=+1, gen)` and silently
           drops the -h/2 coefficient).  This is what the 4 production
-          tr_M scripts compute.  **Phase 5q witness validates the
-          closed form against the empirical slow path to 1e-49 at
-          all four anchor atoms (D, T, ³He, ⁴He) under this default
-          convention — `closed-form-tau-M-verification-phase5q.witness.json`.**
+          tr_M scripts compute prior to migration.  **Phase 5q witness
+          validates the closed form against the empirical slow path
+          to 1e-49 at all four anchor atoms (D, T, ³He, ⁴He) under
+          this convention — `closed-form-tau-M-verification-phase5q.witness.json`.**
 
-      - "strict_averaged" (math-correct, audit only):
+      - "strict_averaged" (math-correct, audit only — δ-degenerate):
           p-n uses (σ_g - (h/2)·I) which gives factor (z - h/2).
-          Phase 5q confirmed this **alternative** convention
-          disagrees with the production pipeline (which uses
-          chi_lambda_braid-marshalled words) by ~21% relative for
-          atoms with at least one p-n interface — i.e. this is the
-          gap between the literal averaging generator and what
-          production marshalling actually computes, NOT a gap
-          between the closed form and production.  Use this only
-          when probing the marshalling-bug audit trail; do NOT use
-          it where production-matching tr_M is required.
+          Same as bring_color_weighted with δ = 0 (no flavor split).
+          Phase 5q confirmed this **alternative** convention disagrees
+          with the legacy chi_lambda_braid production marshalling by
+          ~21% relative for atoms with at least one p-n interface —
+          i.e. this is the gap between the literal averaging generator
+          and what production marshalling actually computes, NOT a
+          gap between the closed form and production.  Use this only
+          when probing the marshalling-bug audit trail; the
+          bring_color_weighted convention adds δ on top.
 
           See `docs/audits/2026-05-25-phase5q-closed-form-reconciliation.md`
           for the full convention map.
