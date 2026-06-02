@@ -22,6 +22,7 @@ const LABEL_PREFIXES: Record<string, string> = {
   lemma: "lem:",
   proposition: "prop:",
   corollary: "cor:",
+  algorithm: "alg:",
   conjecture: "conj:",
   example: "ex:",
   remark: "rem:",
@@ -31,6 +32,22 @@ const LABEL_PREFIXES: Record<string, string> = {
   diagram: "fig:",
   table: "tbl:",
 };
+
+/**
+ * Provable-label prefixes — used by AlgorithmSchema to enforce that
+ * every `algorithm` block cites at least one upstream provable in
+ * `uses[]`. Algorithms are downstream of math: an algorithm without
+ * a citation to a definition / proposition / theorem / lemma /
+ * corollary / conjecture cannot be justified.
+ */
+const PROVABLE_LABEL_PREFIXES = [
+  "def:",
+  "prop:",
+  "thm:",
+  "lem:",
+  "cor:",
+  "conj:",
+] as const;
 
 function labelForKind(kind: string) {
   const prefix = LABEL_PREFIXES[kind];
@@ -184,6 +201,43 @@ export const CorollarySchema = ProvableBaseSchema.extend({
   label: labelForKind("corollary"),
 });
 
+/**
+ * Algorithm — specialised proposition, must cite at least one
+ * upstream provable in `uses[]`. The "downstream of math"
+ * invariant is enforced by `BlockSchema.superRefine` below (kept
+ * out of the per-kind schema so the discriminated union sees a
+ * ZodObject, which is required by `z.discriminatedUnion`).
+ */
+export const AlgorithmSchema = ProvableBaseSchema.extend({
+  kind: z.literal("algorithm"),
+  label: labelForKind("algorithm"),
+  // Forward reference: ComputationSchema is declared further down in
+  // the same module (mirrors BlockBaseSchema's `computation` field).
+  computation: z.lazy(() => ComputationSchema).optional(),
+  interprets: z.string().min(1).optional(),
+});
+
+/**
+ * Returns true iff at least one entry in `uses` references a
+ * provable block — accepts both same-paper labels (e.g.
+ * `"prop:foo"`) and cross-paper qualified labels (e.g.
+ * `"unital-groebner-bases:thm:bar"`).
+ */
+export function citesProvable(uses: string[] | undefined): boolean {
+  if (!uses || uses.length === 0) return false;
+  return uses.some((u) =>
+    PROVABLE_LABEL_PREFIXES.some((prefix) => {
+      if (u.startsWith(prefix)) return true;
+      // Cross-paper "paper-dir:prop:foo" → check after first colon.
+      const idx = u.indexOf(":");
+      if (idx > 0 && !u.startsWith("http")) {
+        return u.slice(idx + 1).startsWith(prefix);
+      }
+      return false;
+    }),
+  );
+}
+
 export const ConjectureSchema = BlockBaseSchema.extend({
   kind: z.literal("conjecture"),
   label: labelForKind("conjecture"),
@@ -285,22 +339,40 @@ export const TableSchema = z.object({
 });
 
 /** Discriminated union — validates any Block. */
-export const BlockSchema = z.discriminatedUnion("kind", [
-  DefinitionSchema,
-  TheoremSchema,
-  LemmaSchema,
-  PropositionSchema,
-  CorollarySchema,
-  ConjectureSchema,
-  ExampleSchema,
-  RemarkSchema,
-  ProofSchema,
-  SimulatorSchema,
-  ProseSchema,
-  EquationSchema,
-  DiagramSchema,
-  TableSchema,
-]);
+export const BlockSchema = z
+  .discriminatedUnion("kind", [
+    DefinitionSchema,
+    TheoremSchema,
+    LemmaSchema,
+    PropositionSchema,
+    CorollarySchema,
+    AlgorithmSchema,
+    ConjectureSchema,
+    ExampleSchema,
+    RemarkSchema,
+    ProofSchema,
+    SimulatorSchema,
+    ProseSchema,
+    EquationSchema,
+    DiagramSchema,
+    TableSchema,
+  ])
+  .superRefine((block, ctx) => {
+    // Cross-kind invariant: an `algorithm` block must cite at least
+    // one upstream provable in `uses[]` (algorithms are downstream
+    // of math). Encoded here rather than inside `AlgorithmSchema`
+    // so the discriminated union still sees ZodObjects.
+    if (block.kind === "algorithm" && !citesProvable(block.uses)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["uses"],
+        message:
+          "An `algorithm` block must cite at least one provable " +
+          "(def:/prop:/thm:/lem:/cor:/conj:) in `uses[]` — " +
+          "algorithms are downstream of math.",
+      });
+    }
+  });
 
 // ── Chapter / Document schemas ───────────────────────────────────
 

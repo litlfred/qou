@@ -593,6 +593,40 @@ export interface CorollaryBlock extends ProvableBase {
   kind: "corollary";
 }
 
+/**
+ * Algorithm — a specialised proposition that realises a chain of
+ * propositions in executable compute.
+ *
+ * Algorithms are downstream of mathematics: every algorithm block
+ * MUST cite at least one provable block (definition, proposition,
+ * theorem, lemma, corollary, or conjecture) in its `uses[]` field.
+ * The validator enforces this invariant via `AlgorithmSchema`.
+ *
+ * An algorithm block typically names:
+ *  - the input / output contract,
+ *  - the propositions whose correctness it depends on (`uses[]`),
+ *  - the canonical compute entry point (`computation`),
+ *  - optionally, a Lean formalisation of the correctness statement.
+ *
+ * Renders as a numbered theorem-like environment (`algorithmblock`)
+ * to avoid colliding with the LaTeX `algorithm` float package.
+ */
+export interface AlgorithmBlock extends ProvableBase {
+  kind: "algorithm";
+  /** Optional computational realisation (Python / Rust / ...). */
+  computation?: Computation;
+  /**
+   * Optional label of an upstream definition this algorithm
+   * realises (parallel to `RemarkBlock.interprets`).
+   *
+   * Use when the algorithm is the canonical compute for a single
+   * named construction (e.g. `interprets: "def:markov-trace"`).
+   * For multi-proposition algorithms, leave unset and cite all
+   * propositions in `uses[]`.
+   */
+  interprets?: string;
+}
+
 /** Conjecture — an unproven statement. Lean stub optional. */
 export interface ConjectureBlock extends BlockBase {
   kind: "conjecture";
@@ -823,6 +857,7 @@ export type Block =
   | LemmaBlock
   | PropositionBlock
   | CorollaryBlock
+  | AlgorithmBlock
   | ConjectureBlock
   | ExampleBlock
   | RemarkBlock
@@ -840,6 +875,7 @@ export type EnvironmentBlock =
   | LemmaBlock
   | PropositionBlock
   | CorollaryBlock
+  | AlgorithmBlock
   | ConjectureBlock
   | ExampleBlock
   | RemarkBlock

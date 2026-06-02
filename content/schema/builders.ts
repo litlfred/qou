@@ -8,6 +8,7 @@ export {
   lemma,
   proposition,
   corollary,
+  algorithm,
   conjecture,
   example,
   remark,

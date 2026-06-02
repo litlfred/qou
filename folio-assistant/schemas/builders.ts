@@ -22,6 +22,7 @@ import type {
   LemmaBlock,
   PropositionBlock,
   CorollaryBlock,
+  AlgorithmBlock,
   ConjectureBlock,
   ExampleBlock,
   RemarkBlock,
@@ -48,6 +49,7 @@ import {
   LemmaSchema,
   PropositionSchema,
   CorollarySchema,
+  AlgorithmSchema,
   ConjectureSchema,
   ExampleSchema,
   RemarkSchema,
@@ -65,6 +67,7 @@ import {
   FolioSchema,
   DocumentSchema,
   FeedbackItemSchema,
+  citesProvable,
 } from "./constraints";
 
 // ── Generic validated builder ────────────────────────────────────
@@ -101,6 +104,21 @@ export function proposition(data: Omit<PropositionBlock, "kind">): PropositionBl
 
 export function corollary(data: Omit<CorollaryBlock, "kind">): CorollaryBlock {
   return validated(CorollarySchema, { kind: "corollary" as const, ...data });
+}
+
+export function algorithm(data: Omit<AlgorithmBlock, "kind">): AlgorithmBlock {
+  const block = validated(AlgorithmSchema, { kind: "algorithm" as const, ...data });
+  // Per "downstream of math" invariant (also enforced by
+  // `BlockSchema.superRefine`): an algorithm without a cited
+  // provable in `uses[]` is rejected at construction time so
+  // authoring errors fail loudly in the editor.
+  if (!citesProvable(block.uses)) {
+    throw new Error(
+      `algorithm block "${block.label}" must cite at least one provable ` +
+        `(def:/prop:/thm:/lem:/cor:/conj:) in uses[] — algorithms are downstream of math.`,
+    );
+  }
+  return block;
 }
 
 export function conjecture(data: Omit<ConjectureBlock, "kind">): ConjectureBlock {
