@@ -48,8 +48,8 @@ on:
       - "folio-assistant/computations/derivation_chain*.py"
       - "folio-assistant/computations/build_*.py"
       - "folio-assistant/computations/homflypt_engine.py"
-      - "folio-assistant/computations/*.witness.json"
-      - "folio-assistant/computations/*.derivation.json"
+      - "folio-assistant/computations/**/*.witness.json"
+      - "folio-assistant/computations/**/*.derivation.json"
       - "scripts/audit-wiring.ts"
       - "scripts/audit-wiring-migrate.ts"
       - "content/pipeline/trivial-skeleton-audit.ts"
@@ -76,8 +76,8 @@ on:
       - "folio-assistant/computations/derivation_chain*.py"
       - "folio-assistant/computations/build_*.py"
       - "folio-assistant/computations/homflypt_engine.py"
-      - "folio-assistant/computations/*.witness.json"
-      - "folio-assistant/computations/*.derivation.json"
+      - "folio-assistant/computations/**/*.witness.json"
+      - "folio-assistant/computations/**/*.derivation.json"
       - "scripts/audit-wiring.ts"
       - "scripts/audit-wiring-migrate.ts"
       - "content/pipeline/trivial-skeleton-audit.ts"
@@ -538,11 +538,11 @@ jobs:
           # Thimble scripts removed from CI (2026-05-24) — no longer
           # need per-file exclusions. Only the standing exclusions
           # for audit-state + methodology-narrative witnesses remain.
-          PATHSPECS=':(glob)folio-assistant/computations/*.witness.json
-          :(glob)folio-assistant/computations/*.derivation.json
-          :(exclude)folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json
-          :(exclude,glob)folio-assistant/computations/*-audit.witness.json
-          :(exclude,glob)folio-assistant/computations/*-scan.witness.json
+          PATHSPECS=':(glob)folio-assistant/computations/**/*.witness.json
+          :(glob)folio-assistant/computations/**/*.derivation.json
+          :(exclude,glob)folio-assistant/computations/**/delta-lambda-empirical-tabulation.witness.json
+          :(exclude,glob)folio-assistant/computations/**/*-audit.witness.json
+          :(exclude,glob)folio-assistant/computations/**/*-scan.witness.json
           :(exclude,glob)folio-assistant/computations/*-compliance.witness.json
           :(exclude)folio-assistant/computations/methodology-deprecation.witness.json'
           if git diff --quiet -- $PATHSPECS; then

@@ -1,6 +1,6 @@
 # Proposal — subdirectory refactor of `folio-assistant/computations/`
 
-**Status:** DRAFT — awaiting owner review before any file moves.
+**Status:** ACCEPTED 2026-06-02 (see "Owner decisions" at bottom).
 **Branch:** `claude/computations-subdirectory-refactor-2026-06-02`
 **Sibling context:** Task 3 of the [PR #1674 follow-up backlog](https://github.com/litlfred/qou/pull/1674#issuecomment-4596887754).
 
@@ -281,12 +281,48 @@ Comfortably within a single working tranche if PR doesn't churn.
    Recommend deferring — script moves first, witness moves only if
    the audit script gets a corresponding glob upgrade.
 
-## Next step (gated on owner OK)
+## Owner decisions (2026-06-02)
 
-If the proposal is accepted, the next commit on this branch is
-Phase 0 (path bridge + empty `__init__.py` + migration codemod
-scaffold). That commit is **0-file-move + green CI**. Phase 1 (`probes/`)
-follows in a second commit.
+| # | Question | Decision |
+|---|---|---|
+| 1 | Path-bridge mechanism | **Top-of-script `from . import _path_bridge`** (recommended default accepted) |
+| 2 | content/ ref migration | **Codemod** (recommended default accepted) |
+| 3 | Naming for `A_operator_*` | **`a_operator/`** lowercase |
+| 4 | Substrate cluster | **Move now** (overrides "defer to separate PR") — `substrate/` becomes Phase 6, included in this branch |
+| 5 | `*.witness.json` co-move | **Move now** (overrides "defer") — witnesses move with their producers; `audit-wiring.ts` + the witness-pipeline.yml path filters get upgraded to `**/*.witness.json` glob |
 
-If the proposal is rejected or revised, this doc is the discussion
-artifact; nothing has been moved yet.
+### Implications of (4) — substrate cluster in-scope
+
+Phase 6 is now a real phase in this branch (was TBD-deferred).
+Scope: `q_parameter`, `witness_base`, `witness_constant_staleness`,
+`_precision`, `experimental_constants`, `codata_constants`,
+`hecke_core`, `hecke_core_legacy`, `hecke_core_symbolic`,
+`knot_volumes`, `lr_coefficients`, `char_fast`, `hecke_characters` —
+~25 modules. ~70 % of compute scripts import at least one.
+
+The path bridge from Phase 0 is what makes this tractable: scripts
+keep doing `from q_parameter import Q` regardless of where
+`q_parameter.py` physically lives, because `substrate/` ends up on
+sys.path via the bridge. CI gate at the end of Phase 6 will catch
+any script that imports a substrate module that wasn't covered by
+the move table.
+
+### Implications of (5) — witness JSON co-move
+
+Each phase now moves both `<cluster>/<X>.py` AND
+`<cluster>/<X>.witness.json` (+ `<X>.derivation.json` where
+present). This roughly doubles the per-phase file count but is
+mechanical via the codemod (the move-table maps script path →
+new path; the same maps with `.py` → `.witness.json` are added).
+
+**Required upgrades** (additional Phase 0 tasks):
+
+- `scripts/audit-wiring.ts` — change `glob("folio-assistant/computations/*.witness.json")` to recursive `glob("folio-assistant/computations/**/*.witness.json")`.
+- `.github/workflows/witness-pipeline.yml` — change `paths:` patterns from `folio-assistant/computations/*.witness.json` to `folio-assistant/computations/**/*.witness.json` (same for `*.derivation.json`).
+- Any other tool that scans witnesses (run-pipeline.py, etc.) gets a corresponding `**` upgrade.
+
+## Next step
+
+Phase 0 lands now: path bridge + `__init__.py` + codemod scaffold +
+`audit-wiring.ts` glob upgrade + workflow path-filter upgrades.
+**0 file moves**, green CI. Then Phase 1 (`probes/`) follows.

@@ -39,7 +39,10 @@
  *
  * Scope
  * -----
- *   Scans ``folio-assistant/computations/*.witness.json``.  Lean witnesses
+ *   Scans `folio-assistant/computations/` recursively for
+ *   `*.witness.json` (post the subdirectory refactor — witnesses
+ *   live next to their producer scripts inside cluster subdirs).
+ *   Lean witnesses
  *   (``content/**\/*.lean.*.witness``) have a different lifecycle and are
  *   covered by ``scripts/lean-witness.ts`` / ``scripts/witness-audit.ts``.
  *
@@ -267,8 +270,22 @@ interface BucketResult {
 
 function audit(args: Args): BucketResult {
   const witnessFiles = globSync(
-    "folio-assistant/computations/*.witness.json",
-    { cwd: REPO_ROOT, absolute: true }
+    // Recursive glob: post the 2026-06-02 subdirectory refactor,
+    // witnesses sit next to their producer scripts inside cluster
+    // subdirs (probes/, habiro/, …). The bare-name `*.witness.json`
+    // form is preserved by `_path_bridge.py` for imports, but
+    // file-system scans need the `**/` recursion.
+    //
+    // `_deprecated/` is explicitly excluded — its witnesses are
+    // dead exploratory probes by definition (see the README in
+    // that directory). Including them would pollute the audit's
+    // orphan-count baseline.
+    "folio-assistant/computations/**/*.witness.json",
+    {
+      cwd: REPO_ROOT,
+      absolute: true,
+      ignore: ["folio-assistant/computations/_deprecated/**"],
+    }
   );
 
   const { wired, blockHasWitnessFor, blockLabels } = collectWiredWitnesses();
