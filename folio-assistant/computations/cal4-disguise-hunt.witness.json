@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T20:57:38.267357+00:00",
-  "commitSha": "eb6103bd15037a0dea544d490a95dc1f775fc53b",
+  "computedAt": "2026-06-02T03:00:00.472742+00:00",
+  "commitSha": "706c331d90a7221ebd91524d697db857fcce3b57",
   "assertions": [
     {
       "name": "no_unacknowledged_cal4_disguises_found",
@@ -33,10 +33,10 @@
   "description": "Hunt for CAL-4 disguises beyond the literal pattern caught by fitted_labelled_canonical_audit. Three heuristics: (A) Möbius rational q-pencils, (B) PSLQ + substrate-claim + CODATA-target trifecta, (C) high-precision literals not in acknowledged CODATA/FITTED/VALIDATION slots. Exempts `# CAL-1/2/3/4`, `# FITTED_FROM_CODATA`, `# acknowledged`, `# noqa: P31/P32`, `_deprecated/`, and `codata_constants.py`.",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "data": {
-    "scripts_scanned": 916,
-    "total_findings": 29,
+    "scripts_scanned": 925,
+    "total_findings": 30,
     "findings_by_pattern": {
-      "C-unnamed-high-precision-literal": 28,
+      "C-unnamed-high-precision-literal": 29,
       "A-mobius-pencil": 1
     },
     "findings": [
@@ -60,6 +60,13 @@
         "line": 41,
         "name": "Q_0",
         "value": "1.1097090249"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/su2_spinor_multiplicity_resolution.py",
+        "line": 82,
+        "name": "Q0",
+        "value": "1.10997859561220225731080831999100762523924148"
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
