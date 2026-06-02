@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-06-01T05:50:46.488026+00:00",
+  "computedAt": "2026-06-02T15:22:03.952547+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -659,6 +659,46 @@
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "E_0_CALIBRATION_MEV_ERR,",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/hecke_core_legacy.py",
+        "line": 150,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "E_0_CALIBRATION_MEV, E_0_CALIBRATION_MEV_ERR,",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/hecke_core_legacy.py",
+        "line": 150,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "E_0_CALIBRATION_MEV, E_0_CALIBRATION_MEV_ERR,",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/hecke_core_legacy.py",
+        "line": 2149,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "r = _canon(Z, N, E_0=E_0_CALIBRATION_MEV)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/hecke_core_legacy.py",
+        "line": 2155,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/hecke_core_legacy.py",
+        "line": 2160,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))",
         "kind": "active"
       },
       {
