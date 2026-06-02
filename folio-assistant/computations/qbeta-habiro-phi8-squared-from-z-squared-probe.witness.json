@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:45:33.359397+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "computedAt": "2026-06-02T15:11:59.788847+00:00",
+  "commitSha": "3fc492d9a71c74fd9c530f6fc4e494f1ce1976a9",
   "assertions": [
     {
       "name": "phi8_squared_mechanism_identified",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 33364,
+  "durationMs": 32538,
   "computation": "qbeta-habiro-phi8-squared-from-z-squared-probe",
   "scriptFile": "qbeta_habiro_phi8_squared_from_z_squared_probe.py",
   "scriptHash": "ab70e58c4381",
@@ -450,6 +450,6 @@
       "z_sq_at_q0": 0.24932079612931632,
       "phi8_at_u0": 2.232052454166764
     },
-    "elapsed_seconds": 33.36431336402893
+    "elapsed_seconds": 32.53830671310425
   }
 }

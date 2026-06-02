@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:44:55.148765+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "computedAt": "2026-06-02T15:11:22.468420+00:00",
+  "commitSha": "3fc492d9a71c74fd9c530f6fc4e494f1ce1976a9",
   "assertions": [
     {
       "name": "habiro_infrastructure_reproduces_witness",
@@ -39,16 +39,16 @@
     "subtask_A_habiro_reproduction": {
       "p": {
         "tr_M_habiro": "1.06530614425444997566663340374",
-        "tr_M_witness": "1.06530622859238930000000000000",
-        "abs_diff": "8.4337939e-8",
-        "rel_ppm": "0.079168",
+        "tr_M_witness": "1.06530614425445000000000000000",
+        "abs_diff": "2.4333367e-17",
+        "rel_ppm": "0.000000",
         "passes_10ppm": true
       },
       "n": {
         "tr_M_habiro": "0.923233229911637177970269912007",
-        "tr_M_witness": "0.923233297169583800000000000000",
-        "abs_diff": "6.7257947e-8",
-        "rel_ppm": "0.072850",
+        "tr_M_witness": "0.923233229911637100000000000000",
+        "abs_diff": "7.7970270e-17",
+        "rel_ppm": "0.000000",
         "passes_10ppm": true
       }
     },
