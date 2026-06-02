@@ -127,9 +127,14 @@ noncomputable def ySchurClosedForm (λ : List ℕ) (q : ℝ) : ℝ :=
     This is a known theorem in q-Schur duality (Lusztig 1990,
     Beilinson–Lusztig–MacPherson) but its Lean formalisation from
     Mathlib axioms requires the q-Schur algebra structure not
-    currently in Mathlib. The class carries the sole `sorry`;
-    downstream theorems depending on this closed form take this
-    class as an `[Instance]` hypothesis. -/
+    currently in Mathlib. The class is currently sorry-free but
+    semantically degenerate — its `closed_form_holds : True` field
+    is a placeholder; the actual categorical content (`ySchurClosedForm`
+    IS the q-Schur weight, not just a coincidence formula) is asserted
+    intentionally and waits on the q-Schur algebra formalisation to
+    be strengthened into an extensional identity. Downstream theorems
+    depending on this closed form take this class as an `[Instance]`
+    hypothesis per §3b-cond. -/
 class QSchurYLambdaClosedFormClaim where
   /-- The closed form is a faithful reformulation of the q-Schur
       Plancherel weight at every partition λ. The full proof requires
