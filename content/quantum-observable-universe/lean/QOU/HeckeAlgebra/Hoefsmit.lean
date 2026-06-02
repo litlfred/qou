@@ -79,7 +79,7 @@ open QOU.HeckeAlgebra
     `f^λ`, the number of standard Young tableaux of shape `λ`.
     Axiomatised pending the Mathlib `StandardYoungTableau`
     enumeration. -/
-axiom seminormalDim : ∀ {n : ℕ}, Nat.Partition n → ℕ
+opaque seminormalDim : ∀ {n : ℕ}, Nat.Partition n → ℕ
 
 /-- The seminormal dimension is positive for non-empty
     partitions (the trivial Young tableau `T = λ` is always
@@ -94,7 +94,7 @@ axiom seminormalDim_pos : ∀ {n : ℕ} (lam : Nat.Partition n) (hn : 0 < n),
     Hoefsmit (1974); the concrete construction is in
     `folio-assistant/computations/hecke/hecke_characters.py`
     (function `build_seminormal_matrices`). -/
-axiom HoefsmitMatrix : ∀ {n : ℕ} (lam : Nat.Partition n) (_q : ℝ) (_i : Fin (n - 1)),
+opaque HoefsmitMatrix : ∀ {n : ℕ} (lam : Nat.Partition n) (_q : ℝ) (_i : Fin (n - 1)),
     Matrix (Fin (seminormalDim lam)) (Fin (seminormalDim lam)) ℝ
 
 /-- **Hecke relation in T-form** (the F_p-friendly form, per

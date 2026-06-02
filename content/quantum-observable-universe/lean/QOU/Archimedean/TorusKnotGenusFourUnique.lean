@@ -49,13 +49,15 @@ end TorusKnot
 -- Ref: [manuscript] §5/torus-knot-genus-four-unique
 -- Ref: [rolfsen] Rolfsen, *Knots and Links*
 -- Ref: [manuscript] the previous explicit proof no longer typechecked under the
--- current Lean/Mathlib stack, so this file temporarily records the cited
--- classification result as an axiom until the arithmetic proof is restored.
+-- current Lean/Mathlib stack, so this file temporarily keeps the cited
+-- classification result as a `sorry`-backed placeholder until the arithmetic
+-- proof is restored.
 -- TODO: restore a proof once the arithmetic script is updated for the current
 -- Lean/Mathlib toolchain.
-axiom torus_knot_genus_four_unique (K : TorusKnot)
+theorem torus_knot_genus_four_unique (K : TorusKnot)
     (h : K.genus = 4) :
-    (K.m = 2 ∧ K.n = 9) ∨ (K.m = 3 ∧ K.n = 5)
+    (K.m = 2 ∧ K.n = 9) ∨ (K.m = 3 ∧ K.n = 5) := by
+  sorry
 
 /-- The crossing numbers of the unique genus-4 pair are `9` and `10`. -/
 -- Ref: [manuscript] §5/torus-knot-genus-four-unique

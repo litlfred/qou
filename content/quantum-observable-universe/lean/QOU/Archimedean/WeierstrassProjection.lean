@@ -35,14 +35,14 @@ noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
     `ℤ[q, q⁻¹] → ℂ` for the archimedean model. The algebraic properties
     of this map are left axiomatic here because this file only needs
     coefficient transport into the analytic differential equation. -/
-axiom coeffEmbed : R_q → ℂ
+opaque coeffEmbed : R_q → ℂ
 
 /-- **External axiom** (Lang, Elliptic Functions §VI.3; manuscript
     §5/weierstrass-projection): the Weierstrass projection ℘_q
     associated to the Descartes elliptic curve.  Axiomatised pending
     a complex Weierstrass-℘ formalisation in Mathlib. -/
 -- Ref: [manuscript] §5/weierstrass-projection
-axiom weierstrassProjection : R_q → R_q → ℂ → ℂ
+opaque weierstrassProjection : R_q → R_q → ℂ → ℂ
 
 /-- **External axiom (Lang, Elliptic Functions Thm VI.3.6):** the
     Weierstrass differential equation `℘'² = 4℘³ − g₂℘ − g₃`. -/
