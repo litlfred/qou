@@ -36,6 +36,7 @@ order-of-operations discipline behind `prop:neutron-qvalue-symbolic`
 
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
 
 namespace QOU.ParticleInteractions
 
@@ -83,7 +84,7 @@ theorem archimedean_does_not_commute_sub :
     ∃ (τ : ℤ → ℤ) (xn xp : ℤ),
       τ xn - τ xp ≠ τ (xn - xp) := by
   refine ⟨fun x => x ^ 2, 2, 1, ?_⟩
-  decide
+  norm_num
 
 end QOU.ParticleInteractions
 
