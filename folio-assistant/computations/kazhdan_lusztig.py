@@ -167,6 +167,136 @@ def kl_polynomial(x: tuple[int, ...], w: tuple[int, ...]) -> sp.Expr:
     return sp.Integer(1)
 
 
+# ── Memoized Kazhdan–Lusztig recursion (K-L 1979 §1.1) ────────────
+#
+# For n ≥ 5 the closed form fails (first non-trivial P appears at S_5).
+# The standard recursion (K-L 1979 §1.1, Brenti §5.2): pick a right
+# descent s of w (i.e. ws < w), then
+#
+#   c(x, w; s) := P_{xs, ws}                       if xs > x
+#               := P_{xs, ws} + q · P_{x, ws}      if xs < x
+#
+#   P_{x, w} = c(x, w; s) − Σ_{x ≤ z < ws, zs < z}
+#                              μ(z, ws) · q^{(ℓ(w) − ℓ(z))/2} · P_{x, z}
+#
+# where μ(z, w') is the coefficient of q^{(ℓ(w') − ℓ(z) − 1)/2} in
+# P_{z, w'}(q) — zero unless ℓ(w') − ℓ(z) is odd.
+#
+# Base cases: P_{w, w} = 1; P_{x, w} = 0 when x ̸≤ w.
+
+_kl_cache: dict[
+    tuple[tuple[int, ...], tuple[int, ...]],
+    sp.Expr,
+] = {}
+
+
+def _right_descent(w: tuple[int, ...]) -> int | None:
+    """Return the smallest 0-indexed simple-reflection index ``i``
+    such that ``s_i`` is a right descent of ``w`` (equivalently,
+    ``w[i] > w[i+1]``).  Returns ``None`` if ``w`` is the identity
+    (no descents)."""
+    for i in range(len(w) - 1):
+        if w[i] > w[i + 1]:
+            return i
+    return None
+
+
+def _mu(z: tuple[int, ...], w: tuple[int, ...]) -> sp.Expr:
+    """Kazhdan–Lusztig μ-coefficient: the coefficient of
+    ``q^{(ℓ(w) − ℓ(z) − 1)/2}`` in ``P_{z, w}(q)``.  Zero unless
+    ``ℓ(w) − ℓ(z)`` is odd."""
+    diff = length(w) - length(z)
+    if diff < 1 or diff % 2 == 0:
+        return sp.S.Zero
+    target_power = (diff - 1) // 2
+    P_zw = kl_polynomial_recursive(z, w)
+    return sp.Poly(P_zw, q).coeff_monomial(q ** target_power) \
+        if P_zw != 0 else sp.S.Zero
+
+
+def kl_polynomial_recursive(
+    x: tuple[int, ...],
+    w: tuple[int, ...],
+) -> sp.Expr:
+    """Memoized Kazhdan–Lusztig polynomial ``P_{x, w}(q)`` via the
+    standard recursion (K-L 1979 §1.1, Brenti §5.2).
+
+    Works for any ``n ≥ 1``.  Memoizes in ``_kl_cache`` keyed by
+    ``(x, w)``; cache persists across calls within a process.
+    """
+    if len(x) != len(w):
+        raise ValueError(f"length mismatch: |x|={len(x)} vs |w|={len(w)}")
+
+    # Base case: x = w.
+    if x == w:
+        return sp.Integer(1)
+    # Base case: x ̸≤ w → 0.
+    if not bruhat_le(x, w):
+        return sp.Integer(0)
+
+    key = (x, w)
+    cached = _kl_cache.get(key)
+    if cached is not None:
+        return cached
+
+    # Choose a right descent s of w (exists because w ≠ identity).
+    s = _right_descent(w)
+    assert s is not None, "internal: w should be non-identity here"
+
+    ws = apply_simple_reflection(w, s)
+    xs = apply_simple_reflection(x, s)
+    # xs < x ⇔ s is a right descent of x ⇔ x[s] > x[s+1].
+    x_has_s_descent = (x[s] > x[s + 1])
+
+    # c(x, w; s) per Bjorner-Brenti Theorem 5.1.4:
+    #   c = 0 if xs > x (s is right ASCENT of x): main = q·P_{xs,ws} + P_{x,ws}
+    #   c = 1 if xs < x (s is right DESCENT of x): main = P_{xs,ws} + q·P_{x,ws}
+    # Both branches keep BOTH terms (the missing-term version gives the
+    # wrong base case: P_{e, s} should be 1, not q).
+    if x_has_s_descent:
+        c = kl_polynomial_recursive(xs, ws) \
+            + q * kl_polynomial_recursive(x, ws)
+    else:
+        c = q * kl_polynomial_recursive(xs, ws) \
+            + kl_polynomial_recursive(x, ws)
+
+    # Correction: Σ_{x ≤ z < ws, zs < z} μ(z, ws) · q^{(ℓ(w) − ℓ(z))/2}
+    #              · P_{x, z}.
+    lw = length(w)
+    correction = sp.S.Zero
+    n = len(w)
+    for z in permutations_S_n(n):
+        if z == ws:
+            continue
+        if not bruhat_le(z, ws):
+            continue
+        if not bruhat_le(x, z):
+            continue
+        # zs < z ⇔ s is a right descent of z.
+        if not (z[s] > z[s + 1]):
+            continue
+        mu = _mu(z, ws)
+        if mu == 0:
+            continue
+        lz = length(z)
+        correction += mu * q ** sp.Rational(lw - lz, 2) \
+            * kl_polynomial_recursive(x, z)
+
+    result = sp.expand(c - correction)
+    _kl_cache[key] = result
+    return result
+
+
+def _kl_cache_size() -> int:
+    """Number of memoized ``P_{x, w}`` entries; used by tests."""
+    return len(_kl_cache)
+
+
+def _kl_cache_clear() -> None:
+    """Reset the memoization cache (used by tests / re-runs)."""
+    _kl_cache.clear()
+
+
 # ── Canonical-basis element C_w ────────────────────────────────────
 
 
