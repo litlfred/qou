@@ -161,35 +161,71 @@ is **baryon number**, which *counts strands* — an inherently
 > vertical map is multivalued. **These are the same vertical
 > obstruction on Young's lattice.**
 
-## Non-fit escapes (the productive frontier)
+## Non-fit escapes — both attempted, both CLOSED (2026-06-02)
 
-Representation theory leaves exactly two non-fit ways past the vertical
-obstruction (both already named across the audits, now unified):
+Representation theory left exactly two non-fit ways past the vertical
+obstruction (both named across the audits, then unified). **Both were
+computed; both fail — by the same mechanism (separation, not
+selection).** The keystone stands.
 
-1. **Non-functorial / geometric section.** The canonical nominator
-   comes from *extra* structure beyond Hecke rep theory — the
-   icosahedral holonomy / color-tube cross-ratio on Bring's quintic
-   surface ([flavor-cusp audit](2026-06-01-flavor-dependent-cusp-shape.md),
-   [complex-fibre cross-ratio](2026-06-01-complex-fibre-cross-ratio.md)),
-   which can pick a distinguished vector that branching alone cannot.
-2. **Native-5-strand baryon.** The 3-strand Borromean is a
-   Markov-shadow and $h^4$ lives natively at $n=5$, so there is no
-   vertical map to construct
-   ([fiber-action audit](2026-06-01-s5-so3-su2-u1-fiber-action.md),
-   [knot-operator census](2026-06-01-knot-operator-census-group-actions.md)).
+1. **Native-5-strand baryon (Escape 2) — FALSIFIED**
+   ([`2026-06-02-native-5-strand-baryon.md`](2026-06-02-native-5-strand-baryon.md),
+   PR #1694). The hypothesis that the 3-strand Borromean $B_3$ is a
+   Markov-shadow of a canonical native-5-strand object fails decisively:
+   a Brunnian-5 link's proper sublinks are *trivial* (deletion → unlink
+   $\neq B_3$), so $B_3$ is not a shadow of any Brunnian-5 object; the
+   forced $S_5$-symmetric 5-braid's RAW Markov trace misses
+   $z^2\,\mathrm{tr}_M(B_3)$ by **96.5%**; and no $\lambda\vdash 5$ block
+   carries $h^4=-3/4$. The obstruction relocates ("no canonical 5-strand
+   pre-image of $B_3$") rather than dissolving.
 
-A third, narrower lead from the linked-channel work: a **second
-independent crossing/trace invariant** carrying baryon number
+2. **Geometric / icosahedral-holonomy section (Escape 1) — FAILS**
+   ([`2026-06-02-escape1-geometric-holonomy-section.md`](2026-06-02-escape1-geometric-holonomy-section.md),
+   PR #1699). The mult-2 Hom-space $V=\mathrm{Hom}_{S_3}((2,1),
+   \mathrm{Res}^{A_5}_{S_3}(H))\cong\mathbb{C}^2$ was realized
+   *explicitly*. A canonical operator on $V$ must come from an $A_5$
+   element commuting with / normalizing the $S_3$ color-sheet
+   stabilizer, but **$C_{A_5}(S_3)=\{e\}$** (trivial centralizer) and
+   **$N_{A_5}(S_3)=S_3$** (self-normalizing). Hence the only forced
+   operator is the scalar identity — spectrum $\{1,1\}$, every line
+   invariant, **none distinguished**. Geometry *separates* (it produces
+   $V=\mathbb{C}^2$ with the OV/JM basis) but does **not select** a
+   canonical line; the Bring cross-ratio is a *free modulus* (several
+   icosahedral special values), so "the cross-ratio that gives $h^4$"
+   would be a fit.
+
+**The delimitation (the result of this arc):** the missing object — the
+canonical section / vertical baryon-number charge — is **not derivable
+from existing categorical structure** (Hecke branching, OV/JM
+content-eigenbasis #1687, ribbon-twist spin) **nor from existing
+geometric structure** (icosahedral $A_5$ holonomy, Bring cross-ratio).
+It is a **genuine new physical input**. The keystone obstruction is now
+fully characterized: nonexistence (#1684) → sharpened to "no canonical
+section" (#1687) → both non-fit closures ruled out (#1694, #1699).
+
+A remaining *structural* candidate (not a closure, an alternative
+selector to test) is the **Kashiwara / Option-E crystal** acting on the
+same $\mathbb{C}^2$ (sibling exploration, PR #1697); and the narrower
+linked-channel lead of a **second independent crossing/trace invariant**
+carrying baryon number
 ([inter-nucleon linked channel](2026-06-01-inter-nucleon-linked-channel.md)).
 
 ## Action items
 
-- [ ] Both escapes are *derivations to attempt*, not fits — any section
-      must be forced by the geometric/holonomy structure or by the
-      native-5-strand reframe, never chosen to produce $h^4=-3/4$.
+- [x] Escape 2 (native-5-strand) attempted — **falsified** (#1694).
+- [x] Escape 1 (geometric/holonomy section) attempted — **fails**
+      (#1699); no forced non-scalar operator on the $\mathbb{C}^2$
+      multiplicity space.
 - [ ] The baryon-number (vertical) charge is the joint missing object
-      for *both* $Y$ and the 5↔3 section — a single derivation target.
-- [ ] No production wiring: this synthesis records structure, changes no
+      for *both* $Y$ and the 5↔3 section — and is now established to be a
+      **genuine new physical input**, not derivable from existing
+      categorical or geometric structure. Any future closure must
+      introduce that input explicitly (e.g. an additional substrate
+      datum), never fit a selector to produce $h^4=-3/4$.
+- [ ] *Structural* candidate still untested (not a closure): the
+      Kashiwara / Option-E crystal selector on the same $\mathbb{C}^2$
+      (sibling PR #1697).
+- [x] No production wiring: this synthesis records structure, changes no
       observable. L1/L2 dashboards unaffected.
 
 ## References (all merged on main)
