@@ -61,3 +61,37 @@ search: never tried; aligns with GAP-A-3/A-4; see
 and the Option E programme PR #1697). What this probe establishes is that the
 *easy* version of `Vol_λ` does not work — the per-block volume must carry real
 6j-asymptotic content.
+
+## Follow-up: q-6j / JM-spectral volume + the T/³He sign obstruction
+
+[`probe_q6j_jm_spectral_delta_lambda.py`](../../folio-assistant/computations/probe_q6j_jm_spectral_delta_lambda.py)
+upgrades `Vol_λ` to the genuine q-6j mechanism — the **Jucys–Murphy content
+spectrum** through the Bloch–Wigner dilogarithm at root-of-unity order `r`,
+
+$$\mathrm{Vol}_\lambda(r) = \sum_{\text{cells}} \bigl|\,D(e^{2\pi i\,c/r})\,\bigr|,
+\qquad D(z)=\operatorname{Im}\operatorname{Li}_2(z),$$
+
+scanned over `r ∈ [4,30]`. Two findings:
+
+1. **Still flat.** Best universal `r=27` gives D −67 %, T −96 %, ³He −92 %,
+   ⁴He −99 % — undershoots like the bare `tr_M`. The root-of-unity Bloch–Wigner
+   on content angles is no less flat than the earlier Clausen variant.
+
+2. **T/³He sign obstruction (the sharp result).** T and ³He share `n=9` (same
+   30 partitions, same `y_λ`), so the entire binding split must come from
+   $$\frac{B_T-B_{^3\mathrm{He}}}{m_e}=\sum_\lambda \mathrm{Vol}_\lambda\,y_\lambda\,
+   \bigl(\chi^\lambda(\beta_T)-\chi^\lambda(\beta_{^3\mathrm{He}})\bigr)=+1.4947.$$
+   Across the whole `r`-scan the best this family achieves is **−0.42 — the
+   wrong sign**. A *positive* per-block volume (`Vol_λ ≥ 0`, as any genuine
+   hyperbolic volume must be) cannot reproduce even the sign of the T/³He
+   binding ordering.
+
+**Necessary condition surfaced.** Any Δ_λ rule must reproduce the T/³He
+differential `+1.4947` with the correct sign — a sharp, same-`n` test that the
+positive-volume family fails structurally. This is stronger than "the proxy is
+too flat": it says a non-negative per-block volume is the *wrong shape* for the
+isospin (p↔n) content of the binding. A working `Vol_λ` would need a signed /
+chirality-aware per-block weight (cf. the Type-B fold / bar-involution
+structure), or the full Turaev–Viro state-sum where tetrahedra carry oriented
+(signed) volumes. That is the constraint the next attempt must satisfy.
+
