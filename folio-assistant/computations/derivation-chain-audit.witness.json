@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T03:13:38.991682+00:00",
-  "commitSha": "8288d5aa55fe6b9843ed8dcfffcb7fbf2be97a15",
+  "computedAt": "2026-06-02T14:55:31.672133+00:00",
+  "commitSha": "c45350388f56e794b5a2fd7b0407c9e721ae48a2",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -153,16 +153,16 @@
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false
+      "passed": true
     },
     {
       "name": "leaf_value[c-q-q0.derivation]",
-      "computed": 9.092678397655604,
-      "expected": 9.092678397655604,
+      "computed": 9.092679456150243,
+      "expected": 9.092679456150243,
       "passed": true,
-      "tolerance": 9.092678397655603e-12
+      "tolerance": 9.092679456150243e-12
     },
     {
       "name": "chain_valid[hoefsmit-rep-21-sigma1.derivation]",
@@ -558,12 +558,12 @@
       "tolerance": 9.9124115660574e-11
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "8948cf14da37f8b87865ccd85007d308796d8201",
+  "scriptCommitSha": "95163cf6c2f0adecc5a4ab1c05afa3e743bd0209",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -575,7 +575,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -1184,13 +1185,11 @@
       {
         "chain": "c-q-q0.derivation.json",
         "target": "c_q(q_0)",
-        "target_value": 9.092678397655604,
-        "computed_value": 9.092678397655604,
+        "target_value": 9.092679456150243,
+        "computed_value": 9.092679456150243,
         "structural_ok": true,
         "leaf_matches": true,
-        "issues": [
-          "c_q algebra re-eval at q_0=1.1099785827513808 gives 9.092679456150243 vs target 9.092678397655604 (rel_diff 1.16e-07, target_tolerance 1.00e-12)"
-        ],
+        "issues": [],
         "trust_summary": {
           "axiom": 2,
           "derived": 2,
@@ -2361,6 +2360,7 @@
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
+        "crystal-keystone-selector.witness.json",
         "crystal-limit-transport-probe.witness.json",
         "crystal-pole-order.witness.json",
         "crystal-shift-nf-atomic.witness.json",
@@ -2414,6 +2414,7 @@
         "eigenvalue-reeb-extension-h4-h5.witness.json",
         "electron-m_e-derivation.witness.json",
         "entanglement-orders.witness.json",
+        "escape1-geometric-holonomy-section.witness.json",
         "even-a-mirror-pair-phi8-scaling-test.witness.json",
         "ew-couplings-substrate-derivation-probe.witness.json",
         "ew-higgs-sdp-probe.witness.json",
@@ -2686,6 +2687,7 @@
         "multi-layer-gap-decomposition.witness.json",
         "multi-level-jet-sum.witness.json",
         "n-sym-numerical-anchor.witness.json",
+        "native-5-strand-baryon.witness.json",
         "neutron-error-diagnostic.witness.json",
         "neutron-m_n-derivation.witness.json",
         "nf-qvalues.witness.json",
@@ -2719,6 +2721,7 @@
         "option-e-deuteron-param-free-residual.witness.json",
         "option-e-isospin-probe.witness.json",
         "option-e-multi-isotope-delta-lambda-probe-v3.witness.json",
+        "option-e-probe1-derive-1plusq-over-2.witness.json",
         "option-e-q-reeb-phase-probe-v4.witness.json",
         "option-e-v6-combined-canonical.witness.json",
         "option-e-v7-involution-aware.witness.json",
