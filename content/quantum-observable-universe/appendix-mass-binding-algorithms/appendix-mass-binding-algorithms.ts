@@ -43,9 +43,29 @@ export default chapter({
       title: "Canonical chain — algorithms",
       label: "sec:mba-canonical-chain",
       blocks: [
-        // Step 3 — Markov trace (template / first block).
-        // Steps 1, 2, 4–11 land in subsequent commits.
+        "mba-step01-categorical-action",
+        "mba-step02-gs-reduction",
         "mba-step03-markov-trace",
+        "mba-step04-bring-brane",
+        "mba-step05-wedderburn",
+        "mba-step06-frobenius-pairing",
+        "mba-step07-gb-filtration",
+        "mba-step08-jet-prefix",
+        "mba-step09a-mass-identity",
+        "mba-step09b-per-isotope-binding",
+        "mba-step10-confinement-sdp",
+        "mba-step11-q-beta-truncation",
+      ],
+    }),
+    section({
+      title: "Sidecar algorithms",
+      label: "sec:mba-sidecars",
+      blocks: [
+        // Sidecars land in the next commit:
+        // - mba-sidecar-delta-lambda-closure
+        // - mba-sidecar-ck-truncation-ladder
+        // - mba-sidecar-lp-sdp-dual-emission
+        // - mba-sidecar-witness-json-pipeline
       ],
     }),
   ],

@@ -1,0 +1,72 @@
+**Algorithm ($Q_\beta$ truncation ladder).**
+*Evaluate $\beta$-decay $Q$-values via the convergent series
+$Q_\beta = Q_{\mathrm{base}} \cdot \prod_{k = 2}^{N} (1 + c_k\, u^k)$
+with $u = b \cdot \hbar_q^2 \approx 0.00852$, truncating at order
+$N$ chosen by the target precision.*
+
+### Input
+
+- *Decay channel (parent isotope $A \to$ daughter $A'$).*
+- *Substrate $q_0$, electron mass $m_e$ (CAL-1, CAL-2).*
+- *Pion decay width (CAL-3) for $\mathfrak{D}_\pi$.*
+- *Target precision $\varepsilon \in \mathbb{R}_{> 0}$ → truncation
+  order $N \geq \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$.*
+
+### Output
+
+- *$Q_\beta \in \mathbb{R}$ in MeV.*
+
+### Algorithm
+
+```
+1. Compute Q_base from the substrate identity m_e · (m_n / m_e)
+   modulo the binding-energy contribution.
+2. Compute u = b · ℏ_q² where ℏ_q is the q-quantum constant.
+3. For k = 2, …, N:
+   c_2 = -1                  (Taylor-exact, PROVED).
+   c_k for k ≥ 3 are q_0-dependent NEAR-MATCHES (see CLAUDE.md
+     "Q_β c_k is a TRUNCATION ORDER, not a wire/un-wire gate").
+   Multiply Q_base by (1 + c_k · u^k).
+4. Return Q_β.
+```
+
+### Correctness conditions
+
+*[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
+establishes the precision ladder and the convergence rate.*
+
+*The $c_k$ coefficients are **tiered**:*
+
+- *$c_2 = -1$: **proved** Taylor-exact.*
+- *$c_k$ for $k \geq 3$: **near-match** with $q_0$-dependent
+  swings (e.g. $c_3 = -2 = J_{\mathrm{Hopf}}(q = 1)$ within
+  $\sim 3\%$ at the m_p-pin $q_0$).*
+- *$c_k$ never reported as "fitted" — see
+  [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](../../../docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).*
+
+### Complexity
+
+*$O(N)$ — linear in truncation order.*
+
+### Python API entry point
+
+```python
+from qou_mass import q_beta
+
+Qb = q_beta(parent="¹⁴C", daughter="¹⁴N", N=4)
+```
+
+### Witness contract
+
+*Canonical witnesses: [`cal-3-q-beta.witness.json`](../../../folio-assistant/computations/cal-3-q-beta.witness.json)
+(CAL-3 pin) and [`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json)
+(per-channel predictions). Both report the truncation order $N$
+used and the tiered $c_k$ classification.*
+
+### Notes
+
+*Current L2 status: $Q_\beta$ at 164.0× miss vs target as of
+2026-05-31 (per the [precision-goals dashboard](../../../folio-assistant/computations/per-observable-100x-status.witness.json)).
+The Habiro-exact 5.7 ppb result was against the pre-re-pin
+muon-anchored $q_0$ and has not been refreshed since the
+proton-anchor re-pin. PR #1727 actively pursues the closure.*
