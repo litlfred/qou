@@ -39,10 +39,20 @@ export default proposition({
     "wenzl1988c",
     "chlouveraki2016hdr",
   ],
-  lean: {
-    ref: "qou:QOU.AppendixQValues.proton_mass_substrate_identity_empirical",
-    validation: "not_checked",
-  },
+  // lean ref deferred: this block's uses[] cone transitively touches
+  // conjectural categorical derivations (the "2" structural integer,
+  // the "12" via Ocneanu, F_Bor categoricity). Per CLAUDE.md §3b-cond,
+  // declaring a `lean:` field on a provable kind whose uses[] cone
+  // touches `conj:` requires either downgrade to `remark`/`conjecture`
+  // OR the conditional-class banner + [Class] Lean hypothesis pattern.
+  // The Lean sibling (proton-mass-substrate-identity.lean) is currently
+  // unconditional; without the banner + class hypothesis on the .md +
+  // .lean, declaring the ref here trips the §3b-cond strict audit (CI
+  // validate fail; see PR #1690 round-3 CI fail).
+  // Follow-up: separate PR adding the conditional banner + restructure
+  // the Lean theorem to take an explicit [ProtonMassSubstrateClass]
+  // hypothesis. Until then the `validate` step warns
+  // "no Lean declaration yet" (non-blocking).
   tags: [
     "mass-formula",
     "proton",
