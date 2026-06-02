@@ -1,8 +1,8 @@
 {
-  "engine": "mpmath+sympy",
+  "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T02:22:53.557796+00:00",
-  "commitSha": "55b1ec12d07e66643a2f72ef115d5b4908284fcc",
+  "computedAt": "2026-06-02T02:45:25.334332+00:00",
+  "commitSha": "38072ba1fb02f9803d0fbdaba7c4b1c5b4a62ddb",
   "assertions": [
     {
       "name": "coulomb_charge_pp_eq_writhe_half",
@@ -73,8 +73,8 @@
     },
     {
       "name": "twist_H2_sym_eq_q_squared",
-      "computed": "1.2320524827172368282",
-      "expected": "1.2320524827172368282",
+      "computed": "1.2320524541667639313",
+      "expected": "1.2320524541667639313",
       "passed": true,
       "tolerance": "0.000000000000001",
       "source": "theta_1 = q^2"
@@ -84,8 +84,8 @@
   "durationMs": 40,
   "computation": "u1-hypercharge-assignment",
   "scriptFile": "u1_hypercharge_assignment.py",
-  "scriptHash": "f268f717c7e7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1696d682a5aa",
+  "scriptCommitSha": "38072ba1fb02f9803d0fbdaba7c4b1c5b4a62ddb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -100,11 +100,11 @@
     "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
-  "description": "EXPLORATORY derivation of the U(1) -> quantum-number map for the framing phase q^{w.c}. Q1: c=1/2 is STRUCTURALLY FIXED by def:coulomb-charge (Q(H)=(1/2)(n_+-n_-)=w/2), NOT free, NOT fitted. Q2: the writhe ladder is tested against (Q,I_3,Y) by sign+ratio (scale-free); the p/n same-Y falsifier is applied. Q3: ribbon twist theta_j=q^{j(j+1)} eigenvalue ladder per Wedderburn block. RAW @ 60 dps; PDG values are falsification references only; NO tuning.",
+  "description": "EXPLORATORY derivation of the U(1) -> quantum-number map for the framing phase q^{w.c}. Engine: python+mpmath (mpmath for the q0 numerics; sympy for the symbolic twist expressions). Q1: c=1/2 is STRUCTURALLY FIXED by def:coulomb-charge (Q(H)=(1/2)(n_+-n_-)=w/2), NOT free, NOT fitted. Q2: the writhe ladder is tested against (Q,I_3,Y) by sign+ratio (scale-free); the p/n same-Y falsifier is applied. Q3: ribbon twist theta_j=q^{j(j+1)} eigenvalue ladder per Wedderburn block. RAW @ 70 dps (canonical COMPUTE_DPS); q0 is the proton-pinned q_parameter.Q_MP; PDG values are falsification references only; NO tuning.",
   "auditOnly": "docs/audits/2026-06-02-u1-hypercharge-assignment.md",
   "parameters": {
-    "q0": "1.10997859561220225731080831999100762523924148",
-    "dps": 60,
+    "q0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "dps": 70,
     "c_coulomb_from_def_coulomb_charge": "1/2"
   },
   "data": {
@@ -168,24 +168,22 @@
         "(1,1)": "1"
       },
       "H2_twist_q0": {
-        "(2)": "1.23205248271723682822615059853",
+        "(2)": "1.23205245416676393126980451354",
         "(1,1)": "1"
       },
       "H3_blocks_spin": {
         "(3)": "3/2",
-        "(2,1)": "1/2",
-        "(1,1,1)": "0"
+        "(2,1)": "1/2"
       },
       "H3_twist_symbolic": {
         "(3)": "q**(15/4)",
-        "(2,1)": "q**(3/4)",
-        "(1,1,1)": "1"
+        "(2,1)": "q**(3/4)"
       },
       "H3_twist_q0": {
-        "(3)": "1.47886920438314829115495727363",
-        "(2,1)": "1.08139897371272306691379760593",
-        "(1,1,1)": "1"
+        "(3)": "1.47886914012693462213944586221",
+        "(2,1)": "1.08139896431546135937998913637"
       },
+      "excluded_block": "(1,1,1) (Hecke SIGN irrep) is omitted from the H_3 spin/twist ladder: 3 spin-1/2 strands carry NO SU(2) singlet, so the sign irrep has no spin-j object and no theta_j eigenvalue. It is NOT a j=0 channel.",
       "note": "theta_j grows monotonically with j (q>1); it is a SPIN ladder (j(j+1) Casimir), NOT an additive charge ladder. No sign change, no half-integer charge structure -- it does not encode Q/Y."
     }
   },
