@@ -298,7 +298,7 @@ jobs:
       - name: Build + load + smoke
         run: |
           cd tools/hecke-engine-r
-          Rscript -e 'rextendr::document(".")'
+          Rscript -e 'devtools::document(".")'
           Rscript -e 'pkgload::load_all("."); source("tests/smoke.R")'
 
   # ── 10. SageMath examples smoke ──

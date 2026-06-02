@@ -10,6 +10,7 @@
 // Cf. tools/hecke-engine/src/littlewood_richardson.rs.
 #include "mex.h"
 #include "hecke_engine.h"
+#include <string>
 #include <vector>
 #include <cstddef>
 #include <cstdint>
