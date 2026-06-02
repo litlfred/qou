@@ -25,21 +25,20 @@ closing both) is surfaced for promotion + categorical derivation. Δ_λ open.
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
-import mpmath as mp
-from mpmath import mpf, fabs, acos
+import _path_bridge  # noqa: F401, E402 — Phase-6 bridge: flat imports from substrate/
+import mpmath as mp  # noqa: E402
+from mpmath import mpf, fabs, acos  # noqa: E402
 
-sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
-M_E = mpf("0.51099895069")
-q0 = mpf(str(Q0))
 
+# AME 2020 binding-energy comparison targets (validation-only; this probe
+# fits a global scale, so no MeV calibration constant is used).
 AME_B = {"D": mpf("2.2245662"), "T": mpf("8.4818"),
          "3He": mpf("7.7180"), "4He": mpf("28.29566")}
 CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
@@ -110,7 +109,8 @@ def main() -> int:
         s_4 = sum(efn(list(p)) for p in atoms_parts["4He"])
         ratio = float(s_4 / s_d) if s_d != 0 else None
         egrow[ename] = {"S4_over_SD": ratio,
-                        "abs_diff_from_12.72": abs(ratio - BIND_RATIO) if ratio else None}
+                        "abs_diff_from_12.72":
+                            abs(ratio - BIND_RATIO) if ratio is not None else None}
         print(f"    {ename:<16} weight-only S(⁴He)/S(D) = {ratio:.2f}")
 
     # ── (2) content-energy × |Δθ| (and × y_λ) joint test ──
