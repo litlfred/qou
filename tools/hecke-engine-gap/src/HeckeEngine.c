@@ -14,6 +14,7 @@
  * kernel and libhecke_engine_c.
  */
 
+#include <stdio.h>
 #include "gap_all.h"
 #include "hecke_engine.h"    /* from tools/hecke-engine-c/include/ */
 
@@ -25,23 +26,23 @@ static Obj Func_QOU_HECKE_C_VERSION(Obj self) {
 
 /* ── scalar f64 → f64 helpers ── */
 static Obj Func_QOU_HECKE_C_MARKOV_Z(Obj self, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_MarkovZ: q must be a float", 0, 0);
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_MarkovZ: q must be a float", 0, 0);
     return NEW_MACFLOAT(qou_hecke_markov_z(VAL_MACFLOAT(q)));
 }
 
 static Obj Func_QOU_HECKE_C_HECKE_H(Obj self, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_HeckeH: q must be a float", 0, 0);
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_HeckeH: q must be a float", 0, 0);
     return NEW_MACFLOAT(qou_hecke_h(VAL_MACFLOAT(q)));
 }
 
 static Obj Func_QOU_HECKE_C_GRAM_DET(Obj self, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_GramDet: q must be a float", 0, 0);
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_GramDet: q must be a float", 0, 0);
     return NEW_MACFLOAT(qou_hecke_gram_det(VAL_MACFLOAT(q)));
 }
 
 /* ── vector returns (length-6 floats) ── */
 static Obj Func_QOU_HECKE_C_TRACE_WEIGHTS(Obj self, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_TraceWeights: q must be a float", 0, 0);
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_TraceWeights: q must be a float", 0, 0);
     double out[6];
     qou_hecke_trace_weights(VAL_MACFLOAT(q), out);
 
@@ -56,7 +57,7 @@ static Obj Func_QOU_HECKE_C_TRACE_WEIGHTS(Obj self, Obj q) {
 
 /* ── 36-float gram-matrix flatten ── */
 static Obj Func_QOU_HECKE_C_GRAM_MATRIX_FLAT(Obj self, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_GramMatrix: q must be a float", 0, 0);
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_GramMatrix: q must be a float", 0, 0);
     double out[36];
     qou_hecke_gram_matrix_flat(VAL_MACFLOAT(q), out);
 
@@ -134,7 +135,7 @@ static int plist_to_i32_array(Obj plist, int32_t** out_arr, size_t* out_len,
  *       q (float). */
 static Obj Func_QOU_HECKE_C_CHI_LAMBDA_BRAID(Obj self, Obj shape, Obj word_gens,
                                     Obj word_exps, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_ChiLambdaBraid: q must be a float", 0, 0);
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_ChiLambdaBraid: q must be a float", 0, 0);
     size_t shape_len, gens_len, exps_len;
     size_t* shape_arr = NULL;
     int32_t* gens_arr = NULL;
