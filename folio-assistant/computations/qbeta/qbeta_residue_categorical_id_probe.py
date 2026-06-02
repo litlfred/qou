@@ -130,6 +130,69 @@ def main() -> int:
         print(f"  b^{N:>1d}·ℏ_q^{M:>2d} = {mp.nstr(val, 10):>14s}  {t}{mark}")
     print()
 
+    # ─── (4) A = [n]_q · ℏ_q^N (colored-Jones-unknot prefactor) ───
+    # Per sibling #1521's α_em Habiro categorical ID: [N]_q = J_N(unknot)
+    # is the canonical Jones-polynomial-of-trivial-knot prefactor.
+    # Test A = [n]_q · ℏ_q^N for n ∈ {1, 2, 3, 4} and N near 15.
+    print("--- (4) A = [n]_q · ℏ_q^N (J_n(unknot) prefactor) ---")
+
+    def nq(n: int) -> mp.mpf:
+        """[n]_q quantum integer = (q^n - q^-n)/(q - q^-1)."""
+        if n == 1:
+            return mp.mpf(1)
+        return sum(q ** (n - 1 - 2 * k) for k in range(n))
+
+    print(f"  [1]_q = {mp.nstr(nq(1), 12)}, [2]_q = {mp.nstr(nq(2), 12)}, "
+          f"[3]_q = {mp.nstr(nq(3), 12)}, [4]_q = {mp.nstr(nq(4), 12)}")
+    family4_best = (mp.inf, None)
+    for n in range(1, 6):
+        for N in range(13, 17):
+            val = nq(n) * hbar ** N
+            err = abs(val / TARGET - 1)
+            if err < family4_best[0]:
+                family4_best = (err, f"[{n}]_q·ℏ_q^{N}", val)
+            t = tier(val, TARGET)
+            mark = "  ★" if "PROVED" in t else ("  ◆" if "NEAR" in t else "")
+            if abs(val / TARGET - 1) < mp.mpf("0.1"):  # only print close ones
+                print(f"  [{n}]_q·ℏ_q^{N} = {mp.nstr(val, 10):>14s}  {t}{mark}")
+                results.append({"hypothesis": f"[{n}]_q·hbar^{N}", "value": val, "tier": t})
+    if family4_best[1]:
+        print(f"  Best (4): {family4_best[1]} = {mp.nstr(family4_best[2], 12)} "
+              f"err={mp.nstr(family4_best[0] * 100, 5)} %")
+    print()
+
+    # ─── (5) Multiplicative correction to 2·ℏ_q^15 ────────────────
+    # The strongest near-pattern: A / ℏ_q^15 ≈ 2.07. Test
+    # A = 2 · ℏ_q^15 · (1 + ε_correction) for canonical small ε.
+    print("--- (5) A = 2·ℏ_q^15 · (1 + ε)  test canonical ε ---")
+    base = 2 * hbar ** 15
+    eps_implied = TARGET / base - 1
+    print(f"  base = 2·ℏ_q^15 = {mp.nstr(base, 14)}")
+    print(f"  ε_implied = A/base − 1 = {mp.nstr(eps_implied, 12)}")
+    for name, val in [
+        ("h²", c["h"] ** 2),
+        ("h²·b²", c["h"] ** 2 * c["b_sq"]),
+        ("ℏ_q", hbar),
+        ("ℏ_q²", hbar ** 2),
+        ("h²/2", c["h"] ** 2 / 2),
+        ("u_subst", c["u_subst"]),
+        ("π·u", mp.pi * c["u_subst"]),
+        ("[2]_q · h² / 4", nq(2) * c["h"] ** 2 / 4),
+    ]:
+        ratio = eps_implied / val if val != 0 else mp.inf
+        # Compare overall expression `2·ℏ_q^15·(1+val)` to TARGET
+        composite = base * (1 + val)
+        t = tier(composite, TARGET)
+        mark = "  ★" if "PROVED" in t else ("  ◆" if "NEAR" in t else "")
+        print(f"  ε={name:>14s}: composite={mp.nstr(composite, 10):>14s}  "
+              f"ratio={mp.nstr(ratio, 6):>8s}  {t}{mark}")
+        results.append({
+            "hypothesis": f"2·hbar^15·(1+{name})",
+            "value": composite,
+            "tier": t,
+        })
+    print()
+
     # ─── (3) A = Q_β · ε_struct ───────────────────────────────────
     print("--- (3) A = Q_β · ε_struct (with ε_struct a small q_0-rational) ---")
     Q_beta = mp.mpf("0.78233340999999999999999999999999999999999999999999940982960403984")
