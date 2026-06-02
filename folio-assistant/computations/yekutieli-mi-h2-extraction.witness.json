@@ -1,8 +1,8 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:56:48.820227+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:10:33.573085+00:00",
+  "commitSha": "6dc56c7663aa9f0820afb03b03275f2216efaf11",
   "assertions": [
     {
       "name": "h2_coefficient_computed",
@@ -16,8 +16,8 @@
   "durationMs": 26,
   "computation": "yekutieli-mi-h2-extraction",
   "scriptFile": "yekutieli_mi_h2_extraction.py",
-  "scriptHash": "befcd2fd27ed",
-  "scriptCommitSha": "1309a2fac3c576dfe6791d7235c4430b73086bc8",
+  "scriptHash": "05b87a6780f6",
+  "scriptCommitSha": "cefc4c6cff736e9252096fe1d56112f3ad0abcca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

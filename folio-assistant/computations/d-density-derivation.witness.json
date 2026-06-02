@@ -1,8 +1,8 @@
 {
   "engine": "closed-form",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:42:29.170431+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:00:44.224918+00:00",
+  "commitSha": "6dc56c7663aa9f0820afb03b03275f2216efaf11",
   "assertions": [
     {
       "name": "ρ_F(D) from weight criterion matches paper (ρ_F = m_e)",
@@ -17,8 +17,8 @@
   "durationMs": 9,
   "computation": "d-density-derivation",
   "scriptFile": "d_density_derivation.py",
-  "scriptHash": "cb1181b10bdb",
-  "scriptCommitSha": "cce9436d753779edd6cdccfe04a293b0e3d81d4f",
+  "scriptHash": "02a6e96c32c1",
+  "scriptCommitSha": "cefc4c6cff736e9252096fe1d56112f3ad0abcca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

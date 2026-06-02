@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:38:46.759605+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:00:09.466324+00:00",
+  "commitSha": "6dc56c7663aa9f0820afb03b03275f2216efaf11",
   "assertions": [
     {
       "name": "A_operator_witness_present",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 13,
   "computation": "v-hat-to-chi-lambda-integrated",
   "scriptFile": "v_hat_to_chi_lambda_integrated.py",
-  "scriptHash": "1d7d43f5a749",
-  "scriptCommitSha": "136ea5c94c5f636cd95a605a1f4fa9a657ea0217",
+  "scriptHash": "3d8158130b74",
+  "scriptCommitSha": "cefc4c6cff736e9252096fe1d56112f3ad0abcca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

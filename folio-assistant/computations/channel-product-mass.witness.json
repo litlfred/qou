@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:26:56.680193+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T15:52:06.260432+00:00",
+  "commitSha": "6dc56c7663aa9f0820afb03b03275f2216efaf11",
   "assertions": [
     {
       "name": "He-4 mass",
@@ -297,8 +297,8 @@
   "durationMs": 12,
   "computation": "channel-product-mass",
   "scriptFile": "channel_product_mass.py",
-  "scriptHash": "1e90c77beebe",
-  "scriptCommitSha": "cb543e41e673bf4758ac5195536e4269c45d8cc3",
+  "scriptHash": "a8968837f709",
+  "scriptCommitSha": "cefc4c6cff736e9252096fe1d56112f3ad0abcca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
