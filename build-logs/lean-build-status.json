@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T07:34:11Z",
+  "generatedAt": "2026-06-02T20:11:16Z",
   "tool": "scripts/lean-build-all.sh",
   "summary": {
     "passed": 2,
@@ -21,7 +21,7 @@
       "paper": "quantum-observable-universe",
       "target": "QOU",
       "status": "fail",
-      "elapsed_s": 6832,
+      "elapsed_s": 6131,
       "log": "quantum-observable-universe.log",
       "failingModules": [
         "QOU.Torsion.quantum_dilogarithm",
@@ -53,9 +53,9 @@
         "QOU.BraidKnot.ShellNeutrality",
         "QOU.Interactions.WedderburnMassFormula",
         "QOU.QuantumObservableUniverse.GaugeTheory",
+        "QOU.Interactions.BringShellBinding",
         "QOU.Archimedean.HeckeRep",
         "QOU.Interactions.HeckeEngine",
-        "QOU.Interactions.BringShellBinding",
         "QOU.BraidKnot.Cl3Zeta5PslqIndependence",
         "QOU.BraidKnot.KnotIndexedConvolutionGrid",
         "QOU.BraidKnot.ThreeCalibrationInputs",
@@ -71,6 +71,7 @@
         "QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed",
         "QOU.BraidKnot.TwoRowStratum",
         "QOU.FlavorDressing",
+        "QOU.BraidKnot.GramSeminormalBlock",
         "QOU.BraidKnot.WitnessR5Full",
         "QOU.BraidKnot.JetTowerUniformDeltaMax",
         "QOU.AppendixSurreals.B1SoftSharpnessTheorem",
@@ -88,8 +89,8 @@
         "QOU.MathlibExt.RpowAlgebra",
         "QOU.JetHorizon",
         "QOU.CategoricalDqSquared",
-        "QOU.Information.HeckeLogDecomposition",
         "QOU.dq_squared",
+        "QOU.Information.HeckeLogDecomposition",
         "QOU.su2_emergence_volume_determinant",
         "QOU.volume_from_rigidity",
         "QOU.substrate_radial_coordinate",
@@ -1155,6 +1156,27 @@
           "message": "Lean exited with code 1"
         },
         {
+          "file": "QOU/Interactions/BringShellBinding.lean",
+          "line": 93,
+          "col": 17,
+          "message": "Tactic `rcases` failed: `2` is not a free variable"
+        },
+        {
+          "file": "QOU/Interactions/BringShellBinding.lean",
+          "line": 154,
+          "col": 17,
+          "message": "Tactic `rcases` failed: `2` is not a free variable"
+        },
+        {
+          "file": "QOU/Interactions/BringShellBinding.lean",
+          "line": 215,
+          "col": 17,
+          "message": "Tactic `rcases` failed: `2` is not a free variable"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
           "file": "QOU/Archimedean/HeckeRep.lean",
           "line": 115,
           "col": 44,
@@ -1210,27 +1232,6 @@
           "line": 184,
           "col": 82,
           "message": "unsolved goals"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
-          "file": "QOU/Interactions/BringShellBinding.lean",
-          "line": 93,
-          "col": 17,
-          "message": "Tactic `rcases` failed: `2` is not a free variable"
-        },
-        {
-          "file": "QOU/Interactions/BringShellBinding.lean",
-          "line": 154,
-          "col": 17,
-          "message": "Tactic `rcases` failed: `2` is not a free variable"
-        },
-        {
-          "file": "QOU/Interactions/BringShellBinding.lean",
-          "line": 215,
-          "col": 17,
-          "message": "Tactic `rcases` failed: `2` is not a free variable"
         },
         {
           "message": "Lean exited with code 1"
@@ -1396,6 +1397,15 @@
           "file": "/home/runner/work/qou/qou/.lake/packages/mathlib/Mathlib/Algebra/Order/Ring/Lemmas.lean"
         },
         {
+          "file": "QOU/BraidKnot/BraidGroupNStrand.lean",
+          "line": 50,
+          "col": 0,
+          "message": "invalid 'import' command, it must be used in the beginning of the file"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
           "message": "QOU/BraidKnot/MarkovAxiomsPrimitive.lean: bad import 'Mathlib.Algebra.Order.Ring.Lemmas'"
         },
         {
@@ -1418,15 +1428,6 @@
         },
         {
           "message": "QOU/BraidKnot.lean: bad import 'QOU.BraidKnot.PlancherelWeightBoundedness'"
-        },
-        {
-          "file": "QOU/BraidKnot/BraidGroupNStrand.lean",
-          "line": 50,
-          "col": 0,
-          "message": "invalid 'import' command, it must be used in the beginning of the file"
-        },
-        {
-          "message": "Lean exited with code 1"
         },
         {
           "file": "QOU/BraidKnot/H3HeckeIdempotents.lean",
@@ -1532,6 +1533,15 @@
           "line": 27,
           "col": 0,
           "message": "invalid 'import' command, it must be used in the beginning of the file"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
+          "file": "QOU/BraidKnot/GramSeminormalBlock.lean",
+          "line": 159,
+          "col": 0,
+          "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
         },
         {
           "message": "Lean exited with code 1"
@@ -1928,21 +1938,6 @@
           "message": "Lean exited with code 1"
         },
         {
-          "file": "QOU/Information/HeckeLogDecomposition.lean",
-          "line": 53,
-          "col": 6,
-          "message": "Unknown constant `Real.log_one_div`"
-        },
-        {
-          "file": "QOU/Information/HeckeLogDecomposition.lean",
-          "line": 37,
-          "col": 57,
-          "message": "unsolved goals"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
           "file": "QOU/dq_squared.lean",
           "line": 31,
           "col": 9,
@@ -1965,6 +1960,21 @@
           "line": 58,
           "col": 38,
           "message": "Unknown identifier `DqSquaredContext`"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
+          "file": "QOU/Information/HeckeLogDecomposition.lean",
+          "line": 53,
+          "col": 6,
+          "message": "Unknown constant `Real.log_one_div`"
+        },
+        {
+          "file": "QOU/Information/HeckeLogDecomposition.lean",
+          "line": 37,
+          "col": 57,
+          "message": "unsolved goals"
         },
         {
           "message": "Lean exited with code 1"
