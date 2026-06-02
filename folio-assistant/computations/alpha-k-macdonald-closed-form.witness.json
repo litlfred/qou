@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T19:31:36.561343+00:00",
-  "commitSha": "e6569d7622ab45a74f1b5f89eae787051aa64066",
+  "computedAt": "2026-06-02T03:28:16.788325+00:00",
+  "commitSha": "95d80d98f701d446ca0cb1d80ebfb984402f56b4",
   "assertions": [
     {
       "name": "markov_m3_completeness_n2",
@@ -86,7 +86,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 16,
   "computation": "alpha-k-macdonald-closed-form",
   "scriptFile": "alpha_k_macdonald_closed_form.py",
   "scriptHash": "c86fcb4198f2",

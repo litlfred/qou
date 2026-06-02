@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T19:37:07.284038+00:00",
-  "commitSha": "e6569d7622ab45a74f1b5f89eae787051aa64066",
+  "computedAt": "2026-06-02T03:34:01.124524+00:00",
+  "commitSha": "95d80d98f701d446ca0cb1d80ebfb984402f56b4",
   "assertions": [
     {
       "name": "depth15_interpretation_tests_completed",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 371,
+  "durationMs": 406,
   "computation": "qbeta-habiro-depth15-interpretation",
   "scriptFile": "qbeta_habiro_depth15_interpretation.py",
   "scriptHash": "5d2a83545bd4",
