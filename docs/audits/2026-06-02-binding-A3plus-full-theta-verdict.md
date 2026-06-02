@@ -2,17 +2,31 @@
 
 **Date:** 2026-06-02
 **Branch:** `claude/binding-A3plus-full-theta-derivation-2026-06-02`
-**Commits:** 5 (design → scaffold → y_λ → volume-scaling → this verdict)
+**Commits:** 5+ (design → scaffold → y_λ → volume-scaling → this verdict → review fixes)
 
-## Verdict
+## ⚠ Retraction (post-Copilot review on PR #1726)
+
+**The earlier ⁴He +2.7 % claim is RETRACTED.**  The
+`chi-helium-4-h12-at-q0-50dps.witness.json` is marked `partial: true`
+(24 of 77 partitions covered).  My scripts silently treated the
+missing 53 partitions as `y_λ = 0`, invalidating the ⁴He Σ.
+Per Copilot review on PR #1726 lines 119/138/142, the scripts now
+fail-fast on partial chi witnesses; ⁴He is gated out of the
+assembly until the chi witness is regenerated full.
+
+The ⁴He result remains an **open data-completeness item**, not a
+closure claim.
+
+## Verdict (post-retraction)
 
 **Substantive progress, no closure.** The volume-scaled
 substrate-derived assembly
 
   B(K) = μ₀ · Vol(K_bind) · Σ_λ y_λ · dim_λ · |Δθ_λ|
 
-is the **closest non-fit derivation of A≥3 absolute binding to date**
-(³He at +17.4%, T at +39%, ⁴He at −26%).  Every factor is
+is the **closest non-fit derivation of A≥3 absolute binding to date
+at this data resolution** (³He at +17.4 %, T at +39 %; ⁴He gated
+out — needs full chi-helium-4 witness).  Every factor is
 substrate-derived:
 
 - **μ₀ = m_e / (3·(q − q⁻¹)/2)** — per-crossing mass scale from
@@ -36,12 +50,12 @@ substrate-derived:
 
 ## Per-atom result table
 
-| atom | Vol(K_bind) | Σ y·dim·|Δθ| | B_pred (MeV) | B_AME (MeV) | rel_err |
+| atom | Vol(K_bind) | Σ y·dim·\|Δθ\| | B_pred (MeV) | B_AME (MeV) | rel_err |
 |------|-------------|--------------|--------------|-------------|---------|
-| D    | 7.328       | 0.7205       | 8.604        | 2.225       | +287% (special) |
-| T    | 8.286       | 0.8741       | 11.789       | 8.482       | +39.1% |
-| **³He** | **7.328** | **0.7587** | **9.063**    | **7.718**   | **+17.4%** ← closest |
-| ⁴He  | 14.655      | 0.8755       | 20.917       | 28.296      | −26.1% |
+| D    | 7.328       | 0.7205       | 8.604        | 2.225       | +287 % (special) |
+| T    | 8.286       | 0.8741       | 11.789       | 8.482       | +39.1 % |
+| **³He** | **7.328** | **0.7587** | **9.063**    | **7.718**   | **+17.4 %** ← closest valid |
+| ⁴He  | gated out — chi witness `partial: true` (24/77 partitions) | — | — | — | retracted |
 
 ## Comparison vs the audit lead
 
