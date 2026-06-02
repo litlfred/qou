@@ -9,8 +9,8 @@ export default algorithm({
     "prop:categorical-action-unique",
   ],
   computation: {
-    engine: "python",
-    script: "tools/hecke-engine/src/categorical_action.rs",
+    engine: "rust",
+    script: "tools/hecke-engine/src/lib.rs",
     status: "verified",
   },
   tags: [

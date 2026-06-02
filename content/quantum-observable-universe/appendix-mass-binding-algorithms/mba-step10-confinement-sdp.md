@@ -49,15 +49,13 @@ LP in milliseconds.*
 
 ### Python API entry point
 
-```python
-from folio_assistant.computations.lp_dual_solver import (
-    solve_operator_selection_lp,
-    solve_psd_operator_selection_sdp,
-)
-
-result = solve_operator_selection_lp(t, G, n_target)
-witness = result.to_dict()   # primal + dual + active_set + gap
-```
+*Canonical compute is the script
+[`folio-assistant/computations/confinement-operator-selection.py`](../../../folio-assistant/computations/confinement-operator-selection.py),
+which solves the LP with primal + dual emission and writes
+`confinement-operator-selection.witness.json`. The reusable
+solver helpers are exposed as
+`pyhecke.lp_dual_solver.solve_operator_selection_lp(t, G, n_target)`
+(in [`tools/pyhecke/python/pyhecke/lp_dual_solver.py`](../../../tools/pyhecke/python/pyhecke/lp_dual_solver.py)).*
 
 ### Witness contract
 

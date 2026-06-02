@@ -8,7 +8,7 @@ export default algorithm({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "tools/qou-substrate/src/qou_substrate/bring_brane.py",
+    script: "folio-assistant/computations/bring_chiral_fibre_figure.py",
     witness: "folio-assistant/computations/bring-chiral-fibre-figure.witness.json",
     status: "verified",
   },

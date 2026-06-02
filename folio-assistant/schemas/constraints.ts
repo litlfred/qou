@@ -225,17 +225,17 @@ export const AlgorithmSchema = ProvableBaseSchema.extend({
  */
 export function citesProvable(uses: string[] | undefined): boolean {
   if (!uses || uses.length === 0) return false;
-  return uses.some((u) =>
-    PROVABLE_LABEL_PREFIXES.some((prefix) => {
-      if (u.startsWith(prefix)) return true;
-      // Cross-paper "paper-dir:prop:foo" → check after first colon.
-      const idx = u.indexOf(":");
-      if (idx > 0 && !u.startsWith("http")) {
-        return u.slice(idx + 1).startsWith(prefix);
-      }
-      return false;
-    }),
-  );
+  return uses.some((u) => {
+    if (u.startsWith("http")) return false;
+    return PROVABLE_LABEL_PREFIXES.some((prefix) => {
+      // Accept same-paper labels ("prop:foo") and any cross-paper /
+      // namespaced qualifier ("paper-dir:prop:foo",
+      // "namespace:paper-dir:prop:foo"). Per Gemini review on
+      // PR #1724: scan for the prefix anywhere after a colon, not
+      // just after the first colon, to handle nested namespaces.
+      return u.startsWith(prefix) || u.includes(":" + prefix);
+    });
+  });
 }
 
 export const ConjectureSchema = BlockBaseSchema.extend({
@@ -261,6 +261,7 @@ export const RemarkSchema = BlockBaseSchema.extend({
 const ComputationEngineSchema = z.enum([
   "snappea", "sympy", "mpmath", "sage", "python", "numpy", "scipy",
   "closed-form", "python+mpmath", "python+numpy+cvxpy",
+  "rust", "python+rust",
 ]);
 
 const ComputationStatusSchema = z.enum([
