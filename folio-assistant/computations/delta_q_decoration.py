@@ -22,6 +22,7 @@ Reference content blocks:
   rem:bound-state-frobenius-self-dual-channel
   conj:e-hartree-categorical-derivation
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
 from pathlib import Path

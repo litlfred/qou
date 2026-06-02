@@ -115,7 +115,7 @@ consumes for T2+T3".
 
 ### Sanity check via the float64 path
 
-[`mass_endomorphism.atom_per_generator_volumes`](../../folio-assistant/computations/hecke_core.py)
+[`mass_endomorphism.atom_per_generator_volumes`](../../folio-assistant/computations/substrate/hecke_core.py)
 *does* return per-generator volumes for proton (Z=1, N=0) at float64:
 
 ```python

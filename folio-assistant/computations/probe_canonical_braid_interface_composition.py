@@ -46,6 +46,7 @@ Authoritative word producer: `mass_at_3A_proper.atom_braid_word_3A`
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from pathlib import Path
 

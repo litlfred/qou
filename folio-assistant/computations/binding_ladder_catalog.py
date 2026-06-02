@@ -21,6 +21,7 @@ per isotope.
 Target: each isotope ≤ 100 ppb (using 3-cal calibration framework).
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys, json, warnings
 from pathlib import Path
 from datetime import datetime, timezone

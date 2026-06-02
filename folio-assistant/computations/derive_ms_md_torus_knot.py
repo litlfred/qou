@@ -17,6 +17,7 @@ masses are confinement-dressed. This probe tests whether 2[3]_q[4]_q−1
 is (a) a bare torus-knot invariant ratio, or (b) confinement-specific.
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 from pathlib import Path

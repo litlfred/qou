@@ -61,6 +61,7 @@ by `derivation_chain.M_HECKE_PIPELINE_AT_Q0` for the neutron entry.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
 from pathlib import Path

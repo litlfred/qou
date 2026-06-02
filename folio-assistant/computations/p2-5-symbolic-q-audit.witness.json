@@ -1275,7 +1275,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/char_fast.py",
+      "path": "folio-assistant/computations/substrate/char_fast.py",
       "size_lines": 195,
       "emits_witness": false,
       "category": "mpmath-only",
@@ -1956,7 +1956,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/experimental_constants.py",
+      "path": "folio-assistant/computations/substrate/experimental_constants.py",
       "size_lines": 156,
       "emits_witness": false,
       "category": "uncategorised",
@@ -2548,7 +2548,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/hecke_core.py",
+      "path": "folio-assistant/computations/substrate/hecke_core.py",
       "size_lines": 3154,
       "emits_witness": true,
       "category": "uncategorised",
@@ -4462,7 +4462,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/q_parameter.py",
+      "path": "folio-assistant/computations/substrate/q_parameter.py",
       "size_lines": 201,
       "emits_witness": false,
       "category": "mpmath-only",
@@ -5814,7 +5814,7 @@
       "category": "no-q-dependence"
     },
     {
-      "path": "folio-assistant/computations/witness_base.py",
+      "path": "folio-assistant/computations/substrate/witness_base.py",
       "size_lines": 423,
       "emits_witness": true,
       "category": "mpmath-only",

@@ -27,6 +27,7 @@ Output:
 No external dependencies beyond Python 3 standard library + hecke_division.py.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import math
 from datetime import datetime, timezone

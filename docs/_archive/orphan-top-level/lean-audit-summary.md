@@ -192,7 +192,7 @@ have been replaced:
 
 ### New Infrastructure
 
-- **`folio-assistant/computations/witness_base.py`** — Unified `WitnessBuilder`
+- **`folio-assistant/computations/substrate/witness_base.py`** — Unified `WitnessBuilder`
   class for Python computations. Auto-captures commitSha, scriptHash, and
   provides structured assertions with tolerances.
 - **`scripts/witness-audit.ts`** — Unified staleness checker for both Lean

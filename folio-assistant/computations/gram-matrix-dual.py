@@ -12,6 +12,7 @@ Computes:
 Usage:
     cd folio-assistant/computations && python3 gram-matrix-dual.py
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import numpy as np
 from datetime import datetime, timezone

@@ -25,6 +25,7 @@ categorical chain — likely Reshetikhin-Turaev at root-of-unity
 
 Status: EXPLORATORY. Probe document; no production wiring proposed.
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import subprocess
 import sys

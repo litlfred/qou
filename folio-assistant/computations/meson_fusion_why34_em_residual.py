@@ -17,6 +17,7 @@ Two open pieces of the #1396 result m_K²/m_π² = [3]_q·[4]_q (203 ppm):
   We size the EM scale (π±−π⁰ splitting, Dashen) against the residual.
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 from pathlib import Path

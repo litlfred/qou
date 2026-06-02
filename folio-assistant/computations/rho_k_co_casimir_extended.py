@@ -39,6 +39,7 @@ patch to flip the `canonical_status` field for matching atoms.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import argparse
 import json
 import multiprocessing as multi

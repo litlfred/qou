@@ -934,7 +934,7 @@ $$
 
 *so that the Hartree energy
 $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ used in
-[`hecke_core.py:198`](folio-assistant/computations/hecke_core.py)
+[`hecke_core.py:198`](folio-assistant/computations/substrate/hecke_core.py)
 emerges as the leading non-trivial coefficient
 $c_2 \cdot m_e c_q^{2}$ of the LP-dual sensitivity to the
 covalent constraint. The coefficient
@@ -1456,7 +1456,7 @@ framing:
 ```
 binding_Phi_diff = 0.6870 (Phi_1 units, dimensionless, ~ O(1))
 E_HARTREE = 27.30 eV (= 511000 eV * alpha^2, HARDCODED in
-                              folio-assistant/computations/hecke_core.py:198)
+                              folio-assistant/computations/substrate/hecke_core.py:198)
 E_MOL = E_HARTREE / TWO_Q^2 = 6.75 eV per Phi_1 unit
 E_bind = binding_Phi_diff * E_MOL = 4.64 eV
 ```
@@ -1545,7 +1545,7 @@ Closing this rigorously requires:
 specific eigenvalue/length in the molecular Hecke representation;
 (ii) verification that the archimedean functor
 $\rho_\infty$ (currently embodied implicitly in
-[`hecke_core.py:198`](folio-assistant/computations/hecke_core.py))
+[`hecke_core.py:198`](folio-assistant/computations/substrate/hecke_core.py))
 is forced to multiply Markov-trace outputs by $1/(a_{0}^{\mathrm{cat}})^{2}$;
 (iii) showing this is the unique consistent choice given the
 Frobenius pairing structure.
@@ -1567,7 +1567,7 @@ categorical Bohr radius is given a precise Hecke definition.
  $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.
 - It does **not** override the existing usage of
  $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ in
- [`hecke_core.py:198`](folio-assistant/computations/hecke_core.py)
+ [`hecke_core.py:198`](folio-assistant/computations/substrate/hecke_core.py)
  as a numerical input — that usage remains an empirical scale
  pending closure of this conjecture.
 

@@ -13,6 +13,7 @@ pn pair addition. Double-magic nuclei (¹⁶O) converge to unknot.
 Usage:
     python3 intermediate_knot_detection.py
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import math
 import numpy as np

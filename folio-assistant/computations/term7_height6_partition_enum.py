@@ -28,6 +28,7 @@ gb_filtration_jet_tracker output (extended in this PR for 4_1, 6_2,
 *partition basis* on which α_5 will be fit.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 # Ref: [manuscript] conj:shell-correction-term-seven
 # Ref: [mayer1949] DOI 10.1103/PhysRev.75.1969
 

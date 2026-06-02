@@ -175,7 +175,7 @@ blockers; consumers must NOT fall back to the LO or Strategy-3 forms.
 **1. The 0.000 % on $p$ and $n$ is a calibration-discipline
 violation, not a prediction.** The ρ_K leading-order ansatz used
 in this table consumes $m_p$ and $m_n$ as CODATA inputs (via
-[`folio-assistant/computations/codata_constants.py`](../../../folio-assistant/computations/codata_constants.py)),
+[`folio-assistant/computations/substrate/codata_constants.py`](../../../folio-assistant/computations/substrate/codata_constants.py)),
 so for $K = p$ ($Z = 1, N = 0$) and $K = n$ ($Z = 0, N = 1$)
 the formula returns the input mass exactly. **This is a bug, not
 a feature**: the QOU framework admits exactly three calibration

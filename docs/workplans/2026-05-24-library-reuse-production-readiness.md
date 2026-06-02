@@ -314,7 +314,7 @@ This is where the v1 plan needs the biggest restructure. The **substrate-infra t
 | # | Item | Why |
 |---|------|-----|
 | **2a** | **Promote `witness_base.py` + `_precision.py` + `q_parameter.py` into a `qou-substrate` Python package** (new home: `tools/qou-substrate/`). Publish to PyPI. Re-export back into `folio-assistant/computations/` for backwards compat. | The 57% leverage move. Once this is a package, all 306 scripts get the same versioned `WitnessBuilder`. Pyodide ships it. Non-Python consumers see a stable JSON schema. |
-| **2b** | **Finish the `pyhecke` M1 carve-out** — pull the remaining shared math out of `folio-assistant/computations/hecke_core.py` (3,183 LOC, 67 importers) into `pyhecke` submodules. Convert script imports. | Makes `pyhecke` self-contained, removes the brittle `_legacy.py` sys.path hack, lets `pyhecke.gram` import cleanly in Pyodide. |
+| **2b** | **Finish the `pyhecke` M1 carve-out** — pull the remaining shared math out of `folio-assistant/computations/substrate/hecke_core.py` (3,183 LOC, 67 importers) into `pyhecke` submodules. Convert script imports. | Makes `pyhecke` self-contained, removes the brittle `_legacy.py` sys.path hack, lets `pyhecke.gram` import cleanly in Pyodide. |
 | **2c** | **Move `lp_dual_solver.py`, `laurent_q.py`, `syt_prefix_cache.py` into `pyhecke` as submodules.** Add CLAUDE.md xref. | These are library-quality already; living in `computations/` blocks reuse. |
 | **2d** | **WASM `hecke-engine`** — feature-gate `rug`/GMP behind `#[cfg(feature = "mpfr")]`; add `dashu` or `astro-float` as pure-Rust fallback; `wasm-pack build` → publish `@qou/hecke-engine` to npm. | Unblocks browser-side Hecke compute. |
 | **2e** | **Pyodide integration** — verify `pyhecke` + `qou-substrate` both load in Pyodide; documentation + smoke test. | The "consume QOU in a browser" story. |
@@ -362,10 +362,10 @@ tools/qou-substrate/
     test_precision_invariants.py
 ```
 
-Then `folio-assistant/computations/witness_base.py`, `_precision.py`, `q_parameter.py` become thin re-export shims:
+Then `folio-assistant/computations/substrate/witness_base.py`, `_precision.py`, `q_parameter.py` become thin re-export shims:
 
 ```python
-# folio-assistant/computations/witness_base.py — back-compat shim
+# folio-assistant/computations/substrate/witness_base.py — back-compat shim
 from qou_substrate.witness import *  # noqa: F401,F403
 ```
 

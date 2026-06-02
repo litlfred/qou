@@ -31,6 +31,7 @@ by >> baseline at the muon anchor, it's a proton-anchor coincidence.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from pathlib import Path
 

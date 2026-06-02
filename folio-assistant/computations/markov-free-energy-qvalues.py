@@ -31,6 +31,7 @@ Usage:
     cd folio-assistant/computations && python3 markov-free-energy-qvalues.py
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import math
 import json
 import sys

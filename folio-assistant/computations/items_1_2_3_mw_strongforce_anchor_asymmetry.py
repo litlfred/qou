@@ -9,6 +9,7 @@ Per user correction: distinguish DERIVATION from EMPIRICAL match.
 Status: EXPLORATORY (probes that EITHER derive structurally OR
 report negative findings honestly).
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import subprocess
 import sys

@@ -16,7 +16,7 @@ which derives the n − p splitting `μ_d − μ_u = M_N · S(q)` from
 the substrate parameter `q_0` and the universal nucleon-mass scale
 `M_N`.  **`M_N` itself is still anchored on CODATA** (specifically,
 `M_N = (m_p + m_n)/2` consumed via the `M_P_MEV_VALIDATION` /
-`M_N_MEV_VALIDATION` constants in `folio-assistant/computations/codata_constants.py`).
+`M_N_MEV_VALIDATION` constants in `folio-assistant/computations/substrate/codata_constants.py`).
 
 This leaves a **CLASS-A acknowledged-stub** at the M_N anchor: the
 splitting is substrate-pure, but the scale isn't.  Your job is to
@@ -76,7 +76,7 @@ The proton mass `m_p` already has structural pieces on main:
 
 If `m_p` reaches substrate-pure form, then per the framework's
 beta-decay relation (`Q_BETA_MEV = m_n − m_p − m_e` in
-`folio-assistant/computations/codata_constants.py`) the neutron
+`folio-assistant/computations/substrate/codata_constants.py`) the neutron
 mass is `m_n = m_p + m_e + Q_β`, so
 
 ```

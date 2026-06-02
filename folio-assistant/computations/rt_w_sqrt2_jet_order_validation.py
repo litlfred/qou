@@ -21,6 +21,7 @@ This probe is the rigorous check. For W = T(2,4), Z = T(2,6), H = T(2,8):
 
 Status: EXPLORATORY — rigorous jet-order validation test.
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import subprocess
 import sys

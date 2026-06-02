@@ -1,3 +1,4 @@
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys; sys.path.insert(0,'.')
 from mpmath import mp, mpf, fabs, catalan
 mp.dps = 50

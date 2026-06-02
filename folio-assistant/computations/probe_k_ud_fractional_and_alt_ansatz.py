@@ -39,6 +39,7 @@ References:
 - docs/workplans/2026-05-30-mass-asymmetric-flavor-split.md
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 from pathlib import Path

@@ -21,6 +21,7 @@ dominant family has y_λ ~ 10^-6, a 9-order-of-magnitude gap.
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import math
 import sys

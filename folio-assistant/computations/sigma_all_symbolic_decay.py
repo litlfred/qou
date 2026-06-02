@@ -26,6 +26,7 @@ Precision requirements for evaluating Σ_all(A) numerically:
 With symbolic formula: ANY A — no cancellation, no precision concern.
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 from q_parameter import Q_50_DIGIT_STR
 from datetime import datetime, timezone

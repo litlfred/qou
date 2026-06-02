@@ -33,7 +33,7 @@ identifications. If you can't derive it from category, mark it open.
 
 ### What's currently asserted (without categorical derivation)
 
-In `folio-assistant/computations/hecke_core.py:198`:
+In `folio-assistant/computations/substrate/hecke_core.py:198`:
 
 ```python
 E_HARTREE_EV = 511000.0 * alpha_em**2   # Hartree energy (eV)
@@ -83,7 +83,7 @@ content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.
 content/quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.md
 content/quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.md
 content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.md
-folio-assistant/computations/hecke_core.py        # E_HARTREE definition
+folio-assistant/computations/substrate/hecke_core.py        # E_HARTREE definition
 folio-assistant/computations/h2_lp_dual.py        # if exists
 folio-assistant/computations/co2-molecular-binding.py
 ```

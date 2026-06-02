@@ -23,6 +23,7 @@ Uses Rust seminormal kernel `pyhecke_native.chi_lambda_braid` for
 fast character evaluation (~50× faster than pure Python for n ≥ 9).
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys, json, warnings
 from multiprocessing import Pool, cpu_count
 from pathlib import Path

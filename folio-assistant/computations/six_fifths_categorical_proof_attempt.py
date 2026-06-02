@@ -27,6 +27,7 @@ Plus various combinations and substrate-q_0-weighted variants.
 
 Status: EXPLORATORY (categorical proof ATTEMPT, not proof).
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import subprocess
 import sys

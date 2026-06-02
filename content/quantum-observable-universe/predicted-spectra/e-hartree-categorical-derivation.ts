@@ -49,7 +49,7 @@ export default conjecture({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/hecke_core.py",
+    script: "folio-assistant/computations/substrate/hecke_core.py",
     witness:
       "folio-assistant/computations/hecke-core-symbolic-migration.witness.json",
     status: "verified",

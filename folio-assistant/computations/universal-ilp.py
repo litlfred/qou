@@ -16,6 +16,7 @@ Usage:
     python3 universal-ilp.py
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import math, sys, itertools
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))

@@ -17,6 +17,7 @@ y_λ computed via q-Schur closed form (PR #1259):
 where c(λ) = content sum = Σ_{(i,j)∈λ} (j-i).
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json, time
 from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path

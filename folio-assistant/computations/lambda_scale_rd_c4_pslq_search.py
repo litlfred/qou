@@ -19,6 +19,7 @@ yields a bound on the complexity of any closed form for c_4.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
 from itertools import product

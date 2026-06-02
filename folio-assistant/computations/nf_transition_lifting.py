@@ -22,6 +22,7 @@ factor is mediated by the BW polynomial structure.
 Usage:
     python3 nf_transition_lifting.py
 """
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import math
 import numpy as np

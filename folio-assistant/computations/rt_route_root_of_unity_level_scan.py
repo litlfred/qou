@@ -20,6 +20,7 @@ needs additional categorical structure.
 Status: EXPLORATORY.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import subprocess
 import sys

@@ -37,6 +37,7 @@ Reuses the symbolic Hoefsmit machinery from alpha_shift_torus.py.
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from itertools import permutations
 from pathlib import Path

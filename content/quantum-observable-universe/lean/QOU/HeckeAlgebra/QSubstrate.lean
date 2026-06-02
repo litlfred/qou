@@ -26,7 +26,7 @@ under the categorical mass-ratio formula (per
 These are the derived constants that appear throughout the QOU
 manuscript and feed downstream computations.  They are
 axiomatised here at the Lean level (concrete value derivation
-lives in `folio-assistant/computations/q_parameter.py`).
+lives in `folio-assistant/computations/substrate/q_parameter.py`).
 
 The 50-dps decimal expansion `q_0 ≈ 1.1099785955541805…` is
 checked-in as a witness; the Lean axiom is just a positive-real-
@@ -36,7 +36,7 @@ number existence claim.
 
 - [manuscript] `def:m-mu-over-m-e-calibration` — the equation
   defining `q_0` from the lepton mass ratio
-- `folio-assistant/computations/q_parameter.py` — the 50-dps
+- `folio-assistant/computations/substrate/q_parameter.py` — the 50-dps
   Python derivation
 - `Q_50_DIGIT_STR` — the 50-decimal-digit literal
 -/
@@ -46,7 +46,7 @@ namespace QOU.HeckeAlgebra.QSubstrate
 /-- **The QOU substrate parameter** `q_0`.  Axiomatised as a real
     number greater than 1 (per the categorical derivation in
     `def:m-mu-over-m-e-calibration`); concrete 50-dps value lives
-    in `folio-assistant/computations/q_parameter.py`. -/
+    in `folio-assistant/computations/substrate/q_parameter.py`. -/
 axiom q_0 : ℝ
 
 /-- `q_0 > 1` (categorical-derivation property). -/

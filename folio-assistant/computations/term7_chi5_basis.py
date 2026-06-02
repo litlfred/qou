@@ -22,6 +22,7 @@ The α_5 fit will combine this with the χ^λ(T_w) data once the
 tracker extension lands.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 # Ref: [manuscript] conj:shell-correction-term-seven
 # Ref: [manuscript] term7_height6_partition_enum.py (basis)
 

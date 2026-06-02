@@ -117,7 +117,7 @@ full `tr_M` formalization (currently has `sorry`s).
 
 - `folio-assistant/computations/mass_at_3A_proper.py:267` — root
   of the informal pattern
-- `folio-assistant/computations/hecke_core.py` — canonical braid
+- `folio-assistant/computations/substrate/hecke_core.py` — canonical braid
   word definitions (`_PROTON_G0`, etc.)
 - `folio-assistant/computations/closed_form_tau_M.py` — Phase 5q
   closed form (already uses `𝓑_p` / `𝓑_n` notation)

@@ -754,7 +754,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/hecke_core_symbolic.py",
+        "path": "folio-assistant/computations/substrate/hecke_core_symbolic.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -819,7 +819,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/knot_volumes.py",
+        "path": "folio-assistant/computations/substrate/knot_volumes.py",
         "substrate_banner": true,
         "hit_count": 8,
         "violation_count": 8,

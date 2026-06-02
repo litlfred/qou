@@ -14,6 +14,7 @@ This probe tests structural hypotheses for WHY the fusion 3⊗4 appears,
 rather than accepting it as a scanned coincidence.
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 from pathlib import Path

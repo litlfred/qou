@@ -124,7 +124,7 @@ to be validated, not a result. Harness:
 **Definition.** Different methods computing the same quantity at substrate
 q_0 must agree to at least 1 ppQ (10⁻¹⁵ relative, i.e. 10⁻⁶ ppb).
 
-**Configuration.** Controlled by `folio-assistant/computations/_precision.py`:
+**Configuration.** Controlled by `folio-assistant/computations/substrate/_precision.py`:
 
 ```python
 COMPUTE_DPS_DEFAULT  = 65    # mpmath working precision (OUTPUT + GUARD)
@@ -317,5 +317,5 @@ When working on a precision-affecting change:
 
 - [`docs/audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md`](audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md) — current workplan
 - [`docs/coordination/1ppb.md`](coordination/1ppb.md) — cross-PR coordination ledger
-- [`folio-assistant/computations/_precision.py`](../folio-assistant/computations/_precision.py) — compute precision infrastructure
+- [`folio-assistant/computations/substrate/_precision.py`](../folio-assistant/computations/substrate/_precision.py) — compute precision infrastructure
 - [`folio-assistant/computations/per_observable_100x_status.py`](../folio-assistant/computations/per_observable_100x_status.py) — L2 status reporter

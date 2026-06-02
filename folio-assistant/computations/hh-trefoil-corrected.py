@@ -14,6 +14,7 @@ Usage:
     python3 hh-trefoil-corrected.py
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import math, sys
 from pathlib import Path
 from mpmath import mp

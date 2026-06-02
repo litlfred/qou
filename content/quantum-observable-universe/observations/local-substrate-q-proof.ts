@@ -8,7 +8,7 @@ export default proof({
     engine: "snappea",
     script: "folio-assistant/computations/knot-volumes.py",
     witness: [
-      "folio-assistant/computations/knot-volumes.witness.json",
+      "folio-assistant/computations/substrate/knot-volumes.witness.json",
       "folio-assistant/computations/q-pinning-50-digit.witness.json",
     ],
     status: "verified",

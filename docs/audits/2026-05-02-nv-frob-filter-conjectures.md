@@ -31,7 +31,7 @@ where:
   [`crossing-energy.md`](../../content/quantum-observable-universe/braids-and-knots/crossing-energy.md));
 - $\mu_0 = m_e / (3 E_\times)$ is the **dimensional scale** (forced
   by CAL-0; from
-  [`q_parameter.py`](../../folio-assistant/computations/q_parameter.py));
+  [`q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py));
 - $N_v$ is the **effective weak-scale crossing count** — a
   topological invariant of the brane-tower at the weak place.
 

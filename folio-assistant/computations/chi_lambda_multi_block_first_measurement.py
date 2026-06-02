@@ -41,6 +41,7 @@ i.e., (σ_1 σ_2⁻¹)³ — a 6-letter word with 3 σ_1 and 3 σ_2⁻¹.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
 from pathlib import Path

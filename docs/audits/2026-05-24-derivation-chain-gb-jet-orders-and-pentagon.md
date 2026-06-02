@@ -58,7 +58,7 @@ by pentagon coherence applied to the $\ell = 2$ data.
 
 - **Jet grade**: 0 (atomic constant)
 - **h-content**: $h(q_0) = q_0 - q_0^{-1} \approx 0.209$, fixed
-- **Source**: [`q_parameter.py`](../../folio-assistant/computations/q_parameter.py) (50 dps locked: 1.10970000000)
+- **Source**: [`q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py) (50 dps locked: 1.10970000000)
 - **What's determined**: every downstream $h$-coefficient evaluates
   *at* this $q_0$; nothing constrains $q_0$ itself within the
   derivation (substrate-derivation declined 2026-05-08)

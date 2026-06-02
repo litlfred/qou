@@ -21,6 +21,7 @@ This probe replaces the symbolic version (timed out) with the
 numerical analog.
 """
 from __future__ import annotations
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
 import time

@@ -39,6 +39,7 @@ Output: sublemma-2-1-A-operator-extract-h9-{pn|nn|pp}.witness.json
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import argparse
 import json
 import sys

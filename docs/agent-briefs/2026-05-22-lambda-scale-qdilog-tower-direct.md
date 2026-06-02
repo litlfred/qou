@@ -868,7 +868,7 @@ distinguish a structural identity from a numerical coincidence.
 3. **Do not silently switch q_0 conventions.** The substrate value
    is `Q_50_DIGIT_STR =
    "1.10997859555418057528159407960950937799328227995870"` in
-   [`folio-assistant/computations/q_parameter.py`](../../folio-assistant/computations/q_parameter.py).
+   [`folio-assistant/computations/substrate/q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py).
    Any candidate must be evaluated at exactly this q_0.
 
 ## Deliverables (when this work is done)
@@ -906,7 +906,7 @@ distinguish a structural identity from a numerical coincidence.
   §7 — open frontier #4 (this work).
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
   §4 (Φ_q vs Li_2^q) and §5 #1 (Migration Backlog).
-- [`folio-assistant/computations/q_parameter.py`](../../folio-assistant/computations/q_parameter.py)
+- [`folio-assistant/computations/substrate/q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py)
   — substrate q_0 canonical pin.
 - [`folio-assistant/computations/bring_bloch_tier{1..5}_search_m_p.py`](../../folio-assistant/computations/)
   — the exhausted Bring-Bloch path; use as PSLQ scaffolding template.

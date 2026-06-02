@@ -13,7 +13,7 @@ probe + positive nuclear-binding closure).
 This is a **corroboration audit, not a discovery audit**. The framework
 has already adopted `CAL-3 = m_π` as the canonical assignment:
 
-- [`folio-assistant/computations/codata_constants.py`](../../folio-assistant/computations/codata_constants.py) line 22 (module header table):
+- [`folio-assistant/computations/substrate/codata_constants.py`](../../folio-assistant/computations/substrate/codata_constants.py) line 22 (module header table):
 
   | ID    | Observable | Module export | Measurement / Source |
   |-------|------------|---------------|----------------------|
@@ -121,7 +121,7 @@ calibration slots), the m_π assignment is over-determined.
 - m_π witness: `m-pi-hecke-prediction-probe.witness.json`
 - c_3 derivation attempt audit: [`2026-05-31-c-3-categorical-derivation-attempt.md`](2026-05-31-c-3-categorical-derivation-attempt.md)
 - Canonical 3-calibration content block: [`content/quantum-observable-universe/mass-theory/three-calibration-inputs.md`](../../content/quantum-observable-universe/mass-theory/three-calibration-inputs.md)
-- CODATA constants (already declares M_PI_PM_MEV_VALIDATION): [`folio-assistant/computations/codata_constants.py`](../../folio-assistant/computations/codata_constants.py)
+- CODATA constants (already declares M_PI_PM_MEV_VALIDATION): [`folio-assistant/computations/substrate/codata_constants.py`](../../folio-assistant/computations/substrate/codata_constants.py)
 - Option-e v9 (main): commit [`30c5393b7`](https://github.com/litlfred/qou/commit/30c5393b7)
 - Q_β c_k truncation framing (main): commit [`6ace8153e`](https://github.com/litlfred/qou/commit/6ace8153e)
 - Sibling PR #1581 (three-dashboard-probes): independent v9 uniqueness + c_3 Rule A reframing

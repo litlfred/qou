@@ -32,10 +32,10 @@ on:
     paths:
       - "folio-assistant/computations/habiro/*.py"
       - "folio-assistant/computations/markov/*.py"
-      - "folio-assistant/computations/witness_base.py"
+      - "folio-assistant/computations/substrate/witness_base.py"
       # thimble scripts removed from CI triggers (2026-05-24 cleanup)
-      - "folio-assistant/computations/q_parameter.py"
-      - "folio-assistant/computations/witness_constant_staleness.py"
+      - "folio-assistant/computations/substrate/q_parameter.py"
+      - "folio-assistant/computations/substrate/witness_constant_staleness.py"
       - "tools/qou-substrate/python/qou_substrate/constants.py"
       - "folio-assistant/computations/y_lambda_macdonald_telescope.py"
       - "folio-assistant/computations/demazure_markov_trace.py"
@@ -60,10 +60,10 @@ on:
     paths:
       - "folio-assistant/computations/habiro/*.py"
       - "folio-assistant/computations/markov/*.py"
-      - "folio-assistant/computations/witness_base.py"
+      - "folio-assistant/computations/substrate/witness_base.py"
       # thimble scripts removed from CI triggers (2026-05-24 cleanup)
-      - "folio-assistant/computations/q_parameter.py"
-      - "folio-assistant/computations/witness_constant_staleness.py"
+      - "folio-assistant/computations/substrate/q_parameter.py"
+      - "folio-assistant/computations/substrate/witness_constant_staleness.py"
       - "tools/qou-substrate/python/qou_substrate/constants.py"
       - "folio-assistant/computations/y_lambda_macdonald_telescope.py"
       - "folio-assistant/computations/demazure_markov_trace.py"
@@ -262,7 +262,7 @@ jobs:
         # modes we want to catch.  Promote to --strict once the
         # ~394 stale witnesses have been regenerated.
         run: |
-          python3 folio-assistant/computations/witness_constant_staleness.py
+          python3 folio-assistant/computations/substrate/witness_constant_staleness.py
 
       - name: Axiomatic Markov-trace recursive reducer (H_3..H_6)
         # Per prop:markov-trace-recursive-reducer: terminating axiom-

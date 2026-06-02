@@ -25,6 +25,7 @@ EW interface contribution (for example Δ_I), not from β_EW alone.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 from collections import Counter
 from functools import lru_cache
 from pathlib import Path

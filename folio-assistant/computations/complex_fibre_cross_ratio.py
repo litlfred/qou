@@ -70,6 +70,7 @@ Outputs `complex-fibre-cross-ratio.witness.json` (audit-only).
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import os
 import sys
 import time

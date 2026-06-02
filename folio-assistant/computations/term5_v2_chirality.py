@@ -39,6 +39,7 @@ Both callable from any compute script.  No state, no I/O.
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 import time
 from functools import lru_cache
