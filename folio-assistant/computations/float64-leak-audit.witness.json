@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T14:46:11.434679+00:00",
-  "commitSha": "c21c097a481fd8ceb1b9d4369ac999e8e48a3f05",
+  "computedAt": "2026-06-02T05:55:55.914788+00:00",
+  "commitSha": "a6289bd1c0f921f6ad6898cfafa510304fd782c1",
   "assertions": [
     {
       "name": "no_i8_violations",
@@ -36,13 +36,13 @@
   "description": "I8 audit per local/compute-integration-watcher: scripts whose docstrings claim substrate-pure / canonical / 50-dps precision are scanned for float64 leaks — `np.float64(...)`, `float(...)` casts on derived mpf values, f-string precision clipping, and `==` comparison on mpf values. Antipattern shapes are matched against the four catalogue items. False-positive guards: lines inside builder `add_data` / `add_parameter` / `add_assertion` calls are classified as `ok_witness_emit` (final-step JSON serialization is expected); lines followed within 3 by `mp.mpf(str(...))` re-wrap are `false_positive_candidate`.",
   "contentBlock": "I8 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "substrate_banner_scripts_total": 45
+    "substrate_banner_scripts_total": 46
   },
   "data": {
     "by_result": {
       "ok_with_display_or_fp": 5,
       "ok_no_leaks": 29,
-      "i8_violation": 11
+      "i8_violation": 12
     },
     "rows": [
       {
@@ -186,6 +186,26 @@
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "ame_str = f\"{ref:.4f}\" if ref is not None else \"—\""
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "folio-assistant/computations/closed_form_tau_M.py",
+        "substrate_banner": true,
+        "hit_count": 1,
+        "violation_count": 1,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 351,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "h_val = float(Q0 - 1 / Q0)"
           }
         ],
         "result": "i8_violation"
