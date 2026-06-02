@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T18:20:21.731859+00:00",
-  "commitSha": "18ac6def75acf693c516f28e4a8e625e698c5307",
+  "computedAt": "2026-06-02T03:21:46.059506+00:00",
+  "commitSha": "d090a4c7cf011a892d77f8e65eb1ce1307d4f53c",
   "assertions": [
     {
       "name": "no_i2_probe_only_witnesses",
@@ -37,12 +37,12 @@
   "contentBlock": "I2 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "production_consumers_count": 9,
-    "total_label_bearing_witnesses": 276
+    "total_label_bearing_witnesses": 277
   },
   "data": {
     "by_result": {
       "i2_probe_only": 226,
-      "wired_production": 50
+      "wired_production": 51
     },
     "production_consumers": [
       "atomic_mass_via_rho_k.py",
@@ -2226,6 +2226,18 @@
           "prop:full-pole-structure-mass-trace"
         ],
         "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/qbeta-li2q-imaginary-quantization.witness.json",
+        "labels": [
+          "prop:mass-endomorphism-tower"
+        ],
+        "production_consumers": [
+          "derive_m_p_hecke_full_tower_50dps.py",
           "paper_six_term_isotope_sweep.py"
         ],
         "upstream_consumers": [],

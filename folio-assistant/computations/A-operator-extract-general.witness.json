@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T19:39:18.547208+00:00",
-  "commitSha": "e6569d7622ab45a74f1b5f89eae787051aa64066",
+  "computedAt": "2026-06-02T03:37:27.165508+00:00",
+  "commitSha": "d090a4c7cf011a892d77f8e65eb1ce1307d4f53c",
   "assertions": [
     {
       "name": "all_solved_lambda_residuals_below_1e-10",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "A-operator-extract-general",
   "scriptFile": "A_operator_extract_general.py",
   "scriptHash": "85a45978b4bf",
@@ -48,7 +48,7 @@
       "split_3_3": {
         "n1": 3,
         "n2": 3,
-        "elapsed_sec": 0.4756007194519043,
+        "elapsed_sec": 0.589240312576294,
         "n_partitions": 11,
         "results_per_lambda": {
           "[6]": {

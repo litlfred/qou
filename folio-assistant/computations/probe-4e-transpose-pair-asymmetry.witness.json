@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T19:33:44.901282+00:00",
-  "commitSha": "e6569d7622ab45a74f1b5f89eae787051aa64066",
+  "computedAt": "2026-06-02T03:29:32.422328+00:00",
+  "commitSha": "d090a4c7cf011a892d77f8e65eb1ce1307d4f53c",
   "assertions": [
     {
       "name": "tall_narrow_systematically_deeper",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "probe-4e-transpose-pair-asymmetry",
   "scriptFile": "probe_4e_transpose_pair_asymmetry.py",
   "scriptHash": "effd4abfe4d1",
@@ -49,13 +49,13 @@
           2,
           2
         ],
-        "tall_min_eig": -78.7030063488021,
+        "tall_min_eig": -78.7030063488022,
         "wide_short": [
           9,
           9
         ],
-        "wide_min_eig": -60.487628053696056,
-        "asymmetry": 18.21537829510605,
+        "wide_min_eig": -60.487628053695964,
+        "asymmetry": 18.21537829510624,
         "tall_n_rows": 9,
         "wide_n_rows": 2
       },
@@ -105,8 +105,8 @@
       "n_tall_narrow_deeper": 2,
       "n_wide_short_deeper": 1,
       "frac_tall_narrow_deeper": 0.6666666666666666,
-      "mean_asymmetry": 6.173902543077195,
-      "max_asymmetry": 18.21537829510605,
+      "mean_asymmetry": 6.173902543077259,
+      "max_asymmetry": 18.21537829510624,
       "min_asymmetry": -0.49368139075296824
     }
   }
