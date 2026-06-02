@@ -29,7 +29,12 @@ noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- Archimedean specialization map for Laurent-polynomial coefficients.
     This keeps the formal coefficients in `R_q` while allowing the
-    differential equation to be stated over `ℂ`. -/
+    differential equation to be stated over `ℂ`.
+
+    Intended semantics: a chosen coefficient specialization
+    `ℤ[q, q⁻¹] → ℂ` for the archimedean model. The algebraic properties
+    of this map are left axiomatic here because this file only needs
+    coefficient transport into the analytic differential equation. -/
 axiom coeffEmbed : R_q → ℂ
 
 /-- **External axiom** (Lang, Elliptic Functions §VI.3; manuscript

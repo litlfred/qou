@@ -35,8 +35,9 @@ variable (K : TorusKnot)
 def genus : ℕ := (K.m - 1) * (K.n - 1) / 2
 
 /-- Crossing number of a torus knot: `c = (m-1)n` for `m ≤ n`.
-    This is the standard torus-knot formula `min ((m-1)n) (m(n-1))`,
-    which simplifies to `(m-1)n` under the built-in hypothesis `m ≤ n`. -/
+    This is the standard torus-knot formula `min ((m-1)n) (m(n-1))`;
+    under the built-in hypothesis `m ≤ n` we have `(m-1)n ≤ m(n-1)`,
+    so the minimum is `(m-1)n`. -/
 def crossingNumber : ℕ := (K.m - 1) * K.n
 
 end TorusKnot
@@ -50,6 +51,8 @@ end TorusKnot
 -- Ref: [manuscript] the previous explicit proof no longer typechecked under the
 -- current Lean/Mathlib stack, so this file temporarily records the cited
 -- classification result as an axiom until the arithmetic proof is restored.
+-- TODO: restore a proof once the arithmetic script is updated for the current
+-- Lean/Mathlib toolchain.
 axiom torus_knot_genus_four_unique (K : TorusKnot)
     (h : K.genus = 4) :
     (K.m = 2 ∧ K.n = 9) ∨ (K.m = 3 ∧ K.n = 5)
