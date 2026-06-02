@@ -39,9 +39,10 @@ ATLAS = {
 
 def compute_vol(snappy_id: str) -> float:
     """Compute Vol(K) via SnapPy, dispatching by identifier prefix."""
+    import ast
     import snappy  # imported lazily
     if snappy_id.startswith("braid:"):
-        braid = eval(snappy_id[len("braid:"):])
+        braid = ast.literal_eval(snappy_id[len("braid:"):])
         L = snappy.Link(braid_closure=braid)
         return float(L.exterior().volume())
     if snappy_id.startswith("formula:"):

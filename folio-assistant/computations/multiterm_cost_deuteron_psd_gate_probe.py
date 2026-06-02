@@ -63,14 +63,15 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as Q_CANONICAL  # noqa: E402
+from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()
 
 q = mp.mpf(str(Q_CANONICAL))
-m_e = mp.mpf("0.51099895000")
+m_e = M_E_MEV
 
 # Deuteron data (R5-full witness historical_cross_check + Frobenius validation)
-B_AME = mp.mpf("2.224566")
+B_AME = AME_B_DEUTERON_MEV_VALIDATION
 ALPHA_GAP_6_2 = mp.mpf("0.890510")    # standard (2,1)-block PSD violation
 TRM_6_2 = mp.mpf("0.288326")
 M_E_SIGMA_6 = mp.mpf("1.636287112")   # m_e·Σ_{λ⊢6} 1/dim_q (validated)
