@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T16:05:29.546245+00:00",
-  "commitSha": "95d95f9a30fdc7cd38d7aa1008dca11b648b5863",
+  "computedAt": "2026-06-02T17:24:51.362187+00:00",
+  "commitSha": "fda363a5525b91e056935535d0b89ad399bfa67a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 19,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "2a7ebe632641",
@@ -18,16 +18,16 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
+    "numpy": "2.4.4",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.4.0"
+    "clarabel": "0.11.1"
   },
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 631,
+    "files_scanned": 633,
     "patterns": [
       "P15",
       "P16",
@@ -39,7 +39,7 @@
   "data": {
     "by_pattern_count": {
       "P15": 90,
-      "P16": 108,
+      "P16": 114,
       "P21": 23,
       "P30": 116,
       "P31": 48
@@ -52,6 +52,14 @@
           "P15",
           "P16",
           "P30"
+        ]
+      },
+      {
+        "file": "kazhdan_lusztig.py",
+        "count": 13,
+        "patterns": [
+          "P15",
+          "P16"
         ]
       },
       {
@@ -108,14 +116,6 @@
         "patterns": [
           "P15",
           "P21"
-        ]
-      },
-      {
-        "file": "kazhdan_lusztig.py",
-        "count": 7,
-        "patterns": [
-          "P15",
-          "P16"
         ]
       },
       {
@@ -1135,49 +1135,91 @@
       {
         "pattern": "P15",
         "file": "kazhdan_lusztig.py",
-        "line": 287,
+        "line": 452,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P16",
         "file": "kazhdan_lusztig.py",
-        "line": 281,
+        "line": 446,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "kazhdan_lusztig.py",
-        "line": 288,
+        "line": 453,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "kazhdan_lusztig.py",
-        "line": 324,
+        "line": 491,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "kazhdan_lusztig.py",
-        "line": 325,
+        "line": 492,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "kazhdan_lusztig.py",
-        "line": 326,
+        "line": 493,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "kazhdan_lusztig.py",
-        "line": 343,
+        "line": 503,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "kazhdan_lusztig.py",
+        "line": 541,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "kazhdan_lusztig.py",
+        "line": 542,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "kazhdan_lusztig.py",
+        "line": 543,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "kazhdan_lusztig.py",
+        "line": 550,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "kazhdan_lusztig.py",
+        "line": 571,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "kazhdan_lusztig.py",
+        "line": 582,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
