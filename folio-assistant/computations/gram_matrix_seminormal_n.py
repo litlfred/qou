@@ -29,6 +29,8 @@ For H_6 (deuteron, n_total = 6), the per-block reassembly is the
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 from pathlib import Path
 from typing import Union
@@ -225,7 +227,7 @@ if __name__ == "__main__":
     import json
     import time
 
-    Q_PIN = HERE / "q-pinning-50-digit.witness.json"
+    Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
     q_0 = float(mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"]))
 
     print("=" * 78)

@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T15:23:14.590754+00:00",
-  "commitSha": "09e3a219d5bc4304feb06bb40d40f009d2e4c117",
+  "computedAt": "2026-06-02T15:47:46.214562+00:00",
+  "commitSha": "ec45e3da18c98a26ce2336d6377ea6a7fb6b810a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 12,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "2a7ebe632641",
-  "scriptCommitSha": "09e3a219d5bc4304feb06bb40d40f009d2e4c117",
+  "scriptCommitSha": "a354bc8558aadd45bdd312dd8aac80de0c149448",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,7 +26,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 623,
+    "files_scanned": 626,
     "patterns": [
       "P15",
       "P16",
@@ -39,7 +39,7 @@
     "by_pattern_count": {
       "P15": 90,
       "P16": 108,
-      "P21": 22,
+      "P21": 23,
       "P30": 116,
       "P31": 48
     },
@@ -920,6 +920,13 @@
         "line": 96,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P21",
+        "file": "gram_matrix_seminormal_n.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
         "pattern": "P31",
