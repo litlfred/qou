@@ -50,6 +50,7 @@ coherence status" for the package map.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 from datetime import datetime, timezone
 from pathlib import Path
 

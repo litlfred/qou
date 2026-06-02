@@ -41,6 +41,7 @@ For new code, use the canonical surface in `hecke_core.py` or the
 matching pyhecke modules (gram, wedderburn, atom, molecular) instead.
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 # ── Stdlib imports the moved code uses ──
 # These were originally at hecke_core.py module-top (lines 1420-1421,
 # 2233-2234). When the carve-out split the file, the moved functions
