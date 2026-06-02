@@ -30,6 +30,7 @@ stale literal appears ONLY in the explicit staleness-delta demonstration.
 Output: option-e-probe1-derive-1plusq-over-2.witness.json
 """
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import math
 import sys
