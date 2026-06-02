@@ -95,16 +95,19 @@ noncomputable def markovZax_legacy (q : ℝ) : ℝ :=
 
     **Tier 2 generic-R form** (Phase 2 of the q-usage Hoefsmit
     migration, PR #1640 / #1658). The class is parameterised by an
-    abstract field `R` and a formal square-root element `u : R` with
-    `u² = q`. Archimedean callers instantiate `R := ℝ` and supply
-    `u := Real.sqrt q` (carrying `0 < q` for `Real.sqrt q ^ 2 = q`).
+    abstract field `R` and an element `u : R`; the intended physical
+    interpretation is that `u` is a formal square-root of the Hecke
+    parameter `q`, but the class itself imposes no `u² = q`
+    constraint — that hypothesis enters at the callsite for any
+    concrete instantiation that needs it.
 
-    The archimedean wrappers
-    (`MarkovTraceAxioms_real_legacy`, `markov_iterated_stab_real`,
-    `disjoint_product_factorisation_real`,
-    `MarkovTraceAxioms_real_implies_disjoint_stabilisation`)
-    below preserve the pre-Phase-2 `(q : ℝ)` API surface so existing
-    archimedean callers compile unchanged. -/
+    Archimedean entry points: `MarkovTraceAxioms_real q` (an `abbrev`
+    of `MarkovTraceAxioms (Real.sqrt q)`) and the `_real` wrappers
+    `markov_iterated_stab_real` and `disjoint_product_factorisation_real`
+    below carry an explicit `(hq : 0 < q)` hypothesis so they avoid
+    the `q-usage-positivity-implicit` warning. There are no instances
+    of this class on `main` at the time of this Phase 2 refactor, so
+    no archimedean callers are broken. -/
 class MarkovTraceAxioms {R : Type*} [Field R] (u : R) : Type where
   /-- M1: scalar value of `τ` on the identity element. -/
   tau_identity : R
@@ -143,10 +146,13 @@ theorem markov_iterated_stab {R : Type*} [Field R] (u : R) [MarkovTraceAxioms u]
   markov_iterated_stab_gen (markovZax u) τ k
 
 /-- Archimedean shim of `markov_iterated_stab` — preserves the
-    pre-Phase-2 `(q : ℝ)` API surface. -/
-theorem markov_iterated_stab_real (q : ℝ) [MarkovTraceAxioms (Real.sqrt q)]
-    (τ_x : ℝ) (k : ℕ) :
-    ∃ τ_x_k_stab : ℝ, τ_x_k_stab = τ_x * (markovZax (Real.sqrt q))^k :=
+    pre-Phase-2 `(q : ℝ)` API surface. Carries the explicit
+    `(hq : 0 < q)` hypothesis so the statement is phrased via
+    `markovZax_real q hq` rather than the positivity-implicit
+    `markovZax (Real.sqrt q)`. -/
+theorem markov_iterated_stab_real (q : ℝ) (hq : 0 < q)
+    [MarkovTraceAxioms (Real.sqrt q)] (τ_x : ℝ) (k : ℕ) :
+    ∃ τ_x_k_stab : ℝ, τ_x_k_stab = τ_x * (markovZax_real q hq)^k :=
   markov_iterated_stab (Real.sqrt q) τ_x k
 
 /-- **Disjoint-product factorisation (derived from M3)**: two braids K_1, K_2
@@ -173,10 +179,11 @@ theorem disjoint_product_factorisation {R : Type*} [Field R] (u : R)
     ∃ τ_joint : R, τ_joint = τ_K1 * τ_K2 * (markovZax u)^k :=
   disjoint_product_factorisation_gen (markovZax u) τ_K1 τ_K2 k
 
-/-- Archimedean shim of `disjoint_product_factorisation`. -/
-theorem disjoint_product_factorisation_real (q : ℝ)
+/-- Archimedean shim of `disjoint_product_factorisation`.
+    Carries the explicit `(hq : 0 < q)` hypothesis. -/
+theorem disjoint_product_factorisation_real (q : ℝ) (hq : 0 < q)
     [MarkovTraceAxioms (Real.sqrt q)] (τ_K1 τ_K2 : ℝ) (k : ℕ) :
-    ∃ τ_joint : ℝ, τ_joint = τ_K1 * τ_K2 * (markovZax (Real.sqrt q))^k :=
+    ∃ τ_joint : ℝ, τ_joint = τ_K1 * τ_K2 * (markovZax_real q hq)^k :=
   disjoint_product_factorisation (Real.sqrt q) τ_K1 τ_K2 k
 
 /-! ## Discharge of MarkovDisjointStabilisation
