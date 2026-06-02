@@ -101,11 +101,15 @@ jobs:
       - name: Run smoke
         run: |
           cd tools/hecke-engine-octave
-          # Add the MEX-files directory (current dir) to Octave's path
-          # using its absolute resolution so it survives the subsequent
-          # `cd test` inside the eval.  The previous `addpath('.')` was
-          # a no-op once `cd test` ran.
-          LD_LIBRARY_PATH=../hecke-engine-c/target/release \
+          # `LD_LIBRARY_PATH` is consulted at dlopen-time relative to
+          # the *current* CWD if it contains a relative path; once
+          # Octave does `cd test` inside the eval, a relative
+          # `../hecke-engine-c/target/release` resolves to
+          # `tools/hecke-engine-octave/hecke-engine-c/...` (wrong dir).
+          # Use the absolute path so the resolution is CWD-invariant.
+          # Same for `addpath(pwd)` — register absolute MEX dir before
+          # entering test/.
+          LD_LIBRARY_PATH="$GITHUB_WORKSPACE/tools/hecke-engine-c/target/release" \
             octave --no-gui --eval "addpath(pwd); cd test; smoke"
 
   # ── 4. Julia smoke ──
@@ -171,7 +175,12 @@ jobs:
           ./configure \
             --with-gaproot=${{ steps.gaproot.outputs.gaproot }} \
             --with-hecke-engine-c=$GITHUB_WORKSPACE/tools/hecke-engine-c
-          make
+          # The apt-installed GAP's sysinfo.gap leaves GAC_CFLAGS empty
+          # (Debian/Ubuntu's packaging variant), so configure.ac propagates
+          # an empty GAP_CFLAGS into the Makefile.  Override GAP_CFLAGS on
+          # the make command-line to point at libgap-dev's header dir,
+          # which is where `gap_all.h` actually lives.
+          make GAP_CFLAGS="-I/usr/include/gap"
       - name: Run smoke.tst
         run: |
           cd tools/hecke-engine-gap
@@ -236,10 +245,17 @@ jobs:
             --language kotlin \
             --out-dir bindings/kotlin/
           # Verify Kotlin file produced + has the expected public surface.
-          test -f bindings/kotlin/uniffi/hecke_engine_jvm/hecke_engine_jvm.kt
+          # uniffi 0.28 honours `package_name = "org.litlfred.qou.hecke_engine"`
+          # from uniffi.toml, so the generated file lands under that
+          # gradle-style path — NOT under `uniffi/hecke_engine_jvm/`.
+          # UDL function names are emitted as `fun \`name\`(...)` with
+          # backticks (Kotlin reserved-keyword guard); the grep pattern
+          # must include them.
+          KT=bindings/kotlin/org/litlfred/qou/hecke_engine/hecke_engine_jvm.kt
+          test -f "$KT"
           for fn in version markovZ heckeH traceWeights gramMatrixFlat \
                     gramDet chiLambdaBraid lrCoefficient trMAtomicMpfr; do
-            grep -q "fun $fn" bindings/kotlin/uniffi/hecke_engine_jvm/hecke_engine_jvm.kt \
+            grep -q "fun \`$fn\`" "$KT" \
               || { echo "missing fun $fn in generated Kotlin"; exit 1; }
           done
           echo "Kotlin bindings generated with all 9 Phase A+B functions present."
@@ -316,12 +332,18 @@ jobs:
       - name: Build + load + smoke
         run: |
           cd tools/hecke-engine-r
-          # roxygen2 generates the same NAMESPACE / man/*.Rd files that
-          # devtools::document() would, with a tenth of the dependency
-          # weight.  rextendr 0.4 wants devtools::document() — but the
-          # generated scaffolding is identical, so calling the
-          # underlying roxygenize() directly is equivalent.
-          Rscript -e 'roxygen2::roxygenize(".")'
+          # rextendr workflow without devtools (12-dep cascade fails on
+          # noble CRAN).  Three explicit steps:
+          #   register_extendr  — generate src/entrypoint.c + Makevars
+          #                       + R/extendr-wrappers.R from Rust source.
+          #   roxygenize        — generate NAMESPACE / man/*.Rd
+          #                       (devtools::document() under the hood).
+          #   compile           — pkgbuild::compile_dll() builds the
+          #                       Rust cdylib via the just-generated
+          #                       Makevars; this is what pkgload::load_all
+          #                       would attempt and fail without.
+          Rscript -e 'rextendr::register_extendr(force = TRUE); roxygen2::roxygenize(".")'
+          Rscript -e 'rextendr::compile()'
           Rscript -e 'pkgload::load_all("."); source("tests/smoke.R")'
 
   # ── 10. SageMath examples smoke ──
