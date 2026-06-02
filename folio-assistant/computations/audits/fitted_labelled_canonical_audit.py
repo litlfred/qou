@@ -121,7 +121,12 @@ def main() -> int:
                     help="exit non-zero if any issues found")
     args = ap.parse_args()
 
-    py_files = sorted(HERE.glob("*.py"))
+    # Scan the full folio-assistant/computations/ tree, not just audits/
+    # (the script's own directory). Per Copilot #1712 review: the
+    # description says "Audits production scripts in
+    # folio-assistant/computations/", which is the PARENT of HERE since
+    # the audit was moved under audits/ in a prior refactor.
+    py_files = sorted(HERE.parent.rglob("*.py"))
     py_files = [
         p for p in py_files
         if not p.name.startswith("_")
