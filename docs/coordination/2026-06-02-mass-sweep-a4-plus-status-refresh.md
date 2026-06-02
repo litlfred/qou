@@ -10,16 +10,16 @@
 > Mass-sweep gap (A ≥ 4) | mean abs err 4.25%; ⁶Li / ⁷Li / ⁹Be / ¹¹B /
 > ¹⁴N / ¹⁹F GAP (no atom→knot rule)
 
-[STATUS.md](https://github.com/litlfred/qou/blob/claude/atom-knot-rule-a5plus-coord-2026-06-02/STATUS.md).
+[`STATUS.md`](../../STATUS.md).
 
 ## Authoritative state of the gap
 
 The honest current state is captured in two existing docs (no
 new substantive math has landed since 2026-05-30):
 
-1. [`docs/workplans/2026-05-29-a567-atom-knot-sdp.md`](https://github.com/litlfred/qou/blob/claude/atom-knot-rule-a5plus-coord-2026-06-02/docs/workplans/2026-05-29-a567-atom-knot-sdp.md)
+1. [`docs/workplans/2026-05-29-a567-atom-knot-sdp.md`](../workplans/2026-05-29-a567-atom-knot-sdp.md)
    — the full workplan (with retraction).
-2. [`docs/coordination/2026-05-30-a567-and-alpha-em-coupling.md`](https://github.com/litlfred/qou/blob/claude/atom-knot-rule-a5plus-coord-2026-06-02/docs/coordination/2026-05-30-a567-and-alpha-em-coupling.md)
+2. [`docs/coordination/2026-05-30-a567-and-alpha-em-coupling.md`](2026-05-30-a567-and-alpha-em-coupling.md)
    — the cross-thread coordination state.
 
 ### What survives the discipline bar (2026-05-30 critical-audit)
@@ -91,12 +91,33 @@ the gap:
   `abs_content` was selected from 6 candidates — a structural lead,
   not a derivation.
 
+**Note on the `|·|` in these probes — it's the cautionary tale, not
+endorsement.**  PRs [#1641](https://github.com/litlfred/qou/pull/1641)
+and [#1643](https://github.com/litlfred/qou/pull/1643) established
+that `|·|` in pre-archimedean (pre-τ) expressions is a structural
+**choice**, not a convergence requirement; 34 non-archimedean misuse
+sites were flagged on main for per-site author review.  The `|Δθ_λ|`
+in the formula `B = E · Σ_λ y_λ |Δθ_λ|` is **exactly the
+information-losing collapse** that the new cheat-sheet §9.2
+"preserve information until observation" principle warns against —
+and the probes ran the formula *as a falsification test* to confirm
+that scalar `|·|`-collapse at step 5 (pre-τ) loses the growth
+information that A≥3 binding lives in.  The conclusion of the
+chain is: **don't use `|·|` at this step** — carry the full
+per-λ θ_λ vector (Re = rotation, Im = growth/volume) to the τ
+observation, then collapse.  The `abs_content` lead in `d7c56c17e`
+also uses `|·|` (Σ |content|) for the same A-growth-test purpose;
+upgrading it to a derived identity will require replacing `|·|`
+with the signed / bar-symmetric counterpart that respects the
+"preserve information" cut.
+
 **Net effect on this doc's blocking table.**  The "A=4 (⁴He) shell-
 closure bonus derivation" row above was already known to be open;
 these landings narrow the open problem from "find the missing
-combiner" to **"derive `|content|` as the Hecke-energy density and
-combine it with the signed per-block phase to get a binding-specific
-weight `w_λ^bind`"**.  That is the productive next probe (see "What
+combiner" to **"derive `|content|` (or its signed / bar-symmetric
+upgrade) as the Hecke-energy density and combine it with the
+signed per-block phase to get a binding-specific weight
+`w_λ^bind`"**.  That is the productive next probe (see "What
 WOULD be a productive next probe" below — now revised).
 
 ### 2026-05-30 → 2026-06-02 16:00Z — Q_β sub-attacks (cross-link)
@@ -133,7 +154,7 @@ WOULD be a productive next probe" below — now revised).
 | **[#1712](https://github.com/litlfred/qou/pull/1712)** | m_p linking_weight (2.532780 → 2.461648) + ²H/³H binding-link canonical object | **direct overlap on A=2, A=3 levels**. Will post intent comment. |
 | **[#1709](https://github.com/litlfred/qou/pull/1709)** | volume-Wedderburn Δ_λ probe; q-6j saddle isolated | adjacent — Δ_λ closure path runs in parallel to f(Z, N) derivation |
 | **[#1713](https://github.com/litlfred/qou/pull/1713)** | Q_β Habiro fibre F(q) categorical ID | upstream — closes the same Hecke-block structure that A≥4 derivation needs |
-| **[#1714](https://github.com/litlfred/qou/pull/1714)** | KL recursion S_5 / S_6 scaffold | upstream for Option-E PROBE 4; Demazure crystal closure path |
+| **[#1714](https://github.com/litlfred/qou/pull/1714)** | KL recursion H_5 / H_6 scaffold (Iwahori-Hecke; the PR's title uses S_n but the q-deformed object is the Hecke algebra per CLAUDE.md §7a) | upstream for Option-E PROBE 4; Demazure crystal closure path |
 | **[#1516](https://github.com/litlfred/qou/pull/1516)** | Option-E Phase 2 H_3 + H_6 + PROBE 4 | parallel Δ_λ path |
 
 ## What WOULD be a productive next probe (next session, not this one)
@@ -180,8 +201,8 @@ upstream pieces.
 
 ## Cross-refs
 
-- CLAUDE.md §Precision goals (L2 trio shared root)
-- CLAUDE.md §Δ_λ gate (no 7th ansatz)
-- CLAUDE.md §"Before declaring open math" checklist (corpus-grep)
-- [`docs/coordination/2026-05-30-a567-and-alpha-em-coupling.md`](https://github.com/litlfred/qou/blob/claude/atom-knot-rule-a5plus-coord-2026-06-02/docs/coordination/2026-05-30-a567-and-alpha-em-coupling.md)
-- [`docs/workplans/2026-05-29-a567-atom-knot-sdp.md`](https://github.com/litlfred/qou/blob/claude/atom-knot-rule-a5plus-coord-2026-06-02/docs/workplans/2026-05-29-a567-atom-knot-sdp.md)
+- [`CLAUDE.md`](../../CLAUDE.md) §Precision goals (L2 trio shared root)
+- [`CLAUDE.md`](../../CLAUDE.md) §Δ_λ gate (no 7th ansatz)
+- [`CLAUDE.md`](../../CLAUDE.md) §"Before declaring open math" checklist (corpus-grep)
+- [`docs/coordination/2026-05-30-a567-and-alpha-em-coupling.md`](2026-05-30-a567-and-alpha-em-coupling.md)
+- [`docs/workplans/2026-05-29-a567-atom-knot-sdp.md`](../workplans/2026-05-29-a567-atom-knot-sdp.md)
