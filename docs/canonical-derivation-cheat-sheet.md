@@ -39,7 +39,7 @@ doc.
 | 2. Stokes → Hecke | `σ_i²=(q−q⁻¹)σ_i+1` | ✅ proved | — (settled) |
 | 3. Alexander+Markov | unique `tr_M` | 🟢 derived (Lean `sorry=1`) | proof-watcher: discharge `markov_trace` sorry |
 | 4. Bring χ=−6 | 6 ↔ torus knots | 🟢 derived | — (settled) |
-| 5. Wedderburn / partitions | `H_n(q)≅⊕_λ M_{d_λ}`, `tr_M=Σ y_λ χ_λ` | 🟢 derived (Wenzl) | — (the per-block frame; everything downstream rides on it) |
+| 5. Wedderburn / partitions | `H_n(q)≅⊕_λ M_{d_λ}`, `tr_M=Σ y_λ χ^λ` | 🟢 derived (Wenzl) | — (the per-block frame; everything downstream rides on it) |
 | 6. Frobenius pairing + self-duality | `⟨a,b⟩_F`, `Ψ=S²=id` | ✅ proved (D3/D23) | partition-respecting audit (§9 below) |
 | 7. GB filtration | `ℓ(w)`-graded, `E_2` collapse | 🟢 derived | — |
 | 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean `sorry=4`) | proof-watcher: `SkewSYT` jet sorries |
@@ -98,7 +98,7 @@ framing that unifies them.
    step 6. Frobenius pairing  ↓  ⟨a,b⟩_F = ∫_A(a·b);  𝔪 = |∫_A ρ(β)| = |tr_M(𝓑_K)|
                             │
                             │  Markov-trace formula (Wenzl bridge):
-                            │     tr_M(β) = Σ_λ y_λ(q) · χ_λ(β)
+                            │     tr_M(β) = Σ_λ y_λ(q) · χ^λ(β)
                             │           ↑           ↑
                             │     Wenzl weights    Hecke characters
                             │     (uniquely         (Hoefsmit
@@ -134,7 +134,7 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 | **2. Non-abelian Stokes** | Hecke quadratic $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ as curvature 2-form | `prop:hecke-spectral-sequence`, [yekutieli2015] | `hecke_core.py`, `hecke_character_symbolic.py` (Hoefsmit + Hecke) | — |
 | **3. Alexander+Markov** | Unique trace $\mathrm{tr}_M$ invariant under braid + stabilization moves; $J_K(q) = \mathrm{tr}_M(\beta)$ | `thm:jones-markov-trace`, [jones1987] | `hecke_characters.chi_lambda_braid`; `pyhecke_native` (Rust) | per-witness |
 | **4. Bring χ=−6** | $\dim H_3(q) = 6 = $ # embeddable torus knots in $\Sigma_4$; particle content fixed | `prop:x5-bring-weight-identification`, `prop:spectral-sequence-h3-explicit` | `hecke_core._PROTON_G0/G1`, `_NEUTRON_G0/G1` (canonical H_3 chains) | — |
-| **5. Wedderburn + partitions** | $H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{Q}(q))$; $\mathrm{tr}_M = \sum y_\lambda \chi_\lambda$ | `prop:alpha-k-derivation-procedure`, [wenzl1988] §1 | `y_lambda_wenzl_bridge.py` (numeric + symbolic) | `y-lambda-at-q0.witness.json` |
+| **5. Wedderburn + partitions** | $H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{Q}(q))$; $\mathrm{tr}_M = \sum y_\lambda \chi^\lambda$ | `prop:alpha-k-derivation-procedure`, [wenzl1988] §1 | `y_lambda_wenzl_bridge.py` (numeric + symbolic) | `y-lambda-at-q0.witness.json` |
 | **6. Frobenius pairing** | $\langle a, b \rangle_F = \int_A(a \cdot b)$; $\Psi = S^2 = \mathrm{id}_A$ (symmetric); chirality $a_K = 1 + w(K)·h + O(h^2)$ | `def:frobenius-hopf-substrate`, `prop:chirality-writhe-ribbon-derivation` | `chi_lambda_braid` + `tau_M_*` family | various |
 | **7. GB filtration** | Filtration by Coxeter length $\ell(w)$; spectral sequence collapses at $E_2$ | `prop:gb-spectral-sequence`, `prop:spectral-sequence-collapse` | `derivation_chain.py` (GB-NF tracker) | per-chain |
 | **8. Jet order** | Slice-traversal order = jet-prefix partial order; jet tower → classical limit at $q \to 1$ | `prop:jet-convergence-classical-limit` | `derivation_chain.py` (jet-order log) | — |
@@ -153,7 +153,7 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 | **5g** | Constit-side per-Z step matches $(2q - 1)$ to 0.033 % at $q_0$ | **falsified globally** (PR #842 / #854) — coincidence, not identity | bridge to 5l |
 | **5k.1** | Residual against $(2q-1)$ matches $h^5(q_0)$ with c≈1.016 | **falsified globally** (PR #854) — numerical accident at $q_0$ | bridge to 5l |
 | **5l** | $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$ exactly | **STRUCTURAL IDENTITY** (PR #854) — mpfr-50-dps precision; derivable from Wenzl §1.7 disjoint multiplicativity | constit-side closure |
-| **5l.1** | Closed-form Laurent rationals for $\chi^\lambda(\mathcal{B}_p, q)$ for $\lambda \vdash 3$ | clean χ_λ closed forms (PR #854); y_λ normalization reconciliation queued as 5l.2 | partial closed form for $\mathrm{tr}_M^3(\mathcal{B}_p)$ |
+| **5l.1** | Closed-form Laurent rationals for $\chi^\lambda(\mathcal{B}_p, q)$ for $\lambda \vdash 3$ | clean χ^λ closed forms (PR #854); y_λ normalization reconciliation queued as 5l.2 | partial closed form for $\mathrm{tr}_M^3(\mathcal{B}_p)$ |
 | **5n** | Comprehensive notation refactor: $\beta_K \to \mathcal{B}_K$, $\Delta_I^K \to \bowtie_K$, $\mathbf{E} \to \mathfrak{E}$, $\mathcal{B}(q) \to \mathfrak{B}(q)$, $\tau_M \to \mathrm{tr}_M$ | **MERGED** (PR #853) — register expansions: cal admits Hecke structurals; fraktur admits energies | notation discipline |
 | **5o** | Functor disambiguation — $\tau$ (fibre, $\mathbf{C} \to \mathbf{Arch}$) vs $U$ (forgetful, $\mathbf{Arch} \to \mathbf{Vec}_\mathbb{R}$) vs $R \mapsto \mathbb{R}$ realisation (base-ring substitution, not a categorical functor) | doc note added to `notation-collisions.md` | terminology discipline |
 | **5q** | Closed-form $\mathrm{tr}_M(\mathcal{B}_K)$ shared utility (`closed_form_tau_M.py`) for production migration; combines Phase 5c.1 + 5l | new branch `claude/phase-5q-pipeline-discipline`; verification witness in progress | unblocks cheat-sheet §5 action #4 |
@@ -180,7 +180,7 @@ with per-interface factors $f_i \in \{z, \, z - h\}$ for positive ($\sigma$, bot
 1. **Linear-truncation diagnosis** — `tr ~ exp(Vol)` (Kashaev), so the endomorphism's $\Delta\mathrm{tr}$ is the linearisation; exact for the deuteron, saturating for A≥3. Loci: chirality factor first-order ($a_K=1+wh+O(h^2)$); $\sinh(\ln q)$ Coulomb channel discarded by the canonical projection; $[F,F]$=Hecke-quadratic identified-but-unused.
 2. **cosh/sinh bridge PROVED** (Lean + paper): $[n]_q=\sinh(n\lambda)/\sinh(\lambda)$ — algebraic q-integer = transcendental hyperbolic sine; cosh=strong / sinh=Coulomb is a theorem, not a fit.
 3. **Yekutieli boundary↔surface form assembled** (Step 2 of the pre-archimedean chain).
-4. **Binding carrier = per-rep q-Reeb phase** $\theta_\lambda=\arccos(\chi_\lambda/d_\lambda)$: Markov-weighted phase closes the **A=3 mirror pair (³H, ³He) to 2%, no fit**; the scalar $\mathrm{tr}_M$ collapses it. Volume-difference (log/cosh/SnapPy) and Lobachevsky-volume observables **refuted** — binding is *linear* in the angle.
+4. **Binding carrier = per-rep q-Reeb phase** $\theta_\lambda=\arccos(\chi^\lambda/d_\lambda)$: Markov-weighted phase closes the **A=3 mirror pair (³H, ³He) to 2%, no fit**; the scalar $\mathrm{tr}_M$ collapses it. Volume-difference (log/cosh/SnapPy) and Lobachevsky-volume observables **refuted** — binding is *linear* in the angle.
 5. **q-Hamiltonian rotational energy with derived μ₀** — μ₀ = m_e/(3(q−q⁻¹)/2) ≈ 1.63 MeV is the framework's per-crossing scale (`universal-ilp-algorithm`); E_rot = μ₀·ℏ_q·J_q²(j=n/2) reproduces **B_D = 2.02 MeV vs 2.225 (−9 %) from FULLY derived quantities (0 free params)** — a second independent deuteron derivation. A≥3 keeps the 44–72 % deficit (the per-rep structure, unchanged).
 
 **Net:** deuteron derived twice (m_e·Vol(𝓑₃)·Δtr at +0.19 % and μ₀·ℏ_q·J_q²(3) at −9 %); A≥3 narrowed to one structural item — the per-rep highest-weight $j=n/2$ collapses the per-block Reeb phase just as the scalar trace does. **μ₀ is derived;** the gate is the A≥3 per-rep structure, not the scale. The per-λ "closure" with a fitted `C_knot=5.852` was **retracted**.
@@ -233,7 +233,7 @@ Tracker last updated: **2026-05-23 (ALL 5 ITEMS CLOSED)**.
 | 1 | ✅ | Geom_full evaluation for the proton (Borromean braid 𝓑₃) | `m_p_borromean_verification_50dps.py` | **Closed by #888 + #895 + #1056.** The framework now uses a single `Geom_full(𝓑₃, q₀)` evaluation — there is **no separate `λ_scale` constant** (it was absorbed into the Geom functor, per the 2026-05-23 algebraic→geometric→observable consistency coord doc). The current categorical computation of `Geom_full(𝓑₃, q₀)` gives m_p ≈ 965 MeV (+2.89% vs CODATA target 938.27 MeV). The Yekutieli-extended derivation of `Geom_full` was briefly tried in production (a1f68d5e5) then PURGED (71d674da1) as non-canonical (bijection NEGATIVE per PR #985; Reading A was substrate-q₀ coincidence). Current best PROVED categorical: `Geom_full = (Vol(𝓑₃)/ℏ_q²) · λ_A` where `λ_A = 5/2 + (3/4)h²` is Family A from H_4 Wedderburn — but the framing "λ_A as separate constant" is obsolete; refining the `Geom_full` evaluation is the open research direction. |
 | 2 | ✅ | Migrate 20 importers of SUPERSEDED `mass_endomorphism.py` to the new `mass_tower_operator_valued` API | 2 substantive callers (`mass_at_3A_proper.py`, `pn_alpha_lp_dual.py`) + 15 utility-only (no migration needed) | **Closed by #889 (block-graph hygiene, 15 `.ts` files) + #944 (H_12 Phase-1 extract unblocking) + #960 (scope-correction audit: 20 → 4) + #966 (canonical API surface in `mass_tower_operator_valued.py` + 2-caller migration).** Strict count: only 2 scripts actually called `mass_from_tower(`; 18 utility-only importers consume substrate helpers and need NO migration. Re-export at the canonical block-name location (`new is orig → True`); zero computation change. |
 | 3 | ✅ | Wire the Rust LR convention adapter (PR #829) into `atomic_tr_m_*` scripts for A ≥ 3 | `atomic_tr_m_mpfr_50dps.py` + tr_m_wenzl_bridge + `atomic_tr_m_helium4.py` | **Closed by #901 (bridge-level wiring) + #895 (entry-point `--method canonical-rust` flag + 76-90× speedup at A ≥ 3) + #915 (helium4 refactor to Wenzl bridge — 300× speedup at H_3 cross-check, sub-second H_12 expected) + #946 (default-method flip).** Both `atomic_tr_m_*` files now Rust-backed; defaults flipped. |
-| 4 | ✅ | Refactor 4 production tr_M scripts to use `tr_M(𝓑_K) = tr_M(𝓑_K^vac) · z^{p_+} · (z-h)^{p_-}` closed form (Phase 5c.1 + 5l) | `binding_canonical.py` (the one true scalar candidate); the other 3 (`atomic_chirality_residue.py`, `atom_level_wedderburn_tower.py`, `binding_depth_stratified*.py`) need per-partition χ_λ which the scalar closed form cannot supply | **Closed by #921 (opt-in `use_closed_form=True` in `binding_canonical.py` via Phase 5q identity; 3.58e-16 vs symbolic at deuteron, 251× faster).** The other 3 scripts use the per-partition Rust wire-up from PR #901 indirectly — they don't need the scalar closed form (scope clarified during the cluster). |
+| 4 | ✅ | Refactor 4 production tr_M scripts to use `tr_M(𝓑_K) = tr_M(𝓑_K^vac) · z^{p_+} · (z-h)^{p_-}` closed form (Phase 5c.1 + 5l) | `binding_canonical.py` (the one true scalar candidate); the other 3 (`atomic_chirality_residue.py`, `atom_level_wedderburn_tower.py`, `binding_depth_stratified*.py`) need per-partition χ^λ which the scalar closed form cannot supply | **Closed by #921 (opt-in `use_closed_form=True` in `binding_canonical.py` via Phase 5q identity; 3.58e-16 vs symbolic at deuteron, 251× faster).** The other 3 scripts use the per-partition Rust wire-up from PR #901 indirectly — they don't need the scalar closed form (scope clarified during the cluster). |
 | 5 | ✅ | Add compute verification for the Reeb-flow / Garside closed-form (4 paper-only commits — `b6ed74635`, `88d7934b4`, `172263c6e`, `6ce96b4ce`) | new script `reeb_flow_garside_closed_form_verification.py` | **Closed by #935.** Verifies all six canonical knot operators (identity, σ_1, σ_2, σ_1σ_2σ_1 Garside, σ_1σ_2, σ_2σ_1) reproduce the closed-form trajectory at MPFR 50 dps. 13/13 assertions pass; Garside-thirds use rational ("1/3", "2/3", "1") to avoid f64 truncation. |
 
 ### Manager view — what's next (2026-05-24)
@@ -347,11 +347,11 @@ density `Δ_λ` is forced and `mass = density × volume` must be a per-λ sum.
 
 | Object | Respects partition? | Basis |
 |---|---|---|
-| Markov trace `tr_M = Σ_λ y_λ χ_λ` | ✅ **by construction** | Wenzl §1 — the `y_λ` ARE the per-block central weights; this IS the block decomposition |
+| Markov trace `tr_M = Σ_λ y_λ χ^λ` | ✅ **by construction** | Wenzl §1 — the `y_λ` ARE the per-block central weights; this IS the block decomposition |
 | Wenzl weights `y_λ(q)` | ✅ derived | `y_lambda_wenzl_bridge.py`; one scalar per λ |
 | Hecke characters `χ^λ(β_K)` | ✅ derived | Hoefsmit seminormal, per-irrep λ |
 | Frobenius pairing `⟨a,b⟩_F`, self-duality `Ψ=S²=id` | ✅ formalised (D3/D23) | the pairing is central/symmetric; per-block orthogonality follows from Schur — **proved sorry-free** at the algebra level, finer per-λ orthogonality is the standing audit item |
-| q-Reeb phase `θ_λ = arccos(χ_λ/d_λ)` | ✅ per-λ | `binding_reeb_phase_decomposition.py` |
+| q-Reeb phase `θ_λ = arccos(χ^λ/d_λ)` | ✅ per-λ | `binding_reeb_phase_decomposition.py` |
 | Categorical action / R-matrix (per generator) | ✅ **proved block-diagonal** | `MultiGeneratorSpectrum.lean` — 6×6 transfer matrix block-diagonal by induction; partition-*agnostic* until the Schur projection `π_λ` |
 | Central idempotents `π_λ` (orthogonal, central) | 🟡 asserted (class axiom) | `Wedderburn.lean` — `trace_decomposition` PROVED *from* the axiom; the orthogonality `π_λπ_μ=0` is a classical theorem (Mathas §3.43) **awaiting Lean formalization**, not math |
 | Confinement SDP (`T_w` selection) | ✅ per-block duals | `lp_dual_solver.py` emits `y_star[λ]` shadow prices |
@@ -368,11 +368,11 @@ track in the proof-watcher queue):
 
 1. **`y_λ` uniqueness rests on Schur character-orthogonality**, which is **not yet
    in Mathlib** (`wedderburn-as-noncomm-fourier.lean`); the cross-validation
-   `Σ_λ y_λ χ_λ = z^{ℓ(w)}` passes numerically (n=3,4,5) but is unproved in Lean.
+   `Σ_λ y_λ χ^λ = z^{ℓ(w)}` passes numerically (n=3,4,5) but is unproved in Lean.
    Same for `π_λ` orthogonality and the per-λ Frobenius block-orthogonality
    `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` (implied by §step 5+6, not formalized).
 2. **The per-block q-Reeb phase `θ_λ` is DERIVED at step 2 (Yekutieli boundary
-   holonomy) but COLLAPSED by the scalar trace** `tr_M = Σ_λ y_λ χ_λ`. This is an
+   holonomy) but COLLAPSED by the scalar trace** `tr_M = Σ_λ y_λ χ^λ`. This is an
    *information loss*: the framework computes the per-λ phase, then sums it away.
    **Retaining `θ_λ` per-block instead of collapsing it is the binding lever**
    (§9.3) — and the heaviest *unused* duality in steps 1–6.
@@ -384,11 +384,16 @@ compute has already established:
 
 - **Volume is NOT the carrier** — it is the *exponential* of it. `tr_M ~ exp(Vol)`
   (Kashaev), so the binding endomorphism's `Δtr_M` is the **linearization** of the
-  hyperbolic volume (cheat-sheet §3 line 136; re-confirmed by the volume-Wedderburn
-  probes [`2026-06-02-volume-wedderburn-delta-lambda-probe.md`](audits/2026-06-02-volume-wedderburn-delta-lambda-probe.md) / PR #1709, where *no* positive per-block volume reproduces even the **sign** of the ³H/³He split).
-- **Density = per-rep q-Reeb phase** `θ_λ = arccos(χ_λ/d_λ)` (the "Hecke energy"
-  per block) — a *signed, per-λ* angle. Markov-weighted, it closes the **A=3
-  mirror pair to 2 %, no fit**.
+  hyperbolic volume (§3, the *Bind* row; re-confirmed by the volume-Wedderburn
+  probe in PR #1709, where *no* positive per-block volume reproduces even the
+  **sign** of the ³H/³He split).
+- **Density = per-rep q-Reeb phase** `θ_λ = arccos(χ^λ/d_λ)` (the "Hecke energy"
+  per block) — a *signed, per-λ* angle. Markov-weighted it is a defensible
+  per-block structural object, but its **magnitude closure of the A=3 mirror
+  difference is NOT categorically derived**: the best *structural* combination
+  reaches only ≈ 2.52 %, and the published 0.11 % relied on a **fitted `(1+q)/2`
+  factor (CAL-4 antipattern)** that is also stale (canonical q₀ gives +0.12 %,
+  sign-flipped). See §9.3 and [`2026-05-31-isospin-mirror-v9-discipline-assessment.md`](audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md).
 - **Volumes** enter as the knot volumes of the canonical braid — `Vol(𝓑₃)` (proton,
   step 9a), `Vol(6₂)`, Borromean `8G` — through the q-hyperbolic infra
   (`knot_volumes.py`, `Li_2^q` / Faddeev `Φ_q`, §4 context-sorting).
@@ -401,14 +406,16 @@ shape, with the volume entering as `exp`-linearized angle, not raw `Vol`.
 
 | Quantity | Status |
 |---|---|
-| Mirror-pair **differences** (³H/³He, A=3) | 🟢 closed to 0.11 % by the **signed** `(1+q)/2·Σ y_λ χ^λ` isospin-mirror weight (`option_e_v9`) — the signed per-block object the volume side proved necessary (#1709 T/³He obstruction) |
+| Mirror-pair **differences** (³H/³He, A=3) | 🟡 **partial — signed structure real, magnitude not derived.** The bar-symmetric `(χ^λ + χ^{λᵀ})/2` isospin-mirror combination IS the signed per-block object the volume side proved necessary (#1709 T/³He obstruction), but its best *structural* result is ≈ 2.52 %. The widely-cited **0.11 % is a fitted `(1+q)/2` (CAL-4) near-match**, and is **stale** (canonical q₀ → +0.12 %). Not a derived closure. ([discipline assessment](audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md)) |
 | Deuteron **absolute** binding | 🟢 derived twice: `m_e·Vol(𝓑₃)·Δtr` (+0.19 %) and `μ₀·ℏ_q·J_q²(j=1)` (−9 %), `μ₀` derived |
-| **A≥3 absolute** binding | 🔴 **the one open gate** — the per-rep highest-weight `j=n/2` collapse of `θ_λ` saturates; needs the full per-rep `θ_λ` magnitude (not the linear truncation) |
+| **A≥3 absolute** binding | 🔴 **the open gate** — the per-rep highest-weight `j=n/2` collapse of `θ_λ` saturates; needs the full per-rep `θ_λ` magnitude (not the linear truncation) |
 
-**The single narrowed compute gap:** carry the per-rep q-Reeb phase `θ_λ` at
+**The narrowed compute item:** carry the per-rep q-Reeb phase `θ_λ` at
 **full (non-linearized) order** through the GB-filtration/jet tower for A≥3 —
-i.e. recover the `exp(Vol)` from the linear `Δtr` per block. That is the
-A≥3-absolute item; the differences and the deuteron are done. Tracking:
+i.e. recover the `exp(Vol)` from the linear `Δtr` per block. This closes **both**
+the A≥3-absolute binding **and** the mirror-difference magnitude with one
+non-fitted object (the signed structure already exists; only the fitted `(1+q)/2`
+scale is stop-gap). The deuteron is done. Tracking:
 [`2026-05-28-binding-endomorphism-analogy.md`](audits/2026-05-28-binding-endomorphism-analogy.md) §"A≥3 derivation campaign", Δ_λ gate [`2026-05-18-delta-lambda-gating-context.md`](audits/2026-05-18-delta-lambda-gating-context.md).
 
 ---
