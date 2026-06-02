@@ -402,6 +402,22 @@ So: **`Δ_λ = (q-Reeb phase density)_λ`, evaluated through the q-hyperbolic
 infrastructure, summed over the partition** — exactly the `density × volume`
 shape, with the volume entering as `exp`-linearized angle, not raw `Vol`.
 
+> **Guiding principle — preserve information until observation.** The
+> archimedean functor `τ` (step 9) *is* the observation; it is the **only**
+> place categorical structure should collapse to a real number. The production
+> scalar `tr_M = Σ_λ y_λ χ^λ` collapses the per-block phase `θ_λ` at step 5 —
+> *before* observation — which is an **information loss** that is harmless at
+> A=2 (the linearization is exact) but destroys the per-block content needed at
+> A≥3. The fix is to **carry the full per-λ `θ_λ` vector** (rotation
+> `arccos` + growth `arccosh`) through the GB-filtration/jet tower and let `τ`
+> (or the operator-valued combiner) do the collapse last. This is the same
+> fibre-vs-observable cut as the `Im(q)` discipline and the "delta is
+> pre-archimedean" result (`prop:delta-pre-archimedean`): **stay in the fibre as
+> long as possible, observe last.** The per-λ vector is now emitted by
+> [`binding_reeb_phase_decomposition.py`](../folio-assistant/computations/binding_reeb_phase_decomposition.py)
+> (`results[atom].by_partition`: `θ_free`, `θ_atom`, `Δθ_λ`, channel) — the
+> un-collapsed carrier ready for downstream observation.
+
 ### 9.3 The gap, narrowed to one item
 
 | Quantity | Status |
@@ -417,6 +433,26 @@ the A≥3-absolute binding **and** the mirror-difference magnitude with one
 non-fitted object (the signed structure already exists; only the fitted `(1+q)/2`
 scale is stop-gap). The deuteron is done. Tracking:
 [`2026-05-28-binding-endomorphism-analogy.md`](audits/2026-05-28-binding-endomorphism-analogy.md) §"A≥3 derivation campaign", Δ_λ gate [`2026-05-18-delta-lambda-gating-context.md`](audits/2026-05-18-delta-lambda-gating-context.md).
+
+### 9.4 Lean formalization debt (tracked — verification, NOT a compute gate)
+
+The §9.1 partition-respecting objects are **already wired and numerically
+cross-validated in compute** (Wenzl bridge n=3,4,5; `lp_dual_solver.py`; the
+1ppb cross-check). The math is **classical and published** — the gap is only
+that it isn't ported to Lean/Mathlib yet. **These do NOT block compute** (the
+only compute gate is §9.3's full-order `θ_λ`); they are tracked here as
+verification-debt for the proof-watcher / a Lean session (lake required).
+
+| # | Statement to formalize | Target Lean | Classical ref | Status |
+|---|---|---|---|---|
+| **L-1** | Schur character-orthogonality on `H_n(q)` ⇒ `y_λ` uniqueness (`Σ_λ y_λ χ^λ = z^{ℓ(w)}` invertible at generic q) | `QOU.Hecke.Wedderburn` / `wedderburn-as-noncomm-fourier.lean` | Mathas (1999) §3.43; not in Mathlib | 🔴 debt |
+| **L-2** | Central-idempotent orthogonality `π_λ π_μ = δ_{λμ} π_λ` (currently a class axiom) | `QOU.Hecke.Wedderburn` (`WedderburnDecomp`) | Mathas (1999) §3.43 | 🔴 debt |
+| **L-3** | Per-λ Frobenius block-orthogonality `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` (implied by §5+§6, not formalized) | `QOU.…FrobeniusHopfSubstrate` | follows from L-2 + `def:frobenius-hopf-substrate` | 🔴 debt |
+
+These three close the "ASSUMED" entries in the §9.1 table. They are the
+canonical chain's standing Lean backlog; pick them up in a lake-enabled session
+(per CLAUDE.md §1, every resulting `sorry` carries a `-- Ref:` citation until
+discharged). Proof-watcher: route under the proof-integration-watcher queue.
 
 ---
 

@@ -35,7 +35,7 @@ import json
 import math
 from pathlib import Path
 
-from mpmath import mp, mpf, fabs, acos, catalan
+from mpmath import mp, mpf, fabs, acos, acosh, catalan
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -101,13 +101,31 @@ def main():
                 growth_mass_free += fabs(chi_free[lam])
             if not is_rot_a:
                 growth_mass_atom += fabs(chi_atom[lam])
+            # FULL-ORDER per-block phase θ_λ (preserve information until
+            # observation): arccos on the rotation channel (|r|≤1), arccosh
+            # on the growth channel (|r|>1). The scalar tr_M collapses this
+            # vector at step 5; emitting it lets the archimedean observation
+            # (or the operator-valued combiner) do the collapse downstream.
+            th_f = acos(rf) if is_rot_f else acosh(fabs(rf))
+            th_a = acos(ra) if is_rot_a else acosh(fabs(ra))
             if is_rot_f and is_rot_a:
-                th_f = acos(rf); th_a = acos(ra)
                 sum_phase_shift += fabs(th_a - th_f)
-            # record the few largest-dim blocks
-            per_lambda.append((d, lam, float(rf), float(ra),
-                               is_rot_f, is_rot_a))
-        per_lambda.sort(reverse=True)
+            same_channel = (is_rot_f == is_rot_a)
+            per_lambda.append({
+                "partition": list(lam),
+                "dim": int(d),
+                "chi_free": mp.nstr(chi_free[lam], 12),
+                "chi_atom": mp.nstr(chi_atom[lam], 12),
+                "r_free": float(rf), "r_atom": float(ra),
+                "channel_free": "rotation" if is_rot_f else "growth",
+                "channel_atom": "rotation" if is_rot_a else "growth",
+                "theta_free_rad": mp.nstr(th_f, 12),
+                "theta_atom_rad": mp.nstr(th_a, 12),
+                "delta_theta_rad": (mp.nstr(th_a - th_f, 12)
+                                    if same_channel else None),
+                "channel_flip": not same_channel,
+            })
+        per_lambda.sort(key=lambda r: r["dim"], reverse=True)
         results[name] = {
             "n_blocks": len(chi_free),
             "rotation_free": rot_free, "rotation_atom": rot_atom,
@@ -119,6 +137,10 @@ def main():
             "growth_mass_ratio_atom_over_free":
                 mp.nstr(growth_mass_atom / growth_mass_free, 6)
                 if growth_mass_free != 0 else "inf",
+            # FULL per-λ θ_λ vector (rotation arccos + growth arccosh),
+            # free & atom, per Wedderburn block — the un-collapsed phase
+            # carried for downstream observation (operator-valued combiner).
+            "by_partition": per_lambda,
         }
         print(f"\n── {name} ({len(chi_free)} blocks) ──")
         print(f"  rotation channels: free {rot_free} → atom {rot_atom}  "
