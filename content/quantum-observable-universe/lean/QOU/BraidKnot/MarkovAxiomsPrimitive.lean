@@ -91,21 +91,38 @@ noncomputable def markovZax_legacy (q : ℝ) : ℝ :=
     trace on `H_n(R, q)`.
 
     Each axiom is encoded as a scalar invariant (residual / stab
-    factor) plus an equation pinning it to the required value. -/
-class MarkovTraceAxioms (q : ℝ) : Type where
+    factor) plus an equation pinning it to the required value.
+
+    **Tier 2 generic-R form** (Phase 2 of the q-usage Hoefsmit
+    migration, PR #1640 / #1658). The class is parameterised by an
+    abstract field `R` and a formal square-root element `u : R` with
+    `u² = q`. Archimedean callers instantiate `R := ℝ` and supply
+    `u := Real.sqrt q` (carrying `0 < q` for `Real.sqrt q ^ 2 = q`).
+
+    The archimedean wrappers
+    (`MarkovTraceAxioms_real_legacy`, `markov_iterated_stab_real`,
+    `disjoint_product_factorisation_real`,
+    `MarkovTraceAxioms_real_implies_disjoint_stabilisation`)
+    below preserve the pre-Phase-2 `(q : ℝ)` API surface so existing
+    archimedean callers compile unchanged. -/
+class MarkovTraceAxioms {R : Type*} [Field R] (u : R) : Type where
   /-- M1: scalar value of `τ` on the identity element. -/
-  tau_identity : ℝ
+  tau_identity : R
   /-- M1: τ(1) = 1 (normalisation). -/
   tau_identity_eq_one : tau_identity = 1
   /-- M3: stabilisation factor. Adding one disjoint strand
-      multiplies a trace value by `markovZax_legacy q`. -/
-  tau_stab_factor : ℝ
-  /-- M3: the stabilisation factor equals `z = 1/(√q + 1/√q)`.
-      Currently routed through `markovZax_legacy q` for
-      backward-compat; a follow-up PR refactors the class to take
-      `u : R` with `u² = q`, eliminating the `Real.sqrt` call. See
-      `docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md`. -/
-  tau_stab_factor_eq_z : tau_stab_factor = markovZax_legacy q
+      multiplies a trace value by `markovZax u`. -/
+  tau_stab_factor : R
+  /-- M3: the stabilisation factor equals `z = u / (u² + 1)`. -/
+  tau_stab_factor_eq_z : tau_stab_factor = markovZax u
+
+/-- **Legacy archimedean alias** preserved for pre-Phase-2 callers.
+    `MarkovTraceAxioms_real q` is a `MarkovTraceAxioms` instance over
+    `ℝ` with `u := Real.sqrt q`; existing `[MarkovTraceAxioms q]`
+    callsites that took `q : ℝ` should migrate to either:
+      - generic `[MarkovTraceAxioms u]` with `u² = q` (preferred), or
+      - the explicit archimedean form `[MarkovTraceAxioms (Real.sqrt q)]`. -/
+abbrev MarkovTraceAxioms_real (q : ℝ) : Type := MarkovTraceAxioms (Real.sqrt q)
 
 /-! ## Iterated stabilisation → disjoint-product factorisation -/
 
@@ -117,12 +134,20 @@ theorem markov_iterated_stab_gen {R : Type*} [Field R]
     (z : R) (τ : R) (k : ℕ) :
     ∃ τ_k : R, τ_k = τ * z^k := ⟨τ * z^k, rfl⟩
 
-/-- **k-fold stabilisation (archimedean / legacy form)**: starting from
-    a trace value `τ_x`, k applications of M3 give `τ_x · z^k`. -/
-theorem markov_iterated_stab (q : ℝ) [MarkovTraceAxioms q]
+/-- **k-fold stabilisation (Tier 2 generic-R form)**: under the
+    `MarkovTraceAxioms u` instance, starting from a trace value `τ`,
+    k applications of M3 give `τ · (markovZax u)^k`. -/
+theorem markov_iterated_stab {R : Type*} [Field R] (u : R) [MarkovTraceAxioms u]
+    (τ : R) (k : ℕ) :
+    ∃ τ_k : R, τ_k = τ * (markovZax u)^k :=
+  markov_iterated_stab_gen (markovZax u) τ k
+
+/-- Archimedean shim of `markov_iterated_stab` — preserves the
+    pre-Phase-2 `(q : ℝ)` API surface. -/
+theorem markov_iterated_stab_real (q : ℝ) [MarkovTraceAxioms (Real.sqrt q)]
     (τ_x : ℝ) (k : ℕ) :
-    ∃ τ_x_k_stab : ℝ, τ_x_k_stab = τ_x * (markovZax_legacy q)^k :=
-  markov_iterated_stab_gen (markovZax_legacy q) τ_x k
+    ∃ τ_x_k_stab : ℝ, τ_x_k_stab = τ_x * (markovZax (Real.sqrt q))^k :=
+  markov_iterated_stab (Real.sqrt q) τ_x k
 
 /-- **Disjoint-product factorisation (derived from M3)**: two braids K_1, K_2
     acting on disjoint strands give the factorised joint trace.
@@ -143,10 +168,16 @@ theorem disjoint_product_factorisation_gen {R : Type*} [Field R]
   refine ⟨τ_K1 * τ_K2_stab, ?_⟩
   rw [hτ]; ring
 
-theorem disjoint_product_factorisation (q : ℝ) [MarkovTraceAxioms q]
-    (τ_K1 τ_K2 : ℝ) (k : ℕ) :
-    ∃ τ_joint : ℝ, τ_joint = τ_K1 * τ_K2 * (markovZax_legacy q)^k :=
-  disjoint_product_factorisation_gen (markovZax_legacy q) τ_K1 τ_K2 k
+theorem disjoint_product_factorisation {R : Type*} [Field R] (u : R)
+    [MarkovTraceAxioms u] (τ_K1 τ_K2 : R) (k : ℕ) :
+    ∃ τ_joint : R, τ_joint = τ_K1 * τ_K2 * (markovZax u)^k :=
+  disjoint_product_factorisation_gen (markovZax u) τ_K1 τ_K2 k
+
+/-- Archimedean shim of `disjoint_product_factorisation`. -/
+theorem disjoint_product_factorisation_real (q : ℝ)
+    [MarkovTraceAxioms (Real.sqrt q)] (τ_K1 τ_K2 : ℝ) (k : ℕ) :
+    ∃ τ_joint : ℝ, τ_joint = τ_K1 * τ_K2 * (markovZax (Real.sqrt q))^k :=
+  disjoint_product_factorisation (Real.sqrt q) τ_K1 τ_K2 k
 
 /-! ## Discharge of MarkovDisjointStabilisation
 
@@ -157,8 +188,8 @@ class from the more fundamental `MarkovTraceAxioms` class. -/
     is the primitive axiomatic input; the disjoint stabilisation
     theorem `disjoint_product_factorisation` follows from M3 alone. -/
 theorem MarkovTraceAxioms_implies_disjoint_stabilisation
-    (q : ℝ) [h : MarkovTraceAxioms q] :
-    ∀ τ_x : ℝ, ∃ τ_x_stab : ℝ, τ_x_stab = τ_x * markovZax_legacy q := by
+    {R : Type*} [Field R] (u : R) [h : MarkovTraceAxioms u] :
+    ∀ τ_x : R, ∃ τ_x_stab : R, τ_x_stab = τ_x * markovZax u := by
   intro τ_x
   refine ⟨τ_x * h.tau_stab_factor, ?_⟩
   rw [h.tau_stab_factor_eq_z]
