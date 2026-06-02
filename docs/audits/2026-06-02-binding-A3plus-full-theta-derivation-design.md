@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-02
 **Branch:** `claude/binding-A3plus-full-theta-derivation-2026-06-02`
-**Closes:** A≥3-absolute Δ_λ gate (cheat-sheet line 411).
+**Advances toward (does NOT yet close):** A≥3-absolute Δ_λ gate (cheat-sheet line 411). The verdict doc records the current residuals (³He +17.4 %, T +39 %, ⁴He +2.7 % with cosh-growth, D scalar-path); closure requires the remaining levers listed at the end of this doc.
 
 ## What is open and what is closed
 
@@ -52,7 +52,7 @@ now carries the per-λ vector (`by_partition`):
 {
   "partition": [3, 2, 1], "dim": 16,
   "chi_free": "7.625…",   "chi_atom": "-1.972…",
-  "r_free":   0.476…,     "r_atom":   -0.123…,
+  "r_free":   "0.476…",   "r_atom":   "-0.123…",
   "channel_free": "rotation", "channel_atom": "rotation",
   "theta_free_rad": "1.074…",
   "theta_atom_rad": "1.694…",
