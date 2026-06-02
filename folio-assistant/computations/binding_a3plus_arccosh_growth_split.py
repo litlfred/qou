@@ -55,16 +55,30 @@ import _path_bridge  # noqa: F401, E402
 
 import mpmath as mp  # noqa: E402
 
-mp.mp.dps = 50
+# Canonical registries (NOT hard-coded literals; per Copilot review on
+# PR #1726).
+from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from experimental_constants import M_E_MEV as M_E_MEV_F  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
+from witness_base import WitnessBuilder  # noqa: E402
+from substrate.knot_volumes import VOL_BORROMEAN_MPF, VOL_8_11_MPF  # noqa: E402
+
+set_compute_dps()
 
 B_AME = {
-    "D":   mp.mpf("2.22456611"),
-    "T":   mp.mpf("8.4817986"),
-    "3He": mp.mpf("7.71804393"),
-    "4He": mp.mpf("28.295674"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
-M_E_MEV = mp.mpf("0.51099895069")
-Q_0 = mp.mpf("1.10997858275138084620")
+M_E_MEV = mp.mpf(str(M_E_MEV_F))
+Q_0 = mp.mpf(Q_50_DIGIT_STR)
 HBAR_Q = 1 - 1 / Q_0
 MU_0 = M_E_MEV / (3 * (Q_0 - 1 / Q_0) / 2)
 
@@ -75,7 +89,6 @@ chi_for = {
     "4He": "chi-helium-4-h12-at-q0-50dps.witness.json",
 }
 
-from substrate.knot_volumes import VOL_BORROMEAN_MPF, VOL_8_11_MPF
 VOL_K = {
     "D":   VOL_BORROMEAN_MPF,
     "T":   VOL_8_11_MPF,
@@ -176,30 +189,38 @@ for combo_name, combo_fn in combos.items():
         }
     results[combo_name] = atom_results
 
-out = {
-    "computation": "binding-a3plus-arccosh-growth-split",
-    "auditOnly": True,
-    "description": (
-        "A≥3 binding — explicit arccos(rotation) + arccosh(growth) "
-        "split + 3 combination forms (sum, sinh, cosh−1) tested against "
-        "B_AME.  Substrate-derived: ρ = μ₀, Vol from substrate/knot_volumes, "
-        "y_λ from chi-*-at-q0-50dps witnesses, θ from arccos/arccosh of r."
+wb = (WitnessBuilder("binding-a3plus-arccosh-growth-split", engine="mpmath")
+      .set_description(
+          "A≥3 binding — explicit arccos(rotation) + arccosh(growth) "
+          "split + 3 combination forms (sum, sinh, cosh−1) tested against "
+          "B_AME.  Substrate-derived: ρ = μ₀, Vol from substrate/knot_volumes, "
+          "y_λ from chi-*-at-q0-50dps witnesses, θ from arccos/arccosh of r."
+      ))
+wb.add_data("substrate_constants", {
+    "q_0": str(Q_0), "hbar_q": str(HBAR_Q),
+    "m_e_MeV": str(M_E_MEV), "mu_0_MeV": str(MU_0),
+})
+wb.add_data("Vol_per_atom", {k: str(v) for k, v in VOL_K.items()})
+wb.add_data("combination_variants", results)
+# Headline assertion: ⁴He V3 (cosh-of-growth) closes to ≤ 5 % — the
+# closest non-fit ⁴He derivation to date.
+he4_v3_rel_err = mp.mpf(results["V3_cosh_growth_m1"]["4He"]["rel_err"])
+wb.add_assertion(
+    "he4_cosh_growth_within_5pct",
+    computed=float(he4_v3_rel_err * 100),
+    expected=2.7,
+    tolerance=5.0,
+    source=(
+        "⁴He doubly-magic shell closes to +2.7 % under "
+        "B = μ₀ · Vol(2·𝓑₃) · Σ y · dim · (|Δθ_rot| + (cosh(|Δθ_growth|)−1)); "
+        "ZERO FITS; substrate-derived μ₀ + canonical knot volumes + "
+        "Markov-weighted Reeb phase.  Best non-fit ⁴He derivation to date."
     ),
-    "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-    "substrate_constants": {
-        "q_0": str(Q_0), "hbar_q": str(HBAR_Q),
-        "m_e_MeV": str(M_E_MEV), "mu_0_MeV": str(MU_0),
-    },
-    "Vol_per_atom": {k: str(v) for k, v in VOL_K.items()},
-    "combination_variants": results,
-}
-
-out_path = Path(__file__).parent / "binding-a3plus-arccosh-growth-split.witness.json"
-with open(out_path, "w") as fp:
-    json.dump(out, fp, indent=2)
+)
+out_path = wb.save()
 
 print("=" * 72)
-print(" A≥3 binding — explicit arccos/arccosh growth split (commit 6)")
+print(" A≥3 binding — explicit arccos/arccosh growth split")
 print("=" * 72)
 print(f"  ρ = μ₀ = {float(MU_0):.4f} MeV  (substrate-derived)")
 print()
