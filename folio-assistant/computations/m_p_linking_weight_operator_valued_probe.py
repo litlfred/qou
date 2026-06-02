@@ -33,8 +33,9 @@ categorical objects, NO fits:
 | `dim_q`    | w_λ = dim_q(λ)                   | first-moment self-weighted |
 | `dim_q²`   | w_λ = dim_q(λ)²                  | q-Plancherel measure on partitions (KLR-canonical) |
 | `1/dim_q`  | w_λ = 1/dim_q(λ)                 | Frobenius co-Casimir reciprocal (T4 prefactor) |
-| `[hook]_q` | w_λ = Σ_h 1/[h]_q                | q-deformed hook density |
-| `y_λ`      | w_λ = dim_q²(λ)/[n]_q!           | Wenzl weight (mass-formula T1) |
+| `[hook]_q`    | w_λ = Σ_h 1/[h]_q                | q-deformed hook density |
+| `y_λ`         | w_λ = dim_q²(λ)/[n]_q!           | Wenzl weight (mass-formula T1) |
+| `abs_content` | w_λ = Σ_cell \|j − i\|             | per-partition |content| sum (per sibling #1709 Δ_λ binding-measure scan) |
 
 Reports tiered: PASS within 1 ppm = structural finding; PASS within
 1% = near-match (not closure); FAIL = refute.
@@ -225,8 +226,10 @@ def main() -> int:
         "Topic 2 of PR #1712: tests operator-valued linking_weight at "
         "H_3/H_4/H_5 against the CODATA-implied target 2.461648. Weights "
         "tested are pre-existing canonical categorical objects (uniform, "
-        "dim_q, dim_q², 1/dim_q, q-hook density, Wenzl y_λ); no fits. "
-        "Reports tiered (PROVED <1ppm / NEAR-MATCH <1000ppm / WEAK / REFUTED)."
+        "dim_q, dim_q², 1/dim_q, q-hook density, Wenzl y_λ, abs_content); "
+        "no fits. Reports tiered (PROVED <1ppm / NEAR-MATCH <1000ppm / "
+        "WEAK / REFUTED). Also runs a mixed-H_n sweep (6 categorically-"
+        "motivated α values for α·Family_A(H_3) + (1−α)·Family_A(H_4))."
     )
     for f in findings:
         w_out.add_data(

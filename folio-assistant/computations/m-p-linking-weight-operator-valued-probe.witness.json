@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T18:34:23.676257+00:00",
-  "commitSha": "b9a5852424bc58370ebf3718e19142e0f05a70fc",
+  "computedAt": "2026-06-02T18:38:47.955204+00:00",
+  "commitSha": "da278e6294f9c7abf06f1737dd81e1ac7f905990",
   "assertions": [
     {
       "name": "at_least_one_categorical_weight_passes_1ppm",
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "m-p-linking-weight-operator-valued-probe",
   "scriptFile": "m_p_linking_weight_operator_valued_probe.py",
-  "scriptHash": "d8be3fb73d85",
-  "scriptCommitSha": "a3aeb0d1da32cb23badcca0fe3dd382980ed1f5b",
+  "scriptHash": "e36021f79dd3",
+  "scriptCommitSha": "da278e6294f9c7abf06f1737dd81e1ac7f905990",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Topic 2 of PR #1712: tests operator-valued linking_weight at H_3/H_4/H_5 against the CODATA-implied target 2.461648. Weights tested are pre-existing canonical categorical objects (uniform, dim_q, dim_q², 1/dim_q, q-hook density, Wenzl y_λ); no fits. Reports tiered (PROVED <1ppm / NEAR-MATCH <1000ppm / WEAK / REFUTED).",
+  "description": "Topic 2 of PR #1712: tests operator-valued linking_weight at H_3/H_4/H_5 against the CODATA-implied target 2.461648. Weights tested are pre-existing canonical categorical objects (uniform, dim_q, dim_q², 1/dim_q, q-hook density, Wenzl y_λ, abs_content); no fits. Reports tiered (PROVED <1ppm / NEAR-MATCH <1000ppm / WEAK / REFUTED). Also runs a mixed-H_n sweep (6 categorically-motivated α values for α·Family_A(H_3) + (1−α)·Family_A(H_4)).",
   "data": {
     "L_n3_uniform": "1.33696562223570743277420986861",
     "L_n3_dim_q": "1.50682164348302013905470802242",
