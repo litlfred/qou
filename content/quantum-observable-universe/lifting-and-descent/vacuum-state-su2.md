@@ -71,8 +71,9 @@ The convergence is exact after finitely many steps — no
 $\epsilon$-$\delta$ argument is needed because the Peter–Weyl
 decomposition is *discrete*.
 
-**Bring's surface specialisation.** On Bring's QOU with
-$q = q_0 = 1.109978595554181\ldots$ (50 dps), the Haar state evaluates to:
+**Bring's surface specialisation.** On Bring's QOU at the substrate
+parameter $q_0$ (specific value recorded in the archimedean witness
+ledger), the Haar state evaluates to:
 
 $$
   \varphi(t^j_{m,m'})

@@ -101,8 +101,9 @@ surreal:    ∫₀¹ e^{-x/ε} dx ≃ ε   (leading exponent and leading coeff a
 
 Three uses specific to the main paper:
 
-1. **CODATA fits.** The $\sim 4\%$ MAE on $\mathcal{Q}$-values is
- a leading-coefficient-level fit. Writing predictions in the form
+1. **Experimental fits.** The leading-coefficient-level fit on
+ $\mathcal{Q}$-values gives a residual that is interpretable as
+ a fit at that order. Writing predictions in the form
  $\mathfrak{m}_{\mathfrak{H}} = \hat{\mathfrak{m}}_{\mathfrak{H}}
    + r$ with $r \prec 1$ makes the *order of the residual*
  an explicit surreal exponent rather than a hidden Big-O.

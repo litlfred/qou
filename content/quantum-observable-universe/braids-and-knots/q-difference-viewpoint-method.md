@@ -31,7 +31,7 @@ This viewpoint is intrinsically **fibre-level**. The variable $q$ is
 formal, with $\mathrm{Im}(q)$ unconstrained, and the operative symmetry
 is the **bar involution** $q \mapsto q^{-1}$ — not a reality
 assumption. Only the *observable* component, obtained by evaluating at
-the real archimedean substrate value $q_0$, is real
+the real archimedean substrate, is real
 (cf. the fibre-versus-observable distinction in the front matter). The
 root-of-unity spectra and residues are exact identities in the
 relevant cyclotomic field, independent of the eventual archimedean

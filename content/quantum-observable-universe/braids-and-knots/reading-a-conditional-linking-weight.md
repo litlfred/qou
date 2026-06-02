@@ -10,14 +10,13 @@ $$
 
 ## Motivation
 
-At the substrate value $q_0$, the formula
-$\tfrac{5}{2} + (-G) h^2$ matches the $m_p$-anchored target
-$m_p^{\mathrm{CODATA}} / (m_e \cdot \mathrm{Vol}(\mathcal{B}_3) /
-\hbar_q^2)$ to high precision in linking-weight units. (Specific
-numerical values of $q_0$, the residual, and the ppm-in-$m_p$
-equivalent are recorded in the archimedean witness audit ledger, not
-here — this block carries only the categorical conjecture and its
-algebraic consequences.)
+At the substrate parameter, the formula $\tfrac{5}{2} + (-G) h^2$
+matches the $m_p$-anchored target $m_p^{\mathrm{exp}} / (m_e \cdot
+\mathrm{Vol}(\mathcal{B}_3) / \hbar_q^2)$ to high precision in
+linking-weight units. (Specific substrate-parameter value, residual,
+and equivalent proton-mass precision figures live in the archimedean
+witness audit ledger, not here — this block carries only the
+categorical conjecture and its algebraic consequences.)
 
 The empirical match is striking — far closer than any known
 substrate-derived formula. This file states the conjecture
@@ -119,8 +118,9 @@ direction but is multi-session research.
 - Does **not** change any production formula (Family A remains the
   proved Lean theorem and the production linking-weight).
 - Does **not** propose Reading-A for production adoption — it
-  formalises the +5.6 ppm coincidence basin as a *conditional*
-  Lean statement.
+  formalises the empirical-match coincidence basin (numerical
+  residual recorded in the archimedean witness ledger) as a
+  *conditional* Lean statement.
 - Does **not** claim the conjecture is true; the `class
   ReadingAValidAtH2` carries the only `sorry` in the chain.
 

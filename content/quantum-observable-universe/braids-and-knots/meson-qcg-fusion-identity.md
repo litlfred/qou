@@ -45,6 +45,6 @@ audit
 [2026-05-28-meson-mass-ratio-derived-vs-fitted.md](../../../docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md);
 both ingredients are framework-derived with no fitted integers. The
 derived-candidate exact sinh-channel closure form is the open
-categorical piece. (Specific ppm residuals and the substrate
+categorical piece. (Specific numerical residuals and the substrate
 evaluation live in the audit document, not here — this block carries
 only the categorical fusion identity.)

@@ -31,7 +31,7 @@ recorded in the audit ledger, not here).*
 > of the exact Habiro sum: the genuinely-derived expansion (e.g. the
 > $\tau_M$ form, `prop:tau-M-asymptotic-rep-theory`) is derived only at
 > low order ($k=1$ via the Kashiwara $\tilde f_1$ matrix element), and
-> the higher $c_k$ used to reach part-per-billion accuracy were tuned
+> the higher $c_k$ used to reach experiment-grade accuracy were tuned
 > against the experimental value, not evaluated from the integer
 > $a_m$. They depend on the (unproven) choice of intermediate form and
 > are excluded from the canonical chain. What this proposition asserts
@@ -77,16 +77,17 @@ Since the Habiro expansion is **finite** ($M = 8$ for proton), the
 evaluation $\operatorname{tr}_M(\beta_K, q_0)$ is **exact** — a
 well-defined element of $\mathbb{Q}(q_0)$, not a truncated series.
 
-What this does **not** give is part-per-billion agreement with
-experiment. An observable such as $Q_\beta$ is
+What this does **not** give is experiment-grade agreement with
+data. An observable such as $Q_\beta$ is
 $m_e \cdot f(\operatorname{tr}_M(\beta_n), \operatorname{tr}_M(\beta_p),
 q_0)$, and the exact Habiro evaluation of that map lands at the
-substrate's *intrinsic* accuracy (order $10^{-3}$ for the bare $Q_\beta$
-form, improving to $\sim 1\,\text{ppm}$ once the derived low-order
+substrate's *intrinsic* accuracy (improving once the derived low-order
 $\tau_M$ corrections of `prop:tau-M-asymptotic-rep-theory` are
-included). Reaching part-per-billion requires higher-order corrections
-that are **not** currently derived from the $a_m$; attempts to read them
-off as a "precision ladder" tuned the coefficients against the
-experimental value rather than evaluating them categorically. The
-canonical content of this block is the integrality of the $a_m$, not a
-ppb-level prediction.
+included; specific intrinsic-accuracy and ladder-correction figures
+live in the archimedean witness ledger, not here).
+Reaching experiment-grade precision requires higher-order
+corrections that are **not** currently derived from the $a_m$;
+attempts to read them off as a "precision ladder" tuned the
+coefficients against the experimental value rather than evaluating
+them categorically. The canonical content of this block is the
+integrality of the $a_m$, not a high-precision prediction.
