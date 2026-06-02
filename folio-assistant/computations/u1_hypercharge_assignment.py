@@ -40,10 +40,14 @@ THIS probe attacks the structural question WITHOUT tuning c:
       H_3(q) and test whether it forms a charge/hypercharge ladder.
 
 DISCIPLINE: c MUST come from structure (it does: c=1/2 via def:coulomb-charge)
-or be declared free.  A quantum-number assignment is "derived" ONLY if it
-matches the SIGN+RATIO pattern across >= 3 particles with NO scale parameter.
-One-number matches are coincidence.  m_n-m_p, the PDG charges/hypercharges are
-FALSIFICATION references only -- NOTHING is tuned to them.
+or be declared free.  The quantum-number assignment is identified by the
+NUCLEON-DOUBLET (p, n) SIGN+RATIO test: a candidate quantum number is matched
+ONLY if its (sign, ratio-to-first) pattern over the (p, n) doublet coincides
+with the writhe ladder, with NO scale parameter.  This doublet test alone is
+the scale-free p/n same-Y FALSIFIER -- proton and neutron share Y=+1, so any
+writhe->Y map that splits p(+1)/n(-1) is falsified by the doublet, with zero
+tuning.  m_n-m_p and the PDG charges/hypercharges are FALSIFICATION references
+only -- NOTHING is tuned to them.
 
 Audit doc: docs/audits/2026-06-02-u1-hypercharge-assignment.md
 """
@@ -59,13 +63,14 @@ import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder  # noqa: E402
+import _precision  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402  (canonical proton-pinned q0)
 
 START = time.monotonic()
-mp.mp.dps = 60
-
-# Substrate q0 (proton-anchored). FALSIFICATION reference only -- not tuned.
-Q0_STR = "1.10997859561220225731080831999100762523924148"
-Q0 = mp.mpf(Q0_STR)
+# Reconcile working dps with the canonical COMPUTE_DPS so the witness
+# precisionMetadata.compute_dps matches mp.mp.dps (set_compute_dps sets both).
+DPS = _precision.set_compute_dps()
+Q0_STR = mp.nstr(Q0, _precision.OUTPUT_DPS)
 
 q = sp.symbols("q", positive=True)
 
@@ -154,13 +159,22 @@ match_Y = writhe_pat == Y_pat
 # ===========================================================================
 # Q3.  Ribbon-twist eigenvalue ladder theta_j = q^{j(j+1)} per Wedderburn block.
 # ===========================================================================
-# H_2(q) blocks: (2) symmetric ~ spin j=1 (3-dim sym? no -- 2-strand: (2) is
-#   the spin-1 / symmetric channel of two spin-1/2 strands, j=1; (1,1) the
-#   antisymmetric singlet j=0).  H_3(q) blocks: (3) j=3/2, (2,1) j=1/2 (std),
-#   (1^3) singlet.  We use the standard SU(2)_q content: a partition lambda of
-#   n strands of spin-1/2 decomposes into spins by the column structure.
-#   The ribbon twist on a spin-j object is theta_j = q^{j(j+1)} (RT framing
-#   element), here written multiplicatively in the framework variable q.
+# We use the standard SU(2)_q content of tensor powers of the spin-1/2 strand,
+# (1/2)^{tensor n} = sum_j N^n_j (j), and the corresponding ribbon twist
+# theta_j = q^{j(j+1)} (RT framing element), written multiplicatively in q.
+#
+#   2 strands: (1/2)^{(x)2} = (1) (+) (0).  Hecke blocks of H_2(q):
+#       (2)   symmetric     <-> spin j=1
+#       (1,1) antisymmetric <-> spin j=0 (singlet)
+#   3 strands: (1/2)^{(x)3} = (3/2) (+) (1/2) (+) (1/2).  There is NO spin-0
+#     channel for 3 spin-1/2 strands.  The Hecke SIGN irrep (1,1,1) does NOT
+#     correspond to an SU(2) j=0 object here (the SnT spin content has no
+#     singlet on 3 strands), so it carries no theta_j eigenvalue on the spin
+#     ladder.  It is therefore OMITTED from the spin/twist ladder below rather
+#     than mislabelled as a j=0 channel.  Hecke blocks of H_3(q) that DO carry
+#     a spin:
+#       (3)   symmetric     <-> spin j=3/2
+#       (2,1) standard      <-> spin j=1/2
 def theta_j(j):
     """Ribbon twist eigenvalue theta_j = q^{j(j+1)} (symbolic in q)."""
     jj = sp.nsimplify(j)
@@ -168,9 +182,11 @@ def theta_j(j):
 
 
 # Block -> spin j content (SU(2) content of Young diagrams of spin-1/2 strands).
+# Only blocks carrying a genuine SU(2) spin-j object appear on the twist ladder.
 H2_BLOCKS = {"(2)": Fraction(1), "(1,1)": Fraction(0)}        # j = 1, 0
-H3_BLOCKS = {"(3)": Fraction(3, 2), "(2,1)": Fraction(1, 2),  # j = 3/2, 1/2
-             "(1,1,1)": Fraction(0)}                          # j = 0 (actually empty for 3 strands; kept as singlet placeholder)
+H3_BLOCKS = {"(3)": Fraction(3, 2), "(2,1)": Fraction(1, 2)}  # j = 3/2, 1/2
+# (1,1,1) (the Hecke SIGN irrep) is deliberately excluded: 3 spin-1/2 strands
+# have no SU(2) singlet, so it has no spin-j / twist-eigenvalue assignment.
 
 twist_H2 = {b: theta_j(j) for b, j in H2_BLOCKS.items()}
 twist_H3 = {b: theta_j(j) for b, j in H3_BLOCKS.items()}
@@ -179,16 +195,18 @@ twist_H3_q0 = {b: eval_at_q0(e) for b, e in twist_H3.items()}
 
 
 # ---------------------------------------------------------------------------
-w = WitnessBuilder("u1-hypercharge-assignment", engine="mpmath+sympy",
+w = WitnessBuilder("u1-hypercharge-assignment", engine="python+mpmath",
                    start_time=START)
 w.set_description(
     "EXPLORATORY derivation of the U(1) -> quantum-number map for the framing "
-    "phase q^{w.c}. Q1: c=1/2 is STRUCTURALLY FIXED by def:coulomb-charge "
-    "(Q(H)=(1/2)(n_+-n_-)=w/2), NOT free, NOT fitted. Q2: the writhe ladder "
-    "is tested against (Q,I_3,Y) by sign+ratio (scale-free); the p/n same-Y "
-    "falsifier is applied. Q3: ribbon twist theta_j=q^{j(j+1)} eigenvalue "
-    "ladder per Wedderburn block. RAW @ 60 dps; PDG values are falsification "
-    "references only; NO tuning."
+    "phase q^{w.c}. Engine: python+mpmath (mpmath for the q0 numerics; sympy "
+    "for the symbolic twist expressions). Q1: c=1/2 is STRUCTURALLY FIXED by "
+    "def:coulomb-charge (Q(H)=(1/2)(n_+-n_-)=w/2), NOT free, NOT fitted. Q2: "
+    "the writhe ladder is tested against (Q,I_3,Y) by sign+ratio (scale-free); "
+    "the p/n same-Y falsifier is applied. Q3: ribbon twist theta_j=q^{j(j+1)} "
+    f"eigenvalue ladder per Wedderburn block. RAW @ {DPS} dps (canonical "
+    "COMPUTE_DPS); q0 is the proton-pinned q_parameter.Q_MP; PDG values are "
+    "falsification references only; NO tuning."
 )
 w.set_audit_only("docs/audits/2026-06-02-u1-hypercharge-assignment.md")
 w.add_parameter("q0", Q0_STR)
@@ -254,6 +272,10 @@ w.add_data("Q3_twist_eigenvalue_ladder", {
     "H3_blocks_spin": {b: str(j) for b, j in H3_BLOCKS.items()},
     "H3_twist_symbolic": {b: str(e) for b, e in twist_H3.items()},
     "H3_twist_q0": {b: mp.nstr(v, 30) for b, v in twist_H3_q0.items()},
+    "excluded_block": "(1,1,1) (Hecke SIGN irrep) is omitted from the H_3 "
+                      "spin/twist ladder: 3 spin-1/2 strands carry NO SU(2) "
+                      "singlet, so the sign irrep has no spin-j object and no "
+                      "theta_j eigenvalue. It is NOT a j=0 channel.",
     "note": "theta_j grows monotonically with j (q>1); it is a SPIN ladder "
             "(j(j+1) Casimir), NOT an additive charge ladder. No sign change, "
             "no half-integer charge structure -- it does not encode Q/Y.",
