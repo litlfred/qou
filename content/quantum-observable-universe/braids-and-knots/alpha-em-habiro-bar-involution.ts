@@ -8,7 +8,9 @@ export default proposition({
   lean: {
     ref: "qou:QOU.BraidKnot.alphaEmHabiro_bar_invariant",
   },
-  uses: [],
+  uses: [
+    "def:bar-involution",
+  ],
   cites: [
     "jones1987",
     "kassel1995",

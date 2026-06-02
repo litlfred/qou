@@ -57,11 +57,10 @@ noncomputable def quantumTwo (q : ℝ) : ℝ := q + 1/q
     Proof: pure algebraic identity over a field of char ≠ 2, since
     `(q² + 1)² = q² · (q + q⁻¹)²`.
 
-    Status: rigorous algebraic identity, no `sorry`. This locks
-    one piece of the `prop:bar-symmetric-three-layer-synthesis`
-    chain — the bar-symmetric form of `b²` is *manifestly* bar-
-    symmetric because `[2]_q` is bar-symmetric (`q + q⁻¹` is
-    invariant under `q ↔ q⁻¹`). -/
+    Status: rigorous algebraic identity, no `sorry`. The bar-
+    symmetric form of `b²` is *manifestly* bar-symmetric because
+    `[2]_q` is bar-symmetric (`q + q⁻¹` is invariant under
+    `q ↔ q⁻¹`). -/
 theorem hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared
     (q : ℝ) (hq : q ≠ 0) :
     hoefsmitBSq q = 1 - 1 / (quantumTwo q)^2 := by
@@ -281,9 +280,9 @@ def wedderburnNonSignDimS3 : ℕ := 1 + 2
     non-sign sector of ℂ[S_3]. The sign-sector contribution
     (V_(1,1,1)) is bar-anti-symmetric and projected away.
 
-    This locks one open piece of `prop:bar-symmetric-three-layer-synthesis`:
-    the series-layer projection at `q = 1` has a categorical
-    identification, not just an empirical one. -/
+    The series-layer projection at `q = 1` thus has a categorical
+    identification (half the dimension of the non-sign Wedderburn
+    blocks of $\mathbb{C}[S_3]$), not just an empirical one. -/
 theorem c5_classical_eq_wedderburn_nonsign_dim_half :
     c5Decomposition 1 = -(wedderburnNonSignDimS3 : ℝ) / 2 + 1 / 4 := by
   rw [c5_classical_limit_eq_neg_five_quarters]

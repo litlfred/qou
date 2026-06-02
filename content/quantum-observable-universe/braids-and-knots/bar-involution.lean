@@ -19,14 +19,9 @@ live in [c5-involution-leibniz-decomposition.lean](c5-involution-leibniz-decompo
 there*, no `sorry`. This file holds only the abstract
 infrastructure they consume.
 
-This duplicates `BarInvolution` from
-[bar-symmetric-three-layer-synthesis.lean](bar-symmetric-three-layer-synthesis.lean) intentionally
-during the transition: once both blocks land on main, downstream
-consumers can choose either canonical import.
 -/
 
 -- Ref: [manuscript] def:bar-involution
--- Ref: [manuscript] prop:bar-symmetric-three-layer-synthesis
 -- Ref: [wenzl1988] doi:10.1007/BF01404457
 -- Ref: [hoefsmit1974]
 
@@ -72,7 +67,7 @@ The bar-involution induces a $\mathbb{Z}/2\mathbb{Z}$-grading on
 `R`: the bar-symmetric subspace is a subring (closed under +, ×),
 and bar-anti-symmetric satisfies anti × anti → sym, sym × anti → anti.
 
-Concrete corollaries used by the three-layer synthesis:
+Concrete corollaries downstream blocks consume:
 - `h = q - q⁻¹` bar-anti-symmetric  ⟹  `h²` bar-symmetric (and `cosh(h)`, `Li_2^q` etc.)
 - `b² = (q⁴+q²+1)/(q²+1)²` bar-symmetric (proved on c5 sibling)
 - Even/odd powers of any bar-anti-symmetric element classify cleanly.

@@ -22,9 +22,8 @@
 > with audit doc
 > [`-pentagon-reduction-li2q.md`](../../../docs/audits/-pentagon-reduction-li2q.md).
 > Cross-link: the *Pentagon coherence layer* of $c_5$'s
-> decomposition (one of the three layers in
-> `prop:bar-symmetric-three-layer-synthesis`)
-> is what `pentagon_reduction_li2q.py` makes algebraic.
+> decomposition is what `pentagon_reduction_li2q.py` makes
+> algebraic.
 
 **Proposition ($c_5$ involution + Leibniz decomposition).**
 

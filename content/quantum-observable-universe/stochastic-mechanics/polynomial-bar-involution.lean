@@ -30,8 +30,8 @@ What's proved (all theorems below, no `sorry`):
   squared indeterminate — the analogue of "h² is bar-symmetric")
 -/
 
--- Ref: [manuscript] prop:bar-symmetric-three-layer-synthesis
 -- Ref: [manuscript] def:bar-involution
+-- Ref: [manuscript] prop:polynomial-bar-involution
 -- Ref: [wenzl1988] doi:10.1007/BF01404457
 
 namespace QOU.BraidKnot.PolynomialBarInvolution

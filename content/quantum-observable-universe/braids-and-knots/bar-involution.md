@@ -212,7 +212,7 @@ blocks that consume it (with their primary bar-classification):
 - `thm:averaging-resonance-rule` — $\sigma_{\mathrm{avg}}$ bar-symmetric; level-selection rule at half-fill rung.
 - [`prop:c5-involution-leibniz-decomposition`](#prop:c5-involution-leibniz-decomposition) — $c_5$ bar-symmetric closed form; Hoefsmit-Quantum-2 identity proved here.
 - [`prop:silver-ratio-beta-decay-null`](#prop:silver-ratio-beta-decay-null) — $\Delta(\text{net}) = h(h-2)/2$ bar-anti-symmetric in $h$; $h = 2$ root at silver.
-- `prop:bar-symmetric-three-layer-synthesis` — series / phase / gain layers, all bar-symmetric projections (conjecturally of one universal kernel).
+- [`prop:alpha-em-habiro-bar-involution`](#prop:alpha-em-habiro-bar-involution) — $H(q) = [2]_q (1 - h^2 \alpha)$ is bar-fixed; the $\alpha_{EM}$ Habiro element lives entirely in the bar-symmetric sector.
 - [`def:categorical-q-reeb-flow`](#def:categorical-q-reeb-flow) — Reeb field $R$ bar-anti-symmetric.
 - [`prop:chirality-residue-mass-term`](#prop:chirality-residue-mass-term) — chirality residue bar-anti-symmetric.
 
