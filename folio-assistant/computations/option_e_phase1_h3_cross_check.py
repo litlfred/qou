@@ -28,6 +28,8 @@ Acceptance: max residual ≤ 10⁻¹² (well above float64 noise floor).
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -55,7 +57,7 @@ from pyhecke.gram import TR_M as NF_TR_M_AT_DEFAULT_Q  # noqa: E402
 from pyhecke.gram import NF_NAMES  # noqa: E402
 
 
-Q_PIN = HERE / "q-pinning-50-digit.witness.json"
+Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 Q0_MP = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
 Q0_F64 = float(Q0_MP)
 
