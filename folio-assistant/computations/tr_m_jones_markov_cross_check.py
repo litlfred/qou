@@ -49,6 +49,7 @@ Audit-only: docs/audits/2026-05-08-p3-h-3a-divergence.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -64,7 +65,7 @@ from wedderburn_jones_markov import global_wedderburn_sum_jones_markov  # noqa: 
 from witness_base import WitnessBuilder  # noqa: E402
 
 Q_0 = sp.Rational("1.1099785827513805")
-REF_WITNESS = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+REF_WITNESS = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
 
 
 def _load_canonical_tr_m() -> dict[str, float]:

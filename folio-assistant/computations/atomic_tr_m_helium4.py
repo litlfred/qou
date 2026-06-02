@@ -87,6 +87,7 @@ file remains untouched per its prior `computedAt` timestamp).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import signal
 import sys
@@ -128,7 +129,7 @@ DIRECT_BUDGET_SEC = 480.0                        # 8 min budget per task brief
 def disjoint_product_value() -> tuple[mp.mpf, mp.mpf, mp.mpf]:
     """Return (|tr_M(⁴He)|, |tr_M(p)|, |tr_M(n)|) read from the
     legacy 50-dps witness."""
-    path = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+    path = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(
             f"Required legacy |tr_M| witness not found at {path}; "

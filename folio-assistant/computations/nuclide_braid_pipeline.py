@@ -47,6 +47,8 @@ Usage:  python3 nuclide_braid_pipeline.py --Z 2 --N 1            # ³He
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import math
@@ -59,7 +61,7 @@ import sys
 sys.path.insert(0, str(HERE))
 
 # h = ℏ_q at q_0, and the q_0 value (for recording the coupling weights).
-_QPIN = json.loads((HERE / "q-pinning-50-digit.witness.json").read_text())
+_QPIN = json.loads((_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).read_text())
 Q0_STR = _QPIN["derived_50_digit"]["q"]
 H_STR = _QPIN["derived_50_digit"].get("hbar_q") or _QPIN["derived_50_digit"].get("h")
 

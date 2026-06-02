@@ -88,6 +88,7 @@ REFERENCES
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import sys
@@ -171,7 +172,7 @@ def load_occam_witness() -> dict:
     apples-to-apples (same braid word, same q_0, same dps, same
     Hoefsmit construction).
     """
-    path = HERE / "rho-k-h3a-refinement.witness.json"
+    path = _pb.witness_path("rho-k-h3a-refinement.witness.json", HERE)
     if not path.exists():
         raise RuntimeError(
             f"Occam baseline {path.name} not found. Run "

@@ -53,6 +53,7 @@ so no information is lost — only the duplicated derivation logic.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import subprocess
@@ -76,7 +77,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 # Ref: [manuscript] rem:recomputed-low-isotope-mass-table
 LOW_ISOTOPE_ATOMS = ["p", "n", "D", "T", "3He"]
 LOW_ISOTOPE_A_MAX = 3
-CANONICAL_WITNESS = HERE / "canonical-mass-table-extended.witness.json"
+CANONICAL_WITNESS = _pb.witness_path("canonical-mass-table-extended.witness.json", HERE)
 
 
 def run_canonical(method: str, target_dps: int) -> None:

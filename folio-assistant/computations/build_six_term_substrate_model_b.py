@@ -41,6 +41,7 @@ Output: build-six-term-substrate-model-b.witness.json
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 import json
 from math import comb
@@ -95,7 +96,7 @@ MODEL_B_BRAID_REGISTRY = {
 def _load_model_b_t1() -> dict[str, mp.mpf]:
     """Atom-name → |τ_M(canonical-knot)| at q_0 (Wenzl-Schur) from
     `probe-sdp-canonical-paper-formula.witness.json`."""
-    path = HERE / "probe-sdp-canonical-paper-formula.witness.json"
+    path = _pb.witness_path("probe-sdp-canonical-paper-formula.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(
             f"Model B T1 witness missing: {path}.  Run "

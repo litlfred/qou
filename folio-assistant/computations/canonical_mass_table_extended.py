@@ -36,6 +36,7 @@ The witness output filename is fixed by WitnessBuilder
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import subprocess
@@ -280,7 +281,7 @@ def lookup_b_pred_existing(
     """
     try:
         if mass_table_ppb is None:
-            path = HERE / "mass-table-ppb.witness.json"
+            path = _pb.witness_path("mass-table-ppb.witness.json", HERE)
             if not path.exists():
                 return None, None
             mass_table_ppb = json.loads(path.read_text())
@@ -310,7 +311,7 @@ def lookup_nucleon_mass_borromean(
     """
     try:
         if borromean is None:
-            path = HERE / "m-p-borromean-verification-50dps.witness.json"
+            path = _pb.witness_path("m-p-borromean-verification-50dps.witness.json", HERE)
             if not path.exists():
                 return None, None
             borromean = json.loads(path.read_text())
@@ -443,13 +444,13 @@ def main() -> int:
     borromean_data: dict | None = None
     try:
         mass_table_ppb_data = builder.add_upstream(
-            HERE / "mass-table-ppb.witness.json"
+            _pb.witness_path("mass-table-ppb.witness.json", HERE)
         )
     except FileNotFoundError:
         pass
     try:
         borromean_data = builder.add_upstream(
-            HERE / "m-p-borromean-verification-50dps.witness.json"
+            _pb.witness_path("m-p-borromean-verification-50dps.witness.json", HERE)
         )
     except FileNotFoundError:
         pass

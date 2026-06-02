@@ -28,6 +28,7 @@ Output: `atomic-tr-m-mpfr-50dps.witness.json`
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import sys
@@ -60,7 +61,7 @@ from canonical_tr_m_via_rust import compute_tr_m as _canonical_rust_compute_tr_m
 # upstream regression returns).  Copilot PR #895 review.
 set_compute_dps()
 
-Q0 = HERE / "q-pinning-50-digit.witness.json"
+Q0 = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 OUT = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
 
 from codata_constants import M_E_MEV  # CODATA 2022 — centralised

@@ -50,6 +50,7 @@ Output: `delta-lambda-2row-stratum.witness.json`.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import functools
 import json
 import sys
@@ -150,7 +151,7 @@ def dim_q_at_q0(lam: tuple[int, ...]) -> mp.mpf:
 # ── Load the per-atom data from delta_lambda witness ───────────
 def load_proposal_1_witness() -> dict:
     """Load the per-atom rows from delta-lambda-empirical-tabulation.witness.json."""
-    path = HERE / "delta-lambda-empirical-tabulation.witness.json"
+    path = _pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(f"missing {path} — run "
                                 f"delta_lambda_empirical_tabulation.py first")
@@ -173,7 +174,7 @@ def analyse_2row_sector(atom: str, atom_data: dict) -> dict:
     # ⁴He: prefer the cached per_partition (instant) over recomputing.
     if atom == "4He":
         cached = json.loads(
-            (HERE / "chi-helium-4-h12-numeric.witness.json").read_text())
+            (_pb.witness_path("chi-helium-4-h12-numeric.witness.json", HERE)).read_text())
         terms = cached["per_partition"]
         for t in terms:
             t["y_at_q0"] = float(t["y_at_q0"])

@@ -54,6 +54,7 @@ The Vol form is the path the paper actually documents
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 from pathlib import Path
 
@@ -74,7 +75,7 @@ set_compute_dps()
 def _q_0_50dps() -> mp.mpf:
     """CAL-2 q_0 at 50 dps from the canonical pinning witness."""
     import json
-    with (HERE / "q-pinning-50-digit.witness.json").open() as fh:
+    with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open() as fh:
         d = json.load(fh)
     return mp.mpf(d["derived_50_digit"]["q"])
 

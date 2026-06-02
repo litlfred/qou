@@ -70,6 +70,8 @@ staleness directly).
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -79,17 +81,17 @@ HERE = Path(__file__).resolve().parent
 
 # Source witness files joined into the single dashboard.
 SOURCES = {
-    "compute_audit_scan": HERE / "compute-audit-scan.witness.json",
+    "compute_audit_scan": _pb.witness_path("compute-audit-scan.witness.json", HERE),
     "canonical_script_input_audit": (
-        HERE / "canonical-script-input-audit.witness.json"
+        _pb.witness_path("canonical-script-input-audit.witness.json", HERE)
     ),
-    "derivation_chain_audit": HERE / "derivation-chain-audit.witness.json",
-    "codata_reconciliation": HERE / "codata-reconciliation.witness.json",
+    "derivation_chain_audit": _pb.witness_path("derivation-chain-audit.witness.json", HERE),
+    "codata_reconciliation": _pb.witness_path("codata-reconciliation.witness.json", HERE),
     "witness_reproducibility": (
-        HERE / "witness-reproducibility-check.witness.json"
+        _pb.witness_path("witness-reproducibility-check.witness.json", HERE)
     ),
     "witness_provenance": (
-        HERE / "witness-provenance-audit.witness.json"
+        _pb.witness_path("witness-provenance-audit.witness.json", HERE)
     ),
 }
 

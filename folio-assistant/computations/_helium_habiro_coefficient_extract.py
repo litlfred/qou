@@ -53,6 +53,7 @@ Ref: habiro_coefficients_atomic.py (cyclotomic expansion engine)
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -254,7 +255,7 @@ def main() -> int:
     q0_mp = mp.mpf(str(_Q_CANONICAL))
     print(f"q_0 = {q0_float:.16f}")
 
-    habiro_path = HERE / "habiro-coefficients-atomic.witness.json"
+    habiro_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
     if not habiro_path.exists():
         print(f"  FATAL: {habiro_path} not found")
         return 2
@@ -306,7 +307,7 @@ def main() -> int:
     ]
     if "error" not in results.get("he3", {}):
         _write_witness(
-            HERE / "habiro-coefficients-helium-3.witness.json",
+            _pb.witness_path("habiro-coefficients-helium-3.witness.json", HERE),
             "helium-3", results["he3"], q0_float,
             description=(
                 "Habiro / cyclotomic expansion tr_M(³He, q) = Σ_m a_m·(u;u)_m "
@@ -320,7 +321,7 @@ def main() -> int:
 
     if "error" not in results.get("he4", {}):
         _write_witness(
-            HERE / "habiro-coefficients-helium-4.witness.json",
+            _pb.witness_path("habiro-coefficients-helium-4.witness.json", HERE),
             "helium-4", results["he4"], q0_float,
             description=(
                 "Habiro / cyclotomic expansion tr_M(⁴He, q) = Σ_m a_m·(u;u)_m "

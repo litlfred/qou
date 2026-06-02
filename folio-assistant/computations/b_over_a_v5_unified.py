@@ -32,6 +32,8 @@ budget.
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from datetime import datetime, timezone
@@ -89,7 +91,7 @@ def _witness_results(witness: dict) -> list:
 
 
 _PLAN_H_DELTA_RHO: dict[tuple[int, int], dict] = {}
-_ph_path = HERE / "rho-census-wedderburn-experiment.witness.json"
+_ph_path = _pb.witness_path("rho-census-wedderburn-experiment.witness.json", HERE)
 if _ph_path.exists():
     try:
         _ph_data = json.loads(_ph_path.read_text())
@@ -112,7 +114,7 @@ if _ph_path.exists():
 # These are the canonical-input values; B_pred closure for Family 4
 # still needs the ρ_F + Vol_hyp(K) derivation (GAP 4, 5).
 _MARKOV_PEEL_TR_M: dict[tuple[int, int], str] = {}
-_peel_path = HERE / "markov-peel-atomic-tr-m.witness.json"
+_peel_path = _pb.witness_path("markov-peel-atomic-tr-m.witness.json", HERE)
 if _peel_path.exists():
     try:
         _peel_data = json.loads(_peel_path.read_text())

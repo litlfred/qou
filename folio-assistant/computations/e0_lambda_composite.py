@@ -47,6 +47,7 @@ reported raw.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from datetime import datetime, timezone
@@ -77,7 +78,7 @@ M_N = mpf(str(M_N_MEV))
 # ── per-λ H_3 substrate data: read DIRECTLY from the GAP-A-4 verifier
 #    witness (no recomputation — single source of truth, and it IS the
 #    falsification data showing p≡n). ────────────────────────────────────
-VERIFIER = HERE / "rho-prefactor-structural-verifier.witness.json"
+VERIFIER = _pb.witness_path("rho-prefactor-structural-verifier.witness.json", HERE)
 
 
 def load_h3_per_lambda(atom_name: str) -> list[dict]:

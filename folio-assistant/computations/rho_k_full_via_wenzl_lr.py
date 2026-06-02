@@ -99,6 +99,7 @@ Workplan: `docs/audits/2026-05-17-1ppb-workplan-v4.md` §3 Item 1
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 from pathlib import Path
 
@@ -306,7 +307,7 @@ def main() -> int:
     # so `witness_dependency_drift.py` can detect silent staleness
     # when the upstream changes without this consumer regenerating.
     upstream_paths = [
-        HERE / "y-lambda-at-q0.witness.json",
+        _pb.witness_path("y-lambda-at-q0.witness.json", HERE),
     ]
     upstream_hashes = [_hash_upstream(p) for p in upstream_paths]
 

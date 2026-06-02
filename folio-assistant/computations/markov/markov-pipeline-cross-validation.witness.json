@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T05:40:50.902612+00:00",
-  "commitSha": "d41ece745e8b0d3e89570049b72fd5de8a32375c",
+  "computedAt": "2026-06-02T15:09:20.287901+00:00",
+  "commitSha": "02ebd00ea4ddbca947f572802865aa2e4dad419a",
   "assertions": [
     {
       "name": "tr_M_at_q0_archimedean[D (deuteron, A=2)]",
@@ -45,11 +45,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 13,
   "computation": "markov-pipeline-cross-validation",
   "scriptFile": "markov_pipeline_cross_validator.py",
   "scriptHash": "b146c79f256a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "cef7d765c01dccf22ecec57c50bddee02487e020",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,6 +58,8 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

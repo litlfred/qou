@@ -21,6 +21,7 @@ corroborates 2⌊(A−1)/2⌋ across A=6, 12, 14.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -61,7 +62,7 @@ def main() -> int:
     print("=" * 78)
     print(f"q_0 = {q0_float:.16f}")
 
-    habiro_path = HERE / "habiro-coefficients-atomic.witness.json"
+    habiro_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
     q = sp.Symbol('q', positive=True, real=True)
     print("\nLoading symbolic τ_p, τ_n …")
     tau_p, tau_n = _load_p_n_symbolic(habiro_path, q)

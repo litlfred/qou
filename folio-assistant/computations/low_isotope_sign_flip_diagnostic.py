@@ -54,6 +54,7 @@ channel counts, Pearson correlations, and a verdict string.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -68,8 +69,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
 
-INPUT_WITNESS = HERE / "low-isotope-mass-table.witness.json"
-Q_PIN = HERE / "q-pinning-50-digit.witness.json"
+INPUT_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
+Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 
 
 def _pearson_r(xs: list[float], ys: list[float]) -> float:

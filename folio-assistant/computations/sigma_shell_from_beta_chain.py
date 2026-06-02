@@ -48,6 +48,7 @@ Output: `sigma-shell-from-beta-chain.witness.json`.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from datetime import datetime, timezone
@@ -121,7 +122,7 @@ def evaluate_chi_lambda_on_atom(
 def load_atomic_tr_m(atom_label: str) -> mp.mpf:
     """Load |tr_M(β_K)| for the atom from the legacy 50-dps witness or
     per-atom extensions."""
-    legacy = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+    legacy = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
     label_map = {
         "p": "proton", "n": "neutron",
         "D": "deuteron", "T": "tritium",

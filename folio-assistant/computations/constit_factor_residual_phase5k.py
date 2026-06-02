@@ -29,6 +29,7 @@ vs O(h^5) vs other.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -48,7 +49,7 @@ from q_parameter import Q as Q0  # noqa: E402
 # ──────────────────────────────────────────────────────────────────
 
 PHASE5C_WITNESS = (
-    HERE / "delta-lambda-fr-identity-phase5c.witness.json"
+    _pb.witness_path("delta-lambda-fr-identity-phase5c.witness.json", HERE)
 )
 
 

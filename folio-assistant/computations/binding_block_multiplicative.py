@@ -68,6 +68,7 @@ Ref: _precision.py (COMPUTE_DPS / OUTPUT_DPS / PRECISION_GUARD)
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from collections import Counter
@@ -120,7 +121,7 @@ def load_block_factors_from_witness() -> dict:
     empirically on D, T, ³He at H_6, H_9. Reads from the D entry
     since H_6 is fastest to compute.
     """
-    w_path = HERE / "binding-via-interface-knot.witness.json"
+    w_path = _pb.witness_path("binding-via-interface-knot.witness.json", HERE)
     if not w_path.exists():
         raise FileNotFoundError(
             f"Missing upstream witness: {w_path}. Run "

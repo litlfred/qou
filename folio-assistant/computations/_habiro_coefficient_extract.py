@@ -51,6 +51,7 @@ Ref: _lithium_beryllium_habiro_coefficient_extract.py (per-atom template)
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -409,7 +410,7 @@ def main() -> int:
     print(f"q_0 = {q0_float:.16f}")
     print(f"Plan: {len(ATOMS)} canonical atoms")
 
-    habiro_path = HERE / "habiro-coefficients-atomic.witness.json"
+    habiro_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
     if not habiro_path.exists():
         print(f"  FATAL: {habiro_path} not found")
         return 2

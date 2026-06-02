@@ -45,6 +45,7 @@ Audit-only: docs/audits/2026-05-08-q-hecke-character-gap-closure.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import os
 import sys
@@ -66,7 +67,7 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 Q_0_HIGH = sp.Float(Q_0_FLOAT, 30)  # 30-dps for y_λ precision (derived from q_parameter.Q)
-REF_WITNESS = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+REF_WITNESS = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
 
 
 _Y_LAMBDA_CACHE: dict[int, dict] = {}

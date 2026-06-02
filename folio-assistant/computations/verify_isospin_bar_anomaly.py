@@ -36,6 +36,7 @@ Promotes D9 closure path from "scaffold + audit" (PR #1162) to
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -51,7 +52,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps()
 
 # Substrate q_0 at 50 dps
-Q_PIN = HERE / "q-pinning-50-digit.witness.json"
+Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 
 
 def factor_bar_parity(f_q: callable, q: mp.mpf, q_inv: mp.mpf) -> dict:

@@ -69,6 +69,7 @@ exposure.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -82,9 +83,9 @@ sys.path.insert(0, str(HERE))
 from codata_constants import M_E_MEV  # noqa: E402  (CAL-1)
 from witness_base import WitnessBuilder  # noqa: E402
 
-GRAM_WITNESS = HERE / "gram-matrix-dual.witness.json"
-BETA_DECAY_WITNESS = HERE / "beta-decay-energy-scale.witness.json"
-OUT = HERE / "e-0-lp-dual-h3.witness.json"
+GRAM_WITNESS = _pb.witness_path("gram-matrix-dual.witness.json", HERE)
+BETA_DECAY_WITNESS = _pb.witness_path("beta-decay-energy-scale.witness.json", HERE)
+OUT = _pb.witness_path("e-0-lp-dual-h3.witness.json", HERE)
 
 
 def load_h3_data():

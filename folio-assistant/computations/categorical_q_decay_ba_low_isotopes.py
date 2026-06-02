@@ -47,6 +47,7 @@ Output: categorical-q-decay-ba-low-isotopes.witness.json
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import subprocess
 import sys
@@ -95,9 +96,9 @@ def _load_witness_cached(path_str: str) -> dict | None:
 # Source witnesses (canonical, 3-input scheme)
 # ─────────────────────────────────────────────────────────────────────
 # bw-chirality-isotopes: Term 5 (BW + chirality) for A ≥ 3
-BW_WITNESS = HERE / "bw-chirality-isotopes.witness.json"
+BW_WITNESS = _pb.witness_path("bw-chirality-isotopes.witness.json", HERE)
 # mass-formula-6term: Term 1+4 for D, Term 5 for T/³He
-SIX_TERM_WITNESS = HERE / "mass-formula-6term.witness.json"
+SIX_TERM_WITNESS = _pb.witness_path("mass-formula-6term.witness.json", HERE)
 
 # Tier selection per isotope
 TIER_BY_SYM = {
@@ -238,7 +239,7 @@ def load_canonical_b(sym: str):
     # (D-specific: the 1/(1+H_A²/4) factor is exact for atoms with one
     # ud-half pn factor; works perfectly for D, not for A≥3.)
     if "kashaev-with-inter" in tier:
-        kic_path = HERE / "d-inter-correction-test.witness.json"
+        kic_path = _pb.witness_path("d-inter-correction-test.witness.json", HERE)
         d = _load_witness_cached(str(kic_path))
         if d is None:
             return None
@@ -257,7 +258,7 @@ def load_canonical_b(sym: str):
     # the genuine algebraic m_e·Σ_{λ⊢3A} 1/dim_q rather than the
     # per-A heuristic that over-binds by ~20%.
     if "unified-per3A" in tier:
-        unified_path = HERE / "unified-low-isotope-predictor.witness.json"
+        unified_path = _pb.witness_path("unified-low-isotope-predictor.witness.json", HERE)
         d = _load_witness_cached(str(unified_path))
         if d is None:
             return None

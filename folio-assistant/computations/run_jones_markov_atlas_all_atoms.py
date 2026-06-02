@@ -42,6 +42,7 @@ the solver and the H_{3A} weights.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -59,7 +60,7 @@ from pyhecke_jones_markov_atlas import (  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 30
-Q_PIN = HERE / "q-pinning-50-digit.witness.json"
+Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 q0_mpf = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
 q0_f64 = float(q0_mpf)
 h_mpf = q0_mpf - 1 / q0_mpf

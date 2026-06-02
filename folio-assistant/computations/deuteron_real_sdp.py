@@ -46,6 +46,8 @@ Output: deuteron-real-sdp.witness.json
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import math
 from pathlib import Path
@@ -64,8 +66,8 @@ from pyhecke.lp_dual_solver import (  # noqa: E402
 )
 from murnaghan_nakayama import dim_specht  # noqa: E402  shared hook-length dim
 
-COST_WITNESS = HERE / "iterative-lp-dual-h6-deuteron.witness.json"
-BRANCHING_WITNESS = HERE / "sublemma-2-1-deuteron-branching.witness.json"
+COST_WITNESS = _pb.witness_path("iterative-lp-dual-h6-deuteron.witness.json", HERE)
+BRANCHING_WITNESS = _pb.witness_path("sublemma-2-1-deuteron-branching.witness.json", HERE)
 OUT_WITNESS = HERE / "deuteron-real-sdp.witness.json"
 
 # The current uniqueness anchor (empty-SDP); the real-SDP Lean theorem is

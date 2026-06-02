@@ -23,6 +23,7 @@ undershoots by -83%. See docs/audits/2026-05-18-delta-lambda-gating-context.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 import json
 import time
@@ -51,7 +52,7 @@ def main():
     print()
 
     # ── Load precomputed sums from interface-closure witness ────
-    closure_path = HERE / "deuteron-binding-interface-closure.witness.json"
+    closure_path = _pb.witness_path("deuteron-binding-interface-closure.witness.json", HERE)
     if closure_path.exists():
         closure = json.loads(closure_path.read_text())
         d = closure.get("data", {})

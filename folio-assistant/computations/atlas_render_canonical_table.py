@@ -20,6 +20,8 @@ exits without modifying the file (safe for first-run inspection).
 """
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import sys
@@ -33,7 +35,7 @@ ATLAS_MD = (
     / "appendix-knot-periodic-table"
     / "recursive-atom-knot-atlas.md"
 )
-WITNESS = HERE / "canonical-mass-table-extended.witness.json"
+WITNESS = _pb.witness_path("canonical-mass-table-extended.witness.json", HERE)
 
 BEGIN_MARKER = "<!-- AUTO:canonical-tr-m-table BEGIN -->"
 END_MARKER = "<!-- AUTO:canonical-tr-m-table END -->"

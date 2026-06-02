@@ -28,6 +28,8 @@ Output: `atomic-braid-recipe-n.derivation.json`.
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 from pathlib import Path
 
@@ -41,7 +43,7 @@ from derivation_chain import (  # noqa: E402
 
 
 HERE = Path(__file__).parent
-OUTPUT = HERE / "atomic-braid-recipe-n.derivation.json"
+OUTPUT = _pb.witness_path("atomic-braid-recipe-n.derivation.json", HERE)
 
 NEUTRON_BRAID_LEN = 11
 

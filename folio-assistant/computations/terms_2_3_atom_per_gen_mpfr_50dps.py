@@ -42,6 +42,7 @@ Output: `terms-2-3-atom-per-gen-mpfr-50dps.witness.json`.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 import time
@@ -72,7 +73,7 @@ ATOMS = [
 def _load_q0_50dps() -> tuple[mp.mpf, mp.mpf, mp.mpf, mp.mpf]:
     """Read q_0, q_inv, h, z at 50 dps from the canonical pinning
     witness."""
-    path = HERE / "q-pinning-50-digit.witness.json"
+    path = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
     with path.open() as fh:
         d = json.load(fh)
     q0 = mp.mpf(d["derived_50_digit"]["q"])

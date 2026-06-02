@@ -42,6 +42,7 @@ this script lives in the "compute-precision" layer; the
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
 import json
 import sys
@@ -60,9 +61,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 mpmath.mp.dps = 50
 TOLERANCE = mpf("1e-9")  # 1 part per billion
 
-HOEF_PATH = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
-PEEL_PATH = HERE / "markov-peel-atomic-tr-m.witness.json"
-LR_PATH = HERE / "rho-k-full-via-wenzl-lr.witness.json"
+HOEF_PATH = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+PEEL_PATH = _pb.witness_path("markov-peel-atomic-tr-m.witness.json", HERE)
+LR_PATH = _pb.witness_path("rho-k-full-via-wenzl-lr.witness.json", HERE)
 
 
 # Short LR labels → long Hoefsmit / peel atom names.

@@ -38,6 +38,7 @@ quantity matching the per-N empirical structure.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -50,8 +51,8 @@ import mpmath as mp
 from witness_base import WitnessBuilder
 from q_parameter import Q as Q0
 
-PHASE3_WITNESS = HERE / "delta-lambda-jsj-phase3.witness.json"
-EMP_WITNESS = HERE / "delta-lambda-empirical-tabulation.witness.json"
+PHASE3_WITNESS = _pb.witness_path("delta-lambda-jsj-phase3.witness.json", HERE)
+EMP_WITNESS = _pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)
 
 
 # Z, N per atom (from the canonical-braid construction in

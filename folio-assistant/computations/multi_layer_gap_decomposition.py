@@ -27,6 +27,8 @@ the layers under the reconciliation audit's framing but does NOT
 propose production wiring.
 """
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import subprocess
 import sys
@@ -38,7 +40,7 @@ from mpmath import mpf
 mp.mp.dps = 50
 
 HERE = Path(__file__).resolve().parent
-LOW_ISO_WITNESS = HERE / "low-isotope-mass-table.witness.json"
+LOW_ISO_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
 
 # 4He from PR #1089 (not in low-isotope table; computed via different path)
 HE4_PRED_MEV = mpf("29.96")

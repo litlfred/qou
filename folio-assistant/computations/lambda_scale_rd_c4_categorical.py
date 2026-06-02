@@ -58,6 +58,7 @@ this script targets.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
 from pathlib import Path
@@ -179,7 +180,7 @@ def main() -> int:
     # FALLBACK: numerical character at q_0 from cached witness
     print()
     print("Loading cached H_3 character for V_(2,1) at q_0...")
-    chi_v21_witness = HERE / "chi-v21-hoefsmit.witness.json"
+    chi_v21_witness = _pb.witness_path("chi-v21-hoefsmit.witness.json", HERE)
     if chi_v21_witness.exists():
         chi_v21_data = json.load(chi_v21_witness.open())
         print(f"  Found {chi_v21_witness.name}")

@@ -34,6 +34,7 @@ lines with wall + ETA.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 import time
 from pathlib import Path
@@ -187,7 +188,7 @@ def borromean_mass_prediction(
     """
     # Load substrate identity predictions (sub-ppb accuracy)
     # from the canonical witness, falling back to Family A if unavailable.
-    sub_witness = HERE / "m-p-substrate-identity-50dps.witness.json"
+    sub_witness = _pb.witness_path("m-p-substrate-identity-50dps.witness.json", HERE)
     if sub_witness.exists():
         import json as _json
         sub_data = _json.load(sub_witness.open())

@@ -54,6 +54,8 @@ Output: `atomic-braid-recipe-4he.derivation.json`.
 
 from __future__ import annotations
 
+import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 from pathlib import Path
 
@@ -67,7 +69,7 @@ from derivation_chain import (  # noqa: E402
 
 
 HERE = Path(__file__).parent
-OUTPUT = HERE / "atomic-braid-recipe-4he.derivation.json"
+OUTPUT = _pb.witness_path("atomic-braid-recipe-4he.derivation.json", HERE)
 
 # Canonical disjoint ⁴He braid word — matches
 # `atomic_braid_gb_filtration_extension.ATOMIC_BRAIDS[3]` and the
