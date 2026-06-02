@@ -1,20 +1,20 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T12:49:04.258595+00:00",
-  "commitSha": "d35843f5a253585194bcc8ead9e8564fef3a25d4",
+  "computedAt": "2026-06-02T05:58:41.567149+00:00",
+  "commitSha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "canonical-isotope-witness-index",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "8741bbbd4e0b",
-  "scriptCommitSha": "626c2bb856bbfa1ca647bd7d5bc36c8113f8825e",
+  "scriptHash": "8d34736394b8",
+  "scriptCommitSha": "95163cf6c2f0adecc5a4ab1c05afa3e743bd0209",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
@@ -22,7 +22,6 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
   "description": "Cross-shard index for the per-Z canonical-isotope witness family. Each shard (canonical-isotope-witness-Z<NN>.witness.json) covers one element's isotope chain; this index aggregates the coverage map.",
@@ -39,77 +38,77 @@
         "shard_filename": "canonical-isotope-witness-Z00.witness.json",
         "element": "n",
         "rows_total": 1,
-        "rows_with_prediction": 0,
+        "rows_with_prediction": 1,
         "rows_with_composite_mass": 0
       },
       "1": {
         "shard_filename": "canonical-isotope-witness-Z01.witness.json",
         "element": "H",
         "rows_total": 7,
-        "rows_with_prediction": 2,
+        "rows_with_prediction": 1,
         "rows_with_composite_mass": 0
       },
       "2": {
         "shard_filename": "canonical-isotope-witness-Z02.witness.json",
         "element": "He",
         "rows_total": 8,
-        "rows_with_prediction": 2,
-        "rows_with_composite_mass": 0
+        "rows_with_prediction": 1,
+        "rows_with_composite_mass": 1
       },
       "3": {
         "shard_filename": "canonical-isotope-witness-Z03.witness.json",
         "element": "Li",
         "rows_total": 11,
-        "rows_with_prediction": 2,
+        "rows_with_prediction": 0,
         "rows_with_composite_mass": 0
       },
       "4": {
         "shard_filename": "canonical-isotope-witness-Z04.witness.json",
         "element": "Be",
         "rows_total": 12,
-        "rows_with_prediction": 3,
+        "rows_with_prediction": 1,
         "rows_with_composite_mass": 1
       },
       "5": {
         "shard_filename": "canonical-isotope-witness-Z05.witness.json",
         "element": "B",
         "rows_total": 16,
-        "rows_with_prediction": 2,
+        "rows_with_prediction": 0,
         "rows_with_composite_mass": 0
       },
       "6": {
         "shard_filename": "canonical-isotope-witness-Z06.witness.json",
         "element": "C",
         "rows_total": 16,
-        "rows_with_prediction": 2,
+        "rows_with_prediction": 1,
         "rows_with_composite_mass": 1
       },
       "7": {
         "shard_filename": "canonical-isotope-witness-Z07.witness.json",
         "element": "N",
         "rows_total": 16,
-        "rows_with_prediction": 2,
+        "rows_with_prediction": 0,
         "rows_with_composite_mass": 0
       },
       "8": {
         "shard_filename": "canonical-isotope-witness-Z08.witness.json",
         "element": "O",
         "rows_total": 18,
-        "rows_with_prediction": 3,
+        "rows_with_prediction": 1,
         "rows_with_composite_mass": 1
       },
       "9": {
         "shard_filename": "canonical-isotope-witness-Z09.witness.json",
         "element": "F",
         "rows_total": 19,
-        "rows_with_prediction": 1,
+        "rows_with_prediction": 0,
         "rows_with_composite_mass": 0
       },
       "10": {
         "shard_filename": "canonical-isotope-witness-Z10.witness.json",
         "element": "Ne",
         "rows_total": 20,
-        "rows_with_prediction": 3,
+        "rows_with_prediction": 1,
         "rows_with_composite_mass": 1
       },
       "11": {
