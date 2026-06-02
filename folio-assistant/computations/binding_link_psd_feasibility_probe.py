@@ -139,8 +139,18 @@ def main() -> int:
                 "classification": classification,
                 "all_psd": psd_all,
                 "per_block": {
-                    k: {kk: float(vv) if isinstance(vv, (int, float)) else vv
-                        for kk, vv in (v.items() if isinstance(v, dict) else [])}
+                    # Per Gemini #1712 review: top-level non-dict entries
+                    # (e.g. all_blocks_psd_or_close, a bool) used to be
+                    # silently coerced to {}; and inner bools were cast to
+                    # 1.0/0.0 because isinstance(True, int) is True in Python.
+                    # Fix: pass non-dicts through verbatim, and exclude bool
+                    # from float-coercion.
+                    k: ({
+                        kk: float(vv)
+                        if isinstance(vv, (int, float)) and not isinstance(vv, bool)
+                        else vv
+                        for kk, vv in v.items()
+                    } if isinstance(v, dict) else v)
                     for k, v in per_block.items()
                 },
             })

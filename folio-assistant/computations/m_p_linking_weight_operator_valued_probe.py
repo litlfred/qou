@@ -67,6 +67,7 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as Q_CANONICAL  # noqa: E402
 from murnaghan_nakayama import dim_q_lambda  # noqa: E402
+from partition_utils import hook_lengths  # noqa: E402 — centralized hook-length util
 
 set_compute_dps()
 
@@ -78,7 +79,8 @@ FAMILY_A = mp.mpf("2.532780")   # uniform H_4 average (production)
 def partitions_of(n: int):
     """All integer partitions of n as descending tuples."""
     if n == 0:
-        yield (); return
+        yield ()
+        return
 
     def helper(m: int, mx: int):
         for f in range(min(m, mx), 0, -1):
@@ -104,17 +106,7 @@ def n_q_factorial(k: int) -> mp.mpf:
     return p
 
 
-def hook_lengths(lam: tuple[int, ...]) -> list[int]:
-    """Hook lengths of partition lam."""
-    rows = list(lam)
-    conj = [sum(1 for r in rows if r > c) for c in range(rows[0])]
-    out = []
-    for i, row in enumerate(rows):
-        for j in range(row):
-            arm = row - j - 1
-            leg = conj[j] - i - 1
-            out.append(arm + leg + 1)
-    return out
+# (hook_lengths centralized in partition_utils — imported above.)
 
 
 def _abs_content_sum(lam: tuple[int, ...]) -> mp.mpf:
@@ -151,7 +143,8 @@ def weighted_mean(n: int, weight_name: str) -> mp.mpf:
     number of partitions). Family A at n=4 is (Σ/4), not (Σ/5).
     """
     w_fn = WEIGHTS[weight_name]
-    num = mp.mpf(0); denom = mp.mpf(0)
+    num = mp.mpf(0)
+    denom = mp.mpf(0)
     for lam in partitions_of(n):
         w = w_fn(lam, n)
         d = dim_q_lambda(lam, q)

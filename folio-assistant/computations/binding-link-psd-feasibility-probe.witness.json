@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T17:05:32.188759+00:00",
-  "commitSha": "49bff8c1d93496808c8a2c6c1df7860806d2d5f0",
+  "computedAt": "2026-06-02T18:34:24.753728+00:00",
+  "commitSha": "b9a5852424bc58370ebf3718e19142e0f05a70fc",
   "assertions": [
     {
       "name": "hopf_link_psd_at_h3",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 40,
+  "durationMs": 44,
   "computation": "binding-link-psd-feasibility-probe",
   "scriptFile": "binding_link_psd_feasibility_probe.py",
-  "scriptHash": "aabf973fb6bf",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c36b2b79156f",
+  "scriptCommitSha": "eb58ae0fb1d51489d031abf3265fda91fc595e89",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
