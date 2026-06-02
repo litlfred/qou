@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T05:13:05.346012+00:00",
-  "commitSha": "182c22d4de2a90ca7cc73b2af372644374516948",
+  "computedAt": "2026-06-02T05:22:22.393369+00:00",
+  "commitSha": "13e9814eeff1edec31691425d9447202fa7b1976",
   "assertions": [
     {
       "name": "S3_order",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "escape1-geometric-holonomy-section",
   "scriptFile": "escape1_geometric_holonomy_section.py",
-  "scriptHash": "23f1ba0ed119",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3f478e854290",
+  "scriptCommitSha": "13e9814eeff1edec31691425d9447202fa7b1976",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
