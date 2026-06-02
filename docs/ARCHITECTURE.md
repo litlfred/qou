@@ -116,7 +116,7 @@ Names of mathematical primitives — `gram`, `seminormal`, `wenzl_lr`, `laurent`
 | Python substrate | `tools/qou-substrate/python/qou_substrate/{constants,precision,witness}.py` |
 | Python in-repo substrate | `folio-assistant/computations/substrate/{q_parameter,witness_base,_precision,hecke_core,…}.py` |
 | Python facade | `qou-mass/src/qou_mass/{api,prediction}.py` + `_internal/` |
-| Thin-binding crates | `tools/pyhecke-native/src/lib.rs`, `tools/hecke-engine-{wasm,node,r,jvm,c}/src/lib.rs` (single-file re-export shims, size varies) |
+| Thin-binding crates | `tools/pyhecke-native/src/lib.rs`, `tools/hecke-engine-{wasm,node,r,jvm,c,gap,julia,octave}/src/lib.rs`, `tools/sage-examples/` (single-file re-export shims, size varies) |
 
 This axis is **identity-preserving**: `pyhecke.gram` calls `pyhecke_native::gram` which calls `hecke_engine::gram`. The name travels unchanged. Add a primitive in the Rust core → it surfaces under the same name in every binding.
 
@@ -132,7 +132,7 @@ Names of research-script categories — `probes/`, `audits/`, `sweeps/`, `phase5
 | `phase5/`, `habiro/`, `markov/`, `qbeta/`, `alpha/`, `a_operator/` | Domain-research clusters (Phase-5 evidence, Habiro-element series, Markov-trace pipelines, Q_β / α-EM / α-cluster derivations, A-operator extracts) |
 | `substrate/` | The substrate-row modules listed in the Axis A table (`q_parameter`, `witness_base`, `_precision`, `hecke_core`, …) — the only cluster that overlaps Axis A |
 
-The published libraries (`pyhecke`, `hecke-engine`, the 5 thin-binding crates, `qou-mass`, `qou-substrate`, `witness-schema`) have **no** notion of "a probe" or "an audit". They expose primitive operations (`gram_matrix`, `markov_trace`, `wedderburn_weight`, …) that probes/audits/sweeps are *built from*. Forcing the workflow cluster names into a library API would harm the library's design without simplifying anything downstream.
+The published libraries (`pyhecke`, `hecke-engine`, the thin-binding crates, `qou-mass`, `qou-substrate`, `witness-schema`) have **no** notion of "a probe" or "an audit". They expose primitive operations (`gram_matrix`, `markov_trace`, `wedderburn_weight`, …) that probes/audits/sweeps are *built from*. Forcing the workflow cluster names into a library API would harm the library's design without simplifying anything downstream.
 
 The substrate cluster is the **only** in-repo cluster whose contents map 1-to-1 to a library — because the substrate modules ARE the library primitives, and the cluster was carved out specifically to make that mirroring explicit.
 
