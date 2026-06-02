@@ -1,0 +1,317 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-02T02:22:09.161476+00:00",
+  "commitSha": "55b1ec12d07e66643a2f72ef115d5b4908284fcc",
+  "assertions": [
+    {
+      "name": "trM_T2_3_symbolic_eq_numeric",
+      "computed": "0.7302040595096823432251251966109317541103230478564282057",
+      "expected": "0.730204059509682343225125196610931754110323047856428205676499",
+      "passed": true,
+      "tolerance": "1.0e-45"
+    },
+    {
+      "name": "trM_hopf_wenzl_eq_census",
+      "computed": "1.10438806980915821810377697622964108988565157546524390736979",
+      "expected": "1.10438806980915821810377697622964108988565157546524390736979",
+      "passed": true,
+      "tolerance": "1.0e-50"
+    },
+    {
+      "name": "writhe_T2_3_eq_n",
+      "computed": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "name": "genus_T2_3_eq_n_minus_1_over_2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "writhe_T2_5_eq_n",
+      "computed": 5,
+      "expected": 5,
+      "passed": true
+    },
+    {
+      "name": "genus_T2_5_eq_n_minus_1_over_2",
+      "computed": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "writhe_T2_7_eq_n",
+      "computed": 7,
+      "expected": 7,
+      "passed": true
+    },
+    {
+      "name": "genus_T2_7_eq_n_minus_1_over_2",
+      "computed": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "name": "writhe_T2_9_eq_n",
+      "computed": 9,
+      "expected": 9,
+      "passed": true
+    },
+    {
+      "name": "genus_T2_9_eq_n_minus_1_over_2",
+      "computed": 4,
+      "expected": 4,
+      "passed": true
+    },
+    {
+      "name": "writhe_T2_11_eq_n",
+      "computed": 11,
+      "expected": 11,
+      "passed": true
+    },
+    {
+      "name": "genus_T2_11_eq_n_minus_1_over_2",
+      "computed": 5,
+      "expected": 5,
+      "passed": true
+    },
+    {
+      "name": "components_T2_3_eq_gcd_2_n",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "components_T2_5_eq_gcd_2_n",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "components_T2_7_eq_gcd_2_n",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "components_T2_9_eq_gcd_2_n",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "components_T2_11_eq_gcd_2_n",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "S5_orders_eq_1_to_6",
+      "computed": "[1, 2, 3, 4, 5, 6]",
+      "expected": "[1, 2, 3, 4, 5, 6]",
+      "passed": true
+    },
+    {
+      "name": "S5_equivariant_selection_eq_3_5",
+      "computed": "[3, 5]",
+      "expected": "[3, 5]",
+      "passed": true
+    },
+    {
+      "name": "tau_n7_not_S5_equivariant",
+      "computed": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "direct_mu_e_ratio_misses_codata_by_gt_100x",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 334,
+  "computation": "lepton-t2n-torus-tower",
+  "scriptFile": "lepton_t2n_torus_tower.py",
+  "scriptHash": "58eb948c7bd2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "EXPLORATORY group-action map of the lepton T(2,n) torus tower: H_2(q) Markov trace J_{T(2,n)}(q) (symbolic + @ q0 60dps), writhe=n, genus=(n-1)/2, cyclic Z_n, B_2->H_2->Z_2 fermion/boson statistics; S_5-equivariance selection n in {3,5}; RAW direct-trace mass-ratio falsification comparison (miss factors, fit-flags); U(1)-framing ladder q^{n.c}. All RAW; no tuning to any lepton mass ratio, charge, or h^k.",
+  "auditOnly": "docs/audits/2026-06-02-lepton-t2n-torus-tower.md",
+  "parameters": {
+    "q0": "1.10997859555418057528066772895280873466502767951805708028071",
+    "dps": 60,
+    "Vol_4_1_ref": "2.0298832128193072500115978049904475264466050157561096",
+    "CODATA_m_mu_over_m_e": "206.768283",
+    "CODATA_m_tau_over_m_e": "3477.23"
+  },
+  "data": {
+    "markov_z_at_q0": "0.499320334033598250020679944935807503600524083627413529117846",
+    "lepton_tower_table": {
+      "T(2,3)": {
+        "particle": "electron",
+        "symbol": "e-",
+        "braid_word": "sigma_1^3",
+        "B_n": "B_2 = Z (one generator sigma_1)",
+        "H_n": "H_2(q), blocks (2),(1,1)",
+        "S_n_quotient": "S_2 = Z_2",
+        "writhe": 3,
+        "genus": 1,
+        "cyclic_symmetry": "Z_3",
+        "gcd_2_n": 1,
+        "components": 1,
+        "knot_or_link": "knot (1-cpt)",
+        "statistics": "fermion (odd n)",
+        "tr_M_at_q0": "0.730204059509682343225125196610931754110323047856428205676499",
+        "abs_tr_M_at_q0": "0.730204059509682343225125196610931754110323047856428205676499"
+      },
+      "T(2,5)": {
+        "particle": "muon",
+        "symbol": "mu-",
+        "braid_word": "sigma_1^5",
+        "B_n": "B_2 = Z (one generator sigma_1)",
+        "H_n": "H_2(q), blocks (2),(1,1)",
+        "S_n_quotient": "S_2 = Z_2",
+        "writhe": 5,
+        "genus": 2,
+        "cyclic_symmetry": "Z_5",
+        "gcd_2_n": 1,
+        "components": 1,
+        "knot_or_link": "knot (1-cpt)",
+        "statistics": "fermion (odd n)",
+        "tr_M_at_q0": "0.993002242963502440977913739352573688046576116054826211227636",
+        "abs_tr_M_at_q0": "0.993002242963502440977913739352573688046576116054826211227636"
+      },
+      "T(2,7)": {
+        "particle": "tau",
+        "symbol": "tau-",
+        "braid_word": "sigma_1^7",
+        "B_n": "B_2 = Z (one generator sigma_1)",
+        "H_n": "H_2(q), blocks (2),(1,1)",
+        "S_n_quotient": "S_2 = Z_2",
+        "writhe": 7,
+        "genus": 3,
+        "cyclic_symmetry": "Z_7",
+        "gcd_2_n": 1,
+        "components": 1,
+        "knot_or_link": "knot (1-cpt)",
+        "statistics": "fermion (odd n)",
+        "tr_M_at_q0": "1.29920079915167335270306753502292903886199103440935154008867",
+        "abs_tr_M_at_q0": "1.29920079915167335270306753502292903886199103440935154008867"
+      },
+      "T(2,9)": {
+        "particle": "T(2,9) ghost",
+        "symbol": "(saturation)",
+        "braid_word": "sigma_1^9",
+        "B_n": "B_2 = Z (one generator sigma_1)",
+        "H_n": "H_2(q), blocks (2),(1,1)",
+        "S_n_quotient": "S_2 = Z_2",
+        "writhe": 9,
+        "genus": 4,
+        "cyclic_symmetry": "Z_9",
+        "gcd_2_n": 1,
+        "components": 1,
+        "knot_or_link": "knot (1-cpt)",
+        "statistics": "fermion (odd n)",
+        "tr_M_at_q0": "1.66218250899282299068301073827425656184018771960407413866123",
+        "abs_tr_M_at_q0": "1.66218250899282299068301073827425656184018771960407413866123"
+      },
+      "T(2,11)": {
+        "particle": "T(2,11) ghost",
+        "symbol": "(genus 5, excluded)",
+        "braid_word": "sigma_1^11",
+        "B_n": "B_2 = Z (one generator sigma_1)",
+        "H_n": "H_2(q), blocks (2),(1,1)",
+        "S_n_quotient": "S_2 = Z_2",
+        "writhe": 11,
+        "genus": 5,
+        "cyclic_symmetry": "Z_11",
+        "gcd_2_n": 1,
+        "components": 1,
+        "knot_or_link": "knot (1-cpt)",
+        "statistics": "fermion (odd n)",
+        "tr_M_at_q0": "2.0978119303109530544893975951773441537022972502697205488061",
+        "abs_tr_M_at_q0": "2.0978119303109530544893975951773441537022972502697205488061"
+      }
+    },
+    "trM_T2_3_symbolic": "(q**(3/2) + q**6*(q**(3/2) + q + 1) - q**3 - q**2)/(q**3*(q**3 + q**2 + q + 1))",
+    "trM_T2_5_symbolic": "(q**(3/2) + q**10*(q**(3/2) + q + 1) - q**3 - q**2)/(q**5*(q**3 + q**2 + q + 1))",
+    "trM_hopf_wenzl_at_q0": "1.10438806980915821810377697622964108988565157546524390736979",
+    "trM_hopf_census_at_q0": "1.10438806980915821810377697622964108988565157546524390736979",
+    "S5_element_orders": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "S5_equivariant_odd_n": [
+      3,
+      5
+    ],
+    "tau_n7_in_S5_orders": false,
+    "mass_ratio_raw_comparison": {
+      "method": "DIRECT operator-level |tr_M(T(2,n))| / |tr_M(T(2,3))| in H_2(q)",
+      "is_production_path": false,
+      "production_path_note": "Production reads m_mu/m_e from the Skein/Kashaev identity Vol(4_1)/hbar_q^2 (calibrated to CODATA, conj:lepton-mass-tower-canonical). The direct trace ratio below is NOT that path -- it is the RAW operator-level ratio, reported as a falsification reference.",
+      "ratio_mu_e_direct": "1.35989690831119715565051322327903949242358840412684062949574",
+      "CODATA_mu_e": "206.768283",
+      "miss_factor_mu": "152.047027782993824873685029500506814439047868530423062241004",
+      "ratio_tau_e_direct": "1.77922976766804216789778856242114419818308132202691915425248",
+      "CODATA_tau_e": "3477.23",
+      "miss_factor_tau": "1954.34567428435715853747442177260307838877004626007587338855",
+      "fit_flag": "NONE -- no coupling tuned; both ratios miss CODATA by ~10^2-10^3x"
+    },
+    "u1_framing_ladder_c1": {
+      "T(2,3)": {
+        "particle": "electron",
+        "writhe": 3,
+        "framing_q_pow_n_c1_at_q0": "1.36755188427254835574281290212461174635593861270483775142949"
+      },
+      "T(2,5)": {
+        "particle": "muon",
+        "writhe": 5,
+        "framing_q_pow_n_c1_at_q0": "1.68489569408648013234155124071506620006727503568681779298919"
+      },
+      "T(2,7)": {
+        "particle": "tau",
+        "writhe": 7,
+        "framing_q_pow_n_c1_at_q0": "2.07587992280180572770574964655436280592607800702863370223103"
+      },
+      "T(2,9)": {
+        "particle": "T(2,9) ghost",
+        "writhe": 9,
+        "framing_q_pow_n_c1_at_q0": "2.55759301244344560917898943244760954019109932409437351689802"
+      },
+      "T(2,11)": {
+        "particle": "T(2,11) ghost",
+        "writhe": 11,
+        "framing_q_pow_n_c1_at_q0": "3.15108882043177151647475110154939512427903782641946687192265"
+      }
+    },
+    "lepton_electric_charge_all": -1
+  },
+  "caveats": [
+    "U(1)-framing ladder verdict: writhe(T(2,n)) = n is nonzero and STRICTLY INCREASING across the lepton tower (3,5,7,9), so the framing factor q^{n.c} is a per-lepton LADDER (monotone in generation), NOT a constant. But the lepton ELECTRIC CHARGE is the SAME (-1) for e, mu, tau -- a constant. So writhe -> electric charge is a CATEGORY MISMATCH (monotone ladder vs constant); the framing U(1) does NOT reproduce electric charge. The framing ladder DOES track generation number (n=2k+1 for generation k), which is the cyclic-symmetry index Z_n, NOT a gauge charge. No coupling c is tuned (c=1 set); writhe -> Y remains undefined, consistent with the inter-nucleon linked-channel audit (misses PDG split by ~305x at c=1).",
+    "Mass-ratio fit-flag: the DIRECT operator-level Markov-trace ratio |tr_M(T(2,5))|/|tr_M(T(2,3))| misses CODATA m_mu/m_e by ~10^3x raw (reported). The PRODUCTION lepton-mass map is the Skein/Kashaev-volume identity Vol(4_1)/hbar_q^2, which is CALIBRATED to CODATA via CAL-2 (conj:lepton-mass-tower-canonical, Phase 3 finding) -- it is a Kashaev q->1 LIMIT identity, NOT a q0 operator ratio. This script does NOT reproduce or wire that calibrated path; it reports the RAW direct ratio so the ~10^3x gap is visible as the catch (a coupling chosen to close it would be the fit the discipline review catches). No fit.",
+    "S_5-equivariance selection: Z_n -> S_5 exists iff S_5 has an order-n element. Element orders of S_5 = {1,2,3,4,5,6} (lcm of partition parts of 5). Odd n>=3 (forced by gcd(2,n)=1, fermion sector) gives exactly {3,5} = electron + muon. n=7 (tau) is genus-3<=4 so embeds topologically but its Z_7 has no order-7 element in S_5 -> symmetry-broken. This is a GROUP-THEORETIC FACT, not a fit; the 2+1 generation split (symmetry-preserving e,mu + symmetry-broken tau) is what the framework predicts (rem:symmetry-preserving-leptons), compared RAW to the 3 observed generations (falsification ref)."
+  ]
+}
