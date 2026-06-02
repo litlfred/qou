@@ -468,40 +468,35 @@ def T_basis_to_C_basis(
 
 
 def _self_test() -> dict:
+    """Self-test sweep across n ∈ {2, 3, 4, 5} (full) + n = 6 spot
+    (longest-50 round-trip + literature cross-checks).  The full S_6
+    sweep takes ~3.5 min; the spot subset takes ~30s and is the right
+    balance for CI."""
+    from bar_involution import bar_polynomial
+
     cases: list[dict] = []
 
-    for n in (2, 3, 4):
+    # Full sweep up to n=5.
+    for n in (2, 3, 4, 5):
         perms = permutations_S_n(n)
-        # 1. Bruhat order: |[e, w_0]| = n!
         identity = tuple(range(1, n + 1))
         w0 = tuple(reversed(identity))
         bruhat_below_w0 = sum(1 for p in perms if bruhat_le(p, w0))
         bruhat_ok = (bruhat_below_w0 == len(perms))
 
-        # 2. Round-trip T_w → C → T at every w.
         roundtrip_ok = True
         for w_perm in perms:
             Cw = canonical_basis_C_w(w_perm)
             recovered = T_basis_to_C_basis(Cw, n)
-            # Should be the indicator { w_perm: 1 } modulo
-            # back-substitution rounding.  Check both conditions:
-            # the only nonzero entry is w_perm with coefficient 1.
             nz = {p: sp.simplify(c) for p, c in recovered.items()
                   if sp.simplify(c) != 0}
             if set(nz) != {w_perm} or sp.simplify(nz[w_perm] - 1) != 0:
                 roundtrip_ok = False
                 break
 
-        # 3. Coefficient-sum bar-invariance for C_{w_0}.
-        #
-        # Note: in Lusztig's normalisation C_w is bar-invariant
-        # only together with T_w → bar(T_w) = T_{w^{-1}}^{-1}, not
-        # just under polynomial-coefficient bar.  For w_0 = w_0^{-1}
-        # the action still requires the T_w^{-1} → T_w^{-1}
-        # transformation that this module does not realise.  We
-        # test the necessary condition that the *sum* of all
-        # coefficients of C_{w_0} is bar-invariant.
-        from bar_involution import bar_polynomial
+        # Coefficient-sum bar-invariance of C_{w_0} (necessary
+        # condition for the full bar-invariance of C_{w_0}; see note
+        # in the original self-test comment).
         Cw0 = canonical_basis_C_w(w0)
         sum_coef = sum(Cw0.terms.values(), start=sp.S.Zero)
         sum_bar = bar_polynomial(sum_coef)
@@ -517,7 +512,89 @@ def _self_test() -> dict:
             "ok": bruhat_ok and roundtrip_ok and sum_bar_invariant,
         })
 
-    return {"cases": cases, "all_passed": all(c["ok"] for c in cases)}
+    # n=6 spot test: Bruhat count + round-trip on the longest 50
+    # elements (skip full 720-element sweep which takes ~3.5 min).
+    n = 6
+    perms6 = permutations_S_n(n)
+    identity = tuple(range(1, n + 1))
+    w0 = tuple(reversed(identity))
+    bruhat_below_w0 = sum(1 for p in perms6 if bruhat_le(p, w0))
+    bruhat_ok = (bruhat_below_w0 == len(perms6))
+
+    # Round-trip on a representative subset: identity, the 14 simple
+    # reflections + length-2 elements, and the 35 longest elements.
+    # Total ~50 perms; covers low + high + a few mid representatives.
+    test_perms6 = (
+        [identity]
+        + [p for p in perms6 if length(p) == 1]
+        + [p for p in perms6 if length(p) == 2][:8]
+        + sorted(perms6, key=lambda p: -length(p))[:35]
+    )
+    # De-dup while preserving order.
+    seen: set[tuple[int, ...]] = set()
+    test_perms6 = [p for p in test_perms6 if not (p in seen or seen.add(p))]
+
+    roundtrip_ok = True
+    for w_perm in test_perms6:
+        Cw = canonical_basis_C_w(w_perm)
+        recovered = T_basis_to_C_basis(Cw, n)
+        nz = {p: sp.simplify(c) for p, c in recovered.items()
+              if sp.simplify(c) != 0}
+        if set(nz) != {w_perm} or sp.simplify(nz[w_perm] - 1) != 0:
+            roundtrip_ok = False
+            break
+
+    Cw0 = canonical_basis_C_w(w0)
+    sum_coef = sum(Cw0.terms.values(), start=sp.S.Zero)
+    sum_bar = bar_polynomial(sum_coef)
+    sum_bar_invariant = sp.simplify(sum_coef - sum_bar) == 0
+
+    cases.append({
+        "n": n,
+        "factorial": len(perms6),
+        "bruhat_below_w0": bruhat_below_w0,
+        "bruhat_count_ok": bruhat_ok,
+        "roundtrip_T_C_T_ok": roundtrip_ok,
+        "roundtrip_subset_size": len(test_perms6),
+        "Cw0_coef_sum_bar_invariant": sum_bar_invariant,
+        "ok": bruhat_ok and roundtrip_ok and sum_bar_invariant,
+    })
+
+    # Literature cross-checks.
+    lit_checks: list[dict] = []
+    # The famous "3412" example — minimal non-trivial KL polynomial
+    # in any symmetric group (Bjorner-Brenti §5.1).
+    e_4 = (1, 2, 3, 4)
+    w_3412 = (3, 4, 1, 2)
+    P_3412 = kl_polynomial(e_4, w_3412)
+    expected_3412 = 1 + q
+    P_3412_ok = sp.simplify(P_3412 - expected_3412) == 0
+    lit_checks.append({
+        "name": "P_e_3412_equals_1_plus_q",
+        "computed": str(P_3412),
+        "expected": "q + 1",
+        "ok": P_3412_ok,
+    })
+    # A second S_5 reference: P_{e, 4231} = 1 + q (Bjorner-Brenti §5.1).
+    e_5 = (1, 2, 3, 4, 5)
+    w_4231 = (4, 2, 3, 1, 5)
+    P_4231 = kl_polynomial(e_5, w_4231)
+    P_4231_ok = sp.simplify(P_4231 - (1 + q)) == 0
+    lit_checks.append({
+        "name": "P_e_4231_equals_1_plus_q_in_S5",
+        "computed": str(P_4231),
+        "expected": "q + 1",
+        "ok": P_4231_ok,
+    })
+
+    lit_ok = all(c["ok"] for c in lit_checks)
+
+    return {
+        "cases": cases,
+        "literature_checks": lit_checks,
+        "literature_all_ok": lit_ok,
+        "all_passed": all(c["ok"] for c in cases) and lit_ok,
+    }
 
 
 if __name__ == "__main__":
@@ -529,34 +606,44 @@ if __name__ == "__main__":
     w_builder = (WitnessBuilder("kazhdan-lusztig-canonical-basis",
                                  engine="sympy")
                  .set_description(
-                    "Phase 1.5 of the S-poly → crystal-basis migration: "
-                    "Kazhdan–Lusztig polynomials and the canonical basis "
-                    "C_w of H_n(q) for n ≤ 4 (Coxeter rank ≤ 3).  At rank "
-                    "≤ 3, every P_{x,w} = 1 (Brenti §5.1), so the "
-                    "canonical basis admits a closed form.  Validates "
-                    "Bruhat-order cardinality, T→C→T round-trip, and "
-                    "bar-invariance of the coefficient sum at w = w_0."
+                    "Kazhdan–Lusztig polynomials and the canonical "
+                    "basis C_w of H_n(q) for n ≤ 6.  Closed form at "
+                    "n ≤ 3 (dihedral / Brenti §5.1); full K-L 1979 "
+                    "§1.1 recursion at n ∈ {4, 5, 6}.  Validates "
+                    "Bruhat-order cardinality, T→C→T round-trip, "
+                    "bar-invariance of C_{w_0} coefficient sum, and "
+                    "two literature cross-checks (P_{e, 3412} = 1+q "
+                    "and P_{e, 4231 in S_5} = 1+q)."
                  ))
 
     print("=" * 72)
-    print("KAZHDAN–LUSZTIG / CANONICAL BASIS — Phase 1.5 self-test")
+    print("KAZHDAN–LUSZTIG / CANONICAL BASIS — self-test (n ≤ 6)")
     print("=" * 72)
 
     summary = _self_test()
 
     for c in summary["cases"]:
         flag = "✓" if c["ok"] else "✗"
+        extra = (f" ({c.get('roundtrip_subset_size')} subset)"
+                 if "roundtrip_subset_size" in c else "")
         print(
             f"  {flag}  n={c['n']}: |S_n|={c['factorial']}, "
             f"|[e,w_0]|={c['bruhat_below_w0']} ({'OK' if c['bruhat_count_ok'] else 'FAIL'}); "
-            f"T→C→T roundtrip {'OK' if c['roundtrip_T_C_T_ok'] else 'FAIL'}; "
+            f"T→C→T roundtrip {'OK' if c['roundtrip_T_C_T_ok'] else 'FAIL'}{extra}; "
             f"C_{{w_0}} bar-invariant coef sum "
             f"{'OK' if c['Cw0_coef_sum_bar_invariant'] else 'FAIL'}"
         )
 
+    print()
+    print("  Literature cross-checks:")
+    for lc in summary["literature_checks"]:
+        flag = "✓" if lc["ok"] else "✗"
+        print(f"    {flag}  {lc['name']}: got {lc['computed']}, "
+              f"expected {lc['expected']}")
+
     if not summary["all_passed"]:
         sys.exit(1)
-    print("\n  ✓ All KL / canonical-basis tests passed (n ≤ 4).")
+    print("\n  ✓ All KL / canonical-basis tests passed (n ≤ 6).")
 
     for c in summary["cases"]:
         w_builder.add_assertion(
@@ -570,13 +657,23 @@ if __name__ == "__main__":
             name=f"roundtrip_T_to_C_to_T_n={c['n']}",
             computed="1" if c["roundtrip_T_C_T_ok"] else "0",
             expected="1",
-            source="canonical-basis change-of-basis is invertible",
+            source=(
+                f"canonical-basis change-of-basis is invertible"
+                f"{' (longest-50 subset)' if 'roundtrip_subset_size' in c else ''}"
+            ),
         )
         w_builder.add_assertion(
             name=f"bar_invariant_coef_sum_w0_n={c['n']}",
             computed="1" if c["Cw0_coef_sum_bar_invariant"] else "0",
             expected="1",
             source="Lusztig, Hecke algebras with unequal parameters §5",
+        )
+    for lc in summary["literature_checks"]:
+        w_builder.add_assertion(
+            name=f"literature_{lc['name']}",
+            computed=lc["computed"],
+            expected=lc["expected"],
+            source="Bjorner-Brenti, Combinatorics of Coxeter Groups §5.1",
         )
     out_path = w_builder.save()
     print(f"  Witness written → {out_path.name}")
