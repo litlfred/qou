@@ -98,3 +98,35 @@ per-partition χ kernel for the embedded 2-nucleon sub-braids, runnable in CI.)
 (correct T/³He ordering, ³He −4.6 %), all zero-fit derivations. One residual
 left — per-bond growth (embedding) — and it is a single well-posed compute:
 each bond's `Δtr_M` from its *embedded* sub-braid.
+
+## Finding — the canonical braid is a CHAIN (A−1 interfaces, not C(A,2))
+
+Extracted the actual inter-nucleon interface count from `atom_braid_word_3A`
+(pure-Python, verified): `n_inter = len(atom_word) − len(free_word)`:
+
+| isotope | inter-nucleon interfaces | C(A,2) |
+|---|---|---|
+| D | 1 | 1 |
+| T | 2 | 3 |
+| ³He | 2 | 3 |
+| ⁴He | 3 | 6 |
+
+**The canonical atomic braid wires nucleons as a CHAIN: `A−1` inter-nucleon
+interfaces, not the all-pairs `C(A,2)`.** So the `C(A,2)` bond count in level-0/1
+is a combinatorial *model*, not the braid's topology. Two consequences:
+
+1. **The bond-TYPE T/³He ordering is robust** to the count model: chain
+   T = p–n–n = {pn, nn}, ³He = p–p–n = {pp, pn} → `B_T = B_pn+B_nn (5.02) >
+   B_³He = B_pp+B_pn (4.87)` — same ordering as the C(A,2) version (the
+   discriminator is the bond *composition*, which the chain preserves).
+2. **The embedding growth is even larger than first stated.** With only `A−1`
+   chain bonds, ⁴He's 3 interfaces × the isolated bond (~2.5 MeV) = 7.5 MeV vs
+   AME 28.3 — so the per-interface binding must grow ~3.8× under embedding. The
+   chain interfaces sit in a 12-strand braid and are strongly cooperative; the
+   per-bond growth (the remaining residual) is the dominant effect, and is
+   exactly the embedded-sub-braid `Δ|tr_M|` compute (Rust per-partition χ kernel,
+   CI) — the well-posed next step.
+
+**Net:** the structural picture is a chain of `A−1` strongly-embedded
+inter-nucleon bonds; the bond-TYPE composition is derived and gives the correct
+mirror ordering, and the open compute is the per-bond embedding growth (Rust χ).
