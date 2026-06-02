@@ -200,7 +200,7 @@ corrections by $\sim 10^{6}$–$10^{8}$ and is therefore not
 experimentally accessible at present. The framework's live
 falsification leverage is cross-sector: the same substrate $q_0$
 (fixed by $\mathrm{Vol}(4_1)$ in $m_p/m_e$) is tested against
-CODATA/PDG-precision mass and decay observables. See the
+high-precision mass and decay measurements. See the
 [operative-bar status audit](../../../docs/audits/2026-06-01-casimir-operative-bar-status.md).
 
 A *weaker* partial test: if the $1/d^{4}$ scaling is recovered

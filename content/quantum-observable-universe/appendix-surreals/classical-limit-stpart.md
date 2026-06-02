@@ -97,7 +97,7 @@ topology required. Whether the two formulations give the same
 answer is the conjecture above.
 
 If true, the conjecture would let the entire classical-limit
-discussion in the paper (Möbius energy comparison; CODATA
+discussion in the paper (Möbius energy comparison; experimental
 benchmarks; $\hbar_q \to 0$ etc.) be re-stated as
 standard-part identities, eliminating one source of analytic
 machinery.

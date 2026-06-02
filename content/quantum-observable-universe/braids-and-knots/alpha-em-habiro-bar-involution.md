@@ -12,7 +12,7 @@ These are **fibre-level** statements: $q$ is a formal variable with no
 reality or archimedean constraint imposed. The operative symmetry is
 the bar involution $q \mapsto q^{-1}$ — the framework/tower involution
 structure — not a reality assumption. Only the *observable* component,
-read off at the archimedean substrate value $q_0$, is real; the
+read off at the archimedean substrate evaluation, is real; the
 involution structure itself holds over the formal fibre.
 
 ## Significance
