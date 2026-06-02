@@ -514,6 +514,11 @@ if __name__ == "__main__":
 
     # Emit witness via WitnessBuilder for reproducible staleness metadata.
     w = WitnessBuilder("per-observable-100x-status", engine="python")
+    # Declare contentBlock so `run_pipeline.py --content-only` recognises
+    # this witness as wired (per Copilot review on PR #1690 — without
+    # `set_content_block`, the witness is treated as orphan by the
+    # auto-refresh CI step regardless of any .ts manifest pointing at it).
+    w.set_content_block("rem:per-observable-100x-status-dashboard")
     w.set_description(out["description"])
     w.add_data("rows", out["rows"])
     w.add_data("summary", out["summary"])

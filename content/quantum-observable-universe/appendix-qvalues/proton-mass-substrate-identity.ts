@@ -40,7 +40,7 @@ export default proposition({
     "chlouveraki2016hdr",
   ],
   lean: {
-    ref: "qou:QOU.AppendixQValues.ProtonMassSubstrateIdentity.proton_mass_substrate_identity_empirical",
+    ref: "qou:QOU.AppendixQValues.proton_mass_substrate_identity_empirical",
     validation: "not_checked",
   },
   tags: [

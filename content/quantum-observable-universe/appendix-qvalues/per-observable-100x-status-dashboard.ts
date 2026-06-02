@@ -18,7 +18,19 @@ export default remark({
   label: "rem:per-observable-100x-status-dashboard",
   title:
     "Per-observable 100× experimental status dashboard (L2 precision-goal)",
-  interprets: "prop:proton-mass-substrate-identity",
+  // Tagged as a glossary-style status block: it does not interpret a
+  // specific provable claim; it surfaces the live L2 dashboard so the
+  // witness is auto-regenerated. Avoids the `interprets:` field (per
+  // Copilot review on PR #1690 — `interprets` is reserved for remarks
+  // that comment on a specific provable block).
+  tags: [
+    "glossary",
+    "dashboard",
+    "precision-goals",
+    "L2-100x-experimental",
+    "auditable",
+    "paper-compute-wiring",
+  ],
   computation: {
     engine: "python",
     script: "folio-assistant/computations/per_observable_100x_status.py",
@@ -27,11 +39,4 @@ export default remark({
     status: "verified",
     requires: ["mpmath"],
   },
-  tags: [
-    "dashboard",
-    "precision-goals",
-    "L2-100x-experimental",
-    "auditable",
-    "paper-compute-wiring",
-  ],
 });
