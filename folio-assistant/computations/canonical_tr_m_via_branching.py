@@ -443,7 +443,7 @@ def main() -> int:
                 verdict = f"vs markov_peel rel_err={float(rel):.2e}"
             except Exception as e:  # noqa: BLE001
                 verdict = f"verify failed: {type(e).__name__}"
-        print(f"  {atom_str:<6} {A:>2} {n:>3} {tr_str:<22} {wall:>10.2f} {verdict[:30]}")
+        print(f"  {atom_str:<6} {A:>2} {n:>3} {tr_str:<22} {wall:>10.2f} {verdict}")
     return 0
 
 
