@@ -14,34 +14,35 @@
  * kernel and libhecke_engine_c.
  */
 
+#include <stdio.h>
 #include "gap_all.h"
 #include "hecke_engine.h"    /* from tools/hecke-engine-c/include/ */
 
 /* ── version ── */
-static Obj QouHeckeCVersion(Obj self) {
+static Obj Func_QOU_HECKE_C_VERSION(Obj self) {
     const char* v = qou_hecke_version();
     return MakeString(v);
 }
 
 /* ── scalar f64 → f64 helpers ── */
-static Obj QouHeckeCMarkovZ(Obj self, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_MarkovZ: q must be a float", 0, 0);
+static Obj Func_QOU_HECKE_C_MARKOV_Z(Obj self, Obj q) {
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_MarkovZ: q must be a float", 0, 0);
     return NEW_MACFLOAT(qou_hecke_markov_z(VAL_MACFLOAT(q)));
 }
 
-static Obj QouHeckeCHeckeH(Obj self, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_HeckeH: q must be a float", 0, 0);
+static Obj Func_QOU_HECKE_C_HECKE_H(Obj self, Obj q) {
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_HeckeH: q must be a float", 0, 0);
     return NEW_MACFLOAT(qou_hecke_h(VAL_MACFLOAT(q)));
 }
 
-static Obj QouHeckeCGramDet(Obj self, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_GramDet: q must be a float", 0, 0);
+static Obj Func_QOU_HECKE_C_GRAM_DET(Obj self, Obj q) {
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_GramDet: q must be a float", 0, 0);
     return NEW_MACFLOAT(qou_hecke_gram_det(VAL_MACFLOAT(q)));
 }
 
 /* ── vector returns (length-6 floats) ── */
-static Obj QouHeckeCTraceWeights(Obj self, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_TraceWeights: q must be a float", 0, 0);
+static Obj Func_QOU_HECKE_C_TRACE_WEIGHTS(Obj self, Obj q) {
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_TraceWeights: q must be a float", 0, 0);
     double out[6];
     qou_hecke_trace_weights(VAL_MACFLOAT(q), out);
 
@@ -55,8 +56,8 @@ static Obj QouHeckeCTraceWeights(Obj self, Obj q) {
 }
 
 /* ── 36-float gram-matrix flatten ── */
-static Obj QouHeckeCGramMatrixFlat(Obj self, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_GramMatrix: q must be a float", 0, 0);
+static Obj Func_QOU_HECKE_C_GRAM_MATRIX_FLAT(Obj self, Obj q) {
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_GramMatrix: q must be a float", 0, 0);
     double out[36];
     qou_hecke_gram_matrix_flat(VAL_MACFLOAT(q), out);
 
@@ -132,9 +133,9 @@ static int plist_to_i32_array(Obj plist, int32_t** out_arr, size_t* out_len,
  *       word_gens (plist of signed ints),
  *       word_exps (plist of nonneg ints, same length as word_gens),
  *       q (float). */
-static Obj QouHeckeCChiLambdaBraid(Obj self, Obj shape, Obj word_gens,
+static Obj Func_QOU_HECKE_C_CHI_LAMBDA_BRAID(Obj self, Obj shape, Obj word_gens,
                                     Obj word_exps, Obj q) {
-    if (!IS_FLOAT(q)) ErrorMayQuit("QOU_ChiLambdaBraid: q must be a float", 0, 0);
+    if (!IS_MACFLOAT(q)) ErrorMayQuit("QOU_ChiLambdaBraid: q must be a float", 0, 0);
     size_t shape_len, gens_len, exps_len;
     size_t* shape_arr = NULL;
     int32_t* gens_arr = NULL;
@@ -187,7 +188,7 @@ static Obj QouHeckeCChiLambdaBraid(Obj self, Obj shape, Obj word_gens,
 }
 
 /* QOU_LRCoefficient: c^lambda_{mu nu}. */
-static Obj QouHeckeCLRCoefficient(Obj self, Obj lambda, Obj mu, Obj nu) {
+static Obj Func_QOU_HECKE_C_LR_COEFFICIENT(Obj self, Obj lambda, Obj mu, Obj nu) {
     size_t lam_len, mu_len, nu_len;
     size_t* lam_arr = NULL;
     size_t* mu_arr  = NULL;
@@ -209,7 +210,7 @@ static Obj QouHeckeCLRCoefficient(Obj self, Obj lambda, Obj mu, Obj nu) {
 }
 
 /* QOU_TraceMpfr: arbitrary-precision Markov trace. */
-static Obj QouHeckeCTraceMpfr(Obj self, Obj word_signs, Obj word_gens,
+static Obj Func_QOU_HECKE_C_TR_M_ATOMIC_MPFR(Obj self, Obj word_signs, Obj word_gens,
                                Obj n_strands, Obj q_str, Obj dps) {
     if (!IS_INTOBJ(n_strands) || INT_INTOBJ(n_strands) < 1)
         ErrorMayQuit("QOU_TraceMpfr: n_strands must be a positive small int", 0, 0);

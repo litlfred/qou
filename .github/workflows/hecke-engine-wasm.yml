@@ -169,12 +169,26 @@ jobs:
         working-directory: tools/hecke-engine-wasm
         run: cargo test --lib --verbose
 
+      - name: Install wasm-bindgen-cli (pinned to crate version)
+        # `wasm-pack --mode no-install` doesn't download
+        # wasm-bindgen-cli at build time, which means it has to be on
+        # PATH already.  Pin to the same version as the wasm-bindgen
+        # crate in our Cargo.lock so the CLI / lib pair is in lock-
+        # step.  --locked + --force avoid stale-binary surprises if a
+        # cached cargo install has a different version.
+        run: |
+          WBINDGEN_VERSION=$(grep -A1 '^name = "wasm-bindgen"$' \
+            tools/hecke-engine-wasm/Cargo.lock | grep '^version' \
+            | head -1 | sed 's/.*"\(.*\)"/\1/')
+          echo "Installing wasm-bindgen-cli version $WBINDGEN_VERSION"
+          cargo install --locked --force --version "$WBINDGEN_VERSION" wasm-bindgen-cli
+
       - name: wasm-pack build --release --target web
         working-directory: tools/hecke-engine-wasm
         # --mode no-install: don't try to download wasm-bindgen-cli at
-        # build time (we trust wasm-pack's bundled version for the
-        # pinned 0.13.0).  Verbose so any failure surfaces the actual
-        # cargo / wasm-bindgen step that errored.
+        # build time (we install it in the step above so the version
+        # matches our Cargo.lock).  Verbose so any failure surfaces
+        # the actual cargo / wasm-bindgen step that errored.
         run: wasm-pack build --release --target web --mode no-install -- --verbose
 
       - name: Verify WASM artifact size + presence

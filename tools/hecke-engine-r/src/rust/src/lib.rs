@@ -169,7 +169,7 @@ fn qou_tr_m_atomic_mpfr(
 // extendr macro that generates the R package boilerplate
 // (wrapper.so registration + NAMESPACE entries).
 extendr_module! {
-    mod hecke_engine_r;
+    mod heckeengine;
     fn qou_version;
     fn qou_markov_z;
     fn qou_hecke_h;

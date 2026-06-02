@@ -68,11 +68,6 @@ jobs:
         with:
           name: hecke-engine-c
           path: tools/hecke-engine-c/
-      - name: Restore artefact layout
-        run: |
-          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
-          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
-          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
       - name: Build smoke binary
         run: |
           cd tools/hecke-engine-c
@@ -96,23 +91,26 @@ jobs:
       - name: Install Octave + system deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y octave liboctave-dev libgmp-dev libmpfr-dev
+          sudo apt-get install -y octave octave-dev libgmp-dev libmpfr-dev
       - uses: actions/download-artifact@v4
         with:
           name: hecke-engine-c
           path: tools/hecke-engine-c/
-      - name: Restore artefact layout
-        run: |
-          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
-          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
-          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
       - name: Build MEX files
         run: cd tools/hecke-engine-octave && make
       - name: Run smoke
         run: |
           cd tools/hecke-engine-octave
-          LD_LIBRARY_PATH=../hecke-engine-c/target/release \
-            octave --no-gui --eval "addpath('.'); cd test; smoke"
+          # `LD_LIBRARY_PATH` is consulted at dlopen-time relative to
+          # the *current* CWD if it contains a relative path; once
+          # Octave does `cd test` inside the eval, a relative
+          # `../hecke-engine-c/target/release` resolves to
+          # `tools/hecke-engine-octave/hecke-engine-c/...` (wrong dir).
+          # Use the absolute path so the resolution is CWD-invariant.
+          # Same for `addpath(pwd)` — register absolute MEX dir before
+          # entering test/.
+          LD_LIBRARY_PATH="$GITHUB_WORKSPACE/tools/hecke-engine-c/target/release" \
+            octave --no-gui --eval "addpath(pwd); cd test; smoke"
 
   # ── 4. Julia smoke ──
   julia-smoke:
@@ -127,11 +125,6 @@ jobs:
         with:
           name: hecke-engine-c
           path: tools/hecke-engine-c/
-      - name: Restore artefact layout
-        run: |
-          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
-          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
-          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
       - uses: julia-actions/setup-julia@v2
         with:
           version: '1.11'
@@ -157,16 +150,14 @@ jobs:
       - name: Install GAP + system deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y gap autoconf libtool libgmp-dev libmpfr-dev gcc make
+          # `libgap-dev` provides /usr/include/gap/{gap_all.h,…} headers
+          # the kernel extension's HeckeEngine.c #includes.  Without it
+          # `gap` alone installs the runtime only.
+          sudo apt-get install -y gap libgap-dev autoconf libtool libgmp-dev libmpfr-dev gcc make
       - uses: actions/download-artifact@v4
         with:
           name: hecke-engine-c
           path: tools/hecke-engine-c/
-      - name: Restore artefact layout
-        run: |
-          mkdir -p tools/hecke-engine-c/target/release tools/hecke-engine-c/include
-          mv tools/hecke-engine-c/libhecke_engine_c.so tools/hecke-engine-c/target/release/
-          mv tools/hecke-engine-c/hecke_engine.h        tools/hecke-engine-c/include/
       - name: Locate GAP root
         id: gaproot
         run: |
@@ -184,7 +175,12 @@ jobs:
           ./configure \
             --with-gaproot=${{ steps.gaproot.outputs.gaproot }} \
             --with-hecke-engine-c=$GITHUB_WORKSPACE/tools/hecke-engine-c
-          make
+          # The apt-installed GAP's sysinfo.gap leaves GAC_CFLAGS empty
+          # (Debian/Ubuntu's packaging variant), so configure.ac propagates
+          # an empty GAP_CFLAGS into the Makefile.  Override GAP_CFLAGS on
+          # the make command-line to point at libgap-dev's header dir,
+          # which is where `gap_all.h` actually lives.
+          make GAP_CFLAGS="-I/usr/include/gap"
       - name: Run smoke.tst
         run: |
           cd tools/hecke-engine-gap
@@ -226,20 +222,40 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: tools/hecke-engine-jvm -> target
-      - name: cargo test
-        run: cd tools/hecke-engine-jvm && cargo test --release
+      - name: cargo test + build cdylib
+        # `cargo test` only builds the test harness; uniffi-bindgen needs
+        # the cdylib (target/release/libhecke_engine_jvm.so), so an
+        # explicit `cargo build --release` ensures the .so exists.
+        run: |
+          cd tools/hecke-engine-jvm
+          cargo test --release
+          cargo build --release
       - name: Generate Kotlin bindings
+        # The crate uses UDL-based scaffolding
+        # (`uniffi::include_scaffolding!` in src/lib.rs + build.rs runs
+        # `uniffi::generate_scaffolding(".../hecke_engine_jvm.udl")`).
+        # For UDL crates, uniffi-bindgen's `--library` flag does NOT
+        # work — it only extracts metadata from proc-macro-defined
+        # crates.  Pass the .udl file path directly instead.  See
+        # https://mozilla.github.io/uniffi-rs/0.28/tutorial/foreign_language_bindings.html
         run: |
           cd tools/hecke-engine-jvm
           cargo run --release --bin uniffi-bindgen generate \
-            --library target/release/libhecke_engine_jvm.so \
+            src/hecke_engine_jvm.udl \
             --language kotlin \
             --out-dir bindings/kotlin/
           # Verify Kotlin file produced + has the expected public surface.
-          test -f bindings/kotlin/uniffi/hecke_engine_jvm/hecke_engine_jvm.kt
+          # uniffi 0.28 honours `package_name = "org.litlfred.qou.hecke_engine"`
+          # from uniffi.toml, so the generated file lands under that
+          # gradle-style path — NOT under `uniffi/hecke_engine_jvm/`.
+          # UDL function names are emitted as `fun \`name\`(...)` with
+          # backticks (Kotlin reserved-keyword guard); the grep pattern
+          # must include them.
+          KT=bindings/kotlin/org/litlfred/qou/hecke_engine/hecke_engine_jvm.kt
+          test -f "$KT"
           for fn in version markovZ heckeH traceWeights gramMatrixFlat \
                     gramDet chiLambdaBraid lrCoefficient trMAtomicMpfr; do
-            grep -q "fun $fn" bindings/kotlin/uniffi/hecke_engine_jvm/hecke_engine_jvm.kt \
+            grep -q "fun \`$fn\`" "$KT" \
               || { echo "missing fun $fn in generated Kotlin"; exit 1; }
           done
           echo "Kotlin bindings generated with all 9 Phase A+B functions present."
@@ -303,14 +319,77 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
         with:
-          workspaces: tools/hecke-engine-r -> target
-      - name: Install rextendr
-        run: Rscript -e 'install.packages("rextendr", repos="https://cloud.r-project.org")'
+          # rextendr 0.4 layout: Rust crate lives at src/rust/Cargo.toml,
+          # not the package root.
+          workspaces: tools/hecke-engine-r/src/rust -> target
+      - name: Install rextendr + devtools (RSPM binary repo)
+        # The Posit Package Manager (RSPM) URL in the env block above
+        # serves *binary* packages for noble — no source compilation,
+        # no transitive-dep cascade.  Both rextendr 0.4+ and recent
+        # extendr-based packages REQUIRE `devtools::document()`
+        # (rextendr::register_extendr() became a no-op deprecation in
+        # 0.4.0).  Round-3's "skip devtools" gambit hit a real
+        # rextendr version barrier; RSPM binary install is fast and
+        # reliable.
+        run: Rscript -e 'install.packages(c("rextendr", "pkgload", "devtools"))'
       - name: Build + load + smoke
         run: |
           cd tools/hecke-engine-r
-          Rscript -e 'rextendr::document(".")'
-          Rscript -e 'devtools::load_all("."); source("tests/smoke.R")'
+          # rextendr 0.5 deprecated rextendr::document() AND the explicit
+          # extendr_roclet name simultaneously — the only forward-
+          # compatible path is the auto-bootstrap entry point:
+          #
+          #   use_extendr() — idempotent; writes the right Roxygen
+          #     line into DESCRIPTION (whatever the installed rextendr
+          #     version names its roclet), confirms src/rust/Cargo.toml
+          #     + src/rust/src/lib.rs are in place.
+          #   devtools::document() — actually runs the roclet (which
+          #     use_extendr just registered), generating src/Makevars
+          #     + src/entrypoint.c + R/extendr-wrappers.R.
+          #   pkgload::load_all() — compile + load the cdylib.
+          #
+          # `overwrite = TRUE` is needed because the repo's DESCRIPTION
+          # is already set up; without it, use_extendr() refuses to
+          # update an existing config.
+          # use_extendr(overwrite=TRUE) bootstraps the package layout
+          # but ALSO overwrites src/rust/Cargo.toml and
+          # src/rust/src/lib.rs with rextendr's "hello_world" template
+          # — destroying our real #[extendr] functions in the process.
+          #
+          # Strategy:
+          #   - Keep use_extendr's Cargo.toml (it adds `[[bin]] document`
+          #     which Makevars depends on for R wrapper generation).
+          #     Inject only our `hecke-engine` path dependency.
+          #   - Restore our real lib.rs over the hello_world template
+          #     so the cargo `document` binary scans the right
+          #     #[extendr] functions.
+          cp src/rust/src/lib.rs /tmp/real_lib.rs
+          Rscript -e 'rextendr::use_extendr(quiet = TRUE, overwrite = TRUE)'
+          # Add the hecke-engine local-path dep under [dependencies].
+          sed -i '/^\[dependencies\]/a hecke-engine = { path = "../../../hecke-engine" }' \
+            src/rust/Cargo.toml
+          cp /tmp/real_lib.rs src/rust/src/lib.rs
+          # use_extendr() generates configure/cleanup shell scripts but
+          # leaves them non-executable (R generates them with 0644);
+          # R CMD INSTALL then complains "'cleanup' exists but is not
+          # executable".  Mark them +x here.
+          chmod +x configure cleanup 2>/dev/null || true
+          # roxygen2 refuses to overwrite a NAMESPACE that wasn't
+          # generated by itself ("It already exists and was not
+          # generated by roxygen2."), so the manually-committed
+          # NAMESPACE blocks the rextendr-derived `export(qou_*)`
+          # lines from landing — exports drift, every smoke call then
+          # errors `could not find function "qou_version"`.
+          #
+          # But we can't just `rm -f NAMESPACE` — devtools::document()
+          # internally runs pkgload::load_all() → pkgbuild::compile_dll
+          # → R CMD INSTALL BEFORE the roclet step, and R CMD INSTALL
+          # demands NAMESPACE exist.  Patch line 1 to the roxygen2
+          # magic comment so install passes and the post-install
+          # roclet step takes ownership.
+          sed -i '1c\# Generated by roxygen2: do not edit by hand' NAMESPACE
+          Rscript -e 'devtools::document(".")'
+          Rscript -e 'pkgload::load_all("."); source("tests/smoke.R")'
 
   # ── 10. SageMath examples smoke ──
   # Runs the vanilla-Python hecke_surface.py demo inside SageMath. The
@@ -330,9 +409,9 @@ jobs:
       - name: Install pyhecke + qou-substrate from local sources
         run: |
           sage -pip install --no-deps \
-            ./tools/qou-substrate/python \
-            ./tools/pyhecke/python \
-            ./tools/witness-schema/python
+            ./tools/qou-substrate \
+            ./tools/pyhecke \
+            ./tools/witness-schema
           sage -pip install pydantic numpy mpmath
       - name: Run hecke_surface.py (vanilla-Python smoke)
         run: |
