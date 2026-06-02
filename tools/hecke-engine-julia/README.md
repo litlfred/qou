@@ -1,5 +1,7 @@
 # HeckeEngine.jl
 
+> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `folio-assistant/computations/` clusters.*
+
 Julia bindings for [`hecke-engine`](../hecke-engine) via the [`hecke-engine-c`](../hecke-engine-c) C ABI. **Tier-3 wrapper** per [workplan v2 §3.6](../../docs/workplans/2026-05-24-library-reuse-production-readiness.md).
 
 ## Why Julia
