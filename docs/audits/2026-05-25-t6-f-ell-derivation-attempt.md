@@ -116,7 +116,7 @@ The next session should:
 
 ## Followup (2026-05-25, PR #1253) — tau amphichiral q-bracket finding
 
-Per owner directive "tau is not torus knot; knot operator = symmetries → should be same as 1st gen. verify via SDP solutions" (where "same as 1st gen" was interpreted via muon = 4_1 amphichirality), [`folio-assistant/computations/tau_amphichiral_sdp_probe.py`](../../folio-assistant/computations/tau_amphichiral_sdp_probe.py) filtered SnapPy census to 12 amphichiral hyperbolic knots and tested q-bracket-corrected closures.
+Per owner directive "tau is not torus knot; knot operator = symmetries → should be same as 1st gen. verify via SDP solutions" (where "same as 1st gen" was interpreted via muon = 4_1 amphichirality), [`folio-assistant/computations/probes/tau_amphichiral_sdp_probe.py`](../../folio-assistant/computations/probes/tau_amphichiral_sdp_probe.py) filtered SnapPy census to 12 amphichiral hyperbolic knots and tested q-bracket-corrected closures.
 
 **Two candidates close to <1%** (both improving on PR #1250's torus-knot best of 1.33%):
 

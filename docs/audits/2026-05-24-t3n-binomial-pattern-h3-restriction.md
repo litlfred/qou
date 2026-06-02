@@ -16,7 +16,7 @@ The obvious next question: **does the binomial pattern $c_{2j}(T(2,2m)) = \binom
 
 ## §2. The probe
 
-[`folio-assistant/computations/t3n_binomial_pattern_probe.py`](../../folio-assistant/computations/t3n_binomial_pattern_probe.py) builds the Hoefsmit (2,1) standard rep of H_3(q) symbolically:
+[`folio-assistant/computations/probes/t3n_binomial_pattern_probe.py`](../../folio-assistant/computations/probes/t3n_binomial_pattern_probe.py) builds the Hoefsmit (2,1) standard rep of H_3(q) symbolically:
 
 $$\sigma_0 = \begin{pmatrix} q & 1 \\ 0 & -q^{-1}\end{pmatrix}, \quad \sigma_1 = \begin{pmatrix} -q^{-1} & 0 \\ 1 & q\end{pmatrix}$$
 

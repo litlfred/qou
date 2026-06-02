@@ -119,7 +119,7 @@ is REQUIRED before any candidate gets wired.
 
 ## Witness
 
-`folio-assistant/computations/qbeta-delta-tr-bar-decomposition-probe.witness.json`
+`folio-assistant/computations/probes/qbeta-delta-tr-bar-decomposition-probe.witness.json`
 
 Includes the symbolic decomposition + numerical sanity check
 (sym + antisym = Δtr_M to 1e-12 at q_proton).

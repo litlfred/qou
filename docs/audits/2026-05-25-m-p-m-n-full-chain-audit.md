@@ -284,7 +284,7 @@ The "+1·h⁴ residual" (α ≈ 1.011) sits **additively** on top of the
 Bring base, NOT inside Yekutieli.
 
 ### Probe 2: h⁴ from 13 canonical drivers
-[`h4_categorical_drivers_probe.py`](../../folio-assistant/computations/h4_categorical_drivers_probe.py)
+[`h4_categorical_drivers_probe.py`](../../folio-assistant/computations/probes/h4_categorical_drivers_probe.py)
 — tests 7 of the 13 drivers for which produces α ≈ 1.011 cleanly.
 **Two drivers converge on +1·h⁴ at leading order**:
 
@@ -304,7 +304,7 @@ the empirical α — both KLR positivity (smallest positive integer) and
 Faddeev iteration (1/(1−h⁴) ≈ 1 + h⁴ at leading order) agree.
 
 ### Probe 3: combined m_p, m_n prediction
-[`m_p_bring_plus_faddeev_h4_probe.py`](../../folio-assistant/computations/m_p_bring_plus_faddeev_h4_probe.py)
+[`m_p_bring_plus_faddeev_h4_probe.py`](../../folio-assistant/computations/probes/m_p_bring_plus_faddeev_h4_probe.py)
 — tests the combined form
 `linking_weight(q) = 1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1` at q₀:
 

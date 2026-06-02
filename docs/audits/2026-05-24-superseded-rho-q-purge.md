@@ -54,7 +54,7 @@ archimedean-universe/e-hartree-categorical-derivation.md
 
 ```
 folio-assistant/computations/q_pinning_50_digit.py
-folio-assistant/computations/rho_f_categorical_probe.py
+folio-assistant/computations/probes/rho_f_categorical_probe.py
 ```
 
 ### Implicit ρ_q usage (Skein formula `Vol(4_1)/ℏ_q²` without naming ρ_q)

@@ -26,7 +26,7 @@ This audit attempts that derivation.
 ## Method
 
 The probe script
-[`folio-assistant/computations/v9_one_plus_q_categorical_derivation_probe.py`](../../folio-assistant/computations/v9_one_plus_q_categorical_derivation_probe.py)
+[`folio-assistant/computations/probes/v9_one_plus_q_categorical_derivation_probe.py`](../../folio-assistant/computations/probes/v9_one_plus_q_categorical_derivation_probe.py)
 tests 7 candidate categorical derivations at 50 dps:
 
 | # | Candidate | Categorical narrative |
@@ -182,9 +182,9 @@ The v9 formula remains in the **"near-match"** tier — promoted from
 ## Cross-references
 
 - Probe script:
-  [`folio-assistant/computations/v9_one_plus_q_categorical_derivation_probe.py`](../../folio-assistant/computations/v9_one_plus_q_categorical_derivation_probe.py)
+  [`folio-assistant/computations/probes/v9_one_plus_q_categorical_derivation_probe.py`](../../folio-assistant/computations/probes/v9_one_plus_q_categorical_derivation_probe.py)
 - Witness:
-  `folio-assistant/computations/v9-one-plus-q-categorical-derivation-probe.witness.json`
+  `folio-assistant/computations/probes/v9-one-plus-q-categorical-derivation-probe.witness.json`
 - v9 baseline:
   [`folio-assistant/computations/option_e_v9_all_symmetries.py`](../../folio-assistant/computations/option_e_v9_all_symmetries.py)
   (commit `30c5393b7`)

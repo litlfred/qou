@@ -1,8 +1,8 @@
 # A^λ_{μν}(I) structural rank — empirical findings + interface taxonomy
 
 **Branch.** `claude/kite-tail-reconciliation` (PR #616).
-**Witness.** [`A-operator-rank-probe.witness.json`](../../folio-assistant/computations/A-operator-rank-probe.witness.json)
-**Probe.** [`A_operator_rank_probe.py`](../../folio-assistant/computations/A_operator_rank_probe.py)
+**Witness.** [`A-operator-rank-probe.witness.json`](../../folio-assistant/computations/probes/A-operator-rank-probe.witness.json)
+**Probe.** [`A_operator_rank_probe.py`](../../folio-assistant/computations/probes/A_operator_rank_probe.py)
 
 ## TL;DR
 
@@ -294,7 +294,7 @@ algebras of type A_n and crystal bases*.
 
 ## Files
 
-- [`folio-assistant/computations/A_operator_rank_probe.py`](../../folio-assistant/computations/A_operator_rank_probe.py)
-- [`folio-assistant/computations/A-operator-rank-probe.witness.json`](../../folio-assistant/computations/A-operator-rank-probe.witness.json)
+- [`folio-assistant/computations/probes/A_operator_rank_probe.py`](../../folio-assistant/computations/probes/A_operator_rank_probe.py)
+- [`folio-assistant/computations/probes/A-operator-rank-probe.witness.json`](../../folio-assistant/computations/probes/A-operator-rank-probe.witness.json)
 - [`folio-assistant/computations/A_operator_extract_general.py`](../../folio-assistant/computations/A_operator_extract_general.py)
 - [`folio-assistant/computations/lr_coefficients.py`](../../folio-assistant/computations/lr_coefficients.py)

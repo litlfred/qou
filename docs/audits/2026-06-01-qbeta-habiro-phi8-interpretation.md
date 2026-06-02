@@ -27,7 +27,7 @@
 > probe [`2026-05-31-qbeta-habiro-cross-pair-quick-dp.md`](2026-05-31-qbeta-habiro-cross-pair-quick-dp.md).
 >
 > Branch: `claude/brave-mendel-FPxFl` (PR #1579).
-> Probe script: [`folio-assistant/computations/qbeta_habiro_phi8_interpretation_probe.py`](../../folio-assistant/computations/qbeta_habiro_phi8_interpretation_probe.py).
+> Probe script: [`folio-assistant/computations/probes/qbeta_habiro_phi8_interpretation_probe.py`](../../folio-assistant/computations/probes/qbeta_habiro_phi8_interpretation_probe.py).
 > Witness: `qbeta-habiro-phi8-interpretation.witness.json`.
 
 ## TL;DR

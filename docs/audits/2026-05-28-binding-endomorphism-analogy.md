@@ -272,7 +272,7 @@ the curvature 2-form $[F,F]$" — identified but unused in binding).
 
 ### Volume-difference: triple refutation at real q₀
 
-[`binding_volume_difference_probe.py`](../../folio-assistant/computations/binding_volume_difference_probe.py)
+[`binding_volume_difference_probe.py`](../../folio-assistant/computations/probes/binding_volume_difference_probe.py)
 tests $B=\rho\,[\mathrm{Vol}(\text{atom})-\mathrm{Vol}(\text{free})]$ with
 **derived** volumes (no census-knot fit): (A) $\log|\mathrm{tr}_M|$ — no
 derived ρ closes it; (B) cosh-inversion — all $|\mathrm{tr}_M|<2$

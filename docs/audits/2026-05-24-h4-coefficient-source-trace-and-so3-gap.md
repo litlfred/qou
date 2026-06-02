@@ -201,5 +201,5 @@ explicit at the proof level.
 - [`content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md) — exact closed form, h² = 0
 - [`content/quantum-observable-universe/braids-and-knots/knot-operator-bring-action.md`](../../content/quantum-observable-universe/braids-and-knots/knot-operator-bring-action.md) — S_3 ⊂ SO(3) gap
 - [`folio-assistant/computations/derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py) — source of `Vol/ℏ_q²`
-- [`folio-assistant/computations/geom_full_borromean_q_locality_probe.py`](../../folio-assistant/computations/geom_full_borromean_q_locality_probe.py) — q-locality probe (commit `ae70f99af`)
+- [`folio-assistant/computations/probes/geom_full_borromean_q_locality_probe.py`](../../folio-assistant/computations/probes/geom_full_borromean_q_locality_probe.py) — q-locality probe (commit `ae70f99af`)
 - [`folio-assistant/computations/geom-full-borromean-q-locality-probe.witness.json`](../../folio-assistant/computations/geom-full-borromean-q-locality-probe.witness.json) — witness data

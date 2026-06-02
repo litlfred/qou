@@ -130,4 +130,4 @@ two-chain structure into one.
 - [`content/quantum-observable-universe/archimedean-universe/cohomological-embedding.md`](../../content/quantum-observable-universe/archimedean-universe/cohomological-embedding.md) — §(iv) genus 4 FORCED by torus embedding
 - [`content/quantum-observable-universe/lean/QOU/BringsSurface.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface.lean) — `genus = 4` definition
 - [`folio-assistant/computations/rt_route_cross_particle_ratio_quantum_dim.py`](../../folio-assistant/computations/rt_route_cross_particle_ratio_quantum_dim.py) — sibling probe (this PR)
-- [`folio-assistant/computations/pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/pentagon_rt_torus_knot_higgs_probe.py) — Q2 (PR #1116) — used real $q_0$, not root-of-unity
+- [`folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py) — Q2 (PR #1116) — used real $q_0$, not root-of-unity

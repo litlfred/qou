@@ -26,7 +26,7 @@ After filtering, the only surviving drift line was:
 +        "ew-higgs-sdp-probe.witness.json",
 ```
 
-i.e. the witness file [`ew-higgs-sdp-probe.witness.json`](../../folio-assistant/computations/ew-higgs-sdp-probe.witness.json)
+i.e. the witness file [`ew-higgs-sdp-probe.witness.json`](../../folio-assistant/computations/probes/ew-higgs-sdp-probe.witness.json)
 that was *introduced* in commit `713e990e` (the EW/Higgs SDP probe).
 
 ## Why the drift exists

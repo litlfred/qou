@@ -203,4 +203,4 @@ constrain a closed form well enough to PSLQ at CODATA tolerance.
 - Existing T_{3,5} weak-vertex compute:
   [`folio-assistant/computations/t35-weak-vertex.witness.json`](../../folio-assistant/computations/t35-weak-vertex.witness.json)
 - Existing N_v numerology probe:
-  [`folio-assistant/computations/nv-categorical-derivation-probe.witness.json`](../../folio-assistant/computations/nv-categorical-derivation-probe.witness.json)
+  [`folio-assistant/computations/probes/nv-categorical-derivation-probe.witness.json`](../../folio-assistant/computations/probes/nv-categorical-derivation-probe.witness.json)

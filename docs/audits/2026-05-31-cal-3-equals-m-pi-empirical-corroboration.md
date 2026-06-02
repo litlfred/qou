@@ -30,7 +30,7 @@ provide independent corroboration of that assignment.
 
 ## Line of evidence 1 — negative-derivability probe (this PR)
 
-[`folio-assistant/computations/m_pi_hecke_prediction_probe.py`](../../folio-assistant/computations/m_pi_hecke_prediction_probe.py)
+[`folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py`](../../folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py)
 tested ~100 candidate categorical formulas for m_π from (m_e, q_0)
 alone, including:
 
@@ -117,7 +117,7 @@ calibration slots), the m_π assignment is over-determined.
 ## Cross-references
 
 - This audit: [`2026-05-31-cal-3-equals-m-pi-empirical-corroboration.md`](2026-05-31-cal-3-equals-m-pi-empirical-corroboration.md)
-- m_π Hecke probe: [`m_pi_hecke_prediction_probe.py`](../../folio-assistant/computations/m_pi_hecke_prediction_probe.py)
+- m_π Hecke probe: [`m_pi_hecke_prediction_probe.py`](../../folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py)
 - m_π witness: `m-pi-hecke-prediction-probe.witness.json`
 - c_3 derivation attempt audit: [`2026-05-31-c-3-categorical-derivation-attempt.md`](2026-05-31-c-3-categorical-derivation-attempt.md)
 - Canonical 3-calibration content block: [`content/quantum-observable-universe/mass-theory/three-calibration-inputs.md`](../../content/quantum-observable-universe/mass-theory/three-calibration-inputs.md)

@@ -256,7 +256,7 @@ To upgrade from justification to derivation, the proof must establish:
 
 ## Witness
 
-- [`folio-assistant/computations/lambda_scale_substrate_probe.py`](../../folio-assistant/computations/lambda_scale_substrate_probe.py)
+- [`folio-assistant/computations/probes/lambda_scale_substrate_probe.py`](../../folio-assistant/computations/probes/lambda_scale_substrate_probe.py)
 - [`folio-assistant/computations/lambda_scale_derivation_probes_123.py`](../../folio-assistant/computations/lambda_scale_derivation_probes_123.py)
 - [`folio-assistant/computations/m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
 - [`docs/audits/-lambda-scale-derivation-search.md`](../../../docs/audits/-lambda-scale-derivation-search.md)

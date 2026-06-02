@@ -103,7 +103,7 @@ empirical binding energies from CODATA atomic masses (working
 | [`channel_product_mass.py:102,121`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/channel_product_mass.py) | Same pattern | OK |
 | [`unified-mass-molecular.py:227,351`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/unified-mass-molecular.py) | Same pattern | OK |
 | [`categorical_q_decay_ba_low_isotopes.py:351`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/categorical_q_decay_ba_low_isotopes.py) | Constituent mass for $\beta$-decay $Q$-value extraction | OK |
-| [`path_b_defect_binding_probe.py:80`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/path_b_defect_binding_probe.py) | Baseline | OK (probe) |
+| [`path_b_defect_binding_probe.py:80`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probes/path_b_defect_binding_probe.py) | Baseline | OK (probe) |
 | [`delta_lambda_empirical_tabulation.py:395`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/delta_lambda_empirical_tabulation.py) | `# = ρ_K^LO · m_e · |tr_M|` — comment explicitly identifies the additive baseline with the ρ_K LO prediction | **Caveat: documents the tautology directly; safe under Class B framing** |
 
 ## Diagnostic / probe (Class C) — no fix required

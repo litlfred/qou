@@ -202,7 +202,7 @@ limit gives a baseline for measuring how much linking matters.
 ### From PR #548 (Δ_n² verification computes)
 
 [`full_twist_delta_n2_verification.py`](../../folio-assistant/computations/full_twist_delta_n2_verification.py)
-and [`full_twist_root_of_unity_probe.py`](../../folio-assistant/computations/full_twist_root_of_unity_probe.py)
+and [`full_twist_root_of_unity_probe.py`](../../folio-assistant/computations/probes/full_twist_root_of_unity_probe.py)
 established a **structural finding** on
 [`conj:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md):
 at magic n=2, the Δ_n²-invariant subspace is empty under generic-

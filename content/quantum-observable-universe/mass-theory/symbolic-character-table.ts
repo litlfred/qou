@@ -7,8 +7,8 @@ export default proposition({
   tags: ["character", "seminormal", "symbolic", "partition", "self-conjugate"],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/symbolic_character_table_probe.py",
-    witness: "folio-assistant/computations/symbolic-character-table-probe.witness.json",
+    script: "folio-assistant/computations/probes/symbolic_character_table_probe.py",
+    witness: "folio-assistant/computations/probes/symbolic-character-table-probe.witness.json",
     status: "verified",
   },
 });

@@ -5,8 +5,8 @@
 > would flip Q_β + m_n + Δ_pn green simultaneously on L2.
 >
 > Sibling: PR #1579 (`claude/brave-mendel-FPxFl`).
-> Probe script: `folio-assistant/computations/qbeta_habiro_element_probe.py`.
-> Witness: `folio-assistant/computations/qbeta-habiro-element-probe.witness.json`.
+> Probe script: `folio-assistant/computations/probes/qbeta_habiro_element_probe.py`.
+> Witness: `folio-assistant/computations/probes/qbeta-habiro-element-probe.witness.json`.
 
 ## TL;DR
 
@@ -179,8 +179,8 @@ with `Δa_m` decomposing into a low-degree polynomial generator.
 
 ## Files touched
 
-- **NEW:** `folio-assistant/computations/qbeta_habiro_element_probe.py`
-- **NEW:** `folio-assistant/computations/qbeta-habiro-element-probe.witness.json`
+- **NEW:** `folio-assistant/computations/probes/qbeta_habiro_element_probe.py`
+- **NEW:** `folio-assistant/computations/probes/qbeta-habiro-element-probe.witness.json`
 - **NEW:** `docs/audits/2026-05-31-qbeta-habiro-element-probe.md` (this file)
 
 ## Cross-refs
