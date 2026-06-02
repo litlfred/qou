@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+import Mathlib.Data.List.Basic
+
 /-!
 # QOU.Archimedean.nuclear_groebner_reduction — Unique nuclear normal form via Gröbner reduction
 
@@ -11,10 +15,6 @@ LaTeX label: `prop:nuclear-groebner-reduction`
 ## References
 - [manuscript] §6/nuclear-groebner-reduction
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
-import Mathlib.Data.List.Basic
 
 namespace QOU.Archimedean
 

@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.Notation
+
 /-!
 # QOU.Archimedean.noble_gas_characterization — noble gas iff full-of-curls
 

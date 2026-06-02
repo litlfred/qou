@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Torsion.quantum_dilogarithm — `tr_trans(ϱ, p_i) = Φ_q(z_i)`
 

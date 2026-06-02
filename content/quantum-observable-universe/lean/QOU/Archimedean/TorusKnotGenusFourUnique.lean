@@ -1,4 +1,4 @@
-import Mathlib.Data.Nat.Defs
+import Mathlib.Data.Nat.Notation
 import Mathlib.Data.Nat.GCD.Basic
 import Mathlib.Tactic.IntervalCases
 

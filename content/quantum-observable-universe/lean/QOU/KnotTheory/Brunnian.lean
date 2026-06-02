@@ -92,7 +92,7 @@ opaque isUnlink : BraidWord → Prop
     -- Ref: [manuscript] conj:brunnian-property-of-borromean
 -/
 class LinkEquivalence where
-  brunnian_borromean : ∀ i : ℕ, i < 3 → isUnlink (borromeanRings.deleteComponent i)
+  brunnian_borromean : ∀ i : ℕ, i < 3 → isUnlink (BraidWord.deleteComponent borromeanRings i)
 
 /-- **Brunnian property of the Borromean rings** (conditional on
     `LinkEquivalence`).  Removing any of the three components of
@@ -109,7 +109,7 @@ class LinkEquivalence where
     -- Ref: [manuscript] conj:brunnian-property-of-borromean
 -/
 theorem borromean_brunnian [le : LinkEquivalence] :
-    ∀ i : Fin 3, isUnlink (borromeanRings.deleteComponent i.val) := by
+    ∀ i : Fin 3, isUnlink (BraidWord.deleteComponent borromeanRings i.val) := by
   intro i
   exact le.brunnian_borromean i.val i.isLt
 
@@ -118,7 +118,7 @@ theorem borromean_brunnian [le : LinkEquivalence] :
     can survive the removal-of-one-component operation on a
     Borromean baryon, because the remaining link is trivial. -/
 theorem no_isolated_quark_in_borromean_baryon [LinkEquivalence] :
-    ∀ i : Fin 3, isUnlink (borromeanRings.deleteComponent i.val) :=
+    ∀ i : Fin 3, isUnlink (BraidWord.deleteComponent borromeanRings i.val) :=
   borromean_brunnian
 
 end QOU.KnotTheory.Brunnian
