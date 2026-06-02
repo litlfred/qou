@@ -2,6 +2,10 @@
 
 **Date:** 2026-06-02
 **Branch:** `claude/native-5-strand-baryon-2026-06-02` (PR #1694)
+**Trigger:** Author directive *"take a run at one of the two escapes"*
+(2026-06-02) following the Young's-lattice synthesis, which named two
+non-fit routes past the keystone vertical obstruction; this audit tests
+Escape 2 (native-5-strand baryon).
 **Scope:** Test **Escape 2** of the Young's-lattice synthesis
 ([`2026-06-02-young-lattice-gauge-synthesis.md`](2026-06-02-young-lattice-gauge-synthesis.md),
 reframe #2 of [`2026-06-02-h5-h3-functor-keystone.md`](2026-06-02-h5-h3-functor-keystone.md),
