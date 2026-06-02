@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:36:58.596572+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "computedAt": "2026-06-02T17:00:13.558903+00:00",
+  "commitSha": "f00da88bdb0343fcb3b6481260ff3067d146026d",
   "assertions": [
     {
       "name": "H₂",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "molecular-trefoil-scan",
   "scriptFile": "molecular-trefoil-scan.py",
-  "scriptHash": "96d23dfe6183",
-  "scriptCommitSha": "80524246187e0165f7dbe816cb5b16ccadfbcfd7",
+  "scriptHash": "bab7f99afedf",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

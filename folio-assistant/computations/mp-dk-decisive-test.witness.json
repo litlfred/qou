@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:29:59.361835+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T17:00:13.707190+00:00",
+  "commitSha": "f00da88bdb0343fcb3b6481260ff3067d146026d",
   "assertions": [
     {
       "name": "d4_drifts_with_q0",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 13,
   "computation": "mp-dk-decisive-test",
   "scriptFile": "mp_dk_decisive_test.py",
-  "scriptHash": "64d1577e68b6",
-  "scriptCommitSha": "09ff0c6e825cd5856be6705ed4550e1237ba134c",
+  "scriptHash": "e92f1897f006",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

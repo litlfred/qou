@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:24:05.860665+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:58:02.482731+00:00",
+  "commitSha": "f00da88bdb0343fcb3b6481260ff3067d146026d",
   "assertions": [
     {
       "name": "gram_h3_symbolic_matches_pyhecke",
@@ -33,8 +33,8 @@
   "durationMs": 12,
   "computation": "gram-h3-symbolic-regression",
   "scriptFile": "gram_h3_symbolic_regression.py",
-  "scriptHash": "582bc39b0d4b",
-  "scriptCommitSha": "7398419d1a7d867fa4571e5a1dbfa2d1d22ddb04",
+  "scriptHash": "93accc13fe19",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
