@@ -148,6 +148,7 @@ export default chapter({
         "ground-state-ordering-table2-data",
         "ground-state-ordering-table1-data",
         "neutron-qvalue-symbolic",
+        "delta-pre-archimedean",
       ],
     }),
     section({
