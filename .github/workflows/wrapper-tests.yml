@@ -319,7 +319,9 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
         with:
-          workspaces: tools/hecke-engine-r -> target
+          # rextendr 0.4 layout: Rust crate lives at src/rust/Cargo.toml,
+          # not the package root.
+          workspaces: tools/hecke-engine-r/src/rust -> target
       - name: Install rextendr + devtools (RSPM binary repo)
         # The Posit Package Manager (RSPM) URL in the env block above
         # serves *binary* packages for noble — no source compilation,

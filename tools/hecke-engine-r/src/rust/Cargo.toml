@@ -18,7 +18,7 @@ name = "hecke_engine_r"
 extendr-api = "0.7"
 # Canonical hecke-engine core (mpfr on — R consumers run native
 # with system GMP/MPFR; CRAN-published packages can bundle them).
-hecke-engine = { path = "../hecke-engine" }
+hecke-engine = { path = "../../../hecke-engine" }
 
 [profile.release]
 opt-level = 3
