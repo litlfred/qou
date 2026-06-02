@@ -6,6 +6,53 @@
 
 **Highlight to Claude** — referenced from CLAUDE.md so any agent picking up final-stage QOU work has the full canonical chain visible.
 
+---
+
+## 0. This is the PRIMARY coordination document for the canonical chain
+
+This cheat-sheet is the **coordination hub for the 11-step substrate→observable
+chain**, the same role [`duality-tracker.md`](duality-tracker.md) plays for the
+D1–D24 dualities. Every agent working a chain step coordinates **through this
+table**: it records, per step, what is **proved** (→ Lean), what is **derived**,
+what is **fitted/open**, and **which sibling PR owns the gap**. Update the
+relevant row when you open/land work on a step — do not fork a parallel status
+doc.
+
+**Coordination infra this plugs into** (the "good infra around this"):
+
+| Layer | Doc | Role |
+|---|---|---|
+| Chain steps (this doc) | `canonical-derivation-cheat-sheet.md §0/§2` | per-step status + owner PR |
+| Dualities used per step | [`duality-tracker.md`](duality-tracker.md) | D1–D24 status + closure paths |
+| Per-goal ledgers | `docs/coordination/*.md` | `1ppb-categorical-chain.md`, `1ppq-qbeta.md`, `2026-05-24-low-isotope-mass-anatomy-ledger.md`, `2026-05-22-cheat-sheet-manager.md` |
+| Automated watchers | `todos/{proof,canonical,compute,detangler}-*-queue.json` | integration-watcher backlog |
+| Precision targets | [`precision-goals.md`](precision-goals.md) | L1 (compute) / L2 (100×) |
+
+**Status legend.** ✅ proved (sorry-free Lean) · 🟢 derived (categorical, no fit) ·
+🟡 conjecture-conditional / partial · 🔴 fitted / open gate · ⬜ not started.
+
+### Per-step status + owner index (the coordination table)
+
+| Step | What | Status | Owner gap / active PR |
+|---|---|---|---|
+| 1. Cat action | `ρ_n: B_n → Aut_C(V^⊗n)` | ✅ proved | — (settled) |
+| 2. Stokes → Hecke | `σ_i²=(q−q⁻¹)σ_i+1` | ✅ proved | — (settled) |
+| 3. Alexander+Markov | unique `tr_M` | 🟢 derived (Lean `sorry=1`) | proof-watcher: discharge `markov_trace` sorry |
+| 4. Bring χ=−6 | 6 ↔ torus knots | 🟢 derived | — (settled) |
+| 5. Wedderburn / partitions | `H_n(q)≅⊕_λ M_{d_λ}`, `tr_M=Σ y_λ χ_λ` | 🟢 derived (Wenzl) | — (the per-block frame; everything downstream rides on it) |
+| 6. Frobenius pairing + self-duality | `⟨a,b⟩_F`, `Ψ=S²=id` | ✅ proved (D3/D23) | partition-respecting audit (§9 below) |
+| 7. GB filtration | `ℓ(w)`-graded, `E_2` collapse | 🟢 derived | — |
+| 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean `sorry=4`) | proof-watcher: `SkewSYT` jet sorries |
+| 9a. Mass identity `m_p` | `m_e·Geom_full(𝓑₃)` | 🟡 +2.89% gap | **Geom_full refinement** (NOT λ_scale); #1698 (m_avg combiner) |
+| 9b. Per-isotope binding `B(K)` | `m_e·Σ_λ y_λ χ^λ Δ_λ` | 🔴 Δ_λ gate open | **Δ_λ closure**: Option E #1697/#1516 (crystal); #1709 (volume refuted); q-Reeb/isospin-mirror (`option_e_v9`) |
+| 10. Confinement SDP | canonical `T_w` | 🟢 derived | LP/SDP duals infra (`lp_dual_solver.py`) |
+| 11. β-decay `Q_β` | `\|Δ(net)\|·𝔈₀` | 🟢 derived; `c_k` truncation | `1ppq-qbeta.md` ledger (c_k tiered) |
+
+**The frontier is step 9** (everything else is settled or proof-cleanup). Two
+gaps: **9a** = `Geom_full(𝓑₃)` refinement (m_p +2.89%); **9b** = the **Δ_λ**
+per-block density (the Track-A blocker). See §9 for the mass=density×volume
+framing that unifies them.
+
 > ## ⚠ Critical framing — do NOT treat `λ_scale` as a separate object
 >
 > **`λ_scale` was ABSORBED into `Geom_full(K)` on 2026-05-23 (commit ffdd84409).** The numerical factor that older docs call `λ_scale` is *what the canonical `Geom_full(K)` evaluation produces per knot/link*. It is **not** a separate constant to derive, calibrate, or "close". There is **one** canonical mass formula:
@@ -286,6 +333,66 @@ The forward work has shifted from §5 mechanics to scientific closure:
 - Substrate-side compute using $q$ as $\mathbb{R}$ before the Archimedean functor → **§7c base-ring violation**. Everything categorical should be generic over `[Field R]` until step 9.
 
 **Final-stage discipline**: every script in `folio-assistant/computations/` (non-deprecated) should either (a) be backed by a `derivation_chain.py`-tracked DerivationChain, or (b) be marked `SCRIPT_CITED` against a canonical script that IS so backed.
+
+---
+
+## 9. Partition-respecting verification + mass = density × volume (2026-06-02)
+
+The chain's frontier (step 9) is governed by one structural question the owner
+posed: **do all the categorical invariants / functors / pairings respect the
+Wedderburn partition decomposition `⊕_{λ⊢n} M_{d_λ}`?** If they do, the per-block
+density `Δ_λ` is forced and `mass = density × volume` must be a per-λ sum.
+
+### 9.1 Partition-respecting status
+
+| Object | Respects partition? | Basis |
+|---|---|---|
+| Markov trace `tr_M = Σ_λ y_λ χ_λ` | ✅ **by construction** | Wenzl §1 — the `y_λ` ARE the per-block central weights; this IS the block decomposition |
+| Wenzl weights `y_λ(q)` | ✅ derived | `y_lambda_wenzl_bridge.py`; one scalar per λ |
+| Hecke characters `χ^λ(β_K)` | ✅ derived | Hoefsmit seminormal, per-irrep λ |
+| Frobenius pairing `⟨a,b⟩_F`, self-duality `Ψ=S²=id` | ✅ formalised (D3/D23) | the pairing is central/symmetric; per-block orthogonality follows from Schur — **proved sorry-free** at the algebra level, finer per-λ orthogonality is the standing audit item |
+| q-Reeb phase `θ_λ = arccos(χ_λ/d_λ)` | ✅ per-λ | `binding_reeb_phase_decomposition.py` |
+| Confinement SDP (`T_w` selection) | ✅ per-block duals | `lp_dual_solver.py` emits `y_star[λ]` shadow prices |
+
+**Verdict:** the binding/mass machinery is **manifestly block-graded** — every
+load-bearing object is a per-λ quantity or a sum over λ. So `Δ_λ` is genuinely a
+per-block density, and the volume-Wedderburn framing is structurally legitimate.
+The one gap is not whether the objects respect the partition (they do) but **what
+the per-block density numerically is** (§9.3).
+
+### 9.2 mass = density × volume — the realized form
+
+The owner's `mass = density × volume` IS the chain, with one correction the
+compute has already established:
+
+- **Volume is NOT the carrier** — it is the *exponential* of it. `tr_M ~ exp(Vol)`
+  (Kashaev), so the binding endomorphism's `Δtr_M` is the **linearization** of the
+  hyperbolic volume (cheat-sheet §3 line 136; re-confirmed by the volume-Wedderburn
+  probes [`2026-06-02-volume-wedderburn-delta-lambda-probe.md`](audits/2026-06-02-volume-wedderburn-delta-lambda-probe.md) / PR #1709, where *no* positive per-block volume reproduces even the **sign** of the ³H/³He split).
+- **Density = per-rep q-Reeb phase** `θ_λ = arccos(χ_λ/d_λ)` (the "Hecke energy"
+  per block) — a *signed, per-λ* angle. Markov-weighted, it closes the **A=3
+  mirror pair to 2 %, no fit**.
+- **Volumes** enter as the knot volumes of the canonical braid — `Vol(𝓑₃)` (proton,
+  step 9a), `Vol(6₂)`, Borromean `8G` — through the q-hyperbolic infra
+  (`knot_volumes.py`, `Li_2^q` / Faddeev `Φ_q`, §4 context-sorting).
+
+So: **`Δ_λ = (q-Reeb phase density)_λ`, evaluated through the q-hyperbolic
+infrastructure, summed over the partition** — exactly the `density × volume`
+shape, with the volume entering as `exp`-linearized angle, not raw `Vol`.
+
+### 9.3 The gap, narrowed to one item
+
+| Quantity | Status |
+|---|---|
+| Mirror-pair **differences** (³H/³He, A=3) | 🟢 closed to 0.11 % by the **signed** `(1+q)/2·Σ y_λ χ^λ` isospin-mirror weight (`option_e_v9`) — the signed per-block object the volume side proved necessary (#1709 T/³He obstruction) |
+| Deuteron **absolute** binding | 🟢 derived twice: `m_e·Vol(𝓑₃)·Δtr` (+0.19 %) and `μ₀·ℏ_q·J_q²(j=1)` (−9 %), `μ₀` derived |
+| **A≥3 absolute** binding | 🔴 **the one open gate** — the per-rep highest-weight `j=n/2` collapse of `θ_λ` saturates; needs the full per-rep `θ_λ` magnitude (not the linear truncation) |
+
+**The single narrowed compute gap:** carry the per-rep q-Reeb phase `θ_λ` at
+**full (non-linearized) order** through the GB-filtration/jet tower for A≥3 —
+i.e. recover the `exp(Vol)` from the linear `Δtr` per block. That is the
+A≥3-absolute item; the differences and the deuteron are done. Tracking:
+[`2026-05-28-binding-endomorphism-analogy.md`](audits/2026-05-28-binding-endomorphism-analogy.md) §"A≥3 derivation campaign", Δ_λ gate [`2026-05-18-delta-lambda-gating-context.md`](audits/2026-05-18-delta-lambda-gating-context.md).
 
 ---
 
