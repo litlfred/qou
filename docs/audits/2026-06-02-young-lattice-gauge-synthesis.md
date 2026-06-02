@@ -194,21 +194,34 @@ selection).** The keystone stands.
    icosahedral special values), so "the cross-ratio that gives $h^4$"
    would be a fit.
 
-**The delimitation (the result of this arc):** the missing object — the
-canonical section / vertical baryon-number charge — is **not derivable
-from existing categorical structure** (Hecke branching, OV/JM
-content-eigenbasis #1687, ribbon-twist spin) **nor from existing
-geometric structure** (icosahedral $A_5$ holonomy, Bring cross-ratio).
-It is a **genuine new physical input**. The keystone obstruction is now
-fully characterized: nonexistence (#1684) → sharpened to "no canonical
-section" (#1687) → both non-fit closures ruled out (#1694, #1699).
+**The delimitation (the result of this arc) — TRIPLE-CONFIRMED.** Three
+independent structural selectors were tested on the same $\mathbb{C}^2$
+multiplicity space; **all three SEPARATE but do not SELECT** a canonical
+line:
 
-A remaining *structural* candidate (not a closure, an alternative
-selector to test) is the **Kashiwara / Option-E crystal** acting on the
-same $\mathbb{C}^2$ (sibling exploration, PR #1697); and the narrower
-linked-channel lead of a **second independent crossing/trace invariant**
-carrying baryon number
+| Selector | Result | PR |
+|----------|--------|-----|
+| **SU(2) spin / ribbon twist** | separates (OV/JM eigenbasis) but the two copies share final spin; no global selector | #1687 |
+| **Icosahedral $A_5$ geometry / Bring cross-ratio** | separates but $C_{A_5}(S_3)=\{e\}$, $N=S_3$ ⟹ only forced operator is scalar identity | #1699 |
+| **Kashiwara / Option-E crystal (bar-involution)** | separates (per-copy HW vectors) but bar *swaps* the copies (no bar-fixed line); selection lives at the irreducible level, not the multiplicity index | #1703 |
+
+The missing object — the canonical section / vertical baryon-number
+charge — is therefore **not derivable from existing categorical
+structure** (Hecke branching, OV/JM content-eigenbasis, ribbon-twist
+spin, Kashiwara crystal/bar) **nor from existing geometric structure**
+(icosahedral $A_5$ holonomy, Bring cross-ratio). It is a **genuine new
+physical input**. The keystone obstruction is now fully characterized:
+nonexistence (#1684) → sharpened to "no canonical section" (#1687) →
+both non-fit *escapes* ruled out (#1694, #1699) → **all three structural
+*selectors* ruled out** (#1687, #1699, #1703).
+
+A residual narrower lead (not a structural selector — a candidate
+*identity* for the new input itself) is the linked-channel **second
+independent crossing/trace invariant** carrying baryon number
 ([inter-nucleon linked channel](2026-06-01-inter-nucleon-linked-channel.md)).
+The Option-E crystal *machinery* still has a live role on a **different**
+object — the $\Delta_\lambda$ binding-energy Gram closure (PR #1697) —
+which is unaffected by this keystone-selector negative.
 
 ## Action items
 
@@ -222,9 +235,12 @@ carrying baryon number
       categorical or geometric structure. Any future closure must
       introduce that input explicitly (e.g. an additional substrate
       datum), never fit a selector to produce $h^4=-3/4$.
-- [ ] *Structural* candidate still untested (not a closure): the
-      Kashiwara / Option-E crystal selector on the same $\mathbb{C}^2$
-      (sibling PR #1697).
+- [x] Crystal selector (Kashiwara / Option-E bar-involution) tested —
+      **separates but does not select** (#1703); the bar swaps the two
+      copies with no fixed line. Third and final structural selector;
+      all three (spin, geometry, crystal) now ruled out. (The Option-E
+      crystal *machinery* remains live for the separate $\Delta_\lambda$
+      Gram closure, PR #1697 — a different object.)
 - [x] No production wiring: this synthesis records structure, changes no
       observable. L1/L2 dashboards unaffected.
 
