@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T16:52:32.388626+00:00",
-  "commitSha": "44a96ac1e2d15abfc1984721a9f736b0eb4a0e2e",
+  "computedAt": "2026-06-02T18:52:49.063086+00:00",
+  "commitSha": "04d02278841eba955b76b072877e03cc75e38405",
   "assertions": [
     {
       "name": "qbeta_2term_recurrence_holds_within_1pct",
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "qbeta-habiro-q-difference-recurrence-probe",
   "scriptFile": "qbeta_habiro_q_difference_recurrence_probe.py",
-  "scriptHash": "df27fcf04d4b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9ca48de34f10",
+  "scriptCommitSha": "e85ef107246616e075337ba1a600f36d9e97af97",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
