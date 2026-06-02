@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:38:45.590522+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:27:27.913222+00:00",
+  "commitSha": "b5591feaed84eacb3de4ea55eea19eadf12693a7",
   "assertions": [
     {
       "name": "H2",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 9,
   "computation": "unified-mass-molecular",
   "scriptFile": "unified-mass-molecular.py",
-  "scriptHash": "6dcb2b74602f",
-  "scriptCommitSha": "c29f383d5b70d65b8315eefcec88a7c3d4849bfa",
+  "scriptHash": "cad39184f169",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

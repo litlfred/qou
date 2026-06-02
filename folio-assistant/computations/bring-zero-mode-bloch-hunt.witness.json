@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:23:51.282052+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:19:11.412468+00:00",
+  "commitSha": "b5591feaed84eacb3de4ea55eea19eadf12693a7",
   "assertions": [
     {
       "name": "unit_circle_canonical_basis_hypothesis_falsified",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 258,
+  "durationMs": 263,
   "computation": "bring-zero-mode-bloch-hunt",
   "scriptFile": "bring_zero_mode_bloch_hunt.py",
-  "scriptHash": "3ac040d3455d",
-  "scriptCommitSha": "049dfcdf4064f35d7d57398090e567acb03b222c",
+  "scriptHash": "6b4c9ad93cf5",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
