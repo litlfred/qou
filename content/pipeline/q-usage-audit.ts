@@ -34,6 +34,11 @@ import {
   type QRegime,
   type QUsageResult,
 } from "./qa-checkers-q-usage.ts";
+import {
+  LEAN_PACKAGES,
+  parseLeanRef,
+  leanPackageByName,
+} from "../../folio-assistant/schemas/lean-packages.ts";
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(SCRIPT_DIR, "..", "..");
@@ -76,6 +81,61 @@ const PROVABLE_KINDS = new Set([
 
 function walkBlocks(): BlockTriple[] {
   const out: BlockTriple[] = [];
+
+  // Per-Lake-package basename cache. Some blocks have been promoted
+  // from sibling .lean files into the Lake-buildable tree (per the
+  // cluster-migration pattern, e.g. lean/QOU/BraidKnot/...). When the
+  // sibling check fails, fall back to resolving the lean.ref URI via
+  // (a) the parsed module path, or (b) a basename match anywhere
+  // under the package's Lake root.
+  const lakeTreeBasenameCache = new Map<string, Set<string>>();
+  function lakeTreeContains(lakeRoot: string, base: string): boolean {
+    const abs = resolve(REPO_ROOT, lakeRoot);
+    let cached = lakeTreeBasenameCache.get(abs);
+    if (!cached) {
+      cached = new Set<string>();
+      try {
+        const stack: string[] = [abs];
+        while (stack.length) {
+          const dir = stack.pop()!;
+          for (const e of readdirSync(dir, { withFileTypes: true })) {
+            const full = join(dir, e.name);
+            if (e.isDirectory()) stack.push(full);
+            else if (e.isFile() && e.name.endsWith(".lean")) cached.add(e.name);
+          }
+        }
+      } catch { /* Lake root missing — empty cache */ }
+      lakeTreeBasenameCache.set(abs, cached);
+    }
+    return cached.has(base);
+  }
+  function resolveLakeTreePath(ref: string | undefined): string | undefined {
+    if (!ref) return undefined;
+    try {
+      const parsed = parseLeanRef(ref);
+      const pkg = leanPackageByName(parsed.package);
+      if (!pkg) return undefined;
+      // Try direct module-path resolution first.
+      const modulePath = parsed.module.replace(/\./g, "/");
+      const direct = resolve(REPO_ROOT, pkg.lakeRoot, `${modulePath}.lean`);
+      if (existsSync(direct)) return direct;
+      // Basename fallback under the Lake tree.
+      if (lakeTreeContains(pkg.lakeRoot, `${parsed.name}.lean`)) {
+        // Find the actual path via scan.
+        const stack: string[] = [resolve(REPO_ROOT, pkg.lakeRoot)];
+        while (stack.length) {
+          const dir = stack.pop()!;
+          for (const e of readdirSync(dir, { withFileTypes: true })) {
+            const full = join(dir, e.name);
+            if (e.isDirectory()) stack.push(full);
+            else if (e.isFile() && e.name === `${parsed.name}.lean`) return full;
+          }
+        }
+      }
+    } catch { /* parseLeanRef failed — fall through */ }
+    return undefined;
+  }
+
   const chapters = readdirSync(PAPER_ROOT, { withFileTypes: true })
     .filter((d) => d.isDirectory())
     .map((d) => d.name);
@@ -103,13 +163,19 @@ function walkBlocks(): BlockTriple[] {
       const kind = kindMatch[1];
       const labelMatch = ts.match(/label:\s*["']([^"']+)["']/);
       const label = labelMatch ? labelMatch[1] : root;
+      // Resolve .lean: (1) sibling, (2) Lake-tree mirror via lean.ref.
+      let leanResolved: string | undefined = existsSync(leanPath) ? leanPath : undefined;
+      if (!leanResolved) {
+        const refMatch = ts.match(/ref:\s*["']([^"']+)["']/);
+        leanResolved = resolveLakeTreePath(refMatch?.[1]);
+      }
       out.push({
         label,
         kind,
         chapter,
         ts: tsPath,
         md: existsSync(mdPath) ? mdPath : undefined,
-        lean: existsSync(leanPath) ? leanPath : undefined,
+        lean: leanResolved,
       });
     }
   }
