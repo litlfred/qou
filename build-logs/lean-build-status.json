@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T07:34:11Z",
+  "generatedAt": "2026-06-02T17:42:05Z",
   "tool": "scripts/lean-build-all.sh",
   "summary": {
     "passed": 2,
@@ -11,7 +11,7 @@
       "paper": "fred2005-formal-groups",
       "target": "Fred2005",
       "status": "ok",
-      "elapsed_s": 7,
+      "elapsed_s": 6,
       "log": "fred2005-formal-groups.log",
       "failingModules": [],
       "errors": [],
@@ -21,7 +21,7 @@
       "paper": "quantum-observable-universe",
       "target": "QOU",
       "status": "fail",
-      "elapsed_s": 6832,
+      "elapsed_s": 6018,
       "log": "quantum-observable-universe.log",
       "failingModules": [
         "QOU.Torsion.quantum_dilogarithm",
@@ -60,9 +60,9 @@
         "QOU.BraidKnot.KnotIndexedConvolutionGrid",
         "QOU.BraidKnot.ThreeCalibrationInputs",
         "QOU.BraidKnot.ChiralityWritheRibbon",
+        "QOU.BraidKnot.MassFormulaCategorical",
         "QOU.BraidKnot.frobenius_antipode_unifies",
         "QOU.BraidKnot.CommutativeCrossingEnergy",
-        "QOU.BraidKnot.MassFormulaCategorical",
         "QOU.Mathlib.NonAbelianStokes",
         "QOU.BraidKnot.BraidGroupNStrand",
         "QOU.BraidKnot.H3HeckeIdempotents",
@@ -71,6 +71,7 @@
         "QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed",
         "QOU.BraidKnot.TwoRowStratum",
         "QOU.FlavorDressing",
+        "QOU.BraidKnot.GramSeminormalBlock",
         "QOU.BraidKnot.WitnessR5Full",
         "QOU.BraidKnot.JetTowerUniformDeltaMax",
         "QOU.AppendixSurreals.B1SoftSharpnessTheorem",
@@ -88,8 +89,8 @@
         "QOU.MathlibExt.RpowAlgebra",
         "QOU.JetHorizon",
         "QOU.CategoricalDqSquared",
-        "QOU.Information.HeckeLogDecomposition",
         "QOU.dq_squared",
+        "QOU.Information.HeckeLogDecomposition",
         "QOU.su2_emergence_volume_determinant",
         "QOU.volume_from_rigidity",
         "QOU.substrate_radial_coordinate",
@@ -1326,6 +1327,21 @@
           "message": "Lean exited with code 1"
         },
         {
+          "file": "QOU/BraidKnot/MassFormulaCategorical.lean",
+          "line": 71,
+          "col": 4,
+          "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'absMarkovTrace', which is 'noncomputable'"
+        },
+        {
+          "file": "QOU/BraidKnot/MassFormulaCategorical.lean",
+          "line": 102,
+          "col": 4,
+          "message": "failed to compile definition, compiler IR check failed at `categoricalMassMeV`. Error: depends on declaration 'QOU.BraidKnot.MassFormulaCategorical.categoricalMass', which has no executable code; consider marking definition as 'noncomputable'"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
           "file": "QOU/BraidKnot/frobenius_antipode_unifies.lean",
           "line": 22,
           "col": 10,
@@ -1345,21 +1361,6 @@
           "line": 40,
           "col": 0,
           "message": "invalid 'import' command, it must be used in the beginning of the file"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
-          "file": "QOU/BraidKnot/MassFormulaCategorical.lean",
-          "line": 71,
-          "col": 4,
-          "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'absMarkovTrace', which is 'noncomputable'"
-        },
-        {
-          "file": "QOU/BraidKnot/MassFormulaCategorical.lean",
-          "line": 102,
-          "col": 4,
-          "message": "failed to compile definition, compiler IR check failed at `categoricalMassMeV`. Error: depends on declaration 'QOU.BraidKnot.MassFormulaCategorical.categoricalMass', which has no executable code; consider marking definition as 'noncomputable'"
         },
         {
           "message": "Lean exited with code 1"
@@ -1537,6 +1538,15 @@
           "message": "Lean exited with code 1"
         },
         {
+          "file": "QOU/BraidKnot/GramSeminormalBlock.lean",
+          "line": 159,
+          "col": 0,
+          "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
           "file": "QOU/BraidKnot/WitnessR5Full.lean",
           "line": 67,
           "col": 2,
@@ -1600,15 +1610,6 @@
           "message": "Lean exited with code 1"
         },
         {
-          "file": "QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean",
-          "line": 19,
-          "col": 31,
-          "message": "Unknown identifier `\u2115`"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
           "message": "no such file or directory (error code: 2)",
           "file": "/home/runner/work/qou/qou/.lake/packages/mathlib/Mathlib/RingTheory/Subring/Basic.lean"
         },
@@ -1617,6 +1618,15 @@
         },
         {
           "message": "QOU/AppendixSurreals/Blowup.lean: bad import 'QOU.AppendixSurreals.StandardPart'"
+        },
+        {
+          "file": "QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean",
+          "line": 19,
+          "col": 31,
+          "message": "Unknown identifier `\u2115`"
+        },
+        {
+          "message": "Lean exited with code 1"
         },
         {
           "file": "QOU/AppendixSurreals/FigureEightCasimirWeight.lean",
@@ -1928,21 +1938,6 @@
           "message": "Lean exited with code 1"
         },
         {
-          "file": "QOU/Information/HeckeLogDecomposition.lean",
-          "line": 53,
-          "col": 6,
-          "message": "Unknown constant `Real.log_one_div`"
-        },
-        {
-          "file": "QOU/Information/HeckeLogDecomposition.lean",
-          "line": 37,
-          "col": 57,
-          "message": "unsolved goals"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
           "file": "QOU/dq_squared.lean",
           "line": 31,
           "col": 9,
@@ -1965,6 +1960,21 @@
           "line": 58,
           "col": 38,
           "message": "Unknown identifier `DqSquaredContext`"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
+          "file": "QOU/Information/HeckeLogDecomposition.lean",
+          "line": 53,
+          "col": 6,
+          "message": "Unknown constant `Real.log_one_div`"
+        },
+        {
+          "file": "QOU/Information/HeckeLogDecomposition.lean",
+          "line": 37,
+          "col": 57,
+          "message": "unsolved goals"
         },
         {
           "message": "Lean exited with code 1"
