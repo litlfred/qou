@@ -214,6 +214,16 @@ If the author says "apply all" or "go ahead":
 - **Link every finding** to a GitHub blob URL per the CLAUDE.md
   "always provide GitHub links" rule. Default to `.md` for block
   citations; include `.lean` sibling when the finding is Lean-specific.
+- **MBA-appendix sync (mass / binding / compute scope).** When a
+  finding touches a proposition consumed by the **mass-identity**,
+  **per-isotope binding**, **confinement-SDP**, or **Q_β** branch
+  of the canonical chain (Steps 9a, 9b, 10, 11), include in the
+  action plan a check that the matching `alg:`-block under
+  [`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../../content/quantum-observable-universe/appendix-mass-binding-algorithms/)
+  still cites the (possibly-modified) proposition correctly. If
+  the proof edit changes the proposition statement or its name,
+  the algorithm block's `uses[]` and *Correctness conditions*
+  section must update in the same PR.
 
 ## Integration
 
