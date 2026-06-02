@@ -1,0 +1,133 @@
+{
+  "computation": "option-e-probe4-step-c-content-weighted",
+  "auditOnly": true,
+  "description": "Option-E PROBE 4 Step C: measure-level pivot from y_\u03bb to |content_\u03bb| per sibling-commit triage finding (d7c56c17e1, 5e388f598b on main).  Tests 5 reformulations.  Reads canonical witness data only.  No expected-outcome assertion (pivot probe).",
+  "timestamp_utc": "2026-06-02T18:21:40.162581+00:00",
+  "inputs": {
+    "chi_deuteron_h6_witness": "chi-deuteron-h6-at-q0-50dps.witness.json",
+    "empirical_target_witness": "delta-lambda-empirical-tabulation.witness.json"
+  },
+  "target_signed": "-4.35336728187014865686123229803114076848885893014065880174509",
+  "q_0_at_50dps": "1.1099785827513808075916690956107688798744991218736",
+  "content_per_partition": [
+    {
+      "partition": "6",
+      "dim": 1,
+      "abs_content": 15,
+      "signed_content_sum": 15
+    },
+    {
+      "partition": "5_1",
+      "dim": 5,
+      "abs_content": 11,
+      "signed_content_sum": 9
+    },
+    {
+      "partition": "4_2",
+      "dim": 9,
+      "abs_content": 7,
+      "signed_content_sum": 5
+    },
+    {
+      "partition": "4_1_1",
+      "dim": 10,
+      "abs_content": 9,
+      "signed_content_sum": 3
+    },
+    {
+      "partition": "3_3",
+      "dim": 5,
+      "abs_content": 5,
+      "signed_content_sum": 3
+    },
+    {
+      "partition": "3_2_1",
+      "dim": 16,
+      "abs_content": 6,
+      "signed_content_sum": 0
+    },
+    {
+      "partition": "3_1_1_1",
+      "dim": 10,
+      "abs_content": 9,
+      "signed_content_sum": -3
+    },
+    {
+      "partition": "2_2_2",
+      "dim": 5,
+      "abs_content": 5,
+      "signed_content_sum": -3
+    },
+    {
+      "partition": "2_2_1_1",
+      "dim": 9,
+      "abs_content": 7,
+      "signed_content_sum": -5
+    },
+    {
+      "partition": "2_1_1_1_1",
+      "dim": 5,
+      "abs_content": 11,
+      "signed_content_sum": -9
+    },
+    {
+      "partition": "1_1_1_1_1_1",
+      "dim": 1,
+      "abs_content": 15,
+      "signed_content_sum": -15
+    }
+  ],
+  "variants": {
+    "C1_abs_content_x_chi_sq": {
+      "formula": "\u0394_\u03bb = \u03c7^\u03bb(\u03b2_D), weight = |content_\u03bb|",
+      "S_value": "411.4855216631246223612552606955309125917568225058879658343149092163835",
+      "rel_err": "95.52120508572295733919454472737273068811136161552201267642743698830085",
+      "closes_within_10pct": false
+    },
+    "C2_abs_content_x_f_lam_x_chi_sq": {
+      "formula": "\u0394_\u03bb = f^\u03bb \u00b7 \u03c7^\u03bb(\u03b2_D), weight = |content_\u03bb|",
+      "S_value": "2258.843355978865067041312637341121561375658568702471867476267355995219",
+      "rel_err": "519.872681702265198785119658369264606699111353523886051956852028956956",
+      "closes_within_10pct": false
+    },
+    "C3_abs_content_x_y_lambda_x_chi_sq": {
+      "formula": "\u0394_\u03bb = \u03c7^\u03bb(\u03b2_D), weight = |content_\u03bb| \u00b7 y_\u03bb",
+      "S_value": "11.17230788806473084002816498229929628243255074081185597483874620264953",
+      "rel_err": "3.566360052962325759465521245570763903286262359888500032347354195119727",
+      "closes_within_10pct": false
+    },
+    "C4_y_lambda_x_abs_content_alone": {
+      "formula": "\u0394_\u03bb = |content_\u03bb|, weight = y_\u03bb",
+      "S_value": "4.106903341677796420554130392120299071229699945679613490084562271321817",
+      "rel_err": "1.943385447577840340837035878666946472129952515125450477099575847854037",
+      "closes_within_10pct": false
+    },
+    "C5_signed_content_x_chi_sq": {
+      "formula": "\u0394_\u03bb = \u03c7^\u03bb(\u03b2_D), weight = signed \u03a3 content_\u03bb (zero on self-conjugate)",
+      "S_value": "108.9399057053000816293199984200322987012532722228705726290743426241097",
+      "rel_err": "26.02428549021964159451157349809584377891416577858008841074889414364473",
+      "closes_within_10pct": false
+    }
+  },
+  "best_variant": "C4_y_lambda_x_abs_content_alone",
+  "best_rel_err": "1.943385447577840340837035878666946472129952515125450477099575847854037",
+  "any_variant_closes": false,
+  "assertions": [
+    {
+      "name": "step_c_content_pivot_outcome",
+      "any_variant_closes": false,
+      "best_variant": "C4_y_lambda_x_abs_content_alone",
+      "best_rel_err": "1.943385447577840340837035878666946472129952515125450477099575847854037",
+      "passed": true,
+      "note": "Step C is a pivot probe: either it closes (positive measure-level finding \u2014 escalate) or it refutes (cumulative evidence Option-E exhausted at standard framework).  Both outcomes are informative; we don't assert an expected direction here."
+    }
+  ],
+  "allPassed": true,
+  "verdict": "REFUTED \u2014 no Step-C variant closes within 10%.  Best is `C4_y_lambda_x_abs_content_alone` at 194.34% miss.  Combined with cumulative refutation pile (Step A, B-1, B-2, sibling y_\u03bb-Reeb refutations), Option-E is structurally exhausted on the deuteron within the standard framework; pivot to GAP-A-3/A-4 per CLAUDE.md \u00a7L2.",
+  "sibling_coord_refs": [
+    "d7c56c17e1 (main): probe(\u0394_\u03bb): binding measure search",
+    "5e388f598b (main): full-order \u03b8_\u03bb \u2014 y_\u03bb wrong measure",
+    "d59bcb79de (main): \u03b8_\u03bb per-\u03bb carry",
+    "ba7af156cb (main): per-block \u03b8_\u03bb \u2014 absolute open"
+  ]
+}
