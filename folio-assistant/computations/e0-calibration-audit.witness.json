@@ -202,7 +202,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/hecke_characters.py",
+        "file": "folio-assistant/computations/hecke/hecke_characters.py",
         "line": 46,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -226,7 +226,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/light_isotope_sweep.py",
+        "file": "folio-assistant/computations/sweeps/light_isotope_sweep.py",
         "line": 16,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -338,7 +338,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
+        "file": "folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py",
         "line": 1036,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -346,7 +346,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase1e_neutron_and_cross_isotope_h_expansion.py",
+        "file": "folio-assistant/computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py",
         "line": 135,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -354,7 +354,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase1e_neutron_and_cross_isotope_h_expansion.py",
+        "file": "folio-assistant/computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py",
         "line": 135,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -362,7 +362,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase2a_flavor_split_higher_order_probe.py",
+        "file": "folio-assistant/computations/probes/phase2a_flavor_split_higher_order_probe.py",
         "line": 209,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -370,7 +370,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase2a_flavor_split_higher_order_probe.py",
+        "file": "folio-assistant/computations/probes/phase2a_flavor_split_higher_order_probe.py",
         "line": 209,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -468,7 +468,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/kaon_pion_ratio_7_8_probe.py",
+        "file": "folio-assistant/computations/probes/kaon_pion_ratio_7_8_probe.py",
         "line": 69,
         "pattern": "literal_0_78233",
         "match": "0.78233",
@@ -476,7 +476,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/kaon_pion_ratio_7_8_probe.py",
+        "file": "folio-assistant/computations/probes/kaon_pion_ratio_7_8_probe.py",
         "line": 92,
         "pattern": "literal_0_78233",
         "match": "0.78233",
@@ -502,7 +502,7 @@
     ],
     "E_0_CALIBRATION_MEV": [
       {
-        "file": "folio-assistant/computations/adjacent_vs_full_probe.py",
+        "file": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
         "line": 59,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -510,7 +510,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/adjacent_vs_full_probe.py",
+        "file": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
         "line": 398,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -638,7 +638,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/hecke_characters.py",
+        "file": "folio-assistant/computations/hecke/hecke_characters.py",
         "line": 40,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -702,7 +702,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 30,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -710,7 +710,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 70,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -718,7 +718,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 99,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -726,7 +726,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 134,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -734,7 +734,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 174,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -742,7 +742,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 175,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -864,7 +864,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_volume_difference_probe.py",
+        "file": "folio-assistant/computations/probes/binding_volume_difference_probe.py",
         "line": 59,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -872,7 +872,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_volume_difference_probe.py",
+        "file": "folio-assistant/computations/probes/binding_volume_difference_probe.py",
         "line": 135,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1224,7 +1224,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/habiro_exact_qbeta.py",
+        "file": "folio-assistant/computations/habiro/habiro_exact_qbeta.py",
         "line": 32,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1232,7 +1232,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/habiro_exact_qbeta.py",
+        "file": "folio-assistant/computations/habiro/habiro_exact_qbeta.py",
         "line": 89,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1240,7 +1240,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/hardcoded_literal_audit.py",
+        "file": "folio-assistant/computations/audits/hardcoded_literal_audit.py",
         "line": 179,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",

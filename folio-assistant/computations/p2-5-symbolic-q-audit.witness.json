@@ -30,7 +30,7 @@
       "emits_witness": true
     },
     {
-      "path": "folio-assistant/computations/hecke_engine.py",
+      "path": "folio-assistant/computations/hecke/hecke_engine.py",
       "size_lines": 358,
       "emits_witness": true
     },
@@ -126,7 +126,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/adjacent_vs_full_probe.py",
+      "path": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
       "size_lines": 390,
       "emits_witness": true,
       "category": "uncategorised",
@@ -1165,7 +1165,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/canonical_script_input_audit.py",
+      "path": "folio-assistant/computations/audits/canonical_script_input_audit.py",
       "size_lines": 179,
       "emits_witness": false,
       "category": "uncategorised",
@@ -2378,7 +2378,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/habiro_coefficients_atomic.py",
+      "path": "folio-assistant/computations/habiro/habiro_coefficients_atomic.py",
       "size_lines": 281,
       "emits_witness": true,
       "category": "compliant",
@@ -2389,7 +2389,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/habiro_coefficients_interpolate.py",
+      "path": "folio-assistant/computations/habiro/habiro_coefficients_interpolate.py",
       "size_lines": 350,
       "emits_witness": true,
       "category": "mpmath-only",
@@ -2398,7 +2398,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/habiro_exact_mass_endomorphism.py",
+      "path": "folio-assistant/computations/habiro/habiro_exact_mass_endomorphism.py",
       "size_lines": 306,
       "emits_witness": true,
       "category": "mpmath-only",
@@ -2407,7 +2407,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/habiro_interpolate_cross_validator.py",
+      "path": "folio-assistant/computations/habiro/habiro_interpolate_cross_validator.py",
       "size_lines": 182,
       "emits_witness": true,
       "category": "mpmath-only",
@@ -2422,7 +2422,7 @@
       "category": "no-q-dependence"
     },
     {
-      "path": "folio-assistant/computations/habiro_residue_symbolic.py",
+      "path": "folio-assistant/computations/habiro/habiro_residue_symbolic.py",
       "size_lines": 221,
       "emits_witness": true,
       "category": "compliant",
@@ -2433,7 +2433,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/habiro_types.py",
+      "path": "folio-assistant/computations/habiro/habiro_types.py",
       "size_lines": 127,
       "emits_witness": true,
       "category": "uncategorised",
@@ -2443,7 +2443,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/habiro_witness_validator.py",
+      "path": "folio-assistant/computations/habiro/habiro_witness_validator.py",
       "size_lines": 189,
       "emits_witness": true,
       "category": "no-q-dependence"
@@ -2517,7 +2517,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/hecke_3a_weights.py",
+      "path": "folio-assistant/computations/hecke/hecke_3a_weights.py",
       "size_lines": 298,
       "emits_witness": false,
       "category": "uncategorised",
@@ -2527,7 +2527,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/hecke_character_symbolic.py",
+      "path": "folio-assistant/computations/hecke/hecke_character_symbolic.py",
       "size_lines": 361,
       "emits_witness": true,
       "category": "compliant",
@@ -2538,7 +2538,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/hecke_characters.py",
+      "path": "folio-assistant/computations/hecke/hecke_characters.py",
       "size_lines": 720,
       "emits_witness": false,
       "category": "uncategorised",
@@ -2558,7 +2558,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/hecke_division.py",
+      "path": "folio-assistant/computations/hecke/hecke_division.py",
       "size_lines": 930,
       "emits_witness": true,
       "category": "partial",
@@ -2568,7 +2568,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/hecke_engine.py",
+      "path": "folio-assistant/computations/hecke/hecke_engine.py",
       "size_lines": 358,
       "emits_witness": true,
       "category": "early-substitution",
@@ -2587,7 +2587,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/hecke_rust_bridge.py",
+      "path": "folio-assistant/computations/hecke/hecke_rust_bridge.py",
       "size_lines": 209,
       "emits_witness": false,
       "category": "no-q-dependence"
@@ -2603,7 +2603,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/hecke_symbolic.py",
+      "path": "folio-assistant/computations/hecke/hecke_symbolic.py",
       "size_lines": 904,
       "emits_witness": false,
       "category": "compliant",
@@ -3176,7 +3176,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/light_isotope_sweep.py",
+      "path": "folio-assistant/computations/sweeps/light_isotope_sweep.py",
       "size_lines": 326,
       "emits_witness": true,
       "category": "uncategorised",
@@ -3186,7 +3186,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/low_isotope_binding_sweep.py",
+      "path": "folio-assistant/computations/sweeps/low_isotope_binding_sweep.py",
       "size_lines": 271,
       "emits_witness": true,
       "category": "uncategorised",
@@ -3265,7 +3265,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/markov_pipeline_cross_validator.py",
+      "path": "folio-assistant/computations/markov/markov_pipeline_cross_validator.py",
       "size_lines": 233,
       "emits_witness": true,
       "category": "uncategorised",
@@ -3275,7 +3275,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/markov_substrate_realizer.py",
+      "path": "folio-assistant/computations/markov/markov_substrate_realizer.py",
       "size_lines": 241,
       "emits_witness": true,
       "category": "uncategorised",
@@ -3285,7 +3285,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/markov_trace_canonical.py",
+      "path": "folio-assistant/computations/markov/markov_trace_canonical.py",
       "size_lines": 283,
       "emits_witness": false,
       "category": "uncategorised",
@@ -3768,7 +3768,7 @@
       "category": "no-q-dependence"
     },
     {
-      "path": "folio-assistant/computations/p2_5_symbolic_q_audit.py",
+      "path": "folio-assistant/computations/audits/p2_5_symbolic_q_audit.py",
       "size_lines": 169,
       "emits_witness": true,
       "category": "mpmath-only",
@@ -3817,7 +3817,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
+      "path": "folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py",
       "size_lines": 357,
       "emits_witness": true,
       "category": "mpmath-only",
@@ -3826,7 +3826,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/paper_six_term_shadow_price_sweep.py",
+      "path": "folio-assistant/computations/sweeps/paper_six_term_shadow_price_sweep.py",
       "size_lines": 339,
       "emits_witness": true,
       "category": "mpmath-only",
@@ -5682,7 +5682,7 @@
       }
     },
     {
-      "path": "folio-assistant/computations/wall_violations_sweep.py",
+      "path": "folio-assistant/computations/sweeps/wall_violations_sweep.py",
       "size_lines": 262,
       "emits_witness": true,
       "category": "no-q-dependence"

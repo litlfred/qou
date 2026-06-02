@@ -21,11 +21,11 @@
   "parameters": {
     "sources": {
       "compute_audit_scan": "folio-assistant/computations/compute-audit-scan.witness.json",
-      "canonical_script_input_audit": "folio-assistant/computations/canonical-script-input-audit.witness.json",
+      "canonical_script_input_audit": "folio-assistant/computations/audits/canonical-script-input-audit.witness.json",
       "derivation_chain_audit": "folio-assistant/computations/derivation-chain-audit.witness.json",
       "codata_reconciliation": "folio-assistant/computations/codata-reconciliation.witness.json",
       "witness_reproducibility": "folio-assistant/computations/witness-reproducibility-check.witness.json",
-      "witness_provenance": "folio-assistant/computations/witness-provenance-audit.witness.json"
+      "witness_provenance": "folio-assistant/computations/audits/witness-provenance-audit.witness.json"
     }
   },
   "data": {
