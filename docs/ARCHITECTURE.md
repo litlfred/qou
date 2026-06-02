@@ -107,7 +107,7 @@ Code in this repository is organised along **two orthogonal axes**. Conflating t
 
 ### Axis A — Domain modules (mirrors across the entire stack)
 
-Names of mathematical primitives — `gram`, `seminormal`, `wenzl-lr`, `laurent`, `wedderburn`, `markov-trace`, `gb-nf-reducer`, `sdp-*`, `lp-dual`, … — appear under the same conceptual name in every package that exposes them. **The conceptual identity is preserved across the stack; language-specific filename conventions still apply** — e.g. the conceptual `markov-trace` primitive lands as `trace.rs` / `trace.py`, and `lp-dual` lands as `lp_dual_solver.py` (Python snake_case + a `_solver` suffix making the role explicit). The mapping is mechanical, not aspirational.
+Names of mathematical primitives — `gram`, `seminormal`, `wenzl_lr`, `laurent`, `wedderburn`, `trace` (the Markov trace), `gb_nf_reducer`, `sdp_*`, `lp_dual_solver`, … — appear under the same identifier in every package that exposes them. The identifier is `snake_case` throughout (Rust file stems and Python module names alike). Where a language-specific suffix makes the role clearer (e.g. `lp_dual_solver` rather than bare `lp_dual` in `pyhecke/`), the suffix is preserved across the binding chain so a reader following imports through `pyhecke` → `pyhecke_native` → `hecke_engine` keeps reading the same name.
 
 | Layer | Where the domain modules live |
 |---|---|
@@ -130,7 +130,7 @@ Names of research-script categories — `probes/`, `audits/`, `sweeps/`, `phase5
 | `audits/` | Scripts that walk a tree and emit a structural / coverage report |
 | `sweeps/` | Scripts that iterate over an isotope / partition / parameter range |
 | `phase5/`, `habiro/`, `markov/`, `qbeta/`, `alpha/`, `a_operator/` | Domain-research clusters (Phase-5 evidence, Habiro-element series, Markov-trace pipelines, Q_β / α-EM / α-cluster derivations, A-operator extracts) |
-| `substrate/` | The 11 substrate modules above — the only cluster that overlaps Axis A |
+| `substrate/` | The substrate-row modules listed in the Axis A table (`q_parameter`, `witness_base`, `_precision`, `hecke_core`, …) — the only cluster that overlaps Axis A |
 
 The published libraries (`pyhecke`, `hecke-engine`, the 5 thin-binding crates, `qou-mass`, `qou-substrate`, `witness-schema`) have **no** notion of "a probe" or "an audit". They expose primitive operations (`gram_matrix`, `markov_trace`, `wedderburn_weight`, …) that probes/audits/sweeps are *built from*. Forcing the workflow cluster names into a library API would harm the library's design without simplifying anything downstream.
 
