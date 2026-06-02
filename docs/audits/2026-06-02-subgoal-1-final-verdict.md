@@ -44,15 +44,36 @@ So **production effectively IS H2 (A · m_p_pred minus binding)**. The `Vol(𝓑
 
 This vindicates the production design **at the production-formula level** — but it ALSO vindicates the owner's pushback (Vol(𝓑₃)/ℏ² is uniform — yes, per nucleon; but that's an algebraic choice, not a topological identity).
 
-## Why H1 fails
+## Why H1 fails — and the kludge nature of the atlas knots for D, T, ³He
 
 H1 used the atlas mass-knots (6_2 for D, 8_11 for T, L6a4 for ³He) directly:
 - Vol(6_2) = 4.40 → m(D) = 580 MeV (CODATA 1875 MeV; −69 %)
 - Vol(8_11) = 8.29 → m(T) = 1092 MeV (CODATA 2809 MeV; −61 %)
 
-These atlas knots are tagged **"manual-historical-volume-match"** — chosen via historical volume-match to AME, but to **what**? The atlas doesn't specify ABSOLUTE MASS as the match target. Per the audit, the atlas knots more likely correspond to BINDING energies (per `binding_link_volumes.py` which uses different knots for binding) than absolute masses.
+The atlas EXPLICITLY tags these as **`manual-historical-volume-match`** with the note:
 
-So the atlas knots 6_2 / 8_11 are NOT the right per-atom Vol for the mass formula — they're parts of a different (binding-knot) atlas that got conflated with the mass-knot atlas.
+> "Knot was identified in earlier work via **volume-match against AME**; well-established but the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed yet."
+
+i.e., the atlas knots 6_2 / 8_11 / L6a4 are **reverse-engineered**, not derived. The canonical pipeline (per the atlas methodology, line 30-32) is:
+
+```
+substrate σ-braid word
+   ↓  decode (c, d) → ±σ
+topological braid (still has redundant intra g₀/g₁)
+   ↓  Markov reduction (cancel parallels, destabilize)
+minimal braid
+   ↓  SnapPy Link(braid_closure=...).exterior.high_precision
+Vol(K)
+```
+
+For the proton this WAS done (substrate → `(σ₁σ₂⁻¹)³` → 𝓑₃ via principled-derivation tag). For D, T, ³He the Markov-reduction-from-substrate step has **never been computed** — so the atlas guessed a Rolfsen-named knot whose Vol matched AME. That's the kludge.
+
+This was further confirmed empirically this session: passing `atom_braid_word_3A(Z, N)` decoded as a σ-only braid directly to SnapPy gave **Vol ≈ 10⁻⁶ for ALL atoms** (degenerate / Seifert-fibred), confirming that Markov reduction is the missing step. The atlas knot for proton (𝓑₃) is the result of fully reducing the 11-generator substrate word; for D, T, ³He no such reduction exists in the repo.
+
+So:
+- H1 atlas knots are **NOT canonical** for the mass formula (or anything else); they're work-in-progress placeholders that pre-date the substrate definition
+- The proper canonical Vol(K) for D, T, ³He, ⁴He still needs the Markov-reduction-from-substrate computation
+- ⁴He's `magic-A-formula` (`4·8G`) sidesteps this by using an algebraic shell-closure formula instead of a single knot
 
 ## Why H3 catastrophically fails (the canonical-reference refuted route)
 
