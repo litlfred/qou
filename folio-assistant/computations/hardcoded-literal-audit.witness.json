@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T19:25:55.892704+00:00",
-  "commitSha": "e6569d7622ab45a74f1b5f89eae787051aa64066",
+  "computedAt": "2026-06-02T02:54:54.815872+00:00",
+  "commitSha": "76016d6029e4a75c0e2ec5b3343dcf3d2e7ee872",
   "assertions": [
     {
       "name": "no_hardcoded_registry_matches",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "hardcoded-literal-audit",
   "scriptFile": "hardcoded_literal_audit.py",
   "scriptHash": "82ea041c3646",
@@ -39,13 +39,13 @@
     "registry_constants_in_scope": 26,
     "relative_error_tolerance": "1e-6",
     "magnitude_window_MeV": "[0.0001, 1e6]",
-    "total_scripts_with_hits": 196,
-    "i9_violation_count": 181,
+    "total_scripts_with_hits": 201,
+    "i9_violation_count": 186,
     "ok_acknowledged_anchor_count": 15
   },
   "data": {
     "by_result": {
-      "i9_violation": 181,
+      "i9_violation": 186,
       "ok_acknowledged_anchor": 15
     },
     "rows": [
@@ -5256,6 +5256,31 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/option_e_v9_bar_symmetric_test_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 73,
+            "literal": "8.4817983",
+            "matches_constant": "AME_B_TRITIUM_MEV_VALIDATION",
+            "registry_value": "8.481798",
+            "rel_err": "3.537e-8",
+            "snippet": "B_T_AME_MeV = mp.mpf(\"8.4817983\")"
+          },
+          {
+            "line_number": 74,
+            "literal": "7.7180428",
+            "matches_constant": "AME_B_HE3_MEV_VALIDATION",
+            "registry_value": "7.718043",
+            "rel_err": "2.591e-8",
+            "snippet": "B_He3_AME_MeV = mp.mpf(\"7.7180428\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/path_b_defect_binding_probe.py",
         "imported_codata_names": [
           "(",
@@ -5747,6 +5772,23 @@
         "result": "i9_violation"
       },
       {
+        "path": "folio-assistant/computations/deuteron_binding_plancherel_channel.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 31,
+            "literal": "1875.61294257",
+            "matches_constant": "M_D_MEV_VALIDATION",
+            "registry_value": "1875.61294257",
+            "rel_err": "0.0",
+            "snippet": "M_D_MEV = mp.mpf(\"1875.61294257\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
         "path": "folio-assistant/computations/deuteron_delta_i_audit.py",
         "imported_codata_names": [],
         "hit_count": 1,
@@ -5828,6 +5870,57 @@
             "registry_value": "0.51099895069",
             "rel_err": "1.35e-9",
             "snippet": "M_E     = mp.mpf(\"0.51099895000\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/he4_9_3_trace_dominant_correction_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 75,
+            "literal": "28.295674",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.295673",
+            "rel_err": "3.534e-8",
+            "snippet": "B_AME = mp.mpf(\"28.295674\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/he4_rho_f_bar_symmetric_audit_probe.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 58,
+            "literal": "28.295674",
+            "matches_constant": "AME_B_HE4_MEV_VALIDATION",
+            "registry_value": "28.295673",
+            "rel_err": "3.534e-8",
+            "snippet": "B_AME = mp.mpf(\"28.295674\")"
+          }
+        ],
+        "has_class_a_banner": false,
+        "result": "i9_violation"
+      },
+      {
+        "path": "folio-assistant/computations/inter_nucleon_linked_channel.py",
+        "imported_codata_names": [],
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 24,
+            "literal": "938.27208816",
+            "matches_constant": "M_P_MEV_VALIDATION",
+            "registry_value": "938.27208816",
+            "rel_err": "0.0",
+            "snippet": "M_P_MEV = mp.mpf(\"938.27208816\")"
           }
         ],
         "has_class_a_banner": false,

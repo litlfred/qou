@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:46:12.262292+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T03:17:03.958208+00:00",
+  "commitSha": "76016d6029e4a75c0e2ec5b3343dcf3d2e7ee872",
   "assertions": [
     {
       "name": "h2_cancellation_extends",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4199,
+  "durationMs": 4399,
   "computation": "phase3-deuteron-tritium-h-expansion",
   "scriptFile": "phase3_deuteron_tritium_h_expansion.py",
   "scriptHash": "a2f44ef6a7be",
@@ -39,7 +39,7 @@
       "Z": 1,
       "N": 1,
       "n": 6,
-      "h2_total": "12.7030229395046",
+      "h2_total": "12.7030229395596",
       "h2_is_zero": false,
       "n_partitions": 11
     },
@@ -47,7 +47,7 @@
       "Z": 1,
       "N": 2,
       "n": 9,
-      "h2_total": "18.6630198491946",
+      "h2_total": "18.6630198491744",
       "h2_is_zero": false,
       "n_partitions": 30
     },
@@ -55,15 +55,15 @@
       "Z": 2,
       "N": 1,
       "n": 9,
-      "h2_total": "36.5742285971405",
+      "h2_total": "36.5742285971362",
       "h2_is_zero": false,
       "n_partitions": 30
     },
     "cross_isotope_h2_cancellation": {
       "proton_H3": "0 (exact, Phase 1c)",
-      "deuteron_H6": "12.7030229395046",
-      "tritium_H9": "18.6630198491946",
-      "he3_H9": "36.5742285971405"
+      "deuteron_H6": "12.7030229395596",
+      "tritium_H9": "18.6630198491744",
+      "he3_H9": "36.5742285971362"
     }
   }
 }
