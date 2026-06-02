@@ -111,12 +111,12 @@ Names of mathematical primitives — `gram`, `seminormal`, `wenzl-lr`, `laurent`
 
 | Layer | Where the domain modules live |
 |---|---|
-| Rust core | `tools/hecke-engine/src/{gram,seminormal,wenzl_lr,laurent_*,gb_nf_reducer,sdp_*,…}.rs` (34 flat files) |
-| Python library | `tools/pyhecke/python/pyhecke/{gram,trace,wedderburn,partition,tower,sdp,lp_dual_solver,…}.py` (20 modules) |
-| Python substrate | `tools/qou-substrate/python/qou_substrate/{constants,precision,witness}.py` (3 modules) |
-| Python in-repo substrate | `folio-assistant/computations/substrate/{q_parameter,witness_base,_precision,hecke_core,…}.py` (11 modules) |
+| Rust core | `tools/hecke-engine/src/{gram,seminormal,wenzl_lr,laurent_*,gb_nf_reducer,sdp_*,…}.rs` (single-purpose flat files) |
+| Python library | `tools/pyhecke/python/pyhecke/{gram,trace,wedderburn,partition,tower,sdp,lp_dual_solver,…}.py` |
+| Python substrate | `tools/qou-substrate/python/qou_substrate/{constants,precision,witness}.py` |
+| Python in-repo substrate | `folio-assistant/computations/substrate/{q_parameter,witness_base,_precision,hecke_core,…}.py` |
 | Python facade | `qou-mass/src/qou_mass/{api,prediction}.py` + `_internal/` |
-| Thin-binding crates | `tools/pyhecke-native/src/lib.rs`, `tools/hecke-engine-{wasm,node,r,jvm,c}/src/lib.rs` (single-file re-export shims, 132-1155 lines each) |
+| Thin-binding crates | `tools/pyhecke-native/src/lib.rs`, `tools/hecke-engine-{wasm,node,r,jvm,c}/src/lib.rs` (single-file re-export shims, size varies) |
 
 This axis is **identity-preserving**: `pyhecke.gram` calls `pyhecke_native::gram` which calls `hecke_engine::gram`. The name travels unchanged. Add a primitive in the Rust core → it surfaces under the same name in every binding.
 
