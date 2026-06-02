@@ -426,13 +426,33 @@ shape, with the volume entering as `exp`-linearized angle, not raw `Vol`.
 | Deuteron **absolute** binding | 🟢 derived twice: `m_e·Vol(𝓑₃)·Δtr` (+0.19 %) and `μ₀·ℏ_q·J_q²(j=1)` (−9 %), `μ₀` derived |
 | **A≥3 absolute** binding | 🔴 **the open gate** — the per-rep highest-weight `j=n/2` collapse of `θ_λ` saturates; needs the full per-rep `θ_λ` magnitude (not the linear truncation) |
 
-**The narrowed compute item:** carry the per-rep q-Reeb phase `θ_λ` at
-**full (non-linearized) order** through the GB-filtration/jet tower for A≥3 —
-i.e. recover the `exp(Vol)` from the linear `Δtr` per block. This closes **both**
-the A≥3-absolute binding **and** the mirror-difference magnitude with one
-non-fitted object (the signed structure already exists; only the fitted `(1+q)/2`
-scale is stop-gap). The deuteron is done. Tracking:
-[`2026-05-28-binding-endomorphism-analogy.md`](audits/2026-05-28-binding-endomorphism-analogy.md) §"A≥3 derivation campaign", Δ_λ gate [`2026-05-18-delta-lambda-gating-context.md`](audits/2026-05-18-delta-lambda-gating-context.md).
+**The narrowed compute item (REFRAMED 2026-06-02 — intensive vs extensive).**
+A zero-fit derivation ([`2026-06-02-binding-intensive-vs-extensive-derivation.md`](audits/2026-06-02-binding-intensive-vs-extensive-derivation.md))
+settles the framing: the canonical binding `B = E_0·(|tr_M_free| − |tr_M_atom|)`
+is **INTENSIVE** — the trace difference *saturates* at ~3–4 MeV. The deuteron
+(one inter-nucleon bond) is **derived to +3.6 %**, but A≥3 collapses (derived
+A-growth 1.65× vs AME 12.72×). **Nuclear binding is EXTENSIVE (`∝ A`)**, so the
+canonical trace-difference formula is **structurally missing the additive term**.
+
+**Consequence — the Δ_λ gate was mis-framed.** No per-block *weight* `Δ_λ` can
+turn an intensive quantity extensive (which is *why* the six prior ansätze + the
+2026-06-02 probe series — volume, rotation/full-order `θ_λ`, content-energy,
+content×phase — all failed). The closure is **not a density to multiply**; it is
+an **additive sum over inter-nucleon bonds**:
+
+$$B(K) = \sum_{b\,\in\,\bowtie_K} B_b,\qquad B_b = E_0\,\Delta|\mathrm{tr}_M|_b
+\ \text{(the derived single-bond piece; deuteron = the base case)}.$$
+
+Bond count `C(A,2)` already gives A-growth 6× (vs the intensive 1.65×); the
+residual 6×→12.72× is the **per-bond growth** (each bond embedded in a denser
+braid). The open compute item is therefore: **enumerate the `⨝_K` bonds and
+derive each `B_b` from its embedded sub-braid trace difference** (the deuteron is
+`n=6` base case, derived). This is a *derivation* (sum of derived pieces over the
+structural bond set), the natural job of the operator-valued combiner (#1698) —
+not a weight-fit. Tracking:
+[`2026-05-28-binding-endomorphism-analogy.md`](audits/2026-05-28-binding-endomorphism-analogy.md),
+Δ_λ gate context [`2026-05-18-delta-lambda-gating-context.md`](audits/2026-05-18-delta-lambda-gating-context.md),
+inter-nucleon bonds [`inter-nucleon-channel-color-tube.md`](../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md).
 
 ### 9.4 Lean formalization debt (tracked — verification, NOT a compute gate)
 
