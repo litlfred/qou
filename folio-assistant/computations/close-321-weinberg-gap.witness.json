@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:42:28.881282+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:03:02.861995+00:00",
+  "commitSha": "80e870147175659ee38245fb350f7accf0e22006",
   "assertions": [
     {
       "name": "predecessor_321_dim_eq_16",
@@ -66,11 +66,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 416,
+  "durationMs": 419,
   "computation": "close-321-weinberg-gap",
   "scriptFile": "close_321_weinberg_gap.py",
-  "scriptHash": "6c2cb8b481ea",
-  "scriptCommitSha": "8d0b12ac6d3c0579428633f7dfef245f563f66d5",
+  "scriptHash": "a455ad109085",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:38:47.698203+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T16:11:16.977528+00:00",
+  "commitSha": "80e870147175659ee38245fb350f7accf0e22006",
   "assertions": [
     {
       "name": "full_product_is_bar_anti_symmetric",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 12,
   "computation": "verify-isospin-bar-anomaly",
   "scriptFile": "verify_isospin_bar_anomaly.py",
-  "scriptHash": "16c7cdcbfcd3",
-  "scriptCommitSha": "72adcb612f47ff0f01964a8df80fcd1ea2aaa26d",
+  "scriptHash": "333c1a296b04",
+  "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

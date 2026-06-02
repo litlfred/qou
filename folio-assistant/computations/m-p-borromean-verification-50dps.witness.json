@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T18:23:28.253677+00:00",
-  "commitSha": "18ac6def75acf693c516f28e4a8e625e698c5307",
+  "computedAt": "2026-06-02T16:05:16.788128+00:00",
+  "commitSha": "80e870147175659ee38245fb350f7accf0e22006",
   "assertions": [
     {
       "name": "muon_borromean_baseline_ppm_lt_2",
@@ -45,8 +45,8 @@
   "durationMs": 13,
   "computation": "m-p-borromean-verification-50dps",
   "scriptFile": "m_p_borromean_verification_50dps.py",
-  "scriptHash": "883ad758f354",
-  "scriptCommitSha": "b1b64be871849333c44690b3b198e567773df962",
+  "scriptHash": "cf8dff198817",
+  "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
