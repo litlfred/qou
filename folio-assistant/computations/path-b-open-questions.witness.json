@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-01T13:45:53.307236+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-02T17:17:07.333043+00:00",
+  "commitSha": "c3fc7c9c26831d36f4a071ea4b443a02dc27f69a",
   "assertions": [
     {
       "name": "self_evacuating_eq_domino_count",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 800,
+  "durationMs": 795,
   "computation": "path-b-open-questions",
   "scriptFile": "path_b_open_questions.py",
-  "scriptHash": "2258329c564e",
-  "scriptCommitSha": "2c0fdeaa954eb7010dd937a08290c66706b23223",
+  "scriptHash": "459d2479dba7",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

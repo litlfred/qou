@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:39:20.574715+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "computedAt": "2026-06-02T17:16:59.131978+00:00",
+  "commitSha": "c3fc7c9c26831d36f4a071ea4b443a02dc27f69a",
   "assertions": [
     {
       "name": "Optimised pair count ≤ naive pair count",
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "optimised-magic-verifier",
   "scriptFile": "optimised_magic_verifier.py",
-  "scriptHash": "39308e1fa281",
-  "scriptCommitSha": "b763e7b40591c66ec1f61a2e01391af8c1cad264",
+  "scriptHash": "729aeb267733",
+  "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +89,7 @@
           2
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 0.0034101009368896484
+        "elapsed_sec": 0.003732442855834961
       },
       {
         "i_Z": 2,
@@ -105,7 +105,7 @@
           1
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 15.480812072753906
+        "elapsed_sec": 15.685500383377075
       },
       {
         "i_Z": 3,
@@ -122,7 +122,7 @@
           2
         ],
         "dominant_is_self_conj": false,
-        "elapsed_sec": 0.016751766204833984
+        "elapsed_sec": 0.017211437225341797
       },
       {
         "i_Z": 3,
@@ -260,9 +260,9 @@
       "optimised_pair_count": 19,
       "computed_pair_count": 3,
       "dominant_self_conj_count": 0,
-      "actual_optimised_sec": 15.50097393989563,
-      "estimated_naive_sec": 253.1825743516286,
-      "empirical_speedup": 16.333333333333332
+      "actual_optimised_sec": 15.706444263458252,
+      "estimated_naive_sec": 256.5385896364848,
+      "empirical_speedup": 16.333333333333336
     }
   }
 }
