@@ -108,6 +108,28 @@ For every sibling PR, classify yourself on three axes:
 A sibling that is `(none, independent, none)` doesn't need a
 coordination comment.  Anything else does.
 
+#### 2-bis.  Mass-and-Binding-Algorithms appendix sync
+
+**If your PR touches any of the following — mass-identity (Step 9a),
+per-isotope binding (Step 9b), confinement SDP (Step 10), Q_β
+truncation (Step 11), or any sidecar algorithm (Δ_λ closure, c_k
+ladder, LP/SDP dual emission, witness-JSON pipeline) — you MUST
+update the matching `alg:`-block under
+[`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../../content/quantum-observable-universe/appendix-mass-binding-algorithms/)
+in the same PR.**
+
+The appendix is a *maintenance contract*, not a static document:
+its `uses[]`, `computation.script`, `computation.witness`, and the
+.md *Algorithm* / *Correctness* / *Python API* sections must stay
+in sync with the actual compute. Reviewers diff the appendix
+against the compute change.
+
+When posting your intent comment on a sibling PR whose scope
+overlaps mass / binding / compute, name the `alg:`-block(s) you
+will touch alongside the script paths — e.g.
+"will touch `confinement-operator-selection.py` + the matching
+`alg:confinement-sdp` in `appendix-mass-binding-algorithms/`".
+
 ### 3.  Post intent before working
 
 Use `mcp__github__add_issue_comment` (or `gh pr comment`) on each

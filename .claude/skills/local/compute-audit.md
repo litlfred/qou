@@ -302,6 +302,15 @@ numerical equivalence at q₀ before/after.
    invariants) where applicable — speedups must not perturb
    exact algebraic outputs.
 5. **Run `bun run validate`** for any content-block touch.
+6. **MBA-appendix sync check.** If the audited script realises a
+   canonical chain step or a sidecar algorithm (Δ_λ closure, c_k
+   ladder, LP/SDP dual emission, witness-JSON pipeline), confirm
+   the corresponding `alg:`-block under
+   [`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../../content/quantum-observable-universe/appendix-mass-binding-algorithms/)
+   has been updated in the same PR (or in a follow-up that lands
+   before merge). The audit fails — even with green numerics — if
+   the algorithm description in the appendix has drifted from the
+   actual compute.
 
 ## Sibling skill: `production-vs-exploratory-discipline` (CAL-4 / empirical-fit / numerology classification)
 

@@ -380,6 +380,7 @@ For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
 - [ ] Long-compute scripts launch with `python -u` + tee
 - [ ] Branch name follows `claude/<theme>-<utc-ymd>`
 - [ ] Combined with related work on one PR (per CLAUDE.md "minimize PR creation")
+- [ ] **MBA-appendix sync.** If the script realises a step of the canonical chain (Steps 1–11 per [`docs/canonical-derivation-cheat-sheet.md §0`](../../../docs/canonical-derivation-cheat-sheet.md)) or one of the sidecar algorithms (Δ_λ closure, c_k truncation ladder, LP/SDP dual emission, witness-JSON pipeline), the matching `alg:`-block under [`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../../content/quantum-observable-universe/appendix-mass-binding-algorithms/) must be updated in the **same commit** (or at the latest in the same PR): `uses[]` cites the upstream provables you used, `computation.script` / `computation.witness` point at the new files, and the .md body's *Algorithm* / *Correctness* / *Python API* sections reflect the new signature. Reviewers will check the appendix diff against the compute diff.
 
 If any box is unchecked, **stop and resolve before writing code**.
 
