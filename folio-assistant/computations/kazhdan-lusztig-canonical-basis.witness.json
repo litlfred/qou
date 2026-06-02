@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-02T17:08:16.594104+00:00",
-  "commitSha": "8dfc85bc86d22a988a5452472bf5dff23b14d482",
+  "computedAt": "2026-06-02T17:44:50.270758+00:00",
+  "commitSha": "23619918613b6d5885212f46594c9b4a1e057226",
   "assertions": [
     {
       "name": "bruhat_count_n=2",
@@ -127,14 +127,35 @@
       "expected": "q + 1",
       "passed": true,
       "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §5.1"
+    },
+    {
+      "name": "literature_P_e_w0_equals_1_in_S6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §5.1"
+    },
+    {
+      "name": "literature_P_e_3412xS2_equals_1_plus_q_in_S6",
+      "computed": "q + 1",
+      "expected": "q + 1",
+      "passed": true,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §5.1"
+    },
+    {
+      "name": "kl_cache_size_below_300k_sanity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "design-doc acceptance criterion: S_6 KL cache ≤ 300k. Self-test recorded 42374 entries (actual size in `data.kl_cache_size`)."
     }
   ],
   "allPassed": true,
-  "durationMs": 100849,
+  "durationMs": 54850,
   "computation": "kazhdan-lusztig-canonical-basis",
   "scriptFile": "kazhdan_lusztig.py",
-  "scriptHash": "7a1edeb621f9",
-  "scriptCommitSha": "8dfc85bc86d22a988a5452472bf5dff23b14d482",
+  "scriptHash": "e18dd312256e",
+  "scriptCommitSha": "fda363a5525b91e056935535d0b89ad399bfa67a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -149,5 +170,8 @@
     "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
-  "description": "Kazhdan–Lusztig polynomials and the canonical basis C_w of H_n(q) for n ≤ 6.  Closed form at n ≤ 3 (dihedral / Brenti §5.1); full K-L 1979 §1.1 recursion at n ∈ {4, 5, 6}.  Validates Bruhat-order cardinality, T→C→T round-trip, bar-invariance of C_{w_0} coefficient sum, and two literature cross-checks (P_{e, 3412} = 1+q and P_{e, 4231 in S_5} = 1+q)."
+  "description": "Kazhdan–Lusztig polynomials and the canonical basis C_w of H_n(q) for n ≤ 6.  Closed form at n ≤ 3 (dihedral / Brenti §5.1); full K-L 1979 §1.1 recursion at n ∈ {4, 5, 6}.  Validates Bruhat-order cardinality, T→C→T round-trip, bar-invariance of C_{w_0} coefficient sum, and two literature cross-checks (P_{e, 3412} = 1+q and P_{e, 4231 in S_5} = 1+q).",
+  "data": {
+    "kl_cache_size": 42374
+  }
 }

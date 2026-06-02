@@ -190,12 +190,17 @@ def kl_polynomial(x: tuple[int, ...], w: tuple[int, ...]) -> sp.Expr:
 
 # ── Memoized Kazhdan–Lusztig recursion (K-L 1979 §1.1) ────────────
 #
-# For n ≥ 5 the closed form fails (first non-trivial P appears at S_5).
-# The standard recursion (K-L 1979 §1.1, Brenti §5.2): pick a right
-# descent s of w (i.e. ws < w), then
+# For n ≥ 4 the closed form fails (first non-trivial P_{e, (3,4,1,2)}
+# = 1 + q is already in S_4 — the famous "3412" example, NOT S_5 as
+# previously mis-stated here per Brenti §5.1 mis-reading; see
+# `kl_polynomial` docstring + commit message for details).
 #
-#   c(x, w; s) := P_{xs, ws}                       if xs > x
-#               := P_{xs, ws} + q · P_{x, ws}      if xs < x
+# The standard recursion (K-L 1979 §1.1, Brenti §5.2): pick a right
+# descent s of w (i.e. ws < w), then per Bjorner-Brenti Theorem
+# 5.1.4:
+#
+#   c(x, w; s) := q · P_{xs, ws} + P_{x, ws}        if xs > x (c=0)
+#               := P_{xs, ws} + q · P_{x, ws}        if xs < x (c=1)
 #
 #   P_{x, w} = c(x, w; s) − Σ_{x ≤ z < ws, zs < z}
 #                              μ(z, ws) · q^{(ℓ(w) − ℓ(z))/2} · P_{x, z}
@@ -209,6 +214,25 @@ _kl_cache: dict[
     tuple[tuple[int, ...], tuple[int, ...]],
     sp.Expr,
 ] = {}
+
+
+# Cache permutations_S_n results — the inner correction loop hits
+# permutations_S_n(n) on every recursive call; without caching this
+# allocates a fresh n!-element list each time (e.g. 720 elements per
+# call at S_6, ~70 MB of allocations across 97k cache entries).  Per
+# Copilot review on PR #1714 line 289.
+_perms_cache: dict[int, list[tuple[int, ...]]] = {}
+
+
+def _perms_n(n: int) -> list[tuple[int, ...]]:
+    """Cached `permutations_S_n(n)` for hot-loop use inside the
+    KL recursion's correction sum."""
+    cached = _perms_cache.get(n)
+    if cached is not None:
+        return cached
+    result = permutations_S_n(n)
+    _perms_cache[n] = result
+    return result
 
 
 def _right_descent(w: tuple[int, ...]) -> int | None:
@@ -225,14 +249,24 @@ def _right_descent(w: tuple[int, ...]) -> int | None:
 def _mu(z: tuple[int, ...], w: tuple[int, ...]) -> sp.Expr:
     """Kazhdan–Lusztig μ-coefficient: the coefficient of
     ``q^{(ℓ(w) − ℓ(z) − 1)/2}`` in ``P_{z, w}(q)``.  Zero unless
-    ``ℓ(w) − ℓ(z)`` is odd."""
+    ``ℓ(w) − ℓ(z)`` is odd.
+
+    Implementation note: extracts the coefficient via
+    ``as_coefficients_dict()`` (O(#terms) dict lookup) rather than
+    ``sp.Poly(...).coeff_monomial(...)`` (which constructs a full
+    polynomial representation).  Per Gemini review on PR #1714, the
+    dict form is ~10× faster on this hot path.
+    """
     diff = length(w) - length(z)
     if diff < 1 or diff % 2 == 0:
         return sp.S.Zero
     target_power = (diff - 1) // 2
     P_zw = kl_polynomial_recursive(z, w)
-    return sp.Poly(P_zw, q).coeff_monomial(q ** target_power) \
-        if P_zw != 0 else sp.S.Zero
+    if P_zw == 0:
+        return sp.S.Zero
+    coeff_dict = P_zw.as_coefficients_dict()
+    key = q ** target_power if target_power > 0 else sp.S.One
+    return coeff_dict.get(key, sp.S.Zero)
 
 
 def kl_polynomial_recursive(
@@ -283,24 +317,36 @@ def kl_polynomial_recursive(
 
     # Correction: Σ_{x ≤ z < ws, zs < z} μ(z, ws) · q^{(ℓ(w) − ℓ(z))/2}
     #              · P_{x, z}.
+    # Per Gemini review on PR #1714, the inner-loop filters are
+    # ordered cheap-to-expensive: descent check (O(1) tuple compare)
+    # first, then parity (cheap arithmetic), then the two O(n²)
+    # Bruhat checks, then the recursive _mu call.  Since _mu is
+    # non-zero only when (ℓ(ws) − ℓ(z)) is odd, equivalently
+    # (lw − lz) is even, the parity gate skips ~50 % of candidates
+    # before any expensive check.
     lw = length(w)
     correction = sp.S.Zero
     n = len(w)
-    for z in permutations_S_n(n):
+    for z in _perms_n(n):
+        # zs < z ⇔ s is a right descent of z (cheap; ~50% filter).
+        if not (z[s] > z[s + 1]):
+            continue
         if z == ws:
+            continue
+        lz = length(z)
+        # Parity gate: _mu is zero unless (lw − lz) is even.
+        if (lw - lz) % 2 != 0:
             continue
         if not bruhat_le(z, ws):
             continue
         if not bruhat_le(x, z):
             continue
-        # zs < z ⇔ s is a right descent of z.
-        if not (z[s] > z[s + 1]):
-            continue
         mu = _mu(z, ws)
-        if mu == 0:
+        if mu.equals(0):
             continue
-        lz = length(z)
-        correction += mu * q ** sp.Rational(lw - lz, 2) \
+        # (lw − lz) is even here, so integer division is exact and
+        # cheaper than sp.Rational.
+        correction += mu * q ** ((lw - lz) // 2) \
             * kl_polynomial_recursive(x, z)
 
     result = sp.expand(c - correction)
@@ -586,14 +632,54 @@ def _self_test() -> dict:
         "expected": "q + 1",
         "ok": P_4231_ok,
     })
+    # Third reference: P_{e, w_0(S_n)} = 1 always (longest element
+    # gives the trivial KL polynomial).  Check at S_6 — exercises
+    # the deepest recursion depth in the self-test.
+    e_6 = (1, 2, 3, 4, 5, 6)
+    w0_6 = (6, 5, 4, 3, 2, 1)
+    P_e_w0_6 = kl_polynomial(e_6, w0_6)
+    P_e_w0_6_ok = sp.simplify(P_e_w0_6 - 1) == 0
+    lit_checks.append({
+        "name": "P_e_w0_equals_1_in_S6",
+        "computed": str(P_e_w0_6),
+        "expected": "1",
+        "ok": P_e_w0_6_ok,
+    })
+    # Fourth reference: KL-multiplicativity for direct products.
+    # P_{e, (3,4,1,2,6,5)} = P_{e, 3412} · P_{e, s_5} = (1+q) · 1
+    # = 1 + q.  Confirms the recursion respects the parabolic
+    # direct-product structure of S_4 × S_2 ⊂ S_6.
+    w_prod = (3, 4, 1, 2, 6, 5)
+    P_prod = kl_polynomial(e_6, w_prod)
+    P_prod_ok = sp.simplify(P_prod - (1 + q)) == 0
+    lit_checks.append({
+        "name": "P_e_3412xS2_equals_1_plus_q_in_S6",
+        "computed": str(P_prod),
+        "expected": "q + 1",
+        "ok": P_prod_ok,
+    })
 
     lit_ok = all(c["ok"] for c in lit_checks)
+
+    # Cache-size sanity (per Copilot review on PR #1714 line 678 +
+    # design doc acceptance criteria): S_6 fully-sweep cache should
+    # stay well under 300k entries.  This catches accidental cache
+    # blow-ups (e.g. if a future change keys on something coarser
+    # than the (x, w) tuple).  Note: the self-test only ran a 49-
+    # element subset of S_6, so the cache here is well below the
+    # full-S_6 baseline of ~97k entries.
+    kl_cache_size = _kl_cache_size()
+    cache_ok = (kl_cache_size <= 300_000)
 
     return {
         "cases": cases,
         "literature_checks": lit_checks,
         "literature_all_ok": lit_ok,
-        "all_passed": all(c["ok"] for c in cases) and lit_ok,
+        "kl_cache_size": kl_cache_size,
+        "kl_cache_size_sanity_ok": cache_ok,
+        "all_passed": (
+            all(c["ok"] for c in cases) and lit_ok and cache_ok
+        ),
     }
 
 
@@ -675,5 +761,19 @@ if __name__ == "__main__":
             expected=lc["expected"],
             source="Bjorner-Brenti, Combinatorics of Coxeter Groups §5.1",
         )
+    # Cache-size sanity assertion (per Copilot review on PR #1714).
+    # Boolean form so the inequality semantics work with the
+    # equality-based `Assertion.passed`.
+    w_builder.add_data("kl_cache_size", summary["kl_cache_size"])
+    w_builder.add_assertion(
+        name="kl_cache_size_below_300k_sanity",
+        computed="1" if summary["kl_cache_size_sanity_ok"] else "0",
+        expected="1",
+        source=(
+            f"design-doc acceptance criterion: S_6 KL cache ≤ 300k. "
+            f"Self-test recorded {summary['kl_cache_size']} entries "
+            f"(actual size in `data.kl_cache_size`)."
+        ),
+    )
     out_path = w_builder.save()
     print(f"  Witness written → {out_path.name}")
