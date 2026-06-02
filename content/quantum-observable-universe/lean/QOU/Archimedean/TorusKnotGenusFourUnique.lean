@@ -45,6 +45,7 @@ end TorusKnot
     `m ≤ n`, `gcd(m,n) = 1` ordering) are `T_{2,9}` and `T_{3,5}`. -/
 -- Ref: [manuscript] §5/torus-knot-genus-four-unique
 -- Ref: [rolfsen] Rolfsen, *Knots and Links*
+-- Ref: [manuscript] proof omitted here; this file records the cited classification result as an axiom.
 axiom torus_knot_genus_four_unique (K : TorusKnot)
     (h : K.genus = 4) :
     (K.m = 2 ∧ K.n = 9) ∨ (K.m = 3 ∧ K.n = 5)
@@ -58,10 +59,8 @@ theorem genus_four_crossing_numbers (K : TorusKnot)
   · left
     unfold TorusKnot.crossingNumber
     rw [hm, hn]
-    norm_num
   · right
     unfold TorusKnot.crossingNumber
     rw [hm, hn]
-    norm_num
 
 end QOU.Archimedean
