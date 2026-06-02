@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T18:11:51.994733+00:00",
-  "commitSha": "d7c56c17e1d090c7a409061838b8b8f1ba2fe072",
+  "computedAt": "2026-06-02T18:27:48.579599+00:00",
+  "commitSha": "cc3848f6b8f31dd2cfd5576f79b3b84c81fe35ad",
   "assertions": [
     {
       "name": "no_content_energy_phase_weight_jointly_closes",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 12,
   "computation": "probe-content-energy-signed-phase",
   "scriptFile": "probe_content_energy_signed_phase.py",
-  "scriptHash": "01badb030272",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "347b87ff7c4a",
+  "scriptCommitSha": "70c62dcfda7bf832893f658d83348296596b8d19",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

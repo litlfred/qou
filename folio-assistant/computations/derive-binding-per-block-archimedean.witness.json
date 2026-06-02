@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T18:19:10.221034+00:00",
-  "commitSha": "70c62dcfda7bf832893f658d83348296596b8d19",
+  "computedAt": "2026-06-02T18:27:48.378572+00:00",
+  "commitSha": "cc3848f6b8f31dd2cfd5576f79b3b84c81fe35ad",
   "assertions": [
     {
       "name": "per_block_archimedean_derivation_computed_zero_fit",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 13,
   "computation": "derive-binding-per-block-archimedean",
   "scriptFile": "derive_binding_per_block_archimedean.py",
-  "scriptHash": "53a7e37fd2e4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7a04033af5b5",
+  "scriptCommitSha": "cc3848f6b8f31dd2cfd5576f79b3b84c81fe35ad",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
