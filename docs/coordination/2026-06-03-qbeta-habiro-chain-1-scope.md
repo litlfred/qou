@@ -106,7 +106,51 @@ next session should either:
   A as a crystal-operator eigenvalue in the Habiro-ring formulation
 - **OR** explore mixed chains (e.g. Wenzl · Kashaev — symmetric
   combinations not tested in the literal first-tests above)
-4. **Witness JSONs** per script, EXPLORATORY, with structured pass/fail at each c_k
+
+## Chain 4 / Option-E concrete first-test menu (2026-06-03)
+
+Lean cross-check completed this session in `QBetaCategoricalPrecisionLadder.lean`:
+
+- **N2_factor** = `1 − b² · ℏ_q^4` from Kashiwara `f̃₁†f̃₁` norm-squared
+- Substrate identity `u = b · ℏ_q²` gives `u² = b² · ℏ_q^4`, so
+  `c_2 = -1` is **algebraic given the categorical input** that
+  `‖f̃₁†f̃₁‖² = b² · ℏ_q^4`. It's not a deep eigenvalue search.
+- **N3_factor** Lean conjecture: `c_3 = J_Hopf(q=1) = -2`, which is
+  **3.35% off** empirical c_3 = -2.0693 at proton-pinned q₀
+
+So Chain 4 / Option-E is concretely about: **what q-deformed Kashiwara
+or crystal operator gives c_3 ≈ -2.069 at q₀ to ≤ 10 ppm?**
+
+Candidate Kashiwara/crystal formulas NOT yet tested (none tested in
+the 15-candidate c_3 re-run):
+
+1. **Demazure character at staircase partition** — `χ_{Demazure}^{(2,1)}(q)`
+   evaluated at q₀; the Kashiwara crystal of the Demazure module
+   B_w(λ) for the longest element w of S_3
+2. **KLR canonical basis trace** — `Tr(b_λ)` for the KLR generator b_λ
+   at strand-count 3, q₀ evaluation
+3. **Crystal-graph node count weighted by content** — `Σ_{T ∈ SYT(2,1)}
+   q^{maj(T)}` evaluated at q₀, where maj is the major-index statistic
+4. **q-deformed Hopf-Jones at substrate** — `J_Hopf(q₀)` in standard
+   Kauffman normalization (NOT `J_Hopf(q=1)`); equals
+   `-q₀^{-1/2}·(q₀² + 1) ≈ -2.119` (rough estimate, 2.4% from target)
+5. **Type-B folded crystal trace** — per CLAUDE.md §7b authoring
+   guidance, the Type-B fold gives matter-antimatter pairing as fixed
+   points; trace over fixed points may give c_3
+6. **Mixed Wenzl · Kashaev symmetric combination** —
+   `(tr_M(p_3^{JW}) + K_3^{(Kashaev)})/2` or similar symmetric average
+   not directly tested in Family α/β
+
+### Next-session entry point — Chain 4
+
+File: `folio-assistant/computations/qbeta/qbeta_kashiwara_chain_4.py`
+Test all 6 candidates above at proton-pinned q₀ + muon anchor. PASS if
+any matches (-1, -2.069, ...) within 10 ppm at both anchors. Witness
+emitting, Δ_λ-gate compliant (closed-form formulas, no fits).
+
+**Expected outcome**: probabilistic — at least one candidate may match,
+or all NEGATIVE (residue A is a more exotic crystal-graph composite).
+Either way the search space narrows substantially.
 5. **Lean §3b-cond `QbetaHabiroChain1` class** in `q-beta-categorical-precision-ladder.lean` — axiomatize whichever family lands
 
 ## Family γ findings (2026-06-03) — sharpen what α / β must test
