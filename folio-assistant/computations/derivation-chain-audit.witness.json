@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T12:05:11.108099+00:00",
-  "commitSha": "aa39825a11d0cd018bec372f7b9f0d8fd152149a",
+  "computedAt": "2026-06-03T15:20:26.898085+00:00",
+  "commitSha": "af786f5313d087f86cd15fcd378be6c8513e4f22",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "8c9ce6665871",
@@ -2348,6 +2348,7 @@
         "demazure-sub-crystal-prescreen-50dps.witness.json",
         "derive-binding-bond-sum.witness.json",
         "derive-binding-bond-type.witness.json",
+        "derive-binding-chain-cooperative.witness.json",
         "derive-binding-per-block-archimedean.witness.json",
         "derive-ms-md-torus-knot.witness.json",
         "deuteron-binding-interface-closure.witness.json",
