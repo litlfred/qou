@@ -1,0 +1,97 @@
+# Q_β Habiro element scope — next session entry point (2026-06-03)
+
+> Owner picked **Chain 1: Q_β Habiro element at proton-pinned q₀** for the still-open residue-A identification (PR #1727's simple-pole verdict; `A ≈ 1.804e-15`).
+>
+> This doc is the entry point for the next session. It records what's been tried, what's been refuted, and what concrete next attempts the Δ_λ gate allows.
+
+## Target
+
+Find `F(u) ∈ Habiro(ℤ)` such that:
+1. `F(u_substrate(q_proton)) = Q_β(q_proton) / Q_β_base(q_proton)` to 7.8 ppb (the L2 target)
+2. Reproduces `c_2 = −1` Taylor-exact at leading (already PROVED)
+3. Has a simple pole at u = u_substrate (already proved at fibre level, PR #1727)
+4. Has categorical residue `A ≈ 1.804e-15` whose identification is the open work
+
+## Mirror of α_EM PR #1511 — what carries over
+
+α_EM closed-fermion-loop element: `[2]_q · (1 − h²α)`.
+
+What carries over to Q_β:
+- Habiro-ring multiplicative structure `Π_k (1 + c_k u^k)` — already canonical
+- Fibre-level holomorphy — already proved (PR #1727)
+- Cross-anchor q-independence of asymptotic recurrence `c_{k+1}/c_k → 1/u` — already proved (PR #1713)
+
+## Already refuted (do NOT retry as the residue-A categorical chain)
+
+| Attempt | Result | Source |
+|---|---|---|
+| Literal `2 · C(1/2, k/2) · (1/4)^(k/2)` at k=3 | yields 0 (q-independent) — does not transfer | c_3 re-run 2026-06-03 |
+| `[3]_q · (1 − ℏ_q²)` at c_3 | −3.01 vs target −2.07 (456k ppm miss) | c_3 re-run 2026-06-03 |
+| 15 single-formula candidates at c_3 | 0/15 pass 10 ppm both anchors | `c_3_categorical_derivation_attempt.py` 2026-06-03 |
+| Real `c_3 = f(q_0_real)` matching multiple anchors near singularity | structurally hopeless (simple pole at u_substrate) | PR #1713, PR #1727 |
+| 2-term constant-coefficient recurrence | refuted by asymptotic `c_{k+1}/c_k → 1/u` | PR #1713 |
+| `eigenphase = f` at u¹ | non-zero u¹ coefficient `−√3/12` in `cos(α − bℏ²/2)`; ladder starts at u² | PR #1602 |
+
+## Concrete next attempts (Chain 1) — what the Δ_λ gate allows
+
+Two families of Habiro-ring elements have NOT been tested against the c_k constraints at the proton-pinned q₀:
+
+### Family α — Habiro-Wenzl projector traces
+
+Mirror of α_EM PR #1511, but using **Wenzl projectors** `p_n ∈ H_n(q)` (which are the canonical Habiro-ring building blocks for the Jones polynomial) instead of the literal `[2]_q` quantum number.
+
+Candidate forms:
+- `F_α(u) := Π_k (1 + tr_M(p_k) · u^k)` — Habiro element from Wenzl-projector Markov traces
+- `F_α'(u) := Π_k (1 + θ_k · tr_M(p_k) · u^k)` — same with categorical phase factors `θ_k ∈ μ_∞`
+
+Concrete cross-checks at proton-pinned q₀:
+- `c_2`: `tr_M(p_2) = 1` per Wenzl-projector trace; matches `c_2 = −1` only with a sign convention — investigate the sign
+- `c_3`: `tr_M(p_3)` against `c_3 ≈ −2.072`
+- The Wenzl projectors are q-rational at fibre level; archimedean evaluation is finite for q in the open annulus around q₀
+
+### Family β — Habiro-Kashaev quantum-dilogarithm tower
+
+Mirror of α_EM but using **Kashaev's q-quantum dilogarithm** `(q;q)_∞` instead of the analytic continuation `C(1/2, k/2)`. The Kashaev invariant has a categorical residue at root-of-unity limits that is THE candidate for `A`.
+
+Candidate forms:
+- `F_β(u) := (1 − u) · Π_k (1 + d_k · u^k)` where `d_k` are extracted from Kashaev tower at strand-count k
+- `F_β'(u) := (q · q⁻¹; q)_∞ · expand(u)` — explicit Habiro-Kashaev form
+
+Concrete cross-checks at proton-pinned q₀:
+- Kashaev tower `Vol(K_∞)` at substrate q₀ vs CODATA Q_β — should match if Q_β IS the Kashaev volume of the substrate-anchored knot
+- This connects to the Volume Conjecture in a clean way: Q_β is the Bloch-Wigner dilogarithm of the substrate fibre
+
+### Family γ — sibling-corroborated route (PR #1750 + PR #1752 informed)
+
+PR #1750 showed `T_β = S · I` under Markov pairing → c_k are Taylor coefficients of `S(q)` directly. PR #1752 showed Q_β SCALE via `Q_A(q₀)` is CODATA-Q_β-free to 0.168%. Combining:
+
+- `S(q) = Q_A(q) · Π_k (1 + c_k(q) · u(q)^k)` — pure substrate
+- Residue at u_substrate IS `Q_A(q₀) · [residue of c_k expansion]` — this is testable
+
+## Δ_λ-gate compliance
+
+Each of the three families above is a **derived categorical chain**, not a fit:
+- Family α: Wenzl projectors are canonical (in `pyhecke`)
+- Family β: Kashaev tower is canonical (Volume Conjecture)
+- Family γ: combination of two already-derived structural negatives + a Habiro-ring extension
+
+None proposes a "7th fit-based ansatz". The Δ_λ gate is respected.
+
+## Concrete next-session deliverables
+
+1. **`folio-assistant/computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py`** — Family α scaffold + symbolic cross-checks at both anchors
+2. **`folio-assistant/computations/qbeta/qbeta_kashaev_habiro_chain_beta.py`** — Family β scaffold + Kashaev tower extraction
+3. **`folio-assistant/computations/qbeta/qbeta_sa_qa_chain_gamma.py`** — Family γ scaffold + cross-anchor check
+4. **Witness JSONs** per script, EXPLORATORY, with structured pass/fail at each c_k
+5. **Lean §3b-cond `QbetaHabiroChain1` class** in `q-beta-categorical-precision-ladder.lean` — axiomatize whichever family lands
+
+If any family lands within 10 ppm at BOTH anchors for k=2 through 7, that's a Habiro-element identification candidate. If none do, the verdict is: Chain 1 needs further owner-direction (e.g., a specific projector basis, a Kashaev tower level, or a different combiner).
+
+## Cross-refs
+
+- [PR #1727 simple-pole verdict](../audits/2026-06-02-qbeta-1ppq-singularity-simple-pole-fibre-level.md)
+- [PR #1713 Habiro radius of convergence](../audits/2026-06-02-qbeta-habiro-radius-of-convergence-at-u-substrate.md)
+- [PR #1750 Markov SHAPE collapse](../audits/2026-06-03-qbeta-markov-trace-shape-collapse.md)
+- [PR #1752 SDP strict-complementarity PARTIAL](../audits/2026-06-03-qbeta-sdp-strict-complementarity-partial.md)
+- [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) — master ledger
+- α_EM analog: PR #1511 [2]_q · (1 − h²α)
