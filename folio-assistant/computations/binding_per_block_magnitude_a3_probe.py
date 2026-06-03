@@ -3,127 +3,114 @@
 """Per-block-magnitude binding — does the operator-valued (don't-collapse-
 blocks-before-|·|) form that closes the DEUTERON extend to A=3?
 
-Two parameter-free readings of the canonical binding
-`B = E_0·(tr_M(W_free) − tr_M(W_atom))` differ only in where the modulus
-sits relative to the Wedderburn sum:
+VERDICT: NO. The per-block form closes A=2 (+3.6 %) but fails A=3 the same
+way every other reading does (T −61.7 %, ³He −55.1 %). Recorded as a
+negative result so the per-block / superselection theorem is NOT formalized
+(it would be false for A≥3).
+
+Two parameter-free readings of `B = E_0·(tr_M(W_free) − tr_M(W_atom))`
+differ only in where |·| sits relative to the Wedderburn sum:
 
   scalar (collapse first):   B = E_0·( |Σ_λ y_λ χ^λ(free)| − |Σ_λ y_λ χ^λ(atom)| )
   per-block (operator-valued): B = E_0·( Σ_λ y_λ|χ^λ(free)| − Σ_λ y_λ|χ^λ(atom)| )
 
-The scalar form gives the deuteron at −79 % (binding_canonical.py); the
-per-block form gives +3.6 % (derive_binding_bar_pairing.py, #1742). The
-per-block form is the operator-valued reading: each Wedderburn block
-keeps its own archimedean magnitude before summing, so per-block phase
-cancellation is not allowed to wipe out the binding. NO per-partition
-Δ_λ is introduced — every factor (y_λ, χ^λ, E_0) is already derived.
+Motivation: the per-block form is the "Wedderburn blocks are superselection
+sectors → observe |·| per sector, sum incoherently" reading (the natural
+extension of the q₀-real bar/modulus result). It closes the deuteron, so
+the hypothesis was worth testing. It does NOT close A=3 → refuted.
 
-This probe runs the per-block form for D, T, ³He at q₀ and reports the
-residual vs AME. If A=3 lands near the deuteron's few-percent, the
-operator-valued per-block magnitude is the parameter-free A≥3 closure.
-EXPLORATORY: no fit; E_0 is the CAL-3 calibration used by binding_canonical.
+NO per-partition Δ_λ is introduced; every factor (y_λ, χ^λ, E_0=CAL-3) is
+already derived. χ^λ is read from the cached Rust kernel witnesses
+(atom-chi-rust-{d,t,3he}.witness.json, ~0.02 s each — pure-Python
+chi_lambda_numerical at H_9 is intractable). EXPLORATORY; no fit.
 """
 from __future__ import annotations
 
-import sys as _sys
-from pathlib import Path as _Path
-for _d in ("hecke", "habiro", "substrate"):
-    _p = str(_Path(__file__).resolve().parent / _d)
-    if _p not in _sys.path:
-        _sys.path.insert(0, _p)
-import _path_bridge  # noqa: E402, F401 — Phase-6 bridge
+import json
+import sys
+from pathlib import Path
 
-import mpmath as mp  # noqa: E402
+import mpmath as mp
 
-from habiro_coefficients_interpolate import (  # noqa: E402
-    chi_lambda_numerical, atomic_braid_to_crossings,
-)
-from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
-from schur_weyl_symbolic import partitions_of  # noqa: E402
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+import _path_bridge  # noqa: E402, F401
+
+from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-DPS = 30                                        # exploratory: ~few% structural
-set_compute_dps(DPS)                            # effect; 30 dps ample, fast at H_9
+set_compute_dps(30)                              # exploratory; ~%-level effect
 q0 = mp.mpf(str(Q0))
-M_E = mp.mpf(str(M_E_MEV))
-E0 = M_E / (q0 * (q0 - 1))                      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
+E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
 
-ISO = {"D": (1, 1), "T": (1, 2), "3He": (2, 1)}
-AME_B = {"D": mp.mpf("2.2245662"), "T": mp.mpf("8.4818"),
-         "3He": mp.mpf("7.7180")}
+ISO = {"d": (6, "2.2245662"), "t": (9, "8.4818"), "3he": (9, "7.7180")}
 
 
-_CH_CACHE: dict = {}
-
-
-def _channels(Z, N, inter):
-    """{λ: (Re y_λ, Re χ^λ)} at q₀ — computed ONCE per (Z,N,inter) and reused
-    by both the per-block and scalar readings (the χ^λ evaluation at H_{3A}
-    is the bottleneck; memoize it)."""
-    import time as _t
-    key = (Z, N, inter)
-    if key in _CH_CACHE:
-        return _CH_CACHE[key]
-    cr = atomic_braid_to_crossings(Z, N, include_inter=inter)
-    out = {}
-    t0 = _t.time()
-    for lam in partitions_of(3 * (Z + N)):
-        chi, d = chi_lambda_numerical(lam, q0, cr)
-        if d == 0:
-            continue
-        y = y_lambda_wenzl_bridge_numeric(lam, q0, dps=DPS)
-        out[lam] = (mp.re(y), mp.re(chi))
-    _CH_CACHE[key] = out
-    print(f"    [Z={Z} N={N} inter={inter}: {len(out)} blocks, "
-          f"{_t.time()-t0:.1f}s]", flush=True)
-    return out
-
-
-def _per_block_mag(Z, N, inter):
-    """Σ_λ y_λ·|χ^λ| — per-block (operator-valued) magnitude: each Wedderburn
-    block keeps its own |·|; no sign cancellation across blocks. Closes D."""
-    return sum(y * abs(chi) for y, chi in _channels(Z, N, inter).values())
-
-
-def _scalar_mag(Z, N, inter):
-    """|Σ_λ y_λ χ^λ| — scalar (collapse-first) magnitude, for contrast."""
-    return abs(sum(y * chi for y, chi in _channels(Z, N, inter).values()))
+def _read_chi(iso: str):
+    """{cfg: [(partition_tuple, χ^λ), ...]} for free and atom from the cached
+    Rust-kernel witness."""
+    dat = json.load(open(HERE / f"atom-chi-rust-{iso}.witness.json"))["data"]
+    return {cfg: [(tuple(e["partition"]), mp.mpf(repr(e["chi_lambda"])))
+                  for e in dat[cfg]["by_partition"]]
+            for cfg in ("free", "atom")}
 
 
 def main() -> int:
-    print(f"E_0 = {float(E0):.4f} MeV   q₀ = {float(q0):.6f}   dps = {DPS}\n")
-    print(f"{'iso':<5}{'B_perblock':<12}{'B_scalar':<12}{'AME':<9}"
-          f"{'perblk err%':<13}{'scalar err%':<12}")
+    print(f"E_0 = {float(E0):.4f} MeV   q₀ = {float(q0):.6f}\n")
+    print(f"{'iso':<5}{'B_perblk':<11}{'B_scalar':<11}{'AME':<9}"
+          f"{'perblk%':<10}{'scalar%':<9}")
     results = {}
-    for name, (Z, N) in ISO.items():
-        Bp = E0 * (_per_block_mag(Z, N, False) - _per_block_mag(Z, N, True))
-        Bs = E0 * (_scalar_mag(Z, N, False) - _scalar_mag(Z, N, True))
-        ep = (Bp - AME_B[name]) / AME_B[name]
-        es = (Bs - AME_B[name]) / AME_B[name]
-        results[name] = {
-            "B_perblock_MeV": float(Bp), "B_scalar_MeV": float(Bs),
-            "AME_MeV": float(AME_B[name]),
-            "err_perblock": float(ep), "err_scalar": float(es),
+    for iso, (n, ame_s) in ISO.items():
+        ydict = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))
+                 for k, v in y_lambda_at(n, q0).items()}
+        chi = _read_chi(iso)
+
+        def reading(cfg):
+            pb = mp.mpf(0)
+            sc = mp.mpf(0)
+            for lam, c in chi[cfg]:
+                y = ydict.get(tuple(lam))
+                if y is None:
+                    continue
+                pb += y * abs(c)
+                sc += y * c
+            return pb, abs(sc)
+
+        pf, sf = reading("free")
+        pa, sa = reading("atom")
+        Bpb = E0 * (pf - pa)
+        Bsc = E0 * (sf - sa)
+        A = mp.mpf(ame_s)
+        epb = (Bpb - A) / A
+        esc = (Bsc - A) / A
+        results[iso] = {
+            "B_perblock_MeV": float(Bpb), "B_scalar_MeV": float(Bsc),
+            "AME_MeV": float(A), "err_perblock": float(epb),
+            "err_scalar": float(esc), "n_strands": n,
         }
-        print(f"{name:<5}{float(Bp):<12.4f}{float(Bs):<12.4f}"
-              f"{float(AME_B[name]):<9.4f}{float(ep)*100:<+13.1f}"
-              f"{float(es)*100:<+12.1f}")
+        print(f"{iso:<5}{float(Bpb):<11.4f}{float(Bsc):<11.4f}{float(A):<9.4f}"
+              f"{float(epb)*100:<+10.1f}{float(esc)*100:<+9.1f}")
 
     wb = WitnessBuilder("binding-per-block-magnitude-a3", engine="mpmath")
-    wb.data["E0_MeV"] = fmt = float(E0)
     wb.data["q_0"] = str(Q0)
+    wb.data["E0_MeV"] = float(E0)
     wb.data["results"] = results
-    wb.data["formula_perblock"] = "B = E_0·(Σ_λ y_λ|χ^λ(free)| − Σ_λ y_λ|χ^λ(atom)|)"
-    wb.data["note"] = (
-        "Operator-valued per-block magnitude vs scalar collapse-first. "
-        "No per-partition Δ_λ; E_0 is CAL-3. EXPLORATORY probe.")
-    wb.add_assertion("deuteron_perblock_within_5pct",
-                     computed=abs(results["D"]["err_perblock"]),
-                     expected=0.0, tolerance=0.05)
+    wb.data["chi_source"] = "atom-chi-rust-{d,t,3he}.witness.json (Rust kernel)"
+    wb.data["verdict"] = (
+        "per-block magnitude closes A=2 (+3.6%) but FAILS A=3 "
+        "(T -61.7%, 3He -55.1%) — same ~-60% as all other readings. "
+        "Operator-valued blockwise |.| is NOT the A>=3 closure. Negative result.")
+    # Assertion encodes the verdict: A=3 per-block stays badly off (>20%),
+    # so the per-block-closes-A3 hypothesis is recorded as FALSE.
+    wb.add_assertion("a3_perblock_does_not_close",
+                     computed=1 if abs(results["t"]["err_perblock"]) > 0.20 else 0,
+                     expected=1, tolerance=0)
     wb.save()
     print("\n✓ Witness: binding-per-block-magnitude-a3.witness.json")
+    print("  VERDICT: per-block magnitude closes A=2 only; A=3 stays ~−60%.")
     return 0
 
 
