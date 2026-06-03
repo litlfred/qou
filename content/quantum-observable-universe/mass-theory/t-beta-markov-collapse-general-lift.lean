@@ -37,7 +37,7 @@
 
   4. Conclude min-norm value S², attained iff X = S · 1.
 
-  **Sorries.** Two sorry's, both with Ref to PR #1750 audit doc.  The
+  **Sorries.** Two sorries, both with Ref to PR #1750 audit doc.  The
   full Mathlib-tactic proofs require non-commutative ring manipulation
   (the algebra A is non-commutative in general; H_n(q) is non-commutative
   at generic q) plus the smul-vs-mul expansion `S • X = (algebraMap R A S) * X`.
@@ -109,6 +109,15 @@ class NonDegTrace (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
     Prop where
   nondeg : ∀ x : A, τ.tau (x * x) = 0 → x = 0
 
+/-- **Reusable lemma: `(r • 1) * (r • 1) = (r * r) • 1`** in any
+    unital R-algebra `A`.  Used in both `completing_the_square_general`
+    and `markov_frobenius_min_norm_uniqueness` (reverse direction).
+    Extracted per Copilot review #1761 to avoid duplication. -/
+theorem smul_one_sq {R : Type u} [CommRing R] {A : Type v} [Ring A]
+    [Algebra R A] (r : R) :
+    (r • (1 : A)) * (r • (1 : A)) = (r * r) • (1 : A) := by
+  simp only [Algebra.smul_def, mul_one, map_mul]
+
 /-- **Completing-the-square algebraic identity (general algebra).**
 
     For any `X ∈ A`, `S ∈ R`:
@@ -140,12 +149,10 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
     rw [Algebra.smul_def, mul_assoc, one_mul, ← Algebra.smul_def]
   have h_mul_smul_one : X * (S • (1 : A)) = S • X := by
     rw [Algebra.smul_def, mul_one, ← Algebra.commutes, ← Algebra.smul_def]
-  have h_smul_one_sq : (S • (1 : A)) * (S • (1 : A)) = (S * S) • (1 : A) := by
-    simp only [Algebra.smul_def, mul_one, map_mul]
-  -- Step 2: expand the square in A.
+  -- Step 2: expand the square in A using reusable lemma smul_one_sq.
   have h_expand : (X - S • (1 : A)) * (X - S • (1 : A)) =
                   X * X - S • X - S • X + (S * S) • (1 : A) := by
-    rw [sub_mul, mul_sub, mul_sub, h_smul_one_mul, h_mul_smul_one, h_smul_one_sq]
+    rw [sub_mul, mul_sub, mul_sub, h_smul_one_mul, h_mul_smul_one, smul_one_sq]
     abel
   -- Step 3: apply τ, using R-linearity + τ_one (= 1).
   -- Generalised h_tau_smul to take ANY scalar (not just S), so the third
@@ -251,8 +258,7 @@ theorem markov_frobenius_min_norm_uniqueness
     intro h_eq
     rw [h_eq]
     -- Goal: τ.tau ((S•1) * (S•1)) = S * S
-    have h_smul_one_sq : (S • (1 : A)) * (S • (1 : A)) = (S * S) • (1 : A) := by
-      simp only [Algebra.smul_def, mul_one, map_mul]
-    rw [h_smul_one_sq, τ.tau.map_smul, smul_eq_mul, τ.tau_one, mul_one]
+    -- Use reusable lemma smul_one_sq (extracted per Copilot review).
+    rw [smul_one_sq, τ.tau.map_smul, smul_eq_mul, τ.tau_one, mul_one]
 
 end QOU.QBeta.MarkovFrobeniusCollapse.General
