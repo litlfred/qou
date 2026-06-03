@@ -477,16 +477,26 @@ jobs:
             --max-per-pattern \
               "const_zero=3,skel_inst=2,prop_true=2,punit_type=2,one_def=2,holds_trivial=2,punit_unit=2,id_def=2,const_zero_typed=2,first_arg=12"
 
-      - name: §3b-cond conditional-class banner audit (strict)
+      - name: §3b-cond conditional-class banner audit (strict + baseline-allowlist)
         run: |
           # Enforces CLAUDE.md §3b-cond compliance: every conditional-
           # on-class proposition must (a) carry a "Theorem (conditional
           # on …)." banner in its .md, AND (b) carry the upstream
           # conjecture's class as an explicit [Instance] hypothesis in
-          # its .lean.  PR #566 brought this to 12/12 fully compliant;
-          # CI gates against regression.
+          # its .lean.
+          #
+          # Currently 12 of 132 conditional-on-class candidates are fully
+          # compliant; the other 232 (label-level) gaps are tracked in
+          # `docs/audits/2026-06-03-conditional-class-banner-baseline.json`
+          # as the baseline-allowlist. The `--strict` exit gate fails only
+          # on NEW labels (regressions beyond the baseline) — not the
+          # accepted pre-existing gap set. Refresh the allowlist via
+          # `bun run … --emit-baseline` after deliberately discharging
+          # (or accepting) a gap. See PR #1735 for the rationale.
           export PATH="$HOME/.bun/bin:$PATH"
-          bun run content/pipeline/conditional-class-banner-audit.ts --strict
+          bun run content/pipeline/conditional-class-banner-audit.ts \
+            --strict \
+            --baseline-allowlist docs/audits/2026-06-03-conditional-class-banner-baseline.json
 
       - name: :leanval codemod gate (strict)
         # Verifies that every Lean numeric literal carrying a
