@@ -55,6 +55,30 @@ The cached χ / tr_M witnesses inherit the master site and need regeneration:
 - `atomic-tr-m-helium4-canonical`, `binding-via-interface-knot`,
   `atomic-braid-recipe-{d,4he}`, and ~10 more — follow-up sweep.
 
+## Symbolic-path fix (the master flip's downstream regression)
+
+Flipping the master default exposed a real regression: the symbolic
+`(gen, ctype)` character path **discards the numeric d** and rebuilds the
+`"averaged"` ctype as the color-blind `−h/2`, so (a) `classify_crossing` /
+`canonical_braid_marshalling` *threw* on the unrecognised color-weighted
+`d ≈ −0.10446`, and (b) `chi_lambda_numerical` silently dropped the weight
+(B_pn stuck at the color-blind 2.3043). Fixed:
+
+- `canonical_braid_crossings.classify_crossing` + `canonical_braid_marshalling`
+  now **accept** the color-weighted averaged crossing (`−h·(1/2 − δ/4)`),
+  not just `−h/2`.
+- `habiro/habiro_coefficients_interpolate.chi_lambda_numerical` d_map maps
+  `"averaged"` to the color-weighted `−h·(1/2 − δ/4)` (centralized δ via
+  `_avg_color_delta`). B_pn now shifts 2.3043 → **2.3048** (color-weighted),
+  consistent with `binding_canonical` and the Rust χ cache.
+
+**Gate held:** the 1ppb cross-check (`cross_check_trM_1ppb --strict`) stays
+**green (0 divergent)** — it validates the Hoefsmit / markov_peel / chi-cache
+/ Habiro backbone against each other, none of which routes through
+`chi_lambda_numerical`, so the fix does not destabilize the validation
+backbone. The color weight is a production-path refinement (Δm_pn scale,
+~3.4e-4); the cross-check backbone validates structural agreement.
+
 ## Remaining (follow-up)
 
 - Flip the explicit production overrides that bypass the default:

@@ -62,6 +62,8 @@ from __future__ import annotations
 
 from typing import Iterable, List, Tuple
 
+from canonical_braid_crossings import _avg_color_delta  # color-weighted averaged d
+
 
 def marshal_to_chi_lambda_braid(
     word_tuples: Iterable[Tuple[float, float, int]],
@@ -144,7 +146,9 @@ def marshal_to_symbolic_braid(
         elif abs(df + h_val) < eps:
             out.append((gen, "sigma_inv"))
         elif abs(df + h_val / 2) < eps:
-            out.append((gen, "averaged"))
+            out.append((gen, "averaged"))                  # color-blind −h/2
+        elif abs(df + h_val * (0.5 - _avg_color_delta() / 4)) < eps:
+            out.append((gen, "averaged"))                  # color-weighted −h(1/2−δ/4)
         else:
             # Per Copilot PR #863 review: raise on unknown (c,d) rather
             # than silently falling back.  Audits should catch upstream

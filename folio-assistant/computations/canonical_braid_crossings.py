@@ -42,6 +42,21 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 
+_AVG_COLOR_DELTA = None  # cached δ = flavor_split_subleading(q₀)
+
+
+def _avg_color_delta() -> float:
+    """Substrate flavor split δ = (m_n − m_p)/M_N at q₀, for recognising the
+    color-weighted averaged p-n crossing `−h·(1/2 − δ/4)`. Lazy + cached."""
+    global _AVG_COLOR_DELTA
+    if _AVG_COLOR_DELTA is None:
+        import mpmath as _mp
+        from _li_2_q_util import flavor_split_subleading
+        from q_parameter import Q as _Q0
+        _AVG_COLOR_DELTA = float(flavor_split_subleading(_mp.mpf(str(_Q0))))
+    return _AVG_COLOR_DELTA
+
+
 def classify_crossing(
     c: float, d: float, h_val: float, *, context: str | None = None,
 ) -> str:
@@ -66,11 +81,16 @@ def classify_crossing(
         return "sigma"
     if abs(d - (-h_val)) < 1e-9:
         return "sigma_inv"
-    if abs(d - (-h_val / 2.0)) < 1e-9:
+    # "averaged" p-n interface: color-blind −h/2, OR color-weighted
+    # −h·(1/2 − δ/4) (bring_color_weighted default, mass_at_3A_proper).
+    delta = _avg_color_delta()
+    if (abs(d - (-h_val / 2.0)) < 1e-9
+            or abs(d - (-h_val * (0.5 - delta / 4.0))) < 1e-9):
         return "averaged"
     raise ValueError(
-        f"Unrecognised crossing (c, d)=({c}, {d}); "
-        f"expected d ∈ {{0, -h, -h/2}} with h≈{h_val:.6f}{suffix}"
+        f"Unrecognised crossing (c, d)=({c}, {d}); expected d ∈ "
+        f"{{0, -h, -h/2, -h·(1/2-δ/4)}} with h≈{h_val:.6f}, "
+        f"δ≈{delta:.6e}{suffix}"
     )
 
 
