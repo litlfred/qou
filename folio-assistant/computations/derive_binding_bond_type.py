@@ -62,8 +62,14 @@ def bond_binding(Z, N):
     traces are positive at q_0 → value-preserving and sign-correct.
     """
     r = bc.binding_canonical(Z, N)
-    dtr = mpf(str(r["tr_M_free"])) - mpf(str(r["tr_M_atom"]))
-    return E0 * dtr
+    # `tr_M_*` are stored as STRINGS; a complex trace would serialize as
+    # "(re+imj)" which mpf() cannot parse. Parse via complex() and take
+    # the real part (archimedean projection, Im(q_0)=0) for robustness.
+    # NB: Gemini's literal `r["tr_M_free"].real` is wrong here — the value
+    # is a str, which has no `.real`; complex(str).real is the fix.
+    tr_f = mpf(str(complex(r["tr_M_free"]).real))
+    tr_a = mpf(str(complex(r["tr_M_atom"]).real))
+    return E0 * (tr_f - tr_a)
 
 
 def main() -> int:

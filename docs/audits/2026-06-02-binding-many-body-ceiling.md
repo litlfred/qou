@@ -15,7 +15,10 @@ bindings over that chain and isolates the residual.
 
 ## Result (zero fit) — the chain pairwise sum and the many-body residual
 
-Bond bindings (derived, `E_0·(|tr_M_free|−|tr_M_atom|)`): `B_pp=2.379 < B_pn=2.492
+Bond bindings (derived, `E_0·(tr_M_free − tr_M_atom)`, SIGNED — the double-modulus
+`|tr_free|−|tr_atom|` was a non-archimedean misuse, corrected per
+[`2026-06-01-paper-modulus-nonarchimedean-audit`](2026-06-01-paper-modulus-nonarchimedean-audit.md);
+value-identical here since both traces are positive at q₀): `B_pp=2.379 < B_pn=2.492
 < B_nn=2.532` MeV.
 
 | isotope | chain bonds | B_chain | AME | err | many-body residual | pairwise % |
@@ -84,7 +87,7 @@ the irreducible many-body object the pairwise chain-sum cannot contain.
 
 | body order | structure | regime | result |
 |---|---|---|---|
-| **2-body** | pairwise bond-sum `Σ_b E_0·Δ\|tr_M\|_b` (this audit) | A≤3 | correct T/³He ordering; A=2 derived; ~40% low at A=3 (3-body residual) |
+| **2-body** | pairwise bond-sum (per-bond E_0·Δtr_M, signed) (this audit) | A≤3 | correct T/³He ordering; A=2 derived; ~40% low at A=3 (3-body residual) |
 | **4-body** | magic-A α-volume `2·m_e·A·8G` (sibling) | ⁴He | **+5.87%, no fit** |
 
 My pairwise-ceiling finding (⁴He = 26% pairwise, 74% many-body) is the
