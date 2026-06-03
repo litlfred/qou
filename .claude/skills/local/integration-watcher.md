@@ -199,18 +199,31 @@ waiting for the user to prompt. Walk the priority order:
    in sync with the source they audit. Treat the following as
    actionable backlog whenever idle:
 
-   - **Sidecar staleness** — any block whose `.md` / `.ts` /
-     `.lean` source-hash has drifted from its `.qa.json`
-     `source_hashes` entry, OR whose `script_hash` differs from
-     the current checker script. Refresh by deleting the stale
-     `criteria.<crit>` entry and running
+   - **Sidecar staleness** — any block where either:
+     (a) the SHA-256 prefix of the current `.md` / `.ts` / `.lean`
+     file content differs from the value stored under
+     `source_hashes.{md,ts,lean}` in the `.qa.json`, OR
+     (b) the SHA-256 prefix of the current checker script
+     (e.g. `content/pipeline/qa-checkers-extended.ts`) differs
+     from the `criteria.<crit>[-1].reviewer.script_hash` value
+     stored for the criterion's most recent entry. (Both stored
+     hashes are 12-character SHA-256 prefixes computed by the
+     qa-sweep code; recompute with the same algorithm — see
+     `content/pipeline/qa-sweep.ts` for the canonical helper.)
+     Refresh by deleting the stale `criteria.<crit>` entry from
+     the `.qa.json` and running
      `bun run content/pipeline/qa-sweep.ts <path> --only <crit>`
-     (or invoke `/integration-audit <axis>` for a whole axis).
-   - **Witness staleness** — any `*.witness.json` whose
-     `scriptCommitSha` / `scriptHash` differs from the current
-     producer script's git hash. Refresh by running the producer
-     script with `2>&1 | tee /tmp/<script>.log` per the
-     `compute-audit` long-compute logging discipline.
+     (or invoke `/integration-audit <axis>` for a whole axis at
+     once).
+   - **Witness staleness** — any `*.witness.json` where either:
+     (a) `witness.scriptCommitSha` differs from the current
+     `HEAD` git commit SHA on the producer script's containing
+     file (`git log -1 --format=%H -- <producer.py>`), OR
+     (b) `witness.scriptHash` (SHA-256 prefix of the producer
+     script's file content) differs from a freshly-computed
+     hash of the current producer script. Refresh by re-running
+     the producer with `2>&1 | tee /tmp/<script>.log` per the
+     [`compute-audit` long-compute logging discipline](.claude/skills/local/compute-audit.md).
    - **Detection budget** — capped at ≤ 10 sidecars / ≤ 3
      witnesses per idle pass to avoid burying the visible
      queue items above; remaining stale entries get logged for

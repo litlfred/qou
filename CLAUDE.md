@@ -115,20 +115,28 @@ mentioned file.
    4. **Refresh stale sidecars + witnesses** (added 2026-06-03).
       The QA pipeline depends on `*.qa.json` sidecars and
       `folio-assistant/computations/*.witness.json` files staying
-      in sync with the source they audit. Sidecars with stale
-      `source_hashes` or `script_hash` get refreshed via
-      `/integration-audit <axis>` or a targeted `qa-sweep --only
-      <criterion>`; witnesses with stale `scriptCommitSha` /
-      `scriptHash` get refreshed by re-running the producer
-      (with `2>&1 | tee /tmp/<script>.log` per the compute-audit
-      long-compute logging discipline). Cap at ≤ 10 sidecars /
+      in sync with the source they audit. Sidecars are stale
+      when `source_hashes.{md,ts,lean}` or
+      `criteria.<crit>[-1].reviewer.script_hash` (both 12-char
+      SHA-256 prefixes) drift from the current file contents;
+      refresh by deleting the stale `criteria.<crit>` entry from
+      the `.qa.json` and running
+      `bun run content/pipeline/qa-sweep.ts <path> --only <crit>`
+      (single canonical invocation; use `/integration-audit
+      <axis>` to batch a whole axis). Witnesses are stale when
+      `witness.scriptCommitSha` (producer file's `git log -1
+      --format=%H -- <path>`) or `witness.scriptHash` (SHA-256
+      prefix of producer file content) drift; refresh by
+      re-running the producer with
+      `2>&1 | tee /tmp/<script>.log` per the compute-audit
+      long-compute logging discipline. Cap at ≤ 10 sidecars /
       ≤ 3 witnesses per idle pass. Every refresh that changes a
       sidecar or witness gets a `chore(qa-sweep|witness)` commit
       naming the producer + criterion + count. Full discipline:
-      [`.claude/skills/local/integration-watcher.md §0b item
-      4`](.claude/skills/local/integration-watcher.md). This
-      sits above cross-cutting cleanups because stale sidecars
-      mislead all four watcher children's reads.
+      [`.claude/skills/local/integration-watcher.md
+      §0b-idle-time-backlog-policy-5-minute-trigger`](.claude/skills/local/integration-watcher.md#0b-idle-time-backlog-policy-5-minute-trigger).
+      This sits above cross-cutting cleanups because stale
+      sidecars mislead all four watcher children's reads.
    5. **Cross-cutting cleanups** — bare-URL `-- Ref:` upgrades,
       `validate-bib` deferred items, glossary backfills, doc
       currency. Lowest priority because they're not gated on any
