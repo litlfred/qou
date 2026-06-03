@@ -1,0 +1,108 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T23:10:03.471577+00:00",
+  "commitSha": "27d58e19609f20dd370b9187690fd05d372d0744",
+  "assertions": [
+    {
+      "name": "qbeta_c3_3rung_at_least_one_passes_10_ppm",
+      "computed": true,
+      "expected": false,
+      "passed": false,
+      "source": "8 ℏ_q^3-scale 3rd-rung candidates for Q_β c_3. PASS would link m_μ V9 and Q_β c_3 via shared [3]_q/25 Habiro structure."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 11,
+  "computation": "qbeta-c3-three-rung-probe",
+  "scriptFile": "qbeta_c3_three_rung_probe.py",
+  "scriptHash": "e40a67af585e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.4.0"
+  },
+  "data": {
+    "target_c_3": "-2.06934257711516783787971951725",
+    "q_substrate": "1.10997858275138080759166909561",
+    "q9_baseline_err_ppm": 475.0729768192151,
+    "residual_delta_needed": 0.00047529877842467094,
+    "candidates_tested": [
+      "T1. ℏ_q^3 / 2",
+      "T2. ℏ_q^3 × q / 2",
+      "T3. ℏ_q^3 × [2]_q / 4",
+      "T4. ℏ_q^3 × b / 2",
+      "T5. ℏ_q^2 × hbar_q × [3]_q / 25  (parallel structure)",
+      "T6. ℏ_q^2 × hbar_q × q / 20",
+      "T7. ℏ_q^3 / [2]_q",
+      "T8. ℏ_q^3 × (q + q⁻¹) / 4"
+    ],
+    "per_candidate_results": {
+      "q9_baseline": {
+        "pred": "-2.06835948837699898892262991613",
+        "err_ppm": 475.0729768192151
+      },
+      "T1. ℏ_q^3 / 2": {
+        "delta_3": "0.000486351840308011936411518943434",
+        "pred": "-2.06935344865256769059876239437",
+        "err_ppm": 5.2536189609593436,
+        "passed": true
+      },
+      "T2. ℏ_q^3 × q / 2": {
+        "delta_3": "0.000539840126423612970961460456149",
+        "pred": "-2.06946276299498590832725531659",
+        "err_ppm": 58.0792572226583,
+        "passed": false
+      },
+      "T3. ℏ_q^3 × [2]_q / 4": {
+        "delta_3": "0.000489001695896311954713986428304",
+        "pred": "-2.06935886417888521394470317037",
+        "err_ppm": 7.870646406010531,
+        "passed": true
+      },
+      "T4. ℏ_q^3 × b / 2": {
+        "delta_3": "0.000421951107590459364078817402194",
+        "pred": "-2.06922183247527878488981398437",
+        "err_ppm": 58.34927538067711,
+        "passed": false
+      },
+      "T5. ℏ_q^2 × hbar_q × [3]_q / 25  (parallel structure)": {
+        "delta_3": "0.000118424969270137089003519774688",
+        "pred": "-2.06860151422194164122066806443",
+        "err_ppm": 358.11513348326247,
+        "passed": false
+      },
+      "T6. ℏ_q^2 × hbar_q × q / 20": {
+        "delta_3": "0.0000539840126423612970961460456149",
+        "pred": "-2.06846981583879768086309245617",
+        "err_ppm": 421.75775341502776,
+        "passed": false
+      },
+      "T7. ℏ_q^3 / [2]_q": {
+        "delta_3": "0.000483716344045452035228220508181",
+        "pred": "-2.06934806247249333267102942082",
+        "err_ppm": 2.650772948934258,
+        "passed": true
+      },
+      "T8. ℏ_q^3 × (q + q⁻¹) / 4": {
+        "delta_3": "0.000489001695896311954713986428304",
+        "pred": "-2.06935886417888521394470317037",
+        "err_ppm": 7.870646406010531,
+        "passed": true
+      }
+    },
+    "best_candidate_name": "T7. ℏ_q^3 / [2]_q",
+    "best_candidate_err_ppm": 2.650772948934258,
+    "any_candidate_passes_10_ppm": true
+  }
+}
