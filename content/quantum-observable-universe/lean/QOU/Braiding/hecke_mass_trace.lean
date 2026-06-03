@@ -62,22 +62,21 @@ class HeckeMassTraceContext where
   cat_mass : R
   /-- The `|·| : R → R` absolute-value-like norm. -/
   norm : R → R
-  /-- **Manuscript identity** (`prop:hecke-mass-trace`).  The categorical
-      mass equals the norm of the Markov trace of the Hecke mass element,
-      and the trace decomposes additively over the descended + transient
-      pieces.
-
-      The manuscript proof is categorical (the fibre functor `τ` is exact
-      and monoidal, so the mass identity descends to the Markov trace on
-      `H_n(R, q)`; `tr_M` is `R`-linear in its argument).  Carried here as
-      a class field per CLAUDE.md §3b-cond — downstream consumers take
-      `[HeckeMassTraceContext]` to obtain the identity unconditionally,
+  /-- **Manuscript claim (i)**: the categorical mass equals the norm of
+      the Markov trace of the Hecke mass element.  Carried as a class
+      field per CLAUDE.md §3b-cond — downstream consumers take
+      `[HeckeMassTraceContext]` to obtain this identity unconditionally,
       with no naked `sorry`. -/
-  claim_hecke_mass_trace :
-    (cat_mass = norm (markovInst.trace Phi_mass)) ∧
-    (markovInst.trace Phi_mass
-       = markovInst.trace Phi_desc
-         + (Phi_trans.foldr (fun a acc => markovInst.trace a + acc) 0))
+  claim_cat_mass_eq_norm_trace :
+    cat_mass = norm (markovInst.trace Phi_mass)
+  /-- **Manuscript claim (ii)**: the Markov trace decomposes additively
+      over the descended + transient pieces.  The fibre functor `τ` is
+      exact and monoidal, so the mass identity descends to `H_n(R, q)`;
+      `tr_M` is `R`-linear in its argument.  §3b-cond class field. -/
+  claim_trace_decomposition :
+    markovInst.trace Phi_mass
+      = markovInst.trace Phi_desc
+        + (Phi_trans.foldr (fun a acc => markovInst.trace a + acc) 0)
 
 /-- **Hecke-mass-trace identity** ([`prop:hecke-mass-trace`]).
 
@@ -92,9 +91,10 @@ theorem hecke_mass_trace [ctx : HeckeMassTraceContext] :
     (ctx.markovInst.trace ctx.Phi_mass
        = ctx.markovInst.trace ctx.Phi_desc
          + (ctx.Phi_trans.foldr (fun a acc => ctx.markovInst.trace a + acc) 0)) :=
-  -- The manuscript's categorical argument is carried as the class field
-  -- `claim_hecke_mass_trace` (§3b-cond); this theorem is its restatement.
+  -- The manuscript's categorical argument is carried as the two class
+  -- fields `claim_cat_mass_eq_norm_trace` + `claim_trace_decomposition`
+  -- (§3b-cond); this theorem recombines them.
   -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
-  ctx.claim_hecke_mass_trace
+  ⟨ctx.claim_cat_mass_eq_norm_trace, ctx.claim_trace_decomposition⟩
 
 end QOU.Braiding

@@ -88,7 +88,8 @@ class VolumeConjecture (q : ℝ) where
     S-dependent piece volume — an instance must provide a real value. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
-noncomputable def pieceVolume (q : ℝ) [inst : VolumeConjecture q]
+@[simp]
+def pieceVolume (q : ℝ) [inst : VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) : ℝ :=
   inst.pieceVol β S
 
