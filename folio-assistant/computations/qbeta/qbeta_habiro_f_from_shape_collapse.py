@@ -61,16 +61,17 @@ Closed forms (per Agent-located audits + `derived_masses.py`):
 
 This probe tries BOTH E_0 variants (N=0 and tower) and reports for each:
 
-  • S(q) closed form (rational in q for N=0; rational × algebraic for tower)
+  • S(q) closed form (rational in q for both N=0 and tower variants)
   • S(q₀) numerical value (vs. audit-doc target 0.186893691886)
-  • c_2..c_8 Taylor coefficients in u_ladder around q=1
-  • Verification of c_2 = −1 (PR #1602 proved value)
-  • Comparison of c_3 to the empirical near-match −2
-  • Predicted c_4..c_7 (compare to fit-extracted c_4 = −0.97157)
+  • S(q=1) value — the diagnostic gate
 
-No fit, no CODATA residual. If c_2 = −1 falls out exactly for one variant,
-that pins the canonical S(q) form and the recursion on c_k follows from
-S's q-difference equation.
+**Diagnostic outcome (this probe demonstrates):** S(q=1) = 0 for BOTH
+variants, so the Taylor expansion of S/S(1) around q=1 is degenerate
+(0/0) and the c_k recipe cannot be evaluated. The proved c_2 = −1
+(PR #1602) cannot be recovered from this S — which is the proof that
+`S = Q_β/E_0` is the SDP-constraint scalar, NOT the ladder
+normalization. The c_k must come from a different normalization
+(see commit body for the actual ladder structure).
 """
 from __future__ import annotations
 
@@ -81,14 +82,16 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
-import sys
 import time
 from pathlib import Path
 
 import sympy as sp
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parent))
+# Single sys.path insertion in the _path_bridge import above already adds
+# `__file__.parent.parent` (= folio-assistant/computations/), which is the
+# same dir as `HERE.parent`. No second insertion needed for the
+# `_precision` / `witness_base` imports below.
 
 import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "80")
@@ -113,12 +116,15 @@ def main() -> int:
         start_time=t0,
     )
     builder.set_description(
-        "Categorical c_k derivation: c_k = u_ladder Taylor coefficients of "
-        "S(q) = Q_β(q)/E_0(q), per audit "
-        "2026-06-03-qbeta-markov-trace-shape-collapse.md (T_β = S·𝟙, "
-        "c_k L2/Markov-invariant). Tries N=0 and tower E_0 variants; "
-        "reports which (if any) satisfies the proved c_2 = −1. No fit, "
-        "no CODATA residual — purely from the closed forms."
+        "Diagnostic: demonstrates that S = Q_β/E_0 is NOT the c_k ladder "
+        "normalization, because S(q=1) = 0 for both N=0 and tower E_0 "
+        "variants (Q_β·(q-1) zero meets E_0 1/(q-1) pole with wrong "
+        "residue). Hence the 'c_k from u_ladder Taylor of S(q)' recipe of "
+        "audit 2026-06-03-qbeta-markov-trace-shape-collapse.md is "
+        "degenerate when S is interpreted as Q_β/E_0. The actual ladder "
+        "uses Q_β/[Q_A · cos(α_eff)] from the operator-valued N=3 witness "
+        "(see qbeta_1ppq_achieved.py). No fit, no CODATA residual — "
+        "purely from the closed forms."
     )
     builder.set_content_block("prop:q-beta-categorical-precision-ladder")
 
@@ -170,11 +176,15 @@ def main() -> int:
     print()
 
     # --- Taylor expand each S in eps, then re-express in u_ladder ----------
-    def extract_ck(S_expr: sp.Expr, label: str) -> dict:
+    def extract_ck(S_expr: sp.Expr, variant_id: str, label: str) -> dict:
         """Expand S(q=1+eps) and u_ladder(q=1+eps) in eps; solve for
         c_k via S = 1 + Σ_{k≥2} c_k u_ladder^k.
+
+        `variant_id` is an ASCII-safe stable identifier (e.g. "S_N0",
+        "S_tower") used in assertion names; `label` is the human-readable
+        formula displayed in the verdict and stored in `source`.
         """
-        print(f"  ── {label} ──")
+        print(f"  ── {variant_id}: {label} ──")
         S_series = sp.series(S_expr.subs(q, 1 + eps), eps, 0, N_ORDER + 1).removeO()
         u_series = sp.series(u_ladder.subs(q, 1 + eps), eps, 0, N_ORDER + 1).removeO()
         S_poly = sp.Poly(sp.expand(S_series), eps)
@@ -196,6 +206,7 @@ def main() -> int:
             print("    S(q=1) = 0 — DIAGNOSTIC FINDING; "
                   "this S is not the ladder normalization.")
             return {
+                "variant_id": variant_id,
                 "variant": label,
                 "S_at_qeq1": "0",
                 "error": "S(q=1)=0",
@@ -213,6 +224,7 @@ def main() -> int:
                   "inversion parameterization is hard-coded for "
                   "u_lead_order == 2; bailing out.")
             return {
+                "variant_id": variant_id,
                 "variant": label,
                 "S_at_qeq1": str(S_const),
                 "u_lead_order_in_eps": int(u_lead_order),
@@ -284,6 +296,7 @@ def main() -> int:
               f"(0 ⇒ true u_ladder series)")
 
         return {
+            "variant_id": variant_id,
             "variant": label,
             "S_at_qeq1": str(S_const),
             "c_k": {str(k): str(v) for k, v in c_k.items()},
@@ -293,9 +306,9 @@ def main() -> int:
 
     print("  TAYLOR EXTRACTION (c_k from u_ladder expansion)")
     print()
-    res_N0 = extract_ck(S_N0, "S_N0 = (2q+1-q²)(q²-1)/(2q²)")
+    res_N0 = extract_ck(S_N0, "S_N0", "(2q+1-q²)(q²-1)/(2q²)")
     print()
-    res_tower = extract_ck(S_tower, "S_tower = S_N0 · (1-ℏ_q²)")
+    res_tower = extract_ck(S_tower, "S_tower", "S_N0 · (1-ℏ_q²)")
     print()
 
     # --- Verdict ------------------------------------------------------------
@@ -308,16 +321,17 @@ def main() -> int:
     print()
     print("  OBSERVED:")
     for res in (res_N0, res_tower):
+        tag = f"{res['variant_id']} = {res['variant'][:30]}"
         S_at_1 = res.get("S_at_qeq1", "?")
         err = res.get("error")
         if err == "S(q=1)=0":
-            print(f"  {res['variant'][:40]:<40}  S(q=1) = 0  "
+            print(f"  {tag:<40}  S(q=1) = 0  "
                   "(degenerate; not the ladder normalization)")
         elif err:
-            print(f"  {res['variant'][:40]:<40}  error: {err}")
+            print(f"  {tag:<40}  error: {err}")
         else:
             c2_str = res.get("c_k", {}).get("2", "?")
-            print(f"  {res['variant'][:40]:<40}  S(q=1) = {S_at_1}  "
+            print(f"  {tag:<40}  S(q=1) = {S_at_1}  "
                   f"c_2 = {c2_str}")
     print()
     print("  CONCLUSION: the `S = Q_β/E_0` of the SHAPE-collapse audit doc")
@@ -357,17 +371,16 @@ def main() -> int:
             S_at_1 = sp.sympify(res.get("S_at_qeq1", "0"))
             S_at_1_num = float(sp.N(S_at_1, 20))
         builder.add_assertion(
-            f"{res['variant'][:30].replace(' ', '_').replace('=', '')}"
-            "_S_at_qeq1_eq_zero",
+            f"{res['variant_id']}_S_at_qeq1_eq_zero",
             computed=abs(S_at_1_num),
             expected=0.0,
             tolerance=1e-15,
-            source=(f"{res['variant']}: diagnostic — S(q=1) should equal 0 "
-                    "(Q_β · (q-1) zero meets E_0 1/(q-1) pole). "
-                    "Pass ⇒ confirms this S is the SDP-constraint scalar, "
-                    "NOT the ladder normalization. The categorical "
-                    "f-construction needs symbolic Q_A(q) and α(q), not "
-                    "Q_β/E_0."),
+            source=(f"{res['variant_id']} = {res['variant']}: diagnostic "
+                    "— S(q=1) should equal 0 (Q_β · (q-1) zero meets E_0 "
+                    "1/(q-1) pole). Pass ⇒ confirms this S is the "
+                    "SDP-constraint scalar, NOT the ladder normalization. "
+                    "The categorical f-construction needs symbolic "
+                    "Q_A(q) and α(q), not Q_β/E_0."),
         )
 
     builder.save()

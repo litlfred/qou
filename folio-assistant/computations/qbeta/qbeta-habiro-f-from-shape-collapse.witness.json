@@ -1,11 +1,11 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T20:49:48.807811+00:00",
-  "commitSha": "653b9e77a545c980c9aaf5f4ae554c7c837de83b",
+  "computedAt": "2026-06-03T20:59:20.783322+00:00",
+  "commitSha": "c2bd17c1fd980816c109c0a86fcc4b3bedc87372",
   "assertions": [
     {
-      "name": "S_N0__(2q+1-q²)(q²-1)/(2q²)_S_at_qeq1_eq_zero",
+      "name": "S_N0_S_at_qeq1_eq_zero",
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
@@ -13,7 +13,7 @@
       "source": "S_N0 = (2q+1-q²)(q²-1)/(2q²): diagnostic — S(q=1) should equal 0 (Q_β · (q-1) zero meets E_0 1/(q-1) pole). Pass ⇒ confirms this S is the SDP-constraint scalar, NOT the ladder normalization. The categorical f-construction needs symbolic Q_A(q) and α(q), not Q_β/E_0."
     },
     {
-      "name": "S_tower__S_N0_·_(1-ℏ_q²)_S_at_qeq1_eq_zero",
+      "name": "S_tower_S_at_qeq1_eq_zero",
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1317,
+  "durationMs": 1182,
   "computation": "qbeta-habiro-f-from-shape-collapse",
   "scriptFile": "qbeta_habiro_f_from_shape_collapse.py",
-  "scriptHash": "c3bbcd59ffcf",
-  "scriptCommitSha": "653b9e77a545c980c9aaf5f4ae554c7c837de83b",
+  "scriptHash": "dfe1c535c28e",
+  "scriptCommitSha": "c2bd17c1fd980816c109c0a86fcc4b3bedc87372",
   "precisionMetadata": {
     "compute_dps": 80,
     "output_dps": 60,
@@ -38,7 +38,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Categorical c_k derivation: c_k = u_ladder Taylor coefficients of S(q) = Q_β(q)/E_0(q), per audit 2026-06-03-qbeta-markov-trace-shape-collapse.md (T_β = S·𝟙, c_k L2/Markov-invariant). Tries N=0 and tower E_0 variants; reports which (if any) satisfies the proved c_2 = −1. No fit, no CODATA residual — purely from the closed forms.",
+  "description": "Diagnostic: demonstrates that S = Q_β/E_0 is NOT the c_k ladder normalization, because S(q=1) = 0 for both N=0 and tower E_0 variants (Q_β·(q-1) zero meets E_0 1/(q-1) pole with wrong residue). Hence the 'c_k from u_ladder Taylor of S(q)' recipe of audit 2026-06-03-qbeta-markov-trace-shape-collapse.md is degenerate when S is interpreted as Q_β/E_0. The actual ladder uses Q_β/[Q_A · cos(α_eff)] from the operator-valued N=3 witness (see qbeta_1ppq_achieved.py). No fit, no CODATA residual — purely from the closed forms.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "closed_forms": {
@@ -58,13 +58,15 @@
       "S_tower_rel_err": "0.0081562"
     },
     "S_N0_results": {
-      "variant": "S_N0 = (2q+1-q²)(q²-1)/(2q²)",
+      "variant_id": "S_N0",
+      "variant": "(2q+1-q²)(q²-1)/(2q²)",
       "S_at_qeq1": "0",
       "error": "S(q=1)=0",
       "diagnostic": "S(q=1) vanishes; Q_β · (q-1) zero meets E_0 1/(q-1) pole with wrong residue, so Q_β/E_0 is not the ladder normalization. Audit doc conflated SDP-constraint S with ladder S."
     },
     "S_tower_results": {
-      "variant": "S_tower = S_N0 · (1-ℏ_q²)",
+      "variant_id": "S_tower",
+      "variant": "S_N0 · (1-ℏ_q²)",
       "S_at_qeq1": "0",
       "error": "S(q=1)=0",
       "diagnostic": "S(q=1) vanishes; Q_β · (q-1) zero meets E_0 1/(q-1) pole with wrong residue, so Q_β/E_0 is not the ladder normalization. Audit doc conflated SDP-constraint S with ladder S."
