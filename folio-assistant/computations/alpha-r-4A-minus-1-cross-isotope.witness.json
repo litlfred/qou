@@ -1,0 +1,111 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T12:08:28.181125+00:00",
+  "commitSha": "509298dc310d7a0d6639abf943c20fbb692a13a2",
+  "assertions": [
+    {
+      "name": "r_4A_minus_1_NOT_universal",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The r=4A-1 single-rank q-Pochhammer rule matches the global best only for ⁴He; D best is r=12, ³He best is r=14.  Refutes the rule as a universal closure mechanism."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "alpha-r-4A-minus-1-cross-isotope",
+  "scriptFile": "alpha_r_4A_minus_1_cross_isotope.py",
+  "scriptHash": "5475c65d6f92",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Cross-isotope test of the r=4A-1 single-rank q-Pochhammer hypothesis discovered in alpha_r_q_pochhammer_probe.py.  Tests D / T / ³He / ⁴He under their own leading formulae. REFUTES the universal rule (matches global best only for ⁴He).  No fits.",
+  "data": {
+    "constants": {
+      "q_0": "1.1099785827513808075916690956107688798744991218736",
+      "m_e_MeV": "0.51099895"
+    },
+    "per_isotope_results": [
+      {
+        "isotope": "D",
+        "A": 2,
+        "leading_formula": "1·m_e·Vol(6_2)",
+        "B_leading_MeV": "2.248820071227345",
+        "B_AME_MeV": "2.224565999999999999999999999999999999999999999999997876499128890590928",
+        "leading_err_pct": 1.0902832834514686,
+        "r_4A_minus_1": 7,
+        "r_4A_minus_1_rel_err_pct": 1.018720971804956,
+        "r_4A_minus_1_sign": -1,
+        "best_global_r": 12,
+        "best_global_rel_err_pct": 0.34592192343766553,
+        "best_global_sign": -1,
+        "rule_matches_best": false
+      },
+      {
+        "isotope": "T",
+        "A": 3,
+        "leading_formula": "2·m_e·Vol(8_11)",
+        "B_leading_MeV": "8.46859838653302023119376499",
+        "B_AME_MeV": "8.481797999999999999999999999999999999999999999999999419774854615505432",
+        "leading_err_pct": -0.1556228227432411,
+        "r_4A_minus_1": 11,
+        "r_4A_minus_1_rel_err_pct": 0.004808040548086853,
+        "r_4A_minus_1_sign": 1,
+        "best_global_r": 2,
+        "best_global_rel_err_pct": 0.0018688425123297469,
+        "best_global_sign": 1,
+        "rule_matches_best": false
+      },
+      {
+        "isotope": "3He",
+        "A": 3,
+        "leading_formula": "2·m_e·Vol(L6a4)",
+        "B_leading_MeV": "7.488919309770960489806985420748121625636384278417463437671032948859125",
+        "B_AME_MeV": "7.718042999999999999999999999999999999999999999999995488886340188711451",
+        "leading_err_pct": -2.9686760002378776,
+        "r_4A_minus_1": 11,
+        "r_4A_minus_1_rel_err_pct": 2.80293702754839,
+        "r_4A_minus_1_sign": 1,
+        "best_global_r": 14,
+        "best_global_rel_err_pct": 0.9797845810182901,
+        "best_global_sign": 1,
+        "rule_matches_best": false
+      },
+      {
+        "isotope": "4He",
+        "A": 4,
+        "leading_formula": "2·m_e·4·Vol(L6a4)",
+        "B_leading_MeV": "29.9556772390838419592279416829924865025455371136698537506841317954365",
+        "B_AME_MeV": "28.29567299999999999999999999999999999999999999999997923505576399924391",
+        "leading_err_pct": 5.866636354907841,
+        "r_4A_minus_1": 15,
+        "r_4A_minus_1_rel_err_pct": 1.7921315234605966,
+        "r_4A_minus_1_sign": -1,
+        "best_global_r": 15,
+        "best_global_rel_err_pct": 1.7921315234605966,
+        "best_global_sign": -1,
+        "rule_matches_best": true
+      }
+    ],
+    "verdict": {
+      "rule_under_test": "r = 4A - 1",
+      "is_universal": false,
+      "n_matches": 1,
+      "n_isotopes": 4
+    }
+  }
+}
