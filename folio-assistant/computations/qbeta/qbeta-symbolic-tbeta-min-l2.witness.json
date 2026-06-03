@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-03T15:08:47.088607+00:00",
-  "commitSha": "731561f9cd0a1cce507a6a1322a48aa63acd0d10",
+  "computedAt": "2026-06-03T15:55:58.209554+00:00",
+  "commitSha": "b7f186ae9f29610e186936db1f15396f3bc8a469",
   "assertions": [
     {
       "name": "symbolic_coords_match_witness_at_q0",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10127,
+  "durationMs": 9154,
   "computation": "qbeta-symbolic-tbeta-min-l2",
   "scriptFile": "qbeta_symbolic_tbeta_min_l2.py",
-  "scriptHash": "073b752cf588",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f09dc2352dc7",
+  "scriptCommitSha": "6726dbb2386349d77cb592a5b79527d0ac487a20",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
