@@ -15,9 +15,9 @@ In [`d7c56c17e`](https://github.com/litlfred/qou/commit/d7c56c17e)
 (2026-06-02 17:35Z), six candidate per-block weights `w_λ` were
 tested for `B = E · Σ_λ w_λ |Δθ_λ|` over D / T / ³He / ⁴He:
 
-| candidate | A-growth ratio S(⁴He) / S(D) | worst |err| |
+| candidate | A-growth ratio S(⁴He) / S(D) | worst \|err\| |
 |---|---:|---:|
-| **`abs_content` = Σ |c(i,j)|** | **13.40 vs 12.72 (~5 %)** | **20 %** |
+| **`abs_content` = Σ \|c(i,j)\|** | **13.40 vs 12.72 (~5 %)** | **20 %** |
 | `y_λ` (Markov / q-Schur Plancherel) | 0.04 (anti-correlated) | 199 % |
 | `dim_classical(λ)` | — | 600× |
 | `dim_q(λ)` | — | ~700× |
@@ -43,7 +43,7 @@ For a partition `λ = (λ_1, λ_2, …, λ_ℓ)` (rows of a Young diagram,
 
 Worked examples:
 
-| λ | cells | c(i,j) values | c(λ) | |c|(λ) |
+| λ | cells | c(i,j) values | c(λ) | \|c\|(λ) |
 |---|------|---------------|------|--------|
 | `(2)` | (0,0),(0,1) | 0, 1 | 1 | 1 |
 | `(1,1)` | (0,0),(1,0) | 0, −1 | −1 | 1 |
@@ -88,19 +88,24 @@ claimed identification):
    `(|c|² )(λ)`, not `|c|(λ)`. Wrong norm.
 
 3. **Sum of arm-lengths + leg-lengths** (hook-related):
-   `Σ_{(i,j) ∈ λ} (arm(i,j) + leg(i,j)) = something hook-related`.
+   `Σ_{(i,j) ∈ λ} (arm(i,j) + leg(i,j))`.
    For `(3)`: arms = {2,1,0}, legs = {0,0,0}, sum = 3 = `|c|((3))`.
    For `(2,1)`: arms = {1,0,0}, legs = {1,0,0}, sum = 2 =
-   `|c|((2,1))`. **Numerical match on small cases.**
-   Need to check the identity in general; if it holds, `|c|(λ)`
-   has a categorical reading via the hook structure (and hooks
-   ARE Hecke-algebra-categorical via Macdonald hook-length
-   formulae, q-Schur Plancherel weights, etc.).
+   `|c|((2,1))` — match on these two cases. **FALSIFIED in
+   general**: for `(2,2)` the arm+leg sum is 4
+   (`(0,0)`: 1+1, `(0,1)`: 0+1, `(1,0)`: 1+0, `(1,1)`: 0+0)
+   whereas `|c|((2,2)) = 2`. So the hook arm+leg sum is NOT `|c|(λ)`
+   — the `(3)`/`(2,1)` agreement is an accidental small-case
+   coincidence (both are hooks / near-hooks; the identity breaks
+   at the first non-hook, the 2×2 square). Recorded as a refuted
+   candidate, not a lead.
 
 4. **Half the L¹-distance of `λ` to its transpose `λ^T`** in
    the dominance order — a combinatorial measure of how
-   non-self-conjugate `λ` is. (Conjecture; needs verification on
-   the examples.)
+   non-self-conjugate `λ` is. **FALSIFIED**: for `(3)`,
+   `½·‖(3,0,0) − (1,1,1)‖₁ = ½·4 = 2` but `|c|((3)) = 3`; for
+   `(2,1)` (self-conjugate) the distance is 0 but `|c|((2,1)) = 2`.
+   So this is not `|c|(λ)` either. Recorded as refuted.
 
 5. **Sum of `χ^λ(s_k)` over an explicit set of Coxeter generators**.
    The character value `χ^λ(s_k)` of a transposition on V_λ is
