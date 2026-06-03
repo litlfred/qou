@@ -84,6 +84,27 @@ variable [TorusKnotMass] [CategoricalHiggsIdempotent]
     actual numerical value comes from the substrate calibration. -/
 noncomputable def h_substrate_value : ℝ := 1.1097 - 1 / 1.1097
 
+/-- **§3b-cond conjectural class** bundling the three substrate→EW
+    structural hypotheses.  Each is a `< 1%` empirical match and an OPEN
+    research-grade categorical derivation (per the audit); none is an
+    exact theorem.  Downstream consumers take `[SubstrateEWDerivations]`
+    to obtain the identities unconditionally.  **No global instance is
+    provided** — the conjectural content lives entirely in these class
+    fields, so there is no naked `sorry`. -/
+-- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md
+class SubstrateEWDerivations [TorusKnotMass] [CategoricalHiggsIdempotent] where
+  /-- Hyp 1 (+0.26%): `g = π·h_0`.  Open: Yekutieli MI connection-1-form
+      integration around a closed loop. -/
+  claim_g_eq_pi_h : gauge_coupling_g = Real.pi * h_substrate_value
+  /-- Hyp 2 (−0.50%): `∃ v_framework, v_framework / v_SM = log|S_3|`.
+      Open: Chern–Simons partition function on the S_3 knot-operator group. -/
+  claim_v_ratio : ∃ v_framework_GeV : ℝ,
+    v_framework_GeV / vev_v_GeV = Real.log (cardS3 : ℝ)
+  /-- Hyp 3 (+0.35%): `scalar/gauge factor ratio = 6/5`.  Open: explicit
+      categorical formulas for both factors + block-counting. -/
+  claim_scalar_gauge : scalar_mass_factor / gauge_mass_factor =
+    (gsNFBasisCardinalityB3 : ℝ) / (partitionsOfFour : ℝ)
+
 /-- **Hypothesis 1**: the SU(2)_L gauge coupling g equals π · h_0
     at the substrate.
 
@@ -94,10 +115,10 @@ noncomputable def h_substrate_value : ℝ := 1.1097 - 1 / 1.1097
     The `sorry` is the open structural derivation, NOT a missing
     Lean tactic. Status (§3b-cond): conjectural class hypothesis. -/
 -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.a
-theorem g_eq_pi_h_substrate_hypothesis :
-    gauge_coupling_g = Real.pi * h_substrate_value := by
+theorem g_eq_pi_h_substrate_hypothesis [ctx : SubstrateEWDerivations] :
+    gauge_coupling_g = Real.pi * h_substrate_value :=
   -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.a
-  sorry
+  ctx.claim_g_eq_pi_h
 
 /-- **Hypothesis 2**: v_framework / v_SM equals log of |S_3|.
 
@@ -114,11 +135,11 @@ theorem g_eq_pi_h_substrate_hypothesis :
 
     Status (§3b-cond): conjectural class hypothesis. -/
 -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.b
-theorem v_ratio_eq_log_S3_hypothesis :
+theorem v_ratio_eq_log_S3_hypothesis [ctx : SubstrateEWDerivations] :
     ∃ v_framework_GeV : ℝ, v_framework_GeV / vev_v_GeV =
-      Real.log (cardS3 : ℝ) := by
+      Real.log (cardS3 : ℝ) :=
   -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.b
-  sorry
+  ctx.claim_v_ratio
 
 /-- **Hypothesis 3**: the scalar/gauge mass-factor ratio equals 6/5.
 
@@ -135,11 +156,11 @@ theorem v_ratio_eq_log_S3_hypothesis :
 
     Status (§3b-cond): conjectural class hypothesis. -/
 -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.c
-theorem scalar_gauge_ratio_eq_six_fifths_hypothesis :
+theorem scalar_gauge_ratio_eq_six_fifths_hypothesis [ctx : SubstrateEWDerivations] :
     scalar_mass_factor / gauge_mass_factor =
-      (gsNFBasisCardinalityB3 : ℝ) / (partitionsOfFour : ℝ) := by
+      (gsNFBasisCardinalityB3 : ℝ) / (partitionsOfFour : ℝ) :=
   -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.c
-  sorry
+  ctx.claim_scalar_gauge
 
 /-- **Corollary (conditional on all three hypotheses)**: the W/Z mass
     ratio equals cos θ_W exactly (CONDITIONAL, derived from
