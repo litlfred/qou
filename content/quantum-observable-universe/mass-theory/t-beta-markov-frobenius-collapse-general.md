@@ -1,5 +1,5 @@
 **Proposition (Min-Frobenius-norm collapse — general unital R-algebra).**
-*Let $R$ be a $\mathrm{CommRing}$, $A$ a unital $R$-algebra, and
+*Let $R$ be a strict-ordered field (typeclass `[Field R] [LinearOrder R] [IsStrictOrderedRing R]`), $A$ a unital $R$-algebra, and
 $\tau : A \to R$ an $R$-linear normalised trace ($\tau(1) = 1$,
 $\tau(xy) = \tau(yx)$).  Assume $\tau$ is positive-semi-definite
 on squares: $0 \le \tau(X \cdot X)$ for every $X \in A$.  Then for
