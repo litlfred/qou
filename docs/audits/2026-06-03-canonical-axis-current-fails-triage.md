@@ -1,6 +1,6 @@
 # Canonical-axis QA fails — current-state triage (2026-06-03)
 
-> Companion to PR #1755 (post-merge cleanup; lake env unblocked).
+> Companion to PR [#1755](https://github.com/litlfred/qou/pull/1755) (post-merge cleanup; lake env unblocked).
 > The [2026-06-02 canonical-axis staleness audit](2026-06-02-qa-backlog-canonical-axis-staleness-audit.md)
 > predicted **7 of 11** then-open fails would clear with a sweep refresh.
 > The refresh already ran (every block's `reviewed_at` is now
@@ -30,7 +30,7 @@ primary content of those kinds belongs under `docs/audits/`.
 
 ### A.1 `scaffolding` tag (5 blocks)
 
-Each `.ts` carries `tags: [..., "scaffolding", ...]`:
+Each block's **manifest** (`.ts` — source-of-truth for tags / `uses[]` / `interprets`) carries `tags: [..., "scaffolding", ...]`. The links below point to the **`.md` narrative** per house style (CLAUDE.md "Always provide GitHub links — default to `.md`"); the sibling `.ts` is at the same path with a `.ts` extension.
 
 | block | label |
 |---|---|
@@ -72,7 +72,7 @@ inspection — possible WIP).
 | [`observations/m-tau-knot-prediction.md`](../../content/quantum-observable-universe/observations/m-tau-knot-prediction.md) | `rem:m-tau-knot-prediction` |
 | [`observations/isospin-mirror-v9-empirical-near-match.md`](../../content/quantum-observable-universe/observations/isospin-mirror-v9-empirical-near-match.md) | `rem:isospin-mirror-v9-empirical-near-match` |
 
-These are the more clear-cut cases — the tag itself is
+These are the more clear-cut cases — the `.ts` manifest's tag is
 `"negative-result"`, matching the criterion's intent. The block
 content is observation-of-empirical-failure material. **Route 2
 (move to audits)** is the canonical disposition.
@@ -86,7 +86,7 @@ disposes of both entries.
 Criterion: precision-ladder blocks must not use binary
 "negative result" framing without the tiered (proved / near-match
 / fitted) frame from
-[CLAUDE.md "Q_β c_k truncation order canonical framing"](../audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
+[CLAUDE.md "Q_β c_k truncation order canonical framing"](./2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 (Rule 4 — "report TIERED, never binary").
 
 | block | label | line(s) | fix-site phrase |
@@ -158,7 +158,7 @@ branch; Pattern A (7 with owner judgment) is better split.
 
 ## Cross-refs
 
-- [`docs/audits/2026-06-02-qa-backlog-canonical-axis-staleness-audit.md`](2026-06-02-qa-backlog-canonical-axis-staleness-audit.md) — companion 2026-06-02 audit (now stale itself)
-- [`docs/audits/2026-05-31-ck-exploratory-probes-removed.md`](2026-05-31-ck-exploratory-probes-removed.md) — canonical authoring discipline for negative-result content
-- [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md) — tiered framing rule for precision ladders
+- [`docs/audits/2026-06-02-qa-backlog-canonical-axis-staleness-audit.md`](./2026-06-02-qa-backlog-canonical-axis-staleness-audit.md) — companion 2026-06-02 audit (now stale itself)
+- [`docs/audits/2026-05-31-ck-exploratory-probes-removed.md`](./2026-05-31-ck-exploratory-probes-removed.md) — canonical authoring discipline for negative-result content
+- [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](./2026-05-31-qbeta-ck-truncation-order-canonical-framing.md) — tiered framing rule for precision ladders
 - [`.claude/skills/local/integration-audit.md`](../../.claude/skills/local/integration-audit.md) — sidecar-invalidation utility (could be CI-cron candidate)
