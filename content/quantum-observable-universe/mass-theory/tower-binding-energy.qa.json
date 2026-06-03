@@ -2202,6 +2202,26 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/particle-interactions/tower-binding-energy.lean:17: failed to synthesize | content/quantum-observable-universe/particle-interactions/tower-binding-energy.lean:17: failed to synthesize | content/quantum-observable-universe/particle-interactions/tower-binding-energy.lean:18: failed to synthesize | content/quantum-observable-universe/particle-interactions/tower-binding-energy.lean:19: failed to synthesize | content/quantum-observable-universe/particle-interactions/tower-binding-energy.lean:23: failed to synthesize"
+      },
+      {
+        "field_hash": {
+          "md": "10fd4dd88c9f",
+          "ts": "67a003ec19b4",
+          "lean": "1305bb5bab45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
+          "deps_hash": "d99539346ae5"
+        },
+        "reviewed_at": "2026-06-03T18:31:25.384Z",
+        "reviewed_sha": "e05ede5a7ea7498abfaa95481266581d36a098c1",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/tower-binding-energy.lean:17: failed to synthesize | content/quantum-observable-universe/mass-theory/tower-binding-energy.lean:17: failed to synthesize | content/quantum-observable-universe/mass-theory/tower-binding-energy.lean:18: failed to synthesize | content/quantum-observable-universe/mass-theory/tower-binding-energy.lean:19: failed to synthesize | content/quantum-observable-universe/mass-theory/tower-binding-energy.lean:23: failed to synthesize"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2502,5 +2522,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T18:31:25.384Z"
 }

@@ -1951,6 +1951,26 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/particle-interactions/lambda-scale-substrate-form.lean:32: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "318eb33aad53",
+          "ts": "2bade417615a",
+          "lean": "0d43967d00bf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
+          "deps_hash": "d99539346ae5"
+        },
+        "reviewed_at": "2026-06-03T18:31:25.384Z",
+        "reviewed_sha": "e05ede5a7ea7498abfaa95481266581d36a098c1",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.lean:62: unknown tactic | content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.lean:60: unsolved goals | content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.lean:104: unknown tactic | content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.lean:102: unsolved goals | content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.lean:100: unsolved goals"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2374,5 +2394,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T18:31:25.384Z"
 }

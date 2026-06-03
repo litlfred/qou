@@ -33,6 +33,26 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/frobenius-lepton-meson-bridge.lean:12: object file '/home/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "3010433f709f",
+          "lean": "c49fcd5f083a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
+          "deps_hash": "d99539346ae5"
+        },
+        "reviewed_at": "2026-06-03T18:31:25.384Z",
+        "reviewed_sha": "e05ede5a7ea7498abfaa95481266581d36a098c1",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/frobenius-lepton-meson-bridge.lean:12: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
       }
     ],
     "voice-author-notes-pollution": [
@@ -864,5 +884,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T18:31:25.384Z"
 }

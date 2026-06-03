@@ -1651,6 +1651,26 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:16: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "6fb402817012",
+          "ts": "835e5869e4b2",
+          "lean": "57dea219759b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
+          "deps_hash": "d99539346ae5"
+        },
+        "reviewed_at": "2026-06-03T18:31:25.384Z",
+        "reviewed_sha": "e05ede5a7ea7498abfaa95481266581d36a098c1",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:25: unexpected token 'section'; expected 'lemma' | content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:27: failed to compile definition, compiler IR check failed at `QOU.Brings.q_param._closed_1`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking definition | content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:28: failed to compile definition, compiler IR check failed at `QOU.Brings.q_inv_param._closed_2`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking defini | content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:77: unsolved goals | content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:79: Unexpected name `QOU.Brings` after `end`: The current section is unnamed"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1932,5 +1952,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T18:31:25.384Z"
 }

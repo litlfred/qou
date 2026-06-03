@@ -2218,6 +2218,26 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:22: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "f87890b1a634",
+          "ts": "957c2bd89a8f",
+          "lean": "5331ba8d0215"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
+          "deps_hash": "d99539346ae5"
+        },
+        "reviewed_at": "2026-06-03T18:31:25.384Z",
+        "reviewed_sha": "e05ede5a7ea7498abfaa95481266581d36a098c1",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:31: unexpected token 'section'; expected 'lemma' | content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:33: failed to compile definition, compiler IR check failed at `QOU.q_param._closed_1`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking definition as 'no | content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:34: failed to compile definition, compiler IR check failed at `QOU.q_inv_param._closed_2`. Error: depends on declaration 'LaurentPolynomial.T', which has no executable code; consider marking definition as | content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:57: unexpected token '/--'; expected 'lemma' | content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean:81: unexpected token '/--'; expected 'lemma'"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2520,5 +2540,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T18:31:25.384Z"
 }

@@ -2241,6 +2241,26 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:41: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:44: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:51: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:54: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:58: typeclass instance problem is stuck, it is often due to metavariables"
+      },
+      {
+        "field_hash": {
+          "md": "30268cfcb1ee",
+          "ts": "2e0c6983bb73",
+          "lean": "728ce54385a0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
+          "deps_hash": "d99539346ae5"
+        },
+        "reviewed_at": "2026-06-03T18:31:25.384Z",
+        "reviewed_sha": "e05ede5a7ea7498abfaa95481266581d36a098c1",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:41: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:44: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:51: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:54: failed to synthesize | content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:58: typeclass instance problem is stuck, it is often due to metavariables"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2558,5 +2578,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T18:31:25.384Z"
 }

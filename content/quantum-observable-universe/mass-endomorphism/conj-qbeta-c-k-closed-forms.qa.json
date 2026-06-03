@@ -1741,6 +1741,26 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/conj-qbeta-c-k-closed-forms.lean:36: failed to synthesize | content/quantum-observable-universe/mass-theory/conj-qbeta-c-k-closed-forms.lean:36: failed to synthesize | content/quantum-observable-universe/mass-theory/conj-qbeta-c-k-closed-forms.lean:61: typeclass instance problem is stuck, it is often due to metavariables | content/quantum-observable-universe/mass-theory/conj-qbeta-c-k-closed-forms.lean:79: invalid {...} notation, expected type is not of the form (C ...) | content/quantum-observable-universe/mass-theory/conj-qbeta-c-k-closed-forms.lean:74: instance does not provide concrete values for (semi-)out-params"
+      },
+      {
+        "field_hash": {
+          "md": "4a25f5f9cc73",
+          "ts": "d6971c0ad117",
+          "lean": "95c5d60be687"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
+          "deps_hash": "d99539346ae5"
+        },
+        "reviewed_at": "2026-06-03T18:31:25.384Z",
+        "reviewed_sha": "e05ede5a7ea7498abfaa95481266581d36a098c1",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean:36: failed to synthesize | content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean:36: failed to synthesize | content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean:61: typeclass instance problem is stuck, it is often due to metavariables | content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean:79: invalid {...} notation, expected type is not of the form (C ...) | content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean:74: instance does not provide concrete values for (semi-)out-params"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2166,5 +2186,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T18:31:25.384Z"
 }

@@ -2218,6 +2218,26 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/particle-interactions/beta-decay-transfer-matrix.lean:20: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "a315cc8d9069",
+          "ts": "1e95851efe5a",
+          "lean": "84772f2ca7f3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
+          "deps_hash": "d99539346ae5"
+        },
+        "reviewed_at": "2026-06-03T18:31:25.384Z",
+        "reviewed_sha": "e05ede5a7ea7498abfaa95481266581d36a098c1",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.lean:29: unexpected token ';'; expected command | content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.lean:35: `a₁₂` is not a field of structure `TM` | content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.lean:36: `a₂₁` is not a field of structure `TM` | content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.lean:37: `a₂₂` is not a field of structure `TM` | content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.lean:58: `a₁₂` is not a field of structure `TM`"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2518,5 +2538,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T18:31:25.384Z"
 }

@@ -2371,6 +2371,26 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean:23: object file '/home/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/AlphaShiftTorus/AlphaShiftTorusKnot.olean' of module QOU.BraidKnot.AlphaShiftToru"
+      },
+      {
+        "field_hash": {
+          "md": "bad048893900",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8055e5864896",
+          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
+          "deps_hash": "d99539346ae5"
+        },
+        "reviewed_at": "2026-06-03T18:31:25.384Z",
+        "reviewed_sha": "e05ede5a7ea7498abfaa95481266581d36a098c1",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean:23: unknown module prefix 'QOU'"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2773,5 +2793,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T18:31:25.384Z"
 }
