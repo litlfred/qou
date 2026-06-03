@@ -44,6 +44,9 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
 def quantum_int(n: int, q: mpf) -> mpf:
+    """[n]_q = (q^n − q^{-n}) / (q − q^{-1}); limit at q = 1 is n."""
+    if q == 1:
+        return mpf(n)
     return (q ** n - q ** (-n)) / (q - q ** (-1))
 
 
