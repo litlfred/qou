@@ -44,7 +44,8 @@ from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-DPS = set_compute_dps()
+DPS = 30                                        # exploratory: ~few% structural
+set_compute_dps(DPS)                            # effect; 30 dps ample, fast at H_9
 q0 = mp.mpf(str(Q0))
 M_E = mp.mpf(str(M_E_MEV))
 E0 = M_E / (q0 * (q0 - 1))                      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
@@ -54,34 +55,41 @@ AME_B = {"D": mp.mpf("2.2245662"), "T": mp.mpf("8.4818"),
          "3He": mp.mpf("7.7180")}
 
 
-def _per_block_mag(Z, N, inter):
-    """Σ_λ y_λ(q₀)·|Re χ^λ(β; q₀)| — per-block (operator-valued) magnitude.
+_CH_CACHE: dict = {}
 
-    Each Wedderburn block contributes its own |χ^λ|; blocks are NOT summed
-    (with sign) before the modulus, so per-block phase cancellation cannot
-    erase the binding. This is the form that closes the deuteron."""
+
+def _channels(Z, N, inter):
+    """{λ: (Re y_λ, Re χ^λ)} at q₀ — computed ONCE per (Z,N,inter) and reused
+    by both the per-block and scalar readings (the χ^λ evaluation at H_{3A}
+    is the bottleneck; memoize it)."""
+    import time as _t
+    key = (Z, N, inter)
+    if key in _CH_CACHE:
+        return _CH_CACHE[key]
     cr = atomic_braid_to_crossings(Z, N, include_inter=inter)
-    total = mp.mpf(0)
+    out = {}
+    t0 = _t.time()
     for lam in partitions_of(3 * (Z + N)):
         chi, d = chi_lambda_numerical(lam, q0, cr)
         if d == 0:
             continue
         y = y_lambda_wenzl_bridge_numeric(lam, q0, dps=DPS)
-        total += mp.re(y) * abs(mp.re(chi))
-    return total
+        out[lam] = (mp.re(y), mp.re(chi))
+    _CH_CACHE[key] = out
+    print(f"    [Z={Z} N={N} inter={inter}: {len(out)} blocks, "
+          f"{_t.time()-t0:.1f}s]", flush=True)
+    return out
+
+
+def _per_block_mag(Z, N, inter):
+    """Σ_λ y_λ·|χ^λ| — per-block (operator-valued) magnitude: each Wedderburn
+    block keeps its own |·|; no sign cancellation across blocks. Closes D."""
+    return sum(y * abs(chi) for y, chi in _channels(Z, N, inter).values())
 
 
 def _scalar_mag(Z, N, inter):
     """|Σ_λ y_λ χ^λ| — scalar (collapse-first) magnitude, for contrast."""
-    cr = atomic_braid_to_crossings(Z, N, include_inter=inter)
-    s = mp.mpf(0)
-    for lam in partitions_of(3 * (Z + N)):
-        chi, d = chi_lambda_numerical(lam, q0, cr)
-        if d == 0:
-            continue
-        y = y_lambda_wenzl_bridge_numeric(lam, q0, dps=DPS)
-        s += mp.re(y) * mp.re(chi)
-    return abs(s)
+    return abs(sum(y * chi for y, chi in _channels(Z, N, inter).values()))
 
 
 def main() -> int:
