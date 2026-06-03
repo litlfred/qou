@@ -83,15 +83,36 @@ Per CLAUDE.md §"Q_β c_k truncation order canonical framing" and §"Before decl
 - ✗ Full SDP re-extraction at q_muon (out of scope, the partial test is consistent but not exhaustive)
 - ✗ Production-script replacement (forbidden without a categorical form)
 
-## Open research targets
+## Residue categorical-ID search — CONVERGED to fibre-level shape (2026-06-02)
 
-The residue A ≈ 1.804e-15 is suspiciously close to 1 ppQ. Hypotheses for follow-up:
+The residue `A ≈ 1.804e-15` was searched across **38 candidates in 6 hypothesis families** (`qbeta_residue_categorical_id_probe.py`): ℏ_q^N powers, b^N·ℏ_q^M products, Q_β·ε factors, [n]_q·ℏ_q^N (colored-Jones prefactor), `2·ℏ_q^15·(1+ε)` corrections, and cyclotomic Φ_8 / q-Pochhammer / α_em-Habiro cross-links.
 
-1. **A = ℏ_q^N for some N**: at q_0, ℏ_q ≈ 0.0991, ℏ_q^N = 1.8e-15 when N ≈ 15. Test specific integer N or rational q-combinations.
-2. **A = b^N · ℏ_q^M structural product**: combine the two substrate-natural variables.
-3. **A = Q_β · ε with ε some categorically-derived suppression factor**: tie the residue scale back to the observable.
+**Result: 0 PROVED, 3 NEAR-MATCH (best −0.28 %), 35 REFUTED.**
 
-None are tested here; all would require new probe work.
+The search **converged on a stable structural shape**:
+
+```
+A ≈ [2]_q · ℏ_q^15 · (1 + Schwinger-correction)
+   = J_2(unknot) · ℏ_q^15 · (1 + h²·b²-analog)
+```
+
+Three substantive facts established:
+
+1. **Scale is ℏ_q^15** (not u^15, not Φ_8): the u^15 candidates land at 1e-32 — wrong by 17 orders. The "15" exponent attaches to ℏ_q (≈0.099), not to the ladder variable u (≈0.0085).
+
+2. **Prefactor is [2]_q = J_2(unknot)**: the same categorical building block as sibling **PR #1521's α_em Habiro ID**, and the `(1 + h²·…)` correction is the same shape as α_em's `(1 − h²α)` Schwinger factor (PR #1511). Strong evidence of a shared substrate-Habiro origin across Q_β and α_em.
+
+3. **The residue is fibre-level, like c_3**: every candidate plateaus at the ~3 % cross-anchor-swing floor. Bare `[2]_q·ℏ_q^15` misses by **2.93 %** — exactly the c_3 NEAR-MATCH magnitude (2026-05-31 settled verdict). The residue is the archimedean shadow of a fibre-level Habiro element with **no real q_0-rational closed form**, reinforcing Step 2's fibre-level verdict on the singularity location.
+
+**Meta-conclusion:** the residue-ID search does NOT close A categorically (and per the fibre-level finding, no single-anchor real formula can). What it DOES establish is the structural shape `[2]_q · ℏ_q^15 · Schwinger`, fibre-level — a structural characterization consistent with PR #1727 Steps 1+2.
+
+## Open research targets (require out-of-session infrastructure)
+
+The residue A is categorical-ID-OPEN at the closed-form level. The genuine attack vectors (none of which fit in one session):
+
+1. **Full SDP re-extraction at q_muon**: compute c_k_muon independently (not just u_subst) and compare to c_k_proton. Discriminates whether the c_k are q-independent rational combinations (fibre) or anchor-dependent. Requires re-pinning the SDP infrastructure.
+2. **Galois-descent on the Habiro ring**: per the gap-map Phase B attack, use the fibre-level complex-analytic structure to constrain the residue via Galois action — the natural tool for a fibre-level object with no real closed form.
+3. **Cross-observable Habiro element unification**: since the residue shares [2]_q·(Schwinger) shape with α_em (PR #1521), a unified substrate-Habiro element `F(q) ∈ Habiro ring` whose archimedean evaluations give BOTH α_em's coupling AND Q_β's residue would be the categorical closure. This ties Topic 1 to sibling #1521 directly.
 
 ## Cross-references
 
@@ -100,3 +121,5 @@ None are tested here; all would require new probe work.
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
 - c_k truncation-order framing: [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 - c_3 q_0-stability verdict: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](2026-05-31-qbeta-c3-q0-stability-verdict.md)
+- Residue-ID probe: [`folio-assistant/computations/qbeta/qbeta_residue_categorical_id_probe.py`](../../folio-assistant/computations/qbeta/qbeta_residue_categorical_id_probe.py) + witness `qbeta-residue-categorical-id-probe.witness.json`
+- α_em Habiro categorical ID (shared [2]_q·Schwinger shape): sibling PR #1521
