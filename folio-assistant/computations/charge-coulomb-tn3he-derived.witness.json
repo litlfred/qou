@@ -1,0 +1,47 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T21:18:40.950433+00:00",
+  "commitSha": "15d2bc38071401ee6b0b20ad83bef8ddd6c7f4cb",
+  "assertions": [
+    {
+      "name": "derived_coulomb_right_order",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "charge-coulomb-tn3he-derived",
+  "scriptFile": "charge_coulomb_tn3he_derived.py",
+  "scriptHash": "cc996f27abd8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "data": {
+    "q_0": "1.1099785827513808",
+    "coulomb_strong_ratio_tanh_ln_q0": 0.10396371005241013,
+    "B_pp_strong_MeV": 2.2860879768761904,
+    "Q_pp": 1,
+    "derived_coulomb_dHe_MeV": 0.23767018758225714,
+    "ame_split_MeV": 0.7638,
+    "fraction_of_split_covered": 0.31116809057640366,
+    "remaining_factor": 3.213697131179528,
+    "verdict": "Derived categorical Coulomb (def:coulomb-charge, tanh(ln q₀), Q_pp=+1, no fit) covers ~31% of the T-³He split (vs color 4.5%) — right sign + order, 3.2× short. Remaining 3.2× = OPEN per-interface EM-linking / nuclear-geometry normalization (would be CAL-4 if fitted)."
+  }
+}
