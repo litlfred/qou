@@ -19,7 +19,7 @@
   {
     "id": "lean-q-schur-h3-y-lambda-extension",
     "summary": "Extend QSchurYLambdaClosedForm Lean from H_2 to H_3 (5 partitions of n=3 missing)",
-    "comment": "STALE AS OF 2026-06-03 — already done in main. Commit af3316bf ('lean(QSchurYLambdaClosedForm): refresh docstrings — H_2 + H_3 are sorry-free') landed qSchur_H3_top (line 262), qSchur_H3_mid (line 273), qSchur_H3_bottom (line 284), all proved via the same H_2 pattern (unfold + decide + field_simp + ring), with helper lemmas q_add_inv_ne_zero and q_sq_add_one_add_inv_sq_ne_zero. Audit doc note (also already in main): no clean H_3 'normalization' theorem because un-weighted partition sum is not 1 at H_3 (would need dim_q(λ)² weighting), deferred to q-Schur algebra formalisation. Recommend closing this todo. Original entry (2026-05-31) predates af3316bf by ~3 days but the 2026-05-31 'queue build' grep missed this. Pattern: CLAUDE.md 'Before declaring open' STRICT — todos can become stale; always re-grep main before pulling.",
+    "comment": "QSchurYLambdaClosedForm.lean currently has qSchur_H2_top, qSchur_H2_bottom, qSchur_H2_normalization (discharged). H_3 needs the analogous theorems for partitions (3), (2,1), (1,1,1). Mechanical mirror of H_2 pattern; uses contentSum, qBracket, qFactorial unfoldings + decide + field_simp + ring. STALE — see resolution_note.",
     "status": "open",
     "priority": "high",
     "origin": "session-2026-05-31-queue-build",
@@ -31,7 +31,7 @@
       "proof_sketch": "for each λ: unfold ySchurClosedForm; have hc : contentSum λ = <C>; have hs : λ.sum = 3; rw [hc, hs]; show qFactorial 3 q = [3]_q!; field_simp + ring",
       "expected_duration": "30min",
       "resolution_commit": "af3316bf",
-      "resolution_note": "Already implemented before this todo was created; flagged stale 2026-06-03 (session post-#1736 merge cleanup). Owner action: close as resolved."
+      "resolution_note": "Already implemented in main: qSchur_H3_top (line 262), qSchur_H3_mid (line 273), qSchur_H3_bottom (line 284) — all proved via the H_2 pattern with helper lemmas q_add_inv_ne_zero and q_sq_add_one_add_inv_sq_ne_zero. Commit af3316bf ('lean(QSchurYLambdaClosedForm): refresh docstrings — H_2 + H_3 are sorry-free') landed before this 2026-05-31 todo was created. No clean H_3 'normalization' theorem (un-weighted partition sum is not 1 at H_3 without dim_q(λ)² weighting). Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as resolved (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos; agents may not set status to 'resolved' or remove entries)."
     }
   },
   {
