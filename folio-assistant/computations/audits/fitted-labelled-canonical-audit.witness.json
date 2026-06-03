@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T16:46:04.995862+00:00",
-  "commitSha": "5067874f9f43a625d7682f1e2500257461763cfc",
+  "computedAt": "2026-06-03T18:59:32.031381+00:00",
+  "commitSha": "f1bdaa8f40835491e1b5adca44a7600deb635e03",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "a512cdb482c8",
@@ -38,7 +38,7 @@
   "data": {
     "total_issues": 2,
     "flagged_script_count": 2,
-    "scripts_scanned": 1529,
+    "scripts_scanned": 1533,
     "rows": [
       {
         "path": "computations/_deprecated/proton_mass_mpfr_50dps.py",
