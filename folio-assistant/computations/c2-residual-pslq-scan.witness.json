@@ -1,0 +1,59 @@
+{
+  "computation": "c2-residual-pslq-scan",
+  "description": "Step B negative-result probe: PSLQ + trial-fit scan finds NO derivation-tight (\u2264 ppm) identification of the c=2 EM-linking residual in a polynomial-in-h\u00b2 basis over \u211a. The 12/5 = dim H_4 / I(4) at q=1 stays the best candidate at 0.155 %. EXPLORATORY; no production wiring; no fit (fit-style trial candidates labelled honestly as 'rational coefficient FIT, not derived').",
+  "inputs": {
+    "remaining_factor": "3.2136971311795279327",
+    "lw_c2_at_q0": "1.3369656222357074333",
+    "residual": "2.4037245817925393008",
+    "delta_residual_minus_12_5": "0.00372458179253939"
+  },
+  "pslq_results": {
+    "residual_vs_1_h2_h4": {
+      "basis_size": 4,
+      "relation": null,
+      "found_relation": false
+    },
+    "residual_vs_1_h2_h4_h6": {
+      "basis_size": 5,
+      "relation": null,
+      "found_relation": false
+    },
+    "delta_vs_h2_h4_h6": {
+      "basis_size": 4,
+      "relation": null,
+      "found_relation": false
+    }
+  },
+  "trial_fits_for_context": {
+    "12/5": {
+      "value": "2.4",
+      "rel_diff_pct": "-0.15495044",
+      "honest_note": "structural (= dim H_4/I(4) at q=1)"
+    },
+    "12/5 + h^4\u00b72": {
+      "value": "2.403820465328577",
+      "rel_diff_pct": "0.0039889568",
+      "honest_note": "rational coefficient is FIT, not DERIVED \u2014 included as proximity context, not a candidate identification"
+    },
+    "12/5 + h^2/12": {
+      "value": "2.403642184044377",
+      "rel_diff_pct": "-0.0034279197",
+      "honest_note": "rational coefficient is FIT, not DERIVED \u2014 included as proximity context, not a candidate identification"
+    },
+    "12/5 \u00b7 (1 + h^4\u00b75/6)": {
+      "value": "2.403820465328577",
+      "rel_diff_pct": "0.0039889568",
+      "honest_note": "rational coefficient is FIT, not DERIVED \u2014 included as proximity context, not a candidate identification"
+    },
+    "12/5 \u00b7 (1 + h^2/28)": {
+      "value": "2.403746246445645",
+      "rel_diff_pct": "0.00090129515",
+      "honest_note": "rational coefficient is FIT, not DERIVED \u2014 included as proximity context, not a candidate identification"
+    }
+  },
+  "discipline": {
+    "fit": "none binding \u2014 trial fits report rational coefficients labelled FIT, not derivation candidates",
+    "delta_lambda_gate": "compliant \u2014 no AME mass/binding number tuned; only the selection-rule + 12/5 structural ratio used",
+    "verdict": "step B negative \u2014 residual has no derivation-tight h-polynomial identification; step A (categorical) is the next focused attempt"
+  }
+}

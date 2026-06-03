@@ -1,0 +1,86 @@
+{
+  "computation": "c2-h3-h4-pieri-branching-derivation",
+  "description": "Step A categorical derivation: 12/5 = Frobenius-reciprocity branching trace B(q)/Gelfand_H4(q) at q=1, where B(q) = \u03a3_{\u03bb\u22a23} dim_q V_\u03bb \u00b7 \u03a3_{\u00b5\u22a24, \u00b5\u2283\u03bb} dim_q V_\u00b5 (Pieri-rule branching). EXACTLY 24/10 = 12/5 at q=1 (derived, not fitted). The categorical home of the 12/5 numerical near-match for PR #1777's EM-linking slot. The 0.155 % residual gap at q\u2080 is NOT closed by q-deformation (the q-deformed B(q\u2080)/Gelfand_H4(q\u2080) = 2.412, vs residual 2.404; further than classical 2.400).",
+  "pieri_branching": [
+    {
+      "lambda": [
+        3
+      ],
+      "dim_q_lambda": "1",
+      "mus": [
+        [
+          4
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "sum_dim_q_mu": "q**2 + 2 + q**(-2)",
+      "contribution_dq_lam_times_sum_dq_mu": "q**2 + 2 + q**(-2)"
+    },
+    {
+      "lambda": [
+        2,
+        1
+      ],
+      "dim_q_lambda": "q + 1/q",
+      "mus": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "sum_dim_q_mu": "3*q**2 + 2 + 3/q**2",
+      "contribution_dq_lam_times_sum_dq_mu": "3*q**3 + 5*q + 5/q + 3/q**3"
+    },
+    {
+      "lambda": [
+        1,
+        1,
+        1
+      ],
+      "dim_q_lambda": "1",
+      "mus": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "sum_dim_q_mu": "q**2 + 2 + q**(-2)",
+      "contribution_dq_lam_times_sum_dq_mu": "q**2 + 2 + q**(-2)"
+    }
+  ],
+  "branching_total_symbolic": "3*q**3 + 2*q**2 + 5*q + 4 + 5/q + 2/q**2 + 3/q**3",
+  "gelfand_H4_symbolic": "3*q**2 + 4 + 3/q**2",
+  "ratio_symbolic": "(3*q**6 + 2*q**5 + 5*q**4 + 4*q**3 + 5*q**2 + 2*q + 3)/(q*(3*q**4 + 4*q**2 + 3))",
+  "ratio_at_q1_classical": "12/5",
+  "ratio_at_q0_q_deformed": "2.41219694361852",
+  "residual_measured": "2.403724581792539",
+  "rel_diff_classical_vs_residual_pct": "-0.15495",
+  "rel_diff_q_deformed_vs_residual_pct": "0.352468",
+  "categorical_home_of_12_5": "B(1)/I(4) = (\u03a3_\u03bb\u22a23 dim V_\u03bb \u00b7 \u03a3_\u00b5\u2283\u03bb\u22a24 dim V_\u00b5) / \u03a3_\u00b5\u22a24 dim V_\u00b5 = 24/10 = 12/5 EXACTLY",
+  "interpretation_for_selection_rule": "The lepton-fibre 'adjunction' mechanism hypothesized for the n=c+1 +1 step is exactly Pieri branching up the Wedderburn rank H_3 \u2192 H_4. The selection rule's open categorical step has a candidate categorical machinery.",
+  "open_residual_explanation": "0.155 % gap at q\u2080: (a) categorical Lobachevsky-style transcendental correction outside the polynomial basis tested in step B; or (b) numerical precision noise inside the source `derived_Coulomb_dHe` derivation. NOT settled by this probe.",
+  "discipline": {
+    "fit": "none \u2014 12/5 = 24/10 derived from Pieri branching",
+    "delta_lambda_gate": "compliant \u2014 categorical selection-rule mechanism candidate, not an AME fit",
+    "verdict": "step A partial success: categorical home of 12/5 identified; 0.155 % residual gap remains open"
+  }
+}
