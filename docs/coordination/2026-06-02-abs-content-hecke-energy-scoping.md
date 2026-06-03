@@ -109,8 +109,45 @@ claimed identification):
 
 5. **Sum of `χ^λ(s_k)` over an explicit set of Coxeter generators**.
    The character value `χ^λ(s_k)` of a transposition on V_λ is
-   classical; summing over the n−1 simple generators may equal
-   `|c|(λ)` in some normalisation.
+   classical; summing over the `n−1` simple generators (or all
+   `(n choose 2)` transpositions — they're conjugate, same value)
+   was conjectured to equal `|c|(λ)` in some normalisation.
+   **FALSIFIED (2026-06-03 follow-up)**: by Murnaghan-Nakayama,
+   `χ^λ(s_k) = f^λ · 2·c(λ) / (n(n-1))` — proportional to the
+   *signed* content sum `c(λ)`, not `|c|(λ)`. Summing over
+   simple-only gives `2·f^λ·c(λ)/n`; over all transpositions gives
+   `f^λ·c(λ)`. Both vanish at `(2,2)` (where `c((2,2)) = 0`
+   because the partition is self-conjugate), but `|c|((2,2)) = 2`.
+   Recorded as refuted — the construction gives the wrong invariant
+   (signed-content moment, not L¹ moment).
+
+## Status of the 5 candidates (2026-06-03)
+
+| # | construction | status |
+|---|---|---|
+| 1 | trace of `|Ω_q|` on `V_λ` (basis-dependent) | open with basis-convention objection |
+| 2 | Hilbert-Schmidt norm of `Ω_q` | wrong norm (gives `|c|²(λ)` not `|c|(λ)`) |
+| 3 | sum of arm + leg lengths | falsified at `(2,2)` |
+| 4 | ½ L¹-distance `λ → λ^T` | falsified at `(3)`, `(2,1)` |
+| 5 | sum of `χ^λ(s_k)` over Coxeter generators | falsified at `(2,2)` (signed content sum, not L¹) |
+
+**4 of 5 candidates refuted; only candidate 1 remains, and it has the
+basis-convention objection that PRs [#1641](https://github.com/litlfred/qou/pull/1641) and
+[#1643](https://github.com/litlfred/qou/pull/1643) flagged as a structural choice rather
+than a categorical statement.**
+
+The structural conclusion: **`|c|(λ)` is unlikely to have a single
+scalar categorical-invariant identity** in the standard Hecke /
+q-Casimir / symmetric-function library. The 20% A-growth match
+that surfaced this scoping is more likely the **shadow** of an
+operator-valued construction (the LR branching trace decomposition
+gated on [#1443](https://github.com/litlfred/qou/pull/1443) / IwahoriHecke Sprint 2 in
+[#1524](https://github.com/litlfred/qou/pull/1524)) than a hidden hook-content statistic.
+
+Sharpened Δ_λ-gate discipline: **do not propose further scalar
+combinatorial candidates** for `|c|(λ)`. The next productive probe
+is the operator-valued combiner, after the upstream sibling PRs
+land — not a 6th scalar guess.
 
 ## What would have to land to derive (not fit) `|c|(λ)`
 
