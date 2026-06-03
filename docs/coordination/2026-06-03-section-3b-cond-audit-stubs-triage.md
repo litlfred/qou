@@ -135,9 +135,9 @@ PR [#1736](https://github.com/litlfred/qou/pull/1736) merged 5 new §3b-cond con
 |---|---|---|
 | `SubstrateEWDerivations` | [`QOU/BraidKnot/SubstrateEWHypotheses.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean) | `claim_g_eq_pi_h : gauge_coupling_g = Real.pi * h_substrate_value` + 2 more |
 | `HeckeMassTraceContext` | [`QOU/Braiding/hecke_mass_trace.lean`](../../content/quantum-observable-universe/lean/QOU/Braiding/hecke_mass_trace.lean) | `claim_cat_mass_eq_norm_trace : cat_mass = norm (markovInst.trace Phi_mass)` + 1 more |
-| `CategoricalHiggsIdempotent` | (commit `0cf311f7` / `8454f01f`) | qDim closed-form fields |
-| `GActionOnSubstrate` | (commit `b71592d9` / `f81044ff`) | encoded axioms |
-| `StaircaseEWResidual` | (commit `32e93fd3`) | bundled empirical hypotheses |
+| `CategoricalHiggsIdempotent` | [`QOU/QuantumObservableUniverses/CategoricalHiggsIdempotent.lean`](../../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/CategoricalHiggsIdempotent.lean) | qDim closed-form fields ([`0cf311f7`](https://github.com/litlfred/qou/commit/0cf311f7), [`8454f01f`](https://github.com/litlfred/qou/commit/8454f01f)) |
+| `GActionOnSubstrate` | [`QOU/QuantumObservableUniverses/GActionOnSubstrate.lean`](../../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean) | encoded axioms ([`b71592d9`](https://github.com/litlfred/qou/commit/b71592d9), [`f81044ff`](https://github.com/litlfred/qou/commit/f81044ff)) |
+| `StaircaseEWResidual` | [`QOU/StaircaseCornerHook/StaircaseEWResidual.lean`](../../content/quantum-observable-universe/lean/QOU/StaircaseCornerHook/StaircaseEWResidual.lean) | bundled empirical hypotheses ([`32e93fd3`](https://github.com/litlfred/qou/commit/32e93fd3)) |
 
 These are **not** part of the audit-visibility-stub category (no `: True` field) — they are examples of **already-strengthened §3b-cond classes**. The strengthening pattern is uniform: each conjectural-condition field is an extensional identity (LHS = RHS, both real expressions), no naked `sorry`, no `True := trivial`, hypothesis-only (no global instance).
 
