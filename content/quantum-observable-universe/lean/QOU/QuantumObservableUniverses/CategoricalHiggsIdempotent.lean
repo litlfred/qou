@@ -121,10 +121,16 @@ theorem m_W_over_m_Z_eq_cos_theta_W :
 
 end CategoricalHiggsIdempotent
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.ts
-noncomputable instance : CategoricalHiggsIdempotent := by
-  sorry
+/-! ## Open conjecture — hypothesis-only (no global instance)
+
+The conjecture is that the substrate admits the categorical Higgs
+idempotent `e_H`, whose doublet / VEV / coupling structure is encoded in
+the class fields above.  Per `CLAUDE.md §3b-cond` we provide **no global
+instance** (which would require a `sorry`): downstream theorems take
+`[CategoricalHiggsIdempotent]` as an explicit hypothesis (e.g.
+`m_W_over_m_Z_eq_cos_theta_W`, proved conditionally above).  This removes
+the naked `sorry` without asserting the open conjecture.
+
+Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/categorical-higgs-idempotent.ts -/
 
 end QOU.QuantumObservableUniverses

@@ -39,18 +39,50 @@ $\mathcal{N}_{\rm sym}(q)$ — is computable in closed form.*
 
 ### The four axioms
 
-      Field schema below is a structural placeholder; refine per §3b
-      to match the conjecture's actual content. The single sorry on
-      the `noncomputable instance` is the conjecture itself. -/
-  residual : ℝ
-  /-- The residual vanishes (the conjecture is the assertion that
-      this holds). -/
-  residual_eq_zero : residual = 0
+      The fields below faithfully encode Axioms (G-1)–(G-4) and the
+      `N_sym(q)` closed form, replacing the former vacuous `residual = 0`
+      placeholder. Per §3b-cond no global instance is provided — the open
+      conjecture is the assertion that such an instance exists. -/
+  /-- **(G-1) G-isotypic decomposition.** The number of `G`-isotypic
+      components `A^{(X)}` in `A = ⊕_X A^{(X)}`. -/
+  numIsotypicComponents : ℕ
+  /-- The decomposition is non-trivial (EW and Higgs hosts both present). -/
+  numIsotypicComponents_pos : 0 < numIsotypicComponents
+  /-- **(G-2) Per-host q-dimension.** The categorical q-dimension carried
+      by the EW symmetric channel `e_sym^EW`, fixed by its torus-link
+      hosts (e.g. `[4]_q` for the `W^±` host per the audit table). -/
+  qDimEWSymmetric : ℝ
+  /-- The EW-symmetric q-dimension is positive. -/
+  qDimEWSymmetric_pos : 0 < qDimEWSymmetric
+  /-- **(G-3) Higgs vacuum vortex morphism.** The Higgs vacuum value
+      `⟨Φ⟩ ∈ A` — the unique *non-zero* vortex morphism of the
+      mass-identity form. -/
+  higgsVev : ℝ
+  /-- `⟨Φ⟩ ≠ 0` (the non-zero vortex morphism asserted by Axiom (G-3)). -/
+  higgsVev_ne_zero : higgsVev ≠ 0
+  /-- **(G-4) Higgs idempotent.** The categorical q-dimension of the image
+      `e_H · A`, the 1-dimensional residual-scalar direction. -/
+  qDimHiggsIdempotent : ℝ
+  /-- The Higgs-idempotent q-dimension is positive. -/
+  qDimHiggsIdempotent_pos : 0 < qDimHiggsIdempotent
+  /-- **Symmetric-channel Frobenius trace** `N_sym(q) = tr_F(e_sym^EW · e_H)`,
+      computed in closed form from Axioms (G-1)–(G-4). -/
+  N_sym : ℝ
+  /-- Closed form: composing the two idempotent traces in the Frobenius
+      pairing yields the product of their q-dimensions (see
+      `g-action-on-substrate.md` for the precise per-host expansion). -/
+  N_sym_closed_form : N_sym = qDimEWSymmetric * qDimHiggsIdempotent
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts
-noncomputable instance : GActionOnSubstrate := by
-  sorry
+/-! ## Open conjecture — hypothesis-only (no global instance)
+
+The conjecture is the *existence* of a `GActionOnSubstrate` instance:
+that the substrate admits the unique `G`-equivariant structure of
+Axioms (G-1)–(G-4), from which `N_sym(q)` follows in closed form.  Per
+`CLAUDE.md §3b-cond` we provide **no global instance** (which would
+require a `sorry`); downstream theorems take `[GActionOnSubstrate]` as
+an explicit hypothesis.  This removes the naked `sorry` while keeping the
+conjecture's content faithfully encoded in the class fields above.
+
+Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts -/
 
 end QOU.QuantumObservableUniverses
