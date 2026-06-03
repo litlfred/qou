@@ -117,12 +117,20 @@ theorem chi_block_antipode_pairing (q : ℝ) (hq : 0 < q) :
     chi_block_111 q = q⁻¹ ^ 4 * chi_block_3 q := by
   unfold chi_block_111 chi_block_3
   have hq_ne : q ≠ 0 := ne_of_gt hq
-  field_simp
+  field_simp [hq_ne]
   ring
 
 /-- **Theorem (q²−1 factor in all three blocks).** Every per-block
-character $\chi_\lambda(\Delta_{T_\beta})$ has $(q^2 - 1)$ as a
-factor (equivalently, it vanishes at $q = \pm 1$).
+character $\chi_\lambda(\Delta_{T_\beta})$ factors as $(q^2 - 1)$
+times a rational function of $q$ on the physical regime $q > 0$
+(so the classical limit $q \to 1^+$ is the structural source of
+the vanishing — see `chi_blocks_vanish_at_one`).
+
+The identity $q^2 - 1 = (q-1)(q+1)$ would algebraically extend the
+vanishing to $q = -1$ as well, but this theorem is stated under
+$q > 0$ to match the physical regime of $\chi_\lambda$ (where the
+$1/q^k$ denominators in the closed forms are well-defined and
+positive); the $q = -1$ root is outside scope.
 
 This is the structural source of the order-$w$ leading term in the
 Taylor expansion around $q = 1$: $q^2 - 1 = 2w + w^2$ where
@@ -141,15 +149,15 @@ theorem chi_blocks_have_q2_minus_1_factor (q : ℝ) (hq : 0 < q) :
     ?_, ?_, ?_⟩
   · unfold chi_block_3
     have hq_ne : q ≠ 0 := ne_of_gt hq
-    field_simp
+    field_simp [hq_ne]
     ring
   · unfold chi_block_21
     have hq_ne : q ≠ 0 := ne_of_gt hq
-    field_simp
+    field_simp [hq_ne]
     ring
   · unfold chi_block_111
     have hq_ne : q ≠ 0 := ne_of_gt hq
-    field_simp
+    field_simp [hq_ne]
     ring
 
 end QOU.BraidKnot

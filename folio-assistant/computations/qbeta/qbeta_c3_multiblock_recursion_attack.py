@@ -163,9 +163,13 @@ def y_lambda_h3_symbolic(q: sp.Symbol) -> dict[tuple[int, ...], sp.Expr]:
 def main() -> None:
     q = sp.Symbol("q", positive=True)
     w = sp.Symbol("w")  # w = q - 1, expansion variable
-    u = sp.Symbol("u")  # u = b · ℏ_q², ladder variable
+    # NOTE: a ladder symbol u = b · ℏ_q² is intentionally NOT introduced
+    # here — extracting c_3 from Δτ_M requires the f-map (open keystone,
+    # see header). This script only computes the pre-archimedean object
+    # Δτ_M and its w-expansion; c_3 itself is NOT derived.
 
-    print("Multi-block symbolic c_3 attack")
+    print("Multi-block pre-archimedean Δτ_M probe")
+    print("(NEAR-MATCH diagnostic; c_3 NOT derived — f-map keystone open)")
     print("=" * 70)
 
     chi = per_block_chi_diff(q)
@@ -190,35 +194,34 @@ def main() -> None:
     print(f"  Order 6:  {coeffs[6]}")
     print(f"  Order 7:  {coeffs[7]}")
 
-    # ── Step 3: compute c_3 ───────────────────────────────────────
-    # Q_β = Q_base · (1 + Σ c_k · u^k)
-    # log(Q_β/Q_base) = Σ c_k · u^k − ½ Σ_{i,j} c_i c_j u^{i+j} + ...
-    # c_3 is the coefficient of u³ in log(1 + Δτ_M / Q_base) after
-    # the variable change u = b · ℏ_q² and the substrate factor.
-    #
-    # The Δτ_M itself is NOT directly the ladder series — it's the
-    # PRE-archimedean object that the f-map sends to the ladder.
+    # ── Step 3 (NOT IMPLEMENTED): c_3 extraction requires the f-map ──
+    # The ladder Q_β = Q_base · (1 + Σ c_k · u^k) lives in the u = b·ℏ_q²
+    # variable; c_3 is the coefficient of u³ in log(1 + Δτ_M / Q_base)
+    # AFTER the variable change u = b·ℏ_q² and the substrate factor.
     # Per the order audit, the leading per-block term is O(√u) = O(w^½),
-    # not O(u) = O(w). Direct extraction of c_3 from Δτ_M's w-expansion
-    # uses the substitution u = ℏ_q² · b where b = z(q)² and ℏ_q = h_q²/2
-    # (or similar — the exact transform is part of what the f-map encodes).
+    # not O(u) = O(w) — so direct extraction of c_3 from the w-expansion
+    # above is NOT possible without the f-map transform (the exact form
+    # of which is the open keystone, per the 1ppQ-Q_β ledger). This
+    # script intentionally STOPS at the Δτ_M closed form + w-expansion;
+    # c_3 is recorded as "NOT_DERIVED" in the witness JSON below.
 
-    # ── Cross-anchor numerical evaluation ─────────────────────────
-    print("\nStep 4: Cross-anchor evaluation at q_proton vs q_muon")
+    # ── Step 3': cross-anchor numerical evaluation of Δτ_M ─────────
+    print("\nStep 3': Cross-anchor evaluation of Δτ_M at q_proton vs q_muon")
 
-    # q_0 anchors (50-dps strings)
-    from q_parameter import Q_50_DIGIT_STR
+    # q_0 anchors at 50-dps from the canonical qou_substrate module.
+    # Required (not optional): the cross-anchor swing diagnostic only
+    # has meaning if both anchors come from the canonical derivation.
+    # A CODATA-derived approximation would silently change what the
+    # swing measures (anchor vs. compute precision), so we fail fast
+    # if the canonical module is unavailable.
+    from q_parameter import Q_50_DIGIT_STR, q_muon_at  # canonical (re-exported)
     q_proton = sp.Rational(Q_50_DIGIT_STR)
     print(f"  q_proton = {sp.N(q_proton, 18)}")
 
-    # Muon anchor: q_muon from m_μ/m_e pin (50-dps witnessed).
-    # Required (not optional): the cross-anchor swing diagnostic only
-    # has meaning if q_muon is the canonical 50-dps anchor. A CODATA-
-    # derived approximation would silently change what the swing
-    # measures (anchor vs. compute precision), so we fail fast if the
-    # canonical parameter is missing.
-    from q_parameter import Q_MUON_50_DIGIT_STR  # required
-    q_muon = sp.Rational(Q_MUON_50_DIGIT_STR)
+    # Muon anchor: q_muon from m_μ/m_e closed form at 50 dps.
+    # `q_muon_at` returns an mpmath mpf — convert via str to preserve
+    # full precision when handing off to sp.Rational.
+    q_muon = sp.Rational(str(q_muon_at(50)))
     print(f"  q_muon   = {sp.N(q_muon, 18)}")
 
     dt_proton = sp.N(delta_tau_M.subs(q, q_proton), 30)
