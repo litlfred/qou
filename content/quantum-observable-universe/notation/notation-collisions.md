@@ -148,25 +148,33 @@ categorical or geometric reservation.
 
 **Two bars + dagger — three distinct involutions (never share a glyph).**
 
-| symbol | name | meaning |
+| notation | name | meaning |
 |---|---|---|
 | $\overline{x}$ | conjugation bar | the archimedean place's involution (the QM bar, $\lvert\psi\rvert^2 = \psi\overline{\psi}$); trivial at real $q_0$ |
-| $x^{\flat}$ | Hecke / KL bar | the fibre-level duality $q \mapsto q^{-1}$ (Kazhdan–Lusztig; §7b "bar-involution invariant"). $\flat$ = "lowering", $q \to q^{-1}$ |
+| $f(q^{-1})$, or $\mathrm{b}(f)$ | Hecke / KL bar | the fibre-level duality $q \mapsto q^{-1}$ (Kazhdan–Lusztig; §7b "bar-involution invariant"). Written **functionally** — it is literally substitution $q \to q^{-1}$, so for a $q$-function $f$ its bar is $f(q^{-1})$; the operator form is $\mathrm{b}(f)$, defined by $\mathrm{b}(f)(q) = f(q^{-1})$ |
 | $x^{\dagger}$ | dagger / adjoint | the $\dagger$-compact adjoint (categorical inner product, $\mathrm{SU}(2)$ unitarity) — see `dagger-su2`, `adjoint-trace` |
+
+**Functional notation for the Hecke bar (convention).** Because every
+object we bar — $\mathrm{tr}_M$, $\chi^\lambda$, $J_K$ — is already a
+function of $q$, the Hecke/KL bar needs **no new accent**: write it as
+evaluation at $q^{-1}$. The bar-pairing is $\mathrm{tr}_M(q)\,
+\mathrm{tr}_M(q^{-1})$; use the operator $\mathrm{b}(\cdot)$ only when
+the involution itself must be named on an abstract Hecke-algebra
+element. This keeps conjugation $\overline{\cdot}$ and the adjoint
+$\dagger$ untouched.
 
 The conjugation bar and the Hecke bar **coincide only on the unit
 circle** $\lvert q\rvert = 1$ (root of unity): there $q^{-1} =
-\overline{q}$, so $x^{\flat} = \overline{x}$ and $\mathrm{tr}_M \cdot
-\mathrm{tr}_M^{\flat} = \lvert\mathrm{tr}_M\rvert^2$. At the **real**
+\overline{q}$, so $f(q^{-1}) = \overline{f(q)}$ and $\mathrm{tr}_M(q)\,
+\mathrm{tr}_M(q^{-1}) = \lvert\mathrm{tr}_M\rvert^2$. At the **real**
 substrate anchor $q_0 \approx 1.1097$ ($\lvert q_0\rvert \neq 1$) they
 are different maps: the archimedean observation $\tau$ realizes the
 modulus $\lvert\mathrm{tr}_M(q_0)\rvert$ (conjugation bar, trivial at
-real $q_0$), whereas $\mathrm{tr}_M^{\flat}$ evaluates at the mirror
+real $q_0$), whereas $\mathrm{tr}_M(q_0^{-1})$ evaluates at the mirror
 point $q_0^{-1} \approx 0.9009$ — a *different* archimedean place, used
 only for fibre-level identities (Habiro recursion, $\alpha_{EM}$
 $[2]_q(1-\hbar^2\alpha)$), never as the observation. Rationale in
 [`docs/audits/2026-06-03-bar-pairing-does-not-improve-binding.md`](../../../docs/audits/2026-06-03-bar-pairing-does-not-improve-binding.md).
-$\flat$ is otherwise unused in the paper (collision-free).
 
 **Base ring convention (Lean).** In Lean source the generic ground
 ring is **$R$** with the weakest typeclass that admits the
