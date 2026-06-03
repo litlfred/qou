@@ -43,7 +43,7 @@ doc.
 | 6. Frobenius pairing + self-duality | `⟨a,b⟩_F`, `Ψ=S²=id` | ✅ proved (D3/D23) | partition-respecting audit (§9 below) |
 | 7. GB filtration | `ℓ(w)`-graded, `E_2` collapse | 🟢 derived | — |
 | 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean `sorry=4`) | proof-watcher: `SkewSYT` jet sorries |
-| 9a. Mass identity `m_p` | `m_e·Geom_full(K, q₀)` (knot-dependent) | 🟡 +2.89–3.73% gap (production uses uniform `Vol(𝓑₃)` for ALL atoms — per-knot `Geom_full(K)` is the bug, 64 of 65 isotopes affected; see [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)) | **per-knot `Geom_full(K)` wire-up** (NOT λ_scale); #1698 (m_avg combiner), `geom_full_per_block_wiring.py` testbed |
+| 9a. Mass identity `m_p` | `m_e·Geom_full(K, q₀)` (knot-dependent) | 🟡 +2.89–3.73% gap (production uses uniform `Vol(𝓑₃)` for ALL atoms — the **lack of per-knot `Geom_full(K)` wire-up** is the bug: 64 of 65 atom-touching scripts use only `geom_full_borromean(q)`, so 63 of 65 isotopes (all A ≥ 2) get the wrong Vol(K); see [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)) | **per-knot `Geom_full(K)` wire-up** (NOT λ_scale); #1698 (m_avg combiner), `geom_full_per_block_wiring.py` testbed |
 | 9b. Per-isotope binding `B(K)` | `m_e·Σ_λ y_λ χ^λ Δ_λ` | 🔴 Δ_λ gate open | **Δ_λ closure**: Option E #1697/#1516 (crystal); #1709 (volume refuted); q-Reeb/isospin-mirror (`option_e_v9`) |
 | 10. Confinement SDP | canonical `T_w` | 🟢 derived | LP/SDP duals infra (`lp_dual_solver.py`) |
 | 11. β-decay `Q_β` | `\|Δ(net)\|·𝔈₀` | 🟢 derived; `c_k` truncation | `1ppq-qbeta.md` ledger (c_k tiered) |
