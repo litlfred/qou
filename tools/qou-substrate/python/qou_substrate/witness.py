@@ -108,9 +108,12 @@ def capture_environment() -> dict:
     multi-package bag (bare versions for symmetry across packages);
     ``engineVersion`` names the engine that emitted the witness
     (engine name + version as a single identifier). When the engine
-    is python-based the python version appears in both places by these
-    two different conventions; consumers should not assume the strings
-    match byte-for-byte.
+    is python-based, the python version appears in both ``engineVersion``
+    (as ``"python X.Y"``, possibly composite e.g. ``"python 3.11 + mpmath 1.3.0"``)
+    and ``environment["python"]`` (as bare ``"X.Y.Z"``). The two
+    representations have different formatting and meaning (engine
+    identity vs interpreter version); consumers should not assume the
+    strings match byte-for-byte.
     """
     import importlib.metadata as _md
 
