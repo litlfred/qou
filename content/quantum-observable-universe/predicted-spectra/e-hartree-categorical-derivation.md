@@ -1117,7 +1117,7 @@ for the QOU categorical analogue of charge-conjugation parity
 A categorical proof of the conjecture would amount to identifying
 the categorical analogue of the linear-Stark vanishing.
 
-### A negative result: no coupling-level involution flips $\alpha_{EM}$
+### Refuted (specific ansatz): no coupling-level involution flips $\alpha_{EM}$
 
 A natural follow-up to Mechanism C is to ask whether some involution
 $\iota$ of $R$ *other* than the antipode-induced
