@@ -8,7 +8,9 @@ B_AME − B_chain — which is the irreducible MANY-BODY (3-/4-body) cooperative
 binding the pairwise sum cannot contain.
 
     B_chain(K) = Σ_{adjacent pairs in the chain} B_xy ,
-    B_xy = E_0·(|tr_M_free| − |tr_M_atom|)  for the 2-nucleon (Z,N) sub-braid.
+    B_xy = E_0·(tr_M_free − tr_M_atom)  for the 2-nucleon (Z,N) sub-braid
+    (SIGNED categorical trace difference; the double-modulus |·|−|·| was a
+    non-archimedean misuse, see 2026-06-01-paper-modulus-nonarchimedean-audit).
 
 Chains (by adjacency): D = p–n; T = p–n–n; ³He = p–p–n; ⁴He = p–p–n–n.
 E_0 = m_e/(q₀(q₀−1)) calibration. ZERO fit; AME for comparison only.
@@ -46,8 +48,13 @@ CHAIN = {"D": ["pn"], "T": ["pn", "nn"], "3He": ["pp", "pn"],
 
 
 def bond_binding(Z, N, E0):
+    # SIGNED categorical trace difference (the double-modulus form
+    # |tr_free|−|tr_atom| was a non-archimedean misuse — see
+    # docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md). Both
+    # traces are positive at q_0, so this is value-preserving and keeps
+    # the binding sign.
     r = bc.binding_canonical(Z, N)
-    return E0 * (abs(mpf(str(r["tr_M_free"]))) - abs(mpf(str(r["tr_M_atom"]))))
+    return E0 * (mpf(str(r["tr_M_free"])) - mpf(str(r["tr_M_atom"])))
 
 
 def main() -> int:

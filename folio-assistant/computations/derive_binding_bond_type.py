@@ -17,8 +17,12 @@ deuteron (pn) is the derived base case. Bond composition from (Z,N):
 
 ZERO fit. AME used only for the final comparison.
 
-Note: this uses the SCALAR |tr_M| (collapse-first); the observe-per-block
-Σ_λ y_λ|χ^λ| version (deuteron +3.6% vs scalar +12%) and the per-bond GROWTH
+Note: this uses the SCALAR signed Δtr_M (collapse-first; the double-modulus
+|tr_free|−|tr_atom| was a non-archimedean misuse, see
+2026-06-01-paper-modulus-nonarchimedean-audit). The observe-per-block
+Σ_λ y_λ|χ^λ| version (deuteron +3.6% vs scalar +12%; |·| is the archimedean
+per-block realization, bar-pairing χ^λ(q)·χ^λ(q⁻¹) is the general form) and
+the per-bond GROWTH
 (bonds embedded in the A-nucleon braid, the ⁴He residual) both need the Rust
 per-partition χ kernel (CI) — this level isolates the bond-TYPE effect, which is
 the T-vs-³He discriminator.
@@ -50,9 +54,15 @@ BOND_ZN = {"pp": (2, 0), "pn": (1, 1), "nn": (0, 2)}
 
 
 def bond_binding(Z, N):
-    """E_0·(|tr_M_free| − |tr_M_atom|) for the 2-nucleon (Z,N) sub-braid."""
+    """E_0·(tr_M_free − tr_M_atom) for the 2-nucleon (Z,N) sub-braid.
+
+    SIGNED categorical trace difference; the double-modulus form
+    |tr_free|−|tr_atom| was a non-archimedean misuse (see
+    docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md). Both
+    traces are positive at q_0 → value-preserving and sign-correct.
+    """
     r = bc.binding_canonical(Z, N)
-    dtr = abs(mpf(str(r["tr_M_free"]))) - abs(mpf(str(r["tr_M_atom"])))
+    dtr = mpf(str(r["tr_M_free"])) - mpf(str(r["tr_M_atom"]))
     return E0 * dtr
 
 

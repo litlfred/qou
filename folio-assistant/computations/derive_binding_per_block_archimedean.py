@@ -3,16 +3,20 @@
 
 NO fitted parameters. The canonical scalar binding (binding_canonical.py) is
 
-    B(K) = E_0 · ( |tr_M(W_free)| − |tr_M(W_atom)| ) ,   tr_M = Σ_λ y_λ χ^λ ,
+    B(K) = E_0 · ( tr_M(W_free) − tr_M(W_atom) ) ,   tr_M = Σ_λ y_λ χ^λ ,
+
+(SIGNED categorical difference; the double-modulus |tr_free|−|tr_atom| was a
+non-archimedean misuse, see 2026-06-01-paper-modulus-nonarchimedean-audit).
 
 with E_0 a CALIBRATION-fixed energy scale (not a fit):
     E_0^{(𝔈)}  = m_e / (q_0 (q_0 − 1))      ≈ 4.186 MeV   (substrate scale 𝔈₀)
     E_0^{(Qβ)} = Q_β(n) = 0.78233341 MeV     (CAL-3 free-neutron β-decay scale)
 
-The scalar uses |Σ_λ y_λ χ^λ| — it COLLAPSES the Wedderburn blocks (abs of the
-sum) BEFORE the observation, cancelling the per-block content. The framework's
-own discipline (§9 cheat-sheet, prop:delta-pre-archimedean) says observe LAST:
-apply the archimedean realization τ_λ = E_0·|·| PER BLOCK, then sum —
+The premature-collapse scalar uses |Σ_λ y_λ χ^λ| — it COLLAPSES the Wedderburn
+blocks (modulus of the sum) BEFORE the observation, cancelling the per-block
+content. The framework's own discipline (§9 cheat-sheet, prop:delta-pre-
+archimedean) says observe LAST: defer the archimedean realization τ_λ = E_0·|·|
+to PER BLOCK, then sum —
 
     B_perblock(K) = E_0 · Σ_λ y_λ ( |χ^λ(W_free)| − |χ^λ(W_atom)| ) .
 
@@ -20,6 +24,15 @@ This is the SAME canonical functor (E_0·|·|, y_λ from Wenzl, χ^λ from Hoefs
 block-diagonalised. ZERO free parameters — E_0 is calibration, everything else
 derived. It is a DERIVATION, not a fit to AME: the only AME use is the final
 comparison. Reports both E_0 conventions for D/T/³He/⁴He.
+
+Modulus convention (per 2026-06-01-paper-modulus-nonarchimedean-audit). The
+per-block `|χ^λ|` here is the ARCHIMEDEAN observation τ_λ — `|·|` is correct AT
+the (named) archimedean realization step, and the per-block observe-last is
+exactly the "defer the modulus" discipline. The general, non-archimedean-
+compatible norm replaces `|χ^λ|` with the Hecke BAR-pairing χ^λ(q)·χ^λ(q⁻¹)
+(bar-involution q↦q⁻¹), which is defined over any base ring (char p, p-adic)
+and coincides with |χ^λ|² only at the real place; computing it needs χ^λ at
+q⁻¹ (a follow-up — the cached witnesses store q_0 only).
 """
 from __future__ import annotations
 
