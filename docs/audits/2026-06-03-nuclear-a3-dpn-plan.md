@@ -68,9 +68,56 @@ the current 773.9 ppb error originates from a stale-q₀ evaluation vs a
 structural gap, and whether the bring-color-weighted asymmetry closes it
 at the current anchor.
 
+## Findings (2026-06-03)
+
+### The A=3 −60% deficit is robust across six independent readings
+
+Every parameter-free reading of the binding gives the deuteron near AME but
+A=3 short by ~−60 %:
+
+| reading | D | T | ³He |
+|---------|----|----|-----|
+| canonical signed trace `E₀(tr_free − tr_atom)` | (small) | −92 % | — |
+| scalar modulus `E₀(\|Σyχ_free\| − \|Σyχ_atom\|)` | +12 % | −60.3 % | −54.4 % |
+| **per-block magnitude `E₀(Σy\|χ_free\| − Σy\|χ_atom\|)`** | **+3.6 %** | **−61.7 %** | **−55.1 %** |
+| single-link volume `m_e·Vol·Δtr` | +0.2 % | −59.9 % | −59.2 % |
+| 3-bond all-pairs joint trace | — | −64.1 % | −58.9 % |
+
+(`binding_per_block_magnitude_a3_probe.py`, `binding_link_volumes.py`,
+`binding_threebody_joint_trace.py`.)
+
+### What this rules out
+
+- **Not the observation modulus.** The per-block / superselection reading
+  (`|·|` per Wedderburn block — the natural extension of the q₀-real
+  bar/modulus result) closes the deuteron (+3.6 %) but fails A=3 the same
+  ~−60 %. So the deficit is not a modulus-ordering artifact. The
+  per-block-closes-A≥3 hypothesis is **refuted**; not formalized.
+- **Not a per-partition Δ_λ choice.** All readings are parameter-free
+  (no Δ_λ) and all land at ~−60 %; the gap is not a free per-block weight.
+
+### Where the gap actually is (sharpened diagnosis)
+
+The deficit is in the **inter-nucleon binding structure / multiplicity**,
+not the observation or the per-block weights. Evidence: A=2 (one interface)
+works; ⁴He works via the *fully-linked* Borromean (8G) structure; A=3 with
+the linear-chain braid word (`β_p·I₁₂·β_n·I₂₃·β_block`, adjacent interfaces
+only) gives only ~1.5× the deuteron, while AME B(A=3) ≈ 3–4× the deuteron
+— roughly the **number of nucleon pairs** (3 for A=3). The canonical trace
+returns a single collective number, not the pairwise-additive sum.
+
+**Next lead (parameter-free, testable):** pairwise-additive binding
+`B(A=3) = Σ_{pairs} B_pair` (T: B_pn+B_pn+B_nn; ³He: B_pp+B_pn+B_pn), each
+pair computed deuteron-style. A sibling branch
+`claude/binding-extensive-bond-sum-2026-06-02` already explores extensive
+bond sums — **coordinate, do not duplicate**.
+
 ## Done / next
 
-- [x] Branch + baseline established (this doc).
-- [ ] A=3: H₉ Wedderburn × link-volume probe (³H via 8₁₁), no fit.
+- [x] Branch + baseline established.
+- [x] A=3 per-block / superselection reading — **refuted** (closes A=2 only).
+- [x] Six-reading robustness of the −60 % deficit established → gap is the
+      inter-nucleon multiplicity, not observation or Δ_λ.
+- [ ] Pairwise-additive `B = Σ_pairs B_pair` test (coordinate with the
+      extensive-bond-sum sibling).
 - [ ] Δ_pn: re-derive at current q₀ via bring-color-weighted asymmetry.
-- [ ] Report residuals; escalate the in-budget path to GAP-A-3 if it lands.
