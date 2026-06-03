@@ -193,7 +193,43 @@ waiting for the user to prompt. Walk the priority order:
    `todos/<name>-queue.json` first, then sibling watchers'.
    Prefer items whose `block_or_script` overlaps the current
    PR's scope (same chapter / same Python or Lean file).
-4. **Cross-cutting cleanups** (bare-URL `-- Ref:` upgrades,
+4. **Refresh stale sidecars + witnesses** (added 2026-06-03).
+   The QA pipeline depends on `*.qa.json` sidecars and
+   `folio-assistant/computations/*.witness.json` files staying
+   in sync with the source they audit. Treat the following as
+   actionable backlog whenever idle:
+
+   - **Sidecar staleness** — any block whose `.md` / `.ts` /
+     `.lean` source-hash has drifted from its `.qa.json`
+     `source_hashes` entry, OR whose `script_hash` differs from
+     the current checker script. Refresh by deleting the stale
+     `criteria.<crit>` entry and running
+     `bun run content/pipeline/qa-sweep.ts <path> --only <crit>`
+     (or invoke `/integration-audit <axis>` for a whole axis).
+   - **Witness staleness** — any `*.witness.json` whose
+     `scriptCommitSha` / `scriptHash` differs from the current
+     producer script's git hash. Refresh by running the producer
+     script with `2>&1 | tee /tmp/<script>.log` per the
+     `compute-audit` long-compute logging discipline.
+   - **Detection budget** — capped at ≤ 10 sidecars / ≤ 3
+     witnesses per idle pass to avoid burying the visible
+     queue items above; remaining stale entries get logged for
+     the next idle window.
+   - **No silent regen** — every refresh that changes a sidecar
+     or witness gets a commit on the current branch with a
+     `chore(qa-sweep|witness)` message naming the producer +
+     criterion + count of entries updated. Sweep results
+     (especially `fail` → `pass` transitions) ride the current
+     PR's scope when thematically related; otherwise stack on a
+     dedicated `chore/` commit so the canonical-axis or
+     compute-wiring story stays reviewable.
+   - **Witness producer ≠ available** — if a witness's producer
+     script crashes (e.g. blocked on the cache-host 403, the
+     joint-tower SDP killed, etc.), do NOT delete the sidecar.
+     File a queue item naming the producer + the specific
+     blocker and move on.
+
+5. **Cross-cutting cleanups** (bare-URL `-- Ref:` upgrades,
    `validate-bib` deferred items, glossary backfills).
 
 For this skill's children specifically:
