@@ -29,10 +29,12 @@ Deuteron (n = 6, 2.5 s, pure-Python Hoefsmit χ at q₀ and q₀⁻¹, Wenzl y_�
 | **archimedean** `Σ_λ y_λ \|χ^λ(q₀)\|` | 2.304 | **+3.6 %** |
 | **bar-length** `Σ_λ y_λ √(χ^λ(q₀)·χ^λ(q₀⁻¹))` | 0.660 | **−70.3 %** |
 
-The archimedean per-block beats the bar-length at the substrate anchor for every
-tested isotope. (T, n = 9, behind `QOU_BAR_INCLUDE_T=1`, confirms the same
-pattern; it is minutes-slow because χ is evaluated at both q₀ and q₀⁻¹ over the
-dim-≤42 Hoefsmit matrices.)
+The archimedean per-block beats the bar-length at the substrate anchor for the
+deuteron. (T, n = 9, behind `QOU_BAR_INCLUDE_T=1`, did **not** complete within the
+compute budget — χ at both q₀ and q₀⁻¹ over the dim-≤42 Hoefsmit matrices is
+minutes-slow in pure Python — so the finding rests on D, which is decisive: a
+−70 % vs +3.6 % gap is far beyond any A-dependence. A Rust per-partition χ kernel
+would make the T/³He/⁴He confirmation cheap.)
 
 ## Why — growth channels (imaginary bar-length)
 

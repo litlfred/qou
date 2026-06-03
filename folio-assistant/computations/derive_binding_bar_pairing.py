@@ -42,10 +42,12 @@ it underbinds badly:
     D:  B_arch = 2.304 MeV (+3.6%)   vs   B_bar = 0.660 MeV (−70.3%).
 
 The obstruction is structural: ~half the Wedderburn channels are GROWTH channels
-where χ^λ(q₀)·χ^λ(q₀⁻¹) < 0 (deuteron: 4/5 free, 5/? atom), i.e. the bar-length
-is genuinely IMAGINARY (the q-Reeb arccosh / hyperbolic regime). Taking its
+where χ^λ(q₀)·χ^λ(q₀⁻¹) < 0 (deuteron: 4/5 free, 5 atom), i.e. the bar-length is
+genuinely IMAGINARY (the q-Reeb arccosh / hyperbolic regime). Taking its
 magnitude discards that phase, and evaluating χ^λ at the MIRROR point q₀⁻¹ gives
-a systematically smaller value than the observation at q₀.
+a systematically smaller value than the observation at q₀.  (D is decisive on its
+own; T n=9 did not complete in the compute budget — pure-Python χ at two q-points
+is minutes-slow — so the finding rests on the deuteron.)
 
 Conclusion — consistent with #1738, NOT a reversal of it: the CATEGORICAL
 convention is correctly signed/bar (the fibre object lives over generic q, with
