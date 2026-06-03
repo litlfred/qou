@@ -116,8 +116,60 @@ What agents **cannot** do without Lean:
 | elan install 403 | Network restrictions | Run Claude Code locally where lean is installed |
 | "lake update" hangs | Git fetch blocked | Check `git ls-remote` works for mathlib4 |
 | Lean tools timeout | Workspace not built | Run `lake build` at the **repo root** (root workspace builds all paper packages) |
+| **`lake exe cache get` → 403 on all shards (7335+ failures)** | **Mathlib cache host blocked from this network** | **See "Mathlib cache 403 fallback" below — clone mathlib source locally + git insteadOf** |
+| **`lean_diagnostic_messages` MCP times out at 60s** | **No prebuilt oleans + cache 403** | **Same fix as cache 403 above — local clone unblocks LSP** |
 | "toolchain not installed" | Wrong lean version | `elan toolchain install $(cat lean-toolchain)` from the repo root |
 | paper-assistant shows `✗ lean` | lean not on PATH | Add `$HOME/.elan/bin` to PATH in shell profile |
+
+## Mathlib cache 403 fallback (proven workaround, 2026-06-03)
+
+**Symptom.** In sandboxed cloud environments (Claude Code on the web,
+GitHub Actions billing-blocked, etc.), `lake exe cache get` returns
+403 forbidden on every mathlib oleans shard (typically 7335+ download
+failures), and `lean_diagnostic_messages` MCP times out at 60 s
+because no prebuilt oleans are available.
+
+The CLAUDE.md "Local Mathlib cache" section documents the *intent*
+that the build tools auto-detect a clone at `../mathlib4`, but in
+practice the auto-detection requires manual git redirect setup when
+elan / cache hosts are network-restricted.
+
+**Workaround (battle-tested on PR #1761 + PR #1772):**
+
+```bash
+# Step 1: Clone mathlib source locally (shallow OK, ~144 MB).
+cd .. && git clone --depth 1 https://github.com/leanprover-community/mathlib4.git
+cd -
+
+# Step 2: Set a global git insteadOf so Lake's mathlib fetches go to
+# the local clone instead of the network.
+git config --global url."file:///home/user/mathlib4".insteadOf \
+  "https://github.com/leanprover-community/mathlib4"
+
+# Step 3: Verify by running an LSP query on a mathlib-importing file.
+# The first query will still be slow (cold workspace) but should
+# return real diagnostics rather than timing out.
+```
+
+After Step 3 succeeds, `lean_diagnostic_messages` returns real error /
+warning items (not the `success: false, items: []` timeout sentinel),
+unblocking iterative Lean proof development.
+
+**Why this is the right diagnostic step.** Without LSP feedback, blind
+proof iteration is the c_3-flip-flop trap — agents push speculative
+"plausible" proofs that fail to compile, and the trust-but-verify rule
+forces reverts. The local mathlib clone is the cheapest path to a warm
+LSP when the cache is unreachable.
+
+**History.** Captured 2026-06-03 after PR #1761 (general H_n lift of
+T_β = S·1) iterated proofs for ~10 turns with sorry-scaffold-and-revert
+before this workaround was applied; once LSP was warm, the LSP
+diagnostics caught 4 real bugs (LinearOrderedField deprecation,
+h_smul_one_sq rewrite-chain failure, h_tau_expand brittle ordering,
+linear_combination sign error) within 3 turns and the proofs became
+sorry-free. The same pattern is being tracked in PR #1763 (axiom
+tractability triage) where the cache-host blocker is a recorded
+blocker.
 
 ## PATH Configuration
 

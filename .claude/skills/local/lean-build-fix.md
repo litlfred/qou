@@ -26,6 +26,19 @@ zero fixable warnings.
 - After Mathlib version bumps that introduce API renames
 - After bulk edits to `.lean` files that may have introduced syntax errors
 
+## Prerequisite: working Lean MCP
+
+This skill assumes `lean_diagnostic_messages` returns real items, not
+timeouts. If your MCP queries return `success: false, items: []`
+(60 s timeout) OR `lake exe cache get` returns 403 on every shard,
+route to **[`lean-environment-setup` §"Mathlib cache 403 fallback"](lean-environment-setup.md#mathlib-cache-403-fallback-proven-workaround-2026-06-03)**
+first — the proven workaround is a shallow `git clone` of mathlib4
+to `../mathlib4` plus a `git config --global url.insteadOf` redirect
+(~3 commands, ~144 MB). PR #1761 captured this pattern after ~10
+turns of speculative-and-revert proof iteration; once LSP was warm,
+the LSP diagnostics caught 4 real bugs in 3 turns. Don't start
+iterating blind — establish LSP feedback first.
+
 ## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **prefer MCP tools over shell commands**:

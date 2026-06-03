@@ -1731,6 +1731,36 @@ The `lean_build` tool warns if the local clone is >7 days stale and
 offers `update_local_mathlib: true` to fetch the latest commits.
 Shell scripts use `scripts/lib/lean-env.sh` for the same logic.
 
+#### Manual fallback when auto-detection fails (cache 403 / LSP timeout)
+
+In sandboxed cloud environments the auto-detection sometimes does not
+fire (no `lean-mcp.config.json` evaluation reaches the LSP context),
+and **`lake exe cache get`** returns 403 forbidden on every shard
+(typically 7335+ download failures). When this happens
+**`lean_diagnostic_messages`** also times out at 60 s because no
+prebuilt oleans exist. The proven 3-step manual fallback (PR #1761
++ PR #1772, 2026-06-03):
+
+```bash
+# Step 1: Shallow-clone mathlib locally (~144 MB).
+cd .. && git clone --depth 1 https://github.com/leanprover-community/mathlib4.git
+cd -
+
+# Step 2: Global git insteadOf redirect so Lake's mathlib fetches
+# go to the local clone instead of the network.
+git config --global url."file:///home/user/mathlib4".insteadOf \
+  "https://github.com/leanprover-community/mathlib4"
+
+# Step 3: Verify by querying the LSP on a mathlib-importing file.
+# First query is slow (cold workspace) but should return real
+# diagnostics, not the `success: false, items: []` timeout sentinel.
+```
+
+This is also documented in
+[`.claude/skills/local/lean-environment-setup.md` §"Mathlib cache 403 fallback"](.claude/skills/local/lean-environment-setup.md#mathlib-cache-403-fallback-proven-workaround-2026-06-03).
+Don't iterate Lean proofs blind when the LSP is cold — establish
+LSP feedback first, then iterate against real diagnostics.
+
 ### Remote MCP server
 
 A Docker-based remote deployment is available in `deploy/`:
