@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T13:39:06.618464+00:00",
-  "commitSha": "0cb85a4e3c52f5df41e1d72479758924b3dce939",
+  "computedAt": "2026-06-03T17:07:44.989439+00:00",
+  "commitSha": "e345a2eed950034e8ca12204c2fb38bea00b2ad8",
   "assertions": [
     {
       "name": "archimedean_per_block_beats_bar_length_at_q0",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 18,
   "computation": "derive-binding-bar-pairing",
   "scriptFile": "derive_binding_bar_pairing.py",
-  "scriptHash": "16f4cbb3cae9",
-  "scriptCommitSha": "0cb85a4e3c52f5df41e1d72479758924b3dce939",
+  "scriptHash": "c9ad9d431264",
+  "scriptCommitSha": "54758e758d7bd6619a324de956ab8e7ff2f0360e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,7 @@
     "E0_MeV": 4.185981363294476,
     "q0": 1.1099785827513808,
     "q0_inv": 0.9009182839557415,
-    "dps": 30
+    "dps": 70
   },
   "data": {
     "per_atom": {

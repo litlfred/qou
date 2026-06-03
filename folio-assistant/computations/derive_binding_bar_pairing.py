@@ -62,7 +62,9 @@ import os
 import sys as _sys
 from pathlib import Path as _Path
 for _d in ("hecke", "habiro", "substrate"):
-    _sys.path.insert(0, str(_Path(__file__).resolve().parent / _d))
+    _p = str(_Path(__file__).resolve().parent / _d)
+    if _p not in _sys.path:                     # guard: no duplicate / shadowing
+        _sys.path.insert(0, _p)
 import _path_bridge  # noqa: E402, F401 — Phase-6 bridge
 
 import mpmath as mp  # noqa: E402
@@ -77,14 +79,14 @@ from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-set_compute_dps()
-# Reduced precision is DELIBERATE for this exploratory script: it reports a
-# structural ±70 % effect, far above any precision floor, and the bar path
-# evaluates χ at TWO points (q₀, q₀⁻¹) over dim-≤42 Hoefsmit matrices (slow).
-# 30 dps keeps D at ~3 s; the value is recorded in the witness (`dps` param)
-# so the run is reproducible and the precision metadata is consistent.
-DPS = 30
-mp.mp.dps = DPS
+# Use the framework compute precision (set_compute_dps() → COMPUTE_DPS) and
+# capture it from the setter's return value, so the witness
+# precisionMetadata.compute_dps equals the dps the run actually used (per
+# Copilot review: the previous deliberate low-dps override desynced the
+# metadata, which records COMPUTE_DPS). This exploratory script reports a
+# structural ±70 % effect — far above any precision floor — so the framework
+# default is more than sufficient; DPS is threaded into the χ/y evaluation.
+DPS = set_compute_dps()
 q0 = mp.mpf(str(Q0))                          # str(Q0): no float() roundtrip
 qi = 1 / q0                                   # bar image q ↦ q⁻¹
 M_E = mp.mpf(str(M_E_MEV))
@@ -127,9 +129,9 @@ def _bar_length(chi_q, chi_qi):
     """‖χ‖_bar = √(χ(q)·χ(q⁻¹)); real on rotation channels, imaginary on
     growth channels (⟨χ⟩ < 0). Returns (value, is_growth).
 
-    The pairing is real at the substrate anchor (Im(q₀)=0); take `.real`
-    to drop the ~0 mpc imaginary noise before the sign test / sqrt."""
-    pairing = (chi_q * chi_qi).real
+    The pairing is real at the substrate anchor (Im(q₀)=0); take the real
+    part to drop the ~0 mpc imaginary noise before the sign test / sqrt."""
+    pairing = mp.re(chi_q * chi_qi)         # mp.re: safe for mpf and mpc
     if pairing >= 0:
         return mp.sqrt(pairing), False
     return mp.sqrt(-pairing), True       # magnitude of the imaginary length
@@ -145,8 +147,10 @@ def _per_block_bar(Z, N, inter):
     total = mp.mpf(0)
     n_growth = 0
     for lam, (y0, chi0) in c0.items():
+        if lam not in ci:                      # dim is q-independent, but guard
+            continue                           # against a channel skipped at qi
         yi, chii = ci[lam]
-        y_bar = ((y0 + yi) / 2).real           # bar-symmetric weight (real)
+        y_bar = mp.re((y0 + yi) / 2)           # bar-symmetric weight (real)
         length, growth = _bar_length(chi0, chii)
         n_growth += int(growth)
         total += y_bar * length
@@ -156,11 +160,12 @@ def _per_block_bar(Z, N, inter):
 def _per_block_arch(Z, N, inter):
     """Σ_λ y_λ |χ^λ(q₀)| — the archimedean per-block realization.
 
-    The observable at q₀ is real (Im(q₀)=0): take the real-part magnitude
-    |Re χ| / |Re y|, not the complex modulus, so the ~0 mpc imaginary noise
-    does not bias the sum upward (per Copilot review)."""
+    The observable at q₀ is real (Im(q₀)=0), so this returns the y_λ-weighted
+    real-part magnitude  Σ_λ Re(y_λ)·|Re χ^λ(q₀)|  (signed weight times the
+    magnitude of the real character), NOT the complex modulus — so the ~0 mpc
+    imaginary noise does not bias the sum upward (per Copilot review)."""
     c0 = _channels(Z, N, inter, q0)
-    return sum(y.real * abs(chi.real) for y, chi in c0.values())
+    return sum(mp.re(y) * abs(mp.re(chi)) for y, chi in c0.values())
 
 
 def main() -> int:
@@ -174,11 +179,11 @@ def main() -> int:
     for name, (Z, N) in ISO.items():
         # The Hoefsmit kernel carries mpc with ~0 imaginary noise at real q;
         # the archimedean observable is the real part (Im(q₀)=0).
-        Ba = (E0 * (_per_block_arch(Z, N, False)
-                    - _per_block_arch(Z, N, True))).real
+        Ba = mp.re(E0 * (_per_block_arch(Z, N, False)
+                         - _per_block_arch(Z, N, True)))
         bar_free, g_f = _per_block_bar(Z, N, False)
         bar_atom, g_a = _per_block_bar(Z, N, True)
-        Bb = (E0 * (bar_free - bar_atom)).real
+        Bb = mp.re(E0 * (bar_free - bar_atom))
         ea = (Ba - AME_B[name]) / AME_B[name]
         eb = (Bb - AME_B[name]) / AME_B[name]
         results[name] = {
