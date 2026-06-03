@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T15:38:55.242558+00:00",
-  "commitSha": "174aaf71b2e5debd9f3c0d755ee81906c227e2c4",
+  "computedAt": "2026-06-03T20:16:10.972488+00:00",
+  "commitSha": "2a85010aa5dc25fe0c803e67a672c1cfd909f8a7",
   "assertions": [
     {
       "name": "rust_kernel_loaded",
@@ -15,11 +15,26 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 8,
   "computation": "atom-chi-rust-t",
   "scriptFile": "compute_atom_chi_rust.py",
-  "scriptHash": "e51dee18cd20",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a36c38496138",
+  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Full H_9 chi^λ(β_K) via Rust geck_pfeiffer + Hoefsmit seminormal kernel (cherry-picked from PR #761). Both atom (include_inter=True) and free (include_inter=False) configs for T (Z=1, N=2). f64 precision; for MPFR upgrade extend pyhecke_native.chi_q_atomic to chi_q_atomic_mpfr.",
   "data": {
     "atom": {
@@ -31,7 +46,7 @@
             9
           ],
           "dim": -1,
-          "chi_lambda": 1.5768015283810732
+          "chi_lambda": 1.576914312302904
         },
         {
           "partition": [
@@ -39,7 +54,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 3.7402811795852773
+          "chi_lambda": 3.7407471031058908
         },
         {
           "partition": [
@@ -47,7 +62,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": 3.1900195401578064
+          "chi_lambda": 3.190842961657083
         },
         {
           "partition": [
@@ -56,7 +71,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -0.5793963030209981
+          "chi_lambda": -0.5789518805097529
         },
         {
           "partition": [
@@ -64,7 +79,7 @@
             3
           ],
           "dim": -1,
-          "chi_lambda": 10.167419521655633
+          "chi_lambda": 10.1685951325274
         },
         {
           "partition": [
@@ -73,7 +88,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -6.34025567691464
+          "chi_lambda": -6.339787581765166
         },
         {
           "partition": [
@@ -83,7 +98,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -1.0292774959533015
+          "chi_lambda": -1.0294866297584162
         },
         {
           "partition": [
@@ -91,7 +106,7 @@
             4
           ],
           "dim": -1,
-          "chi_lambda": 4.42403846046479
+          "chi_lambda": 4.424951009396153
         },
         {
           "partition": [
@@ -100,7 +115,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 2.0741886151315905
+          "chi_lambda": 2.074984689198678
         },
         {
           "partition": [
@@ -109,7 +124,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": -9.370718720007405
+          "chi_lambda": -9.371270609558524
         },
         {
           "partition": [
@@ -119,7 +134,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -5.974292298351356
+          "chi_lambda": -5.975134610849018
         },
         {
           "partition": [
@@ -130,7 +145,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 6.044697902429192
+          "chi_lambda": 6.044647531434383
         },
         {
           "partition": [
@@ -139,7 +154,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -2.607834385525164
+          "chi_lambda": -2.607772236276879
         },
         {
           "partition": [
@@ -148,7 +163,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": 7.02746384078861
+          "chi_lambda": 7.027162470005655
         },
         {
           "partition": [
@@ -158,7 +173,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -3.744114651717302
+          "chi_lambda": -3.7449351357627845
         },
         {
           "partition": [
@@ -168,7 +183,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -2.170320133896986
+          "chi_lambda": -2.1720601282325642
         },
         {
           "partition": [
@@ -179,7 +194,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 3.759003484438892
+          "chi_lambda": 3.7589766403640414
         },
         {
           "partition": [
@@ -191,7 +206,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -0.311022660810805
+          "chi_lambda": -0.310535832097079
         },
         {
           "partition": [
@@ -200,7 +215,7 @@
             3
           ],
           "dim": -1,
-          "chi_lambda": 9.451258089817204
+          "chi_lambda": 9.451515627665682
         },
         {
           "partition": [
@@ -210,7 +225,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -2.217620596519401
+          "chi_lambda": -2.218249628322148
         },
         {
           "partition": [
@@ -221,7 +236,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 3.3704109254459524
+          "chi_lambda": 3.370194435933673
         },
         {
           "partition": [
@@ -231,7 +246,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": 2.8661386620115232
+          "chi_lambda": 2.864943389592482
         },
         {
           "partition": [
@@ -242,7 +257,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 3.381637510406574
+          "chi_lambda": 3.3811426352455722
         },
         {
           "partition": [
@@ -254,7 +269,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -1.0496122181378063
+          "chi_lambda": -1.0489456325707516
         },
         {
           "partition": [
@@ -267,7 +282,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -2.245440636943944
+          "chi_lambda": -2.245449571772038
         },
         {
           "partition": [
@@ -278,7 +293,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 8.64984422999695
+          "chi_lambda": 8.649191403831066
         },
         {
           "partition": [
@@ -290,7 +305,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -5.113738075027499
+          "chi_lambda": -5.113352612930434
         },
         {
           "partition": [
@@ -303,7 +318,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -1.8834918906730067
+          "chi_lambda": -1.883349787894144
         },
         {
           "partition": [
@@ -317,7 +332,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 2.6619148276336446
+          "chi_lambda": 2.6617176206727784
         },
         {
           "partition": [
@@ -332,15 +347,15 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -0.6843215231761931
+          "chi_lambda": -0.6842725642007798
         }
       ],
-      "compute_time_sec": 0.020421504974365234,
+      "compute_time_sec": 0.009521484375,
       "Z": 1,
       "N": 2,
       "A": 3,
       "include_inter": true,
-      "q_0_f64": 1.1099785955541805,
+      "q_0_f64": 1.1099785827513808,
       "engine": "pyhecke_native.chi_q_atomic (Rust, f64)"
     },
     "free": {
@@ -352,7 +367,7 @@
             9
           ],
           "dim": -1,
-          "chi_lambda": 1.7407316832785678
+          "chi_lambda": 1.740731570363807
         },
         {
           "partition": [
@@ -360,7 +375,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 11.034785575843266
+          "chi_lambda": 11.034783938143955
         },
         {
           "partition": [
@@ -368,7 +383,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": 31.22871695005383
+          "chi_lambda": 31.22871042796789
         },
         {
           "partition": [
@@ -377,7 +392,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 23.99073690889584
+          "chi_lambda": 23.990730726709987
         },
         {
           "partition": [
@@ -385,7 +400,7 @@
             3
           ],
           "dim": -1,
-          "chi_lambda": 49.0990531809207
+          "chi_lambda": 49.099040944558105
         },
         {
           "partition": [
@@ -394,7 +409,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 73.19736123289945
+          "chi_lambda": 73.19733918023833
         },
         {
           "partition": [
@@ -404,7 +419,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 16.269932534648945
+          "chi_lambda": 16.269924018461168
         },
         {
           "partition": [
@@ -412,7 +427,7 @@
             4
           ],
           "dim": -1,
-          "chi_lambda": 39.94743939866012
+          "chi_lambda": 39.94742850596935
         },
         {
           "partition": [
@@ -421,7 +436,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 99.01764250482142
+          "chi_lambda": 99.01761010349405
         },
         {
           "partition": [
@@ -430,7 +445,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": 65.48441437983618
+          "chi_lambda": 65.48439277706271
         },
         {
           "partition": [
@@ -440,7 +455,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 48.25106809477516
+          "chi_lambda": 48.25104433783548
         },
         {
           "partition": [
@@ -451,7 +466,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -9.078403328107612
+          "chi_lambda": -9.078405689325514
         },
         {
           "partition": [
@@ -460,7 +475,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 48.070286497539264
+          "chi_lambda": 48.070270079601976
         },
         {
           "partition": [
@@ -469,7 +484,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": 81.53686161627546
+          "chi_lambda": 81.53683258547122
         },
         {
           "partition": [
@@ -479,7 +494,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 49.49378129824512
+          "chi_lambda": 49.49375628993606
         },
         {
           "partition": [
@@ -489,7 +504,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 58.55861968154579
+          "chi_lambda": 58.55859547779975
         },
         {
           "partition": [
@@ -500,7 +515,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -8.77922987490196
+          "chi_lambda": -8.779235388829527
         },
         {
           "partition": [
@@ -512,7 +527,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -11.943456358886378
+          "chi_lambda": -11.943453169527448
         },
         {
           "partition": [
@@ -521,7 +536,7 @@
             3
           ],
           "dim": -1,
-          "chi_lambda": 14.747650229086872
+          "chi_lambda": 14.747644332989264
         },
         {
           "partition": [
@@ -531,7 +546,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 35.78723298693283
+          "chi_lambda": 35.78721601387642
         },
         {
           "partition": [
@@ -542,7 +557,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -6.728214731419426
+          "chi_lambda": -6.728217820943224
         },
         {
           "partition": [
@@ -552,7 +567,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": 25.96430721046935
+          "chi_lambda": 25.96429821652425
         },
         {
           "partition": [
@@ -563,7 +578,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 8.759336785941967
+          "chi_lambda": 8.759330309683293
         },
         {
           "partition": [
@@ -575,7 +590,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -14.707035891751183
+          "chi_lambda": -14.70703210130742
         },
         {
           "partition": [
@@ -588,7 +603,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 1.8847576218259485
+          "chi_lambda": 1.8847588636322363
         },
         {
           "partition": [
@@ -599,7 +614,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 9.073340243686593
+          "chi_lambda": 9.073336951088589
         },
         {
           "partition": [
@@ -611,7 +626,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -5.121976800928481
+          "chi_lambda": -5.121975822778969
         },
         {
           "partition": [
@@ -624,7 +639,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -1.9992907991485218
+          "chi_lambda": -1.999289639177975
         },
         {
           "partition": [
@@ -638,7 +653,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": 2.5633842233366946
+          "chi_lambda": 2.5633837424015566
         },
         {
           "partition": [
@@ -653,15 +668,15 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": -0.6131769109502389
+          "chi_lambda": -0.6131769419012726
         }
       ],
-      "compute_time_sec": 0.018804311752319336,
+      "compute_time_sec": 0.005857706069946289,
       "Z": 1,
       "N": 2,
       "A": 3,
       "include_inter": false,
-      "q_0_f64": 1.1099785955541805,
+      "q_0_f64": 1.1099785827513808,
       "engine": "pyhecke_native.chi_q_atomic (Rust, f64)"
     },
     "canonical_status": "canonical-with-empirical-assignment"

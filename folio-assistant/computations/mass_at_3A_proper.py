@@ -252,13 +252,39 @@ def _cached_seminormal(shape: tuple[int, ...]):
     return data
 
 
+_PN_COLOR_DELTA = None  # cached δ = flavor_split_subleading(q₀), evaluated once
+
+
+def _pn_color_delta() -> float:
+    """Substrate-derived flavor split δ = (m_n − m_p)/M_N at q₀, for the
+    color-weighted p-n interface. Lazy + cached (avoids an import cycle at
+    module load and recomputation per braid)."""
+    global _PN_COLOR_DELTA
+    if _PN_COLOR_DELTA is None:
+        import mpmath as _mp
+        from _li_2_q_util import flavor_split_subleading
+        from q_parameter import Q as _Q0
+        _PN_COLOR_DELTA = float(flavor_split_subleading(_mp.mpf(str(_Q0))))
+    return _PN_COLOR_DELTA
+
+
 def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
-                         m_nn: int = 1, include_inter: bool = True):
+                         m_nn: int = 1, include_inter: bool = True,
+                         pn_convention: str = "bring_color_weighted"):
     """Full 3A-strand braid word as a list of (c, d, gen_idx) triples.
 
     Matches the chain-walk convention of
     hecke_core.atom_per_generator_volumes (lines 3029–3079):
     for each nucleon k, apply intra g₀, intra g₁, then (if
+
+    The p-n interface is color-weighted by default (owner directive
+    2026-06-01: bring_color_weighted is canonical across the compute):
+    its averaged crossing is `σ − h·(1/2 − δ/4)·1`, δ = flavor_split_
+    subleading(q₀), vs the color-blind `σ − h/2·1` (`pn_convention=
+    "strict_averaged"`, kept for empirical-pipeline validation). The
+    p-p (σ) and n-n (σ⁻¹) interfaces are already isospin-distinct and
+    carry no extra color weight. See
+    docs/audits/2026-06-03-color-averaging-wiring-audit.md.
     include_inter) the appropriate pp/nn/pn crossing at gen 3k+2.
 
     gen_idx is 0-based (σ_0 = sigmas[0] in build_seminormal_matrices).
@@ -285,7 +311,16 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                 base_cross = (1.0, -h)
                 m_this = m_nn
             else:
-                base_cross = (1.0, -h / 2)
+                if pn_convention == "bring_color_weighted":
+                    # color-weighted p-n averaged crossing: σ − h·(1/2 − δ/4)
+                    delta = _pn_color_delta()
+                    base_cross = (1.0, -h * (0.5 - delta / 4.0))
+                elif pn_convention == "strict_averaged":
+                    base_cross = (1.0, -h / 2)        # color-blind (validation)
+                else:
+                    raise ValueError(
+                        f"unknown pn_convention: {pn_convention!r} "
+                        f"(expected 'bring_color_weighted' or 'strict_averaged')")
                 m_this = m_pn
             c, d = base_cross
             for _ in range(m_this):
