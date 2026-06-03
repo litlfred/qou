@@ -120,13 +120,13 @@ Taylor-exact. Otherwise, it's a near-match.
 
 ## Narrowed Phase-3 search space (2026-06-03 consolidation)
 
-After today's sibling audits (#1746 / #1750 / #1752 / and the per-knot demo on PR #1756), the search for the Q_β Habiro element's categorical residue at u_substrate has the following **structurally ruled-out** vs. **still-active** state:
+After today's sibling audits (PR #1746, PR #1750, PR #1752, and the per-knot demo on PR #1756), the search for the Q_β Habiro element's categorical residue at u_substrate has the following **structurally ruled-out** vs. **still-active** state:
 
 ### Structurally ruled out (do not re-explore)
 
 | Candidate | Refutation | Source |
 |---|---|---|
-| min-trace LP on Frobenius Gram → unique categorical T_β | Frobenius Gram is INDEFINITE (eigs at q₀: `[-0.855, 0.102, 0.855³, 3.477]`); min-trace LP is degenerate (optimum ≈ 0, not the physical operator). | PR #1752 |
+| min-trace LP on Frobenius Gram → unique categorical T_β | Frobenius Gram is INDEFINITE (eigs at q₀: `[-0.855, 0.102, 0.855, 0.855, 0.855, 3.477]`); min-trace LP is degenerate (optimum ≈ 0, not the physical operator). | PR #1752 |
 | L2 norm choice → c_k cross-anchor swing is an L2 artifact | T_β collapses to `S·I` under the categorically-natural Markov pairing; the c_k are L2/Markov-INVARIANT (the SDP **constraint** determines them, not the **objective**). The swing is structural, upstream of any norm. | PR #1750 step 4 |
 | Scalar `|c|(λ)` Coxeter-sum candidate | `χ^λ(s_k) = f^λ · 2c(λ)/(n(n−1))` is proportional to *signed* `c(λ)`, not L¹ `|c|`. Counterexample `(2,2)`: self-conjugate ⇒ sum = 0, but `|c|((2,2)) = 2`. | PR #1746 |
 | Other 4 scalar `|c|(λ)` candidates from PR #1721 | Refuted on basis-convention or weight-vs-content arguments. | PR #1721 + PR #1746 |
