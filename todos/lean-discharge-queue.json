@@ -37,7 +37,7 @@
   {
     "id": "lean-bar-involution-extension",
     "summary": "Bar-involution + Mullineux theorems beyond y_λ — extend to χ^λ, b(q), Hoefsmit form",
-    "comment": "Per commits e3a590e5, 8590f0e7, def3d27f, d07259bb on y_λ. The bar-involution q ↔ q⁻¹ on y_λ is proved; extend to other Hecke-algebra quantities: χ^λ(σ_i), Hoefsmit b(q), Markov trace bar-symmetry. Each is a small unfold+symm+rfl/ring proof but requires the relevant definitional infrastructure to be available.",
+    "comment": "Per commits e3a590e5, 8590f0e7, def3d27f, d07259bb on y_λ. The bar-involution q ↔ q⁻¹ on y_λ is proved; extend to other Hecke-algebra quantities: χ^λ(σ_i), Hoefsmit b(q), Markov trace bar-symmetry. STALE — see resolution_note.",
     "status": "open",
     "priority": "medium",
     "origin": "session-2026-05-31-queue-build",
@@ -49,13 +49,15 @@
         "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/HoefsmitBQ.lean (if exists)",
         "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean"
       ],
-      "expected_duration": "1h"
+      "expected_duration": "1h",
+      "resolution_commit": "dbb74c3d",
+      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): no `*bar*involution*` or `*mullineux*` Lean files exist in the QOU package. The candidate_files list refers to files that do not exist. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `wontfix` (referenced files do not exist; if the work is needed, file a fresh item against the actual locations). Per CLAUDE.md TodoItem lifecycle rules, only humans may close todos."
     }
   },
   {
     "id": "lean-mathlibext-sdp-rank-equality",
     "summary": "Discharge 2 sorries in MathlibExt/SDPRankEquality.lean (R1 + R2 factoring)",
-    "comment": "Per file docstring: 'helium3_uniqueness_closed is an axiom (zero sorry); kernel-disjoint + affine-Slater inputs have proven sub-instances; chain is fully sorry-free'. But the file has 2 sorries per grep. Likely the R1 (range containment) or R2 (strict-complementarity rank equality) lemmas. Both follow textbook Alizadeh-Haeberly-Overton 1997 §3 + Boyd-Vandenberghe §5.5.4. PSD properties from Mathlib.LinearAlgebra.Matrix.PosDef.",
+    "comment": "Per file docstring: 'helium3_uniqueness_closed is an axiom (zero sorry); kernel-disjoint + affine-Slater inputs have proven sub-instances; chain is fully sorry-free'. STALE — see resolution_note.",
     "status": "open",
     "priority": "medium",
     "origin": "session-2026-05-31-queue-build",
@@ -65,13 +67,15 @@
       "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRankEquality.lean",
       "proof_sketch": "R1: rank-nullity from S * Φ = 0; PSD assumption gives kernel containment. R2: strict-complementarity ⟹ ker(S) ∩ ker(Φ) = {0} ⟹ rank equality via dimension counting.",
       "expected_duration": "1-2h",
-      "references": ["Alizadeh-Haeberly-Overton 1997 §3", "Boyd-Vandenberghe §5.5.4"]
+      "references": ["Alizadeh-Haeberly-Overton 1997 §3", "Boyd-Vandenberghe §5.5.4"],
+      "resolution_commit": "dbb74c3d",
+      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): SDPRankEquality.lean has 0 sorry tokens on origin/main; the file's own header says 'fully sorry-free'. The queue entry's claim of '2 sorries' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos)."
     }
   },
   {
     "id": "lean-staircase-corner-hook",
     "summary": "Discharge 6 of 9 non-conjectural sorries in StaircaseCornerHook.lean",
-    "comment": "9 sorries, 3 marked as conjectural witnesses. The other 6 are likely combinatorial-identity proofs (hook-length formula bits). Need LSP to triage each; queue entry is the placeholder for that triage.",
+    "comment": "9 sorries, 3 marked as conjectural witnesses. The other 6 are likely combinatorial-identity proofs (hook-length formula bits). STALE — see resolution_note.",
     "status": "open",
     "priority": "medium",
     "origin": "session-2026-05-31-queue-build",
@@ -80,13 +84,15 @@
       "goal": "lean-discharge",
       "file": "content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean",
       "triage_action_first": "lean_diagnostic_messages on each sorry to determine which are tractable",
-      "expected_duration": "2-3h after triage"
+      "expected_duration": "2-3h after triage",
+      "resolution_commit": "dbb74c3d",
+      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): StaircaseCornerHook.lean has 0 sorry tokens on origin/main. The queue entry's claim of '9 sorries' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos)."
     }
   },
   {
     "id": "lean-tractable-fluid-dynamics",
     "summary": "Survey 7+ FluidDynamics/*.lean files (each 2 sorries) for tractable discharge",
-    "comment": "Multiple FluidDynamics files have exactly 2 sorries with 1 conj-marked, suggesting 1 tractable + 1 conjectural per file: ns_obstruction_computation, p1_nonlinear_uniqueness, kelvin_dispersion_derivation, quantum_peter_weyl, vorticity_lower_bound, core_levi_form, p4_universality, ns_obstruction_tower. Triage with LSP, discharge the tractable ones.",
+    "comment": "Multiple FluidDynamics files have exactly 2 sorries with 1 conj-marked, suggesting 1 tractable + 1 conjectural per file: ns_obstruction_computation, p1_nonlinear_uniqueness, kelvin_dispersion_derivation, quantum_peter_weyl, vorticity_lower_bound, core_levi_form, p4_universality, ns_obstruction_tower. STALE — see resolution_note.",
     "status": "open",
     "priority": "low",
     "origin": "session-2026-05-31-queue-build",
@@ -103,13 +109,15 @@
         "content/quantum-observable-universe/lean/QOU/FluidDynamics/p4_universality.lean",
         "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean"
       ],
-      "expected_duration": "4-6h triage + discharge"
+      "expected_duration": "4-6h triage + discharge",
+      "resolution_commit": "dbb74c3d",
+      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): all 7 FluidDynamics/*.lean files have 0 sorry tokens on origin/main. The queue entry's claim of '2 sorries each' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos)."
     }
   },
   {
     "id": "lean-g-action-on-substrate",
     "summary": "Discharge 1 tractable sorry in QuantumObservableUniverses/GActionOnSubstrate.lean (3 sorries, 2 conjectural)",
-    "comment": "4 sorries per earlier survey; 2 marked conjectural per grep. The remaining 1-2 likely structural lemmas about G-action commutativity or substrate-fixing. Triage with LSP first.",
+    "comment": "4 sorries per earlier survey; 2 marked conjectural per grep. The remaining 1-2 likely structural lemmas about G-action commutativity or substrate-fixing. RE-SCOPE TO REGISTRY — see resolution_note.",
     "status": "open",
     "priority": "low",
     "origin": "session-2026-05-31-queue-build",
@@ -117,7 +125,9 @@
     "data": {
       "goal": "lean-discharge",
       "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean",
-      "expected_duration": "1h"
+      "expected_duration": "1h",
+      "resolution_commit": "dbb74c3d",
+      "resolution_note": "RE-SCOPE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): GActionOnSubstrate.lean has 1 sorry total on origin/main, and it is the legitimate §3b-cond conjectural class instance (the registry pattern) — NOT a discharge target. PR #1736 strengthened the class with extensional identity fields. The 'discharge target' framing is wrong; this entry should be moved to the `lean-section-3b-cond-classes-permanent` registry. Flagged 2026-06-03 post-#1736 merge cleanup. Owner action: close as `wontfix` (re-scoped to registry); per CLAUDE.md TodoItem lifecycle rules, only humans may close todos."
     }
   },
   {
