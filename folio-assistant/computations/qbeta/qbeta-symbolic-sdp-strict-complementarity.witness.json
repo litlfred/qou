@@ -1,8 +1,8 @@
 {
   "engine": "lp+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T17:11:18.435023+00:00",
-  "commitSha": "b5cd713cee6d12aa15c08ddb753126267c427ed2",
+  "computedAt": "2026-06-03T17:14:32.129662+00:00",
+  "commitSha": "9ed3dead61fe127367bde7de9876f5cabaafbe16",
   "assertions": [
     {
       "name": "lp_strong_duality",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 181,
+  "durationMs": 183,
   "computation": "qbeta-symbolic-sdp-strict-complementarity",
   "scriptFile": "qbeta_symbolic_sdp_strict_complementarity.py",
-  "scriptHash": "b40512467ebd",
-  "scriptCommitSha": "b5cd713cee6d12aa15c08ddb753126267c427ed2",
+  "scriptHash": "12a4962e7db2",
+  "scriptCommitSha": "9ed3dead61fe127367bde7de9876f5cabaafbe16",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -105,8 +105,22 @@
     "duality_gap": 1.0454782156369419e-14,
     "direction_scale_invariant": true,
     "direction_max_diff_across_scales": 1.4210854715202004e-14,
+    "frobenius_gram_eigenvalues": [
+      -0.8550672621298652,
+      0.101796670849873,
+      0.8550672621298651,
+      0.8550672621298654,
+      0.8550672621298656,
+      3.476949805470146
+    ],
+    "frobenius_gram_indefinite": true,
+    "Q_A_substrate_MeV": 0.7836458273746212,
+    "Q_beta_CODATA_MeV": 0.78233340931,
+    "Q_A_vs_Qbeta_rel_err": 0.0016775687309311454,
+    "Q_A_vs_Qbeta_ppb": 1677568.7309311454,
     "S_cancels_from_ck_directions": true,
-    "S_cancels_from_Qbeta_magnitude": false,
-    "verdict": "PARTIAL (honest). The selector DIRECTION x̂ in the NF basis is S-independent and q-rational: strict complementarity fixes the active set from the q-rational (t, G) alone, so the dimensionless precision-ladder FACTORS (1 + c_k u^k) are S-independent. BUT the OVERALL MAGNITUDE Q_β = E_0·τ_M(T_β) still requires the net-constraint scale n_target = τ_M(T_β) = Q_β/E_0 — the CODATA Q_β. The SDP fixes the SHAPE of T_β, not its trace. So S does NOT fully cancel: Q_β's absolute value is not predicted CODATA-independently by this route. NO FIT introduced (the direction is forced by complementarity); honest PARTIAL — c_k directions closed, Q_β scale open."
+    "S_cancels_from_Qbeta_scale_via_Q_A_to_0p17pct": true,
+    "S_cancels_from_Qbeta_subppb_normalisation": false,
+    "verdict": "PARTIAL (honest). Three structural findings. (i) The Frobenius Gram G_{ij}=τ_M(b_i b_j) is INDEFINITE, so the operator-selection LP min-trace objective is degenerate (optimum ≈ 0, not the physical T_β); the production rule's min-‖x‖² is a DIFFERENT, well-posed selection. (ii) Strict complementarity still fixes a unique ACTIVE SET and the selector DIRECTION x̂ is S-independent and q-rational, so the dimensionless precision-ladder FACTORS (1 + c_k u^k) are S-independent. (iii) The Q_β SCALE is supplied CODATA-Q_β-free by the q-rational Form-A baseline Q_A(q_0) to ~0.17%; the c_k ladder refines it. BUT sub-ppb (7.8 ppb L2) closure needs the c_k ABSOLUTE normalisation, which the production rule pins via n_target = Q_β/E_0 — the CODATA Q_β. So S does NOT fully cancel: the SDP fixes the SHAPE of T_β, not its trace magnitude. NO FIT introduced (direction forced by complementarity); honest PARTIAL — c_k directions + ~0.17% scale are CODATA-Q_β-free, sub-ppb normalisation is not."
   }
 }
