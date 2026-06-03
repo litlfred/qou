@@ -69,25 +69,28 @@ Constraint satisfaction (both norms hit the same target):
 
 | Question | L2 SDP picture (PR #1739) | Markov picture (this PR) |
 |----------|---------------------------|--------------------------|
-| What IS T_β? | 6-channel q-rational SHAPE × S | `S · I` (just a scalar) |
-| What's the SHAPE for Habiro integrality? | `F_i(q) = A_i(q)/‖A(q)‖²` (per channel) | trivially `S(q₀)` — the scalar |
-| What's the non-trivial q-dependence? | spread across 6 channels | **all in S(q₀) = Q_β(q₀)/E_0(q₀)** |
-| What's the c_k Taylor structure? | requires the SHAPE expansion | **= Taylor expansion of S itself** |
-| Cross-anchor c_k swing source? | possibly structural | **may be L2-projection artifact** |
+| What IS T_β as an operator? | 6-channel q-rational SHAPE × S | `S · I` (just a scalar × identity) |
+| Per-channel NF coordinates | spread across 6 channels | 1 non-zero (γ = I) |
+| Habiro question for T_β-as-operator | per-channel `F_i(q) = A_i/‖A‖²` | trivially `S(q)` (a single scalar) |
+| **τ_M(T_β)(q) (the observable)** | **= S(q) (SDP constraint)** | **= S(q) (Markov normalisation)** |
+| **c_k Taylor coefficients of Q_β** | **= w-Taylor of S(q)** | **= w-Taylor of S(q)** — *identical* |
+| Cross-anchor c_3 swing source | **structural (upstream of SDP)** | **structural (upstream of SDP)** |
+
+**The c_k are L2/Markov-INVARIANT.** Both norms reproduce `τ_M(T_β)(q) ≡ S(q)` identically (the SDP **constraint**), so the c_k extracted from `τ_M(T_β)(q)` are the Taylor coefficients of `S(q)` in either case. The Markov collapse is a structural simplification of **T_β-as-operator** — it does NOT redirect c_k extraction. *See [`docs/audits/2026-06-03-qbeta-markov-trace-step-4-ck-invariance.md`](2026-06-03-qbeta-markov-trace-step-4-ck-invariance.md) for the algebraic-identity proof + companion witness.*
 
 The numerical Q_β prediction is **unchanged** — both T_β^L2 and T_β^Markov satisfy `τ_M(T_β) = S` by construction. The Q_β value is determined by the SDP **constraint**, not by the choice of **objective**. What changes is the **structural picture** of which operator inside H₃(q) is the canonical primal-feasible solution.
 
 ## What this implies for the c_k precision ladder
 
-The Q_β production rule `Q_β = Q_base · ∏(1 + c_k · u^k)` extracts `c_k` from the Taylor expansion of `τ_M(T_β)(q)` near q=1. Under L2, that's the Taylor of the 6-channel projection. Under Markov, it's the Taylor of `S(q) = Q_β(q)/E_0(q)` — a single q-rational function with no basis-dependent projection.
+**Nothing directly.** The c_k come from `τ_M(T_β)(q) = S(q)`, which is identical in both norms (Step 4 diagnostic, witness `qbeta-markov-trace-step-4-ck-invariance.witness.json`). The cross-anchor c_3 swing recorded in the canonical-framing audit ([`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)) is a property of `S(q)` itself (the canonical Q_β-derivation chain), not of any SDP projection choice.
 
-The recurrent **cross-anchor c_3 swing** noted in the canonical-framing audit ([`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)) was extracted from the L2-projection's c_k. If the Markov c_k are derived from `S(q)` directly, the swing pattern may differ — possibly cleaner (no L2 basis-dependence) or possibly the same (if the swing is genuinely structural).
+**What the Markov collapse DOES buy for c_k work**: a cleaner structural framing. The L2 picture suggested that `T_β`'s spread across 6 NF channels carried independent q-dependence; the Markov picture clarifies that all the q-dependence flows through the single scalar `S(q)`. Searches for a categorical residue / Habiro element for the c_k saga can target `S(q)` directly, with no detour through the 6-channel basis.
 
-**This is a probe to run next**, not a claim already discharged.
+This was originally framed as "the swing might be an L2-projection artifact". That framing was wrong: the swing is upstream of the SDP and is therefore **structural**, not an L2 artifact. The honest correction landed in commit `<step-4-correction>` on this PR.
 
 ## Caveats
 
-1. **Symbolic G.inv() was not completed** — sympy's GCD machinery silently OOM'd on the 6×6 inverse over `Q(q, √q, √(q⁴+q²+1))`. The identity `A^T G^{-1} A = 1` is established by the column-identity proof above (which is symbolic and bulletproof) plus 12-digit numerical verification at q₀. A more careful symbolic verification (substituting `r = √q`, `b = √(q⁴+q²+1)/(q²+1)` to keep the algebra polynomial) is the natural follow-up; the column-identity proof should not require it but the witness completeness benefits.
+1. **Symbolic A^T G^{-1} A = 1 is fully discharged.** Commit `9bd3f95444` verified the column identity `G·e_γ = A` as a polynomial identity in `(q, b, y_λ)` — all 6 residues simplify to `0` symbolically. This gives `G^{-1} A = e_γ` ⇒ `A^T G^{-1} A = A_γ = τ_M(I) = 1` exactly, without needing a 6×6 symbolic inverse (which sympy's GCD machinery silently OOM'd on).
 
 2. **This does not redefine the Q_β prediction.** Both L2 and Markov SDPs reproduce `Q_β/E_0 = S` at q₀; the difference is which operator inside H₃(q) you call "T_β". The numerical predictions of PR #1739 and subsequent integrations are unaffected.
 
@@ -97,7 +100,7 @@ The recurrent **cross-anchor c_3 swing** noted in the canonical-framing audit ([
 
 ## Follow-ups planned on this PR
 
-- [ ] Symbolic verification of `A^T G^{-1} A = 1` (rather than column-identity + numerical) via polynomial-domain substitution `r = √q`, `b = √(q⁴+q²+1)/(q²+1)`.
-- [ ] w-Taylor expansion of `S(q) = Q_β(q)/E_0(q)` itself (instead of the L2-projection's c_k) — does the cross-anchor swing pattern simplify?
-- [ ] Audit-doc cross-link from [`2026-06-03-qbeta-step1-symbolic-min-l2.md`](2026-06-03-qbeta-step1-symbolic-min-l2.md) §"Caveats" §1 — caveat §1 is now resolved by this finding (in the unexpected direction).
-- [ ] Lean formalisation candidate: `T_β = S · I` as a theorem-conditional-on-min-Frobenius-norm (§3b-cond exception of CLAUDE.md).
+- [x] Symbolic verification of `A^T G^{-1} A = 1` — done in commit `9bd3f95444` via the column-identity route (`G·e_γ = A` as a polynomial identity in `(q, b, y_λ)`). Witness: `qbeta-markov-trace-steps-4-5.witness.json`.
+- [x] c_k L2/Markov-invariance diagnostic — done as Step 4 honest correction. Witness: `qbeta-markov-trace-step-4-ck-invariance.witness.json`. Result: c_k extracted from `τ_M(T_β)(q) = S(q)` are identical in both norms; the cross-anchor c_3 swing is structural (upstream of any SDP norm choice), not an L2 artifact.
+- [x] Audit-doc cross-link from [`2026-06-03-qbeta-step1-symbolic-min-l2.md`](2026-06-03-qbeta-step1-symbolic-min-l2.md) §"Caveats" §1 — caveat §1 is now resolved by this finding (Markov picture is the canonical answer; L2 result is still true under its norm).
+- [ ] Lean formalisation candidate: `T_β = S · I` as a theorem-conditional-on-min-Frobenius-norm (§3b-cond exception of CLAUDE.md). Stub planned for the same PR.
