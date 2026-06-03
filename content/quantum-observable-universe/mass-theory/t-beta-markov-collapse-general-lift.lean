@@ -90,7 +90,7 @@ structure NormalizedTrace (R : Type u) [CommSemiring R]
     Class hypothesis per CLAUDE.md §3b-cond: the substantive analytic
     content is axiomatised here so the downstream min-norm theorem is
     sorry-free **conditional on the class instance**. -/
-class PSDTrace (R : Type u) [LinearOrderedField R]
+class PSDTrace (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
     (A : Type v) [Ring A] [Algebra R A] (τ : NormalizedTrace R A) :
     Prop where
   psd : ∀ x : A, 0 ≤ τ.tau (x * x)
@@ -104,7 +104,7 @@ class PSDTrace (R : Type u) [LinearOrderedField R]
     `tau_M_non_degenerate` in
     `markov-trace-frobenius-selection.lean` (on `main` after
     PR #1750). -/
-class NonDegTrace (R : Type u) [LinearOrderedField R]
+class NonDegTrace (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
     (A : Type v) [Ring A] [Algebra R A] (τ : NormalizedTrace R A) :
     Prop where
   nondeg : ∀ x : A, τ.tau (x * x) = 0 → x = 0
@@ -141,7 +141,7 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
   have h_mul_smul_one : X * (S • (1 : A)) = S • X := by
     rw [Algebra.smul_def, mul_one, ← Algebra.commutes, ← Algebra.smul_def]
   have h_smul_one_sq : (S • (1 : A)) * (S • (1 : A)) = (S * S) • (1 : A) := by
-    rw [Algebra.smul_def, mul_assoc, one_mul, ← Algebra.smul_def, smul_smul]
+    simp only [Algebra.smul_def, mul_one, map_mul]
   -- Step 2: expand the square in A.
   have h_expand : (X - S • (1 : A)) * (X - S • (1 : A)) =
                   X * X - S • X - S • X + (S * S) • (1 : A) := by
@@ -157,13 +157,14 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
   have h_tau_expand : τ.tau ((X - S • 1) * (X - S • 1)) =
                       τ.tau (X * X) - S * τ.tau X - S * τ.tau X + S * S := by
     rw [h_expand, h_rearrange]
-    rw [τ.tau.map_add, τ.tau.map_add, τ.tau.map_add]
-    rw [τ.tau.map_neg, τ.tau.map_neg]
-    rw [h_tau_smul, h_tau_smul, h_tau_smul]
-    rw [τ.tau_one]
+    -- Use simp only for order-independence: map_add / map_neg / h_tau_smul /
+    -- tau_one all apply, then ring closes.  Robust to mathlib's per-call
+    -- simp-set quirks (LSP observed inconsistent auto-application).
+    simp only [τ.tau.map_add, τ.tau.map_neg, h_tau_smul, τ.tau_one, mul_one]
     ring
   -- Step 4: rearrange (R is a CommRing — use linear_combination, not linarith).
-  linear_combination h_tau_expand
+  -- Coefficient: -1 (goal moves S² to LHS, h_tau_expand moves it to RHS).
+  linear_combination -h_tau_expand
 
 /-- **T_β = S · 1 — general algebra min-Frobenius-norm LOWER BOUND.**
 
@@ -185,7 +186,7 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
     Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
          §"Categorical reading" + prop:t-beta-markov-frobenius-collapse .md -/
 theorem markov_frobenius_min_norm_lift
-    (R : Type u) [LinearOrderedField R]
+    (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
     (A : Type v) [Ring A] [Algebra R A]
     (τ : NormalizedTrace R A)
     [PSDTrace R A τ]
@@ -224,7 +225,7 @@ theorem markov_frobenius_min_norm_lift
     Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
          §"Proof — Lagrangian / completing-the-square argument" -/
 theorem markov_frobenius_min_norm_uniqueness
-    (R : Type u) [LinearOrderedField R]
+    (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
     (A : Type v) [Ring A] [Algebra R A]
     (τ : NormalizedTrace R A)
     [PSDTrace R A τ] [NonDegTrace R A τ]
@@ -251,7 +252,7 @@ theorem markov_frobenius_min_norm_uniqueness
     rw [h_eq]
     -- Goal: τ.tau ((S•1) * (S•1)) = S * S
     have h_smul_one_sq : (S • (1 : A)) * (S • (1 : A)) = (S * S) • (1 : A) := by
-      rw [Algebra.smul_def, mul_assoc, one_mul, ← Algebra.smul_def, smul_smul]
+      simp only [Algebra.smul_def, mul_one, map_mul]
     rw [h_smul_one_sq, τ.tau.map_smul, smul_eq_mul, τ.tau_one, mul_one]
 
 end QOU.QBeta.MarkovFrobeniusCollapse.General
