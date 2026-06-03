@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T19:09:41.214229+00:00",
-  "commitSha": "e956b5d48e2746489ce45866161b06d889452eec",
+  "computedAt": "2026-06-03T20:33:42.287289+00:00",
+  "commitSha": "55b9495fc25d97401c065b88292262fefa057931",
   "assertions": [
     {
       "name": "delta_tau_M_pre_archimedean_rational",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 17,
   "computation": "qbeta-c3-multiblock-recursion-attack",
   "scriptFile": "qbeta_c3_multiblock_recursion_attack.py",
-  "scriptHash": "2b73e72487c7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "05c88163f444",
+  "scriptCommitSha": "55b9495fc25d97401c065b88292262fefa057931",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,8 +49,10 @@
       "11": "-616733/2916"
     },
     "delta_tau_M_q_proton": "-0.0866343003075774469231990712235",
-    "delta_tau_M_q_muon": "-0.0866343103039089281820823490565",
-    "cross_anchor_swing": "0.00000000999633148125888327783298091353",
+    "delta_tau_M_q_muon": "-0.0866343103039084848769073653296",
+    "cross_anchor_swing": "0.00000000999633103795370829410607926723",
+    "c_3_value": "NOT_DERIVED",
+    "c_3_status": "NEAR-MATCH (open). The Δτ_M closed form computed here does NOT yield c_3 directly. The f-map transform between Δτ_M's w = q-1 expansion and the Q_β ladder's u = b·ℏ_q² expansion is the missing keystone (open). Per the 1ppQ-Q_β ledger, c_3 = -2 remains a NEAR-MATCH (flip-flop history #1-5) — NOT wired as Taylor-exact. Also note: the y_λ used here is a NON-CANONICAL rational surrogate (canonical y_λ involves √q).",
     "structural_note": "Δτ_M(q) is a rational function of q (no √ — symbolic in q²). Per the per-block witness, the linear-in-h structure of (2,1) and the symmetric (3) ↔ (1,1,1) ↔ q ↔ 1/q pairing under antipode are exact at the rational-function level. The cross-anchor swing IS the order-of-magnitude diagnostic for whether c_3 derives from this object exactly or is a near-match."
   }
 }
