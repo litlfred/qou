@@ -18,7 +18,7 @@
 | **α_EM canonical derivation** | RT Phase 3 + Schwinger; Habiro element `[2]_q·(1-h²α)` derived (PR #1511); Bring residue → resolvent | [`alpha-em.md`](docs/coordination/alpha-em.md) | #1505, #1521, #1549, #1552 |
 | **Q_β c_k flip-flop prevention** | enforcement live on main (PR #1577 merged: canonical-no-negative-result + ck-tiered-not-binary) | (lives in 1ppq-qbeta.md flip-flop history) | — |
 | **Lean uniqueness wiring** | ~18% witness coverage | (per-PR) | #1572 |
-| **Mass-sweep gap (A ≥ 4)** | mean abs err 4.25%; ⁶Li/⁷Li/⁹Be/¹¹B/¹⁴N/¹⁹F GAP (no atom→knot rule) | (lives in option-e.md) | — |
+| **Mass-sweep gap (A ≥ 4)** | mean abs err 4.25% pre-2026-06-03; α-cluster wire-up landed PR #1756 — 7 atoms (¹⁶O / ²⁰Ne / ²⁴Mg / ²⁸Si / ³²S / ³⁶Ar / ⁴⁰Ca) moved from B=0 to α-recursion B_pred, m_err improved from ~+0.9% to ~−0.1% (10× better); non-α-cluster A > 12 (32 atoms) still gated on H_{3A} kernel | (lives in option-e.md + [`docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md`](docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md)) | #1756 |
 
 ## Cross-cutting queues
 

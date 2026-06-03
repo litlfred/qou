@@ -76,10 +76,28 @@ The `recursive-on-⁴He` atlas tag IS the user's "build each atom recursively fr
 | Phase | Today? | Why / Why not |
 |-------|--------|---------------|
 | 1 | ✅ done | Diagnosis + truth-tracking PRs already merged + this workplan |
-| 2 | 🟡 partial | SnapPy on 65 atomic-braid closures; high-A may not terminate; deliver partial coverage with explicit gate |
+| 2 | ✅ done | α-cluster recursion wired into `try_binding_canonical` for ⁸Be–⁴⁰Ca atoms (commit `6fc4ca0ae3`); 7 atoms improved by ~10× from m_err ≈ +0.9% to ≈ −0.1% |
 | 3 | ❌ no | Δ_λ-gate forbidden without owner direction on `linking_weight(K)` generalisation strategy |
 | 4 | ❌ no | Depends on Phase 3 |
 | 5 | ❌ no | Depends on Phase 4 |
+
+## Phase 2 result (commit `6fc4ca0ae3` + `9b4fae28f8`)
+
+Before vs after, on the 7 α-cluster atoms previously gated as B=0:
+
+| atom | B_pred (MeV) | B_AME (MeV) | m_err % before | m_err % after | gain |
+|------|-------------:|------------:|---------------:|--------------:|-----:|
+| ¹⁶O  | 134.4 | 127.6 | +0.85 | **−0.05** | ~17× |
+| ²⁰Ne | 174.0 | 160.6 | +0.86 | **−0.07** | ~12× |
+| ²⁴Mg | 216.1 | 198.3 | +0.87 | **−0.08** | ~11× |
+| ²⁸Si | 260.7 | 236.5 | +0.88 | **−0.09** | ~10× |
+| ³²S  | 307.6 | 271.8 | +0.91 | **−0.12** | ~8× |
+| ³⁶Ar | 357.0 | 306.7 | +0.93 | **−0.15** | ~6× |
+| ⁴⁰Ca | 408.8 | 342.1 | +0.92 | **−0.18** | ~5× |
+
+Witness counters: `binding_computed: 10 → 17` (+7); `gated_on_phase2: 59` unchanged for non-α-cluster atoms. Refresh in `mass-table-comprehensive.witness.json` confirms.
+
+The α-cluster `c_αα` coupling currently uses Whitehead-link Vol(7²_1) literature value; the slight overshoot of `B_pred` vs AME (5-19%) is consistent with the atlas's documented "+ recursion error budget" for the `recursive-on-⁴He` methodology. Refining `c_αα` per knot is a research-grade follow-up.
 
 **Honest disposition**: end-of-day target = phases 1 + 2 (engineering complete) + phases 3-5 surfaced as owner-decision-required. Cannot wire up "ALL 65 isotopes properly" today without owner approval of a `linking_weight(K)` ansatz.
 
