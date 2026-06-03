@@ -1,0 +1,116 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T22:49:35.314713+00:00",
+  "commitSha": "fc1da255c2c3c6b9e477342adafd0369c4bfa21e",
+  "assertions": [
+    {
+      "name": "kashiwara_cos_at_least_one_passes_10_ppm",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "source": "10 Kashiwara cos-factor angles η_μ(q) tested at proton-pinned q₀ against the target δ = 1 - cos(η_μ) = 2.098e-7. PASS would identify an m_μ N1-like factor paralleling Q_β."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "mmu-kashiwara-cos-factor-probe",
+  "scriptFile": "mmu_kashiwara_cos_factor_probe.py",
+  "scriptHash": "ed8c9efc26b8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.4.0"
+  },
+  "data": {
+    "target_delta": "0.0000002098",
+    "q_substrate": "1.10997858275138080759166909561",
+    "candidates_tested": [
+      "H1.  alpha * hbar_q",
+      "H2.  alpha * hbar_q^2",
+      "H3.  alpha * hbar_q^3",
+      "H4.  (alpha - b*hbar^2/2) * hbar_q  (Q_β-N1 scaled)",
+      "H5.  (alpha - b*hbar^2/2) * hbar_q^2",
+      "H6.  hbar_q^3 * b",
+      "H7.  hbar_q^4 * sqrt(b^2 + 1)",
+      "H8.  alpha * b * hbar_q^2",
+      "H9.  h * hbar_q^2  (h = q - q^-1)",
+      "H10. h * hbar_q^3"
+    ],
+    "per_candidate_results": {
+      "H1.  alpha * hbar_q": {
+        "computed_eta": "-0.00518555260727481221804239866418",
+        "computed_delta_from_cos": "0.0000134449477935290881716741337767",
+        "err_ppm_vs_target_delta": 63084593.868108146,
+        "passed": false
+      },
+      "H2.  alpha * hbar_q^2": {
+        "computed_eta": "-0.000513793450966567298860944637594",
+        "computed_delta_from_cos": "0.000000131991852224425586465095122085",
+        "err_ppm_vs_target_delta": 370868.19721436803,
+        "passed": false
+      },
+      "H3.  alpha * hbar_q^3": {
+        "computed_eta": "-0.0000509075368140690780779489228187",
+        "computed_delta_from_cos": "0.00000000129578865195805452490698361722",
+        "err_ppm_vs_target_delta": 993823.6956532028,
+        "passed": false
+      },
+      "H4.  (alpha - b*hbar^2/2) * hbar_q  (Q_β-N1 scaled)": {
+        "computed_eta": "-0.00560750371486527158212121606637",
+        "computed_delta_from_cos": "0.0000157220077590198609712999517272",
+        "err_ppm_vs_target_delta": 73938073.20791163,
+        "passed": false
+      },
+      "H5.  (alpha - b*hbar^2/2) * hbar_q^2": {
+        "computed_eta": "-0.000555601090793405564285184438154",
+        "computed_delta_from_cos": "0.00000015434628207494841816342917584",
+        "err_ppm_vs_target_delta": 264317.0539802268,
+        "passed": false
+      },
+      "H6.  hbar_q^3 * b": {
+        "computed_eta": "0.000843902215180918728157634804389",
+        "computed_delta_from_cos": "0.000000356085453260820483926515968702",
+        "err_ppm_vs_target_delta": 697261.4550086772,
+        "passed": false
+      },
+      "H7.  hbar_q^4 * sqrt(b^2 + 1)": {
+        "computed_eta": "0.000127593377610945751481284233335",
+        "computed_delta_from_cos": "0.00000000814003499404133464058601804098",
+        "err_ppm_vs_target_delta": 961200.9771494693,
+        "passed": false
+      },
+      "H8.  alpha * b * hbar_q^2": {
+        "computed_eta": "-0.00044575901176968580951989369808",
+        "computed_delta_from_cos": "0.0000000993505466418548827718468555144",
+        "err_ppm_vs_target_delta": 526451.1599530273,
+        "passed": false
+      },
+      "H9.  h * hbar_q^2  (h = q - q^-1)": {
+        "computed_eta": "0.00205238393346324981474595879917",
+        "computed_delta_from_cos": "0.00000210613916586492783564753941141",
+        "err_ppm_vs_target_delta": 9038794.880195081,
+        "passed": false
+      },
+      "H10. h * hbar_q^3": {
+        "computed_eta": "0.000203353722109204064989896111381",
+        "computed_delta_from_cos": "0.0000000206763680765816618799449508632",
+        "err_ppm_vs_target_delta": 901447.2446302113,
+        "passed": false
+      }
+    },
+    "best_candidate_name": "H5.  (alpha - b*hbar^2/2) * hbar_q^2",
+    "best_candidate_err_ppm": 264317.0539802268,
+    "any_candidate_passes_10_ppm": false
+  }
+}
