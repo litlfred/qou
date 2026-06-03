@@ -130,8 +130,11 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
     (A : Type v) [Ring A] [Algebra R A]
     (τ : NormalizedTrace R A) (X : A) (S : R) :
     τ.tau (X * X) =
-      τ.tau ((X - S • 1) * (X - S • 1)) + 2 * (S * τ.tau X) - S * S * τ.tau 1 := by
+      τ.tau ((X - S • 1) * (X - S • 1)) + 2 * (S * τ.tau X) - S * S := by
   -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+  -- Per copilot-review #1761 thread 5: theorem statement uses `- S * S`
+  -- directly (using τ.tau_one = 1 inline) rather than `- S * S * τ.tau 1`,
+  -- which reduces downstream simp/rw churn.
   -- Step 1: algebra identity using centrality of algebraMap R A S.
   have h_smul_one_mul : (S • (1 : A)) * X = S • X := by
     rw [Algebra.smul_def, mul_assoc, one_mul, ← Algebra.smul_def]
@@ -144,35 +147,38 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
                   X * X - S • X - S • X + (S * S) • (1 : A) := by
     rw [sub_mul, mul_sub, mul_sub, h_smul_one_mul, h_mul_smul_one, h_smul_one_sq]
     abel
-  -- Step 3: apply τ, using R-linearity + τ_one.
+  -- Step 3: apply τ, using R-linearity + τ_one (= 1).
   have h_tau_smul : ∀ Y : A, τ.tau (S • Y) = S * τ.tau Y := fun Y => by
     rw [τ.tau.map_smul, smul_eq_mul]
   have h_rearrange : X * X - S • X - S • X + (S * S) • (1 : A) =
                      X * X + (-(S • X)) + (-(S • X)) + (S * S) • (1 : A) := by abel
   have h_tau_expand : τ.tau ((X - S • 1) * (X - S • 1)) =
-                      τ.tau (X * X) - S * τ.tau X - S * τ.tau X + S * S * τ.tau 1 := by
+                      τ.tau (X * X) - S * τ.tau X - S * τ.tau X + S * S := by
     rw [h_expand, h_rearrange]
     rw [τ.tau.map_add, τ.tau.map_add, τ.tau.map_add]
     rw [τ.tau.map_neg, τ.tau.map_neg]
     rw [h_tau_smul, h_tau_smul, h_tau_smul]
+    rw [τ.tau_one]
     ring
   -- Step 4: rearrange (R is a CommRing — use linear_combination, not linarith).
   linear_combination h_tau_expand
 
-/-- **T_β = S · 1 — general algebra min-Frobenius-norm theorem.**
+/-- **T_β = S · 1 — general algebra min-Frobenius-norm LOWER BOUND.**
 
-    Under the SDP constraint `τ(X) = S` and the trace's PSD +
-    non-degeneracy on squares (as `class` hypotheses per §3b-cond),
-    the minimum Frobenius norm-squared `τ(X · X)` over the
-    constraint set is `S²`, attained uniquely at `X = S · 1`.
+    Under the SDP constraint `τ(X) = S` and PSD of `τ` on squares
+    (class hypothesis per §3b-cond), the Frobenius norm-squared
+    `τ(X · X)` is bounded below by `S²`.
+
+    The companion theorem `markov_frobenius_min_norm_uniqueness`
+    below (using `NonDegTrace`) establishes that the lower bound is
+    attained iff `X = S • 1`, giving the full SHAPE-collapse claim
+    `T_β = S · 1_H` of PR #1750.
 
     Applied to the Iwahori–Hecke algebra `A = H_n(R, q)` at generic
-    `q > 0` with `τ = τ_M` (the Jones–Markov trace), this is the
-    Markov-trace SHAPE collapse `T_β = S · 1_H` of PR #1750.
-
-    The 6-channel L2 SHAPE × S decomposition of PR #1739 is
-    basis-dependence of the *coordinate-vector* Euclidean norm on
-    `ℝ^6`, NOT the categorical Frobenius norm on H_3(ℝ, q).
+    `q > 0` with `τ = τ_M` (the Jones–Markov trace): the L2 SHAPE × S
+    decomposition of PR #1739 is basis-dependence of the
+    coordinate-vector Euclidean norm on `ℝ^6`, NOT the categorical
+    Frobenius norm on H_3(ℝ, q).
 
     Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
          §"Categorical reading" + prop:t-beta-markov-frobenius-collapse .md -/
@@ -180,19 +186,67 @@ theorem markov_frobenius_min_norm_lift
     (R : Type u) [LinearOrderedField R]
     (A : Type v) [Ring A] [Algebra R A]
     (τ : NormalizedTrace R A)
-    [PSDTrace R A τ] [NonDegTrace R A τ]
+    [PSDTrace R A τ]
     (S : R) (X : A) (h_constraint : τ.tau X = S) :
     S * S ≤ τ.tau (X * X) := by
   -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
-  -- Step 1: invoke completing-the-square.
+  -- Step 1: invoke completing-the-square (statement uses simplified
+  --   `- S * S` form; τ_one absorbed inline).
   have h := completing_the_square_general R A τ X S
-  -- Step 2: substitute h_constraint (τ X = S) and τ_one (τ 1 = 1).
-  rw [h_constraint, τ.tau_one] at h
-  -- h : τ(X*X) = τ((X - S•1)²) + 2 * (S * S) - S * S * 1
+  -- Step 2: substitute h_constraint (τ X = S).
+  rw [h_constraint] at h
+  -- h : τ(X*X) = τ((X - S•1)²) + 2 * (S * S) - S * S
   --          = τ((X - S•1)²) + S * S
   -- Step 3: PSD of τ on squares.
   have h_psd : 0 ≤ τ.tau ((X - S • 1) * (X - S • 1)) := PSDTrace.psd _
   -- Step 4: arithmetic conclusion.
   linarith
+
+/-- **T_β = S · 1 uniqueness — equality case of the min-norm bound.**
+
+    Companion to `markov_frobenius_min_norm_lift`.  Under the same
+    constraint `τ(X) = S` plus PSD + non-degeneracy of `τ` on
+    squares, the equality `τ(X · X) = S²` holds iff `X = S · 1`.
+
+    Combined with `markov_frobenius_min_norm_lift`, this gives the
+    full SHAPE-collapse claim: the minimum-Frobenius-norm
+    primal-feasible element is `T_β = S · 1`, attained uniquely.
+
+    Proof sketch:
+    - (⇒) `τ(X*X) = S²` + completing_the_square + constraint ⇒
+      `τ((X - S•1)²) = 0` ⇒ `X - S•1 = 0` by NonDegTrace.
+    - (⇐) `X = S • 1` ⇒ `τ(X*X) = τ((S•1)*(S•1)) = τ((S²)•1)
+      = S² τ(1) = S²` by NormalizedTrace.tau_one.
+
+    Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+         §"Proof — Lagrangian / completing-the-square argument" -/
+theorem markov_frobenius_min_norm_uniqueness
+    (R : Type u) [LinearOrderedField R]
+    (A : Type v) [Ring A] [Algebra R A]
+    (τ : NormalizedTrace R A)
+    [PSDTrace R A τ] [NonDegTrace R A τ]
+    (S : R) (X : A) (h_constraint : τ.tau X = S) :
+    τ.tau (X * X) = S * S ↔ X = S • 1 := by
+  -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+  constructor
+  · -- Forward direction (⇒): τ(X²) = S² ⇒ X = S•1
+    intro h_eq
+    have h := completing_the_square_general R A τ X S
+    rw [h_constraint] at h
+    -- h : τ(X*X) = τ((X - S•1)²) + 2 * (S * S) - S * S
+    --          = τ((X - S•1)²) + S * S
+    have h_psd : 0 ≤ τ.tau ((X - S • 1) * (X - S • 1)) := PSDTrace.psd _
+    -- From h + h_eq: τ((X-S•1)²) = 0
+    have h_zero : τ.tau ((X - S • 1) * (X - S • 1)) = 0 := by linarith
+    -- NonDegTrace ⇒ X - S•1 = 0 ⇒ X = S•1
+    have h_sub_zero : X - S • (1 : A) = 0 := NonDegTrace.nondeg _ h_zero
+    exact sub_eq_zero.mp h_sub_zero
+  · -- Reverse direction (⇐): X = S•1 ⇒ τ(X²) = S²
+    intro h_eq
+    rw [h_eq]
+    -- Goal: τ.tau ((S•1) * (S•1)) = S * S
+    have h_smul_one_sq : (S • (1 : A)) * (S • (1 : A)) = (S * S) • (1 : A) := by
+      rw [Algebra.smul_def, mul_assoc, one_mul, ← Algebra.smul_def, smul_smul]
+    rw [h_smul_one_sq, τ.tau.map_smul, smul_eq_mul, τ.tau_one, mul_one]
 
 end QOU.QBeta.MarkovFrobeniusCollapse.General
