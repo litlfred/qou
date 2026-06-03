@@ -68,6 +68,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _pb  # noqa: E402, F401
 
+import ast  # noqa: E402
 import json  # noqa: E402
 
 import sympy as sp  # noqa: E402
@@ -118,7 +119,11 @@ def load_y_lambda_symbolic(r):
     Schur-element-style cyclotomic factorisations of the LP-dual shadow
     prices, NOT q₀-numerics.
     """
-    data = json.load(open(_pb.witness_path("y-lambda-cyclotomic-factor.witness.json", HERE)))
+    with open(
+        _pb.witness_path("y-lambda-cyclotomic-factor.witness.json", HERE),
+        encoding="utf-8",
+    ) as f:
+        data = json.load(f)
     n3 = data["results"]["3"]
     r_sym = r  # local alias for sp.sympify env
     out = {}
@@ -126,7 +131,7 @@ def load_y_lambda_symbolic(r):
         poly_str = info["y_polynomial"]["polynomial_q"]
         # poly_str uses "r"; parse in env where r = r_sym
         expr = sp.sympify(poly_str, locals={"r": r_sym})
-        part = tuple(eval(part_str))  # noqa: S307 — trusted witness format
+        part = tuple(ast.literal_eval(part_str))
         if part == (3,):
             label = "(3)"
         elif part == (2, 1):
@@ -196,10 +201,18 @@ def main() -> int:
     print("=" * 78)
     print("Numeric sanity check at q_0  (vs witness T_beta_nf_coefficients)")
     print("=" * 78)
-    q0_str = json.load(open(_pb.witness_path("q-pinning-50-digit.witness.json", HERE)))["derived_50_digit"]["q"]
+    with open(
+        _pb.witness_path("q-pinning-50-digit.witness.json", HERE),
+        encoding="utf-8",
+    ) as f:
+        q0_str = json.load(f)["derived_50_digit"]["q"]
     q0 = sp.Float(q0_str, 50)
 
-    sdp = json.load(open(_pb.witness_path("qbeta-decay-sdp-knot-operator.witness.json", HERE)))
+    with open(
+        _pb.witness_path("qbeta-decay-sdp-knot-operator.witness.json", HERE),
+        encoding="utf-8",
+    ) as f:
+        sdp = json.load(f)
     S_num = sp.Float(sdp["data"]["tau_M_at_q0"], 50)  # = Q_β/E_0
     coords_witness = sdp["data"]["T_beta_nf_coefficients"]
     name_map = {"γ": "γ", "σ_0": "σ₀", "σ_1": "σ₁",

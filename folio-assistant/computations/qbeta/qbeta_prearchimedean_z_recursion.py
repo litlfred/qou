@@ -153,7 +153,7 @@ def main() -> int:
         bk = zk_recursion_coeffs(k, 8)
         ok_k = all(sp.simplify(sk.coeff(w, n) - bk[n]) == 0 for n in range(8))
         family_ok = family_ok and ok_k
-        print(f"    k={k}: b_0..b_7 = {[str(bk[n]) for n in range(6)]}  "
+        print(f"    k={k}: b_0..b_7 = {[str(bk[n]) for n in range(8)]}  "
               f"{'✓' if ok_k else '✗'}")
     print(f"  z^k family reproduces all powers exactly: {'YES ✓' if family_ok else 'NO ✗'}")
     print()

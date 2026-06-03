@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-03T13:47:27.756242+00:00",
-  "commitSha": "1dad582da702b3676370bce37bd0d73215f0d6b2",
+  "computedAt": "2026-06-03T15:55:59.174001+00:00",
+  "commitSha": "b7f186ae9f29610e186936db1f15396f3bc8a469",
   "assertions": [
     {
       "name": "recursion_matches_sympy_series_exactly",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 17,
   "computation": "qbeta-prearchimedean-z-recursion",
   "scriptFile": "qbeta_prearchimedean_z_recursion.py",
-  "scriptHash": "2d4dd54c92ed",
-  "scriptCommitSha": "3c51dff09fca589eb283c7d45dae68d70abb30c6",
+  "scriptHash": "718c410b747b",
+  "scriptCommitSha": "12d2d01eabc4af6619d02a16916704527a9a62ae",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
