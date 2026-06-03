@@ -1,0 +1,247 @@
+{
+  "computation": "per-knot-lambda-habiro-probe",
+  "description": "Step 1 of the \u00a76.8 Habiro experiment: verifies Family-A q-dim identity, maps the \u03a3_{\u03bb\u22a2n} dim_q family, and shows the figure-eight Habiro element diverges at real q\u2080 (so Family-A must be the PERTURBATIVE Habiro series, not the convergent sum). EXPLORATORY; no production path touched.",
+  "part1_family_a": {
+    "partitions_of_4": [
+      [
+        4
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "q_dimensions": {
+      "[4]": "1",
+      "[3, 1]": "(q**4 + q**2 + 1)/q**2",
+      "[2, 2]": "(q**4 + 1)/q**2",
+      "[2, 1, 1]": "(q**4 + q**2 + 1)/q**2",
+      "[1, 1, 1, 1]": "1"
+    },
+    "sum_dim_q": "(3*q**4 + 4*q**2 + 3)/q**2",
+    "linking_weight_(1/4)sum": "3*q**2/4 + 1 + 3/(4*q**2)",
+    "family_a_claim_q": "3*q**2/4 + 1 + 3/(4*q**2)",
+    "diff_vs_claim_q": "0",
+    "matches_q_form": true,
+    "family_a_in_h": "5/2 + (3/4)h^2",
+    "diff_vs_h_form": "0",
+    "matches_h_form": true
+  },
+  "part2_dim_q_family": {
+    "note": "Family-A uses n=4 with normalization 1/4: (1/4)\u03a3_{\u03bb\u22a24} = 5/2 + (3/4)h\u00b2. The table below maps the analogous \u03a3_{\u03bb\u22a2n} for n=3..6 so the per-knot selection rule (which n, which normalization) can be compared against \u03a6_K once external coefficients land.",
+    "rows": [
+      {
+        "n": 3,
+        "n_partitions": 3,
+        "sum_dim_q_at_q1": "4",
+        "(1/n)\u00b7sum_at_q1": "4/3",
+        "leading_h2_coeff_of_sum": "1/4",
+        "sum_dim_q_symbolic": "q + 2 + 1/q"
+      },
+      {
+        "n": 4,
+        "n_partitions": 5,
+        "sum_dim_q_at_q1": "10",
+        "(1/n)\u00b7sum_at_q1": "5/2",
+        "leading_h2_coeff_of_sum": "3",
+        "sum_dim_q_symbolic": "3*q**2 + 4 + 3/q**2"
+      },
+      {
+        "n": 5,
+        "n_partitions": 7,
+        "sum_dim_q_at_q1": "26",
+        "(1/n)\u00b7sum_at_q1": "26/5",
+        "leading_h2_coeff_of_sum": "20",
+        "sum_dim_q_symbolic": "3*q**4 + 2*q**3 + 3*q**2 + 2*q + 6 + 2/q + 3/q**2 + 2/q**3 + 3/q**4"
+      },
+      {
+        "n": 6,
+        "n_partitions": 11,
+        "sum_dim_q_at_q1": "76",
+        "(1/n)\u00b7sum_at_q1": "38/3",
+        "leading_h2_coeff_of_sum": "120",
+        "sum_dim_q_symbolic": "q**7 + 6*q**6 + 2*q**5 + 6*q**4 + 2*q**3 + 12*q**2 + 3*q + 12 + 3/q + 12/q**2 + 2/q**3 + 6/q**4 + 2/q**5 + 6/q**6 + q**(-7)"
+      }
+    ]
+  },
+  "part3_figure_eight_habiro": {
+    "knot": "4_1 (figure-eight = muon)",
+    "linking_weight_target": 1,
+    "habiro_element": "J(4_1;q) = \u03a3_n (q;q)_n (q\u207b\u00b9;q\u207b\u00b9)_n",
+    "q0": "1.1099785827513808076",
+    "partial_sums_(n, S_n, term_n)": [
+      [
+        0,
+        "1.0",
+        "1.0"
+      ],
+      [
+        1,
+        "0.98910313329288",
+        "-0.010896866707122"
+      ],
+      [
+        2,
+        "0.98957939402153",
+        "0.00047626072865258"
+      ],
+      [
+        3,
+        "0.98953234634613",
+        "-4.7047675404302e-5"
+      ],
+      [
+        4,
+        "0.98954066132018",
+        "8.3149740550995e-6"
+      ],
+      [
+        5,
+        "0.98953834639664",
+        "-2.3149235415761e-6"
+      ],
+      [
+        6,
+        "0.98953928371095",
+        "9.3731430550587e-7"
+      ],
+      [
+        7,
+        "0.98953876106146",
+        "-5.2264948023446e-7"
+      ],
+      [
+        8,
+        "0.98953914686853",
+        "3.8580706805837e-7"
+      ],
+      [
+        9,
+        "0.98953878089758",
+        "-3.659709559646e-7"
+      ],
+      [
+        10,
+        "0.98953921681496",
+        "4.3591737884274e-7"
+      ],
+      [
+        11,
+        "0.98953857669684",
+        "-6.4011811640152e-7"
+      ],
+      [
+        12,
+        "0.98953971837802",
+        "1.1416811776784e-6"
+      ],
+      [
+        13,
+        "0.9895372753115",
+        "-2.4430665172589e-6"
+      ],
+      [
+        14,
+        "0.98954348396014",
+        "6.208648639902e-6"
+      ],
+      [
+        15,
+        "0.98952490600859",
+        "-1.8577951545002e-5"
+      ],
+      [
+        20,
+        "1.0252410033718",
+        "0.041365816891303"
+      ],
+      [
+        25,
+        "-2365.4986403806",
+        "-2567.558182181"
+      ],
+      [
+        30,
+        "3091264793.5732",
+        "3238208111.0768"
+      ],
+      [
+        35,
+        "-6.8052645997586e+16",
+        "-6.9907577199749e+16"
+      ],
+      [
+        40,
+        "2.308655018934e+25",
+        "2.3452551828549e+25"
+      ],
+      [
+        45,
+        "-1.1457555314559e+35",
+        "-1.1564082450118e+35"
+      ],
+      [
+        50,
+        "8.068710060639e+45",
+        "8.1129214826631e+45"
+      ],
+      [
+        55,
+        "-7.9194483282685e+57",
+        "-7.9450953610293e+57"
+      ],
+      [
+        60,
+        "1.0719010882478e+71",
+        "1.0739562591721e+71"
+      ]
+    ],
+    "optimal_truncation_index": 9,
+    "min_term_magnitude": "3.65971e-7",
+    "S_optimal_truncation": "0.98953878089757687009",
+    "muon_linking_weight": 1,
+    "S_opt_rel_to_lw1": "-0.0104612",
+    "S_opt_vs_lw1_pct": "-1.04612",
+    "final_term_magnitude_n60": "1.07396e+71",
+    "naive_series_diverges_at_q0": true,
+    "divergence_mechanism": "|(1\u2212q^j)(1\u2212q^{-j})| = q^j + q^{-j} \u2212 2 ~ q^j for q>1, so \u220f_{j=1}^n ~ q^{n(n+1)/2} \u2014 super-exponential, the SAME growth that refuted the \u03b1_r single-rank q-Pochhammer ansatz (docs/audits/...alpha-r...). The naive Habiro sum is NOT summable at real q\u2080>1 \u2014 but it is an ASYMPTOTIC series: least-term truncation at n_opt gives a finite Borel-sum estimate.",
+    "implication": "The framework's FINITE linking_weight (5/2 + 3h\u00b2/4) cannot be the convergent Habiro sum at q\u2080. It must be the PERTURBATIVE / asymptotic series of the Habiro element around q=1 (the Garoufalidis\u2013Zagier \u03a6_K(h) formal series), evaluated as a truncated polynomial in h. The G-S-W-Z 2024 resummation (Borel / K_3-graded) is what assigns a finite value to the divergent sum \u2014 exactly the resurgence content the \u00a76.8 experiment needs."
+  },
+  "part3b_trefoil_control": {
+    "knot": "3_1 (trefoil, TORUS \u2014 Vol=0, non-hyperbolic CONTROL)",
+    "Vol": 0,
+    "optimal_truncation_index": 60,
+    "S_optimal_truncation": "1.10997733191",
+    "note": "Non-hyperbolic control. A Vol-driven plateau interpretation of the figure-eight Part-3 result predicts qualitatively different behaviour here (no geometric saddle)."
+  },
+  "part4_gap_statement": {
+    "computable_now (this probe)": [
+      "Family-A identity (1/4)\u03a3_{\u03bb\u22a24} dim_q = 5/2+3h\u00b2/4 (Part 1)",
+      "\u03a3_{\u03bb\u22a2n} dim_q family n=3..6 (Part 2) \u2014 comparison target",
+      "Figure-eight Habiro element diverges at real q\u2080 (Part 3)"
+    ],
+    "needs_external_data": [
+      "Garoufalidis\u2013Zagier \u03a6_K(h) perturbative coefficients for K \u2208 {4_1, 6_2, Borromean} from arXiv:2111.06645 tables (the asymptotic series around the geometric saddle).",
+      "OR: SnapPy to compute the A-polynomial + Borot\u2013Eynard topological-recursion coefficients S_0, S_1, S_2 (\u00a76.6).",
+      "Both give the SAME perturbative h-series; the test is whether its h\u00b2 coefficient matches Family-A's 3/4 (knots) or the per-link analog (Borromean)."
+    ],
+    "decisive_test": "\u03a6_{4_1}(h)/Vol(4_1) should give linking_weight=1 + O(h\u00b2) for the muon (a KNOT, lw=1); \u03a6_{Borromean}(h)/[stuff] should give 5/2 + (3/4)h\u00b2 for the proton (a 3-LINK). If the h\u00b2 coefficients match \u2014 the Geom_full bridge is DERIVED from the Habiro element, not fit. K_3 grading makes the coefficients rigid (no free params).",
+    "next_branch": "this branch \u2014 add Part 5 once \u03a6_K data is sourced"
+  },
+  "compute_time_sec": 1.67
+}
