@@ -1,0 +1,157 @@
+# Banner sweep — 444 instances across 187 paper files (2026-06-03)
+
+> Per user directive 2026-06-03: *"scan for banners in content.
+> I generally don't want them."* Comprehensive scan across all
+> `content/quantum-observable-universe/**/*.md` (2571 files) for
+> banner / status-leak / inline-PR-ref / emoji patterns per CLAUDE.md
+> §4d (authorNotes vs. scholarly prose).
+
+## Headline
+
+- **Files scanned**: 2571 `.md` files under `content/quantum-observable-universe/`
+- **Files with ≥1 banner instance**: **187** (7.3 % of corpus)
+- **Total banner instances**: **444**
+
+The most common offender by FAR is `audit_url_inline` — branch-specific
+GitHub URLs (`https://github.com/litlfred/qou/blob/<branch>/...`)
+left behind from merged audit-doc PRs. These should be `docs/audits/...`
+relative paths now that the audit docs are on `main`. 322 of 444 (73 %)
+are this single pattern.
+
+- **Total banner instances**: 444
+
+## Pattern breakdown
+
+| Pattern | Instances | Files |
+|---|---:|---:|
+| `audit_url_inline` | 322 | 114 |
+| `status_section_h2` | 72 | 72 |
+| `pr_ref_inline` | 23 | 12 |
+| `checkmark_emoji` | 21 | 3 |
+| `errata_banner` | 3 | 2 |
+| `caveat_banner` | 2 | 2 |
+| `author_note_banner` | 1 | 1 |
+| **TOTAL** | **444** | — |
+
+## Most-polluted files (≥3 banner instances)
+
+- `appendix-knot-periodic-table/recursive-atom-knot-atlas.md` — **25** banner instances
+  - `pr_ref_inline` × 2: lines 390, 406
+  - `audit_url_inline` × 23: lines 28, 34, 205, 213, 288
+- `mass-theory/brane-tower-z-habiro.md` — **23** banner instances
+  - `audit_url_inline` × 23: lines 118, 269, 270, 276, 279
+- `appendix-mass-binding-algorithms/mba-chain-map.md` — **16** banner instances
+  - `checkmark_emoji` × 16: lines 10, 11, 12, 13, 14
+- `mass-theory/atom-knot-mass-derivation.md` — **15** banner instances
+  - `audit_url_inline` × 15: lines 12, 91, 111, 167, 175
+- `mass-theory/knot-operator-lp-selection.md` — **13** banner instances
+  - `audit_url_inline` × 13: lines 6, 23, 25, 95, 102
+- `mass-theory/per-partition-k-lambda-rule.md` — **13** banner instances
+  - `audit_url_inline` × 13: lines 16, 17, 66, 116, 126
+- `mass-theory/t-beta-markov-frobenius-collapse.md` — **8** banner instances
+  - `pr_ref_inline` × 4: lines 63, 91, 116, 121
+  - `audit_url_inline` × 4: lines 63, 80, 117, 119
+- `braids-and-knots/a8-partition-function-identity.md` — **7** banner instances
+  - `audit_url_inline` × 7: lines 5, 62, 73, 85, 86
+- `mass-endomorphism/markov-trace-recursive-reducer.md` — **6** banner instances
+  - `audit_url_inline` × 6: lines 39, 123, 136, 165, 170
+- `mass-theory/depth-stratified-frobenius-reciprocity.md` — **6** banner instances
+  - `audit_url_inline` × 6: lines 79, 155, 193, 195, 200
+- `mass-theory/staircase-ew-residual.md` — **6** banner instances
+  - `audit_url_inline` × 6: lines 36, 38, 40, 48, 50
+- `appendix-qvalues/proton-mass-substrate-identity.md` — **5** banner instances
+  - `pr_ref_inline` × 5: lines 145, 145, 162, 165, 169
+- `braids-and-knots/cyclotomic-strand-doubling.md` — **5** banner instances
+  - `audit_url_inline` × 5: lines 34, 64, 65, 66, 91
+- `braids-and-knots/zeta8-witness-level2-su2.md` — **5** banner instances
+  - `pr_ref_inline` × 2: lines 42, 66
+  - `audit_url_inline` × 3: lines 43, 65, 76
+- `mass-theory/conj-canonical-knot-id-sdp.md` — **5** banner instances
+  - `audit_url_inline` × 5: lines 41, 160, 162, 185, 195
+- `mass-theory/conj-rho-prefactor-structural.md` — **5** banner instances
+  - `audit_url_inline` × 5: lines 56, 85, 113, 114, 160
+- `mass-theory/q-rogers-pentagon-archimedean.md` — **5** banner instances
+  - `audit_url_inline` × 5: lines 73, 75, 118, 141, 155
+- `appendix-mass-binding-algorithms/mba-intro.md` — **4** banner instances
+  - `checkmark_emoji` × 4: lines 31, 32, 33, 33
+- `appendix-surreals/b1-current-status-table2-data.md` — **4** banner instances
+  - `audit_url_inline` × 4: lines 3, 4, 5, 6
+- `mass-endomorphism/mass-endomorphism-conjecture.md` — **4** banner instances
+  - `audit_url_inline` × 4: lines 255, 281, 291, 292
+
+## Per-pattern action map (per CLAUDE.md §4d)
+
+- **`caveat_banner`** (2 instances) — Migrate to `authorNotes: [{kind:'caveat', body}]` OR keep in prose if scholarly mathematical caveat
+- **`author_note_banner`** (1 instances) — Migrate to `authorNotes: [{kind:'note', body}]`
+- **`errata_banner`** (3 instances) — Migrate to `authorNotes: [{kind:'note', date, body}]` (errata is past-state agent-tracking)
+- **`pr_ref_inline`** (23 instances) — Drop the inline PR ref; cite the audit-doc link instead, OR move to authorNotes.see field
+- **`audit_url_inline`** (322 instances) — Replace branch-specific GitHub URL with `docs/audits/...` relative path (the audit doc has merged to main)
+- **`status_section_h2`** (72 instances) — JUDGMENT: legit if the block has a Status section per content convention; status-leak if it duplicates authorNotes content
+- **`checkmark_emoji`** (21 instances) — Replace with textual label (`proved`/`derived`/etc.) per CLAUDE.md emoji rule
+
+## Methodology
+
+Generated by Python regex against `content/quantum-observable-universe/**/*.md`:
+
+```python
+patterns = [
+    ('status_quote_banner',    r'^>\s*\*\*Status\b'),
+    ('note_dated_banner',      r'^>\s*\*\*Note\s*\(\d'),
+    ('caveat_banner',          r'^>\s*\*\*Caveat'),
+    ('refined_framing_banner', r'^>\s*\*\*Refined[-\s]framing'),
+    ('deprecated_banner',      r'^>\s*\*\*DEPRECATED'),
+    ('author_note_banner',     r'^>\s*\*\*Author\s+notes?'),
+    ('errata_banner',          r'^>\s*\*\*Errata'),
+    ('pr_ref_inline',          r'\bPR\s+#\d{3,}\b'),
+    ('audit_url_inline',       r'https://github\.com/litlfred/qou'),
+    ('status_section_h2',      r'^##\s+Status\s*$'),
+    ('checkmark_emoji',        r'[✅❌⚠️🟢🔴🟡⭐]'),
+]
+```
+
+**Known imprecisions:**
+
+- `status_section_h2` includes legitimate per-block Status sections; these
+  are not all status leaks. Per-block judgment needed.
+- `audit_url_inline` includes intentional links to ACTIVE branch
+  artefacts (e.g. a workplan still in flight). Most should be migrated
+  to `docs/audits/` paths; a small minority should stay.
+- `checkmark_emoji` includes the deliberate mass-binding-algorithms
+  status tables (mba-chain-map.md = 16 of the 21 instances) — those use
+  emoji as a status-table legend and are arguably a separate convention.
+  Per CLAUDE.md "no emoji" the right fix is textual labels.
+
+## Suggested migration order (highest-leverage first)
+
+1. **`audit_url_inline` (322 instances, 114 files)** — script-able
+   `s|https://github\.com/litlfred/qou/blob/<branch>/docs/audits/(\S+)\.md|docs/audits/\1.md|g`
+   (with manual review for non-`docs/audits/` URLs). Estimated
+   ~2 hours mechanical with sweeping spot-check.
+2. **`pr_ref_inline` (23 instances, 12 files)** — manual per-block,
+   either drop the inline `PR #N` reference or move to
+   `authorNotes.see`. ~1 hour.
+3. **Explicit banners (6 instances)**: 3 `errata_banner` + 2
+   `caveat_banner` + 1 `author_note_banner`. Migrate to `authorNotes`
+   per CLAUDE.md §4d. ~30 min.
+4. **`checkmark_emoji` (21 instances, 3 files)** — the 3 mba-* files
+   carry tables with status emoji; replace with textual labels.
+   ~30 min.
+5. **`status_section_h2` (72 instances)** — per-block judgment needed.
+   Defer to a separate review pass; not all are status leaks.
+
+**Estimated total migration effort**: ~5-6 hours of careful editing if
+done end-to-end. Recommended to do in batches by pattern to keep PRs
+reviewable.
+
+## What this PR does NOT do
+
+This is **triage only**. No `.md` content edits. The actual migrations
+land on follow-up branches (per CLAUDE.md "Combine related work" —
+each pattern is its own theme).
+
+## Cross-refs
+
+- [CLAUDE.md §4d](../../CLAUDE.md) — Author notes vs. scholarly prose convention
+- [`local/one-voice-audit`](../../.claude/skills/local/one-voice-audit.md) — the skill that handles Category H "Banner-in-prose"
+- [`docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md`](2026-06-03-proof-axis-629-fails-stale-diagnostics.md) — companion audit (proof axis)
+- [PR #1098](https://github.com/litlfred/qou/pull/1098) — the original `authorNotes` schema landing (per CLAUDE.md §4d implementation tracking note)
