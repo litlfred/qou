@@ -127,6 +127,22 @@ theorem Q_borromean_eq_zero [inst : BorromeanQuark] : inst.qBorromean = 0 :=
 
 Trivially extensional but communicates the actual claim.
 
+## Recent §3b-cond strengthening precedents (PR #1736, 2026-06-03)
+
+PR [#1736](https://github.com/litlfred/qou/pull/1736) merged 5 new §3b-cond conjectural classes — none follow the `True := trivial` placeholder pattern. All carry **extensional identity fields**, modelling exactly the strengthening direction proposed for Candidates 1+2 above. Future strengthening work can use these as templates.
+
+| class | file | identity field shape |
+|---|---|---|
+| `SubstrateEWDerivations` | [`QOU/BraidKnot/SubstrateEWHypotheses.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean) | `claim_g_eq_pi_h : gauge_coupling_g = Real.pi * h_substrate_value` + 2 more |
+| `HeckeMassTraceContext` | [`QOU/Braiding/hecke_mass_trace.lean`](../../content/quantum-observable-universe/lean/QOU/Braiding/hecke_mass_trace.lean) | `claim_cat_mass_eq_norm_trace : cat_mass = norm (markovInst.trace Phi_mass)` + 1 more |
+| `CategoricalHiggsIdempotent` | (commit `0cf311f7` / `8454f01f`) | qDim closed-form fields |
+| `GActionOnSubstrate` | (commit `b71592d9` / `f81044ff`) | encoded axioms |
+| `StaircaseEWResidual` | (commit `32e93fd3`) | bundled empirical hypotheses |
+
+These are **not** part of the audit-visibility-stub category (no `: True` field) — they are examples of **already-strengthened §3b-cond classes**. The strengthening pattern is uniform: each conjectural-condition field is an extensional identity (LHS = RHS, both real expressions), no naked `sorry`, no `True := trivial`, hypothesis-only (no global instance).
+
+For Candidate 1 (`neutron_qvalue_conditional`) and Candidate 2 (`Q_borromean_eq_zero`), use these 5 as templates when authoring the extensional fields.
+
 ## Recommended disposition
 
 1. **Default: leave the 9 as-is.** They are intentional markers and
