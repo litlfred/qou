@@ -46,17 +46,13 @@ Ref: qbeta-decay-sdp-knot-operator.witness.json (τ_M = Σ z^k structure)
 """
 from __future__ import annotations
 
-import sys as _sys
-from pathlib import Path as _Path
-_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
-import _path_bridge as _bridge  # noqa: E402, F401
-del _sys, _Path, _bridge
-
 import sys
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parent))
+# computations/ on sys.path — for _path_bridge (substrate/_precision) + witness_base
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _bridge
 
 import sympy as sp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
@@ -68,14 +64,15 @@ def z_recursion_coeffs(n_max: int) -> list[sp.Rational]:
 
     Pre-archimedean: every a_n is an EXACT rational. No q_0, no fitting.
     """
+    if n_max < 0:
+        raise ValueError("n_max must be a non-negative integer")
     a = [sp.Rational(0)] * (n_max + 1)
     a[0] = sp.Rational(1, 2)              # z(1) = 1/2
     if n_max >= 1:
         a[1] = sp.Rational(0)             # z'(1) = 0
     for n in range(1, n_max):
-        # 4(n+1) a_{n+1} = -[6n a_n + (2n-1) a_{n-1}]
-        a[n + 1] = -(sp.Integer(6) * n * a[n]
-                     + (sp.Integer(2) * n - 1) * a[n - 1]) / (sp.Integer(4) * (n + 1))
+        # 4(n+1) a_{n+1} = -[6n a_n + (2n-1) a_{n-1}]  (Python ints coerce via a[·] ∈ ℚ)
+        a[n + 1] = -(6 * n * a[n] + (2 * n - 1) * a[n - 1]) / (4 * (n + 1))
     return a
 
 
@@ -89,13 +86,14 @@ def zk_recursion_coeffs(k: int, n_max: int) -> list[sp.Rational]:
     Derived from (4+6w+2w²)·(z^k)' + k·w·z^k = 0, which follows from
     z's own ODE since (z^k)' = k z^{k−1} z'. Pre-archimedean, exact.
     """
+    if n_max < 0:
+        raise ValueError("n_max must be a non-negative integer")
     b = [sp.Rational(0)] * (n_max + 1)
     b[0] = sp.Rational(1, 2) ** k
     if n_max >= 1:
         b[1] = sp.Rational(0)
     for n in range(1, n_max):
-        b[n + 1] = -(sp.Integer(6) * n * b[n]
-                     + (sp.Integer(2) * (n - 1) + k) * b[n - 1]) / (sp.Integer(4) * (n + 1))
+        b[n + 1] = -(6 * n * b[n] + (2 * (n - 1) + k) * b[n - 1]) / (4 * (n + 1))
     return b
 
 
@@ -127,7 +125,7 @@ def main() -> int:
     print("  --+------------------------+---------------------+------")
     all_match = True
     for n in range(12):
-        s = sp.nsimplify(series_coeffs[n])
+        s = series_coeffs[n]               # already an exact rational (no nsimplify needed)
         r = rec_coeffs[n]
         m = sp.simplify(s - r) == 0
         all_match = all_match and m
