@@ -23,8 +23,6 @@ as the magic input).
 """
 from __future__ import annotations
 
-from pathlib import Path
-
 import _path_bridge  # noqa: F401, E402 — Phase-6 bridge
 from mpmath import mpf  # noqa: E402
 
@@ -47,13 +45,13 @@ CHAIN = {"D": ["pn"], "T": ["pn", "nn"], "3He": ["pp", "pn"],
          "4He": ["pp", "pn", "nn"]}
 
 
-def bond_binding(Z, N):
+def bond_binding(Z, N, E0):
     r = bc.binding_canonical(Z, N)
     return E0 * (abs(mpf(str(r["tr_M_free"]))) - abs(mpf(str(r["tr_M_atom"]))))
 
 
 def main() -> int:
-    B = {xy: bond_binding(*zn) for xy, zn in BOND_ZN.items()}
+    B = {xy: bond_binding(*zn, E0) for xy, zn in BOND_ZN.items()}
     print(f"E_0 = {float(E0):.4f} MeV   bond bindings: "
           f"pp={float(B['pp']):.3f} pn={float(B['pn']):.3f} nn={float(B['nn']):.3f}\n")
     print(f"{'iso':<5}{'chain bonds':<16}{'B_chain':<10}{'AME':<9}{'err%':<9}"
