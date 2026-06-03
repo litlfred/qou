@@ -16,7 +16,7 @@ Atom binding via the CANONICAL Jones-Markov trace.
 Wires markov_trace_canonical.tr_M_element (Direction 1 of the
 validity audit) into the atom braid-word binding calculation:
 
-  B(Z, N) = E_0 · ( |tr_M(W_free)| − |tr_M(W_atom)| )
+  B(Z, N) = E_0 · ( tr_M(W_free) − tr_M(W_atom) )   [signed; categorical]
 
 where tr_M is the Markov-axioms-satisfying trace matching
 prop:categorical-mass-markov's explicit values table — NOT the
@@ -141,7 +141,9 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                         **kwargs) -> dict:
     """Binding via canonical Markov trace.
 
-    B = Q_β(n) · (|tr_M(W_free)| − |tr_M(W_atom)|),
+    B = Q_β(n) · (tr_M(W_free) − tr_M(W_atom)),   [SIGNED categorical
+    difference — see the in-body note; the double-modulus form was a
+    non-archimedean misuse]
     Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, CAL-3
     per [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
 
@@ -154,7 +156,7 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     requires $Q_\\beta$-scaled dimensionless trace differences),
     only the name was wrong. The function now exposes the parameter
     with its correct identifier. **Dimensional note.** `Q_beta_n_mev`
-    enters the formula `B = Q_β(n) · (|tr_M(W_free)| - |tr_M(W_atom)|)`
+    enters the formula `B = Q_β(n) · (tr_M(W_free) - tr_M(W_atom))`
     as the **MeV-dimensioned multiplier** of a dimensionless trace
     difference; no further $E_0$ scaling is applied (in particular,
     do *not* multiply the result by `e_0_full_mev()` — that would
@@ -283,7 +285,20 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 
     tr_atom_r = tr_atom.real if abs(tr_atom.imag) < 1e-6 else tr_atom
     tr_free_r = tr_free.real if abs(tr_free.imag) < 1e-6 else tr_free
-    B = Q_beta_n_mev * (abs(tr_free_r) - abs(tr_atom_r))
+    # Categorical binding scalar is the SIGNED trace difference
+    #   Δtr = tr_M(W_free) − tr_M(W_atom).
+    # The double-modulus form |tr_M(W_free)| − |tr_M(W_atom)| was a
+    # non-archimedean misuse (per
+    # docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md): it
+    # applies the archimedean observation `|·|` to each trace BEFORE the
+    # difference, which is neither the signed categorical scalar nor the
+    # bar-norm `tr_M·\bar{tr_M}`.  The per-mass positivity observation is
+    # a no-op here (both traces are real & positive at q_0 ∈ ℝ), so the
+    # signed difference IS the archimedean binding — and it correctly
+    # preserves the binding/anti-binding SIGN, which the double-modulus
+    # form would distort whenever a trace is negative.
+    delta_tr = tr_free_r - tr_atom_r                      # signed categorical scalar
+    B = Q_beta_n_mev * (delta_tr.real if isinstance(delta_tr, complex) else delta_tr)
     return {
         "status": "solved",
         "Z": Z, "N": N, "A": A,
@@ -352,8 +367,10 @@ if __name__ == "__main__":
             "explicit-values table tr_M(σ_0)=z, tr_M(σ_0σ_1)=z², "
             "tr_M(σ_0σ_1σ_0)=hz²+z. Replaces the Plancherel-"
             "weighted trace used in binding_3A and "
-            "atom_markov_trace. Binding = Q_β(n)·(|tr_M_free| − "
-            f"|tr_M_atom|) with Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-"
+            "atom_markov_trace. Binding = Q_β(n)·(tr_M_free − "
+            f"tr_M_atom) [SIGNED categorical difference; the double-"
+            f"modulus |·|−|·| was a non-archimedean misuse] with "
+            f"Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-"
             "neutron β-decay Q-value, CAL-3 calibration input — "
             "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV). "
             "DIAGNOSTIC ONLY: predicted B values are 5–40× smaller "
