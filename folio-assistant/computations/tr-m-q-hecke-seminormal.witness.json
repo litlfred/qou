@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-09T00:16:36.911225+00:00",
-  "commitSha": "f178edd94a6d880523fadda22b11180b48760635",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-06-03T22:46:37.313105+00:00",
+  "commitSha": "c0cb212355821e71929ff2bf6636b7b6c93422cc",
   "assertions": [
     {
       "name": "q_hecke_seminormal_closes_gap[proton]_to_1e-3",
@@ -36,9 +36,9 @@
     },
     {
       "name": "q_hecke_seminormal_closes_gap[deuteron]_to_1e-6",
-      "computed": "True",
+      "computed": "False",
       "expected": "True",
-      "passed": true
+      "passed": false
     },
     {
       "name": "q_hecke_seminormal_closes_gap[tritium]_to_1e-3",
@@ -48,9 +48,9 @@
     },
     {
       "name": "q_hecke_seminormal_closes_gap[tritium]_to_1e-6",
-      "computed": "True",
+      "computed": "False",
       "expected": "True",
-      "passed": true
+      "passed": false
     },
     {
       "name": "q_hecke_seminormal_closes_gap[helium-3]_to_1e-3",
@@ -60,17 +60,32 @@
     },
     {
       "name": "q_hecke_seminormal_closes_gap[helium-3]_to_1e-6",
-      "computed": "True",
+      "computed": "False",
       "expected": "True",
-      "passed": true
+      "passed": false
     }
   ],
-  "allPassed": true,
-  "durationMs": 59463,
+  "allPassed": false,
+  "durationMs": 798,
   "computation": "tr-m-q-hecke-seminormal",
   "scriptFile": "tr_m_q_hecke_seminormal.py",
-  "scriptHash": "ce83de9142e8",
-  "scriptCommitSha": "f178edd94a6d880523fadda22b11180b48760635",
+  "scriptHash": "faf9ea0326f1",
+  "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Closes the character gap in the partition-sum tr_M path: tr_M(β) = Σ_λ y_λ(q) · χ^λ_q(β) via canonical Wenzl y_λ (numerical-q-from-start) + Hoefsmit seminormal χ^λ_q at q_0. Cross-checks against `markov_trace_recursive` reference (atomic-tr-m-mpfr-50dps.witness.json). Closes the residual gap identified in tr-m-jones-markov-cross-check.witness.json (rel err ~55-80% with q=1 MN character → expected ~1e-6 with q-Hecke seminormal character).",
   "data": {
     "cross_check_table": [
@@ -80,13 +95,13 @@
         "N": 0,
         "A": 1,
         "n_strands": 3,
-        "canonical_abs_tr_M": 1.0653062285923893,
-        "q_hecke_partition_sum": 1.0653062285923935,
-        "q_hecke_abs": 1.0653062285923935,
-        "rel_err_vs_canonical": 3.9602204327201236e-15,
+        "canonical_abs_tr_M": 1.06530614425445,
+        "q_hecke_partition_sum": 1.0653061442544522,
+        "q_hecke_abs": 1.0653061442544522,
+        "rel_err_vs_canonical": 2.0843267085484453e-15,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 0.15184295099993506,
+        "elapsed_sec": 0.1756103569998686,
         "non_zero_partitions": 3,
         "top_3_contributions": [
           {
@@ -94,9 +109,9 @@
               3
             ],
             "dim": 1,
-            "y_at_q0": 0.4153957863345666,
-            "chi_q_at_q0": 1.382494514546446,
-            "contribution": 0.5742823959732458
+            "y_at_q0": 0.4153957953606134,
+            "chi_q_at_q0": 1.3824944633925964,
+            "contribution": 0.574282387202612
           },
           {
             "partition": [
@@ -104,9 +119,9 @@
               1
             ],
             "dim": 2,
-            "y_at_q0": 0.2809296339798641,
-            "chi_q_at_q0": 1.8077033200981636,
-            "contribution": 0.5078374320593622
+            "y_at_q0": 0.2809296310310197,
+            "chi_q_at_q0": 1.8077030637786238,
+            "contribution": 0.5078373547209727
           },
           {
             "partition": [
@@ -115,9 +130,9 @@
               1
             ],
             "dim": 1,
-            "y_at_q0": 0.022744945705705264,
-            "chi_q_at_q0": -0.7392235469701234,
-            "contribution": -0.016813599440214322
+            "y_at_q0": 0.022744942577347185,
+            "chi_q_at_q0": -0.7392235707764777,
+            "contribution": -0.016813597669132527
           }
         ]
       },
@@ -127,13 +142,13 @@
         "N": 1,
         "A": 1,
         "n_strands": 3,
-        "canonical_abs_tr_M": 0.9232332971695837,
-        "q_hecke_partition_sum": 0.9232332971695876,
-        "q_hecke_abs": 0.9232332971695876,
-        "rel_err_vs_canonical": 4.208882628151452e-15,
+        "canonical_abs_tr_M": 0.9232332299116371,
+        "q_hecke_partition_sum": 0.9232332299116388,
+        "q_hecke_abs": 0.9232332299116388,
+        "rel_err_vs_canonical": 1.803806972044458e-15,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 0.000795348999986345,
+        "elapsed_sec": 0.00041550599985384906,
         "non_zero_partitions": 3,
         "top_3_contributions": [
           {
@@ -142,18 +157,18 @@
               1
             ],
             "dim": 2,
-            "y_at_q0": 0.2809296339798641,
-            "chi_q_at_q0": 1.7008888500891666,
-            "contribution": 0.4778300820959815
+            "y_at_q0": 0.2809296310310197,
+            "chi_q_at_q0": 1.7008886061270454,
+            "contribution": 0.47783000854413626
           },
           {
             "partition": [
               3
             ],
             "dim": 1,
-            "y_at_q0": 0.4153957863345666,
-            "chi_q_at_q0": 1.1221068372363079,
-            "contribution": 0.46611845200516966
+            "y_at_q0": 0.4153957953606134,
+            "chi_q_at_q0": 1.1221068216024748,
+            "contribution": 0.4661184556391299
           },
           {
             "partition": [
@@ -162,9 +177,9 @@
               1
             ],
             "dim": 1,
-            "y_at_q0": 0.022744945705705264,
-            "chi_q_at_q0": -0.910762206232366,
-            "contribution": -0.020715236931563505
+            "y_at_q0": 0.022744942577347185,
+            "chi_q_at_q0": -0.9107622145530778,
+            "contribution": -0.02071523427162731
           }
         ]
       },
@@ -174,13 +189,13 @@
         "N": 1,
         "A": 2,
         "n_strands": 6,
-        "canonical_abs_tr_M": 0.3882864715477134,
-        "q_hecke_partition_sum": 0.3882864715477161,
-        "q_hecke_abs": 0.3882864715477161,
-        "rel_err_vs_canonical": 7.00525671030851e-15,
+        "canonical_abs_tr_M": 0.38828642407478886,
+        "q_hecke_partition_sum": 0.3883572099845983,
+        "q_hecke_abs": 0.3883572099845983,
+        "rel_err_vs_canonical": 0.00018230333439568793,
         "agrees_to_1e_minus_3": true,
-        "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 3.0886311740000565,
+        "agrees_to_1e_minus_6": false,
+        "elapsed_sec": 0.004447491000064474,
         "non_zero_partitions": 11,
         "top_3_contributions": [
           {
@@ -189,18 +204,18 @@
               1
             ],
             "dim": 5,
-            "y_at_q0": 0.058960681401453746,
-            "chi_q_at_q0": 3.2158914339387135,
-            "contribution": 0.18961115025812472
+            "y_at_q0": 0.05896068354593311,
+            "chi_q_at_q0": 3.216317757058765,
+            "contribution": 0.18963629345710722
           },
           {
             "partition": [
               6
             ],
             "dim": 1,
-            "y_at_q0": 0.05918771693214866,
-            "chi_q_at_q0": 1.559758739418077,
-            "contribution": 0.09231855875112216
+            "y_at_q0": 0.05918772109163174,
+            "chi_q_at_q0": 1.5598703080609488,
+            "contribution": 0.09232516873262912
           },
           {
             "partition": [
@@ -208,9 +223,9 @@
               2
             ],
             "dim": 9,
-            "y_at_q0": 0.04028438696593522,
-            "chi_q_at_q0": 1.6737481247387067,
-            "contribution": 0.06742591714048247
+            "y_at_q0": 0.04028438790125638,
+            "chi_q_at_q0": 1.674395891898615,
+            "contribution": 0.06745201360951396
           }
         ]
       },
@@ -220,13 +235,13 @@
         "N": 2,
         "A": 3,
         "n_strands": 9,
-        "canonical_abs_tr_M": 0.10405211867552573,
-        "q_hecke_partition_sum": 0.10405211867552684,
-        "q_hecke_abs": 0.10405211867552684,
-        "rel_err_vs_canonical": 1.0669874277978483e-14,
+        "canonical_abs_tr_M": 0.1040521067420518,
+        "q_hecke_partition_sum": 0.10407107578806198,
+        "q_hecke_abs": 0.10407107578806198,
+        "rel_err_vs_canonical": 0.0001823033343976425,
         "agrees_to_1e_minus_3": true,
-        "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 55.84989316999997,
+        "agrees_to_1e_minus_6": false,
+        "elapsed_sec": 0.29775270599998294,
         "non_zero_partitions": 30,
         "top_3_contributions": [
           {
@@ -235,9 +250,9 @@
               3
             ],
             "dim": 48,
-            "y_at_q0": 0.0044564421255197766,
-            "chi_q_at_q0": 10.16741952165563,
-            "contribution": 0.04531051666413828
+            "y_at_q0": 0.004456442453625004,
+            "chi_q_at_q0": 10.168595132527397,
+            "contribution": 0.04531575904231966
           },
           {
             "partition": [
@@ -245,9 +260,9 @@
               1
             ],
             "dim": 8,
-            "y_at_q0": 0.007306301640626693,
-            "chi_q_at_q0": 3.7402811795852773,
-            "contribution": 0.027327622518809054
+            "y_at_q0": 0.007306302293061436,
+            "chi_q_at_q0": 3.7407471031058916,
+            "contribution": 0.0273310291371855
           },
           {
             "partition": [
@@ -255,9 +270,9 @@
               2
             ],
             "dim": 27,
-            "y_at_q0": 0.0062689450192913556,
-            "chi_q_at_q0": 3.1900195401578078,
-            "contribution": 0.01999805710771439
+            "y_at_q0": 0.0062689455070904145,
+            "chi_q_at_q0": 3.1908429616570833,
+            "contribution": 0.020003220648311244
           }
         ]
       },
@@ -267,13 +282,13 @@
         "N": 1,
         "A": 3,
         "n_strands": 9,
-        "canonical_abs_tr_M": 0.20654085856226276,
-        "q_hecke_partition_sum": 0.2065408585622649,
-        "q_hecke_abs": 0.2065408585622649,
-        "rel_err_vs_canonical": 1.0347489292338557e-14,
+        "canonical_abs_tr_M": 0.20654081702073965,
+        "q_hecke_partition_sum": 0.20657847010037175,
+        "q_hecke_abs": 0.20657847010037175,
+        "rel_err_vs_canonical": 0.00018230333439769517,
         "agrees_to_1e_minus_3": true,
-        "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 0.35315382099997805,
+        "agrees_to_1e_minus_6": false,
+        "elapsed_sec": 0.29574473400020906,
         "non_zero_partitions": 30,
         "top_3_contributions": [
           {
@@ -282,9 +297,9 @@
               3
             ],
             "dim": 48,
-            "y_at_q0": 0.0044564421255197766,
-            "chi_q_at_q0": 16.06473221702975,
-            "contribution": 0.0715915493871661
+            "y_at_q0": 0.004456442453625004,
+            "chi_q_at_q0": 16.066823404557233,
+            "contribution": 0.07160087391496467
           },
           {
             "partition": [
@@ -292,9 +307,9 @@
               1
             ],
             "dim": 8,
-            "y_at_q0": 0.007306301640626693,
-            "chi_q_at_q0": 6.567663928203207,
-            "contribution": 0.04798533373371584
+            "y_at_q0": 0.007306302293061436,
+            "chi_q_at_q0": 6.568434422915672,
+            "contribution": 0.047990967485972445
           },
           {
             "partition": [
@@ -302,9 +317,9 @@
               2
             ],
             "dim": 27,
-            "y_at_q0": 0.0062689450192913556,
-            "chi_q_at_q0": 7.5675725819338036,
-            "contribution": 0.047440696445639745
+            "y_at_q0": 0.0062689455070904145,
+            "chi_q_at_q0": 7.569128733493167,
+            "contribution": 0.04745045556642095
           }
         ]
       }

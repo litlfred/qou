@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T20:27:00.356119+00:00",
-  "commitSha": "285c228058a7a2f8d5f7568086af4aabc5ddcd0b",
+  "computedAt": "2026-06-03T22:46:32.005758+00:00",
+  "commitSha": "c0cb212355821e71929ff2bf6636b7b6c93422cc",
   "assertions": [
     {
       "name": "data_loaded",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6545,
+  "durationMs": 7866,
   "computation": "binding-via-interface-knot",
   "scriptFile": "binding_via_interface_knot.py",
   "scriptHash": "1b396e549da4",

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T20:16:10.972488+00:00",
-  "commitSha": "2a85010aa5dc25fe0c803e67a672c1cfd909f8a7",
+  "computedAt": "2026-06-03T22:44:04.328795+00:00",
+  "commitSha": "c0cb212355821e71929ff2bf6636b7b6c93422cc",
   "assertions": [
     {
       "name": "rust_kernel_loaded",
@@ -350,7 +350,7 @@
           "chi_lambda": -0.6842725642007798
         }
       ],
-      "compute_time_sec": 0.009521484375,
+      "compute_time_sec": 0.009780406951904297,
       "Z": 1,
       "N": 2,
       "A": 3,
@@ -671,7 +671,7 @@
           "chi_lambda": -0.6131769419012726
         }
       ],
-      "compute_time_sec": 0.005857706069946289,
+      "compute_time_sec": 0.010196447372436523,
       "Z": 1,
       "N": 2,
       "A": 3,

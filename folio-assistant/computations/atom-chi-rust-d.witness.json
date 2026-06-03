@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T20:16:10.701490+00:00",
-  "commitSha": "2a85010aa5dc25fe0c803e67a672c1cfd909f8a7",
+  "computedAt": "2026-06-03T22:44:03.988518+00:00",
+  "commitSha": "c0cb212355821e71929ff2bf6636b7b6c93422cc",
   "assertions": [
     {
       "name": "rust_kernel_loaded",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 8,
   "computation": "atom-chi-rust-d",
   "scriptFile": "compute_atom_chi_rust.py",
   "scriptHash": "a36c38496138",
@@ -143,7 +143,7 @@
           "chi_lambda": -0.676876636346044
         }
       ],
-      "compute_time_sec": 0.001363992691040039,
+      "compute_time_sec": 0.000698089599609375,
       "Z": 1,
       "N": 1,
       "A": 2,
@@ -257,7 +257,7 @@
           "chi_lambda": 0.6732568963702186
         }
       ],
-      "compute_time_sec": 0.00016617774963378906,
+      "compute_time_sec": 0.00016951560974121094,
       "Z": 1,
       "N": 1,
       "A": 2,
