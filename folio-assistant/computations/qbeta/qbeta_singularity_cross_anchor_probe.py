@@ -80,7 +80,6 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 import mpmath as mp  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 100
@@ -117,8 +116,8 @@ def main() -> int:
         b = mp.sqrt(b_sq)
         return b, hbar_q_sq, b * hbar_q_sq
 
-    b_p, hbar_p_sq, u_p = b_and_hbar(q_proton)
-    b_m, hbar_m_sq, u_m = b_and_hbar(q_muon)
+    _, _, u_p = b_and_hbar(q_proton)
+    _, _, u_m = b_and_hbar(q_muon)
 
     print(f"Q_β singularity cross-anchor probe")
     print(f"  q_proton    = {mp.nstr(q_proton, 14)}")
@@ -136,7 +135,6 @@ def main() -> int:
     print("--- (a) Re-evaluate c_k_proton · u^k AT each anchor's u ---")
     print(f"  (c_k_proton = canonical-pinned extraction at q_proton)")
     print(f"  {'k':>3s} {'c_k':>20s} {'c_k·u_p^k':>18s} {'c_k·u_m^k':>18s} {'ratio':>14s}")
-    tail_p = []; tail_m = []
     for k in sorted(ck.keys()):
         if k < 6:
             continue
@@ -144,9 +142,6 @@ def main() -> int:
         cm = ck[k] * u_m ** k
         ratio = cm / cp if cp != 0 else mp.mpf(0)
         print(f"  {k:>3d} {mp.nstr(ck[k], 10):>20s} {mp.nstr(cp, 10):>18s} {mp.nstr(cm, 10):>18s} {mp.nstr(ratio, 10):>14s}")
-        if k >= 8:
-            tail_p.append(cp)
-            tail_m.append(cm)
     print()
 
     # The ratio cp/cm = (u_p/u_m)^k. At large k, the ratio amplifies the

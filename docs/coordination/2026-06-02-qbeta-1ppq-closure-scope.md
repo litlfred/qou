@@ -2,25 +2,33 @@
 
 **Date:** 2026-06-02
 **Branch:** `claude/qbeta-1ppq-closure-2026-06-02`
-**Trigger:** Owner directive "dor all 3" — execute the three next-steps identified at PR #1713's close: singularity-type ID, cross-anchor validation, dashboard wiring.
+**Trigger:** Owner directive "do all 3" — execute the three next-steps identified at PR #1713's close: singularity-type ID, cross-anchor validation, dashboard wiring.
+
+> **Notation.** `u_subst` is shorthand for `u_substrate = b · ℏ_q²` ≈ 0.00852 at q_0 throughout this document.
+
+> **Math correction (per Gemini review of PR #1727).** Distinguish two objects built from the ladder coefficients c_k:
+> - **`g(u) = Σ_k c_k u^k`** — the log-correction *generating function* (≈ `log Π(1 + c_k u^k)` to leading order). The asymptote `c_k · u_subst^k → A_const` (the test below) means `g(u) → Σ A_const (u/u_subst)^k = A_const · u_subst / (u_subst − u)` — i.e. **`g(u)` has a SIMPLE POLE** at u_subst with residue `A`. This is the object the discriminator characterizes, and the categorically-meaningful one (it is the log-derivative quantity).
+> - **`F(u) = Π_k (1 + c_k u^k)`** — the *product* correction factor itself. Since `F(u) = exp(g(u) + …)`, a simple pole of `g` makes `F` have an **essential singularity** (`F ~ exp(C/(u_subst − u))`). So "simple pole" refers to `g(u) = Σ c_k u^k`, NOT to the product `F`.
+>
+> Earlier drafts wrote "F(u) = Π(1+c_k u^k) has a simple pole" — that was a sum/product conflation; the precise statement is "the generating function `g(u) = Σ c_k u^k` has a simple pole, equivalently the product `F` has an essential singularity (exp of that pole)".
 
 ## Background
 
-PR #1713 (merged `a99493e20c`) established that the Q_β precision-ladder Habiro element `F(u) = Π (1 + c_k u^k)` has **radius of convergence exactly equal to u_substrate** at q_0 (asymptotic `c_{k+1}/c_k → 1/u = 117.41` matched to 4 sig figs at k=8,9,10). F(u) has a singularity at the very evaluation point u_substrate ≈ 0.00852.
+PR #1713 (merged `a99493e20c`) established that the Q_β precision-ladder generating function `g(u) = Σ c_k u^k` has **radius of convergence exactly equal to u_substrate** at q_0 (asymptotic `c_{k+1}/c_k → 1/u = 117.41` matched to 4 sig figs at k=8,9,10). `g(u)` has a singularity at the very evaluation point u_substrate ≈ 0.00852.
 
 The radius-of-convergence finding alone does NOT discriminate among singularity types (simple pole / branch point of fractional order / essential). Identifying the type bounds the categorical-ID search drastically — which is the prerequisite for 1ppQ closure.
 
 ## Step 1 — Identify the singularity type at u = u_substrate
 
-Discriminate via three measurements, all tractable with existing SDP infrastructure:
+Discriminate the singularity of `g(u) = Σ c_k u^k` via three measurements, all tractable with existing SDP infrastructure:
 
-| candidate | c_k asymptote signature | log F asymptote |
+| candidate (for `g(u) = Σ c_k u^k`) | c_k asymptote signature | g(u) asymptote |
 |---|---|---|
-| Simple pole `A/(u_subst − u)` | `c_k → A · u_subst^(−k−1)` (constant prefactor) | `−log(1 − u/u_subst)` series |
-| Branch point order β | `c_k → C · k^(β−1) · u_subst^(−k)` | `(u_subst − u)^β · g(u)` analytic g |
-| Essential | `c_k` grows faster than any geometric | log F has exp(1/(u_subst−u)) singularity |
+| Simple pole `A/(u_subst − u)` | `c_k → A · u_subst^(−k−1)` (constant prefactor) | `A · u_subst/(u_subst − u)` |
+| Branch point order β | `c_k → C · k^(β−1) · u_subst^(−k)` | `(u_subst − u)^(−β) · h(u)` analytic h |
+| Essential (of g itself) | `c_k` grows faster than any geometric | `g` has exp(1/(u_subst−u)) singularity |
 
-**Test:** extract c_11..c_15 via the same SDP framework (`qbeta_decay_sdp_extended_ck.py` extends naturally — the bottleneck was setting an N=10 ceiling, not a precision wall). Check:
+**Test:** the c_2..c_10 already extracted ([`qbeta_decay_sdp_extended_ck.py`](../../folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py)) suffice — the k=8,9,10 asymptote is already clean. (Extending to c_11..c_15 is NOT possible without postulating canonical forms per rung, which would be an ansatz fit — see the Step 1 method note in the audit.) Check:
 1. Is `c_k · u_subst^k` constant at large k? → simple pole.
 2. Is `c_k · u_subst^k / k^β` constant for some non-integer β? → branch point.
 3. Does the ratio grow super-geometrically? → essential.
@@ -39,7 +47,7 @@ Out-of-scope per CLAUDE.md "no production wiring before cross-anchor validation"
 
 If steps 1 + 2 converge on a categorical singularity-type + matching residue:
 
-- Replace the empirically-extracted c_3..c_10 in `qbeta_ladder_verification_1ppq.py` with the derived formula
+- Replace the empirically-extracted c_3..c_10 in [`qbeta_ladder_verification_1ppq.py`](../../folio-assistant/computations/qbeta/qbeta_ladder_verification_1ppq.py) with the derived formula
 - Re-run the L1 dashboard `onepb-status-dashboard.witness.json` — should show the new derived tier
 - Append to `1ppq-qbeta.md` ledger
 - Reports tiered per the canonical-derivation-cheat-sheet TRUNCATION ORDER framing

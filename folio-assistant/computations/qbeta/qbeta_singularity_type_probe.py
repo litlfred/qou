@@ -11,9 +11,13 @@ radius alone does NOT discriminate among:
   (B) Branch point `(u_subst − u)^β`     → c_k ~ C · k^(β−1) · u_subst^(−k)
   (E) Essential    `exp(C/(u_subst−u))`  → c_k super-geometric growth
 
-This probe extracts c_11..c_15 via the same SDP framework as
-`qbeta_decay_sdp_extended_ck.py` (which ceilings at c_10) and tests
-all three asymptotic signatures.
+This probe loads c_2..c_10 from the canonical-pinned SDP extraction
+(`qbeta-decay-sdp-extended-ck.witness.json`) and tests all three
+asymptotic signatures on the k≥8 tail. (Extending to c_11..c_15 is
+NOT possible without postulating a canonical form per rung — that
+would be an ansatz fit, forbidden per CLAUDE.md; and the k=8,9,10
+tail already discriminates cleanly. See `load_ck` for the method
+note.)
 
 ## Method
 
@@ -65,7 +69,6 @@ sys.path.insert(0, str(HERE.parent))
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # Bump compute precision to 100 dps — source witnesses are 50-67 digits,
@@ -88,15 +91,14 @@ def load_R_q0() -> tuple[mp.mpf, mp.mpf, mp.mpf, mp.mpf]:
     b = mp.mpf(str(data["hoefsmit_b"]))
     hbar_q_sq = mp.mpf(str(data["hbar_q_sq"]))
     # Form A·cos correction (per qbeta_decay_sdp_full_ck.py)
-    N2 = 1 + mp.mpf(-1) * b ** 2 * hbar_q_sq ** 2
+    N2 = 1 - b ** 2 * hbar_q_sq ** 2
     Q_A_cos = Q_N2 / N2
     R_q0 = Q_AME / Q_A_cos
     u_subst = b * hbar_q_sq
     return R_q0, b, hbar_q_sq, u_subst
 
 
-def extract_ck_to_n(R_q0: mp.mpf, b: mp.mpf, hbar_q_sq: mp.mpf,
-                    n_max: int) -> dict[int, mp.mpf]:
+def load_ck() -> dict[int, mp.mpf]:
     """Load c_2..c_10 from the SDP-extended witness.
 
     Method note: extracting c_11..c_15 from R(q_0) alone is
@@ -113,9 +115,9 @@ def extract_ck_to_n(R_q0: mp.mpf, b: mp.mpf, hbar_q_sq: mp.mpf,
     sufficient: PR #1713 already showed c_k · u^k ≈ 2.12e-13 at
     k=8,9,10, which is the **simple-pole signature**. This probe
     confirms tiered + tests the alternative hypotheses (B, E) on
-    the same data.
+    the same data.  (Signature simplified per Copilot #1727 review —
+    it reads from the witness, not from R_q0/b/n_max.)
     """
-    del R_q0, b, hbar_q_sq, n_max  # unused — kept for API symmetry
     src = HERE / "qbeta-decay-sdp-extended-ck.witness.json"
     if not src.exists():
         src = HERE.parent / "qbeta-decay-sdp-extended-ck.witness.json"
@@ -145,7 +147,7 @@ def test_simple_pole(c_k: dict[int, mp.mpf], u_subst: mp.mpf) -> dict:
     if len(tail) >= 2:
         mean_tail = sum(tail) / len(tail)
         rel_spread = max(abs(p - mean_tail) / max(abs(mean_tail), mp.mpf("1e-50")) for p in tail)
-        out["tail_mean_(k_8_to_15)"] = mp.nstr(mean_tail, 12)
+        out["tail_mean_(k_8_to_10)"] = mp.nstr(mean_tail, 12)
         out["tail_relative_spread"] = mp.nstr(rel_spread, 6)
         out["passes_1pct"] = bool(rel_spread < mp.mpf("0.01"))
         out["passes_1ppm"] = bool(rel_spread < mp.mpf("1e-6"))
@@ -244,7 +246,7 @@ def test_essential(c_k: dict[int, mp.mpf], u_subst: mp.mpf) -> dict:
 
 
 def main() -> int:
-    R_q0, b, hbar_q_sq, u_subst = load_R_q0()
+    R_q0, _b, _hbar_q_sq, u_subst = load_R_q0()
     print(f"Q_β singularity-type probe @ q_0 (m_p anchor)")
     print(f"  u_subst = {mp.nstr(u_subst, 12)}")
     print(f"  1/u_subst = {mp.nstr(1 / u_subst, 8)}")
@@ -252,7 +254,7 @@ def main() -> int:
     print(f"  Compute precision: {mp.mp.dps} dps")
     print()
 
-    c_k = extract_ck_to_n(R_q0, b, hbar_q_sq, n_max=10)
+    c_k = load_ck()
     print(f"Loaded c_2..c_{max(c_k)} from SDP-extended witness "
           f"(canonical-pinned extraction):")
     for k in sorted(c_k.keys()):
@@ -300,7 +302,7 @@ def main() -> int:
         "Step 1 of PR #1727 / Q_β 1ppQ closure: discriminate among "
         "(P) simple pole, (B) branch point order β, (E) essential at "
         "u = u_subst for the Habiro element F(u) = Π(1 + c_k u^k). "
-        "Extracts c_2..c_15 via empirical SDP-T_β recursion at 100 dps, "
+        "Loads c_2..c_10 from the canonical-pinned SDP extraction at 100 dps, "
         "then tests all three asymptotic signatures. Reports verdict."
     )
     for k in sorted(c_k.keys()):

@@ -31,7 +31,6 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 import mpmath as mp  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 100
@@ -144,7 +143,7 @@ def main() -> int:
 
     print(f"  [1]_q = {mp.nstr(nq(1), 12)}, [2]_q = {mp.nstr(nq(2), 12)}, "
           f"[3]_q = {mp.nstr(nq(3), 12)}, [4]_q = {mp.nstr(nq(4), 12)}")
-    family4_best = (mp.inf, None)
+    family4_best = (mp.inf, None, None)
     for n in range(1, 6):
         for N in range(13, 17):
             val = nq(n) * hbar ** N
@@ -237,7 +236,6 @@ def main() -> int:
 
     # Φ_8(x) = x^4 + 1 (8th cyclotomic). Evaluate at q and at u.
     Phi8_q = q ** 4 + 1
-    Phi8_u = u ** 4 + 1
     print(f"  Φ_8(q) = q⁴+1 = {mp.nstr(Phi8_q, 12)}")
     print(f"  (u;u)_15 = {mp.nstr(pochhammer(u, 15), 12)}")
     family6 = [
