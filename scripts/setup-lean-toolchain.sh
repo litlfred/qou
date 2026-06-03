@@ -15,6 +15,11 @@
 # Idempotent — safe to re-run. Detects partial state (e.g. /tmp survives
 # but ~/.elan settings reset) and re-links + re-overrides without
 # re-downloading.
+#
+# Exit codes:
+#   0 — toolchain is installed AND the per-repo override resolves it,
+#       verified by a final `lake --version` matching the pinned VERSION
+#   non-zero — verification failed; stderr identifies the failing step
 
 set -uo pipefail
 
@@ -46,15 +51,27 @@ ZIP_URL="https://github.com/leanprover/lean4/releases/download/$VERSION/lean-${V
 ZIP_PATH="/tmp/lean-$VERSION-linux.zip"
 
 # Helper: is the per-repo override already set to LINK_NAME?
+# Uses awk for exact-match on path (avoids regex metachar issues with
+# paths containing '.', '+', '[', etc).
 override_ok() {
   (cd "$REPO_ROOT" && elan override list 2>/dev/null \
-    | grep -qE "^$REPO_ROOT[[:space:]]+$LINK_NAME$")
+    | awk -v r="$REPO_ROOT" -v n="$LINK_NAME" '
+        BEGIN { found=0 }
+        { sub(/[[:space:]]+/, " "); split($0, a, " ");
+          if (a[1] == r && a[2] == n) found=1 }
+        END { exit (found ? 0 : 1) }')
+}
+
+# Helper: does lake resolve to the pinned version inside REPO_ROOT?
+lake_ok() {
+  local v
+  v=$(cd "$REPO_ROOT" && lake --version 2>/dev/null | grep -oE 'Lean version [0-9.]+' | head -1)
+  [ "$v" = "Lean version ${VERSION#v}" ]
 }
 
 # 1. Fully-ready short-circuit: linked + override + lake works.
 if elan toolchain list 2>/dev/null | grep -qE "^$LINK_NAME( |$)" \
-   && override_ok \
-   && (cd "$REPO_ROOT" && lake --version 2>/dev/null | grep -q "Lean version ${VERSION#v}")
+   && override_ok && lake_ok
 then
   exit 0
 fi
@@ -63,7 +80,9 @@ fi
 if [ ! -d "$EXTRACT_DIR/bin" ]; then
   if [ ! -f "$ZIP_PATH" ]; then
     echo "setup-lean-toolchain: downloading $ZIP_URL (~730 MB) ..." >&2
-    if ! curl -sL -o "$ZIP_PATH" "$ZIP_URL"; then
+    # --fail: error out on non-2xx instead of downloading an HTML error
+    # page. --show-error: surface curl errors. -L: follow redirects.
+    if ! curl --fail --show-error -sL -o "$ZIP_PATH" "$ZIP_URL"; then
       echo "setup-lean-toolchain: download failed" >&2
       rm -f "$ZIP_PATH"
       exit 1
@@ -71,6 +90,13 @@ if [ ! -d "$EXTRACT_DIR/bin" ]; then
   fi
   if ! command -v unzip >/dev/null 2>&1; then
     echo "setup-lean-toolchain: unzip not installed" >&2
+    exit 1
+  fi
+  # Sanity-check the zip before extracting (catches partial downloads
+  # and HTML-disguised-as-zip).
+  if ! unzip -t -q "$ZIP_PATH" >/dev/null 2>&1; then
+    echo "setup-lean-toolchain: $ZIP_PATH is not a valid zip (corrupted? wrong URL?)" >&2
+    rm -f "$ZIP_PATH"
     exit 1
   fi
   echo "setup-lean-toolchain: extracting to $EXTRACT_DIR ..." >&2
@@ -94,6 +120,15 @@ elan toolchain link "$LINK_NAME" "$EXTRACT_DIR" 2>/dev/null || true
 # 4. Set repo-level override (always — survives container restarts where
 #    the elan settings file resets but /tmp survives).
 (cd "$REPO_ROOT" && elan override set "$LINK_NAME" 2>/dev/null) || true
+
+# 5. Verify the chain actually resolved. If not, emit a warning + exit
+#    non-zero so CI/automation can detect the broken state.
+if ! lake_ok; then
+  echo "setup-lean-toolchain: WARNING — lake does not resolve to ${VERSION#v} after install" >&2
+  echo "  toolchain list: $(elan toolchain list 2>/dev/null | tr '\n' ' ')" >&2
+  echo "  override list:  $(elan override list 2>/dev/null | tr '\n' ' ')" >&2
+  exit 1
+fi
 
 echo "setup-lean-toolchain: ready ($LINK_NAME, override set on $REPO_ROOT)" >&2
 exit 0
