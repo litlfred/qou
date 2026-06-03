@@ -76,12 +76,21 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
+# Reduced precision is DELIBERATE for this exploratory script: it reports a
+# structural ±70 % effect, far above any precision floor, and the bar path
+# evaluates χ at TWO points (q₀, q₀⁻¹) over dim-≤42 Hoefsmit matrices (slow).
+# 30 dps keeps D at ~3 s; the value is recorded in the witness (`dps` param)
+# so the run is reproducible and the precision metadata is consistent.
 DPS = 30
 mp.mp.dps = DPS
-q0 = mp.mpf(str(float(Q0)))
+q0 = mp.mpf(str(Q0))                          # str(Q0): no float() roundtrip
 qi = 1 / q0                                   # bar image q ↦ q⁻¹
 M_E = mp.mpf(str(M_E_MEV))
 E0 = M_E / (q0 * (q0 - 1))                     # 𝔈₀ ≈ 4.186 MeV (calibration)
+
+# Per-run memo for _channels: each (Z,N,inter,qv) χ/y evaluation is reused
+# across the archimedean and bar passes (and across free/atom), so cache it.
+_CHANNELS_CACHE: dict = {}
 
 # D (n=6) runs in ~3 s and already establishes the finding. T (n=9, set
 # QOU_BAR_INCLUDE_T=1) evaluates χ at q₀ AND q₀⁻¹ over partitions of 9 and
@@ -93,7 +102,13 @@ AME_B = {"D": mp.mpf("2.2245662"), "T": mp.mpf("8.4818")}
 
 
 def _channels(Z, N, inter, qv):
-    """{λ: (y_λ(qv), χ^λ(braid; qv))} over partitions of 3A with non-zero dim."""
+    """{λ: (y_λ(qv), χ^λ(braid; qv))} over partitions of 3A with non-zero dim.
+
+    Memoized per run (key includes str(qv) since mpf is not a stable dict
+    key) — reused across the archimedean/bar passes and free/atom configs."""
+    key = (Z, N, inter, str(qv))
+    if key in _CHANNELS_CACHE:
+        return _CHANNELS_CACHE[key]
     cr = atomic_braid_to_crossings(Z, N, include_inter=inter)
     out = {}
     for lam in partitions_of(3 * (Z + N)):
@@ -102,14 +117,18 @@ def _channels(Z, N, inter, qv):
             continue
         y = y_lambda_wenzl_bridge_numeric(lam, qv, dps=DPS)
         out[lam] = (y, chi)
+    _CHANNELS_CACHE[key] = out
     return out
 
 
 def _bar_length(chi_q, chi_qi):
     """‖χ‖_bar = √(χ(q)·χ(q⁻¹)); real on rotation channels, imaginary on
-    growth channels (⟨χ⟩ < 0). Returns (value, is_growth)."""
-    pairing = chi_q * chi_qi
-    if pairing.real >= 0:
+    growth channels (⟨χ⟩ < 0). Returns (value, is_growth).
+
+    The pairing is real at the substrate anchor (Im(q₀)=0); take `.real`
+    to drop the ~0 mpc imaginary noise before the sign test / sqrt."""
+    pairing = (chi_q * chi_qi).real
+    if pairing >= 0:
         return mp.sqrt(pairing), False
     return mp.sqrt(-pairing), True       # magnitude of the imaginary length
 
@@ -117,17 +136,15 @@ def _bar_length(chi_q, chi_qi):
 def _per_block_bar(Z, N, inter):
     """Σ_λ y_λ ‖χ^λ‖_bar over the braid, and a growth-channel tally.
 
-    y_λ is bar-symmetrized: (y_λ(q₀)+y_λ(q₀⁻¹))/2 (real, bar-invariant)."""
+    y_λ is bar-symmetrized: (y_λ(q₀)+y_λ(q₀⁻¹))/2 (real, bar-invariant).
+    c0 and ci share the same partition keys (dim is q-independent)."""
     c0 = _channels(Z, N, inter, q0)
     ci = _channels(Z, N, inter, qi)
     total = mp.mpf(0)
     n_growth = 0
-    for lam in c0:
-        if lam not in ci:
-            continue
-        y0, chi0 = c0[lam]
+    for lam, (y0, chi0) in c0.items():
         yi, chii = ci[lam]
-        y_bar = (y0 + yi) / 2                  # bar-symmetric weight
+        y_bar = ((y0 + yi) / 2).real           # bar-symmetric weight (real)
         length, growth = _bar_length(chi0, chii)
         n_growth += int(growth)
         total += y_bar * length
@@ -135,9 +152,13 @@ def _per_block_bar(Z, N, inter):
 
 
 def _per_block_arch(Z, N, inter):
-    """Σ_λ y_λ |χ^λ(q₀)| — the archimedean per-block realization."""
+    """Σ_λ y_λ |χ^λ(q₀)| — the archimedean per-block realization.
+
+    The observable at q₀ is real (Im(q₀)=0): take the real-part magnitude
+    |Re χ| / |Re y|, not the complex modulus, so the ~0 mpc imaginary noise
+    does not bias the sum upward (per Copilot review)."""
     c0 = _channels(Z, N, inter, q0)
-    return sum(y * abs(chi) for y, chi in c0.values())
+    return sum(y.real * abs(chi.real) for y, chi in c0.values())
 
 
 def main() -> int:
@@ -181,6 +202,7 @@ def main() -> int:
     wb.add_parameter("E0_MeV", float(E0))
     wb.add_parameter("q0", float(q0))
     wb.add_parameter("q0_inv", float(qi))
+    wb.add_parameter("dps", DPS)            # actual compute precision used
     wb.add_data("per_atom", results)
     # Honest finding: the per-block bar-LENGTH underbinds; the archimedean
     # observation must stay |χ(q₀)|. The assertion records that the
