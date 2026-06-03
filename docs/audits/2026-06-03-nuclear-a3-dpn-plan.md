@@ -31,8 +31,8 @@ From `binding_canonical.py` at q₀ ≈ 1.1099786, Q_β = 0.782333 MeV (CAL-3):
 | ³He  | 3 | 9  | 7.718       | +0.658       | 0.251 %  |
 | ⁴He  | 4 | 12 | 28.296      | +0.714       | 0.735 %  |
 
-Observation: the canonical trace `B = 𝔈₀·(|tr_M(W_free)| −
-|tr_M(W_atom)|)` **underpredicts** the absolute binding by a large factor
+Observation: the canonical trace `B = 𝔈₀·(|tr_M(W_free)| − |tr_M(W_atom)|)`
+**underpredicts** the absolute binding by a large factor
 (D: 0.466 vs 2.225 MeV). The per-nucleus comparison is currently carried
 as a fractional-mass quantity (the `|Δm/m|` column), not as the absolute
 binding. The A=3 task is to close the gap between the canonical trace and
@@ -41,14 +41,14 @@ the absolute B_AME for the two A=3 nuclei **without fitting**.
 ## A=3 plan (item 2)
 
 Categorical object for A=3 is the H₉ atomic braid word (3A = 9
-generators), `atom_braid_word_3A(Z, N)`:
+strands, 8 generators), `atom_braid_word_3A(Z, N)`:
 - triton ³H (Z=1, N=2): (p-block, n-block, n-block) + inter-nucleon crossings;
 - helion ³He (Z=2, N=1): (p-block, p-block, n-block) + inter-nucleon crossings.
 
 Concrete first step (per scoping): explicit H₉ Wedderburn character sum
 weighted by canonical Jones–Wenzl (Ocneanu) weights `ω_λ`, then scaled by
 the binding-link hyperbolic volume (³H → 8₁₁ knot; ³He → L6a4 / Borromean
-8G = 5.688). Compare residual vs AME (³H 8.482, ³He 7.718 MeV). If the
+8G ≈ 7.328, G = Catalan). Compare residual vs AME (³H 8.482, ³He 7.718 MeV). If the
 residual lands inside the error budget with no free parameters, escalate
 to the GAP-A-3 categorical selector (which partition selects which brane
 level).
