@@ -35,44 +35,59 @@ all iterations (only resets each slot to zero) — 7700 allocations,
 not 59 M. My rayon variant traded allocation reuse for parallelism;
 the net is still a win but with significant cache-thrashing.
 
-## Optimization deferred (follow-up branch / commit)
+## Follow-up commit (PR #1748 commit `49856745b0`): fold pattern landed
 
-The clean fix is `rayon::iter::ParallelIterator::fold` with a
-per-worker buffer:
+The `rayon::iter::ParallelIterator::fold` pattern with per-worker
+buffer reuse via `Float::assign(0u32)` was implemented. Measurement
+on the same clean idle 4-core box:
 
-```rust
-let trace: Float = (0..dim).into_par_iter()
-    .fold(
-        || {
-            // Per-worker init: buffer + partial trace.
-            let buf: Vec<Float> = (0..dim).map(|_| Float::with_val(prec, 0)).collect();
-            (buf, Float::with_val(prec, 0))
-        },
-        |(mut buf, mut partial), i| {
-            for k in 0..dim { buf[k].assign(0u32); }  // reset in-place
-            buf[i].assign(1u32);
-            for &(sign, blocks) in resolved.iter().rev() { /* apply σ_g */ }
-            partial += &buf[i];
-            (buf, partial)
-        }
-    )
-    .map(|(_, p)| p)
-    .reduce(|| Float::with_val(prec, 0), |a, b| a + b);
-```
+| Variant | ⁴He wall | χ_λ values |
+|---|---|---|
+| Naive `.map()` (commit `c746c8c88a`) | **624.9 s** | matches main sub-ulp |
+| Fold + buffer reuse (commit `49856745b0`) | **625.5 s** | matches naive sub-ulp |
 
-Estimated allocation reduction: `n_workers × dim` instead of
-`dim × dim` → 4 × 7700 = 30,800 allocations (1925× reduction at
-⁴He). Expected wall: **~150-200s** (closer to the 4× theoretical).
+**Wall time: no measurable change (+0.6 s, well within run-to-run noise).**
 
-Not landed in this PR because:
-1. The patch is already a verified 3× win — no need to gold-plate
-   before review.
-2. The `assign` API on `rug::Float` may have edge cases (assigning
-   integer vs Float; allocation strategy may differ); needs careful
-   verification.
-3. Bit-identity must be re-verified after the buffer-reuse change.
+### Hypothesis REFUTED
 
-Open as a follow-up after this PR is reviewed + merged.
+The "59 M allocations × ~53 bytes = 3 GB churn" was real, but
+NOT the bottleneck. The dominant cost is the **MPFR matmul itself**
+— `rug::Float` arithmetic at 167-bit precision is intrinsically
+slow per multiply (~µs per `Float::mul_assign`), and at dim=7700
+with 47-letter word that's ~2.7 G multiplies on each thread.
+Allocation churn was ≪ 1 % of total wall.
+
+### Why keep the fold pattern then?
+
+- **Memory profile:** 3 GB transient allocation → ~1.6 MB
+  (per-worker buffer, 4 workers × 7700 Floats × 53 bytes). 1925×
+  reduction in allocation traffic — better cache locality, less
+  pressure on the system allocator under concurrent workload.
+- **Code intent:** the per-worker buffer is explicit about reuse
+  intent — clearer than the `.map()` hidden allocation.
+- **Zero correctness cost:** χ_λ bit-identical to the naive
+  variant.
+
+The wall-time miss is honest: the fold pattern is a clean memory
+optimization that does NOT close the gap toward the 4× theoretical.
+
+### What's left if you want < 5 min ⁴He
+
+The remaining cost is the MPFR arithmetic itself. Levers:
+
+1. **Algorithmic** — diagonalize σ_g once at word setup; per-letter
+   becomes vector × diagonal instead of vector × sparse-matrix. The
+   `seminormal::SparseMatrix` is already sparse; diagonalization
+   would change the algebra but is a deeper change.
+2. **Lower precision** — drop to 30 dps if 30 digits suffice for
+   the downstream consumer; ~2× speedup. Conflicts with L1 1-ppQ.
+3. **Different arithmetic library** — switch from MPFR (rug) to
+   GMP-based fixed precision, or to native-precision dot products
+   for the matmul kernel + MPFR refinement. Major engineering
+   investment.
+
+All three are out of scope for this PR. The 3× win at fixed 50 dps
+on a 4-core box is the deliverable.
 
 ## Math correctness
 
