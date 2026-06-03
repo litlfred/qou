@@ -105,3 +105,49 @@ special cases. Full write-up in
 ### Carry-forward
 
 Both items framed initially as "Open Math A" and "Open Math B" turned out (2026-05-31 reanalysis, commit `f4614a09`) to be **structurally already answered** in the framework: ρ_F = ν_SDP per [`conj:kashaev-density-equals-sdp-multiplicity`](../../content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md) (RESOLVED 2026-05-24); p/n asymmetry via Bring color-tube weighting in [`closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py) `pn_convention="bring_color_weighted"` (PROVED PR #690/#942). Remaining is verification/formalisation: Lean class for [`conj:inter-nucleon-channel-color-tube`](../../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md); re-run of `binding_shell_enhancement_derivation.py` with Bring weighting; joint-tower SDP extension to ν_SDP(⁴He). **Pattern post-mortem** of why the existing resolution was missed (third such miss in this session) recorded in audit `## Why was the resolution missed?` section + corrective discipline (grep audits/ + corpus before declaring open).
+
+## 2026-06-03 — PR #1748 bar-pairing extension (cross-PR coord)
+
+PR #1748 (intra-partition rayon for the MPFR character kernel) carries
+a downstream bar-pairing extension of PR #1742 that landed full
+χ_λ data for the light series at q_0 AND q_0^{-1}.  Results below
+are added to the A=3 honesty ledger as **independent confirming
+evidence** for the "per-block formula does not extend past D"
+finding — same conclusion as PR #1754's canonical Jones-Markov
+underprediction and PR #1756's per-knot RED verdict.
+
+### Bar-pairing extension table (PR #1742 formula)
+
+| atom | n | B_arch (MeV) | err vs AME | growth_free / atom |
+|---|---|---|---|---|
+| D   | 6  | 2.3043 | +3.6 % | 4/5 |
+| T   | 9  | 3.2525 | **−61.7 %** | 16/16 |
+| ³He | 9  | 3.4667 | **−55.1 %** | 16/12 |
+| ⁴He | 12 | 3.8043 | **−86.6 %** | 32/29 |
+
+Three independent per-block formulations now agree the formula fails
+past D:
+
+- PR #1742 `Σ_λ y_λ (|χ^λ_free| − |χ^λ_atom|)` — err D +3.6 % → ⁴He −86.6 %
+- PR #1754 canonical Jones-Markov — uniformly underpredicts ~0.4-0.7 MeV
+- PR #1756 per-knot `m_e · Geom_full(K)` — err −50 % to −97 % across 6 atoms
+
+### Durable artifacts
+
+On PR #1748's branch (`claude/hecke-mpfr-intra-partition-rayon-2026-06-03`):
+
+- χ_λ MPFR-50dps caches at q_0 AND q_0^{-1} for D / T / ³He / ⁴He
+  (free + atom braids)
+- `bar_pairing_binding_observable.py` cache-aware consumer
+- Roadmap doc:
+  [`docs/audits/2026-06-03-bar-pairing-extension-tritium-he4-roadmap.md`](../audits/2026-06-03-bar-pairing-extension-tritium-he4-roadmap.md)
+
+### Coord cross-links
+
+- PR #1742 (parent observation): two coord comments posted with sanity
+  check + final table
+- PR #1754 (A=3 binding tranche): intent comment posted with cross-isotope data
+- PR #1756 (per-knot 6-atom RED): intent comment posted noting parallel evidence
+
+This entry closes the §3 sibling-intent step of the coordinate sweep
+for the binding-observable scope on 2026-06-03.
