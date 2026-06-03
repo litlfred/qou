@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/observations/m-tau-knot-prediction.md"
   },
   "source_hashes": {
-    "md": "3edecb8ec28f",
-    "ts": "06c11a2dddb1"
+    "md": "0ac945fb6640",
+    "ts": "8684dbaef49d"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2318,8 +2318,24 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/observations/m-tau-knot-prediction.ts:1: paper block carries negative-result tag(s) [\"negative-result\"] — move primary content to docs/audits/ and keep only canonical material in the paper (CLAUDE.md authoring discipline; see docs/audits/2026-05-31-ck-exploratory-probes-removed.md)."
+      },
+      {
+        "field_hash": {
+          "md": "0ac945fb6640",
+          "ts": "8684dbaef49d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3b132a7280af",
+          "script_commit_sha": "b3006ea9b2daeb73b5912c919a7bcb21c5834a77"
+        },
+        "reviewed_at": "2026-06-03T20:30:24.391Z",
+        "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

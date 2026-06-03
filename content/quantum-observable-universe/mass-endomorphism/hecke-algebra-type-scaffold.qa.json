@@ -1839,15 +1839,15 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
+          "script_hash": "3b132a7280af",
+          "script_commit_sha": "b3006ea9b2daeb73b5912c919a7bcb21c5834a77"
         },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
+        "reviewed_at": "2026-06-03T20:30:24.391Z",
+        "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/hecke-algebra-type-scaffold.ts:1: paper block carries negative-result tag(s) [\"scaffolding\"] — move primary content to docs/audits/ and keep only canonical material in the paper (CLAUDE.md authoring discipline; see docs/audits/2026-05-31-ck-exploratory-probes-removed.md)."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/hecke-algebra-type-scaffold.ts:1: paper block carries WIP-scaffolding tag pair [\"scaffolding\", \"open-rd-item-2\"] — move primary content to docs/audits/ and keep only canonical material in the paper. (Standalone \"scaffolding\" tag is allowed for axiomatic/structural buildup; pairing with an \"open-rd-item-*\" tag signals WIP R&D content. See docs/audits/2026-06-03-canonical-axis-current-fails-triage.md Pattern A.1.)"
       }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-03T20:30:24.391Z"
 }

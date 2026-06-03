@@ -694,11 +694,18 @@ const VAL_DIRECTIVE_RE = /:val\[([^\]]+)\]\{([^}]+)\}/g;
 // docs/audits/2026-05-31-ck-exploratory-probes-removed.md). The .md
 // signals fire on *opening* prose: "## Status: ... falsified",
 // "Hypothesis falsified", "## Status: open R&D — no known", etc.
+//
+// Note on `scaffolding`: handled separately below — only flagged when
+// paired with a `open-rd-item-*` tag (WIP marker). A standalone
+// `scaffolding` tag means *axiomatic scaffolding* (categorical /
+// structural buildup, e.g. braid-group-n-strand as the axiomatic
+// scaffold generalising B_2/B_3) and is legitimate paper content. See
+// docs/audits/2026-06-03-canonical-axis-current-fails-triage.md
+// Pattern A.1 for the cases that motivated the distinction.
 const NEG_RESULT_TAGS = new Set([
   "negative-result",
   "falsified",
   "superseded",
-  "scaffolding",  // works hand-in-hand with `open-rd-item-N` tags
 ]);
 // .md status markers — accept ASCII hyphen, en-dash, and em-dash for
 // the dash separator after "Status:" / "Errata banner" prefixes.
@@ -741,6 +748,26 @@ export function checkCanonicalNoNegativeResultInPaper(
           `— move primary content to docs/audits/ and keep only canonical ` +
           `material in the paper (CLAUDE.md authoring discipline; see ` +
           `docs/audits/2026-05-31-ck-exploratory-probes-removed.md).`,
+      });
+    }
+    // Special case: `scaffolding` paired with `open-rd-item-*` is the
+    // WIP-scaffolding pattern (legit-scaffolding-tag alone is allowed
+    // for axiomatic/structural buildup blocks). Flag the pair.
+    const hasScaffolding = tags.includes("scaffolding");
+    const openRdItem = tags.find((t) => /^open-rd-item-\d+$/.test(t));
+    if (hasScaffolding && openRdItem) {
+      hits.push({
+        file: tsPath ?? "(unknown)",
+        line: 1,
+        text:
+          `paper block carries WIP-scaffolding tag pair ["scaffolding", ` +
+          `"${openRdItem}"] — move primary content to docs/audits/ and ` +
+          `keep only canonical material in the paper. (Standalone ` +
+          `"scaffolding" tag is allowed for axiomatic/structural ` +
+          `buildup; pairing with an "open-rd-item-*" tag signals WIP ` +
+          `R&D content. See ` +
+          `docs/audits/2026-06-03-canonical-axis-current-fails-triage.md ` +
+          `Pattern A.1.)`,
       });
     }
   }
