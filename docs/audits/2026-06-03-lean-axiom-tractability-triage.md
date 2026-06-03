@@ -38,8 +38,8 @@ even one axiom is impractical without precompiled oleans. **Either**:
 2. Pre-bake Mathlib oleans into the container image (Docker layer).
 3. Defer all Lean-discharge work to a local environment.
 
-See follow-up todo `infra-lean-cache-bypass` (to be filed alongside
-this PR).
+See follow-up todo `infra-lean-cache-host-bypass` (added to
+`todos/lean-discharge-queue.json` in this PR).
 
 ## Tractable axioms (8) — for a working Lean environment
 
