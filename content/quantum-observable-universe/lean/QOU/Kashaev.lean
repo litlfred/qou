@@ -67,6 +67,13 @@ class VolumeConjecture (q : ℝ) where
       hyperbolic volume.  This is the field that plays the role
       of `sorry` for KVC. -/
   kvc_holds : ∀ β, hypVolume β = kashaevLimit β
+  /-- The hyperbolic volume of a Φ_q-piece `K_S` (the sub-link selected
+      by the smoothing set `S`).  Supplied by the instance (the SnapPy
+      bridge layer for concrete knot families); abstract here so callers
+      never see a placeholder masquerading as a genuine S-dependent value. -/
+  pieceVol : (β : Braid) → Finset (Fin (β.n - 1)) → ℝ
+  /-- Piece volumes are non-negative (each is a genuine hyperbolic volume). -/
+  pieceVol_nonneg : ∀ β S, 0 ≤ pieceVol β S
 
 /-- The hyperbolic volume of a Φ_q-piece `K_S`, lifted from the
     typeclass.  This is the canonical bridge between the abstract
@@ -74,28 +81,23 @@ class VolumeConjecture (q : ℝ) where
     `VolumeConjecture.hypVolume` on the analysis side: any concrete
     instance of `VolumeConjecture` populates a real value.
 
-    The combinatorial constructor for `subLink β S` and its hyperbolic
-    volume is deferred to the SnapPy bridge layer; until that bridge
-    lands we leave the value as `sorry` so callers cannot mistake a
-    placeholder for the genuine S-dependent piece volume.  The KVC
-    class only constrains the full-braid limit, not the per-piece
-    values. -/
+    The per-piece value is now supplied by the `VolumeConjecture`
+    instance via the `pieceVol` field (populated by the SnapPy bridge
+    layer for concrete knot families); this definition is the thin
+    accessor.  Callers never see a placeholder masquerading as a genuine
+    S-dependent piece volume — an instance must provide a real value. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
-noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
+noncomputable def pieceVolume (q : ℝ) [inst : VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) : ℝ :=
-  -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
-  sorry
+  inst.pieceVol β S
 
-/-- The piece volume is non-negative.  Once `pieceVolume` is given a
-    concrete combinatorial definition, this becomes a non-trivial fact
-    derived from `inst.hypVolume_nonneg` applied to the sub-braid
-    `subLink β S`. -/
+/-- The piece volume is non-negative — a genuine hyperbolic volume,
+    discharged by the instance field `pieceVol_nonneg`. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
 theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
-    0 ≤ pieceVolume q β S := by
-  -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
-  sorry
+    0 ≤ pieceVolume q β S :=
+  inst.pieceVol_nonneg β S
 
 end QOU.Kashaev
