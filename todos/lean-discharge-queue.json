@@ -1,5 +1,22 @@
 [
   {
+    "id": "lean-catalan-G-numerical-bound",
+    "summary": "Prove catalan_G_numerical_bounds : G > 0.915 ∧ G < 0.916 (currently axiom with [lewin1981] ref)",
+    "comment": "BorromeanVolumeCatalan.lean line ~140 has `axiom catalan_G_numerical_bounds : catalan_G > (0.915:ℝ) ∧ catalan_G < (0.916:ℝ)` (set during 2026-06-03 session a7f80972 batch). Proof strategy: alternating series Leibniz bound. For G = Σ (-1)^k/(2k+1)² with N=22, |G - S_22| ≤ 1/(2·23+1)² = 1/2209, S_22 ≈ 0.91594, so G ∈ (0.91549, 0.91639) ⊆ (0.915, 0.916). Needs Mathlib's alternating-series bound lemma (likely `Antitone.cauchySeq_alternating_series_of_tendsto_zero` or similar — verify with lean_loogle when lake env available). Not attempted in 2026-06-03 session because remote env has no `lake` binary and `lean_leansearch` SSL-blocked, so Mathlib API names couldn't be verified before push.",
+    "status": "open",
+    "priority": "medium",
+    "origin": "session-2026-06-03-lobachevsky-catalan",
+    "createdAt": "2026-06-03",
+    "data": {
+      "goal": "lean-discharge",
+      "file": "content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanVolumeCatalan.lean",
+      "proof_sketch": "1. Show series is alternating with antitone |terms| via `Antitone.cauchySeq_alternating_series_of_tendsto_zero`. 2. Use Leibniz error bound |G - S_N| ≤ a_{N+1}. 3. At N=22, compute S_22 as rational + norm_num. 4. linarith with 1/2209 envelope.",
+      "expected_duration": "1-2h (lake env needed for lemma verification)",
+      "references": ["Lewin 1981 Polylogarithms §4.2", "Mathlib.Analysis.SpecificLimits.Basic"],
+      "blocker": "needs working `lake` + `lean-lsp` to verify Mathlib alternating-series API names"
+    }
+  },
+  {
     "id": "lean-q-schur-h3-y-lambda-extension",
     "summary": "Extend QSchurYLambdaClosedForm Lean from H_2 to H_3 (5 partitions of n=3 missing)",
     "comment": "QSchurYLambdaClosedForm.lean currently has qSchur_H2_top, qSchur_H2_bottom, qSchur_H2_normalization (discharged). H_3 needs the analogous theorems for partitions (3), (2,1), (1,1,1). Mechanical mirror of H_2 pattern; uses contentSum, qBracket, qFactorial unfoldings + decide + field_simp + ring.",
