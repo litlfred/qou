@@ -110,7 +110,7 @@ $\mathsf{C}$ from level $n$.
 2. **Cache lookup.**  For each descended monomial $m$ in
    $f^{\mathrm{desc}}$:
 
-   a. **If** $\mathrm{NF}(m) \in \mathsf{C}$: replace $m$ by
+   a. **If** $m \in \mathsf{C}$: replace $m$ by
       $\mathsf{C}[m]$.
 
    b. **Else**: reduce $m$ using degree-bucketed division
