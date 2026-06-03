@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T18:16:21.452406+00:00",
-  "commitSha": "db171857973b83286a1b2cb66e38c7fd93728dc9",
+  "computedAt": "2026-06-03T18:59:16.717080+00:00",
+  "commitSha": "cf87194d51015b63a2a55be374096982b29feeb4",
   "assertions": [
     {
       "name": "n_atoms_with_per_block_prediction",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 277,
+  "durationMs": 7648,
   "computation": "per-knot-mass-table-demonstration",
   "scriptFile": "per_knot_mass_table_demonstration.py",
-  "scriptHash": "0785ceeceb6b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fe943ecca4aa",
+  "scriptCommitSha": "42b2473d28dca7d4bdb470c42b02aff343120233",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,7 +50,8 @@
         "m_observed_MeV": 938.27208816,
         "err_per_block_pct": -50.39079411982741,
         "err_production_pct": 2.9605203711293626,
-        "delta_per_block_vs_production_pct": -53.351314490956774
+        "delta_per_block_vs_production_pct": -53.351314490956774,
+        "delta_abs_per_block_vs_production_pct": 47.43027374869805
       },
       {
         "atom": "n",
@@ -67,7 +68,8 @@
         "m_observed_MeV": 939.56542052,
         "err_per_block_pct": -51.49427994314135,
         "err_production_pct": 2.8187929619568086,
-        "delta_per_block_vs_production_pct": -54.31307290509816
+        "delta_per_block_vs_production_pct": -54.31307290509816,
+        "delta_abs_per_block_vs_production_pct": 48.67548698118454
       },
       {
         "atom": "D",
@@ -84,7 +86,8 @@
         "m_observed_MeV": 1875.61294257,
         "err_per_block_pct": -92.96803142685786,
         "err_production_pct": -48.49418008691612,
-        "delta_per_block_vs_production_pct": -44.473851339941746
+        "delta_per_block_vs_production_pct": -44.473851339941746,
+        "delta_abs_per_block_vs_production_pct": 44.473851339941746
       },
       {
         "atom": "T",
@@ -101,7 +104,8 @@
         "m_observed_MeV": 2808.92113298,
         "err_per_block_pct": -96.93371585313969,
         "err_production_pct": -65.60779819966999,
-        "delta_per_block_vs_production_pct": -31.325917653469705
+        "delta_per_block_vs_production_pct": -31.325917653469705,
+        "delta_abs_per_block_vs_production_pct": 31.325917653469705
       },
       {
         "atom": "3He",
@@ -118,7 +122,8 @@
         "m_observed_MeV": 2808.39155747,
         "err_per_block_pct": -95.23497703249481,
         "err_production_pct": -65.60131289751902,
-        "delta_per_block_vs_production_pct": -29.633664134975795
+        "delta_per_block_vs_production_pct": -29.633664134975795,
+        "delta_abs_per_block_vs_production_pct": 29.633664134975795
       },
       {
         "atom": "4He",
@@ -135,7 +140,8 @@
         "m_observed_MeV": 3727.3794102,
         "err_per_block_pct": -95.01937144165042,
         "err_production_pct": -74.08233189723065,
-        "delta_per_block_vs_production_pct": -20.93703954441977
+        "delta_per_block_vs_production_pct": -20.93703954441977,
+        "delta_abs_per_block_vs_production_pct": 20.93703954441977
       }
     ],
     "summary": {

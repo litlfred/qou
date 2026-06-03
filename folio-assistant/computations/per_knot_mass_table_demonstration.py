@@ -157,14 +157,21 @@ def main() -> int:
             })
             continue
 
-        # Paper-faithful per-block: Geom_full(K, q₀) × tr_M(K, q₀)
+        # Paper-faithful per-block: geom_full_per_block already folds
+        # in tr_M(K, q₀) — i.e. this returns m_e × Geom_full(K, q₀) when
+        # multiplied by m_e below; do NOT re-multiply by tr_M_K here.
         geom_full_pb = geom_full_per_block(vol_K, tr_M_K, q)
         m_pred_pb = m_e * geom_full_pb
 
         codata = CODATA[atom]
         err_pb = (m_pred_pb - codata) / codata * 100
         err_prod = (m_avg_production - codata) / codata * 100
-        delta = err_pb - err_prod   # negative = per-block closer to CODATA
+        delta = err_pb - err_prod   # signed delta (kept for reproducibility)
+        # delta_abs measures actual distance to CODATA — negative means
+        # per-block reading is CLOSER, positive means FURTHER. This is
+        # the quantity the row's "did per-block move us closer?" claim
+        # actually asserts.
+        delta_abs = abs(err_pb) - abs(err_prod)
 
         rows.append({
             "atom": atom, "Z": Z, "N": N, "A": A,
@@ -179,6 +186,7 @@ def main() -> int:
             "err_per_block_pct": float(err_pb),
             "err_production_pct": float(err_prod),
             "delta_per_block_vs_production_pct": float(delta),
+            "delta_abs_per_block_vs_production_pct": float(delta_abs),
         })
 
     # Summary stats

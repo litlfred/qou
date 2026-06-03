@@ -28,14 +28,14 @@ Naive fix attempts:
 
 **Scope correction (2026-06-03, mid-session)**: digging into `mass_table_comprehensive.py` showed the actual gap is NOT Vol(K) extension. Production already uses `m_pred = Z·m_p + N·m_n − B(K)` where m_p/m_n come from substrate-identity (single-knot-Borromean correct for protons); the +2.89% → +3.73% growth is dominated by **`B_pred = 0` for A > 12** because `try_binding_canonical` is gated on the H_{3A} kernel.
 
-The `recursive-on-⁴He` atlas tag IS the user's "build each atom recursively from prior atoms + canonical braids w/ unfolding". The formula `B(nα) = n·B(⁴He) + C(n,2)·c_αα` (Whitehead link 7²_1 for the α-α coupling) is **already implemented** in [`folio-assistant/computations/alpha/alpha_cluster_recursion.py`](../../folio-assistant/computations/alpha/alpha_cluster_recursion.py) for ⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca. It just **isn't wired** into `mass_table_comprehensive.py:try_binding_canonical`.
+The `recursive-on-⁴He` atlas tag IS the user's "build each atom recursively from prior atoms + canonical braids w/ unfolding". The formula `B(nα) = n·B(⁴He) + C(n,2)·c_αα` (Whitehead link 7²_1 for the α-α coupling) is **already implemented** in [`folio-assistant/computations/alpha/alpha_cluster_recursion.py`](../../folio-assistant/computations/alpha/alpha_cluster_recursion.py) for the A>12 α-cluster atoms (¹⁶O, ²⁰Ne, ²⁴Mg, ²⁸Si, ³²S, ³⁶Ar, ⁴⁰Ca; ⁸Be / ¹²C are A≤12 so they go through the existing `binding_canonical` branch, not α-recursion). It just **isn't wired** into `mass_table_comprehensive.py:try_binding_canonical` for the A>12 branch.
 
 **What**: modify `try_binding_canonical(Z, N, q_str)` to:
-1. Existing: A ≤ 12 → `binding_canonical` (Δtr_M closed form) — unchanged
-2. **NEW**: A > 12 with `Z == N` and `A % 4 == 0` → call `alpha_cluster_binding(Z, N)` from `alpha/alpha_cluster_recursion.py`
+1. Existing: A ≤ 12 → `binding_canonical` (Δtr_M closed form) — unchanged. Covers ⁸Be / ¹²C.
+2. **NEW**: A > 12 with `Z == N` and `A % 4 == 0` → call `alpha_cluster_binding(Z, N)` from `alpha/alpha_cluster_recursion.py`. Covers ¹⁶O, ²⁰Ne, ²⁴Mg, ²⁸Si, ³²S, ³⁶Ar, ⁴⁰Ca (7 atoms).
 3. Existing: other A > 12 → return None (still gated on H_{3A} kernel)
 
-**Output**: extended `mass-table-comprehensive.witness.json` with non-zero B_pred for 6 additional isotopes (⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca). Net `binding_computed` rises from 10 → 16 of 65.
+**Output**: extended `mass-table-comprehensive.witness.json` with non-zero B_pred for 7 additional isotopes (¹⁶O, ²⁰Ne, ²⁴Mg, ²⁸Si, ³²S, ³⁶Ar, ⁴⁰Ca). Net `binding_computed` rises from 10 → 17 of 65.
 
 **Discipline**: this is **engineering** (wires existing code that's already PROVED via the `recursive-on-⁴He` methodology in the atlas). Not a new ansatz; not a Δ_λ-gate violation. The α-cluster recursion uses zero free parameters — B(⁴He) from magic-A formula, c_αα from Whitehead link Vol.
 
@@ -76,7 +76,7 @@ The `recursive-on-⁴He` atlas tag IS the user's "build each atom recursively fr
 | Phase | Today? | Why / Why not |
 |-------|--------|---------------|
 | 1 | ✅ done | Diagnosis + truth-tracking PRs already merged + this workplan |
-| 2 | ✅ done | α-cluster recursion wired into `try_binding_canonical` for ⁸Be–⁴⁰Ca atoms (commit `6fc4ca0ae3`); 7 atoms improved by ~10× from m_err ≈ +0.9% to ≈ −0.1% |
+| 2 | ✅ done | α-cluster recursion wired into `try_binding_canonical` for the A>12 α-cluster atoms ¹⁶O / ²⁰Ne / ²⁴Mg / ²⁸Si / ³²S / ³⁶Ar / ⁴⁰Ca (commits `6fc4ca0ae3`, `9b4fae28f8`); 7 atoms improved by ~10× from m_err ≈ +0.9% to ≈ −0.1%. ⁸Be / ¹²C are A≤12 so already covered by the existing `binding_canonical` branch — no wire-up gap there. |
 | 3 | ❌ no | Δ_λ-gate forbidden without owner direction on `linking_weight(K)` generalisation strategy |
 | 4 | ❌ no | Depends on Phase 3 |
 | 5 | ❌ no | Depends on Phase 4 |
