@@ -148,8 +148,10 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
     rw [sub_mul, mul_sub, mul_sub, h_smul_one_mul, h_mul_smul_one, h_smul_one_sq]
     abel
   -- Step 3: apply τ, using R-linearity + τ_one (= 1).
-  have h_tau_smul : ∀ Y : A, τ.tau (S • Y) = S * τ.tau Y := fun Y => by
-    rw [τ.tau.map_smul, smul_eq_mul]
+  -- Generalised h_tau_smul to take ANY scalar (not just S), so the third
+  -- rewrite can dispatch τ.tau ((S * S) • 1) too.
+  have h_tau_smul : ∀ (r : R) (Y : A), τ.tau (r • Y) = r * τ.tau Y :=
+    fun r Y => by rw [τ.tau.map_smul, smul_eq_mul]
   have h_rearrange : X * X - S • X - S • X + (S * S) • (1 : A) =
                      X * X + (-(S • X)) + (-(S • X)) + (S * S) • (1 : A) := by abel
   have h_tau_expand : τ.tau ((X - S • 1) * (X - S • 1)) =
