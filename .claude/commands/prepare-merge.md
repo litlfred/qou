@@ -40,12 +40,14 @@ counter that bumps when new Python files land on either branch.
 # exit code is checked so a script failure halts the loop instead of
 # proceeding silently with a stale or partial witness.
 # 30-iteration cap as a safety guard.
+# NOTE (2026-06-02 reorg): e0-calibration + fitted-labelled-canonical
+# witnesses moved with their scripts into computations/audits/.
 WITNESS_REGEN_TARGETS=(
   "folio-assistant/computations/compute-audit-scan.witness.json"
   "folio-assistant/computations/derivation-chain-audit.witness.json"
   "folio-assistant/computations/cross-check-trM-1ppb.witness.json"
-  "folio-assistant/computations/e0-calibration-audit.witness.json"
-  "folio-assistant/computations/fitted-labelled-canonical-audit.witness.json"
+  "folio-assistant/computations/audits/e0-calibration-audit.witness.json"
+  "folio-assistant/computations/audits/fitted-labelled-canonical-audit.witness.json"
 )
 cnt=0
 loop_break=""
@@ -61,11 +63,13 @@ while git status 2>/dev/null | grep -q "rebase in progress"; do
     esac
   done < <(git status --short | grep "^UU" | cut -c 4-)
   [ -n "$loop_break" ] && break
+  # NOTE: the two audit/ scripts moved to folio-assistant/computations/audits/
+  # (2026-06-02). Path resolved per-script below.
   for s in compute_audit_scan derivation_chain_validator \
-           cross_check_trM_1ppb e0_calibration_audit \
-           fitted_labelled_canonical_audit; do
+           cross_check_trM_1ppb audits/e0_calibration_audit \
+           audits/fitted_labelled_canonical_audit; do
     args=()
-    case "$s" in cross_check_trM_1ppb|e0_calibration_audit) args=(--strict);; esac
+    case "$s" in cross_check_trM_1ppb|audits/e0_calibration_audit) args=(--strict);; esac
     if ! python3 "folio-assistant/computations/${s}.py" "${args[@]}" \
            >/dev/null 2>&1; then
       echo "FAIL: ${s}.py exited non-zero — halting auto-resolve"
@@ -99,8 +103,8 @@ set -e
 python3 folio-assistant/computations/compute_audit_scan.py >/dev/null 2>&1
 python3 folio-assistant/computations/derivation_chain_validator.py >/dev/null 2>&1
 python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict >/dev/null 2>&1
-python3 folio-assistant/computations/e0_calibration_audit.py --strict >/dev/null 2>&1
-python3 folio-assistant/computations/fitted_labelled_canonical_audit.py >/dev/null 2>&1
+python3 folio-assistant/computations/audits/e0_calibration_audit.py --strict >/dev/null 2>&1
+python3 folio-assistant/computations/audits/fitted_labelled_canonical_audit.py >/dev/null 2>&1
 set +e
 git add "${WITNESS_REGEN_TARGETS[@]}" 2>/dev/null
 git diff --cached --quiet || git commit -m "fix(witness-pipeline): post-rebase drift refresh"
