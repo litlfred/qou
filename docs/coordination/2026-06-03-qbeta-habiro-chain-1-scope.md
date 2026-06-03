@@ -79,9 +79,33 @@ None proposes a "7th fit-based ansatz". The Δ_λ gate is respected.
 
 ## Concrete next-session deliverables
 
-1. **`folio-assistant/computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py`** — Family α scaffold + symbolic cross-checks at both anchors
-2. **`folio-assistant/computations/qbeta/qbeta_kashaev_habiro_chain_beta.py`** — Family β scaffold + Kashaev tower extraction
+1. ~~**`folio-assistant/computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py`**~~ — **DONE 2026-06-03** (Family α first-test). VERDICT: NEGATIVE. All 4 Wenzl-projector Markov trace conventions (JW, symmetric, antisymmetric, adjoint-like) fail at c_2 by 50%+ and c_3 by 100%+. The literal Family α formulation is REFUTED. Witness: `qbeta-wenzl-habiro-chain-alpha.witness.json`.
+2. ~~**`folio-assistant/computations/qbeta/qbeta_kashaev_habiro_chain_beta.py`**~~ — **DONE 2026-06-03** (Family β first-test). VERDICT: NEGATIVE. All 3 Kashaev-tower variants (standard q-Pochhammer, Bloch-Wigner D(z), Faddeev real-q L_q) fail by 100%+ at c_2 and c_3. Witness: `qbeta-kashaev-habiro-chain-beta.witness.json`.
 3. ~~**`folio-assistant/computations/qbeta/qbeta_sa_qa_chain_gamma.py`**~~ — **DONE 2026-06-03** (commit `8cbaf5c7ff`). Family γ canonical decomposition verified: Q_A and cos at q₀ are finite ⇒ structural singularity must live in Π_k(∞) tower.
+
+## Combined Family α + β NEGATIVE — residue A pointer (2026-06-03)
+
+All three Chain 1 families have been first-tested at proton-pinned q₀:
+
+| Family | Verdict | Implication |
+|---|---|---|
+| α (Wenzl-projector Markov) | NEGATIVE (4 conventions) | residue A is NOT a literal Markov trace of a projector |
+| β (Kashaev tower) | NEGATIVE (3 variants) | residue A is NOT a literal Kashaev quantum-dilog value |
+| γ (Q_A · cos · Π_k decomposition) | PASS (3/3 at u_sub) | Singularity lives in Π_k(∞) tower — NOT in Q_A or cos |
+
+**Sharpest pointer for next-session work**: the Lean proof of c_2 = -1
+references **Kashiwara f̃₁²** (crystal operator eigenvalue), not a
+Markov-projector trace and not a Kashaev quantum dilogarithm. Combined
+with Family α/β NEGATIVE, this triangulates the residue-A categorical
+ID to a TRUE Kashiwara CRYSTAL operator value — the **Option-E path**
+that was the 4th chain in the original (PR #1760) owner-direction
+options. The 3 Chain 1 sub-families have CLOSED Chain 1 as written; the
+next session should either:
+
+- **Switch to Chain 4 (Kashiwara crystal / Option-E)** — pursue residue
+  A as a crystal-operator eigenvalue in the Habiro-ring formulation
+- **OR** explore mixed chains (e.g. Wenzl · Kashaev — symmetric
+  combinations not tested in the literal first-tests above)
 4. **Witness JSONs** per script, EXPLORATORY, with structured pass/fail at each c_k
 5. **Lean §3b-cond `QbetaHabiroChain1` class** in `q-beta-categorical-precision-ladder.lean` — axiomatize whichever family lands
 
