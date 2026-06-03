@@ -2,13 +2,13 @@
   "$schema": "qa-script/v1",
   "criterion_id": "proof-lean-compiles",
   "source_file": "content/pipeline/qa-checkers-extended.ts",
-  "script_hash": "70853d274436",
-  "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
+  "script_hash": "8055e5864896",
+  "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c",
   "extra_inputs": [
     "docs/audits/lean-compile-diagnostics.json"
   ],
-  "deps_hash": "4b9cd43e52e5",
-  "last_run_at": "2026-05-27T08:55:11.920Z",
-  "last_run_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-  "engine_version": "bun-1.3.11"
+  "deps_hash": "d99539346ae5",
+  "last_run_at": "2026-06-03T18:31:25.384Z",
+  "last_run_sha": "e05ede5a7ea7498abfaa95481266581d36a098c1",
+  "engine_version": "bun-1.3.14"
 }
