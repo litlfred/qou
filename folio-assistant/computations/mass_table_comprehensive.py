@@ -241,9 +241,11 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
         # H_{3A} kernel gated for non-α-cluster atoms; but the
         # `recursive-on-⁴He` atlas methodology covers Z=N, A%4==0
         # via B(nα) = n·B(⁴He) + C(n,2)·c_αα. Wire it in here
-        # for ⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca (user request
-        # 2026-06-03: "wire up ALL isotopes properly"). The
-        # closure is zero-fit: B(⁴He) from magic-A formula,
+        # for the A>12 α-cluster atoms — ¹⁶O, ²⁰Ne, ²⁴Mg, ²⁸Si,
+        # ³²S, ³⁶Ar, ⁴⁰Ca (⁸Be / ¹²C are A≤12 so they go through
+        # the existing binding_canonical branch below, not here).
+        # User request 2026-06-03: "wire up ALL isotopes properly".
+        # Closure is zero-fit: B(⁴He) from magic-A formula,
         # c_αα = m_e · Vol(7²_1) (Whitehead link).
         if Z == N and A % 4 == 0:
             try:
@@ -257,8 +259,14 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
                         "formula": r.get("formula"),
                     }
             except Exception as e:
-                # Fall through to None — don't break production if the
-                # alpha-cluster module changes shape
+                # Surface the failure to stderr so regressions don't go
+                # silent in production runs; still return None to keep
+                # the gated-isotope contract intact.
+                print(
+                    f"WARN: alpha_cluster_binding failed for "
+                    f"(Z={Z}, N={N}, A={A}): {e!s}",
+                    file=sys.stderr,
+                )
                 return None
         return None  # gated on H_{3A} kernel availability
 
@@ -313,7 +321,8 @@ def main() -> int:
     )
     builder.set_content_block("prop:recursive-atom-knot-atlas")
     builder.add_parameter("q_str", Q_50_DIGIT_STR)
-    builder.add_parameter("dps", 50)
+    # dps is captured authoritatively in precisionMetadata.compute_dps;
+    # not duplicated here (see Copilot review #1756, witness-line 23/40).
 
     q = mp.mpf(Q_50_DIGIT_STR)
 
@@ -431,6 +440,16 @@ def main() -> int:
         "masses_computed": n_computed,
         "binding_computed": n_binding,
         "gated_on_phase2": n_gated,
+        # NOTE: keys below are populated only when `predict_p_n` returns
+        # via the Family-A fallback path; the substrate-identity path
+        # (canonical, post-2026-05-23 absorption of λ_scale into
+        # Geom_full) does not emit them. Hence .get() — None here means
+        # "substrate-identity path was taken", NOT "compute failure".
+        # See `nucleon_path` field below for which path was used.
+        "nucleon_path": nucleon.get(
+            "path",
+            "family_a" if "linking_weight_family_a" in nucleon else "substrate_identity",
+        ),
         "linking_weight_family_a": nucleon.get("linking_weight_family_a"),
         "geom_full_borromean_q": nucleon.get("geom_full_borromean_q"),
         "delta_m_over_M_N": nucleon.get("delta_m_over_M_N"),
