@@ -88,9 +88,10 @@ noncomputable def h_substrate_value : ℝ := 1.1097 - 1 / 1.1097
     structural hypotheses.  Each is a `< 1%` empirical match and an OPEN
     research-grade categorical derivation (per the audit); none is an
     exact theorem.  Downstream consumers take `[SubstrateEWDerivations]`
-    to obtain the identities unconditionally.  **No global instance is
-    provided** — the conjectural content lives entirely in these class
-    fields, so there is no naked `sorry`. -/
+    as an explicit hypothesis to obtain the identities without a naked
+    `sorry` — the identities are conditional on the class instance, not
+    unconditional theorems.  **No global instance is provided** — the
+    conjectural content lives entirely in these class fields. -/
 -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md
 class SubstrateEWDerivations where
   /-- Hyp 1 (+0.26%): `g = π·h_0`.  Open: Yekutieli MI connection-1-form

@@ -65,8 +65,9 @@ class HeckeMassTraceContext where
   /-- **Manuscript claim (i)**: the categorical mass equals the norm of
       the Markov trace of the Hecke mass element.  Carried as a class
       field per CLAUDE.md §3b-cond — downstream consumers take
-      `[HeckeMassTraceContext]` to obtain this identity unconditionally,
-      with no naked `sorry`. -/
+      `[HeckeMassTraceContext]` as an explicit hypothesis to obtain this
+      identity without a naked `sorry`; the identity is conditional on
+      the class instance, not an unconditional theorem. -/
   claim_cat_mass_eq_norm_trace :
     cat_mass = norm (markovInst.trace Phi_mass)
   /-- **Manuscript claim (ii)**: the Markov trace decomposes additively

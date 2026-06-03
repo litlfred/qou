@@ -371,12 +371,12 @@ theorem universal_property
   refine ⟨φ_witness.val, φ_witness.property, ?_⟩
   intro ψ hψ
   -- Show `ψ = φ_witness.val` by composing with the quotient map and
-  -- reducing to agreement on `FreeAlgebra` generators.
-  refine Ideal.Quotient.algHom_ext
-    (R := R) (S := A)
-    (I := QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W)) ?_
-  refine FreeAlgebra.hom_ext (funext fun ⟨s, _⟩ => ?_)
-  -- After `funext`, the goal reduces (definitionally) to
+  -- reducing to agreement on `FreeAlgebra` generators.  Per Gemini review
+  -- 2026-06-03: drop explicit `R/S/I` named args (Lean infers from goal)
+  -- and pass a lambda directly to `FreeAlgebra.hom_ext` (not a `funext`).
+  apply Ideal.Quotient.algHom_ext
+  refine FreeAlgebra.hom_ext (fun ⟨s, _⟩ => ?_)
+  -- After the ext step, the goal reduces (definitionally) to
   -- `ψ (T q s) = φ_witness.val (T q s)`, discharged by `hψ` + `φ_witness.property`.
   show ψ (T q s) = φ_witness.val (T q s)
   rw [hψ s, φ_witness.property s]
