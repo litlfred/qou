@@ -45,19 +45,33 @@ end TorusKnot
 /-- **Proposition (genus-4 torus knot uniqueness)**.
 
     The only torus knots of genus `4` (under the canonical
-    `m ≤ n`, `gcd(m,n) = 1` ordering) are `T_{2,9}` and `T_{3,5}`. -/
+    `m ≤ n`, `gcd(m,n) = 1` ordering) are `T_{2,9}` and `T_{3,5}`.
+
+    Proof: `genus = (m-1)(n-1)/2 = 4` (floor division) forces
+    `(m-1)(n-1) ∈ {8, 9}`.  Since `m-1 ≥ 1` and `n-1 ≥ 1`, both
+    factors are `≤ 9`, bounding `m, n ≤ 10`; a finite case split
+    (`interval_cases`) with the coprimality hypothesis leaves exactly
+    `(2,9)` and `(3,5)` — the cofactor cases `(2,10)` and `(4,4)` are
+    eliminated by `gcd ≠ 1`. -/
 -- Ref: [manuscript] §5/torus-knot-genus-four-unique
 -- Ref: [rolfsen] Rolfsen, *Knots and Links*
--- Ref: [manuscript] the previous explicit proof no longer typechecked under the
--- current Lean/Mathlib stack, so this file temporarily keeps the cited
--- classification result as a `sorry`-backed placeholder until the arithmetic
--- proof is restored.
--- TODO: restore a proof once the arithmetic script is updated for the current
--- Lean/Mathlib toolchain.
 theorem torus_knot_genus_four_unique (K : TorusKnot)
     (h : K.genus = 4) :
     (K.m = 2 ∧ K.n = 9) ∨ (K.m = 3 ∧ K.n = 5) := by
-  sorry
+  have hm := K.m_ge_two
+  have hmn := K.m_le_n
+  have hco := K.coprime
+  simp only [TorusKnot.genus] at h
+  -- h : (K.m - 1) * (K.n - 1) / 2 = 4, hence the product is 8 or 9.
+  have hub : (K.m - 1) * (K.n - 1) ≤ 9 := by omega
+  -- Each factor is bounded by the product (the other factor is ≥ 1).
+  have hmle : K.m - 1 ≤ (K.m - 1) * (K.n - 1) :=
+    Nat.le_mul_of_pos_right _ (by omega)
+  have hnle : K.n - 1 ≤ (K.m - 1) * (K.n - 1) :=
+    Nat.le_mul_of_pos_left _ (by omega)
+  have hmub : K.m ≤ 10 := by omega
+  have hnub : K.n ≤ 10 := by omega
+  interval_cases K.m <;> interval_cases K.n <;> revert hco h <;> decide
 
 /-- The crossing numbers of the unique genus-4 pair are `9` and `10`. -/
 -- Ref: [manuscript] §5/torus-knot-genus-four-unique
