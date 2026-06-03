@@ -6,15 +6,18 @@
 
 ## Headline result
 
-The Q_β precision-ladder Habiro element
+The Q_β precision-ladder coefficients `c_k` define two objects:
 
 ```
-F(u) = Π_{k=2..∞} (1 + c_k · u^k)
+g(u) = Σ_{k=2..∞} c_k · u^k        (log-correction generating function)
+F(u) = Π_{k=2..∞} (1 + c_k · u^k)  (product correction factor = exp(g + …))
 ```
 
-with `u = b · ℏ_q² ≈ 0.00852` at q_0 has:
+> **Sum vs product (per Gemini review).** The `c_k · u^k → const` test below characterizes the singularity of the **generating function `g(u) = Σ c_k u^k`** — the categorically-meaningful log-derivative object. `g(u)` has a **simple pole** at u_substrate. The *product* `F(u) = exp(g(u) + …)` consequently has an **essential** singularity (exp of a simple pole). "Simple pole" throughout this doc refers to `g(u)`, not `F`.
 
-1. A **simple pole** singularity at `u = u_substrate` (Step 1) — `c_k · u^k → 2.118e-13` at k=8,9,10 with 0.02% spread; branch-fit β = 0.999 confirms simple-pole interpretation; essential-singularity hypothesis ruled out by asymptote.
+with `u = b · ℏ_q² ≈ 0.00852` at q_0:
+
+1. **`g(u) = Σ c_k u^k` has a simple pole** at `u = u_substrate` (Step 1) — `c_k · u^k → 2.118e-13` at k=8,9,10 with 0.02% spread (⇒ `g(u) → A·u_subst/(u_subst − u)`); branch-fit β = 0.999 confirms the simple-pole interpretation; essential-singularity-of-`g` hypothesis ruled out by the flat asymptote.
 
 2. **Fibre-level analytic structure** (Step 2) — u_substrate at q_muon vs q_proton differs by only **210 ppb**, well within 1 ppm fibre-level tolerance; the singularity is at the SAME location at both anchors.
 
