@@ -45,15 +45,19 @@ if str(HERE) not in sys.path:
 _AVG_COLOR_DELTA = None  # cached δ = flavor_split_subleading(q₀)
 
 
-def _avg_color_delta() -> float:
-    """Substrate flavor split δ = (m_n − m_p)/M_N at q₀, for recognising the
-    color-weighted averaged p-n crossing `−h·(1/2 − δ/4)`. Lazy + cached."""
+def _avg_color_delta():
+    """Substrate flavor split δ = (m_n − m_p)/M_N at q₀ as an **mp.mpf**
+    (full precision), for the color-weighted averaged p-n crossing
+    `−h·(1/2 − δ/4)`. Lazy + cached; the **single source of δ** for the whole
+    braid pipeline (mass_at_3A_proper, chi_lambda_numerical, marshalling).
+    Float-context callers wrap with `float()`; mpmath callers use it directly
+    so the high-dps paths keep full precision."""
     global _AVG_COLOR_DELTA
     if _AVG_COLOR_DELTA is None:
         import mpmath as _mp
         from _li_2_q_util import flavor_split_subleading
         from q_parameter import Q as _Q0
-        _AVG_COLOR_DELTA = float(flavor_split_subleading(_mp.mpf(str(_Q0))))
+        _AVG_COLOR_DELTA = flavor_split_subleading(_mp.mpf(str(_Q0)))  # mp.mpf
     return _AVG_COLOR_DELTA
 
 
@@ -83,7 +87,7 @@ def classify_crossing(
         return "sigma_inv"
     # "averaged" p-n interface: color-blind −h/2, OR color-weighted
     # −h·(1/2 − δ/4) (bring_color_weighted default, mass_at_3A_proper).
-    delta = _avg_color_delta()
+    delta = float(_avg_color_delta())                # float-context comparison
     if (abs(d - (-h_val / 2.0)) < 1e-9
             or abs(d - (-h_val * (0.5 - delta / 4.0))) < 1e-9):
         return "averaged"
