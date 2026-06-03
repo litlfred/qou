@@ -15,6 +15,17 @@ count *actual* sorry tokens (excluding doc-comment mentions like
 "contains sorry" or "sorry-free"). Compared to the queue's own
 claim of sorry counts.
 
+**Method caveat:** `grep -c '^[[:space:]]*sorry'` counts only
+*line-leading* `sorry` tokens. This matches the dominant QOU style
+(`:= by` then `  sorry` indented on its own line) but **undercounts**
+inline forms like `:= by sorry` or `simp; sorry`. The per-file counts
+below are therefore lower bounds; a `\bsorry\b`-anywhere scan
+(excluding `--` comments and docstrings) would be stricter. The
+stale-vs-real verdicts are unaffected — they turn on whether the
+failure *evidence* reproduces at the current path, not on the exact
+count — but the "17-sorry census" should be read as "≥ 17
+line-leading sorries" pending a tokenizer-based recount.
+
 ## Per-item findings
 
 | id | priority | queue claim | reality | verdict |
