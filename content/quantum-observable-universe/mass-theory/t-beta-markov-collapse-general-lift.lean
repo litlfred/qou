@@ -198,7 +198,8 @@ theorem markov_frobenius_min_norm_lift
   -- h : τ(X*X) = τ((X - S•1)²) + 2 * (S * S) - S * S
   --          = τ((X - S•1)²) + S * S
   -- Step 3: PSD of τ on squares.
-  have h_psd : 0 ≤ τ.tau ((X - S • 1) * (X - S • 1)) := PSDTrace.psd _
+  have h_psd : 0 ≤ τ.tau ((X - S • 1) * (X - S • 1)) :=
+    PSDTrace.psd (R := R) (A := A) (τ := τ) (X - S • 1)
   -- Step 4: arithmetic conclusion.
   linarith
 
@@ -235,11 +236,13 @@ theorem markov_frobenius_min_norm_uniqueness
     rw [h_constraint] at h
     -- h : τ(X*X) = τ((X - S•1)²) + 2 * (S * S) - S * S
     --          = τ((X - S•1)²) + S * S
-    have h_psd : 0 ≤ τ.tau ((X - S • 1) * (X - S • 1)) := PSDTrace.psd _
+    have h_psd : 0 ≤ τ.tau ((X - S • 1) * (X - S • 1)) :=
+    PSDTrace.psd (R := R) (A := A) (τ := τ) (X - S • 1)
     -- From h + h_eq: τ((X-S•1)²) = 0
     have h_zero : τ.tau ((X - S • 1) * (X - S • 1)) = 0 := by linarith
     -- NonDegTrace ⇒ X - S•1 = 0 ⇒ X = S•1
-    have h_sub_zero : X - S • (1 : A) = 0 := NonDegTrace.nondeg _ h_zero
+    have h_sub_zero : X - S • (1 : A) = 0 :=
+      NonDegTrace.nondeg (R := R) (A := A) (τ := τ) (X - S • 1) h_zero
     exact sub_eq_zero.mp h_sub_zero
   · -- Reverse direction (⇐): X = S•1 ⇒ τ(X²) = S²
     intro h_eq
