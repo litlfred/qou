@@ -431,9 +431,9 @@ def main() -> int:
         "masses_computed": n_computed,
         "binding_computed": n_binding,
         "gated_on_phase2": n_gated,
-        "linking_weight_family_a": nucleon["linking_weight_family_a"],
-        "geom_full_borromean_q": nucleon["geom_full_borromean_q"],
-        "delta_m_over_M_N": nucleon["delta_m_over_M_N"],
+        "linking_weight_family_a": nucleon.get("linking_weight_family_a"),
+        "geom_full_borromean_q": nucleon.get("geom_full_borromean_q"),
+        "delta_m_over_M_N": nucleon.get("delta_m_over_M_N"),
         "m_p_pred_MeV": m_p_pred,
         "m_n_pred_MeV": m_n_pred,
         "production_tier": (
