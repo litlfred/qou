@@ -42,8 +42,10 @@ chain at Lean level.
   the H_2 case explicit identities, **sorry-free** via
   `unfold + decide + qFactorial + qBracket + field_simp + ring`.
   These are concrete `q`-bracket identities — the class
-  `QSchurYLambdaClosedFormClaim` above carries the categorical
-  content (the fact that this closed form IS the q-Schur weight).
+  `QSchurYLambdaClosedFormClaim` above is *intended* to carry the
+  categorical content (that this closed form IS the q-Schur weight),
+  but currently holds a vacuous `True` placeholder field pending the
+  q-Schur algebra formalisation; see the class docstring.
 
 - `qSchur_H3_top`, `qSchur_H3_mid`, `qSchur_H3_bottom`:
   the H_3 case explicit identities for partitions `(3)`, `(2,1)`,
