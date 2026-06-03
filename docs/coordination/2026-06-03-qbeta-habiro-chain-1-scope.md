@@ -26,7 +26,7 @@ What carries over to Q_β:
 | Attempt | Result | Source |
 |---|---|---|
 | Literal `2 · C(1/2, k/2) · (1/4)^(k/2)` at k=3 | yields 0 (q-independent) — does not transfer | c_3 re-run 2026-06-03 |
-| `[3]_q · (1 − ℏ_q²)` at c_3 | −3.01 vs target −2.07 (456k ppm miss) | c_3 re-run 2026-06-03 |
+| `[3]_q · (1 − ℏ_q²)` at c_3 | −3.01 vs target −2.069 (456k ppm miss) | c_3 re-run 2026-06-03 |
 | 15 single-formula candidates at c_3 | 0/15 pass 10 ppm both anchors | `c_3_categorical_derivation_attempt.py` 2026-06-03 |
 | Real `c_3 = f(q_0_real)` matching multiple anchors near singularity | structurally hopeless (simple pole at u_substrate) | PR #1713, PR #1727 |
 | 2-term constant-coefficient recurrence | refuted by asymptotic `c_{k+1}/c_k → 1/u` | PR #1713 |
