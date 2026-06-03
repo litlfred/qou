@@ -157,8 +157,7 @@ EM Bring complex*. Concrete and tractable.
 
 ### Round 10 — LP-cost factorization REFUTED; round-9 sharpening withdrawn
 
-Direct test of the round-9 LP-cost factorization lemma yields a
-**negative result**:
+Direct test **refutes** the round-9 LP-cost factorization lemma:
 
 - **Disjoint case** ($n$ disjoint Bring complexes): factorization
  holds by Markov property —

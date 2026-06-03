@@ -113,7 +113,7 @@ character-weighted average $\langle c\rangle_\beta$ equals a
 specific non-zero number determined by the imbalance between
 $\chi^\lambda$ and $\chi^{\lambda^T}$.*
 
-**Numerical test at $H_6(R, q)$ (satellite $D$) — negative result.**
+**Numerical test at $H_6(R, q)$ (satellite $D$) — refuted (predicted $a_K = -2.164$ vs paper's $a_D = +1.209$).**
 *Script `ribbon_content_average.py` computes
 $\langle c\rangle_\beta$ and the predicted
 $a_K = 1 + w(\beta) \cdot \langle c\rangle_\beta \cdot h$
