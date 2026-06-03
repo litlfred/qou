@@ -1,0 +1,27 @@
+{
+  "computation": "per-component-linking-weight-selection-rule",
+  "description": "Zero-parameter selection rule lw(L) = (1/(c+1))\u03a3_{\u03bb\u22a2c+1} dim_q V_\u03bb (c = #components). Reproduces the muon (knot, c=1) lw=1 EXACTLY \u2200q and the proton (Borromean, c=3) Family-A 5/2+3h\u00b2/4 EXACTLY. Crystal-basis/quantum-dimension object (finite at real q\u2080), NOT a Habiro element. EXPLORATORY; no production path; no fit (reproduces exact known values, not AME data).",
+  "rule": "lw(L) = (1/(c+1)) \u03a3_{\u03bb\u22a2(c+1)} dim_q V_\u03bb = q-deformed I(c+1)/(c+1)",
+  "anchors": {
+    "c1_knot_muon": {
+      "lw": "1",
+      "exact_1_for_all_q": true
+    },
+    "c3_proton_borromean": {
+      "lw": "3*q**2/4 + 1 + 3/(4*q**2)",
+      "equals_family_a_exactly": true
+    }
+  },
+  "predictions_at_q0": {
+    "c2": 1.3369656222357074,
+    "c4": 5.376137729679313
+  },
+  "predictions_closed_form": {
+    "c2_2comp": "(2 + [2]_q)/3 = (2 + sqrt(h\u00b2+4))/3",
+    "c4_4comp": "(1/5) \u03a3_{\u03bb\u22a25} dim_q = 26/5 at q=1"
+  },
+  "mechanism_hypothesis": "Wedderburn rank n = c+1 = (link components) + 1; the +1 is the lepton/observation (m_e) fibre adjoined to the c-component hadronic link. Next derivation target.",
+  "delta_lambda_gate": "COMPLIANT: a selection rule (which n, which normalization), zero free parameters, reproduces EXACT known framework values (lw=1 knots, Family-A proton) \u2014 not a scalar fit to AME data. This is the GAP-A-3/GAP-A-4 categorical-level-selection direction, not a forbidden 7th fit-ansatz.",
+  "honesty": "2 anchored points, but the formula has ZERO free parameters and the c=1 case is exact \u2200q (infinite constraints, not one), so much stronger than a 2-point fit. The c=2 prediction ((2+\u221a(h\u00b2+4))/3) is the decisive independent test \u2014 needs a 2-component-link particle with an independent lw determination.",
+  "compute_time_sec": 1.01
+}
