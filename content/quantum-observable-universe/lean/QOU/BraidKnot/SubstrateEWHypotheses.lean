@@ -92,7 +92,7 @@ noncomputable def h_substrate_value : ℝ := 1.1097 - 1 / 1.1097
     provided** — the conjectural content lives entirely in these class
     fields, so there is no naked `sorry`. -/
 -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md
-class SubstrateEWDerivations [TorusKnotMass] [CategoricalHiggsIdempotent] where
+class SubstrateEWDerivations where
   /-- Hyp 1 (+0.26%): `g = π·h_0`.  Open: Yekutieli MI connection-1-form
       integration around a closed loop. -/
   claim_g_eq_pi_h : gauge_coupling_g = Real.pi * h_substrate_value

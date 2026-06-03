@@ -65,13 +65,25 @@ $\mathcal{N}_{\rm sym}(q)$ — is computable in closed form.*
   qDimHiggsIdempotent : ℝ
   /-- The Higgs-idempotent q-dimension is positive. -/
   qDimHiggsIdempotent_pos : 0 < qDimHiggsIdempotent
-  /-- **Symmetric-channel Frobenius trace** `N_sym(q) = tr_F(e_sym^EW · e_H)`,
-      computed in closed form from Axioms (G-1)–(G-4). -/
-  N_sym : ℝ
-  /-- Closed form: composing the two idempotent traces in the Frobenius
-      pairing yields the product of their q-dimensions (see
-      `g-action-on-substrate.md` for the precise per-host expansion). -/
-  N_sym_closed_form : N_sym = qDimEWSymmetric * qDimHiggsIdempotent
+/-! ## Derived quantity — `N_sym(q)` -/
+
+namespace GActionOnSubstrate
+
+variable [GActionOnSubstrate]
+
+/-- **Symmetric-channel Frobenius trace** `N_sym(q) = tr_F(e_sym^EW · e_H)`,
+    computed in closed form from Axioms (G-1)–(G-4): composing the two
+    idempotent traces in the Frobenius pairing yields the product of their
+    q-dimensions (see `g-action-on-substrate.md` for the precise per-host
+    expansion).  Defined as a derived quantity to avoid the redundant
+    field + equality that would inflate the instance burden. -/
+noncomputable def N_sym : ℝ := qDimEWSymmetric * qDimHiggsIdempotent
+
+/-- The closed form, now `rfl` from the definition. -/
+theorem N_sym_closed_form :
+    (N_sym : ℝ) = qDimEWSymmetric * qDimHiggsIdempotent := rfl
+
+end GActionOnSubstrate
 
 /-! ## Open conjecture — hypothesis-only (no global instance)
 
