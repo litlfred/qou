@@ -49,7 +49,7 @@ $z \cdot q^{-(k-1)} \cdot (\text{weight})$ by the recursive
 Hecke relation. Summing over $k$ with the $(q;q)_k$ normalisation
 gives the full $\Phi_q$ kernel.*
 
-**DECISIVE NEGATIVE RESULT: $HH^1(H_3(R, q)) = 0$.**
+**Proved (symbolic computation): $HH^1(H_3(R, q)) = 0$ at generic $q$.**
 
 *Direct symbolic computation in `hochschild_h3.py`:*
 
