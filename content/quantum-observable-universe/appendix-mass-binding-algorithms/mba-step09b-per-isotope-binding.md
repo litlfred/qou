@@ -77,3 +77,17 @@ $\Delta_\lambda$ is the open gate.*
 single open piece preventing the per-isotope binding from
 reaching L2 (100× L2 target) for the four currently-missing
 observables. See [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../../../docs/audits/2026-05-18-delta-lambda-gating-context.md).*
+
+*Inter-nucleon interface convention (canonical default): the p-n
+averaged crossing is **color-weighted**, $\sigma - h\,(1/2 - \delta/4)\cdot\mathbf{1}$
+with $\delta = $ `flavor_split_subleading`$(q_0)$ (the substrate
+$(m_n - m_p)/M_N$ flavor split), set in
+[`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py)
+(`pn_convention="bring_color_weighted"`). The p-p ($\sigma$) and
+n-n ($\sigma^{-1}$) interfaces are isospin-distinct and carry no
+extra color weight. The color shift is at the $\Delta m_{pn}$ scale
+($\delta/4 \approx 3.4\times10^{-4}$) — not the dominant binding
+residual, which is the inter-nucleon multiplicity (the $C(A,2)$
+bond count) plus per-bond growth. See
+[`docs/audits/2026-06-03-color-averaging-wiring-audit.md`](../../../docs/audits/2026-06-03-color-averaging-wiring-audit.md)
+and [`docs/audits/2026-06-03-nuclear-a3-dpn-plan.md`](../../../docs/audits/2026-06-03-nuclear-a3-dpn-plan.md).*
