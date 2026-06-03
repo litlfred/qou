@@ -81,11 +81,34 @@ None proposes a "7th fit-based ansatz". The Δ_λ gate is respected.
 
 1. **`folio-assistant/computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py`** — Family α scaffold + symbolic cross-checks at both anchors
 2. **`folio-assistant/computations/qbeta/qbeta_kashaev_habiro_chain_beta.py`** — Family β scaffold + Kashaev tower extraction
-3. **`folio-assistant/computations/qbeta/qbeta_sa_qa_chain_gamma.py`** — Family γ scaffold + cross-anchor check
+3. ~~**`folio-assistant/computations/qbeta/qbeta_sa_qa_chain_gamma.py`**~~ — **DONE 2026-06-03** (commit `8cbaf5c7ff`). Family γ canonical decomposition verified: Q_A and cos at q₀ are finite ⇒ structural singularity must live in Π_k(∞) tower.
 4. **Witness JSONs** per script, EXPLORATORY, with structured pass/fail at each c_k
 5. **Lean §3b-cond `QbetaHabiroChain1` class** in `q-beta-categorical-precision-ladder.lean` — axiomatize whichever family lands
 
-If any family lands within 10 ppm at BOTH anchors for k=2 through 7, that's a Habiro-element identification candidate. If none do, the verdict is: Chain 1 needs further owner-direction (e.g., a specific projector basis, a Kashaev tower level, or a different combiner).
+## Family γ findings (2026-06-03) — sharpen what α / β must test
+
+Family γ verified 3/3 assertions PASS at u_substrate:
+
+- **Q_N3 = Q_codata to 0.0 ppb** — the ladder TERMINATES at c_3 within
+  compute precision (1e-30) at proton-pinned q₀. Only c_2 (Lean-proved) +
+  c_3 (cal-anchored) are needed to hit ppb precision; c_4..c_7 from the
+  cache are below the numerical floor at this anchor.
+- **Q_A(q₀) and cos(α−bℏ²/2) at q₀ are FINITE** — structural singularity
+  at u_substrate (PR #1727) does NOT live in these two factors.
+- **c_{k+1}/c_k asymptotic (PR #1713) not testable here** — only 2 data
+  points at this precision; needs k ≥ 5 from a different anchor.
+
+**Sharpened target for Family α (Habiro-Wenzl)**:
+The Habiro-ring element `F_α(u) = Π_k(1 + tr_M(p_k)·u^k)` must reproduce:
+1. **`tr_M(p_2) = -1`** to match c_2 = −1 Lean-proved (sign convention is key — Jones-Wenzl primitive idempotent normalisation, NOT the [n]_q normalisation)
+2. **`tr_M(p_3) ≈ -2.069`** to match cal-anchored c_3 within ≤ 10 ppm
+3. Higher k contributions below cache precision floor at this anchor
+
+If `tr_M(p_2) = -1` and `tr_M(p_3) = -2.069` (or a structurally-natural close form), Family α is the residue A categorical-ID.
+
+**Sharpened target for Family β (Habiro-Kashaev)**:
+The Kashaev tower `(d_2, d_3, ...)` must match `(-1, -2.069, ...)`. If the
+Kashaev volume at substrate q₀ equals the Q_β CODATA, the Q_β-as-substrate-Volume conjecture is empirically validated.
 
 ## Cross-refs
 
