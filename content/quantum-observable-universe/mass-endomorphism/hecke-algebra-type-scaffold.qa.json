@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-endomorphism/hecke-algebra-type-scaffold.lean"
   },
   "source_hashes": {
-    "md": "596f9eaec479",
-    "ts": "2f7c997f7384",
+    "md": "06639af91082",
+    "ts": "819de939de9b",
     "lean": "f9e629c88d2b"
   },
   "criteria": {
@@ -1830,24 +1830,22 @@
     "canonical-no-negative-result-in-paper": [
       {
         "field_hash": {
-          "md": "596f9eaec479",
-          "ts": "2f7c997f7384",
+          "md": "06639af91082",
+          "ts": "819de939de9b",
           "lean": "f9e629c88d2b"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "3b132a7280af",
-          "script_commit_sha": "b3006ea9b2daeb73b5912c919a7bcb21c5834a77"
+          "script_commit_sha": "d3c07508b029723fd0bf70c593e53aec2599925d"
         },
-        "reviewed_at": "2026-06-03T20:30:24.391Z",
-        "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/hecke-algebra-type-scaffold.ts:1: paper block carries WIP-scaffolding tag pair [\"scaffolding\", \"open-rd-item-2\"] — move primary content to docs/audits/ and keep only canonical material in the paper. (Standalone \"scaffolding\" tag is allowed for axiomatic/structural buildup; pairing with an \"open-rd-item-*\" tag signals WIP R&D content. See docs/audits/2026-06-03-canonical-axis-current-fails-triage.md Pattern A.1.)"
+        "reviewed_at": "2026-06-03T20:51:19.725Z",
+        "reviewed_sha": "d3c07508b029723fd0bf70c593e53aec2599925d"
       }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-03T20:51:19.725Z"
 }
