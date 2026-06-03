@@ -17,7 +17,9 @@
 | 15-candidate c_3 re-run — categorical block-eigenvalue / discrete-channel / Markov-trace combinations | 15 closed forms | NEGATIVE 15/15 (best: `-(q² + q⁻²)` at 9,109 ppm m_p-pin / 16,921 ppm muon-pin) | PR #1760 |
 | Chain 4 — Kashiwara/crystal-derived single-formula | 6 candidates (Demazure char, SYT maj-index, J_Hopf Kauffman, symmetric+Hopf-center, [2]_q·b, J_Hopf(1)·b²) | NEGATIVE 6/6 (best: `-(q + q²)` SYT maj-index at 131,775 ppm) | PR #1768 |
 
-**Total**: 28 single-formula categorical c_3 candidates tested, all FAIL at 10 ppm at the m_p-pin anchor.
+**Total**: 28 single-formula categorical c_3 candidates tested, all FAIL the 10 ppm gate.
+
+**Gate convention**: the gate is "passes 10 ppm at the m_p-pin anchor" (production anchor used by the L2 dashboard headline). The Chain 1 first-tests and 15-candidate c_3 re-run additionally reported the muon-anchor miss for context, and the best candidates have been characterized at both; the m_p-pin gate is the dispositive one for current production. No candidate has passed BOTH the m_p-pin gate and 10 ppm at the muon anchor.
 
 ## What this means for production
 
