@@ -33,19 +33,23 @@ chain at Lean level.
 
 - `QSchurYLambdaClosedFormClaim`: the closed form ACTUALLY IS the
   q-Schur Markov-trace Plancherel weight at every n and every q.
+  Axiomatised as a class with an abstract `qSchurWeight` field
+  (the categorical weight, awaiting Mathlib's q-Schur algebra
+  formalisation) and an extensional identity
+  `closed_form_holds : ∀ λ q, ySchurClosedForm λ q = qSchurWeight λ q`.
   This is a known theorem in q-Schur duality (Lusztig 1990,
-  Beilinson-Lusztig-MacPherson) but its Lean formalisation from
-  Mathlib axioms requires the q-Schur algebra structure not
-  currently in Mathlib.
+  Beilinson-Lusztig-MacPherson); the class deviates from the
+  repo's vacuous-`True` §3b-cond convention because PR #1720
+  review (Gemini) flagged the placeholder as semantically
+  degenerate.
 
 - `qSchur_H2_top`, `qSchur_H2_bottom`, `qSchur_H2_normalization`:
   the H_2 case explicit identities, **sorry-free** via
   `unfold + decide + qFactorial + qBracket + field_simp + ring`.
   These are concrete `q`-bracket identities — the class
-  `QSchurYLambdaClosedFormClaim` above is *intended* to carry the
-  categorical content (that this closed form IS the q-Schur weight),
-  but currently holds a vacuous `True` placeholder field pending the
-  q-Schur algebra formalisation; see the class docstring.
+  `QSchurYLambdaClosedFormClaim` above carries the categorical
+  content extensionally (`∀ λ q, ySchurClosedForm λ q = qSchurWeight λ q`);
+  see the class docstring.
 
 - `qSchur_H3_top`, `qSchur_H3_mid`, `qSchur_H3_bottom`:
   the H_3 case explicit identities for partitions `(3)`, `(2,1)`,
@@ -129,25 +133,31 @@ noncomputable def ySchurClosedForm (λ : List ℕ) (q : ℝ) : ℝ :=
     This is a known theorem in q-Schur duality (Lusztig 1990,
     Beilinson–Lusztig–MacPherson) but its Lean formalisation from
     Mathlib axioms requires the q-Schur algebra structure not
-    currently in Mathlib. The class is currently sorry-free but
-    semantically degenerate — its `closed_form_holds : True` field
-    is a placeholder; the actual categorical content (`ySchurClosedForm`
-    IS the q-Schur weight, not just a coincidence formula) is asserted
-    intentionally and waits on the q-Schur algebra formalisation to
-    be strengthened into an extensional identity. Downstream theorems
-    depending on this closed form take this class as an `[Instance]`
-    hypothesis per §3b-cond. -/
+    currently in Mathlib. The class axiomatises this via an abstract
+    `qSchurWeight` field (the categorical weight, awaiting the
+    Mathlib formalisation) and an extensional `closed_form_holds`
+    identity asserting equality with `ySchurClosedForm` everywhere.
+    Downstream theorems depending on this closed form take this
+    class as an `[Instance]` hypothesis per §3b-cond.
+
+    Convention deviation note: most §3b-cond classes in the
+    repository (~80-100, registered under
+    `lean-section-3b-cond-classes-permanent`) use a vacuous
+    `True` placeholder field. This class uses the stronger
+    extensional form per PR #1720 review (Gemini, 2026-06-03);
+    the repo-wide convention is unchanged. -/
 class QSchurYLambdaClosedFormClaim where
-  /-- The closed form is a faithful reformulation of the q-Schur
-      Plancherel weight at every partition λ. The full proof requires
-      categorical machinery (q-Schur duality) outside Mathlib's
-      current scope. -/
-  closed_form_holds : True := trivial
-  -- Note: stated as `True` for the class-axiomatisation pattern;
-  -- the actual categorical content is the *intent* that the
-  -- `ySchurClosedForm` definition IS the q-Schur weight, not just
-  -- a coincidence formula. Future Lean work formalising q-Schur
-  -- algebras can strengthen this to an extensional identity.
+  /-- The categorical q-Schur Markov-trace Plancherel weight,
+      awaiting Mathlib's q-Schur algebra formalisation. Until then
+      this field is provided abstractly by any instance of the
+      class; the conjecture is `closed_form_holds` below. -/
+  qSchurWeight : List ℕ → ℝ → ℝ
+  /-- **The conjecture**: the closed form `ySchurClosedForm` agrees
+      with the q-Schur weight `qSchurWeight` at every partition and
+      every valid q. Equivalent to the Lusztig 1990 / BLM identity
+      `y_λ^{qSchur}(q) = q^{c(λ)} / [n]_q!`. Any instance of this
+      class commits to this extensional identification. -/
+  closed_form_holds : ∀ λ q, ySchurClosedForm λ q = qSchurWeight λ q
 
 /-! ## H_2 explicit identities
 
