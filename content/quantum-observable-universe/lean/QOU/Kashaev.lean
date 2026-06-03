@@ -89,7 +89,7 @@ class VolumeConjecture (q : ℝ) where
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / kashaev-volume-conjecture
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 @[simp]
-def pieceVolume (q : ℝ) [inst : VolumeConjecture q]
+noncomputable def pieceVolume (q : ℝ) [inst : VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) : ℝ :=
   inst.pieceVol β S
 
