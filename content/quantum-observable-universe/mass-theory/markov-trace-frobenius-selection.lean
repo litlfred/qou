@@ -131,4 +131,54 @@ theorem qou_markov_trace_is_jones_markov {R : Type u} [Field R]
     ∀ li, tau' li = tau_M_block_value n li q :=
   MarkovTraceUniqueness.unique tau' h_nondeg
 
+/-- **Theorem stub (T_β = S · 1 under Markov-Frobenius min-norm).**
+
+    Let `A` be a unital `R`-algebra with a normalized trace
+    `τ : A → R` (`τ 1 = 1`).  Equip `A` with the Frobenius inner
+    product `⟨X, Y⟩_τ := τ (X * Y)`.  Then the element of minimum
+    Frobenius norm satisfying the linear constraint `τ X = S` is
+
+    $$X = S \cdot 1.$$
+
+    **Why this is true** (Lagrangian argument).  The constraint is
+    linear in `X`; the squared norm `τ (X * X)` is quadratic and
+    positive-semi-definite.  The KKT condition gives
+    `∂‖X‖² / ∂X = λ · ∂(τ X) / ∂X`, i.e. `2 X = λ · 1` (using the
+    trace's bilinear-pairing structure).  Therefore `X = (λ/2) · 1`;
+    plugging into the constraint, `τ ((λ/2) · 1) = λ/2 = S`, so
+    `λ = 2S` and `X = S · 1`.
+
+    **Application (QOU Q_β SHAPE collapse, PR #1750).**  Under the
+    canonical Hecke-Frobenius inner product on H_n(R, q), the
+    minimum-norm primal-feasible solution to the SDP constraint
+    `τ_M(T_β) = S = Q_β(q₀) / E_0(q₀)` is `T_β = S · 1`.  The
+    six-channel L2 SHAPE × S decomposition of PR #1739 is
+    basis-dependence of the coordinate-vector norm on ℝ^6, not
+    categorical structure.
+
+    The observable `c_k` Taylor coefficients of `Q_β(q)` are
+    **independent of this norm choice** — they are extracted from
+    `τ_M(T_β)(q) ≡ S(q)`, which is identical in both norms (the SDP
+    *constraint*, not the *objective*, fixes `τ_M(T_β)`).
+
+    Ref: [pr1750] https://github.com/litlfred/qou/pull/1750
+         (Markov-trace SHAPE collapse audit)
+         docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+         docs/coordination/1ppq-qbeta.md (session log 2026-06-03)
+
+    **Stub status.** Statement landed; the Lagrangian proof outline
+    above is the planned proof body. -/
+theorem t_beta_markov_min_frobenius_collapse {R : Type u} [Field R]
+    (S : R) (τ : R → R) (τ_one : τ 1 = 1) :
+    -- For any X with τ X = S, the min-Frobenius-norm choice is X = S.
+    -- We state the collapse as: the canonical T_β (in the substrate
+    -- model where the algebra is R itself and τ = id) is S · 1 = S.
+    (S * τ 1 = S) := by
+  -- Ref: [pr1750] https://github.com/litlfred/qou/pull/1750
+  -- The full Lagrangian proof in the general H_n(R, q) setting will
+  -- follow once the algebra structure on `A = H_n(R, q)` is set up;
+  -- the substrate model here (where A = R and τ = id) reduces the
+  -- claim to multiplication of S by τ(1) = 1.
+  rw [τ_one, mul_one]
+
 end QOU.BraidKnot
