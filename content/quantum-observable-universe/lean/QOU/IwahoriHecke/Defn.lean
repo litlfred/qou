@@ -362,17 +362,24 @@ theorem universal_property
     {A : Type w} [CommRing A] [Algebra R A]
     (f : W → A) (hf : IsHeckeAlgebraMap q f) :
     ∃! φ : IwahoriHecke W R q →ₐ[R] A, ∀ s : W, φ (T q s) = f s := by
-  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 follow-up:
-  -- existence side now discharged via `universal_property_existence`;
-  -- uniqueness deferred until the FreeAlgebra-generates-quotient lemma is wired in.
+  -- Existence: via `universal_property_existence`.  Uniqueness: standard
+  -- generator-density chain — two AlgHoms out of a quotient agree iff their
+  -- compositions with the quotient map agree (`Ideal.Quotient.algHom_ext`);
+  -- two AlgHoms out of `FreeAlgebra R X` agree iff they agree on every
+  -- generator `ι R x` (`FreeAlgebra.hom_ext`).
   obtain ⟨φ_witness⟩ := universal_property_existence q f hf
   refine ⟨φ_witness.val, φ_witness.property, ?_⟩
   intro ψ hψ
-  -- Uniqueness: ψ agrees with φ_witness on every `T q s` (by hψ and φ_witness.property);
-  -- AlgHom.ext from the fact that {T q s : s ∈ W} generates IwahoriHeckeQuot R q univ.
-  -- Deferred: needs `AlgHom.ext_of_image_eq_self_of_genSet` (or similar Mathlib lemma)
-  -- via the surjective `Ideal.Quotient.mk` composed with FreeAlgebra's generator density.
-  sorry
+  -- Show `ψ = φ_witness.val` by composing with the quotient map and
+  -- reducing to agreement on `FreeAlgebra` generators.
+  refine Ideal.Quotient.algHom_ext
+    (R := R) (S := A)
+    (I := QOU.IwahoriHecke.Quotient.heckeIdeal R q (Set.univ : Set W)) ?_
+  refine FreeAlgebra.hom_ext (funext fun ⟨s, _⟩ => ?_)
+  -- After `funext`, the goal reduces (definitionally) to
+  -- `ψ (T q s) = φ_witness.val (T q s)`, discharged by `hψ` + `φ_witness.property`.
+  show ψ (T q s) = φ_witness.val (T q s)
+  rw [hψ s, φ_witness.property s]
 
 /-! ## Closure paths (downstream consumers gated on this infra)
 
