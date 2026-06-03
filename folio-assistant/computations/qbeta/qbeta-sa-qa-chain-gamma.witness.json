@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T19:39:55.265861+00:00",
-  "commitSha": "4e4136b883f98169676afd95a8ba9f6711d584b9",
+  "computedAt": "2026-06-03T20:27:54.431782+00:00",
+  "commitSha": "efbdea701c43151f5363e822d49c112bd9521410",
   "assertions": [
     {
       "name": "q_N_7_matches_q_codata_within_1_ppb",
@@ -28,11 +28,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 15,
   "computation": "qbeta-sa-qa-chain-gamma",
   "scriptFile": "qbeta_sa_qa_chain_gamma.py",
-  "scriptHash": "8a427f4285bf",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "08d27f2531ad",
+  "scriptCommitSha": "7fd30e32fac0dba442847e070fcf87aab1e1d7b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
