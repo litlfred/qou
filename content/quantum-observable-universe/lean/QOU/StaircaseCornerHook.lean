@@ -175,31 +175,24 @@ root structure.  Specialise to `Real.rpow q (1 / (2k-1))` over `R = ℝ`. -/
 axiom canonicalScaleAxiom {R : Type*} [CommRing R] [Inv R]
     (q : R) (k : ℕ) : R
 
-/-- **Open conjecture (refined)**, recorded via `sorry`.
+/-! ## Open conjecture — hypothesis-only (no global instance)
 
-This is the *single* `sorry` in the staircase EW-residual chain.
-Per `CLAUDE.md §3b-cond`, downstream theorems that take
-`[StaircaseEWResidual q canonicalScale]` as an instance hypothesis
-are **rigorous-conditional** results.
+The staircase EW-residual conjecture is the *existence* of an instance
+`StaircaseEWResidual q (canonicalScale q)`: that for every `k ≥ 2` the
+scale `q^(1/(2k-1))` is realised as a β_EW eigenvalue ratio on `V_{ρ k}`
+(empirically verified at k=3 rel.err 0.13 %, k=4 rel.err 0.14 % in
+`staircase_ew_residual_conjecture.py`).
 
-The previous version of this instance over-quantified `scale` (any
-function), which made the class hypothesis unsatisfiable for the
-specific empirical content.  This refined version pins `scale =
-canonicalScale q`, which matches the empirically-verified content
-`q^(1/(2k-1))`.
+Per `CLAUDE.md §3b-cond` we provide **no global instance** (which would
+require a `sorry`): downstream theorems take
+`[StaircaseEWResidual q (canonicalScale q)]` as an explicit instance
+hypothesis and carry the "conditional on `conj:staircase-ew-residual`"
+banner.  Closing the conjecture means constructing
+`StaircaseEWSpectralContent q (canonicalScale q k) k` for every `k ≥ 2`
+— a substantive Hoefsmit-matrix spectral analysis — after which an
+instance can be added and every downstream conditional becomes
+unconditional automatically.
 
-Closing this conjecture requires a concrete construction of
-`StaircaseEWSpectralContent q (canonicalScale q k) k` for every
-`k ≥ 2` — a substantive Hoefsmit-matrix spectral analysis. -/
-instance staircase_ew_residual_conjecture
-    {R : Type*} {A : Type*} [CommRing R] [Inv R] [Ring A]
-    [Algebra R A] (q : R)
-    [∀ k, QOU.Hecke.HeckeAlgebra R (QOU.Hecke.staircaseStrands k) q A]
-    [∀ k, QOU.Hecke.HoefsmitRepresentation
-            (QOU.Hecke.staircaseStrands k) q A
-            (QOU.Hecke.staircasePartition k)] :
-    StaircaseEWResidual q (canonicalScale q) where
-  -- Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md
-  spectral_scale_present := fun _ _ => sorry
+Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md -/
 
 end QOU.StaircaseCornerHook
