@@ -82,7 +82,8 @@ sign irrep $V_{(1,1,1)}$.
 
 Closed form: $-(q^2 - 1)(q^2 + 1)^2 / (4q^5)$.
 
-Antipode pair with `chi_block_3`: $\chi_{(1,1,1)}(q) = q^{-4} \chi_{(3)}(q)$. -/
+Antipode pair with `chi_block_3`: $\chi_{(1,1,1)}(q) = q^{-4} \cdot \chi_{(3)}(q)$,
+formalised below as `q⁻¹ ^ 4 * chi_block_3 q`. -/
 -- Ref: [hoefsmit1974]
 noncomputable def chi_block_111 (q : ℝ) : ℝ :=
   -(q^2 - 1) * (q^2 + 1)^2 / (4 * q^5)
@@ -113,7 +114,7 @@ the $q^{-1}$- and $q^{-5}$-denominators).
 Proof: direct rational arithmetic; clear denominators and apply
 `ring`. -/
 theorem chi_block_antipode_pairing (q : ℝ) (hq : 0 < q) :
-    chi_block_111 q = q⁻¹^4 * chi_block_3 q := by
+    chi_block_111 q = q⁻¹ ^ 4 * chi_block_3 q := by
   unfold chi_block_111 chi_block_3
   have hq_ne : q ≠ 0 := ne_of_gt hq
   field_simp
