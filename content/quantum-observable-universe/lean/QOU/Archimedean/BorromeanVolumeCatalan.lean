@@ -3,6 +3,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Analysis.Series
+import Mathlib.MeasureTheory.Integral.IntervalIntegral
 
 /-!
 # Borromean rings volume — Catalan-constant categorical identity
@@ -107,24 +108,24 @@ theorem catalan_G_pos : catalan_G > 0 := by
 /-- The Lobachevsky function `Λ : ℝ → ℝ`,
     `Λ(θ) := -∫_0^θ ln|2 sin t| dt`.
 
-    Equivalent to the Clausen function Cl_2 via
-    `Λ(θ) = (1/2) Cl_2(2θ)`.  The Lobachevsky function is the natural
-    measure of ideal-hyperbolic-tetrahedron volume in Lobachevsky's
-    formula `Vol(Δ(α,β,γ)) = Λ(α) + Λ(β) + Λ(γ)`.
+    Defined directly via Mathlib's `intervalIntegral` over the integrand
+    `-ln|2 sin t|`.  The integral is improper at the boundary (`ln|2 sin 0|`
+    is `-∞`) but Lebesgue-integrable; `intervalIntegral` returns the
+    canonical value when the integrand is integrable.  For misuse / outside
+    the convergent domain Mathlib's `intervalIntegral` falls back to `0`,
+    so callers should not rely on the value outside the standard
+    `Λ(π/4) = G/2` interface below.
 
-    **Why this is an `axiom`, not a `def`.**
-    The Lebesgue integral `∫_0^θ -ln|2 sin t| dt` is improper at the
-    boundary (`ln|2 sin 0|` is `-∞`) but converges; Mathlib does not yet
-    carry the dedicated Lobachevsky / Clausen function (loogle +
-    leansearch on 2026-05-25), so we axiomatise it here at function-type
-    level pending the upstream contribution.  Same convention as
-    `vol_B3_eq_8_catalan` below.
+    Equivalent to the Clausen function `Cl_2` via `Λ(θ) = (1/2) Cl_2(2θ)`;
+    the natural measure of ideal-hyperbolic-tetrahedron volume in
+    Lobachevsky's formula `Vol(Δ(α,β,γ)) = Λ(α) + Λ(β) + Λ(γ)`.
 
     -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions",
             North-Holland (1981), §4.2 eq. 4.2.1.
     -- Ref: [zagier1986] Zagier, "Hyperbolic manifolds and special values
             of Dedekind zeta-functions" — connection to hyperbolic geometry. -/
-axiom lobachevsky : ℝ → ℝ
+noncomputable def lobachevsky (θ : ℝ) : ℝ :=
+  - ∫ t in (0 : ℝ)..θ, Real.log |2 * Real.sin t|
 
 /-! ## §3  Lobachevsky-Catalan identity -/
 
