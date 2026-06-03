@@ -1,0 +1,62 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-03T18:28:14.141928+00:00",
+  "commitSha": "9bd3f954445fb02ea598a4ed7108465b0b69ac71",
+  "assertions": [
+    {
+      "name": "L2-constraint-symbolic-identity",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "A^T · (A · S / ||A||²) - S simplified symbolically"
+    },
+    {
+      "name": "Markov-constraint-symbolic-identity",
+      "computed": "S",
+      "expected": "S",
+      "passed": true,
+      "source": "A^T · (S · e_γ) under tau_M(I) = 1 normalisation"
+    },
+    {
+      "name": "L2-Markov-tau_M-coincide-at-q0",
+      "computed": 2.78e-10,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "τ_M(T_β^L2)(q_0) - τ_M(T_β^M)(q_0) numerical residue"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "qbeta-markov-trace-step-4-ck-invariance",
+  "scriptFile": "qbeta_markov_trace_step_4_ck_invariance.py",
+  "scriptHash": "d55ff0ff5c2f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Step 4 of PR #1750 Markov-trace probe — diagnostic that the observable c_k Taylor coefficients are L2/Markov-independent. Both norms satisfy τ_M(T_β)(q) ≡ S(q) by the SDP constraint, so c_k = Taylor of S(q) regardless of norm choice. The Markov collapse is a structural simplification of T_β-as-operator, NOT a redirection of c_k extraction.",
+  "data": {
+    "ck_invariance_conclusion": {
+      "L2_constraint_algebraic_identity": true,
+      "Markov_constraint_algebraic_identity_under_normalisation": true,
+      "tau_M_T_beta_identical_in_both_norms": true,
+      "ck_taylor_coefficients_L2_Markov_independent": true,
+      "ck_extraction_site": "Taylor coefficients of S(q) = Q_β(q) / E_0(q) — upstream of any SDP norm choice.",
+      "Markov_collapse_content": "Structural simplification of T_β-as-operator (scalar × identity instead of 6-channel spread), NOT a redirection of c_k extraction."
+    }
+  }
+}
