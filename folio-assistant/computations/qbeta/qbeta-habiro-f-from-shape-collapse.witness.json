@@ -1,32 +1,32 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T20:29:15.392497+00:00",
-  "commitSha": "e956b5d48e2746489ce45866161b06d889452eec",
+  "computedAt": "2026-06-03T20:49:48.807811+00:00",
+  "commitSha": "653b9e77a545c980c9aaf5f4ae554c7c837de83b",
   "assertions": [
     {
-      "name": "S_N0_=_(2q+1-q²)(q²-1)/(2q²)_c2_eq_minus_one",
-      "computed": 1.0,
+      "name": "S_N0__(2q+1-q²)(q²-1)/(2q²)_S_at_qeq1_eq_zero",
+      "computed": 0.0,
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 1e-15,
-      "source": "S_N0 = (2q+1-q²)(q²-1)/(2q²): c_2 should equal -1 (PR #1602 proved; bar-even constraint). Non-match identifies this E_0 variant as the wrong canonical form."
+      "source": "S_N0 = (2q+1-q²)(q²-1)/(2q²): diagnostic — S(q=1) should equal 0 (Q_β · (q-1) zero meets E_0 1/(q-1) pole). Pass ⇒ confirms this S is the SDP-constraint scalar, NOT the ladder normalization. The categorical f-construction needs symbolic Q_A(q) and α(q), not Q_β/E_0."
     },
     {
-      "name": "S_tower_=_S_N0_·_(1-ℏ_q²)_c2_eq_minus_one",
-      "computed": 1.0,
+      "name": "S_tower__S_N0_·_(1-ℏ_q²)_S_at_qeq1_eq_zero",
+      "computed": 0.0,
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 1e-15,
-      "source": "S_tower = S_N0 · (1-ℏ_q²): c_2 should equal -1 (PR #1602 proved; bar-even constraint). Non-match identifies this E_0 variant as the wrong canonical form."
+      "source": "S_tower = S_N0 · (1-ℏ_q²): diagnostic — S(q=1) should equal 0 (Q_β · (q-1) zero meets E_0 1/(q-1) pole). Pass ⇒ confirms this S is the SDP-constraint scalar, NOT the ladder normalization. The categorical f-construction needs symbolic Q_A(q) and α(q), not Q_β/E_0."
     }
   ],
-  "allPassed": false,
-  "durationMs": 1615,
+  "allPassed": true,
+  "durationMs": 1317,
   "computation": "qbeta-habiro-f-from-shape-collapse",
   "scriptFile": "qbeta_habiro_f_from_shape_collapse.py",
-  "scriptHash": "d7baaa0513cf",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c3bbcd59ffcf",
+  "scriptCommitSha": "653b9e77a545c980c9aaf5f4ae554c7c837de83b",
   "precisionMetadata": {
     "compute_dps": 80,
     "output_dps": 60,
@@ -59,11 +59,15 @@
     },
     "S_N0_results": {
       "variant": "S_N0 = (2q+1-q²)(q²-1)/(2q²)",
-      "error": "S(q=1)=0"
+      "S_at_qeq1": "0",
+      "error": "S(q=1)=0",
+      "diagnostic": "S(q=1) vanishes; Q_β · (q-1) zero meets E_0 1/(q-1) pole with wrong residue, so Q_β/E_0 is not the ladder normalization. Audit doc conflated SDP-constraint S with ladder S."
     },
     "S_tower_results": {
       "variant": "S_tower = S_N0 · (1-ℏ_q²)",
-      "error": "S(q=1)=0"
+      "S_at_qeq1": "0",
+      "error": "S(q=1)=0",
+      "diagnostic": "S(q=1) vanishes; Q_β · (q-1) zero meets E_0 1/(q-1) pole with wrong residue, so Q_β/E_0 is not the ladder normalization. Audit doc conflated SDP-constraint S with ladder S."
     }
   }
 }
