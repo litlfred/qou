@@ -164,6 +164,66 @@ This is a **selection rule** (which Wedderburn rank, which normalization), **zer
 
 Per the STEP-2 reconciliation: the Kashaev/Habiro element is root-of-unity-bound and diverges at real q₀. The quantum-dimension Gelfand-model sum used here is a **finite Laurent polynomial** — evaluable at real q₀ *and* at roots of unity, the crystal-basis/RT-compatible object the owner identified. So STEP 3 is the productive continuation of the owner's redirect, and STEP 2 (Habiro) was the necessary detour that ruled out the wrong object.
 
+## STEP 4 (2026-06-03) — relation to the 6 knot-operator basis; rational not series; even/odd rank
+
+Owner question: *"c=2, c=4, 5 — are they all different knot operators… correspond to 6 knot-operator basis or something else? series or rational func?"*
+
+### Not the 6 knot operators — a different "total" over the same Wedderburn pieces
+
+The **6 knot-operator basis** (step 4 of the canonical chain, Bring χ=−6) is
+
+```
+dim H_3 = Σ_{λ⊢3} (dim V_λ)²  =  1² + 2² + 1²  =  6      (the REGULAR rep of H_3)
+```
+
+— 6 *operators* (braid words) at the **single** rank H_3 (the proton/neutron braid rank). My selection rule instead uses the **GELFAND model**
+
+```
+linking_weight(L) = (1/(c+1)) · Σ_{λ⊢(c+1)} dim V_λ      (each irrep ONCE, not squared)
+```
+
+So they are **two different sums over the same Wedderburn decomposition**:
+
+| total | formula | at n=3 | object |
+|-------|---------|--------|--------|
+| **regular rep** (6-operator basis) | `Σ_{λ⊢n} (dim V_λ)²` | **6** = dim H_3 | which braid *word* (operator); tr_M of these → Jones/mass |
+| **Gelfand model** (my linking_weight) | `Σ_{λ⊢n} dim V_λ` = `I(n)` | 4 = I(3) | one scalar per link; multiplies Vol |
+
+| n | Σ dim (Gelfand = I(n)) | Σ dim² (regular = dim H_n) |
+|---|---|---|
+| 2 | 2 | 2 |
+| 3 | 4 | **6** ← the operator basis |
+| 4 | 10 | 24 |
+| 5 | 26 | 120 |
+| 6 | 76 | 720 (= n!) |
+
+### Not "different operators" — different RANKS
+
+The `c`-family indexes Wedderburn **rank** `n = c+1`, not operators-within-a-rank. Each `c` yields **one** Gelfand-model q-dimension (a single function), not a basis element. The 6 operators are 6 elements at fixed rank 3; my `c=1,2,3,4,5` are full Gelfand sums at ranks 2,3,4,5,6.
+
+### Rational functions, NOT series
+
+Every `lw(c)` is a **finite rational function** of `q` (Laurent polynomial over an integer denominator) — the crucial contrast with the **refuted Habiro element** (a *divergent series*). This is exactly why the quantum-dimension object works archimedean-ly where the Habiro element failed.
+
+```
+c=1 (n=2):  1                              ← muon (even rank)
+c=2 (n=3):  (q+1)²/(3q)                     (odd rank)
+c=3 (n=4):  (3q²+4+3q⁻²)/4 = 5/2+3h²/4      ← proton (even rank)
+c=4 (n=5):  (3q⁸+2q⁷+3q⁶+2q⁵+6q⁴+…)/(5q⁴)   (odd rank)
+c=5 (n=6):  Σ_{λ⊢6}dim_q / 6                (even rank)
+```
+
+### Even/odd-rank dichotomy (a real structural fact)
+
+- **EVEN rank** `n=c+1` (c = 1, 3, 5 …): the Gelfand sum is a **polynomial in `h²`** (bar-symmetric, clean). **Both known anchors — muon (c=1) and proton (c=3) — are even-rank.**
+- **ODD rank** `n=c+1` (c = 2, 4 …): carries a `[2]_q = q+q⁻¹ = √(h²+4)` factor — *not* a polynomial in `h`.
+
+So the c=2 (Hopf, 2-component-link) prediction sits at odd rank and has the √ structure — a sharp, falsifiable feature for the decisive test.
+
+### Connection at the proton
+
+The proton involves **both** structures at adjacent ranks: its braid *operator* lives in H_3 (the 6-basis, `Σdim²=6`), while its *linking_weight* uses the H_4 Gelfand model (`Σdim=10`). The rank shift H_3 → H_4 is exactly the `n = c+1` "+1" — the open mechanism question (the lepton/observation fibre hypothesis).
+
 ## Verdict + next step
 
 - **Finding 1** is a clean, citable provenance upgrade (`linking_weight = I(4)/4` q-deformed). Worth landing regardless of the rest.
