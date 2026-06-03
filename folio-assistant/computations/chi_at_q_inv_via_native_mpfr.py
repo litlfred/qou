@@ -67,7 +67,7 @@ def _q_inv_str(dps: int) -> str:
         return mp.nstr(1 / q, dps, strip_zeros=False)
 
 
-def _word_to_signed(word):
+def _word_to_signed(word, *, dps: int = 50):
     """Translate Python `(c, d, g0)` Hecke-factor word to Rust's
     `(sign, g1)` enum, matching chi_at_q0_via_hoefsmit_mpfr.
 
@@ -76,31 +76,46 @@ def _word_to_signed(word):
     0.2089.  Decoding therefore uses h_0, NOT h(q) for the
     target evaluation point.  The Rust kernel takes the abstract
     sign and substitutes h(q) internally per its q_str argument.
+
+    Comparisons stay in `mp.mpf` at the active dps so upstream
+    `mp.mpf` `d_` values are not silently truncated to float64
+    before the inter-class gap check (Copilot review PR #1748).
+    Tolerance is `mp.mpf("1e-10")` — bounded below by float64 ulp
+    noise (~1e-15) on the current upstream `atom_braid_word_3A`
+    (which produces float `d_`) and bounded above by the ~0.1
+    inter-class gap at substrate q_0.  Future upstream changes to
+    return `mp.mpf` `d_` at higher precision will continue to
+    decode correctly since the mpf compare avoids the float
+    truncation step.
     """
-    q0 = float(mp.mpf(Q_50_DIGIT_STR))
-    h0 = q0 - 1.0 / q0
-    tol = 1e-12
-    out = []
-    for c_, d_, g_ in word:
-        if abs(float(c_) - 1.0) > tol:
-            raise ValueError(f"native chi path requires c==1.0, got c={c_}")
-        d_val = float(d_)
-        if abs(d_val) < tol:
-            sgn = 1
-        elif abs(d_val + h0) < tol:
-            sgn = -1
-        elif abs(d_val + h0 / 2) < tol:
-            sgn = 0
-        else:
-            raise ValueError(f"unrecognised d={d_} (expected 0, -h0, or -h0/2)")
-        g1 = int(g_) + 1
-        out.append((sgn, g1))
+    with mp.workdps(max(dps, mp.mp.dps)):
+        q0 = mp.mpf(Q_50_DIGIT_STR)
+        h0 = q0 - 1 / q0
+        tol = mp.mpf("1e-10")
+        out = []
+        for c_, d_, g_ in word:
+            c_mpf = mp.mpf(str(c_)) if not isinstance(c_, mp.mpf) else c_
+            d_mpf = mp.mpf(str(d_)) if not isinstance(d_, mp.mpf) else d_
+            if abs(c_mpf - 1) > tol:
+                raise ValueError(
+                    f"native chi path requires c==1.0, got c={c_}")
+            if abs(d_mpf) < tol:
+                sgn = 1
+            elif abs(d_mpf + h0) < tol:
+                sgn = -1
+            elif abs(d_mpf + h0 / 2) < tol:
+                sgn = 0
+            else:
+                raise ValueError(
+                    f"unrecognised d={d_} (expected 0, -h0, or -h0/2)")
+            g1 = int(g_) + 1
+            out.append((sgn, g1))
     return out
 
 
 def run_atom(atom: str, Z: int, N: int, dps: int = 50) -> Path:
     """χ_λ over all partitions of 3A at q = q_0^{-1}, persisted to
-    `chi-{atom}-h{3A}-at-qinv-50dps.witness.json`."""
+    `chi-{atom}-h{n}-at-qinv-50dps.witness.json` (where n = 3·A)."""
     import pyhecke_native as pn
 
     A = Z + N

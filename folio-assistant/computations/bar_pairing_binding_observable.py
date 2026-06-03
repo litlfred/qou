@@ -116,9 +116,25 @@ def _load_or_compute_chi(atom: str, n: int, kind: str, q_str: str,
         legacy = HERE / f"chi-{atom}-{kind}-h{n}-at-{q_tag}-50dps.witness.json"
     if legacy.exists():
         w = json.loads(legacy.read_text())
-        if not w.get("partial", False):
+        # Cache-key validation (Copilot review PR #1748): the filename
+        # alone does NOT encode q_str + dps.  A future q_0 re-pin or a
+        # different precision request would otherwise silently load a
+        # stale witness.  Re-run if the on-disk fields disagree.
+        cached_q = w.get("q_str", w.get("q_0_50dps_str", w.get("q_inv_50dps_str")))
+        cached_dps = w.get("dps")
+        if (not w.get("partial", False)
+                and cached_q == q_str
+                and cached_dps == dps):
             return {tuple(e["partition"]): mp.mpf(e["chi_lambda"])
                     for e in w["by_partition"]}, legacy
+        if cached_q is not None and cached_q != q_str:
+            print(f"[{atom}] cache miss: {legacy.name} computed at "
+                  f"q_str={cached_q!r}, requested {q_str!r} — recomputing",
+                  flush=True)
+        elif cached_dps is not None and cached_dps != dps:
+            print(f"[{atom}] cache miss: {legacy.name} computed at "
+                  f"dps={cached_dps}, requested {dps} — recomputing",
+                  flush=True)
     # Compute fresh.
     print(f"[{atom}] computing {kind}@{q_tag} (n={n}, "
           f"{len(word_signed)}fac) — caching to {legacy.name}",

@@ -291,7 +291,12 @@ pub fn chi_lambda_braid_mpfr(
             },
         )
         .map(|(_, p)| p)
-        .reduce(|| Float::with_val(prec, 0), |a, b| a + b);
+        // In-place accumulation (Copilot review PR #1748): `|a, b| a + b`
+        // allocates a fresh Float on every reduction step; `+=` mutates
+        // the accumulator's mantissa in place — for ⁴He at 50 dps and
+        // ~log₂(7700) ≈ 13 reduction levels this is a real allocator-
+        // pressure win at zero math cost.
+        .reduce(|| Float::with_val(prec, 0), |mut a, b| { a += b; a });
     trace.to_string_radix(10, Some(dps as usize))
 }
 
