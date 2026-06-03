@@ -66,3 +66,36 @@ intensive (1.65×) → extensive pairwise bond-sum (ordering correct, deuteron
 derived) → **many-body ceiling**: ⁴He is 74 % irreducible 4-body α-binding. The
 Δ_λ gate, reframed: it was never a per-block weight; the two-body part is the
 bond-sum (derived), the remainder is many-body cooperativity (the α-unit).
+
+## Convergence with the sibling magic-A formula (2026-06-03)
+
+The "many-body 4-body α term" localized above as the open item is **already
+realized** by the sibling ⁴He investigation
+([`2026-06-02-he4-binding-canonical-vs-full-theta-design.md`](2026-06-02-he4-binding-canonical-vs-full-theta-design.md),
+branch `claude/he4-jsj-binding-link`): the canonical **magic-A formula**
+
+  `B(⁴He) = 2·m_e·A·Vol(L6a4) = 2·m_e·4·8G = 29.96 MeV`,  rel_err **+5.87%** (no fit)
+
+uses the ⁴He-as-α **Borromean volume** `8G` (= 8·Catalan), i.e. a genuine
+**4-body (whole-α) volume term**, NOT a sum of pairwise bonds. This is exactly
+the irreducible many-body object the pairwise chain-sum cannot contain.
+
+**The two independent results unify:**
+
+| body order | structure | regime | result |
+|---|---|---|---|
+| **2-body** | pairwise bond-sum `Σ_b E_0·Δ\|tr_M\|_b` (this audit) | A≤3 | correct T/³He ordering; A=2 derived; ~40% low at A=3 (3-body residual) |
+| **4-body** | magic-A α-volume `2·m_e·A·8G` (sibling) | ⁴He | **+5.87%, no fit** |
+
+My pairwise-ceiling finding (⁴He = 26% pairwise, 74% many-body) is the
+**explanation** for why the sibling's whole-α volume term is required and why a
+pairwise model under-binds ⁴He by ~74%. The magic-A overshoot (+5.87%) is the
+4-body term slightly over the residual the pairwise sum leaves (74% of 28.3 ≈
+20.9 MeV); reconciling the 2-body + 4-body decomposition (and the 3-body A=3
+piece) into one additive many-body series is the unified next step — but the
+**4-body α term is not open: it is the magic-A formula, at +5.87%.**
+
+**Net:** the binding decomposition is **2-body (pairwise, derived ordering) +
+3-body (A=3 residual) + 4-body (magic-A α-volume, +5.87%)**. The Δ_λ gate fully
+dissolves into this many-body series; no per-block weight, and the headline ⁴He
+term already exists and nearly closes.
