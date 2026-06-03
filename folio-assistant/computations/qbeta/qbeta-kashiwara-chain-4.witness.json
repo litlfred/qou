@@ -1,0 +1,83 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T20:40:03.508238+00:00",
+  "commitSha": "1dbb40d5ecc65d1a1b572529277e6aadb4d89b4d",
+  "assertions": [
+    {
+      "name": "chain_4_literal_kashiwara_at_least_one_passes_10_ppm",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "source": "Six literal Kashiwara/crystal-derived single-formula c_3 candidates (Demazure char, SYT maj-index, J_Hopf Kauffman, symmetric+Hopf-center, [2]_q·b, J_Hopf(1)·b²). If any matches the empirical c_3 within 10 ppm, this is a residue-A categorical-ID candidate; otherwise the search narrows to COMPOSITE operator structures."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "qbeta-kashiwara-chain-4",
+  "scriptFile": "qbeta_kashiwara_chain_4.py",
+  "scriptHash": "4b84e9a44828",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.4.0"
+  },
+  "data": {
+    "target_c_3": "-2.06934257711516783787971951725",
+    "q_substrate": "1.10997858275138080759166909561",
+    "candidates_tested": [
+      "1. Demazure (2,1) char = -2·[3]_q",
+      "2. SYT(2,1) major-index sum -(q + q²)",
+      "3. J_Hopf(q) Kauffman norm at substrate",
+      "4. -(q² + 1 + q⁻²) symmetric+Hopf-center",
+      "5. -(q + q⁻¹)·b_q quantum-2·Hoefsmit",
+      "6. -J_Hopf(q=1)·b² = 2·b² sign-test"
+    ],
+    "per_candidate_results": {
+      "1. Demazure (2,1) char = -2·[3]_q": {
+        "computed": "-6.08741241706504397880403867135",
+        "err_ppm": 1941713.2206071906,
+        "passed": false
+      },
+      "2. SYT(2,1) major-index sum -(q + q²)": {
+        "computed": "-2.34203103691814473886147360915",
+        "err_ppm": 131775.4067492908,
+        "passed": false
+      },
+      "3. J_Hopf(q) Kauffman norm at substrate": {
+        "computed": "-4.05460307523964428915451131377",
+        "err_ppm": 959367.733539843,
+        "passed": false
+      },
+      "4. -(q² + 1 + q⁻²) symmetric+Hopf-center": {
+        "computed": "-3.04370620853252198940201933568",
+        "err_ppm": 470856.61030359525,
+        "passed": false
+      },
+      "5. -(q + q⁻¹)·b_q quantum-2·Hoefsmit": {
+        "computed": "-1.74462208186544572046289004885",
+        "err_ppm": 156919.6414556013,
+        "passed": false
+      },
+      "6. -J_Hopf(q=1)·b² = 2·b² sign-test": {
+        "computed": "1.50540422650393080318755870324",
+        "err_ppm": 1727479.4628749131,
+        "passed": false
+      }
+    },
+    "best_candidate_name": "2. SYT(2,1) major-index sum -(q + q²)",
+    "best_candidate_err_ppm": 131775.4067492908,
+    "any_candidate_passes_10_ppm": false,
+    "interpretation": "Chain 4 (Option-E) first-test: 6 Kashiwara/crystal-derived single-formula c_3 candidates tested at proton-pinned q₀ against c_3 = -2.069. Best: '2. SYT(2,1) major-index sum -(q + q²)' at 131775.41 ppm. NEGATIVE — no literal Kashiwara single-formula matches. Combined with Chain 1 NEGATIVE and the 15-candidate c_3 re-run NEGATIVE, the residue A lives in a composite operator structure, not a single-formula crystal object."
+  }
+}
