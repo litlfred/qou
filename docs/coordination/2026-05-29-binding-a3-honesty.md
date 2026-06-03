@@ -188,3 +188,38 @@ review triage, 11 Copilot threads resolved).
 **Open / next:** (a) decisive c=2 test — find a 2-component-link
 particle, check lw vs (q+1)²/(3q)=1.337 at q₀; (b) derive why rank
 = c+1 (lepton-fibre hypothesis). Both gated on owner direction.
+
+## 2026-06-03 (sweep 2) — c=2 investigation + PR #1777 EM-linking overlap
+
+Second `/coordinate` sweep on PR #1765 branch.
+
+**New since first sweep:**
+- 5 new main commits (lean extractor, qa-sweep, canonical-axis WIP, copilot
+  review on #1774, skills idle-time discipline) — all infrastructure, no
+  file overlap with PR #1765's branch.
+- **NEW SIBLING:** PR #1777 "Derive the two-like-charge EM-linking
+  invariant (pp-Coulomb T−³He gate)" — genuinely overlapping methodology
+  (per-interface 2-link scalar with the same "no fit / no CAL-4"
+  discipline). Posted intent with the c=2 candidate
+  `(q+1)²/(3q) = 1.337` as a concrete derived candidate for their
+  EM-linking slot.
+
+**Internal c=2 investigation (read-only, NOT committed to PR #1765):**
+- Framework knot-particle table: gluon = Hopf link L2a1 (c=2), with Higgs
+  = 4_1, muon = 5_1 (cinquefoil) — all c=1 knots so the c=1 lw=1 anchor
+  still holds for all of them.
+- `tr_M(σ₁²) = 1 + (q−1)/√q ≈ 1.104` at q₀ — the Markov trace of the Hopf
+  link is NOT the same object as `(1/3)Σ_{λ⊢3} dim_q = 1.337` (Markov
+  trace vs Wedderburn channel sum; different layers).
+- Conclusion: the framework currently exposes NO observable that IS the
+  gluon's c=2 linking_weight; PR #1777's "EM-linking invariant" slot is
+  the most natural exposure point (now flagged via the intent comment).
+
+**Own review threads:** all 11 still resolved (no new review activity on
+PR #1765 since sweep 1).
+
+**Comments posted:** PR #1777 (c=2 candidate).
+
+**Open / next:** awaiting PR #1777 author triage. PR #1765 itself stands
+complete as-is (selection rule + Habiro refutation + STEP-4 Gelfand-vs-
+regular-rep analysis + 11 review fixes).
