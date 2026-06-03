@@ -37,7 +37,7 @@ with `E_0` a **calibration-fixed** scale (`𝔈₀ = m_e/(q₀(q₀−1)) ≈ 4.
 
 ## The reframing — intensive vs extensive
 
-`B = E_0·Δ|tr_M|` is an **intensive** observable: `|tr_M|` is a bounded trace,
+`B = E_0·Δtr_M` is an **intensive** observable: `|tr_M|` is a bounded trace,
 and its free−atom difference saturates (~3–4 MeV) — it does **not** scale with
 mass number. **Nuclear binding is extensive** (`B ∝ A` to leading order). So the
 canonical formula is **structurally missing the extensive / additive term** —
@@ -60,7 +60,7 @@ object is an **additive extensive term**, not a multiplicative weight.
 
 A≥3 binding needs a **derived extensive term**: an additive sum over the
 inter-nucleon channels of the canonical braid (each bond an intensive
-`E_0·Δ|tr_M|`-like contribution), i.e. `B(K) = Σ_{bonds b} B_b` where each `B_b`
+`E_0·Δtr_M`-like contribution), i.e. `B(K) = Σ_{bonds b} B_b` where each `B_b`
 is the derived single-bond binding. This is the **operator-valued / per-bond**
 structure — consistent with the cheat-sheet §9 "operator-valued combiner"
 (#1698) and the `bowtie ⨝_K` inter-nucleon channel decomposition — and it is a

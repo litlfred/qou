@@ -9,7 +9,7 @@
 
 The zero-fit canonical derivation
 ([`2026-06-02-binding-intensive-vs-extensive-derivation.md`](2026-06-02-binding-intensive-vs-extensive-derivation.md))
-showed `B = E_0·Δ|tr_M|` is **intensive** (saturates; A-growth 1.65× vs AME 12.72×),
+showed `B = E_0·Δtr_M` is **intensive** (saturates; A-growth 1.65× vs AME 12.72×),
 and that the Δ_λ gate is mis-framed: nuclear binding is **extensive**, an additive
 sum over inter-nucleon bonds, not a per-block weight. This derivation tests the
 extensive form directly.
@@ -47,7 +47,7 @@ zero fit, and derives the deuteron (+3.6 %).
    (the cooperative/saturation effect). **Closing this needs `B_b` computed from
    each bond's embedded sub-braid**, not the isolated-deuteron value.
 
-Both refinements reduce to **one compute step: derive `B_b = E_0·Δ|tr_M|_b` for
+Both refinements reduce to **one compute step: derive `B_b = E_0·Δtr_M_b` for
 each `⨝_K` bond from its (possibly embedded) 2-nucleon sub-braid.** The deuteron
 is the isolated-pn base case (derived). This is a *derivation* (sum of derived
 per-bond pieces over the structural bond set), the natural realization of the
@@ -59,7 +59,7 @@ The whole 2026-06-02 probe arc (volume → phase → content → measure) was se
 for a per-block *weight* — the wrong object. This derivation confirms the right
 object is the **extensive bond-sum**: zero-fit, deuteron-derived, A-scaling 1.65×
 → 6.00× in one structural step, with the residuals reduced to a single
-well-posed compute (per-bond sub-braid `Δ|tr_M|`). Cheat-sheet §9.3 updated with
+well-posed compute (per-bond sub-braid `Δtr_M`). Cheat-sheet §9.3 updated with
 this reframing. Track A per-isotope binding (gated for the L2 100× `Q_β`/`m_n`/
 `Δ_pn` targets) now has a derivation path, not a fitting search.
 
@@ -67,8 +67,10 @@ this reframing. Track A per-isotope binding (gated for the L2 100× `Q_β`/`m_n`
 
 Derived the three bond types from their 2-nucleon sub-braids
 (`binding_canonical(Z,N)`: pn=(1,1)=deuteron, pp=(2,0), nn=(0,2)),
-`B_xy = E_0·(|tr_M_free| − |tr_M_atom|)` (the absolute-trace binding convention
-used throughout, matching `binding_canonical`), summed by composition
+`B_xy = E_0·(tr_M_free − tr_M_atom)` (SIGNED categorical trace-difference
+convention, matching the corrected `binding_canonical`; the double-modulus
+`|tr_free|−|tr_atom|` was a non-archimedean misuse — value-identical here since
+both traces are positive at q₀), summed by composition
 `n_pp=C(Z,2), n_pn=Z·N, n_nn=C(N,2)`:
 
 | bond | B (MeV) |
@@ -91,7 +93,7 @@ AME 8.48 > 7.72 — **MATCHES**, zero fit) and improves both T and ³He. The
 discriminator is the bond composition: T = {2 pn, 1 nn} carries the stronger
 `B_nn`, ³He = {1 pp, 2 pn} the weaker `B_pp` — so `B_T > B_³He` falls out.
 
-(Note: this level uses the SCALAR `|tr_M|` so the deuteron is +12 % not the
+(Note: this level uses the SCALAR signed `Δtr_M` so the deuteron is +12 % not the
 observe-per-block +3.6 %. The per-block version and the per-bond GROWTH — the
 ⁴He −47 % residual, bonds embedded in the 12-strand braid — both need the Rust
 per-partition χ kernel for the embedded 2-nucleon sub-braids, runnable in CI.)
@@ -126,7 +128,7 @@ is a combinatorial *model*, not the braid's topology. Two consequences:
    AME 28.3 — so the per-interface binding must grow ~3.8× under embedding. The
    chain interfaces sit in a 12-strand braid and are strongly cooperative; the
    per-bond growth (the remaining residual) is the dominant effect, and is
-   exactly the embedded-sub-braid `Δ|tr_M|` compute (Rust per-partition χ kernel,
+   exactly the embedded-sub-braid `Δtr_M` compute (Rust per-partition χ kernel,
    CI) — the well-posed next step.
 
 **Net:** the structural picture is a chain of `A−1` strongly-embedded

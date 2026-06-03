@@ -298,7 +298,13 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     # preserves the binding/anti-binding SIGN, which the double-modulus
     # form would distort whenever a trace is negative.
     delta_tr = tr_free_r - tr_atom_r                      # signed categorical scalar
-    B = Q_beta_n_mev * (delta_tr.real if isinstance(delta_tr, complex) else delta_tr)
+    # Archimedean realization at the substrate anchor: Im(q_0) = 0
+    # (the `lusztig_q_0_imaginary_part_zero` constraint), so the physical
+    # observable is the real part.  `.real` is taken explicitly (not as a
+    # silent collapse) and works uniformly for float / Python-complex /
+    # mpmath.mpc (the latter does NOT subclass Python `complex`, so an
+    # isinstance guard would be fragile — per Gemini review on PR #1738).
+    B = Q_beta_n_mev * delta_tr.real
     return {
         "status": "solved",
         "Z": Z, "N": N, "A": A,

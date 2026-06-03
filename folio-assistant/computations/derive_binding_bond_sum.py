@@ -5,7 +5,7 @@ The zero-fit derivation (2026-06-02-binding-intensive-vs-extensive-derivation.md
 showed B = E_0·Δtr_M is INTENSIVE (saturates ~3-4 MeV; A-growth 1.65× vs AME
 12.72×). Nuclear binding is EXTENSIVE — an additive sum over inter-nucleon bonds:
 
-    B(K) = Σ_{b ∈ ⨝_K} B_b ,   B_b = E_0·Δtr_M|_b  (single-bond, deuteron = base).
+    B(K) = Σ_{b ∈ ⨝_K} B_b ,   B_b = E_0·Δtr_M(b)  (single-bond, deuteron = base).
 
 Modulus convention (per docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md):
 the per-bond Δ here is the ARCHIMEDEAN per-block realization Σ_λ y_λ|χ^λ| — `|·|`
@@ -108,7 +108,7 @@ def main() -> int:
     wb.set_description(
         "DERIVATION (0 fit, level-0): extensive per-bond binding sum "
         "B(K) = N_bonds(K)·B_bond, B_bond = derived deuteron single-bond "
-        "(E_0·Δtr_M|_D archimedean per-block, +3.6%), bond count C(A,2) by "
+        "(E_0·Δtr_M(D) archimedean per-block, +3.6%), bond count C(A,2) by "
         "type from (Z,N). Tests "
         "the intensive→extensive fix: bond-count A-growth vs the intensive 1.65×. "
         "Bond-type + per-bond-growth refinements isolated for the next step. "
