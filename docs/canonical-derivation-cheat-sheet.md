@@ -454,6 +454,35 @@ not a weight-fit. Tracking:
 Δ_λ gate context [`2026-05-18-delta-lambda-gating-context.md`](audits/2026-05-18-delta-lambda-gating-context.md),
 inter-nucleon bonds [`inter-nucleon-channel-color-tube.md`](../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md).
 
+**Update (2026-06-03) — the gate dissolves into a many-body series; the 4-body
+term EXISTS.** The pairwise bond-sum has a ceiling: the canonical braid is a
+**chain of A−1 interfaces** (verified), and the pairwise chain-sum captures only
+**26 %** of ⁴He's binding ([`2026-06-02-binding-many-body-ceiling.md`](audits/2026-06-02-binding-many-body-ceiling.md)).
+The 74 % residual is irreducible **many-body** binding — and the **4-body α term
+already exists** as the sibling's canonical **magic-A** formula
+`B(⁴He) = 2·m_e·A·Vol(L6a4) = 2·m_e·4·8G` → **+5.87 %, no fit**
+([`2026-06-02-he4-binding-canonical-vs-full-theta-design.md`](audits/2026-06-02-he4-binding-canonical-vs-full-theta-design.md),
+branch `he4-jsj-binding-link`). So the binding is a **many-body series**:
+
+| body order | structure | regime | result |
+|---|---|---|---|
+| **2-body** | pairwise bond-sum `Σ_b E_0·Δ\|tr_M\|_b` | A≤3 | correct T/³He ordering; A=2 derived |
+| **3-body** | A=3 residual (the ~40 % pairwise gap) | T, ³He | **open** (whole-A link-volume — §below) |
+| **4-body** | whole-α volume `2·m_e·A·8G` (magic-A) | ⁴He | **+5.87 %, no fit** |
+
+**Common shape, per-isotope scale/assignment.** The deuteron (`m_e·Vol(6₂)`,
++1.1 %), the deprecated census A=3 (`2·m_e·Vol`, knot 8₁₁/Borromean), and magic-A
+⁴He (`2·m_e·A·8G`, +5.87 %) all share the **shape** `(scale)·m_e·Vol(link)` —
+but the scale (`ρ`, the `A` factor) and the link assignment **vary per isotope**
+and are **not yet derived** (this is the residual heuristic/fitted aspect, NOT a
+single law). The open items are therefore: (i) the **canonical link-volume
+assignment** per nucleus (deuteron `6₂` is fixed; A=3/A=4 assignments are
+heuristic-or-magic); (ii) the **scale rule** `ρ·A` (why ρ=1 at A=2 but ρ=2·A at
+A=4); (iii) **reconciling** the pairwise (2-body) and whole-nucleus (4-body)
+decompositions into one additive many-body series. The Δ_λ gate is dissolved —
+it was never a per-block density — but the many-body series is not yet a closed
+single form; the 4-body ⁴He piece (magic-A) is its most-derived member at +5.87 %.
+
 ### 9.4 Lean formalization debt (tracked — verification, NOT a compute gate)
 
 The §9.1 partition-respecting objects are **already wired and numerically
