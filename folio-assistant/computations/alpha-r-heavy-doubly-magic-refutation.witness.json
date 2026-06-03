@@ -1,0 +1,118 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T14:52:54.241796+00:00",
+  "commitSha": "2306cd768d9260d182aaffcf18134939ef234dd3",
+  "assertions": [
+    {
+      "name": "r_4A_minus_1_refuted_for_heavy_doubly_magic",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "m_e·|(q;q)_{4A-1}| is O(1) only for ⁴He (r=15); for ¹⁶O (r=63) it is ~10^85 MeV, refuting the rule for every doubly-magic atom heavier than ⁴He.  The ⁴He match is a low-A coincidence in the narrow O(1) window of |(q;q)_r| before its super-exponential blowup at q>1."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "alpha-r-heavy-doubly-magic-refutation",
+  "scriptFile": "alpha_r_heavy_doubly_magic_refutation.py",
+  "scriptHash": "35ed4b835beb",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "DECISIVE refutation of the r=4A-1 single-rank q-Pochhammer rule.  Evaluates m_e·|(q;q)_{4A-1}| on all doubly-magic atoms ⁴He/¹⁶O/⁴⁰Ca/⁴⁸Ca/²⁰⁸Pb.  The q>1 super-exponential growth (q^{r(r+1)/2}) makes the correction term ~10^85 MeV at ¹⁶O and ~10^15659 MeV at ²⁰⁸Pb — refuting the rule for every doubly-magic atom except ⁴He, where r=15 is a low-A coincidence.",
+  "data": {
+    "constants": {
+      "q_0": "1.1099785827513808075916690956107688798744991218736",
+      "m_e_MeV": "0.51099895"
+    },
+    "per_atom": [
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "r_4A_minus_1": 15,
+        "log10_qpoch": 0.3533748572634847,
+        "log10_correction_term_MeV": 0.06179486501135891,
+        "B_AME_MeV": 28.3,
+        "log10_B_AME": 1.4517864355242902,
+        "overshoot_orders_of_magnitude": -1.3899915705129313,
+        "term_is_O1": true
+      },
+      {
+        "atom": "16O",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "r_4A_minus_1": 63,
+        "log10_qpoch": 85.40483771866343,
+        "log10_correction_term_MeV": 85.1132577264113,
+        "B_AME_MeV": 127.62,
+        "log10_B_AME": 2.1059187402863726,
+        "overshoot_orders_of_magnitude": 83.00733898612494,
+        "term_is_O1": false
+      },
+      {
+        "atom": "40Ca",
+        "Z": 20,
+        "N": 20,
+        "A": 40,
+        "r_4A_minus_1": 159,
+        "log10_qpoch": 570.4467882017337,
+        "log10_correction_term_MeV": 570.1552082094815,
+        "B_AME_MeV": 342.05,
+        "log10_B_AME": 2.5340895947605686,
+        "overshoot_orders_of_magnitude": 567.621118614721,
+        "term_is_O1": false
+      },
+      {
+        "atom": "48Ca",
+        "Z": 20,
+        "N": 28,
+        "A": 48,
+        "r_4A_minus_1": 191,
+        "log10_qpoch": 824.9335763557737,
+        "log10_correction_term_MeV": 824.6419963635216,
+        "B_AME_MeV": 416.0,
+        "log10_B_AME": 2.6190933306267428,
+        "overshoot_orders_of_magnitude": 822.0229030328948,
+        "term_is_O1": false
+      },
+      {
+        "atom": "208Pb",
+        "Z": 82,
+        "N": 126,
+        "A": 208,
+        "r_4A_minus_1": 831,
+        "log10_qpoch": 15659.120728746113,
+        "log10_correction_term_MeV": 15658.82914875386,
+        "B_AME_MeV": 1636.43,
+        "log10_B_AME": 3.2138974326419256,
+        "overshoot_orders_of_magnitude": 15655.61525132122,
+        "term_is_O1": false
+      }
+    ],
+    "verdict": {
+      "rule": "B_corrected = B_leading - m_e·|(q;q)_{4A-1}|",
+      "holds_for": "⁴He only (r=15, term O(1))",
+      "refuted_for": "¹⁶O, ⁴⁰Ca, ⁴⁸Ca, ²⁰⁸Pb (term diverges as q^{r(r+1)/2})",
+      "conclusion": "r=4A-1 is a low-A coincidence, NOT a doubly-magic rule",
+      "corrects": "alpha_r_4A_minus_1_cross_isotope.py commit-2 reframe"
+    }
+  }
+}
