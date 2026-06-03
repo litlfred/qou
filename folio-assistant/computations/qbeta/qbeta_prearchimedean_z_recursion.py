@@ -79,6 +79,26 @@ def z_recursion_coeffs(n_max: int) -> list[sp.Rational]:
     return a
 
 
+def zk_recursion_coeffs(k: int, n_max: int) -> list[sp.Rational]:
+    """Exact Taylor coefficients of z(q)^k around q=1, via the
+    one-parameter recursion family
+
+        4(n+1) b_{n+1} + 6n·b_n + (2(n−1)+k)·b_{n−1} = 0,
+        b_0 = (1/2)^k,  b_1 = 0.
+
+    Derived from (4+6w+2w²)·(z^k)' + k·w·z^k = 0, which follows from
+    z's own ODE since (z^k)' = k z^{k−1} z'. Pre-archimedean, exact.
+    """
+    b = [sp.Rational(0)] * (n_max + 1)
+    b[0] = sp.Rational(1, 2) ** k
+    if n_max >= 1:
+        b[1] = sp.Rational(0)
+    for n in range(1, n_max):
+        b[n + 1] = -(sp.Integer(6) * n * b[n]
+                     + (sp.Integer(2) * (n - 1) + k) * b[n - 1]) / (sp.Integer(4) * (n + 1))
+    return b
+
+
 def main() -> int:
     w = sp.symbols("w")              # w = q - 1
     q = 1 + w
@@ -125,6 +145,27 @@ def main() -> int:
     print("  IS the discrete shadow of z's q-difference equation; it")
     print("  determines the full sequence from a_0=1/2, a_1=0.")
 
+    # (5) the z^k recursion family — generates ALL of τ_M(T_β) = Σ d_k z^k
+    print()
+    print("  z^k recursion family:  4(n+1)b_{n+1} + 6n·b_n + (2(n−1)+k)b_{n−1} = 0")
+    print("  Verify against sympy series of z^k for k=1,2,3 (the τ_M powers):")
+    family_ok = True
+    for k in (1, 2, 3):
+        sk = sp.series(z ** k, w, 0, 8).removeO()
+        bk = zk_recursion_coeffs(k, 8)
+        ok_k = all(sp.simplify(sk.coeff(w, n) - bk[n]) == 0 for n in range(8))
+        family_ok = family_ok and ok_k
+        print(f"    k={k}: b_0..b_7 = {[str(bk[n]) for n in range(6)]}  "
+              f"{'✓' if ok_k else '✗'}")
+    print(f"  z^k family reproduces all powers exactly: {'YES ✓' if family_ok else 'NO ✗'}")
+    print()
+    print("  ⇒ τ_M(T_β) = Σ_{k=0..3} d_k·z^k is generated entirely by this")
+    print("    explicit recursion family + the NF weights d_k (initial data).")
+    print("    The Q_β precision-ladder c_k descend from τ_M via the finite")
+    print("    Q_A·cos algebraic comparison — so they are RECURSION-GENERATED,")
+    print("    not independently fitted. (Pre-archimedean; q_0 enters only at")
+    print("    the final archimedean τ-functor evaluation.)")
+
     # Witness
     wn = WitnessBuilder("qbeta-prearchimedean-z-recursion", engine="sympy")
     wn.set_description(
@@ -155,6 +196,14 @@ def main() -> int:
         expected=True,
         tolerance=0,
         source="(4+6w+2w^2)z' + wz simplifies to 0",
+    )
+    wn.add_data("zk_recursion", "4(n+1)b_{n+1} + 6n*b_n + (2(n-1)+k)*b_{n-1} = 0")
+    wn.add_assertion(
+        name="zk_recursion_family_matches_series_k1_k2_k3",
+        computed=bool(family_ok),
+        expected=True,
+        tolerance=0,
+        source="z^k recursion family vs sympy series for k=1,2,3 (τ_M powers)",
     )
     out = wn.save()
     print(f"\n  Witness: {out.name}")

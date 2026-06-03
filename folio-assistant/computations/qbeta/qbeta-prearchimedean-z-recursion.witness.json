@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-03T13:11:48.488904+00:00",
-  "commitSha": "719a0b5e63bd039d63fcb9e9bc7c356354c4d680",
+  "computedAt": "2026-06-03T13:16:23.167883+00:00",
+  "commitSha": "4f873a8d21e2c4fb846a7b34fefa4a83d1bc3f95",
   "assertions": [
     {
       "name": "recursion_matches_sympy_series_exactly",
@@ -19,14 +19,22 @@
       "passed": true,
       "tolerance": 0,
       "source": "(4+6w+2w^2)z' + wz simplifies to 0"
+    },
+    {
+      "name": "zk_recursion_family_matches_series_k1_k2_k3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "z^k recursion family vs sympy series for k=1,2,3 (τ_M powers)"
     }
   ],
   "allPassed": true,
   "durationMs": 16,
   "computation": "qbeta-prearchimedean-z-recursion",
   "scriptFile": "qbeta_prearchimedean_z_recursion.py",
-  "scriptHash": "528f7e8b5198",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e4eb0475196e",
+  "scriptCommitSha": "4f873a8d21e2c4fb846a7b34fefa4a83d1bc3f95",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,6 +61,7 @@
     "a_10": "-6223/524288",
     "a_15": "383099/67108864",
     "a_20": "-1937622659/549755813888",
-    "a_30": "-265142156521029/144115188075855872"
+    "a_30": "-265142156521029/144115188075855872",
+    "zk_recursion": "4(n+1)b_{n+1} + 6n*b_n + (2(n-1)+k)*b_{n-1} = 0"
   }
 }
