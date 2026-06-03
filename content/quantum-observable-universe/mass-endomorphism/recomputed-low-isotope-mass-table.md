@@ -1,8 +1,7 @@
 **Remark (recomputed low-isotope mass table after q-Hecke
-character gap closure).** *After 's q-Hecke character
+character gap closure).** *After the q-Hecke character
 closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-character-closure))
-and the* $\rho_K$ *refinement infrastructure from
-, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
+and the* $\rho_K$ *refinement infrastructure, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
 *at* $q = q_0$ *now agree to machine epsilon across* $\{p, n, D, T, ^{3}\mathrm{He}\}$:
 
 1. **Canonical Markov-axiom reducer** —
