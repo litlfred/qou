@@ -136,8 +136,7 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
   have h_smul_one_mul : (S • (1 : A)) * X = S • X := by
     rw [Algebra.smul_def, mul_assoc, one_mul, ← Algebra.smul_def]
   have h_mul_smul_one : X * (S • (1 : A)) = S • X := by
-    rw [Algebra.smul_def, mul_one, ← Algebra.commutes, ← Algebra.smul_def,
-        Algebra.smul_def, mul_assoc, one_mul, ← Algebra.smul_def]
+    rw [Algebra.smul_def, mul_one, ← Algebra.commutes, ← Algebra.smul_def]
   have h_smul_one_sq : (S • (1 : A)) * (S • (1 : A)) = (S * S) • (1 : A) := by
     rw [Algebra.smul_def, mul_assoc, one_mul, ← Algebra.smul_def, smul_smul]
   -- Step 2: expand the square in A.
@@ -148,11 +147,11 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
   -- Step 3: apply τ, using R-linearity + τ_one.
   have h_tau_smul : ∀ Y : A, τ.tau (S • Y) = S * τ.tau Y := fun Y => by
     rw [τ.tau.map_smul, smul_eq_mul]
+  have h_rearrange : X * X - S • X - S • X + (S * S) • (1 : A) =
+                     X * X + (-(S • X)) + (-(S • X)) + (S * S) • (1 : A) := by abel
   have h_tau_expand : τ.tau ((X - S • 1) * (X - S • 1)) =
                       τ.tau (X * X) - S * τ.tau X - S * τ.tau X + S * S * τ.tau 1 := by
-    rw [h_expand]
-    rw [show X * X - S • X - S • X + (S * S) • (1 : A) =
-          X * X + (-(S • X)) + (-(S • X)) + (S * S) • 1 from by abel]
+    rw [h_expand, h_rearrange]
     rw [τ.tau.map_add, τ.tau.map_add, τ.tau.map_add]
     rw [τ.tau.map_neg, τ.tau.map_neg]
     rw [h_tau_smul, h_tau_smul, h_tau_smul]
