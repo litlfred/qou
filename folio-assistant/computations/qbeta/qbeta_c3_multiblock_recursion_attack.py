@@ -68,34 +68,41 @@ This probe is exactly that — entirely symbolic, NO fitting at q_0.
    variant of this probe is open work — its result would still depend
    on the (open) f-map.
 
-## Method (purely symbolic in q)
+## Method (implemented)
 
-Step 1 — Sum the per-block characters weighted by y_λ:
+Step 1 — Sum the per-block characters weighted by the rational y_λ
+surrogate:
 
     Δτ_M(q) = Σ_{λ ∈ {(3),(2,1),(1,1,1)}} y_λ(q) · χ_λ(Δ_T_β)(q)
 
-Step 2 — Express τ_M(T_β) in the z-basis: structurally,
+Result: a rational function of q with integer-coefficient numerator
+(printed; also recorded in the witness).
 
-    τ_M(T_β)(q) = A(q) + B(q) · z(q),   A, B ∈ ℚ(q)
+Step 2 — Taylor-expand Δτ_M(q) around the classical point q = 1
+in the variable w = q − 1, to 12 orders. Per-order coefficients are
+printed and recorded.
 
-per the qbeta_prearchimedean_z_recursion docstring. Taking the
-β-decay difference and expanding around w = q − 1 picks out the
-ladder coefficients.
+Step 3 (NOT IMPLEMENTED — c_3 extraction requires the f-map) —
+The c_3 of Q_β/Q_base = 1 + Σ_k c_k · u^k (u = b·ℏ_q²) is the
+order-u³ coefficient of the log-expansion AFTER the f-map transform
+between Δτ_M's w-expansion and the ladder's u-expansion. The exact
+form of the f-map is the open keystone of the 1ppQ-Q_β closure
+(per `docs/coordination/1ppq-qbeta.md`), so this script intentionally
+STOPS at the Δτ_M closed form + w-expansion. c_3 is recorded in the
+witness as `"NOT_DERIVED"`.
 
-Step 3 — The c_3 of Q_β/Q_base = 1 + Σ_k c_k · u^k (u = b·ℏ_q²) is
-the order-u³ coefficient of the log-expansion:
+Step 3' (implemented in place of Step 3) — Cross-anchor numerical
+evaluation of Δτ_M at q_proton and q_muon (both 50-dps canonical
+anchors from `qou_substrate.constants`). The swing
+|Δτ_M(q_proton) − Δτ_M(q_muon)| is the NEAR-MATCH diagnostic — it
+quantifies how much the Δτ_M object moves between the two anchors,
+NOT how much c_3 moves. The c_3 swing requires the f-map first.
 
-    log(Q_β/Q_base) = Σ_k c_k · u^k − (higher cross-terms)
+## Witness invariant
 
-Compute the symbolic c_3 from the multi-block expansion. The result
-is a RATIONAL FUNCTION of q — pre-archimedean.
-
-Step 4 — Cross-anchor test (this is the failure-mode signature):
-
-    Evaluate c_3(q) at q_proton AND q_muon.
-    If the swing > 10⁻⁵⁰ ⇒ NEAR-MATCH, NOT a Taylor-exact derivation.
-    If the values agree (Δ < 10⁻⁴⁰) AND agree with empirical (-2.07)
-    ⇒ candidate Taylor-exact (still subject to wiring discipline).
+Asserts Δτ_M(q) is rational in q (has no √q atoms). This is the
+structural guarantee that distinguishes the Δτ_M surrogate object
+from the canonical √q-bearing Markov trace.
 
 ## Honest expectation
 
@@ -224,11 +231,24 @@ def main() -> None:
     q_muon = sp.Rational(str(q_muon_at(50)))
     print(f"  q_muon   = {sp.N(q_muon, 18)}")
 
-    dt_proton = sp.N(delta_tau_M.subs(q, q_proton), 30)
-    dt_muon = sp.N(delta_tau_M.subs(q, q_muon), 30)
+    # Use 60-dps SymPy evaluation to match the witness `output_dps`
+    # metadata. Anchors are 50-dps, so 60-dps gives ≥10 digits of
+    # head-room on the diagnostic.
+    dt_proton = sp.N(delta_tau_M.subs(q, q_proton), 60)
+    dt_muon = sp.N(delta_tau_M.subs(q, q_muon), 60)
     print(f"\n  Δτ_M(q_proton) = {dt_proton}")
     print(f"  Δτ_M(q_muon)   = {dt_muon}")
     print(f"  swing = |Δτ_M(p) − Δτ_M(μ)| = {abs(dt_proton - dt_muon)}")
+
+    # Real invariant for the assertion below: Δτ_M(q) has NO √q atoms.
+    # Distinguishes the rational-surrogate Δτ_M object from the canonical
+    # √q-bearing Markov trace; flags regressions if the surrogate is ever
+    # accidentally swapped for the canonical y_λ.
+    sqrt_q_atoms = [
+        a for a in delta_tau_M.atoms(sp.Pow)
+        if a.exp.is_Rational and not a.exp.is_Integer and a.base == q
+    ]
+    has_no_sqrt_q = 1.0 if not sqrt_q_atoms else 0.0
 
     # ── Witness ──────────────────────────────────────────────────
     wn = WitnessBuilder(
@@ -236,13 +256,17 @@ def main() -> None:
         engine="sympy+mpmath",
     )
     wn.set_description(
-        "Multi-block symbolic c_3 attack: combines the EXACT pre-archimedean "
-        "per-block closed forms χ_λ(Δ_T_β)(q) (from "
-        "qbeta-per-block-paper-closed-forms.witness.json) with the Wenzl "
-        "y_λ(q) weights to compute Δτ_M(q) symbolically. Expands around "
-        "q=1 and reports per-order Taylor coefficients. Cross-anchor "
-        "verification at q_proton AND q_muon to apply the pre-stated "
-        "failure-mode signature for NEAR-MATCH vs Taylor-exact. NO FITS."
+        "Multi-block Δτ_M probe (NOT a c_3 derivation). Combines the exact "
+        "pre-archimedean per-block closed forms χ_λ(Δ_T_β)(q) (from "
+        "qbeta-per-block-paper-closed-forms.witness.json) with a "
+        "NON-CANONICAL rational surrogate for the Wenzl y_λ(q) weights "
+        "(canonical y_λ involves √q) to emit Δτ_M(q) as a rational "
+        "function of q. Reports: (1) the closed form, (2) its Taylor "
+        "expansion around q=1 in w=q−1 to 12 orders, (3) the cross-anchor "
+        "swing of Δτ_M between q_proton and q_muon (the NEAR-MATCH "
+        "diagnostic for the Δτ_M object — NOT for c_3, which requires "
+        "the open f-map). c_3 is explicitly recorded as NOT_DERIVED. "
+        "NO FITS."
     )
     wn.set_content_block("conj:qbeta-precision-ladder")
     wn.add_data("delta_tau_M_symbolic_q", str(delta_tau_M))
@@ -271,9 +295,14 @@ def main() -> None:
         "cross-anchor swing IS the order-of-magnitude diagnostic for "
         "whether c_3 derives from this object exactly or is a near-match."
     )
+    # Real invariant: Δτ_M(q) is rational in q (no √q atoms).
+    # `computed = has_no_sqrt_q` is 1.0 iff the SymPy atom scan above
+    # found no half-integer powers of q in delta_tau_M. If a future
+    # edit swaps the rational surrogate for the canonical √q-bearing
+    # y_λ, this assertion will trip and surface the regression.
     wn.add_assertion(
-        "delta_tau_M_pre_archimedean_rational",
-        computed=1.0,
+        "delta_tau_M_rational_in_q",
+        computed=has_no_sqrt_q,
         expected=1.0,
     )
     out = wn.save()
