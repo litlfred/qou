@@ -2461,27 +2461,6 @@
         "evidence": "content/quantum-observable-universe/mass-theory/terms-2-6-higher-operations.md:1 — detected regime [root-of-unity, symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
-    "canonical-ck-tiered-not-binary": [
-      {
-        "field_hash": {
-          "md": "f1eba38f7195",
-          "ts": "ec8301fb8dfb",
-          "lean": "a0bf52bc1c7d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/terms-2-6-higher-operations.md:52: binary negative-result framing \"NEGATIVE RESULT\" in a precision-ladder block without tiered (proved/near-match/fitted) framing — report TIERED per the c_k truncation-order canonical framing (Rule 4), do not re-open the wire/un-wire flip-flop"
-      }
-    ],
     "canonical-no-negative-result-in-paper": [
       {
         "field_hash": {
@@ -2517,7 +2496,26 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "b5c2f9537862",
+          "ts": "ec8301fb8dfb",
+          "lean": "a0bf52bc1c7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3b132a7280af",
+          "script_commit_sha": "d3c07508b029723fd0bf70c593e53aec2599925d"
+        },
+        "reviewed_at": "2026-06-03T22:40:47.501Z",
+        "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }

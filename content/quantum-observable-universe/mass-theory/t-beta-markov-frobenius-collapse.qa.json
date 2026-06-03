@@ -31,7 +31,26 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "2306588d94d6",
+          "ts": "871441eb683c",
+          "lean": "4a1f03d98b30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3b132a7280af",
+          "script_commit_sha": "d3c07508b029723fd0bf70c593e53aec2599925d"
+        },
+        "reviewed_at": "2026-06-03T22:40:47.501Z",
+        "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-03T22:40:47.501Z"
 }
