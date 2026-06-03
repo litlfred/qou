@@ -79,6 +79,47 @@ The trefoil `3_1` is a torus knot (`Vol = 0`, non-hyperbolic). Probing a trefoil
 
 **Decisive test (unchanged from §6.8):** `Φ_{4_1}(h)/Vol(4_1)` should give `1 + O(h²)` (muon, a knot); `Φ_{Borromean}(h)/[norm]` should give `5/2 + (3/4)h²` (proton, a 3-link). If the `h²` coefficients match the framework's, the Geom_full bridge is **derived**, not fit. The `K_3(K)` grading makes those coefficients rigid (no free parameters) — the discipline-compliant route the Δ_λ-gate demands.
 
+## STEP 2 (2026-06-03, after owner uploaded the actual G-Z paper) — Finding 2 is REFUTED; the invariant is a roots-of-unity object
+
+The owner uploaded Garoufalidis–Zagier `arXiv:2111.06645` (SIGMA 2024) and flagged: *"note it is only at roots of unity… so we can only use in context of crystal bases?"* This is correct, and checking the **actual paper coefficients** refutes the clean Finding-2 identification.
+
+### What the paper actually says
+
+- **The figure-eight Kashaev invariant** (paper eq 1.2) is
+  `⟨4_1⟩_N = Σ_{n=0}^{N-1} (ζ_N; ζ_N)_n²` with `ζ_N = e^{2πi/N}` — **exactly the element of Finding 2**, but evaluated at a **root of unity**, where `(ζ_N;ζ_N)_n = 0` for `n ≥ N` so the sum **terminates**. At real `q₀ > 1` it does NOT terminate → diverges (the Finding-2 divergence). The invariant `⟨K⟩_N ∈ Z[e^{2πi/N}]` is **defined at roots of unity** — the user's point exactly.
+- **The perturbative series** (paper eq 1.3):
+  `Φ^(4_1)(h) = 3^(−1/4)·(1 + 11/(72√−3)·h + 697/(2·(72√−3)²)·h² + …)`,
+  the `N→∞` asymptotic of `⟨4_1⟩_N` (paper eq 1.1), in variable `ℏ = 2πi/N`.
+- Point (d): `Φ(h)` is **factorially divergent**; the real-axis lift to "actual functions on R" is the **conjectural** `W_γ` cocycle.
+
+### Why Finding 2 is refuted (4 independent mismatches vs the framework's `linking_weight`)
+
+| | G-Z `Φ^(4_1)(h)` (real data) | framework `linking_weight` |
+|---|---|---|
+| leading coeff | `3^(−1/4) ≈ 0.760` | `1` (muon) / `5/2` (proton) — **−24% off** |
+| `h¹` coeff | `11/(72√−3) ≈ 0.0882 i` — **imaginary** (Q(√−3)) | real |
+| variable | `ℏ = 2πi/N` (imaginary → 0) | `h = q − q⁻¹` (real ≈ 0.196) |
+| domain | **roots of unity** `ζ_N` | real `q₀ > 1` |
+
+The Finding-2 lead (`S* = 0.98954`, −1.05% from muon lw=1) was a **coincidence of a particular real-axis resummation** of the divergent real-`q` series — it is **not** the G-Z `Φ^(4_1)` (which leads with 0.76, is complex, and uses imaginary ℏ). **The clean "Habiro element = linking_weight" identity does not hold for the figure-eight.**
+
+### But this STRENGTHENS Finding 1 — and answers "crystal bases?"
+
+The crucial separation the owner's question forces:
+
+- **Kashaev / Habiro element** (Finding 2): a **root-of-unity object** that *diverges* at real `q₀`. Only reachable archimedean-ly via the conjectural `W_γ` resummation, which doesn't give the framework's real `linking_weight` anyway. **Not usable for the archimedean mass chain.** ✗
+- **Quantum-dimension / Wedderburn sum** (Finding 1): `Σ_{λ⊢4} dim_q(V_λ)` is a **symmetric Laurent polynomial** — *finite at real `q₀`* AND at roots of unity. It is the Verlinde-style quantum-dimension object that lives naturally in the **crystal-basis / RT** world the owner points to, yet (unlike the Kashaev element) is a finite polynomial so its **real-`q₀` archimedean evaluation is totally legitimate**. ✓
+
+So the framework's `linking_weight = (1/4)Σ_{λ⊢4} dim_q` (= q-deformed involution count `I(4)/4`) is the **right kind of object** — a quantum-dimension Laurent polynomial, not a Kashaev/Habiro series. The owner's instinct correctly separates the two: **use the crystal-basis/quantum-dimension object (finite, evaluable at real q₀), NOT the Habiro element (root-of-unity-bound, divergent at q₀).**
+
+### Net verdict (revised)
+
+- **Finding 1 (linking_weight = `I(4)/4` q-deformed quantum-dimension sum): STANDS and is strengthened.** It is a crystal-basis/RT-compatible Laurent polynomial, finite at real q₀.
+- **Finding 2 (figure-eight Habiro ≈ muon lw): REFUTED** by the actual G-Z coefficients. The −1.05% was a coincidence. The Habiro element is a roots-of-unity object that should not be used in the archimedean chain.
+- **§6.5/§6.8 Habiro hook: does not deliver a real-q₀ `linking_weight` derivation.** The productive object is the quantum-dimension sum (Finding 1), and the open question reverts to "what categorical rule selects `(n_K, normalization)` per knot" — a *quantum-dimension / crystal* question, not a Habiro-resummation one.
+
+This is a valuable negative result: it kills the Habiro-resummation mirage before the framework invested weeks, and redirects to the crystal-basis/quantum-dimension object the owner identified.
+
 ## Verdict + next step
 
 - **Finding 1** is a clean, citable provenance upgrade (`linking_weight = I(4)/4` q-deformed). Worth landing regardless of the rest.

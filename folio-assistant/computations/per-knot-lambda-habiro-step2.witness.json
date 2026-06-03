@@ -1,0 +1,98 @@
+{
+  "computation": "per-knot-lambda-habiro-step2-perturbative",
+  "description": "Extracts the figure-eight Habiro perturbative series S*(\u210f) via optimal-truncation across an \u210f-ladder + polynomial fit. Decisive question: is a_0 = 1 (= muon linking_weight)? EXPLORATORY, no production path, no physics fit.",
+  "saddle_structure": "n* = 2 ln(\u03c6)/\u210f \u2212 1 (golden-ratio real-q saddle)",
+  "ladder": [
+    {
+      "hbar": "0.04",
+      "S_opt": "0.99840988939850637568",
+      "n_opt": 24,
+      "min_term": "5.84364e-20"
+    },
+    {
+      "hbar": "0.05",
+      "S_opt": "0.99752396236763183721",
+      "n_opt": 19,
+      "min_term": "8.98423e-16"
+    },
+    {
+      "hbar": "0.06",
+      "S_opt": "0.99644924075568615873",
+      "n_opt": 16,
+      "min_term": "5.44563e-13"
+    },
+    {
+      "hbar": "0.07",
+      "S_opt": "0.99519027602137780197",
+      "n_opt": 13,
+      "min_term": "5.07819e-11"
+    },
+    {
+      "hbar": "0.08",
+      "S_opt": "0.99375220774208532412",
+      "n_opt": 12,
+      "min_term": "1.52984e-9"
+    },
+    {
+      "hbar": "0.09",
+      "S_opt": "0.9921406768839388306",
+      "n_opt": 10,
+      "min_term": "2.07368e-8"
+    },
+    {
+      "hbar": "0.1",
+      "S_opt": "0.99036160915099919024",
+      "n_opt": 9,
+      "min_term": "1.66807e-7"
+    },
+    {
+      "hbar": "0.11",
+      "S_opt": "0.98842207862336388564",
+      "n_opt": 8,
+      "min_term": "9.168e-7"
+    },
+    {
+      "hbar": "0.12",
+      "S_opt": "0.98632910950646942549",
+      "n_opt": 8,
+      "min_term": "3.83455e-6"
+    },
+    {
+      "hbar": "0.13",
+      "S_opt": "0.98407859008129394475",
+      "n_opt": 7,
+      "min_term": "1.21702e-5"
+    },
+    {
+      "hbar": "0.14",
+      "S_opt": "0.98171766305864742973",
+      "n_opt": 6,
+      "min_term": "3.40793e-5"
+    }
+  ],
+  "fits": {
+    "4": [
+      "1.00009598012",
+      "-0.00517886889432",
+      "-0.905670738393",
+      "-0.646051821931",
+      "4.86225838182"
+    ],
+    "6": [
+      "1.00117299517",
+      "-0.0983350390692",
+      "2.30374140609",
+      "-57.0180887908",
+      "538.152843826",
+      "-2583.41413765",
+      "5023.00692414"
+    ]
+  },
+  "a0_deg4": "1.0000959801211754336",
+  "a0_deg6": "1.0011729951669729916",
+  "a0_rel_to_lw1_pct_deg6": "0.11729952",
+  "S_at_q0": "0.98953878089757687009",
+  "a0_equals_one_to_1e4": false,
+  "verdict": "a_0 \u2260 1 at fit precision \u2192 the figure-eight Habiro element does NOT limit to lw=1; the \u22121.05% is not purely O(\u210f\u00b2). Needs the canonical normalization (background G-Z lookup).",
+  "compute_time_sec": 0.02
+}
