@@ -146,6 +146,28 @@ symmetry operator. The $\mathcal{P}$ / $\mathcal{T}$ / $\mathcal{CP}$
 companions are likewise CPT operators; they do not collide with any
 categorical or geometric reservation.
 
+**Two bars + dagger — three distinct involutions (never share a glyph).**
+
+| symbol | name | meaning |
+|---|---|---|
+| $\overline{x}$ | conjugation bar | the archimedean place's involution (the QM bar, $\lvert\psi\rvert^2 = \psi\overline{\psi}$); trivial at real $q_0$ |
+| $x^{\flat}$ | Hecke / KL bar | the fibre-level duality $q \mapsto q^{-1}$ (Kazhdan–Lusztig; §7b "bar-involution invariant"). $\flat$ = "lowering", $q \to q^{-1}$ |
+| $x^{\dagger}$ | dagger / adjoint | the $\dagger$-compact adjoint (categorical inner product, $\mathrm{SU}(2)$ unitarity) — see `dagger-su2`, `adjoint-trace` |
+
+The conjugation bar and the Hecke bar **coincide only on the unit
+circle** $\lvert q\rvert = 1$ (root of unity): there $q^{-1} =
+\overline{q}$, so $x^{\flat} = \overline{x}$ and $\mathrm{tr}_M \cdot
+\mathrm{tr}_M^{\flat} = \lvert\mathrm{tr}_M\rvert^2$. At the **real**
+substrate anchor $q_0 \approx 1.1097$ ($\lvert q_0\rvert \neq 1$) they
+are different maps: the archimedean observation $\tau$ realizes the
+modulus $\lvert\mathrm{tr}_M(q_0)\rvert$ (conjugation bar, trivial at
+real $q_0$), whereas $\mathrm{tr}_M^{\flat}$ evaluates at the mirror
+point $q_0^{-1} \approx 0.9009$ — a *different* archimedean place, used
+only for fibre-level identities (Habiro recursion, $\alpha_{EM}$
+$[2]_q(1-\hbar^2\alpha)$), never as the observation. Rationale in
+[`docs/audits/2026-06-03-bar-pairing-does-not-improve-binding.md`](../../../docs/audits/2026-06-03-bar-pairing-does-not-improve-binding.md).
+$\flat$ is otherwise unused in the paper (collision-free).
+
 **Base ring convention (Lean).** In Lean source the generic ground
 ring is **$R$** with the weakest typeclass that admits the
 construction (`[CommRing R]`, `[Field R]`, `[GroupWithZero R]`,
