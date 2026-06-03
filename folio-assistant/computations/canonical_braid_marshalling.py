@@ -137,6 +137,8 @@ def marshal_to_symbolic_braid(
         q_character_on_braid_word
     """
     out: List[Tuple[int, str]] = []
+    # color-weighted averaged |d|, computed once (not per crossing)
+    _d_cw = h_val * (0.5 - float(_avg_color_delta()) / 4)
     for c, d, gen in word_tuples:
         cf, df = float(c), float(d)
         if abs(cf - 1.0) >= eps:
@@ -147,7 +149,7 @@ def marshal_to_symbolic_braid(
             out.append((gen, "sigma_inv"))
         elif abs(df + h_val / 2) < eps:
             out.append((gen, "averaged"))                  # color-blind −h/2
-        elif abs(df + h_val * (0.5 - _avg_color_delta() / 4)) < eps:
+        elif abs(df + _d_cw) < eps:
             out.append((gen, "averaged"))                  # color-weighted −h(1/2−δ/4)
         else:
             # Per Copilot PR #863 review: raise on unknown (c,d) rather

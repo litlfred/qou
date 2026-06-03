@@ -252,22 +252,6 @@ def _cached_seminormal(shape: tuple[int, ...]):
     return data
 
 
-_PN_COLOR_DELTA = None  # cached δ = flavor_split_subleading(q₀), evaluated once
-
-
-def _pn_color_delta() -> float:
-    """Substrate-derived flavor split δ = (m_n − m_p)/M_N at q₀, for the
-    color-weighted p-n interface. Lazy + cached (avoids an import cycle at
-    module load and recomputation per braid)."""
-    global _PN_COLOR_DELTA
-    if _PN_COLOR_DELTA is None:
-        import mpmath as _mp
-        from _li_2_q_util import flavor_split_subleading
-        from q_parameter import Q as _Q0
-        _PN_COLOR_DELTA = float(flavor_split_subleading(_mp.mpf(str(_Q0))))
-    return _PN_COLOR_DELTA
-
-
 def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                          m_nn: int = 1, include_inter: bool = True,
                          pn_convention: str = "bring_color_weighted"):
@@ -312,8 +296,11 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                 m_this = m_nn
             else:
                 if pn_convention == "bring_color_weighted":
-                    # color-weighted p-n averaged crossing: σ − h·(1/2 − δ/4)
-                    delta = _pn_color_delta()
+                    # color-weighted p-n averaged crossing: σ − h·(1/2 − δ/4).
+                    # Single δ source (centralized in canonical_braid_crossings);
+                    # float() for the float-valued braid word.
+                    from canonical_braid_crossings import _avg_color_delta
+                    delta = float(_avg_color_delta())
                     base_cross = (1.0, -h * (0.5 - delta / 4.0))
                 elif pn_convention == "strict_averaged":
                     base_cross = (1.0, -h / 2)        # color-blind (validation)

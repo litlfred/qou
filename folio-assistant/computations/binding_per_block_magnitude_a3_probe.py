@@ -52,7 +52,8 @@ ISO = {"d": (6, "2.2245662"), "t": (9, "8.4818"), "3he": (9, "7.7180")}
 def _read_chi(iso: str):
     """{cfg: [(partition_tuple, χ^λ), ...]} for free and atom from the cached
     Rust-kernel witness."""
-    dat = json.load(open(HERE / f"atom-chi-rust-{iso}.witness.json"))["data"]
+    with open(HERE / f"atom-chi-rust-{iso}.witness.json") as _fh:
+        dat = json.load(_fh)["data"]
     return {cfg: [(tuple(e["partition"]), mp.mpf(repr(e["chi_lambda"])))
                   for e in dat[cfg]["by_partition"]]
             for cfg in ("free", "atom")}
