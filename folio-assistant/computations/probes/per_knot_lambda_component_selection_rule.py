@@ -194,12 +194,13 @@ def main() -> int:
             "so much stronger than a 2-point fit. The c=2 prediction "
             "((2+√(h²+4))/3) is the decisive independent test — needs a "
             "2-component-link particle with an independent lw determination."),
-        "compute_time_sec": round(time.time() - t0, 2),
     }
     out_path = HERE.parent / "per-component-linking-weight-selection-rule.witness.json"
     out_path.write_text(json.dumps(out, indent=2))
     print(f"\n  Δ_λ-gate: {out['delta_lambda_gate'][:60]}…")
-    print(f"\nWitness: {out_path.name}")
+    # compute_time to stdout only — deterministic witness (PR #1765 review).
+    print(f"\nWitness: {out_path.name}  "
+          f"(compute_time {round(time.time() - t0, 2)}s)")
     return 0
 
 

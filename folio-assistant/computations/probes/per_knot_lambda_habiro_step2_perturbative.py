@@ -174,11 +174,13 @@ def main() -> int:
         "S_at_q0": mp.nstr(S0, 20),
         "a0_equals_one_to_1e4": bool(a0_is_one),
         "verdict": verdict,
-        "compute_time_sec": round(time.time() - t0, 2),
     }
     out_path = HERE.parent / "per-knot-lambda-habiro-step2.witness.json"
     out_path.write_text(json.dumps(out, indent=2))
-    print(f"\nWitness: {out_path.name}")
+    # compute_time to stdout only — keep the committed witness
+    # deterministic (Copilot review PR #1765).
+    print(f"\nWitness: {out_path.name}  "
+          f"(compute_time {round(time.time() - t0, 2)}s)")
     return 0
 
 

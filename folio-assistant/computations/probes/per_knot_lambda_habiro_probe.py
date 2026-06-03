@@ -114,35 +114,6 @@ def _q_dimension_sym(lam: tuple[int, ...], q: sp.Symbol) -> sp.Expr:
     return d
 
 
-def _laurent_in_h(expr: sp.Expr, q: sp.Symbol, h: sp.Symbol) -> sp.Expr:
-    """Rewrite a symmetric Laurent polynomial in q as a polynomial in
-    h = q − q⁻¹.  Uses q² + q⁻² = h² + 2, q⁴+q⁻⁴ = h⁴+4h²+2, etc.
-
-    Strategy: substitute the symmetric power sums.  We expand in
-    s_k := q^k + q^{-k} and reduce s_k to Chebyshev-like polynomials in
-    s_1... but s_1 = q + q⁻¹ is NOT h.  Since every term is invariant
-    under q→q⁻¹, express via t := q²+q⁻² = h²+2.  We verify by series.
-    """
-    # Numerically fit the symmetric Laurent poly to a polynomial in h²:
-    # collect as Laurent in q, read even-symmetric coefficients.
-    p = sp.Poly(sp.expand(expr * q**sp.degree(sp.together(expr).as_numer_denom()[0], q)), q)  # noqa: E501
-    # Simpler + robust: evaluate the expr - (a0 + a1 h² + a2 h⁴ + ...)
-    # by matching a Laurent series.  Do it via substitution q = e^θ and
-    # Taylor in θ is overkill; instead use sympy's rewrite:
-    expr_s = sp.simplify(expr)
-    # Express in u = q + 1/q? No — symmetric under q→1/q means it's a
-    # polynomial in (q^k+q^{-k}). Use the substitution trick:
-    #   replace q -> exp(x), expand series in x, h = q-1/q = 2 sinh(x).
-    x = sp.symbols("x", real=True)
-    series = sp.series(expr_s.subs(q, sp.exp(x)), x, 0, 12).removeO()
-    # h = 2 sinh(x); h² = 4 sinh²x = 2(cosh 2x -1). Build h-poly by
-    # matching even powers of x. Since expr is even in x (q→1/q ⇔ x→−x),
-    # only even x-powers appear.
-    series_poly = sp.Poly(sp.expand(series), x)
-    # h² as a series in x: (2 sinh x)² = 4x² + (4/3)x⁴ + ...
-    return series_poly, series  # caller inspects coefficients
-
-
 def part1_verify_family_a() -> dict:
     """(1/4)·Σ_{λ⊢4} dim_q(V_λ) ?= 5/2 + (3/4)h²."""
     q, h = sp.symbols("q h", positive=True)
@@ -200,6 +171,12 @@ def part2_map_dim_q_family() -> dict:
             "sum_dim_q_at_q1": str(a0),
             "(1/n)·sum_at_q1": str(sp.nsimplify(a0 / n)),
             "leading_h2_coeff_of_sum": str(h2_coeff_leading),
+            # Normalized leading h² coeff under the selection-rule 1/(c+1)
+            # = 1/n normalization (Copilot review PR #1765): for n=4 this
+            # is the Family-A 3/4, NOT the raw 3 — recorded alongside the
+            # raw coeff to avoid misreading the witness.
+            "leading_h2_coeff_normalized_1_over_n": str(
+                sp.simplify(h2_coeff_leading / n)),
             "sum_dim_q_symbolic": str(sp.simplify(total)),
         })
     return {
@@ -249,7 +226,14 @@ def part3_figure_eight_habiro_at_q0(dps: int = 50) -> dict:
         S_opt = sums[n_opt]
         min_term = abs_terms[n_opt]
         last_term_mag = abs_terms[-1]
-        diverges = last_term_mag > mp.mpf("1e6")
+        # Divergence test (Copilot review PR #1765): base it on the
+        # least-term location + subsequent GROWTH rather than a fixed
+        # cutoff at a fixed n, so it stays correct if q₀ or the loop
+        # bound changes.  "Diverges" ⇔ the terms grow by a large factor
+        # after n_opt (the asymptotic-series turnaround).
+        diverges = (n_opt < len(abs_terms) - 1
+                    and min_term > 0
+                    and last_term_mag / min_term > mp.mpf("1e6"))
         # Compare optimally-truncated value to the muon's linking_weight=1
         lw_muon = mp.mpf(1)
         rel_to_lw1 = (S_opt - lw_muon) / lw_muon
@@ -296,19 +280,24 @@ def part3b_control_torus_trefoil(dps: int = 50) -> dict:
     plateau is a hyperbolic-geometry signal vs an artefact of the
     (q)_n(q⁻¹)_n form.
 
-    Trefoil cyclotomic (Habiro): J(3_1;q) = Σ_n (-1)^n q^{-n(n+3)/2} (q;q)_n
-    — but we use the symmetric (q)_n(q⁻¹)_n weighting WITHOUT the q^{-n(n+3)/2}
-    twist to isolate the geometric content. (Documented as a CONTROL, not
-    the canonical trefoil invariant.)
+    Element used (matches the implementation below): the trefoil
+    cyclotomic / Habiro form
+
+        J(3_1; q) = Σ_n (−1)^n q^{−n(n+3)/2} (q;q)_n ,
+
+    i.e. a SINGLE Pochhammer (q;q)_n with the alternating sign and the
+    q^{−n(n+3)/2} twist — NOT the symmetric (q)_n(q⁻¹)_n of Part 3.
+    This is the (near-)canonical torus-knot form (a CONTROL: the point
+    is only that a non-hyperbolic knot lacks the figure-eight's
+    Vol-driven least-term plateau, not to reproduce a specific
+    normalization).
     """
     with mp.workdps(dps):
         q = mp.mpf(Q_50_DIGIT_STR)
-        # Trefoil is non-hyperbolic; we just probe the SAME (q)_n(q⁻¹)_n
-        # element to confirm the figure-eight plateau is element-specific.
-        # The honest control is: the figure-eight is the SIMPLEST
-        # hyperbolic knot; the trefoil has Vol=0, so a Vol-driven
-        # plateau interpretation predicts NO meaningful plateau here
-        # beyond the trivial one.
+        # Trefoil cyclotomic form J(3_1) = Σ (−1)^n q^{−n(n+3)/2} (q;q)_n
+        # (single Pochhammer + twist; matches the docstring). The trefoil
+        # has Vol=0, so a Vol-driven plateau interpretation predicts NO
+        # meaningful least-term plateau here, unlike the figure-eight.
         terms = [mp.mpf(1)]
         total = mp.mpf(1)
         term = mp.mpf(1)
@@ -425,11 +414,14 @@ def main() -> int:
         "part3_figure_eight_habiro": p3,
         "part3b_trefoil_control": p3b,
         "part4_gap_statement": p4,
-        "compute_time_sec": round(time.time() - t0, 2),
     }
     out_path = HERE.parent / "per-knot-lambda-habiro-probe.witness.json"
     out_path.write_text(json.dumps(out, indent=2))
-    print(f"\nWitness: {out_path.name}")
+    # compute_time_sec is printed to stdout only (NOT persisted) so the
+    # committed witness stays deterministic across machines/runs
+    # (Copilot review PR #1765).
+    print(f"\nWitness: {out_path.name}  "
+          f"(compute_time {round(time.time() - t0, 2)}s)")
     return 0
 
 

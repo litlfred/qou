@@ -51,6 +51,7 @@
         "sum_dim_q_at_q1": "4",
         "(1/n)\u00b7sum_at_q1": "4/3",
         "leading_h2_coeff_of_sum": "1/4",
+        "leading_h2_coeff_normalized_1_over_n": "1/12",
         "sum_dim_q_symbolic": "q + 2 + 1/q"
       },
       {
@@ -59,6 +60,7 @@
         "sum_dim_q_at_q1": "10",
         "(1/n)\u00b7sum_at_q1": "5/2",
         "leading_h2_coeff_of_sum": "3",
+        "leading_h2_coeff_normalized_1_over_n": "3/4",
         "sum_dim_q_symbolic": "3*q**2 + 4 + 3/q**2"
       },
       {
@@ -67,6 +69,7 @@
         "sum_dim_q_at_q1": "26",
         "(1/n)\u00b7sum_at_q1": "26/5",
         "leading_h2_coeff_of_sum": "20",
+        "leading_h2_coeff_normalized_1_over_n": "4",
         "sum_dim_q_symbolic": "3*q**4 + 2*q**3 + 3*q**2 + 2*q + 6 + 2/q + 3/q**2 + 2/q**3 + 3/q**4"
       },
       {
@@ -75,6 +78,7 @@
         "sum_dim_q_at_q1": "76",
         "(1/n)\u00b7sum_at_q1": "38/3",
         "leading_h2_coeff_of_sum": "120",
+        "leading_h2_coeff_normalized_1_over_n": "20",
         "sum_dim_q_symbolic": "q**7 + 6*q**6 + 2*q**5 + 6*q**4 + 2*q**3 + 12*q**2 + 3*q + 12 + 3/q + 12/q**2 + 2/q**3 + 6/q**4 + 2/q**5 + 6/q**6 + q**(-7)"
       }
     ]
@@ -242,6 +246,5 @@
     ],
     "decisive_test": "\u03a6_{4_1}(h)/Vol(4_1) should give linking_weight=1 + O(h\u00b2) for the muon (a KNOT, lw=1); \u03a6_{Borromean}(h)/[stuff] should give 5/2 + (3/4)h\u00b2 for the proton (a 3-LINK). If the h\u00b2 coefficients match \u2014 the Geom_full bridge is DERIVED from the Habiro element, not fit. K_3 grading makes the coefficients rigid (no free params).",
     "next_branch": "this branch \u2014 add Part 5 once \u03a6_K data is sourced"
-  },
-  "compute_time_sec": 1.67
+  }
 }
