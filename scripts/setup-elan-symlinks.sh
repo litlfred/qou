@@ -12,17 +12,17 @@
 # IS on the default PATH for every spawned shell, including minimal-env
 # MCP subprocesses. Plus drop an /etc/profile.d/elan.sh for login shells.
 #
-# Idempotent — safe to re-run on every SessionStart. If the toolchain
-# isn't installed yet, also runs setup-lean-toolchain.sh (which downloads
-# Lean v<toolchain> from GitHub release assets, since the upstream
-# `release.lean-lang.org` host responds with "Host not in allowlist" 403
-# in this container's network policy).
+# Idempotent — safe to re-run on every SessionStart. Detects stale
+# symlinks (pointing elsewhere) and replaces them; leaves non-symlink
+# files alone (don't clobber a legit install).
+#
+# Toolchain install is handled by a separate script
+# (scripts/setup-lean-toolchain.sh), wired alongside this one in the
+# SessionStart hook chain. This script does NOT invoke that one.
 #
 # Exit codes:
-#   0 — symlinks present (and toolchain installed, if elan was found)
-#   0 — elan not installed, nothing to do (run the toolchain installer
-#       separately if you want Lean here)
-#   non-zero — symlink creation failed (permissions? readonly /usr/local?)
+#   0 — always; failures (e.g. read-only /usr/local) are best-effort and
+#       reported on stderr but do not fail the SessionStart hook chain.
 
 set -uo pipefail
 
@@ -30,25 +30,43 @@ ELAN_HOME="${ELAN_HOME:-$HOME/.elan}"
 LOCAL_BIN="/usr/local/bin"
 BINS=(elan lake lean leanc leanmake)
 
-# 1. If elan isn't installed, nothing to symlink. Bail quietly.
+# If elan isn't installed, nothing to symlink. Bail quietly.
 if [ ! -d "$ELAN_HOME/bin" ]; then
   exit 0
 fi
 
-# 2. Symlink each binary if it exists at the source and isn't already linked.
+# Symlink each binary if missing OR if stale (existing symlink to wrong
+# target). Leave non-symlink files alone (someone else installed it).
 linked=0
+fixed=0
+failed=0
 for b in "${BINS[@]}"; do
   src="$ELAN_HOME/bin/$b"
   dst="$LOCAL_BIN/$b"
-  if [ -e "$src" ] && [ ! -e "$dst" ]; then
+  [ -e "$src" ] || continue
+  if [ -L "$dst" ]; then
+    # Existing symlink — check target and replace if stale.
+    cur=$(readlink "$dst" 2>/dev/null || true)
+    if [ "$cur" != "$src" ]; then
+      if rm -f "$dst" && ln -s "$src" "$dst" 2>/dev/null; then
+        fixed=$((fixed+1))
+      else
+        echo "setup-elan-symlinks: failed to replace stale symlink at $dst" >&2
+        failed=$((failed+1))
+      fi
+    fi
+  elif [ ! -e "$dst" ]; then
     if ln -s "$src" "$dst" 2>/dev/null; then
       linked=$((linked+1))
+    else
+      echo "setup-elan-symlinks: failed to create symlink at $dst (read-only $LOCAL_BIN?)" >&2
+      failed=$((failed+1))
     fi
   fi
 done
 
-# 3. Drop a profile.d entry for login shells (belt + suspenders; the
-#    symlinks above are what actually makes MCP subprocs work).
+# Drop a profile.d entry for login shells (belt + suspenders; the
+# symlinks above are what actually makes MCP subprocs work).
 profile_d="/etc/profile.d/elan.sh"
 if [ ! -e "$profile_d" ] && [ -w "/etc/profile.d" ]; then
   cat > "$profile_d" <<EOF
@@ -62,9 +80,10 @@ EOF
   chmod 644 "$profile_d" 2>/dev/null || true
 fi
 
-# 4. Quiet status (one line, prefixed for log grep).
-if [ "$linked" -gt 0 ]; then
-  echo "setup-elan-symlinks: linked $linked binaries into $LOCAL_BIN" >&2
+if [ "$linked" -gt 0 ] || [ "$fixed" -gt 0 ] || [ "$failed" -gt 0 ]; then
+  echo "setup-elan-symlinks: linked=$linked fixed=$fixed failed=$failed" >&2
 fi
 
+# Always exit 0 (best-effort — SessionStart hooks should not block the
+# session on a single symlink failure).
 exit 0
