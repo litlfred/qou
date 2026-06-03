@@ -29,9 +29,11 @@ This script does three exploratory things:
 2. **Test structural-α_r hypotheses** for ⁴He (all NO-fit, single
    number per hypothesis, NOT a per-rank fit):
 
-   - H1: α_r = -A · 8G / |(q;q)_r|  (cancels the leading)
-   - H2: α_r = -B_leading / (m_e · Σ_{r'=1..∞} |(q;q)_{r'}|)
-   - H3: α_r = -tr_M(β_⁴He) for the canonical braid
+   - H1: α_r = -A · 8G / |(q;q)_r|  (cancels the leading factor — trivial)
+   - H2: α_r = -1  (constant unit coefficient — minimal NO-fit)
+   - H3: α_r = -A  (dimensionless geometric series coefficient)
+   - H4: B = B_leading ± m_e · |(q;q)_r|  (single-rank search)
+   - H5: S_N := Σ_{r=1..N} |(q;q)_r|  (series convergence)
 
 3. **Compute the INFINITE-SERIES sum** `Σ_{r=1..N} |(q;q)_r|` for
    large N and report convergence behaviour — if the series
@@ -74,11 +76,18 @@ B_AME_HE4 = AME_B_HE4_MEV_VALIDATION
 RESIDUAL_HE4 = B_AME_HE4 - B_LEADING_HE4  # = -1.660... MeV
 
 
+_qpoch_cache: dict[tuple[int, str], mp.mpf] = {}
+
+
 def qpoch_abs(r: int, q: mp.mpf) -> mp.mpf:
-    """|(q;q)_r| = Π_{k=1..r} |1 - q^k|."""
+    """|(q;q)_r| = Π_{k=1..r} |1 - q^k|.  Cached on (r, str(q))."""
+    key = (r, str(q))
+    if key in _qpoch_cache:
+        return _qpoch_cache[key]
     p = mp.mpf(1)
     for k in range(1, r + 1):
         p *= abs(1 - q ** k)
+    _qpoch_cache[key] = p
     return p
 
 
@@ -96,25 +105,26 @@ hypotheses = []
 # This makes B_corrected = B_leading - A·m_e·8G = (2-1)·m_e·A·8G
 H1_alpha_for_r = {r: -A_HE4 * VOL_L6A4 / qpoch_abs(r, Q_0)
                   for r in range(2, 9)}
+H1_B_pred_r4 = (B_LEADING_HE4 + H1_alpha_for_r[4] * M_E
+                * qpoch_abs(4, Q_0))
 hypotheses.append({
     "name": "H1_alpha_cancels_leading",
     "formula": "α_r = -A · 8G / |(q;q)_r|",
     "per_rank_test_at_r4": {
         "alpha": str(H1_alpha_for_r[4]),
-        "B_pred": str(B_LEADING_HE4 + H1_alpha_for_r[4] * M_E
-                      * qpoch_abs(4, Q_0)),
+        "B_pred": str(H1_B_pred_r4),
         "B_AME": str(B_AME_HE4),
-        "rel_err": str(abs(B_LEADING_HE4 + H1_alpha_for_r[4] * M_E
-                           * qpoch_abs(4, Q_0) - B_AME_HE4)
-                       / B_AME_HE4),
+        "rel_err": str(abs(H1_B_pred_r4 - B_AME_HE4) / B_AME_HE4),
     },
     "verdict": "trivial — cancels by construction; tests nothing structural"
 })
 
 # H2: α_r = -1 (constant unit coefficient — minimal NO-fit hypothesis)
 # B_corrected = B_leading - m_e · |(q;q)_r| at the truncation r
+# Search the same range as H4 (r ∈ 2..20) so the "best r=14" claim in
+# the design doc is reproducible from this script.
 H2_results = {}
-for r in range(2, 9):
+for r in range(2, 21):
     B_pred_r = B_LEADING_HE4 - M_E * qpoch_abs(r, Q_0)
     rel_err_r = abs(B_pred_r - B_AME_HE4) / B_AME_HE4
     H2_results[r] = {"B_pred": str(B_pred_r), "rel_err": str(rel_err_r)}
@@ -125,25 +135,27 @@ hypotheses.append({
     "verdict": "diagnostic — measures how much |(q;q)_r| undershoots residual",
 })
 
-# H3: Geometric series Σ α_r · |(q;q)_r| with α = -A/m_e
-# (substrate-natural coefficient)
-H3_alpha = -A_HE4 / M_E  # ≈ -7.83 MeV⁻¹  — dimensional
+# H3: Geometric series Σ α_r · |(q;q)_r| with α = -A (dimensionless,
+# per Gemini review — prior α = -A/m_e was dimensionally wrong).
+# Truncate at r=10 so the divergent tail doesn't blow up the printout;
+# H5 records the full divergence behaviour.
+H3_alpha = -A_HE4  # dimensionless
 H3_series_sum = mp.mpf(0)
-for r in range(1, 51):
+for r in range(1, 11):
     H3_series_sum += qpoch_abs(r, Q_0)
 B_H3 = B_LEADING_HE4 + H3_alpha * M_E * H3_series_sum
 hypotheses.append({
-    "name": "H3_geometric_series_A_over_me",
-    "formula": "B_corr = B_leading - (A/m_e) · m_e · Σ_{r=1..50} |(q;q)_r|",
+    "name": "H3_geometric_series_alpha_eq_minus_A",
+    "formula": "B_corr = B_leading - A · m_e · Σ_{r=1..10} |(q;q)_r|",
     "series_sum": str(H3_series_sum),
     "B_pred": str(B_H3),
     "B_AME": str(B_AME_HE4),
     "rel_err": str(abs(B_H3 - B_AME_HE4) / B_AME_HE4),
 })
 
-# H4: tr_M residual — α_r = -B_leading · α_corr / m_e where α_corr is
-# the ratio that closes via a single q-Pochhammer evaluation
-# (search r ∈ {2..20} for closest-to-residual single-rank value)
+# H4: single-rank unit-α search across r ∈ {2..20}, both signs.
+# Keep mpf values in the list (avoids string→mpf→float round-tripping
+# per Gemini review); convert to strings only for the witness payload.
 single_rank_search = []
 for r in range(2, 21):
     qpr = qpoch_abs(r, Q_0)
@@ -152,14 +164,18 @@ for r in range(2, 21):
         rel_err_r = abs(B_pred_r - B_AME_HE4) / B_AME_HE4
         single_rank_search.append({
             "r": r, "sign": sign,
-            "B_pred": str(B_pred_r),
-            "rel_err": str(rel_err_r),
+            "B_pred": B_pred_r,
+            "rel_err": rel_err_r,
         })
-single_rank_search.sort(key=lambda x: float(mp.mpf(x["rel_err"])))
+single_rank_search.sort(key=lambda x: x["rel_err"])
 hypotheses.append({
     "name": "H4_single_rank_unit_search",
     "formula": "B_corr = B_leading ± m_e · |(q;q)_r|, search r",
-    "best_3": single_rank_search[:3],
+    "best_3": [
+        {"r": x["r"], "sign": x["sign"],
+         "B_pred": str(x["B_pred"]), "rel_err": str(x["rel_err"])}
+        for x in single_rank_search[:3]
+    ],
 })
 
 # H5: Series convergence — infinite |(q;q)_r| series
@@ -202,7 +218,7 @@ wb.add_data("constants", {
 wb.add_data("qpoch_table_r_1_to_20", qpoch_table)
 wb.add_data("hypotheses", hypotheses)
 # Assertion: none of the cheap hypotheses close ⁴He
-best_single_rank = float(mp.mpf(single_rank_search[0]["rel_err"]))
+best_single_rank = float(single_rank_search[0]["rel_err"])
 wb.add_assertion(
     "no_cheap_alpha_r_closure_under_3pct",
     computed=best_single_rank * 100,
