@@ -121,13 +121,15 @@ class NonDegTrace (R : Type u) [LinearOrderedField R]
     (`S • X = (algebraMap R A S) * X`) and non-commutative ring
     manipulation.  Queued as a separate commit on this branch.
 
-    Ref: [pr1750] https://github.com/litlfred/qou/pull/1750 -/
+    Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+         §"Categorical reading" + prop:t-beta-markov-frobenius-collapse .md
+         §"Proof — Lagrangian / completing-the-square argument" -/
 theorem completing_the_square_general (R : Type u) [CommRing R]
     (A : Type v) [Ring A] [Algebra R A]
     (τ : NormalizedTrace R A) (X : A) (S : R) :
     τ.tau (X * X) =
       τ.tau ((X - S • 1) * (X - S • 1)) + 2 * (S * τ.tau X) - S * S * τ.tau 1 := by
-  -- Ref: [pr1750] https://github.com/litlfred/qou/pull/1750
+  -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
   -- Mechanical expansion: (X - S•1)² = X² - S•X - X•(S•1) + S²•1
   --   = X² - 2 (S•X) + S²•1  (using S•X = X•(S•1) via Algebra commutation)
   -- Apply τ (linear): τ(X²) - 2 S τ X + S² τ 1
@@ -149,8 +151,8 @@ theorem completing_the_square_general (R : Type u) [CommRing R]
     basis-dependence of the *coordinate-vector* Euclidean norm on
     `ℝ^6`, NOT the categorical Frobenius norm on H_3(ℝ, q).
 
-    Ref: [pr1750] https://github.com/litlfred/qou/pull/1750
-         docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md -/
+    Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
+         §"Categorical reading" + prop:t-beta-markov-frobenius-collapse .md -/
 theorem markov_frobenius_min_norm_lift
     (R : Type u) [LinearOrderedField R]
     (A : Type v) [Ring A] [Algebra R A]
@@ -158,7 +160,7 @@ theorem markov_frobenius_min_norm_lift
     [PSDTrace R A τ] [NonDegTrace R A τ]
     (S : R) (X : A) (h_constraint : τ.tau X = S) :
     S * S ≤ τ.tau (X * X) := by
-  -- Ref: [pr1750] https://github.com/litlfred/qou/pull/1750
+  -- Ref: [manuscript] docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md
   -- Proof:
   --   τ(X*X) = τ((X - S•1)²) + 2 S τ X - S² τ 1   (completing_the_square_general)
   --        = τ((X - S•1)²) + 2 S² - S²              (h_constraint + τ.tau_one)
