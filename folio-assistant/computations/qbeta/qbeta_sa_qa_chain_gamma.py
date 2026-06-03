@@ -58,7 +58,7 @@ def main() -> int:
 
     q = mpf(Q_50_DIGIT_STR)
     me = mpf(M_E_MEV)
-    Q_codata = mpf(str(Q_BETA_MEV))
+    Q_codata = mpf(Q_BETA_MEV)  # already mpf; idempotent cast preserves full precision
 
     h = q - 1 / q
     hbar_q = (q - 1) / q

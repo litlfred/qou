@@ -41,7 +41,7 @@ sys.path.insert(0, str(HERE.parent))
 # Path bridge (subdirectory refactor, Phase 5).
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from mpmath import mp, mpf, sqrt  # noqa: E402
+from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
@@ -75,8 +75,11 @@ def tr_M_jones_wenzl(n: int, q: mpf) -> mpf:
 def tr_M_symmetric(n: int, q: mpf) -> mpf:
     """Markov trace of the symmetric Schur-Weyl idempotent.
 
-    q-dimension of the symmetric rep S^{(n)} = [n+1]_q / [n+1]_q · q^{n(n-1)/2}·[n]_q!
-    Markov-normalized: tr_M(s_n) = q^{n(n-1)/2} / [n]_q!
+    Markov-normalized q-dimension of the symmetric rep S^{(n)}:
+      tr_M(s_n) = q^{n(n-1)/2} / [n]_q!
+
+    Reference: Wenzl 1988 §2 (representation dimension); Jones 1985
+    eq. 4.3 (Markov-trace normalization).
     """
     return q ** (n * (n - 1) // 2) / quantum_factorial(n, q)
 

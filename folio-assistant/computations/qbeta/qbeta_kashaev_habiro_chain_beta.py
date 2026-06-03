@@ -150,6 +150,15 @@ def main() -> int:
             except Exception as e:
                 value = mpf("nan")
                 print(f"    k={k}: ERROR — {e}")
+                row["k_results"][str(k)] = {
+                    "computed": "error",
+                    "target": mp.nstr(targets[k], 30),
+                    "err_ppm": float("inf"),
+                    "passed": False,
+                    "error_message": str(e),
+                }
+                passed_all = False
+                max_err_ppm = float("inf")
                 continue
             target = targets[k]
             if abs(target) < mpf("1e-30"):
