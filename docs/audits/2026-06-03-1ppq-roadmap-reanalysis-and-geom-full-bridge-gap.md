@@ -229,33 +229,116 @@ Five options, ordered roughly by depth-of-bet (shallow → deep):
 
 ---
 
-## 6. Literature analogies — placeholder
+## 6. Literature analogies — per-knot v(K) generalisations of `linking_weight`
 
-A parallel background-research agent (`a42dee546fc7df05b`) is surveying the math/physics lit for analogous "categorical-invariant-to-MeV-observable" bridges across 6 directions:
+A parallel background-research agent surveyed 6 directions for canonical per-knot real-q-specialisable scalars analogous to the Family-A `linkingWeight_A(q) = 5/2 + (3/4)h²` Lean-proved at `H_4`. The strongest hooks are §§ 6.5 and 6.4 below; §6.3 is rejected (already failed `KLR/KhR` precedent); §§ 6.1 and 6.2 are essentially what the framework already uses.
 
-1. Volume conjecture / complex volume (Kashaev, Murakami, Andersen-Hansen, Yokota)
-2. Chern-Simons / Bloch-Wigner dilogarithm L²(z)
-3. Quantum group categorification (KhR_n)
-4. TQFT-to-classical limit analytic continuation (Witten, Gukov)
-5. Habiro ring / cyclotomic completion (Habiro 2004, Garoufalidis)
-6. Asymptotic expansions near q → 1 (Andersen, Garoufalidis-Levin)
+### 6.1 Volume conjecture / Kashaev–Murakami — partial hook, archimedean-only
 
-Will append when complete. Sections 1-5 above don't depend on this — they're based on session-gathered codebase + audit-doc evidence.
+Kashaev's `〈K〉_N := J_N(K; e^{2πi/N})` invariant has `(2π/N) · log|〈K〉_N| → Vol(K)` (H. Murakami–J. Murakami `math/9905075`). The natural argument is `e^{2πi/N}` (root of unity) — **not** real `q₀ ≈ 1.110`. Even the Murakami–Yokota deformed VC (`exp((2πi+u)/N)` for complex `u`) lives near `|q| = 1`, outside the framework's q₀ regime. **Dead end** for the `λ(K)` question as stated, but the Cauchy-distinct subleading content carries over to §6.5.
+
+### 6.2 Bloch–Wigner regulator + Cheeger–Chern–Simons — already used (q→1 limit)
+
+The Bloch invariant `β(M) ∈ B(ℂ)` and Borel/dilogarithmic regulators give `Vol(M)` and `Vol+i·CS`. This is **exactly** the `Vol(K)` already in the formula, restricted to `h=0`. Our `5/2 + 3h²/4` is the perturbed `h≠0` lift — Bloch–Wigner = the `h^0` truncation. No new content.
+
+### 6.3 Khovanov–Rozansky (KhR_n) — wrong grading, rejected
+
+KhR gives a triply-graded `H^{i,j,k}(K)` whose Euler characteristic recovers sl_n Jones. The extra info is **homological dimensions, not a real number**. No canonical evaluation `(q₀, t₀, a₀)` is provided by KhR. The framework's own [`docs/audits/2026-05-30-klr-dialog-assessment.md`](2026-05-30-klr-dialog-assessment.md) audit recorded **0/6 candidate proofs shortened** by a KLR layer. **REJECTED** for direct scalar derivation.
+
+### 6.4 Gukov–Manolescu `F_K(x, q)` — STRONG HOOK, fast first test
+
+**Specific result.** Gukov–Manolescu ([`arXiv:1904.06057`](https://arxiv.org/abs/1904.06057)) define a **two-variable q-series for knot complements**, convergent in `|q| < 1`, satisfying a quantum-A-polynomial recurrence, conjecturally equal to the Melvin–Morton–Rozansky resummed `J_N(K; q)`. F_K specialises to Gukov–Pei–Putrov–Vafa Ẑ_a invariant (`arXiv:1701.06567`) on 0-surgery on K.
+
+**Hook for our problem.**
+- `F_K(x, q)` IS a per-knot canonical q-series.
+- Our `q₀ ≈ 1.110` is outside `|q|<1`, but `q₀⁻¹ ≈ 0.901` is inside — and the framework's natural variable `h_q = (q−1)/q ∝ (1 − q⁻¹)` suggests evaluating at `q = 1/q₀`.
+- F_K's leading-coefficient exponent has been identified for fibered knots up to 12 crossings (`arXiv:2512.23700`).
+
+**Concrete fast test (~50 lines of compute).** Look up tabulated `F_K(x=1, q=1/q₀)` for `K ∈ {6_2, 8_11, L6a4}` (deuteron, ³H/T, ³He per `mass_table_ppb.py`'s census atoms) and check whether their ratios match the framework's `ν_SDP ∈ {1, 2}` pattern.
+
+**Papers:** [Gukov–Manolescu](https://arxiv.org/abs/1904.06057) · [Gukov–Pei–Putrov–Vafa](https://arxiv.org/abs/1701.06567) · [Park 2020 explicit F_K computations](https://arxiv.org/pdf/2004.02087) · [Witten 2010 analytic continuation of CS](https://arxiv.org/abs/1001.2933)
+
+### 6.5 Habiro ring of a number field (Garoufalidis–Scholze–Wheeler–Zagier 2024) — STRONGEST HOOK
+
+**Specific result.** The Habiro ring `Ĥ_K = lim_n O_K[q, q⁻¹]/((q;q)_n)` for a number field K has the unique property that **any element specialises both at roots of unity AND at real `q ∈ (−1, 1) ∪ (1, ∞)`** — exactly the dual property our framework needs (real `q₀ ≈ 1.110` for hyperbolic chain, roots of unity for RT chain). The 2024 G-S-W-Z paper ([`arXiv:2412.04241`](https://arxiv.org/abs/2412.04241)) extends to modules graded by `K_3(K)` (the same K-group whose regulator is `Vol + i·CS`). Their **main theorem**: perturbative CS invariants of knots/3-manifolds are elements of these modules; the Garoufalidis–Zagier `Φ_α(h)` matrix ([`arXiv:2111.06645`](https://arxiv.org/abs/2111.06645)) has its `(σ_0, σ_1)` entry equal to the perturbative Kashaev expansion as a Habiro-ring element, with rows/cols indexed by **boundary-parabolic SL_2(ℂ) reps of π₁(S³ \ K)**.
+
+**Hook for our problem.**
+- A **single per-knot Habiro element `Φ_K(h)`** exists that specialises to BOTH the framework's q₀ regime AND the RT root-of-unity regime.
+- Its **K_3(K) grading IS the Bloch-group / Vol-Chern–Simons grading** — the element's "scalar" content carries `Vol(K)` information automatically.
+- Our `5/2 + 3h²/4` Family-A is **consistent with the leading 2 terms of the perturbative expansion of a Habiro-ring element around q=1** (i.e. h=0). The 2024 result says this expansion IS canonical (was conjectural pre-2024), and **its further `h^4, h^6, …` coefficients are predicted by the K_3(K) decomposition**.
+- Framework precedent: [`docs/audits/2026-05-24-rt-route-research-frontiers-w-correction-habiro-heegaard.md §2`](2026-05-24-rt-route-research-frontiers-w-correction-habiro-heegaard.md) speculated this; the 2024 G-S-W-Z theorem **makes it rigorous**.
+
+**Concrete experiment (the single highest-leverage attack on Δ_λ / Geom_full bridge).**
+1. Look up `Φ_{6_2}(h)` (deuteron knot) in the Garoufalidis–Zagier `arXiv:2111.06645` tables.
+2. Specialise at `h_0 = q_0 − q_0⁻¹`.
+3. Divide by `Vol(6_2)` and compare to the framework's empirical `λ_p(q_0) ≈ 2.46` (the value that would make m_p land exactly).
+4. If the ratio is `5/2 + O(h²)` with the K_3-predicted `O(h²)` coefficient — this IS the canonical closure for the deuteron; generalises to T / ³He / ⁴He via their respective `Φ_K`.
+
+**Why this matters.** The K_3 grading is **rigid** — no free parameters, no fitted ansatz. This is the cleanest way through the Δ_λ-gate discipline that has refuted all 6 prior scalar combinatorial guesses.
+
+**Papers:** [G-S-W-Z 2024 (arXiv:2412.04241)](https://arxiv.org/abs/2412.04241) · [MPIM preprint](https://archive.mpim-bonn.mpg.de/5146/) · [Garoufalidis–Zagier 2021 (arXiv:2111.06645)](https://arxiv.org/abs/2111.06645) · [Habiro 2008 unified WRT](https://link.springer.com/article/10.1007/s00222-008-0142-z) · [Scholze MPIM lectures WS 2024/25](https://people.mpim-bonn.mpg.de/scholze/ws202425_habiro.pdf)
+
+### 6.6 Asymptotic expansions q → 1 (Borot–Eynard, Garoufalidis–Lê) — supplies the scaffolding
+
+Garoufalidis–Lê and Borot–Eynard ([`arXiv:1205.2261`](https://arxiv.org/pdf/1205.2261)) prove the colored Jones admits an asymptotic expansion
+`J_N(K; e^{(2πi+u)/N}) ~ N^δ · e^{N·S₀(u)} · Σ_k S_k(u) N^{−k}`
+where `S₀(u) = Vol+CS` at deformed parameter `u`, and `S_k(u)` are computed from the A-polynomial spectral curve. Our small `h ≈ 0.196` makes a perturbative `h^k` expansion natural; the `S_k(u)` are computable per-knot scalars — directly the `λ_k(K)` weights we need.
+
+**Concrete cheap test (~100 lines).** Use Borot–Eynard A-poly recursion to compute `S_0, S_1, S_2` for `6_2, 8_11, L6a4` and cross-check against the framework's `lambda_p(q)` values. The Family-A `5/2 + 3h²/4` from H_4 SHOULD match `S_0 + S_1 h²` for the Borromean atomic braid.
+
+**Papers:** [Borot–Eynard 2012 (arXiv:1205.2261)](https://arxiv.org/pdf/1205.2261) · [Garoufalidis–Lê Gevrey series](https://people.mpim-bonn.mpg.de/stavros/publications/gevreyqtopology.pdf) · [Murakami twist-knot asymptotics 2023 (arXiv:2307.12963)](https://arxiv.org/pdf/2307.12963)
+
+### 6.7 Ranking + verdict
+
+| # | Direction | Hook | Cost | Fit-risk | Verdict |
+|---|---|---|---|---|---|
+| 6.5 | **Habiro ring of a number field (G-S-W-Z)** | **Strongest** — canonical per-knot real-q + RT, K_3 grading | Moderate (need Φ_K tables) | **Low** (K_3 rigid) | **PRIMARY** |
+| 6.4 | Gukov–Manolescu F_K | Strong — explicit q-series in unit disk | Cheap (~50 lines) | Low (quantum-A rigid) | **SECONDARY — fast first test** |
+| 6.6 | Perturbative `S_k(K)` asymptotic | Constructive coefficient extraction | Cheap (~100 lines) | Medium (truncation) | Cross-validates 6.4 + 6.5 |
+| 6.1 | Volume conjecture | Already used | — | — | existing |
+| 6.2 | Bloch–Wigner | q→1 limit of what we have | — | — | existing |
+| 6.3 | KhR | Wrong grading | — | — | **REJECTED** |
+
+### 6.8 Single highest-leverage experiment (revised §5 Option E)
+
+Replace Option E ("look outside the framework") in §5 with the **specific Habiro experiment** from §6.5:
+
+> **Compute `Φ_{6_2}(h_0)` from Garoufalidis–Zagier tables, divide by `Vol(6_2)`, compare to `λ_p(q_0) ≈ 2.46`. If the K_3-grading-predicted h² coefficient matches the framework's `3/4` (Family A) — this IS the canonical closure.**
+
+This experiment cleanly **derives** the Geom_full bridge rather than fits it. It's the single best test of whether the framework's `Family-A linking_weight` is a Habiro-element specialisation (✅ canonical) versus a CODATA near-match (✗ accidental).
+
+**File location for follow-up:** branch `claude/habiro-per-knot-lambda-derivation-2026-06-03`, script `folio-assistant/computations/probes/per_knot_lambda_habiro_probe.py`, audit doc `docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md`. Existing related files: [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md), [`docs/audits/2026-05-24-rt-route-research-frontiers-w-correction-habiro-heegaard.md §2`](2026-05-24-rt-route-research-frontiers-w-correction-habiro-heegaard.md), [`content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.md`](../../content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.md).
 
 ---
 
-## 7. Recommended order
+## 7. Recommended order (revised with lit input §6)
 
-If the user is asking "what next":
+The lit review (§6) materially upgrades the plan: the **Habiro ring of a number field** result (§6.5, G-S-W-Z 2024) is the clearest derivation chain for `λ(K)` available, and it became rigorous *only* in late 2024 — i.e. NOT a recycle.
 
-1. **Option A immediately** (~1-3 days) — gives clean per-knot Vol data; cheap; disambiguates the Form 1 / Form 2 question.
-2. **Option B in parallel** (~1-2 weeks) — high-information; tests whether the brane tower factors through Family-A.
-3. **Lit scan (§6) in background** — wait for the parallel agent; integrate its findings on Habiro / volume-conjecture analogies into Options B and C.
-4. **Option D (operator-valued combiner)** — the strategic long-game; needs PR #1443 to land. Track it but don't gate on it.
+Three sequenced threads:
 
-Three branches of work, ~6 weeks total compute to a much-better understanding of the Geom_full bridge.
+1. **Habiro experiment (§6.8 / §6.5)** — *immediate top priority*. ~1 week including data lookup from Garoufalidis–Zagier tables + numeric specialisation. **If h² coefficient matches `3/4` — Δ_λ closure derived for the deuteron; generalises through `Φ_K`.**
+2. **F_K fast test (§6.4)** — *parallel, ~50 lines of compute*. Use `F_K(x=1, q=1/q₀)` for `{6_2, 8_11, L6a4}`. Compares directly against the per-knot `ν_SDP ∈ {1, 2}` pattern. Low cost, high-information sanity check.
+3. **Option A (Vol(β_K) wire-up, §5)** — *infrastructure, 1-3 days*. SnapPy install + 4-5 volumes computed. Required for Options B–E regardless. **Run in parallel with the Habiro experiment** since they don't share blockers.
 
-The key reframe from this analysis: **Geom_full is the bottleneck for 3 of 5 missing L2 observables (m_n, Δ_pn, m_K/m_π), not just m_p**. Closing it has wide leverage.
+Then conditional:
+
+4. **If §6.5 succeeds** → Habiro-driven derivation of `Geom_full(K, q)` for the light series. Closes the §2 main gap.
+5. **If §6.5 fails** → fall back to **Option B (brane-tower expansion)**, ~1-2 wks, tests whether Family-A is the leading order.
+6. **Option D (operator-valued combiner / Δ_λ via PR #1443)** — strategic long-game in either case; track sibling progress.
+
+### Estimated wall-time to a much-better-understood Geom_full bridge
+
+- ~3-5 weeks if the Habiro experiment succeeds
+- ~6-8 weeks if it fails and we fall back to brane-tower expansion
+
+### Why this is NOT a recycle
+
+The G-S-W-Z `arXiv:2412.04241` paper is from December 2024 — its main theorem (perturbative CS invariants are Habiro-ring elements with K_3 grading) was **conjectural before**. The framework's existing speculation on Habiro elements (`docs/audits/2026-05-24-rt-route-...md §2`) predates the rigorous theorem. So Option §6.5 is a **fresh** import, not a recycle of what we tried.
+
+### The key reframe (unchanged from v1)
+
+**Geom_full is the bottleneck for 3 of 5 missing L2 observables (m_n, Δ_pn, m_K/m_π), not just m_p.** Closing it via the Habiro path has wide leverage.
 
 ---
 
