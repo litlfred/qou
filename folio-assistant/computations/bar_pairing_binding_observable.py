@@ -56,6 +56,7 @@ which is the SAME source-of-truth used by the q_0 chi-cache.
 from __future__ import annotations
 
 import json
+import time
 import sys
 from pathlib import Path
 
@@ -98,16 +99,67 @@ def _load_chi_witness(path: Path) -> dict[tuple, mp.mpf]:
     }
 
 
-def _free_atom_chi_via_native(atom: str, Z: int, N: int, q_str: str,
-                              dps: int) -> tuple[dict, dict]:
-    """χ_λ over the FREE-reference + ATOMIC braid words at q = q_str.
+def _load_or_compute_chi(atom: str, n: int, kind: str, q_str: str,
+                         q_tag: str, dps: int, word_signed):
+    """{λ: χ} for one (atom, kind, q-value).
 
-    The Rust kernel only stores ATOMIC chi; the FREE reference uses
-    the same kernel with `include_inter=False` and computes once
-    on demand.  This is fast at any n (T/³He ≤ 0.4s, ⁴He ~10 min)
-    via the PR #1748 patched wheel.
+    Looks for `chi-{atom}-{kind}-h{n}-at-{q_tag}-50dps.witness.json`
+    (kind ∈ {"atom", "free"}).  Backward compatible with the old
+    ATOM-only naming `chi-{atom}-h{n}-at-q0-50dps.witness.json` and
+    `chi-{atom}-h{n}-at-qinv-50dps.witness.json`.  If absent OR
+    partial, recomputes via the Rust kernel and persists.
     """
     import pyhecke_native as pn
+    if kind == "atom":
+        legacy = HERE / f"chi-{atom}-h{n}-at-{q_tag}-50dps.witness.json"
+    else:
+        legacy = HERE / f"chi-{atom}-{kind}-h{n}-at-{q_tag}-50dps.witness.json"
+    if legacy.exists():
+        w = json.loads(legacy.read_text())
+        if not w.get("partial", False):
+            return {tuple(e["partition"]): mp.mpf(e["chi_lambda"])
+                    for e in w["by_partition"]}, legacy
+    # Compute fresh.
+    print(f"[{atom}] computing {kind}@{q_tag} (n={n}, "
+          f"{len(word_signed)}fac) — caching to {legacy.name}",
+          flush=True)
+    t0 = time.time()
+    out = pn.chi_lambda_all_partitions_mpfr(n, word_signed, q_str, dps)
+    elapsed = time.time() - t0
+    print(f"[{atom}] {kind}@{q_tag} done in {elapsed:.2f}s", flush=True)
+    legacy.write_text(json.dumps({
+        "computation": f"chi-{atom}-{kind}-h{n}-at-{q_tag}-50dps",
+        "atom": atom, "kind": kind,
+        "n_strands": n,
+        "dps": dps,
+        "q_str": q_str,
+        "n_partitions": len(out),
+        "n_partitions_total": len(out),
+        "partial": False,
+        "compute_time_sec": round(elapsed, 2),
+        "by_partition": [{"partition": list(lam), "chi_lambda": s}
+                         for lam, s in out],
+        "_provenance": {
+            "engine": "pyhecke_native",
+            "rust_fn": "chi_lambda_all_partitions_mpfr",
+            "pr_landing_kernel": 1748,
+            "pr_consumer": 1742,
+        },
+    }, indent=2))
+    return {tuple(lam): mp.mpf(s) for lam, s in out}, legacy
+
+
+def _free_atom_chi_via_native(atom: str, Z: int, N: int, q_str: str,
+                              q_tag: str, dps: int) -> tuple[dict, dict]:
+    """χ_λ over the FREE-reference + ATOMIC braid words at q = q_str.
+
+    Cache-aware (PR #1748 follow-up): reuses
+    `chi-{atom}(-{kind})-h{n}-at-{q_tag}-50dps.witness.json` when
+    available; only the missing one(s) trigger a fresh Rust call.
+
+    The Rust kernel takes the same signed-word translation as
+    `chi_at_q_inv_via_native_mpfr._word_to_signed`.
+    """
     from chi_at_q_inv_via_native_mpfr import _word_to_signed
 
     A = Z + N
@@ -116,12 +168,10 @@ def _free_atom_chi_via_native(atom: str, Z: int, N: int, q_str: str,
     word_atom = atom_braid_word_3A(Z, N, include_inter=True)
     ws_free = _word_to_signed(word_free)
     ws_atom = _word_to_signed(word_atom)
-    free = {tuple(lam): mp.mpf(s)
-            for lam, s in pn.chi_lambda_all_partitions_mpfr(
-                n, ws_free, q_str, dps)}
-    atom_chi = {tuple(lam): mp.mpf(s)
-                for lam, s in pn.chi_lambda_all_partitions_mpfr(
-                    n, ws_atom, q_str, dps)}
+    free, _ = _load_or_compute_chi(atom, n, "free", q_str, q_tag, dps,
+                                    ws_free)
+    atom_chi, _ = _load_or_compute_chi(atom, n, "atom", q_str, q_tag, dps,
+                                       ws_atom)
     return free, atom_chi
 
 
@@ -150,9 +200,9 @@ def compute_atom(atom: str) -> dict:
     # at BOTH q_0 and q_0^{-1}.  The current q_0 cache is ATOMIC-only;
     # re-run via Rust to cover both free + atom at both q-values.
     print(f"[{atom}]   q_0 evaluation …", flush=True)
-    free_q0, atom_q0 = _free_atom_chi_via_native(atom, Z, N, q0_str, 50)
+    free_q0, atom_q0 = _free_atom_chi_via_native(atom, Z, N, q0_str, "q0", 50)
     print(f"[{atom}]   q_0^-1 evaluation …", flush=True)
-    free_qi, atom_qi = _free_atom_chi_via_native(atom, Z, N, qi_str, 50)
+    free_qi, atom_qi = _free_atom_chi_via_native(atom, Z, N, qi_str, "qinv", 50)
 
     # y_λ at both q-values — #1742 bar-symmetrizes
     # (y(q_0) + y(q_0^{-1})) / 2 as the real bar-invariant weight.
