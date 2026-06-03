@@ -151,3 +151,40 @@ On PR #1748's branch (`claude/hecke-mpfr-intra-partition-rayon-2026-06-03`):
 
 This entry closes the §3 sibling-intent step of the coordinate sweep
 for the binding-observable scope on 2026-06-03.
+
+## 2026-06-03 — per-knot λ(K): Habiro refuted, component selection rule found (PR #1765)
+
+`/coordinate` sweep for the Geom_full-bridge work (PR #1765, branch
+`claude/habiro-per-knot-lambda-derivation-2026-06-03`).
+
+**Scope map:**
+
+| PR | relation | classification |
+|----|----------|----------------|
+| #1762 (my parent) | 1ppQ roadmap §6.8 — this PR executed its top recommendation | dependency (posted result) |
+| #1742 (bar-pairing) | same linking_weight / per-block scope | overlap (prior coord) |
+| #1768 / #1772 (Kashiwara crystal, Q_β) | crystal-basis object, different application (Q_β not mass) | adjacent (ledger-only, not spammed) |
+| #1521 (Habiro [2]_q·(1−h²α) fermion loop) | Habiro element, α_EM application | adjacent (different element) |
+
+**Findings landed:**
+1. Habiro hook **refuted** against the owner-uploaded G-Z paper
+   (`uploads/2111.06645v3.pdf`): the figure-eight Kashaev element is
+   root-of-unity-bound (terminates at ζ_N, diverges at real q₀);
+   `Φ^(4_1)` leads with 3^(−1/4)≈0.76 (not 1), complex Q(√−3) coeffs,
+   ℏ=2πi/N. The −1.05% real-q₀ coincidence was a resummation artefact.
+2. **Zero-parameter component selection rule found** (the productive
+   redirect): `lw(L) = (1/(c+1)) Σ_{λ⊢(c+1)} dim_q V_λ`, reproducing
+   muon (c=1, exact ∀q) and proton (c=3, = Family-A) exactly. A finite
+   quantum-dimension (Gelfand-model) Laurent polynomial — crystal-basis
+   compatible, NOT a Habiro series.
+3. **Gelfand ≠ regular**: the 6 knot-operator basis = Σ_{λ⊢3}(dim)²=6
+   (regular rep); the linking_weight = Σ_{λ⊢3}dim=4 (Gelfand). Even/odd
+   rank dichotomy: both anchors at even rank (poly in h²); c=2,4 odd
+   rank carry √(h²+4).
+
+**Coord comments posted:** PR #1762 (result of §6.8); PR #1765 (own
+review triage, 11 Copilot threads resolved).
+
+**Open / next:** (a) decisive c=2 test — find a 2-component-link
+particle, check lw vs (q+1)²/(3q)=1.337 at q₀; (b) derive why rank
+= c+1 (lepton-fibre hypothesis). Both gated on owner direction.
