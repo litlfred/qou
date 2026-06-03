@@ -106,18 +106,46 @@ only) gives only ~1.5× the deuteron, while AME B(A=3) ≈ 3–4× the deuteron
 — roughly the **number of nucleon pairs** (3 for A=3). The canonical trace
 returns a single collective number, not the pairwise-additive sum.
 
-**Next lead (parameter-free, testable):** pairwise-additive binding
-`B(A=3) = Σ_{pairs} B_pair` (T: B_pn+B_pn+B_nn; ³He: B_pp+B_pn+B_pn), each
-pair computed deuteron-style. A sibling branch
-`claude/binding-extensive-bond-sum-2026-06-02` already explores extensive
-bond sums — **coordinate, do not duplicate**.
+### Inter-nucleon multiplicity structure — closes −60 % → −15 % (zero fit)
+
+The fix is the **C(A,2) pairwise bond multiplicity**, not the canonical
+braid's A−1 chain (sibling finding `c4b23d580d`). Summing typed bonds
+per-block at H₆ (`binding_perblock_bond_type_a3.py`):
+
+`B(K) = n_pp·B_pp + n_pn·B_pn + n_nn·B_nn`, `n_pp=C(Z,2), n_pn=Z·N, n_nn=C(N,2)`
+
+| iso | (pp,pn,nn) | B_pred | AME | err | (was) |
+|-----|-----------|--------|-----|-----|-------|
+| D | (0,1,0) | 2.304 | 2.225 | +3.6 % | — |
+| T | (0,2,1) | 6.857 | 8.482 | **−19.2 %** | −61.7 % |
+| ³He | (1,2,0) | 6.894 | 7.718 | **−10.7 %** | −55.1 % |
+| ⁴He | (1,4,1) | 13.75 | 28.30 | −51.4 % | magic/Borromean |
+
+Derived bonds B_pn 2.304, B_pp 2.286, B_nn 2.249 MeV (all ~deuteron). The
+multiplicity is the dominant missing structure. Residuals:
+
+- **per-bond GROWTH** (the ~−15 % A=3 residual): bonds in the dense nucleus
+  are ~15 % stronger than 3 isolated deuteron bonds — saturation
+  enhancement. **Open.**
+- **⁴He −51 %**: magic/Borromean, not pairwise — separate structure.
+- **T-vs-³He split**: per-block gives `B_nn < B_pp` (³He > T by 0.04 MeV),
+  AME has T > ³He by 0.76 MeV. The Coulomb / n–p (Δ_pn-scale) split is
+  unresolved by either convention. Per-block recovers the deuteron better
+  (+3.6 % vs scalar +12 %) but the sibling's scalar gets the ordering — a
+  genuine convention tension.
+
+This is the **operator-valued / Wall-A** progress: not via a Δ_λ rule, but
+via the inter-nucleon multiplicity (extensive bond sum). Still no Lean
+theorem — the multiplicity closes the bulk but two residuals remain open.
 
 ## Done / next
 
 - [x] Branch + baseline established.
 - [x] A=3 per-block / superselection reading — **refuted** (closes A=2 only).
-- [x] Six-reading robustness of the −60 % deficit established → gap is the
-      inter-nucleon multiplicity, not observation or Δ_λ.
-- [ ] Pairwise-additive `B = Σ_pairs B_pair` test (coordinate with the
-      extensive-bond-sum sibling).
+- [x] Six-reading robustness of the −60 % deficit → gap is multiplicity.
+- [x] Inter-nucleon multiplicity (C(A,2) per-block typed bond sum) —
+      **closes A=3 from −60 % to −11 %/−19 %, zero fit** (this PR).
+- [ ] Per-bond GROWTH: bonds embedded in the dense A-nucleon braid
+      (the ~−15 % residual). Open.
+- [ ] T-vs-³He split (Coulomb / n–p, Δ_pn-scale) — convention-sensitive.
 - [ ] Δ_pn: re-derive at current q₀ via bring-color-weighted asymmetry.
