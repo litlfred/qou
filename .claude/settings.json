@@ -10,6 +10,14 @@
         "hooks": [
           {
             "type": "command",
+            "command": "./scripts/setup-elan-symlinks.sh"
+          },
+          {
+            "type": "command",
+            "command": "./scripts/setup-lean-toolchain.sh"
+          },
+          {
+            "type": "command",
             "command": "./scripts/session-status.sh"
           },
           {
