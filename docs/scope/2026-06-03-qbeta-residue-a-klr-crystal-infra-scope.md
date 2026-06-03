@@ -19,7 +19,7 @@
 | Demazure modules / characters | **None** | **Gap** |
 | Kashiwara crystal graphs | **None** | **Gap** |
 | KLR algebra structure | **None** | **Gap** |
-| q-Pochhammer / q-Pochhammer infinite product | **None** | **Gap** |
+| q-Pochhammer symbols `(q;q)_n` / infinite product `(q;q)_∞` | **None** | **Gap** |
 | Hecke algebra H_n(q) | Partial (basic definition in `Mathlib.Combinatorics.HeckeAlgebra`) | Partial — no Wenzl, no Markov trace |
 | Markov trace on Hecke algebras | **None** | **Gap** |
 | Jones-Wenzl projector | **None** | **Gap** |
