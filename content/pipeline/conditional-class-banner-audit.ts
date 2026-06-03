@@ -35,8 +35,29 @@ const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(SCRIPT_DIR, "..", "..");
 const ROOT = join(REPO_ROOT, "content/quantum-observable-universe");
 const STRICT = process.argv.includes("--strict");
-const WITNESS_OUT = process.argv.find((a) => a.endsWith(".json")) ??
+
+// Optional baseline-allowlist file (declared before WITNESS_OUT so its
+// path is not mistaken for the witness-output path below).
+const BASELINE_IDX = process.argv.indexOf("--baseline-allowlist");
+const BASELINE_PATH = BASELINE_IDX >= 0 ? process.argv[BASELINE_IDX + 1] : null;
+const EMIT_BASELINE = process.argv.includes("--emit-baseline");
+
+const WITNESS_OUT = process.argv.find((a, i) =>
+  a.endsWith(".json") && i !== BASELINE_IDX + 1
+) ??
   join(REPO_ROOT, "docs/audits/2026-05-09-conditional-class-banner.witness.json");
+
+// When --baseline-allowlist is provided alongside --strict, the gate
+// fails only on **new** gaps — labels in `missing_lean_class_hypothesis`
+// or `missing_md_conditional_banner` that are NOT in the allowlist.
+// Use to lock in a non-zero baseline while preventing regressions.
+//
+// Allowlist JSON shape:
+//   { "missing_lean_class_hypothesis": ["prop:foo", ...],
+//     "missing_md_conditional_banner":  ["prop:bar", ...] }
+//
+// Regenerate the allowlist via `--emit-baseline` after deliberately
+// accepting the current gap set.
 
 interface Block {
   label: string;
@@ -335,7 +356,81 @@ await Bun.write(
 );
 console.log(`\nWitness: ${WITNESS_OUT.replace(REPO_ROOT + "/", "")}`);
 
-if (STRICT && (missingLean.length + missingBanner.length) > 0) {
-  console.error(`\nSTRICT mode: ${missingLean.length + missingBanner.length} compliance gaps`);
-  process.exit(1);
+// Optionally emit the current gap set as the baseline-allowlist file.
+// Use after deliberately accepting the current count — the next strict
+// run will pass iff no NEW gaps appear beyond this set.
+if (EMIT_BASELINE) {
+  const baselineOut = BASELINE_PATH ?? join(
+    REPO_ROOT,
+    "docs/audits/2026-06-03-conditional-class-banner-baseline.json",
+  );
+  await Bun.write(
+    baselineOut,
+    JSON.stringify(
+      {
+        generated: new Date().toISOString(),
+        note: "§3b-cond conditional-class banner baseline-allowlist. " +
+          "Lock-in of accepted pre-existing gaps so --strict catches " +
+          "only NEW regressions. Refresh with --emit-baseline after " +
+          "every deliberate gap acceptance / discharge.",
+        missing_lean_class_hypothesis: missingLean.map((f) => f.label).sort(),
+        missing_md_conditional_banner: missingBanner.map((f) => f.label).sort(),
+      },
+      null,
+      2,
+    ),
+  );
+  console.log(`\nBaseline emitted: ${baselineOut.replace(REPO_ROOT + "/", "")}`);
+}
+
+// Load baseline-allowlist if requested. Labels in the allowlist are
+// not counted toward the STRICT exit code — only NEW gaps fail.
+let allowedLean = new Set<string>();
+let allowedBanner = new Set<string>();
+if (BASELINE_PATH) {
+  try {
+    const raw = await readFile(resolve(REPO_ROOT, BASELINE_PATH), "utf8");
+    const parsed = JSON.parse(raw);
+    allowedLean = new Set<string>(parsed.missing_lean_class_hypothesis ?? []);
+    allowedBanner = new Set<string>(parsed.missing_md_conditional_banner ?? []);
+  } catch (e) {
+    console.error(`\nFailed to load baseline-allowlist ${BASELINE_PATH}: ${e}`);
+    process.exit(2);
+  }
+}
+
+const newMissingLean = missingLean.filter((f) => !allowedLean.has(f.label));
+const newMissingBanner = missingBanner.filter((f) => !allowedBanner.has(f.label));
+const regressionsLean = newMissingLean.length;
+const regressionsBanner = newMissingBanner.length;
+
+if (BASELINE_PATH) {
+  console.log(`\nBaseline-allowlist: ${BASELINE_PATH}`);
+  console.log(`  Baselined missing-Lean:    ${allowedLean.size}`);
+  console.log(`  Baselined missing-banner:  ${allowedBanner.size}`);
+  console.log(`  NEW missing-Lean:          ${regressionsLean}`);
+  console.log(`  NEW missing-banner:        ${regressionsBanner}`);
+  if (regressionsLean > 0) {
+    console.log(`\nNEW Missing Lean [Class] hypothesis (regression):`);
+    for (const f of newMissingLean) {
+      console.log(`  ${f.kind.padEnd(11)} ${f.label}`);
+    }
+  }
+  if (regressionsBanner > 0) {
+    console.log(`\nNEW Missing .md conditional banner (regression):`);
+    for (const f of newMissingBanner) {
+      console.log(`  ${f.kind.padEnd(11)} ${f.label}`);
+    }
+  }
+}
+
+if (STRICT) {
+  const counted = BASELINE_PATH
+    ? (regressionsLean + regressionsBanner)
+    : (missingLean.length + missingBanner.length);
+  if (counted > 0) {
+    const label = BASELINE_PATH ? "regressions beyond baseline" : "compliance gaps";
+    console.error(`\nSTRICT mode: ${counted} ${label}`);
+    process.exit(1);
+  }
 }
