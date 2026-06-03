@@ -1,0 +1,67 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T19:25:25.700684+00:00",
+  "commitSha": "b7584dd3ea8fc441aa28165edf0f97fdc0cbe83a",
+  "assertions": [
+    {
+      "name": "a3_perblock_does_not_close",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "binding-per-block-magnitude-a3",
+  "scriptFile": "binding_per_block_magnitude_a3_probe.py",
+  "scriptHash": "79b6a1c4aef3",
+  "scriptCommitSha": "b7584dd3ea8fc441aa28165edf0f97fdc0cbe83a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "data": {
+    "q_0": "1.1099785827513808",
+    "E0_MeV": 4.185981363294476,
+    "results": {
+      "d": {
+        "B_perblock_MeV": 2.304327042785776,
+        "B_scalar_MeV": 2.491662328387393,
+        "AME_MeV": 2.2245662,
+        "err_perblock": 0.03585456022202257,
+        "err_scalar": 0.1200666127119046,
+        "n_strands": 6
+      },
+      "t": {
+        "B_perblock_MeV": 3.25254107583393,
+        "B_scalar_MeV": 3.3654118693753317,
+        "AME_MeV": 8.4818,
+        "err_perblock": -0.6165270254151324,
+        "err_scalar": -0.6032196150138731,
+        "n_strands": 9
+      },
+      "3he": {
+        "B_perblock_MeV": 3.4666765603737737,
+        "B_scalar_MeV": 3.5213133259933334,
+        "AME_MeV": 7.718,
+        "err_perblock": -0.5508322673783657,
+        "err_scalar": -0.5437531321594541,
+        "n_strands": 9
+      }
+    },
+    "chi_source": "atom-chi-rust-{d,t,3he}.witness.json (Rust kernel)",
+    "verdict": "per-block magnitude closes A=2 (+3.6%) but FAILS A=3 (T -61.7%, 3He -55.1%) — same ~-60% as all other readings. Operator-valued blockwise |.| is NOT the A>=3 closure. Negative result."
+  }
+}
