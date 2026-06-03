@@ -99,6 +99,18 @@ def capture_environment() -> dict:
     metadata (no module imports forced); missing packages are simply
     omitted. The list is deliberately small (the libraries whose version
     actually affects numeric output).
+
+    Format convention: values are **bare version strings** keyed by
+    package name (e.g. ``"python": "3.11.15"``, ``"mpmath": "1.3.0"``).
+    This is intentionally distinct from the top-level ``engineVersion``
+    field — which is a single ``"<engine> <version>"`` identifier
+    string. Both formats coexist by design: ``environment`` is a
+    multi-package bag (bare versions for symmetry across packages);
+    ``engineVersion`` names the engine that emitted the witness
+    (engine name + version as a single identifier). When the engine
+    is python-based the python version appears in both places by these
+    two different conventions; consumers should not assume the strings
+    match byte-for-byte.
     """
     import importlib.metadata as _md
 

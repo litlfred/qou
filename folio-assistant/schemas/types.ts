@@ -263,7 +263,18 @@ export interface ComputationAssertion {
 export interface ComputationWitness {
   /** Engine that produced this witness. */
   engine: ComputationEngine;
-  /** Engine version string (e.g. "snappy 3.3.2", "sympy 1.13"). */
+  /** Engine identifier of the form `"<engine> <version>"` — e.g.
+   *  `"snappy 3.3.2"`, `"sympy 1.13"`, `"mpmath 1.3.0"`, or for a
+   *  composite engine `"python 3.11 + mpmath 1.3.0"`.
+   *
+   *  Distinct from `environment.<pkg>` (see `capture_environment` in
+   *  `qou_substrate/witness.py`): `engineVersion` identifies the engine
+   *  that emitted the witness (engine name + version, single string),
+   *  while `environment` is a bag of bare package versions keyed by
+   *  package name. The python version may appear in both places when
+   *  the engine is python-based; they serve different roles (engine
+   *  identity vs interpreter version) and the formats are intentionally
+   *  not unified. */
   engineVersion: string;
   /** ISO 8601 timestamp of computation. */
   computedAt: string;
