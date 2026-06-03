@@ -238,6 +238,28 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
     if A < 2:
         return {"B_pred_MeV": 0.0, "B_E0_MeV": 0.0, "method": "no binding (single nucleon)"}
     if A > 12:
+        # H_{3A} kernel gated for non-α-cluster atoms; but the
+        # `recursive-on-⁴He` atlas methodology covers Z=N, A%4==0
+        # via B(nα) = n·B(⁴He) + C(n,2)·c_αα. Wire it in here
+        # for ⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca (user request
+        # 2026-06-03: "wire up ALL isotopes properly"). The
+        # closure is zero-fit: B(⁴He) from magic-A formula,
+        # c_αα = m_e · Vol(7²_1) (Whitehead link).
+        if Z == N and A % 4 == 0:
+            try:
+                from alpha.alpha_cluster_recursion import alpha_cluster_binding
+                r = alpha_cluster_binding(Z, N)
+                if r.get("applicable"):
+                    return {
+                        "B_pred_MeV": float(r["B_pred_MeV"]),
+                        "B_E0_MeV": float(r["B_pred_MeV"]),  # same scale
+                        "method": "alpha_cluster_recursion (recursive-on-⁴He)",
+                        "formula": r.get("formula"),
+                    }
+            except Exception as e:
+                # Fall through to None — don't break production if the
+                # alpha-cluster module changes shape
+                return None
         return None  # gated on H_{3A} kernel availability
 
     try:
