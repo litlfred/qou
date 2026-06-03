@@ -35,9 +35,28 @@ with y_λ the canonical Wenzl weight evaluated symmetrized over q, q⁻¹.
 ZERO fit. χ^λ from Hoefsmit (pure-Python, evaluated at q₀ AND q₀⁻¹); y_λ from
 the Wenzl bridge. AME used only for the final comparison. Light isotopes
 (D n=6, T n=9) — ³He/⁴He are heavier and deferred (same kernel).
+
+FINDING (2026-06-03). The per-block bar-LENGTH does NOT improve the binding —
+it underbinds badly:
+
+    D:  B_arch = 2.304 MeV (+3.6%)   vs   B_bar = 0.660 MeV (−70.3%).
+
+The obstruction is structural: ~half the Wedderburn channels are GROWTH channels
+where χ^λ(q₀)·χ^λ(q₀⁻¹) < 0 (deuteron: 4/5 free, 5/? atom), i.e. the bar-length
+is genuinely IMAGINARY (the q-Reeb arccosh / hyperbolic regime). Taking its
+magnitude discards that phase, and evaluating χ^λ at the MIRROR point q₀⁻¹ gives
+a systematically smaller value than the observation at q₀.
+
+Conclusion — consistent with #1738, NOT a reversal of it: the CATEGORICAL
+convention is correctly signed/bar (the fibre object lives over generic q, with
+the bar q↦q⁻¹ its natural involution). But the ARCHIMEDEAN OBSERVATION at the
+substrate anchor is |χ^λ(q₀)|, NOT the mirror pairing √(χ(q₀)·χ(q₀⁻¹)). The bar
+does not "fix" the binding magnitude; the +3.6% archimedean deuteron stands. This
+is recorded so a later agent does not naively bar-ify the observation step.
 """
 from __future__ import annotations
 
+import os
 import sys as _sys
 from pathlib import Path as _Path
 for _d in ("hecke", "habiro", "substrate"):
@@ -64,7 +83,12 @@ qi = 1 / q0                                   # bar image q ↦ q⁻¹
 M_E = mp.mpf(str(M_E_MEV))
 E0 = M_E / (q0 * (q0 - 1))                     # 𝔈₀ ≈ 4.186 MeV (calibration)
 
-ISO = {"D": (1, 1), "T": (1, 2)}               # light, tractable
+# D (n=6) runs in ~3 s and already establishes the finding. T (n=9, set
+# QOU_BAR_INCLUDE_T=1) evaluates χ at q₀ AND q₀⁻¹ over partitions of 9 and
+# takes minutes — confirming-only, kept off the default path for CI speed.
+ISO = {"D": (1, 1)}
+if os.environ.get("QOU_BAR_INCLUDE_T") == "1":
+    ISO["T"] = (1, 2)
 AME_B = {"D": mp.mpf("2.2245662"), "T": mp.mpf("8.4818")}
 
 
@@ -158,13 +182,24 @@ def main() -> int:
     wb.add_parameter("q0", float(q0))
     wb.add_parameter("q0_inv", float(qi))
     wb.add_data("per_atom", results)
+    # Honest finding: the per-block bar-LENGTH underbinds; the archimedean
+    # observation must stay |χ(q₀)|. The assertion records that the
+    # archimedean per-block beats the bar-length at the real anchor (NOT a
+    # claim that the bar improves binding — it does not).
+    arch_better = all(
+        abs(results[k]["err_arch"]) < abs(results[k]["err_bar"]) for k in results
+    )
     wb.add_assertion(
-        name="bar_pairing_per_block_binding_computed_zero_fit",
-        computed="1", expected="1", tolerance=0,
-        source=("Non-archimedean bar-pairing per-block binding computed for "
-                "D, T with the same canonical kernel as the archimedean "
-                "realization; no parameter tuned. Demonstrates the bar-norm "
-                "(√(χ(q)·χ(q⁻¹))) generalizes |χ| beyond the real place."),
+        name="archimedean_per_block_beats_bar_length_at_q0",
+        computed=str(int(arch_better)), expected="1", tolerance=0,
+        source=("At the substrate anchor q₀ the archimedean per-block "
+                "Σ y_λ|χ(q₀)| lands closer to AME than the bar-length "
+                "Σ y_λ√(χ(q₀)·χ(q₀⁻¹)) for every tested isotope (D: +3.6% vs "
+                "−70.3%). The bar is the correct CATEGORICAL/fibre norm "
+                "(per #1738) but its archimedean realization is |χ(q₀)|, not "
+                "the mirror pairing — the growth channels (χ(q₀)·χ(q₀⁻¹)<0, "
+                "imaginary bar-length) are the obstruction. Recorded so the "
+                "observation step is not naively bar-ified."),
     )
     out = wb.save()
     print(f"\nWitness: {out}")
