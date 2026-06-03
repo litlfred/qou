@@ -466,7 +466,7 @@ branch `he4-jsj-binding-link`). So the binding is a **many-body series**:
 
 | body order | structure | regime | result |
 |---|---|---|---|
-| **2-body** | pairwise bond-sum `Σ_b E_0·Δ\|tr_M\|_b` | A≤3 | correct T/³He ordering; A=2 derived |
+| **2-body** | pairwise bond-sum (per-bond `E_0·Δtr_M`, abs convention) | A≤3 | correct T/³He ordering; A=2 derived |
 | **3-body** | A=3 residual (the ~40 % pairwise gap) | T, ³He | **open** (whole-A link-volume — §below) |
 | **4-body** | whole-α volume `2·m_e·A·8G` (magic-A) | ⁴He | **+5.87 %, no fit** |
 
