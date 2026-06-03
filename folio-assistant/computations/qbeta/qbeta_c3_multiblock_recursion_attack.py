@@ -1,5 +1,25 @@
-"""qbeta_c3_multiblock_recursion_attack.py — pre-archimedean attack on c_3
-via the multi-block per-Wedderburn-block decomposition + z_k recursion.
+"""qbeta_c3_multiblock_recursion_attack.py — multi-block Δτ_M probe
+using the per-Wedderburn-block decomposition (NEAR-MATCH verdict,
+NOT a c_3 derivation).
+
+## Honest framing (read before editing)
+
+The script name and its 1ppQ-ledger origin ("multi-block symbolic c_3
+attack") record the original AIM. The VERDICT after running is:
+
+  - Δτ_M(q) IS expressed in closed form as a rational function of q
+    (numerator + denominator listed below).
+  - c_3 itself is NOT derivable from this object alone — the f-map
+    transform between Δτ_M's w = q-1 expansion and the ladder's
+    u = b·ℏ_q² expansion is the missing keystone (open).
+  - The cross-anchor swing measured here is the pre-stated NEAR-MATCH
+    signature; per the 1ppQ-Q_β ledger, c_3 stays NEAR-MATCH and is
+    NOT wired.
+
+Renaming the file to `qbeta_delta_tau_M_multiblock_closed_form.py`
+would more accurately describe the contents, but the original name
+preserves the audit trail back to the ledger's "next-session
+suggestion". See `docs/coordination/1ppq-qbeta.md` for the verdict.
 
 ## What this probes
 
@@ -33,8 +53,20 @@ This probe is exactly that — entirely symbolic, NO fitting at q_0.
 
       4(n+1)·b_{n+1} + 6n·b_n + (2(n-1)+k)·b_{n-1} = 0
 
-3. The Wenzl y_λ(q) weights for n=3 (symbolic, from
-   `markov_weights_symbolic.solve_y_lambda(3)`).
+3. NON-CANONICAL rational surrogate for the Wenzl y_λ(q) weights at
+   n=3 (see `y_lambda_h3_symbolic` below). The CANONICAL Wenzl
+   weights from `markov_weights_symbolic.solve_y_lambda(3)` involve
+   $\sqrt q$ (via the Markov parameter $z = 1/(\sqrt q + 1/\sqrt q)$),
+   so they are NOT rational in $q$. The rational surrogate used here
+   reproduces the per-block COEFFICIENTS structure (dimensions
+   $\{q^2, q, 1\}/((1+q)(1+q+q^2))$) but does NOT equal the canonical
+   $y_\lambda(q)$ at numerical anchors — at the m_p-pin $q_0$ the
+   canonical y_(3)≈0.4154 vs the surrogate y_(3)≈0.1747 (factor 2.379
+   off). The surrogate is retained because the conclusion (NEAR-MATCH
+   not closure) is robust to this choice and because the integer-
+   numerator structure of Δτ_M is itself informative. A canonical-y_λ
+   variant of this probe is open work — its result would still depend
+   on the (open) f-map.
 
 ## Method (purely symbolic in q)
 
@@ -106,14 +138,20 @@ def per_block_chi_diff(q: sp.Symbol) -> dict[tuple[int, ...], sp.Expr]:
 
 
 def y_lambda_h3_symbolic(q: sp.Symbol) -> dict[tuple[int, ...], sp.Expr]:
-    """Wenzl Markov weights y_λ(q) for n=3. Canonical, symbolic in q.
+    """NON-CANONICAL rational surrogate for the Wenzl y_λ(q) weights at n=3.
 
-    These are the Jones-Markov weights normalised so Σ_λ y_λ · dim(V_λ) = 1
-    (the n-component-unknot identity at n=3). Derived from
-    markov_weights_symbolic.solve_y_lambda(3); values verified at q_0
-    against y_vals = y_lambda_at(3, q_val=float(q0)) which gives
-    y_(3)=0.4154, y_(2,1)=0.2809, y_(1,1,1)=0.0227 — matches the
-    canonical formula.
+    WARNING — this is NOT the canonical y_λ. The canonical Wenzl weights
+    from `markov_weights_symbolic.solve_y_lambda(3)` involve √q (via
+    z = 1/(√q + 1/√q)); they are NOT rational in q.
+
+    The rational surrogate below preserves the per-block dimension
+    structure {q^2 : q : 1}/((1+q)(1+q+q²)) — sufficient to expose the
+    NEAR-MATCH cross-anchor swing — but disagrees with the canonical
+    weights numerically. At the m_p-pin q_0, the canonical formula gives
+    y_(3) ≈ 0.4154 vs the surrogate y_(3) ≈ 0.1747 (off by ≈ 2.379).
+
+    Use this only for the NEAR-MATCH diagnostic; do not feed downstream
+    as if it were the canonical Markov weight.
     """
     return {
         (3,): q ** 2 / ((1 + q) * (1 + q + q ** 2)),
@@ -174,19 +212,13 @@ def main() -> None:
     print(f"  q_proton = {sp.N(q_proton, 18)}")
 
     # Muon anchor: q_muon from m_μ/m_e pin (50-dps witnessed).
-    # Lookup: substrate-substrate-muon-anchor.witness.json gives
-    # q_muon ≈ 1.10882... Use the existing parameter:
-    try:
-        from q_parameter import Q_MUON_50_DIGIT_STR
-        q_muon = sp.Rational(Q_MUON_50_DIGIT_STR)
-    except ImportError:
-        # Approximate q_muon from m_μ/m_e = 206.7683 (CODATA) +
-        # Vol(4_1) = 2.0299 ⇒ ℏ_q² = V/R ⇒ q = 1/(1-ℏ_q)
-        # Compute approximately.
-        v = sp.Rational("2.029883212819307")
-        r = sp.Rational("206.768283")
-        hbar_q = sp.sqrt(v / r)
-        q_muon = 1 / (1 - hbar_q)
+    # Required (not optional): the cross-anchor swing diagnostic only
+    # has meaning if q_muon is the canonical 50-dps anchor. A CODATA-
+    # derived approximation would silently change what the swing
+    # measures (anchor vs. compute precision), so we fail fast if the
+    # canonical parameter is missing.
+    from q_parameter import Q_MUON_50_DIGIT_STR  # required
+    q_muon = sp.Rational(Q_MUON_50_DIGIT_STR)
     print(f"  q_muon   = {sp.N(q_muon, 18)}")
 
     dt_proton = sp.N(delta_tau_M.subs(q, q_proton), 30)
@@ -216,6 +248,17 @@ def main() -> None:
     wn.add_data("delta_tau_M_q_proton", str(dt_proton))
     wn.add_data("delta_tau_M_q_muon", str(dt_muon))
     wn.add_data("cross_anchor_swing", str(abs(dt_proton - dt_muon)))
+    wn.add_data("c_3_value", "NOT_DERIVED")
+    wn.add_data(
+        "c_3_status",
+        "NEAR-MATCH (open). The Δτ_M closed form computed here does NOT "
+        "yield c_3 directly. The f-map transform between Δτ_M's w = q-1 "
+        "expansion and the Q_β ladder's u = b·ℏ_q² expansion is the "
+        "missing keystone (open). Per the 1ppQ-Q_β ledger, c_3 = -2 "
+        "remains a NEAR-MATCH (flip-flop history #1-5) — NOT wired as "
+        "Taylor-exact. Also note: the y_λ used here is a NON-CANONICAL "
+        "rational surrogate (canonical y_λ involves √q)."
+    )
     wn.add_data(
         "structural_note",
         "Δτ_M(q) is a rational function of q (no √ — symbolic in q²). "

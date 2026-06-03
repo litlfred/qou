@@ -45,12 +45,16 @@ sorry-free.
 - A closed form for $\Delta\tau_M(q) = \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(q)$.
   Why: the canonical Wenzl–Markov weights $y_\lambda(q)$ from
   `markov_weights_symbolic.solve_y_lambda(3)` involve $\sqrt q$ (via
-  the Markov parameter $z = 1/(\sqrt q + 1/\sqrt q)$). A first
-  version of this file attempted to prove a closed form for
-  $\Delta\tau_M$ using an incorrect rational guess for $y_\lambda$;
-  that version was retracted. Proving the actual $\Delta\tau_M$
-  identity requires square-root handling beyond the `ring` tactic
-  and is open.
+  the Markov parameter $z = 1/(\sqrt q + 1/\sqrt q)$) and are NOT
+  rational in $q$. A first version of this file attempted to prove
+  a closed form for $\Delta\tau_M$ using an incorrect rational guess
+  for $y_\lambda$; that version was retracted. The companion probe
+  `qbeta_c3_multiblock_recursion_attack.py` does emit a Δτ_M closed
+  form, but using a **non-canonical rational surrogate** for $y_\lambda$
+  (clearly marked in the script's docstring and witness JSON) — it is
+  a NEAR-MATCH diagnostic, not a derivation. Proving the actual
+  $\Delta\tau_M$ identity requires square-root handling beyond the
+  `ring` tactic and is open.
 - The empirical $c_3 \approx -2$ identity. Per the 1ppQ-Q$_\beta$
   ledger ([`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md)),
   $c_3 = -2$ is settled as a NEAR-MATCH with non-zero cross-anchor
