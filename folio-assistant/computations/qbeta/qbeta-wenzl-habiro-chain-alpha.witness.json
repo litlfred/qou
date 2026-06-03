@@ -1,0 +1,152 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-03T19:49:24.921958+00:00",
+  "commitSha": "4b4b0a2aac3513c1700212ea7019da02d5c8607d",
+  "assertions": [
+    {
+      "name": "family_alpha_literal_wenzl_markov_trace_at_least_one_passes_10_ppm",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "source": "If c_2 = -1 came from a Wenzl-projector Markov trace, this would PASS; the Lean proof says c_2 = -1 comes from Kashiwara f̃₁² (crystal), so we expect this to FAIL — confirming the residue A categorical-ID is NOT a literal Wenzl trace."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "qbeta-wenzl-habiro-chain-alpha",
+  "scriptFile": "qbeta_wenzl_habiro_chain_alpha.py",
+  "scriptHash": "a1e507f99122",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.4.0"
+  },
+  "data": {
+    "targets": {
+      "2": "-1.0",
+      "3": "-2.06934257711516783787971951725",
+      "4": "0.0"
+    },
+    "conventions_tested": [
+      "JW (Jones-Wenzl)",
+      "Symmetric (Schur-Weyl)",
+      "Antisymmetric",
+      "Adjoint-like [n]_q − [n]_q⁻¹"
+    ],
+    "per_convention_results": {
+      "JW (Jones-Wenzl)": {
+        "convention": "JW (Jones-Wenzl)",
+        "k_results": {
+          "2": {
+            "computed": "-0.497290545604915555995839231665",
+            "target": "-1.0",
+            "err_ppm": 502709.45439508447,
+            "passed": false
+          },
+          "3": {
+            "computed": "0.328546821370823183297163796762",
+            "target": "-2.06934257711516783787971951725",
+            "err_ppm": 1158768.6954321717,
+            "passed": false
+          },
+          "4": {
+            "computed": "-0.243327804910860333036616893681",
+            "target": "0.0",
+            "err_ppm": NaN,
+            "passed": true
+          }
+        },
+        "all_passed": false,
+        "max_err_ppm": 1158768.6954321717
+      },
+      "Symmetric (Schur-Weyl)": {
+        "convention": "Symmetric (Schur-Weyl)",
+        "k_results": {
+          "2": {
+            "computed": "0.551981855026205072838326429268",
+            "target": "-1.0",
+            "err_ppm": 1551981.855026205,
+            "passed": false
+          },
+          "3": {
+            "computed": "0.223435033655381889541162632506",
+            "target": "-2.06934257711516783787971951725",
+            "err_ppm": 1107973.9218273219,
+            "passed": false
+          },
+          "4": {
+            "computed": "0.0743509984813888439452614145976",
+            "target": "0.0",
+            "err_ppm": NaN,
+            "passed": true
+          }
+        },
+        "all_passed": false,
+        "max_err_ppm": 1551981.855026205
+      },
+      "Antisymmetric": {
+        "convention": "Antisymmetric",
+        "k_results": {
+          "2": {
+            "computed": "0.448018144973794927161673570732",
+            "target": "-1.0",
+            "err_ppm": 1448018.144973795,
+            "passed": false
+          },
+          "3": {
+            "computed": "0.11947132360297174386450977397",
+            "target": "-2.06934257711516783787971951725",
+            "err_ppm": 1057733.9513158447,
+            "passed": false
+          },
+          "4": {
+            "computed": "0.0212574720289301910541903434989",
+            "target": "0.0",
+            "err_ppm": NaN,
+            "passed": true
+          }
+        },
+        "all_passed": false,
+        "max_err_ppm": 1448018.144973795
+      },
+      "Adjoint-like [n]_q − [n]_q⁻¹": {
+        "convention": "Adjoint-like [n]_q − [n]_q⁻¹",
+        "k_results": {
+          "2": {
+            "computed": "1.51360632110220674375665274643",
+            "target": "-1.0",
+            "err_ppm": 2513606.3211022066,
+            "passed": false
+          },
+          "3": {
+            "computed": "2.71515938716169880610485553892",
+            "target": "-2.06934257711516783787971951725",
+            "err_ppm": 2312087.9148714235,
+            "passed": false
+          },
+          "4": {
+            "computed": "3.86635460629708082872395189542",
+            "target": "0.0",
+            "err_ppm": NaN,
+            "passed": true
+          }
+        },
+        "all_passed": false,
+        "max_err_ppm": 2513606.3211022066
+      }
+    },
+    "any_convention_passes_10_ppm": false,
+    "interpretation": "Family α first-test: 4 literal Wenzl-projector Markov trace conventions tested at proton-pinned q₀ against (c_2, c_3) = (-1, -2.069). NEGATIVE — no literal Wenzl trace matches, consistent with c_2 = Kashiwara f̃₁² categorical origin. Search narrows to crystal-operator formulas (Family β-adjacent)."
+  }
+}
