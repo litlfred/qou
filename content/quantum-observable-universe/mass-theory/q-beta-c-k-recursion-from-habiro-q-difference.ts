@@ -1,0 +1,35 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  title:
+    "$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation — depth-$d$ linear recursion on $c_k$ from the $q$-shift kernel $R(q,\\xi)$ acting on $F(\\xi)$",
+  lean: {
+    ref: "qou:QOU.QBeta.CKRecursion.CKRecursion",
+    validation: "not_checked",
+  },
+  uses: [
+    "prop:q-beta-over-e0-classical-vanishing",
+    "prop:t-beta-markov-frobenius-collapse",
+    "rem:alpha-em-habiro-bar-involution",
+    "rem:markov-trace-inductive-limit",
+  ],
+  cites: ["jones1987", "wenzl1988", "habiro2004"],
+  computation: {
+    engine: "sympy",
+    script:
+      "folio-assistant/computations/qbeta/qbeta_c_k_recursion_scaffold.py",
+    witness:
+      "folio-assistant/computations/qbeta/qbeta-c-k-recursion-scaffold.witness.json",
+    status: "scaffolding",
+  },
+  tags: [
+    "q-beta",
+    "habiro",
+    "precision-ladder",
+    "recursion",
+    "q-difference",
+    "scaffolding",
+    "categorical-derivation",
+  ],
+});
