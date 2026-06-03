@@ -39,7 +39,18 @@ const STRICT = process.argv.includes("--strict");
 // Optional baseline-allowlist file (declared before WITNESS_OUT so its
 // path is not mistaken for the witness-output path below).
 const BASELINE_IDX = process.argv.indexOf("--baseline-allowlist");
-const BASELINE_PATH = BASELINE_IDX >= 0 ? process.argv[BASELINE_IDX + 1] : null;
+let BASELINE_PATH: string | null = null;
+if (BASELINE_IDX >= 0) {
+  const candidate = process.argv[BASELINE_IDX + 1];
+  if (!candidate || candidate.startsWith("-")) {
+    console.error(
+      "Error: --baseline-allowlist requires a file path argument " +
+        "(got " + (candidate ? `"${candidate}"` : "nothing") + ").",
+    );
+    process.exit(2);
+  }
+  BASELINE_PATH = candidate;
+}
 const EMIT_BASELINE = process.argv.includes("--emit-baseline");
 
 const WITNESS_OUT = process.argv.find((a, i) =>
@@ -360,10 +371,17 @@ console.log(`\nWitness: ${WITNESS_OUT.replace(REPO_ROOT + "/", "")}`);
 // Use after deliberately accepting the current count — the next strict
 // run will pass iff no NEW gaps appear beyond this set.
 if (EMIT_BASELINE) {
-  const baselineOut = BASELINE_PATH ?? join(
-    REPO_ROOT,
-    "docs/audits/2026-06-03-conditional-class-banner-baseline.json",
-  );
+  if (!BASELINE_PATH) {
+    console.error(
+      "Error: --emit-baseline requires --baseline-allowlist <path> " +
+        "so the baseline write target is explicit (no implicit " +
+        "date-stamped default).",
+    );
+    process.exit(2);
+  }
+  // Resolve baseline write path against REPO_ROOT so behaviour
+  // matches the read path (`readFile(resolve(REPO_ROOT, BASELINE_PATH))`).
+  const baselineOut = resolve(REPO_ROOT, BASELINE_PATH);
   await Bun.write(
     baselineOut,
     JSON.stringify(
@@ -388,13 +406,17 @@ if (EMIT_BASELINE) {
 let allowedLean = new Set<string>();
 let allowedBanner = new Set<string>();
 if (BASELINE_PATH) {
+  const resolvedBaseline = resolve(REPO_ROOT, BASELINE_PATH);
   try {
-    const raw = await readFile(resolve(REPO_ROOT, BASELINE_PATH), "utf8");
+    const raw = await readFile(resolvedBaseline, "utf8");
     const parsed = JSON.parse(raw);
     allowedLean = new Set<string>(parsed.missing_lean_class_hypothesis ?? []);
     allowedBanner = new Set<string>(parsed.missing_md_conditional_banner ?? []);
   } catch (e) {
-    console.error(`\nFailed to load baseline-allowlist ${BASELINE_PATH}: ${e}`);
+    const msg = e instanceof Error ? e.message : String(e);
+    console.error(
+      `\nFailed to load baseline-allowlist ${resolvedBaseline}: ${msg}`,
+    );
     process.exit(2);
   }
 }
