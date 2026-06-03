@@ -18,7 +18,7 @@
 
 use crate::seminormal::standard_young_tableaux;
 use rayon::prelude::*;
-use rug::{ops::Pow, Float};
+use rug::{ops::Pow, Assign, Float};
 
 /// Convert a decimal-precision (dps) request to MPFR bit-precision.
 /// MPFR rounds up to the nearest precision; we round up `bits = ceil(dps · log₂(10))`.
@@ -240,36 +240,58 @@ pub fn chi_lambda_braid_mpfr(
     // i contributes v[i] to the trace and uses its own `v`.  Inner
     // rayon over basis vectors saturates idle cores while the outer
     // per-partition rayon (`wenzl_lr.rs:311`) saturates the partition
-    // axis.  On ⁴He (n=12, dominant dim_λ=7700, 47-letter word)
-    // observed wall drops from >5 min (1 core) to ~75 s on 4 cores.
-    let trace_terms: Vec<Float> = (0..dim)
+    // axis.
+    //
+    // Allocation-reuse pattern (PR #1748 follow-up commit): naive
+    // `.map(|i| { let mut v = (0..dim).map(...).collect(); ... })`
+    // allocates a fresh `Vec<Float>` per i — for ⁴He at dim=7700
+    // that's 59 M Float allocations per chi-cache build (~3 GB
+    // traffic).  Using `.fold()` with per-worker init gives each
+    // rayon worker its OWN buffer that is reset in-place (via
+    // `Float::assign`) between iterations.  At dim=7700 on 4 cores
+    // this drops allocation from `dim × dim` = 59 M to
+    // `n_workers × dim` ≈ 30,800 (1925× reduction).
+    //
+    // Observed ⁴He wall: 624.9 s (10.4 min) with the naive map →
+    // expected ~150-200 s with this fold pattern.
+    let trace = (0..dim)
         .into_par_iter()
-        .map(|i| {
-            let mut v: Vec<Float> =
-                (0..dim).map(|_| Float::with_val(prec, 0)).collect();
-            v[i] = Float::with_val(prec, 1);
-            // Sign convention (matches f64 chi_lambda_braid):
-            //   sign > 0  → σ_g           (positive crossing)
-            //   sign < 0  → σ_g - h·I     (σ_g⁻¹ via Hecke relation)
-            //   sign == 0 → σ_g - h/2·I   (averaged crossing, direct
-            //                              substitution, no 2^k expansion)
-            for &(sign, blocks) in resolved.iter().rev() {
-                if sign > 0 {
-                    apply_sigma_mpfr(&mut v, blocks, prec);
-                } else if sign < 0 {
-                    apply_sigma_inv_mpfr(&mut v, blocks, &h, prec);
-                } else {
-                    apply_sigma_averaged_mpfr(&mut v, blocks, &h, prec);
+        .fold(
+            || {
+                // Per-worker init: buffer (allocated once per worker)
+                // + partial trace accumulator.
+                let buf: Vec<Float> = (0..dim)
+                    .map(|_| Float::with_val(prec, 0))
+                    .collect();
+                (buf, Float::with_val(prec, 0))
+            },
+            |(mut buf, mut partial), i| {
+                // Reset buf in-place (no realloc — Float keeps its
+                // mantissa storage, just zeroes the value).
+                for k in 0..dim {
+                    buf[k].assign(0u32);
                 }
-            }
-            // Move v[i] out (cheap — leaves the trace-irrelevant
-            // entries to drop when `v` goes out of scope).
-            std::mem::replace(&mut v[i], Float::with_val(prec, 0))
-        })
-        .collect();
-    let trace = trace_terms
-        .into_iter()
-        .fold(Float::with_val(prec, 0), |acc, x| acc + x);
+                buf[i].assign(1u32);
+                // Sign convention (matches f64 chi_lambda_braid):
+                //   sign > 0  → σ_g           (positive crossing)
+                //   sign < 0  → σ_g - h·I     (σ_g⁻¹ via Hecke relation)
+                //   sign == 0 → σ_g - h/2·I   (averaged crossing, direct
+                //                              substitution, no 2^k expansion)
+                for &(sign, blocks) in resolved.iter().rev() {
+                    if sign > 0 {
+                        apply_sigma_mpfr(&mut buf, blocks, prec);
+                    } else if sign < 0 {
+                        apply_sigma_inv_mpfr(&mut buf, blocks, &h, prec);
+                    } else {
+                        apply_sigma_averaged_mpfr(&mut buf, blocks, &h, prec);
+                    }
+                }
+                partial += &buf[i];
+                (buf, partial)
+            },
+        )
+        .map(|(_, p)| p)
+        .reduce(|| Float::with_val(prec, 0), |a, b| a + b);
     trace.to_string_radix(10, Some(dps as usize))
 }
 
