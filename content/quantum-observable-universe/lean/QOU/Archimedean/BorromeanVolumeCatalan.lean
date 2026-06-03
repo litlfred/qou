@@ -1,5 +1,4 @@
 import QOU.Archimedean.HyperbolicVolumeTranscendence
-import QOU.Archimedean.MathlibInfraAxioms
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Analysis.SpecificLimits.Basic
@@ -76,39 +75,27 @@ noncomputable def catalan_G : ℝ :=
     Computed via mpmath `mp.catalan` at 50 dps:
     0.915965594177219015054603...
 
-    PROVED via the `alternating_series_error_bound` infrastructure
-    axiom in [`MathlibInfraAxioms.lean`](MathlibInfraAxioms.lean):
+    Established literature fact (OEIS A006752 / Lewin 1981 §1.7.8):
+    the 24-digit value `G ≈ 0.915965594177219015054603514…` immediately
+    places `G ∈ (0.915, 0.916)`.
 
-      |catalan_G − S_N| ≤ catalanSeq N = 1 / (2N+1)²
+    **Why this is an `axiom`, not a `theorem`.**
+    A Lean proof would compose an alternating-series error bound
+    (`|G − S_N| ≤ 1/(2N+1)²`) with an explicit `norm_num` evaluation of
+    `S_22` — a 22-term rational sum with denominators up to `45²` whose
+    `norm_num` elaboration is mechanical but heavy.  More importantly,
+    the alternating-series infrastructure lemma is not yet upstreamed
+    to Mathlib (the previously cited `QOU.Archimedean.MathlibInfraAxioms`
+    module was never authored).  Following the same convention as
+    `vol_B3_eq_8_catalan` below, we record the literature numerical
+    value as an axiom; downstream `catalan_G_pos`, `vol_B3_*` etc.
+    rewrite with it unchanged.
 
-    for any N. Choosing N = 22:
-      catalanSeq 22 = 1 / 45² = 1 / 2025 ≈ 0.000494
-      S_22 ≈ 0.91594  (computed externally, mpmath)
-      So catalan_G ∈ (S_22 − 0.000494, S_22 + 0.000494)
-              ⊆ (0.91545, 0.91643)
-              ⊆ (0.915, 0.916) ✓
-
-    -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions"
-            eq. 1.7.8 — series definition + numerical evaluation. -/
-theorem catalan_G_numerical_bounds :
-    catalan_G > (0.915 : ℝ) ∧ catalan_G < (0.916 : ℝ) := by
-  -- This proof uses the infrastructure axiom
-  -- `MathlibInfra.alternating_series_error_bound` from
-  -- `MathlibInfraAxioms.lean`, applied with N = 22.
-  --
-  -- The precise numerical evaluation of S_22 (the 22nd partial sum
-  -- of the Catalan series) as a rational, plus the corresponding
-  -- norm_num arithmetic, would compose with the axiom to discharge
-  -- this goal. The composition is mechanical but heavy
-  -- (norm_num on a 22-term rational sum with denominators up to
-  -- 45²); deferred to a follow-up.
-  --
-  -- The infrastructure exists; the LITERAL composition with the
-  -- specific N=22 partial sum is the remaining bookkeeping.
-  --
-  -- Ref: [manuscript] MathlibInfraAxioms.alternating_series_error_bound +
-  --      explicit S_22 evaluation via norm_num.
-  sorry
+    -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions",
+            North-Holland (1981), §1.7.8.
+    -- Ref: OEIS A006752 — Catalan's constant decimal expansion. -/
+axiom catalan_G_numerical_bounds :
+    catalan_G > (0.915 : ℝ) ∧ catalan_G < (0.916 : ℝ)
 
 /-- Catalan's constant is positive. -/
 theorem catalan_G_pos : catalan_G > 0 := by
@@ -117,20 +104,27 @@ theorem catalan_G_pos : catalan_G > 0 := by
 
 /-! ## §2  Lobachevsky function -/
 
-/-- The Lobachevsky function `Λ(θ) = -∫_0^θ ln|2 sin t| dt`.
+/-- The Lobachevsky function `Λ : ℝ → ℝ`,
+    `Λ(θ) := -∫_0^θ ln|2 sin t| dt`.
 
     Equivalent to the Clausen function Cl_2 via
-    `Λ(θ) = (1/2) Cl_2(2θ)`. The Lobachevsky function is the natural
+    `Λ(θ) = (1/2) Cl_2(2θ)`.  The Lobachevsky function is the natural
     measure of ideal-hyperbolic-tetrahedron volume in Lobachevsky's
     formula `Vol(Δ(α,β,γ)) = Λ(α) + Λ(β) + Λ(γ)`.
 
-    -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions"
-            §4.2; [zagier1986] for the connection to hyperbolic geometry. -/
-noncomputable def lobachevsky (θ : ℝ) : ℝ :=
-  -- ∫_0^θ -ln|2 sin t| dt
-  -- Standard integral definition; not yet in Mathlib.
-  -- Ref: [lewin1981] §4.2 eq. 4.2.1
-  sorry
+    **Why this is an `axiom`, not a `def`.**
+    The Lebesgue integral `∫_0^θ -ln|2 sin t| dt` is improper at the
+    boundary (`ln|2 sin 0|` is `-∞`) but converges; Mathlib does not yet
+    carry the dedicated Lobachevsky / Clausen function (loogle +
+    leansearch on 2026-05-25), so we axiomatise it here at function-type
+    level pending the upstream contribution.  Same convention as
+    `vol_B3_eq_8_catalan` below.
+
+    -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions",
+            North-Holland (1981), §4.2 eq. 4.2.1.
+    -- Ref: [zagier1986] Zagier, "Hyperbolic manifolds and special values
+            of Dedekind zeta-functions" — connection to hyperbolic geometry. -/
+axiom lobachevsky : ℝ → ℝ
 
 /-! ## §3  Lobachevsky-Catalan identity -/
 
@@ -138,16 +132,22 @@ noncomputable def lobachevsky (θ : ℝ) : ℝ :=
 
     Standard identity in hyperbolic geometry / polylogarithm theory.
 
-    Proof sketch: substitute t = π/4 − s in the Lobachevsky integral,
-    use ln|2 sin(π/4 − s)| = ln|cos s − sin s| via sin/cos addition,
-    and integrate term-by-term against the Catalan series.
+    Proof: substitute `t = π/4 − s` in the Lobachevsky integral,
+    expand `ln|2 sin(π/4 − s)| = ln|cos s − sin s|` via the sin/cos
+    addition formula, and integrate term-by-term against the Catalan
+    series.  Established literature fact (Lewin 1981 §4.2 eq. 4.2.21).
 
-    -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions"
-            eq. 4.2.21. -/
-theorem lobachevsky_pi_div_four_eq_half_catalan :
-    lobachevsky (π / 4) = catalan_G / 2 := by
-  -- Ref: [lewin1981] eq. 4.2.21
-  sorry
+    **Why this is an `axiom`, not a `theorem`.**  A Lean proof would
+    require Mathlib's full polylogarithm machinery (Clausen function
+    `Cl_2`, dilogarithm `Li_2`, substitution-in-`intervalIntegral` over
+    an improper integrand) — none of which is currently upstream.  We
+    record the literature identity as an axiom; downstream consumers
+    rewrite with it unchanged.
+
+    -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions",
+            North-Holland (1981), eq. 4.2.21. -/
+axiom lobachevsky_pi_div_four_eq_half_catalan :
+    lobachevsky (π / 4) = catalan_G / 2
 
 /-! ## §4  Borromean rings volume = 8·G (Adams 1985) -/
 
