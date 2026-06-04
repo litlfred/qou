@@ -51,8 +51,7 @@ os.environ.setdefault("QOU_OUTPUT_DPS", "50")
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(65)
-import mpmath as mp  # noqa: E402
-mp.mp.dps = 65
+# mpmath not used in this script — purely symbolic sympy work.
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
@@ -122,10 +121,17 @@ def main() -> int:
     results = []
     matching = []
     for name, V in knots.items():
-        V_at_q1 = sp.limit(V, q, 1)
+        # Laurent polynomial → direct .subs(q, 1) (avoids sp.limit
+        # overhead per Gemini review on PR #1822).
+        V_at_q1 = V.subs(q, 1)
         V_taylor = sp.series(V.subs(q, 1 + h), h, 0, 5).removeO()
         c3 = V_taylor.coeff(h, 3)
-        confirmed = (sp.simplify(c3 - cubic_required) == 0)
+        # sympy expression comparison: use .equals(0) (returns
+        # Python bool) instead of `== 0` (returns Equality obj) per
+        # Gemini review on PR #1822.
+        diff = sp.simplify(c3 - cubic_required)
+        confirmed = bool(diff == 0) if isinstance(diff, (int, sp.Integer)) \
+            else bool(diff.equals(0))
         marker = "✓ MATCH" if confirmed else f"≠ {cubic_required}"
         print(f"  {name:<22} {str(V_at_q1):>10} {str(c3):>10} {marker}")
         entry = {
@@ -155,9 +161,10 @@ def main() -> int:
         print(f"    {{T(2,n) for n ∈ {{3,5,7,9,11}}, 4_1, 6_1, 6_2}}.")
         print()
         # Pattern in T(2,n) cubic coefficients?
-        t2n_cubics = [(name, r["cubic_taylor_coefficient"])
-                      for name, r in zip(knots.keys(), results)
-                      if name.startswith("T(2,")]
+        # Derive directly from `results` rather than zip(knots.keys(), results)
+        # to avoid implicit ordering coupling (per Copilot review on PR #1822).
+        t2n_cubics = [(r["knot"], r["cubic_taylor_coefficient"])
+                      for r in results if r["knot"].startswith("T(2,")]
         print(f"  T(2,n) family pattern:")
         for name, c3 in t2n_cubics:
             print(f"     {name:<22} cubic = {c3}")
@@ -184,16 +191,27 @@ def main() -> int:
     builder.add_data("verdict", "CONFIRMED" if matching
                      else "REFUTED for 9-knot extended set")
 
+    # Strengthened assertion: at least one torus-knot cubic = 9
+    # (the trefoil result, known correct from PR #1806's Hyp-C probe).
+    # This gives the witness a concrete mathematical-correctness check
+    # beyond "the probe ran" (per Copilot review on PR #1822).
+    trefoil_cubic = next(
+        (r["cubic_taylor_coefficient"] for r in results
+         if r["knot"] == "T(2,3) = 3_1"),
+        None
+    )
     builder.add_assertion(
-        "hypC_definitively_resolved_extended_set",
-        computed=1,
+        "trefoil_cubic_taylor_equals_9",
+        computed=1 if trefoil_cubic == "9" else 0,
         expected=1,
         tolerance=0,
-        source=("Probe computes V(K) Taylor at q=1 for 8 natural "
-                "knots (T(2,n), n=3,5,7,9,11; twist knots 4_1, 6_1, "
-                "6_2) plus unknot sanity. Reports CONFIRMED or "
-                "REFUTED per knot. Sanity assertion: at least one "
-                "knot was evaluated (probe ran end-to-end)."),
+        source=("Concrete mathematical-correctness check: the right-"
+                "handed trefoil 3_1 (= T(2,3)) Jones polynomial has "
+                "cubic Taylor coefficient = 9 at q=1, a known value "
+                "consistent with PR #1806's Hyp-C probe result. "
+                "Confirms the probe's Jones polynomials are correctly "
+                "encoded and Taylor extraction is correct, beyond "
+                "merely 'the probe ran'."),
     )
 
     builder.save()
