@@ -64,6 +64,13 @@ except ImportError:
 EMPIRICAL_C3_PROTON = mpf("-2.0693")
 EMPIRICAL_C3_MUON = mpf("-2.0097")
 
+# "Tracks" criteria — a genuine fibre element must (a) swing by a comparable
+# magnitude to empirical c_3 (swing ratio within ~2× of 1.0) AND (b) land on
+# empirical c_3 at the *second* anchor too. Both are deliberately loose: any
+# real-q form fails them by orders of magnitude (see audit).
+MAX_SWING_RATIO_DEVIATION = 1.0  # |swing_ratio − 1| < this  ⇒ "within ~2×"
+MAX_ERR_PCT = 1.0                # |err at muon anchor| < this (%)
+
 
 def quantum_int(n: int, q: mpf) -> mpf:
     return (q ** n - q ** (-n)) / (q - q ** (-1))
@@ -126,14 +133,21 @@ def main() -> int:
 
     # The formula TRACKS the empirical swing iff its swing is within ~2x of
     # empirical (i.e. it reproduces empirical c_3 at BOTH anchors).
-    tracks = abs(swing_ratio - 1.0) < 1.0 and abs(err_m_pct) < 1.0
+    tracks = (abs(swing_ratio - 1.0) < MAX_SWING_RATIO_DEVIATION
+              and abs(err_m_pct) < MAX_ERR_PCT)
+    # Magnitude-only mismatch factor (how many × bigger the empirical swing is
+    # than the formula swing); guard the formula-swing-rounds-to-0 case.
+    if formula_swing_pct == 0.0:
+        mismatch_factor = float("inf")
+    else:
+        mismatch_factor = abs(empirical_swing_pct / formula_swing_pct)
     if tracks:
         print("  ★ GENUINE FIBRE ELEMENT — formula tracks empirical c_3 at BOTH")
         print("  anchors. The [3]_q/25 closure has real cross-anchor rigidity.")
     else:
         print("  PROTON-ANCHOR NEAR-MATCH (as predicted). The real-q formula is")
         print(f"  RIGID (swing {formula_swing_pct:+.2e}%) while empirical c_3 swings")
-        print(f"  {empirical_swing_pct:+.2f}% — a {1/swing_ratio:.1e}× mismatch. At the muon")
+        print(f"  {empirical_swing_pct:+.2f}% — a {mismatch_factor:.1e}× mismatch. At the muon")
         print(f"  anchor the formula misses empirical c_3 by {err_m_pct:+.2f}%.")
         print()
         print("  INTERPRETATION (consistent with CLAUDE.md §Im(q) fibre-vs-observable):")
@@ -166,6 +180,7 @@ def main() -> int:
     wb.add_data("formula_swing_pct", formula_swing_pct)
     wb.add_data("empirical_swing_pct", empirical_swing_pct)
     wb.add_data("swing_ratio_formula_over_empirical", swing_ratio)
+    wb.add_data("mismatch_factor_empirical_over_formula", mismatch_factor)
     wb.add_data("tracks_across_anchors", tracks)
     wb.add_data("interpretation", (
         f"The real-q 3-rung [3]_q/25 c_3 closure swings {formula_swing_pct:+.2e}% "
