@@ -1,22 +1,22 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T00:14:12.475992+00:00",
-  "commitSha": "8ba582f4de7f58a28f51c7f958e72340c46b0a94",
+  "computedAt": "2026-06-04T01:39:38.323389+00:00",
+  "commitSha": "703fe6378ff355a467166107c94b7ae49823e5fd",
   "assertions": [
     {
-      "name": "step5_stub_acknowledged",
+      "name": "real_demazure_d_i_wiring",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "Stub uses q-binomial as Demazure-character proxy. Proper Weyl-word enumeration is a follow-up commit."
+      "source": "Demazure subsets computed via Kashiwara f̃_i action on j-subsets, replacing the q-binomial stub. Cross-checked: identity word at ω_j gives q^{j(j-1)/2}; longest word gives e_j(1,q,...,q^{n-1})."
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "qbeta-chain4-demazure-fund-weights",
   "scriptFile": "qbeta_chain4_demazure_fund_weights.py",
-  "scriptHash": "2d6631fc11d5",
+  "scriptHash": "36fd84f3e4d7",
   "scriptCommitSha": "8ba582f4de7f58a28f51c7f958e72340c46b0a94",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,70 +33,79 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Step 5 of Chain 4 — Demazure characters at fundamental weights of sl_n for n ∈ {3, 4, 5}. STUB version uses q-binomial as the representative character coefficient; proper key-tableau enumeration will land in a follow-up commit. Best near-match: D_full(ω_2)_sl3 → NEAR-FUZZY (ratio 0.970635). Anti-pattern guards respected: TIERED reporting; cross-anchor deferred; NO ansatz proposed.",
+  "description": "Step 5 of Chain 4 — Demazure characters at fundamental weights ω_j of sl_n for n ∈ {3, 4, 5}, j = 1..n−1. REAL D_i wiring via Kashiwara-crystal subset model: starting from the highest-weight subset {1,...,j}, applies f̃_i-string closure along reduced Weyl-group words (one per permutation, since Demazure characters depend only on the permutation by Demazure's theorem). Evaluation at proton-pinned q_0 via principal q-specialisation. 564 candidates total. Best: D_s1(ω_1)_sl3 → NEAR-FUZZY (ratio 1.01846). Anti-pattern guards respected: TIERED; cross-anchor in witness; NO ansatz.",
   "data": {
     "residue_target_A": "0.000000000000001804",
-    "prefactor_target": "2.0717327773613738302527359154788178225948053571385",
-    "h_q_substrate_corrected": "0.099081716044258507839177117518281999748464888241219",
+    "prefactor_target_proton": "2.0717327773613738302527359154788178225948053571385",
+    "prefactor_target_muon": "2.07170606313586724432429903273076802257574816656",
+    "h_q_substrate_proton": "0.099081716044258507839177117518281999748464888241219",
+    "h_q_substrate_muon": "0.099081801219642067642666676041338059183197878086766",
     "q_proton": "1.10997858275138080759166909561",
+    "q_muon": "1.10997868769193107842185960213",
     "step5_results_top10": {
-      "D_full(ω_2)_sl3": {
-        "value": "2.0109",
-        "ratio": "0.970635",
+      "D_s1(ω_1)_sl3": {
+        "value": "2.10998",
+        "ratio": "1.01846",
         "tier": "NEAR-FUZZY"
       },
-      "Σ D_full(ω_1) [sl3, sl4, sl5]": {
-        "value": "3.0",
-        "ratio": "1.44806",
-        "tier": "NEAR-CLOSE"
+      "D_s2·s1(ω_1)_sl3": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
       },
-      "D_full(ω_2)_sl4": {
-        "value": "3.04371",
-        "ratio": "1.46916",
-        "tier": "NEAR-CLOSE"
+      "D_s1(ω_1)_sl4": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
       },
-      "D_full(ω_3)_sl4": {
-        "value": "3.04371",
-        "ratio": "1.46916",
-        "tier": "NEAR-CLOSE"
+      "D_s1·s3(ω_1)_sl4": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
       },
-      "D_full(ω_1)_sl3": {
-        "value": "1.0",
-        "ratio": "0.482688",
-        "tier": "MISS"
+      "D_s2·s1(ω_1)_sl4": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
       },
-      "D_full(ω_1)_sl4": {
-        "value": "1.0",
-        "ratio": "0.482688",
-        "tier": "MISS"
+      "D_s2·s1·s3(ω_1)_sl4": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
       },
-      "D_full(ω_1)_sl5": {
-        "value": "1.0",
-        "ratio": "0.482688",
-        "tier": "MISS"
+      "D_s3·s2·s1(ω_1)_sl4": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
       },
-      "D_full(ω_2)_sl5": {
-        "value": "4.10968",
-        "ratio": "1.98369",
-        "tier": "MISS"
+      "D_s2·s3·s2·s1(ω_1)_sl4": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
       },
-      "D_full(ω_4)_sl5": {
-        "value": "4.10968",
-        "ratio": "1.98369",
-        "tier": "MISS"
+      "D_s1(ω_1)_sl5": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
       },
-      "D_full(ω_3)_sl5": {
-        "value": "6.22044",
-        "ratio": "3.00253",
-        "tier": "MISS"
+      "D_s1·s3(ω_1)_sl5": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
       }
     },
     "best_match": {
-      "candidate": "D_full(ω_2)_sl3",
+      "candidate": "D_s1(ω_1)_sl3",
       "tier": "NEAR-FUZZY",
-      "ratio": "0.970635"
+      "ratio": "1.01846"
     },
-    "near_match_count": 1,
-    "next_step": "Proper Demazure operator enumeration + key-tableau coefficients"
+    "near_match_count": 56,
+    "demazure_enumeration_summary": {
+      "sl_3_perms": 6,
+      "sl_4_perms": 24,
+      "sl_5_perms": 120,
+      "candidate_count": 564
+    },
+    "next_step": "Step 6 cross-anchor if any NEAR-1PCT survives at proton anchor"
   }
 }
