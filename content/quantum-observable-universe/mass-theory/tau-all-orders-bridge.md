@@ -80,29 +80,53 @@ $$
 $$
 
 For each $K \ge 2$, ask: does the linear system $K_K = T\,M_K$ admit a
-lower-triangular real solution $T$, and if so, does the solution
-*extend* coherently when $K$ is increased?
+lower-triangular real solution $T$?
 
-- *At $K = 1$*: trivially, $T_{1,1} = \kappa_2/\alpha_2 = -1/64$,
-  one equation, one unknown.
-- *At $K = 2$*: $\kappa_4 = T_{2,1}\alpha_2 + T_{2,2}\alpha_4$,
-  one equation, two unknowns — **always solvable**, no constraint.
-- *At $K = 3$*: introduces $T_{3,1}, T_{3,2}, T_{3,3}$ — three new
-  unknowns for one new equation, again always solvable.
-- *Discriminating regime $K \ge 4$*: the linear system has
-  $K(K+1)/2$ unknowns and $K$ equations; for $K \ge 4$ the system is
-  over-determined for the *coefficients of $T$ as polynomial
-  functions of $q$* once one imposes the categorical constraint
-  that each $T_{k,j}$ has bounded $q$-polynomial degree.
+**Result (computed; refines the test).**  The $h^6,\,h^8$ extension was
+run in
+[`tau_all_orders_h6_empirical.py`](../../../folio-assistant/computations/probes/tau_all_orders_h6_empirical.py)
+(witness `tau-all-orders-empirical-bridge.witness.json`). Two facts
+emerged that **sharpen the conjecture and correct the naive test**:
 
-The empirical test is therefore: compute $\alpha_{2K}$ and
-$\kappa_{2K}$ for $K = 3, 4, 5$ via
-[`phi0_normalization_disproof.py`](../../../folio-assistant/computations/hecke/phi0_normalization_disproof.py)
-extended to higher orders, attempt a lower-triangular fit, and check
-whether (a) the fit is consistent across $K$ (evidence for hypothesis
-1) or (b) the fit-residuals scale randomly with $K$ (evidence for
-hypothesis 2). The $h^2$ value $T_{1,1} = -1/64$ is fixed regardless
-of which hypothesis holds.
+1. **The algebraic side is degree-4 in $h$.**  Although the Borromean
+   braid has six crossings, the order-six multiplicative-integral term
+   (the single full product, traced) **vanishes**: $\alpha_6 = 0$, and
+   $\alpha_{2k} = 0$ for all $k \ge 3$.  So $\alpha$ carries nonzero
+   data at *only* $h^2,\,h^4$ — the two integers $-12$ and $-6$ —
+   whereas the Markov series $\kappa$ is infinite
+   ($\kappa_6 = -0.2024\ldots,\ \kappa_8 = 0.00967\ldots \ne 0$).
+   This $2$-versus-$\infty$ asymmetry is concrete structural evidence
+   that the two sides are different categorical invariants.
+
+2. **The number-level fit is non-discriminating.**  At a fixed
+   substrate $q_0$ both $\alpha_\bullet$ and $\kappa_\bullet$ are
+   *constant* (the $Q_8$ rep is $q$-independent; the Jones Taylor
+   coefficients are pure numbers).  The diagonal fit
+   $T_{k,k} = \kappa_{2k}/\alpha_{2k}$ fails at $k = 3$ (since
+   $\alpha_6 = 0$), but a **non-diagonal** lower-triangular fit still
+   trivially exists — row $k$ reads
+   $\kappa_{2k} = T_{k,1}\alpha_2 + T_{k,2}\alpha_4$ (one equation, two
+   free unknowns, since the higher $\alpha$ vanish), always solvable.
+   Hence hypothesis (1) "$\exists$ lower-triangular $T$" is *trivially*
+   inhabited at the number level, and the naive fit cannot distinguish
+   (1) from (2).
+
+**Consequence for the formalisation.**  The genuine open content is
+therefore **not** "does a lower-triangular $T$ exist" (it does,
+vacuously).  Note that even a *single* $T$ holding at all orders
+simultaneously — which is what the Lean
+$\mathrm{TauOrderMixingMap}.\mathrm{bridgeAtOrder}\colon \forall k$
+already requires — is **still** trivially inhabited, because each row
+$k$ of $T$ carries independent free entries $T_{k,1},\dots,T_{k,k}$ and
+is solved on its own.  The constraint that would make the dichotomy
+non-trivial is a **finite-support / banded** structure: $T_{k,j} =
+f(k-j)$ for a fixed finitely-supported kernel $f$ (a *convolution*),
+reflecting a single categorical operator rather than a per-row solve.
+A genuine fibre-functor realisation of $\tau$ would supply exactly such
+a kernel.  Adding that banded-kernel constraint to
+$\mathrm{TauOrderMixingMap}$ is the real open formalisation task;
+without it the conjecture collapses to the law of excluded middle.  The
+$h^2$ anchor $T_{1,1} = -1/64$ is fixed regardless.
 
 ## What does *not* settle the conjecture
 

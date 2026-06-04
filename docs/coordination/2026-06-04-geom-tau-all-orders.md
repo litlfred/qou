@@ -37,26 +37,45 @@ categorically-meaningful possibilities remain:
 The conjecture proper is the **dichotomy** of (1) vs (2), since
 both are categorically plausible.
 
-## Empirical test (next experiment)
+## Empirical test — RUN (2026-06-04), refines the conjecture
 
-The dichotomy becomes discriminating at order h⁶ once one imposes
-the categorical constraint that each `T_{k,j}` has bounded
-q-polynomial degree (otherwise the system is under-determined for
-all finite K).
+The h⁶,h⁸ extension was implemented in
+`folio-assistant/computations/probes/tau_all_orders_h6_empirical.py`
+(witness `tau-all-orders-empirical-bridge.witness.json`). It does NOT
+resolve the dichotomy — instead it sharpens it and corrects the
+"discriminating at h⁶" expectation above:
 
-Concrete next step (estimated 1-2 hours of compute):
+| order | α (Q₈ alg) | κ (Markov) | α/κ |
+|---|---|---|---|
+| h² | −12 | 3/16 | −64 |
+| h⁴ | −6 | −0.7578… | +7.92 |
+| h⁶ | **0** | −0.2024… | 0 |
+| h⁸ | **0** | 0.00967… | — |
 
-1. Extend `phi0_normalization_disproof.py` to extract `α_6, α_8` via
-   `itertools.combinations` over the 6 Q₈ crossings (already
-   parameterised by `order` in `alg_trace_h_coeff`).
-2. Extend `markov_h_coeff` to k = 6, 8 via `mp.diff` of `trM_borromean`.
-3. Attempt a 2×2, 3×3, 4×4 lower-triangular fit for `T` and check
-   whether the fitted entries are:
-   - q-rational of bounded degree (evidence for hypothesis 1), or
-   - dimensionally erratic / fitted-only (evidence for hypothesis 2).
+Two findings:
 
-Output: a new witness `tau-all-orders-empirical-bridge.witness.json`
-recording the fit residuals across K = 1..4.
+1. **α is degree-4 in h** (α₆ = α₈ = 0, despite 6 crossings — the
+   order-6 full product is traceless). The algebraic side carries
+   nonzero data at only TWO orders (−12, −6); the Markov κ-series is
+   infinite. A 2-vs-∞ structural asymmetry — concrete evidence the
+   two sides are different invariants.
+2. **The number-level fit is non-discriminating.** At fixed q₀ both
+   sequences are q-independent constants; a non-diagonal
+   lower-triangular T trivially solves the under-determined system
+   (row k: κ_{2k} = T_{k,1}·α₂ + T_{k,2}·α₄, 1 eq / 2 unknowns). So
+   hypothesis (1) is trivially inhabited at the number level — the
+   naive fit cannot discriminate (1) vs (2). (Contrary to the
+   pre-run "discriminating at h⁶" expectation: there is no q-degree
+   leverage because α is q-independent.)
+
+**Refinement (the real next step).** The dichotomy is only non-trivial
+if `TauOrderMixingMap` additionally requires T to be **natural** —
+independent of the truncation K and arising from the single fibre
+functor τ — not an ad-hoc per-truncation solve. Adding that
+naturality / bounded-q-degree constraint to the Lean class is the
+genuine open formalisation task; without it `tau_all_orders_bridge`
+collapses to excluded middle. This is recorded in the conjecture's
+`.md` "Empirical test" section.
 
 ## What does *not* settle this
 
