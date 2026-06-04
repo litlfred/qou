@@ -1,0 +1,91 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-04T02:10:14.785199+00:00",
+  "commitSha": "8a66f9d22e42a3b7baf168e8c1a642f346ccd399",
+  "assertions": [
+    {
+      "name": "all_n3_match_reference",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "source": "HOMFLYPT n≥3 engine output must equal the skein-relation reference at the SU(2) point (Markov-stabilised torus links)"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 21,
+  "computation": "homflypt-reference-qa",
+  "scriptFile": "homflypt_reference_qa.py",
+  "scriptHash": "55f55b66662e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "auditOnly": "docs/audits/2026-06-04-hidden-fitting-verification-gap-mass-binding-walkthrough.md",
+  "parameters": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "tolerance": "1.0e-6"
+  },
+  "data": {
+    "reference_symbolic_ok": true,
+    "cases": [
+      {
+        "knot": "unknot        (σ₁)",
+        "k": 1,
+        "reference": "1.0",
+        "engine_n3": "1.981342753925067",
+        "engine_n2": "1.0",
+        "abs_delta_n3": "0.981343",
+        "pass_n3": false
+      },
+      {
+        "knot": "Hopf link     (σ₁²)",
+        "k": 2,
+        "reference": "-2.351590494446338",
+        "engine_n3": "2.788714582110865",
+        "engine_n2": "-2.113000348331029",
+        "abs_delta_n3": "5.14031",
+        "pass_n3": false
+      },
+      {
+        "knot": "trefoil 3₁    (σ₁³)",
+        "k": 3,
+        "reference": "0.9595771698844201",
+        "engine_n3": "2.564352257716922",
+        "engine_n2": "0.8775937990887602",
+        "abs_delta_n3": "1.60478",
+        "pass_n3": false
+      },
+      {
+        "knot": "Solomon 4²₁   (σ₁⁴)",
+        "k": 4,
+        "reference": "-2.786098063968694",
+        "engine_n3": "3.324818831326438",
+        "engine_n2": "-2.248868609738468",
+        "abs_delta_n3": "6.11092",
+        "pass_n3": false
+      },
+      {
+        "knot": "cinquefoil 5₁ (σ₁⁵)",
+        "k": 5,
+        "reference": "0.8594283786225937",
+        "engine_n3": "3.259439876035397",
+        "engine_n2": "0.7267829388508373",
+        "abs_delta_n3": "2.40001",
+        "pass_n3": false
+      }
+    ]
+  }
+}
