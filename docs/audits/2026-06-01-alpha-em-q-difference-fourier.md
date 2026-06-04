@@ -94,8 +94,10 @@ still open. This probe does not close it; it adds the modular constraint.
 ## Discipline
 
 Exact symbolic; both assertions pass; **no fitted form; no closure of the
-derived form.** `h = q−q⁻¹` (Hecke differential) kept distinct from
-Habiro `u=q^{1/2}` and ladder `u_ladder=b·ℏ²` per `notation-collisions.md`.
+derived form.** `h = q−q⁻¹` (Hecke differential) kept distinct
+from the spinor rate `\check{q} = q^{1/2}` (= Habiro literature
+name `u`, retired 2026-06-04) and the ladder `u_ladder = b·ℏ²`
+per `notation-collisions.md §\check{q}`.
 
 ## Cross-references
 
