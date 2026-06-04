@@ -51,10 +51,18 @@ Two structural facts the 100% standard forces:
 1. **The link-volume / magic-A path can never be 100%** — the averaged
    crossing is a superposition, so a definite link (and its 8G volume) is a
    choice, not a derivation. 100% work must use only the Markov-trace path.
-2. **The single closable gap is the 3-body joint-trace correlation** (the
-   −13%): no calibration-beyond-3, no length scale, no link choice — purely
-   the operator-valued joint Markov trace of all C(A,2) interfaces at once,
-   minus the pair-sum. That is the next derivation to attempt.
+2. **The −13% is NOT the 3-body joint-trace correlation** (corrected
+   2026-06-04, branch `three-body-joint-trace`). Measured directly: the
+   inter-bond cluster correlation `c₃ = joint − pair-sum` is **−1.77 MeV (T),
+   −1.41 (³He)** — *destructive* (the joint trace saturates *below* the
+   independent pair-sum), the **wrong sign** to close the gap. Confirms #1725
+   (intensive joint saturates; binding is extensive) and **refutes** this
+   ledger's first draft, which had called the joint correlation "the one
+   closable gap." The extensive all-pairs pair-sum (−13%, #1778) is the *best*
+   derived model; the residual is a **uniform ~13% bond under-strength**, not a
+   correlation — genuinely open, and harder than a joint-trace compute.
 
 Everything else (Δ_λ same family, link assignment, EM 3/4, q₀) is either the
-same 3-body problem in disguise, blocked on the link gap, or Subgoal-2.
+same uniform-under-strength problem, blocked on the link gap, or Subgoal-2.
+**Net: A=3 is fully derived to −13%; no shortcut closes the last 13% — it is
+the open frontier, and I will not fit it.**
