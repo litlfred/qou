@@ -155,10 +155,11 @@ def main() -> None:
     # Load 50dps inputs. Schema: `{..., "data": {Q_N2, Q_AME, ...}}`.
     # The pinning witness has a different top-level layout
     # (`derived_50_digit.q`) — do NOT assume a uniform schema across
-    # witness files.
-    # Witness lives in parent computations/ dir (path drift from Phase 4
-    # qbeta/ subdir refactor).
-    with open(HERE.parent / "q-beta-operator-valued-N3.witness.json") as f:
+    # witness files.  Witness lives in parent computations/ dir
+    # (path drift from Phase 4 qbeta/ subdir refactor).  Path defined
+    # once here, reused for the add_upstream call below.
+    witness_n3_path = HERE.parent / "q-beta-operator-valued-N3.witness.json"
+    with open(witness_n3_path, encoding="utf-8") as f:
         d = json.load(f)
     data = d["data"]
     Q_N2 = mpf(str(data["Q_N2"]))
@@ -333,7 +334,7 @@ def main() -> None:
     # Track upstream witness dependencies so witness_dependency_drift.py
     # can detect when an upstream changes substantively and this
     # extraction needs to be re-run. Per Copilot follow-up on PR #816.
-    w.add_upstream(HERE.parent / "q-beta-operator-valued-N3.witness.json")
+    w.add_upstream(witness_n3_path)
     w.add_upstream(_pb.witness_path("q-pinning-50-digit.witness.json", HERE))
     w.set_description(
         "EXTENDED c_k extraction at rungs k=8, 9, 10 via SDP-T_β. "

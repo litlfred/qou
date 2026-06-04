@@ -57,10 +57,12 @@ import json  # noqa: E402
 
 
 def main() -> None:
-    # Load exact 50dps inputs from witness
-    # Witness lives in parent computations/ dir, not in this script's
-    # qbeta/ subdirectory (path drifted in the Phase 4 subdir refactor).
-    d = json.load(open(HERE.parent / "q-beta-operator-valued-N3.witness.json"))
+    # Load exact 50dps inputs from witness.  Witness lives in parent
+    # computations/ dir, not in this script's qbeta/ subdirectory
+    # (path drifted in the Phase 4 subdir refactor).
+    witness_n3_path = HERE.parent / "q-beta-operator-valued-N3.witness.json"
+    with open(witness_n3_path, encoding="utf-8") as f:
+        d = json.load(f)
     data = d["data"]
     Q_N2 = mpf(str(data["Q_N2"]))
     Q_AME = mpf(str(data["Q_AME"]))
