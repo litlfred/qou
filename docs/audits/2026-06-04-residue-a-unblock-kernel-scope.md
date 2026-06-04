@@ -150,46 +150,39 @@ Script:
   (hence c_11+, hence `A` to high precision) needs canonical higher-order c_k
   **or** a categorical derivation of `Q_A·cos α_eff`'s zero.
 
-## Step 3 — Lean lemma (proof complete; mechanical build confirming)
+## Step 3 — Lean lemma — VERIFIED sorry-free ✓
 
 The toolchain was initially mis-judged "unavailable" (no project path for
 `lean_run_code`; `leansearch` SSL; cache 403). The real blocker was the elan
 download host `release.lean-lang.org` being firewalled while GitHub is
 allowlisted — the **GitHub-release toolchain workaround** (documented in
-`lean-environment-setup.md` §"Web-sandbox addendum", and now routed to faster
-by its §"FAST ROUTE" + the sub-agent runbook) unblocks it. The lemma is now a
-real file with a **complete proof** (no `sorry`):
-[`QOU/QBeta/RationalCoeffRecurrence.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/RationalCoeffRecurrence.lean),
-verified standalone against mathlib (pinned `f897ebcf`, v4.24.0). It is wired
-into `QOU.lean` once the from-source mathlib olean build confirms a clean
-compile, so it cannot break `lean_ci` before then.
+`lean-environment-setup.md` §"Web-sandbox addendum", now routed to faster by
+its §"FAST ROUTE" + the sub-agent runbook) unblocks it.
 
-The lemma grounds "find the kernel `R`" ≡ "find the minimal denominator `Q`":
+The lemma
+[`QOU/QBeta/RationalCoeffRecurrence.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/RationalCoeffRecurrence.lean)
+**builds sorry-free** against mathlib (pinned `f897ebcf`, lean v4.24.0):
+`lake build` → *"Build completed successfully (837 jobs)"*, 0 errors / 0
+sorries. It is wired into `QOU.lean`. (One iteration was needed against the
+working LSP: the `ring` tactic required an explicit `import Mathlib.Tactic.Ring`
+— exactly the kind of fast feedback the bootstrapped env enables, vs. the
+hand-audit that would have shipped a `rw`-under-binder bug.)
 
-The claim grounds "find the kernel `R`" ≡ "find the minimal denominator `Q`":
+The lemma grounds "find the kernel `R`" ≡ "find the minimal denominator `Q`".
+Conceptually, the ladder `c` is *C-finite of order `d`* iff (with `q 0 ≠ 0`)
+`∀ n ≥ d, ∑_{j≤d} q j · c (n-j) = 0` — the recurrence of the coefficients of a
+proper rational `P/Q`. The verified file proves the **load-bearing** piece —
+pole ↔ characteristic-root — sorry-free:
 
 ```lean
-import Mathlib
-
-namespace QOU.QBeta
-open scoped BigOperators
-
-/-- `c` is C-finite of order `d` with denominator coeffs `q` (`q 0 ≠ 0`):
-the defining linear recurrence of the coefficients of a proper rational P/Q. -/
-def CFinite {K : Type*} [Field K] (d : ℕ) (q c : ℕ → K) : Prop :=
-  q 0 ≠ 0 ∧ ∀ n, d ≤ n → ∑ j ∈ Finset.range (d + 1), q j * c (n - j) = 0
-
-/-- Pole ⇒ reciprocal is a characteristic root. If `u₀ ≠ 0` is a root of the
-denominator `∑ q j X^j`, then `1/u₀` is a root of the reversed (characteristic)
-polynomial `∑ q j X^(d-j)`. (Proof: multiply the root equation by `u₀⁻ᵈ`.) -/
 theorem pole_reciprocal_is_char_root {K : Type*} [Field K] (d : ℕ) (q : ℕ → K)
     (u₀ : K) (hu : u₀ ≠ 0)
     (hroot : ∑ j ∈ Finset.range (d + 1), q j * u₀ ^ j = 0) :
-    ∑ j ∈ Finset.range (d + 1), q j * (u₀⁻¹) ^ (d - j) = 0 := by
-  sorry -- Ref: [manuscript] residue-A kernel scope §"Step 3"; multiply hroot by u₀⁻ᵈ and reindex
-
-end QOU.QBeta
+    ∑ j ∈ Finset.range (d + 1), q j * (u₀⁻¹) ^ (d - j) = 0
 ```
+
+(full proof in
+[`RationalCoeffRecurrence.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/RationalCoeffRecurrence.lean)).
 
 **Contrapositive (the pruning Step 2 used):** if `c` is *not* C-finite of order
 ≤ d, then `F` is *not* a rational function of denominator-degree ≤ d. Step 2

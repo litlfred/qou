@@ -105,3 +105,4 @@ import QOU.ParticleInteractions.atomic_lp_stability
 import QOU.ParticleInteractions.silver_ratio_beta_decay_null
 import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.FluidDynamics.q_bkm_criterion
+import QOU.QBeta.RationalCoeffRecurrence
