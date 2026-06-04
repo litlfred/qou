@@ -40,7 +40,7 @@ target mass number.  At each step $A \to A + 1$:
 ## Arithmetic
 
 All intermediate computations use exact Laurent polynomials in
-$\mathbb{Z}[r, r^{-1}]$ where $r = q^{1/2}$.  No floating-point
+$\mathbb{Z}[\check{q}, \check{q}^{-1}]$ where $\check{q} = q^{1/2}$ is the spinor information rate. No floating-point
 approximation is introduced until the final evaluation at $q_0$.
 The denominator $2^{p_n}$ (from the doubled pn crossing convention)
 is tracked separately and cancels in the Pauli ratio

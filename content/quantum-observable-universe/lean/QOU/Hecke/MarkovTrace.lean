@@ -110,7 +110,8 @@ shadow of this uniqueness — see
 `docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`
 for the symbolic verification that the polynomial identity
 `P^A_λ · Q^B_λ − P^B_λ · Q^A_λ ≡ 0` holds in
-`Z[r, r^{-1}]` (`r = q^{1/2}`) for every λ ⊢ 3.
+`Z[qCheck, qCheck^{-1}]` (`qCheck = q^{1/2}`, the spinor
+information rate `\check{q}` in the narrative) for every λ ⊢ 3.
 
 This Lean statement is therefore a **target / placeholder**:
 it records the eventual theorem with a bibliographic reference
