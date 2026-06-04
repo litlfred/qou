@@ -10,7 +10,7 @@ canonical-framing.md).
 Audit `2026-05-29-meson-mK-mpi-residual-derivation-attempt.md`
 Path 1 (Habiro tower) tested:
 
-  R = 1 + c·u²   where u = b·ℏ_q², b² = (h²+3)/(h²+4)
+  R = 1 + c·u²   where u_ladder = b·ℏ_q², b² = (h²+3)/(h²+4)
 
 At q_0 (50 dps), measured C = R−1 = 2.924e-4, giving:
   C / u²  = 4.031        ← claimed "0.77% off integer 4"
@@ -47,8 +47,8 @@ the 0.77% miss is EXPECTED and BOUNDED, not evidence c=4 is wrong.
 
 Compute at 50 dps:
 1. The measured C/u² = 4.031 (reproduce audit number)
-2. The implied c_3 needed to absorb the residual: c_3·u = C/u² - 4
-3. Check whether |c_3·u| < some natural bound (e.g. |c_2|·u for
+2. The implied c_3 needed to absorb the residual: c_3·u_ladder = C/u² - 4
+3. Check whether |c_3·u_ladder| < some natural bound (e.g. |c_2|·u_ladder for
    Q_β-analog truncation behaviour)
 4. Compare to natural J-Hopf-like candidates at H_3 level
 
@@ -108,8 +108,8 @@ def main() -> int:
     print(f"  C       = {mp.nstr(C, 18)}")
 
     # Ladder parameter u_ladder = b·ℏ² (NOT Habiro \check{q}; the local
-    # var is named `u` for historical reasons — the canonical ladder
-    # name is `u_ladder`. See notation-collisions.md §u). Pre-existing
+    # var is named `u_ladder` for historical reasons — the canonical ladder
+    # name is `u_ladder`. See notation-collisions.md §u_ladder). Pre-existing
     # mislabel corrected 2026-06-04 as part of the r→\check{q} cleanup.
     h = q - 1 / q
     h2 = h * h
@@ -117,15 +117,15 @@ def main() -> int:
     b = mp.sqrt(b_sq)
     hbar_q = 1 - 1 / q
     hbar_q_sq = hbar_q ** 2
-    u = b * hbar_q_sq  # = u_ladder, the Q_β precision-ladder step
+    u_ladder = b * hbar_q_sq  # = u_ladder, the Q_β precision-ladder step
     print(f"\n[Ladder parameter u_ladder = b·ℏ_q²]")
     print(f"  b² = (h²+3)/(h²+4) = {mp.nstr(b_sq, 18)}")
     print(f"  b                  = {mp.nstr(b, 18)}")
     print(f"  ℏ_q²               = {mp.nstr(hbar_q_sq, 18)}")
-    print(f"  u = b·ℏ_q²         = {mp.nstr(u, 18)}")
+    print(f"  u_ladder = b·ℏ_q²         = {mp.nstr(u_ladder, 18)}")
 
     # Test 1: reproduce audit's claim
-    C_over_u2 = C / u ** 2
+    C_over_u2 = C / u_ladder ** 2
     print(f"\n[Test 1 — reproduce audit's C/u² = 4.03]")
     print(f"  C / u² = {mp.nstr(C_over_u2, 18)}")
     print(f"  vs integer 4: relative = {mp.nstr((C_over_u2 - 4) / 4 * 100, 6)}%")
@@ -135,8 +135,8 @@ def main() -> int:
     # C = c_2·u² + c_3·u³ + ...
     # If c_2 = 4 exactly:
     c_2_assumed = mp.mpf(4)
-    residual_after_c2 = C - c_2_assumed * u ** 2
-    c_3_required = residual_after_c2 / u ** 3
+    residual_after_c2 = C - c_2_assumed * u_ladder ** 2
+    c_3_required = residual_after_c2 / u_ladder ** 3
     print(f"\n[Test 2 — assume c_2 = 4, what c_3 absorbs the residual?]")
     print(f"  residual after c_2·u² = {mp.nstr(residual_after_c2, 18)}")
     print(f"  c_3 (so c_3·u³ = residual) = {mp.nstr(c_3_required, 18)}")
@@ -162,16 +162,16 @@ def main() -> int:
 
     # Test 4: Q_β-analog bound — |c_3·u³| < |c_2·u²| would be normal
     # truncation. Is the meson residual within this bound?
-    c2_contribution_ppb = abs(c_2_assumed * u ** 2 / C) * 1e9 if abs(C) > 1e-30 else mp.inf
-    c3_contribution_pct = abs(c_3_required * u ** 3 / C) * 100
+    c2_contribution_ppb = abs(c_2_assumed * u_ladder ** 2 / C) * 1e9 if abs(C) > 1e-30 else mp.inf
+    c3_contribution_pct = abs(c_3_required * u_ladder ** 3 / C) * 100
     print(f"\n[Test 4 — truncation bound check]")
-    print(f"  c_2·u² contribution to C: {mp.nstr(abs(c_2_assumed * u ** 2 / C * 100), 8)}%")
+    print(f"  c_2·u² contribution to C: {mp.nstr(abs(c_2_assumed * u_ladder ** 2 / C * 100), 8)}%")
     print(f"  c_3·u³ contribution to C: {mp.nstr(c3_contribution_pct, 8)}%")
-    print(f"  ratio |c_3·u³|/|c_2·u²| = {mp.nstr(abs(c_3_required * u / c_2_assumed), 12)}")
+    print(f"  ratio |c_3·u³|/|c_2·u²| = {mp.nstr(abs(c_3_required * u_ladder / c_2_assumed), 12)}")
 
     # ── Verdict ──
     print(f"\n[Verdict]")
-    c2_pct = abs(c_2_assumed * u ** 2 / C * 100)
+    c2_pct = abs(c_2_assumed * u_ladder ** 2 / C * 100)
     c3_pct = c3_contribution_pct
     if abs(c_3_required) < mp.mpf("20") and c2_pct > 99 and c3_pct < 1:
         verdict = (
@@ -211,7 +211,7 @@ def main() -> int:
     )
     w.add_parameter("q_50dps", Q_50_DIGIT_STR)
     w.add_data("C_correction", mp.nstr(C, 25))
-    w.add_data("u_habiro", mp.nstr(u, 25))
+    w.add_data("u_ladder", mp.nstr(u_ladder, 25))
     w.add_data("C_over_u_squared", mp.nstr(C_over_u2, 25))
     w.add_data("c2_assumed", "4")
     w.add_data("c3_required_to_absorb_residual",
