@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T12:40:25.633294+00:00",
-  "commitSha": "ca097e280a082828e1759ea8d392a83a85a616da",
+  "computedAt": "2026-06-04T13:01:03.609364+00:00",
+  "commitSha": "dfca53d229cbf43bbe1b0fbd70bd2a20e1d4fc7d",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "aaff0df25751",
-  "scriptCommitSha": "1443f37679e266239c1a1ae644ae16635a0d5d56",
+  "scriptCommitSha": "dfca53d229cbf43bbe1b0fbd70bd2a20e1d4fc7d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,7 @@
   "data": {
     "total_issues": 2,
     "flagged_script_count": 1,
-    "scripts_scanned": 1026,
+    "scripts_scanned": 1027,
     "rows": [
       {
         "path": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",

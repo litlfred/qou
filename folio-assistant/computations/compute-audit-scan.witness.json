@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T12:32:52.945279+00:00",
-  "commitSha": "21e9e4afa5a30142edb8cbe05703e71ad2edd4b0",
+  "computedAt": "2026-06-04T13:01:01.853129+00:00",
+  "commitSha": "dfca53d229cbf43bbe1b0fbd70bd2a20e1d4fc7d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 10,
@@ -2766,7 +2766,7 @@
       {
         "pattern": "P15",
         "file": "y_lambda_cyclotomic_factor.py",
-        "line": 133,
+        "line": 142,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
