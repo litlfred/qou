@@ -129,8 +129,9 @@ class $\mathrm{TauBandedKernelMap}$ (kernel $f$, finite `bandWidth`,
 `leadingNonzero` $f(0) \neq 0$, and the convolution `bridge`
 $\kappa_k = \sum_{j \le k} f(k-j)\,\alpha_j$ at every order with the
 *same* $f$); the refined dichotomy `tau_all_orders_bridge` is stated
-against it, while the naive arbitrary-$T$ version is retained as
-`tau_all_orders_bridge_naive` with the excluded-middle caveat. The
+against it, while the naive arbitrary-$T$ hypothesis (1) is retained as
+`tau_order_mixing_naive_hyp1` (a single existence claim, not a
+dichotomy) with its trivially-inhabited caveat. The
 $h^2$ anchor $f(0) = T_{1,1} = -1/64$ is fixed regardless, and the
 disproof shows the band-width-0 (constant) kernel already fails at
 $h^4$ — so the open question is whether a *wider* finite band closes

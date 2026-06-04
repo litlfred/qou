@@ -27,14 +27,20 @@ namespace QOU.MassTheory
     (Gemini + Copilot review #1830: a single `tauCoeff` cannot satisfy
     the bridge for *all* sequences, e.g. α = 0, κ = 1).
 
-    **CAVEAT (#1837 — this class is trivially inhabited).** The h⁶
-    empirical probe (`tau_all_orders_h6_empirical.py`) showed that at a
-    fixed substrate `q₀` both `α` and `κ` are constant sequences, and
-    `tauCoeff` has *independent free entries per row*, so every row
-    `κ k = Σ_{j ≤ k} tauCoeff k j · α j` is solved on its own (a
-    one-equation / `k`-unknowns underdetermined system). Hence
-    `Nonempty (TauOrderMixingMap α κ)` is *vacuously* true and does NOT
-    capture the open question. The genuine refinement is
+    **CAVEAT (#1837 — trivially inhabited *for the probed dataset*).**
+    The h⁶ empirical probe (`tau_all_orders_h6_empirical.py`) showed that
+    at a fixed substrate `q₀` both `α` and `κ` are constant sequences,
+    and `tauCoeff` has *independent free entries per row*, so every row
+    `κ k = Σ_{j ≤ k} tauCoeff k j · α j` is a one-equation /
+    `k`-unknowns underdetermined system solved on its own — *provided
+    each such row has at least one nonzero `α j`, `j ≤ k`*, which holds
+    for the Borromean sequences (`α₂ = -12`, `α₄ = -6` nonzero). Under
+    that condition `Nonempty (TauOrderMixingMap α κ)` is trivially
+    inhabited and does NOT capture the open question. (Copilot review
+    #1858: for *arbitrary* fixed `α, κ` the class can be uninhabited —
+    e.g. `α j = 0` for all `j ≤ k` but `κ k ≠ 0` makes row `k`
+    unsatisfiable — so this is a statement about the specific
+    categorical dataset, not all sequences.) The genuine refinement is
     `TauBandedKernelMap` below, which forces a SINGLE finite-support
     convolution kernel across all orders. -/
 class TauOrderMixingMap (α κ : ℕ → ℝ) where
@@ -113,7 +119,7 @@ class TauDistinctInvariants (α κ : ℕ → ℝ) where
     (`TauDistinctInvariants`).
 
     This is the **non-trivial** form. The earlier
-    `tau_all_orders_bridge_naive` below (arbitrary lower-triangular `T`)
+    `tau_order_mixing_naive_hyp1` below (arbitrary lower-triangular `T`)
     is excluded-middle-vacuous because hypothesis (1) is always
     inhabited there (#1837); the banded-kernel constraint is what makes
     the disjunction informative. Neither class currently has an instance
@@ -122,11 +128,14 @@ class TauDistinctInvariants (α κ : ℕ → ℝ) where
 def tau_all_orders_bridge (α κ : ℕ → ℝ) : Prop :=
   Nonempty (TauBandedKernelMap α κ) ∨ Nonempty (TauDistinctInvariants α κ)
 
-/-- The **naive** dichotomy (retained for the record): with an arbitrary
-    lower-triangular `T`, hypothesis (1) `Nonempty (TauOrderMixingMap α κ)`
-    is vacuously inhabited (#1837), so this disjunction is not
-    informative. Superseded by `tau_all_orders_bridge` (banded). -/
-def tau_all_orders_bridge_naive (α κ : ℕ → ℝ) : Prop :=
+/-- The **naive hypothesis (1)** alone (retained for the record) — NOT a
+    dichotomy/disjunction, just the existence of an arbitrary
+    lower-triangular order-mixing map (Copilot review #1858: the body is
+    `Nonempty (TauOrderMixingMap α κ)`, a single existence claim, so the
+    name now reflects that). For the probed Borromean sequences this is
+    trivially inhabited (#1837), which is precisely why it is superseded
+    by the banded dichotomy `tau_all_orders_bridge`. -/
+def tau_order_mixing_naive_hyp1 (α κ : ℕ → ℝ) : Prop :=
   Nonempty (TauOrderMixingMap α κ)
 
 /-! ### Anchor at h²
