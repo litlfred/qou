@@ -2566,7 +2566,104 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "ae38780f0f08",
+          "lean": "8c069814f0d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:05:27.169Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "ae38780f0f08",
+          "lean": "8c069814f0d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:05:38.322Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "ae38780f0f08",
+          "lean": "8c069814f0d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:05:53.732Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "ae38780f0f08",
+          "lean": "8c069814f0d3"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "atomic-lp-stability.md:11 — 'This changes the annihilation ratio from lambda_s/lambda_a = 0.537 (bare) to q^{-10} = 0.352 (dressed).' Numerical values 0.537 and 0.352 appear in the proof without explicit archimedean specialisation declaration, though they appear as illustrative values at q_0.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:06:01.712Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "ae38780f0f08",
+          "lean": "8c069814f0d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:06:11.434Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:06:11.434Z"
 }
