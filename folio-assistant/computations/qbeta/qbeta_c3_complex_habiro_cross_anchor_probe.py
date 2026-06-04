@@ -73,15 +73,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 # comparison below — canonical substrate constants live in
 # substrate/q_parameter.py; included as literals here only to keep the
 # cross-anchor harness self-contained. Not a CAL-4 input.
-Q_PROTON = mp.mpf("1.10997858275")
-Q_MUON   = mp.mpf("1.10997859555")
+_Q_PROTON_VALIDATION = mp.mpf("1.10997858275")
+_Q_MUON_VALIDATION   = mp.mpf("1.10997859555")
 
 # validation: empirical c_3 readouts at each anchor — the OUTPUTS of the
 # production pipeline (falsify commit 569bedda1), included only as
 # comparison targets for the candidate complex-Habiro forms tested below.
 # Not a substrate input.
-C3_PROTON_EMP = mp.mpf("-2.0693")
-C3_MUON_EMP   = mp.mpf("-2.0097")
+_C3_PROTON_EMP_VALIDATION = mp.mpf("-2.0693")
+_C3_MUON_EMP_VALIDATION   = mp.mpf("-2.0097")
 
 
 def candidate_A(q, q_pole):
@@ -149,14 +149,14 @@ def main() -> int:
     # Cross-anchor slope and required near-singularity radius — computed
     # once from the empirical anchors and reused throughout the report
     # so the narrative stays self-consistent if anchors are updated.
-    slope_required = (C3_MUON_EMP - C3_PROTON_EMP) / (Q_MUON - Q_PROTON)
-    near_sing_radius = mp.fabs(C3_PROTON_EMP) / mp.fabs(slope_required)
+    slope_required = (_C3_MUON_EMP_VALIDATION - _C3_PROTON_EMP_VALIDATION) / (_Q_MUON_VALIDATION - _Q_PROTON_VALIDATION)
+    near_sing_radius = mp.fabs(_C3_PROTON_EMP_VALIDATION) / mp.fabs(slope_required)
 
     print(f"  Empirical (per 569bedda1):")
-    print(f"    q_proton = {mp.nstr(Q_PROTON, 14)}  c_3_emp = {C3_PROTON_EMP}")
-    print(f"    q_muon   = {mp.nstr(Q_MUON, 14)}  c_3_emp = {C3_MUON_EMP}")
-    print(f"    Δq       = {mp.nstr(Q_MUON - Q_PROTON, 4)}")
-    print(f"    Δc_3     = {mp.nstr(C3_MUON_EMP - C3_PROTON_EMP, 5)}")
+    print(f"    q_proton = {mp.nstr(_Q_PROTON_VALIDATION, 14)}  c_3_emp = {_C3_PROTON_EMP_VALIDATION}")
+    print(f"    q_muon   = {mp.nstr(_Q_MUON_VALIDATION, 14)}  c_3_emp = {_C3_MUON_EMP_VALIDATION}")
+    print(f"    Δq       = {mp.nstr(_Q_MUON_VALIDATION - _Q_PROTON_VALIDATION, 4)}")
+    print(f"    Δc_3     = {mp.nstr(_C3_MUON_EMP_VALIDATION - _C3_PROTON_EMP_VALIDATION, 5)}")
     print(f"    dc_3/dq  ≈ {mp.nstr(slope_required, 4)}  (computed)")
     print(f"    → required near-singularity radius: "
           f"~{mp.nstr(near_sing_radius, 4)}")
@@ -175,14 +175,14 @@ def main() -> int:
     # Solve: c_p = α/(q_p - q_pole), c_μ = α/(q_μ - q_pole)
     # → c_p (q_p - q_pole) = α = c_μ (q_μ - q_pole)
     # → q_pole = (c_p q_p - c_μ q_μ) / (c_p - c_μ)
-    q_pole_A = (C3_PROTON_EMP * Q_PROTON - C3_MUON_EMP * Q_MUON) / (C3_PROTON_EMP - C3_MUON_EMP)
-    alpha_A = C3_PROTON_EMP * (Q_PROTON - q_pole_A)
-    A_p = alpha_A * candidate_A(Q_PROTON, q_pole_A)
-    A_m = alpha_A * candidate_A(Q_MUON, q_pole_A)
-    delta_A = (A_m - C3_MUON_EMP) / C3_MUON_EMP
+    q_pole_A = (_C3_PROTON_EMP_VALIDATION * _Q_PROTON_VALIDATION - _C3_MUON_EMP_VALIDATION * _Q_MUON_VALIDATION) / (_C3_PROTON_EMP_VALIDATION - _C3_MUON_EMP_VALIDATION)
+    alpha_A = _C3_PROTON_EMP_VALIDATION * (_Q_PROTON_VALIDATION - q_pole_A)
+    A_p = alpha_A * candidate_A(_Q_PROTON_VALIDATION, q_pole_A)
+    A_m = alpha_A * candidate_A(_Q_MUON_VALIDATION, q_pole_A)
+    delta_A = (A_m - _C3_MUON_EMP_VALIDATION) / _C3_MUON_EMP_VALIDATION
     print(f"  {'A. α/(q-q_pole) [forced match]':<48} "
           f"{mp.nstr(A_p, 7):<14} {mp.nstr(A_m, 7):<14} {float(delta_A):+.1e}")
-    distance_q_p_to_pole = Q_PROTON - q_pole_A
+    distance_q_p_to_pole = _Q_PROTON_VALIDATION - q_pole_A
     print(f"    q_pole = {mp.nstr(q_pole_A, 12)} "
           f"(distance to q_p: {mp.nstr(distance_q_p_to_pole, 4)})")
     results.append({"name": "A_generic_pole",
@@ -192,8 +192,8 @@ def main() -> int:
                     "categorical_meaning_of_q_pole": "NONE (fit-derived)"})
 
     # ---- Candidate B: log(q-1)/(q-1) ----
-    B_p = candidate_B(Q_PROTON)
-    B_m = candidate_B(Q_MUON)
+    B_p = candidate_B(_Q_PROTON_VALIDATION)
+    B_m = candidate_B(_Q_MUON_VALIDATION)
     print(f"  {'B. log(q-1)/(q-1)':<48} "
           f"{mp.nstr(B_p, 7):<14} {mp.nstr(B_m, 7):<14}")
     print(f"    (no scale fitted; just baseline shape)")
@@ -202,9 +202,9 @@ def main() -> int:
                     "value_q_m": mp.nstr(B_m, 25)})
 
     # ---- Candidate C: log(q) (NEGATIVE control — should be too rigid) ----
-    C_p = candidate_C(Q_PROTON)
-    C_m = candidate_C(Q_MUON)
-    dC = (C_m - C_p) / (Q_MUON - Q_PROTON)
+    C_p = candidate_C(_Q_PROTON_VALIDATION)
+    C_m = candidate_C(_Q_MUON_VALIDATION)
+    dC = (C_m - C_p) / (_Q_MUON_VALIDATION - _Q_PROTON_VALIDATION)
     print(f"  {'C. log(q) [neg control]':<48} "
           f"{mp.nstr(C_p, 7):<14} {mp.nstr(C_m, 7):<14}")
     print(f"    dF/dq ≈ {float(dC):.3e}  (vs required 4.66e6)")
@@ -213,13 +213,13 @@ def main() -> int:
                     "too_rigid": float(abs(dC)) < 1e3})
 
     # ---- Candidate D: cyclotomic partial fractions ----
-    D_p = candidate_D(Q_PROTON)
-    D_m = candidate_D(Q_MUON)
+    D_p = candidate_D(_Q_PROTON_VALIDATION)
+    D_m = candidate_D(_Q_MUON_VALIDATION)
     D_p_real = D_p.real
     D_m_real = D_m.real
     D_p_imag = D_p.imag
     D_m_imag = D_m.imag
-    dD = (D_m_real - D_p_real) / (Q_MUON - Q_PROTON)
+    dD = (D_m_real - D_p_real) / (_Q_MUON_VALIDATION - _Q_PROTON_VALIDATION)
     print(f"  {'D. Σ cyclotomic partial fractions':<48} "
           f"{mp.nstr(D_p_real, 7):<14} {mp.nstr(D_m_real, 7):<14}")
     print(f"    Im at q_p: {mp.nstr(D_p_imag, 6)}  Im at q_μ: {mp.nstr(D_m_imag, 6)}")
@@ -240,7 +240,7 @@ def main() -> int:
     print(f"  A. Generic pole: BY CONSTRUCTION matches both anchors,")
     print(f"     but the pole sits at q_pole = {float(q_pole_A):.6f}, which is")
     print(f"     NOT at a root of unity nor at the classical limit q=1.")
-    print(f"     Distance to q_p: {float(Q_PROTON - q_pole_A):.3e}.")
+    print(f"     Distance to q_p: {float(_Q_PROTON_VALIDATION - q_pole_A):.3e}.")
     print(f"     CATEGORICAL MEANING: none derived. This is a 2-point")
     print(f"     fit, not a structural identification.")
     print()
@@ -286,12 +286,12 @@ def main() -> int:
     print()
 
     builder.add_data("empirical", {
-        "q_proton": mp.nstr(Q_PROTON, 25),
-        "q_muon": mp.nstr(Q_MUON, 25),
-        "c_3_proton": str(C3_PROTON_EMP),
-        "c_3_muon": str(C3_MUON_EMP),
-        "delta_q": mp.nstr(Q_MUON - Q_PROTON, 25),
-        "delta_c_3": mp.nstr(C3_MUON_EMP - C3_PROTON_EMP, 25),
+        "q_proton": mp.nstr(_Q_PROTON_VALIDATION, 25),
+        "q_muon": mp.nstr(_Q_MUON_VALIDATION, 25),
+        "c_3_proton": str(_C3_PROTON_EMP_VALIDATION),
+        "c_3_muon": str(_C3_MUON_EMP_VALIDATION),
+        "delta_q": mp.nstr(_Q_MUON_VALIDATION - _Q_PROTON_VALIDATION, 25),
+        "delta_c_3": mp.nstr(_C3_MUON_EMP_VALIDATION - _C3_PROTON_EMP_VALIDATION, 25),
         "dc_3_dq_required": mp.nstr(slope_required, 25),
         "near_sing_radius": mp.nstr(near_sing_radius, 25),
     })
