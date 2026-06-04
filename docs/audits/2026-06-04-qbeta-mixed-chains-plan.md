@@ -25,7 +25,7 @@ evaluation, and a Kashiwara (partition / crystal) invariant.
 
 ## Target (carried forward verbatim)
 
-| | |
+| Quantity | Value |
 |---|---|
 | Residue A | `1.804e-15` (PR #1727; simple pole, fibre-level, anchor-independent) |
 | ℏ_q formula | `ℏ_q = (q − 1) / q` — **NEVER hard-code** (predecessor h_q-bug burned 4 h) |
@@ -43,11 +43,15 @@ partitions λ ⊢ n. The per-block Markov-trace weight / quantum
 dimension is the natural "Wenzl trace" value. Computed here via the
 **closed-form hook-length principal specialisation**
 
-  q-dim(λ)(q) = q^{n(λ)} · [n]_q! / ∏_{c∈λ} [hook(c)]_q,
+```
+q-dim(λ)(q) = q^{n(λ)} · [n]_q! / ∏_{c∈λ} [hook(c)]_q
+```
 
 plus the genuine Markov-trace block weight
 
-  w_λ(q, z) = z^{n−1} · q-dim(λ)   with Markov parameter z = 1/(√q + 1/√q),
+```
+w_λ(q, z) = z^{n−1} · q-dim(λ),   Markov parameter z = 1/(√q + 1/√q)
+```
 
 both pure-mpmath (the native `hecke-engine` is not built in this
 sandbox; the hook formula is the canonical closed form pyhecke would
@@ -60,11 +64,15 @@ At real q₀ ≈ 1.11 the Faddeev non-compact Φ_b (|q|=1) does **not**
 apply. The meaningful objects on the real-q fibre are the **Rogers
 q-dilogarithm** and the **q-exponential / q-Pochhammer**:
 
-  Li_2^q(x) = Σ_{m≥1} x^m / (m·(1 − q^m)),
-  (x; p)_∞  = ∏_{m≥0} (1 − x p^m)   (base p = q^{−1} < 1 for convergence).
+```
+Li_2^q(x) = Σ_{m≥1} x^m / (m·(1 − q^{-m}))      (base q^{-1} < 1)
+(x; p)_∞  = ∏_{m≥0} (1 − x p^m),   p = q^{−1} < 1 for convergence
+```
 
-Evaluated at the Kashiwara highest-weight argument z_λ = q^{n(λ)}
-(and variants q^{−n(λ)}, q^{n(λ')}).
+Evaluated at the ρ-shifted Kashiwara lowest-weight argument
+`z_λ = q^{−(n(λ)+1)} ∈ (0,1)` (the +1 ρ-shift keeps `z_λ` strictly
+inside the unit disk, off the quantum-dilog pole at `x = 1`) and at
+`x = ℏ_q`.
 
 ### Kashiwara (partition / crystal invariant)
 
