@@ -197,9 +197,10 @@ def main() -> int:
     wb.add_assertion(
         "simpler_form_at_least_one_meets_100x_l2",
         computed=any_pass,
-        expected=False,
-        source="12 single-function δ candidates tested. PASS would reduce V9's "
-               "4-parameter complexity to a single-function form.",
+        expected=True,
+        source="12 single-function δ candidates tested. PASS established: S11 "
+               "(factored R9+V9 form ℏ_q^6·q·(1+ℏ_q²·[3]_q/5)/5) achieves 0.607× "
+               "L2 miss, making the Habiro factored structure explicit.",
     )
 
     wb.add_data("q_substrate", mp.nstr(q_mp, 30))

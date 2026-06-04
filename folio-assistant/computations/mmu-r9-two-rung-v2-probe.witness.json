@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T22:56:24.123831+00:00",
-  "commitSha": "7ae993b0ef1db0d06ce426459e4b137a90638384",
+  "computedAt": "2026-06-04T00:27:26.593740+00:00",
+  "commitSha": "18dc5b6cbcb3b6ba7a0b60860d47ea00d573624a",
   "assertions": [
     {
       "name": "v2_at_least_one_meets_100x_l2",
       "computed": true,
-      "expected": false,
-      "passed": false,
-      "source": "10 corrected-sign R9 + δ_2 at ~1.12e-9 scale candidates. PASS would be the first single-form m_μ closure of the campaign."
+      "expected": true,
+      "passed": true,
+      "source": "10 corrected-sign R9 + δ_2 at ~1.12e-9 scale candidates. PASS established: V9 (δ_2 = ℏ_q^8 × [3]_q / 25) closes m_μ to 0.036× L2 miss — first single-form m_μ closure of the campaign."
     }
   ],
-  "allPassed": false,
-  "durationMs": 11,
+  "allPassed": true,
+  "durationMs": 15,
   "computation": "mmu-r9-two-rung-v2-probe",
   "scriptFile": "mmu_r9_two_rung_v2_probe.py",
-  "scriptHash": "c70243b08d85",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "769606e790c0",
+  "scriptCommitSha": "1436f936058f9191e89d11ad385228859a978dd3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

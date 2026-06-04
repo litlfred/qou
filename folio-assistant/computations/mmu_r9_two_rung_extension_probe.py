@@ -162,8 +162,12 @@ def main() -> int:
     for name, formula in candidates.items():
         try:
             delta_2 = formula(q_mp)
-            # Combined δ = R9 - T (subtract second rung; T_i sign is its own structure)
-            delta_total = delta_r9 - delta_2
+            # Combined δ = R9 + δ_2: R9 alone leaves m_μ_pred 1.12 ppb ABOVE
+            # CODATA (positive residual under `1 - delta_total` convention),
+            # so the second-rung correction must INCREASE delta_total to
+            # further suppress the prediction. Each candidate function
+            # returns δ_2 with its intended sign; combine additively.
+            delta_total = delta_r9 + delta_2
             m_mu_pred = me * vol_4_1 / hbar_q_sq * (1 - delta_total)
             err_ppb = float((m_mu_pred - m_mu_codata) / m_mu_codata * 1e9)
             miss = float(abs(err_ppb) / target_100x_ppb)

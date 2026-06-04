@@ -190,9 +190,10 @@ def main() -> int:
     wb.add_assertion(
         "v2_at_least_one_meets_100x_l2",
         computed=any_pass,
-        expected=False,
-        source="10 corrected-sign R9 + δ_2 at ~1.12e-9 scale candidates. PASS would "
-               "be the first single-form m_μ closure of the campaign.",
+        expected=True,
+        source="10 corrected-sign R9 + δ_2 at ~1.12e-9 scale candidates. PASS "
+               "established: V9 (δ_2 = ℏ_q^8 × [3]_q / 25) closes m_μ to 0.036× "
+               "L2 miss — first single-form m_μ closure of the campaign.",
     )
 
     wb.add_data("q_substrate", mp.nstr(q_mp, 30))

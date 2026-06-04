@@ -72,10 +72,6 @@ def main() -> int:
     target_c3 = mpf("-2.06934257711516783787971951725")
     j_hopf = mpf(-2)
 
-    hbar_q = (q_mp - 1) / q_mp
-    h = q_mp - 1 / q_mp
-    b = hoefsmit_b(q_mp)
-
     def q1(q):
         hb = (q - 1) / q
         return j_hopf * (1 + hb * q / 5)
