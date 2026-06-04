@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-06-04T14:55:16.705064+00:00",
-  "commitSha": "ba1cdd52b5cd9d23ce0a01533ed73c490023089d",
+  "computedAt": "2026-06-04T14:59:43.403704+00:00",
+  "commitSha": "8c83270c0e78642a15aa6ce80598f6231249e2ff",
   "assertions": [
     {
       "name": "c6_c10_closed_forms_exact_at_silver_ratio",
@@ -37,8 +37,8 @@
   "durationMs": 16,
   "computation": "qbeta-c6-c10-crossanchor-falsification",
   "scriptFile": "qbeta_c6_c10_crossanchor_falsification.py",
-  "scriptHash": "7e2bebaa34e4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "260a022ef02a",
+  "scriptCommitSha": "8c83270c0e78642a15aa6ce80598f6231249e2ff",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
