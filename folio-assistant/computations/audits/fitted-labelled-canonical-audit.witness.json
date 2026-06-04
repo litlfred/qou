@@ -1,22 +1,22 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T12:33:04.155937+00:00",
-  "commitSha": "21e9e4afa5a30142edb8cbe05703e71ad2edd4b0",
+  "computedAt": "2026-06-04T12:40:25.633294+00:00",
+  "commitSha": "ca097e280a082828e1759ea8d392a83a85a616da",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
-      "computed": 4,
+      "computed": 2,
       "expected": 0,
       "passed": false,
       "tolerance": 0
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
-  "scriptHash": "a512cdb482c8",
+  "scriptHash": "aaff0df25751",
   "scriptCommitSha": "1443f37679e266239c1a1ae644ae16635a0d5d56",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -35,34 +35,10 @@
   "description": "Audits production scripts in folio-assistant/computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
-    "total_issues": 4,
-    "flagged_script_count": 3,
-    "scripts_scanned": 1592,
+    "total_issues": 2,
+    "flagged_script_count": 1,
+    "scripts_scanned": 1026,
     "rows": [
-      {
-        "path": "computations/_deprecated/proton_mass_mpfr_50dps.py",
-        "issue_count": 1,
-        "issues": [
-          {
-            "line": 69,
-            "var": "M_E_MEV",
-            "literal": "0.51099895",
-            "context_snippet": ".json\"\n\n\ndef main() -> int:\n    habiro = json.load(open(HABIRO))\n    proton = habiro[\"results\"][\"p (proton, A=1)\"]\n    tr_M_in_q_str = proton[\"tr_M_in_q\"]\n    print(f\"  proton tr_M_in_q = {tr_M_in_q_str[:100]}...\")\n\n    "
-          }
-        ]
-      },
-      {
-        "path": "computations/_deprecated/unified_mass_table_50dps.py",
-        "issue_count": 1,
-        "issues": [
-          {
-            "line": 46,
-            "var": "M_E_MEV",
-            "literal": "0.51099895",
-            "context_snippet": "(𝔥) / 𝔪(electron) — the\n    mass_endomorphism convention that gives m_p/m_e ≈ 1870\n  - absolute mass prediction m(𝔥) = m_e · ratio\n\nCaveats:\n  - Term 5 (a_K · C_K) requires per-atom C_K which is multi-block\n    determine"
-          }
-        ]
-      },
       {
         "path": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
         "issue_count": 2,
