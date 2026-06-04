@@ -400,6 +400,43 @@ def chi_lambda_braid(shape, word, q_value=None, precision=None,
     return float(np.trace(product))
 
 
+def chi_lambda_braid_mpf(shape, signed_word, q_value=None, dps=None):
+    """Full-precision χ_λ(β) as an ``mpmath.mpf`` via the mpfr Rust kernel.
+
+    Single chokepoint for the ``mpf → decimal-string → mpfr → mpf``
+    marshalling so the HOMFLY Ocneanu engine
+    (``homfly_ocneanu_trace._chi``) and the 1ppb cross-check χ-anchor
+    (``cross_check_trM_1ppb``) do not each re-implement the precision-tag
+    and guard-digit pattern.
+
+    Args:
+        shape: partition ``λ ⊢ n`` (tuple/list of descending parts).
+        signed_word: braid word as a flat list of **signed** 1-based
+            generators (e.g. ``[1, -2, 1]``); marshalled to
+            ``chi_lambda_braid``'s ``(sign, generator)`` form internally.
+        q_value: Hecke parameter — ``mpf`` / ``float`` / ``str`` /
+            ``None`` (→ substrate ``q₀``). A string is passed through
+            verbatim (full precision); an ``mpf``/``float`` is rendered to
+            ``dps + 5`` guard digits.
+        dps: target precision; default ``max(50, current mpmath dps)``.
+
+    Returns an ``mpmath.mpf``. Note ``mp.mpf`` *rounds* the kernel's
+    decimal string to the current working precision — it is deterministic
+    at ``dps``, not an exact real. The string/precision-tag construction
+    is O(dps) and negligible beside the kernel's matrix evaluation, so it
+    is recomputed per call rather than cached.
+    """
+    if dps is None:
+        dps = max(50, mp.dps)
+    if q_value is None:
+        q_value = q0
+    q_str = (q_value if isinstance(q_value, str)
+             else mp.nstr(mp.mpf(q_value), dps + 5, strip_zeros=False))
+    hc = [(1, g) if g > 0 else (-1, -g) for g in signed_word]
+    return mp.mpf(chi_lambda_braid(list(shape), hc,
+                                   q_value=q_str, precision=f"mpfr_{dps}dps"))
+
+
 def chi_lambdas_braid(shapes, word, q_value=None, precision=None):
     """**Batch variant of `chi_lambda_braid`** — single PyO3 crossing for
     a list of partitions, all evaluated on the same braid word at the

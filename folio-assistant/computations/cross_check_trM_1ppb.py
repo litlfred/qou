@@ -100,20 +100,16 @@ def _character_closed_form_anchor(tol: "mpf") -> dict:
     import sys as _sys
     if str(HERE) not in _sys.path:
         _sys.path.insert(0, str(HERE))
-    from hecke_characters import chi_lambda_braid
+    from hecke_characters import chi_lambda_braid_mpf
     from q_parameter import Q_50_DIGIT_STR
     q0 = mpf(Q_50_DIGIT_STR)
 
     def chi(shape, word):
-        hc = [(1, g) if g > 0 else (-1, -g) for g in word]
-        # mpfr path (Rust rug::Float kernel): full arbitrary precision, not
-        # float64. Pass q_0 as a decimal string and request mpfr at the
-        # working dps; the kernel returns a decimal string mpmathify parses
-        # exactly. Anchor deltas drop from ~1e-15 (f64) to ~1e-49.
-        dps = max(50, mp.dps)
-        q_str = mp.nstr(q0, dps + 5, strip_zeros=False)
-        return mpmathify(chi_lambda_braid(list(shape), hc,
-                                          q_value=q_str, precision=f"mpfr_{dps}dps"))
+        # Shared mpfr helper (Rust rug::Float kernel): full arbitrary
+        # precision, not float64. Anchor deltas drop from ~1e-15 (f64) to
+        # ~1e-50. `word` is the flat signed braid word; the helper marshals
+        # it. Same chokepoint as homfly_ocneanu_trace._chi.
+        return chi_lambda_braid_mpf(shape, word, q_value=q0)
 
     def writhe(word):
         return sum(1 if g > 0 else -1 for g in word)
