@@ -187,6 +187,55 @@ grep -rn 'sorry' content/*/lean/ --include='*.lean' | grep -v '.lake'
 
 Per CLAUDE.md: every `sorry` must have a `-- Ref: [key]` comment.
 
+#### §3b-cond conditional-class carve-out (do NOT discharge these)
+
+Per CLAUDE.md §3b-cond, a `sorry` inside a Lean `class` body **is the
+conjectural input** — it is permanent by design, NOT a missing-proof
+gap. The full catalogue lives at
+[`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md):
+**202 classes / 227 class-body sorries** as of 2026-06-03.
+
+Before flagging a sorry as missing proof:
+
+1. Scroll up from the `sorry` line until you hit either `class <Name>`
+   (catalogued — leave alone) or `theorem | lemma | def | instance`
+   (regular sorry — verify `-- Ref:` annotation).
+2. For class-body sorries, check the catalog. If the class name is
+   listed, it's expected; move on.
+3. If a class-body sorry is NOT in the catalog, it was added after
+   2026-06-03 — regenerate the catalog before triaging.
+
+Approximate non-class sorries (potentially dischargeable): **~426**
+(out of 653 raw `sorry` text matches across 255 files).
+
+#### `lean-compile-diagnostics.json` staleness warning
+
+The `proof-lean-compiles` sidecar criterion sources its evidence from
+[`docs/audits/lean-compile-diagnostics.json`](../../docs/audits/lean-compile-diagnostics.json),
+which goes stale within days of any Lean source change. Cited line
+numbers may not correspond to current file content.
+
+When the proof-axis sidecar fails are 629 (or similar large number),
+all on `proof-lean-compiles`, default-assume the diagnostics file is
+stale. See
+[`docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md`](../../docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md)
+for the regen path (requires working LSP — see `lean-environment-setup`
+§"Mathlib cache 403 fallback").
+
+#### `proof-objects.json` is broken since the content-object migration
+
+The `.github/scripts/extract_proof_objects.py` extractor reads
+`chapters/*.tex` files which are generated artefacts — they don't exist
+in the source tree. Running the extractor in the current repo state
+produces 0 objects. The on-disk `proof-objects.json` (committed to
+`main`) is therefore frozen at the April-2026 state with placeholder
+`kind: '?'` / `status: '?'` for all 106 entries.
+
+**Do NOT rely on `proof-objects.json` as a current status source.**
+Use direct grep for axiom / sorry counts and the catalogue references
+above for §3b-cond class sorries. Full root cause:
+[`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md).
+
 ### 7. Trivial Truth Audit
 
 Detect placeholder proofs that prove `True` instead of the actual statement:

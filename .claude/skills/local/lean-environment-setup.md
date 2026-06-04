@@ -171,6 +171,53 @@ sorry-free. The same pattern is being tracked in PR #1763 (axiom
 tractability triage) where the cache-host blocker is a recorded
 blocker.
 
+### Build-from-source path (when you don't need iterative LSP)
+
+If your task is **bulk diagnostics regen** or **one-shot
+build-everything**, the local clone + `git insteadOf` above is
+sufficient — you don't need the cache at all. `lake build` happily
+compiles Mathlib from source; it's just slower.
+
+```bash
+# After Steps 1-2 above (clone + insteadOf):
+nohup lake build QOU > /tmp/lake-build.log 2>&1 &
+# Monitor:
+tail -f /tmp/lake-build.log
+# Or sample progress:
+grep -c '^✔' /tmp/lake-build.log
+```
+
+**Observed throughput (PR #1783 session, 2026-06-03):**
+
+| Time | Modules built | `.lake/` disk |
+|---:|---:|---:|
+| 1.5 min | 302 | 1.0 GB |
+| 5 min | 663 | 1.3 GB |
+| 7 min | 894 | 1.4 GB |
+
+Throughput slows as Mathlib modules get heavier (Algebra, Data, then
+Topology / Analysis). Plausible full-Mathlib build: **1–3 hours**;
+plus ~10 min for QOU. Once the build finishes, `lake exe cache get`
+becomes irrelevant — the oleans are local.
+
+**When to use which:**
+
+- LSP iteration on one or two files → cache 403 fallback above (warm
+  workspace, ~minutes to first useful diagnostic).
+- Mass regen of `docs/audits/lean-compile-diagnostics.json` across all
+  ~700 `.lean` files → from-source build first, then per-file
+  `mcp__lean-lsp__lean_diagnostic_messages` pass; budget 2-3 hours
+  end-to-end.
+- Single-PR proof discharge → cache fallback; from-source build is
+  overkill.
+
+**Container-restart caveat.** In Claude Code on the web, the
+container may restart between sessions and lose `/tmp/` and `.lake/`.
+The mathlib clone at `../mathlib4` typically persists (it lives in
+the working tree's parent). On resume: re-confirm the `git insteadOf`
+redirect, then re-launch the build if needed. The build is fully
+incremental — only changed modules rebuild.
+
 ## PATH Configuration
 
 All session scripts source `scripts/lib/lean-env.sh`, which sets:
