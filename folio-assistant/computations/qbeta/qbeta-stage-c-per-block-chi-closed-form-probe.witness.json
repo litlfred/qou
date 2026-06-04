@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T23:43:08.976114+00:00",
-  "commitSha": "4ef99bef4bfb73ed7ad4e6ff4e2f72aefd778966",
+  "computedAt": "2026-06-04T23:47:27.716463+00:00",
+  "commitSha": "9bfbf7e9b7e1e0b6014b8c7e1c35158413a40ad1",
   "assertions": [
     {
       "name": "stage_c_per_block_chi_symbolic_matches_pyhecke",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 584,
+  "durationMs": 369,
   "computation": "qbeta-stage-c-per-block-chi-closed-form-probe",
   "scriptFile": "qbeta_stage_c_per_block_chi_closed_form_probe.py",
-  "scriptHash": "4d53206c7945",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "df3eaddbaa36",
+  "scriptCommitSha": "9bfbf7e9b7e1e0b6014b8c7e1c35158413a40ad1",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

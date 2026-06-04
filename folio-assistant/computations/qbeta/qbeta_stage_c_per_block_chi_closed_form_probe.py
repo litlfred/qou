@@ -40,7 +40,14 @@ q_0 gives the per-block operator-level N=k structure. The (2,1)
 block contributes 0 to every c_k from THIS word — a clean
 operational anchor.
 
-No float64 anywhere. Pure symbolic.
+**Precision note** (per Copilot review on PR #1873): the symbolic
+derivation here uses exact sympy rationals end-to-end (no float64
+in the algebra). The validation step against `pyhecke` necessarily
+goes through `chi_lambda_braid(q_value=float(Q0))` — the existing
+Python fallback API takes Python floats — so the validation
+comparison itself is at ~16 dps (float64 ceiling on the pyhecke
+side). The closed-form (q³, 0, −q⁻³) themselves are EXACT
+q-monomials, anchored by the float64-level validation at q₀.
 """
 from __future__ import annotations
 
@@ -117,14 +124,17 @@ def main() -> int:
     # σ_2 = [[a, b], [b, a']] with b² = a·a' + 1.
     a_top = h / (1 - q ** 4)           # T1 diagonal (ρ=-2)
     a_bot = h / (1 - q ** (-4))        # T2 diagonal (ρ=+2)
-    sigma1_21 = sp.Matrix([[q, 0], [0, -1 / q]])
+    # Trefoil = σ_1·σ_2·σ_1. σ_1 is diagonal in this rep, so the
+    # trace of σ_1·σ_2·σ_1 depends ONLY on the diagonal of σ_2 (the
+    # off-diagonal b drops out in the trace), giving an exact
+    # algebraic expression with no sqrt branch ambiguity (per Copilot
+    # review on PR #1873).
+    chi_21_sym = sp.cancel(q ** 2 * a_top + a_bot / q ** 2)
+    # For completeness, also build the full 2×2 σ_2 (b kept for
+    # downstream non-trace uses); not used in the trace below.
     bsq = sp.simplify(a_top * a_bot + 1)
-    b_off = sp.sqrt(bsq)
-    sigma2_21 = sp.Matrix([[a_top, b_off], [b_off, a_bot]])
-
-    # Trefoil = σ_1·σ_2·σ_1
-    trefoil_21 = sigma1_21 * sigma2_21 * sigma1_21
-    chi_21_sym = sp.simplify(sp.cancel(trefoil_21.trace()))
+    sigma2_21 = sp.Matrix([[a_top, sp.sqrt(bsq)],
+                            [sp.sqrt(bsq), a_bot]])  # noqa: F841
 
     # Closed forms for (3,) and (1,1,1) are immediate from 1-dim reps
     chi_3_sym = q ** 3                # (3,): σ_i = q ⇒ σ_1σ_2σ_1 = q^3
