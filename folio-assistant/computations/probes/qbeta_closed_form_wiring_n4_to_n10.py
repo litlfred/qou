@@ -55,7 +55,18 @@ import _path_bridge as _pb  # noqa: E402, F401
 
 
 def closed_form_c_k(k: int, b: mp.mpf) -> mp.mpf:
-    """Closed-form c_k for k=2..10 per the documented + extended pattern."""
+    """Closed-form c_k for k=2..N via the recursion c_{k+2} = b²·c_k (k≥6).
+
+    For k ≤ 7 these are the documented forms; for k ≥ 8 they follow by
+    repeated application of the recursion from initial c_6 = 4·b² and
+    c_7 = -8. The recursion instantiates `QOU.QBeta.CKRecursion` (Lean,
+    on `main` per q-beta-c-k-recursion-from-habiro-q-difference.lean)
+    at depth=2, kernel=(0, b²) — a CONSTANT-kernel case. PR #1786
+    measured the constant-kernel hypothesis REFUTED through d=4 at q₀
+    (extracted c_k diverge from the closed form by O(10³)+ at k≥8);
+    the closed form is therefore the STRUCTURAL silver-ratio signal
+    rather than a precision claim at q₀.
+    """
     b2 = b * b
     if k == 2:
         return mp.mpf(-1)
@@ -69,13 +80,8 @@ def closed_form_c_k(k: int, b: mp.mpf) -> mp.mpf:
         return mp.mpf(4) * b2
     if k == 7:
         return mp.mpf(-8)
-    if k == 8:
-        return mp.mpf(4) * b ** 4
-    if k == 9:
-        return mp.mpf(-8) * b2
-    if k == 10:
-        return mp.mpf(4) * b ** 6
-    raise ValueError(f"closed_form_c_k: k={k} not supported")
+    # k ≥ 8: apply recursion c_k = b² · c_{k-2}
+    return b2 * closed_form_c_k(k - 2, b)
 
 
 def qbeta_at_depth(N: int, Q_A_cos: mp.mpf, b: mp.mpf, hbar_q_sq: mp.mpf
@@ -125,12 +131,12 @@ def main() -> int:
         print(f"  {k:>3} {mp.nstr(c_k, 15):>26}")
     print()
 
-    # Compute Q_β at each depth N=2..10
-    print("  Q_β_N at each depth (closed-form wiring):")
+    # Compute Q_β at each depth N=2..20 (extended via recursion)
+    print("  Q_β_N at each depth (closed-form wiring, recursion-extended):")
     print(f"  {'N':>3} {'Q_β_N':>30} {'(Q_β_N − AME)/AME (ppQ)':>30}")
     print("  " + "-" * 65)
     results = {}
-    for N in (2, 3, 4, 5, 6, 7, 8, 9, 10):
+    for N in (2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20):
         Q_N = qbeta_at_depth(N, Q_A_cos, b, hbar_q_sq)
         rel_err = (Q_N - Q_AME) / Q_AME
         rel_err_ppQ = rel_err * mp.mpf("1e15")  # ppQ = parts per quadrillion = 10⁻¹⁵
