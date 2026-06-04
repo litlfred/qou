@@ -131,9 +131,70 @@ The following is a structural reading, consistent with the infra but unproven:
    precise additional input (canonical `c_11+` OR a categorical derivation of
    `Q_A·cos α_eff`'s zero) the kernel still needs.
 
+## Step 2 result (first cut at the kernel — done)
+
+Script:
+[`qbeta_ck_recurrence_first_cut.py`](../../folio-assistant/computations/qbeta/qbeta_ck_recurrence_first_cut.py)
+· witness `qbeta-ck-recurrence-first-cut.witness.json`.
+
+- **No exact constant-coeff recurrence of order ≤ 4** fits `c_2…c_10` (Hankel
+  dets don't collapse; over-determination broken at every d ≤ 4) — rigorously
+  extends the "no constant kernel through d=4" result (`eca145ca`).
+- **The leading mode is the pole.** The tail (k ≥ 6) order-1 dominant
+  characteristic root is `117.41 = 1/u_substrate` to **6.5e-6** — an
+  independent confirmation, *from the recurrence side*, that the simple pole
+  at `u_substrate` governs the c_k growth.
+- **CAVEAT:** the ~1e-5 residual floor sits at the c_k **empirical-extraction**
+  accuracy (c_3 near-match, c_4 CODATA-fit). The subleading kernel cannot be
+  separated from extraction noise with the **current** c_k — so pinning `R`
+  (hence c_11+, hence `A` to high precision) needs canonical higher-order c_k
+  **or** a categorical derivation of `Q_A·cos α_eff`'s zero.
+
+## Step 3 — Lean statement (build-pending; env unavailable in sandbox)
+
+The Lean toolchain is **not usable in the current sandbox** (no project path
+for `lean_run_code`; `leansearch` SSL failure; mathlib cache 403 all session).
+Per the formalize-first discipline (`compute-author.md §3.3`), the **statement**
+is captured here ready to drop into a `.lean` and discharge once the env is up
+(`lean_setup`); it is deliberately **not** committed into the `QOU` lib tree
+unverified, so it cannot break `lean_ci`.
+
+The claim grounds "find the kernel `R`" ≡ "find the minimal denominator `Q`":
+
+```lean
+import Mathlib
+
+namespace QOU.QBeta
+open scoped BigOperators
+
+/-- `c` is C-finite of order `d` with denominator coeffs `q` (`q 0 ≠ 0`):
+the defining linear recurrence of the coefficients of a proper rational P/Q. -/
+def CFinite {K : Type*} [Field K] (d : ℕ) (q c : ℕ → K) : Prop :=
+  q 0 ≠ 0 ∧ ∀ n, d ≤ n → ∑ j ∈ Finset.range (d + 1), q j * c (n - j) = 0
+
+/-- Pole ⇒ reciprocal is a characteristic root. If `u₀ ≠ 0` is a root of the
+denominator `∑ q j X^j`, then `1/u₀` is a root of the reversed (characteristic)
+polynomial `∑ q j X^(d-j)`. (Proof: multiply the root equation by `u₀⁻ᵈ`.) -/
+theorem pole_reciprocal_is_char_root {K : Type*} [Field K] (d : ℕ) (q : ℕ → K)
+    (u₀ : K) (hu : u₀ ≠ 0)
+    (hroot : ∑ j ∈ Finset.range (d + 1), q j * u₀ ^ j = 0) :
+    ∑ j ∈ Finset.range (d + 1), q j * (u₀⁻¹) ^ (d - j) = 0 := by
+  sorry -- Ref: [manuscript] residue-A kernel scope §"Step 3"; multiply hroot by u₀⁻ᵈ and reindex
+
+end QOU.QBeta
+```
+
+**Contrapositive (the pruning Step 2 used):** if `c` is *not* C-finite of order
+≤ d, then `F` is *not* a rational function of denominator-degree ≤ d. Step 2
+showed exactly this for d ≤ 4, so the Q_β kernel `R` is not low-degree-rational
+— and the search must aim higher (canonical c_11+), not at more real-q /
+root-of-unity forms.
+
 ## Anti-pattern guards
 
 - No ansatz/fit for `c_k`; the recurrence is *extracted and validated by
   overdetermination*, not fitted.
 - TIERED honesty: established / interpretive / open kept separate.
 - Diagnostic-only; no production wiring; the registry governs tiers.
+- Lean: statement captured, **build deferred** (env down) — not represented as
+  verified, not wired into the build.
