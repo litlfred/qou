@@ -783,7 +783,104 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "3b7b623608ef",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "## Significance section contains substantive interpretive prose (physical meaning of bar-symmetric sector, structural reason alpha_EM was identifiable) with no companion interprets: remark linked",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:54:17.814Z",
+        "reviewed_sha": "d34637829dabea3f0037b2d4cd3f30df88b6e7ba"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3b7b623608ef",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:54:17.853Z",
+        "reviewed_sha": "d34637829dabea3f0037b2d4cd3f30df88b6e7ba"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3b7b623608ef",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:54:17.889Z",
+        "reviewed_sha": "d34637829dabea3f0037b2d4cd3f30df88b6e7ba"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "3b7b623608ef",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:54:17.925Z",
+        "reviewed_sha": "d34637829dabea3f0037b2d4cd3f30df88b6e7ba"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "3b7b623608ef",
+          "ts": "666bc0ac6b1b",
+          "lean": "69cf83354fa9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:54:17.960Z",
+        "reviewed_sha": "d34637829dabea3f0037b2d4cd3f30df88b6e7ba"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:54:17.960Z"
 }
