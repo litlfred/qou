@@ -2482,7 +2482,89 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "51473ed85d2d",
+          "ts": "17ffb3a54f26",
+          "lean": "3e1058b54015"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Item 4 'Chirality interface (archimedean realisation)' is interpretive physical description (spacetime/gauge-fibre split, Reeb orientation reversal) embedded in a proposition statement; belongs in a remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:30:57.447Z",
+        "reviewed_sha": "e928740d2d4969aa94a978146067554a07977512"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "51473ed85d2d",
+          "ts": "17ffb3a54f26",
+          "lean": "3e1058b54015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:31:13.893Z",
+        "reviewed_sha": "e928740d2d4969aa94a978146067554a07977512"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "51473ed85d2d",
+          "ts": "17ffb3a54f26",
+          "lean": "3e1058b54015"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Item 4 labels itself 'archimedean realisation' and discusses base manifold M, gauge fibre, Reeb involution — archimedean content embedded in a categorical proposition statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:31:13.927Z",
+        "reviewed_sha": "e928740d2d4969aa94a978146067554a07977512"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "51473ed85d2d",
+          "ts": "17ffb3a54f26",
+          "lean": "3e1058b54015"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Proof item (4) (lines 32-41 of proof .md) is archimedean-only: spacetime coordinates, Reeb vector field, left/right-handed fermions — no categorical argument given.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:31:13.960Z",
+        "reviewed_sha": "e928740d2d4969aa94a978146067554a07977512"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T22:31:13.960Z"
 }
