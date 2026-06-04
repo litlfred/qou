@@ -103,7 +103,10 @@ def hoefsmit_sigmas_n3_sympy(p, q):
         b = sp.sqrt(b_sq)
         sigma_2 = sp.Matrix([[a, b], [b, a_prime]])
         return [sigma_1, sigma_2]
-    raise ValueError(p)
+    raise ValueError(
+        f"hoefsmit_sigmas_n3_sympy: unsupported partition {p!r}; "
+        f"supported set for n=3 is {{(3,), (2,1), (1,1,1)}}."
+    )
 
 
 def main() -> int:
@@ -171,7 +174,9 @@ def main() -> int:
     print(f"      not in pyhecke (sign convention on σ generator).")
     print()
 
-    all_stable = False  # cannot evaluate
+    # Stage B test cannot run (blocked) — record the gate outcome
+    # explicitly in the witness rather than tracking an unused local.
+    stage_b_test_ran = False
 
     print("=" * 78)
     print(" STATUS")
@@ -219,6 +224,7 @@ def main() -> int:
     builder.add_data("verdict", {
         "stage_b_status": "BLOCKED — operator-level cross-anchor test "
                            "cannot run in this environment",
+        "stage_b_test_ran": stage_b_test_ran,
         "next_session_unblock_paths": "A/B/C above",
     })
 
