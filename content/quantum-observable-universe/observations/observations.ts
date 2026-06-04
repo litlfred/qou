@@ -411,6 +411,7 @@ export default chapter({
         "non-comm-probability-intro",
         "algebraic-gns-embedding",
         "algebraic-gns-embedding-proof",
+        "algebraic-gns-embedding-cfs-consequence",
         "non-commutative-probability-dictionary",
         "non-commutative-probability-dictionary-table-data",
         "q-plancherel-asymptotic-skeleton",
