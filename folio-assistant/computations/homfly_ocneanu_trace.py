@@ -46,12 +46,12 @@ has none — the held-out predictions are forced.
 
 ## Scope
 
-Implemented and validated for n = 2, 3, 4, 5. n = 3 covers the
-proton/neutron `(σ₁σ₂⁻¹)³` braids; n = 4, 5 cover the larger-nucleus
-braids of the exploratory mass tower. n ≥ 6 raises NotImplementedError
+Implemented and validated for n = 2..7. n = 3 covers the proton/neutron
+`(σ₁σ₂⁻¹)³` braids; n = 4..7 cover the larger-nucleus braids of the
+exploratory mass tower (⁴He … ⁷Li). n ≥ 8 raises NotImplementedError
 with the spanning-set recipe in the message; extending is mechanical
-(add a spanning set + held-out knots, the module self-validates on
-import via `_weights`).
+(add `floor(n/2)+1` spanning braids + held-out knots over the parts-≤2
+partitions, the module self-validates on import via `_weights`).
 
 The n ≥ 4 weights show the same structure observed at n = 3: the
 fully-symmetric and other ≤ 2-row partition weights are 0 (to working dps),
@@ -140,10 +140,17 @@ def _fig8_unframed(a, z):
 #   (M)  Markov stab.:   appending σ_{n-1} once leaves the closure (and
 #                        hence the unframed HOMFLY) unchanged, so an
 #                        (n−1)-strand reference lifts to n strands.
-# The figure-8 polynomial fig8 = a² + a⁻² − 1 − z² is the one non-torus
-# seed (used at n ≥ 5 to span the extra partitions). Each spanning set is
-# chosen for good conditioning (det of the character matrix ≫ 0): n=4
-# det ≈ 1205, n=5 det ≈ 8.95. Held-out validation lives in `_weights`.
+# Each split braid places torus pieces on the disjoint generator pairs
+# (σ₁↔strands 1,2), (σ₃↔3,4), (σ₅↔5,6), … with spare strands as unknots.
+#
+# SU(2) Ocneanu support (the key structural fact, observed at every n and
+# verified by held-out validation): the weight w_λ is NONZERO only for
+# partitions λ all of whose parts are ≤ 2 (equivalently λ has ≤ 2 columns
+# — the support of the 2-dimensional fundamental in its tensor powers).
+# So `_weights` restricts the solve to those `floor(n/2)+1` partitions and
+# sets the rest to 0; each spanning set below therefore has exactly
+# `floor(n/2)+1` braids. Sets are chosen for good conditioning (det of the
+# restricted character matrix ≫ 0). Held-out validation lives in `_weights`.
 def _spanning_sets(a, z):
     delta = (1 / a - a) / z
     one = mp.mpf(1)
@@ -154,33 +161,36 @@ def _spanning_sets(a, z):
     def split(*pieces):
         return _split_union(delta, *pieces)
 
-    fig8 = _fig8_unframed(a, z)                          # figure-8 (4₁)
-
     return {
         2: [
-            ([1], lambda: one),                             # unknot
-            ([1, 1], lambda: T(2)),                         # Hopf
+            ([1], lambda: one),                              # unknot
+            ([1, 1], lambda: T(2)),                          # Hopf
         ],
         3: [
-            ([1, 2], lambda: one),                          # unknot
-            ([1, 1, 2], lambda: T(2)),                      # Hopf (Markov-stab)
-            ([1, 1, 1], lambda: split(T(3), one)),          # trefoil ⊔ unknot
+            ([1, 1, 2], lambda: T(2)),                       # Hopf (Markov-stab)
+            ([1, 1, 1], lambda: split(T(3), one)),           # trefoil ⊔ unknot
         ],
         4: [
-            ([1, 1, 1, 1], lambda: split(T(4), one, one)),  # T(2,4) ⊔ 2 unknots
-            ([1, 1, 1, 3, 3], lambda: split(T(3), T(2))),   # trefoil ⊔ Hopf
-            ([1, 1, 1, 2, 3], lambda: T(3)),                # trefoil (Markov-stab)
-            ([1, 1, 1, 1, 2, 3], lambda: T(4)),             # T(2,4) (Markov-stab)
-            ([1, 1, 1, 3], lambda: split(T(3), one)),       # trefoil ⊔ unknot
+            ([1, 1, 1, 1], lambda: split(T(4), one, one)),   # T(2,4) ⊔ 2 unknots
+            ([1, 1, 1, 3, 3], lambda: split(T(3), T(2))),    # trefoil ⊔ Hopf
+            ([1, 1, 1, 2, 3], lambda: T(3)),                 # trefoil (Markov-stab)
         ],
         5: [
-            ([1, 1, 1, 1, 1], lambda: split(T(5), one, one, one)),   # T(2,5) ⊔ 3 unknots
-            ([1, 1, 1, 3, 3, 3], lambda: split(T(3), T(3), one)),    # trefoil ⊔ trefoil ⊔ unknot
-            ([1, -2, 1, -2, 3, 4], lambda: fig8),                    # figure-8 (Markov-stab ×2)
-            ([1, 1, 2, 3, 4], lambda: T(2)),                         # Hopf (Markov-stab)
-            ([1, 1, 1, 2, 3, 4], lambda: T(3)),                      # trefoil (Markov-stab)
-            ([1, -2, 1, -2, 3], lambda: split(fig8, one)),           # figure-8 ⊔ unknot
-            ([1, 1, 1, 1, 3, 3], lambda: split(T(4), T(2), one)),    # T(2,4) ⊔ Hopf ⊔ unknot
+            ([1, 1, 1, 1, 1], lambda: split(T(5), one, one, one)),     # T(2,5) ⊔ 3 unknots
+            ([1, 1, 1, 3, 3, 3], lambda: split(T(3), T(3), one)),      # trefoil ⊔ trefoil ⊔ unknot
+            ([1, 1, 2, 3, 4], lambda: T(2)),                           # Hopf (Markov-stab)
+        ],
+        6: [
+            ([1, 1, 1, 1, 1, 1], lambda: split(T(6), one, one, one, one)),  # T(2,6) ⊔ 4 unknots
+            ([1, 1, 1, 3, 3, 3], lambda: split(T(3), T(3), one, one)),      # trefoil ⊔ trefoil ⊔ 2 unknots
+            ([1, 1, 3, 3, 5, 5], lambda: split(T(2), T(2), T(2))),          # Hopf ⊔ Hopf ⊔ Hopf
+            ([1, 1, 1, 3, 3, 5, 5], lambda: split(T(3), T(2), T(2))),       # trefoil ⊔ Hopf ⊔ Hopf
+        ],
+        7: [
+            ([1, 1, 1, 1, 1, 1, 1], lambda: split(T(7), one, one, one, one, one)),  # T(2,7) ⊔ 5 unknots
+            ([1, 1, 1, 3, 3, 3], lambda: split(T(3), T(3), one, one, one)),         # trefoil ⊔ trefoil ⊔ 3 unknots
+            ([1, 1, 1, 3, 3, 3, 5, 5], lambda: split(T(3), T(3), T(2), one)),       # trefoil ⊔ trefoil ⊔ Hopf ⊔ unknot
+            ([1, 1, 3, 3, 5, 5], lambda: split(T(2), T(2), T(2), one)),             # Hopf ⊔ Hopf ⊔ Hopf ⊔ unknot
         ],
     }
 
@@ -200,10 +210,15 @@ def _weights(n, s_str):
     if n not in sets:
         raise NotImplementedError(
             f"HOMFLY Ocneanu weights not yet wired for n={n}. Recipe: provide "
-            f"len(partitions_of({n})) spanning braids with independently-known "
-            f"unframed HOMFLY (torus + disjoint-union family), solve the linear "
-            f"system, and the module self-validates. Implemented: n∈{{2,3,4,5}}.")
-    parts = [tuple(p) for p in partitions_of(n)]
+            f"floor(n/2)+1 spanning braids with independently-known unframed "
+            f"HOMFLY (torus + disjoint-union family) for the parts-≤2 partitions, "
+            f"solve the linear system, and the module self-validates. "
+            f"Implemented: n∈{{2,3,4,5,6,7}}.")
+    # SU(2) Ocneanu support: only partitions whose parts are all ≤ 2 carry a
+    # nonzero weight (see `_spanning_sets`). Restrict the solve to those; the
+    # rest are 0 and omitted from the returned dict. Held-out validation
+    # confirms the restriction is exact.
+    parts = [tuple(p) for p in partitions_of(n) if max(p) <= 2]
     spanning = sets[n]
     assert len(spanning) == len(parts), f"need {len(parts)} spanning braids for n={n}"
     M = mp.matrix(len(parts), len(parts))
@@ -245,6 +260,17 @@ def _weights(n, s_str):
             ([1, 1, 1], lambda: _split(_torus_unframed(3, a, z), one, one, one)),  # trefoil ⊔ 3 unknots
             ([1, 1, 1, 3, 3], lambda: _split(_torus_unframed(3, a, z),
                                              _torus_unframed(2, a, z), one))],   # trefoil ⊔ Hopf ⊔ unknot
+        6: [([1, 2, 3, 4, 5], lambda: one),                                    # unknot
+            ([1, 1], lambda: _split(_torus_unframed(2, a, z), one, one, one, one)),   # Hopf ⊔ 4 unknots
+            ([1, 1, 1], lambda: _split(_torus_unframed(3, a, z), one, one, one, one)),  # trefoil ⊔ 4 unknots
+            ([1, -2, 1, -2, 3, 4], lambda: _split(fig8, one)),                 # figure-8 (Markov-stab) ⊔ unknot
+            ([1, 1, 1, 1, 3, 3], lambda: _split(_torus_unframed(4, a, z),
+                                                _torus_unframed(2, a, z), one, one))],  # T(2,4) ⊔ Hopf ⊔ 2 unknots
+        7: [([1, 2, 3, 4, 5, 6], lambda: one),                                # unknot
+            ([1, 1], lambda: _split(_torus_unframed(2, a, z), one, one, one, one, one)),   # Hopf ⊔ 5 unknots
+            ([1, 1, 1], lambda: _split(_torus_unframed(3, a, z), one, one, one, one, one)),  # trefoil ⊔ 5 unknots
+            ([1, 1, 3, 3], lambda: _split(_torus_unframed(2, a, z),
+                                          _torus_unframed(2, a, z), one, one, one))],  # Hopf ⊔ Hopf ⊔ 3 unknots
     }
     for word, ref_fn in holdout.get(n, []):
         e = _writhe(word)
