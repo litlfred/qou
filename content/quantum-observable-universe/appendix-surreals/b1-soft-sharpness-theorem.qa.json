@@ -2530,7 +2530,107 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "429f471be927",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "evidence": "b1-soft-sharpness-theorem.md — statement block for a proposition. The document contains '### Soft sharpness — full proof', '### What this gives QOU', '### What soft sharpness does NOT give', '### Significance' sections. However these are legitimate proof content and scope-clarification sections for a mathematical proposition — not interpretation of a separate claim. The 'What this gives QOU' and 'Significance' sections directly characterize the mathematical result's scope, which is standard for propositions in this style. No separate remark block is warranted here since the content is intrinsic to the proof.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:49:10.747Z",
+        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "429f471be927",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "evidence": "b1-soft-sharpness-theorem.md — proposition on soft sharpness of keystone B1 via Borel+polylog non-vanishing. Placed in sec:surreal-survives-breaks. Topic (theorem-level discharge of a B1 keystone component) and kind (proposition) fit the section on what survives the surreal lift.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:49:10.785Z",
+        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "429f471be927",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "evidence": "b1-soft-sharpness-theorem.md — statement uses algebraic period filtration (P_n/P_{n-1}), Borel regulator, polylog non-vanishing at algebraic points. The block does not specialize to a fixed real q_0 value; q is treated symbolically through the Archimedean realization tau_arch. Wall placement is algebraic/generic as appropriate for this appendix.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:49:10.824Z",
+        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "429f471be927",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "evidence": "b1-soft-sharpness-theorem.md proof — uses Borel 1977 Theorem 12.3 (regulator injective), Lewin 1991 polylog non-vanishing D_n(z)≠0. These are algebraic-number-theory results, not archimedean linarith/IVT/continuity arguments. No archimedean-wall violations detected.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:49:10.865Z",
+        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "429f471be927",
+          "ts": "469b6420a8e3",
+          "lean": "1e139a26927b"
+        },
+        "result": "pass",
+        "evidence": "b1-soft-sharpness-theorem.ts uses:[prop:depth-2-identification-bloch-suslin]. In chapter ordering, depth-2-identification-bloch-suslin appears earlier in the same section sec:surreal-survives-breaks. No forward reference.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:49:10.903Z",
+        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T13:49:10.903Z"
 }
