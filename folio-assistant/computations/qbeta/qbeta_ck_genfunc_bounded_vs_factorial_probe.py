@@ -90,7 +90,6 @@ def ladder_c_k_from_function(F_series, u, kmax):
     # Simpler: iterative — c_k = [u^k]logF - [u^k](Σ_{j<k} log(1+c_j u^j))
     known_log = sp.Integer(0)
     for k in range(1, kmax + 1):
-        ck_sym = sp.Symbol(f"c_{k}")
         target = logF.coeff(u, k)
         # contribution to [u^k] from already-known lower terms
         lower = sp.series(known_log, u, 0, kmax + 1).removeO().coeff(u, k)
@@ -138,7 +137,6 @@ def main() -> int:
         # (1 - u²) · cos(u-shift) families
         "cos(√2·u)":              sp.cos(sp.sqrt(2) * u),
         "1 - u²  (pure N=2)":     1 - u ** 2,
-        "(1-u²)·cos(√2·u³^{1/2})": (1 - u ** 2),  # placeholder same as above
         "cosh ratio cosh(u)/cosh(√3 u)": sp.cosh(u) / sp.cosh(sp.sqrt(3) * u),
         "exp(-u²/(1-u))":         sp.exp(-u ** 2 / (1 - u)),
         "exp(-u² - 2u³)":         sp.exp(-u ** 2 - 2 * u ** 3),
@@ -178,13 +176,28 @@ def main() -> int:
     # ---- B. SDP high-k blowup is u^k-division ill-conditioning ----
     print("  B. SDP high-k blowup = u^k-division ill-conditioning (NOT true growth):")
     wp = HERE / "qbeta-decay-sdp-extended-ck.witness.json"
+    if not wp.exists():
+        raise SystemExit(
+            f"ERROR: required upstream witness not found at {wp}.\n"
+            "This probe consumes the SDP-extracted c_k from "
+            "qbeta-decay-sdp-extended-ck.witness.json (committed on "
+            "main, produced by qbeta_decay_sdp_extended_ck.py). Run "
+            "that producer first, or check out a tree where the "
+            "witness is present."
+        )
     with open(wp, encoding="utf-8") as f:
         ck_sdp = json.load(f)["data"]["c_k_extracted_50dps"]
+    # Normalize keys to int k and iterate in numeric order (determinism
+    # of logs + witness diffs; per Copilot review on PR #1835).
+    ck_sdp_sorted = sorted(
+        ((int(ks.replace("c_", "")) if ks.startswith("c_") else int(ks), vs)
+         for ks, vs in ck_sdp.items()),
+        key=lambda kv: kv[0],
+    )
     print(f"  {'k':>3} {'c_k^SDP':>16} {'c_k^SDP · u^k (residual)':>26}")
     print(f"  {'-'*3} {'-'*16} {'-'*26}")
     residuals = {}
-    for ks, vs in ck_sdp.items():
-        k = int(ks.replace("c_", "")) if ks.startswith("c_") else int(ks)
+    for k, vs in ck_sdp_sorted:
         v = mp.mpf(vs)
         resid = v * U0 ** k
         residuals[k] = resid

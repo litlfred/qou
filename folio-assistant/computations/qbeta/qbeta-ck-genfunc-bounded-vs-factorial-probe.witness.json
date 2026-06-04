@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T14:26:13.453988+00:00",
-  "commitSha": "90245be2a1f516316d58240d79ea0078907253a2",
+  "computedAt": "2026-06-04T14:30:10.781071+00:00",
+  "commitSha": "375f6cad408488fcfd9594b65861eccc919d41cb",
   "assertions": [
     {
       "name": "sdp_residuals_bounded_blowup_is_extraction_artifact",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 768,
+  "durationMs": 742,
   "computation": "qbeta-ck-genfunc-bounded-vs-factorial-probe",
   "scriptFile": "qbeta_ck_genfunc_bounded_vs_factorial_probe.py",
-  "scriptHash": "c042af50db2c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5b4dcb362ad0",
+  "scriptCommitSha": "375f6cad408488fcfd9594b65861eccc919d41cb",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -42,13 +42,6 @@
         "0.15555555555555556"
       ],
       "1 - u²  (pure N=2)": [
-        "-1.0",
-        "0.0",
-        "0.0",
-        "0.0",
-        "0.0"
-      ],
-      "(1-u²)·cos(√2·u³^{1/2})": [
         "-1.0",
         "0.0",
         "0.0",
