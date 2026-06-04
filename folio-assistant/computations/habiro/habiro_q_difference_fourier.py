@@ -147,8 +147,10 @@ def main() -> int:
     n_atom = wit["results"]["n (neutron, A=1)"]
     M = max(int(c["m"]) for c in p_atom["habiro_coefficients"])
 
-    u = sp.Symbol("u")  # Habiro half-twist u = q^{1/2} (NOT ladder b·ℏ²;
-    #                     see notation-collisions.md §u registration)
+    u = sp.Symbol("u")  # Spinor rate \check{q} = q^{1/2} (Habiro-
+    #                     literature name "u" kept as sympy Symbol;
+    #                     NOT ladder u_ladder = b·ℏ². See
+    #                     notation-collisions.md §\check{q}.)
     trM_p = habiro_trM_symbolic(p_atom, u)
     trM_n = habiro_trM_symbolic(n_atom, u)
     dtrM = sp.cancel(trM_n - trM_p)

@@ -55,7 +55,8 @@ def q_integer(k, q):
 
 
 def eval_a_m(expr_str, u_val):
-    """Evaluate a Habiro coefficient polynomial at u = u_val."""
+    """Evaluate a Habiro coefficient polynomial at u = u_val
+    (u = \check{q} = q^{1/2}, spinor rate; "u" name per Habiro lit)."""
     ns = {"u": u_val, "__builtins__": {}}
     return mp.mpf(eval(expr_str, ns))
 

@@ -52,8 +52,9 @@ fit; characterization of the α_EM Habiro element's q-difference
 structure. The α_EM next-order DERIVED FORM is still open (per the
 alpha-em ledger); this probe sharpens its modular target, it does not
 close it. NOTE on h: here h = q−q⁻¹ is the α_EM Taylor basis (the
-Hecke differential), distinct from both Habiro u=q^{1/2} and ladder
-u_ladder=b·ℏ² (notation-collisions.md).
+Hecke differential), distinct from both the spinor rate
+\check{q}=q^{1/2} (= Habiro "u" in the literature) and the ladder
+u_ladder=b·ℏ² (notation-collisions.md §\check{q}, §u).
 """
 from __future__ import annotations
 

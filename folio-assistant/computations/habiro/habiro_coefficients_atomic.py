@@ -265,7 +265,7 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
           f"denom (in u) = {denom}")
     print(f"     deg p(u) = {deg_p}")
     coeffs = cyclotomic_expansion(p_u, u, max_m=20)
-    print(f"  Habiro coefficients (in u = q^{{1/2}}):")
+    print(f"  Habiro coefficients (in u = q^{{1/2}} = \\check{{q}}, spinor rate):")
     for entry in coeffs:
         flag = "✓" if entry["integral"] else "✗"
         print(f"    a_{entry['m']}(u) = {entry['a_m']}    "

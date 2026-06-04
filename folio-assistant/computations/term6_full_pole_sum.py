@@ -176,7 +176,9 @@ def mittag_leffler_term6(
     Returns (total_term6_real, per_n_breakdown).
 
     `sqrt_sub_fallback`, if provided, is a `(p_in_u, denom_in_u, u_sym)`
-    triple in the Hecke parameter `u = sqrt(q)`.  Whenever the
+    triple in the Hecke parameter `u = sqrt(q)` (= spinor rate
+    \check{q}; "u" kept as Python ident per Habiro literature).
+    Whenever the
     simple-pole l'Hôpital path returns `sp.oo` (higher-order pole),
     the q-residue is recovered numerically via
     `_higher_order_q_residue_via_sqrt_sub` instead of being silently
