@@ -1819,7 +1819,45 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e8f0bee5eb75",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "evidence": "simulator for knot-centric periodic table; placed last in sec:knot-centric-table of app:knot-periodic-table — appropriate position after data tables",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:05:03.116Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "e8f0bee5eb75",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "evidence": "uses: [prop:shell-structure-eigenvalues, prop:knot-particle-correspondence] — cross-chapter refs; no forward refs within appendix-knot-periodic-table chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:05:03.157Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-04T14:05:03.157Z"
 }
