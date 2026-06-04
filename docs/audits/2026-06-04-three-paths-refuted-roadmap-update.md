@@ -32,7 +32,7 @@ Under Path D (the canonical T6-unit choice declared in PR #564), the binding-ene
 | Q2 | Demazure-fibre `y_λ·D_w/D_w₀` | (sibling e77a4b4d) | **failed** — tautological (reproduces M_LO) |
 | Q2 | LP-Plancherel / LP-Frobenius shadow prices | [#603](https://github.com/litlfred/qou/pull/603) | **shifts** underdetermination from value to cost |
 | Q2 | Occam single-support | (legacy) | **arbitrary** singleton picking |
-| Q2 | Wenzl-bridge augmented Markov | (in flight) | closure-pickle bug; abandoned |
+| Q2 | Wenzl-bridge augmented Markov | (in flight) | **failed at first attempt** — a serialization error (Python `pickle` could not round-trip the augmented Markov closure object across the symbolic / numeric boundary), which blocked the closure from being checked; the ansatz was abandoned rather than re-engineered because the parallel candidates (E1-E5, Frobenius, Demazure, LP) already covered the no-fit family |
 | Q2 | **Kashiwara crystal (Option E)** — five no-fit candidates E1-E5 | **#1860** | **REFUTED** (all 5: Macdonald `n(λ)`, conjugate `n(λ')`, dim ratio at q₀, constant-zero control, ordinary dim `f^λ`) |
 
 That's **2 structural axes refuted for Q1** + **7 for Q2** = 9 total no-fit closure attempts, all closed.
