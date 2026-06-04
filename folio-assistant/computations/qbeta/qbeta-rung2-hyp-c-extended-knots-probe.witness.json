@@ -1,24 +1,24 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T12:39:13.622401+00:00",
-  "commitSha": "2e7dbb01b5ae58c1b683881bc99115e10f16b317",
+  "computedAt": "2026-06-04T12:44:18.171657+00:00",
+  "commitSha": "bc5f2b49a2a5db8d5a80aee97669c40e4fc8708a",
   "assertions": [
     {
-      "name": "hypC_definitively_resolved_extended_set",
+      "name": "trefoil_cubic_taylor_equals_9",
       "computed": 1,
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "Probe computes V(K) Taylor at q=1 for 8 natural knots (T(2,n), n=3,5,7,9,11; twist knots 4_1, 6_1, 6_2) plus unknot sanity. Reports CONFIRMED or REFUTED per knot. Sanity assertion: at least one knot was evaluated (probe ran end-to-end)."
+      "source": "Concrete mathematical-correctness check: the right-handed trefoil 3_1 (= T(2,3)) Jones polynomial has cubic Taylor coefficient = 9 at q=1, a known value consistent with PR #1806's Hyp-C probe result. Confirms the probe's Jones polynomials are correctly encoded and Taylor extraction is correct, beyond merely 'the probe ran'."
     }
   ],
   "allPassed": true,
-  "durationMs": 356,
+  "durationMs": 365,
   "computation": "qbeta-rung2-hyp-c-extended-knots-probe",
   "scriptFile": "qbeta_rung2_hypC_extended_knots_probe.py",
-  "scriptHash": "089d3aab6b7b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5360d2e94e16",
+  "scriptCommitSha": "bc5f2b49a2a5db8d5a80aee97669c40e4fc8708a",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
