@@ -1234,12 +1234,38 @@ export function checkDetanglerSectionBand(
 // flag them as missing. A follow-up commit will wire them.
 
 export function checkDetanglerNoForwardRef(
-  _tsPath: string | undefined,
+  tsPath: string | undefined,
 ): CheckerResult {
-  // TODO: parse the chapter .ts to get the block ordering; for each
-  // `uses:` target, verify it appears earlier in the same chapter's
-  // `sections[].blocks[]` array. Returns n/a until wired.
-  return { result: "n/a", hits: [] };
+  if (!tsPath || !existsSync(tsPath)) return { result: "pass", hits: [] };
+  loadChapterGraph();
+  if (!_graphLoaded || !_blockPos || !_usesGraph || !_labelToChapter)
+    return { result: "n/a", hits: [] };
+
+  const content = readFileSync(tsPath, "utf-8");
+  const labelMatch = content.match(/label:\s*"([^"]+)"/);
+  if (!labelMatch) return { result: "pass", hits: [] };
+  const label = labelMatch[1];
+  const myPos = _blockPos.get(label);
+  if (myPos === undefined) return { result: "pass", hits: [] }; // not listed
+  const myChapter = _labelToChapter.get(label);
+
+  const hits: CheckerHit[] = [];
+  for (const u of _usesGraph.get(label) ?? []) {
+    // Only SAME-chapter forward refs here; cross-chapter is the
+    // separate `detangler-no-xchapter-fwd` criterion.
+    if (_labelToChapter.get(u) !== myChapter) continue;
+    const uPos = _blockPos.get(u);
+    if (uPos !== undefined && uPos > myPos) {
+      hits.push({
+        file: tsPath,
+        line: 0,
+        text: `forward ref: uses ${u} (manifest pos ${uPos % 1_000_000}) which appears after this block (pos ${myPos % 1_000_000}) in the chapter`,
+      });
+    }
+  }
+  return hits.length
+    ? { result: "fail", hits }
+    : { result: "pass", hits: [] };
 }
 
 export function checkDetanglerNoXChapterFwd(
@@ -1272,6 +1298,10 @@ let _usesGraph: Map<string, string[]> | null = null;
 // path through it (only present for labels that sit on a cycle), so
 // the per-block cycle check is an O(1) lookup, not a per-call DFS.
 let _inCyclePath: Map<string, string[]> | null = null;
+// block label -> global manifest position (chapterIndex*1e6 + index
+// within the chapter's ordered sections[].blocks[]). Drives the
+// same-chapter forward-ref check.
+let _blockPos: Map<string, number> | null = null;
 // Set true only after a *successful* graph build. Checkers gate on
 // this (not on map nullability) so a missing paper manifest yields
 // `n/a` rather than a false "everything passes".
@@ -1292,8 +1322,11 @@ function loadChapterGraph(): void {
   const dirs = [...src.matchAll(/dir:\s*"([^"]+)"/g)].map(m => m[1]);
   dirs.forEach((d, i) => chapterOrder.set(d, i));
 
-  // Build label→chapter + uses[] adjacency by scanning all block .ts.
+  // Build label→chapter + uses[] adjacency + slug→label by scanning
+  // all block .ts. (slug = filename without .ts; the chapter manifests
+  // order blocks by slug, while uses[] reference labels.)
   const base = join(CONTENT_DIR, "quantum-observable-universe");
+  const slugToLabel = new Map<string, string>();
   for (const dir of dirs) {
     const chDir = join(base, dir);
     if (!existsSync(chDir)) continue;
@@ -1305,6 +1338,7 @@ function loadChapterGraph(): void {
         const m = content.match(/label:\s*"([^"]+)"/);
         if (m) {
           labelToChapter.set(m[1], dir);
+          slugToLabel.set(f.slice(0, -3), m[1]);
           // Record the block's `uses:[...]` dependency edges (only the
           // uses array — NOT cites/interprets/own-label) for cycle
           // detection.
@@ -1317,6 +1351,23 @@ function loadChapterGraph(): void {
       }
     } catch {}
   }
+
+  // Build label→position from each chapter manifest's ordered
+  // `sections[].blocks[]` slug lists.
+  const blockPos = new Map<string, number>();
+  dirs.forEach((dir, ci) => {
+    const manifestPath = join(base, dir, `${dir}.ts`);
+    if (!existsSync(manifestPath)) return;
+    const mc = readFileSync(manifestPath, "utf-8");
+    let within = 0;
+    for (const bm of mc.matchAll(/blocks\s*:\s*\[([\s\S]*?)\]/g)) {
+      for (const sm of bm[1].matchAll(/"([^"]+)"/g)) {
+        const lbl = slugToLabel.get(sm[1]);
+        if (lbl && !blockPos.has(lbl)) blockPos.set(lbl, ci * 1_000_000 + within);
+        within++;
+      }
+    }
+  });
 
   // Precompute uses[]-cycle membership ONCE: for each label on a
   // dependency cycle, store an example back-to-self path. Per-block
@@ -1346,6 +1397,7 @@ function loadChapterGraph(): void {
   _labelToChapter = labelToChapter;
   _usesGraph = usesGraph;
   _inCyclePath = inCyclePath;
+  _blockPos = blockPos;
   _graphLoaded = true;
 }
 
