@@ -1,16 +1,16 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T00:09:25.783341+00:00",
-  "commitSha": "77ed639af0abacbabd07f11d704175f6bc516a60",
+  "computedAt": "2026-06-04T00:15:57.811637+00:00",
+  "commitSha": "4a6d05a27851295c04a40d0f24b226dd7ee9ad63",
   "assertions": [
     {
       "name": "N2_factor_equals_one_minus_u_squared",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 1e-20,
-      "source": "Structural: the N=2 ladder factor (1 - b²·ℏ_q⁴) IS literally (1 - u²) with u = b·ℏ_q². Therefore c_2 = -1 is not a fit; it is the (1 + c_2·u²) coefficient of the categorical N=2 correction. Symbolic sympy verification."
+      "tolerance": 0,
+      "source": "Structural: the N=2 ladder factor (1 - b²·ℏ_q⁴) IS literally (1 - u²) with u = b·ℏ_q². Therefore c_2 = -1 is not a fit; it is the (1 + c_2·u²) coefficient of the categorical N=2 correction. Boolean predicate: 1 iff sympy.simplify of the difference equals 0 (exact symbolic identity); expected = 1, tolerance = 0. The mpmath 50-dps value of the difference is recorded as data for inspection."
     },
     {
       "name": "alpha_q0_matches_probe_n3_witness",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 286,
+  "durationMs": 270,
   "computation": "qbeta-symbolic-chain-alpha-b",
   "scriptFile": "qbeta_symbolic_chain_alpha_b.py",
-  "scriptHash": "8d1954ac0c7b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "54b2229c8a4d",
+  "scriptCommitSha": "4a6d05a27851295c04a40d0f24b226dd7ee9ad63",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -67,6 +67,7 @@
       "eps_N1_ppm": "78.1863",
       "eps_N2_ppm": "5.63736",
       "residual_after_N2": "-5.63733076571627e-6"
-    }
+    },
+    "N2_factor_minus_1_minus_u_squared_mpmath_50dps": "0.0"
   }
 }

@@ -83,7 +83,16 @@ def solve_depth_d_window(c_k: dict, k_start: int, d: int) -> tuple:
     """Solve for the d-vector kernel (a_0, ..., a_{d-1}) such that
     c_{k+1} = Σ_j a_j · c_{k-j}  for k = k_start, k_start+1, ..., k_start+d-1.
     Returns (kernel, residual) where residual = max abs error of the fit.
+
+    If any required c_k index is missing (non-contiguous data),
+    returns (None, inf) — same failure handling as a singular matrix.
     """
+    # Pre-validate that every c_k index needed for this window is present.
+    needed = {k_start + row + 1 for row in range(d)} | {
+        k_start + row - j for row in range(d) for j in range(d)
+    }
+    if not needed.issubset(c_k.keys()):
+        return None, mp.mpf("inf")
     A = mp.matrix(d, d)
     b = mp.matrix(d, 1)
     for row in range(d):
@@ -212,7 +221,10 @@ def main() -> int:
           f"{mp.nstr(INV_HBAR_Q_SQ, 12)}")
     ratios = {}
     for k in sorted(c_k.keys())[:-1]:
-        if c_k[k] == 0:
+        # Skip if c_k[k] is zero (division-by-zero) OR if c_k[k+1]
+        # is missing (non-contiguous data; future-proofing for
+        # gappy SDP extractions).
+        if c_k[k] == 0 or (k + 1) not in c_k:
             continue
         r = c_k[k + 1] / c_k[k]
         ratios[k] = r
@@ -281,20 +293,25 @@ def main() -> int:
         ],
     })
     # Real invariant: at least one (d, window) succeeded — i.e. the
-    # sweep produced data, not just an empty pipeline.
+    # sweep produced data, not just an empty pipeline.  Boolean
+    # predicate so `|computed - expected| <= tolerance` enforces a
+    # strict lower bound (tolerance = 0).
     total_windows = sum(len(r["kernels"]) for r in results.values())
+    builder.add_data("total_windows_across_all_depths", total_windows)
     builder.add_assertion(
         "depth_sweep_produced_at_least_one_window",
-        computed=total_windows,
-        expected=1,  # ≥ 1 required
-        tolerance=1e9,  # upper bound is harmless; checking lower bound
+        computed=int(total_windows >= 1),
+        expected=1,
+        tolerance=0,
         source=("Sanity invariant: the depth sweep must produce at "
                 "least one fitted window across all depths d ∈ "
-                "{2,3,4,5}. Zero windows = pipeline failure (probe "
-                "produced no data); ≥ 1 = the recursion fit machinery "
-                "actually ran. The per-depth verdicts (HOLDS / "
-                "near-match / REFUTED / INSUFFICIENT_DATA) are "
-                "reported as data, not assertions."),
+                "{2,3,4,5}. computed = 1 iff total_windows ≥ 1; "
+                "expected = 1 with tolerance = 0 enforces a strict "
+                "boolean predicate (no slack). The integer "
+                "total_windows itself is recorded as data. Per-depth "
+                "verdicts (HOLDS / near-match / REFUTED / "
+                "INSUFFICIENT_DATA) are reported as data, not "
+                "assertions."),
     )
 
     builder.save()

@@ -1,24 +1,24 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T00:09:25.063492+00:00",
-  "commitSha": "77ed639af0abacbabd07f11d704175f6bc516a60",
+  "computedAt": "2026-06-04T00:15:57.193558+00:00",
+  "commitSha": "4a6d05a27851295c04a40d0f24b226dd7ee9ad63",
   "assertions": [
     {
       "name": "depth_sweep_produced_at_least_one_window",
-      "computed": 12,
+      "computed": 1,
       "expected": 1,
       "passed": true,
-      "tolerance": 1000000000.0,
-      "source": "Sanity invariant: the depth sweep must produce at least one fitted window across all depths d ∈ {2,3,4,5}. Zero windows = pipeline failure (probe produced no data); ≥ 1 = the recursion fit machinery actually ran. The per-depth verdicts (HOLDS / near-match / REFUTED / INSUFFICIENT_DATA) are reported as data, not assertions."
+      "tolerance": 0,
+      "source": "Sanity invariant: the depth sweep must produce at least one fitted window across all depths d ∈ {2,3,4,5}. computed = 1 iff total_windows ≥ 1; expected = 1 with tolerance = 0 enforces a strict boolean predicate (no slack). The integer total_windows itself is recorded as data. Per-depth verdicts (HOLDS / near-match / REFUTED / INSUFFICIENT_DATA) are reported as data, not assertions."
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 15,
   "computation": "qbeta-c-k-recursion-depth-sweep",
   "scriptFile": "qbeta_c_k_recursion_depth_sweep.py",
-  "scriptHash": "41868af347d0",
-  "scriptCommitSha": "77ed639af0abacbabd07f11d704175f6bc516a60",
+  "scriptHash": "ac2002f19304",
+  "scriptCommitSha": "b123d2d91d4711eaf528ba6aa10526c06d648e93",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -156,6 +156,7 @@
       "insufficient_data_depths": [
         5
       ]
-    }
+    },
+    "total_windows_across_all_depths": 12
   }
 }
