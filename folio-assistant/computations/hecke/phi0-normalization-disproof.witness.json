@@ -1,0 +1,48 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-04T10:53:44.443256+00:00",
+  "commitSha": "1844fc0bc368d8d384b632c130bf691bab5c1599",
+  "assertions": [
+    {
+      "name": "phi0_normalization_not_constant_across_orders",
+      "computed": 71.91752577319588,
+      "expected": 71.91752577319588,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "|N_h2 − N_h4| (large ⇒ −64 is h²-only, not structural)",
+      "source": "N_h2 = alg_h2/κ = −64 ; N_h4 = alg_h4/κ₄ = +7.92 ; differ ⇒ no Φ₀"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "phi0-normalization-disproof",
+  "scriptFile": "phi0_normalization_disproof.py",
+  "scriptHash": "0c500e16b642",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.5",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "NEGATIVE: the Φ₀ '−64 normalization' relating the Q₈ crossed-module multiplicative-integral trace to the Borromean Markov trace is an h²-only coincidence. A constant N would give alg_h2/κ = alg_h4/κ₄; instead N_h2 = −64 but N_h4 = +7.92. No constant normalization exists. Disproves Link 4 of the algebraic→geometric→boundary chain. The proved facts (alg_h2 = −12, κ = 3/16) are unaffected but are NOT connected by a Φ₀ feedback map.",
+  "contentBlock": "rem:geom-bridge-status",
+  "parameters": {
+    "alg_h2_trace": "-12.0",
+    "alg_h4_trace": "-6.0",
+    "markov_kappa_h2": "0.1875",
+    "markov_kappa_h4": "-0.7578125",
+    "N_at_h2": "-64.0",
+    "N_at_h4": "7.9175257732",
+    "constant_N_exists": "False"
+  }
+}
