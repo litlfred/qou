@@ -1,10 +1,42 @@
 # Habiro per-knot λ(K) — step 1 results (the §6.8 experiment)
 
-**Date:** 2026-06-03
+**Date:** 2026-06-03 (last update 2026-06-04)
 **Branch:** `claude/habiro-per-knot-lambda-derivation-2026-06-03`
 **Probe:** [`folio-assistant/computations/probes/per_knot_lambda_habiro_probe.py`](../../folio-assistant/computations/probes/per_knot_lambda_habiro_probe.py)
 **Parent:** §6.8 of [`docs/audits/2026-06-03-1ppq-roadmap-reanalysis-and-geom-full-bridge-gap.md`](2026-06-03-1ppq-roadmap-reanalysis-and-geom-full-bridge-gap.md) (PR #1762)
-**Status:** EXPLORATORY. Two rigorous findings + one suggestive numerical lead. No production path touched. No fit.
+**Status:** EXPLORATORY. Two rigorous findings + one suggestive numerical lead (since retracted). No production path touched. No fit.
+
+## Lean-formal coverage (closed-form identities only)
+
+Every closed-form algebraic identity used in this audit doc has a Lean
+proof on this branch. The remaining structural questions (rank = c+1
+mechanism, q-deformation choice in the categorical chain, Lobachevsky
+correction) are not closed-form identities and stay open.
+
+| Claim | Lean proposition | Tactic |
+|---|---|---|
+| `tanh(ln q) = (q² − 1)/(q² + 1)` over ℝ_{>0} | [`prop:coulomb-strong-ratio-q-rational`](../../content/quantum-observable-universe/climax-volume-mass/coulomb-strong-ratio-q-rational.md) | `Real.exp_log` + `field_simp; ring` |
+| `(q − q⁻¹)/(q + q⁻¹) = (q² − 1)/(q² + 1)` (pure algebraic half) | same prop, `qDiffOverSum_eq_qSqDiff_over_qSqSum` | `field_simp; ring` |
+| `lw(1)(q) = 1` ∀q (muon, knot) | [`prop:selection-rule-anchors-c1-c3`](../../content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.md), `selection_rule_c1_eq_one` | `norm_num` |
+| `lw(3)(q) = (3q² + 4 + 3q⁻²)/4` (proton, Borromean q-form) | same prop, `selection_rule_c3_eq_family_a_q_form` | `ring` |
+| `(3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)(q − q⁻¹)²` (Family-A h-form) | same prop, `family_a_q_form_eq_h_form` | `field_simp; ring` |
+| Composite `lw(3) = 5/2 + (3/4)h²` | same prop, `selection_rule_c3_eq_family_a` | composition of the two above |
+| `lw(2)(q) = (q+1)²/(3q)` (Hopf-style prediction) | [`prop:selection-rule-c2-prediction`](../../content/quantum-observable-universe/climax-volume-mass/selection-rule-c2-prediction.md), `selection_rule_c2_eq_closed_form` | `field_simp; ring` |
+
+All proofs sit in `content/quantum-observable-universe/climax-volume-mass/`
+under `qou` Lake package. None require Mathlib representation-theory
+infrastructure — they are pure ring identities over the q-deformed hook
+values, which are stated as their explicit Laurent-polynomial closed forms.
+
+What is **NOT** Lean-formalised (and would need Mathlib infra):
+
+- The general `c ≥ 4` selection rule (needs q-deformed hook-length formula).
+- The classical identity `Σ_{λ ⊢ n} dim V_λ = I(n)` (involution numbers; needs Mathlib symmetric-rep machinery).
+- The Pieri-branching trace `Σ dim · Σ dim = (n+1)!` (needs branching-rule formalisation).
+- Bar-symmetric / antisymmetric decomposition properties (need q-Laurent algebra infra).
+
+So the gap between "exploratory probe" and "Lean-formal" is now sharply
+localised to the non-closed-form structural questions.
 
 ## What this is
 
