@@ -5,6 +5,11 @@ prior scattered c_k / d_k status note (see [§7 Supersession](#7-supersession)).
 When any paper block, compute script, audit doc, or chat reply states a
 c_k / d_k status, it must agree with **this file** or update it.
 
+> **Machine-readable twin.** [`ck-dk-registry.json`](ck-dk-registry.json) mirrors
+> §3/§4/§6 for dashboards; [`ck_dk_registry_validate.py`](ck_dk_registry_validate.py)
+> enforces the §8 flip-flop guard (a wired rung MUST be `canonical`). Keep the
+> JSON in sync with this markdown when a tier changes.
+
 > **Why this exists.** The author has asked 3–4 times to stop the c_k / d_k
 > flip-flop (wired ↔ de-fit ↔ reverted, ≥4 times on c_3 alone) and to track
 > **canonical vs empirical** in one place. The disagreement had two root
@@ -42,11 +47,11 @@ cross-referenced so they are never conflated again.
 
 | symbol | meaning | governed here? | where |
 |---|---|---|---|
-| **c_k** | Q_β β-decay **precision-ladder** coefficients: `Q_β = Q_base·∏_k(1 + c_k·u^k)`, `u = b·ℏ_q²` | **YES** (§3) | `mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md`, `appendix-mass-binding-algorithms/` |
-| `c_k(n)` | exponents in the cyclotomic expansion `F_n(z) = ∏_k(1 − q^{−k}z)^{−c_k(n)}` | no — different object | `braids-and-knots/` |
+| **c_k** | Q_β β-decay **precision-ladder** coefficients: `Q_β = Q_base·∏_k(1 + c_k·u^k)`, `u = b·ℏ_q²` | **YES** (§3) | [`q-beta-c-k-recursion-from-habiro-q-difference.md`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md), [`appendix-mass-binding-algorithms/`](../../content/quantum-observable-universe/appendix-mass-binding-algorithms/) |
+| `c_k(n)` | exponents in the cyclotomic expansion `F_n(z) = ∏_k(1 − q^{−k}z)^{−c_k(n)}` | no — different object | [`braids-and-knots/`](../../content/quantum-observable-universe/braids-and-knots/) |
 | `(c_k, d_k)` | eigenvalue-factor **pair** in `χ_sym(β) = ∏_k(c_k q + d_k)` | no — different object | per-block character blocks |
-| **d_k** | m_p mass **brane-tower** coefficients (mass-side analog of the Q_β ladder) | **YES** (§4) | `2026-05-30-qbeta-ck-mp-dk-deep-audit.md`, mass compute |
-| `d_k` | chain-complex **differential** (`d_{k+1}∘d_k = 0`, d²=0) | no — unrelated homological `d` | confined-knot-binding |
+| **d_k** | m_p mass **brane-tower** coefficients (mass-side analog of the Q_β ladder) | **YES** (§4) | [`2026-05-30-qbeta-ck-mp-dk-deep-audit.md`](../audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md), mass compute |
+| `d_k` | chain-complex **differential** (`d_{k+1}∘d_k = 0`, d²=0) | no — unrelated homological `d` | [`confined-knot-binding.md`](../../content/quantum-observable-universe/mass-theory/confined-knot-binding.md) |
 
 ---
 
@@ -57,8 +62,8 @@ cross-referenced so they are never conflated again.
 | rung | status | form / value | residual @ proton q₀ | anchor-stable? | authoritative producer |
 |---|---|---|---|---|---|
 | **c_2** | **CANONICAL** (proved, Taylor-exact) | `−1` (Kashiwara f̃₁², bar-even) | exact | yes | `q-beta-c-2-eq-neg-one-structural.lean` (PR #1602) |
-| **c_3** | **EMPIRICAL — near-match, REFUTED as real-q fibre element** | candidates `J−ℏ²`, `[3]_q/25` 3-rung | ~2.6–3% (J−ℏ²); 2.65 ppm (`[3]_q/25` at proton **only**) | **NO** — swings −2.88% to muon; `dc_3/dq ≈ 4.6×10⁶` | falsification: `2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md` |
-| **c_4** | **EMPIRICAL — CODATA fit / artifact** | `−0.97157` (CODATA residual); conjecture `c_3·b⁴` | fit (0 by construction) | n/a | `qbeta_1ppq_achieved.py` (flagged normalisation artifact, PR 2026-06-04) |
+| **c_3** | **EMPIRICAL — near-match, REFUTED as real-q fibre element** | candidates `J−ℏ²`, `[3]_q/25` 3-rung | ~2.6–3% (J−ℏ²); 2.65 ppm (`[3]_q/25` at proton **only**) | **NO** — swings −2.88% to muon; `dc_3/dq ≈ 4.6×10⁶` | falsification: [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md) |
+| **c_4** | **EMPIRICAL — CODATA fit / artifact** | `−0.97157` (CODATA residual); conjecture `c_3·b⁴` | fit (0 by construction) | n/a | `qbeta_1ppq_achieved.py` (flagged normalisation artifact, commit `c108fa38`) |
 | **c_5…c_8** | **OPEN** (not derived) | conjectures (`3c_3²+b`, …) | — | — | — |
 | **kernel R(q,ξ)** / **element F(q)** | **OPEN keystone** | structurally constrained, not pinned | — | — | `habiro_ladder_bridge.py` |
 
@@ -136,17 +141,17 @@ per-block-χ recursion; do not conflate it with the c_k ladder recursion.)
 
 ---
 
-## 7. Supersession — these docs now point HERE
+## 7. Supersession
 
 The following are **historical record only** for c_k / d_k status; this
 registry is authoritative. Each should carry a one-line banner → this file.
 
-- `docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md` (body + addendum)
-- `docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`
-- `docs/audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md`
-- `docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`
-- the flip-flop history table in `docs/coordination/1ppq-qbeta.md`
-- CLAUDE.md "c_3 SETTLED" note (the settle drifted again 2026-06-03/04)
+- [`2026-05-30-qbeta-ck-mp-dk-deep-audit.md`](../audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md) (body + addendum)
+- [`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](../audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
+- [`2026-06-03-l2-closure-habiro-3-q-25-universal-template.md`](../audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md)
+- [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md)
+- the flip-flop history table in [`1ppq-qbeta.md`](1ppq-qbeta.md)
+- `CLAUDE.md` "c_3 SETTLED" note (the settle drifted again 2026-06-03/04)
 
 ---
 

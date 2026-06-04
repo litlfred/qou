@@ -2,7 +2,10 @@
 
 **Date:** 2026-06-04
 **PR:** (this branch — `claude/ck-dk-consolidation-2026-06-04`)
-**Status:** PLAN (registry build pending)
+**Status:** DONE — registry delivered in this PR:
+[`docs/coordination/ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md)
+(+ machine-readable [`ck-dk-registry.json`](../coordination/ck-dk-registry.json)).
+This doc is retained as the motivation/plan record.
 
 ## Why
 

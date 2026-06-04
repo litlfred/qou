@@ -1,0 +1,129 @@
+{
+  "$schema": "./ck-dk-registry.schema.json",
+  "meta": {
+    "authoritative": true,
+    "date": "2026-06-04",
+    "markdown_twin": "docs/coordination/ck-dk-canonical-registry.md",
+    "description": "Machine-readable canonical-vs-empirical status for the Q_beta c_k precision ladder and the m_p d_k brane-tower. The markdown twin is the human-readable authority; this JSON is the dashboard/validator-readable mirror. Tiers and wiring MUST agree between the two.",
+    "tiers": {
+      "canonical": "derived to compute precision (Taylor-exact) AND anchor-stable",
+      "empirical_near_match": "reproduces empirical value at one anchor; not anchor-stable",
+      "empirical_fit": "fit to a CODATA/experimental residual",
+      "artifact": "a normalisation/extraction artifact, not a coefficient",
+      "conjecture": "a form hypothesis, not verified",
+      "refuted": "tested and falsified",
+      "tbd": "no derived form yet",
+      "open": "not derived"
+    }
+  },
+  "symbols": {
+    "c_k": "Q_beta beta-decay precision-ladder coefficients (this registry)",
+    "c_k_of_n": "exponents in F_n(z) = prod (1 - q^-k z)^{-c_k(n)} — DIFFERENT object",
+    "c_k_d_k_pair": "eigenvalue-factor pair in chi_sym(beta) = prod (c_k q + d_k) — DIFFERENT object",
+    "d_k": "m_p mass brane-tower coefficients (this registry)",
+    "d_k_differential": "chain-complex differential d_{k+1} . d_k = 0 — UNRELATED homological d"
+  },
+  "qbeta_ck_ladder": {
+    "formula": "Q_beta = Q_base * prod_k (1 + c_k * u^k), u = b * hbar_q^2",
+    "anchor": "proton-pinned q0",
+    "rungs": [
+      {
+        "rung": 2,
+        "tier": "canonical",
+        "form": "-1",
+        "residual_proton": "exact",
+        "anchor_stable": true,
+        "wired": true,
+        "producer": "content/quantum-observable-universe/mass-theory/q-beta-c-2-eq-neg-one-structural.lean",
+        "note": "Kashiwara f-tilde_1^2 / bar-even constraint, PROVED (PR #1602)."
+      },
+      {
+        "rung": 3,
+        "tier": "refuted",
+        "form": "candidates: J_Hopf(q=1) - hbar^2; [3]_q/25 3-rung",
+        "residual_proton": "2.6% (J-hbar^2); 2.65 ppm ([3]_q/25, proton ONLY)",
+        "anchor_stable": false,
+        "wired": false,
+        "producer": "docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md",
+        "note": "Proton-anchor near-match; REFUTED as real-q fibre element (swings -2.88% to muon; dc_3/dq ~ 4.6e6). Locked behind conditional QbetaC3StructuralFormClass (3b-cond), not a derivation."
+      },
+      {
+        "rung": 4,
+        "tier": "empirical_fit",
+        "form": "-0.97157 (CODATA residual); conjecture c_3 * b^4",
+        "residual_proton": "0 by construction (fit)",
+        "anchor_stable": false,
+        "wired": false,
+        "producer": "folio-assistant/computations/qbeta/qbeta_1ppq_achieved.py",
+        "note": "CODATA-residual fit; separately flagged as a normalisation artifact (2026-06-04)."
+      },
+      {
+        "rung": "5-8",
+        "tier": "open",
+        "form": "conjectures (e.g. 3*c_3^2 + b)",
+        "residual_proton": null,
+        "anchor_stable": false,
+        "wired": false,
+        "producer": null,
+        "note": "Not derived."
+      }
+    ],
+    "kernel_and_element": {
+      "tier": "open",
+      "note": "Kernel R(q,xi) structurally constrained, not pinned; Habiro element F(q) is the open keystone (needs symbolic alpha(q)). Constant-kernel recursion REFUTED through depth 4 (commit eca145ca)."
+    }
+  },
+  "mp_dk_tower": {
+    "anchor": "proton-pinned q0",
+    "rungs": [
+      {
+        "rung": 4,
+        "tier": "empirical_near_match",
+        "form": "J^2 * n_crossings + n_gluon = 4*11 + 2 = 46",
+        "residual": "~0.05%",
+        "wired": false,
+        "note": "Categorically suggestive (crossing count + gluon LP) but empirical integer extraction."
+      },
+      {
+        "rung": 5,
+        "tier": "empirical_near_match",
+        "form": "J^2 = 4 (Jones squared)",
+        "residual": null,
+        "wired": false,
+        "note": "Empirical."
+      },
+      {
+        "rung": 6,
+        "tier": "tbd",
+        "form": "-29 (closest-integer extraction)",
+        "residual": null,
+        "wired": false,
+        "note": "No derived form."
+      }
+    ]
+  },
+  "recursion": {
+    "block": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+    "lean_sorry_free": true,
+    "kind": "conditional_scaffolding",
+    "proved": "the recursion engine (CKRecursion, applyRecursion) + the conditional 'IF F has a depth-d q-difference kernel R THEN c_{k+1} = sum a_j c_{k+1-j}'",
+    "open": "the kernel R(q,xi) and the Habiro element F(q); produces NO c_k values yet",
+    "note": "machinery-proved != values-derived. Constant-kernel refuted through d=4."
+  },
+  "production": {
+    "verified_date": "2026-06-04",
+    "qbeta_wired_rungs": [2],
+    "qbeta_note": "c_2 only (Q_N2-level); q_beta_predicted.py wires no c_3+; ~0.17% c_2-level truncation residual.",
+    "mp_wired_rungs": [],
+    "mp_note": "bare; ~2.89% categorical Geom_full gap.",
+    "dashboard_beats_100x": 3,
+    "dashboard_total": 7,
+    "dashboard_source": "folio-assistant/computations/per-observable-100x-status.witness.json"
+  },
+  "flip_flop_guard": [
+    "Do not re-wire any c_k>=3 or d_k>=4 without owner approval AND a passing cross-anchor test (proton+muon swing < 1%).",
+    "Canonical requires anchor-stability; a proton-anchor near-match is empirical, never canonical.",
+    "Sorry-free conditional/scaffolding Lean does not promote a coefficient's tier.",
+    "Update this registry (not a new audit doc) when a rung's status changes."
+  ]
+}
