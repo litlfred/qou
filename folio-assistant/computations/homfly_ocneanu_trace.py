@@ -60,7 +60,8 @@ while the multi-row weights are forced nonzero (e.g. n=4: w_(2,2) ≈
 weight w ≈ 2.0109 of the "next-to-antisymmetric" partition recurs at
 every n (n=3 w_(1³), n=5 w_(2,1,1,1)). These are solved, not fitted,
 and verified on held-out knots at full mpmath precision (the character
-eval uses the mpfr Rust kernel — see `_chi`; held-out deltas ~1e-49).
+eval uses the mpfr Rust kernel — see `_chi`; held-out deltas track the
+working dps, ~1e-40 at the gate's 40 dps).
 """
 from __future__ import annotations
 
@@ -75,27 +76,24 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import _path_bridge  # noqa: F401, E402 — substrate modules moved to substrate/ subdir
-from hecke_characters import chi_lambda_braid, partitions_of  # noqa: E402
+from hecke_characters import chi_lambda_braid_mpf, partitions_of  # noqa: E402
 
 
 def _chi(shape, word, s):
     """Signed seminormal Hecke character χ^shape(β) evaluated at s=√q₀.
 
-    Uses the **mpfr** path of `chi_lambda_braid` (Rust `rug::Float` kernel):
-    the character is evaluated at full arbitrary precision, NOT float64. We
-    pass `s` as a decimal string carrying `mp.mp.dps + 5` digits and request
-    `precision="mpfr_<dps>dps"` (≥ 50); the kernel returns a decimal string
-    that `mp.mpf` parses exactly. This removes the former float64 bound — the
-    held-out validation deltas in `_weights` drop from ~1e-15 to ~1e-49.
+    Routes through `hecke_characters.chi_lambda_braid_mpf`, which uses the
+    **mpfr** path of the Rust `rug::Float` kernel: the character is evaluated
+    at full arbitrary precision (not float64). `mp.mpf` rounds the kernel's
+    decimal string to the working dps — deterministic at dps, not an exact
+    real. This removes the former float64 bound; the held-out validation
+    deltas in `_weights` track the working dps (~1e-40 at the gate's 40 dps)
+    rather than ~1e-15.
 
     (The Rust kernel `pyhecke_native` is already a hard requirement of this
-    engine: the Python `chi_lambda_braid` fallback only supports `q_value == q₀`,
+    engine: the Python character fallback only supports `q_value == q₀`,
     whereas every character here is evaluated at `s = √q₀ ≠ q₀`.)"""
-    hc = [(1, g) if g > 0 else (-1, -g) for g in word]
-    dps = max(50, mp.mp.dps)
-    q_str = mp.nstr(s, dps + 5, strip_zeros=False)
-    return mp.mpf(chi_lambda_braid(list(shape), hc,
-                                   q_value=q_str, precision=f"mpfr_{dps}dps"))
+    return chi_lambda_braid_mpf(shape, word, q_value=s)
 
 
 def _writhe(word):

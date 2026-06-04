@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T11:08:20.152414+00:00",
-  "commitSha": "95546b3ae93a3d7aea8e98570f9c3c7d4b6f5d43",
+  "computedAt": "2026-06-04T11:16:23.473152+00:00",
+  "commitSha": "e9a4c324183bf34ab73139c6ca4b7671fde8ecc5",
   "assertions": [
     {
       "name": "all_atoms_within_1ppb",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 17,
   "computation": "cross-check-trM-1ppb",
   "scriptFile": "cross_check_trM_1ppb.py",
-  "scriptHash": "b7e4a2cf0d52",
-  "scriptCommitSha": "b60392113f79c44bf1feae270037b65344dd82f9",
+  "scriptHash": "0a94be0e7ec2",
+  "scriptCommitSha": "e9a4c324183bf34ab73139c6ca4b7671fde8ecc5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
