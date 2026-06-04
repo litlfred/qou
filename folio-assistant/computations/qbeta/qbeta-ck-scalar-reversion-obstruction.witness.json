@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T21:55:09.675574+00:00",
-  "commitSha": "f5bdf540d7067723306b33dc98cf60194c509174",
+  "computedAt": "2026-06-04T22:06:40.890447+00:00",
+  "commitSha": "8ec04e94e299f40a34200e09087e86065bad093b",
   "assertions": [
     {
       "name": "u_has_double_zero_at_q1",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 19,
   "computation": "qbeta-ck-scalar-reversion-obstruction",
   "scriptFile": "qbeta_ck_scalar_reversion_obstruction.py",
-  "scriptHash": "807072f8aabd",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b5435983c882",
+  "scriptCommitSha": "8ec04e94e299f40a34200e09087e86065bad093b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

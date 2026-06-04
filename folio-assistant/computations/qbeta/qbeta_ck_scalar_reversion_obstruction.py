@@ -67,13 +67,22 @@ def load_b() -> mp.mpf:
 
 
 def first_nonzero_order(expr, t, upto: int = 8) -> int:
-    """Order of the lowest nonzero Taylor coefficient of expr in t at t=0."""
-    ser = sp.series(expr, t, 0, upto).removeO()
+    """Order of the lowest nonzero Taylor coefficient of expr in t at t=0.
+
+    Requests ``upto+1`` terms so the coefficients of t^0..t^upto are genuinely
+    present (``sp.series(..., n)`` truncates at t^(n-1)). Returns ``upto+1`` when
+    the series vanishes through t^upto (caller reads that as "no low-order term"),
+    keeping "identically zero" and "first nonzero ≥ upto" distinct from a real
+    low-order hit (Copilot #1867).
+    """
+    ser = sp.series(expr, t, 0, upto + 1).removeO()
+    if ser == 0:
+        return upto + 1
     poly = sp.Poly(ser, t)
     for n in range(upto + 1):
         if poly.coeff_monomial(t**n) != 0:
             return n
-    return -1
+    return upto + 1
 
 
 def main() -> int:
@@ -118,7 +127,10 @@ def main() -> int:
     print("      T_β chain (each level → u^k by substrate scaling), NOT scalar-q")
     print("      Taylor coefficients. Operator route is the open axis.")
 
-    obstruction = (ord_u == 2 and ord_hbar == 1 and dudt0 == 0 and abs(b0) > 0)
+    # Single non-zero test, reused by the predicate AND the witness assertion
+    # so they cannot disagree on an edge case (Copilot #1867).
+    b_is_nonzero = abs(b0) > mp.mpf("1e-6")
+    obstruction = (ord_u == 2 and ord_hbar == 1 and dudt0 == 0 and b_is_nonzero)
 
     print("\n" + "=" * 78)
     print("VERDICT: scalar-q reversion of the c_k ladder is SINGULAR (b-independent")
@@ -165,7 +177,7 @@ def main() -> int:
     )
     w.add_assertion(
         name="b_nonzero_at_anchor",
-        computed=bool(abs(b0) > mp.mpf("1e-6")), expected=True, tolerance=0,
+        computed=bool(b_is_nonzero), expected=True, tolerance=0,
         source="Hoefsmit b(q_0)≈0.8676 ≠ 0 (N3 witness) ⇒ the double zero of u is "
                "real, not an accidental b-cancellation.",
     )
