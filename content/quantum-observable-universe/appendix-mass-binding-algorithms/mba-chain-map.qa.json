@@ -593,7 +593,45 @@
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7569785ec81b",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "evidence": "mba-chain-map.md:1-53 — titled 'From propositions to compute — the chain map'; presents the 11-step chain-map table mapping steps to propositions and Python API; exactly on-topic for sec:mba-chain-map; correct register, no redundancy with intro",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:05:12.994Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "7569785ec81b",
+          "ts": "e0e6981bcb42"
+        },
+        "result": "pass",
+        "evidence": "mba-chain-map.ts:5-7 — uses: ['prose:pre-archimedean-derivation-chain']; this label is defined in mass-theory/ chapter (line 87 of paper manifest) which precedes appendix-mass-binding-algorithms (line 123); backward reference only, no forward ref",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:05:28.489Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-04T14:05:28.489Z"
 }
