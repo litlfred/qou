@@ -4831,12 +4831,13 @@ export const references: CSLData[] = [
     type: "article",
     title: "Weights of Markov Traces on Hecke Algebras",
     author: [
-      { family: "Halverson", given: "Tom" },
+      { family: "Orellana", given: "Rosa C." },
     ],
     issued: { "date-parts": [[1998]] },
-    "container-title": "arXiv preprint",
+    "container-title": "Journal of Algebra",
+    DOI: "10.1006/jabr.1998.7437",
     URL: "https://arxiv.org/abs/math/9806163",
-    note: "arXiv:math/9806163. Added 2026-05-19 from uploads/ gap audit. DIRECT fit with QOU's Wedderburn-block weight content (y-lambda-closed-form-wenzl-bridge.md, etc.). Potential citation target.",
+    note: "arXiv:math/9806163; J. Algebra (1998), DOI 10.1006/jabr.1998.7437. AUTHOR CORRECTED 2026-06-04: this is R.C. ORELLANA's paper, not Halverson's — both the arXiv ID and the DOI resolve to Orellana, 'Weights of Markov Traces on Hecke Algebras'. The id 'halverson-1998-markov-weights' is a legacy misnomer kept to avoid re-keying 5 citers (MarkovTrace.lean, Hoefsmit.lean, hecke-branching-trace-decomposition.{lean,ts}, wedderburn-weight-canonical.ts); rename in a dedicated pass. FLAG: the hecke-branching citer invokes a 'Murnaghan–Nakayama-type rule', better served by [ram1991]/[hoefsmit1974] than this weights paper — review citation appropriateness separately.",
   }),
 
   ref({
