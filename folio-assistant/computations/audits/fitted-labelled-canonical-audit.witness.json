@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T18:59:32.031381+00:00",
-  "commitSha": "f1bdaa8f40835491e1b5adca44a7600deb635e03",
+  "computedAt": "2026-06-04T12:33:04.155937+00:00",
+  "commitSha": "21e9e4afa5a30142edb8cbe05703e71ad2edd4b0",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
-      "computed": 2,
+      "computed": 4,
       "expected": 0,
       "passed": false,
       "tolerance": 0
@@ -26,19 +26,18 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
+    "numpy": "2.4.5",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
   "description": "Audits production scripts in folio-assistant/computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
-    "total_issues": 2,
-    "flagged_script_count": 2,
-    "scripts_scanned": 1533,
+    "total_issues": 4,
+    "flagged_script_count": 3,
+    "scripts_scanned": 1592,
     "rows": [
       {
         "path": "computations/_deprecated/proton_mass_mpfr_50dps.py",
@@ -61,6 +60,24 @@
             "var": "M_E_MEV",
             "literal": "0.51099895",
             "context_snippet": "(𝔥) / 𝔪(electron) — the\n    mass_endomorphism convention that gives m_p/m_e ≈ 1870\n  - absolute mass prediction m(𝔥) = m_e · ratio\n\nCaveats:\n  - Term 5 (a_K · C_K) requires per-atom C_K which is multi-block\n    determine"
+          }
+        ]
+      },
+      {
+        "path": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
+        "issue_count": 2,
+        "issues": [
+          {
+            "line": 72,
+            "var": "Q_PROTON",
+            "literal": "1.10997858275",
+            "context_snippet": "ved value).\n\nIf NONE of {A, B, C, D} matches both anchors, the redirect's\n\"complex-analytic / root-of-unity Habiro\" hypothesis is either\nREFUTED at this scope, or requires a MORE EXOTIC analytic\nstructure than what's tes"
+          },
+          {
+            "line": 73,
+            "var": "Q_MUON",
+            "literal": "1.10997859555",
+            "context_snippet": "} matches both anchors, the redirect's\n\"complex-analytic / root-of-unity Habiro\" hypothesis is either\nREFUTED at this scope, or requires a MORE EXOTIC analytic\nstructure than what's tested here.\n\nHonest scoping. No fit. "
           }
         ]
       }
