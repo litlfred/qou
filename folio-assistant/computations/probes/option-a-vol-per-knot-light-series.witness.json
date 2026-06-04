@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-06-04T14:39:33.084910+00:00",
-  "commitSha": "7b73e2fca0895e085b370a4369886f8f5d6c784e",
+  "computedAt": "2026-06-04T14:43:44.398483+00:00",
+  "commitSha": "ed7080ca67f953d88441fd53c0cc7729c510551d",
   "assertions": [
     {
       "name": "proton_per_block_under_uniform_within_1pct",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 23,
   "computation": "option-a-vol-per-knot-light-series",
   "scriptFile": "option_a_vol_per_knot_light_series.py",
-  "scriptHash": "f54fa3d8bf86",
-  "scriptCommitSha": "7b73e2fca0895e085b370a4369886f8f5d6c784e",
+  "scriptHash": "e8511238d158",
+  "scriptCommitSha": "ed7080ca67f953d88441fd53c0cc7729c510551d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,6 +50,7 @@
         "label": "p",
         "Z": 1,
         "N": 0,
+        "A": 1,
         "knot": "L6a4 (Borromean)",
         "n_strands": 3,
         "vol_K_50dps": "7.3277247534177521204368281194590728861931949942534",
@@ -60,6 +61,10 @@
         "ratio_perknot_over_uniform_50dps": "0.42060750984114147304376004571687126650079466251133",
         "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
         "m_K_perknot_MeV_50dps": "406.32781105136741556414044847640027144558289227828",
+        "m_K_codata_total_MeV": "938.27208816000000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "938.27208816000000000000000000000000000000000000000",
+        "gap_uniform_pct": "2.96052037113",
+        "gap_perknot_pct": "-56.6940319148",
         "canonical_braid_word_len": 11,
         "canonical_braid_word_first_6": [
           [
@@ -99,6 +104,7 @@
         "label": "n",
         "Z": 0,
         "N": 1,
+        "A": 1,
         "knot": "L6a4 (Borromean)",
         "n_strands": 3,
         "vol_K_50dps": "7.3277247534177521204368281194590728861931949942534",
@@ -109,6 +115,10 @@
         "ratio_perknot_over_uniform_50dps": "0.36451383663753395723034156152046259270058103396380",
         "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
         "m_K_perknot_MeV_50dps": "352.13852789933568906470308595518985329911800241440",
+        "m_K_codata_total_MeV": "939.56542052000000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "939.56542052000000000000000000000000000000000000000",
+        "gap_uniform_pct": "2.81879296196",
+        "gap_perknot_pct": "-62.5211272990",
         "canonical_braid_word_len": 11,
         "canonical_braid_word_first_6": [
           [
@@ -148,6 +158,7 @@
         "label": "D",
         "Z": 1,
         "N": 1,
+        "A": 2,
         "knot": "6_2",
         "n_strands": 6,
         "vol_K_50dps": "4.4008325161230461014412038656409280339834854185165",
@@ -158,6 +169,10 @@
         "ratio_perknot_over_uniform_50dps": "0.092070497531114740751677557308457426060218094183864",
         "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
         "m_K_perknot_MeV_50dps": "88.944687978485697081785811254770683487851377737535",
+        "m_K_codata_total_MeV": "1875.6129425700000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "937.80647128500000000000000000000000000000000000000",
+        "gap_uniform_pct": "3.01163982617",
+        "gap_perknot_pct": "-90.5156670697",
         "canonical_braid_word_len": 23,
         "canonical_braid_word_first_6": [
           [
@@ -197,6 +212,7 @@
         "label": "T",
         "Z": 1,
         "N": 2,
+        "A": 3,
         "knot": "8_11",
         "n_strands": 9,
         "vol_K_50dps": "8.2863168178065925881000000000000000000000000000000",
@@ -207,6 +223,10 @@
         "ratio_perknot_over_uniform_50dps": "0.046456432341342868810448207242956078313574444003321",
         "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
         "m_K_perknot_MeV_50dps": "44.879228308698643183920748380384207110181713089764",
+        "m_K_codata_total_MeV": "2808.9211329800000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "936.30704432666666666666666666666666666666666666667",
+        "gap_uniform_pct": "3.17660540099",
+        "gap_perknot_pct": "-95.2067830120",
         "canonical_braid_word_len": 35,
         "canonical_braid_word_first_6": [
           [
@@ -246,6 +266,7 @@
         "label": "3He",
         "Z": 2,
         "N": 1,
+        "A": 3,
         "knot": "L6a4 (Borromean)",
         "n_strands": 9,
         "vol_K_50dps": "7.3277247534177521204368281194590728861931949942534",
@@ -256,6 +277,10 @@
         "ratio_perknot_over_uniform_50dps": "0.081547092538779628122606710330827268308853625198834",
         "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
         "m_K_perknot_MeV_50dps": "78.778554432849445341297316557482233276014357776103",
+        "m_K_codata_total_MeV": "2808.3916074300000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "936.13053581000000000000000000000000000000000000000",
+        "gap_uniform_pct": "3.19605947163",
+        "gap_perknot_pct": "-91.5846613886",
         "canonical_braid_word_len": 35,
         "canonical_braid_word_first_6": [
           [
@@ -295,6 +320,7 @@
         "label": "4He",
         "Z": 2,
         "N": 2,
+        "A": 4,
         "knot": "L6a4_x4 (magic-A: 4·Vol(L6a4))",
         "n_strands": 12,
         "vol_K_50dps": "29.310899013671008481747312477836291544772779977014",
@@ -305,6 +331,10 @@
         "ratio_perknot_over_uniform_50dps": "0.087411212458097449554938412591022545407333112039828",
         "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
         "m_K_perknot_MeV_50dps": "84.443586451557504839221341289339946005621614356240",
+        "m_K_codata_total_MeV": "3727.3794066000000000000000000000000000000000000000",
+        "m_K_codata_per_nucleon_MeV": "931.84485165000000000000000000000000000000000000000",
+        "gap_uniform_pct": "3.67067251121",
+        "gap_perknot_pct": "-90.9380208194",
         "canonical_braid_word_len": 47,
         "canonical_braid_word_first_6": [
           [

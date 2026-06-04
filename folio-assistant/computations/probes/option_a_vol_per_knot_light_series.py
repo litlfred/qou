@@ -86,6 +86,14 @@ from substrate.knot_volumes import (  # noqa: E402
     VOL_6_2_MPF,
     VOL_8_11_MPF,
 )
+from substrate.codata_constants import (  # noqa: E402
+    M_P_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+    M_D_MEV_VALIDATION,
+    M_T_MEV_VALIDATION,
+    M_HE3_MEV_VALIDATION,
+    M_HE4_MEV_VALIDATION,
+)
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
 
@@ -188,36 +196,42 @@ ISOTOPES = [
         "knot": "L6a4 (Borromean)",
         "n_strands": 3,
         "chi_cache_atom": "proton",
+        "codata_total_MeV": M_P_MEV_VALIDATION,
     },
     {
         "label": "n", "Z": 0, "N": 1,
         "knot": "L6a4 (Borromean)",
         "n_strands": 3,
         "chi_cache_atom": "neutron",
+        "codata_total_MeV": M_N_MEV_VALIDATION,
     },
     {
         "label": "D", "Z": 1, "N": 1,
         "knot": "6_2",
         "n_strands": 6,
         "chi_cache_atom": "deuteron",
+        "codata_total_MeV": M_D_MEV_VALIDATION,
     },
     {
         "label": "T", "Z": 1, "N": 2,
         "knot": "8_11",
         "n_strands": 9,
         "chi_cache_atom": "tritium",
+        "codata_total_MeV": M_T_MEV_VALIDATION,
     },
     {
         "label": "3He", "Z": 2, "N": 1,
         "knot": "L6a4 (Borromean)",
         "n_strands": 9,
         "chi_cache_atom": "helium-3",
+        "codata_total_MeV": M_HE3_MEV_VALIDATION,
     },
     {
         "label": "4He", "Z": 2, "N": 2,
         "knot": "L6a4_x4 (magic-A: 4·Vol(L6a4))",
         "n_strands": 12,
         "chi_cache_atom": "helium-4",
+        "codata_total_MeV": M_HE4_MEV_VALIDATION,
     },
 ]
 
@@ -342,6 +356,19 @@ def main() -> int:
         ratio = geom_perknot / geom_uniform
         m_K_perknot_MeV = m_e * geom_perknot
 
+        # CODATA per-nucleon comparison.  Production's borromean_mass_
+        # prediction treats m_e × Geom_full(K, q_0) as the per-nucleon
+        # average mass m_avg (`mass_table_comprehensive.py:210-212`),
+        # so the right CODATA target for direct comparison is
+        # m_codata_total / A (with A = Z + N; for proton/neutron A=1).
+        A = iso["Z"] + iso["N"]
+        m_codata_total = mp.mpf(str(iso["codata_total_MeV"]))
+        m_codata_per_nucleon = m_codata_total / mp.mpf(A)
+        # Signed gap: (predicted − codata) / codata, in percent.
+        # Positive ⇒ overshoot CODATA; negative ⇒ undershoot.
+        gap_uniform_pct = (m_avg_uniform_MeV / m_codata_per_nucleon - 1) * 100
+        gap_perknot_pct = (m_K_perknot_MeV / m_codata_per_nucleon - 1) * 100
+
         # Canonical braid word from the H_{3A} producer — records the
         # provenance of tr_M (the trace was evaluated on this braid).
         braid_word = atom_braid_word_3A(iso["Z"], iso["N"])
@@ -354,6 +381,7 @@ def main() -> int:
         row = {
             "label": label,
             "Z": iso["Z"], "N": iso["N"],
+            "A": A,
             "knot": iso["knot"],
             "n_strands": iso["n_strands"],
             "vol_K_50dps": _fmt(vol_K),
@@ -364,17 +392,22 @@ def main() -> int:
             "ratio_perknot_over_uniform_50dps": _fmt(ratio),
             "m_K_uniform_MeV_50dps": _fmt(m_avg_uniform_MeV),
             "m_K_perknot_MeV_50dps": _fmt(m_K_perknot_MeV),
+            "m_K_codata_total_MeV": _fmt(m_codata_total),
+            "m_K_codata_per_nucleon_MeV": _fmt(m_codata_per_nucleon),
+            "gap_uniform_pct": _fmt(gap_uniform_pct, dps=12),
+            "gap_perknot_pct": _fmt(gap_perknot_pct, dps=12),
             "canonical_braid_word_len": braid_word_len,
             "canonical_braid_word_first_6": braid_word_snippet,
         }
         rows.append(row)
 
         print(
-            f"  {label:>4s}  knot={iso['knot']:<32s}  "
-            f"n={iso['n_strands']:>2d}  Vol={float(vol_K):>9.6f}  "
-            f"tr_M={float(tr_M):>+9.6f}  "
+            f"  {label:>4s}  A={A}  knot={iso['knot']:<32s}  "
             f"ratio={float(ratio):>7.4f}  "
-            f"m_K(per)={float(m_K_perknot_MeV):>9.4f} MeV"
+            f"m_K(per)={float(m_K_perknot_MeV):>9.4f}  "
+            f"CODATA/A={float(m_codata_per_nucleon):>9.4f}  "
+            f"Δuni={float(gap_uniform_pct):>+7.2f}%  "
+            f"Δper={float(gap_perknot_pct):>+7.2f}%"
         )
 
     w.add_data("rows", rows)
