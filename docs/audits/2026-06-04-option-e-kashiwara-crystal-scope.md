@@ -43,10 +43,10 @@ of these as the closed-form `Δ_λ` and check the deuteron sum.
 
 | Candidate | Δ_λ formula | Crystal interpretation |
 |---|---|---|
-| **E1** content sum `n(λ)` | `n(λ) = Σ_{x∈λ} (row(x) − 1)` | sum of contents at the highest-weight vertex of B(λ) (canonical bias toward column shapes) |
-| **E2** co-content `n(λ')` | `n(λ') = Σ_{x∈λ} (col(x) − 1)` | sum of co-contents (canonical bias toward row shapes; equals `binomial(\|λ\|, 2) − n(λ)`) |
-| **E3** dimension ratio | `f^λ / dim_q(V_λ)\|_{q₀}` | the q→1 limit of `dim V_λ / dim_q V_λ` — measures how far the q-deformation deviates from the classical irrep dimension |
-| **E4** charge of standard column-strict tableau | `c(T_λ^col) = 0` for every column-strict tableau on `λ` | the trivial-charge crystal vertex (a control: should give 0) |
+| **E1** Macdonald `n(λ)` | `n(λ) = Σ_{x∈λ} (row(x) − 1) = Σ_i (i−1)·λ_i` | the standard Macdonald row-index statistic (NOT the cell-content `col(x)−row(x)`; the two coincide only on column-strict shapes) — canonical bias toward column shapes |
+| **E2** conjugate `n(λ')` | `n(λ') = Σ_{x∈λ} (col(x) − 1) = Σ_i C(λ_i, 2)` | Macdonald statistic of the conjugate partition; canonical bias toward row shapes (`n(λ) + n(λ') = C(\|λ\|, 2)`) |
+| **E3** dim ratio at q₀ | `f^λ / dim_q(V_λ)\|_{q₀}` | the **classical-to-q dimension ratio at q₀** (NOT a q→1 limit, which would be 1) — measures how far the q-deformation at the substrate anchor deviates from the classical irrep dimension |
+| **E4** constant-zero control | `Δ_λ ≡ 0` for every `λ` | sanity control on the summation pipeline (charge is **not** in general 0 on column-strict tableaux — that mis-statement was caught in Copilot review; the control is a pure constant-zero, with the witness assertion `\|S\| < 1e-40` confirming no arithmetic bug) |
 | **E5** crystal cardinality `\|B(λ)\| = f^λ` | `f^λ = n! / Π hook(x)` | the ordinary irrep dimension; sometimes proposed as the "natural categorical weight" but already structurally identical to several earlier ansätze |
 
 Each `c(λ)` is **fixed** (no fitting, no free scalar). The probe computes
@@ -55,8 +55,13 @@ Each `c(λ)` is **fixed** (no fitting, no free scalar). The probe computes
 
 ## §3. Pre-formalize-first observations (sanity)
 
-- **E4 is trivial by construction.** Charge of column-strict tableaux on `λ`
-  is always 0; the sum is identically 0; not −4.353. Recorded as a control.
+- **E4 is trivial by construction.** `Δ_λ ≡ 0` is a pure constant-zero
+  control: the sum is identically 0 (≠ −4.353). The witness assertion
+  `\|S_E4\| < 1e-40` confirms no arithmetic bug in the summation
+  pipeline — if E4's `S` is non-zero, every other candidate's verdict
+  is suspect.  (Earlier draft mis-described E4 as "charge of standard
+  column-strict tableaux on λ is always 0" — that's not true in
+  general; corrected per Copilot review.)
 - **E5 = f^λ.** With y_λ derived from Wenzl/Jones-Markov such that
   `Σ_λ y_λ(q) · dim_q(V_λ) = 1` (the normalized-trace identity), the
   classical-limit `q→1` analog `Σ_λ y_λ(1) · f^λ = 1` likely holds; testing it
@@ -71,7 +76,7 @@ statistic family is **closed** for deuteron. Per Δ_λ-gate discipline, the
 remaining productive directions are GAP-A-3 (categorical brane-tower level
 selection) and GAP-A-4 (ρ general rule), both research-grade.
 
-## §4. Probe plan (`option_d_kashiwara_crystal_delta_lambda_probe.py`)
+## §4. Probe plan (`option_e_kashiwara_crystal_delta_lambda_probe.py`)
 
 Pure `sympy`+`mpmath`; reads existing 50-dps witnesses; no Hecke
 construction. Algorithm:
@@ -89,7 +94,7 @@ construction. Algorithm:
    audit-doc convention `target_signed = -B_D / m_e`).
 5. Verdict per candidate: `EXACT-MATCH` if `\|rel_err\| < 1e-12`,
    `NEAR-MATCH (< 5%)` if `\|rel_err\| < 0.05`, else `REFUTED`.
-6. Emit `option-d-kashiwara-crystal-delta-lambda-probe.witness.json` with
+6. Emit `option-e-kashiwara-crystal-delta-lambda-probe.witness.json` with
    `discipline: "EXPLORATORY"`, `production_wired: false`.
 
 ## §5. Honest expected outcome
