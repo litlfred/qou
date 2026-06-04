@@ -198,11 +198,10 @@ theorem habiroT25_framing_family_exists (q : ℝ) :
       ∀ n, framing n q = quantumInt 3 q / (n : ℝ) ^ 2 := by
   -- Ref: [jones1985] doi:10.2307/1971403 (Jones polynomial of T(2,n))
   -- Ref: [habiro2002] doi:10.2140/gt.2002.6.165 (Habiro ring of unity)
-  refine ⟨fun n _ => quantumInt 3 q / (n : ℝ) ^ 2, ?_, ?_⟩
-  · show quantumInt 3 q / ((5 : ℕ) : ℝ) ^ 2 = habiroT25 q
-    unfold habiroT25
-    norm_num
-  · intro _; rfl
+  refine ⟨fun n _ => quantumInt 3 q / (n : ℝ) ^ 2, ?_, fun _ => rfl⟩
+  unfold habiroT25
+  have h25 : ((5 : ℕ) : ℝ) ^ 2 = (25 : ℝ) := by norm_num
+  simp [h25]
 
 /-! ## Conditional closure theorem (§3b-cond pattern)
 
