@@ -2586,7 +2586,86 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "138be532d397",
+          "ts": "310f4135f0e0",
+          "lean": "edf71c468ce3"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Theorem .md opens with italic authoring banner ('Lean sibling: archimedean...') then immediately adds interpretation inline: 'The leading term X represents...', 'The oscillatory sum...encodes...', 'This formula is the non-commutative analog...'; interpretation/motivation belongs in a linked remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:46:14.288Z",
+        "reviewed_sha": "d450d3bf0a886ab121c208abc2fdc5e3d849d594"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "138be532d397",
+          "ts": "310f4135f0e0",
+          "lean": "edf71c468ce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:46:34.100Z",
+        "reviewed_sha": "d450d3bf0a886ab121c208abc2fdc5e3d849d594"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "138be532d397",
+          "ts": "310f4135f0e0",
+          "lean": "edf71c468ce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:46:34.134Z",
+        "reviewed_sha": "d450d3bf0a886ab121c208abc2fdc5e3d849d594"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "138be532d397",
+          "ts": "310f4135f0e0",
+          "lean": "edf71c468ce3"
+        },
+        "result": "n/a",
+        "evidence": "No Proof body in .md; block contains only the formula statement and inline interpretation.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:46:45.678Z",
+        "reviewed_sha": "d450d3bf0a886ab121c208abc2fdc5e3d849d594"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T22:46:45.678Z"
 }
