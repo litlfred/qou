@@ -876,7 +876,102 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "741f3e2ac99c",
+          "ts": "1863425bd67a",
+          "lean": "119fc45f7cd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:45:53.142Z",
+        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "741f3e2ac99c",
+          "ts": "1863425bd67a",
+          "lean": "119fc45f7cd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:45:53.177Z",
+        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "741f3e2ac99c",
+          "ts": "1863425bd67a",
+          "lean": "119fc45f7cd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:45:53.211Z",
+        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "741f3e2ac99c",
+          "ts": "1863425bd67a",
+          "lean": "119fc45f7cd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:45:53.245Z",
+        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "741f3e2ac99c",
+          "ts": "1863425bd67a",
+          "lean": "119fc45f7cd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:45:53.287Z",
+        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:45:53.287Z"
 }
