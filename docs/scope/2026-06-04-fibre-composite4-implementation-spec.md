@@ -228,7 +228,19 @@ Anything that needs a per-anchor constant is a **fitted** result and is
 caught by the three-calibration discipline review; record it as
 NEGATIVE and extend the bracket count instead.
 
-## Step 5 — Lean side
+## Step 5 — Lean side ◐ DESIGN DONE, verification blocked (sandbox)
+
+**Ready-to-paste code + cross-verification:** companion doc
+[`2026-06-04-step5-markov-trace-h3-concrete-lean.md`](2026-06-04-step5-markov-trace-h3-concrete-lean.md).
+The concrete n=3 Markov-trace functional (NF free module `Fin 6 → R`,
+`TRM`/`trM`/`mulσ₀`/`mulσ₁`, with linearity + the Hecke operator
+identity + the Markov reduction `tr(x·σ₁)=z·tr(x)` proved as lemmas) is
+written and its **mathematics is cross-verified in Python against
+`gram.py`** (randomized + symbolic). Only the **Lean syntax** is
+unverified: this branch's sandbox has no toolchain and the elan
+installer is 403-blocked, so `lake build` and the LSP cannot run. The
+next agent with a warm Lean pastes the block into `MarkovTraceOnHecke.lean`
+and runs `lake build QOU`.
 
 **File:** `content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean`.
 
