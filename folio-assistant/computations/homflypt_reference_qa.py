@@ -217,11 +217,55 @@ def main() -> int:
             "pass_n3": bool(ok3),
         })
 
+    # Extend coverage to the n=4 and n=5 engine paths (Task A). The SAME
+    # torus references, Markov-stabilised onto 4 / 5 strands (append σ₂σ₃
+    # resp. σ₂σ₃σ₄ once each — a stabilisation chain leaves the closure and
+    # hence the unframed HOMFLY unchanged), must still match the skein
+    # reference. This exercises the freshly-wired n∈{4,5} Ocneanu weights.
+    print("-" * 78)
+    print("  n=4 / n=5 paths (same torus refs, Markov-stabilised):")
+    multi_fail = 0
+    multi_total = 0
+    for n_strands, tail in ((4, [2, 3]), (5, [2, 3, 4])):
+        for label, k in _CASES:
+            ref = _torus_homfly(k, v, z)
+            word = [1] * k + tail
+            try:
+                eng_unfr = homfly_signed_su2(word, n_strands, q0, framed=False)
+                eng_framed = homfly_signed_su2(word, n_strands, q0, framed=True)
+            except Exception:            # noqa: BLE001
+                eng_unfr = None
+                eng_framed = None
+            d = abs(eng_unfr - ref) if eng_unfr is not None else None
+            ok = d is not None and d < TOL
+            multi_total += 1
+            if not ok:
+                multi_fail += 1
+                n_fail += 1
+            es = mp.nstr(eng_unfr, 10) if eng_unfr is not None else "ERR"
+            ds = mp.nstr(d, 3) if d is not None else "—"
+            print(f"  n={n_strands} {label:<18}{mp.nstr(ref,10):>16}{es:>16}"
+                  f"{ds:>12}{'' if ok else '  ✗'}")
+            rows.append({
+                "knot": label, "k": k, "n_strands": n_strands,
+                "writhe": sum(1 if g > 0 else -1 for g in word),
+                "reference_unframed": mp.nstr(ref, 16),
+                "engine_framed": (mp.nstr(eng_framed, 16) if eng_framed is not None else None),
+                "engine_unframed": (mp.nstr(eng_unfr, 16) if eng_unfr is not None else None),
+                "abs_delta": (mp.nstr(d, 6) if d is not None else None),
+                "pass": bool(ok),
+            })
+
     print("=" * 78)
-    print(f"  n≥3 path: {len(_CASES) - n_fail}/{len(_CASES)} match reference "
+    n3_total = len(_CASES)
+    n3_fail = n_fail - multi_fail
+    total = n3_total + multi_total
+    print(f"  n=3 path:    {n3_total - n3_fail}/{n3_total} match reference")
+    print(f"  n=4/5 paths: {multi_total - multi_fail}/{multi_total} match reference")
+    print(f"  all paths:   {total - n_fail}/{total} match reference "
           f"(tol {mp.nstr(TOL,1)})")
     if n_fail:
-        print("  ✗ The n≥3 HOMFLYPT path is NOT a correct invariant evaluator.")
+        print("  ✗ A HOMFLYPT n≥3 path is NOT a correct invariant evaluator.")
         print("    See docs/audits/2026-06-04-hidden-fitting-verification-gap-"
               "mass-binding-walkthrough.md")
 
@@ -236,12 +280,13 @@ def main() -> int:
         w.add_parameter("tolerance", mp.nstr(TOL, 2))
         w.add_data("reference_symbolic_ok", bool(sym_ok))
         w.add_data("cases", rows)
+        w.add_data("n_paths_checked", sorted({3} | {r.get("n_strands", 3) for r in rows}))
         w.add_assertion(
-            "all_n3_match_reference",
+            "all_paths_match_reference",
             computed=0 if n_fail else 1, expected=1,
-            source=("HOMFLYPT n≥3 engine output must equal the skein-relation "
-                    "reference at the SU(2) point (Markov-stabilised torus "
-                    "links)"))
+            source=("HOMFLYPT n∈{3,4,5} engine output must equal the skein-"
+                    "relation reference at the SU(2) point (Markov-stabilised "
+                    "torus links)"))
         out = w.save()
         print(f"  Witness: {out.name}")
     except Exception as e:               # noqa: BLE001
