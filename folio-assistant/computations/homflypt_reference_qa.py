@@ -51,9 +51,10 @@ History: this gate was first pointed at the LEGACY n≥3 path
 (`homflypt_engine._homflypt_nstrand_numerical`), which failed 0/5 (its
 ratio-only normalisation is not a knot invariant). It now drives the
 reworked engine `homfly_ocneanu_trace.homfly_signed_su2`, which passes
-**5/5** (≤ ~1e-15, float64-bounded by the character eval — see the
-precision note in `homfly_ocneanu_trace.py`). Re-point `eng3` at the
-legacy `homflypt_at_su_n` to reproduce the 0/5 baseline.
+**5/5** at full mpmath precision (the character eval uses the mpfr Rust
+kernel — see the precision note in `homfly_ocneanu_trace.py`; deltas
+~1e-40 at the gate's working dps). Re-point `eng3` at the legacy
+`homflypt_at_su_n` to reproduce the 0/5 baseline.
 
 Usage:
     python3 homflypt_reference_qa.py            # report
