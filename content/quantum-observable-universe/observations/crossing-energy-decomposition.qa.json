@@ -2334,6 +2334,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:crossing-energy-decomposition' → expected 'crossing_energy_decomposition'; Lean declares: symmetricWeight, antisymmetricWeight, q_decomposition, q_inv_decomposition, emStrongRatio.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "c812b52ca6c2",
+          "ts": "75e497190ca9",
+          "lean": "aad112d21eb2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean: q_decomposition/symmetricWeight_eq_cosh/antisymmetricWeight_eq_sinh/qbracket_eq_sinh_ratio match .md statements 1-4; no sorry; hq:0<q matches narrative q>0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:39:28.498Z",
+        "reviewed_sha": "405fe55e47d5ba6792546774954ad9f4ca833028",
+        "notes": "All quantifiers, hypotheses, conclusions align; lean.ref points to q_decomposition which is correct entry point"
       }
     ],
     "proof-lean-compiles": [
@@ -2795,5 +2815,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-04T23:35:25.750Z"
+  "updated_at": "2026-06-04T23:39:28.498Z"
 }
