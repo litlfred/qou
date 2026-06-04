@@ -139,7 +139,7 @@
   {
     "id": "lean-section-3b-cond-classes-permanent",
     "summary": "Catalog all \u00a73b-cond class sorries (NOT discharge targets \u2014 permanent by design)",
-    "comment": "Many sorries are LEGITIMATELY PERMANENT per CLAUDE.md \u00a73b-cond: class fields like `c4_is_jones_kashiwara`, `chirality_interpolation`, `cpt_quotient`, `t28_genus`, `spans_three`, `uniqueness`, `smoothing_identification`. These represent OPEN CONJECTURES whose Taylor-exact derivation is the open research target \u2014 not lean-proof bugs. This queue entry is a REGISTRY (not a discharge target) so the next session doesn't mistakenly attack them.",
+    "comment": "**COMPLETE per session 2026-06-03** \u2014 catalog landed via PR #1780 (`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`). Final corrected counts (after `\\bsorry\\b(?!-)` regex fix): 194 classes / 219 class-body sorries. Skill docs updated in PR #1785 with the \u00a73b-cond carve-out so future agents don't treat class-body sorries as missing-proof gaps. Awaiting owner resolution \u2192 'done' per CLAUDE.md \u00a74a (agents cannot self-resolve).",
     "status": "open",
     "priority": "high",
     "origin": "session-2026-05-31-queue-build",
@@ -160,7 +160,7 @@
   {
     "id": "lean-discharge-triage-pass",
     "summary": "Single triage pass: run lean_diagnostic_messages on all 598 sorry files; classify into TRACTABLE / PERMANENT / RESEARCH-GRADE",
-    "comment": "Without LSP, the discharge queue can only be a starter. With LSP: scan all 598 files, classify each sorry into 3 buckets. Result feeds back into this queue with prioritized discharge work + culls the noise from the registry.",
+    "comment": "Single triage pass: run lean_diagnostic_messages on all sorry files; classify into TRACTABLE / PROBLEMATIC / RESEARCH-GRADE.\n\n**Partial progress 2026-06-03/04:**\n- Regex-corrected sorry counts landed in PR #1780/#1785:   241 files / 491 real sorries / 219 \u00a73b-cond / 272 non-class.   Old `\\bsorry\\b` regex over-counted by ~25% via `sorry-free`   docstring matches.\n- \u00a73b-cond classes catalogued (PR #1780); 219 of 491 sorries   carved out as permanent.\n- Per-file `lean_diagnostic_messages` triage of the remaining   272 non-class sorries IS the still-open work; requires a   built QOU project (Gate #1) + then ~30 min for the LSP pass.",
     "status": "open",
     "priority": "high",
     "origin": "session-2026-05-31-queue-build",
@@ -175,9 +175,9 @@
   {
     "id": "infra-lean-cache-host-bypass",
     "summary": "Add Mathlib-oleans cache-host bypass (parallel to setup-lean-toolchain.sh for elan)",
-    "comment": "Session 2026-06-03 attempted catalan_G discharge after #1755 unblocked lake. Found `lake exe cache get` returns 403 on all 7335 download attempts \u2014 the Mathlib oleans host is blocked by the same network policy that release.lean-lang.org hits for elan. PR #1755's setup-lean-toolchain.sh bypasses elan via GitHub releases; need the analogous bypass for the Mathlib cache. Options: (a) fetch oleans tarballs from a different host (need to identify), (b) pre-bake Mathlib oleans into container image, (c) defer all Lean-discharge to local env. Until fixed, NO axiom in QOU is dischargeable in this remote container.",
+    "comment": "Session 2026-06-03 attempted catalan_G discharge after #1755 unblocked lake. Found `lake exe cache get` returns 403 on all 7335 download attempts \u2014 the Mathlib oleans cache host is blocked by the same network policy that release.lean-lang.org hits for elan.\n\n**PARTIALLY MOOTED 2026-06-03** by PR #1785's documented from-source build workaround: `lake build QOU` works without cache, just slower (observed ~3.8 modules/sec \u2192 ~1-3 hrs for full Mathlib + ~10 min for QOU; throughput slows as modules get heavier in Analysis/Topology). The cache-host bypass would still be valuable (faster iteration, CI parity) but it no longer blocks every Lean-discharge attempt \u2014 sustained-session from-source builds are now a documented path.\n\nStill-open task: identify the Mathlib oleans cache endpoint (separate from release.lean-lang.org) + apply the analogous GitHub-releases bypass.",
     "status": "open",
-    "priority": "high",
+    "priority": "medium",
     "origin": "session-2026-06-03-lean-axiom-triage",
     "createdAt": "2026-06-03",
     "data": {
@@ -187,6 +187,65 @@
         "lean-catalan-G-numerical-bound",
         "all-other-lean-discharge-items"
       ]
+    }
+  },
+  {
+    "id": "lean-compile-diagnostics-regen",
+    "summary": "Regenerate docs/audits/lean-compile-diagnostics.json (the source-of-truth for proof-lean-compiles sidecar \u2014 629 stale fails)",
+    "comment": "**Gate #2 of Lean closure path** (per PR #1780's proof-axis-629-fails-stale audit). The proof-lean-compiles QA criterion sources its evidence from docs/audits/lean-compile-diagnostics.json, which has been stale since 2026-05-27 (generated_at field). All 629 currently-open proof-axis fails reduce to this stale source.\n\nRegen path (per PR #1785's skill update):\n  1. lake build QOU (~1-3 hrs from source, no cache)\n  2. For each .lean file under content/quantum-observable-universe/,      call mcp__lean-lsp__lean_diagnostic_messages\n  3. Feed results as JSONL to      `bun run content/pipeline/lean-compile-audit.ts --ingest`\n  4. Sweep: bun run content/pipeline/qa-sweep.ts \\\n     content/quantum-observable-universe --only proof-lean-compiles\n\nAuto-clears the 629 stale sidecars + any real fails surface as fresh actionable items. Total estimated time after step 1: ~30 min.",
+    "status": "open",
+    "priority": "high",
+    "origin": "session-2026-06-04-closure-path-mapping",
+    "createdAt": "2026-06-04",
+    "data": {
+      "goal": "lean-discharge",
+      "depends_on": "lake-build-qou-completes (Gate #1)",
+      "downstream": "all per-block proof-lean-compiles sidecar fails refresh"
+    }
+  },
+  {
+    "id": "lean-phi-q-at-zero",
+    "summary": "Discharge phi_q_at_zero : \u2200 q : \u211d, phi_q q 0 = 1 (boundary case)",
+    "comment": "Identified as a TRACTABLE candidate in PR #1763 axiom triage (docs/audits/2026-06-03-lean-axiom-tractability-triage.md). Quantum dilogarithm at u=0; should follow by `unfold phi_q + simp` if the definition is clean. ~30-60 min in a warm Lean LSP. File: content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean:56.",
+    "status": "open",
+    "priority": "medium",
+    "origin": "session-2026-06-04-closure-path-mapping",
+    "createdAt": "2026-06-04",
+    "data": {
+      "goal": "lean-discharge",
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean",
+      "line": 56,
+      "depends_on": "lake-build-qou-completes (Gate #1)"
+    }
+  },
+  {
+    "id": "lean-li2-q-at-zero",
+    "summary": "Discharge li2_q_at_zero : \u2200 q : \u211d, li2_q q 0 = 0 (boundary case, same shape as phi_q)",
+    "comment": "Identified as a TRACTABLE candidate in PR #1763 axiom triage. Same shape as phi_q_at_zero \u2014 boundary value of quantum dilog. ~30-60 min in a warm Lean LSP. File: content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean:77.",
+    "status": "open",
+    "priority": "medium",
+    "origin": "session-2026-06-04-closure-path-mapping",
+    "createdAt": "2026-06-04",
+    "data": {
+      "goal": "lean-discharge",
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean",
+      "line": 77,
+      "depends_on": "lake-build-qou-completes (Gate #1)"
+    }
+  },
+  {
+    "id": "lean-ord-u-zero-trm-eq",
+    "summary": "Discharge ord_u_zero_trM_eq : ord_u_zero_trM Z N = 18*Z + 21*N + 1 (concrete arithmetic identity)",
+    "comment": "Identified as a TRACTABLE candidate in PR #1763 axiom triage. Small concrete identity; should be `decide` if ord_u_zero_trM is computable, otherwise `unfold + ring`. Fastest of the 4 tractable axiom discharges. ~15-30 min in a warm Lean LSP. File: content/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean:79.",
+    "status": "open",
+    "priority": "medium",
+    "origin": "session-2026-06-04-closure-path-mapping",
+    "createdAt": "2026-06-04",
+    "data": {
+      "goal": "lean-discharge",
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean",
+      "line": 79,
+      "depends_on": "lake-build-qou-completes (Gate #1)"
     }
   }
 ]
