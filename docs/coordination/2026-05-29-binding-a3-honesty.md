@@ -223,3 +223,59 @@ PR #1765 since sweep 1).
 **Open / next:** awaiting PR #1777 author triage. PR #1765 itself stands
 complete as-is (selection rule + Habiro refutation + STEP-4 Gelfand-vs-
 regular-rep analysis + 11 review fixes).
+
+## 2026-06-04 (sweep 3) — Lean proofs + bar-sym/anti retraction + sibling chain-vs-Borromean
+
+Third `/coordinate` sweep on PR #1765. Activity since sweep 2:
+
+**My commits (6 since sweep 2):**
+- (a) c2_h3_h4_pieri_branching_derivation.py + audit: 12/5 from Pieri H_3→H_4
+  branching trace (categorical derivation at q=1, ≠ q-deformed)
+- (b) c2_residual_pslq_scan.py: PSLQ rules out h-polynomial closure of residual
+- (c) c2_bpp_variants_routes_abc.py + A4 bar-sym/anti decomposition: **retracts the
+  0.155 % near-match** as per-crossing-vs-per-block approximation artifact.
+- (d) prop:coulomb-strong-ratio-q-rational.{ts,md,lean}: tanh(ln q) = (q²-1)/(q²+1)
+  Lean-proved over ℝ_{>0}.
+- (e) prop:selection-rule-anchors-c1-c3.{ts,md,lean}: c=1 (muon = 1 ∀q) +
+  c=3 (Family-A) anchors Lean-proved.
+- (f) prop:selection-rule-c2-prediction.{ts,md,lean}: c=2 = (q+1)²/(3q) Lean-proved.
+
+**Own review threads:** all 11 from sweep 1 still resolved (no new review activity).
+
+**New sibling PRs (12), classification:**
+
+| PR | scope | classification | action |
+|----|----|-----|----|
+| #1784 | chain-vs-Borromean heuristic-link audit | DIRECT OVERLAP (Hopf=c=2, Borromean=c=3) | **intent posted** |
+| #1781 | m_μ correction probe NEGATIVE (8 cands) | DIRECT OVERLAP (4_1 = c=1 anchor) | **intent posted** |
+| #1789 | binding-derivation completeness ledger | ADJACENT (lw role in chain) | ledger-only |
+| #1790 | 3-body joint-trace destructive | adjacent (A=3 mechanism) | ledger-only |
+| #1778 | embedded all-pairs combiner −13 % | adjacent (A=3 binding) | ledger-only |
+| #1786 | qbeta c_k depth-sweep | orthogonal | none |
+| #1787 | qbeta Chain 4 n=5 + Demazure | orthogonal | none |
+| #1785 | lean skills (3b-cond + staleness) | meta/infra | none |
+| #1788 | voice banner migration | meta/voice | none |
+| #1783 | voice banner sweep | meta/voice | none |
+| #1780 | 3b-cond catalog + canonical drain | lean infra | none |
+| #1779 | witness regen color-averaging | mechanical | none |
+
+**§6 escalation: PR #1777 retraction (inconsistent finding).**
+My earlier PR #1777 comment proposed `dHe · lw_c2 · (12/5) = 0.7625 MeV` matching
+AME 0.7638 at −0.155 %. The bar-sym/anti decomposition (commit (c) above) shows
+this was a coincidence of approximation errors in PR #1775's source formula
+(per-crossing tanh times per-block sum is structurally inconsistent). Posted
+retraction comment on PR #1777 explicitly framing the reframe — NOT silently
+rewriting my prior framing per skill §6.
+
+**Comments posted this sweep:**
+- PR #1777 (retraction + reframe — §6 escalation)
+- PR #1784 (concrete c=2/c=3 candidates for chain-vs-Borromean question)
+- PR #1781 (c=1 = lw=1 ∀q sharpens m_μ search space)
+
+**No further escalations.** No conflicts on `main` (all main commits are
+qbeta/voice/lean-infra — no overlap with my files).
+
+**Next concrete task:** standing by for next direction. Lean-proof coverage
+now spans (tanh identity, c=1 anchor, c=2 prediction, c=3 anchor, h-form
+conversion) — every closed-form algebraic identity used in this session's
+audit docs has a Lean theorem.
