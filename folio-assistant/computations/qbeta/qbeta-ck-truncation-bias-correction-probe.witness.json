@@ -1,0 +1,67 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T13:32:39.393471+00:00",
+  "commitSha": "71a0fcf709804614823e0732cd3810e58c1a1089",
+  "assertions": [
+    {
+      "name": "c2_bias_corrected_matches_canonical_within_1pct",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Probe 6.a's central test: c_2_extracted - c_3_extracted · u should equal the proved canonical c_2 = -1 within 1% if the c_k are Taylor coefficients of a single generating function F(u). This is the SIGNATURE evidence for the generating-function hypothesis. The size of the residual after this leading-order correction bounds higher-order bias effects."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-ck-truncation-bias-correction-probe",
+  "scriptFile": "qbeta_ck_truncation_bias_correction_probe.py",
+  "scriptHash": "0609e6a2f56f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Probe 6.a: tests the c_k generating-function scoping doc's leading-order truncation-bias prediction Δc_k = c_{k+1}·u. Computes bias-corrected c_k_corr from witness c_k_extracted and checks self-consistency: c_2_corr should equal the proved canonical -1 to extraction precision; c_3_corr should approach the empirical near-match -2 = J_Hopf(q=1).",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "ck_extracted": {
+      "2": "-1.017116186771234347099937",
+      "3": "-2.009739760979015369678792",
+      "4": "-1.143536779532891428003005",
+      "5": "-1.222912551151623169458233",
+      "6": "3.497562061892225440920404",
+      "7": "57.14924267428765097944436",
+      "8": "7649.105892246862959920495",
+      "9": "897807.6156471489062496706",
+      "10": "105411380.1026009785765566"
+    },
+    "ck_bias_corrected_leading": {
+      "2": "-0.9999932040076931361502732",
+      "3": "-1.999996827617395134712207",
+      "4": "-1.13311756459707959859922",
+      "5": "-1.252711779918944930214874",
+      "6": "3.010650514307294654575538",
+      "7": "-8.021139527655621439078256",
+      "8": "-0.2149930668457213266989321",
+      "9": "-297.3428270114312225913704",
+      "10": "105411380.1026009785765566"
+    },
+    "self_consistency": {
+      "c_2_corr": "-0.9999932040076931361502732",
+      "c_2_canonical": "-1.0",
+      "c_2_residual_ppm": -6.79599230686385,
+      "c_3_corr": "-1.999996827617395134712207",
+      "c_3_j_hopf_at_q1": "-2.0",
+      "c_3_residual_pct": -0.0001586191302432644
+    }
+  }
+}
