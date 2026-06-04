@@ -108,8 +108,10 @@ def _character_closed_form_anchor(tol: "mpf") -> dict:
         # Shared mpfr helper (Rust rug::Float kernel): full arbitrary
         # precision, not float64. Anchor deltas drop from ~1e-15 (f64) to
         # ~1e-50. `word` is the flat signed braid word; the helper marshals
-        # it. Same chokepoint as homfly_ocneanu_trace._chi.
-        return chi_lambda_braid_mpf(shape, word, q_value=q0)
+        # it. Pass the canonical 50-digit STRING (not the mpf) so the helper
+        # forwards it verbatim with no round-trip. Same chokepoint as
+        # homfly_ocneanu_trace._chi.
+        return chi_lambda_braid_mpf(shape, word, q_value=Q_50_DIGIT_STR)
 
     def writhe(word):
         return sum(1 if g > 0 else -1 for g in word)

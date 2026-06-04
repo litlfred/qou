@@ -42,7 +42,7 @@ from pathlib import Path
 from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q, Q_INV, HA, q_int
+from q_parameter import Q, Q_INV, HA, q_int, Q_50_DIGIT_STR
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 q0 = Q; qi0 = Q_INV; h = HA; me = M_E_MEV
@@ -415,9 +415,13 @@ def chi_lambda_braid_mpf(shape, signed_word, q_value=None, dps=None):
             generators (e.g. ``[1, -2, 1]``); marshalled to
             ``chi_lambda_braid``'s ``(sign, generator)`` form internally.
         q_value: Hecke parameter — ``mpf`` / ``float`` / ``str`` /
-            ``None`` (→ substrate ``q₀``). A string is passed through
-            verbatim (full precision); an ``mpf``/``float`` is rendered to
-            ``dps + 5`` guard digits.
+            ``None`` (→ substrate ``q₀`` as the canonical 50-digit string
+            ``Q_50_DIGIT_STR``). A string is passed through verbatim (full
+            precision); an ``mpf`` is rendered to ``dps + 5`` guard digits.
+            **Avoid passing a Python ``float``** for the substrate value:
+            the module-level ``q0`` is a float64, so ``q0`` and
+            ``float(q0)`` only carry ~16 digits and would cap the mpfr
+            path — pass ``Q_50_DIGIT_STR`` (or an ``mpf`` built from it).
         dps: target precision; default ``max(50, current mpmath dps)``.
 
     Returns an ``mpmath.mpf``. Note ``mp.mpf`` *rounds* the kernel's
@@ -429,7 +433,9 @@ def chi_lambda_braid_mpf(shape, signed_word, q_value=None, dps=None):
     if dps is None:
         dps = max(50, mp.dps)
     if q_value is None:
-        q_value = q0
+        # Default to the canonical high-precision substrate string, NOT the
+        # module-level float64 `q0` (which would silently cap the mpfr path).
+        q_value = Q_50_DIGIT_STR
     q_str = (q_value if isinstance(q_value, str)
              else mp.nstr(mp.mpf(q_value), dps + 5, strip_zeros=False))
     hc = [(1, g) if g > 0 else (-1, -g) for g in signed_word]
