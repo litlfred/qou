@@ -1268,20 +1268,31 @@ export function checkDetanglerArchimedeanWall(
 let _chapterOrder: Map<string, number> | null = null;
 let _labelToChapter: Map<string, string> | null = null;
 let _usesGraph: Map<string, string[]> | null = null;
+// Precomputed once per load: block label -> an example uses[] cycle
+// path through it (only present for labels that sit on a cycle), so
+// the per-block cycle check is an O(1) lookup, not a per-call DFS.
+let _inCyclePath: Map<string, string[]> | null = null;
+// Set true only after a *successful* graph build. Checkers gate on
+// this (not on map nullability) so a missing paper manifest yields
+// `n/a` rather than a false "everything passes".
+let _graphLoaded = false;
 
 function loadChapterGraph(): void {
-  if (_chapterOrder) return;
-  _chapterOrder = new Map();
-  _labelToChapter = new Map();
-  _usesGraph = new Map();
+  if (_graphLoaded) return;
+
+  // Build into locals; publish to the module-level caches only on a
+  // fully successful load.
+  const chapterOrder = new Map<string, number>();
+  const labelToChapter = new Map<string, string>();
+  const usesGraph = new Map<string, string[]>();
 
   const paperTs = join(CONTENT_DIR, "quantum-observable-universe", "quantum-observable-universe.ts");
-  if (!existsSync(paperTs)) return;
+  if (!existsSync(paperTs)) return; // not loaded — _graphLoaded stays false
   const src = readFileSync(paperTs, "utf-8");
   const dirs = [...src.matchAll(/dir:\s*"([^"]+)"/g)].map(m => m[1]);
-  dirs.forEach((d, i) => _chapterOrder!.set(d, i));
+  dirs.forEach((d, i) => chapterOrder.set(d, i));
 
-  // Build label→chapter map by scanning all .ts files
+  // Build label→chapter + uses[] adjacency by scanning all block .ts.
   const base = join(CONTENT_DIR, "quantum-observable-universe");
   for (const dir of dirs) {
     const chDir = join(base, dir);
@@ -1293,7 +1304,7 @@ function loadChapterGraph(): void {
         const content = readFileSync(join(chDir, f), "utf-8");
         const m = content.match(/label:\s*"([^"]+)"/);
         if (m) {
-          _labelToChapter!.set(m[1], dir);
+          labelToChapter.set(m[1], dir);
           // Record the block's `uses:[...]` dependency edges (only the
           // uses array — NOT cites/interprets/own-label) for cycle
           // detection.
@@ -1301,11 +1312,41 @@ function loadChapterGraph(): void {
           const useLabels = usesM
             ? [...usesM[1].matchAll(/"([^"]+)"/g)].map((x) => x[1])
             : [];
-          _usesGraph!.set(m[1], useLabels);
+          usesGraph.set(m[1], useLabels);
         }
       }
     } catch {}
   }
+
+  // Precompute uses[]-cycle membership ONCE: for each label on a
+  // dependency cycle, store an example back-to-self path. Per-block
+  // checks then become an O(1) lookup.
+  const inCyclePath = new Map<string, string[]>();
+  for (const start of usesGraph.keys()) {
+    const visited = new Set<string>([start]);
+    const path: string[] = [start];
+    const dfs = (node: string): string[] | null => {
+      for (const next of usesGraph.get(node) ?? []) {
+        if (next === start) return [...path, start];
+        if (!visited.has(next)) {
+          visited.add(next);
+          path.push(next);
+          const found = dfs(next);
+          if (found) return found;
+          path.pop();
+        }
+      }
+      return null;
+    };
+    const cyc = dfs(start);
+    if (cyc) inCyclePath.set(start, cyc);
+  }
+
+  _chapterOrder = chapterOrder;
+  _labelToChapter = labelToChapter;
+  _usesGraph = usesGraph;
+  _inCyclePath = inCyclePath;
+  _graphLoaded = true;
 }
 
 export function checkDetanglerBlockTanglement(
@@ -1367,43 +1408,21 @@ export function checkDetanglerNoDependencyCycle(
 ): CheckerResult {
   if (!tsPath || !existsSync(tsPath)) return { result: "pass", hits: [] };
   loadChapterGraph();
-  if (!_usesGraph) return { result: "n/a", hits: [] };
+  if (!_graphLoaded || !_inCyclePath) return { result: "n/a", hits: [] };
 
   const content = readFileSync(tsPath, "utf-8");
   const labelMatch = content.match(/label:\s*"([^"]+)"/);
   if (!labelMatch) return { result: "pass", hits: [] };
-  const start = labelMatch[1];
 
-  const graph = _usesGraph;
-  const visited = new Set<string>([start]);
-  const path: string[] = [start];
-  let cycle: string[] | null = null;
-
-  const dfs = (node: string): boolean => {
-    for (const next of graph.get(node) ?? []) {
-      if (next === start) {
-        cycle = [...path, start];
-        return true;
-      }
-      if (!visited.has(next)) {
-        visited.add(next);
-        path.push(next);
-        if (dfs(next)) return true;
-        path.pop();
-      }
-    }
-    return false;
-  };
-
-  dfs(start);
-  if (cycle) {
+  const cyclePath = _inCyclePath.get(labelMatch[1]);
+  if (cyclePath) {
     return {
       result: "fail",
       hits: [
         {
           file: tsPath,
           line: 0,
-          text: `uses[] dependency cycle: ${(cycle as string[]).join(" -> ")}`,
+          text: `uses[] dependency cycle: ${cyclePath.join(" -> ")}`,
         },
       ],
     };
