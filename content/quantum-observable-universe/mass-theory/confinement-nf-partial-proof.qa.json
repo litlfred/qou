@@ -2229,6 +2229,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Block kind 'undefined' has no provable Lean content expected."
+      },
+      {
+        "field_hash": {
+          "md": "40ac06109715",
+          "ts": "7a965f83cfaf",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean theorem_3_strong_duality [HasFiniteLPDuality] and theorem_1_maximizer_in_active_set [HasFiniteLPDuality] match narrative T1/T3; HasBranchingBlockLemma class matches narrative T2 conditional; .ts lean.ref points at theorem_3_strong_duality (one of three theorems)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:10:46.962Z",
+        "reviewed_sha": "fc693f631bfd72f4117c8b490468e3af495079fd",
+        "notes": "Minor: .ts lean.ref cites only T3 theorem; narrative claims T1+T2+T3; ref could point at a top-level wrapper theorem; quantifiers and hypotheses otherwise match"
       }
     ],
     "proof-lean-compiles": [
@@ -2658,5 +2678,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-04T23:10:07.133Z"
+  "updated_at": "2026-06-04T23:10:46.962Z"
 }
