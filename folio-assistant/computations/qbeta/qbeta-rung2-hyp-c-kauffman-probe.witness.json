@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T10:49:38.646752+00:00",
-  "commitSha": "08fd1dd1ffa18fe3f901dfc7101827ef8c120f9f",
+  "computedAt": "2026-06-04T10:55:05.697973+00:00",
+  "commitSha": "5270f87ec15bdcbd0acdc7f0199a382c85ccccfe",
   "assertions": [
     {
       "name": "hyp_C_decisively_resolved_for_natural_knots",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 219,
+  "durationMs": 198,
   "computation": "qbeta-rung2-hyp-c-kauffman-probe",
   "scriptFile": "qbeta_rung2_hypC_kauffman_probe.py",
-  "scriptHash": "5c47db979dfd",
-  "scriptCommitSha": "08fd1dd1ffa18fe3f901dfc7101827ef8c120f9f",
+  "scriptHash": "9581e490ff4b",
+  "scriptCommitSha": "5270f87ec15bdcbd0acdc7f0199a382c85ccccfe",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

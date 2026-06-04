@@ -21,9 +21,6 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 import time
-from pathlib import Path
-
-HERE = Path(__file__).resolve().parent
 
 import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
@@ -99,7 +96,10 @@ def main() -> int:
 
     q0_mp = mp.mpf(Q0_MP_PIN)
     def evalmp(expr):
-        return mp.mpf(str(sp.N(expr.subs(q, sp.Float(str(q0_mp), 50)), 50)))
+        # Use sympy.lambdify with the mpmath backend so high-precision
+        # evaluation goes through mpmath natively (no intermediate
+        # string/float roundtrip).  Per Gemini review on PR #1806.
+        return sp.lambdify(q, expr, "mpmath")(q0_mp)
     actual_q0 = evalmp(rung2_actual)
     hypB_q0 = evalmp(hypB_pred)
     print(f"  Numerical at q_0:")

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T10:43:58.486756+00:00",
-  "commitSha": "5ff5b1b02c177a36d70c5715cb14c42d699167f5",
+  "computedAt": "2026-06-04T10:55:04.300296+00:00",
+  "commitSha": "5270f87ec15bdcbd0acdc7f0199a382c85ccccfe",
   "assertions": [
     {
       "name": "candidate_D_im_vanishes_at_real_q",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 16,
   "computation": "qbeta-c3-complex-habiro-cross-anchor-probe",
   "scriptFile": "qbeta_c3_complex_habiro_cross_anchor_probe.py",
-  "scriptHash": "a8e8246b97d4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "28b00db45424",
+  "scriptCommitSha": "08fd1dd1ffa18fe3f901dfc7101827ef8c120f9f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -47,7 +47,7 @@
       {
         "name": "A_generic_pole",
         "q_pole": "1.109978151136577181208054",
-        "distance_q_p_to_pole": 4.316134228187919e-07,
+        "distance_q_p_to_pole": "0.0000004316134228187919463087248",
         "matches_both_by_construction": true,
         "categorical_meaning_of_q_pole": "NONE (fit-derived)"
       },

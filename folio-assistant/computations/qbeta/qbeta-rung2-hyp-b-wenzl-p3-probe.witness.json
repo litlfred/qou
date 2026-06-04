@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T10:43:59.311632+00:00",
-  "commitSha": "5ff5b1b02c177a36d70c5715cb14c42d699167f5",
+  "computedAt": "2026-06-04T10:55:05.025417+00:00",
+  "commitSha": "5270f87ec15bdcbd0acdc7f0199a382c85ccccfe",
   "assertions": [
     {
       "name": "hypB_decisively_resolved",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 339,
+  "durationMs": 328,
   "computation": "qbeta-rung2-hyp-b-wenzl-p3-probe",
   "scriptFile": "qbeta_rung2_hypB_wenzl_p3_probe.py",
-  "scriptHash": "a5002096f86b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5a86efcd20d0",
+  "scriptCommitSha": "08fd1dd1ffa18fe3f901dfc7101827ef8c120f9f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

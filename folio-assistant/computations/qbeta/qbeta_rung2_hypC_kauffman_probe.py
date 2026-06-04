@@ -44,9 +44,6 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 import time
-from pathlib import Path
-
-HERE = Path(__file__).resolve().parent
 
 import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
@@ -59,8 +56,6 @@ mp.mp.dps = 65
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-
-Q0_MP_PIN = "1.1099785827513808075916690956107688798744991218736"
 
 
 def main() -> int:
@@ -86,15 +81,24 @@ def main() -> int:
 
     q = sp.Symbol("q", positive=True)
     hbar_q = (q - 1) / q
+    h = sp.Symbol("h")  # series variable, q = 1 + h
 
-    # Rung 2 form
-    rung2 = hbar_q ** 3 / (q + 1 / q)
+    # Rung 2 form (algebraic context — its [2]_q factor cancels with
+    # the unknot-bracket [2]_q normalisation in the Hyp-C ratio, so
+    # the required cubic coefficient comes directly from ℏ_q³, NOT
+    # ℏ_q³/[2]_q.  Recorded here for clarity and downstream audit.)
+    rung2_form = "hbar_q^3 / [2]_q  (declarative; cancels in Hyp-C ratio)"
 
-    # Expand ℏ_q³ around q=1 to read off the required cubic coefficient
-    hbar_q_cubed_series = sp.series(hbar_q ** 3, q, 1, 5).removeO()
-    cubic_coeff_required = hbar_q_cubed_series.coeff((q - 1), 3)
-    print(f"  ℏ_q³ Taylor at q=1: {sp.collect(hbar_q_cubed_series, (q-1))}")
-    print(f"  Required (q-1)³ coefficient for Hyp-C: {cubic_coeff_required}")
+    # Expand ℏ_q³ around q=1 by substituting q = 1 + h and reading off
+    # the h^3 coefficient.  The (q = 1 + h) reparametrisation is more
+    # robust than sympy.coeff((q-1), 3) per Gemini review on PR #1806.
+    hbar_q_cubed_series = sp.series(
+        hbar_q.subs(q, 1 + h) ** 3, h, 0, 5).removeO()
+    cubic_coeff_required = hbar_q_cubed_series.coeff(h, 3)
+    print(f"  rung 2 algebraic form: {rung2_form}")
+    print(f"  ℏ_q³ Taylor at q=1 (in h := q-1): "
+          f"{sp.collect(hbar_q_cubed_series, h)}")
+    print(f"  Required h³ coefficient for Hyp-C: {cubic_coeff_required}")
     print()
 
     # Natural knot candidates (Jones polynomials, common conventions)
@@ -114,8 +118,10 @@ def main() -> int:
     results = []
     for name, V in knots.items():
         V_at_q1 = sp.limit(V, q, 1)
-        V_taylor = sp.series(V, q, 1, 5).removeO()
-        c3 = V_taylor.coeff((q - 1), 3)
+        # Use the h = q - 1 reparametrisation for robust series extraction
+        # (per Gemini review on PR #1806).
+        V_taylor = sp.series(V.subs(q, 1 + h), h, 0, 5).removeO()
+        c3 = V_taylor.coeff(h, 3)
         # Hyp-C confirmed iff cubic coefficient matches the required value
         confirmed = (sp.simplify(c3 - cubic_coeff_required) == 0)
         verdict = "✓ MATCH" if confirmed else f"✗ ≠ {cubic_coeff_required}"

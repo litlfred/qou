@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""qbeta_c3_complex_habiro_cross_anchor_test.py — test candidate
+"""qbeta_c3_complex_habiro_cross_anchor_probe.py — test candidate
 complex-analytic Habiro elements at BOTH proton + muon anchors.
 
 PR #1801 follow-up. The 569bedda1 falsify commit on main showed:
@@ -55,9 +55,6 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 import time
-from pathlib import Path
-
-HERE = Path(__file__).resolve().parent
 
 import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
@@ -178,11 +175,12 @@ def main() -> int:
     delta_A = (A_m - C3_MUON_EMP) / C3_MUON_EMP
     print(f"  {'A. α/(q-q_pole) [forced match]':<48} "
           f"{mp.nstr(A_p, 7):<14} {mp.nstr(A_m, 7):<14} {float(delta_A):+.1e}")
+    distance_q_p_to_pole = Q_PROTON - q_pole_A
     print(f"    q_pole = {mp.nstr(q_pole_A, 12)} "
-          f"(distance to q_p: {float(Q_PROTON - q_pole_A):.2e})")
+          f"(distance to q_p: {mp.nstr(distance_q_p_to_pole, 4)})")
     results.append({"name": "A_generic_pole",
                     "q_pole": mp.nstr(q_pole_A, 25),
-                    "distance_q_p_to_pole": float(Q_PROTON - q_pole_A),
+                    "distance_q_p_to_pole": mp.nstr(distance_q_p_to_pole, 25),
                     "matches_both_by_construction": True,
                     "categorical_meaning_of_q_pole": "NONE (fit-derived)"})
 
@@ -321,7 +319,7 @@ def main() -> int:
     )
 
     builder.save()
-    print(f"  Witness: qbeta-c3-complex-habiro-cross-anchor-test.witness.json")
+    print(f"  Witness: qbeta-c3-complex-habiro-cross-anchor-probe.witness.json")
     return 0
 
 
