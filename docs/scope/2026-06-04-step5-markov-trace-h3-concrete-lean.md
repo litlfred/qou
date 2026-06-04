@@ -8,29 +8,39 @@ a **concrete H₃(q) Markov-trace functional** on the NF free module, with
 linearity, the Hecke operator identity, and the Markov reduction proved
 as lemmas — mirroring `gram.py`'s NF basis + `TR_M` exactly.
 
-## Why a design doc and not a committed `.lean`
+## Status — committed + verified GREEN ✅
 
-This branch's session ran in a web sandbox with **no Lean toolchain and
-no way to install one**:
+The code below is **committed and building** in
+[`MarkovTraceOnHecke.lean`](../../content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean)
+(this doc is now the cross-verification + toolchain record, not a
+pending drop-in). `lake build QOU.Machinery.MarkovTraceOnHecke` →
+*"Build completed successfully (922 jobs)"*, exit 0, **sorry-free**.
 
-- `elan`/`lake`/`lean` are all absent (`command -v` → MISSING);
-- the elan installer is network-blocked (`curl … elan-init.sh` → **HTTP
-  403**);
-- the Lean LSP cannot start (`lean_diagnostic_messages` →
-  *"No such file or directory: 'lake'"*).
+**Toolchain recipe that unblocked it** (a stricter sandbox than the elan
+installer can reach — `release.lean-lang.org` and the mathlib cache host
+are both firewalled, but **GitHub release assets are allowlisted**), per
+[`lean-environment-setup.md` §"web-sandbox addendum"](../../.claude/skills/local/lean-environment-setup.md):
 
-Per CLAUDE.md ("Don't iterate Lean proofs blind when the LSP is cold")
-and the file-hygiene / shared-build rules, dropping **unverified**
-non-trivial Lean into the `QOU` package would risk breaking
-`lake build QOU` for every sibling — one unknown simp-lemma name is
-enough. So the code lives here, ready to paste, instead.
+1. `lean_setup` MCP tool installs `elan` (it reaches an allowed source);
+2. download the toolchain tarball by hand from the GitHub release
+   (`github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-linux.tar.zst`),
+   decompress (`apt-get install zstd`), and copy into
+   `~/.elan/toolchains/leanprover--lean4---v4.24.0/`;
+3. the mathlib **cache is 403-blocked** (all 7335 oleans denied), so
+   `lake build` the needed ~650-module subset **from source** (full
+   mathlib clone is already present from `lake exe cache get`'s fetch).
+
+The one fix vs. the first-draft code: `trM_markov_σ₁`'s reduction needs
+the `Matrix.cons_val` simproc (not the `cons_val_zero/one` lemmas, which
+don't chain past index 1) — `simp only [trM, mulσ₁, TRM, Fin.sum_univ_six,
+Matrix.cons_val, h2, h3, h4, h5]; ring`.
 
 ## Verification status (important)
 
 | layer | status |
 |-------|--------|
 | **Mathematical content** (NF tables, `TR_M`, Hecke identity, Markov reduction) | ✅ **cross-verified in Python** against `gram.py` — 200-sample randomized checks all pass (see below) |
-| **Lean syntax / tactic invocations** | ⏳ **unverified** — needs a warm `lake build QOU` (sandbox block above) |
+| **Lean syntax / tactic invocations** | ✅ **verified** — `lake build QOU.Machinery.MarkovTraceOnHecke` green (922 jobs), sorry-free |
 
 The Python cross-check (reproducible via `pyhecke`):
 
@@ -107,9 +117,8 @@ defining Markov property at the H₂ ↪ H₃ inclusion. -/
 theorem trM_markov_σ₁ (z h : R) (v : Fin 6 → R)
     (h2 : v 2 = 0) (h3 : v 3 = 0) (h4 : v 4 = 0) (h5 : v 5 = 0) :
     trM z h (mulσ₁ h v) = z * trM z h v := by
-  simp only [trM, mulσ₁, TRM, Fin.sum_univ_six,
-    Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons]
-  rw [h2, h3, h4, h5]; ring
+  simp only [trM, mulσ₁, TRM, Fin.sum_univ_six, Matrix.cons_val, h2, h3, h4, h5]
+  ring
 
 /-- The concrete n=3 trace satisfies the Markov laws — it is a **real**
 linear functional, no longer a `True` marker. Use this to give the
