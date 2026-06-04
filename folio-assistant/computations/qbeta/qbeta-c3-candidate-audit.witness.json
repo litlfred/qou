@@ -1,0 +1,126 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T01:35:32.037501+00:00",
+  "commitSha": "42a41839d9c30d2fb61f677e40969c1087f6cbf8",
+  "assertions": [
+    {
+      "name": "no_existing_candidate_predicts_c_3_eq_neg_2_structurally",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "AUDIT: enumerate the N=3 candidates from probe_q_beta_operator_valued_N3.py, Taylor-expand each as a series in u = b·ℏ_q², read off the u³ coefficient. None of the existing candidates (Pure b³, iterated cos, exponential resum, geometric, half-argument) predicts c_3 = -2. The only fit that matches is the hypothetical (1 - 2·u³) which is not derived. This assertion enforces the honest scoping: c_3 has no current structural derivation."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 347,
+  "computation": "qbeta-c3-candidate-audit",
+  "scriptFile": "qbeta_c3_candidate_audit.py",
+  "scriptHash": "2e92944895e4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Taylor-expand each N=3 candidate from probe_q_beta_operator_valued_N3.py to u³ order and read off the predicted c_3. Sanity-check against c_2 = -1 STRUCTURAL (prop:q-beta-c-2-eq-neg-one-structural). Verdict: which candidate (if any) predicts c_3 = -2 (the empirical near-match) structurally. Honest scoping — does not claim a structural c_3 derivation.",
+  "contentBlock": "prop:q-beta-c-2-eq-neg-one-structural",
+  "data": {
+    "candidates": [
+      {
+        "candidate": "(1 + u³)",
+        "u0_coeff": "1",
+        "u1_coeff": "0",
+        "u2_coeff": "0",
+        "u3_coeff": "1",
+        "matches_c3_neg_2": false
+      },
+      {
+        "candidate": "(1 - u³)",
+        "u0_coeff": "1",
+        "u1_coeff": "0",
+        "u2_coeff": "0",
+        "u3_coeff": "-1",
+        "matches_c3_neg_2": false
+      },
+      {
+        "candidate": "(1 - u³/2)",
+        "u0_coeff": "1",
+        "u1_coeff": "0",
+        "u2_coeff": "0",
+        "u3_coeff": "-1/2",
+        "matches_c3_neg_2": false
+      },
+      {
+        "candidate": "cos(u) / (1 - u²)",
+        "u0_coeff": "1",
+        "u1_coeff": "0",
+        "u2_coeff": "1/2",
+        "u3_coeff": "0",
+        "matches_c3_neg_2": false
+      },
+      {
+        "candidate": "cos(u)·cos(u²) / (1 - u²)",
+        "u0_coeff": "1",
+        "u1_coeff": "0",
+        "u2_coeff": "1/2",
+        "u3_coeff": "0",
+        "matches_c3_neg_2": false
+      },
+      {
+        "candidate": "exp(-u/(2(1-u))) / (1 - u²)",
+        "u0_coeff": "1",
+        "u1_coeff": "-1/2",
+        "u2_coeff": "5/8",
+        "u3_coeff": "-37/48",
+        "matches_c3_neg_2": false
+      },
+      {
+        "candidate": "exp(-u²/(2(1-u))) / (1 - u²)",
+        "u0_coeff": "1",
+        "u1_coeff": "0",
+        "u2_coeff": "1/2",
+        "u3_coeff": "-1/2",
+        "matches_c3_neg_2": false
+      },
+      {
+        "candidate": "1 / (1 + u²) / (1 - u²) = 1/(1-u⁴)",
+        "u0_coeff": "1",
+        "u1_coeff": "0",
+        "u2_coeff": "0",
+        "u3_coeff": "0",
+        "matches_c3_neg_2": false
+      },
+      {
+        "candidate": "(1 - 2·u³)  [hypothetical c_3 = -2]",
+        "u0_coeff": "1",
+        "u1_coeff": "0",
+        "u2_coeff": "0",
+        "u3_coeff": "-2",
+        "matches_c3_neg_2": true
+      },
+      {
+        "candidate": "(1 - 2·u² + u⁴) / (1 - u²)  [(1 - u²) squared]",
+        "u0_coeff": "1",
+        "u1_coeff": "0",
+        "u2_coeff": "-1",
+        "u3_coeff": "0",
+        "matches_c3_neg_2": false
+      }
+    ],
+    "verdict": {
+      "c_2_status": "STRUCTURAL (prop:q-beta-c-2-eq-neg-one-structural)",
+      "c_3_status": "empirical near-match; no structural derivation",
+      "candidates_predicting_c3_neg_2_structurally": 0,
+      "empirical_c3_target": -2,
+      "j_hopf_q0_value": -2.043706208532522
+    }
+  }
+}
