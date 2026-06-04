@@ -3,6 +3,8 @@
   "meta": {
     "authoritative": true,
     "date": "2026-06-04",
+    "schema_version": 2,
+    "schema_version_note": "v2 (2026-06-04): every `rung` identifier and the `production.*_wired_rungs` lists are STRINGS. Single rungs are bare digits ('2'..'6'); ranges carry a hyphen ('6-7','8-10'). v1 (the original consolidation, same day) mixed ints for single rungs with strings for ranges; v2 unifies to all-string. Consumers must treat `rung` as a string (the validator normalizes via str() for safety).",
     "markdown_twin": "docs/coordination/ck-dk-canonical-registry.md",
     "description": "Machine-readable canonical-vs-empirical status for the Q_beta c_k precision ladder and the m_p d_k brane-tower. The markdown twin is the human-readable authority; this JSON is the dashboard/validator-readable mirror. Tiers and wiring MUST agree between the two.",
     "tiers": {
