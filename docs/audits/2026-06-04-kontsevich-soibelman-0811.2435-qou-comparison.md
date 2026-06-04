@@ -574,3 +574,55 @@ that would be a real simplification of the open step — but it must be *derived
   Franecki–Kapranov / Webster–Williamson already present); (iii) **one optional**
   `MonoidHom` cleanup of Wenzl disjoint-multiplicativity (§11.4). The wall-crossing
   payload — the famous, beautiful half of KS — stays **outside** QOU by design.
+
+---
+
+## 12. "What would Lean-formalizing *all* of KS give QOU?" (owner follow-up)
+
+Layered answer.
+
+### 12.1 For QOU's predictions — nothing
+
+The substrate→observable chain (steps 1–11) is self-contained and never invokes KS.
+No KS theorem feeds `m_p`, `m_n`, `B(K)`, `Q_β`, or any L1/L2 dashboard number;
+formalizing KS would not move a single digit. (By contrast, discharging QOU's *own*
+`sorry`s — Markov-trace uniqueness, the SkewSYT jet `sorry`s — *would* harden the
+chain. Those are QOU gaps, not KS's.)
+
+### 12.2 For QOU's status — remark → proved embedding
+
+Under the Lean-gate, KS is today a **remark** (§3b: no logical claim without Lean). If
+the KS *specialization to QOU's setting* were Lean-backed, the §3 dictionary becomes a
+**theorem**:
+
+> a functor/instance exhibiting QOU's `(𝐂, τ, tr_M)` at fixed q₀ as the rigid
+> q₀-evaluation of a KS stability structure `(𝐂, Z, Ω)` — with `Z` the τ-period and
+> `Ω` the Wedderburn multiplicities.
+
+Payoff: (a) **structural legitimacy** — QOU becomes *an instance* of a recognized
+framework, not a parallel invention; (b) a **rigorous bridge** to BPS / Gaiotto–Moore–
+Neitzke / cluster-algebra results; (c) **license to cite** KS-proved lemmas as QOU
+lemmas. This is "the pretty story becomes a theorem."
+
+### 12.3 But "all their proofs" is the wrong, infeasible target
+
+- **No Mathlib foundation.** Motivic integration (Grothendieck ring of varieties +
+  measures), the motivic Milnor fiber, ind-constructible stacks, A∞-categories,
+  Bridgeland stability — none are in Mathlib. Each is a multi-year formalization on its
+  own; together they are among the hardest unformalized areas of mathematics.
+- **You cannot formalize a sketch.** Thm 3/4 are explicitly "details to the reader";
+  ~12 of the 47 results are conjectures (§10). To "do their proofs in Lean" you must
+  first *complete the mathematics* — open research, not formalization. Parts of the KS
+  program were tightened only in later papers / remain folklore.
+- **The usable half collapses to one QOU lemma.** The Lean-admissible, QOU-relevant
+  residue (§10: 4 results) all say *"the invariant is multiplicative."* In QOU's
+  specific Hecke setting that **is** Wenzl disjoint-multiplicativity (Phase 5l) —
+  already nearly sorry-free. So "KS in Lean," scoped to what QOU can use, = finishing
+  **one small QOU lemma** (§11.4). KS is not needed for it.
+
+### 12.4 Net
+
+Enormous cost; ~zero prediction benefit; the single structural payoff (remark →
+embedding) needs only the **specialization**, not the 148-page program. Disciplined
+plan: **keep KS as remark + dictionary; Lean-back only the QOU-side specialization.**
+The Lean-gate already implies this — it is *why* KS is, correctly, a remark today.
