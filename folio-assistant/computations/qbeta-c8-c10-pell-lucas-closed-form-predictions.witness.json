@@ -2,7 +2,7 @@
   "computation": "qbeta-c8-c10-pell-lucas-closed-form-predictions",
   "description": "Closed-form predictions for Q_\u03b2 c_8, c_9, c_10 extending the Pell-Lucas \u03c3-action pattern documented in qbeta-decay-sdp-extended-ck.witness.json. The closed forms     c_8 = c_3\u00b2\u00b7b\u2074 = 4\u00b7b\u2074,  c_9 = c_3\u00b3\u00b7b\u00b2 = -8\u00b7b\u00b2,  c_10 = c_3\u00b2\u00b7b\u2076 = 4\u00b7b\u2076  match the witness's silver-ratio rational values exactly (49/16, -7, 343/128). At q\u2080 the closed forms differ from the SDP-extracted values by orders of magnitude \u2014 this is the DOCUMENTED q\u2080 noise-floor at k \u2265 8 (per the SDP script's own docstring caveat), not a refutation of the closed form. STRUCTURAL signal at silver, NOT precision claim at q\u2080. EXPLORATORY. No production wiring. No fit.",
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
-  "b_squared_at_q0": "0.752702113845058055986303163434",
+  "b_squared_at_q0": "0.75270211325196540159377935162",
   "closed_form_definitions": {
     "c_8": "c_3\u00b2 \u00b7 b\u2074  =  4 \u00b7 b\u2074",
     "c_9": "c_3\u00b3 \u00b7 b\u00b2  = -8 \u00b7 b\u00b2",
@@ -26,9 +26,9 @@
   },
   "all_silver_match": true,
   "q0_predictions_from_closed_form_50dps": {
-    "c_8_closed_at_q0": "2.26624188874727495364499399336",
-    "c_9_closed_at_q0": "-6.02161691076046444789042530748",
-    "c_10_closed_at_q0": "1.70580506014429074550006413353"
+    "c_8_closed_at_q0": "2.26624188517589819771419653936",
+    "c_9_closed_at_q0": "-6.02161690601572321275023481296",
+    "c_10_closed_at_q0": "1.70580505611201649679935628739"
   },
   "q0_sdp_extracted_for_comparison": {
     "c_8_sdp_at_q0": "7649.105892246863",
