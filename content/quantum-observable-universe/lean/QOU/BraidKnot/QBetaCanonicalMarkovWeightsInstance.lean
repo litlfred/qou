@@ -60,4 +60,59 @@ theorem CanonicalMarkovWeightsH3.is_inhabited :
     Nonempty CanonicalMarkovWeightsH3 :=
   ⟨CanonicalMarkovWeightsH3.explicitInstance⟩
 
+/-! ### Evaluation of `delta_tau_M_canonical` at the explicit instance
+
+The three lemmas below make the §3b-cond conditional theorems concrete at
+the one in-repo instance (`explicitInstance`), closing the loop between
+the class hypothesis and a downstream computation. They feed the
+numerical companion
+[`qbeta_delta_tau_M_canonical_explicit_instance.py`](../../../../../folio-assistant/computations/qbeta/qbeta_delta_tau_M_canonical_explicit_instance.py)
+(witness `qbeta-delta-tau-m-canonical-explicit-instance.witness.json`),
+which evaluates the SAME object at substrate q₀ and reports the
+cross-anchor swing against the rational surrogate. -/
+
+/-- **Lemma (explicit-instance unfolding).** With the explicit √q-bearing
+instance, the canonical Δτ_M is the concrete `z`-weighted block sum, where
+`z = markov_parameter q = √q / (1 + q)`:
+
+  `Δτ_M^can(q) = z · χ_(3) + (1/2 − z) · χ_(2,1) + z · χ_(1,1,1)`.
+
+Pure definitional unfolding (the instance projections β/ι-reduce). -/
+theorem delta_tau_M_canonical_explicit_eq (q : ℝ) :
+    @delta_tau_M_canonical CanonicalMarkovWeightsH3.explicitInstance q
+      = markov_parameter q * chi_block_3 q
+      + (1 / 2 - markov_parameter q) * chi_block_21 q
+      + markov_parameter q * chi_block_111 q :=
+  rfl
+
+/-- **Theorem (explicit-instance vanishing at q = 1).** The canonical Δτ_M
+at the explicit instance vanishes at the classical point. This is the
+conditional `delta_tau_M_canonical_vanish_at_one` dispatched at the
+explicit instance — confirming the conditional theorem is non-vacuous. -/
+theorem delta_tau_M_canonical_explicit_vanish_at_one :
+    @delta_tau_M_canonical CanonicalMarkovWeightsH3.explicitInstance 1 = 0 :=
+  @delta_tau_M_canonical_vanish_at_one CanonicalMarkovWeightsH3.explicitInstance
+
+/-- **Theorem (explicit-instance (q²−1) factor).** For `q > 0`, the
+canonical Δτ_M at the explicit instance factors through `(q² − 1)`, so it
+vanishes at the classical point `q = 1` for the structural reason (the
+`(q²−1)` factor in every per-block character), independently of the
+`√q`-bearing weights.
+
+Proof: unfold to the `z`-weighted block sum
+(`delta_tau_M_canonical_explicit_eq`), substitute the per-block
+factorisations from `chi_blocks_have_q2_minus_1_factor`, and pull out the
+common `(q²−1)`; the cofactor carries the weights `z = markov_parameter q`
+as an opaque atom under `ring`. -/
+theorem delta_tau_M_canonical_explicit_has_q2_minus_1_factor
+    (q : ℝ) (hq : 0 < q) :
+    ∃ P : ℝ, @delta_tau_M_canonical CanonicalMarkovWeightsH3.explicitInstance q
+      = (q ^ 2 - 1) * P := by
+  obtain ⟨P3, P21, P111, h3, h21, h111⟩ := chi_blocks_have_q2_minus_1_factor q hq
+  refine ⟨markov_parameter q * P3 q
+          + (1 / 2 - markov_parameter q) * P21 q
+          + markov_parameter q * P111 q, ?_⟩
+  rw [delta_tau_M_canonical_explicit_eq, h3, h21, h111]
+  ring
+
 end QOU.BraidKnot
