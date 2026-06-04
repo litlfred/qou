@@ -110,15 +110,66 @@ where A and D are closed-form functions of η_0 = log q_0 and u. The c_k are the
 
 **Probe candidate**: fit `Q_β(q_0) / Q_A(q_0)` to a cosh-of-polynomial-in-u form; check whether the polynomial coefficients are q_0-stable and classical-limit consistent.
 
-### 3.d Combined picture
+### 3.d Candidate D: Wedderburn-block basis of generating functions
+
+**Author follow-up prompt** (2026-06-04, mid-scoping):
+> *"we also have a basis of generating/eigenfunctions... not sure if those useful in this context or not"*
+
+This refines candidates A/B/C: the c_k generating function need not be a SINGLE function — it could be a **sum over a Wedderburn-block basis**. The relevant basis already lives in **Step 5** of the canonical chain:
+
+```
+H_n(q) ≅ ⊕_{λ ⊢ n} M_{d_λ}(ℚ(q))
+tr_M(β) = Σ_λ y_λ(q) · χ^λ(β)             [Wenzl decomposition]
+```
+
+The **Hecke characters χ^λ** form a basis of class functions on `H_n(q)`. Each `χ^λ(σ_1^k)` (varying k) is a generating function in q (or in η_0 at substrate), one per partition λ. They are **eigenfunctions** in the sense of being labels of irreducible blocks of the Wedderburn decomposition.
+
+The Wenzl weights `y_λ(q)` are also generating functions in q (per λ).
+
+**Refined hypothesis (combining with A/B/C above)**:
+
+```
+Δ(net(T_w))(u, q) = Σ_λ  f_λ(u, q) · y_λ(q) · χ^λ(braid_word(T_w))
+                          ↑          ↑         ↑
+                    per-block      Wenzl     Hecke
+                    generating    weights   character
+                    function
+```
+
+The c_k are then:
+
+```
+c_k = Σ_λ [Taylor coef of u^k in f_λ(u, q_0)] · y_λ(q_0) · χ^λ(T_w)
+```
+
+**This explains several observed phenomena**:
+
+| Observation | Wedderburn-basis explanation |
+|---|---|
+| Factorial c_k growth (c_8 = O(10³), c_10 = O(10⁸)) | Sum of cosh-Taylor terms across partitions with `k!` denominators that don't fully cancel — partial cancellations give intermediate growth |
+| `/25 = [5]_q²\|_{q=1}` unique fibre piece (PR #1811) | One specific partition λ contributes a `1/[5]_q²` factor; at q=1 fibre point it becomes 1/25 |
+| Cross-anchor c_3 swing 2.88% (PR #1781 falsification) | Different q_0 (proton vs muon anchor) shift the `f_λ(u, q_0)·y_λ(q_0)` evaluations differently per partition, summing to the observed swing |
+| `[3]_q/25` SHARED between m_μ V9 and Q_β c_3 (registry) | Same Wedderburn block (likely λ=(3) or λ=(2,1)) contributes the same `[3]_q/25` structure to both observables |
+
+**Where it sits in the chain**: this candidate uses **Step 5** (Wedderburn basis) explicitly + **Step 11** (per-block Archimedean evaluation). It is the **natural multi-block extension** of candidates A/B/C, each of which assumes a SINGLE generating function.
+
+**Signature** (testable):
+- `c_k(q_0)` decomposes as `Σ_λ a_k_λ · y_λ(q_0) · χ^λ_evaluated`, where `a_k_λ` are partition-indexed Taylor coefficients of per-block generating functions
+- Each `f_λ` per partition may admit a candidate-A/B/C form (CS / q-difference / cosh) at the per-block level
+- The cross-anchor swing is then PARTITION-DECOMPOSED: each λ contributes its own swing, summing to the observed total
+
+**Probe candidate (probe 6.d)**: extract c_k(q_0) at proton + muon anchors and **decompose over Wedderburn blocks** using the known `χ^λ` and `y_λ` of the proton braid 𝓑₃ (Step 4). Fit `f_λ(u, q_0)` per λ. If the per-block generating functions are SIMPLER (lower factorial growth, q-stable across anchors) than the aggregate c_k, the Wedderburn-basis framing is correct.
+
+### 3.e Combined picture
 
 | Candidate | Where in chain | Signature | Refutation cost if wrong |
 |---|---|---|---|
 | **A** CS perturbative | Steps 1–2 + 11 | c_k factorial, Vassiliev pattern | Compare c_k/k! to Vassiliev knot integrals |
 | **B** q-difference (Dirac) | Step 4 + 11 | q-dep kernel passes finite-depth recurrence | Re-run depth-d sweep with q-dep kernel |
 | **C** cosh avatar | Step 11 | c_k = cosh-Taylor pattern, k!-bounded | Fit cosh closed form to Q_β(q_0)/Q_A(q_0) |
+| **D** Wedderburn basis | Step 5 + 11 | c_k decomposes over χ^λ basis with simpler per-block `f_λ` | Decompose c_k(q_0) over χ^λ at proton + muon, check per-block q-stability |
 
-**The candidates are not mutually exclusive.** A might be the underlying physics (CS path integral), B the algebraic substrate (q-difference equation governing the Habiro element F), C the archimedean closed-form at q_0. All three could be consistent and connected.
+**The candidates are not mutually exclusive.** A might be the underlying physics (CS path integral), B the algebraic substrate (q-difference equation governing the Habiro element F), C the archimedean closed-form at q_0, D the per-block resolution of A/B/C over the Wedderburn basis (each partition λ carries its own A/B/C-style generating function `f_λ`). All four could be consistent and connected: the c_k aggregate is the sum over λ of per-block generating-function Taylor coefficients.
 
 ## 4. Lagrangian / Dirac framing the user named explicitly
 
