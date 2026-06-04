@@ -83,11 +83,12 @@
         "rung": "8-10",
         "tier": "empirical_near_match",
         "form": "c_8 = 4*b^4 = 49/16; c_9 = -8*b^2 = -7; c_10 = 4*b^6 = 343/128",
-        "residual_proton": "q0 noise-dominated, ratios 10^3 to 10^7 off (per upstream docstring)",
+        "residual_proton": "closed vs q0 SDP residual: 3.4e3x / 1.5e5x / 6.2e7x off",
         "anchor_stable": false,
+        "cross_anchor_tested": "2026-06-04",
         "wired": false,
-        "producer": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.{ts,md,lean} (PR #1793); recursion-extension c_{k+2} = b^2 * c_k",
-        "note": "PROVED rational identities at the silver ratio q = 1+sqrt(2) (Lean norm_num-trivial). NOT canonical: cross-anchor (proton + muon) swing test not yet run. Structural signal at silver only, not a q0 precision claim. §8 flip-flop guard applies."
+        "producer": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.{ts,md,lean} (PR #1793) + Lake mirror lean/QOU/BraidKnot/QBetaCnAtSilver.lean; probe folio-assistant/computations/qbeta/qbeta_c8_c10_crossanchor_falsification.py",
+        "note": "PROVED rational identities at the silver ratio q = 1+sqrt(2) (Lean norm_num-trivial). Cross-anchor tested 2026-06-04: the real-q closed forms b^2(q)=(q^4+q^2+1)/(q^2+1)^2 are anchor-STABLE (proton<->muon swing 2.4e-7% < 1%, PASS the literal swing sub-test) but DO NOT reproduce the q0 SDP residual (miss by 3.4e3x..6.2e7x). Anchor-stability is necessary but NOT sufficient for canonical; the forms are EXACT only at the silver structural anchor (b^2=7/8). Stays empirical, no production wire. §8 flip-flop guard applies."
       }
     ],
     "kernel_and_element": {
