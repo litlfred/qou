@@ -355,6 +355,26 @@ jobs:
         # alignment). Validator: docs/coordination/ck_dk_registry_validate.py.
         run: python3 docs/coordination/ck_dk_registry_validate.py
 
+      - name: NEGATIVE-finding re-entry guard (purged non-canonical forms, STRICT)
+        # Blocks PURGED non-canonical forms from silently re-entering
+        # production compute via a sibling branch — the failure mode that
+        # forced lambda_scale_yekutieli_extended to be purged TWICE
+        # (PR #985 NEGATIVE, then PR #1027 production revert). Registry:
+        #   - lambda_scale_yekutieli_extended (Yekutieli −G·h² correction,
+        #     falsified by the S₄↓S₃ bijection κ=+0.5);
+        #   - lambda_scale_family_a + the lambda_scale_* symbol prefix
+        #     (owner directive 2026-05-24 "no lambda-scale ANYWHERE in
+        #     production"; absorbed into Geom_full(K), PR #1080/#1089);
+        #   - purged module lambda_yekutieli_extended_borromean.
+        # AST-based: historical mentions in comments/docstrings are NOT
+        # false-positives (only real import/def/use is flagged). STRICT
+        # by design — a re-entry MUST fail CI; that is the guard's whole
+        # purpose. The Yekutieli non-abelian Stokes FUNCTOR stays
+        # canonical (only the empirical correction is banned); y_λ / Δ_λ
+        # are canonical and not in the registry.
+        run: |
+          python3 folio-assistant/computations/audits/noncanonical_reentry_audit.py --strict
+
       - name: I14 witness-provenance audit (warn-only)
         # Every *.witness.json under folio-assistant/computations/
         # must declare engine, scriptFile, commitSha (the
