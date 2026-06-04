@@ -2612,7 +2612,51 @@
         "reviewed_sha": "8f2a783fc9f993048e93178a95afdbf7823eae05",
         "notes": "Correctly placed; no sibling carries the same T1/T2/T3 partial-proof claim"
       }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "40ac06109715",
+          "ts": "7a965f83cfaf",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses generic Hecke H_n(R,q), LP complementary slackness, shift_NF — all algebraic; no numeric q value or Real.* construct; §3b-cond conditional banner is present",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:09:40.847Z",
+        "reviewed_sha": "69e525599e13e46845963348918af6e5eb07d18f",
+        "notes": "Correctly generic-ring; §3b-cond banner makes conditional hypothesis explicit"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "40ac06109715",
+          "ts": "7a965f83cfaf",
+          "lean": "683dfbda4401"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof of T3 uses finite-dim LP bounded+feasible -> strong duality (Schrijver §7.2); T1 uses complementary slackness; T2 uses Hecke branching + LR multiplicities — all algebraic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:10:07.133Z",
+        "reviewed_sha": "69e525599e13e46845963348918af6e5eb07d18f",
+        "notes": "No archimedean-only machinery; proof method matches generic-ring statement"
+      }
     ]
   },
-  "updated_at": "2026-06-04T23:09:25.737Z"
+  "updated_at": "2026-06-04T23:10:07.133Z"
 }
