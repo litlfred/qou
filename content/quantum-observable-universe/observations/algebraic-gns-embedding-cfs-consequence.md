@@ -6,7 +6,7 @@ theorem, applied to $\mathrm{tr}_M$
 remains conjectural in
 [CFS comparison summary](#rem:cfs-comparison-summary)
 is the **identification** of the GNS-image data
-$(\pi_{\mathrm{GNS}}(H_\infty(q)), \tilde w_\lambda$-pushforward$)$
+$(\pi_{\mathrm{GNS}}(H_\infty(q)), \tilde w_\lambda\text{-pushforward})$
 with the Finster causal-fermion-system data $(\mathcal{F}, \rho)$ —
 specifically the form of the CFS Lagrangian
 ([CFS comparison summary](#rem:cfs-comparison-summary)). The
