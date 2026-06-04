@@ -254,14 +254,55 @@ of `delta_tau_M_surrogate` at `q = 1` equals `−5/6`.
 
 Per the script's order-1 print: `Order 1:  -5/6`.
 
-**Status**: stated; proof is the standard quotient-rule derivative
-calculation (`N'(1) = -10`, `D(1) = 12`, `N(1) = 0` ⇒ deriv `= -10/12 = -5/6`).
-Mathlib provides all needed lemmas (`hasDerivAt_pow`, `HasDerivAt.div`,
-`HasDerivAt.mul`); the proof is mechanical but bulky. Deferred. -/
--- Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json (order-1)
+**Status**: sorry-free. Standard quotient-rule derivative via
+`hasDerivAt_pow`, `HasDerivAt.add`, `HasDerivAt.sub`, `HasDerivAt.mul`,
+`HasDerivAt.div`, then `convert ... ; ring` + `norm_num` for the
+final numerical identity. -/
 theorem delta_tau_M_surrogate_hasDerivAt_one :
     HasDerivAt delta_tau_M_surrogate (-5/6) 1 := by
-  sorry
+  unfold delta_tau_M_surrogate
+  have hden_ne : (4 : ℝ) * (1 : ℝ)^5 * ((1 : ℝ)^2 + 1 + 1) ≠ 0 := by norm_num
+  -- Numerator: −q¹¹ + q¹⁰ − 2q⁹ + q⁸ + q⁶ − q⁵ − q³ + 2q² − q + 1
+  -- N(1) = 0, N'(1) = -10.
+  have hN : HasDerivAt
+      (fun q : ℝ => -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
+      (-10 : ℝ) 1 := by
+    have h11 := (hasDerivAt_pow 11 (1 : ℝ)).neg
+    have h10 := hasDerivAt_pow 10 (1 : ℝ)
+    have h9  := (hasDerivAt_pow 9 (1 : ℝ)).const_mul 2
+    have h8  := hasDerivAt_pow 8 (1 : ℝ)
+    have h6  := hasDerivAt_pow 6 (1 : ℝ)
+    have h5  := hasDerivAt_pow 5 (1 : ℝ)
+    have h3  := hasDerivAt_pow 3 (1 : ℝ)
+    have h2  := (hasDerivAt_pow 2 (1 : ℝ)).const_mul 2
+    have h1  := hasDerivAt_id (1 : ℝ)
+    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const 1 1
+    have hsum := (((((((((h11.add h10).sub h9).add h8).add h6).sub h5).sub h3).add h2).sub h1).add h0)
+    convert hsum using 1
+    norm_num
+  -- Denominator: 4 q^5 (q² + q + 1)
+  -- D(1) = 12, D'(1) = 4·(5·3 + 1·3) = 4·18 = 72.
+  have hD : HasDerivAt (fun q : ℝ => 4 * q^5 * (q^2 + q + 1)) (72 : ℝ) 1 := by
+    have h5  : HasDerivAt (fun q : ℝ => q^5) ((5 : ℝ) * 1^4) 1 := hasDerivAt_pow 5 1
+    have h2  : HasDerivAt (fun q : ℝ => q^2) ((2 : ℝ) * 1^1) 1 := hasDerivAt_pow 2 1
+    have h1  : HasDerivAt (fun q : ℝ => q) (1 : ℝ) 1 := hasDerivAt_id 1
+    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const 1 1
+    have hquad : HasDerivAt (fun q : ℝ => q^2 + q + 1) (3 : ℝ) 1 := by
+      have := (h2.add h1).add h0
+      convert this using 1
+      norm_num
+    have hprod : HasDerivAt (fun q : ℝ => q^5 * (q^2 + q + 1)) (18 : ℝ) 1 := by
+      have := h5.mul hquad
+      convert this using 1
+      norm_num
+    have := hprod.const_mul 4
+    convert this using 1
+    · funext q; ring
+    · norm_num
+  -- Quotient: (N'·D − N·D')/D² = (-10·12 − 0·72)/144 = -120/144 = -5/6
+  have hdiv := hN.div hD hden_ne
+  convert hdiv using 1
+  norm_num
 
 /-- **Theorem (order-2 Taylor coefficient = 5/6 via Taylor expansion).**
 The second Taylor coefficient at q = 1 of `delta_tau_M_surrogate` is `5/6`.
@@ -311,12 +352,17 @@ construction. Proof outline: clear denominators on both sides,
 multiply through by `(1 + q) · √q`, and use `Real.mul_self_sqrt :
 √q · √q = q` for `q ≥ 0` to identify the cross-terms.
 
-**Status**: stated; proof requires `Real.sqrt` arithmetic + field_simp
-careful chaining. Deferred. -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF02101492
+**Status**: sorry-free. Cross-multiply, use `Real.mul_self_sqrt :
+√q · √q = q` for `q ≥ 0`, finish with `field_simp; linarith`. -/
 theorem markov_parameter_symmetric_form (q : ℝ) (hq : 0 < q) :
     markov_parameter q = 1 / (Real.sqrt q + 1 / Real.sqrt q) := by
-  sorry
+  unfold markov_parameter
+  have hsq_pos : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq
+  have hsq_ne : Real.sqrt q ≠ 0 := ne_of_gt hsq_pos
+  have hsq_sq : Real.sqrt q * Real.sqrt q = q := Real.mul_self_sqrt hq.le
+  have h1q_ne : (1 : ℝ) + q ≠ 0 := by linarith
+  field_simp
+  linarith [hsq_sq]
 
 /-- **Class (canonical Wenzl–Markov weights for H_3(q)).**
 
@@ -409,12 +455,35 @@ Proof: strong induction on `n`; base cases discharged by `initial_0`
 and `initial_1`; step uses the recursion at `n = k+1` to solve for
 `a (k+2)` in terms of `a (k+1)` and `a k`, then applies IH.
 
-**Status**: stated; the inductive proof is mechanical but the
-recursion-solve step (`4(k+2) ≠ 0` discharge + linear combination)
-requires careful tactic chaining. Deferred. -/
--- Ref: [manuscript] qbeta-prearchimedean-z-recursion.witness.json (uniqueness)
+**Status**: sorry-free. Strong induction on `n`; base cases discharged
+by `initial_0`/`initial_1`; step solves the recursion at `n = k+1` for
+`a (k+2)` using the IH on `a (k+1)` and `a k`. -/
 theorem ZRecursionCoeffs.unique (w1 w2 : ZRecursionCoeffs) :
     ∀ n : ℕ, w1.a n = w2.a n := by
-  sorry
+  intro n
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    match n, ih with
+    | 0, _ => rw [w1.initial_0, w2.initial_0]
+    | 1, _ => rw [w1.initial_1, w2.initial_1]
+    | k + 2, ih =>
+      -- Recursion at n = k+1 ≥ 1: solve for a (k+2) using IH on a (k+1), a k.
+      have hk : k + 1 ≥ 1 := Nat.succ_le_succ (Nat.zero_le k)
+      have r1 := w1.recursion (k+1) hk
+      have r2 := w2.recursion (k+1) hk
+      have hsub : (k+1) - 1 = k := by omega
+      rw [hsub] at r1 r2
+      have ih_k : w1.a k = w2.a k := ih k (by omega)
+      have ih_k1 : w1.a (k+1) = w2.a (k+1) := ih (k+1) (by omega)
+      -- The recursion's leading coefficient 4*((k+1)+1) is nonzero.
+      have h4 : (4 : ℝ) * ((↑(k+1) : ℝ) + 1) ≠ 0 := by
+        have : (0 : ℝ) < ((↑(k+1) : ℝ) + 1) := by positivity
+        positivity
+      -- Rewrite r1's a(k+1), a k terms via IH so r1 and r2 differ ONLY
+      -- in their a(k+2) terms. Then linarith extracts the cancellation.
+      rw [ih_k, ih_k1] at r1
+      have hmul : (4 : ℝ) * ((↑(k+1) : ℝ) + 1) * w1.a (k+1+1)
+                = (4 : ℝ) * ((↑(k+1) : ℝ) + 1) * w2.a (k+1+1) := by linarith
+      exact mul_left_cancel₀ h4 hmul
 
 end QOU.BraidKnot
