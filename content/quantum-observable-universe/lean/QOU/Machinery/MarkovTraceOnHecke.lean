@@ -25,6 +25,12 @@ A type-level scaffold for:
 - [wenzl1988] doi:10.1007/BF01239526 (Markov trace on H_n(q))
 -/
 
+import Mathlib.Algebra.Algebra.Defs
+import Mathlib.Algebra.BigOperators.Fin
+import Mathlib.Data.Fin.VecNotation
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FinCases
+
 namespace QOU.Machinery
 
 /-! ## Hecke algebra `H_n(q)` — abstract scaffold
@@ -97,5 +103,79 @@ class ResidueACompositeIdentification : Prop where
   /-- Composite Wenzl × Demazure operator has well-defined Markov-trace
   residue at `u_substrate` (opaque marker for the open derivation). -/
   composite_markov_residue : True
+
+/-! ## Concrete `H₃(q)` Markov trace — the real structure
+
+This realizes the `MarkovTrace` intent above for `n = 3` with an explicit
+linear functional on the NF free module `Fin 6 → R`, replacing the
+`True` marker with proved laws. The NF basis order is
+`[γ, σ₀, σ₁, L₊, L₋, e⁻]`, identical to `gram.NF_BASIS`; the data mirror
+`folio-assistant/computations/.../gram.py` (`hm`, `TR_M`) and the
+symbolic `pyhecke.trace_formal`. The mathematics is cross-verified in
+Python against `gram.py` (randomized) and over ℚ(s) by
+`tools/pyhecke/tests/test_trace_formal.py`. -/
+namespace H3
+
+variable {R : Type*} [CommRing R]
+
+/-- Markov-Ocneanu-Wenzl weights on the GB-NF basis `[γ, σ₀, σ₁, L₊, L₋,
+e⁻]` of `H₃(q)` (mirrors `gram.TR_M` / `trace_formal.TR_M_formal`):
+`tr_M(e⁻) = h·z² + z` — the 2026-05-19 fix, NOT `z³`. `z` is the Markov
+parameter, `h = q − q⁻¹`. -/
+def TRM (z h : R) : Fin 6 → R := ![1, z, z, z ^ 2, z ^ 2, h * z ^ 2 + z]
+
+/-- The **Markov trace** on the NF free module `Fin 6 → R`: the linear
+functional `v ↦ ∑ᵢ vᵢ · TRMᵢ`. The real structure behind the `True`
+marker. -/
+def trM (z h : R) (v : Fin 6 → R) : R := ∑ i, v i * TRM z h i
+
+/-- Right action of `σ₀` on the NF basis (mirrors `gram.hm(·,1,0,0)`). -/
+def mulσ₀ (h : R) (v : Fin 6 → R) : Fin 6 → R :=
+  ![v 1, v 0 + h * v 1, v 3, v 2 + h * v 3, v 5, v 4 + h * v 5]
+
+/-- Right action of `σ₁` on the NF basis (mirrors `gram.hm(·,1,0,1)`). -/
+def mulσ₁ (h : R) (v : Fin 6 → R) : Fin 6 → R :=
+  ![v 2, v 4, v 0 + h * v 2, v 5, v 1 + h * v 4, v 3 + h * v 5]
+
+/-- **(M1) Linearity** — additivity. -/
+theorem trM_add (z h : R) (u v : Fin 6 → R) :
+    trM z h (u + v) = trM z h u + trM z h v := by
+  simp only [trM, Pi.add_apply, add_mul, Finset.sum_add_distrib]
+
+/-- **(M1) Linearity** — homogeneity. -/
+theorem trM_smul (z h c : R) (v : Fin 6 → R) :
+    trM z h (c • v) = c * trM z h v := by
+  simp only [trM, Pi.smul_apply, smul_eq_mul, Finset.mul_sum]
+  exact Finset.sum_congr rfl (fun i _ => by ring)
+
+/-- **(M3) Hecke relation** as an operator identity: `σ₀² = h·σ₀ + 1`. -/
+theorem mulσ₀_hecke (h : R) (v : Fin 6 → R) :
+    mulσ₀ h (mulσ₀ h v) = h • mulσ₀ h v + v := by
+  funext i
+  fin_cases i <;>
+    simp [mulσ₀, Pi.add_apply, Pi.smul_apply, smul_eq_mul] <;> ring
+
+/-- **(M3) Markov reduction** `tr(x·σ₁) = z·tr(x)` for
+`x ∈ H₂ = span{γ, σ₀}` (i.e. `v 2 = v 3 = v 4 = v 5 = 0`). The defining
+Markov property at the `H₂ ↪ H₃` inclusion. -/
+theorem trM_markov_σ₁ (z h : R) (v : Fin 6 → R)
+    (h2 : v 2 = 0) (h3 : v 3 = 0) (h4 : v 4 = 0) (h5 : v 5 = 0) :
+    trM z h (mulσ₁ h v) = z * trM z h v := by
+  simp only [trM, mulσ₁, TRM, Fin.sum_univ_six, Matrix.cons_val_zero,
+    Matrix.cons_val_one, Matrix.head_cons]
+  rw [h2, h3, h4, h5]; ring
+
+/-- The concrete n=3 trace is a **real** linear functional satisfying the
+Markov laws — no longer a `True` marker. Bundles linearity + the Markov
+reduction; the bridge for discharging `markov_trace_origin` once Step 4
+names the residue-A element. -/
+theorem markovTrace_realized (z h : R) :
+    (∀ u v, trM z h (u + v) = trM z h u + trM z h v) ∧
+    (∀ c v, trM z h (c • v) = c * trM z h v) ∧
+    (∀ v : Fin 6 → R, v 2 = 0 → v 3 = 0 → v 4 = 0 → v 5 = 0 →
+       trM z h (mulσ₁ h v) = z * trM z h v) :=
+  ⟨trM_add z h, trM_smul z h, trM_markov_σ₁ z h⟩
+
+end H3
 
 end QOU.Machinery
