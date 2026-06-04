@@ -15,10 +15,12 @@
 # Each closed-form equation is a pure rational identity — `norm_num`
 # closes them without any symbolic-q or transcendental machinery.
 #
-# LaTeX label: `prop:qbeta-c8-c10-silver-rationals`
+# LaTeX label: `prop:qbeta-c8-c10-silver-rationals` (the range "c8-c10"
+# covers rungs 8, 9, 10 — all three identities are proved below).
 #
-# CLAUDE.md §7c compliant: stated over ℚ at the silver-ratio rational
-# anchor; the identities lift to any field containing ℚ.
+# CLAUDE.md §7c: stated over ℚ at the silver-ratio rational anchor
+# (b² = 7/8 ∈ ℚ). The statements are rational identities, so they
+# descend along any ℚ-algebra map; only the ℚ form is formalized here.
 -/
 
 import Mathlib.Data.Rat.Defs
