@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T17:27:54.873925+00:00",
-  "commitSha": "c476d4c40fb3dca7d4985f2c1d5c5cec2335d65b",
+  "computedAt": "2026-06-04T18:00:28.147878+00:00",
+  "commitSha": "e01e193ab09eb15cd76509f40c2c96497404f91d",
   "assertions": [
     {
       "name": "stage_b_blocker_recorded",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 211,
+  "durationMs": 256,
   "computation": "qbeta-hoefsmit-chi-cross-anchor-stability-probe",
   "scriptFile": "qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
-  "scriptHash": "6db531a4dbe6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "45a176e28f4d",
+  "scriptCommitSha": "e01e193ab09eb15cd76509f40c2c96497404f91d",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -78,6 +78,7 @@
     ],
     "verdict": {
       "stage_b_status": "BLOCKED — operator-level cross-anchor test cannot run in this environment",
+      "stage_b_test_ran": false,
       "next_session_unblock_paths": "A/B/C above"
     }
   }
