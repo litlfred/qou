@@ -2568,8 +2568,8 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:01:27.583Z",
-        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+        "reviewed_at": "2026-06-04T17:14:58.728Z",
+        "reviewed_sha": "bf80351c1eaf89cab19ba1a3dced25af2066cb88"
       }
     ],
     "fit-section-chapter": [
@@ -2587,8 +2587,8 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:01:38.040Z",
-        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+        "reviewed_at": "2026-06-04T17:14:58.763Z",
+        "reviewed_sha": "bf80351c1eaf89cab19ba1a3dced25af2066cb88"
       }
     ],
     "wall-side-statement": [
@@ -2606,8 +2606,8 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:01:51.101Z",
-        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+        "reviewed_at": "2026-06-04T17:14:58.799Z",
+        "reviewed_sha": "bf80351c1eaf89cab19ba1a3dced25af2066cb88"
       }
     ],
     "wall-side-proof": [
@@ -2625,8 +2625,8 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:02:09.781Z",
-        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+        "reviewed_at": "2026-06-04T17:14:58.836Z",
+        "reviewed_sha": "bf80351c1eaf89cab19ba1a3dced25af2066cb88"
       }
     ],
     "detangler-no-forward-ref": [
@@ -2638,7 +2638,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "atom-knot-exists.ts:9 — uses: [\"prop:atom-knot-unique\"] but atom-knot-unique appears at line 353 of particle-interactions.ts, one position after atom-knot-exists at line 352. Forward reference within same chapter section.",
+        "evidence": "atom-knot-exists.ts:9 — uses:[\"prop:atom-knot-unique\"] but atom-knot-unique is at position 353, after atom-knot-exists at 352 in particle-interactions.ts; mutual cycle",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2646,10 +2646,10 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T17:02:25.868Z",
-        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+        "reviewed_at": "2026-06-04T17:14:58.871Z",
+        "reviewed_sha": "bf80351c1eaf89cab19ba1a3dced25af2066cb88"
       }
     ]
   },
-  "updated_at": "2026-06-04T17:02:25.868Z"
+  "updated_at": "2026-06-04T17:14:58.871Z"
 }
