@@ -887,7 +887,104 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5c3112983595",
+          "ts": "bd37ef54d0ea",
+          "lean": "7a41310d18dd"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "## Categorical interpretation section after proof contains substantive interpretive prose (partition counting, Euler/Habiro generating series, RSK correspondence) with no companion interprets: remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:53:07.785Z",
+        "reviewed_sha": "79cc136d6d7f016e1d699dc26bcae2c401286e13"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5c3112983595",
+          "ts": "bd37ef54d0ea",
+          "lean": "7a41310d18dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:53:22.533Z",
+        "reviewed_sha": "79cc136d6d7f016e1d699dc26bcae2c401286e13"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5c3112983595",
+          "ts": "bd37ef54d0ea",
+          "lean": "7a41310d18dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:53:22.576Z",
+        "reviewed_sha": "79cc136d6d7f016e1d699dc26bcae2c401286e13"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5c3112983595",
+          "ts": "bd37ef54d0ea",
+          "lean": "7a41310d18dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:53:22.614Z",
+        "reviewed_sha": "79cc136d6d7f016e1d699dc26bcae2c401286e13"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5c3112983595",
+          "ts": "bd37ef54d0ea",
+          "lean": "7a41310d18dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:53:22.655Z",
+        "reviewed_sha": "79cc136d6d7f016e1d699dc26bcae2c401286e13"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:53:22.655Z"
 }
