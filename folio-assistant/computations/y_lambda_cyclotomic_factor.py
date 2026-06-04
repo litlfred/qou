@@ -3,7 +3,16 @@
 
 The Wenzl-bridge gives y_λ as q-rational expressions in
 Frac(Z[r, r^{-1}]) where r = q^{1/2} (the spinor information rate;
-see notation-register.md Ch 4 and notation-collisions.md).  Sympy's
+see notation-register.md Ch 4 and notation-collisions.md).
+
+Notation note (2026-06-04): the narrative now writes the spinor rate
+as \check{q} (q-háček, "little hook" in Czech), with \check{q}² = q.
+The sympy SYMBOL below stays "r" so that the emitted witness
+expression strings (and this script's printed output) are unchanged;
+the narrative s_{λ,\check{q}}(Q) in y-lambda-cyclotomic-factorization.md
+corresponds to this script's r-form term-for-term (\check{q} ↔ r).
+
+Sympy's
 default `together`/`cancel` doesn't simplify well at n≥3, but
 sympy `factor` over Q can identify cyclotomic factors directly:
 
