@@ -1,0 +1,77 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T13:40:26.390977+00:00",
+  "commitSha": "21fc6cca4aa8525470dc9c9dc782adf26babcdad",
+  "assertions": [
+    {
+      "name": "probe_6d_partitions_enumerated_scope_only",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Scoping probe: enumerates the 3 partitions of n=3 (proton braid 𝓑₃ Wedderburn blocks): (3), (2,1), (1,1,1). Concrete numerical data: y_λ(q_0) placeholder values + dim_q sanity check. Full per-block c_k extraction is future work."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-ck-wedderburn-decomposition-scope-probe",
+  "scriptFile": "qbeta_ck_wedderburn_decomposition_scope_probe.py",
+  "scriptHash": "cc96cd9263e9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Probe 6.d (scoping form): enumerates partitions of n=3 for the proton braid 𝓑₃, computes Wenzl weights y_λ(q_0) at substrate, and scopes the Wedderburn-block decomposition hypothesis. Full per-block c_k decomposition requires Hoefsmit-rep extraction infra not built here.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "q_0": "1.109978582751380807591669",
+    "z_markov": "0.4993203341836944524134427",
+    "partitions_n_3": [
+      {
+        "label": "(3)",
+        "name": "trivial / symmetric",
+        "d_lambda": 1,
+        "chi_at_identity": 1,
+        "y_lambda_closed_form": "1 / [3]_q · (related to q-Schur s_(3))",
+        "y_lambda_at_q0": "0.3285468213708231832971638",
+        "role": "Markov-Jones traceful component; J_K(q) coefficient"
+      },
+      {
+        "label": "(2, 1)",
+        "name": "standard / mixed",
+        "d_lambda": 2,
+        "chi_at_identity": 2,
+        "y_lambda_closed_form": "Wenzl bridge — non-trivial in q",
+        "y_lambda_at_q0": "0.007140861436143382873803245",
+        "role": "carries the bulk of the operator-valued T_w structure"
+      },
+      {
+        "label": "(1, 1, 1)",
+        "name": "sign / antisymmetric",
+        "d_lambda": 1,
+        "chi_at_identity": 1,
+        "y_lambda_closed_form": "bar-image of y_(3) under q → q⁻¹",
+        "y_lambda_at_q0": "0.266666261050564710183477",
+        "role": "Frobenius-pairing dual to (3); antipode partner"
+      }
+    ],
+    "dim_q_sanity_check": {
+      "sum_d_lambda_y_lambda": "0.6094948052936746592282473",
+      "z_squared_target": "0.2493207961293163066997983",
+      "relative_gap": 1.4446208048266673
+    },
+    "future_work": {
+      "probe_6d_prime": "Implement per-block c_k extraction via Hoefsmit rep ρ_λ(𝓑₃); test -(k-1)! pattern per block.",
+      "connection_to_m_mu_V9": "Test if [3]_q/25 shared factor maps to the same partition's f_λ for both observables."
+    }
+  }
+}
