@@ -106,9 +106,14 @@ def _character_closed_form_anchor(tol: "mpf") -> dict:
 
     def chi(shape, word):
         hc = [(1, g) if g > 0 else (-1, -g) for g in word]
-        # Python fallback supports q_value == q_0; returns a plain float,
-        # float64-bounded (~1e-15) — ample against the 1ppb (1e-9) tolerance.
-        return mpmathify(chi_lambda_braid(list(shape), hc, q_value=float(q0)))
+        # mpfr path (Rust rug::Float kernel): full arbitrary precision, not
+        # float64. Pass q_0 as a decimal string and request mpfr at the
+        # working dps; the kernel returns a decimal string mpmathify parses
+        # exactly. Anchor deltas drop from ~1e-15 (f64) to ~1e-49.
+        dps = max(50, mp.dps)
+        q_str = mp.nstr(q0, dps + 5, strip_zeros=False)
+        return mpmathify(chi_lambda_braid(list(shape), hc,
+                                          q_value=q_str, precision=f"mpfr_{dps}dps"))
 
     def writhe(word):
         return sum(1 if g > 0 else -1 for g in word)
@@ -336,7 +341,7 @@ def main() -> int:
     w.add_parameter("working_precision_dps", args.dps)
     # External correctness anchor for the χ^λ engine (closes the
     # "agreement ≠ correctness" gap documented in the verification-gap
-    # audit). Runs at the same q_0; float64-bounded but ample vs 1ppb.
+    # audit). Runs at the same q_0 via the mpfr kernel (full precision).
     anchor = _character_closed_form_anchor(TOLERANCE)
     print()
     print("  χ^λ closed-form anchor (1-dim irreps, external of the four paths):")

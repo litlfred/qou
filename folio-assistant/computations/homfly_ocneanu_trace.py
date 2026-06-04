@@ -54,13 +54,13 @@ with the spanning-set recipe in the message; extending is mechanical
 import via `_weights`).
 
 The n ≥ 4 weights show the same structure observed at n = 3: the
-fully-symmetric and other ≤ 2-row partition weights are 0 (to float64),
+fully-symmetric and other ≤ 2-row partition weights are 0 (to working dps),
 while the multi-row weights are forced nonzero (e.g. n=4: w_(2,2) ≈
 −0.499, w_(1⁴) ≈ −2.524; n=5: w_(2,2,1) = 1, w_(1⁵) ≈ 3.044). The
 weight w ≈ 2.0109 of the "next-to-antisymmetric" partition recurs at
 every n (n=3 w_(1³), n=5 w_(2,1,1,1)). These are solved, not fitted,
-and verified on held-out knots to ≤ 1e-13 (float64-bounded by the
-character eval — see `_chi`).
+and verified on held-out knots at full mpmath precision (the character
+eval uses the mpfr Rust kernel — see `_chi`; held-out deltas ~1e-49).
 """
 from __future__ import annotations
 
@@ -81,18 +81,21 @@ from hecke_characters import chi_lambda_braid, partitions_of  # noqa: E402
 def _chi(shape, word, s):
     """Signed seminormal Hecke character χ^shape(β) evaluated at s=√q₀.
 
-    PRECISION NOTE (Copilot PR #1792): `chi_lambda_braid` currently takes a
-    *float* `q_value`, so the character evaluation is float64-bounded (~53
-    bits) regardless of `mp.mp.dps`. The validation tolerances in `_weights`
-    are therefore effectively float64 (the gate deltas sit at ~1e-15, not the
-    nominal 1e-9 cushion) — which is ample for these small braids but does NOT
-    improve with higher dps. Lifting this to full mpmath precision requires
-    `chi_lambda_braid` to accept an mpf `q_value` (cross-cutting change to the
-    Hecke character module); tracked as a follow-up. We keep `repr(...)` →
-    `mp.mpf` only to carry the float result into the mpmath arithmetic below
-    without adding further rounding."""
+    Uses the **mpfr** path of `chi_lambda_braid` (Rust `rug::Float` kernel):
+    the character is evaluated at full arbitrary precision, NOT float64. We
+    pass `s` as a decimal string carrying `mp.mp.dps + 5` digits and request
+    `precision="mpfr_<dps>dps"` (≥ 50); the kernel returns a decimal string
+    that `mp.mpf` parses exactly. This removes the former float64 bound — the
+    held-out validation deltas in `_weights` drop from ~1e-15 to ~1e-49.
+
+    (The Rust kernel `pyhecke_native` is already a hard requirement of this
+    engine: the Python `chi_lambda_braid` fallback only supports `q_value == q₀`,
+    whereas every character here is evaluated at `s = √q₀ ≠ q₀`.)"""
     hc = [(1, g) if g > 0 else (-1, -g) for g in word]
-    return mp.mpf(repr(chi_lambda_braid(list(shape), hc, q_value=float(s))))
+    dps = max(50, mp.mp.dps)
+    q_str = mp.nstr(s, dps + 5, strip_zeros=False)
+    return mp.mpf(chi_lambda_braid(list(shape), hc,
+                                   q_value=q_str, precision=f"mpfr_{dps}dps"))
 
 
 def _writhe(word):
