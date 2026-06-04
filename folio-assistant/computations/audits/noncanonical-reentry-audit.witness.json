@@ -1,11 +1,18 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T11:46:45.104933+00:00",
-  "commitSha": "b882c4ae30984a7d26eb67a7a454a108f0f0d22d",
+  "computedAt": "2026-06-04T11:58:17.467987+00:00",
+  "commitSha": "33ae064838407e74751635040efd393dfb419dae",
   "assertions": [
     {
       "name": "no_purged_form_reentered_production",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0
+    },
+    {
+      "name": "no_unparseable_production_scripts",
       "computed": 0,
       "expected": 0,
       "passed": true,
@@ -16,8 +23,8 @@
   "durationMs": 7,
   "computation": "noncanonical-reentry-audit",
   "scriptFile": "noncanonical_reentry_audit.py",
-  "scriptHash": "fc5626704577",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "96df01bb65f3",
+  "scriptCommitSha": "7fa8ef251892d1ecba62467925833205c905c890",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +39,7 @@
     "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
-  "description": "NEGATIVE-finding guard. AST-scans production compute (folio-assistant/computations/, excluding _deprecated/, probes/, data/) and fails if any script imports, defines, or uses a PURGED non-canonical form. Registry: lambda_scale_yekutieli_extended (Yekutieli −G·h² correction, falsified PR #985/#1027), lambda_scale_family_a (lambda-scale alias, removed PR #1089), the lambda_scale_* symbol prefix (owner directive 'no lambda-scale ANYWHERE in production'), and the purged module lambda_yekutieli_extended_borromean. Uses AST so historical mentions in comments/docstrings are not false-positives. Keeps the documented purges durable against silent sibling-branch re-entry.",
+  "description": "NEGATIVE-finding guard. AST-scans production compute (folio-assistant/computations/, excluding _deprecated/, probes/, data/) and fails if any script imports, defines, or uses a PURGED non-canonical form. Registry: lambda_scale_yekutieli_extended (Yekutieli −G·h² correction, falsified PR #985/#1027), lambda_scale_family_a (lambda-scale alias, removed PR #1089), the lambda_scale_* symbol prefix (owner directive 'no lambda-scale ANYWHERE in production'), and the purged module lambda_yekutieli_extended_borromean. Uses AST so historical mentions in comments/docstrings are not false-positives. Detection covers direct imports, module-as-symbol imports (from pkg import <banned-module>), def, bare-name use, and attribute access (mod.<banned>); strict mode also fails on unparseable production scripts so there is no blind spot. Keeps the documented purges durable against silent sibling-branch re-entry.",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
     "production_scripts_scanned": 909,
@@ -67,6 +74,6 @@
     ],
     "violation_count": 0,
     "violations": [],
-    "parse_error_count": 2
+    "parse_error_count": 0
   }
 }

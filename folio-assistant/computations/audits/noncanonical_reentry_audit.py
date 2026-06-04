@@ -65,9 +65,11 @@ import ast
 import sys
 from pathlib import Path
 
+# `_path_bridge` (imported above) already puts the computations/ root and
+# every cluster subdir — including substrate/, where witness_base lives —
+# on sys.path. No further import-time path mutation is needed (Copilot
+# review, PR #1819: keep import side-effects to the single bridge insert).
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parent))
-
 COMPUTE_ROOT = HERE.parent
 
 # ---------------------------------------------------------------------------
@@ -119,9 +121,6 @@ BANNED_MODULES = [
 # imported/defined SYMBOLS — module FILENAMES that retain the historical
 # `lambda_scale_` prefix are unaffected (see BANNED_MODULES exactness).
 BANNED_SYMBOL_PREFIX = "lambda_scale_"
-
-_BANNED_SYMBOL_NAMES = {e["symbol"] for e in BANNED_SYMBOLS}
-_BANNED_MODULE_NAMES = {e["module"] for e in BANNED_MODULES}
 
 # Directories that are NOT production compute (exploratory / quarantined /
 # generated). Re-entry is only meaningful for production.
@@ -210,13 +209,18 @@ def audit_file(path: Path) -> list[dict]:
                     "ban": mod_rec,
                 })
             for alias in node.names:
-                sym_rec = _symbol_banned(alias.name)
-                if sym_rec:
+                # A banned MODULE can also be pulled in as a symbol from a
+                # parent package — `from pkg import
+                # lambda_yekutieli_extended_borromean` — so check BOTH the
+                # symbol registry and the module registry (Gemini review,
+                # PR #1819: ImportFrom module-as-symbol bypass).
+                rec = _symbol_banned(alias.name) or _module_banned(alias.name)
+                if rec:
                     violations.append({
                         "kind": "import-symbol",
                         "line": node.lineno,
                         "symbol": alias.name,
-                        "ban": sym_rec,
+                        "ban": rec,
                     })
 
         # `def lambda_scale_X(...)` — re-defining a banned form.
@@ -230,18 +234,31 @@ def audit_file(path: Path) -> list[dict]:
                     "ban": rec,
                 })
 
-        # Bare reference / call to an exact-registry banned symbol
-        # (`lambda_scale_family_a(Q)` without an import — e.g. via a glob
-        # import). Only the two documented exact names, to stay conservative.
+        # Bare reference / call to a banned symbol — `lambda_scale_family_a(Q)`
+        # without an explicit import (e.g. brought in by a glob import), or
+        # any other `lambda_scale_*` name (owner directive). Exact registry
+        # + prefix (Copilot review, PR #1819).
         elif isinstance(node, ast.Name):
-            if node.id in _BANNED_SYMBOL_NAMES:
+            rec = _symbol_banned(node.id)
+            if rec:
                 violations.append({
                     "kind": "name-use",
                     "line": node.lineno,
                     "symbol": node.id,
-                    "ban": {"kind": "exact-symbol",
-                            **next(e for e in BANNED_SYMBOLS
-                                   if e["symbol"] == node.id)},
+                    "ban": rec,
+                })
+
+        # Attribute access `mod.lambda_scale_family_a(...)` — a banned form
+        # resurrected via `import mod; mod.<banned>(...)` rather than a direct
+        # import (Copilot review, PR #1819). Exact registry + prefix.
+        elif isinstance(node, ast.Attribute):
+            rec = _symbol_banned(node.attr)
+            if rec:
+                violations.append({
+                    "kind": "attribute-use",
+                    "line": node.lineno,
+                    "symbol": node.attr,
+                    "ban": rec,
                 })
 
     for v in violations:
@@ -302,8 +319,8 @@ def main() -> int:
     else:
         print("\n  ✓ No purged non-canonical form has re-entered production.")
 
-    # Witness.
-    sys.path.insert(0, str(HERE))
+    # Witness. (witness_base lives in substrate/, already on sys.path via
+    # _path_bridge — no extra insert needed.)
     from witness_base import WitnessBuilder  # noqa: E402
 
     w = WitnessBuilder("noncanonical-reentry-audit", engine="python")
@@ -317,7 +334,11 @@ def main() -> int:
         "lambda_scale_* symbol prefix (owner directive 'no lambda-scale "
         "ANYWHERE in production'), and the purged module "
         "lambda_yekutieli_extended_borromean. Uses AST so historical "
-        "mentions in comments/docstrings are not false-positives. Keeps "
+        "mentions in comments/docstrings are not false-positives. "
+        "Detection covers direct imports, module-as-symbol imports "
+        "(from pkg import <banned-module>), def, bare-name use, and "
+        "attribute access (mod.<banned>); strict mode also fails on "
+        "unparseable production scripts so there is no blind spot. Keeps "
         "the documented purges durable against silent sibling-branch "
         "re-entry."
     )
@@ -336,10 +357,27 @@ def main() -> int:
         expected=0,
         tolerance=0,
     )
+    # A production file that cannot be parsed is a blind spot: a banned form
+    # could hide inside it and the AST scan would never see it (Copilot
+    # review, PR #1819). Assert zero unparseable scripts so strict mode is
+    # actually complete, not just "complete for the files that happened to
+    # parse".
+    w.add_assertion(
+        "no_unparseable_production_scripts",
+        computed=len(parse_errors),
+        expected=0,
+        tolerance=0,
+    )
     w.save()
 
-    if args.strict and all_violations:
-        print("\n  STRICT: re-entry detected — failing.")
+    if args.strict and (all_violations or parse_errors):
+        if parse_errors:
+            print("\n  STRICT: unparseable production script(s) — audit blind "
+                  "spot, failing:")
+            for pe in parse_errors:
+                print(f"    {pe['path']}  line {pe['line']}: {pe['reason']}")
+        if all_violations:
+            print("\n  STRICT: re-entry detected — failing.")
         return 1
     return 0
 
