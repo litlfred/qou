@@ -110,15 +110,37 @@ def closed_forms(q: mpf) -> dict[int, mpf]:
     }
 
 
+def _rung_key(k: str) -> int:
+    """Normalize a rung key to its int, tolerating 'c'/'c_' prefixes.
+
+    Upstream witnesses use bare numeric keys ('6'), but some artifacts use
+    'c6' / 'c_6' — normalize so a key-format change upstream doesn't crash us.
+    """
+    s = str(k).strip()
+    if s and (s[0] in "cC"):
+        s = s[1:].lstrip("_")
+    return int(s)
+
+
 def load_extractions() -> tuple[dict[int, mpf], dict[int, mpf]]:
     """Return (bias_corrected, raw) c_6..c_10 from PR #1824's witness."""
     src = HERE / "qbeta-ck-truncation-bias-correction-probe.witness.json"
+    if not src.exists():
+        raise FileNotFoundError(
+            f"Missing {src.name} (expected at {src}).\n"
+            "It is produced by `qbeta_ck_truncation_bias_correction_probe.py` "
+            "(PR #1824, same directory). Run that script first, or `git pull` "
+            "origin/main if it should already be on this branch."
+        )
     with src.open() as f:
         data = json.load(f)["data"]
-    corr = {int(k): mpf(str(v)) for k, v in data["ck_bias_corrected_leading"].items()
-            if int(k) in (6, 7, 8, 9, 10)}
-    raw = {int(k): mpf(str(v)) for k, v in data["ck_extracted"].items()
-           if int(k) in (6, 7, 8, 9, 10)}
+    want = (6, 7, 8, 9, 10)
+    corr = {_rung_key(k): mpf(str(v))
+            for k, v in data["ck_bias_corrected_leading"].items()
+            if _rung_key(k) in want}
+    raw = {_rung_key(k): mpf(str(v))
+           for k, v in data["ck_extracted"].items()
+           if _rung_key(k) in want}
     return corr, raw
 
 
@@ -223,7 +245,8 @@ def main() -> int:
     )
     wb.add_assertion(
         "c6_c7_applied_forms_recovered_by_bias_correction",
-        computed=(match_pct[6] < 1.0 and match_pct[7] < 1.0), expected=True,
+        computed=(match_pct[6] < MAX_PRODUCTION_MATCH_PCT
+                  and match_pct[7] < MAX_PRODUCTION_MATCH_PCT), expected=True,
         source="The bias-corrected extraction recovers the c_6=4·b² and c_7=-8 "
                "forms that the extraction IMPOSES (self-consistency of the "
                "bias-correction method; NOT an independent validation).",
@@ -261,16 +284,26 @@ def main() -> int:
     wb.add_data("max_form_swing_pct", max_swing_pct)
     wb.add_data("form_anchor_stable", form_anchor_stable)
     wb.add_data("free_rungs_match_pattern", free_match)
+    if pattern_breaks_at is not None:
+        break_clause = (
+            f"the Pell-Lucas pattern BREAKS at the first FREE rung "
+            f"c_{pattern_breaks_at} (closed {mp.nstr(cf_p[pattern_breaks_at], 4)} "
+            f"vs corrected {mp.nstr(corr[pattern_breaks_at], 4)})"
+        )
+    else:
+        break_clause = (
+            "the FREE rungs c_8..c_10 all matched the bias-corrected extraction "
+            "(no break detected — unexpected; re-examine)"
+        )
     wb.add_data("verdict", (
         "EMPIRICAL — SILVER-ANCHORED. Against PR #1824's bias-corrected q₀ "
         "extraction: the c_6/c_7 forms (which the extraction IMPOSES) are "
         f"recovered (self-consistency, {match_pct[6]:.2g}%/{match_pct[7]:.2g}%), "
-        f"but the Pell-Lucas pattern BREAKS at the first FREE rung c_{pattern_breaks_at} "
-        f"(closed {mp.nstr(cf_p[8], 4)} vs corrected {mp.nstr(corr[8], 4)}). The "
-        f"forms are anchor-stable (swing {max_swing_pct:.2e}% < 1%) and EXACT only "
-        "at the silver structural anchor; they are not q₀ production coefficients. "
-        "Stays empirical — silver-anchored, no production wire (§8). Falsification "
-        "test; no fit, no production change."
+        f"but {break_clause}. The forms are anchor-stable (swing "
+        f"{max_swing_pct:.2e}% < 1%) and EXACT only at the silver structural "
+        "anchor; they are not q₀ production coefficients. Stays empirical — "
+        "silver-anchored, no production wire (§8). Falsification test; no fit, "
+        "no production change."
     ))
 
     out = wb.save()
