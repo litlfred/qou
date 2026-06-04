@@ -1,0 +1,130 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T17:03:14.276625+00:00",
+  "commitSha": "8d7ff7aec8aa141f2395297334e9e3e7406a1142",
+  "assertions": [
+    {
+      "name": "z_markov_below_one_linking_weight_above_one",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1745,
+  "computation": "markov-stab-trace-axis-probe",
+  "scriptFile": "markov_stab_trace_axis_probe.py",
+  "scriptHash": "f61086fb72d8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Markov-stabilization trace-level axis probe for the H₃→H₄ jump (PR #1762 chain; sibling #1841 Bratteli REFUTED, #1808 Option E lead). Formalize-first: records the z<1 direction obstruction, then tests M1 (identity trace tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ·f^λ) and M2 (z^{±k}·linking_weight vs clean H₃ quantities) exactly. EXPLORATORY — no production code or witnesses changed.",
+  "auditOnly": "docs/audits/2026-06-04-markov-stab-trace-axis-scope.md",
+  "data": {
+    "z_markov_at_q0": "0.49932033418369445241344268025766630375194816404153",
+    "z_markov_inv_at_q0": "2.002722363860533290507820237991631762534105085090705175782766420073961",
+    "linking_weight_at_q0": "2.5327796563993914920515145017580412323261604705351",
+    "direction_obstruction": true,
+    "direction_obstruction_note": "z = 1/(q^½+q^{-½}) ≈ 0.4993 < 1 at q₀; linking_weight ≈ 2.53 > 1. A single Markov stabilization β↦β·σ₃ scales tr_M by z < 1, so it cannot produce the >1 linking_weight multiplier. The naive stabilization reading is structurally dead.",
+    "M1_identity_trace": {
+      "verdict": "REFUTED",
+      "tr_M_identity_H4_at_q0": "1.00000000000000000000000000000000000000000000000000134",
+      "linking_weight_at_q0": "2.5327796563993914920515145017580412323261604705351",
+      "relative_error": "0.605176866659769554119163652347633643615057664387276364408949380229405",
+      "tr_M_identity_is_one": true,
+      "note": "tr_M(1_{H₄}) = 1 (the normalized Markov trace), NOT the linking_weight 2.53. The linking_weight is not the H₄ identity trace.",
+      "per_lambda": [
+        {
+          "partition": [
+            4
+          ],
+          "f_lambda": 1,
+          "y_lambda_at_q0": "0.22752693860372427846182497089040183019131341308016",
+          "contribution": "0.22752693860372427846182497089040183019131341308016"
+        },
+        {
+          "partition": [
+            3,
+            1
+          ],
+          "f_lambda": 3,
+          "y_lambda_at_q0": "0.18786885675688912284861254883501263043365274243868",
+          "contribution": "0.56360657027066736854583764650503789130095822731604"
+        },
+        {
+          "partition": [
+            2,
+            2
+          ],
+          "f_lambda": 2,
+          "y_lambda_at_q0": "0.069473304078876257886571144559887930546990532733351",
+          "contribution": "0.138946608157752515773142289119775861093981065466702"
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "f_lambda": 3,
+          "y_lambda_at_q0": "0.023587470195254327042967612983320518614384218157498",
+          "contribution": "0.070762410585762981128902838949961555843152654472494"
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "f_lambda": 1,
+          "y_lambda_at_q0": "-0.00084252761790714390970774546517713842940536033539466",
+          "contribution": "-0.00084252761790714390970774546517713842940536033539466"
+        }
+      ]
+    },
+    "M2_z_renormalised": {
+      "verdict": "REFUTED",
+      "candidates_at_q0": {
+        "(1/4)Sum_{lam|-3} dim_q": "1.00272421667678057493812299452",
+        "Sum_{lam|-3} dim_q": "4.01089686670712229975249197809",
+        "[4]_q": "4.1096824112079411617605687891",
+        "[3]_q": "3.04370620853252198940201933568",
+        "[2]_q": "2.01089686670712229975249197809"
+      },
+      "tests": [
+        {
+          "form": "linking_weight · z^1",
+          "value_at_q0": "1.26466838444700696927411428913"
+        },
+        {
+          "form": "linking_weight · z^-1",
+          "value_at_q0": "5.07245446060205861257613952324"
+        },
+        {
+          "form": "linking_weight · z^2",
+          "value_at_q0": "0.631474640353632491563864639168"
+        },
+        {
+          "form": "linking_weight · z^-2",
+          "value_at_q0": "10.1587179879118611551759475734"
+        }
+      ],
+      "note": "No exact z^{±k}·linking_weight = clean-H₃ coincidence found; the z⁻¹ ≈ 2.003 near-2 is not exact (z⁻¹ = q^½+q^{-½}, irrational at q₀)."
+    },
+    "synthesis_verdict": "Markov stabilization at the trace level does NOT derive the linking_weight. The z<1 direction obstruction kills the naive form; M1 shows tr_M(1_{H₄}) = 1 (normalized trace), not 2.53; M2 finds no exact z^{±k} coincidence with a clean H₃ quantity. Combined with #1841 (Bratteli induction REFUTED), neither the algebra-tower nor the trace-stabilization axis derives the H₄ count. This points back to the production code's own framing: the linking_weight (1/4)·Σ_{λ⊢4} dim_q is a CODATA-implied near-match (`_li_2_q_util.py:298-313`), landing near λ = m_p/(m_e·Vol/ℏ²) ≈ 2.46, rather than a derived categorical count of either kind."
+  }
+}

@@ -26,15 +26,29 @@ proton braid `𝓑₃` lives in H₃?
 The Markov-stabilization hypothesis: the H₃→H₄ promotion is a **Markov
 move** β ↦ β·σ₃^{±1} (B₃ ↪ B₄), under which the link closure — hence
 its Jones invariant — is **unchanged**, and the Markov/Ocneanu trace
-scales by the **stabilization parameter**:
+scales by the **stabilization parameter**.
 
-  tr_M(x·σ_n)    = z   · tr_M(x),     x ∈ H_n
-  tr_M(x·σ_n⁻¹)  = z̄  · tr_M(x),     x ∈ H_n
+The trace lives on the **Hecke algebra** H_n, so the scaling law is
+stated in terms of the Hecke generator `g_n` (the image of the braid
+generator under the quotient map `B_n → H_n`, `σ_i ↦ g_i`, where the
+`g_i` satisfy the Hecke relation `(g_i − q)(g_i + q⁻¹) = 0`). For
+`x ∈ H_n` embedded in H_{n+1}:
+
+  tr_M(x·g_n)    = z   · tr_M(x)
+  tr_M(x·g_n⁻¹)  = z'  · tr_M(x)
 
 with (canonical, from
 [`hecke/hecke_symbolic.py:46`](../../folio-assistant/computations/hecke/hecke_symbolic.py)):
 
   z = 1 / (q^½ + q^{-½}) = 1 / [2]_{√q}.
+
+Here `z'` is the stabilization parameter for the inverse generator;
+at the substrate q₀ the parameter q is **real**, so `g_n⁻¹` is a real
+linear combination of `g_n` and `1` (via the Hecke relation
+`g_n⁻¹ = g_n − (q − q⁻¹)`) and `z'` is likewise real — there is no
+complex conjugation involved at the archimedean evaluation. (`z' ≠ z`
+in general; only the forward `z` is needed below, since the H₃→H₄
+promotion adds one strand with a single positive generator.)
 
 ## §2. The structural invariant (formalize-first narrowing)
 
@@ -53,9 +67,9 @@ by ≈ ½. So:
 > multiplier.** The naive "stabilization explains the jump" reading is
 > structurally dead before any probe runs.
 
-This is exactly the formalize-first kill the discipline targets: a
-one-parameter z-scaling with z < 1 cannot be a >1 factor. **What survives**
-is a sharper question:
+This is exactly the kind of cheap structural kill that the
+formalize-first discipline targets: a one-parameter z-scaling with
+z < 1 cannot be a >1 factor. **What survives** is a sharper question:
 
   Is `(1/4)·Σ_{λ⊢4} dim_q` a trace-level Markov object at all — e.g. the
   trace of a **central idempotent** / the **stabilized identity** 1_{H₄},
