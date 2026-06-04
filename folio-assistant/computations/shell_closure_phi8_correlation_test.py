@@ -154,7 +154,7 @@ def main() -> int:
         for c in d.get('habiro_coefficients', []):
             m = c['m']
             a_m_str = c['a_m'].replace('^', '**')
-            out[m] = sp.sympify(a_m_str, locals={'u': u})
+            out[m] = sp.sympify(a_m_str, locals={'u': u, 'check_q': u})
         return out
 
     def q_poch(m):

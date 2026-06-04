@@ -94,7 +94,7 @@ def main():
         # Simple eval with u = u0
         # Replace u with the numeric value
         try:
-            val = eval(expr_str.replace("u", f"({float(u0)})"))
+            val = eval(expr_str.replace("check_q", f"({float(u0)})").replace("u", f"({float(u0)})"))
             return mp.mpf(val)
         except Exception:
             return mp.mpf(0)
