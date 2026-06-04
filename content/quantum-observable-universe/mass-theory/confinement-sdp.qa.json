@@ -2332,6 +2332,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:confinement-sdp' → expected 'confinement_sdp'; Lean declares: ConfinementSDPDuality, ConfinementSDP. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "576d0af8f512",
+          "ts": "e42c9aedd8b7",
+          "lean": "4541dbff916a"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "confinement-sdp.lean has only opaque declarations (slaterStrictFeasible, y0_star) and no theorem matching the primal/dual SDP statement in the .md; .ts lean.ref validation: not_checked",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:14:42.787Z",
+        "reviewed_sha": "daf4c521d758a973becdf3fb7e239711ad73e3be",
+        "notes": "Lean is a stub; narrative states a full primal+dual SDP proposition with strong duality; no Lean theorem yet encodes the matrix inequality or complementary slackness condition"
       }
     ],
     "proof-lean-compiles": [
@@ -2793,5 +2813,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-04T23:14:16.983Z"
+  "updated_at": "2026-06-04T23:14:42.787Z"
 }
