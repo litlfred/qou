@@ -2566,7 +2566,87 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "91c1eb4f7fcf",
+          "ts": "6548e4182304",
+          "lean": "5d576837c6ad"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Proposition, derivation sketch, open items, and physical interpretation all interleaved; no structural ## Statement / ## Proof split; 'Structural value' section makes claims inside the proposition body",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:38:27.561Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "91c1eb4f7fcf",
+          "ts": "6548e4182304",
+          "lean": "5d576837c6ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:38:27.596Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "91c1eb4f7fcf",
+          "ts": "6548e4182304",
+          "lean": "5d576837c6ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:38:27.633Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "91c1eb4f7fcf",
+          "ts": "6548e4182304",
+          "lean": "5d576837c6ad"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Proof references 'Numerical match at q_0≈1.11 confirmed' (archimedean pin) and 'paper's empirical values'; mass-theory is the archimedean chapter so this is acceptable but a fraction of the proof is archimedean-specific",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:38:27.668Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:38:27.668Z"
 }
