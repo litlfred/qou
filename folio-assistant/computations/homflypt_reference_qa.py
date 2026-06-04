@@ -158,7 +158,8 @@ def main() -> int:
     print(f"reference recurrence vs textbook Hopf+trefoil (symbolic): "
           f"{'PASS' if sym_ok else 'FAIL'}")
     print("=" * 78)
-    print(f"  {'knot':<22}{'reference':>16}{'engine n=3':>16}"
+    print("  (engine n=3 shown writhe-corrected: framed·a^{-w}; writhe KEPT in output)")
+    print(f"  {'knot':<22}{'ref(unframed)':>16}{'eng n3 unfr':>16}"
           f"{'engine n=2':>16}{'  Δ(n3)':>10}")
     print("-" * 78)
 
@@ -168,6 +169,14 @@ def main() -> int:
         ref = _torus_homfly(k, v, z)
         word3 = [1] * k + [2]            # 3-strand Markov stabilisation
         word2 = [1] * k                  # 2-strand original
+        # KEEP-THE-WRITHE gate (see docs/homfly-markov-convention-discipline.md
+        # §2): the engine output is the FRAMED invariant (writhe retained as
+        # physical EM-phase content). To check the knot-TYPE part we divide the
+        # known framing a^{−w} back out before comparing to the unframed skein
+        # reference. a = v = s^N (framing base); w = braid exponent sum.
+        a = v
+        w3 = sum(1 if g > 0 else -1 for g in word3)
+        w2 = sum(1 if g > 0 else -1 for g in word2)
         try:
             eng3 = homflypt_at_su_n(word3, 3, 2, q0)
         except Exception as e:           # noqa: BLE001
@@ -177,20 +186,25 @@ def main() -> int:
             eng2 = homflypt_at_su_n(word2, 2, 2, q0)
         except Exception:                # noqa: BLE001
             eng2 = None
-        d3 = (abs(mp.mpf(eng3) - ref) if eng3 is not None else None)
+        # unframed-corrected engine value = framed_output · a^{−w}
+        eng3_unfr = (mp.mpf(eng3) * a ** (-w3)) if eng3 is not None else None
+        d3 = (abs(eng3_unfr - ref) if eng3_unfr is not None else None)
         ok3 = (d3 is not None and d3 < TOL)
         if not ok3:
             n_fail += 1
-        e3s = mp.nstr(mp.mpf(eng3), 10) if eng3 is not None else "ERR"
+        # show the writhe-corrected (unframed) engine value — that is what the
+        # gate compares; the framed value is recorded in the witness.
+        e3s = mp.nstr(eng3_unfr, 10) if eng3_unfr is not None else "ERR"
         e2s = mp.nstr(mp.mpf(eng2), 10) if eng2 is not None else "ERR"
         d3s = mp.nstr(d3, 3) if d3 is not None else "—"
         flag = "" if ok3 else "  ✗"
         print(f"  {label:<22}{mp.nstr(ref,10):>16}{e3s:>16}{e2s:>16}"
               f"{d3s:>10}{flag}")
         rows.append({
-            "knot": label, "k": k,
-            "reference": mp.nstr(ref, 16),
-            "engine_n3": (mp.nstr(mp.mpf(eng3), 16) if eng3 is not None else None),
+            "knot": label, "k": k, "writhe_n3": w3,
+            "reference_unframed": mp.nstr(ref, 16),
+            "engine_n3_framed": (mp.nstr(mp.mpf(eng3), 16) if eng3 is not None else None),
+            "engine_n3_unframed": (mp.nstr(eng3_unfr, 16) if eng3_unfr is not None else None),
             "engine_n2": (mp.nstr(mp.mpf(eng2), 16) if eng2 is not None else None),
             "abs_delta_n3": (mp.nstr(d3, 6) if d3 is not None else None),
             "pass_n3": bool(ok3),
