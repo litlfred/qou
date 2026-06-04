@@ -2,15 +2,6 @@
 
 **$c_k$ extraction from four algebraic reduction rules on the typed-$\mathbf{B}_3$ word.**
 
-> **Errata banner — $c_4$ closed form has shifted.**
-> The original $c_4 = b^2 + 1/2$ form below is superseded by
-> $c_4 = c_3 \cdot b^4 = -2 b^4$ (per 's SDP-$T_\beta$
-> derivation and [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)).
-> The $b^2 + 1/2$ shape is now attributed to $c_5$ (with sign
-> flip: $c_5 = -(b^2 + 1/2)$). The four-rule reframing remains
-> valid; only the per-rung closed-form column needs updating.
-> Audit: [`docs/audits/-qbeta-all-ck-categorical-extension.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-qbeta-all-ck-categorical-extension.md).
-
 The $Q_\beta$ categorical precision ladder
 ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
 displays per-rung coefficients
