@@ -335,6 +335,26 @@
           "agent_skill": "local/proof-integration-watcher"
         },
         "reviewed_at": "2026-05-27"
+      },
+      {
+        "field_hash": {
+          "md": "aeba0488e5bf",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "vertex-algebra-jet-relations.lean has zero sorry occurrences; uses axiom at lines 82 and 109 (with -- Ref: citations), not bare sorry",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:58:25.551Z",
+        "reviewed_sha": "5e83224872b5a92681bd19437a4386f3e8e989b4",
+        "notes": "No bare sorries; axioms carry -- Ref: [jones1987] and [yekutieli2010] citations per CLAUDE.md §1"
       }
     ],
     "proof-no-axiom-growth": [
@@ -2196,6 +2216,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:vertex-algebra-jet-relations' → expected 'vertex_algebra_jet_relations'; Lean declares: R_q, q_param, q_inv_param, levelHecke, hecke_level_independent.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "aeba0488e5bf",
+          "ts": "326674dad5b3",
+          "lean": "96eae1c1dde5"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Kind=proposition; lean.ref=QOU.VertexAlgebra.JetRelations.euler_level_stable (lean:98) proves only '2-2*4=-6' (trivial arithmetic); narrative claims full 34-relation jet-bundle proposition (J-1 through JC-9); Lean covers <5% of the stated claim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:58:48.047Z",
+        "reviewed_sha": "5e83224872b5a92681bd19437a4386f3e8e989b4",
+        "notes": "lean.ref should point to a declaration capturing the full proposition, not just the Euler-characteristic arithmetic fragment; hecke_level_independent at lean:65 also has incomplete proof body (missing tactic after unfold)"
       }
     ],
     "proof-lean-compiles": [
@@ -2569,5 +2609,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T22:58:48.047Z"
 }
