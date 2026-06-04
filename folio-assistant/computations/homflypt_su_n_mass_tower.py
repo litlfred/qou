@@ -1,5 +1,22 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: EXPLORATORY spike; outputs are NOT derivations.
 """HOMFLYPT SU(N) mass-tower evaluation — first multi-channel data.
+
+⚠ EXPLORATORY — NOT A PRODUCTION DERIVATION (demoted 2026-06-04).
+This spike consumes homflypt_engine.homflypt_at_su_n, whose absolute
+normalisation is BROKEN (fails homflypt_reference_qa.py 0/5; see
+docs/audits/2026-06-04-hidden-fitting-verification-gap-mass-binding-walkthrough.md).
+Two specific cautions:
+  • Before the 2026-06-04 exponent fix the SU(2) channel sat at the
+    DEGENERATE point δ≡−1 (every link → ±1), so any prior SU(2) "ratio"
+    or "mirror difference" output was noise, not knot data.
+  • The "implied E₀ = Q_β/|ΔP|" block below is a BACK-SOLVE (a fit): it
+    assumes the answer Q_β and reports the calibration that reproduces it.
+    A genuine E₀ is the single universal m_e/(q₀(q₀−1)) ≈ 4.186 MeV, NOT a
+    per-channel quantity. Do NOT cite the implied-E₀ values as predictions.
+The proton/neutron RATIOS may still be suggestive once the engine is
+reference-validated; the mass-tower itself derives no observable today.
+
 
 Computes the HOMFLYPT polynomial at SU(N) specializations for
 proton, neutron, and deuteron braids at substrate q₀. This is the
@@ -102,18 +119,25 @@ def main():
         mirror_diffs[N] = diff
         print(f"  SU({N}): ΔP = {diff:+.10f}")
 
-    # ── Q_β predictor candidates ─────────────────────────────────
-    print("\nQ_β predictor candidates (ΔP normalized):")
+    # ── Q_β BACK-SOLVE (a fit, NOT a prediction) ─────────────────
+    # ⚠ This block does NOT predict Q_β. It assumes the experimental
+    # answer Q_β and solves for the E₀ that reproduces it — a one-free-
+    # constant back-solve. The canonical E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV
+    # is a SINGLE universal constant; an "implied E₀" that differs per
+    # channel N is the signature of a fit, not a derivation. Kept only as
+    # a diagnostic of how far |ΔP| is from carrying Q_β. See the audit doc.
+    print("\nQ_β BACK-SOLVE (diagnostic only — NOT a prediction):")
     from experimental_constants import Q_NEUTRON_MEV, M_E_MEV
     Q_beta_target = Q_NEUTRON_MEV  # 0.78233341 MeV
     for N in range(2, N_max + 1):
         dp = mirror_diffs[N]
         if abs(dp) > 1e-30:
-            # What E_0 calibration would make ΔP predict Q_β?
+            # back-solved E₀ (would be channel-independent IFF |ΔP| were
+            # the right structural quantity — it is not).
             E0_implied = Q_beta_target / abs(dp)
             print(f"  SU({N}): |ΔP| = {abs(dp):.8f}, "
-                  f"implied E₀ = {E0_implied:.4f} MeV "
-                  f"(vs canonical E₀ ≈ 4.186 MeV)")
+                  f"back-solved E₀ = {E0_implied:.4f} MeV "
+                  f"(≠ canonical 4.186 ⇒ fit, not prediction)")
 
     # ── Figure-eight amphicheirality check ───────────────────────
     print("\nFigure-eight amphicheirality (P = P_mirror at each N):")
