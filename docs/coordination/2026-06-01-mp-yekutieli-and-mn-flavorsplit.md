@@ -158,3 +158,40 @@ floor as currently formulated.
 - audit [`2026-05-29-meson-mK-mpi-residual-derivation-attempt.md`](../audits/2026-05-29-meson-mK-mpi-residual-derivation-attempt.md)
 - queue [`todos/research-queue.json`](../../todos/research-queue.json) entries:
   `research-yekutieli-substrate-derivation-mp`, `research-flavor-split-mn-dpn-refinement`
+
+## 2026-06-04 — formalization attack opened (#1834)
+
+PR #1834 opens a **statements-first Lean formalization** of the
+Mass = Vol × Density chain with δ derived from non-abelian Stokes —
+a structured attack on the open queue item
+`research-yekutieli-substrate-derivation-mp` (and the #1628
+"(C) genuinely-open" volume-join verdict). Proposition DAG (roadmap:
+`docs/workplans/2026-06-04-mass-vol-density-stokes-delta-formalization.md`):
+
+- **P1** `m(K) = m_e·Vol(K)·ρ(q)/ℏ_q²` — makes `Geom_full` a theorem
+- **P2** `ρ(q) = Σ_λ y_λ χ^λ` = `(3q²+4+3q⁻²)/4` for 𝓑₃ (Hecke energy on partitions)
+- **P3** non-abelian Stokes interface holonomy `½(σ+σ⁻¹) − (h/4)·∮F` (axiomatized class)
+- **P4** δ = `∮F` curvature integral `= (q−1)²(1−q⁻⁴)/3·(1+ℏ_q³)` (conditional on P3)
+- **P5** `m_p/m_n = m_avg·(1∓δ/2)`
+
+Existing-Lean inventory done (audit): P1/P4/P5 largely exist
+(`TopologicalMassFormula`, `delta_m_over_M_N_substrate`,
+`DressedMassFromSubstrateSplit`); P2b (density = partition sum), the
+color-weighted crossing operator, and P3⇒P4 (δ from curvature) are
+greenfield. Template = `QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean`;
+Stokes class = `QOU/Mathlib/NonAbelianStokes.lean`.
+
+**Sibling coordination (intent posted):** #1762 (Geom_full bridge gap —
+parent analysis), #1816 (per-knot Vol(β_K), Option A), #1569 (avg-crossing
+`T_avg_squares_to_scalar` — algebraic backbone of the crossing operator),
+#1779 (color-averaging witness regen).
+
+**Finding flagged to #1779:** the tr_M cross-check witnesses
+(`atomic-tr-m-mpfr-50dps`, `markov-peel-atomic-tr-m`, `cross-check-trM-1ppb`)
+are **stale color-blind** (2026-05-29, pre the bring_color_weighted flip);
+a color-weighted exact recompute differs by 1.8e-4 = the δ term. δ is an
+exact q-rational (= `prop:flavor-split-substrate` × ℏ_q³). The exact peel
+path raises on nuclei (4-template classifier) and the fast LaurentQ path
+can't ingest the δ(q) element — both needed before peel can regen
+color-weighted. Audit:
+`docs/audits/2026-06-04-peel-exact-nuclei-color-weighted-trm-convention.md`.

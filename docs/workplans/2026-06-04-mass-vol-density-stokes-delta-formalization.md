@@ -48,12 +48,16 @@ by the curvature, not chosen).
 
 | # | Lean declaration (planned) | Kind | Status target |
 |---|----------------------------|------|---------------|
+(Lean-robust forms: negative powers as `q ^ (-2 : ℤ)` / `q ^ (-4 : ℤ)`,
+not unicode superscripts, so the rows paste straight into `def`/`theorem`
+stubs.)
+
 | P1 | `QOU.Mass.mass_eq_vol_times_density : m K = m_e * vol K * density q / ℏ_q q ^ 2` | theorem | proved from defs once `Geom_full` is reassembled, else `sorry` |
 | P2 | `QOU.Mass.density_eq_markov_trace : density q = ∑ λ, yWeight q λ * heckeChar q λ (braid K)` | theorem | proved (Wedderburn decomposition) or conditional on existing `tr_M` lemma |
-| P2′| `QOU.Mass.density_borromean : density q = (3*q^2 + 4 + 3*q⁻²)/4` | theorem | concrete eval of P2 at 𝓑₃ |
+| P2′| `QOU.Mass.density_borromean : density q = (3 * q ^ 2 + 4 + 3 * q ^ (-2 : ℤ)) / 4` | theorem | concrete eval of P2 at 𝓑₃ |
 | P3 | `class NonabelianStokesInterface` with field `holonomy = ½(σ+σ⁻¹) − (h/4)·curvatureIntegral` | class (conj) | axiomatized — the categorical-curvature input |
 | P4 | `QOU.Flavor.curvature_integral_eq_delta [NonabelianStokesInterface] : curvatureIntegral q = δ q` | theorem (conditional) | proved *from* the class, modulo P3 |
-| P4′| `QOU.Flavor.delta_def : δ q = (q-1)^2*(1-q⁻⁴)/3*(1+ℏ_q q^3)` | def | (likely already exists — see audit) |
+| P4′| `QOU.Flavor.delta_def : δ q = (q - 1) ^ 2 * (1 - q ^ (-4 : ℤ)) / 3 * (1 + ℏ_q q ^ 3)` | def | (likely already exists — see audit) |
 | P5 | `QOU.Flavor.proton_neutron_split : m_p = m_avg*(1-δ/2) ∧ m_n = m_avg*(1+δ/2)` | theorem | (likely already exists in FlavorDressing) |
 
 ## Open question the build will answer
