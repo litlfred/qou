@@ -28,7 +28,7 @@ $z^3 \approx 0.1245$ was off by a factor of 4.4).
 
 ## Gram matrix (symbolic in $q$)
 
-**Proposition (stale symbolic entries — see banner above).**
+**Proposition (stale symbolic entries — see Markov-bug note).**
 *The $6 \times 6$ Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$
 over the NF basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$
 has the structural form below; the entries containing $z^3$ or
