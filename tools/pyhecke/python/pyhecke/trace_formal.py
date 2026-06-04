@@ -30,8 +30,13 @@ itself does not require sympy — only `import pyhecke.trace_formal` does.
     markov_trace_combo_formal(terms)   — tr_M(Σ cᵢ σ_{wᵢ}), simplified
     specialize(expr, s_value)          — substitute s and simplify/evalf
     eval_at_root_of_unity(expr, N, k)  — q = exp(2πik/N) → s = exp(πik/N)
+    quantum_int(n)                     — balanced [n]_q = (sⁿ−s⁻ⁿ)/(s−s⁻¹)
+    habiro_profile(expr, N_max)        — family {ζ_N ↦ expr(ζ_N)} (Step 3)
+    classical_limit(expr)              — value at q→1 (archimedean shadow)
 """
 from __future__ import annotations
+
+import cmath
 
 import sympy as sp
 
@@ -126,3 +131,67 @@ def eval_at_root_of_unity(expr: sp.Expr, N: int, k: int = 1, *, dps: int = 50):
     over all roots of unity, not any single one."""
     s_val = sp.exp(sp.I * sp.pi * sp.Rational(k, N))
     return sp.N(expr.subs(s, s_val), dps)
+
+
+def quantum_int(n: int) -> sp.Expr:
+    """Balanced quantum integer `[n]_q = (sⁿ − s⁻ⁿ)/(s − s⁻¹)`, q = s².
+
+    Properties used downstream:
+    - `[n] → n` as `s → 1` (so `[5]₁² = 25`, the undeformed `/25`
+      denominator of the Q_β c_3 rung — see the #1811 fibre probe and
+      impl-spec Steps 3–4);
+    - `[n]` vanishes at `ζ = exp(iπk/N)` iff `N | k·n`, which is the
+      "degenerate `[n]_ζ = 0`" case `habiro_profile` skips.
+
+    Provided so Step-4 callers can build / recognise the `[5]_q²`
+    structure without re-deriving it; it is *not* itself a trace."""
+    return (s ** n - s ** (-n)) / (s - 1 / s)
+
+
+def _finite_complex(val):
+    """Coerce a sympy number to a finite Python complex, or None if it
+    is a pole (`zoo`/`oo`/`nan`) or otherwise non-finite."""
+    try:
+        c = complex(val)
+    except (TypeError, ValueError):
+        return None
+    return c if cmath.isfinite(c) else None
+
+
+def habiro_profile(expr: sp.Expr, N_max: int, *, k: int = 1,
+                   dps: int = 50, skip_degenerate: bool = True):
+    """Root-of-unity *family* `{ ζ_N ↦ expr(ζ_N) : N = 1..N_max }`,
+    ζ_N = exp(2πik/N) (so s = exp(iπk/N)).
+
+    A Habiro-ring element is determined by this whole family of values,
+    **not** by any single evaluation — the key lesson of the #1811
+    fibre reconnaissance probe, which found `/25 = [5]_q²` only at the
+    classical fibre point `q = 1`, at no finite root of unity, and not
+    at the substrate q₀. So the right object to compare against a
+    candidate c_3 residue-A element (impl-spec Step 4) is this profile,
+    not a point value.
+
+    Returns a list of `(N, value)` pairs. Degenerate N — where `expr`
+    has a pole at ζ_N (a quantum integer `[n]_ζ` in a denominator
+    vanishes; for the bare Markov trace `z = s/(s²+1)` this is N = 2k)
+    — are dropped when `skip_degenerate` (default), so the list is
+    sparse in N; pass `skip_degenerate=False` to keep them as
+    `(N, None)`. `value` is a Python `complex`."""
+    profile: list[tuple[int, complex | None]] = []
+    for N in range(1, N_max + 1):
+        val = _finite_complex(eval_at_root_of_unity(expr, N, k, dps=dps))
+        if val is None:
+            if not skip_degenerate:
+                profile.append((N, None))
+            continue
+        profile.append((N, val))
+    return profile
+
+
+def classical_limit(expr: sp.Expr, *, dps: int = 50):
+    """Value at the trivial fibre point `q → 1` (`s → 1`): the
+    archimedean shadow of a Habiro element (impl-spec Step 3, "q→1 =
+    N→∞"). Uses `sp.limit`, not `subs`, so removable `0/0` singularities
+    (e.g. `quantum_int(n) → n`) resolve correctly. Returns a sympy
+    number at `dps` digits."""
+    return sp.N(sp.limit(expr, s, 1), dps)

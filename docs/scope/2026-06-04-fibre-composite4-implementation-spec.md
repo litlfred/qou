@@ -118,7 +118,32 @@ Verified: specializing at `s = √q₀` reproduces the float
 reproduces the float `nf_tr` to 50 dps for the 6 basis elements and for
 a random linear combination.
 
-## Step 3 — roots-of-unity / Habiro evaluation
+## Step 3 — roots-of-unity / Habiro evaluation ✅ DONE (PR #1811)
+
+Implemented in `trace_formal.py` (3 new functions) with tests appended
+to `tools/pyhecke/tests/test_trace_formal.py` (6 new, 12 total, all
+pass). `eval_at_root_of_unity` already landed with Step 2; Step 3 adds
+the *family* layer on top of it:
+
+- `habiro_profile(expr, N_max, *, k=1, skip_degenerate=True)` — the
+  family `{ζ_N ↦ expr(ζ_N)}` over `N = 1..N_max` as `(N, value)` pairs.
+  **Degeneracy = pole, not zero**: an `N` is dropped only when `expr`
+  has a *pole* at `ζ_N` (a denominator quantum integer `[n]_ζ → 0`;
+  for the bare trace `z = s/(s²+1)` that is `N = 2k`). A finite *zero*
+  (numerator `[n]_ζ`, e.g. `[5]` at `ζ_5`) is **kept** with value ≈ 0.
+  `skip_degenerate=False` keeps poles as `(N, None)`.
+- `classical_limit(expr)` — value at the trivial fibre point `q→1`
+  (`s→1`, the `N→∞` archimedean shadow), via `sp.limit` so removable
+  `0/0` resolves: `[n]_q → n`, hence `[5]₁² = 25` (a test asserts this,
+  matching the `/25` of the c_3 rung).
+- `quantum_int(n)` — balanced `[n]_q = (sⁿ−s⁻ⁿ)/(s−s⁻¹)`, provided so
+  Step-4 callers can build/recognise the `[5]_q²` structure.
+
+A test also pins the **#1811 lesson** directly: `[5]_q² = 25` holds at
+`q→1` but **not** at `ζ_7` — a Habiro element is the *whole family*,
+not a point. The machinery for Step 4 is now in place.
+
+### Original spec (kept for reference)
 
 **File:** extend `trace_formal.py` with
 `eval_at_root_of_unity(laurent, N, k=1)` → evaluate at `ζ = exp(2πik/N)`
