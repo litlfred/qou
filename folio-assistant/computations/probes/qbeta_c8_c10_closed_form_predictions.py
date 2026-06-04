@@ -73,14 +73,18 @@ import _path_bridge  # noqa: E402, F401
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
-def hoefsmit_b_squared_at_q0(q0: mp.mpf) -> mp.mpf:
-    """b² value at q₀ — Hoefsmit b² is documented in the SDP witness."""
-    # From qbeta-decay-sdp-extended-ck.witness.json (parameters.hoefsmit_b_50dps):
-    # b = 0.86758406730705817865833308252393344606969606677438
-    # → b² = b · b (compute below; do not hardcode the b² value)
-    # We do not require q₀ for the closed form itself; only for the
-    # numerical evaluation at the substrate anchor.
-    b = mp.mpf("0.86758406730705817865833308252393344606969606677438")
+def hoefsmit_b_squared_from_provenance() -> mp.mpf:
+    """Load Hoefsmit b² at q₀ from the canonical provenance witness.
+
+    Reads `hoefsmit_b` from `q-beta-operator-valued-N3.witness.json`
+    (the same provenance used by `qbeta_closed_form_wiring_n4_to_n10.py`)
+    and returns b² = b · b. Avoids hardcoding the b value here so the
+    probe stays in sync if the upstream witness is regenerated.
+    """
+    provenance = COMPUTATIONS_ROOT / "q-beta-operator-valued-N3.witness.json"
+    with open(provenance) as f:
+        d = json.load(f)
+    b = mp.mpf(str(d["data"]["hoefsmit_b"]))
     return b * b
 
 
@@ -88,9 +92,11 @@ def closed_form_c_k(k: int, b_sq: mp.mpf) -> mp.mpf:
     """Closed-form value of c_k extrapolated from the Pell-Lucas pattern.
 
     For k ≥ 6 (excluding the c_5 averaging-resonance outlier):
-      even k: c_k =  4 · b^(k-4) = c_3² · b^(k-4)
-      odd  k: c_k = -8 · b^(k-4) = c_3³ · b^(k-7)
-              (= -8 · b^(k-7); since c_3³ = -8 and the b power is k-7 for odd k ≥ 7)
+      even k: c_k = c_3² · b^(k-4) =  4 · b^(k-4)
+      odd  k: c_k = c_3³ · b^(k-7) = -8 · b^(k-7)
+              (since c_3 = -2, c_3² = 4, c_3³ = -8;
+               b^(k-4) = (b²)^((k-4)/2) for even k ≥ 6,
+               b^(k-7) = (b²)^((k-7)/2) for odd  k ≥ 7).
     """
     if k < 6:
         raise ValueError(f"closed_form_c_k is only defined for k >= 6 here; got k={k}")
@@ -117,7 +123,7 @@ def silver_rational_c_k(k: int) -> Fraction:
 def main() -> int:
     mp.mp.dps = 60
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    b_sq = hoefsmit_b_squared_at_q0(q0)
+    b_sq = hoefsmit_b_squared_from_provenance()
 
     print("=" * 78)
     print(" Q_β c_8, c_9, c_10 — closed-form Pell-Lucas extension")
