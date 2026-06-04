@@ -921,3 +921,29 @@ groups (this also **corrects 16.2**: q₀-evaluation is *not* a free consequence
 **Net obligation map.** jobs (i) + perturbative expansion ⟸ the **A-facts** (Habiro;
 bounded Lean). theorem-target ⟸ **B2** (integral cyclotomic expansion; open, PR #1739).
 q₀-evaluation ⟸ **C2** (closed-form / bar / resummation) — separate from membership.
+
+### 16.4 "If we had only A and B (no C), what would that give us?" (owner follow-up)
+
+A+B = the **complete pre-archimedean object** — everything up to but not across the
+archimedean wall:
+
+1. **Integrality / quantization** (B): `c_n(q) ∈ ℤ[q]` — the QOU analog of KS's
+   integrality conjecture (`Ω(γ) ∈ ℤ`), *proven* for `X`; the `c_k` are integer-
+   polynomial, not arbitrary reals.
+2. **Exact value in every modular fibre** (A2+B): `X` evaluates at *every* root of unity
+   → realized in every Reshetikhin–Turaev semisimple category = the §15 nerve threaded
+   concretely (the whole WRT / colored-Jones tower at once).
+3. **Rigidity ⇒ over-determined exact verification** (A3/A4): `X` is pinned by its
+   roots-of-unity values (each an exact `ℤ[ζ]` computation); finitely many determine the
+   whole object — exact, integer, no-floating-point cross-validation.
+4. **It settles the `c_k` flip-flop** (A3): the `c_k` ladder becomes the Taylor expansion
+   of a *genuine integral Habiro element*, promoting `c_2, c_3, …` from "near-match /
+   fitted" (the four-session flip-flop, CLAUDE.md) to the **exact integral coefficients of
+   a categorical object** — the real prize of the PR #1739 axis.
+
+**What A+B does *not* give: the physical number at `q₀`.** `|q₀|>1` is outside the
+cyclotomic convergence (C1), so the MeV value (mass, `Q_β`) still needs C — closed-form,
+or eval at `q₀⁻¹<1` + bar-symmetry, or resummation. So **A+B is a structural/categorical
+victory** (pins the object, proves integrality, settles the `c_k`) — **not a precision
+win**: it would not by itself move the L2 100× dashboard. It supplies the rigorous
+backbone; **C delivers the observable.**
