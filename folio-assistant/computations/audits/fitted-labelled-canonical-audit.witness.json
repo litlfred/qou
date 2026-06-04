@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T13:01:03.609364+00:00",
-  "commitSha": "dfca53d229cbf43bbe1b0fbd70bd2a20e1d4fc7d",
+  "computedAt": "2026-06-04T13:34:29.051699+00:00",
+  "commitSha": "52177229332f18637ffee55b5234d06481d12fb1",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
-      "computed": 2,
+      "computed": 0,
       "expected": 0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 11,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "aaff0df25751",
-  "scriptCommitSha": "dfca53d229cbf43bbe1b0fbd70bd2a20e1d4fc7d",
+  "scriptCommitSha": "a394b8e33e34e7b10bb07d989e54a7197b312201",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,28 +35,9 @@
   "description": "Audits production scripts in folio-assistant/computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
-    "total_issues": 2,
-    "flagged_script_count": 1,
+    "total_issues": 0,
+    "flagged_script_count": 0,
     "scripts_scanned": 1027,
-    "rows": [
-      {
-        "path": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
-        "issue_count": 2,
-        "issues": [
-          {
-            "line": 72,
-            "var": "Q_PROTON",
-            "literal": "1.10997858275",
-            "context_snippet": "ved value).\n\nIf NONE of {A, B, C, D} matches both anchors, the redirect's\n\"complex-analytic / root-of-unity Habiro\" hypothesis is either\nREFUTED at this scope, or requires a MORE EXOTIC analytic\nstructure than what's tes"
-          },
-          {
-            "line": 73,
-            "var": "Q_MUON",
-            "literal": "1.10997859555",
-            "context_snippet": "} matches both anchors, the redirect's\n\"complex-analytic / root-of-unity Habiro\" hypothesis is either\nREFUTED at this scope, or requires a MORE EXOTIC analytic\nstructure than what's tested here.\n\nHonest scoping. No fit. "
-          }
-        ]
-      }
-    ]
+    "rows": []
   }
 }
