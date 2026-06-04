@@ -9,7 +9,7 @@ formalisation is authoritative; these are the numeric (mpmath) mirrors.
 """
 from __future__ import annotations
 
-from mpmath import mpf, sqrt as mpsqrt
+from mpmath import mpf, sqrt as mpsqrt, cos as mpcos, fabs as mpfabs
 
 
 # ── Per-Wedderburn-block characters χ_λ(Δ_T_β)(q) over H_3(q) ──
@@ -91,3 +91,58 @@ def delta_tau_M_canonical_explicit(q: mpf) -> mpf:
         + (mpf("0.5") - z) * chi_block_21(q)
         + z * chi_block_111(q)
     )
+
+
+# ── Q_β precision-ladder substrate quantities + empirical c_3 target ──
+# These let any probe compute the CAL-anchored c_3 target at an ARBITRARY
+# substrate q (not just the cached proton anchor), which is what the
+# cross-anchor discrimination test needs.
+#
+# Canonical source of the inversion: `qbeta_ck_cache.py` (steps 1–3):
+#   c_3(q) = (Q_codata / Q_N2(q) − 1) / u(q)^3
+# with Q_codata the experimental (anchor-INDEPENDENT) neutron β-decay
+# Q-value treated as the exact CAL-3 anchor, and
+#   Q_N2(q) = m_e · Q_A(q) · cos(α(q) − b(q)·ℏ_q(q)²/2) · (1 + c_2·u(q)²),
+#   c_2 = −1 (Lean-proved Taylor-exact).
+
+def substrate_ladder_quantities(q: mpf) -> dict:
+    """Return the Q_β-ladder substrate quantities at substrate value `q`.
+
+    Keys: `h`, `hbar_q`, `b`, `u`, `z`, `alpha`, `Q_A_over_me`.
+    Mirrors the opening block of `qbeta_ck_cache.py::main`.
+    """
+    h = q - 1 / q
+    hbar_q = (q - 1) / q
+    b = mpsqrt((h ** 2 + 3) / (h ** 2 + 4))
+    u = b * hbar_q ** 2
+    z = 1 / (mpsqrt(q) + 1 / mpsqrt(q))
+    alpha = (z - 1) * h / 2
+    Q_A_over_me = mpfabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
+    return {
+        "h": h, "hbar_q": hbar_q, "b": b, "u": u,
+        "z": z, "alpha": alpha, "Q_A_over_me": Q_A_over_me,
+    }
+
+
+def c3_target_at(q: mpf, q_codata: mpf, m_e: mpf) -> mpf:
+    """Empirical (CAL-anchored) c_3 target at substrate `q`.
+
+    Ladder inversion through the N=2 rung (c_2 = −1 Lean-proved):
+
+        Q_A   = m_e · |q²−2q−1| · (q+1) / (2q³)
+        Q_N1  = Q_A · cos(α − b·ℏ_q²/2)
+        Q_N2  = Q_N1 · (1 + c_2·u²),   c_2 = −1
+        c_3   = (Q_codata / Q_N2 − 1) / u³
+
+    `q_codata` (the experimental neutron β-decay Q-value) is the SAME at
+    every substrate anchor — it is a physical constant, not a function of
+    q. Only the substrate quantities (Q_A, u, α, …) move with `q`, so the
+    c_3 target genuinely differs between the proton and muon anchors. The
+    cross-anchor swing of this target is the discriminator the f-map
+    search uses to separate a true closure from a single-anchor near-match.
+    """
+    sub = substrate_ladder_quantities(q)
+    Q_A = m_e * sub["Q_A_over_me"]
+    Q_N1 = Q_A * mpcos(sub["alpha"] - sub["b"] * sub["hbar_q"] ** 2 / 2)
+    Q_N2 = Q_N1 * (1 + (-1) * sub["u"] ** 2)
+    return (q_codata / Q_N2 - 1) / sub["u"] ** 3
