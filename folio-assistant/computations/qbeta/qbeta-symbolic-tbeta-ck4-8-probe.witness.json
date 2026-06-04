@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T14:34:58.622458+00:00",
-  "commitSha": "467601ed1a908f6af47301d2c7d611151fa505af",
+  "computedAt": "2026-06-04T14:40:51.063599+00:00",
+  "commitSha": "dafc4ab46f80100bd0ae80722e871c7a93943d8f",
   "assertions": [
     {
       "name": "at_least_one_candidate_respects_c2_structural",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 811,
+  "durationMs": 793,
   "computation": "qbeta-symbolic-tbeta-ck4-8-probe",
   "scriptFile": "qbeta_symbolic_tbeta_ck4_8_probe.py",
-  "scriptHash": "74e1ddaa66f7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "dc1404cbf96d",
+  "scriptCommitSha": "dafc4ab46f80100bd0ae80722e871c7a93943d8f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -45,6 +45,7 @@
         "c_2": -1.0,
         "c_3": 0.0,
         "c2_structural_ok": true,
+        "q_stable": true,
         "ck_2_to_8": {
           "2": "-1",
           "3": "0",
@@ -63,6 +64,7 @@
         "c_2": -1.0,
         "c_3": 0.0,
         "c2_structural_ok": true,
+        "q_stable": true,
         "ck_2_to_8": {
           "2": "-1",
           "3": "0",
@@ -81,6 +83,7 @@
         "c_2": -1.0,
         "c_3": -1.0,
         "c2_structural_ok": true,
+        "q_stable": true,
         "ck_2_to_8": {
           "2": "-1",
           "3": "-1",
@@ -99,6 +102,7 @@
         "c_2": -1.0,
         "c_3": 0.0,
         "c2_structural_ok": true,
+        "q_stable": true,
         "ck_2_to_8": {
           "2": "-1",
           "3": "0",
@@ -117,6 +121,7 @@
         "c_2": -1.0,
         "c_3": -2.0,
         "c2_structural_ok": true,
+        "q_stable": true,
         "ck_2_to_8": {
           "2": "-1",
           "3": "-2",

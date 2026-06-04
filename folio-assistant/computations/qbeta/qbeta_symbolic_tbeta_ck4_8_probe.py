@@ -151,8 +151,12 @@ def main() -> int:
         "C4: exp(-u²-2u³)": sp.exp(-u ** 2 - 2 * u ** 3),
     }
 
+    # Evaluate at the configured compute precision (65 dps), not a
+    # hard-coded 50, so numeric ppm comparisons use the full budget
+    # (per Copilot review on PR #1836).
+    _DPS = mp.mp.dps  # 65
     def evalq(expr, qval):
-        return mp.mpf(str(sp.N(expr.subs(q, sp.Float(str(qval), 50)), 50)))
+        return mp.mpf(str(sp.N(expr.subs(q, sp.Float(str(qval), _DPS)), _DPS)))
 
     u_at_qp = evalq(u_expr, Q_PROTON)
     u_at_qm = evalq(u_expr, Q_MUON)
@@ -166,8 +170,16 @@ def main() -> int:
           f"Q_A(q_p) = {mp.nstr(Q_A_qp, 10)} MeV")
     print(f"  CODATA Q_β = {mp.nstr(Q_BETA_CODATA, 8)} MeV")
     print()
-    print(f"  {'candidate':<28} {'c_2':>6} {'c_3':>7} {'Q_β(q_p) ppm':>14} {'x-anchor swing':>16}")
-    print(f"  {'-'*28} {'-'*6} {'-'*7} {'-'*14} {'-'*16}")
+    # Dynamic column width so long candidate names stay aligned
+    # (per Copilot review on PR #1836).
+    w = max(28, max(len(n) for n in candidates_tail))
+    print(f"  {'candidate':<{w}} {'c_2':>6} {'c_3':>7} {'Q_β(q_p) ppm':>14} {'x-anchor swing':>16}")
+    print(f"  {'-'*w} {'-'*6} {'-'*7} {'-'*14} {'-'*16}")
+
+    # cross-anchor swing threshold: a canonical real-q F is q-stable;
+    # the substrate Δq/q ≈ 1.2e-8, so a genuine F has swing ~O(1e-7).
+    # Anything above SWING_MAX is anchor-specific (reject as canonical).
+    SWING_MAX = 1e-5
 
     results = []
     for name, tail in candidates_tail.items():
@@ -176,20 +188,23 @@ def main() -> int:
         c2 = float(ck.get(2, 0))
         c3 = float(ck.get(3, 0))
         # Build Q_β(q) = Q_A · cos(α_eff) · tail(u(q)), eval at anchors
-        # tail evaluated at the numeric u of each anchor:
-        tail_qp = mp.mpf(str(sp.N(tail.subs(u, sp.Float(str(u_at_qp), 50)), 50)))
-        tail_qm = mp.mpf(str(sp.N(tail.subs(u, sp.Float(str(u_at_qm), 50)), 50)))
+        # (tail evaluated at the numeric u of each anchor, full dps).
+        tail_qp = mp.mpf(str(sp.N(tail.subs(u, sp.Float(str(u_at_qp), _DPS)), _DPS)))
+        tail_qm = mp.mpf(str(sp.N(tail.subs(u, sp.Float(str(u_at_qm), _DPS)), _DPS)))
         Qbeta_qp = Q_A_qp * mp.cos(alpha_eff_qp) * tail_qp
         Qbeta_qm = Q_A_qm * mp.cos(alpha_eff_qm) * tail_qm
         eps_qp_ppm = float((Qbeta_qp / Q_BETA_CODATA - 1) * mp.mpf("1e6"))
         # cross-anchor swing: relative change of Q_β across the two anchors
         swing = float(mp.fabs((Qbeta_qm - Qbeta_qp) / Qbeta_qp))
         c2_ok = abs(c2 - (-1)) < 1e-6
-        print(f"  {name:<28} {c2:>6.2f} {c3:>7.2f} {eps_qp_ppm:>14.4f} "
-              f"{swing:>16.3e}{'  ✓c2' if c2_ok else '  ✗c2'}")
+        stable = swing < SWING_MAX
+        print(f"  {name:<{w}} {c2:>6.2f} {c3:>7.2f} {eps_qp_ppm:>14.4f} "
+              f"{swing:>16.3e}{'  ✓c2' if c2_ok else '  ✗c2'}"
+              f"{' ✓stable' if stable else ' ✗SWING'}")
         results.append({
             "candidate": name,
             "c_2": c2, "c_3": c3, "c2_structural_ok": c2_ok,
+            "q_stable": stable,
             "ck_2_to_8": {str(k): str(ck.get(k)) for k in range(2, kmax + 1)},
             "Q_beta_qp_MeV": mp.nstr(Qbeta_qp, 18),
             "eps_qp_ppm": eps_qp_ppm,
@@ -197,19 +212,21 @@ def main() -> int:
         })
     print()
     print(f"  (1 ppQ = 1e-9 ppm; the proven Q_N2 baseline C0 sits at ~5.6 ppm)")
+    print(f"  (swing threshold SWING_MAX = {SWING_MAX:.0e}; canonical F must be q-stable)")
     print()
 
-    # Filter: c_2 = -1 structural + best ppm
-    valid = [r for r in results if r["c2_structural_ok"]]
+    # Filter: BOTH c_2 = -1 structural AND q-stable (per the probe's
+    # stated dual criterion — Copilot review on PR #1836); then rank by ppm.
+    valid = [r for r in results if r["c2_structural_ok"] and r["q_stable"]]
     valid.sort(key=lambda r: abs(r["eps_qp_ppm"]))
     print("=" * 78)
     print(" VERDICT")
     print("=" * 78)
     print()
-    print(f"  Candidates respecting c_2 = -1 (structural filter): "
+    print(f"  Candidates respecting c_2 = -1 AND q-stable (dual filter): "
           f"{len(valid)}/{len(results)}")
     for r in valid:
-        print(f"    {r['candidate']:<28} ε={r['eps_qp_ppm']:+.4f} ppm  "
+        print(f"    {r['candidate']:<{w}} ε={r['eps_qp_ppm']:+.4f} ppm  "
               f"swing={r['cross_anchor_swing']:.2e}")
     print()
     best = valid[0] if valid else None
