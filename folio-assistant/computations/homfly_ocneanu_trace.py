@@ -68,7 +68,18 @@ from hecke_characters import chi_lambda_braid, partitions_of  # noqa: E402
 
 
 def _chi(shape, word, s):
-    """Signed seminormal Hecke character χ^shape(β) evaluated at s=√q₀."""
+    """Signed seminormal Hecke character χ^shape(β) evaluated at s=√q₀.
+
+    PRECISION NOTE (Copilot PR #1792): `chi_lambda_braid` currently takes a
+    *float* `q_value`, so the character evaluation is float64-bounded (~53
+    bits) regardless of `mp.mp.dps`. The validation tolerances in `_weights`
+    are therefore effectively float64 (the gate deltas sit at ~1e-15, not the
+    nominal 1e-9 cushion) — which is ample for these small braids but does NOT
+    improve with higher dps. Lifting this to full mpmath precision requires
+    `chi_lambda_braid` to accept an mpf `q_value` (cross-cutting change to the
+    Hecke character module); tracked as a follow-up. We keep `repr(...)` →
+    `mp.mpf` only to carry the float result into the mpmath arithmetic below
+    without adding further rounding."""
     hc = [(1, g) if g > 0 else (-1, -g) for g in word]
     return mp.mpf(repr(chi_lambda_braid(list(shape), hc, q_value=float(s))))
 

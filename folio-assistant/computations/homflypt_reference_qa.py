@@ -47,9 +47,13 @@ to `_torus_homfly(k, v, z)` at the SAME numerical v, z. If the engine is
 a correct HOMFLY evaluator the two match; if it is ratio-only /
 mis-normalised (dropped writhe framing) they do not.
 
-This test is EXPECTED TO FAIL against the current engine — that failure
-is the deliverable (it makes the verification gap a hard gate). After
-the normalisation fix it should pass to ~1e-6.
+History: this gate was first pointed at the LEGACY n≥3 path
+(`homflypt_engine._homflypt_nstrand_numerical`), which failed 0/5 (its
+ratio-only normalisation is not a knot invariant). It now drives the
+reworked engine `homfly_ocneanu_trace.homfly_signed_su2`, which passes
+**5/5** (≤ ~1e-15, float64-bounded by the character eval — see the
+precision note in `homfly_ocneanu_trace.py`). Re-point `eng3` at the
+legacy `homflypt_at_su_n` to reproduce the 0/5 baseline.
 
 Usage:
     python3 homflypt_reference_qa.py            # report
@@ -182,10 +186,11 @@ def main() -> int:
         # gives the unframed (ambient-isotopy) value directly = output·a^{−w}.
         try:
             eng3_unfr = homfly_signed_su2(word3, 3, q0, framed=False)
+            eng3_framed = homfly_signed_su2(word3, 3, q0, framed=True)
         except Exception as e:           # noqa: BLE001
             eng3_unfr = None
+            eng3_framed = None
             eng3_err = repr(e)
-        eng3 = eng3_unfr                  # already unframed for the gate column
         try:
             eng2 = homflypt_at_su_n(word2, 2, 2, q0)  # legacy 2-strand path
         except Exception:                # noqa: BLE001
@@ -205,7 +210,7 @@ def main() -> int:
         rows.append({
             "knot": label, "k": k, "writhe_n3": w3,
             "reference_unframed": mp.nstr(ref, 16),
-            "engine_n3_framed": (mp.nstr(mp.mpf(eng3), 16) if eng3 is not None else None),
+            "engine_n3_framed": (mp.nstr(eng3_framed, 16) if eng3_framed is not None else None),
             "engine_n3_unframed": (mp.nstr(eng3_unfr, 16) if eng3_unfr is not None else None),
             "engine_n2": (mp.nstr(mp.mpf(eng2), 16) if eng2 is not None else None),
             "abs_delta_n3": (mp.nstr(d3, 6) if d3 is not None else None),
