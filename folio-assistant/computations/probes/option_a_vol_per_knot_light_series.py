@@ -21,17 +21,24 @@ For each light isotope K the probe records:
                                                  a per-block flip)
 
 For every atom the tr_M(β_K, q₀) is loaded from the canonical 50-dps
-chi-cache. The proton and neutron caches
-(`chi-{proton,neutron}-h3-at-q0-50dps.witness.json`) ship with
-`tr_M_at_q0` pre-summed (built by `chi_at_q0_via_hoefsmit_mpfr.py`);
-the D/T/³He/⁴He caches ship per-partition only
-(`chi-{deuteron,tritium,helium-3,helium-4}-h{6,9,9,12}-at-q0-50dps.witness.json`,
-the `kind: "atom"` variant — production-faithful, `include_inter=True`).
-For those four atoms the probe sums `tr_M = Σ_λ y_λ · χ^λ` on the fly
-using `y-lambda-at-q0.witness.json` (50-dps y_λ table, n = 2..12 all
-present). This is the canonical `Σ_λ y_λ · χ^λ` combiner
-formalised in `canonical_tr_m_via_chi_cache.py:lines-93-180`,
-inlined here as a ~15-line helper so the probe stays self-contained.
+chi-cache. The probe handles BOTH cache schemas (it inspects each
+file rather than assuming a fixed shape):
+  - pre-summed: a top-level `tr_M_at_q0` field (the proton and neutron
+    caches `chi-{proton,neutron}-h3-at-q0-50dps.witness.json`, built by
+    `chi_at_q0_via_hoefsmit_mpfr.py`, ship this way);
+  - per-partition: a `by_partition` array of `chi_lambda` values only
+    (the D/T/³He/⁴He caches
+    `chi-{deuteron,tritium,helium-3,helium-4}-h{6,9,9,12}-at-q0-50dps.witness.json`,
+    the `kind: "atom"` variant — production-faithful, `include_inter=True`
+    — ship this way at the time of writing).
+When only `by_partition` is present, the probe sums `tr_M = Σ_λ y_λ · χ^λ`
+on the fly using `y-lambda-at-q0.witness.json` (50-dps y_λ table,
+n = 2..12 all present). This is the canonical `Σ_λ y_λ · χ^λ` combiner
+formalised in `canonical_tr_m_via_chi_cache.py:lines-93-180`, inlined
+here as a small helper so the probe stays self-contained. (The schema
+chosen by any given cache is an artefact of which producer last ran;
+the probe does not rely on the p/n-vs-rest split — it reads whichever
+field is present.)
 
 Strand-count convention: the per-block sum is over partitions of the
 atom's H_{3A} strand count (3·(Z+N)) — the canonical production
@@ -152,15 +159,29 @@ def _tr_m_from_chi_cache(
     arithmetic but takes the χ values as pre-computed numerical mpf
     strings (h{6,9,9,12} caches), so no symbolic substitution is
     needed and the combiner is microseconds even at H₁₂.
+
+    Raises RuntimeError if any partition present in the chi cache is
+    missing from `y_by_part` — a silent skip would undercount tr_M
+    and produce a wrong diagnostic with no failure signal (Copilot
+    review, PR #1816).  Full coverage is required, not best-effort.
     """
     tr_m = mp.mpf(0)
+    missing: list[tuple] = []
     for entry in chi_cache["by_partition"]:
         lam = tuple(entry["partition"])
         y_lam = y_by_part.get(lam)
         if y_lam is None:
-            continue  # partial y_λ coverage; skip and let assert flag it
+            missing.append(lam)
+            continue
         chi_lam = mp.mpf(entry["chi_lambda"])
         tr_m += y_lam * chi_lam
+    if missing:
+        raise RuntimeError(
+            f"tr_M undercount: {len(missing)} partition(s) in the chi "
+            f"cache have no y_λ entry — {missing}. The y-lambda-at-q0 "
+            f"table is incomplete for this n; refresh it before "
+            f"trusting the diagnostic."
+        )
     return tr_m
 
 
@@ -250,9 +271,15 @@ def _vol_for(iso: dict) -> mp.mpf:
     raise KeyError(f"no Vol assignment for {iso['label']!r} ({knot!r})")
 
 
-def _fmt(x: mp.mpf, dps: int = 50) -> str:
-    """Serialise an mpf at `dps` decimal places."""
-    return mp.nstr(x, dps, strip_zeros=False)
+def _fmt(x: mp.mpf, sig: int = 50) -> str:
+    """Serialise an mpf to `sig` significant digits.
+
+    NOTE: `mp.nstr(x, n)` formats to ~n SIGNIFICANT digits, not n
+    digits after the decimal point (Copilot review, PR #1816). The
+    project's "50-dps" convention means ~50 significant decimal
+    digits of precision, which matches the default here.
+    """
+    return mp.nstr(x, sig, strip_zeros=False)
 
 
 def main() -> int:
@@ -267,8 +294,9 @@ def main() -> int:
         "`_li_2_q_util.py:298-313` discipline note. Per-knot Vol(K) "
         "from `substrate/knot_volumes.py` (small-knot hyperbolic "
         "volume); tr_M from `chi-{atom}-h{3A}-at-q0-50dps.witness.json` "
-        "for every atom (p/n: pre-summed top-level `tr_M_at_q0`; "
-        "D/T/³He/⁴He: per-partition χ^λ combined in-probe with "
+        "for every atom — the probe reads whichever schema each cache "
+        "carries (a pre-summed top-level `tr_M_at_q0`, or a "
+        "`by_partition` array combined in-probe with "
         "`y-lambda-at-q0.witness.json`)."
     )
 
@@ -278,10 +306,14 @@ def main() -> int:
     proton_cache = _load_chi_cache("proton", n_strands=3)
     neutron_cache = _load_chi_cache("neutron", n_strands=3)
     q_0_str = proton_cache["q_0_50dps"]
-    assert neutron_cache["q_0_50dps"] == q_0_str, (
-        "proton and neutron chi-caches disagree on q_0 — refresh them "
-        "via canonical_tr_m_via_chi_cache.py before re-running."
-    )
+    # Explicit raise (not assert): asserts are stripped under `python -O`,
+    # which would let the probe proceed with a mismatched q_0 (Copilot
+    # review, PR #1816). The q_0 consistency is a hard precondition.
+    if neutron_cache["q_0_50dps"] != q_0_str:
+        raise ValueError(
+            "proton and neutron chi-caches disagree on q_0 — refresh them "
+            "via canonical_tr_m_via_chi_cache.py before re-running."
+        )
     q_0 = mp.mpf(q_0_str)
     y_by_n = _load_y_lambda_at_q0()
     q_inv = mp.mpf(1) / q_0
@@ -331,10 +363,13 @@ def main() -> int:
         # available without a separate compute.
         cache = _load_chi_cache(chi_atom, n_strands=iso["n_strands"])
         cache_q0 = cache.get("q_0_50dps") or cache.get("q_str")
-        assert cache_q0 == q_0_str, (
-            f"chi-cache for {chi_atom} disagrees on q_0 "
-            f"(cache: {cache_q0!r}, probe: {q_0_str!r})"
-        )
+        # Explicit raise (not assert) — survives `python -O` (Copilot
+        # review, PR #1816).
+        if cache_q0 != q_0_str:
+            raise ValueError(
+                f"chi-cache for {chi_atom} disagrees on q_0 "
+                f"(cache: {cache_q0!r}, probe: {q_0_str!r})"
+            )
         if "tr_M_at_q0" in cache:
             tr_M = mp.mpf(cache["tr_M_at_q0"])
             tr_M_source = (
@@ -394,8 +429,8 @@ def main() -> int:
             "m_K_perknot_MeV_50dps": _fmt(m_K_perknot_MeV),
             "m_K_codata_total_MeV": _fmt(m_codata_total),
             "m_K_codata_per_nucleon_MeV": _fmt(m_codata_per_nucleon),
-            "gap_uniform_pct": _fmt(gap_uniform_pct, dps=12),
-            "gap_perknot_pct": _fmt(gap_perknot_pct, dps=12),
+            "gap_uniform_pct": _fmt(gap_uniform_pct, sig=12),
+            "gap_perknot_pct": _fmt(gap_perknot_pct, sig=12),
             "canonical_braid_word_len": braid_word_len,
             "canonical_braid_word_first_6": braid_word_snippet,
         }
@@ -428,7 +463,13 @@ def main() -> int:
 
     # Counter-pin the docstring's 2.38× quote at the proton row.
     proton_row = next(r for r in rows if r["label"] == "p")
-    assert proton_row["ratio_perknot_over_uniform_50dps"] is not None
+    # Explicit raise (not assert) — survives `python -O` (Copilot
+    # review, PR #1816).
+    if proton_row["ratio_perknot_over_uniform_50dps"] is None:
+        raise RuntimeError(
+            "proton row has no per-block ratio — the counter-pin "
+            "assertion cannot be evaluated."
+        )
     proton_ratio = mp.mpf(proton_row["ratio_perknot_over_uniform_50dps"])
     docstring_ratio = mp.mpf("1.065") / mp.mpf("2.53")
     w.add_assertion(
