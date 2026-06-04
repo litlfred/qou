@@ -159,26 +159,54 @@ not a point. The machinery for Step 4 is now in place.
 ## Step 4 — the actual c_3 residue-A element (the hard math)
 
 This is the genuinely open categorical step; Steps 1–3 are its
-prerequisites. Two concrete attacks, in priority order:
+prerequisites.
 
-1. **Cyclotomic (Habiro) expansion of the relevant knot's colored
-   Jones.** For torus knots `T(2,2t+1)` the cyclotomic coefficients
-   `C_n(q) ∈ ℤ[q]` are known in closed form (Habiro 2002; Masbaum
-   2003, *Skein-theoretical derivation of some formulas of Habiro*).
-   Build `J_K(q) = Σ_n C_n(q)·(q^{1+N};q)_n(q^{1-N};q)_n` for the knot
-   the c_3 rung is assigned to (cinquefoil T(2,5) is the working
-   hypothesis from the `/25`; **verify the assignment** against
-   `lepton_t2n_torus_tower.py` and the Q_β knot, do not assume it).
-   Test whether `C_n` / the Habiro coefficients reproduce the
-   c_3 residue-A correction `ℏ_q·[3]_q/25 + ℏ_q³/[2]_q` — in
-   particular whether the `/25` emerges as `C_n`'s `[5]`-structure at
-   the q=1 evaluation.
-2. **Unreduced 5-strand Markov normalisation** (the surviving #1801
-   candidate (c)). Use Step 1's `markov_trace_combo` on the
-   Jones–Wenzl projector `p_5` in the TL/Hecke tower (needs H_n for
-   n=5, beyond the current H_3 `gram.py` — extend the NF basis, or use
-   `pyhecke`'s tower module if present). Test whether `tr_M(p_5)` /
-   its normalisation gives the undeformed `25` at q=1.
+### Knot-assignment verification ✅ DONE (2026-06-04) — cinquefoil REFUTED for c_3
+
+The spec's own guardrail ("verify the knot the Q_β c_3 rung corresponds
+to … do not assume the cinquefoil") has been executed (corpus sweep,
+this branch). **Verdict: c_3 is NOT the cinquefoil.** Attack-1 below as
+originally written chases the wrong knot and is retired.
+
+| question | verdict | source |
+|----------|---------|--------|
+| c_3 ← cinquefoil T(2,5)? | **NO** | [`docs/audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md`](../audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md) — "NOT yet derived for Q_β" |
+| c_3 ← any single knot? | **NO — open** | [`docs/audits/2026-05-19-qbeta-ladder-knot-operator-general-statement.md`](../audits/2026-05-19-qbeta-ladder-knot-operator-general-statement.md) — knot-operator `T_β` unidentified |
+| structural source of c_3? | **Hopf link** (2-strand sub-braid windings) | [`q-beta-c3-hopf-three-fold-markov.md`](../../content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md) — `c_3 = J_Hopf(q=1) = -2`, proven categorically (Facts 1–4) |
+| is `/25` a knot assignment? | **NO — fibre constant** `[5]_q²│_{q=1}` | [`qbeta_composite4_fibre_root_of_unity_probe.py`](../../folio-assistant/computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py) (#1811) |
+| is the real-q `[3]_q/25` form derived? | **NO — FALSIFIED** | [`docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md) — rigid; swings **4.7M× less** than empirical c_3 |
+
+T(2,5) is the **muon** particle-knot (`lepton_t2n_torus_tower.py:6`;
+census `docs/audits/2026-06-01-knot-operator-census-group-actions.md`),
+not the c_3 coefficient — the shared `/25` is a coincident fibre
+constant, not a shared knot. And the real-q single-knot route is
+**closed**: a smooth real-q `f(q)` cannot track `dc_3/dq ≈ 4.6×10⁶`
+(falsification audit), so the live object is necessarily **fibre /
+root-of-unity** (CLAUDE.md §"Im(q) at fibre vs observable" — the c_k
+live in the fibre, potentially complex).
+
+### Corrected attacks (priority order)
+
+1. **Hopf-link Habiro element at the fibre level.** The proven anchor
+   is `c_3 = J_Hopf(q=1) = -2`; the open question is whether the
+   *residue A* (the correction beyond `c_2=-1`) is the τ-evaluation of
+   a **complex-analytic root-of-unity Habiro element on the Hopf
+   substructure**. Build the Hopf link's cyclotomic / colored-Jones
+   expansion and compare its **`habiro_profile`** (Step 3) — the whole
+   root-of-unity *family* — to empirical c_3, NOT a single real-q point
+   (#1811 + the falsification audit closed that). Hard constraint:
+   `classical_limit` of the element must return **−2**. ❌ Do NOT
+   reintroduce the cinquefoil / a q-deformed `/[5]_q²` denominator.
+2. **(retired)** Cyclotomic expansion of the cinquefoil T(2,5) colored
+   Jones — *wrong knot for c_3* (verification table above). Recorded
+   only as the refuted route; do not rebuild it.
+3. **Unreduced 5-strand Markov normalisation** (surviving #1801
+   candidate (c)) — a narrower *q=1 fibre* question: where does the
+   bare `25` come from (`tr_M(p_5)` normalisation at q=1, via Step 1's
+   `markov_trace_combo` on `p_5`; needs H_n for n=5, beyond `gram.py`'s
+   H_3 — extend the NF basis or use `pyhecke.tower`). Lower priority:
+   even a clean `/25 = 25` at q=1 does **not** make c_3 derived — the
+   cross-anchor *swing* is the obstruction, and it is fibre-level.
 
 **Acceptance for "derived" (strict):** the chosen element reproduces
 c_3 to ≤ its current near-match (≤ 2.65 ppm) at **≥ 3 distinct q₀
@@ -211,8 +239,10 @@ NEGATIVE and extend the bracket count instead.
   + #1811 have closed that space.
 - **Do not** introduce a q-deformed `/[5]_q²` (refuted) or a per-anchor
   fitted constant (Δ_λ-gate).
-- **Do not** assume the cinquefoil assignment — verify the knot the
-  Q_β c_3 rung actually corresponds to before building its Habiro
-  expansion.
+- **Cinquefoil assignment: VERIFIED REFUTED (2026-06-04)** — c_3's
+  structural source is the **Hopf link**, not T(2,5) (which is the
+  muon). See the Step 4 verification table. Do not rebuild the
+  cinquefoil colored-Jones attack; build on the Hopf substructure at
+  the fibre / root-of-unity level.
 - m_τ / `[3]_q/49` (task ③) is **downstream** of a separate m_τ
   bare-mass baseline (Vol≈34 knot) and out of scope here.
