@@ -263,6 +263,29 @@ theorem mmu_closure_factor_at_q_one :
   unfold delta_total_mmu delta_R9 delta_V9 hbarQ hbarQ'
   norm_num
 
+/-! ## Bridge to QBetaCategoricalPrecisionLadder (proved)
+
+The empirical 3-rung Q_β c_3 closure (q-dependent) and the precision
+ladder's `c_3 = jonesHopfClassicalLimit` (q-independent, conjectural)
+must agree at the classical limit q = 1. -/
+
+/-- **Bridge theorem (proved).** At the classical limit q = 1, the
+empirical 3-rung Q_β c_3 closure equals the precision ladder's
+`jonesHopfClassicalLimit = -2`.
+
+Direct consequence of `qbetaC3Closure_at_q_one_equals_neg_two`
+(Theorem 8) and the definition `jonesHopfClassicalLimit := -2`
+(line 58 of QBetaCategoricalPrecisionLadder.lean).
+
+This is the formal Lean record of the empirical-vs-categorical
+consistency at the classical limit: two different formulas
+(empirical 3-rung Habiro at q-dependent vs. q-independent J_Hopf
+conjecture) give the same value at q = 1. -/
+theorem qbetaC3Closure_at_q_one_equals_jonesHopfClassicalLimit :
+    qbetaC3Closure 1 = jonesHopfClassicalLimit := by
+  rw [qbetaC3Closure_at_q_one_equals_neg_two]
+  rfl
+
 /-! ## Lepton T(2,n) framing-ladder family
 
 The empirical `habiroT25 = [3]_q / 25 = [3]_q / 5²` factor at the muon
