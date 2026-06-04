@@ -1,3 +1,15 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.Calculus.Deriv.Basic
+import Mathlib.Analysis.Calculus.Deriv.Pow
+import Mathlib.Analysis.Calculus.Deriv.Mul
+import Mathlib.Analysis.Calculus.Deriv.Add
+import Mathlib.Analysis.Calculus.Deriv.Inv
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
+
 /-!
 # QOU.BraidKnot.QBetaPerBlockChiClosedForms
 
@@ -47,18 +59,6 @@ LaTeX label: `prop:qbeta-per-block-chi-closed-forms`
 - [hoefsmit1974] (seminormal representation matrices for H_3)
 - Witness: `qbeta-per-block-paper-closed-forms.witness.json`
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Analysis.Calculus.Deriv.Basic
-import Mathlib.Analysis.Calculus.Deriv.Pow
-import Mathlib.Analysis.Calculus.Deriv.Mul
-import Mathlib.Analysis.Calculus.Deriv.Add
-import Mathlib.Analysis.Calculus.Deriv.Inv
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
 
 namespace QOU.BraidKnot
 
@@ -124,7 +124,6 @@ theorem chi_block_antipode_pairing (q : ℝ) (hq : 0 < q) :
   unfold chi_block_111 chi_block_3
   have hq_ne : q ≠ 0 := ne_of_gt hq
   field_simp [hq_ne]
-  ring
 
 /-- **Theorem (q²−1 factor in all three blocks).** Every per-block
 character $\chi_\lambda(\Delta_{T_\beta})$ factors as $(q^2 - 1)$
@@ -156,15 +155,12 @@ theorem chi_blocks_have_q2_minus_1_factor (q : ℝ) (hq : 0 < q) :
   · unfold chi_block_3
     have hq_ne : q ≠ 0 := ne_of_gt hq
     field_simp [hq_ne]
-    ring
   · unfold chi_block_21
     have hq_ne : q ≠ 0 := ne_of_gt hq
     field_simp [hq_ne]
-    ring
   · unfold chi_block_111
     have hq_ne : q ≠ 0 := ne_of_gt hq
     field_simp [hq_ne]
-    ring
 
 /-! ## Extensions (added after the per-block χ_λ theorems above)
 
