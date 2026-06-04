@@ -2,7 +2,9 @@
 
 **Date:** 2026-06-04
 **PR:** (this branch — `claude/qbeta-ck-holonomic-c11-attempt-2026-06-04`)
-**Status:** DONE — c_11+ blocked at the data level; multi-anchor is the unblock
+**Status:** DONE — c_11+ blocked at the data level; the precision floor proves
+only c_2,c_3 are data-determined, so the keystone is a framework derivation
+(multi-anchor superseded)
 **Builds on:** kernel deepening (#1839), c6-c10 cross-anchor falsification (on main)
 
 ## The attempt (formalize-first)
@@ -59,26 +61,73 @@ into the **same wall**: there is no reliable, scale-comparable, independent c_8+
 data to test against. A negative result is therefore consistent with *either* `F`
 non-holonomic *or* free-rung extraction noise.
 
-## The genuine unblock (the next keystone compute)
+## The deeper layer — WHY the data is blocked (the unifying result)
 
-Reliable independent c_8+ (hence c_11+) require a **multi-anchor extraction**:
-`R(q) = Q_β / (Q_A·cos α_eff)(q) = ∏_k (1 + c_k·u(q)^k)` evaluated at **several
-q-anchors** (the c_k are fibre-level constants; `u(q) = b(q)·ℏ_q(q)²` varies). The
-c_2..c_7 applied forms hold at every anchor, so the cross-anchor **residuals**
-pin c_8, c_9, … independently — removing the single-anchor self-cancellation
-that blocks the free rungs. This needs `Q_N2(q)` (the SDP-selected operator norm)
-re-run at multiple anchors — the genuine keystone compute, and the prerequisite
-for any structural identification (holonomic, generating-function, or otherwise).
+The "blocked at the data level" verdict above has a precise, *information-
+theoretic* cause that subsumes this whole campaign. Probe:
+[`qbeta_ck_extraction_precision_floor.py`](../../folio-assistant/computations/qbeta/qbeta_ck_extraction_precision_floor.py).
 
-## Net (the keystone is now precisely located AND its blocker named)
+The c_k are read off `R(u) = Q_β / (Q_A·cos α_eff) = ∏_k (1 + c_k·u^k)`. The
+*only* noisy input is the **measured** neutron Q-value (Q_A and cos α_eff are
+framework-computed to ~`1e-50`), so `R`'s relative precision is
+`σ_R ≈ 6e-7` (AME2020: ≈ 0.48 eV / 782.3 keV). Since `∂ ln R / ∂ c_k ≈ u^k`,
+each rung is extracted with absolute uncertainty
+
+```
+σ(c_k) = σ_R / u^k        (measurement noise ÷ that rung's lever u^k).
+```
+
+With `u = b·ℏ_q² ≈ 0.00852`, `u^k` underflows fast (`u^3 ≈ 6.2e-7 ≈ σ_R`,
+`u^4 ≈ 5.3e-9 ≪ σ_R`), so `σ(c_k)` explodes. A rung is *data-determined* only
+when `σ(c_k)/|c_k| < 1`:
+
+| k | u^k | σ(c_k) = σ_R/u^k | σ(c_k)/\|c_k\| | data-determined? |
+|---|---|---|---|---|
+| 2 | 7.3e-5 | 8.3e-3 | **0.8 %** | yes |
+| 3 | 6.2e-7 | 0.97 | **49 %** (marginal) | yes |
+| 4 | 5.3e-9 | 1.1e+2 | 101× | no |
+| 7 | 3.3e-15 | 1.8e+8 | 2.3e7× | no |
+| 10 | 2.0e-21 | 3.0e+14 | 2.8e6× | no (the "1e8" is noise) |
+
+**Only `c_2` and `c_3` clear the floor** (`k_max = 3`); robust across a `σ_R`
+scan down to `1e-8` (a hypothetical 100× better than AME — still `k_max = 3`).
+This single fact explains the **entire** campaign:
+
+- the **registry tiers** (`c_2` proved / `c_3` near-match / `c_4+` fitted) —
+  they track `σ(c_k)/|c_k|` crossing 1 between `c_3` and `c_4`;
+- the **4-significant-figure ceiling** — it *is* `σ_R`;
+- the **erratic free rungs** — `c_8..c_10` have `σ(c_k)/|c_k| ≫ 1`, so they are
+  fitting noise (this is the c6-c10 falsification, *derived*);
+- **every failed structural test** (real-q, root-of-unity, rational, holonomic,
+  generating-function) — all were run against below-floor data.
+
+## The genuine unblock — a framework derivation, not an extraction
+
+The earlier candidate unblock (a **multi-anchor extraction** of `Q_N2(q)`) is
+**superseded** by the floor result. Averaging `N` independent anchors cuts
+`σ(c_k)` only by `√N`, so reaching `σ(c_4)/|c_4| < 1` needs `N ≈ 1e4`
+**independent physical** Q_β measurements. There is *one* neutron Q-value; the
+other q-anchors derive from the same calibration inputs, and `u` barely varies
+across them (so the q-dependence lever for `c_4` is itself below floor).
+Multi-anchor is necessary-but-wildly-insufficient.
+
+⇒ **The `c_k ≥ 4` keystone is necessarily a canonical *framework derivation*
+(deriving the `c_k` from the Hecke / SDP structure), not a data extraction at
+any anchor count or precision.** The productive direction is the Q_β Habiro
+element (parallel α_EM `[2]_q·(1−h²α)`, PR #1511), whose archimedean evaluation
+*predicts* the `c_k` rather than fitting them.
+
+## Net (the keystone is now precisely located AND its blocker proved)
 
 - **Refuted** (this campaign): real-q forms, root-of-unity, low-order rational
   (constant kernel), the SDP cos-factor zero, and now low-order holonomic on the
   current data.
-- **Blocker** (newly precise): the free single-anchor c_8+ are unreliable; every
-  structural test is starved of independent data.
-- **Unblock** (newly precise): multi-anchor `Q_N2(q)` extraction → reliable c_8+
-  → then re-run the holonomic / generating-function tests with teeth.
+- **Blocker** (now *proved*, not just observed): `σ(c_k) = σ_R/u^k`; only `c_2`,
+  `c_3` are above the measured-Q_β floor — `c_4+` cannot be extracted at any
+  anchor count or precision.
+- **Unblock** (corrected): not multi-anchor (insufficient by ~`1e4`×) but a
+  **canonical framework derivation** of the `c_k` (Habiro element / SDP
+  structure), which the floor leaves as the *only* path.
 
 ## Guards
 
