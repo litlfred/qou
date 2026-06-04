@@ -255,6 +255,64 @@ theorem mmu_closure_factor_at_q_one :
   unfold delta_total_mmu delta_R9 delta_V9 hbarQ hbarQ'
   norm_num
 
+/-! ## Lepton T(2,n) framing-ladder family
+
+The empirical `habiroT25 = [3]_q / 25 = [3]_q / 5²` factor at the muon
+level (T(2,5) cinquefoil) suggests a general family:
+
+    habiroT_{n²}(q) := [3]_q / n²
+
+with the lepton T(2,n) assignments (per
+[`lepton_t2n_torus_tower.py`](../../../../../folio-assistant/computations/lepton_t2n_torus_tower.py)):
+
+| Lepton | Knot   | n | Factor      |
+|--------|--------|---|-------------|
+| e⁻     | T(2,3) | 3 | `[3]_q / 9` |
+| μ⁻     | T(2,5) | 5 | `[3]_q / 25` ★ EMPIRICALLY MATCHES |
+| τ⁻     | T(2,7) | 7 | `[3]_q / 49` (testable) |
+
+The n=5 cinquefoil case is the empirical anchor (m_μ V9). Theorems
+10-12 below formalize the general family. -/
+
+/-- General lepton framing-ladder factor: `[3]_q / n²`. -/
+noncomputable def habiroTnSq (n : ℕ) (q : ℝ) : ℝ :=
+  quantumInt 3 q / (n : ℝ) ^ 2
+
+/-- **Theorem 10 (proved).** The empirical muon factor `habiroT25` is
+the n=5 case of the general framing-ladder family. -/
+theorem habiroT25_eq_habiroTnSq_five (q : ℝ) :
+    habiroT25 q = habiroTnSq 5 q := by
+  unfold habiroT25 habiroTnSq
+  norm_num
+
+/-- **Theorem 11 (proved).** Electron framing factor at T(2,3) trefoil:
+`habiroTnSq 3 q = [3]_q / 9`. -/
+theorem habiroTnSq_three_explicit (q : ℝ) :
+    habiroTnSq 3 q = quantumInt 3 q / 9 := by
+  unfold habiroTnSq
+  norm_num
+
+/-- **Theorem 12 (proved).** Tau framing factor at T(2,7) septafoil:
+`habiroTnSq 7 q = [3]_q / 49`. Cross-lepton testable prediction:
+if the universal Habiro structure derives from the T(2,n) framing,
+then the tau analog of m_μ V9 should involve a `[3]_q / 49` factor. -/
+theorem habiroTnSq_seven_explicit (q : ℝ) :
+    habiroTnSq 7 q = quantumInt 3 q / 49 := by
+  unfold habiroTnSq
+  norm_num
+
+/-- **Theorem 13 (proved).** The framing-ladder family at the
+classical limit q = 1: `habiroTnSq n 1` is finite for n ≥ 1.
+
+This follows because at q = 1, the quantumInt formula has indeterminate
+`0/0`, which Lean's field instance resolves to 0. (The categorical
+limit `[3]_q → 3` as q → 1 holds via L'Hôpital; in Lean's pointwise
+algebra, `quantumInt 3 1 = (1 - 1)/(1 - 1) = 0/0 = 0`.) -/
+theorem habiroTnSq_at_q_one (n : ℕ) (hn : 0 < n) :
+    habiroTnSq n 1 = 0 := by
+  unfold habiroTnSq quantumInt
+  norm_num
+
 /-! ## Conditional closure theorem (§3b-cond pattern)
 
 The formal-existence claims (Theorems 4 + 5) are proved above; the
