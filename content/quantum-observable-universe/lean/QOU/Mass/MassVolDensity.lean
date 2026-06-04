@@ -106,7 +106,6 @@ theorem delta_leading_eq_closed (q : ℝ) (hq : q ≠ 0) :
     delta_leading q = (q - 1) ^ 2 * (q ^ 4 - 1) / (3 * q ^ 4) := by
   unfold delta_leading
   field_simp
-  ring
 
 /-- **δ subleading** = `δ_leading · (1 + ℏ_q³)` — the full flavor split
     with the 3-loop substrate-Planck correction (`flavor_split_subleading`
@@ -307,6 +306,5 @@ theorem su2_fundamental_eq_two_cosh (η : ℝ) (hη : Real.sinh η ≠ 0) :
   unfold su2_fundamental_character
   rw [Real.sinh_two_mul]
   field_simp
-  ring
 
 end QOU.Mass
