@@ -64,9 +64,9 @@ Cross-checked via direct grep on the current `.lean` source:
 
 | Metric | Live grep | Stale sidecar |
 |---|---:|---:|
-| Files with `sorry` | 255 | (n/a; sidecars don't track this) |
-| Raw `sorry` text matches | 653 | (n/a) |
-| Classes with `sorry` in body (§3b-cond) | 202 | (n/a; permanent by design) |
+| Files with `sorry` | 241 | (n/a; sidecars don't track this) |
+| Raw `sorry` text matches | 491 (good regex `\bsorry\b(?!-)`) / 653 (legacy `\bsorry\b`) | (n/a) |
+| Classes with `sorry` in body (§3b-cond) | 194 | (n/a; permanent by design) |
 | `axiom` declarations | 77 | (n/a) |
 
 The grep-derived counts don't trace through the stale sidecar pipeline, so they're trustworthy.
