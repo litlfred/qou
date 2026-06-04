@@ -23,7 +23,7 @@ is never over-claimed as a single proved result.
 | 1 | $\operatorname{tr}(h^2\text{ curvature}) = \dim(V)\cdot\chi(\Sigma_4) = -12$ | **Proved** (`native_decide`; [`prop:crossed-module-euler-characteristic`](#prop:crossed-module-euler-characteristic)) |
 | 2 | $\tfrac{2G}{3} = \mathrm{Vol}(\mathcal{B}_3)/(\dim(V)\cdot|\chi|) = \tfrac{8G}{12}$ | **Proved** (arithmetic identity) |
 | 3 | $\mathrm{Vol}(\mathcal{B}_3) = 8G$ | **Proved** (Adams 1985, ideal-octahedral tessellation) |
-| 4 | $-12 / (-64) = \tfrac{3}{16} = \kappa$ | **Arithmetic holds**, but $-64$ is currently *match-defined*, not derived |
+| 4 | $-12 / (-64) = \tfrac{3}{16} = \kappa$ | **Disproved as structural** — the $-64$ matches only at $h^2$; see below |
 | 5 | $\tau$ carries the algebraic $-12$ to the geometric $-8G$ categorically | **Conjectural** — the single open categorical link |
 
 **The two genuinely open points.**
@@ -37,16 +37,34 @@ is never over-claimed as a single proved result.
    finite $Q_8$ computation, which only establishes the algebraic
    endpoint $-12$.
 
-2. **Link 4 (the $-64$ normalisation).**  The feedback map
-   $\Phi_0$ divides by $-64 = 2^6$ to reach the Markov-trace
-   coefficient $\kappa = \tfrac{3}{16}$.  At present $-64$ is
-   *chosen* to make the arithmetic close; a derivation of $-64$
-   from the crossed-module structure (e.g. as $|Q_8| \times 8$, or
-   $2^{\dim V} \times 2^{\dim V}$) would upgrade Link 4 from
-   "match-defined" to "derived".
+2. **Link 4 (the $-64$ normalisation) — DISPROVED as structural.**
+   The feedback map $\Phi_0$ was hypothesised to divide by a constant
+   $-64$ to reach $\kappa = \tfrac{3}{16}$.  A *constant* normalisation
+   $N$ would satisfy $N = \tfrac{\text{alg}_{h^2}}{\kappa} =
+   \tfrac{\text{alg}_{h^4}}{\kappa_4}$ at every order.  Direct
+   computation (`phi0_normalization_disproof.py`) gives
+   $$
+     \tfrac{\text{alg}_{h^2}}{\kappa} = \tfrac{-12}{3/16} = -64,
+     \qquad
+     \tfrac{\text{alg}_{h^4}}{\kappa_4} = \tfrac{-6}{-0.7578\ldots}
+       = +7.92,
+   $$
+   which **disagree**.  No constant $N$ exists; the $-64$ matched at
+   $h^2$ by coincidence (and four candidate "structural" readings —
+   $2^6$, $2^{|\chi|}$, $|Q_8|^2$, $\dim(V)^6$ — all collapse to $64$,
+   the degeneracy tell of a numerical accident, not a derivation).
+   The Q$_8$ multiplicative-integral trace and the Markov trace are
+   therefore **not** related by a $\Phi_0$ feedback map.
 
 What **is** secured by the proved Link 1 is the precise algebraic
-object — $\dim(V)\cdot\chi(\Sigma_4)$ — that any categorical bridge
-must reproduce.  This narrows the open question from "find the
-mechanism" to "show $\tau$ realises a known target", which is the
-productive form of the remaining problem.
+object — the integer $-12$, equal to $\dim(V)\cdot\chi(\Sigma_4)$ —
+that any categorical bridge must reproduce.  But the boundary
+coefficient $\kappa = \tfrac{3}{16}$ is **not** reached from $-12$ by
+a constant feedback map (Link 4 disproved above), so the chain does
+not close as a simple scalar cascade.  The honest open question is
+therefore: **does the fibre functor $\tau$ relate the algebraic
+$h$-expansion to the Markov-trace $h$-expansion at all orders** (not
+just $h^2$)?  The $h^4$ disagreement shows that whatever $\tau$ is,
+it is not multiplication by a constant — it must be an order-mixing
+map, or the algebraic and boundary sides measure genuinely different
+invariants that happen to share the $h^2$ value.
