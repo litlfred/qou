@@ -45,9 +45,6 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 import time
-from pathlib import Path
-
-HERE = Path(__file__).resolve().parent
 
 import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
@@ -96,70 +93,62 @@ def main() -> int:
     #   (2,1):     d_λ = 2, χ^λ(1) = 2
     #   (1,1,1):   d_λ = 1, χ^λ(1) = 1
     #
-    # Wenzl weights at q_0 (Hecke 3-strand, per qou-substrate y_lambda):
-    #   y_(3)(q)       = 1 / [3]_q · q² · (q²+q+1) form — see
-    #                    `y_lambda_wenzl_bridge.py`
-    #   y_(2,1)(q)     = (q-q⁻¹) / something — non-trivial
-    #   y_(1,1,1)(q)   = 1 / [3]_q · q⁻² · (q⁻²+q⁻¹+1) bar-form
-    #
-    # For probe 6.d (scoping), report closed-form expressions
-    # WITHOUT requiring the full pyhecke extraction — leave the
-    # numerical values as placeholders.
-
-    qint_3 = q ** 2 + 1 + 1 / q ** 2
-    qint_2 = q + 1 / q
-    hbar_q = (q - 1) / q
+    # Wenzl weights y_λ(q_0) are NOT computed here — this is a scoping
+    # probe.  Computing them correctly requires the canonical
+    # `y_lambda_wenzl_bridge.py` / pyhecke extraction (the source of
+    # truth).  Earlier drafts of this probe hard-coded GUESSED closed
+    # forms; they did NOT satisfy the dim_q identity Σ_λ d_λ·y_λ = z²
+    # (≈144% gap), so they are removed.  The y_λ values are recorded as
+    # explicit "pending extraction" placeholders, NOT numbers, to avoid
+    # downstream tools treating wrong guesses as results (per Copilot
+    # review on PR #1824).  The STRUCTURAL data below (partitions,
+    # dimensions, roles) IS correct and is the deliverable of this
+    # scoping probe.
 
     partitions = [
         {"label": "(3)",
          "name": "trivial / symmetric",
          "d_lambda": 1,
          "chi_at_identity": 1,
-         "y_lambda_closed_form": "1 / [3]_q · (related to q-Schur s_(3))",
-         "y_lambda_at_q0": mp.mpf(1) / qint_3,
+         "y_lambda_at_q0": "pending pyhecke extraction",
          "role": "Markov-Jones traceful component; J_K(q) coefficient"},
         {"label": "(2, 1)",
          "name": "standard / mixed",
          "d_lambda": 2,
          "chi_at_identity": 2,
-         "y_lambda_closed_form": "Wenzl bridge — non-trivial in q",
-         "y_lambda_at_q0": (q - 1 / q) ** 2 / (qint_3 * qint_2),
+         "y_lambda_at_q0": "pending pyhecke extraction",
          "role": "carries the bulk of the operator-valued T_w structure"},
         {"label": "(1, 1, 1)",
          "name": "sign / antisymmetric",
          "d_lambda": 1,
          "chi_at_identity": 1,
-         "y_lambda_closed_form": "bar-image of y_(3) under q → q⁻¹",
-         "y_lambda_at_q0": (1 / q ** 2) / qint_3,
+         "y_lambda_at_q0": "pending pyhecke extraction",
          "role": "Frobenius-pairing dual to (3); antipode partner"},
     ]
 
     print(f"  Partitions of n = 3 (proton braid 𝓑₃ Wedderburn blocks):")
     print()
-    print(f"  {'λ':<10} {'d_λ':>4} {'χ^λ(1)':>7} {'y_λ(q_0)':>18}  role")
-    print(f"  {'-'*10} {'-'*4} {'-'*7} {'-'*18}  {'-'*40}")
+    print(f"  {'λ':<10} {'d_λ':>4} {'χ^λ(1)':>7} {'y_λ(q_0)':>26}  role")
+    print(f"  {'-'*10} {'-'*4} {'-'*7} {'-'*26}  {'-'*40}")
     for p in partitions:
-        y = p["y_lambda_at_q0"]
         print(f"  {p['label']:<10} {p['d_lambda']:>4} "
-              f"{p['chi_at_identity']:>7} {mp.nstr(y, 12):>18}  "
+              f"{p['chi_at_identity']:>7} {p['y_lambda_at_q0']:>26}  "
               f"{p['role']}")
     print()
 
-    # Sum check: tr_M(1 ∈ H_3) = z^(n-1) = z² at q_0
-    # Should equal Σ_λ d_λ · y_λ(q_0) — this is the dim_q identity
-    sum_check = sum(p["d_lambda"] * p["y_lambda_at_q0"] for p in partitions)
+    # The dim_q identity Σ_λ d_λ·y_λ(q_0) = z² is the correctness check
+    # for the y_λ — but it CANNOT be evaluated until the y_λ are
+    # extracted (above).  Record the TARGET (z² = tr_M(1 ∈ H_3)) so
+    # the follow-up extraction has a verification anchor.
     z_squared = Z_MARKOV ** 2
-    print(f"  Sanity dim_q identity:")
-    print(f"    Σ_λ d_λ · y_λ(q_0) = {mp.nstr(sum_check, 14)}")
-    print(f"    z² (tr_M(1)) =       {mp.nstr(z_squared, 14)}")
-    print(f"    relative gap =       {float(mp.fabs(sum_check - z_squared)/z_squared):.4e}")
-    if mp.fabs(sum_check - z_squared) / z_squared < mp.mpf("1e-2"):
-        print(f"    ✓ Wenzl weight identity holds to ≤ 1% — partition data correct")
-    else:
-        print(f"    ⚠ Wenzl weight identity gap — y_λ closed forms above are")
-        print(f"      LITERATURE-cited not pyhecke-extracted; numerical")
-        print(f"      reconciliation against `y_lambda_wenzl_bridge.py` is a")
-        print(f"      follow-up.")
+    sum_d_lambda = sum(p["d_lambda"] for p in partitions)
+    print(f"  dim_q verification anchor (for the future y_λ extraction):")
+    print(f"    Σ_λ d_λ = {sum_d_lambda}  (= dim H_3(q) = 4 ✓ — the 6 of")
+    print(f"      χ=-6 counts oriented embeddable torus knots, NOT dim H_3)")
+    print(f"    target: Σ_λ d_λ · y_λ(q_0) should equal")
+    print(f"            z² = tr_M(1 ∈ H_3) = {mp.nstr(z_squared, 14)}")
+    print(f"    (this identity is the correctness test for the pending")
+    print(f"     y_λ extraction — NOT evaluable until y_λ are computed)")
     print()
 
     print("=" * 78)
@@ -200,19 +189,25 @@ def main() -> int:
     builder.add_data("partitions_n_3", [
         {"label": p["label"], "name": p["name"],
          "d_lambda": p["d_lambda"], "chi_at_identity": p["chi_at_identity"],
-         "y_lambda_closed_form": p["y_lambda_closed_form"],
-         "y_lambda_at_q0": mp.nstr(p["y_lambda_at_q0"], 25),
+         "y_lambda_at_q0": p["y_lambda_at_q0"],  # explicit string placeholder
          "role": p["role"]}
         for p in partitions
     ])
-    builder.add_data("dim_q_sanity_check", {
-        "sum_d_lambda_y_lambda": mp.nstr(sum_check, 25),
+    builder.add_data("dim_q_verification_anchor", {
+        "sum_d_lambda": sum_d_lambda,
         "z_squared_target": mp.nstr(z_squared, 25),
-        "relative_gap": float(mp.fabs(sum_check - z_squared) / z_squared),
+        "note": ("y_λ(q_0) NOT yet extracted (pending pyhecke); the "
+                 "identity Σ_λ d_λ·y_λ = z² is the future-extraction "
+                 "correctness test, not evaluable here."),
     })
     builder.add_data("future_work", {
         "probe_6d_prime": "Implement per-block c_k extraction via Hoefsmit rep ρ_λ(𝓑₃); test -(k-1)! pattern per block.",
         "connection_to_m_mu_V9": "Test if [3]_q/25 shared factor maps to the same partition's f_λ for both observables.",
+        "y_lambda_classical_anchors": ("At q=1 the Wenzl weights specialize "
+                                       "to S_3: y_(2,1)(1)=1/3, y_(3)(1)="
+                                       "y_(1,1,1)(1)=1/6 (standard d_λ/n! "
+                                       "normalization). Verification anchors "
+                                       "for the pending q-dependent extraction."),
     })
 
     builder.add_assertion(
@@ -222,9 +217,12 @@ def main() -> int:
         tolerance=0,
         source=("Scoping probe: enumerates the 3 partitions of n=3 "
                 "(proton braid 𝓑₃ Wedderburn blocks): (3), (2,1), "
-                "(1,1,1). Concrete numerical data: y_λ(q_0) "
-                "placeholder values + dim_q sanity check. Full "
-                "per-block c_k extraction is future work."),
+                "(1,1,1) with correct dimensions d_λ = 1, 2, 1. "
+                "y_λ(q_0) are explicit 'pending pyhecke extraction' "
+                "placeholders — NOT computed here (earlier guessed "
+                "closed forms were removed; they failed the dim_q "
+                "identity). Full per-block c_k extraction is future "
+                "work."),
     )
 
     builder.save()

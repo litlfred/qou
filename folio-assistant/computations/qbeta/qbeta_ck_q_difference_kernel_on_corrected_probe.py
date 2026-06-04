@@ -136,21 +136,24 @@ def main() -> int:
             alpha, beta = sol[0, 0], sol[1, 0]
         except (ValueError, ZeroDivisionError):
             continue
-        # Residual: how well does the recurrence predict c_{k+2}?
-        # (residual at the SECOND row of the system — equation 2)
-        # Trivially 0 since we solved for exact match; instead use
-        # the FORWARD prediction beyond the fit window:
+        # Residual: how well does the recurrence FORWARD-predict the
+        # next coefficient beyond the fit window?
+        # At the boundary (no c_{k+3} available) the residual is NOT
+        # computable — use a None sentinel (NOT 0, which would read as
+        # a perfect fit; per Copilot review on PR #1824).
         if (k + 3) in ck_corr:
             c_k_plus_3_pred = alpha * ck_corr[k + 2] + beta * ck_corr[k + 1]
             residual = mp.fabs((c_k_plus_3_pred - ck_corr[k + 3])
                                / ck_corr[k + 3]) if ck_corr[k + 3] != 0 else mp.mpf("inf")
         else:
-            residual = mp.mpf("0")
+            residual = None  # boundary: forward prediction not computable
         alphas.append(alpha)
         betas.append(beta)
         windows.append(k)
+        residual_str = (f"{float(residual):>12.4e}" if residual is not None
+                        else f"{'(boundary)':>12}")
         print(f"  {k:>8} {mp.nstr(alpha, 10):>14} {mp.nstr(beta, 10):>14} "
-              f"{float(residual):>12.4e}")
+              f"{residual_str}")
 
     print()
 
