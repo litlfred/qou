@@ -1,0 +1,102 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-04T13:24:09.223604+00:00",
+  "commitSha": "3b842f4efc8c5cc12f83a35fb5b54e3ba5c17498",
+  "assertions": [
+    {
+      "name": "constant_kernel_order_le_4_fits_full_ck",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0,
+      "source": "No constant-coeff recurrence of order ≤4 fits c_2..c_10 by over-determination (extends eca145ca). Expected False."
+    },
+    {
+      "name": "tail_dominant_mode_is_the_pole",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The tail (k≥6) order-1 dominant characteristic root equals 1/u_substrate within 5% ⇒ the pole at u_substrate is the leading recurrence mode."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-ck-recurrence-first-cut",
+  "scriptFile": "qbeta_ck_recurrence_first_cut.py",
+  "scriptHash": "79cb615a4176",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "First cut at the q-difference kernel R: tests whether the canonical c_2..c_10 are C-finite (⟺ F rational). Hankel scan shows no low-order collapse; no constant-coeff recurrence of order ≤4 fits the full sequence by over-determination (extends eca145ca). The tail (k≥6) order-1 dominant root matches 1/u_substrate to 6.47544e-6 — confirming the pole as the leading mode — but the subleading kernel structure needs more rungs (only k=8,9,10 are asymptotic). Pinning R requires canonical c_11+ or a categorical derivation of Q_A·cos α_eff. CAVEAT: the ~1e-5 residual floor sits at the c_k empirical-extraction accuracy (c_3 near-match, c_4 CODATA-fit), so the subleading kernel is not separable from extraction noise with the current c_k. Formalize-first; no fitting to experiment; diagnostic-only.",
+  "data": {
+    "residual_floor_note": "~1e-5 residual floor = c_k empirical-extraction accuracy (c_3 near-match, c_4 CODATA-fit); subleading kernel not separable from extraction noise with current c_k.",
+    "u_substrate": "0.00851723455015614218925557360331",
+    "inv_u_substrate": "117.409001021542550045447142069",
+    "c_k": {
+      "c_2": "-1.01711618677123434709993653333",
+      "c_3": "-2.00973976097901536967879225032",
+      "c_4": "-1.14353677953289142800300461704",
+      "c_5": "-1.22291255115162316945823257196",
+      "c_6": "3.49756206189222544092040380633",
+      "c_7": "57.1492426742876509794443595039",
+      "c_8": "7649.10589224686295992049472298",
+      "c_9": "897807.61564714890624967061679",
+      "c_10": "105411380.102600978576556571261"
+    },
+    "hankel_dets": {
+      "H_1": "-1.01711618677",
+      "H_2": "-2.87594413823",
+      "H_3": "-12.6633274369",
+      "H_4": "-87591.1177531",
+      "H_5": "30316155886.6"
+    },
+    "full_seq_fits": {
+      "d1": {
+        "rel_residual": "8.9101096e-6",
+        "fits": "False"
+      },
+      "d2": {
+        "rel_residual": "7.2275413e-6",
+        "fits": "False"
+      },
+      "d3": {
+        "rel_residual": "6.9093676e-6",
+        "fits": "False"
+      },
+      "d4": {
+        "rel_residual": "4.7934991e-6",
+        "fits": "False"
+      }
+    },
+    "full_seq_min_constant_order": "none_through_d4",
+    "tail_fits": {
+      "1": {
+        "a": [
+          "117.4097613"
+        ],
+        "dominant_root": "117.4097613",
+        "rel_resid": "8.91011e-6",
+        "dominant_vs_inv_u_relerr": "6.47544e-6"
+      },
+      "2": {
+        "a": [
+          "116.8280393",
+          "68.2797552"
+        ],
+        "dominant_root": "117.4095911",
+        "rel_resid": "6.95996e-6",
+        "dominant_vs_inv_u_relerr": "5.02569e-6"
+      }
+    }
+  }
+}

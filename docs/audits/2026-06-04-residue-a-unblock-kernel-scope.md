@@ -19,7 +19,7 @@ refuted). This doc is the conceptual frame; the kernel first-cut probe follows.
 | `ℏ_q` | substrate ℏ, `= (q − 1)/q` |
 | `b` | Hoefsmit `b` factor; appears in the ladder variable `u = b·ℏ_q²` |
 | `u`, `u_substrate` | ladder variable `u = b·ℏ_q²`; `u_substrate ≈ 0.00852` is its value at q₀ |
-| `δ` | imaginary distance from q₀ to the nearest singularity (≈ 4.4e-7); `= b` in PR #1821, distinct from Hoefsmit `b` |
+| `ε` | imaginary distance from q₀ to the nearest singularity (≈ 4.4e-7); `= b` in PR #1821 — chosen over `δ` to avoid visual collision with the `Δ` family (Δ_λ, Δ_pn) |
 | `τ` | Archimedean / fibre functor — evaluates a fibre object to MeV at q₀ |
 | `T_w`, `T_β` | the confinement-SDP-selected operator |
 | `ξ` | the shift variable of the q-difference equation `F(qξ) = R(q,ξ)·F(ξ)` |
@@ -63,8 +63,9 @@ SDP → Archimedean functor.
    [`qbeta_singularity_type_probe.py`](../../folio-assistant/computations/qbeta/qbeta_singularity_type_probe.py)).
 2. **Simple pole**, residue `A ≈ 1.804e-15` at `u = u_substrate`
    ([PR #1727](https://github.com/litlfred/qou/pull/1727)).
-3. **Pole is near-real at q₀**: imaginary distance `δ ≈ |c_3|/|dc_3/dq| ≈ 4.4e-7`
-   (called `b` in PR #1821 — **distinct** from the Hoefsmit `b` in `u = b·ℏ_q²`);
+3. **Pole is near-real at q₀**: imaginary distance `ε ≈ |c_3|/|dc_3/dq| ≈ 4.4e-7`
+   (called `b` in PR #1821 — **distinct** from the Hoefsmit `b` in `u = b·ℏ_q²`,
+   and written `ε` not `δ` to avoid collision with the `Δ` family);
    the nearest root of unity (`ζ₁=1`, `|q₀-1| ≈ 0.11`) is **~2.5e5× farther**
    ([PR #1821](https://github.com/litlfred/qou/pull/1821)). ⇒ the residue-A
    pole is **NOT** the step-4 Schur-element (root-of-unity) singularity.
