@@ -2549,7 +2549,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "statement is purely algebraic: box content c=j-i is an integer combinatorial quantity from Young diagram indexing; no archimedean operations (Real.*, q_0 numerical values, ordering predicates) in the statement",
+        "evidence": "statement uses q-Schur-Weyl (algebraic) and combinatorial scaling functions; no Real.* constructs, no q≈value, no archimedean order hypotheses",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2557,9 +2557,9 @@
           "agent_date": "2026-06-04",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T23:18:41.441Z",
-        "reviewed_sha": "e5eb47fa14cf8df0f164af384db4430b2fb08549",
-        "notes": "Proposition statement uses generic combinatorial/algebraic content values; correctly on the algebraic side of the wall; lean file uses Int arithmetic only"
+        "reviewed_at": "2026-06-04T23:28:58.394Z",
+        "reviewed_sha": "d082ef6da3583a8cec58bb6df120d742b0cd30ed",
+        "notes": "generic-ring algebraic statement; no wall violation"
       }
     ],
     "fit-section-chapter": [
@@ -2571,7 +2571,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "sec:parity-classification-discrepancy covers parity/isospin classification; content c=m_j scaling is Schur-Weyl basis for BW scaling in parity classification",
+        "evidence": "prop on box content c=m_j by Schur-Weyl duality with BW scaling; chapter scope covers algebraic/Wedderburn/Frobenius face; unique claim",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2579,9 +2579,9 @@
           "agent_date": "2026-06-04",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T23:22:52.423Z",
-        "reviewed_sha": "54fbfdf3a3bfcf4d5d6a97c1d9923aae8d00d2f8",
-        "notes": "Correctly placed in parity classification section; no misfiling or sibling redundancy"
+        "reviewed_at": "2026-06-04T23:28:58.354Z",
+        "reviewed_sha": "d082ef6da3583a8cec58bb6df120d742b0cd30ed",
+        "notes": "fits algebraic face of mass-theory"
       }
     ],
     "wall-side-proof": [
@@ -2593,7 +2593,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "no proof body in .md; lean file contains only def boxContent : ℤ := col - row with no proof tactics",
+        "evidence": "md has no Proof body; square follows table directly; no archimedean machinery in proof",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2601,9 +2601,9 @@
           "agent_date": "2026-06-04",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T23:22:52.455Z",
-        "reviewed_sha": "54fbfdf3a3bfcf4d5d6a97c1d9923aae8d00d2f8",
-        "notes": "No proof to audit; trivially passes wall-side-proof"
+        "reviewed_at": "2026-06-04T23:28:58.433Z",
+        "reviewed_sha": "d082ef6da3583a8cec58bb6df120d742b0cd30ed",
+        "notes": "no proof body to violate wall"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2615,7 +2615,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "proposition statement is bare Schur-Weyl claim c=m_j; table is data not interpretive prose in the formal claim",
+        "evidence": "md: statement+table+square only; no ## Interpretation/Discussion heading; no mislocated interpretive prose",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2623,11 +2623,11 @@
           "agent_date": "2026-06-04",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T23:24:24.217Z",
-        "reviewed_sha": "9b65f9bb5954e5fb4d1d7c49143b5bfff6f12335",
-        "notes": "Statement is clean bare claim; no interpretive prose mixed into formal statement"
+        "reviewed_at": "2026-06-04T23:28:58.315Z",
+        "reviewed_sha": "d082ef6da3583a8cec58bb6df120d742b0cd30ed",
+        "notes": "clean statement block"
       }
     ]
   },
-  "updated_at": "2026-06-04T23:24:24.217Z"
+  "updated_at": "2026-06-04T23:28:58.433Z"
 }
