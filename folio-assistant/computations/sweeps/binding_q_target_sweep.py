@@ -163,13 +163,15 @@ def load_qbeta_precision_ladder() -> list[dict]:
             "categorical_source": "Hopf-link Jones polynomial at q=1 (cross-block)",
         })
 
-        # N=4 canonical per 2026-05-19 audit: c_4 = c_3 · b⁴ = -2·b⁴
-        # Closes to ~1% empirical; replaces the doc's `b² + 1/2` form.
+        # N=4 candidate c_4 = c_3 · b⁴ = -2·b⁴ (the `_canonical` suffix is a
+        # legacy variable name). Per docs/coordination/ck-dk-canonical-registry.md
+        # this rung is EMPIRICAL tier (~1% near-match), NOT canonical — only
+        # c_2 = -1 is canonical. Closes to ~1% empirical.
         c4_canonical = mpf(-2) * (b ** 4)
         Q_N4_canonical = Q_N3 * (1 + c4_canonical * (b ** 4) * (hbar_sq ** 4))
         rungs.append({
             "N": "4-canonical",
-            "label": "Q_N3 · (1 + c₃·b⁴ · b⁴·ℏ_q⁸)  [CANONICAL 2026-05-19: c₄ = c₃·b⁴]",
+            "label": "Q_N3 · (1 + c₃·b⁴ · b⁴·ℏ_q⁸)  [empirical near-match (registry); 2026-05-19: c₄ = c₃·b⁴]",
             "Q_pred_MeV": fmt(Q_N4_canonical, 14),
             "err_MeV": fmt(Q_N4_canonical - Q_AME, 4),
             "err_ppb": fmt((Q_N4_canonical - Q_AME) / Q_AME * mpf("1e9"), 6),
@@ -213,15 +215,16 @@ def load_qbeta_precision_ladder() -> list[dict]:
             ),
         })
 
-        # N=5 canonical per 2026-05-19 audit: c_5 = -(b² + 1/2)
-        # This is the doc's original "c_4 = b² + 1/2" form, but correctly
-        # placed at N=5 (the doc had the rung index off by one). Sub-ppt
-        # closure when applied on top of canonical c_4 = c_3·b⁴.
+        # N=5 candidate c_5 = -(b² + 1/2) (the `_canonical` suffix is a legacy
+        # variable name). Per docs/coordination/ck-dk-canonical-registry.md this
+        # rung is EMPIRICAL/OPEN tier, NOT canonical. Correctly placed at N=5
+        # (the doc had the rung index off by one). Sub-ppt closure when applied
+        # on top of the empirical c_4 = c_3·b⁴.
         c5_canonical = -(b * b + mpf(1) / mpf(2))
         Q_N5_canonical = Q_N4_canonical * (1 + c5_canonical * (b ** 5) * (hbar_sq ** 5))
         rungs.append({
             "N": "5-canonical",
-            "label": "Q_N4-canonical · (1 - (b²+1/2)·b⁵·ℏ_q^10)  [CANONICAL 2026-05-19: c₅ = -(b²+1/2)]",
+            "label": "Q_N4 · (1 - (b²+1/2)·b⁵·ℏ_q^10)  [empirical/open (registry); 2026-05-19: c₅ = -(b²+1/2)]",
             "Q_pred_MeV": fmt(Q_N5_canonical, 14),
             "err_MeV": fmt(Q_N5_canonical - Q_AME, 4),
             "err_ppb": fmt((Q_N5_canonical - Q_AME) / Q_AME * mpf("1e9"), 6),
