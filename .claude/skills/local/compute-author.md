@@ -270,7 +270,7 @@ Decide which symmetry / shortcut you want to exploit
 | "λ_p_scale derivable from N-tier Bring-Bloch search at coeff bound K" | NEGATIVE through K = 10⁸ across 6 tiers (PR #843 + #852) — don't keep retrying the same shape |
 | "Trace cyclic rotation does not affect cache identity" | TRUE — but the rotation must affect ONLY the cache key, NOT the recursion behavior |
 
-### §3.3 Formalize-first probe discipline (STRICT — narrow the search BEFORE running it)
+### <a id="formalize-first"></a>§3.3 Formalize-first probe discipline (STRICT — narrow the search BEFORE running it)
 
 **Too much time is lost chasing numerical rainbows that a one-line
 structural argument — or a small Lean lemma — would have eliminated up
@@ -296,15 +296,15 @@ ask whether a **formalizable structural claim prunes the class first**.
      sub-class;
    - brute-enumerate **only** what formalization cannot prune.
 
-**Worked precedents (each cost a probe cycle a formalize-first step would
-have saved):**
+**Worked precedents (each cost a probe cycle that a formalize-first step
+would have saved):**
 
 | structural argument (cheap) | killed (expensive) |
 |---|---|
-| `dc_3/dq ≈ 4.6e6` is impossible for a smooth real `f` (PR #1821) | the entire **real-q `c_3 = f(q)`** family — incl. the 4-session c_3 flip-flop + sl_6 / residual numerical scans |
-| entropy bound `precision > n_terms·log10(2·height)` (PR #1805) | the **12-constant PSLQ** search — at A's ~11 digits ANY relation found is spurious |
-| A is asymptotically ~4 sig figs from `c_2..c_10` (PR #1805) | **high-precision identifications** of A — pointless until canonical c_11+ exists |
-| finite linear-algebra rank check (commit `eca145ca`) | the **constant-kernel recursion** — refuted through depth 4 before any fit |
+| `dc_3/dq ≈ 4.6e6` is impossible for a smooth real `f` ([PR #1821](https://github.com/litlfred/qou/pull/1821)) | the entire **real-q `c_3 = f(q)`** family — incl. the 4-session c_3 flip-flop + sl_6 / residual numerical scans |
+| entropy bound `precision > n_terms·log10(2·height)` ([PR #1805](https://github.com/litlfred/qou/pull/1805)) | the **12-constant PSLQ** search — at A's ~11 digits ANY relation found is spurious |
+| A is asymptotically ~4 sig figs from `c_2..c_10` ([PR #1805](https://github.com/litlfred/qou/pull/1805)) | **high-precision identifications** of A — pointless until canonical c_11+ exists |
+| finite linear-algebra rank check ([commit `eca145ca`](https://github.com/litlfred/qou/commit/eca145ca)) | the **constant-kernel recursion** — refuted through depth 4 before any fit |
 
 **Lean granularity for pruning.** The formalized claim may be a
 *conditional / scaffolding* lemma (sorry-free machinery, or `sorry` +
