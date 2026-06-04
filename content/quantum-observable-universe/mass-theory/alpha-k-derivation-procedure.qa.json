@@ -2316,6 +2316,23 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:alpha-k-derivation-procedure' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "d104e08da377",
+          "ts": "e61aeab1bc5e",
+          "lean": "708bd5a6e8ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:12:26.053Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
       }
     ],
     "proof-lean-compiles": [
@@ -2685,7 +2702,102 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d104e08da377",
+          "ts": "e61aeab1bc5e",
+          "lean": "708bd5a6e8ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:12:25.902Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d104e08da377",
+          "ts": "e61aeab1bc5e",
+          "lean": "708bd5a6e8ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:12:25.939Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d104e08da377",
+          "ts": "e61aeab1bc5e",
+          "lean": "708bd5a6e8ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:12:25.977Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d104e08da377",
+          "ts": "e61aeab1bc5e",
+          "lean": "708bd5a6e8ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:12:26.016Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "d104e08da377",
+          "ts": "e61aeab1bc5e",
+          "lean": "708bd5a6e8ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:12:26.092Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:12:26.092Z"
 }
