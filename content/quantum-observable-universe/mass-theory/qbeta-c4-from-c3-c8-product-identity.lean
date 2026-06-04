@@ -44,10 +44,14 @@ theorem c3_times_c6_eq_c9_at_silver :
     (-2 : ℚ) * ((7 : ℚ) / 2) = (-7 : ℚ) := by
   norm_num
 
-/-- **c_4 silver value** (equivalent restatement). -/
+/-- **c_4 closed form at the silver ratio.**
+
+  c_4 := -2 · b⁴ = -2 · (7/8)² = -49/32, where b² = 7/8 at silver.
+  This is the structural closed form `c_4 = -2·b⁴`, consistent with
+  `c_4 = c_8 / c_3` proved above. -/
 theorem c4_at_silver_eq_neg_49_32 :
-    (-(49 : ℚ) / 32) = -(49 : ℚ) / 32 := by
-  rfl
+    (-2 : ℚ) * ((7 : ℚ) / 8)^2 = -(49 : ℚ) / 32 := by
+  norm_num
 
 /-- **The derivation chain: c_4 = c_8 / c_3 at silver.**
 
