@@ -105,6 +105,72 @@ Verdict: the mass-tower's **ratio** outputs are *suggestive*; its **mirror
 difference**, **CPT**, and **implied-E₀** outputs are **not derivations** and
 must not be cited as predictions until the path is reference-validated.
 
+> **On the implied-E₀ back-solve (owner Q, 2026-06-04: "E₀ is knot
+> dependent?").** No — in a correct derivation `E₀ = m_e/(q₀(q₀−1)) ≈ 4.186
+> MeV` is a **single universal constant**, the same for every knot/channel.
+> The mass-tower computes `E₀_implied = Q_β/|ΔP|` *separately per channel N*
+> and gets a *different* value each time, none equal to 4.186 (the print
+> string even says "vs canonical E₀ ≈ 4.186 MeV"). A calibration that comes
+> out knot/channel-dependent is the **signature of a fit**: one free constant
+> absorbing the mismatch, exactly the pathology the 3-calibration discipline
+> forbids (cf. the per-partition Δ_λ gate in CLAUDE.md). If `|ΔP|` were the
+> right structural quantity, `Q_β/|ΔP|` would yield the *same* E₀ in every
+> channel.
+
+## 2e. The DEEPER root cause (added 2026-06-04): a degenerate evaluation point
+
+Building the reference-QA module (§4.1, now
+[`homflypt_reference_qa.py`](../../folio-assistant/computations/homflypt_reference_qa.py))
+surfaced a root cause **deeper than ratio-only normalisation**: the engine's
+SU(N) specialisation exponent was wrong, putting the SU(2) evaluation at a
+**degenerate point**.
+
+- The engine set `v = q^{(N-1)/2}`. For N=2 that is `v = q^{1/2}`, and then
+  `1/v − v = q^{-1/2} − q^{1/2} = −z`, so the loop value
+  `δ = (1/v − v)/z ≡ −1` **identically, for every q**.
+- `δ = −1` is the **degenerate Jones point** (`t` a 6th root of unity) where
+  every link invariant collapses to `±1`. This is *why* distinct knots
+  returned the same value (trefoil = figure-8 = ±1) — not a bug in any single
+  formula, but the **evaluation point carrying no knot information**.
+- The correct SU(N) HOMFLY point is `a = s^N` with `s = q^{1/2}`, i.e.
+  `v = q^{N/2}`, giving `δ = −[N]_s` (non-degenerate). **Fixed** in
+  `homflypt_at_su_n` (exponent `N/2`); the fix makes trefoil (2.564) and
+  figure-8 (1.595) distinct again.
+
+### Consequence for the SU(2) mass tower
+
+The entire `homflypt_su_n_mass_tower` SU(2) channel was evaluating the knot
+invariant at `δ=−1`. Its proton/neutron "ratios" and "mirror differences" at
+N=2 were therefore either trivially `±1` or pure normalisation noise — **not
+physical knot data**. The exponent fix is necessary but **not sufficient**:
+
+### Residual: absolute normalisation is broken AND inconsistent across paths
+
+Even after the exponent fix, `homflypt_reference_qa.py` reports **0/5** against
+the skein reference, because the engine's paths disagree with each other *and*
+with the reference:
+
+| knot (at corrected v=q^{N/2}) | skein reference | engine n=2 path | engine n≥3 path |
+|---|---|---|---|
+| unknot | 1.000 | 1.000 ✓ | 1.981 |
+| Hopf | −2.352 | −2.113 | 2.789 |
+| trefoil | 0.960 | 0.878 | 2.564 |
+
+- The **n=2 path** (`_homflypt_2strand_numerical`) uses the Ocneanu trace with
+  the **Hecke** loop convention `z_Hecke = q − q⁻¹` (Hopf `= δq + (q−1)`),
+  so its `z` ≠ the `z = q^{1/2} − q^{-1/2}` passed by `homflypt_at_su_n`.
+- The **n≥3 path** uses the ratio-only `δ^{n-1}·tr_M(β)/tr_M(id)`, whose
+  `δ^{n-1}` is the *n-component-unlink* norm — wrong for a 1-component knot
+  closure, and the writhe framing is dropped entirely.
+
+So the engine has **inconsistent variable conventions across its own code
+paths**, none of which equals a clean external HOMFLY. Restoring a single
+correct normalisation requires reverse-engineering this engine's specific
+`y_λ`/`χ` Ocneanu-trace convention; that is **left as an open item** (the
+reference-QA module is the gate). This audit does **not** claim the engine
+now produces correct absolute invariants — only that the degeneracy is fixed
+and the gate exists.
+
 ## 3. Full mass/binding pipeline walkthrough — per-function verdicts
 
 Legend: ✅ **VERIFIED** (checked against an external reference value) ·
@@ -113,7 +179,7 @@ Legend: ✅ **VERIFIED** (checked against an external reference value) ·
 
 | # | Function / script | Role | Verdict | Note |
 |---|---|---|---|---|
-| 1 | `homflypt_engine._homflypt_nstrand_numerical` (SU(2)) | n≥3 invariant | 🔴 | Ratio-only; writhe framing dropped; admission was buried (§2). |
+| 1 | `homflypt_engine._homflypt_nstrand_numerical` (SU(2)) | n≥3 invariant | 🔴 | Ratio-only; writhe framing dropped; admission was buried (§2). **Exponent degeneracy fixed (§2e); absolute norm still OPEN** (0/5 vs reference). |
 | 2 | `homflypt_engine._homflypt_nstrand_numerical` (SU(N>2)) | Schur-fn invariant | 🟡 | Also `/total_id` normalised → ratio-only; never checked vs SU(N) reference. |
 | 3 | `homflypt_su_n_mass_tower.main` | mass-tower data | 🔴 | Mirror-diff + implied-E₀ = hidden fit (§2d). Ratios suggestive only. |
 | 4 | `cross_check_trM_1ppb.main` | "1 ppb" dashboard | 🟡 | Pairwise deltas among Hoefsmit/peel/chi-cache/Habiro — *"must agree between … paths"*. Tests consistency of 4 paths that share the **same** `tr_M = Σ y_λ χ^λ` definition. Green ≠ correct. **No textbook-knot anchor.** |
@@ -143,32 +209,42 @@ Rows **9, 10, 11** are heuristic/hardcoded inputs — *labelled*, so not
 "hidden", but they are the binding-side analogue and should converge on the
 SDP-derivation path.
 
-## 4. Recommended fixes (priority order)
+## 4. Recommended fixes (priority order) — status this PR
 
-1. **Add a reference-value QA module** `homflypt_reference_qa.py`: textbook
-   Jones values for trefoil / figure-8 / Hopf / Borromean at the SU(2) point,
-   asserted to ~1e-6. This is the single highest-leverage fix — it converts
-   the verification gap (row 4/8) into a real correctness gate. **It must
-   fail today** against `_homflypt_nstrand_numerical` (that is the point).
-2. **Fix `_homflypt_nstrand_numerical`**: restore the Jones normalisation
-   `(-q^{1/2}-q^{-1/2})^{n-1}·(-q^{-3/2})^{-w}` so absolute values match the
-   reference module. Keep the y_λ-Markov core (it bypasses the Schur
-   singularity); drop the degenerate Schur-weight candidate (retracted §2c).
-3. **Demote the mass-tower mirror-diff / implied-E₀ outputs** to EXPLORATORY
-   in `homflypt_su_n_mass_tower.py` until #2 lands; remove or clearly flag the
-   `E0_implied = Q_β/|ΔP|` back-solve as a fit, not a prediction.
-4. **Add one reference χ^λ test** for a small partition with a known
-   closed-form (e.g. `χ^{(n)}`, `χ^{(1ⁿ)}`) to `cross_check_trM_1ppb` so the
-   shared-definition cluster (row 4/7/8) gets one external anchor.
-5. **Converge binding inputs (rows 9–11)** onto an actual SDP derivation
-   (tracked in the binding-link heuristic audit); not in scope for this PR.
+1. ✅ **DONE — reference-value QA module**
+   [`homflypt_reference_qa.py`](../../folio-assistant/computations/homflypt_reference_qa.py):
+   skein-relation reference (self-tested symbolically against textbook Hopf +
+   trefoil) for the 2-strand torus family, applied to the n≥3 path via Markov
+   stabilisation. Reports **0/5** against the engine today — the verification
+   gap (row 4/8) is now a real, failing gate.
+2. 🟡 **PARTIAL — `homflypt_at_su_n` exponent fix.** The degenerate point
+   `δ≡−1` (root cause, §2e) is **fixed** (`v = q^{N/2}`; distinct knots now
+   distinct). The **absolute normalisation remains OPEN**: the engine's n=2
+   and n≥3 paths use inconsistent `z` conventions and neither matches the
+   skein reference (§2e table). Closing it requires reverse-engineering this
+   engine's `y_λ`/`χ` Ocneanu-trace convention — tracked by the failing
+   reference-QA gate. The buried docstring admission is replaced with an
+   explicit "ABSOLUTE-NORMALISATION OPEN" warning pointing here.
+3. ✅ **DONE — mass-tower demoted.** `homflypt_su_n_mass_tower.py` now opens
+   with an EXPLORATORY banner; the `E0_implied = Q_β/|ΔP|` block is relabelled
+   a **back-solve / fit diagnostic**, not a prediction.
+4. ⬜ **TODO (follow-up) — reference χ^λ test** for a small partition with a
+   known closed-form (e.g. `χ^{(n)}`, `χ^{(1ⁿ)}`) added to
+   `cross_check_trM_1ppb` so the shared-definition cluster (row 4/7/8) gets one
+   external anchor.
+5. ⬜ **TODO (separate track) — converge binding inputs (rows 9–11)** onto an
+   actual SDP derivation (binding-link heuristic audit); not in scope here.
 
 ## 5. Scope of this PR
 
-This doc is the **surfacing + walkthrough** deliverable. The reference-QA
-module (#1) and the normalisation fix (#2) are the follow-up code changes;
-they are staged on this branch next. The binding-side convergence (#5) stays
-on its existing audit track.
+Delivered on this branch: the **surfacing + walkthrough** (this doc), the
+**reference-QA gate** (§4.1, fails 0/5 by design), the **degeneracy exponent
+fix** (§4.2, partial — absolute norm left open and gated), and the
+**mass-tower demotion** (§4.3). The remaining absolute-normalisation work
+(§4.2 residual), the `χ^λ` reference anchor (§4.4), and the binding-input SDP
+convergence (§4.5) are explicit follow-ups. This PR does **not** claim the
+HOMFLY engine now produces correct absolute invariants — it claims the gap is
+*surfaced, gated, and de-degenerated*.
 
 ## References
 
