@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.lean"
   },
   "source_hashes": {
-    "md": "93892deb2b5a",
+    "md": "5b81100f2f40",
     "ts": "3dddb14d6474",
     "lean": "bbb1666aa3c0"
   },
@@ -2196,6 +2196,25 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:borromean-hopf-energy-crossover' → expected 'borromean_hopf_energy_crossover'; Lean declares: V_B, binding_ratio, borromean_binding_large, milnor_mu_borromean, milnor_mu_cfl.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "5b81100f2f40",
+          "ts": "3dddb14d6474",
+          "lean": "bbb1666aa3c0"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "lean.ref declares QOU.Archimedean.borromean_hopf_energy_crossover but no such theorem exists in sibling .lean; file proves borromean_binding_large and milnor_discontinuity only",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:22:21.852Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "proof-lean-compiles": [
@@ -2554,13 +2573,11 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "93892deb2b5a",
+          "md": "5b81100f2f40",
           "ts": "3dddb14d6474",
           "lean": "bbb1666aa3c0"
         },
-        "result": "fail",
-        "severity": "minor",
-        "evidence": "borromean-hopf-energy-crossover.md:144-153 — 'The factor of 250.' paragraph is physical commentary/interpretation embedded in the proposition .md after the proof sketch",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2568,14 +2585,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:17:37.385Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:21:36.573Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "93892deb2b5a",
+          "md": "5b81100f2f40",
           "ts": "3dddb14d6474",
           "lean": "bbb1666aa3c0"
         },
@@ -2587,14 +2604,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:17:37.425Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:21:36.563Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "93892deb2b5a",
+          "md": "5b81100f2f40",
           "ts": "3dddb14d6474",
           "lean": "bbb1666aa3c0"
         },
@@ -2606,14 +2623,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:17:37.465Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:22:21.819Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "93892deb2b5a",
+          "md": "5b81100f2f40",
           "ts": "3dddb14d6474",
           "lean": "bbb1666aa3c0"
         },
@@ -2625,14 +2642,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:17:37.502Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:22:21.828Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "93892deb2b5a",
+          "md": "5b81100f2f40",
           "ts": "3dddb14d6474",
           "lean": "bbb1666aa3c0"
         },
@@ -2644,10 +2661,10 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:17:37.540Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:22:21.844Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ]
   },
-  "updated_at": "2026-06-04T14:17:37.540Z"
+  "updated_at": "2026-06-04T17:22:21.852Z"
 }
