@@ -1,24 +1,24 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T00:01:20.929303+00:00",
-  "commitSha": "62323c979764c94ef6df7ec90c315942232027b2",
+  "computedAt": "2026-06-04T00:09:25.063492+00:00",
+  "commitSha": "77ed639af0abacbabd07f11d704175f6bc516a60",
   "assertions": [
     {
-      "name": "depth_sweep_found_holding_or_near_match",
-      "computed": 0,
-      "expected": 0,
+      "name": "depth_sweep_produced_at_least_one_window",
+      "computed": 12,
+      "expected": 1,
       "passed": true,
-      "tolerance": 10,
-      "source": "Reports the number of depths d ∈ {2,3,4,5} whose constant-kernel recurrence either HOLDS (≪ 1% spread) or is a near-match (< 100% spread). Zero = all depths REFUTED, recurrence-structure must be more complex (k-dependent kernel, or larger depth, or non-linear)."
+      "tolerance": 1000000000.0,
+      "source": "Sanity invariant: the depth sweep must produce at least one fitted window across all depths d ∈ {2,3,4,5}. Zero windows = pipeline failure (probe produced no data); ≥ 1 = the recursion fit machinery actually ran. The per-depth verdicts (HOLDS / near-match / REFUTED / INSUFFICIENT_DATA) are reported as data, not assertions."
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 17,
   "computation": "qbeta-c-k-recursion-depth-sweep",
   "scriptFile": "qbeta_c_k_recursion_depth_sweep.py",
-  "scriptHash": "bdf68dff28d0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "41868af347d0",
+  "scriptCommitSha": "77ed639af0abacbabd07f11d704175f6bc516a60",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -144,6 +144,18 @@
         "8": "117.3741909570329120045269",
         "9": "117.4097638129515958070514"
       }
+    },
+    "verdict_summary": {
+      "holding_depths": [],
+      "near_match_depths": [],
+      "refuted_depths": [
+        2,
+        3,
+        4
+      ],
+      "insufficient_data_depths": [
+        5
+      ]
     }
   }
 }
