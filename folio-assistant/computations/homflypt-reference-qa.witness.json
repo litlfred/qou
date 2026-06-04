@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T02:10:14.785199+00:00",
-  "commitSha": "8a66f9d22e42a3b7baf168e8c1a642f346ccd399",
+  "computedAt": "2026-06-04T02:23:12.746122+00:00",
+  "commitSha": "4d73eb452cbf90edca15ae06ad6e9199f9fda9d9",
   "assertions": [
     {
       "name": "all_n3_match_reference",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 21,
+  "durationMs": 23,
   "computation": "homflypt-reference-qa",
   "scriptFile": "homflypt_reference_qa.py",
-  "scriptHash": "55f55b66662e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ac1201aad22b",
+  "scriptCommitSha": "357b79775ecfb8adca5d92ced8c2eb4dc1a99cf1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,46 +44,56 @@
       {
         "knot": "unknot        (σ₁)",
         "k": 1,
-        "reference": "1.0",
-        "engine_n3": "1.981342753925067",
+        "writhe_n3": 2,
+        "reference_unframed": "1.0",
+        "engine_n3_framed": "1.981342753925067",
+        "engine_n3_unframed": "1.608164284908671",
         "engine_n2": "1.0",
-        "abs_delta_n3": "0.981343",
+        "abs_delta_n3": "0.608164",
         "pass_n3": false
       },
       {
         "knot": "Hopf link     (σ₁²)",
         "k": 2,
-        "reference": "-2.351590494446338",
-        "engine_n3": "2.788714582110865",
+        "writhe_n3": 3,
+        "reference_unframed": "-2.351590494446338",
+        "engine_n3_framed": "2.788714582110865",
+        "engine_n3_unframed": "2.039202103174098",
         "engine_n2": "-2.113000348331029",
-        "abs_delta_n3": "5.14031",
+        "abs_delta_n3": "4.39079",
         "pass_n3": false
       },
       {
         "knot": "trefoil 3₁    (σ₁³)",
         "k": 3,
-        "reference": "0.9595771698844201",
-        "engine_n3": "2.564352257716922",
+        "writhe_n3": 4,
+        "reference_unframed": "0.9595771698844201",
+        "engine_n3_framed": "2.564352257716922",
+        "engine_n3_unframed": "1.689348639705339",
         "engine_n2": "0.8775937990887602",
-        "abs_delta_n3": "1.60478",
+        "abs_delta_n3": "0.729771",
         "pass_n3": false
       },
       {
         "knot": "Solomon 4²₁   (σ₁⁴)",
         "k": 4,
-        "reference": "-2.786098063968694",
-        "engine_n3": "3.324818831326438",
+        "writhe_n3": 5,
+        "reference_unframed": "-2.786098063968694",
+        "engine_n3_framed": "3.324818831326438",
+        "engine_n3_unframed": "1.973308516807621",
         "engine_n2": "-2.248868609738468",
-        "abs_delta_n3": "6.11092",
+        "abs_delta_n3": "4.75941",
         "pass_n3": false
       },
       {
         "knot": "cinquefoil 5₁ (σ₁⁵)",
         "k": 5,
-        "reference": "0.8594283786225937",
-        "engine_n3": "3.259439876035397",
+        "writhe_n3": 6,
+        "reference_unframed": "0.8594283786225937",
+        "engine_n3_framed": "3.259439876035397",
+        "engine_n3_unframed": "1.742831416468316",
         "engine_n2": "0.7267829388508373",
-        "abs_delta_n3": "2.40001",
+        "abs_delta_n3": "0.883403",
         "pass_n3": false
       }
     ]
