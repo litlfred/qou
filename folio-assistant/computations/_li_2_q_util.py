@@ -348,6 +348,16 @@ def geom_full_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
         Geom_full per-knot decomposition (prop:geom-universality has
         no Lean theorem yet) — flagged as potential source of error.
 
+    CANONICAL FORM (Geom_full → Vol × Density purge, Stage 2):
+      This routine is the GLOBAL-density reading of the M=Vol×Density
+      formula. It is bit-identical to
+      ``mass_vol_density.geom_full_vd(vol_borromean(), q)`` — i.e.
+      Vol(𝓑₃)·ρ_global(q)/ℏ_q² with ρ_global = linking_weight_family_a.
+      See `mass_vol_density.py` for the proper-definition module exposing
+      both the global ρ and the per-block ρ_pb = tr_M side-by-side. The
+      primitive factoring (geom_leading × density) lives HERE; the M=VD
+      module is the narrative/parity layer that re-exports it.
+
     Returns Geom_full = Vol(𝓑₃)/ℏ_q² × linking_weight(q).
     """
     qi = mpf(1) / q if q_inv is None else q_inv
