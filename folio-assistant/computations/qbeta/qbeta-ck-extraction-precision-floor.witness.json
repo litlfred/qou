@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T21:33:51.564380+00:00",
-  "commitSha": "c96be4a98b5f63ed260b4bf8e1e7491d44c9ef9e",
+  "computedAt": "2026-06-04T21:47:48.280338+00:00",
+  "commitSha": "33836c97ed160cbb502d16647f6ee8beaef350ce",
   "assertions": [
     {
       "name": "only_c2_c3_data_determined",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 14,
   "computation": "qbeta-ck-extraction-precision-floor",
   "scriptFile": "qbeta_ck_extraction_precision_floor.py",
-  "scriptHash": "14ae85bc1c1f",
-  "scriptCommitSha": "3aeb44cb464f2b9964888d952b338971a04c4382",
+  "scriptHash": "15a1c70b8209",
+  "scriptCommitSha": "33836c97ed160cbb502d16647f6ee8beaef350ce",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

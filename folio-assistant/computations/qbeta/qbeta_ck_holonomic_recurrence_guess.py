@@ -39,7 +39,7 @@ from _precision import set_compute_dps  # noqa: E402
 # precisionMetadata, and the audit all agree (Copilot review #1844). At
 # this precision a genuine low-order holonomic recurrence would drive the
 # column-normalised σ_min/σ_max to ~1e-(input-precision); see guess_holonomic.
-DPS = set_compute_dps()
+COMPUTE_DPS = set_compute_dps()
 
 # Bias-corrected c_k (#1824 probe 6.a) — the cleaner available series.
 CK = {
@@ -133,9 +133,14 @@ def main() -> int:
                       f"{mp.nstr(rel, 6):12s} {hol}")
 
     any_hol = any(v["holonomic"] for v in results.values())
+    inconclusive = not results   # every SVD evaluation failed ⇒ no real test
     print("\n" + "=" * 78)
     print("VERDICT (c_11+ attempt):")
-    if any_hol:
+    if inconclusive:
+        print("  • ⚠ INCONCLUSIVE — no (order,deg) case evaluated (all SVD calls")
+        print("    failed). This is NOT a clean negative; the witness assertion")
+        print("    'holonomic_search_evaluated' fails so the run can't read green.")
+    elif any_hol:
         print("  • A low-order HOLONOMIC recurrence FITS — F is D-finite. This")
         print("    would predict c_11+ via the recurrence. SURFACE to author +")
         print("    cross-anchor before any closure claim (the free rungs are")
@@ -147,10 +152,12 @@ def main() -> int:
         print("    (c_8..c_10) are single-anchor-unreliable (c_8 erratic, per the")
         print("    c6-c10 cross-anchor falsification on main). So this is consistent")
         print("    with EITHER F non-holonomic OR free-rung extraction noise.")
-        print("  • ⇒ the c_11+ keystone is blocked at the DATA level: reliable")
-        print("    independent c_8+ need a MULTI-ANCHOR extraction (R = Q_β/Q_A·cos")
-        print("    at several q, i.e. Q_N2(q) re-run at multiple anchors), not a")
-        print("    single-anchor free fit. That is the genuine unblock compute.")
+        print("  • ⇒ the c_11+ keystone is blocked at the DATA level — and the")
+        print("    precision-floor probe (this PR) proves WHY: σ(c_k) = σ_R/u^k,")
+        print("    so only c_2,c_3 clear the measured-Q_β floor and c_4+ are below")
+        print("    it at ANY anchor count (multi-anchor would need ~1e4 physical")
+        print("    anchors). The genuine unblock is a FRAMEWORK DERIVATION of the")
+        print("    c_k (Habiro element, parallel α_EM #1521), not an extraction.")
     print()
 
     w = WitnessBuilder("qbeta-ck-holonomic-recurrence-guess", engine="mpmath")
@@ -163,18 +170,32 @@ def main() -> int:
         f"the only FREE rungs (c_8..c_10) are single-anchor-unreliable (c6-c10 "
         f"falsification on main), so a negative is consistent with F "
         f"non-holonomic OR extraction noise. The c_11+ keystone is blocked at "
-        f"the data level: reliable independent c_8+ need a MULTI-ANCHOR "
-        f"extraction (Q_N2(q) at several q). Formalize-first structural test, "
-        f"not a fit. Diagnostic-only."
+        f"the data level — the precision-floor probe (this PR) proves WHY: "
+        f"σ(c_k)=σ_R/u^k, so only c_2,c_3 clear the measured-Q_β floor and c_4+ "
+        f"are below it at any anchor count. The genuine unblock is a FRAMEWORK "
+        f"DERIVATION of the c_k (Habiro element), not an extraction. "
+        f"Formalize-first structural test, not a fit. Diagnostic-only."
     )
     w.add_data("ck_source", "#1824 probe 6.a bias-corrected (cleaner available)")
     w.add_data("applied_rungs", "c_2..c_7 (imposed); c_8..c_10 free/unreliable")
+    w.add_data("compute_dps", int(COMPUTE_DPS))
+    w.add_data("evaluations", len(results))
     w.add_data("holonomic_fits", {k: {"rel_sv": v["rel_sv"], "holonomic": v["holonomic"]}
                                   for k, v in results.items()})
     w.add_data("genuine_unblock",
-               "multi-anchor extraction: R = Q_β/(Q_A·cos) at several q (Q_N2(q) "
-               "re-run at multiple anchors) → reliable independent c_8+ → "
-               "constrain the holonomic recurrence / generating function.")
+               "framework derivation of the c_k (Habiro element, parallel α_EM "
+               "#1521): the precision-floor probe (this PR) shows extraction — "
+               "single- OR multi-anchor — cannot reach c_4+ (σ(c_k)=σ_R/u^k below "
+               "the measured-Q_β floor), so the c_k must be DERIVED from "
+               "Hecke/SDP structure, not fitted.")
+    # Guard (Copilot #1844): a run where NO (order,deg) case evaluated is
+    # INCONCLUSIVE, not a clean negative — fail this assertion so an
+    # all-SVD-fail run cannot emit a passing (non-holonomic) witness.
+    w.add_assertion(
+        name="holonomic_search_evaluated",
+        computed=not inconclusive, expected=True, tolerance=0,
+        source="≥1 (order,deg) SVD case must evaluate; all-fail ⇒ inconclusive run.",
+    )
     w.add_assertion(
         name="low_order_holonomic_recurrence_found",
         computed=bool(any_hol), expected=False, tolerance=0,
@@ -183,7 +204,7 @@ def main() -> int:
     )
     out = w.save()
     print(f"  Witness: {out.name}")
-    return 0
+    return 1 if inconclusive else 0
 
 
 if __name__ == "__main__":
