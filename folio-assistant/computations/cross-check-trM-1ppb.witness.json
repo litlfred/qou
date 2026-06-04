@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T12:05:17.072612+00:00",
-  "commitSha": "aa39825a11d0cd018bec372f7b9f0d8fd152149a",
+  "computedAt": "2026-06-04T10:36:38.386798+00:00",
+  "commitSha": "f5dfee7f7d3bf6dd9847ee0f6b010a7f35e4eac3",
   "assertions": [
     {
       "name": "all_atoms_within_1ppb",
@@ -10,14 +10,21 @@
       "expected": 1,
       "passed": true,
       "source": "tr_M(β_atom) @ q_0 must agree between Hoefsmit/mpfr and markov_peel paths within 1 ppb relative"
+    },
+    {
+      "name": "character_engine_matches_closed_form",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "χ^{(n)}(β) = q_0^{w(β)} and χ^{(1ⁿ)}(β) = (−q_0^{-1})^{w(β)} for the two 1-dim Hecke irreps — an INDEPENDENT closed-form anchor on the character engine that feeds the chi-cache trace leg (agreement of the four paths is consistency, not correctness)"
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 17,
   "computation": "cross-check-trM-1ppb",
   "scriptFile": "cross_check_trM_1ppb.py",
-  "scriptHash": "031c70d68a7c",
-  "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
+  "scriptHash": "1ede5e40f363",
+  "scriptCommitSha": "d5b2bec9a88cd3878c20c76519b5fdec696807eb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,11 +34,9 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "parameters": {
@@ -130,6 +135,78 @@
           "peel_vs_chi": "0.0000000000000019917593546846921324139043732114413248324580957247"
         }
       }
-    ]
+    ],
+    "character_closed_form_anchor": {
+      "checks": [
+        {
+          "braid": "proton (σ₁σ₂⁻¹)³",
+          "n_strands": 3,
+          "writhe": 0,
+          "chi_symmetric": "1.0000000000000013",
+          "ref_symmetric": "1.0",
+          "chi_antisymmetric": "1.0000000000000022",
+          "ref_antisymmetric": "1.0",
+          "abs_delta_max": "0.000000000000002200000000000000000000000000000000000881421116849",
+          "ok": true
+        },
+        {
+          "braid": "neutron (σ₁⁻¹σ₂)³",
+          "n_strands": 3,
+          "writhe": 0,
+          "chi_symmetric": "1.0000000000000013",
+          "ref_symmetric": "1.0",
+          "chi_antisymmetric": "1.0000000000000022",
+          "ref_antisymmetric": "1.0",
+          "abs_delta_max": "0.000000000000002200000000000000000000000000000000000881421116849",
+          "ok": true
+        },
+        {
+          "braid": "σ₁³ (3 strands)",
+          "n_strands": 3,
+          "writhe": 3,
+          "chi_symmetric": "1.3675518369513862",
+          "ref_symmetric": "1.3675518369513851879667240299093610007110975207728",
+          "chi_antisymmetric": "-0.7312337075494344",
+          "ref_antisymmetric": "-0.73123370754943367404135278109510642676398980932944",
+          "abs_delta_max": "0.0000000000000010120332759700906389992889024792271565711706790208",
+          "ok": true
+        },
+        {
+          "braid": "σ₁σ₂ (3 strands)",
+          "n_strands": 3,
+          "writhe": 2,
+          "chi_symmetric": "1.2320524541667646",
+          "ref_symmetric": "1.232052454166763931269804513535636184849681422917",
+          "chi_antisymmetric": "0.8116537543657586",
+          "ref_antisymmetric": "0.81165375436575805813221482214175212491853253779648",
+          "abs_delta_max": "6.687301954864643638151503185770829533021529590599e-16",
+          "ok": true
+        },
+        {
+          "braid": "σ₁ (2 strands)",
+          "n_strands": 2,
+          "writhe": 1,
+          "chi_symmetric": "1.109978582751381",
+          "ref_symmetric": "1.1099785827513808075916690956107688798744991218736",
+          "chi_antisymmetric": "-0.9009182839557418",
+          "ref_antisymmetric": "-0.90091828395574149216082288248109393601474162661054",
+          "abs_delta_max": "3.078391771175189060639852583733894629458502484449e-16",
+          "ok": true
+        },
+        {
+          "braid": "σ₁⁻²σ₂ (3 strands)",
+          "n_strands": 3,
+          "writhe": -1,
+          "chi_symmetric": "0.9009182839557421",
+          "ref_symmetric": "0.90091828395574149216082288248109393601474162661054",
+          "chi_antisymmetric": "-1.109978582751382",
+          "ref_antisymmetric": "-1.1099785827513808075916690956107688798744991218736",
+          "abs_delta_max": "0.0000000000000011924083309043892311201255008781264017243575138449",
+          "ok": true
+        }
+      ],
+      "n_fail": 0,
+      "worst_delta": "0.000000000000002200000000000000000000000000000000000881421116849"
+    }
   }
 }
