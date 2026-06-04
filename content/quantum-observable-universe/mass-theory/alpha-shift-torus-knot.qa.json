@@ -2305,6 +2305,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Block kind 'undefined' has no provable Lean content expected."
+      },
+      {
+        "field_hash": {
+          "md": "a686cd99a1d8",
+          "ts": "8b69ac0a0b42"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "alpha-shift-torus-knot.ts:51 — lean.ref set to qou:QOU.BraidKnot.AlphaShiftTorus.alpha_shift_torus_knot but no sibling .lean file exists",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:13:51.310Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
       }
     ],
     "proof-lean-compiles": [
@@ -2746,7 +2764,97 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a686cd99a1d8",
+          "ts": "8b69ac0a0b42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:13:51.152Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a686cd99a1d8",
+          "ts": "8b69ac0a0b42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:13:51.192Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a686cd99a1d8",
+          "ts": "8b69ac0a0b42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:13:51.232Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a686cd99a1d8",
+          "ts": "8b69ac0a0b42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:13:51.272Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "a686cd99a1d8",
+          "ts": "8b69ac0a0b42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:13:51.346Z",
+        "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:13:51.346Z"
 }
