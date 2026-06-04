@@ -54,7 +54,9 @@ def main():
 
     # Q_β values from the operator-valued witness
     import json
-    w = json.loads((HERE / "q-beta-operator-valued-N3.witness.json").read_text())
+    # Witness lives in parent computations/ dir (path drift from Phase 4
+    # qbeta/ subdir refactor).
+    w = json.loads((HERE.parent / "q-beta-operator-valued-N3.witness.json").read_text())
     Q_AME = mpf(str(w["data"]["Q_AME"]))
     Q_A = mpf(str(w["data"]["Q_A"]))  # N=0 base
 
