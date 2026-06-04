@@ -827,12 +827,17 @@ const DETANGLER: QaCriterionDefinition[] = [
     id: "detangler-no-forward-ref",
     domain: "detangler",
     description:
-      "Block's `uses:` / `interprets:` targets do not appear later in " +
-      "the chapter's `<chapter>.ts` ordering (H1-H7). Forward refs " +
-      "force the reader to skip ahead. Routes to " +
-      "`detangler-integration-watcher §H`.",
+      "Block's same-chapter `uses:` targets do not appear LATER in the " +
+      "chapter's ordered `sections[].blocks[]`. Forward refs force the " +
+      "reader to skip ahead. Deterministic: `checkDetanglerNoForwardRef` " +
+      "builds the block-position map from the chapter manifests and " +
+      "fails (major) listing each offending target + its position. " +
+      "Cross-chapter forward refs are the separate " +
+      "`detangler-no-xchapter-fwd` criterion; reorder-invariant cycles " +
+      "are `detangler-no-dependency-cycle`.",
     default_severity: "major",
     depends_on: ["ts"],
+    automated: true,
   },
   {
     id: "detangler-section-band",
