@@ -882,6 +882,23 @@ const DETANGLER: QaCriterionDefinition[] = [
     depends_on: ["ts"],
     automated: true,
   },
+  {
+    id: "detangler-no-dependency-cycle",
+    domain: "detangler",
+    description:
+      "No `uses[]` dependency CYCLE through this block. Distinct from " +
+      "`detangler-no-forward-ref` (a position check a reorder can " +
+      "satisfy): a cycle is reorder-invariant — when two blocks each " +
+      "`uses:` the other (e.g. `prop:A` ↔ `prop:B`), or a longer loop " +
+      "closes, NO chapter ordering removes the forward edge. A cycle " +
+      "signals a genuine structural tangle: prune one dependency edge, " +
+      "merge the mutually-defining blocks, or factor the shared content " +
+      "into a third block both depend on. Fails (major) with the cycle " +
+      "path as evidence.",
+    default_severity: "major",
+    depends_on: ["ts"],
+    automated: true,
+  },
 ];
 
 // ── Domain: bibliography ────────────────────────────────────────
