@@ -67,6 +67,7 @@ import QOU.BraidKnot.MarkovAxiomsPrimitive
 import QOU.BraidKnot.H3HeckeIdempotents
 import QOU.BraidKnot.HoefsmitV21CosSymmetrization
 import QOU.BraidKnot.QBetaCategoricalPrecisionLadder
+import QOU.BraidKnot.QBetaCnAtSilver
 import QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed
 import QOU.BraidKnot.KnotFactorSpectralDerivation
 import QOU.BraidKnot.KnotFactorAmphicheiral
