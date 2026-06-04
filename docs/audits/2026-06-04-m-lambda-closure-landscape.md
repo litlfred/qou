@@ -99,6 +99,37 @@ pinning K does not pin the per-block *mass* the binding formula needs.
 (The deeper L=4 search — 20 736 candidates — is the bounded extension;
 it only re-confirms the reduction, so it is not load-bearing.)
 
+## σ_theory shell N-sweep — gated by the same Δ_λ (2026-06-04)
+
+The deferred "do the shell" / σ_theory shell N-sweep item (instrument
+how predicted per-isotope **binding** converges as shell tower depth N
+grows) is a **downstream consumer of this same gate**, not an
+independent task:
+
+- The shell contribution `Δ𝔪_shell = z²·Φ_q(|V̂_shell|²)·y_shell(q)·f^{λ_atom/λ_shell}`
+  (`sigma_shell_characterization.py`, a deprecation-candidate) places the
+  shell at Hecke level `3·A_magic` and sums over partitions
+  `λ ⊢ 3·A_magic`. Each added shell N → N+1 introduces **new partitions
+  λ at higher Hecke order**, and the binding it contributes needs `Δ_λ`
+  at exactly those λ — the proven-dead unknown above.
+- Therefore the **L2 (accuracy)** leg of a shell N-sweep on binding
+  cannot be certified until Δ_λ closes; an N-sweep that uses any
+  per-partition functional for the new shells inherits the
+  mass-ratio-blind impossibility theorem (§"core obstruction").
+- The **non-circular sub-piece that IS computable now** is the
+  **difference/ODD channel**: mirror-pair binding splittings
+  `ΔB = 2·B₀·sinh θ_B`, formalised this session in
+  [`QOU/Mass/MassVolDensity.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/MassVolDensity.lean)
+  §4 (`binding_mirror_difference_eq_sinh`, `binding_difference_odd`).
+  This is the binding analogue of the eigenphase-difference observable —
+  it sidesteps the absolute (even/cosh) scale the Δ_λ gate blocks.
+
+**Verdict:** the σ_theory shell N-sweep is **gated, not a quick
+instrumentation**. Pursue only the difference channel (bounded,
+in-discipline); the absolute-binding N-convergence waits on the
+research-grade categorical Δ_λ path below. Do not instrument the
+deprecated `sigma_shell_characterization.py` for absolute binding.
+
 ## Recommendation
 
 - **Do not** attempt a 7th per-partition fit, a fresh ρ_w compute, or an
