@@ -68,7 +68,7 @@ corpus was searched:
 - `grep -rln "tau_order_mixing\|alg_h.*kappa.*all_orders" folio-assistant/computations/` → empty
 - Coordination ledgers: no prior closure of this specific question.
 
-The four greps returning empty modulo this branch confirms the
+The four greps returning empty modulo this branch confirm the
 sharpened conjecture is a genuine new statement. The proved Links
 1-3 above and the disproved Link 4 do not settle it.
 
@@ -99,9 +99,9 @@ whether the non-constant form is meaningful.
 
 It is a coordination doc so the next session/agent doesn't redo the
 analysis or restate the question as if it were open in a less
-sharpened form. If picked up: branch off `claude/tau-all-orders-h6-
-empirical-<date>` and start with the `phi0_normalization_disproof.py`
-extension.
+sharpened form. If picked up: branch off
+`claude/tau-all-orders-h6-empirical-<date>` and start with the
+`phi0_normalization_disproof.py` extension.
 
 ## Cross-links
 

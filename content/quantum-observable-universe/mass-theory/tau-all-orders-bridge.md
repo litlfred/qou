@@ -12,8 +12,8 @@ Exactly one of the following holds:*
    $T_{k,j} \in \mathbb{R}$, $T_{k,j} = 0$ for $j > k$, $T_{k,k} \neq 0$,
    such that*
    $$
-     \kappa_k \;=\; \sum_{j \le k}\; T_{k,j}\,\alpha_j
-     \qquad \text{for all even } k \ge 2,
+     \kappa_{2k} \;=\; \sum_{j \le k}\; T_{k,j}\,\alpha_{2j}
+     \qquad \text{for all } k \ge 1,
    $$
    *and this $T$ is realised by the fibre functor $\tau$ of
    [`conj:geom-universality`](#conj:geom-universality) acting on
@@ -123,7 +123,7 @@ of any proved identity.
 
 ## Lean structure
 
-The Lean file [`tau-all-orders-bridge.lean`](#) axiomatises hypothesis
+The Lean file [`tau-all-orders-bridge.lean`](tau-all-orders-bridge.lean) axiomatises hypothesis
 (1) as a class `TauOrderMixingMap` carrying the coefficients $T_{k,j}$
 and the bridge equation. Downstream consequences (any concrete
 prediction following from the existence of such a $T$) can then be
