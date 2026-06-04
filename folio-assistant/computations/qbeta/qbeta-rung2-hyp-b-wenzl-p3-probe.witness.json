@@ -1,0 +1,53 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T10:55:05.025417+00:00",
+  "commitSha": "5270f87ec15bdcbd0acdc7f0199a382c85ccccfe",
+  "assertions": [
+    {
+      "name": "hypB_decisively_resolved",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Symbolic compare rung-2 form (hbar_q^3/[2]_q) against Hyp-B literal prediction [4]_q/[2]_q. Classical-limit cross-check provides independent confirmation. Reports CONFIRMED or REFUTED."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 328,
+  "computation": "qbeta-rung2-hyp-b-wenzl-p3-probe",
+  "scriptFile": "qbeta_rung2_hypB_wenzl_p3_probe.py",
+  "scriptHash": "5a86efcd20d0",
+  "scriptCommitSha": "08fd1dd1ffa18fe3f901dfc7101827ef8c120f9f",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Definitive test of Hyp-B: does rung_2 = hbar_q^3/[2]_q equal tr_M(Wenzl p_3) / TL_loop = [4]_q/[2]_q? By Wenzl-projector identity tr_M(p_k) = [k+1]_q, the Hyp-B prediction = q^2 + q^-2 = -J_Hopf. Classical-limit cross-check independently confirms verdict.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "hypothesis": "Hyp-B literal: rung_2 = tr_M(p_3) / [2]_q = [4]_q/[2]_q",
+    "rung_2_actual": "hbar_q^3 / [2]_q",
+    "hypB_pred": "[4]_q / [2]_q = q^2 + q^-2 = -J_Hopf(q)",
+    "symbolic_difference": "(-q**6 - q**4 + q**3 - 4*q**2 + 3*q - 2)/(q**4 + q**2)",
+    "classical_limit": {
+      "rung_2_at_q_1": "0",
+      "hypB_pred_at_q_1": "2",
+      "rung_2_vanishes_at_q1": true,
+      "hypB_vanishes_at_q1": false,
+      "compatible": false
+    },
+    "verdict": "REFUTED",
+    "numerical_at_q0": {
+      "rung_2_actual": "0.0004837163440454520352282205",
+      "hypB_pred": "2.043706208532521989402019"
+    }
+  }
+}

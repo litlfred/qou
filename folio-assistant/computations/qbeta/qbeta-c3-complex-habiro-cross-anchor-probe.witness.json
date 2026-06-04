@@ -1,0 +1,79 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T10:55:04.300296+00:00",
+  "commitSha": "5270f87ec15bdcbd0acdc7f0199a382c85ccccfe",
+  "assertions": [
+    {
+      "name": "candidate_D_im_vanishes_at_real_q",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Sanity invariant: the partial-fraction cyclotomic sum D includes conjugate root-of-unity pairs, so at real q the imaginary part vanishes. Confirms Candidate D is a valid REAL observable at the substrate, consistent with the lusztig_q_0_imaginary_part_zero archimedean assertion."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "qbeta-c3-complex-habiro-cross-anchor-probe",
+  "scriptFile": "qbeta_c3_complex_habiro_cross_anchor_probe.py",
+  "scriptHash": "28b00db45424",
+  "scriptCommitSha": "08fd1dd1ffa18fe3f901dfc7101827ef8c120f9f",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Tests four candidate complex-analytic Habiro forms (A: generic pole, B: log singularity at q=1, C: Faddeev dilog approximant, D: cyclotomic partial fractions) for cross-anchor consistency at proton + muon anchors per the 569bedda1 falsify redirect. Honest scoping — either CONFIRMS or REFUTES the redirect at this scope.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "empirical": {
+      "q_proton": "1.10997858275",
+      "q_muon": "1.10997859555",
+      "c_3_proton": "-2.0693",
+      "c_3_muon": "-2.0097",
+      "delta_q": "1.28e-8",
+      "delta_c_3": "0.0596",
+      "dc_3_dq_required": "4656250.0",
+      "near_sing_radius": "0.0000004444134228187919463087248"
+    },
+    "candidates": [
+      {
+        "name": "A_generic_pole",
+        "q_pole": "1.109978151136577181208054",
+        "distance_q_p_to_pole": "0.0000004316134228187919463087248",
+        "matches_both_by_construction": true,
+        "categorical_meaning_of_q_pole": "NONE (fit-derived)"
+      },
+      {
+        "name": "B_log_singularity",
+        "value_q_p": "-20.07181379521274363584467",
+        "value_q_m": "-20.07181040086582568210859"
+      },
+      {
+        "name": "C_log_q_neg_control",
+        "dF_dq": 0.9009182787622783,
+        "too_rigid": true
+      },
+      {
+        "name": "D_cyclotomic_partial_fractions",
+        "value_q_p_real": "22.08466697798010241667504",
+        "value_q_p_imag": "2.967364920549937108585388e-67",
+        "dF_dq": -189.11867809178176,
+        "im_vanishes_at_real_q": true
+      }
+    ],
+    "verdict": {
+      "naive_root_of_unity_habiro_works": false,
+      "implication_1_empirical_jitter_is_artifact": "More parsimonious. Consistent with 569bedda1's 'proton-anchor near-match' classification.",
+      "implication_2_more_exotic_poles_needed": "Would require transcendental singularities or limits of root-of-unity sequences approaching q_0 ≈ 1.11.",
+      "scope_status": "Complex-Habiro redirect at this scope does NOT yield a c_3 candidate matching BOTH anchors via natural root-of-unity poles."
+    }
+  }
+}
