@@ -2550,7 +2550,85 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a315cc8d9069",
+          "ts": "1e95851efe5a",
+          "lean": "84772f2ca7f3"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Opening paragraph mixes physical motivation with the formal statement before any Proposition label; interpretive framing should be in a linked remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:44:27.439Z",
+        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a315cc8d9069",
+          "ts": "1e95851efe5a",
+          "lean": "84772f2ca7f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:44:27.475Z",
+        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a315cc8d9069",
+          "ts": "1e95851efe5a",
+          "lean": "84772f2ca7f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:44:27.513Z",
+        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a315cc8d9069",
+          "ts": "1e95851efe5a",
+          "lean": "84772f2ca7f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:44:27.549Z",
+        "reviewed_sha": "caf92c63d6227772dff112c426906eb978b5f24b"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:44:27.549Z"
 }
