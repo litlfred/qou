@@ -363,18 +363,19 @@ def chi_lambda_braid(shape, word, q_value=None, precision=None,
         return (value, PRECISION_F64_FALLBACK) if return_precision else value
 
     # Python fallback: build seminormal matrices and multiply.
-    # `build_seminormal_matrices` is calibrated against the global
-    # substrate parameter `q0`/`h`, so the fallback is *only* valid at
-    # `q_value == q0`.  Reject non-default q_value here rather than
-    # silently returning an inconsistent character (Copilot review
-    # #r3142936624).
-    if not math.isclose(float(q_value), float(q0), rel_tol=0.0, abs_tol=0.0):
-        raise ValueError(
-            "chi_lambda_braid() Python fallback only supports "
-            "q_value == q0; install the Rust kernel (pyhecke_native) "
-            "for non-default q_value."
-        )
-    sigmas, dim, _ = build_seminormal_matrices(tuple(shape))
+    # `build_seminormal_matrices` accepts a `q=` override (resolves
+    # `q_local = q_value if q is not None else q0`); pass the caller's
+    # q_value through so the fallback supports arbitrary q (cross-anchor
+    # q-stability probes, q-rational reconstruction per
+    # prop:alpha-k-derivation-procedure §"CRT-style q-rational
+    # reconstruction").
+    #
+    # The earlier guard rejected non-default q_value because this call
+    # site omitted the override and silently used module-default q0,
+    # giving an inconsistent character. Passing q=q_value through fixes
+    # that root cause without changing the q==q0 path's behavior.
+    # h_local below is also derived from q_value (already correct).
+    sigmas, dim, _ = build_seminormal_matrices(tuple(shape), q=float(q_value))
     if dim == 0:
         return 0.0
     from scipy import sparse as sp_sparse
