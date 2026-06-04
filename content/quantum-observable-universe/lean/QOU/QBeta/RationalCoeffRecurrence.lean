@@ -1,5 +1,6 @@
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.Ring
 
 /-!
 # Rational fibre object ⇒ C-finite ladder coefficients (residue-A kernel grounding)
@@ -24,6 +25,7 @@ root-of-unity forms.
 
 The lemma below is the load-bearing algebraic fact: a root `u₀` of the
 denominator gives a root `u₀⁻¹` of the reversed (characteristic) polynomial.
+Verified sorry-free against mathlib (pinned `f897ebcf`, lean v4.24.0).
 -/
 
 open scoped BigOperators
@@ -43,7 +45,7 @@ theorem pole_reciprocal_is_char_root {K : Type*} [Field K] (d : ℕ) (q : ℕ �
     (hroot : ∑ j ∈ Finset.range (d + 1), q j * u₀ ^ j = 0) :
     ∑ j ∈ Finset.range (d + 1), q j * (u₀⁻¹) ^ (d - j) = 0 := by
   -- Pointwise: for `j ≤ d`, `(u₀⁻¹)^(d-j) = (u₀⁻¹)^d * u₀^j`, hence each summand
-  -- equals `(u₀⁻¹)^d * (q j * u₀^j)`; then factor `(u₀⁻¹)^d` out and apply hroot.
+  -- equals `(u₀⁻¹)^d * (q j * u₀^j)`.
   have key : ∀ j ∈ Finset.range (d + 1),
       q j * (u₀⁻¹) ^ (d - j) = (u₀⁻¹) ^ d * (q j * u₀ ^ j) := by
     intro j hj
@@ -55,6 +57,11 @@ theorem pole_reciprocal_is_char_root {K : Type*} [Field K] (d : ℕ) (q : ℕ �
     have heq : (u₀⁻¹) ^ (d - j) = (u₀⁻¹) ^ d * u₀ ^ j := by
       rw [hsplit, mul_assoc, hcancel, mul_one]
     rw [heq]; ring
-  rw [Finset.sum_congr rfl key, ← Finset.mul_sum, hroot, mul_zero]
+  -- Factor `(u₀⁻¹)^d` out of the sum and apply the denominator-root hypothesis.
+  have step : ∑ j ∈ Finset.range (d + 1), q j * (u₀⁻¹) ^ (d - j)
+            = (u₀⁻¹) ^ d * ∑ j ∈ Finset.range (d + 1), q j * u₀ ^ j := by
+    rw [Finset.mul_sum]
+    exact Finset.sum_congr rfl key
+  rw [step, hroot, mul_zero]
 
 end QOU.QBeta
