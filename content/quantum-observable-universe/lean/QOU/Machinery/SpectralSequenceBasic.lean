@@ -41,8 +41,9 @@ an `R`-linear refinement is future work.) -/
 structure SpectralSequencePage where
   /-- The page indexed by level `r`, position `(p, q)`. -/
   E : ℕ → ℤ → ℤ → Type*
-  /-- The differential at level `r`. -/
-  d : ∀ (r : ℕ) (p q : ℤ), E r p q → E r (p + r) (q + 1 - r)
+  /-- The differential at level `r` (positions are `ℤ`; the level shift
+  `r` is cast to `ℤ` explicitly to avoid mixed `ℕ`/`ℤ` addition). -/
+  d : ∀ (r : ℕ) (p q : ℤ), E r p q → E r (p + (r : ℤ)) (q + 1 - (r : ℤ))
 
 /-! ## Conditional class: E₂ degeneration
 
