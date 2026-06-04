@@ -1,0 +1,56 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-04T12:34:51.113551+00:00",
+  "commitSha": "53275e07fa22fab7c4c887bc958d959650bd3d79",
+  "assertions": [
+    {
+      "name": "complex_analytic_framing_supported",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "b = |c_3|/|dc_3/dq| ≪ 1 ⇒ near-singularity-dominated, not a smooth real-q function (confirms the cross-anchor falsification)."
+    },
+    {
+      "name": "root_of_unity_is_the_mechanism",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Roots of unity (|q|=1) are ~10^5× farther from q₀ than the singularity at b; they cannot source the c_3 hypersensitivity. Expected False — RoU is NOT the mechanism."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "qbeta-c3-complex-singularity-probe",
+  "scriptFile": "qbeta_c3_complex_singularity_probe.py",
+  "scriptHash": "0e46aebf7dcf",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Tests the complex-analytic/root-of-unity framing for c_3 after the real-q falsification. From published anchors (c_3 swing 2.88% over Δq=1.28e-8), the nearest-singularity distance b≈|c_3|/|dc_3/dq|≈4.444e-7. Complex-analytic framing SUPPORTED (b≪1); root-of-unity mechanism REFUTED (nearest RoU ~2.47e+5× farther). Singularity is near-real at q₀, consistent with the residue-A simple pole at u_substrate. Feasibility/geometry probe — NOT a closure; the categorical c_3 element remains open. Diagnostic-only.",
+  "data": {
+    "q_proton": "1.10997858275138080759166909561",
+    "q_muon_falsif": "1.10997859555",
+    "c3_proton": "-2.0693",
+    "c3_muon": "-2.0097",
+    "dc3_dq": "4656752.3",
+    "swing_pct": "2.8802",
+    "singularity_distance_b": "4.4436548e-7",
+    "root_of_unity_distance": "0.10997858",
+    "dist_to_zeta1": "0.10997858",
+    "rou_over_b_ratio": "247495.78",
+    "complex_analytic_framing_supported": "True",
+    "root_of_unity_mechanism_refuted": "True",
+    "is_closure": "false"
+  }
+}
