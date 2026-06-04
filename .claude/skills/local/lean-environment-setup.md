@@ -328,25 +328,41 @@ durable cross-container preservation lives on **orphan branches**
 `.lake/` (ephemeral) or `../mathlib4` (parent-tree, often persists but not
 guaranteed).
 
+The cache branch stores a **compressed tarball** of the oleans
+(`lake-oleans.tgz`), not the raw `.lake/` tree (a raw multi-GB tree push
+is hostile to the repo). Both restore and seed use a **separate
+`git worktree`** so your main working tree is never disturbed — do NOT
+`git switch --orphan` in the main tree (it leaves every file untracked and
+traps you with "untracked working tree files would be overwritten" on
+switch-back; Copilot #1857).
+
 **RESTORE first (before any from-source build):**
 ```bash
-git fetch --depth=1 origin lake-cache/qou-v4-24-0 2>/dev/null \
-  && git archive FETCH_HEAD | tar -x -C . \
-  && echo "restored .lake from cache branch — skip the rebuild" \
-  || echo "cache branch not seeded yet — build from source, then SEED it (below)"
+if git fetch --depth=1 origin lake-cache/qou-v4-24-0 2>/dev/null; then
+  git show FETCH_HEAD:lake-oleans.tgz > /tmp/lake-oleans.tgz \
+    && tar xzf /tmp/lake-oleans.tgz \
+    && echo "restored .lake from cache branch — skip the rebuild"
+else
+  echo "cache branch not seeded yet — build from source, then SEED it (below)"
+fi
 ```
 
 **SEED after a successful build** (so the NEXT agent restores in ~2 min
-instead of rebuilding in ~30+):
+instead of rebuilding in ~30+) — worktree-based, tarball created in-repo:
 ```bash
-# Pack the built oleans (compressed — a raw .lake push is multi-GB).
+WT=/tmp/lake-cache-wt
+# 1. Pack the built oleans (compressed). Create the tarball where the
+#    worktree can `git add` it — git cannot add a path outside its tree.
 tar czf /tmp/lake-oleans.tgz .lake/build .lake/packages/*/.lake/build 2>/dev/null
-git switch --orphan lake-cache/qou-v4-24-0
-git rm -rf --cached . >/dev/null 2>&1; rm -f .gitignore
-git add /tmp/lake-oleans.tgz  # or commit the .lake/build trees directly if small enough
-git commit -qm "seed lean cache: qou oleans @ lean v4.24.0"
-git push -u origin lake-cache/qou-v4-24-0
-git switch -   # back to your work branch
+# 2. Orphan branch in a SEPARATE worktree (main tree untouched, no trap).
+git worktree add --orphan -b lake-cache/qou-v4-24-0 "$WT" 2>/dev/null \
+  || { git worktree add --detach "$WT"; git -C "$WT" checkout --orphan lake-cache/qou-v4-24-0; \
+       git -C "$WT" rm -rfq --cached . 2>/dev/null; git -C "$WT" clean -fdxq; }
+cp /tmp/lake-oleans.tgz "$WT/lake-oleans.tgz"          # now INSIDE the worktree
+git -C "$WT" add lake-oleans.tgz
+git -C "$WT" commit -qm "seed lean cache: qou oleans @ lean v4.24.0"
+git -C "$WT" push -u origin lake-cache/qou-v4-24-0
+git worktree remove --force "$WT"                      # main branch never left
 ```
 Keep ≤ 8 such branches (owner cap); the
 [`lake-cache-refresh.yml`](../../../.github/workflows/lake-cache-refresh.yml)
