@@ -82,7 +82,24 @@ by `c`, accumulate into a 6-vector, then `nf_tr` (or dot with
 - Single-term agreement with the existing single-word trace.
 - `exact=True` matches the float path to 1e-12.
 
-## Step 2 — formal-q (Laurent) Markov trace
+## Step 2 — formal-q Markov trace ✅ DONE (PR #1811)
+
+Implemented in `tools/pyhecke/python/pyhecke/trace_formal.py` (sympy,
+lazy-imported so pyhecke stays sympy-free unless this module is used);
+tests in `tools/pyhecke/tests/test_trace_formal.py` (6, all pass).
+
+**Resolution of the z subtlety:** the coefficient ring is **ℚ(s)**
+(rational functions in `s = q^½`), *not* Laurent polynomials —
+`z = 1/(s+s⁻¹) = s/(s²+1)` (a test asserts this exactly). So `laurent_q.py`
+is **not** the right carrier; sympy over `ℚ(s)` is. API:
+`nf_of_word_formal`, `nf_tr_formal`, `markov_trace_combo_formal`,
+`specialize(expr, s_value)`, and the Step-3 hook
+`eval_at_root_of_unity(expr, N, k)` (q = exp(2πik/N) ⇒ s = exp(πik/N)).
+Verified: specializing at `s = √q₀` reproduces the float
+`markov_trace_combo` and every `gram.TR_M[i]`; the Hecke relation
+`σ₀² = h·σ₀ + 1` holds symbolically; root-of-unity evaluation runs.
+
+### Original spec (kept for reference)
 
 **File:** new `tools/pyhecke/python/pyhecke/trace_formal.py`, built on
 `laurent_q.py` (`LaurentQ`).
