@@ -1267,11 +1267,13 @@ export function checkDetanglerArchimedeanWall(
 
 let _chapterOrder: Map<string, number> | null = null;
 let _labelToChapter: Map<string, string> | null = null;
+let _usesGraph: Map<string, string[]> | null = null;
 
 function loadChapterGraph(): void {
   if (_chapterOrder) return;
   _chapterOrder = new Map();
   _labelToChapter = new Map();
+  _usesGraph = new Map();
 
   const paperTs = join(CONTENT_DIR, "quantum-observable-universe", "quantum-observable-universe.ts");
   if (!existsSync(paperTs)) return;
@@ -1290,7 +1292,17 @@ function loadChapterGraph(): void {
         if (!f.endsWith(".ts") || f === `${dir}.ts`) continue;
         const content = readFileSync(join(chDir, f), "utf-8");
         const m = content.match(/label:\s*"([^"]+)"/);
-        if (m) _labelToChapter!.set(m[1], dir);
+        if (m) {
+          _labelToChapter!.set(m[1], dir);
+          // Record the block's `uses:[...]` dependency edges (only the
+          // uses array — NOT cites/interprets/own-label) for cycle
+          // detection.
+          const usesM = content.match(/uses\s*:\s*\[([\s\S]*?)\]/);
+          const useLabels = usesM
+            ? [...usesM[1].matchAll(/"([^"]+)"/g)].map((x) => x[1])
+            : [];
+          _usesGraph!.set(m[1], useLabels);
+        }
       }
     } catch {}
   }
@@ -1341,6 +1353,62 @@ export function checkDetanglerBlockTanglement(
     hits: hits.slice(0, 10),
     metrics: { fwd_emitted: fwdEmitted, tanglement_score: score, worst_target: hits[0]?.text ?? "" },
   };
+}
+
+// Dependency-cycle detector: a `uses[]` cycle through this block.
+// Unlike `detangler-no-forward-ref` (a position check that a reorder
+// can satisfy), a cycle is reorder-invariant — no ordering removes the
+// forward edge — so it signals a genuine structural tangle (two blocks
+// each `uses:` the other, or a longer loop) that needs an edge removed
+// or the blocks merged. Walks the cached `uses[]` adjacency graph from
+// this block's label; fails if the label is reachable from itself.
+export function checkDetanglerNoDependencyCycle(
+  tsPath: string | undefined,
+): CheckerResult {
+  if (!tsPath || !existsSync(tsPath)) return { result: "pass", hits: [] };
+  loadChapterGraph();
+  if (!_usesGraph) return { result: "n/a", hits: [] };
+
+  const content = readFileSync(tsPath, "utf-8");
+  const labelMatch = content.match(/label:\s*"([^"]+)"/);
+  if (!labelMatch) return { result: "pass", hits: [] };
+  const start = labelMatch[1];
+
+  const graph = _usesGraph;
+  const visited = new Set<string>([start]);
+  const path: string[] = [start];
+  let cycle: string[] | null = null;
+
+  const dfs = (node: string): boolean => {
+    for (const next of graph.get(node) ?? []) {
+      if (next === start) {
+        cycle = [...path, start];
+        return true;
+      }
+      if (!visited.has(next)) {
+        visited.add(next);
+        path.push(next);
+        if (dfs(next)) return true;
+        path.pop();
+      }
+    }
+    return false;
+  };
+
+  dfs(start);
+  if (cycle) {
+    return {
+      result: "fail",
+      hits: [
+        {
+          file: tsPath,
+          line: 0,
+          text: `uses[] dependency cycle: ${(cycle as string[]).join(" -> ")}`,
+        },
+      ],
+    };
+  }
+  return { result: "pass", hits: [] };
 }
 
 // ─── Proof axis ─────────────────────────────────────────────────
@@ -1925,6 +1993,8 @@ export const EXTENDED_AUTOMATED_CHECKERS: Record<
   "detangler-archimedean-wall": (p) =>
     checkDetanglerArchimedeanWall(p.ts, p.lean),
   "detangler-block-tanglement": (p) => checkDetanglerBlockTanglement(p.ts),
+  "detangler-no-dependency-cycle": (p) =>
+    checkDetanglerNoDependencyCycle(p.ts),
   // proof
   "proof-no-bare-sorries": (p) => checkProofNoBareSorries(p.lean),
   "proof-substantive": (p) => checkProofSubstantive(p.lean),
