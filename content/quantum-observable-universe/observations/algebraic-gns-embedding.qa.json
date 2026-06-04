@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/observations/algebraic-gns-embedding.lean"
   },
   "source_hashes": {
-    "md": "4d9ecd85c71c",
-    "ts": "4a554b5ae8c2",
+    "md": "9f94ea27a52f",
+    "ts": "d12f63286529",
     "lean": "bd8618214bc2"
   },
   "criteria": {
@@ -2229,6 +2229,25 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "9f94ea27a52f",
+          "ts": "d12f63286529",
+          "lean": "bd8618214bc2"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Lean sibling is a stub (theorem HasMarkovGnsEmbedding : True := trivial); real formalization in lean/QOU/Observations/AlgebraicGnsEmbedding.lean — sibling and canonical decl diverge",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:21:11.881Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "proof-lean-compiles": [
@@ -2602,29 +2621,8 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "4d9ecd85c71c",
-          "ts": "4a554b5ae8c2",
-          "lean": "bd8618214bc2"
-        },
-        "result": "fail",
-        "severity": "minor",
-        "evidence": "algebraic-gns-embedding.md:21-68 — '**Status: established, not conjectural.**' and '**Consequence for the μ_arch programme.**' sections embedded in proposition .md after the bare mathematical statement; interpretive/motivational content should live in a separate remark",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-04",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-04T14:13:36.014Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "4d9ecd85c71c",
-          "ts": "4a554b5ae8c2",
+          "md": "9f94ea27a52f",
+          "ts": "d12f63286529",
           "lean": "bd8618214bc2"
         },
         "result": "pass",
@@ -2635,8 +2633,27 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:13:57.018Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:20:45.248Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9f94ea27a52f",
+          "ts": "d12f63286529",
+          "lean": "bd8618214bc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:21:00.230Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "wall-side-statement": [
@@ -2661,8 +2678,8 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "4d9ecd85c71c",
-          "ts": "4a554b5ae8c2",
+          "md": "9f94ea27a52f",
+          "ts": "d12f63286529",
           "lean": "bd8618214bc2"
         },
         "result": "pass",
@@ -2673,8 +2690,8 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:13:57.095Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:21:00.233Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "detangler-no-forward-ref": [
@@ -2697,5 +2714,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-04T14:13:57.132Z"
+  "updated_at": "2026-06-04T17:21:11.881Z"
 }
