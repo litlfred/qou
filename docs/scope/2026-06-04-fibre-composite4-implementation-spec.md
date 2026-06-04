@@ -228,19 +228,33 @@ Anything that needs a per-anchor constant is a **fitted** result and is
 caught by the three-calibration discipline review; record it as
 NEGATIVE and extend the bracket count instead.
 
-## Step 5 — Lean side ◐ DESIGN DONE, verification blocked (sandbox)
+## Step 5 — Lean side ✅ DONE — module builds GREEN (verified this branch)
 
-**Ready-to-paste code + cross-verification:** companion doc
-[`2026-06-04-step5-markov-trace-h3-concrete-lean.md`](2026-06-04-step5-markov-trace-h3-concrete-lean.md).
-The concrete n=3 Markov-trace functional (NF free module `Fin 6 → R`,
-`TRM`/`trM`/`mulσ₀`/`mulσ₁`, with linearity + the Hecke operator
-identity + the Markov reduction `tr(x·σ₁)=z·tr(x)` proved as lemmas) is
-written and its **mathematics is cross-verified in Python against
-`gram.py`** (randomized + symbolic). Only the **Lean syntax** is
-unverified: this branch's sandbox has no toolchain and the elan
-installer is 403-blocked, so `lake build` and the LSP cannot run. The
-next agent with a warm Lean pastes the block into `MarkovTraceOnHecke.lean`
-and runs `lake build QOU`.
+The concrete n=3 Markov-trace functional is **written, committed, and
+verified** in
+[`MarkovTraceOnHecke.lean`](../../content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean):
+NF free module `Fin 6 → R`, `TRM`/`trM`/`mulσ₀`/`mulσ₁`, with linearity
+(`trM_add`/`trM_smul`), the Hecke operator identity (`mulσ₀_hecke`:
+`σ₀²=hσ₀+1`), the Markov reduction (`trM_markov_σ₁`: `tr(x·σ₁)=z·tr(x)`
+on H₂), and the `markovTrace_realized` bundle. The data mirror `gram.py`
+(`hm`, `TR_M`) and `pyhecke.trace_formal`; the mathematics is
+additionally cross-verified in Python (randomized vs `gram.py`, symbolic
+over ℚ(s) by `test_trace_formal.py`).
+
+**Build:** `lake build QOU.Machinery.MarkovTraceOnHecke` → *"Build
+completed successfully (922 jobs)"*, exit 0, **sorry-free**. The sandbox
+toolchain block was overcome via the lean-environment-setup.md §"web
+sandbox addendum" fix: install Lean v4.24.0 from the **allowlisted GitHub
+release asset** (`release.lean-lang.org` and the cache host are
+firewalled), then build the ~650-module mathlib subset from source (the
+cache is 403-blocked). The companion design doc
+[`2026-06-04-step5-markov-trace-h3-concrete-lean.md`](2026-06-04-step5-markov-trace-h3-concrete-lean.md)
+records the cross-verification + the toolchain recipe.
+
+**Remaining (Step 5b, gated on Step 4):** wire the module into `QOU.lean`
+(it is currently an orphan, like the other `Machinery/*.lean`), add trace
+cyclicity `tr(uv)=tr(vu)` (needs the full H₃ multiplication), and
+discharge `markov_trace_origin` once Step 4 names the residue-A element.
 
 **File:** `content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean`.
 
