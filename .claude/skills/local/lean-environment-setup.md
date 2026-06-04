@@ -11,8 +11,8 @@ allowed-tools: Read Edit Bash Grep Glob
 
 # Lean Environment Setup
 
-> ## ⮕ FAST ROUTE — read this BEFORE declaring Lean "unavailable"
->
+## ⮕ FAST ROUTE — read this BEFORE declaring Lean "unavailable"
+
 > On **any** Lean env/tool failure — `lean_run_code`/LSP "no valid project
 > path", `leansearch` SSL error, `lake exe cache get` 403, `elan toolchain
 > install` SSL/`failed to parse release data`, empty `~/.elan/toolchains/`,
@@ -297,7 +297,7 @@ should **not** run in the foreground of a content/proof task. Kick off a
 **background sub-agent** so the main session keeps moving, then verify the
 target file(s) when it reports back.
 
-```
+```text
 Agent(
   subagent_type = "general-purpose",
   run_in_background = true,

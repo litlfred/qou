@@ -1803,7 +1803,7 @@ LSP feedback first, then iterate against real diagnostics.
 > workarounds (e.g. the elan host `release.lean-lang.org` is firewalled in
 > some web sandboxes but the **GitHub release asset is allowlisted** — install
 > the toolchain by hand). FIRST `grep -ri "<error keyword>" .claude/skills/
-> CLAUDE.md` (a generalisation of the corpus-grep / formalize-first
+> CLAUDE.md docs/` (a generalisation of the corpus-grep / formalize-first
 > disciplines: check what's known before declaring a capability unavailable),
 > then **delegate the long install to a background sub-agent** per
 > [`lean-environment-setup.md` §"Delegate the install to a sub-agent"](.claude/skills/local/lean-environment-setup.md)
