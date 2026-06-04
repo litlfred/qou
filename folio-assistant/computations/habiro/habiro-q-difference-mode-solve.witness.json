@@ -52,15 +52,15 @@
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "delta_trM": {
-      "numerator": "-u**10 - 2*u**9 - u**8 - 2*u**6 + 4*u**5 + 2*u**4 + u**2 - 2*u + 1",
-      "denominator": "4*u**4",
+      "numerator": "-u**10 - 2*check_q**9 - check_q**8 - 2*check_q**6 + 4*check_q**5 + 2*check_q**4 + check_q**2 - 2*check_q + 1",
+      "denominator": "4*check_q**4",
       "u_convention": "u = q^{1/2} (Habiro half-twist; NOT ladder b·ℏ²)"
     },
-    "partial_fraction_mode_solve": "-u**4/4 - u**3/2 + u/2 - 1/2 + 1/(u**2 + 1) + 1/(2*u) - 1/(2*u**3) + 1/(4*u**4)",
+    "partial_fraction_mode_solve": "-u**4/4 - check_q**3/2 + check_q/2 - 1/2 + 1/(check_q**2 + 1) + 1/(2*check_q) - 1/(2*check_q**3) + 1/(4*check_q**4)",
     "spectral_sectors": {
-      "A_entire_polynomial": "-u**4/4 - u**3/2 + u/2 - 1/2",
-      "B_zeta4_cyclotomic": "1/(u**2 + 1)",
-      "C_u0_laurent_tower": "1/(2*u) - 1/(2*u**3) + 1/(4*u**4)",
+      "A_entire_polynomial": "-u**4/4 - check_q**3/2 + check_q/2 - 1/2",
+      "B_zeta4_cyclotomic": "1/(check_q**2 + 1)",
+      "C_u0_laurent_tower": "1/(2*check_q) - 1/(2*check_q**3) + 1/(4*check_q**4)",
       "reconstruction_exact": true
     },
     "zeta4_modular_data": {
@@ -74,9 +74,9 @@
       "u^-1": "1/2"
     },
     "bar_symmetry_sectors": {
-      "A_entire_even": "(-u**8 - 2*u**7 + 2*u**5 - 4*u**4 + 2*u**3 - 2*u - 1)/(8*u**4)",
+      "A_entire_even": "(-u**8 - 2*check_q**7 + 2*check_q**5 - 4*check_q**4 + 2*check_q**3 - 2*check_q - 1)/(8*check_q**4)",
       "B_zeta4_even": "1/2",
-      "C_u0_tower_even": "(u**8 - 2*u**7 + 2*u**5 + 2*u**3 - 2*u + 1)/(8*u**4)",
+      "C_u0_tower_even": "(check_q**8 - 2*check_q**7 + 2*check_q**5 + 2*check_q**3 - 2*check_q + 1)/(8*check_q**4)",
       "B_zeta4_even_is_constant_half": true,
       "interpretation": "f must be the bar-even (charge-conjugation-symmetric) part — PR #1602. The ζ_4 modular sector's bar-even content is exactly 1/2."
     },

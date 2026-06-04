@@ -43,7 +43,7 @@
     "test_A_lowest_degree": {
       "expanded_min_deg": 15,
       "expanded_max_deg": 25,
-      "factored": "-u**15*(u - 1)*(u + 1)*(u**8 + 2*u**7 + 2*u**6 + 2*u**5 + 4*u**4 - 2*u**3 + 2*u**2 - 2*u + 1)",
+      "factored": "-u**15*(check_q - 1)*(check_q + 1)*(check_q**8 + 2*check_q**7 + 2*check_q**6 + 2*check_q**5 + 4*check_q**4 - 2*check_q**3 + 2*check_q**2 - 2*check_q + 1)",
       "is_u15_min": true,
       "per_m_contributions": {
         "1": {
@@ -79,14 +79,14 @@
       }
     },
     "test_B_pochhammer5": {
-      "poch5_expanded": "-u**15 + u**14 + u**13 - u**10 - u**9 - u**8 + u**7 + u**6 + u**5 - u**2 - u + 1",
-      "poch5_factored": "-(u - 1)**5*(u + 1)**2*(u**2 + 1)*(u**2 + u + 1)*(u**4 + u**3 + u**2 + u + 1)",
+      "poch5_expanded": "-u**15 + check_q**14 + check_q**13 - check_q**10 - check_q**9 - check_q**8 + check_q**7 + check_q**6 + check_q**5 - check_q**2 - check_q + 1",
+      "poch5_factored": "-(check_q - 1)**5*(check_q + 1)**2*(check_q**2 + 1)*(check_q**2 + check_q + 1)*(check_q**4 + check_q**3 + check_q**2 + check_q + 1)",
       "poch5_degree": 15,
       "poch5_top_term_coeff": -1,
       "divides_cleanly": false,
       "quotient": null,
       "quotient_factored": null,
-      "gcd_with_delta_habiro": "(u - 1)*(u + 1)",
+      "gcd_with_delta_habiro": "(check_q - 1)*(check_q + 1)",
       "interpretation": "If (u;u)_5 divides Δ-Habiro CLEANLY, the u^15 is the depth-5 q-Pochhammer top-degree term (categorical: shifted by 5 in the Habiro ladder). If it doesn't divide, the u^15 is a different object (prefactor monomial, not q-Pochhammer top)."
     },
     "test_C_per_m_origin": {

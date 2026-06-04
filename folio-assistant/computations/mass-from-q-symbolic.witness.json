@@ -114,8 +114,8 @@
   "data": {
     "proton": {
       "ordering": [
-        "u",
-        "u",
+        "check_q",
+        "check_q",
         "d"
       ],
       "volumes": [
@@ -133,7 +133,7 @@
     },
     "neutron": {
       "ordering": [
-        "u",
+        "check_q",
         "d",
         "d"
       ],

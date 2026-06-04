@@ -44,8 +44,8 @@
     "tail_boundary": {
       "a_7_match": true,
       "a_8_match": true,
-      "a_7": "-12*u**7 - 17*u**6 - 24*u**5 - 34*u**4 - 48*u**3 - 63*u**2 - 84*u - 110",
-      "a_8": "u**4 + 2*u**3 + 3*u**2 + 5*u + 7",
+      "a_7": "-12*check_q**7 - 17*check_q**6 - 24*check_q**5 - 34*check_q**4 - 48*check_q**3 - 63*check_q**2 - 84*check_q - 110",
+      "a_8": "check_q**4 + 2*check_q**3 + 3*check_q**2 + 5*check_q + 7",
       "leading_coeff_seq_p": [
         4,
         -74,
@@ -190,8 +190,8 @@
         5
       ],
       "a_7_at_u_eq_1": -392,
-      "a_7_neg_mod_phi4": "48*u + 64",
-      "a_7_neg_mod_phi3": "43*u + 88",
+      "a_7_neg_mod_phi4": "48*check_q + 64",
+      "a_7_neg_mod_phi3": "43*check_q + 88",
       "a_7_at_u_eq_0": -110,
       "a_8_at_u_eq_0": 7
     },
@@ -205,12 +205,12 @@
         6
       ],
       "nonzero_polys": [
-        "10*u + 10",
-        "-64*u**2 - 69*u - 73",
-        "131*u**3 + 143*u**2 + 160*u + 177",
-        "-92*u**4 - 114*u**3 - 136*u**2 - 162*u - 189",
-        "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
-        "-u**4 - 3*u**3 - 5*u**2 - 8*u - 15"
+        "10*check_q + 10",
+        "-64*check_q**2 - 69*check_q - 73",
+        "131*check_q**3 + 143*check_q**2 + 160*check_q + 177",
+        "-92*check_q**4 - 114*check_q**3 - 136*check_q**2 - 162*check_q - 189",
+        "18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90",
+        "-u**4 - 3*check_q**3 - 5*check_q**2 - 8*check_q - 15"
       ],
       "leading_coeff_seq": [
         0,
@@ -400,8 +400,8 @@
         12,
         1
       ],
-      "leading_seq_as_polynomial": "4*u**8 - 74*u**7 + 340*u**6 - 711*u**5 + 788*u**4 - 466*u**3 + 133*u**2 - 12*u + 1",
-      "leading_seq_polynomial_factored": "4*u**8 - 74*u**7 + 340*u**6 - 711*u**5 + 788*u**4 - 466*u**3 + 133*u**2 - 12*u + 1"
+      "leading_seq_as_polynomial": "4*check_q**8 - 74*check_q**7 + 340*check_q**6 - 711*check_q**5 + 788*check_q**4 - 466*check_q**3 + 133*check_q**2 - 12*check_q + 1",
+      "leading_seq_polynomial_factored": "4*check_q**8 - 74*check_q**7 + 340*check_q**6 - 711*check_q**5 + 788*check_q**4 - 466*check_q**3 + 133*check_q**2 - 12*check_q + 1"
     },
     "boundary_recursion_neutron": {
       "leading_coeffs": [
@@ -530,8 +530,8 @@
         12,
         1
       ],
-      "leading_seq_as_polynomial": "4*u**8 - 64*u**7 + 276*u**6 - 580*u**5 + 696*u**4 - 448*u**3 + 133*u**2 - 12*u + 1",
-      "leading_seq_polynomial_factored": "4*u**8 - 64*u**7 + 276*u**6 - 580*u**5 + 696*u**4 - 448*u**3 + 133*u**2 - 12*u + 1"
+      "leading_seq_as_polynomial": "4*check_q**8 - 64*check_q**7 + 276*check_q**6 - 580*check_q**5 + 696*check_q**4 - 448*check_q**3 + 133*check_q**2 - 12*check_q + 1",
+      "leading_seq_polynomial_factored": "4*check_q**8 - 64*check_q**7 + 276*check_q**6 - 580*check_q**5 + 696*check_q**4 - 448*check_q**3 + 133*check_q**2 - 12*check_q + 1"
     },
     "generating_function_proton": {
       "G_series_truncated_to_m=8": "t**8*u**4 + 2*t**8*u**3 + 3*t**8*u**2 + 5*t**8*u + 7*t**8 - 12*t**7*u**7 - 17*t**7*u**6 - 24*t**7*u**5 - 34*t**7*u**4 - 48*t**7*u**3 - 63*t**7*u**2 - 84*t**7*u - 110*t**7 + 133*t**6*u**6 + 167*t**6*u**5 + 212*t**6*u**4 + 264*t**6*u**3 + 328*t**6*u**2 + 402*t**6*u + 494*t**6 - 466*t**5*u**5 - 559*t**5*u**4 - 660*t**5*u**3 - 781*t**5*u**2 - 918*t**5*u - 1078*t**5 + 788*t**4*u**4 + 901*t**4*u**3 + 1029*t**4*u**2 + 1172*t**4*u + 1328*t**4 - 711*t**3*u**3 - 789*t**3*u**2 - 872*t**3*u - 959*t**3 + 340",
@@ -553,28 +553,28 @@
     "telescoping": {
       "per_m_terms": [
         "0",
-        "10 - 10*u**2",
-        "-64*u**5 - 5*u**4 + 60*u**3 + 78*u**2 + 4*u - 73",
-        "-131*u**9 - 12*u**8 + 114*u**7 + 126*u**6 + 206*u**5 - 97*u**4 - 172*u**3 - 194*u**2 - 17*u + 177",
-        "-92*u**14 - 22*u**13 + 70*u**12 + 88*u**11 + 109*u**10 + 167*u**9 - 39*u**8 - 272*u**7 - 232*u**6 - 172*u**5 + 158*u**4 + 184*u**3 + 215*u**2 + 27*u - 189",
-        "-18*u**20 - 10*u**19 + 7*u**18 + 15*u**17 + 22*u**16 + 13*u**15 + 113*u**14 + 5*u**13 - 101*u**12 - 114*u**11 - 126*u**10 - 40*u**9 + 70*u**8 + 193*u**7 + 113*u**6 + 41*u**5 - 63*u**4 - 82*u**3 - 107*u**2 - 21*u + 90",
-        "-u**25 - 2*u**24 - u**23 - 2*u**21 + 22*u**20 + 12*u**19 - 7*u**18 - 14*u**17 - 24*u**16 - 12*u**15 - 21*u**14 + 17*u**13 + 31*u**12 + 26*u**11 + 17*u**10 + 4*u**9 - 19*u**8 - 35*u**7 - 7*u**6 - 11*u**5 + 7*u**4 + 10*u**3 + 18*u**2 + 7*u - 15",
+        "10 - 10*check_q**2",
+        "-64*check_q**5 - 5*check_q**4 + 60*check_q**3 + 78*check_q**2 + 4*check_q - 73",
+        "-131*check_q**9 - 12*check_q**8 + 114*check_q**7 + 126*check_q**6 + 206*check_q**5 - 97*check_q**4 - 172*check_q**3 - 194*check_q**2 - 17*check_q + 177",
+        "-92*check_q**14 - 22*check_q**13 + 70*check_q**12 + 88*check_q**11 + 109*check_q**10 + 167*check_q**9 - 39*check_q**8 - 272*check_q**7 - 232*check_q**6 - 172*check_q**5 + 158*check_q**4 + 184*check_q**3 + 215*check_q**2 + 27*check_q - 189",
+        "-18*check_q**20 - 10*check_q**19 + 7*check_q**18 + 15*check_q**17 + 22*check_q**16 + 13*check_q**15 + 113*check_q**14 + 5*check_q**13 - 101*check_q**12 - 114*check_q**11 - 126*check_q**10 - 40*check_q**9 + 70*check_q**8 + 193*check_q**7 + 113*check_q**6 + 41*check_q**5 - 63*check_q**4 - 82*check_q**3 - 107*check_q**2 - 21*check_q + 90",
+        "-u**25 - 2*check_q**24 - check_q**23 - 2*check_q**21 + 22*check_q**20 + 12*check_q**19 - 7*check_q**18 - 14*check_q**17 - 24*check_q**16 - 12*check_q**15 - 21*check_q**14 + 17*check_q**13 + 31*check_q**12 + 26*check_q**11 + 17*check_q**10 + 4*check_q**9 - 19*check_q**8 - 35*check_q**7 - 7*check_q**6 - 11*check_q**5 + 7*check_q**4 + 10*check_q**3 + 18*check_q**2 + 7*check_q - 15",
         "0",
         "0"
       ],
       "partial_sums_factored": [
         "0",
-        "-10*(u - 1)*(u + 1)",
-        "-(u - 1)*(u + 1)*(64*u**3 + 5*u**2 + 4*u - 63)",
-        "-(u - 1)*(u + 1)*(131*u**7 + 12*u**6 + 17*u**5 - 114*u**4 - 125*u**3 - 12*u**2 - 13*u + 114)",
-        "-(u - 1)*(u + 1)*(92*u**12 + 22*u**11 + 22*u**10 - 66*u**9 - 87*u**8 - 102*u**7 - 36*u**6 + 56*u**5 + 70*u**4 + 86*u**3 + 14*u**2 + 14*u - 75)",
-        "-(u - 1)*(u + 1)*(18*u**18 + 10*u**17 + 11*u**16 - 5*u**15 - 11*u**14 - 18*u**13 - 32*u**12 - u**11 - u**10 + 25*u**9 + 16*u**8 + 29*u**7 - 3*u**6 - 6*u**5 - 10*u**4 - 17*u**3 - 3*u**2 - 7*u + 15)",
-        "-u**15*(u - 1)*(u + 1)*(u**8 + 2*u**7 + 2*u**6 + 2*u**5 + 4*u**4 - 2*u**3 + 2*u**2 - 2*u + 1)",
-        "-u**15*(u - 1)*(u + 1)*(u**8 + 2*u**7 + 2*u**6 + 2*u**5 + 4*u**4 - 2*u**3 + 2*u**2 - 2*u + 1)",
-        "-u**15*(u - 1)*(u + 1)*(u**8 + 2*u**7 + 2*u**6 + 2*u**5 + 4*u**4 - 2*u**3 + 2*u**2 - 2*u + 1)"
+        "-10*(check_q - 1)*(check_q + 1)",
+        "-(check_q - 1)*(check_q + 1)*(64*check_q**3 + 5*check_q**2 + 4*check_q - 63)",
+        "-(check_q - 1)*(check_q + 1)*(131*check_q**7 + 12*check_q**6 + 17*check_q**5 - 114*check_q**4 - 125*check_q**3 - 12*check_q**2 - 13*check_q + 114)",
+        "-(check_q - 1)*(check_q + 1)*(92*check_q**12 + 22*check_q**11 + 22*check_q**10 - 66*check_q**9 - 87*check_q**8 - 102*check_q**7 - 36*check_q**6 + 56*check_q**5 + 70*check_q**4 + 86*check_q**3 + 14*check_q**2 + 14*check_q - 75)",
+        "-(check_q - 1)*(check_q + 1)*(18*check_q**18 + 10*check_q**17 + 11*check_q**16 - 5*check_q**15 - 11*check_q**14 - 18*check_q**13 - 32*check_q**12 - check_q**11 - check_q**10 + 25*check_q**9 + 16*check_q**8 + 29*check_q**7 - 3*check_q**6 - 6*check_q**5 - 10*check_q**4 - 17*check_q**3 - 3*check_q**2 - 7*check_q + 15)",
+        "-u**15*(check_q - 1)*(check_q + 1)*(check_q**8 + 2*check_q**7 + 2*check_q**6 + 2*check_q**5 + 4*check_q**4 - 2*check_q**3 + 2*check_q**2 - 2*check_q + 1)",
+        "-u**15*(check_q - 1)*(check_q + 1)*(check_q**8 + 2*check_q**7 + 2*check_q**6 + 2*check_q**5 + 4*check_q**4 - 2*check_q**3 + 2*check_q**2 - 2*check_q + 1)",
+        "-u**15*(check_q - 1)*(check_q + 1)*(check_q**8 + 2*check_q**7 + 2*check_q**6 + 2*check_q**5 + 4*check_q**4 - 2*check_q**3 + 2*check_q**2 - 2*check_q + 1)"
       ],
-      "total": "-u**25 - 2*u**24 - u**23 - 2*u**21 + 4*u**20 + 2*u**19 + u**17 - 2*u**16 + u**15",
-      "total_factored": "-u**15*(u - 1)*(u + 1)*(u**8 + 2*u**7 + 2*u**6 + 2*u**5 + 4*u**4 - 2*u**3 + 2*u**2 - 2*u + 1)"
+      "total": "-u**25 - 2*check_q**24 - check_q**23 - 2*check_q**21 + 4*check_q**20 + 2*check_q**19 + check_q**17 - 2*check_q**16 + check_q**15",
+      "total_factored": "-u**15*(check_q - 1)*(check_q + 1)*(check_q**8 + 2*check_q**7 + 2*check_q**6 + 2*check_q**5 + 4*check_q**4 - 2*check_q**3 + 2*check_q**2 - 2*check_q + 1)"
     }
   }
 }
