@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T14:20:02.463024+00:00",
-  "commitSha": "5caeabc01844126b458c2a2666e5fe52d64f8cea",
+  "computedAt": "2026-06-04T17:47:00.191973+00:00",
+  "commitSha": "73ab94807c7b7dab11d84577584a0c20e28ecf56",
   "assertions": [
     {
       "name": "c3_target_proton_matches_canonical",
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "qbeta-composite-crossanchor-2factor-sweep",
   "scriptFile": "qbeta_composite_crossanchor_2factor_sweep.py",
-  "scriptHash": "f626b1f07d68",
-  "scriptCommitSha": "5caeabc01844126b458c2a2666e5fe52d64f8cea",
+  "scriptHash": "7547d89eb7e7",
+  "scriptCommitSha": "73ab94807c7b7dab11d84577584a0c20e28ecf56",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,18 +43,18 @@
     "c3_target_proton": "-2.0693425771151678378797195172496285890220309981034",
     "c3_target_muon": "-2.0202002350212551713823267498857625189020606133007",
     "c3_cross_anchor_swing": "0.049142342093912666497392767363866070119970384802752",
-    "n_candidates_swept": 1281,
+    "n_candidates_swept": 1323,
     "verdict": "NEGATIVE_2FACTOR_SATURATED",
     "n_closures": 0,
     "n_single_anchor_near_matches": 4,
     "best_proton_matcher": {
-      "name": "q2+q-2 − [4]_q",
+      "name": "q²+q⁻² − [4]_q",
       "proton_miss": 0.0016267845048844767,
       "muon_miss": 0.02265913130411073
     },
     "top12_by_proton_agreement": [
       {
-        "name": "q2+q-2 − [4]_q",
+        "name": "q²+q⁻² − [4]_q",
         "proton_miss": 0.0016267845048844767,
         "muon_miss": 0.02265913130411073
       },
@@ -69,7 +69,7 @@
         "muon_miss": 0.017029426950530294
       },
       {
-        "name": "(q;q)_3 − q2+q-2",
+        "name": "(q;q)_3 − q²+q⁻²",
         "proton_miss": 0.007855708295830722,
         "muon_miss": 0.016278685162178244
       },
@@ -89,7 +89,7 @@
         "muon_miss": 0.011635471970435442
       },
       {
-        "name": "J_Hopf(q) + q+q-1",
+        "name": "J_Hopf(q) + q+q⁻¹",
         "proton_miss": 0.012388653703914523,
         "muon_miss": 0.011635471970435442
       },
@@ -104,19 +104,19 @@
         "muon_miss": 0.03889977346584436
       },
       {
-        "name": "q+q-1 − [4]_q",
+        "name": "q+q⁻¹ − [4]_q",
         "proton_miss": 0.01422817454744343,
         "muon_miss": 0.03889977346584436
       },
       {
-        "name": "(q;q)_4 − q2+q-2",
+        "name": "(q;q)_4 − q²+q⁻²",
         "proton_miss": 0.014736507509280676,
         "muon_miss": 0.009230504282990187
       }
     ],
     "single_anchor_near_matches": [
       {
-        "name": "q2+q-2 − [4]_q",
+        "name": "q²+q⁻² − [4]_q",
         "proton_miss": 0.0016267845048844767,
         "muon_miss": 0.02265913130411073
       },
@@ -131,7 +131,7 @@
         "muon_miss": 0.017029426950530294
       },
       {
-        "name": "(q;q)_3 − q2+q-2",
+        "name": "(q;q)_3 − q²+q⁻²",
         "proton_miss": 0.007855708295830722,
         "muon_miss": 0.016278685162178244
       }
