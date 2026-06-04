@@ -850,15 +850,17 @@ theorem to state is **Habiro-ring membership + evaluation**:
 > **Theorem-target (Habiro framing).** If a QOU q-series invariant `X(q)` lies in the
 > Habiro ring `Ẑ = lim_n ℤ[q]/((q;q)_n)`, then it automatically (i) evaluates at **every
 > root of unity** — the semisimple modular-category fibres of the §15 nerve — and (ii)
-> evaluates at the real substrate `q₀` (the archimedean realization). Membership in `Ẑ`
-> is the rigorous **formal → analytic bridge**.
+> admits a **perturbative `q→1` expansion** that pins it (rigidity: an element of `Ẑ` is
+> determined by its roots-of-unity values). **Evaluation at the real `q₀` is a *separate*
+> obligation** (§16.3 C): `|q₀|>1` sits *outside* the cyclotomic series' convergence, so it
+> needs a closed form, bar-symmetry, or resummation — not membership alone.
 
 Why this is *the* useful one — it does three jobs at once:
 - it is the formal-series object (KS's dilogarithm world);
-- it supplies the **analytic evaluation at q₀ without hard analysis** (the only analytic
-  fact that survives the Lean-gate);
-- it threads the **semisimple nerve** (roots of unity = the Reshetikhin–Turaev modular
-  fibres of §15).
+- it pins the element by its **roots-of-unity values** (rigidity) + carries **integrality**
+  — the coherence that threads the §15 nerve;
+- it gives the **perturbative `q→1` expansion** for free. (q₀-evaluation is a *separate*
+  obligation — §16.3 C — not a corollary of membership.)
 
 And it is **not a new invention** — it is precisely QOU's existing open axis: the
 **fibre-level Habiro element `F(q)`** whose Taylor coefficients are the `c_k` ladder (the
@@ -878,3 +880,44 @@ for it, consistent with "keep KS a remark."
 **Net.** Analytic frameworks → remark only (archimedean wall, not Lean-able). Formal
 series → one genuinely useful theorem-shape, the **Habiro-ring membership/evaluation**
 bridge, which is QOU's own open axis with KS as the formal-series reference.
+
+### 16.3 What it takes to *prove* the Habiro framing (owner follow-up — proof obligations)
+
+For a QOU q-series `X(q)`, the framing "`X ∈ Ẑ ⟹ …`" splits into three obligation
+groups (this also **corrects 16.2**: q₀-evaluation is *not* a free consequence).
+
+**(A) General facts about `Ẑ` — the automatic half (Habiro's theorems; prove-once / cite; bounded Lean):**
+- **A1.** `Ẑ = lim_n ℤ[q]/((q;q)_n)` is a ring (`(q;q)_n = ∏_{k=1}^n(1−q^k)`).
+- **A2.** for every root of unity ζ, `ev_ζ : Ẑ → ℤ[ζ]` is a ring hom — `(q;q)_n(ζ)=0` for
+  `n ≥ ord ζ`, so the inverse-limit element has a stable value → **job (i)** (the fibres).
+- **A3.** the perturbative map `Ẑ → ℤ[[q−1]]` (`q→1` Taylor) is well-defined and
+  **injective** → rigidity.
+- **A4.** identity principle: an element is **pinned by its roots-of-unity values** → the
+  §15 nerve glues uniquely.
+
+**(B) The hard, QOU-specific obligation — membership `X ∈ Ẑ`:**
+- **B1.** define `X(q)` precisely (the fibre-level `F(q)`: the `c_k` generating series, or
+  the colored-Jones tower of the canonical braid).
+- **B2.** exhibit the **cyclotomic expansion** `X = Σ_n c_n(q)·(q;q)_n` with
+  `c_n(q) ∈ ℤ[q]` (**integral** Habiro coefficients) — equivalently `X mod (q;q)_n`
+  stabilizes integrally. *This is the crux* — Habiro's theorem for honest knots, **open**
+  for the QOU `c_k` series (PR #1739).
+- **B3.** (optional, full nerve) realize `X` as the `(σ₀,σ₁)` entry of a
+  Garoufalidis–Zagier matrix invariant over the boundary-parabolic reps.
+
+**(C) The q₀ caveat — NOT automatic (corrects 16.2):**
+- **C1.** `q₀ ≈ 1.1097` is real, **`|q₀|>1`**, not a root of unity; `(q;q)_n` grows like
+  `q^{n(n+1)/2}`, so the cyclotomic series **diverges** at `|q|>1`. Membership alone does
+  **not** evaluate at q₀.
+- **C2.** q₀-evaluation requires one of: **(a)** `X` closed-form / rational (`tr_M`, `χ^λ`,
+  `y_λ`) → evaluate directly [usual QOU case]; **(b)** evaluate at `q₀⁻¹` (`|q₀⁻¹|<1`,
+  inside the convergence disk) + **bar-symmetry** `q↦q⁻¹` [bar-symmetric / `Li₂^q`
+  objects]; or **(c)** Borel/resurgent resummation [the archimedean machinery, not
+  Lean-able].
+- QOU's `c_k` ladder already evaluates at q₀ via **small-parameter convergence**
+  (`u ≈ 0.0085`), *independent* of Habiro — so Habiro's value-add is **B2 + A**
+  (integrality + roots-of-unity coherence + rigidity), **not** the q₀ value.
+
+**Net obligation map.** jobs (i) + perturbative expansion ⟸ the **A-facts** (Habiro;
+bounded Lean). theorem-target ⟸ **B2** (integral cyclotomic expansion; open, PR #1739).
+q₀-evaluation ⟸ **C2** (closed-form / bar / resummation) — separate from membership.
