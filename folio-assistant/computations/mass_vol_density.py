@@ -76,9 +76,71 @@ def hbar_q(q: mp.mpf) -> mp.mpf:
 
 
 def density_borromean(q: mp.mpf, q_inv: mp.mpf | None = None) -> mp.mpf:
-    """Algebraic Hecke linking-weight density ρ(q) = (3q²+4+3q⁻²)/4
-    = 5/2 + 3h²/4. Re-exports the canonical `linking_weight_family_a`."""
+    """GLOBAL (production) density ρ_global(q) = (3q²+4+3q⁻²)/4 = 5/2 + 3h²/4
+    — the H₄ Family-A linking-weight scalar ≈ 2.5328 at q₀. Re-exports the
+    canonical `linking_weight_family_a`.
+
+    This is a single SU(2)-blind scalar: it discards the per-knot,
+    per-Wedderburn-block selectivity of the Markov trace. See
+    `density_per_block` for the paper-canonical SU(2)-selective form and
+    `compare_density_readings` for the verified ≈2.378× discrepancy."""
     return linking_weight_family_a(q, q_inv)
+
+
+def density_per_block(tr_M_K: mp.mpf) -> mp.mpf:
+    """PER-BLOCK (paper-canonical, SU(2)-selective) density
+    ρ_pb(K) = tr_M(K, q) = Σ_λ y_λ χ^λ(β_K).
+
+    The M=Vol×Density density factor in its paper-faithful, per-knot,
+    per-Wedderburn-block form (`prop:hoefsmit-scattering-pipeline` Stage 4):
+    the Markov trace over the partitions of the KNOT'S OWN strand count
+    (H₃ for the 3-strand Borromean baryons). Pass to `geom_full_vd` /
+    `mass_vol_density` as the `density` argument — i.e.
+    ``geom_full_vd(vol_K, q, density=density_per_block(tr_M_K))`` is
+    bit-identical to `_li_2_q_util.geom_full_per_block(vol_K, tr_M_K, q)`.
+
+    This is the SU(2)_q density: tr_M = Σ_λ y_λ χ^λ ranges over the
+    Wedderburn blocks (Young diagrams λ), so it sees the per-block
+    structure that the global scalar `density_borromean` collapses.
+
+    ⚠ The two readings are NOT interchangeable: at q₀ the per-block H₃
+    trace tr_M(proton) ≈ 1.0653 differs from the global H₄ scalar
+    ≈ 2.5328 by ≈2.378× (`compare_density_readings`). The per-block
+    reading taken literally gives m_p ≈ 406 MeV (−56.7%); production's
+    near-correct m_p comes from the global scalar landing near the
+    CODATA-implied λ≈2.46 with the (different) H₄ index set. The
+    reconciliation is the OPEN per-block-vs-global question, gated on the
+    per-knot hyperbolic Vol (#1762/#1816) — this helper EXPOSES both
+    readings, it does NOT silently swap production. See
+    `docs/audits/2026-06-04-u1-su2-so3-symmetry-loss-audit.md`."""
+    return tr_M_K
+
+
+def compare_density_readings(
+    q: mp.mpf, tr_M_K: mp.mpf, q_inv: mp.mpf | None = None
+) -> dict:
+    """Side-by-side global vs per-block density at q (the SU(2)-loss gate).
+
+    Returns the global scalar `density_borromean(q)`, the per-block
+    `density_per_block(tr_M_K)`, their ratio (global/per-block), and the
+    discipline-gate verdict (PASS iff |ratio−1| < 1e-6, i.e. the two
+    readings coincide). For the proton at q₀ the gate is RED (ratio
+    ≈ 2.378), which is the verified SU(2) symmetry loss: the global
+    scalar replaces the per-block Markov trace.
+
+    NO fudge is applied — the discrepancy is reported, not tuned away."""
+    rho_global = density_borromean(q, q_inv)
+    rho_pb = density_per_block(tr_M_K)
+    ratio = rho_global / rho_pb
+    gate_pass = abs(ratio - 1) < mp.mpf("1e-6")
+    return {
+        "density_global": rho_global,
+        "density_per_block": rho_pb,
+        "ratio_global_over_per_block": ratio,
+        "gate_pass": gate_pass,
+        "verdict": "PASS" if gate_pass
+        else "RED — global SU(2)-blind scalar ≠ per-block Markov trace",
+    }
 
 
 def geom_full_vd(vol_K: mp.mpf, q: mp.mpf, density: mp.mpf | None = None) -> mp.mpf:
@@ -155,10 +217,40 @@ def _emit_witness() -> None:
     parity_even = abs(pair_average(O0, -th) - pair_average(O0, th))
     parity_odd = abs(pair_half_difference(O0, -th) + pair_half_difference(O0, th))
     tol = mp.mpf("1e-40")
+
+    # ── SU(2) density loss: global scalar vs per-block Markov trace ────
+    # Load the canonical H₃ proton Markov trace from the chi-cache; the
+    # per-block density IS this trace. Compare side-by-side with the
+    # global linking_weight scalar (the verified ≈2.378× SU(2) loss).
+    cmp_pb = None
+    try:
+        import json
+        d = json.loads(
+            (HERE / "chi-proton-h3-at-q0-50dps.witness.json").read_text())
+        tr_M_proton = mp.mpf(d["tr_M_at_q0"])
+        cmp_pb = compare_density_readings(q, tr_M_proton)
+        # geom_full_vd with per-block density ≡ _li_2_util.geom_full_per_block
+        from _li_2_q_util import geom_full_per_block as _gfpb
+        vd_pb = geom_full_vd(vol_borromean(), q,
+                             density=density_per_block(tr_M_proton))
+        pb_equiv = abs(vd_pb - _gfpb(vol_borromean(), tr_M_proton, q))
+    except Exception as e:  # noqa: BLE001
+        print(f"(per-block density comparison skipped: {e!r})")
+        pb_equiv = None
+
     w = WitnessBuilder("mass-vol-density", engine="mpmath")
     w.set_audit_only("docs/workplans/2026-06-04-mass-vol-density-stokes-delta-formalization.md")
     w.add_parameter("q_0", Qs)
     w.add_data("bracket_2_q_at_q0", mp.nstr(bracket2_from_rapidity(q), 16))
+    if cmp_pb is not None:
+        w.add_data("su2_density_loss", {
+            "density_global_H4_scalar": mp.nstr(cmp_pb["density_global"], 16),
+            "density_per_block_H3_trM_proton":
+                mp.nstr(cmp_pb["density_per_block"], 16),
+            "ratio_global_over_per_block":
+                mp.nstr(cmp_pb["ratio_global_over_per_block"], 16),
+            "gate_verdict": cmp_pb["verdict"],
+        })
     for name, val in [
         ("geom_full_equiv_vol_density", eq),
         ("h_eq_2sinh_log_q", h_id),
@@ -170,6 +262,12 @@ def _emit_witness() -> None:
     ]:
         w.add_assertion(name, computed=1 if val < tol else 0, expected=1,
                         source=f"{name}: |Δ| = {mp.nstr(val, 4)} < {mp.nstr(tol, 1)}")
+    if pb_equiv is not None:
+        # geom_full_vd(density=per_block) reproduces geom_full_per_block exactly.
+        w.add_assertion("geom_full_vd_per_block_equiv",
+                        computed=1 if pb_equiv < tol else 0, expected=1,
+                        source=f"geom_full_vd(density=tr_M) ≡ geom_full_per_block: "
+                               f"|Δ| = {mp.nstr(pb_equiv, 4)} < {mp.nstr(tol, 1)}")
     out = w.save()
     print(f"  Witness: {out.name}")
 
@@ -182,4 +280,14 @@ if __name__ == "__main__":
     print(f"  [2]_q = 2cosh(log q₀) = {mp.nstr(bracket2_from_rapidity(q), 12)} (recurring Hecke weight)")
     print(f"  geom_full ≡ Vol·ρ/ℏ²: |Δ| = "
           f"{mp.nstr(abs(geom_full_borromean(q) - geom_full_vd(vol_borromean(), q)), 3)}")
+    try:
+        import json
+        _tr = mp.mpf(json.loads(
+            (HERE / "chi-proton-h3-at-q0-50dps.witness.json").read_text())["tr_M_at_q0"])
+        _c = compare_density_readings(q, _tr)
+        print(f"  SU(2) density loss: global ρ={mp.nstr(_c['density_global'], 8)} "
+              f"vs per-block tr_M(p)={mp.nstr(_c['density_per_block'], 8)} "
+              f"→ ratio {mp.nstr(_c['ratio_global_over_per_block'], 6)} [{_c['verdict']}]")
+    except Exception as e:  # noqa: BLE001
+        print(f"  (SU(2) comparison skipped: {e!r})")
     _emit_witness()
