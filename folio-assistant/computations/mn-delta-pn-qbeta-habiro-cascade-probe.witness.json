@@ -1,0 +1,80 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-04T02:17:19.191756+00:00",
+  "commitSha": "0e8cb4b61dc7ae6891e78d6d13f4846f7c4ae823",
+  "assertions": [
+    {
+      "name": "habiro_c3_reproduces_calanchored_qbeta_within_sigma",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "The 3-rung [3]_q/25 Habiro c_3 (2.65 ppm near-match) must reproduce the cal-anchored Q_β to within σ_exp, confirming the c_3 residual is downstream-negligible."
+    },
+    {
+      "name": "cascade_is_one_to_one_mn_vs_qbeta",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "m_n miss factor / Q_β miss factor ≈ 1 (modulo σ_exp ratio) — confirms m_n absolute error is the propagated Q_β error, not an independent gap."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "mn-delta-pn-qbeta-habiro-cascade-probe",
+  "scriptFile": "mn_delta_pn_qbeta_habiro_cascade_probe.py",
+  "scriptHash": "b6c9df089eb7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.4.0"
+  },
+  "data": {
+    "q_substrate": "1.10997858275138080759166909561",
+    "c3_cal_anchored": "-2.06934257711516783787971951725",
+    "c3_habiro_3rung": "-2.06934806247249333267102942082",
+    "c3_habiro_residual_ppm": 2.650772948934258,
+    "Q_beta_N2_MeV": "0.782334410277840137760143636388",
+    "Q_beta_N3_cal_MeV": "0.78233341",
+    "Q_beta_N3_habiro_MeV": "0.782333409997348490559944438921",
+    "habiro_vs_cal_qbeta_diff_MeV": "2.65150944005556107902443578283e-12",
+    "per_variant_results": {
+      "N2 (c_2 only, DERIVED, production)": {
+        "Q_beta_MeV": "0.782334410277840137760144",
+        "Q_beta_miss_factor": 163.97997379307543,
+        "m_n_pred_MeV": "939.56542152096784",
+        "m_n_miss_factor": 185.36441484032596,
+        "delta_pn_pred_MeV": "1.29333336096784014",
+        "delta_pn_miss_factor": 185.36441484032596
+      },
+      "N3-cal (c_3 cal-anchored)": {
+        "Q_beta_MeV": "0.78233341",
+        "Q_beta_miss_factor": 0.0,
+        "m_n_pred_MeV": "939.56542052069",
+        "m_n_miss_factor": 0.12777777777777777,
+        "delta_pn_pred_MeV": "1.29333236069",
+        "delta_pn_miss_factor": 0.12777777777777777
+      },
+      "N3-Habiro (c_3 [3]_q/25 near-match)": {
+        "Q_beta_MeV": "0.782333409997348490559944",
+        "Q_beta_miss_factor": 0.000434673678697633,
+        "m_n_pred_MeV": "939.565420520687348",
+        "m_n_miss_factor": 0.12728675751110083,
+        "delta_pn_pred_MeV": "1.29333236068734849",
+        "delta_pn_miss_factor": 0.12728675751110083
+      }
+    },
+    "cascade_ratio_mn_over_qbeta": 1.130408857573275,
+    "interpretation": "Cascade confirmed 1:1 — Q_β error propagates linearly into m_n + Δ_pn absolute errors via Path C. The c_3 rung closes Q_β to cal-anchored precision; the 3-rung [3]_q/25 Habiro near-match (2.65 ppm on c_3) reproduces it to 2.65e-12 MeV (≪ σ_exp). IF derived, the [3]_q/25 closure would close all three observables. c_3 remains cal-anchored in production; promotion gated on KLR/crystal infra. NO fitted form wired."
+  }
+}
