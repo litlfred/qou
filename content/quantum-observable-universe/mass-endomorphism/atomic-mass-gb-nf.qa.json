@@ -2349,6 +2349,23 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:atomic-mass-gb-nf' → expected 'atomic_mass_gb_nf'; Lean declares: GBNFAlgebra, markov_descends_through_NF, atomic_mass_dimensionless, atomicMassGBNF, atomicMassGBNF_descends. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "03b974b59052",
+          "ts": "6198797171d7",
+          "lean": "06a845f0f0eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:51:25.786Z",
+        "reviewed_sha": "dc7a4b9c7fddec6075ee31c8d1af6358e6e670c4"
       }
     ],
     "proof-lean-compiles": [
@@ -2788,7 +2805,85 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "03b974b59052",
+          "ts": "6198797171d7",
+          "lean": "06a845f0f0eb"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Substantive interpretive sections (categorical density factor, open question, reading the three forms, witnesses) co-located in statement block with no companion interprets: remark in .ts",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:51:05.610Z",
+        "reviewed_sha": "dc7a4b9c7fddec6075ee31c8d1af6358e6e670c4"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "03b974b59052",
+          "ts": "6198797171d7",
+          "lean": "06a845f0f0eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:51:25.669Z",
+        "reviewed_sha": "dc7a4b9c7fddec6075ee31c8d1af6358e6e670c4"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "03b974b59052",
+          "ts": "6198797171d7",
+          "lean": "06a845f0f0eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:51:25.710Z",
+        "reviewed_sha": "dc7a4b9c7fddec6075ee31c8d1af6358e6e670c4"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "03b974b59052",
+          "ts": "6198797171d7",
+          "lean": "06a845f0f0eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:51:25.746Z",
+        "reviewed_sha": "dc7a4b9c7fddec6075ee31c8d1af6358e6e670c4"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:51:25.786Z"
 }
