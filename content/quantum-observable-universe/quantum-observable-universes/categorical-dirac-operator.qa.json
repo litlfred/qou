@@ -2110,7 +2110,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "definition of categorical Dirac operator D_nabla; chapter scope includes q-deformed operators and categorical connection; no misfiling",
+        "evidence": "Block is the lead definition in sec:categorical-dirac-operator (chapter manifest line 233); topic is the definition of the categorical Dirac operator",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2118,9 +2118,9 @@
           "agent_date": "2026-06-04",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T23:16:38.846Z",
-        "reviewed_sha": "20df0d3b61bacbc8a07d4793e17675afd8cf2129",
-        "notes": "correct placement"
+        "reviewed_at": "2026-06-04T23:23:45.252Z",
+        "reviewed_sha": "4f1d6fe68db74ba82930967e9c7dde64ede7cc39",
+        "notes": "Primary subject matches section scope exactly"
       }
     ],
     "wall-side-statement": [
@@ -2131,8 +2131,8 @@
           "lean": "c827142dac4d"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "definition uses q^{-1} as generic ring unit; limit descriptions (q=1, q->inf) are specialisation notes, not archimedean hypotheses; no Real.*, MeV, or order predicates in statement",
+        "severity": "major",
+        "evidence": "Definition D_nabla = q^{-1}nabla + (1-q^{-1})iota_xi nabla: A -> Omega^1(A) uses generic q, A, nabla — no Real.*, no numeric q value, no ordering predicates; q=1 and q->inf are formal limits in prose commentary only",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2140,11 +2140,11 @@
           "agent_date": "2026-06-04",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T23:16:38.883Z",
-        "reviewed_sha": "20df0d3b61bacbc8a07d4793e17675afd8cf2129",
-        "notes": "generic-ring definition with illustrative specialisation notes"
+        "reviewed_at": "2026-06-04T23:23:45.285Z",
+        "reviewed_sha": "4f1d6fe68db74ba82930967e9c7dde64ede7cc39",
+        "notes": "Generic-ring chapter; q appears as a formal parameter; prose commentary on limits is non-binding narrative"
       }
     ]
   },
-  "updated_at": "2026-06-04T23:16:38.883Z"
+  "updated_at": "2026-06-04T23:23:45.285Z"
 }
