@@ -2552,7 +2552,84 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "79bc02df474f",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "warn",
+        "evidence": "Consequence paragraph appended to proposition body contains interpretive physical meaning (fractional statistics, braid vs inverse distinction) with no companion interprets: remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:45:18.936Z",
+        "reviewed_sha": "508f1df6c2aba293c9d4226f88aaf2d5a5f47ad0"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "79bc02df474f",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:45:18.976Z",
+        "reviewed_sha": "508f1df6c2aba293c9d4226f88aaf2d5a5f47ad0"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "79bc02df474f",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:45:19.009Z",
+        "reviewed_sha": "508f1df6c2aba293c9d4226f88aaf2d5a5f47ad0"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "79bc02df474f",
+          "ts": "3644ff887170",
+          "lean": "7470b43f3d49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:45:19.046Z",
+        "reviewed_sha": "508f1df6c2aba293c9d4226f88aaf2d5a5f47ad0"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T22:45:19.046Z"
 }
