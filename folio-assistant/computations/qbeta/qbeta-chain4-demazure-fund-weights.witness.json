@@ -1,0 +1,102 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-04T00:14:12.475992+00:00",
+  "commitSha": "8ba582f4de7f58a28f51c7f958e72340c46b0a94",
+  "assertions": [
+    {
+      "name": "step5_stub_acknowledged",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Stub uses q-binomial as Demazure-character proxy. Proper Weyl-word enumeration is a follow-up commit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "qbeta-chain4-demazure-fund-weights",
+  "scriptFile": "qbeta_chain4_demazure_fund_weights.py",
+  "scriptHash": "2d6631fc11d5",
+  "scriptCommitSha": "8ba582f4de7f58a28f51c7f958e72340c46b0a94",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Step 5 of Chain 4 — Demazure characters at fundamental weights of sl_n for n ∈ {3, 4, 5}. STUB version uses q-binomial as the representative character coefficient; proper key-tableau enumeration will land in a follow-up commit. Best near-match: D_full(ω_2)_sl3 → NEAR-FUZZY (ratio 0.970635). Anti-pattern guards respected: TIERED reporting; cross-anchor deferred; NO ansatz proposed.",
+  "data": {
+    "residue_target_A": "0.000000000000001804",
+    "prefactor_target": "2.0717327773613738302527359154788178225948053571385",
+    "h_q_substrate_corrected": "0.099081716044258507839177117518281999748464888241219",
+    "q_proton": "1.10997858275138080759166909561",
+    "step5_results_top10": {
+      "D_full(ω_2)_sl3": {
+        "value": "2.0109",
+        "ratio": "0.970635",
+        "tier": "NEAR-FUZZY"
+      },
+      "Σ D_full(ω_1) [sl3, sl4, sl5]": {
+        "value": "3.0",
+        "ratio": "1.44806",
+        "tier": "NEAR-CLOSE"
+      },
+      "D_full(ω_2)_sl4": {
+        "value": "3.04371",
+        "ratio": "1.46916",
+        "tier": "NEAR-CLOSE"
+      },
+      "D_full(ω_3)_sl4": {
+        "value": "3.04371",
+        "ratio": "1.46916",
+        "tier": "NEAR-CLOSE"
+      },
+      "D_full(ω_1)_sl3": {
+        "value": "1.0",
+        "ratio": "0.482688",
+        "tier": "MISS"
+      },
+      "D_full(ω_1)_sl4": {
+        "value": "1.0",
+        "ratio": "0.482688",
+        "tier": "MISS"
+      },
+      "D_full(ω_1)_sl5": {
+        "value": "1.0",
+        "ratio": "0.482688",
+        "tier": "MISS"
+      },
+      "D_full(ω_2)_sl5": {
+        "value": "4.10968",
+        "ratio": "1.98369",
+        "tier": "MISS"
+      },
+      "D_full(ω_4)_sl5": {
+        "value": "4.10968",
+        "ratio": "1.98369",
+        "tier": "MISS"
+      },
+      "D_full(ω_3)_sl5": {
+        "value": "6.22044",
+        "ratio": "3.00253",
+        "tier": "MISS"
+      }
+    },
+    "best_match": {
+      "candidate": "D_full(ω_2)_sl3",
+      "tier": "NEAR-FUZZY",
+      "ratio": "0.970635"
+    },
+    "near_match_count": 1,
+    "next_step": "Proper Demazure operator enumeration + key-tableau coefficients"
+  }
+}
