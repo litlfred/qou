@@ -15,7 +15,7 @@
 | Young diagrams | `Mathlib.Combinatorics.Young.YoungDiagram` | Yes — combinatorial foundation |
 | Semistandard Young tableaux | `Mathlib.Combinatorics.Young.SemistandardTableau` | Yes — combinatorial foundation |
 | Standard Young tableaux + major index | Limited — major index not directly available | Partial |
-| Symmetric functions / Schur polynomials | `Mathlib.RingTheory.MvPolynomial.Symmetric` | Yes (basic) |
+| Symmetric polynomials (mv-polynomials) | `Mathlib.RingTheory.MvPolynomial.Symmetric` | Partial — Schur polynomials / full symmetric-functions algebra may still be a gap depending on residue A's exact need |
 | Demazure modules / characters | **None** | **Gap** |
 | Kashiwara crystal graphs | **None** | **Gap** |
 | KLR algebra structure | **None** | **Gap** |

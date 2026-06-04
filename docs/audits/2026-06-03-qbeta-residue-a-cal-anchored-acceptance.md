@@ -1,7 +1,7 @@
 # Q_β residue A — formal acceptance as CAL-3-anchored (2026-06-03)
 
 > **Decision**: Following four independent NEGATIVE searches for a single-
-> formula categorical identification of the Q_β residue A at u_substrate,
+> formula categorical identification of the Q_β residue A at `u_substrate`,
 > the residue is **formally accepted as inherently CAL-3-anchored** in
 > current production. Promoting `c_3` from tier `cal-anchored` to tier
 > `derived` requires a **composite Kashiwara operator structure** that
