@@ -4866,6 +4866,37 @@ export const references: CSLData[] = [
     note: "arXiv:math/9911033. Added 2026-05-19 from uploads/ gap audit. Possible fit with QOU's Riemann-surface / Bring's-surface geometry (archimedean-universe chapters) but no obvious citation target found in current QOU prose; mark pending-placement.",
   }),
 
+  ref({
+    id: "kontsevich-soibelman-2008",
+    type: "article",
+    title: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations",
+    author: [
+      { family: "Kontsevich", given: "Maxim" },
+      { family: "Soibelman", given: "Yan" },
+    ],
+    issued: { "date-parts": [[2008]] },
+    "container-title": "arXiv preprint",
+    URL: "https://arxiv.org/abs/0811.2435",
+    note: "arXiv:0811.2435 (148 pp, arXiv-only). Added 2026-06-04 from uploads/0811.2435v1.pdf. Comparison with QOU in docs/audits/2026-06-04-kontsevich-soibelman-0811.2435-qou-comparison.md: source of the special-Lagrangian <-> central/trace-observable dictionary, the Euler-form <-> Frobenius-pairing analogy, and the multiplicative wall-crossing formula QOU avoids by pinning q_0. RIGOR CAVEAT: many KS proofs are sketches (Thm 3/4 say 'details to the reader'); admit to QOU content only if Lean-backable.",
+  }),
+
+  ref({
+    id: "garoufalidis-zagier-2024",
+    type: "article-journal",
+    title: "Knots, Perturbative Series and Quantum Modularity",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Zagier", given: "Don" },
+    ],
+    issued: { "date-parts": [[2024]] },
+    "container-title": "Symmetry, Integrability and Geometry: Methods and Applications (SIGMA)",
+    volume: "20",
+    page: "055",
+    DOI: "10.3842/SIGMA.2024.055",
+    URL: "https://arxiv.org/abs/2111.06645",
+    note: "arXiv:2111.06645, SIGMA 20 (2024) 055. Added 2026-06-04 from uploads/2111.06645v3.pdf. Rigorous all-orders refinement of the Kashaev volume conjecture: a matrix invariant whose (sigma_0, sigma_1) entry is the Kashaev invariant in the Habiro ring (sigma_0 = trivial rep / unknot column). DIRECT fit with QOU's Kashaev / Habiro-ring content (QOU.Kashaev.VolumeConjecture, Phi_q / Li_2^q). Preferred citation for the Kashaev-on-trivial-knot sub-part over the bare 1995 conjecture.",
+  }),
+
   // ── Thurston — Princeton notes on 3-manifold geometry/topology ─
   // (merged from main via PR #736 — kept verbatim from origin/main)
   ref({
