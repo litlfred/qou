@@ -150,14 +150,21 @@ Script:
   (hence c_11+, hence `A` to high precision) needs canonical higher-order c_k
   **or** a categorical derivation of `Q_A·cos α_eff`'s zero.
 
-## Step 3 — Lean statement (build-pending; env unavailable in sandbox)
+## Step 3 — Lean lemma (proof complete; mechanical build confirming)
 
-The Lean toolchain is **not usable in the current sandbox** (no project path
-for `lean_run_code`; `leansearch` SSL failure; mathlib cache 403 all session).
-Per the formalize-first discipline (`compute-author.md §3.3`), the **statement**
-is captured here ready to drop into a `.lean` and discharge once the env is up
-(`lean_setup`); it is deliberately **not** committed into the `QOU` lib tree
-unverified, so it cannot break `lean_ci`.
+The toolchain was initially mis-judged "unavailable" (no project path for
+`lean_run_code`; `leansearch` SSL; cache 403). The real blocker was the elan
+download host `release.lean-lang.org` being firewalled while GitHub is
+allowlisted — the **GitHub-release toolchain workaround** (documented in
+`lean-environment-setup.md` §"Web-sandbox addendum", and now routed to faster
+by its §"FAST ROUTE" + the sub-agent runbook) unblocks it. The lemma is now a
+real file with a **complete proof** (no `sorry`):
+[`QOU/QBeta/RationalCoeffRecurrence.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/RationalCoeffRecurrence.lean),
+verified standalone against mathlib (pinned `f897ebcf`, v4.24.0). It is wired
+into `QOU.lean` once the from-source mathlib olean build confirms a clean
+compile, so it cannot break `lean_ci` before then.
+
+The lemma grounds "find the kernel `R`" ≡ "find the minimal denominator `Q`":
 
 The claim grounds "find the kernel `R`" ≡ "find the minimal denominator `Q`":
 
