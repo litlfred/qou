@@ -51,11 +51,11 @@ Discharge guidance:
 
 | Stat | Value |
 |---|---|
-| `.lean` files in `content/quantum-observable-universe/lean/QOU/` with `sorry` | **255** |
-| Raw `sorry` text matches (includes comments / docstrings) | **653** |
-| **Lean classes with `sorry` in body (§3b-cond catalog)** | **202** |
-| **Total class-body sorries** | **227** |
-| Approximate non-class sorries (potentially dischargeable) | **~426** |
+| `.lean` files in `content/quantum-observable-universe/lean/QOU/` with `sorry` | **241** |
+| Raw `sorry` text matches (includes comments / docstrings) | 653 (uncorrected) — **491** with the `(?!-)` correction |
+| **Lean classes with `sorry` in body (§3b-cond catalog)** | **194** |
+| **Total class-body sorries** | **219** |
+| Approximate non-class sorries (potentially dischargeable) | **~272** |
 
 ## By area rollup
 
@@ -942,10 +942,16 @@ for f in glob.glob('content/quantum-observable-universe/lean/QOU/**/*.lean', rec
   the scan may stop early. Spot-checking the high-density classes
   did not surface mis-attribution, but the catalog should be
   treated as ~5% imprecise rather than exact.
-- The `sorry` regex matches the literal token. It does NOT
-  distinguish `sorry` (the tactic) from `sorry` appearing in a
-  comment / docstring. Spot-checking suggests this is rare in
-  class bodies.
+- The `sorry` regex must use the negative lookahead
+  `\bsorry\b(?!-)` to skip the `sorry-free` docstring phrase. The
+  pre-correction regex `\bsorry\b` over-counts by **162** matches
+  (~25 %), almost all in
+  `BraidKnot/PeriodicTableUniqueness.lean` (119 `sorry-free`
+  abbrevs for the 119-element periodic-table coverage). The
+  headline numbers above are post-correction; the legacy 255-file
+  / 653-sorry / 202-class / 227-class-body / ~426-non-class
+  figures cited in earlier audit drafts and skill docs are
+  inflated artefacts of the old regex.
 - "Class with `sorry`" includes classes whose fields use
   `extend` patterns or `decide` placeholders; the catalog should
   be the START of analysis, not the END.
