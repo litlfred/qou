@@ -344,6 +344,17 @@ jobs:
           python3 folio-assistant/computations/audits/fitted_labelled_canonical_audit.py || true
           python3 -c "import json; d=json.load(open('folio-assistant/computations/audits/fitted-labelled-canonical-audit.witness.json')); print(f'fitted-labelled-canonical-audit: flagged={d[\"data\"][\"flagged_script_count\"]} issues={d[\"data\"][\"total_issues\"]} (baseline 0)')"
 
+      - name: c_k/d_k canonical registry guard (strict)
+        # Enforces the flip-flop guard from
+        # docs/coordination/ck-dk-canonical-registry.md §8: a WIRED
+        # c_k/d_k rung MUST be tier `canonical`, and the JSON's
+        # production wiring must match the per-rung `wired` flags.
+        # Strict — fails CI on drift so the c_k/d_k status cannot
+        # silently flip-flop again (the recurring problem the registry
+        # was built to stop). See PR #1813 (registry) + #1818 (paper
+        # alignment). Validator: docs/coordination/ck_dk_registry_validate.py.
+        run: python3 docs/coordination/ck_dk_registry_validate.py
+
       - name: I14 witness-provenance audit (warn-only)
         # Every *.witness.json under folio-assistant/computations/
         # must declare engine, scriptFile, commitSha (the
