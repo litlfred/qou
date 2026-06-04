@@ -72,66 +72,89 @@ member of a `REFUTED` class, do not re-run it.**
 | C9 | **Per-knot `Vol(β_K)` flip for the light series** (production swap) | **NOT VIABLE as a flip** — per-block undershoot grows `−57%`(p) → `−95%`(T); diagnostic-only | Option-A per-knot Vol diagnostic (PR #1816) |
 | C10 | **Khovanov–Rozansky `sl_N`** import for the H₃→H₄ `+1` | **REFUTES (wrong axis)** — its `+1` is gauge rank N, the transverse axis; importing it misleads | literature import (PR #1808) |
 | C11 | **Volume conjecture** as the strand-count limit | **SILENT** — limit parameter is color N / root-of-unity order, not strand count | literature import (PR #1808) |
+| C12 | **Trace-level Markov-stabilization** (`Ind_{H₃}^{H₄}` under `tr_M`; M1 identity-trace + M2 `z^{±k}` renormalised; mass-side axis) | **REFUTED** — `z(q₀)=0.4993 < 1 < linking_weight=2.5328` (direction obstruction); `tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ f^λ = 1` exactly, not 2.53 (M1); no exact `z^{±k}·(clean H₃)` coincidence (M2); `z⁻¹ = q^½+q^{-½}` irrational | sibling probe — PR #1850 (merged `e43d071d`), formalize-first prediction confirmed |
 
 **Reading.** The real-q axis (C1–C4), the constant-kernel axis (C5), the
-Pell-Lucas-into-free-rungs axis (C6), the SDP-extraction axis (C7), and the
-algebra-tower box-adding axis (C8) are all closed. C9 is closed as a *production
-flip* (it remains a legitimate diagnostic). C10–C11 are literature dead-ends for
-the H₃→H₄ jump.
+Pell-Lucas-into-free-rungs axis (C6), the SDP-extraction axis (C7), the
+algebra-tower box-adding axis (C8), and **the trace-level Markov-stabilization
+axis (C12)** are all closed. C9 is closed as a *production flip* (it remains a
+legitimate diagnostic). C10–C11 are literature dead-ends for the H₃→H₄ jump.
+**Both surviving mass-side mechanisms (algebra-tower C8, trace-level C12) are
+now refuted**; per #1850's synthesis, the production `linking_weight =
+(1/4)·Σ_{λ⊢4} dim_q ≈ 2.53` is best read as a **CODATA-implied near-match**
+(landing near `λ = m_p/(m_e·Vol/ℏ²) ≈ 2.46`), not a derived categorical count.
 
 ---
 
-## 3. The one open axis — trace-level Markov-stabilization
+## 3. The remaining open axis — fibre-level Habiro element F(q) (decay-side only)
 
-Exactly one structurally-motivated, **not-yet-run** axis survives, and it is the
-same object from two directions:
+> **Update 2026-06-04 (post-#1850).** The original §3 listed **two facets** of
+> the open axis (mass-side `Ind_{H₃}^{H₄}` under `tr_M` + decay-side fibre
+> Habiro). The mass-side facet has now been **REFUTED at the canonical
+> trace-stabilization level** by PR #1850 (table row C12). The §4
+> formalize-first gate predicted exactly this — that the trace-level identity
+> would fail the invariant check — and the canonical probe confirmed it. **The
+> remaining open axis is decay-side only**: the fibre-level complex-analytic
+> Habiro element F(q) of §1, never a real-q mass-side trace identity.
 
-- **H₃→H₄ jump (mass-side, shared-root):** the **box-adding induction functor
-  `Ind_{H₃}^{H₄}` under the Markov trace** `tr_M = Σ_λ y_λ χ^λ` — i.e.
-  Markov-stabilization at the **trace level**, not the algebra-tower level.
-  PR #1808 names this the lead after eliminating C10/C11; PR #1841 refuted the
-  **algebra-tower** version (C8) and **explicitly deferred to the trace-level
-  version as the orthogonal axis to pursue next.** It has **not** been run.
-- **Q_β c_k ladder (decay-side):** the fibre-level Habiro element `F(q)` of §1,
-  whose kernel `R(q,ξ)` is non-constant q-rational (C5 ruled out constants) and
-  whose evaluation is root-of-unity / complex-analytic (C1–C4 ruled out real-q).
+- **Mass-side `linking_weight ≈ 2.53` (refuted):** the algebra-tower box-adding
+  (C8, PR #1841) and the trace-level Markov-stabilization (C12, PR #1850) both
+  fail. The 2.53 multiplier is **CODATA-implied near-match** territory, not a
+  derived categorical count — full provenance in #1850's synthesis and
+  [`_li_2_q_util.py`](../../folio-assistant/computations/_li_2_q_util.py)
+  lines 298–313.
+- **Decay-side fibre Habiro element F(q) (open):** the keystone of §1, whose
+  kernel `R(q,ξ)` is non-constant q-rational (C5 ruled out constants) and whose
+  evaluation is root-of-unity / complex-analytic (C1–C4 ruled out real-q). This
+  is **not** a trace identity over real q at a real anchor; it is a
+  fibre-level (formal/cyclotomic) q-series object per CLAUDE.md
+  §"Im(q) at fibre vs observable level". **The previous framing that called the
+  mass-side trace identity and the decay-side fibre element "two facets of one
+  question" is too strong** — they were two candidate mechanisms; only one
+  survived.
 
-These are **two facets of one question** — *what categorical operation
-generates the ladder as a strand/box is added under the trace?* Both are the
-shared-root audit's named productive directions (Option E / GAP-A;
-[`2026-05-30-l2-100x-status-3-failing-shared-root.md`](2026-05-30-l2-100x-status-3-failing-shared-root.md)),
-and both are flagged there as **research-grade, multi-session** — explicitly
-**not** a single-session foreground discharge. The Δ_λ gate
-(CLAUDE.md §"Precision goals → Δ_λ gate") bars a 7th *fit-based* ansatz; this
-axis is **structural** (a trace-weighted induction identity), so it is in-bounds
-provided it is run as a derivation with the §1 invariants as gates, never as a
-fit.
+The §1 invariants for any F(q) candidate (fibre-level, anchor-stable,
+bar-even, integer `q=1` shadow) stand unchanged.
 
 ---
 
 ## 4. Formalize-first gate for the next probe (narrow before you run)
 
-Per CLAUDE.md §"Formalize-first probe discipline", state the invariant the
-surviving class must satisfy **before** launching the trace-level probe, so a
-refuted sub-case is killed on paper rather than by an expensive scan:
+> **Update 2026-06-04.** PR #1850 ran a textbook execution of this gate against
+> the (now-refuted) trace-level axis: the `z(q₀) = 1/(q^½+q⁻^½) < 1` direction
+> obstruction was identified **before** any anchor scan, narrowing the probe
+> from "scan all trace constructions" to "test M1 (identity trace) + M2 (`z^{±k}`
+> renormalised) only" — and both fell. This is the discipline working as
+> intended; the gate killed the class on the structural invariant, not on a
+> wide numeric search. Apply the same shape to any future F(q) candidate.
 
-1. **Hypothesis class.** `c_{k}` (equivalently the Family-A `linking_weight`)
-   `= Markov-weighted box-adding sum` over `Ind_{H₃}^{H₄}` corner-adds, weighted
-   by `y_λ` under `tr_M`.
-2. **Invariant the whole class must satisfy.** (a) **Anchor-stability** — the
-   produced coefficient must pass proton+muon swing `< 1%` (registry §8); (b)
-   **bar-evenness** / `q↦q⁻¹` symmetry of any `F(q)` (the c_2 = −1 rung is
+Per CLAUDE.md §"Formalize-first probe discipline", state the invariant the
+surviving class must satisfy **before** launching a probe, so a refuted
+sub-case is killed on paper rather than by an expensive scan:
+
+1. **Hypothesis class.** A fibre-level (formal-q / cyclotomic) Habiro element
+   `F(q)` whose Habiro / Taylor coefficients reproduce the ladder `c_k`, with a
+   non-constant q-rational kernel `R(q,ξ)` satisfying
+   `F(qξ) = R(q,ξ)·F(ξ)`. **Not** a real-q mass-side trace identity (refuted by
+   C8 + C12).
+2. **Invariant the whole class must satisfy.** (a) **Anchor-stability** — any
+   coefficient produced must pass proton+muon swing `< 1%` (registry §8);
+   (b) **bar-evenness** / `q↦q⁻¹` symmetry of any `F(q)` (the c_2 = −1 rung is
    bar-even, Kashiwara `f̃₁²`); (c) **q=1 classical-limit shadow** must
-   reproduce the known integer (`c_3 → J_Hopf(1) = −2`) without fitting.
+   reproduce the known integer (`c_3 → J_Hopf(1) = −2`) without fitting; (d)
+   **direction sanity** — `|F(q₀)|` and any scaling factor must respect the
+   target observable's magnitude (the lesson of #1850: `z<1` cannot multiply up
+   to `linking_weight > 1`).
 3. **Formalize it.** A Lean lemma (even conditional `class` + `-- Ref:` per
-   §3b-cond) stating the trace-weighted induction identity, or a rigorous
+   §3b-cond) stating the q-difference equation for `F(q)`, or a rigorous
    symbolic q-difference argument for `R(q,ξ)`. The proved-sorry-free recursion
    *engine* already exists (registry §5); what is missing is the **kernel**, so
    the formalization target is `R(q,ξ)` (non-constant q-rational, ζ₄ residue,
    √u→u² lift), not another value.
-4. **Let the result narrow the probe.** If the trace-weighted box-add fails the
-   `q=1` shadow or the bar-evenness invariant symbolically, **do not** run the
-   numerical anchor sweep — add a new row to §2 and stop.
+4. **Let the result narrow the probe.** If a candidate `F(q)` fails the `q=1`
+   shadow, the bar-evenness invariant, or the direction sanity check
+   symbolically, **do not** run the numerical anchor sweep — add a new row to
+   §2 and stop.
 
 ---
 
@@ -146,10 +169,15 @@ refuted sub-case is killed on paper rather than by an expensive scan:
 - **Per-rung status changes still go to the registry**, never here. This doc
   records *methods*, the registry records *tiers*. Do not duplicate a rung tier
   into this file.
-- The trace-level axis (§3) is **owner-gated multi-session research**, not a
-  foreground discharge — coordinate with the active Phase-2 / 1762-roadmap
-  siblings (PRs #1808, #1816, #1841) via `coordinate.md` before opening a probe
-  branch; overlap at the Hecke `Ind`/`tr_M` compute is near-certain.
+- The decay-side fibre-Habiro axis (§3) is **owner-gated multi-session
+  research**, not a foreground discharge — coordinate with the active Phase-2 /
+  1762-roadmap siblings (PRs #1808, #1816, #1841, #1850, #1811) via
+  `coordinate.md` before opening a probe branch; overlap at the Hecke `tr_M` /
+  fibre-Habiro machinery is near-certain.
+- **Mass-side `linking_weight` is now CODATA-implied near-match territory** —
+  not "open keystone." Probes that propose a mass-side trace identity for
+  `2.53` are members of refuted classes C8 (algebra-tower) or C12 (trace-level);
+  cite those rows and do not re-run.
 
 ---
 
@@ -160,4 +188,5 @@ refuted sub-case is killed on paper rather than by an expensive scan:
 - **Truncation-order framing (N is a precision knob):** [`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 - **Shared root cause (Q_β / m_n / Δ_pn):** [`2026-05-30-l2-100x-status-3-failing-shared-root.md`](2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - **H₃→H₄ literature import (named the trace-level lead):** [PR #1808](https://github.com/litlfred/qou/pull/1808) (doc `2026-06-04-h3-h4-jump-literature-import.md` lands when #1808 merges)
-- **Refuted-class source PRs:** #1811, #1816, #1822, #1831, #1839, #1841, #1842 (merged)
+- **Trace-level axis scope + refutation (C12):** [`2026-06-04-markov-stab-trace-axis-scope.md`](2026-06-04-markov-stab-trace-axis-scope.md), [`markov_stab_trace_axis_probe.py`](../../folio-assistant/computations/probes/markov_stab_trace_axis_probe.py), `markov-stab-trace-axis-probe.witness.json` (all merged via PR #1850)
+- **Refuted-class source PRs:** #1811, #1816, #1822, #1831, #1839, #1841, #1842, #1850 (all merged)
