@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean"
   },
   "source_hashes": {
-    "md": "d9bcab02e0ca",
-    "ts": "2bef66438ca9",
+    "md": "048f8957df0e",
+    "ts": "e2ad701e4c36",
     "lean": "b29fb3a175af"
   },
   "criteria": {
@@ -2212,6 +2212,23 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "048f8957df0e",
+          "ts": "e2ad701e4c36",
+          "lean": "b29fb3a175af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:36:47.273Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
       }
     ],
     "proof-lean-compiles": [
@@ -2568,13 +2585,13 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "d9bcab02e0ca",
-          "ts": "2bef66438ca9",
+          "md": "048f8957df0e",
+          "ts": "e2ad701e4c36",
           "lean": "b29fb3a175af"
         },
         "result": "fail",
         "severity": "minor",
-        "evidence": "brane-tower-q-laplacian-decay.md:75-86 — '**Status: provable**' status note and '**Summary.**' paragraph are interpretive/status content embedded in proposition .md; should move to authorNotes in .ts",
+        "evidence": "md has '## Physical reading' section with interpretation in same proposition block; no companion interprets: remark in .ts proofs list",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2582,15 +2599,15 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:18:21.445Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:36:27.946Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "d9bcab02e0ca",
-          "ts": "2bef66438ca9",
+          "md": "048f8957df0e",
+          "ts": "e2ad701e4c36",
           "lean": "b29fb3a175af"
         },
         "result": "pass",
@@ -2601,15 +2618,15 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:18:21.483Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:36:47.152Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "d9bcab02e0ca",
-          "ts": "2bef66438ca9",
+          "md": "048f8957df0e",
+          "ts": "e2ad701e4c36",
           "lean": "b29fb3a175af"
         },
         "result": "pass",
@@ -2620,15 +2637,15 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:18:21.521Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:36:47.189Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "d9bcab02e0ca",
-          "ts": "2bef66438ca9",
+          "md": "048f8957df0e",
+          "ts": "e2ad701e4c36",
           "lean": "b29fb3a175af"
         },
         "result": "pass",
@@ -2639,8 +2656,8 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:18:21.556Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:36:47.235Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
       }
     ],
     "detangler-no-forward-ref": [
@@ -2663,5 +2680,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-04T14:18:21.592Z"
+  "updated_at": "2026-06-04T17:36:47.273Z"
 }
