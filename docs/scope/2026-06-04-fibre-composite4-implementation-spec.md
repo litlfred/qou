@@ -208,6 +208,18 @@ live in the fibre, potentially complex).
    even a clean `/25 = 25` at q=1 does **not** make c_3 derived — the
    cross-anchor *swing* is the obstruction, and it is fibre-level.
 
+**First probe landed (this branch).**
+[`qbeta_c3_hopf_habiro_profile_probe.py`](../../folio-assistant/computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py)
+wires the Step-3 machinery to the Hopf object: `classical_limit` recovers
+the proven `-2` (both framings); the symbolic identity
+`J_bal = -[2]_q = -quantum_int(4)/quantum_int(2)` holds;
+`habiro_profile(J_bal)` is real and pole-free with **only N=1 (= q=1)
+returning -2** (the #1811 lesson on the Hopf object); and the bare real-q
+Hopf framing is **rigid** across the proton/muon anchors (swings 2.5×10⁷×
+less than empirical c_3). NEGATIVE / bounding — residue A confirmed
+fibre-level; the open object is a non-trivial **cyclotomic
+(colored-Jones)** element, attack-1's next concrete target.
+
 **Acceptance for "derived" (strict):** the chosen element reproduces
 c_3 to ≤ its current near-match (≤ 2.65 ppm) at **≥ 3 distinct q₀
 anchors** (proton, and two others from `qbeta-c3-habiro-3rung-crossanchor-rigidity`)
