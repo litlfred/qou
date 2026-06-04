@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-"""Cross-check tr_M(β_atom) at 1ppb between two independent paths.
+"""Cross-check tr_M(β_atom) at 1 ppQ between independent paths.
+
+The 1 ppQ (1e-15) L1 certification rests on the three FLOAT-CLEAN methods
+(Hoefsmit mpfr 50 dps, chi-cache, Habiro), which agree to ~1e-48.
+markov_peel is an INDEPENDENT cross-check at a looser float tolerance —
+its witness is evaluated at the float64 q_0 and its exact symbolic path
+is incomplete for nuclei (the open #508 Phase-2 rewrite), so it does NOT
+certify 1 ppQ. (Filename retains `1ppb` for consumer/back-compat; the gate
+is now 1 ppQ.)
 
 Compares the canonical Markov trace tr_M @ q_0 from:
   - Hoefsmit / mpfr 50-dps brute-force
@@ -56,7 +64,16 @@ CHICACHE_PATH = _pb.witness_path("canonical-tr-m-via-chi-cache.witness.json", HE
 HABIRO_EXT_PATH = _pb.witness_path("habiro-coefficients-extended.witness.json", HERE)
 OUT_PATH = HERE / "cross-check-trM-1ppb.witness.json"
 
-TOLERANCE = mpf("1e-9")  # 1 ppb relative
+# 1 ppQ (1e-15) L1 certification rests on the three FLOAT-CLEAN methods
+# (Hoefsmit mpfr 50 dps / chi-cache / Habiro), which agree to ~1e-48.
+# markov_peel's LaurentQ reduction is exact-in-q, but its witness is
+# evaluated at the float64 q_0 (and its exact symbolic path is incomplete
+# for nuclei — the open #508 Phase-2 rewrite), so peel is an INDEPENDENT
+# cross-check held to a looser float tolerance, NOT a 1 ppQ-certifying
+# method. Do not silently fold peel's float64 into the 1 ppQ claim.
+TOLERANCE_PPQ = mpf("1e-15")   # L1 gate on the exact methods (1 part/quadrillion)
+TOLERANCE_PEEL = mpf("1e-12")  # peel float-path independent-check tolerance
+TOLERANCE = TOLERANCE_PPQ      # back-compat alias
 
 # Map from peel-witness (Z, N) tuples to atom-name strings used by
 # the Hoefsmit witness for its `atom` field. Keep the atom names in
@@ -147,7 +164,7 @@ def _character_closed_form_anchor(tol: "mpf") -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true",
-                    help="Exit non-zero on any > 1ppb divergence")
+                    help="Exit non-zero on any > 1ppQ exact-method divergence")
     ap.add_argument("--dps", type=int, default=50,
                     help="mpmath working precision (default 50)")
     args = ap.parse_args()
@@ -208,7 +225,8 @@ def main() -> int:
     print("=" * 76)
     print("Cross-check tr_M @ q_0 — Hoefsmit (mpfr 50dps) vs markov_peel")
     print("=" * 76)
-    print(f"  tolerance: {TOLERANCE} (1 ppb)  |  dps: {args.dps}")
+    print(f"  1 ppQ gate (exact methods): {mp.nstr(TOLERANCE_PPQ,1)}  |  "
+          f"peel float-check: {mp.nstr(TOLERANCE_PEEL,1)}  |  dps: {args.dps}")
     print()
     print(f"  {'atom':<14} {'Hoefsmit':>18}  {'markov_peel':>18}  "
           f"{'chi-cache':>18}  {'Habiro':>18}  {'|Δ|max':>9}  status")
@@ -273,7 +291,19 @@ def main() -> int:
             rel_pairs["peel_vs_chi"] = fabs(p_val - c_val) / fabs(p_val) if p_val != 0 else mpf(0)
         rel_max = max(rel_pairs.values()) if rel_pairs else mpf(0)
 
-        ok = rel_max < TOLERANCE
+        # Split the certification: the 1 ppQ L1 claim rests ONLY on the
+        # float-clean methods (Hoefsmit / chi-cache / Habiro). peel is held
+        # to a looser float tolerance — it is an independent cross-check,
+        # not a 1 ppQ-certifying path (see header).
+        exact_keys = ("hoef_vs_chi", "hoef_vs_habiro", "chi_vs_habiro")
+        exact_pairs = {k: rel_pairs[k] for k in exact_keys if k in rel_pairs}
+        exact_max = max(exact_pairs.values(), default=mpf(0))
+        peel_max = max((v for k, v in rel_pairs.items() if "peel" in k),
+                       default=mpf(0))
+        # certified_1ppQ requires ≥2 float-clean methods agreeing (an actual
+        # cross-check), not just one method present.
+        certified_1ppQ = bool(exact_pairs) and exact_max < TOLERANCE_PPQ
+        ok = exact_max < TOLERANCE_PPQ and peel_max < TOLERANCE_PEEL
         if not ok:
             any_diverge = True
         status = "OK" if ok else "DIVERGE"
@@ -293,8 +323,14 @@ def main() -> int:
 
         d: dict = {
             "atom": atom,
-            "within_1ppb": ok,
+            "within_1ppQ": ok,
             "rel_delta_max": str(rel_max),
+            "exact_method_rel_delta": str(exact_max),
+            "peel_rel_delta": str(peel_max),
+            "certified_1ppQ_exact_methods": certified_1ppQ,
+            "n_exact_methods": int(h_val is not None)
+                               + int(c_val is not None)
+                               + int(hab_abs is not None),
         }
         if h_val is not None: d["hoefsmit_50dps"] = str(h_val)
         if p_val is not None: d["markov_peel"] = str(p_val)
@@ -355,13 +391,18 @@ def main() -> int:
     w.add_data("any_diverge", any_diverge)
     w.add_data("deltas", deltas)
     w.add_data("character_closed_form_anchor", anchor)
+    n_certified = sum(1 for d in deltas if d.get("certified_1ppQ_exact_methods"))
+    w.add_data("n_atoms_certified_1ppQ_exact_methods", n_certified)
     w.add_assertion(
-        name="all_atoms_within_1ppb",
+        name="all_atoms_within_1ppQ",
         computed=0 if any_diverge else 1,
         expected=1,
         source=(
-            "tr_M(β_atom) @ q_0 must agree between Hoefsmit/mpfr "
-            "and markov_peel paths within 1 ppb relative"
+            "tr_M(β_atom) @ q_0: the float-clean methods (Hoefsmit mpfr / "
+            "chi-cache / Habiro) must agree to 1 ppQ (1e-15); markov_peel "
+            "(float64 q_0 eval; exact path incomplete for nuclei, #508 P2) "
+            "is an independent check held to 1e-12, NOT a 1 ppQ-certifying "
+            "method"
         ),
     )
     w.add_assertion(
@@ -382,12 +423,12 @@ def main() -> int:
     print()
     print(f"  Witness: {out_path.name}")
     print(f"  atoms compared: {len(deltas)}, divergent: "
-          f"{sum(1 for d in deltas if not d['within_1ppb'])}")
+          f"{sum(1 for d in deltas if not d['within_1ppQ'])}")
 
     if args.strict and (any_diverge or anchor["n_fail"]):
         print()
         if any_diverge:
-            print("  STRICT mode: divergence above 1ppb — exiting 1")
+            print("  STRICT mode: divergence above the 1 ppQ / peel gate — exiting 1")
         if anchor["n_fail"]:
             print("  STRICT mode: χ^λ engine disagrees with closed form — exiting 1")
         return 1
