@@ -190,18 +190,37 @@ def build_candidates(inv: dict, q: mp.mpf) -> dict[str, mp.mpf]:
 def report_proximity(
     cands: dict[str, mp.mpf], target: mp.mpf
 ) -> dict[str, dict]:
-    """TIERED proximity report (predecessor convention)."""
+    """TIERED proximity report (predecessor convention).
+
+    Tier thresholds match their unit-clear names:
+      NEAR-1PPM   = rel_err < 1e-6   (within 1 part per million)
+      NEAR-0.1PCT = rel_err < 1e-3   (within 0.1%)
+      NEAR-1PCT   = rel_err < 0.01   (within 1%)
+      NEAR-FUZZY  = rel_err < 0.1    (within 10%)
+      NEAR-CLOSE  = rel_err < 0.5    (within 50%)
+      MISS        = rel_err ≥ 0.5
+
+    Per-candidate dict carries BOTH `_num` (mp.mpf, used for sort) and
+    a 6-digit display string. The witness emitter strips `_num` keys
+    so the JSON payload stays clean.
+    """
     out = {}
     for name, val in cands.items():
         if val == 0:
-            out[name] = {"value": "0", "ratio": "0", "tier": "ZERO"}
+            out[name] = {
+                "value": "0",
+                "value_num": mp.mpf(0),
+                "ratio": "0",
+                "ratio_num": mp.mpf(0),
+                "tier": "ZERO",
+            }
             continue
         ratio = val / target
         rel_err = abs(ratio - 1)
         if rel_err < mp.mpf("1e-6"):
             tier = "NEAR-1PPM"
         elif rel_err < mp.mpf("1e-3"):
-            tier = "NEAR-1PPB-but-not-1ppm"  # ppt actually
+            tier = "NEAR-0.1PCT"
         elif rel_err < mp.mpf("0.01"):
             tier = "NEAR-1PCT"
         elif rel_err < mp.mpf("0.1"):
@@ -212,10 +231,17 @@ def report_proximity(
             tier = "MISS"
         out[name] = {
             "value": mp.nstr(val, 6),
+            "value_num": val,
             "ratio": mp.nstr(ratio, 6),
+            "ratio_num": ratio,
             "tier": tier,
         }
     return out
+
+
+def witness_safe(r: dict) -> dict:
+    """Strip mp.mpf-valued `_num` keys; keep display strings for JSON."""
+    return {k: v for k, v in r.items() if not k.endswith("_num")}
 
 
 def main() -> None:
@@ -256,15 +282,15 @@ def main() -> None:
     results = report_proximity(cands, prefactor_target)
 
     tier_order = {
-        "NEAR-1PPM": 0, "NEAR-1PPB-but-not-1ppm": 1, "NEAR-1PCT": 2,
+        "NEAR-1PPM": 0, "NEAR-0.1PCT": 1, "NEAR-1PCT": 2,
         "NEAR-FUZZY": 3, "NEAR-CLOSE": 4, "MISS": 5, "ZERO": 6,
     }
     sorted_items = sorted(
         results.items(),
         key=lambda kv: (
             tier_order.get(kv[1]["tier"], 99),
-            abs(mp.mpf(kv[1]["ratio"]) - 1)
-            if kv[1]["ratio"] != "0"
+            abs(kv[1]["ratio_num"] - 1)
+            if kv[1]["tier"] != "ZERO"
             else mp.mpf("999"),
         ),
     )
@@ -274,6 +300,9 @@ def main() -> None:
     for name, r in sorted_items[:20]:  # top 20
         print(f"  {name:40s} {r['value']:12s} {r['ratio']:12s} {r['tier']}")
     print()
+    # Secondary cross-anchor target — emitted into witness for Step 6 use
+    h_q_muon = h_q(Q_MUON_50)
+    prefactor_target_muon = RESIDUE_A / (h_q_muon ** 15)
 
     best_tier = sorted_items[0][1]["tier"]
     best_name = sorted_items[0][0]
@@ -334,13 +363,16 @@ def main() -> None:
         ),
     )
     wb.add_data("residue_target_A", str(RESIDUE_A))
-    wb.add_data("prefactor_target", str(prefactor_target))
-    wb.add_data("h_q_substrate_corrected", str(h_q_val))
+    wb.add_data("prefactor_target_proton", str(prefactor_target))
+    wb.add_data("prefactor_target_muon", str(prefactor_target_muon))
+    wb.add_data("h_q_substrate_proton", str(h_q_val))
+    wb.add_data("h_q_substrate_muon", str(h_q_muon))
     wb.add_data("q_proton", str(Q_PROTON_50))
+    wb.add_data("q_muon", str(Q_MUON_50))
     wb.add_data("partition_invariants_n5", inv)
     wb.add_data(
         "step4_results_top10",
-        {name: r for name, r in sorted_items[:10]},
+        {name: witness_safe(r) for name, r in sorted_items[:10]},
     )
     wb.add_data("best_match", {
         "candidate": best_name,

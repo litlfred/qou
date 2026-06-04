@@ -58,7 +58,7 @@ square-shape thread from n=4).
 
 Script: [`folio-assistant/computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py`](../../folio-assistant/computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py).
 Witness JSON emitted to
-`folio-assistant/computations/qbeta-chain4-kashiwara-step4-n5.witness.json`.
+`folio-assistant/computations/qbeta/qbeta-chain4-kashiwara-step4-n5.witness.json`.
 
 Decision rule (per predecessor audit anti-pattern compliance):
 
@@ -83,7 +83,7 @@ and sl_4 (matching the n=4 negative result), compute:
 
 Script: [`folio-assistant/computations/qbeta/qbeta_chain4_demazure_fund_weights.py`](../../folio-assistant/computations/qbeta/qbeta_chain4_demazure_fund_weights.py).
 Witness JSON emitted to
-`folio-assistant/computations/qbeta-chain4-demazure-fund-weights.witness.json`.
+`folio-assistant/computations/qbeta/qbeta-chain4-demazure-fund-weights.witness.json`.
 
 ### Step 6 — Cross-anchor sweep (only if a Step 4 or 5 candidate
 NEAR-1PCT at proton anchor)

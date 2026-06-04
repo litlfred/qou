@@ -114,31 +114,30 @@ def demazure_char_fund_weight_sl_n(
 def build_candidates(q: mp.mpf) -> dict[str, mp.mpf]:
     """Build a candidate set of Demazure-character prefactor values.
 
-    For sl_3 (matching Hecke n=3) and sl_4 (matching Hecke n=4),
-    sweep word lengths from 1 to binom(n, 2) (longest element).
+    STUB CONSTRAINT: `demazure_char_fund_weight_sl_n` currently ignores
+    `word_length` for wl > 0 (returns the q-binomial proxy), so sweeping
+    wl would produce many distinct candidate *names* with identical
+    values — misleading. We emit ONE value per (n, j) here labeled
+    `D_full(ω_j)_sl_n`, marking it as the longest-word (full Weyl
+    character) evaluation. Proper wl-dependent enumeration follows in
+    the next commit when D_i operators are wired.
     """
     out: dict[str, mp.mpf] = {}
 
-    # sl_3: ω_1, ω_2; word lengths 0..3
+    # sl_3: ω_1, ω_2 — longest word length = binom(3, 2) = 3
     for j in (1, 2):
-        for wl in range(4):
-            name = f"D_w(ω_{j})_sl3_wl{wl}"
-            out[name] = demazure_char_fund_weight_sl_n(3, j, wl, q)
+        out[f"D_full(ω_{j})_sl3"] = demazure_char_fund_weight_sl_n(3, j, 3, q)
 
-    # sl_4: ω_1, ω_2, ω_3; word lengths 0..6
+    # sl_4: ω_1, ω_2, ω_3 — longest word length = binom(4, 2) = 6
     for j in (1, 2, 3):
-        for wl in range(7):
-            name = f"D_w(ω_{j})_sl4_wl{wl}"
-            out[name] = demazure_char_fund_weight_sl_n(4, j, wl, q)
+        out[f"D_full(ω_{j})_sl4"] = demazure_char_fund_weight_sl_n(4, j, 6, q)
 
-    # sl_5 truncated at fundamental weights (matches Hecke n=5 from Step 4)
+    # sl_5: ω_1..ω_4 — longest word length = binom(5, 2) = 10
     for j in (1, 2, 3, 4):
-        for wl in (0, 1, 2, 5, 10):  # sample word lengths
-            name = f"D_w(ω_{j})_sl5_wl{wl}"
-            out[name] = demazure_char_fund_weight_sl_n(5, j, wl, q)
+        out[f"D_full(ω_{j})_sl5"] = demazure_char_fund_weight_sl_n(5, j, 10, q)
 
     # Cross-rank sums (multi-rank superposition)
-    out["Σ D_w(ω_1) [sl3, sl4, sl5]"] = (
+    out["Σ D_full(ω_1) [sl3, sl4, sl5]"] = (
         demazure_char_fund_weight_sl_n(3, 1, 3, q)
         + demazure_char_fund_weight_sl_n(4, 1, 6, q)
         + demazure_char_fund_weight_sl_n(5, 1, 10, q)
@@ -150,17 +149,24 @@ def build_candidates(q: mp.mpf) -> dict[str, mp.mpf]:
 def report_proximity(
     cands: dict[str, mp.mpf], target: mp.mpf
 ) -> dict[str, dict]:
+    """TIERED proximity report (matches Step 4 thresholds + units)."""
     out = {}
     for name, val in cands.items():
         if val == 0:
-            out[name] = {"value": "0", "ratio": "0", "tier": "ZERO"}
+            out[name] = {
+                "value": "0",
+                "value_num": mp.mpf(0),
+                "ratio": "0",
+                "ratio_num": mp.mpf(0),
+                "tier": "ZERO",
+            }
             continue
         ratio = val / target
         rel_err = abs(ratio - 1)
         if rel_err < mp.mpf("1e-6"):
             tier = "NEAR-1PPM"
         elif rel_err < mp.mpf("1e-3"):
-            tier = "NEAR-1PPB-but-not-1ppm"
+            tier = "NEAR-0.1PCT"
         elif rel_err < mp.mpf("0.01"):
             tier = "NEAR-1PCT"
         elif rel_err < mp.mpf("0.1"):
@@ -171,10 +177,17 @@ def report_proximity(
             tier = "MISS"
         out[name] = {
             "value": mp.nstr(val, 6),
+            "value_num": val,
             "ratio": mp.nstr(ratio, 6),
+            "ratio_num": ratio,
             "tier": tier,
         }
     return out
+
+
+def witness_safe(r: dict) -> dict:
+    """Strip mp.mpf-valued `_num` keys; keep display strings for JSON."""
+    return {k: v for k, v in r.items() if not k.endswith("_num")}
 
 
 def main() -> None:
@@ -204,15 +217,15 @@ def main() -> None:
     results = report_proximity(cands, prefactor_target)
 
     tier_order = {
-        "NEAR-1PPM": 0, "NEAR-1PPB-but-not-1ppm": 1, "NEAR-1PCT": 2,
+        "NEAR-1PPM": 0, "NEAR-0.1PCT": 1, "NEAR-1PCT": 2,
         "NEAR-FUZZY": 3, "NEAR-CLOSE": 4, "MISS": 5, "ZERO": 6,
     }
     sorted_items = sorted(
         results.items(),
         key=lambda kv: (
             tier_order.get(kv[1]["tier"], 99),
-            abs(mp.mpf(kv[1]["ratio"]) - 1)
-            if kv[1]["ratio"] != "0"
+            abs(kv[1]["ratio_num"] - 1)
+            if kv[1]["tier"] != "ZERO"
             else mp.mpf("999"),
         ),
     )
@@ -281,7 +294,7 @@ def main() -> None:
     wb.add_data("q_proton", str(Q_PROTON_50))
     wb.add_data(
         "step5_results_top10",
-        {name: r for name, r in sorted_items[:10]},
+        {name: witness_safe(r) for name, r in sorted_items[:10]},
     )
     wb.add_data("best_match", {
         "candidate": best_name,
