@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T22:23:18.392989+00:00",
-  "commitSha": "3c247ce479c71a7a51c454c6c1d408b60c579c0a",
+  "computedAt": "2026-06-04T22:27:56.130454+00:00",
+  "commitSha": "7a2d4c1bed83351406a3b19e6fb878d7a6ff5137",
   "assertions": [
     {
       "name": "phase4_amplitude_A_D_matches_table",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 136,
+  "durationMs": 54,
   "computation": "gap-a3-deuteron-p-lambda-channels-probe",
   "scriptFile": "gap_a3_deuteron_p_lambda_channels_probe.py",
-  "scriptHash": "9ed31b282dea",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b1fd19253328",
+  "scriptCommitSha": "7a2d4c1bed83351406a3b19e6fb878d7a6ff5137",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -516,7 +516,7 @@
         "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
         "delta": "0.1894734417382284989104672294731036662590919611610931919935792110238943",
         "relative_error": "-1.0",
-        "verdict": "REFUTED",
+        "verdict": "CONTROL OK (|S| ≈ 0)",
         "per_lambda": [
           {
             "partition": [
@@ -622,6 +622,6 @@
         ]
       }
     ],
-    "synthesis_verdict": "All five channels REFUTED — none of the natural brane-tower content projections (sl_2 / sl_3 Schur-Weyl mult, sl_2 q-dim, ≤2-row indicator) reproduces the deuteron P_λ(D) target. The remaining direction is GAP-A-4 — the ρ general rule / per-atom λ(K) substrate-derivation in Path B, which bypasses the Δ_λ gate entirely by re-opening the per-atom λ(K) question."
+    "synthesis_verdict": "All four target-match channels (C1-C4) REFUTED and the C5 zero-control passes (|S| ≈ 0 as required) — none of the natural brane-tower content projections (sl_2 / sl_3 Schur-Weyl mult, sl_2 q-dim, ≤2-row indicator) reproduces the deuteron P_λ(D) target. The remaining direction is GAP-A-4 — the ρ general rule / per-atom λ(K) substrate-derivation in Path B, which bypasses the Δ_λ gate entirely by re-opening the per-atom λ(K) question."
   }
 }
