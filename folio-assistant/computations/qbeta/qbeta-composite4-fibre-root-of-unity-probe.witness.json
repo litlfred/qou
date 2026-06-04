@@ -1,7 +1,7 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath",
-  "computedAt": "2026-06-04T10:47:32.619647+00:00",
+  "computedAt": "2026-06-04T10:52:31.485822+00:00",
   "computation": "qbeta-composite4-fibre-root-of-unity-probe",
   "scriptFile": "qbeta_composite4_fibre_root_of_unity_probe.py",
   "precisionMetadata": {
@@ -16,11 +16,18 @@
       "source": "Independent self-contained re-derivation of #1801: the q-deformed /[5]_q\u2080\u00b2 denominator gives a worse c_3 fit than the undeformed /25."
     },
     {
-      "name": "no_finite_root_of_unity_reproduces_25",
+      "name": "no_finite_root_beats_25_baseline",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "[5]_\u03b6\u00b2 at \u03b6=exp(2\u03c0i/N) is real (=(sin5\u03b8/sin\u03b8)\u00b2) and discrete; no finite root reproduces the /25 denominator or beats it on c_3 \u2014 25 is the N\u2192\u221e (q\u21921) classical limit. Confirms residue A is not a single root-of-unity denominator-swap."
+      "source": "[5]_\u03b6\u00b2 at \u03b6=exp(2\u03c0i/N) (N=3..24) is real (=(sin5\u03b8/sin\u03b8)\u00b2) and discrete; no finite root gives a better c_3 ppm than the /25 baseline. (Separately, none has denom\u224825 either \u2014 see any_finite_root_denom_near_25.)"
+    },
+    {
+      "name": "five_zeta_imag_residue_within_tol",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "[5]_\u03b6 for roots of unity is a real sin-ratio; the max imaginary residue across the sweep must be < 1e-40, confirming the re(...) projection drops only numerical noise (not genuine imaginary content)."
     }
   ],
   "data": {
@@ -38,109 +45,131 @@
     "root_of_unity_sweep": {
       "N=3": {
         "denom_real": "1.0",
+        "im_residue": "0.0",
         "c3_ppm": 285928.5882232363,
         "degenerate": false
       },
       "N=4": {
         "denom_real": "1.0",
+        "im_residue": "0.0",
         "c3_ppm": 285928.5882232363,
         "degenerate": false
       },
       "N=5": {
-        "denom_real": "8.08698e-123",
+        "denom_real": "7.41238e-122",
+        "im_residue": "1.556e-61",
         "degenerate": true
       },
       "N=6": {
         "denom_real": "1.0",
+        "im_residue": "1.556e-61",
         "c3_ppm": 285928.5882232363,
         "degenerate": false
       },
       "N=7": {
         "denom_real": "1.55495813209",
+        "im_residue": "3.889e-62",
         "c3_ppm": 179630.89489072183,
         "degenerate": false
       },
       "N=8": {
         "denom_real": "1.0",
+        "im_residue": "7.779e-62",
         "c3_ppm": 285928.5882232363,
         "degenerate": false
       },
       "N=9": {
         "denom_real": "0.283118582858",
+        "im_residue": "1.945e-61",
         "c3_ppm": 1040084.7220826547,
         "degenerate": false
       },
       "N=10": {
-        "denom_real": "5.61538e-122",
+        "denom_real": "5.44583e-122",
+        "im_residue": "1.556e-61",
         "degenerate": true
       },
       "N=11": {
         "denom_real": "0.271554129339",
+        "im_residue": "2.334e-61",
         "c3_ppm": 1084885.200167539,
         "degenerate": false
       },
       "N=12": {
         "denom_real": "1.0",
+        "im_residue": "3.112e-61",
         "c3_ppm": 285928.5882232363,
         "degenerate": false
       },
       "N=13": {
         "denom_real": "2.03609988555",
+        "im_residue": "4.667e-61",
         "c3_ppm": 134368.49390490307,
         "degenerate": false
       },
       "N=14": {
         "denom_real": "3.24697960372",
+        "im_residue": "3.112e-61",
         "c3_ppm": 79817.24654452526,
         "degenerate": false
       },
       "N=15": {
         "denom_real": "4.5335108923",
+        "im_residue": "0.0",
         "c3_ppm": 53786.390567000584,
         "degenerate": false
       },
       "N=16": {
         "denom_real": "5.82842712475",
+        "im_residue": "7.779e-62",
         "c3_ppm": 39190.25254375656,
         "degenerate": false
       },
       "N=17": {
         "denom_real": "7.08919674966",
+        "im_residue": "0.0",
         "c3_ppm": 30102.224525119054,
         "degenerate": false
       },
       "N=18": {
         "denom_real": "8.29085936938",
+        "im_residue": "2.334e-61",
         "c3_ppm": 24012.91158118513,
         "degenerate": false
       },
       "N=19": {
         "denom_real": "9.42030779699",
+        "im_residue": "1.556e-61",
         "c3_ppm": 19705.820219612782,
         "degenerate": false
       },
       "N=20": {
         "denom_real": "10.472135955",
+        "im_residue": "7.779e-62",
         "c3_ppm": 16530.21323357064,
         "degenerate": false
       },
       "N=21": {
         "denom_real": "11.4457688612",
+        "im_residue": "3.112e-61",
         "c3_ppm": 14110.870921629721,
         "degenerate": false
       },
       "N=22": {
         "denom_real": "12.3435375197",
+        "im_residue": "3.889e-61",
         "c3_ppm": 12218.256488766876,
         "degenerate": false
       },
       "N=23": {
         "denom_real": "13.1694151651",
+        "im_residue": "3.889e-61",
         "c3_ppm": 10705.071929319987,
         "degenerate": false
       },
       "N=24": {
         "denom_real": "13.9282032303",
+        "im_residue": "3.112e-61",
         "c3_ppm": 9472.985347288472,
         "degenerate": false
       }
@@ -149,7 +178,10 @@
       "N": 24,
       "ppm": 9472.985347288472
     },
-    "five_q_sq_classical_limit": "25.000000000000000002",
+    "max_im_residue": "4.66726e-61",
+    "im_residue_within_tol": true,
+    "any_finite_root_denom_near_25": false,
+    "five_q_sq_classical_limit": "25.0",
     "verdict": {
       "qdeform_confirms_1801_undeformed": true,
       "five_zeta_sq_is_real_discrete": true,
