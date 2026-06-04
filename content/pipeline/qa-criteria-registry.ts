@@ -827,7 +827,7 @@ const DETANGLER: QaCriterionDefinition[] = [
     id: "detangler-no-forward-ref",
     domain: "detangler",
     description:
-      "Block's same-chapter `uses:` targets do not appear LATER in the " +
+      "Block's same-chapter `uses:` targets do not appear later in the " +
       "chapter's ordered `sections[].blocks[]`. Forward refs force the " +
       "reader to skip ahead. Deterministic: `checkDetanglerNoForwardRef` " +
       "builds the block-position map from the chapter manifests and " +
