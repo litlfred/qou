@@ -87,6 +87,14 @@ $-2 \cdot b^4$ is no longer a stipulation — it is forced by the
 two seed values $c_3 = -2$ ($J_{\mathrm{Hopf}}$ seed) and
 $c_8 = 4 \cdot b^4$ ($\sigma$-action seed).
 
+Per the authoritative
+[c_k/d_k registry](../../../docs/coordination/ck-dk-canonical-registry.md),
+$c_4$ holds **empirical** tier until that upstream $c_8$ categorical
+proof lands: the product identity is a structural relation *among
+empirical rungs*, not an unconditional derivation (only $c_2 = -1$ is
+canonical). The conditional "derived" above is exactly the
+"machinery-proved ≠ values-derived" distinction the registry codifies.
+
 ## q-usage discipline
 
 The product identities are stated at the fibre level (Laurent
