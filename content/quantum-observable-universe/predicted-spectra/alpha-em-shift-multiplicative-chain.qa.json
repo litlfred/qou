@@ -2349,6 +2349,23 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' → expected 'alpha_em_shift_multiplicative_chain'; Lean declares: qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices, alpha_em_shift_chain. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "bad048893900",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:13:52.524Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
       }
     ],
     "proof-lean-compiles": [
@@ -2805,7 +2822,104 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "bad048893900",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.md:65 — '### Significance — bridge to the w3-w4 atomic-shift framework' section present inside proposition block after the proof; belongs in a separate remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:13:52.342Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bad048893900",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:13:52.386Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bad048893900",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:13:52.429Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "bad048893900",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:13:52.477Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "bad048893900",
+          "ts": "aeba233bc626",
+          "lean": "7b72f9df356a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:13:52.571Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T14:13:52.571Z"
 }
