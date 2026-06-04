@@ -649,14 +649,14 @@ def _homflypt_nstrand_numerical(braid_word, n_strands, v, z, q):
         # This returns tr_M(β)/tr_M(identity)·δ^{n-1}, a RATIO-ONLY
         # quantity: it divides out the overall scale and OMITS the
         # writhe framing factor (-q^{-3/2})^{-w}, so it does NOT equal
-        # the HOMFLYPT/Jones polynomial on absolute values. It fails
-        # homflypt_reference_qa.py (0/5 vs the skein-relation reference)
-        # because the δ^{n-1} power is the n-component-UNLINK norm, which
-        # is wrong for a 1-component knot closure. Only RATIOS between
-        # values at the SAME n are meaningful. Restoring the correct
-        # Ocneanu/Jones normalisation requires this engine's specific
-        # y_λ/χ convention to be reverse-engineered — tracked as an open
-        # item in
+        # the HOMFLYPT/Jones polynomial on absolute values. This LEGACY
+        # path fails the skein-reference check (0/5 when homflypt_reference_qa
+        # is re-pointed at it) because the δ^{n-1} power is the
+        # n-component-UNLINK norm, wrong for a 1-component knot closure;
+        # only RATIOS between values at the SAME n are meaningful.
+        # ✅ SUPERSEDED: the correct signed engine is
+        # homfly_ocneanu_trace.homfly_signed_su2 (passes the gate 5/5,
+        # writhe KEPT). Prefer it for any new HOMFLY consumer. Background:
         # docs/audits/2026-06-04-hidden-fitting-verification-gap-mass-binding-walkthrough.md §2e/§4.2.
         from wedderburn_jones_markov import y_lambda_at
         y_vals = y_lambda_at(n, q_val=float(q))
