@@ -317,6 +317,7 @@ export default chapter({
         "categorical-linking-operation",
         "crossed-module-euler-characteristic",
         "geom-bridge-status",
+        "tau-all-orders-bridge",
         "dim-master-pentagon",
         "geometric-invariant-piecewise",
         "hopf-link-non-magic",
