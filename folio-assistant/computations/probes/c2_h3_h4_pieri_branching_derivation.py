@@ -200,7 +200,7 @@ def main():
     print("    12/5 IS the Frobenius-reciprocity branching trace from H_3")
     print("    to H_4 normalized by Gelfand dim, EXACTLY at q=1.")
     print("    Categorical home identified. The 0.155 % residual gap is")
-    print("    NOT closed by q-deformation (q-deformed lands further");
+    print("    NOT closed by q-deformation (q-deformed lands further")
     print("    away than classical) — outside this script's scope.")
 
     out = {

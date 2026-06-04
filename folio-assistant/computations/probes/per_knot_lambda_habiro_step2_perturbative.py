@@ -89,7 +89,11 @@ def fit_power_series(hbars: list[mp.mpf], svals: list[mp.mpf],
         for k in range(degree + 1):
             A[i, k] = hbars[i] ** k
     b = mp.matrix(svals)
-    # Solve via QR (mpmath lstsq through normal equations AtA x = At b)
+    # Solve the least-squares normal equations AᵀA x = Aᵀb via mpmath LU.
+    # (Copilot review PR #1765: prior comment mentioned QR; mp.lu_solve is
+    # what's actually called here. Normal equations are fine at mp precision
+    # for the small Vandermonde we build, though they can be ill-conditioned
+    # at IEEE float; mp's 80 dps absorbs the conditioning hit.)
     At = A.T
     AtA = At * A
     Atb = At * b

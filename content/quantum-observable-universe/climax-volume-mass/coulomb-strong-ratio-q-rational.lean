@@ -67,7 +67,9 @@ theorem tanh_log_eq_qDiffOverSum (q : ℝ) (hq : 0 < q) :
     have hmul : q * (q + q⁻¹) = q^2 + 1 := by field_simp; ring
     rw [h, mul_zero] at hmul
     linarith
+  -- Close the algebraic goal after field_simp clears denominators (Copilot review PR #1765).
   field_simp
+  ring
 
 /-- **Composite proposition** (`prop:coulomb-strong-ratio-q-rational`).
 

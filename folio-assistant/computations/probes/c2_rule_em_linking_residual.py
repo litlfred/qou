@@ -87,7 +87,7 @@ REMAINING_FACTOR = mp.mpf("3.213697131179528")        # AME_SPLIT / DERIVED
 Q_PP = mp.mpf(1)
 
 
-def part1_compute_lw_c2() -> dict:
+def part1_compute_lw_c2() -> tuple[dict, mp.mpf]:
     q = sp.symbols("q", positive=True)
     lw_c2 = sp.cancel((q + 1) ** 2 / (3 * q))
     # at q=1 (classical limit): (1+1)²/3 = 4/3 = I(3)/3
