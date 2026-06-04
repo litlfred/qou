@@ -20,11 +20,11 @@ computed by sequential polynomial division:
     ...
 
 For atomic-braid Markov traces, p(q) ∈ ℤ[q^{1/2}, q^{-1/2}].  Setting
-u = q^{1/2} and clearing denominators gives p(u) ∈ ℤ[u, u^{-1}], to
-which we apply the cyclotomic algorithm in u (i.e. expand in
-(u;u)_m).  The Habiro property to verify is:
+check_q = q^{1/2} and clearing denominators gives p(check_q) ∈ ℤ[check_q, check_q^{-1}], to
+which we apply the cyclotomic algorithm in check_q (i.e. expand in
+(check_q;check_q)_m).  The Habiro property to verify is:
 
-    INTEGRALITY:  every a_m(u) ∈ ℤ[u, u^{-1}]
+    INTEGRALITY:  every a_m(check_q) ∈ ℤ[check_q, check_q^{-1}]
     TERMINATION:  a_m = 0 for m exceeding the polynomial degree
 
 Witness: habiro-coefficients-atomic.witness.json
@@ -96,9 +96,9 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
 
     Performance: y_λ has sqrt(q) factors that make `sp.cancel`
     catastrophic for the deuteron's n=6 partition sum.  Workaround:
-    work internally in u with q = u², so the sqrt(q) factors become
-    polynomial u; the final result is back-substituted to q via
-    u → sqrt(q).  Combined with the y_λ witness cache (n = 2..12)
+    work internally in check_q with q = u², so the sqrt(q) factors become
+    polynomial check_q; the final result is back-substituted to q via
+    check_q → sqrt(q).  Combined with the y_λ witness cache (n = 2..12)
     and the chi witness caches (`chi-{atom}-h{n}.witness.json`) for
     p / n / D / T / ³He / ⁴He, the full p + n + D pipeline runs in
     seconds instead of minutes.
@@ -133,7 +133,7 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
                 continue
             # Skip per-term sp.cancel: the deuteron n=6 case had
             # sympy spending minutes on cancel even after q→u² (the
-            # accumulated chi numerators are large polynomials in u);
+            # accumulated chi numerators are large polynomials in check_q);
             # final sp.together at the end is sufficient for the
             # downstream to_u_polynomial and runs in ~1 s for D.
             if (w_u * chi_u).has(sp.nan) or (w_u * chi_u).has(sp.zoo):
@@ -145,41 +145,41 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
                 f"(A = {A}): {type(exc).__name__}: {exc}") from exc
 
     # Combine into a single fraction in u_int and reduce.  Working
-    # in u (where u² = q, no sqrt) keeps sp.cancel polynomial-time
+    # in check_q (where u² = q, no sqrt) keeps sp.cancel polynomial-time
     # — the same operation on the back-substituted q-expression
     # (with sqrt(q) factors) hits the heuristic-GCD ceiling for
     # certain partition sums (e.g. the neutron's mixed σ/σ^{-1}/avg
-    # word).  Cancel here in u, then back-substitute.
+    # word).  Cancel here in check_q, then back-substitute.
     total_u = sp.cancel(sp.together(total_u))
     return total_u.subs(u_int, sp.sqrt(q))
 
 
-def to_u_polynomial(expr_in_q, q, u):
-    """Substitute q → u² and clear ALL u-denominators (including any
+def to_u_polynomial(expr_in_q, q, check_q):
+    """Substitute q → u² and clear ALL check_q-denominators (including any
     cyclotomic / Markov-normalisation factors).  Returns
     (p_in_u, shift, denom) such that
 
-        p_in_u(u)  =  u^{shift} · denom(u) · expr_in_q(u²)
+        p_in_u(check_q)  =  check_q^{shift} · denom(check_q) · expr_in_q(u²)
 
-    is a polynomial in u with no negative powers.  The Habiro
+    is a polynomial in check_q with no negative powers.  The Habiro
     expansion is then computed for p_in_u and the result is the
     cyclotomic decomposition of the Markov-renormalised Jones-like
-    object (the Markov normalisation z^n = (u + u^{-1})^{-n} is
+    object (the Markov normalisation z^n = (check_q + check_q^{-1})^{-n} is
     absorbed into the prefactor).
     """
-    expr_u = sp.together(expr_in_q.subs(q, u ** 2))
+    expr_u = sp.together(expr_in_q.subs(q, check_q ** 2))
     num, den = sp.fraction(expr_u)
     num = sp.expand(num)
     den = sp.expand(den)
-    # Clear u-denominator entirely: multiply by den and shift to make
-    # the result a polynomial in u.
+    # Clear check_q-denominator entirely: multiply by den and shift to make
+    # the result a polynomial in check_q.
     p_raw = num
     if den != 1:
         # Already cleared: p_raw = num, total = num/den; multiply by den
         pass
-    # Normalise to non-negative powers of u
+    # Normalise to non-negative powers of check_q
     p_expanded = sp.expand(p_raw)
-    poly = sp.Poly(p_expanded, u)
+    poly = sp.Poly(p_expanded, check_q)
     coeffs = poly.all_coeffs()
     # Determine min and max exponent
     monoms = poly.monoms()
@@ -187,39 +187,39 @@ def to_u_polynomial(expr_in_q, q, u):
         return Integer(0), 0, str(den)
     min_pow = min(int(m[0]) for m in monoms)
     shift = -min_pow if min_pow < 0 else 0
-    p_shifted = sp.expand(p_expanded * u ** shift)
+    p_shifted = sp.expand(p_expanded * check_q ** shift)
     return p_shifted, shift, str(sp.expand(den))
 
 
-def cyclotomic_expansion(p_in_u, u, max_m=20):
-    """Expand p(u) = Σ_m a_m(u) · (u;u)_m by sequential polynomial
+def cyclotomic_expansion(p_in_u, check_q, max_m=20):
+    """Expand p(check_q) = Σ_m a_m(check_q) · (check_q;check_q)_m by sequential polynomial
     division.
 
-    Algorithm.  At step m, p_m(u) is the running remainder.  We
+    Algorithm.  At step m, p_m(check_q) is the running remainder.  We
     define
 
-        a_m(u)  =  p_m(u)  mod (1 - u^{m+1})        (deg ≤ m)
-        p_{m+1} = (p_m(u) - a_m(u)) / (1 - u^{m+1}) (exact division)
+        a_m(check_q)  =  p_m(check_q)  mod (1 - check_q^{m+1})        (deg ≤ m)
+        p_{m+1} = (p_m(check_q) - a_m(check_q)) / (1 - check_q^{m+1}) (exact division)
 
-    so that p(u) = a_0 + a_1(1-u) + a_2(1-u)(1-u²) + ⋯.  The
+    so that p(check_q) = a_0 + a_1(1-check_q) + a_2(1-check_q)(1-u²) + ⋯.  The
     iteration terminates exactly when p_{m+1} = 0; if p has finite
     degree this happens at some m_max ~ √(2·deg p).
 
     Returns a list of dicts, one per m.
     """
-    p = sp.Poly(sp.expand(p_in_u), u)
+    p = sp.Poly(sp.expand(p_in_u), check_q)
     coeffs = []
     current = p
     for m in range(max_m):
         if current.is_zero:
             break
-        next_factor = sp.Poly(1 - u ** (m + 1), u)
+        next_factor = sp.Poly(1 - check_q ** (m + 1), check_q)
         # Single sp.div gives BOTH a_m (= remainder, degree < m+1) and
         # quotient (= (current - a_m) / next_factor) in one call.
         # The previous implementation recomputed the quotient via a
         # second sp.div on `current.as_expr() - a_m_expr`, doubling
         # the work per iteration on a deg-194 polynomial.
-        quotient, a_m = sp.div(current, next_factor, u)
+        quotient, a_m = sp.div(current, next_factor, check_q)
         a_m_expr = a_m.as_expr()
         coeffs.append({
             "m": m,
@@ -237,15 +237,15 @@ def cyclotomic_expansion(p_in_u, u, max_m=20):
     return coeffs
 
 
-def reconstruct(coeffs_data, u, max_m=20):
-    """Reconstruct p(u) = Σ a_m · (u;u)_m from the list to verify."""
+def reconstruct(coeffs_data, check_q, max_m=20):
+    """Reconstruct p(check_q) = Σ a_m · (check_q;check_q)_m from the list to verify."""
     total = Integer(0)
     for entry in coeffs_data:
         m = entry["m"]
-        a_m = sp.sympify(entry["a_m"], locals={"u": u})
+        a_m = sp.sympify(entry["a_m"], locals={"check_q": check_q})
         poch = Integer(1)
         for k in range(1, m + 1):
-            poch *= 1 - u ** k
+            poch *= 1 - check_q ** k
         total += sp.expand(a_m * poch)
     return sp.expand(total)
 
@@ -258,23 +258,23 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
     # adding zero diagnostic value (the polynomial is already in
     # its symbolic form).  Use the raw repr instead.
     print(f"  tr_M (in q) computed (free symbols: {p_q.free_symbols})")
-    u = sp.Symbol('u', positive=True, real=True)
-    p_u, shift, denom = to_u_polynomial(p_q, q, u)
-    deg_p = int(sp.Poly(p_u, u).degree()) if p_u != 0 else 0
-    print(f"  → p(u) := u^{shift} · denom · tr_M(u²), shift = u^{shift}, "
-          f"denom (in u) = {denom}")
-    print(f"     deg p(u) = {deg_p}")
-    coeffs = cyclotomic_expansion(p_u, u, max_m=20)
-    print(f"  Habiro coefficients (in u = q^{{1/2}} = \\check{{q}}, spinor rate):")
+    check_q = sp.Symbol('check_q', positive=True, real=True)
+    p_u, shift, denom = to_u_polynomial(p_q, q, check_q)
+    deg_p = int(sp.Poly(p_u, check_q).degree()) if p_u != 0 else 0
+    print(f"  → p(check_q) := check_q^{shift} · denom · tr_M(u²), shift = check_q^{shift}, "
+          f"denom (in check_q) = {denom}")
+    print(f"     deg p(check_q) = {deg_p}")
+    coeffs = cyclotomic_expansion(p_u, check_q, max_m=20)
+    print(f"  Habiro coefficients (in check_q = q^{{1/2}} = \\check{{q}}, spinor rate):")
     for entry in coeffs:
         flag = "✓" if entry["integral"] else "✗"
-        print(f"    a_{entry['m']}(u) = {entry['a_m']}    "
+        print(f"    a_{entry['m']}(check_q) = {entry['a_m']}    "
               f"deg = {entry['deg_a_m']}, integral: {flag}")
     # Verify reconstruction
-    recon = reconstruct(coeffs, u)
+    recon = reconstruct(coeffs, check_q)
     diff = sp.expand(recon - p_u)
     if diff == 0:
-        print(f"  ✓ reconstruction matches  Σ a_m·(u;u)_m  =  p(u)")
+        print(f"  ✓ reconstruction matches  Σ a_m·(check_q;check_q)_m  =  p(check_q)")
     else:
         print(f"  ✗ reconstruction error:  diff = {diff}")
     # Numerical check
@@ -282,10 +282,10 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
     u0 = sp.sqrt(q0)
     p_at_q0 = float(p_q.subs(q, q0).evalf(30))
     p_at_q0_polynomial_q = expose_polynomial(p_q, q)
-    p_u_at_u0 = float(p_u.subs(u, u0).evalf(30)) / float(
+    p_u_at_u0 = float(p_u.subs(check_q, u0).evalf(30)) / float(
         u0 ** shift if shift else 1)
     print(f"  tr_M @ q_0 = {p_at_q0:+.6e}  "
-          f"(via u-poly: {p_u_at_u0:+.6e})")
+          f"(via check_q-poly: {p_u_at_u0:+.6e})")
     return {
         "Z": Z, "N": N, "include_inter": include_inter,
         # str(p_q) directly — sp.nsimplify on a degree-194 rational
@@ -337,7 +337,7 @@ if __name__ == "__main__":
         if "error" in r:
             print(f"  {label}: ERROR {r['error']}")
             continue
-        print(f"  {label}: deg p(u) = {r['deg_p_u']:>3}, "
+        print(f"  {label}: deg p(check_q) = {r['deg_p_u']:>3}, "
               f"#Habiro coeffs = {len(r['habiro_coefficients']):>2}, "
               f"all integral: {r['all_integral']}, "
               f"reconstruction: {r['reconstruction_matches']}")
@@ -345,8 +345,8 @@ if __name__ == "__main__":
     witness = {
         "computation": "habiro-coefficients-atomic",
         "description": (
-            "Habiro / cyclotomic expansion tr_M(T_w, q) = Σ_m a_m·(u;u)_m "
-            "(u = q^{1/2}) for atomic braids p, n, D. Verifies the integrality "
+            "Habiro / cyclotomic expansion tr_M(T_w, q) = Σ_m a_m·(check_q;check_q)_m "
+            "(check_q = q^{1/2}) for atomic braids p, n, D. Verifies the integrality "
             "and termination properties of the Habiro coefficients claimed "
             "in habiro-ring.md and full-pole-structure-mass-trace.md."
         ),
