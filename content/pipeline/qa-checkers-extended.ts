@@ -1236,7 +1236,7 @@ export function checkDetanglerSectionBand(
 export function checkDetanglerNoForwardRef(
   tsPath: string | undefined,
 ): CheckerResult {
-  if (!tsPath || !existsSync(tsPath)) return { result: "pass", hits: [] };
+  if (!tsPath || !existsSync(tsPath)) return { result: "n/a", hits: [] };
   loadChapterGraph();
   if (!_graphLoaded || !_blockPos || !_usesGraph || !_labelToChapter)
     return { result: "n/a", hits: [] };
@@ -1259,7 +1259,7 @@ export function checkDetanglerNoForwardRef(
       hits.push({
         file: tsPath,
         line: 0,
-        text: `forward ref: uses ${u} (manifest pos ${uPos % 1_000_000}) which appears after this block (pos ${myPos % 1_000_000}) in the chapter`,
+        text: `forward ref: uses ${u} (manifest pos ${withinChapter(uPos)}) which appears after this block (pos ${withinChapter(myPos)}) in the chapter`,
       });
     }
   }
@@ -1306,6 +1306,14 @@ let _blockPos: Map<string, number> | null = null;
 // this (not on map nullability) so a missing paper manifest yields
 // `n/a` rather than a false "everything passes".
 let _graphLoaded = false;
+
+// Block-position encoding: `chapterIndex * CHAPTER_POS_STRIDE + index`
+// within the chapter's ordered blocks. Shared by the encoder
+// (loadChapterGraph) and the decoder (`withinChapter`, used to recover
+// the within-chapter index for evidence messages). Assumes fewer than
+// CHAPTER_POS_STRIDE blocks per chapter.
+const CHAPTER_POS_STRIDE = 1_000_000;
+const withinChapter = (pos: number): number => pos % CHAPTER_POS_STRIDE;
 
 function loadChapterGraph(): void {
   if (_graphLoaded) return;
@@ -1363,7 +1371,7 @@ function loadChapterGraph(): void {
     for (const bm of mc.matchAll(/blocks\s*:\s*\[([\s\S]*?)\]/g)) {
       for (const sm of bm[1].matchAll(/"([^"]+)"/g)) {
         const lbl = slugToLabel.get(sm[1]);
-        if (lbl && !blockPos.has(lbl)) blockPos.set(lbl, ci * 1_000_000 + within);
+        if (lbl && !blockPos.has(lbl)) blockPos.set(lbl, ci * CHAPTER_POS_STRIDE + within);
         within++;
       }
     }
