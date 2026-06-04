@@ -28,7 +28,7 @@
     "anchor": "proton-pinned q0",
     "rungs": [
       {
-        "rung": 2,
+        "rung": "2",
         "tier": "canonical",
         "form": "-1",
         "residual_proton": "exact",
@@ -38,7 +38,7 @@
         "note": "Kashiwara f-tilde_1^2 / bar-even constraint, PROVED (PR #1602)."
       },
       {
-        "rung": 3,
+        "rung": "3",
         "tier": "refuted",
         "form": "candidates: J_Hopf(q=1) - hbar^2; [3]_q/25 3-rung",
         "residual_proton": "2.6% (J-hbar^2); 2.65 ppm ([3]_q/25, proton ONLY)",
@@ -48,7 +48,7 @@
         "note": "Proton-anchor near-match; REFUTED as real-q fibre element (swings -2.88% to muon; dc_3/dq ~ 4.6e6). Locked behind conditional QbetaC3StructuralFormClass (3b-cond), not a derivation."
       },
       {
-        "rung": 4,
+        "rung": "4",
         "tier": "empirical_fit",
         "form": "-0.97157 (CODATA residual); conjecture c_3 * b^4",
         "residual_proton": "0 by construction (fit)",
@@ -58,7 +58,7 @@
         "note": "CODATA-residual fit; separately flagged as a normalisation artifact (2026-06-04)."
       },
       {
-        "rung": 5,
+        "rung": "5",
         "tier": "empirical_near_match",
         "form": "-(b^2 + 1/2)",
         "residual_proton": null,
@@ -97,7 +97,7 @@
     "anchor": "proton-pinned q0",
     "rungs": [
       {
-        "rung": 4,
+        "rung": "4",
         "tier": "empirical_near_match",
         "form": "J^2 * n_crossings + n_gluon = 4*11 + 2 = 46",
         "residual": "~0.05%",
@@ -105,7 +105,7 @@
         "note": "Categorically suggestive (crossing count + gluon LP) but empirical integer extraction."
       },
       {
-        "rung": 5,
+        "rung": "5",
         "tier": "empirical_near_match",
         "form": "J^2 = 4 (Jones squared)",
         "residual": null,
@@ -113,7 +113,7 @@
         "note": "Empirical."
       },
       {
-        "rung": 6,
+        "rung": "6",
         "tier": "tbd",
         "form": "-29 (closest-integer extraction)",
         "residual": null,
@@ -132,7 +132,7 @@
   },
   "production": {
     "verified_date": "2026-06-04",
-    "qbeta_wired_rungs": [2],
+    "qbeta_wired_rungs": ["2"],
     "qbeta_note": "c_2 only (Q_N2-level); q_beta_predicted.py wires no c_3+; ~0.17% c_2-level truncation residual.",
     "mp_wired_rungs": [],
     "mp_note": "bare; ~2.89% categorical Geom_full gap.",

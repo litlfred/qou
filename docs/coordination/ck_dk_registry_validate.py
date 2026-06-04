@@ -53,14 +53,19 @@ def main() -> int:
     dk_wired = check_rungs("mp_dk", d["mp_dk_tower"]["rungs"])
 
     prod = d["production"]
-    if sorted(x for x in ck_wired if isinstance(x, int)) != sorted(
+    # rungs are uniformly strings; single rungs are bare digits, ranges
+    # contain "-" (e.g. "6-7"). Only single rungs may be wired.
+    def _is_single(rung) -> bool:
+        return isinstance(rung, str) and "-" not in rung
+
+    if sorted(x for x in ck_wired if _is_single(x)) != sorted(
         prod["qbeta_wired_rungs"]
     ):
         errors.append(
             f"production.qbeta_wired_rungs {prod['qbeta_wired_rungs']} "
             f"!= rungs marked wired {ck_wired}"
         )
-    if sorted(x for x in dk_wired if isinstance(x, int)) != sorted(
+    if sorted(x for x in dk_wired if _is_single(x)) != sorted(
         prod["mp_wired_rungs"]
     ):
         errors.append(
