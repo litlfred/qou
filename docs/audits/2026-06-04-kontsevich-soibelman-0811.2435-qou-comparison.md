@@ -822,3 +822,59 @@ trades the global tower for one calibrated fibre — that, not an absence of dec
 on KS's side, is the methodological choice. The owner's "nerve of semisimple algebras as
 a universal object" is the right picture, and it is **shared**, not exclusive to either
 side.
+
+---
+
+## 16. KS's analytic frameworks & formal series — is there a useful theorem? (owner follow-up)
+
+Splitting KS's *methods* (as opposed to its content, which stays a remark) into the two
+the owner names.
+
+### 16.1 Analytic frameworks (periods, Stokes/resurgence, hyperkähler M) — remark only
+
+The genuinely analytic content — holomorphic period integrals `Z(γ)=∫_γ Ω`, the
+Stokes/resurgence reading of the WCF (the `A_V` as Stokes factors), the conjectural
+hyperkähler `M` — is exactly the **archimedean-wall** material QOU avoids (§4), and
+**none of it is Mathlib-formalizable** (no resurgence, no motivic measure, no
+Bridgeland). The Lean-gate therefore admits **no theorem** here. The single analytic
+fact that transfers is *evaluation* — and that turns out to be **ring-theoretic
+(Habiro), not hard analysis** (16.2). So: remark + reference, nothing more.
+
+### 16.2 Formal series (the quantum dilogarithm, the q-series) — one useful theorem-shape
+
+KS's formal-series engine is the **quantum dilogarithm**
+`E(x)=∏_{k≥0}(1+q^{k+1/2}x)^{-1}`, a **cyclotomic / Habiro-ring** object — the *same
+formal-series world* as QOU's `Φ_q` / `Li₂^q` and the `Q_β` `c_k` ladder. The useful
+theorem to state is **Habiro-ring membership + evaluation**:
+
+> **Theorem-target (Habiro framing).** If a QOU q-series invariant `X(q)` lies in the
+> Habiro ring `Ẑ = lim_n ℤ[q]/((q;q)_n)`, then it automatically (i) evaluates at **every
+> root of unity** — the semisimple modular-category fibres of the §15 nerve — and (ii)
+> evaluates at the real substrate `q₀` (the archimedean realization). Membership in `Ẑ`
+> is the rigorous **formal → analytic bridge**.
+
+Why this is *the* useful one — it does three jobs at once:
+- it is the formal-series object (KS's dilogarithm world);
+- it supplies the **analytic evaluation at q₀ without hard analysis** (the only analytic
+  fact that survives the Lean-gate);
+- it threads the **semisimple nerve** (roots of unity = the Reshetikhin–Turaev modular
+  fibres of §15).
+
+And it is **not a new invention** — it is precisely QOU's existing open axis: the
+**fibre-level Habiro element `F(q)`** whose Taylor coefficients are the `c_k` ladder (the
+triage's "one open axis"; live in PR #1739). KS is the formal-series *template/reference*
+for it, consistent with "keep KS a remark."
+
+**Honest caveats** (formalize-first / careful):
+- This is a theorem-**target**, not a proved theorem; *proving* `X(q) ∈ Ẑ` for a given
+  series is itself hard, and stating it needs the fibre-level Habiro work.
+- The *small* formal-series theorems QOU can state **now** (no Habiro membership needed):
+  the **pentagon / 5-term** identity for the formal q-dilogarithm; the **torus-knot
+  binomial coefficient pattern** `c_{2j}(T(2,2m)) = C(m+j, 2j)/2` (already proved,
+  PR #1125); and the **disjoint-multiplicativity** lemma `markov_trace_factorization_mul`
+  (being verified). Those are the immediately-sayable useful theorems; the Habiro framing
+  is the big target.
+
+**Net.** Analytic frameworks → remark only (archimedean wall, not Lean-able). Formal
+series → one genuinely useful theorem-shape, the **Habiro-ring membership/evaluation**
+bridge, which is QOU's own open axis with KS as the formal-series reference.
