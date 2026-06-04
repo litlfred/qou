@@ -20,17 +20,28 @@ Probe:
 
 ## Result
 
-| window | order | deg | smallest-SV (normalised) | holonomic? |
+| window | order | deg | σ_min/σ_max (col-normalised, direct SVD) | holonomic? |
 |---|---|---|---|---|
-| applied c2..c7 | 1 | 1 | 5.3e-3 | no |
-| full c2..c10 | 1 | 1 | 1.2e-9 | no |
-| full c2..c10 | 1 | 2 | 1.0e-11 | no |
-| full c2..c10 | 2 | 1 | 5.2e-10 | no |
+| applied c2..c7 | 1 | 1 | 2.8e-2 | no |
+| full c2..c10 | 1 | 1 | 1.0e-7 | no |
+| full c2..c10 | 1 | 2 | 6.5e-10 | no |
+| full c2..c10 | 2 | 1 | 1.3e-8 | no |
 
-No clean low-order holonomic recurrence. The `~1e-11` values are the
-**conditioning / noise floor** (the erratic free rung `c_10 ≈ 1e8` dominates the
-matrix), **not** a D-finite signal — a true holonomic recurrence would give
-`~1e-30` at 40 dps.
+No clean low-order holonomic recurrence.
+
+**Method note (Copilot review, PR #1844).** The singular values are now
+computed by a *direct* SVD of the *column-normalised* matrix, not via
+eigenvalues of `MᵀM`. Forming `MᵀM` squares the condition number; combined
+with the erratic free rung `c_10 ≈ 1e8`, that had pushed the apparent
+smallest-SV *below* its true value (old `1.0e-11` at `o1d2`) — biasing the test
+toward a holonomic-*looking* signal. The corrected values are *larger*
+(`6.5e-10` at `o1d2`) and sit ~15 orders **above** a genuine recurrence floor:
+a true D-finite recurrence in the given ~25-digit `c_k` would drive
+`σ_min/σ_max → ~1e-25` (well below, at the `compute_dps = 70` now used). So the
+no-holonomic verdict rests on sound numerics, not a conditioning artifact. The
+residual near-degeneracy at `o1d2` is the expected structure of a short
+Vandermonde-like system with weak over-determination (`n_eq = 8`, `n_unk = 6`)
+plus one erratic value — not a recurrence.
 
 ## The honest verdict — blocked at the DATA level
 
