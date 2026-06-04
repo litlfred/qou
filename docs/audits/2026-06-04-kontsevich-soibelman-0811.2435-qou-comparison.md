@@ -33,7 +33,7 @@ This doc is that comparison.
 | Q6 | Is their Theorem 1 part of QOU axioms (paper = example)? | **No.** KS Theorem 1 = "the central-charge map Stab(C) → Hom(Γ,ℂ) is a local homeomorphism" (Bridgeland deformation, generalized). It is a statement about the **moduli space of stability conditions** — exactly the apparatus QOU *declines* by sitting at one calibrated point. QOU's analog axiom is "τ at fixed q₀ is well-defined/unique" (`archimedean-functor-uniqueness`), which is the *rigid* opposite of a deformation theorem. |
 | Q7 | Can we use their (mostly algebraic) infrastructure? Euler form? Easier proofs or pretty story? | **Mostly pretty story + exposition; two concrete reusables.** (a) The **Euler form** χ(E,F)=Σ(−1)ⁿdim Extⁿ on K₀^num is the Grothendieck-shadow of QOU's **Frobenius/Markov pairing** — a clean exposition upgrade and a naming bridge (we already have `euler-char-stability`). (b) The **motivic Thom–Sebastiani factorization** (KS Thm 6, a *cited, rigorous* Denef–Loeser-type result) is the categorical parent of Wenzl **disjoint multiplicativity** tr_M(K⊔K′)=tr_M(K)·tr_M(K′), already in production. The rest is heuristic (see §1). |
 | Q8 | Is the multiplicative WCF the archimedean wall we avoid? Kashaev a sub-part (trivial knot)? | **Yes on both.** The WCF's walls live in the space of central charges Z:Γ→**ℂ** — an archimedean/real-analytic locus (arg Z(γ₁)=arg Z(γ₂)). KS build the formal WCF over a **non-archimedean** field and only *speculate* (String Theory) an archimedean manifold M (§1.5). QOU avoids the wall by **fixing q₀ and staying in ℚ(q)/generic-R until the final τ** (the CLAUDE.md §7c base-ring wall = the same wall). Kashaev **is** a sub-part: `QOU.Kashaev.VolumeConjecture` (tr_M ~ exp Vol); the unknot/trivial rep σ₀ is literally a column index in Garoufalidis–Zagier's refined matrix invariant. |
-| Q9 | Why don't the exp()-algebra people go straight to Wedderburn/partitions? | **Because their algebra isn't semisimple/finite-dimensional.** KS's exp() lives in an *infinite-dimensional, non-semisimple* world (the quantum torus, the pro-nilpotent group GV of dilogarithm Hamiltonian flows, the motivic Hall algebra) where Wedderburn ⊕ M_{d_λ} simply does not apply. **QOU's central structural bet is to engineer the problem into the generically-semisimple Hecke algebra H_n(q)**, where Wedderburn/partition decomposition *is* available — so QOU *can* "go straight to partitions," and does. This is arguably QOU's single biggest methodological win over the KS/exp school. |
+| Q9 | Why don't the exp()-algebra people go straight to Wedderburn/partitions? | **Because their algebra isn't semisimple/finite-dimensional.** KS's exp() lives in an *infinite-dimensional, non-semisimple* world (the quantum torus, the pro-nilpotent group GV of dilogarithm Hamiltonian flows, the motivic Hall algebra) where Wedderburn ⊕ M_{d_λ} simply does not apply. **QOU's central structural bet is to engineer the problem into the generically-semisimple Hecke algebra H_n(q)**, where Wedderburn/partition decomposition *is* available — so QOU *can* "go straight to partitions," and does. *(Refined in §15 per owner objection: KS **can** decompose too — via a semisimple* nerve *(JH-into-stable-objects, cellular tower, Habiro ring, A∞); QOU's real move is collapsing that shared tower at generic q₀.)* |
 | Q10 | Relation to KLR? | **One step removed, and QOU already lives on the KLR side.** KS-WCF → (their follow-up) Cohomological Hall Algebra → KLR / quiver-Hecke (Schiffmann–Vasserot, Varagnolo–Vasserot) → canonical/crystal basis. QOU uses KLR-adjacent tools directly (CLAUDE.md §7b type-B folding, KL-basis classical limit, Demazure resonances; `klr_canonical_basis_filter.py`, `crystal_basis.py`; Marsh `0008040`). QOU sits on the categorified-basis side and *omits* the WCF dynamics on top. |
 
 ---
@@ -235,9 +235,13 @@ Wedderburn decomposition ⊕_{λ⊢n} M_{d_λ}(ℚ(q)). Then the exp() objects �
 volume-conjecture `tr_M ~ exp(Vol)`, the Habiro element, the q-dilogarithm —
 get evaluated **block-by-block over partitions λ**, which is the entire QOU
 compute engine (`y_lambda_wenzl_bridge`, `chi_lambda_braid`, the per-λ q-Reeb
-phase). So the answer to *"why don't they just go to partitions"* is: **they
-can't (no semisimple algebra); QOU can (it engineered one), and that is QOU's
-defining methodological move.**
+phase). So the answer to *"why don't they just go to partitions"* is: **they *can*
+decompose — but only through a semisimple *nerve* (Jordan–Hölder into stable objects;
+the cellular root-of-unity tower; the Habiro ring; A∞), never as one finite Wedderburn
+split, because their simples are infinite and *move* with the stability condition. QOU's
+defining move is to evaluate at a generic q₀ where that shared tower collapses to a
+single finite, fixed `⊕_{λ⊢n} M_{d_λ}`** — not to possess a semisimplicity the others
+lack (this corrects an overclaim; see §15, per the owner's objection).
 
 Caveat (heeding "careful"): this advantage is **conditional on genericity of q**.
 At a root of unity H_n(q) is *not* semisimple and the partition picture degenerates
@@ -512,6 +516,12 @@ This candidate buys **≈ nothing in derivation length** (Wenzl is already short
 only value is making the "factorization is structural, not computational" fact
 explicit in Lean and giving DT-literate readers a familiar handle. **Low priority.**
 
+**Target decl (located 2026-06-04):** `markov_trace_factorization`
+(`content/quantum-observable-universe/mass-theory/markov-trace-factorization.lean:58`)
+currently states the factorization as an axiom + numeric witness, *not* a `MonoidHom`;
+the cleanup would re-express it as a `MonoidHom (Links, ⊔) → (ℚ(q), ·)`. **Parked** per
+the owner's "keep as remark / don't over-prove" steer — unblock on request.
+
 ### 11.5 Where the spirit *does* point — the one open frontier (step 9b binding / Δ_λ)
 
 §11.3 is about the *solved* steps 1–8. There is exactly one place where the KS
@@ -548,6 +558,19 @@ The gate already retired six fits; KS gives the *spirit* (where to look), **not*
 shortcut around it. If `[F,F]` yields Δ_λ with zero free parameters and a Lean proof,
 that would be a real simplification of the open step — but it must be *derived*, not
 *fitted*, and *formalized*, not asserted.
+
+**Coordination (main @ 2026-06-04).** The *trace-level* Markov-stabilization axis was
+just refuted on main (`8ab53993`): the normalized identity trace is `1.0`, not the
+`linking_weight ≈ 2.53` (M1); there is no exact `z^{±k}·linking_weight` coincidence
+(M2); and there is a direction obstruction — `z ≈ 0.4993 < 1` at q₀ cannot scale *up*
+to a `> 1` multiplier. `[F,F]` evades this **only** as a genuinely *per-block*
+(pre-collapse) object, never as the scalar trace — which is the whole point of "retain
+`θ_λ`." Before any numeric probe it must clear the formalize-first gate
+(`docs/audits/2026-06-04-qbeta-ck-refuted-class-map.md §4`): anchor-stability (< 1 %
+proton+muon swing), bar-evenness (q ↦ q⁻¹), and an integer q=1 shadow. The *official*
+open axis is the **fibre-level Habiro element** `F(q)`; `[F,F]` is a new, un-probed
+sub-idea, not on that axis — treat it as a hypothesis to **refute**, not a lever to
+bank on.
 
 ### 11.6 What the spirit explicitly does *not* license (guardrails)
 
@@ -631,3 +654,171 @@ The Lean-gate already implies this — it is *why* KS is, correctly, a remark to
 Formalizing the program is neither feasible (§12.3) nor warranted — the QOU-relevant
 content is already a remark plus the single Wenzl-multiplicativity lemma (§11.4). The
 KS↔QOU relationship lives as the §3 dictionary and the §10 survey, not as QOU theorems.
+
+---
+
+## 13. Two follow-ups: the Reeb flow, and "could KS have used QOU techniques?"
+
+### 13.1 KS's "flow" vs QOU's Reeb flow — they are *different* flows
+
+§3 (Q3/Q8) noted KS's "flow" is the cluster / wall-crossing mutation. To place
+QOU's *own* Reeb flow precisely against it:
+
+| | KS "flow" (declined) | QOU **Reeb flow** (load-bearing) |
+|---|---|---|
+| what flows | the DT invariants Ω(γ) / the quantum-torus automorphism `A_V` | the contact/Reeb dynamics on a *fixed* knot's boundary (Yekutieli holonomy) |
+| direction | **horizontal** — *across* the moduli of stability conditions, varying `Z` (i.e. varying `arg Z`) | **vertical** — *within* the fibre of one object at fixed q₀ |
+| produces | the jump of Ω across a wall (monodromy) | the per-block phase **`θ_λ = arccos(χ^λ/d_λ)`** |
+| archimedean? | yes — walls live in the ℂ of central charges | no — intrinsic, read at the pinned real q₀ |
+
+**Key correspondence:** both flows are about a **phase**. KS's stability phase is
+`Arg(E) = Im Log Z(E)` — the quantity whose alignment *defines a wall*. QOU's Reeb
+phase `θ_λ` is the per-Wedderburn-block analog — but QOU obtains it **intrinsically**,
+from the knot's own Reeb/Garside holonomy at the single pinned q₀
+(`reeb_flow_garside_closed_form_verification.py`, `binding_reeb_phase_decomposition.py`),
+instead of by flowing across stability space.
+
+So **QOU internalizes KS's flow.** Where KS *moves* the central charge to watch
+invariants jump, QOU *reads off* the intrinsic per-block Reeb phase at one point and
+**uses it as physics**: `θ_λ` is the **binding carrier** (cheat-sheet *Bind* row — the
+Markov-weighted Reeb phase closes the A=3 mirror pair ³H/³He to 2 % with no fit). The
+scalar trace `tr_M = Σ_λ y_λ χ^λ` then *collapses* `θ_λ`; the §11.5 binding lever is
+exactly "**don't collapse it**." And to close Q3: the flow that "twists the observables"
+in QOU is this **Reeb-phase flow + the bar-involution** (q ↦ q⁻¹) on the
+crystal-organized partition labels — **not** KS's cluster/WCF flow, which QOU never
+invokes.
+
+### 13.2 Could KS have used QOU techniques instead of ind-constructibility?
+
+**Globally: no.** KS's category is an arbitrary geometric 3-Calabi–Yau (sheaves /
+A-branes on a CY 3-fold); its moduli stack of objects is *irreducibly continuous*
+(Chern characters, positive-dimensional, stacky). There is no braid/Coxeter
+combinatorics, hence **no Gröbner–Shirshov length filtration with finite slices** to
+exploit. ind-constructibility (a *constructible*, motivic/definable tameness) is the
+**weakest** hypothesis that still lets motivic integration define the invariants;
+QOU's GB-NF finiteness (a *stronger*, finite-per-slice tameness) is simply unavailable
+there. QOU bought finiteness with *specificity*; KS needs *generality*, so pays with a
+weaker hypothesis.
+
+**On the combinatorial heart: yes — and this is what already works downstream.** KS's
+own §7 (cluster collections / quivers with potential, Thm 9–10) is the case where the
+category is generated by a *finite* collection `{E_i}` — representations of a quiver.
+There the objects are **combinatorial**, the cohomological Hall algebra has a **PBW
+basis**, and Efimov's proof of the KS integrality conjecture *for symmetric quivers*
+runs precisely on **PBW-type freeness of the COHA** — exactly the "reduce to a PBW /
+Gröbner–Shirshov normal form" move that is QOU's spirit (and the **Leitner–Pawloski
+simpler-PBW** style the owner favours). In that subcase QOU-style techniques are not
+merely *possible* — they are the standard tool.
+
+**And the two tameness notions are cousins.** "ind-constructible / motivic / definable"
+tameness is o-minimality-adjacent, and o-minimality is the natural home of **surreal /
+Hahn-series** value groups — the world QOU uses to make the **jet-order / q→1 limit**
+rigorous (`kuhlmann-matusinski-2012`, arXiv 1203.4538). KS chose the *motivic*
+incarnation because they needed the **Serre-polynomial q-analog** (`A_{V,q}`); QOU
+needs the **archimedean q₀-evaluation**. Same instinct ("work in a tame/definable
+category so limits behave"), two incarnations dictated by the target — motivic `q` vs
+archimedean `q₀`.
+
+---
+
+## 14. Plain-language: the WCF's walls and KS's famous theorems
+
+### 14.1 What the walls are
+
+A stability structure assigns each charge `γ ∈ Γ` a complex number `Z(γ)` (the central
+charge); a stable object of class `γ` has phase `arg Z(γ)`. A **wall of marginal
+stability** is the locus, in the space of stability conditions, where two charges
+become **phase-aligned**:
+
+> `arg Z(γ₁) = arg Z(γ₂)`  ⟺  `Z(γ₁), Z(γ₂), Z(γ₁+γ₂)` collinear in ℂ
+> (i.e. `Z` sends a rank-2 sublattice `Γ₀ ⊂ Γ` into a single real ray `ℝ·e^{iα}`).
+
+On the wall a bound state of charge `γ₁+γ₂` can form or decay — it is *marginally*
+bound, because the magnitudes `|Z|` add collinearly — so the count `Ω(γ)` of stable
+objects **jumps**. The walls are real-codimension-1 in `Hom(Γ,ℂ)`; they cut it into
+chambers (constant `Ω` inside, jumping across). **Physics:** `Ω(γ)` = number of BPS
+states of charge `γ`; walls = walls of marginal stability where the BPS spectrum
+reorganizes.
+
+### 14.2 What the formula says
+
+Although individual `Ω(γ)` jump, a specific **ordered product of quantum-torus
+automorphisms** — one factor `U_γ^{Ω(γ)}` per charge, ordered by phase, each factor a
+power of the **quantum dilogarithm** — is **invariant** across the wall (KS Thm 4: the
+monodromy around a wall-crossing is the identity). The smallest case is the
+**pentagon** (`⟨γ₁,γ₂⟩ = 1`):
+
+> `U_{γ₁} U_{γ₂} = U_{γ₂} U_{γ₁+γ₂} U_{γ₁}`
+
+— crossing the wall *creates* the bound state `γ₁+γ₂`. This single identity is the KS
+pentagon = the 5-term dilogarithm relation = the basic cluster mutation (the A₂ /
+conifold example).
+
+### 14.3 The famous theorems (what 0811.2435 is cited for)
+
+| Result | Plain statement | Why famous |
+|---|---|---|
+| **Thm 1** | `Stab(C) → Hom(Γ,ℂ)`, `σ ↦ Z`, is a local homeomorphism ⟹ the space of stability conditions is a complex manifold | generalizes **Bridgeland**'s theorem to the motivic / ind-constructible setting |
+| **Thm 4** | the ordered automorphism product has trivial monodromy around a wall | **this *is* the wall-crossing formula** |
+| **Thm 8** | `Φ : H(C) → R_Γ` is an algebra homomorphism (motivic Hall algebra → quantum torus) | the engine putting DT invariants in the quantum torus + making factorization work |
+| **Thm 6** | motivic Thom–Sebastiani: `1 − MF(f⊕g) = (1−MF f)(1−MF g)` | the rigorous (cited, Denef–Loeser-type) lemma behind the quantum-dilog factors |
+| **Conj 6** | `Ω(γ) ∈ ℤ` for generic `Z` | the **integrality conjecture** — proved for symmetric quivers by **Efimov** via PBW |
+| **Conj 1** | the `T_{1,0}·T_{0,k}` reordering | the **cluster-transformation / pentagon** link |
+
+**QOU tie-in (one line):** everything in 14.1–14.2 lives in the ℂ of central charges —
+the **archimedean** direction; QOU pins q₀ to a single point and never crosses a wall
+(§4). Of the famous theorems, only **Thm 8**'s pre-archimedean shadow (invariant = an
+algebra homomorphism ⟹ multiplicativity) echoes in QOU, as Wenzl disjoint-mult (§11.4).
+
+---
+
+## 15. Refinement (owner objection, 2026-06-04): they *can* decompose — through a semisimple *nerve*
+
+The §6 / §0-Q9 phrasing "they can't go to Wedderburn (no semisimple algebra)" is **too
+strong**. The owner's objection is correct: a non-semisimple, infinite-dimensional
+algebra can still be *decomposed through* semisimple data — by filtration, by cellular
+structure, or by a **universal object the invariants factor through** (the Habiro ring;
+A∞). Three mechanisms, all real, all used by *both* frameworks:
+
+1. **Filtration → associated graded / Jordan–Hölder.** Every KS object carries a
+   **Harder–Narasimhan / Jordan–Hölder filtration whose subquotients are *stable*
+   objects** — and a stable object *is* a "simple" (Schur: `End = field`). So KS *does*
+   decompose into simples; the associated graded of the JH filtration is `⊕ (stable
+   pieces)`, the Wedderburn-analog. This is QOU's own GB / Coxeter-length filtration
+   move (step 7), one rung up in generality. The owner's point that this works for
+   *analytic/holomorphic* data too is right: KS's filtration is by **phase/slope**
+   (`arg Z`, holomorphic periods) where QOU's is by **formal power series** (`h`-adic /
+   jet) — *different filtrations, same associated-graded principle.* **The catch is not
+   "no decomposition"** — it is that KS's set of simples (stable objects) is **infinite
+   and *moves* with the stability condition**, while QOU's simples (partitions `λ ⊢ n`)
+   are **finite and fixed**. Wall-crossing *is* the reorganization of this decomposition
+   as the simples move.
+
+2. **Cellular / quasi-hereditary tower (the root-of-unity nerve).** `H_n(q)` over
+   `ℤ[q^{±1}]` is **cellular** (Graham–Lehrer): the generic-`q` fibre is semisimple
+   (`⊕ M_{d_λ}`), the root-of-unity fibres are non-semisimple **but** have semisimple
+   *subquotients* governed by decomposition matrices / the canonical basis. The family
+   over all `q` is one object; each generic fibre is a Wedderburn split. That family
+   *is* a "nerve of semisimple algebras."
+
+3. **The universal objects the owner named — Habiro ring and A∞.**
+   - **Habiro ring** `Ẑ = lim_n ℤ[q]/((q;q)_n)` is the *arithmetic nerve*: it glues the
+     tower of **semisimple Reshetikhin–Turaev modular categories at every root of unity**
+     into one object, through which the Kashaev / coloured-Jones invariant factors —
+     **exactly** the universal object intuited. Garoufalidis–Zagier (`2111.06645`, in
+     `uploads/`) make it explicit: a *matrix of periods* indexed by the boundary-
+     parabolic `SL₂(ℂ)` representations — the nerve, written out.
+   - **A∞** is the *homotopical nerve*: the A∞ minimal model (KS Thm 5) is the
+     homotopy-initial skeleton resolving non-formality. KS's category is A∞ for exactly
+     this reason.
+
+**Corrected statement.** Both frameworks **factor through the same universal objects**
+(Habiro ring; filtered/graded structures; A∞). QOU's defining move is *not*
+"semisimple where KS is not" — it is: **evaluate at a single generic `q₀` where the
+shared tower *collapses* to one finite, fixed Wedderburn fibre `H_n(q₀) ≅ ⊕ M_{d_λ}`,
+then realize archimedean-ly.** KS keeps the whole nerve because it needs the global data
+(all stability conditions / all roots of unity = the wall-crossing structure). QOU
+trades the global tower for one calibrated fibre — that, not an absence of decomposition
+on KS's side, is the methodological choice. The owner's "nerve of semisimple algebras as
+a universal object" is the right picture, and it is **shared**, not exclusive to either
+side.
