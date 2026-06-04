@@ -1,0 +1,52 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:alpha-em-shift-multiplicative-chain-significance",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain-significance.ts",
+    "md": "content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain-significance.md"
+  },
+  "source_hashes": {
+    "md": "f6aff0f1fb64",
+    "ts": "57f75cce353a"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f6aff0f1fb64",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:24:38.304Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "f6aff0f1fb64",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:24:38.337Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
+      }
+    ]
+  },
+  "updated_at": "2026-06-04T17:24:38.337Z"
+}

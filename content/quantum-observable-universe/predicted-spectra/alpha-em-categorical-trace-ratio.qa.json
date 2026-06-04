@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean"
   },
   "source_hashes": {
-    "md": "7773625e8511",
+    "md": "500307a97c69",
     "ts": "ca5be552846c",
     "lean": "870b856da170"
   },
@@ -2213,6 +2213,23 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:alpha-em-categorical-trace-ratio' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "500307a97c69",
+          "ts": "ca5be552846c",
+          "lean": "870b856da170"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:23:01.930Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "proof-lean-compiles": [
@@ -2590,13 +2607,11 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "7773625e8511",
+          "md": "500307a97c69",
           "ts": "ca5be552846c",
           "lean": "870b856da170"
         },
-        "result": "fail",
-        "severity": "minor",
-        "evidence": "alpha-em-categorical-trace-ratio.md:72 — '### Interpretation' section present inside proposition block; physical interpretation content belongs in a separate remark block",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2604,14 +2619,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:12:29.256Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:22:41.150Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7773625e8511",
+          "md": "500307a97c69",
           "ts": "ca5be552846c",
           "lean": "870b856da170"
         },
@@ -2623,14 +2638,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:12:52.634Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:22:41.188Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "7773625e8511",
+          "md": "500307a97c69",
           "ts": "ca5be552846c",
           "lean": "870b856da170"
         },
@@ -2642,14 +2657,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:12:52.671Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:22:41.226Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "7773625e8511",
+          "md": "500307a97c69",
           "ts": "ca5be552846c",
           "lean": "870b856da170"
         },
@@ -2661,14 +2676,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:12:52.709Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:23:01.895Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "7773625e8511",
+          "md": "500307a97c69",
           "ts": "ca5be552846c",
           "lean": "870b856da170"
         },
@@ -2680,10 +2695,10 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:12:52.745Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:23:01.968Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ]
   },
-  "updated_at": "2026-06-04T14:12:52.745Z"
+  "updated_at": "2026-06-04T17:23:01.968Z"
 }
