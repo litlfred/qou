@@ -214,10 +214,17 @@ def _weights(n, s_str):
     s = mp.mpf(s_str)
     a = s ** 2
     z = s - 1 / s
-    # SU(2) Ocneanu support: only partitions whose parts are all ≤ 2 carry a
-    # nonzero weight (see `_spanning_set`). Restrict the solve to those; the
-    # rest are 0 and omitted from the returned dict. Held-out validation
-    # below confirms the restriction is exact.
+    # SU(2)/Temperley–Lieb support: at the Jones/SU(2) specialisation the
+    # Hecke algebra surjects onto the Temperley–Lieb algebra, whose simple
+    # modules are indexed by partitions with **≤ 2 columns** — equivalently
+    # every part ≤ 2 (`max(p) ≤ 2`). NOTE this is the *column* restriction
+    # (the TL quotient), NOT the ≤2-*rows* (`len(p) ≤ 2`) restriction of
+    # GL₂ Schur–Weyl: e.g. (1,1,1) and (2,1,1) are kept (3-4 rows, ≤2
+    # columns) while (3) and (3,1) are dropped. Only these partitions carry
+    # a nonzero Ocneanu weight; the rest are exactly 0 (held-out validation
+    # below confirms the restriction is exact). Both families happen to have
+    # the same cardinality floor(n/2)+1, which is why the distinction is
+    # easy to confuse.
     parts = [tuple(p) for p in partitions_of(n) if max(p) <= 2]
     spanning = _spanning_set(n, a, z)
     assert len(spanning) == len(parts), f"need {len(parts)} spanning braids for n={n}"
@@ -228,13 +235,17 @@ def _weights(n, s_str):
         for c, p in enumerate(parts):
             M[r, c] = a ** e * _chi(p, word, s)
         rhs[r] = ref
-    if abs(mp.det(M)) < mp.mpf("1e-30"):
+    # `lu_solve` raises on a singular matrix — let it report the conditioning
+    # limit of the uniform nested-Hopf family rather than pre-computing a
+    # scaling-dependent det threshold (and duplicating the factorisation).
+    try:
+        wvec = mp.lu_solve(M, rhs)
+    except (ZeroDivisionError, ValueError) as exc:
         raise NotImplementedError(
             f"HOMFLY Ocneanu spanning matrix is singular at n={n} (conditioning "
             f"limit of the uniform nested-Hopf family reached). Supply a better-"
             f"conditioned spanning set of floor(n/2)+1 braids over the parts-≤2 "
-            f"partitions and the module will self-validate.")
-    wvec = mp.lu_solve(M, rhs)
+            f"partitions and the module will self-validate.") from exc
     weights = {p: wvec[i] for i, p in enumerate(parts)}
 
     # Held-out validation (knots NOT in the spanning set).
@@ -244,6 +255,10 @@ def _weights(n, s_str):
         assert abs(pred - ref) < mp.mpf("1e-9"), (
             f"Ocneanu-weight validation FAILED for n={n} on {word}: "
             f"pred={pred} ref={ref}")
+    # Include the parts-≥3 partitions with their (exactly zero) weight so a
+    # caller indexing any partition of n gets 0 rather than a KeyError.
+    for p in partitions_of(n):
+        weights.setdefault(tuple(p), mp.mpf(0))
     return weights
 
 
@@ -258,8 +273,10 @@ def homfly_signed_su2(word, n_strands, q0, *, framed=True):
     s = mp.sqrt(mp.mpf(str(q0)))
     a = s ** 2
     weights = _weights(n_strands, mp.nstr(s, 40))
-    parts = list(weights.keys())
-    framed_val = sum(weights[p] * _chi(p, word, s) for p in parts)
+    # Skip the zero-weight (parts-≥3) partitions so their χ^λ is never
+    # evaluated — `_weights` includes them as explicit 0 for the caller's
+    # benefit, but they contribute nothing to the trace.
+    framed_val = sum(w * _chi(p, word, s) for p, w in weights.items() if w)
     if framed:
         return framed_val
     return a ** _writhe(word) * framed_val

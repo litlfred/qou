@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T13:09:39.101120+00:00",
-  "commitSha": "a04506b72e2dedfd701e89a8d36eff9012d5edb9",
+  "computedAt": "2026-06-04T13:16:03.499097+00:00",
+  "commitSha": "b6f2fb2acaaa4a1af9cf43d333d90624e0009a2b",
   "assertions": [
     {
       "name": "all_paths_match_reference",
@@ -13,10 +13,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 24,
   "computation": "homflypt-reference-qa",
   "scriptFile": "homflypt_reference_qa.py",
-  "scriptHash": "b2261c47b6f3",
+  "scriptHash": "f4642850e085",
   "scriptCommitSha": "a04506b72e2dedfd701e89a8d36eff9012d5edb9",
   "precisionMetadata": {
     "compute_dps": 70,
