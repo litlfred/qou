@@ -62,16 +62,12 @@ instead of constant kernel of) `QOU.QBeta.CKRecursion.applyRecursion`.
 theorem z_recursion_forward_form (w : ZRecursionCoeffs) (n : ℕ) (hn : n ≥ 1) :
     w.a (n+1) = z_recursion_kernel n 0 * w.a n + z_recursion_kernel n 1 * w.a (n-1) := by
   have hrec := w.recursion n hn
-  have hne : (4 : ℝ) * ((n : ℝ) + 1) ≠ 0 := by
-    have : (0 : ℝ) < ((n : ℝ) + 1) := by positivity
-    positivity
   -- Solve for w.a (n+1):
   -- 4(n+1)·a(n+1) = -6n·a(n) - (2n-1)·a(n-1)
-  -- a(n+1) = [-6n/(4(n+1))]·a(n) + [-(2n-1)/(4(n+1))]·a(n-1)
-  --       = [-3n/(2(n+1))]·a(n) + [-(2n-1)/(4(n+1))]·a(n-1)
+  -- a(n+1) = [-3n/(2(n+1))]·a(n) + [-(2n-1)/(4(n+1))]·a(n-1)
   unfold z_recursion_kernel
-  have h4n1_pos : (0 : ℝ) < 4 * ((n : ℝ) + 1) := by positivity
-  field_simp
-  linarith
+  have hn1 : ((n : ℝ) + 1) ≠ 0 := by positivity
+  field_simp [hn1]
+  linarith [hrec]
 
 end QOU.BraidKnot

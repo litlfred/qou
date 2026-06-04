@@ -33,7 +33,7 @@ of $k$. The $z$-Taylor recursion above also has depth 2 in the sense
 that each step uses two prior coefficients ($a_n$ and $a_{n-1}$),
 but its kernel coefficients depend on $n$:
 
-| | `CKRecursion` | $z$-Taylor recursion |
+| Property | `CKRecursion` | $z$-Taylor recursion |
 |---|---|---|
 | **Depth** | $d$ (fixed) | 2 |
 | **Kernel** | `Fin d → R` (constant) | $n \mapsto (\text{Fin 2} \to \mathbb{R})$ (variable) |
