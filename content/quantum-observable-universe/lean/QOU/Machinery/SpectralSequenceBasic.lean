@@ -35,8 +35,10 @@ namespace QOU.Machinery
 
 Encoded type-level only; the actual Mathlib spectral-sequence
 infrastructure would land in `Mathlib.Algebra.Homology.SpectralSequence`
-when categorified upstream. -/
-structure SpectralSequencePage (R : Type*) where
+when categorified upstream. (A base ring is intentionally NOT a
+parameter — the pages are bare graded types at this scaffold level;
+an `R`-linear refinement is future work.) -/
+structure SpectralSequencePage where
   /-- The page indexed by level `r`, position `(p, q)`. -/
   E : ℕ → ℤ → ℤ → Type*
   /-- The differential at level `r`. -/
@@ -51,7 +53,7 @@ relevant for residue A. -/
 /-- Conditional class axiomatising E₂-degeneration of a spectral
 sequence. NEAR-MATCH tier; instance not constructed (requires
 upstream Hochschild / KLR machinery). -/
-class E2Degenerates (R : Type*) (S : SpectralSequencePage R) : Prop where
+class E2Degenerates (S : SpectralSequencePage) : Prop where
   /-- All differentials vanish for `r ≥ 2` (opaque marker). -/
   d_vanishes_above_two : True
 
@@ -62,7 +64,7 @@ at E₂ to give the canonical basis decomposition. -/
 
 /-- Conditional class: KLR spectral sequence at E₂ recovers the
 canonical basis. NEAR-MATCH tier; instance not constructed. -/
-class KLRSpectralSequenceAtE2 (R : Type*) (S : SpectralSequencePage R) : Prop where
+class KLRSpectralSequenceAtE2 (S : SpectralSequencePage) : Prop where
   /-- E₂ page is the canonical basis decomposition (opaque marker). -/
   e2_is_canonical_basis : True
 

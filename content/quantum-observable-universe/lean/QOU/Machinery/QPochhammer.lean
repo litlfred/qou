@@ -46,7 +46,11 @@ namespace QOU.Machinery
 noncomputable def qPochhammerFinite (a q : ℝ) (n : ℕ) : ℝ :=
   ∏ k ∈ Finset.range n, (1 - a * q ^ k)
 
-/-- Diagonal q-Pochhammer `(q;q)_n = ∏_{k=0}^{n-1} (1 - q^(k+1))`. -/
+/-- Diagonal q-Pochhammer `(q;q)_n`, defined as `qPochhammerFinite q q n
+= ∏_{k=0}^{n-1} (1 - q·q^k)`. Note this equals the textbook form
+`∏_{k=0}^{n-1} (1 - q^(k+1))` (provably, via `q·q^k = q^(k+1)`), but the
+two are not definitionally equal — we keep the `q·q^k` form so that
+`qPochhammerDiag` reuses `qPochhammerFinite` directly. -/
 noncomputable def qPochhammerDiag (q : ℝ) (n : ℕ) : ℝ :=
   qPochhammerFinite q q n
 
@@ -72,11 +76,13 @@ theorem qPochhammerDiag_one (q : ℝ) : qPochhammerDiag q 1 = 1 - q := by
   unfold qPochhammerDiag
   exact qPochhammerFinite_one q q
 
-/-- **Recursion**: `(a;q)_{n+1} = (a;q)_n · (1 - a·q^n)`. -/
+/-- **Recursion**: `(a;q)_{n+1} = (a;q)_n · (1 - a·q^n)`. Direct
+application of `Finset.prod_range_succ` (the term closes the goal up
+to beta-reduction of `f n`). -/
 theorem qPochhammerFinite_succ (a q : ℝ) (n : ℕ) :
     qPochhammerFinite a q (n + 1) = qPochhammerFinite a q n * (1 - a * q ^ n) := by
   unfold qPochhammerFinite
-  rw [Finset.prod_range_succ]
+  exact Finset.prod_range_succ _ n
 
 /-- **At q = 1**, `(q;q)_n = 0` for all `n ≥ 1` because the `k = 0`
 factor is `1 - q^1 = 0`. -/
@@ -98,12 +104,14 @@ Well-defined when `(q;q)_k ≠ 0` and `(q;q)_{n-k} ≠ 0`. -/
 noncomputable def qBinomial (n k : ℕ) (q : ℝ) : ℝ :=
   qPochhammerDiag q n / (qPochhammerDiag q k * qPochhammerDiag q (n - k))
 
-/-- `[n 0]_q = 1` for any q and n. -/
+/-- `[n 0]_q = 1`, provided the diagonal q-Pochhammer `(q;q)_n` is
+nonzero (needed so the quotient `(q;q)_n / (q;q)_n` cancels to `1`;
+`qBinomial` is defined as a real quotient and is not totalized at the
+`(q;q)_n = 0` locus, e.g. roots of unity). -/
 theorem qBinomial_zero (n : ℕ) (q : ℝ) (hq : qPochhammerDiag q n ≠ 0) :
     qBinomial n 0 q = 1 := by
   unfold qBinomial
-  rw [qPochhammerDiag_zero]
-  simp
+  rw [qPochhammerDiag_zero, Nat.sub_zero, one_mul]
   exact div_self hq
 
 /-! ## Conditional class for the q-Pochhammer / Habiro link

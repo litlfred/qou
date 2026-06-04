@@ -60,9 +60,8 @@ theorem qDilogPartial_at_q_zero (N : ℕ) : qDilogPartial 0 N = 0 := by
   unfold qDilogPartial
   apply Finset.sum_eq_zero
   intro n _
-  have : (0 : ℝ) ^ (n + 1) = 0 := zero_pow (Nat.succ_ne_zero n)
-  rw [this]
-  ring
+  -- numerator `0^(n+1) = 0`, so the whole term is `0 / (…) = 0`.
+  simp [zero_pow (Nat.succ_ne_zero n)]
 
 /-! ## Bloch-Wigner D function
 
