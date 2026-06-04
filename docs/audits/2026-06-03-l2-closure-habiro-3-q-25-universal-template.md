@@ -1,5 +1,11 @@
 # L2 closure breakthrough — `[3]_q / 25` universal Habiro template (2026-06-03)
 
+> **⮕ SUPERSEDED for status.** The `[3]_q/25` c_3 form was later **falsified**
+> as a real-q fibre element (cross-anchor rigidity, 2026-06-04). Authoritative
+> c_k / d_k status now lives in
+> [`docs/coordination/ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md)
+> (c_3 = empirical near-match, NOT wired). Read the registry for current tiers.
+
 > **Empirical finding**: m_μ AND Q_β c_3 BOTH close their respective L2
 > 100× targets via 2-3 rung Habiro-element structures that **share the
 > `[3]_q / 25 = [3]_q / 5²` building block**. This is the first

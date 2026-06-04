@@ -1,5 +1,14 @@
 # Deep audit: Q_β c_k and m_p d_k production wiring (2026-05-30)
 
+> ## ⮕ SUPERSEDED — the live status is in the canonical registry
+>
+> The authoritative c_k / d_k canonical-vs-empirical status + production
+> wiring now lives in
+> [`docs/coordination/ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md).
+> The TL;DR table below is a **2026-05-30 snapshot** (its "4/7 → 6/7" is
+> stale — the live dashboard is **3/7** post proton-anchor re-pin). Read the
+> registry for current tiers; this doc is historical record of the flip-flops.
+
 > ## ⚠ READ THIS FIRST — BODY SUPERSEDED BY THE ADDENDUM
 >
 > **The TL;DR table, the "What's canonical now" wiring, and the

@@ -1,5 +1,11 @@
 # 1ppQ Master Ledger — Q_β
 
+> **⮕ For c_k / d_k tier + wiring status** (incl. the flip-flop guard), the
+> authoritative source is
+> [`docs/coordination/ck-dk-canonical-registry.md`](ck-dk-canonical-registry.md).
+> This ledger tracks the broader 1ppQ Q_β goal; the registry is the single
+> per-rung canonical-vs-empirical record.
+
 > Single source of truth for the **1 ppQ (10⁻¹⁵) Q_β** goal.
 >
 > Per `STATUS.md`: this is the achievable arm of the 1ppQ target;

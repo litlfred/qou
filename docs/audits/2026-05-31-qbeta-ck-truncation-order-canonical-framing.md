@@ -1,5 +1,11 @@
 # Q_β c_k — truncation-order canonical framing (READ FIRST before any c_k wire/un-wire)
 
+> **⮕ SUPERSEDED for status.** The authoritative c_k / d_k canonical-vs-empirical
+> status now lives in the single registry
+> [`docs/coordination/ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md).
+> This doc is retained for its truncation-order framing detail; for the current
+> per-rung tier + wiring, read the registry.
+
 **Date:** 2026-05-31
 **Status:** CANONICAL — supersedes the binary "wire vs drop c_k" framing
 in all prior Q_β c_k audits.
