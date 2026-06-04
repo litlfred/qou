@@ -164,7 +164,8 @@ def _character_closed_form_anchor(tol: "mpf") -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true",
-                    help="Exit non-zero on any > 1ppQ exact-method divergence")
+                    help=("Exit non-zero on any divergence above the gate: "
+                          "exact-method 1 ppQ (1e-15) OR peel float tolerance (1e-12)"))
     ap.add_argument("--dps", type=int, default=50,
                     help="mpmath working precision (default 50)")
     args = ap.parse_args()
@@ -323,7 +324,10 @@ def main() -> int:
 
         d: dict = {
             "atom": atom,
-            "within_1ppQ": ok,
+            "within_1ppQ": ok,                 # combined gate: exact 1 ppQ AND peel < 1e-12
+            "within_1ppb": ok,                 # back-compat alias for pre-ppQ consumers
+            "within_1ppQ_exact_methods": certified_1ppQ,   # float-clean trio < 1 ppQ
+            "within_peel_tolerance": bool(peel_max < TOLERANCE_PEEL),
             "rel_delta_max": str(rel_max),
             "exact_method_rel_delta": str(exact_max),
             "peel_rel_delta": str(peel_max),
@@ -364,14 +368,17 @@ def main() -> int:
     w.add_parameter(
         "description",
         (
-            "Pairwise comparison of tr_M(β_atom) @ q_0 between the "
-            "Hoefsmit/mpfr 50-dps brute-force path and the Markov-"
-            "axiom recursive ascent (markov_peel, production "
-            "witness from PR #520). Tolerance is 1 ppb (1e-9 "
-            "relative)."
+            "Pairwise comparison of tr_M(β_atom) @ q_0 across four paths. "
+            "Two-part gate: the float-clean methods (Hoefsmit mpfr 50-dps, "
+            "chi-cache, Habiro) are certified at 1 ppQ (1e-15 relative); "
+            "markov_peel (float64 q_0 eval; exact symbolic path incomplete "
+            "for nuclei, the open #508 Phase-2 rewrite) is an INDEPENDENT "
+            "cross-check held to a looser 1e-12 float tolerance and does NOT "
+            "certify 1 ppQ."
         ),
     )
-    w.add_parameter("tolerance_relative", str(TOLERANCE))
+    w.add_parameter("tolerance_1ppQ_exact_methods", str(TOLERANCE_PPQ))
+    w.add_parameter("tolerance_peel_float_check", str(TOLERANCE_PEEL))
     w.add_parameter("working_precision_dps", args.dps)
     # External correctness anchor for the χ^λ engine (closes the
     # "agreement ≠ correctness" gap documented in the verification-gap

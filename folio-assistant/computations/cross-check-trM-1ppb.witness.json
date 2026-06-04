@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T13:45:15.003169+00:00",
-  "commitSha": "b0198743bc4178d693f4dee30a50e7501cfe8627",
+  "computedAt": "2026-06-04T13:51:49.956615+00:00",
+  "commitSha": "0bdbb87bcc8d4b5fc80dc544771144cdb7f1e9d7",
   "assertions": [
     {
       "name": "all_atoms_within_1ppQ",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 27,
   "computation": "cross-check-trM-1ppb",
   "scriptFile": "cross_check_trM_1ppb.py",
-  "scriptHash": "138a940f9835",
-  "scriptCommitSha": "3682f762ad4f9786a7c0a50f4b30a902168d0275",
+  "scriptHash": "bd1f1e998f3d",
+  "scriptCommitSha": "0bdbb87bcc8d4b5fc80dc544771144cdb7f1e9d7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,8 +42,9 @@
   },
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "parameters": {
-    "description": "Pairwise comparison of tr_M(β_atom) @ q_0 between the Hoefsmit/mpfr 50-dps brute-force path and the Markov-axiom recursive ascent (markov_peel, production witness from PR #520). Tolerance is 1 ppb (1e-9 relative).",
-    "tolerance_relative": "0.000000000000001000000000000000077705399876661079238307185601195",
+    "description": "Pairwise comparison of tr_M(β_atom) @ q_0 across four paths. Two-part gate: the float-clean methods (Hoefsmit mpfr 50-dps, chi-cache, Habiro) are certified at 1 ppQ (1e-15 relative); markov_peel (float64 q_0 eval; exact symbolic path incomplete for nuclei, the open #508 Phase-2 rewrite) is an INDEPENDENT cross-check held to a looser 1e-12 float tolerance and does NOT certify 1 ppQ.",
+    "tolerance_1ppQ_exact_methods": "0.000000000000001000000000000000077705399876661079238307185601195",
+    "tolerance_peel_float_check": "0.00000000000099999999999999997988664762925561536725284350612952",
     "working_precision_dps": 50
   },
   "data": {
@@ -53,6 +54,9 @@
       {
         "atom": "deuteron",
         "within_1ppQ": true,
+        "within_1ppb": true,
+        "within_1ppQ_exact_methods": true,
+        "within_peel_tolerance": true,
         "rel_delta_max": "8.1647801381602165320094484546955663324581225464275e-16",
         "exact_method_rel_delta": "1.0118726487019178945363132609386241219725822781952e-48",
         "peel_rel_delta": "8.1647801381602165320094484546955663324581225464275e-16",
@@ -74,6 +78,9 @@
       {
         "atom": "helium-3",
         "within_1ppQ": true,
+        "within_1ppb": true,
+        "within_1ppQ_exact_methods": true,
+        "within_peel_tolerance": true,
         "rel_delta_max": "6.6959286725056090240620406862870560340122670645188e-16",
         "exact_method_rel_delta": "1.5383153291211472199421885908221592951915191469052e-48",
         "peel_rel_delta": "6.6959286725056090240620406862870560340122670645188e-16",
@@ -95,6 +102,9 @@
       {
         "atom": "helium-4",
         "within_1ppQ": true,
+        "within_1ppb": true,
+        "within_1ppQ_exact_methods": false,
+        "within_peel_tolerance": true,
         "rel_delta_max": "0.0000000000000040146213856993438602232879535551628368854166515834",
         "exact_method_rel_delta": "0.0",
         "peel_rel_delta": "0.0000000000000040146213856993438602232879535551628368854166515834",
@@ -109,6 +119,9 @@
       {
         "atom": "neutron",
         "within_1ppQ": true,
+        "within_1ppb": true,
+        "within_1ppQ_exact_methods": true,
+        "within_peel_tolerance": true,
         "rel_delta_max": "2.028884605971672843749517125205931317308675846282e-16",
         "exact_method_rel_delta": "3.184505372908649629383071889946361024624192784727e-50",
         "peel_rel_delta": "2.028884605971672843749517125205931317308675846282e-16",
@@ -126,6 +139,9 @@
       {
         "atom": "proton",
         "within_1ppQ": true,
+        "within_1ppb": true,
+        "within_1ppQ_exact_methods": true,
+        "within_peel_tolerance": true,
         "rel_delta_max": "2.5663812315151884090766352753922790650488358033843e-16",
         "exact_method_rel_delta": "0.0",
         "peel_rel_delta": "2.5663812315151884090766352753922790650488358033843e-16",
@@ -143,6 +159,9 @@
       {
         "atom": "tritium",
         "within_1ppQ": true,
+        "within_1ppb": true,
+        "within_1ppQ_exact_methods": true,
+        "within_peel_tolerance": true,
         "rel_delta_max": "0.0000000000000019917593546846921324139043732114413248324580957247",
         "exact_method_rel_delta": "1.6664305605756158023755333224525168040132808891563e-48",
         "peel_rel_delta": "0.0000000000000019917593546846921324139043732114413248324580957247",
