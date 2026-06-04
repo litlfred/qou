@@ -98,10 +98,12 @@ $\sqrt q$ (see Extension #4).
 
 **Extension #2 — Taylor coefficients at $q = 1$.** Locks the
 order-0 coefficient as a sorry-free vanishing theorem
-($\Delta\tau_M^{\text{surr}}(1) = 0$); states the order-1 coefficient
-$-5/6$ as a `HasDerivAt` proposition (proof deferred — mechanical
-quotient-rule derivative). Higher orders ($5/6$, $-41/9$, …) are
-recorded in the witness JSON; each requires an n-th derivative
+($\Delta\tau_M^{\text{surr}}(1) = 0$) and the order-1 coefficient
+as a sorry-free `HasDerivAt` theorem
+($D \Delta\tau_M^{\text{surr}}(1) = -5/6$, proven by explicit
+quotient-rule chaining: $N'(1) = -10$, $D(1) = 12$,
+$N(1) = 0$ ⇒ derivative $= -10/12$). Higher orders ($5/6$, $-41/9$, …)
+are recorded in the witness JSON; each requires an n-th derivative
 computation that is tractable but bulky.
 
 **Extension #3 (skipped).** The "$\Delta\tau_M$ has no $\sqrt q$
@@ -112,22 +114,23 @@ by construction.
 
 **Extension #4 — canonical $\sqrt q$-bearing $\Delta\tau_M$ (conditional
 class).** Defines the Markov parameter $z(q) = \sqrt q / (1+q)$ as a
-genuine archimedean construction; states the symmetric identity
-$z(q) = 1 / (\sqrt q + 1/\sqrt q)$. Axiomatises the canonical
-Wenzl–Markov weights via `class CanonicalMarkovWeightsH3` with a
-single dimension-normalisation axiom (CLAUDE.md §3b-cond pattern).
-A conditional `def delta_tau_M_canonical` consumes the class as
-`[Instance]`; the conditional theorem
-`delta_tau_M_canonical_vanish_at_one` is sorry-free (reduces to
-`chi_blocks_vanish_at_one`).
+genuine archimedean construction; proves the symmetric identity
+$z(q) = 1 / (\sqrt q + 1/\sqrt q)$ sorry-free via
+`Real.mul_self_sqrt`. Axiomatises the canonical Wenzl–Markov weights
+via `class CanonicalMarkovWeightsH3` with a single dimension-
+normalisation axiom (CLAUDE.md §3b-cond pattern). A conditional
+`def delta_tau_M_canonical` consumes the class as `[Instance]`;
+the conditional theorem `delta_tau_M_canonical_vanish_at_one` is
+sorry-free (reduces to `chi_blocks_vanish_at_one`).
 
 **Extension #5 — z-recursion class.** Axiomatises the 3-term
 recursion
 $4(n+1)\,a_{n+1} + 6n\,a_n + (2n-1)\,a_{n-1} = 0$
 on the Taylor coefficients of $z(q)$ at $q = 1$, with seeds
-$a_0 = 1/2$, $a_1 = 0$. States the `ZRecursionCoeffs.unique`
-uniqueness theorem (proof deferred — strong induction with a
-linear-solve step). This is the auxiliary z-Taylor recursion;
+$a_0 = 1/2$, $a_1 = 0$. Proves the `ZRecursionCoeffs.unique`
+uniqueness theorem sorry-free via strong induction
+(`Nat.strong_induction_on`) with a linear-solve step at each
+inductive case. This is the auxiliary z-Taylor recursion;
 the GENERAL c_k ladder recursion is the sibling
 [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
 (landed 2026-06-03), which provides the depth-$d$ linear recursion
@@ -144,11 +147,12 @@ main):
   upstream object from `delta_tau_M_canonical`, but same
   classical-point vanishing structure).
 
-**Sorry tally.** Three sorries, each with `-- Ref:` citations per
-CLAUDE.md §1: derivative-at-$q=1$, Markov-parameter symmetric form,
-z-recursion uniqueness. All are tractable mechanical proofs deferred
-as bulk. The structural content (definitions, classes, conditional
-vanishing theorems) is fully verified.
+**Sorry tally: zero.** All theorems are sorry-free, locally verified
+against `lean v4.24.0` + Mathlib commit
+`f897ebcf72cd16f89ab4577d0c826cd14afaafc7`. The three originally-
+deferred sorries (derivative-at-$q=1$, Markov-parameter symmetric
+form, z-recursion uniqueness) were each subsequently discharged once
+local Lean verification became available.
 
 ## Cross-references
 
