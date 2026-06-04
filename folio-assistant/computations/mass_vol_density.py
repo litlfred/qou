@@ -87,6 +87,12 @@ def density_borromean(q: mp.mpf, q_inv: mp.mpf | None = None) -> mp.mpf:
     return linking_weight_family_a(q, q_inv)
 
 
+#: Preferred alias for the global production density scalar (``ρ_global``).
+#: Non-breaking synonym for ``density_borromean`` — use whichever reads
+#: clearer at the call site; the two are identical.
+density_global = density_borromean
+
+
 def density_per_block(tr_M_K: mp.mpf) -> mp.mpf:
     """PER-BLOCK (paper-canonical, SU(2)-selective) density
     ρ_pb(K) = tr_M(K, q) = Σ_λ y_λ χ^λ(β_K).
@@ -131,6 +137,16 @@ def compare_density_readings(
     NO fudge is applied — the discrepancy is reported, not tuned away."""
     rho_global = density_borromean(q, q_inv)
     rho_pb = density_per_block(tr_M_K)
+    if rho_pb == 0:
+        # A vanishing per-block trace is not a physical density; report an
+        # undefined ratio rather than dividing by zero (gate cannot pass).
+        return {
+            "density_global": rho_global,
+            "density_per_block": rho_pb,
+            "ratio_global_over_per_block": mp.inf,
+            "gate_pass": False,
+            "verdict": "RED — per-block density is 0 (undefined ratio)",
+        }
     ratio = rho_global / rho_pb
     gate_pass = abs(ratio - 1) < mp.mpf("1e-6")
     return {
@@ -229,7 +245,7 @@ def _emit_witness() -> None:
             (HERE / "chi-proton-h3-at-q0-50dps.witness.json").read_text())
         tr_M_proton = mp.mpf(d["tr_M_at_q0"])
         cmp_pb = compare_density_readings(q, tr_M_proton)
-        # geom_full_vd with per-block density ≡ _li_2_util.geom_full_per_block
+        # geom_full_vd with per-block density ≡ _li_2_q_util.geom_full_per_block
         from _li_2_q_util import geom_full_per_block as _gfpb
         vd_pb = geom_full_vd(vol_borromean(), q,
                              density=density_per_block(tr_M_proton))
