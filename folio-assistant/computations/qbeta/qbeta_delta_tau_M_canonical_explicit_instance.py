@@ -39,43 +39,47 @@ the relative magnitudes are visible and a reviewer can confirm that
 making the y_λ instance √q-bearing does not collapse the swing to zero
 (it doesn't — see witness for actual numbers).
 
-No fits, no tuning. Pre-archimedean closed forms only; mpmath at 60 dps.
+No fits, no tuning. Pre-archimedean closed forms only.
+
+## Precision policy
+
+Adopts the canonical `qou_substrate.precision` policy verbatim:
+`set_compute_dps()` raises `mp.dps` to COMPUTE_DPS (70), and every
+serialized value goes through `fmt()` at OUTPUT_DPS (60), with a
+10-digit guard. **Both anchors are derived at the full compute
+precision** via `q_at(mp.dps)` (proton) and `q_muon_at(mp.dps)` (muon)
+— NOT read from the truncated 50-digit string — so no anchor is the
+precision-limiting factor. The witness's `precisionMetadata`
+(auto-recorded from the same package constants) therefore matches the
+precision actually used, and the `data` block additionally records the
+effective anchor / compute / output dps for traceability.
 
 ## Outputs
 
 A single witness JSON
-``qbeta-delta-tau-m-canonical-explicit-instance.witness.json`` with:
+``qbeta-delta-tau-m-canonical-explicit-instance.witness.json`` with the
+per-anchor Δτ_M values (canonical-explicit + surrogate), the two
+cross-anchor swings, and the relative divergence canonical↔surrogate at
+each anchor.
 
-    Δτ_M_canonical_explicit @ q_proton
-    Δτ_M_canonical_explicit @ q_muon
-    Δτ_M_surrogate          @ q_proton (re-evaluated for parity)
-    Δτ_M_surrogate          @ q_muon
-    swing_canonical_explicit = |Δτ_M_can(q_p) − Δτ_M_can(q_μ)|
-    swing_surrogate          = |Δτ_M_sur(q_p) − Δτ_M_sur(q_μ)|
-    relative_divergence_at_q_proton = |can − sur| / |sur|
-    relative_divergence_at_q_muon   = |can − sur| / |sur|
-
-Invariants:
+Invariants (assertions):
 
     Δτ_M_canonical_explicit(1) = 0
-        (each per-block χ_λ has a (q²−1) factor — verified at q=1 to
-        20 mpmath digits.)
+        (each per-block χ_λ has a (q²−1) factor — verified at q=1.)
     swing_canonical_explicit > 0
         (the cross-anchor swing survives the √q-bearing weights — i.e.
         making the instance non-rational does not collapse the
         NEAR-MATCH diagnostic to zero.)
 
-Source identities:
-    χ_(3)(q)      = -(q²-1)(q²+1)² / (4q)
-    χ_(2,1)(q)    = (q²-1)(-q⁴-1) / (4q³)
-    χ_(1,1,1)(q)  = -(q²-1)(q²+1)² / (4q⁵)
-    z(q)          = √q / (1+q)   (markov_parameter)
-
 References:
     Lean class:    QOU.BraidKnot.CanonicalMarkovWeightsH3 (PR #1764)
     Lean instance: QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance
+    Lean eval:     QOU.BraidKnot.delta_tau_M_canonical_explicit_eq
+                   (this PR) — the Lean lemma this probe mirrors numerically
     Surrogate:     folio-assistant/computations/qbeta/
                        qbeta_c3_multiblock_recursion_attack.py
+    Shared utils:  qbeta_utils.py (χ-blocks, markov_parameter, the two
+                   Δτ_M evaluators)
 """
 from __future__ import annotations
 
@@ -83,85 +87,39 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from mpmath import mp, mpf, sqrt as mpsqrt, fabs  # noqa: E402
+from mpmath import mp, mpf, fabs  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from q_parameter import q_at, q_muon_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-DPS_COMPUTE = 60
-DPS_REPORT = 50
+from qbeta_utils import (  # noqa: E402
+    delta_tau_M_canonical_explicit,
+    delta_tau_M_surrogate,
+)
 
-
-# ── Pre-archimedean closed forms (rational in q + Real.sqrt(q) for z) ──
-
-def chi_block_3(q: mpf) -> mpf:
-    return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q)
-
-
-def chi_block_21(q: mpf) -> mpf:
-    return (q ** 2 - 1) * (-(q ** 4) - 1) / (4 * q ** 3)
-
-
-def chi_block_111(q: mpf) -> mpf:
-    return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q ** 5)
-
-
-def markov_parameter(q: mpf) -> mpf:
-    """z(q) = √q / (1 + q) — the canonical Markov parameter."""
-    return mpsqrt(q) / (1 + q)
-
-
-# ── Δτ_M evaluators ──
-
-def delta_tau_M_canonical_explicit(q: mpf) -> mpf:
-    """Canonical Δτ_M with the EXPLICIT √q-bearing instance:
-       y_3 = z, y_21 = 1/2 - z, y_111 = z.
-    """
-    z = markov_parameter(q)
-    return (
-        z * chi_block_3(q)
-        + (mpf("0.5") - z) * chi_block_21(q)
-        + z * chi_block_111(q)
-    )
-
-
-def delta_tau_M_surrogate(q: mpf) -> mpf:
-    """Rational surrogate from qbeta_c3_multiblock_recursion_attack —
-    the y_λ weights are dimensions/((1+q)(1+q+q²)) (no √q)."""
-    num = (
-        -(q ** 11)
-        + q ** 10
-        - 2 * q ** 9
-        + q ** 8
-        + q ** 6
-        - q ** 5
-        - q ** 3
-        + 2 * q ** 2
-        - q
-        + 1
-    )
-    den = 4 * q ** 5 * (q ** 2 + q + 1)
-    return num / den
-
-
-# ── Main probe ──
 
 def main() -> None:
-    set_compute_dps(DPS_COMPUTE)
+    # Adopt the canonical package precision policy: mp.dps = COMPUTE_DPS,
+    # serialization via fmt() at OUTPUT_DPS, guard digits as configured.
+    eff_dps = set_compute_dps()
+    from qou_substrate.precision import OUTPUT_DPS, PRECISION_GUARD
 
     print("=" * 72)
     print("Δτ_M_canonical at the explicit √q-bearing instance — q₀ evaluation")
     print("=" * 72)
-    print(f"mpmath dps = {mp.dps}")
+    print(f"effective compute mp.dps = {eff_dps}  (output dps = {OUTPUT_DPS}, "
+          f"guard = {PRECISION_GUARD})")
 
-    # ── q anchors ──
-    q_proton = mpf(Q_50_DIGIT_STR)
-    q_muon = q_muon_at(DPS_REPORT)
+    # ── q anchors, both derived at full compute precision ──
+    anchor_dps = mp.dps
+    q_proton = q_at(anchor_dps)          # proton-pinned q₀ (current canonical)
+    q_muon = q_muon_at(anchor_dps)       # muon cross-check anchor
     print(f"\nq_proton = {mp.nstr(q_proton, 30)}")
     print(f"q_muon   = {mp.nstr(q_muon, 30)}")
 
@@ -192,15 +150,15 @@ def main() -> None:
     div_at_p = fabs(can_p - sur_p) / fabs(sur_p) if sur_p != 0 else mpf("nan")
     div_at_m = fabs(can_m - sur_m) / fabs(sur_m) if sur_m != 0 else mpf("nan")
     print("\n── Divergence canonical_explicit ↔ surrogate ──")
-    print(f"  relative |can − sur| / |sur| @ q_proton = {mp.nstr(div_at_p, 6)}")
-    print(f"  relative |can − sur| / |sur| @ q_muon   = {mp.nstr(div_at_m, 6)}")
+    print(f"  relative |can − sur| / |sur| @ q_proton = {mp.nstr(div_at_p, 8)}")
+    print(f"  relative |can − sur| / |sur| @ q_muon   = {mp.nstr(div_at_m, 8)}")
 
     # ── Sanity: swings non-zero (NEAR-MATCH diagnostic survives) ──
     assert swing_can > 0, (
         "swing_can must be > 0 — the explicit-instance evaluation "
         "should not collapse the cross-anchor swing"
     )
-    assert val_at_one == 0 or fabs(val_at_one) < mpf(10) ** -20, (
+    assert fabs(val_at_one) < mpf(10) ** -(OUTPUT_DPS - 2), (
         f"Δτ_M_canonical_explicit(1) must be 0 (got {val_at_one})"
     )
 
@@ -216,38 +174,31 @@ def main() -> None:
         "(qbeta_c3_multiblock_recursion_attack). Closes the conjectural-"
         "to-numerical loop: makes the §3b-cond conditional theorem "
         "prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor "
-        "numerically inspectable. No fits, no tuning."
+        "numerically inspectable. Both anchors derived at full compute "
+        "precision (q_at / q_muon_at). No fits, no tuning."
     )
     wn.set_content_block(
         "prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor"
     )
-    wn.add_data("dps_compute", DPS_COMPUTE)
-    wn.add_data("q_proton", mp.nstr(q_proton, DPS_REPORT))
-    wn.add_data("q_muon", mp.nstr(q_muon, DPS_REPORT))
+    # Explicit precision traceability (in addition to the auto
+    # precisionMetadata block, which records the same package constants):
+    wn.add_data("anchor_dps", anchor_dps)
+    wn.add_data("compute_dps_effective", eff_dps)
+    wn.add_data("output_dps", OUTPUT_DPS)
+    wn.add_data("q_proton", fmt(q_proton))
+    wn.add_data("q_muon", fmt(q_muon))
     wn.add_data(
-        "delta_tau_M_canonical_explicit_q_proton",
-        mp.nstr(can_p, DPS_REPORT),
+        "delta_tau_M_canonical_explicit_q_proton", fmt(can_p)
     )
     wn.add_data(
-        "delta_tau_M_canonical_explicit_q_muon",
-        mp.nstr(can_m, DPS_REPORT),
+        "delta_tau_M_canonical_explicit_q_muon", fmt(can_m)
     )
-    wn.add_data(
-        "swing_canonical_explicit", mp.nstr(swing_can, DPS_REPORT)
-    )
-    wn.add_data(
-        "delta_tau_M_surrogate_q_proton", mp.nstr(sur_p, DPS_REPORT)
-    )
-    wn.add_data(
-        "delta_tau_M_surrogate_q_muon", mp.nstr(sur_m, DPS_REPORT)
-    )
-    wn.add_data("swing_surrogate", mp.nstr(swing_sur, DPS_REPORT))
-    wn.add_data(
-        "relative_divergence_at_q_proton", mp.nstr(div_at_p, 12)
-    )
-    wn.add_data(
-        "relative_divergence_at_q_muon", mp.nstr(div_at_m, 12)
-    )
+    wn.add_data("swing_canonical_explicit", fmt(swing_can))
+    wn.add_data("delta_tau_M_surrogate_q_proton", fmt(sur_p))
+    wn.add_data("delta_tau_M_surrogate_q_muon", fmt(sur_m))
+    wn.add_data("swing_surrogate", fmt(swing_sur))
+    wn.add_data("relative_divergence_at_q_proton", fmt(div_at_p))
+    wn.add_data("relative_divergence_at_q_muon", fmt(div_at_m))
     wn.add_data(
         "interpretation",
         "The explicit-instance Δτ_M and the surrogate Δτ_M disagree by "
@@ -268,7 +219,7 @@ def main() -> None:
         "delta_tau_M_canonical_explicit_vanish_at_one",
         computed=float(val_at_one),
         expected=0.0,
-        tolerance=1e-20,
+        tolerance=float(mpf(10) ** -(OUTPUT_DPS - 2)),
     )
     # 2. Cross-anchor swing of the explicit instance is non-zero
     wn.add_assertion(
