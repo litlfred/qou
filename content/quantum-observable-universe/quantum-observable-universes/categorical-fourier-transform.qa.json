@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6e2311c838cb",
+          "ts": "78ee7266a3c6",
+          "lean": "748fb45f4dba"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "sec:q-linear-transforms (line 402) lists this block; section title is 'Linear q-transforms: heat, Laplace, Fourier'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:40:04.185Z",
+        "reviewed_sha": "f1e1bb1806b35ab32edbbc756ad8250bad123ce1",
+        "notes": "Exact topic match; no sibling redundancy"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6e2311c838cb",
+          "ts": "78ee7266a3c6",
+          "lean": "748fb45f4dba"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": ".md 'Base-ring independence' section explicit; Lean CategoricalFourier struct over generic Type*; no numeric q value in definition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:40:43.302Z",
+        "reviewed_sha": "5cd1286a729da78818a8081566cfe27a8d4060ee",
+        "notes": "quantum-observable-universes is substrate/generic chapter; definition is base-ring generic; ℂ only in Wick-rotation helper, not definition body"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-04T23:40:43.302Z"
 }
