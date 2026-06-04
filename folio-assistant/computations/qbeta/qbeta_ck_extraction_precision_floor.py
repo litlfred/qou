@@ -89,8 +89,8 @@ SIGMA_R_SCAN = ["1e-6", "6e-7", "1e-7", "1e-8"]
 FEASIBILITY_ANCHOR_CAP = 1000  # ≥ this many independent anchors ⇒ infeasible
 
 
-def load_u() -> mp.mpf:
-    """Canonical ladder step u = b·ℏ_q² from the N3 operator-valued witness."""
+def load_u() -> tuple[mp.mpf, mp.mpf, mp.mpf, mp.mpf]:
+    """Return (u, q0, b, ℏ_q) from the N3 operator-valued witness; u = b·ℏ_q²."""
     with open(HERE.parent / "q-beta-operator-valued-N3.witness.json",
               encoding="utf-8") as f:
         d = json.load(f)["data"]
