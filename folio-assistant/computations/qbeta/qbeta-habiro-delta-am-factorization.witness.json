@@ -48,26 +48,26 @@
           "primitive_factorization": "0"
         },
         "1": {
-          "delta_a_m": "10*u + 10",
-          "factorization": "10*(u + 1)",
+          "delta_a_m": "10*check_q + 10",
+          "factorization": "10*(check_q + 1)",
           "deg": 1,
           "leading_coeff": 10,
           "content_gcd": 10,
-          "primitive_part": "u + 1",
-          "primitive_factorization": "u + 1",
+          "primitive_part": "check_q + 1",
+          "primitive_factorization": "check_q + 1",
           "coeffs_descending": [
             10,
             10
           ]
         },
         "2": {
-          "delta_a_m": "-64*u**2 - 69*u - 73",
-          "factorization": "-64*u**2 - 69*u - 73",
+          "delta_a_m": "-64*check_q**2 - 69*check_q - 73",
+          "factorization": "-64*check_q**2 - 69*check_q - 73",
           "deg": 2,
           "leading_coeff": -64,
           "content_gcd": 1,
-          "primitive_part": "64*u**2 + 69*u + 73",
-          "primitive_factorization": "64*u**2 + 69*u + 73",
+          "primitive_part": "64*check_q**2 + 69*check_q + 73",
+          "primitive_factorization": "64*check_q**2 + 69*check_q + 73",
           "coeffs_descending": [
             -64,
             -69,
@@ -75,13 +75,13 @@
           ]
         },
         "3": {
-          "delta_a_m": "131*u**3 + 143*u**2 + 160*u + 177",
-          "factorization": "131*u**3 + 143*u**2 + 160*u + 177",
+          "delta_a_m": "131*check_q**3 + 143*check_q**2 + 160*check_q + 177",
+          "factorization": "131*check_q**3 + 143*check_q**2 + 160*check_q + 177",
           "deg": 3,
           "leading_coeff": 131,
           "content_gcd": 1,
-          "primitive_part": "131*u**3 + 143*u**2 + 160*u + 177",
-          "primitive_factorization": "131*u**3 + 143*u**2 + 160*u + 177",
+          "primitive_part": "131*check_q**3 + 143*check_q**2 + 160*check_q + 177",
+          "primitive_factorization": "131*check_q**3 + 143*check_q**2 + 160*check_q + 177",
           "coeffs_descending": [
             131,
             143,
@@ -90,13 +90,13 @@
           ]
         },
         "4": {
-          "delta_a_m": "-92*u**4 - 114*u**3 - 136*u**2 - 162*u - 189",
-          "factorization": "-92*u**4 - 114*u**3 - 136*u**2 - 162*u - 189",
+          "delta_a_m": "-92*check_q**4 - 114*check_q**3 - 136*check_q**2 - 162*check_q - 189",
+          "factorization": "-92*check_q**4 - 114*check_q**3 - 136*check_q**2 - 162*check_q - 189",
           "deg": 4,
           "leading_coeff": -92,
           "content_gcd": 1,
-          "primitive_part": "92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189",
-          "primitive_factorization": "92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189",
+          "primitive_part": "92*check_q**4 + 114*check_q**3 + 136*check_q**2 + 162*check_q + 189",
+          "primitive_factorization": "92*check_q**4 + 114*check_q**3 + 136*check_q**2 + 162*check_q + 189",
           "coeffs_descending": [
             -92,
             -114,
@@ -106,13 +106,13 @@
           ]
         },
         "5": {
-          "delta_a_m": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
-          "factorization": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
+          "delta_a_m": "18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90",
+          "factorization": "18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90",
           "deg": 5,
           "leading_coeff": 18,
           "content_gcd": 1,
-          "primitive_part": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
-          "primitive_factorization": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
+          "primitive_part": "18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90",
+          "primitive_factorization": "18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90",
           "coeffs_descending": [
             18,
             28,
@@ -123,13 +123,13 @@
           ]
         },
         "6": {
-          "delta_a_m": "-u**4 - 3*u**3 - 5*u**2 - 8*u - 15",
-          "factorization": "-u**4 - 3*u**3 - 5*u**2 - 8*u - 15",
+          "delta_a_m": "-u**4 - 3*check_q**3 - 5*check_q**2 - 8*check_q - 15",
+          "factorization": "-u**4 - 3*check_q**3 - 5*check_q**2 - 8*check_q - 15",
           "deg": 4,
           "leading_coeff": -1,
           "content_gcd": 1,
-          "primitive_part": "u**4 + 3*u**3 + 5*u**2 + 8*u + 15",
-          "primitive_factorization": "u**4 + 3*u**3 + 5*u**2 + 8*u + 15",
+          "primitive_part": "check_q**4 + 3*check_q**3 + 5*check_q**2 + 8*check_q + 15",
+          "primitive_factorization": "check_q**4 + 3*check_q**3 + 5*check_q**2 + 8*check_q + 15",
           "coeffs_descending": [
             -1,
             -3,
@@ -189,68 +189,68 @@
     },
     "delta_n_minus_p_categorical_matches": {
       "1": {
-        "primitive_part": "u + 1",
+        "primitive_part": "check_q + 1",
         "matched_categorical_factors": [
-          "(1+u)"
+          "(1+check_q)"
         ],
-        "irreducible_remainder": "u + 1"
+        "irreducible_remainder": "check_q + 1"
       },
       "2": {
-        "primitive_part": "64*u**2 + 69*u + 73",
+        "primitive_part": "64*check_q**2 + 69*check_q + 73",
         "matched_categorical_factors": [],
-        "irreducible_remainder": "64*u**2 + 69*u + 73"
+        "irreducible_remainder": "64*check_q**2 + 69*check_q + 73"
       },
       "3": {
-        "primitive_part": "131*u**3 + 143*u**2 + 160*u + 177",
+        "primitive_part": "131*check_q**3 + 143*check_q**2 + 160*check_q + 177",
         "matched_categorical_factors": [],
-        "irreducible_remainder": "131*u**3 + 143*u**2 + 160*u + 177"
+        "irreducible_remainder": "131*check_q**3 + 143*check_q**2 + 160*check_q + 177"
       },
       "4": {
-        "primitive_part": "92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189",
+        "primitive_part": "92*check_q**4 + 114*check_q**3 + 136*check_q**2 + 162*check_q + 189",
         "matched_categorical_factors": [],
-        "irreducible_remainder": "92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189"
+        "irreducible_remainder": "92*check_q**4 + 114*check_q**3 + 136*check_q**2 + 162*check_q + 189"
       },
       "5": {
-        "primitive_part": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90",
+        "primitive_part": "18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90",
         "matched_categorical_factors": [],
-        "irreducible_remainder": "18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90"
+        "irreducible_remainder": "18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90"
       },
       "6": {
-        "primitive_part": "u**4 + 3*u**3 + 5*u**2 + 8*u + 15",
+        "primitive_part": "check_q**4 + 3*check_q**3 + 5*check_q**2 + 8*check_q + 15",
         "matched_categorical_factors": [],
-        "irreducible_remainder": "u**4 + 3*u**3 + 5*u**2 + 8*u + 15"
+        "irreducible_remainder": "check_q**4 + 3*check_q**3 + 5*check_q**2 + 8*check_q + 15"
       }
     },
     "delta_n_minus_p_successive_ratios": {
       "ratio_2_over_1": {
-        "ratio": "(-64*u**2 - 69*u - 73)/(10*(u + 1))",
-        "factored": "-(64*u**2 + 69*u + 73)/(10*(u + 1))",
+        "ratio": "(-64*check_q**2 - 69*check_q - 73)/(10*(check_q + 1))",
+        "factored": "-(64*check_q**2 + 69*check_q + 73)/(10*(check_q + 1))",
         "numerical_at_u0": -10.554129421048167
       },
       "ratio_3_over_2": {
-        "ratio": "(-131*u**3 - 143*u**2 - 160*u - 177)/(64*u**2 + 69*u + 73)",
-        "factored": "-(131*u**3 + 143*u**2 + 160*u + 177)/(64*u**2 + 69*u + 73)",
+        "ratio": "(-131*check_q**3 - 143*check_q**2 - 160*check_q - 177)/(64*check_q**2 + 69*check_q + 73)",
+        "factored": "-(131*check_q**3 + 143*check_q**2 + 160*check_q + 177)/(64*check_q**2 + 69*check_q + 73)",
         "numerical_at_u0": -3.0336408723133608
       },
       "ratio_4_over_3": {
-        "ratio": "(-92*u**4 - 114*u**3 - 136*u**2 - 162*u - 189)/(131*u**3 + 143*u**2 + 160*u + 177)",
-        "factored": "-(92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189)/(131*u**3 + 143*u**2 + 160*u + 177)",
+        "ratio": "(-92*check_q**4 - 114*check_q**3 - 136*check_q**2 - 162*check_q - 189)/(131*check_q**3 + 143*check_q**2 + 160*check_q + 177)",
+        "factored": "-(92*check_q**4 + 114*check_q**3 + 136*check_q**2 + 162*check_q + 189)/(131*check_q**3 + 143*check_q**2 + 160*check_q + 177)",
         "numerical_at_u0": -1.1518015178392849
       },
       "ratio_5_over_4": {
-        "ratio": "(-18*u**5 - 28*u**4 - 39*u**3 - 52*u**2 - 69*u - 90)/(92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189)",
-        "factored": "-(18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90)/(92*u**4 + 114*u**3 + 136*u**2 + 162*u + 189)",
+        "ratio": "(-18*check_q**5 - 28*check_q**4 - 39*check_q**3 - 52*check_q**2 - 69*check_q - 90)/(92*check_q**4 + 114*check_q**3 + 136*check_q**2 + 162*check_q + 189)",
+        "factored": "-(18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90)/(92*check_q**4 + 114*check_q**3 + 136*check_q**2 + 162*check_q + 189)",
         "numerical_at_u0": -0.4276846443578757
       },
       "ratio_6_over_5": {
-        "ratio": "(-u**4 - 3*u**3 - 5*u**2 - 8*u - 15)/(18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90)",
-        "factored": "-(u**4 + 3*u**3 + 5*u**2 + 8*u + 15)/(18*u**5 + 28*u**4 + 39*u**3 + 52*u**2 + 69*u + 90)",
+        "ratio": "(-u**4 - 3*check_q**3 - 5*check_q**2 - 8*check_q - 15)/(18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90)",
+        "factored": "-(check_q**4 + 3*check_q**3 + 5*check_q**2 + 8*check_q + 15)/(18*check_q**5 + 28*check_q**4 + 39*check_q**3 + 52*check_q**2 + 69*check_q + 90)",
         "numerical_at_u0": -0.10410655413065313
       }
     },
     "delta_n_minus_p_habiro_element": {
-      "expanded": "-u**25 - 2*u**24 - u**23 - 2*u**21 + 4*u**20 + 2*u**19 + u**17 - 2*u**16 + u**15",
-      "factored": "-u**15*(u - 1)*(u + 1)*(u**8 + 2*u**7 + 2*u**6 + 2*u**5 + 4*u**4 - 2*u**3 + 2*u**2 - 2*u + 1)",
+      "expanded": "-u**25 - 2*check_q**24 - check_q**23 - 2*check_q**21 + 4*check_q**20 + 2*check_q**19 + check_q**17 - 2*check_q**16 + check_q**15",
+      "factored": "-u**15*(check_q - 1)*(check_q + 1)*(check_q**8 + 2*check_q**7 + 2*check_q**6 + 2*check_q**5 + 4*check_q**4 - 2*check_q**3 + 2*check_q**2 - 2*check_q + 1)",
       "numerical_at_u0_approx": -3.232201962487041,
       "degree": 25
     },
@@ -262,43 +262,43 @@
           "deg": 0
         },
         "1": {
-          "diff": "-934*u - 966",
-          "factorization": "-2*(467*u + 483)",
+          "diff": "-934*check_q - 966",
+          "factorization": "-2*(467*check_q + 483)",
           "deg": 1
         },
         "2": {
-          "diff": "10236*u**2 + 10531*u + 10851",
-          "factorization": "10236*u**2 + 10531*u + 10851",
+          "diff": "10236*check_q**2 + 10531*check_q + 10851",
+          "factorization": "10236*check_q**2 + 10531*check_q + 10851",
           "deg": 2
         },
         "3": {
-          "diff": "-47909*u**3 - 50249*u**2 - 52780*u - 55411",
-          "factorization": "-47909*u**3 - 50249*u**2 - 52780*u - 55411",
+          "diff": "-47909*check_q**3 - 50249*check_q**2 - 52780*check_q - 55411",
+          "factorization": "-47909*check_q**3 - 50249*check_q**2 - 52780*check_q - 55411",
           "deg": 3
         },
         "4": {
-          "diff": "119903*u**4 + 128584*u**3 + 137613*u**2 + 147138*u + 157199",
-          "factorization": "119903*u**4 + 128584*u**3 + 137613*u**2 + 147138*u + 157199",
+          "diff": "119903*check_q**4 + 128584*check_q**3 + 137613*check_q**2 + 147138*check_q + 157199",
+          "factorization": "119903*check_q**4 + 128584*check_q**3 + 137613*check_q**2 + 147138*check_q + 157199",
           "deg": 4
         },
         "5": {
-          "diff": "-178227*u**5 - 194789*u**4 - 212687*u**3 - 231889*u**2 - 252463*u - 274479",
-          "factorization": "-178227*u**5 - 194789*u**4 - 212687*u**3 - 231889*u**2 - 252463*u - 274479",
+          "diff": "-178227*check_q**5 - 194789*check_q**4 - 212687*check_q**3 - 231889*check_q**2 - 252463*check_q - 274479",
+          "factorization": "-178227*check_q**5 - 194789*check_q**4 - 212687*check_q**3 - 231889*check_q**2 - 252463*check_q - 274479",
           "deg": 5
         },
         "6": {
-          "diff": "163071*u**6 + 182144*u**5 + 203038*u**4 + 225964*u**3 + 251085*u**2 + 278579*u + 308566",
-          "factorization": "163071*u**6 + 182144*u**5 + 203038*u**4 + 225964*u**3 + 251085*u**2 + 278579*u + 308566",
+          "diff": "163071*check_q**6 + 182144*check_q**5 + 203038*check_q**4 + 225964*check_q**3 + 251085*check_q**2 + 278579*check_q + 308566",
+          "factorization": "163071*check_q**6 + 182144*check_q**5 + 203038*check_q**4 + 225964*check_q**3 + 251085*check_q**2 + 278579*check_q + 308566",
           "deg": 6
         },
         "7": {
-          "diff": "-90855*u**7 - 104179*u**6 - 119062*u**5 - 135750*u**4 - 154427*u**3 - 175499*u**2 - 198895*u - 224950",
-          "factorization": "-90855*u**7 - 104179*u**6 - 119062*u**5 - 135750*u**4 - 154427*u**3 - 175499*u**2 - 198895*u - 224950",
+          "diff": "-90855*check_q**7 - 104179*check_q**6 - 119062*check_q**5 - 135750*check_q**4 - 154427*check_q**3 - 175499*check_q**2 - 198895*check_q - 224950",
+          "factorization": "-90855*check_q**7 - 104179*check_q**6 - 119062*check_q**5 - 135750*check_q**4 - 154427*check_q**3 - 175499*check_q**2 - 198895*check_q - 224950",
           "deg": 7
         },
         "8": {
-          "diff": "28805*u**8 + 34129*u**7 + 40383*u**6 + 47612*u**5 + 55904*u**4 + 65416*u**3 + 76434*u**2 + 89014*u + 103356",
-          "factorization": "28805*u**8 + 34129*u**7 + 40383*u**6 + 47612*u**5 + 55904*u**4 + 65416*u**3 + 76434*u**2 + 89014*u + 103356",
+          "diff": "28805*check_q**8 + 34129*check_q**7 + 40383*check_q**6 + 47612*check_q**5 + 55904*check_q**4 + 65416*check_q**3 + 76434*check_q**2 + 89014*check_q + 103356",
+          "factorization": "28805*check_q**8 + 34129*check_q**7 + 40383*check_q**6 + 47612*check_q**5 + 55904*check_q**4 + 65416*check_q**3 + 76434*check_q**2 + 89014*check_q + 103356",
           "deg": 8
         }
       },

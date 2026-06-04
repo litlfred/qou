@@ -37,29 +37,29 @@
   "data": {
     "z_pow_k_habiro_results": {
       "1": {
-        "p_in_u_factored": "u",
+        "p_in_u_factored": "check_q",
         "shift": 0,
-        "denom_in_u": "u**2 + 1",
+        "denom_in_u": "check_q**2 + 1",
         "num_coeffs": 2,
-        "habiro_sum_factored": "u",
+        "habiro_sum_factored": "check_q",
         "cyclotomic_counts": {},
         "phi8_power": 0
       },
       "2": {
-        "p_in_u_factored": "u**2",
+        "p_in_u_factored": "check_q**2",
         "shift": 0,
-        "denom_in_u": "u**4 + 2*u**2 + 1",
+        "denom_in_u": "check_q**4 + 2*check_q**2 + 1",
         "num_coeffs": 2,
-        "habiro_sum_factored": "u**2",
+        "habiro_sum_factored": "check_q**2",
         "cyclotomic_counts": {},
         "phi8_power": 0
       },
       "3": {
-        "p_in_u_factored": "u**3",
+        "p_in_u_factored": "check_q**3",
         "shift": 0,
-        "denom_in_u": "u**6 + 3*u**4 + 3*u**2 + 1",
+        "denom_in_u": "check_q**6 + 3*check_q**4 + 3*check_q**2 + 1",
         "num_coeffs": 3,
-        "habiro_sum_factored": "u**3",
+        "habiro_sum_factored": "check_q**3",
         "cyclotomic_counts": {},
         "phi8_power": 0
       }
@@ -402,8 +402,8 @@
       }
     ],
     "z_diff_habiro_result": {
-      "diff_p_in_u": "-u*(u**2 - u + 1)",
-      "habiro_sum_factored": "-u*(u**2 - u + 1)",
+      "diff_p_in_u": "-u*(check_q**2 - check_q + 1)",
+      "habiro_sum_factored": "-u*(check_q**2 - check_q + 1)",
       "cyclotomic_counts": {
         "6": 1
       },
@@ -418,7 +418,7 @@
         "phi8_power": 2,
         "first_phi8_m": 7,
         "first_phi8_sq_m": 12,
-        "factored_excerpt": "-u*(u**4 + 1)**2*(u**16 - u**13 - u**12 + u**11 + u**8 - u**5 - u**4 + u**3 + 1)*(u**16 + u**15 + u**13 - u**12 - u**11 - u**9 + u**8 + u**7 + u**5 - u**4 - u**3 - u + 1)*(u**45 + u**44 + u**43 - u**42 - 4*u**41 - 2*u**39 + u**38 - u**37 - u**36 + 3*u**35 - 2*u**33 + 2*u**31 + u**30 + u**28 + 2*u**27 - 3*u**26 - 4*u**25 - u**24 - 4*u**23 - 4*u**22 + 4*u**21 - u**20 + 4*u**19 - 3*u**18 - 2*u**17 + "
+        "factored_excerpt": "-u*(check_q**4 + 1)**2*(check_q**16 - check_q**13 - check_q**12 + check_q**11 + check_q**8 - check_q**5 - check_q**4 + check_q**3 + 1)*(check_q**16 + check_q**15 + check_q**13 - check_q**12 - check_q**11 - check_q**9 + check_q**8 + check_q**7 + check_q**5 - check_q**4 - check_q**3 - check_q + 1)*(check_q**45 + check_q**44 + check_q**43 - check_q**42 - 4*check_q**41 - 2*check_q**39 + check_q**38 - check_q**37 - check_q**36 + 3*check_q**35 - 2*check_q**33 + 2*check_q**31 + check_q**30 + check_q**28 + 2*check_q**27 - 3*check_q**26 - 4*check_q**25 - check_q**24 - 4*check_q**23 - 4*check_q**22 + 4*check_q**21 - check_q**20 + 4*check_q**19 - 3*check_q**18 - 2*check_q**17 + "
       },
       {
         "pair": "(³He − D)",
@@ -428,7 +428,7 @@
         "phi8_power": 2,
         "first_phi8_m": 7,
         "first_phi8_sq_m": 15,
-        "factored_excerpt": "u*(u**4 + 1)**2*(u**24 + u**23 + u**21 - u**3 - u + 1)*(u**16 - u**13 + u**11 - u**9 + u**7 - u**5 + u**3 + 1)*(u**16 - u**13 - u**12 + u**11 + u**8 - u**5 - u**4 + u**3 + 1)*(u**16 + u**15 + u**13 - u**12 - u**11 - u**9 + u**8 + u**7 + u**5 - u**4 - u**3 - u + 1)*(u**39 + u**38 - u**35 + u**34 - u**32 + u**30 - u**28 + u**26 + 2*u**23 + u**22 + u**20 - u**18 - u**16 + 2*u**15 - u**12 + u**10 - u*"
+        "factored_excerpt": "check_q*(check_q**4 + 1)**2*(check_q**24 + check_q**23 + check_q**21 - check_q**3 - check_q + 1)*(check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 + check_q**3 + 1)*(check_q**16 - check_q**13 - check_q**12 + check_q**11 + check_q**8 - check_q**5 - check_q**4 + check_q**3 + 1)*(check_q**16 + check_q**15 + check_q**13 - check_q**12 - check_q**11 - check_q**9 + check_q**8 + check_q**7 + check_q**5 - check_q**4 - check_q**3 - check_q + 1)*(check_q**39 + check_q**38 - check_q**35 + check_q**34 - check_q**32 + check_q**30 - check_q**28 + check_q**26 + 2*check_q**23 + check_q**22 + check_q**20 - check_q**18 - check_q**16 + 2*check_q**15 - check_q**12 + check_q**10 - check_q*"
       },
       {
         "pair": "(⁴He − ³He)",
@@ -438,7 +438,7 @@
         "phi8_power": 2,
         "first_phi8_m": 7,
         "first_phi8_sq_m": 15,
-        "factored_excerpt": "-u*(u**4 + 1)**2*(u**24 + u**23 + u**21 - u**3 - u + 1)**2*(u**16 - u**13 + u**11 - u**9 + u**7 - u**5 + u**3 + 1)**2*(u**16 - u**13 - u**12 + u**11 + u**8 - u**5 - u**4 + u**3 + 1)*(u**16 + u**15 + u**13 - u**12 - u**11 - u**9 + u**8 + u**7 + u**5 - u**4 - u**3 - u + 1)*(u**45 + u**44 + u**43 - 3*u**41 - 2*u**39 - u**36 + 2*u**35 - u**33 + u**31 - u**29 - u**28 + u**27 - u**26 + 4*u**25 + u**24 +"
+        "factored_excerpt": "-u*(check_q**4 + 1)**2*(check_q**24 + check_q**23 + check_q**21 - check_q**3 - check_q + 1)**2*(check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 + check_q**3 + 1)**2*(check_q**16 - check_q**13 - check_q**12 + check_q**11 + check_q**8 - check_q**5 - check_q**4 + check_q**3 + 1)*(check_q**16 + check_q**15 + check_q**13 - check_q**12 - check_q**11 - check_q**9 + check_q**8 + check_q**7 + check_q**5 - check_q**4 - check_q**3 - check_q + 1)*(check_q**45 + check_q**44 + check_q**43 - 3*check_q**41 - 2*check_q**39 - check_q**36 + 2*check_q**35 - check_q**33 + check_q**31 - check_q**29 - check_q**28 + check_q**27 - check_q**26 + 4*check_q**25 + check_q**24 +"
       }
     ],
     "verdict_short": "FROM_POCHHAMMER_BOUNDARY",

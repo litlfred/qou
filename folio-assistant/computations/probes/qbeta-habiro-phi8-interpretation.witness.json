@@ -14,18 +14,18 @@
   },
   "data": {
     "denominator_structure": {
-      "p_n_denom_factored": "4*u**19*(u**2 + 1)",
-      "D_denom_factored": "32*u**40*(u**2 + 1)**3",
-      "phi_4": "u**2 + 1",
-      "phi_8": "u**4 + 1",
+      "p_n_denom_factored": "4*check_q**19*(check_q**2 + 1)",
+      "D_denom_factored": "32*check_q**40*(check_q**2 + 1)**3",
+      "phi_4": "check_q**2 + 1",
+      "phi_8": "check_q**4 + 1",
       "identity_phi4_at_u_squared_equals_phi8": true,
       "interpretation": "Phi_4 is the 'crossing trace pole' (numerator of [2]_q in the substitution u = q^{1/2}). The deuteron's Phi_4^3 encodes 3 such poles: one for each of (proton-internal, neutron-internal, p-n-interaction). The (D-n) subtraction removes the neutron-internal pole, leaving 2 Phi_4 worth of structure -- which appears as Phi_8 = Phi_4(u^2) after strand-doubling u -> u^2."
     },
     "dn_factorization": {
-      "expression": "-u*(u**4 + 1)**2*(u**16 - u**13 - u**12 + u**11 + u**8 - u**5 - u**4 + u**3 + 1)*(u**16 + u**15 + u**13 - u**12 - u**11 - u**9 + u**8 + u**7 + u**5 - u**4 - u**3 - u + 1)*(u**45 + u**44 + u**43 - u**42 - 4*u**41 - 2*u**39 + u**38 - u**37 - u**36 + 3*u**35 - 2*u**33 + 2*u**31 + u**30 + u**28 + 2*u**27 - 3*u**26 - 4*u**25 - u**24 - 4*u**23 - 4*u**22 + 4*u**21 - u**20 + 4*u**19 - 3*u**18 - 2*u**17 + u**16 + u**14 - 2*u**13 + 2*u**11 - 3*u**9 - u**8 + u**7 + u**6 + 2*u**5 + 4*u**3 - u**2 - u + 1)",
+      "expression": "-u*(check_q**4 + 1)**2*(check_q**16 - check_q**13 - check_q**12 + check_q**11 + check_q**8 - check_q**5 - check_q**4 + check_q**3 + 1)*(check_q**16 + check_q**15 + check_q**13 - check_q**12 - check_q**11 - check_q**9 + check_q**8 + check_q**7 + check_q**5 - check_q**4 - check_q**3 - check_q + 1)*(check_q**45 + check_q**44 + check_q**43 - check_q**42 - 4*check_q**41 - 2*check_q**39 + check_q**38 - check_q**37 - check_q**36 + 3*check_q**35 - 2*check_q**33 + 2*check_q**31 + check_q**30 + check_q**28 + 2*check_q**27 - 3*check_q**26 - 4*check_q**25 - check_q**24 - 4*check_q**23 - 4*check_q**22 + 4*check_q**21 - check_q**20 + 4*check_q**19 - 3*check_q**18 - 2*check_q**17 + check_q**16 + check_q**14 - 2*check_q**13 + 2*check_q**11 - 3*check_q**9 - check_q**8 + check_q**7 + check_q**6 + 2*check_q**5 + 4*check_q**3 - check_q**2 - check_q + 1)",
       "total_degree": 86,
-      "phi_8_squared_factor": "(u**4 + 1)**2",
-      "phi_8_explicit": "u**4 + 1"
+      "phi_8_squared_factor": "(check_q**4 + 1)**2",
+      "phi_8_explicit": "check_q**4 + 1"
     },
     "hypothesis_g_magic_A": {
       "claim": "Phi_A appears for atom A",

@@ -46,7 +46,7 @@
     "habiro_setup": {
       "n_modes": 8,
       "pochhammer": "(u;u)_m = Π_{k=1}^m (1−u^k)  [gap-plan Bug-1 fix]",
-      "denom_p": "4*u**21 + 4*u**19",
+      "denom_p": "4*check_q**21 + 4*check_q**19",
       "tr_M_p_reproduces_witness": true
     },
     "root_of_unity_spectrum": [
@@ -138,8 +138,8 @@
       "even_leading_laurent_order": -3,
       "odd_leading_laurent_order": -4,
       "laurent_note": "orders are FULL Laurent (negative powers / poles at u=0 included); bar map u↦1/u makes both parts Laurent, not Taylor",
-      "even_expr": "(-u**6 + u**4 + u**2 - 1)/(2*u**3)",
-      "odd_expr": "(-u**10 - u**8 - 2*u**6 + 2*u**4 + u**2 + 1)/(4*u**6 + 4*u**4)",
+      "even_expr": "(-u**6 + check_q**4 + check_q**2 - 1)/(2*check_q**3)",
+      "odd_expr": "(-u**10 - check_q**8 - 2*check_q**6 + 2*check_q**4 + check_q**2 + 1)/(4*check_q**6 + 4*check_q**4)",
       "interpretation": "bar-even = charge-conjugation-symmetric = physical; the mechanism that cancels the odd-order u¹ term PR #1602 identified in f"
     },
     "interpretation": {
