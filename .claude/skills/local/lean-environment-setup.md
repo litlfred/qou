@@ -11,6 +11,29 @@ allowed-tools: Read Edit Bash Grep Glob
 
 # Lean Environment Setup
 
+> ## ⮕ FAST ROUTE — read this BEFORE declaring Lean "unavailable"
+>
+> On **any** Lean env/tool failure — `lean_run_code`/LSP "no valid project
+> path", `leansearch` SSL error, `lake exe cache get` 403, `elan toolchain
+> install` SSL/`failed to parse release data`, empty `~/.elan/toolchains/`,
+> `lake build` timeout — **do NOT conclude "Lean is unavailable."** Two of
+> these (cache-403, toolchain-host-firewalled) have **documented workarounds
+> in this very file** (§"Mathlib cache 403 fallback" + §"Web-sandbox
+> addendum"). The recurring failure mode is *agents re-deriving these
+> workarounds — or giving up — instead of grepping for them.*
+>
+> **Discipline (generalises the corpus-grep / formalize-first rules):** when a
+> tool or environment operation fails, FIRST
+> `grep -ri "<error keyword>" .claude/skills/ CLAUDE.md docs/` (e.g. `release.lean-lang.org`,
+> `cache get 403`, `insteadOf`, `elan toolchain`) **before** declaring the
+> capability unavailable. Only after the documented workarounds are tried and
+> hit a *hard* network block may you fall back to a rigorous hand-audit — and
+> then say so explicitly (per the §"Web-sandbox addendum" bottom line).
+>
+> **If the install is long/uncertain, DELEGATE it to a sub-agent** (see
+> §"Delegate the install to a sub-agent" near the foot of this file) so the
+> main task is not blocked on a multi-minute toolchain fetch + mathlib build.
+
 ## Architecture
 
 All MCP functionality — including Lean tools — is served through a single
@@ -265,6 +288,53 @@ The mathlib clone at `../mathlib4` typically persists (it lives in
 the working tree's parent). On resume: re-confirm the `git insteadOf`
 redirect, then re-launch the build if needed. The build is fully
 incremental — only changed modules rebuild.
+
+## Delegate the install to a sub-agent (recommended for the main task)
+
+The full bootstrap (elan + GitHub-toolchain workaround + full mathlib clone
++ from-source olean build) is **long, fiddly, and frequently blocked** — it
+should **not** run in the foreground of a content/proof task. Kick off a
+**background sub-agent** so the main session keeps moving, then verify the
+target file(s) when it reports back.
+
+```
+Agent(
+  subagent_type = "general-purpose",
+  run_in_background = true,
+  description = "Bootstrap Lean + verify <file>",
+  prompt = <the runbook below + the specific file/lemma to compile>
+)
+```
+
+**Sub-agent runbook (give it these env facts so it doesn't re-derive them):**
+
+1. **Probe the network first:** `curl -sI https://github.com` (usually 200)
+   vs `curl -sI https://release.lean-lang.org` (often 403 in web sandboxes).
+   This decides the toolchain path: if `release.lean-lang.org` is blocked,
+   use the **GitHub-release manual install** in §"Web-sandbox addendum" item 1
+   (`apt-get install -y zstd`; curl the `lean-<ver>-linux.tar.zst` asset from
+   `github.com/leanprover/lean4/releases/...`; extract into
+   `~/.elan/toolchains/leanprover--lean4---<ver>/`). Set `ELAN_UPDATE_CHECK=0`
+   to suppress `release.lean-lang.org` pings.
+2. **Mathlib:** a **full** clone (NOT `--depth 1` — item 2 of the addendum:
+   shallow breaks `lake`'s rev checkout) at the repo-pinned commit
+   (`grep inputRev lake-manifest.json`). For a *single-file* check, a scratch
+   lake project with `require mathlib from "<local path>"` (path dep) sidesteps
+   the `insteadOf` re-clone loop (item 3).
+3. **Build is slow** (no cache → oleans from source). Let it run; report
+   progress. Compile the **statement** first (`sorry` ⇒ only a sorry warning),
+   then the proof.
+4. **Report findings even if blocked** — the exact failing step + whether it
+   is a *hard* network block vs. just slow. Per the §"Web-sandbox addendum"
+   bottom line: if even a full clone can't get past the transitive-dep fetch,
+   Lean is **not mechanically compilable** in that session — say so explicitly
+   and fall back to a rigorous hand-audit; do **not** claim a green build you
+   could not run.
+
+**Why a sub-agent:** the install can take many minutes (toolchain fetch) to
+hours (full mathlib from source). Foreground-blocking the main task on it is
+the anti-pattern; the sub-agent isolates the wait and returns a clean verdict
+(verified / blocked-where).
 
 ## PATH Configuration
 

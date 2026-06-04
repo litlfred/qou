@@ -1761,6 +1761,22 @@ This is also documented in
 Don't iterate Lean proofs blind when the LSP is cold — establish
 LSP feedback first, then iterate against real diagnostics.
 
+> **STRICT — route, don't give up, and prefer a sub-agent.** On **any**
+> Lean env/tool failure (LSP "no valid project path", `leansearch` SSL
+> error, cache `get` 403, `elan toolchain install` SSL / "failed to parse
+> release data", empty `~/.elan/toolchains/`, `lake build` timeout) do
+> **NOT** conclude "Lean is unavailable." Most of these have documented
+> workarounds (e.g. the elan host `release.lean-lang.org` is firewalled in
+> some web sandboxes but the **GitHub release asset is allowlisted** — install
+> the toolchain by hand). FIRST `grep -ri "<error keyword>" .claude/skills/
+> CLAUDE.md` (a generalisation of the corpus-grep / formalize-first
+> disciplines: check what's known before declaring a capability unavailable),
+> then **delegate the long install to a background sub-agent** per
+> [`lean-environment-setup.md` §"Delegate the install to a sub-agent"](.claude/skills/local/lean-environment-setup.md)
+> so the main task isn't blocked. Only after the documented workarounds hit a
+> *hard* network block may you fall back to a rigorous hand-audit — and then
+> say so explicitly.
+
 ### Remote MCP server
 
 A Docker-based remote deployment is available in `deploy/`:
