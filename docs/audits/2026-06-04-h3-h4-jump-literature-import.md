@@ -22,9 +22,11 @@ were modified. This document is the sole deliverable.
 The canonical mass formula is `m(K) = m_e · Geom_full(K, q₀)`. In production,
 every atom's `Geom_full` is evaluated through `geom_full_borromean(q)`, whose
 linking weight is the **Family-A** factor `5/2 + (3/4)·h²` (`h = q − q⁻¹`). The
-leading constant **5/2** is the *number of partitions of 4* — the Wedderburn-block
-count of the **H₄** Iwahori–Hecke algebra: `(4), (3,1), (2,2), (2,1,1),
-(1,1,1,1)`. But the proton braid 𝓑₃ is a **3-strand** braid, living in **H₃**,
+leading constant **5/2** is *half the number of partitions of 4* — half the
+Wedderburn-block count of the **H₄** Iwahori–Hecke algebra, whose 5 blocks are
+`(4), (3,1), (2,2), (2,1,1), (1,1,1,1)` (so `p(4) = 5` and `5/2 = p(4)/2`; the
+factor of ½ is itself unexplained and travels with the jump). But the proton
+braid 𝓑₃ is a **3-strand** braid, living in **H₃**,
 whose Wedderburn decomposition is over the **3** partitions of 3 (`(3), (2,1),
 (1,1,1)`). Production therefore evaluates a 3-strand object's mass/binding weight
 as a structure indexed by **partitions of 4, not 3** — an unexplained "H₃ → H₄
@@ -67,7 +69,7 @@ a Young diagram — i.e. the restriction–induction pair carries `λ ⊢ n` to
 - M. Geck & S. Lambropoulou, *Markov traces and knot invariants related to
   Iwahori–Hecke algebras of type B*, **J. reine angew. Math. 482 (1997),
   191–213**.
-  [degruyterbrill.com/…/crll.1997.482.191](https://www.degruyterbrill.com/document/doi/10.1515/crll.1997.482.191/html).
+  [doi:10.1515/crll.1997.482.191](https://www.degruyterbrill.com/document/doi/10.1515/crll.1997.482.191/html).
   (Inductive construction of normalized/non-normalized Markov traces on
   `{H_n}_{n=1}^∞`; the H_n → H_{n+1} branching is explicit.)
 
@@ -78,7 +80,7 @@ a Young diagram — i.e. the restriction–induction pair carries `λ ⊢ n` to
   (`tr_M = Σ_λ y_λ χ^λ`, Wenzl) is precisely the Markov trace whose inductive
   definition lives on the box-adding branching graph. If the proton's mass weight
   is naturally an object on the **stabilized** braid `𝓑₃·σ₃^{±1} ∈ B₄`, then it
-  is genuinely a sum over `λ ⊢ 4` — the "5/2 = #partitions(4)" would be the
+  is genuinely a sum over `λ ⊢ 4` — the "5/2 = #partitions(4)/2" would be half the
   Wedderburn-block count *after one stabilization*. This is the single literature
   result in which a strand-count `+1` appears as a forced, canonical, invariant
   preserving operation.
@@ -100,8 +102,8 @@ a Young diagram — i.e. the restriction–induction pair carries `λ ⊢ n` to
 **Net for the framework.** This is the **right place to look** for a derivation,
 but the correct form of the claim is *not* "stabilization promotes H₃ → H₄."
 The promising sub-direction is the **branching/box-adding** structure underneath
-the Markov property: the candidate that "5/2" counts the partitions of 4 reachable
-by **adding one box to the partitions of 3** (the `H₃ ↗ H₄` induction-functor
+the Markov property: the candidate that "5/2" is half the count of partitions of 4
+reachable by **adding one box to the partitions of 3** (the `H₃ ↗ H₄` induction-functor
 image), which would tie the +1 to the **induction product `Ind_{H₃}^{H₄}`** — a
 canonical, non-equivalence operation. That is a *categorical* refinement of the
 naive stabilization story and the single most worthwhile lead to chase next.
@@ -212,7 +214,7 @@ of Dunfield–Gukov–Rasmussen / Rasmussen.
   number of strands or in the partition index `n` of the symmetric group / Hecke
   algebra. `sl_N → sl_{N+1}` changes *which* `R`-matrix / quantum group acts; it
   does not promote `H₃ → H₄`. The framework's H₄ count is a `λ ⊢ 4` Hecke-block
-  count (an `S_4` / `H_n` datum), which is the **transverse** axis to the `sl_N`
+  count (an `H₄` / `H_n` datum), which is the **transverse** axis to the `sl_N`
   rank. So KhR stabilization is not even an analogy for the production jump — it is
   a shift along a different axis, and importing it would actively mislead.
 - (Tangential positive: large-N stabilization is the categorified shadow of the
@@ -234,7 +236,7 @@ Rationale:
    uses** (the Hecke tower with the Ocneanu/Markov trace `tr_M = Σ_λ y_λ χ^λ`).
    Candidates 2–4 shift a *different* index (color N, root-of-unity order, gauge
    rank) and are SILENT/REFUTES on strand count.
-2. The "5/2 = #partitions(4)" production constant is literally a Wedderburn-block
+2. The "5/2 = #partitions(4)/2" production constant is literally half the Wedderburn-block
    count of **H₄**, and the H₃ → H₄ branching graph **is** the box-adding induction
    diagram (Jones 1987; Orellana 1998; Geck–Lambropoulou 1997). The numbers line
    up: `λ ⊢ 3` has 3 blocks, and adding one box reaches the `λ ⊢ 4` blocks whose
