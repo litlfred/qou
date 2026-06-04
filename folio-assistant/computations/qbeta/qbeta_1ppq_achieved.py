@@ -96,6 +96,22 @@ def main():
     wb.add_data("Q_N4_ppQ", str(residual_ppQ))
     wb.add_data("pattern", "even rungs geometric (c_2=c_4~-1), odd topological (c_1=cos, c_3=J-hbar^2)")
     wb.add_data("caveat", "c_4 extracted from CODATA residual, not independently derived")
+    wb.add_data("normalisation_artifact_warning", (
+        "PR #1786 finding: c_4 ≈ -0.972 here is a normalisation "
+        "artifact, not a genuine ladder coefficient. The witness "
+        "q-beta-operator-valued-N3.witness.json fits c_3 against "
+        "rounded Q_AME = mpf('939.5654205240') - mpf('938.27208816') "
+        "- m_e, while this script compares Q_N3 to full-precision "
+        "Q_codata = m_n - m_p - m_e from codata_constants. The "
+        "~5e-9 relative mismatch in CODATA Q_β, divided by u^4 "
+        "≈ 5e-9, manifests as c_4 ≈ -0.972. At consistent "
+        "precision (single CODATA source throughout), c_3 fits the "
+        "entire residual and c_4 → 0. The 1 ppQ result below IS "
+        "numerically correct (self-consistent absorption + "
+        "cancellation in Q_N4) but does NOT identify a categorical "
+        "c_4. See qbeta_ck_k_gt_3_habiro_extension_scoping.py for "
+        "the consistent-precision analysis."
+    ))
 
     wb.add_assertion(
         "below_1ppQ",
