@@ -13,10 +13,27 @@ This doc pins that object precisely and gives the executable recipe with per-sta
 
 ## The exact object
 
+### Definitions (source-of-truth pointers)
+
+| symbol | exact definition | source |
+|---|---|---|
+| q₀ | 1.1099785827513808075916690956107688798744991218736 | `q-pinning-50-digit.witness.json` |
+| h(q) | q - 1/q (Hecke skein) | `qbeta_symbolic_chain_alpha_b.py` |
+| z(q) | 1/(√q + 1/√q) (Markov-Jones) | same |
+| α(q) | (z-1)·h/2 | same |
+| b(q) | √(q⁴+q²+1)/(q²+1) (Hoefsmit) | same |
+| ℏ_q(q) | (q-1)/q | same |
+| α_eff(q) | α - b·ℏ_q²/2 | same |
+| u(q), u₀ | b·ℏ_q²; u₀ = u(q₀) ≈ 0.00852 | same |
+| Q_A(q) | m_e·(2q+1-q²)(q+1)/(2q³) [substrate branch] | `probe_q_beta_operator_valued_N3.py` |
+| 𝔈₀(q) | substrate energy scale = m_e/(q(q-1)) (leptonic) / Q_β/\|h(h-2)/2\| (hadronic) | cheat sheet Step 9 |
+| Δ(net)(q) | net(after) - net(before), GB-reduced | `free-neutron-decay.py` (`folio-assistant/computations/`) |
+| `free-neutron-decay.witness.json` | net coefficients at q₀ | `folio-assistant/computations/free-neutron-decay.witness.json` |
+
 Per the canonical chain Step 11 ([cheat sheet](../canonical-derivation-cheat-sheet.md)) and the canonical producer `free-neutron-decay.py`:
 
 ```
-Q_β = |Δ(net)| · 𝔈₀,     Δ(net) = net(T_w^after) − net(T_w^before)
+Q_b = |Delta(net)| * E_0,     Delta(net) = net(T_w after) - net(T_w before)
 ```
 
 where `net(T_w)` is the **Gröbner–Shirshov-reduced coefficient sum** of the particle's braid word in H_n(q). The canonical words (from `free-neutron-decay.py::PARTICLE_KNOT`):
@@ -78,6 +95,40 @@ Apply `ladder_ck` to `R(u)` to order u^8. **Validate:** c_3 must come out ≈ �
 - **Δ(net) convention mismatch** ⇒ Q_β(q₀) off by O(1). Validate against `free-neutron-decay.witness.json` at Stage 1–2.
 - **`Abs` in Q_A** ⇒ the substrate-region branch `|q²−2q−1| = 2q+1−q²` holds only for 1 < q < 1+√2; keep symbolic work in that branch.
 - **Spurious high-k blowup** ⇒ if c_k grows factorially, the q↔u inversion reintroduced the 1/u^k ill-conditioning (PR #1835); the exact symbolic route must NOT — c_k must stay bounded.
+
+## Execution finding (2026-06-04) — the scalar route is RULED OUT
+
+Executing Stage 3 surfaced a decisive structural obstruction
+(`qbeta_ck_scalar_route_singularity_probe.py`):
+
+> **u = b(q)·ℏ_q² is QUADRATIC in t = q-1**, since ℏ_q = (q-1)/q ~ t.
+> So u(t) = a₂ t² + a₃ t³ + ... has **no linear term** (a₁ = 0).
+
+Consequence: reverting u(t) -> t(u) to express R(q) = Q_b/(Q_A·cos α_eff)
+as a scalar power series in u is **singular** (t(u) would need a u^(1/2)
+term). This holds for ANY Q_b model (it is a property of u itself) —
+confirmed for both `|h(h-2)/2|` and the proven N=2 control.
+
+**Therefore the c_k are NOT scalar-q Taylor coefficients.** They are
+the coefficients of the **operator-valued ladder**: the T_β matrix
+expanded in its N=0,1,2,... level structure, where level N=k
+contributes b^k·ℏ_q^{2k} = u^k via the *substrate scaling* (each
+operator level carries one power of b·ℏ²), NOT via powers of (q-1).
+
+This **rules out the scalar exact-Δ(net) shortcut** and confirms:
+- Stages 1-2 (exact `net` via GB) remain valid for the **leading** Q_b.
+- Stages 3-4 must operate on the **operator matrix** (read the N=k
+  levels off the Hoefsmit-rep T_β), NOT on a scalar u-reversion.
+- The Hoefsmit-matrix construction is **irreducible** for the keystone
+  — there is no scalar-function bypass. This is precisely why the SDP
+  (a matrix fit) was the only existing route, and why an *unbiased*
+  c_4..c_8 needs the matrix built directly (avoiding the SDP's 1/u^k
+  ill-conditioning and +1.7% bias).
+
+The recipe is updated accordingly: the operative construction is the
+Hoefsmit-rep T_β matrix with per-level (N=k) operator reading. The
+c_2 = -1 / c_3 = -2 gates still apply, now as checks on the matrix
+N=2/N=3 levels.
 
 ## What this branch delivers
 
