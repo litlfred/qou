@@ -12,9 +12,19 @@ Both witnesses store the trace at high precision; we parse via
 mpmath and report the relative delta. Flags any atom that diverges
 by more than 1 part per billion (1e-9).
 
+EXTERNAL ANCHOR (verification-gap closure): the four paths above prove
+only that the methods AGREE — they share the Σ_λ y_λ χ^λ definition, so
+a common χ^λ error would be invisible. `_character_closed_form_anchor`
+adds an INDEPENDENT check: the two 1-dim Hecke irreps have closed-form
+characters χ^{(n)}(β)=q_0^{w(β)} and χ^{(1ⁿ)}(β)=(−q_0^{-1})^{w(β)} (w =
+writhe), requiring no Hecke machinery. This anchors the character engine
+that feeds the chi-cache leg. See
+`docs/audits/2026-06-04-hidden-fitting-verification-gap-mass-binding-walkthrough.md`.
+
 Output: `cross-check-trM-1ppb.witness.json`
 
-CI gate: invoke with `--strict` to exit non-zero on any divergence.
+CI gate: invoke with `--strict` to exit non-zero on any divergence OR
+any character-engine mismatch against the closed form.
 
 Usage:
     python3 folio-assistant/computations/cross_check_trM_1ppb.py
@@ -64,6 +74,75 @@ _ZN_TO_ATOM = {
 }
 # Reverse map for the Habiro-extended consumer (it accepts (Z, N)).
 _ATOM_TO_ZN = {v: k for k, v in _ZN_TO_ATOM.items()}
+
+
+def _character_closed_form_anchor(tol: "mpf") -> dict:
+    """EXTERNAL correctness anchor for the seminormal Hecke character engine.
+
+    The four tr_M paths cross-checked below prove only that the methods
+    AGREE — agreement is consistency, not correctness (they share the
+    Σ_λ y_λ χ^λ definition, so a common error in χ^λ would be invisible).
+    This anchor closes that gap for the χ^λ engine that feeds the chi-cache
+    leg: it pins χ^λ to CLOSED-FORM values requiring no Hecke machinery,
+    via the two one-dimensional irreps.
+
+    With the Hecke relation (σ_i − q_0)(σ_i + q_0^{-1}) = 0:
+      • symmetric  (n):   σ_i ↦  q_0       ⟹ χ^{(n)}(β)   = q_0^{w(β)}
+      • antisymm. (1ⁿ):   σ_i ↦ −q_0^{-1}  ⟹ χ^{(1ⁿ)}(β) = (−q_0^{-1})^{w(β)}
+    where w(β) is the writhe (signed crossing count). A mismatch means the
+    character engine — hence the chi-cache leg of the 1ppb gate — is wrong,
+    no matter how well the four methods agree with each other.
+
+    The braid set mixes the actual atom braids (proton/neutron, writhe 0 —
+    these pin the trace normalisation) with nonzero-writhe words (positive
+    and negative) that exercise the q-power law.
+    """
+    import sys as _sys
+    if str(HERE) not in _sys.path:
+        _sys.path.insert(0, str(HERE))
+    from hecke_characters import chi_lambda_braid
+    try:
+        from q_parameter import Q_50_DIGIT_STR as _q0_str
+    except Exception:  # pragma: no cover
+        from q_parameter import Q as _q0_obj
+        _q0_str = str(_q0_obj)
+    q0 = mpf(_q0_str)
+
+    def chi(shape, word):
+        hc = [(1, g) if g > 0 else (-1, -g) for g in word]
+        # Python fallback supports q_value == q_0; float64-bounded (~1e-15),
+        # which is ample against the 1ppb (1e-9) tolerance.
+        return mpmathify(repr(chi_lambda_braid(list(shape), hc, q_value=float(q0))))
+
+    def writhe(word):
+        return sum(1 if g > 0 else -1 for g in word)
+
+    words = [
+        ("proton (σ₁σ₂⁻¹)³", 3, [1, -2, 1, -2, 1, -2]),
+        ("neutron (σ₁⁻¹σ₂)³", 3, [-1, 2, -1, 2, -1, 2]),
+        ("σ₁³ (3 strands)", 3, [1, 1, 1]),
+        ("σ₁σ₂ (3 strands)", 3, [1, 2]),
+        ("σ₁ (2 strands)", 2, [1]),
+        ("σ₁⁻²σ₂ (3 strands)", 3, [-1, -1, 2]),
+    ]
+    checks = []
+    worst = mpf(0)
+    for label, n, word in words:
+        w = writhe(word)
+        sym_ref = q0 ** w
+        anti_ref = (-1 / q0) ** w
+        sym_got = chi(tuple([n]), word)
+        anti_got = chi(tuple([1] * n), word)
+        d = max(fabs(sym_got - sym_ref), fabs(anti_got - anti_ref))
+        worst = max(worst, d)
+        checks.append({
+            "braid": label, "n_strands": n, "writhe": w,
+            "chi_symmetric": str(sym_got), "ref_symmetric": str(sym_ref),
+            "chi_antisymmetric": str(anti_got), "ref_antisymmetric": str(anti_ref),
+            "abs_delta_max": str(d), "ok": bool(d < tol),
+        })
+    n_fail = sum(1 for c in checks if not c["ok"])
+    return {"checks": checks, "n_fail": n_fail, "worst_delta": str(worst)}
 
 
 def main() -> int:
@@ -259,9 +338,24 @@ def main() -> int:
     )
     w.add_parameter("tolerance_relative", str(TOLERANCE))
     w.add_parameter("working_precision_dps", args.dps)
+    # External correctness anchor for the χ^λ engine (closes the
+    # "agreement ≠ correctness" gap documented in the verification-gap
+    # audit). Runs at the same q_0; float64-bounded but ample vs 1ppb.
+    anchor = _character_closed_form_anchor(TOLERANCE)
+    print()
+    print("  χ^λ closed-form anchor (1-dim irreps, external of the four paths):")
+    for c in anchor["checks"]:
+        print(f"    {c['braid']:<22} w={c['writhe']:+d}  "
+              f"|Δ|={mp.nstr(mpf(c['abs_delta_max']), 3):>9}  "
+              f"{'OK' if c['ok'] else 'FAIL'}")
+    print(f"    χ-engine anchor: {len(anchor['checks']) - anchor['n_fail']}"
+          f"/{len(anchor['checks'])} match closed form "
+          f"(worst |Δ| = {mp.nstr(mpf(anchor['worst_delta']), 3)})")
+
     w.add_data("atoms_compared", len(deltas))
     w.add_data("any_diverge", any_diverge)
     w.add_data("deltas", deltas)
+    w.add_data("character_closed_form_anchor", anchor)
     w.add_assertion(
         name="all_atoms_within_1ppb",
         computed=0 if any_diverge else 1,
@@ -269,6 +363,18 @@ def main() -> int:
         source=(
             "tr_M(β_atom) @ q_0 must agree between Hoefsmit/mpfr "
             "and markov_peel paths within 1 ppb relative"
+        ),
+    )
+    w.add_assertion(
+        name="character_engine_matches_closed_form",
+        computed=0 if anchor["n_fail"] else 1,
+        expected=1,
+        source=(
+            "χ^{(n)}(β) = q_0^{w(β)} and χ^{(1ⁿ)}(β) = (−q_0^{-1})^{w(β)} "
+            "for the two 1-dim Hecke irreps — an INDEPENDENT closed-form "
+            "anchor on the character engine that feeds the chi-cache trace "
+            "leg (agreement of the four paths is consistency, not "
+            "correctness)"
         ),
     )
     # WitnessBuilder.save() already implements content-diff-aware
@@ -279,9 +385,12 @@ def main() -> int:
     print(f"  atoms compared: {len(deltas)}, divergent: "
           f"{sum(1 for d in deltas if not d['within_1ppb'])}")
 
-    if args.strict and any_diverge:
+    if args.strict and (any_diverge or anchor["n_fail"]):
         print()
-        print("  STRICT mode: divergence above 1ppb — exiting 1")
+        if any_diverge:
+            print("  STRICT mode: divergence above 1ppb — exiting 1")
+        if anchor["n_fail"]:
+            print("  STRICT mode: χ^λ engine disagrees with closed form — exiting 1")
         return 1
     return 0
 
