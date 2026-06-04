@@ -20,4 +20,14 @@ export default proposition({
     "established",
   ],
   proofs: ["prf:brane-tower-q-laplacian-decay"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Provable.** The result is a geometric series plus the explicit spectrum of the q-Laplacian; the proof block `prf:brane-tower-q-laplacian-decay` assembles the q-integer asymptotic and the iterated Laplacian estimate.",
+    },
+    {
+      kind: "note",
+      body: "Provides an explicit absolute-convergence bound for the Yekutieli brane-tower integration, tightening the linkage between exponential decay of the q-Laplacian eigenfunctions and the physical justification for non-local integration.",
+    },
+  ],
 });

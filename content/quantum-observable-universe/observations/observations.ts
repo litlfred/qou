@@ -301,6 +301,7 @@ export default chapter({
         "deconfinement-golden-threshold",
         "hopf-diquark",
         "borromean-hopf-energy-crossover",
+        "borromean-hopf-energy-crossover-factor-250",
         "color-superconductivity-borromean",
         "eos-borromean-cfl",
         "eos-borromean-cfl-table-data",
