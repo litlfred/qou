@@ -189,16 +189,16 @@ acts between **pairs** of fermions (quarks in a Borromean triplet),
 not on individual crossings. The multi-generator structure IS the
 inter-quark correlation that the Pauli principle creates.
 
-Computed witnesses (exact in $\mathbb{Z}[r, r^{-1}]$ for $A \leq 12$,
+Computed witnesses (exact in $\mathbb{Z}[\check{q}, \check{q}^{-1}]$ for $A \leq 12$,
 $f_{64}$ at $q_0$ for display):
 
 See [Table 3](#tbl:groebner-nf-computation-table3-data).
 
 For each nucleus through $A = 12$, the symbolic witnesses are
-**exact in $q$**: the polynomials $\mathrm{tr}_{\mathrm{alt}}(r)$,
-$\mathrm{net}(r)$, $\mathrm{observable}(r)$, and $\mathrm{coral}(r)$
-are elements of $\mathbb{Z}[r, r^{-1}]$ (Laurent polynomials over
-$\mathbb{Z}$ in $r = q^{1/2}$). The denominator $2^{p_n}$ is
+**exact in $q$**: the polynomials $\mathrm{tr}_{\mathrm{alt}}(\check{q})$,
+$\mathrm{net}(\check{q})$, $\mathrm{observable}(\check{q})$, and $\mathrm{coral}(\check{q})$
+are elements of $\mathbb{Z}[\check{q}, \check{q}^{-1}]$ (Laurent polynomials over
+$\mathbb{Z}$ in $\check{q} = q^{1/2}$, the spinor information rate). The denominator $2^{p_n}$ is
 tracked separately (from the doubled pn crossing convention).
 
 The $H_3(q)$ Pauli factor (from $3$-strand irrep decomposition)
