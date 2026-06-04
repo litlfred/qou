@@ -32,6 +32,16 @@ WHAT FALLS OUT (single fact explains the whole campaign):
     them, so the q-dependence lever for c_4 is itself below floor). This
     SUPERSEDES the earlier "multi-anchor is the unblock" framing.
 
+RELATION TO qbeta_residue_a_precision_ceiling (sibling, PR #1804/#1727): that
+probe asks how many digits of the asymptotic residue A = lim_{k→∞} c_k·u^k are
+real, treating the c_k as 50-dps inputs and attributing the limit to asymptotic
+convergence. This probe is the layer beneath it: the very c_8,9,10 it
+extrapolates A from are *below the measurement floor* (σ(c_k)/|c_k| ≫ 1), so A's
+achievable precision is bounded by σ_R, not only by convergence. Both agree the
+high rungs are unreliable; this one says *why* — data information, not
+arithmetic precision. (Inputs are reused from the same canonical witnesses the
+sibling loads; no hardcoded c_k.)
+
 ⇒ THE c_k≥4 KEYSTONE IS NECESSARILY A CANONICAL FRAMEWORK DERIVATION, not a
 data extraction at any anchor count or precision.
 
