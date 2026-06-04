@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T13:01:01.853129+00:00",
-  "commitSha": "dfca53d229cbf43bbe1b0fbd70bd2a20e1d4fc7d",
+  "computedAt": "2026-06-04T14:19:22.288514+00:00",
+  "commitSha": "26618ba0b67d1aa2e3ad1b3a685b11f9f67cdb98",
   "assertions": [],
   "allPassed": true,
   "durationMs": 10,
@@ -1009,14 +1009,14 @@
       {
         "pattern": "P16",
         "file": "homflypt_reference_qa.py",
-        "line": 127,
+        "line": 128,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "homflypt_reference_qa.py",
-        "line": 128,
+        "line": 129,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
