@@ -2349,6 +2349,23 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:bar-involution-invariance' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "559a2d5256a9",
+          "ts": "8acccd8124ef",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:09:28.206Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
       }
     ],
     "proof-lean-compiles": [
@@ -2737,7 +2754,102 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "559a2d5256a9",
+          "ts": "8acccd8124ef",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:08:31.755Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "559a2d5256a9",
+          "ts": "8acccd8124ef",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:08:50.117Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "559a2d5256a9",
+          "ts": "8acccd8124ef",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:09:04.307Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "559a2d5256a9",
+          "ts": "8acccd8124ef",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:09:16.591Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "559a2d5256a9",
+          "ts": "8acccd8124ef",
+          "lean": "96544b218e86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:09:35.547Z",
+        "reviewed_sha": "089eb575d5308fd37d3442c274d2b9a37380f3b7"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:09:35.547Z"
 }
