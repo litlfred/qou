@@ -68,11 +68,18 @@ mp.mp.dps = 65
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-# Cross-anchor q values (per falsify 569bedda1 + qbeta-c3-... probe)
+# Cross-anchor q values (per falsify 569bedda1 + qbeta-c3-... probe).
+# validation: PINNED q-anchors used as a reference for the empirical-c_3
+# comparison below — canonical substrate constants live in
+# substrate/q_parameter.py; included as literals here only to keep the
+# cross-anchor harness self-contained. Not a CAL-4 input.
 Q_PROTON = mp.mpf("1.10997858275")
 Q_MUON   = mp.mpf("1.10997859555")
 
-# Empirical c_3 at each anchor (per the falsify commit)
+# validation: empirical c_3 readouts at each anchor — the OUTPUTS of the
+# production pipeline (falsify commit 569bedda1), included only as
+# comparison targets for the candidate complex-Habiro forms tested below.
+# Not a substrate input.
 C3_PROTON_EMP = mp.mpf("-2.0693")
 C3_MUON_EMP   = mp.mpf("-2.0097")
 
