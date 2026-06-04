@@ -14,7 +14,8 @@ the fix that makes it run, and the convention question that fix exposes.
 (`mass_at_3A_proper.atom_braid_word_3A`, `pn_convention="bring_color_weighted"`)
 emits a **fifth** crossing on every p-n bond:
 
-    σ_i − h·(1/2 − δ/4)·𝟙          (mass_at_3A_proper.py:304)
+    σ_i − h·(1/2 − δ/4)·𝟙
+    (mass_at_3A_proper.atom_braid_word_3A, pn_convention="bring_color_weighted")
 
 with `δ = canonical_braid_crossings._avg_color_delta()`. Numerically
 `d ≈ −0.10446`, which differs from `−h/2 ≈ −0.10453` by ~7e-5 — outside
