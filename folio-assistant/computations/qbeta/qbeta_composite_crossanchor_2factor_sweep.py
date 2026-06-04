@@ -137,9 +137,10 @@ def build_atoms(q: mpf) -> dict[str, mpf]:
         "Demazure(2,1)": 2 * quantum_int(3, q),
         "SYT_maj(2,1)": q + q ** 2,
         "J_Hopf(q)": j_hopf_kauffman(q),
-        # block eigenvalues
-        "q2+q-2": q ** 2 + q ** -2,
-        "q+q-1": q + q ** -1,
+        # block eigenvalues (negative-exponent powers; key uses Unicode
+        # superscript ⁻² / ⁻¹ to avoid being misread as subtraction)
+        "q²+q⁻²": q ** 2 + q ** -2,
+        "q+q⁻¹": q + q ** -1,
         # Kashaev q-Pochhammers
         "(q;q)_2": q_pochhammer(q, 2),
         "(q;q)_3": q_pochhammer(q, 3),
@@ -164,8 +165,11 @@ def sweep_candidates(
     """Generate every 2-factor composite a∘b (and the singletons) as a
     name → (value_at_proton, value_at_muon) map.
 
-    Operators: ×, ÷, +, −. Unordered for ×/+, ordered for ÷/− (both
-    directions). Singletons included so the sweep supersets the
+    Operators: ×, ÷, +, −. Symmetric ops (×, +) include i == j (self-
+    composites a × a = a², a + a = 2a) so the sweep is a TRUE saturation
+    of the 2-factor space, not just ordered-pair coverage. Asymmetric
+    ops (÷, −) skip i == j (a/a = 1, a − a = 0 are vacuous) and run in
+    both directions. Singletons are included so the sweep supersets the
     single-formula bracket as well.
     """
     atoms_p = build_atoms(qp)
@@ -192,12 +196,12 @@ def sweep_candidates(
         for j, bn in enumerate(names):
             ap, am = atoms_p[a], atoms_m[a]
             bp, bm = atoms_p[bn], atoms_m[bn]
-            if j > i:
-                # symmetric ops once
+            if j >= i:
+                # symmetric ops once; j == i adds self-composites a×a, a+a
                 safe(lambda: ap * bp, lambda: am * bm, f"{a} × {bn}")
                 safe(lambda: ap + bp, lambda: am + bm, f"{a} + {bn}")
             if i != j:
-                # asymmetric ops both directions
+                # asymmetric ops both directions (a/a, a-a are vacuous)
                 safe(lambda: ap / bp, lambda: am / bm, f"{a} ÷ {bn}")
                 safe(lambda: ap - bp, lambda: am - bm, f"{a} − {bn}")
     return out
@@ -206,7 +210,9 @@ def sweep_candidates(
 def main() -> int:
     set_compute_dps()
 
-    me = mpf(M_E_MEV)
+    # Construct both anchors via str(...) so the cast is precision-safe
+    # regardless of whether the source constant is mpf, str, or float.
+    me = mpf(str(M_E_MEV))
     q_codata = mpf(str(Q_BETA_MEV))
     qp = q_at(mp.dps)
     qm = q_muon_at(mp.dps)
