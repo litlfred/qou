@@ -390,6 +390,44 @@ theorem hbarQ_pos_of_one_lt_q (q : ℝ) (hq : 1 < q) : 0 < hbarQ q := by
   · linarith
   · linarith
 
+/-- **Theorem 18 (proved).** Clearing the `25` denominator from
+`habiroT25`: multiplying by 25 recovers the bare quantum integer.
+
+  `25 · T_{25}(q) = [3]_q`
+
+A direct cancellation identity used downstream when normalising
+closure formulas. -/
+theorem habiroT25_times_25_eq_quantumInt_three (q : ℝ) :
+    25 * habiroT25 q = quantumInt 3 q := by
+  unfold habiroT25
+  ring
+
+/-- **Theorem 19 (proved).** General framing-ladder normalisation:
+for `n ≥ 1`, multiplying `habiroTnSq n q` by `n²` recovers `[3]_q`.
+
+The n-parametric form of Theorem 18 — the framing factor *always*
+clears to `[3]_q` via the squared T(2,n) crossing index, for any
+positive lepton index. -/
+theorem habiroTnSq_times_n_sq_eq_quantumInt_three (n : ℕ) (hn : 0 < n) (q : ℝ) :
+    (n : ℝ) ^ 2 * habiroTnSq n q = quantumInt 3 q := by
+  unfold habiroTnSq
+  have hne : (n : ℝ) ^ 2 ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hn.ne')
+  field_simp
+
+/-- **Theorem 20 (proved).** Cross-rung product identity for Q_β c_3.
+
+The rung 1 (containing `habiroT25 q`) and the m_μ V9 rung
+(containing the same `habiroT25 q`) can be related directly:
+
+  `qbetaC3Rung1 q · hbarQ q^7 = delta_V9 q`
+
+A restatement of Theorem 6 (`delta_V9_eq_hbarQ_seven_times_qbetaC3Rung1`)
+in product form. -/
+theorem qbetaC3Rung1_times_hbarQ_seven_eq_delta_V9 (q : ℝ) :
+    qbetaC3Rung1 q * hbarQ q ^ 7 = delta_V9 q := by
+  rw [delta_V9_eq_hbarQ_seven_times_qbetaC3Rung1]
+  ring
+
 /-! ## Conditional closure theorem (§3b-cond pattern)
 
 The formal-existence claims (Theorems 4 + 5) are proved above; the
