@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T11:58:17.467987+00:00",
-  "commitSha": "33ae064838407e74751635040efd393dfb419dae",
+  "computedAt": "2026-06-04T12:40:28.342970+00:00",
+  "commitSha": "ca097e280a082828e1759ea8d392a83a85a616da",
   "assertions": [
     {
       "name": "no_purged_form_reentered_production",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "noncanonical-reentry-audit",
   "scriptFile": "noncanonical_reentry_audit.py",
-  "scriptHash": "96df01bb65f3",
-  "scriptCommitSha": "7fa8ef251892d1ecba62467925833205c905c890",
+  "scriptHash": "2eecb36440a5",
+  "scriptCommitSha": "3b2862c3d5d9542153a97450a76f779a3ec5c287",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

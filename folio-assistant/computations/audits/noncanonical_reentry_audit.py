@@ -186,10 +186,14 @@ def audit_file(path: Path) -> list[dict]:
     violations: list[dict] = []
 
     for node in ast.walk(tree):
-        # `import X` / `import X as Y` — module-level purged scripts.
+        # `import X` / `import X as Y` — banned module imported directly, OR
+        # a banned symbol used as a top-level module name (e.g. `import
+        # lambda_scale_family_a`), OR a non-banned module aliased to a
+        # banned name (`import x as lambda_scale_family_a`). Cover all
+        # three (Gemini + Copilot review, PR #1819).
         if isinstance(node, ast.Import):
             for alias in node.names:
-                rec = _module_banned(alias.name)
+                rec = _module_banned(alias.name) or _symbol_banned(alias.name)
                 if rec:
                     violations.append({
                         "kind": "import-module",
@@ -197,6 +201,15 @@ def audit_file(path: Path) -> list[dict]:
                         "symbol": alias.name,
                         "ban": rec,
                     })
+                if alias.asname:
+                    rec_as = _symbol_banned(alias.asname) or _module_banned(alias.asname)
+                    if rec_as:
+                        violations.append({
+                            "kind": "import-alias",
+                            "line": node.lineno,
+                            "symbol": alias.asname,
+                            "ban": rec_as,
+                        })
 
         # `from M import S [as A]` — banned module OR banned symbol.
         elif isinstance(node, ast.ImportFrom):
@@ -222,9 +235,19 @@ def audit_file(path: Path) -> list[dict]:
                         "symbol": alias.name,
                         "ban": rec,
                     })
+                if alias.asname:
+                    rec_as = _symbol_banned(alias.asname) or _module_banned(alias.asname)
+                    if rec_as:
+                        violations.append({
+                            "kind": "import-alias",
+                            "line": node.lineno,
+                            "symbol": alias.asname,
+                            "ban": rec_as,
+                        })
 
-        # `def lambda_scale_X(...)` — re-defining a banned form.
-        elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+        # `def lambda_scale_X(...)` / `class lambda_scale_X` — re-defining a
+        # banned form (Gemini review, PR #1819: ClassDef parallels FunctionDef).
+        elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
             rec = _symbol_banned(node.name)
             if rec:
                 violations.append({
@@ -258,6 +281,33 @@ def audit_file(path: Path) -> list[dict]:
                     "kind": "attribute-use",
                     "line": node.lineno,
                     "symbol": node.attr,
+                    "ban": rec,
+                })
+
+        # Keyword-argument NAME at a call site `foo(lambda_scale_family_a=v)`
+        # — the value is being passed in under the banned form's name
+        # (Gemini review, PR #1819, high). `node.arg` is None for **kwargs
+        # spread; skip those.
+        elif isinstance(node, ast.keyword) and node.arg:
+            rec = _symbol_banned(node.arg)
+            if rec:
+                violations.append({
+                    "kind": "keyword-arg-use",
+                    "line": node.lineno,
+                    "symbol": node.arg,
+                    "ban": rec,
+                })
+
+        # Parameter name in a function signature `def f(lambda_scale_X=None)`
+        # — signals the function accepts the banned form as input
+        # (Gemini review, PR #1819, high).
+        elif isinstance(node, ast.arg):
+            rec = _symbol_banned(node.arg)
+            if rec:
+                violations.append({
+                    "kind": "param-def",
+                    "line": node.lineno,
+                    "symbol": node.arg,
                     "ban": rec,
                 })
 
