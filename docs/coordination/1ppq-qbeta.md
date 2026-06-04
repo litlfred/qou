@@ -65,6 +65,15 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 
 ## Open probes (current queue)
 
+> **Refuted-class map (method-level).** Before opening a new derivation probe,
+> consult the search-space map
+> [`docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](../audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md):
+> it catalogues the eliminated hypothesis classes (real-q single/composite,
+> torus-knot, constant-kernel, Pell-Lucas-into-free-rungs, SDP-extraction,
+> algebra-tower box-adding) and pins the one open axis (**trace-level
+> Markov-stabilization** `Ind_{H₃}^{H₄}` under `tr_M`). Don't re-run a refuted
+> class.
+
 - [x] **PROBE 1 — c_3 q_0-stability** (DONE this session, 2026-05-31): verdict NEAR-MATCH. The 2.98% cross-anchor swing exceeds 10⁻⁵⁰ compute precision by 48 orders of magnitude — c_3 = -2 is NOT Taylor-exact at the value level, and J_Hopf(q) − ℏ_q²(q) is not the right q-dependent function either. Audit: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](../audits/2026-05-31-qbeta-c3-q0-stability-verdict.md).
 - [ ] **PROBE NEW — Q_β Habiro element search** (the actual blocker — parallel α_EM PR #1511). High priority; this is the keystone for all c_k≥3.
   - **Sub-attack result (symbolic q-difference solve, PR #1593, 2026-05-31):** ORDER AUDIT — the per-block `Δtr_M` contributions are O(√u) (ε¹, leading −2/−1/−2) while ladder c_3 is O(u³) (ε⁶). The shared `−2` is an **accidental cross-order coincidence (5 ε-orders apart)**, not a structural identity — the root cause of the flip-flop. Sharpens the target: the Habiro element is the **scaling/eigenphase map f: Δtr_M(√u) ↦ Q_β(c_3 at u³)**, NOT a value for c_3. q₀-independence confirmed (per-block coeffs fixed rationals). Audit: [`docs/audits/2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md`](../audits/2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md). No fitted form proposed.

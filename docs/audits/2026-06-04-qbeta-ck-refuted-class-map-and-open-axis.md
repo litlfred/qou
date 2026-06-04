@@ -1,0 +1,163 @@
+# Q_β c_k derivation — refuted structural-class map + the one open axis
+
+**Date:** 2026-06-04
+**Status:** SEARCH-SPACE MAP (method/hypothesis-class status). Complements —
+does **not** supersede — the per-rung
+[`ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md),
+which stays authoritative for each rung's canonical-vs-empirical *tier*.
+This doc records which **derivation approaches** have been eliminated, so the
+next session narrows its probe instead of re-running a refuted class.
+
+> **Why this doc, distinct from the registry.** The registry answers *"what is
+> the status of rung c_k?"* (value-level). This doc answers *"which method of
+> deriving the c_k / the ladder element is still alive?"* (method-level). Both
+> are needed: the registry stops re-deriving a refuted *value*; this map stops
+> re-running a refuted *method*. It is the backward-pruning corpus-grep
+> discipline (CLAUDE.md §"Before declaring open") applied to the **search
+> space**, and the forward-pruning formalize-first discipline
+> (CLAUDE.md §"Formalize-first probe discipline") applied to **what to run
+> next**.
+
+---
+
+## 1. What the open keystone actually is (read before proposing any probe)
+
+Per registry §3/§5, the open object is **not a c_k value**. It is the
+fibre-level pair:
+
+- the **Habiro element** `F(q)` whose Habiro / Taylor coefficients **are** the
+  ladder `c_k` (`Q_β = Q_base · ∏_k (1 + c_k u^k)`, `u = b·ℏ_q² ≈ 0.00852`), and
+- the **kernel** `R(q,ξ)` of the proved (sorry-free) *conditional* recursion
+  `F(qξ) = R(q,ξ)·F(ξ) ⟹ c_{k+1} = Σ_j a_j(q₀) c_{k+1−j}`.
+
+Only **c_2 = −1** is canonical (Taylor-exact, anchor-stable). Every c_k≥3 is
+**empirical** until `F(q)` is constructed. Two hard constraints on any candidate
+`F(q)`, both already established, kill most naive attempts up front:
+
+1. **Fibre-level, not real-q.** `c_3`'s best real-q forms reproduce the
+   empirical value at the **proton anchor only** and are **rigid**
+   (`dc_3/dq ≈ 4.6×10⁶`; swing 4.7M× smaller than the empirical c_3) — so a
+   genuine `F(q)`, if it exists, is **complex-analytic / root-of-unity** at the
+   fibre level, **never** a real-q formula in `q₀`
+   (CLAUDE.md §"Im(q) at fibre vs observable level"; registry §3 c_3 row;
+   falsification audit
+   [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md)).
+2. **Anchor-stability is the canonicity gate.** Registry §8: a coefficient is
+   `canonical` only if it passes a proton+muon cross-anchor swing `< 1%`. A
+   small proton residual alone is `empirical`, always.
+
+These two facts are the **invariants the surviving hypothesis class must
+respect**. A probe that proposes a real-q `c_3 = f(q₀)` or validates against the
+proton anchor only is **dead on arrival** — it is already in the refuted map
+below.
+
+---
+
+## 2. Refuted structural-class map
+
+Each row is a **class** of derivation attempt, the verdict, and the load-bearing
+evidence. **Before running a new c_k probe, check this table; if your idea is a
+member of a `REFUTED` class, do not re-run it.**
+
+| # | hypothesis class | verdict | evidence |
+|---|---|---|---|
+| C1 | **Real-q single-formula c_3** (`J−ℏ²`, `[3]_q/25`, and 28 enumerated single forms) | **REFUTED** — proton-only match, cross-anchor rigid | 28 NEGATIVE single-formula scan (PR #1831); rigidity falsification `dc_3/dq≈4.6×10⁶` (registry §3) |
+| C2 | **Real-q 2-factor composite c_3** (`f₁(q)·f₂(q)` over 1281 candidates) | **REFUTED** — best proton matcher (`q²+q⁻²−[4]_q`) misses muon 14× | cross-anchor 2-factor sweep, 1281 cands, NEGATIVE (PR #1831) |
+| C3 | **Torus-knot family `T(2,n)`** as the rung-1 `/25` source | **REFUTED** — cubic Taylor `= deg-3 poly in n`; none equals the target `1` | 9-knot extended scan T(2,3..11)+twists (PR #1822) |
+| C4 | **Cinquefoil `T(2,5)` knot-assignment** for c_3 | **REFUTED** — T(2,5) is the muon particle-knot, not c_3; `/25` is the coincident fibre constant `[5]_q²\|_{q=1}` | knot-assignment verification (PR #1811) |
+| C5 | **Constant-kernel recursion** `R(q,ξ) = const` (depth ≤ 4) | **REFUTED through depth 4** → kernel, if any, is non-constant q-rational | commit `eca145ca` (registry §5) |
+| C6 | **Pell-Lucas σ-action pattern extended into the free rungs** (`c_8 = 4b⁴`, …) | **BREAKS at first free rung c_8** — closed `+2.27` vs bias-corrected `−0.215` (wrong sign) | c6–c10 cross-anchor bias-corrected probe (PR #1842, merged `160a3a6d`) |
+| C7 | **SDP extraction of c_k≥4** | **noise-dominated / biased** — `+1.7%` bias on the *proved* c_2, ratios 10³–10⁷× at k≥8 | SDP-zero probe (PR #1839); extraction docstring (registry §3) |
+| C8 | **Algebra-tower box-adding** (`H₃ ⊂ H₄` Bratteli induction) to derive the Family-A `linking_weight` | **REFUTED B1/B2/B3** — uniform residual q-dependent; y_λ-weighted 60.1% error; per-source λ all q-dependent | Bratteli probe, 3× REFUTED (PR #1841) |
+| C9 | **Per-knot `Vol(β_K)` flip for the light series** (production swap) | **NOT VIABLE as a flip** — per-block undershoot grows `−57%`(p) → `−95%`(T); diagnostic-only | Option-A per-knot Vol diagnostic (PR #1816) |
+| C10 | **Khovanov–Rozansky `sl_N`** import for the H₃→H₄ `+1` | **REFUTES (wrong axis)** — its `+1` is gauge rank N, the transverse axis; importing it misleads | literature import (PR #1808) |
+| C11 | **Volume conjecture** as the strand-count limit | **SILENT** — limit parameter is color N / root-of-unity order, not strand count | literature import (PR #1808) |
+
+**Reading.** The real-q axis (C1–C4), the constant-kernel axis (C5), the
+Pell-Lucas-into-free-rungs axis (C6), the SDP-extraction axis (C7), and the
+algebra-tower box-adding axis (C8) are all closed. C9 is closed as a *production
+flip* (it remains a legitimate diagnostic). C10–C11 are literature dead-ends for
+the H₃→H₄ jump.
+
+---
+
+## 3. The one open axis — trace-level Markov-stabilization
+
+Exactly one structurally-motivated, **not-yet-run** axis survives, and it is the
+same object from two directions:
+
+- **H₃→H₄ jump (mass-side, shared-root):** the **box-adding induction functor
+  `Ind_{H₃}^{H₄}` under the Markov trace** `tr_M = Σ_λ y_λ χ^λ` — i.e.
+  Markov-stabilization at the **trace level**, not the algebra-tower level.
+  PR #1808 names this the lead after eliminating C10/C11; PR #1841 refuted the
+  **algebra-tower** version (C8) and **explicitly deferred to the trace-level
+  version as the orthogonal axis to pursue next.** It has **not** been run.
+- **Q_β c_k ladder (decay-side):** the fibre-level Habiro element `F(q)` of §1,
+  whose kernel `R(q,ξ)` is non-constant q-rational (C5 ruled out constants) and
+  whose evaluation is root-of-unity / complex-analytic (C1–C4 ruled out real-q).
+
+These are **two facets of one question** — *what categorical operation
+generates the ladder as a strand/box is added under the trace?* Both are the
+shared-root audit's named productive directions (Option E / GAP-A;
+[`2026-05-30-l2-100x-status-3-failing-shared-root.md`](2026-05-30-l2-100x-status-3-failing-shared-root.md)),
+and both are flagged there as **research-grade, multi-session** — explicitly
+**not** a single-session foreground discharge. The Δ_λ gate
+(CLAUDE.md §"Precision goals → Δ_λ gate") bars a 7th *fit-based* ansatz; this
+axis is **structural** (a trace-weighted induction identity), so it is in-bounds
+provided it is run as a derivation with the §1 invariants as gates, never as a
+fit.
+
+---
+
+## 4. Formalize-first gate for the next probe (narrow before you run)
+
+Per CLAUDE.md §"Formalize-first probe discipline", state the invariant the
+surviving class must satisfy **before** launching the trace-level probe, so a
+refuted sub-case is killed on paper rather than by an expensive scan:
+
+1. **Hypothesis class.** `c_{k}` (equivalently the Family-A `linking_weight`)
+   `= Markov-weighted box-adding sum` over `Ind_{H₃}^{H₄}` corner-adds, weighted
+   by `y_λ` under `tr_M`.
+2. **Invariant the whole class must satisfy.** (a) **Anchor-stability** — the
+   produced coefficient must pass proton+muon swing `< 1%` (registry §8); (b)
+   **bar-evenness** / `q↦q⁻¹` symmetry of any `F(q)` (the c_2 = −1 rung is
+   bar-even, Kashiwara `f̃₁²`); (c) **q=1 classical-limit shadow** must
+   reproduce the known integer (`c_3 → J_Hopf(1) = −2`) without fitting.
+3. **Formalize it.** A Lean lemma (even conditional `class` + `-- Ref:` per
+   §3b-cond) stating the trace-weighted induction identity, or a rigorous
+   symbolic q-difference argument for `R(q,ξ)`. The proved-sorry-free recursion
+   *engine* already exists (registry §5); what is missing is the **kernel**, so
+   the formalization target is `R(q,ξ)` (non-constant q-rational, ζ₄ residue,
+   √u→u² lift), not another value.
+4. **Let the result narrow the probe.** If the trace-weighted box-add fails the
+   `q=1` shadow or the bar-evenness invariant symbolically, **do not** run the
+   numerical anchor sweep — add a new row to §2 and stop.
+
+---
+
+## 5. Standing rule (discipline)
+
+- **Before any new c_k / ladder-element derivation probe, consult §2.** If the
+  idea is a member of a `REFUTED` class, it is already eliminated — do not
+  re-run it; cite the row instead.
+- **A new class that is run gets a new §2 row** with its verdict (so the map
+  stays the single method-level record, mirroring how the registry is the
+  single rung-level record).
+- **Per-rung status changes still go to the registry**, never here. This doc
+  records *methods*, the registry records *tiers*. Do not duplicate a rung tier
+  into this file.
+- The trace-level axis (§3) is **owner-gated multi-session research**, not a
+  foreground discharge — coordinate with the active Phase-2 / 1762-roadmap
+  siblings (PRs #1808, #1816, #1841) via `coordinate.md` before opening a probe
+  branch; overlap at the Hecke `Ind`/`tr_M` compute is near-certain.
+
+---
+
+## 6. Cross-references
+
+- **Authoritative rung status:** [`ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md)
+- **1ppQ Q_β master ledger (open probes):** [`1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
+- **Truncation-order framing (N is a precision knob):** [`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
+- **Shared root cause (Q_β / m_n / Δ_pn):** [`2026-05-30-l2-100x-status-3-failing-shared-root.md`](2026-05-30-l2-100x-status-3-failing-shared-root.md)
+- **H₃→H₄ literature import (named the trace-level lead):** [PR #1808](https://github.com/litlfred/qou/pull/1808) (doc `2026-06-04-h3-h4-jump-literature-import.md` lands when #1808 merges)
+- **Refuted-class source PRs:** #1811, #1816, #1822, #1831, #1839, #1841, #1842 (merged)
