@@ -444,14 +444,16 @@ This is the **forward** complement to the corpus-grep checklist above
 (which prunes *backward* against already-known results). Worked
 precedents where one structural argument killed an entire numerical
 family this session: `dc_3/dq ≈ 4.6e6` impossible for smooth real `f`
-(kills the real-q c_3 family, PR #1821); the PSLQ entropy bound
-`precision > n_terms·log10(2·height)` (kills the 12-constant basis,
-PR #1805); A is ~4 sig figs from `c_2..c_10` (no high-precision
-identification possible, PR #1805). **Caveat:** if the formalization is
-harder than the probe AND the probe is cheap and decisive, just run the
-probe — this rule targets wide/expensive searches, not every one-off
-check. Full protocol + precedent table:
-[`.claude/skills/local/compute-author.md §3.3`](.claude/skills/local/compute-author.md).
+(kills the real-q c_3 family, [PR #1821](https://github.com/litlfred/qou/pull/1821));
+the PSLQ entropy bound `precision > n_terms·log10(2·height)` (kills the
+12-constant basis, [PR #1805](https://github.com/litlfred/qou/pull/1805));
+A is ~4 sig figs from `c_2..c_10` (no high-precision identification
+possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
+**Caveat:** if the formalization is harder than the probe AND the probe
+is cheap and decisive, just run the probe — this rule targets
+wide/expensive searches, not every one-off check. Full protocol +
+precedent table:
+[`.claude/skills/local/compute-author.md §3.3`](.claude/skills/local/compute-author.md#formalize-first).
 
 ## Always provide GitHub links — default to `.md`
 
