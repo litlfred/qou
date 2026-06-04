@@ -71,15 +71,3 @@ This is the convergence statement underlying the QOU treatment of
 composite operators: in the Gröbner–Shirshov tower expansion of a
 hadron's mass, the leading term is the local single-jet contribution,
 and the corrections form a geometric series in $\hbar_q^2 \cdot q^{-2}$.
-
-**Status: provable** — the result is geometric-series + the explicit
-spectrum of the q-Laplacian. The proof in
-[`prf:brane-tower-q-laplacian-decay`](#prf:brane-tower-q-laplacian-decay)
-assembles the q-integer asymptotic and the iterated Laplacian
-estimate.
-
-**Summary.** The proposition provides an explicit absolute-
-convergence bound for the Yekutieli brane-tower integration,
-tightening the logical linkage between exponential decay of the
-q-Laplacian eigenfunctions and the physical justification for
-non-local integration.
