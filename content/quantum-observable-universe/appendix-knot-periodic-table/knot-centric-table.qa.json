@@ -2081,7 +2081,45 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "evidence": "remark interprets conj:shell-transition-knot; placed in sec:knot-centric-table of app:knot-periodic-table — describes knot-centric reorganization of periodic table, fits exactly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:04:19.445Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "evidence": "uses: [prop:shell-structure-eigenvalues, thm:generation-completeness, rem:knot-exhaustiveness]; interprets: conj:shell-transition-knot — all are cross-chapter refs or earlier blocks; no intra-chapter forward refs",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:04:19.483Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T14:04:19.483Z"
 }

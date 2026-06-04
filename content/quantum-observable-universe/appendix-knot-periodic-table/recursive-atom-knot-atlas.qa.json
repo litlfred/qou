@@ -2352,6 +2352,24 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:recursive-atom-knot-atlas' → expected 'recursive_atom_knot_atlas'; Lean declares: Methodology, AtlasEntry, atomKnotAtlas, principledAtlas, AtlasIsWitnessDerived.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "82351c8bd514",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "evidence": "recursive-atom-knot-atlas.lean defines atomKnotAtlas : List AtlasEntry mirroring the narrative atlas structure; Lean AtlasEntry fields (braid_word, closure_knot, methodology, etc.) match the .md table columns exactly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:03:37.485Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
       }
     ],
     "proof-lean-compiles": [
@@ -2740,7 +2758,104 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "82351c8bd514",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:02:52.166Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "82351c8bd514",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:03:11.445Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "82351c8bd514",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:03:11.487Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "82351c8bd514",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "evidence": "recursive-atom-knot-atlas.md — no narrative Proof section; atlas is a data registry, no linarith/IVT/continuity arguments present",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:03:11.529Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "82351c8bd514",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "evidence": "uses: [def:confined-particle, prop:fermion-boson-knot-link, prop:confinement-sdp, conj:canonical-knot-id-sdp] — all foundational blocks; appendix-knot-periodic-table.ts places this block in sec:knot-periodic-table, which comes after sec:knot-atom-diagrams; no intra-chapter forward refs detected",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:03:37.530Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T14:03:37.530Z"
 }

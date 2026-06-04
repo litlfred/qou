@@ -1921,7 +1921,45 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2a2b2c13cfaa",
+          "ts": "71509794de95"
+        },
+        "result": "pass",
+        "evidence": "remark interprets def:stable-nucleus; describes knot diagrams for Z<=4 atoms with visual conventions and transfer matrix data; placed in sec:knot-atom-diagrams — fits exactly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:05:23.303Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "2a2b2c13cfaa",
+          "ts": "71509794de95"
+        },
+        "result": "pass",
+        "evidence": "uses: [prop:shell-structure-eigenvalues]; interprets: def:stable-nucleus — both are cross-chapter refs to foundational blocks; no intra-chapter forward refs",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:05:23.342Z",
+        "reviewed_sha": "c014067cdd67ac2ee17119c9500173c36af98215"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T14:05:23.342Z"
 }
