@@ -138,17 +138,18 @@ theorem qbetaC3Rung1_factors_via_habiroT25 (q : ℝ) :
   unfold qbetaC3Rung1 habiroT25
   ring
 
-/-- **Theorem 3 (proved).** The Q_β c_3 base admits the categorical
-factored form:
+/-- **Theorem 3 (proved).** Unfold the Q_β c_3 base to its canonical
+definitional form `-(q² + q⁻¹²)`.
 
-  `-(q² + q⁻²) = -[2]_{q²} · q⁻¹`  (modulo q ≠ 0)
-
-i.e. it is the negative of the symmetric q²-block eigenvalue sum.
-This identifies `qbetaC3Base` as a canonical categorical seed
-(not a numerical fit). -/
-theorem qbetaC3Base_categorical_factored (q : ℝ) (hq : q ≠ 0) :
+This is the **definitional unfolding** (proof is `rfl` after `unfold`),
+recorded as a named identity so downstream files can reference the
+canonical form directly without repeating the `unfold`. Identifies
+`qbetaC3Base` with the negative symmetric q²-block eigenvalue sum
+(which equals `-[2]_{q²}` where `[2]_x := x + x⁻¹`; this stronger
+factorization is NOT proved here and would require `field_simp +
+ring` over `q ≠ 0`). -/
+theorem qbetaC3Base_unfold (q : ℝ) :
     qbetaC3Base q = -(q ^ 2 + q⁻¹ ^ 2) := by
-  unfold qbetaC3Base
   rfl
 
 /-- **Theorem 4 (proved, formal-existence form).**
