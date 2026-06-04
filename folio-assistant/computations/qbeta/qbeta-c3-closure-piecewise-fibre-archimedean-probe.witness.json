@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T13:11:30.884351+00:00",
-  "commitSha": "52177229332f18637ffee55b5234d06481d12fb1",
+  "computedAt": "2026-06-04T13:17:19.044986+00:00",
+  "commitSha": "40e16057fb15b4bb1f9742c3087f399a7796ab7d",
   "assertions": [
     {
       "name": "pr1811_div25_finding_confirmed_reverse_test",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "qbeta-c3-closure-piecewise-fibre-archimedean-probe",
   "scriptFile": "qbeta_c3_closure_piecewise_fibre_archimedean_probe.py",
-  "scriptHash": "cc3ecb5031e7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f3e6c9a71ae4",
+  "scriptCommitSha": "40e16057fb15b4bb1f9742c3087f399a7796ab7d",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -54,10 +54,11 @@
         "delta_eps_ppm": 2.602846012169945
       },
       {
-        "piece": "/25_to_qint5_sq_q0_test4_pr1811_confirmation",
-        "q_0_value": "25.0",
-        "q_1_fibre_value": "27.25300710913673180653988",
-        "delta_eps_ppm": -984.8961609053113
+        "piece": "/25 → /[5]_q²|_{q=q_0} (cross-check NOT fibre test)",
+        "q_0_value_main": "25.0",
+        "alt_q0_value": "27.25300710913673180653988",
+        "delta_eps_ppm": -984.8961609053113,
+        "purpose": "reverse-direction confirmation of PR #1811"
       }
     ],
     "verdict": {
