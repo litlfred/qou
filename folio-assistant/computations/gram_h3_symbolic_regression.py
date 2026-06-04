@@ -32,7 +32,10 @@ from witness_base import WitnessBuilder
 
 def gram_entry_symbolic(u: mp.mpf, i: int, j: int) -> mp.mpf:
     """
-    Symbolic Gram entry G[i,j] as a function of u = sqrt(q).
+    Symbolic Gram entry G[i,j] as a function of u = sqrt(q)
+    (the spinor information rate \check{q}; "u" is kept as the
+    Python identifier per Habiro-literature convention — see
+    notation-collisions.md §\check{q}).
 
     Mirrors the `gramEntry` definition in `gram-matrix-h3-symbolic.lean`
     exactly — any drift here ↔ Lean definitions is a regression.

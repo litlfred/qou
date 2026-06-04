@@ -4,7 +4,9 @@
 For each atom with a Habiro cyclotomic expansion on disk
 (`habiro-coefficients-atomic-fast.witness.json`, which now covers
 A ∈ {1, 2, 3} after PR #506 fast-path landed), evaluate the
-truncated Habiro element at u = ζ_{2p} for primes
+truncated Habiro element at u = ζ_{2p} (here u is the spinor
+rate \check{q} substituted to a root of unity; Habiro-literature
+name "u" kept as the local Python symbol) for primes
 p ∈ {2, 3, 5, 7, 11, 13} to extract the **Frobenius eigenvalue**
 Frob_p ∈ ℂ that the brane tower carries at that prime.
 

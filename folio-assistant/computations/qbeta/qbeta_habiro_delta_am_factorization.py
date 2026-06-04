@@ -307,7 +307,8 @@ def successive_ratios_from_per_m(per_m: dict) -> dict:
             ratio = f"err: {e}"
             ratio_factored = ratio
 
-        # Numerical at u = sqrt(q_0) ≈ 1.0535 (canonical substrate)
+        # Numerical at u = sqrt(q_0) = \check{q}_0 ≈ 1.0535
+        # (spinor rate at canonical substrate; "u" kept per Habiro lit.)
         u_num = sp.Float("1.05356473")
         try:
             ratio_num = float(sp.sympify(ratio).subs(u, u_num))

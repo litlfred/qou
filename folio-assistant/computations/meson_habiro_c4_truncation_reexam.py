@@ -107,15 +107,18 @@ def main() -> int:
     print(f"  R_exact = {mp.nstr(R_exact, 18)}")
     print(f"  C       = {mp.nstr(C, 18)}")
 
-    # Habiro parameter u = b·ℏ²
+    # Ladder parameter u_ladder = b·ℏ² (NOT Habiro \check{q}; the local
+    # var is named `u` for historical reasons — the canonical ladder
+    # name is `u_ladder`. See notation-collisions.md §u). Pre-existing
+    # mislabel corrected 2026-06-04 as part of the r→\check{q} cleanup.
     h = q - 1 / q
     h2 = h * h
     b_sq = (h2 + 3) / (h2 + 4)
     b = mp.sqrt(b_sq)
     hbar_q = 1 - 1 / q
     hbar_q_sq = hbar_q ** 2
-    u = b * hbar_q_sq
-    print(f"\n[Habiro parameter]")
+    u = b * hbar_q_sq  # = u_ladder, the Q_β precision-ladder step
+    print(f"\n[Ladder parameter u_ladder = b·ℏ_q²]")
     print(f"  b² = (h²+3)/(h²+4) = {mp.nstr(b_sq, 18)}")
     print(f"  b                  = {mp.nstr(b, 18)}")
     print(f"  ℏ_q²               = {mp.nstr(hbar_q_sq, 18)}")

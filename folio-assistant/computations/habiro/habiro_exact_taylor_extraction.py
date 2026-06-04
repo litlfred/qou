@@ -260,7 +260,8 @@ def main():
         # For now, use the fact that we can compute it from Wenzl weights.
         # But that's expensive. Let me just evaluate the rational expression.
 
-        # From witness: tr_M = p(u)/denom(u) where u = √q
+        # From witness: tr_M = p(u)/denom(u) where u = √q = \check{q}
+        # (spinor rate; "u" name kept per Habiro literature).
         u = mp.sqrt(q_val)
         p_val = (u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29
                  + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17

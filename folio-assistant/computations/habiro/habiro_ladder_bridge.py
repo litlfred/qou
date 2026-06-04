@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """habiro_ladder_bridge.py — the change-of-variable bridge from the
-exact Habiro mode decomposition (u = √q) to the Q_β ladder variable
-(u_ladder = b·ℏ²), reading off what the ladder c_k must satisfy.
+exact Habiro mode decomposition (u = √q = \check{q}, the spinor
+rate) to the Q_β ladder variable (u_ladder = b·ℏ²), reading off
+what the ladder c_k must satisfy.
 
 WHY THIS PROBE (1ppQ-Q_β keystone — the final bridge step).
 

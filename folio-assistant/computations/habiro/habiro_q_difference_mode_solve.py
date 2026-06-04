@@ -46,8 +46,10 @@ structure — it decomposes Δtr_M into its exact Fourier modes, but does
 NOT yet bridge to the ladder c_k (that bridge is the remaining open
 step). No fitted form; no c_k value; tiered reporting.
 
-NOTE on u: Habiro u = q^{1/2} (NOT the ladder u_ladder = b·ℏ²); see
-notation-collisions.md §u registration (PR #1622).
+NOTE on u: u = q^{1/2} is the spinor information rate \check{q}
+(canonical name as of 2026-06-04); the Python identifier "u" is
+kept per Habiro-literature convention. NOT the ladder
+u_ladder = b·ℏ². See notation-collisions.md §\check{q}.
 """
 from __future__ import annotations
 

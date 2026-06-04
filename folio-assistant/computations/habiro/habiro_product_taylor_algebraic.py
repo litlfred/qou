@@ -131,7 +131,8 @@ def main():
     print("-" * 70)
     print()
 
-    # Habiro coefficients as SymPy polynomials in u = (1+t)^{1/2}
+    # Habiro coefficients as SymPy polynomials in u = (1+t)^{1/2} = \check{q}
+    # (spinor rate \check{q} = q^{1/2}; "u" kept per Habiro lit.)
     # a_m(u) is a polynomial in u, and (u;u)_m = Π_{j=1}^m (1-u^j)
     # (q;q)_m = Π_{j=1}^m (1-q^j) = Π_{j=1}^m (1-(1+t)^j)
 

@@ -65,7 +65,7 @@ def main():
     set_compute_dps()
 
     q = mpf(Q_50_DIGIT_STR)
-    u = sqrt(q)
+    u = sqrt(q)  # spinor rate \check{q} = q^{1/2} (Habiro lit: u)
     h = q - 1 / q
     hbar = 1 - 1 / q
 
