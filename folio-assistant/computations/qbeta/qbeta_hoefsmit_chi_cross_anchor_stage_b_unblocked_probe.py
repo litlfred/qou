@@ -215,7 +215,10 @@ def main() -> int:
 
     builder.save()
     print(f"  Witness: qbeta-hoefsmit-chi-cross-anchor-stage-b-unblocked-probe.witness.json")
-    return 0
+    # Non-zero exit on gate failure so CI/automation can detect the
+    # failure by exit code (per Copilot review on PR #1861). Witness
+    # is already saved above either way.
+    return 0 if (regressions_ok and all_stable) else 1
 
 
 if __name__ == "__main__":
