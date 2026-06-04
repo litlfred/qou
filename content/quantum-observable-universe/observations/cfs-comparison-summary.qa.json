@@ -1921,7 +1921,27 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6b77a760484a",
+          "ts": "f8dc3a54c47f"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Block is an analytical theory comparison (CFS vs QOU algebra), not an observational result. Content explicitly defers 'detailed comparison block-by-block to a separate work'. Better home would be a theory-comparison or discussion section; however, observations chapter scope may include such framing remarks.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T18:39:15.035Z",
+        "reviewed_sha": "1a117f44291d5b214eee3e42e470ed01465471fe"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T18:39:15.035Z"
 }
