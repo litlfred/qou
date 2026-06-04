@@ -131,6 +131,12 @@ def main() -> int:
         p for p in py_files
         if not p.name.startswith("_")
         and p.name != "fitted_labelled_canonical_audit.py"
+        # `_deprecated/` and `__pycache__/` are not production compute (the
+        # underscore-prefixed FILENAME filter above skips e.g. `_bridge.py`
+        # but not files INSIDE `_deprecated/` — they don't start with `_`).
+        # Match the noncanonical-reentry-audit convention (PR #1819).
+        and not any(part in {"_deprecated", "__pycache__"}
+                    for part in p.relative_to(HERE.parent).parts)
     ]
 
     rows = []
