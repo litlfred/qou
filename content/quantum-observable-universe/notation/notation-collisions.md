@@ -74,47 +74,47 @@ paper to keep them disambiguated:
   ($\tilde w_\lambda$). The Wenzl-bridge identity
   $y_\lambda = w_\lambda$ holds on the **self-conjugate stratum
   only** (where $\kappa_\lambda = \sum_{x} c(x) = 0$).
-- **$r$** = spinor information rate, $r = q^{1/2}$, $r^2 = q$.
-  Eigenvalue of the elementary half-twist on the spin-½ fundamental
-  rep of $\mathrm{SU}_q(2)$. Reserved exclusively for this purpose.
-  **Never** use $r$ for radius (use $\rho$), recurrence rate (use
-  $\nu$), or Wenzl level (use $\ell$ — see below). The relation to
-  $q$ is exactly analogous to $i$ vs $-1$: $r$ opens up the 2-D
-  spinor (spin-½) representation from the 1-D adjoint (spin-1)
-  representation. **Never** use $t$ for $q^{1/2}$ either ($t$ is
-  the standard knot-polynomial variable in $V_K(t)$, and $t$ is
-  also reserved for time-like usage).
-- **$u$** = **two distinct objects historically conflated in Python
-  compute scripts** (registered 2026-06-01 after
+- **$\check{q}$** (q-haček) = spinor information rate,
+  $\check{q} = q^{1/2}$, $\check{q}^2 = q$. Eigenvalue of the
+  elementary half-twist on the spin-½ fundamental rep of
+  $\mathrm{SU}_q(2)$. Reserved exclusively for this purpose. The
+  haček encodes the relation $\check{q}^2 = q$ in the glyph — every
+  occurrence is self-documenting. The relation to $q$ is exactly
+  analogous to $i$ vs $-1$: $\check{q}$ opens up the 2-D spinor
+  (spin-½) representation from the 1-D adjoint (spin-1)
+  representation. **Renamed from $r$ on 2026-06-04** to free $r$
+  for radius / generic-real contexts (the prior reservation forced
+  authors to write $\rho$ for radius in physics chapters, an
+  unnecessary cost; the haček also absorbs the historical Habiro
+  $u = q^{1/2}$ — see $u$ entry below). **Never** use $r$ or $t$
+  for $q^{1/2}$ ($t$ clashes with the $V_K(t)$ knot variable and
+  with time-like usage); $\iota$ is also reserved (involution /
+  inclusion).
+- **$u$** = LP shadow-price $u_\lambda, u_0$ (Schrijver convention
+  for operator-selection LP dual variables, see Table 3 row 15) **or**
+  the $Q_\beta$ precision-ladder step variable
+  $u_{\text{ladder}} = b\,\hbar_q^2$ with
+  $Q_\beta = Q_{\text{base}} \prod_k (1 + c_k\,u_{\text{ladder}}^k)$,
+  $b$ the Hoefsmit coupling and $\hbar_q = (q-1)/q$. At $q_0$,
+  $u_{\text{ladder}} \approx 0.00852$.
+  **Habiro $u = q^{1/2}$ retired 2026-06-04**: the Habiro-ring
+  expansion is now written as
+  $\mathrm{tr}_M = \sum_m a_m(\check{q})\,(\check{q};\check{q})_m /
+  D(\check{q})$ with $\check{q}$ the spinor rate above
+  (the two were always numerically identical; the dual name was a
+  literature-debt that produced a $5\times10^{38}$ error in
   [`habiro_q_difference_fourier.py`](../../../folio-assistant/computations/habiro/habiro_q_difference_fourier.py)
-  caught the collision producing a $5\times10^{38}$ error from the
-  wrong substitution). They are **not interchangeable**:
-    - **Habiro $u = q^{1/2}$** — the half-twist variable in the Habiro
-      ring expansion $\mathrm{tr}_M = \sum_m a_m(u)\,(u;u)_m / D(u)$,
-      $a_m \in \mathbb{Z}[u]$. This is *numerically equal to the
-      registered spinor rate $r = q^{1/2}$* (§above); the two names
-      coexist because $u$ is the established symbol in the Habiro /
-      cyclotomic-completion literature (Habiro 2002) while $r$ is the
-      QOU spinor-rate name. At $q_0 \approx 1.110$, $u = \sqrt{q_0}
-      \approx 1.054$.
-    - **Ladder $u_{\text{ladder}} = b\,\hbar_q^2$** — the $Q_\beta$
-      precision-ladder step variable, $Q_\beta = Q_{\text{base}}
-      \prod_k (1 + c_k\,u_{\text{ladder}}^k)$, with $b$ the Hoefsmit
-      coupling and $\hbar_q = (q-1)/q$. At $q_0$, $u_{\text{ladder}}
-      \approx 0.00852$ — **three orders of magnitude smaller** than the
-      Habiro $u$, so silent substitution of one for the other is a
-      catastrophic error, not a small drift.
-  **Discipline:** any compute script using $u$ must name which one in a
-  comment at definition (`u = sqrt(q)  # Habiro half-twist` vs
-  `u_ladder = b*hbar**2  # Q_β ladder step`). When both appear in one
-  script, the ladder variable **must** be spelled `u_ladder` (never
-  bare `u`). 15 scripts use the Habiro $u$, 14 use the ladder $u$ as of
-  this registration; mixing them without the explicit name is a
-  registered audit flag.
+  by silent substitution between Habiro $u$ and ladder $u$).
+  **Discipline:** the ladder step **must** be spelled `u_ladder`
+  in compute scripts to disambiguate from LP shadow-price $u_\lambda$
+  loops. Any leftover bare `u = sqrt(q)` in Python is a migration
+  flag — replace with `check_q = sqrt(q)`.
 - **$\ell$** = Wenzl principal-specialisation length (number of
   points in $s_\lambda(1, q^2, \ldots, q^{2(\ell-1)})$). **Renamed
-  from $r_W$** to free $r$ for the spinor rate. Old code/docs
-  using $r_W$ should migrate to $\ell$.
+  from $r_W$** in the May 2026 notation cleanup (when $r$ was
+  the spinor rate); $r$ itself was subsequently renamed to
+  $\check{q}$ on 2026-06-04. Old code/docs using $r_W$ should
+  migrate to $\ell$.
 - **Numerical $q = 1.1097$** (or any specific value of the substrate
   parameter) should not appear outside the introduction, Chapter 8
   (Information Theory, for falsifiability computations), and
