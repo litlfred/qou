@@ -2482,7 +2482,83 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "0f7096a10d82",
+          "ts": "44cfe9412e11",
+          "lean": "53fd7264c224"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:56:12.834Z",
+        "reviewed_sha": "35488e5b5e974ebaf725abda6c3fd3c8d17ff63e"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0f7096a10d82",
+          "ts": "44cfe9412e11",
+          "lean": "53fd7264c224"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:56:12.867Z",
+        "reviewed_sha": "35488e5b5e974ebaf725abda6c3fd3c8d17ff63e"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0f7096a10d82",
+          "ts": "44cfe9412e11",
+          "lean": "53fd7264c224"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:56:12.905Z",
+        "reviewed_sha": "35488e5b5e974ebaf725abda6c3fd3c8d17ff63e"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "0f7096a10d82",
+          "ts": "44cfe9412e11",
+          "lean": "53fd7264c224"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:56:12.940Z",
+        "reviewed_sha": "35488e5b5e974ebaf725abda6c3fd3c8d17ff63e"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:56:12.940Z"
 }
