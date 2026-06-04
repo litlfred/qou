@@ -227,13 +227,14 @@ def main() -> int:
     print("  n=4..9 paths (same torus refs, Markov-stabilised):")
     multi_fail = 0
     multi_total = 0
-    for n_strands, tail in ((4, [2, 3]), (5, [2, 3, 4]),
-                            (6, [2, 3, 4, 5]), (7, [2, 3, 4, 5, 6]),
-                            (8, [2, 3, 4, 5, 6, 7]), (9, [2, 3, 4, 5, 6, 7, 8])):
+    # Markov-stabilise each 2-strand torus reference up to n strands by
+    # appending σ₂σ₃…σ_{n-1}; `tail` is generated, not tabulated.
+    for n_strands in range(4, 10):
+        tail = list(range(2, n_strands))
         for label, k in _CASES:
             ref = _torus_homfly(k, v, z)
             word = [1] * k + tail
-            # No try/except: the engine self-validates on import for n∈{2..5},
+            # No try/except: the engine self-validates on import for any n,
             # so a raise here is a genuine bug and SHOULD abort loudly with a
             # full traceback rather than being masked as a silent "ERR" row.
             eng_unfr = homfly_signed_su2(word, n_strands, q0, framed=False)
