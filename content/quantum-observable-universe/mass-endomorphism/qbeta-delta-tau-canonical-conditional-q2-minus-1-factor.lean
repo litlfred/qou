@@ -1,3 +1,12 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
+-- Imports the parent block's content (CanonicalMarkovWeightsH3 class,
+-- delta_tau_M_canonical, chi_block_*, chi_blocks_have_q2_minus_1_factor).
+-- Resolves via the Lake-tree mirror at
+-- `content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`
+-- (added in this PR alongside the conditional theorem).
+import QOU.BraidKnot.QBetaPerBlockChiClosedForms
+
 /-!
 # QOU.BraidKnot.DeltaTauMCanonicalConditional
 
@@ -17,16 +26,13 @@ LaTeX label: `prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor`
 
 ## Dependency
 
-This file imports `QOU.BraidKnot` from the parent block's `.lean` file,
-which provides:
+This file imports `QOU.BraidKnot.QBetaPerBlockChiClosedForms` from
+the parent block's Lake-tree mirror, which provides:
 
 - `CanonicalMarkovWeightsH3` class
 - `delta_tau_M_canonical` conditional def
 - `chi_block_3 / chi_block_21 / chi_block_111` defs
 - `chi_blocks_have_q2_minus_1_factor` theorem
-
-PR ordering: this PR depends on PR #1764; rebase after the parent
-merges to inherit the class declaration.
 
 ## References
 
@@ -34,13 +40,6 @@ merges to inherit the class declaration.
 - [wenzl1988] Hecke-algebra subfactors (Markov-trace weights y_λ)
 - Witness: `qbeta-per-block-paper-closed-forms.witness.json`
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Ring
--- Imports the parent block's content (CanonicalMarkovWeightsH3 class,
--- delta_tau_M_canonical, chi_block_*, chi_blocks_have_q2_minus_1_factor).
--- Live import; resolves once PR #1764 lands on main.
-import QOU.BraidKnot.QBetaPerBlockChiClosedForms
 
 namespace QOU.BraidKnot
 
