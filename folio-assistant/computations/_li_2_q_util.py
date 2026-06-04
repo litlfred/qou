@@ -178,56 +178,26 @@ def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
     per-knot Geom evaluation.  See
     `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
 
-    The closed-form ALGEBRAIC identity is proved exactly in
+    The closed-form algebraic identity is proved exactly in
     `lambda_scale_all_c_i_family_a.py` (Python) and
     `lambda-scale-substrate-form.lean` (Lean):
 
         linking_weight_A(q) = (1/4) · Σ_{λ ⊢ 4} dim_q V_λ
                             = (3q² + 4 + 3q⁻²) / 4
-                            = 5/2 + (3/4) h²
+                            = 5/2 + (3/4) h²,    h = q − q⁻¹
 
-    where h = q − q⁻¹.  The h-series TERMINATES exactly at h²:
-    all higher h^{2k} coefficients are identically zero.  Both the
-    closed form and the termination are sorry-free Lean identities.
+    The h-series TERMINATES exactly at h²: all higher h^{2k} coefficients
+    are identically zero. Both the closed form and the termination are
+    sorry-free Lean identities.
 
-    ## STATUS (2026-06-04 honest-framing relabel)
-
-    The closed form is exact and proved; the **H₄ Wedderburn-count
-    INTERPRETATION** is NOT a derived categorical count.  Five
-    structural derivation paths for the H₃→H₄ jump have now been
-    refuted:
-
-      - Bratteli induction Ind_{H₃}^{H₄} (uniform / y_λ-weighted /
-        per-source) — REFUTED (#1841, all three sub-hypotheses)
-      - Trace-level Markov stabilization (z = 1/(q^½+q^{-½})) —
-        REFUTED (#1850; z<1 obstruction, M2 no exact z^k coincidence)
-      - Algebra-tower induction + Markov axes consolidated (#1853)
-      - Per-isotope Δ_λ closure via Kashiwara crystal — REFUTED
-        (#1860; all 5 candidates E1–E5)
-      - Hyp-C extended 9-knot scan — REFUTED (PR #1864, 2b7efb1e)
-
-    Roadmap-level consolidation: see
+    Status (2026-06-04): the algebraic identity is exact, but the H₄
+    Wedderburn-count INTERPRETATION is not a derived categorical count
+    — at the substrate anchor q₀ the value ≈ 2.533 is a CODATA-implied
+    near-match landing near `λ ≈ 2.46` (the value that round-trips
+    m_p). Production use is retained because the round-trip diagnostic
+    holds. Full provenance (five refuted derivation paths + the
+    remaining productive directions GAP-A-3 / GAP-A-4) is in
     `docs/audits/2026-06-04-three-paths-refuted-roadmap-update.md`.
-
-    Honest framing recommended by that audit:
-
-        `linking_weight_family_a(q) ≈ 2.53` is a **CODATA-implied
-         near-match**, landing near
-            λ_target = m_p / (m_e · Vol(𝓑₃) / ℏ_q²) ≈ 2.46
-        (the value that round-trips m_p) — NOT a structurally
-        derived categorical count.
-
-    The (1/4)·Σ_{λ⊢4} dim_q decomposition is exact, but the choice
-    of H₄ is not structurally derived; the production multiplier is
-    retained because m_p round-trips on it (Option A's PR #1816
-    diagnostic confirmed flipping breaks m_p by ≈ 2.38× and the gap
-    grows with A).
-
-    The remaining productive research-grade direction is GAP-A-3
-    (categorical brane-tower level selection) / GAP-A-4 (ρ general
-    rule / per-atom λ(K) substrate-derivation); see
-    `docs/audits/2026-05-19-delta-lambda-phase4-z4N-closure.md`.
-    CLAUDE.md forbids a seventh fit ansatz.
 
     Replaces three independent inline copies of the same algebraic
     expression in production scripts (Gemini PR #942 review, 2026-05-23
