@@ -129,16 +129,19 @@ const VOICE: QaCriterionDefinition[] = [
     id: "voice-statement-no-interpretation",
     domain: "voice",
     description:
-      "Provable block (theorem/proposition/lemma/corollary) STATEMENT " +
-      "is the bare claim — interpretation / motivation / physical " +
-      "meaning belongs in a SEPARATE `remark` block linked via " +
-      "`interprets:`. A statement block whose `.md` carries an " +
-      "`## Interpretation` / `## Discussion` / `## Motivation` / " +
-      "`## Why this matters` / `## Significance` heading after the " +
-      "statement is a candidate for splitting. Agent-only (the actual " +
-      "judgement — what counts as interpretation vs. legitimate proof " +
-      "sketch — is non-mechanical); the script merely flags candidates " +
-      "with the heading patterns above and queues them for the agent.",
+      "Provable block (theorem/proposition/lemma/corollary) STATEMENT is " +
+      "the bare claim — interpretation/motivation/physical meaning belongs " +
+      "in a SEPARATE `remark` linked via `interprets:`. FAIL (minor) only " +
+      "if SUBSTANTIVE interpretive prose (physical meaning, 'why this " +
+      "matters', motivation, downstream consequences) follows the " +
+      "statement in the SAME block AND no companion `interprets:` remark " +
+      "exists to hold it — i.e. the interpretation is genuinely " +
+      "mislocated. WARN if an `## Interpretation`/`## Discussion`/" +
+      "`## Motivation`/`## Significance` heading is present but its " +
+      "content is borderline. PASS if the block is statement+proof only, " +
+      "or its interpretation already lives in a linked remark. A short " +
+      "clarifying note on scope/applicability is NOT interpretation — " +
+      "pass it. A high pass rate is expected.",
     default_severity: "minor",
     depends_on: ["md"],
     automated: false,
@@ -182,9 +185,22 @@ const FIT: QaCriterionDefinition[] = [
     id: "fit-section-chapter",
     domain: "fit",
     description:
-      "Block topic + kind fit the declared sub-section / section / " +
-      "chapter context. Stranger-than-fiction blocks (off-topic, wrong " +
-      "register, redundant with siblings) should move or be promoted / demoted.",
+      "Discriminating placement test — read the block's section/chapter " +
+      "scope, then judge against concrete triggers. FAIL (major) if: " +
+      "(a) the block's PRIMARY subject is absent from this section's " +
+      "stated scope AND squarely belongs to a DIFFERENT chapter's scope " +
+      "(genuinely misfiled); OR (b) it restates the substantive claim of " +
+      "a same-section sibling without adding a distinct result (true " +
+      "redundancy — not a deliberate recap or worked example); OR (c) the " +
+      "kind contradicts the content — a `prose`/`remark` asserting a NEW " +
+      "provable claim WITH a proof (should be a proposition), or a " +
+      "`definition` that names no new construction (should be a remark/" +
+      "glossary). WARN (minor) if a different EXISTING section is a " +
+      "strictly better home, or the block partially overlaps a sibling. " +
+      "PASS once the topic appears in the section/chapter scope and no " +
+      "sibling already carries the same claim. A high pass rate is " +
+      "expected and correct for mature, already-reviewed chapters — pass " +
+      "legitimately; do NOT manufacture fails on well-placed content.",
     default_severity: "major",
     depends_on: ["md", "ts"],
     automated: false,
@@ -238,12 +254,25 @@ const WALL: QaCriterionDefinition[] = [
     id: "wall-side-statement",
     domain: "wall",
     description:
-      "The narrative **Statement** of the block (in the `.md`) is on the " +
-      "correct side of the substrate-to-archimedean wall. A theorem stated " +
-      "as `∀ q : ℝ, …` is archimedean; one stated as `∀ R, [CommRing R], " +
-      "∀ q : R, …` is algebraic. Mismatched statements are usually a sign " +
-      "that the block needs a `wall:` placement field and a §7c-style " +
-      "banner in the narrative.",
+      "Discriminating wall test on the narrative **Statement**. First " +
+      "fix the block's chapter regime: generic-ring/substrate chapters " +
+      "(braids-and-knots, quantum-observable-universes, models-of-qous, " +
+      "lifting-and-descent, q-geometric-langlands, brings-surface) vs " +
+      "explicitly-archimedean ones (observations, descartes-universe, " +
+      "*-archimedean appendices, numeric predicted-spectra blocks). FAIL " +
+      "(major) if a generic/substrate-chapter statement hard-codes an " +
+      "archimedean construct — `Real.sqrt/rpow/log/exp/cos`, a numeric " +
+      "`q ≈ <value>`, MeV/physical units, or an order hypothesis " +
+      "(`0 < q`, `q < 1`) provable only over ℝ — WITHOUT a `wall:` field " +
+      "or a §7c conditional banner; OR if an archimedean-chapter " +
+      "statement is a purely algebraic identity that belongs upstream. " +
+      "WARN if the statement mixes both regimes without flagging which " +
+      "side it is evaluated on. PASS if the statement is generic-ring, " +
+      "correctly archimedean-with-banner, or matches its chapter regime. " +
+      "(The `q-usage-archimedean-in-categorical-chapter` script pre-flags " +
+      "the token signatures; here you adjudicate whether a flagged token " +
+      "is a real wall-violation or legitimately banner'd. A high pass " +
+      "rate is expected — do not invent fails.)",
     default_severity: "major",
     depends_on: ["md"],
     automated: false,
@@ -259,13 +288,19 @@ const WALL: QaCriterionDefinition[] = [
     id: "wall-side-proof",
     domain: "wall",
     description:
-      "The narrative `**Proof.**` body (in the `.md`) is on the correct " +
-      "side of the substrate-to-archimedean wall. An algebraic statement " +
-      "cannot be proved by `linarith` / IVT / continuity arguments; an " +
-      "archimedean statement should explicitly cite the specialisation " +
-      "or use Real.* lemmas. Mostly an agent-reviewer criterion — the " +
-      "script flags candidate phrasings (`linarith`, `IVT`, `continuity`, " +
-      "`Real.`) and queues agent adjudication.",
+      "Discriminating wall test on the narrative `**Proof.**` body. FAIL " +
+      "(major) if an ALGEBRAIC statement (generic-ring) is proved by " +
+      "archimedean-only machinery — `linarith`, IVT / intermediate-value, " +
+      "continuity / limit arguments, `Real.*` lemmas, or numeric " +
+      "evaluation at `q ≈ <value>` — with no specialisation step " +
+      "declared; OR if an ARCHIMEDEAN statement's proof silently assumes " +
+      "the algebraic identity without citing the substrate result it " +
+      "specialises. WARN if the proof is correct but mixes regimes " +
+      "without naming the specialisation point. PASS if the proof method " +
+      "matches the statement's side of the wall. (The script flags " +
+      "candidate phrasings `linarith`/`IVT`/`continuity`/`Real.`; you " +
+      "adjudicate whether they are wall-violations or a properly-declared " +
+      "archimedean specialisation. A high pass rate is expected.)",
     default_severity: "major",
     depends_on: ["md"],
     automated: false,
@@ -470,11 +505,19 @@ const PROOF: QaCriterionDefinition[] = [
     id: "proof-narrative-lean-equiv",
     domain: "proof",
     description:
-      "The .md statement and the .lean signature express the same claim. " +
-      "Routes to `proof-narrative-lean-equivalence` (agent) — non- " +
-      "deterministic; the checker only flags blocks that have BOTH a " +
-      "Lean sibling AND a narrative `**Proposition.**` / `**Theorem.**` " +
-      "envelope, and queues them for the agent.",
+      "The .md statement and the .lean signature express the SAME claim. " +
+      "Compare element-by-element: quantifiers (∀/∃ and their domains), " +
+      "hypotheses (every Lean `[Class]`/`(h : …)` ↔ a narrative " +
+      "'assume/where' clause), and the conclusion. FAIL (major) if they " +
+      "diverge in a theorem-changing way: the narrative claims `∀` but " +
+      "Lean proves a single instance; a hypothesis present in Lean is " +
+      "absent from the narrative (or vice-versa); the conclusions differ; " +
+      "or the Lean is a `sorry`-stub / `True`-placeholder while the " +
+      "narrative asserts a real result. WARN if they agree up to a " +
+      "notational gap (renamed variable, implicit-vs-explicit binder) a " +
+      "reader could reconcile. PASS only after confirming quantifiers + " +
+      "hypotheses + conclusion match. A faithful Lean encoding of a " +
+      "correct narrative is the expected case — pass it.",
     default_severity: "major",
     depends_on: ["md", "lean"],
     automated: false,
