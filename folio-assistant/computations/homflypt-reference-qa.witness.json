@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T12:25:56.882572+00:00",
-  "commitSha": "1ce7284b23173101ed8d8f361e44ca1cd721abc9",
+  "computedAt": "2026-06-04T13:09:39.101120+00:00",
+  "commitSha": "a04506b72e2dedfd701e89a8d36eff9012d5edb9",
   "assertions": [
     {
       "name": "all_paths_match_reference",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 25,
   "computation": "homflypt-reference-qa",
   "scriptFile": "homflypt_reference_qa.py",
   "scriptHash": "b2261c47b6f3",
-  "scriptCommitSha": "1ce7284b23173101ed8d8f361e44ca1cd721abc9",
+  "scriptCommitSha": "a04506b72e2dedfd701e89a8d36eff9012d5edb9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,9 +27,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "auditOnly": "docs/audits/2026-06-04-hidden-fitting-verification-gap-mass-binding-walkthrough.md",
   "parameters": {
