@@ -203,6 +203,58 @@ theorem habiroT25_framing_family_exists (q : ℝ) :
   have h25 : ((5 : ℕ) : ℝ) ^ 2 = (25 : ℝ) := by norm_num
   simp [h25]
 
+/-! ## Cross-observable identities (proved)
+
+These additional algebraic identities (Theorems 6-9) extend the
+universal Habiro structure with concrete consistency checks at the
+classical limit `q = 1` and quantify the jet-order ratio between
+m_μ V9 and Q_β c_3 rung 1. -/
+
+/-- **Theorem 6 (proved).** Cross-observable jet-order identity:
+the m_μ V9 correction is exactly ℏ_q⁷ times the Q_β c_3 rung 1.
+
+This makes the **shared `habiroT25` factor** with **different jet
+orders** explicit as a single identity. -/
+theorem delta_V9_eq_hbarQ_seven_times_qbetaC3Rung1 (q : ℝ) :
+    delta_V9 q = hbarQ q ^ 7 * qbetaC3Rung1 q := by
+  unfold delta_V9 qbetaC3Rung1
+  ring
+
+/-- **Theorem 7 (proved).** All categorical corrections vanish at the
+classical limit `q = 1`.
+
+Each correction is proportional to `hbarQ 1 = (1-1)/1 = 0`. -/
+theorem corrections_vanish_at_q_one :
+    delta_R9 1 = 0 ∧ delta_V9 1 = 0 ∧ qbetaC3Rung1 1 = 0 := by
+  refine ⟨?_, ?_, ?_⟩
+  · unfold delta_R9 hbarQ hbarQ'; norm_num
+  · unfold delta_V9 hbarQ hbarQ'; norm_num
+  · unfold qbetaC3Rung1 hbarQ hbarQ'; norm_num
+
+/-- **Theorem 8 (proved).** Classical-limit consistency: the empirical
+3-rung Q_β c_3 closure formula reduces to `J_Hopf(q=1) = -2` at q = 1.
+
+This is a structural check — the empirical Habiro closure is consistent
+with the (proven) categorical conjecture `c_3 → J_Hopf` at the
+classical limit. Connects to `QbetaC3StructuralFormClass` in
+`QBetaCategoricalPrecisionLadder.lean` line 410. -/
+theorem qbetaC3Closure_at_q_one_equals_neg_two :
+    qbetaC3Closure 1 = -(2 : ℝ) := by
+  unfold qbetaC3Closure qbetaC3Base qbetaC3Rung1 qbetaC3Rung2 hbarQ hbarQ'
+  norm_num
+
+/-- **Theorem 9 (proved).** Classical-limit consistency for m_μ: at
+q = 1, the R9+V9 corrected prediction reduces to the bare
+`m_e · vol_4_1 / hbarQ q²` formula evaluated at q = 1 (modulo the
+hbarQ singularity).
+
+Specifically, `1 - delta_total_mmu 1 = 1`, so the closure factor
+collapses to unity at the classical limit. -/
+theorem mmu_closure_factor_at_q_one :
+    (1 : ℝ) - delta_total_mmu 1 = 1 := by
+  unfold delta_total_mmu delta_R9 delta_V9 hbarQ hbarQ'
+  norm_num
+
 /-! ## Conditional closure theorem (§3b-cond pattern)
 
 The formal-existence claims (Theorems 4 + 5) are proved above; the
