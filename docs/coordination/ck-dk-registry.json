@@ -58,14 +58,34 @@
         "note": "CODATA-residual fit; separately flagged as a normalisation artifact (2026-06-04)."
       },
       {
-        "rung": "5-8",
-        "tier": "open",
-        "form": "conjectures (e.g. 3*c_3^2 + b)",
+        "rung": 5,
+        "tier": "empirical_near_match",
+        "form": "-(b^2 + 1/2)",
         "residual_proton": null,
         "anchor_stable": false,
         "wired": false,
-        "producer": null,
-        "note": "Not derived."
+        "producer": "folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py",
+        "note": "Structural outlier with the averaging-resonance 1/2 fingerprint (Pell-Lucas NON-clean per the §averaging-resonance-rule)."
+      },
+      {
+        "rung": "6-7",
+        "tier": "empirical_near_match",
+        "form": "c_6 = c_3^2 * b^2 = 4*b^2; c_7 = c_3^3 = -8",
+        "residual_proton": "q0 leverage at or above noise floor (per script docstring)",
+        "anchor_stable": false,
+        "wired": false,
+        "producer": "folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py",
+        "note": "Pell-Lucas-clean closed forms applied per-rung in the SDP extraction. Silver-anchored exact at q=1+sqrt(2). Not cross-anchor tested."
+      },
+      {
+        "rung": "8-10",
+        "tier": "empirical_near_match",
+        "form": "c_8 = 4*b^4 = 49/16; c_9 = -8*b^2 = -7; c_10 = 4*b^6 = 343/128",
+        "residual_proton": "q0 noise-dominated, ratios 10^3 to 10^7 off (per upstream docstring)",
+        "anchor_stable": false,
+        "wired": false,
+        "producer": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.{ts,md,lean} (PR #1793); recursion-extension c_{k+2} = b^2 * c_k",
+        "note": "PROVED rational identities at the silver ratio q = 1+sqrt(2) (Lean norm_num-trivial). NOT canonical: cross-anchor (proton + muon) swing test not yet run. Structural signal at silver only, not a q0 precision claim. §8 flip-flop guard applies."
       }
     ],
     "kernel_and_element": {

@@ -64,13 +64,22 @@ cross-referenced so they are never conflated again.
 | **c_2** | **CANONICAL** (proved, Taylor-exact) | `−1` (Kashiwara f̃₁², bar-even) | exact | yes | `q-beta-c-2-eq-neg-one-structural.lean` (PR #1602) |
 | **c_3** | **EMPIRICAL — near-match, REFUTED as real-q fibre element** | candidates `J−ℏ²`, `[3]_q/25` 3-rung | ~2.6–3% (J−ℏ²); 2.65 ppm (`[3]_q/25` at proton **only**) | **NO** — swings −2.88% to muon; `dc_3/dq ≈ 4.6×10⁶` | falsification: [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md) |
 | **c_4** | **EMPIRICAL — CODATA fit / artifact** | `−0.97157` (CODATA residual); conjecture `c_3·b⁴` | fit (0 by construction) | n/a | `qbeta_1ppq_achieved.py` (flagged normalisation artifact, commit `c108fa38`) |
-| **c_5…c_8** | **OPEN** (not derived) | conjectures (`3c_3²+b`, …) | — | — | — |
+| **c_5** | **EMPIRICAL — outlier** | `−(b² + ½)` (averaging-resonance ½ fingerprint) | proton-anchor only | NO | `qbeta_decay_sdp_extended_ck.py` (Pell-Lucas NON-clean — structural outlier per the §averaging-resonance-rule) |
+| **c_6, c_7** | **EMPIRICAL — silver-anchored conjecture** | `c_3²·b² = 4·b²`, `c_3³ = −8` (Pell-Lucas-clean) | proton q₀ leverage too tight (≥ noise floor) | not cross-anchor tested | applied in `qbeta_decay_sdp_extended_ck.py`; silver-rational identities (PR #1793 lineage) |
+| **c_8, c_9, c_10** | **EMPIRICAL — silver-anchored, PROVED at q = 1+√2** | `4·b⁴ = 49/16`, `−8·b² = −7`, `4·b⁶ = 343/128` (Pell-Lucas-clean σ-action) | q₀ leverage 10³–10⁷× off (noise-dominated per upstream docstring) | **not cross-anchor tested** | sibling triple `qbeta-c8-c10-silver-rationals.{ts,md,lean}` (PR #1793) — Lean `norm_num`-trivial at silver ratio only; recursion-extension `c_{k+2} = b²·c_k` |
 | **kernel R(q,ξ)** / **element F(q)** | **OPEN keystone** | structurally constrained, not pinned | — | — | `habiro_ladder_bridge.py` |
 
 **Key facts:**
 - Only **c_2** is canonical. c_3's best forms reproduce the empirical value at
   the **proton anchor only** and are **rigid** (swing 4.7M× less than empirical
-  c_3) → **falsified** as universal real-q fibre elements. A genuine c_3 Habiro
+  c_3) → **falsified** as universal real-q fibre elements.
+- **c_8 / c_9 / c_10** are PROVED rational identities at the silver ratio
+  (`norm_num`-trivial in `qbeta-c8-c10-silver-rationals.lean`), but per §8 a
+  silver-anchored exact rational is **not canonical** without a passing
+  proton+muon cross-anchor swing test. Such a test is **not yet run**; the
+  upstream SDP-extraction docstring already records q₀ leverage as
+  noise-dominated for k ≥ 8 (ratios 10³–10⁷×). The closed forms are the
+  STRUCTURAL signal at the silver ratio, not a q₀ precision claim. A genuine c_3 Habiro
   element, if it exists, must be **complex-analytic / root-of-unity** (fibre
   level), not a real-q formula (CLAUDE.md §"Im(q) at fibre vs observable level").
 - c_4 in the 1ppQ-achieved witness is a **CODATA-residual fit**, and separately
