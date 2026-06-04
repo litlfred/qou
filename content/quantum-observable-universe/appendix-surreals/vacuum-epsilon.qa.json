@@ -1984,7 +1984,47 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "832eae3b3575",
+          "ts": "e56ea8d6891f",
+          "lean": "82b11ca1fc69"
+        },
+        "result": "pass",
+        "evidence": "vacuum-epsilon.md — conjecture relaxing the strict vacuum axiom to Geom(unknot)=ε. Placed in sec:relaxing-strict-equalities. Topic and kind (conjecture) match the section title precisely.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:48:08.080Z",
+        "reviewed_sha": "70fc3f056ae012683d21bf711e8c15547e5a165d"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "832eae3b3575",
+          "ts": "e56ea8d6891f",
+          "lean": "82b11ca1fc69"
+        },
+        "result": "pass",
+        "evidence": "vacuum-epsilon.ts uses:[conj:archimedean-stpart]. In chapter ordering, archimedean-stpart is in sec:standard-part-classical-limits (position ~79), which precedes sec:relaxing-strict-equalities (position ~110). No forward reference.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:48:08.121Z",
+        "reviewed_sha": "70fc3f056ae012683d21bf711e8c15547e5a165d"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T13:48:08.121Z"
 }
