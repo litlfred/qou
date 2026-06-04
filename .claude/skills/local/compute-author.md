@@ -270,6 +270,61 @@ Decide which symmetry / shortcut you want to exploit
 | "λ_p_scale derivable from N-tier Bring-Bloch search at coeff bound K" | NEGATIVE through K = 10⁸ across 6 tiers (PR #843 + #852) — don't keep retrying the same shape |
 | "Trace cyclic rotation does not affect cache identity" | TRUE — but the rotation must affect ONLY the cache key, NOT the recursion behavior |
 
+### §3.3 Formalize-first probe discipline (STRICT — narrow the search BEFORE running it)
+
+**Too much time is lost chasing numerical rainbows that a one-line
+structural argument — or a small Lean lemma — would have eliminated up
+front.** Before launching a numerical search/scan over a *hypothesis
+class* (a family of candidate closed forms, a PSLQ basis, a partition /
+character / root-of-unity enumeration, a recursion-kernel fit), STOP and
+ask whether a **formalizable structural claim prunes the class first**.
+
+**Protocol — one step at a time:**
+
+1. **State the hypothesis class** you would probe
+   (e.g. "c_3 = f(q) for some *real-q* closed form"; "A = ℚ-combo of these
+   12 periods"; "the residue is a partition invariant for λ ⊢ n ≤ 5").
+2. **Find the structural invariant the whole class must satisfy** — parity,
+   bar-symmetry, a degree / anchor bound, cross-anchor rigidity, search-
+   space entropy vs available precision, a Lean-provable constraint.
+3. **Formalize it** — a Lean lemma (even *conditional* / `sorry` + a
+   `-- Ref:` citation per the §3b-cond pattern), or a rigorous symbolic
+   argument — that the class provably satisfies or violates.
+4. **Let the result narrow the probe:**
+   - class REFUTED structurally → **do not run the numerical scan at all**;
+   - a structural property CONSTRAINS the class → probe only the surviving
+     sub-class;
+   - brute-enumerate **only** what formalization cannot prune.
+
+**Worked precedents (each cost a probe cycle a formalize-first step would
+have saved):**
+
+| structural argument (cheap) | killed (expensive) |
+|---|---|
+| `dc_3/dq ≈ 4.6e6` is impossible for a smooth real `f` (PR #1821) | the entire **real-q `c_3 = f(q)`** family — incl. the 4-session c_3 flip-flop + sl_6 / residual numerical scans |
+| entropy bound `precision > n_terms·log10(2·height)` (PR #1805) | the **12-constant PSLQ** search — at A's ~11 digits ANY relation found is spurious |
+| A is asymptotically ~4 sig figs from `c_2..c_10` (PR #1805) | **high-precision identifications** of A — pointless until canonical c_11+ exists |
+| finite linear-algebra rank check (commit `eca145ca`) | the **constant-kernel recursion** — refuted through depth 4 before any fit |
+
+**Lean granularity for pruning.** The formalized claim may be a
+*conditional / scaffolding* lemma (sorry-free machinery, or `sorry` +
+`-- Ref:`). Per the c_k/d_k registry §1, *machinery-proved ≠ values-
+derived* — but a sorry-free **conditional** still narrows the search and
+makes the pruning auditable. The point is to bound the search, not to
+claim a closure.
+
+**When NOT to formalize-first.** If the formalization is harder than the
+probe AND the probe is cheap and decisive, just run the probe. This rule
+targets **wide / expensive** searches that a cheap structural argument
+would prune — not every one-off check. Use judgment: formalize-first when
+the hypothesis class is large and a structural invariant is plausible.
+
+Cross-ref: `production-vs-exploratory-discipline.md` (which probes are
+exploratory), `proof-gap-audit.md` §K (declaring "open"), and the
+"Before declaring open math" corpus-grep checklist in CLAUDE.md (the
+complement: formalize-first prunes *forward*; corpus-grep prunes
+*backward* against already-known results).
+
 ## §4. Rust-port patterns (when porting Python to Rust)
 
 ### §4.1 Type-mapping cheat-sheet

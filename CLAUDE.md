@@ -421,6 +421,38 @@ resolution missed?"](docs/audits/2026-05-31-binding-magic-A-wireup.md).
 Skill cross-reference: `local/proof-gap-audit` §K codifies this
 checklist for proof-gap declarations specifically.
 
+## Formalize-first probe discipline (STRICT — narrow the search before running it)
+
+**Too much time is lost chasing numerical rainbows that a one-line
+structural argument — or a small Lean lemma — would have eliminated up
+front.** Before launching a *wide / expensive* numerical search over a
+hypothesis class (candidate closed forms, a PSLQ basis, a partition /
+character / root-of-unity enumeration, a recursion-kernel fit), STOP and
+ask whether a **formalizable structural claim prunes the class first**:
+
+1. **State the hypothesis class** you would probe.
+2. **Find the invariant the whole class must satisfy** — parity, bar-
+   symmetry, a degree / anchor bound, cross-anchor rigidity, search-space
+   entropy vs available precision, a Lean-provable constraint.
+3. **Formalize it** — a Lean lemma (even *conditional* / `sorry` +
+   `-- Ref:` per §3b-cond), or a rigorous symbolic argument.
+4. **Let the result narrow the probe** — refuted class ⇒ do not run the
+   scan; constrained class ⇒ probe only the survivors; brute-enumerate
+   only what formalization cannot prune.
+
+This is the **forward** complement to the corpus-grep checklist above
+(which prunes *backward* against already-known results). Worked
+precedents where one structural argument killed an entire numerical
+family this session: `dc_3/dq ≈ 4.6e6` impossible for smooth real `f`
+(kills the real-q c_3 family, PR #1821); the PSLQ entropy bound
+`precision > n_terms·log10(2·height)` (kills the 12-constant basis,
+PR #1805); A is ~4 sig figs from `c_2..c_10` (no high-precision
+identification possible, PR #1805). **Caveat:** if the formalization is
+harder than the probe AND the probe is cheap and decisive, just run the
+probe — this rule targets wide/expensive searches, not every one-off
+check. Full protocol + precedent table:
+[`.claude/skills/local/compute-author.md §3.3`](.claude/skills/local/compute-author.md).
+
 ## Always provide GitHub links — default to `.md`
 
 Whenever a skill or agent creates or modifies a file, the reply **must**
