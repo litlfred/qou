@@ -74,14 +74,14 @@ paper to keep them disambiguated:
   ($\tilde w_\lambda$). The Wenzl-bridge identity
   $y_\lambda = w_\lambda$ holds on the **self-conjugate stratum
   only** (where $\kappa_\lambda = \sum_{x} c(x) = 0$).
-- **$\check{q}$** (q-haček) = spinor information rate,
-  $\check{q} = q^{1/2}$, $\check{q}^2 = q$. Eigenvalue of the
-  elementary half-twist on the spin-½ fundamental rep of
-  $\mathrm{SU}_q(2)$. Reserved exclusively for this purpose. The
-  haček encodes the relation $\check{q}^2 = q$ in the glyph — every
-  occurrence is self-documenting. The relation to $q$ is exactly
-  analogous to $i$ vs $-1$: $\check{q}$ opens up the 2-D spinor
-  (spin-½) representation from the 1-D adjoint (spin-1)
+- **$\check{q}$** (q-caron, also known by the Czech name *háček*)
+  = spinor information rate, $\check{q} = q^{1/2}$, $\check{q}^2 = q$.
+  Eigenvalue of the elementary half-twist on the spin-½ fundamental
+  rep of $\mathrm{SU}_q(2)$. Reserved exclusively for this purpose.
+  The caron diacritic encodes the relation $\check{q}^2 = q$ in the
+  glyph — every occurrence is self-documenting. The relation to $q$
+  is exactly analogous to $i$ vs $-1$: $\check{q}$ opens up the 2-D
+  spinor (spin-½) representation from the 1-D adjoint (spin-1)
   representation. **Renamed from $r$ on 2026-06-04** to free $r$
   for radius / generic-real contexts (the prior reservation forced
   authors to write $\rho$ for radius in physics chapters, an
