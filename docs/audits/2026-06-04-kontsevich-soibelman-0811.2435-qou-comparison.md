@@ -626,3 +626,8 @@ Enormous cost; ~zero prediction benefit; the single structural payoff (remark �
 embedding) needs only the **specialization**, not the 148-page program. Disciplined
 plan: **keep KS as remark + dictionary; Lean-back only the QOU-side specialization.**
 The Lean-gate already implies this — it is *why* KS is, correctly, a remark today.
+
+**Decision (owner, 2026-06-04): keep KS as a remark; do not formalize KS's proofs.**
+Formalizing the program is neither feasible (§12.3) nor warranted — the QOU-relevant
+content is already a remark plus the single Wenzl-multiplicativity lemma (§11.4). The
+KS↔QOU relationship lives as the §3 dictionary and the §10 survey, not as QOU theorems.
