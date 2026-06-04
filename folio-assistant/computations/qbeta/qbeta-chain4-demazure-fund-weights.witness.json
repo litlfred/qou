@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T01:39:38.323389+00:00",
-  "commitSha": "703fe6378ff355a467166107c94b7ae49823e5fd",
+  "computedAt": "2026-06-04T02:11:45.084675+00:00",
+  "commitSha": "60e83821a30f6fb88c96401ae1b8d133e68d30c2",
   "assertions": [
     {
       "name": "real_demazure_d_i_wiring",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 13,
   "computation": "qbeta-chain4-demazure-fund-weights",
   "scriptFile": "qbeta_chain4_demazure_fund_weights.py",
-  "scriptHash": "36fd84f3e4d7",
-  "scriptCommitSha": "8ba582f4de7f58a28f51c7f958e72340c46b0a94",
+  "scriptHash": "bb64a85b9650",
+  "scriptCommitSha": "60e83821a30f6fb88c96401ae1b8d133e68d30c2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

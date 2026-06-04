@@ -131,9 +131,10 @@ def maj_sum_syt(shape: tuple[int, ...]) -> int:
 def partition_invariants_n5() -> dict:
     """Compute basic invariants for the 7 partitions of n=5.
 
-    SYT statistics (maj_sum, comaj_sum) computed via full SYT
-    enumeration and the descent-position major index. f^λ values
-    are cross-checked against the enumeration count (assertion).
+    SYT statistic `maj_sum` computed via full SYT enumeration and
+    the descent-position major index. f^λ values are cross-checked
+    against the enumeration count (assertion). `comaj_sum` was
+    removed during the round-1 fixes; only `maj_sum` is populated.
 
     Cross-check: Σ (f^λ)² = n! gives 1+16+25+36+25+16+1 = 120 ✓
     """
@@ -355,7 +356,7 @@ def main() -> None:
     near_matches = [
         (name, r) for name, r in results.items()
         if r["tier"] in (
-            "NEAR-1PPM", "NEAR-1PPB-but-not-1ppm", "NEAR-1PCT", "NEAR-FUZZY"
+            "NEAR-1PPM", "NEAR-0.1PCT", "NEAR-1PCT", "NEAR-FUZZY"
         )
     ]
     if near_matches:
@@ -381,12 +382,13 @@ def main() -> None:
         f"Continuation of PR #1772 NEGATIVE at n ≤ 4. Survey of "
         f"{len(cands)} prefactor candidates derived from partition "
         f"invariants of the 7 partitions of 5: f^λ, hook products, "
-        f"cocharge sums, q-dimensions at proton-pinned q_0. Target "
-        f"computed with corrected ℏ_q = (q − 1)/q, NOT the buggy "
-        f"hard-coded 0.0922502 from Step 2. "
+        f"major index sums (maj_sum, via SYT enumeration), and "
+        f"q-dimensions at proton-pinned q_0. Target computed with "
+        f"corrected ℏ_q = (q − 1)/q, NOT the buggy hard-coded "
+        f"0.0922502 from Step 2. "
         f"Best near-match: {best_name} → {best_tier} (ratio {best_ratio}). "
         f"Anti-pattern guards respected: TIERED reporting; cross-anchor "
-        f"deferred to Step 5b; NO ansatz proposed."
+        f"deferred to Step 6; NO ansatz proposed."
     )
     wb.add_assertion(
         name="step4_enumeration_complete",
