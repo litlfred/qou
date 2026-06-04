@@ -1,0 +1,52 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:alpha-em-categorical-trace-ratio-interpretation",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio-interpretation.ts",
+    "md": "content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio-interpretation.md"
+  },
+  "source_hashes": {
+    "md": "bc212a954733",
+    "ts": "635abb7260ed"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bc212a954733",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:23:26.456Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "bc212a954733",
+          "ts": "635abb7260ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:23:26.491Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
+      }
+    ]
+  },
+  "updated_at": "2026-06-04T17:23:26.491Z"
+}

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean"
   },
   "source_hashes": {
-    "md": "bad048893900",
+    "md": "df65dfe766f1",
     "ts": "aeba233bc626",
     "lean": "7b72f9df356a"
   },
@@ -2352,7 +2352,7 @@
       },
       {
         "field_hash": {
-          "md": "bad048893900",
+          "md": "df65dfe766f1",
           "ts": "aeba233bc626",
           "lean": "7b72f9df356a"
         },
@@ -2364,8 +2364,8 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:13:52.524Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:24:38.229Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "proof-lean-compiles": [
@@ -2826,13 +2826,11 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "bad048893900",
+          "md": "df65dfe766f1",
           "ts": "aeba233bc626",
           "lean": "7b72f9df356a"
         },
-        "result": "fail",
-        "severity": "minor",
-        "evidence": "alpha-em-shift-multiplicative-chain.md:65 — '### Significance — bridge to the w3-w4 atomic-shift framework' section present inside proposition block after the proof; belongs in a separate remark",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2840,14 +2838,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:13:52.342Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:24:01.367Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "bad048893900",
+          "md": "df65dfe766f1",
           "ts": "aeba233bc626",
           "lean": "7b72f9df356a"
         },
@@ -2859,14 +2857,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:13:52.386Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:24:01.410Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "bad048893900",
+          "md": "df65dfe766f1",
           "ts": "aeba233bc626",
           "lean": "7b72f9df356a"
         },
@@ -2878,18 +2876,20 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:13:52.429Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:24:01.451Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "bad048893900",
+          "md": "df65dfe766f1",
           "ts": "aeba233bc626",
           "lean": "7b72f9df356a"
         },
-        "result": "pass",
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Numerical verification subsection in proof body references q_0 ≈ 136.823 (archimedean evaluation); symbolic proof itself is clean but archimedean value appears in same ### Proof section",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2897,14 +2897,14 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:13:52.477Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:24:01.491Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "bad048893900",
+          "md": "df65dfe766f1",
           "ts": "aeba233bc626",
           "lean": "7b72f9df356a"
         },
@@ -2916,10 +2916,10 @@
           "agent_date": "2026-06-04",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T14:13:52.571Z",
-        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+        "reviewed_at": "2026-06-04T17:24:38.270Z",
+        "reviewed_sha": "6809a6ea0fe048c94ac3654f5f15a3c1fb986b56"
       }
     ]
   },
-  "updated_at": "2026-06-04T14:13:52.571Z"
+  "updated_at": "2026-06-04T17:24:38.270Z"
 }
