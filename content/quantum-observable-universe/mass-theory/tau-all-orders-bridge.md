@@ -4,7 +4,8 @@ algebraic $h^k$-coefficient of the $Q_8$ crossed-module
 multiplicative-integral trace along the Borromean braid, and let
 $\kappa_k$ denote the corresponding $h^k$-coefficient of the
 Markov-trace expansion of the same braid via the Jones polynomial
-$J_{\mathcal{B}_3}(q)$ at $t = q^2$, $q = e^h$.
+$J_{\mathcal{B}_3}(q)$ at $t = q^2$, with the skein parametrization
+$h = q - q^{-1}$.
 Exactly one of the following holds:*
 
 1. *(**Order-mixing**.) There exists a lower-triangular linear map
@@ -56,9 +57,9 @@ at $h^4$).
 **Why (2) is plausible.**
 The algebraic trace counts the crossed-module Euler characteristic
 $\dim(V)\cdot\chi(\Sigma_4) = -12$, an integer invariant of the
-finite group $Q_8$ acting on Bring's surface. The Markov trace at
-$q = e^h$ counts the SU$_q(2)$ skein-equivalence class via the
-Jones polynomial of the same braid. These are invariants of *different
+finite group $Q_8$ acting on Bring's surface. The Markov trace
+(skein parametrization $h = q - q^{-1}$) counts the SU$_q(2)$
+skein-equivalence class via the Jones polynomial of the same braid. These are invariants of *different
 categorical structures* (a $Q_8$-action on a genus-4 surface vs. a
 quantum-group skein category), and there is no a priori reason for
 them to agree beyond the universal $h^2$-coefficient that records the

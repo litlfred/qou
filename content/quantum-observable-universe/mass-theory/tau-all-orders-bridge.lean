@@ -78,7 +78,8 @@ The h² coefficient of T is fixed regardless of which hypothesis holds:
 the algebraic side gives α_2 = -12 (proved categorically in
 `prop:crossed-module-euler-characteristic`) and the Markov side gives
 κ_2 = 3/16 (clean rational, from the Jones polynomial of the Borromean
-braid (σ₁σ₂⁻¹)³ evaluated at t = q², q = eʰ). Their ratio fixes
+braid (σ₁σ₂⁻¹)³ at t = q², skein parametrization h = q − q⁻¹). Their
+ratio fixes
 T_{1,1} = κ_2 / α_2 = -1/64. The disproof in
 `phi0_normalization_disproof.py` then shows that *constant* extension
 fails at h⁴ (α_4/κ_4 = +7.92 ≠ -64). The conjecture is about what
