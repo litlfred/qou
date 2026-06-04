@@ -69,6 +69,8 @@ todos/*
 # EXCEPTION: per-goal coordination queues are committed so multiple agents
 # can see the same queue. Pattern: todos/<goal>-queue.json
 !todos/*-queue.json
+# Stray queue artifact when a pipeline script is run with cwd=content/
+content/todos/
 
 # Local agent state (per-machine, not shared)
 .claude/local-state/
