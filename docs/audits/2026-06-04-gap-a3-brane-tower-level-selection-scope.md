@@ -32,7 +32,7 @@ PRs #1841 / #1850 / #1860 (this session) closed the following structural-derivat
 | Family | Verdict | PR |
 |---|---|---|
 | Bratteli induction (H₃ → H₄) under uniform / y_λ-weighted / per-source | REFUTED | #1841 |
-| Markov stabilization at trace level (z = 1/(q^½+q^{-½})) | REFUTED | #1850 |
+| Markov stabilization at trace level (z = 1/(q^{1/2}+q^{-1/2})) | REFUTED | #1850 |
 | Kashiwara crystal — single partition-statistic c(λ) | REFUTED | #1860 (E1-E5) |
 
 Combined with the six prior Δ_λ-gate failures (Frobenius co-Casimir, Demazure-fibre, LP-Plancherel, LP-Frobenius, Occam, Wenzl-bridge), **9 partition-statistic / induction / stabilization ansätze are closed**.
@@ -55,6 +55,23 @@ where:
 
 - `A(K) = Vol_hyp(K)/[8]_q · [3]_q^{2(Z-1)} · (q^{1/2}+q^{-1/2})^{4N}` is the Phase-4 substrate-derived amplitude.
 - `P_λ(K)` is the unknown **partition-projection** of `K`'s brane-tower content onto irrep `λ`.
+
+**Notation note** (Copilot review #1868). The Phase-4 doc reports
+the absolute-value amplitude `|Δ_λ*(K)|`, which is the magnitude of
+the single-block-dominant extraction. The factorisation here is on
+the *signed* `Δ_λ(K)` that enters the closure equation
+`Σ y_λ·χ^λ·Δ_λ = −B(K)/m_e`. The two are related by
+`|Δ_λ*(K)| = |A(K)·P_λ(K)|`; the per-atom amplitude `A(K)` is taken
+as the Phase-4 substrate-derived expression and is positive at q_0
+(every factor is positive), so any sign / phase information lives in
+`P_λ(K)`. The probe in §4 is constructed so that `P_λ(K)` is
+unconstrained in sign (no `|·|`, no normalisation, no sum-to-one)
+— each candidate channel evaluates to a real number per partition,
+and the deuteron sum `Σ_λ y_λ·χ^λ·P_λ` is compared to
+`−B(K)/(m_e·A(K))` rather than to `−B(K)/m_e` directly. This is
+the precise way to read the Phase-4 amplitude as the per-atom
+multiplier without conflating it with the signed binding-energy
+target.
 
 The closure requirement becomes:
 
