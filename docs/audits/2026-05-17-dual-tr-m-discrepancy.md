@@ -362,7 +362,9 @@ should pick based on its output needs:
   carry rational functions of q.
 - *Closed-form derivation for the precision-ladder* → symbolic
   path via `markov_peel.tr_M_atomic`. Use the q^{1/2} convention
-  output and substitute r = q^{1/2} for pole analysis.
+  output and substitute \check{q} = q^{1/2} (spinor rate; this
+  audit pre-dates the 2026-06-04 r → \check{q} rename, read
+  r as \check{q} where it appears) for pole analysis.
 - *q→0 pole order / shift_NF derivation* → crystal-basis. Don't
   build the full Markov trace; use `crystal_pole_order` directly.
 - *Per-partition character display* → cache-first read from

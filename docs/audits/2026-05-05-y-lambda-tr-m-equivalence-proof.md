@@ -1,5 +1,11 @@
 # Formal equivalence proof — $y_\lambda(q)$ and $\mathrm{tr}_M$
 
+> **Notation note (added 2026-06-04, PR #1794).** This audit uses
+> the symbol $r$ for the spinor information rate $q^{1/2}$. As of
+> 2026-06-04 the canonical symbol is **$\check{q}$** (q-háček) —
+> read $r \mapsto \check{q}$ throughout. The audit's content is
+> unchanged; only the name of the symbol was updated.
+
 **Branch.** `claude/hoefsmit-2x2-fix` (PR #546 round-3).
 **Witness.** [`y_lambda_equivalence_proof.witness.json`](../../folio-assistant/computations/y_lambda_equivalence_proof.witness.json)
 **Script.** [`y_lambda_equivalence_proof.py`](../../folio-assistant/computations/y_lambda_equivalence_proof.py)
