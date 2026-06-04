@@ -1,11 +1,13 @@
-# Residue-A kernel deepening — Lean engine + cleaner-c_k re-run + SDP-zero probe
+# residue-A kernel deepening — Lean engine + cleaner `c_k` re-run + SDP-zero probe
 
 **Date:** 2026-06-04
 **Status:** PLAN (in progress)
 **Predecessor:** [residue-A unblock kernel scope (#1823, merged)](2026-06-04-residue-a-unblock-kernel-scope.md)
 
-Three author-chosen follow-ups (order 3 → 1 → 2) after the kernel scope +
-recurrence first-cut + verified `pole_reciprocal_is_char_root` landed.
+Three author-chosen follow-ups after the kernel scope + recurrence first-cut +
+verified `pole_reciprocal_is_char_root` landed. The section numbers below are the
+**original option numbers** from #1823's "what next" menu; they are executed in
+the author's priority order **3 → 1 → 2**.
 
 ## 3. Extend the Lean grounding (env now works)
 
@@ -22,8 +24,9 @@ Now that the toolchain is bootstrapped, extend
 
 ## 1. Re-run the recurrence first-cut on consistent-precision c_k
 
-Step 2's subleading kernel was buried under the **c_k extraction-noise floor**
-(~1e-5). Sibling **#1824** is re-extracting `c_4…c_10` at consistent precision —
+The recurrence first-cut (Step 2 of #1823) left the subleading kernel buried
+under the **`c_k` extraction-noise floor** (~1e-5). Sibling **#1824** is
+re-extracting `c_4…c_10` at consistent precision —
 exactly the input needed. Pick up its witness and **re-run** the Hankel-rank /
 over-determined recurrence fit (`qbeta_ck_recurrence_first_cut.py`) on the
 cleaner sequence: does a higher-order constant-coefficient recurrence now
@@ -42,5 +45,8 @@ quantitative anchor; if not, the synthesis is refined/refuted. Diagnostic-only.
 
 ## Guards
 
-TIERED; no fitting; ℏ_q/q₀ from canonical witnesses; Lean verified sorry-free
-against the bootstrapped toolchain; diagnostic-only; registry governs tiers.
+- TIERED reporting; no fitting.
+- `ℏ_q` / `q₀` from canonical witnesses, never hard-coded.
+- Lean verified sorry-free against the bootstrapped toolchain.
+- Diagnostic-only; no production wiring.
+- Tiers governed by the [c_k/d_k registry](../coordination/ck-dk-canonical-registry.md).
