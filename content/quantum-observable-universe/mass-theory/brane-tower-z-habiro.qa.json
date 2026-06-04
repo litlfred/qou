@@ -2109,7 +2109,47 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b59dfcb5b217",
+          "ts": "5572ba236b00",
+          "lean": "fecc1ddb202c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:19:29.288Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "b59dfcb5b217",
+          "ts": "5572ba236b00",
+          "lean": "fecc1ddb202c"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "mass-theory.ts:422 — prop:habiro-residue-sum-equivalence appears after brane-tower-z-habiro (pos 143); mass-theory.ts:573 — prop:atom-knot-mass-derivation also appears after (pos 573)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:19:29.328Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T14:19:29.328Z"
 }
