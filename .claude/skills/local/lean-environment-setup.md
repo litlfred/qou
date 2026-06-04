@@ -328,18 +328,24 @@ durable cross-container preservation lives on **orphan branches**
 `.lake/` (ephemeral) or `../mathlib4` (parent-tree, often persists but not
 guaranteed).
 
-The cache branch stores a **compressed tarball** of the oleans
-(`lake-oleans.tgz`), not the raw `.lake/` tree (a raw multi-GB tree push
-is hostile to the repo). Both restore and seed use a **separate
-`git worktree`** so your main working tree is never disturbed — do NOT
-`git switch --orphan` in the main tree (it leaves every file untracked and
-traps you with "untracked working tree files would be overwritten" on
-switch-back; Copilot #1857).
+The cache branch stores the oleans as a **compressed tarball split into
+<100 MB chunks** (`lake-oleans.tgz.part00…`), because GitHub hard-rejects
+any single file > 100 MB on push (the qou+mathlib oleans compress to
+~364 MB → 5 parts). NOT the raw `.lake/` tree (a raw multi-GB tree push is
+hostile). Both restore and seed use a **separate `git worktree`** so your
+main working tree is never disturbed — do NOT `git switch --orphan` in the
+main tree (it leaves every file untracked and traps you with "untracked
+working tree files would be overwritten" on switch-back; Copilot #1857).
+
+> **Seeded 2026-06-04:** `lake-cache/qou-v4-24-0` holds a real build
+> (1838-job from-source build of `QOU.Mass.MassVolDensity`'s dep cone).
+> RESTORE from it before rebuilding.
 
 **RESTORE first (before any from-source build):**
 ```bash
 if git fetch --depth=1 origin lake-cache/qou-v4-24-0 2>/dev/null; then
-  git show FETCH_HEAD:lake-oleans.tgz > /tmp/lake-oleans.tgz \
+  git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
+    | while read -r p; do git show "FETCH_HEAD:$p"; done > /tmp/lake-oleans.tgz \
     && tar xzf /tmp/lake-oleans.tgz \
     && echo "restored .lake from cache branch — skip the rebuild"
 else
@@ -358,9 +364,10 @@ tar czf /tmp/lake-oleans.tgz .lake/build .lake/packages/*/.lake/build 2>/dev/nul
 git worktree add --orphan -b lake-cache/qou-v4-24-0 "$WT" 2>/dev/null \
   || { git worktree add --detach "$WT"; git -C "$WT" checkout --orphan lake-cache/qou-v4-24-0; \
        git -C "$WT" rm -rfq --cached . 2>/dev/null; git -C "$WT" clean -fdxq; }
-cp /tmp/lake-oleans.tgz "$WT/lake-oleans.tgz"          # now INSIDE the worktree
-git -C "$WT" add lake-oleans.tgz
-git -C "$WT" commit -qm "seed lean cache: qou oleans @ lean v4.24.0"
+# 3. Split into <100 MB chunks INSIDE the worktree (GitHub rejects >100 MB files).
+( cd "$WT" && split -b 90m -d /tmp/lake-oleans.tgz lake-oleans.tgz.part )
+git -C "$WT" add 'lake-oleans.tgz.part*'
+git -C "$WT" commit -qm "seed lean cache: qou+mathlib oleans @ lean v4.24.0 (chunked <100MB)"
 git -C "$WT" push -u origin lake-cache/qou-v4-24-0
 git worktree remove --force "$WT"                      # main branch never left
 ```
