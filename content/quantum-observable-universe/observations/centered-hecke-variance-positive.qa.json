@@ -2348,6 +2348,23 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87",
+          "lean": "ec2a04933560"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T18:35:57.147Z",
+        "reviewed_sha": "50ac7adf9e469eee7c72fb0c807c8ffad2ead766"
       }
     ],
     "proof-lean-compiles": [
@@ -2717,7 +2734,85 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87",
+          "lean": "ec2a04933560"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Lines 14-28 in .md contain 'Why this matters for the q-CLT' and 'Numerical check' sections with substantive interpretation/motivation after the proposition statement. No companion interprets: remark exists to hold this content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T18:35:42.491Z",
+        "reviewed_sha": "50ac7adf9e469eee7c72fb0c807c8ffad2ead766"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87",
+          "lean": "ec2a04933560"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T18:35:57.016Z",
+        "reviewed_sha": "50ac7adf9e469eee7c72fb0c807c8ffad2ead766"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87",
+          "lean": "ec2a04933560"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T18:35:57.061Z",
+        "reviewed_sha": "50ac7adf9e469eee7c72fb0c807c8ffad2ead766"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87",
+          "lean": "ec2a04933560"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T18:35:57.104Z",
+        "reviewed_sha": "50ac7adf9e469eee7c72fb0c807c8ffad2ead766"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T18:35:57.147Z"
 }
