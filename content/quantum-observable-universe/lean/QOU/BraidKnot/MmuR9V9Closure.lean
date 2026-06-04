@@ -352,19 +352,21 @@ testable across the T(2,n) tower. -/
 /-- **Theorem 14 (proved).** Cross-lepton framing ratio
 e/μ: `habiroTnSq 3 q × 25 = habiroTnSq 5 q × 9` for all q.
 
-Equivalently the ratio `habiroTnSq 5 q / habiroTnSq 3 q = 9/25 = (3/5)²`
-when the numerator `[3]_q` cancels — a pure framing-index ratio. -/
+Stated as the `n²`-normalisation `9·T(3) = 25·T(5)` (both sides equal
+`[3]_q`). Equivalently the ratio `habiroTnSq 5 q / habiroTnSq 3 q =
+9/25 = (3/5)²` when the numerator `[3]_q` cancels. -/
 theorem habiroTnSq_three_five_ratio_identity (q : ℝ) :
-    habiroTnSq 3 q * 25 = habiroTnSq 5 q * 9 := by
+    habiroTnSq 3 q * 9 = habiroTnSq 5 q * 25 := by
   unfold habiroTnSq
   ring
 
 /-- **Theorem 15 (proved).** Cross-lepton framing ratio
-μ/τ: `habiroTnSq 5 q × 49 = habiroTnSq 7 q × 25` for all q.
+μ/τ, as the `n²`-normalisation `25·T(5) = 49·T(7)` (both sides equal
+`[3]_q`). Equivalently `habiroTnSq 7 q / habiroTnSq 5 q = 25/49 = (5/7)²`.
 
 A predicted ratio testable when m_τ Habiro analog is wired. -/
 theorem habiroTnSq_five_seven_ratio_identity (q : ℝ) :
-    habiroTnSq 5 q * 49 = habiroTnSq 7 q * 25 := by
+    habiroTnSq 5 q * 25 = habiroTnSq 7 q * 49 := by
   unfold habiroTnSq
   ring
 
@@ -412,7 +414,9 @@ theorem habiroTnSq_times_n_sq_eq_quantumInt_three (n : ℕ) (hn : 0 < n) (q : �
     (n : ℝ) ^ 2 * habiroTnSq n q = quantumInt 3 q := by
   unfold habiroTnSq
   have hne : (n : ℝ) ^ 2 ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hn.ne')
+  -- `field_simp` clears the `/ n²`, leaving `n² * [3]_q = [3]_q * n²`; `ring` closes.
   field_simp
+  ring
 
 /-- **Theorem 20 (proved).** Cross-rung product identity for Q_β c_3.
 
