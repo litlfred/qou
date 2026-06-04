@@ -1,0 +1,107 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-04T03:21:53.907732+00:00",
+  "commitSha": "bef1a87e647d88fc35941b50fd88893025bbd4be",
+  "assertions": [
+    {
+      "name": "sl6_demazure_reaches_near_1pct",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Control: sl_3/4/5 showed no scaling toward target (PR #1787). Default expectation: no sl_6 Demazure character reaches NEAR-1PCT either."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qbeta-residue-followup-sl6-demazure",
+  "scriptFile": "qbeta_residue_followup_sl6_demazure.py",
+  "scriptHash": "6519301eb06c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Direction 1 (sl_6 control) of the residue-A follow-up. Extends the PR #1787 real-D_i Demazure probe to sl_6: 720 permutations × 5 fundamental weights ω_1..ω_5 = 3600 candidates, Kashiwara-crystal subset model, principal q-specialisation at proton q_0. Target A/ℏ_q^15 ≈ 2.07173. Best: D_s1(ω_1)_sl6 → NEAR-FUZZY (ratio 1.01846). Expected low yield (control). TIERED; cross-anchor; ℏ_q=(q-1)/q; diagnostic-only.",
+  "data": {
+    "residue_target_A": "0.000000000000001804",
+    "prefactor_target_proton": "2.0717327773613738302527359154788178225948053571385",
+    "prefactor_target_muon": "2.07170606313586724432429903273076802257574816656",
+    "h_q_proton": "0.099081716044258507839177117518281999748464888241219",
+    "q_proton": "1.10997858275138080759166909561",
+    "q_muon": "1.10997868769193107842185960213",
+    "rank": "6",
+    "permutation_count": "720",
+    "candidate_count": "3600",
+    "tier_histogram": {
+      "MISS": "3144",
+      "NEAR-FUZZY": "168",
+      "NEAR-CLOSE": "288"
+    },
+    "top10": {
+      "D_s1(ω_1)_sl6": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
+      },
+      "D_s1·s3(ω_1)_sl6": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
+      },
+      "D_s1·s4(ω_1)_sl6": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
+      },
+      "D_s1·s5(ω_1)_sl6": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
+      },
+      "D_s2·s1(ω_1)_sl6": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
+      },
+      "D_s1·s3·s4(ω_1)_sl6": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
+      },
+      "D_s1·s3·s5(ω_1)_sl6": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
+      },
+      "D_s1·s4·s3(ω_1)_sl6": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
+      },
+      "D_s1·s4·s5(ω_1)_sl6": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
+      },
+      "D_s1·s5·s4(ω_1)_sl6": {
+        "value": "2.10998",
+        "ratio": "1.01846",
+        "tier": "NEAR-FUZZY"
+      }
+    },
+    "best_match": {
+      "candidate": "D_s1(ω_1)_sl6",
+      "tier": "NEAR-FUZZY",
+      "ratio": "1.01846"
+    },
+    "near_1pct_count": "0"
+  }
+}

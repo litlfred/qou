@@ -21,7 +21,7 @@ The author chose **three** follow-up directions. This PR runs all three.
 | Target | Value |
 |---|---|
 | Residue A | `1.804e-15` (PR #1727; simple pole, fibre-level, anchor-independent) |
-| ℏ_q | `(q − 1)/q` (NEVER hard-coded) |
+| ℏ_q | `(q - 1)/q` (NEVER hard-coded) |
 | Prefactor | `A / ℏ_q^15 ≈ 2.0717` at proton anchor |
 
 ## Direction 1 — sl_6 Demazure control
@@ -64,7 +64,7 @@ declare-open discipline).
 
 - TIERED reporting; no ansatz/fit at NEAR-FUZZY or coarser.
 - Cross-anchor before any structural claim.
-- ℏ_q from `(q − 1)/q`, never hard-coded.
+- ℏ_q from `(q - 1)/q`, never hard-coded.
 - PSLQ relations reported with explicit height + precision bound
   (a relation found only at huge height is not a closure).
 - Diagnostic-only; no production wiring; no λ_scale; no Δ_λ closure.
