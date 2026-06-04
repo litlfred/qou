@@ -14,7 +14,9 @@ PR #1762 §2 identified the **derivation gap** at the heart of the
 
 - The proton braid lives in **H₃** (3-strand braid `𝓑₃`).
 - Production `linking_weight_family_a(q)` = `(3q²+4+3q⁻²)/4 ≈ 2.53`
-  is the **H₄** half-Wedderburn count = `(1/2) · Σ_{λ⊢4} dim_q(V_λ)` —
+  is the H₄ Wedderburn-dimension sum scaled by `1/4`:
+  `(1/4) · Σ_{λ⊢4} dim_q(V_λ)` (the probe verifies
+  `Σ_{λ⊢4} dim_q(V_λ) = 3q²+4+3q⁻²` symbolically, Δ=0) —
   it sums over partitions of **4**, not 3.
 
 Why H₄ and not H₃? An UNEXPLAINED jump in the production code.
@@ -66,11 +68,12 @@ of size 1), 0 otherwise.
 
 The Family-A `linking_weight_family_a(q)` is:
 
-  λ_A(q) = (1/2) · Σ_{λ⁺ ⊢ 4} dim_q(V_{λ⁺}) = (3q² + 4 + 3q⁻²)/4
+  λ_A(q) = (1/4) · Σ_{λ⁺ ⊢ 4} dim_q(V_{λ⁺}) = (3q² + 4 + 3q⁻²)/4
 
-(The 5/2 = `(3+4+3)/4·1` = `(λ⊢4 dim_q sum at q=1)/4` = `2·5/4` is
-half the q=1 H₄ Wedderburn dimension; the `(3/4)·h²` is the q-expansion
-of the same sum around q=1.)
+(At q=1: Σ_{λ⊢4} dim(V_λ) = 1+3+2+3+1 = 10 — the sum of the five
+S₄-irrep dimensions, equivalently the number of involutions in S₄.
+So λ_A(1) = 10/4 = 5/2. The `(3/4)·h²` in the h-expansion is the
+q-deformation of the same sum around q=1.)
 
 **Question:** can this be derived as a Markov-weighted box-adding sum
 over the H₃→H₄ Bratteli step? Concretely:
@@ -83,10 +86,13 @@ the symmetric-power Schur traces) and `K(λ⁺, λ)` natural to the
 induction functor (1 if `λ⁺ ⊃ λ`, 0 otherwise; or the Pieri rule
 multiplicity, which equals 1 for single-box additions).
 
-**Sub-hypothesis B1 (cleanest):** `λ_A = (1/2) · Σ_{λ⊢3, λ⁺⊃λ} dim_q(V_{λ⁺})`
-without per-edge weighting — the **uniform** box-adding sum. If this
-recovers `(3q² + 4 + 3q⁻²)/4`, it derives the H₄ count purely
-combinatorially from H₃ via induction.
+**Sub-hypothesis B1 (cleanest):** `λ_A = c · Σ_{λ⊢3, λ⁺⊃λ} dim_q(V_{λ⁺})`
+for some constant `c` — the **uniform** box-adding sum over the H₃
+sources (note this inner sum double-counts λ⁺ reached from several
+λ⊢3, so it is NOT the bare `Σ_{λ⊢4} dim_q` of §1; the constant `c` is
+left free and the probe solves for it). If a single constant `c`
+recovers `(3q² + 4 + 3q⁻²)/4` across all q, it derives the H₄ count
+purely combinatorially from H₃ via induction.
 
 **Sub-hypothesis B2:** the same with `w(λ) = y_λ(q)` — the Markov-trace
 weighting. The Markov-trace identity (Wenzl) says the

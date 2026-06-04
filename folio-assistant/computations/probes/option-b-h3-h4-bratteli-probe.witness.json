@@ -1,9 +1,16 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T14:54:09.209046+00:00",
-  "commitSha": "1fb5dd7cd8e7d837a464d4e13864c70dd8f81b17",
+  "computedAt": "2026-06-04T16:56:08.431321+00:00",
+  "commitSha": "9873f35d8abfec2563a12d018c60e95793b16550",
   "assertions": [
+    {
+      "name": "h3_h4_box_additions_count_is_7",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0
+    },
     {
       "name": "sigma_over_4_matches_3q2_plus_4_plus_3qinv2",
       "computed": 10.0,
@@ -13,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 214,
+  "durationMs": 189,
   "computation": "option-b-h3-h4-bratteli-probe",
   "scriptFile": "option_b_h3_h4_bratteli_probe.py",
-  "scriptHash": "f0f8fa8d6e10",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fcb22dc984f5",
+  "scriptCommitSha": "9873f35d8abfec2563a12d018c60e95793b16550",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -155,10 +162,10 @@
       "verdict": "REFUTED",
       "s_b1_sym": "5*q**2 + 6 + 5/q**2",
       "lambda_A_sym": "3*q**2/4 + 1 + 3/(4*q**2)",
-      "s_b1_at_q1": 16.0,
-      "lambda_A_at_q1": 2.5,
-      "k_at_q1": 6.4,
-      "residual_S_minus_k_lambdaA_sym": "0.199999999999999*q**2 - 0.4 + 0.199999999999999/q**2",
+      "s_b1_at_q1": "16",
+      "lambda_A_at_q1": "5/2",
+      "k_at_q1": "32/5",
+      "residual_S_minus_k_lambdaA_sym": "q**2/5 - 2/5 + 1/(5*q**2)",
       "note": "S_B1 / λ_A is q-dependent — no constant rescaling reproduces λ_A.  Uniform box-adding from H₃ does NOT recover the Family-A linking_weight."
     },
     "b2_y_lambda_weighted": {
@@ -266,9 +273,9 @@
           ],
           "verdict_for_source": "REFUTED",
           "s_lambda_sym": "q**2 + 2 + q**(-2)",
-          "s_at_q1": 4.0,
-          "lambda_A_at_q1": 2.5,
-          "k_at_q1": 1.6
+          "s_at_q1": "4",
+          "lambda_A_at_q1": "5/2",
+          "k_at_q1": "8/5"
         },
         {
           "lambda": [
@@ -277,9 +284,9 @@
           ],
           "verdict_for_source": "REFUTED",
           "s_lambda_sym": "3*q**2 + 2 + 3/q**2",
-          "s_at_q1": 8.0,
-          "lambda_A_at_q1": 2.5,
-          "k_at_q1": 3.2
+          "s_at_q1": "8",
+          "lambda_A_at_q1": "5/2",
+          "k_at_q1": "16/5"
         },
         {
           "lambda": [
@@ -289,9 +296,9 @@
           ],
           "verdict_for_source": "REFUTED",
           "s_lambda_sym": "q**2 + 2 + q**(-2)",
-          "s_at_q1": 4.0,
-          "lambda_A_at_q1": 2.5,
-          "k_at_q1": 1.6
+          "s_at_q1": "4",
+          "lambda_A_at_q1": "5/2",
+          "k_at_q1": "8/5"
         }
       ],
       "note": "No single λ⊢3 reproduces λ_A under any constant rescaling."
