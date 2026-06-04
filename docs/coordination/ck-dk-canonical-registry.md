@@ -72,16 +72,16 @@ cross-referenced so they are never conflated again.
 **Key facts:**
 - Only **c_2** is canonical. c_3's best forms reproduce the empirical value at
   the **proton anchor only** and are **rigid** (swing 4.7M× less than empirical
-  c_3) → **falsified** as universal real-q fibre elements.
+  c_3) → **falsified** as universal real-q fibre elements. A genuine c_3 Habiro
+  element, if it exists, must be **complex-analytic / root-of-unity** (fibre
+  level), not a real-q formula (CLAUDE.md §"Im(q) at fibre vs observable level").
 - **c_8 / c_9 / c_10** are PROVED rational identities at the silver ratio
   (`norm_num`-trivial in `qbeta-c8-c10-silver-rationals.lean`), but per §8 a
   silver-anchored exact rational is **not canonical** without a passing
   proton+muon cross-anchor swing test. Such a test is **not yet run**; the
   upstream SDP-extraction docstring already records q₀ leverage as
   noise-dominated for k ≥ 8 (ratios 10³–10⁷×). The closed forms are the
-  STRUCTURAL signal at the silver ratio, not a q₀ precision claim. A genuine c_3 Habiro
-  element, if it exists, must be **complex-analytic / root-of-unity** (fibre
-  level), not a real-q formula (CLAUDE.md §"Im(q) at fibre vs observable level").
+  STRUCTURAL signal at the silver ratio, not a q₀ precision claim.
 - c_4 in the 1ppQ-achieved witness is a **CODATA-residual fit**, and separately
   flagged as a **normalisation artifact**.
 - The `[3]_q/25` building block is **shared** with the m_μ V9 closure (a real,
