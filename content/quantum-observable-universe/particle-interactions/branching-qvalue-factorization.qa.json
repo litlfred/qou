@@ -2566,7 +2566,85 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8",
+          "lean": "6fc0e3a3b112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:52:22.809Z",
+        "reviewed_sha": "a28e221187c26808dd584af54fbc4722a17035b4"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8",
+          "lean": "6fc0e3a3b112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:52:22.844Z",
+        "reviewed_sha": "a28e221187c26808dd584af54fbc4722a17035b4"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8",
+          "lean": "6fc0e3a3b112"
+        },
+        "result": "pass",
+        "evidence": "Statement uses rational functions of q over generic ring; no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:52:22.879Z",
+        "reviewed_sha": "a28e221187c26808dd584af54fbc4722a17035b4"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8",
+          "lean": "6fc0e3a3b112"
+        },
+        "result": "pass",
+        "evidence": "Proof is algebraic factorization; rational functions of q only; no linarith/Real.* or numeric eval.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:52:22.915Z",
+        "reviewed_sha": "a28e221187c26808dd584af54fbc4722a17035b4"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:52:22.915Z"
 }
