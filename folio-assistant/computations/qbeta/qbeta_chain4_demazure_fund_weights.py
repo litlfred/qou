@@ -43,7 +43,6 @@ ANTI-PATTERN GUARDS (same as Step 4):
 
 from __future__ import annotations
 
-from itertools import permutations
 from pathlib import Path
 
 import mpmath as mp
