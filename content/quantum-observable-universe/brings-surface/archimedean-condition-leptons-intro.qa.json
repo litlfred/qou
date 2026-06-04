@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "759936f47eae",
+          "ts": "2553a1adfa21"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "prose section-opener in sec:archimedean-condition-leptons; content previews lepton spectrum/chirality/trefoil — matches section scope exactly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:41:55.323Z",
+        "reviewed_sha": "69404605d3eb09dda1c7350f65ce5b3ecbab836c",
+        "notes": "well-placed opener; no misfile, no redundancy, kind correct"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-04T23:41:55.323Z"
 }
