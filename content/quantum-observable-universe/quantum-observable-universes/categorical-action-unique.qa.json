@@ -2560,7 +2560,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "uniqueness prop for categorical action; chapter scope includes categorical action; no misfiling",
+        "evidence": "Block in sec:categorical-action (chapter manifest line 262); uniqueness of categorical action matches section scope",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2568,9 +2568,9 @@
           "agent_date": "2026-06-04",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T23:13:46.366Z",
-        "reviewed_sha": "14d24acc437ac200563bf9477afade0a9b8473e3",
-        "notes": "correct placement"
+        "reviewed_at": "2026-06-04T23:19:48.403Z",
+        "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
+        "notes": "Correct placement alongside existence proposition"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2582,7 +2582,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "md is single sentence: uniqueness claim only; no interpretation/motivation prose in statement block",
+        "evidence": "md: bare statement + uniqueness argument only; no interpretation/motivation prose present",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2590,9 +2590,9 @@
           "agent_date": "2026-06-04",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T23:13:46.400Z",
-        "reviewed_sha": "14d24acc437ac200563bf9477afade0a9b8473e3",
-        "notes": "pure statement, proof in separate prf block"
+        "reviewed_at": "2026-06-04T23:19:48.365Z",
+        "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
+        "notes": "Statement is clean claim; proof in companion prf: block"
       }
     ],
     "wall-side-statement": [
@@ -2603,8 +2603,8 @@
           "lean": "0374f5411a2c"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "statement uses generic categorical constructs (End_C, ev, coev, tr); no Real.*, MeV, numeric q, or order hypotheses",
+        "severity": "major",
+        "evidence": "Statement is purely categorical/algebraic: rigid structure, ev_A, coev_A, categorical trace — no archimedean constructs",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2612,9 +2612,9 @@
           "agent_date": "2026-06-04",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T23:13:46.434Z",
-        "reviewed_sha": "14d24acc437ac200563bf9477afade0a9b8473e3",
-        "notes": "pure generic-ring statement"
+        "reviewed_at": "2026-06-04T23:19:48.438Z",
+        "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
+        "notes": "Generic-ring chapter, statement stays generic; no q≈value, no Real.*, no ordering hypotheses"
       }
     ],
     "wall-side-proof": [
@@ -2625,8 +2625,8 @@
           "lean": "0374f5411a2c"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "proof in separate prf block; md body has no proof text to evaluate",
+        "severity": "major",
+        "evidence": "Proof uses rigid structure uniqueness (categorical) and definition of trace; no linarith/IVT/Real.* machinery",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2634,11 +2634,11 @@
           "agent_date": "2026-06-04",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-04T23:13:46.467Z",
-        "reviewed_sha": "14d24acc437ac200563bf9477afade0a9b8473e3",
-        "notes": "proof externalized to prf:categorical-action-unique"
+        "reviewed_at": "2026-06-04T23:19:48.478Z",
+        "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
+        "notes": "Proof method matches algebraic statement"
       }
     ]
   },
-  "updated_at": "2026-06-04T23:13:46.467Z"
+  "updated_at": "2026-06-04T23:19:48.478Z"
 }
