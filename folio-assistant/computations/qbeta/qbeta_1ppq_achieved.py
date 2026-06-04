@@ -70,7 +70,9 @@ def main():
     m_n = mpf(M_N_MEV_VALIDATION)
     Q_codata = m_n - m_p - m_e
 
-    w = json.loads((HERE / "q-beta-operator-valued-N3.witness.json").read_text())
+    # Witness lives in the parent computations/ dir, not in this script's
+    # qbeta/ subdirectory (path drifted in the Phase 4 subdir refactor).
+    w = json.loads((HERE.parent / "q-beta-operator-valued-N3.witness.json").read_text())
     Q_A = mpf(w["data"]["Q_A"])
     alpha = mpf(w["data"]["alpha"])
     b = mpf(w["data"]["hoefsmit_b"])
