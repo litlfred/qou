@@ -110,12 +110,18 @@ def substrate_ladder_quantities(q: mpf) -> dict:
 
     Keys: `h`, `hbar_q`, `b`, `u`, `z`, `alpha`, `Q_A_over_me`.
     Mirrors the opening block of `qbeta_ck_cache.py::main`.
+
+    Precondition: `q > 0` and `q ≠ 1`. At `q = 1` the substrate degenerates
+    (`hbar_q = 0` ⇒ `u = 0`), which makes downstream consumers like
+    `c3_target_at` divide by zero. Callers operating in the classical
+    limit must guard `q = 1` themselves before calling.
     """
+    sq = mpsqrt(q)
     h = q - 1 / q
     hbar_q = (q - 1) / q
     b = mpsqrt((h ** 2 + 3) / (h ** 2 + 4))
     u = b * hbar_q ** 2
-    z = 1 / (mpsqrt(q) + 1 / mpsqrt(q))
+    z = 1 / (sq + 1 / sq)
     alpha = (z - 1) * h / 2
     Q_A_over_me = mpfabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
     return {
@@ -126,6 +132,13 @@ def substrate_ladder_quantities(q: mpf) -> dict:
 
 def c3_target_at(q: mpf, q_codata: mpf, m_e: mpf) -> mpf:
     """Empirical (CAL-anchored) c_3 target at substrate `q`.
+
+    **Precondition: `q > 0` and `q ≠ 1`.** At the classical point `q = 1`
+    the substrate quantity `u(q) = b(q)·ℏ_q(q)²` vanishes, and the ladder
+    inversion divides by `u³`; calling with `q = 1` raises `ValueError`
+    rather than the opaque `ZeroDivisionError` mpmath would otherwise
+    surface. Substrate anchors (`q_proton`, `q_muon`) satisfy this by
+    construction.
 
     Ladder inversion through the N=2 rung (c_2 = −1 Lean-proved):
 
@@ -142,6 +155,12 @@ def c3_target_at(q: mpf, q_codata: mpf, m_e: mpf) -> mpf:
     search uses to separate a true closure from a single-anchor near-match.
     """
     sub = substrate_ladder_quantities(q)
+    if sub["u"] == 0:
+        raise ValueError(
+            f"c3_target_at: substrate u(q) = b·ℏ_q² is zero at q={q!s} "
+            f"(classical limit). The inversion divides by u³; pass a "
+            f"substrate anchor with q ≠ 1."
+        )
     Q_A = m_e * sub["Q_A_over_me"]
     Q_N1 = Q_A * mpcos(sub["alpha"] - sub["b"] * sub["hbar_q"] ** 2 / 2)
     Q_N2 = Q_N1 * (1 + (-1) * sub["u"] ** 2)
