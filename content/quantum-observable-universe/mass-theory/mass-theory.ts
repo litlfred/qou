@@ -316,6 +316,7 @@ export default chapter({
         "mass-bridge-orphan-reconnect-intro",
         "categorical-linking-operation",
         "crossed-module-euler-characteristic",
+        "geom-bridge-status",
         "dim-master-pentagon",
         "geometric-invariant-piecewise",
         "hopf-link-non-magic",
