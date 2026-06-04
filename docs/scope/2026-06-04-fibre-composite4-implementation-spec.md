@@ -34,7 +34,29 @@ forms.** Report tiered (proved / near-match / fitted), never binary.
 3. Therefore the live object is **formal-q / roots-of-unity**, the
    fibre level — the part this spec builds the machinery for.
 
-## Step 1 — `markov_trace_combo` (≈ 30 lines, < 1 session)
+> **Sandbox-env note (2026-06-04):** pyhecke *is* runnable here after
+> `uv pip install --system -e tools/qou-substrate -e tools/pyhecke`
+> (numpy also needed). With that, **Step 1 below is now DONE on this
+> branch** (PR #1811); Steps 2–5 remain.
+
+## Step 1 — `markov_trace_combo` ✅ DONE (PR #1811)
+
+Implemented in `gram.py` as `nf_of_word(word, *, exact)` +
+`markov_trace_combo(terms, *, exact)`, with tests in
+`tools/pyhecke/tests/test_markov_combo.py` (6 tests, all pass:
+single-word agreement, basis→`TR_M`, linearity, Hecke relation via
+trace, exact-ℚ NF reduction, exact-vs-float).
+
+**Finding while implementing:** pyhecke's `exact=True` Fraction path is
+*not* exact at the true substrate — it is exact arithmetic at a
+**rational model** `q = 111/100`, `z = 4993/10000` (4-digit), so it
+differs from the float path (true q₀ = 1.10998…) by ~1e-3. The float
+path is the accurate one for trace *values*; the exact path is for
+*structural* ℚ identities (NF reduction is genuinely exact there). This
+matters for Step 4: a residue-A test needs the **float / high-precision
+mpmath** path or a proper formal-q path (Step 2), not the 111/100 model.
+
+### Original spec (kept for reference)
 
 **File:** `tools/pyhecke/python/pyhecke/trace.py` (re-export) +
 implementation alongside `nf_tr` in `gram.py`.

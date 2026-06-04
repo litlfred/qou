@@ -114,6 +114,61 @@ def nf_net(nf):
     return sum(nf)
 
 
+def nf_of_word(word, *, exact=False):
+    """Normal-form 6-vector of a braid word in H_3(q).
+
+    `word` is a tuple/list of generator indices (0 or 1); `()` is the
+    identity. Built by right-multiplying the identity NF by each σ_gen
+    (via `hm` / `hm_exact`, which fold in the GB reduction). With
+    `exact=True` the result is a list of `Fraction`s."""
+    if exact:
+        nf = [Fraction(1), Fraction(0), Fraction(0),
+              Fraction(0), Fraction(0), Fraction(0)]
+        for g in word:
+            nf = hm_exact(nf, Fraction(1), Fraction(0), g)
+        return nf
+    nf = [1.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    for g in word:
+        nf = hm(nf, 1.0, 0.0, g)
+    return nf
+
+
+def markov_trace_combo(terms, *, exact=False):
+    """Markov trace of a linear combination Σ cᵢ·σ_{wᵢ} in H_3(q).
+
+    `terms` is an iterable of `(coeff, word)` pairs, where `word` is a
+    tuple of generator indices (0/1). Because `nf_tr` is linear (a dot
+    product with `TR_M`), the trace of a linear combination is
+
+        tr_M(Σ cᵢ σ_{wᵢ}) = Σ cᵢ · tr_M(NF(σ_{wᵢ})).
+
+    This is the thin linear-combination extension point called out in
+    `docs/scope/2026-06-04-fibre-composite4-implementation-spec.md`
+    Step 1. With `exact=True` the Fraction path (`hm_exact`/`_TR_M_FRAC`)
+    is used; pass rational `coeff`s (int/Fraction) in that mode.
+
+    Caveat (exact mode): the NF *reduction* is exact in ℚ, but the
+    Markov weights `_TR_M_FRAC` use `_Z_FRAC = 4993/10000`, a 4-digit
+    rational approximation of the irrational `z = 1/(q^½+q^−½)`. So the
+    exact-mode trace agrees with the float-mode trace only to ~1e-4
+    (the z-truncation level), not to full precision; the float path is
+    the more accurate of the two for the trace value itself."""
+    if exact:
+        acc = [Fraction(0)] * 6
+        for c, word in terms:
+            cf = c if isinstance(c, Fraction) else Fraction(c)
+            nfw = nf_of_word(word, exact=True)
+            for i in range(6):
+                acc[i] += cf * nfw[i]
+        return sum(acc[i] * _TR_M_FRAC[i] for i in range(6))
+    acc = [0.0] * 6
+    for c, word in terms:
+        nfw = nf_of_word(word)
+        for i in range(6):
+            acc[i] += c * nfw[i]
+    return sum(acc[i] * TR_M[i] for i in range(6))
+
+
 # ══════════════════════════════════════════════════════════════
 # Gram matrix
 # ══════════════════════════════════════════════════════════════
@@ -244,7 +299,7 @@ __all__ = [
     # Bond operators
     "INV_TREFOIL_G0", "INV_TREFOIL_G1",
     # NF multiplication
-    "hm", "hm_exact", "nf_tr", "nf_net",
+    "hm", "hm_exact", "nf_tr", "nf_net", "nf_of_word", "markov_trace_combo",
     # Gram matrix
     "G", "G_INV", "gram_matrix", "gram_inverse",
     # Native-dispatched atom kernels
