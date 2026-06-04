@@ -2212,6 +2212,25 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "80ab2d8f029e",
+          "ts": "4fad65f1cee1",
+          "lean": "50fe79071872"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Lean sibling is a trivial stub (theorem chirality_writhe_ribbon : True := by trivial) while narrative has a substantive derivation + refutation; statements are not equivalent",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:38:56.603Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
       }
     ],
     "proof-lean-compiles": [
@@ -2549,7 +2568,87 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "80ab2d8f029e",
+          "ts": "4fad65f1cee1",
+          "lean": "50fe79071872"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Proposition, derivation, numerical refutation table, and open-question sections interleaved; no clean ## Statement / ## Proof split",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:38:56.446Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "80ab2d8f029e",
+          "ts": "4fad65f1cee1",
+          "lean": "50fe79071872"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:38:56.485Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "80ab2d8f029e",
+          "ts": "4fad65f1cee1",
+          "lean": "50fe79071872"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:38:56.523Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "80ab2d8f029e",
+          "ts": "4fad65f1cee1",
+          "lean": "50fe79071872"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Proof body includes numerical refutation table with q_0≈1.11 archimedean pin; 8-variant sweep script results cited; acceptable in mass-theory chapter but mixes archimedean evaluation into algebraic proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:38:56.563Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:38:56.603Z"
 }

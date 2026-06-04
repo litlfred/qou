@@ -2213,6 +2213,25 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:chi-lambda-w0-sign-weighting' → expected 'chi_lambda_w0_sign_weighting'; Lean declares: c5_V3, c5_V21, c5_V111, c6_V3, c6_V21.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "e0d07bab65a9",
+          "ts": "1bcca1dce67d",
+          "lean": "0879c2a6fe9f"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Lean file has real formalization attempt (ChiLambdaW0SignWeighting class) but narrative proof is concrete numerical sign-agreement at k=5,6; lean statement not yet verified against narrative claim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:37:34.556Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
       }
     ],
     "proof-lean-compiles": [
@@ -2584,7 +2603,85 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e0d07bab65a9",
+          "ts": "1bcca1dce67d",
+          "lean": "0879c2a6fe9f"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Background/motivation prose occupies lines 1-16 before ## Statement header; interpretation of 'why w0 and not -I' section mixed into proposition body",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:37:34.397Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e0d07bab65a9",
+          "ts": "1bcca1dce67d",
+          "lean": "0879c2a6fe9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:37:34.437Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e0d07bab65a9",
+          "ts": "1bcca1dce67d",
+          "lean": "0879c2a6fe9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:37:34.478Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e0d07bab65a9",
+          "ts": "1bcca1dce67d",
+          "lean": "0879c2a6fe9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:37:34.516Z",
+        "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:37:34.556Z"
 }
