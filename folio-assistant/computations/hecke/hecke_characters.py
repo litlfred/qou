@@ -370,12 +370,12 @@ def chi_lambda_braid(shape, word, q_value=None, precision=None,
     # prop:alpha-k-derivation-procedure §"CRT-style q-rational
     # reconstruction").
     #
-    # The earlier guard rejected non-default q_value because this call
-    # site omitted the override and silently used module-default q0,
-    # giving an inconsistent character. Passing q=q_value through fixes
-    # that root cause without changing the q==q0 path's behavior.
-    # h_local below is also derived from q_value (already correct).
-    sigmas, dim, _ = build_seminormal_matrices(tuple(shape), q=float(q_value))
+    # Normalize q_value to float ONCE here, and use q_f consistently in
+    # both the q= override AND the h_local computation below — so
+    # callers passing mpmath / str / numeric types don't break NumPy
+    # dtype handling further down (per Copilot review on PR #1861).
+    q_f = float(q_value)
+    sigmas, dim, _ = build_seminormal_matrices(tuple(shape), q=q_f)
     if dim == 0:
         return 0.0
     from scipy import sparse as sp_sparse
@@ -386,7 +386,7 @@ def chi_lambda_braid(shape, word, q_value=None, precision=None,
     else:
         product = np.eye(dim)
         I = np.eye(dim)
-    h_local = q_value - 1.0 / q_value
+    h_local = q_f - 1.0 / q_f
     for sign, gen in word_marshalled:
         idx = gen - 1
         if idx < 0 or idx >= len(sigmas):
