@@ -224,11 +224,12 @@ def main() -> int:
     # hence the unframed HOMFLY unchanged), must still match the skein
     # reference. This exercises the freshly-wired n∈{4,5} Ocneanu weights.
     print("-" * 78)
-    print("  n=4..7 paths (same torus refs, Markov-stabilised):")
+    print("  n=4..9 paths (same torus refs, Markov-stabilised):")
     multi_fail = 0
     multi_total = 0
     for n_strands, tail in ((4, [2, 3]), (5, [2, 3, 4]),
-                            (6, [2, 3, 4, 5]), (7, [2, 3, 4, 5, 6])):
+                            (6, [2, 3, 4, 5]), (7, [2, 3, 4, 5, 6]),
+                            (8, [2, 3, 4, 5, 6, 7]), (9, [2, 3, 4, 5, 6, 7, 8])):
         for label, k in _CASES:
             ref = _torus_homfly(k, v, z)
             word = [1] * k + tail
@@ -260,7 +261,7 @@ def main() -> int:
     n3_fail = n_fail - multi_fail
     total = n3_total + multi_total
     print(f"  n=3 path:     {n3_total - n3_fail}/{n3_total} match reference")
-    print(f"  n=4..7 paths: {multi_total - multi_fail}/{multi_total} match reference")
+    print(f"  n=4..9 paths: {multi_total - multi_fail}/{multi_total} match reference")
     print(f"  all paths:   {total - n_fail}/{total} match reference "
           f"(tol {mp.nstr(TOL,1)})")
     if n_fail:
