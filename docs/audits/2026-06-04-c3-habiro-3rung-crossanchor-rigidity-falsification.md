@@ -1,5 +1,10 @@
 # c_3 [3]_q/25 3-rung closure — cross-anchor rigidity falsification (2026-06-04)
 
+> **⮕ This falsification is encoded in the authoritative registry**
+> [`docs/coordination/ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md)
+> (§3: c_3 = EMPIRICAL, REFUTED as real-q fibre element). Read the registry
+> for the consolidated c_k / d_k status.
+
 > **Finding**: the 3-rung `[3]_q/25` Habiro closure for `c_3` (PR #1781)
 > is a **proton-anchor near-match**, NOT a genuine real-q fibre element.
 > It reproduces empirical `c_3` at the proton anchor (−0.0023 %) but
