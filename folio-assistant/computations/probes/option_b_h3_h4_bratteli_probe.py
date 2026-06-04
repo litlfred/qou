@@ -42,10 +42,12 @@ import _path_bridge as _bridge  # noqa: F401
 del _sys, _Path, _bridge
 
 import json
-import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+# Single path-bridging approach: `_path_bridge` (imported above) puts
+# computations/ and every cluster subdir on sys.path, so `_precision`
+# and `witness_base` resolve without a second probes/-local insert
+# (Copilot review, PR #1841 — consolidated the duplicate mutation).
 
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
@@ -201,20 +203,22 @@ def b1_verdict(q: sp.Expr) -> dict:
             "s_b1_sym": str(sp.expand(s_b1)),
             "lambda_A_sym": str(sp.expand(lam_a)),
         }
-    # Otherwise REFUTED; record residual = S_B1 − k·λ_A for the
-    # least-squares-style k that matches at q=1.
-    s_at_1 = float(s_b1.subs(q, 1))
-    lam_at_1 = float(lam_a.subs(q, 1))
-    k = s_at_1 / lam_at_1
-    residual = sp.expand(s_b1 - sp.Float(k) * lam_a)
+    # Otherwise REFUTED; record residual = S_B1 − k·λ_A for the k that
+    # matches at q=1. Keep everything EXACT (SymPy Rational) so the
+    # residual reads as e.g. q²/5 − 2/5 + 1/(5q²) rather than the
+    # float artefact 0.199999…·q² − 0.4 + … (Copilot review, PR #1841).
+    s_at_1 = sp.cancel(s_b1.subs(q, 1))
+    lam_at_1 = sp.cancel(lam_a.subs(q, 1))
+    k = sp.cancel(s_at_1 / lam_at_1)
+    residual = sp.expand(s_b1 - k * lam_a)
     return {
         "hypothesis": "B1 (uniform)",
         "verdict": "REFUTED",
         "s_b1_sym": str(sp.expand(s_b1)),
         "lambda_A_sym": str(sp.expand(lam_a)),
-        "s_b1_at_q1": s_at_1,
-        "lambda_A_at_q1": lam_at_1,
-        "k_at_q1": k,
+        "s_b1_at_q1": str(s_at_1),
+        "lambda_A_at_q1": str(lam_at_1),
+        "k_at_q1": str(k),
         "residual_S_minus_k_lambdaA_sym": str(residual),
         "note": (
             "S_B1 / λ_A is q-dependent — no constant rescaling reproduces "
@@ -241,6 +245,16 @@ def b2_verdict(q_0: mp.mpf) -> dict:
     at q_0, compares to λ_A(q_0).
     """
     y_lams = _load_y_lambda_n(3)
+    # B2's verdict depends on having ALL λ⊢3 weights; a silent default
+    # of 0 for a missing partition would produce a wrong weighted sum
+    # with no failure signal (Copilot review, PR #1841). Fail fast.
+    missing_y = [list(lam) for lam in partitions_of(3) if lam not in y_lams]
+    if missing_y:
+        raise RuntimeError(
+            f"B2 cannot run: y-lambda-at-q0 is missing n=3 weights for "
+            f"partition(s) {missing_y}. Refresh the y_λ table before "
+            f"trusting the B2 verdict."
+        )
     # Numerical dim_q at q_0 — substitute symbolic Laurent polynomial.
     q_sym = sp.Symbol("q", positive=True)
     q_0_sp = sp.Float(str(q_0), 50)
@@ -248,7 +262,7 @@ def b2_verdict(q_0: mp.mpf) -> dict:
     weighted_sum = mp.mpf(0)
     per_source_contributions: list[dict] = []
     for lam in partitions_of(3):
-        y = y_lams.get(lam, mp.mpf(0))
+        y = y_lams[lam]
         box_sum_num = mp.mpf(0)
         box_terms: list[dict] = []
         for lam_plus in outer_corners(lam):
@@ -319,15 +333,17 @@ def b3_verdict(q: sp.Expr) -> dict:
                 "constant_ratio_k_inv": str(ratio),
             })
         else:
-            s_at_1 = float(s_lam.subs(q, 1))
-            lam_at_1 = float(lam_a.subs(q, 1))
+            # Exact SymPy throughout (matches b1_verdict; no float
+            # downcast — Copilot review, PR #1841).
+            s_at_1 = sp.cancel(s_lam.subs(q, 1))
+            lam_at_1 = sp.cancel(lam_a.subs(q, 1))
             per_source.append({
                 "lambda": list(lam),
                 "verdict_for_source": "REFUTED",
                 "s_lambda_sym": str(sp.expand(s_lam)),
-                "s_at_q1": s_at_1,
-                "lambda_A_at_q1": lam_at_1,
-                "k_at_q1": s_at_1 / lam_at_1,
+                "s_at_q1": str(s_at_1),
+                "lambda_A_at_q1": str(lam_at_1),
+                "k_at_q1": str(sp.cancel(s_at_1 / lam_at_1)),
             })
     return {
         "hypothesis": "B3 (per-source λ)",
@@ -384,6 +400,18 @@ def main() -> int:
         "box_additions": box_additions,
     })
 
+    # Enforce the structural sanity check (was print-only): 7 box
+    # additions from the 3 partitions of 3 to the 5 partitions of 4.
+    # A regression in outer_corners() or partitions_of() now surfaces
+    # as a failed assertion, not just a console line (Copilot review,
+    # PR #1841).
+    w.add_assertion(
+        "h3_h4_box_additions_count_is_7",
+        computed=len(box_additions),
+        expected=7,
+        tolerance=0,
+    )
+
     # ── Sanity: target closed-form at q=1 ──
     lam_a = linking_weight_family_a_sym(q)
     print(f"\n  λ_A(q) = (3q²+4+3q⁻²)/4")
@@ -415,7 +443,8 @@ def main() -> int:
     print("\n" + "-" * 78)
     print(f"  B1 (uniform):      {b1['verdict']}")
     if b1["verdict"] == "REFUTED":
-        print(f"      S_B1(q=1)={b1['s_b1_at_q1']}  k(q=1)={b1['k_at_q1']:.6f}")
+        # k_at_q1 is now an exact SymPy Rational string (e.g. "32/5").
+        print(f"      S_B1(q=1)={b1['s_b1_at_q1']}  k(q=1)={b1['k_at_q1']}")
         print(f"      residual: {b1['residual_S_minus_k_lambdaA_sym']}")
     print(f"  B2 (y_λ-weighted): {b2['verdict']}")
     print(
@@ -427,7 +456,7 @@ def main() -> int:
     for src in b3["per_source"]:
         print(
             f"      λ={src['lambda']}  → {src['verdict_for_source']}"
-            + (f"  k(q=1)={src['k_at_q1']:.6f}"
+            + (f"  k(q=1)={src['k_at_q1']}"
                if src["verdict_for_source"] == "REFUTED" else "")
         )
     print("-" * 78)
