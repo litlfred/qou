@@ -2550,7 +2550,85 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2a26b15739a9",
+          "ts": "f4efc1993260",
+          "lean": "7bf75976ec66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:51:10.309Z",
+        "reviewed_sha": "856c7ea72af9e20f890590d79cb74f8f32344eee"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2a26b15739a9",
+          "ts": "f4efc1993260",
+          "lean": "7bf75976ec66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:51:10.346Z",
+        "reviewed_sha": "856c7ea72af9e20f890590d79cb74f8f32344eee"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2a26b15739a9",
+          "ts": "f4efc1993260",
+          "lean": "7bf75976ec66"
+        },
+        "result": "pass",
+        "evidence": "Explicit archimedean banner on line 1 of .md; lean ref QOU.Archimedean.BoxBraidIrreducibility confirms archimedean placement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:51:10.380Z",
+        "reviewed_sha": "856c7ea72af9e20f890590d79cb74f8f32344eee"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2a26b15739a9",
+          "ts": "f4efc1993260",
+          "lean": "7bf75976ec66"
+        },
+        "result": "pass",
+        "evidence": "Proof uses topological invariance + Hecke algebra arguments; numerical ratio at q is within archimedean context declared by banner.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:51:10.415Z",
+        "reviewed_sha": "856c7ea72af9e20f890590d79cb74f8f32344eee"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:51:10.415Z"
 }
