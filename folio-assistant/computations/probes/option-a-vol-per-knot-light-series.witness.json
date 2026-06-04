@@ -1,0 +1,352 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-04T14:26:11.667731+00:00",
+  "commitSha": "5eaf387f044be52a0a3c58f2c77b42c1061d1a34",
+  "assertions": [
+    {
+      "name": "proton_per_block_under_uniform_within_1pct",
+      "computed": 0.4206075098411415,
+      "expected": 0.4209486166007905,
+      "passed": true,
+      "tolerance": 0.01
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "option-a-vol-per-knot-light-series",
+  "scriptFile": "option_a_vol_per_knot_light_series.py",
+  "scriptHash": "07d0f92e5d35",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "Option A diagnostic (PR #1762 §5 / scoping #1816): measure the per-knot-vs-uniform Geom_full(K, q₀) gap for the light isotope series {p, n, D, T, ³He, ⁴He} alongside production. DOES NOT change production — flipping uniform → per-block would break m_p (the CAL-2 anchor) by ≈ 2.38× per the `_li_2_q_util.py:298-313` discipline note. Per-knot Vol(K) from `substrate/knot_volumes.py`; tr_M from `chi-{atom}-h3-at-q0-50dps.witness.json` for p/n; D/T/³He/⁴He record `tr_M_at_q0: null` with the canonical braid word from `atom_braid_word_3A` as the next-step producer pointer.",
+  "auditOnly": "docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "m_e_MeV": "0.51099895069",
+    "compute_dps": 70,
+    "serialization_dps": 50
+  },
+  "data": {
+    "discipline": "EXPLORATORY",
+    "production_wired": false,
+    "scoping_doc": "docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md",
+    "geom_uniform_borromean": "1890.5123448142975983338372577654540963117690463738",
+    "geom_uniform_description": "geom_full_borromean(q_0) = Vol(𝓑₃)/ℏ_q² · linking_weight_family_a(q_0) = Vol(𝓑₃)/ℏ_q² · (5/2 + (3/4)·h²); applied uniformly to every atom in production (mass_table_comprehensive.py:208).",
+    "m_avg_uniform_MeV": "966.04982446659753565797793103937409734667618179461",
+    "rows": [
+      {
+        "label": "p",
+        "Z": 1,
+        "N": 0,
+        "knot": "L6a4 (Borromean)",
+        "n_strands": 3,
+        "vol_K_50dps": "7.3277247534177521204368281194590728861931949942534",
+        "tr_M_at_q0": "1.0653061442544499756666334037445034130528872534934",
+        "tr_M_source": "chi-proton-h3-at-q0-50dps.witness.json",
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": "795.16368967627911894438893936038792895154720239975",
+        "ratio_perknot_over_uniform_50dps": "0.42060750984114147304376004571687126650079466251133",
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": "406.32781105136741556414044847640027144558289227828",
+        "canonical_braid_word_len": 11,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ],
+        "next_step_producer": null
+      },
+      {
+        "label": "n",
+        "Z": 0,
+        "N": 1,
+        "knot": "L6a4 (Borromean)",
+        "n_strands": 3,
+        "vol_K_50dps": "7.3277247534177521204368281194590728861931949942534",
+        "tr_M_at_q0": "0.92323322991163717797026991200748498402824245608811",
+        "tr_M_source": "chi-neutron-h3-at-q0-50dps.witness.json",
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": "689.11790801888014159652537104741085529902656797645",
+        "ratio_perknot_over_uniform_50dps": "0.36451383663753395723034156152046259270058103396380",
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": "352.13852789933568906470308595518985329911800241440",
+        "canonical_braid_word_len": 11,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ],
+        "next_step_producer": null
+      },
+      {
+        "label": "D",
+        "Z": 1,
+        "N": 1,
+        "knot": "6_2",
+        "n_strands": 3,
+        "vol_K_50dps": "4.4008325161230461014412038656409280339834854185165",
+        "tr_M_at_q0": null,
+        "tr_M_source": null,
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": null,
+        "ratio_perknot_over_uniform_50dps": null,
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": null,
+        "canonical_braid_word_len": 23,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ],
+        "next_step_producer": "markov_peel.tr_M_atomic(Z, N) or canonical_tr_m_via_chi_cache.py to build chi-{atom}-h{n_canon}-at-q0-50dps.witness.json"
+      },
+      {
+        "label": "T",
+        "Z": 1,
+        "N": 2,
+        "knot": "8_11",
+        "n_strands": 5,
+        "vol_K_50dps": "8.2863168178065925881000000000000000000000000000000",
+        "tr_M_at_q0": null,
+        "tr_M_source": null,
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": null,
+        "ratio_perknot_over_uniform_50dps": null,
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": null,
+        "canonical_braid_word_len": 35,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ],
+        "next_step_producer": "markov_peel.tr_M_atomic(Z, N) or canonical_tr_m_via_chi_cache.py to build chi-{atom}-h{n_canon}-at-q0-50dps.witness.json"
+      },
+      {
+        "label": "3He",
+        "Z": 2,
+        "N": 1,
+        "knot": "L6a4 (Borromean)",
+        "n_strands": 3,
+        "vol_K_50dps": "7.3277247534177521204368281194590728861931949942534",
+        "tr_M_at_q0": null,
+        "tr_M_source": null,
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": null,
+        "ratio_perknot_over_uniform_50dps": null,
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": null,
+        "canonical_braid_word_len": 35,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ],
+        "next_step_producer": "markov_peel.tr_M_atomic(Z, N) or canonical_tr_m_via_chi_cache.py to build chi-{atom}-h{n_canon}-at-q0-50dps.witness.json"
+      },
+      {
+        "label": "4He",
+        "Z": 2,
+        "N": 2,
+        "knot": "L6a4_x4 (magic-A: 4·Vol(L6a4))",
+        "n_strands": null,
+        "vol_K_50dps": "29.310899013671008481747312477836291544772779977014",
+        "tr_M_at_q0": null,
+        "tr_M_source": null,
+        "geom_uniform_50dps": "1890.5123448142975983338372577654540963117690463738",
+        "geom_perknot_50dps": null,
+        "ratio_perknot_over_uniform_50dps": null,
+        "m_K_uniform_MeV_50dps": "966.04982446659753565797793103937409734667618179461",
+        "m_K_perknot_MeV_50dps": null,
+        "canonical_braid_word_len": 47,
+        "canonical_braid_word_first_6": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            -0.10453014939781968,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "…"
+        ],
+        "next_step_producer": "markov_peel.tr_M_atomic(Z, N) or canonical_tr_m_via_chi_cache.py to build chi-{atom}-h{n_canon}-at-q0-50dps.witness.json"
+      }
+    ],
+    "interpretation": "Each row's `ratio_perknot_over_uniform_50dps` quantifies how far the per-knot Stage-4 sum `tr_M(β_K, q₀)` is from the global Family-A scalar `linking_weight_family_a(q₀) ≈ 2.53`. For p the docstring (`_li_2_q_util.py:298-313`) quotes a ≈ 2.38× gap (i.e. ratio ≈ 1/2.38 ≈ 0.42) and m_K_perknot ≈ −57% vs CODATA m_p; this row counter-pins that quote. The null tr_M rows are diagnostic gaps to fill via the chi-cache producer pointed at by `next_step_producer`; building them is the next concrete commit on this PR."
+  }
+}
