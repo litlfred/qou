@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Probe: casimir-mode-indexed-derivation
+r"""Probe: casimir-mode-indexed-derivation
 (audit support for conj:casimir-epsilon-vacuum, derivation attempt).
 
 **This probe is the most-honest derivation attempt.**  It states
