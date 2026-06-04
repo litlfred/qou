@@ -52,7 +52,7 @@ is a **direction obstruction**: a single stabilization scales the trace by z < 1
 | **M1** identity trace — `linking_weight ?= tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ·f^λ` | **REFUTED** | `tr_M(1_{H₄}) = 1.0000000000` *exactly* (the normalized Markov trace), not 2.53 |
 | **M2** z-renormalised — `(1/4)Σ_{λ⊢4} dim_q ?= z^{±k} · clean-H₃ quantity`, k∈{1,2} | **REFUTED** | no exact `z^{±k}·linking_weight = clean-H₃` coincidence; `z⁻¹ ≈ 2.003` is `q^½+q^{-½}` (irrational at q₀), not exactly 2 |
 
-**Conclusion for axis 2.** The trace-level Markov stabilization (single move OR identity trace OR z-renormalised H₃ identity) does NOT derive the Family-A linking_weight. The H_4 count is not the result of evaluating tr_M on a Markov-stabilized braid.
+**Conclusion for axis 2.** The trace-level Markov stabilization (single move OR identity trace OR z-renormalised H₃ identity) does NOT derive the Family-A linking_weight. The H₄ count is not the result of evaluating tr_M on a Markov-stabilized braid.
 
 ## Synthesis — what the two refutations say together
 
