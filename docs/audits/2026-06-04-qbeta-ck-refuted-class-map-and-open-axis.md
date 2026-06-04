@@ -101,8 +101,9 @@ now refuted**; per #1850's synthesis, the production `linking_weight =
   (C8, PR #1841) and the trace-level Markov-stabilization (C12, PR #1850) both
   fail. The 2.53 multiplier is **CODATA-implied near-match** territory, not a
   derived categorical count — full provenance in #1850's synthesis and
-  [`_li_2_q_util.py`](../../folio-assistant/computations/_li_2_q_util.py)
-  lines 298–313.
+  the [`geom_full_borromean()`](../../folio-assistant/computations/_li_2_q_util.py)
+  docstring in `_li_2_q_util.py` (the "2.53 is a CODATA-implied-λ near-match"
+  paragraph).
 - **Decay-side fibre Habiro element F(q) (open):** the keystone of §1, whose
   kernel `R(q,ξ)` is non-constant q-rational (C5 ruled out constants) and whose
   evaluation is root-of-unity / complex-analytic (C1–C4 ruled out real-q). This
@@ -121,7 +122,7 @@ bar-even, integer `q=1` shadow) stand unchanged.
 ## 4. Formalize-first gate for the next probe (narrow before you run)
 
 > **Update 2026-06-04.** PR #1850 ran a textbook execution of this gate against
-> the (now-refuted) trace-level axis: the `z(q₀) = 1/(q^½+q⁻^½) < 1` direction
+> the (now-refuted) trace-level axis: the `z(q₀) = 1/(q^½+q^{-½}) < 1` direction
 > obstruction was identified **before** any anchor scan, narrowing the probe
 > from "scan all trace constructions" to "test M1 (identity trace) + M2 (`z^{±k}`
 > renormalised) only" — and both fell. This is the discipline working as
