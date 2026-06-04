@@ -144,7 +144,12 @@ def channel_C2_sl3_schur_weyl(lam: tuple[int, ...]) -> int:
     """C2 — sl_3 Schur–Weyl multiplicity (≤ 3 rows; else 0).
 
     Color channel — the per-extra-proton carrier in the Phase-4
-    amplitude is `[3]_q^2 = (dim_q V_1)^2`, the SU(3) adjoint.
+    amplitude is `[3]_q^2 = (dim_q V_1)^2`, where V_1 = (1,0) is the
+    **defining/fundamental** 3-dim irrep of SU(3) (the rep labelled
+    by the highest weight (1,0); NOT the 8-dim adjoint, which is
+    (1,1) and has q-dim `[3]_q · [4]_q / [2]_q` ≠ `[3]_q^2` — Copilot
+    review catch). Schur–Weyl: V_λ of S_n appears in the n-fold
+    tensor power of the SU(3) defining rep iff λ has ≤ 3 rows.
     Partitions with > 3 rows have no sl_3 image.
     """
     if len(lam) > 3:
@@ -213,7 +218,24 @@ def _phase4_amplitude_D(q_0: mp.mpf) -> mp.mpf:
     return mp.mpf(str(sp.N(expr.subs(q_sym, sp.Float(str(q_0), 50)), 50)))
 
 
-def _verdict(rel_err: mp.mpf) -> str:
+def _verdict(rel_err: mp.mpf, is_control: bool = False,
+             S_abs: mp.mpf | None = None) -> str:
+    """Channel verdict.
+
+    For target-match channels (`is_control=False`): compare relative
+    error vs target. For control channels (`is_control=True`):
+    succeed when |S| is at machine zero (the control's *purpose*
+    is `S = 0`, not matching the target). Copilot review on PR
+    #1870 caught the prior conflation: a zero-control with a
+    non-zero target trivially had `rel_err = -1` and printed
+    REFUTED, which mis-stated the channel's purpose.
+    """
+    if is_control:
+        if S_abs is None:
+            S_abs = mp.mpf(0)
+        if S_abs < mp.mpf("1e-40"):
+            return "CONTROL OK (|S| ≈ 0)"
+        return f"CONTROL FAIL (|S| = {mp.nstr(S_abs, 6)})"
     if abs(rel_err) < mp.mpf("1e-12"):
         return "EXACT-MATCH"
     if abs(rel_err) < mp.mpf("5e-2"):
@@ -315,7 +337,8 @@ def main() -> int:
         delta = S - target_after_A
         rel_err = (delta / target_after_A
                    if target_after_A != 0 else mp.mpf("inf"))
-        verdict = _verdict(rel_err)
+        is_control = (code == "C5")
+        verdict = _verdict(rel_err, is_control=is_control, S_abs=abs(S))
         print(f"\n  {code} ({name}):  {formula}")
         print(f"      S = {float(S):+.10f}  vs target "
               f"{float(target_after_A):+.6f}  rel_err "
@@ -385,7 +408,9 @@ def main() -> int:
         )
     else:
         synthesis = (
-            "All five channels REFUTED — none of the natural brane-"
+            "All four target-match channels (C1-C4) REFUTED and the "
+            "C5 zero-control passes (|S| ≈ 0 as required) — none of "
+            "the natural brane-"
             "tower content projections (sl_2 / sl_3 Schur-Weyl mult, "
             "sl_2 q-dim, ≤2-row indicator) reproduces the deuteron "
             "P_λ(D) target. The remaining direction is GAP-A-4 — the "
