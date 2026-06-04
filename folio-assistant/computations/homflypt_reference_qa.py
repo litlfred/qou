@@ -67,7 +67,8 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from homflypt_engine import homflypt_at_su_n  # noqa: E402
+from homflypt_engine import homflypt_at_su_n  # noqa: E402 (legacy ratio-only path)
+from homfly_ocneanu_trace import homfly_signed_su2  # noqa: E402 (reworked correct engine)
 
 # Substrate q₀ (50-digit). Fall back to a literal if q_parameter shape drifts.
 try:
@@ -177,17 +178,18 @@ def main() -> int:
         a = v
         w3 = sum(1 if g > 0 else -1 for g in word3)
         w2 = sum(1 if g > 0 else -1 for g in word2)
+        # Reworked engine: signed Ocneanu trace, writhe KEPT. framed=False
+        # gives the unframed (ambient-isotopy) value directly = output·a^{−w}.
         try:
-            eng3 = homflypt_at_su_n(word3, 3, 2, q0)
+            eng3_unfr = homfly_signed_su2(word3, 3, q0, framed=False)
         except Exception as e:           # noqa: BLE001
-            eng3 = None
+            eng3_unfr = None
             eng3_err = repr(e)
+        eng3 = eng3_unfr                  # already unframed for the gate column
         try:
-            eng2 = homflypt_at_su_n(word2, 2, 2, q0)
+            eng2 = homflypt_at_su_n(word2, 2, 2, q0)  # legacy 2-strand path
         except Exception:                # noqa: BLE001
             eng2 = None
-        # unframed-corrected engine value = framed_output · a^{−w}
-        eng3_unfr = (mp.mpf(eng3) * a ** (-w3)) if eng3 is not None else None
         d3 = (abs(eng3_unfr - ref) if eng3_unfr is not None else None)
         ok3 = (d3 is not None and d3 < TOL)
         if not ok3:
