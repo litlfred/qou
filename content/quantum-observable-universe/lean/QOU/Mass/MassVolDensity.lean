@@ -222,4 +222,91 @@ theorem mass_split_odd (m0 θ : ℝ) :
     tower (sinh) with no even contamination. -/
 noncomputable def pn_rapidity_leading (q : ℝ) : ℝ := delta_subleading q / 2
 
+/-! ## §4  Generalisation to binding energy — the mirror-difference channel
+
+    The §3 parity theorems are stated for a general `(m0, θ)` pair, so they
+    apply verbatim to ANY mirror observable — in particular the binding
+    energy of a mirror nuclear pair (³H, ³He). Writing the pair as a
+    hyperbolic rotation `B_± = B₀·e^{∓θ_B}`:
+
+      binding_avg = B₀·cosh θ_B   (EVEN — the absolute scale; M_λ-gated)
+      ΔB          = 2·B₀·sinh θ_B (ODD  — the mirror DIFFERENCE)
+
+    The ODD/sinh channel (the difference) is computable **prior to** the
+    even/cosh absolute normalisation: it is the non-circular channel that
+    **sidesteps the per-block M_λ gate** (which lives entirely in the
+    even/absolute channel). This is the formal counterpart of the empirical
+    fact that the eigenphase *difference* closes the ³H−³He mirror pair to
+    ~2% with zero free parameters while the absolute binding stays gated.
+    (Compute: `mass_vol_density.mirror_binding_difference`.) -/
+
+/-- ³H-side binding as `B₀·e^{−θ_B}`. -/
+noncomputable def binding_mirror_low (B0 θB : ℝ) : ℝ := B0 * Real.exp (-θB)
+
+/-- ³He-side binding as `B₀·e^{+θ_B}`. -/
+noncomputable def binding_mirror_high (B0 θB : ℝ) : ℝ := B0 * Real.exp θB
+
+/-- **Mirror binding difference is `2·B₀·sinh θ_B`** — the ODD channel: the
+    M_λ-gate sidestep. The antisymmetric (difference) content is `sinh`, so
+    it is computable from the difference alone, before the absolute average. -/
+theorem binding_mirror_difference_eq_sinh (B0 θB : ℝ) :
+    binding_mirror_high B0 θB - binding_mirror_low B0 θB
+      = 2 * (B0 * Real.sinh θB) := by
+  unfold binding_mirror_high binding_mirror_low
+  rw [Real.sinh_eq]
+  ring
+
+/-- **Mirror binding average is `B₀·cosh θ_B`** — the EVEN channel (the
+    absolute scale, which the per-block M_λ gate blocks). -/
+theorem binding_mirror_average_eq_cosh (B0 θB : ℝ) :
+    (binding_mirror_high B0 θB + binding_mirror_low B0 θB) / 2
+      = B0 * Real.cosh θB := by
+  unfold binding_mirror_high binding_mirror_low
+  rw [Real.cosh_eq]
+  ring
+
+/-- **Binding parity (odd):** the mirror difference flips sign under the
+    mirror flip `θ_B ↦ −θ_B`. Hence — exactly as for the p-n mass split — a
+    δ² (even) correction is parity-FORBIDDEN on ΔB and allowed only on the
+    (M_λ-gated) average. The quadratic-δ consistency check, for binding. -/
+theorem binding_difference_odd (B0 θB : ℝ) :
+    B0 * Real.sinh (-θB) = -(B0 * Real.sinh θB) := by
+  rw [Real.sinh_neg]; ring
+
+/-! ## §5  The SU(2)_q generating function — cosh/sinh is the abelian shadow
+
+    The §3/§4 cosh/sinh split is the U(1) (Cartan/abelian) projection: a
+    SINGLE rapidity, the j=½ doublet. The framework is fundamentally
+    SU(2)_q (Rep(SU_q(2)) / the Hecke algebra), whose Weyl character is the
+    generating function over the irrep tower j = 0, ½, 1, …
+
+        χ_j(η) = [2j+1]_q = sinh((2j+1)·η) / sinh η      (q = e^η).
+
+    The U(1) cosh/sinh are its low-rank shadows: `[2]_q = 2 cosh η`
+    (fundamental/doublet), with the Chebyshev/SU(2) recursion
+    `[n+1]_q = [2]_q·[n]_q − [n−1]_q`. The DENSITY ρ(q) = Σ_λ y_λ χ^λ is a
+    weighted sum of these SU(2) characters (the Markov trace over Wedderburn
+    blocks) — so SU(2) already lives in the Vol×Density *magnitude*, while
+    the U(1) rapidity is the orthogonal FLAVOR doublet split. Generalising
+    the p-n doublet to full isospin multiplets (A>2 nuclei, resonances) is
+    exactly replacing the j=½ cosh/sinh by the higher χ_j here. Algebraic
+    throughout: `[n]_q` is the colored-Jones building block as a q-identity,
+    NOT via Kashaev. -/
+
+/-- SU(2)_q fundamental Weyl character `χ_{1/2}(η) = sinh(2η)/sinh η`
+    (the j=½ doublet; `[2]_q` at `q = e^η`). -/
+noncomputable def su2_fundamental_character (η : ℝ) : ℝ :=
+  Real.sinh (2 * η) / Real.sinh η
+
+/-- **The fundamental SU(2)_q character is the U(1) doublet `2 cosh η`.**
+    This is the bridge: the abelian cosh is the j=½ SU(2) character, so the
+    recurring `[2]_q ≈ 2.0109` weight is simultaneously the doublet
+    SU(2) character and `2 cosh(log q₀)`. -/
+theorem su2_fundamental_eq_two_cosh (η : ℝ) (hη : Real.sinh η ≠ 0) :
+    su2_fundamental_character η = 2 * Real.cosh η := by
+  unfold su2_fundamental_character
+  rw [Real.sinh_two_mul]
+  field_simp
+  ring
+
 end QOU.Mass
