@@ -2365,6 +2365,24 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "0c85371d5e60",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "warn",
+        "evidence": "Lean ref qou:QOU.Archimedean.bohr_radius_categorical has validation=not_started; no .lean sibling to compare. Narrative asserts a transport sketch (not a proved theorem). Cannot verify equivalence without Lean content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:58:11.373Z",
+        "reviewed_sha": "91c1f9063e5ab4f0abf7141ed75d2cc1c004c17f"
       }
     ],
     "proof-lean-compiles": [
@@ -2755,7 +2773,86 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "0c85371d5e60",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "warn",
+        "evidence": "Block contains extensive ## Companion remark, ## Recommendation, and ## Status sections in same block — substantial motivational/interpretive prose. No separate companion remark with interprets. Should be split into statement + separate remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:57:51.793Z",
+        "reviewed_sha": "91c1f9063e5ab4f0abf7141ed75d2cc1c004c17f"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0c85371d5e60",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:57:51.832Z",
+        "reviewed_sha": "91c1f9063e5ab4f0abf7141ed75d2cc1c004c17f"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0c85371d5e60",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "pass",
+        "evidence": "Statement formula a_0^cat = hbar/(m_e c alpha_EM) is in predicted-spectra chapter (explicitly archimedean), uses physical units correctly. Caveat banner present in .md declaring transport from QED. Chapter regime is archimedean — no wall violation.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:58:11.298Z",
+        "reviewed_sha": "91c1f9063e5ab4f0abf7141ed75d2cc1c004c17f"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "0c85371d5e60",
+          "ts": "3e04cd4ed8c9",
+          "lean": "d0a836478d3d"
+        },
+        "result": "pass",
+        "evidence": "Proof body is a transport sketch with explicit caveat declaring QED transport. No archimedean Lean machinery used in narrative proof. Postulation is explicitly disclosed — not a wall violation, correctly flagged by block itself.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:58:11.336Z",
+        "reviewed_sha": "91c1f9063e5ab4f0abf7141ed75d2cc1c004c17f"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:58:11.373Z"
 }
