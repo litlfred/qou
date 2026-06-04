@@ -114,6 +114,20 @@ def _torus_unframed(k, a, z):
     return B
 
 
+def _split_union(delta, *pieces):
+    """Unframed HOMFLY of a split union: P(L₁ ⊔ … ⊔ L_m) = δ^{m-1}·∏ P(Lᵢ).
+    Each unbraided strand contributes a split unknot (a `pieces` entry of 1)."""
+    prod = mp.mpf(1)
+    for r in pieces:
+        prod = prod * r
+    return delta ** (len(pieces) - 1) * prod
+
+
+def _fig8_unframed(a, z):
+    """Unframed HOMFLY of the figure-8 knot (4₁): a² + a⁻² − 1 − z²."""
+    return a ** 2 + a ** -2 - mp.mpf(1) - z ** 2
+
+
 # Spanning braids per n: (word, independent_unframed_HOMFLY_fn).
 # The unframed HOMFLY of each braid closure is known from three rigorous,
 # Hecke-free rules:
@@ -137,13 +151,9 @@ def _spanning_sets(a, z):
         return _torus_unframed(k, a, z)
 
     def split(*pieces):
-        """P of a split union of `pieces` (δ^{m-1}·∏ P(pieceᵢ))."""
-        prod = one
-        for r in pieces:
-            prod = prod * r
-        return delta ** (len(pieces) - 1) * prod
+        return _split_union(delta, *pieces)
 
-    fig8 = a ** 2 + a ** -2 - one - z ** 2               # figure-8 (4₁)
+    fig8 = _fig8_unframed(a, z)                          # figure-8 (4₁)
 
     return {
         2: [
@@ -206,16 +216,14 @@ def _weights(n, s_str):
     weights = {p: wvec[i] for i, p in enumerate(parts)}
 
     # Held-out validation (knots NOT in the spanning set). References use
-    # the same (T)/(⊔)/(M) rules documented on `_spanning_sets`.
+    # the same (T)/(⊔)/(M) rules documented on `_spanning_sets`, via the
+    # shared module-level helpers.
     delta = (1 / a - a) / z
     one = mp.mpf(1)
-    fig8 = a ** 2 + a ** -2 - 1 - z ** 2
+    fig8 = _fig8_unframed(a, z)
 
     def _split(*pieces):
-        prod = one
-        for r in pieces:
-            prod = prod * r
-        return delta ** (len(pieces) - 1) * prod
+        return _split_union(delta, *pieces)
 
     holdout = {
         2: [([1, 1, 1], lambda: _torus_unframed(3, a, z)),

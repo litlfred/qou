@@ -101,12 +101,8 @@ def _character_closed_form_anchor(tol: "mpf") -> dict:
     if str(HERE) not in _sys.path:
         _sys.path.insert(0, str(HERE))
     from hecke_characters import chi_lambda_braid
-    try:
-        from q_parameter import Q_50_DIGIT_STR as _q0_str
-    except Exception:  # pragma: no cover
-        from q_parameter import Q as _q0_obj
-        _q0_str = str(_q0_obj)
-    q0 = mpf(_q0_str)
+    from q_parameter import Q_50_DIGIT_STR
+    q0 = mpf(Q_50_DIGIT_STR)
 
     def chi(shape, word):
         hc = [(1, g) if g > 0 else (-1, -g) for g in word]
