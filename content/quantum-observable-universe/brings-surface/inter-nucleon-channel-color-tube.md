@@ -165,7 +165,10 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
 2. **Color-pair $\to$ chirality sign $\epsilon$ rule.** Why is
    same-color $\mapsto +1$, opposite-color $\mapsto -1$? Is this from
    CPT symmetry on the color sheets, or from a finer $S_{5}$ orbit
-   decomposition?
+   decomposition? Partially constrained: $\epsilon$ must be a section of
+   the $\mathrm{SU}(2)/\mathrm{SO}(3)$ $\mathbb{Z}_2$-grading (see
+   §"Representation-theoretic constraint on $\epsilon$"); the residual
+   open content is the fiber-to-color assignment.
 3. **${}^{4}\mathrm{He}$ magic-shell saturation.** Does the color-tube weighting
    saturate at $A = 4$ (filled-shell analogue), producing the
    $A \cdot 8G$ closure observed in
@@ -175,6 +178,43 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
    give a categorical reading of the Kashaev density factor
    $\rho_F \in \{m_e, 2 m_e\}$? See
    [`docs/audits/-rule14-kashaev-density.md`](../../docs/audits/-rule14-kashaev-density.md).
+
+## Representation-theoretic constraint on $\epsilon$
+
+The chirality sign $\epsilon(c_1, c_2, F_1, F_2) \in \{+1, -1, 0\}$ in the
+refined assignment is not free: it is constrained by the
+$\mathrm{SO}(3) = \mathrm{SU}(2)/\mathbb{Z}_2$ level structure. The
+$\mathbb{Z}_2$ kernel of the covering map $\mathrm{SU}(2) \to
+\mathrm{SO}(3)$ is exactly the two-element group whose non-trivial
+element acts as $-1$ on half-integer-spin (spinorial) irreps and $+1$
+on integer-spin (tensor) irreps. The chirality dichotomy
+$\{+1, -1\}$ the $S_5/\mathrm{SO}(3)$ fiber action must supply is
+therefore the **grading by this $\mathbb{Z}_2$**, and the neutral value
+$0$ (the bar-symmetric $\mathrm{pn}$ average) is the $\mathbb{Z}_2$-fixed
+locus.
+
+This grading has a closed formal handle. With $q = e^{\eta}$, the
+$\mathrm{SU}(2)_q$ doublet character is $[2]_q = 2\cosh\eta$ and the
+lowest $\mathrm{SO}(3)_q$ (integer-spin) character is the adjoint
+$[3]_q$, satisfying the Chebyshev/Clebsch–Gordan square identity
+
+$$
+  [3]_q \;=\; [2]_q^{\,2} - 1,
+$$
+
+formalised (sorry-free) as `so3_adjoint_eq_chebyshev` in
+[`MassVolDensity.lean`](../lean/QOU/Mass/MassVolDensity.lean) §6. The
+$\mathrm{SO}(3)$ characters are exactly the polynomials in $[2]_q$ that
+are invariant under the $\mathbb{Z}_2$ that the square map quotients;
+any admissible $\epsilon$ rule must be a section of this same
+$\mathbb{Z}_2$-grading. This **narrows** the conjectural class — a valid
+$\epsilon$ cannot assign $-1$ to a color-sheet pair whose combined
+flavor content sits in the integer-spin (tensor) sector — but it does
+**not** close it: the explicit map from color-sheet pairs $(c_1, c_2)$
+to the $\mathbb{Z}_2$-grade still requires the $S_5 \leftrightarrow
+\mathrm{SO}(3)$ fiber action of `conj:s5-so3-fiber-action`. The
+representation-theoretic level structure is unconditional; the
+*fiber-to-color* assignment remains the conjectural input.
 
 ## Cross-references
 
@@ -191,6 +231,10 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
 - Supplier class (PR
   [#1081](https://github.com/litlfred/qou/pull/1081) Task 3):
   `conj:s5-so3-fiber-action`
+- $\mathrm{SO}(3)_q = \mathrm{SU}(2)_q/\mathbb{Z}_2$ level structure
+  (formal handle for the $\epsilon$ grading):
+  [`MassVolDensity.lean`](../lean/QOU/Mass/MassVolDensity.lean) §6
+  (`so3_adjoint_eq_chebyshev`)
 - Empirical probe scripts:
   [`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/probe_pn_flavor_asymmetry.py),
   [`probe_per_sheet_flavor_nonin.py`](../../folio-assistant/computations/probe_per_sheet_flavor_nonin.py)
