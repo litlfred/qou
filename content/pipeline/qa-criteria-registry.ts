@@ -887,7 +887,7 @@ const DETANGLER: QaCriterionDefinition[] = [
     domain: "detangler",
     description:
       "No `uses[]` dependency CYCLE through this block. Distinct from " +
-      "`detangler-no-forward-ref` (a position check a reorder can " +
+      "`detangler-no-forward-ref` (a position check that a reorder can " +
       "satisfy): a cycle is reorder-invariant — when two blocks each " +
       "`uses:` the other (e.g. `prop:A` ↔ `prop:B`), or a longer loop " +
       "closes, NO chapter ordering removes the forward edge. A cycle " +
