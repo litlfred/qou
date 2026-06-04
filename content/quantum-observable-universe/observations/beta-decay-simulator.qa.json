@@ -1821,7 +1821,43 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/beta-decay-simulator.md:1 — detected regime [symbolic] is disjoint from chapter 'observations' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c58c2236ab43",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:17:07.161Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "c58c2236ab43",
+          "ts": "b321920a8971"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T14:17:07.197Z",
+        "reviewed_sha": "ca48f1cf8d32b70bb0f3df8a60c7308a921cdf31"
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-04T14:17:07.197Z"
 }
