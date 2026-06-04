@@ -2534,7 +2534,85 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "20de8e6b178b",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Proof block contains physical interpretation paragraph ('The Boltzmann constant is unity because the QOU temperature is defined in energy units...') after the proof body; no separate companion remark with interprets: prop:boltzmann-constant found in chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:28:52.626Z",
+        "reviewed_sha": "ff630715c1a3ae11090ae4f146423f8419e839dc"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "20de8e6b178b",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:29:07.798Z",
+        "reviewed_sha": "ff630715c1a3ae11090ae4f146423f8419e839dc"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "20de8e6b178b",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:29:07.832Z",
+        "reviewed_sha": "ff630715c1a3ae11090ae4f146423f8419e839dc"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "20de8e6b178b",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:29:07.865Z",
+        "reviewed_sha": "ff630715c1a3ae11090ae4f146423f8419e839dc"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T22:29:07.865Z"
 }
