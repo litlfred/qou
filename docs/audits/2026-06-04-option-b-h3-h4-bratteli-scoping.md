@@ -20,11 +20,10 @@ PR #1762 §2 identified the **derivation gap** at the heart of the
 Why H₄ and not H₃? An UNEXPLAINED jump in the production code.
 The Option A diagnostic (PR #1816) now confirms it's a load-bearing
 choice: dropping the H₄ count (per-block route) undershoots m_p by
-2.38× — and grows to 21× under-shoot at ⁴He.
+2.38× — and grows to 21× undershoot at ⁴He.
 
-PR #1808's literature-import audit ([
-`docs/audits/2026-06-04-h3-h4-jump-literature-import.md`
-](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-04-h3-h4-jump-literature-import.md))
+PR #1808's literature-import audit
+([`2026-06-04-h3-h4-jump-literature-import.md`](./2026-06-04-h3-h4-jump-literature-import.md))
 located the most-promising direction as the **box-adding induction
 functor** `Ind_{H₃}^{H₄}` under the Markov trace `tr_M`, and proposed
 this cheap experiment as its concrete test.
