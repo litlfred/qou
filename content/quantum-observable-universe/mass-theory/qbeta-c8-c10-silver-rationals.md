@@ -30,8 +30,8 @@ substrate anchor $q_0$ become noise-floor-dominated for $k \geq 8$;
 the silver ratio is where the algebraic structure is visible.
 
 The three closed forms extend the documented $c_4 = c_3 \cdot b^4$,
-$c_6 = c_3^2 \cdot b^2$, $c_7 = c_3^3$ pattern (PR #1791 silver-ratio
-infrastructure) by one rung in each parity class.
+$c_6 = c_3^2 \cdot b^2$, $c_7 = c_3^3$ pattern by one rung in each
+parity class.
 
 ## Lean proof structure
 
@@ -55,13 +55,14 @@ The silver ratio $q = 1 + \sqrt{2}$ is a real algebraic point
 the Hoefsmit q-rational evaluated at this $q$ (per the Pell-Lucas
 companion-sequence identification). All three identities are
 **fibre-level Laurent rationals** realised at a particular real
-anchor — CLAUDE.md §7c-compliant.
+anchor: the identities hold over any field containing $\mathbb{Q}$ and
+are specialised here to the silver-ratio rational point.
 
 ## Cross-references
 
 - SDP-extraction witness with the Pell-Lucas check at the silver
   ratio: `qbeta-decay-sdp-extended-ck.witness.json` on `main`.
-- Closed-form derivation probe + witness (PR #1793):
+- Closed-form derivation probe + witness:
   `probes/qbeta_c8_c10_closed_form_predictions.py`.
 - Closed-form wiring outcome at $q_0$ (companion empirical probe):
   `probes/qbeta_closed_form_wiring_n4_to_n10.py`.
