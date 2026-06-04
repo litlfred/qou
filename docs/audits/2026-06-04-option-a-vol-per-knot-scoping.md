@@ -67,9 +67,19 @@ question") and respects the production-vs-exploratory + Δ_λ-gate discipline
      rather than inventing a value).
    - Load `tr_M(β_K, q₀)` from the chi-cache witnesses (p/n available;
      higher A flagged `needs markov_peel.tr_M_atomic`).
-   - Compute three numbers per isotope at q₀ (65 dps): the **uniform**
-     `geom_full_borromean`, the **per-knot** `geom_full_per_block(Vol_K,
-     tr_M_K)`, and their ratio + the resulting m(K) under each.
+   - Compute three numbers per isotope at q₀: the **uniform**
+     `geom_full_borromean(q₀)`, the **per-knot**
+     `geom_full_per_block(Vol_K, tr_M_K, q₀)` (full three-argument
+     signature per [`_li_2_q_util.py:372`](../../folio-assistant/computations/_li_2_q_util.py)),
+     and their ratio + the resulting m(K) under each.
+   - **Precision:** the inputs are the canonical 50-dps witness values
+     (`knot_volumes.py` volumes and the `...q0-50dps...` chi-caches), so
+     the comparison is meaningful only to the **50-dps input floor**.
+     The probe runs mpmath at the `_precision.py` default 65-dps working
+     precision (to avoid intermediate round-off) but reports/serialises
+     results at 50 dps, matching the input witnesses and the standard
+     50-dps serialization floor. No input is "upgraded" beyond its
+     witnessed precision.
    - Emit `option-a-vol-per-knot-light-series.witness.json` recording all
      three per isotope, with `discipline: "EXPLORATORY"`, `production_wired: false`.
 2. **No edit** to `mass_table_comprehensive.py`, `geom_full_borromean`, or
