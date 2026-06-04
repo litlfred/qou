@@ -202,7 +202,9 @@ This is enforced by the axiom report's Theoretical Gap Report (§8).
 are conjectural inputs per CLAUDE.md §3b-cond, permanent by design.
 The catalogue
 [`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md)
-lists **202 classes / 227 class-body sorries** as of 2026-06-03. Before
+lists **194 classes / 219 class-body sorries** as of 2026-06-04
+(corrected from 202 / 227 after fixing the `\bsorry\b` regex to
+`\bsorry\b(?!-)`). Before
 adding a `-- Ref:` to a `sorry`, check whether you are inside a `class`
 body — if yes, the `sorry` is the conjectural axiomatisation and no
 external citation is required (the conjecture itself IS the reference).

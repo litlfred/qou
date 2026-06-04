@@ -193,7 +193,8 @@ Per CLAUDE.md §3b-cond, a `sorry` inside a Lean `class` body **is the
 conjectural input** — it is permanent by design, NOT a missing-proof
 gap. The full catalogue lives at
 [`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md):
-**202 classes / 227 class-body sorries** as of 2026-06-03.
+**194 classes / 219 class-body sorries** as of 2026-06-04 (corrected
+from the original 202 / 227 — see catalog "Known imprecisions").
 
 Before flagging a sorry as missing proof:
 
@@ -205,8 +206,12 @@ Before flagging a sorry as missing proof:
 3. If a class-body sorry is NOT in the catalog, it was added after
    2026-06-03 — regenerate the catalog before triaging.
 
-Approximate non-class sorries (potentially dischargeable): **~426**
-(out of 653 raw `sorry` text matches across 255 files).
+Approximate non-class sorries (potentially dischargeable): **~272**
+(out of 491 real `sorry` matches across 241 files; the legacy
+653 / 255 figures over-counted by ~25 % because the `\bsorry\b` regex
+caught the docstring phrase `sorry-free`. Use `\bsorry\b(?!-)` for
+accurate counts; biggest single false-positive cluster was
+`BraidKnot/PeriodicTableUniqueness.lean` with 119 `sorry-free` abbrevs).
 
 #### `lean-compile-diagnostics.json` staleness warning
 
