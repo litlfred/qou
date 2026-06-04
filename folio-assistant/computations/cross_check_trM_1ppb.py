@@ -110,9 +110,9 @@ def _character_closed_form_anchor(tol: "mpf") -> dict:
 
     def chi(shape, word):
         hc = [(1, g) if g > 0 else (-1, -g) for g in word]
-        # Python fallback supports q_value == q_0; float64-bounded (~1e-15),
-        # which is ample against the 1ppb (1e-9) tolerance.
-        return mpmathify(repr(chi_lambda_braid(list(shape), hc, q_value=float(q0))))
+        # Python fallback supports q_value == q_0; returns a plain float,
+        # float64-bounded (~1e-15) — ample against the 1ppb (1e-9) tolerance.
+        return mpmathify(chi_lambda_braid(list(shape), hc, q_value=float(q0)))
 
     def writhe(word):
         return sum(1 if g > 0 else -1 for g in word)
@@ -133,7 +133,7 @@ def _character_closed_form_anchor(tol: "mpf") -> dict:
         anti_ref = (-1 / q0) ** w
         sym_got = chi(tuple([n]), word)
         anti_got = chi(tuple([1] * n), word)
-        d = max(fabs(sym_got - sym_ref), fabs(anti_got - anti_ref))
+        d = max(abs(sym_got - sym_ref), abs(anti_got - anti_ref))
         worst = max(worst, d)
         checks.append({
             "braid": label, "n_strands": n, "writhe": w,
