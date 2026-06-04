@@ -85,7 +85,7 @@ paper to keep them disambiguated:
   representation. **Renamed from $r$ on 2026-06-04** to free $r$
   for radius / generic-real contexts (the prior reservation forced
   authors to write $\rho$ for radius in physics chapters, an
-  unnecessary cost; the haček also absorbs the historical Habiro
+  unnecessary cost; the háček also absorbs the historical Habiro
   $u = q^{1/2}$ — see $u$ entry below). **Never** use $r$ or $t$
   for $q^{1/2}$ ($t$ clashes with the $V_K(t)$ knot variable and
   with time-like usage); $\iota$ is also reserved (involution /
@@ -105,10 +105,15 @@ paper to keep them disambiguated:
   literature-debt that produced a $5\times10^{38}$ error in
   [`habiro_q_difference_fourier.py`](../../../folio-assistant/computations/habiro/habiro_q_difference_fourier.py)
   by silent substitution between Habiro $u$ and ladder $u$).
-  **Discipline:** the ladder step **must** be spelled `u_ladder`
-  in compute scripts to disambiguate from LP shadow-price $u_\lambda$
-  loops. Any leftover bare `u = sqrt(q)` in Python is a migration
-  flag — replace with `check_q = sqrt(q)`.
+  **Discipline:** when a compute script uses BOTH the ladder step
+  and either the LP shadow-price $u_\lambda$ or the (retired)
+  Habiro $u$, the ladder variable **must** be spelled `u_ladder`
+  to keep contexts unambiguous. Single-context scripts may keep
+  bare `u` when an in-script comment annotates which meaning
+  applies (`u = sqrt(q)` for Habiro-facing scripts is permitted
+  when accompanied by `# = \check{q}, spinor rate` annotation).
+  Mixing the meanings under a single bare `u` without comments is
+  the audit-flag pattern that produced the 2026-06-01 incident.
 - **$\ell$** = Wenzl principal-specialisation length (number of
   points in $s_\lambda(1, q^2, \ldots, q^{2(\ell-1)})$). **Renamed
   from $r_W$** in the May 2026 notation cleanup (when $r$ was

@@ -43,9 +43,9 @@ from the Wenzl-bridge.
 
 $$
 \begin{aligned}
-  y_{(3)}(\check{q}) &= \frac{(\check{q} + 1)(\check{q}^3 + \check{q}^2 + 1)(\check{q}^6 - \check{q}^5 + \check{q}^4 - \check{q}^3 + 2r^2 - \check{q} + 1)}{D_3(\check{q})}, \\
+  y_{(3)}(\check{q}) &= \frac{(\check{q} + 1)(\check{q}^3 + \check{q}^2 + 1)(\check{q}^6 - \check{q}^5 + \check{q}^4 - \check{q}^3 + 2\check{q}^2 - \check{q} + 1)}{D_3(\check{q})}, \\
   y_{(2, 1)}(\check{q}) &= \frac{\check{q}^3 (\check{q}^3 + \check{q} - 1)(\check{q}^3 + \check{q}^2 + 1)}{\Phi_4(\check{q})^2 \, \Phi_3(\check{q}) \, \Phi_6(\check{q}) \, \Phi_{12}(\check{q})}, \\
-  y_{(1^3)}(\check{q}) &= \frac{\check{q}^6 (\check{q} - 1)(\check{q}^3 + \check{q} - 1)(\check{q}^6 + \check{q}^5 + 2r^4 + \check{q}^3 + \check{q}^2 + \check{q} + 1)}{D_3(\check{q})}.
+  y_{(1^3)}(\check{q}) &= \frac{\check{q}^6 (\check{q} - 1)(\check{q}^3 + \check{q} - 1)(\check{q}^6 + \check{q}^5 + 2\check{q}^4 + \check{q}^3 + \check{q}^2 + \check{q} + 1)}{D_3(\check{q})}.
 \end{aligned}
 $$
 
