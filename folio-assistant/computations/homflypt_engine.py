@@ -645,16 +645,19 @@ def _homflypt_nstrand_numerical(braid_word, n_strands, v, z, q):
         # SU(2) path: Markov trace (= Jones polynomial up to an
         # n-dependent normalisation factor).
         #
-        # For optimization consumers (Gram matrix, LP cost vectors,
-        # binding), the RATIOS between tr_M values are what matter,
-        # and these are exact. The absolute normalisation to match
-        # published Jones polynomial tables requires an additional
-        # factor of (-q^{1/2} - q^{-1/2})^{n-1} · (-q^{-3/2})^{-w}
-        # which is convention-dependent and cancels in ratios.
-        #
-        # Returns: tr_M(β) / tr_M(identity) · δ^{n-1}, normalised
-        # so the n-component unlink = δ^{n-1} (HOMFLYPT convention)
-        # and all knot/link values are relative to the unknot.
+        # ⚠ ABSOLUTE-NORMALISATION OPEN (do NOT cite absolute values).
+        # This returns tr_M(β)/tr_M(identity)·δ^{n-1}, a RATIO-ONLY
+        # quantity: it divides out the overall scale and OMITS the
+        # writhe framing factor (-q^{-3/2})^{-w}, so it does NOT equal
+        # the HOMFLYPT/Jones polynomial on absolute values. It fails
+        # homflypt_reference_qa.py (0/5 vs the skein-relation reference)
+        # because the δ^{n-1} power is the n-component-UNLINK norm, which
+        # is wrong for a 1-component knot closure. Only RATIOS between
+        # values at the SAME n are meaningful. Restoring the correct
+        # Ocneanu/Jones normalisation requires this engine's specific
+        # y_λ/χ convention to be reverse-engineered — tracked as an open
+        # item in
+        # docs/audits/2026-06-04-hidden-fitting-verification-gap-mass-binding-walkthrough.md §2e/§4.2.
         from wedderburn_jones_markov import y_lambda_at
         y_vals = y_lambda_at(n, q_val=float(q))
         tr_M_beta = 0.0
@@ -746,7 +749,17 @@ def homflypt_at_su_n(
     """
     import mpmath as mp
     q_mp = mp.mpf(str(q))
-    v = q_mp ** (mp.mpf(N - 1) / 2)
+    # SU(N) HOMFLY specialisation: a = s^N with s = q^{1/2}, so v = q^{N/2}.
+    # The quantum dimension of the defining rep is δ = (v⁻¹−v)/z = −[N]_s.
+    #
+    # BUGFIX 2026-06-04: the exponent was q^{(N-1)/2} (= s^{N-1}), which for
+    # N=2 gives v=q^{1/2} ⇒ 1/v−v = q^{-1/2}−q^{1/2} = −z ⇒ δ ≡ −1 IDENTICALLY.
+    # δ=−1 is the DEGENERATE Jones point (t = 6th root of unity) where every
+    # link collapses to ±1 and the invariant carries no knot information —
+    # which is why distinct knots (trefoil, figure-8) returned the same value.
+    # Correct exponent is N/2 (δ = −[N]_s, non-degenerate). See
+    # docs/audits/2026-06-04-hidden-fitting-verification-gap-mass-binding-walkthrough.md §2e.
+    v = q_mp ** (mp.mpf(N) / 2)
     z = mp.sqrt(q_mp) - 1 / mp.sqrt(q_mp)
 
     if n_strands == 2:
