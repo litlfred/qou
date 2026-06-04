@@ -2561,7 +2561,51 @@
         "reviewed_sha": "e5eb47fa14cf8df0f164af384db4430b2fb08549",
         "notes": "Proposition statement uses generic combinatorial/algebraic content values; correctly on the algebraic side of the wall; lean file uses Int arithmetic only"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2935e0f3f444",
+          "ts": "3d611254d644",
+          "lean": "4dadaf1cd9a4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "sec:parity-classification-discrepancy covers parity/isospin classification; content c=m_j scaling is Schur-Weyl basis for BW scaling in parity classification",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:22:52.423Z",
+        "reviewed_sha": "54fbfdf3a3bfcf4d5d6a97c1d9923aae8d00d2f8",
+        "notes": "Correctly placed in parity classification section; no misfiling or sibling redundancy"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2935e0f3f444",
+          "ts": "3d611254d644",
+          "lean": "4dadaf1cd9a4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "no proof body in .md; lean file contains only def boxContent : ℤ := col - row with no proof tactics",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:22:52.455Z",
+        "reviewed_sha": "54fbfdf3a3bfcf4d5d6a97c1d9923aae8d00d2f8",
+        "notes": "No proof to audit; trivially passes wall-side-proof"
+      }
     ]
   },
-  "updated_at": "2026-06-04T23:18:41.441Z"
+  "updated_at": "2026-06-04T23:22:52.455Z"
 }
