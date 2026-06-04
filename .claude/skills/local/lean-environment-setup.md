@@ -200,6 +200,54 @@ Topology / Analysis). Plausible full-Mathlib build: **1–3 hours**;
 plus ~10 min for QOU. Once the build finishes, `lake exe cache get`
 becomes irrelevant — the oleans are local.
 
+### Web-sandbox addendum — three failure modes the recipe above omits (2026-06-04)
+
+A Claude-Code-on-the-web session (PR #1802) hit a **stricter** network
+policy than the PR #1783 build-from-source run, surfacing three gaps:
+
+1. **The elan toolchain host is firewalled too — not just the cache.**
+   `release.lean-lang.org` returns `Host not in allowlist`, so
+   `lean_setup` / `elan toolchain install` aborts with
+   `failed to parse release data … Unexpected character: H` (an HTML
+   error page, not JSON). The table's "elan install 403 → run locally"
+   row has a workaround: the **GitHub release asset is allowlisted**
+   (`github.com/leanprover/lean4/releases/...` → 200). Install the
+   toolchain by hand:
+
+   ```bash
+   apt-get install -y zstd            # tarballs are .tar.zst
+   TC=$HOME/.elan/toolchains/leanprover--lean4---v4.24.0   # elan's name for the pinned toolchain
+   mkdir -p "$TC" /tmp/lx
+   curl -sSL -o /tmp/lean.tar.zst \
+     https://github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-linux.tar.zst
+   tar --use-compress-program=unzstd -xf /tmp/lean.tar.zst -C /tmp/lx
+   cp -a /tmp/lx/lean-4.24.0-linux/. "$TC/"
+   elan toolchain list   # should now list leanprover/lean4:v4.24.0
+   ```
+
+2. **A `--depth 1` shallow mathlib clone BREAKS lake's checkout.** Lake
+   pins a mathlib revision (e.g. `f897ebcf…`); a shallow clone lacks it,
+   so the checkout dies with `external command 'git' exited with code
+   128`. Use a **full** clone, or `cd ../mathlib4 && git fetch
+   --unshallow` before building. (Step 1's "shallow OK" applies only to
+   the LSP-warm path, not to `lake build`.)
+
+3. **The global `insteadOf` can trigger a destructive re-clone loop.**
+   With the Step-2 redirect set, lake may decide the mathlib remote
+   "URL has changed", then **delete `.lake/packages/mathlib` and
+   re-clone on every build** — wiping progress each run. If you see
+   repeated `info: mathlib: URL has changed; deleting … cloning again`,
+   unset the redirect (`git config --global --unset
+   url."file:///home/user/mathlib4".insteadOf`) and let lake fetch
+   normally, or pre-populate `.lake/packages/mathlib` from the local
+   clone once and leave the redirect off.
+
+**Bottom line for the strictest sandboxes:** if even a full clone +
+un-shallow can't get `lake build QOU` past the transitive-dep fetch
+(observed in PR #1802), Lean is **not mechanically compilable** in that
+session — fall back to a rigorous hand-audit and say so explicitly
+rather than claiming a green build you could not run.
+
 **When to use which:**
 
 - LSP iteration on one or two files → cache 403 fallback above (warm
