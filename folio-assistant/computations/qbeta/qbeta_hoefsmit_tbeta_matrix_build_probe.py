@@ -112,18 +112,21 @@ def main() -> int:
     print(f"  {'-'*10} {'-'*10} {'-'*14} {'-'*14} {'-'*14}")
     per_block = []
     for p in parts:
-        dq = float(dim_q(p))
-        chi_id = float(chi_lambda_braid(p, identity_word, q_value=Q0))
-        chi_hopf = float(chi_lambda_braid(p, hopf_word, q_value=Q0))
-        chi_e = float(chi_lambda_braid(p, electron_word, q_value=Q0))
-        print(f"  {str(p):<10} {dq:>10.6f} {chi_id:>14.10f} "
-              f"{chi_hopf:>14.10f} {chi_e:>14.10f}")
+        # Keep mp.mpf precision through the witness (avoid float
+        # truncation 65→16 dps per Copilot review). Serialize as
+        # high-precision strings; print uses display-only floats.
+        dq_mp = mp.mpf(str(dim_q(p)))
+        chi_id_mp = mp.mpf(str(chi_lambda_braid(p, identity_word, q_value=Q0)))
+        chi_hopf_mp = mp.mpf(str(chi_lambda_braid(p, hopf_word, q_value=Q0)))
+        chi_e_mp = mp.mpf(str(chi_lambda_braid(p, electron_word, q_value=Q0)))
+        print(f"  {str(p):<10} {float(dq_mp):>10.6f} {float(chi_id_mp):>14.10f} "
+              f"{float(chi_hopf_mp):>14.10f} {float(chi_e_mp):>14.10f}")
         per_block.append({
             "lambda": list(p),
-            "dim_q": dq,
-            "chi_identity": chi_id,
-            "chi_hopf": chi_hopf,
-            "chi_electron_trefoil": chi_e,
+            "dim_q": mp.nstr(dq_mp, 25),
+            "chi_identity": mp.nstr(chi_id_mp, 25),
+            "chi_hopf": mp.nstr(chi_hopf_mp, 25),
+            "chi_electron_trefoil": mp.nstr(chi_e_mp, 25),
         })
     print()
 
@@ -131,8 +134,12 @@ def main() -> int:
     print(" Validation against free-neutron-decay canonical net at q_0")
     print("=" * 78)
     print()
-    # Read the canonical scalar net values from main's witness
+    # Read the canonical scalar net values from main's witness.
+    # If absent/None, status is downgraded from "validated" to
+    # "computed only" (per Copilot review — no overclaiming).
     wp = HERE.parent / "free-neutron-decay.witness.json"
+    delta_net = delta_nu = delta_e = None
+    canonical_present = False
     if wp.exists():
         with open(wp, encoding="utf-8") as f:
             fnd = json.load(f)
@@ -140,18 +147,27 @@ def main() -> int:
         delta_net = d.get("delta_net")
         delta_nu = d.get("delta_nu")
         delta_e = d.get("delta_e")
+        canonical_present = all(v is not None
+                                for v in (delta_net, delta_nu, delta_e))
         print(f"  Canonical scalar values from free-neutron-decay.witness:")
         print(f"    delta_net = {delta_net}")
         print(f"    delta_nu  = {delta_nu}")
         print(f"    delta_e   = {delta_e}")
+        if not canonical_present:
+            print(f"  (one or more canonical Δ values are null — recombination")
+            print(f"   validation SKIPPED; per-block χ computation only.)")
         builder.add_data("canonical_free_neutron_scalar_at_q0", {
             "delta_net": delta_net,
             "delta_nu": delta_nu,
             "delta_e": delta_e,
+            "canonical_present": canonical_present,
         })
     else:
-        delta_net = delta_nu = delta_e = None
-        print(f"  (free-neutron-decay.witness.json absent — skipping)")
+        print(f"  (free-neutron-decay.witness.json absent — recombination")
+        print(f"   validation SKIPPED.)")
+        builder.add_data("canonical_free_neutron_scalar_at_q0", {
+            "witness_file_present": False,
+        })
     print()
 
     # Stage A delivers the per-block components; the y_λ Wenzl
@@ -187,7 +203,17 @@ def main() -> int:
     builder.add_data("partitions_n3", [list(p) for p in parts])
     builder.add_data("per_block_chi_at_q0", per_block)
     builder.add_data("q_0_numeric", Q0)
-    builder.add_data("stage_a_status", "operator-matrix infra validated")
+    # Conditional status — accurately reflects what was actually done
+    # (per Copilot review: don't overclaim "validated" when the canonical
+    # values are null / no recombination check was performed).
+    stage_a_status = (
+        "computed-and-validated against canonical Δ(net)"
+        if canonical_present
+        else "computed only — per-block χ at q_0 (canonical Δ(net) "
+             "absent/null in upstream witness; recombination check "
+             "deferred to when canonical values are populated)"
+    )
+    builder.add_data("stage_a_status", stage_a_status)
     builder.add_data("stage_b_next", (
         "build per-block operator T_β,λ via Hoefsmit + confinement SDP; "
         "read N=k correction levels off the matrix expansion in "
