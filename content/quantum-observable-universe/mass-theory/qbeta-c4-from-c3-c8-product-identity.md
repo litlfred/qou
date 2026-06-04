@@ -20,12 +20,11 @@ the second rung of the $\sigma$-action tower) — not stipulated.*
 
 ## Why this matters
 
-PR #1793 derived the closed-form Pell-Lucas σ-action recursion
-$c_{k+2} = b^2 \cdot c_k$ for $k \geq 6$ and Lean-formalised the
-silver-ratio values for $c_8, c_9, c_{10}$. The constant-kernel
-recursion through $k \leq 4$ was **refuted** by a companion probe
-(`qbeta_constant_kernel_depth_test.py`) — depth-2 and depth-3 fits
-both fail to cover the c_4 gap.
+The closed-form Pell-Lucas $\sigma$-action recursion $c_{k+2} = b^2
+\cdot c_k$ holds for $k \geq 6$ but does not extend below $k = 6$:
+no constant-kernel linear recursion of depth $\leq 3$ closes the gap
+between $c_4$ and $c_5, c_6, c_7$. The $c_4$ closed form is therefore
+not derivable from a Pell-Lucas-style additive recursion.
 
 This proposition closes the gap by a **different route**: a
 multiplicative product law instead of a linear recursion. Searching
@@ -82,15 +81,15 @@ arithmetic — no symbolic-q or transcendental machinery required.
    b^4$ as the σ-action seed; the categorical reason $c_8$ takes
    this specific value at $q_0$ is the upstream open question.
 
-So **option 3** (PR #1793 follow-up) is genuinely answered: $c_4$ is
-derived from $c_3$ and $c_8$ via a structural product law, modulo
-categorical proof of the product law itself. The c_4 closed form
-$-2 \cdot b^4$ is no longer a documented stipulation — it is
-forced by the two identities $c_3 = -2$ (J_Hopf seed) and
-$c_8 = 4 \cdot b^4$ (σ-action seed).
+Subject to that categorical proof, $c_4$ is **derived** from $c_3$
+and $c_8$ via a structural product law. The $c_4$ closed form
+$-2 \cdot b^4$ is no longer a stipulation — it is forced by the
+two seed values $c_3 = -2$ ($J_{\mathrm{Hopf}}$ seed) and
+$c_8 = 4 \cdot b^4$ ($\sigma$-action seed).
 
 ## q-usage discipline
 
 The product identities are stated at the fibre level (Laurent
-polynomial in b over $\mathbb{Z}$) and verified at the silver-ratio
-rational anchor $b^2 = 7/8$ in $\mathbb{Q}$. CLAUDE.md §7c-compliant.
+polynomial in $b$ over $\mathbb{Z}$, no $q$-archimedean evaluation
+needed) and verified at the silver-ratio rational anchor $b^2 = 7/8$
+in $\mathbb{Q}$.
