@@ -90,7 +90,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 def load_q_data():
     import json
-    with open(HERE / "q-beta-operator-valued-N3.witness.json",
+    # Witness lives in parent computations/ dir (path drift from Phase 4
+    # qbeta/ subdir refactor).
+    with open(HERE.parent / "q-beta-operator-valued-N3.witness.json",
               encoding="utf-8") as f:
         d = json.load(f)["data"]
     return {
