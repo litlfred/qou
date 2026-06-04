@@ -196,7 +196,7 @@ def analyse_atom(label: str, Z: int, N: int, q,
     coeffs = cyclotomic_expansion(p_u, u, max_m=max_m)
     n_nonzero = sum(
         1 for c in coeffs
-        if sp.sympify(c["a_m"], locals={"u": u}) != 0
+        if sp.sympify(c["a_m"], locals={"check_q": u}) != 0
     )
     print(f"  Habiro coefficients: {len(coeffs)} terms ({n_nonzero} nonzero)")
     print(f"    elapsed: {time.perf_counter() - t0:.2f} s")
@@ -220,7 +220,7 @@ def analyse_atom(label: str, Z: int, N: int, q,
         p_in_u_at_u0 = mp.mpf(str(sp.N(
             p_u.subs(u, sp.Rational(str(u0))), 30
         )))
-        denom_expr = sp.sympify(denom, locals={"u": u})
+        denom_expr = sp.sympify(denom, locals={"check_q": u})
         denom_at_u0 = mp.mpf(str(sp.N(
             denom_expr.subs(u, sp.Rational(str(u0))), 30
         )))
@@ -309,7 +309,7 @@ def _write_witness(path: Path, slug: str, body: dict, q0_float: float,
 
 
 def _coeff_to_sympy(a_m_str: str, u: sp.Symbol) -> sp.Expr:
-    return sp.sympify(a_m_str, locals={"u": u})
+    return sp.sympify(a_m_str, locals={"check_q": u})
 
 
 def _multiplicity(expr: sp.Expr, factor: sp.Expr, u: sp.Symbol) -> int:

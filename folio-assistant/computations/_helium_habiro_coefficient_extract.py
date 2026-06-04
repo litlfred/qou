@@ -171,7 +171,7 @@ def analyse_helium(label: str, Z: int, N: int, q,
     tr_M_at_q0 = float(mp.mpf(str(sp.N(tr_M_q.subs(q, sp.Rational(str(q0))), 30))))
     # And via the p(u) / denom reconstruction.
     p_in_u_at_u0_mpf = mp.mpf(str(sp.N(p_u.subs(u, sp.Rational(str(u0))), 30)))
-    denom_expr = sp.sympify(denom, locals={"u": u})
+    denom_expr = sp.sympify(denom, locals={"check_q": u})
     denom_at_u0_mpf = mp.mpf(str(sp.N(denom_expr.subs(u, sp.Rational(str(u0))), 30)))
     if shift:
         u0_shift = u0 ** shift

@@ -275,7 +275,7 @@ def extract_helium_witnesses(u):
         result = {}
         for e in coeffs_list:
             m = e["m"]
-            a_m = sp.sympify(e["a_m"].replace("^", "**"), locals={"u": u})
+            a_m = sp.sympify(e["a_m"].replace("^", "**"), locals={"check_q": u})
             result[m] = a_m
         return result
 
