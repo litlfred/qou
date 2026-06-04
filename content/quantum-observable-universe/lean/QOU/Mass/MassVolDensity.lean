@@ -1,6 +1,8 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
 # QOU.Mass.MassVolDensity — Mass = Vol × Density (algebraic core)
@@ -133,5 +135,91 @@ theorem pn_crossing_coeff_color_blind (q : ℝ) (hδ : delta_subleading q = 0) :
   unfold pn_crossing_coeff
   rw [hδ]
   ring
+
+/-! ## §3  The hyperbolic (sinh/cosh) structure of the p-n mass split
+
+    The even/odd-δ parity (m_avg even, Δ_pn odd) is not a per-order
+    accident — it is the cosh/sinh of a single hyperbolic rotation by a
+    p-n rapidity θ. The q-deformation is *already* hyperbolic: writing
+    `q = e^η` with `η = log q`,
+
+        h     = q − q⁻¹ = 2 sinh η   (ODD),
+        [2]_q = q + q⁻¹ = 2 cosh η   (EVEN),
+
+    and the recurring Hecke/HOMFLY weight `[2]_q ≈ 2.0109` at q₀ is exactly
+    `2·cosh(log q₀)`. The nucleon masses are the archimedean image of a
+    hyperbolic rotation by the flavor angle θ:
+
+        m_p = m₀·e^{−θ},   m_n = m₀·e^{+θ},
+
+    so `m_avg = m₀·cosh θ` (even ⇒ all δ², δ⁴ … corrections) and
+    `Δ_pn/2 = m₀·sinh θ` (odd ⇒ all δ¹, δ³ … corrections). The production
+    `m_{p,n} = m_avg·(1 ∓ δ/2)` is the O(δ) truncation `e^{∓δ/2} ≈ 1 ∓ δ/2`
+    (`θ = δ/2` at leading order). This makes the parity a THEOREM
+    (`mass_avg_even` / `mass_split_odd`), not an order-by-order check, so a
+    δ² (even) correction is parity-allowed on m_avg and parity-FORBIDDEN on
+    Δ_pn. -/
+
+/-- The doublet quantum integer `[2]_q = q + q⁻¹` (local copy of
+    `HadronicMass.bracket_2_q`). -/
+noncomputable def bracket_2_q (q : ℝ) : ℝ := q + q⁻¹
+
+/-- **`h = 2·sinh(log q)`** — the Hecke crossing scale is the *odd*
+    hyperbolic function of the rapidity `η = log q`. -/
+theorem h_crossing_eq_two_sinh_log (q : ℝ) (hq : 0 < q) :
+    h_crossing q = 2 * Real.sinh (Real.log q) := by
+  unfold h_crossing
+  rw [Real.sinh_eq, Real.exp_log hq, Real.exp_neg, Real.exp_log hq]
+  ring
+
+/-- **`[2]_q = 2·cosh(log q)`** — the doublet integer is the *even*
+    hyperbolic function of the rapidity. At q₀ this is the recurring
+    `≈ 2.0109` Hecke/HOMFLY weight. -/
+theorem bracket_2_q_eq_two_cosh_log (q : ℝ) (hq : 0 < q) :
+    bracket_2_q q = 2 * Real.cosh (Real.log q) := by
+  unfold bracket_2_q
+  rw [Real.cosh_eq, Real.exp_log hq, Real.exp_neg, Real.exp_log hq]
+  ring
+
+/-- Proton mass as a hyperbolic rotation `m₀·e^{−θ}` by the p-n rapidity θ. -/
+noncomputable def mass_proton (m0 θ : ℝ) : ℝ := m0 * Real.exp (-θ)
+
+/-- Neutron mass as the opposite rotation `m₀·e^{+θ}`. -/
+noncomputable def mass_neutron (m0 θ : ℝ) : ℝ := m0 * Real.exp θ
+
+/-- **Average mass is `m₀·cosh θ`** (EVEN in θ ⇒ carries every even-δ
+    correction; the m_avg channel). -/
+theorem mass_avg_eq_cosh (m0 θ : ℝ) :
+    (mass_proton m0 θ + mass_neutron m0 θ) / 2 = m0 * Real.cosh θ := by
+  unfold mass_proton mass_neutron
+  rw [Real.cosh_eq]
+  ring
+
+/-- **Half the mass split is `m₀·sinh θ`** (ODD in θ ⇒ carries every odd-δ
+    correction; the antisymmetric Δ_pn channel). -/
+theorem mass_split_eq_sinh (m0 θ : ℝ) :
+    (mass_neutron m0 θ - mass_proton m0 θ) / 2 = m0 * Real.sinh θ := by
+  unfold mass_proton mass_neutron
+  rw [Real.sinh_eq]
+  ring
+
+/-- **Parity (even): m_avg is invariant under p↔n (θ ↦ −θ).** Hence a δ²
+    correction is parity-allowed on the average. -/
+theorem mass_avg_even (m0 θ : ℝ) :
+    m0 * Real.cosh (-θ) = m0 * Real.cosh θ := by
+  rw [Real.cosh_neg]
+
+/-- **Parity (odd): the split flips sign under p↔n (θ ↦ −θ).** Hence a δ²
+    (even) correction is parity-FORBIDDEN on Δ_pn — only odd powers of θ
+    (δ¹, δ³, …) may appear. This is the formal statement of the
+    quadratic-δ consistency check. -/
+theorem mass_split_odd (m0 θ : ℝ) :
+    m0 * Real.sinh (-θ) = -(m0 * Real.sinh θ) := by
+  rw [Real.sinh_neg]; ring
+
+/-- The leading p-n rapidity `θ = δ/2`, so `e^{∓θ} ≈ 1 ∓ δ/2` recovers the
+    production linear split at O(δ); the exact θ carries the higher odd-δ
+    tower (sinh) with no even contamination. -/
+noncomputable def pn_rapidity_leading (q : ℝ) : ℝ := delta_subleading q / 2
 
 end QOU.Mass
