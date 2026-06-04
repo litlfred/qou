@@ -33,7 +33,7 @@ def main() -> int:
     tiers = set(d["meta"]["tiers"].keys())
     errors: list[str] = []
 
-    def check_rungs(family_key: str, rungs: list[dict]) -> list[int]:
+    def check_rungs(family_key: str, rungs: list[dict]) -> list:
         wired = []
         for r in rungs:
             rung = r.get("rung")
@@ -53,21 +53,30 @@ def main() -> int:
     dk_wired = check_rungs("mp_dk", d["mp_dk_tower"]["rungs"])
 
     prod = d["production"]
-    # rungs are uniformly strings; single rungs are bare digits, ranges
-    # contain "-" (e.g. "6-7"). Only single rungs may be wired.
-    def _is_single(rung) -> bool:
-        return isinstance(rung, str) and "-" not in rung
 
-    if sorted(x for x in ck_wired if _is_single(x)) != sorted(
-        prod["qbeta_wired_rungs"]
-    ):
+    # Normalize every rung identifier to its canonical string form before
+    # comparing, so the check is robust whether a rung is authored as an
+    # int (legacy) or a string (current schema v2). Single rungs are bare
+    # digits ("2".."6"); ranges carry a hyphen ("6-7", "8-10"). Only single
+    # rungs may be wired, so ranges are filtered out on the canonical form.
+    def _rung_id(rung) -> str:
+        return str(rung)
+
+    def _is_single(rung) -> bool:
+        return "-" not in _rung_id(rung)
+
+    def _wired_ids(wired: list) -> list[str]:
+        return sorted(_rung_id(x) for x in wired if _is_single(x))
+
+    def _prod_ids(prod_rungs: list) -> list[str]:
+        return sorted(_rung_id(x) for x in prod_rungs)
+
+    if _wired_ids(ck_wired) != _prod_ids(prod["qbeta_wired_rungs"]):
         errors.append(
             f"production.qbeta_wired_rungs {prod['qbeta_wired_rungs']} "
             f"!= rungs marked wired {ck_wired}"
         )
-    if sorted(x for x in dk_wired if _is_single(x)) != sorted(
-        prod["mp_wired_rungs"]
-    ):
+    if _wired_ids(dk_wired) != _prod_ids(prod["mp_wired_rungs"]):
         errors.append(
             f"production.mp_wired_rungs {prod['mp_wired_rungs']} "
             f"!= rungs marked wired {dk_wired}"
