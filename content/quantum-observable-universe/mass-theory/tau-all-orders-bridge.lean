@@ -13,19 +13,30 @@ import Mathlib.Algebra.BigOperators.Basic
 
 namespace QOU.MassTheory
 
-/-- Hypothesis (1) of `conj:tau-all-orders-bridge`, parameterised by the
-    FIXED algebraic coefficient sequence `α` (the h^{2k}-curvature traces
-    of the Q₈ crossed module along the Borromean braid) and the FIXED
-    Markov-trace sequence `κ` (the h^{2k} coefficients of the Jones
-    polynomial of the same braid). Index `k : ℕ` stands for the even
-    order 2k.
+/-- Hypothesis (1) of `conj:tau-all-orders-bridge`, **naive form**,
+    parameterised by the FIXED algebraic coefficient sequence `α` (the
+    h^{2k}-curvature traces of the Q₈ crossed module along the Borromean
+    braid) and the FIXED Markov-trace sequence `κ` (the h^{2k}
+    coefficients of the Jones polynomial of the same braid). Index
+    `k : ℕ` stands for the even order 2k.
 
     The fibre functor τ is realised by a lower-triangular linear map on
     the h-graded expansion taking `α` to `κ`. Both `α` and `κ` are class
     parameters — NOT universally quantified inside the bridge field —
     so the class is satisfiable for the specific categorical sequences
     (Gemini + Copilot review #1830: a single `tauCoeff` cannot satisfy
-    the bridge for *all* sequences, e.g. α = 0, κ = 1). -/
+    the bridge for *all* sequences, e.g. α = 0, κ = 1).
+
+    **CAVEAT (#1837 — this class is trivially inhabited).** The h⁶
+    empirical probe (`tau_all_orders_h6_empirical.py`) showed that at a
+    fixed substrate `q₀` both `α` and `κ` are constant sequences, and
+    `tauCoeff` has *independent free entries per row*, so every row
+    `κ k = Σ_{j ≤ k} tauCoeff k j · α j` is solved on its own (a
+    one-equation / `k`-unknowns underdetermined system). Hence
+    `Nonempty (TauOrderMixingMap α κ)` is *vacuously* true and does NOT
+    capture the open question. The genuine refinement is
+    `TauBandedKernelMap` below, which forces a SINGLE finite-support
+    convolution kernel across all orders. -/
 class TauOrderMixingMap (α κ : ℕ → ℝ) where
   /-- T_{k,j} for j ≤ k, the (k,j)-entry of the order-mixing map. -/
   tauCoeff : ℕ → ℕ → ℝ
@@ -38,39 +49,85 @@ class TauOrderMixingMap (α κ : ℕ → ℝ) where
   bridgeAtOrder : ∀ k : ℕ,
       κ k = (Finset.range (k + 1)).sum (fun j => tauCoeff k j * α j)
 
+/-- Hypothesis (1) of `conj:tau-all-orders-bridge`, **refined
+    (non-trivial) form** — the genuine open content per #1837.
+
+    A fibre-functor realisation of τ does not supply an arbitrary
+    lower-triangular `T` (which is vacuously available, see the caveat
+    on `TauOrderMixingMap`); it supplies a SINGLE convolution operator
+    with **finitely many** degrees of freedom — a kernel `f` of bounded
+    support, with `T_{k,j} = f(k − j)`. The bridge then reads
+    `κ = f ⋆ α` and must hold at EVERY order `k` with the *same* `f`,
+    so a band of width `bandWidth + 1` real unknowns faces infinitely
+    many equations. That is the over-determined, non-vacuous constraint:
+    `Nonempty (TauBandedKernelMap α κ)` is a substantive claim about the
+    categorical sequences, not an artefact of per-row freedom.
+
+    (Structurally `f(0)` is the diagonal — `T_{k,k} = f(0)` — pinned at
+    `h²` to `f(0) = κ₂/α₂ = -1/64`; the disproof in
+    `phi0_normalization_disproof.py` shows no *constant* kernel
+    `f = (f(0), 0, 0, …)` works past `h²`, so the open question is
+    whether a *wider* finite band closes the bridge.) -/
+class TauBandedKernelMap (α κ : ℕ → ℝ) where
+  /-- The convolution kernel: `T_{k,j} = kernel (k − j)`. -/
+  kernel : ℕ → ℝ
+  /-- The band half-width: the kernel vanishes beyond `bandWidth`. -/
+  bandWidth : ℕ
+  /-- Finite support — the defining restriction that makes the map a
+      single operator with finitely many parameters. -/
+  finiteSupport : ∀ d : ℕ, d > bandWidth → kernel d = 0
+  /-- The leading (diagonal) coefficient `T_{k,k} = kernel 0` is
+      non-zero. -/
+  leadingNonzero : kernel 0 ≠ 0
+  /-- The bridge as a convolution with the SAME kernel at every order:
+      `κ_k = Σ_{j ≤ k} kernel(k − j) · α_j`. -/
+  bridge : ∀ k : ℕ,
+      κ k = (Finset.range (k + 1)).sum (fun j => kernel (k - j) * α j)
+
 /-- Hypothesis (2) of `conj:tau-all-orders-bridge`, parameterised by the
-    same fixed sequences `α`, `κ`: no lower-triangular real map satisfies
-    the bridge at all orders, so the algebraic and Markov-trace sides
-    measure genuinely different categorical invariants of the Borromean
-    braid that share only the h² value.
+    same fixed sequences `α`, `κ`: no finite-support convolution kernel
+    satisfies the bridge at all orders, so the algebraic and Markov-trace
+    sides measure genuinely different categorical invariants of the
+    Borromean braid that share only the h² value.
 
     Quantifier order (Gemini + Copilot review #1830): for the FIXED
-    `α`, `κ`, every candidate lower-triangular map `T` fails at some
-    order `k`. -/
+    `α`, `κ`, every candidate finitely-supported kernel `f` fails the
+    convolution bridge at some order `k`. Stated against the *banded*
+    kernel (not an arbitrary lower-triangular `T`) so that it is the
+    genuine negation of the refined hypothesis (1) — the arbitrary-`T`
+    negation would be vacuously false (#1837). -/
 class TauDistinctInvariants (α κ : ℕ → ℝ) where
-  /-- For every candidate lower-triangular real map T, there is some
-      order at which T fails the bridge equation for the fixed α, κ. -/
-  noMapAtAllOrders :
-    ∀ (T : ℕ → ℕ → ℝ),
-      (∀ i j : ℕ, j > i → T i j = 0) →
+  /-- For every finitely-supported kernel `f` (vanishing beyond some
+      band `N`), the convolution bridge fails at some order `k`. -/
+  noKernelAtAllOrders :
+    ∀ (f : ℕ → ℝ) (N : ℕ),
+      (∀ d : ℕ, d > N → f d = 0) →
       ∃ k : ℕ,
-        κ k ≠ (Finset.range (k + 1)).sum (fun j => T k j * α j)
+        κ k ≠ (Finset.range (k + 1)).sum (fun j => f (k - j) * α j)
 
-/-- **Conjecture (τ at all orders — dichotomy).**
+/-- **Conjecture (τ at all orders — dichotomy, refined per #1837).**
     For the Borromean algebraic/Markov coefficient sequences `α`, `κ`,
-    one of the two hypotheses holds: the fibre functor τ is an
-    order-mixing linear map (`TauOrderMixingMap`), or no such map exists
-    and the two sides measure distinct invariants (`TauDistinctInvariants`).
+    one of the two hypotheses holds: the fibre functor τ is a
+    finite-support convolution kernel (`TauBandedKernelMap`), or no such
+    kernel exists and the two sides measure distinct invariants
+    (`TauDistinctInvariants`).
 
-    Stated as a `Prop` parameterised by `α`, `κ` (Gemini review #1830:
-    the proposition must accept the same parameters as the classes it
-    instantiates). Neither class currently has an instance for the
-    categorical sequences — the honest reflection of the open status.
-    The two are mutually exclusive (an order-mixing map and a proof
-    that none exists cannot coexist), so "one of" is also "exactly
-    one". -/
+    This is the **non-trivial** form. The earlier
+    `tau_all_orders_bridge_naive` below (arbitrary lower-triangular `T`)
+    is excluded-middle-vacuous because hypothesis (1) is always
+    inhabited there (#1837); the banded-kernel constraint is what makes
+    the disjunction informative. Neither class currently has an instance
+    for the categorical sequences — the honest reflection of the open
+    status. -/
 def tau_all_orders_bridge (α κ : ℕ → ℝ) : Prop :=
-  Nonempty (TauOrderMixingMap α κ) ∨ Nonempty (TauDistinctInvariants α κ)
+  Nonempty (TauBandedKernelMap α κ) ∨ Nonempty (TauDistinctInvariants α κ)
+
+/-- The **naive** dichotomy (retained for the record): with an arbitrary
+    lower-triangular `T`, hypothesis (1) `Nonempty (TauOrderMixingMap α κ)`
+    is vacuously inhabited (#1837), so this disjunction is not
+    informative. Superseded by `tau_all_orders_bridge` (banded). -/
+def tau_all_orders_bridge_naive (α κ : ℕ → ℝ) : Prop :=
+  Nonempty (TauOrderMixingMap α κ)
 
 /-! ### Anchor at h²
 
@@ -79,16 +136,17 @@ the algebraic side gives α_2 = -12 (proved categorically in
 `prop:crossed-module-euler-characteristic`) and the Markov side gives
 κ_2 = 3/16 (clean rational, from the Jones polynomial of the Borromean
 braid (σ₁σ₂⁻¹)³ at t = q², skein parametrization h = q − q⁻¹). Their
-ratio fixes
-T_{1,1} = κ_2 / α_2 = -1/64. The disproof in
-`phi0_normalization_disproof.py` then shows that *constant* extension
-fails at h⁴ (α_4/κ_4 = +7.92 ≠ -64). The conjecture is about what
-survives that disproof.
+ratio fixes the leading kernel coefficient
+kernel 0 = T_{1,1} = κ_2 / α_2 = -1/64. The disproof in
+`phi0_normalization_disproof.py` then shows that the *constant* kernel
+(band width 0) fails at h⁴ (α_4/κ_4 = +7.92 ≠ -64). The conjecture is
+whether a wider finite band closes the bridge.
 -/
 
-/-- The h² anchor value of the order-mixing map, fixed by the proved
-    algebraic Euler characteristic and the Markov-trace h² coefficient.
-    This number is determined regardless of which hypothesis holds. -/
+/-- The h² anchor value of the kernel's leading coefficient, fixed by
+    the proved algebraic Euler characteristic and the Markov-trace h²
+    coefficient. This number is determined regardless of which
+    hypothesis holds. -/
 noncomputable def tau_h2_anchor : ℝ := -(1 : ℝ) / 64
 
 theorem tau_h2_anchor_eq : tau_h2_anchor = -(1 : ℝ) / 64 := rfl
