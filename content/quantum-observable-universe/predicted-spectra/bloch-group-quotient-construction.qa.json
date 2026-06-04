@@ -2584,7 +2584,86 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "warn",
+        "evidence": "## What this closes, ## What's still open, ## Significance sections follow statement — interpretive/motivational prose in same block without a separate remark. Minor warn only as block has no companion interprets remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:54:51.794Z",
+        "reviewed_sha": "d1b3fd1ceeb5f1b5ae327c611b69951487b4c4c4"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:55:19.389Z",
+        "reviewed_sha": "d1b3fd1ceeb5f1b5ae327c611b69951487b4c4c4"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "evidence": "Proposition is about generic F (field-like type), pure algebraic/categorical statement — no archimedean constructs in the statement itself. The HasBlochGroup ℝ instance is a separate application; the main statement stays generic.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:55:40.521Z",
+        "reviewed_sha": "d1b3fd1ceeb5f1b5ae327c611b69951487b4c4c4"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "8e31d9be4005"
+        },
+        "result": "pass",
+        "evidence": "No proof body in .md — block describes construction structure, not an archimedean proof. Proof is in Lean. No linarith/IVT/continuity in narrative.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T17:55:40.559Z",
+        "reviewed_sha": "d1b3fd1ceeb5f1b5ae327c611b69951487b4c4c4"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T17:55:40.559Z"
 }
