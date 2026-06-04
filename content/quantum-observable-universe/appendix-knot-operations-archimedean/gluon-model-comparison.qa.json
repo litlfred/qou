@@ -1859,7 +1859,45 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7969ee5956c6",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "evidence": "gluon-model-comparison.ts:4 — tags:[gluon,hopf-link,borromean,nucleon-nf,appendix]; chapter title is 'Knot Operations Dictionary — archimedean evaluations at the substrate'; block presents numeric gluon-model comparison table with CODATA Q-values at q_0; fits sec:knot-ops-archi-gluon-model perfectly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:40:27.600Z",
+        "reviewed_sha": "d8e19e4eb05fb3866c4e123d410cc98279f71291"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "7969ee5956c6",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "evidence": "gluon-model-comparison.ts:7-8 — uses:[rem:hecke-operations] (defined in appendix-knot-operations chapter), interprets:conj:borromean-quark (defined in observations chapter); neither target appears in appendix-knot-operations-archimedean block list, so no intra-chapter forward reference",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:40:49.138Z",
+        "reviewed_sha": "14622d2f3cfd27203ca48b3b79bd5b22b331d83a"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T13:40:49.138Z"
 }

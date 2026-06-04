@@ -1861,7 +1861,45 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "43d811a97e36",
+          "ts": "d53164c11b5b"
+        },
+        "result": "pass",
+        "evidence": "particle-nf-table.ts:6 — tags:[hecke,normal-form,particle-dictionary,appendix]; chapter title is 'Knot Operations Dictionary — archimedean evaluations at the substrate'; block presents NF table at q_0=1.109978...; fits sec:knot-ops-archi-particle-nf perfectly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:39:54.294Z",
+        "reviewed_sha": "d8e19e4eb05fb3866c4e123d410cc98279f71291"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "43d811a97e36",
+          "ts": "d53164c11b5b"
+        },
+        "result": "pass",
+        "evidence": "particle-nf-table.ts:7-8 — uses:[def:hecke-normal-form] (defined in braids-and-knots chapter), interprets:rem:knot-particle-dictionary (defined in appendix-knot-operations chapter); neither target appears in appendix-knot-operations-archimedean block list, so no intra-chapter forward reference",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:40:06.510Z",
+        "reviewed_sha": "d8e19e4eb05fb3866c4e123d410cc98279f71291"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T13:40:06.510Z"
 }
