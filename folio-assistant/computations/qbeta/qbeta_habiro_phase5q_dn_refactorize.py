@@ -302,7 +302,7 @@ def main() -> int:
     n_coeffs_by_m: dict[int, sp.Expr] = {}
     for e in n_coeffs_witness:
         m = e["m"]
-        a_m = sp.sympify(e["a_m"].replace("^", "**"), locals={"u": u})
+        a_m = sp.sympify(e["a_m"].replace("^", "**"), locals={"check_q": u})
         n_coeffs_by_m[m] = a_m
 
     d_coeffs_by_m: dict[int, sp.Expr] = {

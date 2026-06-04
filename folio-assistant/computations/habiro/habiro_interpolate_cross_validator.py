@@ -92,7 +92,7 @@ def parse_polynomial_in_u(s: str, u_value: mp.mpf) -> mp.mpf:
     # Caller-provided string is from a trusted in-repo witness, so
     # eval is acceptable here (same pattern as numpy.evaluate use
     # elsewhere in the pipeline).
-    return mp.mpf(eval(s, {"__builtins__": {}}, {"u": u_value, "mp": mp}))
+    return mp.mpf(eval(s, {"__builtins__": {}}, {"check_q": u_value, "mp": mp}))
 
 
 def main() -> int:

@@ -85,10 +85,10 @@ def q_pochhammer(U: sp.Symbol, m: int) -> sp.Expr:
 
 
 def habiro_trM(atom: dict, U: sp.Symbol) -> sp.Expr:
-    D = sp.sympify(atom["denom_in_u"], locals={"u": U})
+    D = sp.sympify(atom["denom_in_u"], locals={"check_q": U})
     total = sp.Integer(0)
     for c in atom["habiro_coefficients"]:
-        total += sp.sympify(c["a_m"], locals={"u": U}) \
+        total += sp.sympify(c["a_m"], locals={"check_q": U}) \
             * q_pochhammer(U, int(c["m"]))
     return sp.cancel(total / D)
 

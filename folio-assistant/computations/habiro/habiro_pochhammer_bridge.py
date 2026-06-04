@@ -74,7 +74,7 @@ def main():
     coeffs_raw = proton['habiro_coefficients']
 
     def eval_a_m(expr_str, u_val):
-        ns = {"u": u_val, "__builtins__": {}}
+        ns = {"check_q": u_val, "__builtins__": {}}
         return mp.mpf(eval(expr_str, ns))
 
     # Convention A: (q;q)_m = Π_{k=1}^{m} (1 - q^k) [the 136.07 convention]

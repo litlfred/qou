@@ -98,7 +98,7 @@ def eval_poly_str(expr_str: str, u_val):
     # The eval() is bounded to the witness coefficient strings, which
     # only contain integer powers of u. We multiply u_val in as mpf.
     return mp.mpf(eval(expr_str, {"__builtins__": None},
-                       {"u": u_val, "mp": mp}))
+                       {"check_q": u_val, "mp": mp}))
 
 
 def habiro_sum_mp(atom_data: dict, u_val):
