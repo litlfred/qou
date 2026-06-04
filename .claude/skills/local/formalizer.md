@@ -181,7 +181,7 @@ When a narrative step is too complex for immediate formalization:
    (reads `chapters/*.tex` which are generated artefacts; produces
    0 objects in the current repo). Use direct grep instead. Full
    root cause:
-   [`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md).
+   [`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md).
 
 ```lean
 /-- Intermediate step: torsion lifts through jet prolongation.
@@ -201,7 +201,7 @@ This is enforced by the axiom report's Theoretical Gap Report (§8).
 **§3b-cond carve-out.** Class-body sorries are NOT missing proofs — they
 are conjectural inputs per CLAUDE.md §3b-cond, permanent by design.
 The catalogue
-[`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md)
+[`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md)
 lists **202 classes / 227 class-body sorries** as of 2026-06-03. Before
 adding a `-- Ref:` to a `sorry`, check whether you are inside a `class`
 body — if yes, the `sorry` is the conjectural axiomatisation and no

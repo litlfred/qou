@@ -192,7 +192,7 @@ Per CLAUDE.md: every `sorry` must have a `-- Ref: [key]` comment.
 Per CLAUDE.md §3b-cond, a `sorry` inside a Lean `class` body **is the
 conjectural input** — it is permanent by design, NOT a missing-proof
 gap. The full catalogue lives at
-[`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md):
+[`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md):
 **202 classes / 227 class-body sorries** as of 2026-06-03.
 
 Before flagging a sorry as missing proof:
@@ -211,14 +211,14 @@ Approximate non-class sorries (potentially dischargeable): **~426**
 #### `lean-compile-diagnostics.json` staleness warning
 
 The `proof-lean-compiles` sidecar criterion sources its evidence from
-[`docs/audits/lean-compile-diagnostics.json`](../../docs/audits/lean-compile-diagnostics.json),
+[`docs/audits/lean-compile-diagnostics.json`](../../../docs/audits/lean-compile-diagnostics.json),
 which goes stale within days of any Lean source change. Cited line
 numbers may not correspond to current file content.
 
-When the proof-axis sidecar fails are 629 (or similar large number),
-all on `proof-lean-compiles`, default-assume the diagnostics file is
-stale. See
-[`docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md`](../../docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md)
+When the proof-axis sidecar fail count is 629 (or a similar large
+number), all on `proof-lean-compiles`, default-assume the diagnostics
+file is stale. See
+[`docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md`](../../../docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md)
 for the regen path (requires working LSP — see `lean-environment-setup`
 §"Mathlib cache 403 fallback").
 
@@ -234,7 +234,7 @@ produces 0 objects. The on-disk `proof-objects.json` (committed to
 **Do NOT rely on `proof-objects.json` as a current status source.**
 Use direct grep for axiom / sorry counts and the catalogue references
 above for §3b-cond class sorries. Full root cause:
-[`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md).
+[`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md).
 
 ### 7. Trivial Truth Audit
 
