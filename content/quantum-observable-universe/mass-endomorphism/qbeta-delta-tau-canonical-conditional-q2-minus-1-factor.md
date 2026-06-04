@@ -1,6 +1,7 @@
-**Proposition (conditional on
-[`conj:qbeta-canonical-markov-weights-h3`](#conj:qbeta-canonical-markov-weights-h3),
-encoded as Lean `class CanonicalMarkovWeightsH3`).**
+**Proposition (conditional on the canonical Wenzl–Markov weights
+class, encoded as Lean `class CanonicalMarkovWeightsH3` in
+[`qbeta-per-block-chi-closed-forms.lean`](qbeta-per-block-chi-closed-forms.lean)
+under §Extension #4 of the parent block).**
 
 *Assume a concrete instance of the canonical Wenzl–Markov weights
 class `CanonicalMarkovWeightsH3` exists, supplying weights

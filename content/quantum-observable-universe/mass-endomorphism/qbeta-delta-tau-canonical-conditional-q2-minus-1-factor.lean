@@ -36,15 +36,11 @@ merges to inherit the class declaration.
 -/
 
 import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
 -- Imports the parent block's content (CanonicalMarkovWeightsH3 class,
 -- delta_tau_M_canonical, chi_block_*, chi_blocks_have_q2_minus_1_factor).
--- Resolved by the Lake workspace once the parent block's
--- `qbeta-per-block-chi-closed-forms.lean` lands on main.
--- import QOU.BraidKnot.QBetaPerBlockChiClosedForms  -- gated on PR #1764
+-- Live import; resolves once PR #1764 lands on main.
+import QOU.BraidKnot.QBetaPerBlockChiClosedForms
 
 namespace QOU.BraidKnot
 
