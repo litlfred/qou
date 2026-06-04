@@ -36,6 +36,7 @@ import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
 import QOU.MassDerivation
+import QOU.Mass.MassVolDensity
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
