@@ -19,15 +19,19 @@
  *
  * @module content/pipeline/qa-agent-drain-queue
  */
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync } from "node:fs";
 import { dirname } from "node:path";
 import { walkBlocks, hashFile, loadQaReport } from "./qa-utils";
 import { QA_CRITERIA_REGISTRY } from "./qa-criteria-registry";
 
 const root = process.argv[2] ?? "content/quantum-observable-universe";
-const batchSize = Number(
-  process.argv[process.argv.indexOf("--batch-size") + 1] || 25,
-);
+const bsIdx = process.argv.indexOf("--batch-size");
+const bsVal =
+  bsIdx >= 0 && bsIdx + 1 < process.argv.length
+    ? process.argv[bsIdx + 1]
+    : null;
+const bsNum = bsVal && !bsVal.startsWith("-") ? Number(bsVal) : NaN;
+const batchSize = Number.isInteger(bsNum) && bsNum > 0 ? bsNum : 25;
 const outIdx = process.argv.indexOf("--out");
 const out =
   outIdx >= 0 ? process.argv[outIdx + 1] : "todos/qa-agent-drain-queue.json";
@@ -72,8 +76,15 @@ for (const r of rows) {
   byChap.get(r.chapter)!.push(r);
 }
 
+interface Batch {
+  batch_id: number;
+  chapter: string;
+  status: "pending";
+  blocks: Row[];
+}
+
 let bid = 0;
-const batches: unknown[] = [];
+const batches: Batch[] = [];
 for (const [chapter, items] of [...byChap.entries()].sort()) {
   for (let i = 0; i < items.length; i += batchSize) {
     batches.push({

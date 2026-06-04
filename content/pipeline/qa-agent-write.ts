@@ -20,10 +20,12 @@
  *     [--notes "..."] \
  *     [--model claude-opus-4-8] [--skill local/qa-agent-drain]
  *
- * Idempotent per (block, criterion, agent): any prior *stale* agent
- * entry for the same criterion (field_hash.md != current) is dropped
- * before the fresh one is appended; script + human + already-fresh
- * agent entries are preserved.
+ * Idempotent per (block, criterion, agent-id): any prior entry from
+ * the same agent identity (`reviewer.id`) on this criterion is
+ * replaced before the fresh one is appended; script, human, and
+ * other agents' entries are preserved. Freshness of *all* entries
+ * is judged at read time by `entryIsFresh` over the full md/ts/lean
+ * `field_hash` — this writer does not second-guess it.
  *
  * @module content/pipeline/qa-agent-write
  */
@@ -138,12 +140,13 @@ const entry: QaCriterionEntry = {
 };
 
 const existing = report.criteria[criterion] ?? [];
-// Drop prior *stale* agent entries for this criterion (same agent role);
-// keep script, human, and already-fresh agent entries.
-const kept = existing.filter((e) => {
-  if (e.reviewer.kind !== "agent") return true;
-  return (e.field_hash?.md ?? null) === (currentHashes.md ?? null);
-});
+// Idempotent per agent identity: replace any prior entry written by
+// THIS agent (`reviewer.id === skill`) on this criterion. Preserve
+// script, human, and other agents' entries — their freshness is
+// determined at read time over the full md/ts/lean field_hash.
+const kept = existing.filter(
+  (e) => !(e.reviewer.kind === "agent" && e.reviewer.id === skill),
+);
 report.criteria[criterion] = [...kept, entry];
 
 saveQaReport(qaPath, report);
