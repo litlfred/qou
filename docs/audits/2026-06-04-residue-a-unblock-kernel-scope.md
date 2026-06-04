@@ -11,6 +11,23 @@ structure arises, and **what** the unblock concretely is, so the search stops
 chasing the wrong objects (real-q forms and finite roots of unity — both now
 refuted). This doc is the conceptual frame; the kernel first-cut probe follows.
 
+## Symbols (for mid-stream readers)
+
+| symbol | meaning |
+|---|---|
+| `q₀` | substrate deformation parameter, proton-pinned ≈ 1.10998 (CAL-2 / τ_n) |
+| `ℏ_q` | substrate ℏ, `= (q − 1)/q` |
+| `b` | Hoefsmit `b` factor; appears in the ladder variable `u = b·ℏ_q²` |
+| `u`, `u_substrate` | ladder variable `u = b·ℏ_q²`; `u_substrate ≈ 0.00852` is its value at q₀ |
+| `δ` | imaginary distance from q₀ to the nearest singularity (≈ 4.4e-7); `= b` in PR #1821, distinct from Hoefsmit `b` |
+| `τ` | Archimedean / fibre functor — evaluates a fibre object to MeV at q₀ |
+| `T_w`, `T_β` | the confinement-SDP-selected operator |
+| `ξ` | the shift variable of the q-difference equation `F(qξ) = R(q,ξ)·F(ξ)` |
+| `c_k` | Q_β precision-ladder coefficients, `Q_β = Q_base·∏(1 + c_k u^k)` |
+| `A` | residue of `F` at the simple pole `u = u_substrate` (≈ 1.804e-15) |
+| `[n]_q` | q-integer `(qⁿ − q⁻ⁿ)/(q − q⁻¹)`; `[n]_q → n` as q→1 |
+| `CAL-2 (τ_n)` | the neutron-β-decay-width calibration that pins q₀ |
+
 ## The chain
 
 ```
@@ -35,21 +52,25 @@ SDP → Archimedean functor.
 | chain step | what happens | singularity status |
 |---|---|---|
 | 1–3 (action → Stokes → Hecke) | q₀ holonomy lands in `H_n(q)`; q generic | none (semisimple) |
-| 4 (Wedderburn) | `⊕_λ M_{d_λ}`; Frobenius Gram det = Schur elements `s_λ(q)` | **roots of unity** (Schur-element zeros) — on `\|q\|=1` |
+| 4 (Wedderburn) | `⊕_λ M_{d_λ}`; Frobenius Gram det = Schur elements `s_λ(q)` | **roots of unity** (Schur-element zeros) — on the unit circle |
 | 5 (Frobenius pairing) | `tr_M = Σ_λ y_λ χ_λ`, `y_λ ~ 1/s_λ`; `F = Q_β/[Q_A cos α_eff]` born as a **ratio**; `c_k` = its `u`-ladder coeffs, `u = b·ℏ_q²` | ratio creates a **new** singularity, not at a root of unity |
 | 6 (confinement SDP → τ@q₀) | SDP fixes `Q_A`, `cos α_eff`, selects `T_w`; τ evaluates `F` at `u_substrate` | **near-real simple pole at `u_substrate`** |
 
 ## Established facts (cite these)
 
 1. **Radius of convergence of `Σ c_k u^k` = `u_substrate`** — `c_{k+1}/c_k →
-   1/u_substrate ≈ 117.4` at k=8,9,10 (PR #1713, `qbeta_singularity_type_probe.py`).
-2. **Simple pole**, residue `A ≈ 1.804e-15` at `u = u_substrate` (PR #1727).
-3. **Pole is near-real at q₀**: distance `b ≈ \|c_3\|/\|dc_3/dq\| ≈ 4.4e-7`;
-   the nearest root of unity (`ζ₁=1`, `\|q₀-1\|≈0.11`) is **~2.5e5× farther**
-   (PR #1821). ⇒ the residue-A pole is **NOT** the step-4 Schur-element
-   (root-of-unity) singularity.
-4. **Finite-RoU evaluation refuted independently**: `/25 = [5]_q²` is pinned at
-   the `q=1` (N→∞) fibre point, not any finite root (PR #1811).
+   1/u_substrate ≈ 117.4` at k=8,9,10 ([PR #1713](https://github.com/litlfred/qou/pull/1713),
+   [`qbeta_singularity_type_probe.py`](../../folio-assistant/computations/qbeta/qbeta_singularity_type_probe.py)).
+2. **Simple pole**, residue `A ≈ 1.804e-15` at `u = u_substrate`
+   ([PR #1727](https://github.com/litlfred/qou/pull/1727)).
+3. **Pole is near-real at q₀**: imaginary distance `δ ≈ |c_3|/|dc_3/dq| ≈ 4.4e-7`
+   (called `b` in PR #1821 — **distinct** from the Hoefsmit `b` in `u = b·ℏ_q²`);
+   the nearest root of unity (`ζ₁=1`, `|q₀-1| ≈ 0.11`) is **~2.5e5× farther**
+   ([PR #1821](https://github.com/litlfred/qou/pull/1821)). ⇒ the residue-A
+   pole is **NOT** the step-4 Schur-element (root-of-unity) singularity.
+4. **Finite-RoU evaluation refuted independently**: the `/25` denominator is
+   `1/[5]_q²`, pinned at the `q=1` (N→∞) fibre point where `[5]_q² → 25`, not
+   any finite root ([PR #1811](https://github.com/litlfred/qou/pull/1811)).
 5. **A is precision-limited to ~4 sig figs** with only `c_2…c_10` — extrapolation
    fails (PR #1805). The limiter is asymptotic convergence (rung count), not
    arithmetic precision.
