@@ -20,4 +20,10 @@ export default proposition({
     "established-not-conjectural",
   ],
   proofs: ["prf:algebraic-gns-embedding"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Established, not conjectural.** This is the Jones–Wenzl subfactor construction (`jones1985`, `wenzl1988`): the Markov trace's positivity in the Wenzl regime, consistency under the inductive system $H_n(q) \\subset H_{n+1}(q)$ (Markov property), and the GNS construction are all standard. The four-step derivation lives in the proof block `prf:algebraic-gns-embedding`.",
+    },
+  ],
 });
