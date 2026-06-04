@@ -344,6 +344,52 @@ theorem habiroTnSq_at_q_one (n : ℕ) (hn : 0 < n) :
   unfold habiroTnSq quantumInt
   norm_num
 
+/-! ## Cross-lepton framing-ladder ratios (proved)
+
+These pure algebraic identities encode the cross-lepton predictions
+testable across the T(2,n) tower. -/
+
+/-- **Theorem 14 (proved).** Cross-lepton framing ratio
+e/μ: `habiroTnSq 3 q × 25 = habiroTnSq 5 q × 9` for all q.
+
+Equivalently the ratio `habiroTnSq 5 q / habiroTnSq 3 q = 9/25 = (3/5)²`
+when the numerator `[3]_q` cancels — a pure framing-index ratio. -/
+theorem habiroTnSq_three_five_ratio_identity (q : ℝ) :
+    habiroTnSq 3 q * 25 = habiroTnSq 5 q * 9 := by
+  unfold habiroTnSq
+  ring
+
+/-- **Theorem 15 (proved).** Cross-lepton framing ratio
+μ/τ: `habiroTnSq 5 q × 49 = habiroTnSq 7 q × 25` for all q.
+
+A predicted ratio testable when m_τ Habiro analog is wired. -/
+theorem habiroTnSq_five_seven_ratio_identity (q : ℝ) :
+    habiroTnSq 5 q * 49 = habiroTnSq 7 q * 25 := by
+  unfold habiroTnSq
+  ring
+
+/-- **Theorem 16 (proved).** The m_μ R9 + V9 total correction
+factors as `delta_total_mmu q = hbarQ q^6 · (q/5 + hbarQ q² · [3]_q / 25)`.
+
+This makes the R9-out-front factoring explicit: the V9 rung is the
+first-order categorical correction to the R9 leading rung. Connects to
+the S11 factored Habiro form (`mmu_simpler_form_search_probe.py`):
+`δ_total = (ℏ_q^6 × q / 5) × (1 + ℏ_q² × [3]_q / 5)` modulo the q
+factor on `[3]_q` (which makes S11 slightly less accurate than V9). -/
+theorem delta_total_mmu_factored (q : ℝ) :
+    delta_total_mmu q = hbarQ q ^ 6 * (q / 5 + hbarQ q ^ 2 * quantumInt 3 q / 25) := by
+  unfold delta_total_mmu delta_R9 delta_V9
+  ring
+
+/-- **Theorem 17 (proved).** Substrate `ℏ_q` is strictly positive on
+the physical regime `q > 1`. Foundational positivity lemma needed for
+downstream sign-tracking in the closure formulas. -/
+theorem hbarQ_pos_of_one_lt_q (q : ℝ) (hq : 1 < q) : 0 < hbarQ q := by
+  unfold hbarQ hbarQ'
+  apply div_pos
+  · linarith
+  · linarith
+
 /-! ## Conditional closure theorem (§3b-cond pattern)
 
 The formal-existence claims (Theorems 4 + 5) are proved above; the
