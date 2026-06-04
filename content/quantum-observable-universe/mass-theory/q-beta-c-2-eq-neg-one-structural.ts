@@ -1,0 +1,33 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:q-beta-c-2-eq-neg-one-structural",
+  title:
+    "$c_2 = -1$ in the $Q_\\beta$ precision ladder is structural — the $(1 - b^2 \\cdot \\hbar_q^4)$ N=2 factor IS $(1 - u^2)$ with $u = b \\cdot \\hbar_q^2$, hence the $(1 + c_2 \\cdot u^2)$ coefficient is exactly $-1$ by ring identity",
+  lean: {
+    ref: "qou:QOU.QBeta.C2Structural.c_2_eq_neg_one_structural",
+    validation: "not_checked",
+  },
+  uses: [
+    "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+    "prop:q-beta-over-e0-classical-vanishing",
+    "prop:t-beta-markov-frobenius-collapse",
+  ],
+  cites: ["jones1987", "wenzl1988"],
+  computation: {
+    engine: "sympy",
+    script:
+      "folio-assistant/computations/qbeta/qbeta_symbolic_chain_alpha_b.py",
+    witness:
+      "folio-assistant/computations/qbeta/qbeta-symbolic-chain-alpha-b.witness.json",
+    status: "verified",
+  },
+  tags: [
+    "q-beta",
+    "precision-ladder",
+    "structural",
+    "c-2",
+    "categorical-derivation",
+    "no-fit",
+  ],
+});

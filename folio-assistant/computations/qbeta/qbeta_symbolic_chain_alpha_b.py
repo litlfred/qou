@@ -250,17 +250,28 @@ def main() -> int:
         "residual_after_N2": mp.nstr(residual_after_N2, 15),
     })
 
-    # Assertion: c_2 = -1 structurally (the (1 - b²·ℏ_q⁴) factor IS 1 - u²)
+    # Assertion: c_2 = -1 structurally (the (1 - b²·ℏ_q⁴) factor IS 1 - u²).
+    # `diff` is the sympy result of `N2_factor - (1 - u_squared)`; if the
+    # symbolic identity holds (it does), `diff == 0` exactly. Use a
+    # boolean predicate to avoid the `float(...)` precision loss that
+    # would occur in the hypothetical regression case. The high-precision
+    # mpmath value of diff is recorded as data alongside.
+    diff_mp = mp.mpf(str(sp.N(diff, 50))) if diff != 0 else mp.mpf(0)
+    builder.add_data("N2_factor_minus_1_minus_u_squared_mpmath_50dps",
+                     mp.nstr(diff_mp, 50))
     builder.add_assertion(
         "N2_factor_equals_one_minus_u_squared",
-        computed=float(sp.N(diff, 30)) if diff != 0 else 0.0,
-        expected=0.0,
-        tolerance=1e-20,
+        computed=int(diff == 0),
+        expected=1,
+        tolerance=0,
         source=("Structural: the N=2 ladder factor (1 - b²·ℏ_q⁴) IS "
                 "literally (1 - u²) with u = b·ℏ_q². Therefore "
                 "c_2 = -1 is not a fit; it is the (1 + c_2·u²) "
-                "coefficient of the categorical N=2 correction. Symbolic "
-                "sympy verification."),
+                "coefficient of the categorical N=2 correction. "
+                "Boolean predicate: 1 iff sympy.simplify of the "
+                "difference equals 0 (exact symbolic identity); "
+                "expected = 1, tolerance = 0. The mpmath 50-dps value "
+                "of the difference is recorded as data for inspection."),
     )
     # Sanity: alpha numerical match against probe_q_beta_operator_valued_N3
     alpha_witness = mp.mpf("-0.052336120268228838798864526889934170613048317006391339462842709574")
