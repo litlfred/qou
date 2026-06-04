@@ -63,7 +63,7 @@ def eval_a_m_at_u(expr_str, u_val):
     """Evaluate a_m(u) polynomial string at u = u_val."""
     u = float(u_val)
     try:
-        return mp.mpf(eval(expr_str.replace("u", f"({u})")))
+        return mp.mpf(eval(expr_str.replace("check_q", f"({u})").replace("u", f"({u})")))
     except Exception:
         return mp.mpf(0)
 
