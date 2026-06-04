@@ -74,6 +74,82 @@ of the antipode pairing — under $q \mapsto 1/q$, the order-$w$
 expansion picks up the same leading coefficient up to the $q^{-4}$
 framing weight.
 
+## Lean extensions
+
+The accompanying Lean file goes beyond the per-block $\chi_\lambda$
+identities above. Four extension sections build the structural
+infrastructure that any future $\Delta\tau_M$ closure attack will
+consume.
+
+**Extension #1 — surrogate $\Delta\tau_M$ closed form.** Defines
+the non-canonical rational surrogate weights $y_\lambda^{\text{surr}}(q)$
+(reproducing the per-block dimension structure
+$\{q^2, q, 1\}/((1+q)(1+q+q^2))$) and the resulting closed form
+
+$$
+  \Delta\tau_M^{\text{surr}}(q) =
+  \frac{-q^{11}+q^{10}-2q^9+q^8+q^6-q^5-q^3+2q^2-q+1}{4q^5(q^2+q+1)}.
+$$
+
+The Lean theorem `delta_tau_M_surrogate_eq_sum` discharges this
+identity sorry-free via `field_simp; ring`. The surrogate is NOT the
+canonical Markov trace — the canonical $y_\lambda(q)$ involves
+$\sqrt q$ (see Extension #4).
+
+**Extension #2 — Taylor coefficients at $q = 1$.** Locks the
+order-0 coefficient as a sorry-free vanishing theorem
+($\Delta\tau_M^{\text{surr}}(1) = 0$); states the order-1 coefficient
+$-5/6$ as a `HasDerivAt` proposition (proof deferred — mechanical
+quotient-rule derivative). Higher orders ($5/6$, $-41/9$, …) are
+recorded in the witness JSON; each requires an n-th derivative
+computation that is tractable but bulky.
+
+**Extension #3 (skipped).** The "$\Delta\tau_M$ has no $\sqrt q$
+atoms" invariant from the witness is vacuous at the Lean type level
+once $\Delta\tau_M^{\text{surr}} : \mathbb{R} \to \mathbb{R}$ is built
+from polynomial inputs — Lean's type system enforces the rationality
+by construction.
+
+**Extension #4 — canonical $\sqrt q$-bearing $\Delta\tau_M$ (conditional
+class).** Defines the Markov parameter $z(q) = \sqrt q / (1+q)$ as a
+genuine archimedean construction; states the symmetric identity
+$z(q) = 1 / (\sqrt q + 1/\sqrt q)$. Axiomatises the canonical
+Wenzl–Markov weights via `class CanonicalMarkovWeightsH3` with a
+single dimension-normalisation axiom (CLAUDE.md §3b-cond pattern).
+A conditional `def delta_tau_M_canonical` consumes the class as
+`[Instance]`; the conditional theorem
+`delta_tau_M_canonical_vanish_at_one` is sorry-free (reduces to
+`chi_blocks_vanish_at_one`).
+
+**Extension #5 — z-recursion class.** Axiomatises the 3-term
+recursion
+$4(n+1)\,a_{n+1} + 6n\,a_n + (2n-1)\,a_{n-1} = 0$
+on the Taylor coefficients of $z(q)$ at $q = 1$, with seeds
+$a_0 = 1/2$, $a_1 = 0$. States the `ZRecursionCoeffs.unique`
+uniqueness theorem (proof deferred — strong induction with a
+linear-solve step). This is the auxiliary z-Taylor recursion;
+the GENERAL c_k ladder recursion is the sibling
+[`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
+(landed 2026-06-03), which provides the depth-$d$ linear recursion
+structure on the ladder coefficients themselves.
+
+**Cross-references to sibling Lean blocks** (landed 2026-06-03 on
+main):
+
+- [`QOU.QBeta.CKRecursion.CKRecursion`](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.lean)
+  — general depth-$d$ c_k ladder recursion (this PR's
+  `ZRecursionCoeffs` is one specific candidate to instantiate).
+- [`QOU.QBeta.OverE0ClassicalVanishing.qbeta_over_e0_at_one_eq_zero`](../mass-theory/q-beta-over-e0-classical-vanishing.lean)
+  — proves $S(q) = Q_\beta/E_0$ vanishes at $q = 1$ (different
+  upstream object from `delta_tau_M_canonical`, but same
+  classical-point vanishing structure).
+
+**Sorry tally.** Three sorries, each with `-- Ref:` citations per
+CLAUDE.md §1: derivative-at-$q=1$, Markov-parameter symmetric form,
+z-recursion uniqueness. All are tractable mechanical proofs deferred
+as bulk. The structural content (definitions, classes, conditional
+vanishing theorems) is fully verified.
+
 ## Cross-references
 
 - The probe computation:
