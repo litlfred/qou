@@ -289,6 +289,73 @@ the working tree's parent). On resume: re-confirm the `git insteadOf`
 redirect, then re-launch the build if needed. The build is fully
 incremental — only changed modules rebuild.
 
+### ✅ PROVEN sandbox build recipe (2026-06-04, PR #1834 session)
+
+A web session **less-firewalled than #1802** built from source cleanly.
+This is the fast path to try FIRST — it often needs no clone at all:
+
+```bash
+# 0. The toolchain is frequently ALREADY installed by a prior lean_setup —
+#    it's just not on PATH. Check before reinstalling:
+export PATH="$HOME/.elan/bin:$PATH"
+lake --version           # if this prints "Lake version … (Lean 4.24.0)", you're set
+ls .lake/packages/mathlib/Mathlib/Data/Real/Basic.lean   # mathlib SOURCE usually already fetched
+
+# 1. Build a SINGLE module (its dep cone only), NOT all of QOU — far less to compile.
+#    Use -R: a stale "compiled configuration is invalid" error means reconfigure.
+ELAN_NO_OVERRIDE_NOTICE=1 nohup lake build -R QOU.Mass.MassVolDensity \
+  > /tmp/lake.log 2>&1 &
+# 2. Watch for completion with a backgrounded until-loop (NOT foreground tail):
+( while pgrep -f "lake build -R" >/dev/null; do sleep 30; done; tail -25 /tmp/lake.log ) &
+```
+
+**What works / what's blocked in this class of sandbox:**
+- ✅ `github.com` dep clones (aesop, Qq, batteries, **mathlib**) — succeed.
+- ✅ Building Mathlib **from source** — works (toolchain already installed,
+  so the `release.lean-lang.org` block is irrelevant).
+- ❌ `lake exe cache get` — **hangs** (olean cache server unreachable); don't
+  wait on it, go straight to from-source.
+- A single-module dep cone is ~420 Mathlib modules (Real + sinh/cosh + log +
+  field_simp/ring), ~tens of minutes; full QOU is 1–3 h.
+
+### 🗄️ PRESERVE THE BUILD — seed/restore the `lake-cache/*` orphan branch
+
+**Every agent rebuilding Mathlib from scratch is the waste to avoid.** Per
+the cache strategy ([`docs/workplans/2026-05-24-lean-cache-strategy.md`](../../../docs/workplans/2026-05-24-lean-cache-strategy.md)),
+durable cross-container preservation lives on **orphan branches**
+`lake-cache/<package>-<toolchain-slug>` (slug for `v4.24.0` =
+`v4-24-0`). These survive container reclaim (git-versioned), unlike
+`.lake/` (ephemeral) or `../mathlib4` (parent-tree, often persists but not
+guaranteed).
+
+**RESTORE first (before any from-source build):**
+```bash
+git fetch --depth=1 origin lake-cache/qou-v4-24-0 2>/dev/null \
+  && git archive FETCH_HEAD | tar -x -C . \
+  && echo "restored .lake from cache branch — skip the rebuild" \
+  || echo "cache branch not seeded yet — build from source, then SEED it (below)"
+```
+
+**SEED after a successful build** (so the NEXT agent restores in ~2 min
+instead of rebuilding in ~30+):
+```bash
+# Pack the built oleans (compressed — a raw .lake push is multi-GB).
+tar czf /tmp/lake-oleans.tgz .lake/build .lake/packages/*/.lake/build 2>/dev/null
+git switch --orphan lake-cache/qou-v4-24-0
+git rm -rf --cached . >/dev/null 2>&1; rm -f .gitignore
+git add /tmp/lake-oleans.tgz  # or commit the .lake/build trees directly if small enough
+git commit -qm "seed lean cache: qou oleans @ lean v4.24.0"
+git push -u origin lake-cache/qou-v4-24-0
+git switch -   # back to your work branch
+```
+Keep ≤ 8 such branches (owner cap); the
+[`lake-cache-refresh.yml`](../../../.github/workflows/lake-cache-refresh.yml)
+workflow prunes/refreshes on `lean-toolchain`/`lakefile.toml` changes — if
+CI billing is up, prefer triggering it over an ad-hoc multi-GB agent push.
+
+**Rule for agents going forward:** RESTORE → (build only if miss) → SEED.
+Never silently rebuild Mathlib and throw the oleans away.
+
 ## Delegate the install to a sub-agent (recommended for the main task)
 
 The full bootstrap (elan + GitHub-toolchain workaround + full mathlib clone

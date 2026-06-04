@@ -855,6 +855,20 @@ Per-paper `cd content/<paper>/lean && lake build` still works, but
 root-workspace commands are the standardized entry point used by CI
 (`lean_ci.yml`, `blueprint.yml`) and the MCP server (`lean_build`).
 
+> **🟦 Agents building Lean in a sandbox — RESTORE → build → SEED (don't
+> rebuild Mathlib from scratch).** The toolchain is often already installed
+> (`export PATH="$HOME/.elan/bin:$PATH"`; `lake build -R <Module>` builds a
+> single module's dep cone from source — github clones work; only the
+> release server + `lake exe cache get` are network-blocked, both
+> sidesteppable). Cross-container preservation lives on orphan branches
+> `lake-cache/<pkg>-<toolchain-slug>` (e.g. `lake-cache/qou-v4-24-0`):
+> **fetch-and-extract to restore (~2 min) instead of recompiling (~30 min+),
+> and SEED the branch after a successful build** so the next agent restores.
+> Full proven recipe + restore/seed commands:
+> [`.claude/skills/local/lean-environment-setup.md` §"PROVEN sandbox build
+> recipe" + §"PRESERVE THE BUILD"](.claude/skills/local/lean-environment-setup.md).
+> Strategy: [`docs/workplans/2026-05-24-lean-cache-strategy.md`](docs/workplans/2026-05-24-lean-cache-strategy.md).
+
 ### 0a. Content-block `lean.ref` is a package-qualified URI
 
 Every `lean:` field on a content block uses a package-qualified URI
