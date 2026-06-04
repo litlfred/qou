@@ -1873,7 +1873,45 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1b2c6cf3db80",
+          "ts": "76ae3556e07f"
+        },
+        "result": "pass",
+        "evidence": "surreal-bounds-graded-mikusinski.md — remark unifying 4 millennium-problem surreal bounds under the graded-Mikusinski framework. Placed in sec:millennium-bounds-via-surreals. Topic (millennium bounds synthesis) and kind (remark) fit the section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:48:35.385Z",
+        "reviewed_sha": "70fc3f056ae012683d21bf711e8c15547e5a165d"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "1b2c6cf3db80",
+          "ts": "76ae3556e07f"
+        },
+        "result": "pass",
+        "evidence": "surreal-bounds-graded-mikusinski.ts uses:[conj:gb-depth-period-correspondence, rem:bsd-surreal-bound, rem:rh-surreal-bound, rem:p-vs-np-surreal-bound]. All four targets appear earlier in sec:millennium-bounds-via-surreals or are defined elsewhere in the chapter before this block's position. No forward reference.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:48:35.424Z",
+        "reviewed_sha": "70fc3f056ae012683d21bf711e8c15547e5a165d"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T13:48:35.424Z"
 }
