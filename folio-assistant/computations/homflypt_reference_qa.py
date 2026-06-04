@@ -230,29 +230,26 @@ def main() -> int:
         for label, k in _CASES:
             ref = _torus_homfly(k, v, z)
             word = [1] * k + tail
-            try:
-                eng_unfr = homfly_signed_su2(word, n_strands, q0, framed=False)
-                eng_framed = homfly_signed_su2(word, n_strands, q0, framed=True)
-            except Exception:            # noqa: BLE001
-                eng_unfr = None
-                eng_framed = None
-            d = abs(eng_unfr - ref) if eng_unfr is not None else None
-            ok = d is not None and d < TOL
+            # No try/except: the engine self-validates on import for n∈{2..5},
+            # so a raise here is a genuine bug and SHOULD abort loudly with a
+            # full traceback rather than being masked as a silent "ERR" row.
+            eng_unfr = homfly_signed_su2(word, n_strands, q0, framed=False)
+            eng_framed = homfly_signed_su2(word, n_strands, q0, framed=True)
+            d = abs(eng_unfr - ref)
+            ok = d < TOL
             multi_total += 1
             if not ok:
                 multi_fail += 1
                 n_fail += 1
-            es = mp.nstr(eng_unfr, 10) if eng_unfr is not None else "ERR"
-            ds = mp.nstr(d, 3) if d is not None else "—"
-            print(f"  n={n_strands} {label:<18}{mp.nstr(ref,10):>16}{es:>16}"
-                  f"{ds:>12}{'' if ok else '  ✗'}")
+            print(f"  n={n_strands} {label:<18}{mp.nstr(ref,10):>16}"
+                  f"{mp.nstr(eng_unfr,10):>16}{mp.nstr(d,3):>12}{'' if ok else '  ✗'}")
             rows.append({
                 "knot": label, "k": k, "n_strands": n_strands,
                 "writhe": sum(1 if g > 0 else -1 for g in word),
                 "reference_unframed": mp.nstr(ref, 16),
-                "engine_framed": (mp.nstr(eng_framed, 16) if eng_framed is not None else None),
-                "engine_unframed": (mp.nstr(eng_unfr, 16) if eng_unfr is not None else None),
-                "abs_delta": (mp.nstr(d, 6) if d is not None else None),
+                "engine_framed": mp.nstr(eng_framed, 16),
+                "engine_unframed": mp.nstr(eng_unfr, 16),
+                "abs_delta": mp.nstr(d, 6),
                 "pass": bool(ok),
             })
 
