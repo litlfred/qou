@@ -1990,7 +1990,47 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "12d50b72d580",
+          "ts": "3950504dc890",
+          "lean": "e0c301d26126"
+        },
+        "result": "pass",
+        "evidence": "bigbang-heatdeath.md — conjecture interpreting Big Bang (q→1+) and heat death (q→∞) as evaluations at named surreal endpoints. Placed in sec:named-surreals-singular. Topic and kind (conjecture) fit the section on named surreals for singular objects.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:49:37.729Z",
+        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "12d50b72d580",
+          "ts": "3950504dc890",
+          "lean": "e0c301d26126"
+        },
+        "result": "pass",
+        "evidence": "bigbang-heatdeath.ts uses:[conj:classical-limit-stpart]. conj:classical-limit-stpart is in sec:standard-part-classical-limits (position ~78), which precedes sec:named-surreals-singular (position ~101). No forward reference.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:49:37.766Z",
+        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T13:49:37.766Z"
 }

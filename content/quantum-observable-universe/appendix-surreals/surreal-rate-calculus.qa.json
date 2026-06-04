@@ -2348,6 +2348,24 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "3f16ba781664",
+          "ts": "776da304857c",
+          "lean": "b8a7b0575dd3"
+        },
+        "result": "pass",
+        "evidence": "surreal-rate-calculus.lean:44 — stub 'theorem SurrealRateCalculus : True := trivial'; .md statement is bare conditional claim matching the §3b-cond banner; Lean file references the canonical declaration at QOU.AlgebraicSubstrate.SurrealRateCalculus with five class hypotheses",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:49:09.850Z",
+        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
       }
     ],
     "proof-lean-compiles": [
@@ -2725,7 +2743,28 @@
         "reviewed_at": "2026-06-04T13:48:48.855Z",
         "reviewed_sha": "818c2170ea32dd2eb74fc832a6219053535f4f95"
       }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "3f16ba781664",
+          "ts": "776da304857c",
+          "lean": "b8a7b0575dd3"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "surreal-rate-calculus.ts:uses:[lem:surreal-squeeze] — surreal-squeeze appears AFTER surreal-rate-calculus in sec:surreal-rate-calculus (chapter ordering: surreal-rate-calculus listed first, surreal-squeeze second)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T13:49:09.890Z",
+        "reviewed_sha": "36c20c011ed75b6d3eeb87283fb2738cadb7ec24"
+      }
     ]
   },
-  "updated_at": "2026-06-04T13:48:48.855Z"
+  "updated_at": "2026-06-04T13:49:09.890Z"
 }
