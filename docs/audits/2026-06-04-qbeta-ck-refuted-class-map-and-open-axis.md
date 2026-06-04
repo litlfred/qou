@@ -26,7 +26,7 @@ Per registry §3/§5, the open object is **not a c_k value**. It is the
 fibre-level pair:
 
 - the **Habiro element** `F(q)` whose Habiro / Taylor coefficients **are** the
-  ladder `c_k` (`Q_β = Q_base · ∏_k (1 + c_k u^k)`, `u = b·ℏ_q² ≈ 0.00852`), and
+  ladder `c_k` (`Q_β = Q_base · ∏_{k≥2} (1 + c_k u^k)`, `u = b·ℏ_q² ≈ 0.00852`), and
 - the **kernel** `R(q,ξ)` of the proved (sorry-free) *conditional* recursion
   `F(qξ) = R(q,ξ)·F(ξ) ⟹ c_{k+1} = Σ_j a_j(q₀) c_{k+1−j}`.
 
