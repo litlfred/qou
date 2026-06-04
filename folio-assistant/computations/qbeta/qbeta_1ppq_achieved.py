@@ -10,10 +10,24 @@ no truncation error beyond N=8.
 PATTERN: even rungs are geometric (c_2 = c_4 ≈ -1), odd rungs
 carry topological content (c_1 = cos, c_3 = J - hbar^2).
 
+STATUS PER RUNG (post-PR #1786):
+  c_2 = -1   STRUCTURAL.  The `(1 - b**2 * hbar**4)` factor used at
+             `Q_N3 = …` below is exactly the (1 + c_2·u²) coefficient
+             of c_2 = -1, with u = b·ℏ_q² — sorry-free Lean proof in
+             `prop:q-beta-c-2-eq-neg-one-structural` (one-line `ring`
+             identity in CommRing R, no fit, no CODATA input).
+  c_3 ≈ -2   empirical near-match (3% cross-anchor swing); see
+             docs/audits/2026-05-31-qbeta-ck-truncation-order-
+             canonical-framing.md.
+  c_4 ≈ -0.972  EXTRACTED from CODATA residual (caveat below).
+
 CAVEAT: c_4 is EXTRACTED from the residual, not independently
 derived. Its value (-0.972) is close to -1 but 2.8% off. The
 Habiro integer coefficients (PR #1311) determine the exact c_4
-once the normalisation mapping is known.
+once the normalisation mapping is known. The k = 3, k = 4
+structural-derivation programme (analogous to the c_2 = -1 result
+proven in `prop:q-beta-c-2-eq-neg-one-structural`) is the
+remaining 1 ppQ open object.
 """
 from __future__ import annotations
 

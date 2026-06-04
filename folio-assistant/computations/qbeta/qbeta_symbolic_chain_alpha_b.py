@@ -93,8 +93,14 @@ def main() -> int:
         "the N=2 partial-ladder Q_A · cos(α_eff) · (1-b²ℏ⁴) — what "
         "remains for c_3, c_4 to close categorically."
     )
+    # Primary content block: the c_2 = -1 STRUCTURAL proposition that
+    # this probe directly verifies (one-line `ring` identity in Lean +
+    # sympy.simplify check here). Also supports the parent recursion
+    # scaffold (prop:q-beta-c-k-recursion-from-habiro-q-difference) by
+    # providing the symbolic α(q), b(q) inputs for downstream
+    # CKRecursion instantiation.
     builder.set_content_block(
-        "prop:q-beta-c-k-recursion-from-habiro-q-difference")
+        "prop:q-beta-c-2-eq-neg-one-structural")
 
     print("=" * 78)
     print(" Q_β SYMBOLIC CHAIN — α(q), b(q), (1-b²ℏ⁴) is structural c_2 = -1")
