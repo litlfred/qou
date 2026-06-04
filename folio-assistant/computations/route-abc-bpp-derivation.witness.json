@@ -1,0 +1,32 @@
+{
+  "computation": "route-abc-bpp-derivation",
+  "description": "Routes A+B+C for the pp-Coulomb derivation: (A) measure how 3 B_pp variants shift dHe and the 3.21\u00d7 residual; (B) reframe via Lean-proved Hopf tr_M closed form (q-1)/\u221aq; (C) synthesise. EXPLORATORY. No production wiring. No fit.",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "tanh_lnq0_aka_q_rational": "0.103963710052410145676652858536",
+  "ame_split_MeV": "0.7638",
+  "E_0_MeV": "4.18598136329",
+  "m_e_MeV": "0.51099895069",
+  "route_A_variants": {
+    "A1_abs_Re_chi (replicate source, 50dps)": {
+      "B_pp_MeV": "2.285606034",
+      "dHe_MeV": "0.2376200831",
+      "remaining_factor": "3.214374771"
+    },
+    "A2_signed_Re_chi (drop abs)            ": {
+      "B_pp_MeV": "2.378516168",
+      "dHe_MeV": "0.2472793652",
+      "remaining_factor": "3.088814141"
+    },
+    "A3_bar_pairing_per_PR1742              ": {
+      "B_pp_MeV": "0.04379506558",
+      "dHe_MeV": "0.0045530975",
+      "remaining_factor": "167.7539302"
+    }
+  },
+  "route_B_hopf_trM": {
+    "trM_Hopf_at_q0": "1.104388058259182",
+    "trM_minus_1": "0.1043880582591816",
+    "vs_tanh_lnq0_diff": "0.000424348206771",
+    "needed_scale_MeV": "7.31692889721"
+  }
+}
