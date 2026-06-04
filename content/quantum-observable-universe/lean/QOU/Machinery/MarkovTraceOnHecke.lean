@@ -161,9 +161,8 @@ Markov property at the `H₂ ↪ H₃` inclusion. -/
 theorem trM_markov_σ₁ (z h : R) (v : Fin 6 → R)
     (h2 : v 2 = 0) (h3 : v 3 = 0) (h4 : v 4 = 0) (h5 : v 5 = 0) :
     trM z h (mulσ₁ h v) = z * trM z h v := by
-  simp only [trM, mulσ₁, TRM, Fin.sum_univ_six, Matrix.cons_val_zero,
-    Matrix.cons_val_one, Matrix.head_cons]
-  rw [h2, h3, h4, h5]; ring
+  simp only [trM, mulσ₁, TRM, Fin.sum_univ_six, Matrix.cons_val, h2, h3, h4, h5]
+  ring
 
 /-- The concrete n=3 trace is a **real** linear functional satisfying the
 Markov laws — no longer a `True` marker. Bundles linearity + the Markov
