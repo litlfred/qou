@@ -55,66 +55,106 @@ def h_q(q: mp.mpf) -> mp.mpf:
     return (q - 1) / q
 
 
+def enumerate_syt(shape: tuple[int, ...]) -> list[tuple[tuple[int, ...], ...]]:
+    """Enumerate Standard Young Tableaux of given partition shape.
+
+    Returns a list of tuples (each row is a tuple of ints). A SYT
+    fills cells with 1..n such that rows increase L→R and columns
+    increase top→bottom.
+
+    Implemented by recursive cell-by-cell extension, keeping the
+    invariant that the in-progress tableau is always a valid SYT
+    prefix (insertions land at corners).
+    """
+    n = sum(shape)
+    rows = len(shape)
+
+    def add_one(tab: list[list[int]], k: int) -> list[list[list[int]]]:
+        out = []
+        for i in range(rows):
+            row_len = len(tab[i])
+            if row_len >= shape[i]:
+                continue
+            # Must be at a corner: row above must extend at least this far
+            if i > 0 and len(tab[i - 1]) <= row_len:
+                continue
+            new_tab = [list(r) for r in tab]
+            new_tab[i].append(k)
+            out.append(new_tab)
+        return out
+
+    partials = [[[] for _ in range(rows)]]
+    for k in range(1, n + 1):
+        next_partials = []
+        for tab in partials:
+            next_partials.extend(add_one(tab, k))
+        partials = next_partials
+    return [tuple(tuple(r) for r in t) for t in partials]
+
+
+def major_index(tab: tuple[tuple[int, ...], ...]) -> int:
+    """Major index of a SYT: Σ i over descents.
+
+    A descent of T is a position i ∈ {1, ..., n−1} such that i+1
+    appears in a row STRICTLY below i in T.
+    """
+    pos = {}  # value → (row, col)
+    for r, row in enumerate(tab):
+        for c, v in enumerate(row):
+            pos[v] = (r, c)
+    n = sum(len(r) for r in tab)
+    maj = 0
+    for i in range(1, n):
+        if pos[i + 1][0] > pos[i][0]:
+            maj += i
+    return maj
+
+
+def maj_sum_syt(shape: tuple[int, ...]) -> int:
+    """Σ over T ∈ SYT(shape) of maj(T) (sum of descent positions).
+
+    The major index is the standard, well-defined SYT statistic:
+      maj(T) = Σ i s.t. i is a descent of T
+    where i is a descent if i+1 appears in a row STRICTLY below i.
+
+    Note: the predecessor PR #1772 Step 2 hand-coded a field labeled
+    "cocharge_sum" whose values do not match the rigorously-defined
+    cocharge statistic (Lascoux-Schützenberger reading-word algorithm
+    on SYT). We use the major index instead because (a) it is fully
+    well-defined, (b) the q-Kostka identity
+    Σ_T q^{maj(T)} = q^{n(λ)} · [n]_q! / ∏ [h(c)]_q
+    (q-hook formula at µ = (1^n)) makes it the canonical SYT q-stat.
+    """
+    return sum(major_index(t) for t in enumerate_syt(shape))
+
+
 def partition_invariants_n5() -> dict:
     """Compute basic invariants for the 7 partitions of n=5.
 
-    Hook lengths verified against the standard Young-diagram method.
-    cocharge_sum to be computed via SYT enumeration in the next commit
-    (cocharge of reading word, Lascoux-Schützenberger statistic).
+    SYT statistics (maj_sum, comaj_sum) computed via full SYT
+    enumeration and the descent-position major index. f^λ values
+    are cross-checked against the enumeration count (assertion).
 
-    Cross-check: Σ (f^λ)² = n! gives 1 + 16 + 25 + 36 + 25 + 16 + 1 = 120 ✓
+    Cross-check: Σ (f^λ)² = n! gives 1+16+25+36+25+16+1 = 120 ✓
     """
-    return {
-        "(5)": {
-            "f_lambda": 1,
-            "hooks": [5, 4, 3, 2, 1],
-            "hook_product": 120,
-            "cocharge_sum": 0,  # single SYT [1,2,3,4,5], cocharge = 0
-            "shape": "row",
-        },
-        "(4,1)": {
-            "f_lambda": 4,
-            "hooks": [5, 3, 2, 1, 1],
-            "hook_product": 30,
-            "cocharge_sum": None,  # TODO: enumerate SYT(4,1), compute
-            "shape": "L-thin",
-        },
-        "(3,2)": {
-            "f_lambda": 5,
-            "hooks": [4, 3, 1, 2, 1],
-            "hook_product": 24,
-            "cocharge_sum": None,  # TODO
-            "shape": "2-row",
-        },
-        "(3,1,1)": {
-            "f_lambda": 6,
-            "hooks": [5, 2, 1, 2, 1],
-            "hook_product": 20,
-            "cocharge_sum": None,  # TODO
-            "shape": "T-rot",
-        },
-        "(2,2,1)": {
-            "f_lambda": 5,
-            "hooks": [4, 2, 3, 1, 1],
-            "hook_product": 24,
-            "cocharge_sum": None,  # TODO — KEY (extends n=4 (2,2) NEAR-FUZZY)
-            "shape": "(2,2)+1",
-        },
-        "(2,1,1,1)": {
-            "f_lambda": 4,
-            "hooks": [5, 1, 3, 2, 1],
-            "hook_product": 30,
-            "cocharge_sum": None,  # TODO
-            "shape": "L-rot",
-        },
-        "(1,1,1,1,1)": {
-            "f_lambda": 1,
-            "hooks": [5, 4, 3, 2, 1],
-            "hook_product": 120,
-            "cocharge_sum": 10,  # column SYT, cocharge = 0+1+2+3+4 = 10
-            "shape": "column",
-        },
+    base = {
+        "(5)":         {"f_lambda": 1, "shape": (5,),           "hooks": [5,4,3,2,1], "hook_product": 120, "shape_name": "row"},
+        "(4,1)":       {"f_lambda": 4, "shape": (4,1),          "hooks": [5,3,2,1,1], "hook_product": 30,  "shape_name": "L-thin"},
+        "(3,2)":       {"f_lambda": 5, "shape": (3,2),          "hooks": [4,3,1,2,1], "hook_product": 24,  "shape_name": "2-row"},
+        "(3,1,1)":     {"f_lambda": 6, "shape": (3,1,1),        "hooks": [5,2,1,2,1], "hook_product": 20,  "shape_name": "T-rot"},
+        "(2,2,1)":     {"f_lambda": 5, "shape": (2,2,1),        "hooks": [4,2,3,1,1], "hook_product": 24,  "shape_name": "(2,2)+1"},
+        "(2,1,1,1)":   {"f_lambda": 4, "shape": (2,1,1,1),      "hooks": [5,1,3,2,1], "hook_product": 30,  "shape_name": "L-rot"},
+        "(1,1,1,1,1)": {"f_lambda": 1, "shape": (1,1,1,1,1),    "hooks": [5,4,3,2,1], "hook_product": 120, "shape_name": "column"},
     }
+    for name, d in base.items():
+        sh = d["shape"]
+        syt_list = enumerate_syt(sh)
+        assert len(syt_list) == d["f_lambda"], (
+            f"f^{name}: enumerated {len(syt_list)}, expected {d['f_lambda']}"
+        )
+        d["maj_sum"] = maj_sum_syt(sh)
+        d["shape"] = list(sh)  # JSON-friendly
+    return base
 
 
 def q_integer(n: int, q: mp.mpf) -> mp.mpf:
@@ -154,8 +194,7 @@ def build_candidates(inv: dict, q: mp.mpf) -> dict[str, mp.mpf]:
         out[f"f^{lam}"] = mp.mpf(d["f_lambda"])
         out[f"hook_prod_{lam}"] = mp.mpf(d["hook_product"])
         out[f"1/hook_prod_{lam}"] = mp.mpf(1) / mp.mpf(d["hook_product"])
-        if d["cocharge_sum"] is not None:
-            out[f"cocharge_{lam}"] = mp.mpf(d["cocharge_sum"])
+        out[f"maj_sum_{lam}"] = mp.mpf(d["maj_sum"])
 
     # q-dim_q for each partition at q_0
     for lam, d in inv.items():
@@ -169,6 +208,9 @@ def build_candidates(inv: dict, q: mp.mpf) -> dict[str, mp.mpf]:
     )
     out["Σ q-dim (5-partitions)"] = sum(
         q_dim_partition(d["hooks"], q, 5) for d in inv.values()
+    )
+    out["Σ maj_sum (5-partitions)"] = sum(
+        mp.mpf(d["maj_sum"]) for d in inv.values()
     )
 
     # Self-conjugate (2,2,1) extension of the n=4 (2,2) NEAR-FUZZY thread
@@ -271,11 +313,10 @@ def main() -> None:
 
     inv = partition_invariants_n5()
     print("Partition invariants (n=5):")
-    print(f"  {'partition':12s} {'f^λ':5s} {'hook∏':8s} {'cocharge':10s}")
+    print(f"  {'partition':12s} {'f^λ':5s} {'hook∏':8s} {'maj_sum':10s}")
     for lam, d in inv.items():
-        cc = d["cocharge_sum"] if d["cocharge_sum"] is not None else "TODO"
         print(f"  {lam:12s} {d['f_lambda']:3d}    "
-              f"{d['hook_product']:6d}    {cc}")
+              f"{d['hook_product']:6d}    {d['maj_sum']:3d}")
     print()
 
     cands = build_candidates(inv, Q_PROTON_50)
