@@ -101,15 +101,22 @@ def candidate_C(q):
 
 
 def candidate_D(q):
-    """D: partial-fraction sum over roots of unity 1, -1, i, -i, e^(2πi/5),
-    .... Only REAL part returned (Im → 0 at real q for self-conjugate sums).
+    """D: partial-fraction sum over n-th roots of unity for n = 1..5,
+    INCLUDING ζ = 1 (the k = 0 term).  Returns mp.mpc (complex sum); the
+    imaginary part vanishes at real q by conjugate pairing of the
+    root-of-unity terms.
 
-    F(q) = Σ_n 1 / (n · (q - exp(2πi · k_n / n)))  for small n, k_n.
+    F(q) = Σ_{n = 1..5} Σ_{k = 0..n-1} 1 / (n · (q - exp(2πi · k / n)))
+
+    All complex constants stay inside mpmath's high-precision context
+    (`mp.mpc(0, 1)` instead of Python's `1j`) so 65-dps precision is
+    preserved through the loop.
     """
     s = mp.mpc(0)
+    two_pi_i = 2 * mp.pi * mp.mpc(0, 1)
     for n in (1, 2, 3, 4, 5):
-        for k in range(1, n):
-            zeta = mp.exp(2j * mp.pi * mp.mpf(k) / n)
+        for k in range(0, n):  # include k = 0 (ζ = 1)
+            zeta = mp.exp(two_pi_i * mp.mpf(k) / n)
             s += 1 / (n * (q - zeta))
     return s
 
@@ -117,7 +124,7 @@ def candidate_D(q):
 def main() -> int:
     t0 = time.monotonic()
     builder = WitnessBuilder(
-        "qbeta-c3-complex-habiro-cross-anchor-test",
+        "qbeta-c3-complex-habiro-cross-anchor-probe",
         engine="python+mpmath",
         start_time=t0,
     )
@@ -135,14 +142,20 @@ def main() -> int:
     print(" Q_β c_3 complex-Habiro cross-anchor scoping")
     print("=" * 78)
     print()
+    # Cross-anchor slope and required near-singularity radius — computed
+    # once from the empirical anchors and reused throughout the report
+    # so the narrative stays self-consistent if anchors are updated.
+    slope_required = (C3_MUON_EMP - C3_PROTON_EMP) / (Q_MUON - Q_PROTON)
+    near_sing_radius = mp.fabs(C3_PROTON_EMP) / mp.fabs(slope_required)
+
     print(f"  Empirical (per 569bedda1):")
     print(f"    q_proton = {mp.nstr(Q_PROTON, 14)}  c_3_emp = {C3_PROTON_EMP}")
     print(f"    q_muon   = {mp.nstr(Q_MUON, 14)}  c_3_emp = {C3_MUON_EMP}")
-    print(f"    Δq       = {float(Q_MUON - Q_PROTON):.3e}")
-    print(f"    Δc_3     = {float(C3_MUON_EMP - C3_PROTON_EMP):.4f}")
-    print(f"    dc_3/dq  ≈ {float((C3_MUON_EMP - C3_PROTON_EMP) / (Q_MUON - Q_PROTON)):.2e}")
+    print(f"    Δq       = {mp.nstr(Q_MUON - Q_PROTON, 4)}")
+    print(f"    Δc_3     = {mp.nstr(C3_MUON_EMP - C3_PROTON_EMP, 5)}")
+    print(f"    dc_3/dq  ≈ {mp.nstr(slope_required, 4)}  (computed)")
     print(f"    → required near-singularity radius: "
-          f"~{float(abs(C3_PROTON_EMP) / 4.66e6):.2e}")
+          f"~{mp.nstr(near_sing_radius, 4)}")
     print()
 
     print(f"  Cross-anchor test — does the candidate match BOTH?")
@@ -231,7 +244,8 @@ def main() -> int:
     print(f"     0.11 away, dF/dq is moderate, NOT 4.66e6).")
     print()
     print(f"  C. log(q): NEGATIVE control as expected — dF/dq ≈ "
-          f"{float(dC):.2e}, vs required 4.66e6. Refutes smooth-log.")
+          f"{mp.nstr(dC, 4)}, vs required {mp.nstr(slope_required, 4)}.")
+    print(f"     Refutes smooth-log.")
     print()
     print(f"  D. Cyclotomic partial fractions: roots of unity sit at")
     print(f"     |ζ| = 1, but q_0 ≈ 1.11, so distance to any ζ is ≥ 0.1.")
@@ -242,7 +256,7 @@ def main() -> int:
     print(f"  CONCLUSION:")
     print(f"    Naive root-of-unity Habiro elements (poles at |q|=1)")
     print(f"    are TOO FAR from q_0 ≈ 1.11 to give the required")
-    print(f"    dc_3/dq ≈ 4.66e6. The redirect from 569bedda1 was")
+    print(f"    dc_3/dq ≈ {mp.nstr(slope_required, 4)}. The redirect from 569bedda1 was")
     print(f"    'complex-analytic / root-of-unity' — but at this scope,")
     print(f"    no NATURAL root-of-unity Habiro element matches.")
     print()
@@ -271,9 +285,10 @@ def main() -> int:
         "q_muon": mp.nstr(Q_MUON, 25),
         "c_3_proton": str(C3_PROTON_EMP),
         "c_3_muon": str(C3_MUON_EMP),
-        "delta_q": float(Q_MUON - Q_PROTON),
-        "delta_c_3": float(C3_MUON_EMP - C3_PROTON_EMP),
-        "dc_3_dq_required": float((C3_MUON_EMP - C3_PROTON_EMP) / (Q_MUON - Q_PROTON)),
+        "delta_q": mp.nstr(Q_MUON - Q_PROTON, 25),
+        "delta_c_3": mp.nstr(C3_MUON_EMP - C3_PROTON_EMP, 25),
+        "dc_3_dq_required": mp.nstr(slope_required, 25),
+        "near_sing_radius": mp.nstr(near_sing_radius, 25),
     })
     builder.add_data("candidates", results)
     builder.add_data("verdict", {

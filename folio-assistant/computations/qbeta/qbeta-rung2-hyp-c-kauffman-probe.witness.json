@@ -1,0 +1,51 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-04T10:44:00.120050+00:00",
+  "commitSha": "5ff5b1b02c177a36d70c5715cb14c42d699167f5",
+  "assertions": [
+    {
+      "name": "hyp_C_scope_documented",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Sanity invariant: this probe documents Hyp-C's status as UNDERSPECIFIED and lists the refinement needed (knot + convention choice). Open follow-up."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 194,
+  "computation": "qbeta-rung2-hyp-c-kauffman-probe",
+  "scriptFile": "qbeta_rung2_hypC_kauffman_probe.py",
+  "scriptHash": "6dc6471ac666",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Hyp-C scoping: tests whether the Kauffman-bracket interpretation of rung 2 = hbar_q^3/[2]_q is self-consistent.  Performs the classical-limit cross-check (rung 2 vanishes at q=1, so any Kauffman-bracket-derived expression must vanish at the same order).  Identifies which specific Kauffman-bracket reading would be testable.",
+  "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
+  "data": {
+    "hypothesis_C_status": "UNDERSPECIFIED (needs knot + convention choice)",
+    "classical_limit_test": {
+      "rung_2_at_q_1": "0",
+      "V_Hopf_at_q_1": "-2",
+      "V_trefoil_at_q_1": "1",
+      "note": "Order-h^3 extraction trivially gives vanishing-at-q=1, so the test does NOT discriminate without specifying the knot."
+    },
+    "candidate_knots_for_followup": [
+      "Hopf link (links to rung-0 base -(q^2+q^-2) = -J_Hopf)",
+      "trefoil 3_1 (V_trefoil(q) at q=1 = 1)",
+      "figure-eight 4_1 (V_4_1(q) at q=1 = 5)",
+      "cinquefoil T(2,5) (links to rung-1 /25 conjecture)"
+    ],
+    "verdict": "UNDERSPECIFIED — Hyp-C requires further refinement to be definitive"
+  }
+}

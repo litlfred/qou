@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T10:35:56.783117+00:00",
-  "commitSha": "bf754fa9ae5077e0055b64e5ec1dce2f2031a86c",
+  "computedAt": "2026-06-04T10:43:58.486756+00:00",
+  "commitSha": "5ff5b1b02c177a36d70c5715cb14c42d699167f5",
   "assertions": [
     {
       "name": "candidate_D_im_vanishes_at_real_q",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
-  "computation": "qbeta-c3-complex-habiro-cross-anchor-test",
-  "scriptFile": "qbeta_c3_complex_habiro_cross_anchor_test.py",
-  "scriptHash": "9064577dd0ac",
+  "durationMs": 15,
+  "computation": "qbeta-c3-complex-habiro-cross-anchor-probe",
+  "scriptFile": "qbeta_c3_complex_habiro_cross_anchor_probe.py",
+  "scriptHash": "a8e8246b97d4",
   "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "compute_dps": 65,
@@ -38,9 +38,10 @@
       "q_muon": "1.10997859555",
       "c_3_proton": "-2.0693",
       "c_3_muon": "-2.0097",
-      "delta_q": 1.28e-08,
-      "delta_c_3": 0.0596,
-      "dc_3_dq_required": 4656250.0
+      "delta_q": "1.28e-8",
+      "delta_c_3": "0.0596",
+      "dc_3_dq_required": "4656250.0",
+      "near_sing_radius": "0.0000004444134228187919463087248"
     },
     "candidates": [
       {
@@ -62,9 +63,9 @@
       },
       {
         "name": "D_cyclotomic_partial_fractions",
-        "value_q_p_real": "1.323048886176374991997594",
+        "value_q_p_real": "22.08466697798010241667504",
         "value_q_p_imag": "2.967364920549937108585388e-67",
-        "dF_dq": -0.3399617608863308,
+        "dF_dq": -189.11867809178176,
         "im_vanishes_at_real_q": true
       }
     ],
