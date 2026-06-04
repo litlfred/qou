@@ -1,9 +1,12 @@
 {
   "$schema": "script-qa/v1",
   "script_path": "folio-assistant/computations/audits/fitted_labelled_canonical_audit.py",
+  "references": [
+    "prop:three-calibration-inputs"
+  ],
   "language": "python",
   "source_hash": "aaff0df25751",
-  "updated_at": "2026-06-04T14:56:44.188Z",
+  "updated_at": "2026-06-04T17:18:03.758Z",
   "criteria": {
     "does_not_default_to_float": [
       {
@@ -78,7 +81,7 @@
         "field_hash": {
           "ts": "aaff0df25751"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-python.ts",
@@ -86,10 +89,8 @@
           "script_hash": "69537a0de0e5",
           "script_commit_sha": "3f3c2564e4028a6d8d7dcc4f24e1dadb8854990a"
         },
-        "reviewed_at": "2026-06-04T14:56:44.188Z",
-        "reviewed_sha": "16df31930b5cf3b0cb8bee9d4be86b42d2033a21",
-        "severity": "minor",
-        "evidence": "folio-assistant/computations/audits/fitted_labelled_canonical_audit.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "reviewed_at": "2026-06-04T17:18:03.758Z",
+        "reviewed_sha": "8ef7c80fdccc637a06f185ebf77f2f6b1288d900"
       }
     ],
     "connected_to_ci_pipeline": [
