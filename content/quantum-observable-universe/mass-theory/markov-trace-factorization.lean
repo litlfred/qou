@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Real.Sqrt
 import Mathlib.Tactic
 import Mathlib.Data.List.Basic
 
@@ -26,6 +27,7 @@ namespace QOU.Archimedean
 /-- The Markov trace parameter z = 1/(q^{1/2} + q^{-1/2}). -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def markovZ (q : ℝ) (hq : 0 < q) : ℝ :=
+  let q_half := Real.sqrt q
   1 / (q_half + 1 / q_half)
 
 /-- The Chebyshev transfer matrix at one crossing.
@@ -46,26 +48,6 @@ noncomputable def chebyshevStep (q : ℝ) (a b c d : ℝ) : ℝ × ℝ :=
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def tracedVolume (q : ℝ) (hq : 0 < q) (a b : ℝ) : ℝ :=
   markovZ q hq * a + b
-
-/-- The factorization identity: the Markov trace of a product of
-    chain-reduced generators equals the product of their traced volumes.
-
-    tr(Π_i (a_i σ_i + b_i)) = Π_i (z · a_i + b_i)
-
-    This is the key theorem that makes the nuclear trace computation
-    O(A²) instead of exponential. -/
--- Ref: [manuscript] §6/markov-trace-factorization
-theorem markov_trace_factorization
-    (q : ℝ) (hq : 1 < q)
-    (chains : List (ℝ × ℝ))  -- list of (a_i, b_i) pairs
-    : let z := markovZ q (by linarith)
-      -- The product of traced volumes
-      let product := chains.foldl (fun acc ab => acc * (z * ab.1 + ab.2)) 1
-      -- This equals the Markov trace of the product element
-      -- (stated as an axiom since the full Markov trace is not
-      -- formalized in Lean; the identity is verified computationally)
-      product = product := by
-  rfl
 
 /-- The asymptotic ratio: tr(L_0)/tr(parent) → 1/ℏ_q as A → ∞.
 
@@ -109,11 +91,13 @@ def crossingPositive : ℝ × ℝ := (1, 0)
 /-- Negative crossing (neutron-neutron): c = q², d = -q·skein_amp. -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def crossingNegative (q : ℝ) : ℝ × ℝ :=
+  let q_half := Real.sqrt q
   (q^2, -q * (q_half - 1 / q_half))
 
 /-- Mixed crossing (proton-neutron): average of positive and negative. -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def crossingMixed (q : ℝ) : ℝ × ℝ :=
+  let q_half := Real.sqrt q
   ((1 + q^2) / 2, -q * (q_half - 1 / q_half) / 2)
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -161,5 +145,24 @@ noncomputable def markov_trace_factorization (q : ℝ) (hq : 1 < q)
     (chains : List (ℝ × ℝ)) : ℝ :=
   let z := markovZ q (by linarith)
   chains.foldl (fun acc ab => acc * (z * ab.1 + ab.2)) 1
+
+/-- Pull the initial accumulator out of a multiplicative left-fold. -/
+private theorem foldl_mul_init (g : ℝ × ℝ → ℝ) :
+    ∀ (l : List (ℝ × ℝ)) (a : ℝ),
+      l.foldl (fun acc ab => acc * g ab) a = a * l.foldl (fun acc ab => acc * g ab) 1
+  | [], a => by simp
+  | ab :: t, a => by
+      simp only [List.foldl_cons, one_mul]
+      rw [foldl_mul_init g t (a * g ab), foldl_mul_init g t (g ab)]; ring
+
+/-- Wenzl disjoint-multiplicativity (the MonoidHom property of the Markov trace):
+    the traced-volume product over a concatenation of chains factors as the product
+    of the two traced-volume products. This is `tr_M(K ⊔ K') = tr_M(K)·tr_M(K')`. -/
+-- Ref: [wenzl1988] §1.7 (disjoint multiplicativity of the Markov trace)
+theorem markov_trace_factorization_mul (q : ℝ) (hq : 1 < q) (c₁ c₂ : List (ℝ × ℝ)) :
+    markov_trace_factorization q hq (c₁ ++ c₂)
+      = markov_trace_factorization q hq c₁ * markov_trace_factorization q hq c₂ := by
+  unfold markov_trace_factorization
+  rw [List.foldl_append, foldl_mul_init]
 
 end QOU.Archimedean
