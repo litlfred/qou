@@ -32,8 +32,14 @@ import _path_bridge  # noqa: E402, F401
 
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+# Align runtime precision with the witness's recorded compute_dps (the
+# canonical COMPUTE_DPS, not a hardcoded 40) so the script, the witness
+# precisionMetadata, and the audit all agree (Copilot review #1844). At
+# this precision a genuine low-order holonomic recurrence would drive the
+# column-normalised σ_min/σ_max to ~1e-(input-precision); see guess_holonomic.
+DPS = set_compute_dps()
 
 # Bias-corrected c_k (#1824 probe 6.a) — the cleaner available series.
 CK = {
@@ -49,13 +55,22 @@ APPLIED_KS = [2, 3, 4, 5, 6, 7]
 
 
 def guess_holonomic(ks: list[int], ck: dict[int, mp.mpf], order: int, deg: int):
-    """Least-squares fit of ∑_{i=0}^order p_i(n)·c_{n-i} = 0, deg p_i ≤ deg.
+    """Test for ∑_{i=0}^order p_i(n)·c_{n-i} = 0, deg p_i ≤ deg.
 
-    Unknowns: (order+1)*(deg+1) polynomial coeffs (scale-free → fix one).
-    Equations: one per usable n. Returns (rel_residual, n_eq, n_unk).
+    Unknowns: (order+1)*(deg+1) polynomial coeffs (scale-free → homogeneous).
+    Equations: one per usable n. A holonomic recurrence ⇒ the homogeneous
+    matrix M is rank-deficient ⇒ σ_min/σ_max → 0. Returns (rel_sv, n_eq,
+    n_unk).
     """
     nunk = (order + 1) * (deg + 1)
-    rows = [k for k in ks if k - order >= ks[0]]
+    ks_sorted = sorted(ks)
+    have = set(ck)
+    # Row n is usable only if EVERY required term c_{n-i} (i=0..order) is
+    # present — robust to non-contiguous ks / missing keys (Copilot #1844):
+    # avoids KeyError and the silent inclusion of equations referencing a
+    # term that is not in ck. Independent of caller ks ordering (sorted here).
+    rows = [n for n in ks_sorted
+            if all((n - i) in have for i in range(order + 1))]
     if len(rows) <= nunk:
         return None, len(rows), nunk
     # Build the homogeneous matrix M (n_eq × nunk); columns = p_i monomials.
@@ -66,17 +81,30 @@ def guess_holonomic(ks: list[int], ck: dict[int, mp.mpf], order: int, deg: int):
             for dd in range(deg + 1):
                 M[r, col] = mp.mpf(n) ** dd * ck[n - i]
                 col += 1
-    # Smallest singular value of M ⇒ best homogeneous solution residual.
-    # Use MᵀM eigenvalues (symmetric, small).
-    MtM = M.T * M
+    # Column-normalise BEFORE the SVD. The raw columns span a huge dynamic
+    # range (the erratic free rung c_10 ≈ 1e8 times the n^deg monomials),
+    # which would otherwise dominate the conditioning and inflate the
+    # apparent noise floor. Column scaling is a change of variables on the
+    # solution vector, so it preserves the null space — rank-deficiency
+    # detection is unchanged — while making σ_min numerically meaningful
+    # (Copilot #1844, option a).
+    for c in range(nunk):
+        cn = mp.sqrt(sum(M[r, c] ** 2 for r in range(len(rows))))
+        if cn > 0:
+            for r in range(len(rows)):
+                M[r, c] /= cn
+    # Smallest singular value via a DIRECT SVD of M — NOT eigenvalues of
+    # MᵀM. Forming MᵀM squares the condition number and inflates the
+    # apparent noise floor, which directly biases the holonomic verdict
+    # (Copilot #1844, option b). A rank-deficient (holonomic) M ⇒
+    # σ_min/σ_max → 0; a full-rank (non-holonomic) M ⇒ σ_min/σ_max = O(1).
     try:
-        E = mp.eigsy(MtM, eigvals_only=True)
+        S = mp.svd_r(M, compute_uv=False)
     except Exception:
         return None, len(rows), nunk
-    lam_min = min(abs(e) for e in E)
-    lam_max = max(abs(e) for e in E)
-    # Normalised: a holonomic recurrence ⇒ lam_min/lam_max ≈ 0 (rank deficient).
-    rel = mp.sqrt(lam_min / lam_max) if lam_max > 0 else mp.mpf(1)
+    sv = [abs(s) for s in S]
+    smax, smin = max(sv), min(sv)
+    rel = smin / smax if smax > 0 else mp.mpf(1)
     return rel, len(rows), nunk
 
 
@@ -141,7 +169,7 @@ def main() -> int:
     )
     w.add_data("ck_source", "#1824 probe 6.a bias-corrected (cleaner available)")
     w.add_data("applied_rungs", "c_2..c_7 (imposed); c_8..c_10 free/unreliable")
-    w.add_data("holonomic_fits", {k: {"rel_sv": v["rel_sv"], "holonomic": str(v["holonomic"])}
+    w.add_data("holonomic_fits", {k: {"rel_sv": v["rel_sv"], "holonomic": v["holonomic"]}
                                   for k, v in results.items()})
     w.add_data("genuine_unblock",
                "multi-anchor extraction: R = Q_β/(Q_A·cos) at several q (Q_N2(q) "

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-06-04T16:38:41.368066+00:00",
-  "commitSha": "160a3a6da95cc3011dcf8116f5d9edff1b8bf558",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-04T18:28:15.739268+00:00",
+  "commitSha": "899a5e2d25dd74dcaaa629c5c4aa709699ba20e6",
   "assertions": [
     {
       "name": "low_order_holonomic_recurrence_found",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 14,
   "computation": "qbeta-ck-holonomic-recurrence-guess",
   "scriptFile": "qbeta_ck_holonomic_recurrence_guess.py",
-  "scriptHash": "53a372afe7d3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "108dc659deab",
+  "scriptCommitSha": "899a5e2d25dd74dcaaa629c5c4aa709699ba20e6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,8 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "c_11+ attempt: tests whether the c_k are HOLONOMIC (D-finite) — a polynomial-coefficient recurrence, the class subsuming the cosh-avatar / generating-function hypothesis (#1824) and one level above the rational case Step 2 refuted. No low-order (order≤2, deg≤2) holonomic recurrence fits the over-determined system: False. NOT decisive — the only FREE rungs (c_8..c_10) are single-anchor-unreliable (c6-c10 falsification on main), so a negative is consistent with F non-holonomic OR extraction noise. The c_11+ keystone is blocked at the data level: reliable independent c_8+ need a MULTI-ANCHOR extraction (Q_N2(q) at several q). Formalize-first structural test, not a fit. Diagnostic-only.",
   "data": {
@@ -35,20 +36,20 @@
     "applied_rungs": "c_2..c_7 (imposed); c_8..c_10 free/unreliable",
     "holonomic_fits": {
       "applied c2..c7|o1d1": {
-        "rel_sv": "0.00531827",
-        "holonomic": "False"
+        "rel_sv": "0.0281912",
+        "holonomic": false
       },
       "full c2..c10|o1d1": {
-        "rel_sv": "1.22206e-9",
-        "holonomic": "False"
+        "rel_sv": "1.00299e-7",
+        "holonomic": false
       },
       "full c2..c10|o1d2": {
-        "rel_sv": "1.04496e-11",
-        "holonomic": "False"
+        "rel_sv": "6.53862e-10",
+        "holonomic": false
       },
       "full c2..c10|o2d1": {
-        "rel_sv": "5.23138e-10",
-        "holonomic": "False"
+        "rel_sv": "1.33787e-8",
+        "holonomic": false
       }
     },
     "genuine_unblock": "multi-anchor extraction: R = Q_β/(Q_A·cos) at several q (Q_N2(q) re-run at multiple anchors) → reliable independent c_8+ → constrain the holonomic recurrence / generating function."
