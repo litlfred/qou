@@ -2598,7 +2598,85 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e47fa994085d",
+          "ts": "8bea3eea2320",
+          "lean": "c6177259d2e1"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement body embeds interpretive caveat: 'Strong numerical evidence — not proof — that X is irreducible' inside what reads as the proposition body rather than a separate note",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:13:18.558Z",
+        "reviewed_sha": "a910c5240979b10a2240f6ad2caea32a097fe65f"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e47fa994085d",
+          "ts": "8bea3eea2320",
+          "lean": "c6177259d2e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:13:18.593Z",
+        "reviewed_sha": "a910c5240979b10a2240f6ad2caea32a097fe65f"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e47fa994085d",
+          "ts": "8bea3eea2320",
+          "lean": "c6177259d2e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:13:18.626Z",
+        "reviewed_sha": "a910c5240979b10a2240f6ad2caea32a097fe65f"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e47fa994085d",
+          "ts": "8bea3eea2320",
+          "lean": "c6177259d2e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:13:18.660Z",
+        "reviewed_sha": "a910c5240979b10a2240f6ad2caea32a097fe65f"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T22:13:18.660Z"
 }
