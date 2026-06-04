@@ -85,7 +85,7 @@ as REFUTED-as-real-q-fibre-element on the basis of:
 
   * SDP-extracted $\hat c_3 = -2.0097$ at proton anchor
   * SDP-extracted $\hat c_3 = -2.0085$ at muon anchor (assumed similar bias)
-  * Real-q closure formula too rigid (swings $4.7 \times 10^6$ less than empirical)
+  * Real-q closure formula too rigid (its cross-anchor swing is $\approx 4.7 \times 10^6$ **times smaller** than the empirical swing — a rigidity *ratio*, not an absolute deviation)
 
 This proposition's numerical confirmation shows the bias-corrected
 $\hat c_3^{\mathrm{corr}} = -1.9999968$ at the proton anchor is essentially

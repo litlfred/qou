@@ -1,24 +1,24 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T13:37:35.042303+00:00",
-  "commitSha": "4e9d27f31dbe86e657b45dd6884bdf6a95dc487e",
+  "computedAt": "2026-06-04T14:01:20.667812+00:00",
+  "commitSha": "b9488a99672ebc9fcd43249acbb9b52c24d0d714",
   "assertions": [
     {
-      "name": "probe_6b_winners_recorded",
-      "computed": 1,
-      "expected": 1,
+      "name": "probe_6b_enumerated_all_candidates",
+      "computed": 7,
+      "expected": 7,
       "passed": true,
       "tolerance": 0,
-      "source": "Probe 6.b: enumerate 7 candidate closed-form generating functions, check k=2 + k=3 match. At least one candidate (F1 or F7) matches the observed c_2 = -1, c_3 = -2 exactly. Records the compatible forms for downstream structural analysis."
+      "source": "Probe 6.b stable invariant: enumerate exactly 7 candidate closed-form coefficient families (F1..F7) and produce a per-candidate k=2/k=3 match map. The scientific outcome (which candidates win) is recorded as data (winners_at_k2_and_k3, n_winners_at_k2_and_k3) and discussed in the printed verdict — NOT asserted, to avoid a fragile scientific-outcome CI gate."
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "qbeta-ck-closed-form-candidate-fits-probe",
   "scriptFile": "qbeta_ck_closed_form_candidate_fits_probe.py",
-  "scriptHash": "ae79dc2e0295",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "dfaf7c1d6250",
+  "scriptCommitSha": "f0d0353aec54c89c832cc90382ce6b8fe7e5cc26",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -132,6 +132,7 @@
     },
     "winners_at_k2_and_k3": [
       "F1: -(k-1)!         (= -log(1-u) deriv pattern)"
-    ]
+    ],
+    "n_winners_at_k2_and_k3": 1
   }
 }

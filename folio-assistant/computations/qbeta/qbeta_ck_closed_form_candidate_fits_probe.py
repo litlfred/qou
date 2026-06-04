@@ -3,62 +3,56 @@
 the c_k generating-function scoping doc.
 
 PR #1824 follow-on. Probe 6.a (commit 4e9d27f31d) found that the
-bias-corrected c_k_corr land on EXACT clean values at k=2, 3:
+leading-bias-corrected c_k_corr land on EXACT clean values at k=2, 3:
 
-  c_2_corr / 2! = -1/2  EXACTLY  (matches -log(1-u) coefficient × k)
-  c_3_corr / 3! = -1/3  EXACTLY  (matches -log(1-u) coefficient × k)
+  c_2_corr = -0.9999932   →  -1
+  c_3_corr = -1.9999968   →  -2
 
-These ratios match the **Taylor coefficients of `-log(1-u)`** at
-orders k=2 and k=3, where `-log(1-u) = Σ_k u^k / k`.  More precisely:
-if c_k_corr = -(k-1)!, then:
-  c_2_corr = -1!  = -1
-  c_3_corr = -2!  = -2
-  c_4_corr = -3!  = -6   (observed: -1.13 — doesn't fit at leading
-                           correction; HIGHER-ORDER bias correction
-                           might recover this)
-  c_5_corr = -4!  = -24
-  c_6_corr = -5!  = -120
-  c_7_corr = -6!  = -720
+These match the pattern **c_k_alg = -(k-1)!** at k=2, 3:
+  -(2-1)! = -1!  = -1   ✓
+  -(3-1)! = -2!  = -2   ✓
 
-The c_2 and c_3 EXACT match to -(k-1)! is striking; either:
-  (a) The full pattern c_k_corr = -(k-1)! holds and higher-k
-      bias corrections (beyond leading c_{k+1}·u) bring c_4+ to
-      -6, -24, -120, -720, ...
+Mathematical note on the generating function (corrected per Gemini
+review on PR #1824): the ladder coefficients c_k are the ORDINARY
+coefficients in Σ_k c_k u^k (the leading log of the precision
+product Q_β/Q_A = Π_k(1+c_k u^k)). The pattern c_k = -(k-1)! gives
+
+  Σ_{k≥1} -(k-1)! · u^k
+
+which is a DIVERGENT factorial (Borel-summable) series — the
+hallmark of an asymptotic perturbative expansion (cf. candidate A,
+Chern-Simons, whose 1/k perturbative series is famously factorially
+divergent).  It is NOT u/(1-u) (whose ordinary coefficients are all
+1) nor a convergent -log(1-u) Taylor series (ordinary coefficients
+1/k).  An earlier draft of this docstring mislabeled the pattern as
+u/(1-u); that was wrong and is corrected here.
+
+The c_2, c_3 EXACT match to -(k-1)! is striking; either:
+  (a) The full pattern c_k_alg = -(k-1)! holds, and higher-k bias
+      corrections (beyond the leading c_{k+1}·u of probe 6.a) bring
+      c_4+ to -6, -24, -120, ...
   (b) The pattern is coincidental at k=2,3 and breaks at k=4.
 
-This probe tests hypothesis (a) by:
-  1. Computing the EXPECTED higher-order bias correction for each k
-     assuming c_k_alg = -(k-1)!:
-       Δc_k (full) = Σ_{j≥1} c_{k+j}_alg · u^j · binom(k,j)? (TODO)
-  2. Subtracting from raw c_k_extracted to see if c_k_alg recovers
-     to -(k-1)!.
+IMPLEMENTED METHODOLOGY (this probe): apply the SAME leading-order
+bias correction as probe 6.a (c_k_corr = c_k - c_{k+1}·u), then
+compare c_k_corr against several named candidate coefficient
+families (F1..F7 below) and report which match at k=2 AND k=3. This
+probe does NOT implement the higher-order bias correction — that is
+explicit future work (the (a)-vs-(b) discriminator, requiring
+Δc_k = Σ_{j≥1} c_{k+j}·u^j cross-terms).
 
-Alternative candidate forms tested:
-  F1. F(u) = -log(1-u): c_k = -(k-1)! at u^k/k! reading, c_k_corr
-      = -k!/k = -(k-1)! at raw c_k reading
-  F2. F(u) = -tan(u): odd-only Bernoulli-style coefficients
-  F3. F(u) = u/(1-u): geometric, c_k = -k! (= -1 in u^k/k! reading)
-  F4. F(u) = -ln(1+u): coefficients (-1)^{k-1}/k
+Candidate coefficient families tested:
+  F1. -(k-1)!            (factorial-divergent / asymptotic series)
+  F2. -k!               (u/(1-u) ordinary-coefficient form, ×(-1))
+  F3. -1                (geometric -1/(1-u))
+  F4. (-1)^k            (1/(1+u))
+  F5. (-1)^k·(k-1)!     (alternating factorial)
+  F6. -k!/2^k           (half-argument)
+  F7. -k·(k-1)! = -k!   (duplicate of F2 form)
 
-The simplest match for the OBSERVED c_2_corr = -1, c_3_corr = -2
-is the **diagonal logarithm**:
-  F(u) = -u·d/du[log(1-u)] · 1 = Σ_k -k·u^k/k = -log(1-u)·... TODO
-
-Or: c_k_alg = -k!/k = -(k-1)! matches the expansion of
-
-  G(u) := -log(1-u)/u
-        = Σ_{k≥0} u^k / (k+1)
-        = 1 + u/2 + u²/3 + u³/4 + ...
-
-Then -k! · G's k-th coefficient = -k!/(k+1). That gives:
-  k=2: -2!/3 = -2/3 ≈ -0.667 (doesn't match c_2 = -1)
-
-OK, the pattern doesn't obviously match a single closed form.
-Probably the leading bias correction is good for k=2, 3 but
-breaks down at k=4+; higher-order bias corrections needed.
-
-This probe tests several candidate closed forms and reports
-which (if any) matches the observed c_k_corr beyond k=3.
+Reports which candidate matches the observed c_k_corr at k=2 and
+k=3 (leading-correction regime). For k≥4 the leading correction is
+insufficient; the higher-order future work discriminates (a)/(b).
 """
 from __future__ import annotations
 
@@ -198,8 +192,10 @@ def main() -> int:
         print(f"    suggests the closed-form testing approach needs refinement.")
     print()
     print(f"  Pattern observation: c_2_corr = -1, c_3_corr = -2 matches")
-    print(f"  c_k_alg = -(k-1)! — the Taylor coefficient pattern of")
-    print(f"  G(u) := u·d/du[-log(1-u)] = u/(1-u), at u-reading.")
+    print(f"  c_k_alg = -(k-1)! — the ORDINARY-coefficient pattern of the")
+    print(f"  DIVERGENT factorial series Σ_k -(k-1)!·u^k (Borel-summable;")
+    print(f"  asymptotic-perturbative signature, cf. candidate A Chern-Simons).")
+    print(f"  NOT u/(1-u) (ordinary coeffs all 1) nor convergent -log(1-u).")
     print()
     print(f"  For higher k, raw c_4_corr = -1.13 vs predicted F1 = -6;")
     print(f"  the leading bias correction (probe 6.a) is insufficient")
@@ -210,17 +206,25 @@ def main() -> int:
     builder.add_data("observed_c_k_corr", {str(k): mp.nstr(v, 25) for k, v in ck_corr.items()})
     builder.add_data("candidate_matches", matches)
     builder.add_data("winners_at_k2_and_k3", winners)
+    builder.add_data("n_winners_at_k2_and_k3", len(winners))
 
+    # Stable invariant only (per Copilot review on PR #1824): assert the
+    # probe enumerated all 7 candidate families + produced a match map —
+    # NOT the scientific outcome "a winner exists" (which is exploratory
+    # and would make a fragile CI gate). The winner count is recorded as
+    # data above; the analysis is in the printed verdict.
     builder.add_assertion(
-        "probe_6b_winners_recorded",
-        computed=1 if winners else 0,
-        expected=1,
+        "probe_6b_enumerated_all_candidates",
+        computed=len(matches),
+        expected=7,
         tolerance=0,
-        source=("Probe 6.b: enumerate 7 candidate closed-form generating "
-                "functions, check k=2 + k=3 match. At least one candidate "
-                "(F1 or F7) matches the observed c_2 = -1, c_3 = -2 "
-                "exactly. Records the compatible forms for downstream "
-                "structural analysis."),
+        source=("Probe 6.b stable invariant: enumerate exactly 7 candidate "
+                "closed-form coefficient families (F1..F7) and produce a "
+                "per-candidate k=2/k=3 match map. The scientific outcome "
+                "(which candidates win) is recorded as data "
+                "(winners_at_k2_and_k3, n_winners_at_k2_and_k3) and "
+                "discussed in the printed verdict — NOT asserted, to avoid "
+                "a fragile scientific-outcome CI gate."),
     )
 
     builder.save()

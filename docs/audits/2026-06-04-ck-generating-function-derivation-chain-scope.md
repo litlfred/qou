@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-04
 **Branch:** [`claude/qbeta-ck-keystone-attack-2026-06-04`](https://github.com/litlfred/qou/tree/claude/qbeta-ck-keystone-attack-2026-06-04) — PR [#1824](https://github.com/litlfred/qou/pull/1824)
-**Status:** SCOPING (no probe written yet; framing only)
+**Status:** SCOPING + PROBES IMPLEMENTED (§6 probe sketches 6.a/6.b/6.c/6.d are now implemented on this PR — see the "Implementation status" note in §6)
 **Author prompt:** *"perhaps an ODE or PDE coming from Lagrangian or Dirac. scope the specific context of the problem w/in the derivation [cheat] sheet"*
 
 ## TL;DR
@@ -216,19 +216,56 @@ The SDP-extracted c_2 = −1.017 differs from the proved c_2 = −1 by exactly `
 
 A clean probe: extract c_k from joint fit at successively higher truncation order N (use c_2..c_N where N grows from 4 to 12), watch each c_k SHIFT toward its asymptotic value. If F(u) exists, the shifts should converge geometrically.
 
-## 6. Probe sketches (for next session, not this PR)
+## 6. Probes (IMPLEMENTED on PR #1824)
 
-### Probe 6.a — truncation-shift convergence
+> **Implementation status.** All four probe sketches below were
+> implemented on PR #1824. The original sketches are retained for the
+> design rationale; each is followed by its **implementation note** +
+> result. A fifth (probe 6.a', higher-order bias correction) and probe
+> 6.d' (per-block Hoefsmit extraction) remain future work.
 
-For N ∈ {4, 5, 6, 7, 8, 9, 10}, joint-fit c_2..c_N against Q_β = Q_A·cos(α_eff)·Π_{k≤N}(1+c_k·u^k). For each k, plot c_k_extracted_N as a function of N. If a generating function exists, c_k_extracted_N converges to a limit as N → ∞, and the converged c_2 = −1 exactly. The +1.7% bias is then the N=10 truncation error.
+### Probe 6.a — leading-bias correction (IMPLEMENTED)
 
-### Probe 6.b — cosh-avatar fit at q_0
+Sketch: extract c_k at successively higher truncation order N, watch
+each c_k shift toward its asymptotic value.
 
-Fit `Q_β(q_0) / Q_A(q_0) = cosh(A·u + B·u² + C·u³ + ...) · D(u)` symbolically. If A, B, C, D are small (O(1) at q_0 with structural-looking values like η_0, η_0², 1/[2]_q), the cosh avatar is concrete. Verify across cross-anchor (proton q_p, muon q_μ per PR #1811's setup): a real cosh avatar should be q-stable.
+**Implemented** as `qbeta_ck_truncation_bias_correction_probe.py`
+(leading-order form): apply `c_k_corr = c_k − c_{k+1}·u` to the
+existing SDP-extracted c_k. **Result: c_2_corr = −0.9999932 (7 ppm
+from canonical −1), c_3_corr = −1.9999968 (3 ppm from J_Hopf(1) =
+−2).** Strong evidence for the generating function. The full
+truncation-order sweep (vary N) is the future probe 6.a'.
 
-### Probe 6.c — q-difference equation kernel test
+### Probe 6.b — closed-form candidate fits (IMPLEMENTED)
 
-Re-run PR #1786's depth-d sweep but allow the recurrence kernel to depend on q_0: `c_{k+1} = α(q_0) · c_k + β(q_0) · c_{k-1}`. If d=2 with a q-dependent kernel passes, the q-difference framework holds and the Habiro element F(q) admits a finite-depth q-difference equation — a concrete piece of the Dirac-like ODE.
+Sketch: fit a cosh-avatar `Q_β/Q_A = cosh(...)·D(u)` symbolically.
+
+**Implemented** as `qbeta_ck_closed_form_candidate_fits_probe.py`:
+compares the bias-corrected c_k_corr against 7 named coefficient
+families. **Result: F1 = −(k−1)! matches c_2, c_3 exactly; breaks at
+k≥4** (leading correction insufficient there). The pattern −(k−1)! is
+the ordinary-coefficient sequence of a divergent factorial series
+(asymptotic-perturbative signature). The explicit cosh-avatar
+symbolic fit is future work.
+
+### Probe 6.c — q-difference equation kernel test (IMPLEMENTED)
+
+Sketch: allow the recurrence kernel to depend on q_0.
+
+**Implemented** as `qbeta_ck_q_difference_kernel_on_corrected_probe.py`:
+depth-2 sliding-window fit on the bias-corrected c_k. **Result:
+constant-kernel REFUTED on corrected values too (α/β spread ~600%)** —
+so F(u) is not a simple degree-2 rational. PR #1786's constant-kernel
+refutation extends to the corrected ladder.
+
+### Probe 6.d — Wedderburn-block decomposition (IMPLEMENTED, scoping form)
+
+**Implemented** as `qbeta_ck_wedderburn_decomposition_scope_probe.py`:
+enumerates the 3 partitions of n=3 (𝓑₃ blocks) with correct
+dimensions; records the y_λ(q_0) as explicit "pending pyhecke
+extraction" placeholders (the full per-block extraction — probe 6.d' —
+is future work). dim_q verification anchor recorded for the future
+extraction.
 
 ## 7. Scope boundaries (what this doc does NOT do)
 

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T13:35:25.947692+00:00",
-  "commitSha": "4e9d27f31dbe86e657b45dd6884bdf6a95dc487e",
+  "computedAt": "2026-06-04T14:01:20.800293+00:00",
+  "commitSha": "b9488a99672ebc9fcd43249acbb9b52c24d0d714",
   "assertions": [
     {
       "name": "probe_6c_decisively_resolved",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "qbeta-ck-q-difference-kernel-on-corrected-probe",
   "scriptFile": "qbeta_ck_q_difference_kernel_on_corrected_probe.py",
-  "scriptHash": "570c06da3ede",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e9e6cf7c5161",
+  "scriptCommitSha": "f0d0353aec54c89c832cc90382ce6b8fe7e5cc26",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
