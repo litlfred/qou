@@ -1,0 +1,121 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:qbeta-canonical-markov-weights-explicit-instance",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.md"
+  },
+  "source_hashes": {
+    "md": "1d96e1ccad88",
+    "ts": "2819832c2920"
+  },
+  "criteria": {
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1d96e1ccad88",
+          "ts": "2819832c2920"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition header is formal; 'Honest scope' and 'Numerical sanity check' are separate subsections not interleaved with the statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:03:19.292Z",
+        "reviewed_sha": "b50027bc8a362a84acd0a9b49c92c279f5e507cf",
+        "notes": "Structure acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1d96e1ccad88",
+          "ts": "2819832c2920"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Markov weights explicit instance for H3 supports Q_β analysis in mass-endomorphism chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:03:19.329Z",
+        "reviewed_sha": "b50027bc8a362a84acd0a9b49c92c279f5e507cf",
+        "notes": "On topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1d96e1ccad88",
+          "ts": "2819832c2920"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is algebraic class-inhabitation claim with explicit sqrt-q formula, not an archimedean numerical claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:03:19.364Z",
+        "reviewed_sha": "b50027bc8a362a84acd0a9b49c92c279f5e507cf",
+        "notes": "Wall side appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1d96e1ccad88",
+          "ts": "2819832c2920"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Normalization axiom proof is a ring identity dischargeable by 'ring'; numerical sanity check provided separately.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:03:19.398Z",
+        "reviewed_sha": "b50027bc8a362a84acd0a9b49c92c279f5e507cf",
+        "notes": "Proof is correct and wall-appropriate."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "1d96e1ccad88",
+          "ts": "2819832c2920"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "No sibling .lean file present; lean.ref points to QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance but file is missing locally.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:03:19.431Z",
+        "reviewed_sha": "b50027bc8a362a84acd0a9b49c92c279f5e507cf",
+        "notes": "Lean formalization absent."
+      }
+    ]
+  },
+  "updated_at": "2026-06-05T15:03:19.431Z"
+}
