@@ -2564,7 +2564,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c13c53b29cd9",
+          "ts": "dc4928841f82",
+          "lean": "db6fdd53bb6d"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Sections 'Connection to the confinement LP' and 'Computational complexity' provide interpretation/motivation inside the proposition block with no companion interprets: remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:32:55.614Z",
+        "reviewed_sha": "63cf93676e9bf5d2034eed14737f6e6312027eb2",
+        "notes": "Move these sections to a linked remark block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c13c53b29cd9",
+          "ts": "dc4928841f82",
+          "lean": "db6fdd53bb6d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Frobenius positivity filter for even-A nuclear decays squarely belongs in particle-interactions.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:33:13.693Z",
+        "reviewed_sha": "63cf93676e9bf5d2034eed14737f6e6312027eb2",
+        "notes": "Well-placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c13c53b29cd9",
+          "ts": "dc4928841f82",
+          "lean": "db6fdd53bb6d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses algebraic Gram-matrix positivity G_{n_m}(c_m)>=0; no archimedean-only constructs (Real.sqrt/rpow/MeV units) in the statement itself.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:33:28.127Z",
+        "reviewed_sha": "63cf93676e9bf5d2034eed14737f6e6312027eb2",
+        "notes": "Correctly generic-algebraic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c13c53b29cd9",
+          "ts": "dc4928841f82",
+          "lean": "db6fdd53bb6d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No proof section present in this block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:33:28.160Z",
+        "reviewed_sha": "63cf93676e9bf5d2034eed14737f6e6312027eb2",
+        "notes": "N/A."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T14:33:28.160Z"
 }
