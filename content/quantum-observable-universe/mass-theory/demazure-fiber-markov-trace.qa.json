@@ -2572,7 +2572,73 @@
         "reviewed_sha": "17cf2fe3137f3726fd867e81987a1c49ef8debaa",
         "notes": "Significance/physical interpretation belongs in companion remark"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f1e96f8ab418",
+          "ts": "3a1c27111a04",
+          "lean": "a62a820fb6ef"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block defines algebraic Demazure-fiber Markov-trace functional; fits mass-theory's algebraic face (Wedderburn, Frobenius, Markov trace).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:50:14.655Z",
+        "reviewed_sha": "5dd1ce8531742c2bbc442332f60367fac124b312",
+        "notes": "Well-placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f1e96f8ab418",
+          "ts": "3a1c27111a04",
+          "lean": "a62a820fb6ef"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely algebraic: Demazure operators, Kashiwara crystals, formal q-specialization — no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:50:14.689Z",
+        "reviewed_sha": "5dd1ce8531742c2bbc442332f60367fac124b312",
+        "notes": "No wall violation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f1e96f8ab418",
+          "ts": "3a1c27111a04",
+          "lean": "a62a820fb6ef"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses Demazure operator recursion and Bruhat order; q appears as formal variable; no Real.* or MeV units.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:50:14.722Z",
+        "reviewed_sha": "5dd1ce8531742c2bbc442332f60367fac124b312",
+        "notes": "No wall violation."
+      }
     ]
   },
-  "updated_at": "2026-06-05T00:35:53.089Z"
+  "updated_at": "2026-06-05T00:50:14.722Z"
 }
