@@ -71,9 +71,10 @@ Markov trace / archimedean evaluation yields `c_3`. (This branch is based on
 ## First tractable sub-goals (future sessions, in order)
 
 1. **Pin the archimedean evaluation map** `τ : Habiro(ℤ) → ℝ` at `q₀`. What does
-   `τ` do to a Habiro element? (Parallels the α_EM element `[2]_q·(1−h²α)`,
-   PR #1511 — a fibre-level element whose *real* Taylor coefficients are what get
-   evaluated.)
+   `τ` do to a Habiro element? (Parallels the `α_EM` element `[2]_q·(1−h²α)`, PR #1511 — a fibre-level
+   element whose *real* Taylor coefficients are what get evaluated; here
+   `h = q−q⁻¹` is the fibre-level Hecke parameter, **not** the observable
+   `ℏ_q`.)
 2. **Categorical residue identification.** Is `A ≈ 1.804e-15` equal to `ℏ_q^N`?
    `b^N·ℏ_q^M`? `Q_β·ε_struct`? Re-derive at the proton-pinned `q₀`
    (1ppq-qbeta.md "Still active").
