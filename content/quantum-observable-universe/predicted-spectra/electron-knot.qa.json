@@ -1949,7 +1949,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5a7fca8b45d7",
+          "ts": "4098e95743b3",
+          "lean": "17d90dd11379"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block defines electron as trefoil in sec:fundamental-fermions; predicted-spectra Ch13 explicitly catalogs fundamental fermions.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:01:41.283Z",
+        "reviewed_sha": "058124d7942d2ff568c1431c8b71310f57e51768",
+        "notes": "Correct placement, no sibling overlap."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5a7fca8b45d7",
+          "ts": "4098e95743b3",
+          "lean": "17d90dd11379"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Narrative is purely structural (knot type, environment distinction); no MeV values, no Real.sqrt, no numeric q — matches archimedean chapter regime.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:01:54.477Z",
+        "reviewed_sha": "058124d7942d2ff568c1431c8b71310f57e51768",
+        "notes": "No wall violation; categorical statement appropriate here."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T01:01:54.477Z"
 }
