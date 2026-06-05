@@ -49,6 +49,8 @@ the difference — the formal statement is in
 """
 from __future__ import annotations
 
+import functools
+import json
 import sys
 from pathlib import Path
 
@@ -66,12 +68,13 @@ from _li_2_q_util import (  # noqa: E402
 )
 
 
+@functools.lru_cache(maxsize=1)
 def _load_tr_M_proton_at_q0() -> "mp.mpf":
     """Load the canonical H₃ proton Markov trace `tr_M(proton)` at q₀ from
     the chi-cache witness. Single source of the file/key/precision
     convention so the witness-data block and the human-readable print
-    cannot drift. Returns an mpmath mpf."""
-    import json
+    cannot drift. Cached (maxsize=1) — the cache file is fixed-precision,
+    so repeated calls in one run reuse the parse. Returns an mpmath mpf."""
     d = json.loads((HERE / "chi-proton-h3-at-q0-50dps.witness.json").read_text())
     return mp.mpf(d["tr_M_at_q0"])
 
@@ -253,6 +256,7 @@ def _emit_witness() -> None:
     # per-block density IS this trace. Compare side-by-side with the
     # global linking_weight scalar (the verified ≈2.378× SU(2) loss).
     cmp_pb = None
+    skip_reason = None
     try:
         tr_M_proton = _load_tr_M_proton_at_q0()
         cmp_pb = compare_density_readings(q, tr_M_proton)
@@ -261,8 +265,12 @@ def _emit_witness() -> None:
         vol = vol_borromean()
         vd_pb = geom_full_vd(vol, q, density=density_per_block(tr_M_proton))
         pb_equiv = abs(vd_pb - geom_full_per_block(vol, tr_M_proton, q))
-    except Exception as e:  # noqa: BLE001
-        print(f"(per-block density comparison skipped: {e!r})")
+    except (FileNotFoundError, json.JSONDecodeError, KeyError, ValueError) as e:
+        # Catch only the expected chi-cache load failures; an explicit skip
+        # datum is emitted below so a missing cache cannot silently pass as
+        # "no SU(2) loss measured". Unexpected exceptions propagate.
+        skip_reason = repr(e)
+        print(f"(per-block density comparison skipped: {skip_reason})")
         pb_equiv = None
 
     w = WitnessBuilder("mass-vol-density", engine="mpmath")
@@ -278,6 +286,9 @@ def _emit_witness() -> None:
                 mp.nstr(cmp_pb["ratio_global_over_per_block"], 16),
             "gate_verdict": cmp_pb["verdict"],
         })
+    else:
+        w.add_data("su2_density_loss",
+                   {"skipped": True, "reason": skip_reason or "unknown"})
     for name, val in [
         ("geom_full_equiv_vol_density", eq),
         ("h_eq_2sinh_log_q", h_id),
