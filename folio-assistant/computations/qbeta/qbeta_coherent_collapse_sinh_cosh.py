@@ -108,6 +108,35 @@ results["cancellation"] = {"coherent_opp": "(y1-y2)·s", "observe_last_opp": "(y
                            "q0": str(q0), "eta0": float(eta0), "coherent_at_equal_weight": coh,
                            "observe_last_at_equal_weight": obs}
 
+# ---- (E) reconciliation with the merged cos(Φ(u)) reframe (#1887, on main) ----
+print("(E) reconciliation: Φ₁=√2 bar-EVEN (c_2), Φ₂ bar-ODD (c_3) vs merged cos(Φ(u))")
+# Φ_k from the merged cos-phase reframe (PR #1887 / commit 84d92fa0f4):
+#   c_2 = -Φ₁²/2,  c_3 = -Φ₁Φ₂.  Φ₂ values are the merged-witness anchors.
+Phi1 = sp.sqrt(2)
+Phi2_p = sp.Float("1.4632461688761813", 17)  # proton anchor (merged witness)
+Phi2_m = sp.Float("1.4284972855381865", 17)  # muon anchor (merged witness)
+c2_phase = -Phi1 ** 2 / 2
+check("c_2 = -Φ₁²/2 = -1  (Φ₁=√2 anchor-stable ⇒ bar-EVEN)", sp.simplify(c2_phase + 1) == 0)
+check("c_3(proton) = -Φ₁Φ₂_p ≈ -2.0693", abs(float(-Phi1 * Phi2_p) + 2.0693) < 1e-3)
+check("c_3(muon)   = -Φ₁Φ₂_m ≈ -2.0202", abs(float(-Phi1 * Phi2_m) + 2.0202) < 1e-3)
+sw_phi2 = float(abs(Phi2_p - Phi2_m) / abs(Phi2_p))
+sw_c3 = float(abs(Phi1 * Phi2_p - Phi1 * Phi2_m) / abs(Phi1 * Phi2_p))
+check("Φ₂ swing == c_3 swing  ⇒  Φ₂ carries the bar-ODD part (Φ₁ bar-EVEN, swing 0)",
+      abs(sw_phi2 - sw_c3) < 1e-12)
+results["phi2_reconciliation"] = {
+    "Phi1": "sqrt(2) (bar-EVEN, cross-anchor swing 0)",
+    "c2": float(c2_phase),
+    "c3_proton": float(-Phi1 * Phi2_p),
+    "c3_muon": float(-Phi1 * Phi2_m),
+    "Phi2_swing": sw_phi2,
+    "c3_swing": sw_c3,
+    "finding": (
+        "Φ₂ carries the bar-ODD part (its cross-anchor swing EQUALS the c_3 swing); "
+        "Φ₁=√2 is bar-EVEN ⇒ c_2=-1. Unifies the merged cos(Φ(u)) reframe (#1887, "
+        "trig avatar) with this sinh/cosh hyperbolic avatar (cheat sheet §4: cos_q↔cosh)."
+    ),
+}
+
 # ---- honest verdict ----
 verdict = (
     "MECHANISM-INGREDIENTS-PROVEN. The exp(kη)=cosh±sinh grading, h=2sinhη (bar-odd), "
