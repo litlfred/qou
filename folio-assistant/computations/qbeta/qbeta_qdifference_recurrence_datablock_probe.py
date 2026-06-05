@@ -154,10 +154,15 @@ def main() -> int:
                 status = "UNMEASURED (unc > value)"
         print(f"  {k:>3}{fmt(c)[:24]:>24}{('exact' if k==2 else f'{float(dc):.2e}'):>16}"
               f"{('—' if k==2 else f'{float(rel)*100:.1f}%'):>14}  {status}")
+        # Serialize rel_uncertainty as JSON-valid: 0.0 for the exact c_2,
+        # null (None) for the c_4+ unmeasured case where rel = inf (c = 0)
+        # — float('inf') would emit non-RFC-8259 `Infinity`.
+        rel_json = (0.0 if k == 2
+                    else (None if rel == mpf("inf") else float(rel)))
         rows.append({
             "k": k, "c_k": fmt(c),
             "exp_uncertainty": "exact" if k == 2 else fmt(dc),
-            "rel_uncertainty": 0.0 if k == 2 else float(rel),
+            "rel_uncertainty": rel_json,
             "status": status,
         })
     print()
