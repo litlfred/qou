@@ -54,11 +54,8 @@ class BindingManyBodyJetFiltration (R : Type*) [CommRing R] where
     binding equals `m_e` times the truncated sum of Seiberg–Witten periods. -/
 theorem binding_eq_me_sw_series {R : Type*} [CommRing R]
     [B : BindingManyBodyJetFiltration R] :
-    BindingManyBodyJetFiltration.binding (R := R)
-      = BindingManyBodyJetFiltration.m_e (R := R)
-        * ∑ n ∈ Finset.range (BindingManyBodyJetFiltration.maxOrder (R := R)),
-            BindingManyBodyJetFiltration.swPeriod (R := R) n := by
-  rw [BindingManyBodyJetFiltration.series_eq, Finset.mul_sum]
-  exact Finset.sum_congr rfl (fun n _ => BindingManyBodyJetFiltration.term_eq n)
+    B.binding = B.m_e * ∑ n ∈ Finset.range B.maxOrder, B.swPeriod n := by
+  rw [B.series_eq, Finset.mul_sum]
+  exact Finset.sum_congr rfl (fun n _ => B.term_eq n)
 
 end QOU.Mass

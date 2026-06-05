@@ -184,6 +184,8 @@ export default chapter({
         "binding-manybody-jet-filtration",
         "binding-genfun-qdifference",
         "binding-genfun-qdifference-proof",
+        "binding-closure-conditional",
+        "binding-closure-conditional-proof",
         "lr-coefficient-hecke",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
