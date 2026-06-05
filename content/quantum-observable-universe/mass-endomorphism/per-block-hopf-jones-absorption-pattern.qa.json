@@ -2083,7 +2083,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "874a6d3d4685",
+          "ts": "293b3ac12773",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark on per-Wedderburn-block Hopf-Jones leading-order patterns fits mass-endomorphism chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:55:03.787Z",
+        "reviewed_sha": "c47bf012be554f6d4bad7fd2fa0ec6e6e52c8075",
+        "notes": "Directly interprets rem:chi-per-irrep-cyclotomic-closed-forms from same chapter."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T14:55:03.787Z"
 }
