@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md"
   },
   "source_hashes": {
-    "md": "605a057db320",
+    "md": "7c557c593cb2",
     "ts": "a4d0cbf170e3"
   },
   "criteria": {
@@ -171,6 +171,22 @@
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md:31: *Status flags* mirror the canonical derivation table: ✅ proved | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md:32: (sorry-free Lean), 🟢 derived (categorical, no fit), | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md:33: 🟡 conjecture-conditional, 🔴 open gate."
+      },
+      {
+        "field_hash": {
+          "md": "7c557c593cb2",
+          "ts": "a4d0cbf170e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:30:20.465Z",
+        "reviewed_sha": "76a1930fb66c44f1dec75e15132e8579479f8b71"
       }
     ],
     "voice-first-person-work": [
@@ -227,6 +243,22 @@
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md:31: *Status flags* mirror the canonical derivation table: ✅ proved"
+      },
+      {
+        "field_hash": {
+          "md": "7c557c593cb2",
+          "ts": "a4d0cbf170e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:30:20.465Z",
+        "reviewed_sha": "76a1930fb66c44f1dec75e15132e8579479f8b71"
       }
     ],
     "voice-editorializing": [
@@ -631,5 +663,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-04T14:04:47.686Z"
+  "updated_at": "2026-06-05T14:30:20.465Z"
 }
