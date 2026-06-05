@@ -1949,7 +1949,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1791d30a3f37",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Down quark definition in Fundamental fermions section of Predicted Particle Spectra chapter — direct fit.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:43:01.327Z",
+        "reviewed_sha": "daac984944f6fb65993609f52d0ddea37e4f3beb",
+        "notes": "Pass."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T00:43:01.327Z"
 }
