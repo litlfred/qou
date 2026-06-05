@@ -2586,7 +2586,51 @@
         "reviewed_sha": "4bb067fcdade518cbaca5c739d3ab48a077488e5",
         "notes": "Purely algebraic statement misplaced in archimedean chapter; no wall: field present."
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "dc8153d02445",
+          "ts": "778b4d9916b1",
+          "lean": "2068c2885b8b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block is in sec:topological-mass-formula-transcendence; CS evaluation faithfulness on hyperbolic knot brane tower directly supports volume-tower transcendence content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:49:32.453Z",
+        "reviewed_sha": "086c6198eb6cf7108b49710a9ccd09400fb9b6e8",
+        "notes": "Fits well."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "dc8153d02445",
+          "ts": "778b4d9916b1",
+          "lean": "2068c2885b8b"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Lean sibling is a stub: 'theorem CSEvaluationFaithful : True := by trivial' — proof is not formalized; validation: not_checked.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:49:32.486Z",
+        "reviewed_sha": "086c6198eb6cf7108b49710a9ccd09400fb9b6e8",
+        "notes": "Real formalization needed in QOU/Descartes/HyperbolicVolumeTranscendence.lean."
+      }
     ]
   },
-  "updated_at": "2026-06-05T00:33:47.074Z"
+  "updated_at": "2026-06-05T00:49:32.486Z"
 }
