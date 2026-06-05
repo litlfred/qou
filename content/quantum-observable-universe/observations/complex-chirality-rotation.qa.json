@@ -1903,7 +1903,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7245ed8770ad",
+          "ts": "d5e9005e7993",
+          "lean": "d386697fbe5b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "conjecture on chirality as phase rotation; CPT/particle physics interpretation fits observations chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:11:04.926Z",
+        "reviewed_sha": "fc693f631bfd72f4117c8b490468e3af495079fd",
+        "notes": "proper conjecture kind; uses complex-substrate and chirality-trefoil blocks; distinct from other chirality blocks"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T23:11:04.926Z"
 }

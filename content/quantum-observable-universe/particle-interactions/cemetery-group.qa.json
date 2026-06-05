@@ -1949,7 +1949,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "316ccaab9061"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block in sec:confinement-level titled 'Confinement level and the cemetery group'; definition of cemetery group is the primary subject of that section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:18:46.316Z",
+        "reviewed_sha": "e5eb47fa14cf8df0f164af384db4430b2fb08549",
+        "notes": "Perfect placement — section is named for this block"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "316ccaab9061"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition uses generic ring R throughout (H_n(R,q), dim_R M_d, result in R); no archimedean constructs (no Real.sqrt/rpow, no q≈value, no MeV)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:18:46.353Z",
+        "reviewed_sha": "e5eb47fa14cf8df0f164af384db4430b2fb08549",
+        "notes": "Purely generic-ring statement; no wall violation"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-04T23:18:46.353Z"
 }

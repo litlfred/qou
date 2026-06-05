@@ -1954,7 +1954,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "df60262904f3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets prop:em-coupling-projection in predicted-spectra chapter; CS correction to alpha_EM fits the chapter's scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:19:46.967Z",
+        "reviewed_sha": "838608192833a8f252d475e37cd8827851d6c086",
+        "notes": "Section fit is clear."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T01:19:46.967Z"
 }

@@ -1949,7 +1949,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "def:confined-particle in sec:confined-particles-shells (chapter manifest line 335); definition of confined particle tuple is primary content of this section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:35:54.583Z",
+        "reviewed_sha": "dcb64f82b96da079d94c2b5ed2dcf35b685925ef",
+        "notes": "Perfect placement — definition is the foundational block of its section"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement defines tuple (name, ell, [K]_M, n_0) using Markov-equivalence class and GS normal form; purely algebraic/categorical; no Real.sqrt/rpow/MeV/numeric q-value; particle-interactions is substrate chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:35:54.620Z",
+        "reviewed_sha": "dcb64f82b96da079d94c2b5ed2dcf35b685925ef",
+        "notes": "Generic-ring/categorical definition; wall compliant"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-04T23:35:54.620Z"
 }

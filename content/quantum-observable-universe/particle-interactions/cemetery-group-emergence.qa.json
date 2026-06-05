@@ -1918,7 +1918,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "24f3133a5f95",
+          "ts": "d315aded0dad",
+          "lean": "f48f3154c30c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block in sec:groebner-engine (chapter manifest line 304); GS kill-switch filter topic matches chapter scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:27:11.106Z",
+        "reviewed_sha": "dda76e2835ad96cd13e50b287b7ebc0e4f75823c",
+        "notes": "Correct placement in GS engine section"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T23:27:11.106Z"
 }

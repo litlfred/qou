@@ -1929,7 +1929,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "dbad4ad83f65",
+          "ts": "2025c9dcb011",
+          "lean": "74a715867d9b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "def:breit-wheeler-pair-production — Ch13 scope explicitly lists pair production; definition names a construction",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:35:16.472Z",
+        "reviewed_sha": "f7c0d85200febb023412fe461e75bc0d2c3672c5",
+        "notes": "Well-placed; no sibling redundancy"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "dbad4ad83f65",
+          "ts": "2025c9dcb011",
+          "lean": "74a715867d9b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "def:breit-wheeler-pair-production — statement uses Hecke algebra NF over generic q; no archimedean Real.* or numeric q≈<val> in statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:35:37.224Z",
+        "reviewed_sha": "dcb64f82b96da079d94c2b5ed2dcf35b685925ef",
+        "notes": "Archimedean numeric approx ('≈1.006 MeV', 'φ=0.0487') appear only in derivation body, not in the definition statement; predicted-spectra is an archimedean chapter so MeV values are appropriate here"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-04T23:35:37.224Z"
 }

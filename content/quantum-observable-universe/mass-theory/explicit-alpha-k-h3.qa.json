@@ -2349,6 +2349,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:explicit-alpha-k-h3' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "b02598bbb8d1",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean theorem explicit_alpha_k_h3 proves existence of a0=1,a1=0,a2=z^2,a3=hz^2+z matching narrative exactly; sorry-free.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:33:00.406Z",
+        "reviewed_sha": "caf0f0d20021b211ab0dccc6d8261a9511fcd855",
+        "notes": "Statement and Lean signature match."
       }
     ],
     "proof-lean-compiles": [
@@ -2790,7 +2810,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b02598bbb8d1",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "## Significance and ## Open sections contain interpretive/motivation prose in same block without companion interprets: remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:33:00.261Z",
+        "reviewed_sha": "caf0f0d20021b211ab0dccc6d8261a9511fcd855",
+        "notes": "Warn: substantive interpretation present in same block, no companion remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b02598bbb8d1",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Explicit alpha_k prefactor derivation for H_3 fits mass-theory chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:33:00.296Z",
+        "reviewed_sha": "caf0f0d20021b211ab0dccc6d8261a9511fcd855",
+        "notes": "Correct placement."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b02598bbb8d1",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses generic Field R with abstract v, z, h — no archimedean constructs in statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:33:00.335Z",
+        "reviewed_sha": "caf0f0d20021b211ab0dccc6d8261a9511fcd855",
+        "notes": "Purely algebraic statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b02598bbb8d1",
+          "ts": "58d35e3d5364",
+          "lean": "0c5906f4d9d0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses Markov trace cyclicity and Hecke relation algebraically; numerical check cited as verification only.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:33:00.373Z",
+        "reviewed_sha": "caf0f0d20021b211ab0dccc6d8261a9511fcd855",
+        "notes": "Algebraic proof, numeric only as footnote."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T01:33:00.406Z"
 }

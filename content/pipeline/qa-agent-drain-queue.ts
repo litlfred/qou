@@ -20,9 +20,19 @@
  * @module content/pipeline/qa-agent-drain-queue
  */
 import { writeFileSync, mkdirSync } from "node:fs";
-import { dirname } from "node:path";
+import { dirname, resolve } from "node:path";
 import { walkBlocks, hashFile, loadQaReport } from "./qa-utils";
 import { QA_CRITERIA_REGISTRY } from "./qa-criteria-registry";
+
+// Resolve to the repo root (this file lives at content/pipeline/) and
+// chdir there before any path work. The default `root` and `--out`
+// paths are repo-relative, and `walkBlocks` yields cwd-relative paths
+// whose chapter slug is read positionally (`b.ts.split("/")[2]`); both
+// only behave correctly when cwd is the repo root. Without this, an
+// invocation from a subdirectory (e.g. `cd content && bun run …`)
+// resolves the default root to a nonexistent path and silently emits a
+// 0-gap queue. chdir makes the script cwd-independent.
+process.chdir(resolve(import.meta.dir, "..", ".."));
 
 const root = process.argv[2] ?? "content/quantum-observable-universe";
 const bsIdx = process.argv.indexOf("--batch-size");

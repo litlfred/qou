@@ -1949,7 +1949,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1a417abf87ed",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "def:commutative-qou in sec:varying-euler-mirror (line 400); q=1 specialisation is natural home for hyperelliptic quintic and U(1)-equivariant reduction cited in block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:30:12.103Z",
+        "reviewed_sha": "29b0ed60e16090fc51d20ba80be79d55418a16d7",
+        "notes": "Block explicitly references hyperelliptic-quintic and u1-equivariant-reduction; section scope matches"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1a417abf87ed",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses mu∘c_{A,A}=mu (algebraic), q→1 limit (formal parameter, not numeric q≈value); no Real.sqrt/rpow/MeV/order hypotheses; particle-interactions is substrate/categorical chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:30:30.984Z",
+        "reviewed_sha": "29b0ed60e16090fc51d20ba80be79d55418a16d7",
+        "notes": "Pure algebraic commutativity condition; wall compliant"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-04T23:30:30.984Z"
 }

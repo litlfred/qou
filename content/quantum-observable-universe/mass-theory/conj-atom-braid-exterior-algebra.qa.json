@@ -1071,7 +1071,29 @@
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1b4058a4ae72",
+          "ts": "1864ae564004",
+          "lean": "c47872e1e8b2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory chapter covers atom-braid structure and exterior-algebra filtration shape; conjecture directly informs prop:per-braid-mass-tower in same chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:15:20.312Z",
+        "reviewed_sha": "0a73e5bd3c7a5df217fd67a7dc869156fb4a2bc3",
+        "notes": "Verified across D/T/3He/4He; no sibling in this chapter carries the Pascal-row filtration-shape claim; correctly placed"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T23:15:20.312Z"
 }

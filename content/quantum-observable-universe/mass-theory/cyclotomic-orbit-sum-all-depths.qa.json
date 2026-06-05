@@ -2598,7 +2598,92 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6b49927ba54c",
+          "ts": "1257462d8367",
+          "lean": "eb9983566c5d"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Sections '### Significance', '### Generalises Theorem B', '### Dimension consequences' embed interpretive/downstream prose in the proposition block; no companion interprets: remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:08:55.143Z",
+        "reviewed_sha": "e70769d4e4af9ac6206b8db2b8c211387105ccc7",
+        "notes": "Move to a linked remark block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6b49927ba54c",
+          "ts": "1257462d8367",
+          "lean": "eb9983566c5d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "General orbit-sum at all depths; mass-theory chapter hosts cyclotomic propositions; no same-section sibling carries this claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:08:55.176Z",
+        "reviewed_sha": "e70769d4e4af9ac6206b8db2b8c211387105ccc7"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6b49927ba54c",
+          "ts": "1257462d8367",
+          "lean": "eb9983566c5d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely algebraic: Cl_n orbit-sum via Li_n multiplication formula, no Real.sqrt/rpow/numeric q/MeV/ordering hypotheses.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:08:55.211Z",
+        "reviewed_sha": "e70769d4e4af9ac6206b8db2b8c211387105ccc7"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6b49927ba54c",
+          "ts": "1257462d8367",
+          "lean": "eb9983566c5d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof: multiplication formula + Re/Im extraction; all analytic number theory, no linarith/IVT/Real.*/numeric evaluation at q.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:08:55.248Z",
+        "reviewed_sha": "e70769d4e4af9ac6206b8db2b8c211387105ccc7"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T00:08:55.248Z"
 }

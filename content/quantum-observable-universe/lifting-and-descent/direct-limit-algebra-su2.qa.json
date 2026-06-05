@@ -1739,7 +1739,28 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "747bdf0dbf9f",
+          "ts": "97c98f11a171"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Example works out direct limit of jet endomorphism algebras for SU(2), interpreting def:direct-limit-algebra; squarely in scope for the direct-limit section of lifting-and-descent.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:18:14.619Z",
+        "reviewed_sha": "18b5f66794893ef5b456e2ae9a0a9064174ec1c4",
+        "notes": "No misplacement, no sibling redundancy, kind=example is appropriate."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T13:18:14.619Z"
 }

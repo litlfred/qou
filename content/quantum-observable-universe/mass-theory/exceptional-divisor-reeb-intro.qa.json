@@ -2079,7 +2079,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c10845c73fab",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose introduces exceptional-divisor/Reeb section within mass-theory chapter with correct structural arc.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:30:13.817Z",
+        "reviewed_sha": "d80c51d302622834ac3a0a1062773a58e37df6e0",
+        "notes": "Section intro fits chapter scope."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T01:30:13.817Z"
 }

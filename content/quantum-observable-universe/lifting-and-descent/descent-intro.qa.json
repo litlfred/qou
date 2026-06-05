@@ -2013,7 +2013,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9894a0ce5b8a",
+          "ts": "79bbd22716a9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Introductory prose scoping the descent involution, eigenspace decomposition, and mass-decomposition arc — matches chapter purpose exactly.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:23:00.031Z",
+        "reviewed_sha": "ba9a8e17ad36d3a63db420a30f7af3b7c42b7ced",
+        "notes": "Pure section intro; no provable claim asserted; no misfile or redundancy."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T01:23:00.031Z"
 }

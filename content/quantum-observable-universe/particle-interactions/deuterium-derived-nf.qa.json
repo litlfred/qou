@@ -1803,7 +1803,28 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a130babb64be",
+          "ts": "e369f56ee0a4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Example interprets prop:four-term-pair-nucleon; deuterium NF derivation is canonical particle-interactions content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:21:20.629Z",
+        "reviewed_sha": "c428a6747d9f5ab510a5099a4a836708cf70e271",
+        "notes": "Well-placed worked example of nucleon binding normal form."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T13:21:20.629Z"
 }

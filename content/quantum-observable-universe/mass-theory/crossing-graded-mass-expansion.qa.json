@@ -1903,7 +1903,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c68f66bad3fa",
+          "ts": "7349606b8679",
+          "lean": "7586a453eae6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "conj:crossing-graded-mass-expansion: mass endomorphism expansion graded by crossing count — squarely mass-theory scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:39:00.479Z",
+        "reviewed_sha": "f4d1389803b5971a151503d6f7efc59f0d94718f",
+        "notes": "On-topic conjecture; no sibling redundancy"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T23:39:00.479Z"
 }

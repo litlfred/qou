@@ -2349,6 +2349,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:golden-skew-dual-node' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "73fe3a86a975",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean golden_skew_dual_node proves qGold*qGoldDual=1 and both minimal polynomials — matches narrative claim that bar involution pairs 1/phi2 with phi2.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:16:45.161Z",
+        "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
+        "notes": "Narrative and Lean express the same pairing claim."
       }
     ],
     "proof-lean-compiles": [
@@ -2737,7 +2757,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "73fe3a86a975",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Post-proof sections 'Stability band', 'Why phi2 on the physical side?', 'Connection to Mobius fixed points', and 'Falsifiability' are interpretive prose inside the proposition block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:16:44.985Z",
+        "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
+        "notes": "Interpretive sections after the proof should move to a linked remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "73fe3a86a975",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Primary subject is bar-involution symmetry of the Hecke substrate parameter — belongs in braids-and-knots or quantum-observable-universes, not predicted-spectra.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:16:45.042Z",
+        "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
+        "notes": "Substrate parameter analysis is upstream of particle spectra."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "73fe3a86a975",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Core statement is algebraic but .ts flags archimedean specialisation over R and stability band section mentions q0=1.1097... numerical value.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:16:45.086Z",
+        "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
+        "notes": "Numerical q0 value in stability band section; generic-ring formulation possible per CLAUDE.md §7c."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "73fe3a86a975",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses polynomial substitution u=1/s0 and algebraic manipulation only; no archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:16:45.124Z",
+        "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
+        "notes": "Algebraic proof, no wall crossing."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T13:16:45.161Z"
 }

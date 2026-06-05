@@ -1935,7 +1935,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5640802858ad",
+          "ts": "8a257a6241f7",
+          "lean": "e8a547d1f73f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "remark on electron shell structure / atomic shells, interprets prop:torus-hopf-stability; chapter manifest explicitly lists 'atomic shells' in scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:05:52.375Z",
+        "reviewed_sha": "e27e428c49d6ebe4532e7122c43900250ae9de17",
+        "notes": "topic matches chapter scope; kind=remark with interprets is correct"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T01:05:52.375Z"
 }

@@ -2584,7 +2584,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c06d660ca519",
+          "ts": "1123af110716",
+          "lean": "e6b3e2dbd1c6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely mathematical with no physical interpretation language in the proposition itself.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:23:35.955Z",
+        "reviewed_sha": "1c520872f250ad4ab959fd79b8ac07bea82e75ed",
+        "notes": "Clean scholarly proposition; interpretive table in proof section is acceptable."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c06d660ca519",
+          "ts": "1123af110716",
+          "lean": "e6b3e2dbd1c6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition derives nuclear braid eigenvalue products; fits mass-theory chapter on Markov trace computations.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:23:56.349Z",
+        "reviewed_sha": "1c520872f250ad4ab959fd79b8ac07bea82e75ed",
+        "notes": "Natural placement in mass-theory."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c06d660ca519",
+          "ts": "1123af110716",
+          "lean": "e6b3e2dbd1c6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses q-deformation algebra over generic R; no archimedean specialisation (no Real.sqrt, ordering predicates) in the proposition statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:24:16.619Z",
+        "reviewed_sha": "1c520872f250ad4ab959fd79b8ac07bea82e75ed",
+        "notes": "Lean ref notes archimedean specialisation is in sibling file per §7c."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c06d660ca519",
+          "ts": "1123af110716",
+          "lean": "e6b3e2dbd1c6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses Hoefsmit eigenvalue algebra and crossing count combinatorics; the ≈ approximation for Coulomb term is marked with ≈ not =.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:24:16.653Z",
+        "reviewed_sha": "1c520872f250ad4ab959fd79b8ac07bea82e75ed",
+        "notes": "Verified against explicit Hoefsmit matrix; numerical checks are T=0 examples, not archimedean proofs."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T01:24:16.653Z"
 }

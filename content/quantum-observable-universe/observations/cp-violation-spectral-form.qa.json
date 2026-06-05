@@ -1920,7 +1920,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f7ebf24893f4",
+          "ts": "bec8ef7e1704",
+          "lean": "25447490fcf6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "conjecture in sec:complexity-interpretation; spectral form of delta_CP via imaginary part of alternating-block character; directly in section scope; no sibling restates",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:31:18.176Z",
+        "reviewed_sha": "8153a861cacd77cf4cb9a88be0307c0c7207e730",
+        "notes": "well-placed"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T23:31:18.176Z"
 }

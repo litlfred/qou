@@ -2632,7 +2632,85 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "06f9238131f9",
+          "ts": "eaf17ad091d8",
+          "lean": "8b5372668c86"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Proposition .md mixes statement with motivation ('This bridges the graded-Mikusiński framework directly to classical analytic number theory') and multi-section interpretation (§'Why this matters', §'Catalan's constant', §'Cross-references') inline; interpretation belongs in a linked remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:44:41.188Z",
+        "reviewed_sha": "466f9348d2cd49413f13f840a7e181d497ba82bd"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "06f9238131f9",
+          "ts": "eaf17ad091d8",
+          "lean": "8b5372668c86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:45:04.056Z",
+        "reviewed_sha": "466f9348d2cd49413f13f840a7e181d497ba82bd"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "06f9238131f9",
+          "ts": "eaf17ad091d8",
+          "lean": "8b5372668c86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:45:04.090Z",
+        "reviewed_sha": "466f9348d2cd49413f13f840a7e181d497ba82bd"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "06f9238131f9",
+          "ts": "eaf17ad091d8",
+          "lean": "8b5372668c86"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:45:04.126Z",
+        "reviewed_sha": "466f9348d2cd49413f13f840a7e181d497ba82bd"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T22:45:04.126Z"
 }

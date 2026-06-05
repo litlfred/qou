@@ -1803,7 +1803,28 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8e4ef41079a7",
+          "ts": "ccdb731f5675"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block in sec:categorical-action (chapter manifest line 265); topic matches section scope exactly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:16:14.142Z",
+        "reviewed_sha": "62a164ee85d945327c73435f30ed77588cfc236a",
+        "notes": "Correctly placed worked example for categorical action notation"
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-04T23:16:14.142Z"
 }

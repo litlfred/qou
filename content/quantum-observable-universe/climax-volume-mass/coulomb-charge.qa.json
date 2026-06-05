@@ -1646,6 +1646,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'def:coulomb-charge' → expected 'coulomb_charge'; Lean declares: R_q, q_param, q_inv_param, CoulombCharge, CoulombCharge.value.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "59b136209c29",
+          "ts": "30edaa956582",
+          "lean": "97662797a41f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Kind=definition (criterion applies to thm/prop/lem/cor only); md Q=½(n₊−n₋) matches lean CoulombCharge.value=(numPositive-numNegative)/2 (coulomb-charge.lean:52)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:53:58.443Z",
+        "reviewed_sha": "f8306c071f3c8fdaf4f5209938f65c005d0eca68",
+        "notes": "Criterion not applicable to definitions; definition content matches lean structure"
       }
     ],
     "proof-lean-compiles": [
@@ -1983,5 +2003,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-04T22:53:58.443Z"
 }

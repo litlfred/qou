@@ -2129,7 +2129,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "939dfdbba239",
+          "ts": "742127abd8d8"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets prop:schur-weyl-mass-decomposition; deuteron binding from first principles is core particle-interactions content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:22:46.318Z",
+        "reviewed_sha": "266d8e698e750ff27ea88eb0d49016332550e94c",
+        "notes": "Well-placed: nucleon binding derivation belongs in particle-interactions."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T13:22:46.318Z"
 }

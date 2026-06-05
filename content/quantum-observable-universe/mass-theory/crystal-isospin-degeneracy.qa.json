@@ -2332,6 +2332,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:crystal-isospin-degeneracy' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "51707fbaa23e",
+          "ts": "09e94ceb6588",
+          "lean": "fde2f549bb1c"
+        },
+        "result": "pass",
+        "severity": "major",
+        "evidence": "Lean CrystalEigenlineSignBlind.eigWord_sign_blind matches narrative: S_crystal invariant under sigma_i<->sigma_i^{-1}",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:41:49.365Z",
+        "reviewed_sha": "fd98f92353cdcb393e7573b37754d7231d3cc01b",
+        "notes": "Lean and narrative in sync"
       }
     ],
     "proof-lean-compiles": [
@@ -2703,7 +2723,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "51707fbaa23e",
+          "ts": "09e94ceb6588",
+          "lean": "fde2f549bb1c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Scope section is applicability caveat (canonical vs legacy convention), not interpretive prose; no Interpretation heading",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:41:49.225Z",
+        "reviewed_sha": "fd98f92353cdcb393e7573b37754d7231d3cc01b",
+        "notes": "Pass: statement+scope+proof only"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "51707fbaa23e",
+          "ts": "09e94ceb6588",
+          "lean": "fde2f549bb1c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "prop:crystal-isospin-degeneracy: crystal-limit shell-correction invariance under generator inversion — mass-theory scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:41:49.262Z",
+        "reviewed_sha": "fd98f92353cdcb393e7573b37754d7231d3cc01b",
+        "notes": "On-topic"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "51707fbaa23e",
+          "ts": "09e94ceb6588",
+          "lean": "fde2f549bb1c"
+        },
+        "result": "pass",
+        "severity": "major",
+        "evidence": "Statement over generic ring at q=0 crystal limit; no Real/MeV/numeric q hardcoded",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:41:49.298Z",
+        "reviewed_sha": "fd98f92353cdcb393e7573b37754d7231d3cc01b",
+        "notes": "Algebraic statement; no wall violation"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "51707fbaa23e",
+          "ts": "09e94ceb6588",
+          "lean": "fde2f549bb1c"
+        },
+        "result": "pass",
+        "severity": "major",
+        "evidence": "Proof via signed-permutation action on SYT basis, Hecke skein at q=0 — purely algebraic, no linarith/IVT/Real",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:41:49.332Z",
+        "reviewed_sha": "fd98f92353cdcb393e7573b37754d7231d3cc01b",
+        "notes": "Proof matches algebraic side"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T23:41:49.365Z"
 }

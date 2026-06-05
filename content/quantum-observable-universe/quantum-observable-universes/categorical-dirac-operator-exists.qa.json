@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1ee32fd60067",
+          "ts": "9468277ca030",
+          "lean": "7d7afeb2417a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare claim only: formula + cross-ref to uniqueness. No interpretive prose in block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:07:24.815Z",
+        "reviewed_sha": "26b58e3ed6158dda216862c9fdd8f7693af04ed3",
+        "notes": "Pass: statement+cross-ref only, no physical motivation or downstream consequences in block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1ee32fd60067",
+          "ts": "9468277ca030",
+          "lean": "7d7afeb2417a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Existence proposition for categorical Dirac operator; squarely in quantum-observable-universes chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:07:42.749Z",
+        "reviewed_sha": "26b58e3ed6158dda216862c9fdd8f7693af04ed3",
+        "notes": "Correct placement, no sibling redundancy."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1ee32fd60067",
+          "ts": "9468277ca030",
+          "lean": "7d7afeb2417a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Generic-ring chapter; statement uses q^{-1}, nabla, iota_xi — all categorical/algebraic, no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:07:42.784Z",
+        "reviewed_sha": "26b58e3ed6158dda216862c9fdd8f7693af04ed3",
+        "notes": "No Real.*, no numeric q value, no order hypothesis."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1ee32fd60067",
+          "ts": "9468277ca030",
+          "lean": "7d7afeb2417a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement block carries no proof body; proof lives in separate prf:categorical-dirac-operator-exists block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:07:42.818Z",
+        "reviewed_sha": "26b58e3ed6158dda216862c9fdd8f7693af04ed3",
+        "notes": "Nothing to flag; proof block is separate."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T23:07:42.818Z"
 }

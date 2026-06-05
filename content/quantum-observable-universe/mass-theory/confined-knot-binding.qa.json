@@ -2600,7 +2600,87 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7ddffc1c2013",
+          "ts": "9eb70919d225",
+          "lean": "877ad102aca9"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Block body contains 'Significance', 'Companion reading', 'Diagnostic application' subsections mixing physical interpretation into the proposition body rather than separating statement from remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:15:36.362Z",
+        "reviewed_sha": "566ba1c927a7f770504138d7b039ded80484d7c3"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7ddffc1c2013",
+          "ts": "9eb70919d225",
+          "lean": "877ad102aca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:15:36.395Z",
+        "reviewed_sha": "566ba1c927a7f770504138d7b039ded80484d7c3"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7ddffc1c2013",
+          "ts": "9eb70919d225",
+          "lean": "877ad102aca9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:15:36.428Z",
+        "reviewed_sha": "566ba1c927a7f770504138d7b039ded80484d7c3"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7ddffc1c2013",
+          "ts": "9eb70919d225",
+          "lean": "877ad102aca9"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "z = 1/(sqrt(q) + 1/sqrt(q)) in the statement/proof uses Real.sqrt; borderline archimedean construct in an otherwise algebraic Hecke proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:15:36.460Z",
+        "reviewed_sha": "566ba1c927a7f770504138d7b039ded80484d7c3"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T22:15:36.460Z"
 }

@@ -2586,7 +2586,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6a71aa12e45d",
+          "ts": "5e6f5df02231",
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Sections '## What this closes', '## What remains', '## Significance' contain substantive interpretive/motivational prose in same block; no companion interprets: remark exists.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:23:43.422Z",
+        "reviewed_sha": "5952c3f5dfd9ecc52f00a0a4060f23ecb30e2073",
+        "notes": "Content is status/scope commentary; borderline — could move to authorNotes or a companion remark."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6a71aa12e45d",
+          "ts": "5e6f5df02231",
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Banner declares archimedean specialisation over R (CLAUDE.md §7c); statement uses log/Li_2 at boundary — correctly flagged as archimedean.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:24:21.389Z",
+        "reviewed_sha": "1090fee3973e140a73e328788a1879467248a3dd",
+        "notes": "§7c banner present; wall correctly marked."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6a71aa12e45d",
+          "ts": "5e6f5df02231",
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof by simp/ring/linarith on unconditional building blocks; archimedean chapter with §7c banner declared — regime consistent.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:24:21.423Z",
+        "reviewed_sha": "1090fee3973e140a73e328788a1879467248a3dd",
+        "notes": "No wall violation in proof."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6a71aa12e45d",
+          "ts": "5e6f5df02231",
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition is in sec:archimedean-hartree-crystal-mass-tower-deeper; Cl_2 pentagon + Faddeev-Kashaev boundary closures are Mathlib bridge content directly within this Hartree/crystal-basis characterisation section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:46:12.960Z",
+        "reviewed_sha": "075e494beb7b6d3776290dc530bafec9fa88cd0b",
+        "notes": "Placement is apt."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T00:46:12.960Z"
 }

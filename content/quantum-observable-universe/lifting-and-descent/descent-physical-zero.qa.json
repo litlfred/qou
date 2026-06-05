@@ -1857,7 +1857,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "370edf3b753a",
+          "ts": "07a18d57cad1"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets def:mass-identity and discusses 0-dim descent (mass, leptons); topic is squarely in lifting-and-descent scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:10:26.781Z",
+        "reviewed_sha": "46b61b6bafb0b61b6c5ae85cf50fef42d24c9a52",
+        "notes": "Well-placed; no sibling restates the same claim."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T13:10:26.781Z"
 }

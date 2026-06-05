@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9b57eaab4051",
+          "ts": "b848a029651c",
+          "lean": "0374f5411a2c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block in sec:categorical-action (chapter manifest line 262); uniqueness of categorical action matches section scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:19:48.403Z",
+        "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
+        "notes": "Correct placement alongside existence proposition"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9b57eaab4051",
+          "ts": "b848a029651c",
+          "lean": "0374f5411a2c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "md: bare statement + uniqueness argument only; no interpretation/motivation prose present",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:19:48.365Z",
+        "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
+        "notes": "Statement is clean claim; proof in companion prf: block"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9b57eaab4051",
+          "ts": "b848a029651c",
+          "lean": "0374f5411a2c"
+        },
+        "result": "pass",
+        "severity": "major",
+        "evidence": "Statement is purely categorical/algebraic: rigid structure, ev_A, coev_A, categorical trace — no archimedean constructs",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:19:48.438Z",
+        "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
+        "notes": "Generic-ring chapter, statement stays generic; no q≈value, no Real.*, no ordering hypotheses"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9b57eaab4051",
+          "ts": "b848a029651c",
+          "lean": "0374f5411a2c"
+        },
+        "result": "pass",
+        "severity": "major",
+        "evidence": "Proof uses rigid structure uniqueness (categorical) and definition of trace; no linarith/IVT/Real.* machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:19:48.478Z",
+        "reviewed_sha": "1e44380a7234fce2043e25abc902fc58f37cd565",
+        "notes": "Proof method matches algebraic statement"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T23:19:48.478Z"
 }

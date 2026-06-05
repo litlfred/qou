@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "9d60f57510d8",
-    "ts": "5a6ee48216e2",
-    "lean": "9ad5823caf8c"
+    "ts": "5a6ee48216e2"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2349,6 +2348,25 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:em-coupling-bring-zero-mode' → expected 'em_coupling_bring_zero_mode'; Lean declares: bringZeroModeValue, hodgeRatio, hodgeRatio_at_g4, BringZeroModeBlochClass, bring_zero_mode_additive_form. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "9d60f57510d8",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "lean.ref points to qou:QOU.Archimedean.bring_zero_mode_additive_form but no .lean file exists; narrative claims conditional theorem proved without sorry, Lean unverifiable.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:16:05.899Z",
+        "reviewed_sha": "dd7390d475a379554965551c4865be6119451edc",
+        "notes": "Lean file must be created to establish equivalence."
       }
     ],
     "proof-lean-compiles": [
@@ -2754,7 +2772,91 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9d60f57510d8",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Sections 'Conjectural physical interpretation', 'Comparison with prior conjectures', 'Status: conjectural' contain substantive interpretive prose inside the proposition block with no companion interprets: remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:14:48.637Z",
+        "reviewed_sha": "dd7390d475a379554965551c4865be6119451edc",
+        "notes": "Interpretive content should move to a linked remark block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9d60f57510d8",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition derives 1/alpha_EM additive form — central predicted-spectra topic, no sibling redundancy.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:15:08.405Z",
+        "reviewed_sha": "dd7390d475a379554965551c4865be6119451edc",
+        "notes": "Well-placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9d60f57510d8",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement carries §3b-cond banner and lives in predicted-spectra (archimedean chapter); pi enters via Bloch-Suslin uniqueness, properly declared.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:15:28.480Z",
+        "reviewed_sha": "dd7390d475a379554965551c4865be6119451edc",
+        "notes": "Wall side correctly declared."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9d60f57510d8",
+          "ts": "5a6ee48216e2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No narrative **Proof.** section; algebraic identity closed by field_simp; ring per inline comment, matching archimedean-chapter regime.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:15:42.089Z",
+        "reviewed_sha": "dd7390d475a379554965551c4865be6119451edc",
+        "notes": "No wall crossing in proof body."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T01:16:05.899Z"
 }

@@ -1918,7 +1918,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "87fd3b86358f",
+          "ts": "d2140d141bd6",
+          "lean": "1da41e05e49e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Conjecture is about GS reduction engine + KLR/crystal correspondence; chapter §1 is 'The Gröbner-Shirshov reduction engine' — direct fit.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:26:04.387Z",
+        "reviewed_sha": "f090187429950007699a6d921b1df5bb249af521",
+        "notes": "Primary subject (GS normal forms, KLR) matches chapter §1 scope."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T01:26:04.387Z"
 }

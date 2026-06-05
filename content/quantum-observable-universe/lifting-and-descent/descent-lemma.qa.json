@@ -2482,7 +2482,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f775ff43fa38",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare claim; companion remark descent-lemma-su2 holds interpretation via interprets:lem:descent",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:30:46.825Z",
+        "reviewed_sha": "d80c51d302622834ac3a0a1062773a58e37df6e0",
+        "notes": "Interpretation properly externalised to linked remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f775ff43fa38",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Descent is explicitly listed in chapter scope (lifting-and-descent.ts comment: 'descent, mass decomposition'); block is a lemma about descent morphism",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:31:07.680Z",
+        "reviewed_sha": "d80c51d302622834ac3a0a1062773a58e37df6e0",
+        "notes": "Block correctly placed in Lifting and Descent chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f775ff43fa38",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Substrate chapter (lifting-and-descent) but statement's final clause names archimedean realisation inline (SU_{q_n}(2) sections) without wall: field or §7c banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:31:24.429Z",
+        "reviewed_sha": "d80c51d302622834ac3a0a1062773a58e37df6e0",
+        "notes": "Archimedean realisation clause belongs in a separate remark or behind a wall: banner; statement body is otherwise generic-ring."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f775ff43fa38",
+          "ts": "6a2245237f05",
+          "lean": "b0ff96f54f1b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No proof body in descent-lemma.md; proof is in separate descent-lemma-proof block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:31:38.406Z",
+        "reviewed_sha": "d80c51d302622834ac3a0a1062773a58e37df6e0",
+        "notes": "Lemma block contains statement only; wall-side-proof N/A here."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T01:31:38.406Z"
 }

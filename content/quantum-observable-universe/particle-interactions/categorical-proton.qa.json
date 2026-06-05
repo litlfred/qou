@@ -1981,7 +1981,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "232e6dd58508",
+          "ts": "e50e4b6bcde1",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block in sec:particle-interactions-orphan-reconnect; proton definition fits Ch 11 particle-interactions scope; no sibling carries same claim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:15:24.375Z",
+        "reviewed_sha": "0a73e5bd3c7a5df217fd67a7dc869156fb4a2bc3",
+        "notes": "Reconnected orphan section is correct home for proton definition; well-placed"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "232e6dd58508",
+          "ts": "e50e4b6bcde1",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": ".md has explicit §7c archimedean banner; .lean imports Real with GroundRingAnnotations note; q_0 numerics appear only in archimedean-bannered context",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T23:15:40.312Z",
+        "reviewed_sha": "a4b3614690c72bb43df845e1398a9419623e6343",
+        "notes": "lambda_scale mention is a content-accuracy issue not a wall violation; archimedean context correctly declared"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-04T23:15:40.312Z"
 }

@@ -1947,7 +1947,49 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "af927d554663",
+          "ts": "2dd1e1c4fce9",
+          "lean": "ae512472a8b5"
+        },
+        "result": "pass",
+        "evidence": "Categorical Laplace transform definition; correct quantum-observable-universes home",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:29:56.638Z",
+        "reviewed_sha": "b5eb84784ca943735ee1c4b56dcd20d106600d58",
+        "notes": "Correct chapter"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "af927d554663",
+          "ts": "2dd1e1c4fce9",
+          "lean": "ae512472a8b5"
+        },
+        "result": "pass",
+        "evidence": "Definition uses abstract Hopf pairing/grouplike; R-realisation explicitly flagged as archimedean specialisation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:29:56.675Z",
+        "reviewed_sha": "b5eb84784ca943735ee1c4b56dcd20d106600d58",
+        "notes": "No wall violation"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T00:29:56.675Z"
 }

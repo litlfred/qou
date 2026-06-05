@@ -966,7 +966,87 @@
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "9e8c23f33398"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Substantive physical interpretation inline (Why-H2-unique section, leptons/mesons motivation, physical-sector table) with no companion interprets: remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:23:42.796Z",
+        "reviewed_sha": "b709e99f847382bceba00f04daf190cad461633a"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "9e8c23f33398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:23:42.828Z",
+        "reviewed_sha": "b709e99f847382bceba00f04daf190cad461633a"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "9e8c23f33398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:23:42.862Z",
+        "reviewed_sha": "b709e99f847382bceba00f04daf190cad461633a"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "9e8c23f33398"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Proof mixes algebraic argument with numeric specialization at q_0 (lines 42-46) without naming the archimedean specialization step",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-04",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-04T22:23:42.894Z",
+        "reviewed_sha": "b709e99f847382bceba00f04daf190cad461633a"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-04T22:23:42.894Z"
 }

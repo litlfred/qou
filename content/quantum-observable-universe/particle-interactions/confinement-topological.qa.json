@@ -2564,7 +2564,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Block contains '## Physical interpretation' section with 3-item numbered list of physical meaning inside the proposition, no companion interprets: remark exists",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:17:53.769Z",
+        "reviewed_sha": "4b39880c7e38e87cecb844ef5e5685a812e47dab",
+        "notes": "Interpretive prose explaining physical meaning of confinement belongs in a linked remark block"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "LP-based confinement proof fits particle-interactions chapter; tags include confinement, borromean, linear-programming",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:18:10.557Z",
+        "reviewed_sha": "4b39880c7e38e87cecb844ef5e5685a812e47dab",
+        "notes": "Block correctly belongs in particle-interactions"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses q=q_0 numeric evaluation appropriate for particle-interactions (archimedean chapter); no archimedean construct misplaced in generic context",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:18:24.474Z",
+        "reviewed_sha": "4b39880c7e38e87cecb844ef5e5685a812e47dab",
+        "notes": "Chapter is archimedean; q_0 usage is correct"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses numeric evaluation at q_0 (lambda_- approx -0.855) and exhaustive enumeration over braid words — all archimedean machinery appropriate for this chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:18:33.747Z",
+        "reviewed_sha": "4b39880c7e38e87cecb844ef5e5685a812e47dab",
+        "notes": "Archimedean proof for archimedean chapter; no regime mismatch"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T01:18:33.747Z"
 }

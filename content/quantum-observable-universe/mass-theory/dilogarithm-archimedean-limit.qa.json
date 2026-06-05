@@ -1920,7 +1920,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7a7920d4217f",
+          "ts": "15ea8c8ca4a8",
+          "lean": "38849427a1ae"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Conjecture about q-Pochhammer archimedean limit fits mass-theory chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:16:50.215Z",
+        "reviewed_sha": "4b39880c7e38e87cecb844ef5e5685a812e47dab",
+        "notes": "Archimedean limit directly feeds mass-formula evaluations via tau_arch."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T01:16:50.215Z"
 }

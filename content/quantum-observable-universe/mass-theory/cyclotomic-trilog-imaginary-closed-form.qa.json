@@ -2229,6 +2229,26 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "26fba26c6a06",
+          "ts": "dd93d7e06255",
+          "lean": "e8101dc2ac01"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Lean closed_form_holds : True := by trivial — True-placeholder; narrative asserts Im(Li_3(zeta_n))=(n-1)(n-2)pi^3/(3n^3) for all n>=1; real universal claim absent from Lean.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:11:29.340Z",
+        "reviewed_sha": "3eb33d641431ddd03c85141adba6f9e7217b696d",
+        "notes": "Lean docstub only; actual formalization deferred to Lake-built tree."
       }
     ],
     "proof-lean-compiles": [
@@ -2598,7 +2618,92 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "26fba26c6a06",
+          "ts": "dd93d7e06255",
+          "lean": "e8101dc2ac01"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Sections '### Significance' (3 interpretive items), '### Asymptotic behaviour', '### Cross-references' embed motivation/downstream prose in proposition block; no companion interprets: remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:11:29.205Z",
+        "reviewed_sha": "3eb33d641431ddd03c85141adba6f9e7217b696d",
+        "notes": "Move to linked remark block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "26fba26c6a06",
+          "ts": "dd93d7e06255",
+          "lean": "e8101dc2ac01"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Im(Li_3(zeta_n)) closed form at all roots of unity; mass-theory chapter hosts cyclotomic polylogarithm propositions; no sibling carries this claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:11:29.238Z",
+        "reviewed_sha": "3eb33d641431ddd03c85141adba6f9e7217b696d"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "26fba26c6a06",
+          "ts": "dd93d7e06255",
+          "lean": "e8101dc2ac01"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is analytic number theory: (n-1)(n-2)pi^3/(3n^3) for all n>=1; no Real.sqrt/rpow/numeric-q/MeV/ordering hypotheses.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:11:29.272Z",
+        "reviewed_sha": "3eb33d641431ddd03c85141adba6f9e7217b696d"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "26fba26c6a06",
+          "ts": "dd93d7e06255",
+          "lean": "e8101dc2ac01"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof: Kummer reflection formula, principal log branch, algebraic simplification — classical complex analysis; no linarith/IVT/Real.*/numeric q.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:11:29.306Z",
+        "reviewed_sha": "3eb33d641431ddd03c85141adba6f9e7217b696d"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T00:11:29.340Z"
 }
