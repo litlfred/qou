@@ -1605,6 +1605,24 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.lean:79: Tactic `rewrite` failed: Did not find an occurrence of the pattern | content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.lean:99: Tactic `rewrite` failed: motive is not type correct: | content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.lean:135: unknown tactic | content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.lean:133: unsolved goals | content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.lean:125: unsolved goals"
+      },
+      {
+        "field_hash": {
+          "md": "c68f66bad3fa",
+          "ts": "7349606b8679",
+          "lean": "7586a453eae6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1927,5 +1945,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-04T23:39:00.479Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }
