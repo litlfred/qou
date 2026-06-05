@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T23:02:28.572557+00:00",
-  "commitSha": "eb21f57acc2f1ccbd1cc7705f52c91d4ec7406a8",
+  "computedAt": "2026-06-05T12:51:12.234985+00:00",
+  "commitSha": "94dbdde0b4736cffa5dad03bba7f2920f8d3a887",
   "assertions": [
     {
       "name": "geom_full_equiv_vol_density",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 14,
   "computation": "mass-vol-density",
   "scriptFile": "mass_vol_density.py",
-  "scriptHash": "d9db19b4cd95",
-  "scriptCommitSha": "6ef690133b9a8010ad7ae5b1d20a8d987522bca7",
+  "scriptHash": "c22786662016",
+  "scriptCommitSha": "94dbdde0b4736cffa5dad03bba7f2920f8d3a887",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

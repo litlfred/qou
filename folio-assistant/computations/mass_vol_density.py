@@ -256,10 +256,11 @@ def _emit_witness() -> None:
     try:
         tr_M_proton = _load_tr_M_proton_at_q0()
         cmp_pb = compare_density_readings(q, tr_M_proton)
-        # geom_full_vd with per-block density ≡ _li_2_q_util.geom_full_per_block
-        vd_pb = geom_full_vd(vol_borromean(), q,
-                             density=density_per_block(tr_M_proton))
-        pb_equiv = abs(vd_pb - geom_full_per_block(vol_borromean(), tr_M_proton, q))
+        # geom_full_vd with per-block density ≡ _li_2_q_util.geom_full_per_block.
+        # Compute Vol(𝓑₃) once (precision-dependent) and reuse for both.
+        vol = vol_borromean()
+        vd_pb = geom_full_vd(vol, q, density=density_per_block(tr_M_proton))
+        pb_equiv = abs(vd_pb - geom_full_per_block(vol, tr_M_proton, q))
     except Exception as e:  # noqa: BLE001
         print(f"(per-block density comparison skipped: {e!r})")
         pb_equiv = None
