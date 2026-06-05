@@ -50,13 +50,12 @@ import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 
-# Canonical anchors (PR #1786 + registry §3)
-C2_SHADOW_CANONICAL = -1
-C3_SHADOW_CANONICAL = -2  # J_Hopf(q=1)
-SHADOW_TOLERANCE = mp.mpf("1e-30")
-
-
 def main() -> int:
+    # Canonical anchors (PR #1786 + registry §3) — defined inside main()
+    # per Gemini review on PR #1890 (avoid module-level magic constants).
+    C2_SHADOW_CANONICAL = -1
+    C3_SHADOW_CANONICAL = -2  # J_Hopf(q=1)
+
     t0 = time.monotonic()
     builder = WitnessBuilder(
         "qbeta-q-eq-one-shadow-gate-probe",

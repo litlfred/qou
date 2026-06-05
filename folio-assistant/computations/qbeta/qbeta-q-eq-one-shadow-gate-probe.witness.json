@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T17:52:51.898132+00:00",
-  "commitSha": "c1f4920e0ae70d5224d602464a25f714dca48281",
+  "computedAt": "2026-06-05T17:59:28.173116+00:00",
+  "commitSha": "60d3fefe54c08b2fe4a8f97b21a38eaccb7048cc",
   "assertions": [
     {
       "name": "q_eq_one_shadow_gate_verified",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 95,
+  "durationMs": 75,
   "computation": "qbeta-q-eq-one-shadow-gate-probe",
   "scriptFile": "qbeta_q_eq_one_shadow_gate_probe.py",
-  "scriptHash": "bf528d7ce710",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0142d9cd9297",
+  "scriptCommitSha": "60d3fefe54c08b2fe4a8f97b21a38eaccb7048cc",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
