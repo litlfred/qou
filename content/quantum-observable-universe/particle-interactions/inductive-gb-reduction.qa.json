@@ -2566,7 +2566,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba",
+          "lean": "fc1fa567dcc0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition states polynomial scaling bound cleanly; no physical interpretation in statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:38:36.204Z",
+        "reviewed_sha": "1c18b56f87cb5e95270e904e9fe8a60f5b03a2db",
+        "notes": "Clean proposition voice."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba",
+          "lean": "fc1fa567dcc0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Placed in sec:groebner-engine; directly about GS reduction algorithm scaling — exact match.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:38:36.237Z",
+        "reviewed_sha": "1c18b56f87cb5e95270e904e9fe8a60f5b03a2db",
+        "notes": "Perfect fit for the GS engine section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba",
+          "lean": "fc1fa567dcc0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses symbolic q, Hecke algebra; no archimedean constructs, no MeV, no q≈value.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:38:36.270Z",
+        "reviewed_sha": "1c18b56f87cb5e95270e904e9fe8a60f5b03a2db",
+        "notes": "Purely algebraic statement on correct side of wall."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba",
+          "lean": "fc1fa567dcc0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses H_A = q - q^{-1} symbolically; Hecke square rules are algebraic identities over generic ring.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:38:36.301Z",
+        "reviewed_sha": "1c18b56f87cb5e95270e904e9fe8a60f5b03a2db",
+        "notes": "No archimedean content in proof."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T15:38:36.301Z"
 }
