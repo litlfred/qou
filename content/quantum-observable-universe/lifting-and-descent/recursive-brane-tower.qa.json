@@ -1879,7 +1879,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "54eb9d369c7a",
+          "ts": "cd481607e1b7",
+          "lean": "17d3867949e4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition of recursive brane tower via jet prolongation is the primary topic of lifting-and-descent chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T16:00:03.039Z",
+        "reviewed_sha": "eddb34d622da8ac42dce06f6923fcc3c712659c8",
+        "notes": "Well-placed definition."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "54eb9d369c7a",
+          "ts": "cd481607e1b7",
+          "lean": "17d3867949e4"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses generic ring R with no archimedean constructs, numeric q values, or order hypotheses.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T16:00:17.813Z",
+        "reviewed_sha": "eddb34d622da8ac42dce06f6923fcc3c712659c8",
+        "notes": "Correctly generic-ring statement."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T16:00:17.813Z"
 }
