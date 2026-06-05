@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c55227ea8e6e",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets prop:antiparticle-crossing-reversal; chirality/antiparticle content is core predicted-spectra particle-spectrum material.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:22:03.584Z",
+        "reviewed_sha": "3cff973350fb6cb483a829bfa791193c9ca6ac76",
+        "notes": "Well-placed in predicted-spectra; no duplicate."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T00:22:03.584Z"
 }
