@@ -87,11 +87,18 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 import sys
+from collections.abc import Callable
 from pathlib import Path
 
+# Single path-bridging mechanism: `_path_bridge` (imported above) already
+# puts the sibling compute clusters (substrate/, hecke/, …) on sys.path,
+# so `_precision` / `q_parameter` / `codata_constants` / `witness_base`
+# resolve.  The one explicit insert below is for the same-directory
+# `qbeta_utils` import (deterministic when the module is imported rather
+# than run as __main__, where the script dir is auto-added).
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(HERE.parent))
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
 
 from mpmath import mp, mpf, cos, cosh, sqrt, fabs, log  # noqa: E402
 
@@ -102,17 +109,20 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 from qbeta_utils import substrate_ladder_quantities  # noqa: E402
 
-# Tolerance for declaring a c_k match at one anchor.  Set at 100 ppm so
-# c_2 is allowed a small numerical wobble (c_2 = -1 EXACTLY at the
-# fibre, but candidates compute it through floating-point Taylor
+# Relative tolerance (ppm) for declaring a c_k match at one anchor.  Set
+# at 100 ppm so c_2 is allowed a small numerical wobble (c_2 = -1 EXACTLY
+# at the fibre, but candidates compute it through floating-point Taylor
 # expansion).
 TOL_PPM = 100
 
-# Below this absolute value, a target is treated as 0 — relative-ppm
-# comparison is replaced by an absolute check.  The c_k cache resolves
-# c_4+ to zero against Q_codata's precision floor (~1e-30), so we don't
-# claim discrimination on those coefficients.
-ZERO_THRESHOLD = mpf("1e-15")
+# Floor scale used to keep the ppm comparison dimensionally consistent
+# when a target is (near-)zero.  Misses are always computed as
+# `|pred - tgt| / max(|tgt|, ZERO_FLOOR) * 1e6`, i.e. RELATIVE-to-scale
+# ppm — never a raw absolute value mislabelled as ppm.  At K_MAX = 3
+# both targets (c_2 = -1, c_3 ≈ -2.07) are O(1), so the floor never
+# actually binds here; it is defensive for callers that raise K_MAX
+# (c_4+ resolve to ~0 against Q_codata's ~1e-30 precision floor).
+ZERO_FLOOR = mpf("1e-15")
 
 
 # ── c_k inversion (generalises qbeta_utils.c3_target_at to k ≥ 2) ──
@@ -146,7 +156,7 @@ def ck_target_at(q: mpf, q_codata: mpf, m_e: mpf, k_max: int = 5) -> list[mpf]:
 # ── Candidates (every entry is a closed form F(u, q); we extract its
 # Taylor coefficients in u at q numerically by central differences) ──
 
-def make_candidates(q: mpf) -> dict[str, callable]:
+def make_candidates(q: mpf) -> dict[str, Callable[[mpf], mpf]]:
     """Closed-form cosh/cos-avatar candidates with categorical α(q).
 
     Each returns the value F(u, q) as a function of u.  The forms are
@@ -190,7 +200,8 @@ def make_candidates(q: mpf) -> dict[str, callable]:
 
 # ── Taylor coefficient extraction via central differences ──
 
-def taylor_coeffs(F: callable, k_max: int, step: mpf = mpf("1e-8")) -> list[mpf]:
+def taylor_coeffs(F: Callable[[mpf], mpf], k_max: int,
+                  step: mpf = mpf("1e-8")) -> list[mpf]:
     """Return Taylor coefficients c_2..c_{k_max} of F(u) at u=0 via
     finite differences (central, even-symmetric so error ~step²).
 
@@ -267,16 +278,16 @@ def main() -> int:
         except (ValueError, OverflowError) as e:
             print(f"  {name:<40} ERROR: {e}")
             continue
+        # Relative-to-scale ppm: divide by max(|tgt|, ZERO_FLOOR) so the
+        # value is always a genuine relative ppm (never a raw absolute
+        # mislabelled as ppm), and the near-zero regime degrades
+        # gracefully instead of dividing by zero.
         misses_p = [
-            (float(fabs(pred - tgt) / fabs(tgt)) * 1e6
-             if fabs(tgt) > ZERO_THRESHOLD
-             else float(fabs(pred - tgt)) * 1e6)
+            float(fabs(pred - tgt) / max(fabs(tgt), ZERO_FLOOR)) * 1e6
             for pred, tgt in zip(ck_pred_p, ck_p)
         ]
         misses_m = [
-            (float(fabs(pred - tgt) / fabs(tgt)) * 1e6
-             if fabs(tgt) > ZERO_THRESHOLD
-             else float(fabs(pred - tgt)) * 1e6)
+            float(fabs(pred - tgt) / max(fabs(tgt), ZERO_FLOOR)) * 1e6
             for pred, tgt in zip(ck_pred_m, ck_m)
         ]
         max_miss = max(max(misses_p), max(misses_m))
@@ -353,7 +364,7 @@ def main() -> int:
         "Cross-anchor + multi-coefficient cosh-avatar test for the Q_β "
         "c_k generating-function hypothesis (PR #1824 §2.a). Tests "
         f"{len(names)} closed-form cos/cosh candidates with categorical "
-        "α(q) against the empirical c_2..c_5 targets at BOTH the proton-"
+        f"α(q) against the empirical c_2..c_{K_MAX} targets at BOTH the proton-"
         "pinned q_0 and the muon cross-check anchor. Strengthens the "
         "existing qbeta_cosh_q_sinh_q_candidate_scan (single-anchor, "
         "c_3-only, 16 candidates, ALL REFUTED) by requiring multi-"
