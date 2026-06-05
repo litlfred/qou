@@ -35,6 +35,7 @@ $$B(K)=\sum_n B_n,\quad \text{body-order }n=\text{jet/vertical degree }n=\lambda
 | **#1789** | nuclear-binding derivation-completeness ledger | register the **SW-residue / jet-filtration** framing as the active step-9b direction; share completeness metric | _pending_ |
 | **#1762** | 1ppQ roadmap + Geom_full bridge + 5-option attack | step-9a per-knot `Geom_full` wire-up is C1 here; fold the SW-residue route in as the step-9b option | _pending_ |
 | **#1811 / #1880** | Q_β fibre / c_3 generating-function recurrence | same **q-difference machinery** (L3); the binding `G` and the Q_β `c_k` recursion share the Habiro kernel — reuse `R(q,x)` extraction | _pending_ |
+| **#1888** (GAP-A `gap-a-path-b-lambda`) | per-atom λ(K) substrate-derivability | **adjacent axis, reciprocal cross-link established** — 3 intersection points: per-knot `Vol(K)`, per-block-vs-global density gate, bar-odd binding-difference observable | ✓ cross-linked (their ledger ↔ this) |
 
 ---
 
