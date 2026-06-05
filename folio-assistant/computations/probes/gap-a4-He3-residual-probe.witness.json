@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T13:12:45.110995+00:00",
-  "commitSha": "bbd6934bd1dc3b3dfccd42a6bcde3c2fc592015b",
+  "computedAt": "2026-06-05T13:55:46.716940+00:00",
+  "commitSha": "6c444460e18cb0b08d9978d39ac0d73a09295992",
   "assertions": [
     {
       "name": "L1b_He3_matches_PR1874_value",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 63,
+  "durationMs": 75,
   "computation": "gap-a4-He3-residual-probe",
   "scriptFile": "gap_a4_He3_residual_probe.py",
-  "scriptHash": "b840934de177",
-  "scriptCommitSha": "bbd6934bd1dc3b3dfccd42a6bcde3c2fc592015b",
+  "scriptHash": "52949257cf67",
+  "scriptCommitSha": "6c444460e18cb0b08d9978d39ac0d73a09295992",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -153,6 +153,6 @@
       "label": "sqrt([3]_q/[2]_q)",
       "relative_error": "0.006979543812467092333327714665534518386249969193603159113913291159926585"
     },
-    "synthesis_verdict": "The ³He L1b residual 1.221760 is within 5 % of 'sqrt([3]_q/[2]_q)' but not exact (rel_err +0.70%).  Suggestive structural signal but not a clean derivation; the residual likely combines this candidate with a sub-leading correction."
+    "synthesis_verdict": "The ³He L1b residual 1.221760 is within 5 % of 'sqrt([3]_q/[2]_q)' but not exact (rel_err +0.70%).  **Filed as NUMEROLOGY**: a non-exact near-match is by definition suggestive but not derivative.  The 'fix as numerology unless derivable' discipline requires (a) cross-isotope closure under a derived per-(Z, N) exponent rule and (b) categorical identification of the factor before this can be promoted to a structural lead.  Until both, this is a coincidence and direction 3 doesn't close productively at the single-atom layer."
   }
 }

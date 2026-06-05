@@ -231,20 +231,30 @@ def main() -> int:
         synthesis = (
             f"The ³He L1b residual ratio {float(residual_ratio):.6f} "
             f"matches the substrate quantity '{best_label}' to "
-            f"<0.5 % — a clean structural factor. §4 direction 3 "
-            f"identifies a candidate structural lead: the L1b form is "
-            f"correct up to a multiplicative {best_label} per-(Z=2, "
-            f"N=1) factor.  Next probe: test whether the same factor "
-            f"closes the corresponding L1b residuals at D, T, ⁴He "
-            f"(extrapolate the candidate's (Z, N) exponent structure)."
+            f"<0.5 %.  **Filed as NUMEROLOGY**: this is a single-atom "
+            f"numerical coincidence pending a categorical derivation. "
+            f"Per the author's 'fix as numerology unless derivable' "
+            f"rule, the match becomes a 'structural lead' only when "
+            f"(a) the same factor closes the corresponding L1b "
+            f"residuals at D, T, ⁴He under a derived per-(Z, N) "
+            f"exponent rule, AND (b) the categorical content of the "
+            f"factor (e.g. a half-step Schur-Weyl projection or a "
+            f"q-Plancherel weight) is identified.  Until both, this "
+            f"is a coincidence."
         )
     elif abs(best_rel) < mp.mpf("5e-2"):
         synthesis = (
             f"The ³He L1b residual {float(residual_ratio):.6f} is "
             f"within 5 % of '{best_label}' but not exact (rel_err "
-            f"{float(best_rel):+.2%}).  Suggestive structural signal "
-            f"but not a clean derivation; the residual likely combines "
-            f"this candidate with a sub-leading correction."
+            f"{float(best_rel):+.2%}).  **Filed as NUMEROLOGY**: a "
+            f"non-exact near-match is by definition suggestive but "
+            f"not derivative.  The 'fix as numerology unless "
+            f"derivable' discipline requires (a) cross-isotope "
+            f"closure under a derived per-(Z, N) exponent rule and "
+            f"(b) categorical identification of the factor before "
+            f"this can be promoted to a structural lead.  Until both, "
+            f"this is a coincidence and direction 3 doesn't close "
+            f"productively at the single-atom layer."
         )
     else:
         synthesis = (
