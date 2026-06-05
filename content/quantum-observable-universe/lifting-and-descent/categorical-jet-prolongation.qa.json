@@ -2552,7 +2552,29 @@
         "reviewed_sha": "85f6345f337b0fb6774b16c1bcbc0c1cfa084587",
         "notes": "No wall violation."
       }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f80ae5ac2584",
+          "ts": "f7e87434b955",
+          "lean": "343e095aa740"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition statement is pure categorical (Frobenius-Hopf, fibre functor); no archimedean machinery present.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:43:54.549Z",
+        "reviewed_sha": "87d07b714ac223e1a65d606a87556e50bdbf39cb",
+        "notes": "No proof body in .md; proof lives in sibling proof block. Wall-side clean."
+      }
     ]
   },
-  "updated_at": "2026-06-05T00:37:59.327Z"
+  "updated_at": "2026-06-05T00:43:54.549Z"
 }
