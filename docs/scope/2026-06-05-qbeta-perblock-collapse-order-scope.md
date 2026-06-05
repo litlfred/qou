@@ -13,6 +13,26 @@ long as possible, observe last."* This doc scopes the **unique, non-duplicative*
 test of that lever for the Q_β `c_3` residue-A. It is **scope only** — no result
 claim, no fit; the compute is for a focused session.
 
+## 🟢 Owner-confirmed (2026-06-05): the coherent-collapse cancellation IS the mechanism
+
+The owner confirmed that the **cancellation imposed by the coherent scalar
+collapse** `Σ_λ y_λ χ^λ` — *not* an external f-map — is the long-sought source
+of the `c_3` order gap ("this is what I have been pushing at"). This promotes the
+§9.2 lever from a posed question to the **load-bearing hypothesis** of the
+residue-A program.
+
+**Unification — the same lever is the A≥3 binding gate (§9.3).** The identical
+coherent collapse is the open frontier on the *binding* side: the scalar trace
+collapses the per-block q-Reeb phase `θ_λ` before observation, and A≥3 absolute
+binding needs the **un-collapsed** per-λ vector (`binding_reeb_phase_decomposition.py`
+already emits it). So *"don't collapse coherently / observe last"* is **one**
+structural lever across the framework's two open frontiers — Q_β `c_3` (this doc)
+and A≥3 absolute binding (cheat-sheet §9.3). A positive result here is direct
+evidence for the same fix there; a negative result constrains both. This is also
+the same cut as `Im(q)` discipline, `prop:delta-pre-archimedean`, and the
+fibre-vs-observable wall — all instances of *"preserve information until
+observation."*
+
 ## What the active siblings already settled (build on, don't repeat)
 
 | Sibling | Established | Consequence for this test |
