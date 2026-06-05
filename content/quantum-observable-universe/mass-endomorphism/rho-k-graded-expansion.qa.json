@@ -2349,6 +2349,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:rho-k-graded-expansion' → expected 'rho_k_graded_expansion'; Lean declares: GradedRhoKExpansion, rhoKGradedExpansion, rhoK, rhoK_LO_when_no_binding. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "abb70089848d",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Lean axiomatizes GradedRhoKExpansion as a typeclass with graded_decomp as a field (not a proved theorem); narrative states LO and single-gen pieces are 'proved' but Lean encodes them as class axioms with no_checked validation; pair-gen is 'open' in narrative and absent from Lean.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:23:36.605Z",
+        "reviewed_sha": "eadfd3eda273e7af9d76a1309c6a05dbc370ef7a",
+        "notes": "Narrative claims proved status for LO/single-gen pieces but Lean representation is axiomatic typeclass fields — notational gap a reader can reconcile but worth flagging."
       }
     ],
     "proof-lean-compiles": [
@@ -2788,7 +2808,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "abb70089848d",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Sections '## The three pieces', '## Identification with the six-term theorem', '## Significance', '## Witnesses' in the same block add motivation/empirical findings/downstream consequences beyond the bare statement; no companion remark linked via interprets:.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:22:37.873Z",
+        "reviewed_sha": "eadfd3eda273e7af9d76a1309c6a05dbc370ef7a",
+        "notes": "Interpretive and significance discussion should migrate to a linked remark block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "abb70089848d",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Graded ρ_K expansion is a direct structural result in mass-endomorphism; correctly placed in this chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:22:49.919Z",
+        "reviewed_sha": "eadfd3eda273e7af9d76a1309c6a05dbc370ef7a",
+        "notes": "No misplacement or redundancy."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "abb70089848d",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement includes MeV units ('≈ 3.7445 MeV'), numeric value for α, and 'empirical 0.18% accuracy' — archimedean content mixed into what is otherwise a categorical/substrate statement without a wall: banner.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:23:06.492Z",
+        "reviewed_sha": "eadfd3eda273e7af9d76a1309c6a05dbc370ef7a",
+        "notes": "Numeric MeV values and empirical accuracy figures in the statement body should carry a wall: archimedean banner or be moved to a remark."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "abb70089848d",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "LO piece proved via Markov multiplicativity (algebraic); single-gen via prop:atomic-braid-mass (categorical); Lean proof is typeclass field graded_decomp — no archimedean-only machinery in the proof.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:23:15.717Z",
+        "reviewed_sha": "eadfd3eda273e7af9d76a1309c6a05dbc370ef7a",
+        "notes": "Proof method matches statement side; no wall violation."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T15:23:36.605Z"
 }
