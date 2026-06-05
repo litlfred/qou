@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e8dc3cf89dfd",
+          "ts": "72cd17464d6b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark presents a falsifiable color-perception prediction derived from q_0 substrate parameter — core predicted-spectra content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T16:03:23.427Z",
+        "reviewed_sha": "b0de6e830c534168b445a19c6e9c737db29758df",
+        "notes": "Correctly placed in predicted-spectra."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T16:03:23.427Z"
 }
