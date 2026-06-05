@@ -158,9 +158,9 @@ def main() -> int:
 
     # Magnitude diagnostic: are ALL admissible candidates' slope ratios ~1/u³?
     # (i.e. the observable c_3 swing is ~1/u³ larger than any direct Reeb scalar)
-    fibre_gap = all(
-        fabs(mpf(str(r["slope_ratio_c3_over_S"]))) > mpf("1e4")
-        for r in rows if r["sign_matches_c3"]
+    matching = [r for r in rows if r["sign_matches_c3"]]
+    fibre_gap = bool(matching) and all(
+        abs(r["slope_ratio_c3_over_S"]) > 1e4 for r in matching
     )
 
     print("=" * 80)

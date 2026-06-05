@@ -81,7 +81,7 @@ from q_parameter import q_at, q_muon_at  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-from qbeta_utils import c3_target_at, substrate_ladder_quantities  # noqa: E402
+from qbeta_utils import c3_target_at  # noqa: E402
 
 
 def phase_coeffs(c2: mpf, c3: mpf) -> tuple[mpf, mpf]:
