@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T12:32:55.286570+00:00",
-  "commitSha": "21e9e4afa5a30142edb8cbe05703e71ad2edd4b0",
+  "computedAt": "2026-06-05T12:56:37.804711+00:00",
+  "commitSha": "7ebba2fbd76e693274cb7ceab9976657128976c3",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "8c9ce6665871",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptCommitSha": "2fd5b885c438d6401451854259badfa2a6f85d10",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -572,11 +572,10 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.5",
+    "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -2532,6 +2531,7 @@
         "mass-table-ppb.witness.json",
         "mass-tower-operator-valued-chain.witness.json",
         "mass-tower-operator-valued.witness.json",
+        "mass-vol-density.witness.json",
         "meson-3x4-structural-origin.witness.json",
         "meson-character-shortcut-l1.witness.json",
         "meson-eigenvalue-analysis.witness.json",
