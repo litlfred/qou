@@ -2166,7 +2166,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7b40c2cad784",
+          "ts": "615fc6eb7575"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose reference table closing ssec:cosimplicial-crossed-groupoid, summarising QOU↔Yekutieli correspondences central to the chapter's lifting theme.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:39:34.214Z",
+        "reviewed_sha": "4e17af1f6d34d8aca4a0a143b27ebaf101d637dd",
+        "notes": "Chapter-wide summary table placed at end of the cosimplicial section; fits the chapter scope; no sibling overlap."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T18:39:34.214Z"
 }
