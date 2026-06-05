@@ -2482,7 +2482,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare invariance claim; no interpretation/motivation prose embedded.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:13:28.888Z",
+        "reviewed_sha": "aa405ffe74d9db9c4f5a15debf9bc90731c13e7e",
+        "notes": "Clean: zigzag definition then equality assertion, remark block is separate."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition on brane-level weak equivalences fits lifting-and-descent chapter scope exactly.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:13:43.884Z",
+        "reviewed_sha": "aa405ffe74d9db9c4f5a15debf9bc90731c13e7e",
+        "notes": "Cosimplicial crossed groupoid / vacuum state invariance is core lifting-and-descent content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses categorical/algebraic language (cosimplicial maps, embeddings, trace τ); no archimedean Real.sqrt/linarith/ordering primitives.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:14:05.982Z",
+        "reviewed_sha": "aa405ffe74d9db9c4f5a15debf9bc90731c13e7e",
+        "notes": "lifting-and-descent is a substrate chapter; statement is correctly on the categorical side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No proof body in this block (proposition only); proof is in the separate proof block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:14:06.034Z",
+        "reviewed_sha": "aa405ffe74d9db9c4f5a15debf9bc90731c13e7e",
+        "notes": "Proof body absence is correct — no wall violation possible here."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:14:06.034Z"
 }
