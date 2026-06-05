@@ -54,6 +54,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from partition_utils import hook_lengths  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
@@ -77,7 +78,9 @@ A4_CLASS_SIZES = [1, 3, 4, 4]  # totals 12 ✓
 A4_IRREPS = ["trivial(1)", "ω(1)", "ω²(1)", "T(3)"]
 A4_DIMS = [1, 1, 1, 3]
 # Characters: trivial all 1; ω at (123) class is exp(2πi/3); etc.
-# We work with REAL parts (over ℂ the table is exact).
+# We work over ℂ: the A_4 character table has the complex cube roots
+# ω, ω² in the two 3-cycle columns of the two non-trivial 1-dim irreps;
+# inner products use mp.conj on the second argument.
 OMEGA = mp.exp(2j * mp.pi / 3)
 OMEGA2 = mp.exp(-2j * mp.pi / 3)
 A4_CHAR_TABLE = [
@@ -177,10 +180,16 @@ S5_TO_A5_CHAR = {
 
 
 def q_number(n: int, q_0: mp.mpf) -> mp.mpf:
+    """Symmetric q-integer [n]_q = (q^n − q^{−n}) / (q − q^{−1}).
+
+    Q=1-SAFE variant of the qint closure inside `murnaghan_nakayama.dim_q_lambda`:
+    the canonical helper hits 0/0 at q=1 (used by ρ_K race scripts which never
+    evaluate at the classical limit), but this probe DOES evaluate at q=1 in
+    `test_alpha_h4_a4` for the linking_weight identity check, so the limiting
+    value [n]_{q=1} = n is wired in explicitly.
+    """
     if n == 0:
         return mp.mpf(0)
-    # Handle the classical limit q → 1 where [n]_q → n (0/0 in the
-    # ratio form).
     if abs(q_0 - 1) < mp.mpf("1e-30"):
         return mp.mpf(n)
     return (q_0 ** n - q_0 ** (-n)) / (q_0 - q_0 ** (-1))
@@ -193,23 +202,19 @@ def q_factorial(n: int, q_0: mp.mpf) -> mp.mpf:
     return out
 
 
-def hook_lengths(lam: tuple) -> list:
-    out = []
-    L = len(lam)
-    for i in range(L):
-        for j in range(lam[i]):
-            arm = lam[i] - 1 - j
-            leg = sum(1 for k in range(i + 1, L) if lam[k] > j)
-            out.append(arm + leg + 1)
-    return out
-
-
 def dim_q_partition(lam: tuple, q_0: mp.mpf) -> mp.mpf:
-    """dim_q(V_λ) = [n]_q! / Π_{x∈λ} [h(x)]_q (q-hook formula)."""
+    """dim_q(V_λ) = [n]_q! / Π_{x∈λ} [h(x)]_q (q-hook formula).
+
+    Local q=1-safe wrapper around the canonical `dim_q_lambda` in
+    `folio-assistant/computations/murnaghan_nakayama.py` — same formula, same
+    hook-length input (`partition_utils.hook_lengths`), but routes through the
+    classical-limit-safe `q_number` so the linking_weight identity check at q=1
+    doesn't trip 0/0.
+    """
     n = sum(lam)
     num = q_factorial(n, q_0)
     den = mp.mpf(1)
-    for h in hook_lengths(lam):
+    for h in hook_lengths(list(lam)):
         den *= q_number(h, q_0)
     return num / den
 
@@ -218,13 +223,46 @@ def dim_q_partition(lam: tuple, q_0: mp.mpf) -> mp.mpf:
 
 
 def character_inner_product(chi1: list, chi2: list, class_sizes: list,
-                            group_order: int) -> mp.mpf:
-    """⟨χ_1, χ_2⟩ = (1/|G|) Σ_C |C| · χ_1(C) · χ_2(C)*."""
+                            group_order: int) -> mp.mpc:
+    """⟨χ_1, χ_2⟩ = (1/|G|) Σ_C |C| · χ_1(C) · χ_2(C)*.
+
+    Returns mp.mpc — even when both characters are real-valued, the
+    arithmetic flows through mp.mpc so callers must consume .real
+    (with an imaginary-part tolerance check) explicitly.
+    """
     out = mp.mpc(0)
     for s, c1, c2 in zip(class_sizes, chi1, chi2):
         c2c = mp.conj(c2) if isinstance(c2, mp.mpc) else c2
         out += mp.mpc(s) * c1 * c2c
     return out / group_order
+
+
+def is_nonneg_integer_multiplicity(m, tol: mp.mpf) -> tuple:
+    """Test whether a character inner-product result m is a non-negative
+    integer to tolerance tol.  Returns (ok: bool, n: int) — n is the
+    nearest-integer rounding (only meaningful when ok=True).
+
+    Three failure modes count as not-ok:
+    1. |Im(m)| > tol — character branching is over ℂ but multiplicities
+       are integers, so a non-vanishing imaginary part is a structural
+       error.
+    2. Re(m) < -tol — multiplicities are NON-NEGATIVE; negative real
+       part signals either a character-table bug or a Lehrer-Solomon
+       virtual representation that the branching framework rejects.
+    3. |Re(m) - nint(Re(m))| > tol — integer check via mpmath-native
+       nearest-integer to avoid float() rounding artefacts.
+    """
+    mc = m if isinstance(m, mp.mpc) else mp.mpc(m)
+    if abs(mc.imag) > tol:
+        return (False, 0)
+    mreal = mc.real
+    if mreal < -tol:
+        return (False, 0)
+    # mpmath-native nearest-integer rounding: mp.nint returns an mpf
+    n_mp = mp.nint(mreal)
+    if abs(mreal - n_mp) > tol:
+        return (False, 0)
+    return (True, int(n_mp))
 
 
 # ── α: H_4 ↔ A_4 branching test ─────────────────────────────────────
@@ -246,32 +284,29 @@ def test_alpha_h4_a4(q_0: mp.mpf) -> dict:
     per_partition = []
     a4_total_dim_q = [mp.mpf(0)] * len(A4_IRREPS)
     integer_mults_ok = True
+    tol = mp.mpf("1e-8")
     for lam in S4_PARTITIONS_4:
         chi_lam = S4_TO_A4_CHAR[lam]
         dq = dim_q_partition(lam, q_0)
         mults = []
+        mults_int = []
         for i, chi_i in enumerate(A4_CHAR_TABLE):
             m = character_inner_product(chi_lam, chi_i, A4_CLASS_SIZES, 12)
             mults.append(m)
-            if abs(m.imag if isinstance(m, mp.mpc) else 0) > mp.mpf("1e-10"):
-                # Imaginary part should vanish for integer multiplicities
-                pass
-            # Multiplicity should be a non-negative integer (within tol)
-            mreal = m.real if isinstance(m, mp.mpc) else m
-            if abs(mreal - round(float(mreal))) > mp.mpf("1e-8"):
+            ok, n = is_nonneg_integer_multiplicity(m, tol)
+            if not ok:
                 integer_mults_ok = False
-            a4_total_dim_q[i] += dq * mreal
+            mults_int.append(n)
+            a4_total_dim_q[i] += dq * mp.mpf(n)
         # Print row
         print(f"  {str(lam):<14} {mp.nstr(dq, 10):>14} ", end="")
-        for m in mults:
-            mr = m.real if isinstance(m, mp.mpc) else m
-            print(f"{int(round(float(mr))):>10}", end="")
+        for n in mults_int:
+            print(f"{n:>10}", end="")
         print()
         per_partition.append({
             "lambda": list(lam),
             "dim_q": str(dq),
-            "A4_multiplicities": [int(round(float(
-                m.real if isinstance(m, mp.mpc) else m))) for m in mults],
+            "A4_multiplicities": mults_int,
         })
 
     print("-" * 78)
@@ -316,34 +351,33 @@ def test_beta_h5_a5(q_0: mp.mpf) -> dict:
     per_partition = []
     a5_total_dim_q = [mp.mpf(0)] * len(A5_IRREPS)
     integer_mults_ok = True
+    tol = mp.mpf("1e-8")
     H_irrep_idx = A5_IRREPS.index("H(5)")
     h_irrep_partitions = []
     for lam in S5_PARTITIONS_5:
         chi_lam = S5_TO_A5_CHAR[lam]
         dq = dim_q_partition(lam, q_0)
         mults = []
+        mults_int = []
         for i, chi_i in enumerate(A5_CHAR_TABLE):
             m = character_inner_product(chi_lam, chi_i, A5_CLASS_SIZES, 60)
             mults.append(m)
-            mreal = m.real if isinstance(m, mp.mpc) else m
-            if abs(mreal - round(float(mreal))) > mp.mpf("1e-8"):
+            ok, n = is_nonneg_integer_multiplicity(m, tol)
+            if not ok:
                 integer_mults_ok = False
-            a5_total_dim_q[i] += dq * mreal
+            mults_int.append(n)
+            a5_total_dim_q[i] += dq * mp.mpf(n)
         # Track which partitions contribute to H (ℓ=2)
-        mh = mults[H_irrep_idx]
-        mh_real = mh.real if isinstance(mh, mp.mpc) else mh
-        if abs(float(mh_real)) > 0.5:
-            h_irrep_partitions.append((list(lam), int(round(float(mh_real)))))
+        if mults_int[H_irrep_idx] > 0:
+            h_irrep_partitions.append((list(lam), mults_int[H_irrep_idx]))
         print(f"  {str(lam):<16} {mp.nstr(dq, 10):>14} ", end="")
-        for m in mults:
-            mr = m.real if isinstance(m, mp.mpc) else m
-            print(f"{int(round(float(mr))):>9}", end="")
+        for n in mults_int:
+            print(f"{n:>9}", end="")
         print()
         per_partition.append({
             "lambda": list(lam),
             "dim_q": str(dq),
-            "A5_multiplicities": [int(round(float(
-                m.real if isinstance(m, mp.mpc) else m))) for m in mults],
+            "A5_multiplicities": mults_int,
         })
 
     print("-" * 95)
@@ -431,9 +465,23 @@ def main() -> int:
     for chunk in synthesis.split(". "):
         print(f"    {chunk.strip()}")
 
-    # Sanity assertions
-    # Σ |C|·dim²_A_4 = 12 (the regular A_4 rep decomposition)
-    a4_reg = sum(s * d ** 2 for s, d in zip(A4_CLASS_SIZES, [1, 1, 1, 1]))  # trivial check
+    # Sanity assertions: Burnside Σ (dim_irrep)² = |G|, plus class-size totals.
+    a4_class_total = sum(A4_CLASS_SIZES)
+    w.add_assertion(
+        "A4_class_sizes_sum_to_group_order",
+        computed=float(a4_class_total),
+        expected=12.0,
+        tolerance=1e-10,
+        source="Σ |C| over A_4 conjugacy classes = |A_4| = 12."
+    )
+    a5_class_total = sum(A5_CLASS_SIZES)
+    w.add_assertion(
+        "A5_class_sizes_sum_to_group_order",
+        computed=float(a5_class_total),
+        expected=60.0,
+        tolerance=1e-10,
+        source="Σ |C| over A_5 conjugacy classes = |A_5| = 60."
+    )
     sum_sq_a4 = sum(d * d for d in A4_DIMS)
     w.add_assertion(
         "A4_sum_squares_equals_group_order",
