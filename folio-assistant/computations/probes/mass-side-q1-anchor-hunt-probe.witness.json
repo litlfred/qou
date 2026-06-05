@@ -1,0 +1,451 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-05T19:12:14.485912+00:00",
+  "commitSha": "732844af7efdd7b31b77bef0b8dcfdf340559e0a",
+  "assertions": [
+    {
+      "name": "mass_side_q1_anchor_search_executed",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Mass-side §4(c) anchor hunt: searches Specht dimensions, pairwise ratios, and partition-sums for clean rational matches to the linking_weight q=1 shadows (5/2, 1, 9/4). Diagnostic only — any positive match is a CANDIDATE anchor, not a derivation. The structural anchor link is owner-gated multi-session research. The assertion records the search ran end-to-end; the witness data contains the candidate matches for future structural investigation."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "mass-side-q1-anchor-hunt-probe",
+  "scriptFile": "mass_side_q1_anchor_hunt_probe.py",
+  "scriptHash": "f2d35706f46c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Searches for a categorical anchor matching the q=1 shadow of linking_weight candidates (Family A: 5/2, via-Jones: 5/2, Bring color-tube: 1). Per PR #1896 mass-side §4(c) gap. Search space: Specht dimensions, hook-length sums/products, pairwise ratios, for partitions of n ∈ {2..6}. Reports any clean rational match.",
+  "contentBlock": "def:linking-weight-borromean-3-categorical",
+  "data": {
+    "targets": [
+      {
+        "numerator": 5,
+        "denominator": 2,
+        "decimal": 2.5
+      },
+      {
+        "numerator": 1,
+        "denominator": 1,
+        "decimal": 1.0
+      },
+      {
+        "numerator": 9,
+        "denominator": 4,
+        "decimal": 2.25
+      }
+    ],
+    "matches_specht_dim_over_small_int": [
+      {
+        "n": 2,
+        "partition": [
+          2
+        ],
+        "f_lambda": 1,
+        "denominator": 1,
+        "target": "1/1"
+      },
+      {
+        "n": 2,
+        "partition": [
+          1,
+          1
+        ],
+        "f_lambda": 1,
+        "denominator": 1,
+        "target": "1/1"
+      },
+      {
+        "n": 3,
+        "partition": [
+          3
+        ],
+        "f_lambda": 1,
+        "denominator": 1,
+        "target": "1/1"
+      },
+      {
+        "n": 3,
+        "partition": [
+          2,
+          1
+        ],
+        "f_lambda": 2,
+        "denominator": 2,
+        "target": "1/1"
+      },
+      {
+        "n": 3,
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 1,
+        "denominator": 1,
+        "target": "1/1"
+      },
+      {
+        "n": 4,
+        "partition": [
+          4
+        ],
+        "f_lambda": 1,
+        "denominator": 1,
+        "target": "1/1"
+      },
+      {
+        "n": 4,
+        "partition": [
+          3,
+          1
+        ],
+        "f_lambda": 3,
+        "denominator": 3,
+        "target": "1/1"
+      },
+      {
+        "n": 4,
+        "partition": [
+          2,
+          2
+        ],
+        "f_lambda": 2,
+        "denominator": 2,
+        "target": "1/1"
+      },
+      {
+        "n": 4,
+        "partition": [
+          2,
+          1,
+          1
+        ],
+        "f_lambda": 3,
+        "denominator": 3,
+        "target": "1/1"
+      },
+      {
+        "n": 4,
+        "partition": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 1,
+        "denominator": 1,
+        "target": "1/1"
+      },
+      {
+        "n": 5,
+        "partition": [
+          5
+        ],
+        "f_lambda": 1,
+        "denominator": 1,
+        "target": "1/1"
+      },
+      {
+        "n": 5,
+        "partition": [
+          4,
+          1
+        ],
+        "f_lambda": 4,
+        "denominator": 4,
+        "target": "1/1"
+      },
+      {
+        "n": 5,
+        "partition": [
+          3,
+          2
+        ],
+        "f_lambda": 5,
+        "denominator": 2,
+        "target": "5/2"
+      },
+      {
+        "n": 5,
+        "partition": [
+          3,
+          2
+        ],
+        "f_lambda": 5,
+        "denominator": 5,
+        "target": "1/1"
+      },
+      {
+        "n": 5,
+        "partition": [
+          3,
+          1,
+          1
+        ],
+        "f_lambda": 6,
+        "denominator": 6,
+        "target": "1/1"
+      },
+      {
+        "n": 5,
+        "partition": [
+          2,
+          2,
+          1
+        ],
+        "f_lambda": 5,
+        "denominator": 2,
+        "target": "5/2"
+      },
+      {
+        "n": 5,
+        "partition": [
+          2,
+          2,
+          1
+        ],
+        "f_lambda": 5,
+        "denominator": 5,
+        "target": "1/1"
+      },
+      {
+        "n": 5,
+        "partition": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 4,
+        "denominator": 4,
+        "target": "1/1"
+      },
+      {
+        "n": 5,
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 1,
+        "denominator": 1,
+        "target": "1/1"
+      },
+      {
+        "n": 6,
+        "partition": [
+          6
+        ],
+        "f_lambda": 1,
+        "denominator": 1,
+        "target": "1/1"
+      },
+      {
+        "n": 6,
+        "partition": [
+          5,
+          1
+        ],
+        "f_lambda": 5,
+        "denominator": 2,
+        "target": "5/2"
+      },
+      {
+        "n": 6,
+        "partition": [
+          5,
+          1
+        ],
+        "f_lambda": 5,
+        "denominator": 5,
+        "target": "1/1"
+      },
+      {
+        "n": 6,
+        "partition": [
+          4,
+          2
+        ],
+        "f_lambda": 9,
+        "denominator": 4,
+        "target": "9/4"
+      },
+      {
+        "n": 6,
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "f_lambda": 10,
+        "denominator": 4,
+        "target": "5/2"
+      },
+      {
+        "n": 6,
+        "partition": [
+          3,
+          3
+        ],
+        "f_lambda": 5,
+        "denominator": 2,
+        "target": "5/2"
+      },
+      {
+        "n": 6,
+        "partition": [
+          3,
+          3
+        ],
+        "f_lambda": 5,
+        "denominator": 5,
+        "target": "1/1"
+      },
+      {
+        "n": 6,
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 10,
+        "denominator": 4,
+        "target": "5/2"
+      },
+      {
+        "n": 6,
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "f_lambda": 5,
+        "denominator": 2,
+        "target": "5/2"
+      },
+      {
+        "n": 6,
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "f_lambda": 5,
+        "denominator": 5,
+        "target": "1/1"
+      },
+      {
+        "n": 6,
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "f_lambda": 9,
+        "denominator": 4,
+        "target": "9/4"
+      },
+      {
+        "n": 6,
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 5,
+        "denominator": 2,
+        "target": "5/2"
+      },
+      {
+        "n": 6,
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 5,
+        "denominator": 5,
+        "target": "1/1"
+      },
+      {
+        "n": 6,
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 1,
+        "denominator": 1,
+        "target": "1/1"
+      }
+    ],
+    "pairwise_ratio_matches_count": 32,
+    "sum_matches": [
+      {
+        "n": 2,
+        "statistic": "Σf^λ",
+        "denominator": 2,
+        "value": "1/1",
+        "target": "1/1"
+      },
+      {
+        "n": 2,
+        "statistic": "Σ(f^λ)²",
+        "denominator": 2,
+        "value": "1/1",
+        "target": "1/1"
+      },
+      {
+        "n": 3,
+        "statistic": "Σf^λ",
+        "denominator": 4,
+        "value": "1/1",
+        "target": "1/1"
+      },
+      {
+        "n": 3,
+        "statistic": "Σ(f^λ)²",
+        "denominator": 6,
+        "value": "1/1",
+        "target": "1/1"
+      },
+      {
+        "n": 4,
+        "statistic": "Σf^λ",
+        "denominator": 4,
+        "value": "5/2",
+        "target": "5/2"
+      }
+    ],
+    "structural_derivation_status": "OWNER-GATED — match identification ≠ structural derivation"
+  }
+}
