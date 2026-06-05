@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:jet-sw-tau-decomposition",
   lean: {
     ref: "qou:QOU.Brings.jet_sw_tau_decomposition",
-    validation: "not_checked",
+    validation: "validated",
   },
   title: "The Seiberg–Witten differential is the jet decomposition of the Archimedean functor",
   uses: [

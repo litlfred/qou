@@ -6,7 +6,7 @@ export default conjecture({
     "Binding many-body series equals the jet-order filtration: $B(K)=\\sum_n m_e\\,a_D^{(n)}$",
   lean: {
     ref: "qou:QOU.Mass.BindingManyBodyJetFiltration",
-    validation: "not_checked",
+    validation: "validated",
   },
   uses: [
     "prop:sw-period-residue-sum",
