@@ -179,6 +179,8 @@ export default chapter({
         "bring-residue-resolvent",
         "binding-alpha-shift-extension",
         "magic-A-binding-formula",
+        "bond-order-eq-jet-degree",
+        "bond-order-eq-jet-degree-proof",
         "binding-manybody-jet-filtration",
         "binding-genfun-qdifference",
         "binding-genfun-qdifference-proof",
