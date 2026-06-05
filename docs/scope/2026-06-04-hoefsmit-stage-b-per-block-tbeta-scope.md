@@ -1,10 +1,26 @@
 # Hoefsmit Stage B — per-block T_β,λ probe scoping
 
-**Date:** 2026-06-04
+**Date:** 2026-06-04 (status updated 2026-06-05)
 **Branch:** [`claude/qbeta-stageB-cosh-relabel-2026-06-04`](https://github.com/litlfred/qou/tree/claude/qbeta-stageB-cosh-relabel-2026-06-04) — PR [#1866](https://github.com/litlfred/qou/pull/1866)
-**Status:** SCOPING (infra-blocked — needs `pyhecke_native` Rust kernel)
+**Status:** SCOPING — **infra UNBLOCKED 2026-06-05** (see "Infra status" below); the cross-anchor per-block-localization probe is now implementable.
 **Parent:** [`3d142447`](https://github.com/litlfred/qou/commit/3d142447) (Stage A: Hoefsmit operator infra validated, per-block χ^λ at q_0)
 **Trigger:** the 1-factor (28-cand, PR #1860) and 2-factor (1323-cand, PR #1831) scalar c_3 search spaces are now both saturated; the c_3 categorical residue is "irreducibly operator-valued" per the audit `0e30e23e`. Stage A delivered the operator infra; Stage B is the natural next mechanical step.
+
+> **Infra status (2026-06-05 update).** The blocker recorded below — the
+> `chi_lambda_braid` Python fallback only supporting `q_value == q_0` —
+> was **resolved on main by [`dcd598f1`](https://github.com/litlfred/qou/commit/dcd598f1)**
+> ("fix(hecke_characters): chi_lambda_braid Python fallback now accepts
+> arbitrary q"). A sibling also shipped the closely-related
+> [`01802133`](https://github.com/litlfred/qou/commit/01802133) ("Stage C:
+> per-block χ^λ(trefoil) closed forms — no float64") and confirmed the
+> c_4+ precision floor in [`7f36be0e`](https://github.com/litlfred/qou/commit/7f36be0e).
+> The "Infra blocker" section below is retained for the historical record;
+> the cross-anchor per-block **c_3-localization** probe (the distinctive
+> piece Stage C did not do — Stage C computes the per-block closed forms
+> but does not run the cross-anchor ladder-inversion localization test)
+> is now implementable without the Rust kernel and is the recommended
+> next probe. Coordinate with the Stage C author before implementing to
+> avoid duplicating the per-block χ^λ computation.
 
 ## TL;DR
 
