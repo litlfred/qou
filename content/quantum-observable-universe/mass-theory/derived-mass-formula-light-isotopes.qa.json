@@ -2332,6 +2332,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:derived-mass-formula-light-isotopes' → expected 'derived_mass_formula_light_isotopes'; Lean declares: DerivedFormulaParams, ThreeFunctionals, deltaWigner, deltaT1, derivedLightIsotopeFormula.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "7b570a096cb0",
+          "ts": "3bca650a9df1",
+          "lean": "702a0d81e3e7"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Lean ref has validation:not_checked; narrative proof relies on numerical Python witness at 50 dps — Lean cannot verify this without sorry, creating a narrative/Lean mismatch.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:55:57.642Z",
+        "reviewed_sha": "d74fc32103d26099fa170ae1947f59861e9c5957",
+        "notes": "Lean stub needs sorry or witness-grounded proof to match narrative."
       }
     ],
     "proof-lean-compiles": [
@@ -2703,7 +2723,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7b570a096cb0",
+          "ts": "3bca650a9df1",
+          "lean": "702a0d81e3e7"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Block contains 'Empirical scorecard', 'Binding under-prediction', and 'Structural extension' sections with substantive interpretive content in the same block as the proposition; no companion interprets: remark exists.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:55:33.098Z",
+        "reviewed_sha": "d74fc32103d26099fa170ae1947f59861e9c5957",
+        "notes": "Interpretive material should move to a linked remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7b570a096cb0",
+          "ts": "3bca650a9df1",
+          "lean": "702a0d81e3e7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Derived mass formula for light isotopes (p through 7Li) fits mass-theory's physical/mass-predictions scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:55:57.537Z",
+        "reviewed_sha": "d74fc32103d26099fa170ae1947f59861e9c5957",
+        "notes": "Well-placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7b570a096cb0",
+          "ts": "3bca650a9df1",
+          "lean": "702a0d81e3e7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses m_p, m_n, q_0 numerical value, MeV-scale quantities — explicitly archimedean, matching mass-theory chapter regime.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:55:57.573Z",
+        "reviewed_sha": "d74fc32103d26099fa170ae1947f59861e9c5957",
+        "notes": "No wall violation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7b570a096cb0",
+          "ts": "3bca650a9df1",
+          "lean": "702a0d81e3e7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof evaluates at q_0 numerically (50 dps) using CODATA inputs; consistent with archimedean chapter regime.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:55:57.607Z",
+        "reviewed_sha": "d74fc32103d26099fa170ae1947f59861e9c5957",
+        "notes": "No wall violation."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T00:55:57.642Z"
 }
