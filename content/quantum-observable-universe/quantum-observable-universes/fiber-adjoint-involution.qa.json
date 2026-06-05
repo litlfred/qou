@@ -2554,7 +2554,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2d43b5c667cf",
+          "ts": "1e87926ef9da",
+          "lean": "31a996c9ce17"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare categorical claim; no interpretation/motivation section present.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:58:54.249Z",
+        "reviewed_sha": "b60cf044d92b8df02a56e22f64f0689dcc4c3c05",
+        "notes": "Clean statement-only block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2d43b5c667cf",
+          "ts": "1e87926ef9da",
+          "lean": "31a996c9ce17"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Fiber-adjoint involution is core QOU structure; fits quantum-observable-universes chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:59:07.518Z",
+        "reviewed_sha": "b60cf044d92b8df02a56e22f64f0689dcc4c3c05",
+        "notes": "Well-placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2d43b5c667cf",
+          "ts": "1e87926ef9da",
+          "lean": "31a996c9ce17"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses only categorical constructs (Frobenius form, adjoint object, projective line); no archimedean constructs or numeric q values.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:59:21.321Z",
+        "reviewed_sha": "b60cf044d92b8df02a56e22f64f0689dcc4c3c05",
+        "notes": "Generic-ring regime; no wall violation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2d43b5c667cf",
+          "ts": "1e87926ef9da",
+          "lean": "31a996c9ce17"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No proof body in .md (proof is in sibling prf: block); no archimedean machinery present.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:59:36.457Z",
+        "reviewed_sha": "b60cf044d92b8df02a56e22f64f0689dcc4c3c05",
+        "notes": "No wall violation."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T23:59:36.457Z"
 }
