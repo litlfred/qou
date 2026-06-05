@@ -129,6 +129,8 @@ export default chapter({
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-cartan-proof",
         "mi-sw-abelianisation-proof",
+        "sw-period-residue-sum",
+        "sw-period-residue-sum-proof",
         "coral-sector-coords",
         "descartes-braid-structure",
         "descartes-braid-structure-proof",
