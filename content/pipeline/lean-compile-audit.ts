@@ -25,7 +25,7 @@
  */
 
 import { existsSync, readFileSync, writeFileSync, readdirSync, statSync } from "fs";
-import { resolve, dirname, join, relative, extname } from "path";
+import { resolve, dirname, join, relative, extname, sep } from "path";
 import { fileURLToPath } from "url";
 import { hashFile } from "./qa-utils";
 
@@ -55,8 +55,10 @@ interface FileEntry {
 
 interface DiagnosticsReport {
   // `v2` adds the per-file `lean_sha`. `v1` caches (no `lean_sha`) are
-  // treated as stale by the checker until regenerated here.
-  $schema: "lean-compile-diagnostics/v2";
+  // still readable (treated as stale by the checker until regenerated
+  // here), so the schema tag is a union reflecting both on-disk shapes;
+  // every write below stamps `v2`.
+  $schema: "lean-compile-diagnostics/v1" | "lean-compile-diagnostics/v2";
   generated_at: string;
   files: Record<string, FileEntry>;
 }
@@ -67,9 +69,24 @@ const EMPTY_REPORT: DiagnosticsReport = {
   files: {},
 };
 
-/** Hash a repo-relative `.lean` path with the sidecar SHA convention. */
-function leanSha(repoRelPath: string): string | undefined {
-  return hashFile(join(REPO_ROOT, repoRelPath));
+/**
+ * Hash a `.lean` path with the sidecar SHA convention. Accepts either
+ * a repo-relative path (the diagnostics-cache key form) or an absolute
+ * path — `resolve` returns an absolute input unchanged and anchors a
+ * relative one at `REPO_ROOT`.
+ *
+ * Containment + extension guard: the diagnostics cache only ever hashes
+ * `.lean` files inside the repo, but `--ingest` keys come from JSONL
+ * input. Reject anything that resolves outside `REPO_ROOT` (absolute
+ * paths or `../` traversal) or is not a `.lean` file, so a crafted key
+ * cannot read arbitrary files. A rejected path returns `undefined`,
+ * which the checker treats as "no SHA → stale" (fail-safe).
+ */
+function leanSha(pathOrRelPath: string): string | undefined {
+  const abs = resolve(REPO_ROOT, pathOrRelPath);
+  if (abs !== REPO_ROOT && !abs.startsWith(REPO_ROOT + sep)) return undefined;
+  if (extname(abs) !== ".lean") return undefined;
+  return hashFile(abs);
 }
 
 function loadExistingReport(): DiagnosticsReport {
