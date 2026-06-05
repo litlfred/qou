@@ -50,7 +50,7 @@ questions:
 | Ledger | Question | Axis |
 |---|---|---|
 | this (`gap-a-path-b-lambda.md`) | substrate-derivability of the per-atom `λ(K)` in Path B | per-atom mass multiplier |
-| `2026-06-05-step9-binding-closure.md` | additive many-body binding series via SW-residue + q-difference | many-body binding closure |
+| [`2026-06-05-step9-binding-closure.md`](2026-06-05-step9-binding-closure.md) | additive many-body binding series via SW-residue + q-difference | many-body binding closure |
 
 The two intersect on: (a) the per-knot Vol(K) convention (T2 here ≡ C2 there), (b) the per-block-vs-global density gate (T3 here ≡ §4.B C1 there), (c) the bar-odd binding-difference observable (∼ L5 there; merged in #1871). My chain's negative results (`Δ_λ` Kashiwara, Markov stab, brane-tower content, L1 carrier-transplant) constrain their q-difference kernel `R(q,x)` derivation.
 
