@@ -2365,6 +2365,26 @@
         "reviewed_at": "2026-05-28T18:29:30.189Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
+      },
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Lean stub is 'theorem gb_spectral_sequence : True := trivial' — carries no spectral sequence quantifiers, no filtration, no E-infinity convergence; narrative claim is not reflected.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T12:54:49.839Z",
+        "reviewed_sha": "d851ee07be184c570284d5afaa540d2d594943ed",
+        "notes": "Stub does not encode the proposition."
       }
     ],
     "proof-lean-compiles": [
@@ -2751,7 +2771,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition statement is the bare convergence claim; all interpretation/motivation is in separate paragraphs after the statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T12:53:29.907Z",
+        "reviewed_sha": "d851ee07be184c570284d5afaa540d2d594943ed",
+        "notes": "Clean separation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block is a proposition about the GB-filtration spectral sequence on Hecke algebras — exactly mass-endomorphism's scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T12:53:47.449Z",
+        "reviewed_sha": "d851ee07be184c570284d5afaa540d2d594943ed",
+        "notes": "Fits chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is over generic ring R (H_n(R,q)); no archimedean constructs (no sqrt, linarith, real ordering) in the proposition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T12:54:02.895Z",
+        "reviewed_sha": "d851ee07be184c570284d5afaa540d2d594943ed",
+        "notes": "Ring-agnostic statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof cites Hochschild/Cartan-Eilenberg classical theorem (ring-agnostic); archimedean realisation is explicitly isolated to a sub-section and labelled as derived embedding.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T12:54:24.485Z",
+        "reviewed_sha": "d851ee07be184c570284d5afaa540d2d594943ed",
+        "notes": "Algebraic proof, wall respected."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T12:54:49.839Z"
 }
