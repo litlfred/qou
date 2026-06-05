@@ -85,8 +85,6 @@ C3_PROTON = "-2.0693"           # empirical c_3 at proton anchor
 C3_MUON = "-2.0097"             # empirical c_3 at muon anchor
 C3_STRUCTURAL = -2              # proven J_Hopf(q=1) = -2 (production)
 
-TOL = sp.Rational(1, 10 ** 12)
-
 
 def _close(a, b, tol=1e-9) -> bool:
     return abs(complex(a) - complex(b)) < tol

@@ -5,8 +5,6 @@ Run directly: `python3 tools/pyhecke/tests/test_trace_formal.py`.
 """
 from __future__ import annotations
 
-from fractions import Fraction
-
 import sympy as sp
 
 from pyhecke import gram
