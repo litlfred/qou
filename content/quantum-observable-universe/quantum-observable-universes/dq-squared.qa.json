@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c99bb88df467",
+          "ts": "08f0c5aa12d3",
+          "lean": "a57efade39bf"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "The 'In particular...' paragraph clarifies scope (when d_q^2=0), not physical motivation; no substantive interpretation mislocated.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:38:17.586Z",
+        "reviewed_sha": "c1e349075d04c6f25ca2a6f5d23678de3a782141",
+        "notes": "Short scope note is not interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c99bb88df467",
+          "ts": "08f0c5aa12d3",
+          "lean": "a57efade39bf"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block is in sec:dq-squared-elaboration; archimedean specialisation of d_q^2 fits the elaboration section scope exactly.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:38:35.698Z",
+        "reviewed_sha": "c1e349075d04c6f25ca2a6f5d23678de3a782141",
+        "notes": "Clean placement."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c99bb88df467",
+          "ts": "08f0c5aa12d3",
+          "lean": "a57efade39bf"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement explicitly declares 'archimedean specialisation'; uses differential geometry ops (d, L_xi) with no hard-coded numeric q value.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:38:35.739Z",
+        "reviewed_sha": "c1e349075d04c6f25ca2a6f5d23678de3a782141",
+        "notes": "Declared archimedean specialisation is correct banner usage."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c99bb88df467",
+          "ts": "08f0c5aa12d3",
+          "lean": "a57efade39bf"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses only algebraic/differential geometry (d^2=0, Cartan formula, L_xi-theta=0); no linarith, IVT, Real.*, or numeric evaluation.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:38:35.779Z",
+        "reviewed_sha": "c1e349075d04c6f25ca2a6f5d23678de3a782141",
+        "notes": "Proof method matches archimedean-specialisation statement."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T19:38:35.779Z"
 }
