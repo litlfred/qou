@@ -124,7 +124,7 @@ No fits wired; Δ_λ gate held. The closure remains GAP-A / SW-residue (PR #1871
 
 ## 6. References
 
-- Phase reframe + parity wall: PR #1887 (`QBetaReebSinhParity.lean`, `cos(Φ(u))`).
+- Phase reframe + parity wall: PR #1887 (`QBetaReebSinhParity.lean`, `cos(Φ(u))`); follow-up on `main` (`441a2b0b0e`): `QOU.QBeta.CoherentCollapseSinhCosh` (hyperbolic-avatar reconciliation), independently verifies `Φ₂ swing == c_3 swing == 0.0237` ⇒ Φ₂ IS the bar-odd carrier.
 - c_k recursion block (open kernel): [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md).
 - Binding G-recurrence sibling: [`prop:binding-genfun-qdifference`](../../content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.md) + [SW-residue / jet-filtration workplan](../workplans/2026-06-05-delta-lambda-sw-residue-qdifference-attack.md) (both on `main` as of PR #1871).
 - c_2 = −1 proof: PR #1602 (bar-even constraint).
