@@ -357,6 +357,10 @@ function run(): void {
         reviewed_at: nowIso,
         reviewed_sha: headSha,
       };
+      // Surface checker-supplied context (e.g. a cache-staleness reason
+      // from `proof-lean-compiles`) so the sidecar records WHY a result
+      // is what it is, not just the verdict.
+      if (checkRes.notes) entry.notes = checkRes.notes;
       if (checkRes.result === "fail") {
         entry.severity = def.default_severity;
         entry.evidence = checkRes.hits
