@@ -161,6 +161,41 @@ not a point. The machinery for Step 4 is now in place.
 This is the genuinely open categorical step; Steps 1–3 are its
 prerequisites.
 
+> **Status update (2026-06-05) — attack-1 superseded; the residue-A
+> derivation is OWNER-GATED, not a probe.** Three sibling results that
+> landed/advanced after this spec was written close the remaining
+> single-object routes and re-classify the open work:
+>
+> 1. **Finite roots of unity refuted** — PR #1821 (merged, c_3 complex-
+>    singularity probe): the c_3 hypersensitivity `dc_3/dq ≈ 4.66×10⁶`
+>    pins the nearest singularity at `b ≈ |c_3|/|dc_3/dq| ≈ 4.4×10⁻⁷`
+>    from q₀, while the nearest root of unity (ζ₁ = 1) is `|q₀−1| ≈ 0.11`
+>    — **~2.5×10⁵× farther**. So **no finite root of unity** can source
+>    the c_3 structure. This generalises the Hopf-probe NEGATIVE on this
+>    branch (only N=1 hit −2): **attack-1 below (Hopf cyclotomic element
+>    at a finite root) is retired** — the governing object is the full
+>    Habiro element at the **near-real singularity at q₀**, i.e. the
+>    residue-A simple pole at `u_substrate` (PR #1713/#1727), which is
+>    **anchor-independent**.
+> 2. **Single-formula space saturated + formally accepted cal-anchored**
+>    — [`2026-06-03-qbeta-residue-a-cal-anchored-acceptance.md`](../audits/2026-06-03-qbeta-residue-a-cal-anchored-acceptance.md):
+>    28 single-formula categorical candidates (+ n≤5 partitions +
+>    Demazure(sl₃,₄,₅), [`2026-06-04-qbeta-chain4-n5-demazure-verdict.md`](../audits/2026-06-04-qbeta-chain4-n5-demazure-verdict.md))
+>    all FAIL the 10 ppm gate. **Do not run a 7th single-formula ansatz.**
+> 3. **Obstruction + invariant already formalized by siblings** — the
+>    "narrow the probe" formalize-first deliverable is done: the
+>    singularity bound (#1821) and the **bar-even §4(b) kernel invariant**
+>    (`prop:q-beta-bar-even-kernel-invariant`, PR #1875, Lean + sympy)
+>    gate any candidate kernel. The remaining **F(q) kernel construction
+>    is owner-gated multi-session research** (refuted-class map §5),
+>    composing with PR #1839's `CFinite.recurrence_step` engine.
+>
+> **Net:** the productive open axis is **trace-level Markov stabilization**
+> `Ind_{H₃}^{H₄}` under `tr_M` (PR #1846/#1808), which *reuses* this
+> branch's Steps 1–3 machinery (`trace_formal.py` / `markov_trace_combo`)
+> and the **trace cyclicity** added to the Step-5 Lean module here (5b).
+> No new single-object probe is warranted from this branch.
+
 ### Knot-assignment verification ✅ DONE (2026-06-04) — cinquefoil REFUTED for c_3
 
 The spec's own guardrail ("verify the knot the Q_β c_3 rung corresponds
@@ -251,10 +286,22 @@ cache is 403-blocked). The companion design doc
 [`2026-06-04-step5-markov-trace-h3-concrete-lean.md`](2026-06-04-step5-markov-trace-h3-concrete-lean.md)
 records the cross-verification + the toolchain recipe.
 
-**Remaining (Step 5b, gated on Step 4):** wire the module into `QOU.lean`
-(it is currently an orphan, like the other `Machinery/*.lean`), add trace
-cyclicity `tr(uv)=tr(vu)` (needs the full H₃ multiplication), and
-discharge `markov_trace_origin` once Step 4 names the residue-A element.
+**Step 5b progress (2026-06-05):**
+
+- ✅ **Wired into `QOU.lean`** — `import QOU.Machinery.MarkovTraceOnHecke`
+  added to the library root, so the module now sits in CI's `lake build
+  QOU` graph (was an orphan, like the other `Machinery/*.lean`).
+- ✅ **Trace cyclicity `tr_M(u·v) = tr_M(v·u)` added** (`trM_cyclic`),
+  built on the full H₃ algebra product `mulNF` (right-multiplication
+  composed along basis words `R_{ab}=R_b∘R_a`). The cyclicity identity
+  and the `mulNF` composition order were pinned by a symbolic preflight
+  over `ℚ(z,h)` (all 36 basis pairs + the full bilinear statement) before
+  formalizing. This is exactly the trace symmetry the `Ind_{H₃}^{H₄}`
+  Markov-stabilization axis (PR #1846) relies on.
+- ⏳ **`markov_trace_origin` discharge** — still gated on Step 4 naming
+  the residue-A element, which is **owner-gated** (see the Step 4 status
+  update above); not actionable from this branch without an owner
+  decision on the F(q) kernel direction.
 
 **File:** `content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean`.
 
