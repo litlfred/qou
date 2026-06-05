@@ -18,9 +18,12 @@ bar-ANTISYMMETRIC coefficient**.
 The framework already contains a working *even/bar-symmetric* hyperbolic
 avatar — the trace-polynomial closed form (cheat-sheet §3):
 
-    P_m(h) = cosh((2m+1)η) / (2 cosh η),    η = log q,
+    P_m(h) = cosh((2m+1)η) / (2 cosh η),
+        η = log q,  h = q − q⁻¹ = 2 sinh η,  [2]_q = q + q⁻¹ = 2 cosh η,
 
-which sources the bar-symmetric trace family. Its natural **odd partner**
+which sources the bar-symmetric trace family. (Note `h = 2 sinh η`, the
+bar-ODD scalar; `2 cosh η = [2]_q` is the bar-EVEN one — they are
+distinct, which is the whole point of the parity split below.) Its natural **odd partner**
 is the `sinh` counterpart `sinh((2m+1)η)/(2 cosh η)`, which is exactly the
 holonomy that the **Reeb vector field** generates on the state bundle
 𝒮 = P ×_G ℂP¹: the Reeb flow `exp(t·R)` is a hyperbolic (`SU(1,1)`-type)
