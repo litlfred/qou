@@ -23,7 +23,9 @@ exponent rules:
   R2 — per-proton exponent: `sqrt([3]_q/[2]_q)^Z`
   R3 — per-neutron exponent: `sqrt([3]_q/[2]_q)^N`
   R4 — per-A exponent:       `sqrt([3]_q/[2]_q)^(Z+N) = sqrt([3]_q/[2]_q)^A`
-  R5 — Schur-Weyl half-step: `sqrt([3]_q/[2]_q)^(Z·N)` (only at A ≥ 2)
+  R5 — Schur-Weyl half-step: `sqrt([3]_q/[2]_q)^(Z·N)` (evaluates to
+        1 at p/n where Z·N = 0; that's the rule's natural prediction
+        for single nucleons, not a special-case skip)
   R6 — Z·N − 1 (centered):   `sqrt([3]_q/[2]_q)^(Z·N − 1)`
 
 If any rule closes all six rows to better than 5 %, the
@@ -78,18 +80,18 @@ def q_number_sym(n: int, q: sp.Expr) -> sp.Expr:
     return sp.Add(*(q ** (2 * k - (n - 1)) for k in range(n)))
 
 
-def linking_weight_family_a_sym(q: sp.Expr) -> sp.Expr:
-    return (3 * q ** 2 + 4 + 3 * q ** (-2)) / 4
-
-
 def hbar_q_sq(q_0: mp.mpf) -> mp.mpf:
     hbar = mp.mpf(1) - mp.mpf(1) / q_0
     return hbar * hbar
 
 
 def evaluate(expr: sp.Expr, q_0: mp.mpf) -> mp.mpf:
+    """Substitute every free symbol in `expr` with `q_0` at the live
+    working precision.  Passes `q_0` (mpf) directly to `sp.Float`
+    rather than via `str()` (avoid serialisation round-trip; Gemini
+    review on PR #1883)."""
     dps = mp.mp.dps
-    q_float = sp.Float(str(q_0), dps)
+    q_float = sp.Float(q_0, dps)
     subs = {sym: q_float for sym in expr.free_symbols}
     return mp.mpf(str(sp.N(expr.subs(subs), dps)))
 
@@ -100,7 +102,9 @@ def A_phase4(Z: int, N: int, vol_hyp: mp.mpf, q_0: mp.mpf) -> mp.mpf:
     three_q = q_number_sym(3, q_sym)
     spin_carrier = (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym)) ** (4 * N)
     color_carrier = three_q ** (2 * (Z - 1))
-    expr = sp.Float(str(vol_hyp), 50) / eight_q * color_carrier * spin_carrier
+    # Use live `mp.mp.dps` not hardcoded 50; pass `vol_hyp` directly
+    # (Gemini + Copilot review on PR #1883).
+    expr = sp.Float(vol_hyp, mp.mp.dps) / eight_q * color_carrier * spin_carrier
     return evaluate(expr, q_0)
 
 
@@ -301,7 +305,13 @@ def main() -> int:
         if p["atom"] == "3He"
     )
     w.add_assertion(
-        "He3_under_R5_close_to_PR1882",
+        # NEGATIVE CONTROL — this assertion deliberately encodes the
+        # ~24 % MISMATCH at ³He under R5 (the Schur-Weyl Z·N rule), to
+        # document that the most-plausible categorical exponent rule
+        # does NOT fit ³He.  Earlier name "He3_under_R5_close_to_PR1882"
+        # was misleading (suggested fit, not mismatch); renamed per
+        # Copilot review on PR #1883.
+        "negative_control_He3_under_R5_mismatch_24pct",
         computed=float(he3_R5_rel),
         # ³He has Z·N = 2 so R5 gives sqrt([3]_q/[2]_q)^2 = [3]_q/[2]_q
         # ≈ 1.514, not 1.222 → expected to be off by ~24 %
