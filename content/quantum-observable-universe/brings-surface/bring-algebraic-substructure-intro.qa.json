@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3be8c1f8b5d9",
+          "ts": "2ef8c90a18f9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose section preamble for brings-surface algebraic substructure section — correct kind and placement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T12:52:55.195Z",
+        "reviewed_sha": "74308a53584e8ca0cf4f4ff0cdde0e02ef8f4d31",
+        "notes": "Standard section intro prose; no misplacement."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T12:52:55.195Z"
 }
