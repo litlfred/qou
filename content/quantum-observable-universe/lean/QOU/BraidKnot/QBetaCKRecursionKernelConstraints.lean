@@ -26,7 +26,7 @@ lemmas **constrain** it without deriving it:
      kernel's leading coefficient IS the #1887 Φ₂ target;
   5. a *constant* depth-2 kernel then predicts `c_4 = 1 - c_3²`, refuted by the
      fitted `c_4 ≈ -0.972` (companion probe);
-  6. `a_1` is bar-ODD (inherits `c_3`'s bar-antisymmetry, the #1887 Reeb-sinh
+  6. `a_1` is bar-odd (inherits `c_3`'s bar-antisymmetry, the #1887 Reeb-sinh
      parity wall) — pruning the kernel search to bar-odd leading coefficients.
 
 LaTeX label: `prop:qbeta-ck-recursion-kernel-constraints`

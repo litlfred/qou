@@ -53,9 +53,18 @@ from qbeta_utils import c3_target_at  # noqa: E402
 # constant depth-2 prediction is tested against.  Ref: qbeta_1ppq_achieved.py.
 C4_FIT = mpf("-0.97157")
 
-# Refutation gate: the constant depth-2 prediction must miss the fitted c_4 by
-# more than this factor to count as refuted (sign-preserving, floor-robust).
-REFUTE_FACTOR = mpf("2")
+# Magnitude floor used in the relative miss metric, set near the c_k precision
+# floor (the regime where the CODATA-residual c_4 stops being meaningful).
+# Avoids the miss blowing up if a future C4_FIT happens to be near zero, and
+# keeps the metric definition floor-robust at this precision.
+C4_FLOOR = mpf("1e-3")
+
+# Refutation gate: a candidate is refuted iff (a) the predicted c_4 has the
+# OPPOSITE sign of the fit, OR (b) the relative magnitude miss
+# |pred - fit| / max(|fit|, C4_FLOOR) exceeds this factor.  Sign mismatch is
+# refutation by itself; this constant only sets the magnitude bar when signs
+# agree.
+REFUTE_REL_MISS = mpf("2")
 
 
 def main() -> int:
@@ -93,12 +102,27 @@ def main() -> int:
         # cross-check the closed form
         c4_pred_cf = 1 - c3 ** 2
 
-        miss_factor = fabs(c4_pred / C4_FIT)
-        refuted = miss_factor > REFUTE_FACTOR
+        # Refutation metric — split into sign + floor-robust magnitude:
+        #   sign_match  ≙ sign(c_4_pred) == sign(c_4_fit)
+        #   rel_miss    ≙ |pred - fit| / max(|fit|, C4_FLOOR)
+        # Sign mismatch is refutation on its own; otherwise the relative miss
+        # must exceed REFUTE_REL_MISS.  Both quantities are kept as mpf
+        # throughout (no float casts until printing); they are serialised via
+        # `fmt(...)` so witness diffs stay stable across reruns at the same dps.
+        denom = C4_FIT if fabs(C4_FIT) >= C4_FLOOR else (
+            C4_FLOOR if C4_FIT >= 0 else -C4_FLOOR
+        )
+        rel_miss = fabs(c4_pred - C4_FIT) / fabs(denom)
+        sign_match = (c4_pred > 0) == (C4_FIT > 0)
+        refuted = (not sign_match) or (rel_miss > REFUTE_REL_MISS)
         all_refuted = all_refuted and refuted
 
-        # bridge consistency: a1 (from -c3) must equal √2·Φ_2 to mp precision
+        # bridge consistency: a1 (from -c3) must equal √2·Φ_2 to mp precision.
+        # Keep the raw mpf in `bridge_err_raw` so the assertion can be checked
+        # without round-tripping through the formatted string (which can round
+        # small nonzero values down to 0.0 at output_dps).
         bridge_err = fabs(a1 - a1_via_phi)
+        bridge_err_raw = bridge_err
 
         print(f"  {name:<8}{float(c3):>14.6f}{float(a1):>14.6f}{float(a2):>10.1f}"
               f"{float(phi2):>16.6f}{float(a1_via_phi):>12.6f}")
@@ -112,10 +136,12 @@ def main() -> int:
             "phi_2": fmt(phi2),
             "a_1_via_sqrt2_phi2": fmt(a1_via_phi),
             "bridge_err_a1_vs_sqrt2phi2": fmt(bridge_err),
+            "_bridge_err_raw_mpf": bridge_err_raw,    # in-process; popped pre-serialise
             "c_4_predicted_constant_depth2": fmt(c4_pred),
             "c_4_predicted_closed_form_1_minus_c3sq": fmt(c4_pred_cf),
             "c_4_fitted": fmt(C4_FIT),
-            "miss_factor": float(miss_factor),
+            "sign_match": sign_match,
+            "rel_miss_to_fit": fmt(rel_miss),
             "constant_depth2_refuted": refuted,
         })
 
@@ -127,7 +153,7 @@ def main() -> int:
         print(f"  {a['anchor']}: constant depth-2 predicts c_4 = "
               f"{a['c_4_predicted_constant_depth2'][:10]} "
               f"(= 1 - c_3²), fitted c_4 = {float(C4_FIT):.5f}  "
-              f"⇒ miss ×{a['miss_factor']:.2f}  "
+              f"⇒ sign_match={a['sign_match']}, rel_miss={a['rel_miss_to_fit'][:8]}  "
               f"[{'REFUTED' if a['constant_depth2_refuted'] else 'consistent'}]")
     print()
     if all_refuted:
@@ -160,7 +186,12 @@ def main() -> int:
     )
     wb.set_content_block("conj:qbeta-precision-ladder")
     wb.add_data("c_4_fitted", fmt(C4_FIT))
-    wb.add_data("refute_factor_gate", fmt(REFUTE_FACTOR))
+    wb.add_data("c_4_floor", fmt(C4_FLOOR))
+    wb.add_data("refute_rel_miss_gate", fmt(REFUTE_REL_MISS))
+    # Strip the in-process raw mpf (not JSON-serialisable) before saving;
+    # the formatted high-precision string in `bridge_err_a1_vs_sqrt2phi2`
+    # remains for downstream consumers.
+    bridge_errs_raw = [a.pop("_bridge_err_raw_mpf") for a in anchors]
     wb.add_data("anchors", anchors)
     wb.add_data("verdict", verdict)
     wb.add_data("interpretation", (
@@ -172,17 +203,16 @@ def main() -> int:
         "prune the SW-residue/Hoefsmit kernel search (#1871) without deriving "
         "it."
     ))
-    # Invariants
+    # Invariants — checked from the raw mpf values captured during the loop,
+    # NOT round-tripped through the formatted string (which can round small
+    # nonzero values down to 0.0 at output_dps).
     wb.add_assertion(
         "constant_depth2_refuted_both_anchors",
         computed=1.0 if all_refuted else 0.0, expected=1.0,
     )
     wb.add_assertion(
         "bridge_a1_eq_sqrt2_phi2_exact",
-        computed=1.0 if all(
-            mpf(a["bridge_err_a1_vs_sqrt2phi2"]) < mpf("1e-40")
-            for a in anchors
-        ) else 0.0,
+        computed=1.0 if all(e < mpf("1e-40") for e in bridge_errs_raw) else 0.0,
         expected=1.0,
     )
 
