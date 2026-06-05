@@ -169,13 +169,20 @@ def main() -> int:
     # Get the u(q_0) constant + linear-in-t coefficient
     u0_const = u_t_series.subs(t, 0)
     a1 = u_t_series.coeff(t, 1)
-    if a1 == 0:
-        print(f"  CRITICAL: u'(q_0) = 0 (matches PR #1840 singularity).")
-        print(f"  u(q) = b * hbar^2 is QUADRATIC in (q - 1), so its derivative")
-        print(f"  at q = q_0 is small (not strictly zero, but tiny).")
-        print(f"  Series reversion still works if a1 != 0 exactly.")
+    # a1 is exact-symbolic from a high-precision-Float substitution.
+    # Check BOTH strict-zero (sp.simplify) and numeric-threshold
+    # (per Copilot review on PR #1875) — both routes are needed
+    # because the high-precision Float subst may give a tiny-but-
+    # nonzero a1 when the true value is exactly 0.
+    a1_strict_zero = sp.simplify(a1) == 0
+    a1_numeric_mag = mp.fabs(mp.mpf(str(sp.N(a1, 50))))
+    a1_effectively_zero = a1_strict_zero or a1_numeric_mag < mp.mpf("1e-30")
+    if a1_effectively_zero:
+        print(f"  CRITICAL: u'(q_0) effectively = 0 (matches PR #1840 singularity).")
+        print(f"  u(q) = b * hbar^2 is QUADRATIC in (q - 1).")
     print(f"    u(q_0)        = {sp.N(u0_const, 25)}")
     print(f"    du/dt at q_0  = {sp.N(a1, 25)}")
+    print(f"    |a1| numeric  = {float(a1_numeric_mag):.3e}")
     print()
 
     if a1_effectively_zero:
