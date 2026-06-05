@@ -540,7 +540,7 @@ def main() -> int:
         print(f"  Solver failed: {exc}")
         builder.add_data("solver_failure", str(exc))
         builder.add_assertion(
-            "c_2_matches_canonical_minus_one",
+            "operator_markov_route_is_not_canonical_ladder_target",
             computed=0, expected=1, tolerance=0,
             source=f"Solver failed with: {exc}",
         )

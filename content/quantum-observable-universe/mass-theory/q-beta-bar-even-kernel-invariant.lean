@@ -72,19 +72,20 @@ theorem bar_even_quadratic_term_in_t_squared {R : Type u} [CommRing R]
 
     For any coefficient $a$ and any natural $m$, the ladder factor
     $(1 + a \cdot u^{2m})$ with $u = b \cdot \hbar^2$ equals
-    $(1 + a \cdot (b \cdot \hbar^2)^{2m})$ — only even powers of
-    $u$ appear, so the Taylor expansion in $t = q - 1$ contributes
-    only at orders $t^{4m}, t^{4m+1}, \ldots$ (with the leading
-    $t^{4m}$ term EVEN in $t$).
+    $(1 + a \cdot (u^m)^2)$ — only even powers of $u$ appear, so the
+    Taylor expansion in $t = q - 1$ contributes only at orders
+    $t^{4m}, t^{4m+1}, \ldots$ (with the leading $t^{4m}$ term EVEN
+    in $t$).
 
     This generalises `bar_even_quadratic_term_in_t_squared` from
-    $m = 1$ (the N=2 factor) to arbitrary even ladder rungs.
-    Pure ring identity. -/
+    $m = 1$ (the N=2 factor) to arbitrary even ladder rungs.  Proved
+    by `pow_mul` on the variable exponent (`ring` does not handle
+    `^(2*m)` for `m : ℕ`). -/
 theorem bar_even_invariant_pure_uk_term {R : Type u} [CommRing R]
     (a b hbar : R) (m : ℕ) :
     (1 : R) + a * (b * hbar^2)^(2 * m)
       = 1 + a * ((b * hbar^2)^m)^2 := by
-  ring
+  rw [Nat.mul_comm 2 m, pow_mul]
 
 /-- **The N=2 bar-even invariant test: $R(q,\xi) - R(q^{-1},\xi^{-1}) = 0$
     on the N=2 factor.**

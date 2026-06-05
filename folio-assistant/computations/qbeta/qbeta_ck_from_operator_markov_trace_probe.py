@@ -61,10 +61,6 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 import time
-from pathlib import Path
-import sys
-
-HERE = Path(__file__).resolve().parent
 
 import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
@@ -206,7 +202,7 @@ def main() -> int:
         builder.add_data("u0_at_q0", str(u0_const))
         builder.add_data("verdict", "u'(q_0) = 0 EXACTLY; scalar series reversion impossible (matches PR #1840)")
         builder.add_assertion(
-            "tr_M_operator_route_recovered_chi_data",
+            "stage_c_operator_data_assembled",
             computed=1, expected=1, tolerance=0,
             source="Stage C operator data assembled symbolically.",
         )

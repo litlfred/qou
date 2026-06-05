@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T13:02:41.164150+00:00",
-  "commitSha": "590f17b91fff43d3595a911980b72e17911d9f75",
+  "computedAt": "2026-06-05T14:19:48.405382+00:00",
+  "commitSha": "2555dc4d140dd0f715c5c15d8b89c1171d7760ad",
   "assertions": [
     {
       "name": "bar_even_invariant_holds_for_N2_factor",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 466,
+  "durationMs": 574,
   "computation": "qbeta-bar-even-kernel-invariant-probe",
   "scriptFile": "qbeta_bar_even_kernel_invariant_probe.py",
-  "scriptHash": "3e6126ba1924",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3565fef8c0d9",
+  "scriptCommitSha": "2555dc4d140dd0f715c5c15d8b89c1171d7760ad",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
