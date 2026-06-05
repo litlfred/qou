@@ -137,6 +137,32 @@ def mulσ₀ (h : R) (v : Fin 6 → R) : Fin 6 → R :=
 def mulσ₁ (h : R) (v : Fin 6 → R) : Fin 6 → R :=
   ![v 2, v 4, v 0 + h * v 2, v 5, v 1 + h * v 4, v 3 + h * v 5]
 
+/-- The **full algebra product** `u · v` on the NF free module of `H₃(q)`.
+
+Each basis element `b_j` is the GB normal form of a generator word `W_j`,
+and right-multiplication is an anti-homomorphism `R_{ab} = R_b ∘ R_a`, so
+`u · b_j = R_{W_j}(u)` is the composite of `mulσ₀`/`mulσ₁` along `W_j`. By
+right-linearity `u · v = ∑_j v_j · (u · b_j)`. The producing words (and
+hence the composition order — note `b₃ = σ₁σ₀`, `b₄ = σ₀σ₁`) were pinned by
+the symbolic preflight in `gram.py`'s `hm` convention, which also verified
+`tr_M(u·v) = tr_M(v·u)` as an identity over `ℚ(z,h)`:
+
+| `j` | basis `b_j` | word `W_j` | `u · b_j` |
+|----|------------|-----------|-----------|
+| 0 | `γ`  | `()`      | `u` |
+| 1 | `σ₀` | `(0)`     | `mulσ₀ u` |
+| 2 | `σ₁` | `(1)`     | `mulσ₁ u` |
+| 3 | `L₊` | `(1,0)`   | `mulσ₀ (mulσ₁ u)` |
+| 4 | `L₋` | `(0,1)`   | `mulσ₁ (mulσ₀ u)` |
+| 5 | `e⁻` | `(0,1,0)` | `mulσ₀ (mulσ₁ (mulσ₀ u))` | -/
+def mulNF (h : R) (u v : Fin 6 → R) : Fin 6 → R := fun i =>
+    v 0 * u i
+  + v 1 * mulσ₀ h u i
+  + v 2 * mulσ₁ h u i
+  + v 3 * mulσ₀ h (mulσ₁ h u) i
+  + v 4 * mulσ₁ h (mulσ₀ h u) i
+  + v 5 * mulσ₀ h (mulσ₁ h (mulσ₀ h u)) i
+
 /-- **(M1) Linearity** — additivity. -/
 theorem trM_add (z h : R) (u v : Fin 6 → R) :
     trM z h (u + v) = trM z h u + trM z h v := by
@@ -164,16 +190,31 @@ theorem trM_markov_σ₁ (z h : R) (v : Fin 6 → R)
   simp only [trM, mulσ₁, TRM, Fin.sum_univ_six, Matrix.cons_val, h2, h3, h4, h5]
   ring
 
+/-- **(M2) Trace cyclicity** `tr_M(u · v) = tr_M(v · u)` — the defining
+property of a *trace*, here for the full `H₃(q)` algebra product `mulNF`.
+This is what makes `trM` an honest Markov **trace** (not merely a Markov-
+reducible functional), and it is exactly the symmetry the `Ind_{H₃}^{H₄}`
+Markov-stabilization analysis relies on. Verified over `ℚ(z,h)` by the
+symbolic preflight before being formalized; the identity is a polynomial
+in the entries of `u`, `v` and the parameters `z, h`, closed by `ring`
+after the trace sum and the nested `mulσ` actions are unfolded. -/
+theorem trM_cyclic (z h : R) (u v : Fin 6 → R) :
+    trM z h (mulNF h u v) = trM z h (mulNF h v u) := by
+  simp only [trM, mulNF, mulσ₀, mulσ₁, TRM, Fin.sum_univ_six,
+    Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, Matrix.cons_val]
+  ring
+
 /-- The concrete n=3 trace is a **real** linear functional satisfying the
-Markov laws — no longer a `True` marker. Bundles linearity + the Markov
-reduction; the bridge for discharging `markov_trace_origin` once Step 4
-names the residue-A element. -/
+Markov **trace** laws — no longer a `True` marker. Bundles (M1) linearity,
+(M2) cyclicity, and (M3) the Markov reduction; the bridge for discharging
+`markov_trace_origin` once Step 4 names the residue-A element. -/
 theorem markovTrace_realized (z h : R) :
     (∀ u v, trM z h (u + v) = trM z h u + trM z h v) ∧
     (∀ c v, trM z h (c • v) = c * trM z h v) ∧
+    (∀ u v, trM z h (mulNF h u v) = trM z h (mulNF h v u)) ∧
     (∀ v : Fin 6 → R, v 2 = 0 → v 3 = 0 → v 4 = 0 → v 5 = 0 →
        trM z h (mulσ₁ h v) = z * trM z h v) :=
-  ⟨trM_add z h, trM_smul z h, trM_markov_σ₁ z h⟩
+  ⟨trM_add z h, trM_smul z h, trM_cyclic z h, trM_markov_σ₁ z h⟩
 
 end H3
 
