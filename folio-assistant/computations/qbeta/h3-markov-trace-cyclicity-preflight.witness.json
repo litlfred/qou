@@ -1,0 +1,87 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy-1.14.0",
+  "computedAt": "2026-06-05T13:24:31.142604+00:00",
+  "computation": "h3-markov-trace-cyclicity-preflight",
+  "scriptFile": "h3_markov_trace_cyclicity_preflight.py",
+  "tier": "cross-check/provenance",
+  "validates": "QOU.Machinery.MarkovTraceOnHecke.trM_cyclic + mulNF",
+  "assertions": [
+    {
+      "name": "cyclicity_all_36_basis_pairs",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "tr_M(b_i b_j) = tr_M(b_j b_i) for all i,j \u2208 Fin 6 over \u211a(z,h)."
+    },
+    {
+      "name": "cyclicity_full_bilinear_trM_uv_eq_vu",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "tr_M(u\u00b7v) \u2212 tr_M(v\u00b7u) expands to 0 with symbolic u,v \u2014 the exact Lean `trM_cyclic` identity."
+    },
+    {
+      "name": "hecke_sigma0_sq_eq_h_sigma0_plus_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "\u03c3\u2080\u00b2 = h\u00b7\u03c3\u2080 + 1 on \u03c3\u2080 (Lean `mul\u03c3\u2080_hecke`)."
+    },
+    {
+      "name": "markov_reduction_tr_x_sigma1_eq_z_tr_x_on_H2",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "tr(x\u00b7\u03c3\u2081) = z\u00b7tr(x) for x \u2208 H\u2082 (Lean `trM_markov_\u03c3\u2081`)."
+    }
+  ],
+  "data": {
+    "mulNF_lean_terms": [
+      {
+        "j": 0,
+        "word": "()",
+        "u_dot_bj": "u"
+      },
+      {
+        "j": 1,
+        "word": "(0,)",
+        "u_dot_bj": "mul\u03c30 (u)"
+      },
+      {
+        "j": 2,
+        "word": "(1,)",
+        "u_dot_bj": "mul\u03c31 (u)"
+      },
+      {
+        "j": 3,
+        "word": "(1, 0)",
+        "u_dot_bj": "mul\u03c30 (mul\u03c31 (u))"
+      },
+      {
+        "j": 4,
+        "word": "(0, 1)",
+        "u_dot_bj": "mul\u03c31 (mul\u03c30 (u))"
+      },
+      {
+        "j": 5,
+        "word": "(0, 1, 0)",
+        "u_dot_bj": "mul\u03c30 (mul\u03c31 (mul\u03c30 (u)))"
+      }
+    ],
+    "word_to_index": {
+      "()": 0,
+      "(0,)": 1,
+      "(1,)": 2,
+      "(0, 1)": 4,
+      "(1, 0)": 3,
+      "(0, 1, 0)": 5
+    }
+  },
+  "deltaLambdaGate": {
+    "fittedForms": false,
+    "wiredToProduction": false,
+    "note": "validates Markov-trace machinery only; c_3 unchanged."
+  },
+  "allPassed": true
+}
