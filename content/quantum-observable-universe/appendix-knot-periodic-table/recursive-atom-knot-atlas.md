@@ -401,7 +401,7 @@ Named wrappers exist at multiple granularity layers:
 
 | Granularity | Lean file | Coverage |
 |---|---|---|
-| QOU-tracked R5-full nuclei | `Applied<Nucleus>Uniqueness.lean` (10 files) | ²H, ³H, ³He, ⁴He, ⁶Li, ⁹Be, ¹¹B, ¹²C, ¹⁴N, ¹⁶O |
+| QOU-tracked R5-full nuclei | `Applied<Nucleus>Uniqueness.lean` (10 files) | $^2$H, $^3$H, $^3$He, $^4$He, $^6$Li, $^9$Be, $^{11}$B, $^{12}$C, $^{14}$N, $^{16}$O |
 | Per-element (AME2020 ref) | `PeriodicTableUniqueness.lean` | 118 elements H..Og |
 | Per-stable-isotope | `StableIsotopeUniqueness.lean` (pending [PR #1542](https://github.com/litlfred/qou/pull/1542)) | 252 stable nuclides H..Bi |
 | Generic | `NucleusEmptySDPUniqueness.lean` | Any $n : \mathbb{N}$ |

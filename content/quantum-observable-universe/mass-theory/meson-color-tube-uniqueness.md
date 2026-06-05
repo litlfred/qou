@@ -5,7 +5,7 @@ $[\alpha_{\text{shift}}(T(2,3))]_q \cdot [\alpha_{\text{shift}}(T(2,4))]_q
 = [3]_q \cdot [4]_q$, *with the q-integer indices forced by the
 proved* $\alpha_{\text{shift}} = k \cdot (p - 1)$ *formula
 (`prop:alpha-shift-torus-knot`). The "fitted / derived-candidate"
-status of the GMOR fusion (PR #1396 → 203 ppm; #1432 extended to η/φ)
+status of the GMOR fusion (PR #1396 $\to$ 203 ppm; #1432 extended to $\eta/\varphi$)
 is hereby converted to* **derived modulo the substrate q-character
 evaluation** *— the same smaller-scope open math shared with the
 α_EM closure (#1444) and the p-n averaging weight (the merged #1445).*
@@ -19,7 +19,7 @@ identifies the relevant torus knots:
 | q-integer | $\alpha_{\text{shift}}$ | torus knot | physical interpretation |
 |---|---:|---|---|
 | $[3]_q$ | $3 = 3 \cdot (2 - 1)$ | $T(2, 3)$ = trefoil | smallest non-trivial torus knot |
-| $[4]_q$ | $4 = 4 \cdot (2 - 1)$ | $T(2, 4)$ | second member of the meson pair (W± boson knot per electroweak triplet) |
+| $[4]_q$ | $4 = 4 \cdot (2 - 1)$ | $T(2, 4)$ | second member of the meson pair (W$^\pm$ boson knot per electroweak triplet) |
 
 The pair $\{T(2, 3), T(2, 4)\}$ is the **smallest non-trivial
 torus-knot pair** on the substrate's Hecke-algebra surface — the
@@ -77,7 +77,7 @@ with Lean refs
 `qou:QOU.BraidKnot.meson_qCG_3x4` (strong-fusion identity
 $[3]_q \cdot [4]_q = [2]_q + [4]_q + [6]_q$) and
 `qou:QOU.BraidKnot.meson_EM_closed_form` (EM correction).  Dashboard
-reports `m_K/m_pi err 23.44 ppb` vs target 263.6 ppb (beats 100× at
+reports `m_K/m_pi err 23.44 ppb` vs target 263.6 ppb (beats $100\times$ at
 3/7 observables after #1451).
 
 This block is **complementary** to #1451: it does not provide a new
@@ -98,5 +98,5 @@ discharges sorry-free from `prop:alpha-shift-torus-knot`.
 
 Closes the meson row of the post-#1422 fitting-gap table
 (audit doc Item 4 of the α_shift universal chain), converting
-the 1098× m_K/m_π miss from "open audit finding" to "derived
+the $1098\times$ $m_K/m_\pi$ miss from "open audit finding" to "derived
 modulo shared residue normalisation".

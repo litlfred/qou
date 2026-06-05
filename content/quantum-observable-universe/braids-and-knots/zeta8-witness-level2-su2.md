@@ -39,7 +39,7 @@ $q^4 = -1 = q^{-4}$, giving $q^4 - q^{-4} = 0$. Since $q - q^{-1} \neq 0$
 ## Categorical content — universal Δa_m cancellation
 
 The three identities above produce the categorical structure observed
-empirically in PR #1625 (audit
+empirically (audit
 [`docs/audits/2026-06-01-qbeta-habiro-zeta8-categorical-witness.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-phi8-interference-2026-06-01/docs/audits/2026-06-01-qbeta-habiro-zeta8-categorical-witness.md)):
 
 - $(\zeta_8;\zeta_8)_7 = 8$ provides the natural integer normalisation
@@ -50,7 +50,7 @@ empirically in PR #1625 (audit
 
 - $\mathrm{ord}(\sigma_i) = 8$ explains the universal boundary
   $M_{\text{first }\Phi_8} \;=\; 7 \;=\; \mathrm{ord}(\sigma_i) - 1$
-  observed across all three pair classes (D − n), (³He − D), (⁴He − ³He).
+  observed across all three pair classes (D $-$ n), ($^3$He $-$ D), ($^4$He $-$ $^3$He).
 
 - $[4]_q = 0$ is the Wenzl projector boundary: partitions $\lambda$ with
   first-column length $\geq 4$ are annihilated in the level-$k = 2$

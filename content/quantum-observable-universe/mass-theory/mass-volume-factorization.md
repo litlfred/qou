@@ -105,7 +105,7 @@ uses the α-cluster baseline $B({}^4\mathrm{He}) = 28.30$ MeV directly
 from AME. The $4 \cdot 8G$ notation denotes four Borromean-rings
 complements summed — not the braid group $B_3$.)
 
-> **Caveat (not zero free parameters — atom→link mapping gap).** The
+> **Caveat (not zero free parameters — atom-to-link mapping gap).** The
 > $\leq 6.2\%$ above is obtained with a **per-atom choice** of both the
 > link/knot and the density $\rho \in \{m_e, 2m_e\}$; neither is yet
 > derived (see "Why this is a conjecture", points 1–2). The choices are
@@ -120,7 +120,7 @@ complements summed — not the braid group $B_3$.)
 > with $\rho \in \{m_e, 2m_e\}$ (`matches_within_10pct: []`; ${}^4$He
 > needs $\rho_F/m_e \approx 7.6$ on a single Borromean copy, not $2$).
 > The result is therefore a **per-isotope fit of the (link, $\rho$)
-> pair**, not a zero-parameter prediction — until the atom→link map and
+> pair**, not a zero-parameter prediction — until the atom-to-link map and
 > the $\rho_F$ rule are derived.
 
 ## Why this is a conjecture

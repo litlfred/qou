@@ -235,10 +235,10 @@ below.
 | Step | Status | What remains |
 |---|---|---|
 | 1. Scalar Faddeev–Kashaev WKB | classical | none — Faddeev 1994, Kashaev 1997 |
-| 2. Scalar → operator-valued passage | classical | none — standard one-loop fluctuation rule |
+| 2. Scalar $\to$ operator-valued passage | classical | none — standard one-loop fluctuation rule |
 | 3a. Hessian = $\Delta_{\nabla_0}^q$ on $\Omega^1(\mathrm{End}\,V)$ | categorical Yang–Mills computation | direct from the variation of $S_q^{\mathrm{gauge}}$; routine |
 | 3b. Categorical Lichnerowicz $\Delta^q = \mathfrak{D}^2 + \tfrac{1}{4}\mathrm{Sc}_q$ | new categorical lemma | Clifford-multiplication structure of $\iota_\xi$; provable but not in the paper yet |
-| 3c. $\mathrm{Sc}_q$ vanishes on contact-flat Bring background | standard | $\xi$ parallel ⇒ scalar curvature trivial |
+| 3c. $\mathrm{Sc}_q$ vanishes on contact-flat Bring background | standard | $\xi$ parallel $\Rightarrow$ scalar curvature trivial |
 | 3d. Pfaffian identity for self-dual chiral $\mathfrak{D}$ | classical | none — Atiyah–Singer / index theorem |
 | 4. Heat-kernel determinant = propagator | standard analytic regularisation | none in the $\mathbb{R}^4$ archimedean specialisation; in Lean, needs heat-kernel infrastructure not in Mathlib |
 
@@ -263,7 +263,7 @@ lemma plus Mathlib infrastructure.
 The conjecture sharpens the Φ$_q$ (product form) vs
 $-\mathrm{Li}_2^q(-z)$ (Kashaev integration limit) split: the same
 algebraic state $\Phi_n(x; q_0)$ produces *both* of the
-geometric features required for an observable QFT, separated cleanly
+geometric features required for an observable QFT, separated
 by their order in $\hbar_q$:
 
 | WKB order | Symbol | Archimedean output | Role |

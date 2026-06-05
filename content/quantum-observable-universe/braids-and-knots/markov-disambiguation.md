@@ -31,7 +31,7 @@ Cat$\to$Alg$\to$Geom$\to$Arch$\to$Phys arc.
    the **topological** input that makes the Jones polynomial a
    knot invariant.
 
-These three uses are cleanly separated: (1) is an algebraic
+These three uses are separated: (1) is an algebraic
 functional, (2) is a probability measure, (3) is an equivalence
 relation.  Context always disambiguates, but when precision matters
 we write $\mathrm{tr}_M$ for (1), "Markov chain" for (2), and

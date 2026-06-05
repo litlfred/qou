@@ -85,7 +85,7 @@ would **not** commute with the difference of two $\tau$-images. Hence:
 > pre-archimedean delta.** Computing the absolute masses first and
 > subtracting would interleave the nonlinear $\tau$ with the
 > subtraction, breaking fold-invariance and (empirically) over-
-> amplifying the split by ~10².
+> amplifying the split by $\sim\!10^2$.
 
 ## Lean structure
 

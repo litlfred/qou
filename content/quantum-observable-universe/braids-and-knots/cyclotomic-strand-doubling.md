@@ -63,7 +63,7 @@ Cross-references:
 
 - [Strand-doubling FALSIFIED (2026-06-01)](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-strand-doubling-FALSIFIED.md)
 - [Phase~5q convention test — $\Phi_8^2$ survives](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phase5q-dn-convention-test.md)
-- [Mechanism investigation — z(q)² hypothesis refuted](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md)
+- [Mechanism investigation — $z(q)^2$ hypothesis refuted](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md)
 
 ## Historical note — strand-doubling interpretation refuted
 

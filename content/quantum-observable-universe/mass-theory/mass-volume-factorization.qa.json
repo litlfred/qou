@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/mass-theory/mass-volume-factorization.lean"
   },
   "source_hashes": {
-    "md": "80655498c5cd",
+    "md": "b66b6d7308c6",
     "ts": "1f12b71d23d5",
     "lean": "9dbf07694b65"
   },
@@ -44,6 +44,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "b66b6d7308c6",
+          "ts": "1f12b71d23d5",
+          "lean": "9dbf07694b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.986Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-emoji-content": [
@@ -77,6 +94,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "b66b6d7308c6",
+          "ts": "1f12b71d23d5",
+          "lean": "9dbf07694b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.986Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-first-person-work": [
@@ -143,6 +177,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "b66b6d7308c6",
+          "ts": "1f12b71d23d5",
+          "lean": "9dbf07694b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.986Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-unicode-crash": [
@@ -234,6 +285,23 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-volume-factorization.md:108: > **Caveat (not zero free parameters — atom→link mapping gap).** The | content/quantum-observable-universe/mass-theory/mass-volume-factorization.md:123: > pair**, not a zero-parameter prediction — until the atom→link map and"
+      },
+      {
+        "field_hash": {
+          "md": "b66b6d7308c6",
+          "ts": "1f12b71d23d5",
+          "lean": "9dbf07694b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.986Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-scholarly-default": [
@@ -2005,6 +2073,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "b66b6d7308c6",
+          "ts": "1f12b71d23d5",
+          "lean": "9dbf07694b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.986Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "canonical-witness-pinned": [
@@ -2464,5 +2549,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-05T14:52:06.986Z"
 }

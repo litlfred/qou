@@ -1,4 +1,4 @@
-**Proposition (Bring residue → canonical resolvent form).**
+**Proposition (Bring residue $\to$ canonical resolvent form).**
 *The substrate evaluation of the residue / Schwarz integral on
 Bring's surface around the simple pole of order $n$ of $\sigma$
 on the torus knot $T(p, k)$ with $\alpha_{\text{shift}}(p, k) = n$
@@ -35,7 +35,7 @@ downstream.
     (merged #1445);
   - `bring_residue_at_T_2_9` — pole order 9, used by 1/α_EM (#1444);
   - `bring_residue_meson_pair` — pole orders 3 and 4, used by
-    m_K²/m_π² (#1455).
+    $m_K^2/m_\pi^2$ (#1455).
 - `bring_residue_subsingleton` — Subsingleton companion.
 
 ## Closing the class instance
