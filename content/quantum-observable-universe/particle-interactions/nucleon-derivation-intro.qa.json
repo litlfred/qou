@@ -2079,7 +2079,27 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9552fa84d4c0",
+          "ts": "a29091b9ae9f"
+        },
+        "result": "pass",
+        "evidence": "Prose section intro for nucleon derivation from photon pair production; particle-interactions is the correct chapter for this derivation chain.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:36:27.306Z",
+        "reviewed_sha": "a314ebf00c9dda8975bb85ef3ab8b350929648f5",
+        "notes": "Draft marker present but content fits scope."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T18:36:27.306Z"
 }
