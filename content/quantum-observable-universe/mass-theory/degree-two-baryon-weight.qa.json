@@ -2613,7 +2613,29 @@
         "reviewed_sha": "ba811ef4f0fba172585446908bd9e3e1746cac82",
         "notes": "Declared archimedean specialisation"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1b8a8ead8c95",
+          "ts": "a30e40da9ef0",
+          "lean": "463c7c714294"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Proof sketch ends with MeV binding scale; interpretive prose in proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:34:43.548Z",
+        "reviewed_sha": "f761e93e82c7bd07e5621177b73f1a87a41e1b71",
+        "notes": "Physical meaning prose without companion interprets: remark"
+      }
     ]
   },
-  "updated_at": "2026-06-05T00:20:57.988Z"
+  "updated_at": "2026-06-05T00:34:43.548Z"
 }
