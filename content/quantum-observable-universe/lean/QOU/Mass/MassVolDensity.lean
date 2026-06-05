@@ -325,7 +325,13 @@ theorem su2_fundamental_eq_two_cosh (η : ℝ) (hη : Real.sinh η ≠ 0) :
     (`[n]_q` as a colored-Jones building block), NOT the conjectural
     S₅↔SO(3) FIBRE action that fixes `chirality_sign` — that remains
     gated on `conj:s5-so3-fiber-action`. This section formalises only the
-    representation-theoretic level structure, which is unconditional. -/
+    representation-theoretic level structure — unconditional as
+    representation theory (no conjecture), with the one analytic side
+    condition `sinh η ≠ 0` (i.e. `q ≠ 1`, away from the classical point)
+    because the characters are written as ratios `[n]_q = sinh(nη)/sinh η`.
+    The Chebyshev identity `[3]_q = [2]_q² − 1` itself extends to `η = 0`
+    by continuity (both sides → 3), but the ratio form is stated for the
+    substrate regime `q ≠ 1`. -/
 
 /-- SO(3)_q adjoint (vector, j=1) Weyl character `χ_1(η) = sinh(3η)/sinh η`
     (the `[3]_q` quantum integer at `q = e^η`). The lowest integer-spin
@@ -334,15 +340,14 @@ noncomputable def so3_adjoint_character (η : ℝ) : ℝ :=
   Real.sinh (3 * η) / Real.sinh η
 
 /-- Closed form `[3]_q = 4 cosh²η − 1` (for `sinh η ≠ 0`), via
-    `sinh(3η) = sinh η · (4 cosh²η − 1)`. -/
+    `sinh(3η) = sinh η · (4 sinh²η + 3)` and `sinh²η = cosh²η − 1`. -/
 theorem so3_adjoint_eq_four_cosh_sq_sub_one (η : ℝ) (hη : Real.sinh η ≠ 0) :
     so3_adjoint_character η = 4 * Real.cosh η ^ 2 - 1 := by
   unfold so3_adjoint_character
-  have h3 : Real.sinh (3 * η) = Real.sinh η * (4 * Real.cosh η ^ 2 - 1) := by
-    have h32 : (3 : ℝ) * η = 2 * η + η := by ring
-    rw [h32, Real.sinh_add, Real.sinh_two_mul, Real.cosh_two_mul]
-    ring
-  rw [h3, mul_comm, mul_div_assoc, div_self hη, mul_one]
+  have hnum : Real.sinh (3 * η) = Real.sinh η * (4 * Real.sinh η ^ 2 + 3) := by
+    rw [Real.sinh_three_mul]; ring
+  rw [hnum, mul_comm, mul_div_assoc, div_self hη, mul_one, Real.sinh_sq]
+  ring
 
 /-- **The SO(3)_q adjoint is the Chebyshev square of the SU(2)_q doublet:
     `[3]_q = [2]_q² − 1`.** This is the ℤ₂-quotient level structure —
@@ -356,7 +361,7 @@ theorem so3_adjoint_eq_chebyshev (η : ℝ) (hη : Real.sinh η ≠ 0) :
 /-- The SO(3)_q adjoint in the U(1) hyperbolic shadow: `[3]_q = 1 + 2 cosh(2η)`. -/
 theorem so3_adjoint_eq_one_plus_two_cosh_two (η : ℝ) (hη : Real.sinh η ≠ 0) :
     so3_adjoint_character η = 1 + 2 * Real.cosh (2 * η) := by
-  rw [so3_adjoint_eq_four_cosh_sq_sub_one η hη, Real.cosh_two_mul]
+  rw [so3_adjoint_eq_four_cosh_sq_sub_one η hη, Real.cosh_two_mul, Real.sinh_sq]
   ring
 
 end QOU.Mass
