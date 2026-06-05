@@ -1803,7 +1803,28 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1071cf8c1a29",
+          "ts": "e0d640489d0f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "example interprets def:brings-surface, constructs unit circle bundle QOU 4-tuple — central to chapter scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:18:14.608Z",
+        "reviewed_sha": "03ea8f22ab2e9aa988a95a1e964ea2ef45d71e92",
+        "notes": "Correctly placed worked example for the chapter's primary definition."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T19:18:14.608Z"
 }
