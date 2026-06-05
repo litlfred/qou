@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4f2af8ddf70b",
+          "ts": "a85416f15d99",
+          "lean": "26e72d652c40"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare claim (3 numbered items); no interpretive prose or motivation section present.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:08:14.642Z",
+        "reviewed_sha": "993b3e057c0198afd246eef63079b92220acbbff",
+        "notes": "Clean proposition statement only."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4f2af8ddf70b",
+          "ts": "a85416f15d99",
+          "lean": "26e72d652c40"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition about smoothness and resolution of Bring's surface — core topic of brings-surface chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:08:32.460Z",
+        "reviewed_sha": "993b3e057c0198afd246eef63079b92220acbbff",
+        "notes": "Correctly placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4f2af8ddf70b",
+          "ts": "a85416f15d99",
+          "lean": "26e72d652c40"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Brings-surface is generic/substrate chapter; statement uses only algebraic terms (transverseness, smooth variety, color coordinates) — no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:08:48.370Z",
+        "reviewed_sha": "993b3e057c0198afd246eef63079b92220acbbff",
+        "notes": "No wall violation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4f2af8ddf70b",
+          "ts": "a85416f15d99",
+          "lean": "26e72d652c40"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses local coordinate argument (delta=x_i-x_j, z-z_c ~ delta^2) — algebraic, no archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:08:48.414Z",
+        "reviewed_sha": "993b3e057c0198afd246eef63079b92220acbbff",
+        "notes": "Proof method matches generic-ring side of wall."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T19:08:48.414Z"
 }
