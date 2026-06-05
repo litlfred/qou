@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T14:51:23.975685+00:00",
-  "commitSha": "3ebd6a643f1374605bb53599969e23fec923867d",
+  "computedAt": "2026-06-05T18:41:07.020847+00:00",
+  "commitSha": "75bb53314159c396f6784c7d8154d5f7e7b1f773",
   "assertions": [
     {
       "name": "at_least_one_sinh_candidate_matches_c3_sign",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "qbeta-reeb-sinh-parity-probe",
   "scriptFile": "qbeta_reeb_sinh_parity_probe.py",
-  "scriptHash": "3f850070c2ae",
-  "scriptCommitSha": "3ebd6a643f1374605bb53599969e23fec923867d",
+  "scriptHash": "fe2227ad8338",
+  "scriptCommitSha": "9bf168a91db863991f58442e2d9fb54fbe5484f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

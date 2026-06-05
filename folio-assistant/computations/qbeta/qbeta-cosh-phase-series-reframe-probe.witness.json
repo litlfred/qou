@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T18:00:21.304715+00:00",
-  "commitSha": "b85e837bdb83f18c265c2ec4c779a11f39a94e08",
+  "computedAt": "2026-06-05T18:41:07.183658+00:00",
+  "commitSha": "75bb53314159c396f6784c7d8154d5f7e7b1f773",
   "assertions": [
     {
       "name": "phi1_equals_sqrt2_from_proved_c2",
@@ -21,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "qbeta-cosh-phase-series-reframe-probe",
   "scriptFile": "qbeta_cosh_phase_series_reframe_probe.py",
-  "scriptHash": "b0f269836778",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0bde28f66a01",
+  "scriptCommitSha": "53281e0fb9488a18c68046b50730bd93cec8c5ca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

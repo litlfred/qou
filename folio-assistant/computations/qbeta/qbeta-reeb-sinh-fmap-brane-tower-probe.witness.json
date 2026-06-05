@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T17:50:20.922836+00:00",
-  "commitSha": "1017784d10d4c221969df0727b2e06406ea09185",
+  "computedAt": "2026-06-05T18:40:48.116617+00:00",
+  "commitSha": "75bb53314159c396f6784c7d8154d5f7e7b1f773",
   "assertions": [
     {
       "name": "cross_anchor_c3_swing_resolvable",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 13,
   "computation": "qbeta-reeb-sinh-fmap-brane-tower-probe",
   "scriptFile": "qbeta_reeb_sinh_fmap_brane_tower_probe.py",
-  "scriptHash": "80bf12f19fe4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0b280be3ec2f",
+  "scriptCommitSha": "1f014ddcb8d81c55d28d4a13f63f32ff0f772eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
