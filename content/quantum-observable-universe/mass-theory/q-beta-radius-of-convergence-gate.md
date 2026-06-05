@@ -25,7 +25,7 @@ $\S 4$ lists four structural invariants any candidate $F(q)$ must satisfy:
 
 | # | invariant | formalised in |
 |---|---|---|
-| (a) | **Anchor-stable** (proton + muon cross-anchor swing < 1 %) | **this proposition** |
+| (a) | **Anchor-stable** (cross-anchor $u_{\text{substrate}}$ swing < 1 ppm = $10^{-6}$ relative; 210 ppb observed) | **this proposition** |
 | (b) | **Bar-even** under $q \mapsto q^{-1}$ | [`prop:q-beta-bar-even-kernel-invariant`](q-beta-bar-even-kernel-invariant.md) (PR #1875) |
 | (c) | **q = 1 shadow** reproduces known integer (e.g. $c_3 \to J_{\text{Hopf}}(1) = -2$) | TODO |
 | (d) | **Direction sanity** — $|F(q_0)|$ scales appropriately | TODO |
