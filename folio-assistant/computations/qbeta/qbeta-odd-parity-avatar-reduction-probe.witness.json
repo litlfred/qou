@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T13:11:14.198275+00:00",
-  "commitSha": "4aa85ab43b9dc3c8e2a066166b12623588baa4bb",
+  "computedAt": "2026-06-05T14:24:39.635095+00:00",
+  "commitSha": "153ee3bb9e0b4546d30a845272697fb952cc9213",
   "assertions": [
     {
       "name": "reduction_c3_equals_g",
@@ -22,8 +22,8 @@
   "durationMs": 10,
   "computation": "qbeta-odd-parity-avatar-reduction-probe",
   "scriptFile": "qbeta_odd_parity_avatar_reduction_probe.py",
-  "scriptHash": "61d4dfe919c9",
-  "scriptCommitSha": "4aa85ab43b9dc3c8e2a066166b12623588baa4bb",
+  "scriptHash": "12a34dc80553",
+  "scriptCommitSha": "153ee3bb9e0b4546d30a845272697fb952cc9213",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
