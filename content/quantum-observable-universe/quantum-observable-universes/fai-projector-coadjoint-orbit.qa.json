@@ -2564,7 +2564,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273",
+          "lean": "b5e6e7ae74fb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare mathematical claim: rank-1 projector traceless component identity, no interpretation or physical meaning included.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:51:02.286Z",
+        "reviewed_sha": "ec260cd5c2f557373c25fa35a730ea8ea4f42e89",
+        "notes": "Clean lemma statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273",
+          "lean": "b5e6e7ae74fb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lemma about rank-1 projectors as coadjoint orbits in Ad(A) belongs in quantum-observable-universes structural chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:51:17.991Z",
+        "reviewed_sha": "ec260cd5c2f557373c25fa35a730ea8ea4f42e89",
+        "notes": "Placement correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273",
+          "lean": "b5e6e7ae74fb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses only categorical constructs (V in C, Ad(A), coadjoint orbit) — no archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:51:18.030Z",
+        "reviewed_sha": "ec260cd5c2f557373c25fa35a730ea8ea4f42e89",
+        "notes": "Generic ring/substrate side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273",
+          "lean": "b5e6e7ae74fb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No proof body in this .md file; proof delegated to separate proof block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:51:18.068Z",
+        "reviewed_sha": "ec260cd5c2f557373c25fa35a730ea8ea4f42e89",
+        "notes": "Nothing to check here."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T23:51:18.068Z"
 }
