@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T21:59:17.860275+00:00",
-  "commitSha": "7624440428f6aabc83c36b4a5454b1ff387b30f2",
+  "computedAt": "2026-06-05T12:45:37.394620+00:00",
+  "commitSha": "01283dc98401d9e93737668db84164897c0379b2",
   "assertions": [
     {
       "name": "c2_filter_yields_at_least_one_candidate",
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 10,
   "computation": "qbeta-cosh-avatar-crossanchor-multicoeff-probe",
   "scriptFile": "qbeta_cosh_avatar_crossanchor_multicoeff_probe.py",
-  "scriptHash": "49590d61b5d4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "24300987eb9d",
+  "scriptCommitSha": "01283dc98401d9e93737668db84164897c0379b2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Cross-anchor + multi-coefficient cosh-avatar test for the Q_β c_k generating-function hypothesis (PR #1824 §2.a). Tests 11 closed-form cos/cosh candidates with categorical α(q) against the empirical c_2..c_5 targets at BOTH the proton-pinned q_0 and the muon cross-check anchor. Strengthens the existing qbeta_cosh_q_sinh_q_candidate_scan (single-anchor, c_3-only, 16 candidates, ALL REFUTED) by requiring multi-coefficient + cross-anchor agreement. No fits.",
+  "description": "Cross-anchor + multi-coefficient cosh-avatar test for the Q_β c_k generating-function hypothesis (PR #1824 §2.a). Tests 11 closed-form cos/cosh candidates with categorical α(q) against the empirical c_2..c_3 targets at BOTH the proton-pinned q_0 and the muon cross-check anchor. Strengthens the existing qbeta_cosh_q_sinh_q_candidate_scan (single-anchor, c_3-only, 16 candidates, ALL REFUTED) by requiring multi-coefficient + cross-anchor agreement. No fits.",
   "contentBlock": "conj:qbeta-precision-ladder",
   "data": {
     "k_max": 3,
