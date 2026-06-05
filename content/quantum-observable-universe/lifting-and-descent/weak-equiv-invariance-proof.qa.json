@@ -1737,7 +1737,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fb424cd67f05",
+          "ts": "d9a78d74588c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof of brane-tower vacuum-state invariance under weak equivalence is squarely within lifting-and-descent scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:15:34.405Z",
+        "reviewed_sha": "d227143a922ed4c9707d2182b4ffbff90c75b7d7",
+        "notes": "References descent involution, descent eigenspaces, direct-limit algebra — all chapter-local content."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T18:15:34.405Z"
 }
