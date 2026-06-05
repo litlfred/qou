@@ -186,6 +186,7 @@ export default chapter({
         "binding-genfun-qdifference-proof",
         "binding-closure-conditional",
         "binding-closure-conditional-proof",
+        "qdifference-kernel-prolongation-symbol",
         "lr-coefficient-hecke",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
