@@ -2232,6 +2232,25 @@
         },
         "reviewed_at": "2026-05-27T08:55:11.920Z",
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
+      },
+      {
+        "field_hash": {
+          "md": "ba8751db99da",
+          "ts": "70d9575c4048",
+          "lean": "cc548c90e8bd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2566,5 +2585,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

@@ -2218,6 +2218,24 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/mass-application/chirality-residue-mass-term.lean:17: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "ed832c0f88c5",
+          "ts": "6beed0e93789",
+          "lean": "6b2dd5950c72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2628,5 +2646,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-04T17:38:56.403Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

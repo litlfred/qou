@@ -980,7 +980,27 @@
         "reviewed_sha": "ed8ac78ae30b0cdea3b1e0f5370bb4603dd53770",
         "notes": "Stub does not encode the decomposition."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "6b7190636068"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
+      }
     ]
   },
-  "updated_at": "2026-06-05T13:00:43.497Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }

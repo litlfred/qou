@@ -9,7 +9,8 @@
   },
   "source_hashes": {
     "md": "28aab1d08a51",
-    "ts": "75359030d51b"
+    "ts": "75359030d51b",
+    "lean": "9ad5823caf8c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2217,6 +2218,24 @@
         "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/predicted-spectra/force-carrier-bring-uniqueness.lean:18: invalid 'import' command, it must be used in the beginning of the file"
+      },
+      {
+        "field_hash": {
+          "md": "28aab1d08a51",
+          "ts": "75359030d51b",
+          "lean": "9ad5823caf8c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-05T14:22:44.851Z",
+        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
     "voice-author-notes-pollution": [
@@ -2654,5 +2673,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-05T01:27:57.740Z"
+  "updated_at": "2026-06-05T14:22:44.851Z"
 }
