@@ -2079,7 +2079,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0fd87169e77e",
+          "ts": "7adb4247a276"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose introduction mapping out the predicted-spectra chapter structure; subject matter matches chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:10:59.755Z",
+        "reviewed_sha": "46b61b6bafb0b61b6c5ae85cf50fef42d24c9a52",
+        "notes": "Roadmap prose fits predicted-spectra chapter."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T13:10:59.755Z"
 }
