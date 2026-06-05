@@ -2630,7 +2630,29 @@
         "reviewed_sha": "086c6198eb6cf7108b49710a9ccd09400fb9b6e8",
         "notes": "Real formalization needed in QOU/Descartes/HyperbolicVolumeTranscendence.lean."
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "dc8153d02445",
+          "ts": "778b4d9916b1",
+          "lean": "2068c2885b8b"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Substantive 'Consequences' and 'Relation to Mostow rigidity' interpretation sections appear inline; no companion remark with interprets: prop:cs-evaluation-faithfulness exists.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:52:48.986Z",
+        "reviewed_sha": "bea8d73832c71a41929b1af72f98fb23ef91becf",
+        "notes": "Move Consequences and Mostow-rigidity discussion to a linked remark block."
+      }
     ]
   },
-  "updated_at": "2026-06-05T00:49:32.486Z"
+  "updated_at": "2026-06-05T00:52:48.986Z"
 }
