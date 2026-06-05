@@ -157,7 +157,32 @@ that the build tools auto-detect a clone at `../mathlib4`, but in
 practice the auto-detection requires manual git redirect setup when
 elan / cache hosts are network-restricted.
 
-**Workaround (battle-tested on PR #1761 + PR #1772):**
+> **⚡ FIRST RESORT — restore prebuilt oleans (≈2 min). Do NOT build from
+> source until you have tried this.** A full build is already preserved on
+> the orphan branch `lake-cache/qou-v4-24-0` (lean `v4.24.0`); restoring it
+> skips the 30–60 min from-source Mathlib build entirely. **This is the
+> single most common wasted hour for agents in this repo** (the from-source
+> sections below are a *fallback*, not the default). RESTORE before anything
+> else:
+>
+> ```bash
+> git fetch --depth=1 origin lake-cache/qou-v4-24-0 \
+>   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
+>      | while read -r p; do git show "FETCH_HEAD:$p"; done > /tmp/lake-oleans.tgz \
+>   && tar xzf /tmp/lake-oleans.tgz \
+>   && echo "restored .lake oleans from cache branch — NO rebuild needed"
+> ```
+>
+> Pick the branch whose slug matches your `cat lean-toolchain` (slug for
+> `v4.24.0` = `v4-24-0`). Full restore/seed details are in the
+> [🗄️ PRESERVE THE BUILD section below](#️-preserve-the-build--seedrestore-the-lake-cache-orphan-branch).
+> Only if the fetch fails (branch unseeded) or the oleans are a
+> toolchain/`lakefile.toml` **miss** do you fall back to the source-clone +
+> from-source build below — and **SEED the cache branch afterwards** so the
+> next agent restores in 2 min instead of rebuilding.
+
+**Fallback workaround — source clone + from-source build (only when the
+cache-branch restore above misses; battle-tested on PR #1761 + PR #1772):**
 
 ```bash
 # Step 1: Clone mathlib source locally (shallow OK, ~144 MB).
