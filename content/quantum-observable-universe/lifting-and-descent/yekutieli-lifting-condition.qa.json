@@ -1879,7 +1879,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4e2eafab9e3c",
+          "ts": "54397394c934",
+          "lean": "0adf9664b452"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition of gerbe-cohomology lifting condition is squarely within lifting-and-descent chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:29:24.277Z",
+        "reviewed_sha": "4f52025e5d4cba572cfee2763d5ec3ba2693299f",
+        "notes": "Well-placed; no misfile or kind mismatch."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4e2eafab9e3c",
+          "ts": "54397394c934",
+          "lean": "0adf9664b452"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Purely algebraic/categorical statement over generic R; no archimedean constructs, no numeric q values, no MeV units.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:29:38.065Z",
+        "reviewed_sha": "4f52025e5d4cba572cfee2763d5ec3ba2693299f",
+        "notes": "Clean substrate-level definition; wall compliant."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T18:29:38.065Z"
 }
