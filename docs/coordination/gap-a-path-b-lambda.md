@@ -81,10 +81,10 @@ The two intersect on: (a) the per-knot Vol(K) convention (T2 here ≡ C2 there),
    Δ_λ" (closed) to "derive per-atom mass closure via Path B" (the
    `S(K)` sub-leading term + the `Vol(K)` convention question).
 
-## Next concrete tasks on this ledger
+## Tasks on this ledger
 
-| # | Task | Source |
+| # | Task | Status |
 |---|---|---|
-| T1 | Probe #1876 §4 direction 2 — additive `S(K)` sub-leading form | [#1876](https://github.com/litlfred/qou/pull/1876) §4 |
-| T2 | Probe #1876 §4 direction 4 — per-knot `Vol(K)` convention for compound atoms (cross-link with [#1871](https://github.com/litlfred/qou/pull/1871), [#1784](https://github.com/litlfred/qou/pull/1784)) | [#1876](https://github.com/litlfred/qou/pull/1876) §4 |
-| T3 | Derive `λ(K)` from a Path B-specific formulation (NOT a Phase-4 transplant; per #1876 O2) | [#1876](https://github.com/litlfred/qou/pull/1876) O2 |
+| T1 | Probe #1876 §4 direction 2 — additive `S(K)` sub-leading form | **closed NEGATIVE** ([#1886](https://github.com/litlfred/qou/pull/1886) merged) |
+| T2 | Probe #1876 §4 direction 4 — per-knot `Vol(K)` convention for compound atoms (cross-link with [#1871](https://github.com/litlfred/qou/pull/1871), [#1784](https://github.com/litlfred/qou/pull/1784)) | **closed NEGATIVE** ([#1891](https://github.com/litlfred/qou/pull/1891) merged); all 3 conventions REFUTED, best swing +132 % |
+| T3 | Derive `λ(K)` from a Path B-specific formulation (NOT a Phase-4 transplant; per #1876 O2) | **scope landed** ([`2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md`](../audits/2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md)); probe follow-up open |
