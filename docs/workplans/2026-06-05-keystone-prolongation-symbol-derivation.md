@@ -59,9 +59,28 @@ it (Hankel-rank / Berlekamp–Massey over ℚ(q₀)).
 
 The test needs `a_D⁽ⁿ⁾` at `n = 2, 3` (only `n = 4` = Family-A is wired here,
 via `sw_period_residue.py`). These are exactly #1765's per-knot
-`λ(L) = (1/(c+1)) Σ_{λ⊢c+1} dim_q` at `c = 1, 2` and its A-polynomial saddle for
-³He/⁴He. **Do not reimplement #1765's rule** (corpus-grep / no-duplicate
+`λ(L) = (1/(c+1)) Σ_{λ⊢c+1} dim_q(λ)` at `c = 1, 2` and its A-polynomial saddle
+for ³He/⁴He. **Do not reimplement #1765's rule** (corpus-grep / no-duplicate
 discipline) — consume its outputs. Coordination posted on #1765.
+
+### 4a. How to run `sw_prolongation_symbol.py`
+
+```bash
+cd folio-assistant/computations/substrate && python3 -u sw_prolongation_symbol.py
+```
+
+- **Input:** a sequence `seq = [a_D⁽²⁾, a_D⁽³⁾, a_D⁽⁴⁾, …]` of residue weights
+  (mpmath `mpf` at `q₀`), passed to `minimal_recurrence(seq)`. The module
+  currently feeds the self-validation sequence (torus `P_m`, `m = 1..7`); swap
+  in the binding `a_D⁽ⁿ⁾` once #1765 supplies `n = 2, 3`.
+- **Output / artifact:** `minimal_recurrence` returns `(d, [c_0,…,c_{d-1}])` —
+  the minimal recurrence depth `d` and constant kernel — or `None` (no
+  fixed-depth recurrence ⇒ keystone refuted at that order). The run emits
+  `sw-prolongation-symbol.witness.json` (audit-only) recording the recovered
+  `(d, c_j)` and the self-validation assertion.
+- **Self-validation:** the torus sequence must return `d = 2`,
+  `c = [−1, 2 cosh(2η₀)]` (Chebyshev) — this certifies the machinery before the
+  binding inputs are consumed.
 
 ## 5. Next steps
 
