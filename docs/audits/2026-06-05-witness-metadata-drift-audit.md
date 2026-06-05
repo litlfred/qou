@@ -1,7 +1,7 @@
 # Witness metadata-drift audit — root cause + bounded refresh
 
 **Date:** 2026-06-05
-**Branch:** `claude/witness-metadata-drift-refresh-2026-06-05`
+**PR:** litlfred/qou#1878
 **Status:** bounded refresh done (3 witnesses); systemic backlog (~681) root-caused + recommendation recorded
 **Related:** `2026-05-16-stale-witness-infra-gap.md` (upstream-hash drift class), `witness_dependency_drift.py`
 
@@ -28,10 +28,16 @@ allpy = {}
 for p in glob.glob("folio-assistant/computations/**/*.py", recursive=True):
     allpy.setdefault(os.path.basename(p), []).append(p)
 for w in glob.glob("folio-assistant/computations/**/*.witness.json", recursive=True):
-    d = json.load(open(w)); sf, sh = d.get("scriptFile"), d.get("scriptHash")
+    with open(w, encoding="utf-8") as f:          # context manager + explicit utf-8
+        d = json.load(f)
+    sf, sh = d.get("scriptFile"), d.get("scriptHash")
     if not sf or not sh: continue
     sib = os.path.join(os.path.dirname(w), sf)
-    path = sib if os.path.exists(sib) else (allpy.get(sf, [None])[0])
+    if os.path.exists(sib):
+        path = sib                                # prefer the sibling producer
+    else:
+        cands = allpy.get(sf, [])                 # fallback is heuristic: trust a
+        path = cands[0] if len(cands) == 1 else None  # UNIQUE basename only (skip ambiguous)
     if path and file_content_hash(path) != sh:
         print("STALE:", os.path.basename(w))
 ```
