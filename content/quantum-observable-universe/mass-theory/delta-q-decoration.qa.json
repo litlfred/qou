@@ -2187,7 +2187,49 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "554a75ba2194",
+          "ts": "09c86a839370",
+          "lean": "f3d1bcc25a04"
+        },
+        "result": "pass",
+        "evidence": "delta_q decoration of Hecke NF basis; mass-theory infrastructure for operator-selection LP and binding energy",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:37:01.319Z",
+        "reviewed_sha": "476aa907c9d11779c8e101278ea2f9ec02cca614",
+        "notes": "No misplacement"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "554a75ba2194",
+          "ts": "09c86a839370",
+          "lean": "f3d1bcc25a04"
+        },
+        "result": "pass",
+        "evidence": "Statement over generic ring R=Z[q^±1/2,(q-q^-1)^-1]; no archimedean constructs",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:37:01.355Z",
+        "reviewed_sha": "476aa907c9d11779c8e101278ea2f9ec02cca614",
+        "notes": "Purely algebraic definition"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T00:37:01.355Z"
 }
