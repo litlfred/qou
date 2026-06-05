@@ -115,6 +115,16 @@ weights `y_λ` and the proton↔neutron character difference — the heavy per-�
 (steps 1–5 below). Lean (generator level): `QOU/QBeta/CoherentCollapseSinhCosh.lean`.
 Witness: `qbeta-coherent-collapse-sinh-cosh.witness.json`.
 
+**Reconciliation with the merged `cos(Φ(u))` reframe (#1887, on main) — Φ₂ IS the
+bar-odd carrier.** The merged phase reframe writes `c_2 = −Φ₁²/2`, `c_3 = −Φ₁Φ₂`.
+Verified (witness §E): with **Φ₁ = √2** (anchor-independent, **swing 0 ⇒ bar-EVEN**)
+→ `c_2 = −1`; and `c_3 = −Φ₁Φ₂` → −2.0693 (proton) / −2.0202 (muon), with **Φ₂'s
+cross-anchor swing (0.023748) identically EQUAL to the c_3 swing** ⇒ **Φ₂ carries
+the bar-ODD part**. So the trig `cos(Φ)` avatar (#1887) and this hyperbolic
+`sinh/cosh` avatar are the **same object** (cheat sheet §4: `cos_q ↔ cosh`): Φ₁ ↔
+the bar-even `[2]_q = 2 cosh η` sector (`c_2`), Φ₂ ↔ the bar-odd `h = 2 sinh η`
+sector (`c_3`). This unifies #1887's merged result with the S2+S3 mechanism here.
+
 ## Probe design (for a focused compute session)
 
 1. **Per-λ data over ℚ(q)** for the canonical proton `𝓑_p` and neutron `𝓑_n`
