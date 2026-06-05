@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a1b949ae8e1a",
+          "ts": "cba5dd34a9b3",
+          "lean": "70607ab2d9fa"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition of q-deformed exterior derivative correctly placed in quantum-observable-universes.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:39:48.970Z",
+        "reviewed_sha": "13b8d8d724362bdc92721eb5860e014f6e2100a8",
+        "notes": "No misplacement."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a1b949ae8e1a",
+          "ts": "cba5dd34a9b3",
+          "lean": "70607ab2d9fa"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition uses abstract Omega^k(A), d, pi_V, dagger; no archimedean constructs in generic-ring chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:40:06.879Z",
+        "reviewed_sha": "13b8d8d724362bdc92721eb5860e014f6e2100a8",
+        "notes": "Correctly on algebraic side of wall."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T18:40:06.879Z"
 }
