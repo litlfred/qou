@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "465e33965444",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare uniqueness claim with display equation; no interpretive prose.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:09:06.044Z",
+        "reviewed_sha": "49c5c15a2e3ddd51562300bf2cef0cdaa0d84c1e",
+        "notes": "Clean statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "465e33965444",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Uniqueness of categorical Reeb derivation is a natural companion to the existence theorem in this chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:09:06.093Z",
+        "reviewed_sha": "49c5c15a2e3ddd51562300bf2cef0cdaa0d84c1e",
+        "notes": "Correctly placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "465e33965444",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses generic categorical notation only; no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:09:06.135Z",
+        "reviewed_sha": "49c5c15a2e3ddd51562300bf2cef0cdaa0d84c1e",
+        "notes": "Correct wall side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "465e33965444",
+          "ts": "115610e2c416",
+          "lean": "ecc7631e8428"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No proof body in this proposition block; proof is in companion block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:09:06.176Z",
+        "reviewed_sha": "49c5c15a2e3ddd51562300bf2cef0cdaa0d84c1e",
+        "notes": "N/A for statement-only block."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T19:09:06.176Z"
 }
