@@ -2560,7 +2560,7 @@
         },
         "result": "warn",
         "severity": "minor",
-        "evidence": "Multiple interpretive/motivational sections inside proposition block; no companion interprets: remark",
+        "evidence": "Interpretive/motivational sections inside proposition block; no companion interprets: remark",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2568,11 +2568,11 @@
           "agent_date": "2026-06-05",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T00:29:07.192Z",
-        "reviewed_sha": "27f2a53afb02cd46af4e8783b7fd259add3b4ced",
-        "notes": "Physical/structural interpretation sections belong in companion remark"
+        "reviewed_at": "2026-06-05T00:35:53.089Z",
+        "reviewed_sha": "17cf2fe3137f3726fd867e81987a1c49ef8debaa",
+        "notes": "Significance/physical interpretation belongs in companion remark"
       }
     ]
   },
-  "updated_at": "2026-06-05T00:29:07.192Z"
+  "updated_at": "2026-06-05T00:35:53.089Z"
 }
