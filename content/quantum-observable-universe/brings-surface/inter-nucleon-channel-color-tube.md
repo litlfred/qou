@@ -166,7 +166,8 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
    same-color $\mapsto +1$, opposite-color $\mapsto -1$? Is this from
    CPT symmetry on the color sheets, or from a finer $S_{5}$ orbit
    decomposition? Partially constrained: $\epsilon$ must be a section of
-   the $\mathrm{SU}(2)/\mathrm{SO}(3)$ $\mathbb{Z}_2$-grading (see
+   the $\mathbb{Z}_2$ kernel of the double cover $\mathrm{SU}(2) \to
+   \mathrm{SO}(3)$ (see
    §"Representation-theoretic constraint on $\epsilon$"); the residual
    open content is the fiber-to-color assignment.
 3. **${}^{4}\mathrm{He}$ magic-shell saturation.** Does the color-tube weighting

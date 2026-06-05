@@ -59,7 +59,21 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import _path_bridge  # noqa: F401, E402
-from _li_2_q_util import linking_weight_family_a, geom_full_borromean  # noqa: E402
+from _li_2_q_util import (  # noqa: E402
+    linking_weight_family_a,
+    geom_full_borromean,
+    geom_full_per_block,
+)
+
+
+def _load_tr_M_proton_at_q0() -> "mp.mpf":
+    """Load the canonical H₃ proton Markov trace `tr_M(proton)` at q₀ from
+    the chi-cache witness. Single source of the file/key/precision
+    convention so the witness-data block and the human-readable print
+    cannot drift. Returns an mpmath mpf."""
+    import json
+    d = json.loads((HERE / "chi-proton-h3-at-q0-50dps.witness.json").read_text())
+    return mp.mpf(d["tr_M_at_q0"])
 
 
 def vol_borromean() -> mp.mpf:
@@ -240,16 +254,12 @@ def _emit_witness() -> None:
     # global linking_weight scalar (the verified ≈2.378× SU(2) loss).
     cmp_pb = None
     try:
-        import json
-        d = json.loads(
-            (HERE / "chi-proton-h3-at-q0-50dps.witness.json").read_text())
-        tr_M_proton = mp.mpf(d["tr_M_at_q0"])
+        tr_M_proton = _load_tr_M_proton_at_q0()
         cmp_pb = compare_density_readings(q, tr_M_proton)
         # geom_full_vd with per-block density ≡ _li_2_q_util.geom_full_per_block
-        from _li_2_q_util import geom_full_per_block as _gfpb
         vd_pb = geom_full_vd(vol_borromean(), q,
                              density=density_per_block(tr_M_proton))
-        pb_equiv = abs(vd_pb - _gfpb(vol_borromean(), tr_M_proton, q))
+        pb_equiv = abs(vd_pb - geom_full_per_block(vol_borromean(), tr_M_proton, q))
     except Exception as e:  # noqa: BLE001
         print(f"(per-block density comparison skipped: {e!r})")
         pb_equiv = None
@@ -297,9 +307,7 @@ if __name__ == "__main__":
     print(f"  geom_full ≡ Vol·ρ/ℏ²: |Δ| = "
           f"{mp.nstr(abs(geom_full_borromean(q) - geom_full_vd(vol_borromean(), q)), 3)}")
     try:
-        import json
-        _tr = mp.mpf(json.loads(
-            (HERE / "chi-proton-h3-at-q0-50dps.witness.json").read_text())["tr_M_at_q0"])
+        _tr = _load_tr_M_proton_at_q0()
         _c = compare_density_readings(q, _tr)
         print(f"  SU(2) density loss: global ρ={mp.nstr(_c['density_global'], 8)} "
               f"vs per-block tr_M(p)={mp.nstr(_c['density_per_block'], 8)} "
