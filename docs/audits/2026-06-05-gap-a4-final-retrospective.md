@@ -13,9 +13,9 @@ The 1ppQ roadmap's Path B formula `m(K) = m_e · Vol(K)/ℏ_q² · λ(K) + S(K)`
 
 The [Δ_λ Phase-4 audit (2026-05-19)](./2026-05-19-delta-lambda-phase4-z4N-closure.md) had already substrate-derived the per-atom binding-energy amplitude `A(K)` to ≤ 2.5 %, so the question wasn't "can we derive *anything* per-atom?" but "can we derive `λ(K)` specifically — the *mass* multiplier, not the binding amplitude?"
 
-## §2. The three structural transplant routes — all REFUTED
+## §2. The four structural transplant routes — all REFUTED
 
-Three plausible routes for `λ(K)` were tested across the session. Each treated `λ(K)` as a *transplant* of a quantity living at a different layer of the framework. All three closed NEGATIVE:
+Four plausible routes for `λ(K)` were tested across the session. Each treated `λ(K)` as a *transplant* of a quantity living at a different layer of the framework. All four closed NEGATIVE:
 
 | Route | Hypothesis | Verdict | PR |
 |---|---|---|---|
@@ -55,7 +55,7 @@ Both axes converge on the **τ-image Dirac/SW PDE identification**:
 - **GAP-A-4 / T3 §7** (the just-merged scope): *"if the I1+I2-restricted Pochhammer space is empty, conclusion is τ-image Dirac/SW PDE identification — same direction #1871's workplan §4.A L3 names as load-bearing"*. T3's probe confirmed the space is empty.
 - **#1871's workplan §4.A P4 + L3**: *"the binding generating function `G(x;q) = Σ B_n x^n` satisfies a fibre-level q-difference equation; under τ at real q₀ it becomes the Dirac/SW PDE, fixing both the per-order terms and the scale rule ρ·A"*.
 
-The mass-side and binding-side closure **converge on a single categorical conjecture**: that the q-difference structure of `R_mass(q, x)` and `R_bind(q, x)` is the **τ-image of a Dirac/SW PDE on the brane manifold**, identifiable via `conj:s5-so3-fiber-action` (the S₅ ↔ SO(3) fibre action that #1871's content blocks already gate on).
+The mass-side and binding-side closure **converge on a single categorical conjecture**: that the q-difference structure of `R_mass(q, x)` and `R_bind(q, x)` is the **τ-image of a Dirac/SW PDE on the brane manifold**, identifiable via `conj:s5-so3-fiber-action` (the S₅ ↔ SO(3) fibre action; the q-deformation enters via the Hecke embedding S₅ ↪ H₅(q) per CLAUDE.md §7a Hecke-Skein convention, so the canonical `Σ_λ y_λ χ^λ` Wedderburn data at q₀ is over H_n(q) blocks even though the underlying S₅ symmetry is what the conjecture name records). The conjecture identifier `conj:s5-so3-fiber-action` is the canonical label this PR cites; spelled `fiber` (US) in the corpus identifier and `fibre` (UK) in prose for consistency with the rest of the audit chain.
 
 ## §5. Net for the framework's open math after this session
 
@@ -70,7 +70,7 @@ The mass-side and binding-side closure **converge on a single categorical conjec
 **After this session** (T1+T2+T3 + #1871's workplan):
 - per-atom mass multiplier `λ(K)`: closed across all transplant routes ✅
 - additive many-body binding series: framed via SW-residue + q-difference ✅ (#1871)
-- per-knot `Vol(K)` convention: closed as a standalone fix ✅ (T2)
+- per-knot `Vol(K)` convention: closed **NEGATIVELY** as a standalone fix ✅ (T2 — no convention resolves λ(K) alone, smallest residual swing was still +132 %)
 - τ-image Dirac/SW PDE: **the single productive remaining direction**, with two axes both pointing at it
 
 **The framework's open derivation math is now reduced to one categorical conjecture.** That's the cleanest possible localization the available probe layers can achieve.
