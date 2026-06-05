@@ -176,6 +176,29 @@ The Q_β c_k chain and the per-knot `linking_weight(K)` chain **share the Δ_λ 
 
 A categorical residue ID for Q_β's `A` (if found) does **not** automatically transfer to a `linking_weight(K)` formula; the analogous derivation would be a separate categorical chain.
 
+## 2026-06-05 — Step 5b Markov-trace Lean verified green (PR #1811) + #1871 cross-link
+
+- **Step 5b VERIFIED.** `MarkovTraceOnHecke.lean` (`trM_cyclic` trace
+  cyclicity + `QOU.lean` root wiring) builds green on a fresh container
+  (`lake build QOU.Machinery.MarkovTraceOnHecke`, 922 jobs, exit 0,
+  sorry-free, warning-free). The Markov-trace **machinery** (Steps 1–3
+  `gram.py`/`trace_formal.py` + Step 5 Lean) is stable and reusable —
+  **not** a c_3 claim (Δ_λ-gate clean). `markov_trace_origin` discharge
+  stays gated on the owner-gated Step 4 residue-A element.
+- **Cross-link to #1871 (M=Vol×Density).** My abstract `trM` (H₃ Markov
+  trace) is the same functional as their P2 "Density = Σλ yλ χλ = Markov
+  trace" (`density_per_block`, `tr_M(proton)=1.0653`). **#1850** (merged)
+  refutes Markov-stabilization at trace level (z<1; identity-trace =
+  1 ≠ 2.53), which directly bounds the residue-A-via-`Ind_{H₃}^{H₄}`
+  endgame — reinforcing Step 4's gated status.
+  [Coordination comment.](https://github.com/litlfred/qou/pull/1871#issuecomment-4632946776)
+- **Lean-cache infra finding (flagged to #1871).** The
+  `lake-cache/qou-v4-24-0` cold-container restore fell back to a full
+  Mathlib source rebuild (`URL has changed` re-clone of every package);
+  the #1857 seed likely baked a `file://` `insteadOf` remote, so
+  restorers must re-apply the redirect or the seed must normalize package
+  remotes to canonical GitHub URLs before chunking.
+
 ## Cross-refs
 
 - CLAUDE.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)
