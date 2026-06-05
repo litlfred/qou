@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "a947b578e89d",
-    "ts": "b44b60fa7183",
-    "lean": "9ad5823caf8c"
+    "ts": "b44b60fa7183"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2569,7 +2568,91 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Theorem statement is bare claim; no interpretation/motivation mixed in",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:26:45.162Z",
+        "reviewed_sha": "6648f5097189466ee441f75b827b6e4a57baa6d6",
+        "notes": "Clean separation"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Two-strand spectral completeness is core mass-theory algebra, fits chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:26:59.289Z",
+        "reviewed_sha": "6648f5097189466ee441f75b827b6e4a57baa6d6",
+        "notes": "Correct placement"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is over generic R=Z[q±1/2,(q-q^{-1})^{-1}], no archimedean leaks in statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:27:14.130Z",
+        "reviewed_sha": "6648f5097189466ee441f75b827b6e4a57baa6d6",
+        "notes": "Correct generic-ring regime"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses Bezout idempotents, Schur-Weyl-Hecke duality, Wedderburn trace — all generic-ring algebra, no archimedean machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T01:27:31.320Z",
+        "reviewed_sha": "6648f5097189466ee441f75b827b6e4a57baa6d6",
+        "notes": "Wall clean"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T01:27:31.320Z"
 }
