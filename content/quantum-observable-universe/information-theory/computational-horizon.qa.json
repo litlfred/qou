@@ -1947,7 +1947,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6d5ae27877b5",
+          "ts": "86db91af9a68",
+          "lean": "e3b14108a625"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Archimedean banner present; body references algebraic constructs (Markov trace, Skein polynomial, jet horizon); no unbannered Real.* or numeric q values.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:39:23.788Z",
+        "reviewed_sha": "09257ccf9fada41769468ddb8b35b35fe86d49c3",
+        "notes": "Correctly bannered; wall criterion satisfied."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T00:39:23.788Z"
 }
