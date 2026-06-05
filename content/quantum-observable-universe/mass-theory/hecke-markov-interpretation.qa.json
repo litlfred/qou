@@ -1937,7 +1937,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bfb0f6a3ba59",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets prop:hecke-markov-transition; Hecke/Markov/SYT content is core mass-theory material.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:49:12.306Z",
+        "reviewed_sha": "9cd150741b68355a23e981281c2e4fa9fef9289d",
+        "notes": "Correct home; no misplacement."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:49:12.306Z"
 }
