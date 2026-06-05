@@ -1,24 +1,24 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T19:09:00.300093+00:00",
-  "commitSha": "66dfcad455d6ea3d59805dcec6e5e2893ce4f02f",
+  "computedAt": "2026-06-05T19:14:03.500092+00:00",
+  "commitSha": "732844af7efdd7b31b77bef0b8dcfdf340559e0a",
   "assertions": [
     {
-      "name": "mixed_plethystic_m_half_fourth_power_passes",
+      "name": "mixed_plethystic_m_half_fourth_power_refuted_as_expected",
       "computed": 0,
       "expected": 0,
       "passed": true,
       "tolerance": 0,
-      "source": "Refined GAP-A-3 deuteron sub-case: tests the P_λ_mixed(D) = m_{1/2}(λ)^4 channel (Phase-4 4N exponent applied to PR #1870's C1 projection). 5% threshold. The expected value matches the actual verdict (PASS or REFUTE); the assertion records whether the new projection candidate works on the deuteron sub-case, with the witness data carrying the precise relative error."
+      "source": "Refined GAP-A-3 deuteron sub-case: tests the P_λ_mixed(D) = m_{1/2}(λ)^4 channel (Phase-4 4N exponent applied to PR #1870's C1 projection). 5% threshold. Expected outcome: REFUTED (per the 14 prior partition-layer projection failures + the structural amplification by the 4th power). The assertion encodes this: pass = refuted as predicted, FAIL = a positive result (genuine surprise; the FIRST positive partition-layer projection). Witness data carries the precise rel.err for diagnostic depth."
     }
   ],
   "allPassed": true,
-  "durationMs": 324,
+  "durationMs": 320,
   "computation": "gap-a3-deuteron-mixed-plethystic-probe",
   "scriptFile": "gap_a3_deuteron_mixed_plethystic_probe.py",
-  "scriptHash": "49709ed0f14f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9a8c8a6b823f",
+  "scriptCommitSha": "732844af7efdd7b31b77bef0b8dcfdf340559e0a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,9 +36,9 @@
   "contentBlock": "def:delta-lambda",
   "data": {
     "A_D": "23.3528697671839858189466440359889738864013887122817513383720723106129",
-    "target": "-0.1864112610291055979832777683050646839594449494485760567029325281114041",
+    "target": "-4.353237901949242454715460190762295046543669840974952707294765736733141",
     "closure_with_A": "13976.24830970193371447533901894913494091341470824809580389576169027748",
-    "rel_err": "74976.34340224076651008504273502203667266152835331483715254486418545411",
+    "rel_err": "3211.540894960923477078369207716350632182499467772348592484300399132431",
     "per_lambda": [
       {
         "partition": [

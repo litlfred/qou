@@ -50,14 +50,17 @@ set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
+from codata_constants import M_E_MEV as M_E_MEV_RAW  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-# Canonical anchors per the existing GAP-A-3 channels probe
+# Canonical anchors per the existing GAP-A-3 channels probe.
+# CODATA constants imported from the central registry per Gemini
+# review on PR #1899; M_E_MEV is re-cast to mp.mpf for precision.
 Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
 VOL_HYP_D = mp.mpf("12.776")   # Phase-4 deuteron hyperbolic volume
-M_E_MEV = mp.mpf("0.51099895069")
+M_E_MEV = mp.mpf(str(M_E_MEV_RAW))
 B_D_MEV = mp.mpf("2.2245")
 CHI_WITNESS = COMPUTE_DIR / "chi-deuteron-h6-at-q0-50dps.witness.json"
 
@@ -118,10 +121,17 @@ def main() -> int:
     eight_q = q_num(8, q0)
     two_q = q_num(2, q0)   # for ([2]_q)^4 carrier
     A_D = VOL_HYP_D / eight_q * two_q ** 4   # Z=1 ⇒ [3]_q^0 = 1
-    target = -B_D_MEV / (M_E_MEV * A_D)
+
+    # BUG FIX (per Copilot review on PR #1899): the audit's closure
+    # form is A(K)·Σ y_λ·χ^λ·P_λ(K) = −B(K)/m_e. The earlier code had
+    # target = -B/(m_e·A_D) which factored A_D into the wrong side;
+    # compared with closure_with_A = A_D·Σ, this introduced an extra
+    # A_D factor. Correct: compare closure_with_A to -B/m_e DIRECTLY.
+    target = -B_D_MEV / M_E_MEV
     print(f"  Vol_hyp(D) = {VOL_HYP_D}")
     print(f"  A(D) = Vol/[8]_q · ([2]_q)^4 = {mp.nstr(A_D, 12)}")
-    print(f"  Target = −B(D)/(m_e · A(D)) = {mp.nstr(target, 12)}")
+    print(f"  Target = −B(D)/m_e = {mp.nstr(target, 12)}")
+    print(f"    (compared to A(D)·Σ y_λ·χ^λ·P_λ, NOT to Σ alone)")
     print()
 
     # Load χ^λ + compute y_λ
@@ -165,9 +175,10 @@ def main() -> int:
 
     print(f"  Σ y_λ · χ^λ · P_λ_mixed = {mp.nstr(closure, 12)}")
     print(f"  A(D) · Σ                = {mp.nstr(closure_with_A, 12)}")
-    print(f"  Target                  = {mp.nstr(target, 12)}")
+    print(f"  Target = −B/m_e         = {mp.nstr(target, 12)}")
+    # Format rel.err via mp.nstr to preserve precision per Copilot review
     print(f"  Rel. error              = {mp.nstr(rel_err, 6)} "
-          f"({float(rel_err)*100:.2f} %)")
+          f"({mp.nstr(rel_err * 100, 6)} %)")
     print()
 
     THRESHOLD = mp.mpf("0.05")
@@ -187,7 +198,7 @@ def main() -> int:
         print(f"    requires new Hecke compute at n=12 (owner-gated).")
     else:
         print(f"  ✗ REFUTED — mixed plethystic m_{{1/2}}^4 rel.err "
-              f"{float(rel_err)*100:.2f}% > 5% on deuteron.")
+              f"{mp.nstr(rel_err * 100, 6)}% > 5% on deuteron.")
         print(f"    Adds row C13 to the refuted-class map: \"mixed")
         print(f"    plethystic deuteron sub-case, m_{{1/2}}^4 from Phase-4")
         print(f"    carrier exponent (4N)\".")
@@ -208,19 +219,30 @@ def main() -> int:
     builder.add_data("per_lambda", per_lambda)
     builder.add_data("verdict", "PASSED" if passed else "REFUTED")
 
+    # Per Copilot review on PR #1899: avoid tautological assertion
+    # (expected = computed always passes). The probe expects the mixed
+    # plethystic candidate to be REFUTED on the deuteron (per refined
+    # GAP-A-3 scope §3 / refuted-class precedent C1-C5 from PR #1870);
+    # a positive result would be the first in 14 prior attempts and is
+    # explicitly the surprise outcome. Encode this expectation:
+    # expected=0 (refutation expected), computed=0 if refuted, 1 if passed.
+    # Assertion passes when computed=expected; if it FAILS (passed=True
+    # i.e. computed=1 ≠ expected=0), that's the genuine surprise.
     builder.add_assertion(
-        "mixed_plethystic_m_half_fourth_power_passes",
-        computed=1 if passed else 0,
-        expected=1 if passed else 0,
+        "mixed_plethystic_m_half_fourth_power_refuted_as_expected",
+        computed=0 if not passed else 1,
+        expected=0,
         tolerance=0,
         source=("Refined GAP-A-3 deuteron sub-case: tests the "
                 "P_λ_mixed(D) = m_{1/2}(λ)^4 channel (Phase-4 4N "
                 "exponent applied to PR #1870's C1 projection). 5% "
-                "threshold. The expected value matches the actual "
-                "verdict (PASS or REFUTE); the assertion records "
-                "whether the new projection candidate works on the "
-                "deuteron sub-case, with the witness data carrying "
-                "the precise relative error."),
+                "threshold. Expected outcome: REFUTED (per the 14 "
+                "prior partition-layer projection failures + the "
+                "structural amplification by the 4th power). The "
+                "assertion encodes this: pass = refuted as predicted, "
+                "FAIL = a positive result (genuine surprise; the FIRST "
+                "positive partition-layer projection). Witness data "
+                "carries the precise rel.err for diagnostic depth."),
     )
 
     builder.save()
