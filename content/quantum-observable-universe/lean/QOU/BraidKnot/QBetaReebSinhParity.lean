@@ -87,4 +87,38 @@ theorem reeb_cosh_only_no_bar_antisymmetric_part (a k η : ℝ) :
   rw [reeb_cosh_bar_even]
   ring
 
+/-! ### Phase-series reframe (PR #1871 §3 ↔ the c_k ladder)
+
+PR #1871 derived that the Q_β observables are `cosh`/`sinh` of a single
+hyperbolic phase. At the c_k-ladder level this means
+`Q_β / Q_A = cos(Φ(u))` (cosh of an imaginary fibre phase), with
+`Φ(u) = Φ₁·u + Φ₂·u² + …`. The truncated cosine `1 − Φ²/2` gives the
+order-u² and order-u³ coefficients as exact ring identities, which pin
+the phase coefficients to the (proved) c_2 and the (cal-anchored) c_3.
+The companion compute `qbeta_cosh_phase_series_reframe_probe.py` reads
+off `Φ₁ = √2` (from `c_2 = −1`) and the hand-off target
+`Φ₂ = −c_3/√2`. -/
+
+/-- **Phase ↔ (c_2, c_3) algebraic core.** For the truncated cosine phase
+`P(u) = 1 − (Φ₁u + Φ₂u²)²/2`, the order-u² coefficient is `−Φ₁²/2` and the
+order-u³ coefficient is `−Φ₁·Φ₂` (the rest is the `−Φ₂²/2·u⁴` tail):
+
+  `1 − (Φ₁u + Φ₂u²)²/2 = 1 − (Φ₁²/2)·u² − (Φ₁·Φ₂)·u³ − (Φ₂²/2)·u⁴`.
+
+Reading coefficients: `c_2 = −Φ₁²/2` (⇒ `Φ₁² = 2` from the proved
+`c_2 = −1`) and `c_3 = −Φ₁·Φ₂` (the odd-rung reduction `c_3 = g` of
+PR #1880, with `g = −Φ₁·Φ₂`). One-line `ring` identity. -/
+theorem qbeta_phase_cos_truncation (Φ₁ Φ₂ u : ℝ) :
+    1 - (Φ₁ * u + Φ₂ * u ^ 2) ^ 2 / 2
+      = 1 - (Φ₁ ^ 2 / 2) * u ^ 2 - (Φ₁ * Φ₂) * u ^ 3 - (Φ₂ ^ 2 / 2) * u ^ 4 := by
+  ring
+
+/-- **`Φ₁² = 2` from `c_2 = −1`.** With the u² coefficient `c_2 = −Φ₁²/2`
+set to the Lean-proved value `−1`, the leading phase coefficient satisfies
+`Φ₁² = 2` — i.e. `Φ₁ = √2` (the fibre `cos(√2·u)` slice; the imaginary
+hyperbolic angle `i√2` of the bar-even `cosh` channel). -/
+theorem qbeta_phase_leading_sq_eq_two (Φ₁ : ℝ) (hc2 : -(Φ₁ ^ 2 / 2) = -1) :
+    Φ₁ ^ 2 = 2 := by
+  linarith
+
 end QOU.BraidKnot
