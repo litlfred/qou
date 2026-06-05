@@ -318,6 +318,25 @@ ELAN_NO_OVERRIDE_NOTICE=1 nohup lake build -R QOU.Mass.MassVolDensity \
 - A single-module dep cone is ~420 Mathlib modules (Real + sinh/cosh + log +
   field_simp/ring), ~tens of minutes; full QOU is 1–3 h.
 
+> **⚠️ CACHE FALSE-POSITIVE GREEN — verify a real recompile before trusting
+> exit 0 (2026-06-05, PR #1871).** After RESTORING the `lake-cache/*` orphan
+> branch (below), the restored `.lake/build` oleans for a module you then
+> *edit* can be treated as up-to-date by Lake's trace check, so
+> `lake build -R <Module>` returns **exit 0 with an empty log without
+> recompiling your new code** — a false-positive green. A red proof
+> (`unsolved goals`) only surfaces on a genuine rebuild. This bit PR #1871:
+> SO(3) lemmas "built green" off the restored olean, then a real recompile
+> exposed `unsolved goals` (Mathlib's `Real.cosh_two_mul` is `cosh²+sinh²`,
+> not `2cosh²−1`). **Rule: after restoring the cache, force a real recompile
+> of any module you changed before trusting green** — `touch <file>.lean`
+> first, and confirm the log actually ends with
+> `Build completed successfully (N jobs)` (a recompile shows tactic-timing
+> lines; a skipped build shows nothing). Do NOT infer success from exit code
+> alone, and beware compound commands: a trailing `grep -c …` prints `0` but
+> **exits 1** when there are zero matches, which can masquerade as a build
+> failure. Prefer `grep -c … ; true` or read the explicit "Build completed"
+> line.
+
 ### 🗄️ PRESERVE THE BUILD — seed/restore the `lake-cache/*` orphan branch
 
 **Every agent rebuilding Mathlib from scratch is the waste to avoid.** Per
