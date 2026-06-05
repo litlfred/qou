@@ -2550,7 +2550,70 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1b8a8ead8c95",
+          "ts": "a30e40da9ef0",
+          "lean": "463c7c714294"
+        },
+        "result": "pass",
+        "evidence": "Baryon weight beta_2 from Wedderburn mass formula; squarely in mass-theory scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:20:57.908Z",
+        "reviewed_sha": "ba811ef4f0fba172585446908bd9e3e1746cac82",
+        "notes": "No misplacement"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1b8a8ead8c95",
+          "ts": "a30e40da9ef0",
+          "lean": "463c7c714294"
+        },
+        "result": "pass",
+        "evidence": "Archimedean banner present: 'Lean sibling: archimedean specialisation over R'; numeric approx declared",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:20:57.944Z",
+        "reviewed_sha": "ba811ef4f0fba172585446908bd9e3e1746cac82",
+        "notes": "Banner covers archimedean evaluation at q_0"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1b8a8ead8c95",
+          "ts": "a30e40da9ef0",
+          "lean": "463c7c714294"
+        },
+        "result": "pass",
+        "evidence": "Proof uses q=q_0 numeric but archimedean banner declared at block top",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:20:57.988Z",
+        "reviewed_sha": "ba811ef4f0fba172585446908bd9e3e1746cac82",
+        "notes": "Declared archimedean specialisation"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T00:20:57.988Z"
 }
