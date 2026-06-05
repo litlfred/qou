@@ -1769,7 +1769,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof assembles categorical mass decomposition via Frobenius-norm split; fits mass-endomorphism chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:50:12.973Z",
+        "reviewed_sha": "04d393b3c30ca874407c07b49bb898b17eae9fcc",
+        "notes": "No placement issues."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T15:50:12.973Z"
 }
