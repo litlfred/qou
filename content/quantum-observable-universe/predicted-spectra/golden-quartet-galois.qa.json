@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "76a6be6d4c15",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Post-proof 'Consequence' and 'Connection to Bring's surface' sections are interpretive prose inside the proposition block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:13:58.306Z",
+        "reviewed_sha": "af5ea9823326ee82869e7cde3d37ee00ea4a02a7",
+        "notes": "Interpretation of Galois result for Brings surface belongs in a separate remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "76a6be6d4c15",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Primary subject is Galois theory of Q(sqrt5) and quartic polynomial roots — pure number theory, not predicted particle spectra.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:13:58.348Z",
+        "reviewed_sha": "af5ea9823326ee82869e7cde3d37ee00ea4a02a7",
+        "notes": "This is upstream algebraic background; belongs in braids-and-knots or a math-background chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "76a6be6d4c15",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Bar involution defined on R-times; .ts flags archimedean specialisation over R, but the claim could be stated generically.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:13:58.388Z",
+        "reviewed_sha": "af5ea9823326ee82869e7cde3d37ee00ea4a02a7",
+        "notes": "Archimedean R-times reference in statement; consider generic-ring formulation per CLAUDE.md §7c."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "76a6be6d4c15",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses direct polynomial expansion and Galois orbit tracking over Q; no archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:13:58.429Z",
+        "reviewed_sha": "af5ea9823326ee82869e7cde3d37ee00ea4a02a7",
+        "notes": "Algebraic proof, no wall crossing."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T13:13:58.429Z"
 }
