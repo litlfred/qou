@@ -36,13 +36,13 @@ class BarEvenKernel
     : Prop where
   -- §4(a) radius-of-convergence: pole at u_substrate within fibre tolerance
   pole_at_u_substrate :
-    |pole - u_substrate_constant| ≤ radius_tolerance
+    |pole - uSubstrate| ≤ radiusTolerance
   -- §4(c) q=1 classical-limit shadow
   c2_shadow : c2 1 = -1
-  c3_shadow : c3 1 = jones_hopf_at_q_one
+  c3_shadow : c3 1 = jonesHopfAtQOne
   -- §4(d) direction sanity at q_0
   direction_match :
-    |magnitude - direction_target| ≤ direction_threshold · direction_target
+    |magnitude - directionTarget| ≤ directionThreshold * directionTarget
   -- §4(b) bar-evenness (the structural identity from PR #1875 holds for
   --       any candidate in CommRing R, so the typeclass instance does
   --       not need to re-state it; included as a corollary lemma)
