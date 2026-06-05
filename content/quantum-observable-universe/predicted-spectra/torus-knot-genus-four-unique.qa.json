@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "2f5b027efe7b",
-    "ts": "63ee910fc371",
-    "lean": "9ad5823caf8c"
+    "ts": "63ee910fc371"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2567,7 +2566,91 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block contains statement + proof only; no interpretive prose sections present.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:40:19.258Z",
+        "reviewed_sha": "6486ef978441ae5b610b3f785092706c8078589f",
+        "notes": "Clean proposition with no mislocated interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Genus-4 torus knot enumeration is a discrete spectral classification — correctly placed in predicted-spectra.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:40:37.349Z",
+        "reviewed_sha": "6486ef978441ae5b610b3f785092706c8078589f",
+        "notes": "No misplacement or redundancy with siblings."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely Diophantine/algebraic; no archimedean constructs (Real.sqrt, MeV, numeric q) present.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:40:37.393Z",
+        "reviewed_sha": "6486ef978441ae5b610b3f785092706c8078589f",
+        "notes": "Correct algebraic side of wall."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses only integer factorization and coprimality — no archimedean tools.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:40:37.445Z",
+        "reviewed_sha": "6486ef978441ae5b610b3f785092706c8078589f",
+        "notes": "Proof stays on correct side of wall."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:40:37.445Z"
 }
