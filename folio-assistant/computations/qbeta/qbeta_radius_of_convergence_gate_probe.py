@@ -68,24 +68,45 @@ def find_nearest_pole_rational(Q_coeffs_ascending, around=None):
     root of Q. `Q_coeffs_ascending` is in ASCENDING-power order
     [a_0, a_1, ..., a_n] so Q(u) = a_0 + a_1·u + ... + a_n·u^n.
 
-    sympy's Poly expects DESCENDING order, so we reverse internally.
+    Coefficients are converted via mpmath.nstr at the current dps to
+    preserve full precision into sympy (`str(mpf)` truncates to ~15
+    digits — Gemini review on PR #1889). nroots precision matches
+    `mp.mp.dps` for consistency with the surrounding compute.
+
     If `around` is given, returns the root nearest to that value;
-    otherwise the smallest-|u| root."""
+    otherwise the smallest-|root| root. Complex roots are handled via
+    `mp.mpc` to avoid `mp.mpf(str(...))` crashing on `a + b*I`
+    (Copilot review on PR #1889)."""
     u = sp.Symbol("u")
-    Q_expr = sum(sp.Rational(str(c)) * u ** i
+    dps = mp.mp.dps
+    # Use sp.Float at the working precision rather than sp.Rational on
+    # long mp.mpf decimal strings (which builds huge exact rationals
+    # and slows polynomial construction — Copilot review on PR #1889).
+    Q_expr = sum(sp.Float(mp.nstr(c, dps), dps) * u ** i
                  for i, c in enumerate(Q_coeffs_ascending))
     Q_poly = sp.Poly(Q_expr, u)
-    roots = Q_poly.nroots(n=30)
+    roots = Q_poly.nroots(n=dps)
     if not roots:
         return None
-    real_roots = [r for r in roots if abs(sp.im(r)) < sp.Float("1e-25")]
+    # Imaginary-part threshold scales with the working precision; at
+    # dps=65 a real root should have |im| ≲ 1e-50.
+    imag_threshold = sp.Float(f"1e-{max(dps - 15, 10)}")
+    real_roots = [r for r in roots if abs(sp.im(r)) < imag_threshold]
+
+    def _root_to_mpc(r):
+        # Complex-safe conversion: handle both real and complex sympy
+        # roots without `mp.mpf(str(r))` failing on `a + b*I`.
+        return mp.mpc(float(sp.re(r)), float(sp.im(r)))
+
     if around is not None:
-        around_mp = mp.mpf(str(around))
+        around_mp = mp.mpf(mp.nstr(around, dps)) if isinstance(around, mp.mpf) \
+            else mp.mpf(str(around))
         if not real_roots:
             return None
-        return min(real_roots, key=lambda r: abs(mp.mpf(str(sp.re(r))) - around_mp))
+        return min(real_roots,
+                   key=lambda r: abs(mp.mpf(str(sp.re(r))) - around_mp))
     if not real_roots:
-        return min(roots, key=lambda r: abs(mp.mpf(str(r))))
+        return min(roots, key=lambda r: abs(_root_to_mpc(r)))
     return min(real_roots, key=lambda r: abs(mp.mpf(str(sp.re(r)))))
 
 

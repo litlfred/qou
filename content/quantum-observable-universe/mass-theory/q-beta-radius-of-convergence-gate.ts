@@ -15,7 +15,7 @@ export default proposition({
   ],
   cites: ["jones1987", "wenzl1988", "habiro2004"],
   computation: {
-    engine: "sympy+mpmath",
+    engine: "python+sympy+mpmath",
     script:
       "folio-assistant/computations/qbeta/qbeta_radius_of_convergence_gate_probe.py",
     witness:

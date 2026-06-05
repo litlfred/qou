@@ -29,7 +29,7 @@ Per the refuted-class map §4 (formalize-first gate), any candidate Habiro eleme
 
 | # | invariant | source | formalised in |
 |---|---|---|---|
-| **(a)** | **Anchor-stable** — proton + muon cross-anchor swing < 1% (registry §8) | refuted-class §4(a) | TODO (see Track 2 below) |
+| **(a)** | **Anchor-stable** — cross-anchor `u_substrate` swing < 1 ppm (10⁻⁶ relative; 210 ppb observed proton/muon at PR #1727 fibre-level tolerance) | refuted-class §4(a), PR #1727 | **this PR (Track 2)** ✓ ([`prop:q-beta-radius-of-convergence-gate`](../../content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.md)) |
 | **(b)** | **Bar-even** under `q ↦ q⁻¹` (equivalently, even in `t = q − 1` Taylor) | refuted-class §4(b) | **PR #1875** ✓ ([`prop:q-beta-bar-even-kernel-invariant`](../../content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.md)) |
 | **(c)** | **q = 1 shadow** reproduces the known integer (e.g. `c_3 → J_Hopf(1) = −2`) without fitting | refuted-class §4(c) | TODO |
 | **(d)** | **Direction sanity** — `\|F(q_0)\|` and any scaling factor must respect the target's magnitude | refuted-class §4(d), PR #1850 | TODO |

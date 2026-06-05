@@ -39,8 +39,7 @@
        docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md
 -/
 
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Tactic.Ring
+import Mathlib.Data.Real.Basic
 
 namespace QOU.QBeta.RadiusOfConvergenceGate
 

@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T14:57:21.776627+00:00",
-  "commitSha": "f464fe39b498b83f2d1c83c25a9316fad246611c",
+  "computedAt": "2026-06-05T15:06:05.060996+00:00",
+  "commitSha": "aa9d03c2ce4ff7c399b2b68eb6449fb75e46d690",
   "assertions": [
     {
       "name": "radius_of_convergence_gate_verified",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 41,
+  "durationMs": 42,
   "computation": "qbeta-radius-of-convergence-gate-probe",
   "scriptFile": "qbeta_radius_of_convergence_gate_probe.py",
-  "scriptHash": "59779aa40db6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ac1daadbefd8",
+  "scriptCommitSha": "aa9d03c2ce4ff7c399b2b68eb6449fb75e46d690",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
