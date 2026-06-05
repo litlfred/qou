@@ -1737,7 +1737,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4fb4ee5d7302",
+          "ts": "cb284344d48d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof block for prop:yekutieli-lifting, in sec:yekutieli-lifting-construction which covers exactly categorical lifting in the brane tower.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:36:54.836Z",
+        "reviewed_sha": "e1a9ead1fe2acc05a2122382d4fda52ca6ed6a26",
+        "notes": "Topic matches section scope perfectly; no sibling redundancy."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T18:36:54.836Z"
 }
