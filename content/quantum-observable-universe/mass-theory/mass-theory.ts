@@ -187,6 +187,8 @@ export default chapter({
         "binding-closure-conditional",
         "binding-closure-conditional-proof",
         "qdifference-kernel-prolongation-symbol",
+        "prolonged-periods-fixed-depth",
+        "prolonged-periods-fixed-depth-proof",
         "lr-coefficient-hecke",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
