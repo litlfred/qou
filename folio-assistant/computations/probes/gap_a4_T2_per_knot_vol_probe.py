@@ -42,7 +42,6 @@ del _sys, _Path, _bridge
 from pathlib import Path
 
 import mpmath as mp  # noqa: E402
-import sympy as sp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
@@ -65,6 +64,11 @@ M_HE4_MEV = mp.mpf("3727.37941")
 # Small-knot volumes (50-dps from `substrate/knot_volumes.py`):
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")
 VOL_6_2 = mp.mpf("4.40083251612304610144120386564092803398348541851650")
+# VOL_8_11: literature anchor is only 13 digits (SnapPy HP, Adams 1985);
+# the trailing zeros are PADDING to the 50-dps storage convention used by
+# `substrate/knot_volumes.py`, not significant digits.  Sub-13-digit
+# differences are below the source's precision floor.  Copilot review on
+# PR #1891 caught the literal apparent over-precision.
 VOL_8_11 = mp.mpf("8.28631681780659258810000000000000000000000000000000")
 
 # Phase-4 SnapPy JSJ values (from `2026-05-19-delta-lambda-phase4-z4N-closure.md`):
@@ -75,10 +79,6 @@ VOL_PHASE4_Z2 = mp.mpf("12.554")
 def hbar_q_sq(q_0: mp.mpf) -> mp.mpf:
     hbar = mp.mpf(1) - mp.mpf(1) / q_0
     return hbar * hbar
-
-
-def linking_weight_family_a_sym(q: sp.Expr) -> sp.Expr:
-    return (3 * q ** 2 + 4 + 3 * q ** (-2)) / 4
 
 
 # Vol(K) conventions per atom — three side-by-side mappings.
@@ -133,7 +133,7 @@ def per_series_swing(values: list[mp.mpf]) -> mp.mpf:
 
 
 def main() -> int:
-    w = WitnessBuilder("gap-a4-T2-per-knot-vol-probe", engine="sympy+mpmath")
+    w = WitnessBuilder("gap-a4-T2-per-knot-vol-probe", engine="mpmath")
     w.set_audit_only("docs/coordination/gap-a-path-b-lambda.md")
     w.set_description(
         "GAP-A-4 Task T2: per-knot Vol(K) convention probe.  Tests "
@@ -144,10 +144,11 @@ def main() -> int:
     )
 
     q_0 = mp.mpf(Q_0_50DPS)
-    q_sym = sp.Symbol("q", positive=True)
-    dps = mp.mp.dps
-    q_float = sp.Float(q_0, dps=dps)
-    lw_q0 = mp.mpf(str(sp.N(linking_weight_family_a_sym(q_sym).subs(q_sym, q_float), dps)))
+    # `linking_weight_family_a(q) = (3q²+4+3q⁻²)/4` is a trivial algebraic
+    # expression — compute it directly in mpmath at the live working
+    # precision rather than going through sympy substitution + string
+    # round-trip (Copilot + Gemini reviews on PR #1891).
+    lw_q0 = (3 * q_0 ** 2 + 4 + 3 * q_0 ** (-2)) / 4
 
     print("=" * 78)
     print("GAP-A-4 T2 — per-knot Vol(K) convention probe")
@@ -244,9 +245,15 @@ def main() -> int:
             f"Phase-4 transplant."
         )
     else:
+        # Format the swing as a clean percentage rather than dumping the
+        # 70-digit mp.mpf string (Gemini review on PR #1891).
+        swing_summary = ", ".join(
+            f"{v['convention']}: {float(mp.mpf(v['swing'])):.2%}"
+            for v in convention_verdicts
+        )
         synthesis = (
             f"All three Vol conventions give wide λ_emp swings "
-            f"(>25 %): {[(v['convention'], v['swing']) for v in convention_verdicts]}. "
+            f"(>25 %): {swing_summary}. "
             f"T2 closes NEGATIVE — no plausible Vol(K) convention "
             f"alone collapses the 100× S(K) swing my T1 documented.  "
             f"The Path B λ(K) is not just a Vol-convention artifact; "
