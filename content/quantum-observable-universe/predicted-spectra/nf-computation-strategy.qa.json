@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f3c66ab6f8e2",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets prop:shell-closure-normal-form; GS NF computational strategy directly supports the spectral predictions produced in Ch13 predicted-spectra.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:21:48.855Z",
+        "reviewed_sha": "c0d9bf07e79a96b9c2558359959379de3248c5e0",
+        "notes": "No redundancy with siblings; computational exposition belongs here."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T15:21:48.855Z"
 }
