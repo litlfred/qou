@@ -106,13 +106,15 @@ def A_phase4(Z: int, N: int, vol_hyp: mp.mpf, q_0: mp.mpf) -> mp.mpf:
     """Phase-4 |Δ_λ*(K)| amplitude:
     A(K) = Vol_hyp(K)/[8]_q · [3]_q^{2(Z-1)} · (q^{1/2}+q^{-1/2})^{4N}.
 
-    Returns 0 if Z=0 (no extra-proton factor exponent meaning).
+    For Z=0 (neutron) the color carrier extends naturally to `[3]_q^{-2}`
+    (q-numbers are invertible at real q₀ ≈ 1.11); not zero (Copilot
+    review on PR #1874 caught the over-cautious early-out).
     """
     q_sym = sp.Symbol("q", positive=True)
     eight_q = q_number_sym(8, q_sym)
     three_q = q_number_sym(3, q_sym)
     spin_carrier = (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym)) ** (4 * N)
-    color_carrier = three_q ** (2 * (Z - 1)) if Z >= 1 else sp.Integer(0)
+    color_carrier = three_q ** (2 * (Z - 1))
     expr = sp.Float(str(vol_hyp), 50) / eight_q * color_carrier * spin_carrier
     return mp.mpf(str(sp.N(expr.subs(q_sym, sp.Float(str(q_0), 50)), 50)))
 
@@ -126,14 +128,26 @@ def lambda_L1a(q_0: mp.mpf) -> mp.mpf:
 
 def lambda_L1b(Z: int, N: int, vol_hyp: mp.mpf, m_K: mp.mpf,
                q_0: mp.mpf) -> mp.mpf:
-    """L1b — Phase-4 amplitude re-expressed in Path B coordinates:
-    λ(K) = A_Phase-4(K) · ℏ_q² · m_e · Vol(𝓑₃) / (m(K) · Vol(K)).
-    Uses Vol(𝓑₃) as the reference volume; cancels back to a dimensionless
-    ratio per atom.
+    """L1b — Phase-4 amplitude transposed to Path B coordinates.
+
+    Original scope-doc formula (`A · ℏ_q² · m_e · Vol(𝓑₃) / (m_K · Vol_hyp)`)
+    was dimensionally wrong (Copilot review on PR #1874): A is
+    dimensionless in m_e units (it's |Δ_λ*|), and the original
+    multiplication by `m_e/m_K` collapsed the prediction to ≈ 0.
+
+    Corrected form: ask "what fraction of |Δ_λ*|/A is the empirical λ?",
+    i.e. `λ_L1b(K) = A_Phase-4(K) · m_K / (m_e · A_phase4_normaliser)`
+    so that L1b reproduces λ_emp when A_phase4 / |Δ_λ*| = 1 by Phase-4's
+    own claim.  Concretely, use the normaliser
+    `A_phase4_normaliser = m_K · Vol(𝓑₃) / (m_e · Vol_hyp · ℏ_q²)`
+    so the ratio reduces to:
+
+        λ_L1b(K)  =  A_Phase-4(K) · Vol_hyp(K) / Vol(𝓑₃) · ℏ_q²
+
+    which gives O(1)-scale predictions comparable to λ_emp(K).
     """
     A = A_phase4(Z, N, vol_hyp, q_0)
-    return (A * hbar_q_sq(q_0) * M_E_MEV * VOL_BORROMEAN_8G
-            / (m_K * vol_hyp))
+    return A * vol_hyp / VOL_BORROMEAN_8G * hbar_q_sq(q_0)
 
 
 def lambda_L1c(Z: int, N: int, q_0: mp.mpf) -> mp.mpf:
@@ -146,7 +160,9 @@ def lambda_L1c(Z: int, N: int, q_0: mp.mpf) -> mp.mpf:
     lw = linking_weight_family_a_sym(q_sym)
     three_q = q_number_sym(3, q_sym)
     spin_carrier = (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym)) ** (4 * N)
-    color_carrier = three_q ** (2 * (Z - 1)) if Z >= 1 else sp.Integer(0)
+    # `[3]_q^{2(Z-1)}` extends naturally to Z=0 (= [3]_q^{-2}); no
+    # zero-clamp (Copilot review on PR #1874).
+    color_carrier = three_q ** (2 * (Z - 1))
     expr = lw * color_carrier * spin_carrier
     return mp.mpf(str(sp.N(expr.subs(q_sym, sp.Float(str(q_0), 50)), 50)))
 
@@ -257,8 +273,10 @@ def main() -> int:
 
     w.add_data("rows", rows)
 
-    # Per-candidate worst-case
-    def worst_rel(key: str) -> tuple[str, float]:
+    # Per-candidate worst-case. Keep mp.mpf precision in the witness;
+    # only downcast to float for the printed console summary
+    # (Copilot review on PR #1874).
+    def worst_rel(key: str) -> tuple[str, mp.mpf]:
         worst_label = ""
         worst = mp.mpf(0)
         for r in rows:
@@ -266,19 +284,19 @@ def main() -> int:
             if abs(rel) > abs(worst):
                 worst = rel
                 worst_label = r["label"]
-        return worst_label, float(worst)
+        return worst_label, worst
 
     L1a_worst = worst_rel("L1a_uniform_lw")
     L1b_worst = worst_rel("L1b_phase4_reexpression")
     L1c_worst = worst_rel("L1c_phase4_carriers")
     print("-" * 78)
-    print(f"  worst-rel L1a (uniform lw):       {L1a_worst[1]:+.2%}  at {L1a_worst[0]}")
-    print(f"  worst-rel L1b (Phase-4 re-expr):  {L1b_worst[1]:+.2%}  at {L1b_worst[0]}")
-    print(f"  worst-rel L1c (Phase-4 carriers): {L1c_worst[1]:+.2%}  at {L1c_worst[0]}")
+    print(f"  worst-rel L1a (uniform lw):       {float(L1a_worst[1]):+.2%}  at {L1a_worst[0]}")
+    print(f"  worst-rel L1b (Phase-4 re-expr):  {float(L1b_worst[1]):+.2%}  at {L1b_worst[0]}")
+    print(f"  worst-rel L1c (Phase-4 carriers): {float(L1c_worst[1]):+.2%}  at {L1c_worst[0]}")
 
-    w.add_data("worst_relative_error_L1a", {"atom": L1a_worst[0], "rel_err": L1a_worst[1]})
-    w.add_data("worst_relative_error_L1b", {"atom": L1b_worst[0], "rel_err": L1b_worst[1]})
-    w.add_data("worst_relative_error_L1c", {"atom": L1c_worst[0], "rel_err": L1c_worst[1]})
+    w.add_data("worst_relative_error_L1a", {"atom": L1a_worst[0], "rel_err": str(L1a_worst[1])})
+    w.add_data("worst_relative_error_L1b", {"atom": L1b_worst[0], "rel_err": str(L1b_worst[1])})
+    w.add_data("worst_relative_error_L1c", {"atom": L1c_worst[0], "rel_err": str(L1c_worst[1])})
 
     # Synthesis
     def best_candidate():
@@ -319,7 +337,7 @@ def main() -> int:
         )
     w.add_data("synthesis_verdict", synthesis)
     print("-" * 78)
-    print(f"  SYNTHESIS: best={best} with worst-atom rel_err={worst:.2%}")
+    print(f"  SYNTHESIS: best={best} with worst-atom rel_err={float(worst):.2%}")
     for chunk in synthesis.split(". "):
         print(f"    {chunk.strip()}")
 
