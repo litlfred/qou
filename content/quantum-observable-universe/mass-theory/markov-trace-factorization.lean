@@ -88,13 +88,21 @@ theorem asymptoticRatio_at_q :
 -- Ref: [manuscript] §6/markov-trace-factorization
 def crossingPositive : ℝ × ℝ := (1, 0)
 
-/-- Negative crossing (neutron-neutron): c = q², d = -q·skein_amp. -/
+/-- Negative crossing (neutron-neutron): c = q², d = -q·skein_amp.
+
+    Intended domain `0 < q` (the `Real.sqrt q` term is the physical
+    `q^{1/2}`); for `q ≤ 0` the value is formal only. The substrate
+    evaluates at `q₀ ≈ 1.11 > 0`, so the constraint holds in use. -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def crossingNegative (q : ℝ) : ℝ × ℝ :=
   let q_half := Real.sqrt q
   (q^2, -q * (q_half - 1 / q_half))
 
-/-- Mixed crossing (proton-neutron): average of positive and negative. -/
+/-- Mixed crossing (proton-neutron): average of positive and negative.
+
+    Intended domain `0 < q` (the `Real.sqrt q` term is the physical
+    `q^{1/2}`); for `q ≤ 0` the value is formal only. The substrate
+    evaluates at `q₀ ≈ 1.11 > 0`, so the constraint holds in use. -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def crossingMixed (q : ℝ) : ℝ × ℝ :=
   let q_half := Real.sqrt q
@@ -146,14 +154,16 @@ noncomputable def markov_trace_factorization (q : ℝ) (hq : 1 < q)
   let z := markovZ q (by linarith)
   chains.foldl (fun acc ab => acc * (z * ab.1 + ab.2)) 1
 
-/-- Pull the initial accumulator out of a multiplicative left-fold. -/
-private theorem foldl_mul_init (g : ℝ × ℝ → ℝ) :
-    ∀ (l : List (ℝ × ℝ)) (a : ℝ),
-      l.foldl (fun acc ab => acc * g ab) a = a * l.foldl (fun acc ab => acc * g ab) 1
+/-- Pull the initial accumulator out of a multiplicative left-fold.
+    Polymorphic over the element type `α` — the fold uses only multiplication
+    in the `ℝ` codomain, never anything about `α` (per Gemini review, PR #1849). -/
+private theorem foldl_mul_init {α : Type*} (g : α → ℝ) :
+    ∀ (l : List α) (a : ℝ),
+      l.foldl (fun acc x => acc * g x) a = a * l.foldl (fun acc x => acc * g x) 1
   | [], a => by simp
-  | ab :: t, a => by
+  | x :: t, a => by
       simp only [List.foldl_cons, one_mul]
-      rw [foldl_mul_init g t (a * g ab), foldl_mul_init g t (g ab)]; ring
+      rw [foldl_mul_init g t (a * g x), foldl_mul_init g t (g x)]; ring
 
 /-- Wenzl disjoint-multiplicativity (the MonoidHom property of the Markov trace):
     the traced-volume product over a concatenation of chains factors as the product
@@ -162,7 +172,10 @@ private theorem foldl_mul_init (g : ℝ × ℝ → ℝ) :
 theorem markov_trace_factorization_mul (q : ℝ) (hq : 1 < q) (c₁ c₂ : List (ℝ × ℝ)) :
     markov_trace_factorization q hq (c₁ ++ c₂)
       = markov_trace_factorization q hq c₁ * markov_trace_factorization q hq c₂ := by
-  unfold markov_trace_factorization
-  rw [List.foldl_append, foldl_mul_init]
+  -- `simp only [def]` zeta-reduces the `let z := markovZ …`, exposing the bare
+  -- multiplicative fold so `foldl_mul_init` matches and the goal closes by `rfl`
+  -- (addresses the `let`-blocks-`rw` concern, Copilot review on PR #1849).
+  simp only [markov_trace_factorization, List.foldl_append]
+  rw [foldl_mul_init]
 
 end QOU.Archimedean
