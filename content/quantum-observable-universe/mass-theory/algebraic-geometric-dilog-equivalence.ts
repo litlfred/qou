@@ -10,7 +10,6 @@ export default conjecture({
   },
   uses: [
     "conj:dilogarithm-archimedean-limit",
-    "rem:quantum-bloch-group",
   ],
   cites: [
     "kashaev1997",
