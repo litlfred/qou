@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ffd81dbbc575",
+          "ts": "ba1e1aa9215f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark discusses beta-decay half-lives as experimental probes of local substrate q — core observations chapter content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:43:59.701Z",
+        "reviewed_sha": "979d51307aea712ac8b9d471da69b6139fb4b4df",
+        "notes": "Fits Ch.7 observations scope: experimental predictions and proposed experiments for q-measurement."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T19:43:59.701Z"
 }
