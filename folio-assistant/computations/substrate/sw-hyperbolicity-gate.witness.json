@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T17:58:43.615276+00:00",
-  "commitSha": "c7d400b1f6e8082c8ac21990704a79bcaa979fbb",
+  "computedAt": "2026-06-05T19:19:26.068017+00:00",
+  "commitSha": "91a2a2c1db5107e281fa60b66a6ed5af71fe533a",
   "assertions": [
     {
       "name": "L6a4_hyperbolic_vol_eq_8G",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 30,
   "computation": "sw-hyperbolicity-gate",
   "scriptFile": "sw_hyperbolicity_gate.py",
-  "scriptHash": "2f3800cb8798",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "31954d239f82",
+  "scriptCommitSha": "7f7a19771cbfaedc751cb4643ffa6ecb8abf00ff",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

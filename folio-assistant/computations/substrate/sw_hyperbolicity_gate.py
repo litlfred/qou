@@ -69,10 +69,12 @@ def is_hyperbolic(name: str) -> bool:
     )
 
 
-def vol_component(name: str, dps: int = COMPUTE_DPS) -> mp.mpf:
+def vol_component(name: str, dps: int | None = None) -> mp.mpf:
     """The L4 gate: the hyperbolic volume of `name` if it is hyperbolic,
     else mpf(0). This is the per-component volume entering an SW-residue
-    binding term."""
+    binding term. `dps` defaults to the active mpmath precision context."""
+    if dps is None:
+        dps = mp.mp.dps
     if is_hyperbolic(name):
         return kv.vol_at(name, dps)
     return mp.mpf(0)
