@@ -35,7 +35,24 @@ productive directions are #1876 §4-2 (additive `S(K)`) and §4-4
 | [#1874](https://github.com/litlfred/qou/pull/1874) | merged | GAP-A-4 L1 light-series — L1a/b/c REFUTED (proton +2.89 % gap recovered) |
 | [#1876](https://github.com/litlfred/qou/pull/1876) | merged | L1 retrospective (4 next-probe directions; #1882's ³He +0.70 % flagged) |
 | [#1882](https://github.com/litlfred/qou/pull/1882) | merged | ³He L1b residual — `sqrt([3]_q/[2]_q)` +0.70 % filed as NUMEROLOGY |
-| [#1883](https://github.com/litlfred/qou/pull/1883) | open | Cross-isotope extrapolation REFUTED (>1000 % worst rel_err) → ³He numerology CONFIRMED |
+| [#1883](https://github.com/litlfred/qou/pull/1883) | merged | Cross-isotope extrapolation REFUTED (>1000 % worst rel_err) → ³He numerology CONFIRMED |
+| [#1886](https://github.com/litlfred/qou/pull/1886) | merged | T1 — additive `S(K)` sub-leading REFUTED under uniform-λ (100× swing across light series) |
+
+## Cross-axis hub
+
+The step-9 binding closure ledger
+[`2026-06-05-step9-binding-closure.md`](2026-06-05-step9-binding-closure.md) (PR
+[#1871](https://github.com/litlfred/qou/pull/1871), flag-bearer
+`claude/confident-newton-R8lIx`) is the **adjacent-axis hub** for the
+broader step-9 derivation gap. The two ledgers track related but distinct
+questions:
+
+| Ledger | Question | Axis |
+|---|---|---|
+| this (`gap-a-path-b-lambda.md`) | substrate-derivability of the per-atom `λ(K)` in Path B | per-atom mass multiplier |
+| `2026-06-05-step9-binding-closure.md` | additive many-body binding series via SW-residue + q-difference | many-body binding closure |
+
+The two intersect on: (a) the per-knot Vol(K) convention (T2 here ≡ C2 there), (b) the per-block-vs-global density gate (T3 here ≡ §4.B C1 there), (c) the bar-odd binding-difference observable (∼ L5 there; merged in #1871). My chain's negative results (`Δ_λ` Kashiwara, Markov stab, brane-tower content, L1 carrier-transplant) constrain their q-difference kernel `R(q,x)` derivation.
 
 ## Active sibling-axis coordination
 
