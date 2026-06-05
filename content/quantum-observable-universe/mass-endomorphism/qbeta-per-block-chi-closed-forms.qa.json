@@ -1,0 +1,128 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:qbeta-per-block-chi-closed-forms",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.md",
+    "lean": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean"
+  },
+  "source_hashes": {
+    "md": "80bb11859d4b",
+    "ts": "752273daa093",
+    "lean": "4d1c6cee8210"
+  },
+  "criteria": {
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "80bb11859d4b",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is pure math; interpretation prose is in a clearly separated section after the proof block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:10:36.618Z",
+        "reviewed_sha": "f9a29ccba0702844f85ee1382e4b4c27231e1ded",
+        "notes": "No interpretation mixed into the mathematical statement itself."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "80bb11859d4b",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition fits mass-endomorphism chapter: per-block Hecke character data directly feeds Q_beta precision ladder.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:10:50.699Z",
+        "reviewed_sha": "f9a29ccba0702844f85ee1382e4b4c27231e1ded",
+        "notes": "Thematically coherent with surrounding mass derivation content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "80bb11859d4b",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is pre-archimedean: all formulas are rational in q, no real-analytic or archimedean constructs; tagged pre-archimedean.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:11:01.189Z",
+        "reviewed_sha": "f9a29ccba0702844f85ee1382e4b4c27231e1ded",
+        "notes": "Correctly stays on categorical/fibre side of the wall."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "80bb11859d4b",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses field_simp;ring and positivity on q>0 denominators — algebraic tactics, no archimedean analysis.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:11:23.015Z",
+        "reviewed_sha": "f9a29ccba0702844f85ee1382e4b4c27231e1ded",
+        "notes": "Proof stays pre-archimedean; positivity is structural not analytic."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "80bb11859d4b",
+          "ts": "752273daa093",
+          "lean": "4d1c6cee8210"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean ref QOU.BraidKnot.chi_block_antipode_pairing; narrative proof matches: closed forms, vanishing at q=1, antipode pairing, all discharged by field_simp;ring.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:11:36.676Z",
+        "reviewed_sha": "f9a29ccba0702844f85ee1382e4b4c27231e1ded",
+        "notes": "Narrative and Lean proof strategy are aligned."
+      }
+    ]
+  },
+  "updated_at": "2026-06-05T15:11:36.676Z"
+}
