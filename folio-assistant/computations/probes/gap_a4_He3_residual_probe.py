@@ -56,7 +56,10 @@ VOL_PHASE4_Z2 = mp.mpf("12.554")
 def q_number_sym(n: int, q: sp.Expr) -> sp.Expr:
     if n == 0:
         return sp.Integer(0)
-    return sum(q ** (2 * k - (n - 1)) for k in range(n))
+    # `sp.Add(*...)` builds the sum in one efficient step instead of
+    # `sum()`'s n-1 sequential pairwise additions (Gemini review on
+    # PR #1882).
+    return sp.Add(*(q ** (2 * k - (n - 1)) for k in range(n)))
 
 
 def linking_weight_family_a_sym(q: sp.Expr) -> sp.Expr:
@@ -69,8 +72,19 @@ def hbar_q_sq(q_0: mp.mpf) -> mp.mpf:
 
 
 def evaluate(expr: sp.Expr, q_0: mp.mpf) -> mp.mpf:
-    q_sym = sp.Symbol("q", positive=True)
-    return mp.mpf(str(sp.N(expr.subs(q_sym, sp.Float(str(q_0), 50)), 50)))
+    """Substitute every free symbol in `expr` with `q_0` and return
+    the numerical value at the working precision.
+
+    Robust to the symbol's exact `Symbol(...)` instance (substitutes
+    every free symbol, not a freshly-constructed `Symbol('q')` —
+    Copilot review on PR #1882).  Substitution + final precision both
+    follow the live mp.mp.dps so this stays in sync with the probe's
+    `set_compute_dps()` (Copilot review on PR #1882).
+    """
+    dps = mp.mp.dps
+    q_float = sp.Float(str(q_0), dps)
+    subs = {sym: q_float for sym in expr.free_symbols}
+    return mp.mpf(str(sp.N(expr.subs(subs), dps)))
 
 
 def main() -> int:
@@ -142,12 +156,20 @@ def main() -> int:
         ("[3]_q^(1/4)·q_0^(1/2)",            q_number_sym(3, q_sym) ** sp.Rational(1, 4) * sp.sqrt(q_sym)),
     ]
 
-    # Mass-ratio candidates (substrate-free; included for completeness)
+    # Mass-ratio candidates (substrate-free; included for completeness).
+    # `log(residual)/log(m_n/m_p) ≈ 145.4`, so the ratio CAN be
+    # numerically reproduced by `(m_n/m_p)^145` to better than 0.1 %
+    # — but 145 is a large ad-hoc integer with no categorical
+    # justification, exactly the numerology the §6 discipline warns
+    # against (Copilot review on PR #1882 caught the original 160/145
+    # mismatch).  The low-power `m_n/m_p` IS included to confirm the
+    # residual is NOT a simple O(1) mass-ratio correction (the high
+    # exponent IS that confirmation).  The high-power case is
+    # deliberately omitted.
     mass_candidates_num: list[tuple[str, mp.mpf]] = [
         ("m_n / m_p",      M_N_MEV / M_P_MEV),
-        ("(m_n/m_p)^160",  (M_N_MEV / M_P_MEV) ** 160),  # log(1.2218)/log(m_n/m_p) ≈ 145
         ("VOL(³He)/VOL(𝓑₃) · ℏ_q²",
-                            VOL_PHASE4_Z2 / VOL_BORROMEAN_8G * hbar_q_sq(q_0)),
+                           VOL_PHASE4_Z2 / VOL_BORROMEAN_8G * hbar_q_sq(q_0)),
     ]
 
     results = []
