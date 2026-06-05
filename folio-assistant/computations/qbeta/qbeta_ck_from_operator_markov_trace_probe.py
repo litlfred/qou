@@ -144,7 +144,7 @@ def main() -> int:
     # so that the leading u^0 coefficient is 1 (matching the product form
     # 1 + c_2 u^2 + ...).
 
-    R_candidate = tr_M  # before normalization
+    # Substrate evaluation point + leading-order test below.
     print(f"  Substituting numerically at q_0 = 1.10997858275... :")
     Q0_str = "1.1099785827513808075916690956107688798744991218736"
     q0_sp = sp.Float(Q0_str, 50)
@@ -178,7 +178,7 @@ def main() -> int:
     print(f"    du/dt at q_0  = {sp.N(a1, 25)}")
     print()
 
-    if a1 == 0:
+    if a1_effectively_zero:
         print(f"  Falls back to PR #1840 finding: scalar route singular.")
         print(f"  Stage C operator route needs the matrix N=k reading,")
         print(f"  not a scalar series expansion. This is the verdict.")
@@ -238,8 +238,8 @@ def main() -> int:
     print(f"  This must equal a NORMALIZATION constant — the Jones polynomial")
     print(f"  of trefoil at q=1, which is V(trefoil)(1) = +1.")
     print()
-    tr_M_at_q1 = sp.simplify(tr_M.subs(q, 1))
-    print(f"  tr_M(trefoil)(q = 1) = {tr_M_at_q1}")
+    tr_M_at_q1 = sp.limit(tr_M, q, 1)
+    print(f"  tr_M(trefoil)(q -> 1)  (limit, not subs) = {tr_M_at_q1}")
     print()
 
     # Taylor of tr_M around q = 1 in u (the c_k extraction)
@@ -252,7 +252,10 @@ def main() -> int:
     print(f"    tr_M(1 + s) ~ {sp.simplify(tr_M_s)}")
     print(f"    u(1 + s)    ~ {sp.simplify(u_s)}")
     print()
-    print(f"  Both are polynomials in s.")
+    print(f"  Note: tr_M may be a LAURENT series in s (negative powers")
+    print(f"  allowed) if y_lambda(q) has a pole at q=1. Check `tr_M_at_q1`")
+    print(f"  above — if finite the expansion is regular; if 0/∞ the s")
+    print(f"  expansion includes negative powers and needs regularization.")
     print(f"  Note: u(s) = b(s+1) * (s/(1+s))^2 ~ b(1) * s^2 + O(s^3)")
     print(f"  So u ~ (sqrt(3)/2) * s^2 near s = 0 (leading order)")
     print(f"  ⇒ s ~ sqrt(u / (sqrt(3)/2)) = sqrt(2u/sqrt(3))")
