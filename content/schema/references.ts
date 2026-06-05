@@ -4944,6 +4944,56 @@ export const references: CSLData[] = [
     note: "Internal QOU pull request #1786. The bias-corrected value ĉ_k − ĉ_{k+1}·u equals c_alg(k) − c_alg(k+2)·u², recovering the algebraic ladder coefficient modulo an order-u² residual. Cited by q-beta-c-k-leading-bias-correction-identity.lean; empirical core in folio-assistant/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py.",
   }),
 
+  ref({
+    id: "pr1521",
+    type: "webpage",
+    title: "Q_β bar-even kernel invariant: the q ↦ q⁻¹ parity obstruction (integer u-powers ⇒ even-in-t; odd-in-t forces a √u branch)",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1521",
+    note: "Internal QOU pull request #1521. Since u = b·ℏ_q² has a double zero at q = 1, a power series in integer powers of u absorbs only even-in-t (t = q − 1) Taylor content; odd-in-t content forces a √u branch. Cited by q-beta-bar-even-kernel-invariant.lean.",
+  }),
+
+  ref({
+    id: "pr1727",
+    type: "webpage",
+    title: "Q_β radius-of-convergence gate: §4(a) simple-pole-at-u_substrate test for candidate Habiro elements",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1727",
+    note: "Internal QOU pull request #1727. Asymptotic-pole test (qbeta_singularity_type_probe.py) establishing a simple pole at u_substrate for the canonical SDP-pinned c_k (branch-fit β ≈ 1). Cited by q-beta-radius-of-convergence-gate.lean, q-beta-bar-even-kernel-typeclass.lean.",
+  }),
+
+  ref({
+    id: "pr1850",
+    type: "webpage",
+    title: "Q_β direction-sanity gate: §4(d) order-of-magnitude invariant (refuted the trace-level Markov-stabilization attack)",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1850",
+    note: "Internal QOU pull request #1850. Any candidate Habiro element must have |F(q_0)| within an order of magnitude of the target ratio; the trace-level Markov-stabilization attack (refuted-class row C12) was killed because z(q_0) ≈ 0.4993 < 1 cannot reach linking_weight ≈ 2.53. Cited by q-beta-direction-sanity-gate.lean, q-beta-bar-even-kernel-typeclass.lean.",
+  }),
+
+  ref({
+    id: "pr1889",
+    type: "webpage",
+    title: "Q_β bar-even kernel §4 formalize-first gate (Track A/B; bundled into the BarEvenKernel typeclass)",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1889",
+    note: "Internal QOU pull request #1889. One of the four §4 formalize-first invariants (Tracks A + B) bundled by prop:q-beta-bar-even-kernel-typeclass into a single parametric Lean class. Cited by q-beta-bar-even-kernel-typeclass.lean.",
+  }),
+
+  ref({
+    id: "pr1890",
+    type: "webpage",
+    title: "Q_β bar-even kernel §4 formalize-first gate (Track A/B; bundled into the BarEvenKernel typeclass)",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1890",
+    note: "Internal QOU pull request #1890. One of the four §4 formalize-first invariants (Tracks A + B) bundled by prop:q-beta-bar-even-kernel-typeclass into a single parametric Lean class. Cited by q-beta-bar-even-kernel-typeclass.lean.",
+  }),
+
   // ── Thurston — Princeton notes on 3-manifold geometry/topology ─
   // (merged from main via PR #736 — kept verbatim from origin/main)
   ref({
