@@ -1933,7 +1933,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Nucleon Hecke element definition fits particle-interactions chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:41:43.908Z",
+        "reviewed_sha": "13b8d8d724362bdc92721eb5860e014f6e2100a8",
+        "notes": "Proton/neutron Hecke elements are core particle-interactions content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses generic H_3(R,q); archimedean q_0 appears only in witness note outside the definition body.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:41:57.574Z",
+        "reviewed_sha": "13b8d8d724362bdc92721eb5860e014f6e2100a8",
+        "notes": "Algebraic definition body correctly avoids archimedean specialization."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T18:41:57.574Z"
 }
