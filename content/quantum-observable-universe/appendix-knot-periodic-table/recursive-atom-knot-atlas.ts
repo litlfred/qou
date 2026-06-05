@@ -39,4 +39,11 @@ export default proposition({
     "hyperbolic-knot",
     "appendix",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-05-31",
+      body: "SDP-uniqueness wiring: `NucleusEmptySDPUniqueness` landed via PR #1537; the per-stable-isotope `StableIsotopeUniqueness.lean` was pending PR #1542.",
+    },
+  ],
 });

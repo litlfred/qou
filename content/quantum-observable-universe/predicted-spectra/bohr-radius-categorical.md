@@ -22,34 +22,34 @@ $$
   \Phi_{1}^{\mathrm{Coul}}(a_{0}^{\mathrm{cat}}).
 $$
 
-> **Caveat — derivation status**
->
-> This proposition is **not yet derived from QOU/Hecke structure**.
-> The formula $a_0 = \hbar/(m_e c \alpha)$ is *transported* from
-> the standard QED virial-balance argument by analogy. The
-> components $\Phi_{1}^{\mathrm{kin}}$ and $\Phi_{1}^{\mathrm{Coul}}$
-> are *postulated* (their dimensional behavior asserted by analogy
-> with QED kinetic/Coulomb energies); they have **not** been
-> constructed as Hecke-algebraic quantities.
->
-> Specifically, a direct computational test
-> ([`folio-assistant/computations/h2-molecular-binding.py`](folio-assistant/computations/h2-molecular-binding.py))
-> shows that per-generator transfer-matrix updates are in general
-> *multiplicative*, mixing intra-atomic (dressed/kinetic-like) and
-> inter-atomic (bare/Coulomb-like) crossing contributions
-> nonlinearly within each $V_i$. Round-8 below finds that the
-> cross-terms $h_b \cdot h_d$ happen to **cancel for the optimal
-> ordering** $[p_1, e_2, e_1, p_2]$ of $H_2$, leaving an additive
-> $\{h_b, h_d\}$ decomposition there; but this cancellation is
-> permutation-specific and does not give a uniform
-> Hecke-algebraic definition of $\Phi_1^{\mathrm{kin}}$ vs
-> $\Phi_1^{\mathrm{Coul}}$ that holds for arbitrary molecular
-> braids.
->
-> The proposition is recorded with this caveat — not as a closed
-> theorem — to preserve the structural mapping between QOU and
-> standard physics. Genuine categorical closure remains an open
-> research direction; five candidate routes are surveyed below.
+### Derivation status
+
+This proposition is **not yet derived from QOU/Hecke structure**.
+The formula $a_0 = \hbar/(m_e c \alpha)$ is *transported* from
+the standard QED virial-balance argument by analogy. The
+components $\Phi_{1}^{\mathrm{kin}}$ and $\Phi_{1}^{\mathrm{Coul}}$
+are *postulated* (their dimensional behavior asserted by analogy
+with QED kinetic/Coulomb energies); they have **not** been
+constructed as Hecke-algebraic quantities.
+
+Specifically, a direct computational test
+([`folio-assistant/computations/h2-molecular-binding.py`](folio-assistant/computations/h2-molecular-binding.py))
+shows that per-generator transfer-matrix updates are in general
+*multiplicative*, mixing intra-atomic (dressed/kinetic-like) and
+inter-atomic (bare/Coulomb-like) crossing contributions
+nonlinearly within each $V_i$. Round-8 below finds that the
+cross-terms $h_b \cdot h_d$ happen to **cancel for the optimal
+ordering** $[p_1, e_2, e_1, p_2]$ of $H_2$, leaving an additive
+$\{h_b, h_d\}$ decomposition there; but this cancellation is
+permutation-specific and does not give a uniform
+Hecke-algebraic definition of $\Phi_1^{\mathrm{kin}}$ vs
+$\Phi_1^{\mathrm{Coul}}$ that holds for arbitrary molecular
+braids.
+
+The proposition is recorded with this caveat — not as a closed
+theorem — to preserve the structural mapping between QOU and
+standard physics. Genuine categorical closure remains an open
+research direction; five candidate routes are surveyed below.
 
 ### What is rigorous (and what is not)
 

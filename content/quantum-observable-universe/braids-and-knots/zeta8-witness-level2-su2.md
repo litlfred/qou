@@ -62,8 +62,8 @@ empirically (audit
 
 ## Vindicates earlier hypothesis (a)
 
-In [`docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md)
-(PR #1579, now on `main`), the level-2 $\mathrm{SU}(2)$ hypothesis (a)
+In [`docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md),
+the level-2 $\mathrm{SU}(2)$ hypothesis (a)
 was ruled out as "FALSE in naive form". This proposition shows the
 hypothesis is in fact correct — provided the categorical framing is the
 **Wenzl annihilator forcing Δa_m interference** rather than "level-2

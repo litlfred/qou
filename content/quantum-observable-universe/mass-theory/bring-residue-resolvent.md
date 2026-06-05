@@ -10,10 +10,10 @@ universal chain's specialisations.*
 ## The shared smaller-scope open math, now scaffolded
 
 The α_shift universal derivation chain (audit doc
-[2026-05-30](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
+[α_shift universal derivation chain](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
 identified the pole-order origin of the q-integer indices in several
-"empirical" fits.  What remained shared across PRs #1444 (α_EM),
-the merged #1445 (p-n averaging), and #1455 (meson m_K/m_π) was
+"empirical" fits.  What remained shared across the α_EM, p-n averaging,
+and meson m_K/m_π treatments was
 the residue/resolvent step: deriving the closed form
 $F_n(q) = 1 / (1 - h_q \cdot q^n)$ from the contour-integral
 evaluation on Bring's surface.

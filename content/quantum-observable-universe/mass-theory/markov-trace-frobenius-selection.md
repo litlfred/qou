@@ -78,15 +78,17 @@ $\tau_M$ to be the **unique** non-degenerate Frobenius form on the
 Hecke algebra: any other trace satisfying the Markov-peel + cyclic
 axioms and non-degeneracy equals $\tau_M$ block-wise.
 
-> **History (purged 2026-05-29, #1422).** Earlier versions of this
-> proposition selected $\tau_M$ *by contrast* with a degenerate
-> Schur–Weyl candidate $\tau_{\mathrm{SW}}$ (which vanishes for
-> height-$> 2$ partitions, hence violates non-degeneracy).  Per
-> owner decision A' (#1422) the $\tau_{\mathrm{SW}}$ path is fully
-> purged from the framework; the proposition is now a direct
-> uniqueness statement (Wenzl / Jones), independent of any alternative
-> to rule out.  See `docs/uniqueness-theorems-backlog.md` for the
-> broader uniqueness programme.
+### Historical note — the purged Schur–Weyl contrast
+
+Earlier versions of this
+proposition selected $\tau_M$ *by contrast* with a degenerate
+Schur–Weyl candidate $\tau_{\mathrm{SW}}$ (which vanishes for
+height-$> 2$ partitions, hence violates non-degeneracy).  Per
+owner decision A' the $\tau_{\mathrm{SW}}$ path is fully
+purged from the framework; the proposition is now a direct
+uniqueness statement (Wenzl / Jones), independent of any alternative
+to rule out.  See `docs/uniqueness-theorems-backlog.md` for the
+broader uniqueness programme.
 
 ### Step 4: Wedderburn + Markov-trace formula
 
@@ -138,7 +140,7 @@ at the proton-pinned $q_0$:
 > not the 11-crossing canonical recipe), yielding $\tau_M(p_{\rm free},
 > q_0) \approx 1.7339$ — a legitimate Jones–Markov value on its
 > *own* braid, not a competing convention for the 11-crossing braid
-> above.  The 2026-05-11 escalation framed this as a "$\tau_M$ /
+> above.  An earlier escalation framed this as a "$\tau_M$ /
 > $\tau_{\mathrm{SW}}$ conflation" but the audit doc itself records the
 > different-braid framing (line 248-251); decision A' purges
 > $\tau_{\mathrm{SW}}$ and reads the from-scratch as a different

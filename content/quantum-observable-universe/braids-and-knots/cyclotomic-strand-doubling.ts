@@ -20,4 +20,11 @@ export default proposition({
     "1ppQ",
     "draft",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-06-01",
+      body: "The strand-doubling interpretation was falsified 2026-06-01; see the cross-referenced audit docs in the `.md`.",
+    },
+  ],
 });
