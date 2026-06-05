@@ -1,0 +1,164 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-05T13:07:05.341114+00:00",
+  "commitSha": "89bd62a72c3abaea8ca4a1ee26f72580c824f89c",
+  "assertions": [
+    {
+      "name": "L1b_He3_matches_PR1874_value",
+      "computed": -0.18150848456294633,
+      "expected": -0.1815,
+      "passed": true,
+      "tolerance": 0.002,
+      "source": "Sanity check: this probe re-derives L1b(³He) from the Phase-4 formula and should reproduce PR #1874's -18.15 % rel_err verdict to better than 0.2 %."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 82,
+  "computation": "gap-a4-He3-residual-probe",
+  "scriptFile": "gap_a4_He3_residual_probe.py",
+  "scriptHash": "cf0937d4b02a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "GAP-A-4 §4 direction 3 probe: investigate the L1b ³He -18.15 % NEAR-MATCH (the only sub-25 % row in PR #1874's 6×3 grid).  Tests ~15 closed-form substrate quantities against the residual_ratio λ_emp/L1b = 1.2218 to see if a clean structural factor explains the gap.  No fitting; each candidate is a fixed closed-form expression at q₀.",
+  "auditOnly": "docs/audits/2026-06-05-gap-a4-L1-retrospective.md",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "A_phase4_He3": "209.1494559624230723171644160918657403353562881551844235747704928271021",
+    "L1b_He3": "3.517683447378032163385125302667474796150730374254927780792334568965814",
+    "lambda_emp_He3": "4.297764095330516145218274970747546594464779946517429721926337742750504",
+    "residual_ratio": "1.221759763100324148876310543185651877506807252790745310899120299209996"
+  },
+  "data": {
+    "discipline": "EXPLORATORY",
+    "production_wired": false,
+    "scope_doc": "docs/audits/2026-06-05-gap-a4-L1-retrospective.md",
+    "candidates": [
+      {
+        "label": "q_0",
+        "value_at_q0": "1.1099785827513808075916690956107688798744991218736",
+        "relative_error": "-0.09149194770114923935540323824578003804158336674879603587237673847702648",
+        "verdict": "NEAR-MATCH (<25%)"
+      },
+      {
+        "label": "q_0**2",
+        "value_at_q0": "1.232052454166763931269804513535636184849681422917",
+        "relative_error": "0.008424480308895721569755746938204005477351896897858614704455690822710947",
+        "verdict": "NEAR-MATCH (<5%)"
+      },
+      {
+        "label": "q_0**(1/2)",
+        "value_at_q0": "1.0535552110598574641704686986707191825838829731705",
+        "relative_error": "-0.1376739987030123351374142858990222550683451986620557349795698501728143",
+        "verdict": "NEAR-MATCH (<25%)"
+      },
+      {
+        "label": "[2]_q",
+        "value_at_q0": "2.0108968667071222997524919780918628158892407484841",
+        "relative_error": "0.645902023818735451413847503642508950238164203200393024026271754243486",
+        "verdict": "REFUTED"
+      },
+      {
+        "label": "[3]_q",
+        "value_at_q0": "3.0437062085325219894020193356773883097682139607135",
+        "relative_error": "1.491247707166952823883785627983208701155348562821625422675494699014278",
+        "verdict": "REFUTED"
+      },
+      {
+        "label": "[4]_q",
+        "value_at_q0": "4.1096824112079411617605687890963302433643280785864",
+        "relative_error": "2.363740184714592528848925336616890065756668497556730456020270167189345",
+        "verdict": "REFUTED"
+      },
+      {
+        "label": "[3]_q/[2]_q",
+        "value_at_q0": "1.5136063211022067437566527464269931840410500181556",
+        "relative_error": "0.2388739315340488676827137193134209791552203433315814544532568120311217",
+        "verdict": "NEAR-MATCH (<25%)"
+      },
+      {
+        "label": "[4]_q/[3]_q",
+        "value_at_q0": "1.3502230930459493527159740840901015601572975711803",
+        "relative_error": "0.1051461456052850107441201613177778475239371861695947920533405112050113",
+        "verdict": "NEAR-MATCH (<25%)"
+      },
+      {
+        "label": "sqrt([3]_q/[2]_q)",
+        "value_at_q0": "1.2302870888951922768433068095026164832024930948864",
+        "relative_error": "0.006979543812467092333327714665534518386249969193588933901258401281673748",
+        "verdict": "NEAR-MATCH (<5%)"
+      },
+      {
+        "label": "(q^(1/2) + q^(-1/2))/2",
+        "value_at_q0": "1.0013611819302666452539101189958158812670525425453",
+        "relative_error": "-0.1803943687020568479142877271612498734185403685093453067190274876231006",
+        "verdict": "NEAR-MATCH (<25%)"
+      },
+      {
+        "label": "(q^(1/2) + q^(-1/2))/[2]_q",
+        "value_at_q0": "0.99593489701937081626727319100132751975813406590006",
+        "relative_error": "-0.1848357368619691927327243255690141410848076503679519925638641727879404",
+        "verdict": "NEAR-MATCH (<25%)"
+      },
+      {
+        "label": "linking_weight/2",
+        "value_at_q0": "1.2663898281996957460257572508790206161630802352676",
+        "relative_error": "0.036529329617239017918594688921048178726448939872337168063786680089394",
+        "verdict": "NEAR-MATCH (<5%)"
+      },
+      {
+        "label": "(linking_weight/[2]_q)^(1/2)",
+        "value_at_q0": "1.1222866733717744484337439544861492591651985380041",
+        "relative_error": "-0.08141787995712666216898013294538493501950046309035469575924971812316944",
+        "verdict": "NEAR-MATCH (<25%)"
+      },
+      {
+        "label": "6/5  (Catalan-like rational)",
+        "value_at_q0": "1.2",
+        "relative_error": "-0.01781018147553559396311924709748880838534500338370936516498612691502892",
+        "verdict": "NEAR-MATCH (<5%)"
+      },
+      {
+        "label": "[3]_q^(1/4)·q_0^(1/2)",
+        "value_at_q0": "1.3915793710262346744039928938136031205798539440662",
+        "relative_error": "0.138995908242204796963831093919183512417070672251166190537279178748651",
+        "verdict": "NEAR-MATCH (<25%)"
+      },
+      {
+        "label": "m_n / m_p",
+        "value_at_q0": "1.001378419305359804022159541589661434483228675649022836429251582054224",
+        "relative_error": "-0.1803802600567946914698528330016837270823790301128505015070453753296316",
+        "verdict": "NEAR-MATCH (<25%)"
+      },
+      {
+        "label": "(m_n/m_p)^160",
+        "value_at_q0": "1.246569308862602115025312830399022242622151199720902816135568994507564",
+        "relative_error": "0.02030640270827182543296386900815889622431037817655211295714944458873409",
+        "verdict": "NEAR-MATCH (<5%)"
+      },
+      {
+        "label": "VOL(³He)/VOL(𝓑₃) · ℏ_q²",
+        "value_at_q0": "0.01681899401167956317830467124104375111680008392692335837935956889138512",
+        "relative_error": "-0.9862337961032536635525900475652890025590045662780947944432090608050885",
+        "verdict": "REFUTED"
+      }
+    ],
+    "best_candidate": {
+      "label": "sqrt([3]_q/[2]_q)",
+      "relative_error": "0.006979543812467092333327714665534518386249969193588933901258401281673748"
+    },
+    "synthesis_verdict": "The ³He L1b residual 1.221760 is within 5 % of 'sqrt([3]_q/[2]_q)' but not exact (rel_err +0.70%).  Suggestive structural signal but not a clean derivation; the residual likely combines this candidate with a sub-leading correction."
+  }
+}
