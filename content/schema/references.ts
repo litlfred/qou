@@ -4898,6 +4898,52 @@ export const references: CSLData[] = [
     note: "arXiv:2111.06645, SIGMA 20 (2024) 055. Added 2026-06-04 from uploads/2111.06645v3.pdf. Rigorous all-orders refinement of the Kashaev volume conjecture: a matrix invariant whose (sigma_0, sigma_1) entry is the Kashaev invariant in the Habiro ring (sigma_0 = trivial rep / unknot column). DIRECT fit with QOU's Kashaev / Habiro-ring content (QOU.Kashaev.VolumeConjecture, Phi_q / Li_2^q). Preferred citation for the Kashaev-on-trivial-knot sub-part over the bare 1995 conjecture.",
   }),
 
+  // ── Internal QOU derivation pull requests ───────────────────────
+  // These resolve `-- Ref: [prNNNN]` pseudo-citations in mass-theory
+  // Lean files to the merged pull requests that established the cited
+  // result. They are development records, not published works (type:
+  // webpage). Added 2026-06-05 — the four keys below were previously
+  // unresolved, failing validate-refs on this branch and on main.
+  ref({
+    id: "pr1750",
+    type: "webpage",
+    title: "Markov-trace SHAPE collapse: T_β = S · 1 (substrate min-norm Markov–Frobenius collapse theorem)",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1750",
+    note: "Internal QOU pull request #1750 (merged). Proves the SDP min-norm element satisfying τX = S is X = S·1 in the substrate model (A = R, τ = id) via the completing-the-square identity; applied to the Iwahori–Hecke algebra with the Jones–Markov trace this gives T_β = S·1. Cited by t-beta-markov-collapse-general-lift.lean, markov-trace-frobenius-selection.lean, t-beta-markov-frobenius-collapse.lean. Companion audit: docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md.",
+  }),
+
+  ref({
+    id: "pr1769",
+    type: "webpage",
+    title: "S(q) = Q_β(q) / E_0(q) vanishes at the classical point q = 1",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1769",
+    note: "Internal QOU pull request #1769. The simplified substrate ratio S(q) = (2q + 1 − q²)(q² − 1)/(2q²) inherits a (q − 1) factor, so S(1) = 0 — the 'c_k from u-ladder Taylor of Q_β/E_0' recipe is degenerate at the classical point. Cited by q-beta-over-e0-classical-vanishing.lean.",
+  }),
+
+  ref({
+    id: "pr1602",
+    type: "webpage",
+    title: "c_k precision-ladder recursion from the Habiro q-difference equation; proved seed c_2 = −1",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1602",
+    note: "Internal QOU pull request #1602. Establishes the depth-d linear recursion on the c_k ladder induced by a fibre-level Habiro element satisfying a q-difference equation, and the bar-even seed c_2 = −1. Cited by q-beta-c-k-recursion-from-habiro-q-difference.lean, q-beta-c-2-eq-neg-one-structural.lean.",
+  }),
+
+  ref({
+    id: "pr1786",
+    type: "webpage",
+    title: "Leading-bias correction identity for joint-fit c_k extraction",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1786",
+    note: "Internal QOU pull request #1786. The bias-corrected value ĉ_k − ĉ_{k+1}·u equals c_alg(k) − c_alg(k+2)·u², recovering the algebraic ladder coefficient modulo an order-u² residual. Cited by q-beta-c-k-leading-bias-correction-identity.lean; empirical core in folio-assistant/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py.",
+  }),
+
   // ── Thurston — Princeton notes on 3-manifold geometry/topology ─
   // (merged from main via PR #736 — kept verbatim from origin/main)
   ref({
