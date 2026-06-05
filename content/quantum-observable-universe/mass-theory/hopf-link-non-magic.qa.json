@@ -1939,7 +1939,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark on knot-operator basis selection directly supports mass-theory content via interprets:prop:knot-operator-selection",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:29:46.906Z",
+        "reviewed_sha": "1bb71883102d6affe75aabae00dabf802e292307",
+        "notes": "Hopf link as lowest-degree knot operator is core mass-theory infrastructure"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T19:29:46.906Z"
 }
