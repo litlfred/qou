@@ -2552,7 +2552,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Block contains ##-less 'Physical interpretation', 'Computational verification', and 'Beta-decay energy difference' sections after the proof with no companion interprets: remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:03:12.825Z",
+        "reviewed_sha": "0b062e7ab4cb3d4ac327bc9878112c7227a1bc45",
+        "notes": "Interpretive and computational content should move to a linked remark block"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Theorem about GS-basis energy invariant for nuclear braid words fits particle-interactions chapter scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:03:31.570Z",
+        "reviewed_sha": "0b062e7ab4cb3d4ac327bc9878112c7227a1bc45",
+        "notes": "Well-placed; no misfile or redundancy detected"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Energy functional defined as formal Laurent polynomial in Z[q±1]; archimedean realization explicitly deferred via substrate-internal banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:03:51.125Z",
+        "reviewed_sha": "0b062e7ab4cb3d4ac327bc9878112c7227a1bc45",
+        "notes": "Statement is generic-ring; archimedean specialisation correctly flagged downstream"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Part 3 proof uses 'q > 1 ensures q - q^{-1} > 0' ordering hypothesis inline without declaring an archimedean specialisation step",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:04:09.179Z",
+        "reviewed_sha": "0b062e7ab4cb3d4ac327bc9878112c7227a1bc45",
+        "notes": "Archimedean ordering assumption embedded in proof body; should declare specialisation point or move to archimedean section"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T15:04:09.179Z"
 }
