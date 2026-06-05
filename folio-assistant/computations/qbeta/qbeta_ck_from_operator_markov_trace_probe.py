@@ -37,6 +37,19 @@ identification.
 
 Honest scope: this attempts the final c_k extraction. May reveal a
 normalization constant or convention issue requiring follow-up.
+
+**Result (2026-06-05, scope corrected):** c_k as u-Taylor AROUND u = 0
+(classical limit q=1) is structurally impossible because u(q) is
+quadratic in (q-1) near q=1, giving a sqrt branch at u=0. HOWEVER,
+at the substrate u_0 ~ 0.00852, du/dt = 0.1398 is finite nonzero, so
+the LOCAL series reversion around u_0 is well-defined. The local
+Taylor coefficients of tr_M in dv = u - u_0 (computed below) ARE the
+input for c_k extraction via nonlinear matching against the ladder
+Prod_k(1+c_k u^k) expanded around u_0. This is attempted in the
+follow-up probe `qbeta_ck_local_taylor_around_u0_probe.py`.
+
+Note: the earlier headline "u-Taylor c_k STRUCTURALLY IMPOSSIBLE"
+overstated the scope — it is impossible AT u=0 only, not around u_0.
 """
 from __future__ import annotations
 
@@ -268,10 +281,15 @@ def main() -> int:
     print(f"  ⇒ s ~ sqrt(u / (sqrt(3)/2)) = sqrt(2u/sqrt(3))")
     print(f"  ⇒ u-reversion needs sqrt(u): NON-ANALYTIC at u = 0.")
     print()
-    print(f"  This re-confirms PR #1840: c_k as Taylor in u around u = 0")
-    print(f"  is STRUCTURALLY IMPOSSIBLE (u = q-quadratic). The operator-level")
-    print(f"  reading must use a DIFFERENT variable, OR the c_k ladder must")
-    print(f"  be re-expressed around u = u_0 (substrate value) rather than 0.")
+    print(f"  Scope-corrected verdict (follow-up to original PR #1875):")
+    print(f"  c_k as Taylor in u around u = 0 (classical limit) is STRUCTURALLY")
+    print(f"  IMPOSSIBLE because u ~ (sqrt(3)/2)(q-1)^2 near q=1 (sqrt branch).")
+    print(f"  HOWEVER: at the substrate u_0 ~ 0.00852, du/dt = 0.1398 is FINITE")
+    print(f"  NONZERO (see |a1| ~ 1.4e-1 above), so the LOCAL series reversion")
+    print(f"  around u_0 is well-defined. The c_k of the GLOBAL ladder")
+    print(f"  Prod_k(1+c_k u^k) ARE recoverable via NONLINEAR MATCHING of the")
+    print(f"  local Taylor of R(u) := tr_M / [Q_A * cos(alpha_eff)] around u_0.")
+    print(f"  See `qbeta_ck_local_taylor_around_u0_probe.py` for that attempt.")
     print()
 
     print("=" * 78)
@@ -285,17 +303,24 @@ def main() -> int:
     print()
     print(f"  ✗ c_k as Taylor in u around u = 0 is structurally impossible:")
     print(f"      u(q) ~ (sqrt(3)/2)(q-1)^2 near q=1, so the q -> u")
-    print(f"      reversion needs sqrt(u). NON-analytic ladder.")
+    print(f"      reversion needs sqrt(u). NON-analytic ladder AT u=0.")
     print()
-    print(f"  This reconfirms PR #1840: the c_k are NOT scalar-q-Taylor")
-    print(f"  coefficients of tr_M; they require a DIFFERENT extraction")
-    print(f"  variable or a per-rung operator-level identity.")
+    print(f"  ✓ However at the SUBSTRATE u_0 ~ 0.00852, du/dt = 0.1398 is")
+    print(f"    finite nonzero (a1 ~ 1.4e-1 above), so the LOCAL series")
+    print(f"    reversion is well-defined. The local Taylor coefficients of")
+    print(f"    tr_M in dv = u - u_0 (printed above as [dv^k]) ARE the input")
+    print(f"    for c_k extraction via nonlinear matching against")
+    print(f"    Prod_k(1+c_k u^k) expanded around u_0.")
     print()
-    print(f"  The remaining productive direction: write the c_k as")
+    print(f"  ⇒ Productive followup (NEW): `qbeta_ck_local_taylor_around_u0_probe.py`")
+    print(f"    attempts the nonlinear extraction c_2..c_8 from these local")
+    print(f"    Taylor coefficients. The c_2 = -1 PR #1786 canonical is the")
+    print(f"    gate; PASS confirms the operator-Markov route is canonical.")
+    print()
+    print(f"  Alternative productive direction (still viable):")
     print(f"  PER-RUNG operator identities. E.g., c_2 = -1 (PR #1786) is")
     print(f"  the identity tr_M(N=2 partial) = tr_M(N=1 partial) * (1 - u^2)")
-    print(f"  at the OPERATOR level. The c_4..c_8 each require an analog")
-    print(f"  per-rung identity — NOT a global u-Taylor.")
+    print(f"  at the OPERATOR level. Each c_k needs its own per-rung identity.")
     print()
 
     builder.add_data("chi_closed_forms", {
@@ -315,14 +340,23 @@ def main() -> int:
                      "u(q) ~ (sqrt(3)/2)(q-1)^2 near q=1")
     builder.add_data("verdict", {
         "operator_data_assembled": True,
-        "c_k_as_u_taylor_impossible": True,
-        "reason": ("u ~ (q-1)^2 near q=1, so q->u reversion needs "
-                   "sqrt(u); the c_k ladder is non-analytic at u=0."),
-        "remaining_direction": ("Per-rung operator identities (like "
-                                "PR #1786's c_2 = -1 from (1-u^2) "
-                                "factor at N=2). Each c_k needs its "
-                                "own operator-level analog, NOT a "
-                                "global u-Taylor."),
+        "c_k_as_u_taylor_around_zero_impossible": True,
+        "c_k_around_u0_local_taylor_well_defined": True,
+        "reason_zero_impossible": ("u ~ (q-1)^2 near q=1, so q->u "
+                                    "reversion needs sqrt(u); the c_k "
+                                    "ladder is non-analytic at u=0."),
+        "reason_u0_works": ("At substrate q_0, du/dt = 0.1398 != 0, "
+                            "so local series reversion is well-defined; "
+                            "the global c_k can be extracted from "
+                            "nonlinear matching of local Taylor of R "
+                            "around u_0 against the ladder expansion."),
+        "productive_directions": [
+            ("LOCAL TAYLOR around u_0 via series reversion: see "
+             "qbeta_ck_local_taylor_around_u0_probe.py (follow-up)."),
+            ("PER-RUNG operator identities (like PR #1786's c_2 = -1 "
+             "from (1-u^2) factor at N=2). Each c_k needs its own "
+             "operator-level analog."),
+        ],
     })
 
     builder.add_assertion(
@@ -332,10 +366,11 @@ def main() -> int:
                 "(q^3, 0, -q^{-3}) from PR #1873, Wenzl weights "
                 "y_lambda(q) symbolic from y_lambda_wenzl_bridge, "
                 "combined into tr_M(trefoil)(q) exact rational. "
-                "The c_k-as-u-Taylor extraction is structurally "
-                "impossible (u quadratic in q-1 near q=1, sqrt-branch "
-                "at u=0); confirms PR #1840 and motivates the per-rung "
-                "operator-identity route."),
+                "c_k-as-u-Taylor AROUND u=0 is impossible (u quadratic "
+                "in q-1, sqrt branch at u=0) — confirms PR #1840. "
+                "LOCAL Taylor AROUND u_0 IS well-defined (du/dt = 0.140 "
+                "at q_0), enabling nonlinear c_k extraction; see "
+                "qbeta_ck_local_taylor_around_u0_probe.py follow-up."),
     )
 
     builder.save()
