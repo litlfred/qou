@@ -1769,7 +1769,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "270ea90b4a7b",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof block for prop:categorical-lagrangian-exists in same chapter; correct placement, no misfiling.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:20:14.366Z",
+        "reviewed_sha": "55e7a68e0a9e8fc0d704a1939724ef301c923ed6",
+        "notes": "kind=proof attached to same-section proposition"
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T00:20:14.366Z"
 }
