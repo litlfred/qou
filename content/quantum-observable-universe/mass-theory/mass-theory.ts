@@ -180,6 +180,8 @@ export default chapter({
         "binding-alpha-shift-extension",
         "magic-A-binding-formula",
         "binding-manybody-jet-filtration",
+        "binding-genfun-qdifference",
+        "binding-genfun-qdifference-proof",
         "lr-coefficient-hecke",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
