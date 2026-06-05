@@ -1691,7 +1691,6 @@ export function checkProofLeanCompiles(
   // mismatch means the entry is stale: return `n/a` rather than a
   // confident `fail`, so an outdated/broken cache never masquerades as
   // a live backlog. Regenerate via `lean-compile-audit.ts` to refresh.
-  const currentSha = hashFile(leanPath);
   if (!entry.lean_sha) {
     return {
       result: "n/a",
@@ -1701,6 +1700,9 @@ export function checkProofLeanCompiles(
         "re-run content/pipeline/lean-compile-audit.ts to refresh",
     };
   }
+  // Only hash the live file once we know there is a cached SHA to
+  // compare against (skips file I/O on legacy-v1 / no-sha entries).
+  const currentSha = hashFile(leanPath);
   if (entry.lean_sha !== currentSha) {
     return {
       result: "n/a",
