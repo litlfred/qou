@@ -1739,7 +1739,28 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "57d71212672e",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Example verifies thm:qu-to-qou for SU(2) with descent/lifting mechanics — fits lifting-and-descent chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:41:19.431Z",
+        "reviewed_sha": "26aa5bbc9b31b227b5d63d5eec7ad87ac522ec84",
+        "notes": "Correctly placed worked example for the main theorem."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T15:41:19.431Z"
 }
