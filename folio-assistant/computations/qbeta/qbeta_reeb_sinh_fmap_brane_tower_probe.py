@@ -80,9 +80,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
-from collections.abc import Callable
-
-from mpmath import mp, mpf, asinh, sinh, cosh, log, fabs  # noqa: E402
+from mpmath import mp, mpf, asinh, sinh, cosh, log, fabs, nint  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import q_at, q_muon_at  # noqa: E402
@@ -173,8 +171,8 @@ def main() -> int:
             print(f"  {name:<28}  ERROR: {e}")
             continue
         diff = fabs(ell_p - ell_m)
-        ell_p_f = float(ell_p)
-        nearest = round(ell_p_f)
+        nearest = int(nint(ell_p))          # nearest integer in mp domain (full dps)
+        ell_p_f = float(ell_p)              # for display only
         int_dist = fabs(ell_p - mpf(nearest))
         in_range = abs(nearest) <= INTEGER_ABS_MAX
         cross_ok = diff < TOL_ELL_DIFF
@@ -184,8 +182,9 @@ def main() -> int:
         # f-map and check it reproduces c_3 within tolerance.  This kills
         # the trivial ℓ=0 solution (gives sinh(0)=0 ⇒ c_3=0 ≠ -2.07).
         c3_recovered_p = sinh(mpf(nearest) * eta_p) / fp[name]
-        rt_err_ppm_p = float(fabs(c3_recovered_p - c3_p) / fabs(c3_p) * 1e6)
-        rt_ok = rt_err_ppm_p < float(TOL_ROUNDTRIP_PPM)
+        rt_err_ppm_mpf = fabs(c3_recovered_p - c3_p) / fabs(c3_p) * mpf("1e6")
+        rt_ok = rt_err_ppm_mpf < TOL_ROUNDTRIP_PPM
+        rt_err_ppm_p = float(rt_err_ppm_mpf)   # display / serialize only
         closure = cross_ok and int_ok and rt_ok
 
         # Continuous-ℓ cross-anchor check: even if ℓ is not a small
