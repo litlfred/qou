@@ -201,7 +201,7 @@ after the trace sum and the nested `mulσ` actions are unfolded. -/
 theorem trM_cyclic (z h : R) (u v : Fin 6 → R) :
     trM z h (mulNF h u v) = trM z h (mulNF h v u) := by
   simp only [trM, mulNF, mulσ₀, mulσ₁, TRM, Fin.sum_univ_six,
-    Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, Matrix.cons_val]
+    Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val]
   ring
 
 /-- The concrete n=3 trace is a **real** linear functional satisfying the
