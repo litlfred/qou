@@ -2616,7 +2616,29 @@
         "reviewed_sha": "6284b6a206ad94a04ef89f944551dab78a276b7c",
         "notes": "quantum-observable-universes is substrate/generic chapter; statement is generic-ring"
       }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "17466e305272",
+          "ts": "a09dbae8ac7c",
+          "lean": "c7d4a0c61b5e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses trivial-connection F=0 (categorical) and BPST descent; no linarith/IVT/Real.* archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:10:16.459Z",
+        "reviewed_sha": "152d82c80981d9b88990101d924320d1c4b85871",
+        "notes": "Lean proof uses simp+Category.comp_id only; method matches categorical wall."
+      }
     ]
   },
-  "updated_at": "2026-06-04T23:49:41.324Z"
+  "updated_at": "2026-06-05T00:10:16.459Z"
 }
