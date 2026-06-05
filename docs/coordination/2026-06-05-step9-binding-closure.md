@@ -45,3 +45,19 @@ $$B(K)=\sum_n B_n,\quad \text{body-order }n=\text{jet/vertical degree }n=\lambda
 3. **Anchor to the ⁴He +5.87% magic-A number** for any n=4 / ρ·A claim.
 
 _Append report-backs below this line._
+
+---
+
+## 3. Sibling intel folded in (2026-06-05, agent scope-pull) — two sharpenings
+
+Coordination comments posted on #1765, #1839, #1778, #1789, #1762.
+
+**Sharpening 1 — the SW-period residue already has a zero-param form (#1765).**
+The selection rule `λ(L) = (1/(c+1))·Σ_{λ⊢c+1} dim_q` reproduces the muon (c=1, exact ∀q) and proton (Family-A, c=3) anchors exactly. This **is** the SW-period residue (link components → partition rank → quantum-dim trace). Lemma **L1 is therefore not new** — it must be shown *equivalent* to #1765's rule, and the open *"why rank = c+1"* = the **body-order grading** (`c+1` = body order = jet vertical degree). #1765's planned A-polynomial saddle for ³He/⁴He = our n=3/n=4 SW periods.
+
+**Sharpening 2 — the q-difference kernel must be FIBRE-derived, not data-extracted (#1839, #1811).**
+#1839's precision-floor result `σ(c_k)=σ_R/u^k` makes c₄⁺ **unmeasurable**; #1811 shows residue-A is fibre-level and **rigid** (2.5×10⁷× scale-invariant). ⇒ **C5/L3 revised**: derive `R(q,x)` from the **fibre root-of-unity singularity structure of λ_SW**, NOT by fitting `B_n`/`c_k` data. Extraction is data-blocked above c₃ (#1880 closed that axis).
+
+**Caveat — link-volume not 100% derivable (#1789, #1790).** The 3-body residual (~13%) is **genuine many-body** (NOT joint-trace, refuted #1790), and the link-volume superposition interface can't be fully derived. Lemma **L4** must treat the n=3 SW period as an irreducible many-body term, not a missing weight.
+
+**Compatible/adjacent:** #1733 (r=15 q-Pochhammer ⁴He +1.79% — candidate n=4 refinement, "is r=15 structural?" open), #1808 (Markov stabilization = the body-order n:2→3 induction functor), #1811 (fibre infra + Hopf c₃ source).
