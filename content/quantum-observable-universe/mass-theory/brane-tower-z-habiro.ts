@@ -8,8 +8,6 @@ export default conjecture({
     "def:z-habiro-ring",
     "def:habiro-ring",
     "cor:quantum-dilogarithm",
-    "prop:atom-knot-mass-derivation",
-    "prop:habiro-residue-sum-equivalence",
   ],
   tags: [
     "brane-tower",

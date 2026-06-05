@@ -30,7 +30,7 @@ export default definition({
   label: "def:canonical-braid-interface-composition",
   title:
     "Canonical-braid interface composition $(n_{pp}, n_{pn}, n_{nn})$ for atom $(Z, N)$ in pppnnn ordering",
-  uses: ["rem:crystal-bases-path-a"],
+  uses: [],
   cites: [],
   lean: {
     ref: "qou:QOU.BraidKnot.InterfaceComposition",

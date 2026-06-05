@@ -6,6 +6,6 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.AtomKnot.exists",
     validation: "not_checked",
   },
-  uses: ["prop:atom-knot-unique"],
+  uses: [],
   tags: ["existence", "atom-knot", "borromean"],
 });
