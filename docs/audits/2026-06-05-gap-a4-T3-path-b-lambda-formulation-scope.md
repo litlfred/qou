@@ -71,7 +71,7 @@ M(x; q) = Σ_K m(K) · x^A(K)
 
 (formal power series in `x` over atoms K with mass weight, summed by
 atomic number A). Per the Habiro / Garoufalidis–Zagier framework
-already adapted to QOU in [`habiro-pochhammer-bridge.md`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/habiro-pochhammer-bridge.md),
+already adapted to QOU in [`habiro-pochhammer-bridge.md`](../../content/quantum-observable-universe/braids-and-knots/habiro-pochhammer-bridge.md),
 `M(x; q)` is a candidate for satisfying a fibre-level q-difference
 equation
 
@@ -108,7 +108,7 @@ have a definite parity in `h = (q − q⁻¹) / q^{1/2}`.
 **Invariant I2 — proton-row exact match.** The proton row is the
 calibration anchor: `m(p) = m_p_codata` by definition under CAL-1
 (`m_e`). So at K=p, T3's formulation must produce
-`λ(p) = m_p / (m_e · Vol(𝓑₃) / ℏ_q²) = 2.4600...` (T2 verified).
+`λ(p) = m_p / (m_e · Vol(p) / ℏ_q²) = 2.4600...` (T2 verified; `Vol(p)` is the proton's per-atom volume, which under every convention tested in T2 evaluates to `Vol(𝓑₃) = 8·G`).
 Predicts: any `R_mass` candidate must have a proton root at exactly
 that value; any candidate that doesn't is REFUTED before any
 numerical probe runs.
