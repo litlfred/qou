@@ -1969,7 +1969,29 @@
         "reviewed_sha": "b4d04752199911869926545ef808151e28e90b39",
         "notes": "Correctly placed in observations chapter alongside double-slit intensity definition."
       }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5d5fb78d29d0",
+          "ts": "ac8eea435dd7",
+          "lean": "3333882a6715"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "observations is an archimedean chapter; block carries explicit §7c banner; statement uses physical units appropriately for its chapter regime.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:27:45.118Z",
+        "reviewed_sha": "99737ec419e2c494e0553d32ec2d3b5bb0076c70",
+        "notes": "No generic-ring statement smuggled into archimedean chapter or vice versa."
+      }
     ]
   },
-  "updated_at": "2026-06-05T00:27:23.927Z"
+  "updated_at": "2026-06-05T00:27:45.118Z"
 }
