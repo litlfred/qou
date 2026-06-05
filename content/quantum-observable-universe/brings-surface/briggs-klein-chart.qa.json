@@ -1949,7 +1949,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "421ca5f5890d",
+          "ts": "a4c005cf6463",
+          "lean": "290ce9c9ee21"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition of the Briggs-Klein affine chart on Bring's surface — primary subject is Bring's surface geometry, squarely on-topic.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T12:51:37.855Z",
+        "reviewed_sha": "d851ee07be184c570284d5afaa540d2d594943ed",
+        "notes": "Well-placed in brings-surface chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "421ca5f5890d",
+          "ts": "a4c005cf6463",
+          "lean": "290ce9c9ee21"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block opens with explicit §7c archimedean banner covering |w_1|^2 modulus and Fubini-Study metric; archimedean content properly flagged.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T12:51:37.894Z",
+        "reviewed_sha": "d851ee07be184c570284d5afaa540d2d594943ed",
+        "notes": "Banner present; wall discipline satisfied."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T12:51:37.894Z"
 }
