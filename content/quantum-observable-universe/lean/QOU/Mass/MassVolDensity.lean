@@ -327,11 +327,14 @@ theorem su2_fundamental_eq_two_cosh (η : ℝ) (hη : Real.sinh η ≠ 0) :
     gated on `conj:s5-so3-fiber-action`. This section formalises only the
     representation-theoretic level structure — unconditional as
     representation theory (no conjecture), with the one analytic side
-    condition `sinh η ≠ 0` (i.e. `q ≠ 1`, away from the classical point)
-    because the characters are written as ratios `[n]_q = sinh(nη)/sinh η`.
-    The Chebyshev identity `[3]_q = [2]_q² − 1` itself extends to `η = 0`
-    by continuity (both sides → 3), but the ratio form is stated for the
-    substrate regime `q ≠ 1`. -/
+    condition `sinh η ≠ 0` (i.e. `q ≠ 1`, the substrate regime away from
+    the classical point) because the characters are written as ratios
+    `[n]_q = sinh(nη)/sinh η`. NOTE: Lean division is total, so the ratio
+    `so3_adjoint_character 0 = sinh 0 / sinh 0 = 0` (a junk value, NOT the
+    mathematical limit `[3]_q → 3`); the closed forms `4 cosh²η − 1` and
+    `1 + 2 cosh(2η)` are the continuous representatives and agree with the
+    ratio exactly on `q ≠ 1`, which is the only regime the theorems below
+    assert (each carries `sinh η ≠ 0`). -/
 
 /-- SO(3)_q adjoint (vector, j=1) Weyl character `χ_1(η) = sinh(3η)/sinh η`
     (the `[3]_q` quantum integer at `q = e^η`). The lowest integer-spin
