@@ -2652,7 +2652,29 @@
         "reviewed_sha": "1090fee3973e140a73e328788a1879467248a3dd",
         "notes": "No wall violation in proof."
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6a71aa12e45d",
+          "ts": "5e6f5df02231",
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition is in sec:archimedean-hartree-crystal-mass-tower-deeper; Cl_2 pentagon + Faddeev-Kashaev boundary closures are Mathlib bridge content directly within this Hartree/crystal-basis characterisation section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:46:12.960Z",
+        "reviewed_sha": "075e494beb7b6d3776290dc530bafec9fa88cd0b",
+        "notes": "Placement is apt."
+      }
     ]
   },
-  "updated_at": "2026-06-05T00:24:21.423Z"
+  "updated_at": "2026-06-05T00:46:12.960Z"
 }
