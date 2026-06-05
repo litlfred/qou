@@ -92,11 +92,12 @@ del _sys, _Path, _bridge
 
 from collections.abc import Callable
 
-# Single path-bridging mechanism: `_path_bridge` (imported above) puts the
-# computations cluster + its sibling subdirs (qbeta/, substrate/, …) on
-# sys.path, so both the same-dir `qbeta_utils` and the substrate modules
-# resolve.  No additional manual sys.path inserts (avoids import-order
-# shadowing).
+# Path bootstrap: the single sys.path.insert above (line 89) exists ONLY to
+# put the computations cluster root on the path so `_path_bridge` can be
+# imported; `_path_bridge` then bridges every sibling subdir (qbeta/,
+# substrate/, …), so `qbeta_utils` and the substrate modules resolve. No
+# further manual inserts beyond that one bootstrap line (avoids
+# import-order shadowing).
 from mpmath import mp, mpf, cos, sqrt, fabs  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
@@ -193,7 +194,10 @@ def main() -> int:
     print("  Step 1 — reduction check: F(u) = cos(√2·u)·(1 + g·u³)")
     SQRT2 = sqrt(mpf(2))
     g_probe = mpf("-2.069342577115168")  # arbitrary test g
-    F = lambda u, _g=g_probe: cos(SQRT2 * u) * (1 + _g * u ** 3)
+
+    def F(u, _g=g_probe):                  # even baseline · (1 + g·u³)
+        return cos(SQRT2 * u) * (1 + _g * u ** 3)
+
     c2_ext, c3_ext = taylor_c2_c3(F)
     print(f"    with g = {float(g_probe):.6f}:  c_2 = {float(c2_ext):.8f} (target -1),  "
           f"c_3 = {float(c3_ext):.8f} (= g)")
