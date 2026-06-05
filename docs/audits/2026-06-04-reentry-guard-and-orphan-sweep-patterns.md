@@ -20,11 +20,14 @@ aliases, attribute access, `def`s, etc.).
    modules / prefixes — each entry carries `reason`, `purged_by` (PR
    number / commit SHA), and `canonical_replacement`. Reviewing the
    registry IS the documentation of the purge.
-2. **Parses source via `ast`, not regex.** Comments and docstrings
-   become `ast.Constant` nodes and are invisible to the visitor; only
-   real `import` / `def` / `class` / `Name` / `Attribute` / `arg` /
-   `keyword` references trigger. This eliminates the "honest historical
-   mention is flagged as a re-entry" false-positive class that grep has.
+2. **Parses source via `ast`, not regex.** Comments are not in the AST
+   at all (the parser strips them); docstrings are present as
+   `ast.Expr(value=ast.Constant(...))` but the visitor never flags
+   `Constant` / `Expr` node types, so neither appears as a re-entry.
+   Only real `import` / `def` / `class` / `Name` / `Attribute` / `arg`
+   / `keyword` references trigger. This eliminates the "honest
+   historical mention is flagged as a re-entry" false-positive class
+   that grep has (Copilot review #1877).
 3. **Covers ALL the re-introduction vectors.** Not just `from x import
    <banned>`. The session converged on **9 vectors** through review
    feedback:
@@ -116,10 +119,11 @@ moved-subdir scripts** that needed correct-path aggregate regeneration
 - **Selective revert of timestamp-only churn.** Tools that re-run on
   many entries may bump `last_run_at` / `reviewed_sha` for every
   touched file, even when the substantive content is unchanged. Use a
-  selective per-file diff (`git diff | grep -E "^[+-]" | grep -vE
-  "^(\+\+\+|---)" | grep -vcE "last_run_at|generated_at|reviewed_sha"`)
-  and `git checkout --` the files with 0 substantive lines. Keeps PRs
-  reviewable.
+  selective **per-file** diff (`git diff <file> | grep -E "^[+-]" |
+  grep -vE "^(\+\+\+|---)" | grep -vcE
+  "last_run_at|generated_at|reviewed_sha"`) — invoked once per touched
+  file, not on the whole tree — and `git checkout --` the files with 0
+  substantive lines. Keeps PRs reviewable. (Gemini review #1877.)
 - **JSON key reorder ≠ value reattribution.** Removing then
   regenerating a JSON entry can re-append it at the end of an object;
   line-based diffs misalign keys against values and read as
