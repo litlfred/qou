@@ -19,7 +19,7 @@ This audit closes that gap. It extends the bar-symmetry test to a unified **mass
 |---|---|---|---|
 | (a) | **Anchor-stable** | proton + muon cross-anchor swing < 1 ppm at u_substrate (PR #1889) | proton + muon swing of `linking_weight(q_0)` < 1% (registry §8 mass-side gate) |
 | (b) | **Bar-even** | `q ↦ q⁻¹` Taylor-even-in-t for the c_k ladder (PR #1875) | `linking_weight(q) = linking_weight(q⁻¹)` as a q-rational (existing test, [`bar_symmetry_three_candidates.py`](../../folio-assistant/computations/bar_symmetry_three_candidates.py)) |
-| (c) | **q = 1 classical-limit shadow** | `c_2 → −1`, `c_3 → J_Hopf(1) = −2` (PR #1890 Track A) | `linking_weight(q → 1)` reproduces a known categorical integer (e.g. `9/4` for Family A) |
+| (c) | **q = 1 classical-limit shadow** | `c_2 → −1`, `c_3 → J_Hopf(1) = −2` (PR #1890 Track A) | `linking_weight(q → 1)` reproduces a known categorical integer or rational (e.g. `5/2` for Family A, from `(3·1² + 4 + 3·1⁻²)/4 = 10/4`) |
 | (d) | **Direction sanity** | `|F(q_0)|` within 10× of Q_β target ~0.998 (PR #1890 Track B) | `linking_weight(q_0)` in same order of magnitude as the empirical multiplier needed to close `m_p/m_e` (registry-level: ~2.46 from CODATA-implied near-match per PR #1850 audit) |
 
 The four invariants are independent: a candidate `linking_weight` can pass (b) (manifestly q-symmetric) while failing (c) (wrong q=1 limit) or (d) (wrong order of magnitude).
