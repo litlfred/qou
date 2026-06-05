@@ -166,16 +166,23 @@ elan / cache hosts are network-restricted.
 > else:
 >
 > ```bash
-> git fetch --depth=1 origin lake-cache/qou-v4-24-0 \
+> # Derive the cache branch from the pinned toolchain — do NOT hard-code the slug
+> # (works from any subdir; CRLF-safe):
+> ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
+> SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
+> BR="lake-cache/qou-$SLUG"
+> git fetch --depth=1 origin "$BR" \
 >   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
->      | while read -r p; do git show "FETCH_HEAD:$p"; done > /tmp/lake-oleans.tgz \
->   && tar xzf /tmp/lake-oleans.tgz \
->   && echo "restored .lake oleans from cache branch — NO rebuild needed"
+>      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
+>   && tar xzf "$TGZ" -C "$ROOT" \
+>   && echo "restored .lake oleans from $BR — NO rebuild needed"
 > ```
 >
-> Pick the branch whose slug matches your `cat lean-toolchain` (slug for
-> `v4.24.0` = `v4-24-0`). Full restore/seed details are in the
-> [🗄️ PRESERVE THE BUILD section below](#️-preserve-the-build--seedrestore-the-lake-cache-orphan-branch).
+> The `SLUG` line derives the branch from the pinned toolchain so it never goes
+> stale (`leanprover/lean4:v4.24.0` → `lake-cache/qou-v4-24-0`); the tarball
+> goes to a `mktemp` file and extracts with `-C "$ROOT"` (repo root), not the
+> current directory. Full restore/seed details (incl. how to **SEED** after a
+> fresh build) are in the **🗄️ PRESERVE THE BUILD** section further down this file.
 > Only if the fetch fails (branch unseeded) or the oleans are a
 > toolchain/`lakefile.toml` **miss** do you fall back to the source-clone +
 > from-source build below — and **SEED the cache branch afterwards** so the

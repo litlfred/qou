@@ -1793,15 +1793,18 @@ orphan branch — ≈2 min vs a 30–60 min from-source build.** A full build is
 preserved on `lake-cache/qou-v4-24-0` (slug matches `cat lean-toolchain`).
 Only if the restore misses do Steps 1–3 (source clone + from-source build) —
 and **SEED the cache branch afterwards**. Full slug/seed rules:
-[`lean-environment-setup.md` §"PRESERVE THE BUILD"](.claude/skills/local/lean-environment-setup.md#️-preserve-the-build--seedrestore-the-lake-cache-orphan-branch).
+[`lean-environment-setup.md` §"PRESERVE THE BUILD"](.claude/skills/local/lean-environment-setup.md).
 
 ```bash
 # Step 0 (FASTEST — try before Steps 1–3): restore prebuilt oleans from the
-# lake-cache orphan branch matching `cat lean-toolchain` (slug v4.24.0 = v4-24-0).
-git fetch --depth=1 origin lake-cache/qou-v4-24-0 \
+# lake-cache orphan branch whose slug is DERIVED from the pinned toolchain
+# (future-proof, works from any subdir, CRLF-safe).
+ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
+SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
+git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
-     | while read -r p; do git show "FETCH_HEAD:$p"; done > /tmp/lake-oleans.tgz \
-  && tar xzf /tmp/lake-oleans.tgz && echo "restored .lake oleans — skip Steps 1–3"
+     | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
+  && tar xzf "$TGZ" -C "$ROOT" && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
 
 # Step 1: Shallow-clone mathlib locally (~144 MB).  [fallback if Step 0 misses]
 cd .. && git clone --depth 1 https://github.com/leanprover-community/mathlib4.git
