@@ -156,7 +156,16 @@ def markov_trace_combo(terms, *, exact=False):
     if exact:
         acc = [Fraction(0)] * 6
         for c, word in terms:
-            cf = c if isinstance(c, Fraction) else Fraction(c)
+            if isinstance(c, Fraction):
+                cf = c
+            elif isinstance(c, int):
+                cf = Fraction(c)
+            else:
+                raise TypeError(
+                    "markov_trace_combo(exact=True) requires int|Fraction "
+                    f"coeffs (got {type(c).__name__}); pass exact rationals, "
+                    "or use exact=False for float coeffs."
+                )
             nfw = nf_of_word(word, exact=True)
             for i in range(6):
                 acc[i] += cf * nfw[i]

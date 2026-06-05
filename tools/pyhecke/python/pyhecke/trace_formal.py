@@ -48,12 +48,20 @@ h_formal = q_of_s - 1 / q_of_s          # = s² − s⁻²  (Laurent in s)
 z_formal = 1 / (s + 1 / s)              # = s/(s²+1)  (rational in s)
 
 
+# Built once at import — the symbolic Markov-Ocneanu-Wenzl weights are
+# constant in s, so there is no need to rebuild the list on every call.
+_TR_M_FORMAL: list[sp.Expr] = [
+    sp.Integer(1), z_formal, z_formal,
+    z_formal ** 2, z_formal ** 2, h_formal * z_formal ** 2 + z_formal,
+]
+
+
 def TR_M_formal() -> list[sp.Expr]:
     """Symbolic Markov-Ocneanu-Wenzl weights on the NF basis
     [γ, σ₀, σ₁, L₊, L₋, e⁻] — mirrors `gram.TR_M` with z, h symbolic.
-    tr_M(e⁻) = h·z² + z (the 2026-05-19 fix, not z³)."""
-    z, h = z_formal, h_formal
-    return [sp.Integer(1), z, z, z ** 2, z ** 2, h * z ** 2 + z]
+    tr_M(e⁻) = h·z² + z (the 2026-05-19 fix, not z³). Returns the
+    module-level cached list (built once at import); do not mutate."""
+    return _TR_M_FORMAL
 
 
 # NF multiplication by σ_gen (c=1, d=0) — symbolic mirror of gram.hm.
@@ -109,7 +117,7 @@ def markov_trace_combo_formal(terms) -> sp.Expr:
     function in `s`."""
     acc = [sp.Integer(0)] * 6
     for c, word in terms:
-        cf = sp.nsimplify(c) if not isinstance(c, sp.Basic) else c
+        cf = c if isinstance(c, sp.Basic) else sp.sympify(c)
         nfw = nf_of_word_formal(word)
         for i in range(6):
             acc[i] += cf * nfw[i]

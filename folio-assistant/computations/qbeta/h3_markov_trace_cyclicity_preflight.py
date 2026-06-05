@@ -85,6 +85,10 @@ def main() -> int:
         idx = [i for i in range(6)
                if nf[i] == 1 and all(nf[k] == 0 for k in range(6) if k != i)]
         word_to_index[w] = idx[0] if idx else None
+    assert all(v is not None for v in word_to_index.values()), \
+        f"a producing word failed to reduce to a basis index: {word_to_index}"
+    assert sorted(word_to_index.values()) == list(range(6)), \
+        f"producing words must hit each basis index exactly once: {word_to_index}"
     index_to_word = {i: w for w, i in word_to_index.items()}
 
     def Rb(j, u):                       # right-mult by b_j = R_{W_j}
