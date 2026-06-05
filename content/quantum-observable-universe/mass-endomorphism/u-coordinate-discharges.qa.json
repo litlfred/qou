@@ -1862,7 +1862,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f901d25db474",
+          "ts": "5f3854e81e12",
+          "lean": "1a3d81c95d79"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block sits in sec:hecke-chi-closed-forms whose stated scope is Hecke u-coordinate closed-forms; u=q^2 rational identities are the section's primary subject.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:02:41.297Z",
+        "reviewed_sha": "c4e511cd48c359126b53f26bd5a75c62b635a017",
+        "notes": "Remark kind correct (interprets rem:ck-extraction-from-algebraic-rules); no sibling carries same scalar-identity claim."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:02:41.297Z"
 }
