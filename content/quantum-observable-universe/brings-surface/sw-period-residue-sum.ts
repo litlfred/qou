@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:sw-period-residue-sum",
   lean: {
     ref: "qou:QOU.Brings.sw_period_eq_residue_sum",
-    validation: "not_checked",
+    validation: "validated",
   },
   title: "The Seiberg–Witten period is an algebraic residue sum",
   uses: [
