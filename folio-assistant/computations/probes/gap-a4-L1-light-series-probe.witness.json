@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T00:36:12.336520+00:00",
-  "commitSha": "fed82d210a27a810f5adbf6df9689edd2b2ae02a",
+  "computedAt": "2026-06-05T00:42:19.622714+00:00",
+  "commitSha": "b188853843b2a8ac02515745490b758582956fc9",
   "assertions": [
     {
       "name": "proton_uniform_lw_overshoots_lambda_emp_by_2_89_pct",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 60,
+  "durationMs": 50,
   "computation": "gap-a4-L1-light-series-probe",
   "scriptFile": "gap_a4_L1_light_series_probe.py",
-  "scriptHash": "f5c7072e4259",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "099f02dac611",
+  "scriptCommitSha": "b188853843b2a8ac02515745490b758582956fc9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,8 +57,8 @@
           "verdict": "NEAR-MATCH (< 5 %)"
         },
         "L1b_phase4_reexpression": {
-          "prediction": "0.00000437959108618344530674063331631188580924917626255535858087139393323786",
-          "relative_error": "-0.9999982196438758228037933294836192576455038790293685817746112601419854",
+          "prediction": "0.008041597870546624845513899004708774009853918460749316559955257426223508",
+          "relative_error": "-0.9967309943473571359660069748828066530603106359691714613963438032625664",
           "verdict": "REFUTED"
         },
         "L1c_phase4_carriers": {
@@ -80,13 +80,13 @@
           "verdict": "NEAR-MATCH (< 5 %)"
         },
         "L1b_phase4_reexpression": {
-          "prediction": "0.0",
-          "relative_error": "-1.0",
+          "prediction": "0.0139643228681358495857362069844672774076139786995550407693088022336689",
+          "relative_error": "-0.9943311498961030442545301597581137640548539472945720954812849904230324",
           "verdict": "REFUTED"
         },
         "L1c_phase4_carriers": {
-          "prediction": "0.0",
-          "relative_error": "-1.0",
+          "prediction": "4.3981996420573461255335901877165275225276290997806",
+          "relative_error": "0.7854596125622742372694588070300565802360148288766302998883559629966957",
           "verdict": "REFUTED"
         }
       },
@@ -103,8 +103,8 @@
           "verdict": "NEAR-MATCH (< 25 %)"
         },
         "L1b_phase4_reexpression": {
-          "prediction": "0.00003524537448343089640742419536690152663713930206347735279435711551070045",
-          "relative_error": "-0.9999875035464160111593472723905101200907273454611604244245231036817803",
+          "prediction": "0.3932573537210890192728790371119234747137208217801457446675784921645773",
+          "relative_error": "-0.8605683060723860858203399972007414015581349575846894247653807102591039",
           "verdict": "REFUTED"
         },
         "L1c_phase4_carriers": {
@@ -126,8 +126,8 @@
           "verdict": "REFUTED"
         },
         "L1b_phase4_reexpression": {
-          "prediction": "0.0003786071354492577582968943064850920131933001181215546041589085681525294",
-          "relative_error": "-0.9999103651035460835745347798292031455486395732363931582060302856819879",
+          "prediction": "6.326446539306483398479143615205141255775229211443711269747876941672097",
+          "relative_error": "0.4977804889997253899041635028835770624275162637123483971751561374510979",
           "verdict": "REFUTED"
         },
         "L1c_phase4_carriers": {
@@ -149,9 +149,9 @@
           "verdict": "REFUTED"
         },
         "L1b_phase4_reexpression": {
-          "prediction": "0.0002180686043335779033575441192337134392447883652558936683559029482776371",
-          "relative_error": "-0.9999492599874035646644803002858557913357082073901045813844124401401701",
-          "verdict": "REFUTED"
+          "prediction": "3.517683447378032163385125302667474796150730374255021570654876228940518",
+          "relative_error": "-0.181508484562946328302599372581240673654454169486402648027435102635818",
+          "verdict": "NEAR-MATCH (< 25 %)"
         },
         "L1c_phase4_carriers": {
           "prediction": "377.47297116016623912563571312442554585972356115569",
@@ -172,8 +172,8 @@
           "verdict": "REFUTED"
         },
         "L1b_phase4_reexpression": {
-          "prediction": "0.002643201053327062294773875808370910351199922453700100452340213826311872",
-          "relative_error": "-0.9995366153001577019879006058948244862305823193229894918922568169132157",
+          "prediction": "56.59000667492673523776721247006896181490439640170928774199545601611819",
+          "relative_error": "8.920903755742341796654782204179614121411983722151275832689757216345287",
           "verdict": "REFUTED"
         },
         "L1c_phase4_carriers": {
@@ -185,15 +185,15 @@
     ],
     "worst_relative_error_L1a": {
       "atom": "4He",
-      "rel_err": -0.5559734892773265
+      "rel_err": "-0.5559734892773264983785358415436437547976689822915199093026920844108123"
     },
     "worst_relative_error_L1b": {
-      "atom": "n",
-      "rel_err": -1.0
+      "atom": "4He",
+      "rel_err": "8.920903755742341796654782204179614121411983722151275832689757216345287"
     },
     "worst_relative_error_L1c": {
       "atom": "4He",
-      "rel_err": 1063.584995578673
+      "rel_err": "1063.584995578673097920585578566265193900492644453535855157576302817394"
     },
     "synthesis_verdict": "All three candidates REFUTED (worst-rel ≥ 25 %). The per-atom Path B λ(K) is NOT a simple substrate combination of linking_weight_family_a and the Phase-4 carriers. GAP-A-4 needs a richer derivation route (e.g. a brane-tower formula that's separately tuned for the Path B mass-equation rather than the Δ_λ binding-energy equation)."
   }
