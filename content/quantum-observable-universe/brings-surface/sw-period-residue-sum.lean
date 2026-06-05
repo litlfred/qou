@@ -1,5 +1,6 @@
 import Mathlib.Data.Complex.Basic
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Fintype.Card
 
 /-!
 # QOU.Brings.sw_period_eq_residue_sum — SW period as a residue sum
