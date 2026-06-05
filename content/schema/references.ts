@@ -4828,7 +4828,7 @@ export const references: CSLData[] = [
 
   ref({
     id: "halverson-1998-markov-weights",
-    type: "article",
+    type: "article-journal",
     title: "Weights of Markov Traces on Hecke Algebras",
     author: [
       { family: "Orellana", given: "Rosa C." },
@@ -4902,7 +4902,7 @@ export const references: CSLData[] = [
   // These resolve `-- Ref: [prNNNN]` pseudo-citations in mass-theory
   // Lean files to the merged pull requests that established the cited
   // result. They are development records, not published works (type:
-  // webpage). Added 2026-06-05 — the four keys below were previously
+  // webpage). Added 2026-06-05 — the keys below were previously
   // unresolved, failing validate-refs on this branch and on main.
   ref({
     id: "pr1750",
