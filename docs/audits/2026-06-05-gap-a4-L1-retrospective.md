@@ -50,7 +50,7 @@ L1b's corrected form `λ_L1b(K) = A_Phase-4(K) · Vol_hyp(K)/Vol(𝓑₃) · ℏ
 - Vol_Phase-4(³He) = 12.554, identical to ⁴He's, distinct from D/T's 12.776.
 - It's the first row where the Phase-4 color carrier `[3]_q^2` is non-trivial (Z=2) and the Phase-4 spin carrier `(q^{1/2}+q^{-1/2})^4` is the same as D's (N=1).
 
-Hypothesis: L1b's `Vol_hyp/Vol(𝓑₃) · ℏ_q²` rescaling absorbs the *dominant* per-(Z, N) scaling at A=3, Z=2 specifically, but fails to capture the A-dependent ladder that drives the ⁴He ⊃ ³He growth (5.70 / 4.30 = 1.33×, vs L1b's 56.59 / 3.52 = 16.1× overshoot). Something *additional* in ⁴He breaks the L1b form — N=2 doubling the spin carrier power isn't matched by an equivalent doubling of `λ_emp`.
+Hypothesis: L1b's `Vol_hyp/Vol(𝓑₃) · ℏ_q²` rescaling absorbs the *dominant* per-(Z, N) scaling at A=3, Z=2 specifically, but fails to capture the A-dependent ladder that drives the ⁴He / ³He growth ratio (5.70 / 4.30 = 1.33×, vs L1b's 56.59 / 3.52 = 16.1× overshoot). Something *additional* in ⁴He breaks the L1b form — N=2 doubling the spin carrier power isn't matched by an equivalent doubling of `λ_emp`.
 
 ## §4. What the next probe should look like
 
