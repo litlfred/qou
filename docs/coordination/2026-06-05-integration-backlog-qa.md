@@ -45,3 +45,36 @@
 
 ## Next action
 - **`/prepare-merge #1885`** (owner-selected): rebase onto `origin/main` (+18), validate, request Gemini + Copilot reviews. Merge on owner's explicit "merge it" (CI billing-blocked → green-local). Deferred items 1-8 → follow-up branch.
+
+## Generic-R refactor campaign (owner: "push as much to category ring R as possible")
+
+**Done + verified:** `zeta8-witness-level2-su2` → `{R}[Field R] {ζ:R} (hζ : IsPrimitiveRoot ζ 8)`.
+Dropped the analytic ℂ model (`Complex.exp(Real.pi·I/4)`); imports-first (fixed a real
+`/-! -/`-before-imports compile bug); order-8 fact now proved via
+`IsPrimitiveRoot.pow_ne_one_of_pos_of_lt`; clears wall-side-correct. `lake env lean` green
+(only Ref'd sorries). Commit `95425708`. **This is the template for the rest.**
+
+**Per-file disposition (corpus sweep of analytic root-of-unity / ℝ blocks):**
+
+| block | verdict | action |
+|---|---|---|
+| `meson-kaon-pion-hecke-seifert` | **clean** (Seifert-Euler + Hecke χ, rational arith, no √/exp) | ℝ → `{R}[Field R][CharZero R]` |
+| `pion-half-figure-eight` | **clean** (2×2 char-poly; also the `λ`-token parse bug + `linarith`→`ring`) | ℝ → `{R}[Field R]` |
+| `lagrange-resolvent-transform` | **mixed** — ζ₅ algebraic BUT `1/√5` DFT normalisation is genuinely archimedean | partial: ζ₅→IsPrimitiveRoot, √5 stays |
+| `hyperelliptic-quintic`, `x5-z5-automorphism`, `x5-bring-weight-identification` | **mixed** — ζ₅ + genuine Bring/icosahedral √5 geometry (3-6 archimedean tells each) | partial: generalise ζ₅, keep √5 |
+| `chi-v21-hoefsmit-matrix-derivation` | **legitimately archimedean** (Hoefsmit radicals, `Real.sqrt`) | §7c banner, keep ℝ |
+| `reeb-bundle` | **legitimately archimedean** (declared "Ground ring ℝ"); non-compiling stub (`ExceptionalDivisor` pending) — AND a real **bug**: `holonomy : ℝ := Real.exp(2π/[2]_q)` dropped the `i`; should be the U(1) phase `Complex.exp(2πi/[2]_q)` | fix the missing-`i` + route to categorical q-exp (`q-exponential.lean`) when the stub is completed |
+
+**Corpus framing rule (owner's insight):** a ζ-block drops ℂ → `IsPrimitiveRoot ζ n` over
+generic `R` **iff** it only uses the root's *cyclotomic/order algebra*; if it evaluates an
+*analytic function* (Li_n, Bloch–Wigner, Clausen) or a *real √/angle/holonomy* (√5, 2π/5
+radial, real Reeb exp), ℝ/ℂ is essential. Keep-ℂ analytic blocks: `Infra/Polylogarithm`,
+`Archimedean/BlochWigner*`, `Clausen*`, `BraidKnot/CyclotomicTrilogImaginary`,
+`mass-theory/archimedean-functor-uniqueness`.
+
+**ENV BLOCKER (2026-06-05):** the remaining clean refactors (meson-kaon, pion-half) are
+specified + template-ready but were NOT committed — they need `lake env lean` verification
+and the sandbox Lean env failed three times this session (sub-agent session-limit →
+container reclaim wiped elan+oleans → restore tangled on `lake update`, oleans 275→10).
+Do them in a **stable Lean session** (restore `lake-cache/qou-v4-24-0`, then apply the zeta8
+template + `lake env lean` per file). Do not commit unverified Lean.
