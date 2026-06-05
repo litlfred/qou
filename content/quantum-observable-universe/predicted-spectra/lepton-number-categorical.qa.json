@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ef6e8569a507",
+          "ts": "532389f0b57e",
+          "lean": "7aae58b1c87a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block is in sec:nuclear-stability-decay which lists it explicitly; topic (lepton number via skein smoothing) matches section scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:58:25.558Z",
+        "reviewed_sha": "61d5e1fd58dc7e1c7f8dff89171c8cfc85c86285",
+        "notes": "Well-placed alongside beta-decay-skein."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ef6e8569a507",
+          "ts": "532389f0b57e",
+          "lean": "7aae58b1c87a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Narrative statement uses only algebraic constructs (Z-grading, smoothing count); no Real.sqrt/rpow, no numeric q, no MeV; Lean sibling handles ℝ specialization separately.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:58:44.728Z",
+        "reviewed_sha": "61d5e1fd58dc7e1c7f8dff89171c8cfc85c86285",
+        "notes": "Statement is generic-ring side; archimedean note is properly scoped to Lean sibling."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T14:58:44.728Z"
 }
