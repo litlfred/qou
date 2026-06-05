@@ -40,7 +40,7 @@ All three REFUTED across the light series; the **only** positive structural sign
 
 ### O2. The Phase-4 carriers are dominant, not corrections
 
-L1c's worst-rel of +106 358 % at ⁴He says the `[3]_q^{2(Z-1)} · (q^{1/2}+q^{-1/2})^{4N}` carriers are **multiplicative powers in the binding-energy amplitude**, not small perturbations on Path B's mass multiplier. Direct transplant to Path B is structurally wrong; the Phase-4 carriers belong on the B(K) side of the m(K) = Z·m_p + N·m_n − B(K) decomposition, not in λ(K) directly.
+L1c's worst-rel of `+106358.50 %` at ⁴He says the `[3]_q^{2(Z-1)} · (q^{1/2}+q^{-1/2})^{4N}` carriers are **multiplicative powers in the binding-energy amplitude**, not small perturbations on Path B's mass multiplier. Direct transplant to Path B is structurally wrong; the Phase-4 carriers belong on the `B(K)` side of the `m(K) = Z·m_p + N·m_n − B(K)` decomposition, not in `λ(K)` directly.
 
 ### O3. The L1b ³He -18.15 % NEAR-MATCH is the lead
 
