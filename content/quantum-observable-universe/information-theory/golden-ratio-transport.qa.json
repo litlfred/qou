@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6999a0d6fe4d",
+          "ts": "8e17b66925a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block is a remark in information-theory chapter; concludes with explicit information-theoretic reading (phase transition from distributed to localised information geometry).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:58:54.599Z",
+        "reviewed_sha": "b0d1387e463bbd084eb66fc59396c0749b9fbf0e",
+        "notes": "Topic squarely fits; information-theory framing is primary conclusion."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T00:58:54.599Z"
 }
