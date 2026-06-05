@@ -103,6 +103,18 @@ different-order sinhs whose effective order is η-dependent (Bessel-like), with
 (not `u`), track the **odd-`h` part per λ**, and read the `c_3` cross-anchor
 swing as `d/dη` of the surviving odd-`sinh` sum.
 
+**Compute finding (mechanism probe, 2026-06-05 — `qbeta_coherent_collapse_sinh_cosh.py`).**
+The generator identities above are verified exact, and the channel structure is
+*sharper* than "transpose pair": the **bar-odd `sinh` content and the growth
+channel both live in the `(2,1)` block** — `χ^(2,1)(σ_1) = q − q⁻¹ = h = 2 sinh η`
+(pure bar-odd), with `χ·χ̄ = −h² < 0` (growth) — while **both 1-dim reps are
+rotation channels** (`χ·χ̄ = 1 > 0`). So the cancellation is a
+**rotation-vs-`(2,1)`-growth** effect, *not* a 1-dim transpose-pair effect.
+Whether the actual `c_3` cancellation occurs still depends on the real Wenzl
+weights `y_λ` and the proton↔neutron character difference — the heavy per-λ probe
+(steps 1–5 below). Lean (generator level): `QOU/QBeta/CoherentCollapseSinhCosh.lean`.
+Witness: `qbeta-coherent-collapse-sinh-cosh.witness.json`.
+
 ## Probe design (for a focused compute session)
 
 1. **Per-λ data over ℚ(q)** for the canonical proton `𝓑_p` and neutron `𝓑_n`
