@@ -2185,7 +2185,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "57b86bbf2d9b",
+          "ts": "a15800ff95ea",
+          "lean": "f56a679dd914"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-endomorphism chapter addresses categorical mass structure; motivic Galois character instance for the QOU substrate is a direct categorical construction in this chapter's scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:19:36.648Z",
+        "reviewed_sha": "b50388f38fc717c8bf7b28d3ebc4e9a9757fbb74",
+        "notes": "Correctly placed — the Habiro→Frobenius construction ties directly to the mass-endomorphism framework."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "57b86bbf2d9b",
+          "ts": "a15800ff95ea",
+          "lean": "f56a679dd914"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition statement describes a categorical construction (Frobenius eigenvalue via Habiro cyclotomic evaluation) — no archimedean constructs (no Real.sqrt/rpow, no numeric q≈value, no MeV units in the statement itself).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:19:58.945Z",
+        "reviewed_sha": "b50388f38fc717c8bf7b28d3ebc4e9a9757fbb74",
+        "notes": "The evaluation at ζ_{2p} is algebraic (roots of unity); wall is respected."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T15:19:58.945Z"
 }
