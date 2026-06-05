@@ -1901,7 +1901,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "252f86dbdf64",
+          "ts": "4e398309d1fa",
+          "lean": "9e8cf268612b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Conjecture on algebraic independence of hyperbolic volumes driving QOU mass spectrum; core predicted-spectra content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:22:12.134Z",
+        "reviewed_sha": "b75789bbff37b2446b647dbac94963f3416a575f",
+        "notes": "Directly belongs in predicted-spectra; no misfit."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T14:22:12.134Z"
 }
