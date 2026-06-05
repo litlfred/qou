@@ -686,3 +686,47 @@ adopt the sibling's framing without an §6 conversation.
 `/coordinate` complements them: it is the **active** cross-PR
 protocol — including handling of code-review comments on your own
 PR — not a passive watcher and not a single-PR summary.
+
+## Flag-bearer reflections — step-9 binding cluster (2026-06-05)
+
+Lessons from acting as flag-bearer across ~8 sibling PRs on a shared
+goal (the binding-closure cluster). Apply when you hold the flag.
+
+1. **Build the ledger hub FIRST, then post.** Create
+   `docs/coordination/<goal>.md` with: the direction (one boxed
+   identity), the *common infra everyone rows toward* (cheat-sheet step
+   table, watcher queues, dashboards, a falsification anchor), and a
+   per-PR "which way to row" roster with **report-back slots**. Post
+   intent only after the hub exists, so every comment can link one
+   canonical place. This is what makes "make sure all use common infra"
+   actionable rather than a slogan.
+
+2. **Tailor per-PR; then LISTEN.** A flag-bearer that only broadcasts is
+   half-doing the job. Pull each sibling's current state (a background
+   `Explore` agent reading PR bodies + last comments is ideal), and
+   **fold their findings back as sharpenings** to your own plan. This
+   session two sibling facts reshaped the workplan: #1839's precision
+   floor (c_k unmeasurable) ⇒ the kernel must be *fibre-derived not
+   data-extracted*; #1765's `λ(L)=(1/(c+1))Σ dim_q` ⇒ a lemma I planned
+   was *already a zero-param rule*. Record sharpenings in the ledger and
+   amend the workplan — do not silently keep the stale plan.
+
+3. **Anchor the cluster to one falsifiable number.** Give every sibling a
+   shared regression target (here: the magic-A ⁴He **+5.87%**). It turns
+   "which way to row" into a checkable claim and prevents divergent
+   re-derivations.
+
+4. **Push-race coordination with background agents.** When a background
+   sub-agent and you both push to the same branch, wrap every push in a
+   `fetch → rebase → retry` loop:
+   `for i in 1 2 3 4; do git push && break || { git fetch origin <br> -q;
+   git rebase origin/<br>; sleep $((2**i)); }; done`. The agent's commits
+   may already be in your local history (shared working dir) — check
+   `git log` before assuming a divergence.
+
+5. **Billing-CI is noise — do not let it derail coordination.** This
+   cluster's CI failed setup-phase (≤5 s, simultaneous, no logs) on every
+   push all session while local `validate`/`lake env lean` stayed green.
+   Recognise the billing signature (CLAUDE.md "CI billing failures"),
+   note `[skip-ci: billing]`, and keep working; never re-diagnose it as a
+   code problem or pause the cluster for it.

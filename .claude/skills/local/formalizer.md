@@ -736,3 +736,69 @@ no `substrate_q`), promote it via the `lean-mathlibext-curator`
 skill before continuing.  The promotion removes the lemma from
 the proof body and adds a `-- TODO upstream: <module>` tag in
 `QOU/MathlibExt.lean`.
+
+## Proof-authoring patterns — step-9 binding session (2026-06-05)
+
+Lessons from formalising the SW-residue / jet-filtration attack
+(L1, L2, L3, the (C) lemma, the P1 conjecture-class). Reuse these.
+
+### 1. Structure-hypothesis + projection-theorem (encode cited content sorry-free)
+
+When a result is **true modulo a manuscript/realisation input** you
+cannot yet formalise (residue theorem realisation, jet-tower
+exhaustiveness, the q-difference kernel's existence), do **not** write
+`sorry`. Package the realisation as a `structure` *field* and prove the
+downstream identity by **projecting that field**:
+
+```lean
+structure SWPeriodResidue (k : ℕ) where
+  period : ℂ
+  twoPiI : ℂ
+  residues : Fin k → ℂ
+  period_eq : period = twoPiI * ∑ p, residues p   -- the realisation, as hypothesis
+
+theorem sw_period_eq_residue_sum (S : SWPeriodResidue k) :
+    S.period = S.twoPiI * ∑ p, S.residues p := S.period_eq
+```
+
+The file is genuinely `sorry`-free; the cited input is visible as the
+structure's hypothesis (honest), and downstream blocks consume it via an
+instance. For **conjectures**, use the §3b class form (`class C … ; theorem
+downstream [C] : …` proved from the class) — same idea, instance = the open
+input. Mark the `.ts` `lean.validation: "validated"` only after a real
+compile (below).
+
+### 2. Mathlib v4.24.0 import map (these bit every new file this session)
+
+| You want | DEAD (pre-split) | USE in v4.24.0 |
+|---|---|---|
+| `∑` notation + `Finset.sum_congr` | `Mathlib.Algebra.BigOperators.Basic` | `Mathlib.Algebra.BigOperators.Group.Finset.Basic` |
+| `Finset.mul_sum` | `…BigOperators.Basic` | `Mathlib.Algebra.BigOperators.Ring.Finset` |
+| `Fintype (Fin k)` for `∑ p : Fin k` | (implicit) | add `Mathlib.Data.Fintype.Card` |
+
+`Mathlib.Algebra.BigOperators.Basic` **does not exist** in v4.24.0 — a
+file importing it fails before any tactic runs. Symptom: "unknown
+module" then cascade "Function expected" / "failed to synthesize Fintype".
+
+### 3. Verify content-block `.lean` with `lake env lean <file>` (not lake build)
+
+Content-block `.lean` files are **siblings** outside the `lean/` lib root,
+so `lake build QOU` does not compile them. Typecheck each standalone:
+`export PATH="$HOME/.elan/bin:$PATH" && lake env lean <path>` (exit 0 + no
+output = sorry-free). This is a **from-source** typecheck, so it is immune
+to the stale-olean false-green trap (see `lean-environment-setup.md`).
+Restore `.lake` first (lake-cache orphan branch); only elan/`cache get`
+are firewalled, `lake env lean` works.
+
+### 4. Decompose a conjecture into obligations; find the keystone
+
+Before "proving" a bundled conjecture, **enumerate its distinct claims**
+as separate obligations (P1 split into 5: series identity / term identity /
+grading coincidence / residue form / scale rule). Tag each
+proved / partial / open. Then identify the **keystone** — the one
+derivation that, once done, collapses the rest to a finite check (P1's was
+the prolongation kernel `R`, which via L3 fixes all terms). Prove the
+keystone, then **upgrade the conjecture to a §3b-cond conditional-class
+theorem** (rigorous modulo one named class instance) rather than leaving a
+bare conjecture. This staging is the honest path from `conjecture` →
+`validated conditional theorem`.
