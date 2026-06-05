@@ -28,9 +28,9 @@ The Python API is itself a thin facade over a layered stack:
 *Precision* is reported in two legs: L1 (internal compute
 agreement, target $10^{-15}$) and L2 (per-observable absolute
 accuracy, target $\sigma_{\mathrm{pred}} \leq \sigma_{\mathrm{exp}} / 100$).
-*Status flags* mirror the canonical derivation table: ✅ proved
-(sorry-free Lean), 🟢 derived (categorical, no fit),
-🟡 conjecture-conditional, 🔴 open gate.
+*Status flags* mirror the canonical derivation table: *proved*
+(sorry-free Lean), *derived* (categorical, no fit),
+*conditional* (conjecture-conditional), *open* (open gate).
 *Witness JSON* paths are relative to `folio-assistant/computations/`
 unless stated otherwise.
 
