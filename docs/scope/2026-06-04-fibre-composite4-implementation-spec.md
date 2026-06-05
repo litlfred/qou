@@ -286,8 +286,17 @@ cache is 403-blocked). The companion design doc
 [`2026-06-04-step5-markov-trace-h3-concrete-lean.md`](2026-06-04-step5-markov-trace-h3-concrete-lean.md)
 records the cross-verification + the toolchain recipe.
 
-**Step 5b progress (2026-06-05):**
+**Step 5b — wiring + cyclicity VERIFIED GREEN (2026-06-05):**
 
+- ✅ **Build-verified on a fresh container** — `lake build
+  QOU.Machinery.MarkovTraceOnHecke` → *"Build completed successfully
+  (922 jobs)"*, exit 0, **sorry-free**, **warning-free**. Toolchain
+  v4.24.0 installed from the GitHub release asset; cyclicity's
+  `simp only … ; ring` closes as the ℚ(z,h) preflight predicted
+  (`ring 617ms`). The earlier "progress" status was pushed *unverified*
+  (the Lean env had not finished restoring at the time); this build
+  confirms both the cyclicity proof and that the `QOU.lean` wiring does
+  not redden the `lake build QOU` graph.
 - ✅ **Wired into `QOU.lean`** — `import QOU.Machinery.MarkovTraceOnHecke`
   added to the library root, so the module now sits in CI's `lake build
   QOU` graph (was an orphan, like the other `Machinery/*.lean`).
