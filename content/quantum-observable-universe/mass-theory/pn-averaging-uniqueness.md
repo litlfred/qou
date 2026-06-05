@@ -27,7 +27,7 @@ averaging is determined.  Closing the `ColorFlavorCompatible`
 class to the Bring weighted derivation refines the admissible
 normalisation $z$ to a unique canonical form.
 
-### Derivation chain for the closed-form weight (2026-05-30 finding)
+### Derivation chain for the closed-form weight
 
 The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ per
 `lambda_scale_refinement_h4_correction_bring.py` is **not purely

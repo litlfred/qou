@@ -5,7 +5,7 @@ $[\alpha_{\text{shift}}(T(2,3))]_q \cdot [\alpha_{\text{shift}}(T(2,4))]_q
 = [3]_q \cdot [4]_q$, *with the q-integer indices forced by the
 proved* $\alpha_{\text{shift}} = k \cdot (p - 1)$ *formula
 (`prop:alpha-shift-torus-knot`). The "fitted / derived-candidate"
-status of the GMOR fusion (PR #1396 $\to$ 203 ppm; #1432 extended to $\eta/\varphi$)
+status of the GMOR fusion (203 ppm; extended to $\eta/\varphi$)
 is hereby converted to* **derived modulo the substrate q-character
 evaluation** *— the same smaller-scope open math shared with the
 α_EM closure (#1444) and the p-n averaging weight (the merged #1445).*
@@ -13,7 +13,7 @@ evaluation** *— the same smaller-scope open math shared with the
 ## The meson force-carrier pair $\{T(2, 3), T(2, 4)\}$
 
 The α_shift universal derivation chain
-([2026-05-30 audit](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
+([audit](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
 identifies the relevant torus knots:
 
 | q-integer | $\alpha_{\text{shift}}$ | torus knot | physical interpretation |
@@ -70,8 +70,7 @@ pattern](../../../CLAUDE.md):
 
 ## Computational consequence
 
-PR #1451 (`wire(production): m_K/m_π → Lean-proved closed form`)
-wires the production dashboard to the closed form
+The production dashboard is wired to the closed form
 $m_K^2 / m_\pi^2 = [3]_q \cdot [4]_q + (\alpha_{em}/\pi) \cdot (3q^2 - 1)/(2q^2)$
 with Lean refs
 `qou:QOU.BraidKnot.meson_qCG_3x4` (strong-fusion identity

@@ -14,8 +14,8 @@ $\sigma_{\mathrm{pred}}(O) \leq \sigma_{\mathrm{exp}}(O) / 100$.*
 authoritative current values come from the witness JSON. Read the
 witness for the current per-row `pred_err`, `100x_target`, and
 `beats_100x` flags. The `summary` field holds the headline counts
-(`total`, `beats_1x_count`, `beats_100x_count`). At the time this
-block was authored (2026-06-02), the framework met the L2 $100\times$ target
+(`total`, `beats_1x_count`, `beats_100x_count`). The framework
+currently meets the L2 $100\times$ target
 on 3 of 7 observables (the two anchored masses + the meson ratio
 $m_K/m_\pi$); the remaining four observables ($m_\mu$, $Q_\beta$,
 $m_n$, $\Delta m_{pn}$) gate L2 closure. Re-run

@@ -9,7 +9,7 @@ substrate-fixed force-carrier torus knot* $T(p_A, k_A)$
 ## Setting — the $A \ge 3$ binding gap
 
 The binding-endomorphism analogy
-([2026-05-28 audit](../../../docs/audits/2026-05-28-binding-endomorphism-analogy.md))
+([binding-endomorphism analogy audit](../../../docs/audits/2026-05-28-binding-endomorphism-analogy.md))
 closes the deuteron via $B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\tr$
 to **+0.19 %**, but undershoots $A \ge 3$ by 44–72 %.  Diagnosis:
 $\Delta\tr$ is the **linear truncation** of $\log(\tr) \sim \mathrm{Vol}$;
@@ -18,7 +18,7 @@ phase** on the column-rich irrep of a substrate-fixed force-carrier
 torus knot.
 
 The merged α_shift universal chain
-([2026-05-30 audit](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
+([α_shift universal derivation chain audit](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
 proves $\alpha_{\text{shift}}(T_{p, k}) = k \cdot (p - 1)$ — the
 **pole order of σ** on the column-rich irrep, equivalently the
 boundary holonomy of the Yekutieli non-abelian Stokes integral
@@ -43,17 +43,16 @@ $$
 | $^3$He | 3 | T(2, 5) candidate (mirror) | 5 | open |
 | $^4$He | 4 | T(3, 4) candidate | 8 | open |
 
-The candidate `(p, k)` values are per the agent-survey hypothesis
-(2026-05-30); the rigorous identification from the substrate's
+The candidate `(p, k)` values are hypothesised; the rigorous
+identification from the substrate's
 Hecke-Wedderburn block structure on $H_{3A}(q)$ is Phase 3 open math.
 
-The deuteron candidate $T(2, 3)$ was added on 2026-05-30 (PR #1485)
-with the following rationale:
+The deuteron candidate $T(2, 3)$ is motivated by the following rationale:
 
 1. *Smallest non-trivial torus knot.*  $T(2, 3)$ is the trefoil —
    the minimum-pole-order column-rich irrep, matching the deuteron's
    role as the lightest $A \ge 2$ nucleus.
-2. *$\mathcal{B}_3$-braid-closure consistency.*  The 2026-05-28
+2. *$\mathcal{B}_3$-braid-closure consistency.*  The
    binding-endomorphism analogy closes the deuteron via
    $B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\mathrm{tr}$
    to $+0.19\,\%$.  $T(2, 3)$ is the canonical boundary torus knot
@@ -98,7 +97,7 @@ This is the $A\ge3$ analogue of:
   \alpha_{\text{shift}})$ agree pointwise.
 - `theorem binding_subsingleton` — Subsingleton companion.
 
-### Concrete light-nuclei candidate instance (2026-05-30, #1485)
+### Concrete light-nuclei candidate instance
 
 The Phase-3 candidate table above is realised as a single Lean
 instance covering all four light nuclei $A \in \{2, 3, 4\}$:
