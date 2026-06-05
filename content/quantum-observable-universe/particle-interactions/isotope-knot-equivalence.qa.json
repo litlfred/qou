@@ -2552,7 +2552,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is a clean mathematical proposition with no author-status banners or interpretation prose.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:45:30.285Z",
+        "reviewed_sha": "56f20731bcb8f5756ed38bd8b0b550f38c0c15ab",
+        "notes": "Scholarly voice throughout; quotient-structure note is mathematical content, not meta-commentary."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Particle-interactions chapter; isotope equivalence directly concerns atom-knot classification by Z — fits naturally.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:45:45.129Z",
+        "reviewed_sha": "56f20731bcb8f5756ed38bd8b0b550f38c0c15ab",
+        "notes": "Block belongs in this chapter as foundational isotope structure."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses symbolic q^Z weights over S_{n(K)} — categorical/algebraic, no archimedean numerics.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:46:01.748Z",
+        "reviewed_sha": "56f20731bcb8f5756ed38bd8b0b550f38c0c15ab",
+        "notes": "No real-valued sqrt, ordering, or specific q_0 value in the statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof is purely algebraic: reflexivity/symmetry/transitivity of equality in S_{n(K)}, no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:46:01.781Z",
+        "reviewed_sha": "56f20731bcb8f5756ed38bd8b0b550f38c0c15ab",
+        "notes": "Carbon isotope example is illustrative only, not a numerical evaluation."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T15:46:01.781Z"
 }
