@@ -90,14 +90,13 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
-import sys
 from collections.abc import Callable
-from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
-if str(HERE) not in sys.path:
-    sys.path.insert(0, str(HERE))
-
+# Single path-bridging mechanism: `_path_bridge` (imported above) puts the
+# computations cluster + its sibling subdirs (qbeta/, substrate/, …) on
+# sys.path, so both the same-dir `qbeta_utils` and the substrate modules
+# resolve.  No additional manual sys.path inserts (avoids import-order
+# shadowing).
 from mpmath import mp, mpf, cos, sqrt, fabs  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
@@ -117,23 +116,31 @@ def taylor_c2_c3(F: Callable[[mpf], mpf], step: mpf = mpf("1e-7")) -> tuple[mpf,
     even/odd-symmetric so the leading error is O(step²); at mp.dps=70
     with step 1e-7 this resolves c_2, c_3 to ample precision.
     """
-    import math
     # 2nd derivative: F(h) - 2F(0) + F(-h) = F''(0)·h² + O(h⁴)
     f0 = F(mpf(0))
     fp1, fm1 = F(step), F(-step)
     fp2, fm2 = F(2 * step), F(-2 * step)
-    d2 = (fp1 - 2 * f0 + fm1) / step ** 2
+    d2 = (fp1 - 2 * f0 + fm1) / (step * step)
     # 3rd derivative (central): (F(2h) - 2F(h) + 2F(-h) - F(-2h)) / (2h³)
     d3 = (fp2 - 2 * fp1 + 2 * fm1 - fm2) / (2 * step ** 3)
-    return d2 / math.factorial(2), d3 / math.factorial(3)
+    # c_2 = d2/2!, c_3 = d3/3! — divide by the constants directly (2, 6).
+    return d2 / 2, d3 / 6
 
 
 def make_g_candidates(q: mpf) -> dict[str, mpf]:
-    """Curated bar-antisymmetric (odd under q ↔ q⁻¹) closed-form g
-    candidates — the odd-parity content that could enter F at u³.
+    """Curated closed-form g candidates for the odd-parity u³ content.
 
-    Each is odd under q → q⁻¹ (so it can legitimately source a u³ term
-    in a generating function whose even part is cos(√2·u)).
+    The list is MIXED by design:
+    - **bar-antisymmetric** entries (odd under q ↔ q⁻¹, e.g. h, h³,
+      q³−q⁻³, …) — these can legitimately source an odd u³ term in a
+      generating function whose even part is cos(√2·u);
+    - two **bar-EVEN controls** (the constant `-2` and `-(q²+q⁻²)`) —
+      included deliberately so the `is_bar_odd` filter flags them as
+      ineligible odd-parity sources (they are the best single-formula
+      near-matches, retained to show even the near-matches fail the
+      cross-anchor test).
+
+    The `is_bar_odd` column in the output marks which is which.
     """
     sub = substrate_ladder_quantities(q)
     h, b, hbar_q = sub["h"], sub["b"], sub["hbar_q"]
@@ -151,11 +158,16 @@ def make_g_candidates(q: mpf) -> dict[str, mpf]:
     }
 
 
-def is_bar_odd(name: str, q: mpf, tol: mpf = mpf("1e-30")) -> bool:
-    """Heuristic: a g candidate is bar-ODD if g(1/q) ≈ -g(q).  Used to
-    flag which candidates legitimately source an odd u³ term."""
-    gq = make_g_candidates(q)[name]
-    gqi = make_g_candidates(1 / q)[name]
+def is_bar_odd(gq: mpf, gqi: mpf, tol: mpf | None = None) -> bool:
+    """Heuristic: a g candidate is bar-ODD if g(1/q) ≈ -g(q).
+
+    Takes the PRE-EVALUATED candidate values `gq = g(q)` and
+    `gqi = g(1/q)` so callers do not rebuild the whole candidate dict
+    per check (the loop precomputes both maps once).  The tolerance, if
+    not supplied, is tied to the active mpmath precision rather than
+    hardcoded."""
+    if tol is None:
+        tol = mpf(10) ** -(mp.dps - 5)
     return fabs(gq + gqi) < tol * (1 + fabs(gq))
 
 
@@ -196,11 +208,12 @@ def main() -> int:
     print(f"  {'candidate':<26}{'bar-odd?':>9}{'g(q_p)':>14}{'p-miss ppm':>13}{'m-miss ppm':>13}")
     gp = make_g_candidates(qp)
     gm = make_g_candidates(qm)
+    g_inv = make_g_candidates(1 / qp)   # precompute g(1/q) once for bar-oddness
     rows = []
     closures = []
     for name in gp.keys():
         vp, vm = gp[name], gm[name]
-        bar_odd = is_bar_odd(name, qp)
+        bar_odd = is_bar_odd(vp, g_inv[name])
         pm = float(fabs(vp - c3_p) / fabs(c3_p) * 1e6)
         mm = float(fabs(vm - c3_m) / fabs(c3_m) * 1e6)
         closure = pm < TOL_PPM and mm < TOL_PPM
