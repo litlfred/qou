@@ -11,6 +11,16 @@ per-knot residue weights `a_D⁽ⁿ⁾` at `n = 2, 3` (owned by #1765).
 
 ---
 
+## 0. Result (2026-06-05): the EXISTENCE half is now PROVED
+
+`prop:prolonged-periods-fixed-depth` (Lean `prolongation_fixed_depth_recurrence`,
+sorry-free): the prolonged periods are orbits of the prolongation operator `M`
+on the finite-rank Gauss–Manin space, so by Cayley–Hamilton they satisfy a
+**fixed-depth recurrence with `n`-independent kernel**, depth `≤ rank V ≤ 2g = 8`.
+So the keystone splits cleanly: **existence proved**; only **identification**
+(that the kernel is the Bring Picard–Fuchs operator) remains — the content of
+§2–§5 below.
+
 ## 1. What is already proved (merged on main)
 
 - (D) `a_D⁽ⁿ⁾ = Σ_p Res_p λ_SW⁽ⁿ⁾` — residue form (`prop:sw-period-residue-sum`).
