@@ -1937,7 +1937,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark on LP confinement nucleon-as-unit belongs in particle-interactions.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:49:40.699Z",
+        "reviewed_sha": "086c6198eb6cf7108b49710a9ccd09400fb9b6e8",
+        "notes": "On-topic placement."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T00:49:40.699Z"
 }
