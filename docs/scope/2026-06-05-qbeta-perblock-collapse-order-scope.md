@@ -71,6 +71,38 @@ f-map. The §9.2 lever proposes a different origin for the gap entirely:
 
 Either branch is a *derive-or-refute* structural result, not a curve fit.
 
+## The exp(kη) refinement — `c_3` is the odd-`sinh` sector (owner directive 2026-06-05)
+
+Substitute `q = exp(η)`, `η = log q₀`. The Hecke generators **are** the bar-graded
+hyperbolic functions (symbolically verified):
+
+- `h  = q − q⁻¹ = 2 sinh η` — the **bar-ODD** generator (the `c_3` sector);
+- `[2]_q = q + q⁻¹ = 2 cosh η` — the **bar-EVEN** generator (the `c_2` sector);
+- the two Hecke eigenvalues are `q = exp(+η) = cosh η + sinh η` and `−q⁻¹ = −(cosh η − sinh η)`.
+
+Since every `χ^λ(β)` is a polynomial in the eigenvalues, its bar-decomposition
+**is** its `cosh`/`sinh` decomposition, so **`c_3` lives in the odd-`sinh`
+(odd-`h`) part of the n↔p character difference**. Confirmed: the amphichiral
+torus traces `P_m(h) = cosh((2m+1)η)/(2 cosh η)` are **pure cosh** (zero bar-odd
+part) — the `sinh`/`c_3` sector requires the **chiral n↔p asymmetry**, not the
+symmetric knot content.
+
+**This makes the owner's cancellation claim an explicit identity.** With each
+per-block odd part written `y_λ·sinh(k_λ η)`:
+
+| collapse mode | form | opposite-chirality blocks, equal weight |
+|---|---|---|
+| **coherent** (`sinh`-extract AFTER `Σ_λ`) | `Σ_λ y_λ sinh(k_λ η)` | `(y − y′) sinh` → **nulls** (#1742 rotation/growth opposite signs) |
+| **observe-last** (`\|·\|` per block, THEN `Σ_λ`) | `Σ_λ y_λ \|sinh(k_λ η)\|` | `(y + y′) sinh` → **survives** |
+
+**And it dissolves #1887's f-map obstruction.** #1887 refuted a *fixed-ℓ*
+`sinh(ℓη)/u^k` and noted the survivor needs a non-trivial η-shape factor. The
+observe-last sum `Σ_λ y_λ |sinh(k_λ η)|` **is** that η-shape — a weighted sum of
+different-order sinhs whose effective order is η-dependent (Bessel-like), with
+**no single ℓ to anchor-lock**. So the probe should expand in `h = 2 sinh η`
+(not `u`), track the **odd-`h` part per λ**, and read the `c_3` cross-anchor
+swing as `d/dη` of the surviving odd-`sinh` sum.
+
 ## Probe design (for a focused compute session)
 
 1. **Per-λ data over ℚ(q)** for the canonical proton `𝓑_p` and neutron `𝓑_n`
