@@ -2586,7 +2586,91 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "evidence": "Statement is bare claim 'exists and is finite'; inline proof is scholarly norm, not interpretation/motivation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:06:49.452Z",
+        "reviewed_sha": "4ad30a1656f31ba1a0e37d5739f705d58f0ce93b",
+        "notes": "No voice violation"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "evidence": "Existence of confinement level fits 'Confinement operator selection' section directly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:06:49.487Z",
+        "reviewed_sha": "4ad30a1656f31ba1a0e37d5739f705d58f0ce93b",
+        "notes": "Placement correct"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "evidence": "Statement uses generic H_n(q), NF T_w, filtration J^•(q) at generic locus — all categorical/algebraic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:06:49.521Z",
+        "reviewed_sha": "4ad30a1656f31ba1a0e37d5739f705d58f0ce93b",
+        "notes": "No archimedean specialisation"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "evidence": "Proof uses finite NF basis, finite partition count, minimum of finite set — combinatorial, no archimedean machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:06:49.555Z",
+        "reviewed_sha": "4ad30a1656f31ba1a0e37d5739f705d58f0ce93b",
+        "notes": "Wall-side clean"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T00:06:49.555Z"
 }
