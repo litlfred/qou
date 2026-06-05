@@ -2620,7 +2620,70 @@
         "reviewed_sha": "ea9a8ed42ae1ef03135bd32727bc63d6992d781f",
         "notes": "Substantive 'why it matters' prose in same block; borderline — content is dense cross-refs rather than pure motivation"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4e76f4347021",
+          "ts": "c7d34067c0e3",
+          "lean": "dbbcfe40d1e6"
+        },
+        "result": "pass",
+        "evidence": "Cyclotomic dimension count in mass-theory cyclotomic section; matches chapter scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:17:39.109Z",
+        "reviewed_sha": "7bd7e4c43412e2a05af2b5a1a3899862ee7175f9",
+        "notes": "No misplacement"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4e76f4347021",
+          "ts": "c7d34067c0e3",
+          "lean": "dbbcfe40d1e6"
+        },
+        "result": "pass",
+        "evidence": "Statement is dim_Q V_{n,K} over Q-vector spaces; no archimedean constructs",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:17:55.191Z",
+        "reviewed_sha": "c5867f67de4025fd89cbbded40ed8bebb1b9ff5c",
+        "notes": "Purely algebraic; no Real./MeV/ordering"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4e76f4347021",
+          "ts": "c7d34067c0e3",
+          "lean": "dbbcfe40d1e6"
+        },
+        "result": "pass",
+        "evidence": "Proof via Jonquiere rationality + orbit-sum + Borel rank; no linarith/IVT/Real.*",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T00:17:55.226Z",
+        "reviewed_sha": "c5867f67de4025fd89cbbded40ed8bebb1b9ff5c",
+        "notes": "No archimedean machinery"
+      }
     ]
   },
-  "updated_at": "2026-06-05T00:16:46.702Z"
+  "updated_at": "2026-06-05T00:17:55.226Z"
 }
