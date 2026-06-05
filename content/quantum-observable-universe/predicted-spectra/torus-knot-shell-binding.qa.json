@@ -2584,7 +2584,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "13197caf7363"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Substantial physical/motivational prose ('Intra-shell vs inter-shell crossings' section) precedes the formal proposition claim in the same block; no companion interprets: remark links to it.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:44:56.233Z",
+        "reviewed_sha": "cd0a671724a9083595dc8aa384e947f19c751e1b",
+        "notes": "Interpretive content could be separated into a remark with interprets: this proposition."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "13197caf7363"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Nuclear shell magic numbers derived from torus knot hierarchy — squarely within predicted-spectra chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:45:18.429Z",
+        "reviewed_sha": "cd0a671724a9083595dc8aa384e947f19c751e1b",
+        "notes": "No misplacement; topic is spectral prediction."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "13197caf7363"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "predicted-spectra is an archimedean chapter; q>1 and numeric q≈1.110 are expected and correctly used.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:45:18.479Z",
+        "reviewed_sha": "cd0a671724a9083595dc8aa384e947f19c751e1b",
+        "notes": "Archimedean constructs appropriate for this chapter."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "13197caf7363"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Chebyshev recurrence with q>1 and numerical values fits the archimedean predicted-spectra context.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:45:18.528Z",
+        "reviewed_sha": "cd0a671724a9083595dc8aa384e947f19c751e1b",
+        "notes": "Proof correctly on archimedean side."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:45:18.528Z"
 }
