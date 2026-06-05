@@ -36,9 +36,9 @@ $$
 P_\lambda^{\text{mixed}}(K) \;=\; m_{1/2}(\lambda)^{4N} \cdot m_1(\lambda)^{2(Z-1)}
 $$
 
-where `m_{1/2}(λ)` is the V_{1/2}-content multiplicity (Schur-Weyl) and `m_1(λ)` is the V_1-content multiplicity (sl_3 Schur-Weyl). The exponents `(4N, 2(Z-1))` are NOT fitted — they are read directly off the Phase-4 carrier exponents.
+where `m_{1/2}(λ)` is the V_{1/2}-content multiplicity (Schur-Weyl for V_{1/2}^⊗n, SU(2)). **Convention note (per Gemini review on PR #1896):** `V_1` here denotes the **sl_3 fundamental representation** (3-dimensional) when written as `(dim_q V_1)^{2(Z-1)}` in the Phase-4 carrier; the Schur-Weyl decomposition of `V_1^⊗n` selects ≤3-row partitions and `m_1(λ)` is the corresponding sl_3 multiplicity. The earlier description "adjoint V_1" in §2's reading of `[3]_q^{2(Z-1)}` refers to the QUANTUM-DIM identity `[3]_q = dim_q(V_1^{sl_3 fund}) = dim_q(V_1^{SU(2) adj})` (both 3-dimensional reps share the quantum-dim numerical value `[3]_q`); the partition-level multiplicity computation uses the sl_3 fundamental's Schur-Weyl decomposition. The exponents `(4N, 2(Z-1))` are NOT fitted — they are read directly off the Phase-4 carrier exponents.
 
-**Categorical interpretation:** the per-atom amplitude `A(K)` carries the brane-tower content via the product `(dim_q V_{1/2})^{4N} · (dim_q V_1)^{2(Z-1)}`; the per-partition projection should carry the SAME product of multiplicities at the irrep-content level.
+**Categorical interpretation:** the per-atom amplitude `A(K)` carries the brane-tower content via the product `(dim_q V_{1/2}^{SU(2) fund})^{4N} · (dim_q V_1^{sl_3 fund})^{2(Z-1)}`; the per-partition projection should carry the SAME product of multiplicities at the irrep-content level.
 
 ## §3. Why this is NOT yet refuted
 

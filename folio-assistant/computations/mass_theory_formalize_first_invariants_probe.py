@@ -98,11 +98,18 @@ def main() -> int:
 
     # via-Jones: tr_M(β_Borromean) — for the Borromean rings the
     # Markov trace is bar-symmetric and reduces to a particular Hecke
-    # combination. Use the Family A value as a placeholder since both
-    # numerically agree at q_0; flag the structural identity.
-    via_jones = family_a  # placeholder — they coincide numerically
-    print(f"    via-Jones:        Markov trace of Borromean (≡ Family A "
-          f"numerically at q_0; structural identity)")
+    # combination, structurally IDENTICAL to Family A at q_0 (see
+    # bar_symmetry_three_candidates.py: both come out to 2.5328 because
+    # the via-Jones Markov-trace reduction collapses to the Family A
+    # rational expression). This probe does NOT compute the Hecke
+    # Markov trace independently; via-Jones is therefore flagged as a
+    # PLACEHOLDER duplicate of Family A (per Copilot review on #1896)
+    # to prevent misreading the verdict matrix as independent
+    # validation of two candidates.
+    via_jones = family_a  # PLACEHOLDER — coincides with Family A
+    print(f"    via-Jones:        Markov trace of Borromean (PLACEHOLDER —")
+    print(f"                       structurally identical to Family A; the")
+    print(f"                       independent Hecke compute is not run here)")
 
     # Bring color-tube (Φ_q-side, h-deformed). For h = q - 1/q,
     # bring = 1 / (1 - h·q¹⁰). Highly asymmetric in q.
@@ -111,10 +118,13 @@ def main() -> int:
     print(f"    Bring color-tube: 1 / (1 − h·q¹⁰),  h = q − q⁻¹")
     print()
 
+    # `is_placeholder` flag per Copilot review: marks candidates whose
+    # values are NOT independently computed, so the witness data and
+    # printed matrix flag them to downstream readers.
     candidates = {
-        "Family A": family_a,
-        "via-Jones": via_jones,
-        "Bring color-tube": bring,
+        "Family A": (family_a, False),
+        "via-Jones": (via_jones, True),  # placeholder — see comment above
+        "Bring color-tube": (bring, False),
     }
 
     # ─────────────────────────────────────────────────────────────────
@@ -129,7 +139,7 @@ def main() -> int:
     q_m_sp = sp.Float(Q_MUON, 50)
 
     anchor_verdicts = {}
-    for name, expr in candidates.items():
+    for name, (expr, is_placeholder) in candidates.items():
         v_p = mp.mpf(str(sp.N(expr.subs(q, q_p_sp), 50)))
         v_m = mp.mpf(str(sp.N(expr.subs(q, q_m_sp), 50)))
         swing = mp.fabs(v_m - v_p) / mp.fabs(v_p)
@@ -137,11 +147,13 @@ def main() -> int:
         anchor_verdicts[name] = {
             "v_proton": v_p, "v_muon": v_m,
             "swing_relative": swing, "passed": passed,
+            "is_placeholder": is_placeholder,
         }
+        placeholder_mark = " [PLACEHOLDER]" if is_placeholder else ""
         print(f"    {name:<20} v(q_p)={mp.nstr(v_p, 8):>11}  "
               f"v(q_μ)={mp.nstr(v_m, 8):>11}  "
               f"swing={mp.nstr(swing, 4):>10}  "
-              f"{'✓ PASS' if passed else '✗ FAIL'}")
+              f"{'✓ PASS' if passed else '✗ FAIL'}{placeholder_mark}")
     print()
 
     # ─────────────────────────────────────────────────────────────────
@@ -153,16 +165,29 @@ def main() -> int:
     print()
 
     bar_verdicts = {}
-    for name, expr in candidates.items():
+    for name, (expr, is_placeholder) in candidates.items():
         expr_bar = expr.subs(q, 1 / q)
-        diff = sp.simplify(expr - expr_bar)
-        passed = (diff == 0)
+        # Use sp.cancel + .equals(0) per Copilot review: `diff == 0` on
+        # raw sympy expressions can yield false negatives when forms
+        # are mathematically equal but not structurally identical.
+        diff = sp.cancel(sp.together(expr - expr_bar))
+        try:
+            passed = diff.equals(0)
+            if passed is None:
+                # equals() returns None when sympy can't decide; fall
+                # back to numeric verification at high precision
+                num_val = mp.mpf(str(sp.N(diff.subs(q, "1.5"), 50)))
+                passed = mp.fabs(num_val) < mp.mpf("1e-40")
+        except Exception:
+            passed = (diff == 0)
         bar_verdicts[name] = {
             "delta_simplified": str(diff),
             "passed": bool(passed),
+            "is_placeholder": is_placeholder,
         }
+        placeholder_mark = " [PLACEHOLDER]" if is_placeholder else ""
         print(f"    {name:<20} f(q) - f(q⁻¹) = {str(diff)[:30]:<30}  "
-              f"{'✓ PASS' if passed else '✗ FAIL'}")
+              f"{'✓ PASS' if passed else '✗ FAIL'}{placeholder_mark}")
     print()
 
     # ─────────────────────────────────────────────────────────────────
@@ -185,7 +210,7 @@ def main() -> int:
     REGISTERED_LINKING_WEIGHT_Q1_ANCHOR = None  # the open gap
 
     shadow_verdicts = {}
-    for name, expr in candidates.items():
+    for name, (expr, is_placeholder) in candidates.items():
         try:
             lim = sp.limit(expr, q, 1)
             lim_str = str(lim)
@@ -208,15 +233,17 @@ def main() -> int:
             "rational_form": str(lim_rat) if lim_rat is not None else "n/a",
             "shadow_is_clean_rational": bool(clean_rat),
             "matches_registered_anchor": matches_anchor,
+            "is_placeholder": is_placeholder,
         }
         anchor_status = (
             "? no anchor"
             if matches_anchor is None
             else ("✓ match" if matches_anchor else "✗ mismatch")
         )
+        placeholder_mark = " [PLACEHOLDER]" if is_placeholder else ""
         print(f"    {name:<20} f(q→1) = {lim_str:<8}  "
               f"clean rational? {'✓' if clean_rat else '✗'}  "
-              f"registered anchor: {anchor_status}")
+              f"registered anchor: {anchor_status}{placeholder_mark}")
     print()
 
     # ─────────────────────────────────────────────────────────────────
@@ -228,19 +255,30 @@ def main() -> int:
     print()
 
     direction_verdicts = {}
-    for name, expr in candidates.items():
+    for name, (expr, is_placeholder) in candidates.items():
         v_p = mp.mpf(str(sp.N(expr.subs(q, q_p_sp), 50)))
-        rel_dist = mp.fabs(v_p - LINKING_WEIGHT_TARGET_OOM) / LINKING_WEIGHT_TARGET_OOM
-        passed = rel_dist < DIRECTION_THRESHOLD_FACTOR
+        # Multiplicative bound per Copilot review: "within 10× of target"
+        # means target/10 ≤ |v_p| ≤ 10·target. Use ratio
+        # max(v_p/target, target/v_p) ≤ 10 (sign-robust via abs).
+        v_p_abs = mp.fabs(v_p)
+        if v_p_abs == 0:
+            ratio_max = mp.inf
+        else:
+            r1 = v_p_abs / LINKING_WEIGHT_TARGET_OOM
+            r2 = LINKING_WEIGHT_TARGET_OOM / v_p_abs
+            ratio_max = max(r1, r2)
+        passed = ratio_max <= DIRECTION_THRESHOLD_FACTOR
         direction_verdicts[name] = {
             "v_proton": v_p,
-            "rel_distance_from_target": rel_dist,
+            "ratio_max_to_target": ratio_max,
             "passed": passed,
+            "is_placeholder": is_placeholder,
         }
+        placeholder_mark = " [PLACEHOLDER]" if is_placeholder else ""
         print(f"    {name:<20} f(q_p)={mp.nstr(v_p, 8):>11}  "
               f"target~{LINKING_WEIGHT_TARGET_OOM}  "
-              f"rel.dist={mp.nstr(rel_dist, 4):>10}  "
-              f"{'✓ PASS' if passed else '✗ FAIL'}")
+              f"max(v/t,t/v)={mp.nstr(ratio_max, 4):>10}  "
+              f"{'✓ PASS' if passed else '✗ FAIL'}{placeholder_mark}")
     print()
 
     # ─────────────────────────────────────────────────────────────────
