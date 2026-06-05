@@ -2438,6 +2438,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:he4-channel-active-set' → expected 'he4_channel_active_set'; Lean declares: Channel, InActiveSet, HasHe4ChannelActiveSet, he4_strong_duality_value, he4_primal_obj_eq_tTp_xTp.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "44001a5d4b12",
+          "ts": "b95030f764f0",
+          "lean": "dce3504356ed"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean class HasHe4ChannelActiveSet encodes same 3-point claim (unique primal at T⊕p, active set {DD,³He+n}, dual ordering) as narrative Proposition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:27:16.788Z",
+        "reviewed_sha": "66db581370ac49e4499b1e1dafead9dc5ccf8d37",
+        "notes": "1-to-1 correspondence"
       }
     ],
     "proof-lean-compiles": [
@@ -2809,7 +2829,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "44001a5d4b12",
+          "ts": "b95030f764f0",
+          "lean": "dce3504356ed"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement section is purely the 3-part LP claim; interpretation relegated to separate Interpretation and Conditional status sections.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:25:52.093Z",
+        "reviewed_sha": "66db581370ac49e4499b1e1dafead9dc5ccf8d37",
+        "notes": "Clean separation"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "44001a5d4b12",
+          "ts": "b95030f764f0",
+          "lean": "dce3504356ed"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "LP-based compositional channel analysis of ⁴He binding directly addresses mass-theory chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:26:07.650Z",
+        "reviewed_sha": "66db581370ac49e4499b1e1dafead9dc5ccf8d37",
+        "notes": "Good fit"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "44001a5d4b12",
+          "ts": "b95030f764f0",
+          "lean": "dce3504356ed"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory is an archimedean chapter; MeV values and ℝ-based LP residuals are appropriate here.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:26:26.907Z",
+        "reviewed_sha": "66db581370ac49e4499b1e1dafead9dc5ccf8d37",
+        "notes": "Correct side"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "44001a5d4b12",
+          "ts": "b95030f764f0",
+          "lean": "dce3504356ed"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof is conditional on witness JSON; no archimedean machinery used to prove an algebraic claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:26:50.500Z",
+        "reviewed_sha": "66db581370ac49e4499b1e1dafead9dc5ccf8d37",
+        "notes": "Correct wall placement"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:27:16.788Z"
 }
