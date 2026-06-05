@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean"
   },
   "source_hashes": {
-    "md": "82351c8bd514",
+    "md": "3d120cdf7678",
     "ts": "2419e0b47ac0",
     "lean": "d9cd4931757c"
   },
@@ -44,6 +44,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "3d120cdf7678",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.325Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-emoji-content": [
@@ -77,6 +94,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "3d120cdf7678",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.325Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-first-person-work": [
@@ -143,6 +177,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "3d120cdf7678",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.325Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-unicode-crash": [
@@ -198,6 +249,23 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:404: | QOU-tracked R5-full nuclei | `Applied<Nucleus>Uniqueness.lean` (10 files) | ²H, ³H, ³He, ⁴He, ⁶Li, ⁹Be, ¹¹B, ¹²C, ¹⁴N, ¹⁶O |"
+      },
+      {
+        "field_hash": {
+          "md": "3d120cdf7678",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.325Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-scholarly-default": [
@@ -2250,6 +2318,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "3d120cdf7678",
+          "ts": "2419e0b47ac0",
+          "lean": "d9cd4931757c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.325Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "canonical-witness-pinned": [
@@ -2876,5 +2961,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-05T14:52:06.325Z"
 }

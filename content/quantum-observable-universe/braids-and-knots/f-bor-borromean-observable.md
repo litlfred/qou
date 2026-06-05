@@ -64,7 +64,7 @@ factors:
 
 ## Structural-integer identifications
 
-Two categorical integers attach naturally to $F_{\mathrm{Bor}}$:
+Two categorical integers attach to $F_{\mathrm{Bor}}$:
 
 | Integer | Categorical meaning | Status |
 |---|---|---|

@@ -1,4 +1,4 @@
-**Remark (per-observable 100× experimental status — dashboard).**
+**Remark (per-observable $100\times$ experimental status — dashboard).**
 
 *This remark wraps the live per-observable accuracy dashboard at
 [`folio-assistant/computations/per-observable-100x-status.witness.json`](#),
@@ -7,7 +7,7 @@ emitted by
 The dashboard reports the **L2 leg** of the precision-goals
 ([`docs/precision-goals.md`](../../../docs/precision-goals.md)): for
 each predicted observable $O$ with experimental uncertainty
-$\sigma_{\mathrm{exp}}(O)$, the **100× target** is
+$\sigma_{\mathrm{exp}}(O)$, the **$100\times$ target** is
 $\sigma_{\mathrm{pred}}(O) \leq \sigma_{\mathrm{exp}}(O) / 100$.*
 
 **Current status.** Numbers are NOT inlined here to avoid drift; the
@@ -15,7 +15,7 @@ authoritative current values come from the witness JSON. Read the
 witness for the current per-row `pred_err`, `100x_target`, and
 `beats_100x` flags. The `summary` field holds the headline counts
 (`total`, `beats_1x_count`, `beats_100x_count`). At the time this
-block was authored (2026-06-02), the framework met the L2 100× target
+block was authored (2026-06-02), the framework met the L2 $100\times$ target
 on 3 of 7 observables (the two anchored masses + the meson ratio
 $m_K/m_\pi$); the remaining four observables ($m_\mu$, $Q_\beta$,
 $m_n$, $\Delta m_{pn}$) gate L2 closure. Re-run
@@ -27,7 +27,7 @@ per-observable comparison values are read from the production
 witnesses for each anchor). This block declares the witness as a
 first-class artifact so it gets included in auto-regeneration
 sweeps and does not go stale silently — closing the systemic
-paper↔compute wiring gap documented in
+paper$\leftrightarrow$compute wiring gap documented in
 [`docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md`](../../../docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md).
 
 **Authoritative reference.** For the precision-goal definition (L1 vs

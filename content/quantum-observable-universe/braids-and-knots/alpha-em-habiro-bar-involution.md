@@ -31,7 +31,7 @@ The two special values are the lowest root-of-unity evaluations of
 $H$: $H(\zeta_1) = H(1) = 2$ is the classical leading term that gives
 $\alpha/(4\pi)$, and $H(\zeta_2) = H(-1) = -2$ is the bar mode. The
 full root-of-unity spectrum of $H$ (exact in the cyclotomic field, with
-$\alpha$ kept formal) is recorded in the computational witness; notably
+$\alpha$ kept formal) is recorded in the computational witness;
 $H(\zeta_4) = 0$, a modular **zero** that is the exact structural dual
 of the $Q_\beta$ Habiro element's modular **pole** at $\zeta_4$.
 

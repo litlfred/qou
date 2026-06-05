@@ -30,7 +30,7 @@ $$
 *compared to the experimental value $28.296\,\mathrm{MeV}$ — a relative
 miss of $+5.9\%$. This is dramatically tighter than the alpha-shift
 formula ([`prop:binding-alpha-shift-extension`](binding-alpha-shift-extension.md))
-which misses $^4_2\mathrm{He}$ by $-79\%$ (5× too small) because that
+which misses $^4_2\mathrm{He}$ by $-79\%$ ($5\times$ too small) because that
 formula assumes a single hyperbolic force-carrier knot per nucleus —
 an assumption that breaks for doubly-magic nuclei.*
 
@@ -105,7 +105,7 @@ for the full reanalysis. Summary:
   [`conj:kashaev-density-equals-sdp-multiplicity`](kashaev-density-equals-sdp-multiplicity.md)
   (landed 2026-05-24, Rule-14 owner-authorised). The identity is
   $\rho_F = \nu_{\mathrm{SDP}}$, exact on the three SDP-confirmed
-  hyperbolic atoms (D, T, ³He). Only the $\nu_{\mathrm{SDP}}(^4\mathrm{He})$
+  hyperbolic atoms (D, T, $^3$He). Only the $\nu_{\mathrm{SDP}}(^4\mathrm{He})$
   numerical verification (joint-tower SDP solver) is open.
 - **$A=3$ p/n asymmetry (was "Open Math B"):** structurally answered
   by
@@ -119,10 +119,10 @@ for the full reanalysis. Summary:
   [`closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py)
   under `pn_convention="bring_color_weighted"`. Numerical check at
   $q_0$: +180.9 ppm uniform correction across the four light nuclei
-  (each has one pn arc); the T vs ³He f-factor spread reported by
+  (each has one pn arc); the T vs $^3$He f-factor spread reported by
   [`binding_shell_enhancement_derivation.py`](../../folio-assistant/computations/binding_shell_enhancement_derivation.py)
   arises from the **arc-composition asymmetry** (T = pn+nn vs.
-  ³He = pp+pn) at the closed-form-ratio scale, not from a missing
+  $^3$He = pp+pn) at the closed-form-ratio scale, not from a missing
   scalar $q$-factor.
 
 The remaining genuinely open items are: Lean formalisation of

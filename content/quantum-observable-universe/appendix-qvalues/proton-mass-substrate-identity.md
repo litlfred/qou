@@ -95,7 +95,7 @@ effect in the deformation parameter $h$, not a quadratic one.
 The dominant MeV contributions are $h^3$: $+1.43\,\mathrm{MeV}$,
 $h^4$: $-0.15\,\mathrm{MeV}$.
 
-The residual decomposition of $m_n$ (2.0 ppm) separates cleanly:
+The residual decomposition of $m_n$ (2.0 ppm) separates:
 $0.24\,\mathrm{ppm}$ from $F_{\mathrm{Bor}}$ (proton mass) and
 $1.76\,\mathrm{ppm}$ from $X$ (flavor-split formula). The
 $Q_\beta$ residual ($2113\,\mathrm{ppm}$) is dominated entirely
@@ -159,7 +159,7 @@ $$
 
 The correction $(\alpha_{\mathrm{em}}/\pi) / \dim H_3 = (\alpha_{\mathrm{em}}/\pi) / 6$
 appeared at 0.054 ppm (vs the bare identity's 32 ppm residual to integer
-12) — a 600× improvement, identified in PR #1581's
+12) — a $600\times$ improvement, computed by
 [`ocneanu-12-em-correction-candidate`](../../../folio-assistant/computations/ocneanu_12_em_correction_candidate.py).
 Both factors are structurally motivated: $(\alpha_{\mathrm{em}}/\pi)$
 appears in m_K/m_π's Bring zero-mode closure (PR #1442), and

@@ -88,7 +88,7 @@ $\mathbf{No}$:
 
 ## Note: Frobenius is a structural sieve, not a measure
 
-Item 8 above is easily mis-read. The Frobenius pairing
+Item 8 above can be mis-read. The Frobenius pairing
 $\int_A : A \otimes A \to K$ on the QOU observable algebra is an
 *algebraic* bilinear form: a non-degenerate $K$-linear map
 witnessing the self-duality $A \cong A^\vee$ as objects of the

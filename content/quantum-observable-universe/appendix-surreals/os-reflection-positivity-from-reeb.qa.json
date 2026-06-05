@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.lean"
   },
   "source_hashes": {
-    "md": "e4242fc9b717",
+    "md": "b36ad9a77db1",
     "ts": "01ba651decbd",
     "lean": "dd820c755bec"
   },
@@ -357,6 +357,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "01ba651decbd",
+          "lean": "dd820c755bec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.545Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-emoji-content": [
@@ -376,6 +393,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "01ba651decbd",
+          "lean": "dd820c755bec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.545Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-first-person-work": [
@@ -414,6 +448,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "01ba651decbd",
+          "lean": "dd820c755bec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.545Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-unicode-crash": [
@@ -435,6 +486,23 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:38: ## Why $\\mathbb{Z}_2$ ⊂ $U(1)_{\\xi}$ is the OS reflection | content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md:79: ## Why the surreal bound + this conjecture ⇒ Wightman"
+      },
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "01ba651decbd",
+          "lean": "dd820c755bec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.545Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-editorializing": [
@@ -454,6 +522,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "01ba651decbd",
+          "lean": "dd820c755bec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.545Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-scholarly-default": [
@@ -756,5 +841,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-05T14:52:06.545Z"
 }

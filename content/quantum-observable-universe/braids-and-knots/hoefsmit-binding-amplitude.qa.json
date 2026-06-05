@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean"
   },
   "source_hashes": {
-    "md": "da4db810a167",
+    "md": "eeaad394fe27",
     "ts": "f654226fc036",
     "lean": "d007f6644123"
   },
@@ -187,6 +187,23 @@
           "agent_skill": "local/one-voice-audit"
         },
         "reviewed_at": "2026-05-27"
+      },
+      {
+        "field_hash": {
+          "md": "eeaad394fe27",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.798Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-time-stamped-notes": [
@@ -203,6 +220,23 @@
           "agent_skill": "local/one-voice-audit"
         },
         "reviewed_at": "2026-05-27"
+      },
+      {
+        "field_hash": {
+          "md": "eeaad394fe27",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.798Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-emoji-content": [
@@ -219,6 +253,23 @@
           "id": "voice-emoji-content-audit"
         },
         "reviewed_at": "2026-05-27"
+      },
+      {
+        "field_hash": {
+          "md": "eeaad394fe27",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.798Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-first-person-work": [
@@ -251,6 +302,23 @@
           "id": "voice-editorializing-audit"
         },
         "reviewed_at": "2026-05-27"
+      },
+      {
+        "field_hash": {
+          "md": "eeaad394fe27",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.798Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-ai-slop": [
@@ -694,6 +762,23 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md:49: - $b = 0$: the $(2,1)$ block diagonalises → the lepton channels | content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md:50: decouple → no meson binding (free leptons). | content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md:52: $V_{(1,1)}$ → meson exists as an entangled lepton pair."
+      },
+      {
+        "field_hash": {
+          "md": "eeaad394fe27",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.798Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-title-scholarly": [

@@ -3,7 +3,7 @@
 Several of the framework's $q$-deformed quantities — the $Q_\beta$
 Habiro element, the $\alpha_{EM}$ next-order factor
 ([`prop:alpha-em-habiro-bar-involution`](#prop:alpha-em-habiro-bar-involution)),
-and the Markov trace itself — are most cleanly analysed not through
+and the Markov trace itself — are analysed not through
 their power series at $q=1$, but through their behaviour under the
 **$q$-difference shift** $\sigma_q : q \mapsto q\zeta$, where $\zeta$
 runs over roots of unity. This subsection records the method, which

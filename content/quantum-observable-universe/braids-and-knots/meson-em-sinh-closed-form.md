@@ -29,7 +29,7 @@ Multiplying numerator and denominator by $q^2$ gives
 $(3 q^2 - 1)/(2 q^2)$. The Lean formalisation closes each step with
 `field_simp; ring`. $\square$
 
-## Significance: the meson m_K²/m_π² closure form
+## Significance: the meson $m_K^2/m_\pi^2$ closure form
 
 Substituting the closed form into the meson mass-squared ratio gives
 a **single closed-form derived expression** for the full

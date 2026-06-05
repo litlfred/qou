@@ -1,4 +1,4 @@
-The Option-E v9 ³H/³He isospin-mirror probe surfaces an empirical
+The Option-E v9 $^3$H/$^3$He isospin-mirror probe surfaces an empirical
 near-match: a cross-isotope bar-symmetric character sum scaled by
 $m_\pi\,\hbar_q$ reproduces the measured $B_T - B_{^3\mathrm{He}}$ to
 about 6 %, and a further $(1+q)/2$ multiplier brings the prediction

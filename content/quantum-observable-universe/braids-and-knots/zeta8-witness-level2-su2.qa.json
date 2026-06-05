@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean"
   },
   "source_hashes": {
-    "md": "f8720d3da75f",
+    "md": "0812365f7b03",
     "ts": "b68a457af648",
     "lean": "94da38ce38b0"
   },
@@ -372,6 +372,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "0812365f7b03",
+          "ts": "b68a457af648",
+          "lean": "94da38ce38b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.798Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-emoji-content": [
@@ -391,6 +408,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "0812365f7b03",
+          "ts": "b68a457af648",
+          "lean": "94da38ce38b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.798Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-first-person-work": [
@@ -431,6 +465,23 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.md:42: empirically in PR #1625 (audit"
+      },
+      {
+        "field_hash": {
+          "md": "0812365f7b03",
+          "ts": "b68a457af648",
+          "lean": "94da38ce38b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.798Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-unicode-crash": [
@@ -452,6 +503,23 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.md:53: observed across all three pair classes (D − n), (³He − D), (⁴He − ³He)."
+      },
+      {
+        "field_hash": {
+          "md": "0812365f7b03",
+          "ts": "b68a457af648",
+          "lean": "94da38ce38b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.798Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-editorializing": [
@@ -471,6 +539,23 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "0812365f7b03",
+          "ts": "b68a457af648",
+          "lean": "94da38ce38b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:06.798Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-scholarly-default": [
@@ -819,5 +904,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-05T14:52:06.798Z"
 }

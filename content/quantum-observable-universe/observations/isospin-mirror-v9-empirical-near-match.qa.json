@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/observations/isospin-mirror-v9-empirical-near-match.md"
   },
   "source_hashes": {
-    "md": "8bb3cff07d6e",
+    "md": "1278cda21556",
     "ts": "a3e8da2436ec"
   },
   "criteria": {
@@ -414,6 +414,22 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "1278cda21556",
+          "ts": "a3e8da2436ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:07.691Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-emoji-content": [
@@ -432,6 +448,22 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "1278cda21556",
+          "ts": "a3e8da2436ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:07.691Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-first-person-work": [
@@ -468,6 +500,22 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "1278cda21556",
+          "ts": "a3e8da2436ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:07.691Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-unicode-crash": [
@@ -488,6 +536,22 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
         "evidence": "content/quantum-observable-universe/observations/isospin-mirror-v9-empirical-near-match.md:1: A multi-version probe of the ³H/³He isospin-mirror binding-energy difference | content/quantum-observable-universe/observations/isospin-mirror-v9-empirical-near-match.md:27: the *absolute* binding energies of D, T, and ³He — applied there it makes the"
+      },
+      {
+        "field_hash": {
+          "md": "1278cda21556",
+          "ts": "a3e8da2436ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:07.691Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-editorializing": [
@@ -506,6 +570,22 @@
         },
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "1278cda21556",
+          "ts": "a3e8da2436ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "8dcd132bf1dc",
+          "script_commit_sha": "31936b5bfc4584eec4f5b636bbd4c4a0993031c3"
+        },
+        "reviewed_at": "2026-06-05T14:52:07.691Z",
+        "reviewed_sha": "7ea9b9f8e8e2a5255838fad3d4b82910c82e40bf"
       }
     ],
     "voice-scholarly-default": [
