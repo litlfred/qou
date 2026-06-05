@@ -2015,7 +2015,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3ab6dc905366",
+          "ts": "8c8eee60df6d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose section intro summarising the direct-limit subsection blocks; label sec:direct-limit-intro matches its role as chapter navigation text within lifting-and-descent.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T13:20:21.501Z",
+        "reviewed_sha": "c428a6747d9f5ab510a5099a4a836708cf70e271",
+        "notes": "No misplacement; kind=prose is appropriate for a section introduction."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T13:20:21.501Z"
 }
