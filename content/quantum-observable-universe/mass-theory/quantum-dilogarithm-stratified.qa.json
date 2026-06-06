@@ -2586,7 +2586,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b48ec81b1f5a",
+          "ts": "abe59bb72c0d",
+          "lean": "43646f53e590"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Prop+corollary statements clean; '## Why this resolves Step 4 of Phi_q categorical truncation' is motivation/interpretation in the same block, no interprets companion remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:23:11.702Z",
+        "reviewed_sha": "e5a7aae918592f2aee4fcd58375ece2e10262cf1",
+        "notes": "Borderline interpretation co-located with statement; proof is in separate prf: block"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b48ec81b1f5a",
+          "ts": "abe59bb72c0d",
+          "lean": "43646f53e590"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Phi_q centre-stratification fits section 'Kashiwara-Jones interpretations and quantum dilogarithm'; no sibling carries same claim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:23:11.753Z",
+        "reviewed_sha": "e5a7aae918592f2aee4fcd58375ece2e10262cf1",
+        "notes": "Well-placed"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b48ec81b1f5a",
+          "ts": "abe59bb72c0d",
+          "lean": "43646f53e590"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Generic semisimple Hecke H_n(R,q) at generic q; conventions stated as |q|>1 Faddeev / |q|<1 with q->q^-1; no Real.*, MeV, or numeric q_0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:23:11.809Z",
+        "reviewed_sha": "e5a7aae918592f2aee4fcd58375ece2e10262cf1",
+        "notes": "Generic-ring statement; modulus inequalities used correctly"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b48ec81b1f5a",
+          "ts": "abe59bb72c0d",
+          "lean": "43646f53e590"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof lives in separate prf:quantum-dilogarithm-stratified; narrative argument is Frobenius-pairing + depth-stratum orthogonality, purely algebraic, no linarith/IVT/Real",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:23:11.853Z",
+        "reviewed_sha": "e5a7aae918592f2aee4fcd58375ece2e10262cf1",
+        "notes": "Algebraic proof method matches algebraic statement"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:23:11.853Z"
 }
