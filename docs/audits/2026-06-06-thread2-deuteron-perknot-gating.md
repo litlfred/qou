@@ -46,3 +46,45 @@ Do **thread 4** (link-volume assignment) **before** thread 2's A≥2 mass wire-u
 tractable" is corrected to "gated" by this note.
 
 No fit; nothing wired; `c_3`/mass values cal-anchored.
+
+---
+
+## Update 2026-06-06 — obstacle (b) cleared; canonical `tr_M(D)` now computes + cross-checked
+
+Obstacle **(b)** (the `chi-D-h6` naming bug) is **fixed**, and a second bug it
+masked is fixed too:
+
+1. **Alias normalization.** `canonical_tr_m()` now maps short aliases through
+   `ATOM_ALIASES` (`"D"→"deuteron"`, idempotent on canonical names) before the
+   chi-cache lookup, so `canonical_tr_m("D", 1, 1)` finds
+   `chi-deuteron-h6-at-q0-50dps.witness.json`.
+2. **Numerical fast-path schema bug (newly found).** The fast-path assumed a
+   *pre-summed* cache (`y_lambda` / `contribution` / `tr_M_at_q0` keys), but the
+   producer `chi_at_q0_via_hoefsmit_mpfr.py` writes **χ-only** caches → `KeyError`.
+   The fast-path now combines the cached numerical χ^λ with `y_lambda_at`-computed
+   `y_λ` and sums `Σ_λ y_λ·χ^λ` (the docstring recipe), matching the symbolic path's
+   schema (and faster — no sympify).
+
+**Result + cross-check (L1-grade):** `canonical_tr_m("D", 1, 1)` →
+`|tr_M(β_D)| = 0.38828642407478887671153751312935209344259947275515…` at q₀
+(numerical fast-path). Hiding the numerical cache to force the symbolic path gives
+`…275513…` — the two agree to **50 dps** (rel diff 4.8e-50). So the canonical H₆
+trace for the deuteron is now loadable *and* validated against the independent
+symbolic combiner.
+
+**Obstacle (a) sharpened — the `Vol(6₂)` discrepancy is a mislabel, not a 39 % physics gap.**
+The `conj:canonical-knot-id-sdp` table pairs "6₂ (Miller's knot)" with `Vol = 3.16396`,
+but `3.16396` is the SnapPy census volume of **6₁**; the **6₂** census volume is
+`4.40083`, which is exactly the production `Vol_D` in
+`per-atom-hyperbolic-volume.witness.json`. So production already uses `Vol(6₂)=4.40083`;
+the conj `.md` table's *number* (3.16396) is stale/mislabeled (it is `Vol(6₁)`).
+Reconciling the conj table — and deciding definitively whether the deuteron knot is `6₁`
+or `6₂` — is **thread-4 / `conj:canonical-knot-id-sdp` scope** (knot identity from the SDP),
+not a compute bug. Flagged for owner reconciliation.
+
+**Still gated:** obstacle (c) — the per-knot mass demonstrator
+(`per-knot-mass-table-demonstration.py`) computes **absolute masses**, not the deuteron
+**binding** energy (it compares against the deuteron rest mass ≈1875 MeV, not B≈2.2246 MeV),
+so the "+2.86 %→AME" binding delta is not directly emittable from it. Computing the binding
+delta needs the binding pipeline (couples to thread 4's binding-K). With `tr_M(D)` now
+available, that is the clean next step.
