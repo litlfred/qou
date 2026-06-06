@@ -33,23 +33,35 @@ So the residue-A element is structurally fixed (not guessed): **bar-ODD, with a
 namespace `QOU.BraidKnot.QBetaResidueDual`, generic `CommRing` with `q`/`qi`
 independent (bar = swap):
 
+**Framing (as in the α_EM file):** "bar" is formalised at the fibre level by
+treating `q` and `qi` as **independent** variables with bar = the **swap**
+`q ↔ qi`. The genuine `q ↦ q⁻¹` involution, the ζ₄ root of unity, and `q+q⁻¹=0`
+are recovered **only after specialising `qi = q⁻¹`**; the lemmas are stated in the
+swap picture, and the ζ₄/pole reading is the interpretation under that
+specialisation (not a formalised complex-analytic pole).
+
 | object | definition | parity / locus |
 |---|---|---|
-| `bracketTwo` | `[2]_q = q + qi` | bar-EVEN; zero at `qi = −q` (ζ₄) |
+| `bracketTwo` | `[2]_q = q + qi` | bar-EVEN; zero at the bar-antifixed locus `qi = −q` |
 | `heckeDiff` | `h = q − qi` | bar-ODD |
 | `residueNum` | `N = h·(1 − h²α)` | bar-ODD (the dual of α_EM's `[2]_q·(1−h²α)`) |
-| `F` (not a def) | `F = N / [2]_q` | bar-ODD; **pole at ζ₄** |
+| `F` (not a def) | `F = N / [2]_q` | bar-ODD; singular at the `[2]_q` zero (the ζ₄ pole after `qi=q⁻¹`) |
 
 Sorry-free lemmas:
-- `bracketTwo_bar_even`, `heckeDiff_bar_odd` — the two generators' parities.
-- `residueNum_bar_odd` — `N(q⁻¹) = −N(q)` (the structural complement of α_EM's
-  `alphaEmHabiro_bar_invariant`).
-- `bracketTwo_zero_at_zeta4` — `[2]_q(q, −q) = 0` (= α_EM's ζ₄ zero, since `[2]_q`
-  is α_EM's factor).
-- `residueNum_at_zeta4` — `N(q, −q) = 2q(1 − 4q²α) ≠ 0` (generic) ⇒ `F = N/[2]_q`
-  has a **pole** at α_EM's zero.
-- `residue_pole_dual_to_alphaEm_zero` — the two faces of the same `[2]_q` factor
-  packaged: zero (bar-even/α_EM) ↔ pole (bar-odd/Q_β).
+- `bracketTwo_bar_even`, `heckeDiff_bar_odd` — the two generators' swap-parities.
+- `residueNum_bar_odd` — `N(qi, q) = −N(q, qi)` (swap; recovers `N(q⁻¹) = −N(q)`
+  on `qi=q⁻¹`), the structural complement of α_EM's `alphaEmHabiro_bar_invariant`.
+- `bracketTwo_zero_at_bar_antifixed` — `[2]_q(q, −q) = 0` (= α_EM's zero locus,
+  since `[2]_q` is α_EM's factor).
+- `residueNum_at_bar_antifixed` — the `ring` **evaluation** `N(q, −q) = 2q(1 − 4q²α)`.
+- `residueNum_ne_zero_at_bar_antifixed` — over an `IsDomain`, with explicit
+  `2q ≠ 0` and `1−4q²α ≠ 0` hypotheses, `N(q,−q) ≠ 0`. **This + `[2]_q = 0` is the
+  rigorous content of "pole"**: denominator vanishes, numerator does not (a
+  genuine singularity in any localisation inverting `[2]_q`); the pole is not
+  formalised as a fraction-field object.
+- `residue_vs_alphaEm_at_bar_antifixed` — the zero (`[2]_q`) + evaluation (`N`)
+  packaged: the two faces of the same `[2]_q` factor (bar-even/α_EM zero ↔
+  bar-odd/Q_β pole).
 
 ## 3. What this buys the KLR program + what is still open
 
