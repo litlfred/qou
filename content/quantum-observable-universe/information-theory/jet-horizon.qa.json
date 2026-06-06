@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "86184daf8030",
+          "ts": "dac57111d023",
+          "lean": "af8acf2e82ca"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "definition of jet horizon (degree-0 vanishing locus) + horizon ideal, placed in sec:horizons-aeons after horizons-aeons-intro",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T19:51:51.713Z",
+        "reviewed_sha": "7734fe748b1860ad2e89c0f8c70c39281ad89c46",
+        "notes": "Names a genuinely new construction (horizon ideal 𝔥 in A_0); topic matches the Horizons-and-Aeons section scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "86184daf8030",
+          "ts": "dac57111d023",
+          "lean": "af8acf2e82ca"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition is algebraic (vanishing ideal 𝔥=V(...), sections of A_0); no Real.*, no q≈value pin, no MeV units",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T19:51:51.762Z",
+        "reviewed_sha": "7734fe748b1860ad2e89c0f8c70c39281ad89c46",
+        "notes": "Generic algebraic/categorical definition; jet-degree leakage table is structural, not an archimedean numeric pin."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T19:51:51.762Z"
 }
