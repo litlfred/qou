@@ -1879,7 +1879,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e7770ba6f896",
+          "ts": "f1e77d87a83c",
+          "lean": "19eaed4149ad"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Listed at line 111 of braids-and-knots.ts; definition of Klein-four braid involutions fits braid-group section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:08:24.330Z",
+        "reviewed_sha": "f58bedbc2639b5e45ce55a43326d2c770bb980a9",
+        "notes": "Pure algebraic definition; fits braids-and-knots section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e7770ba6f896",
+          "ts": "f1e77d87a83c",
+          "lean": "19eaed4149ad"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "braids-and-knots is a generic/substrate chapter; definition uses only permutation matrices and Klein-four group — no Real.sqrt/rpow/log/cos/exp, no numeric q value, no ordering predicates.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:08:38.955Z",
+        "reviewed_sha": "f58bedbc2639b5e45ce55a43326d2c770bb980a9",
+        "notes": "Purely algebraic; no archimedean constructs."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T01:08:38.955Z"
 }
