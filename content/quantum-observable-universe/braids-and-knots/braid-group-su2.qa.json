@@ -1739,7 +1739,28 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d3087b67df07",
+          "ts": "86bffbdd755f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Example works out B_3 R-matrix on V⊗V for U_q(su(2)); directly illustrates def:braid-group in braids-and-knots chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:59:23.613Z",
+        "reviewed_sha": "88b7fe9561ab0160bb93bfe4430597a760fc8733",
+        "notes": "Correct placement."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-06T00:59:23.613Z"
 }
