@@ -89,6 +89,11 @@ that doesn't require a full `lake build` between attempts.
    - Classification (type / proof / field / axiom-placeholder)
    - Statement signature (hypotheses and goal type)
    - Any `-- sorry:` or adjacent comment explaining the deferral
+   - **Criticality** (`routine` | `core` | `restates-target`, per
+     [`proof-gap-audit`](proof-gap-audit.md) §"Gap criticality").
+     `restates-target` is an **auto-fail**: do not attempt it — escalate,
+     because the block is mis-typed (it defers the target itself), not
+     merely under-proved.
 
 ### Phase 2 — Dependency Ordering
 
@@ -106,6 +111,14 @@ that doesn't require a full `lake build` between attempts.
    4. Approximation lemmas requiring `norm_num` or `native_decide`
    5. Type stubs that need concrete structure definitions
    6. Deep mathematical content deferred to later chapters
+
+**Criticality overlay (value, not just ease).** The ordering above is by
+*ease* (quick mechanical wins build confidence). Cross it with the *value*
+axis from [`proof-gap-audit`](proof-gap-audit.md) §"Gap criticality": once
+the mechanical wins are banked, attack `core` gaps (where the result's idea
+lives) ahead of remaining `routine` ones, and never *attempt* a
+`restates-target` gap — it is a non-proof to escalate, not a `sorry` to
+discharge. *An honest gap beats a no-gap dead end.*
 
 ### Phase 3 — Iterative Proof Attempts
 

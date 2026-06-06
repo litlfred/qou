@@ -87,6 +87,47 @@ file. Flag any of the following:
 | `decide` / `native_decide` on non-trivial goals | Document why it's decidable in the remark |
 | Trivial `rfl`/`simp` for a claimed non-trivial result | The statement is probably too weak — flag |
 
+## Gap criticality — `routine` | `core` | `restates-target`
+
+Beyond *what kind* of gap (A–E), every `sorry` / deferred step is also
+classified by *how much of the result's content it defers*. Adopted from
+the AlphaProof Nexus rater rubric (arXiv:2605.22763; see
+[`docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md`](../../../docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md)):
+an honest sketch that defers only *routine* steps is healthier than one
+that hides the key idea — and a gap that *is* the target is not a proof at
+all.
+
+| Tag | Meaning | Severity | Audit action |
+|-----|---------|----------|--------------|
+| `routine` | Defers a standard / technical step (a Mathlib-shaped lemma, a finite computation, a bookkeeping inequality). The proof's **idea is present**; only labour is deferred. | minor (major if load-bearing for a downstream chain) | Acceptable to defer — **must** still carry `-- Ref:` (CLAUDE.md §1). |
+| `core` | Defers the **key insight** — the step carrying the result's novelty (the "miracle"). Only scaffolding is present. | critical / major | Chase **first** in triage; never let it sit behind `routine` gaps. |
+| `restates-target` | The deferred lemma **is** the target, or a trivial rephrasing / re-hypothesised form of it — the gap *is* the theorem. | critical | **AUTO-FAIL.** This is the AlphaProof Nexus failure mode (a): hiding the hard part in a helper that restates the goal. Not a proof. Demote the block to `conjecture`, or replace the helper with the real argument. |
+
+**How to classify:**
+
+- **`restates-target` detector.** Compare the `sorry`'d helper's *conclusion*
+  to the target's conclusion modulo definitional unfolding / α-renaming /
+  moving a hypothesis across the turnstile. If they match (or the helper is
+  strictly stronger than the target and itself unproved), it is
+  `restates-target`. In Lean, `lean_goal` at the helper + `lean_hover_info`
+  on the target make this mechanical; in narrative, quote both statements
+  side by side.
+- **`core` vs `routine`.** Ask: *handed only the stated lemmas (minus this
+  `sorry`), could a competent reader reconstruct the argument?* If yes →
+  `routine`. If the `sorry` is the only place the actual argument lives →
+  `core`.
+- **The triage rule** (carried into `proof-triage`): a block whose only gaps
+  are `routine` **and** whose strategy is coherent **outranks** a block with
+  a `core` or `restates-target` gap, even if the latter has fewer `sorry`s.
+  *An honest gap beats a no-gap dead end.*
+
+**Relation to other checks.** A `core` gap downstream of a conjecture is
+governed by §I (conjectural propagation) — demote to `conjecture` /
+conditional class. A `restates-target` gap is **distinct** from a
+conjecture: a conjecture honestly states an unproved claim, whereas
+`restates-target` *pretends to prove* the target by deferring it. Never
+launder the latter into the former without re-typing the block.
+
 ## Inter-proof gap checks
 
 Run against the content graph (block `uses[]` + `.lean` imports).
@@ -302,7 +343,7 @@ Each finding **must** include the Phase-0 verification metadata
                 → <fix>
 - [uniqueness]  ...
 - [hand-wave]   ...
-- [lean]        `sorry` at line N — current `-- Ref:` status: <none|present>
+- [lean]        `sorry` at line N — criticality: <routine|core|restates-target>, `-- Ref:` status: <none|present>
 
 ### Inter-proof gaps
 
@@ -335,8 +376,8 @@ Each finding **must** include the Phase-0 verification metadata
 
 | Severity | Meaning | Example |
 |----------|---------|---------|
-| **critical** | Proof is invalid as written | Circular dependency, conjecture-propagation violation, unresolved existence |
-| **major** | Proof is plausibly repairable but currently incomplete | Missing bridging lemma, uniqueness not shown |
+| **critical** | Proof is invalid as written | Circular dependency, conjecture-propagation violation, unresolved existence, `restates-target` gap |
+| **major** | Proof is plausibly repairable but currently incomplete | Missing bridging lemma, uniqueness not shown, `core` gap (key insight deferred) |
 | **minor** | Stylistic / readability | "Clearly" where a one-line justification would suffice |
 
 ## Integration
@@ -357,5 +398,6 @@ Each finding **must** include the Phase-0 verification metadata
 - [ ] The `uses[]` graph matches the actual proof dependencies
 - [ ] No theorem transitively depends on a conjecture (or it's demoted)
 - [ ] `sorry`/`admit` sites all carry `-- Ref:` citations
+- [ ] Every `sorry`/gap classified `routine` | `core` | `restates-target`; **no `restates-target` gaps**
 - [ ] Report produced with severity levels and remediation suggestions
 - [ ] No edits made — handoff to `proof-editor` or author
