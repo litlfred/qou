@@ -1931,7 +1931,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e69b0c64e267",
+          "ts": "9ac51e793be0",
+          "lean": "f667e65f5102"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "In sec:horizons-aeons; defines Bun°(P(V)), pi_0 = aeons, complement = jet horizons/big-bang states",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:35:55.157Z",
+        "reviewed_sha": "1b7f02336c309ef6a1db374c9c38547fbd861872",
+        "notes": "Categorical subject (observable subcategory, aeons, horizons) fits Horizons and Aeons section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e69b0c64e267",
+          "ts": "9ac51e793be0",
+          "lean": "f667e65f5102"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely categorical (full subcategory where Gamma(S,A_0)!=0, Frobenius non-degenerate); no Real.*/numeric q/MeV; Lean is a structure over GradedJetAlgebra",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:35:55.215Z",
+        "reviewed_sha": "1b7f02336c309ef6a1db374c9c38547fbd861872",
+        "notes": "Generic-categorical statement, no archimedean construct; no wall banner needed."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T20:35:55.215Z"
 }
