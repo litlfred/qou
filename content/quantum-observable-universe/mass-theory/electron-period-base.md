@@ -14,6 +14,7 @@ multiplicative prefactor bolted onto the geometry.
 Concretely the $n=2$ period is $a_D^{(2)} = \tau\,a_D^{(1)} - m_e$: the electron
 scale appears explicitly. This is the cohomological role of CAL-1 — the
 **scale (normalisation) of the rank-2 $W$-Hodge plane**, the $h^0$ datum of the
-archimedean realisation. The Lean witnesses
-[`QOU.Mass.electron_period_is_base`](#prop:electron-period-base) and
-`second_period_contains_me` record both facts, sorry-free.
+archimedean realisation. The proposition's `lean.ref`,
+[`QOU.Mass.electron_period_is_base`](#prop:electron-period-base), proves the
+base identity; its companion `QOU.Mass.second_period_contains_me` (same Lean
+file) proves the $n=2$ propagation — both sorry-free.

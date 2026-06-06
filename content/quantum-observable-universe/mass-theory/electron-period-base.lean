@@ -47,6 +47,6 @@ theorem second_period_contains_me (T : ElectronBaseTower R) :
     T.a 2 = T.tau * T.a 1 - T.m_e := by
   have h := T.recurrence 0
   rw [T.base0] at h
-  simpa using h
+  exact h
 
 end QOU.Mass
