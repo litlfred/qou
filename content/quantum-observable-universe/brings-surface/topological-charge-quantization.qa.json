@@ -2560,7 +2560,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "statement block only; brief justification is scope clarification not interpretive prose",
+        "evidence": "Statement is bare claim: residue formula with no physical interpretation in statement body.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2568,9 +2568,9 @@
           "agent_date": "2026-06-06",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-06T02:04:44.919Z",
-        "reviewed_sha": "435d668edd86736187706af5a4894c81001b2178",
-        "notes": "clean"
+        "reviewed_at": "2026-06-06T02:07:00.042Z",
+        "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
+        "notes": "Clean theorem statement."
       }
     ],
     "fit-section-chapter": [
@@ -2582,7 +2582,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "theorem in sec:cohomological-defect; topological charge quantization via algebraic residue is the section's core topic",
+        "evidence": "Topological charge quantization fits brings-surface chapter.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2590,9 +2590,9 @@
           "agent_date": "2026-06-06",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-06T02:04:44.954Z",
-        "reviewed_sha": "435d668edd86736187706af5a4894c81001b2178",
-        "notes": "well-placed"
+        "reviewed_at": "2026-06-06T02:07:00.080Z",
+        "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
+        "notes": "Placement appropriate."
       }
     ],
     "wall-side-statement": [
@@ -2604,7 +2604,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "brings-surface is substrate chapter; statement uses Res_q, Frobenius pairing, Reeb derivation — purely categorical/algebraic, no Real.* or numeric q",
+        "evidence": "Uses algebraic residue and Frobenius pairing — no archimedean constructs.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2612,9 +2612,9 @@
           "agent_date": "2026-06-06",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-06T02:04:44.989Z",
-        "reviewed_sha": "435d668edd86736187706af5a4894c81001b2178",
-        "notes": "clean algebraic statement"
+        "reviewed_at": "2026-06-06T02:07:00.117Z",
+        "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
+        "notes": "Generic ring side."
       }
     ],
     "wall-side-proof": [
@@ -2626,7 +2626,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "proof cites non-degeneracy of Frobenius pairing and periodicity of Reeb derivation — purely algebraic, no linarith/IVT/Real.*",
+        "evidence": "No proof body in .md; statement only.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2634,11 +2634,11 @@
           "agent_date": "2026-06-06",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-06T02:04:45.022Z",
-        "reviewed_sha": "435d668edd86736187706af5a4894c81001b2178",
-        "notes": "algebraic proof matches algebraic statement"
+        "reviewed_at": "2026-06-06T02:07:00.151Z",
+        "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
+        "notes": "No archimedean leak possible."
       }
     ]
   },
-  "updated_at": "2026-06-06T02:04:45.022Z"
+  "updated_at": "2026-06-06T02:07:00.151Z"
 }
