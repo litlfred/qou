@@ -1912,6 +1912,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:pontryagin-dual-coxeter-character' → expected 'pontryagin_dual_coxeter_character'; Lean declares: PontryaginDualCoxeterCharacter. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1b18984e8927",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean theorem pontryagin_dual_coxeter_character_structural (sorry-free) conjoins zmodTwo_pontryagin_self_dual_via_value_at_one + signHom_surjective_witness, matching narrative steps (1) self-duality of Z/2 and (2) surjectivity of sign for n>=2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:20:29.294Z",
+        "reviewed_sha": "179fb1389b398f6729141f3d7980bda0d8ad1732",
+        "notes": "Quantifiers (forall n>=2), hypotheses, conclusion all match the narrative."
       }
     ],
     "proof-lean-compiles": [
@@ -2268,7 +2288,95 @@
         "reviewed_at": "2026-06-02T19:35:56.961Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1b18984e8927",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement is bare claim, but block carries ## Status / ## Why we recorded it (now closed) / ## Diagnostics sections (D20 tracker history, jet-order, bar-symmetry) following the proof",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:20:29.106Z",
+        "reviewed_sha": "179fb1389b398f6729141f3d7980bda0d8ad1732",
+        "notes": "Status/why-recorded prose is author-tracking history, candidate for authorNotes per §4d; not physical interpretation but mislocated tracking content."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1b18984e8927",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "in 'Universal enveloping algebras and quantum groups' section; uses def:bar-involution + def:hecke-normal-form; abelianised-Coxeter duality (D20) tied to bar Z/2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:20:29.154Z",
+        "reviewed_sha": "179fb1389b398f6729141f3d7980bda0d8ad1732",
+        "notes": "Reasonable home given the bar-involution Z/2 link; no sibling carries the same claim."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1b18984e8927",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is finite-group/Pontryagin duality on S_n^ab = Z/2; no Real.*, no numeric q0, no MeV, no order hypothesis on q",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:20:29.200Z",
+        "reviewed_sha": "179fb1389b398f6729141f3d7980bda0d8ad1732",
+        "notes": "Generic algebraic statement; correct side of the wall."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1b18984e8927",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof is fin_cases on Hom(Z/2,Z/2) + sign of swap(0,1); no linarith/IVT/continuity/Real.* machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:20:29.248Z",
+        "reviewed_sha": "179fb1389b398f6729141f3d7980bda0d8ad1732",
+        "notes": "Proof method matches algebraic statement; no archimedean specialisation invoked."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:20:29.294Z"
 }
