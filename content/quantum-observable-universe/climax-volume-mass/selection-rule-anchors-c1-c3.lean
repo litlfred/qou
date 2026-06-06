@@ -54,6 +54,11 @@ the identity is a pure ring computation after clearing `q⁻¹`. -/
 theorem selection_rule_c3_eq_family_a_q_form (q : ℝ) (hq : 0 < q) :
     (1 + (q^2 + 1 + q⁻¹^2) + (q^2 + q⁻¹^2) + (q^2 + 1 + q⁻¹^2) + 1) / 4
     = (3 * q^2 + 4 + 3 * q⁻¹^2) / 4 := by
+  -- `ring` over ℝ doesn't handle `q⁻¹` directly (per Copilot review on
+  -- PR #1929); `field_simp` clears denominators first, then `ring`
+  -- closes on the resulting polynomial identity.
+  have hq_ne : q ≠ 0 := ne_of_gt hq
+  field_simp
   ring
 
 /-- **Family-A in `h` form** — `(3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4) h²`

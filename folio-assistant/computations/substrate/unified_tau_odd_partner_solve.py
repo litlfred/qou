@@ -74,9 +74,13 @@ def main() -> int:
     print("=" * 78)
     print()
 
+    # Constants defined in one place per Gemini review on PR #1929.
+    prec = 50               # decimal digits for sympy ↔ mpmath conversion
+    tol = mp.mpf("1e-40")   # numeric consistency tolerance (well under prec)
+
     q = sp.Symbol("q", positive=True)
     q0 = mp.mpf(Q_0_50DPS)
-    q0_sp = sp.Float(Q_0_50DPS, 50)
+    q0_sp = sp.Float(Q_0_50DPS, prec)
 
     # ─────────────────────────────────────────────────────────────────
     # Step 1: anchor values (symbolic in q + numeric at q₀)
@@ -128,7 +132,7 @@ def main() -> int:
 
     diff_num_vs_sym = mp.fabs(tau_q0 - tau_q0_via_sym)
     print(f"    diff numeric ↔ sym   = {mp.nstr(diff_num_vs_sym, 6)}")
-    consistency_ok = diff_num_vs_sym < mp.mpf("1e-40")
+    consistency_ok = diff_num_vs_sym < tol
     print(f"    consistency: {'✓ PASS' if consistency_ok else '✗ FAIL'}")
     print()
 
@@ -146,7 +150,7 @@ def main() -> int:
     print(f"    a_D⁽⁵⁾(q₀) from sym  = {mp.nstr(a_c4_q0_via_sym, 30)}")
     diff_c4 = mp.fabs(a_c4_q0 - a_c4_q0_via_sym)
     print(f"    diff numeric ↔ sym   = {mp.nstr(diff_c4, 6)}")
-    odd_partner_ok = diff_c4 < mp.mpf("1e-40")
+    odd_partner_ok = diff_c4 < tol
     print(f"    odd-partner consistency: "
           f"{'✓ PASS' if odd_partner_ok else '✗ FAIL'}")
     print()
@@ -157,7 +161,7 @@ def main() -> int:
     print("  Step 4: SL₂ recurrence verification on (c=1, c=2, c=3, c=4=predicted)")
     print()
     seq = [a_c1_q0, a_c2_q0, a_c3_q0, a_c4_q0]
-    recurrence_ok = verify_recurrence(seq, tau_q0, mp.mpf("1e-40"))
+    recurrence_ok = verify_recurrence(seq, tau_q0, tol)
     print(f"    sequence: [{mp.nstr(seq[0], 12)}, {mp.nstr(seq[1], 12)}, "
           f"{mp.nstr(seq[2], 12)}, {mp.nstr(seq[3], 12)}]")
     print(f"    SL₂ recurrence a_{{n+2}} = τ·a_{{n+1}} − a_n holds: "

@@ -33,8 +33,13 @@ namespace QOU.Mass
 /-- **Selection rule at c=2 — q-form** (sum of H_3 q-dimensions over 3).
 
 `(1 + (q + q⁻¹) + 1) / 3 = (2 + q + q⁻¹) / 3`. -/
-theorem selection_rule_c2_sum_form (q : ℝ) (_hq : 0 < q) :
+theorem selection_rule_c2_sum_form (q : ℝ) (hq : 0 < q) :
     (1 + (q + q⁻¹) + 1) / 3 = (2 + q + q⁻¹) / 3 := by
+  -- `ring` over ℝ doesn't handle `q⁻¹` directly (per Copilot review
+  -- on PR #1929); `field_simp` clears denominators first, then `ring`
+  -- closes on the resulting polynomial identity. `hq` provides `q ≠ 0`.
+  have hq_ne : q ≠ 0 := ne_of_gt hq
+  field_simp
   ring
 
 /-- **Selection rule at c=2 — closed form `(q+1)²/(3q)`**.
