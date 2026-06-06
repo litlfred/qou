@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0db4e245a336",
+          "ts": "0aa599ca2590"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose intro to the instanton section; topic (instanton gauge theory) is central to quantum-observable-universes chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:37:39.019Z",
+        "reviewed_sha": "0ee7a0842f3f42695ec7e4b65f1d97e35c19e6ac",
+        "notes": "Well-placed section opener; no sibling already carries this summary."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T00:37:39.019Z"
 }
