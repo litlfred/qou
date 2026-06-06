@@ -49,7 +49,7 @@ def minimal_recurrence(seq, max_depth: int | None = None, tol=None):
     # AND ≥ 1 out-of-sample window to verify, i.e. N ≥ 2d+1 ⇒ d ≤ (N-1)//2.
     # Cap `max_depth` at this bound regardless of how it is supplied, so the
     # routine can never degrade into a pure fit (Copilot #1903).
-    hard_max = (N - 1) // 2
+    hard_max = max(0, (N - 1) // 2)  # ≥ 0 even for an empty/short seq
     max_depth = hard_max if max_depth is None else min(max_depth, hard_max)
     for d in range(1, max_depth + 1):
         # Scan for a solvable d×d Hankel window (the first block may be singular
@@ -67,9 +67,11 @@ def minimal_recurrence(seq, max_depth: int | None = None, tol=None):
                 continue
         if c is None:
             continue
-        # Verify the candidate on EVERY window, including the out-of-sample ones.
+        # Verify the candidate on EVERY window, including the out-of-sample
+        # ones. mp.fdot is the precise/efficient accumulator for Σ c_j·seq.
+        cj = [c[j] for j in range(d)]
         ok = all(
-            abs(sum(c[j] * seq[i + j] for j in range(d)) - seq[i + d]) <= tol
+            abs(mp.fdot(cj, [seq[i + j] for j in range(d)]) - seq[i + d]) <= tol
             for i in range(N - d)
         )
         if ok:
