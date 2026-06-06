@@ -61,11 +61,22 @@ $$
 Key facts:
 - The ring of modular forms for $\mathrm{SL}_2(\mathbb{Z})$ is
   $\mathbb{C}[E_4, E_6]$.
-- The Klein $J$-invariant is $J = 1728 \cdot E_4^3 / (E_4^3 - E_6^2)$.
+- Convention note: T11 uses the Klein modular invariant
+  $J = 1728 \cdot E_4^3 / (E_4^3 - E_6^2)$ whose orbit values are
+  $\{0, 1, \infty\}$ under the icosahedral syzygy.  The modular
+  $j$-invariant ($j(\tau) = 1/q + 744 + \cdots$) equals this $J$ via
+  the standard normalisation.  Gemini's review (#1925) flags that an
+  alternative convention writes $J = E_4^3 / (E_4^3 - E_6^2)$ (without
+  the 1728) and $j = 1728 \cdot J$; that is a valid alternative
+  normalisation but T11's choice is fixed for orbit-value consistency.
 - The modular discriminant is $\Delta(q) = (E_4^3 - E_6^2) / 1728$.
 
-**Obstruction.** Both $E_4(q)$ and $E_6(q)$ DIVERGE at $q = 1$ — the
-cusp of the SL_2(ℤ) fundamental domain.  Since $q = 1$ is the natural
+**Obstruction.** Both $E_4(q)$ and $E_6(q)$ DIVERGE as $q \to 1^-$ along
+the real axis.  (Technically the cusp of $\mathrm{SL}_2(\mathbb{Z})$ is
+at $\tau \to i\infty \Leftrightarrow q = e^{2\pi i \tau} \to 0$; the
+divergence we are looking at is on the boundary $|q| = 1$, at the
+boundary point $q = 1$, which is NOT a cusp in the SL_2 sense but is
+where the q-series fails to converge.)  Since $q = 1$ is the natural
 $h = 0$ base point for the Borromean polynomial reference, there is
 no finite Taylor h-coefficient of $E_4$ or $E_6$ comparable to the
 $h^4 = -3/4$ coefficient of $\mathrm{tr}_M(\beta_\mathrm{Bor})$.
@@ -73,11 +84,11 @@ $h^4 = -3/4$ coefficient of $\mathrm{tr}_M(\beta_\mathrm{Bor})$.
 The icosahedral q-Eisenstein analogue (pullback through the icosahedral
 covering $\mathbb{CP}^1 \to \mathbb{CP}^1 / I$) inherits the same
 obstruction: the icosahedral modular discriminant $\Delta_I$, being a
-polynomial in $E_4$ and $E_6$, also diverges at the cusp.
+polynomial in $E_4$ and $E_6$, also diverges as $q \to 1^-$.
 
 **Verdict: REFUTED.**  7th candidate cross-algebra functor refuted.
 Numerical sanity: $E_4(0.901) \approx 1.28 \times 10^7$, $E_6(0.901)
-\approx -4.04 \times 10^{10}$, finite far from the cusp.
+\approx -4.04 \times 10^{10}$, finite far from $q = 1$.
 
 ---
 
@@ -96,7 +107,7 @@ is the SL_2(ℤ) modular discriminant.
 
 **Inheritance.** Per T13, $\Delta(q)$ diverges at $q = 1$.  Therefore
 any rational function of $\Delta$ (and the Klein invariants $f, H, T$
-which are well-behaved at the cusp) inherits the divergence at $h = 0$.
+which are well-behaved as $q \to 1^-$) inherits the divergence at $h = 0$.
 
 **Classical verification.** At $\alpha = 1$, the real root of
 $y^5 + 5y + 1 = 0$ is computed to 40-digit precision via
@@ -112,7 +123,8 @@ cross-algebra functor refuted by inheritance from T13.
 ## Structural conclusion (the actionable finding)
 
 > **All q-modular / icosahedral-algebraic routes that pull back through
-> $q = 1$ as the $h = 0$ base point share the same cusp obstruction.**
+> $q = 1$ as the $h = 0$ base point share the same $q \to 1^-$
+> boundary-divergence obstruction.**
 >
 > The Borromean $h^4 = -3/4$ is a POLYNOMIAL coefficient of
 > $\mathrm{tr}_M(\beta_\mathrm{Bor}) = (4 + h^2 - 3h^4 - h^6) / (h^2 + 4)$,
