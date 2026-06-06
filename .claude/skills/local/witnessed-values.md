@@ -212,6 +212,19 @@ If you see any of these in a rendered chapter, fix the registry or
 backfill the canonical witness — never paper over the failure with a
 hard-coded literal.
 
+## Disjoint from tunable knobs (`EVOLVE-VALUE` fences)
+
+`:val[…]` / `:leanval[…]` are for **derived / fixed** substrate values —
+things a witness *computes* and the text must not drift from. The
+complementary case — values that are *legitimately tunable* (a truncation
+order, an exploratory coefficient) — is handled by the **`EVOLVE-VALUE`
+fence** convention in
+[`production-vs-exploratory-discipline.md`](production-vs-exploratory-discipline.md)
+§"Tunable-knob fences". The two are **disjoint**: a value is either
+witnessed-derived (`:val`) or fenced-tunable (`EVOLVE-VALUE`), never both.
+A `:val`-witnessed literal sitting inside an *exploratory* fence is a
+contradiction to resolve (it is being treated as both derived and free).
+
 ## Skill routing
 
 When asked to write or revise paper content that quotes substrate-derived
