@@ -27,7 +27,7 @@ explicit and gives the two routes through it.
   `real_strict_complementarity_unique_of_dualSlack_posDef`. **Trivial** (optimum is 0).
 
 The engine `real_strict_complementarity_unique_of_dualSlack_posDef`
-([`QOU/MathlibExt/SDPRealUniqueness`]) is **proved** and is what we ride: given a
+([`QOU/MathlibExt/SDPRealUniqueness`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean)) is **proved** and is what we ride: given a
 `RealStrongDualityPair` whose `dualSlack` is **PosDef** (interior optimum), the
 feasible-and-optimal matrix is unique. The B–V boundary axiom
 (`strict_complementarity_unique_axiom`, gate **G3**) is **not** needed when the optimum
@@ -86,12 +86,18 @@ prove `S(y⋆)` PosDef. Two routes:
 
 ## Step — wire the uniqueness
 
+Pseudocode (mirrors the proved `nucleus_uniqueness_closed` signature; the
+optimum `Φstar` is L_6a4's matrix, not 0):
+
 ```lean
--- non-trivial: optimum is L_6a4's matrix, not 0
-theorem helium3_canonical_uniqueness :
-    <unique Φ feasible+optimal for helium3SDP> :=
+theorem helium3_canonical_uniqueness
+    {Φ' : Matrix (Fin (heckeDim 9)) (Fin (heckeDim 9)) ℝ}
+    (h_feas : helium3SDP.IsFeasible Φ')
+    (h_obj  : helium3SDP.objAt Φ'
+              = helium3SDP.objAt helium3RealStrongDualityPair.Φstar) :
+    Φ' = helium3RealStrongDualityPair.Φstar :=
   real_strict_complementarity_unique_of_dualSlack_posDef
-    helium3RealStrongDualityPair helium3_dualSlack_posDef
+    helium3RealStrongDualityPair helium3_dualSlack_posDef h_feas h_obj
 ```
 
 ## G1 caveat (identity, not just optimum)
