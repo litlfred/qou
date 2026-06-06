@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "3c0c1da2840a",
-    "ts": "d6e086dffdc6",
-    "lean": "6457135e46ef"
+    "ts": "d6e086dffdc6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2603,7 +2602,91 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "3c0c1da2840a",
+          "ts": "d6e086dffdc6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is the bare algebraic claim with no physical interpretation inline; proof is compact and structural.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:28:19.811Z",
+        "reviewed_sha": "51fd1fe8b3f8b6c1b45eaad1c52ca6df0bbddec2",
+        "notes": "Voice is clean."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3c0c1da2840a",
+          "ts": "d6e086dffdc6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Chirality Gram pairing knot-factor proposition is foundational mass-theory content used by downstream corollaries.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:28:19.847Z",
+        "reviewed_sha": "51fd1fe8b3f8b6c1b45eaad1c52ca6df0bbddec2",
+        "notes": "Placement is appropriate."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3c0c1da2840a",
+          "ts": "d6e086dffdc6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is exact over generic ring R; Plancherel weights and chi_lambda are categorical, no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:28:19.885Z",
+        "reviewed_sha": "51fd1fe8b3f8b6c1b45eaad1c52ca6df0bbddec2",
+        "notes": "Wall side clean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "3c0c1da2840a",
+          "ts": "d6e086dffdc6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses Gram block-diagonalisation in central-idempotent basis — purely algebraic, no numerical or archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:28:19.922Z",
+        "reviewed_sha": "51fd1fe8b3f8b6c1b45eaad1c52ca6df0bbddec2",
+        "notes": "Proof stays categorical."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:28:19.922Z"
 }
