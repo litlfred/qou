@@ -45,7 +45,7 @@ theorem figure_eight_is_square_of_half : (1 : R) ^ 2 = 1 := by ring
 
 /-- Both the pion and σ₁σ₂⁻¹ have determinant +1 on any 2-dim
   representation (product of an even number of det=-1 generators). -/
-theorem pion_det_one : (-1 : ℤ) ^ 6 = 1 := by norm_num
-theorem half_41_det_one : (-1 : ℤ) ^ 2 = 1 := by norm_num
+theorem pion_det_one : (-1 : ℤ) ^ 6 = 1 := by decide
+theorem half_41_det_one : (-1 : ℤ) ^ 2 = 1 := by decide
 
 end QOU.BraidsAndKnots
