@@ -22,7 +22,7 @@ Steps 1 $\to$ 5 $\to$ 7 $\to$ 8 $\to$ here.*
 1. Compute Markov trace tr_M(NF(w_K)) symbolically (Steps 1–3).
 2. Wedderburn-decompose into Σ_λ y_λ(q) · χ^λ (Step 5).
 3. Apply GB filtration / E_2 collapse to identify the leading
-   geometric factor Geom_full(K, q) (Steps 7–8).
+   geometric factor VolDensity(K, q) (Steps 7–8).
 4. Evaluate at q = q_0 with default 65-dps mpmath precision.
 5. Multiply by m_e (MeV).
 ```
@@ -62,6 +62,6 @@ target, and the L1 cross-method agreement.*
 
 *Current status: 3/7 observables meet L2 (m_p, m_e, m_K / m_π);
 m_p shows a +2.89 % gap to CODATA after the proton-anchor re-pin.
-The open R&D is **refining `Geom_full($\mathcal{B}_3$)`**, not
+The open R&D is **refining `VolDensity($\mathcal{B}_3$)`**, not
 "deriving $\lambda_{\mathrm{scale}}$" — see CLAUDE.md's critical-
 framing block on `λ_scale`.*

@@ -54,7 +54,7 @@ projection selects exactly **one** of the eight ideal octahedral
 cells. The reading is purely structural — *which* cell is
 identified, not *how much* per-cell curvature it carries. $\square$
 
-## Structural role in $\mathrm{Geom_{full}}(\mathcal{B}_3)$ refinement
+## Structural role in $\mathrm{VolDensity}(\mathcal{B}_3)$ refinement
 
 > ** reframing.** This section originally proposed a
 > Yekutieli per-cell additive form
@@ -65,12 +65,12 @@ identified, not *how much* per-cell curvature it carries. $\square$
 > and no categorical derivation supplies a $-G \cdot h^2$ term.
 > Per , the
 > canonical mass formula is
-> $$m(K) = m_e \cdot \mathrm{Geom_{full}}(K, q_0),$$
+> $$m(K) = m_e \cdot \mathrm{VolDensity}(K, q_0),$$
 > with no separate $\lambda_{\text{scale}}$ constant.
 
 The bijection $\tfrac{5}{2} \times \tfrac{2}{5} = 1$ established
 above is a **structural input** that constrains how
-$\mathrm{Geom_{full}}(\mathcal{B}_3, q_0)$ should evaluate at $h^2$
+$\mathrm{VolDensity}(\mathcal{B}_3, q_0)$ should evaluate at $h^2$
 order on the half-symmetric Wedderburn subspace: exactly one of the
 eight ideal octahedra of $S^3 \setminus \mathcal{B}_3$ is selected
 by the combined H_4 half-symmetric projection and $S_3$-trivial
@@ -81,7 +81,7 @@ not *how much* it contributes.
 The "how much" question — the per-cell curvature value — remains
 open. The framework's current production prediction
 $m_p \approx 965\;\text{MeV}$ ($+2.89\%$ vs CODATA) is the
-$\mathrm{Geom_{full}}(\mathcal{B}_3)$ value at the framework's
+$\mathrm{VolDensity}(\mathcal{B}_3)$ value at the framework's
 current categorical-exactness order; refining that exactness at
 higher $h^2$ orders is the open frontier (see the Family A gap
 audit [`docs/audits/-family-a-gap-audit.md`](https://github.com/litlfred/qou/blob/claude/family-a-gap-audit-/docs/audits/-family-a-gap-audit.md),

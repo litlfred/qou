@@ -9,7 +9,7 @@ post-Bring-color-tube residual; see PR #1664).
 
 Topic 1 (PR #1664, merged `c4c5bcd3b038`) confirmed that:
 - Bring color-tube extension at H₄ shifts m_avg by ~840 ppb — 34290× too small to close 2.89%
-- 8 prior structural searches refuted (per `lambda-scale-absorbed-into-geom-full.md`)
+- 8 prior structural searches refuted (per `lambda-scale-absorbed-into-vol-density.md`)
 - Subgoal-1 = **per-isotope Borromean-tower extension + operator-valued branching combiner** is the canonical closure mechanism per [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](../audits/2026-05-30-l2-100x-status-3-failing-shared-root.md)
 
 This branch picks up Subgoal-1 from where the 2026-05-31 binding-magic-A-wireup PR left it.
@@ -62,7 +62,7 @@ This branch picks up Subgoal-1 from where the 2026-05-31 binding-magic-A-wireup 
 
 - New ansatz fits (forbidden per CLAUDE.md §"Δ_λ gate")
 - Switching from H₄ to H₃ as the linking-weight basis (REGRESSES m_p by −57% per `linking_weight_canonical_object_lwfix.py`)
-- Re-introducing `λ_scale` as a separate object (purged 2026-05-23, see `lambda-scale-absorbed-into-geom-full.md`)
+- Re-introducing `λ_scale` as a separate object (purged 2026-05-23, see `lambda-scale-absorbed-into-vol-density.md`)
 - Subgoal-2 (research-grade < CAL-2 floor) — explicitly out of scope per the L2-100× audit
 
 ## Coordination
@@ -75,7 +75,7 @@ Owner is documented as "active" on this path per [`docs/audits/2026-05-30-l2-100
 
 ## Cross-references
 
-- Canonical reference for refuted routes: [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- Canonical reference for refuted routes: [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 - L2-100× shared-root audit: [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](../audits/2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - Operator-valued diagnosis: [`docs/audits/2026-05-17-structural-diagnosis-operator-valued.md`](../audits/2026-05-17-structural-diagnosis-operator-valued.md)
 - Binding-magic-A wireup: [`docs/audits/2026-05-31-binding-magic-A-wireup.md`](../audits/2026-05-31-binding-magic-A-wireup.md)

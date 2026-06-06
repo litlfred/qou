@@ -142,7 +142,7 @@ m_pi_A = MESON_NET * E_0
 err_pi_A = float(fabs(m_pi_A - PDG_PI_PM) / PDG_PI_PM * 1e6)
 
 # ── Strategy B: m(meson) = m_e · Geom(meson_braid, q_0) ────────
-# Geom_full for baryons = |tr_M(T_w)| × linking_weight
+# VolDensity for baryons = |tr_M(T_w)| × linking_weight
 # For mesons, try: Geom = net(M+) × Vol(transition_knot) / ℏ_q
 # where transition_knot connects the quark flavors
 m_pi_B = m_e * MESON_NET * VOL_4_1 / HBAR_Q

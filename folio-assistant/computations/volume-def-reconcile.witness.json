@@ -33,7 +33,7 @@
     "name": "classical hyperbolic Vol(𝓑₃) = 8·G",
     "value": "7.3277247534177521204",
     "chain_stage": "POST-τ (archimedean ℝ). topological-mass-formula Step 1: Re tr(τ̂_desc·Hol)=Vol(K), CS/volume corr.",
-    "provenance": "_li_2_q_util.geom_full_borromean vol_b3=8*mp.catalan; Adams 1985 SnapPy table."
+    "provenance": "_li_2_q_util.vol_density_borromean vol_b3=8*mp.catalan; Adams 1985 SnapPy table."
   },
   "definition_B_vol_through_tau": {
     "name": "Vol(K)=τ_arch(Vol_q)=ln|Vol_q|, Vol_q=∏V̂_i ∈ ℤ[q^½]",

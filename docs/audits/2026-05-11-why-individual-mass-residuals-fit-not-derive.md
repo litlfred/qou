@@ -338,5 +338,5 @@ axiomatising Wenzl 1990 / Jones 1987 via a
   rename to "$\tau_{\mathrm{SW}}$" is moot since the SW path is
   purged.  Item 6 (orientation-symbolic $J_{\mathcal{B}_3}$) remains
   open R&D under `prop:geom-universality` refinement.
-- Broader uniqueness programme (T_w SDP, p-n averaging, Geom_full):
+- Broader uniqueness programme (T_w SDP, p-n averaging, VolDensity):
   queued in [`docs/uniqueness-theorems-backlog.md`](../uniqueness-theorems-backlog.md).

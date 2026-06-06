@@ -457,7 +457,7 @@ def main() -> int:
             "table.  The reported residual is the un-tuned, theorem-only "
             "result.  Field renamed from `diagnostic_lambda_scale` per "
             "PR #1080 framing (no λ_scale; the framework's per-knot "
-            "factor is Geom_full)."
+            "factor is VolDensity)."
         ),
         "follow_up": (
             "If Option B residual is small for D, extend to (T, ³He) at "

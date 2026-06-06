@@ -61,10 +61,10 @@ class GeomYekutieliAlignmentContext where
   claim_iv_holonomy_equals_trM : boundaryHolonomy = trM
   /-- **Manuscript sub-claim (v) — Stage-4 per-block mass factor.**
       The mass factor is `Geom(K)` times the per-block sum `trM` — the
-      paper's FORCED per-block form. (Production's `geom_full_borromean`
+      paper's FORCED per-block form. (Production's `vol_density_borromean`
       drops `trM` and substitutes a global H₄ scalar; the per-block /
       global discrepancy is quantified in
-      `geom-full-per-block-wiring.witness.json`.) -/
+      `vol-density-per-block-wiring.witness.json`.) -/
   claim_v_mass_factor_per_block : massFactor = Geom * trM
 
 /-- **Yekutieli alignment + Stage-4 per-block mass factor.**

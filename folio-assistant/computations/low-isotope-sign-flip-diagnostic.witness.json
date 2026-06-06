@@ -26,7 +26,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Per-isotope diagnostic correlating B_E (or mass) error against inter-nucleon channel counts (pp / pn / nn) and the signed h-weight sum.  Tests whether the +2.89 % residual is uniform (PR #1063 single-knot Geom_full refinement framing) or whether channel-assignment effects drive sign-flips across the low-isotope sequence.  KLR-positivity (observables ≥ 0) is checked separately; sign-flips in PREDICTION error are not a KLR violation per se (the underlying tr_M values remain positive) but they DO indicate weighting miscalibration.",
+  "description": "Per-isotope diagnostic correlating B_E (or mass) error against inter-nucleon channel counts (pp / pn / nn) and the signed h-weight sum.  Tests whether the +2.89 % residual is uniform (PR #1063 single-knot VolDensity refinement framing) or whether channel-assignment effects drive sign-flips across the low-isotope sequence.  KLR-positivity (observables ≥ 0) is checked separately; sign-flips in PREDICTION error are not a KLR violation per se (the underlying tr_M values remain positive) but they DO indicate weighting miscalibration.",
   "parameters": {
     "input_witness": "low-isotope-mass-table.witness.json",
     "q_0_at_50dps": "1.1099785955541805752815940796095093779932822799587",
@@ -148,9 +148,9 @@
       "n_under_predictions": 2,
       "n_over_predictions": 3
     },
-    "verdict": "STRONG correlation between err_pct and inter-nucleon channel counts/weights — the per-isotope error is dominated by the channel-assignment layer, NOT by a single-knot Geom_full(𝓑₃) refinement.  This FALSIFIES the PR #1063 framing for the low-isotope cluster.  R&D should redirect to the categorical backing of the pp/pn/nn channel assignment (no `prop:` block currently formalises the rule)."
+    "verdict": "STRONG correlation between err_pct and inter-nucleon channel counts/weights — the per-isotope error is dominated by the channel-assignment layer, NOT by a single-knot VolDensity(𝓑₃) refinement.  This FALSIFIES the PR #1063 framing for the low-isotope cluster.  R&D should redirect to the categorical backing of the pp/pn/nn channel assignment (no `prop:` block currently formalises the rule)."
   },
   "caveats": [
-    "This diagnostic is purely empirical/statistical — it correlates observed prediction error against structural channel counts to surface miscalibration patterns.  It does NOT introduce any new calibration or fit.  A high R² indicates WHERE the miscalibration lives (channel weights vs Geom_full refinement); the FIX must still come from a categorical derivation, not from this regression."
+    "This diagnostic is purely empirical/statistical — it correlates observed prediction error against structural channel counts to surface miscalibration patterns.  It does NOT introduce any new calibration or fit.  A high R² indicates WHERE the miscalibration lives (channel weights vs VolDensity refinement); the FIX must still come from a categorical derivation, not from this regression."
   ]
 }

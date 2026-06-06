@@ -101,7 +101,7 @@ now refuted**; per #1850's synthesis, the production `linking_weight =
   (C8, PR #1841) and the trace-level Markov-stabilization (C12, PR #1850) both
   fail. The 2.53 multiplier is **CODATA-implied near-match** territory, not a
   derived categorical count — full provenance in #1850's synthesis and
-  the [`geom_full_borromean()`](../../folio-assistant/computations/_li_2_q_util.py)
+  the [`vol_density_borromean()`](../../folio-assistant/computations/_li_2_q_util.py)
   docstring in `_li_2_q_util.py` (the "2.53 is a CODATA-implied-λ near-match"
   paragraph).
 - **Decay-side fibre Habiro element F(q) (open):** the keystone of §1, whose

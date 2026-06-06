@@ -15,7 +15,7 @@
     "circular_analysis": {
       "finding": "The linking weight 5.85 = B_AME/B_raw is tautological (B/B). The magnitude gap is NOT a missing multiplicative constant \u2014 it is downstream of the proton mass gap.",
       "root_cause": "\u03c1_LO = (Z\u00d7m_p + N\u00d7m_n)/(m_e\u00d7|tr_M|) uses m_p/m_n which are themselves 2.89% off.",
-      "implication": "Closing the binding gap requires closing the proton mass gap (Geom_full) FIRST. The categorical \u0394_\u03bb (sgn\u00d7f^\u03bb) is correct; the error propagates from the nucleon masses."
+      "implication": "Closing the binding gap requires closing the proton mass gap (VolDensity) FIRST. The categorical \u0394_\u03bb (sgn\u00d7f^\u03bb) is correct; the error propagates from the nucleon masses."
     }
   }
 }

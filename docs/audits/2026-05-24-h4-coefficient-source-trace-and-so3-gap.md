@@ -143,7 +143,7 @@ that absorbs the Wedderburn 5/2-like factor).
 
 **(I2) Q-locality failure is consistent with the h² being an
 artifact.** My q-locality probe (commit `ae70f99af`, witness
-`geom-full-borromean-q-locality-probe.witness.json`) shows
+`vol-density-borromean-q-locality-probe.witness.json`) shows
 Family A's `5/2 + (3/4)·h²` fails with slope −1.565×10⁷ ppm/q —
 matching all other h²-truncated probes (Strategy I, REPLACE, V_7,
 etc.). If the structurally-correct linking weight has h² = 0, then
@@ -188,18 +188,18 @@ explicit at the proof level.
 
 - This audit's framing is consistent with:
   - The on-main purge commit `71d674da1` (Yekutieli per-cell purged as non-canonical)
-  - PR #1080 (λ_scale absorbed into `Geom_full(K)`)
+  - PR #1080 (λ_scale absorbed into `VolDensity(K)`)
   - The re-amended Family A gap audit (`2026-05-24-family-a-gap-audit.md`)
-  - The q-locality probe (`geom-full-borromean-q-locality-probe.witness.json`)
+  - The q-locality probe (`vol-density-borromean-q-locality-probe.witness.json`)
 - The new lens this audit adds: **the h² coefficient itself is a projection-layer artifact**, and the structurally-load-bearing correction is h⁴ via the Yekutieli MI k=2 + SO(3) lift.
 
 ## §7. Pointers
 
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — **canonical framing reference** (post-PR #1080 merge); λ_scale is the *output* of Geom_full, not a separate object
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — **canonical framing reference** (post-PR #1080 merge); λ_scale is the *output* of VolDensity, not a separate object
 - [`docs/audits/2026-05-24-yekutieli-mi-derivation-path.md`](2026-05-24-yekutieli-mi-derivation-path.md) — Yekutieli MI tessellation jet grades
 - [`docs/audits/2026-05-24-family-a-gap-audit.md`](2026-05-24-family-a-gap-audit.md) — Family A +2.89% gap re-amended
 - [`content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md) — exact closed form, h² = 0
 - [`content/quantum-observable-universe/braids-and-knots/knot-operator-bring-action.md`](../../content/quantum-observable-universe/braids-and-knots/knot-operator-bring-action.md) — S_3 ⊂ SO(3) gap
 - [`folio-assistant/computations/derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py) — source of `Vol/ℏ_q²`
-- [`folio-assistant/computations/probes/geom_full_borromean_q_locality_probe.py`](../../folio-assistant/computations/probes/geom_full_borromean_q_locality_probe.py) — q-locality probe (commit `ae70f99af`)
-- [`folio-assistant/computations/geom-full-borromean-q-locality-probe.witness.json`](../../folio-assistant/computations/geom-full-borromean-q-locality-probe.witness.json) — witness data
+- [`folio-assistant/computations/probes/vol_density_borromean_q_locality_probe.py`](../../folio-assistant/computations/probes/vol_density_borromean_q_locality_probe.py) — q-locality probe (commit `ae70f99af`)
+- [`folio-assistant/computations/vol-density-borromean-q-locality-probe.witness.json`](../../folio-assistant/computations/vol-density-borromean-q-locality-probe.witness.json) — witness data

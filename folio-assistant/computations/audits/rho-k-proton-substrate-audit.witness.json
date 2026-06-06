@@ -33,7 +33,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Substrate-derivation audit for the proton's categorical density ρ_K. Companion to PR #1272 — traces through the canonical 6-term mass-endomorphism formula at q₀ and shows that linking_weight and ρ_K parameterize the same closure problem. Reads existing 6-term + term-6 witnesses; computes implied ρ_K via two routes (simple form `m_p / (m_e · |tr_M|)` and linking_weight form) and verifies they agree. The pair-gen substrate-component of ρ_K (per prop:rho-k-graded-expansion) is the OPEN derivation that would close the per-knot Geom_full gap categorically.",
+  "description": "Substrate-derivation audit for the proton's categorical density ρ_K. Companion to PR #1272 — traces through the canonical 6-term mass-endomorphism formula at q₀ and shows that linking_weight and ρ_K parameterize the same closure problem. Reads existing 6-term + term-6 witnesses; computes implied ρ_K via two routes (simple form `m_p / (m_e · |tr_M|)` and linking_weight form) and verifies they agree. The pair-gen substrate-component of ρ_K (per prop:rho-k-graded-expansion) is the OPEN derivation that would close the per-knot VolDensity gap categorically.",
   "parameters": {
     "q0": "1.1099785955541805",
     "m_e_MeV": "0.51099895069",
@@ -62,7 +62,7 @@
     "graded_substrate_expansion_status": {
       "LO_piece_status": "PROVED (Wenzl 1988 Markov multiplicativity) but trivial for A=1 — reduces to m_p itself. Substantive only for A≥2 multi-nucleon binding chain.",
       "single_gen_piece_status": "EMPIRICAL: closes to ~0.18% per atomic-mass-gb-nf §rho_K closure. Categorical derivation NOT yet completed.",
-      "pair_gen_piece_status": "OPEN: this is the conjectural `rho_K_pair_gen` of prop:rho-k-graded-expansion / conj:rho-k-pair-gen-canonical-form. Substrate-only derivation of this piece would close the per-knot Geom_full gap categorically — same problem as `derive linking_weight` (re-parameterised)."
+      "pair_gen_piece_status": "OPEN: this is the conjectural `rho_K_pair_gen` of prop:rho-k-graded-expansion / conj:rho-k-pair-gen-canonical-form. Substrate-only derivation of this piece would close the per-knot VolDensity gap categorically — same problem as `derive linking_weight` (re-parameterised)."
     }
   }
 }

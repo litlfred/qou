@@ -161,7 +161,7 @@ def main() -> dict:
     atoms["deuteron"] = composite_per_atom("deuteron")
 
     # ── (A)/(B) per-atom totals, ratioed to m_e (the ONLY derived scale in
-    #    the production formula m = m_e · Geom_full — NOT a fitted E₀) ──
+    #    the production formula m = m_e · VolDensity — NOT a fitted E₀) ──
     print("\n--- (A) functor-dictated tr_M = Σ_λ y_λ χ_λ  and  "
           "(B) owner composite Σ_λ θ_λ χ_λ dim_q ---")
     print(f"  {'atom':>9} {'Σ y_λχ_λ (tr_M)':>20} {'Σ θ_λχ_λdim_q':>20}")
@@ -219,7 +219,7 @@ def main() -> dict:
         "computation": "e0-lambda-composite",
         "description": (
             "Is M_λ a FORCED categorical composite (θ_λ × χ^λ × dim_q, "
-            "archimedean)? Derivation-first: production Geom_full is a single "
+            "archimedean)? Derivation-first: production VolDensity is a single "
             "opaque scalar (no per-λ sum); the per-λ form lives in the "
             "Markov-trace step tr_M = Σ_λ y_λ χ_λ. Computes the "
             "functor-dictated summand s_λ = y_λ χ_λ and the owner's product "

@@ -1,7 +1,7 @@
-"""q-locality probe for the canonical `Geom_full(𝓑₃, q)` evaluation.
+"""q-locality probe for the canonical `VolDensity(𝓑₃, q)` evaluation.
 
 Tests whether the production mass formula
-    m_p_pred(q) = m_e · Geom_full(𝓑₃, q)
+    m_p_pred(q) = m_e · VolDensity(𝓑₃, q)
 has the correct *q-derivative* near q_0, matching the q-dependence
 of m_p_CODATA equivalently expressed as a candidate linking weight
     λ_p_codata(q) = m_p_CODATA · ℏ_q² / (m_e · Vol(𝓑₃)).
@@ -26,12 +26,12 @@ Empirical baselines from prior probes (PR #951 / commit 1a29b209b):
     Strategy I (purged)  (5/2 + (3/4 − G)·h²)   −1.69 × 10⁷ [also fails]
 
 This probe extends the analysis to the full canonical pipeline:
-`Geom_full(𝓑₃, q)` = (Vol(𝓑₃) / ℏ_q²) × linking_weight_FamilyA(q).
+`VolDensity(𝓑₃, q)` = (Vol(𝓑₃) / ℏ_q²) × linking_weight_FamilyA(q).
 
 Per author directive (2026-05-24): "Re-run q-locality smooth-crossing
 test on Geom-mapped form (PR #951 failed on standalone 5/2 − G·h²;
 needs full Geom functor output not bare polynomial)". This script
-runs that test end-to-end on the canonical Geom_full call.
+runs that test end-to-end on the canonical VolDensity call.
 
 Outputs witness JSON with slope, pass/fail verdict, and comparison
 to historical baselines.
@@ -66,7 +66,7 @@ mp.mp.dps = 50
 
 # Import canonical infrastructure
 sys.path.insert(0, str(Path(__file__).parent))
-from _li_2_q_util import geom_full_borromean  # noqa: E402
+from _li_2_q_util import vol_density_borromean  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Constants — anchored on the registry / CODATA values
@@ -91,14 +91,14 @@ def lambda_p_codata(q: mpf) -> mpf:
     return M_P_CODATA_MEV * hbar_q ** 2 / (M_E_MEV * vol_b3)
 
 
-def geom_full_linking_weight(q: mpf) -> mpf:
-    """The linking weight inside `geom_full_borromean(q)` — extract
+def vol_density_linking_weight(q: mpf) -> mpf:
+    """The linking weight inside `vol_density_borromean(q)` — extract
     by dividing out Geom_leading = Vol(𝓑₃) / ℏ_q².
     """
     hbar_q = (q - 1) / q
     vol_b3 = 8 * mp.catalan
     geom_leading = vol_b3 / hbar_q ** 2
-    return geom_full_borromean(q) / geom_leading
+    return vol_density_borromean(q) / geom_leading
 
 
 def slope_ppm_per_q(f, q_center: mpf, delta: mpf) -> mpf:
@@ -118,7 +118,7 @@ def run_probe() -> dict:
     """Run the q-locality probe and return a witness dict."""
     results = []
     for delta in SWEEP_DELTAS:
-        slope = slope_ppm_per_q(geom_full_linking_weight, Q_0, delta)
+        slope = slope_ppm_per_q(vol_density_linking_weight, Q_0, delta)
         results.append({
             "delta": float(delta),
             "slope_ppm_per_q": float(slope),
@@ -127,13 +127,13 @@ def run_probe() -> dict:
         })
 
     # Reference values at q_0
-    lw_q0 = geom_full_linking_weight(Q_0)
+    lw_q0 = vol_density_linking_weight(Q_0)
     target_q0 = lambda_p_codata(Q_0)
     gap_at_q0 = lw_q0 - target_q0
     gap_ppm = mpf("1e6") * gap_at_q0 / target_q0
 
     # Production prediction
-    gf_q0 = geom_full_borromean(Q_0)
+    gf_q0 = vol_density_borromean(Q_0)
     m_p_pred = M_E_MEV * gf_q0
     relative_err = (m_p_pred - M_P_CODATA_MEV) / M_P_CODATA_MEV
 
@@ -153,26 +153,26 @@ def run_probe() -> dict:
         "max_abs_slope_ppm_per_q": float(max(abs(mpf(r["slope_ppm_per_q"]))
                                               for r in results)),
         "interpretation": (
-            "PASS — Geom_full's linking weight tracks λ_p_codata locally"
+            "PASS — VolDensity's linking weight tracks λ_p_codata locally"
             if all(r["pass_q_locality"] for r in results)
-            else "FAIL — Geom_full's linking weight does NOT track "
+            else "FAIL — VolDensity's linking weight does NOT track "
                  "λ_p_codata locally; slope dominated by ℏ_q² prefactor "
                  "as in all prior bare-polynomial probes. Production "
                  "Family A linking weight (5/2 + 3h²/4) is not "
                  "structurally q-local with respect to the CODATA "
                  "target near q_0. Closure requires refinement of "
-                 "Geom_full at higher h² orders (S_4↓S_3 bijection "
+                 "VolDensity at higher h² orders (S_4↓S_3 bijection "
                  "+ S_5↔SO(3) fiber action — see docs/audits/"
                  "2026-05-24-family-a-gap-audit.md)."
         ),
     }
 
     return {
-        "compute": "geom_full_borromean_q_locality_probe",
+        "compute": "vol_density_borromean_q_locality_probe",
         "description": (
             "q-locality discipline test applied to canonical "
-            "`geom_full_borromean(q)` near q_0. Tests whether the "
-            "linking weight inside Geom_full has the same local "
+            "`vol_density_borromean(q)` near q_0. Tests whether the "
+            "linking weight inside VolDensity has the same local "
             "q-derivative as the CODATA-implied target."
         ),
         "parameters": {
@@ -189,7 +189,7 @@ def run_probe() -> dict:
             "lambda_p_codata_at_q0": float(target_q0),
             "gap_at_q0": float(gap_at_q0),
             "gap_ppm_at_q0": float(gap_ppm),
-            "geom_full_at_q0": float(gf_q0),
+            "vol_density_at_q0": float(gf_q0),
             "m_p_pred_MeV": float(m_p_pred),
             "m_p_codata_MeV": float(M_P_CODATA_MEV),
             "relative_error": float(relative_err),
@@ -214,7 +214,7 @@ def run_probe() -> dict:
 
 
 def main() -> None:
-    print(f"q-locality probe for geom_full_borromean(q) near q_0 = {Q_0}")
+    print(f"q-locality probe for vol_density_borromean(q) near q_0 = {Q_0}")
     print(f"50-dps compute discipline; tolerance = {TOLERANCE_PPM_PER_Q} ppm/q")
     print("---")
 

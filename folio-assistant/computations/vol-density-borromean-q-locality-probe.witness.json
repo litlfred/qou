@@ -1,6 +1,6 @@
 {
-  "compute": "geom_full_borromean_q_locality_probe",
-  "description": "q-locality discipline test applied to canonical `geom_full_borromean(q)` near q_0. Tests whether the linking weight inside Geom_full has the same local q-derivative as the CODATA-implied target.",
+  "compute": "vol_density_borromean_q_locality_probe",
+  "description": "q-locality discipline test applied to canonical `vol_density_borromean(q)` near q_0. Tests whether the linking weight inside VolDensity has the same local q-derivative as the CODATA-implied target.",
   "historical_baselines": {
     "bare_replace_5_2_minus_G_h2": "-1.7e7 ppm/q (PR #951)",
     "faddeev_x_bring_1_over_1_minus_hq_q010": "-1.5e7 ppm/q",
@@ -26,7 +26,7 @@
   "results": {
     "gap_at_q0": 0.08388692361302227,
     "gap_ppm_at_q0": 34257.25364363127,
-    "geom_full_at_q0": 1899.0542212872192,
+    "vol_density_at_q0": 1899.0542212872192,
     "lambda_p_codata_at_q0": 2.4487346383827124,
     "linking_weight_at_q0": 2.5326215619957346,
     "m_p_codata_MeV": 938.27208816,
@@ -58,14 +58,14 @@
   "status": "exploratory",
   "tags": [
     "q-locality",
-    "geom-full-refinement",
+    "vol-density-refinement",
     "smooth-crossing",
     "family-a-gap",
     "borromean"
   ],
   "verdict": {
     "all_deltas_pass": false,
-    "interpretation": "FAIL \u2014 Geom_full's linking weight does NOT track \u03bb_p_codata locally; slope dominated by \u210f_q\u00b2 prefactor as in all prior bare-polynomial probes. Production Family A linking weight (5/2 + 3h\u00b2/4) is not structurally q-local with respect to the CODATA target near q_0. Closure requires refinement of Geom_full at higher h\u00b2 orders (S_4\u2193S_3 bijection + S_5\u2194SO(3) fiber action \u2014 see docs/audits/2026-05-24-family-a-gap-audit.md).",
+    "interpretation": "FAIL \u2014 VolDensity's linking weight does NOT track \u03bb_p_codata locally; slope dominated by \u210f_q\u00b2 prefactor as in all prior bare-polynomial probes. Production Family A linking weight (5/2 + 3h\u00b2/4) is not structurally q-local with respect to the CODATA target near q_0. Closure requires refinement of VolDensity at higher h\u00b2 orders (S_4\u2193S_3 bijection + S_5\u2194SO(3) fiber action \u2014 see docs/audits/2026-05-24-family-a-gap-audit.md).",
     "max_abs_slope_ppm_per_q": 15661140.098367414
   }
 }

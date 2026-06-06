@@ -18,7 +18,7 @@ export default algorithm({
     "mba",
     "step-9a",
     "mass-identity",
-    "geom-full",
+    "vol-density",
     "canonical-chain",
   ],
 });

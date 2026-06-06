@@ -356,8 +356,8 @@ Reading-A leg; PR #1249 is the q₀ leg.
   — the combinatorial extraction's failure (PR #985)
 - [`2026-05-22-yekutieli-percell-conjecture-formalized.md`](2026-05-22-yekutieli-percell-conjecture-formalized.md)
   — the original conjecture statement
-- [`../lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
-  — canonical framing of "no separate λ_scale; refine Geom_full"
+- [`../lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
+  — canonical framing of "no separate λ_scale; refine VolDensity"
 - [`../canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
   §5 row 1 — refinement routes
 - PR #1272 — the empirical decomposition that motivated this audit

@@ -119,7 +119,7 @@ def _emit_witness() -> None:
         ("fig8_hyperbolic_vol_positive",
          1 if (is_hyperbolic("4_1") and vol_component("4_1") > 0) else 0,
          "4_1 hyperbolic, Vol_component > 0"),
-        # The EW torus triplet is gated to 0 (Geom_full chain N/A there).
+        # The EW torus triplet is gated to 0 (VolDensity chain N/A there).
         ("ew_torus_triplet_vol_zero",
          1 if all(vol_component(t) == 0 for t in ("T(2,4)", "T(2,6)", "T(2,8)"))
          else 0,

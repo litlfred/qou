@@ -10,7 +10,7 @@
       "expected": 2.46,
       "passed": true,
       "tolerance": 0.002,
-      "source": "Proton's λ_emp ≈ 2.46 (the CODATA-implied near-match in _li_2_q_util.py::geom_full_borromean docstring).  Anchors the probe — proton row is the proton row regardless of convention since all three use Vol(𝓑₃) = 8G for p."
+      "source": "Proton's λ_emp ≈ 2.46 (the CODATA-implied near-match in _li_2_q_util.py::vol_density_borromean docstring).  Anchors the probe — proton row is the proton row regardless of convention since all three use Vol(𝓑₃) = 8G for p."
     }
   ],
   "allPassed": true,

@@ -61,7 +61,7 @@ T(2,k) has Vol = 0 (Seifert-fibered), so the canonical
 m = m_e · Vol/ℏ_q² · linking_weight formula gives zero at leading
 order.  The c_n coefficients describe h-curvature of the Markov
 trace, not the mass directly.  The mass for H/W/Z requires the
-Reshetikhin-Turaev chain (q2 probe), not the canonical Geom_full.
+Reshetikhin-Turaev chain (q2 probe), not the canonical VolDensity.
 
 ## What this probe IS
 
@@ -266,7 +266,7 @@ def main() -> int:
     print(f"                                 = 3 : 6 : 10  (or 1 : 2 : 10/3)")
     print(f"  CODATA m² ratio                ≈ 1 : 1.29 : 2.42")
     print(f"  → c_2 ALONE does NOT reproduce CODATA — torus-knot mass formula")
-    print(f"    needs the RT-chain (q2 probe), not the canonical Geom_full.")
+    print(f"    needs the RT-chain (q2 probe), not the canonical VolDensity.")
 
     all_pass = (
         all(r["match"] for r in c2_even_results)

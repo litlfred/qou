@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-25
 **Branch:** `claude/track-c-phase5q-reconciliation-2026-05-25`
-**Track:** C (Geom_full / Phase 5l closed-form wiring)
+**Track:** C (VolDensity / Phase 5l closed-form wiring)
 **Severity:** clarification — no correctness fix needed
 
 ## Question being reconciled

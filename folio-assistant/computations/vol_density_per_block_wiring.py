@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: evaluates at q = q_0, numeric output.
 """Discipline-gate verification: does the paper's per-block Σ_λ factor
-reproduce production's Geom_full(𝓑₃) — with ZERO fudge?
+reproduce production's VolDensity(𝓑₃) — with ZERO fudge?
 
 ## The bug being checked
 
-Production `geom_full_borromean` (`_li_2_q_util.py`) computes
+Production `vol_density_borromean` (`_li_2_q_util.py`) computes
 
-    Geom_full(𝓑₃, q) = [Vol(𝓑₃)/ℏ_q²] · linking_weight(q),
+    VolDensity(𝓑₃, q) = [Vol(𝓑₃)/ℏ_q²] · linking_weight(q),
     linking_weight(q) = (3q² + 4 + 3q⁻²)/4   (the H₄ Family-A scalar)
 
 — a GLOBAL scalar.  The paper (`prop:hoefsmit-scattering-pipeline`
@@ -58,8 +58,8 @@ if str(HERE) not in sys.path:
 
 from _li_2_q_util import (  # noqa: E402
     geom_leading,
-    geom_full_borromean,
-    geom_full_per_block,
+    vol_density_borromean,
+    vol_density_per_block,
     linking_weight_family_a,
 )
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
@@ -101,7 +101,7 @@ def main() -> int:
 
     gl = geom_leading(VOL_B3, q0)            # Vol(𝓑₃)/ℏ_q²
     lw = linking_weight_family_a(q0)         # global H₄ scalar ≈ 2.53
-    geom_prod = geom_full_borromean(q0)      # production Geom_full
+    geom_prod = vol_density_borromean(q0)      # production VolDensity
 
     trM = {
         "proton": _load_trM("proton", 3),
@@ -114,14 +114,14 @@ def main() -> int:
     print(f"  q_0                 = {mp.nstr(q0, 16)}")
     print(f"  Geom_leading=Vol/ℏ² = {mp.nstr(gl, 12)}")
     print(f"  linking_weight (H₄) = {mp.nstr(lw, 12)}   [production global scalar]")
-    print(f"  Geom_full prod      = {mp.nstr(geom_prod, 12)}")
+    print(f"  VolDensity prod      = {mp.nstr(geom_prod, 12)}")
     print(f"  implied λ (round-trips m_p) = {mp.nstr(mpc / (me * gl), 12)}")
     print()
 
     # ── Per-knot per-block evaluation ───────────────────────────────
     per_knot = {}
     for knot, tr in trM.items():
-        geom_pb = geom_full_per_block(VOL_B3, tr, q0)
+        geom_pb = vol_density_per_block(VOL_B3, tr, q0)
         m_pb = me * geom_pb
         codata = mpc if knot == "proton" else mnc
         err_pb = (m_pb - codata) / codata
@@ -130,7 +130,7 @@ def main() -> int:
             "index_set": "H_3 (partitions of 3)",
             "tr_M_at_q0": mp.nstr(tr, 20),
             "geom_leading": mp.nstr(gl, 20),
-            "geom_full_per_block": mp.nstr(geom_pb, 20),
+            "vol_density_per_block": mp.nstr(geom_pb, 20),
             "m_per_block_MeV": mp.nstr(m_pb, 20),
             "codata_MeV": mp.nstr(codata, 20),
             "rel_err_per_block": mp.nstr(err_pb, 12),
@@ -169,8 +169,8 @@ def main() -> int:
     print(f"  RATIO  linking_weight / tr_M(neutron) = {mp.nstr(ratio_n, 10)}")
 
     # ── Recovered fraction of the +2.89% m_p gap (RAW) ─────────────
-    m_avg_pb = (me * geom_full_per_block(VOL_B3, trM["proton"], q0)
-                + me * geom_full_per_block(VOL_B3, trM["neutron"], q0)) / 2
+    m_avg_pb = (me * vol_density_per_block(VOL_B3, trM["proton"], q0)
+                + me * vol_density_per_block(VOL_B3, trM["neutron"], q0)) / 2
     gap_pb = (m_avg_pb - codata_avg) / codata_avg
     print()
     print(f"  production gap = {mp.nstr(err_prod * 100, 5)}%   "
@@ -195,7 +195,7 @@ def main() -> int:
         "Discipline-gate verification of the paper's per-block Σ_λ "
         "factor (prop:hoefsmit-scattering-pipeline Stage 4) against "
         "production's global linking_weight collapse "
-        "(geom_full_borromean). Computes m(K) = m_e·[Vol(K)/ℏ_q²]·tr_M(K) "
+        "(vol_density_borromean). Computes m(K) = m_e·[Vol(K)/ℏ_q²]·tr_M(K) "
         "per knot using the canonical H₃ Markov trace from the "
         "chi-{atom}-h3-at-q0 caches, vs production "
         "m = m_e·[Vol/ℏ_q²]·linking_weight (the H₄ scalar 2.53). "

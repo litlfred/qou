@@ -29,25 +29,25 @@ This doc does the derivation FIRST, then tests. The test against {e⁻, p, n} is
 
 ### 1a. The production mass formula is a SINGLE Geom call (no per-λ sum)
 
-Canonical (post-PR #1080, `docs/lambda-scale-absorbed-into-geom-full.md`):
+Canonical (post-PR #1080, `docs/lambda-scale-absorbed-into-vol-density.md`):
 
 ```
-m(K) = m_e · Geom_full(K, q₀)
+m(K) = m_e · VolDensity(K, q₀)
 ```
 
-`folio-assistant/computations/_li_2_q_util.py :: geom_full_borromean(q)` computes
+`folio-assistant/computations/_li_2_q_util.py :: vol_density_borromean(q)` computes
 
 ```
-Geom_full(𝓑₃, q) = [ Vol(𝓑₃) / ℏ_q² ] · linking_weight_family_a(q)
+VolDensity(𝓑₃, q) = [ Vol(𝓑₃) / ℏ_q² ] · linking_weight_family_a(q)
                   = [ 8·G / ℏ_q² ]      · (5/2 + (3/4) h²)
 ```
 
 with `ℏ_q = 1 − q⁻¹`, `h = q − q⁻¹`, `G = Catalan`. **This is a single opaque scalar.** It does
 NOT carry a `Σ_λ` per-Wedderburn-block decomposition. So the cleanest-possible outcome —
-"`Geom_full` already decomposes per-block, just extract M_λ" — is **FALSE for the production
-Geom_full**. The proton's `Geom_full` is `Vol/ℏ² × q-dim-block-sum`, not `Σ_λ M_λ`.
+"`VolDensity` already decomposes per-block, just extract M_λ" — is **FALSE for the production
+VolDensity**. The proton's `VolDensity` is `Vol/ℏ² × q-dim-block-sum`, not `Σ_λ M_λ`.
 
-**Finding 1: production `Geom_full` is NOT a per-λ composite.** It is a hyperbolic-volume scalar
+**Finding 1: production `VolDensity` is NOT a per-λ composite.** It is a hyperbolic-volume scalar
 times an H_4-Wedderburn q-dimension AVERAGE (`linking_weight_A = (1/4)·Σ_{λ⊢4} dim_q V_λ`,
 proved identity in `lambda-scale-substrate-form.lean`). The block-sum that appears is over the
 *ambient H_4 representation* (a measure factor), NOT over the knot's own character per block.
@@ -161,7 +161,7 @@ params, all inputs read from the GAP-A-4 verifier witness — no recomputation, 
 
 1. **The owner's PRODUCT composite is NOT FORCED by the functor's definition** (Step 1
    Finding 2). The mass functor's definition gives a **SUM** `m_e·ρ·[|tr_M| + tower +
-   tr_M(C_dim_q)]`, not the **PRODUCT** `θ_λ · χ^λ · dim_q`. Production `Geom_full` is a single
+   tr_M(C_dim_q)]`, not the **PRODUCT** `θ_λ · χ^λ · dim_q`. Production `VolDensity` is a single
    opaque scalar `Vol/ℏ² × (q-dim block AVERAGE)` (Step 1 Finding 1) — it does not even
    decompose per-λ. Assembling the three factors into a product and choosing the dim_q exponent
    (=1) and the θ_λ-as-Reeb-arccos reading is a **modeling choice**, not read off any categorical
@@ -210,7 +210,7 @@ is already Lean-adjacent via the GAP-A-4 verifier; no new identity to formalize 
 
 - `docs/audits/2026-06-01-e0-lambda-substrate-derivation-options.md` — sibling option-ranking (Candidates 1–6, GAP-A-4 obstruction).
 - `docs/audits/2026-05-31-gap-a3-a4-feasibility-assessment.md` — GAP-A-4 H_3 impossibility theorem.
-- `docs/lambda-scale-absorbed-into-geom-full.md` — m(K) = m_e·Geom_full single-call framing.
-- `folio-assistant/computations/_li_2_q_util.py` — geom_full_borromean (production) + spectral_correction (exploratory composite).
+- `docs/lambda-scale-absorbed-into-vol-density.md` — m(K) = m_e·VolDensity single-call framing.
+- `folio-assistant/computations/_li_2_q_util.py` — vol_density_borromean (production) + spectral_correction (exploratory composite).
 - `folio-assistant/computations/_deprecated/per_block_phi_q.py` — the fit_three_E0 (the thing to replace).
 - `folio-assistant/computations/rho-prefactor-structural-verifier.witness.json` — proton≡neutron≡he3 at H_3 (the falsification data).

@@ -4,15 +4,15 @@ weight, light isotope series {p, n, D, T, ³He, ⁴He}.
 
 Executes the diagnostic plan in
 [`docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md`](../../docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md)
-§4 — measures the per-knot-vs-uniform `Geom_full` gap at q₀ for the
+§4 — measures the per-knot-vs-uniform `VolDensity` gap at q₀ for the
 light series WITHOUT touching production. The flip from uniform to
 per-block in production is owner-gated (§5 of the scope doc): per-block
 tr_M alone undershoots m_p by ≈ 2.38× (m_p is the CAL-2 anchor).
 
 For each light isotope K the probe records:
-  geom_uniform(q₀)  = geom_full_borromean(q₀)
+  geom_uniform(q₀)  = vol_density_borromean(q₀)
                     = Vol(𝓑₃) / ℏ_q² · linking_weight_family_a(q₀)
-  geom_perknot(q₀)  = geom_full_per_block(Vol_K, tr_M_K, q₀)
+  geom_perknot(q₀)  = vol_density_per_block(Vol_K, tr_M_K, q₀)
                     = Vol(K) / ℏ_q² · tr_M(β_K, q₀)
   ratio             = geom_perknot / geom_uniform
   m_K_uniform(MeV)  = m_e · geom_uniform        (for the proton this IS m_avg,
@@ -85,8 +85,8 @@ set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 
 from _li_2_q_util import (  # noqa: E402
-    geom_full_borromean,
-    geom_full_per_block,
+    vol_density_borromean,
+    vol_density_per_block,
 )
 from substrate.knot_volumes import (  # noqa: E402
     VOL_BORROMEAN_MPF,
@@ -194,7 +194,7 @@ def _tr_m_from_chi_cache(
 #
 # n_strands = 3·(Z+N) = H_{3A} convention — the canonical strand
 #   count for the atom braid word produced by `atom_braid_word_3A`
-#   and consumed by the production per-block `geom_full_per_block`
+#   and consumed by the production per-block `vol_density_per_block`
 #   (`_li_2_q_util.py:386-391`: "H₃ for the 3-strand Borromean
 #   baryons, H₆ for the deuteron at n=6, etc."). NOT the
 #   small-knot braid-index (Model B's n_canon column).
@@ -287,7 +287,7 @@ def main() -> int:
     w.set_audit_only("docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md")
     w.set_description(
         "Option A diagnostic (PR #1762 §5 / scoping #1816): measure the "
-        "per-knot-vs-uniform Geom_full(K, q₀) gap for the light "
+        "per-knot-vs-uniform VolDensity(K, q₀) gap for the light "
         "isotope series {p, n, D, T, ³He, ⁴He} alongside production. "
         "DOES NOT change production — flipping uniform → per-block "
         "would break m_p (the CAL-2 anchor) by ≈ 2.38× per the "
@@ -319,7 +319,7 @@ def main() -> int:
     q_inv = mp.mpf(1) / q_0
     m_e = mp.mpf(M_E_MEV_50DPS)
 
-    geom_uniform = geom_full_borromean(q_0, q_inv)
+    geom_uniform = vol_density_borromean(q_0, q_inv)
     m_avg_uniform_MeV = m_e * geom_uniform
 
     w.add_parameter("q_0_50dps", q_0_str)
@@ -333,7 +333,7 @@ def main() -> int:
     w.add_data("geom_uniform_borromean", _fmt(geom_uniform))
     w.add_data(
         "geom_uniform_description",
-        "geom_full_borromean(q_0) = Vol(𝓑₃)/ℏ_q² · "
+        "vol_density_borromean(q_0) = Vol(𝓑₃)/ℏ_q² · "
         "linking_weight_family_a(q_0) = Vol(𝓑₃)/ℏ_q² · (5/2 + (3/4)·h²); "
         "applied uniformly to every atom in production "
         "(mass_table_comprehensive.py:208).",
@@ -341,7 +341,7 @@ def main() -> int:
     w.add_data("m_avg_uniform_MeV", _fmt(m_avg_uniform_MeV))
 
     print("=" * 78)
-    print("Option A diagnostic — per-knot vs uniform Geom_full(K, q₀)")
+    print("Option A diagnostic — per-knot vs uniform VolDensity(K, q₀)")
     print("=" * 78)
     print(f"  q_0 (50-dps)            = {q_0_str}")
     print(f"  m_e  (MeV, 50-dps)      = {M_E_MEV_50DPS}")
@@ -386,13 +386,13 @@ def main() -> int:
                 f"summed in-probe via _tr_m_from_chi_cache)"
             )
 
-        # Per-knot Geom_full(K, q_0) — full three-arg signature.
-        geom_perknot = geom_full_per_block(vol_K, tr_M, q_0, q_inv)
+        # Per-knot VolDensity(K, q_0) — full three-arg signature.
+        geom_perknot = vol_density_per_block(vol_K, tr_M, q_0, q_inv)
         ratio = geom_perknot / geom_uniform
         m_K_perknot_MeV = m_e * geom_perknot
 
         # CODATA per-nucleon comparison.  Production's borromean_mass_
-        # prediction treats m_e × Geom_full(K, q_0) as the per-nucleon
+        # prediction treats m_e × VolDensity(K, q_0) as the per-nucleon
         # average mass m_avg (`mass_table_comprehensive.py:210-212`),
         # so the right CODATA target for direct comparison is
         # m_codata_total / A (with A = Z + N; for proton/neutron A=1).

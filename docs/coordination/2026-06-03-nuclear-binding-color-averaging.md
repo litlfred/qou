@@ -17,7 +17,7 @@ it will be later. Owner directive 2026-06-03.
 | #1569 | avg-crossing-foundational-identity | overlap: the averaged crossing `σ−h/2` I am color-weighting | intent posted (#1569 comment) |
 | #1741 | wire-native-chi-incremental | overlap: `pyhecke_native` H₉ path (I built it locally) | intent posted (#1741 comment) |
 | #1521/#1523/#1549 | α_EM Habiro `[2]_q(1−h²α)` / Schwinger | **dependency** for the charge/EM crossing (task 1, T−³He Coulomb) | coordinate when task 1 starts |
-| #1762 | 1ppq-roadmap / Geom_full bridge | mass pipeline (color averaging applies to `geom_full_borromean`) | monitor |
+| #1762 | 1ppq-roadmap / VolDensity bridge | mass pipeline (color averaging applies to `vol_density_borromean`) | monitor |
 | #1752 / #1753 / #1742 | Q_β SDP / m_μ / bar-pairing | my session siblings (mass/binding) | aware |
 
 ## Findings carried in (from this session)

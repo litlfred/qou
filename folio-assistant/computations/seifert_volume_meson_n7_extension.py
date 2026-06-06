@@ -274,7 +274,7 @@ def main():
     print("  METHOD D: Crossing-energy (NF-weighted) model")
     print()
 
-    # From meson_geom_full.py: m_K = m_pi * net_K / net_pi
+    # From meson_vol_density.py: m_K = m_pi * net_K / net_pi
     # where net uses h_eff = h * (n_cross / 6)
     def meson_nf_net(n_cross):
         """NF net for meson with n_cross total quark crossings."""

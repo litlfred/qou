@@ -1,8 +1,8 @@
-# Geom_full(K, q₀) — derivation trace (READ-ONLY audit)
+# VolDensity(K, q₀) — derivation trace (READ-ONLY audit)
 
 **Date:** 2026-06-01
-**Branch:** `claude/geom-full-derivation-trace-2026-06-01`
-**Scope:** Trace HOW the production `Geom_full(K, q₀)` is derived, where it
+**Branch:** `claude/vol-density-derivation-trace-2026-06-01`
+**Scope:** Trace HOW the production `VolDensity(K, q₀)` is derived, where it
 connects to the upstream categorical action / Yekutieli non-abelian Stokes
 step, and — the payoff — whether the derivation **forces** a per-Wedderburn-block
 decomposition `M_λ(K)` or whether `M_λ` would have to be **invented** downstream
@@ -13,11 +13,11 @@ read of what `main` actually computes.
 
 ## TL;DR (the answer up front)
 
-1. **Production `Geom_full(𝓑₃, q₀)` is NOT `τ(tr_M(ρ(𝓑_K)))`.** The paper's
+1. **Production `VolDensity(𝓑₃, q₀)` is NOT `τ(tr_M(ρ(𝓑_K)))`.** The paper's
    canonical chain (cheat-sheet step 6→9, `prop:hoefsmit-scattering-pipeline`
    Stage 4) says `m(K) = m_e · Geom(K) · Σ_λ w_λ χ_λ(β)/dim(λ)` — a per-block
    Markov-trace sum times a scalar `Geom(K)`. The production code
-   (`_li_2_q_util.geom_full_borromean`, line 210) computes a **different**
+   (`_li_2_q_util.vol_density_borromean`, line 210) computes a **different**
    object: `Vol(𝓑₃)/ℏ_q² × linking_weight(q)`, where
    `linking_weight = (3q²+4+3q⁻²)/4 = 5/2 + (3/4)h²`. The per-block Markov-trace
    factor `Σ_λ w_λ χ_λ(𝓑₃)/dim(λ)` **does not appear in the production
@@ -34,20 +34,20 @@ read of what `main` actually computes.
    code.
 
 3. **The dimensional bridge (→ MeV) is `m_e` (CAL-1) × a global pure number.**
-   `m(K) = m_e · Geom_full(K, q₀)` with `Geom_full` a single scalar
+   `m(K) = m_e · VolDensity(K, q₀)` with `VolDensity` a single scalar
    (`m_p_borromean_verification_50dps.py:193, 313`). The pure number is
    **global, not per-block** in production. There is no per-λ Archimedean
    functor application in the production path.
 
-4. **Φ_q vs Li_2^q:** production `geom_full_borromean` uses **neither** — it is a
+4. **Φ_q vs Li_2^q:** production `vol_density_borromean` uses **neither** — it is a
    bare algebraic `Vol/ℏ_q² × (3q²+4+3q⁻²)/4`. Li_2^q (`li_2_q`, line 69) is
    reserved for the brane-tower / binding context (correct per cheat-sheet §4);
    Φ_q lives in `_phi_q_util.py` for the mass-anchor context. The baryon
-   `Geom_full` path touches no q-dilogarithm.
+   `VolDensity` path touches no q-dilogarithm.
 
 5. **THE KEY ANSWER — does the derivation force a per-block `M_λ`?**
    **No — not in the production object as currently built.** Production
-   `Geom_full` is a global scalar `Vol/ℏ_q² × λ_A(q)` with the per-block
+   `VolDensity` is a global scalar `Vol/ℏ_q² × λ_A(q)` with the per-block
    `χ_λ(𝓑₃)` structure already collapsed away. The ONE thread that connects
    `λ_A` to a per-block sum is `λ_A = (1/4)Σ_{λ⊢4} dim_q V_λ` — but (i) that sum
    is over **partitions of 4 (H₄)**, not the H₃ blocks of the Borromean braid
@@ -61,14 +61,14 @@ read of what `main` actually computes.
 
 ---
 
-## 1. Where Geom_full is defined/computed
+## 1. Where VolDensity is defined/computed
 
 ### Canonical production implementation
 
-`folio-assistant/computations/_li_2_q_util.py:210-254` — `geom_full_borromean(q)`:
+`folio-assistant/computations/_li_2_q_util.py:210-254` — `vol_density_borromean(q)`:
 
 ```python
-def geom_full_borromean(q, q_inv=None):
+def vol_density_borromean(q, q_inv=None):
     qi = 1/q if q_inv is None else q_inv
     hbar_q = 1 - qi                      # ℏ_q = (q-1)/q
     vol_b3 = 8 * mp.catalan              # Vol(𝓑₃) = 8·G (Adams 1985)
@@ -94,8 +94,8 @@ claiming `= (1/4)·Σ_{λ⊢4} dim_q V_λ` (line 184).
 `m_p_borromean_verification_50dps.py:192-193`:
 
 ```python
-from _li_2_q_util import geom_full_borromean as _geom_full_borromean
-GEOM_FULL_BORROMEAN = _geom_full_borromean(Q)
+from _li_2_q_util import vol_density_borromean as _vol_density_borromean
+GEOM_FULL_BORROMEAN = _vol_density_borromean(Q)
 ```
 
 then `m_avg_pred = GEOM_FULL_BORROMEAN * M_E_CODATA_MEV` (line 313). The
@@ -139,11 +139,11 @@ no executable derivation.
 docstring says: "EXPLORATORY: the unproved −G·h² Yekutieli per-cell curvature
 correction… What's unproved is our framework's claim that it yields −G·h²… Use
 ONLY for exploratory comparison columns, never in production." The cheat-sheet
-(`§5 fix #1`, line 186) and `lambda-scale-absorbed-into-geom-full.md:51` record
+(`§5 fix #1`, line 186) and `lambda-scale-absorbed-into-vol-density.md:51` record
 that the Yekutieli per-cell route was **briefly in production (a1f68d5e5) then
 PURGED (71d674da1)** as non-canonical (bijection NEGATIVE, PR #985).
 
-### How does `tr_M = Σ_λ y_λ χ_λ` become `Geom_full`?
+### How does `tr_M = Σ_λ y_λ χ_λ` become `VolDensity`?
 
 In the paper: `prop:hoefsmit-scattering-pipeline` Stage 3 (`.md:64-80`) and
 `prop:geom-universality` property 2 (`geom-universality.md:16-17`):
@@ -172,15 +172,15 @@ Stage 3 for a hyperbolic link) and multiplies by `linking_weight`. The
   `m_avg_pred = GEOM_FULL_BORROMEAN * M_E_CODATA_MEV`. MeV enters solely through
   `m_e` (CAL-1, `codata_constants.M_E_MEV`, line 158-163).
 - **What the Archimedean functor does:** in production it does **nothing
-  per-block**. The dimensionless `Geom_full(𝓑₃, q₀)` is already a single real
+  per-block**. The dimensionless `VolDensity(𝓑₃, q₀)` is already a single real
   number (`Vol/ℏ_q² × λ_A` ≈ 1890, witness
-  `mass-table-comprehensive.witness.json:1323` `geom_full_borromean_q ≈ 1890.5`),
+  `mass-table-comprehensive.witness.json:1323` `vol_density_borromean_q ≈ 1890.5`),
   and the "Archimedean functor" is the trivial map "multiply by `m_e`". The
   per-block character sum `Σ_λ w_λ χ_λ/dim λ` — the place where a per-block
   `τ` action would live — is absent.
 - **Is the pure number per-block or global?** **Global.** This is the crux:
   the cheat-sheet hope ("if the Archimedean functor acts per-block, `M_λ` falls
-  out of `Geom_full` directly") is **not realized** in production code, because
+  out of `VolDensity` directly") is **not realized** in production code, because
   production never carries a per-block object into the Archimedean step — it
   collapsed to a scalar two steps earlier.
 
@@ -188,7 +188,7 @@ Stage 3 for a hyperbolic link) and multiplies by `linking_weight`. The
 
 ## 4. Φ_q (Faddeev) vs Li_2^q (Rogers)
 
-- **Production baryon `Geom_full` uses neither.** `geom_full_borromean` and
+- **Production baryon `VolDensity` uses neither.** `vol_density_borromean` and
   `linking_weight_family_a` are pure rational functions of `q`
   (`_li_2_q_util.py:172-254`). No `li_2_q` / `phi_q` call in the baryon path.
 - **Li_2^q (`li_2_q`, `_li_2_q_util.py:69-103`)** is the bar-symmetric form, used
@@ -199,7 +199,7 @@ Stage 3 for a hyperbolic link) and multiplies by `linking_weight`. The
   per the same module docstring (lines 13-15). It is bar-asymmetric and carries
   the dimensional scale.
 - **Verdict on the cheat-sheet claim:** correct **for the binding/brane-tower
-  channel** — but it is **moot for the production baryon `Geom_full`**, which
+  channel** — but it is **moot for the production baryon `VolDensity`**, which
   has no dilogarithm at all. So the Φ_q-vs-Li_2^q discipline does not gate the
   production proton-mass number; it only gates the (separate) binding-energy
   compute.
@@ -228,8 +228,8 @@ i.e. the summand in `{χ_λ(K), dim_q(λ), w_λ}` — `Geom(K)` is the common sc
 prefactor, the per-block content is `w_λ χ_λ(K)/dim λ`. **This is well-defined
 mathematically and is the object the paper's chain produces.**
 
-**In the production code — NO, it is not present.** Production `Geom_full`
-(`geom_full_borromean`) is `Vol/ℏ_q² × λ_A(q)` and **never computes the
+**In the production code — NO, it is not present.** Production `VolDensity`
+(`vol_density_borromean`) is `Vol/ℏ_q² × λ_A(q)` and **never computes the
 `Σ_λ w_λ χ_λ(𝓑₃)/dim λ` factor.** The proton number comes out as a global
 scalar; there is no per-block array anywhere in the production proton path.
 A per-block `M_λ` would have to be **re-introduced** by going back to the
@@ -237,7 +237,7 @@ narrative Stage-4 form — which the production path abandoned.
 
 ### Why this matters for L2 Subgoal-1 (the latent-fit warning)
 
-The cheat-sheet's framing ("`λ_scale` was absorbed into `Geom_full`") is the
+The cheat-sheet's framing ("`λ_scale` was absorbed into `VolDensity`") is the
 mechanism by which the per-block structure was lost: the production object is
 `Vol/ℏ_q² × λ_A`, and `λ_A = (3q²+4+3q⁻²)/4` is a **global** H₄ Wedderburn
 average, not the H₃ Borromean per-block trace. Consequences:
@@ -275,7 +275,7 @@ coincidence make it a **latent fit**, not a forced composite.
 | `tr_M = Σ_λ y_λ χ_λ` | DERIVED (Wenzl bridge) | `y_lambda_wenzl_bridge.py`; `hoefsmit-scattering-pipeline.md:42-55` |
 | `Geom(K) = τ(tr_M(ρ(𝓑_K)))` (functoriality) | **ASSERTED / conjectural** | `prop:geom-universality` is `conjecture()`; Lean `GeomFullFunctorial.functorial := True` (trivial stub, `geom-universality.lean:74-75`) |
 | `τ(J_K)` → `Vol(K)/ℏ_q²` (Stage 3) | **ASSERTED / conjectural** | `conj:geom-yekutieli-alignment`, conditional on `conj:hyperbolic-volume-transcendence`; `geom-yekutieli-alignment.lean` is conditional-on-class with `sorry`-class |
-| Production `Geom_full = Vol/ℏ_q² × λ_A` | DERIVED-from-ASSERTION | `geom_full_borromean` computes it; but it presupposes the conjectural Stage-3 output `Vol/ℏ_q²` and substitutes `λ_A` for the dropped `Σ_λ w_λ χ_λ` factor |
+| Production `VolDensity = Vol/ℏ_q² × λ_A` | DERIVED-from-ASSERTION | `vol_density_borromean` computes it; but it presupposes the conjectural Stage-3 output `Vol/ℏ_q²` and substitutes `λ_A` for the dropped `Σ_λ w_λ χ_λ` factor |
 | `λ_A = (3q²+4+3q⁻²)/4 = (1/4)Σ_{λ⊢4} dim_q V_λ` | DERIVED (Lean-proved) | `lambdaA_all_c_i` proves the closed form; sum is real but over **H₄, not the knot's H₃ blocks** |
 | `λ_A` ↔ `tr_M(𝓑₃)` (the `(3/16)×4=3/4` link) | **FITTED / coincidental** | `borromean_markov_trace_h2` docstring: `mpmath.identify`, h²-coefficient-only, unexplained factor 4, "empirical computation" |
 | Dimensional bridge `× m_e` | DERIVED (CAL-1) | `m_p_borromean_verification_50dps.py:313`; global scalar, not per-block |
@@ -310,7 +310,7 @@ and it is **forced by the paper chain but absent from the code.**
 
 ### Latent-fit risk verdict
 
-`M_λ(K)` is **NOT a forced composite of the current production `Geom_full`** —
+`M_λ(K)` is **NOT a forced composite of the current production `VolDensity`** —
 production has no per-block structure to read it from. Building `M_λ` by
 re-using `λ_A`'s H₄ block sum would be a **latent fit** (index mismatch +
 single-Taylor-order coincidence). Building `M_λ` from the paper's Stage-4
@@ -324,14 +324,14 @@ the production `Vol/ℏ_q² × λ_A` value (which currently reproduces ≈1890, 
 
 ## Files cited
 
-- `folio-assistant/computations/_li_2_q_util.py` (geom_full_borromean:210,
+- `folio-assistant/computations/_li_2_q_util.py` (vol_density_borromean:210,
   linking_weight_family_a:172, li_2_q:69, yekutieli_correction_h2:309,
   borromean_markov_trace_h2:335)
 - `folio-assistant/computations/m_p_borromean_verification_50dps.py` (193, 313, 158)
 - `folio-assistant/computations/lambda_scale_all_c_i_family_a.py` (84-128)
-- `folio-assistant/computations/meson_geom_full.py` (59-62) — same `Vol/ℏ_q² × λ_A` baryon form
+- `folio-assistant/computations/meson_vol_density.py` (59-62) — same `Vol/ℏ_q² × λ_A` baryon form
 - `content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.md` (Stage 1-4)
 - `content/quantum-observable-universe/particle-interactions/geom-universality.md` + `.lean` (74)
 - `content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.{md,lean}`
 - `content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.lean`
-- `docs/canonical-derivation-cheat-sheet.md`, `docs/lambda-scale-absorbed-into-geom-full.md`
+- `docs/canonical-derivation-cheat-sheet.md`, `docs/lambda-scale-absorbed-into-vol-density.md`

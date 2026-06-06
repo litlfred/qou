@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Meson Geom_full: the meson-sector analog of geom_full_borromean.
+Meson VolDensity: the meson-sector analog of vol_density_borromean.
 
-For baryons:  m(B)     = m_e × Geom_full(𝓑₃, q₀)
-              Geom_full = Vol(𝓑₃)/ℏ_q² × linking_weight(q)
+For baryons:  m(B)     = m_e × VolDensity(𝓑₃, q₀)
+              VolDensity = Vol(𝓑₃)/ℏ_q² × linking_weight(q)
 
 For mesons:   m(meson) = m_π × Geom_meson(braid, q₀)
               Geom_meson = NF-weighted Frobenius evaluation in H_3(q)
@@ -24,7 +24,7 @@ a hyperbolic volume; the meson Geom involves H_3 NF ratios.
 This script derives:
   - Absolute m_π (as CAL-3 input, not predicted)
   - m_K from m_π × Geom_meson(K_braid / π_braid)
-  - m_p/m_π ratio from Geom_full(𝓑₃) / Geom_meson
+  - m_p/m_π ratio from VolDensity(𝓑₃) / Geom_meson
   - Q_β from CAL-1 + CAL-2 (cross-check)
 """
 
@@ -142,11 +142,11 @@ err_Qbeta = float(fabs(Q_beta_pred - Q_BETA_CODATA) / Q_BETA_CODATA * 1e6)
 # ══════════════════════════════════════════════════════════════════
 
 print("=" * 70)
-print("MESON Geom_full: mass predictions from (m_e, q₀, m_π)")
+print("MESON VolDensity: mass predictions from (m_e, q₀, m_π)")
 print("=" * 70)
 print()
 print("─── BARYON (reference) ───")
-print(f"  Geom_full(𝓑₃) = Vol(𝓑₃)/ℏ_q² × linking_weight")
+print(f"  VolDensity(𝓑₃) = Vol(𝓑₃)/ℏ_q² × linking_weight")
 print(f"                 = {float(VOL_B3):.4f}/{float(hbar_q**2):.6f} × {float(linking_weight_A):.6f}")
 print(f"                 = {float(geom_baryon):.4f}")
 print(f"  m_p = m_e × {float(geom_baryon):.4f} = {float(m_p_pred):.3f} MeV  (err {err_mp:.0f} ppm)")
@@ -176,15 +176,15 @@ witness = {
     "engine": "python3/mpmath", "engineVersion": "50dps",
     "computedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     "computation": "meson-geom-full",
-    "scriptFile": "meson_geom_full.py",
+    "scriptFile": "meson_vol_density.py",
     "description": (
-        "Meson-sector Geom_full analog. Baryons use m=m_e×Vol/ℏ_q²×linking_weight; "
+        "Meson-sector VolDensity analog. Baryons use m=m_e×Vol/ℏ_q²×linking_weight; "
         "mesons use m=m_π×Geom_meson where m_π is CAL-3. Tests three m_K candidates. "
         "Also cross-checks Q_β as derived from CAL-1+CAL-2."
     ),
     "parameters": {"q0": str(q0), "m_e": str(m_e), "m_pi": str(M_PI)},
     "data": {
-        "baryon_geom": {"geom_full": float(geom_baryon), "m_p_pred": float(m_p_pred), "err_ppm": err_mp},
+        "baryon_geom": {"vol_density": float(geom_baryon), "m_p_pred": float(m_p_pred), "err_ppm": err_mp},
         "meson_geom_candidates": {
             "A_nf_ratio": {"geom": float(geom_meson_K), "m_K_pred": float(m_K_pred_nf), "err_ppm": err_mK_nf},
             "B_two_q_sq": {"geom": float(geom_meson_K_twoq), "m_K_pred": float(m_K_pred_twoq), "err_ppm": err_mK_twoq},

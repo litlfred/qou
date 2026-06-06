@@ -8,7 +8,7 @@ already reached by two merged sibling audits:
   - PR #1623 `2026-06-01-yekutieli-volume-join-derivation.md`
 
 Owner question (restated): is production's `linking_weight` factor in
-`Geom_full(𝓑₃,q₀)` the CANONICAL object, or is the H₄ index set wrong
+`VolDensity(𝓑₃,q₀)` the CANONICAL object, or is the H₄ index set wrong
 (should be the H₃ per-block trace for the 3-strand Borromean braid)?
 And what is the RAW m_p for each candidate?
 
@@ -197,7 +197,7 @@ def main():
         w = WitnessBuilder(name="linking-weight-canonical-object-lwfix")
         w.set_description(
             "CONFIRM/REFUTE: canonical linking_weight object for "
-            "Geom_full(𝓑₃). RAW m_avg for each candidate factor "
+            "VolDensity(𝓑₃). RAW m_avg for each candidate factor "
             "(A=H₄ average, B=H₃ per-block trace, C=bare). No fit, "
             "no tuning to m_p/CODATA. Independent reproduction of "
             "PR #1613 / #1623 verdicts."

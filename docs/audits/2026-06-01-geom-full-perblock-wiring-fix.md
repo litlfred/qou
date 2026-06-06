@@ -1,6 +1,6 @@
-# Geom_full per-block wiring fix — discipline-gate result (RED)
+# VolDensity per-block wiring fix — discipline-gate result (RED)
 
-Branch: `claude/geom-full-perblock-wiring-fix-2026-06-01` (PR #1614)
+Branch: `claude/vol-density-perblock-wiring-fix-2026-06-01` (PR #1614)
 Companion to the read-only audits PR #1608 (derivation trace) and
 PR #1613 (compute-vs-paper). This branch is the **implementation**:
 it wires the paper's dropped per-block factor into a real compute
@@ -8,11 +8,11 @@ function and exposes — does not hide — the resulting discrepancy.
 
 ## The bug
 
-Production `geom_full_borromean` (`folio-assistant/computations/_li_2_q_util.py`)
+Production `vol_density_borromean` (`folio-assistant/computations/_li_2_q_util.py`)
 computes the baryon mass geometric factor as
 
 ```
-Geom_full(𝓑₃, q) = [Vol(𝓑₃)/ℏ_q²] · linking_weight(q),
+VolDensity(𝓑₃, q) = [Vol(𝓑₃)/ℏ_q²] · linking_weight(q),
 linking_weight(q) = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h²   (H₄ Family-A scalar)
 ```
 
@@ -42,7 +42,7 @@ This corroborates PR #1608's finding independently.
 
 ## Discipline gate — RED (raw, zero fudge)
 
-`folio-assistant/computations/geom_full_per_block_wiring.py` computes
+`folio-assistant/computations/vol_density_per_block_wiring.py` computes
 both readings at `q_0`. Verdict: the per-block sum does **NOT**
 reproduce production at any order with zero fudge.
 
@@ -90,12 +90,12 @@ residual is the correct deliverable.
 
 ## What this PR ships
 
-1. `geom_full_per_block(vol_K, tr_M_K, q)` + `geom_leading(vol_K, q)`
+1. `vol_density_per_block(vol_K, tr_M_K, q)` + `geom_leading(vol_K, q)`
    in `_li_2_q_util.py` (alongside the old shortcut, which is marked
    `[SHORTCUT — global-scalar collapse, NOT the paper's per-block sum]`).
    No production switch — the old function is unchanged; the new one is
    available for the paper-faithful evaluation.
-2. `geom_full_per_block_wiring.py` + `geom-full-per-block-wiring.witness.json`
+2. `vol_density_per_block_wiring.py` + `vol-density-per-block-wiring.witness.json`
    — the discipline-gate verification (asserts FAILURE on the gate).
 3. Lean: replaced the trivial `GeomFullFunctorial.functorial : True`
    stub with the real Stage-4 factorisation

@@ -1573,7 +1573,7 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [
           {
-            "witness": "folio-assistant/computations/geom-full-borromean-h4-probe.witness.json",
+            "witness": "folio-assistant/computations/vol-density-borromean-h4-probe.witness.json",
             "ok": false,
             "missing_fields": [
               "gram_matrix",
@@ -1584,7 +1584,7 @@
             "opted_out_raw_trace": false
           }
         ],
-        "script": "folio-assistant/computations/geom_full_borromean_h4_probe.py"
+        "script": "folio-assistant/computations/vol_density_borromean_h4_probe.py"
       },
       {
         "bucket": "A",
@@ -5116,7 +5116,7 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/geom_full_borromean_q_locality_probe.py"
+        "script": "folio-assistant/computations/vol_density_borromean_q_locality_probe.py"
       },
       {
         "bucket": "skip",
@@ -5636,7 +5636,7 @@
       {
         "bucket": "skip",
         "reason": "no trace token",
-        "script": "folio-assistant/computations/meson_geom_full.py"
+        "script": "folio-assistant/computations/meson_vol_density.py"
       },
       {
         "bucket": "skip",

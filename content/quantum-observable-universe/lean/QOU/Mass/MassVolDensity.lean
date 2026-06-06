@@ -8,7 +8,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 # QOU.Mass.MassVolDensity — Mass = Vol × Density (algebraic core)
 
 The algebraic heart of the **Mass = Vol × Density** decomposition that
-replaces the `Geom_full` black box with proper definitions:
+replaces the `VolDensity` black box with proper definitions:
 
     m(K) = m_e · Vol(K) · ρ(q) / ℏ_q²
 

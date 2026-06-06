@@ -1,8 +1,8 @@
-# Geom_full derivation: step-by-step from categorical action to the geometric gap
+# VolDensity derivation: step-by-step from categorical action to the geometric gap
 
 ## Where we are in the pipeline
 
-The QOU mass formula descends through four layers. Geom_full is where
+The QOU mass formula descends through four layers. VolDensity is where
 the **algebraic** layer meets the **geometric** layer — the point where
 abstract Hecke-algebra identities must be evaluated on a specific
 knot/braid, and the knot's topology enters.
@@ -93,21 +93,21 @@ braid topology of the bound state.
 
 The mass of particle K is:
 
-    m(K) = m_e × Geom_full(K, q₀)
+    m(K) = m_e × VolDensity(K, q₀)
 
-where Geom_full is the "geometric evaluation" that combines the
+where VolDensity is the "geometric evaluation" that combines the
 Markov trace with the knot's topology.
 
 **For knots (single-component, like the electron):**
 
-    Geom_full(K) = Vol_hyp(K) / ℏ_q²
+    VolDensity(K) = Vol_hyp(K) / ℏ_q²
 
 where Vol_hyp is the hyperbolic volume of the knot complement.
 No linking weight needed (linking weight = 1 for knots).
 
 **For links (multi-component, like the proton = Borromean link):**
 
-    Geom_full(K) = Vol_hyp(K) / ℏ_q² × linking_weight(q)
+    VolDensity(K) = Vol_hyp(K) / ℏ_q² × linking_weight(q)
 
 The linking_weight accounts for the multi-component topology.
 For the proton (Borromean link B₃):
@@ -128,13 +128,13 @@ linking weight at the H_{3A} → H_{3A+1} transition is NOT derived.
 
 Substitute q = q₀ ≈ 1.1100 (from CAL-2: m_μ/m_e = Vol(4₁)/ℏ_q²):
 
-    m(K) = m_e × Geom_full(K, q₀) |_{q = q₀}
+    m(K) = m_e × VolDensity(K, q₀) |_{q = q₀}
 
 All q-dependent expressions become numbers in ℝ.
 
 ---
 
-## Where Geom_full appears in binding
+## Where VolDensity appears in binding
 
 For the binding energy B(K) of a composite atom K:
 

@@ -114,7 +114,7 @@
         "B_ratio": 1.1,
         "conclusion": "Typed-crossing asymmetry \u2014 braid word matters, not just (Z,N)"
       },
-      "closing_path": "Derive C_knot from Geom_full(K) per knot. Same open problem as the 2.89% m_p gap."
+      "closing_path": "Derive C_knot from VolDensity(K) per knot. Same open problem as the 2.89% m_p gap."
     },
     "geom_layer_investigation": {
       "C_over_A_times_lw_over_Aminus1": {
@@ -130,7 +130,7 @@
         "issue": "signed-dim sum magnitude ~0.05 MeV, AME binding 2-28 MeV",
         "missing": "full braid-word Geom evaluation \u2014 same open problem as m_p 2.89% gap"
       },
-      "conclusion": "Categorical \u0394_\u03bb = (-1)^{n(\u03bb)} \u00d7 dim(V_\u03bb) captures the right SIGN and SHAPE (2.8\u00d7 spread). The per-atom geometric factor C_knot/A scales as lw_A/(A-1) for A=2,3 (1.35\u00d7 spread). But the absolute magnitude requires the full Geom_full program, which is the same open problem as the proton mass gap."
+      "conclusion": "Categorical \u0394_\u03bb = (-1)^{n(\u03bb)} \u00d7 dim(V_\u03bb) captures the right SIGN and SHAPE (2.8\u00d7 spread). The per-atom geometric factor C_knot/A scales as lw_A/(A-1) for A=2,3 (1.35\u00d7 spread). But the absolute magnitude requires the full VolDensity program, which is the same open problem as the proton mass gap."
     }
   },
   "assertions": [

@@ -4,10 +4,10 @@
 **Branch:** `claude/yekutieli-volume-join-derivation-2026-06-01` (PR #1623)
 **Scope:** DERIVE-OR-REFUTE, order by order. No fit, no hard-coded factor,
 no tuning to m_p / B_AME. Builds on the four sibling audits of 2026-06-01:
-- `2026-06-01-geom-full-compute-vs-paper-audit.md` (PR #1613, order-by-order)
-- `2026-06-01-geom-full-perblock-wiring-fix.md` (PR #1614 — merged, the RED 2.38× gate)
+- `2026-06-01-vol-density-compute-vs-paper-audit.md` (PR #1613, order-by-order)
+- `2026-06-01-vol-density-perblock-wiring-fix.md` (PR #1614 — merged, the RED 2.38× gate)
 - `2026-06-01-qhyperbolic-nonabelian-stokes-wiring.md` (PR #1611, Stokes wiring)
-- `2026-06-01-geom-full-derivation-trace.md` (PR #1608, derivation trace)
+- `2026-06-01-vol-density-derivation-trace.md` (PR #1608, derivation trace)
 
 **Compute:** [`yekutieli_volume_join.py`](../../folio-assistant/computations/yekutieli_volume_join.py),
 witness [`yekutieli-volume-join.witness.json`](../../folio-assistant/computations/yekutieli-volume-join.witness.json).
@@ -240,7 +240,7 @@ is **406 MeV (−56.7 %)** — far worse than production's +2.89 %. This
 compute-vs-paper FINDING-1 ("restore makes it ~20× worse"). So switching
 production to the literal per-block object is ruled out; the +2.89 % is the
 `linking_weight = 2.533` vs CODATA-implied `λ ≈ 2.460` residual, exactly as
-`lambda-scale-absorbed-into-geom-full.md` records.
+`lambda-scale-absorbed-into-vol-density.md` records.
 
 ---
 
@@ -294,8 +294,8 @@ the §3b-cond conditional-class discipline. It is NOT a derivation of the
 - **Does NOT** introduce any factor to force a match (no fit; the 2.38× is
   reported as the raw `linking_weight/tr_M` ratio, q-dependent, order-dependent).
 - **Does NOT** re-open "derive λ_scale" — per
-  `lambda-scale-absorbed-into-geom-full.md` the residual is the categorical-
-  exactness refinement of `Geom_full(𝓑₃)`.
+  `lambda-scale-absorbed-into-vol-density.md` the residual is the categorical-
+  exactness refinement of `VolDensity(𝓑₃)`.
 - **Does** confirm the sibling 2.38× gate (RED) and the −56.7 % per-block m_p,
   independently, with exact-in-q symbolic objects.
 - **Does** add one structural finding beyond the corpus: the framework's own

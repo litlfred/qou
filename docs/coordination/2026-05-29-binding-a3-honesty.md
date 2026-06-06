@@ -130,7 +130,7 @@ past D:
 
 - PR #1742 `Σ_λ y_λ (|χ^λ_free| − |χ^λ_atom|)` — err D +3.6 % → ⁴He −86.6 %
 - PR #1754 canonical Jones-Markov — uniformly underpredicts ~0.4-0.7 MeV
-- PR #1756 per-knot `m_e · Geom_full(K)` — err −50 % to −97 % across 6 atoms
+- PR #1756 per-knot `m_e · VolDensity(K)` — err −50 % to −97 % across 6 atoms
 
 ### Durable artifacts
 

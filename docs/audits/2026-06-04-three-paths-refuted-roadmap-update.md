@@ -15,7 +15,7 @@ The framework has two open structural questions that resist closed-form derivati
 
 ### Q1. The H₃→H₄ jump in `linking_weight_family_a`
 
-`linking_weight_family_a(q) = (3q²+4+3q⁻²)/4 = (1/4)·Σ_{λ⊢4} dim_q(V_λ) ≈ 2.53` is applied as a global multiplier in `geom_full_borromean`. The proton braid `𝓑₃` lives in H₃, but the multiplier sums over partitions of **4**. **Why H₄?** — surfaced in PR #1762 §2.
+`linking_weight_family_a(q) = (3q²+4+3q⁻²)/4 = (1/4)·Σ_{λ⊢4} dim_q(V_λ) ≈ 2.53` is applied as a global multiplier in `vol_density_borromean`. The proton braid `𝓑₃` lives in H₃, but the multiplier sums over partitions of **4**. **Why H₄?** — surfaced in PR #1762 §2.
 
 ### Q2. The per-isotope Δ_λ binding-energy closure
 

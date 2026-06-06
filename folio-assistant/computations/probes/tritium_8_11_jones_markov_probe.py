@@ -30,7 +30,7 @@ m_p ≈ 1836·m_e).
 Existing tritium prediction in `low-isotope-mass-table.witness.json`
 gives 8.468598 MeV (err −1556 ppm vs AME) — this prediction does
 NOT come from bare |tr_M(8_11)|; it goes through the canonical
-multi-nucleon atom braid via the Geom_full / canonical chain.
+multi-nucleon atom braid via the VolDensity / canonical chain.
 
 ## Track B implication
 
@@ -108,7 +108,7 @@ def main() -> int:
         "(markov_trace_for_knot, mp.mpf at 50 dps) under both Wenzl "
         "JM and q-Schur conventions and confirms the same bare-|tr_M| "
         "<< AME pattern documented at 7²_1 (PR #1274) and 𝓑₃ "
-        "(proton-mass). The framework's Geom_full chain is the "
+        "(proton-mass). The framework's VolDensity chain is the "
         "correct substrate-pure derivation; bare |tr_M| is not."
     )
     set_compute_dps(50)
@@ -163,7 +163,7 @@ def main() -> int:
     print(f"  AME B(³H) / (m_e·|tr_M|_qSchur)  = {mp.nstr(ratio_qschur, 6)}×")
     print(f"\n  Same pattern as PR #1274's c_αα probe on 7²_1:")
     print(f"  bare |tr_M| << binding-scale by ~88-90× factor.")
-    print(f"  Geom_full chain (Vol/ℏ_q² × linking_weight) is the")
+    print(f"  VolDensity chain (Vol/ℏ_q² × linking_weight) is the")
     print(f"  correct substrate-pure derivation.")
 
     # Witness

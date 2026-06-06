@@ -2,9 +2,9 @@
   "engine": "python3/mpmath",
   "engineVersion": "50dps",
   "computedAt": "2026-05-26T14:10:24Z",
-  "computation": "meson-geom-full",
-  "scriptFile": "meson_geom_full.py",
-  "description": "Meson-sector Geom_full analog. Baryons use m=m_e\u00d7Vol/\u210f_q\u00b2\u00d7linking_weight; mesons use m=m_\u03c0\u00d7Geom_meson where m_\u03c0 is CAL-3. Tests three m_K candidates. Also cross-checks Q_\u03b2 as derived from CAL-1+CAL-2.",
+  "computation": "meson-vol-density",
+  "scriptFile": "meson_vol_density.py",
+  "description": "Meson-sector VolDensity analog. Baryons use m=m_e\u00d7Vol/\u210f_q\u00b2\u00d7linking_weight; mesons use m=m_\u03c0\u00d7Geom_meson where m_\u03c0 is CAL-3. Tests three m_K candidates. Also cross-checks Q_\u03b2 as derived from CAL-1+CAL-2.",
   "parameters": {
     "q0": "1.1099785955541805752815940796095093779932822799587",
     "m_e": "0.51099895069",
@@ -12,7 +12,7 @@
   },
   "data": {
     "baryon_geom": {
-      "geom_full": 1890.5119536990953,
+      "vol_density": 1890.5119536990953,
       "m_p_pred": 966.0496246071397,
       "err_ppm": 29604.990703296746
     },

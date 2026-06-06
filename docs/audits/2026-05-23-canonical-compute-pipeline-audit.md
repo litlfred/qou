@@ -20,7 +20,7 @@ Trace → χ^λ(β_K): one scalar per partition
   ↓
 Σ_λ → tr_M(β_K): single scalar
   ↓
-× m_e × Vol/ℏ_q² × λ_scale (or Geom_full)
+× m_e × Vol/ℏ_q² × λ_scale (or VolDensity)
   ↓
 m_p prediction
 ```

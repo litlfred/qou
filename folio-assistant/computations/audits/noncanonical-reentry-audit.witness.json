@@ -52,9 +52,9 @@
       },
       {
         "symbol": "lambda_scale_family_a",
-        "reason": "Legacy lambda-scale alias. Owner directive 2026-05-24: 'no lambda-scale ANYWHERE in production'. λ_scale was absorbed into the per-knot Geom_full(K) evaluation.",
-        "purged_by": "PR #1080 (absorb into Geom_full) / PR #1089 (alias removal)",
-        "canonical_replacement": "linking_weight_family_a / geom_full_borromean"
+        "reason": "Legacy lambda-scale alias. Owner directive 2026-05-24: 'no lambda-scale ANYWHERE in production'. λ_scale was absorbed into the per-knot VolDensity(K) evaluation.",
+        "purged_by": "PR #1080 (absorb into VolDensity) / PR #1089 (alias removal)",
+        "canonical_replacement": "linking_weight_family_a / vol_density_borromean"
       }
     ],
     "banned_modules": [

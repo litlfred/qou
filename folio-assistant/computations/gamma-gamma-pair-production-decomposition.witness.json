@@ -49,7 +49,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "γγ̄ pair-production decomposition of β_Bor = (σ₀σ₁⁻¹)³ at each Gröbner-Shirshov filtration order (h-power).  Compares PROVED Family A linking_weight (which terminates at h²) against the Markov-trace-via-Jones-polynomial route (all orders in h) and against the CODATA-anchor target.  Localises whether the 2.89% Geom_full(𝓑₃) gap enters at h² (Reading-A hypothesis: +3/4 h² should be −G h²) or at h⁴⁺ (q-dilog tower hypothesis: Family A truncates higher-order corrections). Audit-only — no CODATA value flows into a prediction; the anchor inversion is for target reconstruction only.",
+  "description": "γγ̄ pair-production decomposition of β_Bor = (σ₀σ₁⁻¹)³ at each Gröbner-Shirshov filtration order (h-power).  Compares PROVED Family A linking_weight (which terminates at h²) against the Markov-trace-via-Jones-polynomial route (all orders in h) and against the CODATA-anchor target.  Localises whether the 2.89% VolDensity(𝓑₃) gap enters at h² (Reading-A hypothesis: +3/4 h² should be −G h²) or at h⁴⁺ (q-dilog tower hypothesis: Family A truncates higher-order corrections). Audit-only — no CODATA value flows into a prediction; the anchor inversion is for target reconstruction only.",
   "auditOnly": "docs/audits/2026-05-25-non-abelian-stokes-reading-a-exploration.md",
   "parameters": {
     "q0": "1.1099785955541805",

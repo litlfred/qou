@@ -62,7 +62,7 @@ within the framework's L1 precision.
 ## §2. Habiro-ring unification of real-q_0 and root-of-unity chains
 
 The framework currently uses:
-- **Real** $q_0 \approx 1.1097$ for the **hyperbolic** chain (Geom_full)
+- **Real** $q_0 \approx 1.1097$ for the **hyperbolic** chain (VolDensity)
 - **Root-of-unity** $q = \exp(\pi i / (k+2))$ for the **torus** chain (RT)
 
 This split is structural, but it raises a foundational question: why
@@ -87,7 +87,7 @@ data across both specialization types.
 **Conjectural unification**: the framework's substrate $q_0$ is the
 real specialization of a Habiro-ring element $\widetilde{q_0} \in \hat{H}_K$
 for some number field $K$ (likely a cyclotomic field $\mathbb{Q}(\zeta_n)$).
-The hyperbolic-chain Geom_full at $q_0$ is the real specialization;
+The hyperbolic-chain VolDensity at $q_0$ is the real specialization;
 the RT-chain at $\exp(\pi i / (k+2))$ is the root-of-unity specialization.
 
 **Predictions** if this conjecture is right:
@@ -179,7 +179,7 @@ scope of a session's compute.
 Combining this session's findings with prior session results:
 
 ```
-Layer 1: Hyperbolic Geom_full (PR #1063, #1081, #1100, #1103)
+Layer 1: Hyperbolic VolDensity (PR #1063, #1081, #1100, #1103)
   - Free p, n: structural Markov × 5/2 → +1.948% gap (PR #1081)
   - Multi-nucleon ²H, ³H, ³He: inter-nucleon channel weights
     (PR #1089 sign-flip diagnostic; PR #1102 reconciliation)

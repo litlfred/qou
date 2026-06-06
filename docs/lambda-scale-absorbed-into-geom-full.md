@@ -1,35 +1,35 @@
-# `λ_scale` is absorbed into `Geom_full(K)` — the canonical framing
+# `λ_scale` is absorbed into `VolDensity(K)` — the canonical framing
 
 > **Status: settled (2026-05-23). This is the canonical framing — do not propose a separate "λ_scale derivation".**
 >
-> **Origin commit:** `ffdd84409 — coord: λ_scale absorbed into Geom_full — no more separate constant`
+> **Origin commit:** `ffdd84409 — coord: λ_scale absorbed into VolDensity — no more separate constant`
 >
-> **Authoritative discussion (with numerics):** [`coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](coordination/2026-05-23-algebraic-geometric-observable-consistency.md) §"λ_scale is NOT a separate object — it's what Geom_full produces".
+> **Authoritative discussion (with numerics):** [`coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](coordination/2026-05-23-algebraic-geometric-observable-consistency.md) §"λ_scale is NOT a separate object — it's what VolDensity produces".
 
 ## The rule
 
 For every knot/link `K`, the framework has **one** canonical Geom evaluation per `prop:geom-universality`:
 
 ```
-m(K) = m_e · Geom_full(K, q₀)
+m(K) = m_e · VolDensity(K, q₀)
 ```
 
 There is **no separate** numerical factor named `λ_scale`. The factor that older docs call `λ_scale` is:
 
 ```
-linking_weight(K, q) := Geom_full(K, q) / Geom_leading(K, q)
-                     := Geom_full(K, q) / (Vol(K) / ℏ_q²)
+linking_weight(K, q) := VolDensity(K, q) / Geom_leading(K, q)
+                     := VolDensity(K, q) / (Vol(K) / ℏ_q²)
 ```
 
 — i.e. it is *what Geom assigns to a multi-component link above its bare hyperbolic volume*. For knots, `linking_weight = 1` by definition; for links like the Borromean `𝓑₃`, `linking_weight ≈ 2.46` at `q₀`. The 2.46 is **inside Geom**, not a separately-named constant.
 
 ## What this means for "the 2.89% gap"
 
-The proton prediction `m_p ≈ 965 MeV` (+2.89% vs CODATA 938.27 MeV) reflects the **current categorical computation** of `Geom_full(𝓑₃, q₀)`. The open R&D question is:
+The proton prediction `m_p ≈ 965 MeV` (+2.89% vs CODATA 938.27 MeV) reflects the **current categorical computation** of `VolDensity(𝓑₃, q₀)`. The open R&D question is:
 
-> Refine the categorical computation of `Geom_full(𝓑₃)` so it lands on its categorically-exact value (which would round-trip the muon anchor and give m_p ≈ 938.27 MeV).
+> Refine the categorical computation of `VolDensity(𝓑₃)` so it lands on its categorically-exact value (which would round-trip the muon anchor and give m_p ≈ 938.27 MeV).
 
-The question is **not** "derive λ_scale = 2.46 from substrate". `λ_scale = 2.46` is the *output* of the current `Geom_full(𝓑₃)` evaluation; refining the input → output mapping is the categorical refinement problem.
+The question is **not** "derive λ_scale = 2.46 from substrate". `λ_scale = 2.46` is the *output* of the current `VolDensity(𝓑₃)` evaluation; refining the input → output mapping is the categorical refinement problem.
 
 ## Why this gets repeatedly mis-framed (agent failure mode)
 
@@ -40,7 +40,7 @@ Older code, audit docs, and content blocks (pre-2026-05-23) called the numerical
 - "Yekutieli per-cell curvature gives λ_scale = 5/2 + (3/4 − G)h²" ← **wrong frame**
 - "PSLQ search for `λ_scale` over `[Q, ℏ_q, G, π, ζ(3)]`" ← **wrong frame**
 
-All of these are actually **alternative categorical computations of `Geom_full(𝓑₃)`** — and they have all been tested:
+All of these are actually **alternative categorical computations of `VolDensity(𝓑₃)`** — and they have all been tested:
 
 | Attempt | Outcome | Reference |
 |---|---|---|
@@ -55,9 +55,9 @@ So the negative-result trail is **already** documented across the audit chain. N
 ## What canonical code does
 
 - [`folio-assistant/computations/_li_2_q_util.py`](../folio-assistant/computations/_li_2_q_util.py)
-  `geom_full_borromean(q)` returns `Vol(𝓑₃)/ℏ_q² × linking_weight(q)`; the linking_weight currently uses the PROVED Family A `5/2 + (3/4)h²` from H_4 Wedderburn as the best categorical input.
+  `vol_density_borromean(q)` returns `Vol(𝓑₃)/ℏ_q² × linking_weight(q)`; the linking_weight currently uses the PROVED Family A `5/2 + (3/4)h²` from H_4 Wedderburn as the best categorical input.
 - [`folio-assistant/computations/m_p_borromean_verification_50dps.py`](../folio-assistant/computations/m_p_borromean_verification_50dps.py)
-  consumes `geom_full_borromean(q₀)` to predict m_p ≈ 965 MeV.
+  consumes `vol_density_borromean(q₀)` to predict m_p ≈ 965 MeV.
 
 The `lambda_*_FITTED_FROM_CODATA = 2.4599527869` literals were PURGED from production on 2026-05-22 (PR #888) and are retained ONLY as `*_AUDIT_ONLY` comparison columns in the witness JSON. They will never be consumed by a production prediction.
 
@@ -69,7 +69,7 @@ Cite this doc when:
 - A new strategy probe is structured as "find the substrate formula that produces λ_scale = 2.46".
 - A workplan or coord doc speaks of the residual as a separate calibration gap to close.
 
-Reply (or refactor) to use `Geom_full(K)` language and link here.
+Reply (or refactor) to use `VolDensity(K)` language and link here.
 
 ## See also
 

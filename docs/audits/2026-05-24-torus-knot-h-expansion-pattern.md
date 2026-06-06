@@ -101,7 +101,7 @@ Per [`content/quantum-observable-universe/archimedean-universe/electroweak-higgs
 
 **CODATA m² ratio ≈ 1 : 1.29 : 2.42** (m_W ≈ 80.4 GeV, m_Z ≈ 91.2 GeV, m_H ≈ 125.1 GeV).
 
-The c_2 ratio does **not** reproduce CODATA — confirming q3's finding that torus-knot mass formulae cannot be the canonical `m(K) = m_e · Geom_full(K, q₀)` evaluated at h-order 2 alone (since the c_2 slice ignores higher h-orders, and since Vol(T(2,k)) = 0 for Seifert-fibered knots/links). The `c_{2j}` coefficients describe **h-curvature of the Markov trace**, not the physical mass directly. The mass for H/W/Z must derive via the Reshetikhin–Turaev chain (q2 probe, [`pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py)) or another route.
+The c_2 ratio does **not** reproduce CODATA — confirming q3's finding that torus-knot mass formulae cannot be the canonical `m(K) = m_e · VolDensity(K, q₀)` evaluated at h-order 2 alone (since the c_2 slice ignores higher h-orders, and since Vol(T(2,k)) = 0 for Seifert-fibered knots/links). The `c_{2j}` coefficients describe **h-curvature of the Markov trace**, not the physical mass directly. The mass for H/W/Z must derive via the Reshetikhin–Turaev chain (q2 probe, [`pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py)) or another route.
 
 ## Algebraic proof (closes the sympy-verified identity to a theorem)
 
@@ -292,7 +292,7 @@ Any future RT-chain compute that derives W/Z/H masses must round-trip through th
 - **W = √[2]_q probe (RETRACTED by jet-order check)** — downstream RT probe that used the `c_2` values from this audit as input to the RT-chain: [`rt_w_sqrt_quantum_two_probe.py`](../../folio-assistant/computations/probes/rt_w_sqrt_quantum_two_probe.py), commit `fcbe24c3a`. The substrate-point match was a jet-mixing coincidence; jet-order validation ([`rt_w_sqrt2_jet_order_validation.py`](../../folio-assistant/computations/rt_w_sqrt2_jet_order_validation.py), commit `aa11d2f06`) shows W/Z and W/H need either a different RT chain or a non-multiplicative W correction. The Z/H twist-count ratio `6/8 = 0.75` (vs SM 0.729) IS structurally genuine.
 - Electroweak triplet content block: [`archimedean-universe/electroweak-higgs-torus-link-triplet.md`](../../content/quantum-observable-universe/archimedean-universe/electroweak-higgs-torus-link-triplet.md)
 - Cheat sheet: [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
-- Absorption framing (for Geom_full — the canonical per-knot mass factor): [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- Absorption framing (for VolDensity — the canonical per-knot mass factor): [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 
 ## Follow-up (not in scope here)
 

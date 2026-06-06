@@ -56,7 +56,7 @@ from codata_constants import (  # noqa: E402
 from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
     flavor_split_subleading,
-    geom_full_borromean,
+    vol_density_borromean,
 )
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -205,9 +205,9 @@ def borromean_mass_prediction(
         _source = "substrate-identity + Habiro brane-tower"
     else:
         m_e = mp.mpf(str(M_E_MEV))
-        geom_full = geom_full_borromean(q)
+        vol_density = vol_density_borromean(q)
         delta_m_over_M = flavor_split_subleading(q)
-        m_avg = m_e * geom_full
+        m_avg = m_e * vol_density
         m_p_pred = m_avg * (1 - delta_m_over_M / 2)
         m_n_pred = m_avg * (1 + delta_m_over_M / 2)
         _source = "Family A (fallback)"
@@ -443,7 +443,7 @@ def main() -> int:
         # NOTE: keys below are populated only when `predict_p_n` returns
         # via the Family-A fallback path; the substrate-identity path
         # (canonical, post-2026-05-23 absorption of λ_scale into
-        # Geom_full) does not emit them. Hence .get() — None here means
+        # VolDensity) does not emit them. Hence .get() — None here means
         # "substrate-identity path was taken", NOT "compute failure".
         # See `nucleon_path` field below for which path was used.
         "nucleon_path": nucleon.get(
@@ -451,12 +451,12 @@ def main() -> int:
             "family_a" if "linking_weight_family_a" in nucleon else "substrate_identity",
         ),
         "linking_weight_family_a": nucleon.get("linking_weight_family_a"),
-        "geom_full_borromean_q": nucleon.get("geom_full_borromean_q"),
+        "vol_density_borromean_q": nucleon.get("vol_density_borromean_q"),
         "delta_m_over_M_N": nucleon.get("delta_m_over_M_N"),
         "m_p_pred_MeV": m_p_pred,
         "m_n_pred_MeV": m_n_pred,
         "production_tier": (
-            "Geom_full(𝓑₃, q) via PROVED Family A linking_weight "
+            "VolDensity(𝓑₃, q) via PROVED Family A linking_weight "
             "+ flavor-split (PROVED) — PR #1080 canonical framing"
         ),
         "research_tier_not_used": (

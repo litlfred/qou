@@ -69,11 +69,11 @@ against CODATA proton + neutron masses at MPFR 50 dps.
 
 ## The formula (canonical, post-PR #1080)
 
-  m(K) = m_e · Geom_full(K, q₀)              (single Geom call per knot)
+  m(K) = m_e · VolDensity(K, q₀)              (single Geom call per knot)
 
 For the Borromean rings 𝓑₃ (proton/neutron baryon class):
 
-  Geom_full(𝓑₃, q) = (Vol(𝓑₃)/ℏ_q²) · linking_weight(q)
+  VolDensity(𝓑₃, q) = (Vol(𝓑₃)/ℏ_q²) · linking_weight(q)
 
 where:
 - Vol(𝓑₃) = 8·G = 7.32772... (Adams 1985; Lobachevsky/Catalan exact)
@@ -83,13 +83,13 @@ where:
    Lean: `lambda-scale-substrate-form.lean`)
 
 There is no separate λ_scale constant — older docs called the linking-
-weight component λ_scale before it was absorbed into Geom_full on
+weight component λ_scale before it was absorbed into VolDensity on
 2026-05-23 (PR #1080, commit `3daeb1b4`).  See
 `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
 
 ## Result
 
-Geom_full(𝓑₃, q₀) ≈ 746.42 × 2.46 ≈ 1836 — this IS the 1700× scale
+VolDensity(𝓑₃, q₀) ≈ 746.42 × 2.46 ≈ 1836 — this IS the 1700× scale
 factor missing from the single-level Markov-trace m_p chain.  With
 Vol(𝓑₃) = 8·G exact (Adams 1985), the formula gives m_avg ≈ 966 MeV
 (+2.89 % vs CODATA mean).  The substrate flavor split
@@ -97,7 +97,7 @@ Vol(𝓑₃) = 8·G exact (Adams 1985), the formula gives m_avg ≈ 966 MeV
 (both +2.89 %), with the SPLIT ratio Δm/M_N matched to ~305 ppm.
 
 The remaining ~2.89 % gap is now framed (per PR #1063) as a
-Geom_full(𝓑₃) categorical-exactness refinement gap at h² order,
+VolDensity(𝓑₃) categorical-exactness refinement gap at h² order,
 NOT as a separate λ_scale closure.
 
 ## Lean coverage
@@ -109,7 +109,7 @@ NOT as a separate λ_scale closure.
   NOT YET PROVED in Lean (potential source of error):
     - Vol(𝓑₃) = 8·G (Adams 1985): cited from literature, not in
       Mathlib; depends on Catalan's constant + Lobachevsky function
-    - Geom_full(K) per-knot decomposition (PR #1080 / prop:geom-
+    - VolDensity(K) per-knot decomposition (PR #1080 / prop:geom-
       universality): narrative-level only, no Lean theorem yet
     - flavor_split closed form ℏ_q²·h_q·[2]_q·(1+ℏ_q³)/3 (PR #690 /
       prop:flavor-split-substrate): partial; the (1+ℏ_q³) 3-loop
@@ -167,20 +167,20 @@ M_P_CODATA_MEV = _M_P_MEV_VALIDATION
 M_N_CODATA_MEV = _M_N_MEV_VALIDATION
 M_MU_CODATA_MEV = mp.mpf("105.6583755")  # CODATA muon (validation; no MeV-registry export yet)  # noqa: P31
 
-# Geom_full(𝓑₃, q) — the canonical per-knot Geom evaluation
+# VolDensity(𝓑₃, q) — the canonical per-knot Geom evaluation
 # (PR #1080, commit `3daeb1b4` on 2026-05-24).  Single Geom call
 # per knot/link.  See `prop:geom-universality` and
 # `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
 #
-# Internally Geom_full = (Vol(𝓑₃)/ℏ_q²) × linking_weight, where
+# Internally VolDensity = (Vol(𝓑₃)/ℏ_q²) × linking_weight, where
 # the linking_weight is the PROVED Family A categorical identity
 #     linking_weight(q) = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h²
 # (h-series TERMINATES at h²; higher h^{2k} ≡ 0).  There is no
 # separate λ_scale constant — the same numerical factor that older
 # docs called λ_scale is now the linking-weight component of
-# Geom_full, not a standalone calibration to derive or close.
+# VolDensity, not a standalone calibration to derive or close.
 #
-# Honest predictions (Family A inside Geom_full, PR #895 + #942 +
+# Honest predictions (Family A inside VolDensity, PR #895 + #942 +
 # #1080):
 #   m_p^pred ≈ 965 MeV  (vs CODATA 938.27, +2.89 %)
 #   m_n^pred ≈ 967 MeV  (vs CODATA 939.57, +2.89 %)
@@ -189,10 +189,10 @@ M_MU_CODATA_MEV = mp.mpf("105.6583755")  # CODATA muon (validation; no MeV-regis
 # The Yekutieli per-cell curvature (−G·h²) was PURGED (2026-05-24)
 # as NOT CANONICAL — bijection NEGATIVE per PR #985, Reading A is
 # substrate-q₀ coincidence, no categorical backing.  The ~2.89 %
-# residual is now framed as a Geom_full(𝓑₃) categorical-exactness
+# residual is now framed as a VolDensity(𝓑₃) categorical-exactness
 # refinement gap (per PR #1063), not as a separate λ_scale closure.
-from _li_2_q_util import geom_full_borromean as _geom_full_borromean
-GEOM_FULL_BORROMEAN = _geom_full_borromean(Q)
+from _li_2_q_util import vol_density_borromean as _vol_density_borromean
+GEOM_FULL_BORROMEAN = _vol_density_borromean(Q)
 
 # Falsified-fit literals retained as audit-only references for the
 # Phase 5q ppm-coincidence comparison column in the witness.
@@ -208,13 +208,13 @@ def main() -> int:
     w.set_description(
         "Numerical verification at MPFR 50 dps of "
         "`conj:borromean-baryon-mass-formula` against CODATA m_p, m_n. "
-        "Canonical formula post-PR #1080: m(K) = m_e × Geom_full(K, q₀), "
-        "a single per-knot Geom call.  Geom_full = (Vol(𝓑₃)/ℏ_q²) × "
+        "Canonical formula post-PR #1080: m(K) = m_e × VolDensity(K, q₀), "
+        "a single per-knot Geom call.  VolDensity = (Vol(𝓑₃)/ℏ_q²) × "
         "linking_weight, where linking_weight is the PROVED Family A "
         "categorical identity (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
         "(terminates exactly at h²; Lean: `lambda-scale-substrate-form.lean`).  "
         "Family A applies to the baryon class uniformly, giving "
-        "m_avg^pred = m_e × Geom_full(𝓑₃, q₀) ≈ 966 MeV at q_0 — "
+        "m_avg^pred = m_e × VolDensity(𝓑₃, q₀) ≈ 966 MeV at q_0 — "
         "about 2.89 % above the CODATA mean (m_p + m_n)/2 ≈ 938.92 MeV. "
         "The proton-neutron mass difference is then supplied "
         "categorically by the substrate flavor-split closed form "
@@ -230,18 +230,18 @@ def main() -> int:
         "and is retained ONLY as audit-only "
         "`linking_weight_*_fitted_from_codata_AUDIT_ONLY` columns.  "
         "Per PR #1063, the ~2.89 % residual is now framed as a "
-        "Geom_full(𝓑₃) categorical-exactness refinement gap at h² "
+        "VolDensity(𝓑₃) categorical-exactness refinement gap at h² "
         "order, NOT as a separate λ_scale closure."
     )
     w.set_content_block("conj:borromean-baryon-mass-formula")
     # Discipline markers — canonical formula post-PR #1080:
-    #     m(K) = m_e × Geom_full(K, q₀)
+    #     m(K) = m_e × VolDensity(K, q₀)
     # Single Geom call per knot; no separate λ_scale constant.
     w.add_parameter("derivation_status", "CANONICAL_GEOM_FULL_PR_1080")
     w.add_parameter("cal_class", "CAL-1 m_e only")
-    w.add_parameter("canonical_formula", "m(K) = m_e × Geom_full(K, q₀)")
-    w.add_parameter("geom_full_decomposition",
-                    "Geom_full = (Vol(𝓑₃)/ℏ_q²) × linking_weight; "
+    w.add_parameter("canonical_formula", "m(K) = m_e × VolDensity(K, q₀)")
+    w.add_parameter("vol_density_decomposition",
+                    "VolDensity = (Vol(𝓑₃)/ℏ_q²) × linking_weight; "
                     "linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
                     "(PROVED Family A categorical identity)")
     w.add_parameter("linking_weight_lean_ref",
@@ -257,8 +257,8 @@ def main() -> int:
     w.add_parameter("Vol_B3", mp.nstr(VOL_B3, 20))
     w.add_parameter("Vol_4_1", mp.nstr(VOL_41, 20))
     w.add_parameter("m_e_codata_MeV", mp.nstr(M_E_CODATA_MEV, 20))
-    # Canonical Geom_full(𝓑₃, q₀) value — what the framework actually uses.
-    w.add_parameter("geom_full_borromean_q0", mp.nstr(GEOM_FULL_BORROMEAN, 20))
+    # Canonical VolDensity(𝓑₃, q₀) value — what the framework actually uses.
+    w.add_parameter("vol_density_borromean_q0", mp.nstr(GEOM_FULL_BORROMEAN, 20))
     # Audit-only comparison column — the falsified-fit literals
     # whose 5.4 ppm "match" prompted the 2026-05-18 audit.  These
     # are NOT consumed by the production prediction below; they
@@ -290,7 +290,7 @@ def main() -> int:
         source="CAL-2 anchor: m_mu/m_e = Vol(4_1)/ℏ_q²",
     )
 
-    # ── Class-uniform m_avg from Geom_full (proton, neutron predicted
+    # ── Class-uniform m_avg from VolDensity (proton, neutron predicted
     #    equal at this layer) + substrate flavor split (proton-neutron
     #    mass difference) ─────────────────────────────────────────────
     # Per `prop:flavor-split-substrate` / PR #690, the proton-neutron
@@ -298,7 +298,7 @@ def main() -> int:
     #     Δm / M_N  =  ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3
     # (see `_li_2_q_util.flavor_split_subleading`).  This is the
     # categorical Bring-color-tube weighting the cheat sheet §3
-    # footnote flags.  Geom_full(𝓑₃, q₀) gives ONE class-uniform mass
+    # footnote flags.  VolDensity(𝓑₃, q₀) gives ONE class-uniform mass
     # scale; the split then assigns:
     #     m_p_pred = m_avg_pred · (1 − Δm/M_N / 2)
     #     m_n_pred = m_avg_pred · (1 + Δm/M_N / 2)
@@ -310,18 +310,18 @@ def main() -> int:
     dm_over_Mn = _flavor_split(Q, Q_INV)
 
     # Class-uniform Family A m_avg (Borromean tower, before flavor split).
-    # Uses the canonical Geom_full(𝓑₃, q₀) per PR #1080 — a single
+    # Uses the canonical VolDensity(𝓑₃, q₀) per PR #1080 — a single
     # Geom call rather than a manually-expanded Vol × linking_weight.
     m_avg_pred = GEOM_FULL_BORROMEAN * M_E_CODATA_MEV
     M_AVG_CODATA = (M_P_CODATA_MEV + M_N_CODATA_MEV) / 2
     m_avg_rel_diff = (m_avg_pred - M_AVG_CODATA) / M_AVG_CODATA
     w.add_data("class_uniform_m_avg", {
-        "formula": "m_avg = m_e · Geom_full(𝓑₃, q₀)  (PR #1080, before flavor split)",
+        "formula": "m_avg = m_e · VolDensity(𝓑₃, q₀)  (PR #1080, before flavor split)",
         "m_avg_pred_MeV": mp.nstr(m_avg_pred, 20),
         "m_avg_codata_MeV": mp.nstr(M_AVG_CODATA, 12),
         "rel_diff_ppm": mp.nstr(m_avg_rel_diff * mp.mpf("1e6"), 8),
-        "geom_full_decomposition": (
-            "Geom_full = (Vol(𝓑₃)/ℏ_q²) × linking_weight; "
+        "vol_density_decomposition": (
+            "VolDensity = (Vol(𝓑₃)/ℏ_q²) × linking_weight; "
             "linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
             "(PROVED canonical Wedderburn — Family A)"
         ),
@@ -358,10 +358,10 @@ def main() -> int:
     proton_ppm = proton_rel_diff * mp.mpf("1e6")
     w.add_data("proton", {
         "formula": "m_p = m_avg_pred · (1 − Δm/M_N / 2), with "
-                   "m_avg_pred = m_e · Geom_full(𝓑₃, q₀) and "
+                   "m_avg_pred = m_e · VolDensity(𝓑₃, q₀) and "
                    "Δm/M_N from flavor_split_subleading",
         "vol_B3_over_hbar_q_squared": mp.nstr(VOL_B3 / HBAR_Q**2, 20),
-        "geom_full_borromean_q0": mp.nstr(GEOM_FULL_BORROMEAN, 20),
+        "vol_density_borromean_q0": mp.nstr(GEOM_FULL_BORROMEAN, 20),
         "tower_factor": mp.nstr(proton_factor, 20),
         "m_p_pred_MeV": mp.nstr(proton_pred, 20),
         "m_p_codata_MeV": mp.nstr(M_P_CODATA_MEV, 12),
@@ -439,7 +439,7 @@ def main() -> int:
         "borromean_tower_multiplier": tower_multiplier,
         "match_to_gap_pct": float(abs(tower_multiplier - gap_factor) / gap_factor * 100),
         "conclusion": (
-            "Geom_full(𝓑₃, q₀) ≈ 1836 IS the 1700× scale factor "
+            "VolDensity(𝓑₃, q₀) ≈ 1836 IS the 1700× scale factor "
             "missing from the single-level Markov-trace m_p chain. "
             "The Borromean tower formula closes the gap to ~2.89 % on "
             "m_avg; substrate flavor split (PR #690) supplies Δm/M_N "
@@ -449,14 +449,14 @@ def main() -> int:
 
     # Open R&D: closing the m_avg ~2.89 % residual categorically
     w.add_caveat(
-        "Canonical formula post-PR #1080: m(K) = m_e × Geom_full(K, q₀), "
-        "a single Geom call per knot.  Geom_full decomposes as "
+        "Canonical formula post-PR #1080: m(K) = m_e × VolDensity(K, q₀), "
+        "a single Geom call per knot.  VolDensity decomposes as "
         "(Vol(𝓑₃)/ℏ_q²) × linking_weight, with linking_weight = "
         "(3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (PROVED Family A "
         "categorical Wedderburn identity, Lean: "
         "`lambda-scale-substrate-form.lean`).  There is no separate "
         "λ_scale constant — older docs called the linking-weight "
-        "component λ_scale before it was absorbed into Geom_full.  "
+        "component λ_scale before it was absorbed into VolDensity.  "
         "The prior CAL-4 literals 2.4599527869 / 2.4633436333 are "
         "retained only as audit-only comparison columns.  The proton-"
         "neutron mass ratio Δm/M_N is the substrate-pure closed form "
@@ -464,7 +464,7 @@ def main() -> int:
         "ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3, which matches CODATA "
         "to ~305 ppm (~0.030 %).  The remaining ~2.89 % gap in the "
         "absolute m_avg scale is now framed (per PR #1063) as a "
-        "Geom_full(𝓑₃) categorical-exactness refinement gap at h² "
+        "VolDensity(𝓑₃) categorical-exactness refinement gap at h² "
         "order, NOT as a separate λ_scale closure."
     )
     # Lean SDP-uniqueness cross-reference (PR #1537/#1542/#1554
@@ -498,10 +498,10 @@ def main() -> int:
     print(f"  single-level pred (T1):  {float(single_level_estimate):.4f} MeV")
     print(f"  Borromean tower factor:  {tower_multiplier:.4f}")
     print(f"  CODATA / single-level:   {gap_factor:.4f}")
-    print(f"  → Geom_full(𝓑₃, q₀) closes to ~2.89 % vs CODATA on m_avg;")
+    print(f"  → VolDensity(𝓑₃, q₀) closes to ~2.89 % vs CODATA on m_avg;")
     print(f"    substrate flavor split (PR #690) supplies Δm/M_N to")
     print(f"    ~305 ppm (~0.030 %) giving a categorical (non-fit) p/n split.")
-    print(f"    Open R&D: ~2.89 % m_avg gap framed as Geom_full(𝓑₃)")
+    print(f"    Open R&D: ~2.89 % m_avg gap framed as VolDensity(𝓑₃)")
     print(f"    categorical-exactness refinement (PR #1063), not separate λ closure.")
     return 0
 

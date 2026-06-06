@@ -17,14 +17,14 @@ The sibling branch `claude/h4-residual-structural-derivation-2026-06-01`
 working the **54 ppb residual on the Ocneanu `(α_em/π)/dim H_3` near-match**
 (Form A `1+(1−π²/80)h⁴`, Form B `1+(7/8)h⁴+(G/(8π))h⁶`). That is a
 *separate* object from this task's **`linking_weight` ≈ 2.533 / +2.89% m_p
-residual** in `geom_full_borromean`. No collision; distinct files. The
+residual** in `vol_density_borromean`. No collision; distinct files. The
 sibling's verdict on its own residual is NULL at PSLQ-basis level (Task 1
 positive cross-anchor, Task 2 negative integer-relation search) — that
 does not bear on the linking_weight question here.
 
 ## The issue (from the two merged audits)
 
-Production `geom_full_borromean = Vol(𝓑₃)/ℏ_q² × linking_weight_family_a(q)`,
+Production `vol_density_borromean = Vol(𝓑₃)/ℏ_q² × linking_weight_family_a(q)`,
 where `linking_weight_family_a = (3q²+4+3q⁻²)/4 = 5/2 + (3/4)h² ≈ 2.533` at
 q₀ — an H₄ (partitions-of-4) quantum-dimension average. The owner asked
 whether this is the *canonical* object or whether the H₃ per-block trace
@@ -51,7 +51,7 @@ whether this is the *canonical* object or whether the H₃ per-block trace
    H₄ average (2.533) and the CODATA-implied `λ ≈ 2.460` (the value that
    round-trips m_p). It is NOT closable by changing the index set; it is the
    categorical-exactness refinement gap recorded in
-   `docs/lambda-scale-absorbed-into-geom-full.md` (open R&D, no fit).
+   `docs/lambda-scale-absorbed-into-vol-density.md` (open R&D, no fit).
 
 ## Raw m_avg per candidate (from the lwfix witness)
 
@@ -90,8 +90,8 @@ numbers from the witness.
 
 ## Cross-references
 
-- merged PR #1613 [`2026-06-01-geom-full-compute-vs-paper-audit.md`](2026-06-01-geom-full-compute-vs-paper-audit.md)
+- merged PR #1613 [`2026-06-01-vol-density-compute-vs-paper-audit.md`](2026-06-01-vol-density-compute-vs-paper-audit.md)
 - merged PR #1623 [`2026-06-01-yekutieli-volume-join-derivation.md`](2026-06-01-yekutieli-volume-join-derivation.md)
-- canonical framing [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- canonical framing [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 - `content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.md`
 - sibling (different residual) `docs/coordination/2026-06-01-h4-residual-derivation.md`

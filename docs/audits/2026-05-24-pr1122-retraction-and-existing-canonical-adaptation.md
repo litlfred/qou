@@ -88,7 +88,7 @@ $$\lim_{N \to \infty} \frac{\log |J_N(T(2, n))|}{N} = 0$$
 
 i.e., $|J_N(T(2, n))|$ grows **sub-exponentially** in N. This is
 ALREADY ENCODED in the existing class. My Q3 finding ("torus knots
-have Vol = 0; canonical Geom_full gives zero mass") is structurally
+have Vol = 0; canonical VolDensity gives zero mass") is structurally
 captured by this typeclass.
 
 **Adaptation candidate**: extend with a `TorusKnotKashaevLimit` subclass

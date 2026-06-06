@@ -21,15 +21,15 @@ knows but is not yet wired).
 ## TL;DR
 
 The framework's production prediction is
-`m(K) = m_e · Geom_full(K, q₀)` evaluated at the proton/neutron's
-canonical braid `K = 𝓑₃` (Borromean rings). The current `Geom_full`
+`m(K) = m_e · VolDensity(K, q₀)` evaluated at the proton/neutron's
+canonical braid `K = 𝓑₃` (Borromean rings). The current `VolDensity`
 uses **Family A only** — the PROVED Wedderburn identity
 `linking_weight = 5/2 + (3/4)·h²`. That gives **m_p, m_n both +2.89 %
 above CODATA**; the substrate flavor split matches Δm to ~305 ppm
 independently.
 
 **The +2.89 % gap is a single bar-symmetric residual** on
-`Geom_full(𝓑₃)` — both isotopes shift together, so it is not a
+`VolDensity(𝓑₃)` — both isotopes shift together, so it is not a
 flavor-mixing or split-pn problem. It IS a categorical-completeness
 problem in the `linking_weight` factor.
 
@@ -64,7 +64,7 @@ The canonical chain
 6.  Frobenius pairing  tr_M = Σ_λ y_λ χ_λ
 7.  GB filtration / spectral sequence  E_2 collapse
 8.  Jet order  classical limit at q→1
-9.  Mass identity  m(K) = m_e · Geom_full(K, q₀)
+9.  Mass identity  m(K) = m_e · VolDensity(K, q₀)
 10. Confinement SDP  selects canonical T_w
 11. β-decay Q
 ```
@@ -139,7 +139,7 @@ and what is KNOWN-MISSING:
 
 ### Step 9 — Mass identity (the load-bearing layer)
 - **Production**: `m_p_borromean_verification_50dps.py` uses
-  `Geom_full(𝓑₃, q₀) = (Vol(𝓑₃)/ℏ_q²) · linking_weight_A(q)` with
+  `VolDensity(𝓑₃, q₀) = (Vol(𝓑₃)/ℏ_q²) · linking_weight_A(q)` with
   Family A only. **+2.89 % gap.**
 - **Known-missing**: the linking_weight categorical-exactness. See
   §2 below.
@@ -219,7 +219,7 @@ raises `NotImplementedError`.
 | **Vol(𝓑₃) Lean formalization** | Literature value `8·G` (Adams 1985) cited — NOT in Lean | Should be Lean-proved (depends on Catalan's constant + Lobachevsky) |
 | **h^4 residual coefficient α ≈ 1** | EXPLORATORY only (`lambda_scale_refinement_h4_correction_bring.py`), retired as empirical fit per Rule 14 | Must be derived from one of the 13 categorical drivers (Faddeev recursion / Rogers pentagon / partition-algebra at H_4 / 6j / KLR / …) |
 | **Yekutieli per-cell `−G·h²`** | PURGED — Reading A is q₀ coincidence | Conjectured equivalent to resummed Bring color-tube `1/(1−h·q^{10})` (cell-↔-projection bijection load-bearing) |
-| **Geom_full per-knot decomposition (`prop:geom-universality`)** | Narrative only, no Lean theorem | Should be Lean-proved |
+| **VolDensity per-knot decomposition (`prop:geom-universality`)** | Narrative only, no Lean theorem | Should be Lean-proved |
 | **flavor_split `(1+ℏ_q³)` 3-loop correction** | In production, no Lean backing | Should be Lean-proved |
 
 ## §4. Knot operators in play + their geometries
@@ -253,7 +253,7 @@ channels). This includes brane-tower contributions `Φ_q` or `Li_2^q`
 - **9 color-pair assignment matrix** between adjacent nucleons
 - **Vol(𝓑₃) = 8·G categorical proof in Lean** (Adams cited from
   literature, not formalized)
-- **Reading-A geometrised form** of `Geom_full` (purged 2026-05-24
+- **Reading-A geometrised form** of `VolDensity` (purged 2026-05-24
   as q₀ coincidence — not categorical)
 
 ## §4a. Update 2026-05-25 — Bring + Faddeev h⁴ candidate identified (RULE 14 compliant)
@@ -458,7 +458,7 @@ After "go" + "build more infra" + "please continue until it's completed" sequenc
 - Faddeev pentagon spike: [`2026-05-22-faddeev-pentagon-operator-spike.md`](2026-05-22-faddeev-pentagon-operator-spike.md)
 - Yekutieli per-cell conjecture: [`2026-05-22-yekutieli-percell-conjecture-formalized.md`](2026-05-22-yekutieli-percell-conjecture-formalized.md)
 - 13-driver / Rule 14 menu: [`2026-05-23-lambda-scale-canonical-unification.md`](2026-05-23-lambda-scale-canonical-unification.md)
-- Geom_full bug-taxonomy: [`2026-05-25-geom-derivation-error-localization-and-klr-path.md`](2026-05-25-geom-derivation-error-localization-and-klr-path.md)
+- VolDensity bug-taxonomy: [`2026-05-25-geom-derivation-error-localization-and-klr-path.md`](2026-05-25-geom-derivation-error-localization-and-klr-path.md)
 - Δ_λ closure context: [`2026-05-25-delta-lambda-K-dependence-reframing.md`](2026-05-25-delta-lambda-K-dependence-reframing.md)
 - L2 100× dashboard: [`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json)
 - Cheat sheet: [`canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)

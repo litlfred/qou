@@ -146,7 +146,7 @@ $$
 
 Physical interpretation: at `q = 1`, `\hbar_q = 1 - 1/q = 0`, i.e., the substrate-Planck constant vanishes. This corresponds to the classical (non-quantum) limit, in which the Casimir effect itself vanishes (`F_{\mathrm{Cas}} \propto \hbar`).
 
-**Consequence:** the jet-order framework `c_q = (\pi^2/240) \cdot (1 + \beta_2 h^2 + \cdots)` does NOT directly apply, because `1/\hbar_q^2` (which appears in `Geom_full`) has a Laurent-type singularity at the classical limit, not a regular Taylor series.
+**Consequence:** the jet-order framework `c_q = (\pi^2/240) \cdot (1 + \beta_2 h^2 + \cdots)` does NOT directly apply, because `1/\hbar_q^2` (which appears in `VolDensity`) has a Laurent-type singularity at the classical limit, not a regular Taylor series.
 
 The correct h-grading is around **substrate q₀**, not around q = 1. Around q₀, all substrate quantities (`\hbar_q`, `[n]_q`, etc.) are finite and the perturbative expansion is well-defined. But the "classical limit" `q → 1` is then a NON-PERTURBATIVE limit (singular, not reached by Taylor expansion).
 
