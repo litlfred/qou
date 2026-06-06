@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "459fc5814db9",
+          "ts": "fece6d6b0c37"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "In section 'Large-Scale Observations'; interprets def:quantum-characteristic-classes; discusses SO(3) holonomy imprints on matter distribution",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T19:49:36.878Z",
+        "reviewed_sha": "e3177cf78e138aa62a3c3c0344931290e74b5ddd",
+        "notes": "Large-scale-structure signatures fit the Large-Scale Observations section scope"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T19:49:36.878Z"
 }
