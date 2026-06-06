@@ -146,18 +146,23 @@ theorem vol_density_subsingleton
 
 /-- **Geometric universality — conditional existence + uniqueness.**
 
-    Conditional on the transcendence (`SingleVolumeIrrational`) and
-    period-ratio (`PLCorrectnessHypotheses`) classes, and given a
-    canonical `seed` that is itself functorial, the categorical
-    `VolDensity` evaluator `Geom` **exists** — the seed witnesses it —
-    and is the **unique** functorial seed-matching evaluator
-    (cf. `vol_density_per_knot_unique`).  Hence
-    `m(K) = m_e · Geom(K, q₀)` is well-defined.  This is the real
-    ∃! statement that replaces the earlier `True` stub; the existence
-    of the *seed itself* (Family-A linking weight extended to all
-    knots) remains the open `prop:hoefsmit-scattering-pipeline` input,
-    and the geometric values are conditional on
-    `conj:hyperbolic-volume-transcendence`. -/
+    Given a canonical `seed` that is itself functorial, the categorical
+    `VolDensity` evaluator **exists** — there is some evaluator `G`
+    (witnessed in the proof by `seed`) that is functorial and matches the
+    seed — and is the **unique** functorial seed-matching evaluator
+    (cf. `vol_density_per_knot_unique`).  Hence `m(K) = m_e · G(K, q₀)`
+    is well-defined.  This is the real ∃! statement that replaces the
+    earlier `True` stub; existence of the *seed itself* (Family-A linking
+    weight extended to all knots) remains the open
+    `prop:hoefsmit-scattering-pipeline` input.
+
+    Note on the instance arguments: `[SingleVolumeIrrational]` and
+    `[PLCorrectnessHypotheses]` (`conj:hyperbolic-volume-transcendence`,
+    `rem:baryon-period-ratio`) are NOT used in this Lean-level
+    seed-uniqueness proof — they are the named external dependencies for
+    the *geometric interpretation* of `GeomFullEval` (that the seed's
+    values are the Thurston `Vol`/`CS` invariants), carried here so the
+    §3b-cond conditional-class audit recognises the conditionality. -/
 theorem geom_universality_conditional
     {Knot : Type} [SingleVolumeIrrational] [PLCorrectnessHypotheses]
     (seed : GeomFullEval Knot) [GeomFullFunctorial seed] :
