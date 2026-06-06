@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "26fd6f6495ce",
+          "ts": "c9d75f413b1c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "In sec:stat-mech; interprets def:quantum-volume (same section) as knot capacity of S^3 fibres + classical limit",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:34:37.446Z",
+        "reviewed_sha": "72d6891e83feeb58f70d8b61cbec6ce8ae12e2aa",
+        "notes": "Subject (quantum volume, configuration space, q->1 limit) squarely fits Statistical Mechanics section."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:34:37.446Z"
 }
