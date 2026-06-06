@@ -46,7 +46,7 @@ them. Honestly noted as **NARROWS but does not FULLY refute** Option C in
 its most general possible reading.
 
 ## References
-- Composite 1 standard sign refutation: [`2026-06-06-qbeta-klr-composite1-preflight-run-results.md`](../../../docs/scope/2026-06-06-qbeta-klr-composite1-preflight-run-results.md).
+- Composite 1 standard sign refutation: [`../../../docs/scope/2026-06-06-qbeta-klr-composite1-preflight-run-results.md`](../../../docs/scope/2026-06-06-qbeta-klr-composite1-preflight-run-results.md).
 - Lusztig 1989 *Affine Hecke algebras and their graded version*, JAMS 2.
 - Standard Demazure positivity (Joseph 1985, Andersen 1985, Kashiwara 1993).
 - Bar-involution of Lusztig basis: Lusztig 1990 *Canonical bases arising from quantized enveloping algebras*, JAMS 3.
@@ -59,18 +59,11 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
-from mpmath import mp, mpf, sign  # noqa: E402
+from mpmath import mp, mpf, qp, sign  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import q_at, q_muon_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-
-
-def q_pochhammer_bare(q: mpf, n: int) -> mpf:
-    out = mpf(1)
-    for k in range(1, n + 1):
-        out *= (1 - q ** k)
-    return out
 
 
 def demazure_standard_sl3_omega1_at_length_2(q: mpf) -> tuple[mpf, mpf, mpf]:
@@ -122,18 +115,18 @@ def main() -> int:
     rows = []
     for name, qf in (("proton", q_at), ("muon", q_muon_at)):
         q = qf(mp.dps)
-        _, _, Σ_std = demazure_standard_sl3_omega1_at_length_2(q)
-        _, _, Σ_dual = lusztig_dual_demazure_at_length_2(q)
-        qq_2 = q_pochhammer_bare(q, 2)
-        u2_dual = qq_2 * Σ_dual
+        _, _, sum_std = demazure_standard_sl3_omega1_at_length_2(q)
+        _, _, sum_dual = lusztig_dual_demazure_at_length_2(q)
+        qq_2 = qp(q, q, 2)
+        u2_dual = qq_2 * sum_dual
         s_dual = sign(u2_dual)
         mismatch_dual = (s_dual != sign(c2_target))
 
         rows.append({
             "anchor": name,
             "q": fmt(q),
-            "sum_D_standard": fmt(Σ_std),
-            "sum_D_Lusztig_dual": fmt(Σ_dual),
+            "sum_D_standard": fmt(sum_std),
+            "sum_D_Lusztig_dual": fmt(sum_dual),
             "q_pochhammer_2": fmt(qq_2),
             "u2_coefficient_dual": fmt(u2_dual),
             "u2_sign_dual": int(s_dual),
@@ -141,7 +134,7 @@ def main() -> int:
         })
         sign_str = "POS" if int(s_dual) > 0 else "NEG"
         match_str = "MISMATCH" if mismatch_dual else "match"
-        print(f"  {name:<8}{float(Σ_std):>15.10f}{float(Σ_dual):>18.10f}"
+        print(f"  {name:<8}{float(sum_std):>15.10f}{float(sum_dual):>18.10f}"
               f"{float(qq_2):>14.6e}{float(u2_dual):>14.6e}"
               f"{sign_str+' '+match_str:>14}")
 
