@@ -63,7 +63,10 @@ Given the residue-weight sequence `a_D⁽ⁿ⁾`, `n = 2, 3, 4, …`, ask:
 
 This is a *structural existence test*, not a parameter fit: a fixed-depth
 recurrence either holds or it does not. `sw_prolongation_symbol.py` implements
-it (Hankel-rank / Berlekamp–Massey over ℚ(q₀)).
+it by solving the depth-`d` Hankel linear system (`mp.lu_solve`, scanning start
+windows for a non-singular block) and **verifying the candidate kernel on every
+out-of-sample window** at `q₀` — with the depth capped at `(N−1)//2` so a
+verification window always exists (a pure fit can never pass).
 
 ## 4. The gating input — coordinate with #1765
 
