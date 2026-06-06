@@ -204,17 +204,18 @@ guardrails, or it becomes a numerology generator.
 
 ## 4. Recommended next steps (prioritized)
 
-1. **(A) gap taxonomy** → edit `proof-gap-audit.md` + `proof-triage.md`
-   (add `routine`/`core`/`restates-target`; the last = auto-FAIL). *Doc-only.*
-2. **(D) formalize-the-refutation** → add a worked "Lean disproof of a closure
-   ansatz" template to `compute-author.md §3.3`, then formalize the **first**
-   Δ_λ deuteron refutation as the exemplar.
-3. **(B) statement-integrity gate** → add a signature-diff + axiom-sweep step to
-   `lean-proof-review.md`; evaluate vendoring `SafeVerify` into `lean_ci`.
-4. **(C) EVOLVE-VALUE fence** → spec it in `witnessed-values.md` /
-   `production-vs-exploratory-discipline.md` as the syntactic home for tunable
-   knobs.
-5. *(owner decision)* contribute QOU open conjectures to `formal-conjectures`.
+1. ✅ **(A) gap taxonomy** → `proof-gap-audit.md` + `proof-triage.md`
+   (`routine`/`core`/`restates-target`; last = auto-FAIL). *Done — `114a80fa`.*
+2. ✅ **(D) formalize-the-refutation** → `compute-author.md §3.4` discipline +
+   worked deuteron co-Casimir exemplar. *Done — `fd8bcc91`, `75e3cccc`.*
+   Promoting the exemplar to a committed `lem:` content-object is tracked on a
+   **separate branch** (`claude/delta-lambda-cocasimir-refutation-2026-06-06`).
+3. ✅ **(B) statement-integrity gate** → `lean-proof-review.md` Review Type 4
+   (signature-diff + axiom sweep; SafeVerify vendoring noted). *Done — `17cb39f7`.*
+4. ✅ **(C) EVOLVE-VALUE fence** → `production-vs-exploratory-discipline.md` +
+   `witnessed-values.md`. *Done — `573f7a9d`.*
+5. *(owner decision, open)* contribute QOU open conjectures to `formal-conjectures`.
 
-Items 1–4 are all inside skills this repo already owns; none require the
-evolutionary/Elo machinery. Item 5 is outward-facing and needs the owner.
+Items 1–4 landed on this branch as **skill-doc edits only** — no content block,
+Lean, compute, or witness file was touched, so **no QA sidecars are
+invalidated** by this PR. Item 5 is outward-facing and needs the owner.
