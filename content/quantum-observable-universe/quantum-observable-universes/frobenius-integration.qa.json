@@ -1837,7 +1837,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b063a36c6ebb",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose explains Frobenius integral notation for quantum-observable-universe definition — on-topic for chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:12:56.498Z",
+        "reviewed_sha": "879c0b0e33ffcffe546dee86f581c16944d09e3b",
+        "notes": "No misplacement; uses def:frobenius-pairing and def:quantum-observable-universe from same chapter"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T00:12:56.498Z"
 }
