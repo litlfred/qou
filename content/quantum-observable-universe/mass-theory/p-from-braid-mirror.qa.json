@@ -2298,7 +2298,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ba57bcae3cd2",
+          "ts": "bf888f24c06e",
+          "lean": "baed9d814c54"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "D7 parity conjecture; direct deps def:bar-involution + prop:chirality-writhe-ribbon-derivation co-located in mass-theory (chirality/writhe scope)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:41:05.659Z",
+        "reviewed_sha": "4ba4bba68c17c5fa2b900a41cbbad738dc194492",
+        "notes": "CPT cluster splits across chapters (D6 in brings-surface) but writhe/chirality deps are in-chapter; topic in scope. No same-claim sibling."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:41:05.659Z"
 }
