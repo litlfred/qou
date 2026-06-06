@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "869d4ee84eae",
+          "ts": "c18c4338bc38"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Section intro for 'Time and Computation' (sec:info-time-computation); previews Planck time, Reeb-op count, info-theoretic time, stat-mech bridge matching section blocks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:30:12.450Z",
+        "reviewed_sha": "d883508406547a45640acff6842ddba2e7a6b54b",
+        "notes": "Correctly placed prose section opener"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T20:30:12.450Z"
 }
