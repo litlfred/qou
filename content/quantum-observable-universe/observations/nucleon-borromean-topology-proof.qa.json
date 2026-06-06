@@ -1769,7 +1769,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "daf245013ac3",
+          "ts": "7c991a899309"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof block for lem:nucleon-borromean-topology; nucleon topology is squarely within observations chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:06:11.259Z",
+        "reviewed_sha": "7556b5a9d9bac2ccda4bb3001aa7a6325c31c624",
+        "notes": "Clean placement, no sibling redundancy."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-06T01:06:11.259Z"
 }
