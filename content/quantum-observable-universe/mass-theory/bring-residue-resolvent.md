@@ -25,11 +25,17 @@ downstream.
 ## Lean structure (§3b-cond)
 
 - `class BringResidueAtOrder {R} [Field R] (n : ℕ) (q : R)` — the
-  contour-integral / Schwarz-integral axiomatisation.  The class
-  field `equals_resolvent` asserts the residue evaluation equals
-  `canonicalResolvent n q := 1 / (1 - h_q · q^n)`.
-- `theorem bring_residue_gives_resolvent` — sorry-free, immediate
-  from the class field.
+  contour-integral / Schwarz-integral axiomatisation.  Its sole field
+  `pole_nonzero : 1 - h_q · q^n ≠ 0` records the **pole
+  non-vanishing** — the substantive output any concrete contour route
+  must establish.  (Strengthened 2026-05-30 from an earlier
+  literal-`rfl` `equals_resolvent` field — the trivially-provable
+  loophole #1460 closed for `BringZeroModeBlochClass` — so the class
+  now carries genuine content.)
+- `theorem bring_residue_equation` — sorry-free: given the class, the
+  canonical resolvent $F_n(q) = (1 - h_q \cdot q^n)^{-1}$ satisfies the
+  **resolvent equation** $(1 - h_q \cdot q^n) \cdot F_n(q) = 1$ (proof:
+  `mul_inv_cancel₀ h.pole_nonzero`).
 - Three specialisations:
   - `bring_residue_at_T_3_5` — pole order 10, used by p-n averaging
     (merged #1445);

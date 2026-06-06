@@ -162,10 +162,10 @@ theorem bring_residue_meson_pair
     is unique as a closed-form element of the substrate field). -/
 theorem bring_residue_subsingleton
     {R : Type u} [Field R] (n : ℕ) (q : R) :
-    Subsingleton {r : R // r = canonicalResolvent n q} := by
-  refine ⟨fun ⟨r, hr⟩ ⟨r', hr'⟩ => ?_⟩
-  apply Subtype.ext
-  rw [hr, hr']
+    Subsingleton {r : R // r = canonicalResolvent n q} :=
+  -- Term-mode: `rw [hr, hr']` fails (motive not type-correct — `r`
+  -- occurs in the subtype proof); both vals equal `canonicalResolvent`.
+  ⟨fun ⟨r, hr⟩ ⟨r', hr'⟩ => Subtype.ext (hr.trans hr'.symm)⟩
 
 /-- **Default instance** for the strengthened class: any concrete
     `(n, q)` with the pole non-vanishing hypothesis (carried as a
