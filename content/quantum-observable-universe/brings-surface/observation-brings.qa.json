@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "307f1be95b28",
+          "ts": "f38aa7760071"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark specialises def:observation to Bring's surface context; squarely in brings-surface chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:22:01.651Z",
+        "reviewed_sha": "e6279a64a6969659e491c6db3058286afc924a67",
+        "notes": "Well-placed remark."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:22:01.651Z"
 }
