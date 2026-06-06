@@ -115,46 +115,6 @@
         "notes": "Label 'prop:atom-braid-exterior-algebra' → expected 'atom_braid_exterior_algebra'; Lean declares: AtomBraidExteriorAlgebraStructure, deuteron_total_dim_eq_32, tritium_total_dim_eq_256, helium3_total_dim_eq_128, helium4_total_dim_eq_1024.... Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "af3f69d226c8",
-          "ts": "07d3e99605cc",
-          "lean": "965c4bbd245e"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-application/conj-atom-braid-exterior-algebra.lean:35: invalid 'import' command, it must be used in the beginning of the file"
-      },
-      {
-        "field_hash": {
-          "md": "1b4058a4ae72",
-          "ts": "1864ae564004",
-          "lean": "c47872e1e8b2"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -1196,7 +1156,27 @@
         "reviewed_sha": "0a73e5bd3c7a5df217fd67a7dc869156fb4a2bc3",
         "notes": "Verified across D/T/3He/4He; no sibling in this chapter carries the Pascal-row filtration-shape claim; correctly placed"
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "7905284a53d8",
+          "ts": "1864ae564004",
+          "lean": "c47872e1e8b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:52:06.986Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

@@ -2351,46 +2351,6 @@
         "notes": "Label 'prop:em-coupling-projection' → expected 'em_coupling_projection'; Lean declares: R_q, q_param, q_inv_param, qInteger, antisymmetricEigenvalue.... Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "533e5263343b",
-          "ts": "1b38f09a6bbc",
-          "lean": "1b8aab9f4e07"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/em-coupling-projection.lean:24: invalid 'import' command, it must be used in the beginning of the file"
-      },
-      {
-        "field_hash": {
-          "md": "f0a6f39a9422",
-          "ts": "bb9d403b9beb",
-          "lean": "9ad5823caf8c"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2856,7 +2816,27 @@
         "reviewed_sha": "1d7be05efa7adf6c65c178599c3276a10c056531",
         "notes": "Numerical evaluation sections should be segregated from the pre-archimedean proof."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "f0a6f39a9422",
+          "ts": "bb9d403b9beb",
+          "lean": "9ad5823caf8c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

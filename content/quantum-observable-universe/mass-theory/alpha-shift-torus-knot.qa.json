@@ -2325,44 +2325,6 @@
         "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "11363ce05d78",
-          "ts": "ae3dc67a81b1",
-          "lean": "ba3ef07bcd72"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
-      },
-      {
-        "field_hash": {
-          "md": "a686cd99a1d8",
-          "ts": "8b69ac0a0b42"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-        "notes": "block has no .lean sibling"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2872,7 +2834,27 @@
         "reviewed_at": "2026-06-04T17:13:51.346Z",
         "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "a686cd99a1d8",
+          "ts": "8b69ac0a0b42"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

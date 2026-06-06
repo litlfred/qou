@@ -1648,46 +1648,6 @@
         "notes": "Label 'def:categorical-neutron' → expected 'categorical_neutron'; Lean declares: CategoricalNeutron, q, q, neutron_mass, neutron_mass_from_substrate_axiom.... Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "fba8384fb754",
-          "ts": "2d7761f4c0db",
-          "lean": "cec42f2d2869"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/categorical-neutron.lean:17: invalid 'import' command, it must be used in the beginning of the file"
-      },
-      {
-        "field_hash": {
-          "md": "fba8384fb754",
-          "ts": "d17189baf2c6",
-          "lean": "ed2c960f1ded"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2043,7 +2003,27 @@
         "reviewed_sha": "7d6744560a5b9c26a4ca80447b48bdfcff48dce6",
         "notes": "Archimedean specialisation correctly declared; no wall violation"
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "fba8384fb754",
+          "ts": "d17189baf2c6",
+          "lean": "ed2c960f1ded"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

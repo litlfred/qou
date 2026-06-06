@@ -2198,47 +2198,6 @@
         "notes": "Label 'prop:composite-crossing-parity' → expected 'composite_crossing_parity'; Lean declares: compositeCrossingNumber, crossingBudget, crossing_parity_eq_Z, even_Z_even_crossing, odd_Z_odd_crossing.... Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "aad49335d404",
-          "ts": "11160cd421fc",
-          "lean": "8092604c1978"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/information-theory/composite-crossing-parity.lean:9: object file '/home/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist"
-      },
-      {
-        "field_hash": {
-          "md": "aad49335d404",
-          "ts": "11160cd421fc",
-          "lean": "8092604c1978"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2657,7 +2616,28 @@
         "reviewed_sha": "85f6345f337b0fb6774b16c1bcbc0c1cfa084587",
         "notes": "No proof section to audit."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "aad49335d404",
+          "ts": "11160cd421fc",
+          "lean": "8092604c1978"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

@@ -4,11 +4,13 @@
   "kind": "proposition",
   "paths": {
     "ts": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.md"
+    "md": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.md",
+    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot.lean"
   },
   "source_hashes": {
     "md": "13359b786689",
-    "ts": "d4351927d0e1"
+    "ts": "d4351927d0e1",
+    "lean": "191df144b4ec"
   },
   "criteria": {
     "voice-statement-no-interpretation": [
@@ -115,7 +117,27 @@
         "reviewed_sha": "3d3180d37669bf24fd49bf5280e395aa5efbf69c",
         "notes": "Lean formalization absent."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "13359b786689",
+          "ts": "d4351927d0e1",
+          "lean": "191df144b4ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-05T15:06:48.722Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

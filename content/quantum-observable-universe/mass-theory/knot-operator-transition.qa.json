@@ -2219,44 +2219,6 @@
         "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "652e42748eca",
-          "lean": "1398f79e4e5b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
-      },
-      {
-        "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60",
-          "lean": "1398f79e4e5b"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2692,7 +2654,27 @@
         "reviewed_sha": "c3a0ea9b13ea915ea64a2edcc38a11e9b640fd17",
         "notes": "No proof in Lean — only a type scaffold; the proposition's square is unsubstantiated."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "97b1170b575b",
+          "ts": "23d5af277a60",
+          "lean": "1398f79e4e5b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-06T00:48:34.389Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

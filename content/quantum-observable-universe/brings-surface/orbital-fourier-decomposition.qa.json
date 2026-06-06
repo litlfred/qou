@@ -2317,47 +2317,6 @@
         "notes": "Label 'prop:orbital-fourier-decomposition' → expected 'orbital_fourier_decomposition'; Lean declares: modeSpaceDim, orbital_dim_eq_square, total_states_eq, QN, magnetic_count.... Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "acf9c37dbd24",
-          "ts": "5747d5dddeab",
-          "lean": "6f0c7c632422"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean:9: unknown namespace `Finset` | content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean:21: unexpected token '('; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bui | content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean:25: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean:30: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean:39: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu"
-      },
-      {
-        "field_hash": {
-          "md": "772f30c815e2",
-          "ts": "24ba8bd555c7",
-          "lean": "6f0c7c632422"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2708,7 +2667,28 @@
         "reviewed_sha": "abdfbad68d6d747740d3ae25486b39ee70438996",
         "notes": "placement and conjecture kind correct; uses conj:orbital-space-normal-bundle as expected dependency"
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "772f30c815e2",
+          "ts": "24ba8bd555c7",
+          "lean": "6f0c7c632422"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
+      }
     ]
   },
-  "updated_at": "2026-06-06T01:27:11.082Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

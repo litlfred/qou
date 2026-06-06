@@ -1631,47 +1631,6 @@
         "notes": "Label 'def:lepton-number-categorical' → expected 'lepton_number_categorical'; Lean declares: LeptonNumber, SkeinSmoothing, betaMinusSmoothing, betaPlusSmoothing, lepton_number_conservation. Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "ef6e8569a507",
-          "ts": "532389f0b57e",
-          "lean": "43c1ef62ed27"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean:14: invalid 'import' command, it must be used in the beginning of the file"
-      },
-      {
-        "field_hash": {
-          "md": "ef6e8569a507",
-          "ts": "532389f0b57e",
-          "lean": "7aae58b1c87a"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2010,7 +1969,28 @@
         "reviewed_sha": "61d5e1fd58dc7e1c7f8dff89171c8cfc85c86285",
         "notes": "Statement is generic-ring side; archimedean note is properly scoped to Lean sibling."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "ef6e8569a507",
+          "ts": "532389f0b57e",
+          "lean": "7aae58b1c87a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:58:44.728Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

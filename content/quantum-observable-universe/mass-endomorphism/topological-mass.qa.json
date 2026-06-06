@@ -2198,46 +2198,6 @@
         "notes": "Label 'thm:topological-mass' → expected 'topological_mass'; Lean declares: categoricalMass, MassDecomposition, mass_upper_bound, norm_additivity_of_nonneg_traces, mass_decomposition_exact.... Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "e05785ace224",
-          "ts": "e728f9fc32e1",
-          "lean": "2db536a8c0f4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/topological-mass.lean:26: invalid 'import' command, it must be used in the beginning of the file"
-      },
-      {
-        "field_hash": {
-          "md": "e05785ace224",
-          "ts": "e728f9fc32e1",
-          "lean": "04a422ad3fc4"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2656,7 +2616,27 @@
         "reviewed_sha": "7b0e1f0ee6112b6353c3364c283d17a71d39969c",
         "notes": "No archimedean constructs in proof body."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "e728f9fc32e1",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-05T15:30:28.167Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

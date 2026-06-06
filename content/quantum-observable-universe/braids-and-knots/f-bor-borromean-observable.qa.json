@@ -821,7 +821,27 @@
         "reviewed_sha": "b4776d23aebd94c8004980476cade9fe8e0b39c9",
         "notes": "Correctly generic; wall respected."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "bf6f4bf23895",
+          "ts": "17da4fb4bda2",
+          "lean": "286fd2ed71af"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-06T01:27:51.895Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

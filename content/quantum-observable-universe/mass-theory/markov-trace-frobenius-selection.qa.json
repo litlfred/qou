@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean"
   },
   "source_hashes": {
-    "md": "857b92aa4f5f",
-    "ts": "1042a11908f9",
+    "md": "3cb26c1d1e53",
+    "ts": "08d6f4716e14",
     "lean": "e14c9a48ed3b"
   },
   "criteria": {
@@ -984,7 +984,27 @@
         "reviewed_sha": "0184c88c8459f4e02ee9ff6fc0ca1d34d59c77ec",
         "notes": "Narrative and Lean structure match: non-degeneracy then uniqueness."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "3cb26c1d1e53",
+          "ts": "08d6f4716e14",
+          "lean": "e14c9a48ed3b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-06T01:32:05.825Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

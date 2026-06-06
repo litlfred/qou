@@ -1568,26 +1568,6 @@
         "notes": "Label 'rem:elliptic-stability-locus' → expected 'elliptic_stability_locus'; Lean declares: EllipticStabilityLocus, elliptic_stability_locus_conjecture. Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "829b27166d23",
-          "ts": "7e019c694e5f",
-          "lean": "50e2050ba273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {

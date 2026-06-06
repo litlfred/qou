@@ -2198,47 +2198,6 @@
         "notes": "Label 'prop:quantum-characteristic-classes-unique' → expected 'quantum_characteristic_classes_unique'; Lean declares: QuantumCharClasses.unique_axiom, QuantumCharClasses.unique. Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "c3a35c70e0dd",
-          "ts": "2ef414d405e5",
-          "lean": "700f39cbcb77"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-unique.lean:14: invalid 'import' command, it must be used in the beginning of the file"
-      },
-      {
-        "field_hash": {
-          "md": "c3a35c70e0dd",
-          "ts": "2ef414d405e5",
-          "lean": "8775f3671fac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2589,7 +2548,28 @@
         "reviewed_sha": "5594817f522ec83e927910be09535240462ec0b8",
         "notes": "No proof machinery to check here."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "c3a35c70e0dd",
+          "ts": "2ef414d405e5",
+          "lean": "8775f3671fac"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
+      }
     ]
   },
-  "updated_at": "2026-06-05T15:51:47.324Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

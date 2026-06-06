@@ -2371,46 +2371,6 @@
         "notes": "Gap is notational/scope: injectivity vs full iso. Reader can reconcile; not theorem-changing for the main structural point."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "f7fd30e83e5d",
-          "ts": "f2f4557ab629",
-          "lean": "10859d9beab0"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-application/frobenius-self-duality-forces-lp-dual-extraction.lean:32: unexpected token ')'; expected term | content/quantum-observable-universe/mass-application/frobenius-self-duality-forces-lp-dual-extraction.lean:33: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/mass-application/frobenius-self-duality-forces-lp-dual-extraction.lean:35: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/mass-application/frobenius-self-duality-forces-lp-dual-extraction.lean:37: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu | content/quantum-observable-universe/mass-application/frobenius-self-duality-forces-lp-dual-extraction.lean:39: unexpected identifier; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'bu"
-      },
-      {
-        "field_hash": {
-          "md": "e1dbc91b6d24",
-          "ts": "221545be3a9d",
-          "lean": "10859d9beab0"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2863,7 +2823,27 @@
         "reviewed_sha": "ec5c795fa56a7b1aeefd17fc58eb52af8cec0be2",
         "notes": "Proof method matches generic-ring statement."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "e1dbc91b6d24",
+          "ts": "221545be3a9d",
+          "lean": "10859d9beab0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-05T15:31:02.429Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

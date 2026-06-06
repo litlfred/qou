@@ -1601,47 +1601,6 @@
         "notes": "Label 'prop:n-v-leading-order-derivation' → expected 'n_v_leading_order_derivation'; Lean declares: q_0_real, m_e_real, v_ew_real, N_v, v_over_m_e_bridge.... Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "546954fbe409",
-          "ts": "9770bf45270b",
-          "lean": "9006458d3fcc"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean:106: unknown tactic | content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean:106: unsolved goals | content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean:99: unsolved goals"
-      },
-      {
-        "field_hash": {
-          "md": "546954fbe409",
-          "ts": "9770bf45270b",
-          "lean": "9006458d3fcc"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -1958,7 +1917,28 @@
         "reviewed_sha": "ea7bc1a6b5755336628499d1f277cc0155c9edc1",
         "notes": "Block correctly placed; derives an observable (EW scale) from QOU substrate."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "546954fbe409",
+          "ts": "9770bf45270b",
+          "lean": "9006458d3fcc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
+      }
     ]
   },
-  "updated_at": "2026-06-06T00:35:52.332Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

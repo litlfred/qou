@@ -1568,28 +1568,6 @@
         "notes": "Label 'rem:periodic-table-demand' → expected 'periodic_table_demand'; Lean declares: PeriodicTableDemand, periodic_table_demand_conjecture, he4_doubly_magic, o16_doubly_magic, pb208_doubly_magic.... Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "5363a001f5b4",
-          "ts": "d56dcbf7d2fc",
-          "lean": "b6ce4b3c866a"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1: object file '/home/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {

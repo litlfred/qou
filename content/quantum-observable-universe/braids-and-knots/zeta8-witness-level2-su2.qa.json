@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean"
   },
   "source_hashes": {
-    "md": "0812365f7b03",
-    "ts": "b68a457af648",
-    "lean": "94da38ce38b0"
+    "md": "c9a736333a7c",
+    "ts": "a7c34f50136e",
+    "lean": "578f42385192"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -886,9 +886,9 @@
     "proof-lean-compiles": [
       {
         "field_hash": {
-          "md": "f8720d3da75f",
-          "ts": "b68a457af648",
-          "lean": "94da38ce38b0"
+          "md": "c9a736333a7c",
+          "ts": "a7c34f50136e",
+          "lean": "578f42385192"
         },
         "result": "n/a",
         "reviewer": {
@@ -896,13 +896,13 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
           "deps_hash": "4b9cd43e52e5"
         },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
       }
     ]
   },
-  "updated_at": "2026-06-05T14:52:06.798Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

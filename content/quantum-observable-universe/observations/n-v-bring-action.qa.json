@@ -1585,47 +1585,6 @@
         "notes": "Label 'prop:n-v-bring-action' → expected 'n_v_bring_action'; Lean declares: s5_acts_on_ew_slice, rescale_EW_eq_120, NVBringAction, instance_from_axiom. Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "bb18d4c8fc34",
-          "ts": "cf23accf1f7c",
-          "lean": "fbbaee3a6b26"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.lean:37: unexpected token 'Σ'; expected '_' or identifier | content/quantum-observable-universe/observations/n-v-bring-action.lean:41: unexpected token 'Σ'; expected '_' or identifier | content/quantum-observable-universe/observations/n-v-bring-action.lean:46: unexpected token 'Σ'; expected '_' or identifier | content/quantum-observable-universe/observations/n-v-bring-action.lean:87: unexpected token 'Σ'; expected '_' or identifier | content/quantum-observable-universe/observations/n-v-bring-action.lean:102: unexpected token 'Σ'; expected '_' or identifier"
-      },
-      {
-        "field_hash": {
-          "md": "bb18d4c8fc34",
-          "ts": "125132f73dd4",
-          "lean": "4aee694740ed"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -1959,7 +1918,28 @@
         "reviewed_sha": "9c9a1851255ce032081117f3851d4e21e98f962d",
         "notes": "Block is correctly placed in observations; no misfile."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "bb18d4c8fc34",
+          "ts": "125132f73dd4",
+          "lean": "4aee694740ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
+      }
     ]
   },
-  "updated_at": "2026-06-06T00:34:22.125Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

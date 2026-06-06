@@ -2370,46 +2370,6 @@
         "notes": "Lean is a sorry-free stub proving True, not the actual proposition"
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "af38f17b533a",
-          "ts": "8b00c97b5c22",
-          "lean": "ee5e919d94ae"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/feynman-categorical-trace.lean:10: object file '/home/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/FeynmanPathIntegrals.olean' of module QOU.FeynmanPathIntegrals does not exist"
-      },
-      {
-        "field_hash": {
-          "md": "4c5301004d2c",
-          "ts": "8b00c97b5c22",
-          "lean": "ee5e919d94ae"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2898,7 +2858,27 @@
         "reviewed_sha": "c0b4a9c4f200d6fb0610fe0207f6c8fb9a16e336",
         "notes": "Nothing to test for wall violations"
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "4c5301004d2c",
+          "ts": "8b00c97b5c22",
+          "lean": "ee5e919d94ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:13:54.102Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

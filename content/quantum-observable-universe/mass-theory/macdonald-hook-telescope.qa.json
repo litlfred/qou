@@ -2182,46 +2182,6 @@
         "notes": "Label 'prop:macdonald-hook-telescope' aligns with Lean declaration. Sorry-free."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "a8e0949b58fd",
-          "ts": "bcfa240cb527",
-          "lean": "57fd337c8d27"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-application/macdonald-hook-telescope.lean:38: object file '/home/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Basic.olean' of module Mathlib.Algebra.BigOperators.Basic does not exist"
-      },
-      {
-        "field_hash": {
-          "md": "a8e0949b58fd",
-          "ts": "bcfa240cb527",
-          "lean": "57fd337c8d27"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -2608,7 +2568,27 @@
         "reviewed_sha": "99032875eeabb21640d614fd9843bc33d3ac8ca3",
         "notes": "Proof is algebraic; empirical cross-check is in computation field, not proof body."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "a8e0949b58fd",
+          "ts": "bcfa240cb527",
+          "lean": "57fd337c8d27"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-06T01:17:31.735Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

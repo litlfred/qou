@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean"
   },
   "source_hashes": {
-    "md": "1ea0c2338f67",
-    "ts": "a819fa3b4e6c",
+    "md": "e1566fe05f7b",
+    "ts": "2704de932b44",
     "lean": "31f157f54b06"
   },
   "criteria": {
@@ -1071,7 +1071,27 @@
         "reviewed_sha": "8997dd2ed7e95206cb0969dfc874eac15e33df1e",
         "notes": "Faithful conditional-class encoding (§3b-cond); ColorFlavorCompatible is the named open class"
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "e1566fe05f7b",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-06T02:12:28.980Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

@@ -122,7 +122,27 @@
         "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
         "notes": "Quantifiers, hypothesis (ZRecursionCoeffs instance, n ≥ 1), and conclusion match narrative statement."
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "1ecb38069900"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-05T15:18:20.880Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

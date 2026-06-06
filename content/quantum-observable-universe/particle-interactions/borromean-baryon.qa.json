@@ -1615,47 +1615,6 @@
         "notes": "Label 'def:borromean-baryon' → expected 'borromean_baryon'; Lean declares: BorromeanBaryon, BorromeanBaryon.charge, borromean_volume_pos. Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "8f4aafab935d",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:13: failed to synthesize | content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:20: unknown tactic | content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:20: failed to synthesize | content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:20: failed to synthesize | content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:20: failed to synthesize"
-      },
-      {
-        "field_hash": {
-          "md": "8f4aafab935d",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -1989,7 +1948,28 @@
         "reviewed_at": "2026-06-04T17:38:55.825Z",
         "reviewed_sha": "10259933c791246a0070a8b46db04de1c4ab5169"
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "8f4aafab935d",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49",
+        "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }

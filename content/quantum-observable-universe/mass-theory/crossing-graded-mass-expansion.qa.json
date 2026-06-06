@@ -1585,46 +1585,6 @@
         "notes": "Label 'prop:crossing-graded-mass-expansion' → expected 'crossing_graded_mass_expansion'; Lean declares: DepthScalar, CrossingGradedMassExpansion, foldl_const_update_eq_last, reverse_range_succ_getLast, mass_at_zero_depth. Structural match via content."
       }
     ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "c68f66bad3fa",
-          "ts": "7349606b8679",
-          "lean": "7586a453eae6"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "70853d274436",
-          "script_commit_sha": "0127e01716a4ca9cc80ed22ef510da92efd2d6d5",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-05-27T08:55:11.920Z",
-        "reviewed_sha": "101d00307c0376fa94a0687413d5ebe45d7a2e48",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.lean:79: Tactic `rewrite` failed: Did not find an occurrence of the pattern | content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.lean:99: Tactic `rewrite` failed: motive is not type correct: | content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.lean:135: unknown tactic | content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.lean:133: unsolved goals | content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.lean:125: unsolved goals"
-      },
-      {
-        "field_hash": {
-          "md": "c68f66bad3fa",
-          "ts": "7349606b8679",
-          "lean": "7586a453eae6"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "cf383b911867",
-          "script_commit_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb",
-          "deps_hash": "4b9cd43e52e5"
-        },
-        "reviewed_at": "2026-06-05T14:22:44.851Z",
-        "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
-      }
-    ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
@@ -1943,7 +1903,27 @@
         "reviewed_sha": "f4d1389803b5971a151503d6f7efc59f0d94718f",
         "notes": "On-topic conjecture; no sibling redundancy"
       }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "c68f66bad3fa",
+          "ts": "7349606b8679",
+          "lean": "7586a453eae6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "cf383b911867",
+          "script_commit_sha": "72a172ea6137d74a219a2dc4f0ee14cf51d38c67",
+          "deps_hash": "4b9cd43e52e5"
+        },
+        "reviewed_at": "2026-06-06T20:22:45.917Z",
+        "reviewed_sha": "a6afd2340684e6fdf8ab96bf46d58279608c8b49"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-06T20:22:45.917Z"
 }
