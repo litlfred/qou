@@ -9,8 +9,9 @@ prolonged periods:
     τ = (a_n + a_{n+2}) / a_{n+1} .
 
 Self-validation: the torus periods `P_m = cosh((2m+1)η₀)/(2cosh η₀)` satisfy
-`det = 1` with `τ = 2cosh(2η₀)`; this module recovers that from `P_2,P_3,P_4`
-and verifies the recurrence on `P_5`. For the hyperbolic binding sector,
+`det = 1` with `τ = 2cosh(2η₀)`; this module recovers that from `P_1,P_2,P_3`
+and verifies the recurrence on every window through `P_5`. For the hyperbolic
+binding sector,
 `a_D⁽⁴⁾` = Family-A is wired; `a_D⁽²⁾, a_D⁽³⁾` are gated on #1765 — those
 three values then yield `τ` (hence `R`, hence P1 unconditional).
 """
