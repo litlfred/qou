@@ -645,8 +645,17 @@ class WitnessBuilder:
 # Ephemeral meta fields that change on every validator run regardless of
 # whether the substantive content drifted. Masked in the equality check
 # so the on-disk witness is preserved when only these would change.
+#
+# Mirror of `qou_substrate.witness._EPHEMERAL_META_FIELDS` — keep in
+# sync. Per Copilot review on PR #1901: `environment` (Python +
+# numeric-library versions), `elapsed_seconds`, `elapsed_sec` added
+# so Python-version swaps + per-item timing differences don't
+# trigger rewrites of otherwise-identical witnesses. The fields stay
+# IN the saved witness (for attribution / audit trail) but are
+# stripped BEFORE the substantive-equality comparison.
 _EPHEMERAL_META_FIELDS = frozenset({
     "commitSha", "scriptCommitSha", "computedAt", "durationMs",
+    "environment", "elapsed_seconds", "elapsed_sec",
 })
 
 
