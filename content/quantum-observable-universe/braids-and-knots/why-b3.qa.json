@@ -1857,7 +1857,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "In 'Categorical origin of braiding: the braid action' section (braids-and-knots.ts:38); explains why first nontrivial braid action is on V^{⊗3} / B_3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:27:15.785Z",
+        "reviewed_sha": "0d877205a13e72e29f69f0d1f42b959df8f41ca9",
+        "notes": "Motivational remark for B_3 / sigma_1,sigma_2 setup; core to this section's scope, no redundancy"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:27:15.785Z"
 }
