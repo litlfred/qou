@@ -41,7 +41,7 @@ The audit's 1-sentence summary now updates from "research-grade, multi-session" 
 
 The original audit explicitly notes: "m_μ is a fourth, *independent* miss (μ–p substrate tension floor, NOT the Q_β chain)". The m_μ formula on `main` is:
 
-```python
+```text
 # m_p_borromean_verification_50dps.py
 m_mu_pred = m_e · Vol(4_1) / ℏ_q²   (S = 0)
 ```
