@@ -2554,7 +2554,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "4123e4bea16a",
+          "lean": "7499b64a52aa"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "In 'Crossing energy and Coulomb charge' section; gives the skein q/q^-1 weighting and the Coulomb correction delta=1/2(q-q^-1), exactly the section's subject",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:42:49.683Z",
+        "reviewed_sha": "f3637d50ba899b25a19a74931beae9cd36d638f0",
+        "notes": "primary subject (Coulomb charge from skein asymmetry) matches section scope"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "4123e4bea16a",
+          "lean": "7499b64a52aa"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is the skein relation, delta_Coulomb formula, and the tanh(ln q) ratio plus its q=1 and q->inf limits; companion remark skein-crossing-asymmetry holds interpretation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:42:49.741Z",
+        "reviewed_sha": "f3637d50ba899b25a19a74931beae9cd36d638f0",
+        "notes": "limit behavior is part of the bare claim, not editorializing; interpretive remark exists"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "4123e4bea16a",
+          "lean": "7499b64a52aa"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Substrate chapter; statement uses 'For q>1' (ordering hypothesis) and tanh(ln q) (Real.log) with no inline §7c archimedean-wall banner in the .md; .lean carries a ground-ring/evaluation-layer note but .md does not",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:42:49.793Z",
+        "reviewed_sha": "f3637d50ba899b25a19a74931beae9cd36d638f0",
+        "notes": "regime mix in narrative statement; recommend explicit specialisation banner"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "4123e4bea16a",
+          "lean": "7499b64a52aa"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement-only block (no inline Proof. body); the tanh(ln q)/positivity-for-q>1 content is archimedean but presented in a substrate chapter without naming the R_q -> R specialisation point",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:42:49.838Z",
+        "reviewed_sha": "f3637d50ba899b25a19a74931beae9cd36d638f0",
+        "notes": ".lean commented-out proof uses linarith/nlinarith at evaluation layer; narrative does not name the specialisation"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:42:49.838Z"
 }
