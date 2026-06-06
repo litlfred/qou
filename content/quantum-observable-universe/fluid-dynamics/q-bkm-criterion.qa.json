@@ -2564,7 +2564,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "f8eaa89a1ac4",
+          "lean": "e6d444bc9d4e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "states the iff BKM criterion + equivalent contrapositive; closing para is a scope note (global for q>1 so integral finite; nontrivial only at q->1)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:27:24.351Z",
+        "reviewed_sha": "cc1a05cf24ab620ecadf38f3ca7ef79404f0755b",
+        "notes": "no mislocated physical-meaning prose; bare criterion plus applicability scope"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "f8eaa89a1ac4",
+          "lean": "e6d444bc9d4e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "in sec:ns-approaches; q-deformed Beale-Kato-Majda blowup criterion belongs with the NS regularity/blowup approaches",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:27:24.398Z",
+        "reviewed_sha": "cc1a05cf24ab620ecadf38f3ca7ef79404f0755b",
+        "notes": "BKM vorticity criterion is a regularity result; correctly filed in the approaches section, uses prop:q-ns-nonlinear-uniqueness"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "f8eaa89a1ac4",
+          "lean": "e6d444bc9d4e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q>1 + integral_0^T ||omega_q||_Linfty dt < infty are the q-NS regularity chapter's native archimedean regime, not a leaked pin",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:27:24.442Z",
+        "reviewed_sha": "cc1a05cf24ab620ecadf38f3ca7ef79404f0755b",
+        "notes": "L^infty vorticity integral + q>1 hypothesis expected in regularity chapter; no MeV/Real.* numeric pin without banner"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b67063f87d56",
+          "ts": "f8eaa89a1ac4",
+          "lean": "e6d444bc9d4e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "no **Proof.** body; statement-only block whose trailing note cites thm:q-ns-wellposedness as corollary, no standalone archimedean argument to adjudicate",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:27:24.489Z",
+        "reviewed_sha": "cc1a05cf24ab620ecadf38f3ca7ef79404f0755b",
+        "notes": "no proof body; nothing on the wrong side of the wall"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:27:24.489Z"
 }
