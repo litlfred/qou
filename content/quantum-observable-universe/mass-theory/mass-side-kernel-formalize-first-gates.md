@@ -7,7 +7,7 @@ mass-side gates simultaneously.*
 
 ## Why a parametric mass-side typeclass
 
-The Q_$\beta$ decay-side `BarEvenKernel` typeclass
+The $Q_\beta$ decay-side `BarEvenKernel` typeclass
 ([`prop:q-beta-bar-even-kernel-typeclass`](q-beta-bar-even-kernel-typeclass.md), PR #1893)
 bundles the four §4 invariants for any candidate Habiro element
 $F(q)$. The **mass-side analog** was scoped via the sympy
@@ -17,7 +17,7 @@ published `linking_weight` candidates (Family A, via-Jones, Bring
 color-tube).
 
 This proposition ships the **Lean side** — parametric conditional
-classes mirroring the Q_$\beta$ pattern, plus a unified
+classes mirroring the $Q_\beta$ pattern, plus a unified
 `MassSideKernel` typeclass that any future `linking_weight`
 candidate is evaluated against as a single class-instance attempt.
 
@@ -25,12 +25,24 @@ candidate is evaluated against as a single class-instance attempt.
 
 For any candidate `linking_weight` function $w : \mathbb{R} \to \mathbb{R}$:
 
-| # | invariant | mass-side form | status |
+| # | invariant | mass-side form | parametric class |
 |---|---|---|---|
-| (a) | **Anchor-stable** | $|w(q_\mu) - w(q_p)| / |w(q_p)| < 10^{-6}$ | parametric class `MassAnchorStableGateClass w` |
+| (a) | **Anchor-stable** | cross-anchor swing $|w(q_\mu) - w(q_p)| / |w(q_p)| < 10^{-6}$ | `MassAnchorStableGateClass swing` (where `swing` is the probe-computed magnitude) |
 | (b) | **Bar-even** | $w(q) = w(q^{-1})$ (as elements of the formal q-rationals) | covered by [`prop:q-beta-bar-even-kernel-invariant`](q-beta-bar-even-kernel-invariant.md) (CommRing R lemma) |
-| (c) | **q = 1 classical-limit shadow** | $w(1)$ equals a registered categorical anchor — **OPEN GAP** (no registered anchor for `linking_weight` per PR #1896) | parametric class `MassQOneShadowGateClass w anchor` — instance requires both a candidate AND a registered anchor |
-| (d) | **Direction sanity** | $|w(q_0)|$ is within $10\times$ of the substrate target ($\approx 2.46$, the CODATA-implied near-match per PR #1850) | parametric class `MassDirectionSanityGateClass w` |
+| (c) | **q = 1 classical-limit shadow** | $w(1)$ equals a registered categorical anchor — **OPEN GAP** (no registered anchor for `linking_weight` per PR #1896) | `MassQOneShadowGateClass w (anchor : Option ℝ)` — vacuous when `anchor = none`, requires $w(1) = a$ when `anchor = some a` |
+| (d) | **Direction sanity** | $\|m - \text{target}\| \le \text{threshold} \cdot \text{target}$ (additive form; substrate target $\approx 2.46$, the CODATA-implied near-match per PR #1850) | `MassDirectionSanityGateClass m_candidate` (where `m_candidate = |w(q_0)|`) |
+
+> **Direction-sanity formula note.** The Lean class uses the
+> **additive** form $|m - \text{target}| \le \text{threshold} \cdot \text{target}$
+> to match the PR #1890 `q-beta-direction-sanity-gate.lean` Lean
+> precedent. The companion sympy probes (e.g.
+> `mass_theory_formalize_first_invariants_probe.py`, PR #1896)
+> implement the **multiplicative** variant
+> $\max(|m| / \text{target}, \text{target} / |m|) \le \text{threshold}$
+> for the operational direction-magnitude check. The Lean form is
+> the more permissive scaffold — a multiplicative-passing candidate
+> automatically satisfies the additive form within the same
+> threshold magnitude.
 
 The §4(c) open gap is the **mass-side analog** of Q_$\beta$'s
 decay-side F(q) keystone — owner-gated multi-session research per
@@ -58,7 +70,7 @@ exists.
 ## Use in the formalize-first checklist
 
 This typeclass operationalises the mass-side complement to the
-Q_$\beta$ 7-step Δ_λ pre-flight checklist
+$Q_\beta$ 7-step $\Delta_\lambda$ pre-flight checklist
 ([`docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md`](../../../docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md)
 $\S 3$). For any candidate $w(q)$:
 
