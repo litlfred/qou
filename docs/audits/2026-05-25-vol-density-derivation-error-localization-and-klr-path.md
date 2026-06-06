@@ -1,7 +1,7 @@
 # VolDensity derivation review, error localization, and full KLR path forward
 
 **Date**: 2026-05-25
-**Branch**: `claude/geom-derivation-bug-squash-2026-05-25`
+**Branch**: `claude/vol-density-derivation-bug-squash-2026-05-25`
 **Status**: Audit + workplan. Reviews the canonical VolDensity derivation,
 localizes the mass-sweep errors in (jet-order × filtration × partition ×
 representation) space, and lays out concrete bug-squash paths for the

@@ -100,7 +100,7 @@ Open scope per user direction 2026-05-25. New branch `claude/kashiwara-crystal-o
 ## Coordination with siblings
 
 - **#1224** (synthesis): already coordinated. Probe-2 reframed as confirming canonical K-dependence, not falsifying framework.
-- **#1228** (geom-derivation): already coordinated. §10 action #1 (chi_lambda_eval.py wrapper) + Option E's general-n Gram needs converge.
+- **#1228** (vol-density-derivation): already coordinated. §10 action #1 (chi_lambda_eval.py wrapper) + Option E's general-n Gram needs converge.
 - **#1127** (Q_β fitting): GAP-A-4 reference shared. Probe-3 falsifies one form of `conj:rho-prefactor-structural`; Option E may provide the right form via crystal weights.
 - **#1246** (CAL-2 cohomological audit): potentially upstream of substrate q_0 derivation; relevant if Option E's KL classical-limit needs q_0 framing.
 

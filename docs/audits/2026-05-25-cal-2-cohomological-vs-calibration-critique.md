@@ -346,7 +346,7 @@ follow-ups are:
    integer k, then comparing to CODATA m_τ/m_e = 3477.23...) would
    be a concrete cohomological prediction. Currently this isn't
    surfaced.
-5. **Combine with PR #1228 (geom-derivation full KLR path).** That
+5. **Combine with PR #1228 (vol-density-derivation full KLR path).** That
    PR is doing the bug-isolation for the cohomological /
    KLR-multiplicity side. The CAL-2 critique here and the F2-F5
    findings could feed into PR #1228's §10 "concrete next actions"
@@ -359,7 +359,7 @@ new workplan," posting brief intent comments to:
 
 - **PR #1127** (Q_β fitting finding) — parallel critique for
   CAL-2; do not duplicate their Q_β work.
-- **PR #1228** (geom-derivation bug squash) — F2-F5 findings
+- **PR #1228** (vol-density-derivation bug squash) — F2-F5 findings
   potentially feed §10 action list.
 - **PR #1224** (delta-lambda closure synthesis) — Δ_λ is the
   partition-level analog of the q_0-level question raised here.
@@ -398,7 +398,7 @@ moving toward.
 
 ### Sibling PRs (open)
 - **#1127** — Q_β net-ansatz fitting finding + complex-q substrate lift
-- **#1228** — geom-derivation: error localization + full KLR path
+- **#1228** — vol-density-derivation: error localization + full KLR path
 - **#1224 / #1229** — Δ_λ closure synthesis + bar-invariance probe
 
 ### Compute / Lean

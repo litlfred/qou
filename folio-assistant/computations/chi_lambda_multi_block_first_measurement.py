@@ -152,7 +152,7 @@ def main() -> int:
         "the standard positive Borromean braid (σ_1 σ_2⁻¹)³. Establishes "
         "the multi-block distribution structure that production's single-"
         "block ν_SDP projection discards. Foundation for §10.1-§10.2 of "
-        "the geom-derivation-bug-squash audit (PR #1228)."
+        "the vol-density-derivation-bug-squash audit (PR #1228)."
     )
     w.add_parameter("q_0_f64", q0_f64)
     w.add_parameter("h_f64", h_f64)
