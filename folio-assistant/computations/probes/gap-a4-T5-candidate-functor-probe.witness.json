@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-06T03:47:33.056403+00:00",
-  "commitSha": "74958307b4db8a2eb0eb197991d26b732db806a3",
+  "computedAt": "2026-06-06T19:50:34.606828+00:00",
+  "commitSha": "7d9304f484035e64d2f1a55e22e14650f50e3a8a",
   "assertions": [
     {
       "name": "F1_standard_irrep_multiplicity_is_four",
@@ -17,8 +17,8 @@
   "durationMs": 14,
   "computation": "gap-a4-T5-candidate-functor-probe",
   "scriptFile": "gap_a4_T5_candidate_functor_probe.py",
-  "scriptHash": "0f0bf2f68ac5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f4039fddeb09",
+  "scriptCommitSha": "a9536c1e77323f3c569616951620e660a4ce60b0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

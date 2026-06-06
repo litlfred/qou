@@ -66,39 +66,17 @@ set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 from partition_utils import hook_lengths  # noqa: E402
 
+# Centralised q=1-safe q-integer / dim_q helpers + Q_0_50DPS
+# (addresses Gemini deduplication review on PR #1904).
+from _gap_a4_qsafe import (  # noqa: E402
+    Q_0_50DPS,
+    q_number,  # noqa: F401  — re-exported for any external consumer
+    q_factorial,  # noqa: F401
+    dim_q_partition,
+)
+
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
-
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
-
-# ── q-integers (q=1-safe, matches T4) ──────────────────────────────
-
-
-def q_number(n: int, q_0: mp.mpf) -> mp.mpf:
-    if n == 0:
-        return mp.mpf(0)
-    if abs(q_0 - 1) < mp.mpf("1e-30"):
-        return mp.mpf(n)
-    return (q_0 ** n - q_0 ** (-n)) / (q_0 - q_0 ** (-1))
-
-
-def q_factorial(n: int, q_0: mp.mpf) -> mp.mpf:
-    out = mp.mpf(1)
-    for k in range(1, n + 1):
-        out *= q_number(k, q_0)
-    return out
-
-
-def dim_q_partition(lam: tuple, q_0: mp.mpf) -> mp.mpf:
-    """dim_q(V_λ) = [n]_q! / Π_x [h(x)]_q. Q=1-safe wrapper around the
-    canonical murnaghan_nakayama.dim_q_lambda — same formula, same
-    hook-length input, routed through q=1-safe q_number."""
-    n = sum(lam)
-    num = q_factorial(n, q_0)
-    den = mp.mpf(1)
-    for h in hook_lengths(list(lam)):
-        den *= q_number(h, q_0)
-    return num / den
 
 
 # ── Young's branching rule: Res^{S_n}_{S_{n-1}} V_λ = ⊕ V_μ ─────────
