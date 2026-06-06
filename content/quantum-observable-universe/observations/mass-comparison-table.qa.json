@@ -2003,7 +2003,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "57f9f9f0c175",
+          "ts": "421efe57d051"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark presents predicted vs observed masses in a comparison table; core observations-chapter content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:17:14.729Z",
+        "reviewed_sha": "f7edaaeaf9fa935dd2d8484ec4ec227cb10d3a1b",
+        "notes": "Interprets prop:topological-mass-formula; no sibling carries the same comparative claim."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:17:14.729Z"
 }
