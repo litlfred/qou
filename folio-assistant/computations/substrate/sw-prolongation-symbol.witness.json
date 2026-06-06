@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T19:37:41.679306+00:00",
-  "commitSha": "1d69c0fe1082576d757c9f4a034bb569ac3a3198",
+  "computedAt": "2026-06-06T03:36:41.449507+00:00",
+  "commitSha": "1d3c7ff63f168647efe0204ab220363d8e3f4312",
   "assertions": [
     {
       "name": "machinery_recovers_chebyshev_depth2",
@@ -16,8 +16,8 @@
   "durationMs": 10,
   "computation": "sw-prolongation-symbol",
   "scriptFile": "sw_prolongation_symbol.py",
-  "scriptHash": "08682efa4fa0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "078ba447643a",
+  "scriptCommitSha": "5e64e10067c390d43a815b6bf04f0e43b3d975ee",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -45,25 +45,33 @@ def minimal_recurrence(seq, max_depth: int | None = None, tol=None):
     N = len(seq)
     if tol is None:
         tol = mp.mpf(10) ** (-(COMPUTE_DPS - 8))
-    if max_depth is None:
-        max_depth = (N - 1) // 2  # need ≥ d eqns to solve + ≥1 to verify
+    # Falsifiability guarantee: a depth-`d` claim needs ≥ d equations to solve
+    # AND ≥ 1 out-of-sample window to verify, i.e. N ≥ 2d+1 ⇒ d ≤ (N-1)//2.
+    # Cap `max_depth` at this bound regardless of how it is supplied, so the
+    # routine can never degrade into a pure fit (Copilot #1903).
+    hard_max = (N - 1) // 2
+    max_depth = hard_max if max_depth is None else min(max_depth, hard_max)
     for d in range(1, max_depth + 1):
-        if N < d + 1:
-            break
-        # Solve c from the first d windows: A c = b, A[i][j]=seq[i+j], b[i]=seq[i+d].
-        A = mp.matrix([[seq[i + j] for j in range(d)] for i in range(d)])
-        b = mp.matrix([seq[i + d] for i in range(d)])
-        try:
-            c = mp.lu_solve(A, b)
-        except Exception:  # noqa: BLE001 — singular window, try next depth
-            continue
-        # Verify on every remaining window.
-        ok = True
-        for i in range(N - d):
-            pred = sum(c[j] * seq[i + j] for j in range(d))
-            if abs(pred - seq[i + d]) > tol:
-                ok = False
+        # Scan for a solvable d×d Hankel window (the first block may be singular
+        # by symmetry while a later one is not). Restrict the start `s` so at
+        # least one verification window lies beyond the solved block.
+        c = None
+        for s in range(0, N - 2 * d + 1):
+            A = mp.matrix([[seq[s + i + j] for j in range(d)] for i in range(d)])
+            b = mp.matrix([seq[s + i + d] for i in range(d)])
+            try:
+                c = mp.lu_solve(A, b)
                 break
+            except (ZeroDivisionError, ValueError):
+                # singular / numerically-unsuitable window — try the next start
+                continue
+        if c is None:
+            continue
+        # Verify the candidate on EVERY window, including the out-of-sample ones.
+        ok = all(
+            abs(sum(c[j] * seq[i + j] for j in range(d)) - seq[i + d]) <= tol
+            for i in range(N - d)
+        )
         if ok:
             return d, [c[j] for j in range(d)]
     return None
