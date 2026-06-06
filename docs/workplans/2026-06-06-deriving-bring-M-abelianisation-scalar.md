@@ -57,17 +57,31 @@ an additional geometric lemma (Griffiths transversality), labelled below as
 - **Griffiths transversality** (`∇F^p ⊂ F^{p−1}⊗Ω`) couples `H^{1,0}↔H^{0,1}`
   non-trivially, so `B` is non-scalar ⇒ **depth is exactly 2**.
 
-So `R = charpoly(B) = x² − tr(B)·x + det(B)` is **degree 2: two numbers**
-(`recurrence_kernel(B)` returns them once `B` is the 2×2 prolongation matrix).
-This is consistent with — and explains — the depth-2 Chebyshev recurrence of
-the torus sector: both are weight-1 (rank-2 Hodge) Picard–Fuchs.
+So `R = charpoly(B) = x² − tr(B)·x + det(B)` is degree 2. This is consistent
+with — and explains — the depth-2 Chebyshev recurrence of the torus sector:
+both are weight-1 (rank-2 Hodge) Picard–Fuchs.
 
-### The empirical cross-check (now a depth-2 test)
+### `det B = 1` — the second number is derived (one unknown left)
 
-Run `minimal_recurrence([a_D⁽²⁾, …, a_D⁽⁶⁾])`: it must return depth `2` with a
-constant kernel `[−det B, tr B]`. This needs `2·2+1 = 5` consecutive values
-(`a_D⁽²⁾…a_D⁽⁶⁾`); `a_D⁽⁴⁾` = Family-A is wired, the rest are #1765's per-knot
-`λ(L)` at `c = 1, 2, 4, 5`. A returned depth `≠ 2`, or a non-constant kernel,
+The Gauss–Manin monodromy preserves the curve's principal polarisation (the
+cup-product symplectic form, non-degenerate on the rank-2 `W`-Hodge plane by
+Hodge–Riemann), so `B ∈ Sp(2) = SL₂` ⇒ **`det B = 1`**
+([`prop:sl2-prolongation-recurrence`](../../content/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.md),
+Lean `sl2_prolongation_recurrence`, sorry-free). Hence
+
+> `R = x² − τ·x + 1`,  recurrence `a_D⁽ⁿ⁺²⁾ = τ·a_D⁽ⁿ⁺¹⁾ − a_D⁽ⁿ⁾`,
+
+with the **single** remaining unknown `τ = tr B`. The torus confirms it
+(`τ = 2cosh(2η₀)`, `det = 1`; `sl2_tau_solver.py`, 2/2). For the binding sector
+`τ = 2cosh θ` for a prolongation rapidity `θ`.
+
+### The empirical cross-check (now needs only THREE values)
+
+Because `det B = 1` removes one parameter, `τ` is solved from **three**
+consecutive periods: `τ = (a_D⁽²⁾ + a_D⁽⁴⁾)/a_D⁽³⁾` (`sl2_tau_solver.tau_from_three`),
+then verified by `a_D⁽⁵⁾ = τ·a_D⁽⁴⁾ − a_D⁽³⁾`. `a_D⁽⁴⁾` = Family-A is wired;
+`a_D⁽²⁾, a_D⁽³⁾` are #1765's `λ(L)` at `c = 1, 2`. A non-constant `τ` across
+windows, or a returned depth `≠ 2`, would
 **refutes** the prolongation-symbol identification.
 
 ## 3. Forward path

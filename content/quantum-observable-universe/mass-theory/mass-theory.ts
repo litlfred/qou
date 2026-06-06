@@ -189,6 +189,8 @@ export default chapter({
         "qdifference-kernel-prolongation-symbol",
         "prolonged-periods-fixed-depth",
         "prolonged-periods-fixed-depth-proof",
+        "sl2-prolongation-recurrence",
+        "sl2-prolongation-recurrence-proof",
         "lr-coefficient-hecke",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
