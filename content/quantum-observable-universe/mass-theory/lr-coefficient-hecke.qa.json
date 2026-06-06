@@ -923,7 +923,117 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a3e074046cbc",
+          "ts": "739f3567c673",
+          "lean": "0ed16f0fa4cc"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Sections 'Categorical interpretation', 'Role in Wenzl branching', 'Computational realisation', 'Status' add substantive interpretation/motivation inside the proposition block; no linked interprets: remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:08:55.796Z",
+        "reviewed_sha": "fbc2c733b6a6d13d2f1c4d990c3db47c284dc992",
+        "notes": "Interpretation prose should move to a companion remark; currently co-located."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a3e074046cbc",
+          "ts": "739f3567c673",
+          "lean": "0ed16f0fa4cc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "LR coefficients for Hecke branching are core mass-theory content; well-placed.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:09:15.709Z",
+        "reviewed_sha": "fbc2c733b6a6d13d2f1c4d990c3db47c284dc992",
+        "notes": "No misplacement."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a3e074046cbc",
+          "ts": "739f3567c673",
+          "lean": "0ed16f0fa4cc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely algebraic: partitions, integer multiplicities, no Real.* or numeric q values; header note correctly flags archimedean specialisation in sibling.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:09:33.830Z",
+        "reviewed_sha": "fbc2c733b6a6d13d2f1c4d990c3db47c284dc992",
+        "notes": "No wall violation in statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a3e074046cbc",
+          "ts": "739f3567c673",
+          "lean": "0ed16f0fa4cc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No Proof section in narrative; proof deferred to literature citations (Macdonald, Ariki); no archimedean machinery used.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:09:50.845Z",
+        "reviewed_sha": "fbc2c733b6a6d13d2f1c4d990c3db47c284dc992",
+        "notes": "Wall clean for proof body."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a3e074046cbc",
+          "ts": "739f3567c673",
+          "lean": "0ed16f0fa4cc"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Lean header says LR-tableau formula is recorded as class field but LRCoefficientHecke class has only coeff+two vanishing fields; tableau formula absent from Lean class.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:10:16.861Z",
+        "reviewed_sha": "fbc2c733b6a6d13d2f1c4d990c3db47c284dc992",
+        "notes": "Minor gap: narrative claims tableau formula as class field; Lean omits it (Sprint-2 note covers this)."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:10:16.861Z"
 }
