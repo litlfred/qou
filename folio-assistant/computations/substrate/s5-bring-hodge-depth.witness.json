@@ -1,0 +1,60 @@
+{
+  "engine": "python-fractions",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-06T04:02:33.671904+00:00",
+  "commitSha": "df69ac8b69adfc71975372f41269f1ca41d59ff2",
+  "assertions": [
+    {
+      "name": "W_41_irreducible",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "⟨χ_(4,1), χ_(4,1)⟩ = 1"
+    },
+    {
+      "name": "W_2111_irreducible",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "⟨χ_(2,1,1,1), χ_(2,1,1,1)⟩ = 1"
+    },
+    {
+      "name": "hodge_depth_is_2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "multiplicity of W in H¹ = 2W is 2"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "s5-bring-hodge-depth",
+  "scriptFile": "s5_bring_hodge_depth.py",
+  "scriptHash": "473e32d0d042",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "auditOnly": "docs/workplans/2026-06-06-deriving-bring-M-abelianisation-scalar.md",
+  "data": {
+    "W_41_irreducible_norm": "1",
+    "W_2111_irreducible_norm": "1",
+    "W_41_vs_W_2111_inner": "0",
+    "hodge_depth_via_41": 2,
+    "hodge_depth_via_2111": 2,
+    "conclusion": "H¹ = 2·W ⇒ M = id_W ⊗ B (2×2) ⇒ depth ≤ 2; Griffiths transversality ⇒ depth exactly 2; R = charpoly(B), degree 2",
+    "character_source": "probes/gap_a4_T4_schur_weyl_icosahedral_probe.py (S₅/A₅ tables)"
+  }
+}

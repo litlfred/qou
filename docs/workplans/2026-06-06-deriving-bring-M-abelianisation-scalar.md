@@ -36,34 +36,44 @@ block and **restricts to the single block containing `λ_SW`**. The depth `d` is
 therefore the dimension of that block, read off the `S₅` character table on the
 8-dimensional `H¹` — a small integer.
 
-## 2. The immediate falsifiable test (depth-1 first)
+## 2. The depth is fixed *a priori* at 2 (S₅ Hodge theory)
 
-The cheapest hypothesis consistent with §1 is that the abelianised block is
-**rank-1**: then `M` is multiplication by a scalar `r` (the prolongation
-eigenvalue / local monodromy), giving a **depth-1** recurrence
-`a_D⁽ⁿ⁺¹⁾ = r · a_D⁽ⁿ⁾`. This is testable with only **three** values
-`a_D⁽²⁾, a_D⁽³⁾, a_D⁽⁴⁾`:
+The structural route (§3.2) is now **done** and supersedes the depth-1 guess.
+`s5_bring_hodge_depth.py` (verified, 3/3) establishes:
 
-> depth-1 holds  ⟺  `a_D⁽³⁾ / a_D⁽²⁾ = a_D⁽⁴⁾ / a_D⁽³⁾`  (= `r`).
+- `H⁰(Ω)` of Bring's curve is the **irreducible** 4-dim `S₅`-rep `W` (Riera–
+  Rodríguez 1992; either the standard rep `(4,1)` or its sign-twist
+  `(2,1,1,1)` — the computation confirms `⟨χ_W, χ_W⟩ = 1` for both, and that
+  they are distinct, `⟨χ_(4,1), χ_(2,1,1,1)⟩ = 0`).
+- Hence `H¹ = H^{1,0} ⊕ H^{0,1} = W ⊕ conj W = 2·W`: the multiplicity of `W`
+  in `H¹` is **2** (`⟨χ_{H¹}, χ_W⟩ = 2`).
+- `M` (Gauss–Manin) is `S₅`-equivariant, so by Schur it acts as
+  `id_W ⊗ B` with `B` a **2×2** matrix on the Hodge multiplicity space ⇒
+  **depth `≤ 2`**.
+- **Griffiths transversality** (`∇F^p ⊂ F^{p−1}⊗Ω`) couples `H^{1,0}↔H^{0,1}`
+  non-trivially, so `B` is non-scalar ⇒ **depth is exactly 2**.
 
-`a_D⁽⁴⁾` = Family-A is wired; the moment #1765 supplies `a_D⁽²⁾, a_D⁽³⁾` this is
-a one-line check (`minimal_recurrence` returns `(1, [r])` or escalates to the
-next depth). If it escalates, the depth is the §1b block dimension and
-`recurrence_kernel(M)` = `charpoly(M)` over that block gives `R`.
+So `R = charpoly(B) = x² − tr(B)·x + det(B)` is **degree 2: two numbers**
+(`recurrence_kernel(B)` returns them once `B` is the 2×2 prolongation matrix).
+This is consistent with — and explains — the depth-2 Chebyshev recurrence of
+the torus sector: both are weight-1 (rank-2 Hodge) Picard–Fuchs.
 
-**Caveat (do not overclaim depth-1).** The non-hyperbolic torus periods
-`cosh((2m+1)η₀)/(2cosh η₀)` are depth-2 (Chebyshev) — a *different* sequence
-(Vol = 0 sector). The abelianised **hyperbolic** binding periods may be depth-1
-or higher; §1 only bounds the depth small, it does not fix it at 1. The test
-decides.
+### The empirical cross-check (now a depth-2 test)
+
+Run `minimal_recurrence([a_D⁽²⁾, …, a_D⁽⁶⁾])`: it must return depth `2` with a
+constant kernel `[−det B, tr B]`. This needs `2·2+1 = 5` consecutive values
+(`a_D⁽²⁾…a_D⁽⁶⁾`); `a_D⁽⁴⁾` = Family-A is wired, the rest are #1765's per-knot
+`λ(L)` at `c = 1, 2, 4, 5`. A returned depth `≠ 2`, or a non-constant kernel,
+**refutes** the prolongation-symbol identification.
 
 ## 3. Forward path
 
-1. **Empirical (fast):** obtain `a_D⁽²,³⁾` from #1765; run `minimal_recurrence`
-   on `[a_D⁽²⁾, a_D⁽³⁾, a_D⁽⁴⁾, …]`. Depth-1 ⇒ `R` is one number, done.
-2. **Structural (rigorous):** compute the `S₅`-character decomposition of `H¹`
-   to fix the block dimension `d` a priori, then the local monodromy of
-   `λ_SW` at the branch points to get the `d×d` matrix `M`; `R = charpoly(M)`.
+1. **Structural (done):** `S₅`-character decomposition fixes depth = 2
+   (`s5_bring_hodge_depth.py`). Remaining: the explicit 2×2 prolongation
+   matrix `B` (local monodromy of `λ_SW` on the `W`-Hodge plane) ⇒
+   `R = charpoly(B)`.
+2. **Empirical (cross-check):** obtain `a_D⁽²,³,⁵,⁶⁾` from #1765; run
+   `minimal_recurrence` and confirm depth 2 + constant kernel.
 3. Either route closes the identification half ⇒ instantiate
    `QDifferenceKernelIsProlongationSymbol` ⇒ `thm:binding-closure-conditional`
    becomes unconditional ⇒ P1 (the many-body binding closure) is proved.
