@@ -29,7 +29,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from _li_2_q_util import geom_full_per_block, geom_full_borromean  # noqa: E402
+from _li_2_q_util import geom_full_per_block  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
@@ -57,7 +57,7 @@ if tr_M_D is None:
     print("FATAL: could not obtain canonical tr_M(β_D); reporting the Vol-only ratio instead.")
     # Even without the trace, the per-knot vs uniform mass ratio is Vol(6₂)/Vol(𝓑₃):
     print(f"  Vol(6₂)/Vol(𝓑₃) = {float(VOL_6_2/VOL_B3):.6f}  (per-knot mass = this × uniform mass, same trace)")
-    sys.exit(0)
+    sys.exit(1)  # gated: no canonical trace ⇒ non-zero so CI/automation don't read it as success
 
 print(f"tr_M(β_D) [{src}] = {mp.nstr(tr_M_D, 12)}")
 geom_perknot = geom_full_per_block(VOL_6_2, tr_M_D, q0)   # Vol(6₂)/ℏ² · tr_M
@@ -80,8 +80,8 @@ witness = {
     "discipline": "no fit; raw report per the per-block wiring discipline gate; nothing wired to production",
     "q0": str(q0), "tr_M_D": mp.nstr(tr_M_D, 20), "tr_M_source": src,
     "vol_6_2": str(VOL_6_2), "vol_b3_8G": mp.nstr(VOL_B3, 20),
-    "m_D_perknot_MeV": mp.nstr(m_perknot, 12), "err_perknot": float(err_pk),
-    "m_D_uniform_MeV": mp.nstr(m_uniform, 12), "err_uniform": float(err_un),
+    "m_D_perknot_MeV": mp.nstr(m_perknot, 12), "err_perknot": mp.nstr(err_pk, 15),
+    "m_D_uniform_MeV": mp.nstr(m_uniform, 12), "err_uniform": mp.nstr(err_un, 15),
     "m_D_AME_MeV": str(M_D_AME), "per_knot_improves": bool(better),
 }
 (HERE / "geom-full-deuteron-perknot.witness.json").write_text(json.dumps(witness, indent=2, ensure_ascii=False))
