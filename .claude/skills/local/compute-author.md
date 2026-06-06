@@ -325,6 +325,50 @@ exploratory), `proof-gap-audit.md` §K (declaring "open"), and the
 complement: formalize-first prunes *forward*; corpus-grep prunes
 *backward* against already-known results).
 
+### <a id="formalize-the-refutation"></a>§3.4 Formalize-the-refutation (turn a dead ansatz into a Lean disproof)
+
+Formalize-first (§3.3) prunes a class *before* the scan. Its mirror prunes
+*after*: when a numerical probe **refutes** a candidate closed form, do not
+let the refutation live only in prose + a witness JSON — **formalize the
+disproof** so the dead ansatz cannot be silently re-proposed. Adopted from
+AlphaProof Nexus's disproof path (numeric counterexample → formalized →
+proved it refutes the conjecture; arXiv:2605.22763, Green #57; see
+[`docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md`](../../../docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md)).
+
+**When to use.** A hypothesis-class member (a Δ_λ closure ansatz, a c_k
+closed form, a recursion kernel) has been refuted at a concrete anchor by a
+witnessed computation, and "do not re-propose this" is currently enforced
+only by reviewer vigilance (e.g. the Δ_λ "no 7th ansatz" rule).
+
+**Pattern.** State the ansatz and its refuting evaluation as a Lean lemma
+whose conclusion is the **inequality** at the witnessed anchor:
+
+```lean
+-- The ansatz: a proposed closed form for the deferred quantity.
+def ansatzΔ (lam : Partition) : ℝ := …   -- e.g. a Frobenius co-Casimir form
+
+-- The refutation: at the witnessed anchor the ansatz misses the required
+-- value by more than tolerance. requiredΔ_deuteron, the residual, and tol
+-- are :leanval-pinned to a witness, so the numbers cannot drift.
+theorem ansatzΔ_refuted_deuteron :
+    |ansatzΔ deuteronPartition - requiredΔ_deuteron| > tol_deuteron := by
+  -- unfold; norm_num / native_decide against the :leanval-pinned literals
+  -- Ref: <witness JSON producing requiredΔ_deuteron + residual>
+  sorry  -- replace with the discharged numeric inequality
+```
+
+**Discipline:**
+- The literals are `:leanval[…]`-pinned to the producing witness
+  (`witnessed-values.md`) — the disproof is only as current as its witness;
+  refresh per the witness-staleness rules.
+- The lemma's `-- Ref:` cites the **witness JSON**, not "we checked once".
+- File the disproof beside the conjecture it kills; the conjecture's `.md`
+  links to it, so a future agent grepping the ansatz finds the refutation
+  (the backward complement of formalize-first).
+- This **operationalises** the `production-vs-exploratory-discipline.md`
+  "no Nth fit" rules: a refuted ansatz becomes a machine-checked `≠`, not a
+  prose warning.
+
 ## §4. Rust-port patterns (when porting Python to Rust)
 
 ### §4.1 Type-mapping cheat-sheet
