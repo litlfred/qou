@@ -2566,7 +2566,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5b8d5c4cd251",
+          "ts": "7dbbff8d7006",
+          "lean": "08062aacb234"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement = categorical helicity + 4 numbered structural results (conservation, decomposition, Jones refinement, classical limit)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:33:54.538Z",
+        "reviewed_sha": "bf5ec993d18ecc781b191590454293d9a4337368",
+        "notes": "Items are part of the proposition's claim, not separate physical-meaning prose; no ## Interpretation heading."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5b8d5c4cd251",
+          "ts": "7dbbff8d7006",
+          "lean": "08062aacb234"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Listed in section 'Vortex spectrum and helicity'; subject is categorical helicity conservation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:33:54.581Z",
+        "reviewed_sha": "bf5ec993d18ecc781b191590454293d9a4337368",
+        "notes": "On-topic; no sibling carries the same claim."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5b8d5c4cd251",
+          "ts": "7dbbff8d7006",
+          "lean": "08062aacb234"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Generic q-deformed invariants; q->1 classical limit algebraic ([j]_q[j+1]_q -> j(j+1)); no Real./numeric/MeV",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:33:54.622Z",
+        "reviewed_sha": "bf5ec993d18ecc781b191590454293d9a4337368",
+        "notes": "Substrate chapter, no archimedean construct in statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5b8d5c4cd251",
+          "ts": "7dbbff8d7006",
+          "lean": "08062aacb234"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No **Proof.** body in .md; statement-only block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:33:54.665Z",
+        "reviewed_sha": "bf5ec993d18ecc781b191590454293d9a4337368",
+        "notes": "No archimedean machinery (no linarith/IVT/continuity/Real.) present."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:33:54.665Z"
 }
