@@ -30,11 +30,14 @@ for the $\Delta_\lambda$ gate, because the two coincide at the principal
 specialisation, $c_\lambda(q) = D_{w_0}(\lambda)$ (verified by
 `demazure-markov-trace.witness.json`).
 
-*Proof.* The predicted sum $\Sigma_{\mathrm{crystal}}(D)$ and the target
-$\tau(D)$ are evaluated at $q_0$ (50 dps) in
-[`folio-assistant/computations/rho-k-h3a-crystal.py`](#) (witness
+*Proof.* This is an **archimedean** statement: the predicted sum
+$\Sigma_{\mathrm{crystal}}(D)$ and the target $\tau(D)$ are obtained by
+**numerical evaluation** at the substrate $q_0$ (50 dps, post-$\tau$,
+real/rational arithmetic) in
+`folio-assistant/computations/rho-k-h3a-crystal.py` (witness
 `rho-k-h3a-crystal.witness.json`, field `residual_target_minus_sum`
-$\approx -1801.089$). The resulting inequality
+$\approx -1801.089$); the Lean sibling accordingly works over $\mathbb{Q}$
+with ordering and `abs` (CLAUDE.md §7c). The resulting inequality
 $\mathrm{tol} < \Sigma_{\mathrm{crystal}}(D) - \tau(D)$ is a decidable
 rational comparison, discharged by `norm_num` in the Lean sibling. $\square$
 
