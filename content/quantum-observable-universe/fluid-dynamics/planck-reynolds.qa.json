@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3e13faa02d40",
+          "ts": "985bd64eeec2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "remark on Re_q=2/(q-1) sits in section sec:q-hydrodynamics alongside brane-fluid/q-navier-stokes; turbulence/viscosity is the section topic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:25:52.885Z",
+        "reviewed_sha": "317dd03da799b23ccf940a5e1d526beb3a9c6494",
+        "notes": "Reynolds number + laminar-turbulent dial is squarely q-deformed hydrodynamics; interprets def:substrate-parameter, no sibling carries this claim"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:25:52.885Z"
 }
