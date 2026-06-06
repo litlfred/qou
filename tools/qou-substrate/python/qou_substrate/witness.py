@@ -693,8 +693,24 @@ class WitnessBuilder:
 # Ephemeral meta fields that change on every validator run regardless of
 # whether the substantive content drifted. Masked in the equality check
 # so the on-disk witness is preserved when only these would change.
+# Ephemeral meta fields — stripped before the "substantively equal"
+# comparison in `_witnesses_substantively_equal`, so on-disk witnesses
+# are PRESERVED when only these fields would change. Rationale:
+#   - commitSha, scriptCommitSha — change on every commit; would
+#     trigger CI drift loops if comparison were exact
+#   - computedAt, durationMs — wall-clock metadata; not numeric content
+#   - environment — Python + numeric-library versions; tracked for
+#     attribution (see capture_environment docstring) but a runtime
+#     swap alone (e.g. 3.11.15 ↔ 3.12.3) shouldn't trigger rewrites
+#     of otherwise-identical witnesses (Copilot review on PR #1901)
+#   - elapsed_seconds, elapsed_sec — per-item timing metrics buried
+#     in `data` payloads; same rationale as durationMs (Copilot review
+#     on PR #1901, 6 inline comments)
+# The fields are RECURSIVELY stripped — `elapsed_seconds` nested
+# inside `data.computations[...].elapsed_seconds` is caught too.
 _EPHEMERAL_META_FIELDS = frozenset({
     "commitSha", "scriptCommitSha", "computedAt", "durationMs",
+    "environment", "elapsed_seconds", "elapsed_sec",
 })
 
 
@@ -713,9 +729,17 @@ def _witnesses_substantively_equal(a: dict, b: dict) -> bool:
     """True iff `a` and `b` are equal after masking ephemeral meta fields.
 
     Substantive content includes: assertions, allPassed, computation,
-    description, data payload, parameters, scriptFile, scriptHash,
-    engineVersion. Ephemeral (masked): commitSha, scriptCommitSha,
-    computedAt, durationMs.
+    description, data payload (minus per-item timing), parameters,
+    scriptFile, scriptHash, engineVersion. Ephemeral (masked):
+    commitSha, scriptCommitSha, computedAt, durationMs, environment,
+    elapsed_seconds, elapsed_sec.
+
+    The expanded mask (vs the prior 4-field set) addresses Copilot
+    review on PR #1901: Python version swaps + per-item timing
+    differences shouldn't trigger witness rewrites of otherwise-
+    identical numeric content. The fields stay IN the saved witness
+    (for attribution / staleness audit trails) but are stripped
+    BEFORE the substantive-equality comparison.
     """
     return _strip_ephemeral_fields(a) == _strip_ephemeral_fields(b)
 
