@@ -92,6 +92,11 @@ from pathlib import Path  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 
+# Tolerance constants (Gemini review #1927: centralise the 1e-40 / 1e-30
+# magic values rather than re-typing them at three call sites).
+TOL_50DPS = mp.mpf("1e-40")  # closed-form vs polynomial agreement
+TOL_NEAR_ZERO = mp.mpf("1e-30")  # h ≈ 0 / q ≈ 1 classical-limit branch
+
 
 # ── The two forms of χ^{(2,1)}(β_Bor) ─────────────────────────────
 
@@ -139,7 +144,7 @@ def test_closed_form_agreement(q_0: mp.mpf) -> dict:
           f"{mp.nstr(chi_h, 14)}")
     diff = abs(chi_q - chi_h)
     print(f"  |diff|                                  = {mp.nstr(diff, 14)}")
-    match = diff < mp.mpf("1e-40")
+    match = diff < TOL_50DPS
     print(f"  Match: {'✓ (identity proven by derivation in docstring)' if match else '✗'}")
     return {
         "q_0": str(q_0),
@@ -160,15 +165,25 @@ def test_h_coefficients_at_sample_h_values() -> dict:
     samples = [mp.mpf("0.0"), mp.mpf("0.1"), mp.mpf("0.2"), mp.mpf("0.5")]
     rows = []
     for h_val in samples:
-        # Convert h to q via q = (h + √(h²+4))/2
-        if abs(h_val) < mp.mpf("1e-30"):
+        # Convert h to q via the inverse of h = q − q⁻¹.
+        # Standard form: q = (h + √(h²+4))/2 — numerically stable for
+        # h ≥ 0.  For h < 0 the standard form has catastrophic
+        # cancellation (Gemini review #1927); use the conjugate form
+        # q = 2 / (−h + √(h²+4)) which is mathematically equivalent and
+        # numerically stable for h < 0.
+        if abs(h_val) < TOL_NEAR_ZERO:
             q_val = mp.mpf(1)
-        else:
+        elif h_val > 0:
             q_val = (h_val + mp.sqrt(h_val ** 2 + 4)) / 2
+        else:
+            q_val = 2 / (-h_val + mp.sqrt(h_val ** 2 + 4))
         chi_q = chi_21_from_closed_form_in_q(q_val)
-        chi_h_poly = 2 - 3 * h_val ** 4 - h_val ** 6
+        # Use the single-source helper rather than re-encoding the
+        # polynomial inline (Copilot review #1927: avoid drift if the
+        # closed form is ever updated).
+        chi_h_poly = chi_21_from_polynomial_in_h(h_val)
         diff = abs(chi_q - chi_h_poly)
-        match = diff < mp.mpf("1e-40")
+        match = diff < TOL_50DPS
         print(f"  h = {mp.nstr(h_val, 4):>8}: "
               f"χ_q = {mp.nstr(chi_q, 12):>16}  "
               f"poly = {mp.nstr(chi_h_poly, 12):>16}  "
@@ -249,7 +264,8 @@ def main():
     w.add_parameter("q_0_50dps", Q_0_50DPS)
     w.add_data("discipline", "EXPLORATORY")
     w.add_data("production_wired", False)
-    w.add_data("q_0_recorded", float(q_0))
+    # q_0 is recorded as the full 50-dps string via add_parameter above;
+    # do NOT add a low-precision float copy (Copilot review #1927).
 
     print(f"  q₀ = {Q_0_50DPS[:18]}...")
     print()
@@ -269,7 +285,7 @@ def main():
         "polynomial_form_matches_closed_form_at_q0",
         computed=float(mp.mpf(closed["absolute_difference"])),
         expected=0.0,
-        tolerance=1e-40,
+        tolerance=float(TOL_50DPS),
         source=(
             "χ^{(2,1)}(β_Bor) = (−q^{12} + 3q^{10} − 3q^8 + 4q^6 − "
             "3q^4 + 3q^2 − 1)/q^6 = 2 − 3·h⁴ − h⁶ (where h = q − q⁻¹), "
@@ -283,7 +299,7 @@ def main():
         "polynomial_at_h_zero_equals_dim_two_one",
         computed=float(chi_at_h_zero),
         expected=2.0,
-        tolerance=1e-30,
+        tolerance=float(TOL_NEAR_ZERO),
         source=(
             "At h = 0 (q = 1), χ^{(2,1)}(β_Bor)|_{q=1} = "
             "χ^{(2,1)}(id) = d_(2,1) = 2 since β_Bor → id ∈ S_3."
