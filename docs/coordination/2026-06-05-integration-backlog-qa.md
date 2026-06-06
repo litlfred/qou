@@ -84,7 +84,30 @@ asset + `lake-cache/qou-v4-24-0` oleans, with the `lake env true` source-materia
   ready; verify with a fuller cache (or after compiling `CharZero.Lemmas` once). Reverted to
   the committed ℝ original to avoid leaving it broken.
 
-So **zeta8 + pion-half** are the verified generic-R wins (2 wall-side criticals cleared).
-**Checker gotchas (next agent):** `ARCHIMEDEAN_LEAN_RE` is a naive whole-file grep — it flags
-`norm_num`/`linarith`/`positivity` and the bare `ℝ` glyph **even inside comments**. Use
-`decide`/`ring`/`linear_combination`, and never write `ℝ` in a generic-R file's prose.
+## Wall-side drain results (2026-06-05, final)
+
+**5 wall-side criticals cleared, all verified `lake env lean` green** (the env held after the
+4th restore):
+- `zeta8` (ℂ→`IsPrimitiveRoot`), `pion-half` (ℝ→`CommRing R`), `higgs-t28`
+  (`norm_num`→`decide` + out-of-namespace class ref), `figure-eight-reeb-rotation`
+  (`Inv ℤ` bug → `{R}[Field R]` + `field_simp`), `meson-qcg-fusion-identity`
+  (docstring-before-imports + stale `GroupPower.Basic` import + orphan `/-- -/` +
+  `norm_num`→`decide`). Several were also previously-non-compiling — now green.
+
+**3 genuinely blocked (deferred, with reasons):**
+- `meson-kaon-pion-hecke-seifert` — `CharZero.Lemmas` out-of-cone in the cache.
+- `bring-residue-resolvent` — generic core + Phase-3 `q = 2 : ℝ` concrete witnesses → the
+  checker's **"both/mixed"** verdict (no banner escape). Converting Phase-3 to `ℚ` clears
+  wall-side BUT `decide` fails on ℚ `Ne` (kernel won't reduce `Rat`) and `norm_num` is the
+  flagged tactic → the witness proofs need a non-`norm_num` ℚ approach or a §7c **split** of
+  Phase-3 into a separate archimedean file. *Bonus bug found:* `bring_residue_subsingleton`
+  (line ~165) fails (`rw [hr, hr']` motive-not-type-correct); fix is term-mode
+  `⟨fun ⟨r,hr⟩ ⟨r',hr'⟩ => Subtype.ext (hr.trans hr'.symm)⟩`.
+- `chi-v21-hoefsmit` — genuinely archimedean (Hoefsmit `Real.sqrt`); imports whole
+  `Mathlib.Tactic` (out-of-cone). Make it pure-ℝ + acknowledgement banner in a fuller cache.
+
+**Checker note (CORRECTED for the current post-rebase checker):** `checkWallSide` **strips
+`/- -/` + `--` comments and `import` lines** before testing — so only *code-body* tokens flag
+(`norm_num`/`linarith`/`positivity`/`Real.*`/`: ℝ`/`(ℝ)`). A banner clears the
+*archimedean-without-acknowledgement* mode but **NOT** the *both/mixed* mode (that needs a real
+split or full conversion). Use `decide`/`ring`/`linear_combination`/`field_simp` in code.
