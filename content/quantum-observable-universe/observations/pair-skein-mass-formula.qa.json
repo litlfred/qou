@@ -2566,7 +2566,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "8320c25212a3",
+          "ts": "62d8470c7dcb",
+          "lean": "f1c7b47eec17"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare algebraic claim: S_ab formula + nucleon mass sum, no interpretation mixed in.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:12:52.822Z",
+        "reviewed_sha": "ffe504d10d8f17c824c994f95494c091eabec5c4",
+        "notes": "Clean lemma statement with no motivation or physical commentary embedded."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8320c25212a3",
+          "ts": "62d8470c7dcb",
+          "lean": "f1c7b47eec17"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lemma derives nucleon mass from Borromean Skein crossings — directly a physical-prediction result for the observations chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:13:09.261Z",
+        "reviewed_sha": "ffe504d10d8f17c824c994f95494c091eabec5c4",
+        "notes": "Fits observations: nucleon mass formula is a core observable prediction."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8320c25212a3",
+          "ts": "62d8470c7dcb",
+          "lean": "f1c7b47eec17"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses formal q, q^{1/2}, q^{-1} — generic algebraic; no Real.sqrt, linarith, or archimedean ordering.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:13:27.677Z",
+        "reviewed_sha": "ffe504d10d8f17c824c994f95494c091eabec5c4",
+        "notes": "Statement is on the substrate/categorical side of the wall throughout."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "8320c25212a3",
+          "ts": "62d8470c7dcb",
+          "lean": "f1c7b47eec17"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof applies Skein relation algebraically (double application) with formal q — no archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:13:41.475Z",
+        "reviewed_sha": "ffe504d10d8f17c824c994f95494c091eabec5c4",
+        "notes": "Proof stays on generic-ring/substrate side: Skein algebra only."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:13:41.475Z"
 }
