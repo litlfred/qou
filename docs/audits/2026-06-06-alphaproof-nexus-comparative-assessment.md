@@ -1,7 +1,7 @@
 # AlphaProof Nexus vs. QOU / Folio — comparative assessment
 
 **Date:** 2026-06-06
-**Branch:** `claude/amazing-ramanujan-RECfn`
+**PR:** [litlfred/qou#1913](https://github.com/litlfred/qou/pull/1913)
 **Subject paper:** Tsoukalas, Kovsharov, Shirobokov, … Kohli, Chaudhuri (Google
 DeepMind), *Advancing Mathematics Research with AI-Driven Formal Proof Search*,
 arXiv:2605.22763v1 [cs.AI], 21 May 2026.
@@ -208,8 +208,8 @@ guardrails, or it becomes a numerology generator.
    (`routine`/`core`/`restates-target`; last = auto-FAIL). *Done — `114a80fa`.*
 2. ✅ **(D) formalize-the-refutation** → `compute-author.md §3.4` discipline +
    worked deuteron co-Casimir exemplar. *Done — `fd8bcc91`, `75e3cccc`.*
-   Promoting the exemplar to a committed `lem:` content-object is tracked on a
-   **separate branch** (`claude/delta-lambda-cocasimir-refutation-2026-06-06`).
+   Promoting the exemplar to a committed `lem:` content-object is tracked in
+   [PR #1923](https://github.com/litlfred/qou/pull/1923).
 3. ✅ **(B) statement-integrity gate** → `lean-proof-review.md` Review Type 4
    (signature-diff + axiom sweep; SafeVerify vendoring noted). *Done — `17cb39f7`.*
 4. ✅ **(C) EVOLVE-VALUE fence** → `production-vs-exploratory-discipline.md` +

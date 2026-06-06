@@ -80,8 +80,9 @@ Adopted from AlphaProof Nexus's `verify_integrity` + SafeVerify gates
 [`docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md`](../../../docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md)).
 
 Verifies:
-- **Signature unchanged.** For every `theorem`/`lemma`/`proposition`/
-  `corollary` touched on the branch, the declaration *signature* (name,
+- **Signature unchanged.** For every provable-kind block touched on the
+  branch — content kinds `proposition`/`corollary`/`theorem`/`lemma` all
+  render to a Lean `theorem` or `lemma` declaration — the *signature* (name,
   binders, hypotheses, conclusion type) is identical to its prior-commit
   form — only the proof body changed. A signature change is permitted
   **only** as an explicit, author-approved restatement, reflected in the
@@ -96,7 +97,7 @@ Recipe:
 ```bash
 # 1. signatures changed on this branch (provable kinds only)
 git diff origin/main...HEAD -- '*.lean' \
-  | grep -E '^[-+](theorem|lemma|proposition|corollary) '
+  | grep -E '^[-+][[:space:]]*(theorem|lemma) '   # Lean keywords (content prop/cor render to these); heuristic — confirm multi-line signatures by hand
 # 2. for each decl now claimed proved, axiom audit (expect no sorryAx)
 #    lean_verify QOU.<Namespace>.<decl>
 ```
