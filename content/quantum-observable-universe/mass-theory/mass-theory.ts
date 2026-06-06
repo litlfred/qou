@@ -658,6 +658,7 @@ export default chapter({
         "conj-canonical-knot-id-sdp",
         "conj-chirality-ribbon-frobenius",
         "conj-rho-prefactor-structural",
+        "lem-crystal-demazure-w0-refuted-deuteron",
       ],
     }),
 
