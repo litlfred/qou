@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9ea7c78bcae0",
+          "ts": "d71d3d69a519"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "prose chapter opener (sec:info-theory-intro, position opening); previews Planck scale, c, m-E, G, P!=NP, CCC",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:35:34.660Z",
+        "reviewed_sha": "161dd25f4e3a9f64d79a8824524259f2c3f85831",
+        "notes": "Chapter-introduction prose; correctly placed at chapter opening."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T20:35:34.660Z"
 }
