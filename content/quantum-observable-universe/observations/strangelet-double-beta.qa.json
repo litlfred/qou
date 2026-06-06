@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a4d14b5f606b",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Block contains '**Observable signature.**' and '**The Skein amplitude is the EM/strong ratio.**' interpretive sections after the proof; no companion interprets: remark holds them.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:06:33.506Z",
+        "reviewed_sha": "d0f264c6df74c7a0d5ec12b776e80f010489e8fd",
+        "notes": "Substantive physical interpretation embedded in proposition; borderline warn per criterion (minor only if SUBSTANTIVE)."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a4d14b5f606b",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition predicts double-beta decay signature and observable endpoint energy — squarely observations chapter content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:06:50.559Z",
+        "reviewed_sha": "d0f264c6df74c7a0d5ec12b776e80f010489e8fd",
+        "notes": "Falsifiable physical prediction correctly placed in observations."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a4d14b5f606b",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block opens with explicit §7c archimedean banner; archimedean content (q=q_0 numerics, MeV units) legitimately present in observations chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:07:16.214Z",
+        "reviewed_sha": "d0f264c6df74c7a0d5ec12b776e80f010489e8fd",
+        "notes": "Banner present; archimedean chapter; wall-clean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a4d14b5f606b",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof/derivation uses numeric q_0 evaluations (s=0.1041, 2.3 MeV) but §7c banner present and chapter is archimedean observations.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:07:40.343Z",
+        "reviewed_sha": "d0f264c6df74c7a0d5ec12b776e80f010489e8fd",
+        "notes": "Archimedean constructs legitimately used under §7c banner in archimedean chapter."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T02:07:40.343Z"
 }
