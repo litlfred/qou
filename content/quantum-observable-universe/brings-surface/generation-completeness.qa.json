@@ -2584,7 +2584,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "43ff0404f88d",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "block contains 'Physical interpretation.' section with motivational prose (particle spectrum, resonances) but no companion interprets: remark to hold it",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:30:15.067Z",
+        "reviewed_sha": "9904d3fb38331bcb02156282b43f8e14652409b5",
+        "notes": "interpretation belongs in a linked remark block"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "43ff0404f88d",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "theorem about knots embeddable in Bring surface sits in brings-surface chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:30:31.603Z",
+        "reviewed_sha": "9904d3fb38331bcb02156282b43f8e14652409b5",
+        "notes": "on-topic"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "43ff0404f88d",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "brings-surface is substrate chapter; statement uses Seifert genus and Skein ops, no archimedean constructs",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:30:31.640Z",
+        "reviewed_sha": "9904d3fb38331bcb02156282b43f8e14652409b5",
+        "notes": "no wall violation"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "43ff0404f88d",
+          "ts": "2c7678eccefc",
+          "lean": "588eb1c13824"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "proof uses unknotting number + skein module projection; no linarith/IVT/Real.* archimedean machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:30:31.679Z",
+        "reviewed_sha": "9904d3fb38331bcb02156282b43f8e14652409b5",
+        "notes": "proof method matches substrate-side statement"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:30:31.679Z"
 }
