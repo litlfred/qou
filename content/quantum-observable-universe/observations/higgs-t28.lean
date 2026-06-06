@@ -60,11 +60,13 @@ end QOU.HiggsT28
 The genus of torus link T(2,n) is ⌊(n-1)/2⌋ for n odd, (n-2)/2 for n even.
 For T(2,8): genus = (8-2)/2 = 3. This is a theorem, not a conjecture. -/
 
+open QOU.HiggsT28
+
 /-- **THEOREM (special case).** The genus of T(2,8) = 3.
     This closes the `t28_genus` field of the conjecture — it's
     the one sub-claim that's provable without the full conjecture. -/
 -- Ref: [rolfsen] Knots and Links, Theorem 5.1 (torus link genus)
-theorem t28_genus_eq_three : (8 - 2) / 2 = 3 := by norm_num
+theorem t28_genus_eq_three : (8 - 2) / 2 = 3 := by decide
 
 /-- **CONDITIONAL THEOREM.** If the Higgs-as-T(2,8) conjecture holds,
     then the Higgs boson has exactly 3 color degrees of freedom
