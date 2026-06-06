@@ -369,6 +369,50 @@ theorem ansatzΔ_refuted_deuteron :
   "no Nth fit" rules: a refuted ansatz becomes a machine-checked `≠`, not a
   prose warning.
 
+**Worked exemplar — Frobenius co-Casimir Δ_λ, refuted at the deuteron.**
+Numbers pinned from
+[`rho-k-h3a-co-casimir.witness.json`](../../../folio-assistant/computations/rho-k-h3a-co-casimir.witness.json)
+(`allPassed: true`, 50 dps; Option B of
+[`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../../../docs/audits/2026-05-18-delta-lambda-gating-context.md)).
+The ansatz predicts a binding-density sum `+0.144959…` (m_e units); the
+empirical target `−B_D/m_e` is `−4.353367…` — wrong sign, magnitude off by
+≈30.03× (closure gap `4.498326…`, matching the witness). Stated as a decidable
+rational inequality so it compiles with no `sorry`:
+
+```lean
+namespace QOU.BraidKnot.DeltaLambdaRefutation
+
+/-- Frobenius co-Casimir predicted Σ_λ y_λ χ^λ Δ_λ at the deuteron (m_e units);
+    12 sig figs from `/data/co_casimir_prediction/sum_contributions_signed`. -/
+def coCasimirSum : ℚ :=  144959224127 / 1000000000000   -- ≈ +0.144959224127
+
+/-- Empirical −B_D/m_e (m_e units), from `/data/target_signed`. -/
+def targetSigned : ℚ := -4353367281870 / 1000000000000   -- ≈ −4.353367281870
+
+/-- Viability tolerance (the ansatz misses by > 4, with the wrong sign). -/
+def tol : ℚ := 1
+
+/-- **Refutation.** The Frobenius co-Casimir ansatz misses the deuteron target
+    by more than tolerance (gap ≈ 4.498 m_e units).
+    -- Ref: [manuscript] rho-k-h3a-co-casimir.witness.json -/
+theorem coCasimir_refuted_deuteron : tol < |coCasimirSum - targetSigned| := by
+  unfold tol coCasimirSum targetSigned
+  rw [abs_of_pos (by norm_num)]
+  norm_num
+
+end QOU.BraidKnot.DeltaLambdaRefutation
+```
+
+*Status:* the inequality's arithmetic is verified exactly — the gap
+`4498326505997/10¹²` equals the witness `closure_gap`. The Lean proof is the
+standard rational form but is **not** compiled in this session (the Mathlib
+cache is unavailable in the sandbox; CLAUDE.md "Mathlib cache 403 fallback"),
+so build it in CI / a warmed env before citing it as machine-checked. Promoting
+it to a committed content-object `lem:frobenius-cocasimir-refuted-deuteron`
+beside
+[`conj:rho-prefactor-structural`](../../../content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md)
+(GAP-A-4) is the natural follow-up (`.ts`/`.md`/`.lean` triple + green build).
+
 ## §4. Rust-port patterns (when porting Python to Rust)
 
 ### §4.1 Type-mapping cheat-sheet
