@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3b4615c542ee",
+          "ts": "6c156da0b566"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose intro for sec:dq-squared-elaboration; summarises dq^2/Jacobiator/classical-recovery content that follows in that section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:42:41.961Z",
+        "reviewed_sha": "e08870b4b497c8b40b477a50dec53483e19800bd",
+        "notes": "Correctly placed; no misfile, no redundancy, kind=prose fits introductory role."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T19:42:41.961Z"
 }

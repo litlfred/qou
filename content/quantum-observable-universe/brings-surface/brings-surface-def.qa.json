@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "09707e65998b",
+          "ts": "9f9ffe842b67",
+          "lean": "2089a435c191"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition of Bring's surface is the foundational block of the brings-surface chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:09:50.833Z",
+        "reviewed_sha": "37ee45c700c43fa10d144a1fd3ee4a601db5dd12",
+        "notes": "Correctly placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "09707e65998b",
+          "ts": "9f9ffe842b67",
+          "lean": "2089a435c191"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is over generic commutative ring R; no archimedean constructs in narrative; lean sibling note correctly flags archimedean specialisation per §7c.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:09:50.875Z",
+        "reviewed_sha": "37ee45c700c43fa10d144a1fd3ee4a601db5dd12",
+        "notes": "Generic-ring statement, wall-compliant."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T19:09:50.875Z"
 }

@@ -2564,7 +2564,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0",
+          "lean": "fb59c79ea83c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare lemma claim with no interpretive prose.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:39:41.213Z",
+        "reviewed_sha": "6156853fe4c9ea9e6db47b400719baa340d8f0aa",
+        "notes": "Statement only, no motivation or physical meaning in block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0",
+          "lean": "fb59c79ea83c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Eigenspace decomposition of categorical mass integrand fits mass-endomorphism chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:39:58.783Z",
+        "reviewed_sha": "6156853fe4c9ea9e6db47b400719baa340d8f0aa",
+        "notes": "Topic squarely belongs here."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0",
+          "lean": "fb59c79ea83c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "All constructs categorical: Frobenius pairing, descent involution, categorical trace — no archimedean tokens.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:40:12.070Z",
+        "reviewed_sha": "6156853fe4c9ea9e6db47b400719baa340d8f0aa",
+        "notes": "Generic-ring/substrate statement, no archimedean leakage."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0",
+          "lean": "fb59c79ea83c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses algebraic Frobenius-norm orthogonality and linearity of trace — no archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:40:26.543Z",
+        "reviewed_sha": "6156853fe4c9ea9e6db47b400719baa340d8f0aa",
+        "notes": "Proof method matches generic-ring/substrate side of wall."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T15:40:26.543Z"
 }

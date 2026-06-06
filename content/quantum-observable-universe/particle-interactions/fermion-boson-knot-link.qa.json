@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "85388ae1aa86",
+          "ts": "f437221f9042",
+          "lean": "d5bf216192af"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block contains statement+proof only; spin-statistics and quarks discussion is clarifying scope, not a separate mislocated remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:21:53.851Z",
+        "reviewed_sha": "b75789bbff37b2446b647dbac94963f3416a575f",
+        "notes": "No substantive interpretive prose mislocated; scope notes are appropriate."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "85388ae1aa86",
+          "ts": "f437221f9042",
+          "lean": "d5bf216192af"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block maps T(2,n) torus family on Bring's surface to fermion/boson distinction — squarely in particle-interactions scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:22:20.602Z",
+        "reviewed_sha": "b75789bbff37b2446b647dbac94963f3416a575f",
+        "notes": "No misplacement; topic is canonical particle-interactions content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "85388ae1aa86",
+          "ts": "f437221f9042",
+          "lean": "d5bf216192af"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely topological/categorical (gcd, components, Reeb direction) with no archimedean constructs or numeric q values.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:22:34.716Z",
+        "reviewed_sha": "b75789bbff37b2446b647dbac94963f3416a575f",
+        "notes": "Generic/substrate regime; no wall violation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "85388ae1aa86",
+          "ts": "f437221f9042",
+          "lean": "d5bf216192af"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses gcd(2,n) topology, winding numbers, and fiber adjoint involution — all categorical/algebraic, no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:22:53.923Z",
+        "reviewed_sha": "b75789bbff37b2446b647dbac94963f3416a575f",
+        "notes": "Proof stays on generic/substrate side throughout."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T14:22:53.923Z"
 }

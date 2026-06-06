@@ -1737,7 +1737,29 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "915f63766f46"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Example interprets def:categorical-q-ext-deriv and shows archimedean specialisation; placed in quantum-observable-universes chapter where q-exterior derivative examples belong.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:06:01.372Z",
+        "reviewed_sha": "fb69d7dea1e8fb1ac82ee2a2203bd3e9cb798e31",
+        "notes": "Correct chapter and section fit for this archimedean example."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-06T02:06:01.372Z"
 }

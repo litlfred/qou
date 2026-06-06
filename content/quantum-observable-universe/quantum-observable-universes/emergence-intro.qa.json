@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "020f950753c9",
+          "ts": "578f17b4ec35"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose intro for sec:emergence; previews SU(2) emergence, spin labels content that follows in that section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:46:01.905Z",
+        "reviewed_sha": "63f7ce5292dabf26782f244fce42e670808af5b8",
+        "notes": "Correctly placed; no misfile, no redundancy, kind=prose fits introductory role."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T19:46:01.905Z"
 }

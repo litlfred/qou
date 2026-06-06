@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "be35e0ec845c",
+          "ts": "0d1758bd4f1f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "remark sits in sec:spectral-gauge immediately after its interpretee def:quaternionic-spectral-resolvents; no sibling carries same claim",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:25:36.092Z",
+        "reviewed_sha": "21db1c927553ac831f0791b9cfc84aa984529433",
+        "notes": "correct placement, remark kind appropriate"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:25:36.092Z"
 }

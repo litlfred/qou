@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a3e7b08054ea",
+          "ts": "4d550ceb4bcf"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets prop:genus-filtration-ideal with dq^2 obstruction and derivation chain; belongs in brings-surface chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:37:33.410Z",
+        "reviewed_sha": "dd6e28106c09d677d35d7959e7cac14198f2116d",
+        "notes": "Correct placement."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:37:33.410Z"
 }

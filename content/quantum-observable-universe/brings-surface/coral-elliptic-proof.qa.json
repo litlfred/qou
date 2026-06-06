@@ -1769,7 +1769,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "21247e31a6c9",
+          "ts": "9923e35bbd64"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof of coral-elliptic proposition belongs in brings-surface — correct chapter placement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:52:51.023Z",
+        "reviewed_sha": "7d4495fe242497befd4ce47f36b8176cd794f3c9",
+        "notes": "Clean fit."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T23:52:51.023Z"
 }

@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a8da3aa84132",
+          "ts": "c47ad376243a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose intro block correctly scopes the particle-identification section within the observations chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:18:13.076Z",
+        "reviewed_sha": "99032875eeabb21640d614fd9843bc33d3ac8ca3",
+        "notes": "Introduces four sub-blocks (quark, Higgs, S5, lepton) in their declared section scope; no misplacement or redundancy"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T01:18:13.076Z"
 }

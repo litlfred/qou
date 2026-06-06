@@ -2639,7 +2639,7 @@
           "lean": "b887bfb05e70"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement over H_n(R,q) generic ring; no Real/MeV/numeric q hardcoded",
         "reviewer": {
           "kind": "agent",
@@ -2661,7 +2661,7 @@
           "lean": "b887bfb05e70"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Steps 1-4: GB normal form, Leibniz rule, ideal powers I^r — no linarith/IVT/Real",
         "reviewer": {
           "kind": "agent",

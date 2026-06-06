@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "76e11e77f85b",
+          "ts": "6c32f121a0b9",
+          "lean": "1ca8d001d082"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare claim only; interpretation/uniqueness cross-ref is a link, not inline commentary.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:43:58.772Z",
+        "reviewed_sha": "eeee52440efe2169315775dd1cc17dc45d7674ae",
+        "notes": "Clean proposition statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "76e11e77f85b",
+          "ts": "6c32f121a0b9",
+          "lean": "1ca8d001d082"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition about categorical q-ext derivative belongs in quantum-observable-universes section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:44:16.884Z",
+        "reviewed_sha": "eeee52440efe2169315775dd1cc17dc45d7674ae",
+        "notes": "Good placement."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "76e11e77f85b",
+          "ts": "6c32f121a0b9",
+          "lean": "1ca8d001d082"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Formula uses categorical morphisms (d_q, pi_V) over generic R-linear category; no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:44:31.174Z",
+        "reviewed_sha": "eeee52440efe2169315775dd1cc17dc45d7674ae",
+        "notes": "Correctly on substrate/categorical side of the wall."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "76e11e77f85b",
+          "ts": "6c32f121a0b9",
+          "lean": "1ca8d001d082"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof invokes R-linear category structure (scalar multiplication, morphism composition); no archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:44:55.996Z",
+        "reviewed_sha": "eeee52440efe2169315775dd1cc17dc45d7674ae",
+        "notes": "Proof stays on categorical side."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:44:55.996Z"
 }

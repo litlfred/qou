@@ -2603,7 +2603,7 @@
           "lean": "0374f5411a2c"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement is purely categorical/algebraic: rigid structure, ev_A, coev_A, categorical trace — no archimedean constructs",
         "reviewer": {
           "kind": "agent",
@@ -2625,7 +2625,7 @@
           "lean": "0374f5411a2c"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof uses rigid structure uniqueness (categorical) and definition of trace; no linarith/IVT/Real.* machinery",
         "reviewer": {
           "kind": "agent",

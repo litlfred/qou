@@ -1939,7 +1939,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "84a8a2cc8886",
+          "ts": "a77271a2b1a6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory geometric section covers Kashiwara-Jones and crossing expansion; Jones-faithfulness on Bring-embeddable knots fits that scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:59:49.044Z",
+        "reviewed_sha": "757f3e1013ff6192635e0aa793f38227367fe362",
+        "notes": "Block interprets rem:knot-exhaustiveness Q3, tightening it — appropriate for mass-theory's geometric face."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T23:59:49.044Z"
 }

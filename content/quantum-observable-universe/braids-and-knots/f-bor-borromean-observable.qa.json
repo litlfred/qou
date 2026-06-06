@@ -692,7 +692,51 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f167b3478144",
+          "ts": "17da4fb4bda2",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Categorical Markov-trace observable defined over generic ring; braids-and-knots chapter scope matches.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:27:35.758Z",
+        "reviewed_sha": "b4776d23aebd94c8004980476cade9fe8e0b39c9",
+        "notes": "No misplacement; no redundancy with sibling blocks."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f167b3478144",
+          "ts": "17da4fb4bda2",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "All q-arithmetic is generic-ring (h=q-q^{-1}); no archimedean constructs, no q_0 pin, no MeV units.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:27:51.895Z",
+        "reviewed_sha": "b4776d23aebd94c8004980476cade9fe8e0b39c9",
+        "notes": "Correctly generic; wall respected."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T01:27:51.895Z"
 }

@@ -2793,7 +2793,7 @@
           "lean": "2b3f2628b2c4"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement over generic R, q generic; pole order 1[rho<=-1] — no Real/MeV/numeric q",
         "reviewer": {
           "kind": "agent",
@@ -2815,7 +2815,7 @@
           "lean": "2b3f2628b2c4"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Steps 1-4: crystal combinatorics, axial distance, LR coefficients — no linarith/IVT/Real",
         "reviewer": {
           "kind": "agent",

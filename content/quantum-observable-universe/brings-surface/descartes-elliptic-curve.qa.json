@@ -2584,7 +2584,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "497b1eecc278",
+          "ts": "d1ef98b87121",
+          "lean": "e1c960e8dfbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is a formal proposition with Weierstrass formula; the physics interpretation ('Our universe') appears only in a table cell, not as a narrative claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:11:30.846Z",
+        "reviewed_sha": "0607545dbbeb8b3e25d4b8a045dd28400769e8a9",
+        "notes": "Statement is scholarly and does not editorialize."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "497b1eecc278",
+          "ts": "d1ef98b87121",
+          "lean": "e1c960e8dfbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition identifies the elliptic fiber of Bring's surface from coral-elliptic; squarely within the brings-surface chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:11:43.989Z",
+        "reviewed_sha": "0607545dbbeb8b3e25d4b8a045dd28400769e8a9",
+        "notes": "Chapter fit is tight."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "497b1eecc278",
+          "ts": "d1ef98b87121",
+          "lean": "e1c960e8dfbc"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement uses sqrt(q) and Real.sqrt in Lean ref (archimedean); lean.ref points to QOU.Archimedean.descartes_elliptic_curve with validation=not_checked; numeric literals -18.95, 129.9, -0.684 in invariants table are not pinned to a witness.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:11:59.947Z",
+        "reviewed_sha": "0607545dbbeb8b3e25d4b8a045dd28400769e8a9",
+        "notes": "Numeric values in the invariants table should be pinned to a witness JSON; lean validation is not_checked."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "497b1eecc278",
+          "ts": "d1ef98b87121",
+          "lean": "e1c960e8dfbc"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof is a symbolic/algebraic computation (Weierstrass shift, substitution z=s-s^-1) with no archimedean evaluation — purely categorical/algebraic side.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:12:16.765Z",
+        "reviewed_sha": "0607545dbbeb8b3e25d4b8a045dd28400769e8a9",
+        "notes": "Proof stays on the categorical/algebraic side; no wall-crossing issue."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:12:16.765Z"
 }

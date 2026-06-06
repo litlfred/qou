@@ -896,7 +896,95 @@
         "reviewed_at": "2026-06-03T13:06:09.584Z",
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "3010433f709f",
+          "lean": "c49fcd5f083a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "statement is bare algebraic branching claim; interpretation in ## subsections only",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:36:06.920Z",
+        "reviewed_sha": "7c5140fa4a579e5cf6d714bb4625972599fb2e6c",
+        "notes": "clean separation"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "3010433f709f",
+          "lean": "c49fcd5f083a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "proposition in sec:lepton-meson-parallel; primary subject is Frobenius H3↓H2 branching — on-topic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:36:06.956Z",
+        "reviewed_sha": "7c5140fa4a579e5cf6d714bb4625972599fb2e6c",
+        "notes": "clean fit"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "3010433f709f",
+          "lean": "c49fcd5f083a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "statement is pure algebraic Hecke branching rule, no archimedean constructs",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:36:06.990Z",
+        "reviewed_sha": "7c5140fa4a579e5cf6d714bb4625972599fb2e6c",
+        "notes": "correct wall"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "3010433f709f",
+          "lean": "c49fcd5f083a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "proof uses Pieri/LR rules and Frobenius reciprocity — purely algebraic, no archimedean evaluation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:36:07.025Z",
+        "reviewed_sha": "7c5140fa4a579e5cf6d714bb4625972599fb2e6c",
+        "notes": "correct wall"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:36:07.025Z"
 }

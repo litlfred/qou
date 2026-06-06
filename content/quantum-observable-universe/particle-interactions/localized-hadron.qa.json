@@ -1949,7 +1949,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition of localized hadron placed in sec:hadron-algebra alongside hadron, hadron-exists, knot-factorization — exact thematic fit.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:00:42.513Z",
+        "reviewed_sha": "c4e511cd48c359126b53f26bd5a75c62b635a017",
+        "notes": "Clean fit."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely categorical: morphism in C, Sym^n(K_p), binding Hopf link — no archimedean constructs, no numeric q value, no Real.* functions.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:00:58.377Z",
+        "reviewed_sha": "c4e511cd48c359126b53f26bd5a75c62b635a017",
+        "notes": "Generic-ring algebraic definition; particle-interactions is a substrate chapter."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T18:00:58.377Z"
 }

@@ -2145,7 +2145,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ab11fff4a86e",
+          "ts": "420d4b083e25",
+          "lean": "3d58dbac08ad"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Conjecture about Wigner SU(4) nuclear-shell closure lives squarely in chap:particle-interactions which explicitly covers nuclear structure and binding.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:43:21.776Z",
+        "reviewed_sha": "51b3f8eb19eaae61db29837d878f7db6e376deb0",
+        "notes": "Block topic (nuclear spin-isospin symmetry, L3 binding) matches chapter scope."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:43:21.776Z"
 }

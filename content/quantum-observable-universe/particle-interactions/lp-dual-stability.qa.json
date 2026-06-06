@@ -2566,7 +2566,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7b2faf0b8ef8",
+          "ts": "8d9e990d559a",
+          "lean": "23e388887727"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Substantive physical interpretation ('Physically: the confinement mechanism...', 'Key finding: individual quarks are LP-stable') embedded in proposition body; no companion interprets: remark found.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:05:03.913Z",
+        "reviewed_sha": "70650771f5f31ad88fe6632858c067b256bc92e8",
+        "notes": "Interpretation should move to a linked remark block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7b2faf0b8ef8",
+          "ts": "8d9e990d559a",
+          "lean": "23e388887727"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "LP dual stability proposition in sec:confinement-selection-confinement-sdp-vs alongside confinement-sdp-vs-lp — thematic fit is exact.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:05:26.233Z",
+        "reviewed_sha": "70650771f5f31ad88fe6632858c067b256bc92e8",
+        "notes": "Clean fit."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7b2faf0b8ef8",
+          "ts": "8d9e990d559a",
+          "lean": "23e388887727"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Core statement is algebraic (LP-stable, Gram matrix, braid realizability); numeric 'Verified values at q0≈1.110' is explicitly flagged as witness evaluation, not part of the claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:06:16.786Z",
+        "reviewed_sha": "70650771f5f31ad88fe6632858c067b256bc92e8",
+        "notes": "Archimedean evaluation is declared via witness citation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7b2faf0b8ef8",
+          "ts": "8d9e990d559a",
+          "lean": "23e388887727"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof cites numerical witness files (confinement-lp.witness.json) as the archimedean specialisation; the specialisation point q0≈1.110 is explicitly named. No silent regime mixing.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:06:32.904Z",
+        "reviewed_sha": "70650771f5f31ad88fe6632858c067b256bc92e8",
+        "notes": "Witness citation serves as the declared specialisation step."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:06:32.904Z"
 }

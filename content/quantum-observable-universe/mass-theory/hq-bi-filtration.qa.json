@@ -1983,7 +1983,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "859588b1517d",
+          "ts": "ed179097ba04",
+          "lean": "5acae9574d86"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Bi-filtration on substrate algebra is foundational mass-theory infrastructure used in knot-indexed mass computations",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:31:16.067Z",
+        "reviewed_sha": "cb0a5359143653685bd88d195886e75ceb7264cb",
+        "notes": "Definition clearly scoped to mass-theory chapter"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "859588b1517d",
+          "ts": "ed179097ba04",
+          "lean": "5acae9574d86"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses generic q algebra; central idempotent and filtration strata expressed algebraically without archimedean machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:31:33.240Z",
+        "reviewed_sha": "cb0a5359143653685bd88d195886e75ceb7264cb",
+        "notes": "No ordering predicates, sqrt, or real-analysis constructs in statement"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T19:31:33.240Z"
 }

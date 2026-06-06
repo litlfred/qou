@@ -2482,7 +2482,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "93b1677fc210",
+          "ts": "b5b8a37c0d37",
+          "lean": "76fa802dcb8a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is the bare claim with stable Euler characteristic equation; final sentence names archimedean realisation as a fact, no interpretive prose.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:14:21.628Z",
+        "reviewed_sha": "af672427f8610e4248c6cc6163c51b459644bb6f",
+        "notes": "No companion remark needed; no motivation/meaning prose mislocated."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "93b1677fc210",
+          "ts": "b5b8a37c0d37",
+          "lean": "76fa802dcb8a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block is in sec:mass-brane of chap:torsion (lifting-and-descent); Euler characteristic stability of the brane tower fits squarely in that section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:14:21.662Z",
+        "reviewed_sha": "af672427f8610e4248c6cc6163c51b459644bb6f",
+        "notes": "Section title 'Mass in the Brane Tower' aligns with the proposition content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "93b1677fc210",
+          "ts": "b5b8a37c0d37",
+          "lean": "76fa802dcb8a"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Generic chapter (lifting-and-descent) but last sentence hard-names archimedean realisation chi(A_n)=chi(S_n) without a wall: field or §7c banner.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:14:21.694Z",
+        "reviewed_sha": "af672427f8610e4248c6cc6163c51b459644bb6f",
+        "notes": "Archimedean realisation sentence mixes regimes without flagging the specialisation point."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "93b1677fc210",
+          "ts": "b5b8a37c0d37",
+          "lean": "76fa802dcb8a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof (euler-char-stability-proof.md) is purely categorical: rigidity trace, functoriality of jet prolongation, induction — no archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:14:21.728Z",
+        "reviewed_sha": "af672427f8610e4248c6cc6163c51b459644bb6f",
+        "notes": "Proof method matches generic/substrate side of the wall."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T14:14:21.728Z"
 }

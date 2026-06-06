@@ -2584,7 +2584,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9c4bfd80210f",
+          "ts": "52bddbb7db5b",
+          "lean": "92639a9aaacb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Interpretive sentence about Skein polynomial appears after the formal theorem statement block, not inside it.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:29:31.163Z",
+        "reviewed_sha": "a93b74aea3da37638a476e939348846bad9b2a75",
+        "notes": "Statement section cleanly separates claim from context."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9c4bfd80210f",
+          "ts": "52bddbb7db5b",
+          "lean": "92639a9aaacb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Nuclear Markov trace factorization directly supports mass-theory chapter's core derivation.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:29:50.268Z",
+        "reviewed_sha": "a93b74aea3da37638a476e939348846bad9b2a75",
+        "notes": "Block is a primary theorem of the chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9c4bfd80210f",
+          "ts": "52bddbb7db5b",
+          "lean": "92639a9aaacb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses generic q-data (z rational in q^{1/2}, coefficients a_i,b_i polynomials); no archimedean constructs in the claim itself.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:29:50.306Z",
+        "reviewed_sha": "a93b74aea3da37638a476e939348846bad9b2a75",
+        "notes": "Lean ref is Archimedean namespace but statement is generic-ring clean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9c4bfd80210f",
+          "ts": "52bddbb7db5b",
+          "lean": "92639a9aaacb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses only Markov peeling and transfer matrix algebra over Q(q) — no linarith, IVT, or archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:29:50.348Z",
+        "reviewed_sha": "a93b74aea3da37638a476e939348846bad9b2a75",
+        "notes": "Recursive right-peel argument stays in generic-ring regime."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:29:50.348Z"
 }

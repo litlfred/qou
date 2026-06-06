@@ -2013,7 +2013,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2507e7752f4c",
+          "ts": "a9faef11cd4b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose opening block for sec:categorical-braiding; topic (categorical braiding origin, R-matrix, Hecke-skein) is the chapter's stated foundation.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:14:45.095Z",
+        "reviewed_sha": "fdf9ca60ef5b4f2a35f9bfb17725ef48ae4c3650",
+        "notes": "Well-placed chapter intro."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T01:14:45.095Z"
 }

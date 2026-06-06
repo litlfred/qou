@@ -2349,6 +2349,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:habiro-residue-sum-equivalence' → expected 'habiro_residue_sum_equivalence'; Lean declares: HabiroResidueSumEquivalence, q_0_proton, proton_gb_mass, protonExample_archimedean_agreement_axiom, protonExample.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "1134c06d6fc4",
+          "ts": "f2d51803bc6f",
+          "lean": "101b4be110ca"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean HabiroResidueSumEquivalence class has archimedean_agreement field matching narrative proposition; both narrative and Lean flag the proof as open/axiomatized per §3b-cond pattern.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:19:52.484Z",
+        "reviewed_sha": "a204d31a8d91e63ee23931600676e066a96fa035",
+        "notes": "Narrative and Lean are aligned on claim and proof status."
       }
     ],
     "proof-lean-compiles": [
@@ -2788,7 +2808,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1134c06d6fc4",
+          "ts": "f2d51803bc6f",
+          "lean": "101b4be110ca"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block is in sec:phi-q-markov-residue-habiro alongside full-pole-structure-mass-trace and residue siblings; subject (Habiro ≡ GS residue sum equivalence) matches section scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:19:52.305Z",
+        "reviewed_sha": "a204d31a8d91e63ee23931600676e066a96fa035",
+        "notes": "Clean fit."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1134c06d6fc4",
+          "ts": "f2d51803bc6f",
+          "lean": "101b4be110ca"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Formal claim is a clean mathematical proposition; Status/Why-this-matters sections are clearly separated from the proposition statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:19:52.349Z",
+        "reviewed_sha": "a204d31a8d91e63ee23931600676e066a96fa035",
+        "notes": "No interpretation bleed into statement."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1134c06d6fc4",
+          "ts": "f2d51803bc6f",
+          "lean": "101b4be110ca"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is explicitly about the archimedean realization q->q_0; the wall-crossing is the subject (equivalence of two constructions at archimedean evaluation), not an accidental leak.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:19:52.392Z",
+        "reviewed_sha": "a204d31a8d91e63ee23931600676e066a96fa035",
+        "notes": "Deliberate archimedean statement; wall respected."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1134c06d6fc4",
+          "ts": "f2d51803bc6f",
+          "lean": "101b4be110ca"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof is acknowledged open; Lean uses axiom+sorry per CLAUDE.md §3b-cond with proper Ref: annotations; no false algebraic proof of an archimedean claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:19:52.437Z",
+        "reviewed_sha": "a204d31a8d91e63ee23931600676e066a96fa035",
+        "notes": "Open proof correctly axiomatized, wall respected."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:19:52.484Z"
 }

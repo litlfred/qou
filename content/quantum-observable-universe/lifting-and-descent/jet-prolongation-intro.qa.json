@@ -2013,7 +2013,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cf65df077c84",
+          "ts": "6438ec7b738f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose intro for jet prolongation tower setup; directly scopes the lifting-and-descent chapter opening.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:57:31.753Z",
+        "reviewed_sha": "44c6bf7151bdf03e61efaf27be367db1d1dbe5d6",
+        "notes": "No misplacement; topic is the chapter's central construction."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T14:57:31.753Z"
 }

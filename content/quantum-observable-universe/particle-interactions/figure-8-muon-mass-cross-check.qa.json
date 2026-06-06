@@ -1879,7 +1879,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4a967b2773f0",
+          "ts": "64c8369098a6",
+          "lean": "2929a16d580c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark documents muon mass identity Vol(4_1)/hbar_q^2 = m_mu/m_e as substrate cross-check; particle mass identification is core particle-interactions content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:24:05.510Z",
+        "reviewed_sha": "cda97d22012f10deb3a5722eec74b675872bcc9b",
+        "notes": "Well-placed; no misplacement or redundancy."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T14:24:05.510Z"
 }

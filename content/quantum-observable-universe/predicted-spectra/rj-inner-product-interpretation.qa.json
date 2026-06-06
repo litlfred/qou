@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "af41cc227034",
+          "ts": "626512eb1a97"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets sibling prop:rj-canonical-inner-product and contextualizes RJ weights for spectral decomposition — squarely in predicted-spectra scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T16:01:54.346Z",
+        "reviewed_sha": "d8a37098f417d9ff5373adcba7a17278373a0763",
+        "notes": "Correctly placed companion remark."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T16:01:54.346Z"
 }

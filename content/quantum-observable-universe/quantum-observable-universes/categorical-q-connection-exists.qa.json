@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "70c9acca157c",
+          "ts": "a53757e649f4",
+          "lean": "40770ed867e6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bare claim with a single cross-ref note; no interpretive prose in block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:29:09.326Z",
+        "reviewed_sha": "4f52025e5d4cba572cfee2763d5ec3ba2693299f",
+        "notes": "Clean proposition statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "70c9acca157c",
+          "ts": "a53757e649f4",
+          "lean": "40770ed867e6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Existence proposition for categorical q-connection belongs in quantum-observable-universes chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:29:28.576Z",
+        "reviewed_sha": "4f52025e5d4cba572cfee2763d5ec3ba2693299f",
+        "notes": "Well-placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "70c9acca157c",
+          "ts": "a53757e649f4",
+          "lean": "40770ed867e6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely algebraic/categorical; substrate chapter; no archimedean constructs or numeric q values.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:29:51.792Z",
+        "reviewed_sha": "4f52025e5d4cba572cfee2763d5ec3ba2693299f",
+        "notes": "Wall clean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "70c9acca157c",
+          "ts": "a53757e649f4",
+          "lean": "40770ed867e6"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses R-linear category morphisms only; no archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:30:27.345Z",
+        "reviewed_sha": "4f52025e5d4cba572cfee2763d5ec3ba2693299f",
+        "notes": "Wall clean on proof side."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:30:27.345Z"
 }

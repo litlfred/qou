@@ -1899,7 +1899,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "18794f5ab8b5",
+          "ts": "a7859c4ac44d",
+          "lean": "dc3e40a3671b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Conjecture about irrationality of QOU hyperbolic volumes (4_1, 5_2, B_3) belongs squarely in predicted-spectra.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T17:57:19.825Z",
+        "reviewed_sha": "1ac27a30fd86cdd6b4dc12b798342dd7016b01d8",
+        "notes": "No misplacement or kind mismatch; conjecture kind correct for open irrationality claim."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T17:57:19.825Z"
 }

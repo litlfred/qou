@@ -2349,6 +2349,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:moduli-symmetry-d4' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean moduli_symmetry_d4 proves σ⁴=id ∧ τ²=id (q≠0) ∧ (στ)²=id (q≠0), matching narrative's three dihedral relations exactly.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:18:08.611Z",
+        "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
+        "notes": "Faithfulness is noted in docstring but not formally proved as a separate theorem; narrative also notes it informally — no divergence in the core claim."
       }
     ],
     "proof-lean-compiles": [
@@ -2739,7 +2759,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is the bare D4-action claim; extensive working sections (golden octet, Möbius lifts, unit circle) are sub-propositions within the proof, not interpretive prose mislocated from a remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:16:03.604Z",
+        "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
+        "notes": "No companion remark needed; extra sections extend the result rather than interpret it."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "predicted-spectra chapter covers substrate symmetry structure; D4-action on moduli line is directly relevant to spectral predictions via the golden octet.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:16:26.466Z",
+        "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
+        "notes": "Block fits the chapter scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely algebraic: q in C×, involutions σ:q↦iq and τ:q↦q⁻¹ over ℂ; no archimedean constructs (Real.sqrt, ordering, numeric literal) in the statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:16:45.238Z",
+        "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
+        "notes": "Operates on ℂ× which is appropriate for this complex-algebraic claim."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses algebraic verification (τστ(q) = σ⁻¹(q) by direct computation) and polynomial arithmetic over ℤ; no archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T15:17:00.669Z",
+        "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
+        "notes": "All proof steps are purely algebraic."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T15:18:08.611Z"
 }

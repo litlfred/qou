@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6fb402817012",
+          "ts": "835e5869e4b2",
+          "lean": "57dea219759b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition names color tube fibers as affine curves in brings-surface; no sibling carries the same claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:44:07.490Z",
+        "reviewed_sha": "5c77deac6711873195367f3ffc9546d8d4faded5",
+        "notes": "Well-placed in brings-surface scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6fb402817012",
+          "ts": "835e5869e4b2",
+          "lean": "57dea219759b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses Z[z] and A^1 — generic ring, no archimedean constructs, correct for brings-surface.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:44:21.610Z",
+        "reviewed_sha": "5c77deac6711873195367f3ffc9546d8d4faded5",
+        "notes": "No wall violation."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T23:44:21.610Z"
 }

@@ -2090,7 +2090,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e05fa47bc1f8",
+          "ts": "a0f46dcfae73",
+          "lean": "251cdd282678"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark on shell corrections to nuclear binding energy correctly interprets def:skein-binding-lagrangian and belongs in predicted-spectra chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:10:20.180Z",
+        "reviewed_sha": "49c7ba6800d68d9804d1b2a149fbfce7d771fc65"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T18:10:20.180Z"
 }

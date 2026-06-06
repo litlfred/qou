@@ -2131,7 +2131,7 @@
           "lean": "c827142dac4d"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Definition D_nabla = q^{-1}nabla + (1-q^{-1})iota_xi nabla: A -> Omega^1(A) uses generic q, A, nabla — no Real.*, no numeric q value, no ordering predicates; q=1 and q->inf are formal limits in prose commentary only",
         "reviewer": {
           "kind": "agent",

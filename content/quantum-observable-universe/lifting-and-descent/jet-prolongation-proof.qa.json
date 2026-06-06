@@ -1737,7 +1737,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "30fec1de5956",
+          "ts": "b234e3ac884b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof of jet prolongation proposition, directly within the lifting-and-descent chapter's stated scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:58:53.230Z",
+        "reviewed_sha": "13702965e01a1923ea5bd624d7d3b7c7a715e148",
+        "notes": "No misplacement; builds on categorical jet lemma in same section."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T14:58:53.230Z"
 }

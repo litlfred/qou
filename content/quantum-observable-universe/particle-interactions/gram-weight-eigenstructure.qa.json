@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1c9628c59554",
+          "ts": "4049c6813891"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets prop:gram-weighted-qvalue in the same section; eigenstructure of Gram weights belongs in particle-interactions alongside the Gram matrix propositions.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T14:56:10.712Z",
+        "reviewed_sha": "2cac684d66cb5267c5cdcb882f7e06733aafc8d7",
+        "notes": "Well-placed."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T14:56:10.712Z"
 }

@@ -1769,7 +1769,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3e7b6305dc98",
+          "ts": "f170fe4ab24d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses Hecke algebra dimension count to derive minimum braid genus; directly serves brings-surface chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:42:19.694Z",
+        "reviewed_sha": "51b3f8eb19eaae61db29837d878f7db6e376deb0",
+        "notes": "Content matches chapter scope."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-06T00:42:19.694Z"
 }

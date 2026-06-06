@@ -2384,6 +2384,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:interface-knot-markov-z' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "c8bf985106f6",
+          "ts": "7a5deb5b0067",
+          "lean": "6fb367832eb1"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Lean proves single-step tau_M(alpha*sigma)=z*tau_M(alpha); narrative claims full z^p+*(z-h)^p- iterated form. Lean file notes iteration is 'left as List.foldr application' — iterated form not yet formalised.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:42:17.781Z",
+        "reviewed_sha": "434345b5cf8e986b54d44cca952a7c5a26bc6e49",
+        "notes": "Reconcilable gap: the iterated form follows trivially from the proved single-step lemmas, but is not yet a named theorem in the Lean file."
       }
     ],
     "proof-lean-compiles": [
@@ -2755,7 +2775,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c8bf985106f6",
+          "ts": "7a5deb5b0067",
+          "lean": "6fb367832eb1"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Sections '### Structural reading', '### Consequences', '### Constit-side companion identity' are interpretive prose living in the proposition block itself with no companion interprets: remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:41:01.653Z",
+        "reviewed_sha": "434345b5cf8e986b54d44cca952a7c5a26bc6e49",
+        "notes": "Interpretive content should move to a linked remark block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c8bf985106f6",
+          "ts": "7a5deb5b0067",
+          "lean": "6fb367832eb1"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Markov-trace factorisation for atomic braid interface knots is core mass-theory content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:41:19.813Z",
+        "reviewed_sha": "434345b5cf8e986b54d44cca952a7c5a26bc6e49",
+        "notes": "Well-placed."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c8bf985106f6",
+          "ts": "7a5deb5b0067",
+          "lean": "6fb367832eb1"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is generic-ring: tau_M ratio = z^p+ * (z-h)^p-, no numeric q value, no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:41:41.752Z",
+        "reviewed_sha": "434345b5cf8e986b54d44cca952a7c5a26bc6e49",
+        "notes": "Clean substrate-side statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c8bf985106f6",
+          "ts": "7a5deb5b0067",
+          "lean": "6fb367832eb1"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof applies Markov axiom and Hecke skein relation algebraically; no linarith/IVT/Real.* or numeric q evaluation in the proof body.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:41:58.784Z",
+        "reviewed_sha": "434345b5cf8e986b54d44cca952a7c5a26bc6e49",
+        "notes": "Clean algebraic proof, archimedean empirical table is a separate section."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-05T19:42:17.781Z"
 }

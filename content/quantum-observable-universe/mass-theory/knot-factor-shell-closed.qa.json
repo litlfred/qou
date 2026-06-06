@@ -2552,7 +2552,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a8baee9e01fe",
+          "ts": "68e2fda900bc",
+          "lean": "b8d5c560aacf"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Application paragraph lists physical nuclei (4He, 12C, 16O, 40Ca, 56Fe, 208Pb) inline in the corollary body rather than a separate remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:27:07.667Z",
+        "reviewed_sha": "d01b314fdc377d334b600606f31938d23480b5fd",
+        "notes": "Inline application should move to a linked remark block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a8baee9e01fe",
+          "ts": "68e2fda900bc",
+          "lean": "b8d5c560aacf"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Shell-closed knot-factor result is core mass-theory content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:27:07.706Z",
+        "reviewed_sha": "d01b314fdc377d334b600606f31938d23480b5fd",
+        "notes": "Placement is appropriate."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a8baee9e01fe",
+          "ts": "68e2fda900bc",
+          "lean": "b8d5c560aacf"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is a generic-ring algebraic identity (chi_lambda projection onto trivial idempotent); no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:27:07.747Z",
+        "reviewed_sha": "d01b314fdc377d334b600606f31938d23480b5fd",
+        "notes": "Wall side clean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a8baee9e01fe",
+          "ts": "68e2fda900bc",
+          "lean": "b8d5c560aacf"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses Wigner pairing and Markov-chain cancellation — purely algebraic/categorical; no numerical or archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:27:07.783Z",
+        "reviewed_sha": "d01b314fdc377d334b600606f31938d23480b5fd",
+        "notes": "Proof stays categorical."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:27:07.783Z"
 }

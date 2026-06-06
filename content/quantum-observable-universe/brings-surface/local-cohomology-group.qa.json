@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "67f41e092851",
+          "ts": "51d68ee91bd4",
+          "lean": "a4535512a758"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block is at line 205 in sec:cohomological-defect; local cohomology at unit defect matches section topic exactly.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:11:53.547Z",
+        "reviewed_sha": "1045f3b01503d6d817c5a939388fae5225d40ae7",
+        "notes": "Perfect placement."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "67f41e092851",
+          "ts": "51d68ee91bd4",
+          "lean": "a4535512a758"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses derived functors, torsion functor, H^1_m(A); purely algebraic — no Real.sqrt, no numeric q, no MeV.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:11:53.584Z",
+        "reviewed_sha": "1045f3b01503d6d817c5a939388fae5225d40ae7",
+        "notes": "Clean generic-algebraic definition, no wall violation."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T01:11:53.584Z"
 }

@@ -2079,7 +2079,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "524eb12f6d0b",
+          "ts": "e5229c78b45f"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose intro for the large-scale section summarising CMB, gravity, defect sub-blocks; correctly placed in observations chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T23:57:09.745Z",
+        "reviewed_sha": "6fbd9ab894189182e1c6217be1c28f939d29b44a",
+        "notes": "Clean section intro, no misplacement."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T23:57:09.745Z"
 }

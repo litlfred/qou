@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a4b4926f0b70",
+          "ts": "843795500e26",
+          "lean": "d0d362200bb9"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Statement body includes 'More precisely: the categorical Euler characteristic...determines the topological type' — motivational interpretation mixed into the claim.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:48:17.980Z",
+        "reviewed_sha": "008939ed4d1ddaead994d256ce3c70e3864c9753",
+        "notes": "Interpretation belongs in a remark block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a4b4926f0b70",
+          "ts": "843795500e26",
+          "lean": "d0d362200bb9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition about genus of archimedean descent belongs in brings-surface (the canonical archimedean genus-4 chapter).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:48:32.495Z",
+        "reviewed_sha": "008939ed4d1ddaead994d256ce3c70e3864c9753",
+        "notes": "Correct placement."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a4b4926f0b70",
+          "ts": "843795500e26",
+          "lean": "d0d362200bb9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Riemann-Roch and archimedean Euler characteristic are appropriate for brings-surface (archimedean chapter); no generic-ring claim is proved by archimedean-only machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:48:48.888Z",
+        "reviewed_sha": "008939ed4d1ddaead994d256ce3c70e3864c9753",
+        "notes": "Correct wall side for this chapter regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a4b4926f0b70",
+          "ts": "843795500e26",
+          "lean": "d0d362200bb9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses Riemann-Roch and sheaf Euler characteristic — archimedean machinery appropriate for archimedean brings-surface chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:49:17.619Z",
+        "reviewed_sha": "008939ed4d1ddaead994d256ce3c70e3864c9753",
+        "notes": "No wall-side violation."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:49:17.619Z"
 }

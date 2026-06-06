@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6930d991ae25",
+          "ts": "8e703673db4d"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose intro summarizing nucleon/quark/deuteron derivation walk; fits Ch.7 observations mass-derivations sub-section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:22:38.535Z",
+        "reviewed_sha": "7e6266e4079581c624a7c2f2ac99ceba4138771a",
+        "notes": "Correctly placed transition prose; no misplacement or kind mismatch."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T00:22:38.535Z"
 }

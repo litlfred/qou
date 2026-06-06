@@ -1803,7 +1803,28 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "23031de61714",
+          "ts": "590f0eb4c840"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Worked example of photon wavefront diffraction using QOU definitions (localized-knot, wavefront-propagation, color-content) — directly illustrates the chapter's core constructions.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:22:24.364Z",
+        "reviewed_sha": "e99d3943c47c6cfcd31e7ef134c5f8890ccc63a6",
+        "notes": "Well-placed."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-06T01:22:24.364Z"
 }

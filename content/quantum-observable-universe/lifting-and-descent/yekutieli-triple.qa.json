@@ -1879,7 +1879,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "46a0d27cafe8",
+          "ts": "fdffc73aa6f8",
+          "lean": "043381a5f8a0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block defines the Yekutieli triple central to the descent/lifting tower — primary subject matches lifting-and-descent scope exactly.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:43:16.243Z",
+        "reviewed_sha": "66d0d391f789742665e8d41fd377bd6f285fcee4",
+        "notes": "No misfiling, no redundancy, kind=definition names new construction."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "46a0d27cafe8",
+          "ts": "fdffc73aa6f8",
+          "lean": "043381a5f8a0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Generic-chapter block; archimedean mention (SU_{q_n}(2) gauge functions) is explicitly scoped under 'in the archimedean realisation' banner.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T18:43:36.053Z",
+        "reviewed_sha": "66d0d391f789742665e8d41fd377bd6f285fcee4",
+        "notes": "No naked Real.sqrt/rpow/order hypotheses; archimedean fragment is properly bannered."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-05T18:43:36.053Z"
 }

@@ -2566,7 +2566,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "cd956a6d456f",
+          "ts": "94fe9fa2e8c6",
+          "lean": "e4d5657df47e"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Opening sentence before **Proposition** says 'The empirical Bethe-Weizsacker liquid-drop ansatz is recovered as one phenomenology' — interpretive framing embedded in statement prose.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:48:01.597Z",
+        "reviewed_sha": "d7a718eeb4034d3475d14034046c52d50a793774",
+        "notes": "Move BW-recovery commentary to a remark; keep opening with the formal Proposition."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cd956a6d456f",
+          "ts": "94fe9fa2e8c6",
+          "lean": "e4d5657df47e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block is in sec:mass-geometric-face of chap:mass-theory; descent decomposition via exceptional divisors is geometric-face content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:48:15.634Z",
+        "reviewed_sha": "d7a718eeb4034d3475d14034046c52d50a793774",
+        "notes": "Fits section and chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "cd956a6d456f",
+          "ts": "94fe9fa2e8c6",
+          "lean": "e4d5657df47e"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Post-Proposition BW table (Volume/Pairing/Wigner rows with physical scalings A, A^{-1/2}, T(T+1)/A) is archimedean elaboration embedded inside the formal statement section.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:48:30.730Z",
+        "reviewed_sha": "d7a718eeb4034d3475d14034046c52d50a793774",
+        "notes": "Table content belongs in a remark; the Proposition statement itself should remain categorical."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "cd956a6d456f",
+          "ts": "94fe9fa2e8c6",
+          "lean": "e4d5657df47e"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Proof sketch uses 'm = sum_i ln|M_i|' (archimedean log) and references 'exceptional divisors of the brane blow-up' with physical content labels — mixes archimedean and categorical sides.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:48:47.761Z",
+        "reviewed_sha": "d7a718eeb4034d3475d14034046c52d50a793774",
+        "notes": "Proof should stay on the categorical side; archimedean ln evaluation belongs post-tau."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:48:47.761Z"
 }

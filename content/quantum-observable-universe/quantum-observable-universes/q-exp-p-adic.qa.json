@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "584bf088a80c",
+          "ts": "90a401d52a74"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "remark on p-adic convergence of exp_q extends the formal grouplike in the same chapter; subject is exp_q, defined in this section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:54:41.644Z",
+        "reviewed_sha": "93104b1d686ef2159a251436720dc650e07194e2",
+        "notes": "Placement fits: chapter covers exp_q; p-adic realisation is a natural companion remark."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:54:41.644Z"
 }

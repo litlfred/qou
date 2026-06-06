@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition states algebraic facts about genus-filtration ideal and Chebyshev obstruction without physical interpretation leaking into the statement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:33:31.900Z",
+        "reviewed_sha": "9c9a1851255ce032081117f3851d4e21e98f962d",
+        "notes": "Clean scholarly statement."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition about genus-filtration ideal fits squarely in brings-surface chapter on surface topology and Hecke completeness.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:33:50.044Z",
+        "reviewed_sha": "9c9a1851255ce032081117f3851d4e21e98f962d",
+        "notes": "Appropriate section placement."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement stays on categorical/algebraic side: genus-filtration ideal and Hecke irreps, no archimedean or MeV values in the proposition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:34:08.471Z",
+        "reviewed_sha": "9c9a1851255ce032081117f3851d4e21e98f962d",
+        "notes": "Correctly categorical."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof sketch in .md uses algebraic genus scan and Chebyshev degree arguments; no numerical substrate evaluations or archimedean specialisations.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:34:33.577Z",
+        "reviewed_sha": "9c9a1851255ce032081117f3851d4e21e98f962d",
+        "notes": "Proof stays on categorical/algebraic wall side."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:34:33.577Z"
 }

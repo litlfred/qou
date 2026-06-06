@@ -1819,7 +1819,28 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Derivation of chi(A)=-6 via Bring's surface genus-4 argument is central to brings-surface chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-05",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-05T19:33:47.002Z",
+        "reviewed_sha": "69d27d8e1babbe8fbc545c9ef7a72ee6935da008",
+        "notes": "Correctly placed."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-05T19:33:47.002Z"
 }

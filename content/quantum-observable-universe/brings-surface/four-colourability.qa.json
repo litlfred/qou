@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "dc72c248a79a",
+          "ts": "ec17f94f9bbf"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "remark interprets def:brings-surface; chromatic number of Bring surface is core brings-surface content",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:28:44.252Z",
+        "reviewed_sha": "6e6ac6813f48f56333dfa1b3825fc037b3a18fe7",
+        "notes": "on-topic for chapter"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:28:44.252Z"
 }
