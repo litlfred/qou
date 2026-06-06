@@ -12,7 +12,7 @@ $$
 $$
 
 *At the deuteron it overshoots the empirical target by far more than the
-viability tolerance,*
+viability tolerance $\mathrm{tol} = 1$ (in $m_e$ units),*
 
 $$
   \mathrm{tol} \;<\; \Sigma_{\mathrm{crystal}}(D) - \tau(D),
@@ -54,7 +54,7 @@ does **not** bear on:
   matching $B_{\mathrm{AME}}(D)$ to $+0.19\%$) — that construction uses a
   different functional and is unaffected.
 
-In the language of [`compute-author.md` §3.4], this is the *formalize-the-
+In the language of `compute-author.md` §3.4, this is the *formalize-the-
 refutation* mirror of the formalize-first discipline: a numerically refuted
 $\Delta_\lambda$ ansatz is recorded as a machine-checked inequality so it
 cannot be silently re-proposed.

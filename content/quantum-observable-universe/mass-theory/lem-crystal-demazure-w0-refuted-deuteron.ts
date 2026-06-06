@@ -6,7 +6,6 @@ export default lemma({
     "Crystal/Demazure-$w_0$ principal-specialisation $\\Delta_\\lambda$ refuted at the deuteron",
   lean: {
     ref: "qou:QOU.WedderburnMass.crystal_demazure_refuted_deuteron",
-    validation: "not_checked",
   },
   uses: ["prop:deuteron-binding-frobenius-codim"],
   tags: [
