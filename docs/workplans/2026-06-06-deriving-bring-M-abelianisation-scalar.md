@@ -38,8 +38,12 @@ therefore the dimension of that block, read off the `S₅` character table on th
 
 ## 2. The depth is fixed *a priori* at 2 (S₅ Hodge theory)
 
-The structural route (§3.2) is now **done** and supersedes the depth-1 guess.
-`s5_bring_hodge_depth.py` (verified, 3/3) establishes:
+The structural route (§3.2) supersedes the depth-1 guess. The
+**representation-theoretic part is machine-checked** by
+`s5_bring_hodge_depth.py` (3/3): it computes the character inner products and
+the multiplicity, giving depth **≤ 2**. The step from `≤ 2` to **exactly 2** is
+an additional geometric lemma (Griffiths transversality), labelled below as
+*not* machine-checked. Concretely the script establishes:
 
 - `H⁰(Ω)` of Bring's curve is the **irreducible** 4-dim `S₅`-rep `W` (Riera–
   Rodríguez 1992; either the standard rep `(4,1)` or its sign-twist

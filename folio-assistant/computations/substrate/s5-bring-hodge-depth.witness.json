@@ -1,8 +1,8 @@
 {
   "engine": "python-fractions",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-06T04:02:33.671904+00:00",
-  "commitSha": "df69ac8b69adfc71975372f41269f1ca41d59ff2",
+  "computedAt": "2026-06-06T04:07:07.101845+00:00",
+  "commitSha": "750e8a7d737aee6630d7aad4076d364380986848",
   "assertions": [
     {
       "name": "W_41_irreducible",
@@ -19,19 +19,19 @@
       "source": "⟨χ_(2,1,1,1), χ_(2,1,1,1)⟩ = 1"
     },
     {
-      "name": "hodge_depth_is_2",
+      "name": "multiplicity_in_H1_is_2",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "multiplicity of W in H¹ = 2W is 2"
+      "source": "multiplicity of W in H¹ = 2W is 2 ⇒ depth ≤ 2"
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "s5-bring-hodge-depth",
   "scriptFile": "s5_bring_hodge_depth.py",
-  "scriptHash": "473e32d0d042",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f9318cdad1e0",
+  "scriptCommitSha": "750e8a7d737aee6630d7aad4076d364380986848",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,9 +52,10 @@
     "W_41_irreducible_norm": "1",
     "W_2111_irreducible_norm": "1",
     "W_41_vs_W_2111_inner": "0",
-    "hodge_depth_via_41": 2,
-    "hodge_depth_via_2111": 2,
-    "conclusion": "H¹ = 2·W ⇒ M = id_W ⊗ B (2×2) ⇒ depth ≤ 2; Griffiths transversality ⇒ depth exactly 2; R = charpoly(B), degree 2",
+    "multiplicity_in_H1_via_41": 2,
+    "multiplicity_in_H1_via_2111": 2,
+    "computed_conclusion": "H¹ = 2·W (multiplicity 2); M = id_W ⊗ B with B a 2×2 matrix (Schur) ⇒ recurrence depth ≤ 2",
+    "additional_argument_not_checked": "depth = 2 (not just ≤ 2) requires Griffiths transversality (∇F^p ⊂ F^{p−1}⊗Ω) ⇒ B non-scalar; this geometric input is stated in the workplan, NOT verified by this script",
     "character_source": "probes/gap_a4_T4_schur_weyl_icosahedral_probe.py (S₅/A₅ tables)"
   }
 }
