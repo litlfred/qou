@@ -24,7 +24,7 @@ is already documented — `lambda-scale-substrate-form.md` records
 derivation)" / acknowledged-CAL-4**, falsified as a categorical derivation by
 **eight independent structural searches**. The per-block χ_λ single-block-vs-
 multi-block divergence is flagged in
-[`2026-05-25-geom-derivation-error-localization-and-klr-path.md`](2026-05-25-geom-derivation-error-localization-and-klr-path.md).
+[`2026-05-25-vol-density-derivation-error-localization-and-klr-path.md`](2026-05-25-vol-density-derivation-error-localization-and-klr-path.md).
 This audit therefore does **not** declare new "open math"; it supplies the
 **numerical proof** of what those docs assert, plus one finding they do not
 state (§4: the paper's literal per-block factor makes m_p *worse*, not better).
@@ -274,7 +274,7 @@ axiomatised away.
 
 > These are **findings**, not newly-discovered bugs: the H₄ index mismatch and
 > the per-block single-vs-multi-block divergence are documented in the corpus
-> (`lambda-scale-substrate-form.md`, `2026-05-25-geom-derivation-error-
+> (`lambda-scale-substrate-form.md`, `2026-05-25-vol-density-derivation-error-
 > localization`). The ranking is by decision-relevance for the owner.
 
 ### FINDING-1 — the per-block restore direction is RULED OUT (HIGH, new)

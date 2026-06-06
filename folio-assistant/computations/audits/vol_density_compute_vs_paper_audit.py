@@ -252,7 +252,7 @@ def main():
     print()
 
     if WitnessBuilder is not None:
-        w = WitnessBuilder("geom-full-compute-vs-paper-audit", engine="mpmath")
+        w = WitnessBuilder("vol-density-compute-vs-paper-audit", engine="mpmath")
         w.set_description(
             "AUDIT (no fit): order-by-order comparison of the paper's "
             "per-block factor J_{B3}(q)=Sum_{lam|-3} w_lam chi_lam(beta)/dim "

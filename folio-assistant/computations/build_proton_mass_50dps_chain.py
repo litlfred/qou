@@ -142,7 +142,7 @@ _VOL_B3_LIT = 8 * _CATALAN_G
 # Single source of truth: `_li_2_q_util.vol_density_borromean` (canonical
 # post-PR #1080, 2026-05-23): a single per-knot Geom call replaces the
 # manually expanded (Vol/ℏ_q²) × linking_weight form.  See
-# `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
+# `docs/lambda-scale-absorbed-into-vol-density.md` for the framing.
 from _li_2_q_util import vol_density_borromean as _vol_density_borromean
 GEOM_FULL_BORROMEAN_Q0 = _vol_density_borromean(_Q_0)
 

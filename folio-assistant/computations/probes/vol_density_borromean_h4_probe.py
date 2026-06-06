@@ -276,7 +276,7 @@ def main() -> None:
         "tags": [
             "h4-coefficient",
             "q-locality",
-            "geom-full-refinement",
+            "vol-density-refinement",
             "borromean",
             "so3-lift",
             "yekutieli-mi-k2",
@@ -287,7 +287,7 @@ def main() -> None:
         ),
     }
 
-    out_path = Path(__file__).parent / "geom-full-borromean-h4-probe.witness.json"
+    out_path = Path(__file__).parent / "vol-density-borromean-h4-probe.witness.json"
     out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
     print(f"\nWitness: {out_path.relative_to(Path.cwd())}")
 

@@ -9,7 +9,7 @@ Cat$\to$Alg$\to$Geom$\to$Arch$\to$Phys arc.
    = z \cdot \mathrm{tr}_M^{(n-1)}(x)$, and $\mathrm{tr}_M(1)=1$.
    This is the **algebraic** object that feeds the mass formula:
    $\mathfrak{m}(\varrho) = m_e \cdot
-   |\mathrm{tr}_M(\rho(\beta))| \cdot \mathrm{Geom}_{\mathrm{full}}(K,q_0)$.
+   |\mathrm{tr}_M(\rho(\beta))| \cdot \mathrm{VolDensity}(K,q_0)$.
    Symbol: $\mathrm{tr}_M$.
 
 2. **Markov chain** (stochastic dynamics).  The random walk on

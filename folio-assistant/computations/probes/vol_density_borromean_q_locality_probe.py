@@ -201,7 +201,7 @@ def run_probe() -> dict:
         "status": "exploratory",
         "tags": [
             "q-locality",
-            "geom-full-refinement",
+            "vol-density-refinement",
             "smooth-crossing",
             "family-a-gap",
             "borromean",
@@ -235,7 +235,7 @@ def main() -> None:
     print(f"Verdict: {witness['verdict']['interpretation']}")
 
     # Write witness
-    out_path = Path(__file__).parent / "geom-full-borromean-q-locality-probe.witness.json"
+    out_path = Path(__file__).parent / "vol-density-borromean-q-locality-probe.witness.json"
     out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
     print(f"\nWitness written to: {out_path.relative_to(Path.cwd())}")
 

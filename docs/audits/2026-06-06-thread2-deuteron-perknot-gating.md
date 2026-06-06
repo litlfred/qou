@@ -1,6 +1,6 @@
-# Thread 2 — deuteron per-knot `Geom_full` is GATED (not clean engineering)
+# Thread 2 — deuteron per-knot `VolDensity` is GATED (not clean engineering)
 
-**Date:** 2026-06-06 · **Probe:** [`geom_full_deuteron_perknot_probe.py`](../../folio-assistant/computations/geom_full_deuteron_perknot_probe.py) · **Follows:** the next-threads handover (#1908) + the vol-usage audit (2026-06-02).
+**Date:** 2026-06-06 · **Probe:** [`vol_density_deuteron_perknot_probe.py`](../../folio-assistant/computations/vol_density_deuteron_perknot_probe.py) · **Follows:** the next-threads handover (#1908) + the vol-usage audit (2026-06-02).
 
 ## Finding
 
@@ -32,12 +32,12 @@ The proton/neutron cases remain the only cleanly-correct per-knot wiring (`Vol=8
 ## Status of thread 2
 
 - ✅ **p / n:** `Vol = 8·G = Vol(𝓑₃)` is **correct** (not part of the bug); the
-  `geom_full_per_block_wiring.py` testbed verifies the per-block form for 𝓑₃.
+  `vol_density_per_block_wiring.py` testbed verifies the per-block form for 𝓑₃.
 - 🔴 **D and A≥3:** gated on (a) the §9.3 mass-link-volume assignment (**thread 4**),
   (b) the `chi-D-h6` naming fix, (c) resolving the historical-match kludge.
 
 The probe is **ready** — once obstacles (a)+(b) clear, re-run
-`geom_full_deuteron_perknot_probe.py` for the raw deuteron mass at the assigned Vol.
+`vol_density_deuteron_perknot_probe.py` for the raw deuteron mass at the assigned Vol.
 
 ## Recommendation
 

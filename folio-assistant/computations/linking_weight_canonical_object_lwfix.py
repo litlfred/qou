@@ -4,7 +4,7 @@ CONFIRM-OR-REFUTE task. No fit, no tuning to m_p / CODATA. Every number
 below is RAW. This script is an INDEPENDENT reproduction of the verdict
 already reached by two merged sibling audits:
 
-  - PR #1613 `2026-06-01-geom-full-compute-vs-paper-audit.md`
+  - PR #1613 `2026-06-01-vol-density-compute-vs-paper-audit.md`
   - PR #1623 `2026-06-01-yekutieli-volume-join-derivation.md`
 
 Owner question (restated): is production's `linking_weight` factor in
