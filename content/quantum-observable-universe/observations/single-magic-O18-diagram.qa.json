@@ -1965,7 +1965,28 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/single-magic-O18-diagram.md:1 — detected regime [symbolic] is disjoint from chapter 'observations' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9d793825eeb6",
+          "ts": "7a6f54b22150"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "block is in sec:beta-decay-magic-shells-k12-barrier-bypass; O18 single-magic LR fusion and kappa-leakage content matches this nuclear magic-shell section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:55:36.531Z",
+        "reviewed_sha": "dc57196fa9b77d01c1ef20212b78e0d34f18a3ee",
+        "notes": "correct placement in magic-shell section"
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-06T01:55:36.531Z"
 }
