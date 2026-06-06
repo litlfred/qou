@@ -2221,7 +2221,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "26789f5076a3",
+          "ts": "4c4118981577"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Section intro for the Wenzl-Q_mn / cyclotomic LR-tensor / explicit α_k arc — matches section title 'Wenzl bridge, cyclotomic factorisation, and explicit α_k'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:32:02.385Z",
+        "reviewed_sha": "f92d14483c2e466030f2c39a047cff2bb49fa18b",
+        "notes": "Prose intro correctly placed in its mass-theory section."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T20:32:02.385Z"
 }
