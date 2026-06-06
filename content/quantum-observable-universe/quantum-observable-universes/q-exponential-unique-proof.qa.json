@@ -1769,7 +1769,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "877924765298",
+          "ts": "51c4750774a9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof of uniqueness of q-exponential grouplike; immediately follows prop:q-exponential-unique in manifest; algebraic argument (primitives, D_q, counit) fits quantum-observable-universes chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:04:54.040Z",
+        "reviewed_sha": "ee41e3472ddc4dc16f0289ccf8b4be3a6537ffa2",
+        "notes": "Correct placement and content fit."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-06T02:04:54.040Z"
 }
