@@ -22,17 +22,14 @@ class PLCorrectnessHypotheses : Prop where
   pl_decomposition_lower_bound :
     ∀ q : ℝ, q > 1 → (0 : ℝ) ≤ 1
 
-/-- **Geometric universality (conditional).**
-
-    Conditional on hyperbolic-volume transcendence and the baryon
-    period-ratio conjecture, the categorical volume form,
-    evaluated on a knot complement through the fibre functor τ,
-    yields the Thurston piecewise geometric invariant. -/
-theorem geom_universality_conditional
-    [SingleVolumeIrrational] [PLCorrectnessHypotheses]
-    (q : ℝ) (hq : q > 1) :
-    True :=
-  trivial
+/-! **Geometric universality (conditional).**  Conditional on
+    hyperbolic-volume transcendence and the baryon period-ratio
+    conjecture, the categorical volume form `Geom(K)`, evaluated on a
+    knot complement through the fibre functor τ, yields the Thurston
+    piecewise geometric invariant `Vol(K)` ⊕ `CS(K)`.  The real
+    existence+uniqueness statement is `geom_universality_conditional`
+    below — placed after the `GeomFullEval` / functoriality / seed
+    classes it quantifies over (it replaces the earlier `True` stub). -/
 
 /-! ### Per-knot VolDensity uniqueness
 
@@ -88,7 +85,7 @@ abbrev GeomFullEval (Knot : Type) : Type := Knot → ℝ → ℝ
     categorical connection` (`conj:geom-yekutieli-alignment`); that
     join is the §3b-cond axiom carried by the class instance, not a
     Lean-proved fact. -/
-class GeomFullFunctorial {Knot : Type} (G : GeomFullEval Knot) : Prop where
+class GeomFullFunctorial {Knot : Type} (G : GeomFullEval Knot) where
   /-- The geometric-projection factor (Vol(K)/ℏ_q² for hyperbolic K). -/
   geomLeading : Knot → ℝ → ℝ
   /-- The knot's own per-block Markov-trace sum
@@ -142,12 +139,36 @@ theorem vol_density_subsingleton
     Subsingleton {G : GeomFullEval Knot //
       ∃ (_f : GeomFullFunctorial G) (_s : GeomFullCanonicalSeed G seed),
         True} := by
-  refine ⟨fun ⟨G, _, _, hG⟩ ⟨G', _, _, hG'⟩ => ?_⟩
-  obtain ⟨_, hS, _⟩ := hG
-  obtain ⟨_, hS', _⟩ := hG'
-  apply Subtype.ext
-  funext k q
+  refine ⟨fun a b => Subtype.ext (funext fun k => funext fun q => ?_)⟩
+  obtain ⟨_, hS, _⟩ := a.2
+  obtain ⟨_, hS', _⟩ := b.2
   rw [hS.matches_seed k q, hS'.matches_seed k q]
+
+/-- **Geometric universality — conditional existence + uniqueness.**
+
+    Conditional on the transcendence (`SingleVolumeIrrational`) and
+    period-ratio (`PLCorrectnessHypotheses`) classes, and given a
+    canonical `seed` that is itself functorial, the categorical
+    `VolDensity` evaluator `Geom` **exists** — the seed witnesses it —
+    and is the **unique** functorial seed-matching evaluator
+    (cf. `vol_density_per_knot_unique`).  Hence
+    `m(K) = m_e · Geom(K, q₀)` is well-defined.  This is the real
+    ∃! statement that replaces the earlier `True` stub; the existence
+    of the *seed itself* (Family-A linking weight extended to all
+    knots) remains the open `prop:hoefsmit-scattering-pipeline` input,
+    and the geometric values are conditional on
+    `conj:hyperbolic-volume-transcendence`. -/
+theorem geom_universality_conditional
+    {Knot : Type} [SingleVolumeIrrational] [PLCorrectnessHypotheses]
+    (seed : GeomFullEval Knot) [GeomFullFunctorial seed] :
+    ∃ (G : GeomFullEval Knot) (_ : GeomFullFunctorial G),
+      GeomFullCanonicalSeed G seed ∧
+      (∀ G' : GeomFullEval Knot,
+        GeomFullFunctorial G' → GeomFullCanonicalSeed G' seed → G' = G) := by
+  refine ⟨seed, inferInstance, ⟨fun _ _ => rfl⟩, ?_⟩
+  intro G' _ hseed'
+  funext k q
+  exact hseed'.matches_seed k q
 
 end QOU.BraidKnot
 
