@@ -719,7 +719,28 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "73766462d3cd",
+          "ts": "3eef2f8e9c5b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block is first entry in section 'sec:mass-bridge-orphan-reconnect' within chap:mass-theory; prose describes exactly the blocks that follow.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:45:53.925Z",
+        "reviewed_sha": "ce70647b8d356e767d917c5ed07ab14989a4db7e",
+        "notes": "Clean section intro prose; fits chapter and section scope."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T01:45:53.925Z"
 }
