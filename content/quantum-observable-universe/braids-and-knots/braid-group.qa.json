@@ -1879,7 +1879,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "112910e29cd1",
+          "ts": "8abcef4cfb18",
+          "lean": "d42ef20c53b9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Pure algebraic group presentation, no archimedean constructs (no Real.sqrt, q_0 values, or ℝ-specific ops)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:50:14.912Z",
+        "reviewed_sha": "ca1deb23a72f965a64837b8de3e829fd6bc3d33d",
+        "notes": "Statement stays on categorical/substrate side of the wall"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T00:50:14.912Z"
 }
