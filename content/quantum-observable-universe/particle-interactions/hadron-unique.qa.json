@@ -2605,7 +2605,7 @@
           "lean": "5cfcd2eaeec1"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement is purely algebraic (Hecke normal form, braid isotopy); no archimedean constructs.",
         "reviewer": {
           "kind": "agent",
@@ -2627,7 +2627,7 @@
           "lean": "5cfcd2eaeec1"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "No proof body in .md; proof lives in sibling prf:hadron-unique.",
         "reviewer": {
           "kind": "agent",

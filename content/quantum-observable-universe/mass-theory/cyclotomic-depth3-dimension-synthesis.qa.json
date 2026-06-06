@@ -2607,7 +2607,7 @@
           "lean": "4015becd0f8b"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement over Q-vector space; no Real/MeV/numeric q; upper bound over Q(zeta_K)",
         "reviewer": {
           "kind": "agent",
@@ -2629,7 +2629,7 @@
           "lean": "4015becd0f8b"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Steps 1-4: count generators, Tate-rational imaginary parts, orbit sum, Borel rank — no linarith/IVT/Real",
         "reviewer": {
           "kind": "agent",

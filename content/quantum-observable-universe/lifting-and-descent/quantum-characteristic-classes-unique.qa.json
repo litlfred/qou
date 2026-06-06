@@ -2535,7 +2535,7 @@
           "lean": "8775f3671fac"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement uses cohomology H^2(S,B) — generic/categorical, no archimedean constructs.",
         "reviewer": {
           "kind": "agent",
@@ -2557,7 +2557,7 @@
           "lean": "8775f3671fac"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof body is in sibling prf block; this file contains statement only.",
         "reviewer": {
           "kind": "agent",

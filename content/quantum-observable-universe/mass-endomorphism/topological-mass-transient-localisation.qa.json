@@ -2617,7 +2617,7 @@
           "lean": "c0ecc9c3bb38"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement is purely algebraic norm decomposition, no archimedean constructs",
         "reviewer": {
           "kind": "agent",
@@ -2639,7 +2639,7 @@
           "lean": "c0ecc9c3bb38"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof body is in separate proof block, statement block has no proof prose",
         "reviewer": {
           "kind": "agent",

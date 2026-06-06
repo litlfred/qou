@@ -2639,7 +2639,7 @@
           "lean": "ab866fbec580"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement is on the categorical/algebraic side: S-eigenvalue classification of Hecke algebra functionals.",
         "reviewer": {
           "kind": "agent",
@@ -2661,7 +2661,7 @@
           "lean": "ab866fbec580"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof proceeds via direct algebraic computation: palindromic polynomials, transfer matrix determinant, ratio of characters — all categorical side.",
         "reviewer": {
           "kind": "agent",

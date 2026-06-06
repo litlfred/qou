@@ -2340,7 +2340,7 @@
           "lean": "fde2f549bb1c"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Lean CrystalEigenlineSignBlind.eigWord_sign_blind matches narrative: S_crystal invariant under sigma_i<->sigma_i^{-1}",
         "reviewer": {
           "kind": "agent",
@@ -2776,7 +2776,7 @@
           "lean": "fde2f549bb1c"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement over generic ring at q=0 crystal limit; no Real/MeV/numeric q hardcoded",
         "reviewer": {
           "kind": "agent",
@@ -2798,7 +2798,7 @@
           "lean": "fde2f549bb1c"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof via signed-permutation action on SYT basis, Hecke skein at q=0 — purely algebraic, no linarith/IVT/Real",
         "reviewer": {
           "kind": "agent",

@@ -2786,7 +2786,7 @@
           "lean": "5c53974060f8"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Magic numbers emerging from q₀ via Hoefsmit/Wedderburn — archimedean observation, correctly placed in observations chapter.",
         "reviewer": {
           "kind": "agent",
@@ -2808,7 +2808,7 @@
           "lean": "5c53974060f8"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Observations chapter (archimedean); statement uses numeric q₀, Hoefsmit matrices at q₀, nuclear magic numbers — correct archimedean regime.",
         "reviewer": {
           "kind": "agent",
@@ -2830,7 +2830,7 @@
           "lean": "5c53974060f8"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof body uses Hoefsmit seminormal form, Wedderburn weights, and numerical q₀ evaluation — archimedean machinery consistent with observations chapter.",
         "reviewer": {
           "kind": "agent",

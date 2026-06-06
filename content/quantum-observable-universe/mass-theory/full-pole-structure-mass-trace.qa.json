@@ -2583,7 +2583,7 @@
           "lean": "e895df5ec8e1"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "mass-theory chapter; Habiro completion of the Markov trace is directly the algebraic structure underpinning the mass formula.",
         "reviewer": {
           "kind": "agent",
@@ -2605,7 +2605,7 @@
           "lean": "e895df5ec8e1"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement is over ℤ[q^{±1/2}] and Habiro ring (generic algebraic); explicit §7c banner at top of .md declares archimedean specialisation lives in Lean sibling; no MeV/q₀ value in statement.",
         "reviewer": {
           "kind": "agent",
@@ -2627,7 +2627,7 @@
           "lean": "e895df5ec8e1"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof uses cyclotomic division, inverse limits, Markov-Jones integrality — all algebraic; q₀≈1.110 mention in tail-control aside is bridged via algebraic q↔q⁻¹ involution identity, not bare archimedean argument.",
         "reviewer": {
           "kind": "agent",

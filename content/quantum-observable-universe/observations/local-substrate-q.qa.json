@@ -2581,7 +2581,7 @@
           "lean": "86b035eaf833"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Observations chapter; block defines local numerical value of substrate q — central purpose of observations chapter.",
         "reviewer": {
           "kind": "agent",
@@ -2603,7 +2603,7 @@
           "lean": "86b035eaf833"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Observations chapter is explicitly archimedean; statement uses real-valued q≈1.1097 with CODATA values — correct regime.",
         "reviewer": {
           "kind": "agent",
@@ -2625,7 +2625,7 @@
           "lean": "86b035eaf833"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof uses SnapPy numerical evaluation, CODATA values, and monotonicity argument — all archimedean machinery matching observations chapter.",
         "reviewer": {
           "kind": "agent",

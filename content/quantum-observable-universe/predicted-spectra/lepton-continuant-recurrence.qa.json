@@ -2597,7 +2597,7 @@
           "lean": "d6fc6b6c94b6"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Lepton tower torus-knot normal form is core predicted-spectra content; correctly placed.",
         "reviewer": {
           "kind": "agent",
@@ -2619,7 +2619,7 @@
           "lean": "d6fc6b6c94b6"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "predicted-spectra is explicitly archimedean; statement uses q_0 numeric values correctly for this chapter; algebraic recurrence is exact in Z[q±1] with archimedean evaluation flagged.",
         "reviewer": {
           "kind": "agent",
@@ -2641,7 +2641,7 @@
           "lean": "d6fc6b6c94b6"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof is purely algebraic Hecke-relation induction in Z[q±1]; no archimedean machinery (linarith/IVT/Real.*) used.",
         "reviewer": {
           "kind": "agent",

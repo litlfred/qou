@@ -2513,7 +2513,7 @@
           "lean": "86725ade7ad0"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Corollary is about jet prolongation in lifting-and-descent chapter, correctly placed.",
         "reviewer": {
           "kind": "agent",
@@ -2535,7 +2535,7 @@
           "lean": "86725ade7ad0"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement is explicitly archimedean (tagged archimedean, title says archimedean realisation) — correctly in archimedean regime.",
         "reviewer": {
           "kind": "agent",
@@ -2557,7 +2557,7 @@
           "lean": "86725ade7ad0"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "No proof body in this block; proof is delegated to prf:jet-prolongation-C.",
         "reviewer": {
           "kind": "agent",

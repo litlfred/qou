@@ -2603,7 +2603,7 @@
           "lean": "bc03f1d5f47b"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement is over generic ring R with 30 in R^x; no archimedean constructs; Lean sibling note confirms §7c separation.",
         "reviewer": {
           "kind": "agent",
@@ -2625,7 +2625,7 @@
           "lean": "bc03f1d5f47b"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof uses categorical/algebraic machinery only (Schur lemma, Yekutieli, Euler char); no Real.*, linarith, or numeric q.",
         "reviewer": {
           "kind": "agent",

@@ -2581,7 +2581,7 @@
           "lean": "c9313586cda0"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "q-deformed double-slit intensity for massive particles is squarely in observations chapter",
         "reviewer": {
           "kind": "agent",
@@ -2603,7 +2603,7 @@
           "lean": "c9313586cda0"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "observations is archimedean chapter; md uses physical units and real geometry; Lean note at top flags §7c archimedean specialisation",
         "reviewer": {
           "kind": "agent",
@@ -2625,7 +2625,7 @@
           "lean": "c9313586cda0"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "lean file uses Real.pi/Real.sin/noncomputable throughout; ground ring ℝ declared; axiom carries Ref citation per §3b-cond",
         "reviewer": {
           "kind": "agent",

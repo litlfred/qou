@@ -2788,7 +2788,7 @@
           "lean": "10859d9beab0"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "mass-theory chapter scope covers LP-dual mass formula structure; Frobenius self-duality is the structural basis for LP-dual mass coefficients.",
         "reviewer": {
           "kind": "agent",
@@ -2810,7 +2810,7 @@
           "lean": "10859d9beab0"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement is generic-ring (R : Type*) [CommRing R]; no archimedean constructs (no Real.sqrt, no q≈value, no MeV) in the statement.",
         "reviewer": {
           "kind": "agent",
@@ -2832,7 +2832,7 @@
           "lean": "10859d9beab0"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof uses Frobenius pairing / Wedderburn trace identity / LP duality — all algebraic; no archimedean machinery (no linarith, IVT, Real.*).",
         "reviewer": {
           "kind": "agent",

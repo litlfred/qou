@@ -2617,7 +2617,7 @@
           "lean": "fb59c79ea83c"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "All constructs categorical: Frobenius pairing, descent involution, categorical trace — no archimedean tokens.",
         "reviewer": {
           "kind": "agent",
@@ -2639,7 +2639,7 @@
           "lean": "fb59c79ea83c"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof uses algebraic Frobenius-norm orthogonality and linearity of trace — no archimedean machinery.",
         "reviewer": {
           "kind": "agent",

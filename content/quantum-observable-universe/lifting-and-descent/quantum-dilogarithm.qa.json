@@ -2554,7 +2554,7 @@
           "lean": "bbdf6bcb5d73"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Statement opens with 'In the archimedean realisation' — explicit wall-side declaration per §7c.",
         "reviewer": {
           "kind": "agent",
@@ -2576,7 +2576,7 @@
           "lean": "bbdf6bcb5d73"
         },
         "result": "pass",
-        "severity": "major",
+        "severity": "minor",
         "evidence": "Proof uses generic q-series sum 1/n[n]_q — no Real.*, linarith, IVT, or numeric evaluation.",
         "reviewer": {
           "kind": "agent",
