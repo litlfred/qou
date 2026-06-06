@@ -1949,7 +1949,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "705dde967fdd",
+          "ts": "b7ae85cecb60",
+          "lean": "fb15672fd7f5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "In sec:knot-operator-energy; defines ordering preceq_q on shadow prices, a new construction",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:48:40.713Z",
+        "reviewed_sha": "f5f800948fcf3696d6bdac4b4dab2998d358b8ee",
+        "notes": "Definition belongs in knot-operator-energy section; names a new relation."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "705dde967fdd",
+          "ts": "b7ae85cecb60",
+          "lean": "fb15672fd7f5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "States ordering over generic base ring R; R-realisation named as one of {R, Q_p, F_p}, not silently specialized",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:48:40.759Z",
+        "reviewed_sha": "f5f800948fcf3696d6bdac4b4dab2998d358b8ee",
+        "notes": "Generic-ring statement; archimedean (smooth) case explicitly one realisation among p-adic/Zariski; no numeric q0 pin."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T20:48:40.759Z"
 }
