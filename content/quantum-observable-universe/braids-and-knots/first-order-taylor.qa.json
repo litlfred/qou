@@ -1857,7 +1857,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a6260cd61590",
+          "ts": "53e769f8c30c"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "remark in sec:su2-so3 interpreting def:su2-basis via Lie bracket / BCH — directly on-topic for the SU(2)/SO(3) framework section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:32:17.341Z",
+        "reviewed_sha": "cd757fa0f3b3ad34372875bf919da617fe6b1a0a",
+        "notes": "clean fit"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:32:17.341Z"
 }
