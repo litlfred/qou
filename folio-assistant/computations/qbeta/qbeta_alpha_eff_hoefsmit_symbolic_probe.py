@@ -65,7 +65,7 @@ from q_parameter import q_at, q_muon_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-def substrate_quantities(q: mpf) -> dict:
+def substrate_quantities(q: mpf) -> dict[str, mpf]:
     """The on-main N=3 closed forms (probe_q_beta_operator_valued_N3.py)."""
     h = q - 1 / q                                  # bar-odd Hecke param
     z = 1 / (sqrt(q) + 1 / sqrt(q))                # bar-even
@@ -79,18 +79,18 @@ def substrate_quantities(q: mpf) -> dict:
     return {"h": h, "z": z, "alpha": alpha, "b": b, "hbar_q2": hbar_q2, "u": u}
 
 
-def ladder_coeffs_from_producer_phase(alpha: mpf, order: int = 4) -> list:
+def ladder_coeffs_from_producer_phase(alpha: mpf, order: int = 4) -> list[mpf]:
     """Taylor coeffs c_k of  F(u) = cos(alpha - Σ_{k≥1} u^k/2) / cos(alpha).
 
-    Uses the on-main N=3 phase (truncated geometric tail u^k/2). Returns
+    The geometric phase tail has the closed form
+    `Σ_{k≥1} u^k/2 = u / (2(1-u))`, so the coefficients through `order` are
+    mathematically exact with no arbitrary truncation. Returns
     [c_0, c_1, c_2, c_3, ...]; c_0 = 1 by construction.
     """
     ca = cos(alpha)
 
     def F(u):
-        # phase tail Σ_{k≥1} u^k/2 to high order (geometric); truncate well
-        # beyond `order` so the low-order Taylor coeffs are exact.
-        tail = sum(u ** k for k in range(1, order + 6)) / 2
+        tail = u / (2 * (1 - u))     # = Σ_{k≥1} u^k/2, closed form
         return cos(alpha - tail) / ca
 
     return taylor(F, mpf(0), order)
@@ -100,6 +100,7 @@ def main() -> int:
     set_compute_dps()
 
     rows = []
+    c1_raw: list[tuple[mpf, mpf]] = []   # (c_1, tan(α)/2) per anchor, lossless
     print("=" * 84)
     print(" Q_β α_eff (on-main N=3 closed form) → ladder c_k reconciliation")
     print("=" * 84)
@@ -116,6 +117,7 @@ def main() -> int:
         c1, c2, c3 = coeffs[1], coeffs[2], coeffs[3]
         # the analytic prediction c_1 = tan(α)/2 (the reconciliation gap)
         c1_pred = tan(s["alpha"]) / 2
+        c1_raw.append((c1, c1_pred))     # keep raw mpf for the assertion
         rows.append({
             "anchor": name,
             "q": fmt(q),
@@ -174,11 +176,13 @@ def main() -> int:
         computed=1.0 if all(r["c_1_nonzero"] for r in rows) else 0.0,
         expected=1.0,
     )
+    # Assertion checked on the RAW mpf values captured during the loop, NOT
+    # round-tripped through the formatted strings (which can round small
+    # differences down at output_dps).
     wb.add_assertion(
         "c1_matches_tan_alpha_over_2",
         computed=1.0 if all(
-            fabs(mpf(r["c_1_producer"]) - mpf(r["c_1_analytic_tan_alpha_over_2"]))
-            < mpf("1e-30") for r in rows
+            fabs(c1 - c1p) < mpf("1e-30") for c1, c1p in c1_raw
         ) else 0.0,
         expected=1.0,
     )
