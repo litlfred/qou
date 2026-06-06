@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1b36f1f037ec",
+          "ts": "c40772a2380c",
+          "lean": "01868bc3c7a3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition in section 'q-Resolvent and categorical Wick rotation'; names q-resolvent R_q(s) construction",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:33:50.803Z",
+        "reviewed_sha": "8b5dbe5461e63549a8a466364c587a9acc9b2725",
+        "notes": "Names a new construction; matches section/chapter scope"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1b36f1f037ec",
+          "ts": "c40772a2380c",
+          "lean": "01868bc3c7a3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Defined categorically over any base ring; explicit 'Base-ring behaviour' lists F_p/Q_p/C_p; archimedean C called out separately as its own case",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:33:50.849Z",
+        "reviewed_sha": "8b5dbe5461e63549a8a466364c587a9acc9b2725",
+        "notes": "Generic-ring definition with archimedean case explicitly walled off; matches §7c discipline"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T20:33:50.849Z"
 }
