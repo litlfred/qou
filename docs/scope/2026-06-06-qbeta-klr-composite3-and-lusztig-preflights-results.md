@@ -6,7 +6,7 @@
 
 ---
 
-## Option 2 — Composite 3 (Type-B folded crystal): REFUTED at u² sign
+## Option D — Composite 3 (Type-B folded crystal): REFUTED at u² sign
 
 ### Ansatz
 ```
@@ -37,7 +37,7 @@ Probe + witness: [`qbeta_klr_composite3_preflight_run.py`](../../folio-assistant
 
 ---
 
-## Option 3 — Demazure-Lusztig variant of Composite 1: REFUTED for natural variants (exotic UNTESTED)
+## Option C′ — Demazure-Lusztig (Lusztig-dual) variant of Composite 1: REFUTED for natural variants (exotic UNTESTED)
 
 ### Ansatz
 Same as Composite 1 (`F(u) = Σ_w D_w(λ)·(q;q)_{ℓ(w)}·u^{ℓ(w)}`) but with the **Lusztig-dual** Demazure character:
