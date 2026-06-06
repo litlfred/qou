@@ -1921,7 +1921,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2bdcdce62262",
+          "ts": "46c7ab694924"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets def:briggs-klein-chart; radial projection of Bring's surface is core brings-surface geometry.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:40:59.260Z",
+        "reviewed_sha": "92330d7769bb0563426a07627f7368872e11102d",
+        "notes": "Block subject directly addresses the chapter's central geometric object."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:40:59.260Z"
 }
