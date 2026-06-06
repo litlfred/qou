@@ -771,7 +771,28 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f4feac2f6607",
+          "ts": "952efa9e8938"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "remark interprets thm:jones-markov-trace; in 'Hecke quotient and knot eigenbasis' section right after jones-markov-trace",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T19:59:57.702Z",
+        "reviewed_sha": "01571242c84f7b0a67823d66d44d128444043173",
+        "notes": "Notation disambiguation of three Markov uses (trace/chain/moves); on-topic, no sibling carries it"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T19:59:57.702Z"
 }
