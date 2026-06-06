@@ -15,7 +15,7 @@ generator-assignment model fails — strange quark modifies
 crossing WEIGHTS, not generator assignments.
 
 The missing factor ~3 suggests the strange-quark enhancement
-enters through the Geom_full linking weight (per-typed geometric
+enters through the VolDensity linking weight (per-typed geometric
 factor), not through the Hecke character evaluation alone.
 """
 from __future__ import annotations

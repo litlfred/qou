@@ -26,6 +26,6 @@ export default proposition({
     "bijection",
     "octahedral-cell",
     "borromean",
-    "geom-full-refinement",
+    "vol-density-refinement",
   ],
 });

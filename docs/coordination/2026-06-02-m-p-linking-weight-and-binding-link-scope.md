@@ -15,7 +15,7 @@ PR #1698 verdict (final-audit): the +2.89 % m_p gap lives ENTIRELY in the proton
 
 Closing this gap on m_p **auto-closes** all atomic absolute-mass predictions to ~1 % (H2 magic-A extension is quasi-uniform across A=1→56). So Subgoal-1 is fundamentally a SINGLE-PARTICLE problem.
 
-Subgoal-1 closure target: find a categorical derivation of the proton linking_weight that lands at 2.461648, not 2.532780. The 8 prior structural searches (`lambda-scale-absorbed-into-geom-full.md`) all refuted; not retracing them. Productive new attack vectors per PR #1698 Phase B/C/Vol audit:
+Subgoal-1 closure target: find a categorical derivation of the proton linking_weight that lands at 2.461648, not 2.532780. The 8 prior structural searches (`lambda-scale-absorbed-into-vol-density.md`) all refuted; not retracing them. Productive new attack vectors per PR #1698 Phase B/C/Vol audit:
 
 - **Operator-valued linking_weight** (not scalar) — the Wenzl branching combiner (PR #1698 Phase C `class WenzlAOperator`) computes a per-atom value; the categorical linking_weight may not be a number but an OPERATOR on the Wedderburn decomposition.
 - **q-Plancherel weights** instead of uniform `1/p(n)` — the H₄ uniform average is the unweighted partition sum; a q-Plancherel weighted sum at the same H_n level reproduces a different value.
@@ -72,5 +72,5 @@ Intent comments to be posted on each.
 - PR #1698 (merged): [`4cd808f05b`](https://github.com/litlfred/qou/commit/4cd808f05b)
 - Final verdict: [`docs/audits/2026-06-02-subgoal-1-final-verdict.md`](../audits/2026-06-02-subgoal-1-final-verdict.md)
 - SDP + multi-term + tritium: [`docs/audits/2026-06-02-subgoal-1-sdp-multiterm-and-tritium.md`](../audits/2026-06-02-subgoal-1-sdp-multiterm-and-tritium.md)
-- Canonical reference (refuted routes): [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- Canonical reference (refuted routes): [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 - Conjecture: [`content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md`](../../content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md)

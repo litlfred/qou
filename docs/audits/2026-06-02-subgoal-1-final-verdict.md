@@ -77,7 +77,7 @@ So:
 
 ## Why H3 catastrophically fails (the canonical-reference refuted route)
 
-H3 = the "use per-atom Vol AND per-atom tr_M simultaneously" formulation that the canonical reference `lambda-scale-absorbed-into-geom-full.md` had already documented as refuted (−57 % regression on m_p, same magnitude as we measured).
+H3 = the "use per-atom Vol AND per-atom tr_M simultaneously" formulation that the canonical reference `lambda-scale-absorbed-into-vol-density.md` had already documented as refuted (−57 % regression on m_p, same magnitude as we measured).
 
 This confirms the canonical reference's verdict: per-atom (Vol·tr_M) is structurally wrong for absolute mass. The (Vol · linking_weight) pairing on H0/H2 is what production correctly uses.
 
@@ -128,4 +128,4 @@ Subgoal-1 closure work should focus on:
 - Per-atom Vol witness: [`folio-assistant/computations/per-atom-hyperbolic-volume.witness.json`](../../folio-assistant/computations/per-atom-hyperbolic-volume.witness.json)
 - Mass-table probe: [`folio-assistant/computations/subgoal_1_per_knot_mass_table_probe.py`](../../folio-assistant/computations/subgoal_1_per_knot_mass_table_probe.py)
 - Linking-weight-residual confirmation (+2.89 % genuine): [`docs/audits/2026-06-01-linking-weight-residual-fix.md`](2026-06-01-linking-weight-residual-fix.md)
-- Canonical reference (refuted routes): [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- Canonical reference (refuted routes): [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)

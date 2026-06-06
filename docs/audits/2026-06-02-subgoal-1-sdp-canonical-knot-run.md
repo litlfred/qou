@@ -61,7 +61,7 @@ The SDP infrastructure is operational (post-cvxpy install). For the production m
 1. Consume `canonical_T_w` from the witness for atoms where SDP closes
 2. Use historical assignment (with kludge tag) for atoms where SDP is open
 3. Use `magic-A` formula for ⁴He
-4. Apply Vol(K) and tr_M(β_K) from `geom_full_per_block`
+4. Apply Vol(K) and tr_M(β_K) from `vol_density_per_block`
 
 ## Cross-references
 

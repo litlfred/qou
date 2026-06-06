@@ -28,7 +28,7 @@ side of the framework (37 scripts use Φ_q for mass-anchor compute).
 The binding-context side uses Li_2^q (16 scripts, all bar-symmetric).
 
 Since `linking_weight` is the LEADING factor in the mass chain
-`m(K) = m_e · Geom_full(K) = m_e · (Vol/ℏ_q²) · linking_weight`, a
+`m(K) = m_e · VolDensity(K) = m_e · (Vol/ℏ_q²) · linking_weight`, a
 Φ_q-based linking_weight is framework-consistent in principle — it
 sits on the mass-anchor side.
 
@@ -45,7 +45,7 @@ shifts from 2.4619 to ~1.7 — losing the numerical match.
 
 ## Implication for production adoption
 
-Three candidate linking_weights for Geom_full(𝓑₃):
+Three candidate linking_weights for VolDensity(𝓑₃):
   1. Family A — PROVED Wedderburn, bar-symmetric, +2.89 % m_p gap
   2. via-Jones — Markov trace, bar-symmetric, +47 % closer than Family A
   3. Bring + Faddeev h⁴ — NOT bar-symmetric, +108 ppm m_p match
@@ -166,7 +166,7 @@ def main() -> int:
     w = WitnessBuilder("bar-symmetry-three-candidates", engine="mpmath")
     w.set_description(
         "Bar-symmetry (q ↔ q⁻¹) test for three candidate "
-        "linking_weight forms in Geom_full(𝓑₃). Family A and via-Jones "
+        "linking_weight forms in VolDensity(𝓑₃). Family A and via-Jones "
         "are bar-symmetric; Bring color-tube and the combined Bring + "
         "Faddeev h⁴ are bar-asymmetric (Φ_q-side mass-anchor "
         "convention, per the cheat sheet §4). The +108 ppm m_p match "

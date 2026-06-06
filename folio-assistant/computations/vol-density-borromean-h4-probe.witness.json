@@ -5,7 +5,7 @@
     "linking_weight_at_q0": 2.5326215619957346,
     "m_p_pred_MeV": 970.4147130708367
   },
-  "compute": "geom_full_borromean_h4_probe",
+  "compute": "vol_density_borromean_h4_probe",
   "description": "h\u2074 probe for Borromean linking weight. Per docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md, the exact Markov trace closed form has h\u00b2 = 0 and h\u2074 = \u22123/4. This probe (1) solves c_4 such that 5/2 + c_4\u00b7h\u2074 is q-local at q_0, and (2) tests the structural candidate 5/2 \u00b7 tr_M(\u03b2_Bor, q) directly.",
   "parameters": {
     "G_catalan": "0.91596559417721901505460351493238411077414937428167",
@@ -104,7 +104,7 @@
   "tags": [
     "h4-coefficient",
     "q-locality",
-    "geom-full-refinement",
+    "vol-density-refinement",
     "borromean",
     "so3-lift",
     "yekutieli-mi-k2"

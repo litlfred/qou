@@ -18,7 +18,7 @@ realisation** of every hyperbolic-3-manifold mass formula:
 | Framework side | 3d gauge theory side |
 |----------------|----------------------|
 | $\mathcal{B}_3$ (Borromean rings complement) | $T[\mathcal{B}_3]$ — a 3d $\mathcal{N}{=}2$ theory |
-| $m_p = m_e \cdot \mathrm{Geom_{full}}(\mathcal{B}_3, q_0)$ | partition function $Z_{T[\mathcal{B}_3]}(q_0)$ on $S^3_b$ |
+| $m_p = m_e \cdot \mathrm{VolDensity}(\mathcal{B}_3, q_0)$ | partition function $Z_{T[\mathcal{B}_3]}(q_0)$ on $S^3_b$ |
 | $h^4 = -3/4$ Markov-trace coefficient | 4-loop perturbative contribution to $Z_{T[\mathcal{B}_3]}$ |
 
 This is **mirror symmetry** in the sense that the framework's mass

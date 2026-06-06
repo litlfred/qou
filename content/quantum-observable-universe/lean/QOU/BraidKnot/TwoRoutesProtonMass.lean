@@ -58,7 +58,7 @@ def geomScale (G : ℝ) : ℝ := 8 * G / (hbar q) ^ 2
 /-- Route 2 decomposition of the proton mass ratio:
     m_p/m_e = (Vol(B₃)/ℏ²) · lw_A · spectralCorr = geomScale · lwSpectral.
     Numerically (q₀, 50 dps): the leading (Vol/ℏ²)·lw_A reproduces the
-    +2.89% Geom_full gap; the derived spectralCorr factor (≈0.97112)
+    +2.89% VolDensity gap; the derived spectralCorr factor (≈0.97112)
     closes it to ~130 ppm. -/
 def mpOverMe (G : ℝ) : ℝ := geomScale q G * lwSpectral q
 

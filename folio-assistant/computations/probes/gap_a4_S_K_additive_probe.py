@@ -282,7 +282,7 @@ def main() -> int:
         tolerance=0.1,
         source=(
             "Proton's S_emp recovers the documented +2.89 % proton-mass "
-            "gap from `_li_2_q_util.py::geom_full_borromean` docstring "
+            "gap from `_li_2_q_util.py::vol_density_borromean` docstring "
             "as a negative additive term (S_emp ≈ -m_p · 0.0289)."
         ),
     )

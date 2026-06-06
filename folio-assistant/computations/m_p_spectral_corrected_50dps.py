@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""m_p via the spectral-corrected Geom_full decomposition (50 dps).
+"""m_p via the spectral-corrected VolDensity decomposition (50 dps).
 
-Closes the uniform +2.89% nucleon Geom_full gap to ~130 ppm by
+Closes the uniform +2.89% nucleon VolDensity gap to ~130 ppm by
 restoring the ONE missing — and derived — multiplicative factor: the
 spectral correction.
 
@@ -94,7 +94,7 @@ def main() -> int:
     err_full_ppm = (m_p_pred_full / m_p_val - 1) * 1_000_000
 
     print("=" * 70)
-    print("m_p via spectral-corrected Geom_full decomposition (50 dps)")
+    print("m_p via spectral-corrected VolDensity decomposition (50 dps)")
     print("=" * 70)
     print(f"  q_0            = {mp.nstr(q0, 12)}")
     print(f"  [1] Vol(B_3)=8G       = {mp.nstr(vol_b3, 10)}")

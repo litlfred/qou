@@ -83,7 +83,7 @@ isolation" — was independently absorbed:
   [PR #1713](https://github.com/litlfred/qou/pull/1713) (Q_β Habiro
   element categorical ID, opened 2026-06-02).
 
-m_μ is a separate L2 miss (independent μ-p Geom_full tension, not the
+m_μ is a separate L2 miss (independent μ-p VolDensity tension, not the
 Q_β chain). The shared-root pivot does NOT replace m_μ — it runs
 alongside.
 

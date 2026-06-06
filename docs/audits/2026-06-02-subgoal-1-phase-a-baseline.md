@@ -70,4 +70,4 @@ This branch should commit the display-bug fix + this audit doc. The substantive 
 - Binding-magic-A wireup (Lean gaps): [`docs/audits/2026-05-31-binding-magic-A-wireup.md`](2026-05-31-binding-magic-A-wireup.md)
 - L2-100× shared root: [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - Operator-valued diagnosis: [`docs/audits/2026-05-17-structural-diagnosis-operator-valued.md`](2026-05-17-structural-diagnosis-operator-valued.md)
-- Canonical reference (refuted Bring routes): [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- Canonical reference (refuted Bring routes): [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)

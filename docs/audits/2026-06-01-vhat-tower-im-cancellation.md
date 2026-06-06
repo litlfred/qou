@@ -227,8 +227,8 @@ tower normalisation is itself a modelling choice (flagged); values are RAW.
 reflects that the electron-tower normalisation used here (figure-8 4₁
 braid, naive (σ₁σ₂⁻¹)² word) is a *placeholder* — `tower(K)/tower(e)` is
 O(1) for all three particles because all three towers are O(5). The
-absolute MeV scale comes from the full Geom_full / m_e chain
-([`_li_2_q_util.geom_full_borromean`](../../folio-assistant/computations/_li_2_q_util.py)),
+absolute MeV scale comes from the full VolDensity / m_e chain
+([`_li_2_q_util.vol_density_borromean`](../../folio-assistant/computations/_li_2_q_util.py)),
 not from this dimensionless tower ratio. **No value here is tuned to
 938.27**; they are reported to show the projection does not magically
 produce the physical mass — consistent with the discipline that the raw

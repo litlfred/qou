@@ -81,7 +81,7 @@ The Macdonald-polynomial pentagon and the q-dilogarithm pentagon are both specia
 Pentagon equations appear as **integral identities for partition functions** in mirror dual 3d N=2 theories on hyperbolic 3-manifolds. The 2-3 Pachner move ↔ Pentagon equation is the 3d-3d-correspondence dictionary.
 
 - **Reference**: [Quantum Field Theory and the Volume Conjecture (Dimofte)](https://arxiv.org/pdf/1003.4808)
-- **QOU connection**: the framework's mass formula $m(K) = m_e \cdot \mathrm{Geom_{full}}(K, q_0)$ is the QOU analog of a 3d-3d partition function. Pentagon ensures triangulation-independence; h⁴ corrections are the next-Pachner-refinement contributions.
+- **QOU connection**: the framework's mass formula $m(K) = m_e \cdot \mathrm{VolDensity}(K, q_0)$ is the QOU analog of a 3d-3d partition function. Pentagon ensures triangulation-independence; h⁴ corrections are the next-Pachner-refinement contributions.
 
 ## §3. The Borromean rings — Pentagon connections specifically
 
@@ -143,7 +143,7 @@ The Pentagon-relevant statement: **the Borromean's 8-cell ideal-octahedral decom
 
 ## §6. Cross-references (repo)
 
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — **canonical framing reference** (post-PR #1080); the m(K) = m_e · Geom_full(K) formula this audit's Pentagon analysis refines
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — **canonical framing reference** (post-PR #1080); the m(K) = m_e · VolDensity(K) formula this audit's Pentagon analysis refines
 - [`docs/audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`](2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md) — per-step jet-order analysis with Pentagon placement
 - [`docs/audits/2026-05-24-yekutieli-mi-derivation-path.md`](2026-05-24-yekutieli-mi-derivation-path.md) — Yekutieli MI tessellation, jet grades
 - [`docs/audits/2026-05-19-pentagon-reduction-li2q.md`](2026-05-19-pentagon-reduction-li2q.md) — Pentagon as algebraic rewrite for divergent args

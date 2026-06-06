@@ -8,7 +8,7 @@
 
 Any PR that touches:
 
-- **Step 9a** — mass identity `m(K) = m_e · Geom_full(K, q_0)`
+- **Step 9a** — mass identity `m(K) = m_e · VolDensity(K, q_0)`
 - **Step 9b** — per-isotope binding `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ`
 - **Step 10** — confinement SDP / canonical `T_w`
 - **Step 11** — `Q_β` truncation ladder

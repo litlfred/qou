@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: evaluates at q = q_0, numeric output.
-"""Per-block reading of `m(K) = m_e · Geom_full(K, q₀)` for the 6 atoms
+"""Per-block reading of `m(K) = m_e · VolDensity(K, q₀)` for the 6 atoms
 that have Vol(K) data (p, n, D, T, ³He, ⁴He).
 
 ## What this script answers
@@ -8,13 +8,13 @@ that have Vol(K) data (p, n, D, T, ³He, ⁴He).
 User asked 2026-06-03: "wire up ALL isotopes/nucleotides properly".
 The cheat-sheet drift (PR #1749 / #1751) was correctly identified —
 production uses uniform `Vol(𝓑₃)` for all atoms; the canonical formula
-is `m(K) = m_e · Geom_full(K, q₀)` with K knot-dependent.
+is `m(K) = m_e · VolDensity(K, q₀)` with K knot-dependent.
 
 This script does the per-knot wire-up for the 6 atoms with `Vol(K)`
 data in `per-atom-hyperbolic-volume.witness.json`, using:
 
-    Geom_full(K, q₀) = [Vol(K) / ℏ_q²] · tr_M(K, q₀)
-                     = `_li_2_q_util.geom_full_per_block(vol_K, tr_M_K, q)`
+    VolDensity(K, q₀) = [Vol(K) / ℏ_q²] · tr_M(K, q₀)
+                     = `_li_2_q_util.vol_density_per_block(vol_K, tr_M_K, q)`
 
 where `tr_M(K, q₀)` is the canonical Markov trace over the partitions
 of K's strand count (H_3 for the 3-strand baryons; H_6 for D; etc.),
@@ -23,7 +23,7 @@ loaded via `canonical_tr_m_via_chi_cache.canonical_tr_m`.
 ## Discipline + honest framing
 
 This wire-up is **TRUTH-TRACKING**, not a closure attempt. The
-existing testbed `geom_full_per_block_wiring.py` already documented a
+existing testbed `vol_density_per_block_wiring.py` already documented a
 RED verdict for the proton: per-block `tr_M(p) ≈ 1.065` and production
 `H_4 Family-A linking_weight ≈ 2.53` are DIFFERENT scalars (off by
 ~2.4×), so this wire-up makes the proton prediction go from
@@ -44,7 +44,7 @@ with:
 - atom, Z, N, A
 - vol_K (Vol of the canonical knot for this atom)
 - tr_M_K (canonical Markov trace at q_0)
-- geom_full_per_block (m_e × Geom_full(K, q₀))
+- vol_density_per_block (m_e × VolDensity(K, q₀))
 - m_pred_per_block_MeV (per-knot reading prediction)
 - m_observed_MeV (CODATA / AME)
 - err_per_block_pct (vs CODATA)
@@ -74,8 +74,8 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from _li_2_q_util import (  # noqa: E402
-    geom_full_borromean,
-    geom_full_per_block,
+    vol_density_borromean,
+    vol_density_per_block,
     geom_leading,
 )
 from q_parameter import Q as q_0  # noqa: E402
@@ -105,10 +105,10 @@ def main() -> int:
         engine="mpmath",
     )
     w.set_description(
-        "Per-block reading of m(K) = m_e · Geom_full(K, q₀) for the "
-        "6 atoms with Vol(K) data, using geom_full_per_block(vol_K, "
+        "Per-block reading of m(K) = m_e · VolDensity(K, q₀) for the "
+        "6 atoms with Vol(K) data, using vol_density_per_block(vol_K, "
         "tr_M_K, q). EXPLORATORY truth-tracking, NOT a closure — "
-        "validates the geom_full_per_block_wiring.py RED verdict "
+        "validates the vol_density_per_block_wiring.py RED verdict "
         "across the atomic table."
     )
 
@@ -129,8 +129,8 @@ def main() -> int:
     ]
 
     # Production uniform-Vol baseline (same for every atom)
-    geom_full_uniform = geom_full_borromean(q)
-    m_avg_production = m_e * geom_full_uniform
+    vol_density_uniform = vol_density_borromean(q)
+    m_avg_production = m_e * vol_density_uniform
 
     # H_3 building blocks for the Phase 5q closed form (sub-second compute)
     print("Computing H_3 building blocks tr_M^3(𝓑_p), tr_M^3(𝓑_n)...")
@@ -157,11 +157,11 @@ def main() -> int:
             })
             continue
 
-        # Paper-faithful per-block: geom_full_per_block already folds
-        # in tr_M(K, q₀) — i.e. this returns m_e × Geom_full(K, q₀) when
+        # Paper-faithful per-block: vol_density_per_block already folds
+        # in tr_M(K, q₀) — i.e. this returns m_e × VolDensity(K, q₀) when
         # multiplied by m_e below; do NOT re-multiply by tr_M_K here.
-        geom_full_pb = geom_full_per_block(vol_K, tr_M_K, q)
-        m_pred_pb = m_e * geom_full_pb
+        vol_density_pb = vol_density_per_block(vol_K, tr_M_K, q)
+        m_pred_pb = m_e * vol_density_pb
 
         codata = CODATA[atom]
         err_pb = (m_pred_pb - codata) / codata * 100
@@ -178,8 +178,8 @@ def main() -> int:
             "knot": knot_label,
             "vol_K": float(vol_K),
             "tr_M_K": float(tr_M_K),
-            "geom_full_per_block": float(geom_full_pb),
-            "geom_full_uniform_production": float(geom_full_uniform),
+            "vol_density_per_block": float(vol_density_pb),
+            "vol_density_uniform_production": float(vol_density_uniform),
             "m_pred_per_block_MeV": float(m_pred_pb),
             "m_pred_production_MeV": float(m_avg_production),
             "m_observed_MeV": float(codata),
@@ -203,7 +203,7 @@ def main() -> int:
     w.add_data("rows", rows)
     verdict = (
         "Per-block reading makes predictions worse on average — "
-        "consistent with the geom_full_per_block_wiring.py "
+        "consistent with the vol_density_per_block_wiring.py "
         "RED verdict that H_3 tr_M(K) is NOT the H_4 Family-A "
         "linking_weight scalar. To 'wire up properly' for closure "
         "requires a per-knot generalization of linking_weight(K), "
@@ -235,7 +235,7 @@ def main() -> int:
 
     # Brief human-readable report
     print()
-    print("=== per-knot reading (geom_full_per_block) vs production ===")
+    print("=== per-knot reading (vol_density_per_block) vs production ===")
     print(f"{'atom':<5}{'Vol(K)':>10}{'tr_M(K)':>10}{'m_pb (MeV)':>14}{'m_prod (MeV)':>15}{'observed':>14}{'err_pb %':>10}{'err_prod %':>12}")
     for r in rows:
         if r.get("m_pred_per_block_MeV") is None:

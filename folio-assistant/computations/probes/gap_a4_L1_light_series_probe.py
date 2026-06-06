@@ -343,7 +343,7 @@ def main() -> int:
 
     # Proton-row sanity assertion: linking_weight_family_a(q₀) ≈ 2.533
     # and λ_emp(p) ≈ 2.46 (the docstring quote in
-    # `_li_2_q_util.py::geom_full_borromean`).  Their ratio is the
+    # `_li_2_q_util.py::vol_density_borromean`).  Their ratio is the
     # documented +2.89 % gap, ≈ 0.0289 ± 0.001.
     lam_emp_p = mp.mpf([r["lambda_empirical"] for r in rows
                         if r["label"] == "p"][0])
@@ -354,7 +354,7 @@ def main() -> int:
         expected=0.0289,
         tolerance=2e-3,
         source=(
-            "Production docstring `_li_2_q_util.py::geom_full_borromean` "
+            "Production docstring `_li_2_q_util.py::vol_density_borromean` "
             "states: 'the 2.53 is a CODATA-implied-λ near-match that "
             "lands near λ = m_p / (m_e·Vol/ℏ²) ≈ 2.46'.  This assertion "
             "anchors the probe by recovering that documented +2.89 % "

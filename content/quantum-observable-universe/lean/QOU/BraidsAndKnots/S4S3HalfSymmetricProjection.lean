@@ -91,10 +91,10 @@ theorem perCellRatio_eq : effectiveCellCount / 8 = 1 / 8 := by
     PR #985 found the natural-reading bijection gives κ = +0.5,
     not −G, and no categorical derivation supplies −G·h².
 
-    Per the absorbed-into-Geom_full framing (PR #1080), the
-    canonical mass formula is m(K) = m_e · Geom_full(K, q_0)
+    Per the absorbed-into-VolDensity framing (PR #1080), the
+    canonical mass formula is m(K) = m_e · VolDensity(K, q_0)
     with no separate λ_scale constant. This bijection is a
-    structural input that constrains Geom_full(𝓑₃)'s categorical
+    structural input that constrains VolDensity(𝓑₃)'s categorical
     refinement at h² order; it is NOT a per-cell additive
     correction. -/
 -- Ref: [adams1985hyperbolic] https://doi.org/10.1007/978-1-4684-9458-7

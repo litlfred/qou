@@ -124,7 +124,7 @@ def derive_m_baryon_volume_form() -> dict:
     # (c) Empirical closure for the per-knot linking_weight (validation
     # only — these are EMPIRICAL targets, NOT inputs to the derivation).
     # Post-PR #1080 naming: what older docs called λ_scale is now the
-    # linking_weight component of Geom_full(K) and is PROVED via Family A.
+    # linking_weight component of VolDensity(K) and is PROVED via Family A.
     # The "empirical target" here is the value the linking_weight would
     # need to take to close the equation exactly; it is diagnostic only.
     m_p_over_m_e_codata = M_P_MEV_VALIDATION / M_E_MEV
@@ -176,7 +176,7 @@ def derive_m_baryon_volume_form() -> dict:
                 "formula to reproduce CODATA m_p / m_n.  THESE ARE "
                 "VALIDATION VALUES — NOT inputs to the substrate "
                 "derivation.  Post-PR #1080 framing: the linking_weight "
-                "is the per-knot Geom_full(K)/Geom_leading(K) component, "
+                "is the per-knot VolDensity(K)/Geom_leading(K) component, "
                 "PROVED via Family A canonical Wedderburn "
                 "(linking_weight_family_a in _li_2_q_util.py); these "
                 "empirical targets are diagnostic only (what value would "
@@ -200,12 +200,12 @@ def derive_m_baryon_volume_form() -> dict:
         "open_R_and_D": {
             "substrate_linking_weight": (
                 "RESOLVED post-PR #1080: the linking_weight component of "
-                "Geom_full(K) for K = ℬ_3 is the PROVED Family A "
+                "VolDensity(K) for K = ℬ_3 is the PROVED Family A "
                 "categorical identity (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
                 "(see linking_weight_family_a in _li_2_q_util.py).  The "
                 "older 'open R&D: derive λ_scale from CAL-1 + CAL-2 + "
                 "topological invariants of ℬ_3' framing is closed by "
-                "this proof; only the ~2.89 % Geom_full(𝓑₃) categorical-"
+                "this proof; only the ~2.89 % VolDensity(𝓑₃) categorical-"
                 "exactness refinement gap at h² order remains open (see "
                 "PR #1063 + audit 2026-05-24-low-isotope-mass-error-"
                 "anatomy.md).  Field renamed from `substrate_lambda_scale` "

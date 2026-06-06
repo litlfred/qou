@@ -1,12 +1,12 @@
 # Formalization roadmap — Mass = Vol × Density, δ from non-abelian Stokes
 
-**Goal (owner directive, 2026-06-04).** Replace the `Geom_full(K,q₀)`
+**Goal (owner directive, 2026-06-04).** Replace the `VolDensity(K,q₀)`
 black box with a chain of *proper definitions*: derive the nucleon mass as
 **Volume × Hecke-energy-density**, and derive the flavor split **δ** as the
 **curvature of the categorical connection integrated over the p-n
 interface** (Yekutieli non-abelian Stokes), rather than positing it.
 
-If the chain closes, `Geom_full` becomes a *theorem* (P1∘P2) and δ becomes
+If the chain closes, `VolDensity` becomes a *theorem* (P1∘P2) and δ becomes
 a *theorem* (P3⇒P4), eliminating both the Geom black box and the
 color-weighted-vs-blind convention ambiguity (the weighting is then forced
 by the curvature, not chosen).
@@ -52,7 +52,7 @@ by the curvature, not chosen).
 not unicode superscripts, so the rows paste straight into `def`/`theorem`
 stubs.)
 
-| P1 | `QOU.Mass.mass_eq_vol_times_density : m K = m_e * vol K * density q / ℏ_q q ^ 2` | theorem | proved from defs once `Geom_full` is reassembled, else `sorry` |
+| P1 | `QOU.Mass.mass_eq_vol_times_density : m K = m_e * vol K * density q / ℏ_q q ^ 2` | theorem | proved from defs once `VolDensity` is reassembled, else `sorry` |
 | P2 | `QOU.Mass.density_eq_markov_trace : density q = ∑ λ, yWeight q λ * heckeChar q λ (braid K)` | theorem | proved (Wedderburn decomposition) or conditional on existing `tr_M` lemma |
 | P2′| `QOU.Mass.density_borromean : density q = (3 * q ^ 2 + 4 + 3 * q ^ (-2 : ℤ)) / 4` | theorem | concrete eval of P2 at 𝓑₃ |
 | P3 | `class NonabelianStokesInterface` with field `holonomy = ½(σ+σ⁻¹) − (h/4)·curvatureIntegral` | class (conj) | axiomatized — the categorical-curvature input |
@@ -74,4 +74,4 @@ chain P1∧P2∧P2′ (proved) + P4 conditional-on-P3-class.
 - No numerical fitting of δ. No CODATA/Δm_np tuning.
 - Not regenerating the stale color-blind tr_M witnesses (separate; tracked
   in `2026-06-04-peel-exact-nuclei-color-weighted-trm-convention.md`).
-- Not dropping `Geom_full` from production until P1∘P2 is proved sorry-free.
+- Not dropping `VolDensity` from production until P1∘P2 is proved sorry-free.

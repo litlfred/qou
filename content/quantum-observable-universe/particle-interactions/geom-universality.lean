@@ -34,12 +34,12 @@ theorem geom_universality_conditional
     True :=
   trivial
 
-/-! ### Per-knot Geom_full uniqueness
+/-! ### Per-knot VolDensity uniqueness
 
-The categorical `Geom_full(K)` evaluation is required to be
+The categorical `VolDensity(K)` evaluation is required to be
 *unique per knot/link* under the universality + functoriality
 axioms.  Without this uniqueness the mass formula
-`m(K) = m_e · Geom_full(K, q₀)` is not well-defined — different
+`m(K) = m_e · VolDensity(K, q₀)` is not well-defined — different
 choices of evaluator would give different predicted masses.
 
 The uniqueness is staged on three axiomatised hypotheses:
@@ -49,20 +49,20 @@ as a per-evaluation predicate below), and a **canonical
 normalisation seed** (the Family-A linking weight at the
 Borromean 𝓑₃, the framework's reference knot).
 
-Conditional on the three, any two per-knot `Geom_full`
+Conditional on the three, any two per-knot `VolDensity`
 evaluations that satisfy them pointwise are equal — the proof is
 immediate from the normalisation seed.  Closing the
 `GeomFullFunctorial` class via the categorical fibre-functor
 construction is the open work (cf. `prop:hoefsmit-scattering-pipeline`).
 -/
 
-/-- A per-knot Geom_full evaluator: takes a knot/link
+/-- A per-knot VolDensity evaluator: takes a knot/link
     representative `K` (abstracted as a generic type to avoid
     committing to a specific knot encoding here) and the
     substrate parameter `q`, returns the categorical volume in ℝ. -/
 abbrev GeomFullEval (Knot : Type) : Type := Knot → ℝ → ℝ
 
-/-- **Categorical functoriality (axiomatised).**  The Geom_full
+/-- **Categorical functoriality (axiomatised).**  The VolDensity
     evaluator factors through the fibre functor of the QOU
     substrate's monoidal category — equivalently, it respects
     Hecke-algebra morphisms.  Concretely (`prop:hoefsmit-scattering-
@@ -76,10 +76,10 @@ abbrev GeomFullEval (Knot : Type) : Type := Knot → ℝ → ℝ
     **Replaces the previous trivial `functorial : True` stub
     (2026-06-01).**  The class now carries the real Stage-4 per-block
     factorisation as its content.  This is the structural statement
-    that production's `geom_full_borromean` VIOLATES — it drops the
+    that production's `vol_density_borromean` VIOLATES — it drops the
     per-block factor `perBlock` and substitutes a global H₄ scalar
     (the discrepancy is quantified, raw, in
-    `geom-full-per-block-wiring.witness.json`: the H₃ per-block trace
+    `vol-density-per-block-wiring.witness.json`: the H₃ per-block trace
     `tr_M(proton) ≈ 1.065` differs from the global scalar `≈ 2.53` by
     `≈ 2.38×`).
 
@@ -100,7 +100,7 @@ class GeomFullFunctorial {Knot : Type} (G : GeomFullEval Knot) : Prop where
   factors_per_block : ∀ (k : Knot) (q : ℝ),
     G k q = geomLeading k q * perBlock k q
 
-/-- **Canonical normalisation seed.**  The Geom_full evaluator
+/-- **Canonical normalisation seed.**  The VolDensity evaluator
     agrees pointwise with a fixed reference evaluator `seed` on
     every knot.  In production this seed is the Family-A
     linking-weight evaluation at the Borromean 𝓑₃ (the framework's
@@ -111,19 +111,19 @@ class GeomFullCanonicalSeed {Knot : Type} (G : GeomFullEval Knot)
     (seed : GeomFullEval Knot) : Prop where
   matches_seed : ∀ k : Knot, ∀ q : ℝ, G k q = seed k q
 
-/-- **Per-knot Geom_full uniqueness theorem (conditional).**
+/-- **Per-knot VolDensity uniqueness theorem (conditional).**
 
-    Any two `Geom_full` evaluators that both satisfy categorical
+    Any two `VolDensity` evaluators that both satisfy categorical
     functoriality + agreement with a common canonical seed are
     equal.  Together with `SingleVolumeIrrational` +
     `PLCorrectnessHypotheses`, this gives the per-knot uniqueness
-    backing the QOU mass formula `m(K) = m_e · Geom_full(K, q₀)`.
+    backing the QOU mass formula `m(K) = m_e · VolDensity(K, q₀)`.
 
     Per CLAUDE.md §3b-cond: the seed-uniqueness leg is proved
     sorry-free conditional on the canonical-seed class; closing
     the seed itself (Family-A linking-weight extension to all
     knots) is the open `prop:hoefsmit-scattering-pipeline` work. -/
-theorem geom_full_per_knot_unique
+theorem vol_density_per_knot_unique
     {Knot : Type} [SingleVolumeIrrational] [PLCorrectnessHypotheses]
     (G G' : GeomFullEval Knot) (seed : GeomFullEval Knot)
     [GeomFullFunctorial G] [GeomFullCanonicalSeed G seed]
@@ -133,11 +133,11 @@ theorem geom_full_per_knot_unique
   rw [GeomFullCanonicalSeed.matches_seed k q (G := G) (seed := seed),
       GeomFullCanonicalSeed.matches_seed k q (G := G') (seed := seed)]
 
-/-- **Sub-singleton companion.**  The space of Geom_full
+/-- **Sub-singleton companion.**  The space of VolDensity
     evaluators that match a given canonical seed and satisfy
     functoriality is a subsingleton.  Useful downstream as a
     Subsingleton hypothesis for `m(K)` well-definedness. -/
-theorem geom_full_subsingleton
+theorem vol_density_subsingleton
     {Knot : Type} (seed : GeomFullEval Knot) :
     Subsingleton {G : GeomFullEval Knot //
       ∃ (_f : GeomFullFunctorial G) (_s : GeomFullCanonicalSeed G seed),

@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": 0.0,
       "unit": "boolean (lemma stated, citations attached)",
-      "source": "Thurston (geometrisation) for hyperbolic-volume additivity; folio-assistant/computations/_li_2_q_util.py for Geom_full = Vol/ℏ_q² · linking_weight; this probe just composes them."
+      "source": "Thurston (geometrisation) for hyperbolic-volume additivity; folio-assistant/computations/_li_2_q_util.py for VolDensity = Vol/ℏ_q² · linking_weight; this probe just composes them."
     }
   ],
   "allPassed": true,
@@ -33,7 +33,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Route-B probe for conj:casimir-epsilon-vacuum: verify Hoefsmit Geom additivity on disjoint unions of unknots.  Step 1: record hyperbolic-volume additivity (well-known, Thurston).  Step 2: derive the symbolic form Geom_ε(N·⊙) = N · ε / ℏ_q² under the ε-relaxed vacuum axiom and tabulate the real-part coefficient for several N.  Step 3: dimensional cross-check against the conjecture's A/d³ scaling — uncovers that the surreal-infinitesimal birthday rank of N⊙ may be ε⁻² rather than ε⁻¹ once the ℏ_q² normalisation in Geom_full is accounted for; this is a refinement to carry back into the conjecture .md.",
+  "description": "Route-B probe for conj:casimir-epsilon-vacuum: verify Hoefsmit Geom additivity on disjoint unions of unknots.  Step 1: record hyperbolic-volume additivity (well-known, Thurston).  Step 2: derive the symbolic form Geom_ε(N·⊙) = N · ε / ℏ_q² under the ε-relaxed vacuum axiom and tabulate the real-part coefficient for several N.  Step 3: dimensional cross-check against the conjecture's A/d³ scaling — uncovers that the surreal-infinitesimal birthday rank of N⊙ may be ε⁻² rather than ε⁻¹ once the ℏ_q² normalisation in VolDensity is accounted for; this is a refinement to carry back into the conjecture .md.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
     "substrate_q": 1.1099785827513808,
@@ -130,7 +130,7 @@
       "naive_N_birthday_in_eps": "ε⁻¹",
       "after_Geom_normalisation_N_birthday": "ε⁻²",
       "ℏ_q²_at_substrate": 0.009817186454275078,
-      "implication": "The conjecture's N⊙ ~ ε⁻¹ · A/d³ scaling may need refinement: dimensional analysis with the Geom_full = Vol/ℏ_q² normalisation suggests N⊙ ~ ε⁻² · A/d³, with the extra ε⁻¹ factor absorbing the ℏ_q² denominator.",
+      "implication": "The conjecture's N⊙ ~ ε⁻¹ · A/d³ scaling may need refinement: dimensional analysis with the VolDensity = Vol/ℏ_q² normalisation suggests N⊙ ~ ε⁻² · A/d³, with the extra ε⁻¹ factor absorbing the ℏ_q² denominator.",
       "follow_up": "Recompute the conditional Casimir derivation under the ε⁻² scaling and confirm π²/(240 d⁴) still falls out."
     }
   }

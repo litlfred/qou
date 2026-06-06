@@ -1,17 +1,17 @@
-# Geom_full compute-vs-paper audit — order-by-order, RAW numbers
+# VolDensity compute-vs-paper audit — order-by-order, RAW numbers
 
 **Date:** 2026-06-01
-**Branch:** `claude/geom-full-compute-vs-paper-audit-2026-06-01` (PR #1613)
-**Scope:** AUDIT ONLY. Does production `Geom_full(𝓑₃,q₀)` match the paper's
+**Branch:** `claude/vol-density-compute-vs-paper-audit-2026-06-01` (PR #1613)
+**Scope:** AUDIT ONLY. Does production `VolDensity(𝓑₃,q₀)` match the paper's
 forced per-block form? No fitting, no tuning to m_p/B_AME. Every number below
 is a RAW computed value, reported whether it matches or not.
-**Compute:** [`geom_full_compute_vs_paper_audit.py`](../../folio-assistant/computations/audits/geom_full_compute_vs_paper_audit.py),
-witness [`geom-full-compute-vs-paper-audit.witness.json`](../../folio-assistant/computations/audits/geom-full-compute-vs-paper-audit.witness.json).
+**Compute:** [`vol_density_compute_vs_paper_audit.py`](../../folio-assistant/computations/audits/vol_density_compute_vs_paper_audit.py),
+witness [`vol-density-compute-vs-paper-audit.witness.json`](../../folio-assistant/computations/audits/vol-density-compute-vs-paper-audit.witness.json).
 Cross-checked against the Rust-computed 50-dps witness
 `borromean-markov-trace-h-expansion-50dps.witness.json`.
 
 This audit builds on the read-only structural trace
-[`2026-06-01-geom-full-derivation-trace.md`](2026-06-01-geom-full-derivation-trace.md)
+[`2026-06-01-vol-density-derivation-trace.md`](2026-06-01-vol-density-derivation-trace.md)
 (sibling branch) and adds the missing piece: the **actual order-by-order
 numerical comparison** of the paper's `Σ_λ w_λ χ_λ(𝓑₃)/dim λ` against
 production's `linking_weight`, the mass-bridge propagation of both, and the
@@ -33,7 +33,7 @@ state (§4: the paper's literal per-block factor makes m_p *worse*, not better).
 
 ## TL;DR
 
-1. **Production `Geom_full` does NOT match the paper's per-block sum — at any
+1. **Production `VolDensity` does NOT match the paper's per-block sum — at any
    order, in any normalization.** Production: `linking_weight(q) =
    (3q²+4+3q⁻²)/4 = 5/2 + (3/4)h²` (h⁰ = **2.5**, h² = **0.75**, terminates).
    Paper's per-block factor `J_{𝓑₃}(q) = Σ_{λ⊢3} w_λ χ_λ(β)/dim λ` is a
@@ -85,10 +85,10 @@ m(K) = m_e · Geom(K) · Σ_λ w_λ · χ_λ(β)/dim(λ)
 (`w_λ = dim_q(λ)²/[k]_q!`, `.md:52`) = what `markov_trace_for_knot("Borromean",
 q, "wenzl")` computes.
 
-### Production (`_li_2_q_util.geom_full_borromean`, line 210-254)
+### Production (`_li_2_q_util.vol_density_borromean`, line 210-254)
 
 ```
-Geom_full(𝓑₃,q) = [Vol(𝓑₃)/ℏ_q²] · linking_weight(q),
+VolDensity(𝓑₃,q) = [Vol(𝓑₃)/ℏ_q²] · linking_weight(q),
 linking_weight(q) = (3q²+4+3q⁻²)/4 = 5/2 + (3/4)h²   (line 172-197)
 ```
 
@@ -145,8 +145,8 @@ indexes **H₄, not the H₃ braid**. Status of the substitution: ASSERTED
 **YES** — it is a fixed rational in `q` with no knot argument, the **𝓑₃-specific
 H₄ average applied universally**:
 
-- `mass_table_comprehensive.py:206` calls `geom_full_borromean(q)` for **every
-  nucleus `(Z,N)`**, then `m_avg = m_e·geom_full` (line 208), redistributing
+- `mass_table_comprehensive.py:206` calls `vol_density_borromean(q)` for **every
+  nucleus `(Z,N)`**, then `m_avg = m_e·vol_density` (line 208), redistributing
   via the flavor split. The **same 𝓑₃-collapsed scalar is the per-nucleon
   factor for the deuteron (6₂ braid), ⁴He (4·𝓑₃ tower), and every heavier
   isotope** — none of which is the bare Borromean rings. (FINDING-2.)
@@ -283,15 +283,15 @@ The paper's literal Stage-4 factor `J_{𝓑₃} ≈ 1` gives m_avg = 381 MeV (�
 "Restore the dropped `Σ_λ w_λ χ_λ/dim λ`" is therefore **not** a viable fix —
 it makes m_p ~20× worse. **Next-step:** stop framing the +2.89% as "the dropped
 per-block sum"; it is the Family-A-2.533-vs-empirical-2.460 residual (already
-the canonical framing in `lambda-scale-absorbed-into-geom-full.md`). This audit
+the canonical framing in `lambda-scale-absorbed-into-vol-density.md`). This audit
 supplies the number that closes the "what if we just restore it?" question.
 
 ### FINDING-2 — single 𝓑₃ scalar applied to all nuclei (MEDIUM, actionable)
 
-`mass_table_comprehensive.py:206` applies `geom_full_borromean(q)` (a
+`mass_table_comprehensive.py:206` applies `vol_density_borromean(q)` (a
 𝓑₃-specific scalar) to every `(Z,N)`, including the deuteron (6₂ braid) and
 ⁴He (4·𝓑₃ tower). Each isotope has its own braid and should get its own
-per-knot `Geom_full(K)`. **Next-step:** a `geom_full_for_knot(K, q) =
+per-knot `VolDensity(K)`. **Next-step:** a `vol_density_for_knot(K, q) =
 Vol(K)/ℏ_q² × <per-knot factor>(K, q)`. (Blocked on the open question of what
 the per-knot factor IS — FINDING-1 shows the naive Markov trace ≈ 1 is wrong,
 so this is the per-isotope Borromean-tower extension already on the L2
@@ -300,7 +300,7 @@ Subgoal-1 path, not a quick fix.)
 ### FINDING-3 — `linking_weight` docstring overstates the link to the trace (LOW, doc)
 
 `_li_2_q_util.py:184` claims `linking_weight = (1/4)Σ_{λ⊢4} dim_q V_λ` is "the
-linking-weight component of `Geom_full(𝓑₃)`". It is a sum of **quantum
+linking-weight component of `VolDensity(𝓑₃)`". It is a sum of **quantum
 dimensions** (a CAL-4 empirical near-match), not the paper's Stage-4
 `w_λ χ_λ(β)/dim λ` trace factor (h²-coincident only). `borromean_markov_trace_h2`
 (line 335-363) similarly presents "(3/16)·4 = 3/4 … establishing that Family A's
@@ -327,8 +327,8 @@ theorem with a non-trivial `τ`. Out of scope for this audit.
 - It does **not** propose a fix that recovers the +2.89% (no fit). The honest
   RAW finding is that the paper's literal per-block factor makes m_p worse.
 - It does **not** re-open the "derive λ_scale" frame — per
-  `lambda-scale-absorbed-into-geom-full.md`, the residual is the
-  categorical-exactness refinement of `Geom_full(𝓑₃)`, an acknowledged R&D gap.
+  `lambda-scale-absorbed-into-vol-density.md`, the residual is the
+  categorical-exactness refinement of `VolDensity(𝓑₃)`, an acknowledged R&D gap.
 - It does **not** touch the muon path (correct) or the binding/brane-tower
   Li_2^q path (separate; Φ_q-vs-Li_2^q discipline applies there, not here).
 

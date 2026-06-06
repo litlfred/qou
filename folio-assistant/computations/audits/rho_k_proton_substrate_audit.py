@@ -6,7 +6,7 @@ proton's categorical density ρ_K.
 ## Why this probe exists
 
 PR #1272's γγ-pair-production-decomposition probe identified that
-the 2.89% Geom_full(𝓑₃) residual is NOT a simple h²-coefficient swap
+the 2.89% VolDensity(𝓑₃) residual is NOT a simple h²-coefficient swap
 inside `linking_weight`. Tracing through the canonical 6-term
 mass-endomorphism formula
 ([`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md))
@@ -45,7 +45,7 @@ The Borromean `linking_weight` parameterization is just
        (`conj:rho-k-pair-gen-canonical-form`)
 
 The open pair-gen piece IS the structural derivation that would close
-the per-knot Geom_full gap categorically.
+the per-knot VolDensity gap categorically.
 
 ## Status
 
@@ -196,7 +196,7 @@ def main():
         "(simple form `m_p / (m_e · |tr_M|)` and linking_weight form) and "
         "verifies they agree. The pair-gen substrate-component of ρ_K "
         "(per prop:rho-k-graded-expansion) is the OPEN derivation that "
-        "would close the per-knot Geom_full gap categorically."
+        "would close the per-knot VolDensity gap categorically."
     )
     w.add_parameter("q0", mp.nstr(q, 20))
     w.add_parameter("m_e_MeV", mp.nstr(m_e_mp, 20))
@@ -237,7 +237,7 @@ def main():
             "OPEN: this is the conjectural `rho_K_pair_gen` of "
             "prop:rho-k-graded-expansion / conj:rho-k-pair-gen-canonical-form. "
             "Substrate-only derivation of this piece would close the per-knot "
-            "Geom_full gap categorically — same problem as `derive linking_weight` "
+            "VolDensity gap categorically — same problem as `derive linking_weight` "
             "(re-parameterised)."
         ),
     })

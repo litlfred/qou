@@ -1,8 +1,8 @@
-"""Geom_full compute-vs-paper audit — order-by-order Σ_λ comparison.
+"""VolDensity compute-vs-paper audit — order-by-order Σ_λ comparison.
 
 AUDIT ONLY. No fitting, no tuning to m_p / B_AME. Reports RAW numbers.
 
-Question (owner): production `Geom_full(𝓑₃,q₀) = m_e·[Vol(𝓑₃)/ℏ_q² ×
+Question (owner): production `VolDensity(𝓑₃,q₀) = m_e·[Vol(𝓑₃)/ℏ_q² ×
 linking_weight(q)]` with `linking_weight = (3q²+4+3q⁻²)/4 = 5/2+(3/4)h²`
 is a single opaque rational in q. The PAPER (prop:hoefsmit-scattering-
 pipeline Stage 4) specifies the per-block form
@@ -221,11 +221,11 @@ def main():
     lw_prod = linking_weight_family_a(q0)
     J_paper = paper_J_borromean(Q_50_DIGIT_STR)
 
-    geom_full_prod = geom_leading * lw_prod
-    geom_full_paper = geom_leading * J_paper
+    vol_density_prod = geom_leading * lw_prod
+    vol_density_paper = geom_leading * J_paper
 
-    m_avg_prod = m_e * geom_full_prod
-    m_avg_paper = m_e * geom_full_paper
+    m_avg_prod = m_e * vol_density_prod
+    m_avg_paper = m_e * vol_density_paper
 
     gap_prod = (m_avg_prod - m_avg_codata) / m_avg_codata
     gap_paper = (m_avg_paper - m_avg_codata) / m_avg_codata

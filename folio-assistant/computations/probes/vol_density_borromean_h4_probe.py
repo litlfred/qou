@@ -1,4 +1,4 @@
-"""h⁴ probe for the linking weight inside `Geom_full(𝓑₃, q)`.
+"""h⁴ probe for the linking weight inside `VolDensity(𝓑₃, q)`.
 
 Two empirical questions, both targeted at the post-Yekutieli-purge
 architectural finding (`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`):
@@ -135,7 +135,7 @@ def solve_c_4_q_local(delta: mpf = mpf("0.01")) -> mpf:
 
 
 def main() -> None:
-    print(f"h⁴ probe for the Borromean linking weight inside Geom_full(𝓑₃, q)")
+    print(f"h⁴ probe for the Borromean linking weight inside VolDensity(𝓑₃, q)")
     print(f"50-dps mpmath; Q_0 = {Q_0}; h(Q_0) = {float(h_of_q(Q_0)):.10f}")
     print("---")
 
@@ -224,7 +224,7 @@ def main() -> None:
 
     # Write witness
     witness = {
-        "compute": "geom_full_borromean_h4_probe",
+        "compute": "vol_density_borromean_h4_probe",
         "description": (
             "h⁴ probe for Borromean linking weight. Per "
             "docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md, "

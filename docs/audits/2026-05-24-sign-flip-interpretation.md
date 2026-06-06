@@ -29,7 +29,7 @@ Per-isotope inter-nucleon channel count vs prediction error:
 
 **Reading:** the per-isotope error tracks the **count** of inter-nucleon arcs almost linearly, NOT their signed Hecke weights. Each inter-nucleon arc shifts the prediction by ≈ −2.23% regardless of whether the channel is pp / pn / nn.
 
-The fit intercept (+2.975%) closely matches the bare-nucleon (p, n) over-prediction (+2.89%) — confirming the baryon-class uniform Geom_full(𝓑₃) gap is the **starting point** and the per-isotope correction enters at the inter-nucleon layer.
+The fit intercept (+2.975%) closely matches the bare-nucleon (p, n) over-prediction (+2.89%) — confirming the baryon-class uniform VolDensity(𝓑₃) gap is the **starting point** and the per-isotope correction enters at the inter-nucleon layer.
 
 ## ⁴He scope caveat
 
@@ -65,7 +65,7 @@ The current uniform-averaging convention is a **flavor-only projection** of the 
 
 ## Falsification of the PR [#1063](https://github.com/litlfred/qou/pull/1063) framing for A ≥ 3
 
-The "single-knot `Geom_full(𝓑₃)` categorical-exactness refinement" framing predicts every isotope overshoots by the same uniform fraction. The diagnostic data (R² = 0.83 on n_inter) directly falsifies that for A ≥ 3 — the per-arc residual structure is dominant.
+The "single-knot `VolDensity(𝓑₃)` categorical-exactness refinement" framing predicts every isotope overshoots by the same uniform fraction. The diagnostic data (R² = 0.83 on n_inter) directly falsifies that for A ≥ 3 — the per-arc residual structure is dominant.
 
 The PR [#1063](https://github.com/litlfred/qou/pull/1063) framing **is** valid for the p/n baseline (+2.89% uniform) and for the linear-fit intercept (+2.975% ≈ +2.89%); the framing **does not** capture the per-arc layer.
 
@@ -93,5 +93,5 @@ The diagnostic localises the closure work to the **geometric** substrate — spe
 - Sign-flip diagnostic script: [`low_isotope_sign_flip_diagnostic.py`](../../folio-assistant/computations/low_isotope_sign_flip_diagnostic.py)
 - Color-tube infrastructure: `content/quantum-observable-universe/archimedean-universe/color-tube-*.md` (existing)
 - Color-tube weighting open finding: [`docs/canonical-derivation-cheat-sheet.md` §"Bring color-tube weighted averaging"](../canonical-derivation-cheat-sheet.md)
-- PR [#1063](https://github.com/litlfred/qou/pull/1063) — Family A gap audit (single-Geom_full refinement framing falsified for A ≥ 3 by this diagnostic)
+- PR [#1063](https://github.com/litlfred/qou/pull/1063) — Family A gap audit (single-VolDensity refinement framing falsified for A ≥ 3 by this diagnostic)
 - PR [#1081](https://github.com/litlfred/qou/pull/1081) — Task 3 S₅ ↔ SO(3) fiber action (supplier for the categorical class)

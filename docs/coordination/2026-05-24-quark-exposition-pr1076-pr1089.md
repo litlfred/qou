@@ -8,7 +8,7 @@ Two parallel PRs working in adjacent layers of the Borromean / mass-derivation d
 | PR | Branch | Layer | Files | Status |
 |---|---|---|---|---|
 | [#1076](https://github.com/litlfred/qou/pull/1076) | `claude/vigilant-allen-UNXwm` | Content (.md/.ts), Lean (.lean), Skill | quark exposition cleanup + one-voice criterion 11 + Lean `PlanarDiagram` → `BraidWord` migration | open, 10 commits, witness-pipeline CI fighting |
-| [#1089](https://github.com/litlfred/qou/pull/1089) | `claude/great-galileo-ahGfj` | Production Python (computations) | `λ_scale` → `linking_weight` / `geom_full_borromean` rename + low-isotope sign-flip diagnostic | open, 2 commits, mergeable_state dirty |
+| [#1089](https://github.com/litlfred/qou/pull/1089) | `claude/great-galileo-ahGfj` | Production Python (computations) | `λ_scale` → `linking_weight` / `vol_density_borromean` rename + low-isotope sign-flip diagnostic | open, 2 commits, mergeable_state dirty |
 
 ## Overlap classification
 
@@ -18,7 +18,7 @@ Two parallel PRs working in adjacent layers of the Borromean / mass-derivation d
 | Dependency | 0 | Neither blocks the other. |
 | Cherry-pick | 0 | No commits worth cherry-picking either direction. |
 | Theme | adjacent | Both clean up the Borromean / mass-derivation domain — #1076 narrative + Lean encoding, #1089 production Python rename. Consistent framing. |
-| Lean coverage | shared concern | #1089's Lean-coverage table flags `Geom_full(K)` + `Vol(𝓑₃)` as not formalised. #1076 formalises the *braid-word* side (first-class `hopfLink` / `borromeanRings`) but does NOT close the Geom_full gap. |
+| Lean coverage | shared concern | #1089's Lean-coverage table flags `VolDensity(K)` + `Vol(𝓑₃)` as not formalised. #1076 formalises the *braid-word* side (first-class `hopfLink` / `borromeanRings`) but does NOT close the VolDensity gap. |
 
 ## Coordination comments posted
 - On #1089: https://github.com/litlfred/qou/pull/1089#issuecomment-4527780582

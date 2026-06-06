@@ -50,7 +50,7 @@ For higher-A atoms the ratio increases sharply (D = 6.52, T = 24.3, ⁴He = 45.8
 
 ## What Phase B rules out
 
-- ❌ Replacing `Geom_full(K) = Vol(𝓑₃)/ℏ_q² · Family_A(q)` with `Geom_full(K) = Vol(𝓑₃)/ℏ_q² · |tr_M(β_K)|` for general atoms
+- ❌ Replacing `VolDensity(K) = Vol(𝓑₃)/ℏ_q² · Family_A(q)` with `VolDensity(K) = Vol(𝓑₃)/ℏ_q² · |tr_M(β_K)|` for general atoms
   - Reproduces the canonical-reference's −56.7 % m_p regression
   - Fails CODATA for D, T, ³He, ⁴He by 48 % to 99 %
 - ❌ Any (Z, N)-dependent scaling of Family A that reproduces atom-specific masses without categorical derivation (forbidden per CLAUDE.md §"Δ_λ gate")

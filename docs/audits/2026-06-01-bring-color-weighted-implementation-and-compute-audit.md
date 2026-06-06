@@ -1,7 +1,7 @@
 # Bring color-weighted implementation + thorough compute/Bring audit
 
 **Date:** 2026-06-01
-**Branch:** `claude/geom-full-bz3-refinement-2026-06-01` (PR #1664)
+**Branch:** `claude/vol-density-bz3-refinement-2026-06-01` (PR #1664)
 **Scope:** Per owner directive: "implement bring color weighted. do thorough audit of compute to make sure all is brings/color as appropriate."
 
 ## Part 1 — Implementation: `bring_color_weighted_linking_weight(Z, N, q)`
@@ -10,7 +10,7 @@
 
 - [`folio-assistant/computations/_li_2_q_util.py`](../../folio-assistant/computations/_li_2_q_util.py) — added two functions:
   - `bring_color_weighted_linking_weight(Z, N, q)` — per-atom Bring-color-tube extension of `linking_weight_family_a(q)`
-  - `geom_full_borromean_bring_color_weighted(Z, N, q)` — wrapper for `m_e × Geom_full_bring`
+  - `vol_density_borromean_bring_color_weighted(Z, N, q)` — wrapper for `m_e × VolDensity_bring`
 - [`folio-assistant/computations/probes/bring_color_weighted_base_scale_probe.py`](../../folio-assistant/computations/probes/bring_color_weighted_base_scale_probe.py) — measures shifts vs Family A
 
 ### Categorical construction
@@ -52,7 +52,7 @@ Reduces to Family A in the δ→0 substrate-degenerate limit.
 
 - **m_avg shift = 842.8 ppb** (m_avg goes from +2.890% to +2.890%, essentially unchanged)
 - **Required to close +2.89%: ~29 000 000 ppb** — 34 290× larger than what the construction provides
-- **STRUCTURALLY INSUFFICIENT for m_avg**, confirming the canonical reference [`lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) prediction that H₄ + Bring color-tube ≠ closure
+- **STRUCTURALLY INSUFFICIENT for m_avg**, confirming the canonical reference [`lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) prediction that H₄ + Bring color-tube ≠ closure
 - **For p/n split**: predicts 0.887 MeV (68.6% of CODATA's 1.293 MeV). NOT a closure either — the production p/n split (via `flavor_split_subleading` direct, PR #690) is more accurate (0.030%) since it applies δ to m_avg directly, not through linking_weight
 
 ### What this implementation IS
@@ -60,34 +60,34 @@ Reduces to Family A in the δ→0 substrate-degenerate limit.
 - A categorical, parametric extension of `bring_color_weighted` from per-interface (closed_form_tau_M.py:178) to BASE scale
 - Reduces cleanly to Family A
 - Reveals the structural insufficiency QUANTITATIVELY (34290× too small)
-- Available as opt-in via `geom_full_borromean_bring_color_weighted(Z, N, q)`
+- Available as opt-in via `vol_density_borromean_bring_color_weighted(Z, N, q)`
 
 ### What this implementation IS NOT
 
-- NOT a production replacement for `geom_full_borromean(q)`
+- NOT a production replacement for `vol_density_borromean(q)`
 - NOT a closure of the +2.89% m_avg gap
 - NOT wired into mass-table / build-proton-mass / m_p_borromean_verification production chain
 
 ## Part 2 — Thorough compute audit: Bring/color appropriateness
 
-### Production scripts using H₄ Wedderburn average (geom_full_borromean → linking_weight_family_a)
+### Production scripts using H₄ Wedderburn average (vol_density_borromean → linking_weight_family_a)
 
-19 scripts call `linking_weight_family_a` or `geom_full_borromean`. Of these, 7 are HIGH-impact production:
+19 scripts call `linking_weight_family_a` or `vol_density_borromean`. Of these, 7 are HIGH-impact production:
 
 | Script | Severity | Current | Bring-aware extension |
 |---|---|---|---|
-| `build_proton_mass_50dps_chain.py` | HIGH | `geom_full_borromean(q)` H₄ | Opt-in via `geom_full_borromean_bring_color_weighted(1, 0, q)` |
-| `m_p_borromean_verification_50dps.py` | HIGH | `geom_full_borromean(q)` H₄ | (same) |
-| `mass_table_comprehensive.py` | HIGH | `geom_full_borromean(q)` H₄ | Could route per-(Z,N); see below |
+| `build_proton_mass_50dps_chain.py` | HIGH | `vol_density_borromean(q)` H₄ | Opt-in via `vol_density_borromean_bring_color_weighted(1, 0, q)` |
+| `m_p_borromean_verification_50dps.py` | HIGH | `vol_density_borromean(q)` H₄ | (same) |
+| `mass_table_comprehensive.py` | HIGH | `vol_density_borromean(q)` H₄ | Could route per-(Z,N); see below |
 | `borromean_volume_propagation_to_m_p.py` | HIGH | H₄ | (same) |
 | `applied_uniqueness_mass_table.py` | HIGH | H₄ | (same) |
 | `canonical_isotope_witness.py` | HIGH | H₄ | (same) |
 | `linking_weight_canonical_object_lwfix.py` | HIGH | acknowledged CAL-4 | Audit-only; no fix |
-| `geom_full_per_block_wiring.py` | MED | per-atom tr_M | Already Z,N-aware (alternative path, regresses to −56.7%) |
+| `vol_density_per_block_wiring.py` | MED | per-atom tr_M | Already Z,N-aware (alternative path, regresses to −56.7%) |
 | `family_a_per_partition_h_decomposition_50dps.py` | MED | proof-of-identity | Proves H₄ identity; no Bring extension needed |
 | 10 other probes/audits | LOW | various | Probes that test alternatives; correctly labeled |
 
-**Production-pipeline action**: scripts should accept an optional `pn_convention` parameter or `(Z, N)` tuple, defaulting to the H₄ Family A. The new `geom_full_borromean_bring_color_weighted(Z, N, q)` is the opt-in entry point. **Owner approval required** before changing any production default — H₄ remains canonical-by-default until a categorical Bring extension that closes m_avg is found.
+**Production-pipeline action**: scripts should accept an optional `pn_convention` parameter or `(Z, N)` tuple, defaulting to the H₄ Family A. The new `vol_density_borromean_bring_color_weighted(Z, N, q)` is the opt-in entry point. **Owner approval required** before changing any production default — H₄ remains canonical-by-default until a categorical Bring extension that closes m_avg is found.
 
 ### Bring/color compute scripts (currently exist)
 
@@ -118,7 +118,7 @@ This is the **central Bring/compute discrepancy**: the paper SAYS Bring color-tu
 | Item | Status | Severity | Action |
 |---|---|---|---|
 | `bring_color_weighted_linking_weight(Z, N, q)` | ADDED this session | — | Now available as opt-in |
-| `geom_full_borromean_bring_color_weighted(Z, N, q)` | ADDED this session | — | Opt-in wrapper |
+| `vol_density_borromean_bring_color_weighted(Z, N, q)` | ADDED this session | — | Opt-in wrapper |
 | m_avg +2.89% closure | OPEN | HIGH | Bring extension alone insufficient; requires NEW categorical formulation (owner-active Subgoal-1 path) |
 | Production scripts default H₄ | DOCUMENTED | MED | Owner approval needed before opt-in default |
 | `closed_form_tau_M.py:137` default `chi_lambda_braid` | DOCUMENTED | MED | Opt-in `bring_color_weighted` already exists; no default change |
@@ -140,7 +140,7 @@ This is the **central Bring/compute discrepancy**: the paper SAYS Bring color-tu
 ### Short-term (next sessions)
 
 - Update `closed_form_tau_M.py:62-87` docstring to note the new function exists (no longer "queued research task")
-- Consider adding `pn_convention="bring_color_weighted"` route through `geom_full_borromean` (opt-in parameter)
+- Consider adding `pn_convention="bring_color_weighted"` route through `vol_density_borromean` (opt-in parameter)
 - Add Lean class `BringColorTubeWeighting` in QOU.BringsSurface (mirrors the Python function structure)
 
 ### Long-term (owner-active research)
@@ -151,8 +151,8 @@ This is the **central Bring/compute discrepancy**: the paper SAYS Bring color-tu
 
 ## Cross-references
 
-- Canonical reference (refuted Bring routes): [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- Canonical reference (refuted Bring routes): [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 - Linking-weight residual confirmation (+2.89% genuine): [`docs/audits/2026-06-01-linking-weight-residual-fix.md`](2026-06-01-linking-weight-residual-fix.md)
 - Cheat sheet §5 (canonical derivation): [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
-- Session status: [`docs/coordination/2026-06-01-geom-full-bz3-refinement-session-status.md`](../coordination/2026-06-01-geom-full-bz3-refinement-session-status.md)
+- Session status: [`docs/coordination/2026-06-01-vol-density-bz3-refinement-session-status.md`](../coordination/2026-06-01-vol-density-bz3-refinement-session-status.md)
 - Compute non-canonical audit (this session): findings in chat reply / not yet a standalone doc

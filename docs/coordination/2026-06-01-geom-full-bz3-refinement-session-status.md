@@ -1,6 +1,6 @@
-# Topic 1 Geom_full(𝓑₃) refinement — session status (2026-06-01)
+# Topic 1 VolDensity(𝓑₃) refinement — session status (2026-06-01)
 
-**Branch:** `claude/geom-full-bz3-refinement-2026-06-01` (PR #1664)
+**Branch:** `claude/vol-density-bz3-refinement-2026-06-01` (PR #1664)
 **User direction:** Pursue A + B + C (all three queued research routes; NOT D-stop)
 **Outcome this session:** Each option scoped + baseline measured. No closure (research-grade horizon 1-4 weeks per option).
 
@@ -55,12 +55,12 @@ The structural anchors (6 = \|S_3\|, 5 = partitions of 4) are PROVED uncondition
 
 ## Option C — Bloch-Wigner higher-rank Lake-wiring: queued under PR #956 roadmap
 
-Per PR #956 roadmap (cited in `lambda-scale-absorbed-into-geom-full.md`):
+Per PR #956 roadmap (cited in `lambda-scale-absorbed-into-vol-density.md`):
 1. Lake-wire `QOU.Archimedean.BlochWigner_unit_circle` into module tree
 2. Strengthen `BringZeroModeBlochClass.bringZeroModeValue` field from
    `∃ z : ℝ, z = ...` (literal-rfl loophole)
    to `∃ θ : ℝ, BlochWigner_unit_circle θ = ...` (substantive)
-3. Auxiliary to `Geom_full` refinement — provides ONE potentially-novel categorical class beyond the refuted unit-circle Bloch-Wigner.
+3. Auxiliary to `VolDensity` refinement — provides ONE potentially-novel categorical class beyond the refuted unit-circle Bloch-Wigner.
 
 This is Lean infrastructure work; the categorical-novel class itself (higher-rank Bloch-Wigner) hasn't been identified yet.
 
@@ -92,7 +92,7 @@ Topic 1 is genuinely multi-session, multi-person research. Closing the +2.89 % m
 
 ## Cross-references
 
-- Canonical reference: [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- Canonical reference: [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 - L2 100× status (3 failing shared root): [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](../audits/2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - linking_weight-residual confirmation: [`docs/audits/2026-06-01-linking-weight-residual-fix.md`](../audits/2026-06-01-linking-weight-residual-fix.md)
 - bring_color_weighted implementation: [`folio-assistant/computations/closed_form_tau_M.py:178`](../../folio-assistant/computations/closed_form_tau_M.py)

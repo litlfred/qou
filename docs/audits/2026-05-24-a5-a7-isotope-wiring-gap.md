@@ -55,9 +55,9 @@ The current α-cluster rule starts at A=8 (⁸Be = 2α). Extending below:
 
 Risk: introduces three new c-couplings (`c_αp`, `c_αd`, `c_αt`) each needing a separate canonical derivation. Multiplies the hidden-fitting candidate count rather than reducing it.
 
-### Path 2 — extend Geom_full(K) to multi-knot configurations
+### Path 2 — extend VolDensity(K) to multi-knot configurations
 
-The canonical [PR #1080](https://github.com/litlfred/qou/pull/1080) formula is `m(K) = m_e · Geom_full(K, q₀)` for a single knot. For nuclei with multiple α-clusters + valence nucleons, the natural extension would be `Geom_full(K_1 ⊔ K_2 ⊔ ...)` over disjoint-union or connected-sum links. PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3 (S₅ ↔ SO(3) fiber action) may provide the categorical structure needed to derive multi-knot Geom_full evaluations from substrate.
+The canonical [PR #1080](https://github.com/litlfred/qou/pull/1080) formula is `m(K) = m_e · VolDensity(K, q₀)` for a single knot. For nuclei with multiple α-clusters + valence nucleons, the natural extension would be `VolDensity(K_1 ⊔ K_2 ⊔ ...)` over disjoint-union or connected-sum links. PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3 (S₅ ↔ SO(3) fiber action) may provide the categorical structure needed to derive multi-knot VolDensity evaluations from substrate.
 
 Risk: depends on PR #1081 Task 3 landing. Cannot proceed on this branch.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: archimedean mass/binding assembly + hyperbolic parity.
-"""Mass = Vol × Density — the proper-definition replacement for Geom_full.
+"""Mass = Vol × Density — the proper-definition replacement for VolDensity.
 
 Exposes the canonical mass formula as the explicit product of its two proper
 factors, plus the hyperbolic (sinh/cosh) structure that makes the
@@ -18,9 +18,9 @@ rather than an order-by-order check.
   ``(3q²+4+3q⁻²)/4 = 5/2 + 3h²/4`` (= ``_li_2_q_util.linking_weight_family_a``).
 - ``ℏ_q = (q−1)/q`` — substrate Planck quantum.
 
-``geom_full_vd(vol_K, q)`` is bit-identical to the legacy
-``_li_2_q_util.geom_full_borromean(q)`` for the Borromean nucleon — this
-module is the Stage-0/1 foundation of the Geom_full → Vol·Density purge
+``vol_density_vd(vol_K, q)`` is bit-identical to the legacy
+``_li_2_q_util.vol_density_borromean(q)`` for the Borromean nucleon — this
+module is the Stage-0/1 foundation of the VolDensity → Vol·Density purge
 (see ``docs/workplans/2026-06-04-mass-vol-density-stokes-delta-formalization.md``).
 
 ## Hyperbolic parity (q = e^η, η = log q)
@@ -63,8 +63,8 @@ if str(HERE) not in sys.path:
 import _path_bridge  # noqa: F401, E402
 from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
-    geom_full_borromean,
-    geom_full_per_block,
+    vol_density_borromean,
+    vol_density_per_block,
 )
 
 
@@ -117,10 +117,10 @@ def density_per_block(tr_M_K: mp.mpf) -> mp.mpf:
     The M=Vol×Density density factor in its paper-faithful, per-knot,
     per-Wedderburn-block form (`prop:hoefsmit-scattering-pipeline` Stage 4):
     the Markov trace over the partitions of the KNOT'S OWN strand count
-    (H₃ for the 3-strand Borromean baryons). Pass to `geom_full_vd` /
+    (H₃ for the 3-strand Borromean baryons). Pass to `vol_density_vd` /
     `mass_vol_density` as the `density` argument — i.e.
-    ``geom_full_vd(vol_K, q, density=density_per_block(tr_M_K))`` is
-    bit-identical to `_li_2_q_util.geom_full_per_block(vol_K, tr_M_K, q)`.
+    ``vol_density_vd(vol_K, q, density=density_per_block(tr_M_K))`` is
+    bit-identical to `_li_2_q_util.vol_density_per_block(vol_K, tr_M_K, q)`.
 
     This is the SU(2)_q density: tr_M = Σ_λ y_λ χ^λ ranges over the
     Wedderburn blocks (Young diagrams λ), so it sees the per-block
@@ -176,10 +176,10 @@ def compare_density_readings(
     }
 
 
-def geom_full_vd(vol_K: mp.mpf, q: mp.mpf, density: mp.mpf | None = None) -> mp.mpf:
-    """Geom_full as the explicit product Vol(K)·ρ(q)/ℏ_q² (the purge target).
+def vol_density_vd(vol_K: mp.mpf, q: mp.mpf, density: mp.mpf | None = None) -> mp.mpf:
+    """VolDensity as the explicit product Vol(K)·ρ(q)/ℏ_q² (the purge target).
     Defaults `density` to the Borromean ρ(q); pass a per-knot density for
-    other knots. Bit-identical to `geom_full_borromean(q)` for K = 𝓑₃."""
+    other knots. Bit-identical to `vol_density_borromean(q)` for K = 𝓑₃."""
     rho = density_borromean(q) if density is None else density
     return vol_K * rho / hbar_q(q) ** 2
 
@@ -187,7 +187,7 @@ def geom_full_vd(vol_K: mp.mpf, q: mp.mpf, density: mp.mpf | None = None) -> mp.
 def mass_vol_density(m_e: mp.mpf, vol_K: mp.mpf, q: mp.mpf,
                      density: mp.mpf | None = None) -> mp.mpf:
     """m(K) = m_e · Vol(K) · ρ(q) / ℏ_q² — the canonical mass, proper form."""
-    return m_e * geom_full_vd(vol_K, q, density)
+    return m_e * vol_density_vd(vol_K, q, density)
 
 
 # ── Hyperbolic structure (q = e^η) ───────────────────────────────────
@@ -240,7 +240,7 @@ def _emit_witness() -> None:
         return
     from q_parameter import Q_50_DIGIT_STR as Qs
     q = mp.mpf(Qs)
-    eq = abs(geom_full_borromean(q) - geom_full_vd(vol_borromean(), q))
+    eq = abs(vol_density_borromean(q) - vol_density_vd(vol_borromean(), q))
     h_id = abs((q - 1 / q) - h_from_rapidity(q))
     b2_id = abs((q + 1 / q) - bracket2_from_rapidity(q))
     O0, th = mp.mpf("938.9"), mp.mpf("0.01")
@@ -260,11 +260,11 @@ def _emit_witness() -> None:
     try:
         tr_M_proton = _load_tr_M_proton_at_q0()
         cmp_pb = compare_density_readings(q, tr_M_proton)
-        # geom_full_vd with per-block density ≡ _li_2_q_util.geom_full_per_block.
+        # vol_density_vd with per-block density ≡ _li_2_q_util.vol_density_per_block.
         # Compute Vol(𝓑₃) once (precision-dependent) and reuse for both.
         vol = vol_borromean()
-        vd_pb = geom_full_vd(vol, q, density=density_per_block(tr_M_proton))
-        pb_equiv = abs(vd_pb - geom_full_per_block(vol, tr_M_proton, q))
+        vd_pb = vol_density_vd(vol, q, density=density_per_block(tr_M_proton))
+        pb_equiv = abs(vd_pb - vol_density_per_block(vol, tr_M_proton, q))
     except (FileNotFoundError, json.JSONDecodeError, KeyError, ValueError) as e:
         # Catch only the expected chi-cache load failures; an explicit skip
         # datum is emitted below so a missing cache cannot silently pass as
@@ -290,7 +290,7 @@ def _emit_witness() -> None:
         w.add_data("su2_density_loss",
                    {"skipped": True, "reason": skip_reason or "unknown"})
     for name, val in [
-        ("geom_full_equiv_vol_density", eq),
+        ("vol_density_equiv_vol_density", eq),
         ("h_eq_2sinh_log_q", h_id),
         ("bracket2_eq_2cosh_log_q", b2_id),
         ("pair_average_eq_cosh", avg_id),
@@ -301,10 +301,10 @@ def _emit_witness() -> None:
         w.add_assertion(name, computed=1 if val < tol else 0, expected=1,
                         source=f"{name}: |Δ| = {mp.nstr(val, 4)} < {mp.nstr(tol, 1)}")
     if pb_equiv is not None:
-        # geom_full_vd(density=per_block) reproduces geom_full_per_block exactly.
-        w.add_assertion("geom_full_vd_per_block_equiv",
+        # vol_density_vd(density=per_block) reproduces vol_density_per_block exactly.
+        w.add_assertion("vol_density_vd_per_block_equiv",
                         computed=1 if pb_equiv < tol else 0, expected=1,
-                        source=f"geom_full_vd(density=tr_M) ≡ geom_full_per_block: "
+                        source=f"vol_density_vd(density=tr_M) ≡ vol_density_per_block: "
                                f"|Δ| = {mp.nstr(pb_equiv, 4)} < {mp.nstr(tol, 1)}")
     out = w.save()
     print(f"  Witness: {out.name}")
@@ -316,8 +316,8 @@ if __name__ == "__main__":
     q = mp.mpf(Qs)
     print("Mass = Vol × Density — wired-up compute")
     print(f"  [2]_q = 2cosh(log q₀) = {mp.nstr(bracket2_from_rapidity(q), 12)} (recurring Hecke weight)")
-    print(f"  geom_full ≡ Vol·ρ/ℏ²: |Δ| = "
-          f"{mp.nstr(abs(geom_full_borromean(q) - geom_full_vd(vol_borromean(), q)), 3)}")
+    print(f"  vol_density ≡ Vol·ρ/ℏ²: |Δ| = "
+          f"{mp.nstr(abs(vol_density_borromean(q) - vol_density_vd(vol_borromean(), q)), 3)}")
     try:
         _tr = _load_tr_M_proton_at_q0()
         _c = compare_density_readings(q, _tr)

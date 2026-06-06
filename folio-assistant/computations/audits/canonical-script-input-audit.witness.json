@@ -6461,7 +6461,7 @@
         "uses_canonical_consts_source": true
       },
       {
-        "script": "geom_full_borromean_h4_probe.py",
+        "script": "vol_density_borromean_h4_probe.py",
         "found": {
           "M_E_MEV": true,
           "M_P_MEV": false,
@@ -6481,7 +6481,7 @@
         "uses_canonical_consts_source": false
       },
       {
-        "script": "geom_full_borromean_q_locality_probe.py",
+        "script": "vol_density_borromean_q_locality_probe.py",
         "found": {
           "M_E_MEV": true,
           "M_P_MEV": false,
@@ -6501,7 +6501,7 @@
         "uses_canonical_consts_source": false
       },
       {
-        "script": "geom_full_compute_vs_paper_audit.py",
+        "script": "vol_density_compute_vs_paper_audit.py",
         "found": {
           "M_E_MEV": true,
           "M_P_MEV": true,
@@ -6521,7 +6521,7 @@
         "uses_canonical_consts_source": true
       },
       {
-        "script": "geom_full_per_block_wiring.py",
+        "script": "vol_density_per_block_wiring.py",
         "found": {
           "M_E_MEV": true,
           "M_P_MEV": true,
@@ -10681,7 +10681,7 @@
         "uses_canonical_consts_source": false
       },
       {
-        "script": "meson_geom_full.py",
+        "script": "meson_vol_density.py",
         "found": {
           "M_E_MEV": false,
           "M_P_MEV": false,

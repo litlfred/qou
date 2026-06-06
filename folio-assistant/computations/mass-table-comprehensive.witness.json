@@ -1321,11 +1321,11 @@
       "gated_on_phase2": 59,
       "nucleon_path": "family_a",
       "linking_weight_family_a": 2.5327796563993914,
-      "geom_full_borromean_q": null,
+      "vol_density_borromean_q": null,
       "delta_m_over_M_N": null,
       "m_p_pred_MeV": 938.2723154516417,
       "m_n_pred_MeV": 939.5639953049096,
-      "production_tier": "Geom_full(𝓑₃, q) via PROVED Family A linking_weight + flavor-split (PROVED) — PR #1080 canonical framing",
+      "production_tier": "VolDensity(𝓑₃, q) via PROVED Family A linking_weight + flavor-split (PROVED) — PR #1080 canonical framing",
       "research_tier_not_used": "Strategy I linking_weight = Family A − G·h² (conjectural bijection, PURGED 2026-05-24 per PR #985)"
     }
   },

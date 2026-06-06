@@ -11,7 +11,7 @@
 
 `linking_weight_family_a(q)` ([`_li_2_q_util.py:172`](../../folio-assistant/computations/_li_2_q_util.py)) appears in production as a global geometric multiplier:
 
-> `geom_full_borromean(q) = Vol(𝓑₃) / ℏ_q² × linking_weight_family_a(q)`
+> `vol_density_borromean(q) = Vol(𝓑₃) / ℏ_q² × linking_weight_family_a(q)`
 
 and the linking_weight evaluates to `(3q²+4+3q⁻²)/4`. Symbolically it equals `(1/4) · Σ_{λ⊢4} dim_q(V_λ)` — a sum over partitions of **4**.
 
@@ -81,7 +81,7 @@ Two of the five attack options listed in [PR #1762 §5](https://github.com/litlf
 
 ## What this leaves open
 
-- **The Family-A formula is still the production multiplier** that round-trips m_p. The uniform Geom_full pipeline stays unchanged; Option A confirmed flipping it would break m_p by ≈ 2.38× and the gap grows with A. This audit is structural, not actionable on production.
+- **The Family-A formula is still the production multiplier** that round-trips m_p. The uniform VolDensity pipeline stays unchanged; Option A confirmed flipping it would break m_p by ≈ 2.38× and the gap grows with A. This audit is structural, not actionable on production.
 - **Option D (Kashiwara crystal / Δ_λ closure)** remains the productive direction for the per-isotope binding-energy gap (separate from the H₃→H₄ Family-A question).
 - **Honest framing for `linking_weight_family_a`.** The production docstring's "CODATA-implied near-match" label is now the recommended canonical framing. The function should not be referred to as a "derived" or "categorical" multiplier in new content — it is a **post-hoc fit form** that closely matches an empirical scaling. The `(1/4)·Σ_{λ⊢4} dim_q` decomposition is exact but the choice of H₄ (not H₃, not H₆) is not structurally derived.
 

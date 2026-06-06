@@ -161,7 +161,7 @@ Empirically, `B(⁶Li) − B(⁴He) − B(²H) = 1.47 MeV` of α-d
 binding (parent audit §Path 1). The natural categorical reading
 is **not** a single knot of Vol ≈ 62.6 but a **link** of the
 4He-knot and the d-knot (6_2) with a small additional coupling.
-This points to Path 2 (multi-knot `Geom_full(K_1 ⊔ K_2)`) rather
+This points to Path 2 (multi-knot `VolDensity(K_1 ⊔ K_2)`) rather
 than census search. Specifically, the framework already has a
 canonical "two linked Borromean rings" → c_αα motif for α-α; the
 α-d analogue would be a similar link of the 4He topology with
@@ -176,11 +176,11 @@ each independently undermine the single-knot framing.
 Preferred direction (per parent audit Path 2, reinforced by the
 multiplicative-ratio negative result and the J^π / resonance
 flags): **wait for PR #1081 Task 3** (S₅ ↔ SO(3) fibre action)
-and develop **multi-knot `Geom_full(K_1 ⊔ K_2 ⊔ …)`** for
+and develop **multi-knot `VolDensity(K_1 ⊔ K_2 ⊔ …)`** for
 α + valence-nucleon configurations. Specifically:
 
-1. ⁶Li → `Geom_full(L6a4_α ⊔ 6_2_d)` with α–d link coupling.
-2. ⁷Li → `Geom_full(L6a4_α ⊔ 8_11_t)` with α–t link coupling.
+1. ⁶Li → `VolDensity(L6a4_α ⊔ 6_2_d)` with α–d link coupling.
+2. ⁷Li → `VolDensity(L6a4_α ⊔ 8_11_t)` with α–t link coupling.
 3. ⁵Li → Demazure sub-crystal of the A=5 sector (not a knot).
 
 Each requires its own categorical derivation of the link
@@ -218,4 +218,4 @@ environment rather than rely on this scan.
 - Mass-table gap surface: [`folio-assistant/computations/mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) lines 80–180
 - CLAUDE.md §7b — Demazure sub-crystals for resonances (the ⁵Li reading)
 - CLAUDE.md production-vs-exploratory discipline — why this is a shape-probe
-- PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3 — supplier for multi-knot Geom_full path
+- PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3 — supplier for multi-knot VolDensity path

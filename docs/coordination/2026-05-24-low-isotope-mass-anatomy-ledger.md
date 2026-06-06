@@ -9,7 +9,7 @@
 | PR | Branch | Status | Classification | Relationship |
 |---|---|---|---|---|
 | **#1089** (this) | `claude/great-galileo-ahGfj` | Open, 5 commits, all review comments addressed | own | code-level migration + sign-flip diagnostic + audit doc |
-| #1063 | `claude/family-a-gap-audit-2026-05-24` | Open, OWNER | **OVERLAP** — same +2.89% residual diagnosis | Sign-flip evidence falsifies its single-Geom_full framing for A ≥ 3; coordination posted 07:56Z |
+| #1063 | `claude/family-a-gap-audit-2026-05-24` | Open, OWNER | **OVERLAP** — same +2.89% residual diagnosis | Sign-flip evidence falsifies its single-VolDensity framing for A ≥ 3; coordination posted 07:56Z |
 | #1081 | `claude/categorical-bijection-h4-bor3-2026-05-24` | Open, OWNER | **SUPPLIER** — Tasks 2+3 supply categorical inputs to PR #1089 deferred items | Intent posted; Task 3 (S₅ ↔ SO(3) fiber) is candidate source for channel-assignment rule |
 | #1080 | merged 2026-05-24 03daeb1b4 | merged | source of canonical reference doc | PR #1089 implements its code-level follow-through |
 | #1076 | one-voice criterion 11 | Open | independent | no overlap |
@@ -24,7 +24,7 @@
 
 | # | Decision | Rationale |
 |---|----------|-----------|
-| 1 | Remove the `lambda_scale_family_a` alias entirely (not just deprecate) | Copilot review on PR #1089 + owner directive "no lambda-scale ANYWHERE". Migrated 9 production-script call sites to `linking_weight_family_a` / `geom_full_borromean` before removal. |
+| 1 | Remove the `lambda_scale_family_a` alias entirely (not just deprecate) | Copilot review on PR #1089 + owner directive "no lambda-scale ANYWHERE". Migrated 9 production-script call sites to `linking_weight_family_a` / `vol_density_borromean` before removal. |
 | 2 | Move `lambda_yekutieli_extended_borromean.py` to `_deprecated/yekutieli-purged/` | Its imports (`lambda_scale_yekutieli_extended`) never existed after the Yekutieli purge (PR #985 + commit `71d674da1`); script was broken. README documents reanimation policy. |
 | 3 | Keep historical script names `lambda_scale_all_c_i_family_a.py` / `lambda_scale_*_probe.py` | Renaming Python files has knock-on effects on witness slugs + audit references. Probe scripts are flagged EXPLORATORY in their headers. Defer to a follow-up branch if owner wants script names purged too. |
 | 4 | ⁵Li / ⁶Li wiring deferred | `mass_table_ppb.py` covers `D / T / ³He / ⁴He` via census atom→knot then jumps to A ≥ 8 α-cluster, leaving A ∈ {5, 6, 7} un-wired. Needs knot census on `B/m_e ≈ Vol` for that range, or α-cluster rule extension below A=8. Both are research-tier. |
@@ -49,7 +49,7 @@ Ranked by load-bearing-ness; per CLAUDE.md Rule 14, any h^k coefficient or weigh
 | linking_weight identity `(3q²+4+3q⁻²)/4` | ✅ `lambda-scale-substrate-form.lean` | LOW |
 | Hecke quadratic σ⁻¹ = σ − h | ✅ Mathlib | LOW |
 | Vol(𝓑₃) = 8·G (Adams 1985) | ❌ literature only | MEDIUM |
-| `Geom_full(K)` per-knot decomposition | ❌ narrative only (`prop:geom-universality`) | MEDIUM |
+| `VolDensity(K)` per-knot decomposition | ❌ narrative only (`prop:geom-universality`) | MEDIUM |
 | Δm/M_N flavor split `(1+ℏ_q³)` factor | ⚠️ partial | MEDIUM |
 | pp/pn/nn channel-assignment rule | ❌ no `prop:` block | MEDIUM |
 | Atom → knot census (D ↔ 6₂, etc.) | ❌ AME-driven | HIGH |

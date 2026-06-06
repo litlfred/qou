@@ -26,7 +26,7 @@ The row values tabulated here are **not currently reproducible** from a
 committed witness — the referenced `atom-mass-complete-wedderburn`
 witness is absent from the repository. The live mass-prediction
 pipelines give substantially larger errors than these figures: nucleons
-at $+2.89\%$ (Family-A Geom_full); $\mathrm{D}/\mathrm{T}/{}^{3}\mathrm{He}$
+at $+2.89\%$ (Family-A VolDensity); $\mathrm{D}/\mathrm{T}/{}^{3}\mathrm{He}$
 at $\sim 1$–$3\%$ via census-assigned knots; and $A \geq 4$ via the
 $\alpha$-cluster rule at $+5$–$20\%$, growing with $A$ (e.g.
 ${}^{40}\mathrm{Ca}$ at $+19.5\%$). The "zero fitted parameters"

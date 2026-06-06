@@ -61,10 +61,10 @@ This means:
    scripts to localize the 210 ppb residual to a specific structural
    contribution.
 2. **Identify the next-order categorical correction** — the framework's
-   `Geom_full` refinement work for m_p (~2.89% gap per
+   `VolDensity` refinement work for m_p (~2.89% gap per
    `docs/canonical-derivation-cheat-sheet.md` §5 item #1) is the
    parallel work for the baryonic side. The leptonic side needs a
-   similar `Geom_full` refinement for 4_1 (hyperbolic figure-8 knot).
+   similar `VolDensity` refinement for 4_1 (hyperbolic figure-8 knot).
 3. **Habiro element for 4_1** — the framework has Habiro extraction
    infrastructure (`habiro_exact_taylor_extraction.py`,
    `gb-depth-period-bring-fig8.witness.json`). The 4_1 Habiro element
@@ -93,7 +93,7 @@ This means:
 - `prop:skein-mass-relation` — production muon = 4_1 hypothesis
 - `lepton_tower_probe_1_cinquefoil_muon.py` — current probe
 - `docs/canonical-derivation-cheat-sheet.md` §5 item #1 — parallel
-  `Geom_full` refinement for m_p
+  `VolDensity` refinement for m_p
 
 ## Thread opening — what this doc accomplishes
 

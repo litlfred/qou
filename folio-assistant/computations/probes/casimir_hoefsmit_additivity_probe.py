@@ -19,7 +19,7 @@ of the Casimir-vacuum conjecture (existence of categorical N⊙).
 
 So under ε-relaxation `Vol(⊙) = ε`:
 - `Vol(N · ⊙) = N · ε`
-- `Geom_full(N · ⊙) = N · ε / ℏ_q² · linking_weight(N · ⊙)`
+- `VolDensity(N · ⊙) = N · ε / ℏ_q² · linking_weight(N · ⊙)`
 
 **The structural question.**  Does `linking_weight` factor on
 disjoint unions?  If `linking_weight(L₁ ⊔ L₂) = linking_weight(L₁) ·
@@ -32,7 +32,7 @@ the identity (no cross-linking contribution), so:
 
 **Empirical check.**  This probe verifies:
 1. Additivity of hyperbolic volume on a few test pairs symbolically.
-2. The N · ε structure of Geom_full(N · ⊙) under ε-relaxation.
+2. The N · ε structure of VolDensity(N · ⊙) under ε-relaxation.
 3. The dimensional consistency of N · ε with `∂/∂d` of A/d³.
 
 Emits `casimir-hoefsmit-additivity-probe.witness.json`.
@@ -82,7 +82,7 @@ def _hbar_q(q: "mpf") -> "mpf":
 
 
 def _geom_leading(vol: "mpf", q: "mpf") -> "mpf":
-    """Geom_leading = Vol / ℏ_q² (per _li_2_q_util.geom_full_borromean)."""
+    """Geom_leading = Vol / ℏ_q² (per _li_2_q_util.vol_density_borromean)."""
     return vol / _hbar_q(q) ** 2
 
 
@@ -163,7 +163,7 @@ def _check_dimensional_match(q: "mpf") -> dict:
         "ℏ_q²_at_substrate": hbar_q_sq,
         "implication": (
             "The conjecture's N⊙ ~ ε⁻¹ · A/d³ scaling may need "
-            "refinement: dimensional analysis with the Geom_full = "
+            "refinement: dimensional analysis with the VolDensity = "
             "Vol/ℏ_q² normalisation suggests N⊙ ~ ε⁻² · A/d³, with "
             "the extra ε⁻¹ factor absorbing the ℏ_q² denominator."
         ),
@@ -198,7 +198,7 @@ def main() -> int:
             "against the conjecture's A/d³ scaling — uncovers that "
             "the surreal-infinitesimal birthday rank of N⊙ may be "
             "ε⁻² rather than ε⁻¹ once the ℏ_q² normalisation in "
-            "Geom_full is accounted for; this is a refinement to "
+            "VolDensity is accounted for; this is a refinement to "
             "carry back into the conjecture .md."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
@@ -216,7 +216,7 @@ def main() -> int:
             source=(
                 "Thurston (geometrisation) for hyperbolic-volume "
                 "additivity; folio-assistant/computations/"
-                "_li_2_q_util.py for Geom_full = Vol/ℏ_q² · "
+                "_li_2_q_util.py for VolDensity = Vol/ℏ_q² · "
                 "linking_weight; this probe just composes them."
             ),
         )

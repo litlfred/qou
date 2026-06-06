@@ -10,7 +10,7 @@ new probes Q2 + Q3 (this session).
 ## §1. The foundational separation: hyperbolic vs torus categorical chains
 
 The framework's mass formula
-$$m(K) = m_e \cdot \mathrm{Geom_{full}}(K, q_0)$$
+$$m(K) = m_e \cdot \mathrm{VolDensity}(K, q_0)$$
 is anchored on the muon cross-check $\mathrm{Vol}(4_1)/\hbar_q^2 = m_\mu/m_e$
 (50 digits) — but this anchor requires $K$ to be **hyperbolic**. The
 canonical chain runs:
@@ -28,7 +28,7 @@ inventory is split into two categorical classes:
 
 | class | examples | mass-derivation chain |
 |---|---|---|
-| **Hyperbolic** | leptons (muon = $4_1$), baryons ($\mathcal{B}_3$), most "generic" knots | $\mathrm{Geom_{full}}$ via hyperbolic volume |
+| **Hyperbolic** | leptons (muon = $4_1$), baryons ($\mathcal{B}_3$), most "generic" knots | $\mathrm{VolDensity}$ via hyperbolic volume |
 | **Torus** | EW bosons (W, Z, H), strong-force anchors (some T(2,k), T(3,5)), Reidemeister-trivial classes | **Reshetikhin-Turaev (RT) at root-of-unity** (or equivalent Chern-Simons partition function) |
 
 ## §2. The cohomological-categorical SM particle map
@@ -42,8 +42,8 @@ Per [`electroweak-higgs-torus-link-triplet.md`](../../content/quantum-observable
 |---|---|---|---|---|
 | **Leptons** | $e^-$ | unit cohomological defect at $z=1$ | — | CAL-1 anchor (m_e itself) |
 | | $\mu^-$ | $4_1$ (figure-8 knot) | YES | $m_e \cdot \mathrm{Vol}(4_1)/\hbar_q^2$ (matches CODATA at 50 digits) |
-| | $\tau^-$ | (open: candidate hyperbolic knot of higher genus) | YES (conjectured) | Geom_full at appropriate knot |
-| **Baryons (composite)** | $p$ | $\mathcal{B}_3$ (Borromean rings) | YES | $m_e \cdot \mathrm{Geom_{full}}(\mathcal{B}_3, q_0)$ + flavor split |
+| | $\tau^-$ | (open: candidate hyperbolic knot of higher genus) | YES (conjectured) | VolDensity at appropriate knot |
+| **Baryons (composite)** | $p$ | $\mathcal{B}_3$ (Borromean rings) | YES | $m_e \cdot \mathrm{VolDensity}(\mathcal{B}_3, q_0)$ + flavor split |
 | | $n$ | $\mathcal{B}_3$ (same braid, different orientation) | YES | same chain + isospin assignment |
 | **Quarks (composite)** | $u, d$ | components of $\mathcal{B}_3$ | YES (composite) | flavor-split layer on baryon prediction |
 | **EW gauge bosons** | $W^\pm$ | **T(2, 4)** | NO (genus 1, Seifert) | RT chain @ root-of-unity (this audit) |
@@ -194,8 +194,8 @@ non-trivial.
 
 ## §7. Cross-references
 
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — canonical framing (PR #1080)
-- [`docs/audits/2026-05-24-family-a-gap-audit.md`](2026-05-24-family-a-gap-audit.md) — L1 hyperbolic Geom_full audit
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — canonical framing (PR #1080)
+- [`docs/audits/2026-05-24-family-a-gap-audit.md`](2026-05-24-family-a-gap-audit.md) — L1 hyperbolic VolDensity audit
 - [`docs/audits/2026-05-24-single-knot-vs-multi-nucleon-reconciliation.md`](2026-05-24-single-knot-vs-multi-nucleon-reconciliation.md) — L1/L2/L3 reconciliation
 - [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](2026-05-24-pentagon-identity-broad-context.md) — Pentagon's 8-discipline placement
 - [`docs/audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`](2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md) — per-step jet-order analysis
@@ -212,8 +212,8 @@ non-trivial.
 
 | sector | sec. derivation chain | status this session |
 |---|---|---|
-| leptons (μ, e) | Geom_full (hyperbolic Vol) | unchanged (CAL anchors) |
-| baryons (p, n) | Geom_full (hyperbolic Vol on $\mathcal{B}_3$) | structural Markov × 5/2 + Lean h⁴ = -3/4 proof (PR #1081 + #1100) |
+| leptons (μ, e) | VolDensity (hyperbolic Vol) | unchanged (CAL anchors) |
+| baryons (p, n) | VolDensity (hyperbolic Vol on $\mathcal{B}_3$) | structural Markov × 5/2 + Lean h⁴ = -3/4 proof (PR #1081 + #1100) |
 | EW bosons (W, Z, H) | RT @ root-of-unity (NEW characterization) | foundational chain separation documented (this audit); $J_N$ probes give within-2× signatures (Q2); h-expansions differ from hyperbolic (Q3) |
 | strong-force (gluons + torus anchors) | RT @ root-of-unity (same chain class as EW) | same as EW; per-particle mass requires level selection |
 | nuclear binding (²H, ³H, ⁴He, ...) | L1 + L2 + L3 layered (per PR #1102 + #1103) | three-layer decomposition with empirical magnitudes |

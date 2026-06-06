@@ -31,8 +31,8 @@ first probes for the next 3–5 session program.
 
 ```
 m_p / m_e   = 1836.15267343  (CODATA)
-prediction  = m_e × Geom_full(𝓑_p, q_0) × [ 1 + (α_em/π) / dim H_3 ]
-            = m_e × Geom_full(𝓑_p, q_0) × [ 1 + 1/(137.036·π·6) ]
+prediction  = m_e × VolDensity(𝓑_p, q_0) × [ 1 + (α_em/π) / dim H_3 ]
+            = m_e × VolDensity(𝓑_p, q_0) × [ 1 + 1/(137.036·π·6) ]
 residual    = 54 ppb (anchor-stable; PR #1581)
 ```
 

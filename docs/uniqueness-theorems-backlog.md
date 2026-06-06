@@ -17,7 +17,7 @@ without external choice.
 | 1 | **τ_M Markov trace** on H_n(R, q) | line 234 (`[jones1987]` cited) | ✅ **DONE (#1422)** | `qou_markov_trace_is_jones_markov` refactored from selection-by-contrast → direct uniqueness statement via `MarkovTraceUniqueness` class (Wenzl/Jones axiom, CLAUDE.md §3b-cond). τ_SW + `schur-weyl-vanishing.lean` fully purged. |
 | 2 | **T_w SDP-canonical knot operator** | line 69, 95 | ✅ **SCAFFOLDED** (pre-existing, surfaced by 2026-05-30 audit) | `canonical_T_w_subsingleton_under_strict_complementarity` in `mass-theory/conj-canonical-knot-id-sdp.lean:748` ALREADY proves the Subsingleton uniqueness conditional on `StrictComplementarityPair`. Underlying `sorry` is in `QOU.MathlibExt.SDP.strict_complementarity_unique` (Mathlib SDP layer — PSD-cone strict convexity). Open work: discharge the Mathlib SDP sorry, OR upgrade `class CanonicalKnotIdSDP` to include a `strictComplementarity` field so per-instance witnesses certify uniqueness. |
 | 3 | **Canonical p-n averaging form** | line 124, 128 | ⚠ **OPEN — genuinely missing** | No dedicated `averaging-resonance-rule.lean` file exists; only referenced from `bar-involution.md`, `c5-involution-leibniz-decomposition.ts`, etc. Needed: `pn_averaging_unique` — any p-n averaging satisfying (a) bar-invariance, (b) color-flavor compatibility (Bring color-tube symmetry), (c) standard normalisation, is unique. Open math (the Bring color-tube weighted vs uniform bar-invariant question) AND open Lean. |
-| 4 | **Geom_full(K) per-knot** | line 175, 185 | ✅ **SCAFFOLDED** (pre-existing) | `particle-interactions/geom-universality.lean` already carries `class SingleVolumeIrrational`, `class PLCorrectnessHypotheses`, `class HyperbolicVolumeIndependence` (§3b-cond axiom classes) + `theorem geom_universality_conditional` + `theorem conditional_on_HyperbolicVolumeIndependence`. Open work: close one of those classes, OR add a top-level `geom_full_per_knot_unique` theorem that consumes all three. |
+| 4 | **VolDensity(K) per-knot** | line 175, 185 | ✅ **SCAFFOLDED** (pre-existing) | `particle-interactions/geom-universality.lean` already carries `class SingleVolumeIrrational`, `class PLCorrectnessHypotheses`, `class HyperbolicVolumeIndependence` (§3b-cond axiom classes) + `theorem geom_universality_conditional` + `theorem conditional_on_HyperbolicVolumeIndependence`. Open work: close one of those classes, OR add a top-level `vol_density_per_knot_unique` theorem that consumes all three. |
 | 5 | **Archimedean realization functor** at q₀ | implicit (Step 8 of chain) | ⚠ **OPEN — no dedicated block** | Referenced from `chi-minus-six-chain.md`, `thurston-relaxation.md`, `crossing-energy-decomposition.{md,lean}`, but no `archimedean-realization-functor.{md,ts,lean}` block exists. Needed: create the block with `archimedean_functor_unique` theorem — the realisation functor `R = ℚ(q) → ℝ` at `q = q₀` is unique up to the gauge of the substrate symmetry. Lower priority; standard categorical-realisation result. |
 
 > **2026-05-30 audit finding.** Items 2 + 4 were initially flagged as "open" but the framework already carries §3b-cond scaffolds (axiom classes + conditional theorems). The genuine outstanding work is items 3 + 5 (no Lean files exist yet) plus closing the remaining `sorry`s in items 2 + 4. This re-prioritisation is the focus of the post-#1422 follow-up branches.
@@ -28,10 +28,10 @@ without external choice.
 >   `BarInvariant` / `ColorFlavorCompatible` / `StandardNorm` classes
 >   and theorems `pn_averaging_unique` + `pn_averaging_subsingleton`,
 >   proved sorry-free conditional on the three classes.
-> - Item 4 (Geom_full): **top-level theorem added** to
+> - Item 4 (VolDensity): **top-level theorem added** to
 >   `particle-interactions/geom-universality.lean` — new classes
 >   `GeomFullFunctorial`, `GeomFullCanonicalSeed`, theorems
->   `geom_full_per_knot_unique` + `geom_full_subsingleton` proved
+>   `vol_density_per_knot_unique` + `vol_density_subsingleton` proved
 >   sorry-free conditional on the seed class.
 > - Item 5 (Archimedean realisation): **uniqueness theorems added**
 >   to the existing `mass-theory/archimedean-realization-functor.lean`

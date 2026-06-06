@@ -65,7 +65,7 @@ $\alpha_{\rm shift} = k$. Wiring this into a lepton-mass uniqueness
 statement (the way `prop:em-coupling-bring-zero-mode` does for
 $1/\alpha_{\rm EM}$) is the natural Item 4 closure for the
 $\mu / \tau / W / Z / H$ block — currently scoped as
-"`Geom_full(K)` per-knot canonical".
+"`VolDensity(K)` per-knot canonical".
 
 ### 4. Meson m_K/m_π — *Item-3-analogous open*
 

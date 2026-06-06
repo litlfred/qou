@@ -103,7 +103,7 @@ Mass-side analog. All rungs **de-fit** in #1416; **none currently wired**
 
 The d_k are categorically *suggestive* (crossing counts, Jones²) but each is an
 empirical integer extraction, not a derivation. The current categorical
-`Geom_full(𝓑₃)` leaves the documented **~2.89% m_p gap** with no d_k wired.
+`VolDensity(𝓑₃)` leaves the documented **~2.89% m_p gap** with no d_k wired.
 
 ---
 
@@ -138,7 +138,7 @@ per-block-χ recursion; do not conflate it with the c_k ladder recursion.)
 
 - **Q_β: c_2 only** (`Q_N2`-level). `q_beta_predicted.py` wires **no** c_3+
   ladder rung; the ~0.17% truncation residual is the c_2-level gap.
-- **m_p: bare.** No d_k wired; ~2.89% categorical `Geom_full` gap stands.
+- **m_p: bare.** No d_k wired; ~2.89% categorical `VolDensity` gap stands.
 - **L2 100× dashboard: 3/7** beats-100× (`per-observable-100x-status.witness.json`,
   `summary.beats_100x_count = 3`). The deep audit's "4/7"/"6/7" are **stale**
   (pre proton-anchor re-pin).

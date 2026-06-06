@@ -15,8 +15,8 @@
   ],
   "allPassed": false,
   "durationMs": 11,
-  "computation": "geom-full-per-block-wiring",
-  "scriptFile": "geom_full_per_block_wiring.py",
+  "computation": "vol-density-per-block-wiring",
+  "scriptFile": "vol_density_per_block_wiring.py",
   "scriptHash": "2c9f41e96981",
   "scriptCommitSha": "unknown",
   "precisionMetadata": {
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
-  "description": "Discipline-gate verification of the paper's per-block Σ_λ factor (prop:hoefsmit-scattering-pipeline Stage 4) against production's global linking_weight collapse (geom_full_borromean). Computes m(K) = m_e·[Vol(K)/ℏ_q²]·tr_M(K) per knot using the canonical H₃ Markov trace from the chi-{atom}-h3-at-q0 caches, vs production m = m_e·[Vol/ℏ_q²]·linking_weight (the H₄ scalar 2.53). VERDICT (raw, no fudge): the per-block H₃ trace tr_M(proton)≈1.065 is NOT the global H₄ scalar 2.53; they differ by ≈2.38×. The per-block reading gives m_p≈406 MeV (−56.7%), so production's near-correct m_p does NOT come from the paper's per-block formula as literally written — the global H₄ scalar lands near the CODATA-implied λ≈2.46 coincidentally, using the WRONG index set (H₄ not H₃). This is a flagged structural discrepancy, NOT hard-coded away. Corroborates sibling PR #1608/#1613 findings.",
+  "description": "Discipline-gate verification of the paper's per-block Σ_λ factor (prop:hoefsmit-scattering-pipeline Stage 4) against production's global linking_weight collapse (vol_density_borromean). Computes m(K) = m_e·[Vol(K)/ℏ_q²]·tr_M(K) per knot using the canonical H₃ Markov trace from the chi-{atom}-h3-at-q0 caches, vs production m = m_e·[Vol/ℏ_q²]·linking_weight (the H₄ scalar 2.53). VERDICT (raw, no fudge): the per-block H₃ trace tr_M(proton)≈1.065 is NOT the global H₄ scalar 2.53; they differ by ≈2.38×. The per-block reading gives m_p≈406 MeV (−56.7%), so production's near-correct m_p does NOT come from the paper's per-block formula as literally written — the global H₄ scalar lands near the CODATA-implied λ≈2.46 coincidentally, using the WRONG index set (H₄ not H₃). This is a flagged structural discrepancy, NOT hard-coded away. Corroborates sibling PR #1608/#1613 findings.",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "Vol_B3": "7.32772475341775212043682811946",
@@ -48,7 +48,7 @@
         "index_set": "H_3 (partitions of 3)",
         "tr_M_at_q0": "1.0653061442544499757",
         "geom_leading": "746.41800759796713899",
-        "geom_full_per_block": "795.16368967627911894",
+        "vol_density_per_block": "795.16368967627911894",
         "m_per_block_MeV": "406.32781050270446969",
         "codata_MeV": "938.27208816",
         "rel_err_per_block": "-0.566940319732"
@@ -58,7 +58,7 @@
         "index_set": "H_3 (partitions of 3)",
         "tr_M_at_q0": "0.92323322991163717797",
         "geom_leading": "746.41800759796713899",
-        "geom_full_per_block": "689.1179080188801416",
+        "vol_density_per_block": "689.1179080188801416",
         "m_per_block_MeV": "352.13852742384433253",
         "codata_MeV": "939.56542052",
         "rel_err_per_block": "-0.625211273496"

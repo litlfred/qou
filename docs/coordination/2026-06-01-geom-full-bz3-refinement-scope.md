@@ -1,9 +1,9 @@
-# Geom_full(𝓑₃, q₀) refinement — research-direction scope
+# VolDensity(𝓑₃, q₀) refinement — research-direction scope
 
 **Date:** 2026-06-01
-**Branch:** `claude/geom-full-bz3-refinement-2026-06-01`
+**Branch:** `claude/vol-density-bz3-refinement-2026-06-01`
 **Goal arm:** L2 100× closure on m_p, m_n, Δ_pn (3 of 4 misses share one root)
-**Status:** **OPEN — research-grade**. Canonical reference: [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md).
+**Status:** **OPEN — research-grade**. Canonical reference: [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md).
 
 ## The gap (current m_p baseline, 2026-06-01)
 
@@ -21,7 +21,7 @@ From `m_p_borromean_verification_50dps.py`:
 
 ## What's been REFUTED (do not redo)
 
-Per [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) §"What canonical code does":
+Per [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) §"What canonical code does":
 
 | Attempt | Status | Why refuted |
 |---|---|---|
@@ -30,13 +30,13 @@ Per [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-in
 | q^10 pentagon Bloch-Wigner | REFUTED | q-locality non-smooth (PR #951) |
 | Unit-circle Bloch-Wigner class | REFUTED | literal-rfl loophole + substrate-q₀ coincidence (PR #952, #985) |
 | Yekutieli per-cell curvature | PURGED 2026-05-24 | bijection NEGATIVE, Reading A was substrate-q₀ coincidence (PR #985) |
-| **"Derive λ_scale from H_4 substrate" (general)** | **WRONG FRAME** | λ_scale is absorbed into Geom_full; no separate constant exists |
+| **"Derive λ_scale from H_4 substrate" (general)** | **WRONG FRAME** | λ_scale is absorbed into VolDensity; no separate constant exists |
 
 Strategies named "F/G/H to derive λ_scale from H_4 substrate" are explicitly called out as **wrong frame** in the canonical reference.
 
 ## Queued routes (research-grade)
 
-1. **Bring color-tube quark-weighted averaging** ([`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/script-qa/probe_pn_flavor_asymmetry.script-qa.json) — script archived; QA sidecar surviving): per-sheet PL integration on Bring's surface (Scheme 4) gives `Δm_{n−p}` to ~0.14% — **but this closes the p/n split, not the m_avg gap**. Path forward: extend this color-tube formalism to the BASE mass scale of `Geom_full(𝓑₃)`, not just the difference. Open: define canonical color-sheet ↔ quark-flavor mapping (research-level — not explicitly in the paper).
+1. **Bring color-tube quark-weighted averaging** ([`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/script-qa/probe_pn_flavor_asymmetry.script-qa.json) — script archived; QA sidecar surviving): per-sheet PL integration on Bring's surface (Scheme 4) gives `Δm_{n−p}` to ~0.14% — **but this closes the p/n split, not the m_avg gap**. Path forward: extend this color-tube formalism to the BASE mass scale of `VolDensity(𝓑₃)`, not just the difference. Open: define canonical color-sheet ↔ quark-flavor mapping (research-level — not explicitly in the paper).
 
 2. **g·g' substrate-derived couplings** ([`SubstrateEWHypotheses.lean`](../../content/quantum-observable-universe/braids-and-knots/) class-conditional theorems): `g = π·h_0` matches SM 0.6535 to **+0.26%**; `v_framework / v_SM = log(6) = log(|S_3|)` matches at **−0.50%**. Open: rigorously derive π·h_0 from connection 1-form integration on substrate (Yekutieli MI machinery); upgrade `sorry` markers in SubstrateEWHypotheses.lean.
 
@@ -46,7 +46,7 @@ Strategies named "F/G/H to derive λ_scale from H_4 substrate" are explicitly ca
 
 ## Cross-references that survive
 
-- Canonical reference: [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- Canonical reference: [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 - Cheat sheet §3 + §5: [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
 - m_p baseline script: [`folio-assistant/computations/m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
 - Bloch-Wigner phase-1b Lake-wiring (PR #956 roadmap status): queued

@@ -10,7 +10,7 @@
       "expected": 0.0289,
       "passed": true,
       "tolerance": 0.002,
-      "source": "Production docstring `_li_2_q_util.py::geom_full_borromean` states: 'the 2.53 is a CODATA-implied-λ near-match that lands near λ = m_p / (m_e·Vol/ℏ²) ≈ 2.46'.  This assertion anchors the probe by recovering that documented +2.89 % overshoot exactly for the proton row."
+      "source": "Production docstring `_li_2_q_util.py::vol_density_borromean` states: 'the 2.53 is a CODATA-implied-λ near-match that lands near λ = m_p / (m_e·Vol/ℏ²) ≈ 2.46'.  This assertion anchors the probe by recovering that documented +2.89 % overshoot exactly for the proton row."
     }
   ],
   "allPassed": true,

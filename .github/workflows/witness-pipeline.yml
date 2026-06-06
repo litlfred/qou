@@ -364,7 +364,7 @@ jobs:
         #     falsified by the S₄↓S₃ bijection κ=+0.5);
         #   - lambda_scale_family_a + the lambda_scale_* symbol prefix
         #     (owner directive 2026-05-24 "no lambda-scale ANYWHERE in
-        #     production"; absorbed into Geom_full(K), PR #1080/#1089);
+        #     production"; absorbed into VolDensity(K), PR #1080/#1089);
         #   - purged module lambda_yekutieli_extended_borromean.
         # AST-based: historical mentions in comments/docstrings are NOT
         # false-positives (only real import/def/use is flagged). STRICT

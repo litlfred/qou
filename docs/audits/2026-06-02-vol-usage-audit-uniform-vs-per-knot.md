@@ -10,10 +10,10 @@
 
 | pattern | count |
 |---|---:|
-| Scripts using uniform `Vol(𝓑₃)` (via `geom_full_borromean(q)` or hardcoded `8·G = 8·mp.catalan`) | **87** |
-| Scripts using per-knot `geom_full_per_block(vol_K, tr_M_K, q)` | **2** |
+| Scripts using uniform `Vol(𝓑₃)` (via `vol_density_borromean(q)` or hardcoded `8·G = 8·mp.catalan`) | **87** |
+| Scripts using per-knot `vol_density_per_block(vol_K, tr_M_K, q)` | **2** |
 | Of those 87, scripts that ALSO touch atom-specific logic (Z, N, isotope, mass_table, deuteron, helium, ...) | **65** |
-| Of those 65, scripts that ALSO have per-knot path | **1** (`geom_full_per_block_wiring.py` — alternative-wiring testbed) |
+| Of those 65, scripts that ALSO have per-knot path | **1** (`vol_density_per_block_wiring.py` — alternative-wiring testbed) |
 
 **Net: 64 atom-touching scripts use ONLY uniform Vol(𝓑₃) — the bug.**
 
@@ -22,8 +22,8 @@
 Per the cheat sheet `docs/canonical-derivation-cheat-sheet.md` §5, the canonical mass formula is:
 
 ```
-m(K) = m_e · Geom_full(K, q_0)
-Geom_full(K, q) = Vol(K) / ℏ_q² · linking_weight(K, q)
+m(K) = m_e · VolDensity(K, q_0)
+VolDensity(K, q) = Vol(K) / ℏ_q² · linking_weight(K, q)
 ```
 
 `Vol(K)` is the **hyperbolic volume of the SPECIFIC knot/braid K**, not Vol(𝓑₃) uniform. For atoms:
@@ -41,8 +41,8 @@ Geom_full(K, q) = Vol(K) / ℏ_q² · linking_weight(K, q)
 
 The CANONICAL function already exists:
 
-- [`_li_2_q_util.py::geom_full_per_block(vol_K, tr_M_K, q)`](../../folio-assistant/computations/_li_2_q_util.py) — takes `vol_K` explicitly, returns the paper-faithful Geom_full(K, q) × Σ_λ factor
-- [`geom_full_per_block_wiring.py`](../../folio-assistant/computations/geom_full_per_block_wiring.py) — the only consumer; documented in PR #1080+ as the alternative to `geom_full_borromean(q)` (which the function's own docstring labels a "SHORTCUT — global-scalar collapse, NOT the paper's per-block sum")
+- [`_li_2_q_util.py::vol_density_per_block(vol_K, tr_M_K, q)`](../../folio-assistant/computations/_li_2_q_util.py) — takes `vol_K` explicitly, returns the paper-faithful VolDensity(K, q) × Σ_λ factor
+- [`vol_density_per_block_wiring.py`](../../folio-assistant/computations/vol_density_per_block_wiring.py) — the only consumer; documented in PR #1080+ as the alternative to `vol_density_borromean(q)` (which the function's own docstring labels a "SHORTCUT — global-scalar collapse, NOT the paper's per-block sum")
 
 ## Acknowledged in production but unfixed
 
@@ -97,12 +97,12 @@ For atoms D, T, ³He, ⁴He+, no Python script currently produces a categorical 
 
 The +2.89% m_p gap (and the catastrophic regression at higher A when switching to per-block tr_M) BOTH have the SAME root cause: **uniform Vol(𝓑₃) is wrong for atoms beyond proton**.
 
-The owner-active Subgoal-1 path is exactly this: per-atom Vol(β_K) + per-atom tr_M(β_K), both fed through `geom_full_per_block(vol_K, tr_M_K, q)`. The infrastructure on the **tr_M side** is ready (`markov_peel.tr_M_atomic(Z, N)` works at all A; operator-valued combiner works at A=2). The infrastructure on the **Vol side** needs Vol(β_K) data.
+The owner-active Subgoal-1 path is exactly this: per-atom Vol(β_K) + per-atom tr_M(β_K), both fed through `vol_density_per_block(vol_K, tr_M_K, q)`. The infrastructure on the **tr_M side** is ready (`markov_peel.tr_M_atomic(Z, N)` works at all A; operator-valued combiner works at A=2). The infrastructure on the **Vol side** needs Vol(β_K) data.
 
 ## Recommendation
 
 1. **Compute Vol(β_K) for D, T, ³He, ⁴He** via SnapPy (sandbox-blocked here; owner local or CI). Produce a `per-atom-hyperbolic-volumes.witness.json` artifact.
-2. **Wire `mass_table_comprehensive.py`** + the 2 other Tier-1 scripts to consume per-atom Vol via `geom_full_per_block(vol_K=Vol(β_K), tr_M_K=tr_M_atomic(Z,N), q)`.
+2. **Wire `mass_table_comprehensive.py`** + the 2 other Tier-1 scripts to consume per-atom Vol via `vol_density_per_block(vol_K=Vol(β_K), tr_M_K=tr_M_atomic(Z,N), q)`.
 3. **Re-run mass-table** with per-knot Vol + per-atom tr_M; compare to CODATA. If m_avg lands in right ballpark, Subgoal-1 closure is in sight. If not, the categorical structure still has open gaps but the diagnostic is sharper.
 4. **Migrate Tier-2/3 probes** that use uniform Vol(𝓑₃) on atom-touching paths. Most binding probes already use per-binding-link Vol; mass probes should match.
 
@@ -111,8 +111,8 @@ The owner-active Subgoal-1 path is exactly this: per-atom Vol(β_K) + per-atom t
 - Phase A: [`docs/audits/2026-06-02-subgoal-1-phase-a-baseline.md`](2026-06-02-subgoal-1-phase-a-baseline.md)
 - Phase B: [`docs/audits/2026-06-02-subgoal-1-phase-b-per-atom-trM-comparison.md`](2026-06-02-subgoal-1-phase-b-per-atom-trM-comparison.md)
 - Scope: [`docs/coordination/2026-06-02-m-avg-subgoal-1-operator-combiner-scope.md`](../coordination/2026-06-02-m-avg-subgoal-1-operator-combiner-scope.md)
-- Canonical reference (purged λ_scale, refuted routes): [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
-- Per-block canonical function: [`folio-assistant/computations/_li_2_q_util.py::geom_full_per_block`](../../folio-assistant/computations/_li_2_q_util.py)
+- Canonical reference (purged λ_scale, refuted routes): [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
+- Per-block canonical function: [`folio-assistant/computations/_li_2_q_util.py::vol_density_per_block`](../../folio-assistant/computations/_li_2_q_util.py)
 - Atom braid words: [`folio-assistant/computations/mass_at_3A_proper.py::atom_braid_word_3A`](../../folio-assistant/computations/mass_at_3A_proper.py)
 - Existing per-knot vol witness (proton only): [`folio-assistant/computations/knot-volumes.witness.json`](../../folio-assistant/computations/knot-volumes.witness.json)
 - Per-binding-link vol witness (A=2,3 already): [`folio-assistant/computations/binding-link-volumes.witness.json`](../../folio-assistant/computations/binding-link-volumes.witness.json)

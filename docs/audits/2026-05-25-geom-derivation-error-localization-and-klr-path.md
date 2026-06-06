@@ -1,8 +1,8 @@
-# Geom_full derivation review, error localization, and full KLR path forward
+# VolDensity derivation review, error localization, and full KLR path forward
 
 **Date**: 2026-05-25
 **Branch**: `claude/geom-derivation-bug-squash-2026-05-25`
-**Status**: Audit + workplan. Reviews the canonical Geom_full derivation,
+**Status**: Audit + workplan. Reviews the canonical VolDensity derivation,
 localizes the mass-sweep errors in (jet-order × filtration × partition ×
 representation) space, and lays out concrete bug-squash paths for the
 KLR option + 4 alternative structural options.
@@ -12,10 +12,10 @@ KLR option + 4 alternative structural options.
 [#1220](https://github.com/litlfred/qou/pull/1220)) ARE the multi-atom
 consistency constraint #2 violation that #1224 audits structurally.
 
-## §1. Review: the canonical Geom_full derivation
+## §1. Review: the canonical VolDensity derivation
 
 Per [`canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
-+ [`lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md):
++ [`lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md):
 
 ```
 substrate q_0 → 𝐂 categorical action → Yekutieli non-abelian Stokes
@@ -28,7 +28,7 @@ substrate q_0 → 𝐂 categorical action → Yekutieli non-abelian Stokes
 
 **Single canonical mass formula**:
 ```
-m(K) = m_e · Geom_full(K, q_0)
+m(K) = m_e · VolDensity(K, q_0)
 ```
 
 For binding energy with atom-to-knot assignment K = K_atom:
@@ -372,7 +372,7 @@ For the **305 ppm Δm_{n−p}** (D9): the just-confirmed bar-symmetry of bowtie 
 ## §11. Cross-references
 
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) — canonical chain
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — Geom_full single-formula framing
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — VolDensity single-formula framing
 - [`docs/duality-tracker.md`](../duality-tracker.md) — D-row scaffolds for each Option B/E/F/G/H
 - [`docs/audits/2026-05-24-d9-bar-parity-correction.md`](2026-05-24-d9-bar-parity-correction.md) — bar vs isospin-Z/2 distinction (audit correction)
 - [PR #1214](https://github.com/litlfred/qou/pull/1214) — wiring-status taxonomy + KLR positivity check

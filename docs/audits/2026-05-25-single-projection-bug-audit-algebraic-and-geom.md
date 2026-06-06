@@ -6,7 +6,7 @@
 `folio-assistant/computations/` that projects to a SINGLE Wedderburn
 block (algebraic side) OR a SINGLE cell / fiber-orbit (geometric
 side), instead of the canonical multi-block × multi-fiber distribution
-required by `m(K) = m_e · Geom_full(K, q₀)`.
+required by `m(K) = m_e · VolDensity(K, q₀)`.
 
 ## §0. Two-dimensional structural reduction
 
@@ -87,8 +87,8 @@ exactly the constraint PR #1220 measured violation of.
 
 | Script | Pattern | Bug |
 |--------|---------|-----|
-| `geom_full_borromean_h4_probe.py` | solve-for-c_4 single hypothesis | single Bring cell, no Σ over fibers |
-| `geom_full_borromean_q_locality_probe.py` | q-locality at single q-point | single point not integral |
+| `vol_density_borromean_h4_probe.py` | solve-for-c_4 single hypothesis | single Bring cell, no Σ over fibers |
+| `vol_density_borromean_q_locality_probe.py` | q-locality at single q-point | single point not integral |
 | `lambda_scale_refinement_h4_correction_bring.py` | Bring h⁴ correction single value | single Bring cell |
 | `t3n_binomial_pattern_probe.py` | T(3,n) binomial single pattern | single torus-knot family |
 | `h4_h2_cross_algebra_bridge_probe.py` | H_4 ↔ H_2 bridge single mapping | NEG result (sibling commit) |
@@ -119,7 +119,7 @@ spherical harmonics. The full SO(3) opens ℓ=2 (5-dim irrep) which
 contributes the h⁴ = −3/4 Borromean coefficient.
 
 Scripts affected by S_3-only projection:
-- `geom_full_borromean_h4_probe.py` (the h⁴ probe; assumes only ℓ ≤ 1
+- `vol_density_borromean_h4_probe.py` (the h⁴ probe; assumes only ℓ ≤ 1
   contributes)
 - `tau_hat_n_proton_realisation.py` (τ functor on S_3 orbits)
 - `lambda_scale_rd_hoefsmit_symbolic.py` (Hoefsmit per S_3 orbit)
@@ -213,7 +213,7 @@ answers.
 
 ### §5.2 Geometric closure paths
 
-1. **geom_full_borromean_h4_probe.py** — currently solves for single
+1. **vol_density_borromean_h4_probe.py** — currently solves for single
    c_4 hypothesis. Replace with full SO(3) integral; cross-check
    h⁴ = −3/4 categorically.
 2. **D10 SO(3) extension** — promote from S_3 subgroup to full SO(3)
@@ -232,7 +232,7 @@ answers.
    non-trivial χ_λ at q_0; sizes the gap from "1 of 77".
 
 2. **Full-SO(3) ℓ=2 contribution to Borromean h⁴** — extend
-   `geom_full_borromean_h4_probe.py` to include the SO(3) ℓ=2
+   `vol_density_borromean_h4_probe.py` to include the SO(3) ℓ=2
    spherical-harmonic contribution; check if it produces h⁴ = −3/4
    categorically. Connects to D10 scaffold (my PR #1168 conj block).
 
@@ -248,7 +248,7 @@ answers.
 
 - [`docs/audits/2026-05-25-geom-derivation-error-localization-and-klr-path.md`](2026-05-25-geom-derivation-error-localization-and-klr-path.md) — companion audit (PR #1228)
 - [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`](2026-05-24-h4-coefficient-source-trace-and-so3-gap.md) — D10 S_3 → SO(3) gap
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — Geom_full single-formula framing + Yekutieli per-cell PURGED
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — VolDensity single-formula framing + Yekutieli per-cell PURGED
 - [PR #1214](https://github.com/litlfred/qou/pull/1214) — wiring-status taxonomy + KLR positivity check
 - [PR #1220](https://github.com/litlfred/qou/pull/1220) — empirical c-variance measurement
 - [PR #1224](https://github.com/litlfred/qou/pull/1224) — Δ_λ closure synthesis (sibling)

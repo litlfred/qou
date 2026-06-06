@@ -198,7 +198,7 @@ reframed: test whether the FULL Geom-mapped expression (not
 just `5/2 - G·h²` as a standalone polynomial) is smooth across
 q ± ε.
 
-## λ_scale is NOT a separate object — it's what Geom_full produces
+## λ_scale is NOT a separate object — it's what VolDensity produces
 
 The numerical computation confirms:
 
@@ -225,7 +225,7 @@ OLD (the math bug):
               (correctly = 746.4)  (= 2.46, "where does this come from?")
 
 NEW (Geom-consistent):
-  m_p = m_e × Geom_full(𝓑₃, q₀)
+  m_p = m_e × VolDensity(𝓑₃, q₀)
                     ↑
          SINGLE Geom evaluation that produces 1836 directly.
          The "2.46" is INSIDE Geom — it's what the full
@@ -234,7 +234,7 @@ NEW (Geom-consistent):
 ```
 
 The "mystery" of λ_scale dissolves: it's the RATIO between
-Geom_full (the complete evaluation including h² curvature, color-
+VolDensity (the complete evaluation including h² curvature, color-
 tube structure, per-cell tessellation) and Geom_leading (the
 leading Vol/ℏ_q² term alone). Calling it "λ_scale" and treating
 it as a separate constant was the framing error — it made the
@@ -243,7 +243,7 @@ the framework needs a more complete Geom evaluation.
 
 The **framework gap** is then reframed:
 - NOT "we can't derive λ_scale = 2.46 from substrate"
-- BUT "Geom_full(𝓑₃) = 1836.15 from substrate, and we can
+- BUT "VolDensity(𝓑₃) = 1836.15 from substrate, and we can
   currently compute it to within 3% (canonical) or 1.33%
   (+ Yekutieli) or 5.6 ppm (Reading A geometrized form)"
 
@@ -258,21 +258,21 @@ Per user direction 2026-05-23 "🗑️ No more lambda_scale!":
    from `m_p_borromean_verification_50dps.py` and all consuming
    scripts.
 
-2. **Replace with `Geom_full(𝓑₃, q₀)`** as a single evaluation
+2. **Replace with `VolDensity(𝓑₃, q₀)`** as a single evaluation
    that returns 1836.15... (or the framework's current best
    approximation thereof).
 
-3. **The "framework gap" becomes**: `|Geom_full^framework - 1836.15| / 1836.15`
+3. **The "framework gap" becomes**: `|VolDensity^framework - 1836.15| / 1836.15`
    — currently ~3% (canonical), ~1.33% (+ Yekutieli), ~5.6 ppm
    (Reading A).
 
 4. **The cheat-sheet Migration Backlog #1** ("derive λ_scale from
-   substrate") becomes "compute Geom_full from substrate" — same
+   substrate") becomes "compute VolDensity from substrate" — same
    numerical target, better structural framing.
 
 5. **`lambda_scale_family_a()` and `lambda_scale_yekutieli_extended()`**
-   in `_li_2_q_util.py` are RENAMED to `geom_full_canonical()` and
-   `geom_full_yekutieli()` — they return the full Geom evaluation
+   in `_li_2_q_util.py` are RENAMED to `vol_density_canonical()` and
+   `vol_density_yekutieli()` — they return the full Geom evaluation
    (= Vol/ℏ_q² × current-best-λ), not a separate "scale factor."
 
 1. **Verify the Geom-consistent λ_scale at q₀ ± ε** — rerun the

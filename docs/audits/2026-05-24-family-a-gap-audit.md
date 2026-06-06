@@ -19,28 +19,28 @@
 > knot Geom(K) factor that was canonically derived. please fix all
 > documentation."* The canonical mass formula is:
 >
-> $$m(K) = m_e \cdot \mathrm{Geom_{full}}(K, q_0)$$
+> $$m(K) = m_e \cdot \mathrm{VolDensity}(K, q_0)$$
 >
 > — a **single** Geom call per knot/link, per `prop:geom-universality`.
 > There is no separate `λ_scale` constant. The +2.89 % m_p residual
 > is the gap between the framework's current categorical
-> `Geom_full(𝓑₃)` computation and its **categorically-exact** value
+> `VolDensity(𝓑₃)` computation and its **categorically-exact** value
 > at higher orders in $h^2$. The closure path is **refinement of
-> `Geom_full`**, not a separate additive correction. See PR #1080
+> `VolDensity`**, not a separate additive correction. See PR #1080
 > for the doc-wide framing cleanup that this audit now aligns with.
 
-**TL;DR (re-amended):** The +2.89 % gap is a **Geom_full(𝓑₃)
+**TL;DR (re-amended):** The +2.89 % gap is a **VolDensity(𝓑₃)
 categorical-exactness refinement gap** at $h^2$ order. Two structural
-inputs to refine Geom_full's exactness remain open: (a) the
+inputs to refine VolDensity's exactness remain open: (a) the
 S_4↓S_3 half-symmetric bijection (combinatorial branching, standard
 Mathlib; provable today) and (b) the S_5↔SO(3) fiber action on
 Bring's surface (partition-wise Wedderburn ↔ spatial rotations).
 Neither is "a Yekutieli per-cell correction" — both are structural
-inputs that constrain what `Geom_full(𝓑₃, q_0)` must equal at
+inputs that constrain what `VolDensity(𝓑₃, q_0)` must equal at
 categorical exactness. The bare REPLACE form `5/2 − G·h²` was
 PSLQ-coincidence falsified 2026-05-18; the Yekutieli per-cell ADD
 form was purged 2026-05-24. The structural refinement path goes
-through Geom_full itself, not through these forms.
+through VolDensity itself, not through these forms.
 
 ## §1. The canonical formula (post-purge state on main)
 
@@ -53,9 +53,9 @@ Per `m_p_borromean_verification_50dps.py` (current on main, post-purge commit `7
 
 The production compute chain is:
 
-$$m_p^{\text{pred}} = m_e \cdot \mathrm{Geom_{full}}(\mathcal{B}_3, q_0)$$
+$$m_p^{\text{pred}} = m_e \cdot \mathrm{VolDensity}(\mathcal{B}_3, q_0)$$
 
-where `Geom_full(𝓑₃, q_0)` is the per-knot Geom-functor evaluation on the proton's canonical braid → Borromean closure. The numerical decomposition at $q_0$:
+where `VolDensity(𝓑₃, q_0)` is the per-knot Geom-functor evaluation on the proton's canonical braid → Borromean closure. The numerical decomposition at $q_0$:
 
 | Term | Value | Status |
 |---|---:|---|
@@ -72,34 +72,34 @@ The gap is between this categorical computation and its categorically-exact valu
 |---|---|---|---|
 | **Reading A (REPLACE)** | `λ_scale = 5/2 − G·h²` closes m_p to 5.6 ppm | **falsified 2026-05-18** — PSLQ coincidence, no Wedderburn derivation gives `−G·h²` | [`2026-05-18-conjecture-falsification.md`](2026-05-18-conjecture-falsification.md) |
 | **Strategy I / Reading B (ADD)** | `λ_scale = 5/2 + (3/4 − G)·h²` halves the gap to +1.33 % | **purged 2026-05-24** — PR #985 bijection NEGATIVE (κ = +0.5, not −G); no categorical backing | commit `71d674da1` |
-| **λ_scale as a separate constant** | distinct from `Geom_full(K)` | **absorbed 2026-05-23** — there is no `λ_scale` post-`ffdd84409`; `Geom_full(K)` is the only object | [PR #1080](https://github.com/litlfred/qou/pull/1080) |
+| **λ_scale as a separate constant** | distinct from `VolDensity(K)` | **absorbed 2026-05-23** — there is no `λ_scale` post-`ffdd84409`; `VolDensity(K)` is the only object | [PR #1080](https://github.com/litlfred/qou/pull/1080) |
 
-The current canonical understanding (per the on-main purge + PR #1080 framing): **the +2.89 % gap lives inside `Geom_full(𝓑₃)`**. Closing it requires refining `Geom_full`'s categorical computation, not adding an external correction.
+The current canonical understanding (per the on-main purge + PR #1080 framing): **the +2.89 % gap lives inside `VolDensity(𝓑₃)`**. Closing it requires refining `VolDensity`'s categorical computation, not adding an external correction.
 
 ## §3. Canonical refinement path
 
 Per `prop:geom-universality` ([content/quantum-observable-universe/braids-and-knots/geom-universality.md](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md)),
-`Geom_full` is the unique Frobenius-Hopf-compatible functional on the braid-closure → link cobordism category. Its categorical exactness on $\mathcal{B}_3$ at $h^2$ order requires two structural inputs that are independent and complementary:
+`VolDensity` is the unique Frobenius-Hopf-compatible functional on the braid-closure → link cobordism category. Its categorical exactness on $\mathcal{B}_3$ at $h^2$ order requires two structural inputs that are independent and complementary:
 
-| Structural input | Status | Role in refining Geom_full |
+| Structural input | Status | Role in refining VolDensity |
 |---|---|---|
 | **S_4↓S_3 half-symmetric Wedderburn projection** (`prop:s4-s3-half-symmetric-projection`: $\frac{5}{2} \times \frac{2}{5} = 1$) | narrative-proved (standard $S_n$ branching rule); **Lean: not yet formalized** | Constrains which Wedderburn cells contribute to the trace at the $h^2$ order. The bijection is sound combinatorics regardless of any per-cell curvature value. |
-| **S_5 ↔ SO(3) fiber action on Bring's surface** | **NOT YET FORMALIZED** | Ties the partition-wise Wedderburn action (S_5 on $h_q$) to spatial SO(3) rotations on Bring's quintic surface. Load-bearing for how the cell extraction lifts to the spatial geometry that `Geom_full` integrates over. |
-| **q-locality of the canonical $h^2$ expansion** | tested negatively on bare polynomials (PR #951); **not yet tested** end-to-end on `Geom_full` output | Smooth-crossing probe verifies $h^2$ structure is intrinsic to `Geom_full`, not an artifact of any one expansion. |
+| **S_5 ↔ SO(3) fiber action on Bring's surface** | **NOT YET FORMALIZED** | Ties the partition-wise Wedderburn action (S_5 on $h_q$) to spatial SO(3) rotations on Bring's quintic surface. Load-bearing for how the cell extraction lifts to the spatial geometry that `VolDensity` integrates over. |
+| **q-locality of the canonical $h^2$ expansion** | tested negatively on bare polynomials (PR #951); **not yet tested** end-to-end on `VolDensity` output | Smooth-crossing probe verifies $h^2$ structure is intrinsic to `VolDensity`, not an artifact of any one expansion. |
 
-Per `prop:geom-universality` itself (CONDITIONAL, §3b-cond, Lean: 0 sorries — proved from class hypotheses conditional on `conj:hyperbolic-volume-transcendence` + `rem:baryon-period-ratio`), the categorical-exactness refinement of `Geom_full(𝓑₃)` does NOT require introducing a new per-cell curvature term. The bijection + SO(3) fiber action constrain what value `Geom_full` must take; the value itself is determined by `Geom_full`'s own structure.
+Per `prop:geom-universality` itself (CONDITIONAL, §3b-cond, Lean: 0 sorries — proved from class hypotheses conditional on `conj:hyperbolic-volume-transcendence` + `rem:baryon-period-ratio`), the categorical-exactness refinement of `VolDensity(𝓑₃)` does NOT require introducing a new per-cell curvature term. The bijection + SO(3) fiber action constrain what value `VolDensity` must take; the value itself is determined by `VolDensity`'s own structure.
 
 ## §4. Action items (queued; this PR ships only the audit doc)
 
-These three tasks remain the canonical refinement work. Reframed under the canonical post-purge framing, they're all about refining `Geom_full`, not adding corrections:
+These three tasks remain the canonical refinement work. Reframed under the canonical post-purge framing, they're all about refining `VolDensity`, not adding corrections:
 
 | # | Item | Effort | Gates |
 |---|------|--------|-------|
 | 4.1 | Add this audit doc to the repo (THIS PR) — twice-amended for alignment with purge | done | — |
 | 4.2 | **Formalize `prop:s4-s3-half-symmetric-projection` in Lean** — combinatorial bijection $\frac{5}{2} \times \frac{2}{5} = 1$, standard $S_n$ branching rule, Mathlib. PROVED status (no conditional class, no κ claim). **Note:** the `.md` block's "Application to λ_scale" section is now stale per [PR #1080](https://github.com/litlfred/qou/pull/1080); the Lean formalization scopes to the combinatorial bijection only. | 1-3 days | none |
-| 4.3 | **Re-run q-locality smooth-crossing probe** end-to-end on `Geom_full(𝓑₃, q)` output as $q$ varies near $q_0$ — NOT on any bare polynomial like `5/2 + (3/4 − G)·h²` (which is purged anyway). PR #951 failed on the bare polynomial; this is a different test on the actual `Geom_full` evaluation. | 1-2 days | none |
-| 4.4 | **Formalize `S_5 ↔ SO(3)` fiber action** on Bring's surface — partition-wise Wedderburn actions ↔ spatial SO(3) rotations on Bring's quintic. Load-bearing for `Geom_full` categorical exactness on $\mathcal{B}_3$. | 3-5 days | needs categorical-spatial chain; biggest deliverable |
-| 4.5 | When 4.2 + 4.4 land: re-evaluate whether `Geom_full(𝓑₃, q_0)` can be computed to categorical exactness at $h^2$ order, potentially closing or reducing the +2.89 % gap. | depends on 4.2, 4.4 | gated |
+| 4.3 | **Re-run q-locality smooth-crossing probe** end-to-end on `VolDensity(𝓑₃, q)` output as $q$ varies near $q_0$ — NOT on any bare polynomial like `5/2 + (3/4 − G)·h²` (which is purged anyway). PR #951 failed on the bare polynomial; this is a different test on the actual `VolDensity` evaluation. | 1-2 days | none |
+| 4.4 | **Formalize `S_5 ↔ SO(3)` fiber action** on Bring's surface — partition-wise Wedderburn actions ↔ spatial SO(3) rotations on Bring's quintic. Load-bearing for `VolDensity` categorical exactness on $\mathcal{B}_3$. | 3-5 days | needs categorical-spatial chain; biggest deliverable |
+| 4.5 | When 4.2 + 4.4 land: re-evaluate whether `VolDensity(𝓑₃, q_0)` can be computed to categorical exactness at $h^2$ order, potentially closing or reducing the +2.89 % gap. | depends on 4.2, 4.4 | gated |
 
 ## §5. Pointers
 
@@ -107,7 +107,7 @@ These three tasks remain the canonical refinement work. Reframed under the canon
 - [`docs/audits/2026-05-23-lambda-scale-replace-vs-add-analysis.md`](2026-05-23-lambda-scale-replace-vs-add-analysis.md) — Strategy I numerics + residual decomposition (historical; superseded by 2026-05-24 purge)
 - [`docs/coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](../coordination/2026-05-23-algebraic-geometric-observable-consistency.md) — Layer 1/2/3 structural audit (parent of this audit)
 - [`docs/audits/2026-05-24-65-isotope-mass-table-audit.md`](2026-05-24-65-isotope-mass-table-audit.md) — empirical observation across 65 isotopes
-- [PR #1080](https://github.com/litlfred/qou/pull/1080) — λ_scale framing cleanup (absorbed into Geom_full)
+- [PR #1080](https://github.com/litlfred/qou/pull/1080) — λ_scale framing cleanup (absorbed into VolDensity)
 - commit `71d674da1` (on main) — purge of Yekutieli per-cell from production
 - [`content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md`](../../content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md) — bijection block (TOP is sound combinatorics; "Application to λ_scale" stale per PR #1080)
 - [`content/quantum-observable-universe/braids-and-knots/geom-universality.md`](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md) — `prop:geom-universality` (CONDITIONAL, §3b-cond)
@@ -125,7 +125,7 @@ fitting / probing / numerology floating in paper content.
 | # | File | Severity | Action |
 |---|------|----------|--------|
 | 6.1 | `chirality-writhe-ribbon-derivation.md` | MAJOR | The negative H_6-satellite result indicates writhe is not a primary derivation route for $a_K$. The SU(2) CBH ½[α,α] curvature path (Yekutieli 2015 as external math reference) is not load-bearing for production after the 2026-05-24 purge; it's external math context only. Move negative-result narrative to an audit doc. |
-| 6.2 | `lambda-scale-substrate-form.md` | MEDIUM → CRITICAL | Per [PR #1080](https://github.com/litlfred/qou/pull/1080)'s λ_scale-absorbed-into-Geom_full framing: this entire block needs reframing or archival. λ_scale is no longer a separate constant. |
+| 6.2 | `lambda-scale-substrate-form.md` | MEDIUM → CRITICAL | Per [PR #1080](https://github.com/litlfred/qou/pull/1080)'s λ_scale-absorbed-into-VolDensity framing: this entire block needs reframing or archival. λ_scale is no longer a separate constant. |
 | 6.3 | `dressed-quark-numerology-at-q0.md` (filename) | LOW (cosmetic) | Rename → `dressed-quark-mass-at-q0.md`. Content is structurally sound (Skein-corrected + 1/3 flavor-split). |
 | 6.4 | `unified-curvature-rank-mass-formula.md` | INFO | "empirically it accounts for ~3% of the binding energy" — add nucleus / term context for clarity. |
 

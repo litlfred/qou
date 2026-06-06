@@ -91,5 +91,5 @@ Direction (2) is the substantive Subgoal-1 next step — the operator-valued pat
 
 - Scope: [`docs/coordination/2026-06-02-m-p-linking-weight-and-binding-link-scope.md`](../coordination/2026-06-02-m-p-linking-weight-and-binding-link-scope.md)
 - PR #1698 final verdict: [`docs/audits/2026-06-02-subgoal-1-final-verdict.md`](2026-06-02-subgoal-1-final-verdict.md)
-- Canonical reference (refuted routes): [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md)
+- Canonical reference (refuted routes): [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 - Q_β Habiro radius-of-convergence finding (sibling Topic 1): [`docs/audits/2026-06-02-qbeta-habiro-radius-of-convergence-at-u-substrate.md`](2026-06-02-qbeta-habiro-radius-of-convergence-at-u-substrate.md)

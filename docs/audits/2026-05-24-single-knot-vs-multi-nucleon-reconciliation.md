@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-24
 **Trigger:** PR #1089's low-isotope sign-flip diagnostic falsifies the
-single-Geom_full(𝓑₃) refinement framing from PR #1063 when extended
+single-VolDensity(𝓑₃) refinement framing from PR #1063 when extended
 to multi-nucleon isotopes.
 **Status:** Reconciliation audit. Identifies that the two framings
 operate at **different layers** of the prediction chain and are
@@ -12,14 +12,14 @@ operate at **different layers** of the prediction chain and are
 
 ### Finding A — PR [#1063](https://github.com/litlfred/qou/pull/1063) (merged) + PR [#1081](https://github.com/litlfred/qou/pull/1081) (merged)
 
-**Single-knot scope.** The proton's prediction at the **single-knot Geom_full level**
-$$m_p^{\text{pred}} = m_e \cdot \mathrm{Geom_{full}}(\mathcal{B}_3, q_0)$$
+**Single-knot scope.** The proton's prediction at the **single-knot VolDensity level**
+$$m_p^{\text{pred}} = m_e \cdot \mathrm{VolDensity}(\mathcal{B}_3, q_0)$$
 gives $m_p \approx 965.4\;\text{MeV}$, a **+2.89 % gap** vs CODATA $938.27\;\text{MeV}$.
 
 The framing in PR #1063 (now on `main` as `docs/audits/2026-05-24-family-a-gap-audit.md`):
-this is a `Geom_full(\mathcal{B}_3)` **categorical-exactness refinement gap** at $h^2$ order.
+this is a `VolDensity(\mathcal{B}_3)` **categorical-exactness refinement gap** at $h^2$ order.
 
-The PR #1081 finding (now on `main` as `folio-assistant/computations/probes/geom_full_borromean_h4_probe.py`):
+The PR #1081 finding (now on `main` as `folio-assistant/computations/probes/vol_density_borromean_h4_probe.py`):
 **replacing Family A's `5/2 + (3/4)·h²` linking weight with the exact
 Markov-trace × 5/2** (closed form `5/2·(4+h²−3h⁴−h⁶)/(h²+4)`) shrinks
 the gap to **+1.948 %** — a 1.5× single-knot improvement using only
@@ -39,7 +39,7 @@ the exact topological Jones invariant, zero free parameters.
 | ⁴He | 29.96 | 28.30 | **+5.87 %** | + |
 
 PR #1089 §"Low-isotope mass-error analysis": *"The sign-flips
-**falsify** the single-Geom_full(𝓑₃) refinement framing — a uniform
+**falsify** the single-VolDensity(𝓑₃) refinement framing — a uniform
 scale gap would force every isotope to overshoot by the same
 fraction."*
 
@@ -57,13 +57,13 @@ Each layer has its own source of error, its own canonical-derivation status, and
 
 | Layer | What | Source of error | PR addressing it |
 |---|---|---|---|
-| **L1**: single-knot $\mathrm{Geom_{full}}(K)$ | per-nucleon mass via $m(K) = m_e \cdot \mathrm{Geom_{full}}(K, q_0)$ | $\mathrm{Geom_{full}}(\mathcal{B}_3)$ categorical-exactness shortfall at $h^{2k}$ for $k \geq 2$ | PR #1063 + PR #1081 (single-knot finding: structural Markov × 5/2 → +1.948 %) |
+| **L1**: single-knot $\mathrm{VolDensity}(K)$ | per-nucleon mass via $m(K) = m_e \cdot \mathrm{VolDensity}(K, q_0)$ | $\mathrm{VolDensity}(\mathcal{B}_3)$ categorical-exactness shortfall at $h^{2k}$ for $k \geq 2$ | PR #1063 + PR #1081 (single-knot finding: structural Markov × 5/2 → +1.948 %) |
 | **L2**: inter-nucleon channels | binding energy from pp/pn/nn pairwise crossing weights $(c_{pp}, c_{pn}, c_{nn})$ | channel assignment rule "pp → σ, pn → averaged, nn → σ⁻¹" not yet Lean-proved | PR #1089 (sign-flip finding) |
 | **L3**: nuclear-shell binding | per-shell or per-deuteron-pair correction (e.g., the ⁴He α-particle's extra binding) | nuclear-shell-model / SU(4) Wigner spin-isospin structure not in framework | NOT yet addressed |
 
 ### How the layers compose to give the table
 
-**Free p, n:** L1 only. Predicted via $m_e \cdot \mathrm{Geom_{full}}(\mathcal{B}_3, q_0)$.
+**Free p, n:** L1 only. Predicted via $m_e \cdot \mathrm{VolDensity}(\mathcal{B}_3, q_0)$.
 Error +2.89 % is pure L1 shortfall.
 
 **²H = pn:** L1 + one pn channel weight + minimal L3 (no shell). Error +1.09 %
@@ -84,21 +84,21 @@ Empirically reading the table:
 
 ## §3. PR #1063's framing is correct **at L1 scope**; PR #1089's is correct at L2+L3 scope
 
-**PR #1063's "single Geom_full(𝓑₃) refinement" framing is exactly right for L1.** Its action items:
+**PR #1063's "single VolDensity(𝓑₃) refinement" framing is exactly right for L1.** Its action items:
 - Formalize `prop:s4-s3-half-symmetric-projection` (L1 structural input) ✓ landed
-- Re-run q-locality on Geom_full output ✓ landed (architectural-fail finding)
+- Re-run q-locality on VolDensity output ✓ landed (architectural-fail finding)
 - Formalize $S_5 \leftrightarrow SO(3)$ fiber action (L1 structural input) ✓ scaffold landed
 - Wire structural Markov × 5/2 (L1 closure, +1.948 %)
 
 The +2.89 % gap on free p, free n IS a L1 question. PR #1081's structural Markov × 5/2 reduces it 1.5× **for these isotopes**, vindicating the L1 closure path.
 
-**PR #1089's "sign-flips falsify single Geom_full" framing is exactly right for L2+L3.** L1 cannot explain why ³H errs −0.16 % while ⁴He errs +5.87 %; that requires layers L2 and L3.
+**PR #1089's "sign-flips falsify single VolDensity" framing is exactly right for L2+L3.** L1 cannot explain why ³H errs −0.16 % while ⁴He errs +5.87 %; that requires layers L2 and L3.
 
 Neither framing is wrong; they are diagnosing different layers of the same chain. The session-level coordination error was that PR #1063's audit § §4 implied "closing L1 closes the +2.89 % gap" — true for free nucleons, not for multi-nucleon isotopes. **This audit re-frames the closure path as three independent layers, each with its own closure budget.**
 
 ## §4. Per-layer closure paths
 
-### L1 (single-knot Geom_full)
+### L1 (single-knot VolDensity)
 
 - **Current best**: Family A `5/2 + (3/4)·h²` linking weight (production)
 - **Structurally-improved candidate**: `5/2 · (4+h²−3h⁴−h⁶)/(h²+4)` (structural Markov × 5/2; PR #1081 Probe 2; +1.948 % gap)
@@ -123,7 +123,7 @@ Neither framing is wrong; they are diagnosing different layers of the same chain
 
 Neither PR #1063 nor PR #1089 needs amendment — both are correct at their declared scope. This audit doc serves as the **scope-clarifying reconciliation**:
 
-- **PR #1063** = L1 audit (single-knot Geom_full refinement)
+- **PR #1063** = L1 audit (single-knot VolDensity refinement)
 - **PR #1089** = L2+L3 audit (multi-nucleon channel + shell)
 
 Future agents writing on either layer should cite this doc to avoid the cross-layer confusion.
@@ -143,11 +143,11 @@ The per-layer attribution above is **qualitative**; the L2 sign and L3 magnitude
 
 ## §6. Cross-references
 
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../lambda-scale-absorbed-into-geom-full.md) — canonical framing (PR #1080)
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — canonical framing (PR #1080)
 - [`docs/audits/2026-05-24-family-a-gap-audit.md`](2026-05-24-family-a-gap-audit.md) — L1 audit (PR #1063 re-amended)
 - [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`](2026-05-24-h4-coefficient-source-trace-and-so3-gap.md) — L1 structural input source trace
 - [`docs/audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`](2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md) — L1 per-step jet-order analysis
 - [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](2026-05-24-pentagon-identity-broad-context.md) — L1 Pentagon literature
 - PR [#1089](https://github.com/litlfred/qou/pull/1089) — L2+L3 sign-flip diagnostic (open)
 - [`folio-assistant/computations/isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py) — L2 channel assignment (current production)
-- [`folio-assistant/computations/probes/geom_full_borromean_h4_probe.py`](../../folio-assistant/computations/probes/geom_full_borromean_h4_probe.py) — L1 structural Markov × 5/2 probe (+1.948 % at L1)
+- [`folio-assistant/computations/probes/vol_density_borromean_h4_probe.py`](../../folio-assistant/computations/probes/vol_density_borromean_h4_probe.py) — L1 structural Markov × 5/2 probe (+1.948 % at L1)
