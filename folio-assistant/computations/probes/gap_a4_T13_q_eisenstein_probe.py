@@ -18,12 +18,14 @@ Background:
   where B_{2k} are Bernoulli numbers and σ_{m}(n) = Σ_{d | n} d^m.
 
   E_2 (weight 2): quasi-modular (not modular due to anomaly)
-  E_4 (weight 4): -240 · Σ σ_3(n) q^n
-  E_6 (weight 6): +504 · Σ σ_5(n) q^n
+  E_4 (weight 4): 1 + 240 · Σ σ_3(n) q^n
+  E_6 (weight 6): 1 − 504 · Σ σ_5(n) q^n
   E_8, E_{10}, ... : higher weights
 
   The ring of modular forms for SL_2(ℤ) is ℂ[E_4, E_6]; the Klein
-  J-invariant is J = 1728 · E_4^3 / (E_4^3 - E_6^2) (standard form).
+  J-invariant in standard normalisation is J = 1728 · E_4^3 / (E_4^3 −
+  E_6^2).  This probe records J in the standard 1728-normalised form
+  to match T11's Klein-invariant convention.
 
   The icosahedral covering ℂP¹ → ℂP¹/I has a modular subgroup
   structure: its modular forms are PULLBACKS of SL_2(ℤ) modular forms
@@ -130,14 +132,18 @@ def test_eisenstein_at_q0() -> dict:
     print(f"  E_4(q_inner) = {mp.nstr(E4_q0, 14)}")
     print(f"  E_6(q_inner) = {mp.nstr(E6_q0, 14)}")
     print()
-    # The Klein J via standard form: J = E_4^3 / (E_4^3 - E_6^2)
-    # (signed convention; here J → ∞ as q → 0 since E_4^3 - E_6^2 → 0)
+    # Klein J-invariant standard form: J(q) = 1728 · E_4^3 / (E_4^3 − E_6^2)
+    # = E_4^3 / Δ.  At the cusp J → ∞ (since Δ → 0).
     denom = E4_q0 ** 3 - E6_q0 ** 2
-    J_standard = E4_q0 ** 3 / denom if abs(denom) > mp.mpf("1e-40") else mp.mpf("nan")
+    J_standard = (
+        mp.mpf(1728) * E4_q0 ** 3 / denom
+        if abs(denom) > mp.mpf("1e-40") else mp.mpf("nan")
+    )
     # Modular discriminant Δ(q) = (E_4^3 − E_6^2)/1728
     Delta_q = denom / 1728
     print(f"  Δ(q_inner) = (E_4^3 - E_6^2)/1728 = {mp.nstr(Delta_q, 14)}")
-    print(f"  J(q_inner) = E_4^3 / (E_4^3 - E_6^2) = {mp.nstr(J_standard, 14)}")
+    print(f"  J(q_inner) = 1728·E_4^3 / (E_4^3 - E_6^2) = "
+          f"{mp.nstr(J_standard, 14)}")
     return {
         "q_0": str(q_0),
         "q_inner": str(q_inner),
@@ -149,9 +155,16 @@ def test_eisenstein_at_q0() -> dict:
 
 
 def test_eisenstein_h_expansion() -> dict:
-    """Sample E_4, E_6 at multiple h-values via q_inner = (1 + h/2 -
-    h²/8 + ...)⁻¹ centred near h = 0, then least-squares fit h-Taylor
-    coefficients."""
+    """Document the expansion-point obstruction for q-Eisenstein at h = 0.
+
+    The natural h-expansion of E_{2k}(q) would be centred at q = 1
+    (h = 0), but E_{2k} DIVERGES at that point — it's the cusp of the
+    SL_2(ℤ) fundamental domain.  This function does NOT perform a
+    least-squares Taylor fit (the obstruction makes it ill-defined);
+    instead it documents the obstruction and runs ONE sanity check at
+    q_inner = 0.901 (well away from the cusp) to confirm E_4, E_6 are
+    finite there.
+    """
     print("=" * 78)
     print("T13b — h-expansion of E_4, E_6 around h = 0")
     print("=" * 78)
@@ -204,7 +217,9 @@ def test_eisenstein_h_expansion() -> dict:
 
 
 def main():
-    mp.mp.dps = 50
+    # mp.mp.dps is set by set_compute_dps() at module top (50 dps default
+    # per _precision config).  Do not override here — keeps witness
+    # metadata (compute_dps) consistent with actual runtime precision.
     w = WitnessBuilder("gap-a4-T13-q-eisenstein-probe", engine="mpmath")
     w.set_audit_only(
         "docs/audits/2026-06-06-gap-a4-T4-T8-functor-search-retrospective.md"
