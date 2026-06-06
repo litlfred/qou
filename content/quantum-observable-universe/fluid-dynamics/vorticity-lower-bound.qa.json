@@ -2735,7 +2735,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1b1b418b20f3",
+          "ts": "617767d057a4",
+          "lean": "b703fb79f609"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Supplies the last-gap vorticity estimate for the q->1 counterexample; uses thm:q-bkm, prop:q-aubin-lions",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:42:51.374Z",
+        "reviewed_sha": "d2608e9fce5ecd63557e93ab3dcc80618c0d786b",
+        "notes": "Core to the NS-obstruction programme of this chapter"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "1b1b418b20f3",
+          "ts": "617767d057a4",
+          "lean": "b703fb79f609"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is bounds (a)-(c) under the conditional banner; the rest is labelled 'Argument for (a)/(b)' proof, not detached interpretation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:42:51.421Z",
+        "reviewed_sha": "d2608e9fce5ecd63557e93ab3dcc80618c0d786b",
+        "notes": "Conditional-banner is §3b-cond structural, keeps in prose"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "1b1b418b20f3",
+          "ts": "617767d057a4",
+          "lean": "b703fb79f609"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "d(t)~sqrt(T*-t), omega>=c/(T*-t): fluid blow-up scalings, in-regime for the archimedean q-NS chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:42:51.469Z",
+        "reviewed_sha": "d2608e9fce5ecd63557e93ab3dcc80618c0d786b",
+        "notes": "No MeV/q0 hard-code"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "1b1b418b20f3",
+          "ts": "617767d057a4",
+          "lean": "b703fb79f609"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Biot-Savart ODE + vorticity-stretching estimates with numerical-sim corroboration (Kerr/Hou-Li) — physics-chapter machinery, not generic-ring algebra proved archimedean",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:42:51.516Z",
+        "reviewed_sha": "d2608e9fce5ecd63557e93ab3dcc80618c0d786b",
+        "notes": "In-regime"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:42:51.516Z"
 }
