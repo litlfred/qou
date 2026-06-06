@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7cafe05ca43f",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Lines 38-80: substantial Physical interpretation section (lepton generations, quark sector, saturation, hyperbolic knots) plus Remark on cutoff embedded in proposition body; should be separate remark blocks.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:09:44.417Z",
+        "reviewed_sha": "f78acb00744236bedd404905248cdca4bf1e7d03",
+        "notes": "Large interpretive section mislocated in proposition."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7cafe05ca43f",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition about torus knot generator finiteness from Euler characteristic of Bring's surface — canonical brings-surface placement.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:10:12.100Z",
+        "reviewed_sha": "f78acb00744236bedd404905248cdca4bf1e7d03",
+        "notes": "Fits chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7cafe05ca43f",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses Seifert genus formula g(T_{m,n})=(m-1)(n-1)/2 and integer bound — no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:10:12.139Z",
+        "reviewed_sha": "f78acb00744236bedd404905248cdca4bf1e7d03",
+        "notes": "Combinatorial statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7cafe05ca43f",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof body (lines 29-36) uses only topological genus embedding argument and integer arithmetic.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:10:12.175Z",
+        "reviewed_sha": "f78acb00744236bedd404905248cdca4bf1e7d03",
+        "notes": "No archimedean machinery in proof."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T02:10:12.175Z"
 }
