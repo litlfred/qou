@@ -41,6 +41,7 @@ universe u
 /-- A partition `λ ⊢ n` represented as a non-increasing tuple of
 positive integers summing to `n`. We use `List ℕ` with explicit
 predicates for partition validity. -/
+@[ext]
 structure Partition (n : ℕ) where
   parts : List ℕ
   sum_eq : parts.sum = n
@@ -114,6 +115,24 @@ theorem trace_decomposition (x : A) :
   -- Ref: [thm:wedderburn-mass-formula]. Follows directly from the
   -- trace_decomp axiom of WedderburnDecomp.
   exact WD.trace_decomp x
+
+/-- **(§9.4 L-2) Kronecker orthogonality of the central idempotents** —
+`π_λ · π_μ = δ_{λ,μ} · π_λ`. Packages the `idempotent` and `orthogonal`
+axioms into one relation, using proof-irrelevance (equal `parts` ⇒ equal
+`Partition`, via `@[ext]`). Makes the block algebra directly usable.
+
+The *standing* §9.4 debt is to **discharge** the `orthogonal` axiom itself
+(and `y_lambda` uniqueness, L-1) from the Hecke structure via Schur
+character-orthogonality — Mathas (1999) §3.43, not yet in Mathlib. This lemma
+is the immediate consequence of the current axioms, not that discharge. -/
+theorem pi_mul_pi (lam mu : Partition n) :
+    WD.pi_lambda lam * WD.pi_lambda mu
+      = if lam.parts = mu.parts then WD.pi_lambda lam else 0 := by
+  by_cases h : lam.parts = mu.parts
+  · have hlm : lam = mu := by ext1; exact h
+    rw [if_pos h, hlm, WD.idempotent]
+  · rw [if_neg h]
+    exact WD.orthogonal lam mu h
 
 end WedderburnDecomp
 
