@@ -111,3 +111,29 @@ asset + `lake-cache/qou-v4-24-0` oleans, with the `lake env true` source-materia
 (`norm_num`/`linarith`/`positivity`/`Real.*`/`: ℝ`/`(ℝ)`). A banner clears the
 *archimedean-without-acknowledgement* mode but **NOT** the *both/mixed* mode (that needs a real
 split or full conversion). Use `decide`/`ring`/`linear_combination`/`field_simp` in code.
+
+## Gap-closing results (2026-06-06) — the 3 deferred blocks
+
+With the Lean env restored (5th) and the cache-extension method found, the 3 deferred
+wall-side blocks were addressed both sides:
+
+- **meson-kaon — CLOSED (verified green).** Refactored ℝ → generic `{R}[Field R]`.
+  `seifert_ratio_T25_T23` uses explicit `(2,3,5 ≠ 0)` hypotheses (not `CharZero`), so it stays
+  IN the cache cone (proof `push_cast; field_simp; ring`); `chi_21_odd` via `Odd.neg_pow`.
+  wall-side passes. The n_q=2 exponent + PDG match remain empirical/witness-backed (not a Lean
+  gap), documented in the .md "Lean structure" section.
+- **bring-residue — wall-side CLOSED (verified green) + compile bug fixed.** Subsingleton
+  `rw`-motive bug → term-mode `Subtype.ext (hr.trans hr'.symm)`. Phase-3 concrete witnesses
+  `q=2:ℝ` → `q=2:ℚ` with `norm_num` → `native_decide` (repo-sanctioned; handles the `Rat`
+  computation `decide` can't reduce). **Remaining deep gap:** the `BringResidueAtOrder` class
+  instance (pole-nonzero / full residue justification) — §3b-cond, precisely specified.
+- **chi-v21 — follow-up PR.** Deep gap = `chi_v21_matrix_trace_identity` sorry (11-matrix
+  fold; the sqrt-free strategy via `sigma1_v21_param` + even-σ₁-count is already in-file).
+  wall-side "mixed" is the deliberate **Tier-2 migration state** (generic `sigma1_v21_gen` +
+  ℝ matrix work) per `docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md`; closing it is
+  the migration split, not a quick fix. Whole `Mathlib.Tactic` import keeps it out-of-cone.
+
+**Cache-extension method (KEY, verified 2026-06-06):** `lake build Mathlib.<Module>` builds a
+single module incrementally from the restored cone — **safe, fast, no wipe** (Matrix.Trace in
+3.6 s). This is how to verify out-of-cone refactors going forward; never `lake env true` /
+`lake update` / `cache get` (they wipe). Now in `formalizer.md §7c`.
