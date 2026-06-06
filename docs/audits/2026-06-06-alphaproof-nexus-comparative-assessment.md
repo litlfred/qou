@@ -128,7 +128,7 @@ adoptions; several disciplines where *we are already ahead* and could say so.
   `.lean` changed, diff the declaration *signatures* against the prior commit;
   flag any change to a `theorem/lemma/prop/cor` signature that wasn't an
   explicit owner-approved restatement. Pair with a `lean_verify` axiom sweep
-  that fails on unexpected `sorryAx`. [`GasStationManager/SafeVerify`] is
+  that fails on unexpected `sorryAx`. [`GasStationManager/SafeVerify`](https://github.com/GasStationManager/SafeVerify) is
   Apache-2.0 and directly reusable.
 
 ### C. `EVOLVE-VALUE` / `EVOLVE-BLOCK` markers → `formalizer` + `witnessed-values` + `production-vs-exploratory` **[MED-HIGH / LOW-MED]**
