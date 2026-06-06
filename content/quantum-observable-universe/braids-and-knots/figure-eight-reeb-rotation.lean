@@ -9,18 +9,21 @@
 -/
 
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
 
 namespace QOU.BraidsAndKnots
 
 /-- The determinant of any Hecke generator σ_i on a 2-dim
-  representation is −1 (product of eigenvalues q·(−q⁻¹) = −1). -/
-theorem hecke_generator_det_neg_one (q : ℤ) (hq : q ≠ 0) :
-    q * (-1 * q⁻¹) = -1 := by ring
+  representation is −1 (product of eigenvalues q·(−q⁻¹) = −1).
+  Stated over a generic field (q⁻¹ needs an inverse). -/
+theorem hecke_generator_det_neg_one {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    q * (-1 * q⁻¹) = -1 := by
+  field_simp
 
 /-- The determinant of the figure-eight knot operator
   M_{4₁} = (σ₁σ₂⁻¹)² on a 2-dim representation is 1.
   det(σ₁) = −1, det(σ₂⁻¹) = −1, so det(M) = (−1)⁴ = 1. -/
-theorem figure_eight_det_one : (-1 : ℤ)^4 = 1 := by norm_num
+theorem figure_eight_det_one : (-1 : ℤ)^4 = 1 := by decide
 
 /-- When a 2×2 real matrix has determinant 1 and real trace,
   its eigenvalues are complex conjugates e^{±iθ} with |λ| = 1
@@ -31,7 +34,7 @@ theorem figure_eight_det_one : (-1 : ℤ)^4 = 1 := by norm_num
 theorem figure_eight_unitary_on_standard :
     (-1 : ℤ)^4 = 1 ∧ (2 : ℕ) = 2 := by
   constructor
-  · norm_num
+  · decide
   · rfl
 
 end QOU.BraidsAndKnots
