@@ -1792,7 +1792,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6889324d4ca3",
+          "ts": "ae253efdfb5a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Markov-trace axioms M1-M4 on H_n(R,q); Jones/Wenzl; core braids-and-knots Hecke content",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T19:40:16.552Z",
+        "reviewed_sha": "086a5d4d82711e1e5df09fb08f3833457303fe23",
+        "notes": "Remark recording the four Markov axioms + disjoint-product factorisation; squarely in-chapter."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T19:40:16.552Z"
 }
