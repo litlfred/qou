@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T12:56:37.804711+00:00",
-  "commitSha": "7ebba2fbd76e693274cb7ceab9976657128976c3",
+  "computedAt": "2026-06-06T19:37:03.253273+00:00",
+  "commitSha": "103dbdbfa968ac84785c1f362211d0ef7234d94b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "8c9ce6665871",
@@ -2529,6 +2529,7 @@
         "mass-table-comprehensive.witness.json",
         "mass-table-l1-full-crosscheck.witness.json",
         "mass-table-ppb.witness.json",
+        "mass-theory-formalize-first-invariants-probe.witness.json",
         "mass-tower-operator-valued-chain.witness.json",
         "mass-tower-operator-valued.witness.json",
         "mass-vol-density.witness.json",

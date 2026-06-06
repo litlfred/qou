@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T12:56:36.244452+00:00",
-  "commitSha": "7ebba2fbd76e693274cb7ceab9976657128976c3",
+  "computedAt": "2026-06-06T19:37:02.249810+00:00",
+  "commitSha": "103dbdbfa968ac84785c1f362211d0ef7234d94b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 14,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "2a7ebe632641",
@@ -26,7 +26,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 671,
+    "files_scanned": 672,
     "patterns": [
       "P15",
       "P16",
@@ -37,7 +37,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 90,
+      "P15": 91,
       "P16": 118,
       "P21": 23,
       "P30": 121,
@@ -1613,6 +1613,13 @@
         "line": 122,
         "snippet": "CODATA literal \"0.51099895\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P15",
+        "file": "mass_theory_formalize_first_invariants_probe.py",
+        "line": 173,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P21",
