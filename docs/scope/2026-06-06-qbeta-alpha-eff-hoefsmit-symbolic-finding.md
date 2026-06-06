@@ -48,13 +48,21 @@ constant `alpha` and a non-zero u¹ term. Normalising the base so `F(0)=1`:
 F(u) = cos(alpha − u/2 − u²/2 − u³/2) / cos(alpha) = 1 + c_1 u + c_2 u² + …
 ```
 
-the probe finds (both anchors, mp-exact):
+the probe finds (values below rounded for display; the full-precision
+per-anchor figures are the source of truth in
+[`qbeta-alpha-eff-hoefsmit-symbolic-probe.witness.json`](../../folio-assistant/computations/qbeta/qbeta-alpha-eff-hoefsmit-symbolic-probe.witness.json),
+computed at the default 65-dps compute precision; proton and muon agree to
+the 6 figures shown and differ only at higher order):
 
-| coeff | producer value | #1887 ladder value |
+| coeff | producer value (proton, rounded) | #1887 ladder value |
 |-------|----------------|--------------------|
 | `c_1` | `tan(alpha)/2 = −0.026192` (≠ 0) | `0` |
 | `c_2` | `−0.151192` | `−1` |
 | `c_3` | `−0.275101` | `≈ −2.069` |
+
+The `c_1 = tan(alpha)/2` identity is checked on the raw `mpf` values
+(assertion `c1_matches_tan_alpha_over_2`, tolerance `1e-30`), not on the
+rounded display figures.
 
 So the producer's `u = b·ℏ_q²` is **a different ladder variable** than the
 #1887 reframe's `u`. The genuinely open piece is therefore **not** "derive
