@@ -79,33 +79,58 @@ is **bar-even** for the symmetric `q − q⁻¹` definition, `tr_M(p_k^JW)` itse
 ### 3c. Combined parity at the `c_3 / Φ₂` rung (k=3)
 
 For Composite 4 to source a **bar-odd** `c_3 / Φ₂` (constraint from §2), the
-`u^3` coefficient of `log F(u)` (which is `tr_M(p_3^JW)·(q;q)_3` to leading
-order) must be **bar-odd**. From §3a–b that coefficient is
-`(bar-even) · (q-prefactored bar-symmetric)`, which under bar maps to
-`(bar-even) · ((−1)^3·q^{−6})·(bar-even)` — **a non-trivial q-rescaling, NOT
-the bar-flip required for bar-odd**.
+`u^3` coefficient of `F(u)` itself must be bar-odd. **Crucially: since the
+product starts at `k ≥ 2`, the `u^3` coefficient of `F` is exactly `A_3 =
+tr_M(p_3^JW)·(q;q)_3`** — the first mixing term is `A_2 A_3 u^5` (degree 5);
+there is no k=2,3 mixing at u^3. So the preflight verdict at the c_3 rung
+reduces to the parity of `A_3` alone — there is no product-expansion rescue.
 
-So a *naive* preflight conclusion is that **Composite 4 as written fails the
-bar-odd gate**, and the cont. 9 5-6 session investment should be deferred
-until the form is amended.
+**Naive form** (using bare `(q;q)_3`): from §3a–b, `A_3` is `(bar-even
+tr_M(p_3^JW)) · (q-prefactored bare (q;q)_3)`, which under bar carries the
+`(−1)^3·q^{−6} = −q^{−6}` rescaling — **not** a clean bar-flip. So with the
+bare q-Pochhammer, **Composite 4 fails the bar-odd gate at u^3**.
 
-**However** (this is the careful caveat the preflight must work through):
-- The `q^{−k(k+1)/2}` prefactor from `(q;q)_k`'s bar-image can be **absorbed**
-  into a renormalised `(q;q)_k^{sym}` (e.g. `q^{k(k+1)/4}·(q;q)_k`) which IS
-  bar-symmetric. If the categorical motivation prefers such a renormalisation,
-  the parity verdict changes.
-- The full Composite 4 product, not its first factor, determines the parity of
-  `c_3` (which is the `u^3` coefficient of `F`, not of `log F`). The
-  coefficient inherits contributions from `k=2,3` mixing.
+**Renormalisation rescue (CONDITIONAL pass).** Setting
+`Y_k := q^{−k(k+1)/4} · (q;q)_k`,
 
-**The preflight's job**: carry through these algebraic checks to a definitive
-verdict. The output is one of three:
+```
+bar(Y_k) = q^{+k(k+1)/4} · (−1)^k · q^{−k(k+1)/2} · (q;q)_k
+         = (−1)^k · q^{−k(k+1)/4} · (q;q)_k = (−1)^k · Y_k
+```
+
+so `Y_k` IS a bar-eigenvector with eigenvalue `(−1)^k`: **bar-even for even k,
+bar-ODD for odd k**. At k=3: `Y_3` is bar-odd. Combined with the bar-even
+`tr_M(p_3^JW) = (−1)^3/[4]_q = −1/[4]_q`, the renormalised
+`A_3^{ren} := tr_M(p_3^JW)·Y_3` is **(bar-even) × (bar-odd) = bar-ODD**,
+satisfying §2's constraint at the c_3 rung.
+
+So Composite 4 (with `(q;q)_k` replaced by the bar-eigenvector renormalisation
+`Y_k`) **PASSES bar-odd at u^3** — but only conditionally on a categorical
+justification for the `q^{−k(k+1)/4}` rescaling. The renormalisation choice
+becomes the decisive scope item for cont. 9 Option B build.
+
+**Preflight verdict at the c_3 rung (this scope's bottom line)**: §3c above
+already does the analytical work. Composite 4 with **bare `(q;q)_k`** is
+**REFUTED at parity** at u^3; with the **bar-eigenvector renormalisation**
+`Y_k = q^{−k(k+1)/4} · (q;q)_k` it **PASSES** at u^3 (bar-odd via `Y_3`
+bar-odd × `tr_M(p_3^JW)` bar-even). So the verdict is **CONDITIONAL** — and
+the live preflight question is now reduced to:
+
+> **Is `Y_k = q^{−k(k+1)/4} · (q;q)_k` the categorically natural object** in
+> the Wenzl/JW × q-Pochhammer composite (e.g. via the Hoefsmit / Markov
+> normalisation, or the KL canonical-basis grading)?
+
+If yes: proceed to cont. 9 Option B (5-6 sessions). If no: the bare form is
+refuted and Composite 4 is dropped (redirect to Composite 1 or 2). The
+preflight RUN (next focused session) settles that yes/no by reading the
+known Hoefsmit / Markov-trace normalisations in `pyhecke` and
+`MarkovTraceOnHecke.lean`.
 
 | verdict | action |
 |---|---|
-| **PASS** (Composite 4 admits bar-odd c_3 + cross-anchor Φ₂-magnitude swing 0.0347) | proceed to cont. 9 Option B (5-6 session infra build) |
-| **REFUTED at parity** (no normalisation makes it bar-odd) | drop Composite 4; redirect to Composite 1 (Demazure × q-Poch) or 2 (KLR canonical basis) |
-| **CONDITIONAL** (passes parity only under a specific normalisation) | flag the normalisation as a separate scope item before infra build |
+| **PASS** — `Y_k` is the categorically natural object | proceed to cont. 9 Option B (5-6 session infra build) |
+| **REFUTED** — bare `(q;q)_k` is the only natural form; no renormalisation justified | drop Composite 4; redirect to Composite 1 (Demazure × q-Poch) or 2 (KLR canonical basis) |
+| **CONDITIONAL-pending-norm-source** — neither outcome above is decisive after one session | flag the renormalisation as a separate scope item before infra build |
 
 ## 4. Cost & ROI
 
