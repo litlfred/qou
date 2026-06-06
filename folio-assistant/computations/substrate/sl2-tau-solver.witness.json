@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-06T04:27:04.216345+00:00",
-  "commitSha": "33b497b8ef571137e10cf6a5669e6ff1473ec45b",
+  "computedAt": "2026-06-06T04:39:29.650398+00:00",
+  "commitSha": "c092ee3e3a5ac6596865e3e8b345008638f233a3",
   "assertions": [
     {
       "name": "torus_tau_eq_2cosh2eta",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "sl2-tau-solver",
   "scriptFile": "sl2_tau_solver.py",
-  "scriptHash": "5a78b3cc2b48",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b4ae20b77621",
+  "scriptCommitSha": "c092ee3e3a5ac6596865e3e8b345008638f233a3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
