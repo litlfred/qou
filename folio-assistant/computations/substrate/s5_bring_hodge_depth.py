@@ -28,8 +28,9 @@ import sys as _sys
 from pathlib import Path as _Path
 
 _HERE = _Path(__file__).resolve().parent
-_sys.path.insert(0, str(_HERE.parent))  # computations/
-_sys.path.insert(0, str(_HERE))         # substrate/
+for _p in (str(_HERE.parent), str(_HERE)):  # computations/, substrate/
+    if _p not in _sys.path:                  # idempotent: don't shadow on re-import
+        _sys.path.insert(0, _p)
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from fractions import Fraction  # noqa: E402
@@ -51,10 +52,18 @@ def inner(chi_a, chi_b) -> Fraction:
     return Fraction(tot, S5_ORDER)
 
 
-def hodge_depth(chi_W) -> int:
-    """Multiplicity of `W` in H¹ = 2·W ⇒ the recurrence-depth bound."""
+def multiplicity_in_H1(chi_W) -> int:
+    """Multiplicity of `W` in H¹ = 2·W. This is the recurrence-depth
+    **upper bound** (depth ≤ multiplicity, by Schur). 'Depth exactly 2'
+    additionally requires the Griffiths-transversality argument, which is
+    NOT computed here — it is a theoretical input stated in the module
+    docstring and workplan."""
     chi_H1 = [2 * x for x in chi_W]      # H¹ = W ⊕ conj W = 2W
-    return int(inner(chi_H1, chi_W))
+    m = inner(chi_H1, chi_W)
+    # A genuine multiplicity is a non-negative integer; a non-trivial
+    # denominator would mean the character data is wrong/mismatched.
+    assert m.denominator == 1, f"non-integer multiplicity {m} (bad character data)"
+    return m.numerator
 
 
 def _emit_witness() -> None:
@@ -63,8 +72,8 @@ def _emit_witness() -> None:
     irred_41 = inner(CHI_W_41, CHI_W_41)        # = 1 (irreducible)
     irred_2111 = inner(CHI_W_2111, CHI_W_2111)  # = 1
     distinct = inner(CHI_W_41, CHI_W_2111)      # = 0 (distinct irreps)
-    d_41 = hodge_depth(CHI_W_41)
-    d_2111 = hodge_depth(CHI_W_2111)
+    m_41 = multiplicity_in_H1(CHI_W_41)
+    m_2111 = multiplicity_in_H1(CHI_W_2111)
 
     w = WitnessBuilder("s5-bring-hodge-depth", engine="python-fractions")
     w.set_audit_only(
@@ -73,11 +82,16 @@ def _emit_witness() -> None:
     w.add_data("W_41_irreducible_norm", str(irred_41))
     w.add_data("W_2111_irreducible_norm", str(irred_2111))
     w.add_data("W_41_vs_W_2111_inner", str(distinct))
-    w.add_data("hodge_depth_via_41", d_41)
-    w.add_data("hodge_depth_via_2111", d_2111)
-    w.add_data("conclusion",
-               "H¹ = 2·W ⇒ M = id_W ⊗ B (2×2) ⇒ depth ≤ 2; Griffiths "
-               "transversality ⇒ depth exactly 2; R = charpoly(B), degree 2")
+    w.add_data("multiplicity_in_H1_via_41", m_41)
+    w.add_data("multiplicity_in_H1_via_2111", m_2111)
+    # Keep the witness strictly aligned with what is COMPUTED here.
+    w.add_data("computed_conclusion",
+               "H¹ = 2·W (multiplicity 2); M = id_W ⊗ B with B a 2×2 matrix "
+               "(Schur) ⇒ recurrence depth ≤ 2")
+    w.add_data("additional_argument_not_checked",
+               "depth = 2 (not just ≤ 2) requires Griffiths transversality "
+               "(∇F^p ⊂ F^{p−1}⊗Ω) ⇒ B non-scalar; this geometric input is "
+               "stated in the workplan, NOT verified by this script")
     w.add_data("character_source",
                "probes/gap_a4_T4_schur_weyl_icosahedral_probe.py (S₅/A₅ tables)")
 
@@ -85,8 +99,9 @@ def _emit_witness() -> None:
                     source="⟨χ_(4,1), χ_(4,1)⟩ = 1")
     w.add_assertion("W_2111_irreducible", computed=int(irred_2111 == 1),
                     expected=1, source="⟨χ_(2,1,1,1), χ_(2,1,1,1)⟩ = 1")
-    w.add_assertion("hodge_depth_is_2", computed=int(d_41 == 2 and d_2111 == 2),
-                    expected=1, source="multiplicity of W in H¹ = 2W is 2")
+    w.add_assertion("multiplicity_in_H1_is_2",
+                    computed=int(m_41 == 2 and m_2111 == 2), expected=1,
+                    source="multiplicity of W in H¹ = 2W is 2 ⇒ depth ≤ 2")
     out = w.save()
     print(f"  Witness: {out.name}")
 
@@ -96,7 +111,9 @@ if __name__ == "__main__":
     print(f"  ⟨W(4,1), W(4,1)⟩       = {inner(CHI_W_41, CHI_W_41)}  (1 ⇒ irreducible)")
     print(f"  ⟨W(2,1,1,1), …⟩        = {inner(CHI_W_2111, CHI_W_2111)}  (1 ⇒ irreducible)")
     print(f"  ⟨W(4,1), W(2,1,1,1)⟩   = {inner(CHI_W_41, CHI_W_2111)}  (0 ⇒ distinct)")
-    print(f"  depth = mult of W in H¹=2W : {hodge_depth(CHI_W_41)}  "
-          f"(via 4,1)  /  {hodge_depth(CHI_W_2111)}  (via 2,1,1,1)")
-    print("  ⇒ M = id_W ⊗ B (2×2); Griffiths transversality ⇒ depth EXACTLY 2")
+    print(f"  mult of W in H¹=2W : {multiplicity_in_H1(CHI_W_41)}  "
+          f"(via 4,1)  /  {multiplicity_in_H1(CHI_W_2111)}  (via 2,1,1,1)  "
+          f"⇒ depth ≤ 2 (computed)")
+    print("  ⇒ M = id_W ⊗ B (2×2). depth = 2 needs Griffiths transversality "
+          "(theoretical input, not checked here)")
     _emit_witness()
