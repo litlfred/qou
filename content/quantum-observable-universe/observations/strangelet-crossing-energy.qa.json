@@ -2564,7 +2564,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "df864a12fda1",
+          "ts": "5d9a8c346267",
+          "lean": "f2e4b7c5d902"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Block contains statement + proof only; no ## Interpretation heading or mislocated physical motivation prose.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:04:25.587Z",
+        "reviewed_sha": "5816aa0d41bed46c623e4000d882b9c9f159380c",
+        "notes": "Three-part proposition with inline proofs — no interpretation bleed."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "df864a12fda1",
+          "ts": "5d9a8c346267",
+          "lean": "f2e4b7c5d902"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition about strangelet crossing energy and EM neutrality — observational physics content appropriate for observations chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:04:42.723Z",
+        "reviewed_sha": "5816aa0d41bed46c623e4000d882b9c9f159380c",
+        "notes": "No misplacement; topic is squarely in observations scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "df864a12fda1",
+          "ts": "5d9a8c346267",
+          "lean": "f2e4b7c5d902"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses 'for all q > 0' order hypothesis; observations is explicitly archimedean chapter — matches chapter regime.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:04:59.606Z",
+        "reviewed_sha": "5816aa0d41bed46c623e4000d882b9c9f159380c",
+        "notes": "Archimedean construct (q > 0 ordering) legitimately present in archimedean chapter."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "df864a12fda1",
+          "ts": "5d9a8c346267",
+          "lean": "f2e4b7c5d902"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses only crossing counts and rational charge fractions; no archimedean constructs (no MeV, no Real.sqrt, no numeric q).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T02:05:18.121Z",
+        "reviewed_sha": "5816aa0d41bed46c623e4000d882b9c9f159380c",
+        "notes": "Combinatorial/algebraic proof; wall-clean."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T02:05:18.121Z"
 }
