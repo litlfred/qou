@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "26dcea82c274",
+          "ts": "942e98acb879"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark discusses proton radius puzzle as observational test of generation-dependent substrate couplings — squarely in observations scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:35:51.617Z",
+        "reviewed_sha": "7c5140fa4a579e5cf6d714bb4625972599fb2e6c",
+        "notes": "Well-placed; no sibling redundancy."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:35:51.617Z"
 }
