@@ -2564,7 +2564,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d536de25f593",
+          "ts": "f987dcc33db2",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement + Proof + Corollary; corollary restates scope (axioms are base properties), no physical-meaning prose",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:34:41.522Z",
+        "reviewed_sha": "ff68dde4d25cadb72b15924bbf9a2c55d423f570",
+        "notes": "No ## Interpretation/Motivation heading; corollary is a logical consequence, not editorializing."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d536de25f593",
+          "ts": "f987dcc33db2",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Listed in sec:ns-obstruction-statement ('statement and observability'); subject is observability q-independence",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:34:41.569Z",
+        "reviewed_sha": "ff68dde4d25cadb72b15924bbf9a2c55d423f570",
+        "notes": "On-topic for the observability section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d536de25f593",
+          "ts": "f987dcc33db2",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Claim is Hom-space equality across substrate sections; q>1/q=1 are section labels, no Real./numeric/MeV",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:34:41.614Z",
+        "reviewed_sha": "ff68dde4d25cadb72b15924bbf9a2c55d423f570",
+        "notes": "Categorical statement; q-independence of Hom(1,Ad(A)), purely algebraic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d536de25f593",
+          "ts": "f987dcc33db2",
+          "lean": "357784fd52c7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof argues Hopf structure (mu,Delta,S) and monoidal hom-space are q-independent; no linarith/IVT/continuity/Real.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:34:41.661Z",
+        "reviewed_sha": "ff68dde4d25cadb72b15924bbf9a2c55d423f570",
+        "notes": "Categorical proof; method matches algebraic statement side."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:34:41.661Z"
 }
