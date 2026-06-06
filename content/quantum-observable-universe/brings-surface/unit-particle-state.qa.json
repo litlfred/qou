@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f4a34268994f",
+          "ts": "0ac4bc0925db",
+          "lean": "a95eff339ee1"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "def:unit-particle-state (Li_q generator of H^1_m1) sits in sec:cohomological-defect, uses def:local-cohomology-group",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T19:45:58.718Z",
+        "reviewed_sha": "17fa56559181444257bfcd19a20cd37bf6580dc3",
+        "notes": "Defines the cohomological-defect generator; topic in section scope"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f4a34268994f",
+          "ts": "0ac4bc0925db",
+          "lean": "a95eff339ee1"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition uses Li_q, Jackson q-derivative, q-log; q->1 limit is fibre/categorical; no numeric q0, no MeV, no Real.*/ordering",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T19:45:58.772Z",
+        "reviewed_sha": "17fa56559181444257bfcd19a20cd37bf6580dc3",
+        "notes": "No archimedean construct hard-coded into generic-chapter statement; no wall banner needed"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T19:45:58.772Z"
 }
