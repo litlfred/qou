@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d9a981ebf8e0",
+          "ts": "f3e2999d6ddd"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark lists 5 observational falsifiability classes for the algebraic-independence conjecture; squarely within observations chapter scope.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:07:23.785Z",
+        "reviewed_sha": "9dceaca0027e6f6966e5adf70e4398e97a524771",
+        "notes": "Clean placement, interprets conj block, no sibling redundancy."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:07:23.785Z"
 }
