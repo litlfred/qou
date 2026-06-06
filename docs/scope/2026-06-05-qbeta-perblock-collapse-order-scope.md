@@ -15,6 +15,22 @@ claim, no fit; the compute is for a focused session.
 
 ## 🟢 Owner-confirmed (2026-06-05): the coherent-collapse cancellation IS the mechanism
 
+> **🔴 UPDATE 2026-06-06 — REFUTED by the heavy per-λ probe (the negative branch this falsifiable design anticipated).**
+> The test below was run — [`qbeta_perlambda_collapse_cancellation_probe.py`](../../folio-assistant/computations/qbeta/qbeta_perlambda_collapse_cancellation_probe.py),
+> verdict [`2026-06-05-qbeta-perlambda-collapse-cancellation-refuted.md`](../audits/2026-06-05-qbeta-perlambda-collapse-cancellation-refuted.md).
+> **Result: NO cancellation.** The per-λ n↔p contributions are all the **same
+> sign** (every `Δχ^λ < 0`, every Wenzl `y_λ > 0`), so `cancellation_ratio = 1.0000`
+> under **both** Plancherel and canonical-Wenzl weightings: `coherent = incoherent`,
+> observe-last recovers **nothing**. The `c_3` order gap is therefore **NOT** a
+> collapse artifact — the amplification is the genuine **f-map / anchor-dependent
+> brane-tower level** `ℓ(K,q₀)` (#1887's surviving possibility; #1900's kernel).
+> **What STANDS** (independent of this refutation): the bar-parity results
+> (`h=2 sinh η` bar-odd, `c_3` = odd-sinh sector), the **Φ₂ = bar-odd
+> reconciliation**, and the **binding A≥3 `θ_λ`** application (a *different* object —
+> the per-block Reeb phase, not the n-p character difference). The §9.2
+> "observe-last" *principle* is untouched; only its specific `c_3`-via-collapse
+> *application* is refuted.
+
 The owner confirmed that the **cancellation imposed by the coherent scalar
 collapse** `Σ_λ y_λ χ^λ` — *not* an external f-map — is the long-sought source
 of the `c_3` order gap ("this is what I have been pushing at"). This promotes the
