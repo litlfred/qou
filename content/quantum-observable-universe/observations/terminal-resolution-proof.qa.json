@@ -1716,7 +1716,29 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7c919127f8a3",
+          "ts": "31e7e20b3c70",
+          "lean": "ef0b58f90242"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof assembles 4 nucleon-mass lemmas (Borromean topology, pair Skein, flavor split, deuteron binding) in sec:mass-predictions-derivations",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:14:05.902Z",
+        "reviewed_sha": "886f7c4920c6c7915df03e6230b4442754377f47",
+        "notes": "Subject is hadronic-mass determination from substrate q0; squarely in the mass-predictions derivations section."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-06T20:14:05.902Z"
 }
