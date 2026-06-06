@@ -283,6 +283,19 @@ cone — `RootsOfUnity`, `Cyclotomic`, `CharZero.Lemmas`, whole
 (not real proof failures) until a fuller cache is seeded. Pick in-cone
 imports when you need to verify a refactor in the sandbox.
 
+**Extending the cone (verified 2026-06-06).** To verify a refactor that
+needs an out-of-cone module, build *that module* incrementally with
+`lake build Mathlib.<Module.Path>` (e.g. `lake build
+Mathlib.LinearAlgebra.Matrix.Trace`). It compiles only the uncached deps
+from the materialised source and writes the olean into `.lake` — **safe,
+fast, no wipe** (Matrix.Trace built in 3.6 s, 1851→1852 oleans). This is
+the supported way to grow the cache module-by-module. Do **NOT** use
+`lake env true` / `lake update` / `lake exe cache get` for this — those
+re-resolve the manifest and can wipe the restored oleans. Whole
+`Mathlib.Tactic` is the one practical exception: it pulls in most of
+Mathlib, so narrow `import Mathlib.Tactic` to the specific tactic modules
+(`Tactic.Ring`, `Tactic.FieldSimp`, …) rather than trying to build it.
+
 ## CRITICAL: Imports before doc blocks (Lean 4.24+)
 
 All `import` statements **must** come before `/-! ... -/` module
