@@ -1,3 +1,6 @@
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+
 /-!
 # Meson GMOR fusion identity: [3]_q · [4]_q = [2]_q + [4]_q + [6]_q
 
@@ -16,15 +19,11 @@ context.
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/
 
-import Mathlib.Algebra.GroupPower.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
-
 namespace QOU.BraidKnot
 
 variable {R : Type*}
 
-/-- The unnormalised q-integer `[n]_q · (q − q⁻¹) = q^n − q^{-n}`, stated as a
+/- The unnormalised q-integer `[n]_q · (q − q⁻¹) = q^n − q^{-n}`, stated as a
 polynomial identity in `q` and its inverse `qi`. Working with `q` and `qi`
 as independent ring variables subject to `q · qi = 1` (the unit hypothesis)
 keeps the proof entirely within `CommRing` + a single `qi_inv` rewrite.
@@ -45,6 +44,6 @@ theorem meson_qCG_3x4 [Field R] (q : R) (hq : q ≠ 0) :
 /-- Decategorified form: at `q = 1` the q-Clebsch–Gordan reduces to the
 classical SU(2) dimension identity `3 · 4 = 2 + 4 + 6` (the classical
 limit observed in `meson_3x4_structural_origin.py`). -/
-theorem meson_qCG_3x4_classical : (3 : ℕ) * 4 = 2 + 4 + 6 := by norm_num
+theorem meson_qCG_3x4_classical : (3 : ℕ) * 4 = 2 + 4 + 6 := by decide
 
 end QOU.BraidKnot
