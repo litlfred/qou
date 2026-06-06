@@ -1,7 +1,7 @@
 # Single-projection bug audit — algebraic AND geometric sides
 
 **Date**: 2026-05-25
-**Branch**: `claude/geom-derivation-bug-squash-2026-05-25`
+**Branch**: `claude/vol-density-derivation-bug-squash-2026-05-25`
 **Status**: Audit. Catalogs every production script + active probe in
 `folio-assistant/computations/` that projects to a SINGLE Wedderburn
 block (algebraic side) OR a SINGLE cell / fiber-orbit (geometric

@@ -26,7 +26,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "FIRST concrete multi-block χ_λ measurement using just-wired pyhecke_native.chi_lambda_braid (tier-3 Phase B Python wrapper). Evaluates χ_λ(β_𝓑₃) for all 3 partitions of H_3(q) at q_0 on the standard positive Borromean braid (σ_1 σ_2⁻¹)³. Establishes the multi-block distribution structure that production's single-block ν_SDP projection discards. Foundation for §10.1-§10.2 of the geom-derivation-bug-squash audit (PR #1228).",
+  "description": "FIRST concrete multi-block χ_λ measurement using just-wired pyhecke_native.chi_lambda_braid (tier-3 Phase B Python wrapper). Evaluates χ_λ(β_𝓑₃) for all 3 partitions of H_3(q) at q_0 on the standard positive Borromean braid (σ_1 σ_2⁻¹)³. Establishes the multi-block distribution structure that production's single-block ν_SDP projection discards. Foundation for §10.1-§10.2 of the vol-density-derivation-bug-squash audit (PR #1228).",
   "parameters": {
     "q_0_f64": 1.1099785955541805,
     "h_f64": 0.20906032198987945,

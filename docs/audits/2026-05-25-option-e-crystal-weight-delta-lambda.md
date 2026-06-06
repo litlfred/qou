@@ -221,7 +221,7 @@ n^w_λ enumeration (this PR) remain the live in-Option-E directions.
 |---|---|---|---|
 | **#1229** (probes 1-4, this session) | Δ_λ(K) empirical landscape | parent | reference data for Phase 2 |
 | **#1224** (synthesis doc) | 14-ansatz audit + 3 probes recommendation | parent | Option E sequence reactivated post-probe-4 |
-| **#1228** (geom-derivation audit) | §10 action #1 (chi_lambda_eval.py wrapper) + alpha-cluster recursion | dependency | Phase 1 `gram_matrix` generalisation converges with their wrapper |
+| **#1228** (vol-density-derivation audit) | §10 action #1 (chi_lambda_eval.py wrapper) + alpha-cluster recursion | dependency | Phase 1 `gram_matrix` generalisation converges with their wrapper |
 | **#1127** (Q_β fitting finding) | GAP-A-4 `conj:rho-prefactor-structural` | adjacent | Option E may provide the correct ρ_K form |
 | **#1246** (CAL-2 cohomological audit) | substrate q_0 framing | upstream | Phase 3's KL classical limit needs q_0 framing |
 
