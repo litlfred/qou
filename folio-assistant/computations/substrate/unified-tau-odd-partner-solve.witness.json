@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-06T20:27:13.996614+00:00",
-  "commitSha": "60375707057bd4e7bf680c5057d63739b4a63853",
+  "computedAt": "2026-06-06T20:33:06.904262+00:00",
+  "commitSha": "bc3d4840501f261999c67e79e4b40ccfb764c013",
   "assertions": [
     {
       "name": "unified_tau_odd_partner_solve_consistent",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 551,
+  "durationMs": 365,
   "computation": "unified-tau-odd-partner-solve",
   "scriptFile": "unified_tau_odd_partner_solve.py",
-  "scriptHash": "2015a4201bdb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "44b6def0284b",
+  "scriptCommitSha": "bc3d4840501f261999c67e79e4b40ccfb764c013",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
