@@ -54,12 +54,12 @@ set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Centralised Q_0_50DPS (addresses Gemini deduplication review on PR #1904).
+from _gap_a4_qsafe import Q_0_50DPS  # noqa: E402
+
 from pathlib import Path  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-COMPUTE_DIR = HERE.parent
-
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
 
 
 # ── McKay E_8 / 2I data ───────────────────────────────────────────
@@ -116,26 +116,28 @@ def test_klein_degree_triple() -> dict:
     print("T9b — Klein icosahedral invariants degree triple (12, 20, 30)")
     print("=" * 78)
     print(f"  Classical Klein (1884) invariants on ℂP¹:")
-    print(f"    f  degree 12   (vanishes on 12 vertices)")
-    print(f"    T  degree 20   (vanishes on 20 face centres)")
-    print(f"    H  degree 30   (vanishes on 30 edge midpoints)")
+    print(f"    f  degree 12   (vertex polynomial; vanishes on 12 vertices)")
+    print(f"    H  degree 20   (Hessian of f; vanishes on 20 face centres)")
+    print(f"    T  degree 30   (Jacobian of f, H; vanishes on 30 edge midpoints)")
     print()
-    print(f"  Syzygy: T² + H³ = 1728·f⁵  (up to sign convention)")
+    print(f"  Syzygy: T² + H³ = 1728·f⁵  (degrees: 60 = 60 = 60 ✓)")
     print()
     print(f"  Relation to A_5 cycle classes:")
     print(f"    |A_5| / |stabilizer of vertex (5-cycle)|  = 60/5  = 12  ↔ f")
-    print(f"    |A_5| / |stabilizer of face (3-cycle)|    = 60/3  = 20  ↔ T")
-    print(f"    |A_5| / |stabilizer of edge (2-cycle)|    = 60/2  = 30  ↔ H")
+    print(f"    |A_5| / |stabilizer of face (3-cycle)|    = 60/3  = 20  ↔ H")
+    print(f"    |A_5| / |stabilizer of edge (2-cycle)|    = 60/2  = 30  ↔ T")
     print(f"  → The triple (12, 20, 30) = (|orbit|, |orbit|, |orbit|)")
     print(f"    encodes the icosahedral orbit structure on ℂP¹.")
     print()
-    print(f"  Klein modular invariant J = T² / H³  has icosahedral")
-    print(f"  monodromy on the icosahedral covering of ℂP¹ \\ {{0, 1, ∞}}.")
+    print(f"  Klein modular invariant J = 1728·f⁵ / H³  has icosahedral")
+    print(f"  monodromy on the icosahedral covering of ℂP¹ \\ {{0, 1, ∞}};")
+    print(f"  equivalently J − 1 = T² / H³ via the syzygy.")
     return {
-        "klein_degrees": [12, 20, 30],
+        "klein_degrees": {"f": 12, "H": 20, "T": 30},
         "orbits": {"vertices_5fold": 12, "faces_3fold": 20, "edges_2fold": 30},
+        "orbit_to_invariant": {"vertices": "f", "faces": "H", "edges": "T"},
         "syzygy": "T² + H³ = 1728·f⁵",
-        "klein_J": "J = T² / H³",
+        "klein_J": "J = 1728·f⁵ / H³  (J − 1 = T²/H³ via syzygy)",
     }
 
 
@@ -233,6 +235,10 @@ def main():
     w.add_parameter("q_0_50dps", Q_0_50DPS)
     w.add_data("discipline", "EXPLORATORY-SCAFFOLD")
     w.add_data("production_wired", False)
+    # q_0 is recorded as a parameter for downstream consumers but the
+    # T9 scaffold itself does no q-deformed computation — the follow-up
+    # T10/T11/T12 probes are where q_0 is actually evaluated.
+    w.add_data("q_0_recorded_for_followups", float(q_0))
 
     print(f"  q₀ = {Q_0_50DPS[:18]}...")
     print()
@@ -270,16 +276,18 @@ def main():
         ),
     )
     w.add_assertion(
-        "klein_orbit_sum_equals_group_order",
+        "klein_orbit_sum_matches_riemann_hurwitz_signature",
         computed=float(sum(klein["orbits"].values())),
         expected=62.0,
         tolerance=0.0,
         source=(
-            "Klein orbit triple 12 + 20 + 30 = 62 (not |A_5| = 60).  "
+            "Klein orbit triple 12 + 20 + 30 = 62 (NOT |A_5| = 60).  "
             "The orbits are |G|/|stab| with stabs 5, 3, 2 respectively; "
             "62 = 60·(1/5 + 1/3 + 1/2) = 60·(31/30) = 62. "
             "This is the Riemann-Hurwitz signature of the icosahedral "
-            "covering of the orbifold P¹(2,3,5)."
+            "covering of the orbifold P¹(2,3,5).  Renamed from "
+            "`klein_orbit_sum_equals_group_order` (Copilot review) "
+            "since the value differs from |A_5|."
         ),
     )
 

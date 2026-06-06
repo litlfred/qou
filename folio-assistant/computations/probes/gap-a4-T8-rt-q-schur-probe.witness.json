@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-06T04:09:20.203654+00:00",
-  "commitSha": "fecf3149538701194cb91a1ecabf94a71f5899e1",
+  "computedAt": "2026-06-06T19:50:04.959869+00:00",
+  "commitSha": "7d9304f484035e64d2f1a55e22e14650f50e3a8a",
   "assertions": [
     {
       "name": "sl2_q_schur_centralizer_identity",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 16,
   "computation": "gap-a4-T8-rt-q-schur-probe",
   "scriptFile": "gap_a4_T8_rt_q_schur_probe.py",
-  "scriptHash": "efffba6f55da",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "57c9fbec0d3c",
+  "scriptCommitSha": "62718aac8f1a1cc2a693385e8b510bd3a60c7df2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
