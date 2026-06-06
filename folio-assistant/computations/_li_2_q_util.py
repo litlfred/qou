@@ -176,7 +176,7 @@ def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
     This is the linking-weight component of VolDensity(𝓑₃, q) — older
     docs called it `λ_scale` before PR #1080 absorbed it into the
     per-knot Geom evaluation.  See
-    `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
+    `docs/lambda-scale-absorbed-into-vol-density.md` for the framing.
 
     The closed-form algebraic identity is proved exactly in
     `lambda_scale_all_c_i_family_a.py` (Python) and
@@ -255,7 +255,7 @@ def bring_color_weighted_linking_weight(
                    m_avg shift (measured 842.8 ppb at q₀)
 
     The symmetric m_avg shift is ~34000× smaller than the +2.89%
-    (29 kppm = 28900 ppm) gap recorded in `lambda-scale-absorbed-into-geom-full.md`.
+    (29 kppm = 28900 ppm) gap recorded in `lambda-scale-absorbed-into-vol-density.md`.
     This implementation therefore CONFIRMS that Bring-color-tube
     quark-flavor weighting at H_4 is structurally insufficient to
     close m_avg — consistent with the 5+ refuted routes documented
@@ -306,7 +306,7 @@ def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
     VolDensity(𝓑₃, q) — the complete per-knot Geom evaluation for the
     Borromean baryon mass formula (canonical post-PR #1080, 2026-05-23).
 
-    ⚠ **Discipline note (2026-06-01, PR geom-full-perblock-wiring-fix).**
+    ⚠ **Discipline note (2026-06-01, PR vol-density-perblock-wiring-fix).**
     This routine multiplies the bare hyperbolic Geom_leading =
     Vol(𝓑₃)/ℏ_q² by a GLOBAL scalar `linking_weight_family_a(q)` =
     (3q²+4+3q⁻²)/4 ≈ 2.53. That scalar is the H₄ (partitions of 4)

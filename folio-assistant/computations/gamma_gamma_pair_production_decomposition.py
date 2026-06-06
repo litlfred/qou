@@ -49,7 +49,7 @@ which converts to a Markov-trace expansion of all orders in h.
 ## Localising the 2.89% residual — CORRECTED FRAMING (2026-05-25)
 
 The framework's open question (per [the canonical doc]
-(../../docs/lambda-scale-absorbed-into-geom-full.md)) is **where
+(../../docs/lambda-scale-absorbed-into-vol-density.md)) is **where
 inside VolDensity the gap enters**.
 
 **First-version (BUGGY) framing**: with the WRONG Markov-trace
@@ -89,7 +89,7 @@ to it.  No CODATA literal flows into a prediction.
 
 ## See also
 
-- [`docs/lambda-scale-absorbed-into-geom-full.md`](../../docs/lambda-scale-absorbed-into-geom-full.md)
+- [`docs/lambda-scale-absorbed-into-vol-density.md`](../../docs/lambda-scale-absorbed-into-vol-density.md)
 - [`folio-assistant/computations/_li_2_q_util.py`](_li_2_q_util.py)
   (`vol_density_borromean`, `linking_weight_family_a`, `borromean_markov_trace_h2`)
 - [`folio-assistant/computations/knot-operator-table.py`](knot-operator-table.py)

@@ -37,7 +37,7 @@ This script computes both readings, order-by-order in h = q − q⁻¹,
 per knot (proton / neutron at H₃), and reports the recovered fraction
 of the +2.89 % m_p gap — RAW.  No tuning to m_p or B_AME.
 
-Output: `geom-full-per-block-wiring.witness.json`.
+Output: `vol-density-per-block-wiring.witness.json`.
 """
 from __future__ import annotations
 
@@ -190,7 +190,7 @@ def main() -> int:
           f"(≠ 1 ⇒ different objects)")
 
     # ── Emit witness ────────────────────────────────────────────────
-    w = WitnessBuilder("geom-full-per-block-wiring", engine="mpmath")
+    w = WitnessBuilder("vol-density-per-block-wiring", engine="mpmath")
     w.set_description(
         "Discipline-gate verification of the paper's per-block Σ_λ "
         "factor (prop:hoefsmit-scattering-pipeline Stage 4) against "

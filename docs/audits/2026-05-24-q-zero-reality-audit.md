@@ -106,7 +106,7 @@ A complex $q_0$ with non-zero $\mathrm{Im}(q_0)$ is the *natural*
 candidate to explain bar-*asymmetric* gaps (the bar involution
 $q \mapsto q^{-1}$ acts non-trivially on Im part). It is *not* the
 natural candidate for a common-mode gap. The natural candidate for
-that gap is per-knot refinement of $\mathrm{Geom}_{\mathrm{full}}(\mathcal{B}_3)$
+that gap is per-knot refinement of $\mathrm{VolDensity}(\mathcal{B}_3)$
 (cheat-sheet §5: Bring color-tube weighted averaging, Yekutieli
 per-cell curvature, Reading-A geometrisation).
 

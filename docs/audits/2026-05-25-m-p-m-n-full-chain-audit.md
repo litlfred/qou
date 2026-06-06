@@ -9,7 +9,7 @@ knows but is not yet wired).
 **Companions** (do not duplicate, this doc cross-links):
 - [`canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
   — chain + Phase-5 closure table
-- [`2026-05-25-geom-derivation-error-localization-and-klr-path.md`](2026-05-25-geom-derivation-error-localization-and-klr-path.md)
+- [`2026-05-25-vol-density-derivation-error-localization-and-klr-path.md`](2026-05-25-vol-density-derivation-error-localization-and-klr-path.md)
   — bug-taxonomy in (jet × filtration × partition × rep) space, KLR
   path forward
 - [`2026-05-25-delta-lambda-K-dependence-reframing.md`](2026-05-25-delta-lambda-K-dependence-reframing.md)
@@ -115,7 +115,7 @@ and what is KNOWN-MISSING:
   at H_4.
 - **Known-missing**: nothing structural at H_4. But the relevant
   partition COUNT could be re-derived at higher n (n=5, n=8, ...) —
-  see [`2026-05-25-geom-derivation-error-localization-and-klr-path.md §2.3`](2026-05-25-geom-derivation-error-localization-and-klr-path.md).
+  see [`2026-05-25-vol-density-derivation-error-localization-and-klr-path.md §2.3`](2026-05-25-vol-density-derivation-error-localization-and-klr-path.md).
 
 ### Step 6 — Frobenius pairing
 - **Proved + production**: `Ψ = S² = id_A`; chirality
@@ -151,7 +151,7 @@ and what is KNOWN-MISSING:
   Wedderburn partitions of 3 (= 3 partitions: (3), (2,1), (1,1,1)).
 - **Known-missing**: full-rank SDP at H_4 / H_5 for the magic-shell
   closure path — see
-  [`2026-05-25-geom-derivation-error-localization-and-klr-path.md §7`](2026-05-25-geom-derivation-error-localization-and-klr-path.md).
+  [`2026-05-25-vol-density-derivation-error-localization-and-klr-path.md §7`](2026-05-25-vol-density-derivation-error-localization-and-klr-path.md).
 
 ### Step 11 — β-decay Q
 - **Production + matches 100×**: passes the L2 dashboard already
@@ -458,7 +458,7 @@ After "go" + "build more infra" + "please continue until it's completed" sequenc
 - Faddeev pentagon spike: [`2026-05-22-faddeev-pentagon-operator-spike.md`](2026-05-22-faddeev-pentagon-operator-spike.md)
 - Yekutieli per-cell conjecture: [`2026-05-22-yekutieli-percell-conjecture-formalized.md`](2026-05-22-yekutieli-percell-conjecture-formalized.md)
 - 13-driver / Rule 14 menu: [`2026-05-23-lambda-scale-canonical-unification.md`](2026-05-23-lambda-scale-canonical-unification.md)
-- VolDensity bug-taxonomy: [`2026-05-25-geom-derivation-error-localization-and-klr-path.md`](2026-05-25-geom-derivation-error-localization-and-klr-path.md)
+- VolDensity bug-taxonomy: [`2026-05-25-vol-density-derivation-error-localization-and-klr-path.md`](2026-05-25-vol-density-derivation-error-localization-and-klr-path.md)
 - Δ_λ closure context: [`2026-05-25-delta-lambda-K-dependence-reframing.md`](2026-05-25-delta-lambda-K-dependence-reframing.md)
 - L2 100× dashboard: [`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json)
 - Cheat sheet: [`canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)

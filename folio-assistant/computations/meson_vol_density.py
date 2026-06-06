@@ -175,7 +175,7 @@ print()
 witness = {
     "engine": "python3/mpmath", "engineVersion": "50dps",
     "computedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-    "computation": "meson-geom-full",
+    "computation": "meson-vol-density",
     "scriptFile": "meson_vol_density.py",
     "description": (
         "Meson-sector VolDensity analog. Baryons use m=m_e×Vol/ℏ_q²×linking_weight; "
@@ -201,6 +201,6 @@ witness = {
 }
 witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
 
-with open(HERE / "meson-geom-full.witness.json", "w") as f:
+with open(HERE / "meson-vol-density.witness.json", "w") as f:
     json.dump(witness, f, indent=2, default=str)
-print(f"Witness: meson-geom-full.witness.json")
+print(f"Witness: meson-vol-density.witness.json")

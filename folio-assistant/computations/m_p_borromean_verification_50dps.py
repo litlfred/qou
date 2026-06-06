@@ -85,7 +85,7 @@ where:
 There is no separate λ_scale constant — older docs called the linking-
 weight component λ_scale before it was absorbed into VolDensity on
 2026-05-23 (PR #1080, commit `3daeb1b4`).  See
-`docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
+`docs/lambda-scale-absorbed-into-vol-density.md` for the framing.
 
 ## Result
 
@@ -170,7 +170,7 @@ M_MU_CODATA_MEV = mp.mpf("105.6583755")  # CODATA muon (validation; no MeV-regis
 # VolDensity(𝓑₃, q) — the canonical per-knot Geom evaluation
 # (PR #1080, commit `3daeb1b4` on 2026-05-24).  Single Geom call
 # per knot/link.  See `prop:geom-universality` and
-# `docs/lambda-scale-absorbed-into-geom-full.md` for the framing.
+# `docs/lambda-scale-absorbed-into-vol-density.md` for the framing.
 #
 # Internally VolDensity = (Vol(𝓑₃)/ℏ_q²) × linking_weight, where
 # the linking_weight is the PROVED Family A categorical identity
@@ -249,7 +249,7 @@ def main() -> int:
     w.add_parameter("linking_weight_proof_script",
                     "lambda_scale_all_c_i_family_a.py")
     w.add_parameter("framing_reference_doc",
-                    "docs/lambda-scale-absorbed-into-geom-full.md")
+                    "docs/lambda-scale-absorbed-into-vol-density.md")
     w.add_parameter("tracking_doc",
                     "docs/canonical-derivation-cheat-sheet.md §5 fix #1 (closed)")
     w.add_parameter("q_0_50dps", mp.nstr(Q, 20))

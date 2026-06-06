@@ -1,6 +1,6 @@
 **Algorithm (Mass identity at $q = q_0$).**
 *Evaluate the categorical mass scalar
-$\mathfrak{m}(K) = m_e \cdot \mathrm{Geom}_{\mathrm{full}}(K, q_0)$
+$\mathfrak{m}(K) = m_e \cdot \mathrm{VolDensity}(K, q_0)$
 for a knot $K$ via the canonical chain
 Steps 1 $\to$ 5 $\to$ 7 $\to$ 8 $\to$ here.*
 

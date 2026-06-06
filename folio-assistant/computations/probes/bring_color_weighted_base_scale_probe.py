@@ -102,4 +102,4 @@ print(f"         Required to close +2.89%: {mp.nstr(gap_ppm, 4)} ppm = "
 ratio = gap_ppm * 1000 / abs(shift_avg_ppb) if shift_avg_ppb != 0 else mp.inf
 print(f"         Required/Actual ratio: ~{mp.nstr(ratio, 4)}×")
 print(f"         → Bring-color-tube at H_4 is STRUCTURALLY INSUFFICIENT for m_avg")
-print(f"         (confirms `lambda-scale-absorbed-into-geom-full.md`)")
+print(f"         (confirms `lambda-scale-absorbed-into-vol-density.md`)")

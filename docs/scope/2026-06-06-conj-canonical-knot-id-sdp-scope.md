@@ -11,7 +11,7 @@ This is the lever the owner flagged in "are knots determined by SDP?" /
 SDP **selects** the canonical knot of each light nucleus — turning the
 historical hyperbolic-volume↔AME-binding match into a derivation. Closing it
 (even one nucleus) makes `Vol(K)` a *derived* SDP optimum rather than a
-heuristic, which is precisely what **Thread 2** (per-knot `Geom_full(K)`,
+heuristic, which is precisely what **Thread 2** (per-knot `VolDensity(K)`,
 A≥3) and **Thread 4** (link-volume assignment) are blocked on.
 
 ---
@@ -142,7 +142,7 @@ binding-K (b), and the general boundary-case axiom.
 ```
 conj:canonical-knot-id-sdp (this)
    │  closing ³He / ²H ⇒ Vol(K) is a DERIVED SDP optimum, not a volume-match heuristic
-   ├──► Thread 2 (per-knot Geom_full, A≥3): supplies the canonical Vol(K) it needs
+   ├──► Thread 2 (per-knot VolDensity, A≥3): supplies the canonical Vol(K) it needs
    ├──► Thread 2 (²H step): 6₂ closure removes the Vol(6₂) heuristic + chi-D-h6 naming-bug gate
    └──► Thread 4 (link-volume assignment): binding-K (G5) IS the per-nucleus link volume
 ```

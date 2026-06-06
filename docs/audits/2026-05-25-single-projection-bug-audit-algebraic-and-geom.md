@@ -246,7 +246,7 @@ answers.
 
 ## §7. Cross-references
 
-- [`docs/audits/2026-05-25-geom-derivation-error-localization-and-klr-path.md`](2026-05-25-geom-derivation-error-localization-and-klr-path.md) — companion audit (PR #1228)
+- [`docs/audits/2026-05-25-vol-density-derivation-error-localization-and-klr-path.md`](2026-05-25-vol-density-derivation-error-localization-and-klr-path.md) — companion audit (PR #1228)
 - [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`](2026-05-24-h4-coefficient-source-trace-and-so3-gap.md) — D10 S_3 → SO(3) gap
 - [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — VolDensity single-formula framing + Yekutieli per-cell PURGED
 - [PR #1214](https://github.com/litlfred/qou/pull/1214) — wiring-status taxonomy + KLR positivity check

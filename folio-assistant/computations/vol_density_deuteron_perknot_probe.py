@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: evaluates at q = q_0, numeric output.
-"""Thread 2 — deuteron per-knot Geom_full, RAW (no tuning).
+"""Thread 2 — deuteron per-knot VolDensity, RAW (no tuning).
 
 Per the cheat-sheet step-9a wire-up (vol-usage audit 2026-06-02): production
 uses the UNIFORM `Vol(𝓑₃)=8·G` for every atom. The paper's per-knot mass is
@@ -29,7 +29,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from _li_2_q_util import geom_full_per_block  # noqa: E402
+from _li_2_q_util import vol_density_per_block  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
@@ -60,8 +60,8 @@ if tr_M_D is None:
     sys.exit(1)  # gated: no canonical trace ⇒ non-zero so CI/automation don't read it as success
 
 print(f"tr_M(β_D) [{src}] = {mp.nstr(tr_M_D, 12)}")
-geom_perknot = geom_full_per_block(VOL_6_2, tr_M_D, q0)   # Vol(6₂)/ℏ² · tr_M
-geom_uniform = geom_full_per_block(VOL_B3, tr_M_D, q0)    # Vol(8G)/ℏ²  · tr_M  (the bug)
+geom_perknot = vol_density_per_block(VOL_6_2, tr_M_D, q0)   # Vol(6₂)/ℏ² · tr_M
+geom_uniform = vol_density_per_block(VOL_B3, tr_M_D, q0)    # Vol(8G)/ℏ²  · tr_M  (the bug)
 m_perknot = M_E_MEV * geom_perknot
 m_uniform = M_E_MEV * geom_uniform
 err_pk = (m_perknot - M_D_AME) / M_D_AME
@@ -75,8 +75,8 @@ print(f"\n per-knot {'IMPROVES' if better else 'does NOT improve'} the deuteron 
       f"({abs(float(err_un))*100:.2f}% → {abs(float(err_pk))*100:.2f}%)")
 
 witness = {
-    "computation": "geom_full_deuteron_perknot",
-    "description": "Thread 2: deuteron per-knot Geom_full (Vol(6₂)) vs uniform (Vol(𝓑₃)=8G), raw vs AME",
+    "computation": "vol_density_deuteron_perknot",
+    "description": "Thread 2: deuteron per-knot VolDensity (Vol(6₂)) vs uniform (Vol(𝓑₃)=8G), raw vs AME",
     "discipline": "no fit; raw report per the per-block wiring discipline gate; nothing wired to production",
     "q0": str(q0), "tr_M_D": mp.nstr(tr_M_D, 20), "tr_M_source": src,
     "vol_6_2": str(VOL_6_2), "vol_b3_8G": mp.nstr(VOL_B3, 20),
@@ -84,5 +84,5 @@ witness = {
     "m_D_uniform_MeV": mp.nstr(m_uniform, 12), "err_uniform": mp.nstr(err_un, 15),
     "m_D_AME_MeV": str(M_D_AME), "per_knot_improves": bool(better),
 }
-(HERE / "geom-full-deuteron-perknot.witness.json").write_text(json.dumps(witness, indent=2, ensure_ascii=False))
-print("witness -> geom-full-deuteron-perknot.witness.json")
+(HERE / "vol-density-deuteron-perknot.witness.json").write_text(json.dumps(witness, indent=2, ensure_ascii=False))
+print("witness -> vol-density-deuteron-perknot.witness.json")
