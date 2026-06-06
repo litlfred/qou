@@ -2100,7 +2100,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "35c38d768b98",
+          "ts": "400c2ff2b8bb",
+          "lean": "bf6a4c41f6ec"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Conjecture in section 'Geometric face: mass-bridge orphan blocks'; Pachner 2-3 / Pentagon Phi_q state-sum on Borromean complement geometry",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T19:55:17.656Z",
+        "reviewed_sha": "aa36a04ac94126a47a8248eed111c464b9dba9b3",
+        "notes": "Geometric-face content (ideal-tetrahedron decompositions, Lobachevsky/Pentagon) fits the section scope; conjecture kind matches the stated open status."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T19:55:17.656Z"
 }
