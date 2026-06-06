@@ -1769,7 +1769,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f36099d55770",
+          "ts": "2ea27b7d3b92"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof of lem:yekutieli-leading-coefficient sits in sec genus-ideal-characterisation next to the lemma it proves",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T19:44:29.581Z",
+        "reviewed_sha": "aaa719feb47f56998839174e12795124ae61b1ee",
+        "notes": "Yekutieli obstruction = leading Chebyshev coefficient; topic squarely in section scope"
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-06T19:44:29.581Z"
 }
