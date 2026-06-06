@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "516f03fb3cdf",
-    "ts": "059af3785153",
-    "lean": "a1bb9d37e4b2"
+    "ts": "059af3785153"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1983,7 +1982,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "516f03fb3cdf",
+          "ts": "059af3785153"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark interprets conj:brane-tower-z-habiro; per-partition k_lambda Wedderburn truncation for AME binding squarely in mass-theory scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T20:41:50.865Z",
+        "reviewed_sha": "ab797d2612a0eea2bcde06a17633a816da5744fd",
+        "notes": "Hoofsmit/Wedderburn truncation + brane-tower selector is core mass/binding material; interprets set, no same-claim sibling."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T20:41:50.865Z"
 }
