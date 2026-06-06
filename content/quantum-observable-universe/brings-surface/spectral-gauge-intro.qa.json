@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "86c775218d4b",
+          "ts": "1d39f4811c54"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose intro lists exactly the spectral/gauge/SW blocks that follow in this section of brings-surface.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:46:18.362Z",
+        "reviewed_sha": "ce70647b8d356e767d917c5ed07ab14989a4db7e",
+        "notes": "Clean fit: spectral resolvents, SW differentials, color sector, elliptic curve all match the section scope."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-06T01:46:18.362Z"
 }
