@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-06T20:06:00.221908+00:00",
-  "commitSha": "6814b9f01e52c048cadb379bed6def59c8a51167",
+  "computedAt": "2026-06-06T20:13:00.162962+00:00",
+  "commitSha": "71e9df4112cf9cb7f9e320b51131acc50cda33d2",
   "assertions": [
     {
       "name": "lusztig_dual_demazure_sign_refuted_at_u2_both_anchors",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "qbeta-klr-lusztig-demazure-preflight-run",
   "scriptFile": "qbeta_klr_lusztig_demazure_preflight_run.py",
-  "scriptHash": "b9ae5b33e79c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f3a2a8eee30d",
+  "scriptCommitSha": "71e9df4112cf9cb7f9e320b51131acc50cda33d2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
