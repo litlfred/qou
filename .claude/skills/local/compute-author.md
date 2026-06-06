@@ -351,7 +351,7 @@ def ansatzΔ (lam : Partition) : ℝ := …   -- e.g. a Frobenius co-Casimir for
 -- value by more than tolerance. requiredΔ_deuteron, the residual, and tol
 -- are :leanval-pinned to a witness, so the numbers cannot drift.
 theorem ansatzΔ_refuted_deuteron :
-    |ansatzΔ deuteronPartition - requiredΔ_deuteron| > tol_deuteron := by
+    tol_deuteron < |ansatzΔ deuteronPartition - requiredΔ_deuteron| := by
   -- unfold; norm_num / native_decide against the :leanval-pinned literals
   -- Ref: <witness JSON producing requiredΔ_deuteron + residual>
   sorry  -- replace with the discharged numeric inequality
@@ -397,15 +397,15 @@ def tol : ℚ := 1
     -- Ref: [manuscript] rho-k-h3a-co-casimir.witness.json -/
 theorem coCasimir_refuted_deuteron : tol < |coCasimirSum - targetSigned| := by
   unfold tol coCasimirSum targetSigned
-  rw [abs_of_pos (by norm_num)]
-  norm_num
+  norm_num  -- norm_num handles |·| on ℚ natively
 
 end QOU.BraidKnot.DeltaLambdaRefutation
 ```
 
-*Status:* the inequality's arithmetic is verified exactly — the gap
-`4498326505997/10¹²` equals the witness `closure_gap`. The Lean proof is the
-standard rational form but is **not** compiled in this session (the Mathlib
+*Status (illustrative — not compiled; verify in CI):* the inequality's
+arithmetic is verified exactly — the gap `4498326505997/10^12` equals the
+witness `closure_gap`. The Lean proof is the standard rational form but is
+**not** compiled in this session (the Mathlib
 cache is unavailable in the sandbox; CLAUDE.md "Mathlib cache 403 fallback"),
 so build it in CI / a warmed env before citing it as machine-checked. Promoting
 it to a committed content-object `lem:frobenius-cocasimir-refuted-deuteron`
