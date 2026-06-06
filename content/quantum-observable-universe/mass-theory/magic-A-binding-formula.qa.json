@@ -874,7 +874,117 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6caa25bf7879",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Status and Reanalysis sections in .md prose body contain author-tracking notes that should be in authorNotes field per CLAUDE.md §4d.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:19:03.533Z",
+        "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
+        "notes": "Move Status/Reanalysis banners to authorNotes; keep §3b-cond conditional banner in prose."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6caa25bf7879",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Doubly-magic light-nucleus binding formula is core mass-theory content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:19:03.567Z",
+        "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
+        "notes": "Block placement is appropriate."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6caa25bf7879",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "MeV comparison in statement uses approx (≈) and is labelled as archimedean specialisation; categorical formula is stated generically.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:19:03.607Z",
+        "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
+        "notes": "Archimedean specialisation is properly bracketed in the statement."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6caa25bf7879",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Regime-dispatch reasoning is categorical (LR fusion, Wedderburn channels); no archimedean proof steps.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:19:03.647Z",
+        "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
+        "notes": "Proof stays on categorical side; MeV values are in statement context only."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6caa25bf7879",
+          "ts": "ac9c0ac75141",
+          "lean": "08a3ccb842a7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean ref qou:QOU.BraidKnot.magic_A_binding_formula present; §3b-cond conditional-class pattern documented in narrative.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T01:19:03.683Z",
+        "reviewed_sha": "237e5cd114e617f2aedd06a71e0e5fc75053f33c",
+        "notes": "Narrative and Lean both state the same conditional theorem structure."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T01:19:03.683Z"
 }
