@@ -2755,7 +2755,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7cf214208029",
+          "ts": "4771fb8c2f9d",
+          "lean": "5c53974060f8"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "evidence": "Block has a substantial '## Interpretation' section explaining physical meaning of δ²Φ peaks; no companion interprets: remark in .ts to hold this content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:12:26.377Z",
+        "reviewed_sha": "c0c2842aa5f3f2db4814c07deb8d47c7fffbc059",
+        "notes": "Move interpretation to a linked remark block."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7cf214208029",
+          "ts": "4771fb8c2f9d",
+          "lean": "5c53974060f8"
+        },
+        "result": "pass",
+        "severity": "major",
+        "evidence": "Magic numbers emerging from q₀ via Hoefsmit/Wedderburn — archimedean observation, correctly placed in observations chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:12:43.366Z",
+        "reviewed_sha": "c0c2842aa5f3f2db4814c07deb8d47c7fffbc059",
+        "notes": "Fits observations chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7cf214208029",
+          "ts": "4771fb8c2f9d",
+          "lean": "5c53974060f8"
+        },
+        "result": "pass",
+        "severity": "major",
+        "evidence": "Observations chapter (archimedean); statement uses numeric q₀, Hoefsmit matrices at q₀, nuclear magic numbers — correct archimedean regime.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:12:55.459Z",
+        "reviewed_sha": "c0c2842aa5f3f2db4814c07deb8d47c7fffbc059",
+        "notes": "Statement matches archimedean chapter regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7cf214208029",
+          "ts": "4771fb8c2f9d",
+          "lean": "5c53974060f8"
+        },
+        "result": "pass",
+        "severity": "major",
+        "evidence": "Proof body uses Hoefsmit seminormal form, Wedderburn weights, and numerical q₀ evaluation — archimedean machinery consistent with observations chapter.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-06",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-06T00:13:24.871Z",
+        "reviewed_sha": "c0c2842aa5f3f2db4814c07deb8d47c7fffbc059",
+        "notes": "Proof correctly archimedean, no wall violation."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-06T00:13:24.871Z"
 }
