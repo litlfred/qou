@@ -174,26 +174,35 @@ noncomputable def hopfLinkEntry : KnotEntry where
     of which are linked pairwise.
     QOU identity: **Nucleon**.  The Borromean topology encodes the
     color-exchange entanglement of three quark tubes (uud or udd).
-    Exact: 8 · G where G = Catalan's constant (OEIS A006752).
+
+    Mathematical value (exact, transcendental): `8 · G` where
+    `G` = Catalan's constant (OEIS A006752).  The `volume.value`
+    field below is the SnapPy decimal *approximation* to that exact
+    value — the EXACT symbol lives in `QOU.Archimedean.vol_B3`
+    (defined as `8 · catalan_G`).
 
     Knot Atlas: <http://katlas.org/wiki/L6a4>
-    Hyperbolic volume: 7.327724753417752120436828119459 ± 1×10⁻³⁰
-    (mpmath `mp.dps = 50`, `8 * mp.catalan`; previous 15-dps literal
-    `7.32772475341775 ± 1×10⁻¹⁴` bumped 2026-06-07).
+    Hyperbolic volume (catalog literal): 50 dps,
+    `7.32772475341775212043682811945907288619319499425336`
+    `± 1×10⁻⁵⁰`.  Bumped 2026-06-07 from the previous 15-dps
+    literal `7.32772475341775 ± 1×10⁻¹⁴` to match the project's
+    standard working serialization precision (50 dps per
+    `folio-assistant/computations/_precision.py`).
+    Source: mpmath `mp.dps = 50` of `8 * mp.catalan`.
     Components: 3
 
-    Note: the categorical `QOU.Archimedean.vol_B3` is defined
-    symbolically as `8 · catalan_G`, so it carries the EXACT
-    transcendental value — this `value` field is the
-    data-catalog SnapPy measurement, retained for catalog /
-    lookup purposes and for downstream consumers that want a
-    decimal rather than the symbolic form. -/
+    Note: this `value` field is the data-catalog SnapPy
+    measurement, retained for catalog / lookup purposes and for
+    downstream consumers that want a decimal rather than the
+    symbolic form. The categorical `QOU.Archimedean.vol_B3` is
+    the EXACT transcendental — use it in proofs and as the
+    canonical Borromean volume reference. -/
 noncomputable def borromeanRingsEntry : KnotEntry where
   ab_index := "L6a4"
   braid := borromeanRings
   volume := {
-    value := 7.327724753417752120436828119459
-    error_bound := 1e-30
+    value := 7.32772475341775212043682811945907288619319499425336
+    error_bound := 1e-50
     error_nonneg := by norm_num
   }
   identity := .nucleon
