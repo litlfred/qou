@@ -1769,7 +1769,28 @@
         "reviewed_at": "2026-06-02T19:35:55.253Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "proof of lem:qou-exists-axiom-2 (observability axiom); Peter-Weyl/adjoint-action argument belongs to 'Emergence from observability' scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:46:28.566Z",
+        "reviewed_sha": "9dfb0b7180eed694a04ca67b21748a8ec1809bc2",
+        "notes": "Proof block correctly paired with its lemma; on-topic for the chapter."
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-07T00:46:28.566Z"
 }
