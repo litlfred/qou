@@ -40,7 +40,7 @@ to 100% is explicit and no gap hides behind a "justification."
 | magic-A / link volume (8G) | rests on the heuristic link above | inherits the gap |
 | EM structure factor (3/4) for T−³He | `E_C = α_EM·m_π·(cusp ratio)`; the ≈3/4 cusp ratio of L6a4 needs the link (heuristic) | blocked on the link gap |
 | q₀ substrate-derivation | absolute-scale closure | **Subgoal-2, owner-declined** |
-| tooling: HOMFLY at n≥3 | `homflypt_engine` returns 0 for n≥3 (unimplemented); no SnapPy | implementable (in progress) |
+| ~~tooling: HOMFLY at n≥3~~ | **CLOSED (2026-06-07).** Legacy `homflypt_engine` n≥3 (ratio-only / degenerate) superseded by `homfly_ocneanu_trace.homfly_signed_su2` (signed Ocneanu trace; skein-gate `homflypt_reference_qa` 5/5; validated n=2..9; PR #1792 + extension). | done |
 
 ## Verdict
 
