@@ -2332,6 +2332,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:collatz-contact-boundary' → expected 'collatz_contact_boundary'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "9bf2e41acd95",
+          "ts": "d696c1966911",
+          "lean": "11dfcc363108"
+        },
+        "result": "warn",
+        "severity": "major",
+        "evidence": "Lean collatz_contact_boundary_conditional concludes 'True := trivial'; narrative states ⟨v_[2]⟩≥2 ⟺ orbit converges",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:45:07.214Z",
+        "reviewed_sha": "b2a6e62e13179399439485ef985576475c83f42d",
+        "notes": "§3b-cond banner + 5 class hypotheses match, but Lean is a True-stub — does not encode the contact-threshold claim. Conditional skeleton, not equivalent."
       }
     ],
     "proof-lean-compiles": [
@@ -2723,5 +2743,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T01:34:38.798Z"
+  "updated_at": "2026-06-07T01:45:07.214Z"
 }
