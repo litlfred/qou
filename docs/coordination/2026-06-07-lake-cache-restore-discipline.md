@@ -67,14 +67,42 @@ of using the oleans — defeating the whole point. The mitigation is to
 ## SEED after a successful build (so the next session restores)
 
 After a clean `lake build`, reseed the branch so the cache stays current —
-especially after a Mathlib bump or a large new module. Recipe + slug rules:
-`.claude/skills/local/lean-environment-setup.md` §"PRESERVE THE BUILD".
-A reseed commit names the toolchain + what changed (e.g. the
-`d21ef6e748` "incl MassVolDensity §6" pattern).
+especially after a Mathlib bump or a large new module.
+
+**Preferred (PR #1957):** the producer script handles slug + worktree +
+per-package separation + xz compression + master-index in one shot:
+
+```bash
+./scripts/lake-cache-produce.py                     # dry-run all 9 packages
+./scripts/lake-cache-produce.py --packages mathlib  # one package, dry-run
+./scripts/lake-cache-produce.py --push              # actually push
+./scripts/lake-cache-produce.py --branch-suffix test --push  # test branch first
+```
+
+The producer writes per-package orphan branches `lake-cache/<pkg>-v4-24-0`,
+each containing only that package's oleans (xz-compressed) + a
+`cache-index.json` master-index naming the regen steps (decompress_xz →
+compute_hashes → touch_trace). Mathlib gets its own branch (~140 MB after
+strip + xz, down from ~1.8 GB raw); small packages (aesop / Qq / batteries
+/ proofwidgets) get tiny branches. The corresponding fetcher
+`scripts/lake-cache-fetch.sh` handles both this format and the legacy
+chunked-tgz format documented above.
+
+Architecture details, strip rationale, and compression head-to-head data:
+[`docs/audits/2026-06-07-lake-cache-only-new-content-design.md`](../audits/2026-06-07-lake-cache-only-new-content-design.md).
+
+**Legacy (bash one-liner):** the recipe in
+[`.claude/skills/local/lean-environment-setup.md` §"PRESERVE THE BUILD"](../../.claude/skills/local/lean-environment-setup.md)
+remains documented as the chunked-tgz-only path. A reseed commit names
+the toolchain + what changed (e.g. the `d21ef6e748` "incl MassVolDensity §6"
+pattern).
 
 ## Open coordination item
 
 A future Lean-env hardening could **normalise the package URLs in the seed
 itself** so restorers never need step 2 (eliminates the gotcha). Tracked here;
 owner/`lean-environment-setup` maintainer to decide. Until then, restorers must
-run the checklist above.
+run the checklist above. The PR #1957 producer's `cache-index.json` step is a
+natural place to add per-package URL normalisation (currently records the
+package's git rev + URL as provenance; a normaliser would re-write the local
+restorer's package URL to match before lake re-resolves).

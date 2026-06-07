@@ -379,6 +379,35 @@ durable cross-container preservation lives on **orphan branches**
 `.lake/` (ephemeral) or `../mathlib4` (parent-tree, often persists but not
 guaranteed).
 
+> **Preferred: use the scripts (PR #1957).** Hand-rolled bash is the legacy path.
+>
+> ```bash
+> # RESTORE — auto-invoked on SessionStart via setup-lean-toolchain.sh;
+> # also manually:
+> ./scripts/lake-cache-fetch.sh
+>
+> # SEED — multi-package producer, per-file xz-compressed olean blobs,
+> # cache-index.json master-index, dry-run by default:
+> ./scripts/lake-cache-produce.py --packages mathlib,aesop,batteries,Qq \
+>     --branch-suffix test                # dry-run; safe
+> ./scripts/lake-cache-produce.py --push  # actually push all 9 packages
+> ```
+>
+> The fetcher handles both the legacy chunked-tgz format (current
+> production branch as of 2026-06-04 reseed) AND the per-file format
+> the producer writes. The producer outputs per-package orphan branches
+> (`lake-cache/<pkg>-v4-24-0`), each containing only that package's
+> `.olean.xz` blobs + `cache-index.json` (regen recipe for `.hash` /
+> `.trace`). Aesop / Qq / batteries / proofwidgets fit single blobs;
+> Mathlib's ~2745 oleans live on a dedicated branch.
+>
+> See [`docs/audits/2026-06-07-lake-cache-only-new-content-design.md`](../../../docs/audits/2026-06-07-lake-cache-only-new-content-design.md)
+> for the full architecture (strip + xz benchmarks + zstd-shared-dict
+> head-to-head). Bash one-liner below remains documented as the legacy
+> path — useful when the scripts aren't available (e.g. you're auditing
+> what the orphan branch contains, or doing a one-off reseed of the
+> qou-only branch).
+
 The cache branch stores the oleans as a **compressed tarball split into
 <100 MB chunks** (`lake-oleans.tgz.part00…`), because GitHub hard-rejects
 any single file > 100 MB on push (the qou+mathlib oleans compress to
