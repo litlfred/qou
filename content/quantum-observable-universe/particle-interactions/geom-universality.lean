@@ -11,7 +11,7 @@ import Mathlib.Data.Real.Basic
 namespace QOU.BraidKnot
 
 /-- **§3b-cond hypothesis class** for `conj:hyperbolic-volume-transcendence`. -/
-class SingleVolumeIrrational : Prop where
+class HyperbolicVolumeTranscendence : Prop where
   pairing_unitary :
     ∀ (q vol : ℝ), q > 1 → vol > 0 →
       let hbar_q2 := (1 - 1/q) ^ 2
@@ -40,7 +40,7 @@ axioms.  Without this uniqueness the mass formula
 choices of evaluator would give different predicted masses.
 
 The uniqueness is staged on three axiomatised hypotheses:
-universality (already declared above as `SingleVolumeIrrational`),
+universality (already declared above as `HyperbolicVolumeTranscendence`),
 categorical functoriality (carried by the QOU substrate; treated
 as a per-evaluation predicate below), and a **canonical
 normalisation seed** (the Family-A linking weight at the
@@ -112,7 +112,7 @@ class GeomFullCanonicalSeed {Knot : Type} (G : GeomFullEval Knot)
 
     Any two `VolDensity` evaluators that both satisfy categorical
     functoriality + agreement with a common canonical seed are
-    equal.  Together with `SingleVolumeIrrational` +
+    equal.  Together with `HyperbolicVolumeTranscendence` +
     `PLCorrectnessHypotheses`, this gives the per-knot uniqueness
     backing the QOU mass formula `m(K) = m_e · VolDensity(K, q₀)`.
 
@@ -121,7 +121,7 @@ class GeomFullCanonicalSeed {Knot : Type} (G : GeomFullEval Knot)
     the seed itself (Family-A linking-weight extension to all
     knots) is the open `prop:hoefsmit-scattering-pipeline` work. -/
 theorem vol_density_per_knot_unique
-    {Knot : Type} [SingleVolumeIrrational] [PLCorrectnessHypotheses]
+    {Knot : Type} [HyperbolicVolumeTranscendence] [PLCorrectnessHypotheses]
     (G G' : GeomFullEval Knot) (seed : GeomFullEval Knot)
     [GeomFullFunctorial G] [GeomFullCanonicalSeed G seed]
     [GeomFullFunctorial G'] [GeomFullCanonicalSeed G' seed] :
@@ -156,7 +156,7 @@ theorem vol_density_subsingleton
     weight extended to all knots) remains the open
     `prop:hoefsmit-scattering-pipeline` input.
 
-    Note on the instance arguments: `[SingleVolumeIrrational]` and
+    Note on the instance arguments: `[HyperbolicVolumeTranscendence]` and
     `[PLCorrectnessHypotheses]` (`conj:hyperbolic-volume-transcendence`,
     `rem:baryon-period-ratio`) are NOT used in this Lean-level
     seed-uniqueness proof — they are the named external dependencies for
@@ -164,14 +164,13 @@ theorem vol_density_subsingleton
     values are the Thurston `Vol`/`CS` invariants), carried here so the
     §3b-cond conditional-class audit recognises the conditionality. -/
 theorem geom_universality_conditional
-    {Knot : Type} [SingleVolumeIrrational] [PLCorrectnessHypotheses]
+    {Knot : Type} [HyperbolicVolumeTranscendence] [PLCorrectnessHypotheses]
     (seed : GeomFullEval Knot) [GeomFullFunctorial seed] :
-    ∃ (G : GeomFullEval Knot) (_ : GeomFullFunctorial G),
-      GeomFullCanonicalSeed G seed ∧
-      (∀ G' : GeomFullEval Knot,
-        GeomFullFunctorial G' → GeomFullCanonicalSeed G' seed → G' = G) := by
-  refine ⟨seed, inferInstance, ⟨fun _ _ => rfl⟩, ?_⟩
-  intro G' _ hseed'
+    ∃! G : GeomFullEval Knot,
+      ∃ _ : GeomFullFunctorial G, GeomFullCanonicalSeed G seed := by
+  refine ⟨seed, ⟨inferInstance, ⟨fun _ _ => rfl⟩⟩, ?_⟩
+  intro G' hG'
+  obtain ⟨_, hseed'⟩ := hG'
   funext k q
   exact hseed'.matches_seed k q
 
