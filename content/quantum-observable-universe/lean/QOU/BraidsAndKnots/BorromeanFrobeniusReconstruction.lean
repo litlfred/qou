@@ -62,7 +62,8 @@ theorem jones_markov_normalization (h : ℚ) :
     yJones_sym h + 2 * yJones_21 h = 1 := by
   have hne : (h ^ 2 + 4 : ℚ) ≠ 0 := (hsq_add_four_pos h).ne'
   unfold yJones_sym yJones_21
-  field_simp
+  field_simp [hne]
+  ring
 
 /-- **Frobenius reconstruction (B).** The per-representation Jones sum
     `Σ_λ y_λ · χ^λ(β_Bor) = y_sym·1 + y_{(2,1)}·χ^{(2,1)}` equals the proved
@@ -72,7 +73,7 @@ theorem borromean_frobenius_reconstruction (h : ℚ) :
   have hne : (h ^ 2 + 4 : ℚ) ≠ 0 := (hsq_add_four_pos h).ne'
   unfold yJones_sym yJones_21 chi21_borromean trM_borromean
     trM_borromean_num trM_borromean_den
-  field_simp
+  field_simp [hne]
   ring
 
 end QOU.BraidsAndKnots
