@@ -2539,7 +2539,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "24319d3dc065",
+          "ts": "cd2e497af6fe",
+          "lean": "a837ceb09422"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Vol(K) factors through fibre functor tau; the archimedean exit underpinning mass evaluation, sited with mass-theory volume blocks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:41:52.850Z",
+        "reviewed_sha": "727b1dadefb3932a660beb60b3b6712c9ce70bb1",
+        "notes": "Knot-volume->archimedean factorization belongs with the mass/Vol machinery"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "24319d3dc065",
+          "ts": "cd2e497af6fe",
+          "lean": "a837ceb09422"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement is bare, but ## Consequence appends interpretive 'no archimedean side-channel' prose with no companion interprets: remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:41:52.895Z",
+        "reviewed_sha": "727b1dadefb3932a660beb60b3b6712c9ce70bb1",
+        "notes": "Consequence editorializes; could move to a linked remark"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "24319d3dc065",
+          "ts": "cd2e497af6fe",
+          "lean": "a837ceb09422"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Archimedean target R and pi_infty: A->R named explicitly as the projection; the wall is the subject, not a silent leak",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:41:52.940Z",
+        "reviewed_sha": "727b1dadefb3932a660beb60b3b6712c9ce70bb1",
+        "notes": "Block IS the archimedean-wall factorization statement; R is named, not hidden"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "24319d3dc065",
+          "ts": "cd2e497af6fe",
+          "lean": "a837ceb09422"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Sketch proves via Tannaka-Krein rigidity; specialisation to R named via pi_infty restriction; no numeric q0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:41:52.985Z",
+        "reviewed_sha": "727b1dadefb3932a660beb60b3b6712c9ce70bb1",
+        "notes": "Specialisation point explicitly pi_infty; no silent archimedean machinery"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T00:41:52.985Z"
 }
