@@ -1879,7 +1879,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c51a70ee3892",
+          "ts": "5e7e15f1e6f8",
+          "lean": "79c63a9c0a00"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Foundational rigid-monoidal-category definition opening the quantum-universes chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:02:21.020Z",
+        "reviewed_sha": "6a9f50244c08580e6ab6eec362d294c7fd2a501b",
+        "notes": "Correct placement: chapter-opening categorical foundation."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c51a70ee3892",
+          "ts": "5e7e15f1e6f8",
+          "lean": "79c63a9c0a00"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Generic R-linear over a commutative ring R; no q0/MeV/Real.* or ordering",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:02:21.067Z",
+        "reviewed_sha": "6a9f50244c08580e6ab6eec362d294c7fd2a501b",
+        "notes": "Stays generic; no archimedean leak, banner not needed."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T01:02:21.067Z"
 }
