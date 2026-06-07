@@ -2,12 +2,14 @@
   Borromean Markov trace: exact closed form, stated over `R[h]`.
 
   The Markov trace of the Borromean braid `β_Bor = (σ₁⁻¹σ₂)³` on `H_3(q)`,
-  evaluated via the Jones polynomial of the Borromean rings, is the unique
-  value `t` satisfying the multiplicative relation
+  evaluated via the Jones polynomial of the Borromean rings, is characterised
+  by the multiplicative relation
 
       [2]_q² · t = 4 + h² − 3h⁴ − h⁶,    [2]_q² = h² + 4,   h = q − q⁻¹.
 
-  Equivalently, when `[2]_q²` is invertible (e.g. over `ℝ`/`ℚ` at real `q`),
+  Over a generic ring this relation need not pin `t` uniquely; once `[2]_q²`
+  is a unit (e.g. over `ℝ`/`ℚ` at real `q`, where `[2]_q² = h² + 4 > 0`) it
+  does, and then
 
       tr_M(β_Bor, q) = (4 + h² − 3h⁴ − h⁶) / (h² + 4).
 
@@ -38,7 +40,7 @@
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Ref: [murasugi1996] ISBN 978-0-8176-3817-7
 -/
-import Mathlib.Data.Rat.Defs
+import Mathlib.Algebra.Order.Field.Rat
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.NormNum
@@ -130,18 +132,20 @@ theorem h2_coefficient_cancellation (h : R) :
   ring
 
 /-- **Closed form, multiplicative (`R[h]`).**  Any `t` satisfying the
-    defining relation `IsBorromeanMarkovTrace h t` satisfies
+    defining relation `IsBorromeanMarkovTrace h t` satisfies the exact
+    multiplicative identity
 
       `[2]_q² · (t − 1) = −3h⁴ − h⁶ = h⁴·(−3 − h²)`.
 
-    This is the division-free statement of
-    `tr_M = 1 + (−3h⁴ − h⁶)/[2]_q²`: it says `tr_M − 1` factors through
-    `h⁴` once `[2]_q²` is cleared, with no `h⁰…h³` correction (the
-    structural `h² = 0` fact). -/
+    This is the division-free statement of `tr_M = 1 + (−3h⁴ − h⁶)/[2]_q²`:
+    after clearing `[2]_q²`, the correction `[2]_q²·(tr_M − 1)` is a pure
+    multiple of `h⁴`, with no `h⁰…h³` term (the structural `h² = 0` fact).
+    (No `Dvd` claim is made: over a generic ring this identity need not
+    yield a quotient witness for `t − 1`.) -/
 theorem borromean_markov_trace_closed_form_mul (h t : R)
     (ht : IsBorromeanMarkovTrace h t) :
     trM_borromean_den h * (t - 1) = h^4 * (-3 - h^2) := by
-  unfold IsBorromeanMarkovTrace trM_borromean_den trM_borromean_num at ht ⊢
+  simp only [IsBorromeanMarkovTrace, trM_borromean_den, trM_borromean_num] at ht ⊢
   linear_combination ht
 
 /-! ### Bar-(anti-)symmetric structure, over `R[h]`

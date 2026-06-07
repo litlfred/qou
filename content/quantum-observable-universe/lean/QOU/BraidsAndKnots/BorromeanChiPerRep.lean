@@ -31,7 +31,7 @@
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Ref: [murasugi1996] ISBN 978-0-8176-3817-7
 -/
-import Mathlib.Data.Rat.Defs
+import Mathlib.Algebra.Order.Field.Rat
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.NormNum
