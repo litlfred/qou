@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "514da1fffcef",
+          "ts": "478508b82257"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Section-intro prose for sec:headline-conjectures; points to yang-mills-mass-gap onward",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:47:10.012Z",
+        "reviewed_sha": "46a3858da866869397ec45abd1bb8a5246563d87",
+        "notes": "On-topic section preamble; no misfiling or sibling restatement."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T12:47:10.012Z"
 }
