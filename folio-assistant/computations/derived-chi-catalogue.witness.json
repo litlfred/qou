@@ -1,23 +1,44 @@
 {
-  "engine": "pyhecke-native + python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-07T06:04:06.332980+00:00",
-  "commitSha": "a5bee3aca299c986ad8df3c99e908d8b949e0773",
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-07T06:25:08.556463+00:00",
+  "commitSha": "3c5cc75df14b44e8d28a448991d5350ae435ce4b",
   "assertions": [
     {
-      "name": "sweep_ran_to_completion",
+      "name": "borromean_chi_21_reproduces_t17",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "The Phase 3 sweep must either emit new (K, λ, A) cells or be a no-op re-run with --merge-existing (in which case all expected cells were already in the catalogue)."
+      "source": "Independent R-matrix derivation of χ^(2,1)(β_Bor) must reproduce T17 (PR #1933): 2 − 3h⁴ − h⁶ exactly."
+    },
+    {
+      "name": "schur_weyl_identity_borromean",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Borromean Schur-Weyl: 4·χ^(3) + 2·χ^(2,1) = tr_{V⊗³}(β_Bor)."
+    },
+    {
+      "name": "schur_weyl_identity_figure_eight",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Figure-eight Schur-Weyl: 4·χ^(3) + 2·χ^(2,1) = tr_{V⊗³}(β_4₁)."
+    },
+    {
+      "name": "twelve_phase2_cells_emitted",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Phase 1 + Phase 2 emit 3·H_3 + 3·H_3 + 3·H_2 = 12 cells (Borromean + Figure-eight + Hopf + Trefoil + Cinquefoil). Robust to merging with Phase-3 production cells."
     }
   ],
   "allPassed": true,
-  "durationMs": 11889,
+  "durationMs": 852,
   "computation": "derived-chi-catalogue",
-  "scriptFile": "derived_chi_catalogue_sweep.py",
-  "scriptHash": "03f512abc63d",
-  "scriptCommitSha": "a412ab76568eaef7a080bea907a1fd32d1cda48e",
+  "scriptFile": "derived_chi_catalogue_build.py",
+  "scriptHash": "f5718d9b2dda",
+  "scriptCommitSha": "7752b8033054a6a9e8a57d6cafee93172beca8b4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,13 +53,13 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Phase 3 production isotope sweep (max-A=5). Builds derived (K, λ, A) cells for every production isotope × every Wedderburn partition via pyhecke_native.chi_q_via_gp. Kauffman convention t = q² natively.",
+  "description": "Phase 1 + 2 of the 3-axis (knot, partition, atom) derived-χ catalogue. Emits 12 cells across 5 census knots (Borromean, Figure-eight, Hopf, Trefoil, Cinquefoil). H_3 knots via R-matrix on V⊗³ + Schur-Weyl; B_2 knots via 1-dim Hecke reps. Borromean (2,1) cross-validates T17 (PR #1933) exactly.",
   "data": {
     "catalogue": {
       "schema_version": "1.0.0",
-      "cell_count": 330,
+      "cell_count": 342,
       "tier_counts": {
-        "derived": 330,
+        "derived": 342,
         "cal-anchored": 0,
         "extracted": 0
       },
@@ -59404,87 +59425,364 @@
           "q_convention": "kauffman",
           "derivation_ref": "pyhecke_native.chi_q_via_gp (Geck-Pfeiffer + Hecke characters) on atom_braid_word_3A from folio-assistant/computations/mass_at_3A_proper.py",
           "notes": "Derived via pyhecke_native.chi_q_via_gp (Geck-Pfeiffer reduction + Hecke characters). λ has 15 parts; braid has 59 crossings on 15 strands."
+        },
+        {
+          "knot": "borromean",
+          "partition": [
+            3
+          ],
+          "atom": "borromean-baryon",
+          "braid_word": "(σ_1^{-1}·σ_2)^3",
+          "strand_count": 3,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": 0,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / trivial Hecke rep σ_i ↦ q",
+          "notes": "χ⁽³⁾((σ_1^{-1}·σ_2)^3) = 1 (1-dim trivial Hecke rep)."
+        },
+        {
+          "knot": "borromean",
+          "partition": [
+            2,
+            1
+          ],
+          "atom": "borromean-baryon",
+          "braid_word": "(σ_1^{-1}·σ_2)^3",
+          "strand_count": 3,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": -6,
+              "coefficient": "-1"
+            },
+            {
+              "q_degree": -4,
+              "coefficient": "3"
+            },
+            {
+              "q_degree": -2,
+              "coefficient": "-3"
+            },
+            {
+              "q_degree": 0,
+              "coefficient": "4"
+            },
+            {
+              "q_degree": 2,
+              "coefficient": "-3"
+            },
+            {
+              "q_degree": 4,
+              "coefficient": "3"
+            },
+            {
+              "q_degree": 6,
+              "coefficient": "-1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "?",
+            "?"
+          ],
+          "k_lambda": 1,
+          "y_lambda_at_zero": "1/4",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17); cross-validates PR #1933 (T17 R-matrix template); y_lambda_at_zero from main@b6c23f2053 (T18 Markov-normalisation)",
+          "notes": "χ⁽²,¹⁾((σ_1^{-1}·σ_2)^3) derived via R-matrix on V⊗³ + Schur-Weyl. mu_eigenvalues populated in a follow-up commit (Hoefsmit seminormal form). Matches T17 / PR #1933."
+        },
+        {
+          "knot": "borromean",
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "atom": "borromean-baryon",
+          "braid_word": "(σ_1^{-1}·σ_2)^3",
+          "strand_count": 3,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": 0,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / sign Hecke rep σ_i ↦ −q⁻¹",
+          "notes": "χ⁽¹,¹,¹⁾((σ_1^{-1}·σ_2)^3) = 1 (1-dim sign Hecke rep). Not visible in V⊗³ at U_q(sl₂); derived algebraically."
+        },
+        {
+          "knot": "figure-eight",
+          "partition": [
+            3
+          ],
+          "atom": "higgs-pion-half",
+          "braid_word": "(σ_1·σ_2^{-1})^2",
+          "strand_count": 3,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": 0,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / trivial Hecke rep σ_i ↦ q",
+          "notes": "χ⁽³⁾((σ_1·σ_2^{-1})^2) = 1 (1-dim trivial Hecke rep)."
+        },
+        {
+          "knot": "figure-eight",
+          "partition": [
+            2,
+            1
+          ],
+          "atom": "higgs-pion-half",
+          "braid_word": "(σ_1·σ_2^{-1})^2",
+          "strand_count": 3,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": -4,
+              "coefficient": "1"
+            },
+            {
+              "q_degree": -2,
+              "coefficient": "-2"
+            },
+            {
+              "q_degree": 0,
+              "coefficient": "1"
+            },
+            {
+              "q_degree": 2,
+              "coefficient": "-2"
+            },
+            {
+              "q_degree": 4,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "?",
+            "?"
+          ],
+          "k_lambda": 1,
+          "y_lambda_at_zero": "?",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17); cross-validates PR #1933 (T17 R-matrix template)",
+          "notes": "χ⁽²,¹⁾((σ_1·σ_2^{-1})^2) derived via R-matrix on V⊗³ + Schur-Weyl. mu_eigenvalues populated in a follow-up commit (Hoefsmit seminormal form)."
+        },
+        {
+          "knot": "figure-eight",
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "atom": "higgs-pion-half",
+          "braid_word": "(σ_1·σ_2^{-1})^2",
+          "strand_count": 3,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": 0,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / sign Hecke rep σ_i ↦ −q⁻¹",
+          "notes": "χ⁽¹,¹,¹⁾((σ_1·σ_2^{-1})^2) = 1 (1-dim sign Hecke rep). Not visible in V⊗³ at U_q(sl₂); derived algebraically."
+        },
+        {
+          "knot": "hopf",
+          "partition": [
+            2
+          ],
+          "atom": "diquark",
+          "braid_word": "σ_1^2",
+          "strand_count": 2,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": 2,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / trivial Hecke rep σ_i ↦ q on σ_1^2 ⇒ q^2",
+          "notes": "χ⁽²⁾(σ_1^2) = q^2 exactly (1-dim trivial rep). Not palindromic; stored in q-Laurent form."
+        },
+        {
+          "knot": "hopf",
+          "partition": [
+            1,
+            1
+          ],
+          "atom": "diquark",
+          "braid_word": "σ_1^2",
+          "strand_count": 2,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": -2,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / sign Hecke rep σ_i ↦ −q⁻¹ on σ_1^2 ⇒ (−q⁻¹)^2",
+          "notes": "χ⁽¹,¹⁾(σ_1^2) = (−q⁻¹)^2 exactly (1-dim sign rep). Not palindromic; stored in q-Laurent form."
+        },
+        {
+          "knot": "trefoil",
+          "partition": [
+            2
+          ],
+          "atom": "electron",
+          "braid_word": "σ_1^3",
+          "strand_count": 2,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": 3,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / trivial Hecke rep σ_i ↦ q on σ_1^3 ⇒ q^3",
+          "notes": "χ⁽²⁾(σ_1^3) = q^3 exactly (1-dim trivial rep). Not palindromic; stored in q-Laurent form."
+        },
+        {
+          "knot": "trefoil",
+          "partition": [
+            1,
+            1
+          ],
+          "atom": "electron",
+          "braid_word": "σ_1^3",
+          "strand_count": 2,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": -3,
+              "coefficient": "-1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / sign Hecke rep σ_i ↦ −q⁻¹ on σ_1^3 ⇒ (−q⁻¹)^3",
+          "notes": "χ⁽¹,¹⁾(σ_1^3) = (−q⁻¹)^3 exactly (1-dim sign rep). Not palindromic; stored in q-Laurent form."
+        },
+        {
+          "knot": "cinquefoil",
+          "partition": [
+            2
+          ],
+          "atom": "muon",
+          "braid_word": "σ_1^5",
+          "strand_count": 2,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": 5,
+              "coefficient": "1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / trivial Hecke rep σ_i ↦ q on σ_1^5 ⇒ q^5",
+          "notes": "χ⁽²⁾(σ_1^5) = q^5 exactly (1-dim trivial rep). Not palindromic; stored in q-Laurent form."
+        },
+        {
+          "knot": "cinquefoil",
+          "partition": [
+            1,
+            1
+          ],
+          "atom": "muon",
+          "braid_word": "σ_1^5",
+          "strand_count": 2,
+          "chi_lambda_q_laurent": [
+            {
+              "q_degree": -5,
+              "coefficient": "-1"
+            }
+          ],
+          "mu_eigenvalues": [
+            "1"
+          ],
+          "k_lambda": 2,
+          "y_lambda_at_zero": "1",
+          "y_star_shadow_price": null,
+          "tier": "derived",
+          "q_convention": "kauffman",
+          "derivation_ref": "qou/folio-assistant/computations/derived_chi_catalogue_build.py (this script; independent re-derivation cross-validating PR #1933 / T17) / sign Hecke rep σ_i ↦ −q⁻¹ on σ_1^5 ⇒ (−q⁻¹)^5",
+          "notes": "χ⁽¹,¹⁾(σ_1^5) = (−q⁻¹)^5 exactly (1-dim sign rep). Not palindromic; stored in q-Laurent form."
         }
       ]
     },
-    "sweep_parameters": {
-      "max_A": 5,
-      "max_partitions_per_atom": 0,
-      "merge_existing": false
-    },
-    "per_atom_summary": {
-      "p": {
-        "Z": 1,
-        "N": 0,
-        "A": 1,
-        "n_strands": 3,
-        "crossings": 0,
-        "partitions_swept": 3,
-        "cells_emitted": 3,
-        "elapsed_seconds": 0.02927030800128705
-      },
-      "n": {
-        "Z": 0,
-        "N": 1,
-        "A": 1,
-        "n_strands": 3,
-        "crossings": 0,
-        "partitions_swept": 3,
-        "cells_emitted": 3,
-        "elapsed_seconds": 0.013402036000115913
-      },
-      "D": {
-        "Z": 1,
-        "N": 1,
-        "A": 2,
-        "n_strands": 6,
-        "crossings": 23,
-        "partitions_swept": 11,
-        "cells_emitted": 11,
-        "elapsed_seconds": 0.01533296299930953
-      },
-      "T": {
-        "Z": 1,
-        "N": 2,
-        "A": 3,
-        "n_strands": 9,
-        "crossings": 35,
-        "partitions_swept": 30,
-        "cells_emitted": 30,
-        "elapsed_seconds": 0.05522281600133283
-      },
-      "3He": {
-        "Z": 2,
-        "N": 1,
-        "A": 3,
-        "n_strands": 9,
-        "crossings": 35,
-        "partitions_swept": 30,
-        "cells_emitted": 30,
-        "elapsed_seconds": 0.054208684001423535
-      },
-      "4He": {
-        "Z": 2,
-        "N": 2,
-        "A": 4,
-        "n_strands": 12,
-        "crossings": 47,
-        "partitions_swept": 77,
-        "cells_emitted": 77,
-        "elapsed_seconds": 0.5981369240016647
-      },
-      "5Li": {
-        "Z": 3,
-        "N": 2,
-        "A": 5,
-        "n_strands": 15,
-        "crossings": 59,
-        "partitions_swept": 176,
-        "cells_emitted": 176,
-        "elapsed_seconds": 11.111703069000214
-      }
-    },
-    "sweep_wall_seconds": 11.879161696000665,
-    "backend": "pyhecke_native.chi_q_via_gp (Rust)"
+    "schema_note": "chi_lambda_q_laurent stores χ^λ(β_K) as a list of (q_degree, coefficient) pairs; negative q-degrees allowed. Phase-2 schema migration (was h-degree). For palindromic cells (amphichiral knots), the h-form is cited in `notes`.",
+    "rmatrix_traces_h3": {
+      "borromean": "-2*q**6 + 6*q**4 - 6*q**2 + 12 - 6/q**2 + 6/q**4 - 2/q**6",
+      "figure_eight": "2*q**4 - 4*q**2 + 6 - 4/q**2 + 2/q**4"
+    }
   }
 }

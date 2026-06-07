@@ -71,6 +71,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from derived_chi_catalogue import (  # noqa: E402
     DerivedChiCatalogue,
     KnotPartitionAtomCell,
+    load_catalogue,
 )
 
 
@@ -361,7 +362,15 @@ def main() -> int:
     print(" 3-axis catalogue — Phase 1 + Phase 2 build (5 knots, 12 cells)")
     print("=" * 78)
 
-    cat = DerivedChiCatalogue()
+    # Merge into existing catalogue if present so Phase 2 sympy cells
+    # coexist with Phase 3 Rust production cells in a single witness.
+    try:
+        cat = load_catalogue()
+        print(f"  merging into existing catalogue: {len(cat.cells)} cells "
+              f"({cat.tier_counts()})")
+    except FileNotFoundError:
+        cat = DerivedChiCatalogue()
+        print("  no existing catalogue — starting fresh")
 
     # ── B_3 knots: Borromean + Figure-eight ──
     # T17's value used as the cross-check on the (2,1) block of Borromean.
@@ -430,12 +439,19 @@ def main() -> int:
         expected=True,
         source="Figure-eight Schur-Weyl: 4·χ^(3) + 2·χ^(2,1) = tr_{V⊗³}(β_4₁).",
     )
+    # When merging into an existing catalogue, count only the Phase-2 sympy
+    # cells (knot names: borromean, figure-eight, hopf, trefoil, cinquefoil).
+    phase2_count = sum(
+        1 for c in cat.cells
+        if c.knot in {"borromean", "figure-eight", "hopf", "trefoil", "cinquefoil"}
+    )
     wb.add_assertion(
-        "twelve_cells_emitted",
-        computed=len(cat.cells) == 12,
+        "twelve_phase2_cells_emitted",
+        computed=phase2_count == 12,
         expected=True,
         source="Phase 1 + Phase 2 emit 3·H_3 + 3·H_3 + 3·H_2 = 12 cells "
-               "(Borromean + Figure-eight + Hopf + Trefoil + Cinquefoil).",
+               "(Borromean + Figure-eight + Hopf + Trefoil + Cinquefoil). "
+               "Robust to merging with Phase-3 production cells.",
     )
 
     # ── Emit witness ──
