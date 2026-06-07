@@ -63,7 +63,7 @@ from _gap_a4_qsafe import Q_0_50DPS  # noqa: E402
 from partition_utils import hook_lengths  # noqa: E402
 
 from pathlib import Path  # noqa: E402
-from math import factorial as _fact  # noqa: E402
+from math import factorial as _fact, prod  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 
@@ -88,21 +88,22 @@ def num_corners(lam: tuple) -> int:
 
 
 def num_SYT(lam: tuple) -> int:
-    """Standard Young Tableaux count = n! / Π hook lengths."""
-    n = sum(lam)
-    prod = 1
-    for h in hook_lengths(list(lam)):
-        prod *= h
-    return _fact(n) // prod
+    """Standard Young Tableaux count = n! / Π hook lengths (hook-length
+    formula, Frame-Robinson-Thrall 1954).  Equivalent to d_lambda from
+    the murnaghan_nakayama family but kept local since no canonical
+    `d_lambda` export exists in the repo's utility modules (Gemini
+    review suggested the import; the canonical location does not yet
+    provide it)."""
+    return _fact(sum(lam)) // prod(hook_lengths(list(lam)))
 
 
 def content_sum_signed(lam: tuple) -> int:
-    """Σ (j − i) over cells (i, j) of λ (1-indexed)."""
-    total = 0
-    for i, row_len in enumerate(lam, start=1):
-        for j in range(1, row_len + 1):
-            total += (j - i)
-    return total
+    """Σ (j − i) over cells (i, j) of λ (1-indexed).  Closed-form O(len(λ))
+    via Σ_i λ_i(λ_i − 2i + 1)/2 (Gemini review #1932 optimisation)."""
+    return sum(
+        row_len * (row_len - 2 * i + 1) // 2
+        for i, row_len in enumerate(lam, start=1)
+    )
 
 
 # ── Tests ─────────────────────────────────────────────────────────
@@ -170,9 +171,7 @@ def check_h4_candidates() -> dict:
     print("T16c — h⁴ candidates (target −3)")
     print("=" * 78)
     n_cells = sum(TWO_ONE)
-    hook_product = 1
-    for h in hook_lengths(list(TWO_ONE)):
-        hook_product *= h
+    hook_product = prod(hook_lengths(list(TWO_ONE)))
     n_corners = num_corners(TWO_ONE)
     n_borromean_components = 3
     candidates = {
@@ -282,13 +281,9 @@ def main():
             "(removing either yields a valid Young diagram)."
         ),
     )
-    hooks_two_one = hook_lengths(list(TWO_ONE))
-    hook_product = 1
-    for h in hooks_two_one:
-        hook_product *= h
     w.add_assertion(
         "hook_product_equals_3",
-        computed=float(hook_product),
+        computed=float(prod(hook_lengths(list(TWO_ONE)))),
         expected=3.0,
         tolerance=0.0,
         source=(
