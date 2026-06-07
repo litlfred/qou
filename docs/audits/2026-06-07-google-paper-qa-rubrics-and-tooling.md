@@ -10,7 +10,7 @@ This doc covers four asks: (1) wire the AlphaProof-Nexus **rater rubric** in as 
 
 ## Part 1 — Rater rubric as scored QA criteria (+ rate→improve loop)
 
-**Status: not yet a sidecar.** Corpus-grep (`strategy.clar|plausibilit|novelty|rater|plackett|p-?ucb|sketch.qualit`) hits only the gap-criticality *skill* (`proof-gap-audit`) and `ontologist` — no scored criterion exists.
+**Status: not yet a sidecar.** Corpus-grep (regex, `.` = wildcard) `strategy.clar|plausibilit|novelty|rater|plackett|p-?ucb|sketch.qualit` hits only the gap-criticality *skill* (`proof-gap-audit`) and `ontologist` — no scored criterion exists.
 
 **What the paper does.** In tier (C), **rater subagents (Gemini Flash)** rank proof *sketches* by **strategy clarity / plausibility of remaining goals / novelty** → Plackett–Luce → Gibbs → Elo → P-UCB sampling drives the search. It is a **quality score**, not pass/fail.
 
@@ -19,14 +19,16 @@ This doc covers four asks: (1) wire the AlphaProof-Nexus **rater rubric** in as 
 | Criterion | Question (0–1 score) |
 |---|---|
 | `proof-rater-strategy-clarity` | Is the proof *strategy* explicit and legible — would a competent reader know the plan before reading the steps? |
-| `proof-rater-goal-plausibility` | For any remaining `sorry`/gap, how plausible is closing it (cross-refs the gap-criticality `routine\|core\|restates-target` tag)? `restates-target` ⇒ score 0. |
+| `proof-rater-goal-plausibility` | For any remaining `sorry`/gap, how plausible is closing it (cross-refs the gap-criticality tag `routine`, `core`, `restates-target`)? `restates-target` ⇒ score 0. |
 | `proof-rater-novelty` | Does the proof/approach add something non-redundant vs. the corpus (not a near-duplicate of a sibling proof)? |
 
 **Schema change (minimal).** `QaCriterionEntry` gains an optional
 `score?: { value: number; max: number; rubric?: Record<string, number> }`.
-Rater criteria populate `score` (and map to `result`: `value ≥ 0.66 → pass`,
-`0.33–0.66 → warn`, `< 0.33 → fail`/`minor` — informational, **not**
-merge-blocking by default; the existing pass/fail criteria remain the gates).
+Rater criteria populate `score` and map to a single `result` per band (the
+exact `QaCriterionEntry.result` enum): `value ≥ 0.66 → "pass"`;
+`0.33 ≤ value < 0.66 → "warn"`; `value < 0.33 → "fail"` (severity `"minor"`).
+Informational — **not** merge-blocking by default; the existing pass/fail
+criteria remain the gates.
 
 **Rate→improve loop (the AlphaProof-Nexus pattern, applied to QOU):**
 - **`/integration-watch proof`** dispatches a rater agent per fresh proof block → writes a `score` entry (reviewer `kind: "agent"`). This is the *rate* half.
@@ -87,7 +89,7 @@ The three new criteria (`proof-statement-integrity`, `canonical-refutation-forma
 
 ## Implementation status (this PR)
 - [x] Design + discussions (this doc).
-- [ ] Schema: `score?` on `QaCriterionEntry` (`block-qa.ts`).
-- [ ] Registry: `proof-rater-{strategy-clarity,goal-plausibility,novelty}` (+ Part-2 criteria) in `qa-criteria-registry.ts`.
-- [ ] Wire rate→improve into `proof-integration-watcher.md` (dispatch) + `integration-backlog.md` (ascending-score drain + re-rate).
+- [x] Schema: `score?` on `QaCriterionEntry` (`block-qa.ts`).
+- [x] Registry: `proof-rater-{strategy-clarity,goal-plausibility,novelty}` + `proof-statement-integrity` in `qa-criteria-registry.ts`. (Part-2 `canonical-refutation-formalized` / `compute-evolve-value-fenced` deferred to a follow-up so the first rollout + baseline stays focused on proof blocks — "no QA issues at scale".)
+- [x] Wire rate→improve into `proof-integration-watcher.md` (dispatch table) + `integration-backlog.md` (ascending-score drain + re-rate).
 - [ ] Parts 3 & 4 are **discussion only** — no code here; Part 3 (prover-MCP) and Part 4 Option B (exporter) are follow-up tranches pending owner go-ahead.
