@@ -41,3 +41,49 @@ $5_2$ is non-arithmetic; the Borromean rings $\mathcal{B}_3$, as a
 3-component link, fall outside Reid's classification entirely.  The
 three complements are pairwise non-commensurable, so the Borel--Zagier
 conjecture would at least yield their $\mathbb{Q}$-linear independence.
+
+**Scope --- external open problem, partial categorical approach.**
+This conjecture is *not* internal to the framework.  In all three of its
+forms
+
+$$
+  \text{irrationality}
+  \;\Longleftarrow\;
+  \mathbb{Q}\text{-linear independence}
+  \;\Longleftarrow\;
+  \text{algebraic independence}
+$$
+
+it is a special case of recognised open problems in transcendental
+number theory: [single-volume irrationality](#conj:single-volume-irrationality)
+(open --- no hyperbolic 3-manifold volume has ever been proved
+irrational), [Borel--Zagier](#conj:borel-zagier-qou-volumes), and, in the
+present algebraic-independence form, the Kontsevich--Zagier period
+conjecture and Grothendieck's period conjecture (algebraic independence
+of periods is governed by the motivic Galois group).  Only the *choice*
+of the three knots $4_1, 5_2, \mathcal{B}_3$ is framework-specific; the
+hardness is entirely external.
+
+The framework does not close the conjecture --- it offers a *partial,
+conditional* categorical approach.  The
+[transcendence shadow](#rem:yekutieli-transcendence-shadow) reduces
+algebraic independence to non-collapse of the brane tower *plus* a
+Nesterenko-type arithmetic control of the quantum dilogarithm at every
+tower level; that second ingredient is the external open input, so the
+reduction relocates the difficulty rather than removing it.  The Lean
+formalisation proves only the *structural* half --- the tower
+decomposition, Chern--Simons faithfulness, and the downstream
+implications (algebraic independence $\Rightarrow$ Borel--Zagier
+$\Rightarrow$ irrationality) --- while the transcendence core is
+axiomatised as the class `HyperbolicVolumeIndependence` per the
+conditional-class convention.
+
+The conjecture is retained not because the paper depends on it, but as
+the *ideal* statement: the guarantee that the predicted spectrum is no
+algebraic coincidence.  As the [formal-chain
+remark](#rem:formal-chain-transcendence) records, the mass predictions
+and the categorical derivation live entirely over $\mathbb{Z}[q, q^{-1}]$
+and are unaffected whether the volumes are transcendental, algebraic, or
+rational.  The framework operates only with the *proved* numerical
+[distinctness](#prf:knot-volumes-verification) of the three volumes,
+which is all the predictions require.
