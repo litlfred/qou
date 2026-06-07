@@ -1879,7 +1879,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b2db259c9964",
+          "ts": "c9c24dbb4c23",
+          "lean": "c2bb575e6ad5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition of higher differential forms Omega^k(A)=∧^k Omega^1(A) for a QU; placed in the QU section alongside higher-forms-su2; names a genuine new construction (definition kind correct).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:34:13.290Z",
+        "reviewed_sha": "f36a6280c41e008109ec5c537eb12d510d320142",
+        "notes": "Well-placed; kind matches content."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b2db259c9964",
+          "ts": "c9c24dbb4c23",
+          "lean": "c2bb575e6ad5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Generic categorical definition (exterior powers of an A-bimodule in C, de Rham complex with d^2=0); no Real.*, numeric q, MeV, or order hypothesis.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:34:13.332Z",
+        "reviewed_sha": "f36a6280c41e008109ec5c537eb12d510d320142",
+        "notes": "Correct substrate-side; chapter is generic-ring."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T00:34:13.332Z"
 }
