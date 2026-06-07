@@ -8,9 +8,10 @@ import Mathlib.Tactic
 Beta decay is a universal 2×2 matrix-valued polynomial in q.
 The two elementary decay matrices (nn→mix and mix→pp) are IDENTICAL:
 
-  Δ_β(q) = ½(1-q²)·T_pp(q) + ½q·s·I
+  Δ_β(q) = ½(q - q⁻¹)·I
 
-where s = q½ - q⁻½ and I is the 2×2 identity.
+where I is the 2×2 identity (Hecke-inverse convention, no fractional
+powers of q).
 
 This universality follows from T_mix = ½(T_pp + T_nn): the mixed
 matrix is the exact midpoint, so both steps are the same displacement.
@@ -40,17 +41,18 @@ noncomputable def tm (q c d : ℝ) : TM where
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
 noncomputable def T_pp (q : ℝ) : TM := tm q 1 0
 
-/-- T_nn: neutron-neutron crossing (c=q², d=-q·s). -/
+/-- T_nn: neutron-neutron crossing (c=1, d=-(q-q⁻¹)).
+    Hecke-inverse convention: T(1, -(q-q⁻¹)) consistent with
+    σ⁻¹ = σ - (q - q⁻¹). No fractional powers of q. -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
 noncomputable def T_nn (q : ℝ) : TM :=
-  let q_half := q ^ (1/2 : ℝ)
-  tm q (q^2) (-q * (q_half - 1 / q_half))
+  tm q 1 (-(q - 1/q))
 
-/-- T_mix: mixed crossing (c=½(1+q²), d=-½q·s). -/
+/-- T_mix: mixed crossing (c=1, d=-½(q-q⁻¹)).
+    The algebraic average ½(σ + σ⁻¹). No fractional powers of q. -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
 noncomputable def T_mix (q : ℝ) : TM :=
-  let q_half := q ^ (1/2 : ℝ)
-  tm q ((1 + q^2) / 2) (-q * (q_half - 1 / q_half) / 2)
+  tm q 1 (-(q - 1/q) / 2)
 
 /-- Matrix subtraction. -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
@@ -67,25 +69,23 @@ noncomputable def Delta_beta (q : ℝ) : TM :=
 /-- UNIVERSALITY: Δ_β^{nn→mix} = Δ_β^{mix→pp}.
     The two elementary decay matrices are the same. -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
-theorem beta_decay_universal (q : ℝ) (hq : q ≠ 0) :
+theorem beta_decay_universal (q : ℝ) :
     let d1 := (T_mix q).sub (T_nn q)
     let d2 := (T_pp q).sub (T_mix q)
     d1.a₁₁ = d2.a₁₁ ∧ d1.a₁₂ = d2.a₁₂ ∧
     d1.a₂₁ = d2.a₂₁ ∧ d1.a₂₂ = d2.a₂₂ := by
   unfold T_mix T_pp T_nn tm TM.sub
-  simp
-  constructor <;> ring
+  refine ⟨by ring, by ring, by ring, by ring⟩
 
 /-- T_mix is the exact midpoint: T_mix = ½(T_pp + T_nn). -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
-theorem T_mix_midpoint (q : ℝ) (hq : q ≠ 0) :
+theorem T_mix_midpoint (q : ℝ) :
     let pp := T_pp q; let nn := T_nn q; let mx := T_mix q
     mx.a₁₂ = (pp.a₁₂ + nn.a₁₂) / 2 ∧
     mx.a₂₁ = (pp.a₂₁ + nn.a₂₁) / 2 ∧
     mx.a₂₂ = (pp.a₂₂ + nn.a₂₂) / 2 := by
   unfold T_pp T_nn T_mix tm
-  simp
-  constructor <;> ring
+  refine ⟨by ring, by ring, by ring⟩
 
 /-- At q = 1, the decay matrix vanishes (no beta decay). -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
@@ -93,8 +93,7 @@ theorem beta_decay_vanishes_classical :
     let d := Delta_beta 1
     d.a₁₂ = 0 ∧ d.a₂₁ = 0 := by
   unfold Delta_beta T_mix T_nn tm TM.sub
-  simp
-  constructor <;> norm_num
+  refine ⟨by norm_num, by norm_num⟩
 
 /-- The Markov-traced volume from a transfer matrix. -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
@@ -126,29 +125,27 @@ noncomputable def hecke_coeff_at_q : ℝ := 1.110 - 1 / 1.110
 theorem hecke_coeff_pos : 0 < hecke_coeff_at_q := by
   unfold hecke_coeff_at_q; norm_num
 
-/-- The decay matrix diagonal entries have opposite sign to off-diagonal:
-    a₁₁ > 0, a₁₂ < 0, a₂₁ < 0, a₂₂ > 0 for q > 1.
-    This is the "antidiagonal-dominant" pattern. -/
+/-- The decay matrix is a scalar multiple of the identity:
+    Δ_β(q) = ½(q - q⁻¹)·I, so the diagonal entry is (q - q⁻¹)/2
+    and the off-diagonal entries vanish. -/
 -- Ref: [manuscript] §6/beta-decay-transfer-matrix
-theorem decay_matrix_sign_pattern (q : ℝ) (hq : 1 < q) :
-    let d := Delta_beta q
-    d.a₁₂ < 0 := by
+theorem decay_matrix_sign_pattern (q : ℝ) :
+    (Delta_beta q).a₁₁ = (q - 1/q) / 2 := by
   unfold Delta_beta T_mix T_nn tm TM.sub
-  simp
-  nlinarith
-
-/-- Decay matrix off-diagonal entry is (1-q²)/2, which is negative for q > 1. -/
--- Ref: [manuscript] §6/beta-decay-transfer-matrix
-theorem decay_offdiag_formula (q : ℝ) (hq : q ≠ 0) :
-    (Delta_beta q).a₁₂ = (1 - q ^ 2) / 2 := by
-  unfold Delta_beta T_mix T_nn tm TM.sub
-  simp
   ring
 
-/-- At q = 1.110: off-diagonal = (1 - 1.110²)/2 ≈ -0.1161. -/
+/-- Decay matrix off-diagonal entry is 0: Δ_β = ½(q - q⁻¹)·I is
+    scalar (the off-diagonal `c` entries cancel between T_mix and T_nn). -/
+-- Ref: [manuscript] §6/beta-decay-transfer-matrix
+theorem decay_offdiag_formula (q : ℝ) :
+    (Delta_beta q).a₁₂ = 0 := by
+  unfold Delta_beta T_mix T_nn tm TM.sub
+  ring
+
+/-- At q = 1.110: off-diagonal = 0 (the decay matrix is scalar). -/
 -- Ref: [manuscript] beta-decay-matrix.witness.json
-theorem decay_offdiag_at_q : (Delta_beta 1.110).a₁₂ = (1 - 1.110 ^ 2) / 2 := by
-  exact decay_offdiag_formula 1.110 (by norm_num)
+theorem decay_offdiag_at_q : (Delta_beta 1.110).a₁₂ = 0 := by
+  exact decay_offdiag_formula 1.110
 
 /-- Tritium Skein polynomial ratio: P(³He)/P(³H) ≈ 0.9029.
     Source: beta-decay-matrix.witness.json. -/
