@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "e08ffc7b6254",
-    "ts": "e5ad382af648",
-    "lean": "6457135e46ef"
+    "ts": "e5ad382af648"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2601,7 +2600,91 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e08ffc7b6254",
+          "ts": "e5ad382af648"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "'**Why this matters for mass-tower computations.**' carries significance prose ('the logarithmic-weighting magic ... would be unjustified') in-block; no interprets: companion",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:43:42.321Z",
+        "reviewed_sha": "43b8d37cf87d056106442fa54caa0a9024f1109c",
+        "notes": "Statement+proof+corollary bare; embedded motivation section borderline"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e08ffc7b6254",
+          "ts": "e5ad382af648"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Plancherel-weight probability distribution underpinning mass-tower convergence; squarely mass-theory scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:43:42.365Z",
+        "reviewed_sha": "43b8d37cf87d056106442fa54caa0a9024f1109c",
+        "notes": "Well-placed; uses unified-curvature-rank-mass-formula"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e08ffc7b6254",
+          "ts": "e5ad382af648"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement over A=H_n(R,q) generic q; w_lambda in [0,1] and sum=1 exact in Q (ratios of positive integers), no Real.*/MeV",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:43:42.407Z",
+        "reviewed_sha": "43b8d37cf87d056106442fa54caa0a9024f1109c",
+        "notes": "Numeric q0=1.1099 appears only in Remark/table, not the statement"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e08ffc7b6254",
+          "ts": "e5ad382af648"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof = classical Plancherel identity n!=sum (dim V_lambda)^2 divided by n!, in Q; combinatorial, no linarith/IVT/Real.*",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:43:42.450Z",
+        "reviewed_sha": "43b8d37cf87d056106442fa54caa0a9024f1109c",
+        "notes": "Algebraic proof matches algebraic statement"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T01:43:42.450Z"
 }
