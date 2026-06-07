@@ -55,9 +55,11 @@ expression `8 · catalan_G` rather than a 15-digit SnapPy decimal
 approximation.  This discharges the former `vol_B3_eq_8_catalan`
 axiom (now a `theorem … := rfl`) and gives `vol_B3` infinite
 mathematical precision: the only remaining numerical input is the
-`catalan_G_numerical_bounds` axiom (a 24-digit literature value
-from OEIS A006752 / Lewin 1981 §1.7.8), which is itself a 1-line
-numerical assertion rather than a per-knot measurement. -/
+`catalan_G_numerical_bounds` axiom, which records a *coarse*
+two-sided interval `0.915 < G < 0.916` from the literature value
+(OEIS A006752 / Lewin 1981 §1.7.8 list 24 digits, of which only
+the first three are needed for this interval). It is a 1-line
+numerical assertion, not a per-knot measurement. -/
 
 /-- Catalan's constant `G = Σ_{k=0}^∞ (-1)^k / (2k+1)²`.
 
