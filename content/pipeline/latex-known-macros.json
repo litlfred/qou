@@ -1,5 +1,5 @@
 {
-  "_comment": "Seeded standard/package LaTeX control sequences in actual use across main.tex + chapters/*.tex. Regenerate with: bun run pipeline/latex-preflight.ts --seed. Adding a name asserts it is a real standard/package command whose package is loaded in latex/preamble.tex.",
+  "_comment": "Seeded standard/package LaTeX control sequences in actual use across main.tex + chapters/*.tex (comment + verbatim contexts stripped). Regenerate with: bun run pipeline/latex-preflight.ts --seed. Adding a name asserts it is a real standard/package command whose package is loaded in latex/preamble.tex.",
   "macros": [
     "\\@empty",
     "\\@ifnextchar",
