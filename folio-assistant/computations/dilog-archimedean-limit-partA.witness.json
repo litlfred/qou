@@ -1,0 +1,131 @@
+{
+  "schema": "qou-witness/v1",
+  "name": "dilog-archimedean-limit-partA",
+  "description": "Numerical confirmation of Part A of conj:dilogarithm-archimedean-limit: (1-q) log Phi_n(x;q) -> Li_2(x) for fixed x in (0,1), q -> 1^-, along Faddeev scaling. Error tracks the elementary monotone-Riemann-sum + tail bound.",
+  "computation": {
+    "engine": "python+mpmath",
+    "dps": 40,
+    "C_n_eps": "30.0",
+    "script": "folio-assistant/computations/dilog_archimedean_partA_witness.py"
+  },
+  "scriptCommitSha": "",
+  "scriptHash": "efdd4b1f6974",
+  "computedAt": "2026-06-07T05:04:45.280922+00:00",
+  "result": {
+    "all_within_bound_and_monotone": true,
+    "rows": [
+      {
+        "x": "0.2",
+        "Li2_x": "0.211003775439704773",
+        "sweep": [
+          {
+            "eps": "0.01",
+            "q": "0.990049833749",
+            "n": 3000,
+            "value": "0.211064495179321678",
+            "abs_error": "6.07197e-5",
+            "predicted_bound": "0.00223144",
+            "within_bound": true,
+            "error_shrinks": true
+          },
+          {
+            "eps": "0.001",
+            "q": "0.999000499833",
+            "n": 30000,
+            "value": "0.211009845541751457",
+            "abs_error": "6.0701e-6",
+            "predicted_bound": "0.000223144",
+            "within_bound": true,
+            "error_shrinks": true
+          },
+          {
+            "eps": "0.0001",
+            "q": "0.999900005",
+            "n": 300000,
+            "value": "0.211004382430626584",
+            "abs_error": "6.06991e-7",
+            "predicted_bound": "2.23144e-5",
+            "within_bound": true,
+            "error_shrinks": true
+          }
+        ]
+      },
+      {
+        "x": "0.5",
+        "Li2_x": "0.582240526465012506",
+        "sweep": [
+          {
+            "eps": "0.01",
+            "q": "0.990049833749",
+            "n": 3000,
+            "value": "0.582795760193561781",
+            "abs_error": "0.000555234",
+            "predicted_bound": "0.00693147",
+            "within_bound": true,
+            "error_shrinks": true
+          },
+          {
+            "eps": "0.001",
+            "q": "0.999000499833",
+            "n": 30000,
+            "value": "0.582295986870470668",
+            "abs_error": "5.54604e-5",
+            "predicted_bound": "0.000693147",
+            "within_bound": true,
+            "error_shrinks": true
+          },
+          {
+            "eps": "0.0001",
+            "q": "0.999900005",
+            "n": 300000,
+            "value": "0.582246071868528559",
+            "abs_error": "5.5454e-6",
+            "predicted_bound": "6.93147e-5",
+            "within_bound": true,
+            "error_shrinks": true
+          }
+        ]
+      },
+      {
+        "x": "0.8",
+        "Li2_x": "1.07479460000824836",
+        "sweep": [
+          {
+            "eps": "0.01",
+            "q": "0.990049833749",
+            "n": 3000,
+            "value": "1.07747874769204992",
+            "abs_error": "0.00268415",
+            "predicted_bound": "0.0160944",
+            "within_bound": true,
+            "error_shrinks": true
+          },
+          {
+            "eps": "0.001",
+            "q": "0.999000499833",
+            "n": 30000,
+            "value": "1.07506203169312613",
+            "abs_error": "0.000267432",
+            "predicted_bound": "0.00160944",
+            "within_bound": true,
+            "error_shrinks": true
+          },
+          {
+            "eps": "0.0001",
+            "q": "0.999900005",
+            "n": 300000,
+            "value": "1.07482133327478032",
+            "abs_error": "2.67333e-5",
+            "predicted_bound": "0.000160944",
+            "within_bound": true,
+            "error_shrinks": true
+          }
+        ]
+      }
+    ]
+  },
+  "refs": [
+    "docs/audits/2026-06-07-dilog-archimedean-limit-part-A-elementary.md",
+    "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.md"
+  ]
+}
