@@ -26,10 +26,22 @@ This file provides:
   `LiTwo x` along Faddeev's joint scaling. The class is the §3b-cond
   hook used by `prop:archimedean-functor-uniqueness`.
 
-A complete sorry-free Lean proof of the convergence still awaits
-Mathlib infrastructure (a uniform Tauberian theorem, branch-cut
-control on the principal-branch dilogarithm). The class formulation
-isolates that gap.
+Difficulty split (see audit
+`docs/audits/2026-06-07-dilog-archimedean-limit-part-A-elementary.md`):
+* **Part A** — fixed `x ∈ (0,1)`, convergence side `q → 1⁻` — is
+  mathematically ELEMENTARY (a monotone left-Riemann-sum limit, an
+  exponential tail bound, and the factor `(1-q)/ℏ → 1`; no Tauberian
+  theorem, no branch cut, since `1 - x q^k ≥ 1 - x > 0`). A sorry-free
+  Lean proof of Part A is gated only on Mathlib Riemann-sum-to-integral
+  convergence plus the identity `∫₀ˣ -log(1-t)/t = Σ_{k≥1} xᵏ/k²` — the
+  infrastructure bottleneck noted in the 2026-05-30 closure audit.
+* **Part B** — the substrate continuation `q → 1⁺` (to `q₀ ≈ 1.11`) and
+  uniformity as `x → 1⁻` — is the genuine open content: there the factors
+  `1 - x q^k` change sign (the poles of `Φ_n` approach the `Li₂` branch
+  cut) and the Frobenius-pairing pole cancellation must do real work.
+
+The class formulation isolates these gaps; the unconditional `x = 0`
+instance below is the boundary anchor.
 
 -- Ref: [manuscript] conj:dilogarithm-archimedean-limit
 -- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
