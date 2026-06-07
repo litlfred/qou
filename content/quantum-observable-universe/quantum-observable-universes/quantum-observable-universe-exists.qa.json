@@ -2498,32 +2498,6 @@
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
     ],
-    "detangler-graph-energy": [
-      {
-        "field_hash": {
-          "md": "b47e9f6122be",
-          "ts": "a243ee09d888",
-          "lean": "60e126a06902"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "4e0e86aefa4e",
-          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
-        },
-        "reviewed_at": "2026-06-07T04:13:32.223Z",
-        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
-        "metrics": {
-          "graph_energy": 120,
-          "fwd_edge_count": 2,
-          "worst_span": 106
-        },
-        "severity": "major",
-        "evidence": "quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.ts:0: forward edge to ex:qou-su2 spans 14 manifest positions | quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.ts:0: forward edge to ex:c-quantum-observable-universe spans 106 manifest positions"
-      }
-    ],
     "detangler-topic-coherence": [
       {
         "field_hash": {
@@ -2599,7 +2573,31 @@
         "reviewed_at": "2026-06-07T05:35:26.749Z",
         "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 14,
+          "fwd_edge_count": 1,
+          "worst_span": 14
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:35:26.749Z"
+  "updated_at": "2026-06-07T05:58:41.267Z"
 }
