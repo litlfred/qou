@@ -408,7 +408,7 @@ def main() -> int:
     out = wb.save()
     print()
     print(f"  ✓ Witness: {out.name}")
-    return 0 if all_clean else 1
+    return 0 if all_validated else 1
 
 
 if __name__ == "__main__":
