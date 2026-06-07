@@ -21,4 +21,25 @@ export default conjecture({
     "phase-3-leverage-15-users",
     "algebraic-cauchy-limit-half-open",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      date: "2026-06-07",
+      body:
+        "**Split status (half-open): algebraic Cauchy-limit claim survives; " +
+        "n⋆ level-selection refuted.** Two independent claims live in this " +
+        "block. (1) The algebraic claim — that the brane tower " +
+        "Φ_mass^trans(β) = Σ Φ_q(z_i) has a Cauchy limit in the z-Habiro " +
+        "topology — remains OPEN (untouched). (2) The companion claim that a " +
+        "level-selection rule n⋆(𝔥) picks the physical truncation depth was " +
+        "REFUTED across six probed families (scalar, operator-valued, " +
+        "multiplicity-refined, pair-knot product, pair-knot Markov-trace, and " +
+        "the regularization sweep): no uniform n⋆ closes the AME gap — see the " +
+        "Yekutieli-truncation failure (D: ~22%, T: ~17000%) recorded in the " +
+        "block body and the linked `conj:mass-endomorphism` §'Two distinct " +
+        "convergence problems'. Report the two claims separately; do not cite " +
+        "the refuted n⋆ rule as live. (Conjecture-triage 2026-06-07.)",
+      see: "docs/audits/2026-06-07-conjecture-triage.md",
+    },
+  ],
 });
