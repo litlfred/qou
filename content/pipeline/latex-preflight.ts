@@ -20,30 +20,39 @@
  * It reads the GENERATED `main.tex` AND every `\input`/`\include` file it
  * pulls in (chapters/*.tex) — i.e. the exact text pdflatex compiles
  * (preamble inlined + manifest-generated macros + every chapter body).
- * Macro DEFINITIONS live in main.tex's inlined preamble; macro USES and
- * fragile constructs live mostly in the chapter bodies, so both must be
- * scanned together.
+ * Before scanning, comments and verbatim/code contexts (verbatim,
+ * lstlisting, minted, \verb, …) are stripped so a backslash shown
+ * *literally* in documentation is not mistaken for a macro use.
  *
  * Checks
  * ------
- *   A. duplicate-newcommand  — a control sequence defined by \newcommand /
- *      \DeclareMathOperator / … more than once → "! LaTeX Error: Command
- *      \X already defined." Canonical instance: the manifest re-emitting
- *      \newcommand{\pp}{\mathfrak{p}} while the preamble already defined
- *      \pp = p (fix b9e19df6). Zero false positives by construction.
+ *   A. duplicate-newcommand  — a control sequence defined more than once
+ *      by a definer that ERRORS on redefinition (\newcommand,
+ *      \DeclareMathOperator, \DeclarePairedDelimiter, \NewDocumentCommand)
+ *      → "! LaTeX Error: Command \X already defined." Definers that
+ *      silently overwrite (\renewcommand, \providecommand, \def, \let,
+ *      \DeclareRobustCommand, \DeclareDocumentCommand) are deliberately
+ *      excluded — redefining via those is legal. Canonical instance: the
+ *      manifest re-emitting \newcommand{\pp}{\mathfrak{p}} while the
+ *      preamble already defined \pp = p (fix b9e19df6).
  *
  *   B. undefined-macro — a control sequence USED that is neither defined
  *      in the compile unit nor in the seeded standard-command allowlist
  *      (latex-known-macros.json) → "! Undefined control sequence."
  *      (e.g. bare \tr). The allowlist is SEEDED from a clean-compiling
  *      compile unit via `--seed`, so every standard / package command in
- *      actual use is captured: zero false positives at seed time;
- *      re-introducing an undefined macro is then flagged.
+ *      actual use is captured: a clean seed yields no false positives,
+ *      and a re-introduced undefined macro is then flagged.
  *
  *   C. fragile-accent-script — a math accent (\check, \hat, …) used as the
  *      bare argument of a sub/superscript, e.g. `Q^\check{q}`. The
  *      accent's \mathpalette expansion breaks as a sole script token
  *      ("! Missing { inserted."). Fix: brace it — `Q^{\check{q}}`.
+ *
+ *   D. missing-input — an unconditional \input/\include target that does
+ *      not exist on disk → pdflatex "! LaTeX Error: File `…' not found."
+ *      Conditional includes (\IfFileExists / \InputIfFileExists, e.g.
+ *      print-mode.tex) are exempt.
  *
  * Usage
  * -----
@@ -71,8 +80,18 @@ const MATH_ACCENTS = [
   "overline", "underline", "overrightarrow", "overleftarrow",
 ];
 
+// ── Verbatim-like environments whose bodies are literal (skip them) ──
+const VERBATIM_ENVS = new Set([
+  "verbatim", "verbatim*", "lstlisting", "minted", "alltt",
+  "Verbatim", "BVerbatim", "LVerbatim", "comment",
+]);
+
 export interface PreflightIssue {
-  check: "duplicate-newcommand" | "undefined-macro" | "fragile-accent-script";
+  check:
+    | "duplicate-newcommand"
+    | "undefined-macro"
+    | "fragile-accent-script"
+    | "missing-input";
   macro: string;
   file: string;
   line: number;
@@ -88,66 +107,147 @@ export interface PreflightResult {
   filesScanned: number;
 }
 
-/** One source line tagged with its originating file + line number. */
+/** One source line, already cleaned (comment + verbatim stripped). */
 interface LineRecord {
   file: string;
   line: number;
   text: string;
 }
 
-/** Strip TeX line/percent comments (a `%` not preceded by a backslash). */
-function stripComment(line: string): string {
-  let out = "";
-  for (let i = 0; i < line.length; i++) {
-    if (line[i] === "%" && (i === 0 || line[i - 1] !== "\\")) break;
-    out += line[i];
-  }
-  return out;
+/** Count the run of backslashes immediately preceding position `i`. */
+function precedingBackslashes(s: string, i: number): number {
+  let n = 0;
+  for (let j = i - 1; j >= 0 && s[j] === "\\"; j--) n++;
+  return n;
 }
 
 /**
- * Build the full compile unit: main.tex plus every `\input`/`\include`
- * file it references, recursively. Each line keeps its source file +
- * 1-based line number so issues point at the real location an author
- * edits. `\input` paths are resolved relative to the repo root (the
- * parent of the directory holding main.tex is the repo root here, but
- * the generated `\input{chapters/foo}` paths are relative to main.tex's
- * directory), with a `.tex` extension added when missing.
+ * Strip a TeX line/percent comment. A `%` starts a comment unless it is
+ * escaped — and it is escaped iff preceded by an ODD number of
+ * backslashes (`\%` literal; `\\%` is a line-break then a comment).
  */
-export function loadCompileUnit(mainTexPath: string): LineRecord[] {
+export function stripComment(line: string): string {
+  for (let i = 0; i < line.length; i++) {
+    if (line[i] === "%" && precedingBackslashes(line, i) % 2 === 0) {
+      return line.slice(0, i);
+    }
+  }
+  return line;
+}
+
+/**
+ * Remove inline verbatim spans `\verb<d>…<d>` / `\verb*<d>…<d>` /
+ * `\lstinline<d>…<d>` from a (comment-stripped) line so their literal
+ * backslashes are not read as macro uses. The delimiter `<d>` is the
+ * first non-space char after the command.
+ */
+function stripInlineVerb(line: string): string {
+  let out = line;
+  const re = /\\(?:verb\*?|lstinline)(\S)/g;
+  let m: RegExpExecArray | null;
+  // Rebuild left-to-right to avoid index drift.
+  let result = "";
+  let last = 0;
+  re.lastIndex = 0;
+  while ((m = re.exec(out)) !== null) {
+    const delim = m[1];
+    const close = out.indexOf(delim, re.lastIndex);
+    result += out.slice(last, m.index);
+    if (close === -1) {
+      // Unterminated — drop the rest of the line conservatively.
+      last = out.length;
+      re.lastIndex = out.length;
+      break;
+    }
+    last = close + 1;
+    re.lastIndex = close + 1;
+  }
+  result += out.slice(last);
+  return result;
+}
+
+/**
+ * Build the cleaned compile unit: main.tex plus every `\input`/`\include`
+ * file it references, recursively. `\input` paths are resolved relative
+ * to the directory of the file CURRENTLY being walked (so a nested
+ * include with a relative path resolves correctly), with `.tex` appended
+ * when missing. Each retained line is comment- and verbatim-stripped and
+ * tagged with its real source file + 1-based line number. Unconditional
+ * includes whose target is missing are reported as `missing-input`;
+ * conditional includes (\IfFileExists / \InputIfFileExists) are exempt.
+ */
+export function loadCompileUnit(mainTexPath: string): {
+  records: LineRecord[];
+  missing: { file: string; line: number; target: string }[];
+} {
   const records: LineRecord[] = [];
+  const missing: { file: string; line: number; target: string }[] = [];
   const seen = new Set<string>();
-  const baseDir = dirname(resolve(mainTexPath));
 
   const walk = (filePath: string) => {
     const abs = resolve(filePath);
     if (seen.has(abs)) return;
     seen.add(abs);
     if (!existsSync(abs)) return;
-    const lines = readFileSync(abs, "utf8").split("\n");
-    for (let i = 0; i < lines.length; i++) {
-      const text = lines[i];
-      records.push({ file: abs, line: i + 1, text });
-      // Follow \input{...} / \include{...} (single arg, no comment).
-      const stripped = stripComment(text);
+    const fileDir = dirname(abs);
+    const rawLines = readFileSync(abs, "utf8").split("\n");
+    let inVerbatim: string | null = null;
+
+    for (let i = 0; i < rawLines.length; i++) {
+      const raw = rawLines[i];
+
+      // Verbatim env tracking (before comment stripping — \end may be on
+      // the same line as content, but envs are line-oriented in practice).
+      if (inVerbatim) {
+        if (new RegExp(`\\\\end\\{${inVerbatim}\\}`).test(raw)) {
+          inVerbatim = null;
+        }
+        records.push({ file: abs, line: i + 1, text: "" });
+        continue;
+      }
+      const begin = raw.match(/\\begin\{([A-Za-z*]+)\}/);
+      if (begin && VERBATIM_ENVS.has(begin[1])) {
+        // Single-line \begin{verbatim}…\end{verbatim} guard.
+        if (!new RegExp(`\\\\end\\{${begin[1]}\\}`).test(raw)) {
+          inVerbatim = begin[1];
+        }
+        records.push({ file: abs, line: i + 1, text: "" });
+        continue;
+      }
+
+      const cleaned = stripInlineVerb(stripComment(raw));
+      records.push({ file: abs, line: i + 1, text: cleaned });
+
+      // Follow \input{...} / \include{...}.
+      const conditional = /\\(?:IfFileExists|InputIfFileExists)\b/.test(cleaned);
       const inputRe = /\\(?:input|include)\s*\{([^}]+)\}/g;
       let m: RegExpExecArray | null;
-      while ((m = inputRe.exec(stripped)) !== null) {
+      while ((m = inputRe.exec(cleaned)) !== null) {
         let target = m[1].trim();
-        if (!/\.tex$/.test(target)) target += ".tex";
-        const resolved = isAbsolute(target) ? target : join(baseDir, target);
-        walk(resolved);
+        if (!/\.[A-Za-z]+$/.test(target)) target += ".tex";
+        const resolved = isAbsolute(target) ? target : join(fileDir, target);
+        if (existsSync(resolved)) {
+          walk(resolved);
+        } else if (!conditional) {
+          missing.push({ file: abs, line: i + 1, target: m[1].trim() });
+        }
       }
     }
   };
 
   walk(resolve(mainTexPath));
-  return records;
+  return { records, missing };
 }
+
+/** Definers that ERROR on redefinition → a second one is fatal. */
+const FATAL_DEFINERS = new Set([
+  "newcommand", "DeclareMathOperator", "DeclarePairedDelimiter",
+  "NewDocumentCommand",
+]);
 
 /**
  * Extract macro names DEFINED across the compile unit, plus every
- * \newcommand-family definition occurrence (for the duplicate check).
+ * fatal-on-redefinition definition occurrence (for the duplicate check).
  */
 export function extractDefinedMacros(records: LineRecord[]): {
   defined: Set<string>;
@@ -161,28 +261,21 @@ export function extractDefinedMacros(records: LineRecord[]): {
   const ifRe = /\\newif\s*\\(if[a-zA-Z@]+)/g;
 
   for (const rec of records) {
-    const line = stripComment(rec.text);
+    if (!rec.text) continue;
     let m: RegExpExecArray | null;
     defRe.lastIndex = 0;
-    while ((m = defRe.exec(line)) !== null) {
+    while ((m = defRe.exec(rec.text)) !== null) {
       const definer = m[1].replace(/\*$/, "");
       const name = m[2];
       defined.add(name);
-      // Only \newcommand-family collisions are fatal ("already defined").
-      // \renewcommand / \def / \let intentionally overwrite.
-      const isNewcommand =
-        definer === "newcommand" ||
-        definer === "DeclareMathOperator" ||
-        definer === "DeclarePairedDelimiter" ||
-        definer === "NewDocumentCommand";
-      if (isNewcommand) {
+      if (FATAL_DEFINERS.has(definer)) {
         const arr = definitions.get(name) ?? [];
         arr.push({ file: rec.file, line: rec.line });
         definitions.set(name, arr);
       }
     }
     ifRe.lastIndex = 0;
-    while ((m = ifRe.exec(line)) !== null) {
+    while ((m = ifRe.exec(rec.text)) !== null) {
       const base = m[1].slice(2);
       defined.add("\\" + m[1]);
       defined.add("\\" + base + "true");
@@ -198,12 +291,12 @@ export function extractUsedMacros(
 ): { name: string; file: string; line: number }[] {
   const used: { name: string; file: string; line: number }[] = [];
   for (const rec of records) {
-    const line = stripComment(rec.text);
+    if (!rec.text) continue;
     // Multi-letter control words only. Single-char control symbols
     // (\&, \%, \\, \{, \|, …) are always defined and never the culprit.
     const re = /\\([a-zA-Z@]+)/g;
     let m: RegExpExecArray | null;
-    while ((m = re.exec(line)) !== null) {
+    while ((m = re.exec(rec.text)) !== null) {
       used.push({ name: "\\" + m[1], file: rec.file, line: rec.line });
     }
   }
@@ -235,14 +328,29 @@ function relPath(file: string): string {
 }
 
 export function runPreflight(mainTexPath: string): PreflightResult {
-  const records = loadCompileUnit(mainTexPath);
+  const { records, missing } = loadCompileUnit(mainTexPath);
   const filesScanned = new Set(records.map((r) => r.file)).size;
   const { defined, definitions } = extractDefinedMacros(records);
   const used = extractUsedMacros(records);
   const allowlist = loadAllowlist();
   const issues: PreflightIssue[] = [];
 
-  // ── Check A: duplicate \newcommand ─────────────────────────────────
+  // ── Check D: missing \input target ─────────────────────────────────
+  for (const miss of missing) {
+    issues.push({
+      check: "missing-input",
+      macro: miss.target,
+      file: miss.file,
+      line: miss.line,
+      message:
+        `Unconditional \\input/\\include target "${miss.target}" does ` +
+        `not exist (${relPath(miss.file)}:${miss.line}). pdflatex aborts ` +
+        `with "File \`${miss.target}' not found". Generate the file, fix ` +
+        `the path, or guard with \\IfFileExists if it is optional.`,
+    });
+  }
+
+  // ── Check A: duplicate fatal-on-redefinition definition ────────────
   for (const [name, locs] of definitions) {
     if (locs.length > 1) {
       const where = locs.map((l) => `${relPath(l.file)}:${l.line}`).join(", ");
@@ -252,10 +360,11 @@ export function runPreflight(mainTexPath: string): PreflightResult {
         file: locs[1].file,
         line: locs[1].line,
         message:
-          `Command ${name} defined ${locs.length}× via \\newcommand ` +
-          `(${where}). pdflatex aborts with "Command ${name} already ` +
-          `defined". Define it once (preamble OR manifest macros, not ` +
-          `both); use \\providecommand / \\renewcommand for an override.`,
+          `Command ${name} defined ${locs.length}× by a ` +
+          `fatal-on-redefinition definer (${where}). pdflatex aborts ` +
+          `with "Command ${name} already defined". Define it once ` +
+          `(preamble OR manifest macros, not both); use ` +
+          `\\providecommand / \\renewcommand for an intentional override.`,
       });
     }
   }
@@ -289,12 +398,14 @@ export function runPreflight(mainTexPath: string): PreflightResult {
     "g",
   );
   for (const rec of records) {
-    const line = stripComment(rec.text);
+    if (!rec.text) continue;
     accentRe.lastIndex = 0;
     let m: RegExpExecArray | null;
-    while ((m = accentRe.exec(line)) !== null) {
+    while ((m = accentRe.exec(rec.text)) !== null) {
+      // Skip if the ^/_ is itself escaped (\^ text-circumflex, \_ underscore).
+      if (precedingBackslashes(rec.text, m.index) % 2 !== 0) continue;
       const accent = "\\" + m[1];
-      const ctx = line.slice(Math.max(0, m.index - 4), m.index + 14);
+      const ctx = rec.text.slice(Math.max(0, m.index - 4), m.index + 14);
       issues.push({
         check: "fragile-accent-script",
         macro: accent,
@@ -322,7 +433,7 @@ export function runPreflight(mainTexPath: string): PreflightResult {
 
 /** Seed/refresh the standard-command allowlist from a clean compile unit. */
 export function seedAllowlist(mainTexPath: string): string[] {
-  const records = loadCompileUnit(mainTexPath);
+  const { records } = loadCompileUnit(mainTexPath);
   const { defined } = extractDefinedMacros(records);
   const used = new Set(extractUsedMacros(records).map((u) => u.name));
   // Allowlist = everything USED that is not locally DEFINED and not a
@@ -334,10 +445,10 @@ export function seedAllowlist(mainTexPath: string): string[] {
   const payload = {
     _comment:
       "Seeded standard/package LaTeX control sequences in actual use " +
-      "across main.tex + chapters/*.tex. Regenerate with: " +
-      "bun run pipeline/latex-preflight.ts --seed. Adding a name asserts " +
-      "it is a real standard/package command whose package is loaded in " +
-      "latex/preamble.tex.",
+      "across main.tex + chapters/*.tex (comment + verbatim contexts " +
+      "stripped). Regenerate with: bun run pipeline/latex-preflight.ts " +
+      "--seed. Adding a name asserts it is a real standard/package " +
+      "command whose package is loaded in latex/preamble.tex.",
     macros: allow,
   };
   writeFileSync(ALLOWLIST_PATH, JSON.stringify(payload, null, 2) + "\n");
