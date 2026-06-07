@@ -38,8 +38,8 @@ Anti-patterns:
 
 | Branch | Contents |
 |---|---|
-| `lake-cache/mathlib-v4-24-0` | Just `.lake/packages/mathlib/.lake/build/lib/**.olean` + per-branch master index |
-| `lake-cache/qou-v4-24-0` | Just QOU's own outputs (`.lake/build/lib/QOU/**.olean`) — currently NOT separated out |
+| `lake-cache/mathlib-v4-24-0` | Just `.lake/packages/mathlib/.lake/build/lib/**/*.olean` + per-branch master index |
+| `lake-cache/qou-v4-24-0` | Just QOU's own outputs (`.lake/build/lib/QOU/**/*.olean`) — currently NOT separated out |
 | `lake-cache/aesop-v4-24-0` | aesop oleans |
 | `lake-cache/batteries-v4-24-0` | batteries oleans |
 | `lake-cache/Qq-v4-24-0` | Qq oleans |
@@ -94,11 +94,11 @@ cache-index.json                              ← master index (regen recipe)
 | `.git/` (mathlib alone: 456 MB) | DROP | No — only used to verify dep source revision; lake-manifest already pins it |
 | `bin/cache` (172 MB) | DROP | No — `lake exe cache get` (the binary's purpose) is the broken upstream path |
 | `ir/*.c` codegen (~460 MB for mathlib) | DROP | Lazily — re-emitted by `lake build` only if native compile needed |
-| `**.ilean` incremental info (~300 MB) | DROP | Lazily — only matters for IDE incremental editing, not from-scratch builds |
-| `**.hash` (9k files, ~few MB) | DROP | YES — `sha256sum *.olean` reconstructs them |
-| `**.trace` (3k files, ~3 MB) | DROP | YES — `touch <olean>.trace` after restore |
-| `**.json` lake-internal (3k files, ~50 MB) | DROP most | YES — recompose from `cache-index.json` + olean headers |
-| `**.olean` | **KEEP** | NO — this IS the cache content |
+| `**/*.ilean` incremental info (~300 MB) | DROP | Lazily — only matters for IDE incremental editing, not from-scratch builds |
+| `**/*.hash` (9k files, ~few MB) | DROP | YES — `sha256sum *.olean` reconstructs them |
+| `**/*.trace` (3k files, ~3 MB) | DROP | YES — `touch <olean>.trace` after restore |
+| `**/*.json` lake-internal (3k files, ~50 MB) | DROP most | YES — recompose from `cache-index.json` + olean headers |
+| `**/*.olean` | **KEEP** | NO — this IS the cache content |
 
 ### Compression (what git already does + what we can add)
 
@@ -149,7 +149,7 @@ builds).
 A ~50-line Python (or bash) step in the fetcher:
 
 ```python
-# After git archive extracts .lake/packages/<pkg>/.lake/build/lib/**.olean:
+# After git archive extracts .lake/packages/<pkg>/.lake/build/lib/**/*.olean:
 for olean in glob('.lake/packages/<pkg>/.lake/build/lib/**/*.olean'):
     h = sha256(read_bytes(olean)).hexdigest()[:32]
     write_text(olean + '.hash', h + '\n')
@@ -205,8 +205,8 @@ Steps (each its own PR):
    - Read `lake-manifest.json` to discover packages
    - For each package: create `lake-cache/<pkg>-<toolchain>` orphan
      branch with just that package's `.olean` files + `cache-index.json`
-   - Strip `.git/`, `bin/cache`, `ir/*.c`, `**.ilean`, `**.hash`,
-     `**.trace`, redundant `.json`
+   - Strip `.git/`, `bin/cache`, `ir/*.c`, `**/*.ilean`, `**/*.hash`,
+     `**/*.trace`, redundant `.json`
 4. **Implement regen-on-restore in fetcher.** Update
    `scripts/lake-cache-fetch.sh` to:
    - Read `lake-manifest.json` of the current repo
