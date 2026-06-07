@@ -22,6 +22,7 @@ export default conjecture({
     "robinson1966",
   ],
   tags: [
+    "tier:P",
     "surreal-numbers",
     "vacuum",
     "casimir-effect",

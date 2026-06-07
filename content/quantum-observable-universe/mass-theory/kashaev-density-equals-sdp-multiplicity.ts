@@ -26,6 +26,7 @@ export default conjecture({
     "wenzl1988",
   ],
   tags: [
+    "tier:E",
     "kashaev",
     "density",
     "sdp-multiplicity",

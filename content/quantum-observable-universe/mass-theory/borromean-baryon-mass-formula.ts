@@ -28,6 +28,7 @@ export default conjecture({
     "codata2022",
   ],
   tags: [
+    "tier:E",
     "borromean",
     "baryon",
     "mass-formula",

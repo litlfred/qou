@@ -19,6 +19,7 @@ export default conjecture({
     "feigin-hashizume2009",
   ],
   tags: [
+    "tier:S",
     "dim-algebra",
     "master-pentagon",
     "duality-d17",

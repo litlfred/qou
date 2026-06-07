@@ -54,6 +54,7 @@ export default conjecture({
     },
   ],
   tags: [
+    "tier:S",
     "im-q",
     "substrate-moduli",
     "complex-q",

@@ -18,6 +18,7 @@ export default conjecture({
     "geckpfeiffer2000",
   ],
   tags: [
+    "tier:E",
     "magic-numbers",
     "brings-surface",
     "period-lattice",

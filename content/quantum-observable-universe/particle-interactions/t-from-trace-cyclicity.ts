@@ -20,6 +20,7 @@ export default conjecture({
     "wenzl1988",
   ],
   tags: [
+    "tier:S",
     "time-reversal",
     "duality-d8",
     "markov-trace-cyclicity",

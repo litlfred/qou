@@ -15,6 +15,7 @@ export default conjecture({
     "neumann-zagier1985",
   ],
   tags: [
+    "tier:S",
     "mirror-symmetry",
     "3d-3d",
     "duality-d18",
