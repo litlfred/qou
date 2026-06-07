@@ -325,6 +325,7 @@ export default chapter({
         "hyperbolic-volume-transcendence",
         "single-volume-irrationality",
         "borel-zagier-qou-volumes",
+        "three-knot-jet-order-independence",
       ],
     }),
     section({
