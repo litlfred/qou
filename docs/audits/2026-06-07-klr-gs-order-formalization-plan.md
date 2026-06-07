@@ -130,14 +130,13 @@ conjecture chain to the single axiom (★).
     `KazhdanLusztigClassicalLimit`, `SymmetricCrystalPairProduction`, …
     must not break) — it is purely additive.
 
-> **Build status.** `elan`/`lake` are not installed in the authoring
-> sandbox (no `~/.elan`). The scaffold is authored to Mathlib idiom
-> (explicit binders for `autoImplicit = false`; `PUnit`/`rfl` model
-> mirroring the existing class) and committed at the author's direction
-> with verification deferred — **`lake build QOU` must be run before
-> merge**. A background Lean-env setup (elan + `lake-cache` restore) was
-> launched; any build fix is confined to `GSReductionOrder.lean` (the one
-> new file) plus its one aggregator import line.
+> **Build status: VERIFIED (2026-06-07).** After a background Lean-env
+> setup (hand-installed `elan` + toolchain `v4.24.0` from the GitHub
+> release assets — `release.lean-lang.org` was firewalled — and the
+> `lake-cache/qou-v4-24-0` olean restore), `lake build
+> QOU.BraidKnot.GSReductionOrder` completed **exit 0 (2244/2244
+> targets)**, sorry-free. The single conjectural input is the
+> `order_match` class field, per CLAUDE.md §3b (not a proof `sorry`).
 
 The value delivered regardless of the build: the conjecture is reduced
 to the single named axiom (★) over cited theorems, with the buildable

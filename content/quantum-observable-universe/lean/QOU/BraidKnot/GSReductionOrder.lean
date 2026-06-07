@@ -20,8 +20,9 @@ labels *on the nose*, i.e. confinement level = crystal degree).
 Everything here is **additive**: the existing `CrystalGraphRealization`
 class and its importers are untouched.
 
-NOTE (2026-06-07): authored without a sandbox `lake` build; pending
-type-check.
+Build-verified 2026-06-07: `lake build QOU.BraidKnot.GSReductionOrder`
+exit 0 (2244/2244 targets), sorry-free (the single conjectural input is
+the `order_match` class field per CLAUDE.md §3b).
 
 -- Ref: [manuscript] particle-interactions/crystal-graph-realization
 -- Ref: [brundankleshchev2009] Brundan & Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras," Invent. Math. 178 (2009), arXiv:0808.2032
