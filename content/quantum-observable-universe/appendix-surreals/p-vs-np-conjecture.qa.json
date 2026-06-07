@@ -1831,7 +1831,29 @@
         "reviewed_at": "2026-06-03T22:40:47.501Z",
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b8f4a8f0ef70",
+          "ts": "f169f709f117",
+          "lean": "fd92bee41e24"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "conjecture sits in sec:millennium-bounds-via-surreals; subject is q-complexity separation as a surreal/Reeb-budget bound",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:10:01.477Z",
+        "reviewed_sha": "38e705638b456338af2080a4f46ffdf490c67f91",
+        "notes": "Squarely in scope: surreal-lift millennium-problem bound; correctly a conjecture (speculative, no Lean beyond statement)."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T01:10:01.477Z"
 }
