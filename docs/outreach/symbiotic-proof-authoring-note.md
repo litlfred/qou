@@ -225,11 +225,12 @@ thing.
   - **parameter-regime** and **bibliography** — domain-specific regime and
     citation-resolution checks.
 
-  Each criterion stores an array of reviewer results under one shared schema —
-  `{ result (pass/warn/fail), severity, optional score, reviewer (script or
-  agent, with id), the content-hash of the md/ts/lean it judged, timestamp, and
-  quoted evidence }`. The hash makes every verdict falsifiable and auto-stale on
-  edit; a verdict whose hash no longer matches the source is re-run.
+  Each criterion stores an array of reviewer results under one shared schema;
+  each result records its **outcome** (pass / warn / fail), a **severity**, an
+  **optional score**, the **reviewer** (a script or an agent, with its id), the
+  **content hash** of the `.md` / `.ts` / `.lean` it judged, a **timestamp**, and
+  **quoted evidence**. The content hash makes every verdict falsifiable and
+  auto-stale on edit: a verdict whose hash no longer matches the source is re-run.
 - **Findings drain back into the loop.** Because every verdict is a typed,
   located artifact, the failing ones cluster automatically into review-sized
   fix-batches — each becomes a pull request that is prepared, reviewed, and
