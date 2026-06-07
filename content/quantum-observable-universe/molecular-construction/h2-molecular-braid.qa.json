@@ -1931,7 +1931,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d8bd7249bf8e",
+          "ts": "b0ecf2260477",
+          "lean": "4f4209b1ffe2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "H2 molecular braid in H4(q); chapter §3 'Hydrogen molecule H2: covalent prototype' is exact home",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:55:51.734Z",
+        "reviewed_sha": "179aee9d979b759ba39e8cb0c067a3f45904f1b9",
+        "notes": "Definition names the H2 molecular braid construction; squarely in molecular-construction scope, no sibling duplication."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d8bd7249bf8e",
+          "ts": "b0ecf2260477",
+          "lean": "4f4209b1ffe2"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Line 1 §7c banner: 'archimedean specialisation over R ... combinatorial content stays generic'; numeric q0≈1.11 eigenvalue evals follow banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:55:51.777Z",
+        "reviewed_sha": "179aee9d979b759ba39e8cb0c067a3f45904f1b9",
+        "notes": "Numeric q0 values present but properly flagged by the §7c archimedean banner at top of block."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T01:55:51.777Z"
 }
