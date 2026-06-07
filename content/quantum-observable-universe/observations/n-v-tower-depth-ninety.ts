@@ -6,7 +6,6 @@ export default conjecture({
   cites: [],
   uses: ["conj:mass-endomorphism"],
   defines: [],
-  tags: [
-    "tier:E","n-v", "electroweak", "tower-depth", "substrate-axiom"],
+  tags: ["tier:E", "n-v", "electroweak", "tower-depth", "substrate-axiom"],
   lean: { ref: "qou:QOU.Observations.tower_depth_m_e_to_v_is_ninety" },
 });
