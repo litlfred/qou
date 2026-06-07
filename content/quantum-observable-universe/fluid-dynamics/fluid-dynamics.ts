@@ -139,7 +139,6 @@ export default chapter({
         "regularity-breakdown",
         "regularity-breakdown-table-data",
         "p2-critical-exponent",
-        "p3-blowup-yekutieli",
         "ns-surreal-bound",
         "p4-universality",
         "p5-counterexample",
