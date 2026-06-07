@@ -2173,7 +2173,51 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fbe0213e3ece",
+          "ts": "b31ff8001137",
+          "lean": "ac3debd9308b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "vertex-operator.ts -- definition in mass-theory chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:42:02.676Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Definition fits mass-theory chapter scope"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "fbe0213e3ece",
+          "ts": "b31ff8001137",
+          "lean": "ac3debd9308b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "vertex-operator.lean -- definition in mass-theory archimedean chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:42:02.712Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "mass-theory is largely archimedean; definitions here legitimately use ℝ or generic ring constructs; no wall violation"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:42:02.712Z"
 }

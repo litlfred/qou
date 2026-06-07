@@ -2296,6 +2296,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:mass-tower-coefficient-stratification' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "02adeb652a4b",
+          "ts": "ade2ff4089f1",
+          "lean": "7c7f5768efaa"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-tower-coefficient-stratification.lean -- Wedderburn strata force alpha_k",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:07.023Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Lean and narrative both state alpha_k is forced by Wedderburn projection; same claim"
       }
     ],
     "proof-lean-compiles": [
@@ -2758,7 +2778,95 @@
           "worst_span": 0
         }
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "02adeb652a4b",
+          "ts": "ade2ff4089f1",
+          "lean": "7c7f5768efaa"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "mass-tower-coefficient-stratification.md:49 -- q_0 numerical values follow proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:06.881Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Numerical witness values at q_0 appear after statement; interpretive but evidence-providing; no companion remark"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "02adeb652a4b",
+          "ts": "ade2ff4089f1",
+          "lean": "7c7f5768efaa"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-tower-coefficient-stratification.ts:2 -- proposition",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:06.915Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Mass tower coefficients forced by Wedderburn strata fits mass-theory algebraic face"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "02adeb652a4b",
+          "ts": "ade2ff4089f1",
+          "lean": "7c7f5768efaa"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-tower-coefficient-stratification.md:1 -- Working over A = H_n(R,q) generic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:06.950Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Statement over generic A = H_n(R,q); Plancherel weights are algebraic; archimedean q_0 only in numerical section"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "02adeb652a4b",
+          "ts": "ade2ff4089f1",
+          "lean": "7c7f5768efaa"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-tower-coefficient-stratification.lean -- algebraic proof of stratification",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:46:06.983Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Proof is algebraic decomposition over generic ring; appropriate"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:46:07.023Z"
 }

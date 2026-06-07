@@ -1,0 +1,62 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:quantum-bloch-group",
+  "kind": "definition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/quantum-bloch-group.ts",
+    "md": "content/quantum-observable-universe/mass-theory/quantum-bloch-group.md",
+    "lean": "content/quantum-observable-universe/mass-theory/quantum-bloch-group.lean"
+  },
+  "source_hashes": {
+    "md": "556828308cb2",
+    "ts": "1ae3c0911ba0",
+    "lean": "e2f135b40cb0"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "556828308cb2",
+          "ts": "1ae3c0911ba0",
+          "lean": "e2f135b40cb0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-bloch-group.ts -- definition in mass-theory chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:42:03.355Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "Definition fits mass-theory chapter scope"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "556828308cb2",
+          "ts": "1ae3c0911ba0",
+          "lean": "e2f135b40cb0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "quantum-bloch-group.lean -- definition in mass-theory archimedean chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:42:03.391Z",
+        "reviewed_sha": "af638213a478dd151bf02a1c7949162067f278fa",
+        "notes": "mass-theory is largely archimedean; definitions here legitimately use ℝ or generic ring constructs; no wall violation"
+      }
+    ]
+  },
+  "updated_at": "2026-06-07T13:42:03.391Z"
+}
