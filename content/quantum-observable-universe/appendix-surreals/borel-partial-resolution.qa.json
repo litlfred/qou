@@ -2530,7 +2530,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9bbb4ff55642",
+          "ts": "ed9693dec30d",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Borel K-theory ranks discharging the keystone sharpness target per Bring number field; matches §'Millennium-problem surreal bounds' / period-ledger scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:05:54.604Z",
+        "reviewed_sha": "db404f301b8d5d76af3cf9560abcbb618e73a208",
+        "notes": "Proposition with cited theorem + explicit per-field Borel dims; sibling b1-* theorems cover distinct rows, no redundancy"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9bbb4ff55642",
+          "ts": "ed9693dec30d",
+          "lean": "e418f73f59b5"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement+cited-theorem+proof present, but in-block sections 'Significance for B1 status' / 'Honest summary' editorialize ('This is the precise sense in which...') rather than living in a linked interprets: remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:05:54.656Z",
+        "reviewed_sha": "db404f301b8d5d76af3cf9560abcbb618e73a208",
+        "notes": "Borderline mislocated interpretation; significance prose could move to a companion remark. Not a clear FAIL — content is scholarly and partly scope-clarifying."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9bbb4ff55642",
+          "ts": "ed9693dec30d",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is K_{2n-1}(F)⊗ℚ dimension counts over number fields — arithmetic/algebraic; no numeric q≈value, MeV, or Real.* archimedean construct",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:05:54.701Z",
+        "reviewed_sha": "db404f301b8d5d76af3cf9560abcbb618e73a208",
+        "notes": "Number-theoretic dims, not a substrate-q archimedean leak; matches its appendix regime"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9bbb4ff55642",
+          "ts": "ed9693dec30d",
+          "lean": "e418f73f59b5"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof uses Borel 1977, Bloch-Suslin injectivity, Goncharov regulator, orbit-sum dim count — no linarith/IVT/continuity/Real.* or q≈value machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:05:54.751Z",
+        "reviewed_sha": "db404f301b8d5d76af3cf9560abcbb618e73a208",
+        "notes": "Proof method (K-theory rank computation) matches the algebraic/arithmetic statement side of the wall"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T01:05:54.751Z"
 }
