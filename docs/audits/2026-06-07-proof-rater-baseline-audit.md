@@ -67,6 +67,28 @@ These are recorded as the **baseline, not fixed here** — the improve half
 → `lean-proof-review`, the two core-gap blocks → `proof-triage`, and files the
 beta-decay mismatch for a correctness pass.
 
+## Integration-watcher wiring
+
+The rater is not a one-off audit — it is part of the standing
+**proof-integration-watcher** axis, so "score the baseline" and "drain the
+findings" are the same machine:
+
+- The four criteria (`proof-rater-strategy-clarity`, `-goal-plausibility`,
+  `-novelty`, and `proof-statement-integrity`) are registered in
+  [`content/pipeline/qa-criteria-registry.ts` §PROOF](../../content/pipeline/qa-criteria-registry.ts)
+  alongside the gating proof checks (`proof-lean-compiles`,
+  `proof-no-bare-sorries`, `proof-no-axiom-growth`, `proof-narrative-lean-equiv`,
+  `proof-no-conj-propagation-violation`, …).
+- `/integration-watch proof` runs them across incoming changes **and** the
+  standing corpus; `proof-integration-watcher` Slot C maps each criterion to its
+  improve-skill.
+- `/integration-backlog proof` drains the findings ascending-by-score into
+  ≤ 49-file fix-PRs, dispatching the mapped skill per criterion:
+  `proof-statement-integrity` → `lean-proof-review` (Review Type 4);
+  `proof-rater-goal-plausibility` → `proof-triage` / `lean-build-fix`;
+  `proof-rater-novelty` → `proposition-consolidation-audit`;
+  `proof-rater-strategy-clarity` → `proof-simplifier` / `proof-conciseness`.
+
 ## Rollout (remaining corpus)
 
 The full baseline is drained in **≤ 49-file batches** via `/integration-backlog
