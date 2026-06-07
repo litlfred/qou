@@ -75,9 +75,17 @@ holds the preamble + manifest macros + `\input` lines). Checks:
 
 | Check | Detects | False-positive profile |
 |-------|---------|------------------------|
-| **A** duplicate-newcommand | a name defined >1× by `\newcommand`/`\DeclareMathOperator`/`\NewDocumentCommand`. `\renewcommand`/`\def`/`\let` excluded (they overwrite intentionally). | **Zero** by construction. |
-| **B** undefined-macro | a multi-letter control word used but ∉ (locally-defined ∪ seeded allowlist ∪ TeX core). | **Zero at seed time** — the allowlist is `--seed`'ed from a clean-compiling compile unit, so every standard/package command in actual use is captured. A genuinely new macro must be defined or explicitly allow-listed. |
-| **C** fragile-accent-script | a math accent (`\check`,`\hat`,`\tilde`,…) as a bare sub/superscript argument. | Very low (pattern is specific). |
+| **A** duplicate-newcommand | a name defined >1× by a *fatal-on-redefinition* definer (`\newcommand`/`\DeclareMathOperator`/`\DeclarePairedDelimiter`/`\NewDocumentCommand`). `\renewcommand`/`\providecommand`/`\def`/`\let`/`\DeclareRobustCommand`/`\DeclareDocumentCommand` excluded (they overwrite legally). | **Zero** by construction. |
+| **B** undefined-macro | a multi-letter control word used but ∉ (locally-defined ∪ seeded allowlist ∪ TeX core). | **None on a clean seed** — the allowlist is `--seed`'ed from a clean-compiling compile unit. A genuinely new macro must be defined or explicitly allow-listed. |
+| **C** fragile-accent-script | a math accent (`\check`,`\hat`,`\tilde`,…) as a bare sub/superscript argument (escaped `\^`/`\_` excluded). | Very low (pattern is specific). |
+| **D** missing-input | an *unconditional* `\input`/`\include` whose target is absent. `\IfFileExists`/`\InputIfFileExists` (e.g. `print-mode.tex`) exempt. | **Zero** (filesystem check). |
+| **E** math-delimiter-imbalance | a file with an odd count of unescaped `$` → `! Missing $ inserted`. | Very low (legit math always balances `$` within a file). |
+| **F** environment-mismatch | per-file `\begin{X}`/`\end{Y}` stack mismatch or unclosed env. Strengthens the old `checkEnvironmentBalance` (which only caught a missing env *name*). | Very low (verbatim begin/end blanked; `document` balanced within main.tex). |
+| **H** unmapped-unicode | a non-ASCII char with no `\newunicodechar` mapping AND not in the seeded unicode-safe set → inputenc "not set up for use with LaTeX". | **None on a clean seed** — mirrors B; inputenc-native chars are recorded at seed. |
+
+All checks operate on comment- and verbatim-stripped text (verbatim /
+lstlisting / minted / `\verb` / `\lstinline` removed), so a backslash or
+`$` shown literally in documentation is never mis-read.
 
 **Validation that it works:** reverting the `b9e19df6` source fixes and
 rebuilding makes the linter flag all three with exact locations
@@ -103,14 +111,18 @@ rebuilding makes the linter flag all three with exact locations
   *or* the manifest `macros:` block, never both (Check A).
 - Never use a math accent as a bare sub/superscript — brace it (Check C).
 
-## 6. Follow-ups (not in this PR)
+## 6. Follow-ups
 
-The history audit flagged three more classes with no static guard yet
-(lower frequency). Candidate future preflight checks, all doable without
-a TeX install on the same compile unit:
+The three lower-frequency classes the history audit flagged (E `$`
+imbalance, F begin/end mismatch, H unmapped unicode) were **implemented
+in this PR** alongside A/B/C and D (missing-input) — see the check table
+in §4. Each was validated by injecting the bug into the compile unit
+(odd `$`, unclosed `\begin{quote}`, mismatched `\end{enumerate}`, an
+unmapped `Ɱ` U+2C6E) and confirming the linter flags it while the clean
+tree stays green (374 macros + 33 unicode-safe chars seeded).
 
-- **E** — `$` delimiter imbalance per block (odd count of unescaped `$`).
-- **F** — `\begin{X}`/`\end{Y}` stack-mismatch (current
-  `checkEnvironmentBalance` only flags a missing env *name*).
-- **H** — non-ASCII codepoint with no `\newunicodechar` / `VERBATIM_TRANSLIT`
-  mapping (pre-empt inputenc "not set up for use with LaTeX").
+No further preflight classes are outstanding. Possible future polish
+(not gating, low value): cross-file environment nesting (currently
+per-file, which is correct for this repo's main.tex/chapters layout) and
+`\(`/`\)` `\[`/`\]` pairing (rare in the generated output, which uses
+`$`/`$$` and named math environments).

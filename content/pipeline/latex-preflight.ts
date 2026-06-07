@@ -91,7 +91,10 @@ export interface PreflightIssue {
     | "duplicate-newcommand"
     | "undefined-macro"
     | "fragile-accent-script"
-    | "missing-input";
+    | "missing-input"
+    | "math-delimiter-imbalance"
+    | "environment-mismatch"
+    | "unmapped-unicode";
   macro: string;
   file: string;
   line: number;
@@ -303,17 +306,59 @@ export function extractUsedMacros(
   return used;
 }
 
-function loadAllowlist(): Set<string> {
-  if (!existsSync(ALLOWLIST_PATH)) return new Set();
+function loadAllowlist(): { macros: Set<string>; unicode: Set<string> } {
+  if (!existsSync(ALLOWLIST_PATH)) {
+    return { macros: new Set(), unicode: new Set() };
+  }
   try {
     const raw = JSON.parse(readFileSync(ALLOWLIST_PATH, "utf8")) as
       | string[]
-      | { macros: string[] };
-    const list = Array.isArray(raw) ? raw : raw.macros;
-    return new Set(list);
+      | { macros: string[]; unicode?: string[] };
+    if (Array.isArray(raw)) return { macros: new Set(raw), unicode: new Set() };
+    return { macros: new Set(raw.macros), unicode: new Set(raw.unicode ?? []) };
   } catch {
-    return new Set();
+    return { macros: new Set(), unicode: new Set() };
   }
+}
+
+/**
+ * Codepoints handed a `\newunicodechar{X}{…}` mapping in the preamble —
+ * these are safe non-ASCII glyphs (Check H allows them).
+ */
+export function extractMappedUnicode(records: LineRecord[]): Set<string> {
+  const mapped = new Set<string>();
+  for (const rec of records) {
+    if (!rec.text) continue;
+    const re = /\\newunicodechar\s*\{?\s*([^\s{}])\s*\}?/g;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(rec.text)) !== null) mapped.add(m[1]);
+  }
+  return mapped;
+}
+
+/** Every distinct non-ASCII character used in the records, with first loc. */
+function nonAsciiUses(
+  records: LineRecord[],
+): Map<string, { file: string; line: number }> {
+  const uses = new Map<string, { file: string; line: number }>();
+  for (const rec of records) {
+    if (!rec.text) continue;
+    for (const ch of rec.text) {
+      if (ch.charCodeAt(0) > 127 && !uses.has(ch)) {
+        uses.set(ch, { file: rec.file, line: rec.line });
+      }
+    }
+  }
+  return uses;
+}
+
+/** Count unescaped `$` (not preceded by an odd run of backslashes). */
+function countUnescapedDollars(text: string): number {
+  let n = 0;
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === "$" && precedingBackslashes(text, i) % 2 === 0) n++;
+  }
+  return n;
 }
 
 /** TeX/LaTeX core control words always present regardless of allowlist. */
@@ -332,7 +377,7 @@ export function runPreflight(mainTexPath: string): PreflightResult {
   const filesScanned = new Set(records.map((r) => r.file)).size;
   const { defined, definitions } = extractDefinedMacros(records);
   const used = extractUsedMacros(records);
-  const allowlist = loadAllowlist();
+  const { macros: allowlist, unicode: unicodeSafe } = loadAllowlist();
   const issues: PreflightIssue[] = [];
 
   // ── Check D: missing \input target ─────────────────────────────────
@@ -421,6 +466,122 @@ export function runPreflight(mainTexPath: string): PreflightResult {
     }
   }
 
+  // ── Check E: unescaped `$` delimiter imbalance (per file) ──────────
+  // Each source file's inline/display math must balance its `$`
+  // toggles. `\$` is escaped (excluded); `$$` is two toggles (even).
+  // An odd count means a dropped delimiter → "! Missing $ inserted" /
+  // runaway argument. Per-file parity localises without false-flagging
+  // legitimate multi-line `$…$` (which stays within one file).
+  {
+    const perFile = new Map<string, { count: number; firstLine: number }>();
+    for (const rec of records) {
+      if (!rec.text) continue;
+      const c = countUnescapedDollars(rec.text);
+      if (c === 0) continue;
+      const cur = perFile.get(rec.file) ?? { count: 0, firstLine: rec.line };
+      cur.count += c;
+      perFile.set(rec.file, cur);
+    }
+    for (const [file, { count, firstLine }] of perFile) {
+      if (count % 2 !== 0) {
+        issues.push({
+          check: "math-delimiter-imbalance",
+          macro: "$",
+          file,
+          line: firstLine,
+          message:
+            `Odd number of unescaped \$ (${count}) in ${relPath(file)} — ` +
+            `a math delimiter is unbalanced. pdflatex aborts with ` +
+            `"! Missing \$ inserted" or a runaway argument. Find the ` +
+            `block with a dropped or extra \$ (use \\\$ for a literal ` +
+            `dollar sign).`,
+        });
+      }
+    }
+  }
+
+  // ── Check F: \begin/\end environment mismatch (per file) ───────────
+  // Stack-match within each file. Verbatim begin/end lines are blanked
+  // upstream (matched pair, invisible). main.tex opens AND closes
+  // `document` around its \input lines, and each chapter is internally
+  // balanced, so per-file stacking is correct.
+  for (const file of new Set(records.map((r) => r.file))) {
+    const stack: { env: string; line: number }[] = [];
+    let mismatched = false;
+    for (const rec of records) {
+      if (rec.file !== file || !rec.text) continue;
+      const envRe = /\\(begin|end)\s*\{([A-Za-z@]+\*?)\}/g;
+      let m: RegExpExecArray | null;
+      while ((m = envRe.exec(rec.text)) !== null) {
+        if (m[1] === "begin") {
+          stack.push({ env: m[2], line: rec.line });
+        } else {
+          const top = stack.pop();
+          if (!top || top.env !== m[2]) {
+            mismatched = true;
+            issues.push({
+              check: "environment-mismatch",
+              macro: m[2],
+              file,
+              line: rec.line,
+              message:
+                `\\end{${m[2]}} at ${relPath(file)}:${rec.line} ` +
+                (top
+                  ? `closes \\begin{${top.env}} (opened line ${top.line}). `
+                  : `has no matching \\begin{${m[2]}}. `) +
+                `pdflatex aborts with "\\begin{…} ended by \\end{…}". ` +
+                `Check the environment nesting.`,
+            });
+            break;
+          }
+        }
+      }
+      if (mismatched) break;
+    }
+    if (!mismatched && stack.length > 0) {
+      const top = stack[stack.length - 1];
+      issues.push({
+        check: "environment-mismatch",
+        macro: top.env,
+        file,
+        line: top.line,
+        message:
+          `\\begin{${top.env}} at ${relPath(file)}:${top.line} is never ` +
+          `closed (${stack.length} unclosed environment(s) in this file). ` +
+          `pdflatex aborts at end of input with "\\begin{${top.env}} on ` +
+          `input line ${top.line} ended by \\end{document}". Add the ` +
+          `matching \\end{${top.env}}.`,
+      });
+    }
+  }
+
+  // ── Check H: non-ASCII char with no inputenc/unicode mapping ───────
+  // Flag a non-ASCII codepoint only if it is neither given a
+  // \newunicodechar mapping in the preamble NOR in the seeded
+  // unicode-safe set (chars present in a clean-compiling unit, hence
+  // inputenc-native). Mirrors Check B: zero false positives at seed.
+  {
+    const mapped = extractMappedUnicode(records);
+    for (const [ch, loc] of nonAsciiUses(records)) {
+      if (mapped.has(ch) || unicodeSafe.has(ch)) continue;
+      const cp = "U+" + ch.codePointAt(0)!.toString(16).toUpperCase().padStart(4, "0");
+      issues.push({
+        check: "unmapped-unicode",
+        macro: ch,
+        file: loc.file,
+        line: loc.line,
+        message:
+          `Non-ASCII character "${ch}" (${cp}) at ${relPath(loc.file)}:` +
+          `${loc.line} has no \\newunicodechar mapping and is not in the ` +
+          `seeded unicode-safe set. pdflatex may abort with "Unicode ` +
+          `character … not set up for use with LaTeX". Add a ` +
+          `\\newunicodechar{${ch}}{…} to latex/preamble.tex, replace it ` +
+          `with a LaTeX command, or — if inputenc handles it — re-seed ` +
+          `(--seed) to record it as safe.`,
+      });
+    }
+  }
+
   return {
     ok: issues.length === 0,
     issues,
@@ -431,8 +592,11 @@ export function runPreflight(mainTexPath: string): PreflightResult {
   };
 }
 
-/** Seed/refresh the standard-command allowlist from a clean compile unit. */
-export function seedAllowlist(mainTexPath: string): string[] {
+/** Seed/refresh the standard-command + unicode-safe sets from a clean unit. */
+export function seedAllowlist(mainTexPath: string): {
+  macros: string[];
+  unicode: string[];
+} {
   const { records } = loadCompileUnit(mainTexPath);
   const { defined } = extractDefinedMacros(records);
   const used = new Set(extractUsedMacros(records).map((u) => u.name));
@@ -442,17 +606,27 @@ export function seedAllowlist(mainTexPath: string): string[] {
   const allow = [...used]
     .filter((n) => !defined.has(n) && !CORE_ALWAYS.has(n))
     .sort();
+  // unicode-safe = non-ASCII chars present in the clean unit that are not
+  // already given a \newunicodechar mapping (those are recorded as the
+  // mapped set at lint time). A clean seed ⇒ inputenc handles them.
+  const mapped = extractMappedUnicode(records);
+  const unicode = [...nonAsciiUses(records).keys()]
+    .filter((ch) => !mapped.has(ch))
+    .sort();
   const payload = {
     _comment:
-      "Seeded standard/package LaTeX control sequences in actual use " +
-      "across main.tex + chapters/*.tex (comment + verbatim contexts " +
-      "stripped). Regenerate with: bun run pipeline/latex-preflight.ts " +
-      "--seed. Adding a name asserts it is a real standard/package " +
-      "command whose package is loaded in latex/preamble.tex.",
+      "Seeded standard/package LaTeX control sequences (macros) and " +
+      "inputenc-safe non-ASCII chars (unicode) in actual use across " +
+      "main.tex + chapters/*.tex (comment + verbatim contexts stripped). " +
+      "Regenerate with: bun run pipeline/latex-preflight.ts --seed. " +
+      "Adding a macro asserts it is a real standard/package command whose " +
+      "package is loaded in latex/preamble.tex; adding a unicode char " +
+      "asserts inputenc/fontenc typeset it without a \\newunicodechar.",
     macros: allow,
+    unicode,
   };
   writeFileSync(ALLOWLIST_PATH, JSON.stringify(payload, null, 2) + "\n");
-  return allow;
+  return { macros: allow, unicode };
 }
 
 // ── CLI ──────────────────────────────────────────────────────────────
@@ -476,10 +650,10 @@ if (import.meta.main) {
   }
 
   if (seed) {
-    const allow = seedAllowlist(mainTex);
+    const { macros, unicode } = seedAllowlist(mainTex);
     console.log(
-      `[latex-preflight] seeded allowlist with ${allow.length} ` +
-        `standard control sequences → ${ALLOWLIST_PATH}`,
+      `[latex-preflight] seeded allowlist: ${macros.length} control ` +
+        `sequences + ${unicode.length} unicode-safe chars → ${ALLOWLIST_PATH}`,
     );
     process.exit(0);
   }
