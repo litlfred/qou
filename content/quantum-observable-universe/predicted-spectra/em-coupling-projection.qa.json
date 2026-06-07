@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "f0a6f39a9422",
-    "ts": "bb9d403b9beb",
-    "lean": "9ad5823caf8c"
+    "ts": "bb9d403b9beb"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2856,7 +2855,96 @@
         "reviewed_sha": "1d7be05efa7adf6c65c178599c3276a10c056531",
         "notes": "Numerical evaluation sections should be segregated from the pre-archimedean proof."
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f0a6f39a9422",
+          "ts": "bb9d403b9beb"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:04:24.300Z",
+        "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
+        "notes": "RESTATES-TARGET / structure-hypothesis projection: lean.ref qou:QOU.Archimedean.em_coupling_projection resolves to the lowercase placeholder-stub file lean/QOU/Archimedean/em_coupling_projection.lean:99. theorem em_coupling_projection [ctx:EmCouplingProjectionContext] : (endRank=2 and centralIdempotentCount=2) and singlet_channel_count=1 and bringTorusKnotCount=2 := <ctx.claim_i, ctx.claim_ii, ctx.claim_iii> -- the class FIELDS literally ARE the conclusion (claim_i_two_strand_completeness : endRank=2 and ...), so the proof projects hypotheses back as conclusion. Does NOT formalize the md's actual claim alpha_EM = q^-1/([9]_q[10]_q). (The real decl in EmCouplingProjection.lean:73 is commented out as 'not meaningful over R_q'.)"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "f0a6f39a9422",
+          "ts": "bb9d403b9beb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:04:24.336Z",
+        "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
+        "notes": "md derivation is excellent and explicit: 3 layers (charge=q-writhe; coupling=|tr_tau(e_-)|^2=q^-1 singlet idempotent via spectral completeness; force-carrier complexity [9]_q[10]_q via Bring genus-4 uniqueness), with honest open-problem ledger for the 0.155% residual. Plan very clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "f0a6f39a9422",
+          "ts": "bb9d403b9beb"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:04:24.371Z",
+        "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
+        "notes": "Lean does not prove the alpha_EM formula - it is a class-field projection stub (restates assumed nat-equalities). The md's bare formula derivation is solid/pre-archimedean but the 0.155% residual closure (Chern-Simons kappa) is admitted unproved/sorry, and the formal goal is a stub. Core gap at the formal level."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "f0a6f39a9422",
+          "ts": "bb9d403b9beb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:04:24.407Z",
+        "reviewed_sha": "c73427b6738f398cb32fb2a9541142ef5650167e",
+        "notes": "The categorical derivation of alpha_EM as singlet-idempotent trace over Bring-forced force-carrier complexity (turning a phenomenological fit into a ring-theoretic invariant in R, valid over any specialisation) is a substantive non-standard argument in the md."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:04:24.407Z"
 }
