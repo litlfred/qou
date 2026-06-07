@@ -1947,7 +1947,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a514b0978736",
+          "ts": "7e97d20258ef",
+          "lean": "46cb36655834"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Listed in 'Algebraic face: transfer matrices...' section; defines transfer matrix T_{K1,K2}(q) in M_2(Z[q^{+-1/2}]) acting on Groebner-Shirshov ideal — core topic of that section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:54:38.347Z",
+        "reviewed_sha": "2ccd5b341c98d6de3851c2933b1b69d659ea9cf8",
+        "notes": "Definition names new construction (crossing transfer matrix + operator algebra); interaction catalogue is downstream worked-example content, not a separate misfiled claim"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a514b0978736",
+          "ts": "7e97d20258ef",
+          "lean": "46cb36655834"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement: entries in Z[q^{+-1/2}], coefficients via Jones polynomials J_K(q); the sqrt at line 204 is symbolic \\sqrt over formal q, not Real.sqrt; no numeric q0 pin, no MeV, no ordering hypothesis",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:54:38.381Z",
+        "reviewed_sha": "2ccd5b341c98d6de3851c2933b1b69d659ea9cf8",
+        "notes": "Generic-ring algebraic definition; Lean ns QOU.Archimedean is the interaction-context namespace, statement itself is over Z[q^{+-1/2}] — correct substrate side"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T12:54:38.381Z"
 }
