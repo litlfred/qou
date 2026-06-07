@@ -2804,7 +2804,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "584ed880d9bb",
+          "ts": "d4f80f7398b2",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement region includes editorial 'Critically the ratio ... is non-trivial' and 'Earlier proton-fitted assemblies collapsed...' commentary",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:41:40.676Z",
+        "reviewed_sha": "40e90441952a52be21c36af728f4e67df5f1d421",
+        "notes": "Bare formula is clean; appended motivation paragraph belongs in an interprets: remark"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "584ed880d9bb",
+          "ts": "d4f80f7398b2",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Six-term mass-formula assembly in mass-theory Physical face (six-term formula, mass predictions, binding)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:41:40.723Z",
+        "reviewed_sha": "40e90441952a52be21c36af728f4e67df5f1d421",
+        "notes": "Correct home; per-derivation weight reading of the unified six-term decomposition"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "584ed880d9bb",
+          "ts": "d4f80f7398b2",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "mass-theory archimedean-face chapter; MeV/CODATA constants appropriate; Catalan G uses approx",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:41:40.767Z",
+        "reviewed_sha": "40e90441952a52be21c36af728f4e67df5f1d421",
+        "notes": "Numeric MeV assembly legitimate in archimedean physical-prediction chapter"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "584ed880d9bb",
+          "ts": "d4f80f7398b2",
+          "lean": "2d4e7edbe6a3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof is CODATA free-particle baseline + bound-free differential per six-term decomposition; archimedean assembly",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:41:40.811Z",
+        "reviewed_sha": "40e90441952a52be21c36af728f4e67df5f1d421",
+        "notes": "Proof method matches archimedean-side statement; no algebraic identity proved by archimedean machinery"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T02:41:40.811Z"
 }
