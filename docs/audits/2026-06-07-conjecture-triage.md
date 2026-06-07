@@ -190,6 +190,86 @@ stale headlines (lepton title, reidemeister banner), one manifest
 dependency gap (reidemeister `uses[]`), and two not-yet-first-class
 statuses (brane-tower, reading-a).
 
+## F. Tiered backlog of the open leaf roots (re-tiering)
+
+Working classification of the ~80 genuine leaf roots (keystone roots
+§C.2, imported famous problems §C.1, and contingent-downstream §D are
+excluded). Tiers: **E** = empirical/physical prediction (near-match to a
+measured quantity — the framework's *testable* set, highest priority);
+**S** = structural-math derivation goal (no number, "derive X
+categorically"); **P** = speculative surreal-appendix framing (retained
+per owner decision 2026-06-07, not deprecated).
+
+Two falsified leaf roots (`conj-chirality-ribbon-frobenius`,
+`reading-a-conditional-linking-weight`) were **moved to
+`_deprecated/falsified-conjectures/`** in this PR and are no longer in
+the backlog.
+
+### Tier E — empirical / physical predictions (testable; prioritise)
+
+| Block | Chapter | Predicts | Current agreement |
+|-------|---------|----------|-------------------|
+| `lepton-mass-tower-canonical` | mass-theory | m_μ, m_τ | structural form open |
+| `conj-lepton-tower-h-n-plus-1-branching` | mass-theory | m_μ, m_τ | μ 0.001%, τ +0.79% |
+| `staircase-ew-residual` | mass-theory | Weinberg angle | 0.13% |
+| `z-eq-n-rho-correction` | mass-theory | Z=N binding | ~10⁻³ |
+| `conj-canonical-knot-id-sdp` | mass-theory | canonical knots ²H/³H/³He | SDP-selected |
+| `borromean-baryon-mass-formula` | mass-theory | baryon rest masses | λ_scale open |
+| `conj-rho-prefactor-structural` | mass-theory | SDP multiplicity rule | heuristic |
+| `lifted-crossing-locality` | mass-theory | mass expansion | ≤6% |
+| `kashaev-density-equals-sdp-multiplicity` | mass-theory | ρ_F density | Rule-14 |
+| `alpha-k-categorical-closure` | mass-theory | prefactor resummation | witnessed |
+| `n-v-bring-action` | observations | EW rescale = 120 | — |
+| `n-v-tower-depth-ninety` | observations | tower depth = 90 → VEV | 244.79 vs 246.22 GeV |
+| `higgs-t28` | observations | Higgs mass | ~125 GeV |
+| `double-magic-delta-i-bound` | observations | doubly-magic isotopes | 9/9 |
+| `color-superconductivity-borromean` | observations | diquark gap | 2.5 vs 10–100 MeV |
+| `e-hartree-categorical-derivation` | predicted-spectra | Hartree energy | relative spacing only |
+| `bring-hyperbolic-knot-bloch-decomposition` | predicted-spectra | 2/(3π) | numeric witness |
+| `magic-numbers-bring` | quantum-observable-universes | {2,8,20,28,50,82,126} | period-lattice open |
+| `shell-closure-nf-term-count` | molecular-construction | shell gaps | γ-alternation |
+| `palindromicity-orbital-type` | molecular-construction | orbital s/p type | Poincaré-dual NF |
+| `confinement-grading-correspondence` | particle-interactions | confinement levels | k≤7 atoms |
+
+### Tier S — structural-math derivation goals
+
+mass-theory: `categorical-higgs-mechanism`, `cl3-zeta5-geometric-realization`,
+`conj-im-q-physical-role`, `conj-psd-trace-orthogonality`,
+`confinement-nf-structure-forcing`, `crossing-graded-mass-expansion`,
+`depth-stratified-frobenius-reciprocity`, `dim-master-pentagon`,
+`joint-galois-braid-action`, `jet-filtered-knot-factor`,
+`pachner-pentagon-borromean`, `p-from-braid-mirror`,
+`poincare-lefschetz-borromean`, `tau-all-orders-bridge`,
+`two-filtration-bridge`.
+particle-interactions: `t-from-trace-cyclicity`,
+`symmetric-crystal-pair-production`, `q-zero-stokes-region-identification`,
+`root-of-unity-mtc-truncation`, `kazhdan-lusztig-classical-limit`,
+`hecke-anyonic-substrate`, `geom-universality` (being upgraded in #1931),
+`crystal-graph-realization`, `cemetery-group-emergence`,
+`brunnian-property-of-borromean`, `complex-chirality-rotation`.
+stochastic-mechanics: `graded-baer-star-Hq`, `g-action-on-substrate`.
+q-geometric-langlands: `modular-s-transform-q-q-tilde`,
+`mirror-3d-3d-correspondence`.
+mass-endomorphism: `conj-rho-k-pair-gen-canonical-form`.
+
+### Tier P — speculative (surreal appendix; retained)
+
+appendix-surreals: `vacuum-epsilon`, `spectral-normal-form`,
+`infinitesimal-observability`, `jones-birthday`, `local-infinitesimal-field`,
+`classical-limit-stpart`, `bigbang-heatdeath`, `archimedean-stpart`,
+`casimir-epsilon-vacuum` (resolved conditional core).
+appendix-surreals-archimedean: `infinitesimal-frobenius`,
+`diophantine-birthday`, `on-p-modular-hecke`,
+`wenzl-positivity-implies-substrate-positivity` (bridges to Yang-Mills).
+`qou-infra-discharges-goncharov-zeta5` and `kashaev-surreal` straddle
+P and the imported-famous bucket (§C.1).
+
+> This §F is the navigable re-tiering (owner picked "re-tier, don't
+> deprecate" for the non-falsified backlog). It is a doc-level snapshot;
+> machine-filterable `tier:E|S|P` tags on each `.ts` can be added as a
+> follow-up mechanical sweep if programmatic filtering is wanted (cost:
+> ~80 sidecar refreshes).
+
 ## Method note
 
 Triage executed by five parallel read-only Explore sub-agents, one per
