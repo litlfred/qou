@@ -89,12 +89,38 @@ Failing-loud guard wired (`DerivedChiCatalogue.lookup_derived`).
 Full audit roadmap:
 [`2026-06-07-pyhecke-native-gil-release-patch.md`](2026-06-07-pyhecke-native-gil-release-patch.md).
 
-### Phase 4 — Lean side (later)
+### Phase 4 — Lean side ✅ DONE (first instance)
 
-- [ ] `QOU.Machinery.DerivedCharacterCatalogue` Lean module with a
-      conditional class binding each `(K, λ)` cell to its R-matrix
-      derivation proof (§3b-cond pattern)
-- [ ] T17's existing R-matrix theorem becomes the first instance
+- [x] `QOU.Machinery.DerivedCharacterCatalogue` Lean module registered in
+      `QOU.lean` (was an orphan — imported nowhere, so CI never built it).
+- [x] `IsRMatrixDerived` upgraded from an opaque `True` marker to a genuine
+      §3b-cond conditional class over `{R : Type*} [Field R]` (§7c — the
+      Kauffman Laurent needs `q⁻¹`, so `Field` not `CommRing`): real
+      `R → R` character fields (`storedChi`, `rmatrixChi`) + a real equality
+      `Prop` (`agrees`).
+- [x] T17's existing R-matrix theorem is the first instance:
+      `borromeanTwoOneBaryonChi_eq_t17` proves the stored Kauffman Laurent
+      equals T17's h-form at `q²` by reusing the proven
+      `chi21_borromean_qform_eq_hform`. Borromean instance fully discharged
+      (no `sorry`). The form-lemmas were generalised from `ℚ` to
+      `{R} [Field R]` in the same pass.
+- [ ] Remaining cells (Trefoil, Cinquefoil, Hopf, Figure-eight, A≥4
+      isotopes) get instances — follow-up; each is a `field_simp; ring`
+      identity against its own published character.
+
+**Note — witness-filename split (2026-06-07).** Verifying the Phase-3
+sweep on a fresh container surfaced a collision: both
+`derived_chi_catalogue_build.py` (342-cell catalogue + T17/Schur-Weyl
+cross-check, consumed by `DerivedChiCatalogue.load()`) and
+`derived_chi_catalogue_sweep.py` (715-cell production sweep) wrote
+`derived-chi-catalogue.witness.json`, clobbering each other. The sweep now
+writes `derived-chi-catalogue-sweep.witness.json`; the build file is
+unchanged so consumers are unaffected.
+
+**Bottleneck (long-compute discipline).** The full `--max-A 6` sweep is
+715 cells in ≈232 s wall; ⁶Li (B₁₈, 385 partitions, 195 `chi_q_via_gp`
+calls) dominates at ≈222 s. A≥7 is offline-only without further Tier-1
+factorisation.
 
 ## Out of scope (don't re-litigate)
 
