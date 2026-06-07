@@ -1902,38 +1902,6 @@
         }
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "md": "d2338355731a",
-          "ts": "ab48048809b5",
-          "lean": "d1b608ce5379"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8f25b34708f6",
-          "script_commit_sha": "9bcdd4cdcb1168d55bcef7307d19add98deae960"
-        },
-        "reviewed_at": "2026-06-07T04:35:11.106Z",
-        "reviewed_sha": "9bcdd4cdcb1168d55bcef7307d19add98deae960",
-        "metrics": {
-          "fwd_emitted": 1,
-          "fwd_received": 0,
-          "tanglement_score": 1,
-          "out_degree": 1,
-          "in_degree": 2,
-          "cone_size": 3,
-          "depth": 2,
-          "pagerank": 0.000965,
-          "edge_span_max": 27,
-          "edge_span_mean": 27,
-          "worst_target": "emits fwd-ref to quantum-observable-universes: ex:dagger-su2"
-        }
-      }
-    ],
     "detangler-topic-coherence": [
       {
         "field_hash": {
@@ -1958,7 +1926,39 @@
           "top_other_score": 1
         }
       }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "d2338355731a",
+          "ts": "ab48048809b5",
+          "lean": "d1b608ce5379"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 2,
+          "cone_size": 3,
+          "depth": 2,
+          "pagerank": 0.000965,
+          "edge_span_max": 27,
+          "edge_span_mean": 27,
+          "worst_target": ""
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-07T04:50:22.937Z"
+  "updated_at": "2026-06-07T04:58:08.431Z"
 }
