@@ -2534,7 +2534,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "1baad1f1a6f7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Phase transitions as S^3 boundary actions; stat-mech subject in info-theory chapter; interpreted by sibling rem:phase-transition-interpretation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:47:48.112Z",
+        "reviewed_sha": "75ca1c3a91f4118e1c2c49dc6791cf75bbc5f896",
+        "notes": "Topic in chapter scope; distinct result (critical-temperature formulas) not duplicated by any sibling."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "1baad1f1a6f7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement = setup + T_q^(g->l)/T_q^(l->s) formulas + sublimation Ext condition; physical interpretation lives in linked rem:phase-transition-interpretation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:47:48.171Z",
+        "reviewed_sha": "75ca1c3a91f4118e1c2c49dc6791cf75bbc5f896",
+        "notes": "Bare claim; the three-phases interpretation is correctly offloaded to a companion remark."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "1baad1f1a6f7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "§7c banner present; statement uses [2]_q, [n_K]_q, Ext^1_{H_n(q)} — generic algebraic q-data, no numeric q0 or Real.*",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:47:48.224Z",
+        "reviewed_sha": "75ca1c3a91f4118e1c2c49dc6791cf75bbc5f896",
+        "notes": "Generic-ring statement; archimedean evaluation deferred to banner'd Lean specialisation."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a84b1c1b935e",
+          "ts": "4b086c3ddcc3",
+          "lean": "1baad1f1a6f7"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No **Proof.** body in .md; positivity/ordering proofs (linarith, q>1) confined to the declared archimedean Lean sibling",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:47:48.289Z",
+        "reviewed_sha": "75ca1c3a91f4118e1c2c49dc6791cf75bbc5f896",
+        "notes": "Narrative carries no archimedean-only proof machinery; specialisation declared by §7c banner."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T12:47:48.289Z"
 }
