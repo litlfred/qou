@@ -2101,37 +2101,6 @@
         }
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "md": "c7713a33042d",
-          "ts": "9c6a9ded485d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8f25b34708f6",
-          "script_commit_sha": "9bcdd4cdcb1168d55bcef7307d19add98deae960"
-        },
-        "reviewed_at": "2026-06-07T04:35:11.106Z",
-        "reviewed_sha": "9bcdd4cdcb1168d55bcef7307d19add98deae960",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 0,
-          "tanglement_score": 0,
-          "out_degree": 0,
-          "in_degree": 0,
-          "cone_size": 0,
-          "depth": 0,
-          "pagerank": 0.000102,
-          "edge_span_max": 0,
-          "edge_span_mean": 0,
-          "worst_target": ""
-        }
-      }
-    ],
     "detangler-topic-coherence": [
       {
         "field_hash": {
@@ -2149,7 +2118,38 @@
         "reviewed_at": "2026-06-07T04:50:22.937Z",
         "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
       }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "c7713a33042d",
+          "ts": "9c6a9ded485d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 0,
+          "in_degree": 0,
+          "cone_size": 0,
+          "depth": 0,
+          "pagerank": 0.000102,
+          "edge_span_max": 0,
+          "edge_span_mean": 0,
+          "worst_target": ""
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-07T04:50:22.937Z"
+  "updated_at": "2026-06-07T04:58:08.431Z"
 }
