@@ -62,3 +62,38 @@ files, same theme. No conflict.
   `claude/geom-uniqueness-2026-06-06` (single PR #1931, alongside the Lean
   `∃!` and the jet-order reduction `conj:three-knot-jet-order-independence`).
   #1935 closed as superseded; its branch retains the original commits.
+
+## Lean gap-closing progress (2026-06-07, appended)
+
+The reduction `conj:three-knot-jet-order-independence` is now **formalized**
+in [`QOU.Archimedean.JetOrderIndependence`](../../content/quantum-observable-universe/lean/QOU/Archimedean/JetOrderIndependence.lean)
+(verified sorry-free, `lake env lean` EXIT 0). It is the §3b-cond conditional
+theorem `hyperbolicVolumeIndependence_of_reduction` deriving the deep
+`HyperbolicVolumeIndependence` from two QOU-native inputs. What moved from
+"open" to "proved":
+
+| Sub-claim | Before | After |
+|---|---|---|
+| Surreal bridge (composition) | monolithic `shadow_vanishes` axiom | **proved** `transport_shadow_vanishes` (I2 ∘ I3) |
+| (I1) uniformity in jet order | open | **proved** `transport_uniform_bound` (C = 0) |
+| (I2) physical-holonomy shadow → 0 | — | named conjectural input (was inside the monolith) |
+| (I3) monodromy shadow → 0 | — | named conjectural input |
+| GB independence at base order N=3 | open | **proved** `jetOrder3_certificate` (∏ pivots = 2 ≠ 0) |
+
+Net: the conjectural surface shrank from one opaque axiom to **two physical
+vanishing inputs (I2, I3)** + the **per-order GB certificate for N > 3**
+(same finite determinant test, pending the compute witness's cyclotomic
+coefficients). The surreal bound is framed geometrically as parallel
+transport of the categorical connection on the projective state fibre
+`ℂP¹` as `q` deforms toward the root-of-unity limit (I1 uniformity /
+I2 archimedean-projection / I3 monodromy-separation). Cross-ref:
+[`2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`](../audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md)
+(the GB-filtration / jet-order bookkeeping this certificate instantiates).
+
+**Derivation-gap status:** `prop:geom-universality` (the `Geom(K)` volume
+form feeding `VolDensity(K, q₀)` at canonical-chain step 9a) now has a
+sorry-free `∃!` well-definedness backing; its transcendence dependency is
+reduced (not closed) per the table above. This does **not** touch the
+separate, still-open step-9a per-knot `VolDensity(K)` *wire-up* gap (cheat
+§9 row 1) — that is a production-migration bug, orthogonal to the
+well-definedness leg settled here.
