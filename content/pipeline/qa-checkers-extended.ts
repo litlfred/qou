@@ -1496,10 +1496,11 @@ function loadChapterGraph(): void {
 }
 
 // Longest acyclic `uses[]` dependency chain out of a block (edge
-// count). Iterative post-order DFS with an on-stack guard so a rare
+// count). Recursive memoized DFS with an on-stack guard so a rare
 // dependency cycle does not loop forever (back-edges contribute 0).
-// Memoized in `_depthCache`, so amortised O(1) per block across a
-// sweep.
+// Recursion depth is bounded by the longest dependency chain (tens of
+// levels on this corpus), so it is stack-safe. Memoized in
+// `_depthCache`, so amortised O(1) per block across a sweep.
 function dependencyDepth(start: string): number {
   if (!_usesGraph) return 0;
   const cached = _depthCache?.get(start);
