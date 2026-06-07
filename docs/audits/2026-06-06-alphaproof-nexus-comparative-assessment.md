@@ -200,6 +200,24 @@ The last row is the key philosophical inversion: **their core strength
 (esp. `EVOLVE-VALUE`) must land *inside* our production-vs-exploratory
 guardrails, or it becomes a numerology generator.
 
+**The symbiotic loop + the author's role.** These differentiators compose into a
+five-step round-trip in which the **author owns intent and constraints**
+(milestones, conjectures, proof strategies, the standing rule-set, and explicit
+authorization of every merge / override / outward send) and the **agent owns
+decomposition, execution, and QA**. The standing constraints are the
+load-bearing inversion — *fences that forbid*, the opposite of `EVOLVE-VALUE`'s
+*markers that reward search*. The "Continuous corpus QA" row is itself
+multi-axis: proof rater + statement-integrity, **detangler** dependency-graph
+heuristics, canonical-discipline, compute, voice, parameter-regime, and
+bibliography — each recorded per block under one shared `.qa.json` reviewer-entry
+schema (result / severity / score / reviewer / content-hash / evidence), with
+failing verdicts draining automatically into review-sized fix-PRs. The
+outward-facing companion note develops all of this — the loop, the author-role
+table, the interaction-type taxonomy drawn from real PR activity, and the full
+QA-axis list:
+[`docs/outreach/symbiotic-proof-authoring-note.md`](../outreach/symbiotic-proof-authoring-note.md)
+§3, §5.
+
 ---
 
 ## 4. Recommended next steps (prioritized)
