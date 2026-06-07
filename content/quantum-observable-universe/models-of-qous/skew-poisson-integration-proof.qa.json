@@ -1788,7 +1788,27 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "872d63c09b22",
+          "ts": "eb2cb1604ed2"
+        },
+        "result": "pass",
+        "evidence": "skew-poisson-integration-proof.ts:2 — proof kind; skew-poisson-integration-proof.md:1-7 — cites Fresse, three items",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:10:11.251Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Proof block for prop:skew-poisson-integration, placed in sec:witt-vector-lifting. Correct proof-following-proposition structure."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T14:10:11.251Z"
 }

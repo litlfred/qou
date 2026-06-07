@@ -1719,7 +1719,28 @@
           "worst_span": 0
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "928e04cdead4",
+          "ts": "80d6e7e03e5a",
+          "lean": "b5fe35a69a01"
+        },
+        "result": "pass",
+        "evidence": "main-commutative-diagram-proof.ts:2 — proof kind; main-commutative-diagram-proof.md:1-42 — proof tracing top-right and left-bottom paths",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:05:46.470Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Proof block for prop:main-commutative-diagram, placed immediately after the proposition in sec:physical-interpretation. Correct proof-following-proposition placement."
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T14:05:46.470Z"
 }

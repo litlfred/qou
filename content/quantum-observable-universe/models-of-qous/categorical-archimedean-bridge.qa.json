@@ -2550,7 +2550,91 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "47164949e40f",
+          "ts": "c9d73965f081",
+          "lean": "0cbe2e13ca78"
+        },
+        "result": "pass",
+        "evidence": "categorical-archimedean-bridge.ts:3 — proposition kind; categorical-archimedean-bridge.md:1-24 — commutative diagram bridging categorical d_q to geometric θ∧ℒ_ξ",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:07:37.325Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Proposition in sec:categorical-differential-bridge. States that fibre functor τ intertwines the categorical vertical projection with the geometric contact operator. Exactly the bridge result the section title promises."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "47164949e40f",
+          "ts": "c9d73965f081",
+          "lean": "0cbe2e13ca78"
+        },
+        "result": "pass",
+        "evidence": "categorical-archimedean-bridge.md:1-8 — hypotheses (QOU, weight decomposition, d_q); md:9-24 — tikzcd diagram + one-line statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:07:37.362Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Statement block gives formal hypotheses and tikzcd diagram. No interpretive prose mixes into the statement; the proof is a separate block."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "47164949e40f",
+          "ts": "c9d73965f081",
+          "lean": "0cbe2e13ca78"
+        },
+        "result": "pass",
+        "evidence": "categorical-archimedean-bridge.lean:41-57 — structure CategoricalArchimedeanBridge over (C:Type u)[Category.{v} C][MonoidalCategory C]; bridge field: fibreFunctor.map(proj_V≫d_classical)=contactOp",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:07:37.401Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Lean statement is fully generic over a monoidal category. No ℝ-specific constructs. The bridge identity is stated in terms of Functor.map and morphism composition. Wall-clean."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "47164949e40f",
+          "ts": "c9d73965f081",
+          "lean": "0cbe2e13ca78"
+        },
+        "result": "pass",
+        "evidence": "categorical-archimedean-bridge.lean:61-65 — theorem categorical_archimedean_bridge proved by 'exact cab.bridge' over generic monoidal category",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T14:07:37.440Z",
+        "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
+        "notes": "Lean proof is trivial (exact field access). Narrative proof (categorical-archimedean-bridge-proof.md) traces the fibre functor maps; uses abstract differential forms without any ℝ-arithmetic. The final formula τ(d_q) = q⁻¹ d + (1-q⁻¹)θ∧ℒ_ξ is generic-q, not fixed to ℝ. Wall-clean."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T14:07:37.440Z"
 }
