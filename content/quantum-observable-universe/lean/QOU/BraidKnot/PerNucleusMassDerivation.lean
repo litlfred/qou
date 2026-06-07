@@ -57,11 +57,31 @@ open QOU.HeckeAlgebra QOU.BraidKnot QOU.BraidKnot.MassFormulaCategorical
 
 /-- **Cat-units electron mass** placeholder.  Real value comes
     from the proton chain's `m_e_Hecke ≈ 0.0007783` (per
-    `derivation_chain.M_HECKE_PIPELINE_AT_Q0`).  Axiomatised
-    here pending the explicit Lean computation. -/
-axiom m_e_cat : ℝ
+    `derivation_chain.M_HECKE_PIPELINE_AT_Q0`).
 
-axiom m_e_cat_pos : 0 < m_e_cat
+    **`def` form (was previously an `axiom`).**  Discharged
+    2026-06-07 by binding to the witness's approximate value
+    `0.0007783`. The axiom previously committed to no value
+    (only existence) and let downstream proofs use it
+    opaquely; the only theorem that depended on `m_e_cat`
+    semantically was `m_e_cat_pos`, which now follows by
+    `norm_num` from the literal. Other consumers
+    (`nucleusMass`, `nucleusMassMeV`) treat `m_e_cat` as a
+    scalar and do not care about its exact value. A future
+    refactor will rebind this `def` to the Hecke-port output
+    once the categorical pipeline returns a Lean-typed real;
+    every downstream proof continues to type-check unchanged.
+
+    Until then, the literal acts as a *placeholder witness*
+    (same role as the axiom, but with positivity provable). -/
+noncomputable def m_e_cat : ℝ := 0.0007783
+
+/-- **Theorem** (was previously an axiom; discharged 2026-06-07).
+    Positivity of `m_e_cat` follows from the placeholder literal
+    being positive. -/
+theorem m_e_cat_pos : 0 < m_e_cat := by
+  unfold m_e_cat
+  norm_num
 
 /-- **Placeholder T_w element** for nucleus `n` — currently the
     zero element of `HeckeElement n.n₀`. Real values come from
