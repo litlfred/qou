@@ -35,7 +35,12 @@ BRANCH=""
 while [ $# -gt 0 ]; do
   case "$1" in
     --force) FORCE=1 ; shift ;;
-    --branch) BRANCH="$2" ; shift 2 ;;
+    --branch)
+      if [ $# -lt 2 ] || [ -z "${2:-}" ]; then
+        echo "lake-cache-fetch: --branch requires a non-empty value" >&2
+        exit 2
+      fi
+      BRANCH="$2" ; shift 2 ;;
     -h|--help)
       sed -n '2,30p' "$0" | sed 's|^# ||;s|^#||'
       exit 0
@@ -59,11 +64,15 @@ if [ -z "$BRANCH" ]; then
   BRANCH="lake-cache/qou-${slug}"
 fi
 
-# Warm-cache short-circuit unless --force.
-if [ "$FORCE" -eq 0 ] && [ -d "$REPO_ROOT/.lake/build/lib" ]; then
-  count=$(find "$REPO_ROOT/.lake/build/lib" -maxdepth 1 -mindepth 1 2>/dev/null | wc -l)
+# Warm-cache short-circuit unless --force. The signal is the mathlib
+# oleans dir — that's the heavy artefact this script exists to restore
+# and it matches the check in setup-lean-toolchain.sh (Copilot review
+# on PR #1950: both scripts must use the same readiness signal).
+WARMSIG="$REPO_ROOT/.lake/packages/mathlib/.lake/build/lib"
+if [ "$FORCE" -eq 0 ] && [ -d "$WARMSIG" ]; then
+  count=$(find "$WARMSIG" -maxdepth 1 -mindepth 1 2>/dev/null | wc -l)
   if [ "$count" -gt 0 ]; then
-    echo "lake-cache-fetch: .lake/build/lib/ already populated ($count entries); use --force to re-extract"
+    echo "lake-cache-fetch: mathlib oleans already populated ($count entries); use --force to re-extract"
     exit 0
   fi
 fi
@@ -81,7 +90,11 @@ fi
 # path matches lake-oleans.tgz.part*. Stream each blob into a temp
 # scratch dir.
 TMP=$(mktemp -d -t lake-cache-fetch.XXXXXX)
-trap "rm -rf '$TMP'" EXIT INT TERM
+# Bake $TMP value into the trap string at definition time (the value is
+# stable for the script's lifetime, so this is intentional). Double-
+# quoted outer + explicit ${TMP} avoids any single-quote ambiguity per
+# the Copilot review on PR #1950.
+trap "rm -rf ${TMP}" EXIT INT TERM
 
 parts=$(git ls-tree --name-only FETCH_HEAD 2>/dev/null \
         | grep -E '^lake-oleans\.tgz\.part[0-9]+$' \
@@ -106,32 +119,64 @@ for p in $parts; do
   fi
 done
 
-# Concatenate parts into one tarball and verify.
+# Concatenate parts into one tarball IN THE SORTED ORDER computed above.
+# A naive `cat $TMP/*.part*` glob would put part10 before part2,
+# corrupting the archive (Copilot review on PR #1950).
 echo "lake-cache-fetch: assembling tarball + extracting into $REPO_ROOT"
-cat "$TMP"/lake-oleans.tgz.part* > "$TMP/lake-oleans.tgz"
+> "$TMP/lake-oleans.tgz"
+for p in $parts; do
+  cat "$TMP/$p" >> "$TMP/lake-oleans.tgz"
+done
 tar_size=$(stat -c '%s' "$TMP/lake-oleans.tgz" 2>/dev/null || stat -f '%z' "$TMP/lake-oleans.tgz")
 echo "  assembled tarball: $((tar_size / 1024 / 1024)) MB"
 
-# Extract into the repo root. tar -C handles the atomic write; we
-# don't need a temp-dir-then-rename because tar refuses to overwrite
-# unrelated files (writes into .lake/ only).
-if ! tar -xzf "$TMP/lake-oleans.tgz" -C "$REPO_ROOT" 2>&1 | tail -5; then
+# Validate every entry path is under '.lake/' and contains no traversal
+# / absolute-path components before extracting. Defense-in-depth even
+# though the source is a controlled internal orphan branch (Copilot
+# review on PR #1950: a malicious or corrupted tarball could otherwise
+# write outside .lake/ via absolute paths or '..' traversal).
+bad_entries=$(tar -tzf "$TMP/lake-oleans.tgz" 2>/dev/null \
+  | awk '/^\// || /(^|\/)\.\.($|\/)/ || !/^\.lake\//' | head -5)
+if [ -n "$bad_entries" ]; then
+  echo "lake-cache-fetch: ERROR — tarball contains entries outside .lake/ or with traversal" >&2
+  echo "  Offending entries (first 5):" >&2
+  echo "$bad_entries" | sed 's/^/    /' >&2
+  exit 1
+fi
+
+# Extract into the repo root. `--no-absolute-names` strips any leading
+# slash defensively (belt-and-suspenders after the path validation
+# above). Stage into a temp dir then rename so partial extraction
+# can't leave a half-populated .lake/.
+mkdir -p "$TMP/extract"
+if ! tar --no-absolute-names -xzf "$TMP/lake-oleans.tgz" -C "$TMP/extract" 2>&1 | tail -5; then
   echo "lake-cache-fetch: ERROR — tar extraction failed" >&2
   exit 1
 fi
+if [ ! -d "$TMP/extract/.lake" ]; then
+  echo "lake-cache-fetch: ERROR — tarball did not produce .lake/ at top level" >&2
+  exit 1
+fi
+# Atomic-ish replace: remove any existing partial .lake/, then move.
+rm -rf "$REPO_ROOT/.lake.staging" "$REPO_ROOT/.lake"
+mv "$TMP/extract/.lake" "$REPO_ROOT/.lake"
 
-# Verify the extraction populated .lake/build/lib/.
-if [ ! -d "$REPO_ROOT/.lake/build/lib" ]; then
-  echo "lake-cache-fetch: ERROR — extraction did not produce .lake/build/lib/" >&2
-  echo "  Tarball top-level:" >&2
-  tar -tzf "$TMP/lake-oleans.tgz" | head -10 | sed 's/^/    /' >&2
+# Verify the extraction populated the mathlib oleans (the heavy part
+# we care about). Both this script and setup-lean-toolchain.sh use the
+# same readiness signal — '.lake/packages/mathlib/.lake/build/lib' —
+# per the Copilot review on PR #1950.
+WARMSIG="$REPO_ROOT/.lake/packages/mathlib/.lake/build/lib"
+if [ ! -d "$WARMSIG" ]; then
+  echo "lake-cache-fetch: ERROR — extraction did not produce $WARMSIG" >&2
+  echo "  Extracted .lake/ top-level:" >&2
+  ls -1 "$REPO_ROOT/.lake" | head -5 | sed 's/^/    /' >&2
   exit 1
 fi
 
-lib_count=$(find "$REPO_ROOT/.lake/build/lib" -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l)
+lib_count=$(find "$WARMSIG" -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l)
 lake_size=$(du -sh "$REPO_ROOT/.lake" 2>/dev/null | awk '{print $1}')
 echo "lake-cache-fetch: ✓ restored .lake/ from $BRANCH"
 echo "  .lake/ size:         $lake_size"
-echo "  .lake/build/lib/ has $lib_count top-level directories"
+echo "  mathlib lib has $lib_count top-level directories"
 echo ""
 echo "Next: 'lake build QOU' should now complete in seconds rather than hours."
