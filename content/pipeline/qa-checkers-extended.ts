@@ -1760,10 +1760,42 @@ const DETANGLER_CHAPTER_KEYWORDS: Record<string, string[]> = {
   glossary: ["glossary"],
 };
 
+// Topic-coherence is only meaningful signal for LOAD-BEARING logical
+// blocks: a `definition`/`proposition`/`theorem`/`lemma`/`corollary`
+// whose prose is mostly about another chapter's topic is a genuine
+// misplacement. Interpretive/narrative kinds (`remark`, `example`,
+// `prose`, `proof`, `diagram`, `simulator`, `conjecture`) reference
+// upstream concepts by nature, so flagging them is noise — they are
+// excluded (n/a). Empirically, restricting to these kinds + requiring
+// a clear margin cut a 153-warn dragnet (61 remarks, 79 in the
+// cross-cutting observations chapter) down to genuine signal.
+const TOPIC_COHERENCE_KINDS = new Set([
+  "definition",
+  "proposition",
+  "theorem",
+  "lemma",
+  "corollary",
+]);
+
 export function checkDetanglerTopicCoherence(
   mdPath: string | undefined,
 ): CheckerResult & { metrics?: Record<string, number | string> } {
   if (!mdPath || !existsSync(mdPath)) return { result: "n/a", hits: [] };
+  // Read the block kind from the .ts sibling; only audit load-bearing
+  // logical kinds (see TOPIC_COHERENCE_KINDS rationale above). Blocks
+  // declare their kind in one of two forms — an explicit `kind: "x"`
+  // field OR a builder call `export default <kind>({ ... })` (the
+  // builder name IS the kind). Detect both, matching the convention in
+  // block-density-audit.py.
+  const tsPath = mdPath.replace(/\.md$/, ".ts");
+  if (existsSync(tsPath)) {
+    const tsSrc = readFileSync(tsPath, "utf-8");
+    const kindM =
+      tsSrc.match(/kind:\s*"([^"]+)"/) ||
+      tsSrc.match(/export\s+default\s+(\w+)\s*\(/);
+    if (kindM && !TOPIC_COHERENCE_KINDS.has(kindM[1]))
+      return { result: "n/a", hits: [] };
+  }
   const content = readFileSync(mdPath, "utf-8");
   const nonBlank = content.split("\n").filter((l) => l.trim().length > 0);
   // Match the Python gate: only audit substantive blocks (> 20 lines);
@@ -1800,7 +1832,12 @@ export function checkDetanglerTopicCoherence(
     }
   }
 
-  const mismatch = topOtherScore > homeScore && topOtherScore >= 3;
+  // Require a CLEAR margin (≥ 3 more hits than home), not a bare tie-
+  // break: "4 vs 3" is within keyword-overlap noise, "6 vs 1" is a real
+  // misplacement. `top_other_score >= home_score + 3` filters borderline
+  // cases the bare `>` rule let through.
+  const mismatch =
+    topOtherScore >= 3 && topOtherScore >= homeScore + 3;
   const hits: CheckerHit[] = mismatch
     ? [
         {
