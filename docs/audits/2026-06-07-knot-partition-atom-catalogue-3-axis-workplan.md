@@ -52,37 +52,42 @@ Per-cell data the catalogue stores:
 
 ## Deliverables (multi-session)
 
-### Phase 1 — schema + first derived entries (this PR)
+### Phase 1 — schema + first derived entries ✅ DONE
 
-- [x] Audit doc (this file) + work-plan
-- [ ] Witness JSON schema for the catalogue (per-cell record + manifest)
-- [ ] Python `derived_chi_catalogue.py` module skeleton with the typed
-      record + lookup API
-- [ ] R-matrix derivation of `χ⁽²,¹⁾(β_Bor)` reproduces T17's
-      `2 − 3h⁴ − h⁶` (sanity check against the merged result)
-- [ ] R-matrix derivation of `χ⁽³⁾(β_Bor)` (symmetric block — NEW
-      cell, same template, first new derived entry)
-- [ ] One catalogue-derived cell wired into one production compute
-      site as a read-through (no behaviour change — proves the
-      consumer can reach the catalogue)
+All items landed in PR #1952. Schema + lookup API + first 3 Borromean
+cells (independently re-derived via R-matrix, cross-validates T17 from
+PR #1933) + read-through consumer demo.
 
-### Phase 2 — broaden the K-axis (next PR)
+### Phase 2 — broaden the K-axis ✅ DONE
 
-- [ ] T(2,3) trefoil → electron rows: `χ^{(2)}` and `χ^{(1,1)}` derived
-- [ ] T(2,5) cinquefoil → muon rows: same two partitions
-- [ ] Figure-eight 4₁ → Higgs/pion-half rows: all three partitions of 3
-- [ ] Catalogue invariant tests: `Σ_λ dim(M_λ) · χ^λ(1) = …` etc.
+12 cells across 5 knots: Borromean, Figure-eight, Hopf (diquark),
+Trefoil (electron), Cinquefoil (muon). Schema migrated to Laurent-in-q
+canonical form.
 
-### Phase 3 — wire derived values into the binding pipeline
+### Phase 3 — production isotope sweep ✅ DONE
 
-- [ ] Replace the relevant extracted `χ^λ` reads in
-      `closed_form_tau_M.py` / per-atom mass-table sweep with catalogue
-      reads
-- [ ] Each replacement annotated with the source commit hash of the
-      derivation so the witness pipeline can audit
-- [ ] Failing-loud guard: if a `(K, λ, A)` site asks the catalogue for
-      `tier = "derived"` and only `cal-anchored` exists, the compute
-      raises — forces honest provenance reporting on the L2 dashboards
+Rust-backed sweep via `pyhecke_native.chi_q_via_gp`. 715 derived cells
+through A=6 (p, n, D, T, ³He, ⁴He, ⁵Li, ⁶Li). A=7+ tractable offline.
+Failing-loud guard wired (`DerivedChiCatalogue.lookup_derived`).
+
+### Phase 3 optimisations ✅ DONE (multi-tier)
+
+- **GIL release** on `chi_q_via_gp` — `py.allow_threads` patch in
+  `pyhecke_native v0.9.0` (locally built + verified 2.87× on 4 cores).
+- **Auto-detect parallel backend** (`derived_chi_catalogue_parallel.py`)
+  — threads when GIL released, processes fallback otherwise.
+- **Tier 4** — `mn_chi_q` lru_cache memoize.
+- **Tier 3** — bar-conjugate symmetry, verified 100% on 348 pairs,
+  wired into sweep (1.9× speedup, 176/176 cross-verified).
+- **Tier 2** — M_n disk cache, pre-filled for n ∈ {3, 6, 9, 12, 15}
+  (37,935 entries, 3 MB).
+- **Tier 1** — LR / parabolic factorisation: audit doc landed
+  ([`2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md));
+  full implementation requires deuteron-base + recursive multi-bridge
+  cases (follow-up; estimated 1-2 sessions for Phase 1.1).
+
+Full audit roadmap:
+[`2026-06-07-pyhecke-native-gil-release-patch.md`](2026-06-07-pyhecke-native-gil-release-patch.md).
 
 ### Phase 4 — Lean side (later)
 
