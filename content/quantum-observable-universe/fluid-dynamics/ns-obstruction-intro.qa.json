@@ -2079,7 +2079,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2f45d4972d0e",
+          "ts": "1a1ec2abab08"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Section intro for the NS-obstruction section; outlines NS(A) cohomological obstruction, observability axiom, Descartes-universe computation — all section content",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:55:03.563Z",
+        "reviewed_sha": "cb51592f8ba97d2db1b7d7639f4ee64da338eca0",
+        "notes": "Draft-marked section roadmap; on-topic for fluid-dynamics NS-obstruction section."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T00:55:03.563Z"
 }
