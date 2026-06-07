@@ -69,33 +69,40 @@ of using the oleans — defeating the whole point. The mitigation is to
 After a clean `lake build`, reseed the branch so the cache stays current —
 especially after a Mathlib bump or a large new module.
 
-**Preferred (PR #1957):** the producer script handles slug + worktree +
-per-package separation + xz compression + master-index in one shot:
+**Production seed path: bash one-liner OR `lake-cache-refresh.yml`** —
+both write the monolithic `lake-cache/qou-v4-24-0` branch in formats
+the current fetcher can consume (chunked-tgz or raw `.lake/` tree).
+Recipe + slug rules:
+[`.claude/skills/local/lean-environment-setup.md` §"PRESERVE THE BUILD"](../../.claude/skills/local/lean-environment-setup.md).
+A reseed commit names the toolchain + what changed (e.g. the
+`d21ef6e748` "incl MassVolDensity §6" pattern).
+
+**Experimental seed path (PR #1957): `scripts/lake-cache-produce.py`.**
+Per-package orphan branches with per-file `.olean.xz` blobs + a
+`cache-index.json` master-index naming regen steps (decompress_xz →
+compute_hashes → touch_trace). Mathlib gets its own branch (~140 MB
+after strip + xz, down from ~1.8 GB raw); small packages (aesop / Qq /
+batteries / proofwidgets) get tiny branches.
 
 ```bash
-./scripts/lake-cache-produce.py                     # dry-run all 9 packages
-./scripts/lake-cache-produce.py --packages mathlib  # one package, dry-run
-./scripts/lake-cache-produce.py --push              # actually push
-./scripts/lake-cache-produce.py --branch-suffix test --push  # test branch first
+./scripts/lake-cache-produce.py                          # dry-run, safe
+./scripts/lake-cache-produce.py --packages mathlib       # one package
+./scripts/lake-cache-produce.py --push --branch-suffix test  # test branch
 ```
 
-The producer writes per-package orphan branches `lake-cache/<pkg>-v4-24-0`,
-each containing only that package's oleans (xz-compressed) + a
-`cache-index.json` master-index naming the regen steps (decompress_xz →
-compute_hashes → touch_trace). Mathlib gets its own branch (~140 MB after
-strip + xz, down from ~1.8 GB raw); small packages (aesop / Qq / batteries
-/ proofwidgets) get tiny branches. The corresponding fetcher
-`scripts/lake-cache-fetch.sh` handles both this format and the legacy
-chunked-tgz format documented above.
+⚠ **Do NOT** `--push` to the canonical (no-suffix) branch names yet —
+`scripts/lake-cache-fetch.sh` does not yet walk multiple per-package
+branches or decompress `.olean.xz` blobs. Pushing to canonical names
+without the fetcher extension would orphan the output (no consumer).
+Use `--branch-suffix test` for exploration / benchmarking only. The
+fetcher's per-package consumer is the tracked follow-up to PR #1957.
 
 Architecture details, strip rationale, and compression head-to-head data:
 [`docs/audits/2026-06-07-lake-cache-only-new-content-design.md`](../audits/2026-06-07-lake-cache-only-new-content-design.md).
-
-**Legacy (bash one-liner):** the recipe in
-[`.claude/skills/local/lean-environment-setup.md` §"PRESERVE THE BUILD"](../../.claude/skills/local/lean-environment-setup.md)
-remains documented as the chunked-tgz-only path. A reseed commit names
-the toolchain + what changed (e.g. the `d21ef6e748` "incl MassVolDensity §6"
-pattern).
+(Note: the design doc text still references `scripts/lake-cache-produce.sh`
+in the migration plan; the producer is now `lake-cache-produce.py`
+since the .sh was deleted as a duplicate in PR #1967. Tracked for a
+follow-up doc refresh.)
 
 ## Open coordination item
 
