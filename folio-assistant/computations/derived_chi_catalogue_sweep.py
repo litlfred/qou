@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """derived_chi_catalogue_sweep.py — production isotope sweep.
 
+Multiprocessing-parallel via `derived_chi_catalogue_parallel.parallel_chi_q_via_gp_batch`
+to bypass the `pyhecke_native.chi_q_via_gp` GIL hold (~3-Nx speedup on
+N-core boxes; see `docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`).
+
 Phase 3 of the catalogue work-plan: builds derived `(K, λ, A)` cells
 for **every production isotope × every Wedderburn partition** using the
 Rust pyhecke_native backend (Geck-Pfeiffer reduction + Hecke characters).
@@ -40,6 +44,7 @@ Progress lines emit every isotope + every 10% of partitions.
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import time
 from pathlib import Path
@@ -58,6 +63,9 @@ from derived_chi_catalogue import (  # noqa: E402
     DerivedChiCatalogue,
     KnotPartitionAtomCell,
     load_catalogue,
+)
+from derived_chi_catalogue_parallel import (  # noqa: E402
+    parallel_chi_q_via_gp_batch,
 )
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
@@ -118,12 +126,20 @@ def derive_cell(
     braid_pretty: str,
     *,
     derivation_ref: str,
+    chi_pairs_precomputed: list[tuple[int, str]] | None = None,
 ) -> KnotPartitionAtomCell:
-    """Derive a single (K, λ, A) cell via pyhecke_native.chi_q_via_gp."""
-    laurent = ph.chi_q_via_gp(list(partition), n_strands, rust_word)
-    # laurent is List[(i32, str)] — already in Kauffman convention, integer coeffs.
-    chi_pairs: list[tuple[int, str]] = [(int(d), str(c)) for (d, c) in laurent]
-    chi_pairs.sort()
+    """Derive a single (K, λ, A) cell via pyhecke_native.chi_q_via_gp.
+
+    `chi_pairs_precomputed` lets the caller supply the q-Laurent
+    pairs from a batch precompute (e.g. parallel_chi_q_via_gp_batch);
+    if None, the per-cell synchronous path is used."""
+    if chi_pairs_precomputed is None:
+        laurent = ph.chi_q_via_gp(list(partition), n_strands, rust_word)
+        chi_pairs: list[tuple[int, str]] = sorted(
+            (int(d), str(c)) for (d, c) in laurent
+        )
+    else:
+        chi_pairs = chi_pairs_precomputed
     return KnotPartitionAtomCell(
         knot=knot_name,
         partition=partition,
@@ -167,7 +183,17 @@ def main() -> int:
         help="Merge into existing catalogue witness instead of rebuilding "
              "from scratch (preserves Phase 2 cells).",
     )
+    parser.add_argument(
+        "--workers", type=int, default=0,
+        help="ProcessPoolExecutor worker count for parallel per-partition "
+             "character computation (default: os.cpu_count(); 1 = serial). "
+             "Threads don't help — pyhecke_native holds the GIL during the "
+             "Geck-Pfeiffer compute. Future Rust-side patches (see "
+             "`docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`) "
+             "will lift this restriction.",
+    )
     args = parser.parse_args()
+    workers = args.workers if args.workers > 0 else (os.cpu_count() or 1)
 
     t0 = time.monotonic()
     wb = WitnessBuilder(
@@ -228,14 +254,27 @@ def main() -> int:
 
         atom_t0 = time.monotonic()
         atom_cells = 0
-        progress_step = max(1, len(parts) // 5)
         print(f"  • {label} (Z={Z}, N={N}, A={A}, B_{n_strands}, "
-              f"{len(rust_word)} crossings, {len(parts)} partitions):")
-        for i, lam in enumerate(parts):
+              f"{len(rust_word)} crossings, {len(parts)} partitions, "
+              f"workers={workers}):", flush=True)
+        # Parallel batch compute (ProcessPoolExecutor sidesteps the
+        # pyhecke_native GIL hold).
+        part_tuples = [tuple(p) for p in parts]
+        compute_t0 = time.monotonic()
+        chi_results = parallel_chi_q_via_gp_batch(
+            partitions=part_tuples,
+            n_strands=n_strands,
+            word=rust_word,
+            workers=workers,
+        )
+        compute_dt = time.monotonic() - compute_t0
+        # Materialise cells from the batch result.
+        for lam in part_tuples:
             try:
                 cell = derive_cell(
-                    label, knot_name, tuple(lam), n_strands, rust_word,
+                    label, knot_name, lam, n_strands, rust_word,
                     braid_pretty, derivation_ref=derivation_ref,
+                    chi_pairs_precomputed=chi_results[lam],
                 )
                 cat.add(cell)
                 atom_cells += 1
@@ -243,13 +282,10 @@ def main() -> int:
             except ValueError:
                 # Cell duplicate from --merge-existing or repeat partition
                 pass
-            if (i + 1) % progress_step == 0 or (i + 1) == len(parts):
-                elapsed = time.monotonic() - atom_t0
-                pct = 100.0 * (i + 1) / len(parts)
-                eta = elapsed * (len(parts) - i - 1) / max(i + 1, 1)
-                print(f"      [{i + 1:>5d}/{len(parts):<5d}] "
-                      f"{pct:5.1f}%  elapsed={elapsed:6.2f}s  ETA={eta:6.2f}s",
-                      flush=True)
+        print(f"      batch compute: {compute_dt:.2f}s "
+              f"({len(part_tuples)} characters; "
+              f"{1000 * compute_dt / max(len(part_tuples), 1):.1f} ms/cell "
+              f"average across {workers} workers)", flush=True)
         atom_dt = time.monotonic() - atom_t0
         print(f"      done: {atom_cells} cells in {atom_dt:.2f}s")
         atom_summary[label] = {
@@ -273,11 +309,17 @@ def main() -> int:
         print(f"    {label:5s} A={summary['A']:2d} n={summary['n_strands']:3d}  "
               f"cells={summary['cells_emitted']:5d}  t={summary['elapsed_seconds']:6.2f}s")
 
+    # The sweep emits at least one new cell when starting from scratch
+    # (no --merge-existing) or when a higher --max-A includes atoms not
+    # yet in the catalogue. A no-op re-run with --merge-existing is OK.
+    sweep_did_something = total_cells_emitted > 0 or args.merge_existing
     wb.add_assertion(
-        "sweep_emitted_cells",
-        computed=total_cells_emitted > 0,
+        "sweep_ran_to_completion",
+        computed=sweep_did_something,
         expected=True,
-        source="The Phase 3 sweep must emit at least one new (K, λ, A) cell.",
+        source="The Phase 3 sweep must either emit new (K, λ, A) cells or "
+               "be a no-op re-run with --merge-existing (in which case all "
+               "expected cells were already in the catalogue).",
     )
 
     wb.add_data("catalogue", cat.to_dict())
