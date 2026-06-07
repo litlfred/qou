@@ -43,6 +43,26 @@ compose (§8).
 | QA | generation-time (rater + verifier) | **continuous, corpus-wide**, hash-stale-tracked |
 | Authority | agent acts autonomously | agent drafts; **human approves & closes** |
 
+### Differentiators at a glance
+
+Feature by feature — what the authoring layer adds *around* a proof-search core:
+
+| Capability | Symbiotic authoring (us) | Autonomous search (them) |
+|---|---|---|
+| **Authoritative narrative** | the prose is the audited scholarly face, co-evolved with the formalization (voice / readability / conciseness / narrative↔formal-equivalence audits) | auto-generated NL proofs that *mirror* the Lean, not authored exposition |
+| **Hallucinated-lemma defense** | every deferred step needs a citation key that resolves against a typed reference database → directly blocks failure mode (b) | no citation gate; agents `sorry`-ed fabricated "known results" |
+| **Offloading defense** | a conjectural-propagation type system: a result downstream of an unproved input *cannot be typed a theorem* unless it carries that input as an explicit hypothesis → structurally blocks failure mode (a) | could not be prompted away |
+| **Misformalization** | *proactive* narrative↔formal equivalence audit ("do they prove the same thing?") | *reactive* (the wrong reading is proved, then a human notices) |
+| **Numeric / figure provenance** | witness records with producing-script hash + staleness tracking; optimisation solves emit their dual | out of scope (pure-math proofs) |
+| **Don't-redo-known-work** | a backward corpus-grep before anything is declared "open" | n/a (open is the goal) |
+| **Continuous corpus QA** | multi-axis watchers (proof / canonical / compute / detangler / voice / regime) + per-block `.qa.json` sidecars, hash-stale-tracked | QA at *generation* time only (rater + verifier) |
+| **Anti-overfitting firewall** | a production-vs-exploratory firewall refuses unjustified fitted constants in the authoritative text | the *opposite*: value-search markers actively reward parameter search |
+
+The last row is the key inversion: **their core strength — searching a value
+space — is our core hazard.** Anything imported from the autonomous side (an
+`EVOLVE-VALUE`-style marker especially) must land *inside* the
+production-vs-exploratory fence, or it becomes a numerology generator.
+
 ---
 
 ## 2. The atomic unit: a knowledge object, not a proof file

@@ -184,21 +184,10 @@ adoptions; several disciplines where *we are already ahead* and could say so.
 
 ## 3. What WE already do that they DON'T (our differentiators)
 
-| Capability | Us | Them |
-|---|---|---|
-| **Authoritative narrative** | `.md` is the audited scholarly face; co-evolved with `.lean`; `one-voice`, `readability`, `proof-conciseness`, `proof-narrative-lean-equivalence` | auto-generated NL proofs that *mirror* the Lean (`NaturalLanguageProofs/`), not authored exposition |
-| **Hallucinated-lemma defense** | **every `sorry` needs `-- Ref:` matched to `references.ts`** → directly blocks their failure mode (b) | no citation gate; agents `sorry`-ed fake "known results" |
-| **Offloading defense** | **conjectural-propagation type system + §3b-cond**: a downstream-of-conjecture result *cannot be typed `theorem`* unless it carries the conjecture as an explicit Lean `[class]` hypothesis → structurally prevents failure mode (a) | could not prompt the behavior away |
-| **Misformalization** | *proactive* `proof-narrative-lean-equivalence` audit ("do they prove the same thing?") | *reactive* (agent proves the wrong reading, then a human notices) |
-| **Numeric provenance** | witness JSON with `scriptHash` / `scriptCommitSha` staleness; `witnessed-values`; LP/SDP **dual emission** discipline | n/a (pure-math proofs) |
-| **Don't-redo-known-work** | **corpus-grep checklist** before declaring "open" | n/a (they *want* open) |
-| **Continuous corpus QA** | integration-watcher family (proof / canonical / compute / detangler / one-voice / q-usage) + `.qa.json` multi-reviewer sidecars | QA = rater-Elo + SafeVerify at *generation* time only |
-| **Anti-numerology firewall** | `production-vs-exploratory-discipline`, CAL-4 / Rule 14, Δ_λ no-7th-fit | the *opposite*: `EVOLVE-VALUE` actively rewards parameter search |
-
-The last row is the key philosophical inversion: **their core strength
-(searching a value space) is our core hazard.** Anything we import from them
-(esp. `EVOLVE-VALUE`) must land *inside* our production-vs-exploratory
-guardrails, or it becomes a numerology generator.
+The feature-by-feature **differentiators table** (and the `EVOLVE-VALUE`
+inversion) now lives in the outward-facing companion note, so the shareable
+artifact is self-contained:
+[`docs/outreach/symbiotic-proof-authoring-note.md` §1 "Differentiators at a glance"](../outreach/symbiotic-proof-authoring-note.md).
 
 **The symbiotic loop + the author's role.** These differentiators compose into a
 five-step round-trip in which the **author owns intent and constraints**
