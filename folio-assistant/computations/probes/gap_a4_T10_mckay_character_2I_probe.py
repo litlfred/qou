@@ -68,7 +68,6 @@ from _gap_a4_qsafe import Q_0_50DPS  # noqa: E402
 from pathlib import Path  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-COMPUTE_DIR = HERE.parent
 
 
 # ── 2I irrep dims = Ê_8 Coxeter marks ─────────────────────────────

@@ -70,13 +70,10 @@ from partition_utils import hook_lengths  # noqa: E402
 # (addresses Gemini deduplication review on PR #1904).
 from _gap_a4_qsafe import (  # noqa: E402
     Q_0_50DPS,
-    q_number,  # noqa: F401  — re-exported for any external consumer
-    q_factorial,  # noqa: F401
     dim_q_partition,
 )
 
 HERE = Path(__file__).resolve().parent
-COMPUTE_DIR = HERE.parent
 
 
 # ── Young's branching rule: Res^{S_n}_{S_{n-1}} V_λ = ⊕ V_μ ─────────
@@ -175,41 +172,6 @@ def test_f1_youngs_branching(q_0: mp.mpf) -> dict:
             else "candidate functor FOUND — review"
         ),
     }
-
-
-# ── h-series expansion for [n]_q (in s = q + q⁻¹) ──────────────────
-
-
-def q_int_in_h_series(n: int, order: int) -> list:
-    """Return the Taylor coefficients [c_0, c_2, c_4, ...] of [n]_q as a
-    polynomial in h² where h = q − q⁻¹.  Uses [n]_q = Chebyshev_n(s/2)
-    style recurrence in s = q + q⁻¹; substitute s = √(h² + 4) and
-    expand around h = 0.  Returns the even-order coefficients (since
-    [n]_q is symmetric in q ↔ q⁻¹ ⇒ even in h).
-    """
-    # Direct mpmath series.  We treat h as a small symbolic parameter
-    # via numerical differentiation at h = 0.  For low order this is
-    # fine; for higher order use sympy upstream — here we sample at
-    # several small h-values and least-squares fit a low-degree
-    # polynomial in h².
-    if n == 0:
-        return [mp.mpf(0)] + [mp.mpf(0)] * order
-    sample_hs = [mp.mpf("1e-3") * k for k in range(1, order + 4)]
-    rows = []
-    rhs = []
-    for h_val in sample_hs:
-        # h = q − q⁻¹ ⇒ q = (h + √(h²+4))/2
-        q_h = (h_val + mp.sqrt(h_val * h_val + 4)) / 2
-        n_q = q_number(n, q_h)
-        rows.append([h_val ** (2 * k) for k in range(order + 1)])
-        rhs.append(n_q)
-    # Solve linear system (overdetermined): pad with extra equation.
-    A = mp.matrix(rows)
-    b = mp.matrix(rhs)
-    # Least squares: solve A^T A x = A^T b
-    AT = A.transpose()
-    coeffs = mp.lu_solve(AT * A, AT * b)
-    return [coeffs[k] for k in range(order + 1)]
 
 
 # ── F2: dim_q ratio transfer ─────────────────────────────────────

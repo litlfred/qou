@@ -71,9 +71,6 @@ from witness_base import WitnessBuilder  # noqa: E402
 # classical_dim (addresses Gemini deduplication review on PR #1904).
 from _gap_a4_qsafe import (  # noqa: E402
     Q_0_50DPS,
-    q_number,  # noqa: F401
-    q_factorial,  # noqa: F401
-    dim_q_partition,  # noqa: F401
     classical_dim_partition as classical_dim,
 )
 
@@ -81,9 +78,6 @@ from pathlib import Path  # noqa: E402
 from math import factorial as _fact  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-COMPUTE_DIR = HERE.parent
-
-H3_BORROMEAN_H4_REF = mp.mpf("-0.75")
 
 
 def wenzl_weight_at_q1(lam: tuple) -> mp.mpf:
@@ -104,12 +98,6 @@ def chi_21_borromean_at_q(q_0: mp.mpf) -> mp.mpf:
         + 4 * q_0 ** 6 - 3 * q_0 ** 4 + 3 * q_0 ** 2 - 1
     )
     return num / q_0 ** 6
-
-
-def chi_21_borromean_at_h(h_val: mp.mpf) -> mp.mpf:
-    """Sample χ^{(2,1)}(β_Bor) at h via q = (h + √(h²+4))/2."""
-    q_h = (h_val + mp.sqrt(h_val * h_val + 4)) / 2
-    return chi_21_borromean_at_q(q_h)
 
 
 # ── Bratteli candidate functor — structural ratios ────────────────
