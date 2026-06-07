@@ -28,13 +28,6 @@ name: Witness refresh (commit-back to main)
 # step, which now succeeds against an up-to-date baseline.
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'folio-assistant/computations/**/*.py'
-      - 'folio-assistant/computations/**/*.witness.json'
-      - 'folio-assistant/computations/**/*.derivation.json'
-      - '.github/workflows/witness-refresh.yml'
   workflow_dispatch:
     inputs:
       force:
@@ -47,10 +40,6 @@ on:
         required: false
         default: '300'
         type: string
-  schedule:
-    # 07:17 UTC daily — off-peak, jittered minute to avoid GHA cron storms.
-    - cron: '17 7 * * *'
-
 concurrency:
   group: witness-refresh-${{ github.ref }}
   cancel-in-progress: false  # don't drop in-flight regen mid-commit

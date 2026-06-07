@@ -44,9 +44,6 @@
 name: QA sweep nightly
 
 on:
-  schedule:
-    # 04:30 UTC daily — off-peak, after any other nightly jobs
-    - cron: "30 4 * * *"
   workflow_dispatch:
     inputs:
       axes:

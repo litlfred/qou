@@ -28,61 +28,6 @@
 name: Witness pipeline
 
 on:
-  pull_request:
-    paths:
-      - "folio-assistant/computations/habiro/*.py"
-      - "folio-assistant/computations/markov/*.py"
-      - "folio-assistant/computations/substrate/witness_base.py"
-      # thimble scripts removed from CI triggers (2026-05-24 cleanup)
-      - "folio-assistant/computations/substrate/q_parameter.py"
-      - "folio-assistant/computations/substrate/witness_constant_staleness.py"
-      - "tools/qou-substrate/python/qou_substrate/constants.py"
-      - "folio-assistant/computations/y_lambda_macdonald_telescope.py"
-      - "folio-assistant/computations/demazure_markov_trace.py"
-      - "folio-assistant/computations/alpha/alpha_k_macdonald_closed_form.py"
-      - "folio-assistant/computations/codata_reconciliation.py"
-      - "folio-assistant/computations/audits/brundan_kleshchev_audit.py"
-      - "folio-assistant/computations/atom_mass_additive_baseline.py"
-      - "folio-assistant/computations/rho_f_volume_binding_gap.py"
-      - "folio-assistant/computations/onepb_status_dashboard.py"
-      - "folio-assistant/computations/derivation_chain*.py"
-      - "folio-assistant/computations/build_*.py"
-      - "folio-assistant/computations/homflypt_engine.py"
-      - "folio-assistant/computations/**/*.witness.json"
-      - "folio-assistant/computations/**/*.derivation.json"
-      - "scripts/audit-wiring.ts"
-      - "scripts/audit-wiring-migrate.ts"
-      - "content/pipeline/trivial-skeleton-audit.ts"
-      - "content/quantum-observable-universe/**/*.lean"
-      - ".github/workflows/witness-pipeline.yml"
-  push:
-    branches: [main]
-    paths:
-      - "folio-assistant/computations/habiro/*.py"
-      - "folio-assistant/computations/markov/*.py"
-      - "folio-assistant/computations/substrate/witness_base.py"
-      # thimble scripts removed from CI triggers (2026-05-24 cleanup)
-      - "folio-assistant/computations/substrate/q_parameter.py"
-      - "folio-assistant/computations/substrate/witness_constant_staleness.py"
-      - "tools/qou-substrate/python/qou_substrate/constants.py"
-      - "folio-assistant/computations/y_lambda_macdonald_telescope.py"
-      - "folio-assistant/computations/demazure_markov_trace.py"
-      - "folio-assistant/computations/alpha/alpha_k_macdonald_closed_form.py"
-      - "folio-assistant/computations/codata_reconciliation.py"
-      - "folio-assistant/computations/audits/brundan_kleshchev_audit.py"
-      - "folio-assistant/computations/atom_mass_additive_baseline.py"
-      - "folio-assistant/computations/rho_f_volume_binding_gap.py"
-      - "folio-assistant/computations/onepb_status_dashboard.py"
-      - "folio-assistant/computations/derivation_chain*.py"
-      - "folio-assistant/computations/build_*.py"
-      - "folio-assistant/computations/homflypt_engine.py"
-      - "folio-assistant/computations/**/*.witness.json"
-      - "folio-assistant/computations/**/*.derivation.json"
-      - "scripts/audit-wiring.ts"
-      - "scripts/audit-wiring-migrate.ts"
-      - "content/pipeline/trivial-skeleton-audit.ts"
-      - "content/quantum-observable-universe/**/*.lean"
-      - ".github/workflows/witness-pipeline.yml"
   workflow_dispatch:
 
 permissions:

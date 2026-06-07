@@ -11,15 +11,6 @@ name: Lake cache refresh (orphan-branch family)
 # beyond N=2 retained.
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'lean-toolchain'
-      - 'lakefile.toml'
-      - 'lake-manifest.json'
-      - 'content/quantum-observable-universe/lean/lakefile.toml'
-      - 'content/unital-groebner-bases/lean/lakefile.toml'
-      - 'content/fred2005-formal-groups/lean/lakefile.toml'
   workflow_dispatch:
     inputs:
       package:

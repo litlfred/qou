@@ -9,18 +9,6 @@ name: Wrapper tests (per-language smoke matrix)
 # manually via workflow_dispatch.
 
 on:
-  pull_request:
-    paths:
-      - 'tools/hecke-engine/**'
-      - 'tools/hecke-engine-c/**'
-      - 'tools/hecke-engine-octave/**'
-      - 'tools/hecke-engine-julia/**'
-      - 'tools/hecke-engine-gap/**'
-      - 'tools/hecke-engine-node/**'
-      - 'tools/hecke-engine-jvm/**'
-      - 'tools/hecke-engine-wasm/**'
-      - 'tools/hecke-engine-r/**'
-      - '.github/workflows/wrapper-tests.yml'
   workflow_dispatch:
 
 concurrency:

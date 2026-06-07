@@ -17,19 +17,6 @@ name: Pyodide integration smoke
 #     (would manifest as "ModuleNotFoundError: No module named '_X'")
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'tools/pyhecke/**'
-      - 'tools/qou-substrate/**'
-      - 'tools/witness-schema/**'
-      - '.github/workflows/pyodide-smoke.yml'
-  pull_request:
-    paths:
-      - 'tools/pyhecke/**'
-      - 'tools/qou-substrate/**'
-      - 'tools/witness-schema/**'
-      - '.github/workflows/pyodide-smoke.yml'
   workflow_dispatch:
 
 concurrency:

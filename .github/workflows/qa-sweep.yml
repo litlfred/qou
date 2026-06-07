@@ -35,31 +35,6 @@
 name: QA sweep (all integration watchers)
 
 on:
-  pull_request:
-    paths:
-      - "content/**/*.md"
-      - "content/**/*.ts"
-      - "content/**/*.lean"
-      - "content/pipeline/qa-*.ts"
-      - "content/pipeline/qa-criteria-registry.ts"
-      - "content/pipeline/integration-audit.ts"
-      - "folio-assistant/schemas/block-qa.ts"
-      - ".claude/skills/local/*integration-watcher.md"
-      - ".claude/skills/local/integration-*.md"
-      - ".github/workflows/qa-sweep.yml"
-  push:
-    branches: [main]
-    paths:
-      - "content/**/*.md"
-      - "content/**/*.ts"
-      - "content/**/*.lean"
-      - "content/pipeline/qa-*.ts"
-      - "content/pipeline/qa-criteria-registry.ts"
-      - "content/pipeline/integration-audit.ts"
-      - "folio-assistant/schemas/block-qa.ts"
-      - ".claude/skills/local/*integration-watcher.md"
-      - ".claude/skills/local/integration-*.md"
-      - ".github/workflows/qa-sweep.yml"
   workflow_dispatch:
 
 permissions:

@@ -19,29 +19,7 @@
 name: Build Paper Assistant Image
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/mcp-server/**'
-      - 'content/**'
-      - 'lakefile.toml'
-      - 'lean-toolchain'
-      - 'scripts/mcp-server/Dockerfile'
-      - '.github/scripts/**'
-      - 'folio-assistant/**'
-      - 'tools/hecke-engine/**'
   workflow_dispatch:
-  schedule:
-    # Sunday + Wednesday 06:00 UTC — rebuild periodically to pick up
-    # OS / TeX Live security updates and keep the cached olean layer
-    # warm so folio-assistant `lean_build` calls do not pay a multi-
-    # minute `lake exe cache get` on first use after a cold pull.
-    # Mathlib itself is pinned by `rev` in `lakefile.toml`, so manual
-    # bumps trigger a rebuild via the `lakefile.toml` path filter
-    # above; the cron is for OS updates and cache freshness.
-    - cron: '0 6 * * 0'
-    - cron: '0 6 * * 3'
-
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}/paper-assistant
