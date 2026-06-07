@@ -4994,6 +4994,26 @@ export const references: CSLData[] = [
     note: "Internal QOU pull request #1890. One of the four §4 formalize-first invariants (Tracks A + B) bundled by prop:q-beta-bar-even-kernel-typeclass into a single parametric Lean class. Cited by q-beta-bar-even-kernel-typeclass.lean.",
   }),
 
+  ref({
+    id: "pr1896",
+    type: "webpage",
+    title: "Mass-side kernel §4 formalize-first gate (mass-side §4 matrix)",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1896",
+    note: "Internal QOU pull request #1896 (mass-side §4 matrix). Mass-side analogue of the §4 formalize-first invariant gates. Cited by mass-side-kernel-formalize-first-gates.lean.",
+  }),
+
+  ref({
+    id: "pr1899",
+    type: "webpage",
+    title: "Mass-side kernel §4 formalize-first gate (q=1 anchor hunt: Σ f^λ/4 = 5/2)",
+    author: [{ literal: "QOU project (litlfred/qou)" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://github.com/litlfred/qou/pull/1899",
+    note: "Internal QOU pull request #1899 (mass-side q=1 anchor hunt: Σ f^λ/4 = 5/2). Mass-side analogue of the §4 formalize-first invariant gates. Cited by mass-side-kernel-formalize-first-gates.lean.",
+  }),
+
   // ── Thurston — Princeton notes on 3-manifold geometry/topology ─
   // (merged from main via PR #736 — kept verbatim from origin/main)
   ref({
