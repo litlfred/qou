@@ -87,6 +87,70 @@ The defining difference is **round-trip, not solve-and-return.**
 Culturally: the agent is a **co-author and continuous reviewer**, not a solver
 you query and walk away from.
 
+### The loop, concretely
+
+A tranche of work runs as a five-step round-trip:
+
+1. **The author sets a terse, high-level milestone** — "adopt these methods,"
+   "extend the baseline audit to every chapter," "prepare this for merge,"
+   "drain the new findings." The agent decomposes it into a prioritized
+   work-plan and executes.
+2. **The agent works autonomously _within standing constraints_** and
+   **surfaces** two things: *findings* (what it discovered) and *genuine
+   decision-points* (forks only the author can resolve) — the latter as options
+   with full evidence attached, never a bare yes/no.
+3. **The author decides at the forks.** The agent never merges, nor takes any
+   irreversible or outward-facing action, without explicit authorization.
+4. **The change lands in the co-authored corpus**, all faces kept in sync
+   (narrative + formal + manifest + witness), with an auditable artifact for
+   every step.
+5. **Reviewers and continuous QA close the loop** (§4–§5); the agent
+   dispositions every review comment — fix it, or explain on the record why a
+   suggestion is incorrect or conflicts with a house convention.
+
+### The author's role — the *what*, not the *how*
+
+The human owns intent and constraints; the agent owns decomposition, execution,
+and QA. Concretely the author supplies:
+
+| The author sets… | …and the agent does |
+|---|---|
+| **Milestones** — goals and their order | decomposes into a work-plan; executes; reports |
+| **Conjectures & proof strategies** — the mathematical direction (which results to pursue, which closure ansätze to test or refute) | formalizes, refutes, wires the compute, surfaces what holds |
+| **Constraints** — a large standing body of rules (calibration discipline / "no post-hoc fits"; the formal-vs-numerical regime split; numeric literals pinned to a computed witness so they cannot drift; tiered—not binary—reporting of near-results; merge discipline; accessibility) | acts autonomously *inside* the guardrails; flags anything that would cross one |
+| **Decisions & authorization** — the call at each fork; explicit sign-off for merges, CI overrides, outward sends | presents options with evidence; waits; then acts |
+| **Ground truth** — source material (papers, measured constants) and final adjudication of correctness | cites it, checks against it, never invents it |
+
+The constraints are the load-bearing part: they are what let the agent run a
+long way unattended *safely*, and they are the precise **inverse** of an
+autonomous searcher's reward signal — fences that forbid, not markers that
+reward exploration.
+
+### Interaction types seen in practice
+
+A short taxonomy, drawn from the pull-request activity of real sessions:
+
+- **Author → agent.** Milestone-setting (terse); fork decisions (picking among
+  surfaced options); authorization (explicit "merge it" / skip a failing
+  external check / send outward); mid-flight redirection ("do this one first").
+- **Reviewer (automated) → agent.** Bot reviewers comment on landed commits; the
+  agent dispositions each as **fix** (valid), **decline with rationale** (e.g. a
+  relative-link suggestion that conflicts with the repo's stable-URL convention),
+  or **refute** (a false positive the agent verifies is absent) — the
+  disposition is recorded, not silent.
+- **Agent → sub-agent.** A lead agent dispatches background workers (corpus-wide
+  audits, environment-setup-and-fix) and integrates their reported findings;
+  workers emit only auditable artifacts and never merge.
+- **System → agent.** CI / webhook signals are **diagnosed, not blindly
+  chased** — an infrastructure (billing) failure is distinguished from a code
+  failure and handled by proceeding on a green local check rather than pushing
+  retrigger commits; lifecycle hooks (watch upstream, coordinate sibling PRs,
+  check uncommitted state) keep the agent durable across interruptions.
+
+The through-line: the agent **asks only when genuinely blocked on a call that is
+the author's to make**, and otherwise turns its work into reviewable artifacts
+rather than acting opaquely.
+
 ---
 
 ## 4. Safeguards aimed squarely at the failure modes you reported
@@ -141,6 +205,36 @@ thing.
   refresh. Reproducibility of the **non-proof** parts of a result is enforced
   too — a concern that simply doesn't arise for pure proof search, but is
   central whenever mathematics meets computation or data.
+- **The QA is multi-axis, not a single rater.** The same per-object sidecar
+  carries *several independent audit axes*, each a mix of deterministic
+  script-checkers and agentic raters:
+  - **formal / proof** — a multi-criterion proof rater (strategy clarity, goal
+    plausibility, novelty) plus a hard **statement-integrity** check (a vacuous
+    `⟨_, rfl⟩` "proof," a `= True` restatement, or a Lean statement that does not
+    match its narrative is *failed*), and structural checks (no bare `sorry`, no
+    axiom growth, the Lean builds);
+  - **structural / detangler** — dependency-graph heuristics: forward-reference
+    and dependency-cycle detection, cross-chapter reference limits, section
+    banding, and correct placement relative to the formal-vs-numerical wall;
+  - **canonical-discipline** — no numerology, no undisclosed fitted constants,
+    calibration-count and tiered-reporting checks;
+  - **compute** — every computational claim has a witness; optimisation solves
+    emit their dual; producers are not stale;
+  - **voice / exposition** — consistent authorial voice, no status-leak or
+    work-tracking residue in scholarly prose, notation-register compliance;
+  - **parameter-regime** and **bibliography** — domain-specific regime and
+    citation-resolution checks.
+
+  Each criterion stores an array of reviewer results under one shared schema —
+  `{ result (pass/warn/fail), severity, optional score, reviewer (script or
+  agent, with id), the content-hash of the md/ts/lean it judged, timestamp, and
+  quoted evidence }`. The hash makes every verdict falsifiable and auto-stale on
+  edit; a verdict whose hash no longer matches the source is re-run.
+- **Findings drain back into the loop.** Because every verdict is a typed,
+  located artifact, the failing ones cluster automatically into review-sized
+  fix-batches — each becomes a pull request that is prepared, reviewed, and
+  merged — so "audit the corpus" and "improve the corpus" are the same machine,
+  run continuously rather than as a one-off pass.
 
 ---
 
