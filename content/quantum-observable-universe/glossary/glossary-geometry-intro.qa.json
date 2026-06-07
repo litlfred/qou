@@ -717,7 +717,28 @@
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1c8083a70c0b",
+          "ts": "97dccca66c12"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Section-intro prose for 'Geometry and transport' (sec:glossary-geometry); first block of that section",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:33:49.998Z",
+        "reviewed_sha": "2842d2ae3c91c7473b3bd409673d9ac1f3b90bfc",
+        "notes": "One-line intro 'Glossary entries for geometric and topological terminology' — correct intro for its section."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T02:33:49.998Z"
 }
