@@ -948,10 +948,13 @@ const DETANGLER: QaCriterionDefinition[] = [
     id: "detangler-block-tanglement",
     domain: "detangler",
     description:
-      "Per-block tanglement score: measures dependency fan-out (|uses[]|), " +
-      "forward-ref fraction, and cross-chapter ref count. High tanglement " +
-      "signals a block that should be split, relocated, or have its " +
-      "dependency edges pruned.",
+      "Per-block tanglement score (cross-chapter forward-ref count) plus " +
+      "a descriptive graph-metrics payload: out_degree / in_degree / " +
+      "cone_size (transitive blast radius) / fwd_received / edge_span / " +
+      "depth (longest dependency chain, a proof-depth proxy) / pagerank " +
+      "(weighted centrality refining in-degree). High tanglement or deep/" +
+      "central placement signals a block that may warrant a split, " +
+      "relocation, or dependency-edge pruning.",
     default_severity: "major",
     depends_on: ["ts"],
     automated: true,
