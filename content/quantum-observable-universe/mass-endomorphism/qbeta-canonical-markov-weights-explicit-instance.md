@@ -58,14 +58,14 @@ At $q = q_0 \approx 1.10998$ (substrate parameter):
   $(1 + q_0)/2 \approx 1.055$).
 - This instance gives $y_{(3)}(q_0) \approx 0.499$,
   $y_{(2,1)}(q_0) \approx 0.001$, $y_{(1,1,1)}(q_0) \approx 0.499$,
-  with sum $0.499 + 2(0.001) + 0.499 = 1.000$ ✓ (normalisation).
+  with sum $0.499 + 2(0.001) + 0.499 = 1.000$ (normalisation).
 
 The CANONICAL Wenzl weights (computed by
 `markov_weights_symbolic.solve_y_lambda(3)` at $q_0$) give
 $y_{(3)}^{\text{canon}} \approx 0.4154$,
 $y_{(2,1)}^{\text{canon}} \approx 0.2809$,
 $y_{(1,1,1)}^{\text{canon}} \approx 0.0227$,
-with sum $0.4154 + 2(0.2809) + 0.0227 = 0.9999$ ✓ (canonical
+with sum $0.4154 + 2(0.2809) + 0.0227 = 0.9999$ (canonical
 normalisation, off by $10^{-4}$ from 1 due to truncation precision).
 
 The numerical mismatch between this instance ($y_{(3)} \approx 0.499$)

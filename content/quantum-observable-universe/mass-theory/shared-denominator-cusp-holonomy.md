@@ -128,7 +128,7 @@ $\sum_S \mathrm{Vol}(K_S)$ is computed from the algebraic
 $\sum_S \Phi_q(\lvert V_S\rvert)$ at exactly the cusps prescribed by
 the algebraic denominators. Phrased motivically, the algebraic class
 $[\Phi_n(x; q_0)] \in \mathfrak{B}(q)$ in the
-([quantum Bloch group](#rem:quantum-bloch-group))
+([quantum Bloch group](#def:quantum-bloch-group))
 regulates archimedeanly to the volume of the matched JSJ piece, with
 the regulator's domain of definition pinned by the shared-denominator
 locus.

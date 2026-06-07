@@ -11,6 +11,7 @@ export default conjecture({
   ],
   cites: ["bloch2000", "kontsevich1995", "zagier1986"],
   tags: [
+    "tier:S",
     "depth-3",
     "Cl_3",
     "zeta-5",

@@ -1057,59 +1057,6 @@
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
       }
     ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "cc38836338ad",
-          "ts": "18908cbc1aef",
-          "lean": "15ab68ef79a9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
-        },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "cc38836338ad",
-          "ts": "18908cbc1aef",
-          "lean": "15ab68ef79a9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "3943bc4550e1",
-          "ts": "18908cbc1aef",
-          "lean": "5d045667b710"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "canonical-no-numerology": [
       {
         "field_hash": {
@@ -2422,27 +2369,6 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "ts": "18908cbc1aef"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "detangler-block-tanglement-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/detangler-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 0,
-          "tanglement_score": 0
-        }
-      }
-    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -2768,7 +2694,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Noble gas characterization is a spectral/particle prediction — direct fit to Ch13 predicted-spectra catalogue.",
+        "evidence": "Noble gas characterization is a spectral/particle prediction \u2014 direct fit to Ch13 predicted-spectra catalogue.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2790,7 +2716,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Statement uses algebraic/topological language: Hopf links, trefoil chains, linking number — no archimedean constructs (Real.sqrt, numeric literals, ordering predicates).",
+        "evidence": "Statement uses algebraic/topological language: Hopf links, trefoil chains, linking number \u2014 no archimedean constructs (Real.sqrt, numeric literals, ordering predicates).",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2812,7 +2738,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof sketch cites prop:torus-hopf-stability and rem:electron-shells-hopf — topological/algebraic arguments with no archimedean machinery.",
+        "evidence": "Proof sketch cites prop:torus-hopf-stability and rem:electron-shells-hopf \u2014 topological/algebraic arguments with no archimedean machinery.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2825,25 +2751,98 @@
         "notes": "No IVT, linarith, or Real.* constructs."
       }
     ],
-    "proof-statement-integrity": [
+    "detangler-topic-coherence": [
       {
         "field_hash": {
           "md": "3943bc4550e1",
           "ts": "18908cbc1aef",
           "lean": "5d045667b710"
         },
-        "result": "fail",
-        "severity": "critical",
+        "result": "n/a",
         "reviewer": {
-          "kind": "agent",
-          "id": "local/proof-integration-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/proof-integration-watcher"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
         },
-        "reviewed_at": "2026-06-07T06:12:17.094Z",
-        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
-        "notes": "lean.ref qou:QOU.Archimedean.noble_gas_characterization is a sibling STUB: 'theorem noble_gas_characterization : True := by trivial' (ts validation:not_started). Vacuous =True; does not formalize the iff (closed sub-Hopf partition <=> chemically inert) with its 3 conditions (closure, exhaustion, monotone nesting)."
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "3943bc4550e1",
+          "ts": "18908cbc1aef",
+          "lean": "5d045667b710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 3,
+          "cone_size": 1,
+          "depth": 1,
+          "pagerank": 0.001179,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
+          "worst_target": ""
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "3943bc4550e1",
+          "ts": "18908cbc1aef",
+          "lean": "5d045667b710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "3943bc4550e1",
+          "ts": "18908cbc1aef",
+          "lean": "5d045667b710"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2916,6 +2915,27 @@
         "reviewed_at": "2026-06-07T06:12:17.327Z",
         "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
         "notes": "The full-shell-as-full-curls topological characterization (closed sub-Hopf link <-> chemical inertness, ionization-energy peaks as crossing-energy maxima) is a creative knot-theoretic analogy, but qualitative and conjecture-backed."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "3943bc4550e1",
+          "ts": "18908cbc1aef",
+          "lean": "5d045667b710"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:12:17.094Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "lean.ref qou:QOU.Archimedean.noble_gas_characterization is a sibling STUB: 'theorem noble_gas_characterization : True := by trivial' (ts validation:not_started). Vacuous =True; does not formalize the iff (closed sub-Hopf partition <=> chemically inert) with its 3 conditions (closure, exhaustion, monotone nesting)."
       }
     ]
   },

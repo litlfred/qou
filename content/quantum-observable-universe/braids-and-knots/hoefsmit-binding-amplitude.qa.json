@@ -70,44 +70,6 @@
         "reviewed_at": "2026-05-27"
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "ts": "f40eb6642756"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "detangler-block-tanglement-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/detangler-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27",
-        "metrics": {
-          "fwd_emitted": 1,
-          "fwd_received": 0,
-          "tanglement_score": 1
-        }
-      },
-      {
-        "field_hash": {
-          "md": "da4db810a167",
-          "ts": "f654226fc036",
-          "lean": "d007f6644123"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "proof-no-bare-sorries": [
       {
         "field_hash": {
@@ -368,7 +330,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:hoefsmit-binding-amplitude' → expected 'hoefsmit_binding_amplitude'; Lean declares: hecke_h, qInt2, qInt3, qInt2_sq_eq_h_sq_plus_4, qInt3_eq_qInt2_sq_minus_one.... Structural match via content."
+        "notes": "Label 'prop:hoefsmit-binding-amplitude' \u2192 expected 'hoefsmit_binding_amplitude'; Lean declares: hecke_h, qInt2, qInt3, qInt2_sq_eq_h_sq_plus_4, qInt3_eq_qInt2_sq_minus_one.... Structural match via content."
       },
       {
         "field_hash": {
@@ -384,7 +346,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:hoefsmit-binding-amplitude' → expected 'hoefsmit_binding_amplitude'; Lean declares: hecke_h, qInt2, qInt3, qInt2_sq_eq_h_sq_plus_4, qInt3_eq_qInt2_sq_minus_one.... Structural match via content."
+        "notes": "Label 'prop:hoefsmit-binding-amplitude' \u2192 expected 'hoefsmit_binding_amplitude'; Lean declares: hecke_h, qInt2, qInt3, qInt2_sq_eq_h_sq_plus_4, qInt3_eq_qInt2_sq_minus_one.... Structural match via content."
       },
       {
         "field_hash": {
@@ -400,7 +362,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:hoefsmit-binding-amplitude' → expected 'hoefsmit_binding_amplitude'; Lean declares: hecke_h, qInt2, qInt3, qInt2_sq_eq_h_sq_plus_4, qInt3_eq_qInt2_sq_minus_one.... Structural match via content."
+        "notes": "Label 'prop:hoefsmit-binding-amplitude' \u2192 expected 'hoefsmit_binding_amplitude'; Lean declares: hecke_h, qInt2, qInt3, qInt2_sq_eq_h_sq_plus_4, qInt3_eq_qInt2_sq_minus_one.... Structural match via content."
       }
     ],
     "q-usage-regime-detected": [
@@ -555,25 +517,6 @@
         },
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
-      }
-    ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "da4db810a167",
-          "ts": "f654226fc036",
-          "lean": "d007f6644123"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
     "canonical-no-numerology": [
@@ -761,7 +704,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md:49: - $b = 0$: the $(2,1)$ block diagonalises → the lepton channels | content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md:50: decouple → no meson binding (free leptons). | content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md:52: $V_{(1,1)}$ → meson exists as an entangled lepton pair."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md:49: - $b = 0$: the $(2,1)$ block diagonalises \u2192 the lepton channels | content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md:50: decouple \u2192 no meson binding (free leptons). | content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md:52: $V_{(1,1)}$ \u2192 meson exists as an entangled lepton pair."
       },
       {
         "field_hash": {
@@ -1091,6 +1034,106 @@
         "notes": "Clean."
       }
     ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "eeaad394fe27",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57",
+        "metrics": {
+          "home_chapter": "braids-and-knots",
+          "home_score": 1,
+          "top_other_chapter": "algebraic-substrate",
+          "top_other_score": 2
+        }
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "eeaad394fe27",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 4,
+          "cone_size": 6,
+          "depth": 6,
+          "pagerank": 0.000311,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
+          "worst_target": ""
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "eeaad394fe27",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "eeaad394fe27",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
@@ -1184,5 +1227,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T02:30:44.842Z"
+  "updated_at": "2026-06-07T05:58:41.267Z"
 }

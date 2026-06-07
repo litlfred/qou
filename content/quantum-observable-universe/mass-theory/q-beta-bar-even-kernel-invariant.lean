@@ -40,7 +40,7 @@
        [pr1867] https://github.com/litlfred/qou/pull/1867
        [pr1839] https://github.com/litlfred/qou/pull/1839
        [habiro2004] https://doi.org/10.4310/MRL.2004.v11.n4.a4
-       [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
+       [jones1987] https://doi.org/10.2307/1971403
        [wenzl1988] https://doi.org/10.1007/BF02101492
        docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md
 -/

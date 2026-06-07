@@ -10,6 +10,6 @@ export default conjecture({
     "conj:mass-endomorphism",
   ],
   defines: [],
-  tags: ["n-v", "electroweak", "bring", "s5", "substrate-axiom"],
+  tags: ["tier:E", "n-v", "electroweak", "bring", "s5", "substrate-axiom"],
   lean: { ref: "qou:QOU.Observations.s5_acts_on_ew_slice" },
 });

@@ -182,13 +182,13 @@ converges absolutely for |z| < q. The framework evaluates at V̂_i
 with |V̂_p| ≈ 0.989, |V̂_n| ≈ 0.719 — both inside |·| < q_0 ≈ 1.11.
 -/
 
--- Ref: [habiro2002] Habiro ring and infinite cyclotomic completion
+-- Ref: [habiro2004cyclotomic] Habiro ring and infinite cyclotomic completion
 -- Ref: [yekutieli2015] Nonabelian Stokes theorem (Yekutieli)
 /-- Stub: Φ_q(z) converges absolutely for |z| < q. -/
 theorem phi_q_converges_absolutely
     (q z : ℝ) (h_q : q > 1) (h_z : |z| < q) :
     True := by
-  -- Ref: [habiro2002] §2 q-Pochhammer convergence
+  -- Ref: [habiro2004cyclotomic] §2 q-Pochhammer convergence
   trivial
 
 /-! ## Gap 5: Brane-tower n_⋆ level-selection rule (conjectural)

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "6aae13577b45",
     "ts": "3916b2547bf3",
-    "lean": "6c89801376ec"
+    "lean": "c92863a2c5ac"
   },
   "criteria": {
     "proof-lean-compiles": [
@@ -68,44 +68,6 @@
           "agent_skill": "local/one-voice-audit"
         },
         "reviewed_at": "2026-05-27"
-      }
-    ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "ts": "55521266bbfe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "detangler-block-tanglement-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/detangler-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 0,
-          "tanglement_score": 0
-        }
-      },
-      {
-        "field_hash": {
-          "md": "6aae13577b45",
-          "ts": "3916b2547bf3",
-          "lean": "ec7d2a2eba6a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
     "proof-no-bare-sorries": [
@@ -300,7 +262,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:figure-eight-reeb-rotation' → expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
+        "notes": "Label 'prop:figure-eight-reeb-rotation' \u2192 expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
       },
       {
         "field_hash": {
@@ -316,7 +278,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:figure-eight-reeb-rotation' → expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
+        "notes": "Label 'prop:figure-eight-reeb-rotation' \u2192 expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
       },
       {
         "field_hash": {
@@ -332,7 +294,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:figure-eight-reeb-rotation' → expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
+        "notes": "Label 'prop:figure-eight-reeb-rotation' \u2192 expected 'figure_eight_reeb_rotation'; Lean declares: hecke_generator_det_neg_one, figure_eight_det_one, figure_eight_unitary_on_standard. Structural match via content."
       }
     ],
     "q-usage-regime-detected": [
@@ -487,25 +449,6 @@
         },
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
-      }
-    ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "6aae13577b45",
-          "ts": "3916b2547bf3",
-          "lean": "ec7d2a2eba6a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
     "canonical-no-numerology": [
@@ -750,7 +693,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a \u00a77c-style banner or move the archimedean evaluation to a sibling block."
       }
     ],
     "compute-prop-has-probe": [
@@ -949,7 +892,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "proposition in sec:lepton-meson-parallel; figure-eight knot operator unitary on V_(2,1) directly concerns lepton-channel structure — on-topic",
+        "evidence": "proposition in sec:lepton-meson-parallel; figure-eight knot operator unitary on V_(2,1) directly concerns lepton-channel structure \u2014 on-topic",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -971,7 +914,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "statement: eigenvalues of algebraic knot operator M_{4_1} on H_3(q) rep — no archimedean constructs, purely algebraic",
+        "evidence": "statement: eigenvalues of algebraic knot operator M_{4_1} on H_3(q) rep \u2014 no archimedean constructs, purely algebraic",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -993,7 +936,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "proof uses Hoefsmit eigenvalue algebra and determinant computation — algebraic, no linarith/IVT/archimedean machinery",
+        "evidence": "proof uses Hoefsmit eigenvalue algebra and determinant computation \u2014 algebraic, no linarith/IVT/archimedean machinery",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -1004,6 +947,106 @@
         "reviewed_at": "2026-06-06T01:37:37.533Z",
         "reviewed_sha": "86372c321c8667636d52f0c956a3f87697ab42eb",
         "notes": "correct wall"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "6aae13577b45",
+          "ts": "3916b2547bf3",
+          "lean": "6c89801376ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57",
+        "metrics": {
+          "home_chapter": "braids-and-knots",
+          "home_score": 3,
+          "top_other_chapter": "models-of-qous",
+          "top_other_score": 2
+        }
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "6aae13577b45",
+          "ts": "3916b2547bf3",
+          "lean": "6c89801376ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 2,
+          "in_degree": 1,
+          "cone_size": 22,
+          "depth": 12,
+          "pagerank": 0.000189,
+          "edge_span_max": 3,
+          "edge_span_mean": 3,
+          "worst_target": ""
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "6aae13577b45",
+          "ts": "3916b2547bf3",
+          "lean": "c92863a2c5ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "6aae13577b45",
+          "ts": "3916b2547bf3",
+          "lean": "c92863a2c5ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1100,5 +1143,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T02:29:06.545Z"
+  "updated_at": "2026-06-07T05:58:41.267Z"
 }

@@ -10,9 +10,6 @@
 name: Release Folio Assistant
 
 on:
-  push:
-    tags:
-      - 'folio-assistant-v*'
   workflow_dispatch:
     inputs:
       version:

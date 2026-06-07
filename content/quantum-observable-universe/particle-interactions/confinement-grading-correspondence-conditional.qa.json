@@ -955,59 +955,6 @@
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
       }
     ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "b3532932549a",
-          "ts": "818290759af3",
-          "lean": "eb43c1c13ad7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
-        },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "b3532932549a",
-          "ts": "818290759af3",
-          "lean": "eb43c1c13ad7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "b3532932549a",
-          "ts": "9ac7729d1a9a",
-          "lean": "eb43c1c13ad7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "canonical-no-numerology": [
       {
         "field_hash": {
@@ -2272,44 +2219,6 @@
         "reviewed_at": "2026-05-27"
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "ts": "818290759af3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "detangler-block-tanglement-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/detangler-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 0,
-          "tanglement_score": 0
-        }
-      },
-      {
-        "field_hash": {
-          "md": "b3532932549a",
-          "ts": "9ac7729d1a9a",
-          "lean": "eb43c1c13ad7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -2623,7 +2532,7 @@
         },
         "reviewed_at": "2026-06-04T23:46:02.594Z",
         "reviewed_sha": "b49e071810d0d495b8f9e49812584ad4ba71ad07",
-        "notes": "Clean separation; conditional banner per §3b-cond correctly placed"
+        "notes": "Clean separation; conditional banner per \u00a73b-cond correctly placed"
       }
     ],
     "fit-section-chapter": [
@@ -2635,7 +2544,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "thm placed in sec:confinement-level alongside conj:confinement-grading-correspondence; theorem is conditional form of same conjecture — direct fit",
+        "evidence": "thm placed in sec:confinement-level alongside conj:confinement-grading-correspondence; theorem is conditional form of same conjecture \u2014 direct fit",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2657,7 +2566,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Biconditional stated over H_n(R,q) symbolically; Lean over {q : ℝ} but no numerical q₀ evaluation in statement; filtration/grading comparison is categorical",
+        "evidence": "Biconditional stated over H_n(R,q) symbolically; Lean over {q : \u211d} but no numerical q\u2080 evaluation in statement; filtration/grading comparison is categorical",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2679,7 +2588,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Lean proof body: constructor + rw [inst.confinement_eq_klr_top_degree]; no sorry in proof; conjecture isolated in CrystalGraphRealization class per §3b-cond",
+        "evidence": "Lean proof body: constructor + rw [inst.confinement_eq_klr_top_degree]; no sorry in proof; conjecture isolated in CrystalGraphRealization class per \u00a73b-cond",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2690,6 +2599,100 @@
         "reviewed_at": "2026-06-04T23:46:02.694Z",
         "reviewed_sha": "b49e071810d0d495b8f9e49812584ad4ba71ad07",
         "notes": "Proof is sorry-free; conjectural content correctly in class instance only"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "9ac7729d1a9a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "9ac7729d1a9a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 0,
+          "cone_size": 4,
+          "depth": 4,
+          "pagerank": 0.000102,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
+          "worst_target": ""
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "9ac7729d1a9a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "b3532932549a",
+          "ts": "9ac7729d1a9a",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2713,7 +2716,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:18.275Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "MD is an exemplary §3b-cond conditional: states the iff (confinement level = KLR top degree), documents all 4 conditional-class requirements, and gives the empirical k_max≤7 witness table."
+        "notes": "MD is an exemplary \u00a73b-cond conditional: states the iff (confinement level = KLR top degree), documents all 4 conditional-class requirements, and gives the empirical k_max\u22647 witness table."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2737,7 +2740,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:18.311Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "Lean proves the iff directly from the class field (rw chain, no sorry in body) — a rigorous conditional result modulo the single class instance, exactly per §3b-cond. (Uses 'constant' carriers — compile risk on current toolchain.)"
+        "notes": "Lean proves the iff directly from the class field (rw chain, no sorry in body) \u2014 a rigorous conditional result modulo the single class instance, exactly per \u00a73b-cond. (Uses 'constant' carriers \u2014 compile risk on current toolchain.)"
       }
     ],
     "proof-rater-novelty": [
@@ -2781,7 +2784,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:18.381Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "lean.ref confinement_grading_correspondence_conditional resolves to a real iff proven from the class hypothesis, no sorry in proof body; conditional banner + uses[] conjecture present. (Flag: 'constant' decls — toolchain compile check advisable.)"
+        "notes": "lean.ref confinement_grading_correspondence_conditional resolves to a real iff proven from the class hypothesis, no sorry in proof body; conditional banner + uses[] conjecture present. (Flag: 'constant' decls \u2014 toolchain compile check advisable.)"
       }
     ]
   },

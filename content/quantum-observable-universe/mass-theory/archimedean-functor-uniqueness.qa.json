@@ -955,59 +955,6 @@
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
       }
     ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "fb35a7a5963a",
-          "ts": "cb295f58d9cb",
-          "lean": "8c808cbd5463"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
-        },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "fb35a7a5963a",
-          "ts": "cb295f58d9cb",
-          "lean": "8c808cbd5463"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "fb35a7a5963a",
-          "ts": "05cb5b94eaf8",
-          "lean": "2810d8047e3d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "canonical-no-numerology": [
       {
         "field_hash": {
@@ -2271,44 +2218,6 @@
         "reviewed_at": "2026-05-27"
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "ts": "cb295f58d9cb"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "detangler-block-tanglement-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/detangler-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27",
-        "metrics": {
-          "fwd_emitted": 1,
-          "fwd_received": 0,
-          "tanglement_score": 1
-        }
-      },
-      {
-        "field_hash": {
-          "md": "fb35a7a5963a",
-          "ts": "05cb5b94eaf8",
-          "lean": "2810d8047e3d"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -2530,7 +2439,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.md:1 — detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2690,7 +2599,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "mass-theory.ts:368 — conj:dilogarithm-archimedean-limit appears at position 368, after archimedean-functor-uniqueness at position 112",
+        "evidence": "mass-theory.ts:368 \u2014 conj:dilogarithm-archimedean-limit appears at position 368, after archimedean-functor-uniqueness at position 112",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -2700,6 +2609,100 @@
         },
         "reviewed_at": "2026-06-04T17:13:59.798Z",
         "reviewed_sha": "a5fd9501f52decb0cc8a7770fa148322b64d3343"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "fb35a7a5963a",
+          "ts": "05cb5b94eaf8",
+          "lean": "2810d8047e3d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "fb35a7a5963a",
+          "ts": "05cb5b94eaf8",
+          "lean": "2810d8047e3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 1,
+          "fwd_received": 0,
+          "tanglement_score": 1,
+          "out_degree": 4,
+          "in_degree": 1,
+          "cone_size": 161,
+          "depth": 33,
+          "pagerank": 0.000525,
+          "edge_span_max": 187,
+          "edge_span_mean": 187,
+          "worst_target": "emits fwd-ref to predicted-spectra: prop:quantum-dilogarithm-volume"
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "fb35a7a5963a",
+          "ts": "05cb5b94eaf8",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "fb35a7a5963a",
+          "ts": "05cb5b94eaf8",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2723,7 +2726,7 @@
         },
         "reviewed_at": "2026-06-07T01:33:40.998Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
-        "notes": "3 named ingredients: pentagon-coherence on substrate, Bloch-Suslin uniqueness, archimedean matching; explicit §3b-cond banner + class hypotheses C1/C2 stated up front."
+        "notes": "3 named ingredients: pentagon-coherence on substrate, Bloch-Suslin uniqueness, archimedean matching; explicit \u00a73b-cond banner + class hypotheses C1/C2 stated up front."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2791,9 +2794,9 @@
         },
         "reviewed_at": "2026-06-07T01:33:41.096Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
-        "notes": "Sorry-free conditional theorem; the two classes are honest §3b-cond axiomatisations of named classical results (Suslin 1991), not suspect axioms. md banner matches Lean."
+        "notes": "Sorry-free conditional theorem; the two classes are honest \u00a73b-cond axiomatisations of named classical results (Suslin 1991), not suspect axioms. md banner matches Lean."
       }
     ]
   },
-  "updated_at": "2026-06-07T01:33:41.096Z"
+  "updated_at": "2026-06-07T05:58:41.267Z"
 }

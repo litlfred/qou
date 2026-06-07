@@ -20,6 +20,7 @@ export default conjecture({
     "kauffman1991",
   ],
   tags: [
+    "tier:S",
     "parity",
     "duality-d7",
     "braid-mirror",

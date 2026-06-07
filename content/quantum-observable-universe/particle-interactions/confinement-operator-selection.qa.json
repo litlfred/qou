@@ -955,59 +955,6 @@
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
       }
     ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "a7e748cdc000",
-          "ts": "482284bfe1d6",
-          "lean": "794d5e50acda"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
-        },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "a7e748cdc000",
-          "ts": "482284bfe1d6",
-          "lean": "794d5e50acda"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "a7e748cdc000",
-          "ts": "482284bfe1d6",
-          "lean": "30810a634318"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "canonical-no-numerology": [
       {
         "field_hash": {
@@ -2269,27 +2216,6 @@
         "reviewed_at": "2026-05-27"
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "ts": "482284bfe1d6"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "detangler-block-tanglement-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/detangler-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27",
-        "metrics": {
-          "fwd_emitted": 1,
-          "fwd_received": 0,
-          "tanglement_score": 1
-        }
-      }
-    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -2511,7 +2437,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.md:1 — detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2595,7 +2521,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof uses NF coefficients at q_0 — consistent with particle-interactions archimedean regime; no generic-ring statement proved by archimedean-only machinery.",
+        "evidence": "Proof uses NF coefficients at q_0 \u2014 consistent with particle-interactions archimedean regime; no generic-ring statement proved by archimedean-only machinery.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2674,6 +2600,100 @@
         "notes": "No wall violation."
       }
     ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "a7e748cdc000",
+          "ts": "482284bfe1d6",
+          "lean": "30810a634318"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "a7e748cdc000",
+          "ts": "482284bfe1d6",
+          "lean": "30810a634318"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 1,
+          "fwd_received": 0,
+          "tanglement_score": 1,
+          "out_degree": 1,
+          "in_degree": 6,
+          "cone_size": 1,
+          "depth": 1,
+          "pagerank": 0.003377,
+          "edge_span_max": 0,
+          "edge_span_mean": 0,
+          "worst_target": "emits fwd-ref to mass-theory: prop:frobenius-gram-matrix"
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "a7e748cdc000",
+          "ts": "482284bfe1d6",
+          "lean": "30810a634318"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "a7e748cdc000",
+          "ts": "482284bfe1d6",
+          "lean": "30810a634318"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
@@ -2695,7 +2715,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:18.870Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "MD ranks 9 candidate operators by net-constraint, shows free quarks have unmet demand, selects B3 uniquely by |Δnet|, and derives beta-decay demand channels; argument explicit (table-backed)."
+        "notes": "MD ranks 9 candidate operators by net-constraint, shows free quarks have unmet demand, selects B3 uniquely by |\u0394net|, and derives beta-decay demand channels; argument explicit (table-backed)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2719,7 +2739,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:18.906Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "Sibling Lean is ': True := trivial' — the minimum-action operator selection is not formalized."
+        "notes": "Sibling Lean is ': True := trivial' \u2014 the minimum-action operator selection is not formalized."
       }
     ],
     "proof-rater-novelty": [
@@ -2743,7 +2763,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:18.942Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "B3 selected (not assumed) by minimum action + Borromean topology, with beta-decay emerging from residual demand — a distinctive derivation."
+        "notes": "B3 selected (not assumed) by minimum action + Borromean topology, with beta-decay emerging from residual demand \u2014 a distinctive derivation."
       }
     ],
     "proof-statement-integrity": [
@@ -2764,7 +2784,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:18.977Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "lean.ref QOU.ParticleInteractions.confinement_operator_selection proves ': True := trivial' — = True vacuous stub. INTEGRITY FAIL."
+        "notes": "lean.ref QOU.ParticleInteractions.confinement_operator_selection proves ': True := trivial' \u2014 = True vacuous stub. INTEGRITY FAIL."
       }
     ]
   },

@@ -6,8 +6,8 @@ $w = q - 1$, to order 7:*
 
 | Order $n$ | Coefficient $c_n$ | Status in Lean |
 |---|---|---|
-| 0 | $0$ | proved sorry-free (`delta_tau_M_surrogate_vanish_at_one`, PR #1764) |
-| 1 | $-5/6$ | proved sorry-free (`delta_tau_M_surrogate_hasDerivAt_one`, PR #1764) |
+| 0 | $0$ | proved sorry-free (`delta_tau_M_surrogate_vanish_at_one`) |
+| 1 | $-5/6$ | proved sorry-free (`delta_tau_M_surrogate_hasDerivAt_one`) |
 | 2 | $5/6$ | catalogued from witness; formal proof deferred |
 | 3 | $-41/9$ | catalogued from witness; formal proof deferred |
 | 4 | $149/18$ | catalogued from witness; formal proof deferred |
@@ -53,7 +53,7 @@ $$
 substituting $q = 1 + w$ and extracting coefficients of $w^n$. The
 witness records both the closed form and per-order coefficients;
 order-0 and order-1 are independently verified by the sorry-free
-Lean theorems in PR #1764.
+Lean theorems above (orders 0 and 1).
 
 ## Cross-references
 

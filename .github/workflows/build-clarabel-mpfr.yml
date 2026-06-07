@@ -9,15 +9,7 @@
 name: Build clarabel-MPFR binary
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'tools/hecke-engine/**'
-      - '.github/workflows/build-clarabel-mpfr.yml'
   workflow_dispatch:
-  schedule:
-    - cron: '0 6 * * 1'
-
 permissions:
   contents: read
 

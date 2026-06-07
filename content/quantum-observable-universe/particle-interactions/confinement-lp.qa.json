@@ -955,59 +955,6 @@
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
       }
     ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "c25d86096904",
-          "ts": "c7919bd9ed8d",
-          "lean": "1c87c02b82eb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
-        },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "c25d86096904",
-          "ts": "c7919bd9ed8d",
-          "lean": "1c87c02b82eb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "c25d86096904",
-          "ts": "c7919bd9ed8d",
-          "lean": "ce16a6021fe6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "canonical-no-numerology": [
       {
         "field_hash": {
@@ -2147,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:confinement-lp' → expected 'confinement_lp'; Lean declares: lp_achieves_zero_trace. Structural match via content."
+        "notes": "Label 'prop:confinement-lp' \u2192 expected 'confinement_lp'; Lean declares: lp_achieves_zero_trace. Structural match via content."
       },
       {
         "field_hash": {
@@ -2163,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:confinement-lp' → expected 'confinement_lp'; Lean declares: lp_achieves_zero_trace. Structural match via content."
+        "notes": "Label 'prop:confinement-lp' \u2192 expected 'confinement_lp'; Lean declares: lp_achieves_zero_trace. Structural match via content."
       },
       {
         "field_hash": {
@@ -2179,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-lp' → expected 'confinement_lp'; Lean declares: lp_achieves_zero_trace. Structural match via content."
+        "notes": "Label 'prop:confinement-lp' \u2192 expected 'confinement_lp'; Lean declares: lp_achieves_zero_trace. Structural match via content."
       },
       {
         "field_hash": {
@@ -2195,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-lp' → expected 'confinement_lp'; Lean declares: lp_achieves_zero_trace. Structural match via content."
+        "notes": "Label 'prop:confinement-lp' \u2192 expected 'confinement_lp'; Lean declares: lp_achieves_zero_trace. Structural match via content."
       },
       {
         "field_hash": {
@@ -2267,27 +2214,6 @@
           "agent_skill": "local/one-voice-audit"
         },
         "reviewed_at": "2026-05-27"
-      }
-    ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "ts": "c7919bd9ed8d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "detangler-block-tanglement-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/detangler-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 0,
-          "tanglement_score": 0
-        }
       }
     ],
     "q-usage-regime-detected": [
@@ -2511,7 +2437,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-lp.md:1 — detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-lp.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -2637,7 +2563,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "Generic/substrate chapter but statement hard-codes archimedean numeric values: q_0 approx 1.1100, n_target approx 1.000 for proton and approx 0.811 for neutron, LP solution x* = (+0.998, -0.010, ...) — no wall: field or §7c conditional banner.",
+        "evidence": "Generic/substrate chapter but statement hard-codes archimedean numeric values: q_0 approx 1.1100, n_target approx 1.000 for proton and approx 0.811 for neutron, LP solution x* = (+0.998, -0.010, ...) \u2014 no wall: field or \u00a77c conditional banner.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2670,6 +2596,100 @@
         "reviewed_sha": "446b118303ec7a4f82dae0f1dedf5a68c0fbfbdb"
       }
     ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "c25d86096904",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "c25d86096904",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 5,
+          "cone_size": 2,
+          "depth": 2,
+          "pagerank": 0.00234,
+          "edge_span_max": 2,
+          "edge_span_mean": 2,
+          "worst_target": ""
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "c25d86096904",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "c25d86096904",
+          "ts": "c7919bd9ed8d",
+          "lean": "ce16a6021fe6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 2,
+          "fwd_edge_count": 1,
+          "worst_span": 2
+        }
+      }
+    ],
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
@@ -2691,7 +2711,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:18.726Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "MD lays out primal (min Σt_i x_i s.t. net + Frobenius positivity), dual (shadow prices y_0,y_i), strong duality, the B3 vertex, and the local-minimum caveat; LP structure fully explicit."
+        "notes": "MD lays out primal (min \u03a3t_i x_i s.t. net + Frobenius positivity), dual (shadow prices y_0,y_i), strong duality, the B3 vertex, and the local-minimum caveat; LP structure fully explicit."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2715,7 +2735,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:18.764Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "Canonical lean.ref decl (QOU.Interactions.lp_achieves_zero_trace, ConfinementLP.lean) proves only hopfPlus≠hopfMinus (L+≠L-), a WEAKENED PROXY — the LP-optimum=0 / not-braid-realizable claim is admitted unformalized ('Full proof requires ...'). Sibling stub is ': True'."
+        "notes": "Canonical lean.ref decl (QOU.Interactions.lp_achieves_zero_trace, ConfinementLP.lean) proves only hopfPlus\u2260hopfMinus (L+\u2260L-), a WEAKENED PROXY \u2014 the LP-optimum=0 / not-braid-realizable claim is admitted unformalized ('Full proof requires ...'). Sibling stub is ': True'."
       }
     ],
     "proof-rater-novelty": [
@@ -2759,7 +2779,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:18.834Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "lean.ref resolves to the package decl QOU.Interactions.lp_achieves_zero_trace (ConfinementLP.lean:92), which proves hopfPlus≠hopfMinus via hopf_ne — real & sorry-free (NOT the sibling ': True' shim). md↔Lean coverage gap flagged under plausibility."
+        "notes": "lean.ref resolves to the package decl QOU.Interactions.lp_achieves_zero_trace (ConfinementLP.lean:92), which proves hopfPlus\u2260hopfMinus via hopf_ne \u2014 real & sorry-free (NOT the sibling ': True' shim). md\u2194Lean coverage gap flagged under plausibility."
       }
     ]
   },

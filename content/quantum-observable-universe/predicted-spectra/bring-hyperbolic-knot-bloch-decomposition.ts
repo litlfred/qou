@@ -24,6 +24,7 @@ export default conjecture({
     status: "verified",
   },
   tags: [
+    "tier:E",
     "bloch-group",
     "borel-regulator",
     "k-theory",

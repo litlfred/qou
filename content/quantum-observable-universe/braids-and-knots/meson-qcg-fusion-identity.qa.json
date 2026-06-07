@@ -98,7 +98,7 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:38 — MeV/CODATA reference in categorical chapter — is precisely $[3]_q \\cdot [4]_q$ — verified at $q_0$ to 203 ppm with | content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:42 — MeV/CODATA reference in categorical chapter — The remaining 203 ppm residual is the EM/Coulomb (sinh-channel) | content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:43 — MeV/CODATA reference in categorical chapter — correction, closed to **0.056 ppm on the full ratio** by"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:38 \u2014 MeV/CODATA reference in categorical chapter \u2014 is precisely $[3]_q \\cdot [4]_q$ \u2014 verified at $q_0$ to 203 ppm with | content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:42 \u2014 MeV/CODATA reference in categorical chapter \u2014 The remaining 203 ppm residual is the EM/Coulomb (sinh-channel) | content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.md:43 \u2014 MeV/CODATA reference in categorical chapter \u2014 correction, closed to **0.056 ppm on the full ratio** by"
       },
       {
         "field_hash": {
@@ -251,25 +251,6 @@
           "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
         },
         "reviewed_at": "2026-06-02T19:35:55.253Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "440e90d8f01b",
-          "ts": "34026fdab4a4",
-          "lean": "d0b110d00429"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
@@ -686,7 +667,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:1: Lean file contains both archimedean (\u211d / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers \u2014 split into two files per CLAUDE.md \u00a77c."
       }
     ],
     "compute-prop-has-probe": [
@@ -873,25 +854,6 @@
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "md": "440e90d8f01b",
-          "ts": "34026fdab4a4",
-          "lean": "d0b110d00429"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "proof-lean-compiles": [
       {
         "field_hash": {
@@ -910,6 +872,101 @@
         },
         "reviewed_at": "2026-06-05T14:22:44.851Z",
         "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57",
+        "metrics": {
+          "home_chapter": "braids-and-knots",
+          "home_score": 2,
+          "top_other_chapter": "algebraic-substrate",
+          "top_other_score": 1
+        }
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 0,
+          "in_degree": 0,
+          "cone_size": 0,
+          "depth": 0,
+          "pagerank": 0.000102,
+          "edge_span_max": 0,
+          "edge_span_mean": 0,
+          "worst_target": ""
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1005,5 +1062,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T02:31:29.924Z"
+  "updated_at": "2026-06-07T05:58:41.267Z"
 }

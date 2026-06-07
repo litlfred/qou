@@ -8,30 +8,11 @@
     "lean": "content/quantum-observable-universe/particle-interactions/delta-pre-archimedean.lean"
   },
   "source_hashes": {
-    "md": "84036c42e086",
+    "md": "8ab90a8998ed",
     "ts": "fe342d55796e",
     "lean": "af2a984d9e33"
   },
   "criteria": {
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "canonical-no-numerology": [
       {
         "field_hash": {
@@ -363,7 +344,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/delta-pre-archimedean.md:88: > amplifying the split by ~10²."
+        "evidence": "content/quantum-observable-universe/particle-interactions/delta-pre-archimedean.md:88: > amplifying the split by ~10\u00b2."
       },
       {
         "field_hash": {
@@ -437,7 +418,7 @@
         "reviewed_at": "2026-06-02T19:35:52.628Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/delta-pre-archimedean.md:51: So the two orders — *masses-then-delta* and"
+        "evidence": "content/quantum-observable-universe/particle-interactions/delta-pre-archimedean.md:51: So the two orders \u2014 *masses-then-delta* and"
       }
     ],
     "voice-title-scholarly": [
@@ -903,25 +884,6 @@
         "reviewed_sha": "19118a572290d7bf9fc5b30e8a174c4bc86e6ad5"
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "md": "824b03c598f9",
-          "ts": "fe342d55796e",
-          "lean": "af2a984d9e33"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:35:58.523Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
@@ -953,7 +915,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proposition governs order-of-operations for Q_beta and binding energy B(K) — core topics of particle-interactions chapter.",
+        "evidence": "Proposition governs order-of-operations for Q_beta and binding energy B(K) \u2014 core topics of particle-interactions chapter.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -997,7 +959,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof uses sub_eq_add_neg+map_add+map_neg over CommRing; nonlinearity witness uses norm_num over ℤ — no archimedean-only machinery (linarith, IVT) for algebraic claims.",
+        "evidence": "Proof uses sub_eq_add_neg+map_add+map_neg over CommRing; nonlinearity witness uses norm_num over \u2124 \u2014 no archimedean-only machinery (linarith, IVT) for algebraic claims.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -1052,6 +1014,100 @@
         "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
     ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 1,
+          "fwd_received": 0,
+          "tanglement_score": 1,
+          "out_degree": 2,
+          "in_degree": 0,
+          "cone_size": 115,
+          "depth": 28,
+          "pagerank": 0.000102,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
+          "worst_target": "emits fwd-ref to mass-theory: def:archimedean-realization-functor"
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "8ab90a8998ed",
+          "ts": "fe342d55796e",
+          "lean": "af2a984d9e33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
@@ -1073,7 +1129,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:19.454Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "Exemplary: MD explicitly separates PROVED(1) fold commutes with subtraction, PROVED(2) nonlinear τ does not, from EXPOSITORY(3) which order each observable uses — the cleanest proved-vs-convention demarcation in the batch."
+        "notes": "Exemplary: MD explicitly separates PROVED(1) fold commutes with subtraction, PROVED(2) nonlinear \u03c4 does not, from EXPOSITORY(3) which order each observable uses \u2014 the cleanest proved-vs-convention demarcation in the batch."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1097,7 +1153,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:19.489Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "Canonical module QOU.ParticleInteractions.delta_pre_archimedean (re-exported by sibling) proves fold_commutes_sub (generic CommRing, sub_eq_add_neg+map_add+map_neg) and archimedean_does_not_commute_sub (τ=(·)² norm_num witness), both sorry-free; matches the MD's two theorems exactly."
+        "notes": "Canonical module QOU.ParticleInteractions.delta_pre_archimedean (re-exported by sibling) proves fold_commutes_sub (generic CommRing, sub_eq_add_neg+map_add+map_neg) and archimedean_does_not_commute_sub (\u03c4=(\u00b7)\u00b2 norm_num witness), both sorry-free; matches the MD's two theorems exactly."
       }
     ],
     "proof-rater-novelty": [

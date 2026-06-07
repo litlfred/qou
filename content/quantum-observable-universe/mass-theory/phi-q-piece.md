@@ -68,7 +68,7 @@ In motivic language, $\Phi_q$ is the **Faddeev–Kashaev quantum
 dilogarithm** [`faddeev1994`] — a $q$-deformation of the Bloch–Wigner
 dilogarithm $D_2$ whose pentagon five-term relation is the defining
 relation of the quantum Bloch group
-([quantum Bloch group](#rem:quantum-bloch-group)). The per-piece
+([quantum Bloch group](#def:quantum-bloch-group)). The per-piece
 summand $\Phi_q(\lvert V_S\rvert)$ is a class in the quantum Bloch
 group $\mathfrak{B}(q)$, and the family $\{K_S\}_S$ is the geometric
 stratification along which the regulator $\mathfrak{B}(q) \to \mathbb{R}$

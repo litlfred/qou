@@ -47,6 +47,11 @@ export default chapter({
       label: "sec:categorical-braiding-hecke-eigenbasis",
       blocks: [
         "categorical-braiding-hecke-eigenbasis-intro",
+        "skein-resolution-obstruction",
+        "hecke-satisfies-blitvic-hypothesis",
+        "hecke-satisfies-blitvic-hypothesis-proof",
+        "trace-locality-meets-gs-nonlocality",
+        "trace-locality-meets-gs-nonlocality-proof",
         "jones-markov-trace",
         "markov-disambiguation",
         "bar-involution",

@@ -913,8 +913,11 @@ const DETANGLER: QaCriterionDefinition[] = [
     domain: "detangler",
     description:
       "Each `## Section` in the chapter contains between 3 and 18 " +
-      "content blocks (R1-R3). Out-of-band sections invite either " +
-      "skim-and-skip (>18) or trivial-aside dilution (<3).",
+      "NON-PROSE blocks (R1-R3). Block kinds are resolved per slug so " +
+      "narrative prose is excluded from the count; the sparse (<3) check " +
+      "additionally skips intro/overview sections (H4). Out-of-band " +
+      "sections invite either skim-and-skip (>18) or trivial-aside " +
+      "dilution (<3).",
     default_severity: "minor",
     depends_on: ["ts"],
     automated: true,
@@ -948,12 +951,54 @@ const DETANGLER: QaCriterionDefinition[] = [
     id: "detangler-block-tanglement",
     domain: "detangler",
     description:
-      "Per-block tanglement score: measures dependency fan-out (|uses[]|), " +
-      "forward-ref fraction, and cross-chapter ref count. High tanglement " +
-      "signals a block that should be split, relocated, or have its " +
-      "dependency edges pruned.",
+      "Per-block tanglement score (cross-chapter forward-ref count) plus " +
+      "a descriptive graph-metrics payload: out_degree / in_degree / " +
+      "cone_size (transitive blast radius) / fwd_received / edge_span / " +
+      "depth (longest dependency chain, a proof-depth proxy) / pagerank " +
+      "(weighted centrality refining in-degree). High tanglement or deep/" +
+      "central placement signals a block that may warrant a split, " +
+      "relocation, or dependency-edge pruning.",
     default_severity: "major",
     depends_on: ["ts"],
+    automated: true,
+  },
+  {
+    id: "detangler-graph-energy",
+    domain: "detangler",
+    description:
+      "Per-block contribution to the chapter's graph energy: the sum, " +
+      "over same-SECTION `uses:` edges that point forward in the " +
+      "manifest order, of the manifest-position distance to each " +
+      "target. Cross-section forward edges reflect the chapter's " +
+      "intentional face ordering (Algebraic→Geometric→…), not a " +
+      "reorderable local tangle, and are excluded. Weights forward " +
+      "refs by reach (a definition used 30 " +
+      "blocks later is a deeper tangle than one used 2 blocks later) — " +
+      "the magnitude that the binary `detangler-no-forward-ref` count " +
+      "misses. `pass` at energy 0, `warn` for any forward edge, `fail` " +
+      "(major) at energy ≥ 100 (far above the ~18 corpus median nonzero " +
+      "energy — gates only pathological tangles). Emits `graph_energy`, " +
+      "`fwd_edge_count`, " +
+      "`worst_span` in the entry's `metrics`. Mirrors the " +
+      "`chapter-complexity-review` energy metric per block.",
+    default_severity: "major",
+    depends_on: ["ts"],
+    automated: true,
+  },
+  {
+    id: "detangler-topic-coherence",
+    domain: "detangler",
+    description:
+      "Keyword-based topic-fit heuristic (ported from " +
+      "`block-density-audit.py`): a block whose prose scores more " +
+      "chapter-keyword hits for some OTHER chapter than for its own " +
+      "home chapter is a relocation/split candidate. Soft (`warn`, " +
+      "minor) since keyword overlap is noisy; the `metrics` payload " +
+      "records `home_chapter`, `home_score`, `top_other_chapter`, " +
+      "`top_other_score` for reviewer adjudication. Only audits " +
+      "substantive blocks (> 20 non-blank .md lines); `n/a` otherwise.",
+    default_severity: "minor",
+    depends_on: ["md"],
     automated: true,
   },
   {

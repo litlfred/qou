@@ -17,6 +17,7 @@ import type { Paper, Chapter, Section, Block, RenderOptions } from "../schema/ty
 import { extractBlockLabel, isCrossPaperRef } from "../schema/types";
 import { renderChapter, validateLatexAst } from "./render-latex";
 import { generateMainTex } from "./generate-main-tex";
+import { runPreflight } from "./latex-preflight";
 
 // ── Build ────────────────────────────────────────────────────────
 
@@ -330,6 +331,27 @@ if (import.meta.main) {
       const appendixPath = join(mainOutDir, `standalone-${info.slug}.tex`);
       writeFileSync(appendixPath, appendixTex);
       console.log(`  → standalone: ${appendixPath}`);
+    }
+
+    // LaTeX preflight (macro lint) on the generated compile unit. Catches
+    // the recurring fatal-pdflatex classes (duplicate \newcommand,
+    // undefined control sequence, fragile math-accent script) that the
+    // unified-latex AST validation cannot see. Reported here for local
+    // feedback; CI gates on it separately in publish.yml.
+    const pre = runPreflight(mainOutPath);
+    if (pre.ok) {
+      console.log(
+        `  → LaTeX preflight: ✓ clean (${pre.usedCount} macros, ` +
+          `${pre.filesScanned} files)`,
+      );
+    } else {
+      console.log(`  → LaTeX preflight: ✗ ${pre.issues.length} issue(s)`);
+      for (const iss of pre.issues.slice(0, 30)) {
+        console.log(`     [${iss.check}] ${iss.message}`);
+      }
+      if (pre.issues.length > 30) {
+        console.log(`     … and ${pre.issues.length - 30} more`);
+      }
     }
   }
 

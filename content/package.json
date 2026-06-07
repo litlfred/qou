@@ -14,6 +14,8 @@
     "export-bibtex": "bun run pipeline/export-bibtex.ts",
     "validate-refs": "bun run pipeline/validate-references.ts",
     "validate-bib": "bun run pipeline/validate-bib.ts",
+    "latex-preflight": "bun run pipeline/latex-preflight.ts ../main.tex",
+    "latex-preflight:seed": "bun run pipeline/latex-preflight.ts --seed ../main.tex",
     "audit-tex-source": "bun run pipeline/audit-tex-source.ts",
     "audit-tex-source:strict": "bun run pipeline/audit-tex-source.ts --strict",
     "bib-qa": "bun run pipeline/bib-qa.ts",

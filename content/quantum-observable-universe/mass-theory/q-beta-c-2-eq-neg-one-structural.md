@@ -76,7 +76,7 @@ The same line of attack applies at higher $N$: if the categorical
 $N{=}3$ correction is exactly $(1 + a \cdot u^3)$ for some explicit
 $a$, then $c_3 = a$ structurally. The candidates
 $\text{cos}(b \cdot \hbar_q^2)$, $\text{exp}(-\tfrac12 \sum b^k \hbar_q^{2k})$,
-$1 - b^3 \hbar_q^6$, … each predict a *different* $c_3$ by Taylor
+$1 - b^3 \hbar_q^6$, ... each predict a *different* $c_3$ by Taylor
 expansion. Testing which candidate matches the empirical $c_3 \approx -2$
 discriminates between brane-tower truncation schemes; if exactly one
 candidate matches structurally, $c_3$ becomes a second structural

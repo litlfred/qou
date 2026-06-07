@@ -1,0 +1,85 @@
+{
+  "schema": "qou-witness/v1",
+  "name": "chebyshev-pairing-engine",
+  "description": "Exact-identity witness for (\u03c3\u207b\u00b9)^Z = c_Z \u03c3 + d_Z in H\u2082(q) with c_Z=(q^{-Z}-(-1)^Z q^Z)/[2]_q, d_Z=(q^{-(Z+1)}+(-1)^Z q^{Z+1})/[2]_q. Verified to 1e-40 across several q (q-independent algebraic identity) plus the sign-alternation c_Z<0 even / >0 odd for q>1. Underlies conj:palindromicity-orbital-type and conj:shell-closure-nf-term-count.",
+  "computation": {
+    "engine": "python+mpmath",
+    "dps": 50,
+    "Zmax": 12,
+    "tolerance": "1.0e-40",
+    "script": "folio-assistant/computations/chebyshev_pairing_engine_witness.py"
+  },
+  "scriptCommitSha": "",
+  "scriptHash": "a90427943794",
+  "computedAt": "2026-06-07T05:18:14.146315+00:00",
+  "result": {
+    "all_ok": true,
+    "per_q": [
+      {
+        "q": "1.1097",
+        "max_residual": "5.346e-51",
+        "identity_holds": true,
+        "sign_alternation_ok": true,
+        "c_Z_sample": {
+          "0": "0.0",
+          "1": "1.0",
+          "2": "-0.20855555",
+          "3": "1.0434954",
+          "4": "-0.4261823",
+          "5": "1.1323781",
+          "6": "-0.66234604"
+        }
+      },
+      {
+        "q": "1.5",
+        "max_residual": "1.711e-49",
+        "identity_holds": true,
+        "sign_alternation_ok": true,
+        "c_Z_sample": {
+          "0": "0.0",
+          "1": "1.0",
+          "2": "-0.83333333",
+          "3": "1.6944444",
+          "4": "-2.2453704",
+          "5": "3.5655864",
+          "6": "-5.2166924"
+        }
+      },
+      {
+        "q": "2.0",
+        "max_residual": "0.0",
+        "identity_holds": true,
+        "sign_alternation_ok": true,
+        "c_Z_sample": {
+          "0": "0.0",
+          "1": "1.0",
+          "2": "-1.5",
+          "3": "3.25",
+          "4": "-6.375",
+          "5": "12.8125",
+          "6": "-25.59375"
+        }
+      },
+      {
+        "q": "0.7",
+        "max_residual": "3.421e-49",
+        "identity_holds": true,
+        "sign_alternation_ok": null,
+        "c_Z_sample": {
+          "0": "0.0",
+          "1": "1.0",
+          "2": "0.72857143",
+          "3": "1.5308163",
+          "4": "1.8438805",
+          "5": "2.874215",
+          "6": "3.9379514"
+        }
+      }
+    ]
+  },
+  "refs": [
+    "docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md",
+    "content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.md",
+    "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md"
+  ]
+}

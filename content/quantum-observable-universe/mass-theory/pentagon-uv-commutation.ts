@@ -17,7 +17,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "rem:quantum-bloch-group",
+    "def:quantum-bloch-group",
     "lem:vhat-pair-commutation-trace",
     "prop:jet-tower-convergence",
     "prop:descended-level-zero",

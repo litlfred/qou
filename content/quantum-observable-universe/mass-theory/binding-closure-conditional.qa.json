@@ -13,6 +13,100 @@
     "lean": "9d859da88c03"
   },
   "criteria": {
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "4034a3724a28",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "4034a3724a28",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 4,
+          "in_degree": 1,
+          "cone_size": 248,
+          "depth": 49,
+          "pagerank": 0.000146,
+          "edge_span_max": 5,
+          "edge_span_mean": 3.33,
+          "worst_target": ""
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "4034a3724a28",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "4034a3724a28",
+          "ts": "85e75c9b1c9f",
+          "lean": "9d859da88c03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
@@ -58,7 +152,7 @@
         },
         "reviewed_at": "2026-06-07T01:35:25.353Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
-        "notes": "Sorry-free: binding_closure_conditional proved from BindingClosureInput via rw[body_is_series,Finset.mul_sum]+sum_congr. Open input (B) is a named class field, not a hidden gap — rigorous-conditional."
+        "notes": "Sorry-free: binding_closure_conditional proved from BindingClosureInput via rw[body_is_series,Finset.mul_sum]+sum_congr. Open input (B) is a named class field, not a hidden gap \u2014 rigorous-conditional."
       }
     ],
     "proof-rater-novelty": [
@@ -82,7 +176,7 @@
         },
         "reviewed_at": "2026-06-07T01:35:25.382Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
-        "notes": "Body-order = Sum m_e.a_D^(n) (SW periods) framing is coherent but the Lean is a standard factor-out-m_e over a Finset; conditional-class packaging is the same §3b-cond pattern as siblings."
+        "notes": "Body-order = Sum m_e.a_D^(n) (SW periods) framing is coherent but the Lean is a standard factor-out-m_e over a Finset; conditional-class packaging is the same \u00a73b-cond pattern as siblings."
       }
     ],
     "proof-statement-integrity": [
@@ -102,9 +196,9 @@
         },
         "reviewed_at": "2026-06-07T01:35:25.413Z",
         "reviewed_sha": "5b22f37e27e74b674fb6b50fae73e0792e7212e2",
-        "notes": "Sorry-free §3b-cond theorem; BindingClosureInput honestly bundles proved (C) + open (B) as class fields; no suspect axiom, no True-stub. md banner matches Lean."
+        "notes": "Sorry-free \u00a73b-cond theorem; BindingClosureInput honestly bundles proved (C) + open (B) as class fields; no suspect axiom, no True-stub. md banner matches Lean."
       }
     ]
   },
-  "updated_at": "2026-06-07T01:35:25.413Z"
+  "updated_at": "2026-06-07T05:58:41.267Z"
 }

@@ -5,13 +5,6 @@ name: Copilot Setup Steps
 # work on any session in this repository.
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - .github/workflows/copilot-setup-steps.yml
-  pull_request:
-    paths:
-      - .github/workflows/copilot-setup-steps.yml
-
 jobs:
   # ── The job MUST be named `copilot-setup-steps` ──────────────────────────
   copilot-setup-steps:

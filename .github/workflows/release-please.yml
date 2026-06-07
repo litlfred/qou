@@ -57,8 +57,6 @@ name: release-please
 # docs/release-process.md (once added) for the exact recipe.
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:

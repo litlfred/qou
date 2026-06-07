@@ -955,59 +955,6 @@
         "reviewed_sha": "26d6c0987a94ca9ddede91fdc1d3f655bf8c25f0"
       }
     ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "5805ca59ac0c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "570ccb51ec4d",
-          "script_commit_sha": "383eb73ecb958e3e8b9d2229e16239126f69f50f"
-        },
-        "reviewed_at": "2026-05-25T07:06:37.458Z",
-        "reviewed_sha": "cabb1e3313038ed0df2555c1ef1dbb25436d34ca"
-      },
-      {
-        "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "5805ca59ac0c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b3b5d8e420d",
-          "script_commit_sha": "e9e1a41d6cae07d2ecfb5b1cf0afa4a840a4b614"
-        },
-        "reviewed_at": "2026-05-25T23:28:35.242Z",
-        "reviewed_sha": "82e22b09358a7d8ef9d1a6e43b0b996db4a40264"
-      },
-      {
-        "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "canonical-no-numerology": [
       {
         "field_hash": {
@@ -2147,7 +2094,7 @@
         },
         "reviewed_at": "2026-05-26T14:25:22.698Z",
         "reviewed_sha": "f7e89bae58261e1515672a8fcc9cc323c0038441",
-        "notes": "Label 'prop:confinement-topological' → expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
+        "notes": "Label 'prop:confinement-topological' \u2192 expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2163,7 +2110,7 @@
         },
         "reviewed_at": "2026-05-28T15:40:01.326Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'prop:confinement-topological' → expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
+        "notes": "Label 'prop:confinement-topological' \u2192 expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2179,7 +2126,7 @@
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-topological' → expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
+        "notes": "Label 'prop:confinement-topological' \u2192 expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2195,7 +2142,7 @@
         },
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-topological' → expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
+        "notes": "Label 'prop:confinement-topological' \u2192 expected 'confinement_topological'; Lean declares: gram_indefinite_witness. Structural match via content."
       },
       {
         "field_hash": {
@@ -2267,27 +2214,6 @@
           "agent_skill": "local/one-voice-audit"
         },
         "reviewed_at": "2026-05-27"
-      }
-    ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "ts": "943149e87540"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "detangler-block-tanglement-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/detangler-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 0,
-          "tanglement_score": 0
-        }
       }
     ],
     "q-usage-regime-detected": [
@@ -2659,7 +2585,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof uses numeric evaluation at q_0 (lambda_- approx -0.855) and exhaustive enumeration over braid words — all archimedean machinery appropriate for this chapter",
+        "evidence": "Proof uses numeric evaluation at q_0 (lambda_- approx -0.855) and exhaustive enumeration over braid words \u2014 all archimedean machinery appropriate for this chapter",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
@@ -2670,6 +2596,100 @@
         "reviewed_at": "2026-06-05T01:18:33.747Z",
         "reviewed_sha": "4b39880c7e38e87cecb844ef5e5685a812e47dab",
         "notes": "Archimedean proof for archimedean chapter; no regime mismatch"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6b0daec15a39",
+          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
+        },
+        "reviewed_at": "2026-06-07T04:50:22.937Z",
+        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 2,
+          "cone_size": 3,
+          "depth": 3,
+          "pagerank": 0.000571,
+          "edge_span_max": 11,
+          "edge_span_mean": 11,
+          "worst_target": ""
+        }
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+        },
+        "reviewed_at": "2026-06-07T05:58:41.267Z",
+        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2693,7 +2713,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:19.157Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "MD states (i) LP optimum tr_M*=0 via negative Gram eigenvalue, (ii) optimum not in braid-group image (unbounded coeffs), (iii) B3 unique among length≤6 braids by exhaustive 4096-word enumeration; each proved/argued."
+        "notes": "MD states (i) LP optimum tr_M*=0 via negative Gram eigenvalue, (ii) optimum not in braid-group image (unbounded coeffs), (iii) B3 unique among length\u22646 braids by exhaustive 4096-word enumeration; each proved/argued."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2717,7 +2737,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:19.194Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "Canonical lean.ref decl (gram_indefinite_witness, GramIndefinite.lean) proves the Gram-indefinite core (L+²+L-²≠2·L+·L-) sorry-free — captures part (i) but NOT (ii) unbounded-optimum-not-braid-realizable nor (iii) the 4096-word enumeration. Partial coverage of the headline."
+        "notes": "Canonical lean.ref decl (gram_indefinite_witness, GramIndefinite.lean) proves the Gram-indefinite core (L+\u00b2+L-\u00b2\u22602\u00b7L+\u00b7L-) sorry-free \u2014 captures part (i) but NOT (ii) unbounded-optimum-not-braid-realizable nor (iii) the 4096-word enumeration. Partial coverage of the headline."
       }
     ],
     "proof-rater-novelty": [
@@ -2761,7 +2781,7 @@
         },
         "reviewed_at": "2026-06-07T06:00:19.268Z",
         "reviewed_sha": "5ed513439e173c1e9db9ab5ee2473d14ac7be10e",
-        "notes": "lean.ref resolves to package decl QOU.Interactions.gram_indefinite_witness (GramIndefinite.lean:187), proving L+²+L-²≠2L+L- sorry-free (NOT the sibling ': True' shim). Real & non-vacuous; md↔Lean partial-coverage flagged under plausibility."
+        "notes": "lean.ref resolves to package decl QOU.Interactions.gram_indefinite_witness (GramIndefinite.lean:187), proving L+\u00b2+L-\u00b2\u22602L+L- sorry-free (NOT the sibling ': True' shim). Real & non-vacuous; md\u2194Lean partial-coverage flagged under plausibility."
       }
     ]
   },

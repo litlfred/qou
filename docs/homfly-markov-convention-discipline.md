@@ -96,10 +96,54 @@ error is invisible. The skein reference in `homflypt_reference_qa.py` is the
 first **external** anchor. Any future normalisation change must move that gate
 toward 5/5, not just keep the four internal methods agreeing.
 
-## 6. Empirical status (2026-06-04)
+## 6. Empirical status
 
-- SU(2) exponent fixed: `v = q^{N/2}` (was `q^{(N-1)/2}` → degenerate `δ≡−1`).
-- Reference gate built and failing 0/5 by design (the verification gap is now
-  a hard gate).
-- Rework (signed Ocneanu trace at `s`, writhe kept, correct weights) is the
-  open task; it is what drives the gate to 5/5.
+- **2026-06-04** SU(2) exponent fixed: `v = q^{N/2}` (was `q^{(N-1)/2}` →
+  degenerate `δ≡−1`). Reference gate built. Rework engine
+  `homfly_ocneanu_trace.py` landed (signed Ocneanu trace at `s`, writhe kept):
+  gate **5/5** (PR #1792, merged).
+- **2026-06-07** the engine independently confirms the merged GAP-A-4 Borromean
+  result (§7).
+
+## 7. Reconciliation with the GAP-A-4 Markov-trace thread (2026-06-07)
+
+Main's `prop:borromean-markov-trace-closed-form` (PR #1933 T17 R-matrix, content
+PR #1942) derives, via a *different* route (Schur-Weyl R-matrix on V^⊗3 → Jones
+polynomial of 𝓑₃):
+
+```
+χ^{(3)}(β_Bor) = χ^{(1³)}(β_Bor) = 1
+χ^{(2,1)}(β_Bor) = (−q¹²+3q¹⁰−3q⁸+4q⁶−3q⁴+3q²−1)/q⁶ = 2 − 3h⁴ − h⁶
+tr_M(β_Bor)      = (4 + h² − 3h⁴ − h⁶)/(h² + 4)
+```
+
+`borromean_chi_independent_crosscheck.py` confirms the three **χ^λ** forms from
+the skein-validated seminormal engine to **≤ 4e-50** at every tested q.
+
+**Proof-status (do not overclaim).** This is *not* two independent proofs, and
+the layers differ:
+- The Borromean **tr_M closed form** IS Lean-proved (sorry-free) in
+  `QOU/BraidsAndKnots/BorromeanMarkovTrace.lean` (`field_simp; ring` on the
+  algebraic core, modulo the *cited* topological inputs `V(𝓑₃)`=Murasugi Jones
+  poly and `tr_M=V/[2]²`).
+- The **per-rep `χ^λ` forms** this cross-check verifies (`χ^{(3)}=χ^{(1³)}=1`,
+  `χ^{(2,1)}=2−3h⁴−h⁶`) are **narrative-only** (content `.md`), *not* in that
+  `.lean` — so the numerical confirmation here anchors a layer the Lean does
+  not cover (corroboration, not a theorem of equivalence). Full status:
+  `docs/audits/2026-06-07-borromean-chi-crossmethod-proof-status.md`.
+
+**Do NOT equate the two weight families.** They share `χ^λ(β)` but use different
+normalisations, and are *not* a constant multiple of each other:
+
+| aspect | main's `y_λ` (Wenzl/Markov) | this engine's `w_λ` (Ocneanu/HOMFLY) |
+|---|---|---|
+| normalisation | `Σ_λ y_λ d_λ = tr_M(id) = 1` | unknot closure = 1, writhe kept |
+| `tr_M(β_Bor)` form | `Σ y_λ χ^λ = (4+h²−3h⁴−h⁶)/(h²+4) ≈ 1` | `Σ w_λ χ^λ ≈ 4.0` (HOMFLY-closure norm) |
+| `(3)` weight | `y_{(3)}(q=1) = 1/4` (universal H₃, T18) | `w_{(3)} = 0` |
+| ratio engine/`tr_M` | — | q-dependent (4.0→6.6), **not constant** |
+
+The interchange object between the two threads is **`χ^λ(β)`**, not the weights.
+Equating `w_λ` with `y_λ` (or assuming a constant `[2]_q²` bridge) would
+manufacture the very "third convention" this doc warns about (§1). When porting
+results across the threads, port `χ^λ` and re-apply the destination's weight
+normalisation.

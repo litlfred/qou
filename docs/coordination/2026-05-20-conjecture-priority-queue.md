@@ -72,3 +72,30 @@ Has an "extra" sorry in a tactic/theorem body that should be closeable.
 - `conj:cl3-zeta5-geometric-realization` — Geometric realisation of $\mathrm{Cl}_3(2\pi/5)$ as a Bring-natural depth-3 invariant
 - `conj:confinement-grading-correspondence` — Confinement levels coincide with KLR $\mathbb{Z}$-grading shifts
 - `conj:knot-factor-frobenius-pairing` — Knot factor as Frobenius self-pairing ratio
+
+---
+
+## 2026-06-07 — corpus-wide conjecture status-drift triage (PR #1946)
+
+Triaged all **137** `kind:"conjecture"` blocks against the corpus-grep
+checklist + §3b propagation. Buckets: 5 resolved-drift, 7 mis-classified
+(both first-pass), ~25 contingent-downstream, ~100 genuine open roots
+(~13 imported famous problems, 6 keystone roots, ~80 leaf roots).
+
+**Verification pass:** 8 of the 12 first-pass-flagged blocks were
+already honestly caveated (authorNotes / conditional banners / tiered
+titles). Only **4 edited** (no kind-flips, §3b respected):
+`reidemeister-mass-invariance` (uses[] gap + banner), `conj-lepton-tower-
+h-n-plus-1-branching` (stale title → unifying form), `brane-tower-z-habiro`
+(n⋆-refutation authorNote), `reading-a-conditional-linking-weight`
+(falsified-candidate authorNote).
+
+Full report + open-conjecture map: `docs/audits/2026-06-07-conjecture-triage.md`.
+
+**Sibling coordination posted:** #1931 (geom-universality upgrade vs my
+open-root listing), #1765 (Family-A linking weight vs reading-a falsified
+candidate), #1945 (4 fresh sidecar drifts from my edits).
+
+**Open for owner decision:** deprecation of a chunk of the ~80 leaf roots
+(speculative surreals-appendix framings; refuted candidates). See PR #1946
+discussion.

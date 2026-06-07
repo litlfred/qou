@@ -8,6 +8,7 @@ export default conjecture({
   uses: ["def:hq-bi-filtration"],
   cites: ["kontsevich1995", "bloch2000"],
   tags: [
+    "tier:S",
     "joint-action",
     "motivic-galois",
     "braid-group",

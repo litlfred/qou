@@ -22,6 +22,7 @@ export default conjecture({
     status: "verified",
   },
   tags: [
+    "tier:keystone",
     "gs-filtration",
     "spectral-sequence",
     "graded-trace",

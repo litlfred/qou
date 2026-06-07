@@ -36,6 +36,7 @@ export default conjecture({
     },
   ],
   tags: [
+    "tier:S",
     "atom-braid",
     "wedderburn-decomposition",
     "markov-trace",
