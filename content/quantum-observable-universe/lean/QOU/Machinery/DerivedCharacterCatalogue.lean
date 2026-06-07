@@ -45,7 +45,7 @@ mirrors the Python `lookup_derived` failing-loud guard.
 - LR / parabolic factorisation roadmap (Tier 1):
   [`docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](../../../../../docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md)
 -/
-import Mathlib.Data.Rat.Basic
+import Mathlib.Data.Rat.Defs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import QOU.BraidsAndKnots.BorromeanChiPerRep
@@ -141,8 +141,7 @@ independently confirmed numerically (≤ 4e-50) by
 `borromean_chi_independent_crosscheck.py`. The class therefore certifies
 the catalogue cell against the *formalised* T17 polynomial, not against
 an in-Lean construction of the seminormal representation. -/
-class IsRMatrixDerived (R : Type*) [Field R] (cell : KnotPartitionAtomCell) :
-    Prop where
+class IsRMatrixDerived (R : Type*) [Field R] (cell : KnotPartitionAtomCell) where
   /-- A genuine `R → R` evaluation of the cell's stored Laurent
   `chiLambdaQLaurent` (in the Kauffman variable). Generic over a field
   `R` per §7c — no ordering / `Real.*` is involved, only the inverses
@@ -221,8 +220,10 @@ theorem borromeanTwoOneBaryonChi_eq_t17 {R : Type*} [Field R] (q : R) (hq : q �
   have hq2 : (q ^ 2 : R) ≠ 0 := pow_ne_zero 2 hq
   rw [← QOU.BraidsAndKnots.chi21_borromean_qform_eq_hform (q ^ 2) hq2]
   unfold borromeanTwoOneBaryonChi QOU.BraidsAndKnots.chi21_borromean_qform
+  -- `field_simp` clears the Laurent denominators and closes the goal by
+  -- normalising both sides to the same polynomial; no trailing `ring` needed
+  -- (it would error "no goals to be solved").
   field_simp
-  ring
 
 /-- The Borromean / (2,1) / baryon cell is R-matrix-derived. The instance
 is **fully discharged** (no `sorry`): `agrees` is the proven theorem
