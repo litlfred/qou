@@ -34,7 +34,7 @@
   -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
   -- Ref: prop:borromean-markov-trace-closed-form
 -/
-import Mathlib.Data.Rat.Basic
+import Mathlib.Data.Rat.Defs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Positivity

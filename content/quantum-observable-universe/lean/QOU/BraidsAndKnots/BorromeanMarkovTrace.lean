@@ -22,10 +22,12 @@
   -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
   -- Ref: [murasugi1996] ISBN 978-0-8176-3817-7
 -/
-import Mathlib.Data.Rat.Basic
+import Mathlib.Data.Rat.Defs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
 
 namespace QOU.BraidsAndKnots
 
@@ -108,7 +110,6 @@ theorem borromean_markov_trace_closed_form (h : ℚ) (hne : trM_borromean_den h 
   unfold trM_borromean
   rw [h2_coefficient_cancellation]
   field_simp
-  ring
 
 /-- **Structural h² = 0 and h⁴ leading-order corollary.**
     The Borromean Markov trace minus its h=0 value (which is 1)
