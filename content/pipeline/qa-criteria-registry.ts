@@ -967,9 +967,12 @@ const DETANGLER: QaCriterionDefinition[] = [
     domain: "detangler",
     description:
       "Per-block contribution to the chapter's graph energy: the sum, " +
-      "over same-chapter `uses:` edges that point forward in the " +
+      "over same-SECTION `uses:` edges that point forward in the " +
       "manifest order, of the manifest-position distance to each " +
-      "target. Weights forward refs by reach (a definition used 30 " +
+      "target. Cross-section forward edges reflect the chapter's " +
+      "intentional face ordering (Algebraic→Geometric→…), not a " +
+      "reorderable local tangle, and are excluded. Weights forward " +
+      "refs by reach (a definition used 30 " +
       "blocks later is a deeper tangle than one used 2 blocks later) — " +
       "the magnitude that the binary `detangler-no-forward-ref` count " +
       "misses. `pass` at energy 0, `warn` for any forward edge, `fail` " +
