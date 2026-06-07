@@ -83,9 +83,8 @@ QOU-native lemma:
 
 > **Bridge lemma (open).**  If $\{J_{4_1}, J_{5_2}, J_{\mathcal{B}_3}\}$
 > are jet-order independent for all $N$ with a surreal-bounded uniform
-> error, then $\{\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
-> \mathrm{Vol}(\mathcal{B}_3)\}$ are algebraically independent over
-> $\mathbb{Q}(q_0)$.
+> error, then $\{\mathrm{Vol}(4_1), \mathrm{Vol}(5_2), \mathrm{Vol}(\mathcal{B}_3)\}$
+> are algebraically independent over $\mathbb{Q}(q_0)$.
 
 What QOU *buys*: the deep [algebraic-independence
 conjecture](#conj:hyperbolic-volume-transcendence) — needed only for
