@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "535cf747d901",
-    "ts": "6d713c68b433",
-    "lean": "191df144b4ec"
+    "ts": "6d713c68b433"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2296,6 +2295,25 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:q-beta-categorical-precision-ladder' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "535cf747d901",
+          "ts": "6d713c68b433"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "q-beta-categorical-precision-ladder -- no .lean sibling file",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:33:23.537Z",
+        "reviewed_sha": "37e9ef2f64157d7f1108171e6a9fa073b96858a4",
+        "notes": "No lean sibling exists for this block"
       }
     ],
     "proof-lean-compiles": [
@@ -2809,7 +2827,91 @@
           "worst_span": 0
         }
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "535cf747d901",
+          "ts": "6d713c68b433"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "q-beta-categorical-precision-ladder.md:1-7 -- SUPERSEDED banner plus extensive per-rung categorical sources and implications sections",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:33:23.382Z",
+        "reviewed_sha": "37e9ef2f64157d7f1108171e6a9fa073b96858a4",
+        "notes": "Block opens with SUPERSEDED banner and contains extensive interpretive sections; no companion remark; but block itself appears retained for historical reference"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "535cf747d901",
+          "ts": "6d713c68b433"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-beta-categorical-precision-ladder.ts:4 -- proposition about Q_beta precision ladder",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:33:23.421Z",
+        "reviewed_sha": "37e9ef2f64157d7f1108171e6a9fa073b96858a4",
+        "notes": "Q_beta precision ladder fits mass-theory chapter; SUPERSEDED note does not change chapter fit"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "535cf747d901",
+          "ts": "6d713c68b433"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-beta-categorical-precision-ladder.md:22-31 -- formula uses cos(alpha - b*hbar_q^2/2) numeric terms with substrate q_0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:33:23.461Z",
+        "reviewed_sha": "37e9ef2f64157d7f1108171e6a9fa073b96858a4",
+        "notes": "mass-theory is archimedean; formula uses archimedean constructs (cos, numeric q_0 value); this is correct for the chapter regime"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "535cf747d901",
+          "ts": "6d713c68b433"
+        },
+        "result": "n/a",
+        "severity": "minor",
+        "evidence": "q-beta-categorical-precision-ladder.md -- no Proof section present in the block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:33:23.499Z",
+        "reviewed_sha": "37e9ef2f64157d7f1108171e6a9fa073b96858a4",
+        "notes": "No proof body present; block describes formula and numerical validation without a formal Proof section"
+      }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:33:23.537Z"
 }
