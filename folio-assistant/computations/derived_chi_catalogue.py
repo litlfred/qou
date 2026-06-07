@@ -319,19 +319,36 @@ def load_catalogue() -> DerivedChiCatalogue:
         # backward compatibility with witnesses emitted before the
         # Phase 2 schema migration. New code emits only the Laurent form.
         if "chi_lambda_q_laurent" in c:
-            # Each term carries either `q_degree` (legacy alias) or the
-            # clearer `half_exp` introduced post-Copilot review on PR
-            # #1952. They're the SAME integer — keyed by the pyhecke_native
-            # LaurentPolyQ half-exponent encoding (key = 2 · math q-exp).
-            # The two keys are accepted interchangeably so future writers
-            # can adopt `half_exp` without breaking older readers.
-            chi_entries = [
-                (
-                    int(t.get("half_exp", t.get("q_degree"))),
-                    str(t["coefficient"]),
-                )
-                for t in c["chi_lambda_q_laurent"]
-            ]
+            # Each term provides EITHER `q_degree` (legacy field name) OR
+            # `half_exp` (clearer name introduced post-Copilot review on
+            # PR #1952). The semantic interpretation of the integer key
+            # depends on the cell's `q_convention` field, NOT on which
+            # name is used:
+            #
+            #   - `q_convention == 'kauffman'` ⇒ key is a half-exponent
+            #     (key = 2 · math_q_exp), per pyhecke_native LaurentPolyQ.
+            #   - `q_convention == 'kassel'` ⇒ key is the math q-exponent
+            #     directly (legacy Phase-2 sympy emissions).
+            #
+            # The field name and the encoding are decoupled: a Phase-2
+            # cell may write `q_degree: 2` meaning math q^2 (direct), while
+            # a Phase-3 cell may write `q_degree: 2` meaning math q^1
+            # (half-exp). Consumers must read `q_convention` to interpret.
+            # Both field names are accepted here for forward / backward
+            # compatibility.
+            chi_entries: list[tuple[int, str]] = []
+            for t in c["chi_lambda_q_laurent"]:
+                raw_key = t.get("half_exp", t.get("q_degree"))
+                if raw_key is None:
+                    raise ValueError(
+                        f"catalogue cell for "
+                        f"{(c['knot'], tuple(c['partition']), c['atom'])} has a "
+                        f"chi_lambda_q_laurent term missing both 'half_exp' and "
+                        f"'q_degree' keys: {t!r}. Every term must carry exactly "
+                        "one of these (legacy or current name) so the loader "
+                        "can resolve the integer exponent."
+                    )
+                chi_entries.append((int(raw_key), str(t["coefficient"])))
         else:
             raise ValueError(
                 f"catalogue cell for {(c['knot'], tuple(c['partition']), c['atom'])} "

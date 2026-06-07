@@ -75,11 +75,22 @@ def laurent_pairs_to_sympy(
     pyhecke_native's `chi_q_via_gp` / `mn_chi_q` keys are **half-exponents**:
     a stored pair `(d, c)` represents the math term `c · q^{d/2}` (verified
     empirically — `chi_q_via_gp([2], 2, [(1,1)])` returns `[(2, '1')]` for
-    the math polynomial `q^1`). The d/2 division is symbolic via
-    `sp.Rational(d, 2)`. Per the Copilot review on PR #1952."""
+    the math polynomial `q^1`). Since half-exponents are always EVEN by
+    construction (`d = 2 · math_q_exp` for integer `math_q_exp`), we use
+    integer division `d // 2` to keep the sympy exponent an `int` — this
+    keeps the result a clean Laurent polynomial in `q` instead of a
+    fractional-exponent expression, which sympy `Poly` / `cancel` /
+    `field_simp` handle much faster and without `PolynomialError`. The
+    `d % 2 == 0` assertion catches any future writer that violates the
+    half-exp invariant. Per the Gemini review on PR #1979."""
     expr = sp.Integer(0)
     for (d, c) in pairs:
-        expr += sp.Integer(int(c)) * q ** sp.Rational(int(d), 2)
+        d_int = int(d)
+        assert d_int % 2 == 0, (
+            f"laurent_pairs_to_sympy expected even half-exponent, got {d_int}; "
+            "the pyhecke_native LaurentPolyQ convention is key = 2·math_q_exp."
+        )
+        expr += sp.Integer(int(c)) * q ** (d_int // 2)
     return expr
 
 
