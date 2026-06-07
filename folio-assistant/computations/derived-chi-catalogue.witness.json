@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke-native + python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-07T05:15:30.576877+00:00",
-  "commitSha": "d9cf09df401a70e022e03b126ac1e5a3564f6ac3",
+  "computedAt": "2026-06-07T05:29:02.513470+00:00",
+  "commitSha": "a412ab76568eaef7a080bea907a1fd32d1cda48e",
   "assertions": [
     {
       "name": "sweep_ran_to_completion",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1248,
+  "durationMs": 1220,
   "computation": "derived-chi-catalogue",
   "scriptFile": "derived_chi_catalogue_sweep.py",
   "scriptHash": "5ec3b96fc8fb",
-  "scriptCommitSha": "d9cf09df401a70e022e03b126ac1e5a3564f6ac3",
+  "scriptCommitSha": "a412ab76568eaef7a080bea907a1fd32d1cda48e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.4.0"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Phase 3 production isotope sweep (max-A=4). Builds derived (K, λ, A) cells for every production isotope × every Wedderburn partition via pyhecke_native.chi_q_via_gp. Kauffman convention t = q² natively.",
   "data": {
@@ -21665,7 +21665,7 @@
         "crossings": 0,
         "partitions_swept": 3,
         "cells_emitted": 3,
-        "elapsed_seconds": 0.013347090999559441
+        "elapsed_seconds": 0.02759869700003037
       },
       "n": {
         "Z": 0,
@@ -21675,7 +21675,7 @@
         "crossings": 0,
         "partitions_swept": 3,
         "cells_emitted": 3,
-        "elapsed_seconds": 0.010100554000018747
+        "elapsed_seconds": 0.010184468999796081
       },
       "D": {
         "Z": 1,
@@ -21685,7 +21685,7 @@
         "crossings": 23,
         "partitions_swept": 11,
         "cells_emitted": 11,
-        "elapsed_seconds": 0.019007987999430043
+        "elapsed_seconds": 0.013610130999950343
       },
       "T": {
         "Z": 1,
@@ -21695,7 +21695,7 @@
         "crossings": 35,
         "partitions_swept": 30,
         "cells_emitted": 30,
-        "elapsed_seconds": 0.06445413100027508
+        "elapsed_seconds": 0.06826087100034783
       },
       "3He": {
         "Z": 2,
@@ -21705,7 +21705,7 @@
         "crossings": 35,
         "partitions_swept": 30,
         "cells_emitted": 30,
-        "elapsed_seconds": 0.06429647699951602
+        "elapsed_seconds": 0.07887257099991984
       },
       "4He": {
         "Z": 2,
@@ -21715,10 +21715,10 @@
         "crossings": 47,
         "partitions_swept": 77,
         "cells_emitted": 77,
-        "elapsed_seconds": 1.067819839000549
+        "elapsed_seconds": 1.0116747189995294
       }
     },
-    "sweep_wall_seconds": 1.2403257679998205,
+    "sweep_wall_seconds": 1.2117163590000928,
     "backend": "pyhecke_native.chi_q_via_gp (Rust)"
   }
 }

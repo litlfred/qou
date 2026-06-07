@@ -551,15 +551,22 @@ fn chi_via_gp_hoefsmit(
 /// have up to 720 elements but most words touch far fewer.
 #[pyfunction]
 fn chi_q_via_gp(
+    py: Python<'_>,
     lambda: Vec<usize>,
     n: usize,
     word: Vec<(i32, u32)>,
 ) -> Vec<(i32, String)> {
-    let poly = geck_pfeiffer::chi_lambda_via_geck_pfeiffer(&lambda, n, &word);
-    poly.terms
-        .into_iter()
-        .map(|(he, c)| (he, c.to_string()))
-        .collect()
+    // GIL release per `docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`.
+    // The Geck-Pfeiffer compute is fully Rust-side (no Python objects touched);
+    // releasing the GIL lets Python threads parallelise per-partition calls
+    // for the derived-χ catalogue sweep (≈ N× speedup on N-core boxes).
+    py.allow_threads(|| {
+        let poly = geck_pfeiffer::chi_lambda_via_geck_pfeiffer(&lambda, n, &word);
+        poly.terms
+            .into_iter()
+            .map(|(he, c)| (he, c.to_string()))
+            .collect()
+    })
 }
 
 /// **Littlewood-Richardson coefficient `c^λ_{μν}`.**
