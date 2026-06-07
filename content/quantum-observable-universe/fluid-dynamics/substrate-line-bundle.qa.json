@@ -1933,7 +1933,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c144c6668cfe",
+          "ts": "e404b78b0d91",
+          "lean": "b6d2feaada6b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition names the substrate line bundle / G_m-family of differentials; used by NS-regularity obstruction-tower content; uses def:substrate-parameter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:00:38.807Z",
+        "reviewed_sha": "bb3f35c70f823515f44b8715f157937069bd5f59",
+        "notes": "Names a genuinely new construction (substrate line bundle, universal differential d); in-scope for the q-NS regularity chapter."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c144c6668cfe",
+          "ts": "e404b78b0d91",
+          "lean": "b6d2feaada6b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is purely scheme-theoretic (G_m, Spec R, base change over Z[q,q^-1]); no numeric q0, no MeV, no Real.*, no order hypothesis 0<q",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:00:38.853Z",
+        "reviewed_sha": "bb3f35c70f823515f44b8715f157937069bd5f59",
+        "notes": "Generic-ring/algebraic; the archimedean realisation mention (q:M->G_m(k)) stays generic. Correctly substrate-side."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T01:00:38.853Z"
 }
