@@ -111,6 +111,40 @@ repository's `copilot-instructions.md`.
   `references.bib` (auto-generated from `content/schema/references.ts`).
 - Validate all citation keys with `bun run validate-refs`.
 
+## Mechanical enforcement — the preflight linter (run this FIRST)
+
+The "No undefined control sequences" / balanced-braces aspirations in
+§1 are now **mechanically enforced** by a fast static gate that needs no
+TeX install. The content pipeline's `validateLatexAst`
+(`render-latex.ts`) uses unified-latex, which **never resolves macros**,
+so three whole classes of fatal-pdflatex bug pass it silently and used
+to land on `main` needing a manual `fix(latex)` commit each time (see
+[`docs/audits/2026-06-07-latex-compile-bug-prevention.md`](../../../docs/audits/2026-06-07-latex-compile-bug-prevention.md)).
+
+**Always run before declaring LaTeX clean:**
+
+```bash
+cd content
+bun run pipeline/build.ts <paper>.ts --generate-main --main-out ../main.tex \
+  --preamble ../latex/preamble.tex   # regenerate the compile unit
+bun run latex-preflight              # gate: exits 1 on any issue
+```
+
+It scans the *generated compile unit* (`main.tex` + every `\input`'d
+`chapters/*.tex`) and catches:
+
+| Check | Fatal pdflatex error it pre-empts | Fix |
+|-------|-----------------------------------|-----|
+| **A** duplicate-newcommand | `Command \X already defined` | Define the macro **once** — in `latex/preamble.tex` *or* the paper manifest `macros:` block, never both. Use `\providecommand`/`\renewcommand` for an intentional override. |
+| **B** undefined-macro | `! Undefined control sequence` | Define it in the preamble/manifest, or use an existing command (e.g. `\mathrm{tr}`, not `\tr`). If it is a genuine standard/package command (and its package is loaded in the preamble), add it via re-seed: `bun run latex-preflight:seed`. |
+| **C** fragile-accent-script | `! Missing { inserted` at a math accent | Never use a math accent (`\check`,`\hat`,`\tilde`,…) as a **bare** sub/superscript. Brace it: `X^{\check{q}}`, not `X^\check{q}`. |
+
+`build.ts` also runs the preflight automatically after `--generate-main`,
+and `publish.yml`'s always-run `content-pipeline` job gates on it — so a
+PR fails fast on A/B/C even when the heavy `paper-pdf` job no-ops (Actions
+billing block / `[skip-ci]`). When reviewing a content PR, **reproduce
+the preflight locally** before APPROVE.
+
 ## Output Format
 
 ```
