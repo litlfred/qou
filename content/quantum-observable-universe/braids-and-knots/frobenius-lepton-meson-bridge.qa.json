@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "23df63665d6b",
     "ts": "3010433f709f",
-    "lean": "c49fcd5f083a"
+    "lean": "c4291c669c30"
   },
   "criteria": {
     "proof-lean-compiles": [
@@ -449,25 +449,6 @@
         },
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
-      }
-    ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "23df63665d6b",
-          "ts": "3010433f709f",
-          "lean": "c49fcd5f083a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
     "canonical-no-numerology": [
@@ -1046,7 +1027,26 @@
           "worst_target": "emits fwd-ref to particle-interactions: prop:c-equals-bar-iff-all-1dim"
         }
       }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "23df63665d6b",
+          "ts": "3010433f709f",
+          "lean": "c4291c669c30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
     ]
   },
-  "updated_at": "2026-06-07T04:58:08.431Z"
+  "updated_at": "2026-06-07T05:35:26.749Z"
 }
