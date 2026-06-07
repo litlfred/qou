@@ -913,8 +913,11 @@ const DETANGLER: QaCriterionDefinition[] = [
     domain: "detangler",
     description:
       "Each `## Section` in the chapter contains between 3 and 18 " +
-      "content blocks (R1-R3). Out-of-band sections invite either " +
-      "skim-and-skip (>18) or trivial-aside dilution (<3).",
+      "NON-PROSE blocks (R1-R3). Block kinds are resolved per slug so " +
+      "narrative prose is excluded from the count; the sparse (<3) check " +
+      "additionally skips intro/overview sections (H4). Out-of-band " +
+      "sections invite either skim-and-skip (>18) or trivial-aside " +
+      "dilution (<3).",
     default_severity: "minor",
     depends_on: ["ts"],
     automated: true,
