@@ -1641,27 +1641,6 @@
         "reviewed_at": "2026-05-27"
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "ts": "31b8da245e23"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "detangler-block-tanglement-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/detangler-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27",
-        "metrics": {
-          "fwd_emitted": 4,
-          "fwd_received": 0,
-          "tanglement_score": 4
-        }
-      }
-    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -1968,7 +1947,41 @@
           "top_other_score": 4
         }
       }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "1982f4c7a7ba",
+          "ts": "31b8da245e23",
+          "lean": "d39ad5044ad6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8f25b34708f6",
+          "script_commit_sha": "9bcdd4cdcb1168d55bcef7307d19add98deae960"
+        },
+        "reviewed_at": "2026-06-07T04:35:11.106Z",
+        "reviewed_sha": "9bcdd4cdcb1168d55bcef7307d19add98deae960",
+        "metrics": {
+          "fwd_emitted": 4,
+          "fwd_received": 0,
+          "tanglement_score": 4,
+          "out_degree": 4,
+          "in_degree": 1,
+          "cone_size": 173,
+          "depth": 39,
+          "pagerank": 0.000189,
+          "edge_span_max": 0,
+          "edge_span_mean": 0,
+          "worst_target": "emits fwd-ref to lifting-and-descent: prop:vacuum-state"
+        },
+        "severity": "major",
+        "evidence": "quantum-observable-universe/models-of-qous/yang-mills-mass-gap.ts:0: emits fwd-ref to lifting-and-descent: prop:vacuum-state | quantum-observable-universe/models-of-qous/yang-mills-mass-gap.ts:0: emits fwd-ref to fluid-dynamics: rem:substrate-gm-torsion | quantum-observable-universe/models-of-qous/yang-mills-mass-gap.ts:0: emits fwd-ref to lifting-and-descent: rem:kummer-filtration-obstruction | quantum-observable-universe/models-of-qous/yang-mills-mass-gap.ts:0: emits fwd-ref to stochastic-mechanics: thm:qou-obstruction-reduction"
+      }
     ]
   },
-  "updated_at": "2026-06-07T04:13:32.223Z"
+  "updated_at": "2026-06-07T04:35:11.106Z"
 }
