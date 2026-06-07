@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-07T06:01:27.581187+00:00",
-  "commitSha": "ff1b331cfe1ee7d4ecdf77ab48fa4a7caee60070",
+  "computedAt": "2026-06-07T16:23:02.549115+00:00",
+  "commitSha": "03517a5e43b2f7d6f7da9ec741f4ba7b1eb7a7b0",
   "assertions": [
     {
       "name": "bar_symmetry_identity_holds",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 73,
+  "durationMs": 24,
   "computation": "derived-chi-catalogue-bar-symmetry-audit",
   "scriptFile": "derived_chi_catalogue_bar_symmetry_audit.py",
-  "scriptHash": "c51f8d1aff8a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e47891925bd3",
+  "scriptCommitSha": "f76d6fb0e8a432dd325e6a9e5c071b3ddad0ff5c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,11 +34,11 @@
   },
   "description": "Verifies the bar-conjugate identity χ^{λᵀ}(T_β) = ε(β) · χ^λ(T_β)|_{q → −q⁻¹} on the 715-cell derived-χ catalogue. If the identity holds with a stable sign rule, the catalogue sweep can be ~halved in compute.",
   "data": {
-    "pairs_tested": 348,
-    "pairs_match_positive": 2,
-    "pairs_match_negative": 346,
+    "pairs_tested": 163,
+    "pairs_match_positive": 162,
+    "pairs_match_negative": 1,
     "pairs_fail": 0,
-    "self_conjugate_count": 19,
+    "self_conjugate_count": 16,
     "verdict": "★ HOLDS — sign depends on atom (need per-atom rule)",
     "sign_anomalies": []
   }
