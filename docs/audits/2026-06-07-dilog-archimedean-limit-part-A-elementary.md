@@ -83,6 +83,16 @@ $$
 and the second factor is bounded and converges to $\mathrm{Li}_2(x)$, so
 the product converges to $\mathrm{Li}_2(x)$. $\qquad\blacksquare$
 
+**Numerical confirmation.** The witness
+[`folio-assistant/computations/dilog-archimedean-limit-partA.witness.json`](../../folio-assistant/computations/dilog-archimedean-limit-partA.witness.json)
+(producer `dilog_archimedean_partA_witness.py`) evaluates
+$(1-q)\log\Phi_n(x;q)$ at $x\in\{0.2,0.5,0.8\}$ along $\varepsilon\in\{10^{-2},10^{-3},10^{-4}\}$
+with $n=\lceil 30/\varepsilon\rceil$. The absolute error falls by exactly
+one decade per decade of $\varepsilon$ (e.g. $x=0.2$:
+$6.07\!\times\!10^{-5}\to 6.07\!\times\!10^{-6}\to 6.07\!\times\!10^{-7}$),
+confirming the predicted $O(\varepsilon\,(-\log(1-x)))$ rate, and stays
+within the monotone Riemann-sum bound at every step.
+
 **Uniformity (gap (1)).** On a compact $[a,b]\subset(0,1)$ the bounds in
 (ii)–(iii) are uniform: $f(0)=-\log(1-x)\le-\log(1-b)$ and the tail
 constant $x/(1-x)\le b/(1-b)$. Hence the convergence is uniform on
