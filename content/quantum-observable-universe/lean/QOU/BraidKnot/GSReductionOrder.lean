@@ -46,19 +46,25 @@ abbrev GSWord : Type := List ℕ
                     `σ_i² = (q−q⁻¹)σ_i + 1` removes the `σ_i σ_i` factor
                     from any *reduced* word (its linear tail is tracked
                     separately in `hecke-normal-form.lean`);
-    * `farComm`   — far-commutativity `σ_i σ_j → σ_j σ_i`, `|i−j| ≥ 2`;
-    * `yangBaxter`— the braid move `σ_i σ_{i+1} σ_i → σ_{i+1} σ_i σ_{i+1}`.
+    * `farComm`   — far-commutativity oriented to move the smaller index
+                    left, `σ_i σ_j → σ_j σ_i` when `j + 2 ≤ i`; the single
+                    orientation (not the symmetric `|i−j| ≥ 2`) keeps the
+                    step strictly shortlex-decreasing, so the relation
+                    terminates instead of looping `i::j ↔ j::i`;
+    * `yangBaxter`— the braid move oriented shortlex-decreasing,
+                    `σ_{i+1} σ_i σ_{i+1} → σ_i σ_{i+1} σ_i` (the rewrite
+                    lowers the leading generator index from `i+1` to `i`).
 
     Confluence is the Diamond Lemma (Bergman 1978); the normal forms
     biject with `Sₙ` (`n!` of them). -/
 inductive Step : GSWord → GSWord → Prop
   | hecke (pre post : GSWord) (i : ℕ) :
       Step (pre ++ i :: i :: post) (pre ++ post)
-  | farComm (pre post : GSWord) (i j : ℕ) (h : i + 2 ≤ j ∨ j + 2 ≤ i) :
+  | farComm (pre post : GSWord) (i j : ℕ) (h : j + 2 ≤ i) :
       Step (pre ++ i :: j :: post) (pre ++ j :: i :: post)
   | yangBaxter (pre post : GSWord) (i : ℕ) :
-      Step (pre ++ i :: (i + 1) :: i :: post)
-           (pre ++ (i + 1) :: i :: (i + 1) :: post)
+      Step (pre ++ (i + 1) :: i :: (i + 1) :: post)
+           (pre ++ i :: (i + 1) :: i :: post)
 
 /-- A word is **GS-reduced** when no rewrite step applies — these are the
     Gröbner–Shirshov irreducible normal forms. -/
