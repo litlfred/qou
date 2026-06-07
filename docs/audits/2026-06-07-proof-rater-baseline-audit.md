@@ -89,6 +89,62 @@ findings" are the same machine:
   `proof-rater-novelty` → `proposition-consolidation-audit`;
   `proof-rater-strategy-clarity` → `proof-simplifier` / `proof-conciseness`.
 
+## Baseline coverage snapshot — 6 chapters (2026-06-07)
+
+The first scoring pass extended past the mass-theory batch above. Verified
+coverage of the four proof-rater criteria across the corpus's
+proof-rater-applicable blocks (provable kinds — theorem / lemma / proposition /
+corollary, plus `conjecture` for goal-plausibility — per
+[`qa-criteria-registry.ts §PROOF`](../../content/pipeline/qa-criteria-registry.ts)):
+
+| Chapter | Scored | Applicable | Coverage |
+|---|---:|---:|---:|
+| braids-and-knots | 20 | 23 | 87 % |
+| fluid-dynamics | 20 | 27 | 74 % |
+| mass-theory | 13 | 259 | 5 % |
+| particle-interactions | 30 | 73 | 41 % |
+| predicted-spectra | 30 | 51 | 59 % |
+| quantum-observable-universes | 30 | 70 | 43 % |
+| **6 chapters** | **143** | **≈ 776 corpus-wide** | **≈ 18 %** |
+
+A further 15 chapters with proof-rater-applicable blocks are **not yet started**
+(brings-surface, lifting-and-descent, mass-endomorphism, observations,
+information-theory, …); 13 chapters carry no provable blocks. The three
+30-block chapters hit the per-batch cap, not chapter completion.
+
+All 143 scored blocks are **fully scored on every applicable criterion** with
+band↔score consistency — no half-written or malformed entries. The partial
+coverage is a stopping point, not corrupted data.
+
+### Improve-backlog surfaced (baseline, not fixed here)
+
+The pass recorded — but per the rate-and-improve design does **not** fix — a
+substantial backlog for `/integration-backlog proof` to drain:
+
+- **68 blocks** with `proof-statement-integrity = fail` (Lean does not faithfully
+  encode the `.md` claim — `True`-stubs, weakened proxies, vacuous existence
+  tautologies, unsound `Subsingleton` axioms over free real fields, duplicate
+  `class` declarations).
+- **99 blocks** with at least one rater score `< 0.5` (low novelty —
+  refuted-categorical-interpretation residue, recorded numerical coincidences;
+  low plausibility — `core` / `restates-target` gaps, axiomatised headlines).
+
+fluid-dynamics (18 integrity fails) and the particle-interactions /
+predicted-spectra axiom-and-proxy clusters are the densest backlog regions.
+
+### Lean-library build state (inherited, not introduced here)
+
+The QOU Lean library target is currently **red on `main`**: the PR base
+(`fc2e4e4e`) fails to compile at `QOU/MathlibExt/PosSemidefTraceZero.lean`
+(Mathlib API drift — `PosSemidef.sqrt` resolves to the non-existent `And.sqrt`)
+and `QOU/HeckeAlgebra/Formal.lean`. Both files are **byte-identical to the base**
+on this branch — the red is inherited, not caused by this PR. Consequence: the
+two mass-theory Lean refinements landed here (`alpha-k` faithful `∃!`,
+`beta-decay` convention alignment) are sorry-free but cannot be *build*-verified
+until the inherited red clears. Fixing it needs a dedicated `lean-build-fix`
+branch and is out of scope for this baseline audit; the `proof-lean-compiles`
+gate for blocks downstream of those files reflects the library state, not this PR.
+
 ## Rollout (remaining corpus)
 
 The full baseline is drained in **≤ 49-file batches** via `/integration-backlog
@@ -98,5 +154,8 @@ needs-agent queue; each block is scored with `qa-agent-write --score`. Batches
 proceed chapter-by-chapter so a mis-calibrated rubric is caught early rather
 than across the whole corpus at once.
 
-**Status:** infra + worked example + first batch (mass-theory, 12 blocks)
-landed. Baseline scores are a *starting point* — the backlog's job is to raise them.
+**Status:** infra + write-path fix + worked example landed; baseline scoring is
+**partial** — 143 blocks across 6 chapters (≈ 18 % of ≈ 776 applicable),
+surfacing the improve-backlog above (68 integrity fails + 99 low-score blocks).
+Baseline scores are a *starting point* — completing coverage and raising scores
+is `/integration-backlog proof`'s job, drained chapter-by-chapter.
