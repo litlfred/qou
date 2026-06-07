@@ -82,6 +82,12 @@ const notes = arg("notes");
 // Optional rubric score for scored (rater-style) criteria, e.g. proof-rater-*.
 // The agent supplies BOTH --result (band) and --score (the 0–1 value).
 const scoreRaw = arg("score");
+// --score-max / --score-rubric are meaningless without --score; reject rather
+// than silently ignore a user mistake (Copilot review #1939).
+if (scoreRaw === undefined) {
+  if (arg("score-max") !== undefined) fail("--score-max requires --score");
+  if (arg("score-rubric") !== undefined) fail("--score-rubric requires --score");
+}
 let score: QaCriterionEntry["score"] | undefined;
 if (scoreRaw !== undefined) {
   const value = Number(scoreRaw);
@@ -92,12 +98,31 @@ if (scoreRaw !== undefined) {
   if (value < 0 || value > max) fail(`--score must be in [0, ${max}] (got ${value})`);
   const rubricRaw = arg("score-rubric");
   let rubric: Record<string, number> | undefined;
-  if (rubricRaw) {
+  if (rubricRaw !== undefined) {
+    if (rubricRaw === "" || rubricRaw.startsWith("-")) {
+      fail("--score-rubric requires a JSON-object value, e.g. '{\"clarity\":0.8}'");
+    }
+    let parsed: unknown;
     try {
-      rubric = JSON.parse(rubricRaw);
+      parsed = JSON.parse(rubricRaw);
     } catch {
       fail("--score-rubric must be valid JSON, e.g. '{\"clarity\":0.8}'");
     }
+    // Must be a plain object whose values are all finite numbers
+    // (matches Record<string, number>; rejects arrays/scalars/null/NaN).
+    if (
+      typeof parsed !== "object" ||
+      parsed === null ||
+      Array.isArray(parsed) ||
+      !Object.values(parsed as Record<string, unknown>).every(
+        (v) => typeof v === "number" && Number.isFinite(v),
+      )
+    ) {
+      fail(
+        "--score-rubric must be a JSON object of finite numbers, e.g. '{\"clarity\":0.8}'",
+      );
+    }
+    rubric = parsed as Record<string, number>;
   }
   score = { value, max, ...(rubric ? { rubric } : {}) };
 }
