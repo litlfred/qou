@@ -2534,7 +2534,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "10fd4dd88c9f",
+          "ts": "67a003ec19b4",
+          "lean": "1305bb5bab45"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Nuclear binding energy from 3-channel brane tower; squarely a mass-theory subject",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:40:32.933Z",
+        "reviewed_sha": "a6ebe076b3317ab442d3810d12a684aa6b83af46",
+        "notes": "Primary subject (binding energy / atomic mass) is in mass-theory scope"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "10fd4dd88c9f",
+          "ts": "67a003ec19b4",
+          "lean": "1305bb5bab45"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement section is bare formula; interpretation confined to separate ## Derivation / ## Numerical results sections",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:40:32.977Z",
+        "reviewed_sha": "a6ebe076b3317ab442d3810d12a684aa6b83af46",
+        "notes": "No mislocated interpretive prose inside the Statement"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "10fd4dd88c9f",
+          "ts": "67a003ec19b4",
+          "lean": "1305bb5bab45"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Opens with explicit CLAUDE.md §7c archimedean-specialisation banner; q0~1.110 / MeV in a mass-prediction chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:40:33.018Z",
+        "reviewed_sha": "a6ebe076b3317ab442d3810d12a684aa6b83af46",
+        "notes": "Archimedean wall banner present; mass-theory is a prediction chapter"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "10fd4dd88c9f",
+          "ts": "67a003ec19b4",
+          "lean": "1305bb5bab45"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Derivation uses Wedderburn weights + Phi_q tower; archimedean q0 evaluation declared via §7c banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:40:33.059Z",
+        "reviewed_sha": "a6ebe076b3317ab442d3810d12a684aa6b83af46",
+        "notes": "No silent generic->R specialization; banner names the specialisation"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T00:40:33.059Z"
 }
