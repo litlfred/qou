@@ -10,16 +10,24 @@ method**: the signed Ocneanu-trace engine `homfly_ocneanu_trace`, whose
 seminormal characters are validated against the skein-relation reference
 (`homflypt_reference_qa.py`, 5/5).
 
-This closes the verification gap flagged in
+This addresses the verification gap flagged in
 `docs/audits/2026-06-04-hidden-fitting-verification-gap-mass-binding-walkthrough.md`
-§3a: the `tr_M` cluster previously had no EXTERNAL correctness anchor — only
-internal cross-method agreement. The Borromean χ^λ closed forms are now
-confirmed by two independent derivations:
+§3a: the `tr_M` cluster previously had no EXTERNAL anchor — only internal
+cross-method agreement.
 
-  - R-matrix / Schur-Weyl on V^⊗3 → Jones polynomial of 𝓑₃  (main, T17)
-  - signed seminormal Hecke characters, skein-validated     (this engine)
+PROOF-STATUS HONESTY (do not overclaim). This is NOT "two independent proofs":
 
-Both agree to ≥ 1e-48 at every tested q. Claims checked
+  - Path A — R-matrix/Schur-Weyl on V^⊗3 → Jones polynomial of 𝓑₃ (main,
+    T17/#1933, content prop #1942). A NARRATIVE proof in the content .md that
+    *cites* the Borromean Jones polynomial (Murasugi 1996) + polynomial long
+    division. It is NOT Lean-verified (the .ts lean ref has no .lean sibling).
+  - Path B — signed seminormal Hecke characters, skein-validated (this engine).
+    A NUMERICAL computation (χ is float64-bounded via chi_lambda_braid), NOT a
+    proof.
+
+So this script is an independent NUMERICAL CONFIRMATION of Path A's per-rep
+forms (corroboration, not a theorem of equivalence). They agree to ≤ 4e-50 at
+every tested q (regression gate TOL = 1e-45). Claims checked
 (`borromean-markov-trace-closed-form.md` lines 93–111):
 
   χ^{(3)}(β_Bor)   = 1                       (writhe-0, trivial eigenvalue)
@@ -45,7 +53,9 @@ from homfly_ocneanu_trace import _chi  # noqa: E402 — signed seminormal charac
 from witness_base import WitnessBuilder  # noqa: E402
 
 BETA_BOR = [-1, 2, -1, 2, -1, 2]   # (σ₁⁻¹σ₂)³, content convention
-TOL = mp.mpf("1e-40")
+# Gate matches the observed worst deviation headroom: agreement is ≤ 4e-50 at
+# dps=50, so 1e-45 is a tight-but-safe regression threshold (was 1e-40).
+TOL = mp.mpf("1e-45")
 
 
 def _chi21_qform(q):
@@ -77,8 +87,8 @@ def main() -> int:
         dh = abs(chi21 - _chi21_hform(q))
         worst = max(worst, d3, d111, dq, dh)
         ok = max(d3, d111, dq, dh) < TOL
-        print(f"  q={mp.nstr(q,8):<14} χ³−1={mp.nstr(d3,2):>8} "
-              f"χ¹³−1={mp.nstr(d111,2):>8}  χ²¹ vs q-form={mp.nstr(dq,2):>8}  "
+        print(f"  q={mp.nstr(q,8):<14} χ^(3)−1={mp.nstr(d3,2):>8} "
+              f"χ^(1,1,1)−1={mp.nstr(d111,2):>8}  χ^(2,1) vs q-form={mp.nstr(dq,2):>8}  "
               f"vs 2−3h⁴−h⁶={mp.nstr(dh,2):>8}  {'OK' if ok else '✗'}")
         rows.append({
             "q": mp.nstr(q, 20),
@@ -97,7 +107,11 @@ def main() -> int:
 
     w = WitnessBuilder("borromean-chi-independent-crosscheck", engine="mpmath")
     w.set_content_block("prop:borromean-markov-trace-closed-form")
-    w.add_parameter("dps", 50)
+    # NOTE: this script sets mp.mp.dps = 50 for the comparison arithmetic. The
+    # `precisionMetadata` block (compute_dps/output_dps) is a WitnessBuilder
+    # default and is DISTINCT from the script-controlled mp.mp.dps below; the
+    # gate (TOL=1e-45) is what governs reproducibility, not those fields.
+    w.add_parameter("script_mp_dps", 50)
     w.add_parameter("beta_bor", "(sigma1^-1 sigma2)^3")
     w.add_parameter("tolerance", mp.nstr(TOL, 2))
     w.add_data("method_a", "R-matrix/Schur-Weyl → Jones (main, T17/#1933)")
