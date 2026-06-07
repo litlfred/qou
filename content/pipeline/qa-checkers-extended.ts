@@ -1319,6 +1319,17 @@ let _reverseUses: Map<string, string[]> | null = null;
 // the per-block cone metric is O(1) amortised across a full sweep
 // rather than re-walking the graph once per block.
 let _coneSizeCache: Map<string, number> | null = null;
+// Memoized longest `uses[]` dependency chain depth (label -> count of
+// edges on the longest acyclic path out of the block). Back-edges
+// (cycles) are skipped so depth stays well-defined on the rare cyclic
+// block. A deep chain ⇒ the block sits atop a tall argument tower —
+// the proof-depth proxy. Reset on each graph build.
+let _depthCache: Map<string, number> | null = null;
+// PageRank centrality over the `uses[]` graph (label -> score in
+// [0,1], summing to ~1). Computed once per graph build by power
+// iteration. High score ⇒ a foundational block many others lean on
+// (a weighted refinement of raw in-degree). Reset on each build.
+let _pagerank: Map<string, number> | null = null;
 // Precomputed once per load: block label -> an example uses[] cycle
 // path through it (only present for labels that sit on a cycle), so
 // the per-block cycle check is an O(1) lookup, not a per-call DFS.
@@ -1440,14 +1451,75 @@ function loadChapterGraph(): void {
     if (cyc) inCyclePath.set(start, cyc);
   }
 
+  // PageRank over the uses[] graph by power iteration. Nodes = all
+  // labels appearing as a block or as a dependency target. An edge
+  // b -> d (block depends on d) contributes rank mass to d, so a
+  // heavily-depended-on foundational block accrues a high score.
+  const nodes = new Set<string>([...usesGraph.keys()]);
+  for (const deps of usesGraph.values()) for (const d of deps) nodes.add(d);
+  const N = nodes.size;
+  const pagerank = new Map<string, number>();
+  if (N > 0) {
+    const damping = 0.85;
+    const base = (1 - damping) / N;
+    for (const n of nodes) pagerank.set(n, 1 / N);
+    for (let iter = 0; iter < 40; iter++) {
+      const next = new Map<string, number>();
+      for (const n of nodes) next.set(n, base);
+      let dangling = 0;
+      for (const n of nodes) {
+        const outs = usesGraph.get(n) ?? [];
+        if (outs.length === 0) dangling += pagerank.get(n)! / N;
+        else {
+          const share = (damping * pagerank.get(n)!) / outs.length;
+          for (const d of outs) next.set(d, (next.get(d) ?? base) + share);
+        }
+      }
+      // Redistribute dangling-node mass uniformly (standard PageRank).
+      if (dangling > 0)
+        for (const n of nodes)
+          next.set(n, next.get(n)! + damping * dangling);
+      for (const [k, v] of next) pagerank.set(k, v);
+    }
+  }
+
   _chapterOrder = chapterOrder;
   _labelToChapter = labelToChapter;
   _usesGraph = usesGraph;
   _reverseUses = reverseUses;
   _coneSizeCache = new Map();
+  _depthCache = new Map();
+  _pagerank = pagerank;
   _inCyclePath = inCyclePath;
   _blockPos = blockPos;
   _graphLoaded = true;
+}
+
+// Longest acyclic `uses[]` dependency chain out of a block (edge
+// count). Iterative post-order DFS with an on-stack guard so a rare
+// dependency cycle does not loop forever (back-edges contribute 0).
+// Memoized in `_depthCache`, so amortised O(1) per block across a
+// sweep.
+function dependencyDepth(start: string): number {
+  if (!_usesGraph) return 0;
+  const cached = _depthCache?.get(start);
+  if (cached !== undefined) return cached;
+  const onStack = new Set<string>();
+  const compute = (node: string): number => {
+    const memo = _depthCache?.get(node);
+    if (memo !== undefined) return memo;
+    if (onStack.has(node)) return 0; // back-edge: don't extend depth
+    onStack.add(node);
+    let best = 0;
+    for (const dep of _usesGraph!.get(node) ?? []) {
+      const d = 1 + compute(dep);
+      if (d > best) best = d;
+    }
+    onStack.delete(node);
+    _depthCache?.set(node, best);
+    return best;
+  };
+  return compute(start);
 }
 
 // Transitive `uses[]` dependency-cone size from a starting label:
@@ -1523,6 +1595,11 @@ export function checkDetanglerBlockTanglement(
   const outDegree = (_usesGraph?.get(label) ?? []).length;
   const inDegree = (_reverseUses?.get(label) ?? []).length;
   const coneSize = dependencyConeSize(label);
+  // depth = longest dependency chain (proof-depth proxy); pagerank =
+  // weighted centrality (refines in-degree by who depends on you).
+  const depth = dependencyDepth(label);
+  const pagerank =
+    Math.round((_pagerank?.get(label) ?? 0) * 1e6) / 1e6;
 
   const myPos = _blockPos?.get(label);
   const spans: number[] = [];
@@ -1551,6 +1628,8 @@ export function checkDetanglerBlockTanglement(
       out_degree: outDegree,
       in_degree: inDegree,
       cone_size: coneSize,
+      depth: depth,
+      pagerank: pagerank,
       edge_span_max: edgeSpanMax,
       edge_span_mean: edgeSpanMean,
       worst_target: hits[0]?.text ?? "",
