@@ -2401,6 +2401,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:rho-k-h3a-refinement' aligns with Lean declaration. Sorry-free."
+      },
+      {
+        "field_hash": {
+          "md": "6f0d9a0a774e",
+          "ts": "91bd607d932b",
+          "lean": "6c4ce7c0dd44"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean class RhoKH3ARefinement + theorem rho_k_h3a_refinement states exactly ρ_K − ρ_K^LO = (Σ y_λ χ^λ · Δ_λ)/|tr_M|, matching the narrative refinement identity (Step 4)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:46:28.927Z",
+        "reviewed_sha": "967b77e2f79cb4e8822e76fa6375b4f612759a90",
+        "notes": "Conditional-class pattern: Σ encoded as foldr over partitions; Δ_λ as BlockBindingFraction; identity discharged from class field. Narrative proof and Lean statement agree."
       }
     ],
     "proof-lean-compiles": [
@@ -2879,5 +2899,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-06T20:24:40.988Z"
+  "updated_at": "2026-06-07T12:46:28.927Z"
 }
