@@ -2564,7 +2564,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be",
+          "lean": "8fe2aad92535"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "In sec:classical-limit-construction; subject = classical-limit obstruction, matches chapter scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:55:44.506Z",
+        "reviewed_sha": "179aee9d979b759ba39e8cb0c067a3f45904f1b9",
+        "notes": "Well-placed; no sibling carries the same claim"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be",
+          "lean": "8fe2aad92535"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is HH^2/Euler-char/Kummer algebraic; no Real.*, no q≈val, no MeV",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:55:44.549Z",
+        "reviewed_sha": "179aee9d979b759ba39e8cb0c067a3f45904f1b9",
+        "notes": "Generic-ring categorical statement, no wall banner needed"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be",
+          "lean": "8fe2aad92535"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof: Frobenius/VdB duality, dim count, Kummer specialisation; no linarith/IVT/continuity/Real.*",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:55:44.594Z",
+        "reviewed_sha": "179aee9d979b759ba39e8cb0c067a3f45904f1b9",
+        "notes": "Proof method matches algebraic statement"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be",
+          "lean": "8fe2aad92535"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Appended 'Physical consequence', 'three millennium problems as specializations', Corollary interpretive prose after statement+proof in same block; no interprets: remark companion",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:55:44.637Z",
+        "reviewed_sha": "179aee9d979b759ba39e8cb0c067a3f45904f1b9",
+        "notes": "Substantive interpretation mislocated in statement block; borderline (much is structural corollary)"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T01:55:44.637Z"
 }
