@@ -696,25 +696,6 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "8134597b040e",
-          "ts": "5b55e3b75642",
-          "lean": "fa3eea6663eb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
-      }
-    ],
     "canonical-no-numerology": [
       {
         "field_hash": {
@@ -1280,7 +1261,26 @@
           "worst_target": "emits fwd-ref to mass-theory: prop:mass-endomorphism-tower"
         }
       }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "f3eb1219a5f3",
+          "ts": "7dab5c9cd72f",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
     ]
   },
-  "updated_at": "2026-06-07T04:58:08.431Z"
+  "updated_at": "2026-06-07T05:35:26.749Z"
 }
