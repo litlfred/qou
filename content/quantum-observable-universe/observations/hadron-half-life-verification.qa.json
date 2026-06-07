@@ -1759,7 +1759,56 @@
         "reviewed_sha": "e08870b4b497c8b40b477a50dec53483e19800bd",
         "notes": "Directly exercises the half-life formula with numerical predictions — canonical fit for the observations chapter."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "a56aaa862dcb",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 9,
+          "fwd_edge_count": 1,
+          "worst_span": 9
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "a56aaa862dcb",
+          "ts": "8730ba37475d",
+          "lean": "c6c6139d88b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "home_chapter": "observations",
+          "home_score": 4,
+          "top_other_chapter": "descartes-universe",
+          "top_other_score": 8
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-05T19:40:36.252Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

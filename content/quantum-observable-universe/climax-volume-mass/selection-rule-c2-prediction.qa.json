@@ -13,25 +13,6 @@
     "lean": "2d834c773007"
   },
   "criteria": {
-    "detangler-topic-coherence": [
-      {
-        "field_hash": {
-          "md": "0a0e92a9d60e",
-          "ts": "272d3b8da8d4",
-          "lean": "2d834c773007"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6b0daec15a39",
-          "script_commit_sha": "1b04ccd94e84859e842739184abe528c941fd8d6"
-        },
-        "reviewed_at": "2026-06-07T04:50:22.937Z",
-        "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
-      }
-    ],
     "detangler-block-tanglement": [
       {
         "field_hash": {
@@ -44,11 +25,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "2dc4e0b4dcad",
-          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
         },
-        "reviewed_at": "2026-06-07T04:58:08.431Z",
-        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
@@ -56,31 +37,10 @@
           "out_degree": 1,
           "in_degree": 0,
           "cone_size": 1,
-          "depth": 1,
-          "pagerank": 0.000102,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
         }
-      }
-    ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "0a0e92a9d60e",
-          "ts": "272d3b8da8d4",
-          "lean": "2d834c773007"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "f85a8e7bf89c",
-          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
-        },
-        "reviewed_at": "2026-06-07T05:35:26.749Z",
-        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
       }
     ],
     "detangler-graph-energy": [
@@ -95,123 +55,32 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "6fcbacc4b3ceaa9160c1d877e595a26d6998471d"
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
         },
-        "reviewed_at": "2026-06-07T05:58:41.267Z",
-        "reviewed_sha": "738ed713806a3976739e57e01d0100f3540f79e5"
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
       }
     ],
-    "voice-statement-no-interpretation": [
+    "detangler-topic-coherence": [
       {
         "field_hash": {
           "md": "0a0e92a9d60e",
           "ts": "272d3b8da8d4",
           "lean": "2d834c773007"
         },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-c2-prediction.md:1 - proposition + Why this matters / Lean proof sections below",
+        "result": "n/a",
         "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
         },
-        "reviewed_at": "2026-06-07T13:40:38.496Z",
-        "reviewed_sha": "25902cde45f4f8cac782b53a45b9b0219972eea8",
-        "notes": "Why this matters and Lean proof sections count as scholarly content elaborating the statement, not interpretive physical prose triggering the criterion"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "0a0e92a9d60e",
-          "ts": "272d3b8da8d4",
-          "lean": "2d834c773007"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-c2-prediction.ts: label prop:selection-rule-c2-prediction; in braiding-relations/spectral-filter section",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:40:38.537Z",
-        "reviewed_sha": "25902cde45f4f8cac782b53a45b9b0219972eea8",
-        "notes": "c2 selection rule for linking weight; subject fits q-Hyperbolic Geometry chapter braiding content"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "0a0e92a9d60e",
-          "ts": "272d3b8da8d4",
-          "lean": "2d834c773007"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-c2-prediction.md: q in R_{>0} stated; closed form (q+1)^2/(3q) Laurent rational in Z[q,q^-1]",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:40:38.577Z",
-        "reviewed_sha": "25902cde45f4f8cac782b53a45b9b0219972eea8",
-        "notes": "CLAUDE.md 7c compliant per md annotation; stated over R for substrate-anchor regime; fibre-level Laurent rational"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "0a0e92a9d60e",
-          "ts": "272d3b8da8d4",
-          "lean": "2d834c773007"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-c2-prediction.lean:48 - field_simp; ring over R (q : R) (hq : 0 < q)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:40:38.616Z",
-        "reviewed_sha": "25902cde45f4f8cac782b53a45b9b0219972eea8",
-        "notes": "proof over archimedean R with q>0; matches statement which is stated over R_{>0}; no side mismatch"
-      }
-    ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "0a0e92a9d60e",
-          "ts": "272d3b8da8d4",
-          "lean": "2d834c773007"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "selection-rule-c2-prediction.lean:56 - selection_rule_c2_prediction: (1+(q+q^-1)+1)/3 = (q+1)^2/(3*q)",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T13:40:38.655Z",
-        "reviewed_sha": "25902cde45f4f8cac782b53a45b9b0219972eea8",
-        "notes": "lean proves composite identity matching narrative lw(2)=(q+1)^2/(3q); same conclusion and same hypotheses (q:R, 0<q)"
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
       }
     ]
   },
-  "updated_at": "2026-06-07T13:40:38.655Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

@@ -4,11 +4,13 @@
   "kind": "proposition",
   "paths": {
     "ts": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.md"
+    "md": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.md",
+    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot.lean"
   },
   "source_hashes": {
-    "md": "13359b786689",
-    "ts": "d4351927d0e1"
+    "md": "94cab078f2e9",
+    "ts": "04aae73a8c20",
+    "lean": "191df144b4ec"
   },
   "criteria": {
     "voice-statement-no-interpretation": [
@@ -115,7 +117,75 @@
         "reviewed_sha": "3d3180d37669bf24fd49bf5280e395aa5efbf69c",
         "notes": "Lean formalization absent."
       }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "94cab078f2e9",
+          "ts": "04aae73a8c20",
+          "lean": "191df144b4ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 0,
+          "cone_size": 181,
+          "edge_span_max": 0,
+          "edge_span_mean": 0,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "94cab078f2e9",
+          "ts": "04aae73a8c20",
+          "lean": "191df144b4ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "94cab078f2e9",
+          "ts": "04aae73a8c20",
+          "lean": "191df144b4ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+      }
     ]
   },
-  "updated_at": "2026-06-05T15:06:48.722Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

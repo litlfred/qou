@@ -1944,7 +1944,56 @@
         "reviewed_sha": "0df807438f9130b668db16832ba90b909721a4e8",
         "notes": "Clean wall separation."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "5a9b531aad95",
+          "ts": "e171b2a598f2",
+          "lean": "73554dd87c09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "5a9b531aad95",
+          "ts": "e171b2a598f2",
+          "lean": "73554dd87c09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "home_chapter": "lifting-and-descent",
+          "home_score": 0,
+          "top_other_chapter": "quantum-observable-universes",
+          "top_other_score": 1
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-05T15:20:13.386Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

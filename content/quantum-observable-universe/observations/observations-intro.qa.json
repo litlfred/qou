@@ -2251,7 +2251,54 @@
         "reviewed_sha": "0becc445bd678dc72ae07d589efd6eb9fc4a1d9d",
         "notes": "Perfect fit: prose block introduces exactly the chapter it lives in."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "6459f4df6382",
+          "ts": "2b0801a8386d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "6459f4df6382",
+          "ts": "2b0801a8386d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "home_chapter": "observations",
+          "home_score": 6,
+          "top_other_chapter": "descartes-universe",
+          "top_other_score": 6
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-06T01:09:47.928Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

@@ -2234,7 +2234,56 @@
         "reviewed_sha": "20d83e45f14e8ee537e896aa1aebf3b2ea144e50",
         "notes": "Fits observations chapter."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "67c7aee7b4c7",
+          "ts": "fb2b576fa9ee",
+          "lean": "5216589859bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "67c7aee7b4c7",
+          "ts": "fb2b576fa9ee",
+          "lean": "5216589859bd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "home_chapter": "observations",
+          "home_score": 2,
+          "top_other_chapter": "braids-and-knots",
+          "top_other_score": 4
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-06T01:58:14.009Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }
