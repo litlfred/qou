@@ -1,0 +1,46 @@
+{
+  "engine": "python+pyhecke_native",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-07T06:26:33.491794+00:00",
+  "commitSha": "3c5cc75df14b44e8d28a448991d5350ae435ce4b",
+  "assertions": [
+    {
+      "name": "wire_up_safe_for_tritium",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Every catalogue.lookup_derived for (atom-braid-T, λ, T) must exactly match pyhecke_native.chi_q_via_gp for all λ ⊢ 9. If all match, the wire-up pattern is safe to roll out to closed_form_tau_M.py and the per-atom mass-table sweep."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 202,
+  "computation": "derived-chi-catalogue-production-wire-demo",
+  "scriptFile": "derived_chi_catalogue_production_wire_demo.py",
+  "scriptHash": "9645257383d6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Phase 3 production wire-up demo. For every λ ⊢ 9 in the Tritium catalogue, verifies `catalogue.lookup_derived` returns the same q-Laurent as a direct `pyhecke_native.chi_q_via_gp` call. If all pass, the wire-up pattern is safe to roll out to `closed_form_tau_M.py` and the per-atom mass-table sweep.",
+  "data": {
+    "partitions_total": 30,
+    "matches": 30,
+    "catalogue_misses": 0,
+    "compute_mismatches": 0,
+    "catalogue_lookup_ms": 0.14731600094819441,
+    "direct_compute_ms": 175.1707770035864,
+    "speedup": 1189.081809688735,
+    "interpretation": "30/30 cells match direct compute; wire-up speedup 1189.1× (catalogue replaces 0.18s of GP reduction with 0.15ms of dict lookups). Production sites can now adopt the lookup_derived pattern with confidence."
+  }
+}
