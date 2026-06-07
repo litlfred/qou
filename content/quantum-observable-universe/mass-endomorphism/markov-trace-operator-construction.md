@@ -8,11 +8,10 @@ embedding + GNS / bicommutant von Neumann factor scaffolding (Lean
 classes `HnHilbertRep n q`, `HnInductiveEmbedding n q`,
 `MarkovTraceVNFactor q`) follows the explicit-residual pattern.
 
-**Primary content moved to audits.** See
-[`docs/audits/2026-06-03-wip-scaffolding-markov-trace-operator-construction.md`](../../../docs/audits/2026-06-03-wip-scaffolding-markov-trace-operator-construction.md)
-for the full construction outline (per-$n$ Hilbert space $\to$ inductive
-embedding $\to$ inductive limit $\to$ trace state $\to$ bicommutant closure) and
-per-$n$ discharge status.
+The full construction outline (per-$n$ Hilbert space $\to$ inductive
+embedding $\to$ inductive limit $\to$ trace state $\to$ bicommutant
+closure) and per-$n$ discharge status are detailed in
+[the scaffolding audit](../../../docs/audits/2026-06-03-wip-scaffolding-markov-trace-operator-construction.md).
 
 The Lean class scaffolding stays in place at
 [`markov-trace-operator-construction.lean`](markov-trace-operator-construction.lean) —
