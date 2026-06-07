@@ -12,8 +12,12 @@ The abstract `CrystalGraphRealization R q` class (sibling file) treats
 `NormalForm` as opaque and axiomatises the highest-weight condition. This
 module supplies the **concrete GS combinatorics** the conjecture is
 actually about — the Gröbner–Shirshov rewriting system of
-`def:hecke-normal-form` and its shortlex order — and isolates the single
-open input as the **order-match axiom** `order_match` (the claim ★ that
+`def:hecke-normal-form`, with every rule oriented so each step strictly
+decreases the intended shortlex order (a standalone `≺` order relation is
+not yet defined here; see the plan doc Layer 0 L0.1–L0.2 for the
+`Prod.Lex (length, lex)` order this orientation targets) — and isolates
+the single open input as the **order-match axiom** `order_match` (the
+claim ★ that
 the shortlex GS irreducibles match the Brundan–Kleshchev canonical-basis
 labels *on the nose*, i.e. confinement level = crystal degree).
 
