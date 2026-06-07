@@ -1931,7 +1931,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8ad38f6c260e",
+          "ts": "d160ef738c22",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Definition of CO2 as molecular braid (H_66) with two C=O double bonds; linear geometry",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:08:27.975Z",
+        "reviewed_sha": "13a12448fe1e646bde4e5efccaaa41b390a6e8ff",
+        "notes": "Molecular-construction subject matter; uses def:co-molecular-braid."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "8ad38f6c260e",
+          "ts": "d160ef738c22",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Opens with §7c archimedean banner; physical D_0 ~16.56 eV flagged as the R-specialised side, combinatorics generic",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:08:28.020Z",
+        "reviewed_sha": "13a12448fe1e646bde4e5efccaaa41b390a6e8ff",
+        "notes": "Applied molecular chapter; banner present, no silent R specialization."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T02:08:28.020Z"
 }
