@@ -22,13 +22,6 @@ on:
           - 'none'
           - 'testpypi'
           - 'pypi'
-  push:
-    branches: [main]
-    paths:
-      - 'tools/pyhecke-native/**'
-      - 'tools/hecke-engine/**'
-      - '.github/workflows/pyhecke-native-wheels.yml'
-
 concurrency:
   group: pyhecke-native-wheels-${{ github.ref }}
   cancel-in-progress: true

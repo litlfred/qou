@@ -19,19 +19,6 @@ name: Build paper-builder Docker image
 # to actually consume it.
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/docker/Dockerfile.paper-builder'
-      - '.github/workflows/paper-builder-image.yml'
-  pull_request:
-    paths:
-      - '.github/docker/Dockerfile.paper-builder'
-      - '.github/workflows/paper-builder-image.yml'
-  schedule:
-    # Monthly refresh on the 1st at 04:00 UTC — pulls in any apt /
-    # pip security patches that landed since the last build.
-    - cron: '0 4 1 * *'
   workflow_dispatch:
 
 # Job-level permissions per PR #1104 review (Copilot, least-privilege).

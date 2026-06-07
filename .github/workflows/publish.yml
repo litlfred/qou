@@ -33,15 +33,6 @@ name: Build & Publish
 #     workflow so existing runbooks keep working.
 
 on:
-  pull_request:
-    paths:
-      - 'content/**'
-      - 'chapters/**'
-      - 'main.tex'
-      - 'tools/**'
-      - 'folio-assistant/**'
-      - '.github/workflows/publish.yml'
-      - '.github/workflows/paper-builder-image.yml'
   workflow_dispatch:
     inputs:
       source_branch:
