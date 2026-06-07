@@ -2720,7 +2720,101 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:07.930Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md opens with explicit conditional banner (on 4 props + conj:regularity-breakdown) and lays out parts (a) aspect-ratio=sqrt(lambda_par/lambda_perp), (b) condition number, (c) 5-way equivalence, (d) q>1 bound, (e) q=1 — clear plan."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:07.972Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean takes 5 [Instance] hyps but proves only 'True := trivial' — the real proposition (aspect ratio = sqrt(lambda ratio), 5-way equivalence) is NOT stated; classes are toy proxies (e.g. (3*4:N)=12). Core gap + conjecture-dependent."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:08.013Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Genuinely novel bridge: CR-geometry Levi-form non-degeneracy on the normal plane <=> vortex core aspect ratio bounded <=> NS regularity. Contact-geometry diagnosis of blowup is not standard."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9fa41da1cf2e",
+          "ts": "d6c99adf43bc",
+          "lean": "d43579af2af8"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:26:08.054Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean conclusion is 'True := trivial' (with 5 class hyps); does not state the md's aspect-ratio / condition-number / 5-way-equivalence claim. Integrity FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T02:26:08.054Z"
 }

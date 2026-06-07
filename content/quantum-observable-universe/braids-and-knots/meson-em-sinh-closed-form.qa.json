@@ -909,7 +909,99 @@
         "reviewed_at": "2026-06-05T14:22:44.851Z",
         "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "d70576ae34fe",
+          "ts": "20983b2e18e7",
+          "lean": "78002e96d3a2"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.655Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy stated: expand hbar_q^2 = (1-q^-1)^2, combine over common denom; each step closed by field_simp;ring. Four-way equality chain enumerated in md."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "d70576ae34fe",
+          "ts": "20983b2e18e7",
+          "lean": "78002e96d3a2"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.693Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free over a Field: meson_EM_closed_form, _inverse, _planck all by field_simp;ring. No axiom, no gap."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "d70576ae34fe",
+          "ts": "20983b2e18e7",
+          "lean": "78002e96d3a2"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.35,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.732Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Elementary rational-function identity (1+hbar_q-hbar_q^2/2 = (3q^2-1)/(2q^2)); the meson m_K^2/m_pi^2 closure significance and Bring 3-generation reading are interpretive, the proved content is textbook algebra."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d70576ae34fe",
+          "ts": "20983b2e18e7",
+          "lean": "78002e96d3a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.771Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Faithful: meson_EM_closed_form states the md's boxed chain 1+hbar_q-hbar_q^2/2 = (3q^2-1)/(2q^2), with _inverse and _planck giving the other equalities. Genuine, non-vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:52:06.798Z"
+  "updated_at": "2026-06-07T02:31:29.771Z"
 }

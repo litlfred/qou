@@ -2011,7 +2011,101 @@
         "reviewed_at": "2026-06-02T19:35:56.961Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "1bbfe183c84a",
+          "ts": "102f58c45a63",
+          "lean": "44bf86f09b7e"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:28.344Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md gives explicit construction: anti-parallel vortex-pair initial data -> Phase 1 (q>1 smooth via Hecke pass-through/reconnection) -> Phase 2 (q->1 limit, d(t)~sqrt(d0^2-cGamma t), finite T*) -> Phase 3 homological diagnosis (Claims 1-4: d_H=1, n*=2, kappa_2, local cohomology) -> boxed address. Clear."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "1bbfe183c84a",
+          "ts": "102f58c45a63",
+          "lean": "44bf86f09b7e"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:28.382Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Claims 1-4 (d_H=1, n*=2, kappa_2=lk[B], local cohomology V_{1/2}^2) are supported by 'Reason:' sketches, not proofs; the blowup itself is the conjectural classical-limit claim. Lean ref -> conjecture class QOU.FluidDynamics.NSCounterexample (axiomatised). Core gap."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "1bbfe183c84a",
+          "ts": "102f58c45a63",
+          "lean": "44bf86f09b7e"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:28.421Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Explicit homological address of the anti-parallel-pair counterexample (n*=2, kappa_2 = linking number times band class, local cohomology = V_{1/2}+V_{1/2}) instantiating the Yekutieli-obstruction framework is a novel concrete construction."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "1bbfe183c84a",
+          "ts": "102f58c45a63",
+          "lean": "44bf86f09b7e"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:28.460Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "BUG: .lean is a conjecture-class axiomatisation (not a theorem stating prop:p5-counterexample), and MALFORMED: two duplicate 'class NSCounterexample' declarations (~lines 41 and 56) with stray 'Ref: ... -/' text (line 55) — will not compile. lean.ref -> the class. Integrity FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T02:29:28.460Z"
 }

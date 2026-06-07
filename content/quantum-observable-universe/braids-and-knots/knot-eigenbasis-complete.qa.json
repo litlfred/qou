@@ -2621,7 +2621,99 @@
         "reviewed_sha": "435d668edd86736187706af5a4894c81001b2178",
         "notes": "Proof wall check N/A for statement-only block."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "4039ceb953e7",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.347Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy explicit: 3-part decomposition (q-Schur-Weyl semisimplicity + Alexander surjectivity + Markov-trace detection) named, then the combining theorem obtains a summand from completeness and a detecting braid from summands_detected."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "4039ceb953e7",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.386Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free, no axiom in this file: knot_eigenbasis_complete proved by obtain from the KnotEigenbasisData bundle; supporting max_spin_bound/num_summands_bound/alexander_has_braid genuine. The hard external inputs (Schur-Weyl completeness, Alexander surjectivity) are structure-field hypotheses, the standard conditional/data-bundle pattern, not gaps."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "4039ceb953e7",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.425Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "The 'knot types form a complete eigenbasis for colim V^{tensor n}, replacing Feynman's continuum integral' is a genuinely framework-specific synthesis; the Lean is a careful combining/conditional proof over bundled standard results."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "4039ceb953e7",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.464Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Faithful: knot_eigenbasis_complete states 'every v in V^{tensor n} lies in a knot-detected irreducible summand' given the three components -- matching the md's 3-part claim. Real obtain-based proof from genuine hypotheses, not vacuous. SchurWeylDecomposition.complete and summands_detected carry the real content."
+      }
     ]
   },
-  "updated_at": "2026-06-06T02:07:00.981Z"
+  "updated_at": "2026-06-07T02:31:29.464Z"
 }

@@ -2664,7 +2664,101 @@
         "reviewed_at": "2026-06-04T17:54:37.243Z",
         "reviewed_sha": "79cc136d6d7f016e1d699dc26bcae2c401286e13"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "84109dae1298",
+          "ts": "b52267b51dfc",
+          "lean": "27fc20f1ce28"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:24:35.239Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md states 3 numbered horizon conditions (transonic / non-degeneracy / null-energy) + surface-gravity/Hawking-T derivation up front; clear structure though no proof block (it is a statement of conditions)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "84109dae1298",
+          "ts": "b52267b51dfc",
+          "lean": "27fc20f1ce28"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:24:59.452Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean is a placeholder 'theorem ... : True := by trivial' — the real claim (horizon at |v|=c_s, surface gravity, Hawking T) is not stated; no sorry but vacuous, so goal not established."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "84109dae1298",
+          "ts": "b52267b51dfc",
+          "lean": "27fc20f1ce28"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:24:59.497Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Analogue-gravity acoustic-metric + Unruh Hawking-T is standard (Unruh 1981); the q-deformation (hbar_q=(q-1)/q suppression, q-dependent horizon radius via [j]_q) is a modest new wrapper, not a new argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "84109dae1298",
+          "ts": "b52267b51dfc",
+          "lean": "27fc20f1ce28"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:24:59.540Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean 'theorem acoustic_horizon_conditions : True := by trivial' is a True-placeholder stub; does not state the md's claim (acoustic horizon conditions). Integrity FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T02:24:59.540Z"
 }

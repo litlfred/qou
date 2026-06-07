@@ -2013,7 +2013,101 @@
         "reviewed_at": "2026-06-02T19:35:56.961Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "0740669181e9",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:28.023Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md lays out: Gronwall bound (then flagged 'too crude') -> Lambda_q asymptotics ~ (q-1)^{-1} -> refined cascade-depth estimate N_eff^{4/3} -> boxed result alpha=4/3 with log correction. Clear path, openly distinguishes crude vs refined."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "0740669181e9",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:28.064Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Core gap: alpha=4/3 is a heuristic '<~' estimate from a Kolmogorov cascade-depth argument, not a proof (the rigorous Gronwall bound is admitted too crude). Lean ref points at conjecture class QOU.FluidDynamics.CriticalExponent, which is class-axiomatised (conjecture), so no proof exists."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "0740669181e9",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.65,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:28.106Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Deriving a specific critical exponent alpha=4/3 (with log correction) for enstrophy divergence as q->1 from cascade depth N_eff is a non-trivial prediction, though built on heuristic turbulence scaling."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "0740669181e9",
+          "ts": "db732b697344",
+          "lean": "0b8e28917fb9"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:28.146Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "BUG: .lean is NOT a theorem stating prop:critical-exponent (alpha=4/3) — it is a conjecture-class axiomatisation, and it is MALFORMED: two duplicate 'class CriticalExponent' declarations (lines ~42 and ~62) with stray 'Ref: ... -/' text between them (line 61) — will not compile. lean.ref -> the class, not the proposition. Integrity FAIL."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T02:29:28.146Z"
 }

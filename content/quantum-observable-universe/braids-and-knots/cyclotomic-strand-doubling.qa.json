@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean"
   },
   "source_hashes": {
-    "md": "ad0deaba48cd",
-    "ts": "9134949c2366",
+    "md": "32cd7aa8f11a",
+    "ts": "797e41f50237",
     "lean": "4e3b1d9ee8b6"
   },
   "criteria": {
@@ -971,7 +971,99 @@
         "reviewed_sha": "2217776ec094143fb845961e90fb27cd30dea015",
         "notes": "Lean and narrative both verify Phi_8(X)=Phi_4(X^2) by computation."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "32cd7aa8f11a",
+          "ts": "797e41f50237",
+          "lean": "4e3b1d9ee8b6"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:08.792Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Direct-evaluation strategy stated: Phi_4=X^2+1, Phi_8=X^4+1, compose with X^2. Proof by decide for the cyclotomic values + simp/ring for the composition."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "32cd7aa8f11a",
+          "ts": "797e41f50237",
+          "lean": "4e3b1d9ee8b6"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:08.829Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Headline proposition Phi_8(X)=Phi_4(X^2) is sorry-free (cyclotomic_8_eq_cyclotomic_4_comp_X_sq). The general powers-of-two lemma cyclotomic_pow_two_strand_doubling carries a sorry but with proper -- Ref: [washington1997] (deferred standard cyclotomic fact); it is NOT the headline claim, which the md explicitly notes is the only surviving claim (strand-doubling chain REFUTED)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "32cd7aa8f11a",
+          "ts": "797e41f50237",
+          "lean": "4e3b1d9ee8b6"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.35,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:08.878Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Standard cyclotomic composition identity (Phi_{2n}(X)=Phi_n(X^2)); the categorical strand-doubling interpretation was REFUTED, leaving only a textbook algebraic identity. Low novelty."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "32cd7aa8f11a",
+          "ts": "797e41f50237",
+          "lean": "4e3b1d9ee8b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:28:08.928Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean faithfully states the md's boxed identity Phi_8(X)=Phi_4(X^2).comp(X^2) over Z and proves it sorry-free. Supporting cyclotomic value lemmas + isospin (X^2-1) factor all genuine; one deferred general lemma is sorry+Ref, not vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-06T01:18:59.579Z"
+  "updated_at": "2026-06-07T02:28:08.928Z"
 }

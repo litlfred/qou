@@ -1248,7 +1248,100 @@
         "reviewed_sha": "a46485f7b73bd6f1c1342413da990136e02a2c68",
         "notes": "Archimedean references are qualitative/contextual, not wall violations."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "f3eb1219a5f3",
+          "ts": "7dab5c9cd72f",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:30:44.569Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md states the integrality/finiteness strategy clearly (cyclotomic division algorithm, finite M from crossing number) and the secondary 3b-cond bridge-class plan is well-structured. But the integrality claim is not actually implemented as a Lean statement."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "f3eb1219a5f3",
+          "ts": "7dab5c9cd72f",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:30:44.611Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Core gap: the headline proposition (Habiro integrality a_m in Z[u], finite M) is reduced to True. habiro_terminates : exists M, True; habiro_integral : True; habiro_evaluation_determined : True -- all trivial. Plus two axiom decls (precisionLadderCoeff, habiroTaylorCoeff) for the bridge. The integrality content lives only in comments."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "f3eb1219a5f3",
+          "ts": "7dab5c9cd72f",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:30:44.648Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "The 3b-cond QbetaHabiroTaylorBridgeClass (c_k = Habiro Taylor coeff, open beyond c_2) is a genuine, carefully-scoped formalization of an open derivation target mirroring PR #1508. That conditional bridge is the novel part; the headline integrality is Habiro's standard theorem."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f3eb1219a5f3",
+          "ts": "7dab5c9cd72f",
+          "lean": "fa3eea6663eb"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:30:44.686Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "INTEGRITY FAIL: lean.ref qou:QOU.BraidKnot.HabiroPrecisionLadderEquivalence has no matching decl; the three propositions stating the md's claim (habiro_terminates/habiro_integral/habiro_evaluation_determined) all have type True or 'exists M, True' with body trivial -- they do NOT state the md's integrality/finiteness claim. Placeholder tautologies. (The 3b-cond bridge class section is well-formed but is a secondary OPEN bridge, not the headline.)"
+      }
     ]
   },
-  "updated_at": "2026-06-06T01:49:09.374Z"
+  "updated_at": "2026-06-07T02:30:44.686Z"
 }

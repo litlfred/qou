@@ -940,7 +940,99 @@
         "reviewed_sha": "c34d169ec0f5e12b3f110543d7f623d3c5672ab5",
         "notes": "Numerical verification section belongs in observations/descartes-universe chapter or needs wall: annotation."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "7bde2b6180ba",
+          "ts": "9891a18a24fd",
+          "lean": "c0ec42d1c642"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.745Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy stated: 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) for q=u^2, applied factor-wise to the Pochhammer product, then divide. Clean derivation in md + docstrings."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7bde2b6180ba",
+          "ts": "9891a18a24fd",
+          "lean": "c0ec42d1c642"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.783Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free over generic CommRing: one_sub_sq_factor, pochhammer_factor by ring; HabiroPochhammerBridge product factorization by prod_mul_distrib + congr + ring. No axiom."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "7bde2b6180ba",
+          "ts": "9891a18a24fd",
+          "lean": "c0ec42d1c642"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.823Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Elementary algebraic factorization (1-q^k = (1-u^k)(1+u^k)); the Habiro-weighted-average ratio application is the framework content but the proved identity is textbook."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7bde2b6180ba",
+          "ts": "9891a18a24fd",
+          "lean": "c0ec42d1c642"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:29:46.860Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Lean HabiroPochhammerBridge faithfully states the md's load-bearing identity (q;q)_m = (u;u)_m * Prod(1+u^k) as a product factorization and proves it. The ratio/weighted-average is the downstream application of this identity."
+      }
     ]
   },
-  "updated_at": "2026-06-06T01:45:00.116Z"
+  "updated_at": "2026-06-07T02:29:46.860Z"
 }

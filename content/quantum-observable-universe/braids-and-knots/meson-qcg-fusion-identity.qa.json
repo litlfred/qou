@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "440e90d8f01b",
     "ts": "34026fdab4a4",
-    "lean": "d0b110d00429"
+    "lean": "b286ae91d5c9"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -911,7 +911,99 @@
         "reviewed_at": "2026-06-05T14:22:44.851Z",
         "reviewed_sha": "657e34dc93675786a13cfa103ce70f9cb339cafb"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.810Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy stated: multiply [3]_q[4]_q=[2]_q+[4]_q+[6]_q by (q-q^-1)^2 to clear denominators, yielding a ring identity closed by ring; classical limit 3*4=2+4+6 by decide."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.849Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free over a Field: meson_qCG_3x4 (cleared-denominator form) by field_simp;ring; meson_qCG_3x4_classical by decide. No axiom."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.886Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "q-Clebsch-Gordan fusion [3]_q[4]_q=[2]_q+[4]_q+[6]_q is standard q-rep theory; the application to the 2-body meson m_K^2/m_pi^2 squared-ratio (vs 1-body character) is the framework-specific insight."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "440e90d8f01b",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.924Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Faithful: meson_qCG_3x4 proves the md's identity in the cleared-denominator form the md explicitly directs ((q^3-q^-3)(q^4-q^-4) = (q-q^-1)(...)); mathematically equivalent to the boxed [3]_q[4]_q = [2]_q+[4]_q+[6]_q. Non-vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T02:31:29.924Z"
 }

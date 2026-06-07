@@ -2533,7 +2533,99 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "41215535d687",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.501Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy stated: DFT w_k = (1/sqrt n) Sum zeta^{kj} x_j; w_0 vanishes from sum constraint at k=0; diagonal action by case-split on k in {0..4}, expand Fin 5 sums, reduce zeta powers mod 5 (zeta^5=1), close by ring. Periodicity simp-lemma scaffold documented."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "41215535d687",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.539Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free: lagrange_resolvent_w0_vanishes and lagrange_resolvent_diagonal_action (sigma(w_k)=zeta^{-k} w_k for n=5) proved with genuine zeta arithmetic (primitive 5th root, zeta_pow_four_eq_inv, fin_cases + ring). No axiom."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "41215535d687",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.578Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "DFT diagonalizing a cyclic action is standard, but the explicit n=5 Bring-surface formalization with the modular zeta-power reduction is non-trivial. The quadric/cubic constraint transforms (md part 2 examples) are stated but not formalized."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "41215535d687",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:31:29.616Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Faithful: lagrange_resolvent_diagonal_action states the md's part-1 claim sigma(w_k)=zeta^{-k} w_k; w0_vanishes states w_0=0 under Sum x_i = 0. Both genuine, non-vacuous. (Part-2 example constraints not formalized but the two central claims are faithfully proved.)"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T02:31:29.616Z"
 }
