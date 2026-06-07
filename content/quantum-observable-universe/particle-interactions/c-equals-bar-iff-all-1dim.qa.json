@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "304a48a0ab77",
     "ts": "7f74fbf6f8a9",
-    "lean": "9e8c23f33398"
+    "lean": "30987cd7e5d9"
   },
   "criteria": {
     "proof-lean-compiles": [
@@ -519,25 +519,6 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.md:1 — detected regime [symbolic] is disjoint from chapter 'particle-interactions' expected [fixed-q0, na, real-gt-1, real-positive]"
-      }
-    ],
-    "canonical-calibration-count": [
-      {
-        "field_hash": {
-          "md": "304a48a0ab77",
-          "ts": "7f74fbf6f8a9",
-          "lean": "9e8c23f33398"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8055e5864896",
-          "script_commit_sha": "7d3eeba998ed7051fd1624bce43cb8d0e006a14c"
-        },
-        "reviewed_at": "2026-06-02T19:34:22.348Z",
-        "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
     "canonical-no-numerology": [
@@ -1102,7 +1083,26 @@
           "worst_target": ""
         }
       }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f85a8e7bf89c",
+          "script_commit_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+        },
+        "reviewed_at": "2026-06-07T05:35:26.749Z",
+        "reviewed_sha": "505f4df12175e60f8da8fddbcfe814c39f63a326"
+      }
     ]
   },
-  "updated_at": "2026-06-07T04:58:08.431Z"
+  "updated_at": "2026-06-07T05:35:26.749Z"
 }
