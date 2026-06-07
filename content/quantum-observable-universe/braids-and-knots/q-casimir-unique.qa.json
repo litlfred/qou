@@ -2501,7 +2501,100 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "007f4f967aa8",
+          "ts": "ac04cbbb4422",
+          "lean": "a59f77832182"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:55.407Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "md states the uniqueness strategy (Joseph-Letzter centre: unique central FE+phi(K,K^-1) with eigenvalue [j]_q[j+1]_q, differing by a scalar). But the Lean docstring itself admits the chosen Subsingleton encoding does not match the up-to-scalar claim, so the on-paper strategy is not what the Lean implements."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "007f4f967aa8",
+          "ts": "ac04cbbb4422",
+          "lean": "a59f77832182"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:55.499Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "Core gap: uniqueness is asserted via axiom QCasimir.unique_up_to_scalar_axiom giving Subsingleton (QCasimirData qs). The docstring itself states this is 'too strong for the bare QCasimirData structure -- free fields admit distinct valid values', i.e. the axiom encodes a claim the author admits is wrong for the structure as written. Axiom-papered, self-admitted mis-encoding."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "007f4f967aa8",
+          "ts": "ac04cbbb4422",
+          "lean": "a59f77832182"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:55.547Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "Standard quantum-group result (Joseph-Letzter centre, Kassel VI.4.9); axiomatized, no new argument."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "007f4f967aa8",
+          "ts": "ac04cbbb4422",
+          "lean": "a59f77832182"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:55.586Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "INTEGRITY FAIL: the md claims uniqueness UP TO SCALAR ('differ by a scalar multiple'), but the Lean states Subsingleton (QCasimirData qs) = at most one element (literal uniqueness, NOT up-to-scalar / quotient). The docstring itself admits this encoding is 'too strong for the bare QCasimirData structure' and is only true by an axiom that encodes the wrong proposition for the structure as written. The Lean does not faithfully state the md's real claim."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T02:33:55.586Z"
 }

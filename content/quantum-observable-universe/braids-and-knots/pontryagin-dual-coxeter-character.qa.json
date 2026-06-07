@@ -2286,7 +2286,100 @@
         "reviewed_at": "2026-06-02T19:35:56.961Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "1b18984e8927",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:32:36.683Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy stated as two short observations: (1) Z/2 self-dual (char determined by value at 1, fin_cases), (2) sign hom surjective via swap 0 1 having sign -1. Composition gives self-duality of S_n^ab. Clear in md and docstring."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "1b18984e8927",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:32:36.725Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Sorry-free, no axiom in the load-bearing theorem: pontryagin_dual_coxeter_character_structural proves the conjunction (self-duality + swap sign witness) via zmodTwo_pontryagin_self_dual_via_value_at_one (fin_cases) and Equiv.Perm.sign_swap. Discharges the previously-conjectural D20."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "1b18984e8927",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:32:36.804Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Faithful: pontryagin_dual_coxeter_character_structural captures the md's structural claim (Z/2 self-Pontryagin-dual + sign-surjectivity witness for S_n^ab). The class PontryaginDualCoxeterCharacter with holds:Prop:=True is only a disclosed backward-compat shim, NOT the headline -- the headline is the genuine structural theorem."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "1b18984e8927",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "result": "fail",
+        "severity": "minor",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:08.116Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "md itself states this is degenerate / low priority, recorded for tracker completeness, yielding 'no new information beyond sign-of-a-permutation' -- the same Z/2 the bar involution already classifies. Standard finite-group facts; redundant-tier novelty."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T02:33:08.116Z"
 }

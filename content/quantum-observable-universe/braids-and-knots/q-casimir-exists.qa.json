@@ -2501,7 +2501,99 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "ff68314f9368",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "score": {
+          "value": 1,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:32:36.845Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Strategy stated: C_q = FE + (qK+q^-1 K^-1 - (q+q^-1))/(q-q^-1)^2 central by direct Serre-relation verification; recorded as external axiom (Kassel VI.4) pending a Mathlib U_q(su2)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "ff68314f9368",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:32:36.887Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Existence is axiomatized (axiom QCasimir.exists_axiom) -- a genuine external result (Kassel VI.4), honestly disclosed as 'pending a Mathlib-style U_q(su2) formalisation'. No internal construction, so mid plausibility; QCasimir.exists derives Nonempty QCasimirData from the axiom faithfully."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "ff68314f9368",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.4,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:32:36.928Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Standard quantum-group Casimir existence (Kassel/Lusztig); no new argument, axiomatized pending the U_q(su2) formalization."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "ff68314f9368",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:32:36.984Z",
+        "reviewed_sha": "d7749be3e5d8d6285728643108a200a4cc421529",
+        "notes": "Faithful: QCasimir.exists : Nonempty (QCasimirData qs) states the md's existence claim; the axiom is openly disclosed in both md and Lean. Not a vacuous =True. (The md's eigenvalue-action [j]_q[j+1]_q is presumably carried by QCasimirData's def in QOU.Basic; the existence-of-data is faithfully asserted.)"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T02:32:36.984Z"
 }

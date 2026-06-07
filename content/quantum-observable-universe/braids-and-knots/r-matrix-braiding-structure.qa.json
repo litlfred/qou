@@ -2505,7 +2505,100 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "7f0bd3c03be2",
+          "ts": "c9c4ec59f6d3",
+          "lean": "1d86bfa8f59b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.6,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:55.639Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "md states the claim (universal R-matrix satisfies Yang-Baxter; braid operator R-check = P o R gives a braid group rep). But the Lean provides no proof and no strategy -- only a data structure; the YBE appears solely in comments."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7f0bd3c03be2",
+          "ts": "c9c4ec59f6d3",
+          "lean": "1d86bfa8f59b"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:55.698Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "Core gap: neither the Yang-Baxter equation nor the braid-group representation is proved or even stated as a Lean proposition. Only structure RMatrixBraidingData + a def su2_fundamental_r_matrix. The hecke_relation field is malformed (typed ... -> Prop with body 'q != 0', a constant function ignoring its hypothesis, encoding nothing)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "7f0bd3c03be2",
+          "ts": "c9c4ec59f6d3",
+          "lean": "1d86bfa8f59b"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:55.800Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "The R-matrix / Yang-Baxter / braid-rep content is standard quantum-group theory; the eigenvalues q, -q^-1 (Hecke channels) are the framework tie-in. But nothing is proved, so novelty is moot here."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7f0bd3c03be2",
+          "ts": "c9c4ec59f6d3",
+          "lean": "1d86bfa8f59b"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T02:33:55.844Z",
+        "reviewed_sha": "8bde9de2c1add6cd380bfdd9a363e5d19ec8ab8f",
+        "notes": "INTEGRITY FAIL: lean.ref qou:QOU.Braiding.r_matrix_braiding_structure has NO matching declaration in the file. The md's load-bearing claims (R_12 R_13 R_23 = R_23 R_13 R_12; braid-group rep from R-check) are entirely ABSENT as Lean statements -- they live only in the module docstring. The only artifacts are a data structure with a vacuous/malformed hecke_relation field (fun _ => q != 0) and a constructor def. No proposition states the md's real claim."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T02:33:55.844Z"
 }
