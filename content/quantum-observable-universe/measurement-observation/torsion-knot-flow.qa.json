@@ -1949,7 +1949,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ebccd475755e",
+          "ts": "1ee037fa7d5a",
+          "lean": "a9114c0b1961"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Defines torsion-driven knot flow (Reeb dynamics on bundle states); listed in sec:bundle-observation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:31:49.011Z",
+        "reviewed_sha": "6cee1c162a33c7b5ba24cd210a3bb5ca5b5cb8e7",
+        "notes": "Flow/dynamics definition belongs in 'Bundle Structure and Observation'; distinct from sibling defs."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ebccd475755e",
+          "ts": "1ee037fa7d5a",
+          "lean": "a9114c0b1961"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Opens with explicit 7c banner: 'archimedean specialisation over R ... combinatorial content stays generic'; uses q=e^{-r}, l_P, round metric on S^2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:31:49.055Z",
+        "reviewed_sha": "6cee1c162a33c7b5ba24cd210a3bb5ca5b5cb8e7",
+        "notes": "Archimedean constructs (round metric, Planck-scale, q=e^{-r}) are properly flagged by the §7c banner at line 1."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T02:31:49.055Z"
 }
