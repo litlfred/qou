@@ -1,0 +1,45 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-07T06:01:27.581187+00:00",
+  "commitSha": "ff1b331cfe1ee7d4ecdf77ab48fa4a7caee60070",
+  "assertions": [
+    {
+      "name": "bar_symmetry_identity_holds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Whether every λ, λᵀ pair in the 715-cell catalogue obeys the bar-conjugate identity (with either sign). If yes, the sweep can be halved in compute; if no, the optimization is skipped."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 73,
+  "computation": "derived-chi-catalogue-bar-symmetry-audit",
+  "scriptFile": "derived_chi_catalogue_bar_symmetry_audit.py",
+  "scriptHash": "c51f8d1aff8a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Verifies the bar-conjugate identity χ^{λᵀ}(T_β) = ε(β) · χ^λ(T_β)|_{q → −q⁻¹} on the 715-cell derived-χ catalogue. If the identity holds with a stable sign rule, the catalogue sweep can be ~halved in compute.",
+  "data": {
+    "pairs_tested": 348,
+    "pairs_match_positive": 2,
+    "pairs_match_negative": 346,
+    "pairs_fail": 0,
+    "self_conjugate_count": 19,
+    "verdict": "★ HOLDS — sign depends on atom (need per-atom rule)",
+    "sign_anomalies": []
+  }
+}

@@ -551,15 +551,49 @@ fn chi_via_gp_hoefsmit(
 /// have up to 720 elements but most words touch far fewer.
 #[pyfunction]
 fn chi_q_via_gp(
+    py: Python<'_>,
     lambda: Vec<usize>,
     n: usize,
     word: Vec<(i32, u32)>,
 ) -> Vec<(i32, String)> {
-    let poly = geck_pfeiffer::chi_lambda_via_geck_pfeiffer(&lambda, n, &word);
-    poly.terms
-        .into_iter()
-        .map(|(he, c)| (he, c.to_string()))
-        .collect()
+    // GIL release per `docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`.
+    // The Geck-Pfeiffer compute is fully Rust-side (no Python objects touched);
+    // releasing the GIL lets Python threads parallelise per-partition calls
+    // for the derived-χ catalogue sweep (≈ N× speedup on N-core boxes).
+    py.allow_threads(|| {
+        let poly = geck_pfeiffer::chi_lambda_via_geck_pfeiffer(&lambda, n, &word);
+        poly.terms
+            .into_iter()
+            .map(|(he, c)| (he, c.to_string()))
+            .collect()
+    })
+}
+
+/// **Batched** chi_q_via_gp — computes χ^λ(T_β) for all `shapes` from
+/// a SINGLE Geck-Pfeiffer reduction of the braid word. Per
+/// `docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md` Patch 2.
+/// The GP reduction is the expensive part (depends only on `(n, word)`,
+/// not on `λ`); sharing it across the partition loop gives
+/// ~O(p(n))× speedup vs calling `chi_q_via_gp` per partition.
+#[pyfunction]
+fn chi_lambdas_via_gp(
+    py: Python<'_>,
+    shapes: Vec<Vec<usize>>,
+    n: usize,
+    word: Vec<(i32, u32)>,
+) -> Vec<Vec<(i32, String)>> {
+    py.allow_threads(|| {
+        let polys = geck_pfeiffer::chi_lambdas_via_geck_pfeiffer(&shapes, n, &word);
+        polys
+            .into_iter()
+            .map(|poly| {
+                poly.terms
+                    .into_iter()
+                    .map(|(he, c)| (he, c.to_string()))
+                    .collect()
+            })
+            .collect()
+    })
 }
 
 /// **Littlewood-Richardson coefficient `c^λ_{μν}`.**
@@ -837,6 +871,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_q_word, m)?)?;
     m.add_function(wrap_pyfunction!(lr_coefficient, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_via_gp, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambdas_via_gp, m)?)?;
     m.add_function(wrap_pyfunction!(debug_reduced_basis, m)?)?;
     m.add_function(wrap_pyfunction!(chi_via_gp_hoefsmit, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_all_partitions_f64, m)?)?;

@@ -31,25 +31,32 @@
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Ref: [murasugi1996] ISBN 978-0-8176-3817-7
 -/
-import Mathlib.Data.Rat.Basic
+import Mathlib.Data.Rat.Defs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.NormNum
 
 namespace QOU.BraidsAndKnots
 
+/- §7c base-ring convention: these are pure algebraic identities with no
+   ordering and no `Real.*` constructs, so they are stated over a generic
+   `{R : Type*} [Field R]` rather than specialised to `ℚ`. `Field` (not
+   merely `CommRing`) is the weakest typeclass that admits the Kauffman
+   Laurent's genuine inverses (`1/q`, negative `q`-powers). `ℚ` is a
+   `Field`, so every existing call site still unifies. -/
+
 /-- The standard-irrep Borromean character in its q-rational form. -/
-def chi21_borromean_qform (q : ℚ) : ℚ :=
+def chi21_borromean_qform {R : Type*} [Field R] (q : R) : R :=
   (-q^12 + 3*q^10 - 3*q^8 + 4*q^6 - 3*q^4 + 3*q^2 - 1) / q^6
 
 /-- The standard-irrep Borromean character in its h-polynomial form,
     `2 − 3h⁴ − h⁶` with `h = q − q⁻¹` (written `q − 1/q`). -/
-def chi21_borromean_hform (q : ℚ) : ℚ :=
+def chi21_borromean_hform {R : Type*} [Field R] (q : R) : R :=
   2 - 3*(q - 1/q)^4 - (q - 1/q)^6
 
 /-- **The two published forms of `χ^{(2,1)}(β_Bor)` are equal** for every
-    non-zero rational `q`. Pure field identity. -/
-theorem chi21_borromean_qform_eq_hform (q : ℚ) (hq : q ≠ 0) :
+    non-zero `q` in any field. Pure field identity. -/
+theorem chi21_borromean_qform_eq_hform {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
     chi21_borromean_qform q = chi21_borromean_hform q := by
   unfold chi21_borromean_qform chi21_borromean_hform
   field_simp
@@ -58,8 +65,9 @@ theorem chi21_borromean_qform_eq_hform (q : ℚ) (hq : q ≠ 0) :
 /-- The h-form is purely even in `h = q − q⁻¹` (bar-invariant under
     `q ↦ q⁻¹`): replacing `q` by `q⁻¹` sends `h ↦ −h` and the even powers
     `h⁴, h⁶` are unchanged. Stated directly as invariance under `q ↦ 1/q`. -/
-theorem chi21_borromean_hform_bar_invariant (q : ℚ) (hq : q ≠ 0) :
+theorem chi21_borromean_hform_bar_invariant {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
     chi21_borromean_hform (1 / q) = chi21_borromean_hform q := by
+  have hq' : (1 : R) / q ≠ 0 := one_div_ne_zero hq
   unfold chi21_borromean_hform
   field_simp
   ring

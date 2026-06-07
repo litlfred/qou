@@ -841,6 +841,50 @@ pub fn chi_lambda_via_geck_pfeiffer(
     total
 }
 
+/// **Batched Geck-Pfeiffer character evaluation** — computes
+/// `χ^λ(T_β)(q)` for all `λ` in `shapes` from a SINGLE GP reduction
+/// of the braid word. Per
+/// `docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`
+/// Patch 2 — the GP reduction is the expensive part (~O(n^10)
+/// empirical) and depends only on `(n, word)`, not on `λ`. Sharing
+/// it across the partition loop gives O(p(n))× speedup vs calling
+/// `chi_lambda_via_geck_pfeiffer` per partition.
+///
+/// Returns `Vec<LaurentPolyQ>` indexed correspondingly to `shapes`.
+pub fn chi_lambdas_via_geck_pfeiffer(
+    shapes: &[Vec<usize>],
+    n: usize,
+    word: &[(i32, u32)],
+) -> Vec<LaurentPolyQ> {
+    use rayon::prelude::*;
+    // GP reduction ONCE for this (n, word) — the expensive part.
+    let basis_expansion = braid_to_hecke(n, word);
+    let reduced = reduce_basis_to_minimal_length(&basis_expansion);
+    // Pre-compute (cycle-type, coefficient) pairs from the reduced
+    // basis so we don't recompute `perm_cycle_type(w)` per shape.
+    let cycle_data: Vec<(Vec<usize>, LaurentPolyQ)> = reduced
+        .iter()
+        .map(|(w, c_w)| (perm_cycle_type(w), c_w.clone()))
+        .collect();
+    // Loop over shapes — Rayon-parallel so multi-core boxes get the
+    // shape-loop speedup on top of the shared GP reduction.
+    shapes
+        .par_iter()
+        .map(|lambda| {
+            let n_lambda: usize = lambda.iter().sum();
+            if n_lambda != n {
+                return LaurentPolyQ::zero();
+            }
+            let mut total = LaurentPolyQ::zero();
+            for (mu, c_w) in &cycle_data {
+                let chi_w = crate::seminormal_mn::chi_lambda_mn_qdef(lambda, mu);
+                total += &(c_w.clone() * chi_w);
+            }
+            total
+        })
+        .collect()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
