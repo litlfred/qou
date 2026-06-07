@@ -2077,7 +2077,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4357dab127d9",
+          "ts": "71c1beb65840"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Prose intro in section 'Variational equations and wavefronts'; previews the three categorical field equations + Dirac/wavefront blocks",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:53:02.195Z",
+        "reviewed_sha": "06f5c82adf1c64d6d6193c092f6106dd56a726e1",
+        "notes": "Pure section-intro exposition; correct section. (Marked _[draft]_ in prose but that is a voice/one-voice concern, not a fit issue.)"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T00:53:02.195Z"
 }
