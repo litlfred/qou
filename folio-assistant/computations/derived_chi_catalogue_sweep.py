@@ -247,8 +247,16 @@ def main() -> int:
     workers = args.workers if args.workers > 0 else (os.cpu_count() or 1)
 
     t0 = time.monotonic()
+    # Distinct witness name from the Phase 1+2 build script
+    # (`derived_chi_catalogue_build.py`, which owns
+    # `derived-chi-catalogue.witness.json` carrying the 12-cell T17 /
+    # Schur-Weyl cross-check). The production sweep emits the full 715-cell
+    # catalogue, so it gets its own `derived-chi-catalogue-sweep.witness.json`
+    # — otherwise the two producers clobber one file.
     wb = WitnessBuilder(
-        "derived-chi-catalogue", engine="pyhecke-native + python", start_time=t0
+        "derived-chi-catalogue-sweep",
+        engine="pyhecke-native + python",
+        start_time=t0,
     )
     wb.set_description(
         f"Phase 3 production isotope sweep (max-A={args.max_A}). "
