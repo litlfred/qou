@@ -2134,38 +2134,6 @@
         "evidence": "quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.ts:0: forward edge to prop:habiro-residue-sum-equivalence spans 152 manifest positions | quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.ts:0: forward edge to def:archimedean-realization-functor spans 58 manifest positions"
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "md": "b45d99d03e6c",
-          "ts": "da265e2b38ef",
-          "lean": "8b251a2192e9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "8f25b34708f6",
-          "script_commit_sha": "9bcdd4cdcb1168d55bcef7307d19add98deae960"
-        },
-        "reviewed_at": "2026-06-07T04:35:11.106Z",
-        "reviewed_sha": "9bcdd4cdcb1168d55bcef7307d19add98deae960",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 0,
-          "tanglement_score": 0,
-          "out_degree": 3,
-          "in_degree": 1,
-          "cone_size": 233,
-          "depth": 46,
-          "pagerank": 0.000189,
-          "edge_span_max": 152,
-          "edge_span_mean": 70.67,
-          "worst_target": ""
-        }
-      }
-    ],
     "detangler-topic-coherence": [
       {
         "field_hash": {
@@ -2184,7 +2152,39 @@
         "reviewed_at": "2026-06-07T04:50:22.937Z",
         "reviewed_sha": "8e315ca2cc049b1d869a7b31681ac98ac0873c57"
       }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "b45d99d03e6c",
+          "ts": "da265e2b38ef",
+          "lean": "8b251a2192e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2dc4e0b4dcad",
+          "script_commit_sha": "9abab946953ee1807044ca56a312ca371e1149c6"
+        },
+        "reviewed_at": "2026-06-07T04:58:08.431Z",
+        "reviewed_sha": "eb046edef4314c266e36974ce9af9496a53889f3",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 3,
+          "in_degree": 1,
+          "cone_size": 233,
+          "depth": 46,
+          "pagerank": 0.000189,
+          "edge_span_max": 152,
+          "edge_span_mean": 70.67,
+          "worst_target": ""
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-07T04:50:22.937Z"
+  "updated_at": "2026-06-07T04:58:08.431Z"
 }
