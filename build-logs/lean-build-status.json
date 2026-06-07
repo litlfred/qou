@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T21:58:35Z",
+  "generatedAt": "2026-06-07T08:31:36Z",
   "tool": "scripts/lean-build-all.sh",
   "summary": {
     "passed": 2,
@@ -11,7 +11,7 @@
       "paper": "fred2005-formal-groups",
       "target": "Fred2005",
       "status": "ok",
-      "elapsed_s": 7,
+      "elapsed_s": 8,
       "log": "fred2005-formal-groups.log",
       "failingModules": [],
       "errors": [],
@@ -21,18 +21,19 @@
       "paper": "quantum-observable-universe",
       "target": "QOU",
       "status": "fail",
-      "elapsed_s": 6724,
+      "elapsed_s": 6624,
       "log": "quantum-observable-universe.log",
       "failingModules": [
         "QOU.MathlibExt.PosSemidefTraceZero",
         "QOU.HeckeAlgebra.Formal",
         "QOU.HeckeAlgebra.QSubstrate",
+        "QOU.HeckeAlgebra.Wedderburn",
         "QOU.Archimedean.EmCouplingProjection",
         "QOU.Archimedean.TypeBFoldedCrystalCombinatorics",
         "QOU.Interactions.AlgebraicPrimality",
         "QOU.BraidKnot.ShellNeutrality",
         "QOU.Interactions.WedderburnMassFormula",
-        "QOU.HeckeAlgebra.Wedderburn",
+        "QOU.QuantumObservableUniverse.GaugeTheory",
         "QOU.Archimedean.PauliWitness.Witness12B",
         "QOU.Archimedean.PauliWitness.Witness11C",
         "QOU.Archimedean.PauliWitness.Witness12C",
@@ -42,15 +43,14 @@
         "QOU.Archimedean.PauliWitness.Witness10B",
         "QOU.Archimedean.PauliWitness.Witness9B",
         "QOU.Archimedean.PauliWitness.Witness8Li",
-        "QOU.QuantumObservableUniverse.GaugeTheory",
         "QOU.Interactions.BringShellBinding",
         "QOU.Archimedean.HeckeRep",
         "QOU.Interactions.HeckeEngine",
         "QOU.BraidKnot.Cl3Zeta5PslqIndependence",
         "QOU.BraidKnot.KnotIndexedConvolutionGrid",
         "QOU.BraidKnot.ChiralityWritheRibbon",
-        "QOU.BraidKnot.frobenius_antipode_unifies",
         "QOU.BraidKnot.MassFormulaCategorical",
+        "QOU.BraidKnot.frobenius_antipode_unifies",
         "QOU.BraidKnot.CommutativeCrossingEnergy",
         "QOU.Mathlib.NonAbelianStokes",
         "QOU.BraidKnot.BraidGroupNStrand",
@@ -58,11 +58,11 @@
         "QOU.BraidKnot.HoefsmitV21CosSymmetrization",
         "QOU.BraidKnot.QBetaCategoricalPrecisionLadder",
         "QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed",
-        "QOU.BraidKnot.TwoRowStratum",
         "QOU.BraidKnot.WitnessR5Full",
+        "QOU.BraidKnot.TwoRowStratum",
         "QOU.FlavorDressing",
-        "QOU.BraidKnot.GramSeminormalBlock",
         "QOU.BraidKnot.JetTowerUniformDeltaMax",
+        "QOU.BraidKnot.GramSeminormalBlock",
         "QOU.AppendixSurreals.B1SoftSharpnessTheorem",
         "QOU.AppendixSurreals.B1HyperbolicRowsTheorem",
         "QOU.AppendixSurreals.FigureEightCasimirWeight",
@@ -210,6 +210,39 @@
           "line": 97,
           "col": 4,
           "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
+          "file": "QOU/HeckeAlgebra/Wedderburn.lean",
+          "line": 60,
+          "col": 32,
+          "message": "unexpected token '\u03bb'; expected '_' or identifier"
+        },
+        {
+          "file": "QOU/HeckeAlgebra/Wedderburn.lean",
+          "line": 67,
+          "col": 5,
+          "message": "unexpected token '\u03bb'; expected '_' or identifier"
+        },
+        {
+          "file": "QOU/HeckeAlgebra/Wedderburn.lean",
+          "line": 73,
+          "col": 5,
+          "message": "unexpected token '\u03bb'; expected '_' or identifier"
+        },
+        {
+          "file": "QOU/HeckeAlgebra/Wedderburn.lean",
+          "line": 79,
+          "col": 10,
+          "message": "unexpected token '=>'; expected '[', '{', '|', '\u2983' or term"
+        },
+        {
+          "file": "QOU/HeckeAlgebra/Wedderburn.lean",
+          "line": 87,
+          "col": 10,
+          "message": "unexpected token '=>'; expected '[', '{', '|', '\u2983' or term"
         },
         {
           "message": "Lean exited with code 1"
@@ -614,34 +647,10 @@
           "message": "Lean exited with code 1"
         },
         {
-          "file": "QOU/HeckeAlgebra/Wedderburn.lean",
-          "line": 60,
-          "col": 32,
-          "message": "unexpected token '\u03bb'; expected '_' or identifier"
-        },
-        {
-          "file": "QOU/HeckeAlgebra/Wedderburn.lean",
-          "line": 67,
-          "col": 5,
-          "message": "unexpected token '\u03bb'; expected '_' or identifier"
-        },
-        {
-          "file": "QOU/HeckeAlgebra/Wedderburn.lean",
-          "line": 73,
-          "col": 5,
-          "message": "unexpected token '\u03bb'; expected '_' or identifier"
-        },
-        {
-          "file": "QOU/HeckeAlgebra/Wedderburn.lean",
-          "line": 79,
-          "col": 10,
-          "message": "unexpected token '=>'; expected '[', '{', '|', '\u2983' or term"
-        },
-        {
-          "file": "QOU/HeckeAlgebra/Wedderburn.lean",
-          "line": 87,
-          "col": 10,
-          "message": "unexpected token '=>'; expected '[', '{', '|', '\u2983' or term"
+          "file": "QOU/QuantumObservableUniverse/GaugeTheory.lean",
+          "line": 229,
+          "col": 2,
+          "message": "Type mismatch"
         },
         {
           "message": "Lean exited with code 1"
@@ -896,15 +905,6 @@
           "message": "Lean exited with code 1"
         },
         {
-          "file": "QOU/QuantumObservableUniverse/GaugeTheory.lean",
-          "line": 229,
-          "col": 2,
-          "message": "Type mismatch"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
           "file": "QOU/Interactions/BringShellBinding.lean",
           "line": 93,
           "col": 17,
@@ -1031,21 +1031,6 @@
           "message": "Lean exited with code 1"
         },
         {
-          "file": "QOU/BraidKnot/frobenius_antipode_unifies.lean",
-          "line": 22,
-          "col": 10,
-          "message": "Unknown identifier `\u2115`"
-        },
-        {
-          "file": "QOU/BraidKnot/frobenius_antipode_unifies.lean",
-          "line": 24,
-          "col": 14,
-          "message": "Unknown identifier `\u2115`"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
           "file": "QOU/BraidKnot/MassFormulaCategorical.lean",
           "line": 71,
           "col": 4,
@@ -1056,6 +1041,21 @@
           "line": 102,
           "col": 4,
           "message": "failed to compile definition, compiler IR check failed at `categoricalMassMeV`. Error: depends on declaration 'QOU.BraidKnot.MassFormulaCategorical.categoricalMass', which has no executable code; consider marking definition as 'noncomputable'"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
+          "file": "QOU/BraidKnot/frobenius_antipode_unifies.lean",
+          "line": 22,
+          "col": 10,
+          "message": "Unknown identifier `\u2115`"
+        },
+        {
+          "file": "QOU/BraidKnot/frobenius_antipode_unifies.lean",
+          "line": 24,
+          "col": 14,
+          "message": "Unknown identifier `\u2115`"
         },
         {
           "message": "Lean exited with code 1"
@@ -1204,6 +1204,15 @@
           "message": "Lean exited with code 1"
         },
         {
+          "file": "QOU/BraidKnot/WitnessR5Full.lean",
+          "line": 67,
+          "col": 2,
+          "message": "failed to generate projection `QOU.BraidKnot.StrictComplementarityCert.min_block_eig` for the 'Prop'-valued type `StrictComplementarityCert`, field must be a proof, but it has type"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
           "file": "QOU/BraidKnot/TwoRowStratum.lean",
           "line": 47,
           "col": 56,
@@ -1237,28 +1246,10 @@
           "message": "Lean exited with code 1"
         },
         {
-          "file": "QOU/BraidKnot/WitnessR5Full.lean",
-          "line": 67,
-          "col": 2,
-          "message": "failed to generate projection `QOU.BraidKnot.StrictComplementarityCert.min_block_eig` for the 'Prop'-valued type `StrictComplementarityCert`, field must be a proof, but it has type"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
           "file": "QOU/FlavorDressing.lean",
           "line": 27,
           "col": 0,
           "message": "invalid 'import' command, it must be used in the beginning of the file"
-        },
-        {
-          "message": "Lean exited with code 1"
-        },
-        {
-          "file": "QOU/BraidKnot/GramSeminormalBlock.lean",
-          "line": 159,
-          "col": 0,
-          "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
         },
         {
           "message": "Lean exited with code 1"
@@ -1298,6 +1289,15 @@
           "line": 67,
           "col": 19,
           "message": "Unknown identifier `\u211d`"
+        },
+        {
+          "message": "Lean exited with code 1"
+        },
+        {
+          "file": "QOU/BraidKnot/GramSeminormalBlock.lean",
+          "line": 159,
+          "col": 0,
+          "message": "failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'"
         },
         {
           "message": "Lean exited with code 1"
@@ -1957,11 +1957,6 @@
       ],
       "sorries": [
         {
-          "file": "QOU/Archimedean/TorusKnotGenusFourUnique.lean",
-          "line": 57,
-          "col": 8
-        },
-        {
           "file": "QOU/BraidKnot/ShellNeutrality.lean",
           "line": 127,
           "col": 15
@@ -2002,7 +1997,7 @@
       "paper": "unital-groebner-bases",
       "target": "UGB",
       "status": "ok",
-      "elapsed_s": 6,
+      "elapsed_s": 7,
       "log": "unital-groebner-bases.log",
       "failingModules": [],
       "errors": [],
