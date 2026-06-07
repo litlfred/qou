@@ -76,13 +76,13 @@ cache-index.json                              ← master index (regen recipe)
   "generated_at": "2026-06-07T03:00:00Z",
   "olean_count": 3019,
   "regen_steps": [
-    {"kind": "compute_hashes", "input_glob": "**.olean", "output_suffix": ".hash"},
-    {"kind": "touch_trace",    "input_glob": "**.olean", "output_suffix": ".trace"},
+    {"kind": "compute_hashes", "input_glob": "**/*.olean", "output_suffix": ".hash"},
+    {"kind": "touch_trace",    "input_glob": "**/*.olean", "output_suffix": ".trace"},
     {"kind": "emit_lake_manifest_stub", "output": "lake-manifest.json", "data": { ... }}
   ],
   "stripped": [
-    ".git/", "bin/cache", "ir/*.c", "**.ilean",
-    "**.hash", "**.trace", "**.json"
+    ".git/", "bin/cache", "ir/*.c", "**/*.ilean",
+    "**/*.hash", "**/*.trace", "**/*.json"
   ]
 }
 ```
