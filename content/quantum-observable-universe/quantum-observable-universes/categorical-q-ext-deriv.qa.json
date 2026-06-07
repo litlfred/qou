@@ -2010,7 +2010,56 @@
         "reviewed_sha": "13b8d8d724362bdc92721eb5860e014f6e2100a8",
         "notes": "Correctly on algebraic side of wall."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "a1b949ae8e1a",
+          "ts": "cba5dd34a9b3",
+          "lean": "70607ab2d9fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "a1b949ae8e1a",
+          "ts": "cba5dd34a9b3",
+          "lean": "70607ab2d9fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "home_chapter": "quantum-observable-universes",
+          "home_score": 1,
+          "top_other_chapter": "quantum-universes",
+          "top_other_score": 1
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-05T18:40:06.879Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

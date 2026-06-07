@@ -2569,7 +2569,52 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "40b474a40cb3",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 229,
+          "fwd_edge_count": 3,
+          "worst_span": 128
+        },
+        "severity": "major",
+        "evidence": "quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.ts:0: forward edge to def:fermion-boson-decomposition spans 80 manifest positions | quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.ts:0: forward edge to def:quantum-planck-constant spans 21 manifest positions | quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.ts:0: forward edge to ex:q-reeb-flow spans 128 manifest positions"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "40b474a40cb3",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }
