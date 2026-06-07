@@ -81,6 +81,20 @@ class CrystalGraphRealization (n : ℕ) where
 The `sorry` lives only in an *instance* of this class (the conjectural
 witness), per CLAUDE.md §3b — not in any downstream theorem.
 
+> **Implementation note (divergence from the snippet above).** The
+> shipped `GSReductionOrder.lean` realises this plan with two
+> deliberate adjustments, so the snippet is a design sketch rather
+> than the literal source:
+> 1. **`GSWord` is unparameterised** (`abbrev GSWord : Type := List ℕ`),
+>    with the strand count `n` left implicit in the word's contents,
+>    rather than the indexed `GSWord n` written above.
+> 2. **`confinementLevel` is a class field, not free.** In the snippet
+>    `order_match` references a `confinementLevel` that is not bound in
+>    scope; the shipped class (`GSOrderMatch R q`) abstracts the
+>    normal-form type as a field `NormalForm : Type u` and carries both
+>    `confinementLevel : NormalForm → ℕ` and `crystalDeg : NormalForm → ℕ`
+>    as fields, with `order_match : ∀ T, crystalDeg T = confinementLevel T`.
+
 ### Layer 2 — downstream conditional theorems (upgrade the `True` stubs)
 
 The three existing `[CrystalGraphRealization] : True` theorems become
