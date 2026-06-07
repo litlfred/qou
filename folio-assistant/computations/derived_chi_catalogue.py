@@ -57,6 +57,19 @@ Tier = Literal["derived", "cal-anchored", "extracted"]
 wire as a prediction; the other two are cached and audited but never
 counted toward an L2 pass."""
 
+QConvention = Literal["kauffman", "kassel"]
+"""Variable convention for the stored `chi_lambda_q_laurent`:
+
+  - `kauffman` — the Rust / pyhecke_native canonical (Kauffman bracket
+    `t = q²`); degrees are integer for every (knot, partition).
+  - `kassel`   — the skein-relation convention used by the sympy
+    R-matrix build (degrees half the Kauffman ones; can be
+    half-integer in pathological cases — kept only for legacy cells
+    derived via sympy before the Phase 3 migration).
+
+Production-derived cells are always `kauffman` (the Rust backend uses
+this natively). Consumers must respect the convention recorded here."""
+
 
 # ── Per-cell record ────────────────────────────────────────────────
 
@@ -137,6 +150,11 @@ class KnotPartitionAtomCell:
     """Citation: commit-sha or audit-doc path of the structural
     derivation (R-matrix script for `derived` cells; CODATA-extraction
     audit for `cal-anchored`). Required for every cell."""
+
+    q_convention: QConvention = "kauffman"
+    """Variable convention for `chi_lambda_q_laurent` (see `QConvention`
+    docstring). Defaults to `kauffman` (Rust / pyhecke_native native);
+    legacy sympy R-matrix cells from before Phase 3 may carry `kassel`."""
 
     notes: str = ""
     """Optional human notes (open caveats, partial derivations, etc.)."""
@@ -252,6 +270,7 @@ class DerivedChiCatalogue:
                     "y_lambda_at_zero": c.y_lambda_at_zero,
                     "y_star_shadow_price": c.y_star_shadow_price,
                     "tier": c.tier,
+                    "q_convention": c.q_convention,
                     "derivation_ref": c.derivation_ref,
                     "notes": c.notes,
                 }
@@ -321,6 +340,7 @@ def load_catalogue() -> DerivedChiCatalogue:
                 if c.get("y_star_shadow_price") is not None else None
             ),
             tier=c["tier"],
+            q_convention=c.get("q_convention", "kauffman"),
             derivation_ref=c["derivation_ref"],
             notes=c.get("notes", ""),
         ))
