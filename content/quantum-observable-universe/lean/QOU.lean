@@ -111,3 +111,8 @@ import QOU.QBeta.RationalCoeffRecurrence
 -- Hecke σ₀²=hσ₀+1, Markov reduction tr(x·σ₁)=z·tr(x)); cross-checked vs
 -- `gram.py` / `pyhecke.trace_formal`. Was an orphan under `Machinery/`.
 import QOU.Machinery.MarkovTraceOnHecke
+-- Lean schema for the 3-axis (knot, partition, atom) derived-χ catalogue
+-- (Python: `derived_chi_catalogue.py`, PR #1952). Type-level cell record +
+-- §3b-cond R-matrix-derivation provenance classes; 0 sorries. Was an
+-- orphan under `Machinery/` (not imported ⇒ never built by CI).
+import QOU.Machinery.DerivedCharacterCatalogue
