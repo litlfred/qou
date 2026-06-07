@@ -66,8 +66,9 @@ sorry-free.
 **Structural insight from the vanishing-at-1 theorem.** All three
 blocks have a $(q^2 - 1)$ factor, so each contributes at order $w$
 or higher in the Taylor expansion around $q = 1$, where $w = q - 1$.
-The per-block $\varepsilon^1$-order coefficients (from the witness's
-`taylor_coefficients_per_block_`$\varepsilon$`_order` field) are
+The per-block $\varepsilon^1$-order coefficients (witness key
+`taylor_coefficients_per_block_*_order`, where `*` is the Greek letter
+$\varepsilon$) are
 $\{(3): -2, (2,1): -1, (1,1,1): -2\}$. The shared $-2$ at order $w$
 between the $(3)$ and $(1,1,1)$ blocks is the algebraic signature
 of the antipode pairing — under $q \mapsto 1/q$, the order-$w$
