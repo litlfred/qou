@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-07T16:23:02.549115+00:00",
-  "commitSha": "03517a5e43b2f7d6f7da9ec741f4ba7b1eb7a7b0",
+  "computedAt": "2026-06-07T16:33:25.572429+00:00",
+  "commitSha": "38c702feb491aeee7bea215cb83542a1e48c2876",
   "assertions": [
     {
       "name": "bar_symmetry_identity_holds",
@@ -16,8 +16,8 @@
   "durationMs": 24,
   "computation": "derived-chi-catalogue-bar-symmetry-audit",
   "scriptFile": "derived_chi_catalogue_bar_symmetry_audit.py",
-  "scriptHash": "e47891925bd3",
-  "scriptCommitSha": "f76d6fb0e8a432dd325e6a9e5c071b3ddad0ff5c",
+  "scriptHash": "18efb2d89d9d",
+  "scriptCommitSha": "7d3351311104106fb9464799a1a8b36baaed3cff",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

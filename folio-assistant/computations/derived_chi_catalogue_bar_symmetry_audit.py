@@ -69,36 +69,47 @@ def conjugate_partition(lam: tuple[int, ...]) -> tuple[int, ...]:
 
 def laurent_substitute_bar(
     pairs: list[tuple[int, str]],
+    *,
+    is_half_exp: bool | None = None,
 ) -> list[tuple[int, str]]:
     """Apply q → −q⁻¹ to a Laurent-in-q polynomial. Handles BOTH
-    catalogue encodings the PR #1952 cells use (auto-detected per cell):
+    catalogue encodings the PR #1952 cells use:
 
-      - **direct encoding** (Phase-2 sympy cells like trefoil χ⁽²⁾ = q³):
-        key d = math q-exponent. Substitution gives `c · (−1)^d · q^{−d}`,
-        new term = `(−d, c · (−1)^d)`.
+      - **direct encoding** (Phase-2 sympy cells like Hopf χ⁽²⁾ = q²
+        and trefoil χ⁽²⁾ = q³): key d = math q-exponent. Substitution
+        gives `c · (−1)^d · q^{−d}`, new term = `(−d, c · (−1)^d)`.
 
       - **half-exponent encoding** (Phase-3 pyhecke_native cells, as
         flagged by Copilot on PR #1952): key d = 2 · math q-exponent,
         so the true math q-exp is k = d/2 and substitution gives
         `c · (−1)^k · q^{−d/2}`, i.e. new term = `(−d, c · (−1)^{d/2})`.
         Verified by `chi_q_via_gp([2], 2, [(1,1)])` returning
-        `[(2, '1')]` for the math polynomial q¹ (single positive crossing).
+        `[(2, '1')]` for the math polynomial q¹.
 
-    Detection rule: if ANY key in the polynomial is odd, the encoding
-    MUST be direct (half-exp keys are always even). Otherwise we treat
-    the polynomial as half-exp — the typical case for pyhecke_native
-    cells. This means polynomials that happen to be even-only stay
-    correct under either interpretation because all the resulting
-    factors are `+1` for `k` even.
+    ## `is_half_exp` parameter (Gemini review on PR #1979)
 
-    For the trefoil χ⁽²⁾ = q³ (Phase-2) case: keys = (3,), all odd, so
-    we use direct encoding. The (−1)^3 factor gives the trefoil sign
-    rep χ⁽¹,¹⁾ = −q⁻³ exactly — matching the catalogue's stored value.
+    Callers SHOULD pass `is_half_exp` explicitly (it's a property of the
+    cell's source / `q_convention`, not of its key values). The previous
+    auto-detect heuristic (`all even keys ⇒ half-exp`) misclassifies
+    direct-encoded polynomials whose math exponents happen to be all
+    even, such as Hopf χ⁽²⁾(σ_1²) = q² which is direct-encoded with
+    key 2 but would be wrongly read as half-exp = math q¹.
+
+    `is_half_exp = None` (the default) keeps the legacy auto-detect
+    behaviour and is safe ONLY when the caller knows the polynomial
+    contains at least one odd math exponent or has confirmed the cell
+    is pyhecke-emitted. The bar audit now resolves this explicitly via
+    the per-cell `q_convention` field; pass `None` only as a fallback.
     """
-    all_even = all(d % 2 == 0 for (d, _c) in pairs)
+    if is_half_exp is None:
+        # Legacy auto-detect — kept for callers that haven't migrated
+        # to the explicit parameter yet. Documented obstruction: direct-
+        # encoded polynomials with all-even math exponents are
+        # misclassified as half-exp here. Per Gemini review on PR #1979.
+        is_half_exp = all(d % 2 == 0 for (d, _c) in pairs)
     out: list[tuple[int, str]] = []
     for (d, c) in pairs:
-        if all_even:
+        if is_half_exp:
             # Half-exp encoding: true math q-exp is d/2.
             sign = 1 if ((d // 2) % 2 == 0) else -1
         else:
@@ -141,10 +152,37 @@ def main() -> int:
     cat = load_catalogue()
     print(f"  catalogue: {len(cat.cells)} cells")
 
-    # Group cells by atom
-    by_atom: dict[str, dict[tuple[int, ...], list[tuple[int, str]]]] = {}
+    # Group cells by atom, carrying the per-cell `q_convention` so the
+    # bar substitution can be passed an explicit `is_half_exp` instead of
+    # relying on the (heuristic, can-misclassify) auto-detect path. Per
+    # Gemini review on PR #1979: callers SHOULD pass `is_half_exp`
+    # explicitly since direct-encoded polynomials whose math exponents
+    # happen to be all-even (e.g. Hopf χ⁽²⁾ = q²) are misclassified by
+    # the auto-detect.
+    #
+    # Mapping: `q_convention == 'kauffman'` is the production pyhecke
+    # output ⇒ half-exponent encoding. `'kassel'` is the legacy direct
+    # encoding. Catalogue cells emitted by the Phase-2 sympy build are
+    # tagged 'kauffman' but actually store direct encoding (schema
+    # tagging inconsistency to be addressed in a separate PR). To stay
+    # robust against this, we ALSO fall back to the legacy heuristic
+    # via `is_half_exp=None` when the cell is tagged 'kauffman' but
+    # contains odd keys (impossible under genuine half-exp).
+    by_atom: dict[
+        str,
+        dict[tuple[int, ...], tuple[list[tuple[int, str]], bool | None]],
+    ] = {}
     for cell in cat.cells:
-        by_atom.setdefault(cell.atom, {})[cell.partition] = cell.chi_lambda_q_laurent
+        if cell.q_convention == "kassel":
+            cell_is_half_exp: bool | None = False
+        else:
+            # 'kauffman' ⇒ should be half-exp. If any odd key sneaks in,
+            # fall back to auto-detect to avoid silently flipping signs.
+            has_odd = any(d % 2 != 0 for (d, _c) in cell.chi_lambda_q_laurent)
+            cell_is_half_exp = None if has_odd else True
+        by_atom.setdefault(cell.atom, {})[cell.partition] = (
+            cell.chi_lambda_q_laurent, cell_is_half_exp,
+        )
 
     # For each atom, enumerate λ, λᵀ pairs and test the identity
     pairs_tested = 0
@@ -156,7 +194,7 @@ def main() -> int:
 
     for atom, parts in by_atom.items():
         seen: set[tuple[int, ...]] = set()
-        for lam, chi_lam in parts.items():
+        for lam, (chi_lam, is_half_exp) in parts.items():
             if lam in seen:
                 continue
             lam_T = conjugate_partition(lam)
@@ -166,8 +204,8 @@ def main() -> int:
                 continue
             if lam_T not in parts:
                 continue  # incomplete catalogue coverage; skip
-            chi_lam_T = parts[lam_T]
-            predicted = laurent_substitute_bar(chi_lam)
+            chi_lam_T, _ = parts[lam_T]
+            predicted = laurent_substitute_bar(chi_lam, is_half_exp=is_half_exp)
             if laurent_equal(predicted, chi_lam_T):
                 pairs_match_positive += 1
             elif laurent_equal(laurent_negate(predicted), chi_lam_T):
