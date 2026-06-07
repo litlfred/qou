@@ -2864,7 +2864,99 @@
         "reviewed_sha": "1bfe181c4ed795e767f046409e9a1c6cc396c3d2",
         "notes": "Algebraic proof, no wall crossing."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "73fe3a86a975",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.88,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:07:32.848Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Plan clear: bar involution s<->1/s sends 1/phi (root of s^2+s-1) to phi (root of s^2-s-1); squaring gives 1/phi^2 <-> phi^2. md proof is a direct reciprocal-root computation."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "73fe3a86a975",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:07:32.886Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Fully sorry-free: phiInv_min_poly, phi_min_poly, phi_mul_phiInv, qGold_mul_qGoldDual all real (field_simp/nlinarith); headline golden_skew_dual_node conjunction (q_gold*q*=1 + the two min polys) faithful to the md bar-pairing. q_in_classical_band helper also proven."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "73fe3a86a975",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:07:32.921Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Standard golden-ratio bar-duality (reciprocal nodes phi^-2/phi^2); the skew-dual / two-sided stability-margin framing is useful exposition but conventional algebra."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "73fe3a86a975",
+          "ts": "9db3d20a1948",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:07:32.957Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "lean.ref qou:QOU.Archimedean.golden_skew_dual_node present and sorry-free; conjunction faithfully encodes the md node-pairing (q_gold*q_goldDual=1) + minimal polynomials. Not vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:07:32.957Z"
 }

@@ -2691,7 +2691,100 @@
         "reviewed_sha": "7a691cda7086b591756cc3385317be99798fdcf6",
         "notes": "Algebraic proof, no archimedean machinery."
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "12a9d766d864",
+          "ts": "757f77a289f4",
+          "lean": "f6ffeb7586b6"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:06:25.567Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "AXIOM-BACKED + unsound: theorem gauge_coupling_uniqueness := gauge_coupling_uniqueness_axiom, and 'axiom gauge_coupling_uniqueness_axiom (S:SpectralRing) : forall phi psi, (exists p, phi r = p*r) -> (exists p', psi r = p'*r) -> exists lambda, phi r = lambda*psi r'. As stated this is FALSE when psi is mult-by-0 and phi is mult-by-nonzero (no lambda gives p*r = lambda*0*r). The corollary content is reasonable but the Lean is an unconditional axiom of an unsound proposition (lacks a nonzero/non-divisor hypothesis on psi)."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "12a9d766d864",
+          "ts": "757f77a289f4",
+          "lean": "f6ffeb7586b6"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.75,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:06:25.604Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "md proof clear: a scalar coupling factors through a singlet summand; completeness gives exactly one (V_- = 1, rank 1) with projection e_-; any braid-invariant R-linear phi vanishing on V_+ equals lambda*tr_tau(e_-) on e_-. Concise."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "12a9d766d864",
+          "ts": "757f77a289f4",
+          "lean": "f6ffeb7586b6"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0.3,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:06:25.641Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Key Lean is an 'axiom' (auto-extracted single-sorry) => ~0.3 per rubric; compounded by the axiom statement being false in the p'=0 degenerate case. Has a verified sympy probe witness, but the formal proof is axiomatic."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "12a9d766d864",
+          "ts": "757f77a289f4",
+          "lean": "f6ffeb7586b6"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:06:25.678Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Standard 'unique singlet => unique scalar coupling up to scalar' corollary of spectral completeness; conventional representation-theory argument."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:06:25.678Z"
 }

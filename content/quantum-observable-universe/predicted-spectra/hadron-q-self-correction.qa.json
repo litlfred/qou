@@ -2657,7 +2657,100 @@
         "reviewed_sha": "ee7def07c60226fb8401998196cd30225683227f",
         "notes": "No wall violation."
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "cae77d3b6727",
+          "ts": "5279cde91f9e",
+          "lean": "4bec3f13e54c"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:08:59.569Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "NON-COMPILING .lean: three theorem heads are COMMENTED OUT leaving dangling top-level proof bodies with no declaration: line 62 'deltaQ q0 p n <= 0 := by ...' (head 'theorem deltaQ_neg_neutron_rich ... -- (archimedean; not meaningful over R_q)' commented), line 91 '0 <= differentialShift q0 A := by ...', line 124 '1 < qEff q0 p n := by ...'. A bare 'expr := by' is not valid top-level Lean syntax -> file does not compile. The ref'd def hadron_q_self_correction (line 131) is itself fine but cannot be soundly built while the file is broken; the 3 substantive theorems are effectively absent."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "cae77d3b6727",
+          "ts": "5279cde91f9e",
+          "lean": "4bec3f13e54c"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:08:59.605Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "md plan clear: q is a field; hadron self-deforms it by signed crossing excess deltaQ = l_net/A^2 * hbar_q^2, l_net = C(p,2)-C(n,2); differential shift across beta decay = (A-1)/A^2 hbar_q^2 > 0. Well-motivated (weights q / q^-1 / (q+q^-1)/2 on pp/nn/pn crossings)."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "cae77d3b6727",
+          "ts": "5279cde91f9e",
+          "lean": "4bec3f13e54c"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.45,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:08:59.639Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "The intended theorems (deltaQ<=0 neutron-rich, differentialShift>=0, qEff>1) have real proof bodies (omega/positivity/nlinarith) and differentialShift_small/qPrefactor compile, but the file is broken (commented-out theorem heads, see integrity) so the substantive sign/positivity results do not actually build. Mixed."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "cae77d3b6727",
+          "ts": "5279cde91f9e",
+          "lean": "4bec3f13e54c"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:08:59.674Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Self-deformation of the substrate field by nuclear linking density (l_net/A^2) is a reasonable back-reaction idea; the C(p,2)-C(n,2) signed-crossing excess is a natural but not novel construction."
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T06:08:59.674Z"
 }

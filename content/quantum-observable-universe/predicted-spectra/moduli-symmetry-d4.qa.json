@@ -2866,7 +2866,99 @@
         "reviewed_sha": "beece88290ed89594a189e5f1e9347af979298b1",
         "notes": "All proof steps are purely algebraic."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.88,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:11:33.170Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Plan clear: sigma:q->iq, tau:q->q^-1 generate D_4 via sigma^4=tau^2=(sigma tau)^2=id; the dihedral commutation tau sigma tau=sigma^-1 verified explicitly. Golden octet = D_4-orbit of phi; octet = roots of z^8-7z^4+1. Direct computation proof."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "score": {
+          "value": 0.85,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:11:33.207Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "Fully sorry-free: sigma_pow_four (I*I=-1), tau_pow_two, sigma_tau_involution (real complex-arithmetic via I_inv=-I, mul_inv_cancel0), headline moduli_symmetry_d4 conjunction of the 3 dihedral relations. NOTE Lean proves the relations but not the faithfulness (sigma genuinely order 4) nor the golden-octet orbit / z^8-7z^4+1 factorisation - faithful but partial vs md."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.55,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:11:33.378Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "D_4 action on the moduli line and the golden octet are standard group theory; the observation that Z[i] (not Z) is the natural ring of definition for the Mobius family is a mildly novel structural point."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "77cae42d7dfb",
+          "ts": "b854d2bc9a1c",
+          "lean": "10bb4b4cd067"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/proof-integration-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/proof-integration-watcher"
+        },
+        "reviewed_at": "2026-06-07T06:11:33.478Z",
+        "reviewed_sha": "4e961c6c457cf2aaa28e91304a917b1bcfdf2afe",
+        "notes": "lean.ref ...ModuliSymmetryD4.moduli_symmetry_d4 present and sorry-free; conjunction (sigma^4=id, tau^2=id on C*, (sigma tau)^2=id) faithfully encodes the md dihedral relations. Not vacuous. Octet/faithfulness coverage gap noted under plausibility."
+      }
     ]
   },
-  "updated_at": "2026-06-05T15:18:08.611Z"
+  "updated_at": "2026-06-07T06:11:33.478Z"
 }
