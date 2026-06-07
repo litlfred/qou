@@ -1857,7 +1857,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Remark sits in sec:qu-structures immediately after poisson-object; it interprets the internal Poisson object via the HKR isomorphism — on-topic for QU structures; no sibling carries the same content.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:34:44.853Z",
+        "reviewed_sha": "bad1ec6ec79e12bc3b2ff945c80e0aab9cc269b8",
+        "notes": "Well-placed interpretive remark; Mod(F_p) model is a worked specialisation, not a misfile."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T00:34:44.853Z"
 }
