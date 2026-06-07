@@ -42,7 +42,7 @@ evaluation, per
 ## The Borromean Bloch-group element
 
 Per
-[`rem:quantum-bloch-group`](#rem:quantum-bloch-group) and the
+[`def:quantum-bloch-group`](#def:quantum-bloch-group) and the
 classical Bloch-Suslin construction:
 
 - The Borromean complement decomposes into 8 ideal octahedra, each
@@ -175,7 +175,7 @@ class BorromeanBlochGroupElement
 - Sibling Cluster C item:
   [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15)
 - The quantum Bloch group:
-  [`rem:quantum-bloch-group`](#rem:quantum-bloch-group)
+  [`def:quantum-bloch-group`](#def:quantum-bloch-group)
 - The motivic-period framing:
   [`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period)
 - The volume = regulator identity:
