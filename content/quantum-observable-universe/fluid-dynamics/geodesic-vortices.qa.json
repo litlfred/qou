@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "q-energy functional + geodesic vortex filaments in sec:q-hydrodynamics (Ch10 §1a scope: brane fluid + q-deformed hydrodynamics)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:32:57.234Z",
+        "reviewed_sha": "04dd0957030b11c89ee54f501d012ff098670771",
+        "notes": "Vortex-filament variational content; no sibling carries the same claim; well-placed."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T00:32:57.234Z"
 }
