@@ -1,0 +1,36 @@
+{
+  "$schema": "lake-cache-index/v1",
+  "package": "Qq",
+  "toolchain": "v4-24-0",
+  "source_commit": "f620c34c37e284bf09c5af3103aec1dd273d592d",
+  "package_rev": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+  "package_url": "https://github.com/leanprover-community/quote4",
+  "olean_count": 13,
+  "regen_steps": [
+    {
+      "kind": "decompress_xz",
+      "input_glob": "**/*.olean.xz",
+      "remove_input": true,
+      "note": "xz -d on each .olean.xz to produce .olean"
+    },
+    {
+      "kind": "compute_hashes",
+      "input_glob": "**/*.olean",
+      "output_suffix": ".hash",
+      "algorithm": "sha256-12hex"
+    },
+    {
+      "kind": "touch_trace",
+      "input_glob": "**/*.olean",
+      "output_suffix": ".trace"
+    }
+  ],
+  "stripped": [
+    ".git",
+    "ir",
+    "cache",
+    "**/*.hash",
+    "**/*.ilean",
+    "**/*.trace"
+  ]
+}
