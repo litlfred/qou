@@ -2566,7 +2566,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e",
+          "lean": "fc55d1334592"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Explicit-computation prop with 'What this establishes' + 'Open' sections embedded in-block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:58:15.709Z",
+        "reviewed_sha": "ba5c6cb822b3b3a4121eadb5b9d98b89fd78d939",
+        "notes": "Computation narrative is largely statement; 'Open' identification-task prose is borderline interpretive"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e",
+          "lean": "fc55d1334592"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Explicit d1,d2 on H_3(q) matching the 6-term mass-tower structure; fits mass-theory",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:58:15.753Z",
+        "reviewed_sha": "ba5c6cb822b3b3a4121eadb5b9d98b89fd78d939",
+        "notes": "Concrete single-nucleon spectral-sequence computation; complements e-infinity-page-identifications"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e",
+          "lean": "fc55d1334592"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Prose asserts generic R but title+displayed homology use ℝ[q,q⁻¹] (lines 72,108,139); no §7c banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:58:15.798Z",
+        "reviewed_sha": "ba5c6cb822b3b3a4121eadb5b9d98b89fd78d939",
+        "notes": "Regime mixing without flagging which side; closing note says no numeric eval until q→q0, so likely cosmetic ℝ"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e",
+          "lean": "fc55d1334592"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof is symbolic linear algebra over ground ring; no linarith/IVT/Real.* used; eval deferred to q→q0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:58:15.844Z",
+        "reviewed_sha": "ba5c6cb822b3b3a4121eadb5b9d98b89fd78d939",
+        "notes": "Method is algebraic (Yang-Baxter rewriting, eigenvalue homology); matches generic side despite ℝ-coeff notation"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T01:58:15.844Z"
 }
