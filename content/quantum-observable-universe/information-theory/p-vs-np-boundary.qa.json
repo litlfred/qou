@@ -1992,7 +1992,95 @@
         "reviewed_at": "2026-06-02T19:35:56.961Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d9df43d29732",
+          "ts": "d4b902c48a21",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "P-vs-NP-as-jet-horizon-opacity; lives in info-theory P-vs-NP-boundary section (p-vs-np-boundary-intro sibling)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:46:32.163Z",
+        "reviewed_sha": "fea86ceac481e87fd81b3a28921d4bba778856f3",
+        "notes": "Primary subject (computational horizon / complexity) is the section topic; no sibling carries the same claim."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d9df43d29732",
+          "ts": "d4b902c48a21",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "'What each case means geometrically', 'Parallel with the jet horizon', 'Connection to quantum computation' sections embed interpretive prose; no companion interprets: remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:46:32.201Z",
+        "reviewed_sha": "fea86ceac481e87fd81b3a28921d4bba778856f3",
+        "notes": "Substantive geometric/physical interpretation co-located with the conjecture statement rather than in a linked remark; borderline since framed as equivalent criteria."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d9df43d29732",
+          "ts": "d4b902c48a21",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Opening §7c banner: 'archimedean specialisation over R ... combinatorial content stays generic'; q_0 in G_m^nt(R) usage explicitly flagged",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:46:32.235Z",
+        "reviewed_sha": "fea86ceac481e87fd81b3a28921d4bba778856f3",
+        "notes": "Real-q / over-R hypotheses present but properly banner'd per §7c; algebraic content kept generic."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d9df43d29732",
+          "ts": "d4b902c48a21",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No **Proof.** body in .md (conjecture-style statement of equivalent criteria); §7c banner present",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:46:32.270Z",
+        "reviewed_sha": "fea86ceac481e87fd81b3a28921d4bba778856f3",
+        "notes": "No archimedean-only proof machinery; specialisation point named in opening banner."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T12:46:32.270Z"
 }
