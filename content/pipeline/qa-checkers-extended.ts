@@ -1565,9 +1565,15 @@ export function checkDetanglerBlockTanglement(
   const thisChapter = relPath.split(/[\\/]/)[0];
   const thisIdx = _chapterOrder.get(thisChapter) ?? 999;
 
-  // Count forward refs emitted (uses[] targets in later chapters)
-  const uses = [...content.matchAll(/"((?:def|prop|thm|lem|cor|conj|rem|ex|prf|sim|tbl):[\w-]+)"/g)]
-    .map(m => m[1]);
+  // Count forward refs emitted: LOGICAL dependencies (`uses[]`) whose
+  // target lives in a later chapter. Use the parsed `_usesGraph`
+  // adjacency, NOT a raw label scan of the whole .ts — the latter also
+  // matches `examples:` / `cites:` / `interprets:` pointers, which are
+  // illustrative/back-references, not logical forward dependencies, and
+  // over-count the tangle (e.g. a prop listing later-chapter example
+  // remarks is not a dependency tangle). Consistent with the
+  // graph-energy and no-forward-ref checkers, which key off `uses[]`.
+  const uses = _usesGraph?.get(label) ?? [];
   let fwdEmitted = 0;
   const hits: CheckerHit[] = [];
   for (const u of uses) {
