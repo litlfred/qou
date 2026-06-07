@@ -129,11 +129,12 @@ def borromeanRings : BraidWord where
 
 /-- The hyperbolic volume of the figure-eight knot (4₁).
     Exact: 3 · Cl₂(π/3) where Cl₂ is the Clausen function.
-    Value: 2.02988321281931 (SnapPy / Bloch-Wigner dilogarithm,
-    OEIS A091518). -/
+    Value: 2.029883212819307250042408 (OEIS A091518, 24 dps verified;
+    previous 15-dps literal `2.02988321281931 ± 1×10⁻¹⁴` bumped
+    2026-06-07). -/
 noncomputable def vol_figure_eight : HyperbolicVolume where
-  value := 2.02988321281931
-  error_bound := 1e-14
+  value := 2.029883212819307250042408
+  error_bound := 1e-24
   error_nonneg := by norm_num
 
 /-- The trefoil is a torus knot and has zero hyperbolic volume. -/
