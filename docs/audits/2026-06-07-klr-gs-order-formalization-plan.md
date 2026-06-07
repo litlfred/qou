@@ -112,25 +112,37 @@ conjecture chain to the single axiom (★).
 
 ## 3. What this PR delivers
 
-**Now (verified by reading, no build needed):**
 - This design doc: the architecture, the layer decomposition (0–2
   buildable, 3 the Mathlib gap), and the precise single sorry-kernel (★).
-- The Lean scaffold for Layers 0–2 (substantive class + GS combinatorics
-  + upgraded conditional theorems) is authored to Mathlib idiom and
-  staged, **gated on a working build**: `elan`/`lake` are not installed
-  in the authoring sandbox (no `~/.elan`), and the repo discipline
-  (CLAUDE.md §"establish LSP feedback first") forbids committing
-  unverified Lean. A background Lean-env setup (elan + `lake-cache`
-  restore) was launched in parallel; the scaffold lands **only after it
-  type-checks**. If that env cannot be obtained (network-blocked), the
-  scaffold is the immediate next step for any session with `lake`
-  access, and this doc is its complete specification.
+- The Lean scaffold:
+  [`QOU/BraidKnot/GSReductionOrder.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/GSReductionOrder.lean)
+  — a new **additive** module (registered in the `BraidKnot` aggregator):
+  - **Layer 0**: `GSWord := List ℕ`, the `Step` rewriting relation
+    (hecke / far-commutativity / Yang–Baxter), the `Reduced` predicate,
+    and the machine-checked `h3_nf_card : 3! = 6` anchor.
+  - **Layer 1**: the substantive `class GSOrderMatch R q` whose
+    `order_match` field **is** the axiom (★) (`crystalDeg = confinementLevel`
+    on every normal form), with the unconditional downstream lemma
+    `confinement_eq_crystalDeg` and a `PUnit` `trivialModel` consistency
+    witness.
+  - It deliberately does **not** modify the existing
+    `CrystalGraphRealization R q` class (whose importers
+    `KazhdanLusztigClassicalLimit`, `SymmetricCrystalPairProduction`, …
+    must not break) — it is purely additive.
+
+> **Build status.** `elan`/`lake` are not installed in the authoring
+> sandbox (no `~/.elan`). The scaffold is authored to Mathlib idiom
+> (explicit binders for `autoImplicit = false`; `PUnit`/`rfl` model
+> mirroring the existing class) and committed at the author's direction
+> with verification deferred — **`lake build QOU` must be run before
+> merge**. A background Lean-env setup (elan + `lake-cache` restore) was
+> launched; any build fix is confined to `GSReductionOrder.lean` (the one
+> new file) plus its one aggregator import line.
 
 The value delivered regardless of the build: the conjecture is reduced
 to the single named axiom (★) over cited theorems, with the buildable
-layers and the Mathlib dependency table (Layer 3) fully specified — the
-formalize-first pruning is done on paper even where the toolchain is
-unavailable.
+layers concretely written and the Mathlib dependency table (Layer 3)
+fully specified.
 
 ## 4. Why this is the right level
 
