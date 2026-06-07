@@ -58,7 +58,7 @@ At $q = q_0 \approx 1.10998$ (substrate parameter):
   $(1 + q_0)/2 \approx 1.055$).
 - This instance gives $y_{(3)}(q_0) \approx 0.499$,
   $y_{(2,1)}(q_0) \approx 0.001$, $y_{(1,1,1)}(q_0) \approx 0.499$,
-  with sum $0.499 + 2(0.001) + 0.499 = 1.000$ (normalised).
+  with sum $0.499 + 2(0.001) + 0.499 = 1.000$ (normalisation).
 
 The CANONICAL Wenzl weights (computed by
 `markov_weights_symbolic.solve_y_lambda(3)` at $q_0$) give
