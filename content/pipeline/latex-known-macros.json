@@ -1,5 +1,5 @@
 {
-  "_comment": "Seeded standard/package LaTeX control sequences in actual use across main.tex + chapters/*.tex (comment + verbatim contexts stripped). Regenerate with: bun run pipeline/latex-preflight.ts --seed. Adding a name asserts it is a real standard/package command whose package is loaded in latex/preamble.tex.",
+  "_comment": "Seeded standard/package LaTeX control sequences (macros) and inputenc-safe non-ASCII chars (unicode) in actual use across main.tex + chapters/*.tex (comment + verbatim contexts stripped). Regenerate with: bun run pipeline/latex-preflight.ts --seed. Adding a macro asserts it is a real standard/package command whose package is loaded in latex/preamble.tex; adding a unicode char asserts inputenc/fontenc typeset it without a \\newunicodechar.",
   "macros": [
     "\\@empty",
     "\\@ifnextchar",
@@ -375,5 +375,40 @@
     "\\xmapsto",
     "\\xrightarrow",
     "\\zeta"
+  ],
+  "unicode": [
+    "§",
+    "¬",
+    "±",
+    "²",
+    "³",
+    "µ",
+    "¹",
+    "½",
+    "à",
+    "á",
+    "ä",
+    "è",
+    "é",
+    "ê",
+    "ï",
+    "ñ",
+    "ô",
+    "ö",
+    "ü",
+    "ă",
+    "ć",
+    "Č",
+    "č",
+    "ł",
+    "ń",
+    "–",
+    "—",
+    "𝓑",
+    "🔓",
+    "🔴",
+    "🟠",
+    "🟡",
+    "🟢"
   ]
 }
