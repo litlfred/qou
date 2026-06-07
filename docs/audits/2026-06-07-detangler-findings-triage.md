@@ -8,6 +8,20 @@ it is a proposal.
 
 ## 1. mass-theory graph-energy reorder proposal
 
+> **RESOLUTION (2026-06-07, author-approved "accept edges").** The 12
+> "safe" moves were all found to be **cross-section** — they would
+> relocate blocks into unrelated thematic sections, scrambling the
+> chapter's deliberate face ordering (Algebraic→Geometric→Archimedean→
+> Physical→Open). The forward edges are the author's intentional
+> cross-face references, not reorderable local tangles. Resolution:
+> `detangler-graph-energy` was refined to count **within-section**
+> forward edges only (cross-section edges reflect intentional face
+> order and are excluded). After the refinement the mass-theory
+> graph-energy fail count is **0** (all 45 were cross-section) — i.e.
+> there were never any locally-reorderable tangles to fix. No blocks
+> were moved. The §1a/§1b tables below are retained as the analysis of
+> record.
+
 45 blocks in `mass-theory` fail `detangler-graph-energy` (energy ≥ 100):
 they sit early in the chapter manifest but `uses[]` blocks defined far
 later, forcing the reader to skip ahead. Of the 32 with computable
