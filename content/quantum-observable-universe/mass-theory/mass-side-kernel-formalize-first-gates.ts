@@ -29,8 +29,17 @@ export default proposition({
     {
       kind: "note",
       date: "2026-06-06",
-      body:
-        "Authoring archaeology (moved out of prose per CLAUDE.md §4d, \"Author notes vs. scholarly prose\"). The Lean typeclass mirrors the decay-side `BarEvenKernel` pattern introduced in PR #1893; the sympy companion `mass_theory_formalize_first_invariants_probe.py` (PR #1896, Track 3) runs the 4×3 verdict matrix on Family A / via-Jones / Bring color-tube candidates. The additive direction-sanity form follows the decay-side `q-beta-direction-sanity-gate.lean` precedent from PR #1890. The bar-even structural identity is the CommRing R lemma from PR #1875. A candidate `Σ f^λ / 4 = 5/2` for the §4(c) anchor was surfaced by PR #1899's mass-side q=1 anchor hunt; the parametric class admits this via `MassQOneShadowGateClass w (some (5/2))` but does not assert it as the canonical anchor.",
+      body: [
+        "Authoring archaeology (moved out of prose per CLAUDE.md §4d, \"Author notes vs. scholarly prose\").",
+        "",
+        "**Typeclass pattern.** The Lean typeclass mirrors the decay-side `BarEvenKernel` pattern introduced in PR #1893; the sympy companion `mass_theory_formalize_first_invariants_probe.py` (PR #1896, Track 3) runs the 4×3 verdict matrix on Family A / via-Jones / Bring color-tube candidates.",
+        "",
+        "**Direction-sanity form.** The additive direction-sanity form follows the decay-side `q-beta-direction-sanity-gate.lean` precedent from PR #1890.",
+        "",
+        "**Bar-even structural identity.** The §4(b) bar-even invariant is the CommRing R lemma from PR #1875.",
+        "",
+        "**§4(c) anchor candidate.** A `Σ f^λ / 4 = 5/2` value for the §4(c) anchor was surfaced by PR #1899's mass-side q=1 anchor hunt; the parametric class admits this via `MassQOneShadowGateClass w (some (5/2))` but does not assert it as the canonical anchor.",
+      ].join("\n"),
     },
   ],
 });

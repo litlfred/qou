@@ -50,16 +50,17 @@ the refuted-class registry.
 
 ## Composition theorem
 
-If `MassSideKernel w` is instantiable for some specific candidate
-$w$, then:
+If `MassSideKernel w swing anchor magnitude` is instantiable for some
+specific candidate $w$ (with `swing`, `anchor`, `magnitude` the
+candidate-specific values supplied at instantiation), then:
 
-1. `MassAnchorStableGateClass w` holds (parametric anchor-stability)
-2. `MassDirectionSanityGateClass w` holds (parametric direction sanity)
+1. `MassAnchorStableGateClass swing` holds (parametric anchor-stability)
+2. `MassDirectionSanityGateClass magnitude` holds (parametric direction sanity)
 3. $w$ admits the bar-even structural identity via the $Q_\beta$
    `bar_even_test_n2` CommRing $R$ lemma
    ([`prop:q-beta-bar-even-kernel-invariant`](q-beta-bar-even-kernel-invariant.md))
-4. (When a registered anchor is set) `MassQOneShadowGateClass w anchor`
-   holds
+4. (When a registered anchor is set) `MassQOneShadowGateClass w (some a)`
+   holds, giving $w(1) = a$
 
 The Lean proof of each lifting is a one-line extraction of the
 corresponding field. The $\S 4(\mathrm{c})$ lifting is **conditional**
