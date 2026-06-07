@@ -86,9 +86,20 @@ if ! git fetch --depth=1 origin "$BRANCH" 2>&1 | tail -5; then
   exit 1
 fi
 
-# Discover parts. The branch tip has one tree; list all blobs whose
-# path matches lake-oleans.tgz.part*. Stream each blob into a temp
-# scratch dir.
+# Detect the orphan-branch format. Two formats are supported:
+#
+#   1. PER-FILE (preferred, matches lake-cache-refresh.yml workflow):
+#      tip tree has a `.lake/` directory with one git blob per file.
+#      Restore = `git archive --format=tar FETCH_HEAD -- .lake` then untar.
+#      Granular (diffable), no chunking, integrates with CI's existing
+#      Action restore path.
+#
+#   2. CHUNKED-TGZ (legacy 2026-06-04 reseed format):
+#      tip tree has lake-oleans.tgz.partXX blobs. Restore = stream blobs,
+#      concat in sorted order, untar.
+#
+# Detection: list the top-level tree entries; if any are .tgz.partNN we
+# use the chunked path, else if .lake/ exists we use per-file.
 TMP=$(mktemp -d -t lake-cache-fetch.XXXXXX)
 # Bake $TMP value into the trap string at definition time (the value is
 # stable for the script's lifetime, so this is intentional). Double-
@@ -96,9 +107,45 @@ TMP=$(mktemp -d -t lake-cache-fetch.XXXXXX)
 # the Copilot review on PR #1950.
 trap "rm -rf ${TMP}" EXIT INT TERM
 
-parts=$(git ls-tree --name-only FETCH_HEAD 2>/dev/null \
-        | grep -E '^lake-oleans\.tgz\.part[0-9]+$' \
-        | sort)
+top_tree=$(git ls-tree --name-only FETCH_HEAD 2>/dev/null)
+parts=$(echo "$top_tree" | grep -E '^lake-oleans\.tgz\.part[0-9]+$' | sort)
+has_lake_dir=$(echo "$top_tree" | grep -E '^\.lake$' | head -1)
+
+# Per-file format takes precedence — it's the maintainable one.
+if [ -n "$has_lake_dir" ]; then
+  echo "lake-cache-fetch: detected per-file format on $BRANCH"
+  echo "lake-cache-fetch: extracting .lake/ tree via git archive"
+  mkdir -p "$TMP/extract"
+  if ! git archive --format=tar FETCH_HEAD -- .lake \
+        | tar --no-absolute-names -xC "$TMP/extract" 2>&1 | tail -3; then
+    echo "lake-cache-fetch: ERROR — git archive extraction failed" >&2
+    exit 1
+  fi
+  if [ ! -d "$TMP/extract/.lake" ]; then
+    echo "lake-cache-fetch: ERROR — git archive did not produce .lake/" >&2
+    exit 1
+  fi
+  rm -rf "$REPO_ROOT/.lake"
+  mv "$TMP/extract/.lake" "$REPO_ROOT/.lake"
+
+  # Verify with same signal both scripts use.
+  WARMSIG="$REPO_ROOT/.lake/packages/mathlib/.lake/build/lib"
+  if [ ! -d "$WARMSIG" ]; then
+    echo "lake-cache-fetch: ERROR — per-file extract did not produce $WARMSIG" >&2
+    exit 1
+  fi
+  lib_count=$(find "$WARMSIG" -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l)
+  lake_size=$(du -sh "$REPO_ROOT/.lake" 2>/dev/null | awk '{print $1}')
+  echo "lake-cache-fetch: ✓ restored .lake/ from $BRANCH (per-file)"
+  echo "  .lake/ size:           $lake_size"
+  echo "  mathlib lib has        $lib_count top-level directories"
+  echo ""
+  echo "Next: 'lake build QOU' should now complete in seconds rather than hours."
+  exit 0
+fi
+
+# Chunked-tgz fallback (legacy format).
+echo "lake-cache-fetch: detected chunked-tgz format on $BRANCH (legacy)"
 
 if [ -z "$parts" ]; then
   echo "lake-cache-fetch: ERROR — branch $BRANCH has no lake-oleans.tgz.part* blobs" >&2
