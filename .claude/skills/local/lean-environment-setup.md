@@ -379,34 +379,47 @@ durable cross-container preservation lives on **orphan branches**
 `.lake/` (ephemeral) or `../mathlib4` (parent-tree, often persists but not
 guaranteed).
 
-> **Preferred: use the scripts (PR #1957).** Hand-rolled bash is the legacy path.
+> **RESTORE — use the script (PR #1950).** Auto-invoked on
+> SessionStart via `setup-lean-toolchain.sh`; also runnable manually:
 >
 > ```bash
-> # RESTORE — auto-invoked on SessionStart via setup-lean-toolchain.sh;
-> # also manually:
 > ./scripts/lake-cache-fetch.sh
->
-> # SEED — multi-package producer, per-file xz-compressed olean blobs,
-> # cache-index.json master-index, dry-run by default:
-> ./scripts/lake-cache-produce.py --packages mathlib,aesop,batteries,Qq \
->     --branch-suffix test                # dry-run; safe
-> ./scripts/lake-cache-produce.py --push  # actually push all 9 packages
 > ```
 >
-> The fetcher handles both the legacy chunked-tgz format (current
-> production branch as of 2026-06-04 reseed) AND the per-file format
-> the producer writes. The producer outputs per-package orphan branches
-> (`lake-cache/<pkg>-v4-24-0`), each containing only that package's
-> `.olean.xz` blobs + `cache-index.json` (regen recipe for `.hash` /
-> `.trace`). Aesop / Qq / batteries / proofwidgets fit single blobs;
-> Mathlib's ~2745 oleans live on a dedicated branch.
+> The fetcher consumes the **monolithic** `lake-cache/qou-v4-24-0`
+> branch in either format: (a) legacy chunked-tgz
+> (`lake-oleans.tgz.partNN`, current production reseed 2026-06-04), or
+> (b) per-file `.lake/` tree (what `lake-cache-refresh.yml` writes if
+> CI ever runs it). It does NOT yet walk multiple per-package branches
+> or decompress `.olean.xz` blobs — those formats are produced by
+> `lake-cache-produce.py` (see below) but the fetcher's per-package
+> consumer is a follow-up to PR #1957. **Until then, the production
+> restore path remains the monolithic qou cache branch.**
+>
+> **SEED — `scripts/lake-cache-produce.py` (PR #1957).** Writes a
+> separate orphan branch per package (`lake-cache/<pkg>-v4-24-0`)
+> with per-file `.olean.xz` blobs + a `cache-index.json` master-index
+> (regen recipe for `.hash` / `.trace`). Useful TODAY for:
+>
+> ```bash
+> # Dry-run all 9 packages — safe, shows planned content + sizes:
+> ./scripts/lake-cache-produce.py
+>
+> # Push to a TEST suffix (safe — doesn't overwrite production):
+> ./scripts/lake-cache-produce.py --push --branch-suffix test
+> ```
+>
+> ⚠ **Do NOT** `--push` to the canonical (no-suffix) branch names yet.
+> The fetcher cannot consume the per-package + `.olean.xz` format
+> without the follow-up extension. Pushing now would orphan the
+> output (no consumer = no restore). Use `--branch-suffix test` for
+> exploration / benchmarking only.
 >
 > See [`docs/audits/2026-06-07-lake-cache-only-new-content-design.md`](../../../docs/audits/2026-06-07-lake-cache-only-new-content-design.md)
 > for the full architecture (strip + xz benchmarks + zstd-shared-dict
-> head-to-head). Bash one-liner below remains documented as the legacy
-> path — useful when the scripts aren't available (e.g. you're auditing
-> what the orphan branch contains, or doing a one-off reseed of the
-> qou-only branch).
+> head-to-head). Bash one-liner below remains documented as the
+> production seed path until the fetcher catches up — useful for a
+> direct reseed of the monolithic qou branch.
 
 The cache branch stores the oleans as a **compressed tarball split into
 <100 MB chunks** (`lake-oleans.tgz.part00…`), because GitHub hard-rejects
