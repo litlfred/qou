@@ -52,16 +52,18 @@ universe u
 axiom phi_q_residual : ℝ → ℝ → ℝ
 
 /-- Quantum dilogarithm encoded as the empty-product baseline `1`
-    plus the higher-order-in-`z` correction. The `phi_q_residual`
-    axiom abstracts everything beyond the empty-product term so that
-    `phi_q q 0 = 1` becomes provable by `ring` rather than axiomatic.
-    This is a strict improvement: the empty-product convention is now
-    a *theorem*, and only the second-order-and-above behaviour of
-    Φ_q stays opaque. -/
+    plus a `z`-multiplied residual factor. The `phi_q_residual`
+    axiom abstracts everything beyond the empty-product term (so
+    `phi_q_residual q 0` is the linear-in-`z` coefficient, with
+    `phi_q_residual q z` for `z ≠ 0` carrying all higher-order
+    behaviour). This is a strict improvement over a free
+    `phi_q_at_zero` axiom: the empty-product convention is now a
+    *theorem* — only Φ_q's variation away from `z = 0` stays
+    opaque. -/
 noncomputable def phi_q (q z : ℝ) : ℝ := 1 + z * phi_q_residual q z
 
-/-- Empty-product convention: Φ_q(q, 0) = 1 for every q. **Theorem
-    (was axiom prior to PR #1968).** Discharged by `def phi_q` above. -/
+/-- Empty-product convention: Φ_q(q, 0) = 1 for every q. **Theorem**
+    (was previously an axiom). Discharged by `def phi_q` above. -/
 theorem phi_q_at_zero : ∀ q : ℝ, phi_q q 0 = 1 := by
   intro q
   unfold phi_q
@@ -85,14 +87,14 @@ theorem phi_q_at_zero : ∀ q : ℝ, phi_q q 0 = 1 := by
 axiom li2_q_residual : ℝ → ℝ → ℝ
 
 /-- Symmetric q-dilogarithm encoded as the empty-sum baseline `0`
-    plus the higher-order-in-`z` correction. The `li2_q_residual`
-    axiom abstracts everything beyond the empty-sum term so that
-    `li2_q q 0 = 0` becomes provable by `ring` rather than axiomatic
-    (parallel discharge to `phi_q_at_zero` — see PR #1968). -/
+    plus a `z`-multiplied residual factor. The `li2_q_residual` axiom
+    abstracts everything beyond the empty-sum term (`li2_q_residual q 0`
+    is the linear-in-`z` coefficient; the residual for `z ≠ 0` carries
+    all higher-order behaviour). Parallel construction to `phi_q`. -/
 noncomputable def li2_q (q z : ℝ) : ℝ := z * li2_q_residual q z
 
-/-- Empty-sum convention: Li_2^q(q, 0) = 0 for every q. **Theorem
-    (was axiom prior to PR #1968).** Discharged by `def li2_q` above. -/
+/-- Empty-sum convention: Li_2^q(q, 0) = 0 for every q. **Theorem**
+    (was previously an axiom). Discharged by `def li2_q` above. -/
 theorem li2_q_at_zero : ∀ q : ℝ, li2_q q 0 = 0 := by
   intro q
   unfold li2_q
