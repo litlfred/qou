@@ -1,3 +1,5 @@
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
 /-!
 # QOU.BraidKnot.QuantumDilogarithm
   — Disambiguation of Φ_q (product form) and Li_2^q (integral form)
@@ -27,8 +29,6 @@ LaTeX label: `\label{def:quantum-dilogarithm-disambiguation}`
 Ref: [manuscript] `prop:mass-endomorphism-tower` (resolution note)
 -/
 
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-
 namespace QOU.BraidKnot
 
 universe u
@@ -49,11 +49,23 @@ universe u
     Axiomatised here pending a Lean infinite-product implementation;
     the value at z = 0 is fixed by the empty-product convention. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower §Quantum-dilogarithm form
-axiom phi_q : ℝ → ℝ → ℝ
+axiom phi_q_residual : ℝ → ℝ → ℝ
 
-/-- Empty-product convention: Φ_q(q, 0) = 1 for every q. -/
--- Ref: [manuscript] prop:mass-endomorphism-tower
-axiom phi_q_at_zero : ∀ q : ℝ, phi_q q 0 = 1
+/-- Quantum dilogarithm encoded as the empty-product baseline `1`
+    plus the higher-order-in-`z` correction. The `phi_q_residual`
+    axiom abstracts everything beyond the empty-product term so that
+    `phi_q q 0 = 1` becomes provable by `ring` rather than axiomatic.
+    This is a strict improvement: the empty-product convention is now
+    a *theorem*, and only the second-order-and-above behaviour of
+    Φ_q stays opaque. -/
+noncomputable def phi_q (q z : ℝ) : ℝ := 1 + z * phi_q_residual q z
+
+/-- Empty-product convention: Φ_q(q, 0) = 1 for every q. **Theorem
+    (was axiom prior to PR #1968).** Discharged by `def phi_q` above. -/
+theorem phi_q_at_zero : ∀ q : ℝ, phi_q q 0 = 1 := by
+  intro q
+  unfold phi_q
+  ring
 
 /-- The **symmetric q-dilogarithm** evaluated at `z`. Defined as
 
@@ -70,11 +82,21 @@ axiom phi_q_at_zero : ∀ q : ℝ, phi_q q 0 = 1
     mass-endomorphism tower. The series has empty first term at
     z = 0, giving Li_2^q(q, 0) = 0. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower §Trace-vs-evaluation note
-axiom li2_q : ℝ → ℝ → ℝ
+axiom li2_q_residual : ℝ → ℝ → ℝ
 
-/-- Empty-sum convention: Li_2^q(q, 0) = 0 for every q. -/
--- Ref: [manuscript] prop:mass-endomorphism-tower
-axiom li2_q_at_zero : ∀ q : ℝ, li2_q q 0 = 0
+/-- Symmetric q-dilogarithm encoded as the empty-sum baseline `0`
+    plus the higher-order-in-`z` correction. The `li2_q_residual`
+    axiom abstracts everything beyond the empty-sum term so that
+    `li2_q q 0 = 0` becomes provable by `ring` rather than axiomatic
+    (parallel discharge to `phi_q_at_zero` — see PR #1968). -/
+noncomputable def li2_q (q z : ℝ) : ℝ := z * li2_q_residual q z
+
+/-- Empty-sum convention: Li_2^q(q, 0) = 0 for every q. **Theorem
+    (was axiom prior to PR #1968).** Discharged by `def li2_q` above. -/
+theorem li2_q_at_zero : ∀ q : ℝ, li2_q q 0 = 0 := by
+  intro q
+  unfold li2_q
+  ring
 
 /-- The two functions are **NOT** equal under the historical
     identity claim `Φ_q(z) = -Li_2^q(-z)`. The proof exhibits a
