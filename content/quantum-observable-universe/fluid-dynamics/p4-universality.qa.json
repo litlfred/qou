@@ -2349,6 +2349,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:universality' → expected 'universality'; Lean declares: CriticalExponent, BlowupYekutieli, RegularityBreakdown, universality_conditional. Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "a5400051cdb5",
+          "ts": "e57741416448",
+          "lean": "ed5f2a2ad375"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Lean theorem universality_conditional ... : True := trivial (p4-universality.lean:32-36); narrative asserts substantive claim that alpha=4/3 depends only on chi(A),d,rank",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:46:52.074Z",
+        "reviewed_sha": "51a3c5bee5d1ba5ef221c723e6ea1cc59a22d579",
+        "notes": "True-placeholder Lean does not encode the universality conclusion; classes are present but the theorem body proves nothing. Divergence is theorem-changing."
       }
     ],
     "proof-lean-compiles": [
@@ -2735,7 +2755,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a5400051cdb5",
+          "ts": "e57741416448",
+          "lean": "ed5f2a2ad375"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proposition states the universality claim + supporting argument (Yekutieli tower, Sobolev/cascade scaling); no separate mislocated motivation block",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:46:51.936Z",
+        "reviewed_sha": "51a3c5bee5d1ba5ef221c723e6ea1cc59a22d579",
+        "notes": "Statement+argument only; 'universality class' table is part of the result, not editorializing interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a5400051cdb5",
+          "ts": "e57741416448",
+          "lean": "ed5f2a2ad375"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "proposition in sec:ns-approaches (open problems); universality of critical exponent alpha=4/3 belongs with the q-NS regularity/blowup cluster",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:46:51.973Z",
+        "reviewed_sha": "51a3c5bee5d1ba5ef221c723e6ea1cc59a22d579",
+        "notes": "Topic in section scope; distinct from sibling critical-exponent/blowup props it builds on."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a5400051cdb5",
+          "ts": "e57741416448",
+          "lean": "ed5f2a2ad375"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "fluid-dynamics is an archimedean chapter; statement is categorical/topological (chi(A), d=3, rank) with conditional §3b-cond banner; no un-banner'd q-numeric pin",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:46:52.006Z",
+        "reviewed_sha": "51a3c5bee5d1ba5ef221c723e6ea1cc59a22d579",
+        "notes": "Archimedean chapter; q>1 regime appropriate; no MeV/q0 leak. Pass."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a5400051cdb5",
+          "ts": "e57741416448",
+          "lean": "ed5f2a2ad375"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof argues via Euler-char stability + Sobolev/cascade scaling; q>1 limit reasoning native to archimedean fluid-dynamics chapter, no algebraic-statement-proved-by-archimedean mismatch",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:46:52.041Z",
+        "reviewed_sha": "51a3c5bee5d1ba5ef221c723e6ea1cc59a22d579",
+        "notes": "Proof method matches the archimedean statement's side of the wall."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T12:46:52.074Z"
 }
