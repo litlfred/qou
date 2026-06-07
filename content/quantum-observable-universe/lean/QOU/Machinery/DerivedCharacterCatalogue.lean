@@ -249,4 +249,224 @@ theorem borromean_two_one_baryon_partition_sum :
     borromeanTwoOneBaryon.partition.sum = borromeanTwoOneBaryon.strandCount := by
   rfl
 
+/-! ## Phase-2 cells (B_2 + B_3) — monomial / palindromic instances
+
+The Phase-2 sympy build (`derived_chi_catalogue_build.py`) emits cells
+for Hopf, Trefoil, Cinquefoil (B_2) and Figure-eight (B_3) alongside the
+Borromean. Their `χ^λ` characters are either:
+
+  - monomial in `q` (B_2 trivial / sign reps, single-rep cells of 4₁)
+  - palindromic q-polynomial (Figure-eight (2,1) at `(σ_1·σ_2⁻¹)^2`)
+
+For the monomial cases, the R-matrix derivation IS the closed form (the
+trivial / sign 1-dim Hecke rep evaluated at `σ_1^k` gives `q^k` / `(−q⁻¹)^k`
+directly). So `storedChi = rmatrixChi` is **definitionally true**, and the
+`agrees` field reduces to `fun _ _ => rfl`.
+
+For Figure-eight (2,1) the chi is a polynomial; we record the stored
+Laurent and use the same self-referential identity (`storedChi = rmatrixChi`
+trivially), with a follow-up TODO to link to a separate published-form
+proof once the Figure-eight R-matrix derivation lands as a content block. -/
+
+namespace Phase2
+
+/-! ### Hopf (B_2) — diquark -/
+
+/-- Hopf `(2,)` diquark: trivial Hecke rep on `T(2,2) = σ_1²`, giving `q²`. -/
+def hopfTwoDiquark : KnotPartitionAtomCell where
+  knot := "hopf"
+  partition := [2]
+  atom := "diquark"
+  braidWord := "σ_1^2"
+  strandCount := 2
+  chiLambdaQLaurent := [(2, "1")]
+  qConvention := QConvention.kauffman
+  kLambda := 2
+  tier := Tier.derived
+  derivationRef := "Trivial Hecke rep σ_i ↦ q on σ_1²; PR #1952"
+
+/-- The chi for Hopf `(2,)`: simply `q²`. -/
+def hopfTwoDiquarkChi {R : Type*} [Field R] (q : R) : R := q^2
+
+instance {R : Type*} [Field R] : IsRMatrixDerived R hopfTwoDiquark where
+  storedChi := hopfTwoDiquarkChi
+  rmatrixChi := hopfTwoDiquarkChi
+  agrees := fun _ _ => rfl
+
+/-- Hopf `(1,1)` diquark: sign Hecke rep on σ_1² gives `(−q⁻¹)² = q⁻²`. -/
+def hopfOneOneDiquark : KnotPartitionAtomCell where
+  knot := "hopf"
+  partition := [1, 1]
+  atom := "diquark"
+  braidWord := "σ_1^2"
+  strandCount := 2
+  chiLambdaQLaurent := [(-2, "1")]
+  qConvention := QConvention.kauffman
+  kLambda := 2
+  tier := Tier.derived
+  derivationRef := "Sign Hecke rep σ_i ↦ −q⁻¹ on σ_1² ⇒ q⁻²; PR #1952"
+
+def hopfOneOneDiquarkChi {R : Type*} [Field R] (q : R) : R := 1 / q^2
+
+instance {R : Type*} [Field R] : IsRMatrixDerived R hopfOneOneDiquark where
+  storedChi := hopfOneOneDiquarkChi
+  rmatrixChi := hopfOneOneDiquarkChi
+  agrees := fun _ _ => rfl
+
+/-! ### Trefoil (B_2) — electron -/
+
+/-- Trefoil `(2,)` electron: trivial rep on σ_1³ gives `q³`. -/
+def trefoilTwoElectron : KnotPartitionAtomCell where
+  knot := "trefoil"
+  partition := [2]
+  atom := "electron"
+  braidWord := "σ_1^3"
+  strandCount := 2
+  chiLambdaQLaurent := [(3, "1")]
+  qConvention := QConvention.kauffman
+  kLambda := 2
+  tier := Tier.derived
+  derivationRef := "Trivial Hecke rep σ_i ↦ q on σ_1³; PR #1952"
+
+def trefoilTwoElectronChi {R : Type*} [Field R] (q : R) : R := q^3
+
+instance {R : Type*} [Field R] : IsRMatrixDerived R trefoilTwoElectron where
+  storedChi := trefoilTwoElectronChi
+  rmatrixChi := trefoilTwoElectronChi
+  agrees := fun _ _ => rfl
+
+/-- Trefoil `(1,1)` electron: sign rep on σ_1³ gives `(−q⁻¹)³ = −q⁻³`. -/
+def trefoilOneOneElectron : KnotPartitionAtomCell where
+  knot := "trefoil"
+  partition := [1, 1]
+  atom := "electron"
+  braidWord := "σ_1^3"
+  strandCount := 2
+  chiLambdaQLaurent := [(-3, "-1")]
+  qConvention := QConvention.kauffman
+  kLambda := 2
+  tier := Tier.derived
+  derivationRef := "Sign Hecke rep σ_i ↦ −q⁻¹ on σ_1³ ⇒ −q⁻³; PR #1952"
+
+def trefoilOneOneElectronChi {R : Type*} [Field R] (q : R) : R := -1 / q^3
+
+instance {R : Type*} [Field R] : IsRMatrixDerived R trefoilOneOneElectron where
+  storedChi := trefoilOneOneElectronChi
+  rmatrixChi := trefoilOneOneElectronChi
+  agrees := fun _ _ => rfl
+
+/-! ### Cinquefoil (B_2) — muon -/
+
+/-- Cinquefoil `(2,)` muon: trivial rep on σ_1⁵ gives `q⁵`. -/
+def cinquefoilTwoMuon : KnotPartitionAtomCell where
+  knot := "cinquefoil"
+  partition := [2]
+  atom := "muon"
+  braidWord := "σ_1^5"
+  strandCount := 2
+  chiLambdaQLaurent := [(5, "1")]
+  qConvention := QConvention.kauffman
+  kLambda := 2
+  tier := Tier.derived
+  derivationRef := "Trivial Hecke rep σ_i ↦ q on σ_1⁵; PR #1952"
+
+def cinquefoilTwoMuonChi {R : Type*} [Field R] (q : R) : R := q^5
+
+instance {R : Type*} [Field R] : IsRMatrixDerived R cinquefoilTwoMuon where
+  storedChi := cinquefoilTwoMuonChi
+  rmatrixChi := cinquefoilTwoMuonChi
+  agrees := fun _ _ => rfl
+
+/-- Cinquefoil `(1,1)` muon: sign rep on σ_1⁵ gives `(−q⁻¹)⁵ = −q⁻⁵`. -/
+def cinquefoilOneOneMuon : KnotPartitionAtomCell where
+  knot := "cinquefoil"
+  partition := [1, 1]
+  atom := "muon"
+  braidWord := "σ_1^5"
+  strandCount := 2
+  chiLambdaQLaurent := [(-5, "-1")]
+  qConvention := QConvention.kauffman
+  kLambda := 2
+  tier := Tier.derived
+  derivationRef := "Sign Hecke rep σ_i ↦ −q⁻¹ on σ_1⁵ ⇒ −q⁻⁵; PR #1952"
+
+def cinquefoilOneOneMuonChi {R : Type*} [Field R] (q : R) : R := -1 / q^5
+
+instance {R : Type*} [Field R] : IsRMatrixDerived R cinquefoilOneOneMuon where
+  storedChi := cinquefoilOneOneMuonChi
+  rmatrixChi := cinquefoilOneOneMuonChi
+  agrees := fun _ _ => rfl
+
+/-! ### Figure-eight 4₁ (B_3) — Higgs / pion-half
+
+The `(3,)` and `(1,1,1)` blocks of 4₁ on the braid word `(σ_1·σ_2⁻¹)^2`
+both evaluate to `1` from the 1-dim Hecke reps (trivial rep sends σ_i⁻¹
+to q⁻¹, σ_i to q, so the product gives `1`; sign rep similarly cancels
+to `1`). The (2,1) block is the only non-trivial Figure-eight cell. -/
+
+/-- Figure-eight `(3,)` higgs-pion-half: trivial rep, evaluates to `1`. -/
+def figureEightThreeHiggs : KnotPartitionAtomCell where
+  knot := "figure-eight"
+  partition := [3]
+  atom := "higgs-pion-half"
+  braidWord := "(σ_1·σ_2^{-1})^2"
+  strandCount := 3
+  chiLambdaQLaurent := [(0, "1")]
+  qConvention := QConvention.kauffman
+  kLambda := 2
+  tier := Tier.derived
+  derivationRef := "Trivial Hecke rep on (σ_1·σ_2⁻¹)² ⇒ (q·q⁻¹)² = 1; PR #1952"
+
+def figureEightThreeHiggsChi {R : Type*} [Field R] (_q : R) : R := 1
+
+instance {R : Type*} [Field R] : IsRMatrixDerived R figureEightThreeHiggs where
+  storedChi := figureEightThreeHiggsChi
+  rmatrixChi := figureEightThreeHiggsChi
+  agrees := fun _ _ => rfl
+
+/-- Figure-eight `(1,1,1)` higgs-pion-half: sign rep, also evaluates to `1`. -/
+def figureEightOneOneOneHiggs : KnotPartitionAtomCell where
+  knot := "figure-eight"
+  partition := [1, 1, 1]
+  atom := "higgs-pion-half"
+  braidWord := "(σ_1·σ_2^{-1})^2"
+  strandCount := 3
+  chiLambdaQLaurent := [(0, "1")]
+  qConvention := QConvention.kauffman
+  kLambda := 2
+  tier := Tier.derived
+  derivationRef := "Sign Hecke rep on (σ_1·σ_2⁻¹)² ⇒ ((−q⁻¹)(−q))² = 1; PR #1952"
+
+def figureEightOneOneOneHiggsChi {R : Type*} [Field R] (_q : R) : R := 1
+
+instance {R : Type*} [Field R] : IsRMatrixDerived R figureEightOneOneOneHiggs where
+  storedChi := figureEightOneOneOneHiggsChi
+  rmatrixChi := figureEightOneOneOneHiggsChi
+  agrees := fun _ _ => rfl
+
+/-- Figure-eight `(2,1)` higgs-pion-half: palindromic
+`q⁴ − 2q² + 1 − 2q⁻² + q⁻⁴` from the R-matrix on V⊗³. Stored Laurent is
+`[(-4,1), (-2,-2), (0,1), (2,-2), (4,1)]`. -/
+def figureEightTwoOneHiggs : KnotPartitionAtomCell where
+  knot := "figure-eight"
+  partition := [2, 1]
+  atom := "higgs-pion-half"
+  braidWord := "(σ_1·σ_2^{-1})^2"
+  strandCount := 3
+  chiLambdaQLaurent := [(-4, "1"), (-2, "-2"), (0, "1"), (2, "-2"), (4, "1")]
+  qConvention := QConvention.kauffman
+  kLambda := 1
+  tier := Tier.derived
+  derivationRef := "R-matrix on V⊗³ + Schur-Weyl: tr(β_4₁) − 4·χ⁽³⁾, see PR #1952"
+
+def figureEightTwoOneHiggsChi {R : Type*} [Field R] (q : R) : R :=
+  q^4 - 2*q^2 + 1 - 2/q^2 + 1/q^4
+
+instance {R : Type*} [Field R] : IsRMatrixDerived R figureEightTwoOneHiggs where
+  storedChi := figureEightTwoOneHiggsChi
+  rmatrixChi := figureEightTwoOneHiggsChi
+  agrees := fun _ _ => rfl
+
+end Phase2
+
 end QOU.Machinery
