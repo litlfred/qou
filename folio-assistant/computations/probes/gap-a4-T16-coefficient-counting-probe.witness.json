@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-07T00:26:38.217872+00:00",
-  "commitSha": "0293f23a957a00e6c266213d74384ed6c4443e53",
+  "computedAt": "2026-06-07T00:30:40.718592+00:00",
+  "commitSha": "2e833e9e352792c49b2f4406a554bcbc18ecf500",
   "assertions": [
     {
       "name": "num_SYT_of_2_1_equals_dim",
@@ -33,8 +33,8 @@
   "durationMs": 11,
   "computation": "gap-a4-T16-coefficient-counting-probe",
   "scriptFile": "gap_a4_T16_coefficient_counting_probe.py",
-  "scriptHash": "35096949d212",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1665f837a76c",
+  "scriptCommitSha": "2e833e9e352792c49b2f4406a554bcbc18ecf500",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,7 +48,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "GAP-A-4 T16 — enumerate combinatorial counting candidates on the (2,1) Young diagram + Borromean braid that match the T15 coefficient triple (h⁰, h², h⁴, h⁶) = (2, 0, −3, −1). Records matches as OBSERVATIONS — no derivation claimed per no-7th-ansatz discipline.",
+  "description": "GAP-A-4 T16 — enumerate combinatorial counting candidates on the (2,1) Young diagram + Borromean braid that match the T15 coefficient 4-tuple (h⁰, h², h⁴, h⁶) = (2, 0, −3, −1). Records matches as OBSERVATIONS — no derivation claimed per no-7th-ansatz discipline.",
   "auditOnly": "docs/audits/2026-06-06-gap-a4-T9-T14-followup-retrospective.md",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
