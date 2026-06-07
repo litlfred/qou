@@ -1688,27 +1688,6 @@
         "reviewed_at": "2026-05-27"
       }
     ],
-    "detangler-block-tanglement": [
-      {
-        "field_hash": {
-          "ts": "7185308862f3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "detangler-block-tanglement-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/detangler-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 0,
-          "tanglement_score": 0
-        }
-      }
-    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -2015,7 +1994,39 @@
           "top_other_score": 2
         }
       }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "c2105c152eda",
+          "ts": "7185308862f3",
+          "lean": "51d35b799d98"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8f25b34708f6",
+          "script_commit_sha": "9bcdd4cdcb1168d55bcef7307d19add98deae960"
+        },
+        "reviewed_at": "2026-06-07T04:35:11.106Z",
+        "reviewed_sha": "9bcdd4cdcb1168d55bcef7307d19add98deae960",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 2,
+          "in_degree": 6,
+          "cone_size": 14,
+          "depth": 10,
+          "pagerank": 0.001571,
+          "edge_span_max": 10,
+          "edge_span_mean": 10,
+          "worst_target": ""
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-07T04:13:32.223Z"
+  "updated_at": "2026-06-07T04:35:11.106Z"
 }
