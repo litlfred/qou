@@ -2221,7 +2221,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d665c1390841",
+          "ts": "336b10541827"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Sub-section intro bridging vertex-algebra and Feynman views of same exceptional-divisor factorisation",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:14:43.451Z",
+        "reviewed_sha": "4cfea31de40db427e35ee50558a47d5677bc8a49",
+        "notes": "prose intro for 'Vertex factorisation: Feynman identifications' section; correctly placed, no misfile/duplication"
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T02:14:43.451Z"
 }
