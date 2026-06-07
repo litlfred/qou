@@ -63,11 +63,11 @@ from witness_base import WitnessBuilder  # noqa: E402
 from derived_chi_catalogue import load_catalogue  # noqa: E402
 
 
-def h_polynomial_at(pairs: list[tuple[int, str]], h_value: mp.mpf) -> mp.mpf:
-    """Evaluate a catalogue chi_lambda_q_taylor list at a numeric h."""
+def q_laurent_at(pairs: list[tuple[int, str]], q_value: mp.mpf) -> mp.mpf:
+    """Evaluate a catalogue chi_lambda_q_laurent list at a numeric q."""
     out = mp.mpf(0)
     for (degree, coeff_str) in pairs:
-        out += mp.mpf(coeff_str) * h_value ** degree
+        out += mp.mpf(coeff_str) * q_value ** degree
     return out
 
 
@@ -94,9 +94,9 @@ def main() -> int:
     cell_3 = cat.lookup_derived("borromean", (3,), "borromean-baryon")
     cell_21 = cat.lookup_derived("borromean", (2, 1), "borromean-baryon")
     cell_111 = cat.lookup_derived("borromean", (1, 1, 1), "borromean-baryon")
-    print(f"  ✓ lookup_derived (borromean, (3),     baryon)   → χ_taylor = {cell_3.chi_lambda_q_taylor}")
-    print(f"  ✓ lookup_derived (borromean, (2,1),   baryon)   → χ_taylor = {cell_21.chi_lambda_q_taylor}")
-    print(f"  ✓ lookup_derived (borromean, (1,1,1), baryon)   → χ_taylor = {cell_111.chi_lambda_q_taylor}")
+    print(f"  ✓ lookup_derived (borromean, (3),     baryon)   → χ_q_laurent = {cell_3.chi_lambda_q_laurent}")
+    print(f"  ✓ lookup_derived (borromean, (2,1),   baryon)   → χ_q_laurent = {cell_21.chi_lambda_q_laurent}")
+    print(f"  ✓ lookup_derived (borromean, (1,1,1), baryon)   → χ_q_laurent = {cell_111.chi_lambda_q_laurent}")
     print()
 
     # ── Numeric Schur-Weyl cross-check at two test q-values ──
@@ -106,9 +106,9 @@ def main() -> int:
     for q_str in Q_TEST_VALUES:
         q = mp.mpf(q_str)
         h = q - 1 / q
-        chi_3_val = h_polynomial_at(cell_3.chi_lambda_q_taylor, h)
-        chi_21_val = h_polynomial_at(cell_21.chi_lambda_q_taylor, h)
-        chi_111_val = h_polynomial_at(cell_111.chi_lambda_q_taylor, h)
+        chi_3_val = q_laurent_at(cell_3.chi_lambda_q_laurent, q)
+        chi_21_val = q_laurent_at(cell_21.chi_lambda_q_laurent, q)
+        chi_111_val = q_laurent_at(cell_111.chi_lambda_q_laurent, q)
         # Direct T17 trace at this q:
         tr_T17 = mp.mpf(8) - 6 * h ** 4 - 2 * h ** 6
         # Schur-Weyl reconstruction from catalogue:
@@ -137,9 +137,11 @@ def main() -> int:
 
     # ── Demonstrate the failing-loud guard explicitly ──
     # Look up a (K, λ, A) that does NOT exist — must KeyError, not silently
-    # return None — so production sites can rely on the guard.
+    # return None — so production sites can rely on the guard. We pick a
+    # genuinely-not-yet-derived cell: T(3,4) → color-binding is a Phase 3
+    # B_3-or-larger census target that we haven't reached.
     try:
-        cat.lookup_derived("trefoil", (2,), "electron")
+        cat.lookup_derived("T(3,4)", (3, 1), "color-binding")
         guard_works = False
     except KeyError:
         guard_works = True
@@ -149,9 +151,10 @@ def main() -> int:
         computed=guard_works,
         expected=True,
         source="The catalogue's derived-only lookup must raise on missing "
-               "cells (e.g. trefoil/(2)/electron, due in Phase 2), so any "
-               "production wire-up that expects derived cannot silently "
-               "consume `cal-anchored` or `extracted` values.",
+               "cells (e.g. T(3,4)/(3,1)/color-binding, a Phase-3+ target "
+               "that pulls in higher-strand structure), so any production "
+               "wire-up that expects derived cannot silently consume "
+               "`cal-anchored` or `extracted` values.",
     )
 
     wb.add_data(
@@ -171,11 +174,11 @@ def main() -> int:
     print("=" * 78)
     print(" VERDICT")
     print("=" * 78)
-    print(f"  ✓ catalogue reachable from compute path (3 cells loaded).")
+    print(f"  ✓ catalogue reachable from compute path ({len(cat.cells)} cells loaded).")
     print(f"  ✓ Schur-Weyl cross-check passes at all {len(Q_TEST_VALUES)} test q-values.")
-    print(f"  ✓ failing-loud guard raises on missing cell (trefoil/(2)/electron).")
-    print(f"  → Phase 2 will broaden the K-axis (Trefoil, Cinquefoil, 4₁);")
-    print(f"    Phase 3 will wire `lookup_derived` calls into production reads.")
+    print(f"  ✓ failing-loud guard raises on missing cell (T(3,4)/(3,1)/color-binding).")
+    print(f"  → Phase 3 wires `lookup_derived` calls into production reads;")
+    print(f"    Phase 4 extends to V⊗⁵+ via Rust (B_5 isotopes, full mass-table sweep).")
     print()
 
     out = wb.save()

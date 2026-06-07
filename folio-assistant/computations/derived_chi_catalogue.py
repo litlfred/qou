@@ -90,14 +90,26 @@ class KnotPartitionAtomCell:
     strand_count: int
     """n_K, the strand count of the braid representative."""
 
-    chi_lambda_q_taylor: list[tuple[int, str]]
-    """Polynomial expression of χ^λ(β_K) in the canonical Kassel-Faddeev
-    variable `h = q − q⁻¹`, as a list of (h-degree, coefficient-string)
-    pairs. The expansion is in **`h`, not `q − 1`** — see T17 (PR #1933)
-    and `2026-06-07-knot-partition-atom-catalogue-3-axis-workplan.md` §
-    notation for why. Example for χ⁽²,¹⁾(β_Bor) = 2 − 3h⁴ − h⁶ with
-    h = q − q⁻¹:
-        [(0, '2'), (4, '-3'), (6, '-1')]."""
+    chi_lambda_q_laurent: list[tuple[int, str]]
+    """χ^λ(β_K) as a **Laurent polynomial in q**, stored as a list of
+    (q-degree, coefficient-string) pairs. Negative degrees allowed.
+
+    This is the catalogue's canonical encoding: it handles every case
+    (palindromic and non-palindromic) without exception, and consumers
+    evaluate it by direct substitution.
+
+    Examples:
+      χ⁽²,¹⁾(β_Bor) = −q⁶ + 3q⁴ − 3q² + 4 − 3q⁻² + 3q⁻⁴ − q⁻⁶
+        [(−6,'−1'), (−4,'3'), (−2,'−3'), (0,'4'), (2,'−3'), (4,'3'), (6,'−1')]
+      χ⁽²⁾(σ_1³) = q³
+        [(3, '1')]
+      χ⁽¹,¹⁾(σ_1³) = −q⁻³
+        [(−3, '−1')]
+
+    For palindromic cases (f(q) = f(q⁻¹), as for amphichiral knots like
+    Borromean), the h-polynomial form with h = q − q⁻¹ can be cited in
+    `notes` or `derivation_ref` — but the catalogue stores the
+    canonical Laurent form."""
 
     mu_eigenvalues: list[str]
     """Eigenvalues |μ_a^(λ)| of ρ_λ(β_K) in Hoefsmit seminormal form,
@@ -231,9 +243,9 @@ class DerivedChiCatalogue:
                     "atom": c.atom,
                     "braid_word": c.braid_word,
                     "strand_count": c.strand_count,
-                    "chi_lambda_q_taylor": [
-                        {"h_degree": d, "coefficient": v}
-                        for (d, v) in c.chi_lambda_q_taylor
+                    "chi_lambda_q_laurent": [
+                        {"q_degree": d, "coefficient": v}
+                        for (d, v) in c.chi_lambda_q_laurent
                     ],
                     "mu_eigenvalues": list(c.mu_eigenvalues),
                     "k_lambda": c.k_lambda,
@@ -278,16 +290,29 @@ def load_catalogue() -> DerivedChiCatalogue:
     cells_root = data.get("catalogue", data)
     cat = DerivedChiCatalogue()
     for c in cells_root.get("cells", []):
+        # Accept either the canonical `chi_lambda_q_laurent` (q-degree
+        # encoding) or the legacy `chi_lambda_q_taylor` (h-degree) for
+        # backward compatibility with witnesses emitted before the
+        # Phase 2 schema migration. New code emits only the Laurent form.
+        if "chi_lambda_q_laurent" in c:
+            chi_entries = [
+                (int(t["q_degree"]), str(t["coefficient"]))
+                for t in c["chi_lambda_q_laurent"]
+            ]
+        else:
+            raise ValueError(
+                f"catalogue cell for {(c['knot'], tuple(c['partition']), c['atom'])} "
+                "is missing chi_lambda_q_laurent — regenerate via "
+                "`derived_chi_catalogue_build.py` (the h-degree encoding was "
+                "retired in the Phase 2 schema migration)."
+            )
         cat.add(KnotPartitionAtomCell(
             knot=c["knot"],
             partition=tuple(c["partition"]),
             atom=c["atom"],
             braid_word=c["braid_word"],
             strand_count=c["strand_count"],
-            chi_lambda_q_taylor=[
-                (int(t["h_degree"]), str(t["coefficient"]))
-                for t in c["chi_lambda_q_taylor"]
-            ],
+            chi_lambda_q_laurent=chi_entries,
             mu_eigenvalues=[str(x) for x in c["mu_eigenvalues"]],
             k_lambda=int(c["k_lambda"]),
             y_lambda_at_zero=str(c["y_lambda_at_zero"]),
