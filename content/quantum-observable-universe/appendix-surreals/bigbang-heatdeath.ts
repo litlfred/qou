@@ -6,6 +6,7 @@ export default conjecture({
     "Big Bang and heat-death functors as evaluations at named surreal endpoints",
   lean: { ref: "qou:QOU.AppendixSurreals.BigbangHeatdeath", validation: "stub" },
   tags: [
+    "tier:P",
     "surreal-numbers",
     "big-bang",
     "heat-death",

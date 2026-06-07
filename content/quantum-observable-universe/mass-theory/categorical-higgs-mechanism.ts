@@ -7,6 +7,7 @@ export default conjecture({
     "Categorical Higgs mechanism: Goldstone-eating as topological linking",
   uses: ["conj:weinberg-angle-categorical"],
   tags: [
+    "tier:S",
     "higgs-mechanism",
     "goldstone-eating",
     "linking-number",

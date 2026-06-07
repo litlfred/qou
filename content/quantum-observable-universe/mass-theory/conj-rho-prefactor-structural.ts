@@ -7,6 +7,7 @@ export default conjecture({
     "Structural prefactor rule: $\\rho(\\mathfrak{H}) = \\dim_q(\\lambda^*(T_w))$",
   uses: ["prop:atom-knot-mass-derivation"],
   tags: [
+    "tier:E",
     "sdp-multiplicity",
     "wedderburn",
     "prefactor",

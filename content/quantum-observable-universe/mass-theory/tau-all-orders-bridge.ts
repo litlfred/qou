@@ -15,6 +15,7 @@ export default conjecture({
   ],
   cites: ["yekutieli2015", "neumann-zagier1985"],
   tags: [
+    "tier:S",
     "geom",
     "non-abelian-stokes",
     "open-problem",

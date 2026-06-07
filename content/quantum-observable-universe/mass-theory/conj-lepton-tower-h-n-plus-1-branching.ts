@@ -80,6 +80,7 @@ export default conjecture({
     },
   ],
   tags: [
+    "tier:E",
     "lepton",
     "mass-tower",
     "ksi-factor",

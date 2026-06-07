@@ -16,6 +16,7 @@ export default conjecture({
     "carter-leal-saliola-2000",
   ],
   tags: [
+    "tier:S",
     "crystal-graph",
     "kashiwara-operator",
     "highest-weight",

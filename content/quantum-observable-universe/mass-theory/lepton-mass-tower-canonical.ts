@@ -65,6 +65,7 @@ export default conjecture({
     },
   ],
   tags: [
+    "tier:E",
     "lepton",
     "mass-formula",
     "operator-level",
