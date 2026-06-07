@@ -2550,7 +2550,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f6a58ab00f69",
+          "ts": "2f4acb505909",
+          "lean": "072be4a569d9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "C6 ring-closure barrier prediction-vs-experiment; squarely in sec:carbon-chains-benzene",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:29:26.701Z",
+        "reviewed_sha": "9c1a7c8618289996e9416d2fe3e1ab655de2cb25",
+        "notes": "Primary subject (benzene barrier) matches section/chapter scope; no sibling carries same claim."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f6a58ab00f69",
+          "ts": "2f4acb505909",
+          "lean": "072be4a569d9"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement block carries 'Open problems' + Hückel-rule discussion (lines 100-122) and '1/2 factor' commentary inline; no companion interprets: remark holds it",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:29:26.746Z",
+        "reviewed_sha": "9c1a7c8618289996e9416d2fe3e1ab655de2cb25",
+        "notes": "Forward-looking open-problem prose mislocated in a proposition; borderline since it is a comparison result. WARN."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f6a58ab00f69",
+          "ts": "2f4acb505909",
+          "lean": "072be4a569d9"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement hard-codes eV/kJ/MeV numerics + q≈1 evaluation (lines 23,46-60,95) with no §7c banner; organic-chemistry is applied/physical-prediction chapter",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:29:26.793Z",
+        "reviewed_sha": "9c1a7c8618289996e9416d2fe3e1ab655de2cb25",
+        "notes": "Physical numerics inherent to prediction but regime side not explicitly flagged. WARN."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f6a58ab00f69",
+          "ts": "2f4acb505909",
+          "lean": "072be4a569d9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Lean proofs (threading_efficiency_half, benzene_weights, barrier_grows_with_ring_size) use omega/native_decide on ℕ combinatorics — no Real.*/linarith/IVT",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:29:26.837Z",
+        "reviewed_sha": "9c1a7c8618289996e9416d2fe3e1ab655de2cb25",
+        "notes": "Proof method is purely algebraic, matches statement side."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T02:29:26.837Z"
 }
