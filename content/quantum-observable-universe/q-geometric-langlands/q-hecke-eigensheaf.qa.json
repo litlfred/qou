@@ -1981,7 +1981,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0f9b1e14e867",
+          "ts": "7983440fbb3d",
+          "lean": "f9a83574d0d0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "def:q-hecke-eigensheaf in sec:q-hecke-correspondences; defines q-Hecke eigensheaf via T^(q)_{x,lambda}(M) iso",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:52:17.117Z",
+        "reviewed_sha": "48c2a6f45a3650821f22173358632ab4c33e0ba8",
+        "notes": "New construction (eigensheaf def) matching section scope; no sibling carries same definition."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "0f9b1e14e867",
+          "ts": "7983440fbb3d",
+          "lean": "f9a83574d0d0"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is categorical (q-D-modules, LocSys_Gcheck_q, braiding sigma_q); O(q-1) is formal/algebraic; no Real.*, no numeric q-value, no MeV, no order hypothesis",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:52:17.162Z",
+        "reviewed_sha": "48c2a6f45a3650821f22173358632ab4c33e0ba8",
+        "notes": "Generic-ring chapter (q-geometric-langlands); statement stays on algebraic side of §7c wall."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T01:52:17.162Z"
 }
