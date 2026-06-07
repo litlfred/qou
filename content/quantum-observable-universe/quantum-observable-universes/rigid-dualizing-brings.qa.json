@@ -1803,7 +1803,28 @@
         "reviewed_at": "2026-06-01T16:06:38.106Z",
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f7a3bf7448d7",
+          "ts": "90629ebede26"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Worked example computing rigid dualizing complex of O_q(SU(2)); sits in sec:algebraic-substrate-reeb beside def:brings-coordinate-ring/def:rigid-dualizing-complex",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:22:41.466Z",
+        "reviewed_sha": "3bd0c5704a32d9c6a799f1006a1f43afb39ce133",
+        "notes": "Concrete construction continuing the two defs it cites; correctly placed example in the substrate section"
+      }
     ]
   },
-  "updated_at": "2026-06-03T13:06:09.584Z"
+  "updated_at": "2026-06-07T01:22:41.466Z"
 }
