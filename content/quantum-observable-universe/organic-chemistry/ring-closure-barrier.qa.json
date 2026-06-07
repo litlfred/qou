@@ -2552,7 +2552,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement (L8-48) followed by interpretive prose in-block: 'Ring super-stability', 'The spring analogy' (L77-105); no companion interprets: remark",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:36:35.828Z",
+        "reviewed_sha": "e3c301c59240b95263d82707cf9c40ea35487291",
+        "notes": "Interpretation lives in same proposition block rather than a linked remark; rem:chain-spring-modes covers related soft-mode interpretation but is not linked via interprets."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "proposition on chain->ring closure barrier; uses def:molecular-hopf-ring; core organic-chemistry chapter result",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:36:35.876Z",
+        "reviewed_sha": "e3c301c59240b95263d82707cf9c40ea35487291",
+        "notes": "Squarely in chapter scope; no sibling carries the same claim."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement uses symbolic Alexander polynomials in q (q^2+1+q^-2) with |q| approx 1; no hard-coded q0, no MeV units, no Real.* construct",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:36:35.922Z",
+        "reviewed_sha": "e3c301c59240b95263d82707cf9c40ea35487291",
+        "notes": "organic-chemistry chapter; statement is symbolic q-deformation combinatorics, generic-ring side of wall."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d1174875f401",
+          "ts": "141de25a8dd3",
+          "lean": "16f25fad683e"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No narrative **Proof.** body; Lean proofs use native_decide/omega/simp over generic N:Nat (no linarith on Real, no IVT/continuity)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T02:36:35.967Z",
+        "reviewed_sha": "e3c301c59240b95263d82707cf9c40ea35487291",
+        "notes": "Combinatorial proof matches algebraic statement side; no archimedean machinery."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T02:36:35.967Z"
 }
