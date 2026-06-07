@@ -60,7 +60,7 @@ $T_\beta = S \cdot 1$, with $\| T_\beta \|^2_\tau = S^2$. $\quad\blacksquare$
 
 The Q_β production rule extracts the c_k Taylor coefficients from
 $\tau_M(T_\beta)(q)$.  Under either norm choice — Euclidean L2 on
-coordinate-vector space $R^6$ (the [PR #1739 SHAPE $\times$ S decomposition](https://github.com/litlfred/qou/pull/1739))
+coordinate-vector space $R^6$ (the [PR #1739 SHAPE x S decomposition](https://github.com/litlfred/qou/pull/1739))
 or the canonical Markov–Frobenius norm above — the SDP **constraint**
 $\tau_M(T_\beta) = S = Q_\beta / E_0$ is satisfied identically.
 Therefore $\tau_M(T_\beta)(q) \equiv S(q)$ in both cases, and the
