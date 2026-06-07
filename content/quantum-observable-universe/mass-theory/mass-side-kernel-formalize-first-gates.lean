@@ -32,14 +32,14 @@
 
   Sorry-free.
 
-  Ref: [pr1786] https://github.com/litlfred/qou/pull/1786
-       [pr1850] https://github.com/litlfred/qou/pull/1850  (z<1 obstruction)
-       [pr1875] https://github.com/litlfred/qou/pull/1875  (bar-even §4(b))
-       [pr1889] https://github.com/litlfred/qou/pull/1889  (Q_β §4(a))
-       [pr1890] https://github.com/litlfred/qou/pull/1890  (Q_β §4(c) + (d))
-       [pr1893] https://github.com/litlfred/qou/pull/1893  (Q_β BarEvenKernel)
-       [pr1896] https://github.com/litlfred/qou/pull/1896  (mass-side §4 matrix)
-       [pr1899] https://github.com/litlfred/qou/pull/1899  (mass-side q=1 anchor hunt: Σf^λ/4 = 5/2)
+  Ref: https://github.com/litlfred/qou/pull/1786
+       https://github.com/litlfred/qou/pull/1850  (z<1 obstruction)
+       https://github.com/litlfred/qou/pull/1875  (bar-even §4(b))
+       https://github.com/litlfred/qou/pull/1889  (Q_β §4(a))
+       https://github.com/litlfred/qou/pull/1890  (Q_β §4(c) + (d))
+       https://github.com/litlfred/qou/pull/1893  (Q_β BarEvenKernel)
+       https://github.com/litlfred/qou/pull/1896  (mass-side §4 matrix)
+       https://github.com/litlfred/qou/pull/1899  (mass-side q=1 anchor hunt: Σf^λ/4 = 5/2)
 -/
 
 import Mathlib.Data.Real.Basic
@@ -52,20 +52,20 @@ universe u
 /-! ## Substrate constants (inherited from PR #1893's typeclass) -/
 
 /-- The proton-pinned substrate q_0 (50 dps). -/
--- Ref: [pr1727] https://github.com/litlfred/qou/pull/1727
+-- Ref: https://github.com/litlfred/qou/pull/1727
 noncomputable def q_substrate : ℝ := 1.10997858275138
 
 /-- Anchor-stability tolerance (1 ppm relative, per PR #1727 fibre-level). -/
--- Ref: [pr1727] https://github.com/litlfred/qou/pull/1727
+-- Ref: https://github.com/litlfred/qou/pull/1727
 noncomputable def anchorTolerance : ℝ := 0.000001
 
 /-- Direction-sanity target for `linking_weight` at q_0 (CODATA-implied
     near-match ≈ 2.46 per PR #1850 framing). -/
--- Ref: [pr1850] https://github.com/litlfred/qou/pull/1850
+-- Ref: https://github.com/litlfred/qou/pull/1850
 noncomputable def directionTarget : ℝ := 2.46
 
 /-- Direction-sanity threshold (10× order-of-magnitude check). -/
--- Ref: [pr1850] https://github.com/litlfred/qou/pull/1850
+-- Ref: https://github.com/litlfred/qou/pull/1850
 noncomputable def directionThreshold : ℝ := 10
 
 /-! ## Per-gate parametric conditional classes
@@ -123,8 +123,8 @@ theorem mass_anchor_stable_reject
     finding = #involutions(S_4)/4) to be evaluated against the
     hypothetical anchor `some (5/2)`. -/
 -- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
--- Ref: [pr1896] https://github.com/litlfred/qou/pull/1896
--- Ref: [pr1899] https://github.com/litlfred/qou/pull/1899
+-- Ref: https://github.com/litlfred/qou/pull/1896
+-- Ref: https://github.com/litlfred/qou/pull/1899
 class MassQOneShadowGateClass
     (w : ℝ → ℝ) (anchor : Option ℝ) : Prop where
   /-- The candidate's q=1 limit matches the registered anchor (when
@@ -208,10 +208,10 @@ theorem mass_direction_sanity_reject
     - `anchor`: registered q=1 categorical anchor (None for open gap)
     - `magnitude`: |w(q_0)| substrate magnitude
 
-    Defined as the EXTENSION of the three per-gate parametric classes
-    so the bundle is definitionally the conjunction of its parents.
-    Mirrors PR #1893's `BarEvenKernel` for the decay-side, with the
-    `extends` refactor for cleaner downstream composition.
+    Defined as the extension of the three per-gate parametric classes
+    so the bundle equals the conjunction of its parents by construction.
+    Mirrors the decay-side `BarEvenKernel` typeclass; uses the
+    `extends` pattern for cleaner downstream composition.
 
     The §4(b) bar-even invariant is automatic for substrate-derived
     candidates via the Q_β CommRing R lemma (PR #1875). -/
