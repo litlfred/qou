@@ -686,7 +686,12 @@ export function checkCanonicalCalibrationCount(
   const md = readMaybe(mdPath);
   const ts = readMaybe(tsPath);
   const combined = md + "\n" + ts;
-  const matches = combined.match(CALIBRATION_RE) ?? [];
+  // De-duplicate: the same calibration anchor is routinely declared in
+  // BOTH the .md narrative and the .ts manifest, so a raw global-regex
+  // count double-counts it and can push a legitimate 3-calibration
+  // block over the threshold into a false fail. Count distinct anchor
+  // declarations only.
+  const matches = [...new Set(combined.match(CALIBRATION_RE) ?? [])];
   if (matches.length <= 3) return { result: "pass", hits: [] };
   return {
     result: "fail",
