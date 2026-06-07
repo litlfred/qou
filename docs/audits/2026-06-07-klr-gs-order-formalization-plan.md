@@ -44,7 +44,9 @@ is a formal consequence of (★) plus cited theorems. (★) is the one
 These need only `List`, `Nat`, `Finset`, and decidability — all in
 Mathlib core:
 
-- **L0.1** `GSWord := List (Fin (n-1))` (letters `σ_i`), `length`,
+- **L0.1** `GSWord := List ℕ` (letters `σ_i`, the strand index `i`
+  carried in the word rather than the type — matching the shipped
+  module; a `Fin (n-1)` refinement is possible but not used), `length`,
   shortlex order `≺` as `Prod.Lex` on `(length, lexicographic)`.
 - **L0.2** `≺` is a strict well-order on `GSWord` of bounded length
   (`WellFoundedLT` via `Prod.Lex` + `List.Lex`).
