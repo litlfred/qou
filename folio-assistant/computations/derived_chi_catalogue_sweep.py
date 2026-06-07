@@ -67,7 +67,58 @@ from derived_chi_catalogue import (  # noqa: E402
 from derived_chi_catalogue_parallel import (  # noqa: E402
     parallel_chi_q_via_gp_batch,
 )
+from derived_chi_catalogue_bar_symmetry_audit import (  # noqa: E402
+    conjugate_partition,
+    laurent_substitute_bar,
+    laurent_negate,
+)
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
+
+
+def split_partitions_by_conjugacy(
+    parts: list[tuple[int, ...]],
+) -> tuple[list[tuple[int, ...]], list[tuple[tuple[int, ...], tuple[int, ...]]]]:
+    """Partition a list of λ's into:
+      - self-conjugate λ (λᵀ = λ; compute directly)
+      - non-self-conjugate pairs (λ, λᵀ) with λ < λᵀ lex
+        (compute one, derive the other via bar symmetry)
+    """
+    seen: set[tuple[int, ...]] = set()
+    self_conj: list[tuple[int, ...]] = []
+    pairs: list[tuple[tuple[int, ...], tuple[int, ...]]] = []
+    for lam in parts:
+        if lam in seen:
+            continue
+        lam_T = conjugate_partition(lam)
+        if lam_T == lam:
+            self_conj.append(lam)
+            seen.add(lam)
+            continue
+        # Pick the lex-smaller as the "compute" partition.
+        if lam < lam_T:
+            pairs.append((lam, lam_T))
+        else:
+            pairs.append((lam_T, lam))
+        seen.add(lam)
+        seen.add(lam_T)
+    return self_conj, pairs
+
+
+def derive_conjugate_from_bar_symmetry(
+    chi_lambda_pairs: list[tuple[int, str]],
+    braid_length: int,
+) -> list[tuple[int, str]]:
+    """Compute χ^{λᵀ}(T_β) from χ^λ(T_β) via the Hecke bar identity:
+
+        χ^{λᵀ}(T_β) = ε(β) · χ^λ(T_β) | _{q → −q⁻¹},
+        ε(β) = (−1)^|β|  (verified empirically; see
+        `2026-06-07-bar-symmetry-audit.witness.json`).
+    """
+    substituted = laurent_substitute_bar(chi_lambda_pairs)
+    sign = +1 if (braid_length % 2 == 0) else -1
+    if sign == -1:
+        return laurent_negate(substituted)
+    return substituted
 
 
 # ── Production isotope registry (mirrors paper_six_term_isotope_sweep.ISOTOPES) ──
@@ -254,21 +305,38 @@ def main() -> int:
 
         atom_t0 = time.monotonic()
         atom_cells = 0
+        part_tuples = [tuple(p) for p in parts]
+        # Tier 3 — split into (self-conjugate, (λ, λᵀ) pairs); only ONE
+        # of each pair gets a chi_q_via_gp call. The other is derived
+        # via the bar-symmetry identity (verified to 100% on 348 pairs).
+        self_conj, pairs_lt_T = split_partitions_by_conjugacy(part_tuples)
+        compute_set = list(self_conj) + [lam for (lam, _lT) in pairs_lt_T]
+        derived_count = len(pairs_lt_T)
         print(f"  • {label} (Z={Z}, N={N}, A={A}, B_{n_strands}, "
               f"{len(rust_word)} crossings, {len(parts)} partitions, "
-              f"workers={workers}):", flush=True)
-        # Parallel batch compute (ProcessPoolExecutor sidesteps the
-        # pyhecke_native GIL hold).
-        part_tuples = [tuple(p) for p in parts]
+              f"workers={workers})", flush=True)
+        print(f"      Tier 3: {len(self_conj)} self-conj + {len(pairs_lt_T)} "
+              f"non-self-conj pairs ⇒ {len(compute_set)} chi_q_via_gp calls "
+              f"+ {derived_count} bar-derived (~{100 * derived_count / max(len(part_tuples), 1):.0f}% saved)",
+              flush=True)
+        # Parallel batch compute on just the "primary" partition of each pair.
         compute_t0 = time.monotonic()
         chi_results = parallel_chi_q_via_gp_batch(
-            partitions=part_tuples,
+            partitions=compute_set,
             n_strands=n_strands,
             word=rust_word,
             workers=workers,
         )
         compute_dt = time.monotonic() - compute_t0
-        # Materialise cells from the batch result.
+        # Tier 3 — derive the λᵀ conjugates via bar identity.
+        bar_t0 = time.monotonic()
+        for (lam_lo, lam_hi) in pairs_lt_T:
+            chi_lo = chi_results[lam_lo]
+            chi_results[lam_hi] = derive_conjugate_from_bar_symmetry(
+                chi_lo, braid_length=len(rust_word),
+            )
+        bar_dt = time.monotonic() - bar_t0
+        # Materialise cells from the merged result.
         for lam in part_tuples:
             try:
                 cell = derive_cell(
@@ -283,9 +351,9 @@ def main() -> int:
                 # Cell duplicate from --merge-existing or repeat partition
                 pass
         print(f"      batch compute: {compute_dt:.2f}s "
-              f"({len(part_tuples)} characters; "
-              f"{1000 * compute_dt / max(len(part_tuples), 1):.1f} ms/cell "
-              f"average across {workers} workers)", flush=True)
+              f"({len(compute_set)} chi_q_via_gp calls) + "
+              f"{1000 * bar_dt:.1f}ms bar-derive ({derived_count} pairs)",
+              flush=True)
         atom_dt = time.monotonic() - atom_t0
         print(f"      done: {atom_cells} cells in {atom_dt:.2f}s")
         atom_summary[label] = {
