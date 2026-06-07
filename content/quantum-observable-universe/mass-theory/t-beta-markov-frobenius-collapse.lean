@@ -16,7 +16,7 @@
   follow-up Lean PR.
 
   Ref: [pr1750] https://github.com/litlfred/qou/pull/1750
-       [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
+       [jones1987] https://doi.org/10.2307/1971403
                    Theorem 6.1 (Markov-trace existence + uniqueness)
        [wenzl1988] https://doi.org/10.1007/BF02101492
                    Lemma 2.4 (non-degeneracy of the Markov trace)

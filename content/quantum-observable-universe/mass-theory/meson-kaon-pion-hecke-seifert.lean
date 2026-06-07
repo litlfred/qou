@@ -11,7 +11,7 @@
   in any characteristic-0 specialisation). The substrate evaluation
   (q at q₀) lives downstream.
 
-  -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 

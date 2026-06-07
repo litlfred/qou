@@ -5,7 +5,7 @@
   tower (torus knots T(2,n) in H₂(q)) and the meson mass tower
   (Hopf-bound quark-antiquark pairs in H₃(q)).
 
-  -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Ref: [kashaev1997] https://doi.org/10.1007/s100529801020
 -/
 
