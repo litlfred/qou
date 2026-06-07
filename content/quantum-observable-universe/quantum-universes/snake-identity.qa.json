@@ -1879,7 +1879,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cabd030907fa",
+          "ts": "37d450535c8a",
+          "lean": "2b66cde3234a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Zig-zag/duality identities in sec:rigid-monoidal ('Preliminary: rigid monoidal categories'); exactly the section's stated scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:57:48.985Z",
+        "reviewed_sha": "9884f8497dadf7f297f6be2e32a2b26cd4fa3fcd",
+        "notes": "Foundational duality definition; correctly placed in the rigid-monoidal preliminary section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "cabd030907fa",
+          "ts": "37d450535c8a",
+          "lean": "2b66cde3234a"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Generic monoidal (C,tensor,1) with object V and dual; ev/coev morphisms only; no Real.*/q-approx/MeV/order hypothesis",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:57:49.040Z",
+        "reviewed_sha": "9884f8497dadf7f297f6be2e32a2b26cd4fa3fcd",
+        "notes": "Purely categorical duality definition; correct generic-ring side of wall."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T00:57:49.040Z"
 }
