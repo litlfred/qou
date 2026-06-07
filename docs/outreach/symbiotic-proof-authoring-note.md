@@ -30,7 +30,7 @@ symbiotic authoring is about *keeping a living, legible, trustworthy body of
 mathematics around them*. The most interesting design space is where they
 compose (§8).
 
-| Dimension | Autonomous proof search | Symbiotic authoring (Folio) |
+| Dimension | Autonomous proof search (AlphaProof Nexus) | Symbiotic authoring (QOU / Folio) |
 |---|---|---|
 | Objective | `sorry`-free proof; max solves/\$ | correct, in-sync, legible corpus over time |
 | Atomic unit | a Lean proof file ("sketch") | a *knowledge object* = narrative + formal + manifest |
@@ -47,21 +47,22 @@ compose (§8).
 
 Feature by feature — what the authoring layer adds *around* a proof-search core:
 
-| Capability | Symbiotic authoring (us) | Autonomous search (them) |
+| Capability | AlphaProof Nexus (autonomous search) | QOU / Folio (symbiotic authoring) |
 |---|---|---|
-| **Authoritative narrative** | the prose is the audited scholarly face, co-evolved with the formalization (voice / readability / conciseness / narrative↔formal-equivalence audits) | auto-generated NL proofs that *mirror* the Lean, not authored exposition |
-| **Hallucinated-lemma defense** | every deferred step needs a citation key that resolves against a typed reference database → directly blocks failure mode (b) | no citation gate; agents `sorry`-ed fabricated "known results" |
-| **Offloading defense** | a conjectural-propagation type system: a result downstream of an unproved input *cannot be typed a theorem* unless it carries that input as an explicit hypothesis → structurally blocks failure mode (a) | could not be prompted away |
-| **Misformalization** | *proactive* narrative↔formal equivalence audit ("do they prove the same thing?") | *reactive* (the wrong reading is proved, then a human notices) |
-| **Numeric / figure provenance** | witness records with producing-script hash + staleness tracking; optimisation solves emit their dual | out of scope (pure-math proofs) |
-| **Don't-redo-known-work** | a backward corpus-grep before anything is declared "open" | n/a (open is the goal) |
-| **Continuous corpus QA** | multi-axis watchers (proof / canonical / compute / detangler / voice / regime) + per-block `.qa.json` sidecars, hash-stale-tracked | QA at *generation* time only (rater + verifier) |
-| **Anti-overfitting firewall** | a production-vs-exploratory firewall refuses unjustified fitted constants in the authoritative text | the *opposite*: value-search markers actively reward parameter search |
+| **Authoritative narrative** | auto-generated NL proofs that *mirror* the Lean, not authored exposition | the prose is the audited scholarly face, co-evolved with the formalization (voice / readability / conciseness / narrative↔formal-equivalence audits) |
+| **Hallucinated-lemma defense** | no citation gate; agents `sorry`-ed fabricated "known results" | every deferred step needs a citation key that resolves against a typed reference database → directly blocks failure mode (b) |
+| **Offloading defense** | could not be prompted away | a conjectural-propagation type system: a result downstream of an unproved input *cannot be typed a theorem* unless it carries that input as an explicit hypothesis → structurally blocks failure mode (a) |
+| **Misformalization** | *reactive* (the wrong reading is proved, then a human notices) | *proactive* narrative↔formal equivalence audit ("do they prove the same thing?") |
+| **Numeric / figure provenance** | out of scope (pure-math proofs) | witness records with producing-script hash + staleness tracking; optimisation solves emit their dual |
+| **Don't-redo-known-work** | n/a (open is the goal) | a backward corpus-grep before anything is declared "open" |
+| **Continuous corpus QA** | QA at *generation* time only (rater + verifier) | multi-axis watchers (proof / canonical / compute / detangler / voice / regime) + per-block `.qa.json` sidecars, hash-stale-tracked |
+| **Anti-overfitting firewall** | the *opposite*: value-search markers actively reward parameter search | a production-vs-exploratory firewall refuses unjustified fitted constants in the authoritative text |
 
-The last row is the key inversion: **their core strength — searching a value
-space — is our core hazard.** Anything imported from the autonomous side (an
-`EVOLVE-VALUE`-style marker especially) must land *inside* the
-production-vs-exploratory fence, or it becomes a numerology generator.
+The last row is the key inversion: **AlphaProof Nexus's core strength —
+searching a value space — is QOU/Folio's core hazard.** Anything QOU/Folio
+imports from the autonomous side (an `EVOLVE-VALUE`-style marker especially)
+must land *inside* the production-vs-exploratory fence, or it becomes a
+numerology generator.
 
 ---
 
