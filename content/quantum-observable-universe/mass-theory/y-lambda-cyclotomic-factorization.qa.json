@@ -2180,6 +2180,26 @@
         "reviewed_at": "2026-06-06T02:11:41.933Z",
         "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
         "notes": "Lean is a stub model (denominator hard-coded to 1), not the cyclotomic-product claim; theorem-changing divergence"
+      },
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "y-lambda-cyclotomic-factorization.lean:71-75 -- conclusion is existential: exists P s.t. P = cyclotomicNumerator and denominator nonzero",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:30:51.834Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "Narrative claims y_lambda = P_lambda/D_n; lean states exists P with P = placeholder and D nonzero; cyclotomicDenominator is stub constant 1 not actual cyclotomic product; notational gap not theorem-changing since structure is preserved"
       }
     ],
     "proof-lean-compiles": [
@@ -2552,6 +2572,26 @@
         "reviewed_at": "2026-06-06T02:11:41.786Z",
         "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
         "notes": "Well-placed; archimedean-face Wenzl-bridge subtopic of mass-theory"
+      },
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "y-lambda-cyclotomic-factorization.ts:3 -- proposition about Jones-Markov coefficient y_lambda cyclotomic factorization",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:30:51.714Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "Proposition about y_lambda in H_n(R,q) fits mass-theory chapter which covers Hecke/Wedderburn mass formula machinery; no chapter mismatch"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2574,6 +2614,26 @@
         "reviewed_at": "2026-06-06T02:11:41.822Z",
         "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
         "notes": "Interpretation scoped to separate heading, no companion interprets: remark; borderline"
+      },
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "y-lambda-cyclotomic-factorization.md:106 -- ## Significance section explains why this is the cleanest closed form and value for Lean",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:30:14.540Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "Significance section at end of block interprets the proposition but no companion interprets-remark exists; borderline as it follows the proof section"
       }
     ],
     "wall-side-statement": [
@@ -2596,6 +2656,26 @@
         "reviewed_at": "2026-06-06T02:11:41.858Z",
         "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
         "notes": "Banner'd archimedean specialisation; statement itself is generic q-rational identity"
+      },
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "y-lambda-cyclotomic-factorization.lean:27-28 -- import Mathlib.Data.Real.Basic, param t : R in statement",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:30:51.754Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "md opens with archimedean banner note; lean uses ℝ for t; underlying combinatorial content described as generic; borderline because core statement is algebraic over generic ring but lean is specialized to ℝ"
       }
     ],
     "wall-side-proof": [
@@ -2618,6 +2698,26 @@
         "reviewed_at": "2026-06-06T02:11:41.895Z",
         "reviewed_sha": "90ac8445e25673402d375c300c4adb3e0bd9e372",
         "notes": "Proof method matches generic algebraic statement; arch tactics only in flagged Lean side"
+      },
+      {
+        "field_hash": {
+          "md": "8bd321b326ce",
+          "ts": "24abbd8d399a",
+          "lean": "051be5aed972"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "y-lambda-cyclotomic-factorization.lean:82-83 -- norm_num closes non-vanishing; field_simp closes n=2 identity",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:30:51.794Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "Lean proof uses norm_num and field_simp which are algebraic tactics; proof body in md uses cyclotomic polynomial algebra over Z[q]; no archimedean-only machinery in proof"
       }
     ],
     "detangler-topic-coherence": [
@@ -2715,5 +2815,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:30:51.834Z"
 }

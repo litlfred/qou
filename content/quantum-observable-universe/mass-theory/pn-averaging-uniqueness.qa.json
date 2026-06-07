@@ -944,6 +944,26 @@
         "reviewed_at": "2026-06-06T02:12:28.846Z",
         "reviewed_sha": "8997dd2ed7e95206cb0969dfc874eac15e33df1e",
         "notes": "Physical mass-theory content; not misfiled to another chapter"
+      },
+      {
+        "field_hash": {
+          "md": "e1566fe05f7b",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.ts:4 -- proposition about p-n interface averaging in H_{3A}(R,q)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:31:42.599Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "p-n averaging in Hecke algebra context fits mass-theory chapter; relevant to nucleon mass splitting"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -966,6 +986,26 @@
         "reviewed_at": "2026-06-06T02:12:28.880Z",
         "reviewed_sha": "8997dd2ed7e95206cb0969dfc874eac15e33df1e",
         "notes": "Editorial/status content mislocated in statement+body; should move to authorNotes or a linked remark"
+      },
+      {
+        "field_hash": {
+          "md": "e1566fe05f7b",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.md:16-21 -- Setting section table comparing candidates and describing why uniqueness matters",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:31:42.559Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "Setting + Status + Computational consequence sections interpret the proposition but no companion remark with interprets: exists; borderline"
       }
     ],
     "wall-side-statement": [
@@ -988,6 +1028,26 @@
         "reviewed_at": "2026-06-06T02:12:28.913Z",
         "reviewed_sha": "8997dd2ed7e95206cb0969dfc874eac15e33df1e",
         "notes": "Generic-ring statement, correct side of wall"
+      },
+      {
+        "field_hash": {
+          "md": "e1566fe05f7b",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.lean:47 -- PnAveragingForm (R : Type u) [Field R] generic abstract R",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:31:42.637Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "Lean statement is over generic Field R; no archimedean constructs; mass-theory is largely archimedean but this block is generic algebraic - correct"
       }
     ],
     "wall-side-proof": [
@@ -1010,6 +1070,26 @@
         "reviewed_at": "2026-06-06T02:12:28.946Z",
         "reviewed_sha": "8997dd2ed7e95206cb0969dfc874eac15e33df1e",
         "notes": "Purely algebraic proof matching generic statement"
+      },
+      {
+        "field_hash": {
+          "md": "e1566fe05f7b",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.lean:158-160 -- funext q; rw [hcf.factors q, hcf.factors q, hw]",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:31:42.677Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "Proofs use funext and rw only; purely algebraic tactics; no archimedean machinery"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1032,6 +1112,26 @@
         "reviewed_at": "2026-06-06T02:12:28.980Z",
         "reviewed_sha": "8997dd2ed7e95206cb0969dfc874eac15e33df1e",
         "notes": "Faithful conditional-class encoding (§3b-cond); ColorFlavorCompatible is the named open class"
+      },
+      {
+        "field_hash": {
+          "md": "e1566fe05f7b",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.lean:167-176 -- theorem pn_averaging_unique with BarInvariant ColorFlavorCompatible StandardNorm hypotheses",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T13:31:42.718Z",
+        "reviewed_sha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+        "notes": "Narrative states uniqueness under bar-invariance + color-flavor compatibility + standard normalisation; lean has exactly these three classes; conclusion sigma_pn = sigma_pn' matches"
       }
     ],
     "detangler-topic-coherence": [
@@ -1129,5 +1229,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-07T13:31:42.718Z"
 }
