@@ -54,14 +54,12 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
-from partition_utils import hook_lengths  # noqa: E402
 
 # Centralised q=1-safe q-integer / dim_q helpers + Q_0_50DPS
 # (addresses Gemini deduplication review on PR #1904).
 from _gap_a4_qsafe import (  # noqa: E402
     Q_0_50DPS,
     q_number,
-    q_factorial,
     dim_q_partition,
 )
 
@@ -200,8 +198,8 @@ def character_inner_product(chi1: list, chi2: list, class_sizes: list,
     """
     out = mp.mpc(0)
     for s, c1, c2 in zip(class_sizes, chi1, chi2):
-        c2c = mp.conj(c2) if isinstance(c2, mp.mpc) else c2
-        out += mp.mpc(s) * c1 * c2c
+        # mp.conj is identity on reals, so no isinstance guard needed.
+        out += mp.mpc(s) * c1 * mp.conj(c2)
     return out / group_order
 
 
@@ -220,10 +218,10 @@ def is_nonneg_integer_multiplicity(m, tol: mp.mpf) -> tuple:
     3. |Re(m) - nint(Re(m))| > tol — integer check via mpmath-native
        nearest-integer to avoid float() rounding artefacts.
     """
-    mc = m if isinstance(m, mp.mpc) else mp.mpc(m)
-    if abs(mc.imag) > tol:
+    # mp.im / mp.re work uniformly on real and complex mpmath values.
+    if abs(mp.im(m)) > tol:
         return (False, 0)
-    mreal = mc.real
+    mreal = mp.re(m)
     if mreal < -tol:
         return (False, 0)
     # mpmath-native nearest-integer rounding: mp.nint returns an mpf

@@ -65,8 +65,6 @@ from pathlib import Path  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 
-H3_BORROMEAN_H4_REF = mp.mpf("-0.75")
-
 
 # ── Klein invariants in affine coordinates z = z₁/z₂ ──────────────
 

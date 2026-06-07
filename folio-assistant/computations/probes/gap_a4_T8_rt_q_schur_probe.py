@@ -84,21 +84,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 from _gap_a4_qsafe import (  # noqa: E402
     Q_0_50DPS,
     q_number,
-    q_factorial,  # noqa: F401
     dim_q_partition,
 )
 
 from pathlib import Path  # noqa: E402
-from math import factorial as _fact  # noqa: E402  # noqa: F401
 
 HERE = Path(__file__).resolve().parent
-COMPUTE_DIR = HERE.parent
-
-
-def dim_q_sl2_spin(j_half: int, q_0: mp.mpf) -> mp.mpf:
-    """Quantum dimension of U_q(sl_2) irrep V_j: dim_q(V_j) = [2j+1]_q.
-    Input j_half = 2j (so j_half=1 means j=1/2, j_half=4 means j=2)."""
-    return q_number(j_half + 1, q_0)
 
 
 # ── Test: sl_2 q-Schur decomposition of (ℂ_q^2)^⊗5 ────────────────

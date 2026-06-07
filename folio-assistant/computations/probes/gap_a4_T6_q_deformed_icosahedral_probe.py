@@ -58,14 +58,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 # (addresses Gemini deduplication review on PR #1904).
 from _gap_a4_qsafe import (  # noqa: E402
     Q_0_50DPS,
-    q_number,
     dim_q_partition,
 )
 
 from pathlib import Path  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-COMPUTE_DIR = HERE.parent
 
 
 # ── A_n integer multiplicities (from T4) ──────────────────────────
