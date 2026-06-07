@@ -13,7 +13,7 @@
     "lean": "de8bea51bf0d"
   },
   "criteria": {
-    "voice-statement-no-interpretation": [
+    "detangler-block-tanglement": [
       {
         "field_hash": {
           "md": "e3235e657318",
@@ -21,21 +21,29 @@
           "lean": "de8bea51bf0d"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "Statement is Cayley-Hamilton recurrence claim; keystone existence/identification framing is scope, not physical interpretation",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
         },
-        "reviewed_at": "2026-06-07T02:19:46.845Z",
-        "reviewed_sha": "e17313ddf05d623a1df3d8e36290d8181aa90675",
-        "notes": "Statement+proof; no mislocated motivation"
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 2,
+          "in_degree": 4,
+          "cone_size": 248,
+          "edge_span_max": 5,
+          "edge_span_mean": 5,
+          "worst_target": ""
+        }
       }
     ],
-    "fit-section-chapter": [
+    "detangler-graph-energy": [
       {
         "field_hash": {
           "md": "e3235e657318",
@@ -43,86 +51,41 @@
           "lean": "de8bea51bf0d"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "Prolonged SW periods / Gauss-Manin recurrence is mass-theory open-problems / mass-tower scope",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
         },
-        "reviewed_at": "2026-06-07T02:19:46.889Z",
-        "reviewed_sha": "e17313ddf05d623a1df3d8e36290d8181aa90675",
-        "notes": "Topic in chapter scope"
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
-    "wall-side-statement": [
+    "detangler-topic-coherence": [
       {
         "field_hash": {
           "md": "e3235e657318",
           "ts": "9940887f0b9e",
           "lean": "de8bea51bf0d"
         },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Lean over generic [CommRing R]; no Real.*/numeric q/MeV in statement",
+        "result": "n/a",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
         },
-        "reviewed_at": "2026-06-07T02:19:46.934Z",
-        "reviewed_sha": "e17313ddf05d623a1df3d8e36290d8181aa90675",
-        "notes": "Generic-ring, no wall crossing"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "e3235e657318",
-          "ts": "9940887f0b9e",
-          "lean": "de8bea51bf0d"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proof is pure algebra (pow_add, Finset.sum_congr, smul); no linarith/IVT/continuity/Real",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:19:46.979Z",
-        "reviewed_sha": "e17313ddf05d623a1df3d8e36290d8181aa90675",
-        "notes": "Algebraic proof matches algebraic statement"
-      }
-    ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "e3235e657318",
-          "ts": "9940887f0b9e",
-          "lean": "de8bea51bf0d"
-        },
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Narrative M^{n+d}=Σ c_j M^{n+j} from M^d=Σ c_j M^j matches Lean prolongation_fixed_depth_recurrence signature + hCH hypothesis",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-07T02:19:47.026Z",
-        "reviewed_sha": "e17313ddf05d623a1df3d8e36290d8181aa90675",
-        "notes": "Quantifiers, hyp hCH, conclusion match; scalar half is map_sum corollary noted in prose"
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
       }
     ]
   },
-  "updated_at": "2026-06-07T02:19:47.026Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

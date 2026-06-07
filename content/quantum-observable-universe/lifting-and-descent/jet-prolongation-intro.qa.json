@@ -2034,7 +2034,48 @@
         "reviewed_sha": "44c6bf7151bdf03e61efaf27be367db1d1dbe5d6",
         "notes": "No misplacement; topic is the chapter's central construction."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "cf65df077c84",
+          "ts": "6438ec7b738f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "cf65df077c84",
+          "ts": "6438ec7b738f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:57:31.753Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

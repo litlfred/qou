@@ -2673,7 +2673,50 @@
         "reviewed_sha": "46b61b6bafb0b61b6c5ae85cf50fef42d24c9a52",
         "notes": "Move numeric verification to an archimedean/observations block."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "ce2d69bc69da",
+          "lean": "1a673c5ea141"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "ce2d69bc69da",
+          "lean": "1a673c5ea141"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

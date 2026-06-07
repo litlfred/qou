@@ -1659,6 +1659,33 @@
         },
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "af3b912660b1",
+          "ts": "189afb8e0332"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "fwd_emitted": 2,
+          "fwd_received": 0,
+          "tanglement_score": 2,
+          "out_degree": 2,
+          "in_degree": 2,
+          "cone_size": 294,
+          "edge_span_max": 3,
+          "edge_span_mean": 3,
+          "worst_target": "emits fwd-ref to appendix-surreals: rem:transcendental-accounting"
+        }
       }
     ],
     "q-usage-regime-detected": [
@@ -1960,7 +1987,48 @@
         "reviewed_sha": "29b0ed60e16090fc51d20ba80be79d55418a16d7",
         "notes": "fits mass-theory geometric face; interprets declared sibling"
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "af3b912660b1",
+          "ts": "189afb8e0332"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "af3b912660b1",
+          "ts": "189afb8e0332"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+      }
     ]
   },
-  "updated_at": "2026-06-04T23:30:10.279Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

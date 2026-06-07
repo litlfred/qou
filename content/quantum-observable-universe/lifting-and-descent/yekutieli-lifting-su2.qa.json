@@ -1760,7 +1760,54 @@
         "reviewed_sha": "959eb1dd5ab5528e8ae7013c27d23e64f195e094",
         "notes": "Worked example of the section's main theorem; no redundancy with siblings."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "1ab9432b6165",
+          "ts": "7653e5d67564"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "1ab9432b6165",
+          "ts": "7653e5d67564"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "home_chapter": "lifting-and-descent",
+          "home_score": 5,
+          "top_other_chapter": "quantum-universes",
+          "top_other_score": 1
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-05T18:37:55.206Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

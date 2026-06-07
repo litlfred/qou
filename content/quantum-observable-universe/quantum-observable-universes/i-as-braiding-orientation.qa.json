@@ -1942,7 +1942,54 @@
         "reviewed_sha": "aa81bf1d046be19becdae0572e5c33d437bdc4ed",
         "notes": "Clean placement."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "8b9f7f5306dd",
+          "ts": "536c37a45ff8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 25,
+          "fwd_edge_count": 1,
+          "worst_span": 25
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "8b9f7f5306dd",
+          "ts": "536c37a45ff8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "home_chapter": "quantum-observable-universes",
+          "home_score": 1,
+          "top_other_chapter": "braids-and-knots",
+          "top_other_score": 3
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-06T00:33:18.428Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.lean"
   },
   "source_hashes": {
-    "md": "1e8b6b3903bf",
+    "md": "b3ca7ab502b9",
     "ts": "0f317f7e554b",
     "lean": "9416cb857410"
   },
@@ -2039,6 +2039,34 @@
         },
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "b3ca7ab502b9",
+          "ts": "0f317f7e554b",
+          "lean": "9416cb857410"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "fwd_emitted": 1,
+          "fwd_received": 0,
+          "tanglement_score": 1,
+          "out_degree": 3,
+          "in_degree": 3,
+          "cone_size": 39,
+          "edge_span_max": 100,
+          "edge_span_mean": 100,
+          "worst_target": "emits fwd-ref to particle-interactions: prop:atom-knot-exists"
+        }
       }
     ],
     "q-usage-regime-detected": [
@@ -2320,7 +2348,50 @@
         "reviewed_sha": "ec08184ae0316d5a8a9291350fa5bdd0cbec3332",
         "notes": "No misplacement; no sibling redundancy detected."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "b3ca7ab502b9",
+          "ts": "0f317f7e554b",
+          "lean": "9416cb857410"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "b3ca7ab502b9",
+          "ts": "0f317f7e554b",
+          "lean": "9416cb857410"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+      }
     ]
   },
-  "updated_at": "2026-06-06T00:56:58.439Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

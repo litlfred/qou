@@ -13,7 +13,7 @@
     "lean": "0a993401d6c4"
   },
   "criteria": {
-    "fit-section-chapter": [
+    "detangler-block-tanglement": [
       {
         "field_hash": {
           "md": "b426643c10b6",
@@ -21,20 +21,71 @@
           "lean": "0a993401d6c4"
         },
         "result": "pass",
-        "severity": "minor",
-        "evidence": "Step-9b binding-closure keystone conjecture, placed among binding-genfun-qdifference / binding-closure-conditional siblings in the magic-shell consequences section",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-07",
-          "agent_skill": "qa-agent-drain"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
         },
-        "reviewed_at": "2026-06-07T01:02:40.371Z",
-        "reviewed_sha": "f7827db7ef3967a8830b50ac65952ec9fca70a71",
-        "notes": "Binding/q-difference/SW topic squarely in mass-theory binding scope; conjecture kind matches open-problem content."
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 3,
+          "in_degree": 0,
+          "cone_size": 248,
+          "edge_span_max": 4,
+          "edge_span_mean": 4,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "b426643c10b6",
+          "ts": "72e59c667aca",
+          "lean": "0a993401d6c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "b426643c10b6",
+          "ts": "72e59c667aca",
+          "lean": "0a993401d6c4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
       }
     ]
   },
-  "updated_at": "2026-06-07T01:02:40.371Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

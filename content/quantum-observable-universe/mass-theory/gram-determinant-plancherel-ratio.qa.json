@@ -2307,6 +2307,34 @@
         },
         "reviewed_at": "2026-06-02T19:35:58.523Z",
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
+      },
+      {
+        "field_hash": {
+          "md": "8a6803ba072e",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 3,
+          "cone_size": 225,
+          "edge_span_max": 301,
+          "edge_span_mean": 301,
+          "worst_target": ""
+        }
       }
     ],
     "q-usage-regime-detected": [
@@ -2690,7 +2718,52 @@
         "reviewed_sha": "1ac27a30fd86cdd6b4dc12b798342dd7016b01d8",
         "notes": "Proof matches generic-ring statement."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "8a6803ba072e",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 301,
+          "fwd_edge_count": 1,
+          "worst_span": 301
+        },
+        "severity": "major",
+        "evidence": "quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.ts:0: forward edge to rem:gram-matrix-spectral-connection spans 301 manifest positions"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "8a6803ba072e",
+          "ts": "7fd47da78c24",
+          "lean": "8a45dd3735e9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+      }
     ]
   },
-  "updated_at": "2026-06-05T18:00:19.212Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }

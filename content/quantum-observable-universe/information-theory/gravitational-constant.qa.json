@@ -2010,7 +2010,56 @@
         "reviewed_sha": "4412eb3f0aa31e12d4ed419f3f6e7f3010f963dc",
         "notes": "Chapter regime is archimedean; numeric values are correctly compartmentalized in a table, not smuggled into generic-ring statements."
       }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "a73385bdbe5a",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "a73385bdbe5a",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "4e0e86aefa4e",
+          "script_commit_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2"
+        },
+        "reviewed_at": "2026-06-07T04:13:32.223Z",
+        "reviewed_sha": "0917cf8046604ddc047ae04320b9ed27bed6a2c2",
+        "metrics": {
+          "home_chapter": "information-theory",
+          "home_score": 6,
+          "top_other_chapter": "lifting-and-descent",
+          "top_other_score": 4
+        }
+      }
     ]
   },
-  "updated_at": "2026-06-05T14:22:44.851Z"
+  "updated_at": "2026-06-07T04:13:32.223Z"
 }
