@@ -28,7 +28,7 @@
   tr_M closed form `(4 + h² − 3h⁴ − h⁶)/(h² + 4)` (the standard irrep is
   the only one contributing the h⁴, h⁶ corrections).
 
-  -- Ref: [jones1987] https://doi.org/10.1090/S0273-0979-1985-15304-2
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Ref: [murasugi1996] ISBN 978-0-8176-3817-7
 -/
 import Mathlib.Data.Rat.Basic
