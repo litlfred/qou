@@ -1923,7 +1923,28 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9c393c8f3b8f",
+          "ts": "796e02608e49"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "remark in sec:q-hydrodynamics; interprets rem:madelung-fluid; Hamilton-Jacobi/Madelung phase is core q-hydrodynamics",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T12:45:58.998Z",
+        "reviewed_sha": "3040f16aa22e64f7f9c27c3c8b6d9c9f819b8570",
+        "notes": "Well-placed interpretive remark on the Madelung phase equation; topic in section scope, no sibling carries same claim."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T12:45:58.998Z"
 }
