@@ -101,7 +101,7 @@ end QOU.Kashaev
     figure-eight knot 4₁ has hyperbolic volume Vol(4₁) = 2·Λ(π/3)
     ≈ 2.029883. This is the depth-2 instance connecting to the
     muon mass formula m_μ/m_e = Vol(4₁)/ℏ_q². -/
--- Ref: [thurston1978] — hyperbolic structure on figure-eight complement
+-- Ref: [thurston1978] Thurston's geometry and topology of three-manifolds — hyperbolic structure on figure-eight complement
 -- Ref: [kashaev1997] — original volume conjecture
 theorem figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :
     True :=
