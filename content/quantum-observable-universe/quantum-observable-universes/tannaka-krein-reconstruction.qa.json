@@ -2552,7 +2552,95 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "f3a288acc0e3",
+          "ts": "688b34be128f",
+          "lean": "0368a46b05a9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Coend End(τ) carries Hopf structure; items 1-3 are reconstruction/universal-property/naturality claims",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:43:06.205Z",
+        "reviewed_sha": "1d02e395b9e4ee3b8e3a4e3b1afb6accef01fea0",
+        "notes": "Classical/quantum paragraphs are attribution+scope, not physical-meaning editorializing"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f3a288acc0e3",
+          "ts": "688b34be128f",
+          "lean": "0368a46b05a9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Tannaka-Krein reconstruction of quantum gauge group; core QOU chapter scope",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:43:06.253Z",
+        "reviewed_sha": "1d02e395b9e4ee3b8e3a4e3b1afb6accef01fea0",
+        "notes": "Belongs in quantum-observable-universes"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "f3a288acc0e3",
+          "ts": "688b34be128f",
+          "lean": "0368a46b05a9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Canonical (C,A,τ) over generic R-Mod; coend/Hopf claim, no Real./numeric q0/MeV",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:43:06.300Z",
+        "reviewed_sha": "1d02e395b9e4ee3b8e3a4e3b1afb6accef01fea0",
+        "notes": "Generic-ring statement, matches categorical chapter regime"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "f3a288acc0e3",
+          "ts": "688b34be128f",
+          "lean": "0368a46b05a9"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "No narrative Proof body in .md; classical/quantum cases cite Tannaka/Woronowicz, no archimedean machinery",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:43:06.347Z",
+        "reviewed_sha": "1d02e395b9e4ee3b8e3a4e3b1afb6accef01fea0",
+        "notes": "No proof-body wall violation"
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T01:43:06.347Z"
 }
