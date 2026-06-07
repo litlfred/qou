@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-07T00:30:40.718592+00:00",
-  "commitSha": "2e833e9e352792c49b2f4406a554bcbc18ecf500",
+  "computedAt": "2026-06-07T00:32:22.431586+00:00",
+  "commitSha": "04a8b263931ae8263f2895d11c8bfeda9b7f955b",
   "assertions": [
     {
       "name": "num_SYT_of_2_1_equals_dim",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "gap-a4-T16-coefficient-counting-probe",
   "scriptFile": "gap_a4_T16_coefficient_counting_probe.py",
-  "scriptHash": "1665f837a76c",
-  "scriptCommitSha": "2e833e9e352792c49b2f4406a554bcbc18ecf500",
+  "scriptHash": "a6f9c324cfce",
+  "scriptCommitSha": "04a8b263931ae8263f2895d11c8bfeda9b7f955b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
