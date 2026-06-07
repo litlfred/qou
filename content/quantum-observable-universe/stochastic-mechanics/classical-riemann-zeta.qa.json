@@ -1965,7 +1965,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "678ab09a7272",
+          "ts": "0abd9255ee80",
+          "lean": "baf6577e7787"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "def:classical-riemann-zeta names zeta(s) as the adelic q->1 limit of local q-zeta functions",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:38:05.321Z",
+        "reviewed_sha": "a579a245de7f4dae73d62ee075610601fa63a508",
+        "notes": "Definition introduces a genuine new construction (adelic-limit zeta); fits the classical-limit section of stochastic-mechanics."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "678ab09a7272",
+          "ts": "0abd9255ee80",
+          "lean": "baf6577e7787"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Statement uses Re(s)>1, n^{-s}, Euler product over primes; Lean uses Complex/s.re; no q0~1.11 or MeV; no wall: banner",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:38:05.366Z",
+        "reviewed_sha": "a579a245de7f4dae73d62ee075610601fa63a508",
+        "notes": "Archimedean constructs (s.re ordering, complex powers) are intrinsic to the Riemann zeta definition, not a generic-ring leak; no q0/MeV hardcode. A brief wall: note that this block is inherently complex-analytic would tighten it."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T01:38:05.366Z"
 }
