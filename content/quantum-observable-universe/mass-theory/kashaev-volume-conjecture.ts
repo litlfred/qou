@@ -13,6 +13,7 @@ export default conjecture({
   ],
   cites: ["kashaev1997", "murakami-murakami2001", "zagier1986", "neumann-zagier1985"],
   tags: [
+    "tier:famous",
     "kashaev",
     "volume-conjecture",
     "archimedean",

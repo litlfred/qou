@@ -11,6 +11,7 @@ export default conjecture({
     "prop:ns-kummer-specialisation",
   ],
   tags: [
+    "tier:famous",
     "birch-swinnerton-dyer",
     "millennium-problem",
     "elliptic-curve",

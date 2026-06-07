@@ -11,6 +11,7 @@ export default conjecture({
   ],
   cites: ["bloch2000", "kontsevich1995", "zagier1986"],
   tags: [
+    "tier:famous",
     "goncharov-conjecture",
     "depth-3",
     "bring-S5",
