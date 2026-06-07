@@ -214,18 +214,20 @@ theorem vol_B3_ne_zero_via_catalan : vol_B3 ≠ 0 :=
 
 Status 2026-06-07: the former axiom `vol_B3_eq_8_catalan` is now a
 `theorem` (discharged by `rfl` once `vol_B3 := 8 · catalan_G` was
-adopted upstream).  The remaining Catalan-side axioms in this file:
+adopted upstream).  The remaining Catalan-side axioms in this
+development:
 
-  1. `catalan_G_numerical_bounds` (lifted to
-     `HyperbolicVolumeTranscendence.lean`; series partial-sum bound).
+  1. `catalan_G_numerical_bounds` — lives in
+     `QOU.Archimedean.HyperbolicVolumeTranscendence` (lifted 2026-06-07
+     from this file); a coarse `0.915 < G < 0.916` interval.
      Closure: norm_num + Mathlib's `Real.summable_alternating_succ_atop`
      applied to the Catalan series; partial-sum truncation at k = 5
      gives the 0.915 < G < 0.916 bound.
-  2. `lobachevsky` definition.
+  2. `lobachevsky` definition — lives here.
      Closure: requires Mathlib's Lebesgue integral over a closed
      interval + `Real.log_abs` of `2 * Real.sin t`. Likely needs
      a small library extension.
-  3. `lobachevsky_pi_div_four_eq_half_catalan`.
+  3. `lobachevsky_pi_div_four_eq_half_catalan` — lives here.
      Closure: integration by parts + `Real.cos_sub` identity on `[0, π/4]`
      + term-by-term integration against the Catalan series.
      One paper-page proof; not yet in Mathlib.
