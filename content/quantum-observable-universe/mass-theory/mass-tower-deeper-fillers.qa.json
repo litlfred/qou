@@ -1879,7 +1879,29 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f31fd4ebf547",
+          "ts": "1b6be3943196",
+          "lean": "96e3d260aaaf"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Primary subject (Lean §3b-cond mass-tower fillers, Demazure/KL/BlochGroup hooks) fits mass-theory; but '## Cross-paper + uploads + wiring scans' and '## What's left after this push' ('this filler push','the user is preparing the modification','Recommendation per the prior turn stands') are session/work-tracking narration",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T01:17:34.599Z",
+        "reviewed_sha": "2dd34954cdda9cc24301c1544b15142ad66405a6",
+        "notes": "Remark interprets prop:crystal-basis-...; subject placement fine. Scan-report/work-plan sections belong in an audit doc or authorNotes, not paper prose — warn."
+      }
     ]
   },
-  "updated_at": "2026-06-03T22:40:47.501Z"
+  "updated_at": "2026-06-07T01:17:34.599Z"
 }
