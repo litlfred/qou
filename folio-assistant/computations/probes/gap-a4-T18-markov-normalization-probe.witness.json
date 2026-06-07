@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-07T01:20:01.220641+00:00",
-  "commitSha": "0f9a29328827569140f4d9b3d08f1d924065f620",
+  "computedAt": "2026-06-07T01:24:03.718912+00:00",
+  "commitSha": "22efd1747c064a9737107503cec6ed4ce04224bd",
   "assertions": [
     {
       "name": "h4_coefficient_of_tr_M_equals_minus_three_quarters",
       "computed": -0.75,
       "expected": -0.75,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": 1e-15,
       "source": "Borromean Markov trace tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶) / (h² + 4) Taylor-expands to 1 + 0·h² − (3/4)·h⁴ − (1/16)·h⁶ + ...  The h⁴ coefficient extracted numerically from the closed form equals exactly −3/4."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.25,
       "expected": 0.25,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": 1e-15,
       "source": "From the Frobenius expansion: h⁴-coeff(tr_M) = −3·y_{(2,1)}(0) since χ^{(2,1)}(β_Bor) at h⁴ is −3 (per T15) and the (3), (1³) contributions have no h⁴ correction (χ^{(3)}=χ^{(1³)}=1 exactly).  Solving −3·y_{(2,1)}(0) = −3/4 gives y_{(2,1)}(0) = 1/4."
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.25,
       "expected": 0.25,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": 1e-15,
       "source": "1/[2]_q²|_{q=1} = 1/(q + q⁻¹)²|_{q=1} = 1/4 = Markov normalization factor for 3-component link closure. The (h² + 4) denominator in tr_M(β_Bor) IS [2]_q² in h-coordinates."
     },
     {
@@ -33,16 +33,16 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": 1e-15,
       "source": "Σ_λ y_λ(0)·d_λ = tr_M(1_3) = 1 (Markov normalization for the identity braid).  With y_{(3)}=y_{(2,1)}=y_{(1³)}=1/4 and d_λ = (1, 2, 1): 1·1/4 + 2·1/4 + 1·1/4 = 1."
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 14,
   "computation": "gap-a4-T18-markov-normalization-probe",
   "scriptFile": "gap_a4_T18_markov_normalization_probe.py",
-  "scriptHash": "da19e51ea153",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1d7b27f4f0b6",
+  "scriptCommitSha": "22efd1747c064a9737107503cec6ed4ce04224bd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -69,7 +69,8 @@
       "h2_coefficient": "0.0",
       "h4_coefficient": "-0.75",
       "h6_coefficient": "-0.0625",
-      "method": "exact_symbolic_series_division"
+      "method": "exact_symbolic_series_division",
+      "closed_form_sanity_diff_at_h_0_05": "0.0000000000006099703310430980637101811367895065584009993753903810118675956287934434"
     },
     "wenzl_weight_derivation": {
       "derived_value": "0.25",

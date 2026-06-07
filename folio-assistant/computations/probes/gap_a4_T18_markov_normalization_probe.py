@@ -93,8 +93,11 @@ set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 from _gap_a4_qsafe import Q_0_50DPS  # noqa: E402
 
-TOL_50DPS = mp.mpf("1e-40")
-TOL_NEAR_ZERO = mp.mpf("1e-30")
+# Realistic tolerance for float-precision assertions: WitnessBuilder
+# coerces computed/expected to binary64 floats, so tolerances tighter
+# than ~1e-15 are meaningless (Copilot review #1938).
+TOL_FLOAT = 1e-15
+TOL_NEAR_ZERO = mp.mpf("1e-30")  # used for mpf-level diff checks before float()
 
 
 # ── Markov-trace components ───────────────────────────────────────
@@ -102,17 +105,32 @@ TOL_NEAR_ZERO = mp.mpf("1e-30")
 
 def tr_M_borromean_closed_form(h: mp.mpf) -> mp.mpf:
     """Closed form per prop:borromean-markov-trace-closed-form:
-       tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶) / (h² + 4)."""
+       tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶) / (h² + 4).
+
+    Used by check_h4_coefficient_extraction() as a sanity check that
+    the exact symbolic series-division coefficients agree with the
+    direct closed-form evaluation at small h.
+    """
     return (4 + h ** 2 - 3 * h ** 4 - h ** 6) / (h ** 2 + 4)
 
 
 def chi_21_polynomial_form(h: mp.mpf) -> mp.mpf:
-    """T15: χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶."""
+    """χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶.
+
+    Derived in T15 (algebraic, via u = q² + q⁻² substitution) and
+    re-confirmed in T17 (categorical, via direct 8×8 R-matrix on V^⊗3).
+    T18 takes this as the established (2,1)-character polynomial and
+    uses it in the Frobenius expansion to derive y_{(2,1)}(q=1) = 1/4.
+    """
     return 2 - 3 * h ** 4 - h ** 6
 
 
 def q_two_squared_at_q_one() -> mp.mpf:
-    """[2]_q² at q = 1 = (q + q⁻¹)²|_{q=1} = 4."""
+    """[2]_q² at q = 1 = (q + q⁻¹)²|_{q=1} = 4.
+
+    Used by check_q_2_squared_identification() to verify the
+    structural identification y_{(2,1)}(0) = 1/[2]_q²|_{q=1}.
+    """
     return mp.mpf(4)
 
 
@@ -156,12 +174,26 @@ def check_h4_coefficient_extraction() -> dict:
           f"(expected: −3/4 = -0.75)")
     print(f"    h⁶ coefficient: {mp.nstr(h6_coef, 14)}  "
           f"(expected: −1/16 = -0.0625)")
+
+    # Cross-check: the exact series coefficients should reproduce the
+    # closed-form tr_M_borromean_closed_form() at a small sample h.
+    # (Wires the helper into the check per Copilot review #1938.)
+    h_sample = mp.mpf("0.05")
+    poly_at_sample = sum(
+        c * h_sample ** (2 * k) for k, c in enumerate(h_coeffs)
+    )
+    closed_at_sample = tr_M_borromean_closed_form(h_sample)
+    sample_diff = abs(poly_at_sample - closed_at_sample)
+    print(f"  Sanity at h = {mp.nstr(h_sample, 4)}: polynomial-from-series "
+          f"vs closed-form |diff| = {mp.nstr(sample_diff, 6)} "
+          f"(truncation-bound by O(h⁸) ≈ {mp.nstr(h_sample ** 8, 6)})")
     return {
         "h0_coefficient": str(h0_coef),
         "h2_coefficient": str(h2_coef),
         "h4_coefficient": str(h4_coef),
         "h6_coefficient": str(h6_coef),
         "method": "exact_symbolic_series_division",
+        "closed_form_sanity_diff_at_h_0_05": str(sample_diff),
     }
 
 
@@ -206,6 +238,12 @@ def check_q_2_squared_identification() -> dict:
     print(f"  1 / [2]_q²|_{{q=1}}  =  1/4  =  {mp.nstr(one_over_q2_sq, 14)}")
     print()
     print(f"  Identification: y_{{(2,1)}}(0)  =  1/[2]_q²|_{{q=1}}  =  1/4 ✓")
+    # Wire in the chi_21_polynomial_form helper as a sanity check that
+    # the polynomial form gives the expected character value at h=0
+    # (Copilot review #1938).
+    chi_at_zero = chi_21_polynomial_form(mp.mpf(0))
+    print(f"  Sanity: χ^{{(2,1)}}(β_Bor)|_{{h=0}} = "
+          f"{mp.nstr(chi_at_zero, 6)} (expected: d_{{(2,1)}} = 2 ✓)")
     print()
     print(f"  Structural origin: [2]_q^{{c-1}} is the Markov-trace normalization")
     print(f"  factor for closure of an n-strand braid into a c-component link.")
@@ -292,7 +330,7 @@ def main():
         "h4_coefficient_of_tr_M_equals_minus_three_quarters",
         computed=float(mp.mpf(h4_extract["h4_coefficient"])),
         expected=-0.75,
-        tolerance=float(TOL_NEAR_ZERO),
+        tolerance=TOL_FLOAT,
         source=(
             "Borromean Markov trace tr_M(β_Bor) = (4 + h² − 3h⁴ − h⁶) "
             "/ (h² + 4) Taylor-expands to 1 + 0·h² − (3/4)·h⁴ − "
@@ -304,7 +342,7 @@ def main():
         "wenzl_weight_y_2_1_at_q_one_equals_quarter",
         computed=float(mp.mpf(wenzl["derived_value"])),
         expected=0.25,
-        tolerance=float(TOL_NEAR_ZERO),
+        tolerance=TOL_FLOAT,
         source=(
             "From the Frobenius expansion: h⁴-coeff(tr_M) = −3·y_{(2,1)}(0) "
             "since χ^{(2,1)}(β_Bor) at h⁴ is −3 (per T15) and the (3), "
@@ -317,7 +355,7 @@ def main():
         "wenzl_weight_equals_inverse_q_2_squared_at_q_one",
         computed=float(mp.mpf(normalization["one_over_q_2_squared"])),
         expected=0.25,
-        tolerance=float(TOL_NEAR_ZERO),
+        tolerance=TOL_FLOAT,
         source=(
             "1/[2]_q²|_{q=1} = 1/(q + q⁻¹)²|_{q=1} = 1/4 = "
             "Markov normalization factor for 3-component link closure. "
@@ -329,7 +367,7 @@ def main():
         "universal_wenzl_markov_sum_equals_one",
         computed=float(mp.mpf(universal["markov_sum_check"])),
         expected=1.0,
-        tolerance=float(TOL_NEAR_ZERO),
+        tolerance=TOL_FLOAT,
         source=(
             "Σ_λ y_λ(0)·d_λ = tr_M(1_3) = 1 (Markov normalization for "
             "the identity braid).  With y_{(3)}=y_{(2,1)}=y_{(1³)}=1/4 "
