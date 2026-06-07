@@ -5,9 +5,7 @@ embedding invariant (R-II, R-III but not R-I).  Shell
 transitions are R-I moves on the embedding. *(The three
 Reidemeister invariances follow from the hyperbolic-volume
 invariant and the embedding structure; the shell-transition
-R-I reading is the conjectural part. The statement is kept a
-conjecture rather than a proposition because it is downstream
-of `conj:borromean-quark` — see §3b conjectural propagation.)*
+R-I reading is the conjectural part.)*
 
 **The three Reidemeister moves.**
 
