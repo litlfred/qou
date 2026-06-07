@@ -103,7 +103,7 @@ order-0 coefficient as a sorry-free vanishing theorem
 as a sorry-free `HasDerivAt` theorem
 ($D \Delta\tau_M^{\text{surr}}(1) = -5/6$, proven by explicit
 quotient-rule chaining: $N'(1) = -10$, $D(1) = 12$,
-$N(1) = 0$ ⇒ derivative $= -10/12$). Higher orders ($5/6$, $-41/9$, …)
+$N(1) = 0$ $\Rightarrow$ derivative $= -10/12$). Higher orders ($5/6$, $-41/9$, ...)
 are recorded in the witness JSON; each requires an n-th derivative
 computation that is tractable but bulky.
 

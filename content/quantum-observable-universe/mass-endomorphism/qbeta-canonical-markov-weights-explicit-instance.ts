@@ -21,4 +21,11 @@ export default proposition({
     ref:
       "qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body:
+        "Provenance: the `markov_parameter` $z(q) = \\sqrt q/(1+q)$ and §Extension #4 landed in PR #1764. Kept in metadata (not scholarly prose) per CLAUDE.md §4d.",
+    },
+  ],
 });
