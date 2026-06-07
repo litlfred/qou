@@ -14,6 +14,7 @@ export default conjecture({
   ],
   cites: ["kawauchi1996"],
   tags: [
+    "tier:S",
     "borromean",
     "brunnian",
     "link-theory",

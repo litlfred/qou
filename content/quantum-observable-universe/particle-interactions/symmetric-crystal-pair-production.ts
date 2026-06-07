@@ -16,6 +16,7 @@ export default conjecture({
     "brundankleshchev2009",
   ],
   tags: [
+    "tier:S",
     "symmetric-crystal",
     "type-b-folding",
     "bar-involution",

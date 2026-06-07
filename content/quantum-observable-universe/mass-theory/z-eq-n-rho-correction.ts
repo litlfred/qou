@@ -13,6 +13,7 @@ export default conjecture({
   ],
   cites: [],
   tags: [
+    "tier:E",
     "binding-energy",
     "kashaev",
     "z-equals-n",

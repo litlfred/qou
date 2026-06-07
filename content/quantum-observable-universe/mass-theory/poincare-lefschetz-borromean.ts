@@ -17,6 +17,7 @@ export default conjecture({
     "neumann-zagier1985",
   ],
   tags: [
+    "tier:S",
     "poincare-lefschetz",
     "duality-d21",
     "borromean-complement",

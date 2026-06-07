@@ -24,6 +24,7 @@ export default conjecture({
     "kassel1995",
   ],
   tags: [
+    "tier:E",
     "double-magic",
     "lr-fusion",
     "bring-shell",

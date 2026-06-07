@@ -13,6 +13,7 @@ export default conjecture({
     "prop:fermion-boson-knot-link",
   ],
   tags: [
+    "tier:E",
     "higgs",
     "boson",
     "torus-link",

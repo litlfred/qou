@@ -19,6 +19,7 @@ export default conjecture({
     "kashaev-tirkkonen2014",
   ],
   tags: [
+    "tier:S",
     "modular-s-transform",
     "duality-d14",
     "q-tilde",
