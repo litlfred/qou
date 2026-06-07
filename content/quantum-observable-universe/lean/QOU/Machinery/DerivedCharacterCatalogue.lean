@@ -45,6 +45,10 @@ mirrors the Python `lookup_derived` failing-loud guard.
 - LR / parabolic factorisation roadmap (Tier 1):
   [`docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](../../../../../docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md)
 -/
+import Mathlib.Data.Rat.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+import QOU.BraidsAndKnots.BorromeanChiPerRep
 
 namespace QOU.Machinery
 
@@ -115,16 +119,41 @@ proof that the cell's stored data agrees with the R-matrix output.
 NEAR-MATCH tier; instance fully verified only once a complete
 parabolic-restriction proof is in place. -/
 
-/-- A cell is R-matrix-derived when its χ^λ was computed via the
-T17 template: R-matrix on V⊗ⁿ + Schur-Weyl projection to the
-λ-block + trace. The marker field is `True` at this scaffolding
-level; the actual proof of equivalence between the stored Laurent
-and the categorical computation is left to a follow-up. -/
-class IsRMatrixDerived (cell : KnotPartitionAtomCell) : Prop where
-  /-- Opaque marker for "this cell's stored χ^λ equals the R-matrix
-  computation of `χ^λ(β_K)` on the parabolic block specified by
-  `partition`, in the convention `qConvention`". -/
-  rmatrixEquivalence : True
+/-- A cell is R-matrix-derived when its stored `χ^λ` (as a genuine
+`ℚ → ℚ` Laurent evaluation, `storedChi`) agrees, away from `q = 0`,
+with the categorical R-matrix character `rmatrixChi` obtained from the
+T17 template (R-matrix on `V⊗ⁿ` + Schur-Weyl projection to the
+`λ`-block + trace).
+
+This is a genuine §3b-cond conditional class — its fields carry real
+`R → R` data (generic over a field `R`, §7c) and a real equality `Prop`,
+not an opaque `True` marker.
+The instance for `borromeanTwoOneBaryon` is **fully discharged** (no
+`sorry`): `agrees` is the proven theorem `borromeanTwoOneBaryonChi_eq_t17`,
+which reuses T17's `chi21_borromean_qform_eq_hform`.
+
+HONESTY (mirrors the `BorromeanChiPerRep.lean` scope note): the proven
+content is `storedChi = rmatrixChi` at the level of *q-rational forms*.
+That `rmatrixChi` is itself the categorical R-matrix trace (rather than
+just the published h-polynomial) is, at the time of writing,
+NARRATIVE-ONLY for the seminormal Hecke-representation step — it is
+independently confirmed numerically (≤ 4e-50) by
+`borromean_chi_independent_crosscheck.py`. The class therefore certifies
+the catalogue cell against the *formalised* T17 polynomial, not against
+an in-Lean construction of the seminormal representation. -/
+class IsRMatrixDerived (R : Type*) [Field R] (cell : KnotPartitionAtomCell) :
+    Prop where
+  /-- A genuine `R → R` evaluation of the cell's stored Laurent
+  `chiLambdaQLaurent` (in the Kauffman variable). Generic over a field
+  `R` per §7c — no ordering / `Real.*` is involved, only the inverses
+  the Laurent needs. -/
+  storedChi : R → R
+  /-- The categorical R-matrix character `χ^λ(β_K)` this cell realises,
+  as a `q`-rational function (T17 template). -/
+  rmatrixChi : R → R
+  /-- The stored Laurent agrees with the R-matrix character at every
+  nonzero `q`. -/
+  agrees : ∀ q : R, q ≠ 0 → storedChi q = rmatrixChi q
 
 /-! ## Conditional class — LR / parabolic factorisation derivation
 
@@ -174,10 +203,35 @@ def borromeanTwoOneBaryon : KnotPartitionAtomCell where
     ++ "folio-assistant/computations/derived_chi_catalogue_build.py "
     ++ "(Kassel form 2 − 3h⁴ − h⁶ with h = q − q⁻¹)"
 
-/-- The Borromean / (2,1) / baryon cell satisfies the R-matrix
-derivation marker. -/
-instance : IsRMatrixDerived borromeanTwoOneBaryon where
-  rmatrixEquivalence := trivial
+/-- Genuine `ℚ → ℚ` evaluation of `borromeanTwoOneBaryon.chiLambdaQLaurent`
+(hand-transcribed from the cell's `(q_degree, coeff)` pairs
+`[(-12,-1),(-8,3),(-4,-3),(0,4),(4,-3),(8,3),(12,-1)]` to avoid string
+parsing in Lean — degrees are in the Kauffman variable `t = q²`). -/
+def borromeanTwoOneBaryonChi {R : Type*} [Field R] (q : R) : R :=
+  -q^12 + 3*q^8 - 3*q^4 + 4 - 3/q^4 + 3/q^8 - 1/q^12
+
+/-- **T17 is the first catalogue instance.** The stored Kauffman Laurent
+of the Borromean `(2,1)` cell equals T17's published h-form
+`2 − 3h⁴ − h⁶` evaluated at `q²` (the Kauffman `t = q²` substitution),
+for every nonzero `q` in any field. The proof reuses T17's proven
+form-equivalence `chi21_borromean_qform_eq_hform`. -/
+theorem borromeanTwoOneBaryonChi_eq_t17 {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    borromeanTwoOneBaryonChi q
+      = QOU.BraidsAndKnots.chi21_borromean_hform (q ^ 2) := by
+  have hq2 : (q ^ 2 : R) ≠ 0 := pow_ne_zero 2 hq
+  rw [← QOU.BraidsAndKnots.chi21_borromean_qform_eq_hform (q ^ 2) hq2]
+  unfold borromeanTwoOneBaryonChi QOU.BraidsAndKnots.chi21_borromean_qform
+  field_simp
+  ring
+
+/-- The Borromean / (2,1) / baryon cell is R-matrix-derived. The instance
+is **fully discharged** (no `sorry`): `agrees` is the proven theorem
+`borromeanTwoOneBaryonChi_eq_t17`, with `rmatrixChi` set to the T17
+h-form in the Kauffman variable. -/
+instance {R : Type*} [Field R] : IsRMatrixDerived R borromeanTwoOneBaryon where
+  storedChi := borromeanTwoOneBaryonChi
+  rmatrixChi := fun q => QOU.BraidsAndKnots.chi21_borromean_hform (q ^ 2)
+  agrees := borromeanTwoOneBaryonChi_eq_t17
 
 /-! ## Basic invariants -/
 
