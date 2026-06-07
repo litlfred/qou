@@ -98,8 +98,12 @@ fi
 #      tip tree has lake-oleans.tgz.partXX blobs. Restore = stream blobs,
 #      concat in sorted order, untar.
 #
-# Detection: list the top-level tree entries; if any are .tgz.partNN we
-# use the chunked path, else if .lake/ exists we use per-file.
+# Detection precedence: the per-file `.lake/` tree is the preferred
+# (and maintainable) format. If the top tree contains `.lake/`, that
+# path wins — EVEN if `lake-oleans.tgz.partNN` blobs are also present.
+# A branch with both formats only arises during a manual transition
+# (won't happen by accident); in that case we want per-file. If only
+# the chunked-tgz blobs are present, we fall through to that path.
 TMP=$(mktemp -d -t lake-cache-fetch.XXXXXX)
 # Bake $TMP value into the trap string at definition time (the value is
 # stable for the script's lifetime, so this is intentional). Double-
