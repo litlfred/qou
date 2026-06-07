@@ -1931,7 +1931,51 @@
         "reviewed_at": "2026-06-03T20:30:24.391Z",
         "reviewed_sha": "108b65aed4b66a139ca31de61e292caecb3d2677"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3d72b12762c5",
+          "ts": "584b80145264",
+          "lean": "8b56602f5f8b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Defines rigid dualizing complex for the Frobenius-Hopf substrate algebra A; sits in section 'The algebraic substrate and the Reeb derivation'",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:32:45.113Z",
+        "reviewed_sha": "0589c8c4d5a85350c34714c355cbdf878f1065f3",
+        "notes": "Van den Bergh / Yekutieli rigidity for the substrate algebra; on-topic for the substrate section."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3d72b12762c5",
+          "ts": "584b80145264",
+          "lean": "8b56602f5f8b"
+        },
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Purely categorical/homological definition (D(A), R-Hom, Ext, enveloping algebra A^e); no numeric q0, MeV literal, or Real.*/ordering in .md or .lean",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:32:45.156Z",
+        "reviewed_sha": "0589c8c4d5a85350c34714c355cbdf878f1065f3",
+        "notes": "Generic non-commutative-algebra content; no archimedean specialization, no §7c banner needed."
+      }
     ]
   },
-  "updated_at": "2026-06-03T20:30:24.391Z"
+  "updated_at": "2026-06-07T00:32:45.156Z"
 }
