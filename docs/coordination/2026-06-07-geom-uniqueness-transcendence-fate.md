@@ -78,12 +78,17 @@ theorem `hyperbolicVolumeIndependence_of_reduction` deriving the deep
 | (I1) uniformity in jet order | open | **proved** `transport_uniform_bound` (C = 0) |
 | (I2) physical-holonomy shadow → 0 | — | named conjectural input (was inside the monolith) |
 | (I3) monodromy shadow → 0 | — | named conjectural input |
-| GB independence at base order N=3 | open | **proved** `jetOrder3_certificate` (∏ pivots = 2 ≠ 0) |
+| GB independence at base order N=3 | open | **proved + witnessed** `jetOrder3_certificate` (∏ pivots = 1/16 ≠ 0, real Markov-trace data) |
 
 Net: the conjectural surface shrank from one opaque axiom to **two physical
 vanishing inputs (I2, I3)** + the **per-order GB certificate for N > 3**
-(same finite determinant test, pending the compute witness's cyclotomic
-coefficients). The surreal bound is framed geometrically as parallel
+(same finite determinant test). The base order is no longer "pending the
+witness": `jet_order_pivots.py` computes the h-jet expansion of the
+framework's *own* canonical Markov traces `tr_M(4₁/5₂/𝓑₃)` about q=1,
+finds jet-Jacobian rows `(1/4,−1,55/16)`, `(1/2,0,−1/16)`, `(1,0,0)` with
+elimination determinant `1/16 ≠ 0`, and wires the LU pivots `(1/4,2,1/8)`
+into `jetPivots` — so the base-order certificate is now **witnessed real
+data**, not representative (`jet-order-pivots.witness.json`). The surreal bound is framed geometrically as parallel
 transport of the categorical connection on the projective state fibre
 `ℂP¹` as `q` deforms toward the root-of-unity limit (I1 uniformity /
 I2 archimedean-projection / I3 monodromy-separation). Cross-ref:
