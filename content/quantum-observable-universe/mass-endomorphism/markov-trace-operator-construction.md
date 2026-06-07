@@ -10,8 +10,8 @@ classes `HnHilbertRep n q`, `HnInductiveEmbedding n q`,
 
 **Primary content moved to audits.** See
 [`docs/audits/2026-06-03-wip-scaffolding-markov-trace-operator-construction.md`](../../../docs/audits/2026-06-03-wip-scaffolding-markov-trace-operator-construction.md)
-for the full construction outline (per-$n$ Hilbert space → inductive
-embedding → inductive limit → trace state → bicommutant closure) and
+for the full construction outline (per-$n$ Hilbert space $\to$ inductive
+embedding $\to$ inductive limit $\to$ trace state $\to$ bicommutant closure) and
 per-$n$ discharge status.
 
 The Lean class scaffolding stays in place at

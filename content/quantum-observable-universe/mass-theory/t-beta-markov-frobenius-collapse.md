@@ -60,7 +60,7 @@ $T_\beta = S \cdot 1$, with $\| T_\beta \|^2_\tau = S^2$. $\quad\blacksquare$
 
 The Q_β production rule extracts the c_k Taylor coefficients from
 $\tau_M(T_\beta)(q)$.  Under either norm choice — Euclidean L2 on
-coordinate-vector space $R^6$ (the [PR #1739 SHAPE × S decomposition](https://github.com/litlfred/qou/pull/1739))
+coordinate-vector space $R^6$ (the [PR #1739 SHAPE $\times$ S decomposition](https://github.com/litlfred/qou/pull/1739))
 or the canonical Markov–Frobenius norm above — the SDP **constraint**
 $\tau_M(T_\beta) = S = Q_\beta / E_0$ is satisfied identically.
 Therefore $\tau_M(T_\beta)(q) \equiv S(q)$ in both cases, and the
@@ -118,6 +118,6 @@ the general lift is mechanical typeclass scaffolding.
   — structural finding + numerical verification at $q_0$.
 - [`docs/coordination/1ppq-qbeta.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/coordination/1ppq-qbeta.md)
   — 1ppQ master ledger; 2026-06-03 session entry.
-- PR #1739 (merged) — Euclidean L2 SHAPE × S decomposition.
+- PR #1739 (merged) — Euclidean L2 SHAPE $\times$ S decomposition.
 - Jones 1987 — Hecke algebra Markov trace existence + uniqueness.
 - Wenzl 1988 — non-degeneracy of the Markov trace.
