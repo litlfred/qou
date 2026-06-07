@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T08:31:36Z",
+  "generatedAt": "2026-06-07T14:38:33Z",
   "tool": "scripts/lean-build-all.sh",
   "summary": {
     "passed": 2,
@@ -11,7 +11,7 @@
       "paper": "fred2005-formal-groups",
       "target": "Fred2005",
       "status": "ok",
-      "elapsed_s": 8,
+      "elapsed_s": 6,
       "log": "fred2005-formal-groups.log",
       "failingModules": [],
       "errors": [],
@@ -21,7 +21,7 @@
       "paper": "quantum-observable-universe",
       "target": "QOU",
       "status": "fail",
-      "elapsed_s": 6624,
+      "elapsed_s": 6052,
       "log": "quantum-observable-universe.log",
       "failingModules": [
         "QOU.MathlibExt.PosSemidefTraceZero",
