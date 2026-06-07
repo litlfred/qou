@@ -2332,6 +2332,26 @@
         "reviewed_at": "2026-05-28T15:44:09.524Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:collatz-no-cycles' → expected 'collatz_no_cycles'; Lean declares: QAubinLions, NSCounterexample, CriticalExponent, BlowupYekutieli, RegularityBreakdown.... Structural match via content."
+      },
+      {
+        "field_hash": {
+          "md": "cf8ba39c25b1",
+          "ts": "8398bbc90491",
+          "lean": "c11dfc32f75a"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "Lean theorem collatz_no_cycles_conditional concludes 'True := trivial'; narrative proves 'no periodic orbits other than P=1' via [3]_q-q[2]_q=1 Bezout coprimality",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-07",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-07T00:55:58.009Z",
+        "reviewed_sha": "19778e560d062340b6c2f6fca8ddf0915059fc9f",
+        "notes": "Lean signature is a conditional-class trivial skeleton (conclusion True), does not formalize the coprimality/Bezout argument; conclusions diverge in theorem-changing way"
       }
     ],
     "proof-lean-compiles": [
@@ -2723,5 +2743,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T00:38:46.654Z"
+  "updated_at": "2026-06-07T00:55:58.009Z"
 }
